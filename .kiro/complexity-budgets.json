@@ -51,11 +51,11 @@
     {
       "id": "workspace",
       "repository": "https://github.com/norandom/openbb-workspace.git",
-      "revision": "be00e95019a55d57af146919ee46b7e1a4859226",
+      "revision": "e5e4170f1a09bdf14339eb760b7ce09e31e5484f",
       "source_lock_key": "workspace",
       "root": "vendor/workspace",
       "mode": "changed",
-      "owners": [{"spec": "openbb-self-service", "include": ["**/*"], "files": []}],
+      "owners": [{"spec": "openbb-self-service", "include": ["**/*"], "files": ["lite/Dockerfile", "terminalpro/vite.config.ts", "terminalpro/index.html", "terminalpro/build/runtimeConfig.ts"]}],
       "exclusions": [
         {"patterns": ["tests/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*", "**/test_*.py", "**/*_test.py"], "reason": "Upstream and maintained test sources/fixtures", "source": "Workspace test suites"},
         {"patterns": ["*.md", "**/uv.lock", "**/pnpm-lock.yaml", "**/package-lock.json", "**/bun.lock", "**/bun.lockb"], "reason": "Documentation and deterministic dependency locks", "source": "Workspace documentation and package managers"},

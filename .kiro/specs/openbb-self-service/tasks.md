@@ -111,7 +111,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 
 - [ ] 2. Adapt the Full Workspace baseline
 
-- [ ] 2.1 (P) Make the Full frontend build reproducible
+- [x] 2.1 (P) Make the Full frontend build reproducible
   - Use the owned monorepo and pinned Bun frozen-lock install instead of the missing frontend npm lock and unavailable split-repository assembly.
   - Preserve the Full selection and record any narrowly required lock adaptation; keep TradingView disabled unless separately supplied and entitled.
   - Commercial packages still present are unresolved packaging inputs, not accepted dashboard capabilities. No publication before removal and new image evidence in 2.6-2.12.

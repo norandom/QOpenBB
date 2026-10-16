@@ -8,9 +8,9 @@ requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 id = "baseline-provenance"
 requirements = ["1.1", "1.2", "1.3", "1.4", "1.5"]
 planned_checks = ["upstream-source-and-image-manifest", "clean-build-dependencies"]
-test_paths = []
+test_paths = ["tests/delivery/test_workspace_packaging.py"]
 status = "unverified"
-evidence = ["Task 1.1 accepted: 53 acquisition integrity checks and independent review; sources.lock.json and sources/notices.json record revisions and retained notice hashes. Runtime, dependency compatibility and image acceptance remain unverified."]
+evidence = ["Task 2.1 accepted: frozen Full frontend install and independently rebuilt frontend (7.21s), 2 packaging tests, unchanged Bun lock and size gate passed; artifacts/task-2.1/resume-evidence.json and review-build.log. Workspace e5e4170f1a09bdf14339eb760b7ce09e31e5484f. Backend, commercial renderer removal and application images remain pending. Task 1.1 accepted: 53 acquisition integrity checks and independent review; sources.lock.json and sources/notices.json record revisions and retained notice hashes. Runtime, dependency compatibility and image acceptance remain unverified."]
 
 [[capabilities]]
 id = "compose-lifecycle"
