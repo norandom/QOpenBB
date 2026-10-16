@@ -23,6 +23,9 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Understand proposed services and compatibility risks | [Research](../.kiro/specs/openbb-self-service/research.md) and [Full versus Lite](../.kiro/specs/openbb-self-service/lite-vs-full.md) |
 | Inspect acquired sources, package compatibility and asset constraints | [Compatibility](compatibility.md) and [licenses](licenses.md) |
 | Decide the open-source chart and table baseline | [Replacement assessment](chart-replacement-assessment.md) |
+| Track features that the renderer replacement must preserve | [Renderer parity audit](renderer-parity-audit.md) |
+| Inspect original chart types, controls, flags and required checks | [Renderer capability matrix](renderer-capability-matrix.md) |
+| Review the renderer compatibility investigation and parallel work | [Discovery plan](../.kiro/specs/openbb-self-service/parity-plan.md) and [research](../.kiro/specs/openbb-self-service/parity-research.md) |
 | Contribute code, comments, evidence, or documentation | [Contribution guide](contributing.md) |
 
 ## Understand the proposed system

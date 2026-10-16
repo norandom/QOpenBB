@@ -1,5 +1,11 @@
 # OpenBB self service: baseline research
 
+## Renderer parity discovery, 2026-10-16
+
+The owner requires preservation of OpenBB's UX, design, themes, functionality and flag behavior during renderer replacement. This supersedes reduced-feature assumptions in earlier research. Kiro design discovery and controller synthesis produced the [compatibility discovery plan](parity-plan.md), [architecture findings](parity-research.md), [source capability matrix](../../../docs/renderer-capability-matrix.md) and [verification contract](parity-verification.md). Sol inspected original controls and schemas; Astra examined compatibility boundaries and exact installed Perspective declarations. A separate Sol reviewer approved the acceptance contract only, not replacement feasibility.
+
+Critical gaps remain original Enterprise interactions, remote table semantics and open-ended Highcharts inputs. Original aggregation choices also conflict with the uncommitted financial guard. These are explicit design questions, not permission to remove features. The active amendment remains in design discovery; no production remediation or runtime parity is accepted.
+
 Research date: 2026-10-16. Status: requirements approved for design; technical discovery and design review do not constitute implementation acceptance.
 
 ## Confirmed direction

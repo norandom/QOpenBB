@@ -23,6 +23,8 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 
 Owner refinement, 2026-10-16: use Perspective explorer widgets as the main analytical viewer for the accepted FMP/FRED datasets inside the Full Workspace shell. Retain useful Plotly widgets and Community-only residual tables; remove commercial renderer dependencies. This is an explicit local adaptation under 1.3-1.4, with grouping, financial aggregation, saved viewer configuration, refresh and selected-view AI context verified through the dashboard/data criteria. It adds no OHLC endpoint, application server or PostgreSQL scope. The owner runs deployment Compose locally; agent SSH access is not required.
 
+Owner parity refinement, 2026-10-16: criteria 4.8-4.9 supersede any interpretation of the earlier Perspective refinement that changes the existing interface, capabilities or feature flags. Perspective is a candidate implementation dependency; its native explorer interface is not the target user experience.
+
 ### Requirement 1: Reproducible upstream baseline
 **Objective:** As the owner, I want a recorded upstream baseline so that I can maintain my own environment.
 
@@ -66,6 +68,8 @@ Owner refinement, 2026-10-16: use Perspective explorer widgets as the main analy
 5. When the owner connects the self-hosted data API, Workspace shall offer its available FMP-backed widget definitions without requiring the owner to author each widget from scratch.
 6. When the owner selects available widgets, Workspace shall allow adding, arranging, resizing, and removing them in an owned dashboard.
 7. When the owner saves and reopens an FMP-backed dashboard, Workspace shall retain its layout and widget parameters and allow refreshing supported data through the self-hosted API.
+8. When replacing chart or table libraries, Workspace shall preserve the original owned OpenBB UX, flow, design, themes, controls, actions and feature-flag behavior. The replacement shall not remove, hide or disable existing functionality or substitute inert controls.
+9. Before renderer acceptance, verification shall map the original source capabilities and flag conditions to equivalent replacement behavior, including conditional actions, settings, saved configurations and exports. Integrated light/dark visual and interaction evidence shall accompany that mapping; unresolved gaps shall block acceptance rather than silently narrow the baseline.
 
 ### Requirement 5: Open-source data API with FMP and FRED
 **Objective:** As the owner, I want FMP and FRED data through a self-hosted OpenBB API so that data access does not depend on OpenBB's hosted API.

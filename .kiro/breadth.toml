@@ -5,6 +5,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "renderer-functional-and-visual-parity"
+requirements = ["4.8", "4.9"]
+planned_checks = ["original-source-capability-and-flag-inventory", "original-controls-and-actions-parity", "legacy-state-and-export-parity", "integrated-light-dark-visual-and-interaction-parity"]
+test_paths = []
+status = "unverified"
+evidence = ["Owner parity amendment supersedes reduced-capability acceptance. Tasks 2.6-2.7 checks establish historical Community isolation and dependency removal, not original OpenBB functional parity. Source audit and replacement design reconciliation are required; no parity test suite or runtime acceptance is claimed."]
+
+[[capabilities]]
 id = "baseline-provenance"
 requirements = ["1.1", "1.2", "1.3", "1.4", "1.5"]
 planned_checks = ["upstream-source-and-image-manifest", "clean-build-dependencies"]

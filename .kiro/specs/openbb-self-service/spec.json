@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-16T09:32:20.299752+00:00",
+  "updated_at": "2026-10-16T16:08:34+00:00",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -18,5 +18,15 @@
       "approved": true
     }
   },
-  "ready_for_implementation": true
+  "ready_for_implementation": false,
+  "active_amendment": {
+    "name": "renderer-parity",
+    "requirements": ["4.8", "4.9"],
+    "requirements_approved": true,
+    "phase": "design-discovery",
+    "design_approved": false,
+    "tasks_approved": false,
+    "implementation_ready": false,
+    "reason": "Owner requires original UX and functional parity; prior renderer reduction plan is superseded. Historical phase approvals above remain recorded."
+  }
 }

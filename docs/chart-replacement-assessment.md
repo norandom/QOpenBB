@@ -1,5 +1,7 @@
 # Selected open-source dashboard baseline
 
+Current constraint, 2026-10-16: the owner requires a library substitution preserving OpenBB's UX, design, themes, features, controls and feature flags. The reduced-capability recommendation below is historical and no longer an acceptable delivery baseline. Perspective remains a candidate implementation dependency; equivalent behavior must be demonstrated before acceptance. In particular, unavailable legacy states and hidden Enterprise actions do not satisfy parity. See [requirements 4.8-4.9](../.kiro/specs/openbb-self-service/requirements.md) and [Workspace experience](../.kiro/steering/workspace-experience.md).
+
 The owner selected **"Use Perspective baseline" on 2026-10-16**. Keep the Full Workspace dashboard shell and use Perspective as the primary analytical viewer for supported FMP/FRED datasets. Retain Community-compatible residual tables and complementary Plotly widgets; remove all AG Enterprise and Highcharts dependencies and initialization paths.
 
 This is an approved integration direction, not completed implementation. Source assessment used Workspace revision `be00e95019a55d57af146919ee46b7e1a4859226`. No renderer changes, installation or runtime acceptance were performed by this assessment. The [design](../.kiro/specs/openbb-self-service/design.md) and [tasks 2.6-2.12](../.kiro/specs/openbb-self-service/tasks.md) define the amendment; independent review precedes renderer feature work.
