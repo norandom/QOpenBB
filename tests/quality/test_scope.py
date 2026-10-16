@@ -36,7 +36,7 @@ def scoped(tmp_path):
         from tools.quality.complexity import inventory
 
         write(".kiro/complexity-budgets.json", json.dumps(config))
-        return inventory(root, changes=changes)
+        return inventory(root, changes=changes, python_only=True)
 
     return root, config, write, run
 

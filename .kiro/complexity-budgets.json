@@ -2,6 +2,7 @@
   "schema_version": 1,
   "metric": "project-syntax-units-v1",
   "limits": {"physical": 400, "logical": 300, "function": 50},
+  "exceptions": [],
   "scope_limits": "All QOpenBB maintained production files; whole explicit changed files in owned forks. Unchanged upstream is outside initial enforcement. No implicit oversized-file exceptions.",
   "repositories": [
     {
@@ -20,7 +21,8 @@
           "verification/.npmrc", "verification/package.json",
           ".kiro/complexity-budgets.json", "tools/quality/__init__.py",
           "tools/quality/complexity.py", "tools/quality/python_units.py",
-          "tools/quality/scope.py", "tools/quality/changes.py", "tools/quality/syntax_units.ts"
+          "tools/quality/scope.py", "tools/quality/changes.py", "tools/quality/syntax_units.ts",
+          "tools/quality/ts_adapter.py", "tools/quality/exceptions.py", "tools/quality/tsconfig.json"
         ]
       }],
       "exclusions": [

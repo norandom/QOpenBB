@@ -62,7 +62,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 1.2_
   - _Requirements: 10.5, 10.6_
 
-- [ ] 1.4 Complete TypeScript measurements and the cross-repository quality gate
+- [x] 1.4 Complete TypeScript measurements and the cross-repository quality gate
   - After 1.2 passes, standalone parser implementation may overlap 1.3 using the controller-reviewed interface: JSON file-path array on stdin (absolute or relative to cwd), JSON measurement array on stdout preserving input paths, with each record containing path, logical and functions (name, line, column, logical; positions are 1-based). Empty input arrays return empty arrays. Parser failures use stderr and exit 2. Early writes are limited to tools/quality/syntax_units.ts and tests/quality/test_syntax_units.mjs; Python integration, inventory and breadth updates wait for 1.3 acceptance.
   - Implement the pinned TypeScript/JavaScript parser counter, expression-bodied callable handling and combined scope reports.
   - Verify whole modified upstream files and documented exceptions; do not infer changed scope from absent container Git metadata.

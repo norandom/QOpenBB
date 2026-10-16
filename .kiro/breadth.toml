@@ -72,9 +72,9 @@ evidence = []
 id = "background-verification"
 requirements = ["10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
 planned_checks = ["headless-owned-browser", "devtools-diagnostics", "playwright-real-journeys", "bounded-worker-isolation", "breadth-evidence-integrity"]
-test_paths = []
-status = "planned"
-evidence = []
+test_paths = ["tests/quality/test_python_units.py", "tests/quality/test_scope.py", "tests/quality/test_cli.py", "tests/quality/test_combined.py", "tests/quality/test_ts_adapter.py", "tests/quality/test_exceptions.py", "tests/quality/test_syntax_units.mjs"]
+status = "unverified"
+evidence = ["Complexity foundation accepted: 76 Python and 15 Node tests, strict TypeScript compilation, combined check of 23 maintained files with no violations or applied exceptions. Browser/DevTools isolation and application acceptance remain unverified; docs/complexity.md contains the exercised command."]
 
 [[capabilities]]
 id = "custom-postgresql-data"
