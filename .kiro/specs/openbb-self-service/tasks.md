@@ -51,7 +51,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 1.1_
   - _Requirements: 3.1, 9.1, 9.7, 10.4_
 
-- [ ] 1.3 Implement physical and Python complexity measurements
+- [x] 1.3 Implement physical and Python complexity measurements
   - Create the maintained-scope inventory and physical/Python counters using the documented syntax-unit convention; handle nested callables, docstrings, comments and newline variants.
   - Test exact cap boundaries and reject missing changed-file/base/head inputs; record fork and generated/vendor exclusions.
   - Done when deliberately oversized examples fail and the checker measures its own maintained Python scope reproducibly.

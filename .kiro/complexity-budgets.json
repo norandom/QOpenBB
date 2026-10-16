@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "metric": "project-syntax-units-v1",
+  "limits": {"physical": 400, "logical": 300, "function": 50},
+  "scope_limits": "All QOpenBB maintained production files; whole explicit changed files in owned forks. Unchanged upstream is outside initial enforcement. No implicit oversized-file exceptions.",
+  "repositories": [
+    {
+      "id": "qopenbb",
+      "repository": "local:QOpenBB",
+      "revision": "maintained-working-tree",
+      "root": ".",
+      "mode": "all",
+      "owners": [{
+        "spec": "openbb-self-service",
+        "include": ["**/*"],
+        "files": [
+          ".dockerignore", ".gitattributes", ".gitignore", ".node-version", ".python-version",
+          ".dagger/pyproject.toml", ".dagger/src/qopenbb/__init__.py", ".dagger/src/qopenbb/main.py",
+          "pipeline/pyproject.toml", "pipeline/qopenbb_ci/__init__.py", "pipeline/qopenbb_ci/cli.py",
+          "verification/.npmrc", "verification/package.json",
+          ".kiro/complexity-budgets.json", "tools/quality/__init__.py",
+          "tools/quality/complexity.py", "tools/quality/python_units.py",
+          "tools/quality/scope.py", "tools/quality/changes.py", "tools/quality/syntax_units.ts"
+        ]
+      }],
+      "exclusions": [
+        {"patterns": [".git/**", "**/__pycache__/**", "**/.pytest_cache/**", "**/.venv/**", "**/node_modules/**"], "reason": "Repository metadata and installed or cached dependencies", "source": "Git, CPython, pytest, uv and pnpm"},
+        {"patterns": ["vendor/**", ".upstream/**"], "reason": "Acquisition roots are inventoried separately as owned forks; this exclusion does not apply inside fork scope", "source": "sources.lock.json"},
+        {"patterns": ["artifacts/**", "data/**", "backups/**", "test-results/**", "playwright-report/**", "dist/**", "htmlcov/**", ".coverage*", "coverage.xml"], "reason": "Disposable evidence, private runtime state and build output", "source": "Verification/build tools and operator runtime"},
+        {"patterns": [".env", ".env.*", "secrets/**", "*.pem", "*.key"], "reason": "Private operator configuration and empty public configuration samples", "source": "Operator configuration; never read for size inventory"},
+        {"patterns": ["docs/**", "*.md", ".agents/**", ".codex/**", ".kiro/settings/**", ".kiro/specs/**", ".kiro/steering/**", ".kiro/breadth.toml"], "reason": "Documentation, agent instructions and acceptance metadata", "source": "Project memory and specification workflow"},
+        {"patterns": ["sources/**", "sources.lock.json", "pipeline/tools.lock.json"], "reason": "Acquisition provenance, copied notices and pinned tool input data", "source": "Source/tool acquisition inventory"},
+        {"patterns": ["tests/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*", "**/test_*.py", "**/*_test.py"], "reason": "Test sources and fixtures are outside production size caps", "source": "pytest and Playwright suites"},
+        {"patterns": ["**/uv.lock", "**/pnpm-lock.yaml", "**/package-lock.json", "**/bun.lock", "**/bun.lockb"], "reason": "Deterministic dependency lockfiles", "source": "uv, pnpm, npm and Bun lock resolution"}
+      ]
+    },
+    {
+      "id": "workspace",
+      "repository": "https://github.com/norandom/openbb-workspace.git",
+      "revision": "be00e95019a55d57af146919ee46b7e1a4859226",
+      "source_lock_key": "workspace",
+      "root": "vendor/workspace",
+      "mode": "changed",
+      "owners": [{"spec": "openbb-self-service", "include": ["**/*"], "files": []}],
+      "exclusions": [
+        {"patterns": ["tests/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*", "**/test_*.py", "**/*_test.py"], "reason": "Upstream and maintained test sources/fixtures", "source": "Workspace test suites"},
+        {"patterns": ["*.md", "**/uv.lock", "**/pnpm-lock.yaml", "**/package-lock.json", "**/bun.lock", "**/bun.lockb"], "reason": "Documentation and deterministic dependency locks", "source": "Workspace documentation and package managers"},
+        {"patterns": ["excel-add-in/src/functions/functions.ts"], "reason": "Existing generated function output; generation is not authorized before Anthropic acceptance", "source": "excel-add-in/src/functions/generator/ts_generator.py and spec_generator.py"}
+      ]
+    },
+    {
+      "id": "data_api",
+      "repository": "https://github.com/norandom/openbb-data-api.git",
+      "revision": "7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2",
+      "source_lock_key": "data_api",
+      "root": "vendor/data-api",
+      "mode": "changed",
+      "owners": [{"spec": "openbb-self-service", "include": ["**/*"], "files": []}],
+      "exclusions": [
+        {"patterns": ["tests/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*", "**/test_*.py", "**/*_test.py"], "reason": "Upstream and maintained test sources/fixtures", "source": "OpenBB provider/core test suites"},
+        {"patterns": ["*.md", "**/uv.lock", "**/pnpm-lock.yaml", "**/package-lock.json"], "reason": "Documentation and deterministic dependency locks", "source": "OpenBB documentation and package managers"}
+      ]
+    }
+  ]
+}
