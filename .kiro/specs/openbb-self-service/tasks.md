@@ -2,7 +2,7 @@
 
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
-The separately approved chart-foundation design has [six proposed tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), pending task approval. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.
+The separately approved chart-foundation design has [six proposed tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.
 
 ## Execution contract
 
@@ -578,7 +578,7 @@ Task 2.8 accepted after independent Astra review and one repair round. Workspace
 
 ## Approved design slice: chart state and lifecycle foundation
 
-The owner approved the [first production boundary](echarts-integration-proposal.md#first-production-boundary-for-separate-review) on 2026-10-16. Tasks 2.13-2.18 below are generated for that boundary only and await task approval. They neither reactivate superseded tasks 2.9-2.12 nor approve the rest of the renderer design. They support 4.8-4.9 without closing either requirement. Existing task groups retain their own coverage and approval states.
+The owner approved the [first production boundary](echarts-integration-proposal.md#first-production-boundary-for-separate-review) on 2026-10-16. Tasks 2.13-2.18 below were approved by the owner on 2026-10-16 for that boundary only. They neither reactivate superseded tasks 2.9-2.12 nor approve the rest of the renderer design. They support 4.8-4.9 without closing either requirement. Existing task groups retain their own coverage and approval states.
 
 This is an explicit dependency exception to the historical numeric renderer sequence: 2.13 starts from accepted 1.2, 1.4, 1.7 and 2.8, not from pending 2.9-2.12 or later release tasks. Thereafter the dependencies below govern this slice. All leaves target one bounded 1-3 hour engineering work unit; unexpected scope returns to the controller rather than expanding ownership silently.
 
