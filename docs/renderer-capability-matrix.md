@@ -49,6 +49,14 @@ Every check below is proposed, not executed. Use deterministic financial data wi
 
 ## Limits and next evidence
 
+### Follow-up caller trace
+
+Read-only Luna tracing at the same Workspace baseline distinguishes two export paths. `General/Table/hooks/useTableContext.tsx::useAgExportFuncs` itself has no tier predicate. Its XLSX callback reaches `MoveToDropDown/utils.tsx::getExportFns`, which includes XLSX when the callback exists, except for widget type `chart`, where only PNG is offered. `NavBar` additionally controls ellipsis visibility. The grid context-menu export is separately gated by tier `pro`; do not apply that gate to the generic dropdown.
+
+The common hook is used by `AgGridTable`, `AgGridSQL`, `AgGridSSRM`, `AgGridSSRMAdvanced`, `GroupedFinancials`, `Equity/Watchlist`, `RevenuePer` and `PriceTargetByAnalyst`. Other XLSX callbacks occur in `AgChartFromTable`, `AgGridFile`, `AI/CopilotTable`, `Chart`, ETF Characteristics/Classification/Holdings, Economy EconomicCalendar/EconomicOverview, Equity InstitutionalOwnership/KeyMetrics/ShareStatistics/PricePerformance and Misc Charting. PricePerformance and Misc Charting pass export callbacks only when `VITE_TRADINGVIEW_ENABLED === 'true'`. Callback presence is not evidence that a deployed widget renders or exposes it; the shared dropdown predicates still apply.
+
+The original registry maps `ag_grid_sql`, `ssrm_table`, `ssrm_advanced`, `analyst_estimates` and `chart-highcharts`. Original `BLOCKED_WIDGET_IDS` already includes country/economic indicators and analyst estimates; `DraggableCard` exempts external widgets from its blocker. CountryIndicators and EconomicIndicators component definitions alone do not establish ordinary ID resolution: their IDs are absent from the inspected component maps. Preserve those original conditions rather than indiscriminately enabling formerly blocked widgets. Full external-ID resolution and deployment reachability remain unverified.
+
 The uncommitted financial adapter restricts EPS, unit and currency aggregations. This remains unresolved compatibility work against the original aggregate choices and default `sum`; the financial suitability caution above does not authorize disabling existing actions or changing their results.
 
 This is source evidence from owned files, not an exhaustive enumeration of third-party option bags. Baseline flag definitions and call-site reachability beyond the named functions still need a targeted trace: deployment overrides, Copilot entitlement, all export callers, default library menu/settings contents, specialized widgets and complete Highcharts options. Schema acceptance, builder presence and a mapping entry are recorded separately because none proves an executable baseline path. Runtime baseline failures must be recorded rather than silently counted as supported behavior or removed from scope.

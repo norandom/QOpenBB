@@ -2,7 +2,7 @@
 
 Keep OpenBB's interface and place compatibility code below its controls. Perspective is a candidate analytical engine, not the replacement UI. The source audit shows that a direct library substitution is insufficient: removed dependencies also supplied selection, menus, chart models, remote tables and exports.
 
-This is a discovery plan for 4.8-4.9, not approval of a complete replacement architecture. Inputs are the [capability matrix](../../../docs/renderer-capability-matrix.md), [architecture research](parity-research.md) and [verification contract](parity-verification.md). No probe below has run.
+This is a discovery plan for 4.8-4.9, not approval of a complete replacement architecture. Inputs are the [capability matrix](../../../docs/renderer-capability-matrix.md), [architecture research](parity-research.md) and [verification contract](parity-verification.md). Initial surface/configuration findings are recorded in [discovery results](parity-findings.md); full runtime parity and the remaining probes are unverified.
 
 Independent Astra review approved this bounded discovery plan; see the [review record](parity-review.md). Production architecture and implementation remain gated.
 

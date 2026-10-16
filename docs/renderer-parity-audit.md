@@ -26,6 +26,8 @@ Paths below are relative to `vendor/workspace/terminalpro/src/components`. Delet
 
 The Community options boundary additionally removes clipboard processors, Excel styles/export parameters, status/sidebar configuration, aggregate functions, chart callbacks, hierarchy options and grouping panel settings. Its recursive saved-state check can make an otherwise supported widget entirely unavailable. These are functional changes, not dependency-only edits.
 
+Follow-up source tracing qualifies the specialized-widget row: some named components were already blocked or lacked ordinary ID mappings in the original source. Their registry replacement is an observed code change, not proof that every named widget was originally available. Preserve original blocked/external conditions; see the [caller trace](renderer-capability-matrix.md#follow-up-caller-trace). The same trace distinguishes tier-gated context-menu export from the generic XLSX dropdown, which uses callback/widget-type/visibility conditions.
+
 ## Next design gate
 
 The follow-up [capability matrix](renderer-capability-matrix.md) enumerates the owned chart schema and control contracts. The [verification contract](../.kiro/specs/openbb-self-service/parity-verification.md) defines paired reference/candidate evidence. Both remain source/planning work; runtime parity is unverified.
