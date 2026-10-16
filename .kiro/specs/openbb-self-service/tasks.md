@@ -624,7 +624,7 @@ Whole-project TypeScript remains separately blocked by upstream TS6305 composite
   - _Depends: 1.2, 1.4, 1.7, 2.8_
   - _Requirements: 1.1, 1.2, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5_
 
-- [ ] 2.14 Freeze path-specific state inputs and the renderer host contract
+- [x] 2.14 Freeze path-specific state inputs and the renderer host contract
   - Define distinct integrated/detached input types, retained JSON values and explicit validation results without `any`. Integrated inputs include resolved state key, current model, resolved option baseline, event options defaulting to an empty object, chart type, resolved total series and pivot. Detached inputs include original storage, event type/options and resolved total series.
   - Freeze the typed complete-option/revision host interface and lifecycle ownership. Callers remain responsible for original state-key/range/count preparation and revision/address checks; reducers neither infer API-derived counts nor silently redirect stale edits.
   - Build source-referenced contract fixtures covering different resolved/persisted options and retained unknown fields. Done when focused strict checking and contract validation pass and both implementation lanes receive immutable interfaces, fixture inputs and commands; do not infer saved paths from the editor's empty write capture.
@@ -670,3 +670,5 @@ Whole-project TypeScript remains separately blocked by upstream TS6305 composite
   - _Requirements: 1.1, 1.4, 4.8, 4.9, 9.6, 10.1, 10.3, 10.4, 10.5, 10.6_
 
 Task 2.13 accepted after independent Astra review and fresh unit, strict TypeScript, production fixture build/browser and scoped complexity checks. Workspace `e56852deff2679c71e32436554f86ba096b55677` pins ECharts 6.0.0 through protected Bun restoration. Evidence: `artifacts/task-2.13/review/review.md` and `complexity.json`. Existing oversized-file exception targets are byte-identical to the prior source; only their source identity advances. No application wiring or renderer parity is accepted.
+
+Task 2.14 accepted at Workspace `bfba80d7f7875fffa60d6d37645a422a3097ea63` after independent Astra source comparison, 11 unit tests, strict TypeScript, scoped lint and fresh complexity verification. Runtime option values remain separate from serialized unknown JSON, with repeated-edit input/output closure and no new storage envelope. Frozen contracts now permit the state and lifecycle lanes to start. Evidence: `artifacts/task-2.14/review/`.
