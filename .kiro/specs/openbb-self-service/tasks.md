@@ -710,7 +710,7 @@ Reuse the accepted Node/dependency environment and existing Vitest, strict TypeS
   - _Depends: 2.18_
   - _Requirements: 4.8, 4.9, 10.5, 10.6_
 
-- [ ] 2.20 (P) Preserve resolved observations in validated snapshots
+- [x] 2.20 (P) Preserve resolved observations in validated snapshots
   - Implement validation and deep copy without grid, React, ECharts, provider or store imports. Preserve ordering, numeric precision, zeros, missing/null distinctions, original model fields, state address and range provenance.
   - Verify category cardinality/association, unique row/column/selection IDs, numeric-series presence, unknown IDs, invalid provenance, nonfinite values, input mutation isolation, repeated categories and descending dates. Valid nonflat snapshots retain their source mode; renderer support is decided separately.
   - Done when focused snapshot tests, strict checks and independent review pass against frozen contracts, with no financial conversion, sorting, aggregation or persistence added.
@@ -747,3 +747,5 @@ Reuse the accepted Node/dependency environment and existing Vitest, strict TypeS
   - _Requirements: 1.1, 1.4, 4.8, 4.9, 9.6, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6_
 
 Task 2.19 accepted at Workspace 8c12a9127cd913e5f6ebb8a9dfe3fd82ba56138f after independent Astra review. Fresh strict TypeScript, 46 foundation tests, repository-configured lint and the seven-module cap audit passed. Contracts are frozen for tasks 2.20 and 2.21. Evidence: artifacts/task-2.19/review/review.md. Runtime snapshot/mapping behavior remains pending.
+
+Task 2.20 accepted at Workspace 616a0a70241fd15a10e0dc91dcec93cf701847ac after independent Sol review. Fresh 26 snapshot tests, strict TypeScript, actual repository lint and complexity evidence pass (110 physical, 122 logical, largest function 29). Evidence: artifacts/task-2.20/review/review.md. Mapper and browser integration remain separate gates.
