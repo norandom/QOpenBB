@@ -1,43 +1,44 @@
 # QOpenBB
 
-Full OpenBB Workspace, self-hosted data API with FMP/FRED, and Anthropic AI. Development on Windows/WSL Docker; same Compose topology on private Linux. Current status: requirements and deployment proposal, not a running implementation.
+QOpenBB aims to give financial engineers a self-hosted Full OpenBB Workspace: build dashboards from FMP and FRED data, keep layouts and state under local control, then use Anthropic AI and Excel against the same data API.
 
-## Deployment contract
+The repository currently contains requirements, source pins, and feasibility research. It does not yet provide a built or accepted application. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
 
-- Public URL: https://qbb.hanse-hedge.fund behind owner-managed Cloudflare Access/cloudflared.
-- Origin: plain HTTP, one published port at 0.0.0.0:23003. No origin TLS or tunnel service in this stack.
-- State: ./data/workspace bind-mounted to /data; no Docker-managed data volumes.
-- Dagger builds/checks/publishes in GitHub. Server installs by image pull, without compiling source.
-- First: ready-made FMP/FRED widgets and saved dashboards. Next: working Anthropic agent. Only then: regenerated/adapted Excel integration.
-- Jupyter is managed independently by the owner; no notebook service or wheel publication now. Custom PostgreSQL remains deferred.
+## Current evidence
 
-## Owned sources
+Direct read-only provider checks returned HTTP 200 for FMP company profile and income statement data and FRED GDP. Anthropic model discovery also returned HTTP 200; inference remains untested. These checks establish limited upstream access, not working Workspace widgets, a compatible OpenBB provider, or a working agent. See the [feasibility report](.kiro/specs/openbb-self-service/feasibility.md) for scope and remaining gaps.
 
-- [Workspace fork](https://github.com/norandom/openbb-workspace): frontend, application backend, Full packaging, Excel source.
-- [Data-platform fork](https://github.com/norandom/openbb-data-api): data API and provider source.
-- [Initial source pins](sources.lock.json): acquisition snapshots, not yet validated releases.
+The latest API target requires compatibility work: OpenBB 5 / core 2 excludes the released FMP provider, whose dependency constraint requires core below 2. The Full Workspace build also needs reproducible adaptation of its dependency and source-assembly steps. [Source pins](sources.lock.json) record acquisition snapshots, not validated releases.
 
-Target the latest validated data API release, regenerate widgets/functions, and adapt FMP as needed. The older FMP/EconDB provider packages cannot simply be installed with v5. All release images must come from recorded revisions of the owned forks.
+## Intended operating contract
 
-Real credentials stay in ignored .env; [.env.sample](.env.sample) has empty values. Anthropic model selection and integration remain pending. Never include .env in Dagger uploads, Docker contexts, images, traces, or logs.
+- Develop on Windows/WSL Docker and deploy the same Compose topology on a private Linux server.
+- Serve plain HTTP at `0.0.0.0:23003`. The owner manages Cloudflare Access and the tunnel for `https://qbb.hanse-hedge.fund`.
+- Bind persistent state under `./data`, initially `./data/workspace` to `/data`; use no Docker-managed data volumes.
+- Let Dagger own checks, builds, and publication in GitHub. Deploy by pulling recorded image digests.
+- Accept the Full dashboard and FMP/FRED journey first, then Anthropic. Excel implementation waits for Anthropic acceptance.
 
-## Specification and workflow
+Jupyter is managed separately. Custom PostgreSQL integration remains deferred.
 
-- [Requirements](.kiro/specs/openbb-self-service/requirements.md)
-- [Research and deployment proposal](.kiro/specs/openbb-self-service/research.md)
-- [Compose proposal](.kiro/specs/openbb-self-service/compose.proposed.yaml)
-- [Phase status](.kiro/specs/openbb-self-service/spec.json)
-- [Lite versus Full](.kiro/specs/openbb-self-service/lite-vs-full.md)
-- [Delegation and fan-out](.kiro/steering/delegation.md)
-- [Complexity caps for future tasks](.kiro/steering/complexity.md)
-- [Background verification](.kiro/steering/testing.md)
-- [Dagger delivery](.kiro/steering/ci.md)
-- [Feature/spec/test mapping](.kiro/breadth.toml)
+## Sources and decisions
 
-Validate proposal syntax only, from this repository root:
+| Resource | Use |
+| --- | --- |
+| [Workspace fork](https://github.com/norandom/openbb-workspace) | Frontend, application backend, Full packaging, Excel source |
+| [Data API fork](https://github.com/norandom/openbb-data-api) | OpenBB data API and provider adaptation |
+| [Requirements](.kiro/specs/openbb-self-service/requirements.md) | Observable acceptance criteria and scope |
+| [Research](.kiro/specs/openbb-self-service/research.md) | Source references and proposed integration contracts |
+| [Phase status](.kiro/specs/openbb-self-service/spec.json) | Approval state; requirements review is pending |
+| [Contribution guide](docs/contributing.md) | Evidence, documentation, and code-comment conventions |
+
+Real credentials belong only in the ignored `.env`. The public [.env.sample](.env.sample) has empty values. Never include secrets in builds, images, browser assets, reports, or logs.
+
+## Check the proposal syntax
+
+From this repository root:
 
 ```powershell
 docker compose --project-directory . --env-file .kiro/specs/openbb-self-service/compose.validation.env -f .kiro/specs/openbb-self-service/compose.proposed.yaml --profile excel config --quiet
 ```
 
-The fixture file contains fake images/credentials. No builds, proxy routing, provider/AI integrations, Dagger workflow, or runtime acceptance are claimed. Next formal phase after requirements review is design, followed by dependency-mapped tasks.
+This command checks the [Compose proposal](.kiro/specs/openbb-self-service/compose.proposed.yaml) with fake fixture values. It does not build or start the application. Design and dependency-mapped tasks follow human requirements approval.

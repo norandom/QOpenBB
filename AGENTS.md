@@ -78,6 +78,8 @@ Use a fresh context for each independent implementer or reviewer, passing the ta
 
 ## QOpenBB verification and delivery
 
+- Project name: QOpenBB. Write documentation for financial engineers. All maintained documentation and code comments must follow the COBESY conventions in `.kiro/steering/documentation.md`. Keep `docs/index.md` linked from README, with goals, roadmap, and clear navigation. Comments should explain rationale, financial semantics, assumptions, and constraints where needed; do not add ceremonial commentary to obvious code.
+
 - Before design/task generation or implementation, read `.kiro/steering/complexity.md`. Carry its 400 physical lines/file, 300 logical units/file, and 50/function caps into task completion criteria and worker handoffs. Include checker/inventory foundation work; policy text alone is not enforcement.
 
 - Read `.kiro/steering/testing.md` for development verification: isolated background Playwright/Chrome DevTools, hidden helper processes, bounded xdist/browser workers, and evidence requirements.
