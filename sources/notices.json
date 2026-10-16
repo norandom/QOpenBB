@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "hash_convention": "SHA256 over exact Git blob or archive-member bytes; retained files are byte-identical.",
+  "files": [
+    {
+      "component": "workspace",
+      "repository": "https://github.com/norandom/openbb-workspace.git",
+      "revision": "be00e95019a55d57af146919ee46b7e1a4859226",
+      "upstream_path": "LICENSE",
+      "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "retained_path": "sources/notices/workspace/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "component": "workspace",
+      "repository": "https://github.com/norandom/openbb-workspace.git",
+      "revision": "be00e95019a55d57af146919ee46b7e1a4859226",
+      "upstream_path": "NOTICE",
+      "git_blob": "b576938ee0d268aef42ffcfd68de014d5e436730",
+      "retained_path": "sources/notices/workspace/NOTICE",
+      "sha256": "7ead59cd1679b65fb3be5d056b6415564f9c6849b37401c0f0b5020b9dce4c8b"
+    },
+    {
+      "component": "workspace",
+      "repository": "https://github.com/norandom/openbb-workspace.git",
+      "revision": "be00e95019a55d57af146919ee46b7e1a4859226",
+      "upstream_path": "excel-add-in/LICENSE",
+      "git_blob": "0868366dedb779faf6529e267c17d902af51a4f0",
+      "retained_path": "sources/notices/workspace/excel-add-in/LICENSE",
+      "sha256": "d71d99963e19c1ccd507ac3d83887ee43a60176317ed29a6a589cff563f84dcc"
+    },
+    {
+      "component": "workspace",
+      "repository": "https://github.com/norandom/openbb-workspace.git",
+      "revision": "be00e95019a55d57af146919ee46b7e1a4859226",
+      "upstream_path": "terminalpro/packaging/macOS/darwin/Resources/LICENSE.txt",
+      "git_blob": "b366787995e3d30922de8e7218b0974778613bfa",
+      "retained_path": "sources/notices/workspace/terminalpro/packaging/macOS/darwin/Resources/LICENSE.txt",
+      "sha256": "8d5e7990f47d494b474351feb4c45717258101d4b70731dc73d18ef9a296976d"
+    },
+    {
+      "component": "data-api-acquired",
+      "repository": "https://github.com/norandom/openbb-data-api.git",
+      "revision": "7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2",
+      "upstream_path": "LICENSE",
+      "git_blob": "8e8cca33304520693be306cad3b55cba0c358676",
+      "retained_path": "sources/notices/data-api-acquired/LICENSE",
+      "sha256": "2c40e795cd5d3179d45c57b534e953e3fa2f1fb499602e2b314f57aeec813885"
+    },
+    {
+      "component": "data-api-acquired",
+      "repository": "https://github.com/norandom/openbb-data-api.git",
+      "revision": "7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2",
+      "upstream_path": "desktop/LICENSE",
+      "git_blob": "d70f5f6a25919bba389e4538fa95eab79846b957",
+      "retained_path": "sources/notices/data-api-acquired/desktop/LICENSE",
+      "sha256": "48e254fd8707d6d935c8b1959adc5411f9b48e9d618c0b225363e322ee975b6d"
+    },
+    {
+      "component": "data-api-acquired",
+      "repository": "https://github.com/norandom/openbb-data-api.git",
+      "revision": "7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2",
+      "upstream_path": "desktop/src-tauri/LICENSE",
+      "git_blob": "8e8cca33304520693be306cad3b55cba0c358676",
+      "retained_path": "sources/notices/data-api-acquired/desktop/src-tauri/LICENSE",
+      "sha256": "2c40e795cd5d3179d45c57b534e953e3fa2f1fb499602e2b314f57aeec813885"
+    },
+    {
+      "component": "data-api-candidate",
+      "repository": "https://github.com/norandom/openbb-data-api.git",
+      "revision": "5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0",
+      "upstream_path": "LICENSE",
+      "git_blob": "8e8cca33304520693be306cad3b55cba0c358676",
+      "retained_path": "sources/notices/data-api-candidate/LICENSE",
+      "sha256": "2c40e795cd5d3179d45c57b534e953e3fa2f1fb499602e2b314f57aeec813885"
+    },
+    {
+      "component": "data-api-candidate",
+      "repository": "https://github.com/norandom/openbb-data-api.git",
+      "revision": "5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0",
+      "upstream_path": "desktop/LICENSE",
+      "git_blob": "d70f5f6a25919bba389e4538fa95eab79846b957",
+      "retained_path": "sources/notices/data-api-candidate/desktop/LICENSE",
+      "sha256": "48e254fd8707d6d935c8b1959adc5411f9b48e9d618c0b225363e322ee975b6d"
+    },
+    {
+      "component": "data-api-candidate",
+      "repository": "https://github.com/norandom/openbb-data-api.git",
+      "revision": "5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0",
+      "upstream_path": "desktop/src-tauri/LICENSE",
+      "git_blob": "8e8cca33304520693be306cad3b55cba0c358676",
+      "retained_path": "sources/notices/data-api-candidate/desktop/src-tauri/LICENSE",
+      "sha256": "2c40e795cd5d3179d45c57b534e953e3fa2f1fb499602e2b314f57aeec813885"
+    },
+    {
+      "component": "fmp-1.6.1",
+      "source_url": "https://raw.githubusercontent.com/openbq-org/OpenBB/8e306a4de2b3cb0753fbd74d3aca4dcf0fa15472/LICENSE",
+      "revision": "8e306a4de2b3cb0753fbd74d3aca4dcf0fa15472",
+      "upstream_path": "LICENSE",
+      "retained_path": "sources/notices/fmp-1.6.1/upstream-root-LICENSE",
+      "sha256": "442baa7865ddf53ba04808a29e4810ac1fd9c83383d4ac76297cec4569e19222",
+      "note": "Historical upstream root AGPL text; FMP 1.6.1 wheel and sdist contain no standalone license/notice file. Package metadata independently declares AGPL-3.0-only. This is not a relicensing assertion."
+    },
+    {
+      "component": "fmp-1.6.1",
+      "source_url": "https://files.pythonhosted.org/packages/a1/e6/58f475ce8fe1023eeba28f6b79bcb7970ccaaa8c2ab36d6f8e43b29cad25/openbb_fmp-1.6.1.tar.gz",
+      "artifact_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517",
+      "upstream_path": "openbb_fmp-1.6.1/pyproject.toml",
+      "retained_path": "sources/notices/fmp-1.6.1/pyproject.toml",
+      "sha256": "34669088fc64bff6bc03220d6fa358dad164c496c5b26f34d623a0e71e2607c7",
+      "note": "Verbatim release metadata; retained as provenance, not an executable package."
+    }
+  ]
+}

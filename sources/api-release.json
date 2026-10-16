@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-16",
+  "status": "latest upstream API release selected as candidate; not QOpenBB validated",
+  "selection_rule": "Newest published non-draft, non-prerelease API/platform release; exclude ODP and Open-Data-Platform desktop tags and retired Terminal releases. GitHub releases/latest selects desktop, so is not the API selector.",
+  "source_url": "https://api.github.com/repos/openbq-org/OpenBB/releases?per_page=100",
+  "release": {
+    "id": 399332202,
+    "name": "OpenBB V5",
+    "tag_name": "openbb-v5.0.0",
+    "published_at": "2026-09-30T01:50:34Z",
+    "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/openbb-v5.0.0",
+    "target_commitish": "release/openbb-v5.0.0",
+    "draft": false,
+    "prerelease": false
+  },
+  "tag_object": "ff758fcc1c5b5f67c19b2cc855b35d76d0dd8f3b",
+  "commit": "5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0",
+  "owner_fork_has_identical_tag_and_commit": true,
+  "api_release_index": [
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/openbb-v5.0.0",
+      "name": "OpenBB V5",
+      "prerelease": false,
+      "published_at": "2026-09-30T01:50:34Z",
+      "tag_name": "openbb-v5.0.0"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.7.0",
+      "name": "OpenBB V4.7.0",
+      "prerelease": false,
+      "published_at": "2026-03-09T17:36:09Z",
+      "tag_name": "v4.7.0"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.6.0",
+      "name": "OpenBB Platform v4.6.0",
+      "prerelease": false,
+      "published_at": "2026-01-07T16:28:52Z",
+      "tag_name": "v4.6.0"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.5.0",
+      "name": "OpenBB Platform v4.5.0",
+      "prerelease": false,
+      "published_at": "2025-10-08T21:05:38Z",
+      "tag_name": "v4.5.0"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/4.4.5",
+      "name": "4.4.5",
+      "prerelease": false,
+      "published_at": "2025-07-22T17:08:27Z",
+      "tag_name": "4.4.5"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/4.4.4",
+      "name": "4.4.4",
+      "prerelease": false,
+      "published_at": "2025-06-23T19:52:23Z",
+      "tag_name": "4.4.4"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.4.2",
+      "name": "OpenBB Platform v4.4.2",
+      "prerelease": false,
+      "published_at": "2025-04-02T20:16:23Z",
+      "tag_name": "v4.4.2"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.4.1",
+      "name": "OpenBB Platform v4.4.1",
+      "prerelease": false,
+      "published_at": "2025-03-07T01:54:20Z",
+      "tag_name": "v4.4.1"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.4.0",
+      "name": "OpenBB Platform v4.4.0",
+      "prerelease": false,
+      "published_at": "2025-02-12T22:55:54Z",
+      "tag_name": "v4.4.0"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/4.3.5",
+      "name": "4.3.5",
+      "prerelease": false,
+      "published_at": "2024-12-02T22:27:12Z",
+      "tag_name": "4.3.5"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.3.4",
+      "name": "OpenBB Platform v4.3.4",
+      "prerelease": false,
+      "published_at": "2024-10-25T18:14:13Z",
+      "tag_name": "v4.3.4"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.3.3",
+      "name": "OpenBB Platform v4.3.3",
+      "prerelease": false,
+      "published_at": "2024-10-08T17:14:48Z",
+      "tag_name": "v4.3.3"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/4.3.2",
+      "name": "4.3.2",
+      "prerelease": false,
+      "published_at": "2024-09-11T16:11:56Z",
+      "tag_name": "4.3.2"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.3.1",
+      "name": "OpenBB Platform v4.3.1",
+      "prerelease": false,
+      "published_at": "2024-08-09T08:29:56Z",
+      "tag_name": "v4.3.1"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/4.3.0",
+      "name": "4.3.0",
+      "prerelease": false,
+      "published_at": "2024-07-10T09:42:27Z",
+      "tag_name": "4.3.0"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/4.2.3",
+      "name": "4.2.3",
+      "prerelease": false,
+      "published_at": "2024-06-19T12:17:55Z",
+      "tag_name": "4.2.3"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.2.2",
+      "name": "v4.2.2",
+      "prerelease": false,
+      "published_at": "2024-06-11T09:49:36Z",
+      "tag_name": "v4.2.2"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.2.1",
+      "name": "v4.2.1",
+      "prerelease": false,
+      "published_at": "2024-05-23T09:09:03Z",
+      "tag_name": "v4.2.1"
+    },
+    {
+      "draft": false,
+      "html_url": "https://github.com/openbq-org/OpenBB/releases/tag/v4.2.0",
+      "name": "v4.2.0",
+      "prerelease": false,
+      "published_at": "2024-05-15T18:55:44Z",
+      "tag_name": "v4.2.0"
+    }
+  ],
+  "version_note": "Exact candidate pyproject declares core/platform-api 2.0.1; release prose describes the general 2.0.0 line. Exact source metadata governs the inventory."
+}

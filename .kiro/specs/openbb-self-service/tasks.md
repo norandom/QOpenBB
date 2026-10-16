@@ -33,7 +33,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 
 - [ ] 1. Establish source, quality and execution foundations
 
-- [ ] 1.1 Acquire owned sources and record the candidate baseline
+- [x] 1.1 Acquire owned sources and record the candidate baseline
   - Acquire exact owned-fork revisions, select the latest API release candidate and record upstream provenance, required package inventory and component license/asset constraints.
   - Distinguish release candidates from validated releases. Record missing/commercial chart assets and remove any assumption that an upstream embedded key establishes entitlement.
   - Done when source hashes and notices are reproducible, adaptation scope is recorded, and essential unresolved asset rights are explicit release blockers.

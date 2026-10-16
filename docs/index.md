@@ -12,6 +12,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Review acceptance criteria or approve the next phase | [Requirements](../.kiro/specs/openbb-self-service/requirements.md) and [phase status](../.kiro/specs/openbb-self-service/spec.json) |
 | Review service contracts, file ownership and acceptance gates | [Technical design](../.kiro/specs/openbb-self-service/design.md) |
 | Understand proposed services and compatibility risks | [Research](../.kiro/specs/openbb-self-service/research.md) and [Full versus Lite](../.kiro/specs/openbb-self-service/lite-vs-full.md) |
+| Inspect acquired sources, package compatibility and asset constraints | [Compatibility](compatibility.md) and [licenses](licenses.md) |
 | Contribute code, comments, evidence, or documentation | [Contribution guide](contributing.md) |
 
 ## Understand the proposed system
