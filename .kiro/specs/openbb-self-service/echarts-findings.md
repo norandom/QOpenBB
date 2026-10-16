@@ -41,10 +41,28 @@ No original mapper/component, settings editor, table selection or dashboard runt
 
 Independent Astra review reran the fixture with exit 0 and approved this bounded synthetic claim. The reviewer inspected the exported image and confirmed that only the intended title and revenue fields changed in the complete saved payload. Numeric assertions inspect ECharts options; they are not pixel-value comparisons. CDP checks cover runtime exceptions and loading failures, not every console message or HTTP error status. Resize/dispose behavior is not tested. Review evidence is retained separately in `artifacts/parity/echarts-probe/review.md` and `review-evidence/`.
 
+## Full application integration spike
+
+A disposable archive of candidate `48e3f59cc48e0ae7aa6f6ce92069fc5b10ee3e86` restores the original `ChartViewButton` from reference `38dffc33389aca0e4a87e0e88d42f7067aa220df` and mounts ECharts in the original chart wrapper. Actual Workspace widget/table contexts supply the data and chart-view state. The spike uses the original backend image with a temporary frontend overlay and isolated account; it is not a release image.
+
+Three compatibility changes were necessary:
+
+1. Replace the internals of `ChartViewElement`, preserving the original button and resize wrapper.
+2. Restore `AgGridTable`'s original chart-view state read, navbar visibility predicate and chart-container call site.
+3. Remove the replacement-era `communityBoundary` rejection of enabled chart view. Other legacy-state guards remain; their behavior is not accepted parity.
+
+The first two app attempts failed at the missing caller and then the rejection guard. After those scoped repairs, the actual app journey passed: real table -> original toggle -> visible grouped columns -> viewport resize -> toggle back -> real table. Instrumentation recorded width changing from 844 to 694 and chart disposal on return. The values are synthetic revenue 100/120 and EPS 1.2/1.4. Table checks use body-wide text presence; chart numbers are asserted in options and corroborated by a populated screenshot.
+
+This probe reads flat rows directly rather than restoring original aggregation/selection/transpose transformations. Its hardcoded dark styling, chart options and diagnostics are disposable instrumentation. No editor, theme fidelity, data refresh, detached-chart creation, save/reopen, export or broad model compatibility is established. Dashboard routes are overlaid because the SQLite readback issue remains unresolved. The known upstream HTML-as-JavaScript error remains recorded; no clean-console claim is made.
+
+Artifacts are in `artifacts/parity/echarts-integrated/`, including the source patches, build commands/results, manifests and journey. The temporary static directory retains unreferenced files from successive builds; this is not pristine release-build evidence. Private disposable account state must remain unpublished. See the [integration proposal](echarts-integration-proposal.md) and [original editor contract](echarts-editor-contract.md) for the remaining design work.
+
+Independent Astra review reran the Full-app journey with exit 0, checked the populated canvas and verified the original navbar predicate and unchanged button. Its source audit found four tracked modifications (the three compatibility files plus the temporary script-loading entry point) and one added ECharts asset. The served minified ECharts bundle hashes to `baa8dfe7e1d9336b98e8986ba7e20ea15e7cdbea1ef42a59d59478632fa45a1d`; this differs from the earlier standalone unminified bundle. Only the positive external-widget visibility branch ran, so full flag-condition parity remains unverified. Review evidence is in `artifacts/parity/echarts-integrated-review/review.md`. Owned browsers and the disposable container were removed after review; production files and dependencies remain unchanged.
+
 ## Next evidence gates
 
 1. The isolated grouped-column mapping, refresh, serialization/reload and image export probe has passed. Extend fixtures to the remaining saved-state forms before treating the codec as complete.
-2. Freeze the complete state codec and selection contracts, then restore the original container and outer actions in an approved integration task.
+2. Use the integrated spike to inform a typed production host. Freeze the complete state codec and selection contracts, then restore the container and outer actions in an approved integration task.
 3. Inventory and reproduce the original editor's controls and outcomes without hidden reductions.
 4. Compare integrated light/dark appearance, selection, detached chart creation, actual backend save/reopen and export. Resolve the independent SQLite readback issue before claiming persistence.
 5. Extend verification across the [capability matrix](../../../docs/renderer-capability-matrix.md), including combination, pivot, transpose, navigator and open Highcharts inputs.

@@ -123,6 +123,18 @@ Discovery scope: complex integration. Applied `kiro-spec-design` full discovery,
 | Dagger controls verification and publication | Rejected by owner clarification | Dagger is exclusively the image builder; CI commands must remain portable to Gitea |
 | Compose translation inside Dagger for acceptance | Rejected | It is outside Dagger's scope and cannot establish real bind/lifecycle behavior |
 
+### ECharts amendment synthesis
+
+The owner selected Apache ECharts after requiring original OpenBB control, theme, state and feature-flag parity. Current evidence and unresolved contracts are in [ECharts findings](echarts-findings.md), the [editor contract](echarts-editor-contract.md) and the [integration proposal](echarts-integration-proposal.md). The proposal is not a finalized design or implementation approval.
+
+Generalization: integrated and detached chart paths should retain their original storage forms while sharing renderer lifecycle and option mapping. Unknown-field retention is distinct from semantic support. One original state owner must serve controls, refresh and saved configuration.
+
+Build versus adopt: ECharts supplies rendering and public interaction/export APIs; existing OpenBB/Radix/react-colorful components supply control primitives. The AG-owned docked editor still needs compatible field/state behavior. No inspected library is a complete drop-in replacement for that editor. Native Perspective UI and a new chart toolbar do not satisfy the owner's requirement.
+
+Simplification: integrate at the existing chart container and existing action/state seams, without emulating all AG Grid APIs, introducing a general renderer framework or replacing dashboard storage. Keep provider fetching and SQLite persistence repair separate. Table capabilities and open Highcharts options remain required compatibility work, not implicitly covered by a grouped-column probe.
+
+Workflow guidance: `kiro-spec-design` supplies discovery, synthesis and the final design review gate; `kiro-review` and `kiro-verify-completion` constrain evidence claims. Existing documentation steering supplies COBESY's conclusion-first, evidence-qualified format. Core product/tech/structure steering remains absent; approved requirements and the available specialized steering remain authoritative. Final design generation is deferred until the concrete compatibility gaps are resolved.
+
 ### Design decisions
 
 Generalization: one selected API schema and dataset inventory supplies widget generation, later Excel generation and data-fidelity checks. One immutable release/evidence identity supplies local verification, CI promotion and Linux install. These contracts reduce duplicate configurations without introducing a general plugin framework.
