@@ -10,7 +10,7 @@ The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approve
 
 ## Dependency gates
 
-Next review: [original option-state design](../.kiro/specs/openbb-self-service/chart-option-state-design.md). Independent design review passed; owner approval is pending before bounded task generation. Shared types precede parallel baseline-transition and editor-mapping work. Effective theme resolution and application integration remain subsequent gates.
+The owner approved the [original option-state design](../.kiro/specs/openbb-self-service/chart-option-state-design.md) and autonomous implementation. Tasks 2.24-2.27, including both parallel implementation lanes and [joined verification](../.kiro/specs/openbb-self-service/chart-option-state-verification.md), are accepted. [Effective theme resolution](../.kiro/specs/openbb-self-service/chart-effective-style-discovery.md) and application integration remain subsequent work.
 
 | Stage | Work to resolve | Gate before proceeding |
 | --- | --- | --- |

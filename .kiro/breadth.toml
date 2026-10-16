@@ -138,3 +138,11 @@ planned_checks = ["immutable-resolved-observations", "category-and-series-identi
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/snapshotContracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/snapshot.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.test.ts", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/cartesian.spec.ts"]
 status = "passed"
 evidence = ["Tasks 2.19-2.21 independently accepted at Workspace 59118937434b9f5a9bebd4e80bcb54f7ca2d552e: frozen contracts, 26 snapshot tests, 52 mapping tests, strict TypeScript, scoped lint and complexity checks passed. Task 2.22 independently accepted at Workspace 06fdb859bf426eb44dce13c54b21c494fcc244fd: 124 units, strict checking, build, scoped lint and three browser cases passed with empty CDP diagnostics and inspected fresh images. Task 2.23 independently accepted with scoped GO: fresh 124 tests/strict/build, nine-module caps and twenty tested-source/dependency identities passed; matching-source task 2.22 browser evidence retained. See .kiro/specs/openbb-self-service/chart-snapshot-verification.md. Original application parity remains unverified."]
+
+[[capabilities]]
+id = "original-chart-option-state"
+requirements = ["4.8", "4.9", "10.4", "10.5", "10.6"]
+planned_checks = ["original-baseline-transitions", "captured-column-editor-patches", "integrated-detached-event-composition", "joined-option-state-regressions"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionStateContracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionState.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts"]
+status = "passed"
+evidence = ["Tasks 2.24-2.27 independently accepted with scoped GO and VERIFIED completion. Fresh joined checks pass 221 units, strict TypeScript, scoped lint, twelve-module caps and 42 source/dependency identities; independent Astra final review passed at Workspace 5c2df9864bed000170ffccde146273b468e0552e. See .kiro/specs/openbb-self-service/chart-option-state-verification.md. This is stored-state fidelity, not effective rendering or original application parity."]

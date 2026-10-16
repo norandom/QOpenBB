@@ -2,6 +2,8 @@
 
 The chart foundation provides separate integrated/detached state reducers and a React host for ECharts, verified in isolated fixtures. Application controls do not yet import these modules. Resolved flat snapshots and three Cartesian mappings now pass isolated verification; see [snapshot verification](../.kiro/specs/openbb-self-service/chart-snapshot-verification.md). Original editor behavior, styling, full family coverage and backend save/reopen remain later gates under the [approved task boundary](../.kiro/specs/openbb-self-service/tasks.md#approved-design-slice-chart-state-and-lifecycle-foundation).
 
+The next stored-option slice is also accepted: baseline initialization/partition transitions and column-editor patches compose with the original reducers. Fresh verification passes 221 unit tests, strict TypeScript, scoped lint and twelve-module complexity checks. See [option-state verification](../.kiro/specs/openbb-self-service/chart-option-state-verification.md). This adds state compatibility evidence; it does not establish effective styling or application parity.
+
 ECharts is pinned to 6.0.0 in the owned Workspace package and Bun lock, with zrender 6.0.0 and tslib 2.3.0. Bun 1.4.3 remains the existing lock compatibility exception; migrating to pnpm would change unrelated baseline resolution. Retain the installed ECharts `LICENSE` and `NOTICE` and zrender `LICENSE`; these packages use Apache-2.0 and BSD-3-Clause respectively. Lock integrity hashes identify the downloaded package contents.
 
 ## Restore and run

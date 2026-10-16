@@ -787,7 +787,7 @@ Owner approved the option-state design and autonomous implementation on 2026-10-
   - _Depends: 2.24_
   - _Requirements: 4.8, 4.9_
 
-- [ ] 2.27 Verify and accept the joined option-state boundary
+- [x] 2.27 Verify and accept the joined option-state boundary
   - Add explicit integration cases to editorEvents.test.ts after both lanes freeze: actual baseline selection -> actual event mapper -> accepted reducers. Verify successive edits, partition transition, supplied family change and detached replacement with independent expected values.
   - Run fresh complete chart units, strict TypeScript, scoped lint, full registered chart-module complexity audit and exact source/dependency identity checks. No new browser acceptance claim: renderer code is unchanged, original runtime parity remains unverified.
   - Update actual test paths/evidence, inventory, source pin and scoped verification report; selectively commit accepted changes while preserving unrelated work. Done when independent final review verifies the joined contract and honest remaining gaps, with reproducible commands and exit codes.
@@ -805,3 +805,5 @@ Task 2.24 accepted after independent Astra review: shared contracts and captured
 Task 2.25 accepted after independent Astra review: 39 focused tests, strict TypeScript, repository lint and eight adversarial cases passed. Caps: 200 physical, 96 logical, largest function 14. Evidence: artifacts/task-2.25/review/review.md. Actual reducer integration remains task 2.27.
 
 Task 2.26 accepted after independent Sol review: 53 focused editor/composition tests, strict TypeScript, actual repository lint and registered caps passed. Evidence: artifacts/task-2.26/review/review.md. Joined baseline integration and broader renderer parity remain separate gates.
+
+Task 2.27 accepted at Workspace 5c2df9864bed000170ffccde146273b468e0552e after independent Astra final review: scoped GO for 2.24-2.27, completion VERIFIED, fresh 221 units, strict TypeScript, scoped lint, twelve-module caps and 42 source/dependency identities passed. Evidence: artifacts/task-2.27/review/review.md and [option-state verification](chart-option-state-verification.md). Full renderer, browser parity and persistence remain unverified.

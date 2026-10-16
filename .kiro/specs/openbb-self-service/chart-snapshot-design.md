@@ -81,6 +81,8 @@ After design approval, generate bounded tasks. Controller freezes snapshot/style
 
 ## Remaining Discovery
 
+Update after this slice's acceptance: seven outgoing original-editor payloads were subsequently captured using the verified save shortcut. See [option discovery](chart-option-discovery.md) and the [approved option-state design](chart-option-state-design.md). The capture gap described below is historical; effective styling and real persistence remain open.
+
 Capture actual original editor save payloads before designing a legacy-field registry. Current capture waited eight seconds; both inspected revisions dispatch state at 30 seconds and dashboard saves at 60 seconds. Observe that schedule or verify an explicit save action before repeating capture. An observed outgoing body is not proof of successful persistence.
 
 SQLite is a separate proposed repair: six dialect-specific string expressions plus real CRUD tests. Source review also found an entity-sharing creator query missing its User join. Neither concatenation probes nor engine recreation establish service restart/reopen acceptance. Keep this work separately reviewed, without introducing another database or adapter service.
