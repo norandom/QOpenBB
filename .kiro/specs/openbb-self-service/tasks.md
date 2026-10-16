@@ -642,7 +642,7 @@ Whole-project TypeScript remains separately blocked by upstream TS6305 composite
   - _Depends: 2.14_
   - _Requirements: 4.8, 4.9, 10.1, 10.3_
 
-- [ ] 2.16 (P) Implement bounded ECharts instance ownership
+- [x] 2.16 (P) Implement bounded ECharts instance ownership
   - Implement public-API mount/update/resize/image-export/dispose operations from the frozen complete-option contract. Keep the instance private, defer initialization for an unsized container, and prevent callbacks from mutating a disposed or replaced instance.
   - Test update ordering, cleanup on failure, repeated disposal, replacement/remount, hidden-to-sized recovery and image-export error handling. Do not claim mocked lifecycle tests establish real rendering.
   - Done when lifecycle units and focused strict checking pass with independent review; no provider data, application persistence, chart-family translation or new product controls enter this module.
@@ -674,3 +674,5 @@ Task 2.13 accepted after independent Astra review and fresh unit, strict TypeScr
 Task 2.14 accepted at Workspace `bfba80d7f7875fffa60d6d37645a422a3097ea63` after independent Astra source comparison, 11 unit tests, strict TypeScript, scoped lint and fresh complexity verification. Runtime option values remain separate from serialized unknown JSON, with repeated-edit input/output closure and no new storage envelope. Frozen contracts now permit the state and lifecycle lanes to start. Evidence: `artifacts/task-2.14/review/`.
 
 Task 2.15 accepted at Workspace `5d6674e5629fbceda11047bcefcfac237ccd4e62`. Independent source comparison and 26 tests (16 reducer cases plus 10 contract cases), strict TypeScript, lint and complexity checks passed. Integrated and detached reducers preserve the original distinct writes, including unknown fields and runtime undefined values. Evidence: `artifacts/task-2.15/review/review.md`. These modules are not wired into application controls.
+
+Task 2.16 accepted at Workspace `5937af2c73c3f1943fb9a16c13236b46ee623b9c`. Independent review reproduced 13 lifecycle unit cases, strict TypeScript and lint; the combined complexity gate passed. Evidence: `artifacts/task-2.16/review/review.md`. Mocked library calls establish lifecycle ownership and failure handling; real rendering remains task 2.17.
