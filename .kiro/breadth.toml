@@ -1,4 +1,4 @@
-# Feature -> spec -> checks -> evidence. Planned checks do not exist yet.
+# Feature -> spec -> checks -> evidence. Planned checks are not passing tests.
 schema_version = 1
 draft = true
 owning_spec = "openbb-self-service"
@@ -9,8 +9,8 @@ id = "baseline-provenance"
 requirements = ["1.1", "1.2", "1.3", "1.4", "1.5"]
 planned_checks = ["upstream-source-and-image-manifest", "clean-build-dependencies"]
 test_paths = []
-status = "planned"
-evidence = []
+status = "unverified"
+evidence = ["Task 1.1 accepted: 53 acquisition integrity checks and independent review; sources.lock.json and sources/notices.json record revisions and retained notice hashes. Runtime, dependency compatibility and image acceptance remain unverified."]
 
 [[capabilities]]
 id = "compose-lifecycle"
