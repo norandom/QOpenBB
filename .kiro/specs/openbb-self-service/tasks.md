@@ -737,7 +737,7 @@ Reuse the accepted Node/dependency environment and existing Vitest, strict TypeS
   - _Depends: 2.20, 2.21_
   - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.3, 10.4_
 
-- [ ] 2.23 Accept only the joined snapshot and mapping evidence
+- [x] 2.23 Accept only the joined snapshot and mapping evidence
   - Run fresh focused units, strict TypeScript, fixture build and browser regressions against exact joined source/dependency identities. Audit imports/diffs and all four maintained modules; confirm no app activation, feature/flag edits, editor parsing, SQLite, provider or Excel changes entered the branch.
   - Update actual breadth test paths/results, maintained inventory, source identities and a scoped verification report linked from chart documentation. Preserve unrelated work and overall renderer parity as unverified; select only accepted changes for commits.
   - Done when independent final review passes with reproducible commands, exit codes and sanitized evidence, the shared-module audit passes, and remaining original UI, mixed-unit/multi-axis, grid capture and persistence obligations are explicit. No release image is promoted.
@@ -753,3 +753,5 @@ Task 2.20 accepted at Workspace 616a0a70241fd15a10e0dc91dcec93cf701847ac after i
 Task 2.21 accepted at Workspace 59118937434b9f5a9bebd4e80bcb54f7ca2d552e after independent Astra review. Fresh 52 mapping tests, strict TypeScript and actual repository lint pass. Mapper metrics: 273 physical, 90 logical, largest function 15. Evidence: artifacts/task-2.21/review/verdict.md. Browser composition remains task 2.22; original renderer parity is unverified.
 
 Task 2.22 accepted at Workspace 06fdb859bf426eb44dce13c54b21c494fcc244fd after independent Astra verification: 124 tests, strict TypeScript, build, scoped lint and three browser cases passed; CDP diagnostics are empty. Fresh PNGs show negative stacking, repeated categories and line gaps. Evidence: artifacts/task-2.22/review/review.md. Fixture animation is disabled to make image verification deterministic; original application parity remains unverified.
+
+Task 2.23 accepted after independent Astra joined review and scoped GO for tasks 2.19-2.23 only. Fresh verification passed 124 tests, strict TypeScript, fixture build, all nine production module caps, twenty source/dependency identity checks, metadata and documentation links. Matching-source independent task 2.22 browser evidence supplies three passing cases with empty CDP diagnostics. See [snapshot verification](chart-snapshot-verification.md) and artifacts/task-2.23/review/verdict.md. Full renderer and release acceptance remain open.

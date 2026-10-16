@@ -1,6 +1,6 @@
 # Verify the isolated chart foundation
 
-The chart foundation provides separate integrated/detached state reducers and a React host for ECharts, verified in isolated fixtures. Application controls do not yet import these modules. Original editor behavior, styling, chart-family translation and backend save/reopen remain later gates under the [approved task boundary](../.kiro/specs/openbb-self-service/tasks.md#approved-design-slice-chart-state-and-lifecycle-foundation).
+The chart foundation provides separate integrated/detached state reducers and a React host for ECharts, verified in isolated fixtures. Application controls do not yet import these modules. Resolved flat snapshots and three Cartesian mappings now pass isolated verification; see [snapshot verification](../.kiro/specs/openbb-self-service/chart-snapshot-verification.md). Original editor behavior, styling, full family coverage and backend save/reopen remain later gates under the [approved task boundary](../.kiro/specs/openbb-self-service/tasks.md#approved-design-slice-chart-state-and-lifecycle-foundation).
 
 ECharts is pinned to 6.0.0 in the owned Workspace package and Bun lock, with zrender 6.0.0 and tslib 2.3.0. Bun 1.4.3 remains the existing lock compatibility exception; migrating to pnpm would change unrelated baseline resolution. Retain the installed ECharts `LICENSE` and `NOTICE` and zrender `LICENSE`; these packages use Apache-2.0 and BSD-3-Clause respectively. Lock integrity hashes identify the downloaded package contents.
 
@@ -17,7 +17,7 @@ node node_modules/typescript/bin/tsc --project tests/unit/chart-compatibility/ts
 node node_modules/vite/bin/vite.js build --config tests/e2e/chart-compatibility/vite.config.ts
 ```
 
-The focused TypeScript configuration includes the complete new compatibility/host module directories, unit tests and browser fixture sources. It is separate from the upstream whole-application TS6305/TS5103 failures. Vitest uses one worker; its real-library SVG server-rendering check validates known synthetic values. The browser fixture uses `envDir: false` and only hardcoded observations, `123.45 USD` and `67.89 USD`.
+The focused TypeScript configuration includes the complete new compatibility/host module directories, unit tests and browser fixture sources. It is separate from the upstream whole-application TS6305/TS5103 failures. Vitest uses one worker; its real-library SVG server-rendering check validates known synthetic values. The browser fixture uses `envDir: false` and only synthetic observations. The original smoke uses `123.45 USD` and `67.89 USD`; the Cartesian fixture adds fractional, negative, zero and null Revenue/Costs observations with repeated dates.
 
 The root verification environment pins Playwright 1.64.0. The application lock separately retains 1.62.1. For the browser command, temporarily resolve the fixture's `@playwright/test` to the root verification package in the disposable copy; mixing the copies fails test registration. `QOPENBB_ROOT` must name the absolute root checkout path:
 
@@ -49,7 +49,7 @@ The tooling fixture imports ECharts directly. The separate host fixture imports 
 | React host | Observer ownership, updates, error reporting, StrictMode cleanup and retained export handles | 6 host unit cases |
 | Real renderer | Known numeric values, visible output, resized/updated PNG contents, hidden remount, formatter failure and recovery | Actual-host browser journey plus the original tooling smoke |
 
-The focused suite contains 46 tests, including one real-library SVG tooling test. Its production browser suite has two cases with captured CDP diagnostics and synthetic image evidence. The existing Perspective runtime additionally passes 10 unit cases, strict checking and four production-browser regressions. These counts describe component verification, not dashboard acceptance.
+The current focused suite contains 124 tests: 46 foundation, 26 snapshot and 52 mapping cases. Its production browser suite has three cases with captured CDP diagnostics and synthetic image evidence. The earlier foundation gate also verified the existing Perspective runtime with 10 unit cases, strict checking and four browser regressions; that evidence is historical and was not rerun for this isolated mapping slice. These counts describe component verification, not dashboard acceptance.
 
 Task-local evidence is under ignored `artifacts/task-2.13/` through `task-2.17/`; independent reports live in each task's `review/` directory. Joined evidence and the Perspective regression are under `artifacts/task-2.18/`. Use the [foundation verification record](../.kiro/specs/openbb-self-service/chart-foundation-verification.md) for source identities, review status and remaining integration obligations.
 
