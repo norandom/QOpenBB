@@ -27,4 +27,4 @@ Adapted at the user's request on 2026-10-16 from the sibling because-security-qu
 
 During implementation add actual test paths/IDs and evidence links. Preserve upstream test entry points where usable; do not invent command names or copy Angular/Perspective-specific runners into this React application. Portable repository verification commands own the closing gate, including the relevant browser checks; Dagger only builds images, and a Python-only gate cannot certify Workspace or Excel.
 
-Current state: policy and initial mapping only. No QOpenBB Playwright runner, DevTools connection, pytest suite, or runtime acceptance run is installed or verified yet.
+Current state: foundation pytest suites validate complexity and evidence contracts. Browser isolation, DevTools diagnostics and application runtime acceptance remain unverified; task 1.7 owns the browser verification infrastructure. The breadth map records accepted checks and remaining gaps.

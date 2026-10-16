@@ -16,6 +16,6 @@ User direction, 2026-10-16: Dagger builds the images in GitHub; the private Linu
 - Record rollback image sets and compatible backup requirements. Test backup/restore before claiming recoverability.
 - Do not publish or start placeholder images. The current compose.validation.env is parser-only.
 
-Current state: requirement/policy only. No GitHub workflow or Dagger module exists yet.
+Current state: pinned toolchains, a minimal Dagger SDK scaffold and portable evidence validation are accepted foundations. Executable image builds/exports belong to task 1.8; GitHub workflows, publication and deployment acceptance remain pending.
 
 Deployment: qbb.hanse-hedge.fund behind owner-managed Cloudflare Access/cloudflared. Publish only plain HTTP on 0.0.0.0:23003, bind mount ./data/workspace, and keep service topology identical on WSL/Linux. No tunnel service, origin certificates, managed data volumes, or notebook service.

@@ -29,7 +29,7 @@ Jupyter is managed separately. Custom PostgreSQL integration remains deferred.
 | [Requirements](.kiro/specs/openbb-self-service/requirements.md) | Observable acceptance criteria and scope |
 | [Research](.kiro/specs/openbb-self-service/research.md) | Source references and proposed integration contracts |
 | [Technical design](.kiro/specs/openbb-self-service/design.md) | Approved service contracts, file boundaries and acceptance strategy |
-| [Implementation tasks](.kiro/specs/openbb-self-service/tasks.md) | 49 bounded tasks with exclusive lanes, complexity caps and acceptance joins |
+| [Implementation tasks](.kiro/specs/openbb-self-service/tasks.md) | Bounded tasks with exclusive lanes, complexity caps and acceptance joins |
 | [Phase status](.kiro/specs/openbb-self-service/spec.json) | Tasks approved; foundation implementation in progress |
 | [Contribution guide](docs/contributing.md) | Evidence, documentation, and code-comment conventions |
 
