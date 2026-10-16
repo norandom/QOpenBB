@@ -2,13 +2,13 @@
 
 ## Introduction
 
-The owner of QOpenBB wants to take over the open-source OpenBB Workspace environment for personal development and self-hosting. Development runs on Windows with WSL and Docker; deployment targets a private Linux server. The immediate objective is a reproducible, as-is upstream baseline with Workspace, its application backend, the open-source OpenBB data API, Financial Modeling Prep (FMP), and the Excel add-in. Jupyter is an optional research surface.
+The owner of QOpenBB wants to take over the open-source OpenBB Workspace environment for personal development and self-hosting. Development runs on Windows with WSL and Docker; deployment targets a private Linux server. The immediate objective is a reproducible upstream baseline using the Full Workspace variant, its application backend, the open-source OpenBB data API, Financial Modeling Prep (FMP), FRED, and the Excel add-in. Jupyter is an optional research surface.
 
 The owner explicitly deferred a custom data integration backed by their own PostgreSQL database. This feature must establish the baseline before redesigning or extending it.
 
-The first acceptance journey is dashboard construction using ready-made widgets backed by FMP through the owner's self-hosted open-source OpenBB data API. Both the Workspace application backend and the data API run in this setup; only FMP is the external financial-data provider. Dashboard usability takes priority over optional notebooks and later custom integrations.
+The first acceptance journey is dashboard construction using ready-made widgets backed by FMP and FRED through the owner's self-hosted open-source OpenBB data API. Both the Workspace application backend and the data API run in this setup; FMP and FRED are the external financial-data providers. Dashboard usability takes priority over optional notebooks and later custom integrations. The Full image variant is selected explicitly; enabling Full does not imply that every hosted AI or catalog service is available.
 
-The owner selected the latest OpenBB data API as the target, with regenerated Workspace widget definitions and Excel functions and provider adaptations where needed. Pin the latest validated release at implementation time rather than tracking a mutable version. Local credentials belong in a gitignored `.env`; `.env.sample` is the public, empty-value template. FRED, EconDB, and AI access are optional extensions, not prerequisites for the first FMP dashboard.
+The owner selected the latest OpenBB data API as the target, with regenerated Workspace widget definitions and Excel functions and provider adaptations where needed. Pin the latest validated release at implementation time rather than tracking a mutable version. Local credentials belong in a gitignored `.env`; `.env.sample` is the public, empty-value template. FMP and FRED are required primary providers; EconDB and AI remain optional extensions.
 
 ## Boundary Context
 
@@ -61,8 +61,8 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 6. When the owner selects available widgets, Workspace shall allow adding, arranging, resizing, and removing them in an owned dashboard.
 7. When the owner saves and reopens an FMP-backed dashboard, Workspace shall retain its layout and widget parameters and allow refreshing supported data through the self-hosted API.
 
-### Requirement 5: Open-source data API and FMP
-**Objective:** As the owner, I want FMP data through a self-hosted OpenBB API so that data access does not depend on OpenBB's hosted API.
+### Requirement 5: Open-source data API with FMP and FRED
+**Objective:** As the owner, I want FMP and FRED data through a self-hosted OpenBB API so that data access does not depend on OpenBB's hosted API.
 
 #### Acceptance Criteria
 1. When the owner configures a valid FMP credential and requests a dataset supported by the installed baseline and the account entitlement, the data service shall return that dataset.
@@ -70,6 +70,10 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 3. The environment shall keep the FMP credential out of frontend bundles, committed configuration, and notebook outputs supplied with the baseline.
 4. When the owner requests the same supported dataset through Workspace and the data API with equivalent parameters, the environment shall preserve the dataset's financial values and available period, currency, and unit metadata.
 5. The environment shall support the baseline data workflow without a custom database or custom data connector.
+6. When the owner configures a valid FRED credential and selects a supported economic series, the data service shall return the series through the self-hosted API with its available dates, units, and frequency metadata.
+7. When the owner adds a supported FRED widget to a dashboard containing FMP widgets, Workspace shall display and refresh both sources through the self-hosted API.
+8. If a FRED request fails because of authentication, throttling, or unavailable data, the environment shall report the failure without silently substituting another source.
+9. The environment shall keep the FRED credential out of frontend bundles, committed configuration, and notebook outputs supplied with the baseline.
 
 ### Requirement 6: Excel baseline integration
 **Objective:** As the owner, I want to use the released Excel add-in with the self-hosted environment.

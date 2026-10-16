@@ -5,12 +5,13 @@ name: openbb-self-service
 
 services:
   workspace:
-    image: ${WORKSPACE_IMAGE:?Set a verified upstream Lite image digest}
+    image: ${WORKSPACE_IMAGE:?Set the verified Full Workspace image digest}
     restart: unless-stopped
     ports:
       - "127.0.0.1:${WORKSPACE_PORT:-3000}:3000"
     volumes:
       - workspace-data:/data
+    # Build this image with OPENBB_IMAGE_VARIANT=full using upstream packaging.
     # Retain upstream bootstrap/configuration initially. Hosted-only features
     # must be inventoried during baseline verification.
 
@@ -22,7 +23,8 @@ services:
       - "127.0.0.1:${DATA_API_PORT:-6900}:6900"
     environment:
       FMP_API_KEY: ${FMP_API_KEY:?Supply the FMP credential outside source control}
-    # Image contract: selected/pinned OpenBB API and FMP packages, with its
+      FRED_API_KEY: ${FRED_API_KEY:?Supply the FRED credential outside source control}
+    # Image contract: latest validated OpenBB API, FMP adaptation and FRED, with its
     # validated server auth configuration. No assumed Workspace JWT support.
     # This proposal MUST NOT be exposed remotely until auth/TLS are validated.
 

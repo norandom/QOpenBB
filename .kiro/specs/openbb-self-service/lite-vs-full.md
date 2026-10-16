@@ -26,6 +26,8 @@ Inspected upstream revision: `be00e95019a55d57af146919ee46b7e1a4859226`, 2026-10
 
 ## Interpretation for QOpenBB
 
+Decision, 2026-10-16: the owner selected **Full**. Build the upstream image with `OPENBB_IMAGE_VARIANT=full`; retain the same combined packaging. FMP and FRED are the required first data sources through the self-hosted API.
+
 Lite is sufficient to evaluate baseline dashboards and the shared chart menu. Full is useful when the owner wants configuration flexibility without rebuilding the lock profile. Both can be built by the same Dagger workflow using the existing `OPENBB_IMAGE_VARIANT` build argument. Do not create parallel implementations of the frontend/backend just to support variants.
 
 The default chart menu is a stronger statement than arbitrary library support: although chart utility code mentions heatmaps, waterfall, treemap and other families, that does not prove they are selectable in the standard menu. Do not advertise those as Full-only features. Third-party chart dependencies/assets need their own distribution and build verification; a root open-source license does not establish the behavior of a clean deployment.

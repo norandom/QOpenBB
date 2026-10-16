@@ -4,13 +4,13 @@ Research date: 2026-10-16. Status: requirements-phase research and deployment pr
 
 ## Confirmed direction
 
-Develop on Windows/WSL Docker; deploy to a private Linux server. Establish the upstream environment as-is first. Defer the owner's PostgreSQL data integration. Avoid splitting the bundled application into new microservices in the baseline.
+Develop on Windows/WSL Docker; deploy to a private Linux server. Establish the upstream Full variant first, using OPENBB_IMAGE_VARIANT=full in the existing combined packaging. FMP and FRED are the primary data providers. Defer the owner's PostgreSQL data integration. Avoid splitting the bundled application into new microservices in the baseline.
 
 ## Verified upstream facts
 
 The [Workspace repository](https://github.com/OpenBB-finance/workspace) is public, archived, and contains terminalpro, backend-api, lite, and excel-add-in. The inspected main revision is `be00e95019a55d57af146919ee46b7e1a4859226`. Its root license is Apache-2.0; component notices must also be preserved. Archival is verified; a broader claim about the company's legal status is not needed for this spec.
 
-The [Lite packaging](https://github.com/OpenBB-finance/workspace/blob/be00e95019a55d57af146919ee46b7e1a4859226/lite/README.md) already combines Workspace, its application backend, SQLite, Redis, and nginx. Persistent application state lives under `/data`. This is the lowest-change baseline. Its published quickstart names `openbb/lite:latest`; availability and a digest have not been verified here. Do not treat that mutable tag as a reproducibility pin. Some frontend settings are locked at build time.
+The [Lite packaging](https://github.com/OpenBB-finance/workspace/blob/be00e95019a55d57af146919ee46b7e1a4859226/lite/README.md) already combines Workspace, its application backend, SQLite, Redis, and nginx. Persistent application state lives under `/data`. Use its Full build variant for the selected baseline; it retains the combined packaging. Its published quickstart names `openbb/lite:latest`; availability and a digest have not been verified here. Do not treat that mutable tag as a reproducibility pin. Some frontend settings are locked at build time.
 
 The [data-platform repository](https://github.com/openbq-org/OpenBB) is separate and open source; the former OpenBB-finance/OpenBB URL redirects there. Its license must be inspected independently when pinning a release. The [OpenBB API launcher](https://docs.openbb.co/odp/python/extensions/interface/openbb-api) serves installed data extensions and Workspace metadata. Thus two different backends are needed: application state/authentication, and financial data.
 
@@ -28,8 +28,8 @@ Distinguish endpoint-generated widgets from the historical curated/premium data 
 
 | Service | Baseline responsibility | State | Initial treatment |
 | --- | --- | --- | --- |
-| workspace | Upstream Lite: frontend + application API + bundled SQLite/Redis | `/data` named volume | Required; retain packaging |
-| data-api | Pinned OpenBB API + compatible FMP provider | configuration, no custom DB | Required; small reproducible image to build |
+| workspace | Upstream Full variant: frontend + application API + bundled SQLite/Redis | `/data` named volume | Required; retain packaging |
+| data-api | Latest validated OpenBB API + FMP adaptation + FRED | configuration, no custom DB | Required; small reproducible image to build |
 | excel | Serve upstream add-in build and manifest | generated assets in image | Excel profile; build/auth verification required |
 | jupyter | Authenticated JupyterLab client of data-api | notebook volume | Optional notebooks profile |
 | TLS ingress | Trusted client-facing HTTPS, private reachability | certificates/configuration | Reuse server ingress if available; establish during design |
@@ -83,12 +83,12 @@ The user requires Dagger as the build/check/publish owner and GitHub Actions as 
 
 The user requested conventions from `../because-security-quant-terminal`. Adapted testing and CI policies live in `.kiro/steering/testing.md` and `ci.md`, with initial feature-to-spec-to-check mapping in `.kiro/breadth.toml`. No source-project PostgreSQL fixture, Angular/Perspective runner, browser profile, credentials, or acceptance status is imported. Those are specific to that application. The portable browser/parallelism rules are copied; actual QOpenBB runners will be implemented against its stack.
 
-See [Lite versus Full](lite-vs-full.md) for source-verified differences. This comparison does not change the selected baseline variant automatically.
+See [Lite versus Full](lite-vs-full.md) for source-verified differences. The owner subsequently selected Full explicitly; that selection is now the baseline.
 
 ## Access and keys
 
-- FMP: account/API key and endpoint entitlements for the desired widgets. Get the key from the [FMP dashboard](https://site.financialmodelingprep.com/developer/docs/dashboard). First required provider.
-- FRED: optional macroeconomic data; uses FRED_API_KEY. See the [OpenBB FRED setup](https://docs.openbb.co/odp/python/quickstart/user).
+- FMP: account/API key and endpoint entitlements for the desired widgets. Get the key from the [FMP dashboard](https://site.financialmodelingprep.com/developer/docs/dashboard). Required primary provider alongside FRED.
+- FRED: required primary macroeconomic data source; uses FRED_API_KEY. See the [OpenBB FRED setup](https://docs.openbb.co/odp/python/quickstart/user).
 - EconDB: optional; registered users can retrieve a token from their account. See [EconDB's access example](https://www.econdb.com/blog/pandas-datareader/). A v5 provider adaptation is required before promising this integration.
 - ECB, IMF, OECD and other sources: use only the desired supported connectors. The [current provider inventory](https://docs.openbb.co/odp/python/extensions/providers) identifies keyless and credentialed providers; no universal subscription or key bundle is required.
 - AI: optional and separate from data access. A custom agent can run as a self-hosted service implementing [agents.json and a streaming query endpoint](https://docs.openbb.co/workspace/developers/agents-integration), with its chosen model provider credentials or a reachable local model. An LLM key alone does not recreate the former hosted Copilot. Extra web-search services may need separate credentials. No AI provider or AI runtime is selected/implemented in this baseline.

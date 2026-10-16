@@ -13,15 +13,15 @@ The current work is a Kiro specification, not a runnable or verified deployment.
 - [Dagger build and pull-only delivery policy](.kiro/steering/ci.md)
 - [Feature/spec/test breadth map](.kiro/breadth.toml)
 
-Start with upstream Lite packaging, which contains the Workspace frontend and application backend, plus a separate open-source data API for FMP. Verify the released Excel add-in against that baseline and make Jupyter optional. The owner's future custom PostgreSQL data integration is explicitly deferred.
+Use the Full variant of upstream container packaging (`OPENBB_IMAGE_VARIANT=full`), which contains the Workspace frontend and application backend, plus a separate open-source data API for FMP and FRED. Verify the released Excel add-in against that baseline and make Jupyter optional. The owner's future custom PostgreSQL data integration is explicitly deferred.
 
 Small, documented Excel compatibility changes are permitted. Dagger will own local and GitHub Actions checks/builds/publication; the private Linux server will install immutable release images through Compose pulls. These are requirements, not an installed pipeline.
 
-First acceptance journey: build, save, reopen, and refresh dashboards using ready-made FMP-backed widgets from the self-hosted open-source OpenBB data API. Both backends are self-hosted; FMP supplies the external data.
+First acceptance journey: build, save, reopen, and refresh dashboards using ready-made FMP and FRED widgets from the self-hosted open-source OpenBB data API. Both backends are self-hosted; FMP and FRED supply external data.
 
 Target the latest validated data API release, regenerate widgets/Excel functions, and adapt the FMP provider as needed. Current v5 removed the old FMP/EconDB packages, so regeneration alone is insufficient.
 
-Real keys live in a gitignored `.env`; `.env.sample` is the public empty-value template. Copy it only when `.env` does not already exist, then populate keys locally. FMP is required first; FRED/EconDB and AI credentials are optional and their presence does not install those integrations. Never include `.env` in Dagger source uploads, Docker contexts, images, or logs.
+Real keys live in a gitignored `.env`; `.env.sample` is the public empty-value template. Copy it only when `.env` does not already exist, then populate keys locally. FMP and FRED are required; EconDB and AI are optional and their presence does not install those integrations. Never include `.env` in Dagger source uploads, Docker contexts, images, or logs.
 
 Validate the proposal's Compose syntax only:
 
