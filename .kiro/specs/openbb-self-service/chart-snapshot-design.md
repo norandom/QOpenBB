@@ -4,7 +4,7 @@
 
 Owner-approved design for the next isolated chart slice, following accepted tasks 2.13-2.18. It establishes lossless resolved data snapshots and three Cartesian render mappings. It does not enable a reduced chart experience in Workspace. Original controls, themes, flags and outcomes remain the release target under requirements 4.8-4.9.
 
-Source baseline: Workspace `042ba87e3208a51857da4ae2d1c3109a680716d9`; original behavior reference `38dffc33389aca0e4a87e0e88d42f7067aa220df`. This amendment supplements the parent design; all other requirement coverage stays with that design. The owner approved this design; task approval remains separate.
+Source baseline: Workspace `042ba87e3208a51857da4ae2d1c3109a680716d9`; original behavior reference `38dffc33389aca0e4a87e0e88d42f7067aa220df`. This amendment supplements the parent design; all other requirement coverage stays with that design. The owner approved this design and the bounded tasks 2.19-2.23.
 
 ## Boundary Commitments
 
@@ -77,7 +77,7 @@ This slice contributes evidence to 4.8 and 4.9; it cannot complete them. Origina
 
 ## Delivery Sequence
 
-After design approval, generate bounded tasks. Controller freezes snapshot/style contracts first. Sol snapshot and translator workers can then run concurrently with exclusive paths and shared frozen fixture definitions. Astra reviews the financial mapping and join. Controller serializes browser/build work and the final shared-module audit. No implementation is authorized by this proposal.
+After design approval, generate bounded tasks. Controller freezes snapshot/style contracts first. Sol snapshot and translator workers can then run concurrently with exclusive paths and shared frozen fixture definitions. Astra reviews the financial mapping and join. Controller serializes browser/build work and the final shared-module audit. Implementation is authorized only within approved tasks 2.19-2.23.
 
 ## Remaining Discovery
 

@@ -1,6 +1,6 @@
 # Snapshot task review
 
-Tasks 2.19-2.23 passed independent GPT-6 Astra task-graph review after one local repair. The owner approved the [design](chart-snapshot-design.md); the [tasks](tasks.md#approved-design-slice-resolved-snapshots-and-cartesian-mappings) await separate approval.
+Tasks 2.19-2.23 passed independent GPT-6 Astra task-graph review after one local repair. The owner approved the [design](chart-snapshot-design.md); the [tasks](tasks.md#approved-design-slice-resolved-snapshots-and-cartesian-mappings) were subsequently approved by the owner.
 
 The reviewer read requirements, parent and slice designs, existing tasks, task-generation rules and relevant steering. The repair makes executable inventory registration follow file creation: type modules enter in 2.19, runtime modules enter when their owning leaves create them. The checker must not receive mappings to nonexistent files.
 

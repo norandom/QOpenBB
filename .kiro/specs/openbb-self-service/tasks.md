@@ -683,7 +683,7 @@ Task 2.18 accepted after independent Astra joined review and scoped integration 
 
 ## Approved design slice: resolved snapshots and Cartesian mappings
 
-The owner approved the [snapshot design](chart-snapshot-design.md). Tasks 2.19-2.23 below await separate task approval. They extend the accepted foundation without activating application charts. Requirements 4.8-4.9 remain product-level obligations; passing this slice is not full renderer acceptance. Each leaf targets a 1-3 hour engineering unit; unexpected scope returns to the controller before implementation expands.
+The owner approved the [snapshot design](chart-snapshot-design.md). The owner approved tasks 2.19-2.23 for implementation ("yes, that fits the spec"). They extend the accepted foundation without activating application charts. Requirements 4.8-4.9 remain product-level obligations; passing this slice is not full renderer acceptance. Each leaf targets a 1-3 hour engineering unit; unexpected scope returns to the controller before implementation expands.
 
 ### Ownership and execution
 
