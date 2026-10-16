@@ -269,7 +269,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 3.4_
   - _Requirements: 5.5, 5.6, 5.8, 5.9, 11.1_
 
-- [ ] 3.6 Build and load the identified data runtime image
+- [x] 3.6 Build and load the identified data runtime image
   - Add the locked owned data runtime to the Dagger builder using recorded local provider packages rather than accidentally resolving replacements from a registry.
   - Export/load the initial image and verify source labels, supported routes and server credential initialization; generation consumes this exact loaded image in the next task.
   - Done when a clean identified image is available to the portable generation command without requiring generated contract snapshots as a build input.

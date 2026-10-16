@@ -19,6 +19,7 @@
           ".dagger/pyproject.toml", ".dagger/src/qopenbb/__init__.py",
           ".dagger/src/qopenbb/images.py", ".dagger/src/qopenbb/export.py",
           ".dagger/src/qopenbb/workspace.py", ".dagger/src/qopenbb/dockerfile.py",
+          ".dagger/src/qopenbb/data_api.py", "pipeline/qopenbb_ci/runtime_inputs.py",
           "pipeline/qopenbb_ci/sources.py", "pipeline/qopenbb_ci/staging.py",
           "pipeline/qopenbb_ci/images.py", "pipeline/qopenbb_ci/image_cli.py",
           "pipeline/qopenbb_ci/provenance.py",

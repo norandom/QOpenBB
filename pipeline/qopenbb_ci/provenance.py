@@ -7,6 +7,7 @@ from typing import Annotated, Literal
 from pydantic import BaseModel, ConfigDict, StringConstraints, ValidationError, field_validator, model_validator
 
 from qopenbb_ci.source_filter import ALLOW
+from qopenbb_ci.runtime_inputs import RUNTIME_FILES
 
 Digest = Annotated[str, StringConstraints(pattern=r'^[0-9a-f]{64}$', strict=True)]
 Revision = Annotated[str, StringConstraints(pattern=r'^[0-9a-f]{40}$', strict=True)]
@@ -41,15 +42,21 @@ class Sources(StrictBoundary):
 
 class Provenance(StrictBoundary):
     schema_version: Literal[1]
-    service: Literal['foundation-smoke', 'workspace']
+    service: Literal['foundation-smoke', 'workspace', 'data-api']
     sources: Sources
     smoke_sha256: Digest
+    runtime_inputs: dict[str, Digest] | None = None
     release_version: Annotated[str, StringConstraints(pattern=r'^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$', strict=True)] | None = None
 
     @model_validator(mode='after')
     def service_metadata(self):
+        if ((self.service == 'data-api') != (self.runtime_inputs is not None)
+                or (self.service != 'data-api' and 'runtime_inputs' in self.model_fields_set)):
+            raise ValueError('runtime inputs require data-api selection')
+        if self.runtime_inputs is not None and set(self.runtime_inputs) != RUNTIME_FILES:
+            raise ValueError('runtime input allowlist differs')
         if ((self.service == 'workspace') != (self.release_version is not None)
-                or (self.service == 'foundation-smoke' and 'release_version' in self.model_fields_set)):
+                or (self.service != 'workspace' and 'release_version' in self.model_fields_set)):
             raise ValueError('release identity requires workspace selection')
         return self
 

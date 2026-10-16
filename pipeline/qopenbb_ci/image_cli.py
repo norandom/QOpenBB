@@ -29,15 +29,16 @@ def parser() -> argparse.ArgumentParser:
     staging.add_argument('--workspace', type=Path, required=True)
     staging.add_argument('--data-api', type=Path, required=True)
     staging.add_argument('--destination', type=Path, required=True)
-    staging.add_argument('--service', choices=['foundation-smoke', 'workspace'], default='foundation-smoke')
+    staging.add_argument('--service', choices=['foundation-smoke', 'workspace', 'data-api'], default='foundation-smoke')
     staging.add_argument('--release-version')
+    staging.add_argument('--runtime-root', type=Path)
     exporting = commands.add_parser('export')
     exporting.add_argument('--stage', type=Path, required=True)
     exporting.add_argument('--tools', type=Path, required=True)
     exporting.add_argument('--lock', type=Path, required=True)
     exporting.add_argument('--policy', type=Path, required=True)
     exporting.add_argument('--sdk-python', type=Path, required=True)
-    exporting.add_argument('--service', choices=['foundation-smoke', 'workspace'], default='foundation-smoke')
+    exporting.add_argument('--service', choices=['foundation-smoke', 'workspace', 'data-api'], default='foundation-smoke')
     for command in [exporting, commands.add_parser('load'), commands.add_parser('inspect')]:
         command.add_argument('--archive', type=Path, required=True)
         command.add_argument('--report', type=Path, required=True)
@@ -97,7 +98,7 @@ def main() -> int:
             result = {key: acquire(args.destination / key, lock[key]) for key in ['workspace', 'data_api']}
         elif args.command == 'stage':
             result = stage(args.destination, {'workspace': args.workspace, 'data_api': args.data_api},
-                           read(args.policy), read(args.lock), args.service, args.release_version)
+                           read(args.policy), read(args.lock), args.service, args.release_version, args.runtime_root)
         elif args.command == 'export':
             result = export(args)
         else:
