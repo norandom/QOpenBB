@@ -29,6 +29,7 @@ Real credentials stay in ignored .env; [.env.sample](.env.sample) has empty valu
 - [Phase status](.kiro/specs/openbb-self-service/spec.json)
 - [Lite versus Full](.kiro/specs/openbb-self-service/lite-vs-full.md)
 - [Delegation and fan-out](.kiro/steering/delegation.md)
+- [Complexity caps for future tasks](.kiro/steering/complexity.md)
 - [Background verification](.kiro/steering/testing.md)
 - [Dagger delivery](.kiro/steering/ci.md)
 - [Feature/spec/test mapping](.kiro/breadth.toml)

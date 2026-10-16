@@ -17,6 +17,7 @@ Use at most four active slots: controller + up to two independent implementers +
 
 - Freeze shared interfaces before fan-out. Each lane has explicit prerequisites, exclusive writable paths, outputs, and join criteria in the reviewed task plan. A (P) label alone is insufficient.
 - One bounded task per worker; independent tasks may run concurrently. The controller owns shared contract edits and serializes coupled work. Stop affected lanes if ownership overlaps or contracts change.
+- Pass the task's applicable complexity caps and inventory scope from complexity.md to each worker/reviewer. Fan-out does not relax file/function caps or the final shared-module audit.
 - Each task retains implement -> independent review -> fresh verification -> acceptance. A reviewer must not rubber-stamp the implementer's report. Keep exact evidence/revision references.
 - One heavy build/suite at a time, with up to three independent verification processes only under testing.md. Serialize installs, shared fixture mutations, integration gates, and commits.
 - Freeze worker edits before selective staging/commit. Never commit another lane's unfinished work; preserve unrelated changes.

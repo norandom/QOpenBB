@@ -78,6 +78,8 @@ Use a fresh context for each independent implementer or reviewer, passing the ta
 
 ## QOpenBB verification and delivery
 
+- Before design/task generation or implementation, read `.kiro/steering/complexity.md`. Carry its 400 physical lines/file, 300 logical units/file, and 50/function caps into task completion criteria and worker handoffs. Include checker/inventory foundation work; policy text alone is not enforcement.
+
 - Read `.kiro/steering/testing.md` for development verification: isolated background Playwright/Chrome DevTools, hidden helper processes, bounded xdist/browser workers, and evidence requirements.
 - Read `.kiro/steering/ci.md` for Dagger-owned builds/checks/publication and image-pull deployment to the private Linux server.
 - Keep `.kiro/breadth.toml` aligned with capabilities, owning spec criteria, actual test paths and evidence. Planned checks are not completed tests.
