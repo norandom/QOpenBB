@@ -651,7 +651,7 @@ Whole-project TypeScript remains separately blocked by upstream TS6305 composite
   - _Depends: 2.14_
   - _Requirements: 4.8, 4.9, 10.1, 10.3_
 
-- [ ] 2.17 Bind the typed host and prove its real browser lifecycle
+- [x] 2.17 Bind the typed host and prove its real browser lifecycle
   - Connect React mounting, option/revision updates and resize observation to the accepted lifecycle module. Keep library types within the renderer boundary and export image data without defining original menu/filename semantics.
   - Extend the maintained isolated fixture to exercise populated charts with known options, option/data updates, size changes, zero-size recovery, unmount/remount, failure cleanup and PNG contents. Assert numeric options and visible output, not just constructor calls or canvas existence.
   - Done when the freshly built production fixture passes one-worker Playwright/CDP checks, the actual host is the tested import, resources are cleaned up and an independent reviewer reproduces the bounded result. Keep zoom/selection continuity, original styling and application save/reopen explicitly unverified.
@@ -676,3 +676,5 @@ Task 2.14 accepted at Workspace `bfba80d7f7875fffa60d6d37645a422a3097ea63` after
 Task 2.15 accepted at Workspace `5d6674e5629fbceda11047bcefcfac237ccd4e62`. Independent source comparison and 26 tests (16 reducer cases plus 10 contract cases), strict TypeScript, lint and complexity checks passed. Integrated and detached reducers preserve the original distinct writes, including unknown fields and runtime undefined values. Evidence: `artifacts/task-2.15/review/review.md`. These modules are not wired into application controls.
 
 Task 2.16 accepted at Workspace `5937af2c73c3f1943fb9a16c13236b46ee623b9c`. Independent review reproduced 13 lifecycle unit cases, strict TypeScript and lint; the combined complexity gate passed. Evidence: `artifacts/task-2.16/review/review.md`. Mocked library calls establish lifecycle ownership and failure handling; real rendering remains task 2.17.
+
+Task 2.17 accepted at Workspace `042ba87e3208a51857da4ae2d1c3109a680716d9`. Independent Astra verification passed all 46 focused tests, strict TypeScript, production build, two real-browser cases, lint and source identity checks. The reviewer inspected the 640 by 400 PNG with visible USD observations; browser tests also check numeric options, pixels, changed output, recovery and disposal. CDP diagnostics are empty. Evidence: `artifacts/task-2.17/review/verdict.md`. Original styling, interactions and application persistence remain outside this acceptance.
