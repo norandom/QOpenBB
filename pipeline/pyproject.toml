@@ -3,7 +3,9 @@ name = "qopenbb-ci"
 version = "0.1.0"
 description = "Portable QOpenBB delivery command foundation"
 requires-python = "==3.13.*"
-dependencies = []
+dependencies = [
+    "pydantic==2.12.5",
+]
 
 [project.scripts]
 qopenbb-ci = "qopenbb_ci.cli:main"

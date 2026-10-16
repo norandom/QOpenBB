@@ -61,6 +61,14 @@ status = "planned"
 evidence = []
 
 [[capabilities]]
+id = "evidence-contract-validation"
+requirements = ["1.1", "8.1", "9.2", "9.3", "10.5", "10.6", "12.4"]
+planned_checks = ["typed-artifact-boundaries", "independent-identity-matching", "missing-stale-nonpassing-evidence-blocks", "current-agent-checkpoint-unlocks-excel"]
+test_paths = ["tests/contracts/test_evidence.py", "tests/contracts/test_boundaries.py"]
+status = "unverified"
+evidence = ["Task 1.5 accepted after independent review: 107 fixture tests passed and 27 maintained files passed the combined complexity gate with no exceptions. Source acquisition validation passed with runtime_accepted=false. Runtime acceptance, publication and promotion remain unverified. See docs/evidence.md."]
+
+[[capabilities]]
 id = "dagger-image-delivery"
 requirements = ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7"]
 planned_checks = ["local-ci-dagger-parity", "ci-runner-portable-commands", "publish-and-digest-manifest", "failed-check-blocks-promotion", "pull-only-install", "build-secret-exclusion"]

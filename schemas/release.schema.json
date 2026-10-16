@@ -1,0 +1,269 @@
+{
+  "$defs": {
+    "Identity": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_hashes": {
+          "minProperties": 1,
+          "patternProperties": {
+            "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$": {
+              "pattern": "^sha256:[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "title": "Contract Hashes",
+          "type": "object"
+        },
+        "images": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Image"
+          },
+          "minProperties": 1,
+          "propertyNames": {
+            "enum": [
+              "workspace",
+              "data-api",
+              "agent",
+              "excel"
+            ]
+          },
+          "title": "Images",
+          "type": "object"
+        },
+        "lock_hashes": {
+          "$ref": "#/$defs/LockHashes"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "release_id": {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$",
+          "title": "Release Id",
+          "type": "string"
+        },
+        "revisions": {
+          "$ref": "#/$defs/Revisions"
+        },
+        "run_id": {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$",
+          "title": "Run Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "release_id",
+        "run_id",
+        "revisions",
+        "images",
+        "lock_hashes",
+        "contract_hashes"
+      ],
+      "title": "Identity",
+      "type": "object"
+    },
+    "Image": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture": {
+          "enum": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "title": "Architecture",
+          "type": "string"
+        },
+        "digest": {
+          "pattern": "^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*|\\[[a-fA-F0-9:]+\\])(?::[0-9]+)?/[a-z0-9]+(?:(?:[._]|__|-+)[a-z0-9]+)*(?:/[a-z0-9]+(?:(?:[._]|__|-+)[a-z0-9]+)*)*@sha256:[0-9a-f]{64}$",
+          "title": "Digest",
+          "type": "string"
+        }
+      },
+      "required": [
+        "digest",
+        "architecture"
+      ],
+      "title": "Image",
+      "type": "object"
+    },
+    "LockHashes": {
+      "additionalProperties": false,
+      "properties": {
+        "dependencies": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "title": "Dependencies",
+          "type": "string"
+        },
+        "source": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "title": "Source",
+          "type": "string"
+        },
+        "tools": {
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "title": "Tools",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "tools",
+        "dependencies"
+      ],
+      "title": "LockHashes",
+      "type": "object"
+    },
+    "Model": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$",
+          "title": "Name",
+          "type": "string"
+        },
+        "provider": {
+          "const": "anthropic",
+          "title": "Provider",
+          "type": "string"
+        }
+      },
+      "required": [
+        "provider",
+        "name"
+      ],
+      "title": "Model",
+      "type": "object"
+    },
+    "Revisions": {
+      "additionalProperties": false,
+      "properties": {
+        "agent": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{40}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Agent"
+        },
+        "data_api": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Data Api",
+          "type": "string"
+        },
+        "qopenbb": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Qopenbb",
+          "type": "string"
+        },
+        "workspace": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Workspace",
+          "type": "string"
+        }
+      },
+      "required": [
+        "qopenbb",
+        "workspace",
+        "data_api"
+      ],
+      "title": "Revisions",
+      "type": "object"
+    },
+    "StateCompatibility": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$",
+          "title": "Format",
+          "type": "string"
+        },
+        "restore_from": {
+          "items": {
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Restore From",
+          "type": "array"
+        }
+      },
+      "required": [
+        "format",
+        "restore_from"
+      ],
+      "title": "StateCompatibility",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance_refs": {
+      "items": {
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$",
+        "type": "string"
+      },
+      "title": "Acceptance Refs",
+      "type": "array"
+    },
+    "identity": {
+      "$ref": "#/$defs/Identity"
+    },
+    "profiles": {
+      "items": {
+        "const": "excel",
+        "type": "string"
+      },
+      "title": "Profiles",
+      "type": "array"
+    },
+    "required_configuration": {
+      "items": {
+        "pattern": "^[A-Z][A-Z0-9_]*$",
+        "type": "string"
+      },
+      "title": "Required Configuration",
+      "type": "array"
+    },
+    "schema_version": {
+      "maximum": 1,
+      "minimum": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "state_compatibility": {
+      "$ref": "#/$defs/StateCompatibility"
+    },
+    "status": {
+      "enum": [
+        "candidate",
+        "release"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "identity",
+    "profiles",
+    "required_configuration",
+    "state_compatibility",
+    "acceptance_refs"
+  ],
+  "title": "Release",
+  "type": "object"
+}

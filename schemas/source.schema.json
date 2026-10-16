@@ -1,0 +1,294 @@
+{
+  "$defs": {
+    "AcquisitionImages": {
+      "additionalProperties": false,
+      "properties": {
+        "identifiers": {
+          "items": {
+            "$ref": "#/$defs/Image"
+          },
+          "title": "Identifiers",
+          "type": "array"
+        },
+        "status": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "identifiers"
+      ],
+      "title": "AcquisitionImages",
+      "type": "object"
+    },
+    "CandidateSource": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "const": "sources/api-release.json",
+          "title": "Evidence",
+          "type": "string"
+        },
+        "revision": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Revision",
+          "type": "string"
+        },
+        "status": {
+          "const": "selected, unvalidated; existing acquisition revision retained until validation selects replacement",
+          "title": "Status",
+          "type": "string"
+        },
+        "tag": {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$",
+          "title": "Tag",
+          "type": "string"
+        },
+        "tag_object": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Tag Object",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tag",
+        "tag_object",
+        "revision",
+        "status",
+        "evidence"
+      ],
+      "title": "CandidateSource",
+      "type": "object"
+    },
+    "DataSource": {
+      "additionalProperties": false,
+      "properties": {
+        "adaptations": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Adaptations",
+          "type": "string"
+        },
+        "branch_at_acquisition": {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$",
+          "title": "Branch At Acquisition",
+          "type": "string"
+        },
+        "candidate_release": {
+          "$ref": "#/$defs/CandidateSource"
+        },
+        "local_checkout": {
+          "const": "vendor/data-api",
+          "title": "Local Checkout",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "repository": {
+          "const": "https://github.com/norandom/openbb-data-api.git",
+          "title": "Repository",
+          "type": "string"
+        },
+        "revision": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Revision",
+          "type": "string"
+        },
+        "upstream": {
+          "const": "https://github.com/openbq-org/OpenBB.git",
+          "title": "Upstream",
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository",
+        "upstream",
+        "revision",
+        "branch_at_acquisition",
+        "note",
+        "local_checkout",
+        "adaptations",
+        "candidate_release"
+      ],
+      "title": "DataSource",
+      "type": "object"
+    },
+    "DependencyInventory": {
+      "additionalProperties": false,
+      "properties": {
+        "inventory": {
+          "const": "sources/packages.json",
+          "title": "Inventory",
+          "type": "string"
+        },
+        "status": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "inventory"
+      ],
+      "title": "DependencyInventory",
+      "type": "object"
+    },
+    "Image": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture": {
+          "enum": [
+            "linux/amd64",
+            "linux/arm64"
+          ],
+          "title": "Architecture",
+          "type": "string"
+        },
+        "digest": {
+          "pattern": "^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*|\\[[a-fA-F0-9:]+\\])(?::[0-9]+)?/[a-z0-9]+(?:(?:[._]|__|-+)[a-z0-9]+)*(?:/[a-z0-9]+(?:(?:[._]|__|-+)[a-z0-9]+)*)*@sha256:[0-9a-f]{64}$",
+          "title": "Digest",
+          "type": "string"
+        }
+      },
+      "required": [
+        "digest",
+        "architecture"
+      ],
+      "title": "Image",
+      "type": "object"
+    },
+    "NoticeInventory": {
+      "additionalProperties": false,
+      "properties": {
+        "inventory": {
+          "const": "sources/notices.json",
+          "title": "Inventory",
+          "type": "string"
+        }
+      },
+      "required": [
+        "inventory"
+      ],
+      "title": "NoticeInventory",
+      "type": "object"
+    },
+    "WorkspaceSource": {
+      "additionalProperties": false,
+      "properties": {
+        "adaptations": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Adaptations",
+          "type": "string"
+        },
+        "branch_at_acquisition": {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}$",
+          "title": "Branch At Acquisition",
+          "type": "string"
+        },
+        "build_variant": {
+          "const": "full",
+          "title": "Build Variant",
+          "type": "string"
+        },
+        "local_checkout": {
+          "const": "vendor/workspace",
+          "title": "Local Checkout",
+          "type": "string"
+        },
+        "repository": {
+          "const": "https://github.com/norandom/openbb-workspace.git",
+          "title": "Repository",
+          "type": "string"
+        },
+        "revision": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Revision",
+          "type": "string"
+        },
+        "upstream": {
+          "const": "https://github.com/OpenBB-finance/workspace.git",
+          "title": "Upstream",
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository",
+        "upstream",
+        "revision",
+        "branch_at_acquisition",
+        "build_variant",
+        "local_checkout",
+        "adaptations"
+      ],
+      "title": "WorkspaceSource",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checked_on": {
+      "title": "Checked On",
+      "type": "string"
+    },
+    "data_api": {
+      "$ref": "#/$defs/DataSource"
+    },
+    "dependency_set": {
+      "$ref": "#/$defs/DependencyInventory"
+    },
+    "images": {
+      "$ref": "#/$defs/AcquisitionImages"
+    },
+    "notices": {
+      "$ref": "#/$defs/NoticeInventory"
+    },
+    "release_constraints": {
+      "const": "sources/constraints.json",
+      "title": "Release Constraints",
+      "type": "string"
+    },
+    "schema_version": {
+      "maximum": 2,
+      "minimum": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "status": {
+      "const": "acquisition candidate only; no validated compatible runtime or image release",
+      "title": "Status",
+      "type": "string"
+    },
+    "validated_release": {
+      "title": "Validated Release",
+      "type": "null"
+    },
+    "workspace": {
+      "$ref": "#/$defs/WorkspaceSource"
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "workspace",
+    "data_api",
+    "checked_on",
+    "validated_release",
+    "images",
+    "dependency_set",
+    "notices",
+    "release_constraints"
+  ],
+  "title": "SourceLock",
+  "type": "object"
+}

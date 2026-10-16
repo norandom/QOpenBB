@@ -72,7 +72,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 1.3_
   - _Requirements: 10.5, 10.6, 9.7_
 
-- [ ] 1.5 Implement typed evidence and release identity validation
+- [x] 1.5 Implement typed evidence and release identity validation
   - Define source, candidate/release, backup and acceptance record validation and a portable check entry point with stable exit codes.
   - Distinguish passed, failed, skipped and unverified; reject stale revision/image/schema identities and record fixture versus live/manual evidence.
   - Done when malformed and mismatched evidence fails and a missing Anthropic acceptance record cannot make Excel eligible; link implemented checks into the breadth map.
