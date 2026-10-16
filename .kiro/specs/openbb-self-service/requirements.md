@@ -137,6 +137,10 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 6. When the owner configures local keys, the environment shall load them from an untracked `.env` while retaining an empty-value `.env.sample` in source control.
 7. While building or publishing images, the workflow shall exclude the local `.env` from source contexts and image layers.
 
+## Workspace AI provider decision
+
+The owner selected Anthropic as the default Workspace AI provider. Store ANTHROPIC_API_KEY only in the local gitignored .env and inject it into the future self-hosted agent service. The model and agent integration remain pending design; dashboard/data access must work independently of AI. A configured credential is not evidence of working AI.
+
 ## Review status
 
 Requirements reviewed inline against the local EARS and requirements-review-gate rules: numeric identifiers, observable acceptance criteria, core journeys, error cases, and inclusion/exclusion boundaries checked. Docker Compose, Windows/WSL, Linux, Excel, FMP, and Jupyter are user-requested constraints. Internal service decomposition remains a proposal in research.md.
