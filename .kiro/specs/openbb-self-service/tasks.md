@@ -251,7 +251,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 3.2_
   - _Requirements: 5.1, 5.4, 11.2_
 
-- [ ] 3.4 Preserve provider failures without leaking credentials
+- [x] 3.4 Preserve provider failures without leaking credentials
   - Adapt the shared response helper so authentication, entitlement, throttling, invalid parameters and missing data remain distinguishable.
   - Redact credential-bearing URLs/error text and prohibit fallback to a different provider or fabricated results.
   - Done when each failure fixture produces the expected observable category and sentinel secrets are absent from responses and logs.
