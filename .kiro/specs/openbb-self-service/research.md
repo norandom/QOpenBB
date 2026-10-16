@@ -150,3 +150,7 @@ Simplification: Dagger builds/exports images only. Repository commands run actua
 - Actual Compose runs use disposable daemon-host bind roots and fixed port 23003; path ownership and port collision handling are foundation checks.
 - Candidate manifests permit pull-only Linux and Office acceptance before promotion, avoiding a circular release gate. All required records must match the candidate's exact image/contract identities.
 - Changing the runner must preserve the same repository commands and secret boundaries. A clean environment without GitHub-specific variables tests this seam; actual Gitea migration remains deferred.
+
+### Next chart boundary discovery, 2026-10-16
+
+Two independent Sol source investigations established the [displayed-row and SQLite contracts](chart-next-discovery.md). Parent synthesis keeps resolved numerical snapshots separate from grid capture, editor decoding and backend persistence. Existing ECharts rendering and SQLAlchemy dialect support remain the adopted mechanisms; no new service or generic renderer framework is proposed. The [bounded design](chart-snapshot-design.md) passed independent Astra review after explicit category ownership and unit/scale rules were added. Owner approval is pending; broader parity and persistence remain unverified. The kiro-spec-design discovery/synthesis/review workflow and COBESY documentation steering guided this work.
