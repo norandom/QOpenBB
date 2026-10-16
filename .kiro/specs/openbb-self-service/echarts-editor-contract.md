@@ -58,3 +58,30 @@ Keep three palette sources distinct: AG's base palette, the 15-color `defaultFil
 Reuse OpenBB's `ds/atoms/Input`, `Select`, `FontFamilyInput`, `SpacingInput`, `Switch`, `Checkbox`, and `ds/molecules/ColorPicker`, `Tabs`, with existing accordion/slider primitives where appropriate. ColorPicker already uses react-colorful; Select/Tabs wrap Radix. Reuse reduces control infrastructure but does not establish AG-panel appearance or interaction equivalence.
 
 Use small family-specific field modules and narrow legacy-model patches. Keep ECharts private DOM and commercial editor implementation out of the adapter. Before final design approval, capture actual fields, labels, defaults, visibility, keyboard behavior and resulting payload changes across the three panels and chart families. Include combination secondary axes, pivot/transpose, linked/detached/forecast paths and light/dark state. The [capability matrix](../../../docs/renderer-capability-matrix.md) remains the acceptance inventory; these source enums cannot close its runtime gaps.
+
+## Observed original editor, dark grouped-column fixture
+
+A subsequent browser capture uses the unchanged original Full image `sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f`, an isolated account and synthetic dashboard/data route overlays. There is no candidate frontend overlay. Actual table -> chart -> external Chart settings interactions open the docked editor. This runtime evidence is separate from the source inventory above.
+
+The rendered tabs are **Chart**, **Set Up**, **Customize**. Chart contains the 12 family groups from the source inventory, with Grouped Column initially selected; DOM membership does not establish that every thumbnail is simultaneously in the scroll viewport. Set Up shows Categories/Period, unchecked Aggregate, Revenue and EPS series, and unchecked Switch Category / Series.
+
+Customize initially has six collapsed groups. Each was expanded and captured separately:
+
+| Group | Observed controls and defaults in this fixture |
+| --- | --- |
+| Chart Style | Top/right/bottom/left padding 20; background enabled, `#151518`. |
+| Titles | Chart Title, Subtitle, Horizontal Axis Title and Vertical Axis Title disabled. Enabling Chart Title exposes text default `Chart Title`, font control `Verdana, sans-serif`, Predefined weight, size 12, white color and spacing. |
+| Legend | Enabled; font control `Verdana, sans-serif`, Predefined weight, size 11, white color, Position Top, spacing 20, marker size 11, marker stroke 0, item spacing 5, horizontal spacing 32, vertical spacing 8. |
+| Series | Tooltips enabled, Multiple tooltip mode, stroke width 0, line dash 0, line/fill opacity 1, Labels and Shadow disabled. |
+| Horizontal Axis | Expanded field inventory retained in the local DOM/JSON evidence; nested options not exhaustively explored. |
+| Vertical Axis | Expanded field inventory retained in the local DOM/JSON evidence; nested options not exhaustively explored. |
+
+These are observed control values, not an independent measurement of rendered font geometry. Hidden controls are identified separately in the raw inventory.
+
+Real UI edits enabled the title and changed it to `Synthetic Revenue and EPS`, moved the legend from Top to Bottom, changed stroke width from 0 to 4, and selected Stacked Column. Independent Astra rerun exited 0 and inspected the visible title, moved legend, bar outlines and stacked output. After switching to stacked, the title was disabled and legend position was Top again. Preserve this observed path in regression fixtures; do not infer that all chart families always reset or that the state was lost from storage.
+
+No matching dashboard POST-item payload was captured, including an eight-second final wait. The collector does not cover every request method/body shape. Exact saved field paths and backend save/reopen remain unverified; visible effects do not establish persisted-model deltas. Light mode, other families, full nested controls, keyboard behavior, Set Up edits, linked/detached/forecast paths, selection, refresh and export remain outside this capture.
+
+Evidence: `artifacts/parity/chart-editor-capture/report.md`, `control-inventory.json`, per-panel/group HTML/JSON/screenshots and diagnostics; independent outputs are in `artifacts/parity/chart-editor-capture-review/`. The known original datafeed HTML-as-JavaScript exception remains recorded. These artifact-only probes are not maintained application tests or renderer acceptance.
+
+Owned browsers were closed and the disposable container removed after independent review. Private account state remains ignored and unpublished.

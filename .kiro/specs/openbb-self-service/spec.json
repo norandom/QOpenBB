@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-16T16:08:34+00:00",
+  "updated_at": "2026-10-16T17:28:19+00:00",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -29,6 +29,14 @@
     "design_approved": false,
     "tasks_approved": false,
     "implementation_ready": false,
+    "foundation_slice": {
+      "name": "chart-state-and-lifecycle",
+      "design_path": "echarts-integration-proposal.md#first-production-boundary-for-separate-review",
+      "independent_design_review": "passed-for-human-review",
+      "design_approved": false,
+      "tasks_generated": false,
+      "implementation_ready": false
+    },
     "reason": "Owner requires original UX and functional parity; prior renderer reduction plan is superseded. Historical phase approvals above remain recorded."
   }
 }

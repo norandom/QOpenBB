@@ -40,7 +40,9 @@ The legacy widget payload remains authoritative. Preserve unknown JSON fields, b
 
 The codec must cover integrated `storage[stateKey].chartModel`, per-type cell ranges, detached top-level `chartModel`/`chartOptions`, and the original transpose fields. Preserve the original theme-field handling. Do not migrate those forms into a new envelope without a separately reviewed migration contract.
 
-A chart request contains an immutable snapshot of ordered category/series values and identities, the original model, resolved active theme, and data revision. Snapshot construction reuses original sort/filter/group/transpose transformations. Each operation uses one consistent revision; stale results must not overwrite newer state. Preserve the original export/selection completion behavior, verified during capture. A frozen export snapshot may remain valid after the displayed data refreshes.
+The source paths have different write semantics. Integrated `onChartOptionsChanged` clones the resolved `chartOptionsRef.current` baseline, deep-merges event options (defaulting to an empty object), removes their top-level `theme`, and merges the current model under `storage[getStateKey()].chartModel`. Persisted options alone are not an equivalent merge baseline. The detached `AgChartFromTable` callback retains its existing top-level model while changing its chart type, replaces `storage.chartOptions` with event options, and updates series/type metadata; it does not perform the same theme removal. Use separate typed write operations for these paths. A common persistence writer must not erase that distinction. The integrated options hook also replaces `chartOptions.common` with generated common settings before merging, so editor field scopes must be traced from actual events rather than assuming every `common.*` patch survives.
+
+A chart request contains an immutable snapshot of ordered category/series values and identities, the original model, resolved active theme, and data revision. Snapshot construction reuses original sort/filter/group/transpose transformations. Each operation uses one consistent revision; stale results must not overwrite newer state. Preserve the original export/selection completion behavior, to be verified by dedicated capture. A frozen export snapshot may remain valid after the displayed data refreshes.
 
 Host operations are mount, update, resize, export image and dispose. Only the host retains the ECharts instance. Settings events go through the original action/state owner, which derives a new request; renderer events are translated into the same original state changes where the baseline requires them. One state owner prevents the editor and saved configuration from diverging.
 
@@ -50,7 +52,38 @@ Preserve the original settings/data/format panels, each path's open/close behavi
 
 A field registry records original field path, type, default, visibility predicate, patch operation, renderer mapping and test case. Split family-specific controls into small modules. The registry must come from source and browser observations, not an invented reduced set. Public AG group tokens are insufficient to define every field.
 
+Each edit also records its target state address and revision. Integrated addresses include the original state key and pivot mode; detached addresses identify the original range key. A delayed event must not write to a newly selected period/sheet partition. Resolve the original target or surface the stale transaction internally; do not silently apply it elsewhere. Family changes resolve the destination family's saved range before updating the model.
+
+Use a discriminated command union with value types per captured field: booleans for enablement, strings for text/colors, numbers for font sizes, the original position enum for legend placement, and a separate chart-type command. The initial grouped-column/stacked-column/line mapping does not define the total accepted model language. Retain unknown JSON separately. Field targeting, including whether a color affects one series or the whole family, must come from observed editor output.
+
+Legacy event merging and new leaf edits are different operations. Integrated event compatibility must retain lodash merge behavior, including array index merging. A field edit clones state and changes only its registered target. Explicit deletion is separate: `undefined` is not deletion under merge and `null` is not a universal inheritance marker. Reset semantics need their own captured event contract.
+
 ECharts shoulders rendering, zoom/navigation primitives and image generation. Existing OpenBB/Radix/react-colorful components shoulder input behavior. The application still owns the compatibility of those controls with original settings. No inspected library provides the whole AG editor as an ECharts drop-in.
+
+## Concrete first-family mapping
+
+Independent source research by `/root/chart_mapping_design`, GPT-6 Astra, inspected the original Workspace reference and installed ECharts 6.0.0 declarations. The following destinations exist in that package; the table is a design mapping, not evidence of visual or behavioral equivalence.
+
+| Resolved original value | ECharts destination | Required compatibility check |
+| --- | --- | --- |
+| Title enable/text/color/font size | `title.show`, `text`, `textStyle.color`, `textStyle.fontSize` | Actual writable legacy scope; original title spacing, alignment and wrapping. |
+| Legend enable | `legend.show` | Preserve initial and persisted state. |
+| Legend position | Position coordinates, `orient` and plot allocation | Compute the layout; do not assign the original position string to an unrelated field. |
+| Legend typography/markers | `legend.textStyle`, rectangular icon, item width/height | Preserve formatting and measured geometry. |
+| Bar fill/stroke/width | Series `itemStyle.color`, `borderColor`, `borderWidth` | Match captured target cardinality; retain stable series identities. |
+| Line stroke/width | Series `lineStyle.color`, `width` | Marker colors are separate; a bar fill does not automatically become a line stroke. |
+| Connected missing line data; markers off | `connectNulls: true`, `showSymbol: false` | Preserve null observations without coercing them to zero. |
+| Grouped columns | Category X/value Y, bar series without stack | Preserve original ordered data, ranges and series IDs. |
+| Stacked columns | Shared stack identifier | Verify negative/missing values and `stackStrategy` against the original. |
+| Line | Line series without stale bar/stack properties | Resolve original destination-family range first. |
+
+Use original column/series identity rather than display labels for stable IDs. Duplicate labels or column reordering must not transfer settings between series. Preserve original aggregation and unit choices; the adapter must not introduce new financial restrictions.
+
+AG's independent legend horizontal/vertical padding, marker padding, spacing and maximum height do not map one-to-one to ECharts `itemGap`. This requires measured layout work. Pointer-anchored zoom, navigator/mini-chart behavior, background images and tooltip formatting also require explicit mappings and tests; a plausible chart does not prove those contracts.
+
+Keep base defaults, OpenBB overrides, selected custom theme, generated chart options and persisted family overrides distinct. The global theme editor filters undefined/null/empty parameters and resets a mode with `chartTheme: null`; that is different from deleting widget fields. Global theme edit/preview/save/reset needs its own event contract.
+
+Derive a complete ECharts option for each request. A first implementation may use `setOption` with `notMerge: true` to prevent stale stack/family/style fields, but must preserve required interaction state through public events before acceptance. `replaceMerge: ["series"]` alone does not guarantee removal of stale nested options. Test grouped -> stacked -> grouped -> line, title disable/re-enable, palette/theme reset and background-image removal.
 
 ## Failure and release rules
 
@@ -78,3 +111,28 @@ For 4.8, compare original controls, conditions, state changes and rendered outco
 - Reconcile superseded native-explorer clauses in the main design and generate reviewed, bounded implementation tasks.
 
 The requirements are clear; these are engineering evidence gaps. They do not require the owner to choose a new UI or relax parity merely to continue investigation.
+
+## First production boundary for separate review
+
+The state reducers and renderer lifecycle can be implemented before the remaining editor fields are mapped. This is a bounded foundation within the larger amendment, not permission to expose a partial replacement or narrow requirements 4.8-4.9. Request human review of this boundary before generating its implementation tasks. Full renderer integration and release gates remain closed.
+
+**Own:** two path-specific legacy state reducers and an ECharts host, with maintained tests and inventory entries. **Exclude:** application call-site changes, guard removal, widget registry/catalog changes, new editor UI, chart-family translation, provider/backend changes, global theme migration and release-image promotion. Test fixtures may supply known options to the host; they do not become a production allowlist.
+
+| Module | Frozen input/output boundary | Completion evidence required |
+| --- | --- | --- |
+| `Chart/compatibility/legacyTypes.ts` | JSON value/object types, addressed integrated or detached event inputs, explicit validation result; no `any` or new storage envelope | Type checks distinguish the two paths and retain unknown JSON values. |
+| `Chart/compatibility/integratedState.ts` | Original storage, original resolved state key, current chart model, resolved `chartOptionsRef.current` baseline, event options (default `{}`), chart type, resolved total series and pivot mode; returns updated storage without mutating input | Reference-equivalent deep merge into the resolved baseline, including arrays; top-level option-theme removal only, original model overlay and root metadata updates; untouched partitions equal. |
+| `Chart/compatibility/detachedState.ts` | Original storage, event chart type/options and resolved total series; returns updated storage without mutating input | Existing top-level model retained except chart type, event options replace root options without integrated theme stripping, original root metadata updated. |
+| `Chart/echarts/lifecycle.ts`, `EChartsHost.tsx` | Sized DOM host plus complete typed ECharts options and request revision; update/resize/export/dispose operations | Real ECharts mount/update/resize/hidden-container/remount/disposal tests; stale work cannot update a disposed instance. No application persistence or data fetching. |
+
+State-key construction stays with the existing original helper; the reducers receive its resolved address and do not reimplement it. The caller resolves any family-range update and obtains total series from the original chart/grid context before invoking a reducer. A JSON-only reducer must not infer that count from option-array length. The future state owner checks event revision/address before invoking a reducer. These pure functions do not decide asynchronous edit cancellation, fetch new state or silently redirect a write.
+
+The lifecycle receives an already-resolved `EChartsOption`, keeps the library instance private and uses public APIs only. Export returns image data without inventing filename/menu behavior. Accept only the tested lifecycle contract; zoom/selection continuity and original export integration remain later obligations. No ECharts type leaks into provider, dashboard-storage or agent contracts.
+
+Pin ECharts 6.0.0 through the existing protected toolchain and the owned application's validated lock strategy. The disposable global script injection is not the production loading mechanism. Controller owns package/lock and scope-inventory edits; other lanes do not install concurrently or modify those shared files. Reuse the existing package manager exception where a migration would rewrite the frozen baseline.
+
+After shared types are fixed, Sol state-reducer and lifecycle lanes may proceed independently; Astra reviews persistence and lifecycle joins. Planned tests live under `terminalpro/tests/unit/chart-compatibility/` and `terminalpro/tests/e2e/chart-compatibility/`. Require the existing 400/300/50 checker on all new/modified maintained code, exact dependency/source identities and independent fresh verification. No maintained tests are claimed to exist yet.
+
+This foundation supports original-state preservation under 4.8 and supplies executable evidence toward 4.9. It does not fulfill either criterion alone. Its review does not approve the unresolved editor, full chart mappings, table capabilities or the superseded renderer clauses in the main design.
+
+Independent Astra review passed this bounded foundation design for human review after correcting the integrated merge-baseline and resolved-series inputs. Source callbacks were checked at the pinned original revision. Review evidence is in `artifacts/parity/chart-editor-capture-review/review.md`. Human design approval and task generation remain pending; this is not whole-renderer design acceptance.
