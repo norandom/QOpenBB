@@ -1,6 +1,6 @@
 # Verify the isolated chart foundation
 
-Task 2.13 establishes ECharts tooling only. It does not establish the production host, saved chart compatibility, renderer parity or a release image. The [approved task boundary](../.kiro/specs/openbb-self-service/tasks.md#approved-design-slice-chart-state-and-lifecycle-foundation) retains those gates.
+The chart foundation provides separate integrated/detached state reducers and a React host for ECharts, verified in isolated fixtures. Application controls do not yet import these modules. Original editor behavior, styling, chart-family translation and backend save/reopen remain later gates under the [approved task boundary](../.kiro/specs/openbb-self-service/tasks.md#approved-design-slice-chart-state-and-lifecycle-foundation).
 
 ECharts is pinned to 6.0.0 in the owned Workspace package and Bun lock, with zrender 6.0.0 and tslib 2.3.0. Bun 1.4.3 remains the existing lock compatibility exception; migrating to pnpm would change unrelated baseline resolution. Retain the installed ECharts `LICENSE` and `NOTICE` and zrender `LICENSE`; these packages use Apache-2.0 and BSD-3-Clause respectively. Lock integrity hashes identify the downloaded package contents.
 
@@ -23,7 +23,7 @@ The root verification environment pins Playwright 1.64.0. The application lock s
 
 ```sh
 export PLAYWRIGHT_BROWSERS_PATH="$QOPENBB_ROOT/artifacts/playwright-browsers"
-export CHART_EVIDENCE_ROOT="$QOPENBB_ROOT/artifacts/task-2.13"
+export CHART_EVIDENCE_ROOT="$QOPENBB_ROOT/artifacts/chart-foundation-verification"
 mv node_modules/@playwright/test node_modules/@playwright/test-app-1.62.1
 ln -s "$QOPENBB_ROOT/verification/node_modules/@playwright/test" node_modules/@playwright/test
 trap 'rm node_modules/@playwright/test; mv node_modules/@playwright/test-app-1.62.1 node_modules/@playwright/test' EXIT
@@ -36,4 +36,21 @@ The config starts its own loopback production preview on port 4293, refuses an e
 
 On 2026-10-16 the checks ran in `/mnt/wsl/qopenbb-task28/terminalpro` under WSL Debian as `mc`, against the accepted Workspace base `48e3f59cc48e0ae7aa6f6ce92069fc5b10ee3e86` plus this task's package, lock and fixture files. The selected application tools were Vite 8.2.1, Vitest 4.1.11 and TypeScript 5.9.2. Root verification used Playwright 1.64.0 and its pinned Chromium. Ignored `artifacts/task-2.13/` retains the initial missing-dependency RED, protected add/frozen restore, fresh restore, verification log, browser JSON, screenshot and sanitized CDP attachment. ECharts and zrender license hashes are retained with restore output.
 
-The fixture imports ECharts directly to prove tooling; it is not a production lifecycle implementation. Its large full-library bundle warning is expected for this isolated setup and does not change application bundling. Browser acceptance is disproved by missing/incorrect visible observations, dirty diagnostics, a failed disposal or an orphaned owned preview listener. Use the [current scoped complexity gate](complexity.md), with truthful dirty-fork manifests; tests and fixture configurations are explicitly excluded as tests, while the maintained package manifest remains measured.
+The tooling fixture imports ECharts directly. The separate host fixture imports the maintained React host and exercises the actual lifecycle implementation. Its large full-library bundle warning is expected for this isolated setup and does not change application bundling. Browser acceptance is disproved by missing/incorrect visible observations, dirty diagnostics, a failed disposal or an orphaned owned preview listener. Use the [current scoped complexity gate](complexity.md), with truthful dirty-fork manifests; tests and fixture configurations are explicitly excluded as tests, while the maintained package manifest remains measured.
+
+## Component contracts and joined checks
+
+| Boundary | Preserved behavior | Actual check |
+| --- | --- | --- |
+| State inputs | Unknown JSON fields, narrowly permitted runtime undefined values, repeated-edit closure | 10 contract cases and strict type fixtures |
+| Integrated reducer | Resolved option baseline, lodash array merging, top-level theme removal, shallow model overlay and original metadata ordering | 16 reducer cases shared with the detached path |
+| Detached reducer | Existing model retained except chart type; options replaced, including an own undefined property | Original-source reference cases in the reducer suite |
+| Lifecycle owner | Complete options, increasing revisions, zero-size deferral/recovery, PNG export and terminal cleanup | 13 mocked-library lifecycle cases |
+| React host | Observer ownership, updates, error reporting, StrictMode cleanup and retained export handles | 6 host unit cases |
+| Real renderer | Known numeric values, visible output, resized/updated PNG contents, hidden remount, formatter failure and recovery | Actual-host browser journey plus the original tooling smoke |
+
+The focused suite contains 46 tests, including one real-library SVG tooling test. Its production browser suite has two cases with captured CDP diagnostics and synthetic image evidence. The existing Perspective runtime additionally passes 10 unit cases, strict checking and four production-browser regressions. These counts describe component verification, not dashboard acceptance.
+
+Task-local evidence is under ignored `artifacts/task-2.13/` through `task-2.17/`; independent reports live in each task's `review/` directory. Joined evidence and the Perspective regression are under `artifacts/task-2.18/`. Use the [foundation verification record](../.kiro/specs/openbb-self-service/chart-foundation-verification.md) for source identities, review status and remaining integration obligations.
+
+Commands above remain portable verification commands outside Dagger. A successful isolated PNG export does not establish the original menu, filename or persistence behavior. Full-application TypeScript remains outside this focused gate, and no renderer-complete image is promoted by it.

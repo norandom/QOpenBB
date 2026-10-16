@@ -2,7 +2,7 @@
 
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
-The separately approved chart-foundation design has [six proposed tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.
+The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.
 
 ## Execution contract
 
@@ -660,7 +660,7 @@ Whole-project TypeScript remains separately blocked by upstream TS6305 composite
   - _Depends: 2.16_
   - _Requirements: 4.8, 4.9, 10.1, 10.3, 10.4_
 
-- [ ] 2.18 Join and accept only the chart foundation evidence
+- [x] 2.18 Join and accept only the chart foundation evidence
   - Run the complete focused strict/unit/build/browser gates against joined source and dependency identities, plus relevant existing isolated-runtime regressions affected by dependency/test configuration changes. Register portable invocation paths without moving verification into Dagger.
   - Audit imports and diffs to confirm no application wiring, guard/flag edits, catalog changes or unrelated financial-lane work entered the slice. Selectively commit only reviewed scope. Update breadth with actual test IDs and sanitized evidence; retain overall renderer parity as unverified.
   - Done when independent fresh verification, dependency checks, exact identities and final shared-module scope audit pass; document remaining editor/state-mapping/theme/table/persistence obligations without promoting a release image.
@@ -678,3 +678,5 @@ Task 2.15 accepted at Workspace `5d6674e5629fbceda11047bcefcfac237ccd4e62`. Inde
 Task 2.16 accepted at Workspace `5937af2c73c3f1943fb9a16c13236b46ee623b9c`. Independent review reproduced 13 lifecycle unit cases, strict TypeScript and lint; the combined complexity gate passed. Evidence: `artifacts/task-2.16/review/review.md`. Mocked library calls establish lifecycle ownership and failure handling; real rendering remains task 2.17.
 
 Task 2.17 accepted at Workspace `042ba87e3208a51857da4ae2d1c3109a680716d9`. Independent Astra verification passed all 46 focused tests, strict TypeScript, production build, two real-browser cases, lint and source identity checks. The reviewer inspected the 640 by 400 PNG with visible USD observations; browser tests also check numeric options, pixels, changed output, recovery and disposal. CDP diagnostics are empty. Evidence: `artifacts/task-2.17/review/verdict.md`. Original styling, interactions and application persistence remain outside this acceptance.
+
+Task 2.18 accepted after independent Astra joined review and scoped integration GO for tasks 2.13-2.18 only. Fresh verification reproduced 46 tests, strict TypeScript, all 24 changed branch-file identities and caps for all five production modules. Matching-source chart browser evidence (two cases) and existing Perspective regression (10 unit/four browser cases) passed. See [foundation verification](chart-foundation-verification.md) and `artifacts/task-2.18/review/verdict.md`. Full renderer and release acceptance remain open.

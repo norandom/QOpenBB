@@ -16,9 +16,10 @@ evidence = ["Owner parity amendment supersedes reduced-capability acceptance. Ta
 id = "chart-state-and-lifecycle-foundation"
 requirements = ["1.1", "1.2", "4.8", "4.9", "10.1", "10.3", "10.4", "10.5"]
 planned_checks = ["protected-echarts-restore", "path-specific-state-contracts", "legacy-state-reducers", "renderer-lifecycle-and-real-host", "joined-foundation-verification"]
-test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/contracts.test.ts", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/toolchain.test.ts", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/smoke.spec.ts"]
-status = "unverified"
-evidence = ["Task 2.13 tooling accepted at Workspace e56852d: protected ECharts 6.0.0 restore, real-library unit render, strict TypeScript, production fixture build and one-worker Playwright/CDP smoke independently passed. See docs/chart-foundation.md and artifacts/task-2.13/review/review.md. Task 2.14 state/lifecycle contracts accepted after 11 tests, strict TypeScript, lint, complexity and original-source review; artifacts/task-2.14/review/. Reducers and production host remain pending. This foundation does not establish application renderer parity."]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/contracts.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/stateReducers.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/host.test.tsx", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/toolchain.test.ts", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/smoke.spec.ts", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/host.spec.ts"]
+status = "passed"
+evidence = ["Tasks 2.13-2.17 independently accepted at Workspace 042ba87e3208a51857da4ae2d1c3109a680716d9: protected ECharts 6.0.0 restore, 46 focused tests, strict TypeScript, scoped lint, production fixture build and two one-worker Playwright/CDP cases passed. Actual host PNG contents, options, update/resize, hidden recovery, formatter failure and disposal verified. Existing Perspective regression passed 10 unit and four browser cases. All five foundation modules pass current complexity caps and tested source identity checks. Task 2.18 independently accepted with scoped GO for the foundation only. See .kiro/specs/openbb-self-service/chart-foundation-verification.md. Application renderer parity remains unverified."]
+
 [[capabilities]]
 id = "baseline-provenance"
 requirements = ["1.1", "1.2", "1.3", "1.4", "1.5"]
