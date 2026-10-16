@@ -85,6 +85,8 @@ Local development accesses the same origin directly at `http://localhost:23003`.
 
 Exact tool versions and base digests are foundation outputs before feature builds, recorded with the selected release. The existing acquisition pins remain unchanged until validation selects their replacements. No new broker or persistent database is introduced.
 
+Owner refinement during implementation: maintained JavaScript tooling and rewrites prefer pnpm with Aikido Safe Chain where compatible; maintained Python tooling and FMP/FRED integration use uv/uvx with Safe Chain. Preserve and validate upstream frozen locks when a package-manager migration would alter the baseline. Noninteractive development and CI installs must exercise the protection; installing a shell alias alone is insufficient.
+
 ## File Structure Plan
 
 Paths below are planned, not existing runtime assets. `workspace:` and `data:` refer to the owner forks in `sources.lock.json`; QOpenBB paths are relative to this repository. Local checkouts may live under ignored `vendor/`, but committed source ownership remains in the forks.

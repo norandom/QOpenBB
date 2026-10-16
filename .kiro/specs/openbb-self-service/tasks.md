@@ -12,7 +12,7 @@ Design approved by the owner on 2026-10-16 ("go"). The owner approved these impl
 - The current Anthropic-before-Excel gate is the owner's earlier sequencing preference, not a technical dependency: Anthropic powers Workspace chat; Excel uses the application backend and data API directly. No Excel implementation, source changes, generator execution, function snapshots or image builds before 5.5 passes with current identities. Planning and generic eligibility validation are allowed earlier.
 - Dagger builds/exports images only. Portable repository commands own generation, checks, image push and promotion. Deployment uses real Compose; Gitea infrastructure/migration is deferred.
 - The user's explicit operator documentation and deployment requirements override the generic task rule excluding documentation/deployment. These appear as scoped verification/integration work with exercised procedures, not detached writing tasks.
-- Actual Office/private-server access and required component entitlements are external inputs. Missing inputs keep the affected task unverified; do not fabricate acceptance or silently remove the gate.
+- Actual Office acceptance, owner-run private-server evidence and required component entitlements are external inputs. The owner deploys locally with Compose; agent SSH access is not required. Missing evidence keeps the affected task unverified; do not fabricate acceptance or silently remove the gate.
 
 ## Exclusive lanes and joins
 
@@ -41,8 +41,9 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Boundary: Release control_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 11.1_
 
-- [ ] 1.2 Establish locked development and verification toolchains
+- [x] 1.2 Establish locked development and verification toolchains
   - Pin stable Python, Node, Bun, Dagger engine/SDK, Docker/Compose, test parsers and base image inputs; create the portable command and test-project scaffolds without application behavior.
+  - Apply the owner's implementation steering: prefer pinned pnpm with Safe Chain for maintained JavaScript rewrites and uv/uvx with Safe Chain for Python. Verify protected noninteractive installs; document compatibility exceptions for preserved upstream locks.
   - Verify tools in WSL and define the clean Linux runner prerequisites. Keep runner-specific setup outside core build and verification logic.
   - Done when lock-based setup succeeds and minimal tool smoke checks report exact versions; foundation scope remains provisionally measured until the executable quality gate is complete.
   - Complexity: measure this bootstrap scope against 400 physical/300 logical/50 per-function caps; executable cross-language enforcement in 1.4 must pass before any feature work is accepted.
@@ -446,7 +447,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 - [ ] 8.2 Accept pull-only WSL and private Linux operation
   - Use the exact candidate image set in clean WSL and private Linux deployment directories; run the same topology with environment-specific public URL.
   - Verify public HTTPS through the owner's existing Access tunnel, plain HTTP origin publication, bind state, application login and marked provider/agent checks.
-  - Done when no application compilation occurs on the target and evidence records actual host, image and route identities; missing server access remains unverified.
+  - Done when no application compilation occurs on the target and evidence records actual host, image and route identities. The owner runs Compose locally on the private host and can supply acceptance evidence; missing host evidence remains unverified without requiring agent SSH access.
   - Complexity: execution and evidence-only work has no production-code scope; needed fixes reopen their owning capped task and invalidate affected acceptance.
   - _Boundary: Runtime control integration_
   - _Depends: 8.1_

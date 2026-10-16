@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-16",
+  "verified_platform": "linux/amd64",
+  "tools": {
+    "python": { "version": "3.13.15", "provider": "uv managed CPython", "version_file": ".python-version" },
+    "uv": { "version": "0.12.5", "source": "https://github.com/astral-sh/uv/releases/tag/0.12.5" },
+    "node": {
+      "version": "24.22.0",
+      "channel": "LTS",
+      "version_file": ".node-version",
+      "linux_x64_url": "https://nodejs.org/dist/v24.22.0/node-v24.22.0-linux-x64.tar.xz",
+      "linux_x64_sha256": "cc2f601cee82d9a5a233302fe307abc600727035fd7d2c3a3571755989e95008"
+    },
+    "npm": { "version": "11.19.1", "provider": "Node 24.22.0 distribution" },
+    "pnpm": {
+      "version": "10.32.1",
+      "linux_x64_url": "https://github.com/pnpm/pnpm/releases/download/v10.32.1/pnpm-linux-x64",
+      "linux_x64_sha256": "c5607a86bfb948297e96b393a53c90107766fe56329e62967b1f239d861d4363"
+    },
+    "safe_chain": {
+      "version": "1.5.25",
+      "linux_x64_url": "https://github.com/AikidoSec/safe-chain/releases/download/1.5.25/safe-chain-linuxstatic-x64",
+      "linux_x64_sha256": "3462a8395f822b392b7c0808c70116ef90e17a5a1479e604cfc41d57bfbd827c",
+      "installer_url": "https://github.com/AikidoSec/safe-chain/releases/download/1.5.25/install-safe-chain.sh",
+      "installer_sha256": "83069f6db4215cccf6a26bdd6e65a5c2366b9d24322b2d5d2862d47385e56682",
+      "minimum_package_age_hours": 48
+    },
+    "bun": {
+      "version": "1.4.3",
+      "linux_x64_url": "https://github.com/oven-sh/bun/releases/download/bun-v1.4.3/bun-linux-x64.zip",
+      "linux_x64_sha256": "3e730528d89775f03f87f05c06787c4df4099d0a37f3f252e7b829cb23816e18"
+    },
+    "dagger_cli": { "version": "0.21.8", "source": "https://github.com/dagger/dagger/releases/tag/v0.21.8" },
+    "dagger_engine": { "version": "0.21.8", "base_image": "dagger_engine" },
+    "dagger_python_sdk": { "version": "0.21.8", "lock": ".dagger/uv.lock" },
+    "docker_client": { "version": "29.7.2", "source": "https://docs.docker.com/engine/release-notes/29/" },
+    "docker_engine": { "version": "29.7.2" },
+    "docker_compose": { "version": "5.4.0", "source": "https://github.com/docker/compose/releases/tag/v5.4.0" },
+    "pytest": { "version": "9.1.1", "lock": "pipeline/uv.lock" },
+    "pytest_xdist": { "version": "3.8.0", "lock": "pipeline/uv.lock" },
+    "playwright": { "version": "1.64.0", "lock": "verification/pnpm-lock.yaml", "base_image": "playwright" },
+    "typescript_parser": { "version": "6.0.3", "lock": "verification/pnpm-lock.yaml", "api": "TypeScript compiler AST" },
+    "python_parser": { "version": "3.13.15", "api": "CPython ast" },
+    "hatchling": { "version": "1.32.4", "role": "Python package build backend" }
+  },
+  "base_images": {
+    "python": "docker.io/library/python:3.13.15-slim-bookworm@sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26",
+    "node": "docker.io/library/node:24.22.0-bookworm-slim@sha256:a5f4366e834695d5f363b920c104953a535d3a9864d1bdf74566a0ebe01daee5",
+    "bun": "docker.io/oven/bun:1.4.3@sha256:ec06c3b6cea04192ae6770c434f668ca41d343ad19fa6472216c7b48be39c598",
+    "nginx": "docker.io/library/nginx:1.29.6-alpine@sha256:f46cb72c7df02710e693e863a983ac42f6a9579058a59a35f1ae36c9958e4ce0",
+    "playwright": "mcr.microsoft.com/playwright:v1.64.0-noble@sha256:06a9939e57531807f8d5fd76ce44b53165ffb7d7501d87ab10e285c20b1e971f",
+    "dagger_engine": "registry.dagger.io/engine:v0.21.8@sha256:c9c1a0a6546380983d42e8d75adde070a2a0935c54b498d8bc9045d9cb2ee336"
+  },
+  "verification_limits": {
+    "heavy_operations": 1,
+    "independent_processes": 3,
+    "pytest_xdist_workers": 2,
+    "playwright_workers": 1
+  },
+  "scope": "Tool and manifest inputs only; application dependency resolution, base execution and image builds are unverified."
+}

@@ -8,6 +8,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | --- | --- |
 | Understand the intended financial workflow and its limits | [Goals](goals.md) |
 | Find the next dependency gate | [Roadmap](roadmap.md) and [implementation tasks](../.kiro/specs/openbb-self-service/tasks.md) |
+| Set up the pinned development tools | [Development toolchain](development.md) |
 | Assess what has actually been tested | [Feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) and [breadth map](../.kiro/breadth.toml) |
 | Review acceptance criteria or approve the next phase | [Requirements](../.kiro/specs/openbb-self-service/requirements.md) and [phase status](../.kiro/specs/openbb-self-service/spec.json) |
 | Review service contracts, file ownership and acceptance gates | [Technical design](../.kiro/specs/openbb-self-service/design.md) |
