@@ -4,20 +4,20 @@
   "workspace": {
     "repository": "https://github.com/norandom/openbb-workspace.git",
     "upstream": "https://github.com/OpenBB-finance/workspace.git",
-    "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+    "revision": "273c6529571501cb3bc211addb6129e24d91247b",
     "branch_at_acquisition": "main",
     "build_variant": "full",
     "local_checkout": "vendor/workspace",
-    "adaptations": "Tasks 2.1-2.4: frontend, bootstrap, session isolation and single-origin routing accepted; image and commercial renderer removal pending"
+    "adaptations": "Tasks 2.1-2.6: provisional Full packaging, routing and Community table boundary accepted; commercial dependency removal and renderer-complete image pending"
   },
   "data_api": {
     "repository": "https://github.com/norandom/openbb-data-api.git",
     "upstream": "https://github.com/openbq-org/OpenBB.git",
     "revision": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
     "branch_at_acquisition": "develop",
-    "note": "Adaptation checkout now uses the selected OpenBB 5 release candidate. Original develop acquisition was 7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2; its notices and acquisition history remain retained. Complete compatible lock and runtime validation remain pending.",
+    "note": "Adaptation checkout now uses the selected OpenBB 5 release candidate. Original develop acquisition was 7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2; its notices and acquisition history remain retained. Locked runtime and initial image checks are accepted; integrated live-provider release validation remains pending.",
     "local_checkout": "vendor/data-api",
-    "adaptations": "Tasks 3.1-3.5: locked FMP/FRED runtime, financial fixtures and sanitized failures accepted; live data, images and Workspace integration remain unvalidated",
+    "adaptations": "Tasks 3.1-3.7: locked FMP/FRED runtime, fixtures, identified image and generated catalog accepted; renderer binding, live data and Workspace integration pending",
     "candidate_release": {
       "tag": "openbb-v5.0.0",
       "tag_object": "ff758fcc1c5b5f67c19b2cc855b35d76d0dd8f3b",

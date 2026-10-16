@@ -158,7 +158,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 2.4_
   - _Requirements: 1.1, 1.4, 1.5, 3.2, 9.1_
 
-- [ ] 2.6 Isolate Community tables and unsupported legacy states
+- [x] 2.6 Isolate Community tables and unsupported legacy states
   - Inventory residual grid callers and use Community-supported flat-table options/actions, retaining ordinary sorting, filters and financial formatting.
   - Hide unsupported range charts, legacy grouping/pivots, SSRM/tree/master-detail and Enterprise clipboard/XLSX actions. Preserve imported unsupported state behind an explicit unavailable view; Perspective supplies its own grouping/pivot experience later.
   - Identify oversized modified files before edits and extract cohesive responsibilities or obtain narrowly reviewed measured exceptions; do not hide a broad frontend rewrite in this task.
@@ -565,3 +565,4 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 
 - Task 2.4 process note: original RED was an artificial unconditional failure, so test-first compliance is not established. Independent review accepted current behavior after three explicitly retrospective baseline failures and fresh nginx/lint/size checks; artifacts/task-2.4/evidence.json preserves the chronology.
 - Task 2.5 packaging note: pinned Dagger requires serial SDK initialization and checksum-preserving HTTP ADD translation. Exact source exceptions retain the frontend build helper and Data component. Independent review reproduced 68 tests and fresh image runtime acceptance; artifacts/task-2.5 holds the identities and evidence. The image remains provisional until renderer replacement.
+- Task 2.6 review note: independent review caught pagination settings and saved Set/Multi filter compatibility regressions. Both were repaired with retained failing tests and fresh independent checks. Original implementation RED was captured only in the worker tool transcript; remediation RED logs are retained under artifacts/task-2.6. Whole-project typechecking remains blocked by the unchanged upstream configuration; lint, actual build and focused tests passed.
