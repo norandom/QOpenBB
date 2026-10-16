@@ -224,7 +224,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 
 - [ ] 3. Adapt the data API and generate supported widgets
 
-- [ ] 3.1 (P) Restore a provenance-preserving FMP extension skeleton
+- [x] 3.1 (P) Restore a provenance-preserving FMP extension skeleton
   - Acquire the recorded FMP source and license, restore its provider package in the owned data fork, and restrict initial supported registration to profile and income datasets.
   - Adapt package constraints to the selected core candidate without advertising runtime compatibility; establish the locked provider-test environment with the selected shared equity/economy router packages so subsequent route-level tests have their prerequisites. Isolate unchanged imports from maintained changes.
   - Done when installed provider discovery succeeds against the candidate core and provenance/notice records identify the exact imported artifact.

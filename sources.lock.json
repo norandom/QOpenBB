@@ -13,11 +13,11 @@
   "data_api": {
     "repository": "https://github.com/norandom/openbb-data-api.git",
     "upstream": "https://github.com/openbq-org/OpenBB.git",
-    "revision": "5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0",
+    "revision": "2392fc8dcdedeeec15602bf59e83fb473fa94b21",
     "branch_at_acquisition": "develop",
     "note": "Adaptation checkout now uses the selected OpenBB 5 release candidate. Original develop acquisition was 7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2; its notices and acquisition history remain retained. Complete compatible lock and runtime validation remain pending.",
     "local_checkout": "vendor/data-api",
-    "adaptations": "none yet; selected release checkout prepared for maintained FMP restoration",
+    "adaptations": "Task 3.1: provenance-preserving FMP registration and installed discovery accepted; financial routes and runtime remain unvalidated",
     "candidate_release": {
       "tag": "openbb-v5.0.0",
       "tag_object": "ff758fcc1c5b5f67c19b2cc855b35d76d0dd8f3b",

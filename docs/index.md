@@ -14,6 +14,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Inspect selected-service inputs and build-source exclusions | [Runtime and source contracts](runtime-contracts.md) |
 | Run isolated fixture browser and API checks | [Verification infrastructure](verification.md) |
 | Inspect the foundation image workflow and its evidence limits | [Image builds](image-builds.md) |
+| Inspect the restored FMP package and installed discovery checks | [FMP adaptation](fmp-adaptation.md) |
 | Rebuild the provisional Full frontend from frozen inputs | [Workspace frontend packaging](workspace-build.md) |
 | Assess what has actually been tested | [Feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) and [breadth map](../.kiro/breadth.toml) |
 | Review acceptance criteria or approve the next phase | [Requirements](../.kiro/specs/openbb-self-service/requirements.md) and [phase status](../.kiro/specs/openbb-self-service/spec.json) |
