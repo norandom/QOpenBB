@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "workspace": {
+      "source_lock_key": "workspace",
+      "revision": "be00e95019a55d57af146919ee46b7e1a4859226",
+      "allow": [
+        "lite",
+        "terminalpro",
+        "backend-api",
+        "LICENSE",
+        "NOTICE"
+      ]
+    },
+    "data_api": {
+      "source_lock_key": "data_api",
+      "revision": "7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2",
+      "allow": [
+        "openbb_platform",
+        "LICENSE"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "provisional",
+  "routes": [
+    {
+      "dataset": "company-profile",
+      "method": "GET",
+      "path": "/api/v1/equity/profile"
+    },
+    {
+      "dataset": "annual-income",
+      "method": "GET",
+      "path": "/api/v1/equity/fundamental/income"
+    },
+    {
+      "dataset": "gdp",
+      "method": "GET",
+      "path": "/api/v1/economy/fred_series"
+    }
+  ]
+}

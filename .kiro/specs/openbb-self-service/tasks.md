@@ -81,7 +81,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 1.4_
   - _Requirements: 1.1, 8.1, 9.2, 9.3, 10.5, 10.6, 12.4_
 
-- [ ] 1.6 Freeze runtime, source and initial financial contract inputs
+- [x] 1.6 Freeze runtime, source and initial financial contract inputs
   - Freeze service names, ports, public path rules, bind-only state, credential injection names, source ownership and proposed profile/income/GDP route inventory from the approved design.
   - Retain empty public credential values and exclude local configuration, private state and evidence from build contexts. Preserve the existing private environment file.
   - Done when config validation and source-filter tests pass, worker boundaries are frozen, and initial routes remain labeled provisional until installed-schema validation in 3.7.

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "provisional",
+  "datasets": [
+    {
+      "id": "company-profile",
+      "provider": "fmp",
+      "path": "/api/v1/equity/profile",
+      "parameters": {
+        "provider": "fmp",
+        "symbol": "AAPL"
+      }
+    },
+    {
+      "id": "annual-income",
+      "provider": "fmp",
+      "path": "/api/v1/equity/fundamental/income",
+      "parameters": {
+        "provider": "fmp",
+        "symbol": "AAPL",
+        "period": "annual",
+        "limit": 1
+      }
+    },
+    {
+      "id": "gdp",
+      "provider": "fred",
+      "path": "/api/v1/economy/fred_series",
+      "parameters": {
+        "provider": "fred",
+        "symbol": "GDP"
+      }
+    }
+  ]
+}

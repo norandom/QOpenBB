@@ -20,6 +20,8 @@
           "pipeline/pyproject.toml", "pipeline/qopenbb_ci/__init__.py", "pipeline/qopenbb_ci/cli.py",
           "pipeline/qopenbb_ci/contracts.py", "pipeline/qopenbb_ci/source_contract.py",
           "pipeline/qopenbb_ci/checks.py", "pipeline/qopenbb_ci/schemas.py",
+          "pipeline/qopenbb_ci/configuration.py", "pipeline/qopenbb_ci/source_filter.py",
+          "contracts/runtime.json", "contracts/sources.json", "contracts/datasets.json", "contracts/routes.json",
           "verification/.npmrc", "verification/package.json",
           ".kiro/complexity-budgets.json", "tools/quality/__init__.py",
           "tools/quality/complexity.py", "tools/quality/python_units.py",

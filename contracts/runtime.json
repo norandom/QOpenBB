@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "services": {
+    "workspace": {
+      "image": "WORKSPACE_IMAGE",
+      "port": 3000,
+      "publish": [
+        "0.0.0.0:23003:3000"
+      ],
+      "binds": [
+        "./data/workspace:/data"
+      ],
+      "environment": [
+        "PUBLIC_URL"
+      ],
+      "depends_on": [
+        "data-api"
+      ]
+    },
+    "data-api": {
+      "image": "DATA_API_IMAGE",
+      "port": 6900,
+      "publish": [],
+      "binds": [],
+      "environment": [
+        "FMP_API_KEY",
+        "FRED_API_KEY",
+        "OPENBB_API_AUTH"
+      ],
+      "depends_on": []
+    },
+    "agent": {
+      "image": "AGENT_IMAGE",
+      "port": 7777,
+      "publish": [],
+      "binds": [],
+      "environment": [
+        "ANTHROPIC_API_KEY",
+        "ANTHROPIC_MODEL"
+      ],
+      "depends_on": []
+    },
+    "excel": {
+      "image": "EXCEL_IMAGE",
+      "port": 80,
+      "publish": [],
+      "binds": [],
+      "environment": [],
+      "depends_on": [],
+      "profile": "excel"
+    }
+  },
+  "routes": [
+    {
+      "prefix": "/api",
+      "target": "workspace",
+      "strip_prefix": false,
+      "stream": false
+    },
+    {
+      "prefix": "/data",
+      "target": "data-api",
+      "strip_prefix": true,
+      "stream": false
+    },
+    {
+      "prefix": "/agent",
+      "target": "agent",
+      "strip_prefix": true,
+      "stream": true
+    },
+    {
+      "prefix": "/excel",
+      "target": "excel",
+      "strip_prefix": true,
+      "stream": false
+    }
+  ]
+}

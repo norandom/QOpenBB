@@ -69,6 +69,14 @@ status = "unverified"
 evidence = ["Task 1.5 accepted after independent review: 107 fixture tests passed and 27 maintained files passed the combined complexity gate with no exceptions. Source acquisition validation passed with runtime_accepted=false. Runtime acceptance, publication and promotion remain unverified. See docs/evidence.md."]
 
 [[capabilities]]
+id = "runtime-and-source-input-contracts"
+requirements = ["2.1", "3.4", "3.6", "3.7", "3.8", "5.3", "5.9", "11.1", "11.6", "11.7"]
+planned_checks = ["selected-service-configuration", "credential-injection-boundaries", "public-origin-routes", "provisional-financial-inventory", "recursive-source-exclusion"]
+test_paths = ["tests/contracts/test_configuration.py", "tests/contracts/test_source_filter.py"]
+status = "unverified"
+evidence = ["Task 1.6 accepted after independent review: 57 offline fixture tests and the combined complexity check of 33 files passed without exceptions. Declarative inputs and source selection are verified; Compose behavior, installed routes and image-layer exclusions remain unverified. See docs/runtime-contracts.md."]
+
+[[capabilities]]
 id = "dagger-image-delivery"
 requirements = ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7"]
 planned_checks = ["local-ci-dagger-parity", "ci-runner-portable-commands", "publish-and-digest-manifest", "failed-check-blocks-promotion", "pull-only-install", "build-secret-exclusion"]
