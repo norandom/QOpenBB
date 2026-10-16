@@ -64,3 +64,25 @@ def test_scan_errors_fail_closed(tmp_path, monkeypatch):
     monkeypatch.setattr('qopenbb_ci.source_filter.os.walk', failed_walk)
     with pytest.raises(ValueError, match='completely scan'):
         select_source(tmp_path, 'workspace', LOCK['workspace']['revision'], POLICY, LOCK)
+
+@pytest.mark.parametrize('source,keep', [
+    ('workspace', ['backend-api/backend/api/storage/abstract.py',
+                   'backend-api/backend/api/storage/local.py',
+                   'terminalpro/src/lib/state/auth.ts',
+                   'terminalpro/src/lib/state/tutorial.tsx',
+                   'terminalpro/src/lib/state/main.json',
+                   'terminalpro/public/assets/data/indices_fmp.json',
+                   'terminalpro/public/assets/data/tickers_fmp.json']),
+    ('data_api', ['openbb_platform/core/openbb_core/app/logs/logging_service.py',
+                  'openbb_platform/core/openbb_core/app/logs/handlers/path_tracking_file_handler.py']),
+])
+def test_production_paths_named_like_runtime_state_are_retained(tmp_path, source, keep):
+    for path in keep:
+        put(tmp_path, path)
+    parents = {str(Path(path).parent) for path in keep}
+    reject = [f'{parent}/{name}' for parent in parents for name in (
+        '.env', 'private.key', 'account.sqlite', 'session.json', 'trace.log',
+        'evidence/session.ts', 'state/account.ts', 'data/private.py', 'id_rsa')]
+    for path in reject:
+        put(tmp_path, path)
+    assert set(select_source(tmp_path, source, LOCK[source]['revision'], POLICY, LOCK)) == set(keep)

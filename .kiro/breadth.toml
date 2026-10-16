@@ -74,7 +74,7 @@ requirements = ["2.1", "3.4", "3.6", "3.7", "3.8", "5.3", "5.9", "11.1", "11.6",
 planned_checks = ["selected-service-configuration", "credential-injection-boundaries", "public-origin-routes", "provisional-financial-inventory", "recursive-source-exclusion"]
 test_paths = ["tests/contracts/test_configuration.py", "tests/contracts/test_source_filter.py"]
 status = "unverified"
-evidence = ["Task 1.6 accepted after independent review: 57 offline fixture tests and the combined complexity check of 33 files passed without exceptions. Declarative inputs and source selection are verified; Compose behavior, installed routes and image-layer exclusions remain unverified. See docs/runtime-contracts.md."]
+evidence = ["Task 1.6 and source-preservation correction accepted after independent review: 59 fixture tests passed, 32 Workspace and seven data API production paths remained eligible, and the combined complexity gate passed. Compose behavior, installed routes and image-layer exclusions remain unverified. See docs/runtime-contracts.md."]
 
 [[capabilities]]
 id = "dagger-image-delivery"

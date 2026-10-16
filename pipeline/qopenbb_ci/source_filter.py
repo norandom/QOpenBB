@@ -19,6 +19,28 @@ ALLOW = {
 }
 
 
+# These source namespaces name storage/state/logging implementations, not runtime output.
+CODE_NAMESPACES = {
+    ('backend-api', 'backend', 'api', 'storage'): {'.py'},
+    ('terminalpro', 'src', 'lib', 'state'): {'.ts', '.tsx'},
+    ('openbb_platform', 'core', 'openbb_core', 'app', 'logs'): {'.py'},
+}
+PUBLIC_SOURCE_DATA = {
+    'terminalpro/src/lib/state/main.json',
+    'terminalpro/public/assets/data/indices_fmp.json',
+    'terminalpro/public/assets/data/tickers_fmp.json',
+}
+
+
+def source_namespace_index(relative: PurePosixPath) -> int | None:
+    for prefix, suffixes in CODE_NAMESPACES.items():
+        if relative.parts[:len(prefix)] == prefix and relative.suffix in suffixes:
+            return len(prefix) - 1
+    if str(relative) in PUBLIC_SOURCE_DATA:
+        return len(relative.parts) - 2
+    return None
+
+
 def empty_public_sample(path: Path) -> bool:
     """Public dotenv samples are safe only when every assignment value is empty."""
     if path.name not in {'.env.sample', '.env.example'}:
@@ -38,7 +60,8 @@ def empty_public_sample(path: Path) -> bool:
 
 def excluded(relative: PurePosixPath, path: Path) -> bool:
     parts = [part.lower() for part in relative.parts]
-    if any(part in BLOCKED for part in parts):
+    namespace_index = source_namespace_index(relative)
+    if any(part in BLOCKED and index != namespace_index for index, part in enumerate(parts)):
         return True
     name = parts[-1]
     if name == '.env' or name.startswith('.env.'):
