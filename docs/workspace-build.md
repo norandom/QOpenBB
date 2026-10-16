@@ -1,5 +1,7 @@
 # Reproduce the Full frontend
 
+For the separately approved chart tooling setup, use [isolated chart foundation verification](chart-foundation.md). It retains the protected Bun lock strategy and does not establish renderer parity.
+
 The Full frontend builds from the owned Workspace monorepo with its unchanged Bun lock. This is task 2.1 packaging evidence, not an accepted application image or dashboard. Image assembly, account startup and routing remain later gates in the [task plan](../.kiro/specs/openbb-self-service/tasks.md).
 
 The adapted `vendor/workspace/lite/Dockerfile` defaults to `OPENBB_IMAGE_VARIANT=full`. Its frontend stage pins Bun 1.4.3 and Node 24.22.0 by image digest, downloads checksum-verified Aikido Safe Chain 1.5.25, verifies protection, then runs `safe-chain bun install --frozen-lockfile` with a 48-hour minimum package age. Bun is retained because migrating the supplied lock to pnpm would change baseline resolution. No package or lock change is part of this task.

@@ -615,9 +615,9 @@ Use the existing [complexity gate](../../../docs/complexity.md) from QOpenBB wit
 
 Whole-project TypeScript remains separately blocked by upstream TS6305 composite-output and TS5103 configuration issues. These tasks require strict checks of the complete new module/test/fixture dependency closure and cannot relabel that as whole-application typecheck success. Test helpers/fixtures and docs have explicit policy exclusions; maintained build/production logic cannot hide there.
 
-- [ ] 2.13 Prepare protected chart dependencies and isolated verification
+- [x] 2.13 Prepare protected chart dependencies and isolated verification
   - Pin ECharts 6.0.0 in the owned application with the existing validated Bun lock exception; verify Safe Chain interception, the 48-hour age policy and protected frozen restoration. Retain notices and dependency provenance; do not migrate the application lock or inject a global script.
-  - Register all planned maintained module paths and test exclusions in the existing complexity inventory, preserving unrelated pending entries. Establish focused Vitest/strict-TypeScript configuration and isolated production-build browser fixture tooling from exercised patterns, without importing broad app configuration or local secrets.
+  - Record planned module ownership in the foundation table. Register each maintained module in the executable complexity inventory when introduced, before accepting its leaf; the checker rejects mapped files that do not exist. Preserve unrelated pending entries and the explicit test exclusions. Establish focused Vitest/strict-TypeScript configuration and isolated production-build browser fixture tooling from exercised patterns, without importing broad app configuration or local secrets.
   - Done when protected restore and a real-library fixture smoke render pass, exact commands/tool/source identities are retained, and the scoped complexity command is ready for worker handoffs. This setup proves tooling, not the new host or renderer parity.
   - Complexity: all modified maintained production/build/configuration files pass 400 physical lines/file, 300 logical units/file and 50/function where applicable; package locks, tests and fixture exclusions are recorded rather than measured as production.
   - _Boundary: Controller-owned dependency, verification and inventory setup_
@@ -668,3 +668,5 @@ Whole-project TypeScript remains separately blocked by upstream TS6305 composite
   - _Boundary: Controller integration of foundation tests, inventory and evidence_
   - _Depends: 2.15, 2.17_
   - _Requirements: 1.1, 1.4, 4.8, 4.9, 9.6, 10.1, 10.3, 10.4, 10.5, 10.6_
+
+Task 2.13 accepted after independent Astra review and fresh unit, strict TypeScript, production fixture build/browser and scoped complexity checks. Workspace `e56852deff2679c71e32436554f86ba096b55677` pins ECharts 6.0.0 through protected Bun restoration. Evidence: `artifacts/task-2.13/review/review.md` and `complexity.json`. Existing oversized-file exception targets are byte-identical to the prior source; only their source identity advances. No application wiring or renderer parity is accepted.
