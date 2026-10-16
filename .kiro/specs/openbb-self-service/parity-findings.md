@@ -28,4 +28,6 @@ The [capability matrix](../../../docs/renderer-capability-matrix.md#follow-up-ca
 
 ## Next gate
 
+The subsequent [paired widget comparison](parity-widget-findings.md) reached genuine original controls and demonstrated missing controls in the candidate. Its synthetic dashboard overlay does not establish real persistence, and full theme parity remains unverified.
+
 Freeze an authenticated synthetic original-widget fixture and the existing control/state contracts. Then demonstrate an adapter through the original controls. The reference image removes one environment obstacle; it does not resolve the missing chart settings bridge, Enterprise interactions, remote-table behavior or open chart input compatibility. The remaining [discovery plan](parity-plan.md) stays pending, with no release or renderer acceptance implied.
