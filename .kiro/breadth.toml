@@ -30,8 +30,8 @@ evidence = []
 
 [[capabilities]]
 id = "workspace-baseline"
-requirements = ["4.1", "4.2", "4.3", "4.4"]
-planned_checks = ["workspace-login-save-reopen", "widget-discovery-and-values", "external-service-inventory"]
+requirements = ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7"]
+planned_checks = ["workspace-login-save-reopen", "widget-discovery-and-values", "external-service-inventory", "fmp-ready-widgets-dashboard-edit-save-reopen-refresh"]
 test_paths = []
 status = "planned"
 evidence = []

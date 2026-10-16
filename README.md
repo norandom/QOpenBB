@@ -17,6 +17,8 @@ Start with upstream Lite packaging, which contains the Workspace frontend and ap
 
 Small, documented Excel compatibility changes are permitted. Dagger will own local and GitHub Actions checks/builds/publication; the private Linux server will install immutable release images through Compose pulls. These are requirements, not an installed pipeline.
 
+First acceptance journey: build, save, reopen, and refresh dashboards using ready-made FMP-backed widgets from the self-hosted open-source OpenBB data API. Both backends are self-hosted; FMP supplies the external data.
+
 Validate the proposal's Compose syntax only:
 
 ```powershell

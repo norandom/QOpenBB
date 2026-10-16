@@ -6,6 +6,8 @@ The owner of QOpenBB wants to take over the open-source OpenBB Workspace environ
 
 The owner explicitly deferred a custom data integration backed by their own PostgreSQL database. This feature must establish the baseline before redesigning or extending it.
 
+The first acceptance journey is dashboard construction using ready-made widgets backed by FMP through the owner's self-hosted open-source OpenBB data API. Both the Workspace application backend and the data API run in this setup; only FMP is the external financial-data provider. Dashboard usability takes priority over optional notebooks and later custom integrations.
+
 ## Boundary Context
 
 - **In scope:** upstream acquisition and provenance, a single controlling Docker Compose configuration, local development, Dagger builds in GitHub Actions, registry publication and image-pull installation, private-server deployment, baseline persistence, FMP connectivity, Excel baseline verification with small compatibility changes, and optional Jupyter.
@@ -52,6 +54,9 @@ The owner explicitly deferred a custom data integration backed by their own Post
 2. When the owner saves a dashboard and restarts the environment, Workspace shall make that dashboard available after sign-in.
 3. When the owner registers the self-hosted OpenBB data service, Workspace shall discover and display supported data widgets.
 4. If an upstream capability depends on an unavailable external service, the baseline report shall identify that capability as unavailable rather than report the complete hosted product as reproduced.
+5. When the owner connects the self-hosted data API, Workspace shall offer its available FMP-backed widget definitions without requiring the owner to author each widget from scratch.
+6. When the owner selects available widgets, Workspace shall allow adding, arranging, resizing, and removing them in an owned dashboard.
+7. When the owner saves and reopens an FMP-backed dashboard, Workspace shall retain its layout and widget parameters and allow refreshing supported data through the self-hosted API.
 
 ### Requirement 5: Open-source data API and FMP
 **Objective:** As the owner, I want FMP data through a self-hosted OpenBB API so that data access does not depend on OpenBB's hosted API.

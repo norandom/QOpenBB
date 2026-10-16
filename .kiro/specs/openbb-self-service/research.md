@@ -22,6 +22,10 @@ The [Excel environment example](https://github.com/OpenBB-finance/workspace/blob
 
 ## Proposed single-Compose organization
 
+Primary user journey: add ready-made FMP-backed widgets, arrange/resize them, save a dashboard, reopen it, and refresh its data. The [OpenBB connector documentation](https://docs.openbb.co/odp/v4/python/quickstart/workspace) says installed endpoints become available as widgets through the data API. The v5 launcher similarly generates widgets.json. This is our self-hosted API, not OpenBB's hosted data service. The frontend's [widget search](https://github.com/OpenBB-finance/workspace/blob/be00e95019a55d57af146919ee46b7e1a4859226/terminalpro/src/components/LayoutAuth/Search/hooks/useFilterWidgets.ts) includes external-connector widgets; "external" here means outside the application backend, including our other Docker service.
+
+Distinguish endpoint-generated widgets from the historical curated/premium data catalog. Lite locks packageDataEnabled off; Full enables that flag by default. Neither flag proves that historical catalog endpoints work against the self-hosted API. Verify the first dashboard using API-discovered widgets and actual FMP entitlements. Do not promise the whole historical catalog or premade dashboards without checking their routes and dependencies.
+
 | Service | Baseline responsibility | State | Initial treatment |
 | --- | --- | --- | --- |
 | workspace | Upstream Lite: frontend + application API + bundled SQLite/Redis | `/data` named volume | Required; retain packaging |
