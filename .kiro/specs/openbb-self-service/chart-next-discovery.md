@@ -25,9 +25,9 @@ Application adoption remains unverified. Current callers suppress chart view, th
 
 ## Observe saved editor fields before mapping them
 
-The original editor capture exercised title, legend, stroke and stacked-family controls, but captured no reliable outgoing saved widget payload. The capture waited eight seconds. Both inspected revisions of `LayoutAuth/useSyncItems.tsx` dispatches state every 30 seconds and saves dashboards every 60 seconds; `api/dashboard.api.ts` sends `{items: dashboardData}` to `/pro/dash/sync`.
+The initial editor capture exercised title, legend, stroke and stacked-family controls, but captured no reliable outgoing saved widget payload. The capture waited eight seconds. Both inspected revisions of `LayoutAuth/useSyncItems.tsx` dispatch state every 30 seconds and save dashboards every 60 seconds; `api/dashboard.api.ts` sends `{items: dashboardData}` to `/pro/dash/sync`.
 
-A new capture must observe the 30/60-second schedule or verify an explicit save action. Capture only the synthetic dashboard payload. Outgoing payload evidence can establish field paths; it cannot prove persistence if the backend rejects the write. The observed title/legend reset on one family switch remains fixture-specific until payload evidence explains it.
+A subsequent capture used the verified Control+Shift+S save action and collected seven actual outgoing synthetic-dashboard payloads. Title, legend and stroke edits occupy the `bar` branch and remain stored across grouped, stacked and line selections. See [original option findings](chart-option-discovery.md). Outgoing payloads establish saved field paths, not effective styling or persistence after reopening. The earlier apparent title/legend reset must not be described as deleted stored state.
 
 ## Repair SQLite at the query boundary
 
