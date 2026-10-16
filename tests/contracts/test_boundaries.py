@@ -47,11 +47,26 @@ def test_source_lock_rejects_provenance_or_acquisition_confusion(mutation):
     assert not evaluate("source", source, None, [])["valid"]
 
 
-def test_current_api_candidate_does_not_replace_acquired_revision():
+def test_acquisition_snapshot_keeps_candidate_distinct():
     payload = json.loads((ROOT / "sources.lock.json").read_text())
+    payload["data_api"]["revision"] = "7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2"
+    payload["data_api"]["candidate_release"]["status"] = (
+        "selected, unvalidated; existing acquisition revision retained until validation selects replacement")
     lock = SourceLock.model_validate(payload)
     assert lock.data_api.revision == "7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2"
     assert lock.data_api.candidate_release.revision == "5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0"
+
+
+def test_candidate_adaptation_does_not_claim_runtime_acceptance():
+    payload = json.loads((ROOT / "sources.lock.json").read_text())
+    payload["data_api"]["revision"] = payload["data_api"]["candidate_release"]["revision"]
+    payload["data_api"]["candidate_release"]["status"] = (
+        "selected, unvalidated; adaptation checkout based on this release")
+    result = evaluate("source", payload, None, [])
+    assert result["valid"] is True
+    assert result["runtime_accepted"] is False
+    payload["validated_release"] = "not-validated-by-checkout-selection"
+    assert evaluate("source", payload, None, [])["valid"] is False
 
 
 @pytest.mark.parametrize("mutation", ["fixture_context", "empty_context", "no_model", "no_agent",

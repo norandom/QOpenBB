@@ -12,7 +12,10 @@ class CandidateSource(Contract):
     tag: Token
     tag_object: Revision
     revision: Revision
-    status: Literal["selected, unvalidated; existing acquisition revision retained until validation selects replacement"]
+    status: Literal[
+        "selected, unvalidated; existing acquisition revision retained until validation selects replacement",
+        "selected, unvalidated; adaptation checkout based on this release",
+    ]
     evidence: Literal["sources/api-release.json"]
 
 

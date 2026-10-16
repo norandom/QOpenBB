@@ -38,7 +38,10 @@
           "type": "string"
         },
         "status": {
-          "const": "selected, unvalidated; existing acquisition revision retained until validation selects replacement",
+          "enum": [
+            "selected, unvalidated; existing acquisition revision retained until validation selects replacement",
+            "selected, unvalidated; adaptation checkout based on this release"
+          ],
           "title": "Status",
           "type": "string"
         },

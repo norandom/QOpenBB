@@ -12,8 +12,8 @@ mkdir -p artifacts/task-1.4
 pipeline/.venv/bin/python -m tools.quality.complexity --check \
   --base workspace=be00e95019a55d57af146919ee46b7e1a4859226 \
   --head workspace=be00e95019a55d57af146919ee46b7e1a4859226 \
-  --base data_api=7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2 \
-  --head data_api=7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2 \
+  --base data_api=5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0 \
+  --head data_api=5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0 \
   --output artifacts/task-1.4/combined-foundation.json
 ```
 

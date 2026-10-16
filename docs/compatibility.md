@@ -7,7 +7,8 @@ QOpenBB has acquired owned sources and selected the latest upstream API release 
 | Input | Exact identity | Evidence status |
 | --- | --- | --- |
 | Owned Workspace, Full | `be00e95019a55d57af146919ee46b7e1a4859226` | Acquired unchanged at `vendor/workspace`; root source and component notices retained |
-| Owned data API acquisition | `7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2` | Acquired unchanged at `vendor/data-api`; develop snapshot is not an accepted release |
+| Original data API acquisition | `7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2` | Historical develop snapshot; acquisition provenance and notices remain retained |
+| Current data API adaptation base | `5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0` | Selected OpenBB 5 release checkout at `vendor/data-api`; provider compatibility and runtime remain unvalidated |
 | Latest upstream API release candidate | `openbb-v5.0.0`, commit `5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0` | Official release published 2026-09-30; identical annotated tag available in owned fork; candidate objects acquired |
 | FMP source release | `openbb-fmp` 1.6.1 | Published archive hash verified; restoration/adaptation pending |
 

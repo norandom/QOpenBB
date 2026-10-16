@@ -11,7 +11,7 @@ pipeline/.venv/bin/python -m qopenbb_ci.schemas --output schemas
 pipeline/.venv/bin/python -m pytest -c pipeline/pyproject.toml tests/contracts -n0 --maxprocesses=2
 ```
 
-These commands were exercised on 2026-10-16. Source validation accepts the acquired API revision `7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2` while retaining `5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0` as an unvalidated candidate. Neither this result nor the synthetic contract tests establishes application acceptance.
+These commands were exercised on 2026-10-16. The original API acquisition was `7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2`; adaptation now starts from the selected OpenBB 5 candidate `5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0`. Source validation accepts either declared acquisition or adaptation status while rejecting a claimed validated release. Selecting a checkout does not establish provider compatibility or application acceptance.
 
 ## Select the check
 
