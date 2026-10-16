@@ -91,7 +91,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 1.5_
   - _Requirements: 2.1, 3.4, 3.6, 3.7, 3.8, 5.3, 5.9, 11.1, 11.6, 11.7_
 
-- [ ] 1.7 Establish isolated API and browser verification infrastructure
+- [x] 1.7 Establish isolated API and browser verification infrastructure
   - Create fixture-only provider responses, pytest markers, bounded xdist execution and a pinned headless Playwright environment with disposable accounts and output roots.
   - Provide owned-browser CDP diagnostics, sensitive-header redaction, credential-entry trace suppression and hidden Windows helpers where needed.
   - Done when isolation/failure smoke checks run without user-browser attachment, show worker bounds, and preserve sanitized reproducible results; missing live credentials remain unverified.

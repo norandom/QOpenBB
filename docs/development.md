@@ -81,7 +81,7 @@ The portable `qopenbb-ci` entry point provides package identity and [evidence va
 
 ## Preserve the verification boundary
 
-The base images in [tools.lock.json](../pipeline/tools.lock.json) use registry-returned manifest digests, recorded on 2026-10-16. These are future build inputs, not evidence that an application image builds or runs. No browser binaries were installed and no browser test ran. Task 1.7 owns the isolated headless browser/Compose harness; task 1.8 owns the first image export/load round trip.
+The base images in [tools.lock.json](../pipeline/tools.lock.json) use registry-returned manifest digests, recorded on 2026-10-16. These are future build inputs, not evidence that an application image builds or runs. Task 1.7 has accepted the pinned headless browser and fixture checks on WSL; follow [verification infrastructure](verification.md) for setup and evidence limits. Task 1.8 owns the first image export/load round trip; actual Compose lifecycle acceptance comes later.
 
 The Python project defaults to serial pytest with an xdist ceiling of two. Use at most `-n 2 --maxprocesses=2` when isolated tests exist. Playwright starts at one worker when its runner is implemented. Only one heavy install, build or suite may run at a time. See the [testing policy](../.kiro/steering/testing.md) for state isolation and evidence requirements; installed packages alone do not satisfy requirement 10.4.
 

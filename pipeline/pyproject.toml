@@ -22,6 +22,7 @@ packages = ["qopenbb_ci"]
 
 [tool.pytest.ini_options]
 addopts = "-n0 --maxprocesses=2 --strict-markers"
+markers = ["fixture: synthetic data only", "live: separately authorized provider acceptance"]
 
 [tool.uv]
 required-version = "==0.12.5"

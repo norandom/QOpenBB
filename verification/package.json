@@ -12,5 +12,9 @@
     "@playwright/test": "1.64.0",
     "@types/node": "24.10.1",
     "typescript": "6.0.3"
+  },
+  "scripts": {
+    "smoke": "cd .. && node verification/runner.ts",
+    "test:infrastructure": "cd .. && node verification/node_modules/@playwright/test/cli.js test --config verification/playwright.config.ts"
   }
 }
