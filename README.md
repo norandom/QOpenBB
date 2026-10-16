@@ -2,13 +2,13 @@
 
 QOpenBB aims to give financial engineers a self-hosted Full OpenBB Workspace: build dashboards from FMP and FRED data, keep layouts and state under local control, then use Anthropic AI and Excel against the same data API.
 
-The repository currently contains approved requirements and design, an approved implementation task plan, source pins, and feasibility research. Implementation has started with the foundations; it does not yet provide a built or accepted application. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
+The repository currently contains approved requirements and design, an approved implementation task plan, source pins, and feasibility research. Foundation tasks are accepted, including protected tooling, verification and Dagger source-image export. The Full frontend builds from frozen inputs and FMP provider discovery passes against core 2.0.1. Application startup and financial routes are in progress; no deployable application release is accepted. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
 
 ## Current evidence
 
 Direct read-only provider checks returned HTTP 200 for FMP company profile and income statement data and FRED GDP. Anthropic model discovery also returned HTTP 200; inference remains untested. These checks establish limited upstream access, not working Workspace widgets, a compatible OpenBB provider, or a working agent. See the [feasibility report](.kiro/specs/openbb-self-service/feasibility.md) for scope and remaining gaps.
 
-The latest API target requires compatibility work: OpenBB 5 / core 2 excludes the released FMP provider, whose dependency constraint requires core below 2. The Full Workspace build also needs reproducible adaptation of its dependency and source-assembly steps. [Source pins](sources.lock.json) record acquisition snapshots, not validated releases.
+The latest API target requires compatibility work: OpenBB 5 / core 2 excludes the released FMP provider, whose dependency constraint requires core below 2. The Full frontend packaging checkpoint is accepted; backend packaging and complete image verification remain pending. [Source pins](sources.lock.json) record acquisition snapshots, not validated releases.
 
 ## Intended operating contract
 
@@ -30,7 +30,7 @@ Jupyter is managed separately. Custom PostgreSQL integration remains deferred.
 | [Research](.kiro/specs/openbb-self-service/research.md) | Source references and proposed integration contracts |
 | [Technical design](.kiro/specs/openbb-self-service/design.md) | Approved service contracts, file boundaries and acceptance strategy |
 | [Implementation tasks](.kiro/specs/openbb-self-service/tasks.md) | Bounded tasks with exclusive lanes, complexity caps and acceptance joins |
-| [Phase status](.kiro/specs/openbb-self-service/spec.json) | Tasks approved; foundation implementation in progress |
+| [Phase status](.kiro/specs/openbb-self-service/spec.json) | Tasks approved; Workspace and data adaptation in progress |
 | [Contribution guide](docs/contributing.md) | Evidence, documentation, and code-comment conventions |
 
 Real credentials belong only in the ignored `.env`. The public [.env.sample](.env.sample) has empty values. Never include secrets in builds, images, browser assets, reports, or logs.

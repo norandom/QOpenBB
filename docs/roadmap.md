@@ -2,7 +2,7 @@
 
 Prove the Full Workspace dashboard first, accept Anthropic next, then implement Excel. Each stage below has an evidence gate. This is a dependency overview, not a generated task list or approval to implement.
 
-The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approved requirements and [technical design](../.kiro/specs/openbb-self-service/design.md). The owner-approved [implementation plan](../.kiro/specs/openbb-self-service/tasks.md), including the Perspective amendment, has passed independent dependency review. Source acquisition, protected toolchains and combined complexity enforcement are accepted. Evidence and runtime contracts are next. Read the [feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) before interpreting a source finding or provider probe as integration evidence.
+The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approved requirements and [technical design](../.kiro/specs/openbb-self-service/design.md). The owner-approved [implementation plan](../.kiro/specs/openbb-self-service/tasks.md), including the Perspective amendment, has passed independent dependency review. All foundation tasks are accepted, including evidence/runtime contracts, isolated verification and the Dagger export workflow. Full frontend packaging and FMP installed discovery are accepted. Backend startup and the FMP profile route are next. Read the [feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) before interpreting a source finding or provider probe as integration evidence.
 
 ## Dependency gates
 
@@ -21,7 +21,7 @@ Build and CI foundation work may overlap application work after shared contracts
 ## Known work before a build can prove compatibility
 
 - The selected OpenBB 5 / core 2 API excludes released FMP support. FMP 1.6.1 requires core below 2; a maintained, tested adaptation is required. Static import compatibility does not prove endpoint or financial-data correctness.
-- The pinned Workspace Dockerfile expects an npm lockfile absent from the inspected frontend, which has `bun.lock`. Reproducible dependency installation needs an explicit adaptation.
+- The Full frontend now installs from its frozen Bun lock and builds successfully. Backend packaging, startup and complete application-image checks remain pending.
 - Legacy source-fetch scripts refer to inaccessible split repositories. Assemble the required build context from the owned Workspace monorepo and recorded revisions.
 - Implement the selected Perspective explorer, retain useful Plotly widgets and Community-only residual tables, and remove commercial renderer dependencies. Verify saved configuration, financial aggregations, refresh and selected-view AI data; see the [replacement decision](chart-replacement-assessment.md).
 - Widget discovery, HTTP path rewriting, agent streaming, and Excel authentication need integration evidence. Selecting Full or declaring Compose services does not implement them.
