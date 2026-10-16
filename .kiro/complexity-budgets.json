@@ -51,14 +51,16 @@
     {
       "id": "workspace",
       "repository": "https://github.com/norandom/openbb-workspace.git",
-      "revision": "76b1b55cbb52b02ee00cd968a0a835dc090ce4cf",
+      "revision": "633b0feca5e4506bf5bd2034043b43b6f5377f7b",
       "source_lock_key": "workspace",
       "root": "vendor/workspace",
       "mode": "changed",
       "owners": [{"spec": "openbb-self-service", "include": ["**/*"], "files": [
         "lite/Dockerfile", "terminalpro/vite.config.ts", "terminalpro/index.html",
         "terminalpro/build/runtimeConfig.ts",
-        "lite/entrypoint.sh", "lite/bootstrap.py", "lite/build-tools.in"
+        "lite/entrypoint.sh", "lite/bootstrap.py", "lite/build-tools.in",
+        "terminalpro/src/lib/api.tsx", "terminalpro/src/lib/utils/backendOrigin.ts",
+        "terminalpro/src/lib/utils/queryResponse.ts"
       ]}],
       "exclusions": [
         {"patterns": ["lite/build-tools.txt"], "reason": "Generated hash-pinned backend build-tool lock", "source": "lite/build-tools.in; protected uv pip compile --generate-hashes"},

@@ -130,7 +130,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 2.1_
   - _Requirements: 1.4, 2.2, 2.3, 4.1, 9.6_
 
-- [ ] 2.3 Correct application authentication request boundaries
+- [x] 2.3 Correct application authentication request boundaries
   - Replace substring backend detection with normalized origin and complete-path matching while retaining existing application session handling.
   - Regress application routes, data routes containing the API segment, lookalike prefixes, other origins and connector-supplied headers.
   - Done when application credentials attach only to the intended backend and external connector/agent requests keep their own headers.
