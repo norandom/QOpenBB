@@ -1,3 +1,3 @@
-from .main import Qopenbb
+from .images import build
 
-__all__ = ["Qopenbb"]
+__all__ = ["build"]

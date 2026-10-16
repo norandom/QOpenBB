@@ -63,7 +63,7 @@ uv run --project pipeline --locked qopenbb-ci --help
 uv run --project pipeline --locked python --version
 uv run --project pipeline --locked python -m pytest --version
 uvx --from pytest==9.1.1 pytest --version
-uv run --project .dagger --locked python -c 'import qopenbb, importlib.metadata as m; print(qopenbb.Qopenbb.__name__, m.version("dagger-io"))'
+uv run --project .dagger --locked python -c 'import qopenbb, importlib.metadata as m; print(qopenbb.build.__name__, m.version("dagger-io"))'
 node --version
 npm --version
 pnpm --version
@@ -77,7 +77,7 @@ node verification/node_modules/typescript/bin/tsc --version
 
 Expected versions are Python 3.13.15, pytest 9.1.1, pytest-xdist 3.8.0, Dagger CLI/SDK 0.21.8, Playwright 1.64.0 and TypeScript 6.0.3, together with the host/runtime versions above. Python's `ast` parser follows CPython 3.13.15; the later JavaScript/TypeScript counter uses the TypeScript compiler AST. `uv sync --locked` and pnpm's `--frozen-lockfile` must fail on inconsistent project manifests and locks. Do not regenerate locks merely to make a verification run pass.
 
-The portable `qopenbb-ci` entry point provides package identity and [evidence validation](evidence.md). Generation, publication and promotion commands remain pending. The `.dagger` package defines the image module type and imports the published stable SDK. Task 1.8 will add `dagger.json`, generated engine bindings, filtered source inputs and image exports. No Dagger build command is available at this checkpoint.
+The portable `qopenbb-ci` entry point provides package identity and [evidence validation](evidence.md). Task 1.8 accepts the [foundation image workflow](image-builds.md): portable acquisition/staging and archive loading around the pinned Dagger Python SDK through `dagger run`. Only the filtered stage is uploaded. Application builds, generation, publication and promotion remain pending.
 
 ## Preserve the verification boundary
 

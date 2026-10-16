@@ -16,7 +16,11 @@
         "include": ["**/*"],
         "files": [
           ".dockerignore", ".gitattributes", ".gitignore", ".node-version", ".python-version",
-          ".dagger/pyproject.toml", ".dagger/src/qopenbb/__init__.py", ".dagger/src/qopenbb/main.py",
+          ".dagger/pyproject.toml", ".dagger/src/qopenbb/__init__.py",
+          ".dagger/src/qopenbb/images.py", ".dagger/src/qopenbb/export.py",
+          "pipeline/qopenbb_ci/sources.py", "pipeline/qopenbb_ci/staging.py",
+          "pipeline/qopenbb_ci/images.py", "pipeline/qopenbb_ci/image_cli.py",
+          "pipeline/qopenbb_ci/provenance.py",
           "pipeline/pyproject.toml", "pipeline/qopenbb_ci/__init__.py", "pipeline/qopenbb_ci/cli.py",
           "pipeline/qopenbb_ci/contracts.py", "pipeline/qopenbb_ci/source_contract.py",
           "pipeline/qopenbb_ci/checks.py", "pipeline/qopenbb_ci/schemas.py",

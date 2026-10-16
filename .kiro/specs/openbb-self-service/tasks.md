@@ -33,7 +33,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 
 ## Tasks
 
-- [ ] 1. Establish source, quality and execution foundations
+- [x] 1. Establish source, quality and execution foundations
 
 - [x] 1.1 Acquire owned sources and record the candidate baseline
   - Acquire exact owned-fork revisions, select the latest API release candidate and record upstream provenance, required package inventory and component license/asset constraints.
@@ -100,7 +100,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 1.6_
   - _Requirements: 10.1, 10.2, 10.3, 10.4, 10.6_
 
-- [ ] 1.8 Implement Dagger source filtering and image export foundations
+- [x] 1.8 Implement Dagger source filtering and image export foundations
   - Implement locked owned-source acquisition, explicit context filtering, build selection and exported image provenance without adding test, generation, publication or deployment logic to Dagger.
   - Add portable image archive loading separately from Dagger and verify a small build/export/load round trip on WSL and the clean Linux runner.
   - Done when source/layer checks exclude a disposable secret sentinel, exact image identity survives export/load, and no publish credential reaches Dagger.

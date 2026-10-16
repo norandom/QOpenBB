@@ -80,9 +80,9 @@ evidence = ["Task 1.6 and source-preservation correction accepted after independ
 id = "dagger-image-delivery"
 requirements = ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7"]
 planned_checks = ["local-ci-dagger-parity", "ci-runner-portable-commands", "publish-and-digest-manifest", "failed-check-blocks-promotion", "pull-only-install", "build-secret-exclusion"]
-test_paths = []
-status = "planned"
-evidence = []
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/task18_inspect.py", "tests/delivery/task18_runner.sh"]
+status = "unverified"
+evidence = ["Task 1.8 accepted after independent review: 29 focused tests, 46-file complexity gate, exact-identity archive load and network-disabled foundation smoke passed. WSL and fresh Linux userspace produced identical archives using the shared WSL daemon and cached Dagger engine. Sentinel exclusion and 39 required namespace paths were checked. Application builds, GitHub execution, publication and deployment remain unverified; see docs/image-builds.md."]
 
 [[capabilities]]
 id = "background-verification"
