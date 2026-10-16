@@ -728,7 +728,7 @@ Reuse the accepted Node/dependency environment and existing Vitest, strict TypeS
   - _Depends: 2.19_
   - _Requirements: 4.8, 4.9_
 
-- [ ] 2.22 Verify snapshot-to-host rendering in an isolated browser
+- [x] 2.22 Verify snapshot-to-host rendering in an isolated browser
   - Compose actual snapshot validation and mapping with the accepted EChartsHost. The fixture owns monotonic render revisions independently of dataRevision; invalid/unsupported inputs expose diagnostics without submitting partial renders.
   - Exercise homogeneous Revenue/Costs data across all three families, repeated labels, negative stacks, settings-only updates at unchanged dataRevision, stacked-to-line replacement, resize, PNG export, rejection and recovery. Assert exact numeric options and visible labels/output; inspect images as supplementary evidence.
   - Done when the freshly built fixture passes one-worker headless Playwright with sanitized CDP diagnostics and owned cleanup, and independent review reproduces the join. Existing fixture tests remain runnable. No original application UX or persistence acceptance is claimed.
@@ -751,3 +751,5 @@ Task 2.19 accepted at Workspace 8c12a9127cd913e5f6ebb8a9dfe3fd82ba56138f after i
 Task 2.20 accepted at Workspace 616a0a70241fd15a10e0dc91dcec93cf701847ac after independent Sol review. Fresh 26 snapshot tests, strict TypeScript, actual repository lint and complexity evidence pass (110 physical, 122 logical, largest function 29). Evidence: artifacts/task-2.20/review/review.md. Mapper and browser integration remain separate gates.
 
 Task 2.21 accepted at Workspace 59118937434b9f5a9bebd4e80bcb54f7ca2d552e after independent Astra review. Fresh 52 mapping tests, strict TypeScript and actual repository lint pass. Mapper metrics: 273 physical, 90 logical, largest function 15. Evidence: artifacts/task-2.21/review/verdict.md. Browser composition remains task 2.22; original renderer parity is unverified.
+
+Task 2.22 accepted at Workspace 06fdb859bf426eb44dce13c54b21c494fcc244fd after independent Astra verification: 124 tests, strict TypeScript, build, scoped lint and three browser cases passed; CDP diagnostics are empty. Fresh PNGs show negative stacking, repeated categories and line gaps. Evidence: artifacts/task-2.22/review/review.md. Fixture animation is disabled to make image verification deterministic; original application parity remains unverified.
