@@ -62,8 +62,8 @@ evidence = []
 
 [[capabilities]]
 id = "dagger-image-delivery"
-requirements = ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6"]
-planned_checks = ["local-ci-dagger-parity", "publish-and-digest-manifest", "failed-check-blocks-promotion", "pull-only-install", "build-secret-exclusion"]
+requirements = ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7"]
+planned_checks = ["local-ci-dagger-parity", "ci-runner-portable-commands", "publish-and-digest-manifest", "failed-check-blocks-promotion", "pull-only-install", "build-secret-exclusion"]
 test_paths = []
 status = "planned"
 evidence = []

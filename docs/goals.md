@@ -23,7 +23,7 @@ The baseline uses datasets supported by the selected API and the owner's provide
 
 ## Operating boundaries
 
-The target uses Windows/WSL for development and the same service topology on private Linux. It exposes plain HTTP on `0.0.0.0:23003`; the owner supplies the public Cloudflare Access tunnel at `https://qbb.hanse-hedge.fund`. State stays in bind directories under `./data`. Dagger owns builds, checks, and publication; the server pulls images without compiling application source.
+The target uses Windows/WSL for development and the same service topology on private Linux. It exposes plain HTTP on `0.0.0.0:23003`; the owner supplies the public Cloudflare Access tunnel at `https://qbb.hanse-hedge.fund`. State stays in bind directories under `./data`. Dagger builds images. Portable repository commands own verification and publication, with GitHub Actions replaceable by Gitea Actions. The server pulls images without compiling application source.
 
 Jupyter, notebook images, wheel distribution, custom financial-model workbooks, and commercial-service recreation are outside this baseline. Custom PostgreSQL data integration is deferred to a later specification. EconDB is optional follow-up work.
 

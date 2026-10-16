@@ -2,7 +2,7 @@
 
 Prove the Full Workspace dashboard first, accept Anthropic next, then implement Excel. Each stage below has an evidence gate. This is a dependency overview, not a generated task list or approval to implement.
 
-The [phase record](../.kiro/specs/openbb-self-service/spec.json) currently has requirements generated and awaiting approval. Design and tasks have not been generated or approved. Read the [feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) before interpreting a source finding or provider probe as integration evidence.
+The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approved requirements and an independently reviewed [technical design](../.kiro/specs/openbb-self-service/design.md) awaiting owner approval. Tasks have not been generated or approved. Read the [feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) before interpreting a source finding or provider probe as integration evidence.
 
 ## Dependency gates
 
@@ -14,9 +14,9 @@ The [phase record](../.kiro/specs/openbb-self-service/spec.json) currently has r
 | 4. Accept the dashboard and data baseline | Implement foundations, adapt Full builds and FMP, select the latest validated API, regenerate widgets, establish FRED and persistence | Executable scope/complexity checks; clean builds; real widget discovery and values; edit/save/restart/reopen/refresh; provider failures; bind-state recovery |
 | 5. Accept Anthropic | Implement agent discovery, model access, streaming, selected-data handling, and recovery | Actual Workspace success and failure evidence; dashboards stay usable when the agent is unavailable |
 | 6. Implement and accept Excel | Regenerate functions and adapt URLs, authentication, manifest, and API contracts | Stage 5 accepted first; actual Office load/login/function/refresh/reopen through the public access boundary |
-| 7. Release and recover on Linux | Finish Dagger checks/publication, immutable image manifest, pull-only deployment, and rollback/backup procedure | Required checks pass against recorded revisions/images; Linux journeys and clean restore pass |
+| 7. Release and recover on Linux | Finish portable verification/publication commands, Dagger image builds, immutable image manifest, pull-only deployment, and rollback/backup procedure | Required checks pass against recorded revisions/images; Linux journeys and clean restore pass |
 
-Dagger foundation work may overlap application work after shared contracts are frozen and ownership is disjoint. Publication and release acceptance still wait for their required gates. [Delegation steering](../.kiro/steering/delegation.md) defines permitted lanes, model roles, and independent review. Excel cannot become a spare parallel lane before Anthropic acceptance.
+Build and CI foundation work may overlap application work after shared contracts are frozen and ownership is disjoint. Publication and release acceptance still wait for their required gates. [Delegation steering](../.kiro/steering/delegation.md) defines permitted lanes, model roles, and independent review. Excel cannot become a spare parallel lane before Anthropic acceptance.
 
 ## Known work before a build can prove compatibility
 

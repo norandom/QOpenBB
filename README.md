@@ -2,7 +2,7 @@
 
 QOpenBB aims to give financial engineers a self-hosted Full OpenBB Workspace: build dashboards from FMP and FRED data, keep layouts and state under local control, then use Anthropic AI and Excel against the same data API.
 
-The repository currently contains requirements, source pins, and feasibility research. It does not yet provide a built or accepted application. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
+The repository currently contains approved requirements, a reviewed technical design, source pins, and feasibility research. It does not yet provide a built or accepted application. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
 
 ## Current evidence
 
@@ -15,7 +15,7 @@ The latest API target requires compatibility work: OpenBB 5 / core 2 excludes th
 - Develop on Windows/WSL Docker and deploy the same Compose topology on a private Linux server.
 - Serve plain HTTP at `0.0.0.0:23003`. The owner manages Cloudflare Access and the tunnel for `https://qbb.hanse-hedge.fund`.
 - Bind persistent state under `./data`, initially `./data/workspace` to `/data`; use no Docker-managed data volumes.
-- Let Dagger own checks, builds, and publication in GitHub. Deploy by pulling recorded image digests.
+- Use Dagger only for image builds. Portable repository commands verify and publish; GitHub Actions runs them now, with a later move to Gitea Actions in mind. Deploy by pulling recorded image digests.
 - Accept the Full dashboard and FMP/FRED journey first, then Anthropic. Excel implementation waits for Anthropic acceptance.
 
 Jupyter is managed separately. Custom PostgreSQL integration remains deferred.
@@ -28,7 +28,8 @@ Jupyter is managed separately. Custom PostgreSQL integration remains deferred.
 | [Data API fork](https://github.com/norandom/openbb-data-api) | OpenBB data API and provider adaptation |
 | [Requirements](.kiro/specs/openbb-self-service/requirements.md) | Observable acceptance criteria and scope |
 | [Research](.kiro/specs/openbb-self-service/research.md) | Source references and proposed integration contracts |
-| [Phase status](.kiro/specs/openbb-self-service/spec.json) | Approval state; requirements review is pending |
+| [Technical design](.kiro/specs/openbb-self-service/design.md) | Reviewed service contracts, file boundaries and acceptance strategy; awaiting owner approval |
+| [Phase status](.kiro/specs/openbb-self-service/spec.json) | Approval state; design review by the owner is next |
 | [Contribution guide](docs/contributing.md) | Evidence, documentation, and code-comment conventions |
 
 Real credentials belong only in the ignored `.env`. The public [.env.sample](.env.sample) has empty values. Never include secrets in builds, images, browser assets, reports, or logs.
@@ -41,4 +42,4 @@ From this repository root:
 docker compose --project-directory . --env-file .kiro/specs/openbb-self-service/compose.validation.env -f .kiro/specs/openbb-self-service/compose.proposed.yaml --profile excel config --quiet
 ```
 
-This command checks the [Compose proposal](.kiro/specs/openbb-self-service/compose.proposed.yaml) with fake fixture values. It does not build or start the application. Design and dependency-mapped tasks follow human requirements approval.
+This command checks the [Compose proposal](.kiro/specs/openbb-self-service/compose.proposed.yaml) with fake fixture values. It does not build or start the application. The technical design is generated and independently reviewed. Dependency-mapped tasks follow owner design approval.

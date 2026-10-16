@@ -2,8 +2,10 @@
 
 User direction, 2026-10-16: Dagger builds the images in GitHub; the private Linux server installs via image pull. Adapted from the sibling project's single-pipeline convention.
 
-- Dagger owns checks, builds, and publication. GitHub Actions checks out the repository, sets permissions/credentials, invokes Dagger, and retains reports; it must not duplicate the check/build logic in shell/YAML.
-- Developers use the same pinned Dagger definitions locally in WSL. Pin engine/SDK, actions, source revisions, dependencies, and release images.
+- Dagger owns image builds only. It does not own testing, consumer generation, publication, release promotion or deployment. This explicit owner clarification supersedes the earlier broader build/check/publish interpretation.
+- Portable repository commands own verification, consumer generation, image loading/publication and release manifests. They run locally in WSL and on CI runners without requiring GitHub APIs or event payloads for core logic.
+- GitHub Actions is the initial thin runner: checkout, tool setup, permissions/secret plumbing, invocation and artifact retention. Keep the commands reusable by Gitea Actions with wrapper/configuration changes only. Actual Gitea infrastructure or migration is deferred.
+- Developers use the same pinned Dagger build definitions locally in WSL. Pin engine/SDK, actions, source revisions, dependencies, and release images. Registry URLs, repository namespace, release ID and source references are explicit inputs; GHCR is the initial default, not a hard-coded dependency.
 - Proposed registry: GHCR under the owner's norandom namespace. Confirm package visibility during implementation. Use least-privilege CI publication and read-only server pull credentials when needed.
 - PR checks do not publish and do not receive publication/provider secrets. An eligible release is promoted only after required checks pass.
 - Publish immutable image digests and a release manifest tying all service images to source revisions and check results. Mutable latest tags are not deployment evidence.

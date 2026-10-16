@@ -10,6 +10,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Find the next dependency gate | [Roadmap](roadmap.md) |
 | Assess what has actually been tested | [Feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) and [breadth map](../.kiro/breadth.toml) |
 | Review acceptance criteria or approve the next phase | [Requirements](../.kiro/specs/openbb-self-service/requirements.md) and [phase status](../.kiro/specs/openbb-self-service/spec.json) |
+| Review service contracts, file ownership and acceptance gates | [Technical design](../.kiro/specs/openbb-self-service/design.md) |
 | Understand proposed services and compatibility risks | [Research](../.kiro/specs/openbb-self-service/research.md) and [Full versus Lite](../.kiro/specs/openbb-self-service/lite-vs-full.md) |
 | Contribute code, comments, evidence, or documentation | [Contribution guide](contributing.md) |
 

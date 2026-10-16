@@ -25,6 +25,6 @@ Adapted at the user's request on 2026-10-16 from the sibling because-security-qu
 
 `.kiro/breadth.toml` links capability -> spec criteria -> planned/implemented test -> evidence status. Planned test IDs are not executable tests. Never label a capability verified based on an empty or skipped suite. Parked PostgreSQL work is not a baseline coverage target.
 
-During implementation add actual test paths/IDs and evidence links. Preserve upstream test entry points where usable; do not invent command names or copy Angular/Perspective-specific runners into this React application. Dagger owns the closing gate, including the relevant browser checks; a Python-only gate cannot certify Workspace or Excel.
+During implementation add actual test paths/IDs and evidence links. Preserve upstream test entry points where usable; do not invent command names or copy Angular/Perspective-specific runners into this React application. Portable repository verification commands own the closing gate, including the relevant browser checks; Dagger only builds images, and a Python-only gate cannot certify Workspace or Excel.
 
 Current state: policy and initial mapping only. No QOpenBB Playwright runner, DevTools connection, pytest suite, or runtime acceptance run is installed or verified yet.

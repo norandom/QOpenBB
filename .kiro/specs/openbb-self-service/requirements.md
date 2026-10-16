@@ -103,15 +103,16 @@ Requirement 7 (containerized Jupyter) was removed at the owner's request. Its ID
 4. If restoring an older application version requires an older data snapshot, the recovery procedure shall state that requirement before rollback.
 
 ### Requirement 9: Dagger build and image-pull delivery
-**Objective:** As the owner, I want GitHub to build and publish the images using Dagger so that server installation only needs image pulls.
+**Objective:** As the owner, I want portable CI/CD with Dagger image builds and image publication so that server installation only needs image pulls and the runner can later move from GitHub Actions to Gitea Actions.
 
 #### Acceptance Criteria
-1. When a build runs locally or in GitHub Actions, the pipeline shall execute the same versioned Dagger build and verification definitions.
+1. When a build runs locally or in GitHub Actions, the pipeline shall execute the same versioned Dagger image-build definitions, while verification and publication run through separate portable repository commands.
 2. When a release passes its required checks, the pipeline shall publish the selected application images to the configured registry and record their immutable digests with source revisions.
 3. If a required build or verification fails, the pipeline shall withhold release promotion and identify the failed check.
 4. When the owner installs a published release on the private Linux server, the environment shall pull the recorded images and start without compiling application source on that server.
 5. When the owner selects a previous release, the deployment procedure shall identify its exact image set and compatible state-backup requirements.
 6. While building, testing, or publishing, the pipeline shall keep registry credentials and provider credentials out of image layers, artifacts, and logs.
+7. When the CI runner changes from GitHub Actions to Gitea Actions, the pipeline shall reuse the same repository build, verification, and publication commands with runner-specific wrappers and configuration only; Dagger shall not own tests, publication, or deployment.
 
 ### Requirement 10: Background verification and breadth traceability
 **Objective:** As the owner, I want the reference project's verification conventions adapted here so that feature coverage and missing evidence remain visible.
@@ -154,4 +155,4 @@ The owner selected Anthropic as the default Workspace AI provider. Store ANTHROP
 
 Requirements reviewed inline against the local EARS and requirements-review-gate rules: numeric identifiers, observable acceptance criteria, core journeys, error cases, and inclusion/exclusion boundaries checked. Docker Compose, Windows/WSL, Linux, Cloudflare Access, Excel, FMP, FRED, and Anthropic are user-requested constraints. Internal service decomposition remains a proposal in research.md.
 
-Core product/tech/structure steering files do not yet exist. testing.md and ci.md adapt the reference project's conventions at the user's explicit request. Human requirements approval is pending. Design, tasks, and runtime implementation are not approved. User amendments added Requirements 9–11, dashboard editing criteria, and explicit permission for Excel/provider compatibility work.
+Core product/tech/structure steering files do not yet exist. testing.md and ci.md adapt the reference project's conventions at the user's explicit request. The owner approved proceeding into design on 2026-10-16 ("ok, follow kiro flow"). Design, tasks, and runtime implementation are not yet approved. User amendments added Requirements 9–11, dashboard editing criteria, and explicit permission for Excel/provider compatibility work.

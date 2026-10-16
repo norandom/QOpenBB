@@ -1,6 +1,6 @@
 # OpenBB self service: baseline research
 
-Research date: 2026-10-16. Status: requirements-phase research and deployment proposal, not an approved implementation design.
+Research date: 2026-10-16. Status: requirements approved for design; technical discovery and design review do not constitute implementation acceptance.
 
 ## Confirmed direction
 
@@ -45,7 +45,7 @@ An initial local Workspace-only experiment can use the documented Lite image, bu
 3. Prove Full Workspace login, FMP/FRED widgets, dashboard editing, saved-layout reopen, and bind-directory backup/restore. Regenerate widgets against the latest validated API; adapt FMP as needed.
 4. Implement and accept the self-hosted Anthropic agent: discovery, configured model access, streamed answer using selected dashboard data, errors, and dashboard usability when AI is down. This is a hard dependency before Excel implementation.
 5. Then regenerate Excel functions and adapt authentication/URLs/manifest as needed. Build assets for the public /excel/ path and test through Cloudflare Access in the actual Office runtime. Preserve function compatibility or document migrations.
-6. Dagger checks/builds/publishes immutable image sets in GitHub. The Linux server pulls those images and runs the same Compose service topology as WSL, with public URL settings adjusted for each environment. No source compilation on the server.
+6. Dagger builds images only; portable repository commands check and publish immutable image sets, initially run by GitHub Actions. The Linux server pulls those images and runs the same Compose service topology as WSL, with public URL settings adjusted for each environment. No source compilation on the server.
 
 Jupyter is owner-managed on a separate VM. No notebook service, image, credentials, notebook test lane, or wheel publication is included now. Future wheel packaging can be specified separately if requested.
 
@@ -77,7 +77,7 @@ No runtime integration checks have been performed at this specification stage. D
 
 ## Delivery and verification amendments
 
-The user requires Dagger as the build/check/publish owner and GitHub Actions as its runner. The [official Dagger integration](https://docs.dagger.io/getting-started/ci-integrations/github-actions/) supports invoking Dagger functions from GitHub Actions. Pin the Dagger engine/SDK and action revisions during implementation. Pull-request checks must not receive publish secrets; promotion follows successful checks. Keep browser tooling in verification images, not application runtime images. No Dagger module or GitHub workflow exists yet; these are spec requirements, not completed CI.
+The owner clarified that Dagger owns image builds only. Verification, generation, publication and promotion belong to portable repository commands; GitHub Actions is the initial runner and Gitea Actions is a future replacement. No Gitea server or workflow migration is included now. The [official Dagger integration](https://docs.dagger.io/getting-started/ci-integrations/github-actions/) supports invoking Dagger functions from GitHub Actions. Pin the Dagger engine/SDK and action revisions during implementation. Pull-request checks must not receive publish secrets; promotion follows successful checks. Keep browser tooling in verification images, not application runtime images. No Dagger module or GitHub workflow exists yet; these are spec requirements, not completed CI.
 
 The user requested conventions from `../because-security-quant-terminal`. Adapted testing and CI policies live in `.kiro/steering/testing.md` and `ci.md`, with initial feature-to-spec-to-check mapping in `.kiro/breadth.toml`. No source-project PostgreSQL fixture, Angular/Perspective runner, browser profile, credentials, or acceptance status is imported. Those are specific to that application. The portable browser/parallelism rules are copied; actual QOpenBB runners will be implemented against its stack.
 
@@ -93,3 +93,42 @@ See [Lite versus Full](lite-vs-full.md) for source-verified differences. The own
 - Infrastructure: private Workspace login/bootstrap secrets, data API authentication, GitHub publication permissions, and registry pull access are separate from financial provider keys. GitHub/registry credentials must not be forwarded into application containers.
 
 The root `.env.sample` contains empty keys and image settings. `.env` is gitignored and excluded from Docker contexts. Dagger must independently exclude secrets when constructing source contexts; .dockerignore alone does not guarantee that arbitrary Dagger directory uploads respect it. Pass only required keys to each runtime service. Never put provider keys in VITE_* variables or registry images. The Compose file remains a proposal; optional keys are not evidence of working integrations.
+
+## Design discovery and synthesis: 2026-10-16
+
+Discovery scope: complex integration. Applied `kiro-spec-design` full discovery, boundary-first synthesis and review rules, plus the project's COBESY documentation, complexity, testing, CI and delegation steering. Existing core product/tech/structure steering is absent; approved requirements and custom steering supplied the project context. Two bounded read-only research workers inspected runtime and delivery contracts; the controller synthesized the design.
+
+### Runtime findings
+
+- [Workspace request helper](https://github.com/norandom/openbb-workspace/blob/be00e95019a55d57af146919ee46b7e1a4859226/terminalpro/src/lib/api.tsx) uses substring matching for its backend URL. Consequently `/data/api/v1` can receive application authentication intended for `/api`. Extract an origin/path-boundary matcher and test both route families before dashboard acceptance.
+- [Application auth helpers](https://github.com/norandom/openbb-workspace/blob/be00e95019a55d57af146919ee46b7e1a4859226/backend-api/backend/api/auth_helpers.py) issue opaque database session IDs, not portable JWTs. [OpenBB API auth](https://github.com/norandom/openbb-data-api/blob/7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2/openbb_platform/core/openbb_core/api/auth/user.py) instead offers HTTP Basic. The design deliberately uses the owner's existing Access/origin boundary for data and agent services, with API Basic disabled; it does not introduce a session-to-service gateway.
+- [Bootstrap](https://github.com/norandom/openbb-workspace/blob/be00e95019a55d57af146919ee46b7e1a4859226/lite/entrypoint.sh) persists secrets but prints administrator credentials. Suppress those log messages. [nginx](https://github.com/norandom/openbb-workspace/blob/be00e95019a55d57af146919ee46b7e1a4859226/lite/nginx.conf.template) overwrites the forwarded protocol with origin HTTP; derive forwarded scheme from validated deployment configuration.
+- Connector discovery and widget requests run in the browser. Use absolute public connector bases and preserve generated internal API paths. Install shared equity/economy routers explicitly to avoid FRED fallback route/ID changes. First acceptance covers FMP profile/income and FRED GDP; unsupported mappings are not advertised as accepted.
+- The inspected [agent SDK models](https://github.com/OpenBB-finance/openbb-ai/blob/9a2f0991002cd48d2d0bc5606498b52167a1c6fc/openbb_ai/models.py) support a stateless selected-data callback. Use that existing protocol rather than arbitrary server-side widget URL fetching. Disable hosted Copilot enhancements so custom-agent use does not trigger unavailable title/prompt endpoints.
+
+### Architecture pattern evaluation
+
+| Option | Decision | Reason |
+| --- | --- | --- |
+| Retain Full combined packaging and add data/agent services | Selected | Preserves app state/auth and the owner's single Compose control point |
+| Split all bundled Workspace processes into new services | Rejected for baseline | Adds lifecycle and storage migration work without a requested outcome |
+| New authentication gateway or shared application JWTs | Rejected | Existing session IDs are not portable; owner-managed edge/origin already supplies the chosen service boundary |
+| Rebuild schema/widget generators | Rejected | Existing generators support the required contract; adapt inputs and test output |
+| Dagger controls verification and publication | Rejected by owner clarification | Dagger is exclusively the image builder; CI commands must remain portable to Gitea |
+| Compose translation inside Dagger for acceptance | Rejected | It is outside Dagger's scope and cannot establish real bind/lifecycle behavior |
+
+### Design decisions
+
+Generalization: one selected API schema and dataset inventory supplies widget generation, later Excel generation and data-fidelity checks. One immutable release/evidence identity supplies local verification, CI promotion and Linux install. These contracts reduce duplicate configurations without introducing a general plugin framework.
+
+Build versus adopt: adopt upstream application state/auth, shared data routers, widget generator and SDK event models. Build only the FMP compatibility changes, narrow origin/request fixes, Anthropic adapter and portable build/release glue needed for the selected journeys. Keep provider licenses and unavailable/commercial chart capabilities visible.
+
+Simplification: Dagger builds/exports images only. Repository commands run actual Compose tests, generation, image push and promotion directly on the supported local Docker host. GitHub wrappers supply inputs/secrets and retain artifacts. [Gitea Actions](https://docs.gitea.com/usage/actions/overview/) is broadly compatible but a later migration still needs wrapper/runner validation; the design does not claim that validation has happened. Registry and source locations are inputs, not embedded GitHub service dependencies.
+
+### Risks and implementation evidence
+
+- Frozen Bun installation, selected API/FMP compatibility and exact tool pins must pass clean builds before becoming validated release inputs.
+- Request-boundary correction, public paths, account setup, mixed dashboards, selected-data callbacks and Office behavior need runtime evidence; static inspection establishes contracts only.
+- Actual Compose runs use disposable daemon-host bind roots and fixed port 23003; path ownership and port collision handling are foundation checks.
+- Candidate manifests permit pull-only Linux and Office acceptance before promotion, avoiding a circular release gate. All required records must match the candidate's exact image/contract identities.
+- Changing the runner must preserve the same repository commands and secret boundaries. A clean environment without GitHub-specific variables tests this seam; actual Gitea migration remains deferred.
