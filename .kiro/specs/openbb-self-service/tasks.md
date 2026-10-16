@@ -487,5 +487,3 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Boundary: Release control and runtime integration_
   - _Depends: 8.5_
   - _Requirements: 2.4, 8.1, 9.2, 9.3, 9.4, 9.5, 11.5_
-
-
