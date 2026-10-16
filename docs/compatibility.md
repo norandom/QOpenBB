@@ -6,9 +6,9 @@ QOpenBB has acquired owned sources and selected the latest upstream API release 
 
 | Input | Exact identity | Evidence status |
 | --- | --- | --- |
-| Owned Workspace, Full | `633b0feca5e4506bf5bd2034043b43b6f5377f7b` | Tasks 2.1-2.3 frontend packaging, private bootstrap and request isolation accepted; image/runtime join pending |
+| Owned Workspace, Full | `38dffc33389aca0e4a87e0e88d42f7067aa220df` | Tasks 2.1-2.4 frontend, bootstrap, request isolation and origin routing accepted; complete image pending |
 | Original data API acquisition | `7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2` | Historical develop snapshot; acquisition provenance and notices remain retained |
-| Current data API adaptation | `9892b7f1789a6530ece386cabac441c710d52848` | Tasks 3.1-3.4 FMP discovery, profile/income and failure fixtures accepted; FRED runtime and live integration pending |
+| Current data API adaptation | `49cc413e6ab67eaa0444e07485b0f9243c786f7b` | Tasks 3.1-3.5 locked FMP/FRED runtime and financial/failure fixtures accepted; images and live integration pending |
 | Latest upstream API release candidate | `openbb-v5.0.0`, commit `5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0` | Official release published 2026-09-30; identical annotated tag available in owned fork; candidate objects acquired |
 | FMP source release | `openbb-fmp` 1.6.1 | Published archive and imported hashes verified; registration and selected financial-route fixtures accepted; runtime integration pending |
 
