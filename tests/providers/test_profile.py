@@ -114,4 +114,3 @@ async def _get_profile(app):
     status = next(m["status"] for m in messages if m["type"] == "http.response.start")
     body = b"".join(m.get("body", b"") for m in messages if m["type"] == "http.response.body")
     return status, body.decode()
-
