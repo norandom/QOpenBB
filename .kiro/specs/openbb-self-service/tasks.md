@@ -769,7 +769,7 @@ Owner approved the option-state design and autonomous implementation on 2026-10-
   - _Depends: 2.23_
   - _Requirements: 4.8, 4.9, 10.5_
 
-- [ ] 2.25 (P) Preserve original baseline selection and partition transitions
+- [x] 2.25 (P) Preserve original baseline selection and partition transitions
   - Implement initialization and synchronization with explicit prior state, validated fallback inputs, independent nested copies and captured address. Preserve empty-partition retention, nonempty partition clearing, original initial type ownership and no synchronization root fallback.
   - Test the design's complete fallback/transition matrix, null/undefined restrictions, malformed unused fallbacks, unknown fields, arrays and special property names, accessors, cycles, throwing inspection and mutation isolation. Errors do not throw or change prior state.
   - Done when focused tests, strict checks, scoped lint and independent review pass without store, React, GridApi or renderer imports. Whole maintained module passes 400/300/50 with registered scope before acceptance.
@@ -801,3 +801,5 @@ Owner approved the option-state design and autonomous implementation on 2026-10-
 Frontend paths are under vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility or tests/unit/chart-compatibility as specified in the design. Existing WSL pinned Node and restored dependencies are prerequisites already accepted by earlier tasks; no install or lock change is needed. Controller may copy the required source/tests to a fresh isolated stage with the restored node_modules link for reliable Linux checks. One heavy check at a time, one Vitest worker; lightweight independent lane checks must use separate outputs. Shared contracts/fixtures freeze at 2.24. Sol implementers own 2.25 and 2.26 separately, followed by fresh independent reviewers. Astra reviews shared contracts and the final join. A lane cannot change shared interfaces or its peer's files; escalate to controller. Controller owns registration and selective fork/root commits at each acceptance. Task approval follows the owner's explicit autonomous implementation request, without waiving any review gate.
 
 Task 2.24 accepted after independent Astra review: shared contracts and captured projections verified, 124 units, strict TypeScript, scoped lint and registered complexity checks passed. Evidence: artifacts/task-2.24/review/review.md. Contracts and fixtures are frozen for tasks 2.25 and 2.26.
+
+Task 2.25 accepted after independent Astra review: 39 focused tests, strict TypeScript, repository lint and eight adversarial cases passed. Caps: 200 physical, 96 logical, largest function 14. Evidence: artifacts/task-2.25/review/review.md. Actual reducer integration remains task 2.27.
