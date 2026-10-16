@@ -233,7 +233,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 1.8_
   - _Requirements: 1.2, 1.4, 11.1, 11.2_
 
-- [ ] 3.2 Adapt and verify the FMP profile fetcher
+- [x] 3.2 Adapt and verify the FMP profile fetcher
   - Implement the selected API's profile model/fetcher interface using the stable provider endpoint and server-side credential settings.
   - Use deterministic fixtures to check identity, financial values, available currency metadata and missing-value behavior.
   - Done when the installed shared equity profile route returns the expected typed fixture response with equivalent requested parameters.
