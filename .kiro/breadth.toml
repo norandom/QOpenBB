@@ -32,9 +32,9 @@ evidence = ["Task 1.2 protected WSL toolchain setup: 24 successful install/versi
 id = "workspace-baseline"
 requirements = ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7"]
 planned_checks = ["workspace-login-save-reopen", "widget-discovery-and-values", "external-service-inventory", "fmp-ready-widgets-dashboard-edit-save-reopen-refresh", "perspective-viewer-config-pivot-aggregation-refresh", "commercial-renderer-absence", "configured-view-ai-context"]
-test_paths = []
+test_paths = ["tests/delivery/test_workspace_startup.py", "tests/delivery/test_workspace_packaging.py"]
 status = "planned"
-evidence = ["Owner selected Perspective baseline on 2026-10-16; renderer, financial aggregation and saved-view checks remain planned, not implemented. See docs/chart-replacement-assessment.md."]
+evidence = ["Task 2.2 accepted: protected backend dependency restore; 8 startup/packaging tests passed without skips, repeated upstream account/login/dashboard persistence and Unicode TOML credentials verified. Artifacts task-2.2/evidence.json and unicode-green.log, independent size report task-3.3/review-complexity.json. Workspace 76b1b55cbb52b02ee00cd968a0a835dc090ce4cf. Full image/Compose/browser still pending. Owner selected Perspective baseline on 2026-10-16; renderer, financial aggregation and saved-view checks remain planned, not implemented. See docs/chart-replacement-assessment.md."]
 
 [[capabilities]]
 id = "fmp-fred-data-api"

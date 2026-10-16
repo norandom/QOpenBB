@@ -121,7 +121,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 1.8_
   - _Requirements: 1.1, 1.4, 1.5, 3.2_
 
-- [ ] 2.2 Stabilize application startup and private bootstrap state
+- [x] 2.2 Stabilize application startup and private bootstrap state
   - Pin backend build dependencies, retain upstream migration/admin initialization and suppress password printing during bootstrap.
   - Include valid runtime health dependencies and protect persisted credential configuration; extract cohesive helpers before changing oversized maintained scripts if necessary.
   - Done when first startup and repeated startup use the same saved account/state and sanitized logs contain no bootstrap password.
