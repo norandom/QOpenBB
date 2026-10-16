@@ -25,10 +25,12 @@ CODE_NAMESPACES = {
     ('terminalpro', 'src', 'lib', 'state'): {'.ts', '.tsx'},
     ('openbb_platform', 'core', 'openbb_core', 'app', 'logs'): {'.py'},
 }
-PUBLIC_SOURCE_DATA = {
+PUBLIC_SOURCE_FILES = {
     'terminalpro/src/lib/state/main.json',
     'terminalpro/public/assets/data/indices_fmp.json',
     'terminalpro/public/assets/data/tickers_fmp.json',
+    'terminalpro/build/runtimeConfig.ts',
+    'terminalpro/src/components/DataConnectors/NewComponents/Data/Content.tsx',
 }
 
 
@@ -36,7 +38,7 @@ def source_namespace_index(relative: PurePosixPath) -> int | None:
     for prefix, suffixes in CODE_NAMESPACES.items():
         if relative.parts[:len(prefix)] == prefix and relative.suffix in suffixes:
             return len(prefix) - 1
-    if str(relative) in PUBLIC_SOURCE_DATA:
+    if str(relative) in PUBLIC_SOURCE_FILES:
         return len(relative.parts) - 2
     return None
 

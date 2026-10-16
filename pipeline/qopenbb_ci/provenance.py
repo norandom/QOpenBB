@@ -4,7 +4,7 @@ import json
 from pathlib import PurePosixPath
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, ConfigDict, StringConstraints, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, StringConstraints, ValidationError, field_validator, model_validator
 
 from qopenbb_ci.source_filter import ALLOW
 
@@ -41,9 +41,17 @@ class Sources(StrictBoundary):
 
 class Provenance(StrictBoundary):
     schema_version: Literal[1]
-    service: Literal['foundation-smoke']
+    service: Literal['foundation-smoke', 'workspace']
     sources: Sources
     smoke_sha256: Digest
+    release_version: Annotated[str, StringConstraints(pattern=r'^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$', strict=True)] | None = None
+
+    @model_validator(mode='after')
+    def service_metadata(self):
+        if ((self.service == 'workspace') != (self.release_version is not None)
+                or (self.service == 'foundation-smoke' and 'release_version' in self.model_fields_set)):
+            raise ValueError('release identity requires workspace selection')
+        return self
 
     @field_validator('schema_version', mode='before')
     @classmethod
@@ -64,7 +72,7 @@ def unique_fields(pairs: list[tuple[str, object]]) -> dict:
 
 def parse_provenance(content: str) -> dict:
     try:
-        result = Provenance.model_validate(json.loads(content, object_pairs_hook=unique_fields)).model_dump()
+        result = Provenance.model_validate(json.loads(content, object_pairs_hook=unique_fields)).model_dump(exclude_none=True)
     except (ValueError, ValidationError, TypeError):
         raise ValueError('invalid staged provenance') from None
     for key, source in result['sources'].items():

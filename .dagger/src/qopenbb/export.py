@@ -14,8 +14,10 @@ from qopenbb.images import build
 async def export(args: argparse.Namespace) -> None:
     provenance = json.loads((args.stage / 'provenance.json').read_text())
     async with dagger.Connection():
+        # Initialize the SDK session before resolving multiple directory inputs.
+        await dag.version()
         context = dag.host().directory(str(args.stage))
-        image = build(args.service, context, args.base, provenance)
+        image = await build(args.service, context, args.base, provenance)
         await image.export(str(args.archive), media_types=dagger.ImageMediaTypes.DockerMediaTypes)
 
 

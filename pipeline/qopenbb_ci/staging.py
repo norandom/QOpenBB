@@ -4,6 +4,7 @@ from pathlib import Path
 import hashlib
 import json
 import shutil
+import re
 
 from qopenbb_ci.source_filter import excluded, select_source, source_scope, walk_owned
 from pathlib import PurePosixPath
@@ -43,7 +44,15 @@ def stage_source(root: Path, destination: Path, source: str, policy: dict, lock:
     return {**verified, 'files': files}
 
 
-def stage(destination: Path, roots: dict[str, Path], policy: dict, lock: dict) -> dict:
+def stage(destination: Path, roots: dict[str, Path], policy: dict, lock: dict,
+          service: str = 'foundation-smoke', release_version: str | None = None) -> dict:
+    if service not in {'foundation-smoke', 'workspace'}:
+        raise ValueError('unsupported build selection')
+    if service == 'workspace':
+        if not isinstance(release_version, str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,127}', release_version):
+            raise ValueError('public release identity required')
+    elif release_version is not None:
+        raise ValueError('foundation has no release identity')
     if destination.exists() or destination.is_symlink():
         raise ValueError('staging requires a fresh destination')
     if set(roots) != {'workspace', 'data_api'}:
@@ -53,8 +62,10 @@ def stage(destination: Path, roots: dict[str, Path], policy: dict, lock: dict) -
         sources = {key: stage_source(root, destination / 'sources' / key, key, policy, lock)
                    for key, root in sorted(roots.items())}
         (destination / 'smoke.py').write_text(SMOKE, encoding='utf-8')
-        result = {'schema_version': 1, 'service': 'foundation-smoke', 'sources': sources,
+        result = {'schema_version': 1, 'service': service, 'sources': sources,
                   'smoke_sha256': sha256(destination / 'smoke.py')}
+        if service == 'workspace':
+            result['release_version'] = release_version
         (destination / 'provenance.json').write_text(json.dumps(result, sort_keys=True) + '\n')
         return result
     except Exception:
@@ -81,7 +92,7 @@ def verify_stage(root: Path, policy: dict | None = None, lock: dict | None = Non
     actual = staged_files(root)
     result = parse_provenance((root / 'provenance.json').read_text())
     expected = {'provenance.json', 'smoke.py'}
-    if result['service'] != 'foundation-smoke' or result['schema_version'] != 1:
+    if result['service'] not in {'foundation-smoke', 'workspace'} or result['schema_version'] != 1:
         raise ValueError('unsupported build selection')
     if set(result['sources']) != {'workspace', 'data_api'}:
         raise ValueError('both owned sources required')

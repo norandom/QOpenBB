@@ -29,13 +29,15 @@ def parser() -> argparse.ArgumentParser:
     staging.add_argument('--workspace', type=Path, required=True)
     staging.add_argument('--data-api', type=Path, required=True)
     staging.add_argument('--destination', type=Path, required=True)
+    staging.add_argument('--service', choices=['foundation-smoke', 'workspace'], default='foundation-smoke')
+    staging.add_argument('--release-version')
     exporting = commands.add_parser('export')
     exporting.add_argument('--stage', type=Path, required=True)
     exporting.add_argument('--tools', type=Path, required=True)
     exporting.add_argument('--lock', type=Path, required=True)
     exporting.add_argument('--policy', type=Path, required=True)
     exporting.add_argument('--sdk-python', type=Path, required=True)
-    exporting.add_argument('--service', choices=['foundation-smoke'], default='foundation-smoke')
+    exporting.add_argument('--service', choices=['foundation-smoke', 'workspace'], default='foundation-smoke')
     for command in [exporting, commands.add_parser('load'), commands.add_parser('inspect')]:
         command.add_argument('--archive', type=Path, required=True)
         command.add_argument('--report', type=Path, required=True)
@@ -44,6 +46,8 @@ def parser() -> argparse.ArgumentParser:
 
 def export(args: argparse.Namespace) -> dict:
     provenance = verify_stage(args.stage, read(args.policy), read(args.lock))
+    if provenance.get('service', args.service) != args.service:
+        raise ValueError('service differs from staged provenance')
     tools = read(args.tools)
     environment = {key: os.environ[key] for key in ['PATH', 'XDG_RUNTIME_DIR', 'DOCKER_HOST']
                    if key in os.environ}
@@ -93,7 +97,7 @@ def main() -> int:
             result = {key: acquire(args.destination / key, lock[key]) for key in ['workspace', 'data_api']}
         elif args.command == 'stage':
             result = stage(args.destination, {'workspace': args.workspace, 'data_api': args.data_api},
-                           read(args.policy), read(args.lock))
+                           read(args.policy), read(args.lock), args.service, args.release_version)
         elif args.command == 'export':
             result = export(args)
         else:

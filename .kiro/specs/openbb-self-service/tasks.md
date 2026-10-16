@@ -148,7 +148,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 2.3_
   - _Requirements: 2.3, 2.4, 3.4, 3.5, 3.7, 3.8, 4.4, 12.5_
 
-- [ ] 2.5 Build and identify the adapted Full image
+- [x] 2.5 Build and identify the adapted Full image
   - Add the adapted Full build to the existing Dagger image builder and export its exact source-labeled image.
   - Run packaging health and fresh account smoke checks independently through portable verification; record unavailable upstream capabilities.
   - Done when the clean image loads and starts with expected Full configuration and its source/dependency identities are available for the integration join.
@@ -564,3 +564,4 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Requirements: 2.4, 8.1, 9.2, 9.3, 9.4, 9.5, 11.5_
 
 - Task 2.4 process note: original RED was an artificial unconditional failure, so test-first compliance is not established. Independent review accepted current behavior after three explicitly retrospective baseline failures and fresh nginx/lint/size checks; artifacts/task-2.4/evidence.json preserves the chronology.
+- Task 2.5 packaging note: pinned Dagger requires serial SDK initialization and checksum-preserving HTTP ADD translation. Exact source exceptions retain the frontend build helper and Data component. Independent review reproduced 68 tests and fresh image runtime acceptance; artifacts/task-2.5 holds the identities and evidence. The image remains provisional until renderer replacement.
