@@ -1,0 +1,54 @@
+# SPEC PROPOSAL ONLY. Required custom images are not built by this repository yet.
+# Read research.md for auth, TLS, image pinning, and Excel compatibility gates.
+# Run config --quiet with compose.validation.env for syntax validation only.
+name: openbb-self-service
+
+services:
+  workspace:
+    image: ${WORKSPACE_IMAGE:?Set a verified upstream Lite image digest}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${WORKSPACE_PORT:-3000}:3000"
+    volumes:
+      - workspace-data:/data
+    # Retain upstream bootstrap/configuration initially. Hosted-only features
+    # must be inventoried during baseline verification.
+
+  data-api:
+    image: ${DATA_API_IMAGE:?Build and pin the compatible OpenBB data API image}
+    restart: unless-stopped
+    command: ["openbb-api", "--host", "0.0.0.0", "--port", "6900"]
+    ports:
+      - "127.0.0.1:${DATA_API_PORT:-6900}:6900"
+    environment:
+      FMP_API_KEY: ${FMP_API_KEY:?Supply the FMP credential outside source control}
+    # Image contract: selected/pinned OpenBB API and FMP packages, with its
+    # validated server auth configuration. No assumed Workspace JWT support.
+    # This proposal MUST NOT be exposed remotely until auth/TLS are validated.
+
+  excel:
+    profiles: ["excel"]
+    image: ${EXCEL_IMAGE:?Build the upstream add-in for the intended HTTPS URLs}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${EXCEL_PORT:-3001}:80"
+    # Image contract: static upstream dist, HTTP port 80, generated manifest.
+    # Trusted HTTPS comes from ingress; Vite settings are build-time inputs.
+
+  jupyter:
+    profiles: ["notebooks"]
+    image: ${JUPYTER_IMAGE:?Pin a verified Jupyter image with the API client dependencies}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${JUPYTER_PORT:-8888}:8888"
+    environment:
+      JUPYTER_TOKEN: ${JUPYTER_TOKEN:?Supply a strong notebook access token}
+      OPENBB_DATA_API_URL: http://data-api:6900
+    volumes:
+      - notebooks:/home/jovyan/work
+    # Image contract follows Jupyter Docker Stacks. API auth must be supplied
+    # using the selected data-service contract; FMP keys stay in data-api.
+
+volumes:
+  workspace-data:
+  notebooks:

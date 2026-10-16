@@ -1,0 +1,25 @@
+# Local secrets and operator settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Acquired upstream sources, build/runtime state and browser evidence
+vendor/
+.upstream/
+data/
+backups/
+artifacts/
+.codex/browser/
+test-results/
+playwright-report/
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+htmlcov/
+.coverage*
+coverage.xml
+dist/
