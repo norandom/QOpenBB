@@ -2,7 +2,7 @@
 
 QOpenBB aims to give financial engineers a self-hosted Full OpenBB Workspace: build dashboards from FMP and FRED data, keep layouts and state under local control, then use Anthropic AI and Excel against the same data API.
 
-The repository currently contains approved requirements and design, a reviewed implementation task plan, source pins, and feasibility research. It does not yet provide a built or accepted application. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
+The repository currently contains approved requirements and design, an approved implementation task plan, source pins, and feasibility research. Implementation has started with the foundations; it does not yet provide a built or accepted application. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
 
 ## Current evidence
 
@@ -30,7 +30,7 @@ Jupyter is managed separately. Custom PostgreSQL integration remains deferred.
 | [Research](.kiro/specs/openbb-self-service/research.md) | Source references and proposed integration contracts |
 | [Technical design](.kiro/specs/openbb-self-service/design.md) | Approved service contracts, file boundaries and acceptance strategy |
 | [Implementation tasks](.kiro/specs/openbb-self-service/tasks.md) | 49 bounded tasks with exclusive lanes, complexity caps and acceptance joins |
-| [Phase status](.kiro/specs/openbb-self-service/spec.json) | Task approval is next; implementation has not started |
+| [Phase status](.kiro/specs/openbb-self-service/spec.json) | Tasks approved; foundation implementation in progress |
 | [Contribution guide](docs/contributing.md) | Evidence, documentation, and code-comment conventions |
 
 Real credentials belong only in the ignored `.env`. The public [.env.sample](.env.sample) has empty values. Never include secrets in builds, images, browser assets, reports, or logs.
@@ -43,4 +43,4 @@ From this repository root:
 docker compose --project-directory . --env-file .kiro/specs/openbb-self-service/compose.validation.env -f .kiro/specs/openbb-self-service/compose.proposed.yaml --profile excel config --quiet
 ```
 
-This command checks the [Compose proposal](.kiro/specs/openbb-self-service/compose.proposed.yaml) with fake fixture values. It does not build or start the application. The design is approved and the implementation task graph has passed independent review. Implementation awaits task approval.
+This command checks the [Compose proposal](.kiro/specs/openbb-self-service/compose.proposed.yaml) with fake fixture values. It does not build or start the application. Requirements, design and tasks are approved. Implementation follows the reviewed task graph with independent review and fresh verification at each acceptance gate.

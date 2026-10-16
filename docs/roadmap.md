@@ -2,7 +2,7 @@
 
 Prove the Full Workspace dashboard first, accept Anthropic next, then implement Excel. Each stage below has an evidence gate. This is a dependency overview, not a generated task list or approval to implement.
 
-The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approved requirements and [technical design](../.kiro/specs/openbb-self-service/design.md). The [49-task implementation plan](../.kiro/specs/openbb-self-service/tasks.md) has passed independent graph review and awaits owner approval. Read the [feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) before interpreting a source finding or provider probe as integration evidence.
+The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approved requirements and [technical design](../.kiro/specs/openbb-self-service/design.md). The [49-task implementation plan](../.kiro/specs/openbb-self-service/tasks.md) has passed independent graph review and is approved. Foundation implementation is in progress. Read the [feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) before interpreting a source finding or provider probe as integration evidence.
 
 ## Dependency gates
 
