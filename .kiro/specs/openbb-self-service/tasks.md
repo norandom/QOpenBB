@@ -18,7 +18,7 @@ Design approved by the owner on 2026-10-16 ("go"). The owner approved these impl
 
 | Wave | Eligible work | Exclusive writable scope | Join and shared ownership |
 | --- | --- | --- | --- |
-| Foundation | 1.1-1.8, sequential | Controller assigns foundation paths from the design | Freeze source/tool/runtime/schema inputs and executable quality gate |
+| Foundation | 1.1-1.8; standalone 1.4 parser work may overlap 1.3 after its interface is frozen | 1.3 owns Python/inventory; early 1.4 owns only the TS parser and its unit tests | 1.4 integration and acceptance still require accepted 1.3; remaining foundations stay sequential |
 | A: Workspace | 2.1-2.4 in order | Owned Workspace packaging plus request-boundary helper/tests | Runs beside Data lane; no shared lock or central builder edits |
 | A: Data | 3.1-3.5 in order | Owned FMP provider and QOpenBB data-runtime paths/tests | Starts after 1.8; no central source-lock or contract snapshot writes |
 | A joins | 2.5, then 3.6-3.8, then 4.1-4.5 | Controller serializes shared image builder, frozen route/catalog records and runtime integration | Revalidate provisional routes against installed API before consumers; any changed contract pauses affected lanes |
@@ -61,6 +61,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Requirements: 10.5, 10.6_
 
 - [ ] 1.4 Complete TypeScript measurements and the cross-repository quality gate
+  - After 1.2 passes, standalone parser implementation may overlap 1.3 using the controller-reviewed interface: JSON file-path array on stdin (absolute or relative to cwd), JSON measurement array on stdout preserving input paths, with each record containing path, logical and functions (name, line, column, logical; positions are 1-based). Empty input arrays return empty arrays. Parser failures use stderr and exit 2. Early writes are limited to tools/quality/syntax_units.ts and tests/quality/test_syntax_units.mjs; Python integration, inventory and breadth updates wait for 1.3 acceptance.
   - Implement the pinned TypeScript/JavaScript parser counter, expression-bodied callable handling and combined scope reports.
   - Verify whole modified upstream files and documented exceptions; do not infer changed scope from absent container Git metadata.
   - Done when both language counters pass convention fixtures, fail missing scopes, and retroactively certify foundation code from 1.2 and 1.3. Publish the actual verified command for subsequent worker briefs.
