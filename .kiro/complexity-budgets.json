@@ -3,13 +3,13 @@
   "metric": "project-syntax-units-v1",
   "limits": {"physical": 400, "logical": 300, "function": 50},
   "exceptions": [
-    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"physical","baseline":1601,"revision":"616a0a70241fd15a10e0dc91dcec93cf701847ac","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"logical","baseline":845,"revision":"616a0a70241fd15a10e0dc91dcec93cf701847ac","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"function","baseline":52,"revision":"616a0a70241fd15a10e0dc91dcec93cf701847ac","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":22,"line":853,"name":"<anonymous>"}},
-    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"physical","baseline":886,"revision":"616a0a70241fd15a10e0dc91dcec93cf701847ac","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"logical","baseline":581,"revision":"616a0a70241fd15a10e0dc91dcec93cf701847ac","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"physical","baseline":505,"revision":"616a0a70241fd15a10e0dc91dcec93cf701847ac","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"function","baseline":62,"revision":"616a0a70241fd15a10e0dc91dcec93cf701847ac","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":1,"line":86,"name":"getTableData"}}
+    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"physical","baseline":1601,"revision":"59118937434b9f5a9bebd4e80bcb54f7ca2d552e","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"logical","baseline":845,"revision":"59118937434b9f5a9bebd4e80bcb54f7ca2d552e","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"function","baseline":52,"revision":"59118937434b9f5a9bebd4e80bcb54f7ca2d552e","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":22,"line":853,"name":"<anonymous>"}},
+    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"physical","baseline":886,"revision":"59118937434b9f5a9bebd4e80bcb54f7ca2d552e","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"logical","baseline":581,"revision":"59118937434b9f5a9bebd4e80bcb54f7ca2d552e","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"physical","baseline":505,"revision":"59118937434b9f5a9bebd4e80bcb54f7ca2d552e","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"function","baseline":62,"revision":"59118937434b9f5a9bebd4e80bcb54f7ca2d552e","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":1,"line":86,"name":"getTableData"}}
   ],
   "scope_limits": "All QOpenBB maintained production files; whole explicit changed files in owned forks. Unchanged upstream is outside initial enforcement. No implicit oversized-file exceptions.",
   "repositories": [
@@ -66,7 +66,7 @@
     {
       "id": "workspace",
       "repository": "https://github.com/norandom/openbb-workspace.git",
-      "revision": "616a0a70241fd15a10e0dc91dcec93cf701847ac",
+      "revision": "59118937434b9f5a9bebd4e80bcb54f7ca2d552e",
       "source_lock_key": "workspace",
       "root": "vendor/workspace",
       "mode": "changed",
@@ -92,6 +92,7 @@
         "terminalpro/src/components/General/Table/Chart/compatibility/snapshotTypes.ts",
         "terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts",
         "terminalpro/src/components/General/Table/Chart/compatibility/snapshot.ts",
+        "terminalpro/src/components/General/Table/Chart/echarts/cartesian.ts",
         "terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
         "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
         "terminalpro/src/components/General/Table/AgGrid.tsx",

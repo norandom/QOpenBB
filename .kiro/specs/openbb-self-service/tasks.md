@@ -719,7 +719,7 @@ Reuse the accepted Node/dependency environment and existing Vitest, strict TypeS
   - _Depends: 2.19_
   - _Requirements: 4.8, 4.9_
 
-- [ ] 2.21 (P) Map the three resolved Cartesian families
+- [x] 2.21 (P) Map the three resolved Cartesian families
   - Translate exact groupedColumn, stackedColumn and line inputs through the frozen style contract. Keep series identity and style keyed to column IDs, selection order, repeated category positions and label/tooltip display. Replace complete options so family switches cannot retain bar/stack properties.
   - Validate styles and reject unsupported families/source modes or unknown/incompatible unit/scale semantics with structured results. Test missing/null gaps, negative stacks, display-only precision, numeric fidelity, reordered series styles, title/legend/palette projection and no fallback. No original model options are silently claimed as supported.
   - Done when focused mapping tests, strict checking and independent financial review pass against explicit numerical expectations. No legacy editor decoder, new product controls or production rejection guard is introduced.
@@ -749,3 +749,5 @@ Reuse the accepted Node/dependency environment and existing Vitest, strict TypeS
 Task 2.19 accepted at Workspace 8c12a9127cd913e5f6ebb8a9dfe3fd82ba56138f after independent Astra review. Fresh strict TypeScript, 46 foundation tests, repository-configured lint and the seven-module cap audit passed. Contracts are frozen for tasks 2.20 and 2.21. Evidence: artifacts/task-2.19/review/review.md. Runtime snapshot/mapping behavior remains pending.
 
 Task 2.20 accepted at Workspace 616a0a70241fd15a10e0dc91dcec93cf701847ac after independent Sol review. Fresh 26 snapshot tests, strict TypeScript, actual repository lint and complexity evidence pass (110 physical, 122 logical, largest function 29). Evidence: artifacts/task-2.20/review/review.md. Mapper and browser integration remain separate gates.
+
+Task 2.21 accepted at Workspace 59118937434b9f5a9bebd4e80bcb54f7ca2d552e after independent Astra review. Fresh 52 mapping tests, strict TypeScript and actual repository lint pass. Mapper metrics: 273 physical, 90 logical, largest function 15. Evidence: artifacts/task-2.21/review/verdict.md. Browser composition remains task 2.22; original renderer parity is unverified.
