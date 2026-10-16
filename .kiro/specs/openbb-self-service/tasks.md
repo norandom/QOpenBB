@@ -187,6 +187,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Requirements: 1.1, 1.2, 3.2, 4.6, 5.5, 10.1, 10.3_
 
 - [ ] 2.9 Integrate ready financial explorers with the accepted catalog
+  - Preserve OpenBB's existing widget framing, controls and styling; keep renderer differences local and verify light/dark visual consistency under [the owner constraint](../../steering/workspace-experience.md). No dashboard redesign or unrelated frontend rewrite.
   - Map profile/income and FRED rows to explicit types, null/date semantics and provenance. Apply field-specific aggregation rules without default sums of ratios, EPS or incompatible currencies/units/frequencies.
   - Bind ready widget IDs, installed operations, parameters, schema versions and useful viewer defaults through the controller-owned renderer/catalog join; keep provider code renderer-independent and add no OHLC endpoint.
   - Done when fixtures prove observations and permitted aggregates, unsupported combinations fail visibly, and generated app/widget references resolve to Perspective without manual widget authoring.

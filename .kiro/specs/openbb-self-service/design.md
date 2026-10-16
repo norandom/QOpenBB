@@ -120,6 +120,8 @@ Each production file has the steering limits of 400 physical lines, 300 logical 
 
 Renderer removal starts with an import/caller inventory, including lazy widgets, theme previews and type-only imports. Expand that inventory before editing an additional caller; it is not permission for an unrelated frontend rewrite. Whole modified files are measured. Known oversized candidates include `AgGrid.tsx` (840 physical lines), `hooks/useTableContext.tsx` (796) and `ThemeSettings/ChartSettings.tsx` (1,185) at the acquired revision. Plan cohesive extraction or a narrowly reviewed measured exception rather than treating unchanged portions of a modified file as excluded. Controller owns shared locks, renderer/catalog snapshots and breadth entries; renderer workers propose those changes at serial joins.
 
+Owner clarification, 2026-10-16: chart replacement should change OpenBB only subtly. Preserve the dashboard shell and existing widget framing, controls and styling; keep necessary renderer interactions local. Code adaptations and complexity-driven extractions must not become an unrelated frontend redesign. Integrated light/dark visual review follows [Workspace experience steering](../../steering/workspace-experience.md).
+
 ## System Flows
 
 ```mermaid
