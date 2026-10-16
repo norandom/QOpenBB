@@ -2,19 +2,19 @@
 
 ## Introduction
 
-The owner of QOpenBB wants to take over the open-source OpenBB Workspace environment for personal development and self-hosting. Development runs on Windows with WSL and Docker; deployment targets a private Linux server. The immediate objective is a reproducible upstream baseline using the Full Workspace variant, its application backend, the open-source OpenBB data API, Financial Modeling Prep (FMP), FRED, and the Excel add-in. Jupyter is an optional research surface.
+The owner of QOpenBB wants to take over the open-source OpenBB Workspace environment for personal development and self-hosting. Development runs on Windows with WSL and Docker; deployment targets a private Linux server. The immediate objective is a reproducible upstream baseline using the Full Workspace variant, its application backend, the open-source OpenBB data API, Financial Modeling Prep (FMP), FRED, and the Excel add-in. Jupyter is managed separately by the owner and is outside this project, including notebook packaging and wheel publication for now.
 
 The owner explicitly deferred a custom data integration backed by their own PostgreSQL database. This feature must establish the baseline before redesigning or extending it.
 
-The first acceptance journey is dashboard construction using ready-made widgets backed by FMP and FRED through the owner's self-hosted open-source OpenBB data API. Both the Workspace application backend and the data API run in this setup; FMP and FRED are the external financial-data providers. Dashboard usability takes priority over optional notebooks and later custom integrations. The Full image variant is selected explicitly; enabling Full does not imply that every hosted AI or catalog service is available.
+The first acceptance journey is dashboard construction using ready-made widgets backed by FMP and FRED through the owner's self-hosted open-source OpenBB data API. Both the Workspace application backend and the data API run in this setup; FMP and FRED are the external financial-data providers. Dashboard usability takes priority over later custom integrations. The Full image variant is selected explicitly; enabling Full does not imply that every hosted AI or catalog service is available.
 
-The owner selected the latest OpenBB data API as the target, with regenerated Workspace widget definitions and Excel functions and provider adaptations where needed. Pin the latest validated release at implementation time rather than tracking a mutable version. Local credentials belong in a gitignored `.env`; `.env.sample` is the public, empty-value template. FMP and FRED are required primary providers; EconDB and AI remain optional extensions.
+The owner selected the latest OpenBB data API as the target, with regenerated Workspace widget definitions and Excel functions and provider adaptations where needed. Pin the latest validated release at implementation time rather than tracking a mutable version. Local credentials belong in a gitignored `.env`; `.env.sample` is the public, empty-value template. FMP and FRED are required primary providers; EconDB remains optional. Anthropic integration is required and must be accepted before Excel implementation begins.
 
 ## Boundary Context
 
-- **In scope:** upstream acquisition and provenance, a single controlling Docker Compose configuration, local development, Dagger builds in GitHub Actions, registry publication and image-pull installation, private-server deployment, baseline persistence, FMP connectivity, Excel baseline verification with small compatibility changes, and optional Jupyter.
+- **In scope:** upstream acquisition and provenance, a single controlling Docker Compose configuration, local development, Dagger builds in GitHub Actions, registry publication and image-pull installation, private-server deployment, baseline persistence, FMP connectivity, Anthropic integration before Excel, and Excel baseline verification with small compatibility changes.
 - **Out of scope:** custom database connectors, a PostgreSQL data warehouse, changing Workspace's database to PostgreSQL, a new data model, custom financial-model workbooks, replacement frontends, public SaaS, and rebuilding commercial OpenBB services.
-- **Compatibility work in scope:** adapt the FMP provider to the latest selected data API as necessary and regenerate consumer schemas. This is separate from the deferred custom PostgreSQL integration. EconDB integration and AI runtime implementation remain optional follow-up scope.
+- **Compatibility work in scope:** adapt the FMP provider to the latest selected data API as necessary and regenerate consumer schemas. This is separate from the deferred custom PostgreSQL integration. EconDB remains follow-up scope; Anthropic integration is part of the baseline.
 - **Adjacent expectations:** FMP supplies external data under the owner's account; Excel runs on the user's machine. Access to Excel, FMP credentials, server access, DNS, and certificate trust are deployment inputs rather than services supplied by this project.
 - **Baseline rule:** retain upstream packaging and behavior where usable. Small Excel compatibility changes are explicitly allowed for self-hosted authentication, URLs, manifest configuration, and API contracts. Preserve existing function signatures; document changes and verify workbook refresh/reopen. Do not silently replace unavailable functionality.
 - **Deferred extension:** a later spec can introduce a custom PostgreSQL-backed data service through the supported data-connector interface. It must not be a prerequisite for this baseline.
@@ -29,6 +29,7 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 2. The environment shall retain the upstream license and notice files for imported components.
 3. If a baseline component requires an unavailable package, asset, or hosted service, the setup report shall identify the dependency and the affected capability.
 4. When a local adaptation is necessary, the setup report shall distinguish that adaptation from unchanged upstream behavior.
+5. When the pipeline builds application images, it shall acquire the application source from the owner-controlled GitHub forks at recorded revisions.
 
 ### Requirement 2: One environment control point
 **Objective:** As the owner, I want one Compose entry point so that I can operate the baseline consistently.
@@ -37,7 +38,7 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 1. When the owner follows the documented startup procedure with the required configuration, the environment shall start Workspace and the OpenBB data service from one controlling Compose file.
 2. When the owner stops and restarts the environment, the environment shall retain saved Workspace state and configuration.
 3. If a required component fails to start, the environment shall expose its failed status and diagnostic logs.
-4. When the owner requests the optional notebook environment, the environment shall start it without requiring a replacement of the core baseline.
+4. When the owner enables the later Excel service, the environment shall preserve the working Workspace, data API, and Anthropic integration.
 
 ### Requirement 3: Windows/WSL development and private Linux deployment
 **Objective:** As the owner, I want to develop locally and deploy the same baseline privately.
@@ -46,8 +47,11 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 1. When the owner follows the development procedure on Windows with WSL Docker, the environment shall provide local access to Workspace and its data service.
 2. When the owner changes a supported source component and follows its rebuild procedure, the environment shall run the rebuilt component and identify its source revision.
 3. When the owner follows the private Linux deployment procedure, the environment shall use the same recorded component versions as the verified local baseline.
-4. The deployment documentation shall identify environment-specific addresses, credentials, storage locations, and certificate requirements.
-5. While deployed on the private server, the environment shall restrict access to the intended private network or authenticated access path.
+4. The deployment documentation shall identify the public URL, HTTP origin, local bind-mounted state, and owner-managed Cloudflare Access boundary.
+5. When accessed through the owner-managed Cloudflare Access tunnel, the environment shall serve the application at https://qbb.hanse-hedge.fund while accepting plain HTTP at 0.0.0.0:23003.
+6. The environment shall persist application state in bind-mounted directories under ./data relative to the deployment directory without Docker-managed named or anonymous data volumes.
+7. The environment shall use the same Compose service topology and HTTP origin port in WSL and Linux, with environment-specific public URL configuration.
+8. The environment shall operate without managing cloudflared, Cloudflare policies, or origin TLS certificates.
 
 ### Requirement 4: Workspace application baseline
 **Objective:** As the owner, I want the upstream Workspace experience running independently of the former hosted application.
@@ -67,13 +71,13 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 #### Acceptance Criteria
 1. When the owner configures a valid FMP credential and requests a dataset supported by the installed baseline and the account entitlement, the data service shall return that dataset.
 2. If the credential is missing, invalid, rate-limited, or lacks entitlement, the data service shall return an observable failure rather than fabricated or silently substituted data.
-3. The environment shall keep the FMP credential out of frontend bundles, committed configuration, and notebook outputs supplied with the baseline.
+3. The environment shall keep the FMP credential out of frontend bundles, committed configuration, and supplied example outputs.
 4. When the owner requests the same supported dataset through Workspace and the data API with equivalent parameters, the environment shall preserve the dataset's financial values and available period, currency, and unit metadata.
 5. The environment shall support the baseline data workflow without a custom database or custom data connector.
 6. When the owner configures a valid FRED credential and selects a supported economic series, the data service shall return the series through the self-hosted API with its available dates, units, and frequency metadata.
 7. When the owner adds a supported FRED widget to a dashboard containing FMP widgets, Workspace shall display and refresh both sources through the self-hosted API.
 8. If a FRED request fails because of authentication, throttling, or unavailable data, the environment shall report the failure without silently substituting another source.
-9. The environment shall keep the FRED credential out of frontend bundles, committed configuration, and notebook outputs supplied with the baseline.
+9. The environment shall keep the FRED credential out of frontend bundles, committed configuration, and supplied example outputs.
 
 ### Requirement 6: Excel baseline integration
 **Objective:** As the owner, I want to use the released Excel add-in with the self-hosted environment.
@@ -85,20 +89,15 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 4. When the owner reopens a validation workbook and refreshes its supported function, the add-in shall refresh the result without changing its function signature.
 5. If the released add-in's authentication, endpoint paths, or response shapes are incompatible with the selected data API, the baseline report shall record the failing contract and the proposed minimal remedy before the integration is declared working.
 
-### Requirement 7: Optional Jupyter research
-**Objective:** As the owner, I want an optional notebook environment for investigating the baseline data.
+## Retired requirement ID
 
-#### Acceptance Criteria
-1. When the owner enables Jupyter, the environment shall provide authenticated notebook access.
-2. When a notebook calls a supported dataset through the self-hosted data API, the notebook shall receive data without requiring a separate FMP key embedded in the notebook.
-3. When the notebook service is recreated, the environment shall retain the owner's saved notebooks.
-4. When Jupyter is disabled, Workspace and Excel shall remain usable independently of it.
+Requirement 7 (containerized Jupyter) was removed at the owner's request. Its ID is reserved to preserve existing traceability. No notebook runtime, persistence, authentication, or wheel-delivery task is included.
 
 ### Requirement 8: Recovery and baseline verification
 **Objective:** As the owner, I want evidence that the baseline works and can be recovered.
 
 #### Acceptance Criteria
-1. When the owner runs the documented baseline checks, the report shall distinguish passing, failing, and untested Workspace, data API, Excel, and optional notebook capabilities.
+1. When the owner runs the documented baseline checks, the report shall distinguish passing, failing, and untested Workspace, data API, Anthropic, and Excel capabilities.
 2. When the owner follows the backup and restore procedure, the environment shall recover saved Workspace state and configuration into a clean deployment.
 3. When the owner changes the pinned baseline, the environment documentation shall preserve the prior version identifiers and its recovery procedure.
 4. If restoring an older application version requires an older data snapshot, the recovery procedure shall state that requirement before rollback.
@@ -137,12 +136,22 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 6. When the owner configures local keys, the environment shall load them from an untracked `.env` while retaining an empty-value `.env.sample` in source control.
 7. While building or publishing images, the workflow shall exclude the local `.env` from source contexts and image layers.
 
+### Requirement 12: Anthropic acceptance before Excel
+**Objective:** As the owner, I want working Workspace AI before Excel development begins.
+
+#### Acceptance Criteria
+1. When the owner submits a prompt with selected dashboard data, the self-hosted agent shall use the configured Anthropic model and return a streamed response to Workspace.
+2. If Anthropic authentication, model access, or a request fails, Workspace shall report the failure without presenting a fabricated successful answer.
+3. The agent shall keep ANTHROPIC_API_KEY out of browser assets, committed files, and diagnostic output.
+4. When the Anthropic acceptance checks have not passed, the implementation workflow shall keep Excel implementation tasks blocked.
+5. While the AI service is unavailable, Workspace shall remain usable for dashboard construction and FMP/FRED data access.
+
 ## Workspace AI provider decision
 
 The owner selected Anthropic as the default Workspace AI provider. Store ANTHROPIC_API_KEY only in the local gitignored .env and inject it into the future self-hosted agent service. The model and agent integration remain pending design; dashboard/data access must work independently of AI. A configured credential is not evidence of working AI.
 
 ## Review status
 
-Requirements reviewed inline against the local EARS and requirements-review-gate rules: numeric identifiers, observable acceptance criteria, core journeys, error cases, and inclusion/exclusion boundaries checked. Docker Compose, Windows/WSL, Linux, Excel, FMP, and Jupyter are user-requested constraints. Internal service decomposition remains a proposal in research.md.
+Requirements reviewed inline against the local EARS and requirements-review-gate rules: numeric identifiers, observable acceptance criteria, core journeys, error cases, and inclusion/exclusion boundaries checked. Docker Compose, Windows/WSL, Linux, Cloudflare Access, Excel, FMP, FRED, and Anthropic are user-requested constraints. Internal service decomposition remains a proposal in research.md.
 
 Core product/tech/structure steering files do not yet exist. testing.md and ci.md adapt the reference project's conventions at the user's explicit request. Human requirements approval is pending. Design, tasks, and runtime implementation are not approved. User amendments added Requirements 9–11, dashboard editing criteria, and explicit permission for Excel/provider compatibility work.

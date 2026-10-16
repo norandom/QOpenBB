@@ -6,7 +6,7 @@ requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
 id = "baseline-provenance"
-requirements = ["1.1", "1.2", "1.3", "1.4"]
+requirements = ["1.1", "1.2", "1.3", "1.4", "1.5"]
 planned_checks = ["upstream-source-and-image-manifest", "clean-build-dependencies"]
 test_paths = []
 status = "planned"
@@ -22,8 +22,8 @@ evidence = ["Compose parser validation passed with fake fixtures; runtime untest
 
 [[capabilities]]
 id = "development-and-private-deployment"
-requirements = ["3.1", "3.2", "3.3", "3.4", "3.5"]
-planned_checks = ["wsl-rebuild", "linux-pull-install", "private-access-and-tls"]
+requirements = ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8"]
+planned_checks = ["wsl-rebuild", "linux-pull-install", "cloudflare-access-http-origin", "bind-mounted-state-and-wsl-parity"]
 test_paths = []
 status = "planned"
 evidence = []
@@ -53,17 +53,9 @@ status = "planned"
 evidence = []
 
 [[capabilities]]
-id = "jupyter-optional"
-requirements = ["7.1", "7.2", "7.3", "7.4"]
-planned_checks = ["notebook-auth-api-fetch", "notebook-persistence", "core-without-notebooks"]
-test_paths = []
-status = "planned"
-evidence = []
-
-[[capabilities]]
 id = "recovery-and-evidence"
 requirements = ["8.1", "8.2", "8.3", "8.4"]
-planned_checks = ["baseline-report", "clean-volume-restore", "release-rollback-contract"]
+planned_checks = ["baseline-report", "clean-bind-directory-restore", "release-rollback-contract"]
 test_paths = []
 status = "planned"
 evidence = []
@@ -96,6 +88,14 @@ evidence = ["User explicitly deferred custom PostgreSQL integration until after 
 id = "latest-api-regeneration-and-secrets"
 requirements = ["11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7"]
 planned_checks = ["latest-api-fmp-provider-adaptation", "schema-to-widget-and-excel-generation", "workbook-contract-diff", "regenerated-consumer-live-journeys", "env-ignore-and-build-context-exclusion"]
+test_paths = []
+status = "planned"
+evidence = []
+
+[[capabilities]]
+id = "anthropic-before-excel"
+requirements = ["12.1", "12.2", "12.3", "12.4", "12.5"]
+planned_checks = ["workspace-agent-discovery-streaming", "selected-dashboard-data-answer", "anthropic-failure-and-secret-exclusion", "excel-dependency-gate", "dashboards-without-agent"]
 test_paths = []
 status = "planned"
 evidence = []

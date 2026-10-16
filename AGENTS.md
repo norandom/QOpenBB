@@ -81,3 +81,7 @@ Use a fresh context for each independent implementer or reviewer, passing the ta
 - Read `.kiro/steering/testing.md` for development verification: isolated background Playwright/Chrome DevTools, hidden helper processes, bounded xdist/browser workers, and evidence requirements.
 - Read `.kiro/steering/ci.md` for Dagger-owned builds/checks/publication and image-pull deployment to the private Linux server.
 - Keep `.kiro/breadth.toml` aligned with capabilities, owning spec criteria, actual test paths and evidence. Planned checks are not completed tests.
+
+## QOpenBB delegation amendment (2026-10-16)
+
+The user explicitly requested the sibling project's role-based model and fan-out scheme. Read `.kiro/steering/delegation.md`; it overrides generic sequential-only implementation and older cross-spec model defaults within the boundaries stated there. Respect the hard dependency: Anthropic accepted before Excel implementation.
