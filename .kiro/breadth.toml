@@ -131,3 +131,10 @@ planned_checks = ["workspace-agent-discovery-streaming", "selected-dashboard-dat
 test_paths = []
 status = "planned"
 evidence = []
+[[capabilities]]
+id = "chart-resolved-snapshot-and-cartesian-mapping"
+requirements = ["4.8", "4.9", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
+planned_checks = ["immutable-resolved-observations", "category-and-series-identity", "unit-scale-compatibility", "three-family-numeric-mapping", "settings-only-render-revision", "isolated-snapshot-to-host-browser"]
+test_paths = []
+status = "planned"
+evidence = []

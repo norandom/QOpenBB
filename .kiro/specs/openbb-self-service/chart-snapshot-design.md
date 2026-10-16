@@ -2,9 +2,9 @@
 
 ## Overview
 
-Proposed design for the next isolated chart slice, following accepted tasks 2.13-2.18. It establishes lossless resolved data snapshots and three Cartesian render mappings. It does not enable a reduced chart experience in Workspace. Original controls, themes, flags and outcomes remain the release target under requirements 4.8-4.9.
+Owner-approved design for the next isolated chart slice, following accepted tasks 2.13-2.18. It establishes lossless resolved data snapshots and three Cartesian render mappings. It does not enable a reduced chart experience in Workspace. Original controls, themes, flags and outcomes remain the release target under requirements 4.8-4.9.
 
-Source baseline: Workspace `042ba87e3208a51857da4ae2d1c3109a680716d9`; original behavior reference `38dffc33389aca0e4a87e0e88d42f7067aa220df`. This amendment supplements the parent design; all other requirement coverage stays with that design. Approval is pending.
+Source baseline: Workspace `042ba87e3208a51857da4ae2d1c3109a680716d9`; original behavior reference `38dffc33389aca0e4a87e0e88d42f7067aa220df`. This amendment supplements the parent design; all other requirement coverage stays with that design. The owner approved this design; task approval remains separate.
 
 ## Boundary Commitments
 

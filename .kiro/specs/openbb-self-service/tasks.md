@@ -680,3 +680,68 @@ Task 2.16 accepted at Workspace `5937af2c73c3f1943fb9a16c13236b46ee623b9c`. Inde
 Task 2.17 accepted at Workspace `042ba87e3208a51857da4ae2d1c3109a680716d9`. Independent Astra verification passed all 46 focused tests, strict TypeScript, production build, two real-browser cases, lint and source identity checks. The reviewer inspected the 640 by 400 PNG with visible USD observations; browser tests also check numeric options, pixels, changed output, recovery and disposal. CDP diagnostics are empty. Evidence: `artifacts/task-2.17/review/verdict.md`. Original styling, interactions and application persistence remain outside this acceptance.
 
 Task 2.18 accepted after independent Astra joined review and scoped integration GO for tasks 2.13-2.18 only. Fresh verification reproduced 46 tests, strict TypeScript, all 24 changed branch-file identities and caps for all five production modules. Matching-source chart browser evidence (two cases) and existing Perspective regression (10 unit/four browser cases) passed. See [foundation verification](chart-foundation-verification.md) and `artifacts/task-2.18/review/verdict.md`. Full renderer and release acceptance remain open.
+
+## Approved design slice: resolved snapshots and Cartesian mappings
+
+The owner approved the [snapshot design](chart-snapshot-design.md). Tasks 2.19-2.23 below await separate task approval. They extend the accepted foundation without activating application charts. Requirements 4.8-4.9 remain product-level obligations; passing this slice is not full renderer acceptance. Each leaf targets a 1-3 hour engineering unit; unexpected scope returns to the controller before implementation expands.
+
+### Ownership and execution
+
+Paths below are relative to `vendor/workspace/terminalpro/`; `Chart/` abbreviates `src/components/General/Table/Chart/`. Root metadata belongs exclusively to the controller. Every worker receives the approved design, leaf, frozen contracts, current source identities, test commands and 400 physical/300 logical units per file/50 units per function caps. Workers are not alone in the codebase and must preserve other lanes' edits.
+
+| Wave | Task and model | Exclusive writable paths | Join |
+| --- | --- | --- | --- |
+| Contract | 2.19, controller with independent Astra review | `Chart/compatibility/snapshotTypes.ts`, `Chart/echarts/cartesianTypes.ts`; `tests/unit/chart-compatibility/snapshotContracts.types.ts`, `snapshot.fixtures.ts` | Freeze shared types and fixture expectations before workers start |
+| Parallel A | 2.20, Sol implementer | `Chart/compatibility/snapshot.ts`, `tests/unit/chart-compatibility/snapshot.test.ts` | Reviewed validated snapshots |
+| Parallel B | 2.21, Sol implementer | `Chart/echarts/cartesian.ts`, `tests/unit/chart-compatibility/cartesian.test.ts` | Reviewed financial mapping against frozen valid inputs |
+| Browser join | 2.22, Sol implementer, Astra reviewer | `tests/e2e/chart-compatibility/cartesian.html`, `cartesian.tsx`, `cartesian.spec.ts`, existing `vite.config.ts` and `playwright.config.ts` in that directory | Compose actual validator, mapper and accepted host |
+| Acceptance | 2.23, controller, independent Astra review | Root inventory/source identity/breadth records; spec verification report and docs navigation | Fresh joined evidence; no app or release activation |
+
+At most controller + two workers + one reviewer. Each leaf follows implement -> independent review -> fresh verification -> acceptance. Serialize installs, shared configuration, commits and the single heavy build/browser queue. Task 2.21 may consume frozen valid fixtures without importing unfinished task 2.20 code; the actual validator join is mandatory in 2.22. Changes to frozen contracts pause both lanes for review. Controller registers maintained paths before feature acceptance and records test exclusions; no leaf may edit shared inventory independently.
+
+Reuse the accepted Node/dependency environment and existing Vitest, strict TypeScript, Vite and Playwright entry points recorded in [foundation verification](chart-foundation-verification.md). From the frontend root use `node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/vitest.config.mjs`, `node node_modules/typescript/bin/tsc --project tests/unit/chart-compatibility/tsconfig.json --noEmit`, and `node node_modules/vite/bin/vite.js build --config tests/e2e/chart-compatibility/vite.config.ts`. Use the root verification Playwright CLI with the existing chart config, one worker, isolated evidence paths and pinned browser cache. Controller verifies paths/tool identities before dispatch. Use the existing combined checker command from [complexity checks](../../../docs/complexity.md) with truthful fork scope, never an empty manifest masking new files. No dependency additions or package/lock changes are authorized.
+
+- [ ] 2.19 Freeze snapshot and render contracts
+  - Define deeply readonly snapshot inputs/results, source modes, category ownership, ordered identities, numeric/null/missing cells, JSON provenance, unit/scale metadata and resolved style/translation results from the approved design. Include field-path diagnostics, finite-number rules and explicit unsupported outcomes.
+  - Add compile-time contract checks and shared synthetic fixtures with one category descriptor, distinct IDs despite duplicate labels, homogeneous financial units and malformed-input cases. Specify known valid fixtures independently of the future validator. Do not add runtime defaults or decode legacy editor options.
+  - Confirm existing strict/unit discovery includes the new paths and register the two newly created type modules in controller-owned scope inventory. Controller adds each runtime module when its owning leaf creates it, before that leaf's acceptance; do not register missing files. Done when strict checks, existing foundation units and independent contract review pass and exact signatures/fixtures are frozen for both lanes.
+  - Complexity: both maintained type files pass 400/300/50 with explicit fork scope; test fixtures are excluded. No changes to accepted reducers, host, application flags or guards.
+  - _Boundary: Shared snapshot and Cartesian type contracts_
+  - _Depends: 2.18_
+  - _Requirements: 4.8, 4.9, 10.5, 10.6_
+
+- [ ] 2.20 (P) Preserve resolved observations in validated snapshots
+  - Implement validation and deep copy without grid, React, ECharts, provider or store imports. Preserve ordering, numeric precision, zeros, missing/null distinctions, original model fields, state address and range provenance.
+  - Verify category cardinality/association, unique row/column/selection IDs, numeric-series presence, unknown IDs, invalid provenance, nonfinite values, input mutation isolation, repeated categories and descending dates. Valid nonflat snapshots retain their source mode; renderer support is decided separately.
+  - Done when focused snapshot tests, strict checks and independent review pass against frozen contracts, with no financial conversion, sorting, aggregation or persistence added.
+  - Complexity: all maintained scope passes 400/300/50 using current measured manifests; tests/fixtures remain recorded exclusions.
+  - _Boundary: Snapshot validation lane_
+  - _Depends: 2.19_
+  - _Requirements: 4.8, 4.9_
+
+- [ ] 2.21 (P) Map the three resolved Cartesian families
+  - Translate exact groupedColumn, stackedColumn and line inputs through the frozen style contract. Keep series identity and style keyed to column IDs, selection order, repeated category positions and label/tooltip display. Replace complete options so family switches cannot retain bar/stack properties.
+  - Validate styles and reject unsupported families/source modes or unknown/incompatible unit/scale semantics with structured results. Test missing/null gaps, negative stacks, display-only precision, numeric fidelity, reordered series styles, title/legend/palette projection and no fallback. No original model options are silently claimed as supported.
+  - Done when focused mapping tests, strict checking and independent financial review pass against explicit numerical expectations. No legacy editor decoder, new product controls or production rejection guard is introduced.
+  - Complexity: maintained mapper passes 400/300/50; if responsibilities cannot fit, return to controller for reviewed cohesive decomposition, not compressed code or unapproved files.
+  - _Boundary: Cartesian mapping lane_
+  - _Depends: 2.19_
+  - _Requirements: 4.8, 4.9_
+
+- [ ] 2.22 Verify snapshot-to-host rendering in an isolated browser
+  - Compose actual snapshot validation and mapping with the accepted EChartsHost. The fixture owns monotonic render revisions independently of dataRevision; invalid/unsupported inputs expose diagnostics without submitting partial renders.
+  - Exercise homogeneous Revenue/Costs data across all three families, repeated labels, negative stacks, settings-only updates at unchanged dataRevision, stacked-to-line replacement, resize, PNG export, rejection and recovery. Assert exact numeric options and visible labels/output; inspect images as supplementary evidence.
+  - Done when the freshly built fixture passes one-worker headless Playwright with sanitized CDP diagnostics and owned cleanup, and independent review reproduces the join. Existing fixture tests remain runnable. No original application UX or persistence acceptance is claimed.
+  - Complexity: test/fixture paths are documented exclusions; any maintained configuration receives applicable whole-file checks. Production fixes return to their owning leaf and review.
+  - _Boundary: Explicit snapshot/mapper/host integration fixture_
+  - _Depends: 2.20, 2.21_
+  - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.3, 10.4_
+
+- [ ] 2.23 Accept only the joined snapshot and mapping evidence
+  - Run fresh focused units, strict TypeScript, fixture build and browser regressions against exact joined source/dependency identities. Audit imports/diffs and all four maintained modules; confirm no app activation, feature/flag edits, editor parsing, SQLite, provider or Excel changes entered the branch.
+  - Update actual breadth test paths/results, maintained inventory, source identities and a scoped verification report linked from chart documentation. Preserve unrelated work and overall renderer parity as unverified; select only accepted changes for commits.
+  - Done when independent final review passes with reproducible commands, exit codes and sanitized evidence, the shared-module audit passes, and remaining original UI, mixed-unit/multi-axis, grid capture and persistence obligations are explicit. No release image is promoted.
+  - Complexity: every joined maintained module passes 400/300/50 with exact source scope; documentation/evidence-only changes are exempt. No new exceptions are authorized.
+  - _Boundary: Controller integration of scope, breadth and acceptance evidence_
+  - _Depends: 2.22_
+  - _Requirements: 1.1, 1.4, 4.8, 4.9, 9.6, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6_
