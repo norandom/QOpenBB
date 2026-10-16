@@ -139,7 +139,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 2.2_
   - _Requirements: 4.3, 5.3, 5.9, 6.5_
 
-- [ ] 2.4 Implement single-origin routing and runtime frontend settings
+- [x] 2.4 Implement single-origin routing and runtime frontend settings
   - Render absolute public connector bases, configured public scheme and application URLs; add data/agent routing with correct prefix handling and stream behavior.
   - Keep optional Excel upstream absent until enabled and unavailable agent DNS/processes from blocking dashboard startup; disable hosted Copilot/enhancement calls.
   - Done when route contract tests distinguish APIs from SPA fallback, public scheme is correct, and disabled optional upstreams do not prevent origin startup.
@@ -562,3 +562,5 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Boundary: Release control and runtime integration_
   - _Depends: 8.5_
   - _Requirements: 2.4, 8.1, 9.2, 9.3, 9.4, 9.5, 11.5_
+
+- Task 2.4 process note: original RED was an artificial unconditional failure, so test-first compliance is not established. Independent review accepted current behavior after three explicitly retrospective baseline failures and fresh nginx/lint/size checks; artifacts/task-2.4/evidence.json preserves the chronology.

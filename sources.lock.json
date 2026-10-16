@@ -4,11 +4,11 @@
   "workspace": {
     "repository": "https://github.com/norandom/openbb-workspace.git",
     "upstream": "https://github.com/OpenBB-finance/workspace.git",
-    "revision": "633b0feca5e4506bf5bd2034043b43b6f5377f7b",
+    "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "branch_at_acquisition": "main",
     "build_variant": "full",
     "local_checkout": "vendor/workspace",
-    "adaptations": "Tasks 2.1-2.3: frozen Full frontend, persistent bootstrap and session request isolation accepted; origin routing, image and commercial renderer removal pending"
+    "adaptations": "Tasks 2.1-2.4: frontend, bootstrap, session isolation and single-origin routing accepted; image and commercial renderer removal pending"
   },
   "data_api": {
     "repository": "https://github.com/norandom/openbb-data-api.git",

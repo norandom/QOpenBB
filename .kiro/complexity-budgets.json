@@ -38,7 +38,7 @@
       }],
       "exclusions": [
         {"patterns": ["schemas/*.schema.json"], "reason": "Deterministic public schemas generated from capped maintained Python boundary models", "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"},
-        {"patterns": [".git/**", "**/__pycache__/**", "**/.pytest_cache/**", "**/.venv/**", "**/node_modules/**"], "reason": "Repository metadata and installed or cached dependencies", "source": "Git, CPython, pytest, uv and pnpm"},
+        {"patterns": [".git/**", "**/__pycache__/**", "**/.pytest_cache/**", "**/.ruff_cache/**", "**/.venv/**", "**/node_modules/**"], "reason": "Repository metadata and installed or cached dependencies", "source": "Git, CPython, pytest, Ruff, uv and pnpm"},
         {"patterns": ["vendor/**", ".upstream/**"], "reason": "Acquisition roots are inventoried separately as owned forks; this exclusion does not apply inside fork scope", "source": "sources.lock.json"},
         {"patterns": ["artifacts/**", "data/**", "backups/**", "test-results/**", "playwright-report/**", "dist/**", "htmlcov/**", ".coverage*", "coverage.xml"], "reason": "Disposable evidence, private runtime state and build output", "source": "Verification/build tools and operator runtime"},
         {"patterns": [".env", ".env.*", "secrets/**", "*.pem", "*.key"], "reason": "Private operator configuration and empty public configuration samples", "source": "Operator configuration; never read for size inventory"},
@@ -51,7 +51,7 @@
     {
       "id": "workspace",
       "repository": "https://github.com/norandom/openbb-workspace.git",
-      "revision": "633b0feca5e4506bf5bd2034043b43b6f5377f7b",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
       "source_lock_key": "workspace",
       "root": "vendor/workspace",
       "mode": "changed",
@@ -60,7 +60,9 @@
         "terminalpro/build/runtimeConfig.ts",
         "lite/entrypoint.sh", "lite/bootstrap.py", "lite/build-tools.in",
         "terminalpro/src/lib/api.tsx", "terminalpro/src/lib/utils/backendOrigin.ts",
-        "terminalpro/src/lib/utils/queryResponse.ts"
+        "terminalpro/src/lib/utils/queryResponse.ts",
+        "lite/nginx.conf.template", "lite/render-frontend-config.full.sh",
+        "lite/origin_config.py", "lite/configure-origin.sh", "lite/qopenbb-routes.conf.template"
       ]}],
       "exclusions": [
         {"patterns": ["lite/build-tools.txt"], "reason": "Generated hash-pinned backend build-tool lock", "source": "lite/build-tools.in; protected uv pip compile --generate-hashes"},
