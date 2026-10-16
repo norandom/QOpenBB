@@ -4,6 +4,8 @@ Design approved by the owner on 2026-10-16 ("go"). The owner approved these impl
 
 ## Execution contract
 
+Renderer amendment, 2026-10-16: the owner selected "Use Perspective baseline". Tasks 2.6-2.12 add the selected viewer and remove commercial dependencies without renumbering prior tasks. Independent controller task-graph sanity review passed after splitting Community isolation from commercial removal; independent amendment review still precedes renderer feature work. No new renderer task is implemented or accepted by this plan.
+
 - Follow the approved [design](design.md), [complexity](../../steering/complexity.md), [testing](../../steering/testing.md), [CI](../../steering/ci.md), [documentation](../../steering/documentation.md) and [delegation](../../steering/delegation.md) policies.
 - Every leaf follows implementation -> independent review -> fresh verification -> acceptance. Controller owns shared contract updates, integration joins, commits and the single heavy-check queue. At most two workers plus one reviewer run alongside the controller; up to three independent lightweight checks may overlap. No parallel installation or shared-state mutation.
 - Use GPT-6.1 Sol for bounded implementation/routine review, GPT-6 Astra for difficult integration/financial review, and GPT-6 Luna for mechanical inventories. Supply fresh-context workers with the leaf, allowed paths from the design, implemented verification command and complexity scope.
@@ -19,9 +21,9 @@ Design approved by the owner on 2026-10-16 ("go"). The owner approved these impl
 | Wave | Eligible work | Exclusive writable scope | Join and shared ownership |
 | --- | --- | --- | --- |
 | Foundation | 1.1-1.8; standalone 1.4 parser work may overlap 1.3 after its interface is frozen | 1.3 owns Python/inventory; early 1.4 owns only the TS parser and its unit tests | 1.4 integration and acceptance still require accepted 1.3; remaining foundations stay sequential |
-| A: Workspace | 2.1-2.4 in order | Owned Workspace packaging plus request-boundary helper/tests | Runs beside Data lane; no shared lock or central builder edits |
+| A: Workspace | 2.1-2.4, provisional 2.5, then 2.6-2.11 in order; 2.9 waits for 3.7 | Owned Workspace packaging, request helpers and renderer scopes/tests | Runs beside Data lane; controller serializes shared locks, catalog bindings and central builder changes |
 | A: Data | 3.1-3.5 in order | Owned FMP provider and QOpenBB data-runtime paths/tests | Starts after 1.8; no central source-lock or contract snapshot writes |
-| A joins | 2.5, then 3.6-3.8, then 4.1-4.5 | Controller serializes shared image builder, frozen route/catalog records and runtime integration | Revalidate provisional routes against installed API before consumers; any changed contract pauses affected lanes |
+| A joins | Provisional 2.5 permits 3.6-3.7; 2.9 binds that catalog; 3.8 verifies final data/catalog identity; 2.12 and 3.8 precede 4.1-4.5 | Controller serializes image builder, locks, renderer/catalog records and runtime integration | The 2.5 image is not publishable; 2.12 supplies the renderer-complete image. Changed contracts pause affected lanes; one heavy build at a time |
 | B: Agent | 5.1-5.5 in order | Agent service and agent-specific tests; controller owns builder/origin integration in 5.4 | Runs beside portable delivery; no Excel work until this lane is accepted |
 | B: Delivery | 7.1-7.6 in order, after 4.5 | Portable publication/promotion modules, GitHub wrappers, delivery tests and backup/restore scripts | No agent, Excel, central Dagger builder or shared schema edits; frozen schemas from 1.5 are inputs |
 | C: Excel | 6.1-6.6 in order, after 5.5 | Owned add-in/generator, Excel-specific tests/assets | May overlap unfinished Delivery lane; controller owns builder/Compose join in 6.5 |
@@ -111,6 +113,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 - [ ] 2.1 (P) Make the Full frontend build reproducible
   - Use the owned monorepo and pinned Bun frozen-lock install instead of the missing frontend npm lock and unavailable split-repository assembly.
   - Preserve the Full selection and record any narrowly required lock adaptation; keep TradingView disabled unless separately supplied and entitled.
+  - Commercial packages still present are unresolved packaging inputs, not accepted dashboard capabilities. No publication before removal and new image evidence in 2.6-2.12.
   - Done when the frontend builds cleanly from recorded inputs without lock rewriting or hidden hosted source fetches.
   - Complexity: the task's entire modified maintained production scope passes 400 physical lines/file, 300 logical units/file and 50/function using the implemented checker; record generated exclusions and reviewed exceptions.
   - _Boundary: Workspace packaging_
@@ -148,10 +151,75 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - Add the adapted Full build to the existing Dagger image builder and export its exact source-labeled image.
   - Run packaging health and fresh account smoke checks independently through portable verification; record unavailable upstream capabilities.
   - Done when the clean image loads and starts with expected Full configuration and its source/dependency identities are available for the integration join.
+  - This is a provisional local packaging checkpoint, not a publishable image while commercial dependencies remain. Task 2.12 rebuilds the renderer-complete image used by 4.1.
   - Complexity: the task's entire modified maintained production scope passes 400 physical lines/file, 300 logical units/file and 50/function using the implemented checker; record generated exclusions and reviewed exceptions.
   - _Boundary: Dagger image builder and Workspace packaging integration_
   - _Depends: 2.4_
   - _Requirements: 1.1, 1.4, 1.5, 3.2, 9.1_
+
+- [ ] 2.6 Isolate Community tables and unsupported legacy states
+  - Inventory residual grid callers and use Community-supported flat-table options/actions, retaining ordinary sorting, filters and financial formatting.
+  - Hide unsupported range charts, legacy grouping/pivots, SSRM/tree/master-detail and Enterprise clipboard/XLSX actions. Preserve imported unsupported state behind an explicit unavailable view; Perspective supplies its own grouping/pivot experience later.
+  - Identify oversized modified files before edits and extract cohesive responsibilities or obtain narrowly reviewed measured exceptions; do not hide a broad frontend rewrite in this task.
+  - Done when focused tests exercise residual tables and unsupported imports without Enterprise API calls, and the accepted 1.4 checker passes every modified maintained file.
+  - Complexity: whole modified maintained files pass 400 physical lines/file, 300 logical units/file and 50/function; record exclusions and reviewed exceptions.
+  - _Boundary: Community rendering boundary_
+  - _Depends: 1.4, 2.5_
+  - _Requirements: 1.3, 1.4, 4.4, 4.6, 5.4, 10.5, 10.6_
+
+- [ ] 2.7 Remove commercial renderer and dependency paths
+  - Remove AG Enterprise/Highcharts imports, keys, registrations, wrappers, theme-preview paths and package/lock entries, including lazy and type-only paths. Retain inventoried supported standalone Community charts and complementary Plotly widgets.
+  - Controller serializes frozen-lock/notices changes. Do not suppress license warnings or rely on tree-shaking as removal evidence.
+  - Done when source/dependency/module-graph checks and a clean frontend build contain no removed commercial modules or initialization keys, with unsupported renderer tests passing; image absence is rechecked in 2.12.
+  - Complexity: whole modified maintained files pass 400 physical lines/file, 300 logical units/file and 50/function; record exclusions and reviewed exceptions.
+  - _Boundary: Community rendering boundary_
+  - _Depends: 2.6_
+  - _Requirements: 1.1, 1.2, 1.3, 1.4, 3.2, 4.4, 9.6, 10.6_
+
+- [ ] 2.8 Establish the owned Perspective browser runtime
+  - Select an exact compatible current-namespace release/plugins eligible under Safe Chain's package-age policy; verify React/Vite and protected frozen installation through the controller-owned dependency join.
+  - Package same-origin WASM/worker assets and an owned React host with bounded worker allocation, explicit viewer/table cleanup, resize and light/dark handling. Add no server, database, Perspective AI or dashboard shell.
+  - Done when isolated fixture browser checks mount, resize, hide/show, change theme and repeatedly unmount/remount without leaked owned resources or console/network failures.
+  - Complexity: whole modified maintained files pass 400 physical lines/file, 300 logical units/file and 50/function; record exclusions and reviewed exceptions.
+  - _Boundary: Perspective runtime_
+  - _Depends: 2.7_
+  - _Requirements: 1.1, 1.2, 3.2, 4.6, 5.5, 10.1, 10.3_
+
+- [ ] 2.9 Integrate ready financial explorers with the accepted catalog
+  - Map profile/income and FRED rows to explicit types, null/date semantics and provenance. Apply field-specific aggregation rules without default sums of ratios, EPS or incompatible currencies/units/frequencies.
+  - Bind ready widget IDs, installed operations, parameters, schema versions and useful viewer defaults through the controller-owned renderer/catalog join; keep provider code renderer-independent and add no OHLC endpoint.
+  - Done when fixtures prove observations and permitted aggregates, unsupported combinations fail visibly, and generated app/widget references resolve to Perspective without manual widget authoring.
+  - Complexity: whole modified maintained files pass 400 physical lines/file, 300 logical units/file and 50/function; generated snapshots are excluded, adapters/generators are not.
+  - _Boundary: Perspective data and widget with consumer-contract integration_
+  - _Depends: 2.8, 3.7_
+  - _Requirements: 4.3, 4.5, 4.6, 5.4, 5.6, 5.7, 11.3_
+
+- [ ] 2.10 Preserve explorer configuration through refresh and reopen
+  - Persist validated versioned viewer configuration, source parameters and schema identity in existing widget storage; restore columns, groups/splits, filters, aggregations, plugin settings and theme policy without treating cached rows as authoritative data.
+  - Replace complete fetched data while retaining compatible settings; reject stale responses, mark last-success data on refresh failure and recover from incompatible schemas without overwriting saved configuration.
+  - Done when fixture tests change parameters/configuration, remount and refresh changed observations, including out-of-order, failure/retry and incompatible-schema cases. Full application restart acceptance remains in 4.5.
+  - Complexity: whole modified maintained files pass 400 physical lines/file, 300 logical units/file and 50/function; record exclusions and reviewed exceptions.
+  - _Boundary: Perspective state and context_
+  - _Depends: 2.9_
+  - _Requirements: 2.2, 4.2, 4.7, 5.2, 5.4, 5.7, 5.8_
+
+- [ ] 2.11 Expose configured explorer data through Workspace context
+  - Capture the configured view and explicit selection scope with parameters, schema, filters, groups/splits, aggregations, units/periods and data revision; distinguish derived totals from observations.
+  - Register the payload at the existing selected-widget seam. Bound exports and handle refresh/reconfiguration/removal races without truncation or full-table substitution; model credentials and inference remain in the later agent service.
+  - Done when fixtures match configured/selected exports to displayed financial data and reject stale, unavailable and oversized context. Check configured-view CSV and supported chart-image output; live Anthropic grounding remains in 5.5.
+  - Complexity: whole modified maintained files pass 400 physical lines/file, 300 logical units/file and 50/function; record exclusions and reviewed exceptions.
+  - _Boundary: Perspective state and context with Workspace integration_
+  - _Depends: 2.10_
+  - _Requirements: 5.4, 10.3, 12.1, 12.3, 12.5_
+
+- [ ] 2.12 Build and identify the renderer-complete Full image
+  - Rebuild through the existing Dagger definition in the single heavy-build queue. Controller joins final Workspace locks, renderer bindings and verified data/catalog hashes into the candidate identity.
+  - Run isolated fixture renderer smoke checks and inspect production chunks, installed dependencies and image contents for removed commercial packages/keys; retain notices and explicit unsupported states.
+  - Done when independent review accepts fixture evidence and the new image identity, and actual test paths/artifacts reach breadth. This permits the real dashboard join, not complete release promotion or a substitute for 4.3-4.5 acceptance.
+  - Complexity: modified maintained builder/helpers pass 400 physical lines/file, 300 logical units/file and 50/function; tests/evidence and generated outputs are recorded exclusions.
+  - _Boundary: Dagger image builder and renderer integration_
+  - _Depends: 2.11, 3.8_
+  - _Requirements: 1.1, 1.2, 1.4, 3.2, 4.4, 9.1, 9.6, 10.5, 10.6_
 
 - [ ] 3. Adapt the data API and generate supported widgets
 
@@ -219,12 +287,13 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Requirements: 4.3, 4.5, 5.4, 11.1, 11.3_
 
 - [ ] 3.8 Verify the served image and catalog identity
+  - Wait for the controller-owned Perspective bindings from 2.9 before final catalog/image verification; no renderer worker writes shared snapshots independently.
   - Compare the actual image's served schema/catalog with generated snapshots and verify provider credentials are absent from image layers and metadata.
   - If the starter catalog or generated assets must be embedded, rebuild through Dagger after generation and rerun generation/reference checks against that final image; do not reuse prior image evidence.
   - Done when the loaded final image, served metadata and canonical contract hashes agree; retain candidate status until the dashboard live-acceptance join.
   - Complexity: the task's entire modified maintained production scope passes 400 physical lines/file, 300 logical units/file and 50/function using the implemented checker; record generated exclusions and reviewed exceptions.
   - _Boundary: Consumer contracts and data API integration_
-  - _Depends: 3.7_
+  - _Depends: 3.7, 2.9_
   - _Requirements: 1.1, 4.3, 4.5, 5.3, 5.9, 9.6, 11.1, 11.3_
 
 - [ ] 4. Join and accept the dashboard baseline
@@ -236,7 +305,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - Done when tests pass with no agent image available and inactive Excel needs no image. Full baseline startup and release acceptance require the real agent image.
   - Complexity: the task's entire modified maintained production scope passes 400 physical lines/file, 300 logical units/file and 50/function using the implemented checker; record generated exclusions and reviewed exceptions.
   - _Boundary: Runtime control_
-  - _Depends: 2.5, 3.8_
+  - _Depends: 2.12, 3.8_
   - _Requirements: 2.1, 2.3, 2.4, 3.1, 3.4, 3.6, 3.7, 3.8, 11.6_
 
 - [ ] 4.2 Exercise real Compose lifecycle in isolated run directories
@@ -251,6 +320,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 - [ ] 4.3 Verify dashboard discovery and editing in the real frontend
   - Implement the real Playwright account/login and connector registration journey against absolute same-origin catalog URLs.
   - Exercise FMP/FRED discovery, add/arrange/resize/remove operations and observable widget content, with console/network diagnostics.
+  - Verify ready Perspective explorers, grouping/pivot/filter changes and table/chart switching; assert unsupported legacy controls stay unavailable and residual Community tables still render.
   - Done when assertions verify resulting dashboard layout/data rather than only UI notifications or HTTP success; preserve an executable regression.
   - Complexity: the task's entire modified maintained production scope passes 400 physical lines/file, 300 logical units/file and 50/function using the implemented checker; record generated exclusions and reviewed exceptions.
   - _Boundary: Verification and Workspace integration_
@@ -259,6 +329,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 
 - [ ] 4.4 Verify mixed-provider financial fidelity and failure states
   - Compare equivalent Workspace/API parameters and fixture values with units, currency, period and available frequency metadata; include visible failed refresh behavior.
+  - Compare configured-view aggregates and exports with independent fixture calculations; prove missing values and incompatible units are not silently coerced, and failed refresh preserves visibly stale last-success data until recovery.
   - Run separately marked entitled live FMP profile/income and FRED GDP checks with narrowly injected local keys.
   - Done when both sources refresh and comparison evidence is recorded; missing entitlement, skipped live checks or substituted data cannot pass baseline acceptance.
   - Complexity: the task's entire modified maintained production scope passes 400 physical lines/file, 300 logical units/file and 50/function using the implemented checker; record generated exclusions and reviewed exceptions.
@@ -268,6 +339,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 
 - [ ] 4.5 Accept dashboard persistence and the validated API baseline
   - Save widget parameters/layout, stop and restart the environment, sign in again and verify reopen/refresh against the same source/image set.
+  - Preserve Perspective columns, groups/splits, filters, aggregation and plugin/theme settings across restart; assert refreshed observations and configured-view context match the new data revision.
   - Join clean-build, contract, financial and UI evidence; update selected release validation status and list unavailable hosted/chart capabilities honestly.
   - Done when independent review accepts a current dashboard baseline record and the breadth map distinguishes accepted, failing and untested capabilities.
   - Complexity: tests and evidence are excluded; any maintained runner or helper changed here passes the 400 physical/300 logical/50 per-function caps.

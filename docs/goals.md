@@ -2,6 +2,8 @@
 
 The first useful outcome is a saved financial dashboard that can refresh FMP and FRED data through the owner's OpenBB API after a restart. Full Workspace is the selected baseline. Anthropic and Excel extend that workflow only after its data and persistence contracts hold.
 
+Perspective is the selected analytical viewer inside that shell: configurable tables, pivots and charts for the accepted FMP/FRED datasets. Useful Plotly widgets remain, and residual tables use Community-only components. Commercial renderer removal and the new viewer adapter are implementation work, not completed capabilities; see the [assessment and decision](chart-replacement-assessment.md).
+
 ## Outcomes to prove
 
 | Goal | Observable result | Owning requirements |

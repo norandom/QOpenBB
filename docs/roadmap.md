@@ -2,7 +2,7 @@
 
 Prove the Full Workspace dashboard first, accept Anthropic next, then implement Excel. Each stage below has an evidence gate. This is a dependency overview, not a generated task list or approval to implement.
 
-The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approved requirements and [technical design](../.kiro/specs/openbb-self-service/design.md). The [49-task implementation plan](../.kiro/specs/openbb-self-service/tasks.md) has passed independent graph review and is approved. Foundation implementation is in progress. Read the [feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) before interpreting a source finding or provider probe as integration evidence.
+The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approved requirements and [technical design](../.kiro/specs/openbb-self-service/design.md). The owner-approved [implementation plan](../.kiro/specs/openbb-self-service/tasks.md), including the Perspective amendment, has passed independent dependency review. Source acquisition and protected toolchains are accepted; combined complexity enforcement is being integrated. Read the [feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) before interpreting a source finding or provider probe as integration evidence.
 
 ## Dependency gates
 
@@ -23,7 +23,7 @@ Build and CI foundation work may overlap application work after shared contracts
 - The selected OpenBB 5 / core 2 API excludes released FMP support. FMP 1.6.1 requires core below 2; a maintained, tested adaptation is required. Static import compatibility does not prove endpoint or financial-data correctness.
 - The pinned Workspace Dockerfile expects an npm lockfile absent from the inspected frontend, which has `bun.lock`. Reproducible dependency installation needs an explicit adaptation.
 - Legacy source-fetch scripts refer to inaccessible split repositories. Assemble the required build context from the owned Workspace monorepo and recorded revisions.
-- Inventory the chart/grid components actually used and establish applicable rights or replacements. Full packaging and public package downloadability do not establish those rights; see the feasibility report.
+- Implement the selected Perspective explorer, retain useful Plotly widgets and Community-only residual tables, and remove commercial renderer dependencies. Verify saved configuration, financial aggregations, refresh and selected-view AI data; see the [replacement decision](chart-replacement-assessment.md).
 - Widget discovery, HTTP path rewriting, agent streaming, and Excel authentication need integration evidence. Selecting Full or declaring Compose services does not implement them.
 
 ## Completion evidence

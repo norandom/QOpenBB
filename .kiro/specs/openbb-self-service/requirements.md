@@ -21,6 +21,8 @@ The owner selected the latest OpenBB data API as the target, with regenerated Wo
 
 ## Requirements
 
+Owner refinement, 2026-10-16: use Perspective explorer widgets as the main analytical viewer for the accepted FMP/FRED datasets inside the Full Workspace shell. Retain useful Plotly widgets and Community-only residual tables; remove commercial renderer dependencies. This is an explicit local adaptation under 1.3-1.4, with grouping, financial aggregation, saved viewer configuration, refresh and selected-view AI context verified through the dashboard/data criteria. It adds no OHLC endpoint, application server or PostgreSQL scope. The owner runs deployment Compose locally; agent SSH access is not required.
+
 ### Requirement 1: Reproducible upstream baseline
 **Objective:** As the owner, I want a recorded upstream baseline so that I can maintain my own environment.
 

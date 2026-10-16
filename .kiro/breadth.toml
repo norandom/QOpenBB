@@ -31,10 +31,10 @@ evidence = ["Task 1.2 protected WSL toolchain setup: 24 successful install/versi
 [[capabilities]]
 id = "workspace-baseline"
 requirements = ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7"]
-planned_checks = ["workspace-login-save-reopen", "widget-discovery-and-values", "external-service-inventory", "fmp-ready-widgets-dashboard-edit-save-reopen-refresh"]
+planned_checks = ["workspace-login-save-reopen", "widget-discovery-and-values", "external-service-inventory", "fmp-ready-widgets-dashboard-edit-save-reopen-refresh", "perspective-viewer-config-pivot-aggregation-refresh", "commercial-renderer-absence", "configured-view-ai-context"]
 test_paths = []
 status = "planned"
-evidence = []
+evidence = ["Owner selected Perspective baseline on 2026-10-16; renderer, financial aggregation and saved-view checks remain planned, not implemented. See docs/chart-replacement-assessment.md."]
 
 [[capabilities]]
 id = "fmp-fred-data-api"

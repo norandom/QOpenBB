@@ -6,6 +6,8 @@ QOpenBB gives financial engineers an owned Full Workspace with FMP and FRED dash
 
 The owner approved requirements and progression into design on 2026-10-16. Core `product.md`, `tech.md` and `structure.md` steering files are absent; the approved requirements, documentation, complexity, testing, CI and delegation steering provide the project constraints used here. Design approval, task generation and implementation acceptance remain separate gates.
 
+On 2026-10-16 the owner selected "Use Perspective baseline". Perspective becomes the primary analytical viewer for the accepted FMP/FRED datasets inside the existing Full dashboard. This amendment authorizes that integration direction; independent amendment review precedes renderer feature work, and implementation/runtime acceptance remain unverified. The [renderer assessment](../../../docs/chart-replacement-assessment.md) records the source findings and alternatives.
+
 ### Goals
 
 - Prove the financial journey: discover widgets, build a mixed FMP/FRED dashboard, save, restart, reopen and refresh without changing financial meaning.
@@ -24,6 +26,7 @@ No Jupyter, wheel-distribution service, PostgreSQL connector, data warehouse, re
 - One baseline release set: Full Workspace adaptation, maintained FMP integration in the data API, stateless Anthropic agent, and later Excel artifacts.
 - API-to-widget-to-Excel compatibility, origin routing, application state persistence, build provenance, acceptance evidence and recovery instructions.
 - Small changes to the owned forks; QOpenBB owns orchestration and new agent/runtime glue. Upstream financial schemas and application storage remain authoritative in their respective components.
+- A reusable Perspective explorer, Community-compatible residual tables, and removal of all AG Enterprise and Highcharts runtime/dependency paths. Existing Plotly widgets remain complementary; QOpenBB does not recreate every legacy grid feature or chart model.
 
 ### Out of Boundary
 
@@ -77,6 +80,7 @@ Local development accesses the same origin directly at `http://localhost:23003`.
 | Layer | Choice and version contract | Role |
 | --- | --- | --- |
 | Workspace | Owned Full monorepo; Node compatible with its locked Vite; pinned Bun and Python 3.13 base digests | Existing frontend/application backend and state |
+| Analytical viewer | Compatible exact Perspective release and plugins under `@perspective-dev/*`, eligible under Safe Chain's package-age policy; Community AG Grid and existing Plotly retained where supported | Browser worker/WASM exploration, residual flat tables and complementary charts |
 | Data API | Latest validated OpenBB release, compatible locked FRED and maintained FMP | Installed provider routes and generated metadata |
 | Agent | Python, FastAPI, `openbb-ai` schema/SSE helpers, Anthropic SDK, all locked | Translate selected-data conversation into streamed model output |
 | Excel | Owned add-in, existing npm lock and Office SharedRuntime contract | Generated compatible functions and assets |
@@ -97,18 +101,24 @@ Paths below are planned, not existing runtime assets. `workspace:` and `data:` r
 | Runtime control | New `scripts/runtime/preflight.py`, `scripts/runtime/backup.py`, `scripts/runtime/restore.py` | Validate configured release, safe stopped-state snapshot and restore |
 | Workspace packaging | Modify `workspace:lite/Dockerfile`, `lite/entrypoint.sh`, `lite/nginx.conf.template`, `lite/render-frontend-config.full.sh`; new `lite/qopenbb-routes.conf.template` | Frozen Full build, secret-safe bootstrap, external route rendering |
 | Workspace request boundary | Modify `workspace:terminalpro/src/lib/api.tsx`; new `terminalpro/src/lib/utils/backendOrigin.ts` and its focused test | Match application origin and path boundaries before attaching session credentials |
+| Community rendering boundary | Modify `workspace:terminalpro/package.json`, frozen lock, `src/main.tsx`, `src/components/Widgets/index.ts`, `src/components/General/Table/AgGrid.tsx`, `AgGridUtils.tsx`, `hooks/useTableContext.tsx`, chart/theme imports and their audited callers; new `src/components/Widgets/UnsupportedRenderer.tsx` | Remove Enterprise/Highcharts modules, initialization keys and actions; keep supported residual grids and explicit unsupported imports |
+| Perspective runtime | New `workspace:terminalpro/src/components/Widgets/perspective/runtime.ts`, `PerspectiveHost.tsx`, `lifecycle.ts`; modify frontend asset configuration only if required | One owned browser runtime, same-origin WASM/worker assets, React lifecycle and resize/theme integration |
+| Perspective data and widget | New `workspace:terminalpro/src/components/Widgets/perspective/schema.ts`, `rows.ts`, `aggregations.ts`, `PerspectiveWidget.tsx`; modify widget renderer registry and supported widget schema | Typed financial rows, permitted operations and ready endpoint-bound explorer rendering |
+| Perspective state and context | New `workspace:terminalpro/src/components/Widgets/perspective/state.ts`, `refresh.ts`, `selection.ts`, `aiData.ts`; modify widget storage typing and existing selected-widget registration seam | Versioned viewer configuration, safe refresh/reopen and configured-view AI data |
 | Data API runtime | New `services/data-api/Dockerfile`, `pyproject.toml`, `uv.lock`, `qopenbb_data/config.py`, `qopenbb_data/app.py`, `qopenbb_data/catalog.py` | Install owned packages, inject server credentials, expose API and regenerate catalog |
 | Maintained FMP | Restore/adapt `data:openbb_platform/providers/fmp/pyproject.toml`, `openbb_fmp/provider.py`, `openbb_fmp/models/equity_profile.py`, `income_statement.py`, `openbb_fmp/utils/helpers.py`; add `LICENSE`, `provenance.json` | Provider registration and required dataset fetchers, with provenance |
-| Consumer contracts | New `contracts/datasets.json`, `contracts/routes.json`, `contracts/widgets.json`, `contracts/apps.json`, `contracts/openapi.json`, `contracts/excel-functions.json`, `schemas/acceptance.schema.json` | Explicit acceptance inventory and generated contract snapshots; Excel snapshot begins only after agent acceptance |
+| Consumer contracts | New `contracts/datasets.json`, `contracts/routes.json`, `contracts/widgets.json`, `contracts/apps.json`, `contracts/openapi.json`, `contracts/renderers.json`, `contracts/excel-functions.json`, `schemas/acceptance.schema.json` | Explicit acceptance inventory, Perspective bindings/schema/config versions and generated contract snapshots; Excel snapshot begins only after agent acceptance |
 | Anthropic agent | New `services/agent/Dockerfile`, `pyproject.toml`, `uv.lock`, `qopenbb_agent/config.py`, `app.py`, `conversation.py`, `anthropic_client.py` | Discovery/query handlers, selected-data continuation and provider streaming |
 | Excel adaptation | Modify `workspace:excel-add-in/src/functions/generator/spec_generator.py`, `ts_generator.py`, `src/functions/fetcher/platform.api.ts`, `src/backend/auth.api.ts`, `vite.config.ts`; new `src/functions/generator/schema_inputs.py`, `compatibility.py`; new QOpenBB `services/excel/Dockerfile` | Local schema inputs, compatible function generation, origin/auth URLs and static hosting |
 | Dagger image builder | New `dagger.json`, `.dagger/pyproject.toml`, `.dagger/uv.lock`, `.dagger/src/qopenbb/main.py`, `sources.py`, `images.py` | Frozen source acquisition, image builds and export only |
 | Portable CI commands | New `pipeline/tools.lock.json`, `pipeline/pyproject.toml`, `pipeline/uv.lock`, `pipeline/qopenbb_ci/cli.py`, `contracts.py`, `generate.py`, `checks.py`, `images.py`, `release.py`; new `.github/workflows/verify.yml`, `release.yml` | Typed runner-independent generation, verification, image load/push and promotion |
-| Verification | New `tests/contracts/`, `tests/providers/`, `tests/agent/`, `tests/delivery/`, `tests/e2e/dashboard.spec.ts`, `agent.spec.ts`, `playwright.config.ts`, `verification/package.json`, lockfile, `verification/compose_runner.py`, `verification/evidence.py` | Tests, owned browser diagnostics, actual Compose lifecycle and evidence |
+| Verification | New `tests/contracts/`, `tests/providers/`, `tests/agent/`, `tests/delivery/`, `tests/e2e/dashboard.spec.ts`, `perspective.spec.ts`, `agent.spec.ts`, `playwright.config.ts`, `verification/package.json`, lockfile, `verification/compose_runner.py`, `verification/evidence.py`; owned Workspace `terminalpro/tests/unit/components/Widgets/perspective/` and renderer fixture browser tests | Tests, owned browser diagnostics, actual Compose lifecycle and evidence |
 | Complexity and breadth | New `tools/quality/complexity.py`, `syntax_units.ts`, `.kiro/complexity-budgets.json`; modify `.kiro/breadth.toml` | Scope inventory, deterministic counters, feature/spec/test/evidence joins |
 | Documentation | Modify `README.md`, `docs/index.md`, `docs/roadmap.md`; new `docs/development.md`, `deployment.md`, `recovery.md`, `compatibility.md`, `licenses.md` | Exercised procedures, financial semantics and unavailable capability inventory |
 
 Each production file has the steering limits of 400 physical lines, 300 logical syntax units where applicable, and 50 per function. Changes to oversized upstream bootstrap/generator/configuration files require cohesive extraction or a measured reviewed exception before acceptance. Generated contracts, dependency locks and unchanged imported source have recorded exclusions; generator logic is maintained production code. All documentation and rationale comments follow the COBESY project policy.
+
+Renderer removal starts with an import/caller inventory, including lazy widgets, theme previews and type-only imports. Expand that inventory before editing an additional caller; it is not permission for an unrelated frontend rewrite. Whole modified files are measured. Known oversized candidates include `AgGrid.tsx` (840 physical lines), `hooks/useTableContext.tsx` (796) and `ThemeSettings/ChartSettings.tsx` (1,185) at the acquired revision. Plan cohesive extraction or a narrowly reviewed measured exception rather than treating unchanged portions of a modified file as excluded. Controller owns shared locks, renderer/catalog snapshots and breadth entries; renderer workers propose those changes at serial joins.
 
 ## System Flows
 
@@ -179,6 +189,7 @@ Every active acceptance criterion maps to a component contract and an observable
 | Component | Intent | Requirements | Dependencies | Contracts |
 | --- | --- | --- | --- | --- |
 | Workspace and origin | Existing UI/state/auth plus common routes | 2.1, 3.5, 4.1, 4.7 | Inbound clients P0; outbound data API P0; agent P1 | API, State |
+| Perspective and Community rendering | Ready financial exploration and supported residual grids | 4.3, 4.5, 4.6, 4.7, 5.4, 5.7, 12.1 | Existing widget/query/state contracts P0; browser worker/WASM P0 | State, Data |
 | Data API and maintained FMP | Supported financial results and catalog | 5.1, 5.4, 5.6, 11.2 | External FMP/FRED P0; owned API P0 | API, Batch |
 | Anthropic agent | Selected-data conversation | 12.1, 12.2, 12.5 | Inbound Workspace P0; external Anthropic P0 | API |
 | Excel adaptation | Workbook-compatible functions | 6.1, 6.4, 11.4 | Inbound Office P0; data/application APIs P0; accepted AI prerequisite P0 | API, Batch |
@@ -207,6 +218,30 @@ This is an explicit single-owner trust choice: set `OPENBB_API_AUTH=false` and a
 
 Fix the frontend's substring backend match before dashboard acceptance. `/data/api/v1/...` must not match the application backend merely because it contains `/api`. Resolve URLs against the current origin and compare normalized origin plus complete `/api` path segment; preserve unrelated connector headers and never attach the application session to a provider or agent request. Regress `/api/pro/user`, `/data/api/v1/equity/profile`, a different origin and lookalike path prefixes.
 
+### Perspective and Community rendering
+
+Use one reusable Perspective widget renderer for the supported FMP profile/income and FRED series catalog entries. The Full shell continues to own dashboard layout, authentication, parameters, persistence and the chat pane. Existing endpoint/query handling fetches the data; a typed adapter supplies the browser table and the native viewer supplies grouping, splits, filtering, aggregation and chart selection. Do not add Perspective's own workspace shell, embedded AI, server, database or Jupyter integration. Origin routes and Compose services stay as defined above.
+
+Adopt an exact compatible package set only after Safe Chain eligibility, React/Vite compatibility and frozen-lock installation are verified. The researched current stable release is 5.6.0; it is evidence, not an unconditional version pin. Package publication timestamps and the configured age window govern install eligibility. The sibling's Angular `@finos/*` 3.3.3 adapter and patched d3fc charts supply lifecycle lessons, not reusable current-version assets or acceptance. Initialize same-origin WASM and worker resources once; bound worker ownership and dispose viewers, tables, subscriptions and workers according to ownership on removal/logout. Validate repeated mount/unmount, hidden tabs, resizing and light/dark transitions with the actual pinned release.
+
+Commercial dependency removal is a separate prerequisite. Remove all `ag-grid-enterprise`, `ag-charts-enterprise`, Highcharts and Highcharts wrapper imports, registrations, initialization keys and package/lock entries, including lazy and theme-preview paths. Residual tables use Community-supported options and ordinary filters. Hide unsupported Enterprise actions and resolve unsupported imported widgets to an explicit unavailable state without deleting their saved content. Legacy grouping/pivot state, range-generated AG chart models, SSRM/tree/master-detail widgets, Enterprise clipboard/XLSX actions and arbitrary Highcharts configurations do not become compatible by installing Perspective. Grouping and pivoting are available through the new explorer. Keep supported standalone Community charts only where an inventoried widget requires them. Do not claim removal from a missing watermark; inspect source, dependency graph, production chunks and image contents.
+
+| Contract | Required behavior |
+| --- | --- |
+| Dataset input | Validate endpoint results against explicit column types and stable financial field identifiers. Keep nulls, provider, retrieval time, currency, period, units and frequency; distinguish date-only observations from UTC timestamps. Unknown/nested fields need an explicit mapping, not lossy stringification or inferred numeric coercion. |
+| Financial exploration | Catalog defaults select useful columns and chart/table views. Aggregations are field-specific: do not sum EPS, ratios, prices or incompatible currencies/frequencies. Reject an unsupported combination or identify an explicitly selected derived aggregation. Profile defaults remain tabular; income/FRED defaults preserve periods and missing observations. |
+| Widget/catalog binding | Stable widget IDs bind accepted operation IDs, parameters, renderer ID, dataset schema version and supported view defaults in `contracts/renderers.json`. Provider implementation remains renderer-independent. The controller joins these bindings to canonical widget/app generation after installed routes are known. |
+| Saved state | Existing widget storage holds a versioned envelope containing renderer/config version, schema identity, validated viewer configuration and source parameters. Viewer configuration covers columns, filters, grouping/splits, aggregation, plugin settings and theme policy. Persist configuration changes without saving credentials or treating cached rows as the authoritative dataset. |
+| Refresh and recovery | Fetch a complete result with current parameters, then replace rows while retaining compatible viewer settings. Incremental updates require declared stable row keys and are not required for this baseline. Reject stale responses after parameter changes. On failed refresh retain clearly marked last-success data and its timestamp; never show it as newly refreshed. A schema change validates/migrates compatible settings or shows a recoverable incompatibility without overwriting the saved config. |
+| Selected-widget context | Export the current configured view with schema, filters, groups, splits, aggregations, parameters and financial metadata through the existing Workspace agent protocol. Identify derived totals and the explicit selection scope: configured view or selected rows. Enforce size bounds, reject unavailable/oversized context and prevent a stale selection from referring to refreshed rows. No silent truncation or raw full-table substitution. |
+| Exports and unsupported states | Accept CSV of the configured view and supported chart-image download with values/labels checked. Enterprise XLSX/range behavior is unavailable. Unsupported imported renderer state remains recoverable and clearly identified; it is not silently translated to an unrelated visualization. |
+
+The runtime is the only owner of Perspective vendor types; application boundaries validate `unknown` data into concrete interfaces. Schema/row helpers feed the widget, state helpers depend on validated config and the AI adapter consumes a captured view plus metadata. The agent service must not import browser/Perspective types. Capture config and exported view against the same data revision; handle viewer reconfiguration/removal during asynchronous export as cancellation or explicit retry.
+
+Keep existing Plotly widgets as complementary presentation views. Perspective and Plotly support financial charts, but an OHLC data endpoint and new provider coverage are outside this amendment. Do not enable browser-side Perspective AI or place the Anthropic key in frontend configuration.
+
+Tasks 2.1-2.5 may establish a provisional packaging checkpoint with unresolved commercial inputs; that image cannot be published or accepted as the dashboard baseline. Renderer tasks 2.6-2.12 produce a new identified image after removal and explorer verification. Data tasks progress alongside the renderer lane where declared: 3.7 supplies installed-route catalog inputs to 2.9, and 3.8 waits for the controller's 2.9 renderer bindings before final data/catalog identity verification. The real dashboard join requires both 2.12 and 3.8. Serialize central builder and lock operations. Full restart/reopen, live-provider fidelity and later Anthropic checks remain their existing acceptance gates.
+
 ### Data API and consumer contracts
 
 Use the selected owned OpenBB packages and supported shared routers. Explicitly initialize server-side FMP/FRED credentials from the service environment into the selected API's settings interface; generic environment names alone are not proof of injection. Do not persist keys into generated OpenAPI or widget metadata. The data container has no custom database and needs no persistent data volume.
@@ -224,6 +259,8 @@ Use the selected owned OpenBB packages and supported shared routers. Explicitly 
 Preserve the OpenBB response envelope and provider metadata, including units, currency, period and dates where supplied. Missing observations remain missing; null values never become zero. Preserve the distinction between quarterly GDP frequency and any annualized units in metadata. Compare like-for-like parameters and retrieval times, using deterministic fixtures where live revisions make exact repeat comparisons unsuitable.
 
 Generate `/openapi.json`, `/widgets.json` and `/apps.json` from the installed route inventory. Give generated artifacts stable hashes and check that every app references existing widgets, every widget references an actual route and every supported provider option is registered. Use existing FRED app metadata; provide a small mixed FMP/FRED starter dashboard from the accepted inventory. Do not claim the historical hosted catalog is reproduced.
+
+Bind the required ready widgets to the Perspective renderer contract at the controller-owned catalog join. Keep provider routes and financial response schemas independent of viewer options. Any previously generated catalog that references removed renderers must be regenerated and revalidated before the final data image/catalog identity is accepted.
 
 The generation job accepts the selected API schema, widget inventory and public path configuration; it outputs canonical JSON snapshots and a compatibility diff. Sort serialization and exclude timestamps from content hashes. Repeat generation must yield identical contracts for identical inputs. Path/argument/response changes invalidate the relevant consumer evidence.
 
@@ -289,6 +326,7 @@ No new application-state schema is introduced. Workspace remains authoritative f
 | Source lock | Repository, exact commit, upstream provenance, selected release/version, package/tool lock hashes; never a branch name as an executable pin |
 | Release manifest | Schema version, release ID, QOpenBB/workspace/data revisions, per-service image digest and architecture, lock/contract hashes, enabled profiles, required configuration names, state compatibility and acceptance references |
 | Dataset contract | Provider, operation ID, parameters, result schema, available metadata fields, fixture provenance and entitled live-check marker |
+| Renderer contract and widget state | Stable widget/renderer IDs, operation/parameter bindings, dataset schema and configuration versions, permitted aggregation/defaults, validated viewer settings and selection scope; no credentials or authoritative cached dataset |
 | Acceptance record | Capability and numeric requirement IDs, status `passed`/`failed`/`skipped`/`unverified`, input revisions/digests/contract hashes, command or manual procedure, timestamp, exit/result and sanitized artifact references |
 | Backup manifest | Release and image set, UTC capture time, source state format, archive checksum, stopped-service confirmation, required private configuration reference and restore compatibility |
 
@@ -302,6 +340,8 @@ Evidence never contains credentials. Release artifacts contain configuration nam
 | Invalid provider key, entitlement or throttling | Preserve meaningful provider failure category; no substitute provider/data; redact URLs and credential-bearing text |
 | Invalid dataset parameters or missing observation | Return supported validation/not-found result; display absence explicitly |
 | Application or data process unavailable | Health/logs identify the component; proxy returns failure rather than frontend HTML |
+| Viewer schema/configuration incompatible or refresh fails | Preserve saved configuration and explicitly marked last-success observations; reject stale response/selection revisions and provide visible recovery without substituting data |
+| Unsupported legacy renderer or Enterprise action | Hide unavailable controls; preserve imported configuration behind an explicit unsupported state, without loading removed packages |
 | Agent discovery, model access or stream failure | Visible failed/cancelled result; no fabricated completion; dashboards stay available |
 | Excel incompatible signature/response | Generation diff and Office acceptance fail; keep prior supported contract or stop release |
 | Failed checks or stale evidence | Withhold release promotion; retain sanitized diagnostics |
@@ -318,6 +358,8 @@ Tests are derived from the journeys above and become actual paths in `.kiro/brea
 | `tests/contracts/test_catalog.py` | Installed routes match metadata; no dangling app/widget IDs; repeated generation identical; changes produce compatibility diff | 4.3, 4.5, 11.3, 11.4 |
 | `tests/providers/test_fmp.py`, `test_fred.py` | Values/metadata match fixtures; missing/auth/entitlement/throttle cases fail visibly; marked live tests compare equivalent datasets | 5.1, 5.2, 5.4, 5.6, 5.8, 11.2 |
 | `tests/e2e/dashboard.spec.ts` | Local login, discover both providers, add/arrange/resize/remove, save/restart/reopen parameters and layout, refresh and compare displayed data | 2.2, 4.1, 4.2, 4.6, 4.7, 5.7 |
+| Workspace Perspective unit/fixture browser tests; `tests/e2e/perspective.spec.ts` | Owned worker/WASM lifecycle, resize/themes, typed null/date/financial mappings, grouping/pivot/filter/chart changes, persisted config, stale-response/schema failure recovery, configured-view exports/context and truthful unsupported imports | 4.3, 4.5, 4.6, 4.7, 5.4, 5.6, 5.7, 10.1, 10.3, 12.1 |
+| Planned `tests/contracts/test_renderers.py` and `tests/delivery/test_renderer_assets.py` | Canonical renderer/catalog references and versions; production module/lock/image absence of removed AG Enterprise/Highcharts code and initialization keys, retained notices, exact candidate identity | 1.1, 1.2, 1.3, 1.4, 4.4, 9.6, 10.5, 10.6 |
 | `tests/agent/test_conversation.py`, `tests/e2e/agent.spec.ts` | Discovery, tool continuation, selected observation grounding, streaming, cancellation/auth/model failures, agent down with working dashboards | 12.1, 12.2, 12.5 |
 | `tests/contracts/test_excel.py` plus recorded Windows Office procedure | Signature and schema compatibility; trusted manifest, login, live function, refresh/reopen without changed signature | 6.1, 6.2, 6.3, 6.4, 6.5, 11.5 |
 | `tests/delivery/test_release.py`, `test_recovery.py` | Missing/stale evidence blocks promotion; same digest set pulled with no build; clean restore and failed rollback guard | 3.3, 8.2, 8.3, 8.4, 9.2, 9.3, 9.4, 9.5 |
@@ -333,7 +375,7 @@ The required baseline is personal use; no throughput SLA is invented. Bound prov
 
 Runtime `.env` is private and ignored; `.env.sample` keeps credential values empty. Data keys go only to data-api and the Anthropic key only to agent. Build contexts use explicit source allowlists plus recursive secret/state exclusions, independently of `.dockerignore`. CI secret objects are restricted to the checks or registry operation that need them. No PR from an untrusted fork receives publication or live-provider credentials.
 
-Preserve upstream component notices and track commercial/absent chart assets separately. TradingView stays disabled unless separately supplied and entitled. A checked-in upstream enterprise chart key is not entitlement evidence; resolve actual required component rights or replacement before release acceptance. Never copy its value into documentation or tests.
+Preserve upstream component notices and track commercial/absent chart assets separately. The selected baseline removes AG Enterprise and Highcharts dependencies and initialization keys; verify absence in the actual production image before publication. TradingView stays disabled unless separately supplied and entitled. A checked-in upstream enterprise chart key is not entitlement evidence. Never copy its value into documentation, tests or retained verification output.
 
 ## Migration Strategy
 
@@ -344,5 +386,6 @@ Rollback is a pair of an exact image set and a compatible state snapshot, not me
 ## Supporting References
 
 - [Requirements](requirements.md), [feasibility](feasibility.md), [research](research.md), and [complexity policy](../../steering/complexity.md).
+- [Selected Perspective baseline assessment](../../../docs/chart-replacement-assessment.md), [Perspective React API](https://perspective-dev.github.io/react/index.html), [viewer API](https://perspective-dev.github.io/viewer/classes/dist_wasm_perspective-viewer.d.ts.PerspectiveViewerElement.html), and [table update/replace semantics](https://perspective-dev.github.io/browser/classes/dist_wasm_perspective-js.d.ts.Table.html).
 - [Workspace agent contract](https://docs.openbb.co/workspace/developers/agents-integration) and [SDK continuation protocol](https://docs.openbb.co/workspace/developers/openbb-ai-sdk).
 - [Owned Workspace source](https://github.com/norandom/openbb-workspace/tree/be00e95019a55d57af146919ee46b7e1a4859226) and [owned API acquisition snapshot](https://github.com/norandom/openbb-data-api/tree/7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2).
