@@ -2,13 +2,13 @@
 
 QOpenBB aims to give financial engineers a self-hosted Full OpenBB Workspace: build dashboards from FMP and FRED data, keep layouts and state under local control, then use Anthropic AI and Excel against the same data API.
 
-The repository currently contains approved requirements and design, an approved implementation task plan, source pins, and feasibility research. Foundation tasks are accepted, including protected tooling, verification and Dagger source-image export. The Full frontend builds from frozen inputs; private bootstrap and session request isolation are verified. Installed FMP profile/income routes and failure handling pass fixture checks against core 2.0.1. Single-origin routing and the locked FMP/FRED runtime pass fixture verification. The first complete Workspace image is in progress; no deployable application release is accepted. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
+The repository currently contains approved requirements and design, an approved implementation task plan, source pins, and feasibility research. Foundation tasks are accepted, including protected tooling, verification and Dagger source-image export. The Full frontend builds from frozen inputs; private bootstrap and session request isolation are verified. Installed FMP profile/income routes and failure handling pass fixture checks against core 2.0.1. Single-origin routing and the locked FMP/FRED runtime pass fixture verification. The provisional Full image now builds, loads and passes independent health/login/private-state checks. Community/Perspective adaptation and data-image packaging are in progress; no deployable application release is accepted. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
 
 ## Current evidence
 
 Direct read-only provider checks returned HTTP 200 for FMP company profile and income statement data and FRED GDP. Anthropic model discovery also returned HTTP 200; inference remains untested. These checks establish limited upstream access, not working Workspace widgets, a compatible OpenBB provider, or a working agent. See the [feasibility report](.kiro/specs/openbb-self-service/feasibility.md) for scope and remaining gaps.
 
-The latest API target requires compatibility work: OpenBB 5 / core 2 excludes the released FMP provider, whose dependency constraint requires core below 2. The Full frontend packaging checkpoint is accepted; backend packaging and complete image verification remain pending. [Source pins](sources.lock.json) record acquisition snapshots, not validated releases.
+The latest API target requires compatibility work: OpenBB 5 / core 2 excludes the released FMP provider, whose dependency constraint requires core below 2. The maintained FMP profile/income adaptation and provisional Full image packaging are accepted on their recorded checks. Integrated dashboards, live-provider fidelity and release verification remain pending. [Source pins](sources.lock.json) record acquisition snapshots, not validated releases.
 
 ## Intended operating contract
 
