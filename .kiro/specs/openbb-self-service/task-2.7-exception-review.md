@@ -39,3 +39,5 @@ Targeted measurement script: PASS, exit 0. Exact-change comparison, function ide
 ## Committed scope binding
 
 The parent rebound the seven approved exceptions to Workspace revision `0341b12524cb822262be631fa820e2ca851a348a` after the task's independent review approved the frozen 55-path snapshot. The exact import-only diff, callable positions and emission checks were rerun against this commit; evidence is retained in `artifacts/task-2.7/exception-committed-recheck.json`. The original baseline above remains the comparison source.
+
+Task 2.8 leaves these three import-only files unchanged. The parent rechecked their exact baseline diff and metrics before rebinding the inventory to `48e3f59cc48e0ae7aa6f6ce92069fc5b10ee3e86`; see `artifacts/task-2.8/exception-committed-recheck.json` and `committed-complexity.json`.

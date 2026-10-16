@@ -4,11 +4,11 @@
   "workspace": {
     "repository": "https://github.com/norandom/openbb-workspace.git",
     "upstream": "https://github.com/OpenBB-finance/workspace.git",
-    "revision": "0341b12524cb822262be631fa820e2ca851a348a",
+    "revision": "48e3f59cc48e0ae7aa6f6ce92069fc5b10ee3e86",
     "branch_at_acquisition": "main",
     "build_variant": "full",
     "local_checkout": "vendor/workspace",
-    "adaptations": "Tasks 2.1-2.7: provisional Full packaging, routing, Community table boundary and commercial dependency removal accepted; Perspective and renderer-complete image pending"
+    "adaptations": "Tasks 2.1-2.8: Full packaging, Community rendering and standalone Perspective runtime accepted; financial widget binding and renderer-complete image pending"
   },
   "data_api": {
     "repository": "https://github.com/norandom/openbb-data-api.git",

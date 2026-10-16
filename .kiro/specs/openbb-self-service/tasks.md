@@ -177,7 +177,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 2.6_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 3.2, 4.4, 9.6, 10.6_
 
-- [ ] 2.8 Establish the owned Perspective browser runtime
+- [x] 2.8 Establish the owned Perspective browser runtime
   - Select an exact compatible current-namespace release/plugins eligible under Safe Chain's package-age policy; verify React/Vite and protected frozen installation through the controller-owned dependency join.
   - Package same-origin WASM/worker assets and an owned React host with bounded worker allocation, explicit viewer/table cleanup, resize and light/dark handling. Add no server, database, Perspective AI or dashboard shell.
   - Done when isolated fixture browser checks mount, resize, hide/show, change theme and repeatedly unmount/remount without leaked owned resources or console/network failures.
@@ -569,3 +569,5 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 - Task 2.6 review note: independent review caught pagination settings and saved Set/Multi filter compatibility regressions. Both were repaired with retained failing tests and fresh independent checks. Original implementation RED was captured only in the worker tool transcript; remediation RED logs are retained under artifacts/task-2.6. Whole-project typechecking remains blocked by the unchanged upstream configuration; lint, actual build and focused tests passed.
 
 Task 2.7 accepted after independent Astra review: 70 independently rerun task tests and 10 audit controls passed; the protected clean install, production build, 6,488-module graph and 258 JavaScript chunks contain no removed commercial modules or initialization. Workspace `0341b12524cb822262be631fa820e2ca851a348a`. Exact 55-path snapshot and review evidence: `artifacts/task-2.7/joined-freeze.json`, `review-verification.json`, `committed-complexity.json`. Seven no-growth type-import exceptions are documented in [the narrow review](task-2.7-exception-review.md). Full typechecking remains blocked by upstream configuration; real browser and final-image checks remain later gates.
+
+Task 2.8 accepted after independent Astra review and one repair round. Workspace `48e3f59cc48e0ae7aa6f6ce92069fc5b10ee3e86` adds the owned Perspective 5.6.0 runtime with same-origin worker/WASM assets. Independent 10 unit tests, strict selected TypeScript, Biome and four production browser cases passed; development cases also passed. A reproduced stale-theme rejection race was repaired and retained as a regression. Full-project TypeScript and integrated dashboard visual/financial acceptance remain outside this gate. Evidence: `artifacts/task-2.8/review-round2-verification.json`, `runtime-freeze.json`, `browser-evidence.json` and `committed-complexity.json`. Initial feature RED is retained; the earlier initialization-cleanup regression was GREEN-first, not retrospectively described as TDD.
