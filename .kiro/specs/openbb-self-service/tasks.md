@@ -2,6 +2,8 @@
 
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
+The separately approved chart-foundation design has [six proposed tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), pending task approval. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.
+
 ## Execution contract
 
 Renderer amendment, 2026-10-16: the owner selected "Use Perspective baseline". Tasks 2.6-2.12 add the selected viewer and remove commercial dependencies without renumbering prior tasks. Independent controller task-graph sanity review passed after splitting Community isolation from commercial removal; independent amendment review still precedes renderer feature work. No new renderer task is implemented or accepted by this plan.
@@ -573,3 +575,96 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 Task 2.7 accepted after independent Astra review: 70 independently rerun task tests and 10 audit controls passed; the protected clean install, production build, 6,488-module graph and 258 JavaScript chunks contain no removed commercial modules or initialization. Workspace `0341b12524cb822262be631fa820e2ca851a348a`. Exact 55-path snapshot and review evidence: `artifacts/task-2.7/joined-freeze.json`, `review-verification.json`, `committed-complexity.json`. Seven no-growth type-import exceptions are documented in [the narrow review](task-2.7-exception-review.md). Full typechecking remains blocked by upstream configuration; real browser and final-image checks remain later gates.
 
 Task 2.8 accepted after independent Astra review and one repair round. Workspace `48e3f59cc48e0ae7aa6f6ce92069fc5b10ee3e86` adds the owned Perspective 5.6.0 runtime with same-origin worker/WASM assets. Independent 10 unit tests, strict selected TypeScript, Biome and four production browser cases passed; development cases also passed. A reproduced stale-theme rejection race was repaired and retained as a regression. Full-project TypeScript and integrated dashboard visual/financial acceptance remain outside this gate. Evidence: `artifacts/task-2.8/review-round2-verification.json`, `runtime-freeze.json`, `browser-evidence.json` and `committed-complexity.json`. Initial feature RED is retained; the earlier initialization-cleanup regression was GREEN-first, not retrospectively described as TDD.
+
+## Approved design slice: chart state and lifecycle foundation
+
+The owner approved the [first production boundary](echarts-integration-proposal.md#first-production-boundary-for-separate-review) on 2026-10-16. Tasks 2.13-2.18 below are generated for that boundary only and await task approval. They neither reactivate superseded tasks 2.9-2.12 nor approve the rest of the renderer design. They support 4.8-4.9 without closing either requirement. Existing task groups retain their own coverage and approval states.
+
+This is an explicit dependency exception to the historical numeric renderer sequence: 2.13 starts from accepted 1.2, 1.4, 1.7 and 2.8, not from pending 2.9-2.12 or later release tasks. Thereafter the dependencies below govern this slice. All leaves target one bounded 1-3 hour engineering work unit; unexpected scope returns to the controller rather than expanding ownership silently.
+
+### Ownership and parallel execution
+
+Workspace paths below are relative to `terminalpro/`; root paths are relative to QOpenBB. New paths are planned, not completed assets. State and host workers are not alone: preserve other work and never revert the untracked financial lane or pending catalog/inventory changes.
+
+| Task/lane | Exclusive writable scope | Prerequisite / model |
+| --- | --- | --- |
+| 2.13 setup | Workspace package/lock, new `tests/unit/chart-compatibility/vitest.config.mjs`, focused `tsconfig.json`, `tests/e2e/chart-compatibility/` Vite/Playwright fixture setup; root complexity inventory and dependency documentation | Accepted 1.2, 1.4, 1.7, 2.8; controller serializes setup |
+| 2.14 contracts | `src/components/General/Table/Chart/compatibility/legacyTypes.ts`; host interface declarations in `Chart/echarts/lifecycle.ts`; contract fixtures/type checks under `tests/unit/chart-compatibility/` | 2.13; controller/Sol, then freeze shared contracts |
+| 2.15 state lane | `Chart/compatibility/integratedState.ts`, `detachedState.ts`; corresponding unit fixtures/tests | 2.14; Sol |
+| 2.16-2.17 host lane | `Chart/echarts/lifecycle.ts`, `EChartsHost.tsx`; host unit tests and `tests/e2e/chart-compatibility/` fixture/spec files | 2.14, then 2.16; Sol |
+| 2.18 join | Controller-owned test scripts/config registration if necessary; inventory, breadth, scoped evidence/docs and source identity records | 2.15 and 2.17; controller with independent Astra review |
+
+Full paths for the new `Chart/` modules resolve under `src/components/General/Table/`. Controller owns package/lock, shared configuration, scope inventory, commits and any root command join throughout. Foundation config ownership transfers to the host lane only after 2.14 freezes interfaces; no concurrent writes to shared files. At most controller + two workers + one reviewer; one heavy install/build/browser at a time. State unit work may overlap host work. Astra reviews state semantics and lifecycle evidence. Each code leaf requires implementation, independent review and fresh verification before its checkbox closes.
+
+Application call sites, `communityBoundary` guards, widget registry/catalog bindings, editor UI, chart-family translation, provider/backend code and release promotion are excluded. The foundation connects through maintained module and browser tests, not a partially enabled product path. Further application integration requires its own approved design/tasks. Anthropic-before-Excel and Dagger-build-only rules remain unchanged.
+
+### Foundation verification contract
+
+Reuse the existing narrow Perspective test patterns without changing their files. Adapted chart commands below are planned until implemented and exercised from the owned Workspace `terminalpro/` directory:
+
+```sh
+node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/vitest.config.mjs
+node node_modules/typescript/bin/tsc --project tests/unit/chart-compatibility/tsconfig.json --noEmit
+node node_modules/vite/bin/vite.js build --config tests/e2e/chart-compatibility/vite.config.ts
+node <QOPENBB_ROOT>/verification/node_modules/@playwright/test/cli.js test --config tests/e2e/chart-compatibility/playwright.config.ts
+```
+
+The Playwright config owns a loopback-only preview server for the freshly built fixture, rejects more than one worker, uses a fresh browser context and never reuses an operator server. Set the documented project-local browser cache explicitly. Vite fixture configuration uses `envDir: false`; tests do not load `.env`, real credentials or provider data. Capture CDP runtime/console/network diagnostics, screenshot/output identities, exits and cleanup. A build or module-presence check is not a rendered-data assertion.
+
+Use the existing [complexity gate](../../../docs/complexity.md) from QOpenBB with explicit current fork base/head or changed-file manifests for both forks. Do not reuse historical scope SHAs or an empty manifest to bypass this lane's changes. Setup must establish and freeze the exact executable scoped command before accepting 2.14 onward. Preserve unrelated unfinished work through isolated snapshots or accurately scoped manifests; do not claim a clean checkout when it is dirty.
+
+Whole-project TypeScript remains separately blocked by upstream TS6305 composite-output and TS5103 configuration issues. These tasks require strict checks of the complete new module/test/fixture dependency closure and cannot relabel that as whole-application typecheck success. Test helpers/fixtures and docs have explicit policy exclusions; maintained build/production logic cannot hide there.
+
+- [ ] 2.13 Prepare protected chart dependencies and isolated verification
+  - Pin ECharts 6.0.0 in the owned application with the existing validated Bun lock exception; verify Safe Chain interception, the 48-hour age policy and protected frozen restoration. Retain notices and dependency provenance; do not migrate the application lock or inject a global script.
+  - Register all planned maintained module paths and test exclusions in the existing complexity inventory, preserving unrelated pending entries. Establish focused Vitest/strict-TypeScript configuration and isolated production-build browser fixture tooling from exercised patterns, without importing broad app configuration or local secrets.
+  - Done when protected restore and a real-library fixture smoke render pass, exact commands/tool/source identities are retained, and the scoped complexity command is ready for worker handoffs. This setup proves tooling, not the new host or renderer parity.
+  - Complexity: all modified maintained production/build/configuration files pass 400 physical lines/file, 300 logical units/file and 50/function where applicable; package locks, tests and fixture exclusions are recorded rather than measured as production.
+  - _Boundary: Controller-owned dependency, verification and inventory setup_
+  - _Depends: 1.2, 1.4, 1.7, 2.8_
+  - _Requirements: 1.1, 1.2, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5_
+
+- [ ] 2.14 Freeze path-specific state inputs and the renderer host contract
+  - Define distinct integrated/detached input types, retained JSON values and explicit validation results without `any`. Integrated inputs include resolved state key, current model, resolved option baseline, event options defaulting to an empty object, chart type, resolved total series and pivot. Detached inputs include original storage, event type/options and resolved total series.
+  - Freeze the typed complete-option/revision host interface and lifecycle ownership. Callers remain responsible for original state-key/range/count preparation and revision/address checks; reducers neither infer API-derived counts nor silently redirect stale edits.
+  - Build source-referenced contract fixtures covering different resolved/persisted options and retained unknown fields. Done when focused strict checking and contract validation pass and both implementation lanes receive immutable interfaces, fixture inputs and commands; do not infer saved paths from the editor's empty write capture.
+  - Complexity: new maintained types/validation files pass 400/300/50; source fixture/test data exclusions are explicit. No application-hook extraction or wiring is part of this task.
+  - _Boundary: Shared compatibility contracts_
+  - _Depends: 2.13_
+  - _Requirements: 4.8, 4.9, 10.1, 10.3_
+
+- [ ] 2.15 (P) Preserve integrated and detached chart-state updates
+  - Implement pure, separate reducers from the frozen inputs. Integrated changes clone the resolved options baseline, retain original deep-merge/array behavior, remove only top-level option theme, overlay the current model and update original root metadata. Detached changes preserve the prior model except chart type and replace root options without integrated theme stripping.
+  - Verify input immutability, untouched partition equality, nested unknown values, resolved-versus-persisted baseline differences, array merging, absent event options and both paths' type/count/pivot semantics against source-derived expectations.
+  - Done when meaningful failing regression cases pass, focused strict/unit checks and independent state review pass, and no new storage format, model range resolver or UI restriction is introduced.
+  - Complexity: each maintained reducer/dependency passes 400 physical lines/file, 300 logical units/file and 50/function with current scope evidence; tests/fixtures are explicitly excluded.
+  - _Boundary: State reducer lane_
+  - _Depends: 2.14_
+  - _Requirements: 4.8, 4.9, 10.1, 10.3_
+
+- [ ] 2.16 (P) Implement bounded ECharts instance ownership
+  - Implement public-API mount/update/resize/image-export/dispose operations from the frozen complete-option contract. Keep the instance private, defer initialization for an unsized container, and prevent callbacks from mutating a disposed or replaced instance.
+  - Test update ordering, cleanup on failure, repeated disposal, replacement/remount, hidden-to-sized recovery and image-export error handling. Do not claim mocked lifecycle tests establish real rendering.
+  - Done when lifecycle units and focused strict checking pass with independent review; no provider data, application persistence, chart-family translation or new product controls enter this module.
+  - Complexity: all maintained lifecycle code passes 400/300/50 with current scope evidence; no compressed spike code is promoted unchanged.
+  - _Boundary: Renderer lifecycle lane_
+  - _Depends: 2.14_
+  - _Requirements: 4.8, 4.9, 10.1, 10.3_
+
+- [ ] 2.17 Bind the typed host and prove its real browser lifecycle
+  - Connect React mounting, option/revision updates and resize observation to the accepted lifecycle module. Keep library types within the renderer boundary and export image data without defining original menu/filename semantics.
+  - Extend the maintained isolated fixture to exercise populated charts with known options, option/data updates, size changes, zero-size recovery, unmount/remount, failure cleanup and PNG contents. Assert numeric options and visible output, not just constructor calls or canvas existence.
+  - Done when the freshly built production fixture passes one-worker Playwright/CDP checks, the actual host is the tested import, resources are cleaned up and an independent reviewer reproduces the bounded result. Keep zoom/selection continuity, original styling and application save/reopen explicitly unverified.
+  - Complexity: host and any modified maintained build code pass 400/300/50; test fixture exclusions are recorded. This task can overlap the state lane after 2.16, but owns the sole heavy browser queue while running.
+  - _Boundary: Renderer host and browser verification lane_
+  - _Depends: 2.16_
+  - _Requirements: 4.8, 4.9, 10.1, 10.3, 10.4_
+
+- [ ] 2.18 Join and accept only the chart foundation evidence
+  - Run the complete focused strict/unit/build/browser gates against joined source and dependency identities, plus relevant existing isolated-runtime regressions affected by dependency/test configuration changes. Register portable invocation paths without moving verification into Dagger.
+  - Audit imports and diffs to confirm no application wiring, guard/flag edits, catalog changes or unrelated financial-lane work entered the slice. Selectively commit only reviewed scope. Update breadth with actual test IDs and sanitized evidence; retain overall renderer parity as unverified.
+  - Done when independent fresh verification, dependency checks, exact identities and final shared-module scope audit pass; document remaining editor/state-mapping/theme/table/persistence obligations without promoting a release image.
+  - Complexity: all joined maintained paths pass the existing 400/300/50 gate with accurate manifests; documentation/evidence-only edits are exempt and needed code fixes return to their owning leaf.
+  - _Boundary: Controller integration of foundation tests, inventory and evidence_
+  - _Depends: 2.15, 2.17_
+  - _Requirements: 1.1, 1.4, 4.8, 4.9, 9.6, 10.1, 10.3, 10.4, 10.5, 10.6_

@@ -2,6 +2,8 @@
 
 ## Overview
 
+Bounded foundation approval, 2026-10-16: the owner approved only the [state-reducer and ECharts lifecycle foundation](echarts-integration-proposal.md#first-production-boundary-for-separate-review). That section is the authoritative design for its scoped tasks and overrides conflicting earlier renderer clauses within that boundary. Application call-site/guard changes, editor UI, chart mappings and full renderer/release acceptance remain excluded. The rest of the renderer amendment remains in discovery.
+
 Owner parity amendment, 2026-10-16: requirements 4.8-4.9 supersede the reduced-capability renderer design below. Perspective remains the selected candidate library, but exposing its native UX or hiding unsupported OpenBB actions is not an accepted integration design. Preserve the original interface, feature flags and working outcomes through compatibility adapters. Renderer implementation is paused for source capability inventory and design/task reconciliation; prior task evidence remains historical. See [Workspace experience](../../steering/workspace-experience.md). No parity implementation or feasibility acceptance is implied by this amendment.
 
 QOpenBB gives financial engineers an owned Full Workspace with FMP and FRED dashboards, then Anthropic assistance and Excel functions using the same self-hosted data API. This design turns the feasibility findings into one versioned integration and release contract. It does not claim that the proposed images, adapters, tests or deployment already exist.

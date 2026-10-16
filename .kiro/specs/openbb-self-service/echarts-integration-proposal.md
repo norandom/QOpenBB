@@ -114,7 +114,7 @@ The requirements are clear; these are engineering evidence gaps. They do not req
 
 ## First production boundary for separate review
 
-The state reducers and renderer lifecycle can be implemented before the remaining editor fields are mapped. This is a bounded foundation within the larger amendment, not permission to expose a partial replacement or narrow requirements 4.8-4.9. Request human review of this boundary before generating its implementation tasks. Full renderer integration and release gates remain closed.
+The owner approved this bounded foundation design on 2026-10-16. The state reducers and renderer lifecycle can be implemented before the remaining editor fields are mapped, after task review and approval. This is a bounded foundation within the larger amendment, not permission to expose a partial replacement or narrow requirements 4.8-4.9. Full renderer integration and release gates remain closed.
 
 **Own:** two path-specific legacy state reducers and an ECharts host, with maintained tests and inventory entries. **Exclude:** application call-site changes, guard removal, widget registry/catalog changes, new editor UI, chart-family translation, provider/backend changes, global theme migration and release-image promotion. Test fixtures may supply known options to the host; they do not become a production allowlist.
 
@@ -135,4 +135,4 @@ After shared types are fixed, Sol state-reducer and lifecycle lanes may proceed 
 
 This foundation supports original-state preservation under 4.8 and supplies executable evidence toward 4.9. It does not fulfill either criterion alone. Its review does not approve the unresolved editor, full chart mappings, table capabilities or the superseded renderer clauses in the main design.
 
-Independent Astra review passed this bounded foundation design for human review after correcting the integrated merge-baseline and resolved-series inputs. Source callbacks were checked at the pinned original revision. Review evidence is in `artifacts/parity/chart-editor-capture-review/review.md`. Human design approval and task generation remain pending; this is not whole-renderer design acceptance.
+Independent Astra review passed this bounded foundation design after correcting the integrated merge-baseline and resolved-series inputs, followed by owner approval. Source callbacks were checked at the pinned original revision. Review evidence is in `artifacts/parity/chart-editor-capture-review/review.md`. Task approval remains separate; this is not whole-renderer design acceptance.
