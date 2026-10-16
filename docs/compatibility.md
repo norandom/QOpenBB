@@ -6,11 +6,11 @@ QOpenBB has acquired owned sources and selected the latest upstream API release 
 
 | Input | Exact identity | Evidence status |
 | --- | --- | --- |
-| Owned Workspace, Full | `e5e4170f1a09bdf14339eb760b7ce09e31e5484f` | Task 2.1 frontend packaging accepted; retained notices originate from acquisition `be00e95`; backend/runtime pending |
+| Owned Workspace, Full | `633b0feca5e4506bf5bd2034043b43b6f5377f7b` | Tasks 2.1-2.3 frontend packaging, private bootstrap and request isolation accepted; image/runtime join pending |
 | Original data API acquisition | `7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2` | Historical develop snapshot; acquisition provenance and notices remain retained |
-| Current data API adaptation | `2392fc8dcdedeeec15602bf59e83fb473fa94b21` | FMP installed discovery accepted on the selected OpenBB 5 base; financial routes and runtime remain unvalidated |
+| Current data API adaptation | `9892b7f1789a6530ece386cabac441c710d52848` | Tasks 3.1-3.4 FMP discovery, profile/income and failure fixtures accepted; FRED runtime and live integration pending |
 | Latest upstream API release candidate | `openbb-v5.0.0`, commit `5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0` | Official release published 2026-09-30; identical annotated tag available in owned fork; candidate objects acquired |
-| FMP source release | `openbb-fmp` 1.6.1 | Published archive and imported hashes verified; registration restored; financial adaptation pending |
+| FMP source release | `openbb-fmp` 1.6.1 | Published archive and imported hashes verified; registration and selected financial-route fixtures accepted; runtime integration pending |
 
 [API release evidence](../sources/api-release.json) records the tag object and release metadata. GitHub's generic `releases/latest` returns the desktop `ODP` release, so the selection compared published API releases separately. The [official v5 release](https://github.com/openbq-org/OpenBB/releases/tag/openbb-v5.0.0) is the latest API release found. Its source pyprojects declare core/API 2.0.1 even though release prose describes the general 2.0.0 package line. The package inventory records source metadata separately from PyPI observations and the mutable develop branch.
 
@@ -20,7 +20,7 @@ The source lock records the selected adaptation commits; original acquisition id
 
 | Finding from exact source inputs | Required change or check | Current status |
 | --- | --- | --- |
-| FMP 1.6.1 requires core `>=1.6.10,<2.0.0`; candidate contains core 2.0.1 and no FMP provider | Restore FMP with provenance in owned fork, adapt registration/profile/income fetchers, test values and financial metadata, then lock runtime | Task 3.1 installed discovery accepted; route and financial compatibility pending |
+| FMP 1.6.1 requires core `>=1.6.10,<2.0.0`; candidate contains core 2.0.1 and no FMP provider | Restore FMP with provenance in owned fork, adapt registration/profile/income fetchers, test values and financial metadata, then lock runtime | Tasks 3.1-3.4 deterministic installed-route fixtures accepted; live provider and Workspace comparison pending |
 | Full frontend uses the retained Bun lock and owned monorepo | Protected frozen install and fresh Full frontend build | Task 2.1 accepted; see [build evidence](workspace-build.md). Backend and image acceptance remain pending |
 | Backend Dockerfile runs a lock rewrite | Preserve existing dependency lock; prove clean frozen build | Not implemented |
 | Commercial chart dependencies and absent optional TradingView assets | Resolve essential rights/replacements and declare disabled optional renderer | Release constraints open; see [licenses](licenses.md) |
