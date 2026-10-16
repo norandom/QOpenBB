@@ -260,7 +260,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 3.3_
   - _Requirements: 5.2, 5.3, 9.6_
 
-- [ ] 3.5 Initialize the data runtime with FRED and shared routers
+- [x] 3.5 Initialize the data runtime with FRED and shared routers
   - Install the selected owned equity/economy/FRED packages and maintained FMP extension into the locked runtime; initialize provider settings from runtime-only credentials.
   - Implement no-quota health/readiness and the design's owner-managed origin trust choice without mistaking a Workspace session for data API auth.
   - Done when profile/income/GDP routes exist, FRED values/dates/frequency/units and failure fixtures pass, and no custom database or persistent data volume is needed.

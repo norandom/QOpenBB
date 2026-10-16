@@ -1,0 +1,1 @@
+"""QOpenBB data service."""

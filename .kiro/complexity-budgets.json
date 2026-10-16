@@ -27,6 +27,8 @@
           "pipeline/qopenbb_ci/configuration.py", "pipeline/qopenbb_ci/source_filter.py",
           "contracts/runtime.json", "contracts/sources.json", "contracts/datasets.json", "contracts/routes.json",
           "verification/.npmrc", "verification/package.json", "verification/provider/pyproject.toml",
+          "services/data-api/pyproject.toml", "services/data-api/qopenbb_data/__init__.py",
+          "services/data-api/qopenbb_data/config.py", "services/data-api/qopenbb_data/app.py",
           "verification/playwright.config.ts", "verification/fixture_server.ts",
           "verification/diagnostics.ts", "verification/capture.ts", "verification/evidence.ts",
           "verification/runner.ts", "verification/runner.py",
@@ -74,7 +76,7 @@
     {
       "id": "data_api",
       "repository": "https://github.com/norandom/openbb-data-api.git",
-      "revision": "9892b7f1789a6530ece386cabac441c710d52848",
+      "revision": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
       "source_lock_key": "data_api",
       "root": "vendor/data-api",
       "mode": "changed",
@@ -86,7 +88,10 @@
         "openbb_platform/providers/fmp/openbb_fmp/models/income_statement.py",
         "openbb_platform/providers/fmp/openbb_fmp/utils/definitions.py",
         "openbb_platform/providers/fmp/openbb_fmp/utils/helpers.py",
-        "openbb_platform/providers/fmp/openbb_fmp/utils/errors.py"
+        "openbb_platform/providers/fmp/openbb_fmp/utils/errors.py",
+        "openbb_platform/providers/fred/openbb_fred/models/series.py",
+        "openbb_platform/providers/fred/openbb_fred/utils/rate_limiter.py",
+        "openbb_platform/providers/fred/openbb_fred/utils/response.py"
       ]}],
       "exclusions": [
         {"patterns": ["openbb_platform/providers/fmp/LICENSE", "openbb_platform/providers/fmp/provenance.json"], "reason": "Retained upstream notice and imported-artifact provenance data", "source": "openbb_platform/providers/fmp/provenance.json"},
