@@ -10,6 +10,8 @@ The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approve
 
 ## Dependency gates
 
+Next review: [original option-state design](../.kiro/specs/openbb-self-service/chart-option-state-design.md). Independent design review passed; owner approval is pending before bounded task generation. Shared types precede parallel baseline-transition and editor-mapping work. Effective theme resolution and application integration remain subsequent gates.
+
 | Stage | Work to resolve | Gate before proceeding |
 | --- | --- | --- |
 | 1. Review requirements and feasibility | Confirm scope, source pins, Full choice, provider/build gaps, and observable journeys | Human requirements approval; unresolved assumptions remain explicit |

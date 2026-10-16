@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-16T18:54:31.2654326Z",
+  "updated_at": "2026-10-16T19:14:23.1087813Z",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -78,6 +78,18 @@
       "implementation_accepted": true,
       "validation": "GO for tasks 2.19-2.23 only; whole renderer remains unverified",
       "evidence_path": "chart-snapshot-verification.md"
+    },
+    "option_state_slice": {
+      "name": "original-chart-option-state",
+      "phase": "design-generated",
+      "design_path": "chart-option-state-design.md",
+      "independent_design_review": "passed-for-human-review",
+      "review_evidence": "artifacts/option-state-design/review.md",
+      "design_generated": true,
+      "design_approved": false,
+      "tasks_generated": false,
+      "tasks_approved": false,
+      "implementation_ready": false
     }
   }
 }

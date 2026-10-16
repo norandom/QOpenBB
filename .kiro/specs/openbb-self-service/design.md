@@ -2,6 +2,8 @@
 
 ## Overview
 
+Next proposed slice: the [original option-state design](chart-option-state-design.md) passed independent Astra review and awaits owner design approval. It specifies baseline initialization/partition transitions and captured column-editor patches with existing reducers. Effective styling, editor UI and application activation remain outside this bounded slice.
+
 Next slice, 2026-10-16: the [snapshot and Cartesian mapping design](chart-snapshot-design.md) passed independent Astra review after one repair pass and received owner design approval. It is isolated development scope, with no application activation or reduction of final parity requirements. [Discovery findings](chart-next-discovery.md) separately record the grid and SQLite contracts.
 
 Bounded foundation approval, 2026-10-16: the owner approved only the [state-reducer and ECharts lifecycle foundation](echarts-integration-proposal.md#first-production-boundary-for-separate-review). That section is the authoritative design for its scoped tasks and overrides conflicting earlier renderer clauses within that boundary. Application call-site/guard changes, editor UI, chart mappings and full renderer/release acceptance remain excluded. The rest of the renderer amendment remains in discovery.
