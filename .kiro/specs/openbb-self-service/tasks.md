@@ -760,7 +760,7 @@ Task 2.23 accepted after independent Astra joined review and scoped GO for tasks
 
 Owner approved the option-state design and autonomous implementation on 2026-10-16. This scope supplements the existing task graph; other requirement coverage remains with existing tasks. Independent task review precedes execution. No renderer activation, theme projection or release acceptance is included.
 
-- [ ] 2.24 Freeze option-state contracts and captured editor fixtures
+- [x] 2.24 Freeze option-state contracts and captured editor fixtures
   - Implement the design's shared baseline, initialization/synchronization and column-event types, using existing mutable nested compatibility types and readonly outer fields. Preserve exact kind/value fields and null/undefined distinctions.
   - Freeze minimal independent synthetic expectations from seven original outgoing payloads with source/digest provenance; include supplied model/range and unrelated options needed for reducer composition. No private state is copied.
   - Verify existing unit/strict discovery, register the type module in controller-owned inventory and pass strict checks, existing units and independent contract review before releasing parallel lanes. Any compile-only test belongs to this task's explicitly owned optionStateContracts.types.ts.
@@ -799,3 +799,5 @@ Owner approved the option-state design and autonomous implementation on 2026-10-
 ### Lane ownership and execution prerequisites
 
 Frontend paths are under vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility or tests/unit/chart-compatibility as specified in the design. Existing WSL pinned Node and restored dependencies are prerequisites already accepted by earlier tasks; no install or lock change is needed. Controller may copy the required source/tests to a fresh isolated stage with the restored node_modules link for reliable Linux checks. One heavy check at a time, one Vitest worker; lightweight independent lane checks must use separate outputs. Shared contracts/fixtures freeze at 2.24. Sol implementers own 2.25 and 2.26 separately, followed by fresh independent reviewers. Astra reviews shared contracts and the final join. A lane cannot change shared interfaces or its peer's files; escalate to controller. Controller owns registration and selective fork/root commits at each acceptance. Task approval follows the owner's explicit autonomous implementation request, without waiving any review gate.
+
+Task 2.24 accepted after independent Astra review: shared contracts and captured projections verified, 124 units, strict TypeScript, scoped lint and registered complexity checks passed. Evidence: artifacts/task-2.24/review/review.md. Contracts and fixtures are frozen for tasks 2.25 and 2.26.
