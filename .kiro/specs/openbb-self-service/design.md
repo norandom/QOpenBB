@@ -235,6 +235,8 @@ Use locked `openbb-ai` request/event models. On an initial selected-widget reque
 
 `ANTHROPIC_MODEL` is an explicit runtime setting. The authenticated model-discovery candidate is `claude-sonnet-5-5`; accept that exact configured ID through a real inference test before recording it as the default. No silent fallback to another model/provider. The agent holds only its own API key, keeps the conversation stateless, and does not log prompts, selected datasets or response bodies by default. Cancelling a browser stream cancels the upstream request. Do not retry after partial output as if the new stream were the same answer.
 
+Anthropic powers the Workspace chat pane; Excel calls the application backend and data API directly. The ordering gate below implements the owner's earlier workflow preference, not a technical dependency between Excel and the agent.
+
 Live acceptance must demonstrate that the answer refers to a known selected observation and its period/unit, not just plausible financial prose. An agent outage leaves dashboard construction and refresh operational. `contracts/excel-functions.json`, Excel source changes, generation and build tasks remain blocked until the reviewed agent acceptance record matches the current agent, Workspace and API contracts.
 
 ### Excel adaptation
@@ -266,7 +268,7 @@ Use a standard registry CLI with ephemeral credential configuration or an existi
 
 ### Runtime and verification
 
-The runtime Compose file has image references only, no build instructions. Production preflight requires immutable digests for selected services and a real Excel image when enabling its profile; inactive Excel must not require one. Generate secret-free image settings from a validated release manifest, then use Compose pull and `up -d --no-build`. Local development builds through Dagger, then portable image commands load/use explicitly identified candidate images; it does not create a second service topology.
+The runtime Compose file has image references only, no build instructions. Production preflight requires immutable digests for selected services and a real Excel image when enabling its profile; inactive Excel must not require one. Generate secret-free image settings from a validated release manifest, then use Compose pull and `up -d --no-build`. Local development builds through Dagger, then portable image commands load/use explicitly identified candidate images; it does not create a second service topology. For an incomplete development checkpoint, explicitly start only the implemented services from this same definition. Preflight validates that selected set; inactive parser-only references are never pulled, started or published. The complete baseline requires real Workspace, data and agent images, plus Excel when selected.
 
 Real Compose acceptance runs directly through the pinned host Docker/Compose CLI on WSL or a disposable Linux CI runner. The verification runner receives authority to that daemon; application/browser containers never receive the Docker socket. Dagger is not involved in test orchestration. No Compose translation, nested dockerd or privileged container is needed.
 

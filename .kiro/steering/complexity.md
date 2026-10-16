@@ -30,4 +30,4 @@ Use the reference project's `project-syntax-units-v1` convention: Python AST sta
 4. Add checks to the same portable verification gate used locally and in CI, independently of Dagger image builds. Supply an explicit pinned base/head or changed-file manifest for fork changes; do not assume Git metadata is present inside build containers. Missing scope input must fail rather than silently skip checks.
 5. Require per-task size evidence and a final cross-task audit of shared modules. Update breadth mapping and inventory when adding files or responsibilities. Keep the Anthropic-before-Excel dependency and reviewed fan-out lanes intact.
 
-Current state: policy and task-template requirements only. No complexity checker, budget inventory, or implementation task list exists yet. Do not claim enforcement until those checks are implemented and verified.
+Current state: policy, task-template requirements and an implementation task plan exist. Foundation tasks 1.3 and 1.4 establish the inventory and executable checker before feature acceptance. No checker or budget inventory is implemented yet; do not claim enforcement until verified.
