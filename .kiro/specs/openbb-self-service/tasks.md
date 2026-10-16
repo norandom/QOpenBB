@@ -777,7 +777,7 @@ Owner approved the option-state design and autonomous implementation on 2026-10-
   - _Depends: 2.24_
   - _Requirements: 4.8, 4.9_
 
-- [ ] 2.26 (P) Map column editor events and verify original reducer composition
+- [x] 2.26 (P) Map column editor events and verify original reducer composition
   - Implement typed title-text/title-enabled, legend-position and stroke-width patches for grouped/stacked columns. Preserve separate text/enabled meaning and exact bar paths; reject invalid input and unsupported families without partial patches.
   - Test all contract value domains, captured title/bottom/width-four cases, independent outputs and malformed events. Record source corroboration for contract value domains without claiming each was browser-captured.
   - Compose with unchanged integrated reducer using complete supplied baseline and patch; compose with detached reducer using a cloned complete event-options object merged with the patch. Verify unrelated options, root-only theme stripping, null/undefined/array behavior, supplied destination range, state-key collisions and bar retention through grouped/stacked/line storage changes.
@@ -803,3 +803,5 @@ Frontend paths are under vendor/workspace/terminalpro/src/components/General/Tab
 Task 2.24 accepted after independent Astra review: shared contracts and captured projections verified, 124 units, strict TypeScript, scoped lint and registered complexity checks passed. Evidence: artifacts/task-2.24/review/review.md. Contracts and fixtures are frozen for tasks 2.25 and 2.26.
 
 Task 2.25 accepted after independent Astra review: 39 focused tests, strict TypeScript, repository lint and eight adversarial cases passed. Caps: 200 physical, 96 logical, largest function 14. Evidence: artifacts/task-2.25/review/review.md. Actual reducer integration remains task 2.27.
+
+Task 2.26 accepted after independent Sol review: 53 focused editor/composition tests, strict TypeScript, actual repository lint and registered caps passed. Evidence: artifacts/task-2.26/review/review.md. Joined baseline integration and broader renderer parity remain separate gates.
