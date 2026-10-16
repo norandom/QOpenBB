@@ -168,7 +168,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 1.4, 2.5_
   - _Requirements: 1.3, 1.4, 4.4, 4.6, 5.4, 10.5, 10.6_
 
-- [ ] 2.7 Remove commercial renderer and dependency paths
+- [x] 2.7 Remove commercial renderer and dependency paths
   - Remove AG Enterprise/Highcharts imports, keys, registrations, wrappers, theme-preview paths and package/lock entries, including lazy and type-only paths. Retain inventoried supported standalone Community charts and complementary Plotly widgets.
   - Controller serializes frozen-lock/notices changes. Do not suppress license warnings or rely on tree-shaking as removal evidence.
   - Done when source/dependency/module-graph checks and a clean frontend build contain no removed commercial modules or initialization keys, with unsupported renderer tests passing; image absence is rechecked in 2.12.
@@ -566,3 +566,5 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
 - Task 2.4 process note: original RED was an artificial unconditional failure, so test-first compliance is not established. Independent review accepted current behavior after three explicitly retrospective baseline failures and fresh nginx/lint/size checks; artifacts/task-2.4/evidence.json preserves the chronology.
 - Task 2.5 packaging note: pinned Dagger requires serial SDK initialization and checksum-preserving HTTP ADD translation. Exact source exceptions retain the frontend build helper and Data component. Independent review reproduced 68 tests and fresh image runtime acceptance; artifacts/task-2.5 holds the identities and evidence. The image remains provisional until renderer replacement.
 - Task 2.6 review note: independent review caught pagination settings and saved Set/Multi filter compatibility regressions. Both were repaired with retained failing tests and fresh independent checks. Original implementation RED was captured only in the worker tool transcript; remediation RED logs are retained under artifacts/task-2.6. Whole-project typechecking remains blocked by the unchanged upstream configuration; lint, actual build and focused tests passed.
+
+Task 2.7 accepted after independent Astra review: 70 independently rerun task tests and 10 audit controls passed; the protected clean install, production build, 6,488-module graph and 258 JavaScript chunks contain no removed commercial modules or initialization. Workspace `0341b12524cb822262be631fa820e2ca851a348a`. Exact 55-path snapshot and review evidence: `artifacts/task-2.7/joined-freeze.json`, `review-verification.json`, `committed-complexity.json`. Seven no-growth type-import exceptions are documented in [the narrow review](task-2.7-exception-review.md). Full typechecking remains blocked by upstream configuration; real browser and final-image checks remain later gates.
