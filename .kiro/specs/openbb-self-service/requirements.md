@@ -8,10 +8,13 @@ The owner explicitly deferred a custom data integration backed by their own Post
 
 The first acceptance journey is dashboard construction using ready-made widgets backed by FMP through the owner's self-hosted open-source OpenBB data API. Both the Workspace application backend and the data API run in this setup; only FMP is the external financial-data provider. Dashboard usability takes priority over optional notebooks and later custom integrations.
 
+The owner selected the latest OpenBB data API as the target, with regenerated Workspace widget definitions and Excel functions and provider adaptations where needed. Pin the latest validated release at implementation time rather than tracking a mutable version. Local credentials belong in a gitignored `.env`; `.env.sample` is the public, empty-value template. FRED, EconDB, and AI access are optional extensions, not prerequisites for the first FMP dashboard.
+
 ## Boundary Context
 
 - **In scope:** upstream acquisition and provenance, a single controlling Docker Compose configuration, local development, Dagger builds in GitHub Actions, registry publication and image-pull installation, private-server deployment, baseline persistence, FMP connectivity, Excel baseline verification with small compatibility changes, and optional Jupyter.
 - **Out of scope:** custom database connectors, a PostgreSQL data warehouse, changing Workspace's database to PostgreSQL, a new data model, custom financial-model workbooks, replacement frontends, public SaaS, and rebuilding commercial OpenBB services.
+- **Compatibility work in scope:** adapt the FMP provider to the latest selected data API as necessary and regenerate consumer schemas. This is separate from the deferred custom PostgreSQL integration. EconDB integration and AI runtime implementation remain optional follow-up scope.
 - **Adjacent expectations:** FMP supplies external data under the owner's account; Excel runs on the user's machine. Access to Excel, FMP credentials, server access, DNS, and certificate trust are deployment inputs rather than services supplied by this project.
 - **Baseline rule:** retain upstream packaging and behavior where usable. Small Excel compatibility changes are explicitly allowed for self-hosted authentication, URLs, manifest configuration, and API contracts. Preserve existing function signatures; document changes and verify workbook refresh/reopen. Do not silently replace unavailable functionality.
 - **Deferred extension:** a later spec can introduce a custom PostgreSQL-backed data service through the supported data-connector interface. It must not be a prerequisite for this baseline.
@@ -118,8 +121,20 @@ The first acceptance journey is dashboard construction using ready-made widgets 
 5. When a feature is introduced or changed, the breadth map shall link its capability ID to the owning spec criteria, planned or implemented checks, and evidence status.
 6. If a required check is missing, skipped, or failing, the verification report shall mark the affected capability unverified rather than complete.
 
+### Requirement 11: Latest API and regenerated consumers
+**Objective:** As the owner, I want the latest data API with regenerated consumers so that compatibility does not depend on freezing the environment on an obsolete API generation.
+
+#### Acceptance Criteria
+1. When the baseline version is selected, the environment shall record the latest validated OpenBB data API release and pin the complete compatible dependency set.
+2. If the selected API no longer supports the released FMP provider package, the baseline shall supply a tested provider adaptation that preserves the required FMP dashboard journey.
+3. When the selected API schema changes, the build workflow shall regenerate Workspace widget definitions and Excel functions from that schema and the selected widget inventory.
+4. When regenerated functions differ from the prior function contract, the compatibility report shall identify changed paths, arguments, response shapes, and workbook impacts before release.
+5. When regenerated artifacts are released, the verification workflow shall exercise a real FMP-backed dashboard and an Excel function against the same self-hosted API version.
+6. When the owner configures local keys, the environment shall load them from an untracked `.env` while retaining an empty-value `.env.sample` in source control.
+7. While building or publishing images, the workflow shall exclude the local `.env` from source contexts and image layers.
+
 ## Review status
 
 Requirements reviewed inline against the local EARS and requirements-review-gate rules: numeric identifiers, observable acceptance criteria, core journeys, error cases, and inclusion/exclusion boundaries checked. Docker Compose, Windows/WSL, Linux, Excel, FMP, and Jupyter are user-requested constraints. Internal service decomposition remains a proposal in research.md.
 
-Core product/tech/structure steering files do not yet exist. testing.md and ci.md adapt the reference project's conventions at the user's explicit request. Human requirements approval is pending. Design, tasks, and runtime implementation are not approved. Later user amendments added Requirements 9 and 10 and explicitly allowed narrow Excel compatibility changes.
+Core product/tech/structure steering files do not yet exist. testing.md and ci.md adapt the reference project's conventions at the user's explicit request. Human requirements approval is pending. Design, tasks, and runtime implementation are not approved. User amendments added Requirements 9–11, dashboard editing criteria, and explicit permission for Excel/provider compatibility work.

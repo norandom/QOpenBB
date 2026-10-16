@@ -91,3 +91,11 @@ planned_checks = []
 test_paths = []
 status = "deferred"
 evidence = ["User explicitly deferred custom PostgreSQL integration until after the upstream baseline"]
+
+[[capabilities]]
+id = "latest-api-regeneration-and-secrets"
+requirements = ["11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7"]
+planned_checks = ["latest-api-fmp-provider-adaptation", "schema-to-widget-and-excel-generation", "workbook-contract-diff", "regenerated-consumer-live-journeys", "env-ignore-and-build-context-exclusion"]
+test_paths = []
+status = "planned"
+evidence = []

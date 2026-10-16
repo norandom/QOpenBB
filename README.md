@@ -19,6 +19,10 @@ Small, documented Excel compatibility changes are permitted. Dagger will own loc
 
 First acceptance journey: build, save, reopen, and refresh dashboards using ready-made FMP-backed widgets from the self-hosted open-source OpenBB data API. Both backends are self-hosted; FMP supplies the external data.
 
+Target the latest validated data API release, regenerate widgets/Excel functions, and adapt the FMP provider as needed. Current v5 removed the old FMP/EconDB packages, so regeneration alone is insufficient.
+
+Real keys live in a gitignored `.env`; `.env.sample` is the public empty-value template. Copy it only when `.env` does not already exist, then populate keys locally. FMP is required first; FRED/EconDB and AI credentials are optional and their presence does not install those integrations. Never include `.env` in Dagger source uploads, Docker contexts, images, or logs.
+
 Validate the proposal's Compose syntax only:
 
 ```powershell
