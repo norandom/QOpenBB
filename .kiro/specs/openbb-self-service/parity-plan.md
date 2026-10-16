@@ -10,7 +10,11 @@ Independent Astra review approved this bounded discovery plan; see the [review r
 
 Generalization: copy, chart creation, export and Copilot must consume the same selection and data revision. Derive that contract once from original callers rather than reconstructing it separately in every action.
 
-Build versus adopt: retain original controls, widget IDs, queries, chart storage and theme settings. Evaluate Perspective Views for analytics, existing Community renderers for demonstrated behavior and existing ExcelJS for workbook output. No additional renderer is selected. Custom code bridges evidenced gaps; do not speculate about emulating a complete vendor API.
+Build versus adopt: retain original controls, widget IDs, queries, chart storage and theme settings. The owner selected Apache ECharts as the replacement chart engine. Evaluate Perspective Views for analytics, existing Community renderers for demonstrated behavior and existing ExcelJS for workbook output. Retain useful existing Plotly widgets. ECharts should shoulder chart rendering and interaction; compatibility code translates existing OpenBB settings, events and saved state. Do not build a new chart editor or speculate about emulating a complete vendor API.
+
+The next chart probe uses ECharts for the original table-to-chart journey: create a chart, edit its settings, refresh data, save/reopen and export. Compare controls, outcomes and light/dark appearance with the original fixture. Then extend the mapping to the full capability matrix, including combination charts, navigator behavior and the open Highcharts option contract. Selection of ECharts does not prove those contracts are covered. Record unsupported behavior explicitly without hiding controls or changing feature flags. Package version and integration boundary remain to be verified before production dependency changes.
+
+The first isolated translation probe and source boundary assessment are recorded in [ECharts findings](echarts-findings.md). Its localStorage roundtrip and programmatic edit do not complete the integrated journey above.
 
 Simplification: avoid a generic renderer framework or new dashboard/editor. Keep adapters at existing table/chart/action boundaries. Do not integrate the restrictive financial guard or native Perspective explorer before resolving their conflicts with original behavior.
 

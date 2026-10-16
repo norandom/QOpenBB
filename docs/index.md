@@ -28,6 +28,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Review the renderer compatibility investigation and parallel work | [Discovery plan](../.kiro/specs/openbb-self-service/parity-plan.md) and [research](../.kiro/specs/openbb-self-service/parity-research.md) |
 | Check what the renderer probes actually established | [Discovery results](../.kiro/specs/openbb-self-service/parity-findings.md) |
 | Compare original and candidate widget controls | [Paired widget findings](../.kiro/specs/openbb-self-service/parity-widget-findings.md) |
+| Inspect the selected ECharts integration boundary and remaining gaps | [ECharts findings](../.kiro/specs/openbb-self-service/echarts-findings.md) |
 | Contribute code, comments, evidence, or documentation | [Contribution guide](contributing.md) |
 
 ## Understand the proposed system

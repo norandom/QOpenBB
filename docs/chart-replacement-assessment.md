@@ -1,5 +1,7 @@
 # Selected open-source dashboard baseline
 
+Latest owner decision: Apache ECharts is the selected replacement chart engine, behind the existing OpenBB controls and saved-state contract. Perspective remains a candidate analytical engine and existing Plotly widgets remain in scope. The earlier native-explorer recommendation below is historical. Follow the [current discovery plan](../.kiro/specs/openbb-self-service/parity-plan.md); library selection does not establish functional or visual parity.
+
 Current constraint, 2026-10-16: the owner requires a library substitution preserving OpenBB's UX, design, themes, features, controls and feature flags. The reduced-capability recommendation below is historical and no longer an acceptable delivery baseline. Perspective remains a candidate implementation dependency; equivalent behavior must be demonstrated before acceptance. In particular, unavailable legacy states and hidden Enterprise actions do not satisfy parity. See [requirements 4.8-4.9](../.kiro/specs/openbb-self-service/requirements.md) and [Workspace experience](../.kiro/steering/workspace-experience.md).
 
 The owner selected **"Use Perspective baseline" on 2026-10-16**. Keep the Full Workspace dashboard shell and use Perspective as the primary analytical viewer for supported FMP/FRED datasets. Retain Community-compatible residual tables and complementary Plotly widgets; remove all AG Enterprise and Highcharts dependencies and initialization paths.

@@ -2,6 +2,8 @@
 
 Prove the Full Workspace dashboard first, accept Anthropic next, then implement Excel. Each stage below has an evidence gate. This is a dependency overview, not a generated task list or approval to implement.
 
+Current renderer gate: ECharts is selected for charts behind the original OpenBB controls. The prior native Perspective explorer direction is superseded by functional and visual parity requirements. Resolve the [ECharts compatibility findings](../.kiro/specs/openbb-self-service/echarts-findings.md) before resuming financial widget integration; historical acceptance below does not establish renderer parity.
+
 The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approved requirements and [technical design](../.kiro/specs/openbb-self-service/design.md). The owner-approved [implementation plan](../.kiro/specs/openbb-self-service/tasks.md), including the Perspective amendment, has passed independent dependency review. All foundation tasks are accepted, including evidence/runtime contracts, isolated verification and the Dagger export workflow. Full frontend packaging, private account bootstrap and request isolation are accepted. Installed FMP profile/income fixtures and sanitized failure categories are accepted. Single-origin routing and the locked FMP/FRED runtime are accepted on fixture evidence. The provisional Full image has passed independent build/load/runtime verification. The identified data image has also passed independent offline runtime and identity checks. The Community table boundary and supported widget-catalog generation are accepted. Commercial dependency removal is accepted; the standalone Perspective runtime is accepted and financial widget binding is next; dashboard, live-provider and release acceptance remain pending. Read the [feasibility report](../.kiro/specs/openbb-self-service/feasibility.md) before interpreting a source finding or provider probe as integration evidence.
 
 ## Dependency gates
@@ -23,7 +25,7 @@ Build and CI foundation work may overlap application work after shared contracts
 - The selected OpenBB 5 / core 2 API excludes released FMP support. FMP 1.6.1 requires core below 2; a maintained, tested adaptation is required. Static import compatibility does not prove endpoint or financial-data correctness.
 - The provisional Full image builds from frozen inputs and passes health/login/private-state checks. The renderer-complete image and integrated dashboard checks remain pending.
 - Legacy source-fetch scripts refer to inaccessible split repositories. Assemble the required build context from the owned Workspace monorepo and recorded revisions.
-- Implement the selected Perspective explorer, retain useful Plotly widgets and Community-only residual tables, and remove commercial renderer dependencies. Verify saved configuration, financial aggregations, refresh and selected-view AI data; see the [replacement decision](chart-replacement-assessment.md).
+- Prove ECharts compatibility with original OpenBB chart controls, state, themes and actions. Evaluate Perspective for analytics, retain existing Plotly widgets and restore removed table capabilities. Verify saved configuration, financial aggregations, refresh and selected-view AI data; see the [replacement decision](chart-replacement-assessment.md).
 - Widget discovery, HTTP path rewriting, agent streaming, and Excel authentication need integration evidence. Selecting Full or declaring Compose services does not implement them.
 
 ## Completion evidence

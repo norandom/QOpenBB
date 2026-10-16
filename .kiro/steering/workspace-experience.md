@@ -2,6 +2,8 @@
 
 Owner direction, 2026-10-16: replace the rendering library while preserving OpenBB's UX, flow, design and themes. This is an internal library substitution, with no intended visible redesign or new visual effects.
 
+Owner selected Apache ECharts as the replacement chart engine. Use its public APIs behind the existing OpenBB controls. Perspective remains the candidate analytical engine; this choice does not authorize replacing the table UI or adding another chart editor. Existing Plotly widgets remain in scope. Library selection is approved, while compatibility design, implementation tasks and parity acceptance remain separate gates.
+
 Keep the existing dashboard shell, navigation, widget framing, titles, parameter controls, menus, spacing and light/dark conventions. Put replacement renderers inside the established widget boundary. Reuse existing data, state and action contracts rather than introducing a parallel dashboard interface.
 
 Functional parity is required. Do not remove, hide or disable existing features, buttons, menus or actions to accommodate the replacement library. Preserve feature flags, their defaults and their effect; do not introduce hidden capability reductions. Keeping a visible button with a no-op, degraded result or unavailable message does not establish parity.
