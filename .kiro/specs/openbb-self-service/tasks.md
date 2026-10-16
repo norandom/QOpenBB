@@ -755,3 +755,47 @@ Task 2.21 accepted at Workspace 59118937434b9f5a9bebd4e80bcb54f7ca2d552e after i
 Task 2.22 accepted at Workspace 06fdb859bf426eb44dce13c54b21c494fcc244fd after independent Astra verification: 124 tests, strict TypeScript, build, scoped lint and three browser cases passed; CDP diagnostics are empty. Fresh PNGs show negative stacking, repeated categories and line gaps. Evidence: artifacts/task-2.22/review/review.md. Fixture animation is disabled to make image verification deterministic; original application parity remains unverified.
 
 Task 2.23 accepted after independent Astra joined review and scoped GO for tasks 2.19-2.23 only. Fresh verification passed 124 tests, strict TypeScript, fixture build, all nine production module caps, twenty source/dependency identity checks, metadata and documentation links. Matching-source independent task 2.22 browser evidence supplies three passing cases with empty CDP diagnostics. See [snapshot verification](chart-snapshot-verification.md) and artifacts/task-2.23/review/verdict.md. Full renderer and release acceptance remain open.
+
+## Original option-state slice (tasks 2.24-2.27)
+
+Owner approved the option-state design and autonomous implementation on 2026-10-16. This scope supplements the existing task graph; other requirement coverage remains with existing tasks. Independent task review precedes execution. No renderer activation, theme projection or release acceptance is included.
+
+- [ ] 2.24 Freeze option-state contracts and captured editor fixtures
+  - Implement the design's shared baseline, initialization/synchronization and column-event types, using existing mutable nested compatibility types and readonly outer fields. Preserve exact kind/value fields and null/undefined distinctions.
+  - Freeze minimal independent synthetic expectations from seven original outgoing payloads with source/digest provenance; include supplied model/range and unrelated options needed for reducer composition. No private state is copied.
+  - Verify existing unit/strict discovery, register the type module in controller-owned inventory and pass strict checks, existing units and independent contract review before releasing parallel lanes. Any compile-only test belongs to this task's explicitly owned optionStateContracts.types.ts.
+  - Done when contracts and fixtures compile, captured values match original evidence and independent review approves the frozen boundary. Production caps 400/300/50 apply to the type module; fixtures/tests are excluded.
+  - _Boundary: Shared optionStateTypes.ts, editorPayload.fixtures.ts and optionStateContracts.types.ts; controller inventory_
+  - _Depends: 2.23_
+  - _Requirements: 4.8, 4.9, 10.5_
+
+- [ ] 2.25 (P) Preserve original baseline selection and partition transitions
+  - Implement initialization and synchronization with explicit prior state, validated fallback inputs, independent nested copies and captured address. Preserve empty-partition retention, nonempty partition clearing, original initial type ownership and no synchronization root fallback.
+  - Test the design's complete fallback/transition matrix, null/undefined restrictions, malformed unused fallbacks, unknown fields, arrays and special property names, accessors, cycles, throwing inspection and mutation isolation. Errors do not throw or change prior state.
+  - Done when focused tests, strict checks, scoped lint and independent review pass without store, React, GridApi or renderer imports. Whole maintained module passes 400/300/50 with registered scope before acceptance.
+  - _Boundary: optionState.ts and optionState.test.ts only_
+  - _Depends: 2.24_
+  - _Requirements: 4.8, 4.9_
+
+- [ ] 2.26 (P) Map column editor events and verify original reducer composition
+  - Implement typed title-text/title-enabled, legend-position and stroke-width patches for grouped/stacked columns. Preserve separate text/enabled meaning and exact bar paths; reject invalid input and unsupported families without partial patches.
+  - Test all contract value domains, captured title/bottom/width-four cases, independent outputs and malformed events. Record source corroboration for contract value domains without claiming each was browser-captured.
+  - Compose with unchanged integrated reducer using complete supplied baseline and patch; compose with detached reducer using a cloned complete event-options object merged with the patch. Verify unrelated options, root-only theme stripping, null/undefined/array behavior, supplied destination range, state-key collisions and bar retention through grouped/stacked/line storage changes.
+  - This lane uses frozen fixtures rather than importing the pending baseline implementation; joined baseline-to-editor composition belongs to 2.27.
+  - Done when focused tests, strict checks, scoped lint and independent review pass. Whole maintained module passes 400/300/50 before acceptance; no production UI/guard/reducer changes.
+  - _Boundary: editorEvents.ts and editorEvents.test.ts only_
+  - _Depends: 2.24_
+  - _Requirements: 4.8, 4.9_
+
+- [ ] 2.27 Verify and accept the joined option-state boundary
+  - Add explicit integration cases to editorEvents.test.ts after both lanes freeze: actual baseline selection -> actual event mapper -> accepted reducers. Verify successive edits, partition transition, supplied family change and detached replacement with independent expected values.
+  - Run fresh complete chart units, strict TypeScript, scoped lint, full registered chart-module complexity audit and exact source/dependency identity checks. No new browser acceptance claim: renderer code is unchanged, original runtime parity remains unverified.
+  - Update actual test paths/evidence, inventory, source pin and scoped verification report; selectively commit accepted changes while preserving unrelated work. Done when independent final review verifies the joined contract and honest remaining gaps, with reproducible commands and exit codes.
+  - Production caps 400/300/50 apply to all three new modules and the shared registered audit; docs/tests excluded. Controller serializes shared inventory, builds/check queue and commits. No release promotion.
+  - _Boundary: Explicit integration tests after lane freeze; controller inventory, breadth, source and evidence records_
+  - _Depends: 2.25, 2.26_
+  - _Requirements: 1.1, 4.8, 4.9, 10.4, 10.5, 10.6_
+
+### Lane ownership and execution prerequisites
+
+Frontend paths are under vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility or tests/unit/chart-compatibility as specified in the design. Existing WSL pinned Node and restored dependencies are prerequisites already accepted by earlier tasks; no install or lock change is needed. Controller may copy the required source/tests to a fresh isolated stage with the restored node_modules link for reliable Linux checks. One heavy check at a time, one Vitest worker; lightweight independent lane checks must use separate outputs. Shared contracts/fixtures freeze at 2.24. Sol implementers own 2.25 and 2.26 separately, followed by fresh independent reviewers. Astra reviews shared contracts and the final join. A lane cannot change shared interfaces or its peer's files; escalate to controller. Controller owns registration and selective fork/root commits at each acceptance. Task approval follows the owner's explicit autonomous implementation request, without waiving any review gate.

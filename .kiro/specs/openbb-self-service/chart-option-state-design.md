@@ -2,9 +2,9 @@
 
 ## Overview
 
-Proposed bounded amendment following accepted tasks 2.19-2.23. This slice preserves the original option baseline across initialization and partition changes, and translates the observed column-chart editor controls into original option patches. It prepares original-control integration without changing the Workspace interface or activating incomplete charts.
+Owner-approved bounded amendment following accepted tasks 2.19-2.23. This slice preserves the original option baseline across initialization and partition changes, and translates the observed column-chart editor controls into original option patches. It prepares original-control integration without changing the Workspace interface or activating incomplete charts.
 
-Baseline: Workspace `06fdb859bf426eb44dce13c54b21c494fcc244fd`. Original reference: `38dffc33389aca0e4a87e0e88d42f7067aa220df`. This supplements the parent design; all other requirement coverage remains there. Design and task approval are pending.
+Baseline: Workspace `06fdb859bf426eb44dce13c54b21c494fcc244fd`. Original reference: `38dffc33389aca0e4a87e0e88d42f7067aa220df`. This supplements the parent design; all other requirement coverage remains there. The owner approved design and autonomous implementation. Tasks 2.24-2.27 passed independent task-graph review before execution.
 
 ## Boundary Commitments
 
