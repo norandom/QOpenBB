@@ -1,5 +1,6 @@
 import copy
 import json
+import os
 from pathlib import Path
 
 import pytest
@@ -13,8 +14,18 @@ def env():
             'FRED_API_KEY': 'fixture-fred'}
 
 def contracts():
-    return {name: json.loads((ROOT / 'contracts' / f'{name}.json').read_text())
-            for name in ('runtime', 'datasets', 'routes')}
+    result = {name: json.loads((ROOT / 'contracts' / f'{name}.json').read_text())
+              for name in ('runtime', 'datasets', 'routes')}
+    if result['routes']['status'] == 'installed':
+        result['openapi'] = json.loads((ROOT / 'contracts/openapi.json').read_text())
+    return result
+
+
+def installed_contracts():
+    source = ROOT / os.environ.get('QOPENBB_CATALOG_CONTRACTS', 'contracts')
+    return {**{name: json.loads((source / f'{name}.json').read_text())
+               for name in ('datasets', 'routes', 'openapi')},
+            'runtime': json.loads((ROOT / 'contracts/runtime.json').read_text())}
 
 def test_dashboard_selected_without_optional_settings():
     result = validate_configuration(env(), selected={'workspace', 'data-api'})
@@ -80,12 +91,48 @@ def test_production_digest_and_fixed_auth():
     with pytest.raises(ValueError):
         validate_configuration(values | {'OPENBB_API_AUTH': 'true'}, selected={'workspace', 'data-api'})
 
-def test_contracts_provisional_unique_and_fixed_topology():
+def test_contracts_unique_and_fixed_topology():
     data = contracts()
     validate_contracts(**data)
-    assert data['routes']['status'] == 'provisional'
     assert len({r['path'] for r in data['routes']['routes']}) == 3
     assert all('operation_id' not in r for r in data['routes']['routes'])
+
+
+def test_installed_contracts_match_explicit_served_schema():
+    data = installed_contracts()
+    validate_contracts(**data)
+    assert data['routes']['status'] == data['datasets']['status'] == 'installed'
+    assert all(route['operationId'] for route in data['routes']['routes'])
+
+
+@pytest.mark.parametrize('mutation', ['missing-schema', 'operation', 'response', 'parameter', 'component',
+                                     'ref', 'unknown', 'status', 'dataset', 'topology', 'schema-drift'])
+def test_installed_stale_or_tampered_contract_rejected(mutation):
+    data = installed_contracts()
+    route = data['routes']['routes'][0]
+    if mutation == 'missing-schema': data.pop('openapi')
+    if mutation == 'operation': route['operationId'] = 'invented'
+    if mutation == 'response': route['responses']['200']['description'] = 'tampered'
+    if mutation == 'parameter': route['parameters'][0]['schema'] = {'const': 'unknown'}
+    if mutation == 'component': data['routes']['components']['schemas'] = {}
+    if mutation == 'ref': route['responses']['200'] = {'$ref': '#/components/schemas/Absent'}
+    if mutation == 'unknown': data['routes']['unexpected'] = True
+    if mutation == 'status': data['datasets']['status'] = 'provisional'
+    if mutation == 'dataset': data['datasets']['datasets'][0]['parameters']['symbol'] = 'MSFT'
+    if mutation == 'topology': data['runtime']['services']['workspace']['publish'] = ['0.0.0.0:9999:3000']
+    if mutation == 'schema-drift':
+        data['openapi']['paths'][route['path']]['get']['operationId'] = 'new-served-operation'
+    with pytest.raises(ValueError):
+        validate_contracts(**data)
+
+
+def test_explicit_provisional_fixture_remains_supported():
+    data = installed_contracts()
+    data.pop('openapi')
+    data['datasets']['status'] = 'provisional'
+    data['routes'] = {'schema_version': 1, 'status': 'provisional', 'routes': [
+        {'dataset': item['id'], 'method': 'GET', 'path': item['path']} for item in data['datasets']['datasets']]}
+    validate_contracts(**data)
 
 @pytest.mark.parametrize('mutation', ['port', 'bind', 'credential', 'dependency', 'route', 'operation', 'dataset'])
 def test_tampered_contract_rejected(mutation):

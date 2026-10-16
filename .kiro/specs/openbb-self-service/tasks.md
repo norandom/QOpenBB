@@ -278,7 +278,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 2.5, 3.5_
   - _Requirements: 1.1, 1.5, 3.2, 9.1, 11.1_
 
-- [ ] 3.7 Freeze installed routes and regenerate the supported catalog
+- [x] 3.7 Freeze installed routes and regenerate the supported catalog
   - Join the schema served by the loaded image from 3.6 to the provisional dataset inventory; pin operation IDs, parameters and responses only after provider registration succeeds.
   - Implement portable canonical schema/widget/app generation using upstream generators, a mixed-source starter dashboard and the bundled FRED app where compatible.
   - Done when repeated generation has identical hashes, all references resolve, supported mappings are explicit and contract changes stop affected lanes for revalidation.

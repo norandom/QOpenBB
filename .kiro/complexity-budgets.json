@@ -23,11 +23,13 @@
           "pipeline/qopenbb_ci/sources.py", "pipeline/qopenbb_ci/staging.py",
           "pipeline/qopenbb_ci/images.py", "pipeline/qopenbb_ci/image_cli.py",
           "pipeline/qopenbb_ci/provenance.py",
+          "pipeline/qopenbb_ci/catalog.py", "pipeline/qopenbb_ci/catalog_runtime.py",
+          "pipeline/qopenbb_ci/catalog_upstream.py", "pipeline/qopenbb_ci/catalog_cli.py",
           "pipeline/pyproject.toml", "pipeline/qopenbb_ci/__init__.py", "pipeline/qopenbb_ci/cli.py",
           "pipeline/qopenbb_ci/contracts.py", "pipeline/qopenbb_ci/source_contract.py",
           "pipeline/qopenbb_ci/checks.py", "pipeline/qopenbb_ci/schemas.py",
           "pipeline/qopenbb_ci/configuration.py", "pipeline/qopenbb_ci/source_filter.py",
-          "contracts/runtime.json", "contracts/sources.json", "contracts/datasets.json", "contracts/routes.json",
+          "contracts/runtime.json", "contracts/sources.json", "contracts/datasets.json",
           "verification/.npmrc", "verification/package.json", "verification/provider/pyproject.toml",
           "services/data-api/pyproject.toml", "services/data-api/qopenbb_data/__init__.py",
           "services/data-api/qopenbb_data/config.py", "services/data-api/qopenbb_data/app.py",
@@ -41,6 +43,7 @@
         ]
       }],
       "exclusions": [
+        {"patterns": ["contracts/routes.json", "contracts/openapi.json", "contracts/widgets.json", "contracts/apps.json", "contracts/catalog-report.json", "contracts/compatibility.json", "contracts/provenance.json", "contracts/hashes.json"], "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped", "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"},
         {"patterns": ["schemas/*.schema.json"], "reason": "Deterministic public schemas generated from capped maintained Python boundary models", "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"},
         {"patterns": [".git/**", "**/__pycache__/**", "**/.pytest_cache/**", "**/.ruff_cache/**", "**/.venv/**", "**/node_modules/**"], "reason": "Repository metadata and installed or cached dependencies", "source": "Git, CPython, pytest, Ruff, uv and pnpm"},
         {"patterns": ["vendor/**", ".upstream/**"], "reason": "Acquisition roots are inventoried separately as owned forks; this exclusion does not apply inside fork scope", "source": "sources.lock.json"},

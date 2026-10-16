@@ -6,6 +6,7 @@ import re
 from urllib.parse import urlsplit
 
 from .contracts import Image
+from .catalog import freeze_routes
 
 
 SERVICE_INPUTS = {
@@ -45,15 +46,28 @@ def runtime_contract() -> dict:
             'routes': routes}
 
 
-def validate_contracts(*, runtime: dict, datasets: dict, routes: dict) -> None:
-    """Provisional paths carry no installed operation ID or response-schema claim."""
-    expected_routes = [{'dataset': d['id'], 'method': 'GET', 'path': d['path']} for d in DATASETS]
+def validate_contracts(*, runtime: dict, datasets: dict, routes: dict,
+                       openapi: dict | None = None) -> None:
+    """Installed contracts require the caller's explicit served-schema identity."""
     if not exact_contract(runtime, runtime_contract()):
         raise ValueError('runtime contract differs from approved topology')
-    if not exact_contract(datasets, {'schema_version': 1, 'status': 'provisional', 'datasets': DATASETS}):
-        raise ValueError('dataset contract differs from provisional inventory')
-    if not exact_contract(routes, {'schema_version': 1, 'status': 'provisional', 'routes': expected_routes}):
-        raise ValueError('route contract differs from provisional inventory')
+    status = datasets.get('status')
+    if status not in {'provisional', 'installed'} or routes.get('status') != status:
+        raise ValueError('dataset and route contract status mismatch')
+    if not exact_contract(datasets, {'schema_version': 1, 'status': status, 'datasets': DATASETS}):
+        raise ValueError('dataset contract differs from approved inventory')
+    if status == 'installed':
+        if openapi is None:
+            raise ValueError('installed routes require an explicit served OpenAPI schema')
+        try:
+            expected = freeze_routes(openapi, datasets)
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError('invalid installed route schema') from exc
+    else:
+        expected = {'schema_version': 1, 'status': 'provisional', 'routes': [
+            {'dataset': d['id'], 'method': 'GET', 'path': d['path']} for d in DATASETS]}
+    if not exact_contract(routes, expected):
+        raise ValueError('route contract differs from explicit schema or provisional inventory')
 
 
 def public_origin(value: str) -> tuple[str, str]:

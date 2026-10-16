@@ -1,2 +1,5 @@
 # Preserve the exact upstream bytes used by the notice integrity inventory.
 sources/notices/** -text
+# Canonical catalog bytes and generator hashes must survive Windows checkouts.
+contracts/*.json text eol=lf
+pipeline/qopenbb_ci/catalog*.py text eol=lf

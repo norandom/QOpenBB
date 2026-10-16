@@ -104,9 +104,9 @@ evidence = ["User explicitly deferred custom PostgreSQL integration until after 
 id = "latest-api-regeneration-and-secrets"
 requirements = ["11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7"]
 planned_checks = ["latest-api-fmp-provider-adaptation", "schema-to-widget-and-excel-generation", "workbook-contract-diff", "regenerated-consumer-live-journeys", "env-ignore-and-build-context-exclusion"]
-test_paths = []
+test_paths = ["tests/contracts/test_catalog.py", "tests/contracts/test_catalog_runtime.py", "tests/contracts/test_configuration.py"]
 status = "planned"
-evidence = []
+evidence = ["Task 3.7 accepted after independent Astra review: 79 tests, actual identified-image generation and default drift exit 2 passed; nine generated files reproduced byte-for-byte. Parent joined contracts and verified 61 configuration checks; 13 snapshot/generator files preserve exact bytes under Windows Git checkout filters. Evidence artifacts/task-3.7/generation-verification.json, review-complexity.json and git-checkout-bytes.json. Three supported widgets and adapted FRED/mixed apps are generated; renderer binding 2.9, final served catalog 3.8, live journeys and Excel remain pending."]
 
 [[capabilities]]
 id = "anthropic-before-excel"
