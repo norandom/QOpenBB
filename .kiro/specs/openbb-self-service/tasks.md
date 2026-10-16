@@ -701,7 +701,7 @@ At most controller + two workers + one reviewer. Each leaf follows implement -> 
 
 Reuse the accepted Node/dependency environment and existing Vitest, strict TypeScript, Vite and Playwright entry points recorded in [foundation verification](chart-foundation-verification.md). From the frontend root use `node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/vitest.config.mjs`, `node node_modules/typescript/bin/tsc --project tests/unit/chart-compatibility/tsconfig.json --noEmit`, and `node node_modules/vite/bin/vite.js build --config tests/e2e/chart-compatibility/vite.config.ts`. Use the root verification Playwright CLI with the existing chart config, one worker, isolated evidence paths and pinned browser cache. Controller verifies paths/tool identities before dispatch. Use the existing combined checker command from [complexity checks](../../../docs/complexity.md) with truthful fork scope, never an empty manifest masking new files. No dependency additions or package/lock changes are authorized.
 
-- [ ] 2.19 Freeze snapshot and render contracts
+- [x] 2.19 Freeze snapshot and render contracts
   - Define deeply readonly snapshot inputs/results, source modes, category ownership, ordered identities, numeric/null/missing cells, JSON provenance, unit/scale metadata and resolved style/translation results from the approved design. Include field-path diagnostics, finite-number rules and explicit unsupported outcomes.
   - Add compile-time contract checks and shared synthetic fixtures with one category descriptor, distinct IDs despite duplicate labels, homogeneous financial units and malformed-input cases. Specify known valid fixtures independently of the future validator. Do not add runtime defaults or decode legacy editor options.
   - Confirm existing strict/unit discovery includes the new paths and register the two newly created type modules in controller-owned scope inventory. Controller adds each runtime module when its owning leaf creates it, before that leaf's acceptance; do not register missing files. Done when strict checks, existing foundation units and independent contract review pass and exact signatures/fixtures are frozen for both lanes.
@@ -745,3 +745,5 @@ Reuse the accepted Node/dependency environment and existing Vitest, strict TypeS
   - _Boundary: Controller integration of scope, breadth and acceptance evidence_
   - _Depends: 2.22_
   - _Requirements: 1.1, 1.4, 4.8, 4.9, 9.6, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6_
+
+Task 2.19 accepted at Workspace 8c12a9127cd913e5f6ebb8a9dfe3fd82ba56138f after independent Astra review. Fresh strict TypeScript, 46 foundation tests, repository-configured lint and the seven-module cap audit passed. Contracts are frozen for tasks 2.20 and 2.21. Evidence: artifacts/task-2.19/review/review.md. Runtime snapshot/mapping behavior remains pending.
