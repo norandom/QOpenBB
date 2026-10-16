@@ -633,7 +633,7 @@ Whole-project TypeScript remains separately blocked by upstream TS6305 composite
   - _Depends: 2.13_
   - _Requirements: 4.8, 4.9, 10.1, 10.3_
 
-- [ ] 2.15 (P) Preserve integrated and detached chart-state updates
+- [x] 2.15 (P) Preserve integrated and detached chart-state updates
   - Implement pure, separate reducers from the frozen inputs. Integrated changes clone the resolved options baseline, retain original deep-merge/array behavior, remove only top-level option theme, overlay the current model and update original root metadata. Detached changes preserve the prior model except chart type and replace root options without integrated theme stripping.
   - Verify input immutability, untouched partition equality, nested unknown values, resolved-versus-persisted baseline differences, array merging, absent event options and both paths' type/count/pivot semantics against source-derived expectations.
   - Done when meaningful failing regression cases pass, focused strict/unit checks and independent state review pass, and no new storage format, model range resolver or UI restriction is introduced.
@@ -672,3 +672,5 @@ Whole-project TypeScript remains separately blocked by upstream TS6305 composite
 Task 2.13 accepted after independent Astra review and fresh unit, strict TypeScript, production fixture build/browser and scoped complexity checks. Workspace `e56852deff2679c71e32436554f86ba096b55677` pins ECharts 6.0.0 through protected Bun restoration. Evidence: `artifacts/task-2.13/review/review.md` and `complexity.json`. Existing oversized-file exception targets are byte-identical to the prior source; only their source identity advances. No application wiring or renderer parity is accepted.
 
 Task 2.14 accepted at Workspace `bfba80d7f7875fffa60d6d37645a422a3097ea63` after independent Astra source comparison, 11 unit tests, strict TypeScript, scoped lint and fresh complexity verification. Runtime option values remain separate from serialized unknown JSON, with repeated-edit input/output closure and no new storage envelope. Frozen contracts now permit the state and lifecycle lanes to start. Evidence: `artifacts/task-2.14/review/`.
+
+Task 2.15 accepted at Workspace `5d6674e5629fbceda11047bcefcfac237ccd4e62`. Independent source comparison and 26 tests (16 reducer cases plus 10 contract cases), strict TypeScript, lint and complexity checks passed. Integrated and detached reducers preserve the original distinct writes, including unknown fields and runtime undefined values. Evidence: `artifacts/task-2.15/review/review.md`. These modules are not wired into application controls.
