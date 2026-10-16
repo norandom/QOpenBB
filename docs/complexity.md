@@ -4,6 +4,8 @@ Run the combined quality gate before accepting maintained production changes. It
 
 ## Run the portable gate
 
+The pinned command below is historical foundation evidence. For current adaptation work, supply explicit changed-file manifests for both forks as described below, or current clean base/head revisions. Do not reuse the historical heads against changed checkouts.
+
 Restore the pinned [development toolchain](development.md) first. From the repository root in WSL or Linux, put Node 24.22.0 on PATH and use the locked Python environment:
 
 ```sh

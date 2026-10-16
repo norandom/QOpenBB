@@ -6,7 +6,7 @@ QOpenBB has acquired owned sources and selected the latest upstream API release 
 
 | Input | Exact identity | Evidence status |
 | --- | --- | --- |
-| Owned Workspace, Full | `be00e95019a55d57af146919ee46b7e1a4859226` | Acquired unchanged at `vendor/workspace`; root source and component notices retained |
+| Owned Workspace, Full | `e5e4170f1a09bdf14339eb760b7ce09e31e5484f` | Task 2.1 frontend packaging accepted; retained notices originate from acquisition `be00e95`; backend/runtime pending |
 | Original data API acquisition | `7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2` | Historical develop snapshot; acquisition provenance and notices remain retained |
 | Current data API adaptation base | `5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0` | Selected OpenBB 5 release checkout at `vendor/data-api`; provider compatibility and runtime remain unvalidated |
 | Latest upstream API release candidate | `openbb-v5.0.0`, commit `5a7517ae8bc74ecdcd1a549ed26df8ad131b02d0` | Official release published 2026-09-30; identical annotated tag available in owned fork; candidate objects acquired |
@@ -14,14 +14,14 @@ QOpenBB has acquired owned sources and selected the latest upstream API release 
 
 [API release evidence](../sources/api-release.json) records the tag object and release metadata. GitHub's generic `releases/latest` returns the desktop `ODP` release, so the selection compared published API releases separately. The [official v5 release](https://github.com/openbq-org/OpenBB/releases/tag/openbb-v5.0.0) is the latest API release found. Its source pyprojects declare core/API 2.0.1 even though release prose describes the general 2.0.0 package line. The package inventory records source metadata separately from PyPI observations and the mutable develop branch.
 
-The original acquisition pin stays in place until validation selects its replacement. A future build must explicitly select one source revision plus recorded adaptation commits. It must not silently combine packages from the acquired develop snapshot and the release candidate. A branch name and a candidate label are not executable release pins.
+The source lock records the selected adaptation commits; original acquisition identities remain in the provenance records. A future build must explicitly select one source revision plus recorded adaptation commits. It must not silently combine packages from the acquired develop snapshot and the release candidate. A branch name and a candidate label are not executable release pins.
 
 ## Adaptation and validation gates
 
 | Finding from exact source inputs | Required change or check | Current status |
 | --- | --- | --- |
 | FMP 1.6.1 requires core `>=1.6.10,<2.0.0`; candidate contains core 2.0.1 and no FMP provider | Restore FMP with provenance in owned fork, adapt registration/profile/income fetchers, test values and financial metadata, then lock runtime | Incompatible unchanged; not implemented |
-| Full Dockerfile copies absent frontend npm lock, although Bun lock exists | Pin Bun and use frozen lock; construct build context from owned monorepo | Build not attempted |
+| Full frontend uses the retained Bun lock and owned monorepo | Protected frozen install and fresh Full frontend build | Task 2.1 accepted; see [build evidence](workspace-build.md). Backend and image acceptance remain pending |
 | Backend Dockerfile runs a lock rewrite | Preserve existing dependency lock; prove clean frozen build | Not implemented |
 | Commercial chart dependencies and absent optional TradingView assets | Resolve essential rights/replacements and declare disabled optional renderer | Release constraints open; see [licenses](licenses.md) |
 | Full flags include historical hosted capabilities | Verify API-discovered FMP/FRED widgets; disable unsupported hosted AI enhancements and integrate Anthropic | No runtime acceptance |
