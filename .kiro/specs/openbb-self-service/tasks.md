@@ -242,7 +242,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Depends: 3.1_
   - _Requirements: 5.1, 5.4, 11.2_
 
-- [ ] 3.3 Adapt and verify the FMP income-statement fetcher
+- [x] 3.3 Adapt and verify the FMP income-statement fetcher
   - Implement the annual income statement interface while preserving period, reporting date, currency and financial values supplied by the provider.
   - Verify supported symbol/period/limit behavior, response shape and null handling through the shared income route.
   - Done when route-level fixtures match the source statement without unit conversion, silently filled zeros or altered periods.
