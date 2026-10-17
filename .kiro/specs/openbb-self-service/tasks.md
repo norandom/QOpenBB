@@ -886,13 +886,13 @@ Task 2.33 accepted after independent Astra final review: scoped GO and VERIFIED 
 
 ## Approved design slice: SQLite query compatibility
 
-The owner approved the [SQLite repair design](sqlite-repair-design.md) and its narrow size exception on 2026-10-17, requesting task generation. Independent Sol task-graph sanity review passed (`artifacts/completion-path/sqlite-task-review.md`): the merged plan has 89 unique task IDs and maps all 69 active acceptance criteria. Tasks below await approval. They supplement the parent plan without accepting renderer activation or changing the full parity requirement.
+The owner approved the [SQLite repair design](sqlite-repair-design.md) and its narrow size exception on 2026-10-17, then approved tasks 4.6-4.9. Independent Sol task-graph sanity review passed (`artifacts/completion-path/sqlite-task-review.md`): the merged plan has 89 unique task IDs and maps all 69 active acceptance criteria. Autonomous implementation within this boundary is authorized. These tasks supplement the parent plan without accepting renderer activation or changing the full parity requirement.
 
 Dependency override: this independent backend branch starts after accepted foundations 1.2, 1.4, 1.7 and provisional Workspace 2.5; it does not wait for tasks 4.1-4.5 despite its numeric position. Task 4.5 additionally requires accepted 4.9. Actual environment/browser restart acceptance remains in 4.2/4.5; SQLite engine recreation cannot substitute. No cycle is introduced. Anthropic and delivery still depend on 4.5, and Excel still waits for 5.5.
 
 Sol owns the backend lane; Astra independently reviews query semantics and acceptance. Keep its four tasks sequential because they share fixtures and source identity. Independent renderer research may proceed alongside it in disjoint files. The controller owns shared inventory, evidence, pins and commits. One heavy suite/install at a time, at most four agents, two xdist workers maximum, no owner data or credential reads.
 
-- [ ] 4.6 Establish an isolated locked SQLite verification runtime
+- [x] 4.6 Establish an isolated locked SQLite verification runtime
   - Restore the frozen existing backend Python 3.13 environment through the protected toolchain, or identify a reusable backend image with exact matching dependency identity. Do not resolve a new lock. Record the actual runtime and exercised focused command; missing packages cannot count as a skip/pass.
   - Build the sibling SQLite test bootstrap and shared fixture builders specified by the design. Before settings imports, isolate dotenv-source construction, use an empty temporary working directory and minimal synthetic child environment, retain the absolute backend import path and deny outbound network. Verify denied reads with a sentinel env/account file; do not inspect operator configuration.
   - Create actual dependency-closed model tables in per-test file databases with foreign keys and original compressed/UUID types. Freeze fixture APIs for owners, creators, recipients, entities and shares before the next task. No concat UDF, fake tables or mocked database execution.
@@ -929,3 +929,5 @@ Sol owns the backend lane; Astra independently reviews query semantics and accep
   - _Boundary: Controller-owned cross-repository acceptance, inventory, breadth, source identity and verification record_
   - _Depends: 4.8_
   - _Requirements: 1.1, 1.4, 2.2, 4.2, 4.7, 10.3, 10.5, 10.6_
+
+Task 4.6 accepted after independent Astra re-review: two real-model bootstrap/storage tests, Ruff and formatting pass; cleanup passes after success and expected nonzero exit. The initial retained pytest database defect was repaired with an owned temporary root and its three confirmed leftovers removed. Evidence: artifacts/task-4.6/review/review-round2.md. Workspace 693954f43aac8af888cfe6e7bfed6d9dcb72d2f5. Frozen runtime: Python 3.13.15 under /home/mc/qopenbb-work/sqlite-runtime/venv; launcher backend-api/backend/tests_sqlite/run.py. Query repair and application acceptance remain unverified.

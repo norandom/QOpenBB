@@ -7,6 +7,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "sqlite-query-and-storage-compatibility"
+requirements = ["1.1", "1.4", "2.2", "4.2", "4.7", "10.3", "10.5", "10.6"]
+planned_checks = ["isolated-backend-bootstrap", "six-populated-read-paths", "creator-join-cardinality-and-share-isolation", "actual-dashboard-update-engine-reopen", "query-layer-independent-acceptance"]
+test_paths = ["vendor/workspace/backend-api/backend/tests_sqlite/test_bootstrap.py"]
+status = "unverified"
+evidence = ["Task 4.6 independently accepted: two real-model isolation/storage bootstrap tests, lint/format and success/nonzero cleanup checks pass. See artifacts/task-4.6/review/review-round2.md. Six query paths and bulk dashboard persistence remain unverified until tasks 4.7-4.9. Application save/environment-restart/sign-in/reopen remains separate."]
+
+[[capabilities]]
 id = "explicit-cartesian-appearance"
 requirements = ["4.8", "4.9", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
 planned_checks = ["appearance-validation-and-precedence", "legacy-mapper-shape", "visible-gap-and-markers", "retained-title-and-caption-styles", "appearance-rejection-recovery-and-export"]
