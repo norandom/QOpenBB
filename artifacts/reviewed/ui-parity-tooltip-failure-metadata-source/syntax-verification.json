@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-17",
+  "node": "v24.20.0",
+  "scope": "Syntax only; no imports or collector execution",
+  "commands": [
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/cleanup.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/collector.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/contract.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/controls.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/io.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/journey.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/keyboard-retention.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/projection.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/start.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/static-check.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/base/verify.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/cleanup.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/collector.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/contract.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/controls.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/failure-metadata.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/io.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/journey.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/keyboard-retention.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/projection.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/start.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/static-check.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --check artifacts/ui-parity-tooltip-failure-metadata-source/harness/verify.mjs",
+      "exitCode": 0
+    }
+  ]
+}

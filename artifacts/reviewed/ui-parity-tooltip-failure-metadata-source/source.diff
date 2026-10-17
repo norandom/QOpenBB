@@ -1,0 +1,62 @@
+diff --git a/artifacts/ui-parity-tooltip-failure-metadata-source/base/journey.mjs b/artifacts/ui-parity-tooltip-failure-metadata-source/harness/journey.mjs
+index d96dbd5..d550c65 100644
+--- a/artifacts/ui-parity-tooltip-failure-metadata-source/base/journey.mjs
++++ b/artifacts/ui-parity-tooltip-failure-metadata-source/harness/journey.mjs
+@@ -5,6 +5,7 @@ import {fixture,fixtureHash,cases,limits,source,image} from './contract.mjs';
+ import {install,acquire,attach,admission,dom} from './projection.mjs';
+ import {settle,observe,coordinate} from './collector.mjs';
+ import {controls} from './controls.mjs';
++import {failureMetadata} from './failure-metadata.mjs';
+ import {sample,modeSample,settlement,invocation,entry as boundedEntry,reserveInput,finalTail,controlReceipt} from './keyboard-retention.mjs';
+ const runtime=JSON.parse(fs.readFileSync(root+'/runtime-private.json'));
+ const credential=JSON.parse(fs.readFileSync(root+'/credential-private.json'));
+@@ -119,19 +120,22 @@ try{
+         for(const [ordinal,key,third] of item.probes){if(['Single','Multiple','Compact'].includes(third)&&mode!==third){await ui().mode(third);mode=third;}
+           await probe(ordinal,key,third==='cashFlow'?third:null);}}
+       current.status=current.probes.some(p=>p.status!=='stable')?'unresolved':'observed';
+-    }catch(e){current.status=e.message==='not-run-budget'?'not-run-budget':'unresolved';current.reason=String(e.message).split('\n')[0];
++    }catch(e){const failure=failureMetadata(e,'case',credential);current.status=failure.reasonCode==='not-run-budget'?'not-run-budget':'unresolved';Object.assign(current,failure);
+       const remainingStatus=current.status==='not-run-budget'?'not-run-budget':'not-run-dependent';
+-      current.remainingProbes=(item.probes??[]).slice(current.probes.length).map(target=>({target,status:remainingStatus,reason:'Affected case closed after '+current.reason}));
++      current.remainingProbes=(item.probes??[]).slice(current.probes.length).map(target=>({target,status:remainingStatus,reason:'Affected case closed; see case reason'}));
+       if(item.keyboard)current.remainingModes=item.modes.slice(current.keyboard.length).map(mode=>({mode,status:remainingStatus}));}
+     const events=await page.evaluate(()=>{if(window.__tooltip.overflow)throw Error('Event bound');return window.__tooltip.events;});
+     const tail={events,elapsedMs:Date.now()-current.began};if(current.id==='T06')finalTail(tail.events,tail.elapsedMs);
+     Object.assign(current,tail);json(current.id,current);results.push({id:current.id,status:current.status,actions:current.actions,probes:current.probes.length});current=null;
+   }
+   json('summary',{status:'bounded-original-capture',source,image,fixtureHash,candidateExecuted:false,results,actions,setupActions,probes,shots,elapsedMs:Date.now()-launch,browserVersion:browser.version(),limits});
+-}catch(e){process.exitCode=1;const reason=String(e.message).split('\n')[0].replaceAll(credential.email,'[redacted]').replaceAll(credential.password,'[redacted]');
+-  if(current){current.status='unresolved';current.reason=reason;try{persist();}catch{}}
+-  else{preflight.status='admission-unresolved';preflight.reason=reason;try{persist();}catch{}}
+-  try{json('failure',{phase,reason,completedCases:results});}catch{}
++}catch(e){process.exitCode=1;const failure=failureMetadata(e,'outer',credential);let caseWrite='not-attempted',firstCaseFailure;
++  if(current){current.status='unresolved';
++    if(current.failureOrigin==='case'){firstCaseFailure={reason:current.reason,reasonCode:current.reasonCode,reasonOmitted:current.reasonOmitted,failureOrigin:current.failureOrigin};current.outerFailure=failure;}
++    else Object.assign(current,failure);
++    caseWrite='write-unverified';try{persist();caseWrite='succeeded';}catch{}
++  }else{preflight.status='admission-unresolved';Object.assign(preflight,failure);try{persist();}catch{}}
++  try{json('failure',{phase,...failure,caseWrite,...(firstCaseFailure?{firstCaseFailure}:{}),completedCases:results});}catch{}
+ }finally{clearTimeout(timer);const cleanup={contextClosed:false,closed:false,serverClosed:false,listenerRemoved:false};
+   const bounded=async fn=>{try{await Promise.race([fn(),new Promise((_,reject)=>setTimeout(()=>reject(Error('Close bound')),5000))]);return true;}catch{return false;}};
+   try{if(ready&&!page?.isClosed())cleanup.listenerRemoved=await bounded(()=>page.evaluate(()=>{const p=window.__tooltip;window.__tooltipGrid.removeEventListener('chartOptionsChanged',p.listener);window.__tooltipGrid.removeEventListener('chartRangeSelectionChanged',p.listener);}));}
+
+--- /dev/null
++++ artifacts/ui-parity-tooltip-failure-metadata-source/harness/failure-metadata.mjs
+@@ -0,0 +1,17 @@
++const metadataBytes=512;
++const bytes=value=>Buffer.byteLength(JSON.stringify(value));
++const metadata=(reason,reasonCode,reasonOmitted,failureOrigin)=>({reason,reasonCode,reasonOmitted,failureOrigin});
++
++export function failureMetadata(error,failureOrigin,credential){
++  const unavailable=()=>metadata('Failure message unavailable','message-unavailable',true,failureOrigin);
++  try{
++    const message=error.message;
++    if(typeof message!=='string')return unavailable();
++    const reasonCode=message==='not-run-budget'?'not-run-budget':'exception';
++    let reason=message;
++    for(const secret of [credential.email,credential.password])if(typeof secret==='string'&&secret.length)reason=reason.replaceAll(secret,'[redacted]');
++    const complete=metadata(reason,reasonCode,false,failureOrigin);
++    if(bytes(complete)<=metadataBytes)return complete;
++    return metadata('Failure message omitted: serialized metadata limit','message-over-byte-cap',true,failureOrigin);
++  }catch{return unavailable();}
++}

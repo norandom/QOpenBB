@@ -105,10 +105,12 @@
     "ui-parity-internal-network-source-diagnosis",
     "ui-parity-internal-network-source-review",
     "ui-parity-legend-fixed-relay-plan",
-    "ui-parity-legend-fixed-relay-plan-review"
+    "ui-parity-legend-fixed-relay-plan-review",
+    "ui-parity-tooltip-failure-metadata-source",
+    "ui-parity-tooltip-failure-metadata-source-review"
   ],
   "sourcepins": {
-    "root_at_sync": "a396767d24f8c3ec1a04cb3536e7d63d377e72d2",
+    "root_at_sync": "1943c576e2e6c11833b7a7fe729f8ccedaa9e268",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -27257,6 +27259,334 @@
       "publishedSHA256": "696b778b3858fcc40d2f31f3c9262206badfdd6bd197b8facb8eee0aa4ce923b",
       "bytes": 828,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/cleanup.mjs",
+      "sourceSHA256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/cleanup.mjs",
+      "publishedSHA256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "bytes": 2652,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/collector.mjs",
+      "sourceSHA256": "0f549c43cd1fbb6171673c11d7d712bf83eecf5a021ce5005c1d9d1574a0cc5c",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/collector.mjs",
+      "publishedSHA256": "0f549c43cd1fbb6171673c11d7d712bf83eecf5a021ce5005c1d9d1574a0cc5c",
+      "bytes": 4306,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/contract.mjs",
+      "sourceSHA256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/contract.mjs",
+      "publishedSHA256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9",
+      "bytes": 2533,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/controls.mjs",
+      "sourceSHA256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/controls.mjs",
+      "publishedSHA256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60",
+      "bytes": 3159,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/fixture.json",
+      "sourceSHA256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/fixture.json",
+      "publishedSHA256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "bytes": 2031,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/io.mjs",
+      "sourceSHA256": "4e64d9e306fdcccadb393a9bdbadc1b84efa02009e22a2a5aa4708e2a2e8cf8d",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/io.mjs",
+      "publishedSHA256": "4e64d9e306fdcccadb393a9bdbadc1b84efa02009e22a2a5aa4708e2a2e8cf8d",
+      "bytes": 1418,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/journey.mjs",
+      "sourceSHA256": "859c9d16781d7a862ccd014b563755e830e912fcaa93cd46e7c8d82e61fdf12a",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/journey.mjs",
+      "publishedSHA256": "859c9d16781d7a862ccd014b563755e830e912fcaa93cd46e7c8d82e61fdf12a",
+      "bytes": 18851,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/keyboard-retention.mjs",
+      "sourceSHA256": "230e64b9f175c7ab4949ab89f0c117a60e7e04ae2806bf96854d53ff47f30707",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/keyboard-retention.mjs",
+      "publishedSHA256": "230e64b9f175c7ab4949ab89f0c117a60e7e04ae2806bf96854d53ff47f30707",
+      "bytes": 3816,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/projection.mjs",
+      "sourceSHA256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/projection.mjs",
+      "publishedSHA256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04",
+      "bytes": 10302,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/run.sh",
+      "sourceSHA256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/run.sh",
+      "publishedSHA256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "bytes": 2183,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/start.mjs",
+      "sourceSHA256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/start.mjs",
+      "publishedSHA256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "bytes": 2604,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/static-check.mjs",
+      "sourceSHA256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/static-check.mjs",
+      "publishedSHA256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf",
+      "bytes": 12175,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/base/verify.mjs",
+      "sourceSHA256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/base/verify.mjs",
+      "publishedSHA256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "bytes": 2984,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/faults.mjs",
+      "sourceSHA256": "991c22490c084cf248c5cef4c84c9372c1997850f573eb27ecf261f775e78f2c",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/faults.mjs",
+      "publishedSHA256": "991c22490c084cf248c5cef4c84c9372c1997850f573eb27ecf261f775e78f2c",
+      "bytes": 20008,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/freeze-check.mjs",
+      "sourceSHA256": "fd64657b5b09bff506f62e73d123e7bc17f47ab915a18cc51ccf1d8288c15d4c",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/freeze-check.mjs",
+      "publishedSHA256": "fd64657b5b09bff506f62e73d123e7bc17f47ab915a18cc51ccf1d8288c15d4c",
+      "bytes": 1530,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/cleanup.mjs",
+      "sourceSHA256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/cleanup.mjs",
+      "publishedSHA256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "bytes": 2652,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/collector.mjs",
+      "sourceSHA256": "0f549c43cd1fbb6171673c11d7d712bf83eecf5a021ce5005c1d9d1574a0cc5c",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/collector.mjs",
+      "publishedSHA256": "0f549c43cd1fbb6171673c11d7d712bf83eecf5a021ce5005c1d9d1574a0cc5c",
+      "bytes": 4306,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/contract.mjs",
+      "sourceSHA256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/contract.mjs",
+      "publishedSHA256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9",
+      "bytes": 2533,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/controls.mjs",
+      "sourceSHA256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/controls.mjs",
+      "publishedSHA256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60",
+      "bytes": 3159,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/failure-metadata.mjs",
+      "sourceSHA256": "32afcd14a024d8f74a4d6d7ddc4ea54a2895439ed7990ecacfb17ba86f04b690",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/failure-metadata.mjs",
+      "publishedSHA256": "32afcd14a024d8f74a4d6d7ddc4ea54a2895439ed7990ecacfb17ba86f04b690",
+      "bytes": 998,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/fixture.json",
+      "sourceSHA256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/fixture.json",
+      "publishedSHA256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "bytes": 2031,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/io.mjs",
+      "sourceSHA256": "4e64d9e306fdcccadb393a9bdbadc1b84efa02009e22a2a5aa4708e2a2e8cf8d",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/io.mjs",
+      "publishedSHA256": "4e64d9e306fdcccadb393a9bdbadc1b84efa02009e22a2a5aa4708e2a2e8cf8d",
+      "bytes": 1418,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/journey.mjs",
+      "sourceSHA256": "e26271698eb91719491d05b29b16f71457c0bac199dce556253c2d88d39ad204",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/journey.mjs",
+      "publishedSHA256": "e26271698eb91719491d05b29b16f71457c0bac199dce556253c2d88d39ad204",
+      "bytes": 19266,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/keyboard-retention.mjs",
+      "sourceSHA256": "230e64b9f175c7ab4949ab89f0c117a60e7e04ae2806bf96854d53ff47f30707",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/keyboard-retention.mjs",
+      "publishedSHA256": "230e64b9f175c7ab4949ab89f0c117a60e7e04ae2806bf96854d53ff47f30707",
+      "bytes": 3816,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/projection.mjs",
+      "sourceSHA256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/projection.mjs",
+      "publishedSHA256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04",
+      "bytes": 10302,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/run.sh",
+      "sourceSHA256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/run.sh",
+      "publishedSHA256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "bytes": 2183,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/start.mjs",
+      "sourceSHA256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/start.mjs",
+      "publishedSHA256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "bytes": 2604,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/static-check.mjs",
+      "sourceSHA256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/static-check.mjs",
+      "publishedSHA256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf",
+      "bytes": 12175,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/harness/verify.mjs",
+      "sourceSHA256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/harness/verify.mjs",
+      "publishedSHA256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "bytes": 2984,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/prepare-freeze.mjs",
+      "sourceSHA256": "72855296fdc9b50df8ab24a4fa5d634760b512055e1c8620145cbc9ef34a790d",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/prepare-freeze.mjs",
+      "publishedSHA256": "72855296fdc9b50df8ab24a4fa5d634760b512055e1c8620145cbc9ef34a790d",
+      "bytes": 3652,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/report.md",
+      "sourceSHA256": "9b1689429d77761ee7c3225ab1176fda716ea3d5b17200762bdea6889bc5728c",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/report.md",
+      "publishedSHA256": "9b1689429d77761ee7c3225ab1176fda716ea3d5b17200762bdea6889bc5728c",
+      "bytes": 7772,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/source-hashes.json",
+      "sourceSHA256": "8c423993d9cd5e63999042cd368253167961881f4ada4c4ff355e9b0487c9918",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/source-hashes.json",
+      "publishedSHA256": "8c423993d9cd5e63999042cd368253167961881f4ada4c4ff355e9b0487c9918",
+      "bytes": 16617,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/source.diff",
+      "sourceSHA256": "64382226f53abbaaa6d3d42ca6e96d6a86c359ab053c5e358d176dafa12aa120",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/source.diff",
+      "publishedSHA256": "64382226f53abbaaa6d3d42ca6e96d6a86c359ab053c5e358d176dafa12aa120",
+      "bytes": 5731,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/syntax-verification.json",
+      "sourceSHA256": "df6ccc4307d76733aba81ee9c4fb15002b6cf49be63fcc4279b9e52b2e2d4449",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/syntax-verification.json",
+      "publishedSHA256": "df6ccc4307d76733aba81ee9c4fb15002b6cf49be63fcc4279b9e52b2e2d4449",
+      "bytes": 3310,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/verification.json",
+      "sourceSHA256": "62581a34a42dcce09b74e2670b2cf7d3470ff84d098de3f455071d0a7e719a1a",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/verification.json",
+      "publishedSHA256": "62581a34a42dcce09b74e2670b2cf7d3470ff84d098de3f455071d0a7e719a1a",
+      "bytes": 16746,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source/publication-allowlist.json",
+      "sourceSHA256": "ba3a4e6c3d3f0f9ed1130cccc32f6ff0d79b177b1243be813aef67f313aaa6d4",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source/publication-allowlist.json",
+      "publishedSHA256": "ba3a4e6c3d3f0f9ed1130cccc32f6ff0d79b177b1243be813aef67f313aaa6d4",
+      "bytes": 7044,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source-review/review.md",
+      "sourceSHA256": "902ba5e1e08a1e899b030b8414181a3fe57b9b9c52945b88d58658ec4436e2a1",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source-review/review.md",
+      "publishedSHA256": "902ba5e1e08a1e899b030b8414181a3fe57b9b9c52945b88d58658ec4436e2a1",
+      "bytes": 6642,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source-review/audit.mjs",
+      "sourceSHA256": "95bc2d0d96dc0049aa2f0474a267cfed78ea630dd682646b0936c3f72fbe6be7",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source-review/audit.mjs",
+      "publishedSHA256": "95bc2d0d96dc0049aa2f0474a267cfed78ea630dd682646b0936c3f72fbe6be7",
+      "bytes": 5652,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source-review/verification.json",
+      "sourceSHA256": "094ad16dcaa73811cd2eaf6f46e068ed4ed4c79385fadfdf2ffd4053a5a61baa",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source-review/verification.json",
+      "publishedSHA256": "094ad16dcaa73811cd2eaf6f46e068ed4ed4c79385fadfdf2ffd4053a5a61baa",
+      "bytes": 4688,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source-review/replay-verification.json",
+      "sourceSHA256": "fe771566baadcef8d3a7160ca7ca8240e6abf3f5972ce7528fbe74e09c30ce75",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source-review/replay-verification.json",
+      "publishedSHA256": "fe771566baadcef8d3a7160ca7ca8240e6abf3f5972ce7528fbe74e09c30ce75",
+      "bytes": 16775,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-source-review/publication-allowlist.json",
+      "sourceSHA256": "57bcf7bdaae2ca1c2c84df5769f41faea541c68147a54a34b21c658103265ff4",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-source-review/publication-allowlist.json",
+      "publishedSHA256": "57bcf7bdaae2ca1c2c84df5769f41faea541c68147a54a34b21c658103265ff4",
+      "bytes": 845,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -27970,5 +28300,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 160416388
+  "total_payload_bytes": 160672841
 }

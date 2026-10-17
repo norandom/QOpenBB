@@ -1,0 +1,33 @@
+# Accept the bounded failure-metadata source preparation
+
+VERDICT: APPROVED for the frozen source preparation and exact publication set. The actual case and outer catches implement the accepted metadata policy. This review accepts no complete scaffold bound, smaller reservation, runtime grant or UI-parity claim.
+
+Reviewed on 2026-10-17 using kiro-review against the [accepted plan](../ui-parity-tooltip-failure-metadata-plan-revised/plan.md), its [correction review](../ui-parity-tooltip-failure-metadata-plan-revision-review/review.md), and the frozen [source diff](../ui-parity-tooltip-failure-metadata-source/source.diff). The [verification receipt](verification.json) pins the handoff manifest, allowlist, test source and original verification. Source-manifest SHA-256 is `8c423993d9cd5e63999042cd368253167961881f4ada4c4ff355e9b0487c9918`; allowlist SHA-256 is `ba3a4e6c3d3f0f9ed1130cccc32f6ff0d79b177b1243be813aef67f313aaa6d4`. The controller authorized this isolated source review after the author froze the package.
+
+## Mechanical results
+
+- Tests: PASS. `node artifacts/ui-parity-tooltip-failure-metadata-source-review/audit.mjs` exits zero. Its isolated replay passes all 103 focused checks and 11 file-evidence cases. An additional 9,616 formatter cases cover both origins and ASCII, quotes, backslashes, newlines, NUL, multibyte text and unpaired surrogates.
+- RED phase: VERIFIED independently. Replaying the same fault assertions against the original journey catch fails at `case bounded and data unchanged T01`. The formatter remains present in this mutation, so the failure demonstrates the actual catch change matters.
+- Static checks: PASS for syntax-only checks of the revised journey, formatter and fault suite. The inherited static-check script was inspected as an unchanged historical file and was not executed.
+- Publication: PASS for all 35 selected source entries, their hashes and byte counts, and 11 source-report links. Selected files contain no residual placeholder markers or tested concrete private-key/common-token patterns. Synthetic credentials in the fault suite are deliberate fixtures; no private state files are selected.
+- Boundary: WITHIN. The only changed pre-existing harness file is journey.mjs; failure-metadata.mjs is new. Frozen base bytes, input/probe functions, writer, retention, fixtures, financial/identity/tooltip content and limits remain unchanged. Source pins pass before and after review.
+
+The [audit](audit.mjs) reads the frozen fault suite, changes only module/input/output paths and the recorded replay command, then runs a temporary copy inside this review directory. Its replay reads the actual revised catch/input/keyboard/closing function text and unchanged IO writer. It writes [fresh replay evidence](replay-verification.json) here, preserving the author's frozen receipt. The baseline mutation and temporary replay files are removed after use. No browser, application runtime, network, container, provider request, installation or build ran.
+
+## Findings
+
+No blocking defect was found within the authorized metadata responsibility. The formatter measures the complete four-field object before assignment, reads message once, avoids nonstring coercion, preserves exact sentinel classification before redaction, and retains complete redacted text only when it fits 512 UTF-8 bytes. Both fixed fallback forms satisfy that limit. Origins come from the two literal call sites.
+
+The case catch keeps budget-versus-unresolved status and the original remaining target/mode identities. Remaining-probe reasons are fixed. The outer catch preserves the existing case-origin fields, stores one bounded closing failure and copies exactly the four first-case fields into the standalone receipt. A memory-only first failure survives an independently verified successful receipt write after complete-case rejection. The first reason is neither re-extracted nor replaced with the closing error.
+
+Closing writes report succeeded only after normal writer return. Every failed close reports write-unverified because this unchanged writer exposes no trusted stage token. The actual prewrite-rejection test independently observes an unchanged physical prefix; the receipt correctly makes no such promise. A filesystem mock writes 37 bytes and throws the same bound-like error text, producing changed file hashes and write-unverified. Partial standalone-receipt failure makes exactly two attempted writes in the extracted outer catch and triggers no retry or persistence claim. These are file observations under explicit mocks, not crash-durability evidence.
+
+The legal 16,000-byte tail test retains the full tail in a completed case. The padded synthetic counterexample exceeds the hard case ceiling and is rejected without dropping its attempted tail or claiming a completed result. Both tests are API-admissible constructions; browser reachability is unproven.
+
+FYI: input failure text, probe reason/fallbackReason, nonkeyboard observation content, and finite scaffold accounting remain open as the [source report](../ui-parity-tooltip-failure-metadata-source/report.md) states. The 32,768-byte input reservation, 115,072-byte guard, 16,000-byte tail and 131,072-byte ceiling are unchanged. Metadata caps alone do not prove terminal fit. Historical 70-Tab stopping and unfinished 72-Tab coverage, arrows, picked identity, T04/T05, network/lifecycle prerequisites and UI parity remain unresolved.
+
+## Publication and next boundary
+
+The [35-entry source allowlist](../ui-parity-tooltip-failure-metadata-source/publication-allowlist.json) is approved for synchronization. Its allowlist file is copied separately as metadata without a self-hash. The [review allowlist](publication-allowlist.json) selects this report, audit and two receipts. Destination hashes and links still need the controller's post-sync verification before selective staging and commit. The copied lifecycle scripts are historical source evidence; their inclusion grants no execution permission.
+
+No remediation is required for this task. Research harness and test artifacts are excluded from production size caps. Future maintained adoption retains the executable inventory/checker requirement, 400 physical lines/file, 300 logical units/file, 50 logical units/function and independent acceptance. Core product.md, tech.md and structure.md steering files were absent; available review, delegation, testing, documentation, complexity and CI guidance was applied. The report received the documentation policy's humanizer pass. No specification task or breadth capability is marked implemented or accepted by this source review.

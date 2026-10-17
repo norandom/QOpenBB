@@ -1,0 +1,656 @@
+{
+  "date": "2026-10-17",
+  "command": "node artifacts/ui-parity-tooltip-failure-metadata-source-review/audit.mjs (path-isolated replay)",
+  "exitCode": 0,
+  "scope": "Offline actual extracted catches/input/keyboard/closing path and actual IO writer under mocks; no browser/runtime/network",
+  "checks": [
+    {
+      "name": "exact four metadata fields",
+      "passed": true
+    },
+    {
+      "name": "fixed fallback satisfies whole object cap case message-unavailable",
+      "passed": true
+    },
+    {
+      "name": "fixed fallback satisfies whole object cap case message-over-byte-cap",
+      "passed": true
+    },
+    {
+      "name": "fixed fallback satisfies whole object cap outer message-unavailable",
+      "passed": true
+    },
+    {
+      "name": "fixed fallback satisfies whole object cap outer message-over-byte-cap",
+      "passed": true
+    },
+    {
+      "name": "whole object ASCII boundary -1",
+      "passed": true
+    },
+    {
+      "name": "whole object ASCII boundary 0",
+      "passed": true
+    },
+    {
+      "name": "whole object ASCII boundary 1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 34 -1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 34 0",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 34 1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 92 -1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 92 0",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 92 1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 10 -1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 10 0",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 10 1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 0 -1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 0 0",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 0 1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 28450 -1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 28450 0",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 28450 1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 55357 -1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 55357 0",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 55357 1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 55296 -1",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 55296 0",
+      "passed": true
+    },
+    {
+      "name": "serialized special-text boundary 55296 1",
+      "passed": true
+    },
+    {
+      "name": "complete escaped or multibyte message 0",
+      "passed": true
+    },
+    {
+      "name": "complete escaped or multibyte message 1",
+      "passed": true
+    },
+    {
+      "name": "complete escaped or multibyte message 2",
+      "passed": true
+    },
+    {
+      "name": "complete escaped or multibyte message 3",
+      "passed": true
+    },
+    {
+      "name": "complete escaped or multibyte message 4",
+      "passed": true
+    },
+    {
+      "name": "oversized full object omitted 7000",
+      "passed": true
+    },
+    {
+      "name": "oversized full object omitted 400",
+      "passed": true
+    },
+    {
+      "name": "oversized full object omitted 27624",
+      "passed": true
+    },
+    {
+      "name": "oversized full object omitted 40000",
+      "passed": true
+    },
+    {
+      "name": "throwing getter extracted exactly once",
+      "passed": true
+    },
+    {
+      "name": "successful getter read once",
+      "passed": true
+    },
+    {
+      "name": "nonstring message never coerced",
+      "passed": true
+    },
+    {
+      "name": "nonstring unavailable 41",
+      "passed": true
+    },
+    {
+      "name": "nonstring unavailable 42",
+      "passed": true
+    },
+    {
+      "name": "nonstring unavailable 43",
+      "passed": true
+    },
+    {
+      "name": "nonstring unavailable 44",
+      "passed": true
+    },
+    {
+      "name": "nonstring unavailable 45",
+      "passed": true
+    },
+    {
+      "name": "exact sentinel classified before redaction",
+      "passed": true
+    },
+    {
+      "name": "near sentinel stays exception",
+      "passed": true
+    },
+    {
+      "name": "nonempty credentials redacted completely",
+      "passed": true
+    },
+    {
+      "name": "empty credentials do not change message",
+      "passed": true
+    },
+    {
+      "name": "redaction failure unavailable",
+      "passed": true
+    },
+    {
+      "name": "case bounded and data unchanged T01",
+      "passed": true
+    },
+    {
+      "name": "fixed remaining reasons and original targets T01",
+      "passed": true
+    },
+    {
+      "name": "case bounded and data unchanged T02",
+      "passed": true
+    },
+    {
+      "name": "fixed remaining reasons and original targets T02",
+      "passed": true
+    },
+    {
+      "name": "case bounded and data unchanged T03",
+      "passed": true
+    },
+    {
+      "name": "fixed remaining reasons and original targets T03",
+      "passed": true
+    },
+    {
+      "name": "case bounded and data unchanged T04",
+      "passed": true
+    },
+    {
+      "name": "fixed remaining reasons and original targets T04",
+      "passed": true
+    },
+    {
+      "name": "case bounded and data unchanged T05",
+      "passed": true
+    },
+    {
+      "name": "fixed remaining reasons and original targets T05",
+      "passed": true
+    },
+    {
+      "name": "case bounded and data unchanged T06",
+      "passed": true
+    },
+    {
+      "name": "fixed remaining reasons and original targets T06",
+      "passed": true
+    },
+    {
+      "name": "case bounded and data unchanged T07",
+      "passed": true
+    },
+    {
+      "name": "fixed remaining reasons and original targets T07",
+      "passed": true
+    },
+    {
+      "name": "case bounded and data unchanged T08",
+      "passed": true
+    },
+    {
+      "name": "fixed remaining reasons and original targets T08",
+      "passed": true
+    },
+    {
+      "name": "case exact sentinel preserves status",
+      "passed": true
+    },
+    {
+      "name": "case does not reaccess throwing getter",
+      "passed": true
+    },
+    {
+      "name": "successful case retry preserves first and bounded outer",
+      "passed": true
+    },
+    {
+      "name": "successful retry keeps data unchanged",
+      "passed": true
+    },
+    {
+      "name": "actual invalid ledger prewrite rejects and physical prefix preserved",
+      "passed": true
+    },
+    {
+      "name": "unclassified rejection uses unverified despite bound-like text",
+      "passed": true
+    },
+    {
+      "name": "memory-only first failure retained in standalone receipt",
+      "passed": true
+    },
+    {
+      "name": "actual partial write is unverified with changed physical bytes",
+      "passed": true
+    },
+    {
+      "name": "partial case write attempts one closing write and one receipt",
+      "passed": true
+    },
+    {
+      "name": "failed standalone write has no recursive retry",
+      "passed": true
+    },
+    {
+      "name": "preflight outer metadata and no case write",
+      "passed": true
+    },
+    {
+      "name": "legal exact maximum tail retained in completed case",
+      "passed": true
+    },
+    {
+      "name": "actual closing path rejects oversized complete case",
+      "passed": true
+    },
+    {
+      "name": "oversized in-memory case retains legal tail and standalone first failure",
+      "passed": true
+    },
+    {
+      "name": "actual final persistence partial failure followed by successful closing write",
+      "passed": true
+    },
+    {
+      "name": "prior intermediate and final bytes are distinct",
+      "passed": true
+    },
+    {
+      "name": "actual tail collection failure retains earlier case reason",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard injected fault input6000",
+      "passed": true
+    },
+    {
+      "name": "counted inputs and ledger preserved input6000",
+      "passed": true
+    },
+    {
+      "name": "actual catch bounded failure input6000",
+      "passed": true
+    },
+    {
+      "name": "6000 input full reason remains counted and failed",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard injected fault input7000",
+      "passed": true
+    },
+    {
+      "name": "counted inputs and ledger preserved input7000",
+      "passed": true
+    },
+    {
+      "name": "actual catch bounded failure input7000",
+      "passed": true
+    },
+    {
+      "name": "invalid escaped input remains unresolved without legalizing entry",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard injected fault observation",
+      "passed": true
+    },
+    {
+      "name": "counted inputs and ledger preserved observation",
+      "passed": true
+    },
+    {
+      "name": "actual catch bounded failure observation",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard injected fault baseline",
+      "passed": true
+    },
+    {
+      "name": "counted inputs and ledger preserved baseline",
+      "passed": true
+    },
+    {
+      "name": "actual catch bounded failure baseline",
+      "passed": true
+    },
+    {
+      "name": "baseline assigned before sample failure retained",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard injected fault screenshot",
+      "passed": true
+    },
+    {
+      "name": "counted inputs and ledger preserved screenshot",
+      "passed": true
+    },
+    {
+      "name": "actual catch bounded failure screenshot",
+      "passed": true
+    },
+    {
+      "name": "screenshot error does not invent image",
+      "passed": true
+    }
+  ],
+  "measurements": [
+    {
+      "kind": "serialization",
+      "inputCodeUnits": 70,
+      "serializedBytes": 265
+    },
+    {
+      "kind": "serialization",
+      "inputCodeUnits": 40,
+      "serializedBytes": 183
+    },
+    {
+      "kind": "serialization",
+      "inputCodeUnits": 1,
+      "serializedBytes": 89
+    },
+    {
+      "kind": "serialization",
+      "inputCodeUnits": 0,
+      "serializedBytes": 83
+    },
+    {
+      "kind": "serialization",
+      "inputCodeUnits": 5,
+      "serializedBytes": 90
+    },
+    {
+      "kind": "legal-tail",
+      "tailBytes": 16000,
+      "preTailBytes": 411,
+      "finalBytes": 16420
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "normal-return",
+      "prior": {
+        "bytes": 204,
+        "sha256": "b633ed68d7397918fd17c75a6563bfa795fc9c9548d05c8efb75c22516d6e071"
+      },
+      "final": {
+        "bytes": 649,
+        "sha256": "edb926335b0bb8c33365542dd09b7a1085af1aa5c2c6aeaa0224245bd2b8ad45"
+      },
+      "failure": {
+        "bytes": 321,
+        "sha256": "cdb3c7b36084fdbf2a1742a818c2d2149f6e938ccfa820275c7143ef266bcfbd"
+      },
+      "caseWrite": "succeeded"
+    },
+    {
+      "kind": "observed-prewrite-rejection",
+      "prior": {
+        "bytes": 81,
+        "sha256": "c653d49aacfd491e1d8ee032af445df0ead681fd550ce0f36996855e2613ccd3"
+      },
+      "final": {
+        "bytes": 81,
+        "sha256": "c653d49aacfd491e1d8ee032af445df0ead681fd550ce0f36996855e2613ccd3"
+      },
+      "failure": {
+        "bytes": 294,
+        "sha256": "1238fab766dda707071625b79daf66650155660cc40c45a7b57a03ba82eb9ed1"
+      },
+      "caseWrite": "write-unverified"
+    },
+    {
+      "kind": "partial-write-then-throw",
+      "prior": {
+        "bytes": 81,
+        "sha256": "c653d49aacfd491e1d8ee032af445df0ead681fd550ce0f36996855e2613ccd3"
+      },
+      "final": {
+        "bytes": 37,
+        "sha256": "b5e18907f0b1e80ae3796c312c7e8dcf7a8fa7f3a7c31901b69ee00e4bc8684e"
+      },
+      "failure": {
+        "bytes": 283,
+        "sha256": "e775a45eb4b1c158814cfa210f450876bb4120ad62a2beaeae245441fa08d584"
+      },
+      "caseWrite": "write-unverified"
+    },
+    {
+      "kind": "receipt-partial-failure",
+      "final": {
+        "bytes": 19,
+        "sha256": "13d72e4c9477fdccdddc742589a0f60c7de0dadc3a37285ebffe068dcaede4f3"
+      },
+      "failure": {
+        "bytes": 19,
+        "sha256": "6ecb85ee6c3f3cbbec3bd077af971c1d981d724f453ea01847265a7597c93859"
+      },
+      "persistenceClaim": false,
+      "attempts": 2
+    },
+    {
+      "kind": "synthetic-padded-complete-rejection",
+      "prior": {
+        "bytes": 81,
+        "sha256": "c653d49aacfd491e1d8ee032af445df0ead681fd550ce0f36996855e2613ccd3"
+      },
+      "final": {
+        "bytes": 81,
+        "sha256": "c653d49aacfd491e1d8ee032af445df0ead681fd550ce0f36996855e2613ccd3"
+      },
+      "attemptedBytes": 131324,
+      "failure": {
+        "bytes": 288,
+        "sha256": "dd833f7f03a3f5791572d8539edfb13f9eeeb744396697e126e604cfac1433b7"
+      },
+      "caseWrite": "write-unverified"
+    },
+    {
+      "kind": "actual-final-write-partial-then-recovery",
+      "prior": {
+        "bytes": 81,
+        "sha256": "c653d49aacfd491e1d8ee032af445df0ead681fd550ce0f36996855e2613ccd3"
+      },
+      "intermediate": {
+        "bytes": 41,
+        "sha256": "9f573dcdc5262165a34be395c24005d9fbb00f1b4ab65d92f0f9101561ecab84"
+      },
+      "final": {
+        "bytes": 16500,
+        "sha256": "30f6baf84315810c8a07fd72718308e2f5fe4ea7e598a9a12ba8891b79ddfb1b"
+      },
+      "failure": {
+        "bytes": 286,
+        "sha256": "16186d21e2f4b88139600902ca42f87d178eca220c69aec1f7859d8d99726e48"
+      },
+      "caseWrite": "succeeded"
+    },
+    {
+      "kind": "actual-keyboard-input6000",
+      "prior": {
+        "bytes": 6259,
+        "sha256": "93d852c79c48028161f08dfdf78abecbdb3238034cb2eec0cd329bbaeac15e03"
+      },
+      "final": {
+        "bytes": 6709,
+        "sha256": "7a16a049a580a18d066d67e0584fa79b4f4dae465e5aac0ee24976e5f2a67b4e"
+      },
+      "failure": {
+        "bytes": 326,
+        "sha256": "43169af5035006cffb9d18929240fcedb361124e585a2ac223a3f792ab16d0c3"
+      },
+      "caseWrite": "succeeded",
+      "actions": 1,
+      "probes": 0
+    },
+    {
+      "kind": "actual-keyboard-input7000",
+      "prior": {
+        "bytes": 233,
+        "sha256": "0900720477e5311dbf3c4ad1b99057e524c00939311ff36116c5f6a85b9fd256"
+      },
+      "final": {
+        "bytes": 233,
+        "sha256": "0900720477e5311dbf3c4ad1b99057e524c00939311ff36116c5f6a85b9fd256"
+      },
+      "failure": {
+        "bytes": 314,
+        "sha256": "ea8c0d9fa02d11f210be795bae08b92ab94d022c0274bde0e3d7e9e44ed10475"
+      },
+      "caseWrite": "write-unverified",
+      "actions": 1,
+      "probes": 0
+    },
+    {
+      "kind": "actual-keyboard-observation",
+      "prior": {
+        "bytes": 630,
+        "sha256": "d95a46a660fbcbfd4bc14a8b492dd91dae24f187ef240d28797ecc5ecaf6a533"
+      },
+      "final": {
+        "bytes": 1033,
+        "sha256": "c42f6d2ef139db09d872a63046f01a85dd15f1ddeb9051832c886c8509a18340"
+      },
+      "failure": {
+        "bytes": 326,
+        "sha256": "43169af5035006cffb9d18929240fcedb361124e585a2ac223a3f792ab16d0c3"
+      },
+      "caseWrite": "succeeded",
+      "actions": 2,
+      "probes": 1
+    },
+    {
+      "kind": "actual-keyboard-baseline",
+      "prior": {
+        "bytes": 330,
+        "sha256": "a5129975f6be9ed46e76bfc3ea5f201a0b3ecbb4813e8e4046a95c7d51d66330"
+      },
+      "final": {
+        "bytes": 811,
+        "sha256": "5747e906b4c9558f7f6fdbf5ac60ec040732a774c66386235cf3c1dfbb16dc4a"
+      },
+      "failure": {
+        "bytes": 308,
+        "sha256": "099aed04234f29ccd837cc80692da2689133a5a4142bce16e3e006a39fd6d78d"
+      },
+      "caseWrite": "succeeded",
+      "actions": 1,
+      "probes": 0
+    },
+    {
+      "kind": "actual-keyboard-screenshot",
+      "prior": {
+        "bytes": 630,
+        "sha256": "d95a46a660fbcbfd4bc14a8b492dd91dae24f187ef240d28797ecc5ecaf6a533"
+      },
+      "final": {
+        "bytes": 1272,
+        "sha256": "baf67df520a2d3bf7ba9b0e6bc6e4e6322f7a99653b50b5435e0858bbca2ef27"
+      },
+      "failure": {
+        "bytes": 282,
+        "sha256": "a5c7ce2149f91f111ad3a0fc06799c654b08124b611666e0813d478c8d001075"
+      },
+      "caseWrite": "succeeded",
+      "actions": 2,
+      "probes": 1
+    }
+  ],
+  "limits": {
+    "metadataBytes": 512,
+    "inputReserve": 32768,
+    "caseGuard": 115072,
+    "tailReserve": 16000,
+    "caseBytes": 131072
+  },
+  "limitations": [
+    "No finite scaffold proof or universal terminal fit",
+    "No runtime reachability claim for constructed faults",
+    "Input path and probe catch remain unchanged",
+    "Unclassified writer failures always write-unverified; physical prefix preservation is independently observed only"
+  ]
+}
