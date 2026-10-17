@@ -1,0 +1,164 @@
+--- baseline/collector.mjs
++++ harness/collector.mjs
+@@ -19,7 +19,10 @@
+   if(Math.abs(g.scene.width-g.canvas.width)>.5||Math.abs(g.scene.height-g.canvas.height)>.5)throw Error('coordinate-unresolved: CSS scene');
+   const line=family==='line',width=v(n.fields.width),height=v(n.fields.height);
+   if(!line&&(!(width>0)||!(height>0)))throw Error('no-hittable-node: zero bar');
+-  const local={x:line?v(n.point.x):v(n.fields.x)+width/2,y:line?v(n.point.y):v(n.fields.y)+height/2};
++  const stacked=family==='stackedColumn';
++  if(stacked&&(!finite(v(n.midPoint?.x))||!finite(v(n.midPoint?.y))))throw Error('coordinate-unresolved: finite stacked midpoint required');
++  const local={x:line?v(n.point.x):stacked?v(n.midPoint.x):v(n.fields.x)+width/2,
++    y:line?v(n.point.y):stacked?v(n.midPoint.y):v(n.fields.y)+height/2};
+   const point={x:g.canvas.x+local.x+v(s.transforms[0].translationX)+v(s.transforms[2].translationX),
+     y:g.canvas.y+local.y+v(s.transforms[0].translationY)+v(s.transforms[2].translationY)};
+   for(const b of [g.canvas,g.area])if(!finite(point.x)||!finite(point.y)||point.x<b.x||point.y<b.y||point.x>b.x+b.width||point.y>b.y+b.height)throw Error('coordinate-unresolved: outside chart');
+@@ -34,9 +37,9 @@
+     prior=sample;if(count<limits.geometrySamples&&Date.now()+limits.geometryIntervalMs<deadline)await delay(limits.geometryIntervalMs);else break;}
+   throw Error('settlement-unresolved: no equal inactive pair');
+ }
+-export async function observe(page,guard){
++export async function observe(page,guard,inspect=()=>{}){
+   const began=Date.now();let prior=null,count=0,last=null;
+-  while(count<limits.tooltipSamples&&Date.now()-began<limits.tooltipMs){guard();last=await page.evaluate(dom);count++;
++  while(count<limits.tooltipSamples&&Date.now()-began<limits.tooltipMs){guard();last=await page.evaluate(dom);inspect(last);count++;
+     if(prior&&JSON.stringify(last)===JSON.stringify(prior))return {status:'stable',pair:[prior,last],sampleCount:count,elapsedMs:Date.now()-began};
+     prior=last;if(count<limits.tooltipSamples)await delay(limits.tooltipIntervalMs);}
+   return {status:'tooltip-observation-unresolved',pair:prior?[prior,last]:[],sampleCount:count,elapsedMs:Date.now()-began};
+--- baseline/io.mjs
++++ harness/io.mjs
+@@ -1,11 +1,12 @@
+ import fs from 'node:fs';
+ import {limits} from './contract.mjs';
++import {casePrewrite} from './keyboard-retention.mjs';
+ export const root=process.env.CAPTURE_ROOT;
+ if(!root)throw Error('CAPTURE_ROOT required');
+ export const retained=new Map();
+ function inventory(){let json=0,total=0;for(const n of fs.readdirSync(root)){const p=root+'/'+n;if(!fs.statSync(p).isFile())continue;
+   const b=fs.statSync(p).size;total+=b;if(n.endsWith('.json'))json+=b;}return {json,total};}
+-export function json(name,value){const bytes=Buffer.from(JSON.stringify(value));
++export function json(name,value){if(name==='T06')casePrewrite(value);const bytes=Buffer.from(JSON.stringify(value));
+   if(/^T0[1-8]$/.test(name)&&bytes.length>limits.caseBytes)throw Error('Case JSON bound');
+   const file=root+'/'+name+'.json',old=fs.existsSync(file)?fs.statSync(file).size:0,now=inventory();
+   const reserved=/cleanup|failure|byte-budget|diagnostics/.test(name)?0:32768;
+--- baseline/journey.mjs
++++ harness/journey.mjs
+@@ -5,6 +5,7 @@
+ import {install,acquire,attach,admission,dom} from './projection.mjs';
+ import {settle,observe,coordinate} from './collector.mjs';
+ import {controls} from './controls.mjs';
++import {sample,modeSample,settlement,invocation,entry as boundedEntry,reserveInput,finalTail,controlReceipt} from './keyboard-retention.mjs';
+ const runtime=JSON.parse(fs.readFileSync(root+'/runtime-private.json'));
+ const credential=JSON.parse(fs.readFileSync(root+'/credential-private.json'));
+ const f=fixture(),launch=Date.now(),lifecycle=JSON.parse(fs.readFileSync(root+'/lifecycle-private.json'));
+@@ -17,18 +18,18 @@
+   if(admittedAt&&now-admittedAt>limits.casesMs)throw Error('Case lifecycle bound');
+   if(!admittedAt&&now-lifecycle.launchedAt>limits.startupMs)throw Error('Startup bound');
+   if(current&&(now-current.began>current.timeCap||current.actions>=current.actionCap||Buffer.byteLength(JSON.stringify(current))>limits.caseBytes-16000))throw Error('not-run-budget');}
+-async function input(label,target,method,arg){guard();if(actions>=limits.totalActions||phase==='setup'&&setupActions>=limits.setupActions)throw Error('Action bound');
++async function input(label,target,method,arg){guard();if(current?.id==='T06')reserveInput(current);if(actions>=limits.totalActions||phase==='setup'&&setupActions>=limits.setupActions)throw Error('Action bound');
+   const id=phase+'.a'+String((current?.actions??setupActions)+1).padStart(3,'0');actions++;if(current)current.actions++;else setupActions++;
+   const started=Date.now(),entry={id,label,method,argument:phase==='setup'?null:arg??null,elapsedMs:0,status:'started'};ledger.push(entry);
+   if(current)current.ledger.push(entry);persist();
+   if(ready){entry.eventsFrom=await page.evaluate(id=>{window.__tooltip.action=id;return window.__tooltip.events.length;},id);}
+   try{if(method==='goto')await page.goto(arg,{waitUntil:'domcontentloaded'});else if(method==='move')await page.mouse.move(arg.x,arg.y);
+     else if(method==='key')await page.keyboard.press(arg);else await target[method](...(arg===undefined?[]:[arg]));
+-    entry.status='observed';if(ready){const observed=await page.evaluate(dom);entry.after={active:observed.active,tooltip:observed.tooltip?{visible:observed.tooltip.visible,heading:observed.tooltip.heading,rows:observed.tooltip.rows}:null,liveStatus:observed.liveStatus};entry.eventsTo=await page.evaluate(()=>window.__tooltip.events.length);}else entry.after={setup:true};
++    entry.status='observed';if(ready){const observed=await page.evaluate(dom);entry.after=current?.id==='T06'?sample(observed):{active:observed.active,tooltip:observed.tooltip?{visible:observed.tooltip.visible,heading:observed.tooltip.heading,rows:observed.tooltip.rows}:null,liveStatus:observed.liveStatus};entry.eventsTo=await page.evaluate(()=>window.__tooltip.events.length);}else entry.after={setup:true};
+   }catch(e){entry.status='failed';entry.reason=String(e.message).split('\n')[0].replaceAll(credential.email,'[redacted]').replaceAll(credential.password,'[redacted]');throw e;}
+-  finally{entry.elapsedMs=Date.now()-started;persist();}}
++  finally{entry.elapsedMs=Date.now()-started;if(current?.id==='T06')boundedEntry(entry);persist();}}
+ const ui=()=>controls(page,input,receipt=>{if(!current)throw Error('Case receipt required');
+-  (current.controlReceipts??=[]).push(receipt);persist();});
++  if(current.id==='T06')controlReceipt(receipt);(current.controlReceipts??=[]).push(receipt);persist();});
+ async function screenshot(name){if(shots>=limits.screenshots)throw Error('Screenshot bound');const bytes=await page.screenshot();png(name,bytes);shots++;return name+'.png';}
+ async function probe(ordinal,key,fallback){
+   guard();if(probes>=limits.probes)throw Error('Probe bound');probes++;
+@@ -43,14 +44,18 @@
+   }catch(e){record.status=String(e.message).split(':')[0];record.reason=String(e.message).split('\n')[0];throw e;}}
+ async function keyboard(){for(const mode of current.modes){guard();await ui().mode(mode);await input('Escape popup',null,'key','Escape');await ui().close();
+   const k={mode,status:'seeking',tabs:[],keys:[]};current.keyboard.push(k);let reached=false;
+-  for(let i=0;i<current.tabCap;i++){if(probes>=limits.probes)throw Error('not-run-budget');probes++;const before=await page.evaluate(dom);await input('Tab traversal',null,'key','Tab');const state=await observe(page,guard);k.tabs.push({before,state});
++  const beforeSample=async()=>modeSample(k,await page.evaluate(dom));
++  const observed=async()=>settlement(await observe(page,guard,raw=>modeSample(k,raw)));
++  const reserveProbe=()=>{guard();if(probes>=limits.probes)throw Error('not-run-budget');reserveInput(current);};
++  for(let i=0;i<current.tabCap;i++){const before=await beforeSample();reserveProbe();probes++;
++    await input('Tab traversal',null,'key','Tab');const state=await observed();k.tabs.push(invocation({before,state}));
+     if(state.status!=='stable'){k.terminalImage=await screenshot(current.id+'-'+mode+'-terminal');throw Error(state.status);}
+     if(state.pair.at(-1)?.active?.inSeriesArea){reached=true;break;}}
+   k.status=reached?'reached':'keyboard-unreachable-within-bound';k.initialOrTerminalImage=await screenshot(current.id+'-'+mode+'-'+(reached?'initial':'terminal'));
+   let previousImage=k.initialOrTerminalImage;
+-  if(reached)for(const key of current.sequence){if(probes>=limits.probes)throw Error('not-run-budget');probes++;
+-    const before=await page.evaluate(dom),beforeImage=previousImage;await input('Keyboard '+key,null,'key',key);const after=await observe(page,guard);
+-    const afterImage=await screenshot(current.id+'-'+mode+'-key'+(k.keys.length+1));k.keys.push({key,before,after,beforeImage,afterImage,beforeImageReuse:'Immediately preceding screenshot; no intervening input'});
++  if(reached)for(const key of current.sequence){const before=await beforeSample(),beforeImage=previousImage;reserveProbe();probes++;
++    await input('Keyboard '+key,null,'key',key);const after=await observed();
++    const afterImage=await screenshot(current.id+'-'+mode+'-key'+(k.keys.length+1));k.keys.push(invocation({key,before,after,beforeImage,afterImage,beforeImageReuse:'Immediately preceding screenshot; no intervening input'}));
+     previousImage=afterImage;if(after.status!=='stable')throw Error(after.status);}
+ }}
+ function dashboard(){const widget={id:'synthetic_financials',widgetId:'synthetic_financials',name:'Synthetic Financials',type:'table',widgetType:'single',connectionType:'single',external:true,
+@@ -118,8 +123,9 @@
+       const remainingStatus=current.status==='not-run-budget'?'not-run-budget':'not-run-dependent';
+       current.remainingProbes=(item.probes??[]).slice(current.probes.length).map(target=>({target,status:remainingStatus,reason:'Affected case closed after '+current.reason}));
+       if(item.keyboard)current.remainingModes=item.modes.slice(current.keyboard.length).map(mode=>({mode,status:remainingStatus}));}
+-    current.events=await page.evaluate(()=>{if(window.__tooltip.overflow)throw Error('Event bound');return window.__tooltip.events;});
+-    current.elapsedMs=Date.now()-current.began;json(current.id,current);results.push({id:current.id,status:current.status,actions:current.actions,probes:current.probes.length});current=null;
++    const events=await page.evaluate(()=>{if(window.__tooltip.overflow)throw Error('Event bound');return window.__tooltip.events;});
++    const tail={events,elapsedMs:Date.now()-current.began};if(current.id==='T06')finalTail(tail.events,tail.elapsedMs);
++    Object.assign(current,tail);json(current.id,current);results.push({id:current.id,status:current.status,actions:current.actions,probes:current.probes.length});current=null;
+   }
+   json('summary',{status:'bounded-original-capture',source,image,fixtureHash,candidateExecuted:false,results,actions,setupActions,probes,shots,elapsedMs:Date.now()-launch,browserVersion:browser.version(),limits});
+ }catch(e){process.exitCode=1;const reason=String(e.message).split('\n')[0].replaceAll(credential.email,'[redacted]').replaceAll(credential.password,'[redacted]');
+--- /dev/null
++++ harness/keyboard-retention.mjs
+@@ -0,0 +1,51 @@
++import {limits} from './contract.mjs';
++
++export const bytes=value=>Buffer.byteLength(JSON.stringify(value));
++export const retention=Object.freeze({sampleBytes:4096,baselineBytes:2048,entryBytes:6144,
++  invocationBytes:14336,inputReserve:32768,caseGuard:115072,tailReserve:16000});
++const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
++function fail(reason){throw Error('keyboard-retention-unresolved: '+reason);}
++function text(value,max){if(typeof value!=='string'||value.length>max)fail('text cap');return value;}
++function finite(value){if(typeof value!=='number'||!Number.isFinite(value)||Math.abs(value)>1e9)fail('finite number cap');return value;}
++function nullableText(value,max){return value===null?null:text(value,max);}
++function bool(value){if(typeof value!=='boolean')fail('boolean');return value;}
++function bounded(value,max,label){if(bytes(value)>max)fail(label+' bytes');return value;}
++function rect(value){if(value===null)return null;return Object.fromEntries(['x','y','width','height'].map(k=>[k,finite(value?.[k])]));}
++function active(value){if(value===null)return null;return {tag:text(value?.tag,64),role:nullableText(value.role,128),name:text(value.name,512),
++  tabindex:nullableText(value.tabindex,32),id:nullableText(value.id,256),focusVisible:bool(value.focusVisible),rect:rect(value.rect),inSeriesArea:bool(value.inSeriesArea)};}
++function array(value,max,project){if(!Array.isArray(value)||value.length>max)fail('array cap');return value.map(project);}
++function tooltip(value){if(value===null||value?.visible===false)return {visible:false};
++  if(value?.visible!==true)fail('tooltip visibility');
++  return {visible:true,heading:array(value.heading,1,v=>text(v,512)),
++    rows:array(value.rows,3,row=>({label:text(row.label,512),value:text(row.value,512)})),
++    compact:array(value.compact,4,v=>text(v,512)),pagination:bool(value.pagination)};}
++export function sample(raw){return bounded({active:active(raw.active),tooltip:tooltip(raw.tooltip),liveStatus:text(raw.liveStatus,2048)},retention.sampleBytes,'sample');}
++export function modeSample(mode,raw){
++  const baseline=bounded({area:active(raw.area),swapchain:array(raw.swapchain,2,active)},retention.baselineBytes,'baseline');
++  if(mode.baseline===undefined)mode.baseline=baseline;
++  else if(!same(mode.baseline,baseline))fail('area/swapchain baseline changed');
++  return sample(raw);
++}
++export function settlement(raw){
++  if(raw.status==='stable'&&(raw.pair?.length!==2||!same(raw.pair[0],raw.pair[1])))fail('full DOM pair unequal');
++  return {status:text(raw.status,64),pair:array(raw.pair,2,sample),sampleCount:finite(raw.sampleCount),elapsedMs:finite(raw.elapsedMs)};
++}
++export function invocation(value){return bounded(value,retention.invocationBytes,'invocation');}
++export function entry(value){return bounded(value,retention.entryBytes,'entry');}
++export function controlReceipt(value){return bounded(value,1024,'control receipt');}
++export function finalTail(events,elapsedMs){return bounded({events,elapsedMs:finite(elapsedMs)},retention.tailReserve,'final tail');}
++export function reserveInput(current){
++  // Reserve before counters or emitted input; large unseen states stop rather than borrow later capacity.
++  if(current.id!=='T06')return;
++  if(bytes(current)+retention.inputReserve>retention.caseGuard)throw Error('not-run-budget');
++}
++export function casePrewrite(current){
++  if(current.id!=='T06')return;
++  if(limits.caseBytes!==retention.caseGuard+retention.tailReserve)fail('case bound changed');
++  if(bytes(current)>limits.caseBytes)throw Error('Case JSON bound');
++  for(const item of current.ledger??[])entry(item);
++  for(const mode of current.keyboard??[]){
++    if(mode.baseline)bounded(mode.baseline,retention.baselineBytes,'baseline');
++    for(const item of [...(mode.tabs??[]),...(mode.keys??[])])invocation(item);
++  }
++}

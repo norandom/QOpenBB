@@ -1,0 +1,444 @@
+{
+  "scope": "Offline source-only proposal checks; no runtime acceptance",
+  "command": "node artifacts/ui-parity-tooltip-segment-keyboard/verify.mjs",
+  "exitCode": 0,
+  "checks": 108,
+  "retainedPointerProbes": 24,
+  "retainedTabs": 27,
+  "projectedHistoricalBytes": 41342,
+  "runtimeExecuted": false,
+  "results": [
+    {
+      "name": "exact twelve executed baseline files",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline fixture.json",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline io.mjs",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline run.sh",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline start.mjs",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "immutable executed baseline verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax io.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax start.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "syntax verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "contract byte-identical",
+      "passed": true
+    },
+    {
+      "name": "fixture byte-identical",
+      "passed": true
+    },
+    {
+      "name": "fixture frozen semantic identity",
+      "passed": true
+    },
+    {
+      "name": "bounds unchanged",
+      "passed": true
+    },
+    {
+      "name": "T01.p1 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T01.p1 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T01.p2 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T01.p2 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T01.p3 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T01.p3 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T02.p4 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T02.p4 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T02.p5 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T02.p5 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T02.p6 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T02.p6 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T03.p7 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T03.p7 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T03.p8 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T03.p8 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T04.p9 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T04.p9 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T04.p10 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T04.p10 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T04.p11 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T04.p11 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T04.p12 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T04.p12 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p13 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p13 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p14 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p14 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p15 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p15 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p16 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p16 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p17 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05.p17 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T05 zero delta, unexplained",
+      "passed": true
+    },
+    {
+      "name": "T07.p46 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T07.p46 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T07.p47 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T07.p47 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T07.p48 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T07.p48 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T07.p49 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T07.p49 grouped/line unchanged",
+      "passed": true
+    },
+    {
+      "name": "T08.p50 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T08.p51 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T08.p52 target identity unchanged",
+      "passed": true
+    },
+    {
+      "name": "T08 midpoint shift",
+      "passed": true
+    },
+    {
+      "name": "invalid midpoint undefined",
+      "passed": true
+    },
+    {
+      "name": "invalid midpoint NaN",
+      "passed": true
+    },
+    {
+      "name": "invalid midpoint Infinity",
+      "passed": true
+    },
+    {
+      "name": "invalid midpoint 132.49375",
+      "passed": true
+    },
+    {
+      "name": "midpoint outside existing bounds",
+      "passed": true
+    },
+    {
+      "name": "named chain guard retained",
+      "passed": true
+    },
+    {
+      "name": "missing ordinal stops",
+      "passed": true
+    },
+    {
+      "name": "all 24 retained pointer probes",
+      "passed": true
+    },
+    {
+      "name": "27 retained Tab states fit finite caps",
+      "passed": true
+    },
+    {
+      "name": "baseline retained once",
+      "passed": true
+    },
+    {
+      "name": "unchanged baseline accepted",
+      "passed": true
+    },
+    {
+      "name": "baseline change stops",
+      "passed": true
+    },
+    {
+      "name": "hidden stale tooltip omitted",
+      "passed": true
+    },
+    {
+      "name": "full visible content retained",
+      "passed": true
+    },
+    {
+      "name": "projection equality cannot replace full equality",
+      "passed": true
+    },
+    {
+      "name": "unseen focus text stops",
+      "passed": true
+    },
+    {
+      "name": "legal individual strings exceeding sample bytes stop",
+      "passed": true
+    },
+    {
+      "name": "nonfinite DOM coordinate stops",
+      "passed": true
+    },
+    {
+      "name": "oversized prospective tail stops",
+      "passed": true
+    },
+    {
+      "name": "oversized control receipt stops",
+      "passed": true
+    },
+    {
+      "name": "unseen fourth visible row stops",
+      "passed": true
+    },
+    {
+      "name": "reservation covers bounded next invocation entry baseline receipts scaffolding",
+      "passed": true
+    },
+    {
+      "name": "prospective budget stops before write",
+      "passed": true
+    },
+    {
+      "name": "actual input function rejects before action counter",
+      "passed": true
+    },
+    {
+      "name": "input counters and ledger preserved",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard rejects before probe counter",
+      "passed": true
+    },
+    {
+      "name": "probe counter preserved",
+      "passed": true
+    },
+    {
+      "name": "inspect every full DOM sample before equality",
+      "passed": true
+    },
+    {
+      "name": "prewrite over hard ceiling rejected",
+      "passed": true
+    },
+    {
+      "name": "failed prewrite preserves prior bytes",
+      "passed": true
+    },
+    {
+      "name": "prewrite oversized ledger rejected",
+      "passed": true
+    },
+    {
+      "name": "ledger bound preserves prior bytes",
+      "passed": true
+    },
+    {
+      "name": "legacy runtime lifecycle unchanged",
+      "passed": true
+    }
+  ]
+}

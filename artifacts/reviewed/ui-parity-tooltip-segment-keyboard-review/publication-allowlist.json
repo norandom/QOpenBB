@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "Rejected collector proposal review; publication of review evidence only; no runtime grant",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-review/audit.mjs",
+      "sha256": "80438f5c44c5317916bb887308b74ace7de774138c1ae21db56116cba2c592f1",
+      "bytes": 14091,
+      "sanitization": "None; independent source/offline review and synthetic checks only"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-review/read-only-verifier.mjs",
+      "sha256": "7465aa142d7ac1ae4be6faf0907d4cea8afea784cbbe507dedeb8913be2b6dad",
+      "bytes": 1622,
+      "sanitization": "None; independent source/offline review and synthetic checks only"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-review/review.md",
+      "sha256": "86f8299e28f9abfec3cfbfa51f025307765706025c17b546de4b193844f45519",
+      "bytes": 11277,
+      "sanitization": "None; independent source/offline review and synthetic checks only"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-review/verification.json",
+      "sha256": "02cd46a49e108c0454ccd47de800e53d5bd618f93403d7698d4f3c040cb7401d",
+      "bytes": 40835,
+      "sanitization": "None; independent source/offline review and synthetic checks only"
+    }
+  ],
+  "omissions": [
+    "Publication allowlist copied separately as metadata; no self-hash.",
+    "No runtime logs, credentials, private state, dependencies, images, or temporary IO files."
+  ]
+}
