@@ -1,0 +1,12 @@
+file://[workspace]/artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/network.mjs:13
+  if(!Array.isArray(ports)||ports.length!==1||ports[0].HostIp!=='127.0.0.1'||!/^\d+$/.test(ports[0].HostPort))throw Error('network-isolation-unresolved: loopback publication');
+                                                                                                                    ^
+
+Error: network-isolation-unresolved: loopback publication
+    at containerNetworkGuard (file://[workspace]/artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/network.mjs:13:117)
+    at file://[workspace]/artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/start.mjs:32:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.22.0

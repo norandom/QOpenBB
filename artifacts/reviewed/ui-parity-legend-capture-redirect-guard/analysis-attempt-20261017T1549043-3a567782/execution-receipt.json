@@ -1,0 +1,71 @@
+{
+  "attempt": "attempt-20261017T1549043-3a567782",
+  "outcome": "startup-admission-unresolved",
+  "reason": "network-isolation-unresolved: loopback publication",
+  "originalSource": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "candidateExecuted": false,
+  "providerChecksExecuted": false,
+  "browserJourneyLaunched": false,
+  "originalContainerCreated": true,
+  "rawStatuses": {
+    "start": {
+      "exitCode": 1
+    },
+    "cleanup": {
+      "exitCode": 1
+    },
+    "run": {
+      "exitCode": 1,
+      "status": "cleanup-unverified",
+      "cleanupVerified": false,
+      "eventAccountingVerified": false,
+      "candidateExecuted": false
+    },
+    "watchdog": {
+      "exitCode": 1,
+      "inputStopSeconds": 2100,
+      "cleanupSeconds": 120,
+      "hardSeconds": 2220
+    }
+  },
+  "counters": {
+    "chartActions": 0,
+    "fieldMutations": 0,
+    "events": 0,
+    "observations": 0,
+    "pngs": 0,
+    "basis": "Derived from the source startup exit gate; no journey counter receipt exists"
+  },
+  "sourceManifest": {
+    "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/source-manifest.json",
+    "sha256": "9ba3ebf7976b2fc8f0a027fd2823c93365cba5e297de5d988311da7c405f4531",
+    "bytes": 5843
+  },
+  "preparedSourceProof": {
+    "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/prepared-source-verification.json",
+    "sha256": "42fcc41d247c65c9dded5e9e38ba1b3410e81021f7de8213fba1231512aaa68c",
+    "bytes": 451
+  },
+  "loopbackShape": {
+    "networkSettingsPorts3000Tcp": {
+      "status": "unobserved"
+    },
+    "hostConfigPortBindings3000Tcp": {
+      "status": "unobserved"
+    },
+    "reason": "The guard threw before inspect values were retained; container was removed. No recreation or probe performed."
+  },
+  "admittedOriginalOrigin": null,
+  "health": null,
+  "cleanupInterpretation": "Raw status remains cleanup-unverified because no browser PID identity was recorded before startup failed. Fresh read-only evidence separately verifies absence of created container/network/state/credential/startup process.",
+  "launch": {
+    "hidden": true,
+    "distro": "Debian",
+    "user": "mc",
+    "command": "LEGEND_HEAVY_GRANTED=controller-granted bash artifacts/ui-parity-legend-capture-redirect-guard/supervise.sh /mnt/d/Source/QOpenBB/artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782",
+    "windowsLauncherPid": 13504
+  },
+  "elapsedToWatchdogReceiptMs": 5040,
+  "noRetry": true
+}

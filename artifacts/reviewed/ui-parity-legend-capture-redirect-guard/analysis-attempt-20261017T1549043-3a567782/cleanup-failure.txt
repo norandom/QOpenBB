@@ -1,0 +1,11 @@
+file://[workspace]/artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/cleanup.mjs:34
+if(!containerAbsent||!stateAbsent||!networkAbsent||!browserProof.browserProcessAbsent||browserError||!credentialAbsent||remainingOwnedState.length)throw Error('Cleanup incomplete');
+                                                                                                                                                         ^
+
+Error: Cleanup incomplete
+    at file://[workspace]/artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/cleanup.mjs:34:154
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.22.0

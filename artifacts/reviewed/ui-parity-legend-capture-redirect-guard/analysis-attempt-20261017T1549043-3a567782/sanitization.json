@@ -1,0 +1,38 @@
+{
+  "derivatives": [
+    {
+      "source": {
+        "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/start.log",
+        "sha256": "67698f1a28d7fc2cb2f0a7de556fe398ccba6dfc2da24cf5a54c5828f325175c",
+        "bytes": 1027
+      },
+      "published": {
+        "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/analysis-attempt-20261017T1549043-3a567782/start-failure.txt",
+        "sha256": "16cd6a2bc9a325229d85405b9717f3b2aa1d2ab13108741c2e8f2320e08de24b",
+        "bytes": 997
+      },
+      "sanitization": "Owned absolute workspace/attempt paths replaced; diagnostic text otherwise retained",
+      "originalHashClaimedForDerivative": false
+    },
+    {
+      "source": {
+        "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/cleanup.log",
+        "sha256": "898a25efdca204abc52e7fcb61f6b07d8053130e0641e00ee5d48d51ba9e9aa1",
+        "bytes": 869
+      },
+      "published": {
+        "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/analysis-attempt-20261017T1549043-3a567782/cleanup-failure.txt",
+        "sha256": "4e5327c8143836bcefd078af06f25567d6ef9a8944a9d6ca67cbce03ef27c09b",
+        "bytes": 849
+      },
+      "sanitization": "Owned absolute workspace/attempt paths replaced; diagnostic text otherwise retained",
+      "originalHashClaimedForDerivative": false
+    }
+  ],
+  "omitted": [
+    "runtime-private.json",
+    "all raw .log files",
+    "any state/credential/profile/environment/archive/cache data"
+  ],
+  "generatedCredentialsPublished": false
+}

@@ -1,0 +1,199 @@
+{
+  "scope": "Fresh scan of completed actual attempt after watchdog receipt; includes physical bytes of omitted files",
+  "files": 38,
+  "bytes": 83588,
+  "publicEligible": [
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/cleanup-report.json",
+      "sha256": "12641febee4b557aef9659614d9deb91db482f2df87768ba2a709dba83c05111",
+      "bytes": 271
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/cleanup-status.json",
+      "sha256": "d67659d29dad50e65ac903e33dc7ef4a692331d96253553956300d1fcfa5786a",
+      "bytes": 14
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/final-output-inventory.json",
+      "sha256": "96db1ed6cc31c74da9a7fdfb3570c8f975f1410b2ea06dc5ba562f94358f7b23",
+      "bytes": 1363
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/browser-process.mjs",
+      "sha256": "20ee3f7e83704bdf94349456d67b39db9b95ad09ea3c603dc291164cbf8d8145",
+      "bytes": 1810
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/cases.mjs",
+      "sha256": "11d0af588c03ff183aa359085f24bdff3933c21d3aa63365ab0cd3d3384148d5",
+      "bytes": 3842
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/cleanup.mjs",
+      "sha256": "3ae57b16ae4f94f14ebd613a83e8165eae67a6624b6cfbfb168df5e32aaa351d",
+      "bytes": 3209
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/controls.mjs",
+      "sha256": "bdc21f1d2631380d7e15c3b9a3d45ff8487973acf60956a66eef6837fdcb942a",
+      "bytes": 2529
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/event-drain.mjs",
+      "sha256": "079aae1138d0497aa2913d753dc422f6223bc4d0fcea8b9d5344343bed56b697",
+      "bytes": 732
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/events.mjs",
+      "sha256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752",
+      "bytes": 1118
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/final-status.mjs",
+      "sha256": "b64430456ef8a8631cd4c2c5b3b7dacbda2d08223273402cd3a26e3df7179df1",
+      "bytes": 724
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/finalize.mjs",
+      "sha256": "29fa8e988e56f6bb4d399bbcb8864186370b7de9b936fd8a0252b76267372413",
+      "bytes": 1103
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/geometry.mjs",
+      "sha256": "cb2bf483bf92d4f2fd7239b61252b7adf3c2eb7e8fb62e7c2315bf3511a5cd02",
+      "bytes": 2198
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/guards.mjs",
+      "sha256": "7194a715c1b4b2076026964020c6d9402538f9fb0abb806311baa30e9c529416",
+      "bytes": 2662
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/io.mjs",
+      "sha256": "56dff7838bef0f2fb69105a9ed404d0c7ad1d13d7d4865d9622258007d82e0b5",
+      "bytes": 4928
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/journey.mjs",
+      "sha256": "758f963fd12719753e908577f43761bfff5bef36141480d39a4bbecd6d75ac35",
+      "bytes": 17363
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/limits.mjs",
+      "sha256": "cedba8cbd09d3e4e4d9778ae471eb4c5a54fd29697f47db711b8e4c961f73aac",
+      "bytes": 844
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/network.mjs",
+      "sha256": "fdcc198a917f198ed56963286f2297d29d59c8abde6a9622662570c8cdac80a2",
+      "bytes": 1802
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/projection.mjs",
+      "sha256": "db33988d792d17f266a082773dfb969617a49336d39f557d98311703d541e343",
+      "bytes": 13870
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/routes.mjs",
+      "sha256": "a0728ad2d895419e4a703aee004149b0774349b34724c734865ba64f0c9900b0",
+      "bytes": 2439
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/run.sh",
+      "sha256": "b90955f5a99460d89b37e49a1b3184f35627512cf294ce23cfacf6e1932a4525",
+      "bytes": 1687
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/settlement.mjs",
+      "sha256": "86537e797076cfe32232c5ec6da1415ca9eab0073ee74cb6c1a0d9707a7058d1",
+      "bytes": 2028
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/start.mjs",
+      "sha256": "53c100fff1c114f2b4db00979df67f9b09984aeced6cfb6955fce06e266e81f0",
+      "bytes": 3575
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/harness/status.mjs",
+      "sha256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17",
+      "bytes": 246
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/launch.json",
+      "sha256": "3c4c352c7a188512fbce317242ee0f694ffea70b93b87508f97db5f3394042bf",
+      "bytes": 429
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/preparation.json",
+      "sha256": "1fb65422ca162c3cdb58ddfb01c9b9ad59767e14cd5dc110d2dc4de53a03c3e8",
+      "bytes": 154
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/prepared-source-verification.json",
+      "sha256": "42fcc41d247c65c9dded5e9e38ba1b3410e81021f7de8213fba1231512aaa68c",
+      "bytes": 451
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/run-status.json",
+      "sha256": "fff644d5b28cbf69079b1cab764ed636208d100c259ae4c79366ead2f8d37ba6",
+      "bytes": 126
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/source-manifest.json",
+      "sha256": "9ba3ebf7976b2fc8f0a027fd2823c93365cba5e297de5d988311da7c405f4531",
+      "bytes": 5843
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/start-status.json",
+      "sha256": "d67659d29dad50e65ac903e33dc7ef4a692331d96253553956300d1fcfa5786a",
+      "bytes": 14
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/attempt-20261017T1549043-3a567782/watchdog-status.json",
+      "sha256": "d44ed8c3c8fc08cd923e80c5b4482145e959edc819f0fb79e77fdd2248578f32",
+      "bytes": 79
+    }
+  ],
+  "omitted": [
+    {
+      "path": "cleanup.log",
+      "bytes": 869,
+      "reason": "Raw private receipt or log; no contents selected"
+    },
+    {
+      "path": "finalize.log",
+      "bytes": 1405,
+      "reason": "Raw private receipt or log; no contents selected"
+    },
+    {
+      "path": "launcher-error.log",
+      "bytes": 0,
+      "reason": "Raw private receipt or log; no contents selected"
+    },
+    {
+      "path": "launcher.log",
+      "bytes": 0,
+      "reason": "Raw private receipt or log; no contents selected"
+    },
+    {
+      "path": "runtime-private.json",
+      "bytes": 647,
+      "reason": "Raw private receipt or log; no contents selected"
+    },
+    {
+      "path": "start.log",
+      "bytes": 1027,
+      "reason": "Raw private receipt or log; no contents selected"
+    },
+    {
+      "path": "watchdog.log",
+      "bytes": 0,
+      "reason": "Raw private receipt or log; no contents selected"
+    }
+  ]
+}
