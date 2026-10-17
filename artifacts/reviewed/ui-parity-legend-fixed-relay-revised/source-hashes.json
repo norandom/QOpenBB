@@ -1,0 +1,165 @@
+{
+  "status": "source-only-frozen",
+  "runtimeExecuted": false,
+  "sourceFiles": [
+    {
+      "path": "harness/admission.mjs",
+      "bytes": 12525,
+      "sha256": "b4b065926be52262f31ea5dbdbec3a9d255c204a25337f9d46054f68513b00d8"
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "bytes": 6345,
+      "sha256": "dfb81350c2a1debac4e8cb20737644fab64b6c48eac14dcf74a67219a120c34d"
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "bytes": 1397,
+      "sha256": "70c7664d50961b0c3dffc05446701dedb67f94fb816bab6a51ded94ef97820ed"
+    },
+    {
+      "path": "harness/io.mjs",
+      "bytes": 3757,
+      "sha256": "f3b391edc2cc4f60824c103b7b7cab28307f221f8fc7305dc88c41ccae195e53"
+    },
+    {
+      "path": "harness/probe.mjs",
+      "bytes": 6926,
+      "sha256": "61876a25cde310de35ea08947a25f413558c50170e6ba05e32b228a89458e1f2"
+    },
+    {
+      "path": "harness/relay.py",
+      "bytes": 10711,
+      "sha256": "ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf"
+    },
+    {
+      "path": "harness/run.sh",
+      "bytes": 998,
+      "sha256": "70aee6793937afaf5323985e5000de4eed6095a895107de562ad922d832b4aae"
+    },
+    {
+      "path": "supervise.sh",
+      "bytes": 1053,
+      "sha256": "60bd9e3a2d44e3fbfeaf98cb06088621a331820b8159f2f7b80b55e51fe9ad80"
+    },
+    {
+      "path": "probe-contract.json",
+      "bytes": 2184,
+      "sha256": "42f8eed6a799ed26877a3f6832768faf00546bed266bcee74d351f4afdbada69"
+    },
+    {
+      "path": "handoff.md",
+      "bytes": 8613,
+      "sha256": "a10073966fcab56ac344e75d52bca19cb667aa53475809b751f0efae645caa01"
+    },
+    {
+      "path": "prepare-run.mjs",
+      "bytes": 1882,
+      "sha256": "3dd052d982a57cef4802f0fe9734db17ac8e9c81ff15f93344a7f755720753ee"
+    },
+    {
+      "path": "verify-offline.mjs",
+      "bytes": 21240,
+      "sha256": "11849fdfd3732c3b0d1e5f858ed63676a6b2ddef223b55147a0fdd6c0190de65"
+    },
+    {
+      "path": "test-relay.py",
+      "bytes": 14046,
+      "sha256": "e05cbfce89628773dc853fd0f5634079cad5fecf2db66a5d9a18fbee6c2c7144"
+    },
+    {
+      "path": "freeze.mjs",
+      "bytes": 5337,
+      "sha256": "ba0dc635f0115efbfbd2e51d6bf962fcea4d615832acbd0eed22917ba6727caf"
+    },
+    {
+      "path": "offline-verification.json",
+      "bytes": 4067,
+      "sha256": "eec3af6dc1fe5f353cd3202ec841afa7f9222aa17b09d8a3860840f02c2a4daa"
+    },
+    {
+      "path": "relay-source-diff.patch",
+      "bytes": 21337,
+      "sha256": "1dd0e460cab78ca65d2187dee29b24ee5d9c9f6c400c1dd0570fec7806da9b50"
+    },
+    {
+      "path": "harness-manifest.json",
+      "bytes": 3755,
+      "sha256": "dcb25a5a5bcadf2d5628b0f2ebd2077586c7bde325a063b4eb5bf72f266b8700"
+    }
+  ],
+  "sourceInputs": [
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan/plan.md",
+      "bytes": 8036,
+      "sha256": "1c9a0e527acb77b808aab703df19ef8f6f8eacb1ed325987e51a5ea071703e65"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan-review/review.md",
+      "bytes": 7276,
+      "sha256": "4a9c0a7641cad6e62d1fc4b30bdf1a07109ea60030885af7e26f65e1188c8887"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan/probe-contract.json",
+      "bytes": 2184,
+      "sha256": "42f8eed6a799ed26877a3f6832768faf00546bed266bcee74d351f4afdbada69"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan/runtime-evaluation.json",
+      "bytes": 1107,
+      "sha256": "d762ec49e489a94676e05c3c5a81e14669299b8b0366156be59b6a34b6bf2988"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-internal-network-source-diagnosis/report.md",
+      "bytes": 8337,
+      "sha256": "452683d6236946992b34584a3ab1844e8f192e5ab0ab53b93962042d6ed77e62"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-internal-network-source-review/review.md",
+      "bytes": 7927,
+      "sha256": "a9f37f7f33026b6b996b7cc91526a87f478423e30b20e7f13a9c54b98e7bf1cf"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-review/review.md",
+      "bytes": 9149,
+      "sha256": "2efb3ec27ed9f01f38796637f8b2c10648ae92232b4eeff6e45b7dd79ed9511f"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-review/counterexamples.mjs",
+      "bytes": 2718,
+      "sha256": "14d87b4ad1060a9305b2204e135598be605cb798230e0a71d05591105793785c"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-review/counterexample.py",
+      "bytes": 1790,
+      "sha256": "82ec414fa99c46249d39fab487d340ce539179f32f5b9f7c481e23db7f0c8666"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay/harness-manifest.json",
+      "bytes": 3758,
+      "sha256": "2f8caf154955b8bd429f01d9507c8248a35d40a607ac11d8e5a0171dd88a0864"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay/source-hashes.json",
+      "bytes": 5563,
+      "sha256": "dc254dd794854bf8ad122f66cfb982998fe1ec1f48887f24af9a1c4aea4190d3"
+    }
+  ],
+  "gitSources": [
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "lite/Dockerfile",
+      "sha256": "a7ab87b3582abc0e3346f3ec44e3f1f17f2ed86f6a40a5e43b2378d095e13d60",
+      "bytes": 10120
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "lite/supervisord.conf",
+      "sha256": "889cc348a47d5cc34c709cb35b02a09d5e0b6325cce26ffc32641fd23075514d",
+      "bytes": 919
+    }
+  ],
+  "scope": "Only the new revised relay source folder; research excluded from production caps; future maintained400/300/50"
+}

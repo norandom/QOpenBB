@@ -1,0 +1,213 @@
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay/harness/admission.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revised/harness/admission.mjs"
+index 249a104..c1669b9 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay/harness/admission.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revised/harness/admission.mjs"
+@@ -6,13 +6,37 @@ export function fail(reason){const error=Error(reason);error.probeReason=reason;
+ export function safeFailure(error,stage){return {outcome:'probe-unresolved',stage,reason:error?.probeReason??'unexpected-probe-error',exitCode:Number.isInteger(error?.status)?error.status:null};}
+ export function command(docker,stage,args,timeout){try{return docker(args,timeout);}catch(error){const safe=Error('docker-command-failed');safe.probeReason='docker-command-failed';safe.status=Number.isInteger(error?.status)?error.status:null;safe.stage=stage;throw safe;}}
+ const own=(object,key)=>object!=null&&Object.hasOwn(object,key);
++export function selected(object,key){
++  const present=own(object,key),value=present?object[key]:undefined,type=value===null?'null':Array.isArray(value)?'array':typeof value;
++  const receipt={present,kind:!present?'absent':value===undefined?'undefined':value===null?'null':'value',type:present?type:'absent'};
++  if(!present||value===undefined||value===null)return receipt;
++  if(typeof value==='boolean'||typeof value==='number'&&Number.isFinite(value)||typeof value==='string'&&value.length<=128)return {...receipt,value};
++  return {...receipt,unsupported:true,...(typeof value==='string'||Array.isArray(value)?{length:value.length}:{})};
++}
++function selectedList(object,key,limit=8){
++  const receipt=selected(object,key),value=object?.[key];
++  if(!Array.isArray(value)||value.length>limit)return receipt;
++  return {...receipt,unsupported:false,entries:value.map((_,index)=>selected(value,index))};
++}
++function relayOperands(raw,runtime){
++  const host=raw?.HostConfig,config=raw?.Config,mounts=raw?.Mounts;
++  const sources={'/relay/relay.py':runtime.relaySourcePath,'/relay/config.json':runtime.configPath,'/evidence/relay-stats.json':runtime.statsPath};
++  return {ReadonlyRootfs:selected(host,'ReadonlyRootfs'),User:selected(config,'User'),CapDrop:selectedList(host,'CapDrop'),SecurityOpt:selectedList(host,'SecurityOpt'),
++    Sysctls:{presence:selected(host,'Sysctls'),ipv4Forwarding:selected(host?.Sysctls,'net.ipv4.ip_forward'),ipv6Forwarding:selected(host?.Sysctls,'net.ipv6.conf.all.forwarding'),keyCount:Object.keys(host?.Sysctls??{}).length},
++    Healthcheck:{presence:selected(config,'Healthcheck'),Test:selectedList(config?.Healthcheck,'Test')},Entrypoint:selectedList(config,'Entrypoint'),Cmd:selectedList(config,'Cmd'),
++    Mounts:{...selected(raw,'Mounts'),...(Array.isArray(mounts)&&mounts.length<=8?{entries:mounts.map(mount=>({Destination:selected(mount,'Destination'),Type:selected(mount,'Type'),RW:selected(mount,'RW'),
++      Source:{present:own(mount,'Source'),type:typeof mount?.Source,ownedPathMatched:own(sources,mount?.Destination)&&mount?.Source===sources[mount.Destination]}}))}:{})},
++    Tmpfs:{presence:selected(host,'Tmpfs'),data:selected(host?.Tmpfs,'/data')}};
++}
+ function scalar(value){return typeof value==='boolean'||typeof value==='number'&&Number.isFinite(value)||typeof value==='string'&&value.length<=128?value:null;}
+ function ports(value,target){const entries=value?.[target];return {parentSupported:value!==null&&typeof value==='object'&&!Array.isArray(value),own:own(value,target),kind:entries===undefined?'absent':entries===null?'null':Array.isArray(entries)?'array':'unsupported',
+   count:Array.isArray(entries)?entries.length:null,entries:Array.isArray(entries)&&entries.length<=4?entries.map(entry=>({HostIp:scalar(entry?.HostIp),HostPort:scalar(entry?.HostPort)})):[],
+   otherPublication:Object.entries(value??{}).some(([key,list])=>key!==target&&list!==null&&(!Array.isArray(list)||list.length!==0)),parentKeys:Object.keys(value??{}).length};}
+ export function networkProjection(raw,runtime,kind){return {idMatched:raw?.Id===runtime[kind+'NetworkId'],nameMatched:raw?.Name===runtime.name+'-'+kind,
+-  labelMatched:raw?.Labels?.[ownerLabel]===runtime.ownership,driverBridge:raw?.Driver==='bridge',internalMatched:raw?.Internal===(kind==='internal'),ipv6Disabled:raw?.EnableIPv6===false};}
++  labelMatched:raw?.Labels?.[ownerLabel]===runtime.ownership,driverBridge:raw?.Driver==='bridge',internalMatched:raw?.Internal===(kind==='internal'),ipv6Disabled:raw?.EnableIPv6===false,
++  selected:{Driver:selected(raw,'Driver'),Internal:selected(raw,'Internal'),EnableIPv6:selected(raw,'EnableIPv6')}};}
+ export const allTrue=record=>Object.values(record).every(value=>value===true);
++export const networkValid=({selected:operands,...checks})=>allTrue(checks);
+ export function projectContainer(raw,runtime,kind){
+   const settings=raw?.NetworkSettings,networks=settings?.Networks??{},host=raw?.HostConfig??{},expected=kind==='app'?['internal']:['internal','ingress'];
+   const internal=networks[runtime.name+'-internal'],target=kind==='app'?'3000/tcp':'3100/tcp';
+@@ -30,7 +54,7 @@ export function projectContainer(raw,runtime,kind){
+       ['/relay/relay.py',runtime.relaySourcePath,false,'bind'],['/relay/config.json',runtime.configPath,false,'bind'],['/evidence/relay-stats.json',runtime.statsPath,true,'bind'],['/data',null,true,'tmpfs']
+     ].every(([destination,sourcePath,rw,type])=>raw.Mounts.some(mount=>mount.Destination===destination&&mount.Type===type&&mount.RW===rw&&(sourcePath===null||mount.Source===sourcePath))),
+     boundedTmpfs:host.Tmpfs?.['/data']==='rw,nosuid,nodev,size=1048576'});
+-  return {kind,security,configured:ports(host.PortBindings,target),runtime:ports(settings?.Ports,target),
++  return {kind,security,selected:{Privileged:selected(host,'Privileged'),PublishAllPorts:selected(host,'PublishAllPorts'),NetworkMode:selected(host,'NetworkMode'),RestartPolicy:{presence:selected(host,'RestartPolicy'),Name:selected(host.RestartPolicy,'Name')},...(relay?relayOperands(raw,runtime):{})},configured:ports(host.PortBindings,target),runtime:ports(settings?.Ports,target),
+     noConfiguredPublications:host.PortBindings!=null&&typeof host.PortBindings==='object'&&!Array.isArray(host.PortBindings)&&Object.keys(host.PortBindings).length<=8&&Object.values(host.PortBindings).every(list=>Array.isArray(list)&&list.length===0),
+     noRuntimePublications:settings?.Ports!=null&&typeof settings.Ports==='object'&&!Array.isArray(settings.Ports)&&Object.keys(settings.Ports).length<=8&&Object.values(settings.Ports).every(list=>list===null||Array.isArray(list)&&list.length===0),
+     internalIPv4:typeof internal?.IPAddress==='string'&&internal.IPAddress.length<=15?internal.IPAddress:null,
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay/harness/cleanup.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revised/harness/cleanup.mjs"
+index d93f6c4..ceae73a 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay/harness/cleanup.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revised/harness/cleanup.mjs"
+@@ -16,27 +16,41 @@ export function assertResource(actual,runtime,kind,container){
+   if(!/^[a-f0-9]{64}$/.test(actual?.Id??'')||(actual.Name??'').replace(/^\//,'')!==name||id&&actual.Id!==id||(container?actual.Config?.Labels:actual.Labels)?.[ownerLabel]!==runtime.ownership)fail('cleanup-resource-identity-unresolved');
+ }
+ export async function cleanupOwned(runtime,{directory,docker,remove,exists}){
+-  const state=ownedPaths(directory,runtime),proof={relayAbsent:false,appAbsent:false,internalNetworkAbsent:false,ingressNetworkAbsent:false,stateAbsent:false,credentialAbsent:false,browserCreated:false,relayStopCompleted:null};
+-  const ids=(kind,container)=>{const name=runtime.name+'-'+kind,args=container?['ps','-a','--no-trunc','--filter','name=^/'+name+'$','--format','{{.ID}}']:['network','ls','--no-trunc','--filter','name='+name,'--format','{{.ID}} {{.Name}}'];
++  const state=ownedPaths(directory,runtime),proof={relayAbsent:false,appAbsent:false,internalNetworkAbsent:false,ingressNetworkAbsent:false,stateAbsent:false,credentialAbsent:false,browserCreated:false,relayStopCompleted:null,identities:{}};
++  const ids=(kind,container,id=null)=>{const name=runtime.name+'-'+kind,filter=id?'id='+id:container?'name=^/'+name+'$':'name='+name,args=container?['ps','-a','--no-trunc','--filter',filter,'--format','{{.ID}}']:['network','ls','--no-trunc','--filter',filter,'--format',id?'{{.ID}}':'{{.ID}} {{.Name}}'];
+     const lines=docker(...args).trim().split('\n').filter(Boolean);if(lines.length>4)fail('cleanup-list-bound');const matches=container?lines:lines.map(line=>line.trim().split(/\s+/)).filter(([,n])=>n===name).map(([id])=>id);
+-    if(matches.length>1||matches.some(id=>!/^[a-f0-9]{64}$/.test(id)))fail('cleanup-ambiguous-resource');return matches;};
++    const result=!container&&id?lines:matches;if(result.length>1||result.some(value=>!/^[a-f0-9]{64}$/.test(value)||id&&value!==id))fail('cleanup-ambiguous-resource');return result;};
++  const find=(kind,container)=>{
++    const recorded=runtime[kind+(container?'Id':'NetworkId')];if(recorded!==null&&!/^[a-f0-9]{64}$/.test(recorded??''))fail('cleanup-recorded-id-unresolved');
++    const byId=recorded?ids(kind,container,recorded):[],byName=ids(kind,container);
++    proof.identities[kind]={basis:recorded?'recorded':byName.length?'recovered':'no-recorded-or-named-resource',recordedIdPresent:byId.length===1,expectedNamePresent:byName.length===1,idAbsent:false,nameAbsent:false};
++    if(recorded&&byName.some(id=>id!==recorded))fail('cleanup-name-id-mismatch');
++    return {id:recorded??byName[0]??null,present:(recorded?byId:byName).length===1};
++  };
++  const absent=(kind,container,id)=>{
++    const idAbsent=id?ids(kind,container,id).length===0:true,nameAbsent=ids(kind,container).length===0;
++    Object.assign(proof.identities[kind],{idAbsent,nameAbsent});if(!idAbsent||!nameAbsent)fail('cleanup-recorded-resource-survived');
++    proof[kind+(container?'Absent':'NetworkAbsent')]=true;
++  };
++  try{
+   for(const kind of ['relay','app']){
+-    const found=ids(kind,true);
+-    if(found.length){const actual=JSON.parse(docker('inspect',found[0]))[0];assertResource(actual,runtime,kind,true);
+-      if(kind==='relay'&&actual.State?.Running===true){try{docker('stop','--time','2',found[0]);proof.relayStopCompleted=true;}catch{proof.relayStopCompleted=false;}}
+-      docker('rm','-f',found[0]);}
+-    proof[kind+'Absent']=ids(kind,true).length===0;if(!proof[kind+'Absent'])fail('cleanup-container-survived');
++    const found=find(kind,true);
++    if(found.present){const actual=JSON.parse(docker('inspect',found.id))[0];assertResource(actual,runtime,kind,true);
++      if(kind==='relay'&&actual.State?.Running===true){try{docker('stop','--time','2',found.id);proof.relayStopCompleted=true;}catch{proof.relayStopCompleted=false;}}
++      docker('rm','-f',found.id);}
++    absent(kind,true,found.id);
+   }
+   for(const kind of ['ingress','internal']){
+-    const found=ids(kind,false);
+-    if(found.length){const actual=JSON.parse(docker('network','inspect',found[0]))[0];assertResource(actual,runtime,kind,false);if(Object.keys(actual.Containers??{}).length)fail('cleanup-shared-network');docker('network','rm',found[0]);}
+-    proof[kind+'NetworkAbsent']=ids(kind,false).length===0;if(!proof[kind+'NetworkAbsent'])fail('cleanup-network-survived');
++    const found=find(kind,false);
++    if(found.present){const actual=JSON.parse(docker('network','inspect',found.id))[0];assertResource(actual,runtime,kind,false);if(Object.keys(actual.Containers??{}).length)fail('cleanup-shared-network');docker('network','rm',found.id);}
++    absent(kind,false,found.id);
+   }
+   remove(state,{recursive:true,force:true});proof.stateAbsent=!exists(state);
+   remove(path.join(directory,'credential-private.json'),{force:true});proof.credentialAbsent=!exists(path.join(directory,'credential-private.json'));
+   return proof;
++  }catch(error){error.cleanupProof=proof;throw error;}
+ }
+-export const absenceComplete=proof=>['relayAbsent','appAbsent','internalNetworkAbsent','ingressNetworkAbsent','stateAbsent','credentialAbsent'].every(key=>proof?.[key]===true);
++export const absenceComplete=proof=>['relayAbsent','appAbsent','internalNetworkAbsent','ingressNetworkAbsent','stateAbsent','credentialAbsent'].every(key=>proof?.[key]===true)&&(proof.ownershipNeverWritten===true||['relay','app','ingress','internal'].every(kind=>proof.identities?.[kind]?.idAbsent===true&&proof.identities[kind].nameAbsent===true));
+ export async function main(){
+   const io=output(),startedAt=Number(process.env.ATTEMPT_STARTED_MS),end=Math.min(Date.now()+59000,startedAt+145000);let stage='cleanup-admission';
+   let proof={browserCreated:false},failure=null;
+@@ -47,7 +61,7 @@ export async function main(){
+       const docker=(...args)=>{stage='cleanup-'+args[0];const left=end-Date.now();if(left<=0)fail('cleanup-deadline');return command((values,timeout)=>execFileSync('docker',values,{encoding:'utf8',timeout,maxBuffer:262144,stdio:['ignore','pipe','pipe'],windowsHide:true}),stage,args,Math.max(1,Math.min(5000,left)));};
+       proof=await cleanupOwned(runtime,{directory:root,docker,remove:(...args)=>fs.rmSync(...args),exists:filename=>fs.existsSync(filename)});
+     }else proof={relayAbsent:true,appAbsent:true,internalNetworkAbsent:true,ingressNetworkAbsent:true,stateAbsent:!fs.readdirSync(root).some(name=>/^state-/.test(name)),credentialAbsent:!fs.existsSync(root+'/credential-private.json'),browserCreated:false,ownershipNeverWritten:true};
+-  }catch(error){failure=safeFailure(error,stage);}
++  }catch(error){if(error?.cleanupProof)proof=error.cleanupProof;failure=safeFailure(error,stage);}
+   const cleaned=!failure&&absenceComplete(proof);io.json('cleanup-report',{status:cleaned?'cleaned':'cleanup-unverified',...proof,failure});if(!cleaned)process.exitCode=1;
+ }
+ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))await main();
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay/harness/probe.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revised/harness/probe.mjs"
+index 171e0e3..eee6e0b 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay/harness/probe.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revised/harness/probe.mjs"
+@@ -4,8 +4,8 @@ import {fileURLToPath} from 'node:url';
+ import {randomBytes,createHash} from 'node:crypto';
+ import {execFileSync} from 'node:child_process';
+ import {root,output,verifySource} from './io.mjs';
+-import {fail,safeFailure,command,ownerLabel,image,source,networkProjection,allTrue,observeContainer,readiness} from './admission.mjs';
+-export function ownedRoot(directory){return path.resolve(directory)===fs.realpathSync(directory)&&path.basename(path.dirname(directory))==='ui-parity-legend-fixed-relay'&&/^attempt-[\w-]+$/.test(path.basename(directory));}
++import {fail,safeFailure,command,ownerLabel,image,source,networkProjection,networkValid,observeContainer,readiness} from './admission.mjs';
++export function ownedRoot(directory){return path.resolve(directory)===fs.realpathSync(directory)&&path.basename(path.dirname(directory))==='ui-parity-legend-fixed-relay-revised'&&/^attempt-[\w-]+$/.test(path.basename(directory));}
+ export function appArgs(runtime,credential){return ['run','-d','--name',runtime.name+'-app','--network',runtime.name+'-internal','--dns','127.0.0.1','--label',ownerLabel+'='+runtime.ownership,
+   '--mount',`type=bind,src=${runtime.statePath},dst=/data`,'-e','HTTP_PROXY=','-e','HTTPS_PROXY=','-e','ALL_PROXY=','-e','http_proxy=','-e','https_proxy=','-e','all_proxy=',
+   '-e',`OPENBB_ADMIN_PASSWORD=${credential.password}`,'-e','PUBLIC_URL=http://localhost','-e',`OPENBB_ADMIN_EMAIL=${credential.email}`,image];}
+@@ -37,7 +37,7 @@ export async function main(){
+       runtime[kind+'NetworkId']=run('network-create-'+kind,'network','create','--driver','bridge',...(kind==='internal'?['--internal']:[]),'--label',ownerLabel+'='+runtime.ownership,name+'-'+kind).trim();
+       if(!/^[a-f0-9]{64}$/.test(runtime[kind+'NetworkId']))fail('network-id-unresolved');save();
+       receipts.networks[kind]=networkProjection(parse(run('network-inspect-'+kind,'network','inspect',runtime[kind+'NetworkId']))[0],runtime,kind);persist();
+-      if(!allTrue(receipts.networks[kind]))fail('network-isolation-unresolved');
++      if(!networkValid(receipts.networks[kind]))fail('network-isolation-unresolved');
+     }
+     runtime.appId=run('app-create',...appArgs(runtime,credential)).trim();if(!/^[a-f0-9]{64}$/.test(runtime.appId))fail('app-id-unresolved');save();
+     const observe=(kind,raw)=>observeContainer(raw,runtime,kind,receipt=>{receipts.containers[kind]=receipt;persist();});
+@@ -51,7 +51,7 @@ export async function main(){
+     const relay=observe('relay',parse(run('relay-inspect','inspect',runtime.relayId))[0]).decision,publicationAt=performance.now();if(relay.kind!=='relay-admitted')fail(relay.kind);
+     // Re-admit the same app and both network identities immediately before any health input.
+     if(observe('app',parse(run('app-reinspect','inspect',runtime.appId))[0]).decision.address!==app.address)fail('app-address-or-security-drift');
+-    for(const kind of ['internal','ingress']){receipts.networks[kind]=networkProjection(parse(run('network-reinspect-'+kind,'network','inspect',runtime[kind+'NetworkId']))[0],runtime,kind);persist();if(!allTrue(receipts.networks[kind]))fail('network-security-drift');}
++    for(const kind of ['internal','ingress']){receipts.networks[kind]=networkProjection(parse(run('network-reinspect-'+kind,'network','inspect',runtime[kind+'NetworkId']))[0],runtime,kind);persist();if(!networkValid(receipts.networks[kind]))fail('network-security-drift');}
+     const result=await readiness({port:relay.port,remaining,publicationAt,persist:async attempts=>io.json('health-attempts',attempts)});
+     io.json('probe-result',{...result,originalSource:source,image,browserCreated:false,noRetry:true,relayFinalCountersRequired:true});
+     if(result.outcome!=='readiness-observed')process.exitCode=1;
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay/harness/relay.py" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revised/harness/relay.py"
+index 3849501..ef587dd 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay/harness/relay.py"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revised/harness/relay.py"
+@@ -128,7 +128,10 @@ class Relay:
+ 
+     def read(self, pair, side):
+         buffer = pair["buffers"][1 - side]
+-        payload = pair["ends"][side].recv(BUFFER_LIMIT - len(buffer))
++        capacity = BUFFER_LIMIT - len(buffer)
++        if capacity <= 0:
++            return
++        payload = pair["ends"][side].recv(capacity)
+         if not payload:
+             pair["eof"][side] = True
+             return
+@@ -149,23 +152,27 @@ class Relay:
+     def transfer(self, pair, side, mask):
+         endpoint = pair["ends"][side]
+         try:
+-            if side == 1 and pair["connecting"]:
+-                error = endpoint.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
+-                if error:
+-                    if error == errno.ECONNREFUSED:
+-                        self.stats["refusedConnections"] += 1
+-                    else:
+-                        self.breach("socket-error")
+-                    self.close_pair(pair)
+-                    return
+-                pair["connecting"] = False
+-            else:
+-                if mask & selectors.EVENT_READ:
+-                    self.read(pair, side)
+-                if mask & selectors.EVENT_WRITE and pair["buffers"][side] and not self.stopping:
+-                    count = endpoint.send(pair["buffers"][side])
+-                    del pair["buffers"][side][:count]
+-                    self.stats["forwardedBytes"] += count
++            try:
++                if side == 1 and pair["connecting"]:
++                    error = endpoint.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
++                    if error:
++                        if error == errno.ECONNREFUSED:
++                            self.stats["refusedConnections"] += 1
++                        else:
++                            self.breach("socket-error")
++                        self.close_pair(pair)
++                        return
++                    pair["connecting"] = False
++                else:
++                    if mask & selectors.EVENT_READ:
++                        self.read(pair, side)
++                    if mask & selectors.EVENT_WRITE and pair["buffers"][side] and not self.stopping:
++                        count = endpoint.send(pair["buffers"][side])
++                        del pair["buffers"][side][:count]
++                        self.stats["forwardedBytes"] += count
++            except (BlockingIOError, InterruptedError):
++                # A preceding read may have filled the opposite buffer.
++                pass
+             if not self.stopping:
+                 self.refresh(pair)
+         except (BlockingIOError, InterruptedError):

@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "scope": "Source syntax and injected/file-only offline faults; no application, socket, Docker, browser or topology executed",
+  "javascriptTests": 25,
+  "pythonTests": 10,
+  "tests": [
+    "exact app and relay topology operands admit without retaining State.Error",
+    "invalid container operands persist before a stopping admission decision",
+    "extra app network or any app publication fails closed",
+    "relay identity, mount, sysctl, port and read-only drift fail closed",
+    "exited or malformed selected state persists safely and cannot admit",
+    "network internal/ingress identity is exact",
+    "F3 network missing false and mismatched type preserve distinct selected operands",
+    "F3 relay scalar list sysctl healthcheck and mount operands persist before rejection",
+    "F3 selected operands bound arrays/strings and exclude labels environment State.Error and mount source",
+    "Docker commands construct app with no publish and relay with only fixed mounts/entrypoint",
+    "health GET is exact loopback/manual/close and never follows any redirect",
+    "health invalid port/deadline never dispatch and ordinary response passes",
+    "readiness exactly ten same-instance starts spaced three seconds, no implicit retry",
+    "readiness starts at publication and honors remaining input/redirect early stop",
+    "relay counters admit only closed, finite, zero-violation transport",
+    "failure never leaks Docker stderr/credential arguments",
+    "cleanup exact owned resources in relay/app/network order with absence proof",
+    "partial creation adopts exact name+label; failed graceful stop still removes owned resources",
+    "cleanup rejects ownership mismatch/shared network/path escape before unsafe deletion",
+    "F2 renamed recorded IDs stay unverified without deleting mismatched resources",
+    "F2 exact-ID post-removal survivors fail despite expected-name absence",
+    "prospective writer reserves stats and rejects file/byte/public bounds without growth",
+    "bounded log drain retains marker and at most8192 bytes",
+    "attempt source proof rejects modified source without runtime",
+    "a200 result cannot override violated relay counters in final status"
+  ],
+  "syntaxFiles": [
+    "harness/admission.mjs",
+    "harness/cleanup.mjs",
+    "harness/finalize.mjs",
+    "harness/io.mjs",
+    "harness/probe.mjs",
+    "prepare-run.mjs",
+    "verify-offline.mjs",
+    "freeze.mjs"
+  ],
+  "node": "v24.20.0",
+  "python": "Python 3.12.10",
+  "bash": "Two separate Debian bash -n commands: harness/run.sh and supervise.sh",
+  "runtimeExecuted": false,
+  "sourceFiles": [
+    {
+      "path": "harness/admission.mjs",
+      "sha256": "b4b065926be52262f31ea5dbdbec3a9d255c204a25337f9d46054f68513b00d8"
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "sha256": "dfb81350c2a1debac4e8cb20737644fab64b6c48eac14dcf74a67219a120c34d"
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "sha256": "70c7664d50961b0c3dffc05446701dedb67f94fb816bab6a51ded94ef97820ed"
+    },
+    {
+      "path": "harness/io.mjs",
+      "sha256": "f3b391edc2cc4f60824c103b7b7cab28307f221f8fc7305dc88c41ccae195e53"
+    },
+    {
+      "path": "harness/probe.mjs",
+      "sha256": "61876a25cde310de35ea08947a25f413558c50170e6ba05e32b228a89458e1f2"
+    },
+    {
+      "path": "harness/relay.py",
+      "sha256": "ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf"
+    },
+    {
+      "path": "harness/run.sh",
+      "sha256": "70aee6793937afaf5323985e5000de4eed6095a895107de562ad922d832b4aae"
+    },
+    {
+      "path": "supervise.sh",
+      "sha256": "60bd9e3a2d44e3fbfeaf98cb06088621a331820b8159f2f7b80b55e51fe9ad80"
+    },
+    {
+      "path": "test-relay.py",
+      "sha256": "e05cbfce89628773dc853fd0f5634079cad5fecf2db66a5d9a18fbee6c2c7144"
+    },
+    {
+      "path": "verify-offline.mjs",
+      "sha256": "11849fdfd3732c3b0d1e5f858ed63676a6b2ddef223b55147a0fdd6c0190de65"
+    },
+    {
+      "path": "prepare-run.mjs",
+      "sha256": "3dd052d982a57cef4802f0fe9734db17ac8e9c81ff15f93344a7f755720753ee"
+    }
+  ]
+}

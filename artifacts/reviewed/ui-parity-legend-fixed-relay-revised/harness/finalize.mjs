@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import {root,output} from './io.mjs';
+import {statsDecision} from './admission.mjs';
+const code=Number(process.argv[2]);if(!Number.isInteger(code))throw Error('watchdog-status-required');
+const io=output(),read=name=>{try{return JSON.parse(fs.readFileSync(root+'/'+name+'.json'));}catch{return null;}};
+io.json('watchdog-status',{exitCode:code,inputStopUpperBoundSeconds:90,signalSeconds:85,cleanupMaximumSeconds:60,killSeconds:145,inventoryMaximumSeconds:4,hardSeconds:150});
+const cleanup=read('cleanup-report'),result=read('probe-result'),relay=statsDecision(read('relay-stats'));
+const logOverflow=['probe.log','cleanup.log','supervisor.log'].some(name=>fs.existsSync(root+'/'+name)&&fs.readFileSync(root+'/'+name).includes(Buffer.from('OUTPUT_LIMIT_REACHED')));
+const passed=code===0&&!logOverflow&&cleanup?.status==='cleaned'&&result?.outcome==='readiness-observed'&&relay.ok;
+io.json('run-status',{exitCode:code,status:cleanup?.status==='cleaned'?'diagnostic-closed':'cleanup-unverified',outcome:passed?'topology-probe-passed':'probe-unresolved',probeOutcome:result?.outcome??'missing-probe-result',relay,logOverflow,browserCreated:false,noRetry:true});
+io.json('final-output-inventory',{scope:'Completed retained attempt scan; excludes this new inventory receipt from entries',entries:io.inventory(),totals:io.check()});
+io.check();if(!passed)process.exitCode=1;

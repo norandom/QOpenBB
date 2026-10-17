@@ -1,0 +1,53 @@
+{
+  "verdict": "APPROVED",
+  "scope": "Exact corrected source, F1/F2/F3 closure and publication; separate controller runtime grant required",
+  "inputHashes": {
+    "harness-manifest.json": "dcb25a5a5bcadf2d5628b0f2ebd2077586c7bde325a063b4eb5bf72f266b8700",
+    "source-hashes.json": "7d1dbfc86d2cef42d8b8e73eacf63c85dd0c3676938c95d10210976cd5d263fb",
+    "publication-allowlist.json": "eba713d4981e22a8c18bcd490e19965f6e134f98dd92d7421fb09ce7f5b3bc41"
+  },
+  "commands": [
+    {
+      "program": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revised\\verify-offline.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"status\":\"passed\",\"javascriptTests\":25,\"pythonTests\":10,\"syntaxFiles\":8,\"runtimeExecuted\":false}"
+    },
+    {
+      "program": "py",
+      "args": [
+        "-3",
+        "-B",
+        "D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revision-review\\f1-audit.py"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"scope\": \"F1 only; no joined JavaScript or runtime approval\", \"status\": \"F1-closed-source-only\", \"inputHashes\": {\"ui-parity-legend-fixed-relay-revised/harness/relay.py\": \"ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf\", \"ui-parity-legend-fixed-relay-revised/test-relay.py\": \"e05cbfce89628773dc853fd0f5634079cad5fecf2db66a5d9a18fbee6c2c7144\", \"ui-parity-legend-fixed-relay/harness/relay.py\": \"273a5c95ab976024ee6bd0c004a7cf8c9a3684cfddc437d2333f1e3823f44f0b\"}, \"fullPythonSuite\": {\"tests\": 10, \"failures\": 0, \"errors\": 0, \"successful\": true}, \"baselineFocusedRegression\": {\"tests\": 1, \"failures\": 2, \"errors\": 0, \"successful\": false}, \"revisedFocusedRegression\": {\"tests\": 1, \"failures\": 0, \"errors\": 0, \"successful\": true}, \"independentBidirectionalCases\": [{\"side\": 0, \"injected\": \"BlockingIOError\", \"forwardedBytes\": 65545, \"zeroCapacityReceive\": false, \"prematureHalfClose\": false}, {\"side\": 0, \"injected\": \"InterruptedError\", \"forwardedBytes\": 65545, \"zeroCapacityReceive\": false, \"prematureHalfClose\": false}, {\"side\": 1, \"injected\": \"BlockingIOError\", \"forwardedBytes\": 65545, \"zeroCapacityReceive\": false, \"prematureHalfClose\": false}, {\"side\": 1, \"injected\": \"InterruptedError\", \"forwardedBytes\": 65545, \"zeroCapacityReceive\": false, \"prematureHalfClose\": false}], \"unchangedOutsideReadAndTransferAst\": true, \"limits\": {\"PAIR_LIMIT\": 4, \"ACCEPT_LIMIT\": 16, \"BUFFER_LIMIT\": 65536, \"PAIR_BYTES\": 4194304, \"TOTAL_BYTES\": 33554432, \"CONNECT_SECONDS\": 2}, \"realSocketFactoryDenied\": true, \"runtimeExecuted\": false, \"frozenInputsPreserved\": true}"
+    },
+    {
+      "program": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay-revision-review\\control-audit.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"scope\":\"F2/F3 source-only regression checks\",\"cleanup\":[{\"scenario\":\"renamed-before\",\"baseline\":{\"completed\":true,\"proof\":{\"relayAbsent\":true,\"appAbsent\":true,\"internalNetworkAbsent\":true,\"ingressNetworkAbsent\":true,\"stateAbsent\":true,\"credentialAbsent\":true,\"browserCreated\":false,\"relayStopCompleted\":null},\"remaining\":[\"relay\"],\"removals\":3,\"idQueries\":0},\"revised\":{\"completed\":false,\"reason\":\"cleanup-resource-identity-unresolved\",\"proof\":{\"relayAbsent\":false,\"appAbsent\":false,\"internalNetworkAbsent\":false,\"ingressNetworkAbsent\":false,\"stateAbsent\":false,\"credentialAbsent\":false,\"browserCreated\":false,\"relayStopCompleted\":null,\"identities\":{\"relay\":{\"basis\":\"recorded\",\"recordedIdPresent\":true,\"expectedNamePresent\":false,\"idAbsent\":false,\"nameAbsent\":false}}},\"remaining\":[\"relay\",\"app\",\"ingress\",\"internal\"],\"removals\":0,\"idQueries\":1}},{\"scenario\":\"survivor-relay\",\"baseline\":{\"completed\":true,\"proof\":{\"relayAbsent\":true,\"appAbsent\":true,\"internalNetworkAbsent\":true,\"ingressNetworkAbsent\":true,\"stateAbsent\":true,\"credentialAbsent\":true,\"browserCreated\":false,\"relayStopCompleted\":true},\"remaining\":[\"relay\"],\"removals\":4,\"idQueries\":0},\"revised\":{\"completed\":false,\"reason\":\"cleanup-recorded-resource-survived\",\"proof\":{\"relayAbsent\":false,\"appAbsent\":false,\"internalNetworkAbsent\":false,\"ingressNetworkAbsent\":false,\"stateAbsent\":false,\"credentialAbsent\":false,\"browserCreated\":false,\"relayStopCompleted\":true,\"identities\":{\"relay\":{\"basis\":\"recorded\",\"recordedIdPresent\":true,\"expectedNamePresent\":true,\"idAbsent\":false,\"nameAbsent\":true}}},\"remaining\":[\"relay\",\"app\",\"ingress\",\"internal\"],\"removals\":1,\"idQueries\":2}},{\"scenario\":\"survivor-ingress\",\"baseline\":{\"completed\":true,\"proof\":{\"relayAbsent\":true,\"appAbsent\":true,\"internalNetworkAbsent\":true,\"ingressNetworkAbsent\":true,\"stateAbsent\":true,\"credentialAbsent\":true,\"browserCreated\":false,\"relayStopCompleted\":true},\"remaining\":[\"ingress\"],\"removals\":4,\"idQueries\":0},\"revised\":{\"completed\":false,\"reason\":\"cleanup-recorded-resource-survived\",\"proof\":{\"relayAbsent\":true,\"appAbsent\":true,\"internalNetworkAbsent\":false,\"ingressNetworkAbsent\":false,\"stateAbsent\":false,\"credentialAbsent\":false,\"browserCreated\":false,\"relayStopCompleted\":true,\"identities\":{\"relay\":{\"basis\":\"recorded\",\"recordedIdPresent\":true,\"expectedNamePresent\":true,\"idAbsent\":true,\"nameAbsent\":true},\"app\":{\"basis\":\"recorded\",\"recordedIdPresent\":true,\"expectedNamePresent\":true,\"idAbsent\":true,\"nameAbsent\":true},\"ingress\":{\"basis\":\"recorded\",\"recordedIdPresent\":true,\"expectedNamePresent\":true,\"idAbsent\":false,\"nameAbsent\":true}}},\"remaining\":[\"ingress\",\"internal\"],\"removals\":3,\"idQueries\":6}}],\"partialRecovery\":{\"completed\":true,\"proof\":{\"relayAbsent\":true,\"appAbsent\":true,\"internalNetworkAbsent\":true,\"ingressNetworkAbsent\":true,\"stateAbsent\":true,\"credentialAbsent\":true,\"browserCreated\":false,\"relayStopCompleted\":true,\"identities\":{\"relay\":{\"basis\":\"recovered\",\"recordedIdPresent\":false,\"expectedNamePresent\":true,\"idAbsent\":true,\"nameAbsent\":true},\"app\":{\"basis\":\"recovered\",\"recordedIdPresent\":false,\"expectedNamePresent\":true,\"idAbsent\":true,\"nameAbsent\":true},\"ingress\":{\"basis\":\"recovered\",\"recordedIdPresent\":false,\"expectedNamePresent\":true,\"idAbsent\":true,\"nameAbsent\":true},\"internal\":{\"basis\":\"recovered\",\"recordedIdPresent\":false,\"expectedNamePresent\":true,\"idAbsent\":true,\"nameAbsent\":true}}},\"remaining\":[],\"removals\":4,\"idQueries\":4},\"operands\":{\"baselineCollapse\":true,\"revisedDistinct\":true,\"savedBeforeRejection\":true,\"selectedFlagsRetained\":true,\"privateSentinelsExcluded\":true,\"boundsRetained\":true},\"runtimeExecuted\":false,\"realMutations\":false}"
+    }
+  ],
+  "sourceFiles": 17,
+  "localInputs": 11,
+  "publicationFiles": 18,
+  "gitBlobs": 2,
+  "lifecycleChecks": "Writer, finalizer, run script and contract byte-identical; supervisor/preparation differ only by revised path; probe differs only by revised path and network predicate; admission decisions/readiness/counters unchanged",
+  "closedFindings": [
+    "F1",
+    "F2",
+    "F3"
+  ],
+  "frozenInputsPreserved": true,
+  "runtimeExecuted": false,
+  "networkOpened": false,
+  "preparationOrFreezeExecuted": false,
+  "scanScope": "18 selected source/evidence files, bounded common-token/private-key and placeholder patterns plus manual review",
+  "productionCaps": "Research exclusion; future maintained 400 physical/file,300 logical/file,50/function with inventory/checker"
+}

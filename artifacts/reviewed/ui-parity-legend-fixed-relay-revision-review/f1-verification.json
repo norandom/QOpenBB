@@ -1,0 +1,69 @@
+{
+  "scope": "F1 only; no joined JavaScript or runtime approval",
+  "status": "F1-closed-source-only",
+  "inputHashes": {
+    "ui-parity-legend-fixed-relay-revised/harness/relay.py": "ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf",
+    "ui-parity-legend-fixed-relay-revised/test-relay.py": "e05cbfce89628773dc853fd0f5634079cad5fecf2db66a5d9a18fbee6c2c7144",
+    "ui-parity-legend-fixed-relay/harness/relay.py": "273a5c95ab976024ee6bd0c004a7cf8c9a3684cfddc437d2333f1e3823f44f0b"
+  },
+  "fullPythonSuite": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "successful": true
+  },
+  "baselineFocusedRegression": {
+    "tests": 1,
+    "failures": 2,
+    "errors": 0,
+    "successful": false
+  },
+  "revisedFocusedRegression": {
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "successful": true
+  },
+  "independentBidirectionalCases": [
+    {
+      "side": 0,
+      "injected": "BlockingIOError",
+      "forwardedBytes": 65545,
+      "zeroCapacityReceive": false,
+      "prematureHalfClose": false
+    },
+    {
+      "side": 0,
+      "injected": "InterruptedError",
+      "forwardedBytes": 65545,
+      "zeroCapacityReceive": false,
+      "prematureHalfClose": false
+    },
+    {
+      "side": 1,
+      "injected": "BlockingIOError",
+      "forwardedBytes": 65545,
+      "zeroCapacityReceive": false,
+      "prematureHalfClose": false
+    },
+    {
+      "side": 1,
+      "injected": "InterruptedError",
+      "forwardedBytes": 65545,
+      "zeroCapacityReceive": false,
+      "prematureHalfClose": false
+    }
+  ],
+  "unchangedOutsideReadAndTransferAst": true,
+  "limits": {
+    "PAIR_LIMIT": 4,
+    "ACCEPT_LIMIT": 16,
+    "BUFFER_LIMIT": 65536,
+    "PAIR_BYTES": 4194304,
+    "TOTAL_BYTES": 33554432,
+    "CONNECT_SECONDS": 2
+  },
+  "realSocketFactoryDenied": true,
+  "runtimeExecuted": false,
+  "frozenInputsPreserved": true
+}
