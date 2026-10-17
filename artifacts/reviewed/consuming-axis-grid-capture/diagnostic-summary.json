@@ -1,0 +1,61 @@
+{
+  "source": {
+    "path": "diagnostics.json",
+    "sha256": "2a96b862416c53016868f251db34231d25f97aac646a9d3d44dd187a4a775168"
+  },
+  "cdp": {
+    "runtimeEnabled": true,
+    "networkEnabled": true
+  },
+  "pageErrors": [
+    {
+      "kind": "pageerror",
+      "text": "Unexpected token '<'"
+    },
+    {
+      "kind": "pageerror",
+      "text": "Unexpected token '<'"
+    }
+  ],
+  "cdpExceptions": [
+    {
+      "kind": "cdp-exception",
+      "text": "Uncaught",
+      "description": "SyntaxError: Unexpected token '<'",
+      "url": "[owned-origin]/assets/js/datafeeds/udf/dist/bundle.js",
+      "line": 0
+    },
+    {
+      "kind": "cdp-exception",
+      "text": "Uncaught",
+      "description": "SyntaxError: Unexpected token '<'",
+      "url": "[owned-origin]/assets/js/datafeeds/udf/dist/bundle.js",
+      "line": 0
+    }
+  ],
+  "networkLoadingFailures": [],
+  "chartWarnings": [
+    {
+      "kind": "console",
+      "type": "warning",
+      "text": "AG Grid: error #139 a custom chart theme with the name openbb-light has been supplied but not added to the 'chartThemes' list \nSee https://www.ag-grid.com/react-data-grid/errors/139?_version_=34.1.1&customThemeName=openbb-light"
+    },
+    {
+      "kind": "console",
+      "type": "warning",
+      "text": "AG Charts - Unknown option `theme.overrides.bar.axes.number.left.gridLine.style[0].strokeOpacity`, ignoring."
+    }
+  ],
+  "httpFailures": [
+    {
+      "url": "[owned-origin]/api/pro/pro-developer-onboarding-info",
+      "status": 404
+    },
+    {
+      "url": "[owned-origin]/api/pro/tier",
+      "status": 400
+    }
+  ],
+  "blockedExternalRequests": 0,
+  "sanitization": "Raw authentication routes, successful HTTP inventory and stack traces omitted. Owned origin replaced."
+}

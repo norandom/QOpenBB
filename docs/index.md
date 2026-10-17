@@ -14,6 +14,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Verify saved appearance, derived colors and tooltip state contracts | [Appearance source verification](../.kiro/specs/openbb-self-service/chart-appearance-source-verification.md) |
 | Locate the contracts still needed for the original chart/editor journey | [Consuming integration readiness](../.kiro/specs/openbb-self-service/chart-consuming-integration-readiness.md) |
 | Inspect concrete appearance/session handoffs and their remaining gates | [Consuming contract draft](../.kiro/specs/openbb-self-service/chart-consuming-contract-draft.md) |
+| Check original axis stroke, grid width and dash behavior | [Axis/grid findings](../.kiro/specs/openbb-self-service/chart-axis-grid-findings.md) |
 | Review the existing-backend persistence repair | [SQLite query design](../.kiro/specs/openbb-self-service/sqlite-repair-design.md) |
 | Reproduce SQLite query and storage checks | [SQLite verification](../.kiro/specs/openbb-self-service/sqlite-repair-verification.md) |
 | Set up the pinned development tools | [Development toolchain](development.md) |

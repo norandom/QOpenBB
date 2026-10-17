@@ -1,0 +1,114 @@
+{
+  "recordedAt": "2026-10-17T13:12:19.594Z",
+  "original": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "candidateSource": "ea02ec15956dee8d2c8a06825387a570757db12d",
+  "candidateExecuted": false,
+  "command": "wsl -d Debian -u mc -- bash /mnt/d/Source/QOpenBB/artifacts/consuming-axis-grid-capture/run.sh",
+  "node": {
+    "version": "v24.22.0",
+    "executable": "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node"
+  },
+  "scripts": [
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/consuming-axis-grid-capture/start.mjs",
+      "sha256": "876af7e309ea5eb7be3581922348ac60e020fe8bdbc301057a9d8f2f03584460"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/consuming-axis-grid-capture/journey.mjs",
+      "sha256": "d06c6179be9edb390971e69d6449a2b14577d2201d5039cad0efde44ccebb3e8"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/consuming-axis-grid-capture/cleanup.mjs",
+      "sha256": "1b3beef5dd51a9b203686ec5ab732184e6d809ebdaf1b26d5d93f5127f2f48ba"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/consuming-axis-grid-capture/run.sh",
+      "sha256": "59b1a51b99ed5fd4549197ea2be9429d449b6b5631ac9328268f8bdabde6174a"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/consuming-axis-grid-capture/manifest.mjs",
+      "sha256": "398209d2f6bc3d8f6eb57647f8c2ccb78afef24d22626b057d709a8cb0fe96e1"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/consuming-axis-grid-capture/verify.mjs",
+      "sha256": "908085a32f46a41f218142dfba5fea704bc95b87b303144055d4d3a500333bde"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/consuming-axis-grid-capture/publication.mjs",
+      "sha256": "3be68bbb2174ffcdb919c51756f8171504c930c7d215ff0061868f0eed273f37"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/consuming-axis-grid-capture/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    }
+  ],
+  "reused": [
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/reviewed/parity/editor-runtime-next/start.mjs",
+      "sha256": "4e84ba5014053b2af305e3af989b1b8eeb797a4b55f2427474dadc379435b1a9"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/reviewed/parity/editor-runtime-next/focused.mjs",
+      "sha256": "7bcae9876488d6ac231e3e9ddd152cf6d40fa5e13b585f65808ba2f928ca1103"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/reviewed/parity/editor-runtime-next/cleanup.mjs",
+      "sha256": "3995a42039cecf7e22eed5fcd9a3e17f1bbcd795b875eed23f5b01ce1ca9da58"
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/artifacts/reviewed/parity/editor-runtime-next/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    }
+  ],
+  "source": [
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/package.json",
+      "sha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "sha256": "ff4ffdf77236326f0f476d7a06f1cbc6b876f7d41235b9faca8999b4a3ca8e21"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/routes/developer_onboarding/DeveloperOnboardingHomepage.tsx",
+      "sha256": "298af0b91eaaf90b13e72c3a8fe6289f4815019bca0ebc01732161ab06b74689"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/api/auth.api.ts",
+      "sha256": "55a5a36e585bdff2c6b8d8514d29d9801181c6f7239bee9b1a3087cd28c08033"
+    }
+  ],
+  "installedDependency": {
+    "name": "ag-charts-community",
+    "version": "12.1.1",
+    "files": [
+      {
+        "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/package.json",
+        "sha256": "77ae0168d7c6209f2c880a00748fadbb390da794532164d84e0b4382e61c5b88"
+      },
+      {
+        "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/LICENSE.txt",
+        "sha256": "1cb5ddc0b89c5bf0c5ccdf3a387edc4a1408c922968d633c719265c8ccdd354b"
+      },
+      {
+        "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/dist/package/main.cjs.js",
+        "sha256": "237912c75d2c7e8219fced7bb79e5ed8fca0f620d6f4d259cdfa58748445fcd1"
+      }
+    ]
+  }
+}

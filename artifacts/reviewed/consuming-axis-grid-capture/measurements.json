@@ -1,0 +1,774 @@
+{
+  "derivedFrom": [
+    "baseline.json",
+    "ui-axis-thickness-3.json",
+    "ui-grid-thickness-4.json",
+    "ui-grid-dash-5.json",
+    "synthetic-width-3-style-1.json",
+    "synthetic-width-1-style-4.json",
+    "synthetic-opacity-quarter.json",
+    "synthetic-opacity-one.json"
+  ],
+  "scope": "Original dark groupedColumn, left number axis",
+  "measurements": [
+    {
+      "name": "baseline",
+      "kind": "original-application-real-ui",
+      "input": {
+        "action": "open groupedColumn Customize / Vertical Axis"
+      },
+      "effectiveLine": {
+        "stroke": "#c1c1c2",
+        "width": 1,
+        "enabled": false
+      },
+      "effectiveGrid": {
+        "width": 1,
+        "style": [
+          {
+            "stroke": "#515153",
+            "strokeWidth": 1,
+            "lineDash": []
+          }
+        ]
+      },
+      "liveLine": {
+        "stroke": "#c1c1c2",
+        "strokeWidth": 0,
+        "strokeOpacity": 1,
+        "opacity": 1,
+        "visible": true
+      },
+      "liveGrid": [
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        }
+      ],
+      "optionsEvents": 0
+    },
+    {
+      "name": "ui-axis-thickness-3",
+      "kind": "original-application-real-ui",
+      "input": {
+        "control": "Vertical Axis / first Thickness",
+        "value": 3
+      },
+      "effectiveLine": {
+        "stroke": "#c1c1c2",
+        "width": 3,
+        "enabled": true
+      },
+      "effectiveGrid": {
+        "width": 1,
+        "style": [
+          {
+            "stroke": "#515153",
+            "strokeWidth": 1,
+            "lineDash": []
+          }
+        ]
+      },
+      "liveLine": {
+        "stroke": "#c1c1c2",
+        "strokeWidth": 3,
+        "strokeOpacity": 1,
+        "opacity": 1,
+        "visible": true
+      },
+      "liveGrid": [
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        }
+      ],
+      "optionsEvents": 1
+    },
+    {
+      "name": "ui-grid-thickness-4",
+      "kind": "original-application-real-ui",
+      "input": {
+        "control": "Vertical Axis / Grid Lines / Thickness",
+        "value": 4
+      },
+      "effectiveLine": {
+        "stroke": "#c1c1c2",
+        "width": 3,
+        "enabled": true
+      },
+      "effectiveGrid": {
+        "width": 4,
+        "style": [
+          {
+            "stroke": "#515153",
+            "strokeWidth": 4,
+            "lineDash": []
+          }
+        ]
+      },
+      "liveLine": {
+        "stroke": "#c1c1c2",
+        "strokeWidth": 3,
+        "strokeOpacity": 1,
+        "opacity": 1,
+        "visible": true
+      },
+      "liveGrid": [
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": []
+        }
+      ],
+      "optionsEvents": 2
+    },
+    {
+      "name": "ui-grid-dash-5",
+      "kind": "original-application-real-ui",
+      "input": {
+        "control": "Vertical Axis / Grid Lines / Line Dash",
+        "value": 5
+      },
+      "effectiveLine": {
+        "stroke": "#c1c1c2",
+        "width": 3,
+        "enabled": true
+      },
+      "effectiveGrid": {
+        "width": 4,
+        "style": [
+          {
+            "stroke": "#515153",
+            "strokeWidth": 4,
+            "lineDash": [
+              5
+            ]
+          }
+        ]
+      },
+      "liveLine": {
+        "stroke": "#c1c1c2",
+        "strokeWidth": 3,
+        "strokeOpacity": 1,
+        "opacity": 1,
+        "visible": true
+      },
+      "liveGrid": [
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            5
+          ]
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            5
+          ]
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            5
+          ]
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            5
+          ]
+        },
+        {
+          "stroke": "#515153",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            5
+          ]
+        }
+      ],
+      "optionsEvents": 3
+    },
+    {
+      "name": "synthetic-width-3-style-1",
+      "kind": "synthetic-reference-public-update-no-ui-proof",
+      "input": {
+        "name": "synthetic-width-3-style-1",
+        "width": 3,
+        "strokeWidth": 1,
+        "lineDash": [
+          2,
+          7
+        ],
+        "outcome": {
+          "method": "reference proxy.update; synthetic theme override",
+          "gridLine": {
+            "enabled": true,
+            "width": 3,
+            "style": [
+              {
+                "stroke": "#123abc",
+                "strokeWidth": 1,
+                "lineDash": [
+                  2,
+                  7
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "effectiveLine": {
+        "stroke": "#c1c1c2",
+        "width": 3,
+        "enabled": true
+      },
+      "effectiveGrid": {
+        "width": 3,
+        "style": [
+          {
+            "stroke": "#123abc",
+            "strokeWidth": 1,
+            "lineDash": [
+              2,
+              7
+            ]
+          }
+        ]
+      },
+      "liveLine": {
+        "stroke": "#c1c1c2",
+        "strokeWidth": 3,
+        "strokeOpacity": 1,
+        "opacity": 1,
+        "visible": true
+      },
+      "liveGrid": [
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 1,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        }
+      ],
+      "optionsEvents": 3
+    },
+    {
+      "name": "synthetic-width-1-style-4",
+      "kind": "synthetic-reference-public-update-no-ui-proof",
+      "input": {
+        "name": "synthetic-width-1-style-4",
+        "width": 1,
+        "strokeWidth": 4,
+        "lineDash": [
+          2,
+          7
+        ],
+        "outcome": {
+          "method": "reference proxy.update; synthetic theme override",
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "stroke": "#123abc",
+                "strokeWidth": 4,
+                "lineDash": [
+                  2,
+                  7
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "effectiveLine": {
+        "stroke": "#c1c1c2",
+        "width": 3,
+        "enabled": true
+      },
+      "effectiveGrid": {
+        "width": 1,
+        "style": [
+          {
+            "stroke": "#123abc",
+            "strokeWidth": 4,
+            "lineDash": [
+              2,
+              7
+            ]
+          }
+        ]
+      },
+      "liveLine": {
+        "stroke": "#c1c1c2",
+        "strokeWidth": 3,
+        "strokeOpacity": 1,
+        "opacity": 1,
+        "visible": true
+      },
+      "liveGrid": [
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        }
+      ],
+      "optionsEvents": 3
+    },
+    {
+      "name": "synthetic-opacity-quarter",
+      "kind": "synthetic-reference-public-update-no-ui-proof",
+      "input": {
+        "name": "synthetic-opacity-quarter",
+        "width": 1,
+        "strokeWidth": 4,
+        "lineDash": [
+          2,
+          7
+        ],
+        "strokeOpacity": 0.25,
+        "outcome": {
+          "method": "reference proxy.update; synthetic theme override",
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "stroke": "#123abc",
+                "strokeWidth": 4,
+                "lineDash": [
+                  2,
+                  7
+                ],
+                "strokeOpacity": 0.25
+              }
+            ]
+          }
+        }
+      },
+      "effectiveLine": {
+        "stroke": "#c1c1c2",
+        "width": 3,
+        "enabled": true
+      },
+      "effectiveGrid": {
+        "width": 1,
+        "style": [
+          {
+            "stroke": "#123abc",
+            "strokeWidth": 4,
+            "lineDash": [
+              2,
+              7
+            ]
+          }
+        ]
+      },
+      "liveLine": {
+        "stroke": "#c1c1c2",
+        "strokeWidth": 3,
+        "strokeOpacity": 1,
+        "opacity": 1,
+        "visible": true
+      },
+      "liveGrid": [
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        }
+      ],
+      "optionsEvents": 3
+    },
+    {
+      "name": "synthetic-opacity-one",
+      "kind": "synthetic-reference-public-update-no-ui-proof",
+      "input": {
+        "name": "synthetic-opacity-one",
+        "width": 1,
+        "strokeWidth": 4,
+        "lineDash": [
+          2,
+          7
+        ],
+        "strokeOpacity": 1,
+        "outcome": {
+          "method": "reference proxy.update; synthetic theme override",
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "stroke": "#123abc",
+                "strokeWidth": 4,
+                "lineDash": [
+                  2,
+                  7
+                ],
+                "strokeOpacity": 1
+              }
+            ]
+          }
+        }
+      },
+      "effectiveLine": {
+        "stroke": "#c1c1c2",
+        "width": 3,
+        "enabled": true
+      },
+      "effectiveGrid": {
+        "width": 1,
+        "style": [
+          {
+            "stroke": "#123abc",
+            "strokeWidth": 4,
+            "lineDash": [
+              2,
+              7
+            ]
+          }
+        ]
+      },
+      "liveLine": {
+        "stroke": "#c1c1c2",
+        "strokeWidth": 3,
+        "strokeOpacity": 1,
+        "opacity": 1,
+        "visible": true
+      },
+      "liveGrid": [
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        },
+        {
+          "stroke": "#123abc",
+          "strokeWidth": 4,
+          "strokeOpacity": 1,
+          "opacity": 1,
+          "visible": true,
+          "lineDash": [
+            2,
+            7
+          ]
+        }
+      ],
+      "optionsEvents": 3
+    }
+  ]
+}
