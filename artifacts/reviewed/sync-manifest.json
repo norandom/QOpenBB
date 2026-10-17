@@ -107,10 +107,12 @@
     "ui-parity-legend-fixed-relay-plan",
     "ui-parity-legend-fixed-relay-plan-review",
     "ui-parity-tooltip-failure-metadata-source",
-    "ui-parity-tooltip-failure-metadata-source-review"
+    "ui-parity-tooltip-failure-metadata-source-review",
+    "ui-parity-legend-fixed-relay",
+    "ui-parity-legend-fixed-relay-review"
   ],
   "sourcepins": {
-    "root_at_sync": "1943c576e2e6c11833b7a7fe729f8ccedaa9e268",
+    "root_at_sync": "e23b203068c5339c61ac8610e3bd7ab4f949a291",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -27587,6 +27589,206 @@
       "publishedSHA256": "57bcf7bdaae2ca1c2c84df5769f41faea541c68147a54a34b21c658103265ff4",
       "bytes": 845,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/harness/admission.mjs",
+      "sourceSHA256": "6bcddb4aebc67208947fedd03b507a0f3fbd8b22a265748ad5252e3965fcbd22",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/harness/admission.mjs",
+      "publishedSHA256": "6bcddb4aebc67208947fedd03b507a0f3fbd8b22a265748ad5252e3965fcbd22",
+      "bytes": 9865,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/harness/cleanup.mjs",
+      "sourceSHA256": "40d49e5a105a7c665f1872f474bb38705185782cd066c49761424c195168b7a3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/harness/cleanup.mjs",
+      "publishedSHA256": "40d49e5a105a7c665f1872f474bb38705185782cd066c49761424c195168b7a3",
+      "bytes": 5085,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/harness/finalize.mjs",
+      "sourceSHA256": "70c7664d50961b0c3dffc05446701dedb67f94fb816bab6a51ded94ef97820ed",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/harness/finalize.mjs",
+      "publishedSHA256": "70c7664d50961b0c3dffc05446701dedb67f94fb816bab6a51ded94ef97820ed",
+      "bytes": 1397,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/harness/io.mjs",
+      "sourceSHA256": "f3b391edc2cc4f60824c103b7b7cab28307f221f8fc7305dc88c41ccae195e53",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/harness/io.mjs",
+      "publishedSHA256": "f3b391edc2cc4f60824c103b7b7cab28307f221f8fc7305dc88c41ccae195e53",
+      "bytes": 3757,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/harness/probe.mjs",
+      "sourceSHA256": "3453a254bf84ff734149ac266c3fa11f1107d619f79b5d96c7103b8fc8435c1c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/harness/probe.mjs",
+      "publishedSHA256": "3453a254bf84ff734149ac266c3fa11f1107d619f79b5d96c7103b8fc8435c1c",
+      "bytes": 6903,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/harness/relay.py",
+      "sourceSHA256": "273a5c95ab976024ee6bd0c004a7cf8c9a3684cfddc437d2333f1e3823f44f0b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/harness/relay.py",
+      "publishedSHA256": "273a5c95ab976024ee6bd0c004a7cf8c9a3684cfddc437d2333f1e3823f44f0b",
+      "bytes": 10404,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/harness/run.sh",
+      "sourceSHA256": "70aee6793937afaf5323985e5000de4eed6095a895107de562ad922d832b4aae",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/harness/run.sh",
+      "publishedSHA256": "70aee6793937afaf5323985e5000de4eed6095a895107de562ad922d832b4aae",
+      "bytes": 998,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/supervise.sh",
+      "sourceSHA256": "7ede921111eaaa7dbffa65fabf8cc8f5cce227756877820814a91fd360033db3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/supervise.sh",
+      "publishedSHA256": "7ede921111eaaa7dbffa65fabf8cc8f5cce227756877820814a91fd360033db3",
+      "bytes": 1045,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/probe-contract.json",
+      "sourceSHA256": "42f8eed6a799ed26877a3f6832768faf00546bed266bcee74d351f4afdbada69",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/probe-contract.json",
+      "publishedSHA256": "42f8eed6a799ed26877a3f6832768faf00546bed266bcee74d351f4afdbada69",
+      "bytes": 2184,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/handoff.md",
+      "sourceSHA256": "3938f45c7d4aa1e5d16ac990558f13e4d7f9f049ebcde7c1843843c711b527e3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/handoff.md",
+      "publishedSHA256": "3938f45c7d4aa1e5d16ac990558f13e4d7f9f049ebcde7c1843843c711b527e3",
+      "bytes": 7049,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/prepare-run.mjs",
+      "sourceSHA256": "25be38112ef121bf11764c10aef6a5e344aa48f172638a48a79cf43adff605a0",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/prepare-run.mjs",
+      "publishedSHA256": "25be38112ef121bf11764c10aef6a5e344aa48f172638a48a79cf43adff605a0",
+      "bytes": 1874,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/verify-offline.mjs",
+      "sourceSHA256": "e327d76e7a15a485123c82e489b94fcac3b6eeb3e0caf540ecfee03a620c7839",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/verify-offline.mjs",
+      "publishedSHA256": "e327d76e7a15a485123c82e489b94fcac3b6eeb3e0caf540ecfee03a620c7839",
+      "bytes": 16644,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/test-relay.py",
+      "sourceSHA256": "c5112b880b5720a93796d4e11bda31d2486370e7f153689d659577125643bcb3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/test-relay.py",
+      "publishedSHA256": "c5112b880b5720a93796d4e11bda31d2486370e7f153689d659577125643bcb3",
+      "bytes": 11513,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/freeze.mjs",
+      "sourceSHA256": "1719286eee7f2f9140af5ab594bc95d31ec51d25564846108e52e86a8785a7c5",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/freeze.mjs",
+      "publishedSHA256": "1719286eee7f2f9140af5ab594bc95d31ec51d25564846108e52e86a8785a7c5",
+      "bytes": 4743,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/offline-verification.json",
+      "sourceSHA256": "a71c63394586ce405041f8c43c82b00cb920a87a493029d2407e1ae0caa6800f",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/offline-verification.json",
+      "publishedSHA256": "a71c63394586ce405041f8c43c82b00cb920a87a493029d2407e1ae0caa6800f",
+      "bytes": 3566,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/relay-source-diff.patch",
+      "sourceSHA256": "26a6fd2b00b44a6b6ecbfe042ef696ab05c8efc2c79b11c231b5f742317daa99",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/relay-source-diff.patch",
+      "publishedSHA256": "26a6fd2b00b44a6b6ecbfe042ef696ab05c8efc2c79b11c231b5f742317daa99",
+      "bytes": 57198,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/harness-manifest.json",
+      "sourceSHA256": "2f8caf154955b8bd429f01d9507c8248a35d40a607ac11d8e5a0171dd88a0864",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/harness-manifest.json",
+      "publishedSHA256": "2f8caf154955b8bd429f01d9507c8248a35d40a607ac11d8e5a0171dd88a0864",
+      "bytes": 3758,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/source-hashes.json",
+      "sourceSHA256": "dc254dd794854bf8ad122f66cfb982998fe1ec1f48887f24af9a1c4aea4190d3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/source-hashes.json",
+      "publishedSHA256": "dc254dd794854bf8ad122f66cfb982998fe1ec1f48887f24af9a1c4aea4190d3",
+      "bytes": 5563,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-review/reviewed-source-publication-allowlist.json",
+      "sourceSHA256": "e78baa39c45fe4fadeda5ab97dd7b06420618c8ffa0c48ef93d2f547f02a066b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-review/reviewed-source-publication-allowlist.json",
+      "publishedSHA256": "e78baa39c45fe4fadeda5ab97dd7b06420618c8ffa0c48ef93d2f547f02a066b",
+      "bytes": 3370,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-review/review.md",
+      "sourceSHA256": "2efb3ec27ed9f01f38796637f8b2c10648ae92232b4eeff6e45b7dd79ed9511f",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-review/review.md",
+      "publishedSHA256": "2efb3ec27ed9f01f38796637f8b2c10648ae92232b4eeff6e45b7dd79ed9511f",
+      "bytes": 9149,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-review/audit.mjs",
+      "sourceSHA256": "09c7243fc29a3cfc12930bb9b7bd98ed7aae5499cca870d3ec0a74fe0cbb536e",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-review/audit.mjs",
+      "publishedSHA256": "09c7243fc29a3cfc12930bb9b7bd98ed7aae5499cca870d3ec0a74fe0cbb536e",
+      "bytes": 5056,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-review/verification.json",
+      "sourceSHA256": "65bfc9eef3e6b5fd59fcb76510a44f310d69f3626aea44157923b5ed33fe963c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-review/verification.json",
+      "publishedSHA256": "65bfc9eef3e6b5fd59fcb76510a44f310d69f3626aea44157923b5ed33fe963c",
+      "bytes": 3756,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-review/counterexample.py",
+      "sourceSHA256": "82ec414fa99c46249d39fab487d340ce539179f32f5b9f7c481e23db7f0c8666",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-review/counterexample.py",
+      "publishedSHA256": "82ec414fa99c46249d39fab487d340ce539179f32f5b9f7c481e23db7f0c8666",
+      "bytes": 1790,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-review/counterexamples.mjs",
+      "sourceSHA256": "14d87b4ad1060a9305b2204e135598be605cb798230e0a71d05591105793785c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-review/counterexamples.mjs",
+      "publishedSHA256": "14d87b4ad1060a9305b2204e135598be605cb798230e0a71d05591105793785c",
+      "bytes": 2718,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-review/publication-allowlist.json",
+      "sourceSHA256": "32c776e63bfc55bbb3f2d87403f466fc31fc075e57c69ef2719c523dd911d8dc",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-review/publication-allowlist.json",
+      "publishedSHA256": "32c776e63bfc55bbb3f2d87403f466fc31fc075e57c69ef2719c523dd911d8dc",
+      "bytes": 1210,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -28300,5 +28502,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 160672841
+  "total_payload_bytes": 160853436
 }

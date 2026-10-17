@@ -1,0 +1,677 @@
+diff --git "a/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/admission.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/admission.mjs"
+new file mode 100644
+index 0000000..249a104
+--- /dev/null
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/admission.mjs"
+@@ -0,0 +1,78 @@
++import {isIPv4} from 'node:net';
++export const ownerLabel='org.qopenbb.capture.owner';
++export const image='sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f';
++export const source='38dffc33389aca0e4a87e0e88d42f7067aa220df';
++export function fail(reason){const error=Error(reason);error.probeReason=reason;throw error;}
++export function safeFailure(error,stage){return {outcome:'probe-unresolved',stage,reason:error?.probeReason??'unexpected-probe-error',exitCode:Number.isInteger(error?.status)?error.status:null};}
++export function command(docker,stage,args,timeout){try{return docker(args,timeout);}catch(error){const safe=Error('docker-command-failed');safe.probeReason='docker-command-failed';safe.status=Number.isInteger(error?.status)?error.status:null;safe.stage=stage;throw safe;}}
++const own=(object,key)=>object!=null&&Object.hasOwn(object,key);
++function scalar(value){return typeof value==='boolean'||typeof value==='number'&&Number.isFinite(value)||typeof value==='string'&&value.length<=128?value:null;}
++function ports(value,target){const entries=value?.[target];return {parentSupported:value!==null&&typeof value==='object'&&!Array.isArray(value),own:own(value,target),kind:entries===undefined?'absent':entries===null?'null':Array.isArray(entries)?'array':'unsupported',
++  count:Array.isArray(entries)?entries.length:null,entries:Array.isArray(entries)&&entries.length<=4?entries.map(entry=>({HostIp:scalar(entry?.HostIp),HostPort:scalar(entry?.HostPort)})):[],
++  otherPublication:Object.entries(value??{}).some(([key,list])=>key!==target&&list!==null&&(!Array.isArray(list)||list.length!==0)),parentKeys:Object.keys(value??{}).length};}
++export function networkProjection(raw,runtime,kind){return {idMatched:raw?.Id===runtime[kind+'NetworkId'],nameMatched:raw?.Name===runtime.name+'-'+kind,
++  labelMatched:raw?.Labels?.[ownerLabel]===runtime.ownership,driverBridge:raw?.Driver==='bridge',internalMatched:raw?.Internal===(kind==='internal'),ipv6Disabled:raw?.EnableIPv6===false};}
++export const allTrue=record=>Object.values(record).every(value=>value===true);
++export function projectContainer(raw,runtime,kind){
++  const settings=raw?.NetworkSettings,networks=settings?.Networks??{},host=raw?.HostConfig??{},expected=kind==='app'?['internal']:['internal','ingress'];
++  const internal=networks[runtime.name+'-internal'],target=kind==='app'?'3000/tcp':'3100/tcp';
++  const attachments=Object.keys(networks),state=raw?.State??{},relay=kind==='relay';
++  const security={idMatched:raw?.Id===runtime[kind+'Id'],nameMatched:raw?.Name==='/'+runtime.name+'-'+kind,labelMatched:raw?.Config?.Labels?.[ownerLabel]===runtime.ownership,
++    exactNetworks:attachments.length===expected.length&&expected.every(key=>networks[runtime.name+'-'+key]?.NetworkID===runtime[key+'NetworkId']),
++    restartDisabled:host.RestartPolicy?.Name==='no',imageMatched:raw?.Image===image,unprivileged:host.Privileged===false,publishAllDisabled:host.PublishAllPorts===false,
++    exactPrimaryNetwork:host.NetworkMode===runtime.name+'-'+(relay?'ingress':'internal')};
++  if(relay)Object.assign(security,{readOnlyRootfs:host.ReadonlyRootfs===true,nonRoot:raw?.Config?.User==='65534:65534',capDropAll:host.CapDrop?.length===1&&host.CapDrop[0]==='ALL',
++    noNewPrivileges:host.SecurityOpt?.length===1&&host.SecurityOpt[0]==='no-new-privileges',forwardingDisabled:Object.keys(host.Sysctls??{}).length===2&&host.Sysctls?.['net.ipv4.ip_forward']==='0'&&host.Sysctls?.['net.ipv6.conf.all.forwarding']==='0',
++    healthDisabled:raw?.Config?.Healthcheck?.Test?.length===1&&raw.Config.Healthcheck.Test[0]==='NONE',
++    pythonEntrypoint:raw?.Config?.Entrypoint?.length===1&&raw.Config.Entrypoint[0]==='/opt/.venv/bin/python',
++    exactCommand:JSON.stringify(raw?.Config?.Cmd)===JSON.stringify(['-B','-I','-S','-u','/relay/relay.py','/relay/config.json']),
++    exactMounts:Array.isArray(raw?.Mounts)&&raw.Mounts.length===4&&[
++      ['/relay/relay.py',runtime.relaySourcePath,false,'bind'],['/relay/config.json',runtime.configPath,false,'bind'],['/evidence/relay-stats.json',runtime.statsPath,true,'bind'],['/data',null,true,'tmpfs']
++    ].every(([destination,sourcePath,rw,type])=>raw.Mounts.some(mount=>mount.Destination===destination&&mount.Type===type&&mount.RW===rw&&(sourcePath===null||mount.Source===sourcePath))),
++    boundedTmpfs:host.Tmpfs?.['/data']==='rw,nosuid,nodev,size=1048576'});
++  return {kind,security,configured:ports(host.PortBindings,target),runtime:ports(settings?.Ports,target),
++    noConfiguredPublications:host.PortBindings!=null&&typeof host.PortBindings==='object'&&!Array.isArray(host.PortBindings)&&Object.keys(host.PortBindings).length<=8&&Object.values(host.PortBindings).every(list=>Array.isArray(list)&&list.length===0),
++    noRuntimePublications:settings?.Ports!=null&&typeof settings.Ports==='object'&&!Array.isArray(settings.Ports)&&Object.keys(settings.Ports).length<=8&&Object.values(settings.Ports).every(list=>list===null||Array.isArray(list)&&list.length===0),
++    internalIPv4:typeof internal?.IPAddress==='string'&&internal.IPAddress.length<=15?internal.IPAddress:null,
++    state:Object.fromEntries(['Status','Running','Restarting','Dead','ExitCode','OOMKilled'].map(key=>[key,scalar(state[key])]))};
++}
++export function admitContainer(receipt){
++  if(!allTrue(receipt.security))return {kind:'security-unresolved'};
++  const s=receipt.state;if(s.Status!=='running'||s.Running!==true||s.Restarting!==false||s.Dead!==false||s.OOMKilled!==false||s.ExitCode!==0)return {kind:'container-not-running'};
++  if(!isIPv4(receipt.internalIPv4??'')||/^(0|127|22[4-9]|23\d)\./.test(receipt.internalIPv4))return {kind:'internal-address-unresolved'};
++  if(receipt.kind==='app')return receipt.noConfiguredPublications&&receipt.noRuntimePublications?{kind:'app-admitted',address:receipt.internalIPv4}:{kind:'app-publication-unresolved'};
++  const cfg=receipt.configured,actual=receipt.runtime;
++  for(const item of [cfg,actual])if(!item.parentSupported||item.parentKeys>8||item.otherPublication||item.kind!=='array'||item.count!==1||item.entries[0]?.HostIp!=='127.0.0.1')return {kind:'loopback-binding-unresolved'};
++  if(!(cfg.entries[0].HostPort===''||/^\d+$/.test(cfg.entries[0].HostPort??'')))return {kind:'configured-port-unresolved'};
++  const port=actual.entries[0].HostPort;if(typeof port!=='string'||!/^\d+$/.test(port)||Number(port)<1||Number(port)>65535)return {kind:'runtime-port-unresolved'};
++  return {kind:'relay-admitted',port};
++}
++export function observeContainer(raw,runtime,kind,persist){const receipt=projectContainer(raw,runtime,kind);persist(receipt);return {receipt,decision:admitContainer(receipt)};}
++export function statsDecision(stats){
++  const limits={acceptedPairs:16,activePairs:4,peakPairs:4,peakSockets:9,receivedBytes:33554432,forwardedBytes:33554432,peakBufferedBytes:524288,maximumPairBytes:4194304,refusedConnections:16,peerClosures:16};
++  if(!stats||stats.phase!=='closed'||stats.cleanStop!==true||stats.activePairs!==0)return {ok:false,reason:'relay-stop-unobserved'};
++  if(Object.entries(limits).some(([key,max])=>!Number.isSafeInteger(stats[key])||stats[key]<0||stats[key]>max)||stats.forwardedBytes>stats.receivedBytes)return {ok:false,reason:'relay-counter-unresolved'};
++  const reasons=['accepted-pairs','pair-bytes','total-bytes','connect-timeout','transport-truncated','socket-error','config-error','stats-error'];
++  if(!stats.violations||Object.keys(stats.violations).length!==reasons.length||reasons.some(key=>!Number.isSafeInteger(stats.violations[key])||stats.violations[key]<0))return {ok:false,reason:'relay-violations-unresolved'};
++  return Object.values(stats.violations).some(Boolean)?{ok:false,reason:'relay-bound-or-transport-breach'}:{ok:true,reason:'relay-counters-admitted'};
++}
++export async function healthOnce(port,{request=fetch,remaining=()=>2000}={}){
++  if(typeof port!=='string'||!/^\d+$/.test(port)||Number(port)<1||Number(port)>65535)return {outcome:'health-unresolved',reason:'invalid-loopback-port'};
++  const timeout=Math.min(2000,remaining());if(timeout<=0)return {outcome:'health-unresolved',reason:'input-deadline'};
++  try{const response=await request('http://127.0.0.1:'+port+'/api/health',{method:'GET',headers:{Connection:'close'},redirect:'manual',signal:AbortSignal.timeout(Math.max(1,Math.floor(timeout)))});
++    const status=response.status,redirect=status>=300&&status<400||response.headers.has('location');
++    if(redirect){await response.body?.cancel();return {outcome:'health-unresolved',reason:'redirect-rejected',status};}
++    let bytes=0;if(response.body)for await(const chunk of response.body){bytes+=chunk.length;if(bytes>4194304)return {outcome:'health-unresolved',reason:'health-body-bound',status};}
++    return {outcome:status===200?'loopback-healthy':'health-unresolved',status};
++  }catch{return {outcome:'health-unresolved',reason:'health-transport-or-timeout'};}
++}
++export async function readiness({port,remaining,request,now=()=>performance.now(),publicationAt,pause=ms=>new Promise(resolve=>setTimeout(resolve,ms)),persist=async()=>{}}){
++  const start=publicationAt??now(),attempts=[];let last=-Infinity;
++  for(let index=0;index<10;index++){
++    const wait=Math.max(0,last+3000-now());if(now()+wait+2000>start+30000||remaining()<wait+2000)break;if(wait)await pause(wait);
++    last=now();const result=await healthOnce(port,{request,remaining:()=>Math.min(remaining(),start+30000-now())});attempts.push({index:index+1,startedMs:Math.round(last-start),...result});await persist(attempts);
++    if(result.outcome==='loopback-healthy')return {outcome:'readiness-observed',attempts:attempts.length};
++    if(result.reason==='redirect-rejected'||result.reason==='health-body-bound')return {outcome:'probe-unresolved',reason:result.reason,attempts:attempts.length};
++  }
++  return {outcome:'probe-unresolved',reason:'readiness-not-observed-within-fixed-budget',attempts:attempts.length};
++}
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/cleanup.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/cleanup.mjs"
+index ffbd7b1..d93f6c4 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/cleanup.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/cleanup.mjs"
+@@ -3,46 +3,51 @@ import path from 'node:path';
+ import {fileURLToPath} from 'node:url';
+ import {execFileSync} from 'node:child_process';
+ import {root,output} from './io.mjs';
+-import {ownerLabel} from './projection.mjs';
+-import {command,fail,safeFailure} from './probe.mjs';
++import {ownerLabel,command,fail,safeFailure} from './admission.mjs';
++import {ownedRoot} from './probe.mjs';
+ export function ownedPaths(directory,runtime){
+-  if(!/^qopenbb-legend-probe-[a-f0-9]{10}$/.test(runtime.name)||runtime.networkName!==runtime.name+'-net'||! /^[a-f0-9]{24}$/.test(runtime.ownership))fail('cleanup-ownership-unresolved');
+-  const state=path.resolve(runtime.statePath);if(path.dirname(state)!==path.resolve(directory)||!/^state-[a-f0-9]{12}$/.test(path.basename(state)))fail('cleanup-state-path-unresolved');return state;
++  if(!/^qopenbb-legend-relay-[a-f0-9]{10}$/.test(runtime.name)||!/^[a-f0-9]{24}$/.test(runtime.ownership))fail('cleanup-ownership-unresolved');
++  const state=path.resolve(runtime.statePath);if(path.dirname(state)!==path.resolve(directory)||!/^state-[a-f0-9]{12}$/.test(path.basename(state)))fail('cleanup-state-path-unresolved');
++  for(const [key,relative] of [['relaySourcePath','harness/relay.py'],['configPath','relay-config.json'],['statsPath','relay-stats.json']])if(runtime[key]!==path.join(directory,relative))fail('cleanup-file-path-unresolved');
++  return state;
+ }
+-export function assertResource(actual,runtime,kind){
+-  const name=kind==='container'?runtime.name:runtime.networkName,id=kind==='container'?runtime.container:runtime.networkId;
+-  if((actual.Name??'').replace(/^\//,'')!==name||id&&actual.Id!==id||(kind==='container'?actual.Config?.Labels:actual.Labels)?.[ownerLabel]!==runtime.ownership)fail('cleanup-resource-identity-unresolved');
++export function assertResource(actual,runtime,kind,container){
++  const id=runtime[kind+(container?'Id':'NetworkId')],name=runtime.name+'-'+kind;
++  if(!/^[a-f0-9]{64}$/.test(actual?.Id??'')||(actual.Name??'').replace(/^\//,'')!==name||id&&actual.Id!==id||(container?actual.Config?.Labels:actual.Labels)?.[ownerLabel]!==runtime.ownership)fail('cleanup-resource-identity-unresolved');
+ }
+ export async function cleanupOwned(runtime,{directory,docker,remove,exists}){
+-  const state=ownedPaths(directory,runtime),proof={containerAbsent:false,networkAbsent:false,stateAbsent:false,credentialAbsent:false,browserCreated:false};
+-  const ids=(kind,name)=>{const args=kind==='container'?['ps','-a','--no-trunc','--filter','name=^/'+name+'$','--format','{{.ID}}']:['network','ls','--no-trunc','--filter','name='+name,'--format','{{.ID}} {{.Name}}'];
+-    const lines=docker(...args).trim().split('\n').filter(Boolean);if(lines.length>4)fail('cleanup-list-bound');const matches=kind==='container'?lines:lines.map(line=>line.trim().split(/\s+/)).filter(([,n])=>n===name).map(([id])=>id);if(matches.length>1)fail('cleanup-ambiguous-resource');if(matches.some(id=>!/^[a-f0-9]{64}$/.test(id)))fail('cleanup-id-unresolved');return matches;};
+-  let found=ids('container',runtime.name);
+-  if(found.length){const actual=JSON.parse(docker('inspect',found[0]))[0];assertResource(actual,runtime,'container');docker('rm','-f',found[0]);}
+-  proof.containerAbsent=ids('container',runtime.name).length===0;if(!proof.containerAbsent)fail('cleanup-container-survived');
+-  found=ids('network',runtime.networkName);
+-  if(found.length){const actual=JSON.parse(docker('network','inspect',found[0]))[0];assertResource(actual,runtime,'network');if(Object.keys(actual.Containers??{}).length)fail('cleanup-shared-network');docker('network','rm',found[0]);}
+-  proof.networkAbsent=ids('network',runtime.networkName).length===0;if(!proof.networkAbsent)fail('cleanup-network-survived');
++  const state=ownedPaths(directory,runtime),proof={relayAbsent:false,appAbsent:false,internalNetworkAbsent:false,ingressNetworkAbsent:false,stateAbsent:false,credentialAbsent:false,browserCreated:false,relayStopCompleted:null};
++  const ids=(kind,container)=>{const name=runtime.name+'-'+kind,args=container?['ps','-a','--no-trunc','--filter','name=^/'+name+'$','--format','{{.ID}}']:['network','ls','--no-trunc','--filter','name='+name,'--format','{{.ID}} {{.Name}}'];
++    const lines=docker(...args).trim().split('\n').filter(Boolean);if(lines.length>4)fail('cleanup-list-bound');const matches=container?lines:lines.map(line=>line.trim().split(/\s+/)).filter(([,n])=>n===name).map(([id])=>id);
++    if(matches.length>1||matches.some(id=>!/^[a-f0-9]{64}$/.test(id)))fail('cleanup-ambiguous-resource');return matches;};
++  for(const kind of ['relay','app']){
++    const found=ids(kind,true);
++    if(found.length){const actual=JSON.parse(docker('inspect',found[0]))[0];assertResource(actual,runtime,kind,true);
++      if(kind==='relay'&&actual.State?.Running===true){try{docker('stop','--time','2',found[0]);proof.relayStopCompleted=true;}catch{proof.relayStopCompleted=false;}}
++      docker('rm','-f',found[0]);}
++    proof[kind+'Absent']=ids(kind,true).length===0;if(!proof[kind+'Absent'])fail('cleanup-container-survived');
++  }
++  for(const kind of ['ingress','internal']){
++    const found=ids(kind,false);
++    if(found.length){const actual=JSON.parse(docker('network','inspect',found[0]))[0];assertResource(actual,runtime,kind,false);if(Object.keys(actual.Containers??{}).length)fail('cleanup-shared-network');docker('network','rm',found[0]);}
++    proof[kind+'NetworkAbsent']=ids(kind,false).length===0;if(!proof[kind+'NetworkAbsent'])fail('cleanup-network-survived');
++  }
+   remove(state,{recursive:true,force:true});proof.stateAbsent=!exists(state);
+   remove(path.join(directory,'credential-private.json'),{force:true});proof.credentialAbsent=!exists(path.join(directory,'credential-private.json'));
+   return proof;
+ }
++export const absenceComplete=proof=>['relayAbsent','appAbsent','internalNetworkAbsent','ingressNetworkAbsent','stateAbsent','credentialAbsent'].every(key=>proof?.[key]===true);
+ export async function main(){
+   const io=output(),startedAt=Number(process.env.ATTEMPT_STARTED_MS),end=Math.min(Date.now()+59000,startedAt+145000);let stage='cleanup-admission';
+-  let proof={containerAbsent:false,networkAbsent:false,stateAbsent:false,credentialAbsent:false,browserCreated:false},failure=null;
++  let proof={browserCreated:false},failure=null;
+   try{
+-    if(!Number.isFinite(startedAt)||path.resolve(root)!==fs.realpathSync(root)||path.basename(path.dirname(root))!=='ui-parity-legend-startup-diagnostic'||!/^attempt-[\w-]+$/.test(path.basename(root)))fail('cleanup-root-unresolved');
+-    const runtimeFile=root+'/runtime-private.json';
+-    if(fs.existsSync(runtimeFile)){
+-      const runtime=JSON.parse(fs.readFileSync(runtimeFile));
++    if(!Number.isFinite(startedAt)||!ownedRoot(root))fail('cleanup-root-unresolved');
++    if(fs.existsSync(root+'/runtime-private.json')){
++      const runtime=JSON.parse(fs.readFileSync(root+'/runtime-private.json'));
+       const docker=(...args)=>{stage='cleanup-'+args[0];const left=end-Date.now();if(left<=0)fail('cleanup-deadline');return command((values,timeout)=>execFileSync('docker',values,{encoding:'utf8',timeout,maxBuffer:262144,stdio:['ignore','pipe','pipe'],windowsHide:true}),stage,args,Math.max(1,Math.min(5000,left)));};
+       proof=await cleanupOwned(runtime,{directory:root,docker,remove:(...args)=>fs.rmSync(...args),exists:filename=>fs.existsSync(filename)});
+-    }else{
+-      // Startup writes ownership before creating any resource.
+-      proof={containerAbsent:true,networkAbsent:true,stateAbsent:!fs.readdirSync(root).some(name=>/^state-/.test(name)),credentialAbsent:!fs.existsSync(root+'/credential-private.json'),browserCreated:false,ownershipNeverWritten:true};
+-    }
++    }else proof={relayAbsent:true,appAbsent:true,internalNetworkAbsent:true,ingressNetworkAbsent:true,stateAbsent:!fs.readdirSync(root).some(name=>/^state-/.test(name)),credentialAbsent:!fs.existsSync(root+'/credential-private.json'),browserCreated:false,ownershipNeverWritten:true};
+   }catch(error){failure=safeFailure(error,stage);}
+-  const cleaned=!failure&&proof.containerAbsent&&proof.networkAbsent&&proof.stateAbsent&&proof.credentialAbsent;
+-  io.json('cleanup-report',{status:cleaned?'cleaned':'cleanup-unverified',...proof,failure});if(!cleaned)process.exitCode=1;
++  const cleaned=!failure&&absenceComplete(proof);io.json('cleanup-report',{status:cleaned?'cleaned':'cleanup-unverified',...proof,failure});if(!cleaned)process.exitCode=1;
+ }
+ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))await main();
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/finalize.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/finalize.mjs"
+index c5a22af..9c46fb9 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/finalize.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/finalize.mjs"
+@@ -1,9 +1,12 @@
+ import fs from 'node:fs';
+ import {root,output} from './io.mjs';
++import {statsDecision} from './admission.mjs';
+ const code=Number(process.argv[2]);if(!Number.isInteger(code))throw Error('watchdog-status-required');
+-const io=output(),read=name=>fs.existsSync(root+'/'+name+'.json')?JSON.parse(fs.readFileSync(root+'/'+name+'.json')):null;
++const io=output(),read=name=>{try{return JSON.parse(fs.readFileSync(root+'/'+name+'.json'));}catch{return null;}};
+ io.json('watchdog-status',{exitCode:code,inputStopUpperBoundSeconds:90,signalSeconds:85,cleanupMaximumSeconds:60,killSeconds:145,inventoryMaximumSeconds:4,hardSeconds:150});
+-const cleanup=read('cleanup-report'),result=read('probe-result');
+-io.json('run-status',{exitCode:code,status:cleanup?.status==='cleaned'?'diagnostic-closed':'cleanup-unverified',outcome:result?.outcome??'missing-probe-result',browserCreated:false,noRetry:true});
+-io.json('final-output-inventory',{scope:'Completed retained attempt scan including watchdog/status; excludes this new inventory receipt from entries',entries:io.inventory(),totals:io.check()});
+-io.check();if(code!==0||cleanup?.status!=='cleaned'||!result)process.exitCode=1;
++const cleanup=read('cleanup-report'),result=read('probe-result'),relay=statsDecision(read('relay-stats'));
++const logOverflow=['probe.log','cleanup.log','supervisor.log'].some(name=>fs.existsSync(root+'/'+name)&&fs.readFileSync(root+'/'+name).includes(Buffer.from('OUTPUT_LIMIT_REACHED')));
++const passed=code===0&&!logOverflow&&cleanup?.status==='cleaned'&&result?.outcome==='readiness-observed'&&relay.ok;
++io.json('run-status',{exitCode:code,status:cleanup?.status==='cleaned'?'diagnostic-closed':'cleanup-unverified',outcome:passed?'topology-probe-passed':'probe-unresolved',probeOutcome:result?.outcome??'missing-probe-result',relay,logOverflow,browserCreated:false,noRetry:true});
++io.json('final-output-inventory',{scope:'Completed retained attempt scan; excludes this new inventory receipt from entries',entries:io.inventory(),totals:io.check()});
++io.check();if(!passed)process.exitCode=1;
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/io.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/io.mjs"
+index 15bb1b1..bcda844 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/io.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/io.mjs"
+@@ -1,18 +1,35 @@
+ import fs from 'node:fs';
+ import path from 'node:path';
++import {createHash} from 'node:crypto';
+ export const root=process.env.CAPTURE_ROOT;
++export function verifySource(directory){
++  const hash=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex'),manifestFile=path.join(directory,'source-manifest.json');
++  const proof=JSON.parse(fs.readFileSync(path.join(directory,'preparation.json'))),manifest=JSON.parse(fs.readFileSync(manifestFile));
++  if(proof.manifestSha256!==hash(manifestFile)||proof.exactCopies!==true||manifest.files.length!==8)throw Error('source-manifest-unresolved');
++  for(const f of manifest.files){if(!/^(harness\/[\w.-]+|supervise\.sh)$/.test(f.path)||hash(path.join(directory,f.path))!==f.sha256||fs.statSync(path.join(directory,f.path)).size!==f.bytes)throw Error('attempt-source-mismatch');}
++}
+ export function createWriter(directory,{disk=fs,caps={files:32,total:2097152,json:65536,publicJson:524288}}={}){
+   const base=path.resolve(directory);
+   function inventory(){const files=[];function walk(dir){for(const item of disk.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,item.name);if(item.isSymbolicLink())throw Error('output-symlink');if(item.isDirectory()&&/^state-[a-f0-9]{12}$/.test(item.name))continue;if(item.isDirectory())walk(file);else files.push({path:path.relative(base,file),bytes:disk.statSync(file).size});}}walk(base);return files;}
+   function totals(files){return {files:files.length,bytes:files.reduce((sum,f)=>sum+f.bytes,0),publicJson:files.filter(f=>f.path.endsWith('.json')&&!f.path.endsWith('-private.json')).reduce((sum,f)=>sum+f.bytes,0)};}
+   function check(files){const t=totals(files);if(t.files>caps.files||t.bytes>caps.total||t.publicJson>caps.publicJson)throw Error('retained-output-bound');return t;}
+-  function json(name,value,{privateFile=false}={}){
++  function json(name,value,{privateFile=false,fixedBytes=null}={}){
+     if(!/^[\w-]+$/.test(name)||privateFile!==name.endsWith('-private'))throw Error('output-name-unresolved');
+-    const bytes=Buffer.from(JSON.stringify(value));if(bytes.length>caps.json)throw Error('json-output-bound');
++    let bytes=Buffer.from(JSON.stringify(value));if(bytes.length>caps.json)throw Error('json-output-bound');
++    if(fixedBytes!==null){if(fixedBytes!==4096||bytes.length>fixedBytes)throw Error('json-reservation-bound');bytes=Buffer.concat([bytes,Buffer.alloc(fixedBytes-bytes.length,32)]);}
+     const filename=name+'.json',file=path.join(base,filename);if(disk.existsSync(file)&&disk.lstatSync(file).isSymbolicLink())throw Error('output-symlink');
+     const prospective=inventory().filter(entry=>entry.path!==filename);prospective.push({path:filename,bytes:bytes.length});check(prospective);
+     disk.writeFileSync(file,bytes,{mode:privateFile?0o600:0o644});
+   }
+-  check(inventory());return {json,inventory,check:()=>check(inventory())};
++  check(inventory());return {json,reserveJson:(name,value,size)=>json(name,value,{fixedBytes:size}),inventory,check:()=>check(inventory())};
+ }
+ let writer;export function output(){if(!root)throw Error('attempt-root-required');return writer??=createWriter(root);}
++// Drain helper output without letting a failed helper exhaust retained evidence.
++if(process.argv[2]==='--bounded-log'){
++  const name=process.argv[3];if(!['probe.log','cleanup.log','supervisor.log','finalize.log'].includes(name)||!root)throw Error('log-target-unresolved');
++  const file=path.join(root,name),limit=8192,marker=Buffer.from('\nOUTPUT_LIMIT_REACHED\n');
++  if(!fs.existsSync(file)||fs.lstatSync(file).isSymbolicLink()||fs.statSync(file).size>limit)throw Error('log-reservation-unresolved');
++  const fd=fs.openSync(file,'w');let retained=0,overflow=false;
++  for await(const chunk of process.stdin){const part=chunk.subarray(0,Math.max(0,limit-retained));if(part.length){fs.writeSync(fd,part);retained+=part.length;}if(part.length<chunk.length)overflow=true;}
++  if(overflow)fs.writeSync(fd,marker,0,marker.length,limit-marker.length);fs.closeSync(fd);
++}
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/probe.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/probe.mjs"
+index 96ae174..171e0e3 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/probe.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/probe.mjs"
+@@ -1,47 +1,60 @@
+ import fs from 'node:fs';
+ import path from 'node:path';
+ import {fileURLToPath} from 'node:url';
+-import {randomBytes} from 'node:crypto';
++import {randomBytes,createHash} from 'node:crypto';
+ import {execFileSync} from 'node:child_process';
+-import {root,output} from './io.mjs';
+-import {diagnose,ownerLabel,networkProjection,networkValid} from './projection.mjs';
+-export function safeFailure(error,stage){return {outcome:'probe-unresolved',stage,reason:error?.probeReason??'unexpected-probe-error',exitCode:Number.isInteger(error?.status)?error.status:null};}
+-export function fail(reason){const error=Error(reason);error.probeReason=reason;throw error;}
+-export function command(docker,stage,args,timeout){try{return docker(args,timeout);}catch(error){const safe=Error('docker-command-failed');safe.probeReason='docker-command-failed';safe.status=Number.isInteger(error?.status)?error.status:null;safe.stage=stage;throw safe;}}
+-export async function healthOnce(port,{request=fetch,remaining=()=>2000}={}){
+-  if(!/^\d+$/.test(port)||Number(port)<1||Number(port)>65535)return {outcome:'health-unresolved',reason:'invalid-loopback-port'};
+-  const timeout=Math.min(2000,remaining());if(timeout<=0)return {outcome:'health-unresolved',reason:'input-deadline'};
+-  try{const response=await request('http://127.0.0.1:'+port+'/api/health',{method:'GET',redirect:'manual',signal:AbortSignal.timeout(Math.max(1,Math.floor(timeout)))});
+-    const status=response.status,redirect=status>=300&&status<400||response.headers.has('location');await response.body?.cancel();
+-    return redirect?{outcome:'health-unresolved',reason:'redirect-rejected',status}:{outcome:status===200?'loopback-healthy':'health-unresolved',status};
+-  }catch{return {outcome:'health-unresolved',reason:'health-transport-or-timeout'};}
+-}
++import {root,output,verifySource} from './io.mjs';
++import {fail,safeFailure,command,ownerLabel,image,source,networkProjection,allTrue,observeContainer,readiness} from './admission.mjs';
++export function ownedRoot(directory){return path.resolve(directory)===fs.realpathSync(directory)&&path.basename(path.dirname(directory))==='ui-parity-legend-fixed-relay'&&/^attempt-[\w-]+$/.test(path.basename(directory));}
++export function appArgs(runtime,credential){return ['run','-d','--name',runtime.name+'-app','--network',runtime.name+'-internal','--dns','127.0.0.1','--label',ownerLabel+'='+runtime.ownership,
++  '--mount',`type=bind,src=${runtime.statePath},dst=/data`,'-e','HTTP_PROXY=','-e','HTTPS_PROXY=','-e','ALL_PROXY=','-e','http_proxy=','-e','https_proxy=','-e','all_proxy=',
++  '-e',`OPENBB_ADMIN_PASSWORD=${credential.password}`,'-e','PUBLIC_URL=http://localhost','-e',`OPENBB_ADMIN_EMAIL=${credential.email}`,image];}
++export function relayArgs(runtime){return ['create','--name',runtime.name+'-relay','--network',runtime.name+'-ingress','--dns','127.0.0.1','--label',ownerLabel+'='+runtime.ownership,
++  '-p','127.0.0.1::3100','--entrypoint','/opt/.venv/bin/python','--read-only','--user','65534:65534','--cap-drop','ALL','--security-opt','no-new-privileges',
++  '--sysctl','net.ipv4.ip_forward=0','--sysctl','net.ipv6.conf.all.forwarding=0','--no-healthcheck','--tmpfs','/data:rw,nosuid,nodev,size=1048576',
++  '--mount',`type=bind,src=${runtime.relaySourcePath},dst=/relay/relay.py,readonly`,
++  '--mount',`type=bind,src=${runtime.configPath},dst=/relay/config.json,readonly`,
++  '--mount',`type=bind,src=${runtime.statsPath},dst=/evidence/relay-stats.json`,image,'-B','-I','-S','-u','/relay/relay.py','/relay/config.json'];}
+ export async function main(){
+-  let stage='attempt-admission';const io=output(),samples=[];
++  let stage='attempt-admission';const io=output(),receipts={networks:{},containers:{}};
+   const startedAt=Number(process.env.ATTEMPT_STARTED_MS),remaining=()=>90000-(Date.now()-startedAt);
+   const docker=(args,timeout)=>execFileSync('docker',args,{encoding:'utf8',timeout,maxBuffer:262144,stdio:['ignore','pipe','pipe'],windowsHide:true});
+   const run=(label,...args)=>{stage=label;const timeout=Math.min(5000,remaining());if(timeout<=0)fail('input-deadline');return command(docker,label,args,Math.max(1,Math.floor(timeout)));};
+   const parse=text=>{try{return JSON.parse(text);}catch{fail('inspect-json-unresolved');}};
++  const persist=()=>io.json('admission-receipts',receipts);
+   try{
+-    if(!Number.isFinite(startedAt)||remaining()<=0||path.resolve(root)!==fs.realpathSync(root)||path.basename(path.dirname(root))!=='ui-parity-legend-startup-diagnostic'||!/^attempt-[\w-]+$/.test(path.basename(root)))fail('owned-attempt-unresolved');
+-    const image='sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f',source='38dffc33389aca0e4a87e0e88d42f7067aa220df';
++    if(!Number.isFinite(startedAt)||remaining()<=0||!ownedRoot(root))fail('owned-attempt-unresolved');
++    stage='attempt-source-verification';verifySource(root);
+     if(parse(run('image-id','image','inspect',image,'--format','{{json .Id}}'))!==image||run('image-source','image','inspect',image,'--format','{{index .Config.Labels "org.qopenbb.source.workspace"}}').trim()!==source)fail('image-identity-unresolved');
+     if(fs.existsSync(root+'/runtime-private.json'))fail('existing-runtime-receipt');
+-    const name='qopenbb-legend-probe-'+randomBytes(5).toString('hex'),statePath=path.join(root,'state-'+randomBytes(6).toString('hex'));
++    const name='qopenbb-legend-relay-'+randomBytes(5).toString('hex'),statePath=path.join(root,'state-'+randomBytes(6).toString('hex'));
+     const credential={email:'legend-probe-'+randomBytes(6).toString('hex')+'@example.com',password:'Aa1!'+randomBytes(24).toString('hex')};
+-    const runtime={name,networkName:name+'-net',ownership:randomBytes(12).toString('hex'),networkId:null,container:null,statePath,image,source,browserCreated:false,startedAt};
++    const runtime={name,ownership:randomBytes(12).toString('hex'),internalNetworkId:null,ingressNetworkId:null,appId:null,relayId:null,statePath,
++      relaySourcePath:path.join(root,'harness','relay.py'),configPath:path.join(root,'relay-config.json'),statsPath:path.join(root,'relay-stats.json'),image,source,browserCreated:false,startedAt};
+     io.json('runtime-private',runtime,{privateFile:true});io.json('credential-private',credential,{privateFile:true});fs.mkdirSync(statePath);
+     const save=()=>io.json('runtime-private',runtime,{privateFile:true});
+-    runtime.networkId=run('network-create','network','create','--driver','bridge','--internal','--label',ownerLabel+'='+runtime.ownership,runtime.networkName).trim();if(!/^[a-f0-9]{64}$/.test(runtime.networkId))fail('network-id-unresolved');save();
+-    const network=networkProjection(parse(run('network-inspect','network','inspect',runtime.networkId))[0],runtime);io.json('network-admission',network);if(!networkValid(network))fail('network-isolation-unresolved');
+-    runtime.container=run('container-create','run','-d','--name',name,'--network',runtime.networkName,'--dns','127.0.0.1','--label',ownerLabel+'='+runtime.ownership,'--mount',`type=bind,src=${statePath},dst=/data`,
+-      '-e','HTTP_PROXY=','-e','HTTPS_PROXY=','-e','ALL_PROXY=','-e','http_proxy=','-e','https_proxy=','-e','all_proxy=',
+-      '-p','127.0.0.1::3000','-e',`OPENBB_ADMIN_PASSWORD=${credential.password}`,'-e','PUBLIC_URL=http://localhost','-e',`OPENBB_ADMIN_EMAIL=${credential.email}`,image).trim();if(!/^[a-f0-9]{64}$/.test(runtime.container))fail('container-id-unresolved');save();
+-    const runReturnedAt=performance.now(),deadline=runReturnedAt+Math.max(0,remaining());
+-    const result=await diagnose({runReturnedAt,deadline,inspect:async()=>({container:parse(run('container-inspect','inspect',runtime.container))[0],network:parse(run('network-inspect','network','inspect',runtime.networkId))[0],expected:runtime}),
+-      persist:async receipt=>{samples.push(receipt);io.json('samples',samples);},health:port=>healthOnce(port,{remaining})});
+-    io.json('probe-result',{...result,originalSource:source,image,browserCreated:false,noRetry:true});
+-    if(result.health?.outcome!=='loopback-healthy')process.exitCode=1;
+-  }catch(error){io.json('probe-result',{...safeFailure(error,stage),samples:samples.length,browserCreated:false,noRetry:true});process.exitCode=1;}
++    for(const kind of ['internal','ingress']){
++      runtime[kind+'NetworkId']=run('network-create-'+kind,'network','create','--driver','bridge',...(kind==='internal'?['--internal']:[]),'--label',ownerLabel+'='+runtime.ownership,name+'-'+kind).trim();
++      if(!/^[a-f0-9]{64}$/.test(runtime[kind+'NetworkId']))fail('network-id-unresolved');save();
++      receipts.networks[kind]=networkProjection(parse(run('network-inspect-'+kind,'network','inspect',runtime[kind+'NetworkId']))[0],runtime,kind);persist();
++      if(!allTrue(receipts.networks[kind]))fail('network-isolation-unresolved');
++    }
++    runtime.appId=run('app-create',...appArgs(runtime,credential)).trim();if(!/^[a-f0-9]{64}$/.test(runtime.appId))fail('app-id-unresolved');save();
++    const observe=(kind,raw)=>observeContainer(raw,runtime,kind,receipt=>{receipts.containers[kind]=receipt;persist();});
++    const app=observe('app',parse(run('app-inspect','inspect',runtime.appId))[0]).decision;if(app.kind!=='app-admitted')fail(app.kind);
++    io.json('relay-config',{upstreamIPv4:app.address,upstreamPort:3000});
++    io.reserveJson('relay-stats',{phase:'not-started'},4096);fs.chmodSync(runtime.statsPath,0o666);
++    receipts.config={sha256:createHash('sha256').update(fs.readFileSync(runtime.configPath)).digest('hex'),fixedUpstreamIPv4:app.address,fixedUpstreamPort:3000};persist();
++    runtime.relayId=run('relay-create',...relayArgs(runtime)).trim();if(!/^[a-f0-9]{64}$/.test(runtime.relayId))fail('relay-id-unresolved');save();
++    run('relay-connect-internal','network','connect',runtime.internalNetworkId,runtime.relayId);
++    run('relay-start','start',runtime.relayId);
++    const relay=observe('relay',parse(run('relay-inspect','inspect',runtime.relayId))[0]).decision,publicationAt=performance.now();if(relay.kind!=='relay-admitted')fail(relay.kind);
++    // Re-admit the same app and both network identities immediately before any health input.
++    if(observe('app',parse(run('app-reinspect','inspect',runtime.appId))[0]).decision.address!==app.address)fail('app-address-or-security-drift');
++    for(const kind of ['internal','ingress']){receipts.networks[kind]=networkProjection(parse(run('network-reinspect-'+kind,'network','inspect',runtime[kind+'NetworkId']))[0],runtime,kind);persist();if(!allTrue(receipts.networks[kind]))fail('network-security-drift');}
++    const result=await readiness({port:relay.port,remaining,publicationAt,persist:async attempts=>io.json('health-attempts',attempts)});
++    io.json('probe-result',{...result,originalSource:source,image,browserCreated:false,noRetry:true,relayFinalCountersRequired:true});
++    if(result.outcome!=='readiness-observed')process.exitCode=1;
++  }catch(error){io.json('probe-result',{...safeFailure(error,stage),browserCreated:false,noRetry:true,relayFinalCountersRequired:true});process.exitCode=1;}
+ }
+ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))await main();
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/projection.mjs" "b/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/projection.mjs"
+deleted file mode 100644
+index 0ed6d65..0000000
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/projection.mjs"
++++ /dev/null
+@@ -1,54 +0,0 @@
+-export const ownerLabel='org.qopenbb.capture.owner';
+-const own=(object,key)=>object!=null&&Object.hasOwn(object,key);
+-export function presence(object,key){const found=object!=null&&key in Object(object),value=found?object[key]:undefined;return {own:own(object,key),in:found,kind:!found?'absent':value===undefined?'undefined':value===null?'null':'value',type:found?typeof value:'absent',...(value===null?{value:null}:{})};}
+-export function field(object,key,errors){const record=presence(object,key),value=object?.[key];if(record.kind!=='value')return record;
+-  if(typeof value==='boolean'||typeof value==='number'&&Number.isFinite(value)||typeof value==='string'&&value.length<=128)return {...record,value};
+-  errors.push('unsupported-selected-scalar');return {...record,unsupported:true,...(typeof value==='string'?{length:value.length}:{})};}
+-function target(parent,key,errors){const value=parent?.[key],record=presence(parent,key);if(record.kind!=='value')return record;
+-  if(!Array.isArray(value)){errors.push('target-array-type');return {...record,unsupported:true};}
+-  if(value.length>4){errors.push('target-array-bound');return {...record,arrayLength:value.length,unsupported:true};}
+-  return {...record,arrayLength:value.length,entries:value.map(entry=>({HostIp:field(entry,'HostIp',errors),HostPort:field(entry,'HostPort',errors)}))};}
+-function parentRecord(object,key,errors){const record=presence(object,key),value=object?.[key];if(record.kind==='value'&&(typeof value!=='object'||Array.isArray(value)))errors.push('selected-parent-type');return record;}
+-export function networkProjection(raw,expected){return {idMatched:raw?.Id===expected.networkId,nameMatched:raw?.Name===expected.networkName,labelMatched:raw?.Labels?.[ownerLabel]===expected.ownership,driverBridge:raw?.Driver==='bridge',internal:raw?.Internal===true,ipv6Disabled:raw?.EnableIPv6===false};}
+-export function networkValid(record){return Object.values(record).every(value=>value===true);}
+-export function projectContainer(raw,network,expected,context){
+-  const errors=[],networks=raw?.NetworkSettings?.Networks,networkKeys=Object.keys(networks??{});
+-  const ports=raw?.NetworkSettings?.Ports,bindings=raw?.HostConfig?.PortBindings;
+-  return {context:{...context,containerId:expected.container,networkId:expected.networkId},errors,
+-    security:{containerIdMatched:raw?.Id===expected.container,labelMatched:raw?.Config?.Labels?.[ownerLabel]===expected.ownership,attachedNetworkCount:networkKeys.length,
+-      exactNetwork:networkKeys.length===1&&networkKeys[0]===expected.networkName&&networks[networkKeys[0]]?.NetworkID===expected.networkId,network:networkProjection(network,expected)},
+-    runtime:{NetworkSettings:parentRecord(raw,'NetworkSettings',errors),Ports:parentRecord(raw?.NetworkSettings,'Ports',errors),target:target(ports,'3000/tcp',errors)},
+-    configured:{HostConfig:parentRecord(raw,'HostConfig',errors),PortBindings:parentRecord(raw?.HostConfig,'PortBindings',errors),target:target(bindings,'3000/tcp',errors)},
+-    state:{presence:presence(raw,'State'),...Object.fromEntries(['Status','Running','Restarting','Dead','ExitCode','OOMKilled','StartedAt','FinishedAt'].map(key=>[key,field(raw?.State,key,errors)]))}};
+-}
+-const missing=record=>record.kind!=='value'||record.arrayLength===0;
+-const value=(record,key)=>record.entries?.[0]?.[key]?.value;
+-const port=value=>typeof value==='string'&&/^\d+$/.test(value)&&Number(value)>=1&&Number(value)<=65535;
+-export function classify(receipt){
+-  const s=receipt.security,state=receipt.state,cfg=receipt.configured.target,actual=receipt.runtime.target;
+-  if(receipt.errors.length)return {kind:'projection-unresolved'};
+-  if(!s.containerIdMatched||!s.labelMatched||s.attachedNetworkCount!==1||!s.exactNetwork||!networkValid(s.network))return {kind:'security-unresolved'};
+-  for(const record of [cfg,actual])if(!missing(record)&&record.entries?.some(entry=>entry.HostIp.value!=='127.0.0.1'))return {kind:'security-unresolved'};
+-  for(const [key,type] of [['Status','string'],['Running','boolean'],['Restarting','boolean'],['Dead','boolean'],['ExitCode','number'],['OOMKilled','boolean'],['StartedAt','string'],['FinishedAt','string']])if(state[key].kind!=='value'||state[key].type!==type)return {kind:'state-unresolved'};
+-  if(state.Status.value!=='running'||state.Running.value!==true||state.Restarting.value!==false||state.Dead.value!==false)return {kind:'container-not-running'};
+-  if(missing(cfg))return {kind:'configured-binding-missing'};
+-  if(cfg.arrayLength!==1||typeof value(cfg,'HostPort')!=='string'||!(value(cfg,'HostPort')===''||/^\d+$/.test(value(cfg,'HostPort'))&&Number(value(cfg,'HostPort'))<=65535))return {kind:'configured-binding-unresolved'};
+-  if(missing(actual))return {kind:'allocation-pending'};
+-  if(actual.arrayLength!==1||!port(value(actual,'HostPort')))return {kind:'publication-shape-unresolved'};
+-  return {kind:'publication-observed',port:value(actual,'HostPort')};
+-}
+-export async function diagnose({inspect,persist,health,now=()=>performance.now(),pause=ms=>new Promise(resolve=>setTimeout(resolve,ms)),runReturnedAt,deadline}){
+-  let priorMissing=false;
+-  for(const [index,offset] of [0,1000,3000].entries()){
+-    if(now()>=deadline)return {outcome:'deadline-unresolved',samples:index};
+-    const wait=runReturnedAt+offset-now();if(wait>0){if(now()+wait>=deadline)return {outcome:'deadline-unresolved',samples:index};await pause(wait);}
+-    const readStartedMs=now(),{container,network,expected}=await inspect();
+-    const receipt=projectContainer(container,network,expected,{sample:index+1,plannedOffsetMs:offset,readStartedMs,readEndedMs:now(),elapsedSinceRunReturnMs:now()-runReturnedAt});
+-    await persist(receipt); // A stopping assertion must not discard its operands.
+-    if(now()>=deadline)return {outcome:'deadline-unresolved',samples:index+1};
+-    const decision=classify(receipt);
+-    if(decision.kind==='publication-observed')return {outcome:priorMissing?'delayed-publication-observed':'publication-observed',samples:index+1,health:await health(decision.port)};
+-    if(decision.kind!=='allocation-pending')return {outcome:decision.kind,samples:index+1};priorMissing=true;
+-  }
+-  return {outcome:'publication-not-observed-within-window',samples:3};
+-}
+diff --git "a/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/relay.py" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/relay.py"
+new file mode 100644
+index 0000000..3849501
+--- /dev/null
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/relay.py"
+@@ -0,0 +1,252 @@
++"""Bounded test transport. The only upstream comes from the sealed config file."""
++import errno
++import ipaddress
++import json
++import selectors
++import signal
++import socket
++import sys
++import time
++
++PAIR_LIMIT = 4
++ACCEPT_LIMIT = 16
++BUFFER_LIMIT = 65536
++PAIR_BYTES = 4194304
++TOTAL_BYTES = 33554432
++CONNECT_SECONDS = 2
++STATS_PATH = "/evidence/relay-stats.json"
++
++
++def config_target(value):
++    if not isinstance(value, dict) or set(value) != {"upstreamIPv4", "upstreamPort"}:
++        raise ValueError("config-shape")
++    address = ipaddress.IPv4Address(value["upstreamIPv4"])
++    if str(address) != value["upstreamIPv4"] or address.is_unspecified or address.is_loopback or address.is_multicast:
++        raise ValueError("config-address")
++    if type(value["upstreamPort"]) is not int or value["upstreamPort"] != 3000:
++        raise ValueError("config-port")
++    return str(address), 3000
++
++
++def new_stats():
++    return {"phase": "initializing", "cleanStop": False, "acceptedPairs": 0,
++            "activePairs": 0, "peakPairs": 0, "peakSockets": 0,
++            "receivedBytes": 0, "forwardedBytes": 0, "peakBufferedBytes": 0,
++            "maximumPairBytes": 0, "refusedConnections": 0, "peerClosures": 0,
++            "violations": {key: 0 for key in ("accepted-pairs", "pair-bytes", "total-bytes",
++                "connect-timeout", "transport-truncated", "socket-error", "config-error", "stats-error")}}
++
++
++def save_stats(stats, filename=STATS_PATH):
++    encoded = json.dumps(stats, separators=(",", ":")).encode("ascii")
++    if len(encoded) > 4096:
++        raise ValueError("stats-bound")
++    # The controller reserves this one writable file before the read-only relay starts.
++    with open(filename, "r+b", buffering=0) as stream:
++        stream.seek(0)
++        stream.write(encoded)
++        stream.truncate()
++
++
++class Relay:
++    def __init__(self, target, selector=None, clock=time.monotonic, factory=socket.socket):
++        self.target, self.selector, self.clock, self.factory = target, selector or selectors.DefaultSelector(), clock, factory
++        self.stats, self.pairs, self.listener, self.stopping = new_stats(), [], None, False
++
++    def breach(self, reason):
++        self.stats["violations"][reason] += 1
++        self.stopping = True
++
++    def close_pair(self, pair):
++        if pair not in self.pairs:
++            return
++        for endpoint in pair["ends"]:
++            try:
++                self.selector.unregister(endpoint)
++            except (KeyError, ValueError):
++                pass
++            endpoint.close()
++        self.pairs.remove(pair)
++        self.stats["activePairs"] = len(self.pairs)
++
++    def set_events(self, endpoint, mask, data):
++        try:
++            self.selector.unregister(endpoint)
++        except (KeyError, ValueError):
++            pass
++        if mask:
++            self.selector.register(endpoint, mask, data)
++
++    def refresh(self, pair):
++        for side, endpoint in enumerate(pair["ends"]):
++            other = 1 - side
++            if pair["eof"][other] and not pair["buffers"][side] and not pair["shutdown"][side] and (side == 0 or not pair["connecting"]):
++                endpoint.shutdown(socket.SHUT_WR)
++                pair["shutdown"][side] = True
++            mask = 0
++            if side == 1 and pair["connecting"]:
++                mask = selectors.EVENT_WRITE
++            else:
++                if not pair["eof"][side] and len(pair["buffers"][other]) < BUFFER_LIMIT:
++                    mask |= selectors.EVENT_READ
++                if pair["buffers"][side]:
++                    mask |= selectors.EVENT_WRITE
++            self.set_events(endpoint, mask, (pair, side))
++        if all(pair["eof"]) and not any(pair["buffers"]):
++            self.close_pair(pair)
++
++    def accept_pair(self):
++        client, _ = self.listener.accept()  # Peer addresses are deliberately discarded.
++        client.setblocking(False)
++        self.stats["acceptedPairs"] += 1
++        upstream = None
++        try:
++            upstream = self.factory(socket.AF_INET, socket.SOCK_STREAM)
++            upstream.setblocking(False)
++            result = upstream.connect_ex(self.target)
++            if result not in (0, errno.EINPROGRESS, errno.EWOULDBLOCK, errno.EALREADY):
++                if result == errno.ECONNREFUSED:
++                    self.stats["refusedConnections"] += 1
++                else:
++                    self.breach("socket-error")
++                client.close()
++                upstream.close()
++                return
++            pair = {"ends": [client, upstream], "buffers": [bytearray(), bytearray()],
++                    "eof": [False, False], "shutdown": [False, False], "bytes": 0,
++                    "connecting": result != 0, "connectBy": self.clock() + CONNECT_SECONDS}
++            self.pairs.append(pair)
++            self.stats["activePairs"] = len(self.pairs)
++            self.stats["peakPairs"] = max(self.stats["peakPairs"], len(self.pairs))
++            self.stats["peakSockets"] = max(self.stats["peakSockets"], 1 + 2 * len(self.pairs))
++            self.refresh(pair)
++        except OSError:
++            client.close()
++            if upstream is not None:
++                upstream.close()
++            self.breach("socket-error")
++
++    def read(self, pair, side):
++        buffer = pair["buffers"][1 - side]
++        payload = pair["ends"][side].recv(BUFFER_LIMIT - len(buffer))
++        if not payload:
++            pair["eof"][side] = True
++            return
++        # Received bytes reserve forwarding capacity before any payload is queued.
++        if pair["bytes"] + len(payload) > PAIR_BYTES:
++            self.breach("pair-bytes")
++            return
++        if self.stats["receivedBytes"] + len(payload) > TOTAL_BYTES:
++            self.breach("total-bytes")
++            return
++        pair["bytes"] += len(payload)
++        self.stats["receivedBytes"] += len(payload)
++        self.stats["maximumPairBytes"] = max(self.stats["maximumPairBytes"], pair["bytes"])
++        buffer.extend(payload)
++        buffered = sum(sum(len(buf) for buf in current["buffers"]) for current in self.pairs)
++        self.stats["peakBufferedBytes"] = max(self.stats["peakBufferedBytes"], buffered)
++
++    def transfer(self, pair, side, mask):
++        endpoint = pair["ends"][side]
++        try:
++            if side == 1 and pair["connecting"]:
++                error = endpoint.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
++                if error:
++                    if error == errno.ECONNREFUSED:
++                        self.stats["refusedConnections"] += 1
++                    else:
++                        self.breach("socket-error")
++                    self.close_pair(pair)
++                    return
++                pair["connecting"] = False
++            else:
++                if mask & selectors.EVENT_READ:
++                    self.read(pair, side)
++                if mask & selectors.EVENT_WRITE and pair["buffers"][side] and not self.stopping:
++                    count = endpoint.send(pair["buffers"][side])
++                    del pair["buffers"][side][:count]
++                    self.stats["forwardedBytes"] += count
++            if not self.stopping:
++                self.refresh(pair)
++        except (BlockingIOError, InterruptedError):
++            pass
++        except (ConnectionResetError, BrokenPipeError):
++            self.stats["peerClosures"] += 1
++            # A reset with unforwarded bytes is a truncated transport, never a pass.
++            if any(pair["buffers"]):
++                self.breach("socket-error")
++            self.close_pair(pair)
++        except OSError:
++            self.breach("socket-error")
++            self.close_pair(pair)
++
++    def tick(self):
++        for pair in self.pairs[:]:
++            if pair["connecting"] and self.clock() >= pair["connectBy"]:
++                self.breach("connect-timeout")
++        accepting = len(self.pairs) < PAIR_LIMIT and self.stats["acceptedPairs"] < ACCEPT_LIMIT
++        self.set_events(self.listener, selectors.EVENT_READ if accepting else 0, None)
++        if self.stats["acceptedPairs"] >= ACCEPT_LIMIT:
++            self.breach("accepted-pairs")
++
++    def run(self, persist=save_stats):
++        try:
++            self.listener = self.factory(socket.AF_INET, socket.SOCK_STREAM)
++            self.listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            self.listener.bind(("0.0.0.0", 3100))
++            self.listener.listen(PAIR_LIMIT)
++            self.listener.setblocking(False)
++            self.stats["phase"], self.stats["peakSockets"] = "listening", 1
++            persist(self.stats)
++            while not self.stopping:
++                self.tick()
++                if self.stopping:
++                    break
++                for key, mask in self.selector.select(0.05):
++                    if self.stopping:
++                        break
++                    if key.data is None:
++                        self.accept_pair()
++                    elif key.data[0] in self.pairs:
++                        self.transfer(*key.data, mask)
++                    if self.stopping:
++                        break
++        except (OSError, ValueError):
++            self.breach("socket-error")
++        finally:
++            if self.pairs:
++                self.breach("transport-truncated")
++            for pair in self.pairs[:]:
++                self.close_pair(pair)
++            if self.listener is not None:
++                self.listener.close()
++            self.selector.close()
++            self.stats["phase"], self.stats["cleanStop"] = "closed", True
++            persist(self.stats)
++
++
++def main():
++    relay = None
++    try:
++        if len(sys.argv) != 2 or sys.argv[1] != "/relay/config.json":
++            raise ValueError("config-path")
++        with open(sys.argv[1], encoding="ascii") as stream:
++            target = config_target(json.loads(stream.read(257)))
++        relay = Relay(target)
++        signal.signal(signal.SIGTERM, lambda *_: setattr(relay, "stopping", True))
++        signal.signal(signal.SIGINT, lambda *_: setattr(relay, "stopping", True))
++        relay.run()
++        return int(any(relay.stats["violations"].values()))
++    except Exception:
++        stats = relay.stats if relay is not None else new_stats()
++        stats["phase"] = "failed"
++        stats["violations"]["config-error" if relay is None else "stats-error"] += 1
++        try:
++            save_stats(stats)
++        except Exception:
++            pass
++        return 1
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/run.sh" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/run.sh"
+index a84b656..f01cb05 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-startup-diagnostic/harness/run.sh"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-fixed-relay/harness/run.sh"
+@@ -3,18 +3,22 @@ set -u
+ export CAPTURE_ROOT="$1"
+ export ATTEMPT_STARTED_MS="$(date +%s%3N)"
+ export PATH="/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin"
+-test "${LEGEND_DIAGNOSTIC_GRANTED:-}" = "controller-granted" || exit 79
++test "${LEGEND_RELAY_GRANTED:-}" = "controller-granted" || exit 79
+ cleanup() {
+   incoming=$?
+   trap - EXIT
+   trap '' INT TERM
+-  timeout --signal=TERM --kill-after=1s 59s node "$CAPTURE_ROOT/harness/cleanup.mjs" > "$CAPTURE_ROOT/cleanup.log" 2>&1
+-  cleanup_code=$?
++  timeout --signal=TERM --kill-after=1s 59s node "$CAPTURE_ROOT/harness/cleanup.mjs" 2>&1 | node "$CAPTURE_ROOT/harness/io.mjs" --bounded-log cleanup.log
++  cleanup_codes=("${PIPESTATUS[@]}")
++  cleanup_code=${cleanup_codes[0]}
++  if [ "${cleanup_codes[1]}" != 0 ]; then cleanup_code=1; fi
+   if [ "$cleanup_code" != 0 ]; then incoming=1; fi
+   exit "$incoming"
+ }
+ trap cleanup EXIT
+ trap 'exit 143' TERM
+ trap 'exit 130' INT
+-timeout --signal=TERM --kill-after=1s 84s node "$CAPTURE_ROOT/harness/probe.mjs" > "$CAPTURE_ROOT/probe.log" 2>&1
+-exit "$?"
++timeout --signal=TERM --kill-after=1s 84s node "$CAPTURE_ROOT/harness/probe.mjs" 2>&1 | node "$CAPTURE_ROOT/harness/io.mjs" --bounded-log probe.log
++probe_codes=("${PIPESTATUS[@]}")
++if [ "${probe_codes[1]}" != 0 ]; then exit 1; fi
++exit "${probe_codes[0]}"
