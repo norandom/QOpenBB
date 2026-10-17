@@ -1,0 +1,11 @@
+# Task 2.39 repair round 1
+
+The adapter now classifies internal failures by private WeakMap identity. Arbitrary exceptions from public GridApi methods receive the bounded unresolved diagnostic without inspecting their properties or prototypes. Legitimate snapshot-validation failures retain their accepted diagnostic paths and invalid status.
+
+The independent review reproduced escaping revoked-Proxy exceptions and throwing getPrototypeOf traps. Two new executable regressions were added before the repair: repair1/red.log records both failing, with 39 existing contract cases passing (exit 1). After replacing instanceof classification, all 88 application tests and 260 compatibility tests pass without skips, both strict compilers pass, and scoped Biome passes. verify.sh records the exact commands; every final exit is 0. The original missing-module RED and rejected implementation/review evidence remain unchanged.
+
+Requirements remain 1.1, 4.2, 4.7, 4.8, 4.9, 10.4, 10.5, 10.6; design.md approved ordinary-grid supplement and chart-grid-capture-design.md remain the contract. The repair changes only gridCapture.ts and its unit regression file. The integration file, frozen fixture/configuration, shared types/helpers and other dirty work are preserved. Production remains subject to the controller's whole-file 400/300/50 complexity gate and independent review. No browser/build/install, UI activation or full-product acceptance is claimed.
+
+Reproduction uses stage.py for a new exact source/test/config stage, red.sh before production repair, update-stage.py for the two owned files after repair, verify.sh and final-identities.py for source/stage byte equality. Dependencies and pinned Node are unchanged.
+
+Publication allowlist: gridCapture.ts and gridCapture.test.ts; repair1/repair.md, stage.py, red.sh, update-stage.py, verify.sh, final-identities.py, owned-identities.json, source-stage-manifest.json, red.log, red.exit, format.log, chart-application.log, chart-application.exit, chart-application-tsc.log, chart-application-tsc.exit, chart-compatibility.log, chart-compatibility.exit, chart-compatibility-tsc.log, chart-compatibility-tsc.exit, biome.log and biome.exit. Exclude local stage-path.txt and staging/dependency trees. Controller reviews/selects publication separately.

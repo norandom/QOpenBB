@@ -1,0 +1,11 @@
+ESCAPED: TypeError: Cannot perform 'getPrototypeOf' on a proxy that has been revoked
+    at [Symbol.hasInstance] (<anonymous>)
+    at captureDisplayedChart (/home/mc/qopenbb-work/task239-20261017125950/terminalpro/src/components/General/Table/Chart/application/gridCapture.ts:162:19)
+    at Object.<anonymous> (/mnt/d/Source/QOpenBB/artifacts/task-2.39/review/probe.cjs:14:34)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47

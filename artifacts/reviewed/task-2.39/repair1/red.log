@@ -1,0 +1,81 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/task239repair1-20261017130500/terminalpro[39m
+
+ [31m❯[39m tests/unit/chart-application/gridCapture.test.ts [2m([22m[2m41 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 17[2mms[22m[39m
+     [32m✓[39m preserves order, duplicate categories, provenance and independent copies[32m 4[2mms[22m[39m
+     [32m✓[39m distinguishes destroyed/loading from ready-empty[32m 1[2mms[22m[39m
+     [32m✓[39m rejects unsupported bounds {"rowStartIndex":0}[32m 0[2mms[22m[39m
+     [32m✓[39m rejects unsupported bounds {"rowEndIndex":1}[32m 0[2mms[22m[39m
+     [32m✓[39m rejects unsupported bounds {"rowStartIndex":1,"rowEndIndex":0}[32m 0[2mms[22m[39m
+     [32m✓[39m rejects unsupported bounds {"rowStartIndex":0,"rowEndIndex":2}[32m 0[2mms[22m[39m
+     [32m✓[39m rejects unsupported bounds {"rowStartIndex":-1,"rowEndIndex":0}[32m 0[2mms[22m[39m
+     [32m✓[39m rejects unsupported bounds {"rowStartIndex":0.5,"rowEndIndex":1}[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed shape and bounds[32m 0[2mms[22m[39m
+     [32m✓[39m rejects absent/duplicate stable IDs undefined[32m 0[2mms[22m[39m
+     [32m✓[39m rejects absent/duplicate stable IDs [32m 0[2mms[22m[39m
+     [32m✓[39m rejects absent/duplicate stable IDs same[32m 0[2mms[22m[39m
+     [32m✓[39m never parses or substitutes unsupported numeric undefined[32m 0[2mms[22m[39m
+     [32m✓[39m never parses or substitutes unsupported numeric NaN[32m 0[2mms[22m[39m
+     [32m✓[39m never parses or substitutes unsupported numeric Infinity[32m 0[2mms[22m[39m
+     [32m✓[39m never parses or substitutes unsupported numeric 12%[32m 0[2mms[22m[39m
+     [32m✓[39m never parses or substitutes unsupported numeric {}[32m 0[2mms[22m[39m
+     [32m✓[39m never parses or substitutes unsupported numeric true[32m 0[2mms[22m[39m
+     [32m✓[39m rejects unsupported categories null[32m 0[2mms[22m[39m
+     [32m✓[39m rejects unsupported categories {}[32m 0[2mms[22m[39m
+     [32m✓[39m rejects unsupported categories undefined[32m 0[2mms[22m[39m
+     [32m✓[39m rejects unsupported categories Infinity[32m 0[2mms[22m[39m
+     [32m✓[39m preserves numeric 0[32m 0[2mms[22m[39m
+     [32m✓[39m preserves numeric -2.5[32m 0[2mms[22m[39m
+     [32m✓[39m preserves numeric null[32m 0[2mms[22m[39m
+     [32m✓[39m rejects nonordinary nodes {"group":true}[32m 0[2mms[22m[39m
+     [32m✓[39m rejects nonordinary nodes {"rowPinned":"top"}[32m 0[2mms[22m[39m
+     [32m✓[39m rejects nonordinary nodes {"footer":true}[32m 0[2mms[22m[39m
+     [32m✓[39m detects unsupported mode rowModelType[32m 0[2mms[22m[39m
+     [32m✓[39m detects unsupported mode pivotMode[32m 0[2mms[22m[39m
+     [32m✓[39m detects unsupported mode treeData[32m 0[2mms[22m[39m
+     [32m✓[39m detects unsupported mode pinnedTopRowData[32m 0[2mms[22m[39m
+     [32m✓[39m keeps unexpected API failures bounded and private[32m 0[2mms[22m[39m
+     [32m✓[39m delegates malformed snapshot metadata to the accepted validator[32m 0[2mms[22m[39m
+   [32m✓[39m does not mistake hostile API throws for validator diagnostics[32m 0[2mms[22m[39m
+   [32m✓[39m never calls mutation, persistence or visibility APIs[32m 0[2mms[22m[39m
+   [32m✓[39m uses accepted stamp validation and structural snapshot paths[32m 0[2mms[22m[39m
+   [32m✓[39m detects active grouped columns and pinned row counters[32m 0[2mms[22m[39m
+   [32m✓[39m rejects missing displayed rows rather than raw fallback[32m 0[2mms[22m[39m
+[31m   [31m×[31m contains revoked Proxy exceptions from public grid behavior[39m[32m 2[2mms[22m[39m
+[31m   [31m×[31m never traverses prototypes of thrown grid objects[39m[32m 1[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/unit/chart-application/gridCapture.test.ts[2m > [22mcontains revoked Proxy exceptions from public grid behavior
+[31m[1mTypeError[22m: Cannot perform 'getPrototypeOf' on a proxy that has been revoked[39m
+[36m [2m❯[22m captureDisplayedChart src/components/General/Table/Chart/application/gridCapture.ts:[2m186:9[22m[39m
+    [90m184|[39m       [33m:[39m { status[33m:[39m [32m"invalid"[39m[33m,[39m diagnostics[33m:[39m result[33m.[39mdiagnostics }[33m;[39m
+    [90m185|[39m   } [35mcatch[39m (error) {
+    [90m186|[39m     [35mif[39m (error [35minstanceof[39m [33mCaptureFailure[39m)
+    [90m   |[39m         [31m^[39m
+    [90m187|[39m       [35mreturn[39m {
+    [90m188|[39m         status[33m:[39m error[33m.[39mstatus[33m,[39m
+[90m [2m❯[22m tests/unit/chart-application/gridCapture.test.ts:[2m264:10[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/unit/chart-application/gridCapture.test.ts[2m > [22mnever traverses prototypes of thrown grid objects
+[31m[1mError[22m: PRIVATE trap[39m
+[36m [2m❯[22m Object.<anonymous> tests/unit/chart-application/gridCapture.test.ts:[2m268:46[22m[39m
+    [90m266|[39m [34mit[39m([32m"never traverses prototypes of thrown grid objects"[39m[33m,[39m () [33m=>[39m {
+    [90m267|[39m   [35mconst[39m data [33m=[39m [34minput[39m()[33m;[39m
+    [90m268|[39m   const getPrototypeOf = vi.fn(() => { throw new Error("PRIVATE trap")…
+    [90m   |[39m                                              [31m^[39m
+    [90m269|[39m   [35mconst[39m thrown [33m=[39m [35mnew[39m [33mProxy[39m({}[33m,[39m { getPrototypeOf })[33m;[39m
+    [90m270|[39m   [34mchangeApi[39m(data[33m,[39m { getCellValue[33m:[39m () [33m=>[39m { [35mthrow[39m thrown[33m;[39m } })[33m;[39m
+[90m [2m❯[22m captureDisplayedChart src/components/General/Table/Chart/application/gridCapture.ts:[2m186:9[22m[39m
+[90m [2m❯[22m tests/unit/chart-application/gridCapture.test.ts:[2m271:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m39 passed[39m[22m[90m (41)[39m
+[2m   Start at [22m 13:05:38
+[2m   Duration [22m 761ms[2m (transform 87ms, setup 0ms, import 115ms, tests 17ms, environment 487ms)[22m
+

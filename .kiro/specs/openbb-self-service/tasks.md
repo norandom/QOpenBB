@@ -974,7 +974,7 @@ All paths below are relative to vendor/workspace/terminalpro unless explicitly r
   - _Depends: 1.4, 2.37_
   - _Requirements: 1.1, 4.8, 4.9, 10.4, 10.5, 10.6_
 
-- [ ] 2.39 Capture resolved ordinary observations without changing their meaning
+- [x] 2.39 Capture resolved ordinary observations without changing their meaning
   - Core task, 1-3 hours. Own src/components/General/Table/Chart/application/gridCapture.ts, tests/unit/chart-application/gridCapture.test.ts and the adapter integration additions to gridCapture.grid.test.ts. Consume the accepted fixture/configuration and frozen CaptureDisplayedChart contract; request controller review rather than editing shared types or existing helpers.
   - Consume caller-resolved category/descriptors and ordered range unchanged. Read displayed indices within inclusive valid bounds and use unformatted public grid values. Preserve node IDs, duplicate category labels, numeric zero/negative/fraction/null, supplied units/scale and resolved series order. Never infer category roles, re-filter visibility, parse displayed percentage text, rescale observations or fall back to raw node.data. Test A1 visible-range resolution followed by A2 capture as an explicit seam.
   - Construct the existing flat snapshot from supplied address/data revision, model and original range provenance through the accepted snapshot validator. Preserve input and metadata immutability and return the original captured stamp. Caller pre/post current-stamp validation remains external; do not claim this input can detect a newer generation or caller-owned transpose metadata.

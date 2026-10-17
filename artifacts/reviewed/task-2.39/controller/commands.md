@@ -1,0 +1,1 @@
+Controller verification: Windows `py artifacts/grid-capture-implementation/scope.py`, then `wsl -d Debian -u mc -- bash /mnt/d/Source/QOpenBB/artifacts/grid-capture-implementation/quality.sh`; both exit 0. Manifests preserve unrelated dirty scope for measurement without accepting or staging it.

@@ -1,0 +1,1 @@
+Repair verification: Windows `py artifacts/grid-capture-implementation/scope.py`, then `wsl -d Debian -u mc -- bash /mnt/d/Source/QOpenBB/artifacts/grid-capture-implementation/quality.sh`; both exit 0. Whole maintained scope measured; unrelated dirty work is not accepted.
