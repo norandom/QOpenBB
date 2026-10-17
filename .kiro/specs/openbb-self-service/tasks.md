@@ -350,7 +350,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - Done when independent review accepts a current dashboard baseline record and the breadth map distinguishes accepted, failing and untested capabilities.
   - Complexity: tests and evidence are excluded; any maintained runner or helper changed here passes the 400 physical/300 logical/50 per-function caps.
   - _Boundary: Verification and Workspace integration_
-  - _Depends: 4.4_
+  - _Depends: 4.4, 4.9_
   - _Requirements: 2.2, 4.2, 4.4, 4.7, 8.1, 10.5, 10.6, 11.1_
 
 - [ ] 5. Implement and accept Anthropic
@@ -883,3 +883,49 @@ Task 2.31 accepted after independent Astra numerical review: 260 units, strict T
 Task 2.32 accepted after independent Astra browser review: fresh build, all four browser cases, 260 units, strict TypeScript and actual lint passed; exact source/dependency identities, empty CDP diagnostics and owned cleanup verified. Evidence: artifacts/task-2.32/review/review.md. Pixel evidence covers gaps, circles, retained titles, typography, family restoration, export and rejected-render recovery. Full application parity remains open.
 
 Task 2.33 accepted after independent Astra final review: scoped GO and VERIFIED completion for tasks 2.28-2.33. Fresh 260 units, strict TypeScript, actual lint, thirteen-module caps, 47 identities and combined 67-file quality checks passed; matching-source independent browser evidence covers four cases with empty CDP diagnostics. Workspace b96d36d16ba87db2dd595d5796507d473dd0c0c6. See [appearance verification](chart-appearance-verification.md) and artifacts/task-2.33/review/review.md. Overall renderer and release remain unverified.
+
+## Approved design slice: SQLite query compatibility
+
+The owner approved the [SQLite repair design](sqlite-repair-design.md) and its narrow size exception on 2026-10-17, requesting task generation. Independent Sol task-graph sanity review passed (`artifacts/completion-path/sqlite-task-review.md`): the merged plan has 89 unique task IDs and maps all 69 active acceptance criteria. Tasks below await approval. They supplement the parent plan without accepting renderer activation or changing the full parity requirement.
+
+Dependency override: this independent backend branch starts after accepted foundations 1.2, 1.4, 1.7 and provisional Workspace 2.5; it does not wait for tasks 4.1-4.5 despite its numeric position. Task 4.5 additionally requires accepted 4.9. Actual environment/browser restart acceptance remains in 4.2/4.5; SQLite engine recreation cannot substitute. No cycle is introduced. Anthropic and delivery still depend on 4.5, and Excel still waits for 5.5.
+
+Sol owns the backend lane; Astra independently reviews query semantics and acceptance. Keep its four tasks sequential because they share fixtures and source identity. Independent renderer research may proceed alongside it in disjoint files. The controller owns shared inventory, evidence, pins and commits. One heavy suite/install at a time, at most four agents, two xdist workers maximum, no owner data or credential reads.
+
+- [ ] 4.6 Establish an isolated locked SQLite verification runtime
+  - Restore the frozen existing backend Python 3.13 environment through the protected toolchain, or identify a reusable backend image with exact matching dependency identity. Do not resolve a new lock. Record the actual runtime and exercised focused command; missing packages cannot count as a skip/pass.
+  - Build the sibling SQLite test bootstrap and shared fixture builders specified by the design. Before settings imports, isolate dotenv-source construction, use an empty temporary working directory and minimal synthetic child environment, retain the absolute backend import path and deny outbound network. Verify denied reads with a sentinel env/account file; do not inspect operator configuration.
+  - Create actual dependency-closed model tables in per-test file databases with foreign keys and original compressed/UUID types. Freeze fixture APIs for owners, creators, recipients, entities and shares before the next task. No concat UDF, fake tables or mocked database execution.
+  - Done when a fresh process proves bootstrap isolation and an actual stored fixture roundtrip using the identified backend runtime, with reproducible commands and cleanup. Tests and artifact-only environment setup are excluded from production caps; no maintained production runtime changes are authorized here.
+  - _Boundary: SQLite test runtime, conftest.py and fixtures.py in the design's sibling test directory_
+  - _Depends: 1.2, 1.4, 1.7, 2.5_
+  - _Requirements: 1.1, 10.5, 10.6_
+
+- [ ] 4.7 Repair populated dashboard and app reads without changing access semantics
+  - Add regressions for all six populated reads across full, partial-null, null, empty, whitespace and asymmetric empty names. Assert exact displayed attribution, IDs, content and relevant sharing flags.
+  - Seed distinct owner, creator, recipient and unrelated users across entities/permission maps, active/inactive shares and exclusion sets. Assert exact visible membership and the existing noex owner-permissions behavior. Capture raw entity query cardinality and fail on Cartesian-product warnings so result dictionaries cannot hide duplicate rows.
+  - Retain failing reference evidence before applying exactly the six dialect-aware string expression replacements and missing creator join. Capture actual selects for SQLite execution and MySQL compilation; compilation is not live MySQL acceptance. If newer SQLite supports concat, preserve observed baseline results rather than manufacture six failures; the missing-join regression must expose the real defect.
+  - Done when the corrected queries pass populated fixture cases and independent review confirms the seven-site diff, unchanged API/authorization contracts and exact baseline-versus-patch evidence.
+  - Measure the whole modified CRUD file. The owner-approved exception permits at most 1600 physical lines and 582 logical units, with expiry 2026-11-17; function cap 50 remains enforced. Record exact post-patch counts/hash for controller registration and review. Do not alter the checker or widen the exception. Tests are excluded; any unplanned production file still requires 400/300/50.
+  - _Boundary: Existing CRUD seven-site repair and dashboard/app read regressions; frozen fixture APIs from 4.6_
+  - _Depends: 4.6_
+  - _Requirements: 1.1, 1.4, 4.2, 4.7, 10.5, 10.6_
+
+- [ ] 4.8 Prove actual dashboard storage survives engine recreation
+  - Exercise actual bulk insert/update with typed dashboard input and nested layout, widget parameters and chart state. Read through repaired queries, dispose all sessions/engine and reopen the same file with a new engine. Compare exact stored payload, dates and identities through the real compressed storage types.
+  - Exercise the real on-prem share helper, replacing only queue transport. Check string UUID arguments and preserve commit-before-enqueue behavior; distinguish swallowed job timeout from propagated failures. Do not claim rollback of an already committed dashboard.
+  - Verify foreign-dashboard modification/deletion and duplicate-ID failures using actual existing error behavior, explicit failed-session rollback and another owner's unchanged content. Use disposable file databases rather than outer transactions that bulk commits could escape.
+  - Done when persistence and failure/isolation cases pass together with all 4.7 regressions on the same source/runtime, with independent review. This proves the storage layer only; browser/environment restart remains unverified.
+  - Tests are excluded from production caps. Any required production correction returns to 4.7 scope and review, preserving its exact exception and 50-unit function cap; do not expand behavior here.
+  - _Boundary: Dashboard persistence regression file using frozen shared fixtures and actual CRUD_
+  - _Depends: 4.7_
+  - _Requirements: 2.2, 4.2, 4.7, 10.3, 10.5, 10.6_
+
+- [ ] 4.9 Independently accept and register the SQLite repair boundary
+  - Review exact source/runtime identities, rerun the focused backend suite and confirm all six reads, cardinality, storage and failure cases. Preserve source hashes, commands, exits and meaningful baseline failures. Match evidence to the final source; do not reuse stale stage results.
+  - Register maintained CRUD scope and the two independently measured physical/logical exceptions with exact final fork revision, before/after hashes, reviewed seven-site diff and expiry. Preserve unrelated inventory/catalog edits and verify unchanged files before rebinding existing exceptions. Do not create a function exception.
+  - Run the implemented combined checker from docs/complexity.md using actual fork changed-file manifests, not historical heads. Done when the measured file stays within its approved ceiling, all other maintained production scope meets 400/300/50, and independent Astra review returns scoped GO with reproducible runtime evidence.
+  - Update breadth with actual tests and query/storage-layer status, publish the scoped verification record and accepted source pin, and selectively commit the repair. Link the exercised focused command into the existing verification documentation; do not invent a new runner or expand Dagger's build-only responsibility. Preserve dashboard/renderer/release status as unverified until their real image/browser gates pass.
+  - _Boundary: Controller-owned cross-repository acceptance, inventory, breadth, source identity and verification record_
+  - _Depends: 4.8_
+  - _Requirements: 1.1, 1.4, 2.2, 4.2, 4.7, 10.3, 10.5, 10.6_

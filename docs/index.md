@@ -8,6 +8,8 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | --- | --- |
 | Understand the intended financial workflow and its limits | [Goals](goals.md) |
 | Find the next dependency gate | [Roadmap](roadmap.md) and [implementation tasks](../.kiro/specs/openbb-self-service/tasks.md) |
+| See the path from accepted chart modules to the original application experience | [Completion plan](completion-plan.md) |
+| Review the existing-backend persistence repair | [SQLite query design](../.kiro/specs/openbb-self-service/sqlite-repair-design.md) |
 | Set up the pinned development tools | [Development toolchain](development.md) |
 | Check maintained code size and explicit fork scope | [Complexity checks](complexity.md) |
 | Validate source, release and acceptance records | [Evidence contracts](evidence.md) |
@@ -31,6 +33,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Inspect original line, title and marker observations | [Line appearance findings](../.kiro/specs/openbb-self-service/chart-line-appearance-findings.md) |
 | Check original option-state implementation evidence | [Option-state verification](../.kiro/specs/openbb-self-service/chart-option-state-verification.md) |
 | Inspect remaining effective chart styling contracts | [Effective-style discovery](../.kiro/specs/openbb-self-service/chart-effective-style-discovery.md) |
+| Inspect observed original dark-theme defaults | [Resolved-theme findings](../.kiro/specs/openbb-self-service/chart-theme-runtime-findings.md) |
 | Review the renderer compatibility investigation and parallel work | [Discovery plan](../.kiro/specs/openbb-self-service/parity-plan.md) and [research](../.kiro/specs/openbb-self-service/parity-research.md) |
 | Check what the renderer probes actually established | [Discovery results](../.kiro/specs/openbb-self-service/parity-findings.md) |
 | Compare original and candidate widget controls | [Paired widget findings](../.kiro/specs/openbb-self-service/parity-widget-findings.md) |

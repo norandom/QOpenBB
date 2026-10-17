@@ -1,5 +1,7 @@
 # Effective Cartesian style: next evidence boundary
 
+Update, 2026-10-17: [original resolved-theme findings](chart-theme-runtime-findings.md) now record a settled dark grouped-column chart and a working reference-only inspector. Light/custom and other-family cases remain unobserved. The historical inventories below describe their inspected source revisions; accepted appearance work has since closed several mapper-input gaps.
+
 Follow-up, 2026-10-17: [original line appearance findings](chart-line-appearance-findings.md) now establish selected dark-theme line, title and marker observations and the limitations of the public AG options API. The remaining matrix below is the original research inventory, not a claim that those observations are still wholly absent.
 
 Stored option fidelity does not yet supply an effective renderer style. The next bounded input must separate fill from stroke, title visibility from title text, and missing-data connection from markers. Passing saved `bar` or `line` objects straight into the current Cartesian mapper would lose those distinctions. This is read-only discovery, dated 2026-10-16, not a production design or parity acceptance.
