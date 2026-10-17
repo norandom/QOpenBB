@@ -7,6 +7,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "explicit-cartesian-appearance"
+requirements = ["4.8", "4.9", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
+planned_checks = ["appearance-validation-and-precedence", "legacy-mapper-shape", "visible-gap-and-markers", "retained-title-and-caption-styles", "appearance-rejection-recovery-and-export"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/snapshotContracts.types.ts"]
+status = "unverified"
+evidence = ["Task 2.28 contracts and fixtures accepted at Workspace 3b24152875675adfee79585660023f9cedad48f6 after independent Astra review: strict checking, 221 existing units, actual scoped lint and twelve-module caps passed. Runtime appearance projection and browser checks remain pending tasks 2.29-2.33. See .kiro/specs/openbb-self-service/chart-appearance-design.md and artifacts/task-2.28/review/review.md. No original application parity claim."]
+
+[[capabilities]]
 id = "renderer-functional-and-visual-parity"
 requirements = ["4.8", "4.9"]
 planned_checks = ["original-source-capability-and-flag-inventory", "original-controls-and-actions-parity", "legacy-state-and-export-parity", "integrated-light-dark-visual-and-interaction-parity"]

@@ -838,7 +838,7 @@ One heavy suite/build at a time; one browser and Vitest worker. Parallel lightwe
   - _Depends: 2.28_
   - _Requirements: 4.8, 4.9_
 
-- [ ] 2.30 (P) Build the isolated appearance journey fixture
+- [x] 2.30 (P) Build the isolated appearance journey fixture
   - Build fixture-only controls and diagnostics around the existing real mapper and accepted host using frozen style inputs. Maintain monotonic render revisions independently of the unchanged data revision; rejected input preserves the last good render.
   - Scaffold observable outcomes for line connection, marker toggle, retained title, distinct caption typography/colors, family roundtrip, resize, export and invalid/unsupported recovery. Capture real options and rendered output without importing unfinished style helpers or copying mapper logic.
   - Register the added HTML entry in the existing Vite/Playwright configuration without changing previous fixtures or worker bounds. Done when fixture build and applicable type/lint checks pass and independent review confirms the controls and lifecycle seam. New appearance behavior remains explicitly unverified until mapper integration; do not weaken assertions or claim the old mapper implements it.
@@ -873,3 +873,5 @@ One heavy suite/build at a time; one browser and Vitest worker. Parallel lightwe
   - _Requirements: 1.1, 4.8, 4.9, 10.4, 10.5, 10.6_
 
 Task 2.28 accepted after independent Astra review: strict TypeScript, 221 units, actual lint on all three owned files, exact stage/source identities and twelve-module caps passed. Evidence: artifacts/task-2.28/review/review.md. Shared appearance contracts and fixtures are frozen for tasks 2.29 and 2.30; runtime appearance remains unverified.
+
+Task 2.30 accepted after independent Sol review: strict TypeScript, four-entry fixture build, actual lint and four source/stage identities passed. Evidence: artifacts/task-2.30/review/review.md. Scaffold only; actual appearance rendering remains task 2.32. Verification stages now use persistent Linux home storage after transient WSL paths disappeared.
