@@ -855,7 +855,7 @@ One heavy suite/build at a time; one browser and Vitest worker. Parallel lightwe
   - _Depends: 2.29, 2.30_
   - _Requirements: 4.8, 4.9, 10.5, 10.6_
 
-- [ ] 2.32 Verify visible appearance and recovery in the real browser
+- [x] 2.32 Verify visible appearance and recovery in the real browser
   - Add the actual Playwright journey against the freshly built real mapper/host fixture. Assert connected versus broken null gaps, circle counts/positions with no null marker, title hide/re-enable retaining text, distinct colors/typography, columns-to-line replacement, resize and exported pixels alongside exact option/data assertions.
   - Verify appearance-only revisions at unchanged data revision, invalid/unsupported inputs retaining the last good chart and valid correction recovering. Do not substitute DOM labels, a toast or option equality alone for rendered outcome checks.
   - Run existing smoke, lifecycle and Cartesian browser cases as regressions in the same owned one-worker environment. Record commands, source/dependency identities, exit codes, screenshots/export checks and sanitized CDP errors. Done when independent review reproduces the journey and confirms visible outcomes and cleanup. Failures are diagnosed before rerun.
@@ -879,3 +879,5 @@ Task 2.30 accepted after independent Sol review: strict TypeScript, four-entry f
 Task 2.29 accepted after independent Astra review: 250 units, strict TypeScript, actual lint, exact hashes and thirteen-module caps passed. Evidence: artifacts/task-2.29/review/review.md. Helper projection is accepted; mapper wiring and rendered appearance remain tasks 2.31-2.32.
 
 Task 2.31 accepted after independent Astra numerical review: 260 units, strict TypeScript, actual lint, all thirteen module identities/caps and owned stage hashes passed. Evidence: artifacts/task-2.31/review/review.md. Mapper appearance is integrated; actual rendered outcome acceptance remains task 2.32.
+
+Task 2.32 accepted after independent Astra browser review: fresh build, all four browser cases, 260 units, strict TypeScript and actual lint passed; exact source/dependency identities, empty CDP diagnostics and owned cleanup verified. Evidence: artifacts/task-2.32/review/review.md. Pixel evidence covers gaps, circles, retained titles, typography, family restoration, export and rejected-render recovery. Full application parity remains open.
