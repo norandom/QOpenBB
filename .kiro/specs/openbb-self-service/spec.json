@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-17T08:45:25Z",
+  "updated_at": "2026-10-17T08:47:22Z",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -156,6 +156,19 @@
       "implementation_accepted": true,
       "validation": "GO for tasks 2.28-2.33 only; whole renderer remains unverified",
       "evidence_path": "chart-appearance-verification.md"
+    },
+    "application_integration_slice": {
+      "name": "original-workspace-chart-journey",
+      "phase": "design-discovery",
+      "design_path": "chart-application-integration-design.md",
+      "design_generated": true,
+      "design_approved": false,
+      "tasks_generated": false,
+      "tasks_approved": false,
+      "implementation_ready": false,
+      "independent_design_review": "NO-GO for runtime tasks; finite reference contracts remain to be frozen",
+      "review_evidence": "artifacts/chart-application-design/review/design-review.md",
+      "source_revision": "f23cb786a946a6a996deedbe87be9c7ca86b221e"
     }
   }
 }
