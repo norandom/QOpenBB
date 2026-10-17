@@ -1,0 +1,560 @@
+{
+  "source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "mode": "dark",
+  "family": "groupedColumn",
+  "settled": true,
+  "background": {
+    "visible": true,
+    "fill": "#151518"
+  },
+  "padding": {
+    "top": 20,
+    "right": 20,
+    "bottom": 20,
+    "left": 20
+  },
+  "title": {
+    "enabled": false,
+    "text": "Title",
+    "fontFamily": "Verdana, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "color": "#fff",
+    "spacing": 20
+  },
+  "subtitle": {
+    "enabled": false,
+    "text": "Subtitle",
+    "fontFamily": "Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 400,
+    "color": "#7a7a7b",
+    "spacing": 20
+  },
+  "legend": {
+    "enabled": true,
+    "position": "top",
+    "spacing": 20,
+    "maxHeight": 50,
+    "item": {
+      "paddingX": 32,
+      "paddingY": 8,
+      "marker": {
+        "shape": "square",
+        "size": 11,
+        "padding": 5
+      },
+      "label": {
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 11,
+        "fontWeight": 400,
+        "color": "#fff"
+      }
+    }
+  },
+  "axes": [
+    {
+      "type": "category",
+      "position": "bottom",
+      "keys": [],
+      "title": {
+        "enabled": false,
+        "text": "Axis Title",
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 13,
+        "fontWeight": 400,
+        "color": "#fff",
+        "spacing": 25
+      },
+      "label": {
+        "enabled": true,
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 11,
+        "fontWeight": 400,
+        "color": "#fff",
+        "spacing": 11
+      },
+      "line": {
+        "enabled": true,
+        "width": 1
+      },
+      "gridLine": {
+        "enabled": false,
+        "width": 1,
+        "style": [
+          {
+            "fillOpacity": 1,
+            "stroke": "#515153",
+            "strokeWidth": 1,
+            "lineDash": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "number",
+      "position": "left",
+      "keys": [],
+      "title": {
+        "enabled": false,
+        "text": "Axis Title",
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 13,
+        "fontWeight": 400,
+        "color": "#fff",
+        "spacing": 25
+      },
+      "label": {
+        "enabled": true,
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 11,
+        "fontWeight": 400,
+        "color": "#fff",
+        "spacing": 11
+      },
+      "line": {
+        "enabled": false,
+        "width": 1
+      },
+      "gridLine": {
+        "enabled": true,
+        "width": 1,
+        "style": [
+          {
+            "fillOpacity": 1,
+            "stroke": "#515153",
+            "strokeWidth": 1,
+            "lineDash": []
+          }
+        ]
+      }
+    }
+  ],
+  "series": [
+    {
+      "type": "bar",
+      "xKey": "period",
+      "yKey": "revenue",
+      "yName": "Revenue (USD millions)",
+      "fill": "#5090dc",
+      "stroke": "#74a8e6",
+      "fillOpacity": 1,
+      "strokeWidth": 0,
+      "marker": {},
+      "label": {
+        "enabled": false,
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "color": "#fff"
+      }
+    },
+    {
+      "type": "bar",
+      "xKey": "period",
+      "yKey": "operatingIncome",
+      "yName": "Operating Income (USD millions)",
+      "fill": "#ffa03a",
+      "stroke": "#ffbe70",
+      "fillOpacity": 1,
+      "strokeWidth": 0,
+      "marker": {},
+      "label": {
+        "enabled": false,
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "color": "#fff"
+      }
+    }
+  ],
+  "inputTheme": {
+    "baseTheme": {
+      "baseTheme": {
+        "baseTheme": {
+          "baseTheme": {
+            "baseTheme": {
+              "baseTheme": "[reference]",
+              "overrides": {
+                "pie": {
+                  "series": {
+                    "calloutLabel": {
+                      "_enabledFromTheme": true
+                    },
+                    "sectorLabel": {
+                      "enabled": false,
+                      "_enabledFromTheme": true
+                    },
+                    "title": {
+                      "_enabledFromTheme": true
+                    }
+                  }
+                },
+                "donut": {
+                  "series": {
+                    "calloutLabel": {
+                      "_enabledFromTheme": true
+                    },
+                    "sectorLabel": {
+                      "enabled": false,
+                      "_enabledFromTheme": true
+                    },
+                    "title": {
+                      "_enabledFromTheme": true
+                    }
+                  }
+                }
+              }
+            },
+            "overrides": {
+              "common": {
+                "zoom": {
+                  "enabled": true
+                },
+                "animation": {
+                  "enabled": true,
+                  "duration": 500
+                },
+                "axes": {
+                  "number": {
+                    "crosshair": {
+                      "enabled": true,
+                      "snap": true,
+                      "label": {
+                        "enabled": false
+                      }
+                    }
+                  },
+                  "category": {
+                    "crosshair": "[reference]"
+                  },
+                  "log": {
+                    "crosshair": "[reference]"
+                  },
+                  "time": {
+                    "crosshair": "[reference]"
+                  }
+                },
+                "minHeight": 0,
+                "minWidth": 0,
+                "navigator": {
+                  "enabled": false,
+                  "height": 18
+                },
+                "context": {
+                  "api": "[reference]"
+                }
+              }
+            }
+          },
+          "overrides": {
+            "common": {
+              "axes": {
+                "number": {
+                  "crosshair": {
+                    "label": {}
+                  },
+                  "position": "left",
+                  "label": "[reference]"
+                },
+                "category": {
+                  "label": "[reference]",
+                  "position": "bottom"
+                },
+                "time": {
+                  "position": "bottom",
+                  "label": "[reference]"
+                },
+                "radius-category": "[reference]",
+                "angle-category": "[reference]",
+                "grouped-category": "[reference]"
+              },
+              "navigator": {
+                "miniChart": "[reference]",
+                "enabled": false
+              },
+              "legend": "[reference]"
+            },
+            "line": "[reference]",
+            "pie": "[reference]",
+            "donut": "[reference]",
+            "area": "[reference]",
+            "bubble": "[reference]",
+            "histogram": "[reference]",
+            "bar": "[reference]",
+            "scatter": "[reference]",
+            "treemap": "[reference]",
+            "sunburst": "[reference]",
+            "heatmap": "[reference]",
+            "waterfall": "[reference]",
+            "radar-line": "[reference]",
+            "radar-area": "[reference]",
+            "radial-bar": "[reference]",
+            "radial-column": "[reference]",
+            "nightingale": "[reference]"
+          }
+        },
+        "overrides": {
+          "common": {
+            "axes": {
+              "category": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "minSpacing": 5,
+                  "autoRotate": true
+                },
+                "position": "bottom"
+              },
+              "radius-category": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "minSpacing": 5
+                }
+              },
+              "angle-category": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "minSpacing": 5
+                }
+              },
+              "grouped-category": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "minSpacing": 5,
+                  "rotation": 0
+                }
+              },
+              "number": {
+                "crosshair": {
+                  "label": {}
+                },
+                "label": {
+                  "fontSize": 11,
+                  "autoRotate": false,
+                  "avoidCollisions": true
+                },
+                "position": "left"
+              },
+              "time": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "rotation": 0
+                },
+                "position": "bottom"
+              }
+            },
+            "legend": {
+              "item": {
+                "label": {
+                  "color": "#fff",
+                  "fontSize": 11
+                },
+                "paddingX": 32,
+                "paddingY": 8,
+                "marker": "[reference]"
+              },
+              "position": "top",
+              "maxHeight": 50,
+              "spacing": 20
+            },
+            "navigator": "[reference]"
+          },
+          "line": {
+            "series": {
+              "label": {
+                "enabled": false
+              },
+              "tooltip": {
+                "enabled": true
+              }
+            }
+          },
+          "pie": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "calloutLabel": {
+                "enabled": true
+              },
+              "sectorLabel": {
+                "enabled": true
+              }
+            }
+          },
+          "donut": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "calloutLabel": {
+                "enabled": true
+              },
+              "sectorLabel": {
+                "enabled": true
+              }
+            }
+          },
+          "area": {
+            "series": {
+              "label": {
+                "enabled": false
+              },
+              "tooltip": {
+                "enabled": true
+              }
+            }
+          },
+          "bubble": {
+            "series": {
+              "label": {
+                "enabled": false
+              },
+              "tooltip": {
+                "enabled": true
+              }
+            }
+          },
+          "histogram": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "bar": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false,
+                "placement": "outside-end"
+              }
+            }
+          },
+          "scatter": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false,
+                "placement": "top"
+              }
+            }
+          },
+          "treemap": {
+            "series": {
+              "group": {
+                "label": {
+                  "enabled": true
+                }
+              },
+              "tile": {
+                "label": {
+                  "enabled": true
+                }
+              },
+              "tooltip": {
+                "enabled": true
+              }
+            },
+            "padding": "[reference]"
+          },
+          "sunburst": {
+            "series": {
+              "tooltip": {
+                "enabled": true,
+                "position": "[reference]",
+                "interaction": "[reference]"
+              },
+              "label": {
+                "enabled": true
+              }
+            },
+            "padding": "[reference]"
+          },
+          "heatmap": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": true
+              }
+            },
+            "padding": "[reference]"
+          },
+          "waterfall": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              }
+            }
+          },
+          "radar-line": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "radar-area": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "radial-bar": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "radial-column": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "nightingale": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          }
+        }
+      },
+      "overrides": {}
+    },
+    "overrides": {}
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "sha256": "51fc65e7cea5938a8654f90671fd8180f81a0fea6fcd955f20d991ad6053c411",
+  "physical": 1599,
+  "logical": 582,
+  "max_function": 36,
+  "functions": [
+    {
+      "name": "acreate_helper",
+      "line": 42,
+      "column": 1,
+      "logical": 4
+    },
+    {
+      "name": "get_user_entity_uuid",
+      "line": 49,
+      "column": 1,
+      "logical": 2
+    },
+    {
+      "name": "get_shared_dashboard_file_uuids",
+      "line": 59,
+      "column": 1,
+      "logical": 4
+    },
+    {
+      "name": "bulk_dashboard_insert_update",
+      "line": 73,
+      "column": 1,
+      "logical": 36
+    },
+    {
+      "name": "to_searchable_text",
+      "line": 168,
+      "column": 1,
+      "logical": 7
+    },
+    {
+      "name": "default_ops",
+      "line": 187,
+      "column": 1,
+      "logical": 1
+    },
+    {
+      "name": "bulk_copilot_chats_insert_update",
+      "line": 191,
+      "column": 1,
+      "logical": 36
+    },
+    {
+      "name": "get_match_exprs",
+      "line": 316,
+      "column": 1,
+      "logical": 13
+    },
+    {
+      "name": "dialect_query",
+      "line": 346,
+      "column": 1,
+      "logical": 13
+    },
+    {
+      "name": "search_copilot_chats",
+      "line": 400,
+      "column": 1,
+      "logical": 8
+    },
+    {
+      "name": "user_response",
+      "line": 457,
+      "column": 1,
+      "logical": 3
+    },
+    {
+      "name": "get_user",
+      "line": 467,
+      "column": 1,
+      "logical": 2
+    },
+    {
+      "name": "create_entity_relationship",
+      "line": 476,
+      "column": 1,
+      "logical": 4
+    },
+    {
+      "name": "get_value",
+      "line": 493,
+      "column": 1,
+      "logical": 4
+    },
+    {
+      "name": "get_user_dashboards_owned",
+      "line": 518,
+      "column": 1,
+      "logical": 3
+    },
+    {
+      "name": "get_storedfile_uuids",
+      "line": 545,
+      "column": 1,
+      "logical": 5
+    },
+    {
+      "name": "get_dashboard_storedfile_uuids",
+      "line": 559,
+      "column": 1,
+      "logical": 15
+    },
+    {
+      "name": "get_user_app",
+      "line": 591,
+      "column": 1,
+      "logical": 2
+    },
+    {
+      "name": "get_user_app_storedfile_uuids",
+      "line": 602,
+      "column": 1,
+      "logical": 15
+    },
+    {
+      "name": "update_shared_files",
+      "line": 634,
+      "column": 1,
+      "logical": 14
+    },
+    {
+      "name": "share_files",
+      "line": 667,
+      "column": 1,
+      "logical": 12
+    },
+    {
+      "name": "unshare_files",
+      "line": 700,
+      "column": 1,
+      "logical": 8
+    },
+    {
+      "name": "handle_dashboard_is_shared",
+      "line": 722,
+      "column": 1,
+      "logical": 5
+    },
+    {
+      "name": "handle_user_app_is_shared",
+      "line": 752,
+      "column": 1,
+      "logical": 5
+    },
+    {
+      "name": "get_dashboard_item",
+      "line": 780,
+      "column": 1,
+      "logical": 2
+    },
+    {
+      "name": "get_user_dashboards_shared",
+      "line": 789,
+      "column": 1,
+      "logical": 10
+    },
+    {
+      "name": "get_user_dashboards_entity_shared_noex",
+      "line": 833,
+      "column": 1,
+      "logical": 6
+    },
+    {
+      "name": "get_user_dashboards_entity_shared",
+      "line": 869,
+      "column": 1,
+      "logical": 15
+    },
+    {
+      "name": "dashboard_owner_errors",
+      "line": 917,
+      "column": 1,
+      "logical": 7
+    },
+    {
+      "name": "app_owner_errors",
+      "line": 934,
+      "column": 1,
+      "logical": 7
+    },
+    {
+      "name": "get_dashboard_saves_to_delete",
+      "line": 947,
+      "column": 1,
+      "logical": 5
+    },
+    {
+      "name": "get_total_user_count",
+      "line": 971,
+      "column": 1,
+      "logical": 5
+    },
+    {
+      "name": "total_user_count_full",
+      "line": 992,
+      "column": 1,
+      "logical": 6
+    },
+    {
+      "name": "check_new_user",
+      "line": 1009,
+      "column": 1,
+      "logical": 6
+    },
+    {
+      "name": "check_clean_email",
+      "line": 1018,
+      "column": 1,
+      "logical": 7
+    },
+    {
+      "name": "remove_pro_data",
+      "line": 1032,
+      "column": 1,
+      "logical": 31
+    },
+    {
+      "name": "remove_other_user_items",
+      "line": 1093,
+      "column": 1,
+      "logical": 17
+    },
+    {
+      "name": "full_delete_user",
+      "line": 1126,
+      "column": 1,
+      "logical": 3
+    },
+    {
+      "name": "get_trial_entity_uuid",
+      "line": 1133,
+      "column": 1,
+      "logical": 10
+    },
+    {
+      "name": "get_trial_permissions_uuids",
+      "line": 1148,
+      "column": 1,
+      "logical": 10
+    },
+    {
+      "name": "get_shares_without_existing",
+      "line": 1163,
+      "column": 1,
+      "logical": 5
+    },
+    {
+      "name": "get_app_shares_without_existing",
+      "line": 1184,
+      "column": 1,
+      "logical": 5
+    },
+    {
+      "name": "get_new_sharing_permissions",
+      "line": 1211,
+      "column": 1,
+      "logical": 9
+    },
+    {
+      "name": "get_unregistered_users",
+      "line": 1252,
+      "column": 1,
+      "logical": 6
+    },
+    {
+      "name": "get_invite_shares",
+      "line": 1265,
+      "column": 1,
+      "logical": 27
+    },
+    {
+      "name": "get_updated_share_values",
+      "line": 1366,
+      "column": 1,
+      "logical": 4
+    },
+    {
+      "name": "remove_shares_both_ways",
+      "line": 1399,
+      "column": 1,
+      "logical": 33
+    },
+    {
+      "name": "update_user_dashboards_new_entity",
+      "line": 1493,
+      "column": 1,
+      "logical": 3
+    },
+    {
+      "name": "get_user_apps_shared",
+      "line": 1508,
+      "column": 1,
+      "logical": 10
+    },
+    {
+      "name": "get_user_apps_owned",
+      "line": 1549,
+      "column": 1,
+      "logical": 11
+    },
+    {
+      "name": "process_messages",
+      "line": 235,
+      "column": 5,
+      "logical": 16
+    }
+  ],
+  "checks": [
+    {
+      "command": [
+        "/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_app_reads.py"
+      ],
+      "exit": 0,
+      "log": "baseline-tests-lint.log"
+    },
+    {
+      "command": [
+        "/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_app_reads.py"
+      ],
+      "exit": 0,
+      "log": "baseline-tests-format.log"
+    },
+    {
+      "command": [
+        "/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py"
+      ],
+      "exit": 0,
+      "log": "baseline-crud-lint.log"
+    },
+    {
+      "command": [
+        "/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py"
+      ],
+      "exit": 1,
+      "log": "baseline-crud-format.log"
+    }
+  ]
+}

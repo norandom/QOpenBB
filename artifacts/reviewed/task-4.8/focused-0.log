@@ -1,0 +1,4 @@
+Exercised child: /home/mc/qopenbb-work/sqlite-runtime/venv/bin/python -m pytest -p pytest_asyncio.plugin -c /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/pyproject.toml /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --confcutdir=/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --basetemp=/tmp/qopenbb-sqlite-qt1xan4p/pytest -o addopts= -o asyncio_mode=auto -q -k persistence
+.......                                                                  [100%]
+7 passed, 53 deselected in 6.34s
+Removed sandbox: /tmp/qopenbb-sqlite-qt1xan4p

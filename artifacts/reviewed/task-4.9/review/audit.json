@@ -1,0 +1,77 @@
+{
+  "root_revision": "48069a88167c4c303b77ab4ed1ce29143335b789",
+  "baseline": "b96d36d16ba87db2dd595d5796507d473dd0c0c6",
+  "workspace": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
+  "changed_files": [
+    "backend-api/backend/api/crud.py",
+    "backend-api/backend/tests_sqlite/conftest.py",
+    "backend-api/backend/tests_sqlite/fixtures.py",
+    "backend-api/backend/tests_sqlite/read_support.py",
+    "backend-api/backend/tests_sqlite/run.py",
+    "backend-api/backend/tests_sqlite/test_app_reads.py",
+    "backend-api/backend/tests_sqlite/test_bootstrap.py",
+    "backend-api/backend/tests_sqlite/test_dashboard_persistence.py",
+    "backend-api/backend/tests_sqlite/test_dashboard_reads.py"
+  ],
+  "crud_before": "51fc65e7cea5938a8654f90671fd8180f81a0fea6fcd955f20d991ad6053c411",
+  "crud_after": "575b2cdeb0f04aab81af60b34074e4b9c2c6e21cfb6559c695e502361defc6e9",
+  "exceptions": [
+    {
+      "repository": "workspace",
+      "path": "backend-api/backend/api/crud.py",
+      "metric": "physical",
+      "baseline": 1599,
+      "revision": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
+      "rationale": "Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.",
+      "review": ".kiro/specs/openbb-self-service/sqlite-repair-verification.md",
+      "expires_on": "2026-11-17"
+    },
+    {
+      "repository": "workspace",
+      "path": "backend-api/backend/api/crud.py",
+      "metric": "logical",
+      "baseline": 582,
+      "revision": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
+      "rationale": "Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.",
+      "review": ".kiro/specs/openbb-self-service/sqlite-repair-verification.md",
+      "expires_on": "2026-11-17"
+    }
+  ],
+  "unchanged_rebound_exception_files": [
+    "terminalpro/src/components/General/Table/utils.tsx",
+    "terminalpro/src/components/types.d.ts",
+    "terminalpro/src/lib/state/copilot.ts"
+  ],
+  "markers": [],
+  "secrets_review": "Only explicitly synthetic test configuration introduced; no real secrets. No private configuration read.",
+  "format": [
+    {
+      "label": "baseline",
+      "command": [
+        "/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "--stdin-filename",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py",
+        "-"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "patched",
+      "command": [
+        "/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "--stdin-filename",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py",
+        "-"
+      ],
+      "exit": 1
+    }
+  ]
+}

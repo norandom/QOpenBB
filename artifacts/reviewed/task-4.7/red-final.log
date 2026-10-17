@@ -1,0 +1,1859 @@
+Exercised child: /home/mc/qopenbb-work/sqlite-runtime/venv/bin/python -m pytest -p pytest_asyncio.plugin -c /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/pyproject.toml /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --confcutdir=/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --basetemp=/tmp/qopenbb-sqlite-2k9q36pd/pytest -o addopts= -o asyncio_mode=auto -q -s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=3: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=3: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=2: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=2: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+ACTUAL_SELECT sqlite rows=3: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=3: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=3: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=3: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+ACTUAL_SELECT sqlite rows=0: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=0: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=0: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=0: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=4: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=4: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+...ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:23:16.530 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.71
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+FACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:23:20.368 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 3.38
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+FACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:23:23.591 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.91
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+FACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:23:26.963 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.89
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+FACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:23:30.357 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.86
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+FACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:23:33.602 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 3.75
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+FACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:23:36.842 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.54
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+FACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:23:40.156 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.68
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+FACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=4: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item, user 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=4: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item, user 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+F2026-10-17 10:23:42.774 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 3.04
+2026-10-17 10:23:42.777 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 1.83
+ACTUAL_SELECT sqlite rows=4: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=4: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+ACTUAL_SELECT sqlite rows=3: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=3: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=2: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=2: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, ?, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=2: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=2: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+F
+=================================== FAILURES ===================================
+__________________ test_dashboard_names[names0-entity_shared] __________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_dashboard_names_names0_en1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x75167a6c26d0>, autoflush=True, expire_on_commit=False))
+path = 'entity_shared', names = ('Ada', 'Lovelace')
+
+    @pytest.mark.parametrize("path", PATHS)
+    @pytest.mark.parametrize("names", NAMES)
+    async def test_dashboard_names(sqlite_store, path, names):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            named = owner if path == "entity_shared_noex" else creator
+            named.first_name, named.last_name = names
+            content = {"name": "Read identity", "widgets": {}, "nested": {"currency": "USD", "values": [-1, None, 3]}}
+            item = fixtures.dashboard(owner, creator, entities[0], entity_share=True, is_shared=True, content=content)
+            session.add(item)
+            await session.flush()
+            session.add(fixtures.dashboard_share(item, recipient))
+            await session.flush()
+            capture = CapturedReads(session)
+            user = owner if path == "owned" else recipient
+            args = [capture, user.uuid]
+            if path.startswith("entity"):
+                args.append(roles[0].uuid)
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", SAWarning)
+>               result = await getattr(crud, "get_user_dashboards_" + path)(*args)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:913: in get_user_dashboards_entity_shared
+    results = await db.execute(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py:26: in execute
+    result = await self.session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py:448: in execute
+    result = await greenlet_spawn(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:190: in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1635: in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:715: in _compile_w_cache
+    compiled_sql = self._compiler(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:323: in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:1462: in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:4963: in visit_select
+    text = self._compose_select_body(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:5133: in _compose_select_body
+    from_linter.warn()
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:772: in warn
+    util.warn(message)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1805: in warn
+    _warnings_warn(msg, exc.SAWarning)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.'
+category = <class 'sqlalchemy.exc.SAWarning'>, stacklevel = 17
+
+    def _warnings_warn(
+        message: Union[str, Warning],
+        category: Optional[Type[Warning]] = None,
+        stacklevel: int = 2,
+    ) -> None:
+        # adjust the given stacklevel to be outside of SQLAlchemy
+        try:
+            frame = sys._getframe(stacklevel)
+        except ValueError:
+            # being called from less than 3 (or given) stacklevels, weird,
+            # but don't crash
+            stacklevel = 0
+        except:
+            # _getframe() doesn't work, weird interpreter issue, weird,
+            # ok, but don't crash
+            stacklevel = 0
+        else:
+            stacklevel_found = warning_tag_found = False
+            while frame is not None:
+                # using __name__ here requires that we have __name__ in the
+                # __globals__ of the decorated string functions we make also.
+                # we generate this using {"__name__": fn.__module__}
+                if not stacklevel_found and not re.match(
+                    _not_sa_pattern, frame.f_globals.get("__name__", "")
+                ):
+                    # stop incrementing stack level if an out-of-SQLA line
+                    # were found.
+                    stacklevel_found = True
+    
+                    # however, for the warning tag thing, we have to keep
+                    # scanning up the whole traceback
+    
+                if frame.f_code in _warning_tags:
+                    warning_tag_found = True
+                    _suffix, _category = _warning_tags[frame.f_code]
+                    category = category or _category
+                    message = f"{message} ({_suffix})"
+    
+                frame = frame.f_back  # type: ignore[assignment]
+    
+                if not stacklevel_found:
+                    stacklevel += 1
+                elif stacklevel_found and warning_tag_found:
+                    break
+    
+        if category is not None:
+>           warnings.warn(message, category, stacklevel=stacklevel + 1)
+E           sqlalchemy.exc.SAWarning: SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1880: SAWarning
+__________________ test_dashboard_names[names1-entity_shared] __________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_dashboard_names_names1_en1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x751678320150>, autoflush=True, expire_on_commit=False))
+path = 'entity_shared', names = (None, 'Lovelace')
+
+    @pytest.mark.parametrize("path", PATHS)
+    @pytest.mark.parametrize("names", NAMES)
+    async def test_dashboard_names(sqlite_store, path, names):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            named = owner if path == "entity_shared_noex" else creator
+            named.first_name, named.last_name = names
+            content = {"name": "Read identity", "widgets": {}, "nested": {"currency": "USD", "values": [-1, None, 3]}}
+            item = fixtures.dashboard(owner, creator, entities[0], entity_share=True, is_shared=True, content=content)
+            session.add(item)
+            await session.flush()
+            session.add(fixtures.dashboard_share(item, recipient))
+            await session.flush()
+            capture = CapturedReads(session)
+            user = owner if path == "owned" else recipient
+            args = [capture, user.uuid]
+            if path.startswith("entity"):
+                args.append(roles[0].uuid)
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", SAWarning)
+>               result = await getattr(crud, "get_user_dashboards_" + path)(*args)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:913: in get_user_dashboards_entity_shared
+    results = await db.execute(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py:26: in execute
+    result = await self.session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py:448: in execute
+    result = await greenlet_spawn(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:190: in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1635: in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:715: in _compile_w_cache
+    compiled_sql = self._compiler(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:323: in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:1462: in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:4963: in visit_select
+    text = self._compose_select_body(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:5133: in _compose_select_body
+    from_linter.warn()
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:772: in warn
+    util.warn(message)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1805: in warn
+    _warnings_warn(msg, exc.SAWarning)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.'
+category = <class 'sqlalchemy.exc.SAWarning'>, stacklevel = 17
+
+    def _warnings_warn(
+        message: Union[str, Warning],
+        category: Optional[Type[Warning]] = None,
+        stacklevel: int = 2,
+    ) -> None:
+        # adjust the given stacklevel to be outside of SQLAlchemy
+        try:
+            frame = sys._getframe(stacklevel)
+        except ValueError:
+            # being called from less than 3 (or given) stacklevels, weird,
+            # but don't crash
+            stacklevel = 0
+        except:
+            # _getframe() doesn't work, weird interpreter issue, weird,
+            # ok, but don't crash
+            stacklevel = 0
+        else:
+            stacklevel_found = warning_tag_found = False
+            while frame is not None:
+                # using __name__ here requires that we have __name__ in the
+                # __globals__ of the decorated string functions we make also.
+                # we generate this using {"__name__": fn.__module__}
+                if not stacklevel_found and not re.match(
+                    _not_sa_pattern, frame.f_globals.get("__name__", "")
+                ):
+                    # stop incrementing stack level if an out-of-SQLA line
+                    # were found.
+                    stacklevel_found = True
+    
+                    # however, for the warning tag thing, we have to keep
+                    # scanning up the whole traceback
+    
+                if frame.f_code in _warning_tags:
+                    warning_tag_found = True
+                    _suffix, _category = _warning_tags[frame.f_code]
+                    category = category or _category
+                    message = f"{message} ({_suffix})"
+    
+                frame = frame.f_back  # type: ignore[assignment]
+    
+                if not stacklevel_found:
+                    stacklevel += 1
+                elif stacklevel_found and warning_tag_found:
+                    break
+    
+        if category is not None:
+>           warnings.warn(message, category, stacklevel=stacklevel + 1)
+E           sqlalchemy.exc.SAWarning: SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1880: SAWarning
+__________________ test_dashboard_names[names2-entity_shared] __________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_dashboard_names_names2_en1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x75167a2ab950>, autoflush=True, expire_on_commit=False))
+path = 'entity_shared', names = ('Ada', None)
+
+    @pytest.mark.parametrize("path", PATHS)
+    @pytest.mark.parametrize("names", NAMES)
+    async def test_dashboard_names(sqlite_store, path, names):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            named = owner if path == "entity_shared_noex" else creator
+            named.first_name, named.last_name = names
+            content = {"name": "Read identity", "widgets": {}, "nested": {"currency": "USD", "values": [-1, None, 3]}}
+            item = fixtures.dashboard(owner, creator, entities[0], entity_share=True, is_shared=True, content=content)
+            session.add(item)
+            await session.flush()
+            session.add(fixtures.dashboard_share(item, recipient))
+            await session.flush()
+            capture = CapturedReads(session)
+            user = owner if path == "owned" else recipient
+            args = [capture, user.uuid]
+            if path.startswith("entity"):
+                args.append(roles[0].uuid)
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", SAWarning)
+>               result = await getattr(crud, "get_user_dashboards_" + path)(*args)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:913: in get_user_dashboards_entity_shared
+    results = await db.execute(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py:26: in execute
+    result = await self.session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py:448: in execute
+    result = await greenlet_spawn(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:190: in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1635: in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:715: in _compile_w_cache
+    compiled_sql = self._compiler(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:323: in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:1462: in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:4963: in visit_select
+    text = self._compose_select_body(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:5133: in _compose_select_body
+    from_linter.warn()
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:772: in warn
+    util.warn(message)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1805: in warn
+    _warnings_warn(msg, exc.SAWarning)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.'
+category = <class 'sqlalchemy.exc.SAWarning'>, stacklevel = 17
+
+    def _warnings_warn(
+        message: Union[str, Warning],
+        category: Optional[Type[Warning]] = None,
+        stacklevel: int = 2,
+    ) -> None:
+        # adjust the given stacklevel to be outside of SQLAlchemy
+        try:
+            frame = sys._getframe(stacklevel)
+        except ValueError:
+            # being called from less than 3 (or given) stacklevels, weird,
+            # but don't crash
+            stacklevel = 0
+        except:
+            # _getframe() doesn't work, weird interpreter issue, weird,
+            # ok, but don't crash
+            stacklevel = 0
+        else:
+            stacklevel_found = warning_tag_found = False
+            while frame is not None:
+                # using __name__ here requires that we have __name__ in the
+                # __globals__ of the decorated string functions we make also.
+                # we generate this using {"__name__": fn.__module__}
+                if not stacklevel_found and not re.match(
+                    _not_sa_pattern, frame.f_globals.get("__name__", "")
+                ):
+                    # stop incrementing stack level if an out-of-SQLA line
+                    # were found.
+                    stacklevel_found = True
+    
+                    # however, for the warning tag thing, we have to keep
+                    # scanning up the whole traceback
+    
+                if frame.f_code in _warning_tags:
+                    warning_tag_found = True
+                    _suffix, _category = _warning_tags[frame.f_code]
+                    category = category or _category
+                    message = f"{message} ({_suffix})"
+    
+                frame = frame.f_back  # type: ignore[assignment]
+    
+                if not stacklevel_found:
+                    stacklevel += 1
+                elif stacklevel_found and warning_tag_found:
+                    break
+    
+        if category is not None:
+>           warnings.warn(message, category, stacklevel=stacklevel + 1)
+E           sqlalchemy.exc.SAWarning: SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1880: SAWarning
+__________________ test_dashboard_names[names3-entity_shared] __________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_dashboard_names_names3_en1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x75167a578510>, autoflush=True, expire_on_commit=False))
+path = 'entity_shared', names = (None, None)
+
+    @pytest.mark.parametrize("path", PATHS)
+    @pytest.mark.parametrize("names", NAMES)
+    async def test_dashboard_names(sqlite_store, path, names):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            named = owner if path == "entity_shared_noex" else creator
+            named.first_name, named.last_name = names
+            content = {"name": "Read identity", "widgets": {}, "nested": {"currency": "USD", "values": [-1, None, 3]}}
+            item = fixtures.dashboard(owner, creator, entities[0], entity_share=True, is_shared=True, content=content)
+            session.add(item)
+            await session.flush()
+            session.add(fixtures.dashboard_share(item, recipient))
+            await session.flush()
+            capture = CapturedReads(session)
+            user = owner if path == "owned" else recipient
+            args = [capture, user.uuid]
+            if path.startswith("entity"):
+                args.append(roles[0].uuid)
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", SAWarning)
+>               result = await getattr(crud, "get_user_dashboards_" + path)(*args)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:913: in get_user_dashboards_entity_shared
+    results = await db.execute(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py:26: in execute
+    result = await self.session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py:448: in execute
+    result = await greenlet_spawn(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:190: in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1635: in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:715: in _compile_w_cache
+    compiled_sql = self._compiler(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:323: in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:1462: in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:4963: in visit_select
+    text = self._compose_select_body(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:5133: in _compose_select_body
+    from_linter.warn()
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:772: in warn
+    util.warn(message)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1805: in warn
+    _warnings_warn(msg, exc.SAWarning)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.'
+category = <class 'sqlalchemy.exc.SAWarning'>, stacklevel = 17
+
+    def _warnings_warn(
+        message: Union[str, Warning],
+        category: Optional[Type[Warning]] = None,
+        stacklevel: int = 2,
+    ) -> None:
+        # adjust the given stacklevel to be outside of SQLAlchemy
+        try:
+            frame = sys._getframe(stacklevel)
+        except ValueError:
+            # being called from less than 3 (or given) stacklevels, weird,
+            # but don't crash
+            stacklevel = 0
+        except:
+            # _getframe() doesn't work, weird interpreter issue, weird,
+            # ok, but don't crash
+            stacklevel = 0
+        else:
+            stacklevel_found = warning_tag_found = False
+            while frame is not None:
+                # using __name__ here requires that we have __name__ in the
+                # __globals__ of the decorated string functions we make also.
+                # we generate this using {"__name__": fn.__module__}
+                if not stacklevel_found and not re.match(
+                    _not_sa_pattern, frame.f_globals.get("__name__", "")
+                ):
+                    # stop incrementing stack level if an out-of-SQLA line
+                    # were found.
+                    stacklevel_found = True
+    
+                    # however, for the warning tag thing, we have to keep
+                    # scanning up the whole traceback
+    
+                if frame.f_code in _warning_tags:
+                    warning_tag_found = True
+                    _suffix, _category = _warning_tags[frame.f_code]
+                    category = category or _category
+                    message = f"{message} ({_suffix})"
+    
+                frame = frame.f_back  # type: ignore[assignment]
+    
+                if not stacklevel_found:
+                    stacklevel += 1
+                elif stacklevel_found and warning_tag_found:
+                    break
+    
+        if category is not None:
+>           warnings.warn(message, category, stacklevel=stacklevel + 1)
+E           sqlalchemy.exc.SAWarning: SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1880: SAWarning
+__________________ test_dashboard_names[names4-entity_shared] __________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_dashboard_names_names4_en1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x7516784d6890>, autoflush=True, expire_on_commit=False))
+path = 'entity_shared', names = ('', '')
+
+    @pytest.mark.parametrize("path", PATHS)
+    @pytest.mark.parametrize("names", NAMES)
+    async def test_dashboard_names(sqlite_store, path, names):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            named = owner if path == "entity_shared_noex" else creator
+            named.first_name, named.last_name = names
+            content = {"name": "Read identity", "widgets": {}, "nested": {"currency": "USD", "values": [-1, None, 3]}}
+            item = fixtures.dashboard(owner, creator, entities[0], entity_share=True, is_shared=True, content=content)
+            session.add(item)
+            await session.flush()
+            session.add(fixtures.dashboard_share(item, recipient))
+            await session.flush()
+            capture = CapturedReads(session)
+            user = owner if path == "owned" else recipient
+            args = [capture, user.uuid]
+            if path.startswith("entity"):
+                args.append(roles[0].uuid)
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", SAWarning)
+>               result = await getattr(crud, "get_user_dashboards_" + path)(*args)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:913: in get_user_dashboards_entity_shared
+    results = await db.execute(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py:26: in execute
+    result = await self.session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py:448: in execute
+    result = await greenlet_spawn(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:190: in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1635: in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:715: in _compile_w_cache
+    compiled_sql = self._compiler(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:323: in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:1462: in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:4963: in visit_select
+    text = self._compose_select_body(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:5133: in _compose_select_body
+    from_linter.warn()
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:772: in warn
+    util.warn(message)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1805: in warn
+    _warnings_warn(msg, exc.SAWarning)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.'
+category = <class 'sqlalchemy.exc.SAWarning'>, stacklevel = 17
+
+    def _warnings_warn(
+        message: Union[str, Warning],
+        category: Optional[Type[Warning]] = None,
+        stacklevel: int = 2,
+    ) -> None:
+        # adjust the given stacklevel to be outside of SQLAlchemy
+        try:
+            frame = sys._getframe(stacklevel)
+        except ValueError:
+            # being called from less than 3 (or given) stacklevels, weird,
+            # but don't crash
+            stacklevel = 0
+        except:
+            # _getframe() doesn't work, weird interpreter issue, weird,
+            # ok, but don't crash
+            stacklevel = 0
+        else:
+            stacklevel_found = warning_tag_found = False
+            while frame is not None:
+                # using __name__ here requires that we have __name__ in the
+                # __globals__ of the decorated string functions we make also.
+                # we generate this using {"__name__": fn.__module__}
+                if not stacklevel_found and not re.match(
+                    _not_sa_pattern, frame.f_globals.get("__name__", "")
+                ):
+                    # stop incrementing stack level if an out-of-SQLA line
+                    # were found.
+                    stacklevel_found = True
+    
+                    # however, for the warning tag thing, we have to keep
+                    # scanning up the whole traceback
+    
+                if frame.f_code in _warning_tags:
+                    warning_tag_found = True
+                    _suffix, _category = _warning_tags[frame.f_code]
+                    category = category or _category
+                    message = f"{message} ({_suffix})"
+    
+                frame = frame.f_back  # type: ignore[assignment]
+    
+                if not stacklevel_found:
+                    stacklevel += 1
+                elif stacklevel_found and warning_tag_found:
+                    break
+    
+        if category is not None:
+>           warnings.warn(message, category, stacklevel=stacklevel + 1)
+E           sqlalchemy.exc.SAWarning: SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1880: SAWarning
+__________________ test_dashboard_names[names5-entity_shared] __________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_dashboard_names_names5_en1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x7516798ea610>, autoflush=True, expire_on_commit=False))
+path = 'entity_shared', names = ('  ', ' \t')
+
+    @pytest.mark.parametrize("path", PATHS)
+    @pytest.mark.parametrize("names", NAMES)
+    async def test_dashboard_names(sqlite_store, path, names):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            named = owner if path == "entity_shared_noex" else creator
+            named.first_name, named.last_name = names
+            content = {"name": "Read identity", "widgets": {}, "nested": {"currency": "USD", "values": [-1, None, 3]}}
+            item = fixtures.dashboard(owner, creator, entities[0], entity_share=True, is_shared=True, content=content)
+            session.add(item)
+            await session.flush()
+            session.add(fixtures.dashboard_share(item, recipient))
+            await session.flush()
+            capture = CapturedReads(session)
+            user = owner if path == "owned" else recipient
+            args = [capture, user.uuid]
+            if path.startswith("entity"):
+                args.append(roles[0].uuid)
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", SAWarning)
+>               result = await getattr(crud, "get_user_dashboards_" + path)(*args)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:913: in get_user_dashboards_entity_shared
+    results = await db.execute(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py:26: in execute
+    result = await self.session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py:448: in execute
+    result = await greenlet_spawn(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:190: in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1635: in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:715: in _compile_w_cache
+    compiled_sql = self._compiler(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:323: in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:1462: in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:4963: in visit_select
+    text = self._compose_select_body(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:5133: in _compose_select_body
+    from_linter.warn()
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:772: in warn
+    util.warn(message)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1805: in warn
+    _warnings_warn(msg, exc.SAWarning)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.'
+category = <class 'sqlalchemy.exc.SAWarning'>, stacklevel = 17
+
+    def _warnings_warn(
+        message: Union[str, Warning],
+        category: Optional[Type[Warning]] = None,
+        stacklevel: int = 2,
+    ) -> None:
+        # adjust the given stacklevel to be outside of SQLAlchemy
+        try:
+            frame = sys._getframe(stacklevel)
+        except ValueError:
+            # being called from less than 3 (or given) stacklevels, weird,
+            # but don't crash
+            stacklevel = 0
+        except:
+            # _getframe() doesn't work, weird interpreter issue, weird,
+            # ok, but don't crash
+            stacklevel = 0
+        else:
+            stacklevel_found = warning_tag_found = False
+            while frame is not None:
+                # using __name__ here requires that we have __name__ in the
+                # __globals__ of the decorated string functions we make also.
+                # we generate this using {"__name__": fn.__module__}
+                if not stacklevel_found and not re.match(
+                    _not_sa_pattern, frame.f_globals.get("__name__", "")
+                ):
+                    # stop incrementing stack level if an out-of-SQLA line
+                    # were found.
+                    stacklevel_found = True
+    
+                    # however, for the warning tag thing, we have to keep
+                    # scanning up the whole traceback
+    
+                if frame.f_code in _warning_tags:
+                    warning_tag_found = True
+                    _suffix, _category = _warning_tags[frame.f_code]
+                    category = category or _category
+                    message = f"{message} ({_suffix})"
+    
+                frame = frame.f_back  # type: ignore[assignment]
+    
+                if not stacklevel_found:
+                    stacklevel += 1
+                elif stacklevel_found and warning_tag_found:
+                    break
+    
+        if category is not None:
+>           warnings.warn(message, category, stacklevel=stacklevel + 1)
+E           sqlalchemy.exc.SAWarning: SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1880: SAWarning
+__________________ test_dashboard_names[names6-entity_shared] __________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_dashboard_names_names6_en1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x751678f2b3d0>, autoflush=True, expire_on_commit=False))
+path = 'entity_shared', names = ('', 'Lovelace')
+
+    @pytest.mark.parametrize("path", PATHS)
+    @pytest.mark.parametrize("names", NAMES)
+    async def test_dashboard_names(sqlite_store, path, names):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            named = owner if path == "entity_shared_noex" else creator
+            named.first_name, named.last_name = names
+            content = {"name": "Read identity", "widgets": {}, "nested": {"currency": "USD", "values": [-1, None, 3]}}
+            item = fixtures.dashboard(owner, creator, entities[0], entity_share=True, is_shared=True, content=content)
+            session.add(item)
+            await session.flush()
+            session.add(fixtures.dashboard_share(item, recipient))
+            await session.flush()
+            capture = CapturedReads(session)
+            user = owner if path == "owned" else recipient
+            args = [capture, user.uuid]
+            if path.startswith("entity"):
+                args.append(roles[0].uuid)
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", SAWarning)
+>               result = await getattr(crud, "get_user_dashboards_" + path)(*args)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:913: in get_user_dashboards_entity_shared
+    results = await db.execute(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py:26: in execute
+    result = await self.session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py:448: in execute
+    result = await greenlet_spawn(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:190: in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1635: in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:715: in _compile_w_cache
+    compiled_sql = self._compiler(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:323: in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:1462: in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:4963: in visit_select
+    text = self._compose_select_body(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:5133: in _compose_select_body
+    from_linter.warn()
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:772: in warn
+    util.warn(message)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1805: in warn
+    _warnings_warn(msg, exc.SAWarning)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.'
+category = <class 'sqlalchemy.exc.SAWarning'>, stacklevel = 17
+
+    def _warnings_warn(
+        message: Union[str, Warning],
+        category: Optional[Type[Warning]] = None,
+        stacklevel: int = 2,
+    ) -> None:
+        # adjust the given stacklevel to be outside of SQLAlchemy
+        try:
+            frame = sys._getframe(stacklevel)
+        except ValueError:
+            # being called from less than 3 (or given) stacklevels, weird,
+            # but don't crash
+            stacklevel = 0
+        except:
+            # _getframe() doesn't work, weird interpreter issue, weird,
+            # ok, but don't crash
+            stacklevel = 0
+        else:
+            stacklevel_found = warning_tag_found = False
+            while frame is not None:
+                # using __name__ here requires that we have __name__ in the
+                # __globals__ of the decorated string functions we make also.
+                # we generate this using {"__name__": fn.__module__}
+                if not stacklevel_found and not re.match(
+                    _not_sa_pattern, frame.f_globals.get("__name__", "")
+                ):
+                    # stop incrementing stack level if an out-of-SQLA line
+                    # were found.
+                    stacklevel_found = True
+    
+                    # however, for the warning tag thing, we have to keep
+                    # scanning up the whole traceback
+    
+                if frame.f_code in _warning_tags:
+                    warning_tag_found = True
+                    _suffix, _category = _warning_tags[frame.f_code]
+                    category = category or _category
+                    message = f"{message} ({_suffix})"
+    
+                frame = frame.f_back  # type: ignore[assignment]
+    
+                if not stacklevel_found:
+                    stacklevel += 1
+                elif stacklevel_found and warning_tag_found:
+                    break
+    
+        if category is not None:
+>           warnings.warn(message, category, stacklevel=stacklevel + 1)
+E           sqlalchemy.exc.SAWarning: SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1880: SAWarning
+__________________ test_dashboard_names[names7-entity_shared] __________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_dashboard_names_names7_en1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x751678ff9610>, autoflush=True, expire_on_commit=False))
+path = 'entity_shared', names = ('Ada', '')
+
+    @pytest.mark.parametrize("path", PATHS)
+    @pytest.mark.parametrize("names", NAMES)
+    async def test_dashboard_names(sqlite_store, path, names):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            named = owner if path == "entity_shared_noex" else creator
+            named.first_name, named.last_name = names
+            content = {"name": "Read identity", "widgets": {}, "nested": {"currency": "USD", "values": [-1, None, 3]}}
+            item = fixtures.dashboard(owner, creator, entities[0], entity_share=True, is_shared=True, content=content)
+            session.add(item)
+            await session.flush()
+            session.add(fixtures.dashboard_share(item, recipient))
+            await session.flush()
+            capture = CapturedReads(session)
+            user = owner if path == "owned" else recipient
+            args = [capture, user.uuid]
+            if path.startswith("entity"):
+                args.append(roles[0].uuid)
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", SAWarning)
+>               result = await getattr(crud, "get_user_dashboards_" + path)(*args)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:913: in get_user_dashboards_entity_shared
+    results = await db.execute(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py:26: in execute
+    result = await self.session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py:448: in execute
+    result = await greenlet_spawn(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:190: in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1635: in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:715: in _compile_w_cache
+    compiled_sql = self._compiler(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:323: in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:1462: in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:4963: in visit_select
+    text = self._compose_select_body(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:5133: in _compose_select_body
+    from_linter.warn()
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:772: in warn
+    util.warn(message)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1805: in warn
+    _warnings_warn(msg, exc.SAWarning)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.'
+category = <class 'sqlalchemy.exc.SAWarning'>, stacklevel = 17
+
+    def _warnings_warn(
+        message: Union[str, Warning],
+        category: Optional[Type[Warning]] = None,
+        stacklevel: int = 2,
+    ) -> None:
+        # adjust the given stacklevel to be outside of SQLAlchemy
+        try:
+            frame = sys._getframe(stacklevel)
+        except ValueError:
+            # being called from less than 3 (or given) stacklevels, weird,
+            # but don't crash
+            stacklevel = 0
+        except:
+            # _getframe() doesn't work, weird interpreter issue, weird,
+            # ok, but don't crash
+            stacklevel = 0
+        else:
+            stacklevel_found = warning_tag_found = False
+            while frame is not None:
+                # using __name__ here requires that we have __name__ in the
+                # __globals__ of the decorated string functions we make also.
+                # we generate this using {"__name__": fn.__module__}
+                if not stacklevel_found and not re.match(
+                    _not_sa_pattern, frame.f_globals.get("__name__", "")
+                ):
+                    # stop incrementing stack level if an out-of-SQLA line
+                    # were found.
+                    stacklevel_found = True
+    
+                    # however, for the warning tag thing, we have to keep
+                    # scanning up the whole traceback
+    
+                if frame.f_code in _warning_tags:
+                    warning_tag_found = True
+                    _suffix, _category = _warning_tags[frame.f_code]
+                    category = category or _category
+                    message = f"{message} ({_suffix})"
+    
+                frame = frame.f_back  # type: ignore[assignment]
+    
+                if not stacklevel_found:
+                    stacklevel += 1
+                elif stacklevel_found and warning_tag_found:
+                    break
+    
+        if category is not None:
+>           warnings.warn(message, category, stacklevel=stacklevel + 1)
+E           sqlalchemy.exc.SAWarning: SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1880: SAWarning
+_________________________ test_entity_raw_cardinality __________________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_entity_raw_cardinality0/workspace.db'), <sqlalchemy.ext.asyncio.e...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x7516739c3790>, autoflush=True, expire_on_commit=False))
+
+    async def test_entity_raw_cardinality(sqlite_store):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            item = fixtures.dashboard(owner, creator, entities[0], entity_share=True)
+            session.add(item)
+            await session.flush()
+            capture = CapturedReads(session)
+            with warnings.catch_warnings(record=True) as caught:
+                warnings.simplefilter("always", SAWarning)
+                result = await crud.get_user_dashboards_entity_shared(capture, recipient.uuid, roles[0].uuid)
+            query, rows = capture.projection()
+>           assert len(rows) == 1, (
+                f"one creator per dashboard; got {len(rows)} rows; warnings={[str(w.message) for w in caught]}"
+            )
+E           AssertionError: one creator per dashboard; got 4 rows; warnings=['SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.']
+E           assert 4 == 1
+E            +  where 4 = len([(UUID('754fdbbd-1ede-42f6-a779-fa4dce4da899'), {'name': 'SQLite dashboard', 'widgets': {}}, UUID('94739c77-0207-4899-...timezone.utc), datetime.datetime(2026, 10, 17, 8, 23, 41, 954042, tzinfo=datetime.timezone.utc), 'Unrelated Identity')])
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:59: AssertionError
+__________________________ test_dashboard_membership ___________________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-2k9q36pd/pytest/test_dashboard_membership0/workspace.db'), <sqlalchemy.ext.asyncio.eng...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x7516783497d0>, autoflush=True, expire_on_commit=False))
+
+    async def test_dashboard_membership(sqlite_store):
+        async with sqlite_store[2]() as session:
+            entities, roles, (owner, creator, recipient, unrelated) = await people(session)
+            common = dict(entity_share=True)
+            items = [
+                fixtures.dashboard(owner, creator, entities[0], **common),
+                fixtures.dashboard(creator, owner, entities[0], **common),
+                fixtures.dashboard(unrelated, creator, entities[1], **common),
+                fixtures.dashboard(recipient, creator, entities[0], **common),
+                fixtures.dashboard(owner, owner, entities[0]),
+                fixtures.dashboard(owner, creator, entities[0]),
+                fixtures.dashboard(owner, creator, entities[0]),
+            ]
+            session.add_all(items)
+            await session.flush()
+            session.add_all(
+                [
+                    fixtures.dashboard_share(items[0], recipient),
+                    fixtures.dashboard_share(items[1], recipient, active=False),
+                    fixtures.dashboard_share(items[2], unrelated),
+                    fixtures.dashboard_share(items[3], recipient),
+                    fixtures.dashboard_share(items[4], recipient, active=False),
+                    fixtures.dashboard_share(items[5], unrelated),
+                    fixtures.dashboard_share(items[6], recipient, permissions=base.PermissionEnum.edit),
+                ]
+            )
+            await session.flush()
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", SAWarning)
+                capture = CapturedReads(session)
+                owned = await crud.get_user_dashboards_owned(capture, owner.uuid)
+                assert set(owned) == {items[i].uuid for i in (0, 4, 5, 6)}
+                assert owned[items[4].uuid].creator is True
+                assert owned[items[0].uuid].creator is False
+                assert set(await crud.get_user_dashboards_shared(capture, recipient.uuid)) == {items[0].uuid, items[6].uuid}
+                assert set(await crud.get_user_dashboards_entity_shared_noex(capture, recipient.uuid, roles[0].uuid)) == {
+                    items[0].uuid
+                }
+                noex = await crud.get_user_dashboards_entity_shared_noex(capture, recipient.uuid, roles[1].uuid)
+                assert set(noex) == {items[1].uuid}
+                assert noex[items[1].uuid].created_by == display(creator)
+>               entity = await crud.get_user_dashboards_entity_shared(capture, recipient.uuid, roles[0].uuid)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:913: in get_user_dashboards_entity_shared
+    results = await db.execute(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/read_support.py:26: in execute
+    result = await self.session.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/ext/asyncio/session.py:448: in execute
+    result = await greenlet_spawn(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:190: in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1635: in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:715: in _compile_w_cache
+    compiled_sql = self._compiler(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:323: in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:1462: in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:4963: in visit_select
+    text = self._compose_select_body(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:5133: in _compose_select_body
+    from_linter.warn()
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:772: in warn
+    util.warn(message)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1805: in warn
+    _warnings_warn(msg, exc.SAWarning)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+message = 'SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.'
+category = <class 'sqlalchemy.exc.SAWarning'>, stacklevel = 17
+
+    def _warnings_warn(
+        message: Union[str, Warning],
+        category: Optional[Type[Warning]] = None,
+        stacklevel: int = 2,
+    ) -> None:
+        # adjust the given stacklevel to be outside of SQLAlchemy
+        try:
+            frame = sys._getframe(stacklevel)
+        except ValueError:
+            # being called from less than 3 (or given) stacklevels, weird,
+            # but don't crash
+            stacklevel = 0
+        except:
+            # _getframe() doesn't work, weird interpreter issue, weird,
+            # ok, but don't crash
+            stacklevel = 0
+        else:
+            stacklevel_found = warning_tag_found = False
+            while frame is not None:
+                # using __name__ here requires that we have __name__ in the
+                # __globals__ of the decorated string functions we make also.
+                # we generate this using {"__name__": fn.__module__}
+                if not stacklevel_found and not re.match(
+                    _not_sa_pattern, frame.f_globals.get("__name__", "")
+                ):
+                    # stop incrementing stack level if an out-of-SQLA line
+                    # were found.
+                    stacklevel_found = True
+    
+                    # however, for the warning tag thing, we have to keep
+                    # scanning up the whole traceback
+    
+                if frame.f_code in _warning_tags:
+                    warning_tag_found = True
+                    _suffix, _category = _warning_tags[frame.f_code]
+                    category = category or _category
+                    message = f"{message} ({_suffix})"
+    
+                frame = frame.f_back  # type: ignore[assignment]
+    
+                if not stacklevel_found:
+                    stacklevel += 1
+                elif stacklevel_found and warning_tag_found:
+                    break
+    
+        if category is not None:
+>           warnings.warn(message, category, stacklevel=stacklevel + 1)
+E           sqlalchemy.exc.SAWarning: SELECT statement has a cartesian product between FROM element(s) "dashboard_item" and FROM element "user".  Apply join condition(s) between each element to resolve.
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py:1880: SAWarning
+=========================== short test summary info ============================
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_dashboard_names[names0-entity_shared]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_dashboard_names[names1-entity_shared]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_dashboard_names[names2-entity_shared]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_dashboard_names[names3-entity_shared]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_dashboard_names[names4-entity_shared]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_dashboard_names[names5-entity_shared]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_dashboard_names[names6-entity_shared]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_dashboard_names[names7-entity_shared]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_entity_raw_cardinality
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py::test_dashboard_membership
+10 failed, 43 passed in 42.82s
+Removed sandbox: /tmp/qopenbb-sqlite-2k9q36pd

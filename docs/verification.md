@@ -30,6 +30,8 @@ The canonical browser command uses one worker and rejects CLI worker overrides a
 
 ## Interpret evidence
 
+Reviewed evidence is synchronized into [the committed artifact folder](../artifacts/reviewed/README.md) before commit and push. Its manifest maps each published file to its local source and records both hashes and any transformation. Raw runtime state, credentials and caches remain local. The index states which completed runs are included; a missing historical artifact is not newly verified evidence.
+
 Each browser run writes one `artifacts/task-1.7/runs/run-*/evidence.json` with source revision, tool/browser versions, timestamp, command identity, result, diagnostic categories and artifact root. Browser profiles are disposable and removed after success and fault paths. The fixture listener binds a dynamic loopback port and refuses an existing listener. Tests prove closure after success, startup failure, artifact failure and diagnostic failure. The standalone `node verification/runner.ts --failure` command exits nonzero on unexpected console/network errors.
 
 CDP uses Playwright `context.newCDPSession` on the browser this run owns. Runtime and Network events retain category and HTTP status only. They discard URLs, headers, cookies, request/response bodies, exception text and console arguments before writing evidence. This protects even secret-bearing error strings; it is deliberately less detailed than an application debug log. Synthetic sentinel regressions check retained evidence for leakage. Raw screenshots, video and traces remain off; requesting capture for credential entry is refused before creating a run. Credential scenarios must never enable capture.

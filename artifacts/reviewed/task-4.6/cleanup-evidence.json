@@ -1,0 +1,59 @@
+{
+  "prior_residue": [
+    {
+      "directory": "/tmp/pytest-of-mc/pytest-0/test_real_fixture_roundtrip0",
+      "observed": [
+        {
+          "name": "workspace.db",
+          "bytes": 180224
+        }
+      ],
+      "database_removed": true,
+      "task_directory_removed": true
+    },
+    {
+      "directory": "/tmp/pytest-of-mc/pytest-1/test_real_fixture_roundtrip0",
+      "observed": [
+        {
+          "name": "workspace.db",
+          "bytes": 180224
+        }
+      ],
+      "database_removed": true,
+      "task_directory_removed": true
+    },
+    {
+      "directory": "/tmp/pytest-of-mc/pytest-2/test_real_fixture_roundtrip0",
+      "observed": [
+        {
+          "name": "workspace.db",
+          "bytes": 180224
+        }
+      ],
+      "database_removed": true,
+      "task_directory_removed": true
+    }
+  ],
+  "fresh_runs": {
+    "success": {
+      "command": [
+        "/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/run.py"
+      ],
+      "exit": 0,
+      "sandbox": "/tmp/qopenbb-sqlite-s7x3m2sk",
+      "removed": true
+    },
+    "nonzero": {
+      "command": [
+        "/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python",
+        "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/run.py",
+        "-k",
+        "does_not_exist_task46_cleanup"
+      ],
+      "exit": 5,
+      "sandbox": "/tmp/qopenbb-sqlite-n8_fnv1q",
+      "removed": true
+    }
+  }
+}

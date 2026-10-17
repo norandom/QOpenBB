@@ -1,0 +1,58 @@
+{
+  "command": "wsl -d Debian bash artifacts/parity/theme-matrix/run.sh",
+  "finalExit": 0,
+  "firstMatrixExit": 1,
+  "dataProbeExit": 1,
+  "cases": [
+    {
+      "mode": "dark",
+      "family": "groupedColumn",
+      "status": "observed-original-only",
+      "json": "dark-groupedColumn.json",
+      "screenshot": "dark-groupedColumn.png"
+    },
+    {
+      "mode": "dark",
+      "family": "stackedColumn",
+      "status": "observed-original-only",
+      "json": "first-pass/dark-stackedColumn.json",
+      "screenshot": "first-pass/dark-stackedColumn.png"
+    },
+    {
+      "mode": "dark",
+      "family": "line",
+      "status": "observed-original-only",
+      "json": "first-pass/dark-line.json",
+      "screenshot": "first-pass/dark-line.png"
+    },
+    {
+      "mode": "light",
+      "family": "groupedColumn",
+      "status": "observed-original-only",
+      "json": "light-groupedColumn.json",
+      "screenshot": "light-groupedColumn.png"
+    },
+    {
+      "mode": "light",
+      "family": "stackedColumn",
+      "status": "observed-original-only",
+      "json": "light-stackedColumn.json",
+      "screenshot": "light-stackedColumn.png"
+    },
+    {
+      "mode": "light",
+      "family": "line",
+      "status": "observed-original-only",
+      "json": "light-line.json",
+      "screenshot": "light-line.png"
+    }
+  ],
+  "missingStockCases": [],
+  "unverified": [
+    "custom themes",
+    "control effects",
+    "exports",
+    "backend persistence",
+    "candidate parity"
+  ]
+}

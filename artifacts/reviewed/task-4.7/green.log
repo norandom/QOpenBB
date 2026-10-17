@@ -1,0 +1,751 @@
+Exercised child: /home/mc/qopenbb-work/sqlite-runtime/venv/bin/python -m pytest -p pytest_asyncio.plugin -c /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/pyproject.toml /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --confcutdir=/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --basetemp=/tmp/qopenbb-sqlite-wzjwxvp6/pytest -o addopts= -o asyncio_mode=auto -q -s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+.ACTUAL_SELECT sqlite rows=3: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=3: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=2: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != ?
+ACTUAL_SELECT mysql rows=2: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.uuid IN (__[POSTCOMPILE_uuid_1]) AND user_app.user_uuid != %s
+ACTUAL_SELECT sqlite rows=3: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=3: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=3: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=3: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+ACTUAL_SELECT sqlite rows=0: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = ? AND user_app_share.active IS 1
+ACTUAL_SELECT mysql rows=0: SELECT user_app_share.user_app_uuid 
+FROM user_app_share 
+WHERE user_app_share.shared_user_uuid = %s AND user_app_share.active IS true
+ACTUAL_SELECT sqlite rows=0: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM user_app JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = ?
+ACTUAL_SELECT mysql rows=0: SELECT user_app.uuid, user_app.content, user_app.user_uuid AS creator_uuid, user_app.created_date, user_app.updated_date, user_app.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM user_app INNER JOIN user ON user.uuid = user_app.user_uuid 
+WHERE user_app.user_uuid = %s
+ACTUAL_SELECT sqlite rows=4: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != ? AND user_app_share.active IS 1 AND user_app_share.permissions = ?
+ACTUAL_SELECT mysql rows=4: SELECT user_app_share.user_app_uuid, user.first_name, user.last_name, user.email 
+FROM user_app_share INNER JOIN user ON user.uuid = user_app_share.shared_user_uuid 
+WHERE user_app_share.shared_user_uuid != %s AND user_app_share.active IS true AND user_app_share.permissions = %s
+...ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:24:12.142 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.96
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:24:15.060 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.88
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:24:18.053 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.72
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:24:21.052 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.64
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:24:23.965 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.54
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:24:26.917 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.50
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:24:29.854 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.61
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+.ACTUAL_SELECT sqlite rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+.2026-10-17 10:24:32.821 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 4.31
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+.ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+.2026-10-17 10:24:35.051 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 2.29
+2026-10-17 10:24:35.054 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 1.74
+ACTUAL_SELECT sqlite rows=4: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=4: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+ACTUAL_SELECT sqlite rows=3: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=3: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=2: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=2: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1]) AND dashboard_item.owner_uuid != %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=2: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=2: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=2: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=2: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ? AND (dashboard_item.uuid NOT IN (__[POSTCOMPILE_uuid_1]))
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s AND (dashboard_item.uuid NOT IN (__[POSTCOMPILE_uuid_1]))
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s2026-10-17 10:24:35.076 | WARNING  | api.crud:get_user_dashboards_entity_shared_noex:863 - Time to get user entity dashboards: 1.69
+
+ACTUAL_SELECT sqlite rows=0: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ? AND (dashboard_item.uuid NOT IN (__[POSTCOMPILE_uuid_1]))
+ACTUAL_SELECT mysql rows=0: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s AND (dashboard_item.uuid NOT IN (__[POSTCOMPILE_uuid_1]))
+ACTUAL_SELECT sqlite rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=1: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS 1 AND dashboard_item.owner_uuid != ? AND dashboard_item.entity_uuid = ?
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid 
+FROM dashboard_item 
+WHERE dashboard_item.entity_share IS true AND dashboard_item.owner_uuid != %s AND dashboard_item.entity_uuid = %s
+ACTUAL_SELECT sqlite rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT mysql rows=1: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.uuid IN (__[POSTCOMPILE_uuid_1])
+ACTUAL_SELECT sqlite rows=0: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = ?
+ACTUAL_SELECT mysql rows=0: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, dashboard_item.is_shared, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.creator_uuid 
+WHERE dashboard_item.owner_uuid = %s
+ACTUAL_SELECT sqlite rows=0: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = ? AND dashboard_share.active IS 1
+ACTUAL_SELECT mysql rows=0: SELECT dashboard_share.dashboard_item_uuid 
+FROM dashboard_share 
+WHERE dashboard_share.shared_user_uuid = %s AND dashboard_share.active IS true
+ACTUAL_SELECT sqlite rows=0: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN user.first_name || ? || user.last_name ELSE user.email END AS created_by 
+FROM dashboard_item JOIN user ON user.uuid = dashboard_item.owner_uuid JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS 1 AND permissions_entity_map.uuid = ? AND dashboard_item.owner_uuid != ?
+ACTUAL_SELECT mysql rows=0: SELECT dashboard_item.uuid, dashboard_item.content, dashboard_item.creator_uuid, dashboard_item.created_date, dashboard_item.updated_date, CASE WHEN (user.first_name IS NOT NULL AND user.last_name IS NOT NULL) THEN concat(user.first_name, %s, user.last_name) ELSE user.email END AS created_by 
+FROM dashboard_item INNER JOIN user ON user.uuid = dashboard_item.owner_uuid INNER JOIN permissions_entity_map ON user.permissions_uuid = permissions_entity_map.uuid 
+WHERE dashboard_item.entity_share IS true AND permissions_entity_map.uuid = %s AND dashboard_item.owner_uuid != %s
+ACTUAL_SELECT sqlite rows=0: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = ?
+ LIMIT ? OFFSET ?
+ACTUAL_SELECT mysql rows=0: SELECT permissions_entity_map.entity_uuid 
+FROM permissions_entity_map 
+WHERE permissions_entity_map.uuid = %s 
+ LIMIT %s
+.
+53 passed in 39.09s
+Removed sandbox: /tmp/qopenbb-sqlite-wzjwxvp6

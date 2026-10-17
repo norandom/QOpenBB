@@ -1,0 +1,445 @@
+{
+  "text": "Chart\nSet Up\nCustomize\nColumn\nBar\nPie\nLine\nArea\nX Y (Scatter)\nPolar\nStatistical\nHierarchical\nSpecialized\nFunnel\nCombination",
+  "controls": [
+    {
+      "tag": "SPAN",
+      "role": "tab",
+      "label": "Chart",
+      "labelledby": null,
+      "visible": true,
+      "html": "<span class=\"ag-tab ag-tab-selected\" role=\"tab\" tabindex=\"-1\" aria-label=\"Chart\"><div>Chart</div></span>"
+    },
+    {
+      "tag": "SPAN",
+      "role": "tab",
+      "label": "Set Up",
+      "labelledby": null,
+      "visible": true,
+      "html": "<span class=\"ag-tab\" role=\"tab\" tabindex=\"-1\" aria-label=\"Set Up\"><div>Set Up</div></span>"
+    },
+    {
+      "tag": "SPAN",
+      "role": "tab",
+      "label": "Customize",
+      "labelledby": null,
+      "visible": true,
+      "html": "<span class=\"ag-tab\" role=\"tab\" tabindex=\"-1\" aria-label=\"Customize\"><div>Customize</div></span>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-22-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-22-input\" tabindex=\"0\" aria-labelledby=\"ag-22-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Grouped Column. Selected",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item ag-selected\" tabindex=\"0\" role=\"button\" aria-label=\"Grouped Column. Selected\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Grouped\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Stacked Column",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Stacked Column\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Stacked\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "100% Stacked Column",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"100% Stacked Column\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"100% Stacked\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-28-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-28-input\" tabindex=\"0\" aria-labelledby=\"ag-28-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Grouped Bar",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Grouped Bar\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Grouped\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Stacked Bar",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Stacked Bar\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Stacked\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "100% Stacked Bar",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"100% Stacked Bar\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"100% Stacked\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-34-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-34-input\" tabindex=\"0\" aria-labelledby=\"ag-34-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Pie",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Pie\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Pie\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Donut",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Donut\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Donut\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-39-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-39-input\" tabindex=\"0\" aria-labelledby=\"ag-39-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Line",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Line\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Line\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Stacked Line",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Stacked Line\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Stacked\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "100% Stacked Line",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"100% Stacked Line\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"100% Stacked\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-45-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-45-input\" tabindex=\"0\" aria-labelledby=\"ag-45-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Area",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Area\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Area\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Stacked Area",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Stacked Area\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Stacked\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "100% Stacked Area",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"100% Stacked Area\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"100% Stacked\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-51-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-51-input\" tabindex=\"0\" aria-labelledby=\"ag-51-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Scatter",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Scatter\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Scatter\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Bubble",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Bubble\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Bubble\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-56-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-56-input\" tabindex=\"0\" aria-labelledby=\"ag-56-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Radar Line",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Radar Line\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Radar Line\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Radar Area",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Radar Area\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Radar Area\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Nightingale",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Nightingale\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Nightingale\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Radial Column",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Radial Column\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Radial Column\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Radial Bar",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Radial Bar\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Radial Bar\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-64-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-64-input\" tabindex=\"0\" aria-labelledby=\"ag-64-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Box Plot",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Box Plot\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Box Plot\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Histogram",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Histogram\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Histogram\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Range Bar",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Range Bar\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Range Bar\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Range Area",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Range Area\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Range Area\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-71-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-71-input\" tabindex=\"0\" aria-labelledby=\"ag-71-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Treemap",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Treemap\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Treemap\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Sunburst",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Sunburst\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Sunburst\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-76-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-76-input\" tabindex=\"0\" aria-labelledby=\"ag-76-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Heatmap",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Heatmap\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Heatmap\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Waterfall",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Waterfall\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Waterfall\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-81-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-81-input\" tabindex=\"0\" aria-labelledby=\"ag-81-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Funnel",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Funnel\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Funnel\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Cone Funnel",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Cone Funnel\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Cone Funnel\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Pyramid",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Pyramid\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Pyramid\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-87-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-87-input\" tabindex=\"0\" aria-labelledby=\"ag-87-label\" style=\"\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Column & Line",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Column &amp; Line\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Column &amp; Line\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    },
+    {
+      "tag": "DIV",
+      "role": "button",
+      "label": "Area & Column",
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-chart-mini-thumbnail ag-group-item ag-charts-settings-group-item\" tabindex=\"0\" role=\"button\" aria-label=\"Area &amp; Column\"><canvas width=\"58\" height=\"58\" class=\"ag-chart-mini-thumbnail-canvas\" title=\"Area &amp; Column\" style=\"width: 58px; height: 58px;\"></canvas></div>"
+    }
+  ]
+}

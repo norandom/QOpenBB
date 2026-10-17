@@ -1,0 +1,70 @@
+Exercised child: /home/mc/qopenbb-work/sqlite-runtime/venv/bin/python -m pytest -p pytest_asyncio.plugin -c /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/pyproject.toml /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --confcutdir=/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite -o addopts= -o asyncio_mode=auto -q
+EE                                                                       [100%]
+==================================== ERRORS ====================================
+__________________ ERROR at setup of test_bootstrap_isolation __________________
+
+fixturedef = <FixtureDef argname='no_private_reads' scope='function' baseid='tests_sqlite'>
+request = <SubRequest 'no_private_reads' for <Function test_bootstrap_isolation>>
+
+    @pytest.hookimpl(wrapper=True)
+    def pytest_fixture_setup(fixturedef: FixtureDef, request) -> object | None:
+        if (
+            fixturedef.argname == "event_loop_policy"
+            and fixturedef.func.__module__ != __name__
+        ):
+            warnings.warn(
+                PytestDeprecationWarning(_EVENT_LOOP_POLICY_FIXTURE_DEPRECATION_WARNING),
+            )
+        asyncio_mode = _get_asyncio_mode(request.config)
+        if not _is_asyncio_fixture_function(fixturedef.func):
+            if asyncio_mode == Mode.STRICT:
+                # Ignore async fixtures without explicit asyncio mark in strict mode
+                # This applies to pytest_trio fixtures, for example
+                return (yield)
+            if not _is_coroutine_or_asyncgen(fixturedef.func):
+>               return (yield)
+                        ^^^^^
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/pytest_asyncio/plugin.py:926: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @pytest.fixture(autouse=True)
+    def no_private_reads():
+>       assert not DENIED_READS
+E       AssertionError: assert not ['/tmp/qopenbb-sqlite-me505a5a/sentinel.env', '/tmp/qopenbb-sqlite-me505a5a/user_create.json']
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/conftest.py:96: AssertionError
+________________ ERROR at setup of test_real_fixture_roundtrip _________________
+
+self = <Coroutine test_real_fixture_roundtrip>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/pytest_asyncio/plugin.py:558: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/pytest_asyncio/plugin.py:926: in pytest_fixture_setup
+    return (yield)
+            ^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @pytest.fixture(autouse=True)
+    def no_private_reads():
+>       assert not DENIED_READS
+E       AssertionError: assert not ['/tmp/qopenbb-sqlite-me505a5a/sentinel.env', '/tmp/qopenbb-sqlite-me505a5a/user_create.json']
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/conftest.py:96: AssertionError
+=========================== short test summary info ============================
+ERROR ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_bootstrap.py::test_bootstrap_isolation
+ERROR ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_bootstrap.py::test_real_fixture_roundtrip
+2 errors in 0.67s

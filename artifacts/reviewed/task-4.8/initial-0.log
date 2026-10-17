@@ -1,0 +1,364 @@
+Exercised child: /home/mc/qopenbb-work/sqlite-runtime/venv/bin/python -m pytest -p pytest_asyncio.plugin -c /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/pyproject.toml /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --confcutdir=/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --basetemp=/tmp/qopenbb-sqlite-ndw3u3ie/pytest -o addopts= -o asyncio_mode=auto -q -k persistence
+FFFFFFF                                                                  [100%]
+=================================== FAILURES ===================================
+____________________ test_bulk_insert_update_engine_reopen _____________________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-ndw3u3ie/pytest/test_bulk_insert_update_engine0/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x70f1116e9150>, autoflush=True, expire_on_commit=False))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x70f111597950>
+
+    async def test_bulk_insert_update_engine_reopen(sqlite_store, monkeypatch):
+        path, engine, sessions = sqlite_store
+        assert path.resolve().is_relative_to(SANDBOX.resolve())
+        calls = []
+        monkeypatch.setattr(helpers.rq_results.rq_que, "enqueue", lambda *args, **kwargs: calls.append((args, kwargs)))
+        identity = uuid4()
+        async with sessions() as session:
+            entities, roles, users = await people(session)
+            owner_id, role_id, entity_id = users[0].uuid, roles[0].uuid, entities[0].uuid
+            owner_name = display(users[0])
+            await save(session, owner_id, role_id, {identity: content(1)})
+>           inserted_dates = await assert_stored(session, identity, owner_id, entity_id, content(1))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:46: in assert_stored
+    ).scalar_one()
+      ^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/result.py:1518: in scalar_one
+    return self._only_one_row(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.engine.cursor.CursorResult object at 0x70f110a5b770>
+raise_for_second_row = True, raise_for_none = True, scalar = True
+
+    def _only_one_row(
+        self,
+        raise_for_second_row: bool,
+        raise_for_none: bool,
+        scalar: bool,
+    ) -> Optional[_R]:
+        onerow = self._fetchone_impl
+    
+        row: Optional[_InterimRowType[Any]] = onerow(hard_close=True)
+        if row is None:
+            if raise_for_none:
+>               raise exc.NoResultFound(
+                    "No row was found when one was required"
+                )
+E               sqlalchemy.exc.NoResultFound: No row was found when one was required
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/result.py:799: NoResultFound
+______________ test_real_share_helper_commit_before_enqueue[None] ______________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-ndw3u3ie/pytest/test_real_share_helper_commit_0/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x70f11163e7d0>, autoflush=True, expire_on_commit=False))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x70f1118dc050>
+failure = None
+
+    @pytest.mark.parametrize("failure", [None, JobTimeoutException, RuntimeError])
+    async def test_real_share_helper_commit_before_enqueue(sqlite_store, monkeypatch, failure):
+        path, _engine, sessions = sqlite_store
+        identity, calls = uuid4(), []
+        async with sessions() as session:
+            entities, roles, users = await people(session)
+            owner_id, role_id, entity_id = users[0].uuid, roles[0].uuid, entities[0].uuid
+            await save(session, owner_id, role_id, {identity: content(1)})
+    
+            def enqueue(*args, **kwargs):
+                # A separate connection can see only committed bytes, including at failure time.
+                with sqlite3.connect(path) as connection:
+                    raw = connection.execute("SELECT content FROM dashboard_item WHERE uuid = ?", (identity.hex,)).fetchone()[
+                        0
+                    ]
+                assert json.loads(gzip.decompress(raw)) == content(2)
+                calls.append((args, kwargs))
+                if failure:
+                    raise failure("deterministic queue failure")
+    
+            monkeypatch.setattr(helpers.rq_results.rq_que, "enqueue", enqueue)
+            if failure is RuntimeError:
+                with pytest.raises(RuntimeError, match="deterministic queue failure"):
+                    await save(session, owner_id, role_id, {identity: content(2)})
+                await session.rollback()
+            else:
+>               await save(session, owner_id, role_id, {identity: content(2)})
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:36: in save
+    await crud.bulk_dashboard_insert_update(session, schemas.DashboardsCreate(items=items), owner_id, role_id)
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:154: in bulk_dashboard_insert_update
+    handle_share_files(owner_uuid, item.uuid)
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/helpers.py:134: in handle_share_files
+    rq_results.rq_que.enqueue(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function update_share_files at 0x70f1115f1b20>, 'fe02d8b5-1db6-45da-b0fb-b9589eae04ab', '4d05164b-8f4b-45ef-8ff8-aa42ef7224dd', None)
+kwargs = {'job_timeout': 10}
+
+    def enqueue(*args, **kwargs):
+        # A separate connection can see only committed bytes, including at failure time.
+        with sqlite3.connect(path) as connection:
+>           raw = connection.execute("SELECT content FROM dashboard_item WHERE uuid = ?", (identity.hex,)).fetchone()[
+                0
+            ]
+E           TypeError: 'NoneType' object is not subscriptable
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:105: TypeError
+______ test_real_share_helper_commit_before_enqueue[JobTimeoutException] _______
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-ndw3u3ie/pytest/test_real_share_helper_commit_1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x70f1117ecc90>, autoflush=True, expire_on_commit=False))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x70f1109e1310>
+failure = <class 'rq.timeouts.JobTimeoutException'>
+
+    @pytest.mark.parametrize("failure", [None, JobTimeoutException, RuntimeError])
+    async def test_real_share_helper_commit_before_enqueue(sqlite_store, monkeypatch, failure):
+        path, _engine, sessions = sqlite_store
+        identity, calls = uuid4(), []
+        async with sessions() as session:
+            entities, roles, users = await people(session)
+            owner_id, role_id, entity_id = users[0].uuid, roles[0].uuid, entities[0].uuid
+            await save(session, owner_id, role_id, {identity: content(1)})
+    
+            def enqueue(*args, **kwargs):
+                # A separate connection can see only committed bytes, including at failure time.
+                with sqlite3.connect(path) as connection:
+                    raw = connection.execute("SELECT content FROM dashboard_item WHERE uuid = ?", (identity.hex,)).fetchone()[
+                        0
+                    ]
+                assert json.loads(gzip.decompress(raw)) == content(2)
+                calls.append((args, kwargs))
+                if failure:
+                    raise failure("deterministic queue failure")
+    
+            monkeypatch.setattr(helpers.rq_results.rq_que, "enqueue", enqueue)
+            if failure is RuntimeError:
+                with pytest.raises(RuntimeError, match="deterministic queue failure"):
+                    await save(session, owner_id, role_id, {identity: content(2)})
+                await session.rollback()
+            else:
+>               await save(session, owner_id, role_id, {identity: content(2)})
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:36: in save
+    await crud.bulk_dashboard_insert_update(session, schemas.DashboardsCreate(items=items), owner_id, role_id)
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:154: in bulk_dashboard_insert_update
+    handle_share_files(owner_uuid, item.uuid)
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/helpers.py:134: in handle_share_files
+    rq_results.rq_que.enqueue(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function update_share_files at 0x70f1115f1b20>, '82ef0146-ae01-467d-a488-030d05c4729d', '1178d9a6-0b86-415a-992d-bf876a4d415b', None)
+kwargs = {'job_timeout': 10}
+
+    def enqueue(*args, **kwargs):
+        # A separate connection can see only committed bytes, including at failure time.
+        with sqlite3.connect(path) as connection:
+>           raw = connection.execute("SELECT content FROM dashboard_item WHERE uuid = ?", (identity.hex,)).fetchone()[
+                0
+            ]
+E           TypeError: 'NoneType' object is not subscriptable
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:105: TypeError
+__________ test_real_share_helper_commit_before_enqueue[RuntimeError] __________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-ndw3u3ie/pytest/test_real_share_helper_commit_2/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x70f1109d3690>, autoflush=True, expire_on_commit=False))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x70f1108958d0>
+failure = <class 'RuntimeError'>
+
+    @pytest.mark.parametrize("failure", [None, JobTimeoutException, RuntimeError])
+    async def test_real_share_helper_commit_before_enqueue(sqlite_store, monkeypatch, failure):
+        path, _engine, sessions = sqlite_store
+        identity, calls = uuid4(), []
+        async with sessions() as session:
+            entities, roles, users = await people(session)
+            owner_id, role_id, entity_id = users[0].uuid, roles[0].uuid, entities[0].uuid
+            await save(session, owner_id, role_id, {identity: content(1)})
+    
+            def enqueue(*args, **kwargs):
+                # A separate connection can see only committed bytes, including at failure time.
+                with sqlite3.connect(path) as connection:
+                    raw = connection.execute("SELECT content FROM dashboard_item WHERE uuid = ?", (identity.hex,)).fetchone()[
+                        0
+                    ]
+                assert json.loads(gzip.decompress(raw)) == content(2)
+                calls.append((args, kwargs))
+                if failure:
+                    raise failure("deterministic queue failure")
+    
+            monkeypatch.setattr(helpers.rq_results.rq_que, "enqueue", enqueue)
+            if failure is RuntimeError:
+                with pytest.raises(RuntimeError, match="deterministic queue failure"):
+>                   await save(session, owner_id, role_id, {identity: content(2)})
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:36: in save
+    await crud.bulk_dashboard_insert_update(session, schemas.DashboardsCreate(items=items), owner_id, role_id)
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/crud.py:154: in bulk_dashboard_insert_update
+    handle_share_files(owner_uuid, item.uuid)
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/api/helpers.py:134: in handle_share_files
+    rq_results.rq_que.enqueue(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function update_share_files at 0x70f1115f1b20>, '48670cd0-f4de-4231-bd7c-9ddbc9be3998', '0d3a5c8a-2e68-402a-b6af-e3bb8b3fdc58', None)
+kwargs = {'job_timeout': 10}
+
+    def enqueue(*args, **kwargs):
+        # A separate connection can see only committed bytes, including at failure time.
+        with sqlite3.connect(path) as connection:
+>           raw = connection.execute("SELECT content FROM dashboard_item WHERE uuid = ?", (identity.hex,)).fetchone()[
+                0
+            ]
+E           TypeError: 'NoneType' object is not subscriptable
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:105: TypeError
+_________ test_failed_bulk_save_preserves_other_owner[foreign_update] __________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-ndw3u3ie/pytest/test_failed_bulk_save_preserve0/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x70f1108df9d0>, autoflush=True, expire_on_commit=False))
+operation = 'foreign_update'
+
+    @pytest.mark.parametrize("operation", ["foreign_update", "foreign_delete", "duplicate_id"])
+    async def test_failed_bulk_save_preserves_other_owner(sqlite_store, operation):
+        _path, _engine, sessions = sqlite_store
+        identity = uuid4()
+        async with sessions() as session:
+            entities, roles, users = await people(session)
+            owner_id, role_id, entity_id = users[0].uuid, roles[0].uuid, entities[0].uuid
+            attacker_id, attacker_role = users[3].uuid, roles[2].uuid
+            await save(session, owner_id, role_id, {identity: content(1)})
+>           original_dates = await assert_stored(session, identity, owner_id, entity_id, content(1))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:46: in assert_stored
+    ).scalar_one()
+      ^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/result.py:1518: in scalar_one
+    return self._only_one_row(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.engine.cursor.CursorResult object at 0x70f110845010>
+raise_for_second_row = True, raise_for_none = True, scalar = True
+
+    def _only_one_row(
+        self,
+        raise_for_second_row: bool,
+        raise_for_none: bool,
+        scalar: bool,
+    ) -> Optional[_R]:
+        onerow = self._fetchone_impl
+    
+        row: Optional[_InterimRowType[Any]] = onerow(hard_close=True)
+        if row is None:
+            if raise_for_none:
+>               raise exc.NoResultFound(
+                    "No row was found when one was required"
+                )
+E               sqlalchemy.exc.NoResultFound: No row was found when one was required
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/result.py:799: NoResultFound
+_________ test_failed_bulk_save_preserves_other_owner[foreign_delete] __________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-ndw3u3ie/pytest/test_failed_bulk_save_preserve1/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x70f110693850>, autoflush=True, expire_on_commit=False))
+operation = 'foreign_delete'
+
+    @pytest.mark.parametrize("operation", ["foreign_update", "foreign_delete", "duplicate_id"])
+    async def test_failed_bulk_save_preserves_other_owner(sqlite_store, operation):
+        _path, _engine, sessions = sqlite_store
+        identity = uuid4()
+        async with sessions() as session:
+            entities, roles, users = await people(session)
+            owner_id, role_id, entity_id = users[0].uuid, roles[0].uuid, entities[0].uuid
+            attacker_id, attacker_role = users[3].uuid, roles[2].uuid
+            await save(session, owner_id, role_id, {identity: content(1)})
+>           original_dates = await assert_stored(session, identity, owner_id, entity_id, content(1))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:46: in assert_stored
+    ).scalar_one()
+      ^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/result.py:1518: in scalar_one
+    return self._only_one_row(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.engine.cursor.CursorResult object at 0x70f110614c20>
+raise_for_second_row = True, raise_for_none = True, scalar = True
+
+    def _only_one_row(
+        self,
+        raise_for_second_row: bool,
+        raise_for_none: bool,
+        scalar: bool,
+    ) -> Optional[_R]:
+        onerow = self._fetchone_impl
+    
+        row: Optional[_InterimRowType[Any]] = onerow(hard_close=True)
+        if row is None:
+            if raise_for_none:
+>               raise exc.NoResultFound(
+                    "No row was found when one was required"
+                )
+E               sqlalchemy.exc.NoResultFound: No row was found when one was required
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/result.py:799: NoResultFound
+__________ test_failed_bulk_save_preserves_other_owner[duplicate_id] ___________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-ndw3u3ie/pytest/test_failed_bulk_save_preserve2/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x70f1106aeb10>, autoflush=True, expire_on_commit=False))
+operation = 'duplicate_id'
+
+    @pytest.mark.parametrize("operation", ["foreign_update", "foreign_delete", "duplicate_id"])
+    async def test_failed_bulk_save_preserves_other_owner(sqlite_store, operation):
+        _path, _engine, sessions = sqlite_store
+        identity = uuid4()
+        async with sessions() as session:
+            entities, roles, users = await people(session)
+            owner_id, role_id, entity_id = users[0].uuid, roles[0].uuid, entities[0].uuid
+            attacker_id, attacker_role = users[3].uuid, roles[2].uuid
+            await save(session, owner_id, role_id, {identity: content(1)})
+>           original_dates = await assert_stored(session, identity, owner_id, entity_id, content(1))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:46: in assert_stored
+    ).scalar_one()
+      ^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/result.py:1518: in scalar_one
+    return self._only_one_row(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.engine.cursor.CursorResult object at 0x70f110846e40>
+raise_for_second_row = True, raise_for_none = True, scalar = True
+
+    def _only_one_row(
+        self,
+        raise_for_second_row: bool,
+        raise_for_none: bool,
+        scalar: bool,
+    ) -> Optional[_R]:
+        onerow = self._fetchone_impl
+    
+        row: Optional[_InterimRowType[Any]] = onerow(hard_close=True)
+        if row is None:
+            if raise_for_none:
+>               raise exc.NoResultFound(
+                    "No row was found when one was required"
+                )
+E               sqlalchemy.exc.NoResultFound: No row was found when one was required
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/result.py:799: NoResultFound
+=========================== short test summary info ============================
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py::test_bulk_insert_update_engine_reopen
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py::test_real_share_helper_commit_before_enqueue[None]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py::test_real_share_helper_commit_before_enqueue[JobTimeoutException]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py::test_real_share_helper_commit_before_enqueue[RuntimeError]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py::test_failed_bulk_save_preserves_other_owner[foreign_update]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py::test_failed_bulk_save_preserves_other_owner[foreign_delete]
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py::test_failed_bulk_save_preserves_other_owner[duplicate_id]
+7 failed, 53 deselected in 8.33s
+Removed sandbox: /tmp/qopenbb-sqlite-ndw3u3ie

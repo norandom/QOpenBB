@@ -1,0 +1,108 @@
+Exercised child: /home/mc/qopenbb-work/sqlite-runtime/venv/bin/python -m pytest -p pytest_asyncio.plugin -c /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/pyproject.toml /mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --confcutdir=/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite --basetemp=/tmp/qopenbb-sqlite-fn3aihpp/pytest -o addopts= -o asyncio_mode=auto -q -k persistence
+......F                                                                  [100%]
+=================================== FAILURES ===================================
+__________ test_failed_bulk_save_preserves_other_owner[duplicate_id] ___________
+
+sqlite_store = (PosixPath('/tmp/qopenbb-sqlite-fn3aihpp/pytest/test_failed_bulk_save_preserve2/workspace.db'), <sqlalchemy.ext.asynci...n', bind=<sqlalchemy.ext.asyncio.engine.AsyncEngine object at 0x727339d30050>, autoflush=True, expire_on_commit=False))
+operation = 'duplicate_id'
+
+    @pytest.mark.parametrize("operation", ["foreign_update", "foreign_delete", "duplicate_id"])
+    async def test_failed_bulk_save_preserves_other_owner(sqlite_store, operation):
+        _path, _engine, sessions = sqlite_store
+        identity = uuid4()
+        async with sessions() as session:
+            entities, roles, users = await people(session)
+            owner_id, role_id, entity_id = users[0].uuid, roles[0].uuid, entities[0].uuid
+            attacker_id, attacker_role = users[3].uuid, roles[2].uuid
+            await save(session, owner_id, role_id, {identity: content(1)})
+            original_dates = await assert_stored(session, identity, owner_id, entity_id, content(1))
+            await session.rollback()
+            if operation == "foreign_delete":
+                with pytest.raises(HTTPException) as error:
+                    await save(session, attacker_id, attacker_role, {identity: "DELETE"})
+                assert error.value.status_code == 400 and error.value.detail == "User does not own dashboard"
+            else:
+                # Existing foreign updates enter INSERT and collide; this is not a new HTTP authorization contract.
+                target_id, target_role = (owner_id, role_id) if operation == "duplicate_id" else (attacker_id, attacker_role)
+                if operation == "duplicate_id":
+                    # Omit the owner's row from the owned set using a real, distinct owner.
+>                   target_id, target_role = users[2].uuid, roles[0].uuid
+                                             ^^^^^^^^^^^^^
+
+/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/attributes.py:569: in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/attributes.py:1096: in get
+    value = self._fire_loader_callables(state, key, passive)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/attributes.py:1126: in _fire_loader_callables
+    return state._load_expired(state, passive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/state.py:828: in _load_expired
+    self.manager.expired_attribute_loader(self, toload, passive)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/loading.py:1674: in load_scalar_attributes
+    result = load_on_ident(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/loading.py:510: in load_on_ident
+    return load_on_pk_identity(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/loading.py:695: in load_on_pk_identity
+    session.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2373: in execute
+    return self._execute_internal(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py:2271: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:526: in _execute_on_connection
+    return connection._execute_clauseelement(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1643: in _execute_clauseelement
+    ret = self._execute_context(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1848: in _execute_context
+    return self._exec_single_context(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1988: in _exec_single_context
+    self._handle_dbapi_exception(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:2368: in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1969: in _exec_single_context
+    self.dialect.do_execute(
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py:952: in do_execute
+    cursor.execute(statement, parameters)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:213: in execute
+    self._adapt_connection._handle_exception(error)
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:373: in _handle_exception
+    raise error
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:190: in execute
+    _cursor: AsyncIODBAPICursor = self.await_(self._connection.cursor())  # type: ignore[arg-type] # noqa: E501
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+awaitable = <aiosqlite.context.Result object at 0x727339d539a0>
+
+    def await_only(awaitable: Awaitable[_T]) -> _T:
+        """Awaits an async function in a sync method.
+    
+        The sync method must be inside a :func:`greenlet_spawn` context.
+        :func:`await_only` calls cannot be nested.
+    
+        :param awaitable: The coroutine to call.
+    
+        """
+        # this is called in the context greenlet while running fn
+        current = getcurrent()
+        if not getattr(current, "__sqlalchemy_greenlet_provider__", False):
+            _safe_cancel_awaitable(awaitable)
+    
+>           raise exc.MissingGreenlet(
+                "greenlet_spawn has not been called; can't call await_only() "
+                "here. Was IO attempted in an unexpected place?"
+            )
+E           sqlalchemy.exc.MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+
+/home/mc/qopenbb-work/sqlite-runtime/venv/lib/python3.13/site-packages/sqlalchemy/util/_concurrency_py3k.py:123: MissingGreenlet
+=========================== short test summary info ============================
+FAILED ../../mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py::test_failed_bulk_save_preserves_other_owner[duplicate_id]
+1 failed, 6 passed, 53 deselected in 7.53s
+Removed sandbox: /tmp/qopenbb-sqlite-fn3aihpp

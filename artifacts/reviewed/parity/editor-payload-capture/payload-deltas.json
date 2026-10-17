@@ -1,0 +1,751 @@
+[
+  {
+    "stage": "baseline",
+    "changes": {
+      "name": {
+        "after": "Synthetic Financials"
+      },
+      "parentId": {
+        "after": "00000000-0000-4000-8000-000000000000"
+      },
+      "data.name": {
+        "after": "Synthetic Financials"
+      },
+      "data.type": {
+        "after": "custom"
+      },
+      "data.currentTab": {
+        "after": ""
+      },
+      "data.widgets.0.id": {
+        "after": "synthetic_financials"
+      },
+      "data.widgets.0.widgetId": {
+        "after": "synthetic_financials"
+      },
+      "data.widgets.0.name": {
+        "after": "Synthetic Financials"
+      },
+      "data.widgets.0.type": {
+        "after": "table"
+      },
+      "data.widgets.0.widgetType": {
+        "after": "single"
+      },
+      "data.widgets.0.connectionType": {
+        "after": "single"
+      },
+      "data.widgets.0.external": {
+        "after": true
+      },
+      "data.widgets.0.storage.isPivotMode": {
+        "after": false
+      },
+      "data.widgets.0.storage.openToolPanel": {
+        "after": null
+      },
+      "data.widgets.0.storage.chartView.enabled": {
+        "after": true
+      },
+      "data.widgets.0.storage.totalSeries": {
+        "after": 2
+      },
+      "data.widgets.0.storage.chartType": {
+        "after": "groupedColumn"
+      },
+      "data.widgets.0.storage.default.chartModel.modelType": {
+        "after": "range"
+      },
+      "data.widgets.0.storage.default.chartModel.chartId": {
+        "after": "id-yxvy7yebon"
+      },
+      "data.widgets.0.storage.default.chartModel.chartType": {
+        "after": "groupedColumn"
+      },
+      "data.widgets.0.storage.default.chartModel.chartThemeName": {
+        "after": "openbb-dark"
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.category.label.avoidCollisions": {
+        "after": true
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.category.label.fontSize": {
+        "after": 11
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.category.label.minSpacing": {
+        "after": 5
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.category.label.autoRotate": {
+        "after": true
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.category.position": {
+        "after": "bottom"
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.radius-category.label.avoidCollisions": {
+        "after": true
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.radius-category.label.fontSize": {
+        "after": 11
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.radius-category.label.minSpacing": {
+        "after": 5
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.angle-category.label.avoidCollisions": {
+        "after": true
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.angle-category.label.fontSize": {
+        "after": 11
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.angle-category.label.minSpacing": {
+        "after": 5
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.grouped-category.label.avoidCollisions": {
+        "after": true
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.grouped-category.label.fontSize": {
+        "after": 11
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.grouped-category.label.minSpacing": {
+        "after": 5
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.grouped-category.label.rotation": {
+        "after": 0
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.number.position": {
+        "after": "left"
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.number.label.fontSize": {
+        "after": 11
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.number.label.autoRotate": {
+        "after": false
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.number.label.avoidCollisions": {
+        "after": true
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.time.position": {
+        "after": "bottom"
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.time.label.avoidCollisions": {
+        "after": true
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.time.label.fontSize": {
+        "after": 11
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.axes.time.label.rotation": {
+        "after": 0
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.position": {
+        "after": "top"
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.maxHeight": {
+        "after": 50
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.spacing": {
+        "after": 20
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.item.paddingX": {
+        "after": 32
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.item.paddingY": {
+        "after": 8
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.item.marker.shape": {
+        "after": "square"
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.item.marker.padding": {
+        "after": 5
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.item.marker.size": {
+        "after": 11
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.item.label.color": {
+        "after": "#fff"
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.legend.item.label.fontSize": {
+        "after": 11
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.navigator.enabled": {
+        "after": false
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.common.navigator.miniChart.enabled": {
+        "after": false
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.0": {
+        "after": "#5090dc"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.1": {
+        "after": "#ffa03a"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.2": {
+        "after": "#459d55"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.3": {
+        "after": "#34bfe1"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.4": {
+        "after": "#e1cc00"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.5": {
+        "after": "#9669cb"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.6": {
+        "after": "#b5b5b5"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.7": {
+        "after": "#bd5aa7"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.8": {
+        "after": "#8a6224"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fills.9": {
+        "after": "#ef5452"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.0": {
+        "after": "#74a8e6"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.1": {
+        "after": "#ffbe70"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.2": {
+        "after": "#6cb176"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.3": {
+        "after": "#75d4ef"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.4": {
+        "after": "#f6e559"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.5": {
+        "after": "#aa86d8"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.6": {
+        "after": "#a1a1a1"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.7": {
+        "after": "#ce7ab9"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.8": {
+        "after": "#997b52"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.strokes.9": {
+        "after": "#ff7872"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.0.0": {
+        "after": "#2162aa"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.0.1": {
+        "after": "#5090dc"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.0.2": {
+        "after": "#7ec0ff"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.1.0": {
+        "after": "#cc7100"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.1.1": {
+        "after": "#ffa03a"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.1.2": {
+        "after": "#ffd171"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.2.0": {
+        "after": "#076f29"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.2.1": {
+        "after": "#459d55"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.2.2": {
+        "after": "#75cd82"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.3.0": {
+        "after": "#008fb0"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.3.1": {
+        "after": "#34bfe1"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.3.2": {
+        "after": "#70f1ff"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.4.0": {
+        "after": "#b19c00"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.4.1": {
+        "after": "#e1cc00"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.4.2": {
+        "after": "#fffe5d"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.5.0": {
+        "after": "#6a3c9a"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.5.1": {
+        "after": "#9669cb"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.5.2": {
+        "after": "#c597fe"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.6.0": {
+        "after": "#878787"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.6.1": {
+        "after": "#b5b5b5"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.6.2": {
+        "after": "#e5e5e5"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.7.0": {
+        "after": "#8c2c79"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.7.1": {
+        "after": "#bd5aa7"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.7.2": {
+        "after": "#f088d7"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.8.0": {
+        "after": "#5d3800"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.8.1": {
+        "after": "#8a6224"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.8.2": {
+        "after": "#b98f53"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.9.0": {
+        "after": "#b91926"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.9.1": {
+        "after": "#ef5452"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.sequentialColors.9.2": {
+        "after": "#ff867f"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.0": {
+        "after": "#5090dc"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.1": {
+        "after": "#ffa03a"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.2": {
+        "after": "#459d55"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.3": {
+        "after": "#34bfe1"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.4": {
+        "after": "#e1cc00"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.5": {
+        "after": "#9669cb"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.6": {
+        "after": "#b5b5b5"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.7": {
+        "after": "#bd5aa7"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.8": {
+        "after": "#8a6224"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.fillsFallback.9": {
+        "after": "#ef5452"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.divergingColors.0": {
+        "after": "#ffa03a"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.divergingColors.1": {
+        "after": "#e1cc00"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.divergingColors.2": {
+        "after": "#459d55"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.hierarchyColors.0": {
+        "after": "#192834"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.hierarchyColors.1": {
+        "after": "#253746"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.hierarchyColors.2": {
+        "after": "#324859"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.hierarchyColors.3": {
+        "after": "#3f596c"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.hierarchyColors.4": {
+        "after": "#4d6a80"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondSequentialColors.0": {
+        "after": "#5090dc"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondSequentialColors.1": {
+        "after": "#4882c6"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondSequentialColors.2": {
+        "after": "#4073b0"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondSequentialColors.3": {
+        "after": "#38659a"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondSequentialColors.4": {
+        "after": "#305684"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondSequentialColors.5": {
+        "after": "#28486e"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondSequentialColors.6": {
+        "after": "#203a58"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondSequentialColors.7": {
+        "after": "#182b42"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondDivergingColors.0": {
+        "after": "#459d55"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondDivergingColors.1": {
+        "after": "#e1cc00"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondDivergingColors.2": {
+        "after": "#ef5452"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondHierarchyColors.0": {
+        "after": "#192834"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondHierarchyColors.1": {
+        "after": "#3b5164"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondHierarchyColors.2": {
+        "after": "#496275"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondHierarchyColors.3": {
+        "after": "#577287"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.secondHierarchyColors.4": {
+        "after": "#668399"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.up.fill": {
+        "after": "#459d55"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.up.stroke": {
+        "after": "#6cb176"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.down.fill": {
+        "after": "#ef5452"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.down.stroke": {
+        "after": "#ff7872"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.neutral.fill": {
+        "after": "#b5b5b5"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.neutral.stroke": {
+        "after": "#a1a1a1"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.altUp.fill": {
+        "after": "#5090dc"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.altUp.stroke": {
+        "after": "#74a8e6"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.altDown.fill": {
+        "after": "#ffa03a"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.altDown.stroke": {
+        "after": "#ffbe70"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.altNeutral.fill": {
+        "after": "#b5b5b5"
+      },
+      "data.widgets.0.storage.default.chartModel.chartPalette.altNeutral.stroke": {
+        "after": "#a1a1a1"
+      },
+      "data.widgets.0.storage.default.chartModel.cellRange.rowStartIndex": {
+        "after": null
+      },
+      "data.widgets.0.storage.default.chartModel.cellRange.rowStartPinned": {
+        "after": null
+      },
+      "data.widgets.0.storage.default.chartModel.cellRange.rowEndIndex": {
+        "after": null
+      },
+      "data.widgets.0.storage.default.chartModel.cellRange.rowEndPinned": {
+        "after": null
+      },
+      "data.widgets.0.storage.default.chartModel.cellRange.columns.0": {
+        "after": "period"
+      },
+      "data.widgets.0.storage.default.chartModel.cellRange.columns.1": {
+        "after": "revenue"
+      },
+      "data.widgets.0.storage.default.chartModel.cellRange.columns.2": {
+        "after": "eps"
+      },
+      "data.widgets.0.storage.default.chartModel.switchCategorySeries": {
+        "after": false
+      },
+      "data.widgets.0.storage.default.chartModel.suppressChartRanges": {
+        "after": true
+      },
+      "data.widgets.0.storage.default.chartModel.unlinkChart": {
+        "after": false
+      },
+      "data.widgets.0.storage.default.chartModel.version": {
+        "after": "34.1.1"
+      },
+      "data.widgets.0.endpoint.url": {
+        "after": "http://127.0.0.1:32778/synthetic_financials"
+      },
+      "data.widgets.0.endpoint.method": {
+        "after": "GET"
+      },
+      "data.widgets.0.gridData.i": {
+        "after": "synthetic_financials"
+      },
+      "data.widgets.0.gridData.x": {
+        "after": 0
+      },
+      "data.widgets.0.gridData.y": {
+        "after": 0
+      },
+      "data.widgets.0.gridData.w": {
+        "after": 30
+      },
+      "data.widgets.0.gridData.h": {
+        "after": 12
+      },
+      "data.widgets.0.data.table.enableCharts": {
+        "after": true
+      },
+      "data.widgets.0.data.table.columnsDefs.0.field": {
+        "after": "period"
+      },
+      "data.widgets.0.data.table.columnsDefs.0.headerName": {
+        "after": "Period"
+      },
+      "data.widgets.0.data.table.columnsDefs.0.cellDataType": {
+        "after": "text"
+      },
+      "data.widgets.0.data.table.columnsDefs.0.chartDataType": {
+        "after": "category"
+      },
+      "data.widgets.0.data.table.columnsDefs.1.field": {
+        "after": "revenue"
+      },
+      "data.widgets.0.data.table.columnsDefs.1.headerName": {
+        "after": "Revenue"
+      },
+      "data.widgets.0.data.table.columnsDefs.1.cellDataType": {
+        "after": "number"
+      },
+      "data.widgets.0.data.table.columnsDefs.1.chartDataType": {
+        "after": "series"
+      },
+      "data.widgets.0.data.table.columnsDefs.2.field": {
+        "after": "eps"
+      },
+      "data.widgets.0.data.table.columnsDefs.2.headerName": {
+        "after": "EPS"
+      },
+      "data.widgets.0.data.table.columnsDefs.2.cellDataType": {
+        "after": "number"
+      },
+      "data.widgets.0.data.table.columnsDefs.2.chartDataType": {
+        "after": "series"
+      },
+      "data.widgets.0.data.table.columnState.default.version": {
+        "after": "34.1.1"
+      },
+      "data.widgets.0.data.table.columnState.default.sideBar.visible": {
+        "after": false
+      },
+      "data.widgets.0.data.table.columnState.default.sideBar.openToolPanel": {
+        "after": null
+      },
+      "data.widgets.0.data.table.columnState.default.columnSizing.columnSizingModel.0.colId": {
+        "after": "period"
+      },
+      "data.widgets.0.data.table.columnState.default.columnSizing.columnSizingModel.0.width": {
+        "after": 282
+      },
+      "data.widgets.0.data.table.columnState.default.columnSizing.columnSizingModel.1.colId": {
+        "after": "revenue"
+      },
+      "data.widgets.0.data.table.columnState.default.columnSizing.columnSizingModel.1.width": {
+        "after": 281
+      },
+      "data.widgets.0.data.table.columnState.default.columnSizing.columnSizingModel.2.colId": {
+        "after": "eps"
+      },
+      "data.widgets.0.data.table.columnState.default.columnSizing.columnSizingModel.2.width": {
+        "after": 281
+      },
+      "data.widgets.0.staleTime": {
+        "after": 900000
+      },
+      "data.gridLayout..0.w": {
+        "after": 30
+      },
+      "data.gridLayout..0.h": {
+        "after": 12
+      },
+      "data.gridLayout..0.x": {
+        "after": 0
+      },
+      "data.gridLayout..0.y": {
+        "after": 0
+      },
+      "data.gridLayout..0.i": {
+        "after": "synthetic_financials"
+      },
+      "data.gridLayout..0.minW": {
+        "after": 8
+      },
+      "data.gridLayout..0.minH": {
+        "after": 4
+      },
+      "data.gridLayout..0.moved": {
+        "after": false
+      },
+      "data.gridLayout..0.static": {
+        "after": false
+      },
+      "data.lastUpdated": {
+        "after": 1792177296655
+      },
+      "data.numberOfChanges": {
+        "after": 3
+      },
+      "index": {
+        "after": "11111111-1111-4111-8111-111111111111"
+      },
+      "isShared": {
+        "after": false
+      },
+      "created_date": {
+        "after": "2026-10-16T00:00:00Z"
+      },
+      "updated_date": {
+        "after": "2026-10-16T19:01:36.655Z"
+      },
+      "created_by": {
+        "after": "Synthetic Parity"
+      }
+    }
+  },
+  {
+    "stage": "title",
+    "changes": {
+      "data.widgets.0.storage.default.chartModel.chartOptions.bar.title.text": {
+        "after": "Synthetic Revenue and EPS"
+      },
+      "data.widgets.0.storage.default.chartModel.chartOptions.bar.title.enabled": {
+        "after": true
+      },
+      "data.widgets.0.storage.chartSettingsOpen": {
+        "after": true
+      },
+      "data.lastUpdated": {
+        "before": 1792177296655,
+        "after": 1792177316136
+      },
+      "data.numberOfChanges": {
+        "before": 3,
+        "after": 4
+      },
+      "updated_date": {
+        "before": "2026-10-16T19:01:36.655Z",
+        "after": "2026-10-16T19:01:56.136Z"
+      }
+    }
+  },
+  {
+    "stage": "legend",
+    "changes": {
+      "data.widgets.0.storage.default.chartModel.chartOptions.bar.legend.position": {
+        "after": "bottom"
+      }
+    }
+  },
+  {
+    "stage": "stroke",
+    "changes": {
+      "data.widgets.0.storage.default.chartModel.chartOptions.bar.series.strokeWidth": {
+        "after": 4
+      }
+    }
+  },
+  {
+    "stage": "stacked",
+    "changes": {
+      "data.widgets.0.storage.chartType": {
+        "before": "groupedColumn",
+        "after": "stackedColumn"
+      },
+      "data.widgets.0.storage.default.chartModel.chartType": {
+        "before": "groupedColumn",
+        "after": "stackedColumn"
+      },
+      "data.lastUpdated": {
+        "before": 1792177316136,
+        "after": 1792177348204
+      },
+      "data.numberOfChanges": {
+        "before": 4,
+        "after": 5
+      },
+      "updated_date": {
+        "before": "2026-10-16T19:01:56.136Z",
+        "after": "2026-10-16T19:02:28.204Z"
+      }
+    }
+  },
+  {
+    "stage": "grouped",
+    "changes": {
+      "data.widgets.0.storage.chartType": {
+        "before": "stackedColumn",
+        "after": "groupedColumn"
+      },
+      "data.widgets.0.storage.default.chartModel.chartType": {
+        "before": "stackedColumn",
+        "after": "groupedColumn"
+      },
+      "data.lastUpdated": {
+        "before": 1792177348204,
+        "after": 1792177358856
+      },
+      "data.numberOfChanges": {
+        "before": 5,
+        "after": 6
+      },
+      "updated_date": {
+        "before": "2026-10-16T19:02:28.204Z",
+        "after": "2026-10-16T19:02:38.856Z"
+      }
+    }
+  },
+  {
+    "stage": "line",
+    "changes": {
+      "data.widgets.0.storage.chartType": {
+        "before": "groupedColumn",
+        "after": "line"
+      },
+      "data.widgets.0.storage.default.chartModel.chartType": {
+        "before": "groupedColumn",
+        "after": "line"
+      },
+      "data.lastUpdated": {
+        "before": 1792177358856,
+        "after": 1792177369510
+      },
+      "data.numberOfChanges": {
+        "before": 6,
+        "after": 7
+      },
+      "updated_date": {
+        "before": "2026-10-16T19:02:38.856Z",
+        "after": "2026-10-16T19:02:49.510Z"
+      }
+    }
+  }
+]

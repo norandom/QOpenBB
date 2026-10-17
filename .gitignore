@@ -12,7 +12,8 @@ vendor/
 .upstream/
 data/
 backups/
-artifacts/
+artifacts/*
+!artifacts/reviewed/
 .codex/browser/
 test-results/
 playwright-report/

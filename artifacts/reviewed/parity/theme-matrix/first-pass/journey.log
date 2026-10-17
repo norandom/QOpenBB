@@ -1,0 +1,25 @@
+waiting baseline
+settled baseline writes=1
+CAPTURED dark groupedColumn
+waiting dark-stackedColumn
+settled dark-stackedColumn writes=1
+CAPTURED dark stackedColumn
+waiting dark-line
+settled dark-line writes=1
+CAPTURED dark line
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('menuitem', { name: 'Settings', exact: true })[22m
+
+    at /mnt/d/Source/QOpenBB/artifacts/parity/theme-matrix/journey.mjs:47:139 {
+  log: [
+    "  - waiting for getByRole('menuitem', { name: 'Settings', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.0

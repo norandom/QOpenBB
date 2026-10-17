@@ -1,0 +1,122 @@
+{
+  "errors": [
+    {
+      "type": "pageerror",
+      "message": "Unexpected token '<'"
+    },
+    {
+      "type": "exception",
+      "message": "Uncaught"
+    },
+    {
+      "type": "pageerror",
+      "message": "Unexpected token '<'"
+    },
+    {
+      "type": "exception",
+      "message": "Uncaught"
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:32778/api/pro/login",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/custom-copilot",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/resource-permissions",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync/shared",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/user-apps/sync",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/data-connectors/api-source",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/enabled-bundles",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/resource-permissions",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/validate-and-sync",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/data-connectors/api-source",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync/shared",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync/shared",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync/shared",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync/shared",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync/shared",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync/shared",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync/shared",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync/shared",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:32778/api/pro/dash/sync",
+      "status": 200
+    }
+  ]
+}

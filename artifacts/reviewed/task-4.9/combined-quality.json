@@ -1,0 +1,2882 @@
+{
+  "metric": "project-syntax-units-v1",
+  "files": [
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/pyproject.toml",
+      "owner": "openbb-self-service",
+      "physical": 16,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/src/qopenbb/__init__.py",
+      "owner": "openbb-self-service",
+      "physical": 3,
+      "functions": [],
+      "logical": 2
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/src/qopenbb/data_api.py",
+      "owner": "openbb-self-service",
+      "physical": 42,
+      "functions": [
+        {
+          "name": "data_image",
+          "line": 13,
+          "column": 1,
+          "logical": 3
+        }
+      ],
+      "logical": 12
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/src/qopenbb/dockerfile.py",
+      "owner": "openbb-self-service",
+      "physical": 22,
+      "functions": [
+        {
+          "name": "remote_assets",
+          "line": 8,
+          "column": 1,
+          "logical": 13
+        }
+      ],
+      "logical": 16
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/src/qopenbb/export.py",
+      "owner": "openbb-self-service",
+      "physical": 34,
+      "functions": [
+        {
+          "name": "export",
+          "line": 14,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "main",
+          "line": 24,
+          "column": 1,
+          "logical": 6
+        }
+      ],
+      "logical": 23
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/src/qopenbb/images.py",
+      "owner": "openbb-self-service",
+      "physical": 34,
+      "functions": [
+        {
+          "name": "build",
+          "line": 11,
+          "column": 1,
+          "logical": 19
+        }
+      ],
+      "logical": 25
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/src/qopenbb/workspace.py",
+      "owner": "openbb-self-service",
+      "physical": 32,
+      "functions": [
+        {
+          "name": "workspace_image",
+          "line": 9,
+          "column": 1,
+          "logical": 11
+        }
+      ],
+      "logical": 17
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".dockerignore",
+      "owner": "openbb-self-service",
+      "physical": 25,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".gitattributes",
+      "owner": "openbb-self-service",
+      "physical": 5,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".gitignore",
+      "owner": "openbb-self-service",
+      "physical": 26,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".kiro/complexity-budgets.json",
+      "owner": "openbb-self-service",
+      "physical": 204,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".node-version",
+      "owner": "openbb-self-service",
+      "physical": 1,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".python-version",
+      "owner": "openbb-self-service",
+      "physical": 1,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/datasets.json",
+      "owner": "openbb-self-service",
+      "physical": 1,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/runtime.json",
+      "owner": "openbb-self-service",
+      "physical": 79,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/sources.json",
+      "owner": "openbb-self-service",
+      "physical": 24,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/pyproject.toml",
+      "owner": "openbb-self-service",
+      "physical": 28,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/__init__.py",
+      "owner": "openbb-self-service",
+      "physical": 3,
+      "functions": [],
+      "logical": 1
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/catalog.py",
+      "owner": "openbb-self-service",
+      "physical": 211,
+      "functions": [
+        {
+          "name": "canonical",
+          "line": 7,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "digest",
+          "line": 12,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "validate_refs",
+          "line": 16,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "provider_choices",
+          "line": 37,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "validate_dataset",
+          "line": 46,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "freeze_routes",
+          "line": 61,
+          "column": 1,
+          "logical": 19
+        },
+        {
+          "name": "supported_widgets",
+          "line": 85,
+          "column": 1,
+          "logical": 17
+        },
+        {
+          "name": "starter",
+          "line": 109,
+          "column": 1,
+          "logical": 3
+        },
+        {
+          "name": "adapt_apps",
+          "line": 118,
+          "column": 1,
+          "logical": 27
+        },
+        {
+          "name": "adapt_groups",
+          "line": 151,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "contract_dependencies",
+          "line": 164,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "compatibility",
+          "line": 184,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "generate",
+          "line": 198,
+          "column": 1,
+          "logical": 7
+        },
+        {
+          "name": "walk",
+          "line": 17,
+          "column": 5,
+          "logical": 15
+        },
+        {
+          "name": "walk",
+          "line": 166,
+          "column": 5,
+          "logical": 13
+        }
+      ],
+      "logical": 160
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/catalog_cli.py",
+      "owner": "openbb-self-service",
+      "physical": 88,
+      "functions": [
+        {
+          "name": "parser",
+          "line": 12,
+          "column": 1,
+          "logical": 13
+        },
+        {
+          "name": "read",
+          "line": 30,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "run",
+          "line": 34,
+          "column": 1,
+          "logical": 28
+        },
+        {
+          "name": "generator_hashes",
+          "line": 68,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "main",
+          "line": 74,
+          "column": 1,
+          "logical": 9
+        }
+      ],
+      "logical": 66
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/catalog_renderers.py",
+      "owner": "openbb-self-service",
+      "physical": 88,
+      "functions": [
+        {
+          "name": "keyed",
+          "line": 25,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "binding",
+          "line": 32,
+          "column": 1,
+          "logical": 7
+        },
+        {
+          "name": "validate_apps",
+          "line": 52,
+          "column": 1,
+          "logical": 7
+        },
+        {
+          "name": "bind_renderers",
+          "line": 62,
+          "column": 1,
+          "logical": 14
+        },
+        {
+          "name": "frontend_bindings",
+          "line": 84,
+          "column": 1,
+          "logical": 4
+        }
+      ],
+      "logical": 43
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/catalog_runtime.py",
+      "owner": "openbb-self-service",
+      "physical": 92,
+      "functions": [
+        {
+          "name": "docker",
+          "line": 18,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "cleanup",
+          "line": 23,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "verified_sources",
+          "line": 27,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "image_identity",
+          "line": 44,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "capture_schema",
+          "line": 53,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "upstream_widgets",
+          "line": 70,
+          "column": 1,
+          "logical": 19
+        }
+      ],
+      "logical": 67
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/catalog_upstream.py",
+      "owner": "openbb-self-service",
+      "physical": 21,
+      "functions": [
+        {
+          "name": "main",
+          "line": 9,
+          "column": 1,
+          "logical": 7
+        }
+      ],
+      "logical": 15
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/checks.py",
+      "owner": "openbb-self-service",
+      "physical": 143,
+      "functions": [
+        {
+          "name": "safe_path",
+          "line": 32,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "parse",
+          "line": 42,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "issue",
+          "line": 51,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "match_identity",
+          "line": 55,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "compare",
+          "line": 59,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "evidence_gate",
+          "line": 71,
+          "column": 1,
+          "logical": 13
+        },
+        {
+          "name": "checkpoint_gate",
+          "line": 90,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "evaluate",
+          "line": 105,
+          "column": 1,
+          "logical": 23
+        },
+        {
+          "name": "record_summary",
+          "line": 136,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "report",
+          "line": 140,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "__init__",
+          "line": 38,
+          "column": 5,
+          "logical": 1
+        }
+      ],
+      "logical": 85
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/cli.py",
+      "owner": "openbb-self-service",
+      "physical": 64,
+      "functions": [
+        {
+          "name": "parser",
+          "line": 10,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "unique_object",
+          "line": 24,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "read",
+          "line": 33,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "main",
+          "line": 38,
+          "column": 1,
+          "logical": 19
+        },
+        {
+          "name": "<lambda>",
+          "line": 35,
+          "column": 38,
+          "logical": 1
+        }
+      ],
+      "logical": 48
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/configuration.py",
+      "owner": "openbb-self-service",
+      "physical": 180,
+      "functions": [
+        {
+          "name": "service_contract",
+          "line": 28,
+          "column": 1,
+          "logical": 7
+        },
+        {
+          "name": "runtime_contract",
+          "line": 40,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "validate_contracts",
+          "line": 49,
+          "column": 1,
+          "logical": 16
+        },
+        {
+          "name": "public_origin",
+          "line": 73,
+          "column": 1,
+          "logical": 26
+        },
+        {
+          "name": "required",
+          "line": 107,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "image_reference",
+          "line": 114,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "validate_configuration",
+          "line": 126,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "configured_service",
+          "line": 145,
+          "column": 1,
+          "logical": 13
+        },
+        {
+          "name": "development_image",
+          "line": 162,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "exact_contract",
+          "line": 176,
+          "column": 1,
+          "logical": 3
+        }
+      ],
+      "logical": 118
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/contracts.py",
+      "owner": "openbb-self-service",
+      "physical": 190,
+      "functions": [
+        {
+          "name": "utc_timestamp",
+          "line": 98,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "valid_repository",
+          "line": 37,
+          "column": 5,
+          "logical": 7
+        },
+        {
+          "name": "agent_revision",
+          "line": 75,
+          "column": 5,
+          "logical": 3
+        },
+        {
+          "name": "sanitized_path",
+          "line": 87,
+          "column": 5,
+          "logical": 3
+        },
+        {
+          "name": "unique_checks",
+          "line": 117,
+          "column": 5,
+          "logical": 4
+        },
+        {
+          "name": "passing_exit",
+          "line": 138,
+          "column": 5,
+          "logical": 3
+        },
+        {
+          "name": "selected_images",
+          "line": 159,
+          "column": 5,
+          "logical": 9
+        },
+        {
+          "name": "consistent_snapshot",
+          "line": 185,
+          "column": 5,
+          "logical": 5
+        }
+      ],
+      "logical": 133
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/image_cli.py",
+      "owner": "openbb-self-service",
+      "physical": 126,
+      "functions": [
+        {
+          "name": "read",
+          "line": 16,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "parser",
+          "line": 20,
+          "column": 1,
+          "logical": 25
+        },
+        {
+          "name": "export",
+          "line": 48,
+          "column": 1,
+          "logical": 19
+        },
+        {
+          "name": "verify_engine",
+          "line": 78,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "write_report",
+          "line": 88,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "main",
+          "line": 93,
+          "column": 1,
+          "logical": 23
+        }
+      ],
+      "logical": 94
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/images.py",
+      "owner": "openbb-self-service",
+      "physical": 84,
+      "functions": [
+        {
+          "name": "manifest_digest",
+          "line": 14,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "inspect_archive",
+          "line": 29,
+          "column": 1,
+          "logical": 29
+        },
+        {
+          "name": "load",
+          "line": 65,
+          "column": 1,
+          "logical": 16
+        }
+      ],
+      "logical": 68
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/provenance.py",
+      "owner": "openbb-self-service",
+      "physical": 91,
+      "functions": [
+        {
+          "name": "unique_fields",
+          "line": 71,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "parse_provenance",
+          "line": 80,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "canonical_paths",
+          "line": 29,
+          "column": 5,
+          "logical": 5
+        },
+        {
+          "name": "service_metadata",
+          "line": 52,
+          "column": 5,
+          "logical": 7
+        },
+        {
+          "name": "integer_version",
+          "line": 65,
+          "column": 5,
+          "logical": 3
+        }
+      ],
+      "logical": 60
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/runtime_inputs.py",
+      "owner": "openbb-self-service",
+      "physical": 33,
+      "functions": [
+        {
+          "name": "copy_runtime",
+          "line": 12,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "verify_runtime",
+          "line": 27,
+          "column": 1,
+          "logical": 6
+        }
+      ],
+      "logical": 25
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/schemas.py",
+      "owner": "openbb-self-service",
+      "physical": 30,
+      "functions": [
+        {
+          "name": "schema_text",
+          "line": 15,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "main",
+          "line": 20,
+          "column": 1,
+          "logical": 6
+        }
+      ],
+      "logical": 18
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/source_contract.py",
+      "owner": "openbb-self-service",
+      "physical": 80,
+      "functions": [
+        {
+          "name": "calendar_date",
+          "line": 71,
+          "column": 5,
+          "logical": 3
+        },
+        {
+          "name": "acquisition_only",
+          "line": 77,
+          "column": 5,
+          "logical": 3
+        }
+      ],
+      "logical": 54
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/source_filter.py",
+      "owner": "openbb-self-service",
+      "physical": 126,
+      "functions": [
+        {
+          "name": "source_namespace_index",
+          "line": 37,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "empty_public_sample",
+          "line": 46,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "excluded",
+          "line": 63,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "source_scope",
+          "line": 75,
+          "column": 1,
+          "logical": 16
+        },
+        {
+          "name": "select_source",
+          "line": 94,
+          "column": 1,
+          "logical": 18
+        },
+        {
+          "name": "scan_error",
+          "line": 116,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "walk_owned",
+          "line": 120,
+          "column": 1,
+          "logical": 6
+        }
+      ],
+      "logical": 83
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/sources.py",
+      "owner": "openbb-self-service",
+      "physical": 43,
+      "functions": [
+        {
+          "name": "git",
+          "line": 8,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "identity",
+          "line": 13,
+          "column": 1,
+          "logical": 14
+        },
+        {
+          "name": "acquire",
+          "line": 30,
+          "column": 1,
+          "logical": 13
+        }
+      ],
+      "logical": 34
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/staging.py",
+      "owner": "openbb-self-service",
+      "physical": 132,
+      "functions": [
+        {
+          "name": "sha256",
+          "line": 18,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "stage_source",
+          "line": 23,
+          "column": 1,
+          "logical": 21
+        },
+        {
+          "name": "stage",
+          "line": 48,
+          "column": 1,
+          "logical": 26
+        },
+        {
+          "name": "staged_files",
+          "line": 82,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "verify_stage",
+          "line": 97,
+          "column": 1,
+          "logical": 31
+        }
+      ],
+      "logical": 108
+    },
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/pyproject.toml",
+      "owner": "openbb-self-service",
+      "physical": 33,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/qopenbb_data/__init__.py",
+      "owner": "openbb-self-service",
+      "physical": 1,
+      "functions": [],
+      "logical": 0
+    },
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/qopenbb_data/app.py",
+      "owner": "openbb-self-service",
+      "physical": 36,
+      "functions": [
+        {
+          "name": "create_app",
+          "line": 14,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "health",
+          "line": 21,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "ready",
+          "line": 25,
+          "column": 5,
+          "logical": 4
+        }
+      ],
+      "logical": 18
+    },
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/qopenbb_data/config.py",
+      "owner": "openbb-self-service",
+      "physical": 23,
+      "functions": [
+        {
+          "name": "configure",
+          "line": 5,
+          "column": 1,
+          "logical": 16
+        },
+        {
+          "name": "<lambda>",
+          "line": 21,
+          "column": 46,
+          "logical": 1
+        }
+      ],
+      "logical": 18
+    },
+    {
+      "repository": "qopenbb",
+      "path": "tools/quality/__init__.py",
+      "owner": "openbb-self-service",
+      "physical": 1,
+      "functions": [],
+      "logical": 0
+    },
+    {
+      "repository": "qopenbb",
+      "path": "tools/quality/changes.py",
+      "owner": "openbb-self-service",
+      "physical": 86,
+      "functions": [
+        {
+          "name": "safe_path",
+          "line": 8,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "validate_manifest",
+          "line": 20,
+          "column": 1,
+          "logical": 23
+        },
+        {
+          "name": "git",
+          "line": 46,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "parse_diff",
+          "line": 54,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "git_manifest",
+          "line": 70,
+          "column": 1,
+          "logical": 14
+        }
+      ],
+      "logical": 69
+    },
+    {
+      "repository": "qopenbb",
+      "path": "tools/quality/complexity.py",
+      "owner": "openbb-self-service",
+      "physical": 148,
+      "functions": [
+        {
+          "name": "physical_lines",
+          "line": 22,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "violations",
+          "line": 27,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "measure_file",
+          "line": 41,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "inventory",
+          "line": 55,
+          "column": 1,
+          "logical": 17
+        },
+        {
+          "name": "combine_languages",
+          "line": 86,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "assignments",
+          "line": 101,
+          "column": 1,
+          "logical": 7
+        },
+        {
+          "name": "arguments",
+          "line": 111,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "main",
+          "line": 124,
+          "column": 1,
+          "logical": 14
+        }
+      ],
+      "logical": 99
+    },
+    {
+      "repository": "qopenbb",
+      "path": "tools/quality/exceptions.py",
+      "owner": "openbb-self-service",
+      "physical": 72,
+      "functions": [
+        {
+          "name": "exact_path",
+          "line": 12,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "identity",
+          "line": 18,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "validate_entry",
+          "line": 24,
+          "column": 1,
+          "logical": 21
+        },
+        {
+          "name": "apply_exceptions",
+          "line": 51,
+          "column": 1,
+          "logical": 20
+        }
+      ],
+      "logical": 53
+    },
+    {
+      "repository": "qopenbb",
+      "path": "tools/quality/python_units.py",
+      "owner": "openbb-self-service",
+      "physical": 36,
+      "functions": [
+        {
+          "name": "measure_python",
+          "line": 10,
+          "column": 1,
+          "logical": 16
+        },
+        {
+          "name": "count",
+          "line": 21,
+          "column": 5,
+          "logical": 4
+        }
+      ],
+      "logical": 24
+    },
+    {
+      "repository": "qopenbb",
+      "path": "tools/quality/scope.py",
+      "owner": "openbb-self-service",
+      "physical": 140,
+      "functions": [
+        {
+          "name": "matches",
+          "line": 11,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "exclusion",
+          "line": 16,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "discover",
+          "line": 25,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "validate_config",
+          "line": 41,
+          "column": 1,
+          "logical": 16
+        },
+        {
+          "name": "owned",
+          "line": 60,
+          "column": 1,
+          "logical": 5
+        },
+        {
+          "name": "repository_scope",
+          "line": 69,
+          "column": 1,
+          "logical": 13
+        },
+        {
+          "name": "collect_repository",
+          "line": 88,
+          "column": 1,
+          "logical": 27
+        },
+        {
+          "name": "collect",
+          "line": 120,
+          "column": 1,
+          "logical": 17
+        },
+        {
+          "name": "traversal_error",
+          "line": 26,
+          "column": 5,
+          "logical": 1
+        }
+      ],
+      "logical": 109
+    },
+    {
+      "repository": "qopenbb",
+      "path": "tools/quality/syntax_units.ts",
+      "owner": "openbb-self-service",
+      "physical": 114,
+      "functions": [
+        {
+          "name": "unit",
+          "line": 37,
+          "column": 14,
+          "logical": 1
+        },
+        {
+          "name": "callable",
+          "line": 39,
+          "column": 18,
+          "logical": 1
+        },
+        {
+          "name": "validateSyntax",
+          "line": 42,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "<anonymous>",
+          "line": 47,
+          "column": 24,
+          "logical": 1
+        },
+        {
+          "name": "ownBody",
+          "line": 57,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "visit",
+          "line": 60,
+          "column": 3,
+          "logical": 5
+        },
+        {
+          "name": "functionRecord",
+          "line": 70,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "measure",
+          "line": 77,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "visit",
+          "line": 84,
+          "column": 3,
+          "logical": 7
+        },
+        {
+          "name": "pathsArray",
+          "line": 96,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 97,
+          "column": 46,
+          "logical": 1
+        },
+        {
+          "name": "main",
+          "line": 100,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "<anonymous>",
+          "line": 106,
+          "column": 31,
+          "logical": 1
+        }
+      ],
+      "logical": 84
+    },
+    {
+      "repository": "qopenbb",
+      "path": "tools/quality/ts_adapter.py",
+      "owner": "openbb-self-service",
+      "physical": 71,
+      "functions": [
+        {
+          "name": "execute",
+          "line": 13,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "runtime",
+          "line": 20,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "integer",
+          "line": 34,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "validate_records",
+          "line": 38,
+          "column": 1,
+          "logical": 20
+        },
+        {
+          "name": "measure_typescript",
+          "line": 63,
+          "column": 1,
+          "logical": 7
+        }
+      ],
+      "logical": 51
+    },
+    {
+      "repository": "qopenbb",
+      "path": "tools/quality/tsconfig.json",
+      "owner": "openbb-self-service",
+      "physical": 13,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/.npmrc",
+      "owner": "openbb-self-service",
+      "physical": 3,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/capture.ts",
+      "owner": "openbb-self-service",
+      "physical": 4,
+      "functions": [
+        {
+          "name": "capturePolicy",
+          "line": 1,
+          "column": 1,
+          "logical": 3
+        }
+      ],
+      "logical": 4
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/diagnostics.ts",
+      "owner": "openbb-self-service",
+      "physical": 20,
+      "functions": [
+        {
+          "name": "diagnostics",
+          "line": 6,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "<anonymous>",
+          "line": 9,
+          "column": 42,
+          "logical": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 12,
+          "column": 41,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 13,
+          "column": 42,
+          "logical": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 16,
+          "column": 39,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 19,
+          "column": 27,
+          "logical": 1
+        }
+      ],
+      "logical": 22
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/evidence.ts",
+      "owner": "openbb-self-service",
+      "physical": 26,
+      "functions": [
+        {
+          "name": "browserEnvironment",
+          "line": 5,
+          "column": 1,
+          "logical": 5
+        },
+        {
+          "name": "runRoot",
+          "line": 12,
+          "column": 1,
+          "logical": 3
+        },
+        {
+          "name": "revision",
+          "line": 17,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "retain",
+          "line": 21,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "clearProfile",
+          "line": 24,
+          "column": 1,
+          "logical": 1
+        }
+      ],
+      "logical": 19
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/fixture_server.ts",
+      "owner": "openbb-self-service",
+      "physical": 27,
+      "functions": [
+        {
+          "name": "startFixture",
+          "line": 5,
+          "column": 1,
+          "logical": 7
+        },
+        {
+          "name": "<anonymous>",
+          "line": 7,
+          "column": 31,
+          "logical": 5
+        },
+        {
+          "name": "<anonymous>",
+          "line": 15,
+          "column": 27,
+          "logical": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 16,
+          "column": 30,
+          "logical": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 17,
+          "column": 26,
+          "logical": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 18,
+          "column": 65,
+          "logical": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 23,
+          "column": 12,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 23,
+          "column": 36,
+          "logical": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 24,
+          "column": 20,
+          "logical": 1
+        }
+      ],
+      "logical": 28
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/package.json",
+      "owner": "openbb-self-service",
+      "physical": 20,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/playwright.config.ts",
+      "owner": "openbb-self-service",
+      "physical": 7,
+      "functions": [
+        {
+          "name": "<anonymous>",
+          "line": 2,
+          "column": 23,
+          "logical": 1
+        }
+      ],
+      "logical": 5
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/provider/pyproject.toml",
+      "owner": "openbb-self-service",
+      "physical": 29,
+      "functions": []
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/runner.py",
+      "owner": "openbb-self-service",
+      "physical": 72,
+      "functions": [
+        {
+          "name": "execute",
+          "line": 17,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "run_pytest",
+          "line": 36,
+          "column": 1,
+          "logical": 20
+        }
+      ],
+      "logical": 47
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/runner.ts",
+      "owner": "openbb-self-service",
+      "physical": 80,
+      "functions": [
+        {
+          "name": "observe",
+          "line": 14,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "<anonymous>",
+          "line": 19,
+          "column": 23,
+          "logical": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 21,
+          "column": 25,
+          "logical": 2
+        },
+        {
+          "name": "checkIsolation",
+          "line": 31,
+          "column": 1,
+          "logical": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 34,
+          "column": 24,
+          "logical": 1
+        },
+        {
+          "name": "isolatedRun",
+          "line": 37,
+          "column": 1,
+          "logical": 36
+        },
+        {
+          "name": "<anonymous>",
+          "line": 76,
+          "column": 66,
+          "logical": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 79,
+          "column": 12,
+          "logical": 2
+        }
+      ],
+      "logical": 76
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/Widgets/perspective/financial/aggregations.ts",
+      "owner": "openbb-self-service",
+      "physical": 314,
+      "functions": [
+        {
+          "name": "reject",
+          "line": 16,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "checkConfig",
+          "line": 20,
+          "column": 1,
+          "logical": 14
+        },
+        {
+          "name": "<anonymous>",
+          "line": 21,
+          "column": 47,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 31,
+          "column": 22,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 33,
+          "column": 23,
+          "logical": 1
+        },
+        {
+          "name": "compatibleCurrency",
+          "line": 61,
+          "column": 1,
+          "logical": 5
+        },
+        {
+          "name": "<anonymous>",
+          "line": 63,
+          "column": 39,
+          "logical": 1
+        },
+        {
+          "name": "incomePeriods",
+          "line": 72,
+          "column": 1,
+          "logical": 18
+        },
+        {
+          "name": "<anonymous>",
+          "line": 79,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 82,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 94,
+          "column": 14,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 102,
+          "column": 23,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 119,
+          "column": 7,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 131,
+          "column": 36,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 132,
+          "column": 39,
+          "logical": 1
+        },
+        {
+          "name": "fredIdentity",
+          "line": 141,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "checkNumeric",
+          "line": 152,
+          "column": 1,
+          "logical": 20
+        },
+        {
+          "name": "<anonymous>",
+          "line": 163,
+          "column": 10,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 164,
+          "column": 13,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 180,
+          "column": 29,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 187,
+          "column": 27,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 188,
+          "column": 27,
+          "logical": 1
+        },
+        {
+          "name": "checkScope",
+          "line": 202,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "derivedLabel",
+          "line": 212,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 227,
+          "column": 26,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 229,
+          "column": 33,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 232,
+          "column": 28,
+          "logical": 1
+        },
+        {
+          "name": "validateAggregates",
+          "line": 250,
+          "column": 1,
+          "logical": 17
+        },
+        {
+          "name": "<anonymous>",
+          "line": 254,
+          "column": 47,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 257,
+          "column": 25,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 257,
+          "column": 60,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 271,
+          "column": 48,
+          "logical": 1
+        },
+        {
+          "name": "validateFinancialView",
+          "line": 284,
+          "column": 1,
+          "logical": 7
+        }
+      ],
+      "logical": 129
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/Widgets/perspective/financial/errors.ts",
+      "owner": "openbb-self-service",
+      "physical": 14,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 4,
+          "column": 3,
+          "logical": 4
+        },
+        {
+          "name": "fail",
+          "line": 12,
+          "column": 1,
+          "logical": 1
+        }
+      ],
+      "logical": 10
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/Widgets/perspective/financial/fields.ts",
+      "owner": "openbb-self-service",
+      "physical": 91,
+      "functions": [
+        {
+          "name": "fields",
+          "line": 27,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 33,
+          "column": 65,
+          "logical": 1
+        },
+        {
+          "name": "profileFields",
+          "line": 53,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 59,
+          "column": 63,
+          "logical": 1
+        },
+        {
+          "name": "incomeFields",
+          "line": 74,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 78,
+          "column": 75,
+          "logical": 1
+        },
+        {
+          "name": "fredFields",
+          "line": 89,
+          "column": 1,
+          "logical": 1
+        }
+      ],
+      "logical": 20
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/Widgets/perspective/financial/filters.ts",
+      "owner": "openbb-self-service",
+      "physical": 106,
+      "functions": [
+        {
+          "name": "calendarOperand",
+          "line": 15,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "validateFilters",
+          "line": 21,
+          "column": 1,
+          "logical": 15
+        },
+        {
+          "name": "<anonymous>",
+          "line": 22,
+          "column": 38,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 35,
+          "column": 9,
+          "logical": 1
+        },
+        {
+          "name": "matches",
+          "line": 70,
+          "column": 1,
+          "logical": 18
+        },
+        {
+          "name": "filterRows",
+          "line": 95,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 100,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 103,
+          "column": 30,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 104,
+          "column": 29,
+          "logical": 1
+        }
+      ],
+      "logical": 50
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/Widgets/perspective/financial/rows.ts",
+      "owner": "openbb-self-service",
+      "physical": 192,
+      "functions": [
+        {
+          "name": "record",
+          "line": 14,
+          "column": 1,
+          "logical": 3
+        },
+        {
+          "name": "calendar",
+          "line": 20,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "datetime",
+          "line": 26,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "cell",
+          "line": 41,
+          "column": 1,
+          "logical": 21
+        },
+        {
+          "name": "normalizeRow",
+          "line": 75,
+          "column": 1,
+          "logical": 5
+        },
+        {
+          "name": "<anonymous>",
+          "line": 80,
+          "column": 39,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 81,
+          "column": 29,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 87,
+          "column": 36,
+          "logical": 1
+        },
+        {
+          "name": "seriesMetadata",
+          "line": 91,
+          "column": 1,
+          "logical": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 100,
+          "column": 15,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 101,
+          "column": 12,
+          "logical": 7
+        },
+        {
+          "name": "adaptFinancialEnvelope",
+          "line": 133,
+          "column": 1,
+          "logical": 15
+        },
+        {
+          "name": "<anonymous>",
+          "line": 146,
+          "column": 37,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 152,
+          "column": 27,
+          "logical": 1
+        },
+        {
+          "name": "deepFreeze",
+          "line": 186,
+          "column": 1,
+          "logical": 4
+        }
+      ],
+      "logical": 89
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/Widgets/perspective/financial/schema.ts",
+      "owner": "openbb-self-service",
+      "physical": 63,
+      "functions": [
+        {
+          "name": "schemaFor",
+          "line": 11,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "<anonymous>",
+          "line": 21,
+          "column": 48,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 23,
+          "column": 18,
+          "logical": 1
+        },
+        {
+          "name": "policyFor",
+          "line": 30,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "canonical",
+          "line": 38,
+          "column": 1,
+          "logical": 5
+        },
+        {
+          "name": "<anonymous>",
+          "line": 44,
+          "column": 9,
+          "logical": 1
+        },
+        {
+          "name": "jsonValue",
+          "line": 51,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "<anonymous>",
+          "line": 61,
+          "column": 57,
+          "logical": 1
+        }
+      ],
+      "logical": 44
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/Widgets/perspective/financial/scopes.ts",
+      "owner": "openbb-self-service",
+      "physical": 42,
+      "functions": [
+        {
+          "name": "partition",
+          "line": 7,
+          "column": 1,
+          "logical": 7
+        },
+        {
+          "name": "<anonymous>",
+          "line": 11,
+          "column": 37,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 17,
+          "column": 26,
+          "logical": 1
+        },
+        {
+          "name": "renderedScopes",
+          "line": 20,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "<anonymous>",
+          "line": 27,
+          "column": 59,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 30,
+          "column": 57,
+          "logical": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 41,
+          "column": 33,
+          "logical": 1
+        }
+      ],
+      "logical": 28
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/Widgets/perspective/financial/types.ts",
+      "owner": "openbb-self-service",
+      "physical": 69,
+      "functions": [],
+      "logical": 62
+    }
+  ],
+  "errors": [],
+  "violations": [],
+  "coverage": {
+    "physical": "all maintained text files",
+    "logical": [
+      "python",
+      "javascript",
+      "typescript"
+    ],
+    "mode": "combined",
+    "parser": "CPython ast 3.13.15",
+    "combined_acceptance": "passed",
+    "parsers": {
+      "python": "3.13.15",
+      "node": "24.22.0",
+      "typescript": "6.0.3"
+    }
+  },
+  "limits": {
+    "physical": 400,
+    "logical": 300,
+    "function": 50
+  },
+  "scope": [
+    {
+      "repository": "qopenbb",
+      "provenance": "maintained-tree"
+    },
+    {
+      "repository": "workspace",
+      "base": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
+      "head": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
+      "provenance": "manifest-declared"
+    },
+    {
+      "repository": "data_api",
+      "base": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
+      "head": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
+      "provenance": "manifest-declared"
+    }
+  ],
+  "exclusions": [
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        "contracts/renderers.json",
+        "contracts/routes.json",
+        "contracts/openapi.json",
+        "contracts/widgets.json",
+        "contracts/apps.json",
+        "contracts/catalog-report.json",
+        "contracts/compatibility.json",
+        "contracts/provenance.json",
+        "contracts/hashes.json"
+      ],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        "schemas/*.schema.json"
+      ],
+      "reason": "Deterministic public schemas generated from capped maintained Python boundary models",
+      "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"
+    },
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        ".git/**",
+        "**/__pycache__/**",
+        "**/.pytest_cache/**",
+        "**/.ruff_cache/**",
+        "**/.venv/**",
+        "**/node_modules/**"
+      ],
+      "reason": "Repository metadata and installed or cached dependencies",
+      "source": "Git, CPython, pytest, Ruff, uv and pnpm"
+    },
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        "vendor/**",
+        ".upstream/**"
+      ],
+      "reason": "Acquisition roots are inventoried separately as owned forks; this exclusion does not apply inside fork scope",
+      "source": "sources.lock.json"
+    },
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        "artifacts/**",
+        "data/**",
+        "backups/**",
+        "test-results/**",
+        "playwright-report/**",
+        "dist/**",
+        "htmlcov/**",
+        ".coverage*",
+        "coverage.xml"
+      ],
+      "reason": "Disposable evidence, private runtime state and build output",
+      "source": "Verification/build tools and operator runtime"
+    },
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        ".env",
+        ".env.*",
+        "secrets/**",
+        "*.pem",
+        "*.key"
+      ],
+      "reason": "Private operator configuration and empty public configuration samples",
+      "source": "Operator configuration; never read for size inventory"
+    },
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        "docs/**",
+        "*.md",
+        ".agents/**",
+        ".codex/**",
+        ".kiro/settings/**",
+        ".kiro/specs/**",
+        ".kiro/steering/**",
+        ".kiro/breadth.toml"
+      ],
+      "reason": "Documentation, agent instructions and acceptance metadata",
+      "source": "Project memory and specification workflow"
+    },
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        "sources/**",
+        "sources.lock.json",
+        "pipeline/tools.lock.json"
+      ],
+      "reason": "Acquisition provenance, copied notices and pinned tool input data",
+      "source": "Source/tool acquisition inventory"
+    },
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        "tests/**",
+        "**/tests/**",
+        "**/__tests__/**",
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/test_*.py",
+        "**/*_test.py"
+      ],
+      "reason": "Test sources and fixtures are outside production size caps",
+      "source": "pytest and Playwright suites"
+    },
+    {
+      "repository": "qopenbb",
+      "patterns": [
+        "**/uv.lock",
+        "**/pnpm-lock.yaml",
+        "**/package-lock.json",
+        "**/bun.lock",
+        "**/bun.lockb"
+      ],
+      "reason": "Deterministic dependency lockfiles",
+      "source": "uv, pnpm, npm and Bun lock resolution"
+    },
+    {
+      "repository": "workspace",
+      "patterns": [
+        "terminalpro/src/components/Widgets/perspective/bindings.json"
+      ],
+      "reason": "Deterministic mirror of validated installed renderer/catalog bindings; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_renderers.py via catalog_cli --bind-renderers --workspace-bindings"
+    },
+    {
+      "repository": "workspace",
+      "patterns": [
+        "backend-api/backend/tests_sqlite/**"
+      ],
+      "reason": "Maintained SQLite test launcher, fixtures and regressions; no production runtime logic",
+      "source": "backend-api/backend/tests_sqlite/run.py"
+    },
+    {
+      "repository": "workspace",
+      "patterns": [
+        "lite/build-tools.txt"
+      ],
+      "reason": "Generated hash-pinned backend build-tool lock",
+      "source": "lite/build-tools.in; protected uv pip compile --generate-hashes"
+    },
+    {
+      "repository": "workspace",
+      "patterns": [
+        "tests/**",
+        "**/tests/**",
+        "**/__tests__/**",
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/test_*.py",
+        "**/*_test.py"
+      ],
+      "reason": "Upstream and maintained test sources/fixtures",
+      "source": "Workspace test suites"
+    },
+    {
+      "repository": "workspace",
+      "patterns": [
+        "*.md",
+        "**/uv.lock",
+        "**/pnpm-lock.yaml",
+        "**/package-lock.json",
+        "**/bun.lock",
+        "**/bun.lockb"
+      ],
+      "reason": "Documentation and deterministic dependency locks",
+      "source": "Workspace documentation and package managers"
+    },
+    {
+      "repository": "workspace",
+      "patterns": [
+        "excel-add-in/src/functions/functions.ts"
+      ],
+      "reason": "Existing generated function output; generation is not authorized before Anthropic acceptance",
+      "source": "excel-add-in/src/functions/generator/ts_generator.py and spec_generator.py"
+    },
+    {
+      "repository": "data_api",
+      "patterns": [
+        "openbb_platform/providers/fmp/LICENSE",
+        "openbb_platform/providers/fmp/provenance.json"
+      ],
+      "reason": "Retained upstream notice and imported-artifact provenance data",
+      "source": "openbb_platform/providers/fmp/provenance.json"
+    },
+    {
+      "repository": "data_api",
+      "patterns": [
+        "openbb_platform/providers/fmp/openbb_fmp/models/__init__.py",
+        "openbb_platform/providers/fmp/openbb_fmp/utils/__init__.py"
+      ],
+      "reason": "Unchanged FMP 1.6.1 archive imports; hash-checked discovery fixture. Remove each exclusion before maintaining that file",
+      "source": "openbb_platform/providers/fmp/provenance.json unchanged_files; tests/providers/test_discovery.py"
+    },
+    {
+      "repository": "data_api",
+      "patterns": [
+        "tests/**",
+        "**/tests/**",
+        "**/__tests__/**",
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/test_*.py",
+        "**/*_test.py"
+      ],
+      "reason": "Upstream and maintained test sources/fixtures",
+      "source": "OpenBB provider/core test suites"
+    },
+    {
+      "repository": "data_api",
+      "patterns": [
+        "*.md",
+        "**/uv.lock",
+        "**/pnpm-lock.yaml",
+        "**/package-lock.json"
+      ],
+      "reason": "Documentation and deterministic dependency locks",
+      "source": "OpenBB documentation and package managers"
+    }
+  ],
+  "excluded": [
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/uv.lock",
+      "patterns": [
+        "**/uv.lock",
+        "**/pnpm-lock.yaml",
+        "**/package-lock.json",
+        "**/bun.lock",
+        "**/bun.lockb"
+      ],
+      "reason": "Deterministic dependency lockfiles",
+      "source": "uv, pnpm, npm and Bun lock resolution"
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".env",
+      "patterns": [
+        ".env",
+        ".env.*",
+        "secrets/**",
+        "*.pem",
+        "*.key"
+      ],
+      "reason": "Private operator configuration and empty public configuration samples",
+      "source": "Operator configuration; never read for size inventory"
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".env.sample",
+      "patterns": [
+        ".env",
+        ".env.*",
+        "secrets/**",
+        "*.pem",
+        "*.key"
+      ],
+      "reason": "Private operator configuration and empty public configuration samples",
+      "source": "Operator configuration; never read for size inventory"
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".kiro/breadth.toml",
+      "patterns": [
+        "docs/**",
+        "*.md",
+        ".agents/**",
+        ".codex/**",
+        ".kiro/settings/**",
+        ".kiro/specs/**",
+        ".kiro/steering/**",
+        ".kiro/breadth.toml"
+      ],
+      "reason": "Documentation, agent instructions and acceptance metadata",
+      "source": "Project memory and specification workflow"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "AGENTS.md",
+      "patterns": [
+        "docs/**",
+        "*.md",
+        ".agents/**",
+        ".codex/**",
+        ".kiro/settings/**",
+        ".kiro/specs/**",
+        ".kiro/steering/**",
+        ".kiro/breadth.toml"
+      ],
+      "reason": "Documentation, agent instructions and acceptance metadata",
+      "source": "Project memory and specification workflow"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "README.md",
+      "patterns": [
+        "docs/**",
+        "*.md",
+        ".agents/**",
+        ".codex/**",
+        ".kiro/settings/**",
+        ".kiro/specs/**",
+        ".kiro/steering/**",
+        ".kiro/breadth.toml"
+      ],
+      "reason": "Documentation, agent instructions and acceptance metadata",
+      "source": "Project memory and specification workflow"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/apps.json",
+      "patterns": [
+        "contracts/renderers.json",
+        "contracts/routes.json",
+        "contracts/openapi.json",
+        "contracts/widgets.json",
+        "contracts/apps.json",
+        "contracts/catalog-report.json",
+        "contracts/compatibility.json",
+        "contracts/provenance.json",
+        "contracts/hashes.json"
+      ],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/catalog-report.json",
+      "patterns": [
+        "contracts/renderers.json",
+        "contracts/routes.json",
+        "contracts/openapi.json",
+        "contracts/widgets.json",
+        "contracts/apps.json",
+        "contracts/catalog-report.json",
+        "contracts/compatibility.json",
+        "contracts/provenance.json",
+        "contracts/hashes.json"
+      ],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/compatibility.json",
+      "patterns": [
+        "contracts/renderers.json",
+        "contracts/routes.json",
+        "contracts/openapi.json",
+        "contracts/widgets.json",
+        "contracts/apps.json",
+        "contracts/catalog-report.json",
+        "contracts/compatibility.json",
+        "contracts/provenance.json",
+        "contracts/hashes.json"
+      ],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/hashes.json",
+      "patterns": [
+        "contracts/renderers.json",
+        "contracts/routes.json",
+        "contracts/openapi.json",
+        "contracts/widgets.json",
+        "contracts/apps.json",
+        "contracts/catalog-report.json",
+        "contracts/compatibility.json",
+        "contracts/provenance.json",
+        "contracts/hashes.json"
+      ],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/openapi.json",
+      "patterns": [
+        "contracts/renderers.json",
+        "contracts/routes.json",
+        "contracts/openapi.json",
+        "contracts/widgets.json",
+        "contracts/apps.json",
+        "contracts/catalog-report.json",
+        "contracts/compatibility.json",
+        "contracts/provenance.json",
+        "contracts/hashes.json"
+      ],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/provenance.json",
+      "patterns": [
+        "contracts/renderers.json",
+        "contracts/routes.json",
+        "contracts/openapi.json",
+        "contracts/widgets.json",
+        "contracts/apps.json",
+        "contracts/catalog-report.json",
+        "contracts/compatibility.json",
+        "contracts/provenance.json",
+        "contracts/hashes.json"
+      ],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/routes.json",
+      "patterns": [
+        "contracts/renderers.json",
+        "contracts/routes.json",
+        "contracts/openapi.json",
+        "contracts/widgets.json",
+        "contracts/apps.json",
+        "contracts/catalog-report.json",
+        "contracts/compatibility.json",
+        "contracts/provenance.json",
+        "contracts/hashes.json"
+      ],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "contracts/widgets.json",
+      "patterns": [
+        "contracts/renderers.json",
+        "contracts/routes.json",
+        "contracts/openapi.json",
+        "contracts/widgets.json",
+        "contracts/apps.json",
+        "contracts/catalog-report.json",
+        "contracts/compatibility.json",
+        "contracts/provenance.json",
+        "contracts/hashes.json"
+      ],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/tools.lock.json",
+      "patterns": [
+        "sources/**",
+        "sources.lock.json",
+        "pipeline/tools.lock.json"
+      ],
+      "reason": "Acquisition provenance, copied notices and pinned tool input data",
+      "source": "Source/tool acquisition inventory"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/uv.lock",
+      "patterns": [
+        "**/uv.lock",
+        "**/pnpm-lock.yaml",
+        "**/package-lock.json",
+        "**/bun.lock",
+        "**/bun.lockb"
+      ],
+      "reason": "Deterministic dependency lockfiles",
+      "source": "uv, pnpm, npm and Bun lock resolution"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "schemas/acceptance.schema.json",
+      "patterns": [
+        "schemas/*.schema.json"
+      ],
+      "reason": "Deterministic public schemas generated from capped maintained Python boundary models",
+      "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "schemas/backup.schema.json",
+      "patterns": [
+        "schemas/*.schema.json"
+      ],
+      "reason": "Deterministic public schemas generated from capped maintained Python boundary models",
+      "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "schemas/expected.schema.json",
+      "patterns": [
+        "schemas/*.schema.json"
+      ],
+      "reason": "Deterministic public schemas generated from capped maintained Python boundary models",
+      "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "schemas/release.schema.json",
+      "patterns": [
+        "schemas/*.schema.json"
+      ],
+      "reason": "Deterministic public schemas generated from capped maintained Python boundary models",
+      "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "schemas/source.schema.json",
+      "patterns": [
+        "schemas/*.schema.json"
+      ],
+      "reason": "Deterministic public schemas generated from capped maintained Python boundary models",
+      "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/uv.lock",
+      "patterns": [
+        "**/uv.lock",
+        "**/pnpm-lock.yaml",
+        "**/package-lock.json",
+        "**/bun.lock",
+        "**/bun.lockb"
+      ],
+      "reason": "Deterministic dependency lockfiles",
+      "source": "uv, pnpm, npm and Bun lock resolution"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "sources.lock.json",
+      "patterns": [
+        "sources/**",
+        "sources.lock.json",
+        "pipeline/tools.lock.json"
+      ],
+      "reason": "Acquisition provenance, copied notices and pinned tool input data",
+      "source": "Source/tool acquisition inventory"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/pnpm-lock.yaml",
+      "patterns": [
+        "**/uv.lock",
+        "**/pnpm-lock.yaml",
+        "**/package-lock.json",
+        "**/bun.lock",
+        "**/bun.lockb"
+      ],
+      "reason": "Deterministic dependency lockfiles",
+      "source": "uv, pnpm, npm and Bun lock resolution"
+    },
+    {
+      "repository": "qopenbb",
+      "path": "verification/provider/uv.lock",
+      "patterns": [
+        "**/uv.lock",
+        "**/pnpm-lock.yaml",
+        "**/package-lock.json",
+        "**/bun.lock",
+        "**/bun.lockb"
+      ],
+      "reason": "Deterministic dependency lockfiles",
+      "source": "uv, pnpm, npm and Bun lock resolution"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/Widgets/perspective/bindings.json",
+      "patterns": [
+        "terminalpro/src/components/Widgets/perspective/bindings.json"
+      ],
+      "reason": "Deterministic mirror of validated installed renderer/catalog bindings; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_renderers.py via catalog_cli --bind-renderers --workspace-bindings"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/tests/unit/financial-engine.mjs",
+      "patterns": [
+        "tests/**",
+        "**/tests/**",
+        "**/__tests__/**",
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/test_*.py",
+        "**/*_test.py"
+      ],
+      "reason": "Upstream and maintained test sources/fixtures",
+      "source": "Workspace test suites"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/tests/unit/financial-fixtures.json",
+      "patterns": [
+        "tests/**",
+        "**/tests/**",
+        "**/__tests__/**",
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/test_*.py",
+        "**/*_test.py"
+      ],
+      "reason": "Upstream and maintained test sources/fixtures",
+      "source": "Workspace test suites"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/tests/unit/financial-normalize.py",
+      "patterns": [
+        "tests/**",
+        "**/tests/**",
+        "**/__tests__/**",
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/test_*.py",
+        "**/*_test.py"
+      ],
+      "reason": "Upstream and maintained test sources/fixtures",
+      "source": "Workspace test suites"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/tests/unit/financial.test.ts",
+      "patterns": [
+        "tests/**",
+        "**/tests/**",
+        "**/__tests__/**",
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/test_*.py",
+        "**/*_test.py"
+      ],
+      "reason": "Upstream and maintained test sources/fixtures",
+      "source": "Workspace test suites"
+    }
+  ],
+  "deleted": [],
+  "exceptions": []
+}

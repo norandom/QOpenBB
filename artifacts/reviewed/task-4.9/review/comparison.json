@@ -1,0 +1,10 @@
+{
+  "mismatches": [],
+  "red_tests": "10 failed, 43 passed",
+  "fresh_tests": "60 passed",
+  "runtime": "3.13.15 / SQLite 3.53.1",
+  "quality_command": "wsl -d Debian -u mc -- bash /mnt/d/Source/QOpenBB/artifacts/task-4.9/review/quality.sh",
+  "quality_exit": 0,
+  "quality_initial_wrapper_exit": 1,
+  "quality_initial_reason": "Copied PowerShell wrapper introduced trailing CR blank line; normalized owned wrapper to LF; checker report itself had no failures."
+}

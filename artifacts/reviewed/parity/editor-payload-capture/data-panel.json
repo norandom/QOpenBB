@@ -1,0 +1,133 @@
+{
+  "text": "Chart\nSet Up\nCustomize\nCategories\nPeriod\nAggregate\nSeries\nRevenue\nEPS\nSwitch Category / Series",
+  "controls": [
+    {
+      "tag": "SPAN",
+      "role": "tab",
+      "label": "Chart",
+      "labelledby": null,
+      "visible": true,
+      "html": "<span class=\"ag-tab\" role=\"tab\" tabindex=\"-1\" aria-label=\"Chart\"><div>Chart</div></span>"
+    },
+    {
+      "tag": "SPAN",
+      "role": "tab",
+      "label": "Set Up",
+      "labelledby": null,
+      "visible": true,
+      "html": "<span class=\"ag-tab ag-tab-selected\" role=\"tab\" tabindex=\"-1\" aria-label=\"Set Up\"><div>Set Up</div></span>"
+    },
+    {
+      "tag": "SPAN",
+      "role": "tab",
+      "label": "Customize",
+      "labelledby": null,
+      "visible": true,
+      "html": "<span class=\"ag-tab\" role=\"tab\" tabindex=\"-1\" aria-label=\"Customize\"><div>Customize</div></span>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-95-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-95-input\" tabindex=\"0\" aria-labelledby=\"ag-95-label\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "combobox",
+      "label": null,
+      "labelledby": null,
+      "visible": true,
+      "html": "<div class=\"ag-wrapper ag-picker-field-wrapper ag-picker-collapsed\" data-ref=\"eWrapper\" tabindex=\"0\" aria-expanded=\"false\" role=\"combobox\" aria-controls=\"ag-select-list-98\"> <div class=\"ag-picker-field-display\" data-ref=\"eDisplayField\" id=\"ag-97-display\">Period</div> <div class=\"ag-picker-field-icon\" data-ref=\"eIcon\" aria-hidden=\"true\"><span class=\"ag-icon ag-icon-small-down\" role=\"presentation\" unselectable=\"on\"></span></div> </div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-99-label",
+      "value": "on",
+      "checked": false,
+      "disabled": false,
+      "visible": true,
+      "html": "<input class=\"ag-input-field-input ag-toggle-button-input\" data-ref=\"eInput\" aria-labelledby=\"ag-99-label\" type=\"checkbox\" id=\"ag-99-input\" tabindex=\"0\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "combobox",
+      "label": null,
+      "labelledby": null,
+      "visible": false,
+      "html": "<div class=\"ag-wrapper ag-picker-field-wrapper ag-picker-collapsed\" data-ref=\"eWrapper\" tabindex=\"0\" aria-expanded=\"false\" role=\"combobox\" aria-controls=\"ag-select-list-101\"> <div class=\"ag-picker-field-display\" data-ref=\"eDisplayField\" id=\"ag-100-display\"></div> <div class=\"ag-picker-field-icon\" data-ref=\"eIcon\" aria-hidden=\"true\"><span class=\"ag-icon ag-icon-small-down\" role=\"presentation\" unselectable=\"on\"></span></div> </div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-104-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-104-input\" tabindex=\"0\" aria-labelledby=\"ag-104-label\">"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-92-label",
+      "value": "on",
+      "checked": false,
+      "disabled": false,
+      "visible": true,
+      "html": "<input class=\"ag-input-field-input ag-toggle-button-input\" data-ref=\"eInput\" aria-labelledby=\"ag-92-label\" type=\"checkbox\" id=\"ag-92-input\" tabindex=\"0\">"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-117-label",
+      "value": "on",
+      "checked": true,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-checkbox-input\" data-ref=\"eInput\" type=\"checkbox\" id=\"ag-117-input\" tabindex=\"0\" aria-labelledby=\"ag-117-label\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "ag-111-label",
+      "visible": false,
+      "html": "<div class=\"ag-wrapper ag-picker-field-wrapper ag-picker-collapsed\" data-ref=\"eWrapper\" aria-labelledby=\"ag-111-label\" tabindex=\"0\" aria-expanded=\"false\" role=\"combobox\" aria-controls=\"ag-select-list-112\"> <div class=\"ag-picker-field-display\" data-ref=\"eDisplayField\" id=\"ag-111-display\">Vertical</div> <div class=\"ag-picker-field-icon\" data-ref=\"eIcon\" aria-hidden=\"true\"><span class=\"ag-icon ag-icon-small-down\" role=\"presentation\" unselectable=\"on\"></span></div> </div>"
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": null,
+      "labelledby": "ag-113-label",
+      "value": "on",
+      "checked": false,
+      "disabled": false,
+      "visible": false,
+      "html": "<input class=\"ag-input-field-input ag-toggle-button-input\" data-ref=\"eInput\" aria-labelledby=\"ag-113-label\" type=\"checkbox\" id=\"ag-113-input\" tabindex=\"0\">"
+    },
+    {
+      "tag": "DIV",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "ag-114-label",
+      "visible": false,
+      "html": "<div class=\"ag-wrapper ag-picker-field-wrapper ag-picker-collapsed\" data-ref=\"eWrapper\" aria-labelledby=\"ag-114-label\" tabindex=\"0\" aria-expanded=\"false\" role=\"combobox\" aria-controls=\"ag-select-list-115\"> <div class=\"ag-picker-field-display\" data-ref=\"eDisplayField\" id=\"ag-114-display\"></div> <div class=\"ag-picker-field-icon\" data-ref=\"eIcon\" aria-hidden=\"true\"><span class=\"ag-icon ag-icon-small-down\" role=\"presentation\" unselectable=\"on\"></span></div> </div>"
+    }
+  ]
+}

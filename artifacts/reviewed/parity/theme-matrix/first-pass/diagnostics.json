@@ -1,0 +1,1278 @@
+{
+  "errors": [
+    {
+      "type": "pageerror",
+      "message": "Unexpected token '<'"
+    },
+    {
+      "type": "exception",
+      "message": "Uncaught",
+      "details": "SyntaxError: Unexpected token '<'",
+      "url": "http://127.0.0.1:32772/assets/js/datafeeds/udf/dist/bundle.js",
+      "line": 0,
+      "scriptId": "17"
+    },
+    {
+      "type": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "console",
+      "text": "AxiosError: Request failed with status code 404\n    at pT (http://127.0.0.1:32772/api.BmyCH4VL.js:26:10547)\n    at XMLHttpRequest.g (http://127.0.0.1:32772/api.BmyCH4VL.js:26:16790)"
+    },
+    {
+      "type": "pageerror",
+      "message": "Unexpected token '<'"
+    },
+    {
+      "type": "exception",
+      "message": "Uncaught",
+      "details": "SyntaxError: Unexpected token '<'",
+      "url": "http://127.0.0.1:32772/assets/js/datafeeds/udf/dist/bundle.js",
+      "line": 0,
+      "scriptId": "177"
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:32772/",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://127.0.0.1:32772/config.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/rolldown-runtime.C0FnF6B9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/jsx-runtime.DHuLKWhX.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/index.KzHeSZDN.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.DuINBcGX.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/compat.3CuIZND9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/index.Dxe-92W4.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/js/datafeeds/udf/dist/bundle.js",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Button.ByEBJNzO.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Tooltip.CPTkBY4D.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/walkthrough.9jmgZ_pC.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/runtimeConfig.BNZYrbjh.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-auth.DxKFDo9s.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api.BmyCH4VL.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-ag.Ia3PbbCk.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/workbox-window.prod.es5.DXk5hhZK.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/prop-types.DLNmZ1T3.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/RootLayout.BF5tKRSD.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/CloseCircle.DftEZ8a-.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Warning.Ca92EwdH.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/cjs.CF1mtvXo.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/LayoutUnauth.CGShMBma.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/home.D2GfqRMf.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/login.BidU7eKQ.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/NoItems.DOju0Bu5.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/index.esm.CXZojxOe.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/microsoft-auth-config.-4j5Yu3Y.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/okta-auth-config.2qznYhqC.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/skillsLibrary.A0HjDSi9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Error.DHzBTTEV.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/TOTPSetDialog.BO8qlfOD.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/images/openbb_lettering.svg",
+      "status": 200,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/icons/sprite.svg?v=qopenbb-task25",
+      "status": 200,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/fonts/Inter.var.woff2",
+      "status": 200,
+      "contentType": "font/woff2"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/login",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/DeveloperOnboardingHomepage.BI1IkoOd.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/images/avatar.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/custom-copilot",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/user-has-entity",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/dash/sync",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/pro-developer-onboarding-info",
+      "status": 404,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/enabled-bundles",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/user",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/pro-developer-onboarding-info",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AnimatePresence.CskI_Yok.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/sanitize.BZ9WQAIZ.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ConfirmDialog.CbL7aBoq.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/purify.es.DhpFLEQ1.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/cjs.DP3fXX1g.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.BWKEcUHT.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/LayoutAuth.BhA3aAtW.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Artifact.BWj3-iWB.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Tex.RcXQ8550.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Artifact.JDJHqur9.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/LoadingSpinner.BjNKLGp6.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/es.lgHM5kLq.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/SnowflakeHide.BKI9QtoB.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/MobileProvider.ewD2IfPu.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Avatar.T_sCwnsE.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Avatar.BkjjLNEe.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.B9a-EyUN.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/esm.Bpvv2BZi.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Citation.DJimCcH_.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-monaco.Yhy-jZgl.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Tex.d472l3pf.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Chart.CI0Mwqx4.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/utils.DlOjYQa0.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/NewAdvancedSelect.D8x1xdcO.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/QueryParams.B_2FBtpB.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/exceljs.min.CdTOP8_5.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/DebouncedInput.1CeKrpgm.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Calendar.BbYLR52O.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/DecimalDigitsRadio.CAVNHU5g.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/TableSettings.CQ0QX7ci.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/w3c-keyname.BOAvb0qz.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/RadioGroup.D0mpkE7p.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/PlotlyChart.DByQk_i0.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useResizeDetector.qIW65Oh4.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useRawDataToggle.D4s1UXEI.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/LayoutAuth.HsGWbaIs.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/CachedTickers.O5wbLtX3.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/promptLibrary.CLX0AK4R.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AgSQL.UnDdjgN9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/usePanelsState.Bgp9ICkE.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/TextStyle.C6JO-iF3.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useCopilotAddToContext.DIagmC6n.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.DT8bjIxZ.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Tabs.BTWkZGF2.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/UploadFilesTab1.ClF0elbv.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Resizable.BNBczVkY.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/SettingsMenu.C1K4LRf4.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/CollapsibleSection.DZlztApi.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/papaparse.min.CmPV70yy.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/DataConnectorContext.DcgtIsXd.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useSyncItems.Dd29GcdE.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/EndpointHeadersForm.CgSwpuLp.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.B-lXbuNw.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ConnectionTestResult.BfjuvjEk.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Notice.CA_Vv-Af.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/McpToolsDropdown.C2Q3ETCT.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/WidgetInfoTooltip.lhZ0VCWF.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/BrandedLoadingState.DOfYtSC6.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ManageAppDialog.Ckrfvilf.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/HintLabel.o3K1d1af.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ExternalLinkDialog.rX1kFbfW.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/validators.BX2g7aOy.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ConnectionStatusDot.z39X2I31.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useSharedTemplates.D88u6MXm.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AddUsersSelect.BKeVBVA8.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AppCard.5nWuQXPp.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/TOSDialog.aaz48_H3.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/HoverPopover.BrtFhgwR.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-monaco.Ce2R8BQw.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-starry-night.MpqnmUif.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AppPreviewSurfaces.LfxfQrev.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/SettingsLayout.BOO99mgs.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Apps.B0mBpOd5.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/apiError.CcuiFzQI.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useListedApps.DDz17cth.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/axios.DUzQvbU_.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/TabPage.P3yfyjov.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AppPreviewSurfaces.k9fXdEGt.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/wasm/onig.wasm",
+      "status": 200,
+      "contentType": "application/wasm"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/resource-permissions",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/user-apps/sync",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/data-connectors/api-source",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/images/apps/save.png",
+      "status": 200,
+      "contentType": "image/png"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/images/apps/share.png",
+      "status": 200,
+      "contentType": "image/png"
+    },
+    {
+      "url": "http://127.0.0.1:32772/app/11111111-1111-4111-8111-111111111111",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://127.0.0.1:32772/config.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/rolldown-runtime.C0FnF6B9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/index.Dxe-92W4.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/jsx-runtime.DHuLKWhX.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Button.ByEBJNzO.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.DuINBcGX.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/runtimeConfig.BNZYrbjh.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/index.KzHeSZDN.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/js/datafeeds/udf/dist/bundle.js",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "url": "http://127.0.0.1:32772/compat.3CuIZND9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/walkthrough.9jmgZ_pC.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Tooltip.CPTkBY4D.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-auth.DxKFDo9s.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api.BmyCH4VL.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-ag.Ia3PbbCk.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/workbox-window.prod.es5.DXk5hhZK.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/RootLayout.BF5tKRSD.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/CloseCircle.DftEZ8a-.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/prop-types.DLNmZ1T3.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/cjs.CF1mtvXo.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Warning.Ca92EwdH.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AnimatePresence.CskI_Yok.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/sanitize.BZ9WQAIZ.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ConfirmDialog.CbL7aBoq.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/purify.es.DhpFLEQ1.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Tex.RcXQ8550.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Artifact.JDJHqur9.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.BWKEcUHT.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/cjs.DP3fXX1g.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/LayoutAuth.BhA3aAtW.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Artifact.BWj3-iWB.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Tex.d472l3pf.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Avatar.BkjjLNEe.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/MobileProvider.ewD2IfPu.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/SnowflakeHide.BKI9QtoB.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/LoadingSpinner.BjNKLGp6.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Avatar.T_sCwnsE.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-monaco.Yhy-jZgl.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.B9a-EyUN.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/es.lgHM5kLq.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/utils.DlOjYQa0.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Citation.DJimCcH_.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/esm.Bpvv2BZi.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Chart.CI0Mwqx4.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/NewAdvancedSelect.D8x1xdcO.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/QueryParams.B_2FBtpB.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/DebouncedInput.1CeKrpgm.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Calendar.BbYLR52O.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AgSQL.UnDdjgN9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/DecimalDigitsRadio.CAVNHU5g.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/w3c-keyname.BOAvb0qz.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/RadioGroup.D0mpkE7p.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/TableSettings.CQ0QX7ci.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useRawDataToggle.D4s1UXEI.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/PlotlyChart.DByQk_i0.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useResizeDetector.qIW65Oh4.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/CachedTickers.O5wbLtX3.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/exceljs.min.CdTOP8_5.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/promptLibrary.CLX0AK4R.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/TextStyle.C6JO-iF3.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/LayoutAuth.HsGWbaIs.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:32772/usePanelsState.Bgp9ICkE.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.DT8bjIxZ.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/skillsLibrary.A0HjDSi9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useCopilotAddToContext.DIagmC6n.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Tabs.BTWkZGF2.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/UploadFilesTab1.ClF0elbv.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/papaparse.min.CmPV70yy.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/SettingsMenu.C1K4LRf4.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Resizable.BNBczVkY.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/CollapsibleSection.DZlztApi.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/NoItems.DOju0Bu5.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/dist.B-lXbuNw.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/DataConnectorContext.DcgtIsXd.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useSyncItems.Dd29GcdE.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/EndpointHeadersForm.CgSwpuLp.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ConnectionTestResult.BfjuvjEk.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ManageAppDialog.Ckrfvilf.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/McpToolsDropdown.C2Q3ETCT.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Notice.CA_Vv-Af.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/BrandedLoadingState.DOfYtSC6.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/HintLabel.o3K1d1af.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ConnectionStatusDot.z39X2I31.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/ExternalLinkDialog.rX1kFbfW.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/WidgetInfoTooltip.lhZ0VCWF.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useSharedTemplates.D88u6MXm.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/validators.BX2g7aOy.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AddUsersSelect.BKeVBVA8.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/HoverPopover.BrtFhgwR.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AppCard.5nWuQXPp.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/TOSDialog.aaz48_H3.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-monaco.Ce2R8BQw.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/images/loading-bb-white.gif",
+      "status": 200,
+      "contentType": "image/gif"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/fonts/Inter.var.woff2",
+      "status": 200,
+      "contentType": "font/woff2"
+    },
+    {
+      "url": "http://127.0.0.1:32772/vendor-starry-night.MpqnmUif.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/wasm/onig.wasm",
+      "status": 200,
+      "contentType": "application/wasm"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/resource-permissions",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/dash/validate-and-sync",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/icons/sprite.svg?v=qopenbb-task25",
+      "status": 200,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "http://127.0.0.1:32772/tab.cZZ7KBi0.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/GridLayout.hooks.DX6aV8qM.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/RenderIfVisible.BOc2uxcI.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/Widget.BS4Mtqe5.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AuthedAppNotFound.CFvNzoDj.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/GridLayout.BEWCcxU7.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/data-connectors/api-source",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/AgGridTable.BKtqdLiF.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/useCopilotFilteredData.BlPUh1wq.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/constants.CO-kWvM9.js",
+      "status": 200,
+      "contentType": "application/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:32772/synthetic_financials",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/assets/fonts/Roboto-VariableFont_wdth,wght.ttf",
+      "status": 200,
+      "contentType": "application/octet-stream"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/dash/sync/shared",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/dash/sync",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/dash/sync",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/dash/sync/shared",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/dash/sync/shared",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/dash/sync",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "http://127.0.0.1:32772/api/pro/dash/sync/shared",
+      "status": 200,
+      "contentType": "application/json"
+    }
+  ]
+}

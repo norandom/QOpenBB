@@ -1,0 +1,20 @@
+{
+  "exact_seven_sites": true,
+  "runtime_and_test_manifests_identical": true,
+  "current_manifest_matches": true,
+  "baseline_format_exit": 1,
+  "sizes": {
+    "baseline": {
+      "physical": 1599,
+      "logical": 582,
+      "max_function": 36,
+      "sha256": "51fc65e7cea5938a8654f90671fd8180f81a0fea6fcd955f20d991ad6053c411"
+    },
+    "patched": {
+      "physical": 1599,
+      "logical": 582,
+      "max_function": 36,
+      "sha256": "575b2cdeb0f04aab81af60b34074e4b9c2c6e21cfb6559c695e502361defc6e9"
+    }
+  }
+}

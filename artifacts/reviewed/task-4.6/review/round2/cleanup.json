@@ -1,0 +1,18 @@
+{
+  "success_path": "/tmp/qopenbb-sqlite-q477yfm8",
+  "success_removed": true,
+  "nonzero_command": [
+    "/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python",
+    "/mnt/d/Source/QOpenBB/vendor/workspace/backend-api/backend/tests_sqlite/run.py",
+    "-k",
+    "review_cleanup_no_matching_test"
+  ],
+  "nonzero_exit": 5,
+  "nonzero_path": "/tmp/qopenbb-sqlite-auw64_3t",
+  "nonzero_removed": true,
+  "prior_database_paths_absent": [
+    "/tmp/pytest-of-mc/pytest-0/test_real_fixture_roundtrip0/workspace.db",
+    "/tmp/pytest-of-mc/pytest-1/test_real_fixture_roundtrip0/workspace.db",
+    "/tmp/pytest-of-mc/pytest-2/test_real_fixture_roundtrip0/workspace.db"
+  ]
+}

@@ -1,0 +1,1194 @@
+{
+  "model": {
+    "modelType": "range",
+    "chartId": "id-349edgykjfe",
+    "chartType": "line",
+    "chartThemeName": "openbb-light",
+    "chartOptions": {},
+    "chartPalette": {
+      "fills": [
+        "#5090dc",
+        "#ffa03a",
+        "#459d55",
+        "#34bfe1",
+        "#e1cc00",
+        "#9669cb",
+        "#b5b5b5",
+        "#bd5aa7",
+        "#8a6224",
+        "#ef5452"
+      ],
+      "strokes": [
+        "#2b5c95",
+        "#cc6f10",
+        "#1e652e",
+        "#18859e",
+        "#a69400",
+        "#603c88",
+        "#575757",
+        "#7d2f6d",
+        "#4f3508",
+        "#a82529"
+      ],
+      "sequentialColors": [
+        [
+          "#2162aa",
+          "#5090dc",
+          "#7ec0ff"
+        ],
+        [
+          "#cc7100",
+          "#ffa03a",
+          "#ffd171"
+        ],
+        [
+          "#076f29",
+          "#459d55",
+          "#75cd82"
+        ],
+        [
+          "#008fb0",
+          "#34bfe1",
+          "#70f1ff"
+        ],
+        [
+          "#b19c00",
+          "#e1cc00",
+          "#fffe5d"
+        ],
+        [
+          "#6a3c9a",
+          "#9669cb",
+          "#c597fe"
+        ],
+        [
+          "#878787",
+          "#b5b5b5",
+          "#e5e5e5"
+        ],
+        [
+          "#8c2c79",
+          "#bd5aa7",
+          "#f088d7"
+        ],
+        [
+          "#5d3800",
+          "#8a6224",
+          "#b98f53"
+        ],
+        [
+          "#b91926",
+          "#ef5452",
+          "#ff867f"
+        ]
+      ],
+      "fillsFallback": [
+        "#5090dc",
+        "#ffa03a",
+        "#459d55",
+        "#34bfe1",
+        "#e1cc00",
+        "#9669cb",
+        "#b5b5b5",
+        "#bd5aa7",
+        "#8a6224",
+        "#ef5452"
+      ],
+      "divergingColors": [
+        "#ffa03a",
+        "#e1cc00",
+        "#459d55"
+      ],
+      "hierarchyColors": [
+        "#fff",
+        "#e0e5ea",
+        "#c1ccd5",
+        "#a3b4c1",
+        "#859cad"
+      ],
+      "secondSequentialColors": [
+        "#5090dc",
+        "#629be0",
+        "#74a7e4",
+        "#85b2e8",
+        "#97bdeb",
+        "#a8c8ef",
+        "#b9d3f2",
+        "#cbdef5"
+      ],
+      "secondDivergingColors": [
+        "#459d55",
+        "#e1cc00",
+        "#ef5452"
+      ],
+      "secondHierarchyColors": [
+        "#fff",
+        "#c5cbd1",
+        "#a4b1bd",
+        "#8498a9",
+        "#648096"
+      ],
+      "up": {
+        "fill": "#459d55",
+        "stroke": "#1e652e"
+      },
+      "down": {
+        "fill": "#ef5452",
+        "stroke": "#a82529"
+      },
+      "neutral": {
+        "fill": "#b5b5b5",
+        "stroke": "#575757"
+      },
+      "altUp": {
+        "fill": "#5090dc",
+        "stroke": "#2b5c95"
+      },
+      "altDown": {
+        "fill": "#ffa03a",
+        "stroke": "#cc6f10"
+      },
+      "altNeutral": {
+        "fill": "#b5b5b5",
+        "stroke": "#575757"
+      }
+    },
+    "cellRange": {
+      "rowStartIndex": null,
+      "rowStartPinned": null,
+      "rowEndIndex": null,
+      "rowEndPinned": null,
+      "columns": [
+        "period",
+        "revenue",
+        "operatingIncome"
+      ]
+    },
+    "switchCategorySeries": false,
+    "suppressChartRanges": true,
+    "unlinkChart": false,
+    "version": "34.1.1"
+  },
+  "gridRows": [
+    {
+      "period": "2024-Q1",
+      "revenue": 100,
+      "operatingIncome": 20
+    },
+    {
+      "period": "2024-Q2",
+      "revenue": null,
+      "operatingIncome": null
+    },
+    {
+      "period": "2024-Q3",
+      "revenue": 140,
+      "operatingIncome": 30
+    },
+    {
+      "period": "2024-Q4",
+      "revenue": 160,
+      "operatingIncome": 40
+    }
+  ],
+  "inputData": [
+    {
+      "period": {
+        "id": 0,
+        "value": "2024-Q1"
+      },
+      "revenue": 100,
+      "operatingIncome": 20
+    },
+    {
+      "period": {
+        "id": 1,
+        "value": "2024-Q2"
+      },
+      "revenue": null,
+      "operatingIncome": null
+    },
+    {
+      "period": {
+        "id": 2,
+        "value": "2024-Q3"
+      },
+      "revenue": 140,
+      "operatingIncome": 30
+    },
+    {
+      "period": {
+        "id": 3,
+        "value": "2024-Q4"
+      },
+      "revenue": 160,
+      "operatingIncome": 40
+    }
+  ],
+  "inputTheme": {
+    "baseTheme": {
+      "baseTheme": {
+        "baseTheme": {
+          "baseTheme": {
+            "baseTheme": {
+              "baseTheme": {
+                "baseTheme": "ag-default",
+                "overrides": {
+                  "line": {
+                    "series": {
+                      "marker": {
+                        "enabled": false
+                      },
+                      "connectMissingData": true
+                    }
+                  },
+                  "pie": {
+                    "series": {
+                      "calloutLabel": {},
+                      "sectorLabel": {
+                        "enabled": true
+                      }
+                    }
+                  },
+                  "donut": {
+                    "series": {
+                      "calloutLabel": {},
+                      "sectorLabel": {
+                        "enabled": true
+                      }
+                    }
+                  },
+                  "scatter": {
+                    "axes": {
+                      "number": {
+                        "title": {
+                          "fontSize": 11,
+                          "spacing": 10,
+                          "enabled": true,
+                          "text": ""
+                        }
+                      }
+                    }
+                  },
+                  "waterfall": {
+                    "series": {
+                      "item": {
+                        "negative": {
+                          "label": {
+                            "enabled": false,
+                            "placement": "inside-center"
+                          }
+                        },
+                        "positive": {
+                          "label": {
+                            "enabled": false,
+                            "placement": "inside-center"
+                          }
+                        },
+                        "total": {
+                          "label": {
+                            "enabled": false,
+                            "placement": "inside-center"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "funnel": {
+                    "series": {
+                      "label": {
+                        "enabled": false
+                      }
+                    }
+                  },
+                  "bar": {
+                    "series": {}
+                  },
+                  "common": {
+                    "axes": {
+                      "number": {
+                        "label": {}
+                      },
+                      "angle-number": {
+                        "label": {}
+                      },
+                      "radius-number": {
+                        "label": {}
+                      }
+                    },
+                    "zoom": {
+                      "enabled": true,
+                      "anchorPointX": "pointer",
+                      "anchorPointY": "pointer",
+                      "minVisibleItems": 4,
+                      "autoScaling": {
+                        "enabled": true
+                      }
+                    },
+                    "navigator": {
+                      "enabled": false,
+                      "miniChart": {
+                        "enabled": false
+                      }
+                    },
+                    "legend": {
+                      "position": "top",
+                      "maxHeight": 50,
+                      "spacing": 20,
+                      "item": {
+                        "paddingX": 32,
+                        "paddingY": 8,
+                        "marker": {
+                          "shape": "square",
+                          "padding": 5,
+                          "size": 11
+                        },
+                        "label": {
+                          "color": "#000",
+                          "fontSize": 11
+                        }
+                      }
+                    },
+                    "title": {
+                      "fontSize": 12
+                    }
+                  }
+                },
+                "params": {
+                  "backgroundColor": "#FFFFFF"
+                }
+              },
+              "overrides": {
+                "pie": {
+                  "series": {
+                    "calloutLabel": {
+                      "_enabledFromTheme": true
+                    },
+                    "sectorLabel": {
+                      "enabled": false,
+                      "_enabledFromTheme": true
+                    },
+                    "title": {
+                      "_enabledFromTheme": true
+                    }
+                  }
+                },
+                "donut": {
+                  "series": {
+                    "calloutLabel": {
+                      "_enabledFromTheme": true
+                    },
+                    "sectorLabel": {
+                      "enabled": false,
+                      "_enabledFromTheme": true
+                    },
+                    "title": {
+                      "_enabledFromTheme": true
+                    }
+                  }
+                }
+              }
+            },
+            "overrides": {
+              "common": {
+                "zoom": {
+                  "enabled": true
+                },
+                "animation": {
+                  "enabled": true,
+                  "duration": 500
+                },
+                "axes": {
+                  "number": {
+                    "crosshair": {
+                      "enabled": true,
+                      "snap": true,
+                      "label": {
+                        "enabled": false
+                      }
+                    }
+                  },
+                  "category": {
+                    "crosshair": {
+                      "enabled": true,
+                      "snap": true,
+                      "label": {
+                        "enabled": false
+                      }
+                    }
+                  },
+                  "log": {
+                    "crosshair": {
+                      "enabled": true,
+                      "snap": true,
+                      "label": {
+                        "enabled": false
+                      }
+                    }
+                  },
+                  "time": {
+                    "crosshair": {
+                      "enabled": true,
+                      "snap": true,
+                      "label": {
+                        "enabled": false
+                      }
+                    }
+                  }
+                },
+                "minHeight": 0,
+                "minWidth": 0,
+                "navigator": {
+                  "enabled": false,
+                  "height": 18
+                },
+                "context": {
+                  "api": {}
+                }
+              }
+            }
+          },
+          "overrides": {
+            "common": {
+              "axes": {
+                "number": {
+                  "crosshair": {
+                    "label": {}
+                  },
+                  "position": "left",
+                  "label": {
+                    "fontSize": 11,
+                    "autoRotate": false,
+                    "avoidCollisions": true
+                  }
+                },
+                "category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5,
+                    "autoRotate": true
+                  },
+                  "position": "bottom"
+                },
+                "time": {
+                  "position": "bottom",
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "rotation": 0
+                  }
+                },
+                "radius-category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5
+                  }
+                },
+                "angle-category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5
+                  }
+                },
+                "grouped-category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5,
+                    "rotation": 0
+                  }
+                }
+              },
+              "navigator": {
+                "miniChart": {
+                  "enabled": false
+                },
+                "enabled": false
+              },
+              "legend": {
+                "position": "top",
+                "maxHeight": 50,
+                "spacing": 20,
+                "item": {
+                  "paddingX": 32,
+                  "paddingY": 8,
+                  "marker": {
+                    "shape": "square",
+                    "padding": 5,
+                    "size": 11
+                  },
+                  "label": {
+                    "color": "#000",
+                    "fontSize": 11
+                  }
+                }
+              }
+            },
+            "line": {
+              "series": {
+                "label": {
+                  "enabled": false
+                },
+                "tooltip": {
+                  "enabled": true
+                }
+              }
+            },
+            "pie": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "calloutLabel": {
+                  "enabled": true
+                },
+                "sectorLabel": {
+                  "enabled": true
+                }
+              }
+            },
+            "donut": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "calloutLabel": {
+                  "enabled": true
+                },
+                "sectorLabel": {
+                  "enabled": true
+                }
+              }
+            },
+            "area": {
+              "series": {
+                "label": {
+                  "enabled": false
+                },
+                "tooltip": {
+                  "enabled": true
+                }
+              }
+            },
+            "bubble": {
+              "series": {
+                "label": {
+                  "enabled": false
+                },
+                "tooltip": {
+                  "enabled": true
+                }
+              }
+            },
+            "histogram": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "label": {
+                  "enabled": false
+                }
+              }
+            },
+            "bar": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "label": {
+                  "enabled": false,
+                  "placement": "outside-end"
+                }
+              }
+            },
+            "scatter": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "label": {
+                  "enabled": false,
+                  "placement": "top"
+                }
+              }
+            },
+            "treemap": {
+              "series": {
+                "group": {
+                  "label": {
+                    "enabled": true
+                  }
+                },
+                "tile": {
+                  "label": {
+                    "enabled": true
+                  }
+                },
+                "tooltip": {
+                  "enabled": true
+                }
+              },
+              "padding": {
+                "bottom": 10
+              }
+            },
+            "sunburst": {
+              "series": {
+                "tooltip": {
+                  "enabled": true,
+                  "position": {
+                    "anchorTo": "pointer"
+                  },
+                  "interaction": {
+                    "enabled": true
+                  }
+                },
+                "label": {
+                  "enabled": true
+                }
+              },
+              "padding": {
+                "bottom": 10
+              }
+            },
+            "heatmap": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "label": {
+                  "enabled": true
+                }
+              },
+              "padding": {
+                "bottom": 10
+              }
+            },
+            "waterfall": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                }
+              }
+            },
+            "radar-line": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "label": {
+                  "enabled": false
+                }
+              }
+            },
+            "radar-area": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "label": {
+                  "enabled": false
+                }
+              }
+            },
+            "radial-bar": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "label": {
+                  "enabled": false
+                }
+              }
+            },
+            "radial-column": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "label": {
+                  "enabled": false
+                }
+              }
+            },
+            "nightingale": {
+              "series": {
+                "tooltip": {
+                  "enabled": true
+                },
+                "label": {
+                  "enabled": false
+                }
+              }
+            }
+          }
+        },
+        "overrides": {
+          "common": {
+            "axes": {
+              "category": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "minSpacing": 5,
+                  "autoRotate": true
+                },
+                "position": "bottom"
+              },
+              "radius-category": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "minSpacing": 5
+                }
+              },
+              "angle-category": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "minSpacing": 5
+                }
+              },
+              "grouped-category": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "minSpacing": 5,
+                  "rotation": 0
+                }
+              },
+              "number": {
+                "crosshair": {
+                  "label": {}
+                },
+                "label": {
+                  "fontSize": 11,
+                  "autoRotate": false,
+                  "avoidCollisions": true
+                },
+                "position": "left"
+              },
+              "time": {
+                "label": {
+                  "avoidCollisions": true,
+                  "fontSize": 11,
+                  "rotation": 0
+                },
+                "position": "bottom"
+              }
+            },
+            "legend": {
+              "item": {
+                "label": {
+                  "color": "#000",
+                  "fontSize": 11
+                },
+                "paddingX": 32,
+                "paddingY": 8,
+                "marker": {
+                  "shape": "square",
+                  "padding": 5,
+                  "size": 11
+                }
+              },
+              "position": "top",
+              "maxHeight": 50,
+              "spacing": 20
+            },
+            "navigator": {
+              "enabled": false,
+              "miniChart": {
+                "enabled": false
+              }
+            }
+          },
+          "line": {
+            "series": {
+              "label": {
+                "enabled": false
+              },
+              "tooltip": {
+                "enabled": true
+              }
+            }
+          },
+          "pie": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "calloutLabel": {
+                "enabled": true
+              },
+              "sectorLabel": {
+                "enabled": true
+              }
+            }
+          },
+          "donut": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "calloutLabel": {
+                "enabled": true
+              },
+              "sectorLabel": {
+                "enabled": true
+              }
+            }
+          },
+          "area": {
+            "series": {
+              "label": {
+                "enabled": false
+              },
+              "tooltip": {
+                "enabled": true
+              }
+            }
+          },
+          "bubble": {
+            "series": {
+              "label": {
+                "enabled": false
+              },
+              "tooltip": {
+                "enabled": true
+              }
+            }
+          },
+          "histogram": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "bar": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false,
+                "placement": "outside-end"
+              }
+            }
+          },
+          "scatter": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false,
+                "placement": "top"
+              }
+            }
+          },
+          "treemap": {
+            "series": {
+              "group": {
+                "label": {
+                  "enabled": true
+                }
+              },
+              "tile": {
+                "label": {
+                  "enabled": true
+                }
+              },
+              "tooltip": {
+                "enabled": true
+              }
+            },
+            "padding": {
+              "bottom": 10
+            }
+          },
+          "sunburst": {
+            "series": {
+              "tooltip": {
+                "enabled": true,
+                "position": {
+                  "anchorTo": "pointer"
+                },
+                "interaction": {
+                  "enabled": true
+                }
+              },
+              "label": {
+                "enabled": true
+              }
+            },
+            "padding": {
+              "bottom": 10
+            }
+          },
+          "heatmap": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": true
+              }
+            },
+            "padding": {
+              "bottom": 10
+            }
+          },
+          "waterfall": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              }
+            }
+          },
+          "radar-line": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "radar-area": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "radial-bar": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "radial-column": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          },
+          "nightingale": {
+            "series": {
+              "tooltip": {
+                "enabled": true
+              },
+              "label": {
+                "enabled": false
+              }
+            }
+          }
+        }
+      },
+      "overrides": {}
+    },
+    "overrides": {}
+  },
+  "effective": {
+    "mode": "light",
+    "family": "line",
+    "background": {
+      "visible": true,
+      "fill": "#FFFFFF"
+    },
+    "padding": {
+      "top": 20,
+      "right": 20,
+      "bottom": 20,
+      "left": 20
+    },
+    "title": {
+      "enabled": false,
+      "text": "Title",
+      "fontFamily": "Verdana, sans-serif",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "color": "#181d1f",
+      "spacing": 20
+    },
+    "subtitle": {
+      "enabled": false,
+      "text": "Subtitle",
+      "fontFamily": "Verdana, sans-serif",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "color": "#707374",
+      "spacing": 20
+    },
+    "legend": {
+      "enabled": true,
+      "position": "top",
+      "spacing": 20,
+      "maxHeight": 50,
+      "item": {
+        "paddingX": 32,
+        "paddingY": 8,
+        "marker": {
+          "shape": "square",
+          "size": 11,
+          "padding": 5
+        },
+        "label": {
+          "fontFamily": "Verdana, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "color": "#000"
+        }
+      }
+    },
+    "axes": [
+      {
+        "type": "category",
+        "position": "bottom",
+        "keys": [],
+        "title": {
+          "enabled": false,
+          "text": "Axis Title",
+          "fontFamily": "Verdana, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "color": "#181d1f",
+          "spacing": 25
+        },
+        "label": {
+          "enabled": true,
+          "fontFamily": "Verdana, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "color": "#181d1f",
+          "spacing": 11
+        },
+        "line": {
+          "enabled": true,
+          "width": 1
+        },
+        "gridLine": {
+          "enabled": false,
+          "width": 1,
+          "style": [
+            {
+              "fillOpacity": 1,
+              "stroke": "#e8e8e9",
+              "strokeWidth": 1,
+              "lineDash": []
+            }
+          ]
+        }
+      },
+      {
+        "type": "number",
+        "position": "left",
+        "keys": [],
+        "title": {
+          "enabled": false,
+          "text": "Axis Title",
+          "fontFamily": "Verdana, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "color": "#181d1f",
+          "spacing": 25
+        },
+        "label": {
+          "enabled": true,
+          "fontFamily": "Verdana, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "color": "#181d1f",
+          "spacing": 11
+        },
+        "line": {
+          "enabled": false,
+          "width": 1
+        },
+        "gridLine": {
+          "enabled": true,
+          "width": 1,
+          "style": [
+            {
+              "fillOpacity": 1,
+              "stroke": "#e8e8e9",
+              "strokeWidth": 1,
+              "lineDash": []
+            }
+          ]
+        }
+      }
+    ],
+    "series": [
+      {
+        "type": "line",
+        "xKey": "period",
+        "yKey": "revenue",
+        "yName": "Revenue (USD millions)",
+        "stroke": "#5090dc",
+        "strokeOpacity": 1,
+        "strokeWidth": 2,
+        "connectMissingData": true,
+        "marker": {
+          "enabled": false,
+          "shape": "circle",
+          "size": 7,
+          "fill": "#5090dc",
+          "stroke": "#2b5c95",
+          "strokeWidth": 0
+        },
+        "label": {
+          "enabled": false,
+          "fontFamily": "Verdana, sans-serif",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "color": "#181d1f"
+        }
+      },
+      {
+        "type": "line",
+        "xKey": "period",
+        "yKey": "operatingIncome",
+        "yName": "Operating Income (USD millions)",
+        "stroke": "#ffa03a",
+        "strokeOpacity": 1,
+        "strokeWidth": 2,
+        "connectMissingData": true,
+        "marker": {
+          "enabled": false,
+          "shape": "circle",
+          "size": 7,
+          "fill": "#ffa03a",
+          "stroke": "#cc6f10",
+          "strokeWidth": 0
+        },
+        "label": {
+          "enabled": false,
+          "fontFamily": "Verdana, sans-serif",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "color": "#181d1f"
+        }
+      }
+    ]
+  }
+}

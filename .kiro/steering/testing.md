@@ -8,7 +8,7 @@ Adapted at the user's request on 2026-10-16 from the sibling because-security-qu
 - Run headless in the background. Never move the desktop pointer, inject system keyboard events, steal focus, or attach to the user's browser.
 - Hide Windows helper consoles as well: Python CREATE_NO_WINDOW, Node windowsHide, or PowerShell Start-Process -WindowStyle Hidden. Capture output and clean up only owned processes.
 - Use Chrome DevTools diagnostics against the owned browser endpoint to inspect console/network errors and traces. Verify tool availability and isolation before use; do not claim diagnostics ran merely because configuration exists.
-- Keep profiles, screenshots, traces, videos, storage state, and logs in ignored project artifact paths. Do not capture credentials or token-entry cases. Use disposable test accounts.
+- Keep raw profiles, traces, videos, storage state and logs in ignored project artifact paths. Do not capture credentials or token-entry cases. Use disposable test accounts. Reviewed synthetic screenshots and sanitized evidence are published under `artifacts/reviewed/` under the owner instruction below.
 - Preserve acceptance-critical findings as Playwright regressions against the real application. Assertions verify displayed data and user effects, not just a toast, handler, HTTP 200, or visible button.
 - Include success and relevant failure/recovery cases, save/reopen persistence where promised, and console/network failures. Browser checks do not prove financial calculations; those need independent data/reference assertions.
 
@@ -22,6 +22,8 @@ Adapted at the user's request on 2026-10-16 from the sibling because-security-qu
 - Capture each command, revision/image digest, exit code, and artifact location. Diagnose failures; do not retry until a pass without explaining the underlying fault or nondeterminism.
 
 ## Breadth and evidence
+
+Owner instruction, 2026-10-17: sync the reviewable artifact folder before committing and pushing, and include the artifacts in the repository. Use `artifacts/reviewed/` as an explicit public evidence mirror of selected local outputs. Preserve original source paths and hashes in its sync manifest, record published hashes and any sanitization or path changes, and identify omitted historical evidence. Synchronize only completed, reviewed outputs; do not copy an actively written run. Check the manifest against actual bytes before staging. Include synthetic screenshots, fixtures, reports and verification scripts needed to assess the recorded result. Exclude credentials, private account/database state, environment files, authentication traces, dependency caches and image archives. Raw evidence stays local; a sanitized derivative must not claim the original file's hash. Independently review the publication set and stage explicit paths before pushing.
 
 `.kiro/breadth.toml` links capability -> spec criteria -> planned/implemented test -> evidence status. Planned test IDs are not executable tests. Never label a capability verified based on an empty or skipped suite. Parked PostgreSQL work is not a baseline coverage target.
 

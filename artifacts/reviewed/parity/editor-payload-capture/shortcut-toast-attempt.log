@@ -1,0 +1,64 @@
+waiting baseline
+settled baseline writes=1
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button').filter({ has: locator('svg#list-unordered') })[22m
+[2m    - locator resolved to <button type="button" id="radix-:r38:" data-state="closed" aria-haspopup="menu" aria-expanded="false" class="obb-small-navbar-btn">…</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <li tabindex="0" data-index="0" data-front="true" data-styled="false" data-mounted="true" data-swiped="false" data-visible="true" data-type="success" data-sonner-toast="" data-promise="false" data-removed="false" data-swiping="false" data-expanded="true" data-y-position="top" data-swipe-out="false" data-x-position="right" data-dismissible="true" class="flex flex-wrap pointer-events-auto! rounded p-4 w-[var(--width)] h-[var(--height)] border-2 shadow-[0px_2px_10px_0px_rgba(0,0,0,0.1)] text-black te…>…</li> from <section tabindex="-1" aria-live="polite" aria-atomic="false" aria-relevant="additions text" aria-label="Notifications alt+T">…</section> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <li tabindex="0" data-index="0" data-front="true" data-styled="false" data-mounted="true" data-swiped="false" data-visible="true" data-type="success" data-sonner-toast="" data-promise="false" data-removed="false" data-swiping="false" data-expanded="true" data-y-position="top" data-swipe-out="false" data-x-position="right" data-dismissible="true" class="flex flex-wrap pointer-events-auto! rounded p-4 w-[var(--width)] h-[var(--height)] border-2 shadow-[0px_2px_10px_0px_rgba(0,0,0,0.1)] text-black te…>…</li> from <section tabindex="-1" aria-live="polite" aria-atomic="false" aria-relevant="additions text" aria-label="Notifications alt+T">…</section> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    58 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <li tabindex="0" data-index="0" data-front="true" data-styled="false" data-mounted="true" data-swiped="false" data-visible="true" data-type="success" data-sonner-toast="" data-promise="false" data-removed="false" data-swiping="false" data-expanded="true" data-y-position="top" data-swipe-out="false" data-x-position="right" data-dismissible="true" class="flex flex-wrap pointer-events-auto! rounded p-4 w-[var(--width)] h-[var(--height)] border-2 shadow-[0px_2px_10px_0px_rgba(0,0,0,0.1)] text-black te…>…</li> from <section tabindex="-1" aria-live="polite" aria-atomic="false" aria-relevant="additions text" aria-label="Notifications alt+T">…</section> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at /mnt/d/Source/QOpenBB/artifacts/parity/editor-payload-capture/journey.mjs:23:79 {
+  log: [
+    "  - waiting for locator('button').filter({ has: locator('svg#list-unordered') })",
+    '    - locator resolved to <button type="button" id="radix-:r38:" data-state="closed" aria-haspopup="menu" aria-expanded="false" class="obb-small-navbar-btn">…</button>',
+    '  - attempting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <li tabindex="0" data-index="0" data-front="true" data-styled="false" data-mounted="true" data-swiped="false" data-visible="true" data-type="success" data-sonner-toast="" data-promise="false" data-removed="false" data-swiping="false" data-expanded="true" data-y-position="top" data-swipe-out="false" data-x-position="right" data-dismissible="true" class="flex flex-wrap pointer-events-auto! rounded p-4 w-[var(--width)] h-[var(--height)] border-2 shadow-[0px_2px_10px_0px_rgba(0,0,0,0.1)] text-black te…>…</li> from <section tabindex="-1" aria-live="polite" aria-atomic="false" aria-relevant="additions text" aria-label="Notifications alt+T">…</section> subtree intercepts pointer events',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <li tabindex="0" data-index="0" data-front="true" data-styled="false" data-mounted="true" data-swiped="false" data-visible="true" data-type="success" data-sonner-toast="" data-promise="false" data-removed="false" data-swiping="false" data-expanded="true" data-y-position="top" data-swipe-out="false" data-x-position="right" data-dismissible="true" class="flex flex-wrap pointer-events-auto! rounded p-4 w-[var(--width)] h-[var(--height)] border-2 shadow-[0px_2px_10px_0px_rgba(0,0,0,0.1)] text-black te…>…</li> from <section tabindex="-1" aria-live="polite" aria-atomic="false" aria-relevant="additions text" aria-label="Notifications alt+T">…</section> subtree intercepts pointer events',
+    '    - retrying click action',
+    '      - waiting 100ms',
+    '    58 × waiting for element to be visible, enabled and stable',
+    '       - element is visible, enabled and stable',
+    '       - scrolling into view if needed',
+    '       - done scrolling',
+    '       - <li tabindex="0" data-index="0" data-front="true" data-styled="false" data-mounted="true" data-swiped="false" data-visible="true" data-type="success" data-sonner-toast="" data-promise="false" data-removed="false" data-swiping="false" data-expanded="true" data-y-position="top" data-swipe-out="false" data-x-position="right" data-dismissible="true" class="flex flex-wrap pointer-events-auto! rounded p-4 w-[var(--width)] h-[var(--height)] border-2 shadow-[0px_2px_10px_0px_rgba(0,0,0,0.1)] text-black te…>…</li> from <section tabindex="-1" aria-live="polite" aria-atomic="false" aria-relevant="additions text" aria-label="Notifications alt+T">…</section> subtree intercepts pointer events',
+    '     - retrying click action',
+    '       - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.0
