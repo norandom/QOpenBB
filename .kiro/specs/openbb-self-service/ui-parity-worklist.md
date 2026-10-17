@@ -18,7 +18,7 @@ Each row identifies a production outcome. Larger rows must be implemented throug
 | UI-08 | Restore quick actions, navigator/mini-chart and current-image export | UI-06, UI-07; existing actions and ECharts host | Original action conditions work; navigator changes the visible extent; exported image reflects the latest visible chart | Integration pending |
 | UI-09 | Complete application save/reopen/restart and failure recovery | UI-07, UI-08; existing backend and accepted SQLite repair | Layout, chart model, theme, range and settings state survive reopen/restart; failed saves preserve edits and show failure | Application acceptance pending |
 
-The first reviewable UI preview uses the actual production editor components. It must identify incomplete integration and cannot be presented as the finished product. If appearance is uncertain, show the owner matched screenshots and ask whether it is similar enough. Keep original controls and flags; no hidden reduction is authorized.
+The owner accepted the combined Set Up and Titles previews at Workspace 495a08f (reply: "ok"). These use the actual production editor components; live chart integration remains pending. For subsequent uncertain visual changes, show the owner matched screenshots and ask whether they are similar enough. Keep original controls and flags; no hidden reduction is authorized.
 
 UI-04 and UI-05 prepare controls and transformations against frozen contracts. Their live displayed-chart acceptance is joined in UI-06, so the worklist does not require a working session before its own prerequisites can be implemented.
 
