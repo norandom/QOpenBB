@@ -20,6 +20,8 @@ Accepted [snapshot](chart-snapshot-design.md), [option-state](chart-option-state
 
 The [original editor contract](echarts-editor-contract.md) establishes one dark column panel and selected real edits. [Theme findings](chart-theme-runtime-findings.md) establish settled effective defaults for one dark grouped-column fixture only, including separate fill/stroke colors, Verdana labels, 20px padding and legend geometry. Seven outgoing payloads establish stored field paths, not reopen behavior. An original screenshot with two HTML-as-JavaScript errors is not clean application acceptance.
 
+Subsequent [stock matrix captures](chart-theme-matrix-findings.md) cover dark/light grouped-column, stacked-column and line through original UI transitions. They close the six stock-default observations, while custom themes, expanded editor fields and range effects remain open. Per-case attempt mapping preserves earlier selector/projection failures; original script-route diagnostics remain recorded. These captures do not establish candidate parity or backend persistence.
+
 Before freezing runtime tasks, obtain the following finite original-reference evidence in the controller's exclusive heavy queue. This document supplies the capture contract; it does not claim the captures ran.
 
 | Required observation | Record and design consequence |
