@@ -1,0 +1,32 @@
+{
+  "status": "source-only proposal; no runtime grant",
+  "language": "en",
+  "originalSource": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "resources": {"originalContainers": 1, "ownedInternalNetworks": 1, "browserProcesses": 0, "providerRequests": 0, "fixtureVariants": 0, "restarts": 0, "recreations": 0},
+  "sampling": {"maximumSnapshots": 3, "targetOffsetsMsFromRunReturn": [0, 1000, 3000], "sameOwnedContainerOnly": true, "persistBeforeAssertion": true, "maximumHealthRequests": 1, "stopWhenDiscriminated": true, "readinessPolicy": false},
+  "deadlinesMs": {"input": 90000, "cleanup": 60000, "hard": 150000, "dockerCommand": 5000, "healthRequest": 2000},
+  "outputs": {"retainedFiles": 32, "perPublicJsonBytes": 65536, "publicJsonTotalBytes": 524288, "retainedTotalBytes": 2097152, "portEntriesPerTargetArray": 4, "stringChars": 128},
+  "selectedPaths": [
+    "NetworkSettings.Ports presence",
+    "NetworkSettings.Ports.3000/tcp presence and bounded HostIp/HostPort entries",
+    "HostConfig.PortBindings presence",
+    "HostConfig.PortBindings.3000/tcp presence and bounded HostIp/HostPort entries",
+    "State presence",
+    "State.Status",
+    "State.Running",
+    "State.Restarting",
+    "State.Dead",
+    "State.ExitCode",
+    "State.OOMKilled",
+    "State.StartedAt",
+    "State.FinishedAt"
+  ],
+  "forbiddenReceipts": ["Config.Env", "Config.Cmd", "Config.Entrypoint", "full Config.Labels", "State.Error", "State.Health", "full inspect JSON", "container logs", "HTTP headers", "HTTP bodies", "credentials"],
+  "network": {"driver": "bridge", "internal": true, "ipv6": false, "attachedNetworks": 1, "hostIp": "127.0.0.1", "containerPort": "3000/tcp", "dns": "127.0.0.1", "httpProxies": "empty", "alternateTopology": false},
+  "http": {"endpoint": "/api/health", "method": "GET", "maxRedirects": 0, "maxRetries": 0, "rejectAny3xx": true, "rejectAnyLocation": true, "exactValidatedLoopbackOriginOnly": true},
+  "publication": {"reviewRequired": true, "excludePrivateRuntime": true, "excludeGeneratedCredentials": true},
+  "gates": ["independent plan review", "source-only implementation with offline fault tests", "independent exact collector-source review", "separate controller one-probe grant", "one bounded probe", "independent evidence interpretation"],
+  "runtimeExecuted": false,
+  "checksExecuted": "Source hashes, reference resolution and contract arithmetic only; probe tests are planned"
+}

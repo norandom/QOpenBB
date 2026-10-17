@@ -31,7 +31,7 @@ The follow-up reference tasks narrow the draft's unknowns without changing its f
 | [Color and Shadow](chart-color-shadow-findings.md) | Keyboard/alpha/invalid-input behavior and retained visible Shadow effects. | Canonical Shadow representation and broader renderer integration remain open. |
 | [Axes](chart-axis-control-findings.md) | Positions, ticks, label edits/restoration, type resets and the tested Time Format rendering failure. | Original quirks need explicit design treatment; no candidate or general time-domain correctness is established. |
 | [Tooltips](chart-tooltip-invocation-findings.md) | Duplicate-label and missing/zero content discriminators, with retained target/display disagreements. | Picked ownership, tied omission and complete keyboard coverage remain unresolved. |
-| [Legend](chart-legend-capture-plan.md) | Reviewed finite capture plan, including geometry and live-series observation boundaries. | Collector review and original runtime evidence remain outstanding. |
+| [Legend](chart-legend-capture-plan.md) | Reviewed collector source; the first attempt stopped before browser launch. | Selected startup diagnostics precede another capture; original Legend behavior remains unverified. |
 
 These rows supplement the historical ledgers; they do not rewrite their original evidence status or count planned checks as passing tests. The widget completion port, continuous-edit scheduler, settled export contract and full Set Up/family behavior remain separate joins.
 

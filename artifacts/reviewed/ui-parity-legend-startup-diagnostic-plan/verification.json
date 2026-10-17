@@ -1,0 +1,17 @@
+{
+  "status": "passed-source-plan-checks",
+  "runtimeExecuted": false,
+  "checks": [
+    "Reference files resolved and hashed",
+    "Contract bounds and 90+60=150 seconds checked",
+    "No-browser and stop-when-discriminated contract checked"
+  ],
+  "probeTests": "planned, not executed",
+  "independentReview": "pending",
+  "productionCaps": "Research exclusion; future production remains 400 physical/file,300 logical/file,50/function",
+  "missingCoreSteering": [
+    "product.md",
+    "tech.md",
+    "structure.md"
+  ]
+}

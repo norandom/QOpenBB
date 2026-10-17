@@ -92,10 +92,12 @@
     "ui-parity-legend-redirect-review",
     "ui-parity-tooltip-reservation-analysis",
     "ui-parity-tooltip-reservation-review",
-    "ui-parity-legend-startup-review"
+    "ui-parity-legend-startup-review",
+    "ui-parity-legend-startup-diagnostic-plan",
+    "ui-parity-legend-startup-diagnostic-plan-review"
   ],
   "sourcepins": {
-    "root_at_sync": "3f6a0a6899c5b517d0ef4fa9670ff1c8d66abd1e",
+    "root_at_sync": "e30d1dd0c97e03738cbef2bf2fc2538da49008db",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -26308,6 +26310,102 @@
       "publishedSHA256": "7b7aa3fb86f4ce4561a6e2184a39ee29455615e046b3542bf1e708379c7552a8",
       "bytes": 783,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan/plan.md",
+      "sourceSHA256": "efa8a5f3befea5ea6ba5c2494a7370e93f663567c977236521574985f7316eb0",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan/plan.md",
+      "publishedSHA256": "efa8a5f3befea5ea6ba5c2494a7370e93f663567c977236521574985f7316eb0",
+      "bytes": 11902,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan/research.md",
+      "sourceSHA256": "28187df29565120dc8a12581fc0838b5ca1cfa14c98f500f5ead8a37c5cfd149",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan/research.md",
+      "publishedSHA256": "28187df29565120dc8a12581fc0838b5ca1cfa14c98f500f5ead8a37c5cfd149",
+      "bytes": 2108,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan/probe-contract.json",
+      "sourceSHA256": "56ccf655d24e2e764ed9c9c8b8ca11a1c4abc10fc2624728b7851f79b713a921",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan/probe-contract.json",
+      "publishedSHA256": "56ccf655d24e2e764ed9c9c8b8ca11a1c4abc10fc2624728b7851f79b713a921",
+      "bytes": 2499,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan/freeze-plan.mjs",
+      "sourceSHA256": "62024c470489049f2490c6c7c4868078b44d20a02bc732bbef4bc2090b06da10",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan/freeze-plan.mjs",
+      "publishedSHA256": "62024c470489049f2490c6c7c4868078b44d20a02bc732bbef4bc2090b06da10",
+      "bytes": 3902,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan/verification.json",
+      "sourceSHA256": "0fa1eb5e9b6bcc9e2ae5741616191184f5ba46abb1457893d2d39952c7aedc0e",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan/verification.json",
+      "publishedSHA256": "0fa1eb5e9b6bcc9e2ae5741616191184f5ba46abb1457893d2d39952c7aedc0e",
+      "bytes": 523,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan/source-hashes.json",
+      "sourceSHA256": "2a25a9384c484712bc40e4629f4de2181c6d8bac2c44ad1656a23cb6084a51f2",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan/source-hashes.json",
+      "publishedSHA256": "2a25a9384c484712bc40e4629f4de2181c6d8bac2c44ad1656a23cb6084a51f2",
+      "bytes": 4725,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan/publication-allowlist.json",
+      "sourceSHA256": "596b1f22568ba377966ede10786dad01a86a6c3b78b096a6cc35d3143ad500d7",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan/publication-allowlist.json",
+      "publishedSHA256": "596b1f22568ba377966ede10786dad01a86a6c3b78b096a6cc35d3143ad500d7",
+      "bytes": 1181,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan-review/review.md",
+      "sourceSHA256": "e788a3eee84cc84bdc8fd6486429c7c9bfa9d71156c4435a52b5e21eb339b5cd",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan-review/review.md",
+      "publishedSHA256": "e788a3eee84cc84bdc8fd6486429c7c9bfa9d71156c4435a52b5e21eb339b5cd",
+      "bytes": 7100,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan-review/verification.json",
+      "sourceSHA256": "c0426b9b50a13f5d103a08617ebdf240e7e026ce6868e04b1dd2cf663513f58a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan-review/verification.json",
+      "publishedSHA256": "c0426b9b50a13f5d103a08617ebdf240e7e026ce6868e04b1dd2cf663513f58a",
+      "bytes": 9241,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan-review/audit.mjs",
+      "sourceSHA256": "0ff9702a35a008dcd892b5ce59a9fe97c271aa089e28cfa68702533e751f8c7e",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan-review/audit.mjs",
+      "publishedSHA256": "0ff9702a35a008dcd892b5ce59a9fe97c271aa089e28cfa68702533e751f8c7e",
+      "bytes": 7595,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan-review/read-only-freeze.mjs",
+      "sourceSHA256": "ff818b52210df3f22ee8dcc17692ef3c63da1ec3bd0bd58f84cdd7f92f1d6df2",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan-review/read-only-freeze.mjs",
+      "publishedSHA256": "ff818b52210df3f22ee8dcc17692ef3c63da1ec3bd0bd58f84cdd7f92f1d6df2",
+      "bytes": 773,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-plan-review/publication-allowlist.json",
+      "sourceSHA256": "bc420ee5f73552cb4d1fd21e8e331bf9b4ed8455d3cdf9dfc4fe0c770dc38864",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-plan-review/publication-allowlist.json",
+      "publishedSHA256": "bc420ee5f73552cb4d1fd21e8e331bf9b4ed8455d3cdf9dfc4fe0c770dc38864",
+      "bytes": 1572,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -27021,5 +27119,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 159778456
+  "total_payload_bytes": 159831577
 }

@@ -1,0 +1,22 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const base=path.dirname(fileURLToPath(import.meta.url)),project=path.resolve(base,'../..');
+const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const entry=sourcePath=>{const file=path.resolve(project,sourcePath);return {sourcePath,sha256:sha(file),bytes:fs.statSync(file).size};};
+const contract=JSON.parse(fs.readFileSync(base+'/probe-contract.json'));
+assert.equal(contract.runtimeExecuted,false);assert.equal(contract.resources.browserProcesses,0);assert.equal(contract.resources.originalContainers,1);assert.equal(contract.resources.ownedInternalNetworks,1);
+assert.equal(contract.sampling.maximumSnapshots,3);assert.equal(contract.sampling.stopWhenDiscriminated,true);assert.equal(contract.sampling.readinessPolicy,false);assert.equal(contract.sampling.persistBeforeAssertion,true);
+assert.equal(contract.deadlinesMs.input+contract.deadlinesMs.cleanup,contract.deadlinesMs.hard);assert.equal(contract.deadlinesMs.hard,150000);assert.equal(contract.outputs.portEntriesPerTargetArray,4);
+const inputs=['.kiro/steering/testing.md','.kiro/steering/ci.md','.kiro/steering/documentation.md','.kiro/steering/delegation.md','.kiro/steering/complexity.md','.agents/skills/kiro-spec-design/SKILL.md','.agents/skills/kiro-spec-design/rules/design-principles.md','.agents/skills/kiro-spec-design/rules/design-discovery-light.md','.agents/skills/kiro-spec-design/rules/design-synthesis.md','.agents/skills/kiro-spec-design/rules/design-review-gate.md','.kiro/specs/openbb-self-service/spec.json','artifacts/ui-parity-legend-capture-redirect-guard/harness/start.mjs','artifacts/ui-parity-legend-capture-redirect-guard/harness/network.mjs','artifacts/ui-parity-legend-capture-redirect-guard/harness/cleanup.mjs','artifacts/ui-parity-legend-redirect-review/review.md','artifacts/ui-parity-legend-capture-redirect-guard/analysis-attempt-20261017T1549043-3a567782/report.md','artifacts/ui-parity-legend-capture-redirect-guard/analysis-attempt-20261017T1549043-3a567782/owned-absence.json','artifacts/ui-parity-legend-capture-redirect-guard/analysis-attempt-20261017T1549043-3a567782/execution-receipt.json'].map(entry);
+const prefix='artifacts/ui-parity-legend-startup-diagnostic-plan/';
+const sources=['plan.md','research.md','probe-contract.json','freeze-plan.mjs'].map(name=>entry(prefix+name));
+fs.writeFileSync(base+'/verification.json',JSON.stringify({status:'passed-source-plan-checks',runtimeExecuted:false,checks:['Reference files resolved and hashed','Contract bounds and 90+60=150 seconds checked','No-browser and stop-when-discriminated contract checked'],probeTests:'planned, not executed',independentReview:'pending',productionCaps:'Research exclusion; future production remains 400 physical/file,300 logical/file,50/function',missingCoreSteering:['product.md','tech.md','structure.md'].filter(name=>!fs.existsSync(project+'/.kiro/steering/'+name))},null,2));
+sources.push(entry(prefix+'verification.json'));
+fs.writeFileSync(base+'/source-hashes.json',JSON.stringify({status:'source-only-plan-frozen-for-review',runtimeExecuted:false,sourceFiles:sources,inputs},null,2));
+const allowlist=[...sources,entry(prefix+'source-hashes.json')];
+for(const f of allowlist){assert.equal(sha(path.resolve(project,f.sourcePath)),f.sha256);assert.equal(fs.statSync(path.resolve(project,f.sourcePath)).size,f.bytes);}
+fs.writeFileSync(base+'/publication-allowlist.json',JSON.stringify(allowlist,null,2));
+console.log(JSON.stringify({status:'source-only-plan-frozen',sources:sources.length,inputs:inputs.length,allowlistFiles:allowlist.length,planSha256:sha(base+'/plan.md'),sourceHashesSha256:sha(base+'/source-hashes.json'),allowlistSha256:sha(base+'/publication-allowlist.json'),runtimeExecuted:false}));

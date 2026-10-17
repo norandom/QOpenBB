@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "Approved source-plan and exact publication only; no implementation or runtime grant",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-legend-startup-diagnostic-plan-review/review.md",
+      "sha256": "e788a3eee84cc84bdc8fd6486429c7c9bfa9d71156c4435a52b5e21eb339b5cd",
+      "bytes": 7100,
+      "sanitization": "None; independent source-plan review and offline checks only"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-startup-diagnostic-plan-review/verification.json",
+      "sha256": "c0426b9b50a13f5d103a08617ebdf240e7e026ce6868e04b1dd2cf663513f58a",
+      "bytes": 9241,
+      "sanitization": "None; independent source-plan review and offline checks only"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-startup-diagnostic-plan-review/audit.mjs",
+      "sha256": "0ff9702a35a008dcd892b5ce59a9fe97c271aa089e28cfa68702533e751f8c7e",
+      "bytes": 7595,
+      "sanitization": "None; independent source-plan review and offline checks only"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-startup-diagnostic-plan-review/read-only-freeze.mjs",
+      "sha256": "ff818b52210df3f22ee8dcc17692ef3c63da1ec3bd0bd58f84cdd7f92f1d6df2",
+      "bytes": 773,
+      "sanitization": "None; independent source-plan review and offline checks only"
+    }
+  ],
+  "omissions": [
+    "Allowlist copied separately as metadata; no self-hash.",
+    "No runtime values, credentials, logs, profiles, dependencies, images or probe execution."
+  ]
+}
