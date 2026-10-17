@@ -111,10 +111,11 @@
     "ui-parity-legend-fixed-relay",
     "ui-parity-legend-fixed-relay-review",
     "ui-parity-legend-fixed-relay-revised",
-    "ui-parity-legend-fixed-relay-revision-review"
+    "ui-parity-legend-fixed-relay-revision-review",
+    "ui-parity-legend-relay-attempt-review"
   ],
   "sourcepins": {
-    "root_at_sync": "c0a3a06efd20789555eb2faa3e95de2297a2ab2b",
+    "root_at_sync": "0210a450abc5de0513c63978b189189de5547142",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -28023,6 +28024,262 @@
       "publishedSHA256": "5936ebf29acfc5b64ca3c0d7696e93e1cfb931f35dcf51e4755c724b79ee782d",
       "bytes": 1670,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/admission.mjs",
+      "sourceSHA256": "b4b065926be52262f31ea5dbdbec3a9d255c204a25337f9d46054f68513b00d8",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/admission.mjs",
+      "publishedSHA256": "b4b065926be52262f31ea5dbdbec3a9d255c204a25337f9d46054f68513b00d8",
+      "bytes": 12525,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/cleanup.mjs",
+      "sourceSHA256": "dfb81350c2a1debac4e8cb20737644fab64b6c48eac14dcf74a67219a120c34d",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/cleanup.mjs",
+      "publishedSHA256": "dfb81350c2a1debac4e8cb20737644fab64b6c48eac14dcf74a67219a120c34d",
+      "bytes": 6345,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/finalize.mjs",
+      "sourceSHA256": "70c7664d50961b0c3dffc05446701dedb67f94fb816bab6a51ded94ef97820ed",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/finalize.mjs",
+      "publishedSHA256": "70c7664d50961b0c3dffc05446701dedb67f94fb816bab6a51ded94ef97820ed",
+      "bytes": 1397,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/io.mjs",
+      "sourceSHA256": "f3b391edc2cc4f60824c103b7b7cab28307f221f8fc7305dc88c41ccae195e53",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/io.mjs",
+      "publishedSHA256": "f3b391edc2cc4f60824c103b7b7cab28307f221f8fc7305dc88c41ccae195e53",
+      "bytes": 3757,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/probe.mjs",
+      "sourceSHA256": "61876a25cde310de35ea08947a25f413558c50170e6ba05e32b228a89458e1f2",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/probe.mjs",
+      "publishedSHA256": "61876a25cde310de35ea08947a25f413558c50170e6ba05e32b228a89458e1f2",
+      "bytes": 6926,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/relay.py",
+      "sourceSHA256": "ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/relay.py",
+      "publishedSHA256": "ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf",
+      "bytes": 10711,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/run.sh",
+      "sourceSHA256": "70aee6793937afaf5323985e5000de4eed6095a895107de562ad922d832b4aae",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/harness/run.sh",
+      "publishedSHA256": "70aee6793937afaf5323985e5000de4eed6095a895107de562ad922d832b4aae",
+      "bytes": 998,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/supervise.sh",
+      "sourceSHA256": "60bd9e3a2d44e3fbfeaf98cb06088621a331820b8159f2f7b80b55e51fe9ad80",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/supervise.sh",
+      "publishedSHA256": "60bd9e3a2d44e3fbfeaf98cb06088621a331820b8159f2f7b80b55e51fe9ad80",
+      "bytes": 1053,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/source-manifest.json",
+      "sourceSHA256": "dcb25a5a5bcadf2d5628b0f2ebd2077586c7bde325a063b4eb5bf72f266b8700",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/source-manifest.json",
+      "publishedSHA256": "dcb25a5a5bcadf2d5628b0f2ebd2077586c7bde325a063b4eb5bf72f266b8700",
+      "bytes": 3755,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/preparation.json",
+      "sourceSHA256": "d02060fb6fe17a60b426c82bd1d197f0fca67c8bb26a9be8d0c6199473f9fabf",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/preparation.json",
+      "publishedSHA256": "d02060fb6fe17a60b426c82bd1d197f0fca67c8bb26a9be8d0c6199473f9fabf",
+      "bytes": 183,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/admission-receipts.json",
+      "sourceSHA256": "8a564bec49b8c10a69c321bda45944c64b2df8d1a360d9067e28a76ec60ba7ad",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/admission-receipts.json",
+      "publishedSHA256": "8a564bec49b8c10a69c321bda45944c64b2df8d1a360d9067e28a76ec60ba7ad",
+      "bytes": 6309,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/probe-result.json",
+      "sourceSHA256": "d423685119685e511cd109ad6f4974c383037bdfcd77d1fd06bf84c3bd9c18aa",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/probe-result.json",
+      "publishedSHA256": "d423685119685e511cd109ad6f4974c383037bdfcd77d1fd06bf84c3bd9c18aa",
+      "bytes": 173,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/cleanup-report.json",
+      "sourceSHA256": "a7227e492cc2180504d6627abb3fcb07fa31587d8f7400c9ef48820a951cc228",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/cleanup-report.json",
+      "publishedSHA256": "a7227e492cc2180504d6627abb3fcb07fa31587d8f7400c9ef48820a951cc228",
+      "bytes": 698,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/run-status.json",
+      "sourceSHA256": "87217bf1133f47697d48dec9cb17e20226c1ec2fe8676be827f2ef9c7cb5a1a0",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/run-status.json",
+      "publishedSHA256": "87217bf1133f47697d48dec9cb17e20226c1ec2fe8676be827f2ef9c7cb5a1a0",
+      "bytes": 219,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/watchdog-status.json",
+      "sourceSHA256": "932e82b0582e30bff893299d845542fa954caa36ffb18893fee6ccd17c54a2a3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/watchdog-status.json",
+      "publishedSHA256": "932e82b0582e30bff893299d845542fa954caa36ffb18893fee6ccd17c54a2a3",
+      "bytes": 156,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/relay-stats.json",
+      "sourceSHA256": "372ace61caccab1a045367fa47ded21106d2d25b704f7c2038a0af39b879c437",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/relay-stats.json",
+      "publishedSHA256": "372ace61caccab1a045367fa47ded21106d2d25b704f7c2038a0af39b879c437",
+      "bytes": 378,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/helper-launch.json",
+      "sourceSHA256": "17f4796b3329926fae0d179fad7eb97fadacf2cb5f4afd68d8fbdd2936380d9f",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/helper-launch.json",
+      "publishedSHA256": "17f4796b3329926fae0d179fad7eb97fadacf2cb5f4afd68d8fbdd2936380d9f",
+      "bytes": 221,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/final-output-inventory.json",
+      "sourceSHA256": "8d8cfce4b4f2b625980cfc2ae55babc9b2dedc237eb1b8d9c7337499541c8d5c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/attempt-20261017T1700437-e5d5e603/final-output-inventory.json",
+      "publishedSHA256": "8d8cfce4b4f2b625980cfc2ae55babc9b2dedc237eb1b8d9c7337499541c8d5c",
+      "bytes": 1095,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/report.md",
+      "sourceSHA256": "8dc1d929b2b377a55a96e8aea31d02c49f9925e620d97c5a3740ba1aebd62cb2",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/report.md",
+      "publishedSHA256": "8dc1d929b2b377a55a96e8aea31d02c49f9925e620d97c5a3740ba1aebd62cb2",
+      "bytes": 4550,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/verify-evidence.mjs",
+      "sourceSHA256": "c80270253564e10fbb8bdc2c3962e27e9816d2e6479e1db09838cf35f4bef82c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/verify-evidence.mjs",
+      "publishedSHA256": "c80270253564e10fbb8bdc2c3962e27e9816d2e6479e1db09838cf35f4bef82c",
+      "bytes": 9710,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/check-owned-absence.mjs",
+      "sourceSHA256": "e7be083be8f2af034e38f2653630089f51cdbf160a53ee8113cb677a1708e6b5",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/check-owned-absence.mjs",
+      "publishedSHA256": "e7be083be8f2af034e38f2653630089f51cdbf160a53ee8113cb677a1708e6b5",
+      "bytes": 2249,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/fresh-owned-absence.json",
+      "sourceSHA256": "91ce9abbad74361706a8be198c0b682acbf9fd83e5749d23853772ce46c6c69f",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/fresh-owned-absence.json",
+      "publishedSHA256": "91ce9abbad74361706a8be198c0b682acbf9fd83e5749d23853772ce46c6c69f",
+      "bytes": 836,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/fresh-helper-absence.json",
+      "sourceSHA256": "5277698645c040573efdde106c86aac033c11e70b84f830ab185bbeef6fa7873",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/fresh-helper-absence.json",
+      "publishedSHA256": "5277698645c040573efdde106c86aac033c11e70b84f830ab185bbeef6fa7873",
+      "bytes": 177,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/observations.json",
+      "sourceSHA256": "cbaf60e3f6eed393156f0ff3c77ea72afbfa26f53ca765bdeb209b8506017149",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/observations.json",
+      "publishedSHA256": "cbaf60e3f6eed393156f0ff3c77ea72afbfa26f53ca765bdeb209b8506017149",
+      "bytes": 2217,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/attempt-inventory.json",
+      "sourceSHA256": "e16e5823a54e274fbb1068624328bfef6f66bc2fef787cf80398f0d8842103f1",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/attempt-inventory.json",
+      "publishedSHA256": "e16e5823a54e274fbb1068624328bfef6f66bc2fef787cf80398f0d8842103f1",
+      "bytes": 1861,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/verification.json",
+      "sourceSHA256": "a3996b43f4758138beae610a362b1568e9ff8948da08f8ff3cff3352ac43d0e8",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/verification.json",
+      "publishedSHA256": "a3996b43f4758138beae610a362b1568e9ff8948da08f8ff3cff3352ac43d0e8",
+      "bytes": 497,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/publication-allowlist.json",
+      "sourceSHA256": "a0c8a3224ce04bdda3efb58c955166db805a3993f0d1191b99a75e5e58de7aa2",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/publication-allowlist.json",
+      "publishedSHA256": "a0c8a3224ce04bdda3efb58c955166db805a3993f0d1191b99a75e5e58de7aa2",
+      "bytes": 6057,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-attempt-review/review.md",
+      "sourceSHA256": "ed782ed082613e26e19397526c5387a6319ab3d29076f03f3cffd81b3122b0a6",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-attempt-review/review.md",
+      "publishedSHA256": "ed782ed082613e26e19397526c5387a6319ab3d29076f03f3cffd81b3122b0a6",
+      "bytes": 7355,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-attempt-review/audit.mjs",
+      "sourceSHA256": "1cfe8c6e4f2d183b7ae81fe058db7df0ab3b304fab8ecace17109882285d275d",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-attempt-review/audit.mjs",
+      "publishedSHA256": "1cfe8c6e4f2d183b7ae81fe058db7df0ab3b304fab8ecace17109882285d275d",
+      "bytes": 12530,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-attempt-review/verification.json",
+      "sourceSHA256": "2701b922c911a00bdd40d69ffe526175248bfc5e745fb636c2b713e6b256b2d1",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-attempt-review/verification.json",
+      "publishedSHA256": "2701b922c911a00bdd40d69ffe526175248bfc5e745fb636c2b713e6b256b2d1",
+      "bytes": 1939,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-attempt-review/reviewed-evidence-publication-allowlist.json",
+      "sourceSHA256": "a0c8a3224ce04bdda3efb58c955166db805a3993f0d1191b99a75e5e58de7aa2",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-attempt-review/reviewed-evidence-publication-allowlist.json",
+      "publishedSHA256": "a0c8a3224ce04bdda3efb58c955166db805a3993f0d1191b99a75e5e58de7aa2",
+      "bytes": 6057,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-attempt-review/publication-allowlist.json",
+      "sourceSHA256": "600c0391db6db4a1fec0439c349e80447b47602582b8f18be24a524dec7fe3a0",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-attempt-review/publication-allowlist.json",
+      "publishedSHA256": "600c0391db6db4a1fec0439c349e80447b47602582b8f18be24a524dec7fe3a0",
+      "bytes": 821,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -28736,5 +28993,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 161036686
+  "total_payload_bytes": 161150441
 }

@@ -1,0 +1,86 @@
+{
+  "attempt": "attempt-20261017T1700437-e5d5e603",
+  "outcome": "probe-unresolved",
+  "stage": "relay-inspect",
+  "reason": "security-unresolved",
+  "healthGets": 0,
+  "browsers": 0,
+  "legendCases": 0,
+  "appSingleInternalAttachment": true,
+  "appNoPublication": true,
+  "relayExactTwoAttachments": true,
+  "relayLoopbackBinding": {
+    "HostIp": "127.0.0.1",
+    "HostPort": "32807"
+  },
+  "falseRelaySecurityFlags": [
+    "exactMounts"
+  ],
+  "mounts": [
+    {
+      "destination": "/relay/relay.py",
+      "type": "bind",
+      "readWrite": false,
+      "sourceIdentityMatched": true
+    },
+    {
+      "destination": "/relay/config.json",
+      "type": "bind",
+      "readWrite": false,
+      "sourceIdentityMatched": true
+    },
+    {
+      "destination": "/evidence/relay-stats.json",
+      "type": "bind",
+      "readWrite": true,
+      "sourceIdentityMatched": true
+    }
+  ],
+  "configuredTmpfs": {
+    "present": true,
+    "kind": "value",
+    "type": "string",
+    "value": "rw,nosuid,nodev,size=1048576"
+  },
+  "relayStats": {
+    "phase": "closed",
+    "cleanStop": true,
+    "acceptedPairs": 0,
+    "activePairs": 0,
+    "peakPairs": 0,
+    "peakSockets": 1,
+    "receivedBytes": 0,
+    "forwardedBytes": 0,
+    "peakBufferedBytes": 0,
+    "maximumPairBytes": 0,
+    "refusedConnections": 0,
+    "peerClosures": 0,
+    "violations": {
+      "accepted-pairs": 0,
+      "pair-bytes": 0,
+      "total-bytes": 0,
+      "connect-timeout": 0,
+      "transport-truncated": 0,
+      "socket-error": 0,
+      "config-error": 0,
+      "stats-error": 0
+    }
+  },
+  "rawCleanupStatus": "cleaned",
+  "rawRunStatus": "diagnostic-closed",
+  "helper": {
+    "processId": 41536,
+    "startTimeUtc": "2026-10-17T17:01:06.2379268Z",
+    "startTimeTicks": "639278532662379268",
+    "exitCode": 1,
+    "absent": true
+  },
+  "freshOwnedAbsence": true,
+  "resourceAbsenceUpperBoundMs": 69458,
+  "hardCeilingMs": 150000,
+  "retries": 0,
+  "sourceModified": false,
+  "manifestSha256": "dcb25a5a5bcadf2d5628b0f2ebd2077586c7bde325a063b4eb5bf72f266b8700",
+  "sourceSha256": "7d1dbfc86d2cef42d8b8e73eacf63c85dd0c3676938c95d10210976cd5d263fb",
+  "reviewSha256": "edcc27905f2db4dc5a8f2477776e07e96a4921eeb90626d514246afa276c6bd7"
+}

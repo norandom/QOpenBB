@@ -1,0 +1,46 @@
+{
+  "verdict": "APPROVED",
+  "scope": "Failed-attempt interpretation and exact publication selection; no topology or UI success",
+  "checks": [
+    "Exact 26-file publication and accepted source/review identities",
+    "Eight exact executed copies and recorded preparation",
+    "Actual classifier and selected state/attachment/publication evidence",
+    "Three selected bind mounts versus separate configured tmpfs",
+    "Stopped prefix implies no harness readiness GET; no browser path",
+    "Recorded-ID/name cleanup and saved independent absence scope",
+    "Exact helper identity, exit and conservative lifecycle bound",
+    "Final inventory and raw inventory reconciliation within caps",
+    "Public selection excludes private state/logs and concrete secret markers",
+    "Supplied verifier read-only pass and preserved frozen inputs"
+  ],
+  "groupedChecks": 10,
+  "allowlistSha256": "a0c8a3224ce04bdda3efb58c955166db805a3993f0d1191b99a75e5e58de7aa2",
+  "executedFiles": 8,
+  "selectedFiles": 26,
+  "totals": {
+    "files": 24,
+    "bytes": 58083,
+    "publicJsonBytes": 13236
+  },
+  "resourceAbsenceUpperBoundMs": 69458,
+  "suppliedVerifier": {
+    "status": "passed",
+    "checks": 12,
+    "selectedFiles": 26,
+    "attemptFiles": 24,
+    "retainedBytes": 58083,
+    "healthGets": 0,
+    "probeOutcome": "unresolved-security-gate",
+    "cleanup": "absence-verified",
+    "runtimeCalls": 0,
+    "allowlistSha256": "a0c8a3224ce04bdda3efb58c955166db805a3993f0d1191b99a75e5e58de7aa2"
+  },
+  "liveDockerOrHelperQueriesRepeated": false,
+  "currentStateAndCredentialAbsenceChecked": true,
+  "runtimeExecuted": false,
+  "networkOpened": false,
+  "frozenInputsPreserved": true,
+  "secretScan": "Exact private ownership value, generated credential patterns and bounded common-token/private-key markers; not exhaustive for every secret format",
+  "command": "node artifacts/ui-parity-legend-relay-attempt-review/audit.mjs",
+  "exitCode": 0
+}
