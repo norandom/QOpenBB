@@ -1,0 +1,21 @@
+{
+  "evidenceKind": "outgoing POST only, not backend readback",
+  "postCount": 1,
+  "chartType": "groupedColumn",
+  "tooltip": {
+    "mode": "compact"
+  },
+  "switchCategorySeries": false,
+  "aggFunc": null,
+  "cellRange": {
+    "rowStartIndex": null,
+    "rowStartPinned": null,
+    "rowEndIndex": null,
+    "rowEndPinned": null,
+    "columns": [
+      "period",
+      "revenue",
+      "operatingIncome"
+    ]
+  }
+}

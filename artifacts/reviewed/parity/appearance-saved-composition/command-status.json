@@ -1,0 +1,23 @@
+{
+  "commands": [
+    {
+      "command": "wsl -d Debian -u mc -- /mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node --check /mnt/d/Source/QOpenBB/artifacts/parity/appearance-saved-composition/journey.mjs",
+      "exit": 0
+    },
+    {
+      "command": "wsl -d Debian -u mc -- bash /mnt/d/Source/QOpenBB/artifacts/parity/appearance-saved-composition/run.sh",
+      "exit": 0,
+      "startExit": 0,
+      "journeyExit": 0
+    },
+    {
+      "command": "wsl -d Debian -u mc -- /mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node /mnt/d/Source/QOpenBB/artifacts/parity/appearance-saved-composition/cleanup.mjs",
+      "exit": 0
+    },
+    {
+      "command": "wsl -d Debian -u mc -- bash -c 'cd /mnt/d/Source/QOpenBB && pipeline/.venv/bin/python artifacts/parity/appearance-saved-composition/assert.py'",
+      "exit": 0
+    }
+  ],
+  "scope": "reference only, synthetic saved widget input, no backend persistence"
+}

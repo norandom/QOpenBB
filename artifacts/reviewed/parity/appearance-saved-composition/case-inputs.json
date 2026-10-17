@@ -1,0 +1,174 @@
+[
+  {
+    "id": "bar-common",
+    "family": "groupedColumn",
+    "saved": {
+      "common": {
+        "title": {
+          "enabled": true,
+          "text": "SAVED COMMON",
+          "color": "#123456"
+        },
+        "legend": {
+          "position": "bottom"
+        },
+        "axes": {
+          "number": {
+            "label": {
+              "color": "#123456"
+            }
+          }
+        },
+        "series": {
+          "fill": "#123456",
+          "stroke": "#234567",
+          "strokeWidth": 7
+        }
+      }
+    }
+  },
+  {
+    "id": "bar-family",
+    "family": "groupedColumn",
+    "saved": {
+      "common": {
+        "title": {
+          "enabled": true,
+          "text": "SAVED COMMON",
+          "color": "#123456"
+        },
+        "legend": {
+          "position": "bottom"
+        },
+        "axes": {
+          "number": {
+            "label": {
+              "color": "#123456"
+            }
+          }
+        },
+        "series": {
+          "fill": "#123456",
+          "stroke": "#234567",
+          "strokeWidth": 7
+        }
+      },
+      "bar": {
+        "title": {
+          "enabled": true,
+          "text": "SAVED BAR",
+          "color": "#654321"
+        },
+        "legend": {
+          "position": "right"
+        },
+        "axes": {
+          "number": {
+            "label": {
+              "color": "#654321"
+            },
+            "left": {
+              "label": {
+                "color": "#abcdef"
+              }
+            }
+          }
+        },
+        "series": {
+          "fill": "#abcdef",
+          "stroke": "#fedcba",
+          "strokeWidth": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "line-common",
+    "family": "line",
+    "saved": {
+      "common": {
+        "title": {
+          "enabled": true,
+          "text": "SAVED COMMON",
+          "color": "#123456"
+        },
+        "legend": {
+          "position": "bottom"
+        },
+        "axes": {
+          "number": {
+            "label": {
+              "color": "#123456"
+            }
+          }
+        },
+        "series": {
+          "fill": "#123456",
+          "stroke": "#234567",
+          "strokeWidth": 7
+        }
+      }
+    }
+  },
+  {
+    "id": "line-family",
+    "family": "line",
+    "saved": {
+      "common": {
+        "title": {
+          "enabled": true,
+          "text": "SAVED COMMON",
+          "color": "#123456"
+        },
+        "legend": {
+          "position": "bottom"
+        },
+        "axes": {
+          "number": {
+            "label": {
+              "color": "#123456"
+            }
+          }
+        },
+        "series": {
+          "fill": "#123456",
+          "stroke": "#234567",
+          "strokeWidth": 7
+        }
+      },
+      "line": {
+        "title": {
+          "enabled": true,
+          "text": "SAVED LINE",
+          "color": "#654321"
+        },
+        "legend": {
+          "position": "right"
+        },
+        "axes": {
+          "number": {
+            "label": {
+              "color": "#654321"
+            },
+            "left": {
+              "label": {
+                "color": "#abcdef"
+              }
+            }
+          }
+        },
+        "series": {
+          "fill": "#abcdef",
+          "stroke": "#fedcba",
+          "strokeWidth": 5,
+          "marker": {
+            "enabled": true,
+            "fill": "#789abc",
+            "stroke": "#cba987",
+            "strokeWidth": 2
+          }
+        }
+      }
+    }
+  }
+]

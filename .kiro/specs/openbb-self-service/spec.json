@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-17T11:16:10.769356+00:00",
+  "updated_at": "2026-10-17T11:33:45.220085+00:00",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -224,7 +224,32 @@
         "implementation_source_revision": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
         "implementation_review": "artifacts/reviewed/task-2.40/review/verdict.md",
         "implementation_verification": "chart-grid-capture-verification.md",
-        "validation": "GO and VERIFIED for tasks 2.38-2.40 ordinary capture only; appearance/editor/application/renderer/release gates remain open"
+        "validation": "GO and VERIFIED for tasks 2.38-2.40 ordinary capture only; appearance/editor/application/renderer/release gates remain open",
+        "appearance_editor_followup": {
+          "phase": "discovery-reviewed",
+          "approval_note": "Owner said go after ordinary capture acceptance. Continue parallel appearance/editor contract research; new implementation remains subject to concrete design/task approval.",
+          "candidate_revision": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
+          "production_changed": false,
+          "lanes": [
+            "appearance collision and derived-color contracts",
+            "tooltip and numeric transpose/editor contracts"
+          ],
+          "evidence_accepted": true,
+          "implementation_approved": false,
+          "implementation_accepted": false,
+          "findings": [
+            "chart-appearance-contract-close.md",
+            "chart-appearance-saved-composition.md",
+            "chart-editor-contract-close.md"
+          ],
+          "reviews": [
+            "artifacts/reviewed/parity/appearance-contract-review/review.md",
+            "artifacts/reviewed/parity/appearance-saved-review/review.md",
+            "artifacts/reviewed/parity/editor-contract-review/review.md"
+          ],
+          "publication_addendum": "artifacts/reviewed/parity/appearance-contract-review/publication-link-addendum.md",
+          "validation": "Scoped original-reference research accepted: 44 appearance assertions and 262144 normalized color comparisons; 99 saved-input assertions; 30 editor assertions and six raster bar checks. Full B2/C, candidate integration, missing-value transpose and backend persistence remain open."
+        }
       }
     }
   }

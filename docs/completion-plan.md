@@ -36,6 +36,7 @@ Before calling this deployable, verify original dashboard interactions, FMP/FRED
 
 ## Source findings
 
+- [Latest appearance, saved-option and editor contracts](../.kiro/specs/openbb-self-service/chart-runtime-next-plan.md#appearance-and-editor-follow-up-2026-10-17)
 - [Grid capture and SQLite findings](../.kiro/specs/openbb-self-service/chart-next-discovery.md)
 - [Owner-approved SQLite repair design](../.kiro/specs/openbb-self-service/sqlite-repair-design.md)
 - [Effective style discovery](../.kiro/specs/openbb-self-service/chart-effective-style-discovery.md)

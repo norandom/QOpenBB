@@ -1,0 +1,39 @@
+{
+  "frozen": true,
+  "reviewRequired": false,
+  "files": [
+    {
+      "sourcePath": "artifacts/parity/appearance-saved-review/review.md",
+      "sha256": "5e6f9a4d57d30844fd9dbee2072e2ccb4c73c83d1485f5b627528fc9580fcfda",
+      "bytes": 6057
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-saved-review/check.py",
+      "sha256": "9bf513cb690b3f1a04df2fa6003dafac7bb794a2cda5bd2a2a1cee9e146fdd8a",
+      "bytes": 3932
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-saved-review/checks.json",
+      "sha256": "02961047290a87a8f01a6fb41e1a1351d5d674351ad6bacc97767f4a9cd528cb",
+      "bytes": 9182
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-saved-review/reviewed-input-allowlist.json",
+      "sha256": "7b5a8c37ec078cb1841d89f9972466962ade4e83e529f0a6e05d18750da4dd31",
+      "bytes": 4395
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-saved-review/offline/assertions.json",
+      "sha256": "a685d78dab7cebc863f897d70689df64df66862a9af0ccd55a32fd8904f9856b",
+      "bytes": 19831
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-saved-review/freeze-publication.py",
+      "sha256": "9dd43672e36ae2befcf225ed005444aef921d78a2073cef70ce64a856290977b",
+      "bytes": 810
+    }
+  ],
+  "excluded": [
+    "copied offline inputs already present in the approved capture publication set"
+  ]
+}

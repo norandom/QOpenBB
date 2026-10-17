@@ -1,0 +1,904 @@
+{
+  "passed": true,
+  "assertions": 99,
+  "checks": [
+    {
+      "name": "bar-common/exact-saved-input",
+      "actual": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456",
+            "stroke": "#234567",
+            "strokeWidth": 7
+          }
+        }
+      },
+      "expected": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456",
+            "stroke": "#234567",
+            "strokeWidth": 7
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "bar-common/native-family",
+      "actual": "groupedColumn",
+      "expected": "groupedColumn",
+      "passed": true
+    },
+    {
+      "name": "bar-common/native-selected-namespace-projection-empty",
+      "actual": {},
+      "expected": {},
+      "passed": true
+    },
+    {
+      "name": "bar-common/generated-common-legend",
+      "actual": "top",
+      "expected": "top",
+      "passed": true
+    },
+    {
+      "name": "bar-common/saved-common-title-removed",
+      "actual": "absent",
+      "expected": "absent",
+      "passed": true
+    },
+    {
+      "name": "bar-common/title-enabled",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "bar-common/effective-title",
+      "actual": "Title",
+      "expected": "Title",
+      "passed": true
+    },
+    {
+      "name": "bar-common/legend",
+      "actual": "top",
+      "expected": "top",
+      "passed": true
+    },
+    {
+      "name": "bar-common/number-position",
+      "actual": "left",
+      "expected": "left",
+      "passed": true
+    },
+    {
+      "name": "bar-common/number-label",
+      "actual": "#fff",
+      "expected": "#fff",
+      "passed": true
+    },
+    {
+      "name": "bar-common/series0/type",
+      "actual": "bar",
+      "expected": "bar",
+      "passed": true
+    },
+    {
+      "name": "bar-common/series0/fill",
+      "actual": "#5090dc",
+      "expected": "#5090dc",
+      "passed": true
+    },
+    {
+      "name": "bar-common/series0/stroke",
+      "actual": "#74a8e6",
+      "expected": "#74a8e6",
+      "passed": true
+    },
+    {
+      "name": "bar-common/series0/width",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "bar-common/series1/type",
+      "actual": "bar",
+      "expected": "bar",
+      "passed": true
+    },
+    {
+      "name": "bar-common/series1/fill",
+      "actual": "#ffa03a",
+      "expected": "#ffa03a",
+      "passed": true
+    },
+    {
+      "name": "bar-common/series1/stroke",
+      "actual": "#ffbe70",
+      "expected": "#ffbe70",
+      "passed": true
+    },
+    {
+      "name": "bar-common/series1/width",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "bar-family/exact-saved-input",
+      "actual": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456",
+            "stroke": "#234567",
+            "strokeWidth": 7
+          }
+        },
+        "bar": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED BAR",
+            "color": "#654321"
+          },
+          "legend": {
+            "position": "right"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#654321"
+              },
+              "left": {
+                "label": {
+                  "color": "#abcdef"
+                }
+              }
+            }
+          },
+          "series": {
+            "fill": "#abcdef",
+            "stroke": "#fedcba",
+            "strokeWidth": 3
+          }
+        }
+      },
+      "expected": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456",
+            "stroke": "#234567",
+            "strokeWidth": 7
+          }
+        },
+        "bar": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED BAR",
+            "color": "#654321"
+          },
+          "legend": {
+            "position": "right"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#654321"
+              },
+              "left": {
+                "label": {
+                  "color": "#abcdef"
+                }
+              }
+            }
+          },
+          "series": {
+            "fill": "#abcdef",
+            "stroke": "#fedcba",
+            "strokeWidth": 3
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "bar-family/native-family",
+      "actual": "groupedColumn",
+      "expected": "groupedColumn",
+      "passed": true
+    },
+    {
+      "name": "bar-family/native-selected-namespace-projection-empty",
+      "actual": {},
+      "expected": {},
+      "passed": true
+    },
+    {
+      "name": "bar-family/generated-common-legend",
+      "actual": "top",
+      "expected": "top",
+      "passed": true
+    },
+    {
+      "name": "bar-family/saved-common-title-removed",
+      "actual": "absent",
+      "expected": "absent",
+      "passed": true
+    },
+    {
+      "name": "bar-family/title-enabled",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "bar-family/effective-title",
+      "actual": "SAVED BAR",
+      "expected": "SAVED BAR",
+      "passed": true
+    },
+    {
+      "name": "bar-family/legend",
+      "actual": "right",
+      "expected": "right",
+      "passed": true
+    },
+    {
+      "name": "bar-family/number-position",
+      "actual": "left",
+      "expected": "left",
+      "passed": true
+    },
+    {
+      "name": "bar-family/number-label",
+      "actual": "#abcdef",
+      "expected": "#abcdef",
+      "passed": true
+    },
+    {
+      "name": "bar-family/series0/type",
+      "actual": "bar",
+      "expected": "bar",
+      "passed": true
+    },
+    {
+      "name": "bar-family/series0/fill",
+      "actual": "#abcdef",
+      "expected": "#abcdef",
+      "passed": true
+    },
+    {
+      "name": "bar-family/series0/stroke",
+      "actual": "#fedcba",
+      "expected": "#fedcba",
+      "passed": true
+    },
+    {
+      "name": "bar-family/series0/width",
+      "actual": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "bar-family/series1/type",
+      "actual": "bar",
+      "expected": "bar",
+      "passed": true
+    },
+    {
+      "name": "bar-family/series1/fill",
+      "actual": "#abcdef",
+      "expected": "#abcdef",
+      "passed": true
+    },
+    {
+      "name": "bar-family/series1/stroke",
+      "actual": "#fedcba",
+      "expected": "#fedcba",
+      "passed": true
+    },
+    {
+      "name": "bar-family/series1/width",
+      "actual": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "line-common/exact-saved-input",
+      "actual": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456",
+            "stroke": "#234567",
+            "strokeWidth": 7
+          }
+        }
+      },
+      "expected": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456",
+            "stroke": "#234567",
+            "strokeWidth": 7
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "line-common/native-family",
+      "actual": "line",
+      "expected": "line",
+      "passed": true
+    },
+    {
+      "name": "line-common/native-selected-namespace-projection-empty",
+      "actual": {},
+      "expected": {},
+      "passed": true
+    },
+    {
+      "name": "line-common/generated-common-legend",
+      "actual": "top",
+      "expected": "top",
+      "passed": true
+    },
+    {
+      "name": "line-common/saved-common-title-removed",
+      "actual": "absent",
+      "expected": "absent",
+      "passed": true
+    },
+    {
+      "name": "line-common/title-enabled",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "line-common/effective-title",
+      "actual": "Title",
+      "expected": "Title",
+      "passed": true
+    },
+    {
+      "name": "line-common/legend",
+      "actual": "top",
+      "expected": "top",
+      "passed": true
+    },
+    {
+      "name": "line-common/number-position",
+      "actual": "left",
+      "expected": "left",
+      "passed": true
+    },
+    {
+      "name": "line-common/number-label",
+      "actual": "#fff",
+      "expected": "#fff",
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/type",
+      "actual": "line",
+      "expected": "line",
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/fill-not-line-color",
+      "actual": "absent",
+      "expected": "absent",
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/stroke",
+      "actual": "#5090dc",
+      "expected": "#5090dc",
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/width",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/marker-fill",
+      "actual": "#5090dc",
+      "expected": "#5090dc",
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/marker-stroke",
+      "actual": "#74a8e6",
+      "expected": "#74a8e6",
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/marker-enabled",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/marker-width",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/marker-shape",
+      "actual": "circle",
+      "expected": "circle",
+      "passed": true
+    },
+    {
+      "name": "line-common/series0/marker-size",
+      "actual": 7,
+      "expected": 7,
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/type",
+      "actual": "line",
+      "expected": "line",
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/fill-not-line-color",
+      "actual": "absent",
+      "expected": "absent",
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/stroke",
+      "actual": "#ffa03a",
+      "expected": "#ffa03a",
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/width",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/marker-fill",
+      "actual": "#ffa03a",
+      "expected": "#ffa03a",
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/marker-stroke",
+      "actual": "#ffbe70",
+      "expected": "#ffbe70",
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/marker-enabled",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/marker-width",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/marker-shape",
+      "actual": "circle",
+      "expected": "circle",
+      "passed": true
+    },
+    {
+      "name": "line-common/series1/marker-size",
+      "actual": 7,
+      "expected": 7,
+      "passed": true
+    },
+    {
+      "name": "line-family/exact-saved-input",
+      "actual": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456",
+            "stroke": "#234567",
+            "strokeWidth": 7
+          }
+        },
+        "line": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED LINE",
+            "color": "#654321"
+          },
+          "legend": {
+            "position": "right"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#654321"
+              },
+              "left": {
+                "label": {
+                  "color": "#abcdef"
+                }
+              }
+            }
+          },
+          "series": {
+            "fill": "#abcdef",
+            "stroke": "#fedcba",
+            "strokeWidth": 5,
+            "marker": {
+              "enabled": true,
+              "fill": "#789abc",
+              "stroke": "#cba987",
+              "strokeWidth": 2
+            }
+          }
+        }
+      },
+      "expected": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456",
+            "stroke": "#234567",
+            "strokeWidth": 7
+          }
+        },
+        "line": {
+          "title": {
+            "enabled": true,
+            "text": "SAVED LINE",
+            "color": "#654321"
+          },
+          "legend": {
+            "position": "right"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#654321"
+              },
+              "left": {
+                "label": {
+                  "color": "#abcdef"
+                }
+              }
+            }
+          },
+          "series": {
+            "fill": "#abcdef",
+            "stroke": "#fedcba",
+            "strokeWidth": 5,
+            "marker": {
+              "enabled": true,
+              "fill": "#789abc",
+              "stroke": "#cba987",
+              "strokeWidth": 2
+            }
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "line-family/native-family",
+      "actual": "line",
+      "expected": "line",
+      "passed": true
+    },
+    {
+      "name": "line-family/native-selected-namespace-projection-empty",
+      "actual": {},
+      "expected": {},
+      "passed": true
+    },
+    {
+      "name": "line-family/generated-common-legend",
+      "actual": "top",
+      "expected": "top",
+      "passed": true
+    },
+    {
+      "name": "line-family/saved-common-title-removed",
+      "actual": "absent",
+      "expected": "absent",
+      "passed": true
+    },
+    {
+      "name": "line-family/title-enabled",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "line-family/effective-title",
+      "actual": "SAVED LINE",
+      "expected": "SAVED LINE",
+      "passed": true
+    },
+    {
+      "name": "line-family/legend",
+      "actual": "right",
+      "expected": "right",
+      "passed": true
+    },
+    {
+      "name": "line-family/number-position",
+      "actual": "left",
+      "expected": "left",
+      "passed": true
+    },
+    {
+      "name": "line-family/number-label",
+      "actual": "#abcdef",
+      "expected": "#abcdef",
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/type",
+      "actual": "line",
+      "expected": "line",
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/fill-not-line-color",
+      "actual": "absent",
+      "expected": "absent",
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/stroke",
+      "actual": "#fedcba",
+      "expected": "#fedcba",
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/width",
+      "actual": 5,
+      "expected": 5,
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/marker-fill",
+      "actual": "#789abc",
+      "expected": "#789abc",
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/marker-stroke",
+      "actual": "#cba987",
+      "expected": "#cba987",
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/marker-enabled",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/marker-width",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/marker-shape",
+      "actual": "circle",
+      "expected": "circle",
+      "passed": true
+    },
+    {
+      "name": "line-family/series0/marker-size",
+      "actual": 7,
+      "expected": 7,
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/type",
+      "actual": "line",
+      "expected": "line",
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/fill-not-line-color",
+      "actual": "absent",
+      "expected": "absent",
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/stroke",
+      "actual": "#fedcba",
+      "expected": "#fedcba",
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/width",
+      "actual": 5,
+      "expected": 5,
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/marker-fill",
+      "actual": "#789abc",
+      "expected": "#789abc",
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/marker-stroke",
+      "actual": "#cba987",
+      "expected": "#cba987",
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/marker-enabled",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/marker-width",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/marker-shape",
+      "actual": "circle",
+      "expected": "circle",
+      "passed": true
+    },
+    {
+      "name": "line-family/series1/marker-size",
+      "actual": 7,
+      "expected": 7,
+      "passed": true
+    },
+    {
+      "name": "four-cases",
+      "actual": 4,
+      "expected": 4,
+      "passed": true
+    },
+    {
+      "name": "owned-cleanup",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "journey-exit",
+      "actual": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ]
+}

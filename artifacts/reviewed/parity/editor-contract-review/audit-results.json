@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "57 allowlisted hashes/sizes still match after scratch verification",
+    "UI labels, new event payloads, model patches and effective tooltip modes agree",
+    "Transpose and both restoration paths preserve every value, category identity/order and unit-bearing series name",
+    "Sum data agrees with independent grouping of original observation rows",
+    "Failure retained; corrective run succeeds; both cleanup reports pass and local credential/state absent",
+    "Derivative source hashes match; fresh scratch numerical/pixel results equal frozen results"
+  ],
+  "missingValueSemantics": "UNVERIFIED: all eight financial observations are finite and present; no null, undefined, absent, non-finite, zero or negative case was exercised",
+  "manifestSha256": "6f3f829bea21b97d458d34b809a1ebfd953bb9185a4e28bddaeb70fe3cc87943",
+  "specSha256": "7e982b54f722be5aad5e0fc84f37caf6c4be71f36d3ef0ff38efcde060b87d15"
+}

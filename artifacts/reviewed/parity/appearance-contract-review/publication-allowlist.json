@@ -1,0 +1,96 @@
+{
+  "frozen": true,
+  "reviewRequired": false,
+  "files": [
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/review.md",
+      "sha256": "efbfdc805a3e0050f516b7cfe41deee71f43600a01cd8e49a816ec5e0e6c0c91",
+      "bytes": 5311
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/review-initial.md",
+      "sha256": "c23c54437860eecf9db7c494466b7b81f6bc51d0eac54fb3343e0acfeb7020b5",
+      "bytes": 6666
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/check.py",
+      "sha256": "b4dfb8c6587f24d56cbe76d17fd707439ef2b146e3d1268a007ed1eb89e2c0a9",
+      "bytes": 3611
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/checks.json",
+      "sha256": "49724cdf00480fc8e6fb42b0bc0194e45907b650e40c7740c0e6bc2a15844c9b",
+      "bytes": 9061
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/reviewed-input-allowlist.json",
+      "sha256": "129654e9d227ef23770950128935fec587df57ceb54b73972e8baa41f4f1f967",
+      "bytes": 5417
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/math-check.cjs",
+      "sha256": "394b851a33213337e71e2138fb5b55f90efbd7d93dac1e7de9c7d07bd15ccd50",
+      "bytes": 1551
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/math-check.json",
+      "sha256": "c2bea82d04e9e4e233b08d5db5f18482741ff81be9a10ea3c426fc89d9949e50",
+      "bytes": 2888
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/corrected/check.py",
+      "sha256": "92c3a64febbb10d4a17a973bd1c95ca3768486a9654e5977ba64f18c4862b916",
+      "bytes": 3623
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/corrected/checks.json",
+      "sha256": "a6acacbeb76c92261619c761454d951acc37b2a3b4588db88d7657616c3691fd",
+      "bytes": 9596
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/corrected/reviewed-input-allowlist.json",
+      "sha256": "60677a94108fe5986ef0d926164670433ea140e705488c9dd9074d05a00f4cbb",
+      "bytes": 5846
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/corrected/offline/assertions.json",
+      "sha256": "a0d075548137321d8aa5e4188c6b0b33a51857c62db760c5e4a501178063d9ef",
+      "bytes": 5880
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/corrected/offline/normalized-color-evidence.json",
+      "sha256": "74b1ad224b3fa6008da5050b29ce15920e4e2e752f32aa1bd5b714668e36c45f",
+      "bytes": 1025
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/freeze-publication.py",
+      "sha256": "a2ef95530735e774e57f5e81b4b8ea2afb3fa68d21f1fdaec6eee47e4643d7ca",
+      "bytes": 1373
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/publication-link-addendum.md",
+      "sha256": "48be6d0018732b1495d0e72d211c7bd2552ef7da7dde4f08dc3725042b9a6ed8",
+      "bytes": 1068
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/publication-link-check.py",
+      "sha256": "7ae8d0381d89e52c49ccb7e1802348fa8636df5498647e60bea53871430436ab",
+      "bytes": 1269
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/publication-link-check.json",
+      "sha256": "12ccf80b5a7ce4919149f0abc3f45fcf0d3023de09ff1d29a437d34d65081e1e",
+      "bytes": 302
+    },
+    {
+      "sourcePath": "artifacts/parity/appearance-contract-review/publication-input-allowlist.json",
+      "sha256": "773cedee90a5317fa5f261453c0f9a642f852c7ee6b059d0ded0803ea8726694",
+      "bytes": 5848
+    }
+  ],
+  "excluded": [
+    "copied offline inputs and scripts already in the reviewed capture allowlist",
+    "check-output.txt because it reproduces dependency source excerpts",
+    "preserve-initial.py because it only reconstructs a historical allowlist"
+  ]
+}

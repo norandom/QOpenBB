@@ -1,0 +1,35 @@
+{
+  "installedDependency": {
+    "name": "ag-charts-community",
+    "version": "12.1.1",
+    "license": "MIT",
+    "files": [
+      {
+        "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/package.json",
+        "sha256": "77ae0168d7c6209f2c880a00748fadbb390da794532164d84e0b4382e61c5b88"
+      },
+      {
+        "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/LICENSE.txt",
+        "sha256": "1cb5ddc0b89c5bf0c5ccdf3a387edc4a1408c922968d633c719265c8ccdd354b"
+      },
+      {
+        "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/dist/package/main.cjs.js",
+        "sha256": "237912c75d2c7e8219fced7bb79e5ed8fca0f620d6f4d259cdfa58748445fcd1"
+      }
+    ]
+  },
+  "ownedSource": [
+    {
+      "path": "terminalpro/package.json",
+      "sha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "sha256": "ff4ffdf77236326f0f476d7a06f1cbc6b876f7d41235b9faca8999b4a3ca8e21"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a"
+    }
+  ]
+}

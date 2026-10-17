@@ -1,0 +1,44 @@
+{
+  "status": "APPROVED and frozen",
+  "sourceEvidenceManifestSha256": "6f3f829bea21b97d458d34b809a1ebfd953bb9185a4e28bddaeb70fe3cc87943",
+  "entries": [
+    {
+      "sha256": "7dd4c9f7e7ff690ba84e8e09707e9f84a722bebdd6dfeb57937551c1c35070fa",
+      "path": "review.md",
+      "bytes": 7668
+    },
+    {
+      "sha256": "4e361532bd5fedcfa86223bfb19a0fa7b76ec5a446ded098d51e3af3e789012a",
+      "path": "audit.py",
+      "bytes": 4776
+    },
+    {
+      "sha256": "cd2b96077e39e39f3f7d88d4beb20518d9a28494187b452f5c8c2ceb9db652c6",
+      "path": "audit-results.json",
+      "bytes": 963
+    },
+    {
+      "sha256": "d39520c045a1142cfc998c1a0b2111c058c04618fa176a83bcef04e06994b5c5",
+      "path": "allowlist-hash-audit.json",
+      "bytes": 9372
+    },
+    {
+      "sha256": "6e16e272da45fa4c31bea0420c81d6087c4bdeace301edb253d6fd525d03d841",
+      "path": "runtime-identity.json",
+      "bytes": 167
+    },
+    {
+      "sha256": "898443c04a4c423f89be29d3cf09b4e30c9cf71763021ec6eb9386171f5e4247",
+      "path": "fresh-verification.json",
+      "bytes": 2435
+    },
+    {
+      "sha256": "ae927f77a2a0eea98b8adff052f4d685e4d1d48fed212f062512c3c12cca01da",
+      "path": "fresh-pixel-verification.json",
+      "bytes": 1274
+    }
+  ],
+  "excluded": [
+    "scratch/**"
+  ]
+}

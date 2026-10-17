@@ -1,0 +1,31 @@
+{
+  "rawSha256": "33b24b4d59afdede1d61343ff876b89bb376c8ba085c0f9f208dba4195b23236",
+  "errors": [
+    {
+      "type": "pageerror",
+      "message": "Unexpected token '<'"
+    },
+    {
+      "type": "exception",
+      "message": "Uncaught"
+    },
+    {
+      "type": "console",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "console",
+      "message": "AxiosError: Request failed with status code 404\n    at pT (http://127.0.0.1:32782/api.BmyCH4VL.js:26:10547)\n    at XMLHttpRequest.g (http://127.0.0.1:32782/api.BmyCH4VL.js:26:16790)"
+    },
+    {
+      "type": "pageerror",
+      "message": "Unexpected token '<'"
+    },
+    {
+      "type": "exception",
+      "message": "Uncaught"
+    }
+  ],
+  "requestCount": 241,
+  "scope": "owned origin; external requests blocked; no request URLs or IDs published"
+}

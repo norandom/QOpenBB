@@ -1,0 +1,38 @@
+{
+  "commands": [
+    {
+      "command": "wsl -d Debian -u mc -- bash /mnt/d/Source/QOpenBB/artifacts/parity/appearance-contract-close/run.sh",
+      "startExit": 0,
+      "journeyExit": 0,
+      "overallExit": 0
+    },
+    {
+      "command": "wsl -d Debian -u mc -- bash /mnt/d/Source/QOpenBB/artifacts/parity/appearance-contract-close/source-evidence.sh",
+      "exit": 0
+    },
+    {
+      "command": "wsl -d Debian -u mc -- /mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node /mnt/d/Source/QOpenBB/artifacts/parity/appearance-contract-close/cleanup.mjs",
+      "exit": 0
+    },
+    {
+      "command": "wsl -d Debian -u mc -- bash -c 'cd /mnt/d/Source/QOpenBB && pipeline/.venv/bin/python artifacts/parity/appearance-contract-close/assert.py'",
+      "exit": 0
+    },
+    {
+      "command": "wsl -d Debian -u mc -- /mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node /mnt/d/Source/QOpenBB/artifacts/parity/appearance-contract-close/normalized-colors.mjs",
+      "exit": 0
+    }
+  ],
+  "initialAttempt": {
+    "journeyExit": 1,
+    "cause": "DataCloneError on trusted callback theme structuredClone",
+    "overallExactShellExitNotRetained": true
+  },
+  "sanitization": {
+    "source": "raw-cases.json",
+    "sourceSha256": "04976c15f8e619aafc7b493d5449a22ac0f22a83e7b4c2b66b39db181d240622",
+    "publishedDerivative": "cases.json",
+    "operation": "remove inherited nested theme object and callback markers; retain finite palette/params/overrides/base replacement"
+  },
+  "reviewRemediation": "Initial independent review rejected byte-domain interpolation; normalized operation order and exhaustive installed-library edge checks replace that unsupported generalization. Runtime cases unchanged."
+}

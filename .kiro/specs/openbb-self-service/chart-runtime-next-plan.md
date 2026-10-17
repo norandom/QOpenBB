@@ -20,6 +20,18 @@ Reuse the existing public GridApi and snapshot validator. The adapter accepts al
 
 ## Work after this batch
 
+### Appearance and editor follow-up, 2026-10-17
+
+The follow-up captures run the pinned original `38dffc33389aca0e4a87e0e88d42f7067aa220df` image. Candidate revision `76edf85a46298f7bc5212ff9944e4b66e9baa4af` remains untouched. Their findings refine the remaining integration contracts:
+
+- [Derived colors and bounded conflicts](chart-appearance-contract-close.md): isolate background-dependent grid/subtitle colors. Preserve normalized-channel evaluation order; a byte-domain shortcut fails rounding edge cases.
+- [Saved-option composition](chart-appearance-saved-composition.md): load nonempty saved models through the original hook and compare saved, combined and effective options for grouped columns and lines. This separates application composition from direct chart-library updates.
+- [Tooltip and transpose output](chart-editor-contract-close.md): connect three original tooltip choices to effective state and displayed content, capture complete transposed values and restoration, and check settled Sum geometry.
+
+These are reference contracts, not candidate renderer or persistence acceptance. Keep the next appearance design cohesive: resolved theme inputs, saved-family precedence and explicit mapper fields belong to the same consuming boundary. A standalone color helper would not close that boundary. Editor mapping should reuse the accepted option reducer and financial-formatting policy; transposition remains a separate numeric transformation contract. Do not infer a complete editor, arbitrary custom themes or backend reopen from these finite cases.
+
+Independent Astra reviews accept the bounded [appearance evidence](../../../artifacts/reviewed/parity/appearance-contract-review/review.md), [saved-input composition](../../../artifacts/reviewed/parity/appearance-saved-review/review.md), and [editor evidence](../../../artifacts/reviewed/parity/editor-contract-review/review.md). Fresh checks pass 44 appearance assertions, 262,144 normalized-color comparisons, 99 saved-input assertions, 30 editor assertions and six Sum raster bar checks. The [link addendum](../../../artifacts/reviewed/parity/appearance-contract-review/publication-link-addendum.md) binds the final appearance documentation links. Research is accepted; no new implementation phase is approved.
+
 1. Reuse accepted tasks 2.38-2.40 for ordinary resolved grid capture. Remaining numeric-only/general category and transformed/remote paths still need their own observed contracts before implementation. Existing implementation contracts remain unchanged.
 2. In parallel research, close finite appearance collision/derived-color rules and the remaining editor invocation/output gaps. A fresh reviewer checks these contracts before their implementation tasks are dispatched.
 3. Join accepted grid, appearance, formatting and editor behavior through the existing application session and entry points. Keep one owner for stored state and one integration lane for control wiring and guard removal.
@@ -31,7 +43,7 @@ Published evidence: [grid report](../../../artifacts/reviewed/parity/grid-runtim
 
 ## Evidence limits
 
-The editor's earlier failed attempt is retained separately from the successful focused run. Its aggregate arrays prove Q1 sums 220/45, while an immediate screenshot caught animation in progress; no settled aggregate geometry is claimed. Switch Category/Series changed model bindings, but complete transposed numerical output remains unverified. An outgoing save payload is not backend persistence proof.
+The earlier editor batch retained its failed attempt separately from the successful focused run. Its immediate aggregate screenshot caught animation in progress and its transpose projection was incomplete. The [follow-up](chart-editor-contract-close.md) supplies settled Sum geometry and complete transposed values for its dark grouped-column fixture. Missing-value transpose semantics, other families and candidate parity remain unverified. An outgoing save payload is not backend persistence proof.
 
 Both browser lanes used isolated disposable state and headless contexts; cleanup removed their containers, state and credentials. The known original datafeed script error remains visible in finite diagnostics. Dashboard fixture overlays do not establish production API or backend save/reopen behavior. Actual user menu reachability is distinguished from public-API filter/sort/visibility operations and the explicitly synthetic getter injection.
 

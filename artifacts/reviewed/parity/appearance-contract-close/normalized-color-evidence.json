@@ -1,0 +1,43 @@
+{
+  "package": "ag-charts-community@12.1.1",
+  "license": "MIT",
+  "method": "installed _Util.Color.mix/fromString/toString; exhaustive red-channel pairs; Math.round(clamp(normalized interpolation)*255)",
+  "edge": {
+    "foreground": "#000000",
+    "background": "#9b0000",
+    "t": 0.9,
+    "actual": "#8b0000",
+    "normalized": "#8b0000",
+    "byteShortcut": "#8c0000"
+  },
+  "ratios": [
+    {
+      "role": "dark-grid",
+      "t": 0.743,
+      "channelPairs": 65536,
+      "normalizedMismatches": 0,
+      "byteShortcutMismatches": 0
+    },
+    {
+      "role": "light-grid",
+      "t": 0.9,
+      "channelPairs": 65536,
+      "normalizedMismatches": 0,
+      "byteShortcutMismatches": 1220
+    },
+    {
+      "role": "dark-subtitle",
+      "t": 0.57,
+      "channelPairs": 65536,
+      "normalizedMismatches": 0,
+      "byteShortcutMismatches": 118
+    },
+    {
+      "role": "light-subtitle",
+      "t": 0.38,
+      "channelPairs": 65536,
+      "normalizedMismatches": 0,
+      "byteShortcutMismatches": 237
+    }
+  ]
+}

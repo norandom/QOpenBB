@@ -1,0 +1,4521 @@
+[
+  {
+    "id": "stock",
+    "kind": "synthetic-reference-public-update",
+    "input": {
+      "overrides": {},
+      "params": null,
+      "palette": null,
+      "baseThemeReplacement": null,
+      "baseline": "original reference proxy options; trusted callbacks preserved in memory only"
+    },
+    "effective": {
+      "background": {
+        "enabled": {
+          "presence": "absent"
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "#151518"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "title": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Title"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#fff"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 12
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "subtitle": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Subtitle"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#7a7a7b"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 13
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "legend": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "value",
+          "value": "top"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "transparent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#fff"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#fff"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": false
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "yKey": "revenue",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#5090dc"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#74a8e6"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        },
+        {
+          "type": "bar",
+          "yKey": "operatingIncome",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#ffa03a"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#ffbe70"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "common-family-collision",
+    "kind": "synthetic-reference-public-update",
+    "input": {
+      "overrides": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456"
+          }
+        },
+        "bar": {
+          "title": {
+            "enabled": true,
+            "text": "FAMILY",
+            "color": "#654321"
+          },
+          "legend": {
+            "position": "right"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#654321"
+              },
+              "left": {
+                "label": {
+                  "color": "#abcdef"
+                }
+              }
+            }
+          },
+          "series": {
+            "fill": "#abcdef"
+          }
+        }
+      },
+      "params": null,
+      "palette": null,
+      "baseThemeReplacement": null,
+      "baseline": "original reference proxy options; trusted callbacks preserved in memory only"
+    },
+    "effective": {
+      "background": {
+        "enabled": {
+          "presence": "absent"
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "#151518"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "title": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "value",
+          "value": "FAMILY"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#654321"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 12
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "subtitle": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Subtitle"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#7a7a7b"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 13
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "legend": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "value",
+          "value": "right"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "transparent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#fff"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#abcdef"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": false
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "yKey": "revenue",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#abcdef"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#74a8e6"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        },
+        {
+          "type": "bar",
+          "yKey": "operatingIncome",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#abcdef"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#ffbe70"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "common-only",
+    "kind": "synthetic-reference-public-update",
+    "input": {
+      "overrides": {
+        "common": {
+          "title": {
+            "enabled": true,
+            "text": "COMMON",
+            "color": "#123456"
+          },
+          "legend": {
+            "position": "bottom"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#123456"
+              }
+            }
+          },
+          "series": {
+            "fill": "#123456"
+          }
+        }
+      },
+      "params": null,
+      "palette": null,
+      "baseThemeReplacement": null,
+      "baseline": "original reference proxy options; trusted callbacks preserved in memory only"
+    },
+    "effective": {
+      "background": {
+        "enabled": {
+          "presence": "absent"
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "#151518"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "title": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "value",
+          "value": "COMMON"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#123456"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 12
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "subtitle": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Subtitle"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#7a7a7b"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 13
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "legend": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "value",
+          "value": "bottom"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "transparent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#fff"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#123456"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": false
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "yKey": "revenue",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#5090dc"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#74a8e6"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        },
+        {
+          "type": "bar",
+          "yKey": "operatingIncome",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#ffa03a"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#ffbe70"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "family-only",
+    "kind": "synthetic-reference-public-update",
+    "input": {
+      "overrides": {
+        "bar": {
+          "title": {
+            "enabled": true,
+            "text": "FAMILY",
+            "color": "#654321"
+          },
+          "legend": {
+            "position": "right"
+          },
+          "axes": {
+            "number": {
+              "label": {
+                "color": "#654321"
+              },
+              "left": {
+                "label": {
+                  "color": "#abcdef"
+                }
+              }
+            }
+          },
+          "series": {
+            "fill": "#abcdef"
+          }
+        }
+      },
+      "params": null,
+      "palette": null,
+      "baseThemeReplacement": null,
+      "baseline": "original reference proxy options; trusted callbacks preserved in memory only"
+    },
+    "effective": {
+      "background": {
+        "enabled": {
+          "presence": "absent"
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "#151518"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "title": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "value",
+          "value": "FAMILY"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#654321"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 12
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "subtitle": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Subtitle"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#7a7a7b"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 13
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "legend": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "value",
+          "value": "right"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "transparent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#fff"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#abcdef"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": false
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "yKey": "revenue",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#abcdef"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#74a8e6"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        },
+        {
+          "type": "bar",
+          "yKey": "operatingIncome",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#abcdef"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#ffbe70"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "background-only-dark",
+    "kind": "synthetic-reference-public-update",
+    "input": {
+      "overrides": {},
+      "params": {
+        "backgroundColor": "#26394a"
+      },
+      "palette": null,
+      "baseThemeReplacement": null,
+      "baseline": "original reference proxy options; trusted callbacks preserved in memory only"
+    },
+    "effective": {
+      "background": {
+        "enabled": {
+          "presence": "absent"
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "#26394a"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "title": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Title"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#fff"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 12
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "subtitle": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Subtitle"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#838e98"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 13
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "legend": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "value",
+          "value": "top"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "transparent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#fff"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c6cbcf"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#5e6c79",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#fff"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": false
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c6cbcf"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#5e6c79",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "yKey": "revenue",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#5090dc"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#74a8e6"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        },
+        {
+          "type": "bar",
+          "yKey": "operatingIncome",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#ffa03a"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#ffbe70"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "palette-only-dark",
+    "kind": "synthetic-reference-public-update",
+    "input": {
+      "overrides": {},
+      "params": null,
+      "palette": {
+        "fills": [
+          "#d12378",
+          "#21dc65"
+        ],
+        "strokes": [
+          "#ab34cd",
+          "#3ac9ed"
+        ]
+      },
+      "baseThemeReplacement": null,
+      "baseline": "original reference proxy options; trusted callbacks preserved in memory only"
+    },
+    "effective": {
+      "background": {
+        "enabled": {
+          "presence": "absent"
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "#151518"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "title": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Title"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#fff"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 12
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "subtitle": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Subtitle"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#7a7a7b"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 13
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "legend": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "value",
+          "value": "top"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "transparent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#fff"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#fff"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": false
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#c1c1c2"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "yKey": "revenue",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#d12378"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#ab34cd"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        },
+        {
+          "type": "bar",
+          "yKey": "operatingIncome",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#21dc65"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#3ac9ed"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "background-only-light",
+    "kind": "synthetic-reference-public-update",
+    "input": {
+      "overrides": {},
+      "params": {
+        "backgroundColor": "#edf3d7"
+      },
+      "palette": null,
+      "baseThemeReplacement": "ag-default",
+      "baseline": "original reference proxy options; trusted callbacks preserved in memory only"
+    },
+    "effective": {
+      "background": {
+        "enabled": {
+          "presence": "absent"
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "#edf3d7"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "title": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Title"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#181d1f"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 17
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "subtitle": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Subtitle"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#696e65"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 13
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "legend": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "value",
+          "value": "bottom"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "transparent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#181d1f"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 12
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#a8ad9b"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#d8dec5",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#181d1f"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 12
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": false
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#a8ad9b"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#d8dec5",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "yKey": "revenue",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#5090dc"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#2b5c95"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        },
+        {
+          "type": "bar",
+          "yKey": "operatingIncome",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#ffa03a"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#cc6f10"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "explicit-derived-tokens",
+    "kind": "synthetic-reference-public-update",
+    "input": {
+      "overrides": {},
+      "params": {
+        "backgroundColor": "#26394a",
+        "foregroundColor": "#123456",
+        "foregroundColorMuted": "#654321",
+        "borderColor": "#abcdef"
+      },
+      "palette": null,
+      "baseThemeReplacement": null,
+      "baseline": "original reference proxy options; trusted callbacks preserved in memory only"
+    },
+    "effective": {
+      "background": {
+        "enabled": {
+          "presence": "absent"
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "#26394a"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "title": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Title"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#123456"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 12
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "subtitle": {
+        "enabled": {
+          "presence": "value",
+          "value": false
+        },
+        "text": {
+          "presence": "value",
+          "value": "Subtitle"
+        },
+        "color": {
+          "presence": "value",
+          "value": "#1d374f"
+        },
+        "fontFamily": {
+          "presence": "value",
+          "value": "Verdana, sans-serif"
+        },
+        "fontSize": {
+          "presence": "value",
+          "value": 13
+        },
+        "fontWeight": {
+          "presence": "value",
+          "value": 400
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "absent"
+        },
+        "fill": {
+          "presence": "absent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "legend": {
+        "enabled": {
+          "presence": "value",
+          "value": true
+        },
+        "text": {
+          "presence": "absent"
+        },
+        "color": {
+          "presence": "absent"
+        },
+        "fontFamily": {
+          "presence": "absent"
+        },
+        "fontSize": {
+          "presence": "absent"
+        },
+        "fontWeight": {
+          "presence": "absent"
+        },
+        "fontStyle": {
+          "presence": "absent"
+        },
+        "position": {
+          "presence": "value",
+          "value": "top"
+        },
+        "fill": {
+          "presence": "value",
+          "value": "transparent"
+        },
+        "stroke": {
+          "presence": "absent"
+        },
+        "strokeWidth": {
+          "presence": "absent"
+        },
+        "width": {
+          "presence": "absent"
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#123456"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#173553"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#21384d",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "label": {
+            "enabled": {
+              "presence": "value",
+              "value": true
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "value",
+              "value": "#123456"
+            },
+            "fontFamily": {
+              "presence": "value",
+              "value": "Verdana, sans-serif"
+            },
+            "fontSize": {
+              "presence": "value",
+              "value": 11
+            },
+            "fontWeight": {
+              "presence": "value",
+              "value": 400
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "line": {
+            "enabled": {
+              "presence": "value",
+              "value": false
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#173553"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "value",
+              "value": 1
+            }
+          },
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#21384d",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "yKey": "revenue",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#5090dc"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#74a8e6"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        },
+        {
+          "type": "bar",
+          "yKey": "operatingIncome",
+          "style": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "value",
+              "value": "#ffa03a"
+            },
+            "stroke": {
+              "presence": "value",
+              "value": "#ffbe70"
+            },
+            "strokeWidth": {
+              "presence": "value",
+              "value": 0
+            },
+            "width": {
+              "presence": "absent"
+            }
+          },
+          "marker": {
+            "enabled": {
+              "presence": "absent"
+            },
+            "text": {
+              "presence": "absent"
+            },
+            "color": {
+              "presence": "absent"
+            },
+            "fontFamily": {
+              "presence": "absent"
+            },
+            "fontSize": {
+              "presence": "absent"
+            },
+            "fontWeight": {
+              "presence": "absent"
+            },
+            "fontStyle": {
+              "presence": "absent"
+            },
+            "position": {
+              "presence": "absent"
+            },
+            "fill": {
+              "presence": "absent"
+            },
+            "stroke": {
+              "presence": "absent"
+            },
+            "strokeWidth": {
+              "presence": "absent"
+            },
+            "width": {
+              "presence": "absent"
+            }
+          }
+        }
+      ]
+    }
+  }
+]

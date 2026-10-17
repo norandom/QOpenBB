@@ -1,0 +1,138 @@
+{
+  "directByteFormulaEquivalent": false,
+  "normalizedFormulaEquivalent": true,
+  "checks": [
+    {
+      "t": 0.743,
+      "pairs": 65536,
+      "mismatches": 0,
+      "examples": []
+    },
+    {
+      "t": 0.9,
+      "pairs": 65536,
+      "mismatches": 1220,
+      "examples": [
+        {
+          "foreground": 0,
+          "background": 155,
+          "direct": 140,
+          "source": 139,
+          "sourceHex": "#8b0000"
+        },
+        {
+          "foreground": 0,
+          "background": 235,
+          "direct": 212,
+          "source": 211,
+          "sourceHex": "#d30000"
+        },
+        {
+          "foreground": 1,
+          "background": 96,
+          "direct": 87,
+          "source": 86,
+          "sourceHex": "#560000"
+        },
+        {
+          "foreground": 1,
+          "background": 136,
+          "direct": 123,
+          "source": 122,
+          "sourceHex": "#7a0000"
+        },
+        {
+          "foreground": 1,
+          "background": 226,
+          "direct": 204,
+          "source": 203,
+          "sourceHex": "#cb0000"
+        }
+      ]
+    },
+    {
+      "t": 0.57,
+      "pairs": 65536,
+      "mismatches": 118,
+      "examples": [
+        {
+          "foreground": 0,
+          "background": 150,
+          "direct": 85,
+          "source": 86,
+          "sourceHex": "#560000"
+        },
+        {
+          "foreground": 0,
+          "background": 250,
+          "direct": 143,
+          "source": 142,
+          "sourceHex": "#8e0000"
+        },
+        {
+          "foreground": 1,
+          "background": 151,
+          "direct": 87,
+          "source": 86,
+          "sourceHex": "#560000"
+        },
+        {
+          "foreground": 3,
+          "background": 53,
+          "direct": 31,
+          "source": 32,
+          "sourceHex": "#200000"
+        },
+        {
+          "foreground": 3,
+          "background": 253,
+          "direct": 145,
+          "source": 146,
+          "sourceHex": "#920000"
+        }
+      ]
+    },
+    {
+      "t": 0.38,
+      "pairs": 65536,
+      "mismatches": 237,
+      "examples": [
+        {
+          "foreground": 1,
+          "background": 226,
+          "direct": 87,
+          "source": 86,
+          "sourceHex": "#560000"
+        },
+        {
+          "foreground": 2,
+          "background": 77,
+          "direct": 31,
+          "source": 30,
+          "sourceHex": "#1e0000"
+        },
+        {
+          "foreground": 2,
+          "background": 227,
+          "direct": 88,
+          "source": 87,
+          "sourceHex": "#570000"
+        },
+        {
+          "foreground": 4,
+          "background": 179,
+          "direct": 71,
+          "source": 70,
+          "sourceHex": "#460000"
+        },
+        {
+          "foreground": 6,
+          "background": 131,
+          "direct": 54,
+          "source": 53,
+          "sourceHex": "#350000"
+        }
+      ]
+    }
+  ]
+}

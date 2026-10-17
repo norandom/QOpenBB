@@ -2,6 +2,8 @@
 
 Review this curated evidence before staging it. The manifest records exact source and published SHA-256 values for each copied file. Original ignored folders remain authoritative raw evidence; this mirror does not claim to publish all repository artifacts or establish new acceptance.
 
+The [appearance review](parity/appearance-contract-review/review.md), [saved-option review](parity/appearance-saved-review/review.md), and [editor review](parity/editor-contract-review/review.md) cover the latest original-runtime research. Appearance rounding was corrected after independent rejection; the [publication link addendum](parity/appearance-contract-review/publication-link-addendum.md) binds the final canonical documentation links. Eight appearance cases, four saved-input cases and seven editor actions establish finite reference contracts only. Candidate UI, complete renderer behavior and backend reopen remain unverified. Historical script paths refer to the original artifact folders; reproduce in a disposable copy with the recorded dependencies, rather than modifying this exact-byte mirror.
+
 ## Included evidence
 
 - SQLite tasks 4.6 through 4.9: task/reviewer reports, serial verification scripts, actual logs/results, boundary diffs and quality inventories. Start at [the joined review](task-4.9/review/review.md).

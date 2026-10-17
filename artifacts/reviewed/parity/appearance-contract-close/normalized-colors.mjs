@@ -1,0 +1,8 @@
+import fs from 'node:fs';import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);const {Color}=require('/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community')._Util;
+const clamp=x=>Math.max(0,Math.min(1,x));const component=(a,b,t)=>Math.round(clamp((a/255)*(1-t)+(b/255)*t)*255);
+const hex=n=>n.toString(16).padStart(2,'0');const red=n=>'#'+hex(n)+'0000';
+const ratios=[['dark-grid',1-.257],['light-grid',1-.1],['dark-subtitle',.57],['light-subtitle',.38]].map(([role,t])=>{let normalizedMismatches=0,byteShortcutMismatches=0;for(let a=0;a<256;a++)for(let b=0;b<256;b++){const actual=Color.mix(Color.fromString(red(a)),Color.fromString(red(b)),t).toString();if(actual!==red(component(a,b,t)))normalizedMismatches++;if(actual!==red(Math.round(a*(1-t)+b*t)))byteShortcutMismatches++;}return {role,t,channelPairs:65536,normalizedMismatches,byteShortcutMismatches};});
+const edge={foreground:'#000000',background:'#9b0000',t:1-.1,actual:Color.mix(Color.fromString('#000000'),Color.fromString('#9b0000'),1-.1).toString(),normalized:red(component(0,155,1-.1)),byteShortcut:red(Math.round(155*(1-.1)))};
+const result={package:'ag-charts-community@12.1.1',license:'MIT',method:'installed _Util.Color.mix/fromString/toString; exhaustive red-channel pairs; Math.round(clamp(normalized interpolation)*255)',edge,ratios};
+fs.writeFileSync(new URL('normalized-color-evidence.json',import.meta.url),JSON.stringify(result,null,2));if(ratios.some(r=>r.normalizedMismatches)||edge.actual!=='#8b0000')throw Error('Normalized rule mismatch');console.log(JSON.stringify({passed:true,channelComparisons:262144,edge}));

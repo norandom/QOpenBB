@@ -1,0 +1,270 @@
+{
+  "passed": true,
+  "assertions": 44,
+  "checks": [
+    {
+      "name": "stock/background",
+      "actual": "#151518",
+      "expected": "#151518",
+      "passed": true
+    },
+    {
+      "name": "stock/subtitle",
+      "actual": "#7a7a7b",
+      "expected": "#7a7a7b",
+      "passed": true
+    },
+    {
+      "name": "stock/grid/category",
+      "actual": "#515153",
+      "expected": "#515153",
+      "passed": true
+    },
+    {
+      "name": "stock/grid/number",
+      "actual": "#515153",
+      "expected": "#515153",
+      "passed": true
+    },
+    {
+      "name": "background-only-dark/background",
+      "actual": "#26394a",
+      "expected": "#26394a",
+      "passed": true
+    },
+    {
+      "name": "background-only-dark/subtitle",
+      "actual": "#838e98",
+      "expected": "#838e98",
+      "passed": true
+    },
+    {
+      "name": "background-only-dark/grid/category",
+      "actual": "#5e6c79",
+      "expected": "#5e6c79",
+      "passed": true
+    },
+    {
+      "name": "background-only-dark/grid/number",
+      "actual": "#5e6c79",
+      "expected": "#5e6c79",
+      "passed": true
+    },
+    {
+      "name": "palette-only-dark/background",
+      "actual": "#151518",
+      "expected": "#151518",
+      "passed": true
+    },
+    {
+      "name": "palette-only-dark/subtitle",
+      "actual": "#7a7a7b",
+      "expected": "#7a7a7b",
+      "passed": true
+    },
+    {
+      "name": "palette-only-dark/grid/category",
+      "actual": "#515153",
+      "expected": "#515153",
+      "passed": true
+    },
+    {
+      "name": "palette-only-dark/grid/number",
+      "actual": "#515153",
+      "expected": "#515153",
+      "passed": true
+    },
+    {
+      "name": "background-only-light/background",
+      "actual": "#edf3d7",
+      "expected": "#edf3d7",
+      "passed": true
+    },
+    {
+      "name": "background-only-light/subtitle",
+      "actual": "#696e65",
+      "expected": "#696e65",
+      "passed": true
+    },
+    {
+      "name": "background-only-light/grid/category",
+      "actual": "#d8dec5",
+      "expected": "#d8dec5",
+      "passed": true
+    },
+    {
+      "name": "background-only-light/grid/number",
+      "actual": "#d8dec5",
+      "expected": "#d8dec5",
+      "passed": true
+    },
+    {
+      "name": "explicit-derived-tokens/background",
+      "actual": "#26394a",
+      "expected": "#26394a",
+      "passed": true
+    },
+    {
+      "name": "explicit-derived-tokens/subtitle",
+      "actual": "#1d374f",
+      "expected": "#1d374f",
+      "passed": true
+    },
+    {
+      "name": "explicit-derived-tokens/grid/category",
+      "actual": "#21384d",
+      "expected": "#21384d",
+      "passed": true
+    },
+    {
+      "name": "explicit-derived-tokens/grid/number",
+      "actual": "#21384d",
+      "expected": "#21384d",
+      "passed": true
+    },
+    {
+      "name": "common-family-collision/title",
+      "actual": "FAMILY",
+      "expected": "FAMILY",
+      "passed": true
+    },
+    {
+      "name": "common-family-collision/titleColor",
+      "actual": "#654321",
+      "expected": "#654321",
+      "passed": true
+    },
+    {
+      "name": "common-family-collision/legend",
+      "actual": "right",
+      "expected": "right",
+      "passed": true
+    },
+    {
+      "name": "common-family-collision/number-label",
+      "actual": "#abcdef",
+      "expected": "#abcdef",
+      "passed": true
+    },
+    {
+      "name": "common-only/title",
+      "actual": "COMMON",
+      "expected": "COMMON",
+      "passed": true
+    },
+    {
+      "name": "common-only/titleColor",
+      "actual": "#123456",
+      "expected": "#123456",
+      "passed": true
+    },
+    {
+      "name": "common-only/legend",
+      "actual": "bottom",
+      "expected": "bottom",
+      "passed": true
+    },
+    {
+      "name": "common-only/number-label",
+      "actual": "#123456",
+      "expected": "#123456",
+      "passed": true
+    },
+    {
+      "name": "family-only/title",
+      "actual": "FAMILY",
+      "expected": "FAMILY",
+      "passed": true
+    },
+    {
+      "name": "family-only/titleColor",
+      "actual": "#654321",
+      "expected": "#654321",
+      "passed": true
+    },
+    {
+      "name": "family-only/legend",
+      "actual": "right",
+      "expected": "right",
+      "passed": true
+    },
+    {
+      "name": "family-only/number-label",
+      "actual": "#abcdef",
+      "expected": "#abcdef",
+      "passed": true
+    },
+    {
+      "name": "common-only/series-fill",
+      "actual": "#5090dc",
+      "expected": "#5090dc",
+      "passed": true
+    },
+    {
+      "name": "family-only/series-fill",
+      "actual": "#abcdef",
+      "expected": "#abcdef",
+      "passed": true
+    },
+    {
+      "name": "common-family-collision/series-fill",
+      "actual": "#abcdef",
+      "expected": "#abcdef",
+      "passed": true
+    },
+    {
+      "name": "palette-only-dark/series-fill",
+      "actual": "#d12378",
+      "expected": "#d12378",
+      "passed": true
+    },
+    {
+      "name": "source-rounding-edge",
+      "actual": "#8b0000",
+      "expected": "#8b0000",
+      "passed": true
+    },
+    {
+      "name": "normalized-source-equivalence/dark-grid",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normalized-source-equivalence/light-grid",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normalized-source-equivalence/dark-subtitle",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "normalized-source-equivalence/light-subtitle",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "cleanup",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "journey-exit",
+      "actual": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "finite-cases",
+      "actual": 8,
+      "expected": 8,
+      "passed": true
+    }
+  ]
+}
