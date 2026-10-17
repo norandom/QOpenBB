@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "widgetInput": {
+    "storage": {
+      "decimalDigits": 3
+    },
+    "data": {
+      "table": {
+        "enableCharts": true
+      }
+    }
+  },
+  "units": "USD millions",
+  "seriesOrder": [
+    "cashFlow",
+    "operatingIncome",
+    "revenue"
+  ],
+  "columns": [
+    {
+      "field": "observationId",
+      "headerName": "Observation ID",
+      "cellDataType": "text",
+      "chartDataType": "excluded"
+    },
+    {
+      "field": "period",
+      "headerName": "Period",
+      "cellDataType": "text",
+      "chartDataType": "category"
+    },
+    {
+      "field": "cashFlow",
+      "headerName": "Cash <&> flow (USD millions)",
+      "cellDataType": "number",
+      "chartDataType": "series"
+    },
+    {
+      "field": "operatingIncome",
+      "headerName": "Operating Income (USD millions)",
+      "cellDataType": "number",
+      "chartDataType": "series"
+    },
+    {
+      "field": "revenue",
+      "headerName": "Revenue (USD millions)",
+      "cellDataType": "number",
+      "chartDataType": "series"
+    }
+  ],
+  "rows": [
+    {
+      "observationId": "obs-0",
+      "period": "2024-Q1",
+      "cashFlow": -4.125,
+      "operatingIncome": 27.625,
+      "revenue": 12.375
+    },
+    {
+      "observationId": "obs-1",
+      "period": "2024-Q1",
+      "cashFlow": 8.125,
+      "operatingIncome": 12.375,
+      "revenue": 27.625
+    },
+    {
+      "observationId": "obs-2",
+      "period": "2024-Q2",
+      "cashFlow": -7.125,
+      "operatingIncome": 0,
+      "revenue": null
+    },
+    {
+      "observationId": "obs-3",
+      "period": "2024-Q3",
+      "cashFlow": 0,
+      "operatingIncome": -3.375
+    },
+    {
+      "observationId": "obs-4",
+      "period": "2024-Q4",
+      "cashFlow": 2.125,
+      "operatingIncome": 7.125,
+      "revenue": 7.125
+    }
+  ],
+  "initialControlPreconditions": {
+    "chartType": "groupedColumn",
+    "aggregateChecked": false,
+    "switchCategorySeriesChecked": false
+  }
+}

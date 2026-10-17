@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "Approved R01 closure and exact source publication only; runtime prerequisites remain open; no grant",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revision-review/review.md",
+      "sha256": "e62a8a29fe479967d66085a8f27584ec319eaeb96ba53e6cb77d28ebc32e41d9",
+      "bytes": 7113,
+      "sanitization": "None; independent offline R01 source review and synthetic fault checks only"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revision-review/verification.json",
+      "sha256": "35f7695ce809fdcc5315159d34cd1101f38bf759f1d94e14589c6c233061bd3c",
+      "bytes": 45493,
+      "sanitization": "None; independent offline R01 source review and synthetic fault checks only"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revision-review/audit.mjs",
+      "sha256": "24097ef68d4d4ab7c0d2d95ea1b361a62ed34ab3a7f508e9e4ccbcb68cc3b333",
+      "bytes": 8636,
+      "sanitization": "None; independent offline R01 source review and synthetic fault checks only"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revision-review/read-only-verifier.mjs",
+      "sha256": "21123f037ad048cf73d751dbc9f5ef3d6afd1cf68212fdbfe8af2d977410b56e",
+      "bytes": 1662,
+      "sanitization": "None; independent offline R01 source review and synthetic fault checks only"
+    }
+  ],
+  "omissions": [
+    "Publication allowlist is copied separately as metadata; no self-hash.",
+    "No runtime logs, credentials, private state, dependencies, images or temporary IO files."
+  ]
+}

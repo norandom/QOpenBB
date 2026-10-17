@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "R01-only source revision eligible for independent publication rereview; inherited runtime blockers remain; no runtime grant",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/cleanup.mjs",
+      "bytes": 2652,
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/collector.mjs",
+      "bytes": 4259,
+      "sha256": "3635466e7cd695a816d6fd240b9195d2ee4ab503a2547982c649c2e2bc3cb6e7",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/contract.mjs",
+      "bytes": 2533,
+      "sha256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/controls.mjs",
+      "bytes": 3159,
+      "sha256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/fixture.json",
+      "bytes": 2031,
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/io.mjs",
+      "bytes": 1418,
+      "sha256": "4e64d9e306fdcccadb393a9bdbadc1b84efa02009e22a2a5aa4708e2a2e8cf8d",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/journey.mjs",
+      "bytes": 18851,
+      "sha256": "859c9d16781d7a862ccd014b563755e830e912fcaa93cd46e7c8d82e61fdf12a",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/keyboard-retention.mjs",
+      "bytes": 3816,
+      "sha256": "230e64b9f175c7ab4949ab89f0c117a60e7e04ae2806bf96854d53ff47f30707",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/projection.mjs",
+      "bytes": 10302,
+      "sha256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/run.sh",
+      "bytes": 2183,
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/start.mjs",
+      "bytes": 2604,
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/static-check.mjs",
+      "bytes": 12175,
+      "sha256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/verify.mjs",
+      "bytes": 2984,
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/collector.diff",
+      "bytes": 1075,
+      "sha256": "344ee487276ef57ff669e53cc9d21b0632cf7f3de0bd28476b2c79eedbaf72dd",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/cleanup.mjs",
+      "bytes": 2652,
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/collector.mjs",
+      "bytes": 3994,
+      "sha256": "9a067f68588e0a098a818753b5d209f03ebf4b8fa41361df5cf1b0a31cacee8a",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/contract.mjs",
+      "bytes": 2533,
+      "sha256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/controls.mjs",
+      "bytes": 3159,
+      "sha256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/fixture.json",
+      "bytes": 2031,
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/io.mjs",
+      "bytes": 1327,
+      "sha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/journey.mjs",
+      "bytes": 18240,
+      "sha256": "8d55aa8f47f0ecf5dfe103feef6bd6b99a9c9caef93a87b8bc1545710f347aeb",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/projection.mjs",
+      "bytes": 10302,
+      "sha256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/run.sh",
+      "bytes": 2183,
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/start.mjs",
+      "bytes": 2604,
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/static-check.mjs",
+      "bytes": 12175,
+      "sha256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/verify.mjs",
+      "bytes": 2984,
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/freeze-check.mjs",
+      "bytes": 1114,
+      "sha256": "5af8bd6f0561c608260a7b19a361582c584796f5a564e111fb469a80ae96fe42",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/cleanup.mjs",
+      "bytes": 2652,
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/collector.mjs",
+      "bytes": 4306,
+      "sha256": "0f549c43cd1fbb6171673c11d7d712bf83eecf5a021ce5005c1d9d1574a0cc5c",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "bytes": 2533,
+      "sha256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/controls.mjs",
+      "bytes": 3159,
+      "sha256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/fixture.json",
+      "bytes": 2031,
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "bytes": 1418,
+      "sha256": "4e64d9e306fdcccadb393a9bdbadc1b84efa02009e22a2a5aa4708e2a2e8cf8d",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "bytes": 18851,
+      "sha256": "859c9d16781d7a862ccd014b563755e830e912fcaa93cd46e7c8d82e61fdf12a",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "bytes": 3816,
+      "sha256": "230e64b9f175c7ab4949ab89f0c117a60e7e04ae2806bf96854d53ff47f30707",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/projection.mjs",
+      "bytes": 10302,
+      "sha256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/run.sh",
+      "bytes": 2183,
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/start.mjs",
+      "bytes": 2604,
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/static-check.mjs",
+      "bytes": 12175,
+      "sha256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/verify.mjs",
+      "bytes": 2984,
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/plan.md",
+      "bytes": 8414,
+      "sha256": "2cbf5814b0faed0c7c060ad85ba980ac8abf581c14470926ea00fe3e389c149c",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/r01-faults.mjs",
+      "bytes": 9284,
+      "sha256": "bfbcf583cc8e84440b4575c9953f602096973f08cbde82560ef5e0ee17a32bb9",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/source-hashes.json",
+      "bytes": 22930,
+      "sha256": "bc04326902f1f8f249b075ee1b2411ec14c85f9879bbd9b1ef9af7eb6c7aa172",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/verification.json",
+      "bytes": 17977,
+      "sha256": "5240ec4b05897c8353032c76a1ff5ce7c74a41362cebd55cf172921cd4bde908",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-segment-keyboard-revised/verify.mjs",
+      "bytes": 10501,
+      "sha256": "63b86ce35a9ec330110aa8daf8a15bd60b6e6bcc723109f3f43fdd9dbc85b056",
+      "sanitization": "None; source-only R01 revision, synthetic fixture, preserved source baselines and offline evidence"
+    }
+  ],
+  "omissions": [
+    "No runtime attempt, credentials/private state, browser profiles, logs, dependency caches/source, image archives or historical PNGs.",
+    "Prior frozen proposal/review and historical case JSON remain independently pinned inputs; they are not rewritten.",
+    "Publication allowlist is separate copied metadata without a self-hash.",
+    "The 70-Tab mock stops 91 bytes over the unchanged guard; complete 72-Tab coverage and runtime traffic-denial/lifecycle prerequisites remain open."
+  ]
+}

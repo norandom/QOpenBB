@@ -1,0 +1,1355 @@
+{
+  "date": "2026-10-17",
+  "verdict": "APPROVED",
+  "scope": "R01 closure and source publication only; runtime blocked",
+  "runtimeExecuted": false,
+  "pins": {
+    "plan.md": "2cbf5814b0faed0c7c060ad85ba980ac8abf581c14470926ea00fe3e389c149c",
+    "source-hashes.json": "bc04326902f1f8f249b075ee1b2411ec14c85f9879bbd9b1ef9af7eb6c7aa172",
+    "publication-allowlist.json": "b9fa990c55d9521fe31fb82557d18165f33b49cd013d804a632c660840130324",
+    "collector.diff": "344ee487276ef57ff669e53cc9d21b0632cf7f3de0bd28476b2c79eedbaf72dd"
+  },
+  "command": "node artifacts/ui-parity-tooltip-segment-keyboard-revision-review/audit.mjs",
+  "exitCode": 0,
+  "checks": 324,
+  "suppliedVerifier": {
+    "exitCode": 0,
+    "checks": 177,
+    "receipt": "exact byte equality then write suppressed; IO redirected into review ownership"
+  },
+  "freezeChecker": {
+    "exitCode": 0,
+    "checks": 151
+  },
+  "independentCases": {
+    "sampleExhaustion": 20,
+    "deadlineExhaustion": 3,
+    "single": 1,
+    "zero": 0,
+    "stable": 3,
+    "baselineDefectReproduced": true
+  },
+  "publication": {
+    "contentFiles": 45,
+    "metadataFiles": 1,
+    "sourceLinks": [
+      "../ui-parity-tooltip-segment-keyboard-review/review.md",
+      "../ui-parity-tooltip-segment-keyboard/plan.md",
+      "baseline",
+      "executed-baseline",
+      "harness",
+      "collector.diff",
+      "source-hashes.json",
+      "../ui-parity-tooltip-segment-keyboard/plan.md",
+      "../ui-parity-tooltip-segment-keyboard-review/review.md",
+      "verify.mjs",
+      "r01-faults.mjs",
+      "verification.json",
+      "publication-allowlist.json"
+    ],
+    "destinationAudit": "required after synchronization"
+  },
+  "open": [
+    "B01 traffic denial",
+    "Inherited lifecycle proof and exact-source controller grant",
+    "Complete keyboard coverage: unchanged 70-Tab mock stops 91 bytes above reservation guard"
+  ],
+  "results": [
+    {
+      "name": "dispatch pin plan.md",
+      "passed": true
+    },
+    {
+      "name": "dispatch pin source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "dispatch pin publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "dispatch pin collector.diff",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/collector.diff",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/plan.md",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/verification.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-review/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-review/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-review/read-only-verifier.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-review/verification.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T01.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T02.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T03.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T04.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T05.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T06.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T07.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T08.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes .kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "source bytes .kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "source bytes .kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "source bytes .kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "source bytes .kiro/specs/openbb-self-service/spec.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/collector.diff",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/r01-faults.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/verification.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/collector.diff",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/r01-faults.mjs",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/verification.json",
+      "passed": true
+    },
+    {
+      "name": "source bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "45 unique content files",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/collector.diff",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/collector.diff",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/executed-baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/r01-faults.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/r01-faults.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/verification.json",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe proposal text artifacts/ui-parity-tooltip-segment-keyboard-revised/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key or token artifacts/ui-parity-tooltip-segment-keyboard-revised/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/run.sh",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/baseline/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/collector.diff",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/plan.md",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/verification.json",
+      "passed": true
+    },
+    {
+      "name": "original immutable artifacts/ui-parity-tooltip-segment-keyboard/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "original review immutable artifacts/ui-parity-tooltip-segment-keyboard-review/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "original review immutable artifacts/ui-parity-tooltip-segment-keyboard-review/read-only-verifier.mjs",
+      "passed": true
+    },
+    {
+      "name": "original review immutable artifacts/ui-parity-tooltip-segment-keyboard-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "original review immutable artifacts/ui-parity-tooltip-segment-keyboard-review/verification.json",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity fixture.json",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity io.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity run.sh",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity start.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "rejected baseline identity verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "collector is sole source change",
+      "passed": true
+    },
+    {
+      "name": "exact three substitutions reconstruct collector",
+      "passed": true
+    },
+    {
+      "name": "counterexample raw differs but compact equal",
+      "passed": true
+    },
+    {
+      "name": "baseline R01 reproduces",
+      "passed": true
+    },
+    {
+      "name": "sample cap unchanged",
+      "passed": true
+    },
+    {
+      "name": "actual distinct final two preserved",
+      "passed": true
+    },
+    {
+      "name": "raw unresolved status truthful",
+      "passed": true
+    },
+    {
+      "name": "projected unresolved equal members stay unresolved",
+      "passed": true
+    },
+    {
+      "name": "deadline retains exact final two",
+      "passed": true
+    },
+    {
+      "name": "single has exactly one actual sample",
+      "passed": true
+    },
+    {
+      "name": "zero samples invent no evidence",
+      "passed": true
+    },
+    {
+      "name": "stable full DOM semantics unchanged",
+      "passed": true
+    },
+    {
+      "name": "stable inspector/read ordering unchanged",
+      "passed": true
+    },
+    {
+      "name": "sample every read inspected",
+      "passed": true
+    },
+    {
+      "name": "deadline every read inspected",
+      "passed": true
+    },
+    {
+      "name": "single every read inspected",
+      "passed": true
+    },
+    {
+      "name": "inspector failure still propagates",
+      "passed": true
+    },
+    {
+      "name": "plan link ../ui-parity-tooltip-segment-keyboard-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "plan link ../ui-parity-tooltip-segment-keyboard/plan.md",
+      "passed": true
+    },
+    {
+      "name": "plan link baseline",
+      "passed": true
+    },
+    {
+      "name": "plan link executed-baseline",
+      "passed": true
+    },
+    {
+      "name": "plan link harness",
+      "passed": true
+    },
+    {
+      "name": "plan link collector.diff",
+      "passed": true
+    },
+    {
+      "name": "plan link source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "plan link ../ui-parity-tooltip-segment-keyboard/plan.md",
+      "passed": true
+    },
+    {
+      "name": "plan link ../ui-parity-tooltip-segment-keyboard-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "plan link verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "plan link r01-faults.mjs",
+      "passed": true
+    },
+    {
+      "name": "plan link verification.json",
+      "passed": true
+    },
+    {
+      "name": "plan link publication-allowlist.json",
+      "passed": true
+    }
+  ]
+}

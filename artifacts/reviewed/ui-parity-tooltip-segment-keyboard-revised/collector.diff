@@ -1,0 +1,15 @@
+--- baseline/collector.mjs
++++ harness/collector.mjs
+@@ -38,9 +38,9 @@
+   throw Error('settlement-unresolved: no equal inactive pair');
+ }
+ export async function observe(page,guard,inspect=()=>{}){
+-  const began=Date.now();let prior=null,count=0,last=null;
++  const began=Date.now();let prior=null,previous=null,count=0,last=null;
+   while(count<limits.tooltipSamples&&Date.now()-began<limits.tooltipMs){guard();last=await page.evaluate(dom);inspect(last);count++;
+     if(prior&&JSON.stringify(last)===JSON.stringify(prior))return {status:'stable',pair:[prior,last],sampleCount:count,elapsedMs:Date.now()-began};
+-    prior=last;if(count<limits.tooltipSamples)await delay(limits.tooltipIntervalMs);}
+-  return {status:'tooltip-observation-unresolved',pair:prior?[prior,last]:[],sampleCount:count,elapsedMs:Date.now()-began};
++    previous=prior;prior=last;if(count<limits.tooltipSamples)await delay(limits.tooltipIntervalMs);}
++  return {status:'tooltip-observation-unresolved',pair:previous?[previous,last]:last?[last]:[],sampleCount:count,elapsedMs:Date.now()-began};
+ }
