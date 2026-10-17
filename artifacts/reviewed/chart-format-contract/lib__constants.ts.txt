@@ -1,0 +1,1317 @@
+1:import type { ChartTypeExCombo } from "ag-grid-community";
+2:import tlds from "tlds";
+3:import { getConfig } from "./runtimeConfig";
+4:import type { Copilot } from "./state/copilot";
+5:import type { McpServer } from "./state/mcpTools";
+6:
+7:export const VERSION = import.meta.env.VITE_RELEASE_VERSION;
+8:
+9:export const USER_AGENT_BACKEND = "pro";
+10:export const REFRESH_WIDGET_INTERVAL = 1000 * 60 * 15; // 15 minutes
+11:export const MODE: "web" | "native" = "web";
+12:
+13:export const ENABLE_SHARING = "true";
+14:export const MAX_COPILOT_LINKS = 4;
+15:
+16:// Save-conversation-as-skill (save_skill copilot function call).
+17:// Payload budget for the skill generation request; the backend enforces the
+18:// model context budget and is the authority on what actually reaches the LLM.
+19:export const MAX_SKILL_CONVERSATION_TOTAL_CHARS = 400_000;
+20:export const MAX_SKILL_CONVERSATION_MESSAGE_CHARS = 20_000;
+21:// Mirror the limits enforced by the skill form schema in AddSkillDialog.
+22:export const MAX_SKILL_SLUG_LENGTH = 50;
+23:export const MAX_SKILL_DESCRIPTION_LENGTH = 500;
+24:
+25:// Global hover-reveal delay (ms) shared by the Radix TooltipProvider and
+26:// HoverPopover. skip = window after one closes where the next opens instantly.
+27:export const TOOLTIP_OPEN_DELAY_MS = 700;
+28:export const TOOLTIP_SKIP_DELAY_MS = 300;
+29:
+30:// The backend is configured to only accept these options, make sure to also add any of
+31:// these options on the backend. Ordered documents -> tabular -> images so the
+32:// derived "supported formats" strings read consistently across the workspace
+33:// dropzone and the Copilot dropzone.
+34:// biome-ignore format: off
+35:export const ExtensionOptions = ["pdf","txt","md","docx","html","csv","json","xlsx","png","jpg","jpeg","gif"] as const;
+36:
+37:export type Extension = (typeof ExtensionOptions)[number];
+38:
+39:export function validImageExtension(value: string): value is Extension {
+40:  return ["png", "jpg", "jpeg", "gif"].includes(value as Extension);
+41:}
+42:
+43:export function validExtension(value: string): value is Extension {
+44:  return ExtensionOptions.includes(value as Extension);
+45:}
+46:
+47:// Accept list for Copilot's file upload — intentionally narrower than
+48:// ExtensionOptions (Copilot doesn't ingest JSON/GIF). Same docs -> tabular ->
+49:// images ordering as ExtensionOptions so the tooltip reads in lockstep with
+50:// the dashboard "Supported formats" string.
+51:export const COPILOT_ACCEPTED_MIME_TYPES = {
+52:  "application/pdf": [".pdf"],
+53:  "text/plain": [".txt"],
+54:  "text/markdown": [".md", ".markdown"],
+55:  "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [".docx"],
+56:  "text/html": [".html"],
+57:  "text/csv": [".csv"],
+58:  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [".xlsx"],
+59:  "image/png": [".png"],
+60:  "image/jpeg": [".jpg", ".jpeg"],
+61:} as const;
+62:
+63:export const COPILOT_ACCEPTED_EXTENSIONS = Array.from(
+64:  new Set(Object.values(COPILOT_ACCEPTED_MIME_TYPES).flat()),
+65:);
+66:
+67:export const inSnowflakeNativeApp =
+68:  import.meta.env.VITE_SNOWFLAKE_NATIVE_APP === "true";
+69:
+70:// Runtime config accessors — safe to call at any point (falls back to import.meta.env)
+71:export function getApiUrl() {
+72:  return getConfig().urls.backend;
+73:}
+74:export function getPaymentsApiUrl() {
+75:  return getConfig().urls.backend;
+76:}
+77:export function getAiApiUrl() {
+78:  return getConfig().urls.ai;
+79:}
+80:export function getDataPlatformUrl() {
+81:  return getConfig().urls.platform;
+82:}
+83:
+84:export const LETS_TALK_FORM_URL =
+85:  "https://app.formbricks.com/s/cqx6ygvxkpy0gydm9jafz57w?embed=true";
+86:
+87:// Formbricks form embedded in the "Contact" popup for marketplace apps (lite mode).
+88:// TODO: replace the form id with the dedicated vendor-contact form id.
+89:export const CONTACT_VENDOR_FORM_URL =
+90:  "https://app.formbricks.com/s/cqx6ygvxkpy0gydm9jafz57w?embed=true";
+91:
+92:export const IMAGE_FILE_EXTENSIONS = [".png", ".jpg", ".jpeg", ".gif"];
+93:
+94:/**
+95: * Copilot feature constants shared across components
+96: */
+97:
+98:// All AI features that are available
+99:export const ALL_AI_FEATURES = new Set([
+100:  "streaming",
+101:  "file-upload",
+102:  "widget-dashboard-select",
+103:  "widget-dashboard-search",
+104:  "widget-global-search",
+105:  "generative-ui",
+106:  "mcp-tools",
+107:  "agent-orchestration",
+108:  "feedback",
+109:]);
+110:
+111:// Features that can be enabled by agents (user-specified in agent configs)
+112:export const AGENT_ENABLED_FEATURES = new Set([
+113:  "widget-dashboard-select",
+114:  "widget-dashboard-search",
+115:]);
+116:
+117:/**
+118: * Default MCP server configuration
+119: * Added automatically for new users when VITE_MCP_DEFAULT_SERVER_ENABLED is true
+120: */
+121:export const DEFAULT_MCP_SERVER: McpServer = {
+122:  id: "openbb-docs-default",
+123:  name: "OpenBB Documentation",
+124:  url: "https://openbb-docs-mcp.external.openbb.app/mcp",
+125:  enabled: true,
+126:  clientName: "OpenBB Workspace",
+127:  isLocal: false,
+128:  tools: [],
+129:  autoReconnect: true,
+130:};
+131:
+132:export const FILE_EXTENSIONS = [
+133:  ".pdf",
+134:  ...IMAGE_FILE_EXTENSIONS,
+135:  ".txt",
+136:  ".docx",
+137:  ".md",
+138:  ".html",
+139:];
+140:
+141:export const UNIQUE_AVATAR_COLORS = [
+142:  "#3174ad", // Blue
+143:  "#c75d5d", // Red
+144:  "#8e5e9a", // Purple
+145:  "#4a9e6c", // Green
+146:  "#a89132", // Olive/gold
+147:  "#a55353", // Darker red
+148:  "#9e6c4a", // Brown/orange
+149:  "#7a5a9e", // Different purple
+150:  "#7a7a7a", // Gray
+151:  "#6c8e4a", // Green-olive
+152:];
+153:
+154:// max file size for file upload in bytes
+155:export const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25MB
+156:
+157:// total storage capacity for user in bytes
+158:export const MAX_STORAGE_CAPACITY = 5 * 1024 * 1024 * 1024; // 5GB
+159:
+160:// threshold for storage usage in percentage
+161:export const STORAGE_THRESHOLD = 0.9;
+162:
+163:const SUPPORTED_TLDs = tlds.join("|");
+164:
+165:export const LINK_REGEX = new RegExp(
+166:  `\\b((https?|ftp|file):\\/\\/[^\\s]+|[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*\\.(?:${SUPPORTED_TLDs})\\S*)\\b`,
+167:  "g",
+168:);
+169:
+170:// Email regex to identify and filter out email addresses
+171:export const EMAIL_REGEX = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+172:
+173:export const BENZINGA_NEWS_IMG_URLS = [
+174:  "https://cdn.benzinga.com/files/imagecache/1024x768xUP/images/story/2023/options_image_0.jpeg",
+175:  "https://cdn.benzinga.com/files/imagecache/1024x768xUP/images/story/2023/options_image_2.jpeg",
+176:  "https://cdn.benzinga.com/files/imagecache/250x187xUP/images/story/2023/options_image_4.jpeg",
+177:  "https://cdn.benzinga.com/files/imagecache/1024x768xUP/images/story/2023/movers_image_0.jpeg",
+178:  "https://cdn.benzinga.com/files/imagecache/1024x768xUP/images/story/2023/movers_image_1.jpeg",
+179:  "https://cdn.benzinga.com/files/imagecache/1024x768xUP/images/story/2023/movers_image_5.jpeg",
+180:  "https://cdn.benzinga.com/files/images/story/2024/untitled_9.jpeg?optimize=medium&dpr=2&auto=webp&width=260",
+181:  "https://cdn.benzinga.com/files/images/story/2024/02/26/stock_art.jpg?optimize=medium&dpr=2&auto=webp&width=260",
+182:  "https://cdn.benzinga.com/files/images/story/2024/02/26/image39.jpeg?optimize=medium&dpr=2&auto=webp&width=260",
+183:  "https://cdn.benzinga.com/files/maxim-hopman-fixlqxahcfk-unsplash_8_4.jpg?optimize=medium&dpr=2&auto=webp&width=260",
+184:];
+185:
+186:export const BLOCKED_WIDGETS = [
+187:  "analyst_price_target",
+188:  "global_news",
+189:  "company_news",
+190:  "economic_overview",
+191:  "country_indicators",
+192:  "economic_indicators",
+193:  "yield_curve",
+194:  "analyst_estimates",
+195:];
+196:
+197:export const BLOCKED_WIDGET_IDS = new Set(BLOCKED_WIDGETS);
+198:
+199:export const AI_SUPPORTED_FILE_TYPES = [
+200:  "pdf",
+201:  "jpg",
+202:  "jpeg",
+203:  "png",
+204:  // "application/json", // not supported yet by endpoint
+205:  "csv",
+206:  "md",
+207:  "txt",
+208:  "xlsx",
+209:  "docx",
+210:  "html",
+211:] as const;
+212:
+213:export const AI_AT_COMMANDS = {
+214:  "@sec": "Search SEC fillings ",
+215:};
+216:
+217:export const AI_PROMPTS = {
+218:  "Based on the company profile, please list comparable peers along with bullet points detailing their respective activities and products.":
+219:    ["Company Profile"],
+220:  "Using the financial statements, assess the trend in revenue growth over the past few years. What factors contributed to any significant fluctuations?":
+221:    ["Financial Statements"],
+222:  "Using the financial statements, analyze the gross and net profit margin trend. Has there been any improvement or decline, and what could be the reasons behind it?":
+223:    ["Financial Statements"],
+224:  "Using the financial statements, investigate any significant changes in capital expenditure levels and the impact these changes have on the company's growth prospects.":
+225:    ["Financial Statements"],
+226:  "Using the financial statements, in specific gross profit margin how efficiently is the company producing goods or services.":
+227:    ["Financial Statements"],
+228:  "Using the financial statement, in specific operating profit margin how profitable is the company. Double check the math.":
+229:    ["Financial Statements"],
+230:  "Using the financial statement, in specific earnings per share (EPS) is the business growing? How has it changed over the years?":
+231:    ["Financial Statements"],
+232:  "Using the financial statement, assess the company's liquidity position by analyzing current and quick ratios. Are there any concerns regarding its short-term solvency":
+233:    ["Financial Statements"],
+234:  "Using the financial statement, investigate the trend in debt levels and debt-to-equity ratio. How does the company's leverage position compare to industry peers":
+235:    ["Financial Statements"],
+236:  "Using the financial statement, can you analyze the shareholders' equity and discuss if a rising equity value is generally seen as positive?":
+237:    ["Financial Statements"],
+238:  "Using the financial statement, can you indicate the cash generated from core business operations in the operating cash flow and discuss how operating cash flow reflects on the company financial health?":
+239:    ["Financial Statements"],
+240:  "Using the financial statement, can you show the cash spent or gained from investments in capital assets in the investing cash flow and discuss if high outflows indicate significant capital investments?":
+241:    ["Financial Statements"],
+242:  "Using the financial statement, can you reveal the cash flows related to financing activities such as issuing shares, taking on debt, and repaying loans in the financing cash flow and discuss if consistently high financing inflows signal reliance on external financing?":
+243:    ["Financial Statements"],
+244:  "Using the financial statement, can you calculate the free cash flow and indicate the cash available for discretionary use like dividends, share buybacks, or debt repayment? Explain the reasoning.":
+245:    ["Financial Statements"],
+246:  "For each piece of news, rate the sentiment from -1 to +1, based on whether it is likely to affect the share price. Give just the headline and rating. Order the articles based on their sentiment score and output the results as a markdown table.":
+247:    ["Company News"],
+248:  "From all the company news, what are the 3 headlines that I should not miss based on how they can impact the stock price.":
+249:    ["Company News"],
+250:  "Based on management team, review leadership's track record in terms of ownership and product launched. Use general knowledge information to highlight any past accomplishments or negative press from these.":
+251:    ["Management Team"],
+252:  "What are the trends observed in terms of the revenue per business line? Acknowledge most positive and negative highlights.":
+253:    ["Revenue Per Business Line"],
+254:  "What are the trends observed in terms of the revenue per geography? Where is the company being successful and failing to expand?":
+255:    ["Revenue Per Geography"],
+256:  "Based on valuation multiples, is this company under or overvalued?": [
+257:    "Valuation Multiples",
+258:  ],
+259:  "Based on valuation multiples, what are the growth expectations of the company?": [
+260:    "Valuation Multiples",
+261:  ],
+262:  "Based on valuation multiples, what can I say regarding company's profitability and efficiency":
+263:    ["Valuation Multiples"],
+264:  "Based on valuation multiples, what is the financial health of the company? And are there any major risks I should be aware of?":
+265:    ["Valuation Multiples"],
+266:  "Based on valuation multiples, what is the market sentiment and expectations towards this company?":
+267:    ["Valuation Multiples"],
+268:  "Based on valuation multiples, what is the company dividend yield and how has it changed over time.":
+269:    ["Valuation Multiples"],
+270:  "Using the comparison analysis, conduct a comparative analysis with industry peers to benchmark the company's financial performance.":
+271:    ["Comparison Analysis"],
+272:  "How does this company compares against its peers in broader terms? What are the biggest outliers?":
+273:    ["Comparison Analysis"],
+274:  "Using the institutional ownership, what are some trends to notice?": [
+275:    "Institutional Ownership",
+276:  ],
+277:  "Based on the stock ownership, create a table with the top 10 investors that have the most shares of the company and sort them? The table must contain their market value, how much portfolio weight they have in the company and their average price?":
+278:    ["Stock Ownership"],
+279:  "Assess the concentration of ownership. Are there a few large institutions holding significant stakes, or is ownership more evenly distributed?":
+280:    ["Stock Ownership"],
+281:  "Investigate any clusters of insider buying or selling. Do multiple insiders engage in transactions around the same time, and what does this suggest about sentiment or outlook?":
+282:    ["Insider Trading"],
+283:  "Based on insider trading, who are the top 3 buyers in the past year? How many shares did they buy, which type and how much did they spend on it in total?":
+284:    ["Insider Trading"],
+285:  "Based on insider trading, who are the top 3 sellers in the past year? How many shares did they sell and how much did they make from it?":
+286:    ["Insider Trading"],
+287:  "Analyze the timing of insider transactions relative to key company events or announcements. Are insiders buying or selling shares before significant news is made public":
+288:    ["Insider Trading", "Company News"],
+289:  "Evaluate the accuracy of analyst revenue forecasts relative to actual reported revenue figures. Are analysts consistently overestimating or underestimating revenue?":
+290:    ["Financial Statements", "Analyst Estimates"],
+291:  "Based on the last 10 years of earnings history, how have analysts estimated EPS and revenue and how has the company performed against it? On average did the company beat or miss the EPS and earnings? And by how much?":
+292:    ["Earnings History"],
+293:  "How is the dividend payment of the company evolving over time?": [
+294:    "Dividend Payment",
+295:  ],
+296:  "Analyze the trend in dividend payouts and dividend yield. How does the company's dividend policy align with its financial performance?":
+297:    ["Dividend Payment", "Financial Statements"],
+298:  "What can you say about the analyst estimates?": ["Analyst Estimates"],
+299:  "Review recent changes in analyst recommendations (e.g., buy, hold, sell). Have there been any notable shifts in sentiment":
+300:    ["Price Target By Analyst"],
+301:  "Who are the analysts that changed their price target by a wider margin over the past 3 months?":
+302:    ["Price Target By Analyst"],
+303:  "Are there analysts that changed their rating over the past year? If so, what company do they work at?":
+304:    ["Price Target By Analyst"],
+305:  "Using analysts consensus dataset, are there any companies that changed their grades on the company in the last few weeks?":
+306:    ["Analyst Consensus"],
+307:  "Evaluate management's guidance for future performance, including revenue, earnings, and key operational metrics. How does management view the company's growth prospects and potential challenges in the upcoming quarters?":
+308:    ["Earnings Transcripts"],
+309:  "Examine management's discussion and commentary on the company's performance during the earnings period. What are the key drivers behind the results, and how do they align with previous guidance or expectations?":
+310:    ["Earnings Transcripts"],
+311:  "Summarize this earnings transcripts in 3 bullet points. Then, describe company's future strategic roadmap in terms of deadlines for short, medium and long term. Then in another section, highlight 3 sentences that I should be trying to research further before investing in the stock.":
+312:    ["Earnings Transcripts"],
+313:  "Analyze the current earnings transcript against the one from the quarter before. Are there any noticeable shift in terms of strategy? What about financial changes? Is there any topic that was given less emphasis or added this quarter?":
+314:    ["Earnings Transcripts"],
+315:  "Using the earnings transcript, create a table with columns: financial metric, value, sentence in the earnings where it was extracted from. Double check whether the information you are using is correct.":
+316:    ["Earnings Transcripts"],
+317:  "What are the biggest global news of today? Explain why the headline is important and how it can impact my investment":
+318:    ["Global News"],
+319:};
+320:
+321:// Default copilot configuration, does not call backend for agents.json
+322:let _defaultCopilot: Copilot | null = null;
+323:export function getDefaultCopilot(): Copilot {
+324:  if (!_defaultCopilot) {
+325:    _defaultCopilot = {
+326:      id: "openbb-copilot",
+327:      name: "OpenBB Copilot",
+328:      description: "OpenBB Copilot is the default agent for OpenBB Workspace.",
+329:      image: "/assets/images/openbb.png",
+330:      endpoints: {
+331:        upload_docs: "",
+332:        query: `${getAiApiUrl()}/v1/query`,
+333:      },
+334:      features: {
+335:        streaming: true,
+336:        "file-upload": true,
+337:        "widget-dashboard-select": true,
+338:        "widget-dashboard-search": true,
+339:        "widget-global-search": true,
+340:        "generative-ui": true,
+341:        "mcp-tools": true,
+342:        "agent-orchestration": true,
+343:      },
+344:    } as Copilot;
+345:
+346:    if (!inSnowflakeNativeApp) {
+347:      _defaultCopilot.features["workspace-web-search"] = {
+348:        label: "Web Search",
+349:        default: true,
+350:        description: "Allows the copilot to search the web.",
+351:      };
+352:    }
+353:  }
+354:  return _defaultCopilot;
+355:}
+356:
+357:export const defaultGroup = {
+358:  id: "35c413e5-a7ca-42a1-895f-97bfe46ab9e9",
+359:  name: "Group 1",
+360:  color: "#33BBFF",
+361:  ticker: { symbol: "AAPL", id: "AAPL", category: "equity" },
+362:};
+363:
+364:export const RSS_FEEDS = [
+365:  {
+366:    tag: "Bloomberg",
+367:    enabled: true,
+368:    source: "Markets News",
+369:    url: "https://feeds.bloomberg.com/markets/news.rss",
+370:  },
+371:  {
+372:    tag: "Bloomberg",
+373:    enabled: true,
+374:    source: "Politics News",
+375:    url: "https://feeds.bloomberg.com/politics/news.rss",
+376:  },
+377:  {
+378:    tag: "Bloomberg",
+379:    enabled: true,
+380:    source: "Technology News",
+381:    url: "https://feeds.bloomberg.com/technology/news.rss",
+382:  },
+383:  {
+384:    tag: "Bloomberg",
+385:    enabled: true,
+386:    source: "Wealth News",
+387:    url: "https://feeds.bloomberg.com/wealth/news.rss",
+388:  },
+389:  {
+390:    tag: "Reuters",
+391:    enabled: true,
+392:    source: "General News",
+393:    url: "https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best",
+394:  },
+395:  {
+396:    tag: "New York Times",
+397:    enabled: true,
+398:    source: "General News",
+399:    url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+400:  },
+401:  {
+402:    tag: "CNBC",
+403:    enabled: true,
+404:    source: "Business News",
+405:    url: "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+406:  },
+407:  {
+408:    tag: "CNBC",
+409:    enabled: true,
+410:    source: "Top News",
+411:    url: "https://www.cnbc.com/id/100727362/device/rss/rss.html",
+412:  },
+413:  {
+414:    tag: "FED",
+415:    enabled: true,
+416:    source: "FED Press Releases",
+417:    url: "https://www.federalreserve.gov/feeds/press_all.xml",
+418:  },
+419:];
+420:
+421:export type RSSFeed = (typeof RSS_FEEDS)[number];
+422:export type OldRSSFeed = {
+423:  name: string;
+424:  url: string;
+425:  category: string;
+426:  enabled: boolean;
+427:};
+428:
+429:export const butterflyTypes = [
+430:  "Azure Morpho",
+431:  "Luna Moth",
+432:  "Crimson Rose",
+433:  "Orchid Swallowtail",
+434:  "Jewel Longwing",
+435:  "Golden Helicon",
+436:  "Emerald Peacock",
+437:  "Amethyst Hairstreak",
+438:  "Pearl Crescent",
+439:  "Ruby Admiral",
+440:  "Sapphire Daggerwing",
+441:  "Citrus Swallowtail",
+442:  "Topaz Glasswing",
+443:  "Silver Azure",
+444:  "Violet Tip",
+445:  "Marigold Monarch",
+446:  "Celestial Tiger",
+447:  "Opal Skipper",
+448:  "Scarlet Peacock",
+449:  "Coral Hairstreak",
+450:  "Velvet Emperor",
+451:  "Harmony Fritillary",
+452:  "Rainbow Tiger",
+453:  "Sunburst Swallowtail",
+454:  "Velvet Daggerwing",
+455:  "Harmony Blue",
+456:  "Crimson Daggerwing",
+457:  "Citrine Sulphur",
+458:  "Azure Glassy Tiger",
+459:  "Jade Hairstreak",
+460:  "Harmony Admiral",
+461:  "Diamond Skipper",
+462:  "Amberwing Swallowtail",
+463:  "Garnet Fritillary",
+464:  "Rose Petal",
+465:  "Silver Rim",
+466:  "Cobalt Clipper",
+467:  "Lemon Drop",
+468:  "Velvet Rose",
+469:  "Turquoise Admiral",
+470:  "Lavender Daggerwing",
+471:  "Scarlet Oakleaf",
+472:  "Gold Banded Forester",
+473:  "Lemon Emperor",
+474:  "Blue Argus",
+475:  "Harmony Jewel",
+476:  "Ivory Lacewing",
+477:  "Mint Swallowtail",
+478:  "Ruby Ringlet",
+479:  "Lilac Nymph",
+480:  "Golden Monarch",
+481:  "Snowflake Butterfly",
+482:  "Bronze Daggerwing",
+483:  "Buttercup Tiger",
+484:  "Harmony Crescent",
+485:  "Coral Admiral",
+486:  "Sapphire Hairstreak",
+487:  "Sunflower Skipper",
+488:  "Orchid Admiral",
+489:  "Silver Jewel",
+490:  "Velvet Swallowtail",
+491:  "Crimson Glasswing",
+492:  "Blue Tiger",
+493:  "Sunbeam Fritillary",
+494:  "Azure Tiger",
+495:  "Emerald Admiral",
+496:  "Velvet Azure",
+497:  "Moonstone Swallowtail",
+498:  "Opal Monarch",
+499:  "Azure Hairstreak",
+500:  "Lemon Swallowtail",
+501:  "Harmony Swallowtail",
+502:  "Obsidian Daggerwing",
+503:  "Jewel Fritillary",
+504:  "Velvet Helicon",
+505:  "Coral Ringlet",
+506:  "Emerald Hairstreak",
+507:  "Citrus Daggerwing",
+508:  "Celestial Peacock",
+509:  "Luna Admiral",
+510:  "Topaz Swallowtail",
+511:  "Garnet Hairstreak",
+512:  "Crimson Tiger",
+513:  "Silver Peacock",
+514:  "Marigold Hairstreak",
+515:  "Ruby Nymph",
+516:  "Velvet Ringlet",
+517:  "Azure Crescent",
+518:  "Sunbeam Admiral",
+519:  "Opal Tiger",
+520:  "Golden Hairstreak",
+521:  "Harmony Glasswing",
+522:  "Diamond Azure",
+523:  "Coral Peacock",
+524:  "Lilac Admiral",
+525:  "Celestial Hairstreak",
+526:  "Sapphire Monarch",
+527:  "Velvet Skipper",
+528:  "Lemon Crescent",
+529:  "Harmony Skipper",
+530:  "Orchid Nymph",
+531:  "Moonstone Hairstreak",
+532:  "Harmony Oakleaf",
+533:  "Turquoise Crescent",
+534:  "Silver Daggerwing",
+535:  "Jade Tiger",
+536:  "Crimson Nymph",
+537:  "Sunburst Daggerwing",
+538:  "Amethyst Swallowtail",
+539:  "Amber Ringlet",
+540:  "Velvet Fritillary",
+541:  "Azure Skipper",
+542:  "Ivory Swallowtail",
+543:  "Lemon Hairstreak",
+544:  "Ruby Tiger",
+545:  "Harmony Peacock",
+546:  "Coral Skipper",
+547:  "Lilac Ringlet",
+548:  "Celestial Swallowtail",
+549:  "Cobalt Swallowtail",
+550:  "Diamond Admiral",
+551:  "Scarlet Glasswing",
+552:  "Emerald Nymph",
+553:  "Sunflower Peacock",
+554:  "Sapphire Oakleaf",
+555:  "Velvet Monarch",
+556:  "Coral Fritillary",
+557:  "Rose Petal",
+558:  "Silver Rim",
+559:  "Cobalt Clipper",
+560:  "Lemon Drop",
+561:  "Velvet Rose",
+562:  "Turquoise Admiral",
+563:  "Lavender Daggerwing",
+564:  "Scarlet Oakleaf",
+565:  "Gold Banded Forester",
+566:  "Lemon Emperor",
+567:  "Blue Argus",
+568:  "Harmony Jewel",
+569:  "Ivory Lacewing",
+570:  "Mint Swallowtail",
+571:  "Ruby Ringlet",
+572:  "Lilac Nymph",
+573:  "Golden Monarch",
+574:  "Snowflake Butterfly",
+575:  "Bronze Daggerwing",
+576:  "Buttercup Tiger",
+577:  "Harmony Crescent",
+578:  "Coral Admiral",
+579:  "Sapphire Hairstreak",
+580:  "Sunflower Skipper",
+581:  "Orchid Admiral",
+582:  "Silver Jewel",
+583:  "Velvet Swallowtail",
+584:  "Crimson Glasswing",
+585:  "Blue Tiger",
+586:  "Sunbeam Fritillary",
+587:  "Azure Tiger",
+588:  "Emerald Admiral",
+589:  "Velvet Azure",
+590:  "Moonstone Swallowtail",
+591:  "Opal Monarch",
+592:  "Azure Hairstreak",
+593:  "Lemon Swallowtail",
+594:  "Harmony Swallowtail",
+595:  "Obsidian Daggerwing",
+596:  "Jewel Fritillary",
+597:  "Velvet Helicon",
+598:  "Coral Ringlet",
+599:  "Emerald Hairstreak",
+600:  "Citrus Daggerwing",
+601:  "Celestial Peacock",
+602:  "Luna Admiral",
+603:  "Topaz Swallowtail",
+604:  "Garnet Hairstreak",
+605:  "Crimson Tiger",
+606:  "Silver Peacock",
+607:  "Marigold Hairstreak",
+608:  "Ruby Nymph",
+609:  "Velvet Ringlet",
+610:  "Azure Crescent",
+611:  "Sunbeam Admiral",
+612:  "Opal Tiger",
+613:  "Golden Hairstreak",
+614:  "Harmony Glasswing",
+615:  "Diamond Azure",
+616:  "Coral Peacock",
+617:  "Lilac Admiral",
+618:  "Celestial Hairstreak",
+619:  "Sapphire Monarch",
+620:  "Velvet Skipper",
+621:  "Lemon Crescent",
+622:  "Harmony Skipper",
+623:  "Orchid Nymph",
+624:  "Moonstone Hairstreak",
+625:  "Harmony Oakleaf",
+626:  "Turquoise Crescent",
+627:  "Silver Daggerwing",
+628:  "Jade Tiger",
+629:  "Crimson Nymph",
+630:  "Sunburst Daggerwing",
+631:  "Amethyst Swallowtail",
+632:  "Amber Ringlet",
+633:  "Velvet Fritillary",
+634:  "Azure Skipper",
+635:  "Ivory Swallowtail",
+636:  "Lemon Hairstreak",
+637:  "Ruby Tiger",
+638:  "Harmony Peacock",
+639:  "Coral Skipper",
+640:  "Lilac Ringlet",
+641:  "Celestial Swallowtail",
+642:  "Cobalt Swallowtail",
+643:  "Diamond Admiral",
+644:  "Scarlet Glasswing",
+645:  "Emerald Nymph",
+646:  "Sunflower Peacock",
+647:  "Sapphire Oakleaf",
+648:  "Velvet Monarch",
+649:  "Coral Fritillary",
+650:  "Rose Petal",
+651:  "Silver Rim",
+652:  "Cobalt Clipper",
+653:  "Lemon Drop",
+654:  "Velvet Rose",
+655:  "Turquoise Admiral",
+656:  "Lavender Daggerwing",
+657:  "Scarlet Oakleaf",
+658:  "Gold Banded Forester",
+659:  "Lemon Emperor",
+660:  "Blue Argus",
+661:  "Harmony Jewel",
+662:  "Ivory Lacewing",
+663:  "Mint Swallowtail",
+664:  "Ruby Ringlet",
+665:  "Lilac Nymph",
+666:  "Golden Monarch",
+667:  "Snowflake Butterfly",
+668:  "Bronze Daggerwing",
+669:  "Buttercup Tiger",
+670:  "Harmony Crescent",
+671:  "Coral Admiral",
+672:  "Sapphire Hairstreak",
+673:  "Sunflower Skipper",
+674:  "Orchid Admiral",
+675:  "Silver Jewel",
+676:  "Velvet Swallowtail",
+677:  "Crimson Glasswing",
+678:  "Blue Tiger",
+679:  "Sunbeam Fritillary",
+680:  "Azure Tiger",
+681:  "Emerald Admiral",
+682:  "Velvet Azure",
+683:  "Moonstone Swallowtail",
+684:  "Opal Monarch",
+685:  "Azure Hairstreak",
+686:  "Lemon Swallowtail",
+687:  "Harmony Swallowtail",
+688:  "Obsidian Daggerwing",
+689:];
+690:
+691:// This is the json file from econdb :)
+692:export const econdbCountries = [
+693:  {
+694:    region: "Africa",
+695:    verbose: "Algeria",
+696:    iso2: "DZ",
+697:  },
+698:  {
+699:    region: "Latin America",
+700:    verbose: "Argentina",
+701:    iso2: "AR",
+702:  },
+703:  {
+704:    region: "G20",
+705:    verbose: "Argentina",
+706:    iso2: "AR",
+707:  },
+708:  {
+709:    region: "Oceania",
+710:    verbose: "Australia",
+711:    iso2: "AU",
+712:  },
+713:  {
+714:    region: "G20",
+715:    verbose: "Australia",
+716:    iso2: "AU",
+717:  },
+718:  {
+719:    region: "Europe",
+720:    verbose: "Austria",
+721:    iso2: "AT",
+722:  },
+723:  {
+724:    region: "Central Asia",
+725:    verbose: "Azerbaijan",
+726:    iso2: "AZ",
+727:  },
+728:  {
+729:    region: "South Asia",
+730:    verbose: "Bangladesh",
+731:    iso2: "BD",
+732:  },
+733:  {
+734:    region: "Europe",
+735:    verbose: "Belarus",
+736:    iso2: "BY",
+737:  },
+738:  {
+739:    region: "Europe",
+740:    verbose: "Belgium",
+741:    iso2: "BE",
+742:  },
+743:  {
+744:    region: "Latin America",
+745:    verbose: "Brazil",
+746:    iso2: "BR",
+747:  },
+748:  {
+749:    region: "G20",
+750:    verbose: "Brazil",
+751:    iso2: "BR",
+752:  },
+753:  {
+754:    region: "Europe",
+755:    verbose: "Bulgaria",
+756:    iso2: "BG",
+757:  },
+758:  {
+759:    region: "Southeast Asia",
+760:    verbose: "Cambodia",
+761:    iso2: "KH",
+762:  },
+763:  {
+764:    region: "North America",
+765:    verbose: "Canada",
+766:    iso2: "CA",
+767:  },
+768:  {
+769:    region: "G20",
+770:    verbose: "Canada",
+771:    iso2: "CA",
+772:  },
+773:  {
+774:    region: "Latin America",
+775:    verbose: "Chile",
+776:    iso2: "CL",
+777:  },
+778:  {
+779:    region: "East Asia",
+780:    verbose: "China",
+781:    iso2: "CN",
+782:  },
+783:  {
+784:    region: "G20",
+785:    verbose: "China",
+786:    iso2: "CN",
+787:  },
+788:  {
+789:    region: "Latin America",
+790:    verbose: "Colombia",
+791:    iso2: "CO",
+792:  },
+793:  {
+794:    region: "Europe",
+795:    verbose: "Croatia",
+796:    iso2: "HR",
+797:  },
+798:  {
+799:    region: "Latin America",
+800:    verbose: "Cuba",
+801:    iso2: "CU",
+802:  },
+803:  {
+804:    region: "Europe",
+805:    verbose: "Czechia",
+806:    iso2: "CZ",
+807:  },
+808:  {
+809:    region: "Europe",
+810:    verbose: "Denmark",
+811:    iso2: "DK",
+812:  },
+813:  {
+814:    region: "Latin America",
+815:    verbose: "Dominican Republic",
+816:    iso2: "DO",
+817:  },
+818:  {
+819:    region: "Latin America",
+820:    verbose: "Ecuador",
+821:    iso2: "EC",
+822:  },
+823:  {
+824:    region: "Africa",
+825:    verbose: "Egypt",
+826:    iso2: "EG",
+827:  },
+828:  {
+829:    region: "Europe",
+830:    verbose: "Estonia",
+831:    iso2: "EE",
+832:  },
+833:  {
+834:    region: "Africa",
+835:    verbose: "Ethiopia",
+836:    iso2: "ET",
+837:  },
+838:  {
+839:    region: "Europe",
+840:    verbose: "European Union",
+841:    iso2: "EU",
+842:  },
+843:  {
+844:    region: "Europe",
+845:    verbose: "Euro Area",
+846:    iso2: "EA",
+847:  },
+848:  {
+849:    region: "G20",
+850:    verbose: "European Union",
+851:    iso2: "EU",
+852:  },
+853:  {
+854:    region: "Europe",
+855:    verbose: "Finland",
+856:    iso2: "FI",
+857:  },
+858:  {
+859:    region: "Europe",
+860:    verbose: "France",
+861:    iso2: "FR",
+862:  },
+863:  {
+864:    region: "G20",
+865:    verbose: "France",
+866:    iso2: "FR",
+867:  },
+868:  {
+869:    region: "Europe",
+870:    verbose: "Germany",
+871:    iso2: "DE",
+872:  },
+873:  {
+874:    region: "G20",
+875:    verbose: "Germany",
+876:    iso2: "DE",
+877:  },
+878:  {
+879:    region: "Europe",
+880:    verbose: "Greece",
+881:    iso2: "GR",
+882:  },
+883:  {
+884:    region: "Latin America",
+885:    verbose: "Guatemala",
+886:    iso2: "GT",
+887:  },
+888:  {
+889:    region: "Latin America",
+890:    verbose: "Honduras",
+891:    iso2: "HN",
+892:  },
+893:  {
+894:    region: "East Asia",
+895:    verbose: "Hong Kong",
+896:    iso2: "HK",
+897:  },
+898:  {
+899:    region: "Europe",
+900:    verbose: "Hungary",
+901:    iso2: "HU",
+902:  },
+903:  {
+904:    region: "G20",
+905:    verbose: "India",
+906:    iso2: "IN",
+907:  },
+908:  {
+909:    region: "South Asia",
+910:    verbose: "India",
+911:    iso2: "IN",
+912:  },
+913:  {
+914:    region: "G20",
+915:    verbose: "Indonesia",
+916:    iso2: "ID",
+917:  },
+918:  {
+919:    region: "Southeast Asia",
+920:    verbose: "Indonesia",
+921:    iso2: "ID",
+922:  },
+923:  {
+924:    region: "Middle East",
+925:    verbose: "Iran",
+926:    iso2: "IR",
+927:  },
+928:  {
+929:    region: "Middle East",
+930:    verbose: "Iraq",
+931:    iso2: "IQ",
+932:  },
+933:  {
+934:    region: "Europe",
+935:    verbose: "Ireland",
+936:    iso2: "IE",
+937:  },
+938:  {
+939:    region: "Middle East",
+940:    verbose: "Israel",
+941:    iso2: "IL",
+942:  },
+943:  {
+944:    region: "Europe",
+945:    verbose: "Italy",
+946:    iso2: "IT",
+947:  },
+948:  {
+949:    region: "G20",
+950:    verbose: "Italy",
+951:    iso2: "IT",
+952:  },
+953:  {
+954:    region: "East Asia",
+955:    verbose: "Japan",
+956:    iso2: "JP",
+957:  },
+958:  {
+959:    region: "G20",
+960:    verbose: "Japan",
+961:    iso2: "JP",
+962:  },
+963:  {
+964:    region: "Central Asia",
+965:    verbose: "Kazakhstan",
+966:    iso2: "KZ",
+967:  },
+968:  {
+969:    region: "Africa",
+970:    verbose: "Kenya",
+971:    iso2: "KE",
+972:  },
+973:  {
+974:    region: "Middle East",
+975:    verbose: "Kuwait",
+976:    iso2: "KW",
+977:  },
+978:  {
+979:    region: "Europe",
+980:    verbose: "Latvia",
+981:    iso2: "LV",
+982:  },
+983:  {
+984:    region: "Middle East",
+985:    verbose: "Lebanon",
+986:    iso2: "LB",
+987:  },
+988:  {
+989:    region: "Europe",
+990:    verbose: "Lithuania",
+991:    iso2: "LT",
+992:  },
+993:  {
+994:    region: "Europe",
+995:    verbose: "Luxembourg",
+996:    iso2: "LU",
+997:  },
+998:  {
+999:    region: "Southeast Asia",
+1000:    verbose: "Malaysia",
+1001:    iso2: "MY",
+1002:  },
+1003:  {
+1004:    region: "North America",
+1005:    verbose: "Mexico",
+1006:    iso2: "MX",
+1007:  },
+1008:  {
+1009:    region: "G20",
+1010:    verbose: "Mexico",
+1011:    iso2: "MX",
+1012:  },
+1013:  {
+1014:    region: "Central Asia",
+1015:    verbose: "Mongolia",
+1016:    iso2: "MN",
+1017:  },
+1018:  {
+1019:    region: "Africa",
+1020:    verbose: "Morocco",
+1021:    iso2: "MA",
+1022:  },
+1023:  {
+1024:    region: "Europe",
+1025:    verbose: "Netherlands",
+1026:    iso2: "NL",
+1027:  },
+1028:  {
+1029:    region: "Oceania",
+1030:    verbose: "New Zealand",
+1031:    iso2: "NZ",
+1032:  },
+1033:  {
+1034:    region: "Africa",
+1035:    verbose: "Nigeria",
+1036:    iso2: "NG",
+1037:  },
+1038:  {
+1039:    region: "Europe",
+1040:    verbose: "North Macedonia",
+1041:    iso2: "MK",
+1042:  },
+1043:  {
+1044:    region: "Europe",
+1045:    verbose: "Norway",
+1046:    iso2: "NO",
+1047:  },
+1048:  {
+1049:    region: "Middle East",
+1050:    verbose: "Oman",
+1051:    iso2: "OM",
+1052:  },
+1053:  {
+1054:    region: "South Asia",
+1055:    verbose: "Pakistan",
+1056:    iso2: "PK",
+1057:  },
+1058:  {
+1059:    region: "Latin America",
+1060:    verbose: "Panama",
+1061:    iso2: "PA",
+1062:  },
+1063:  {
+1064:    region: "Latin America",
+1065:    verbose: "Paraguay",
+1066:    iso2: "PY",
+1067:  },
+1068:  {
+1069:    region: "Latin America",
+1070:    verbose: "Peru",
+1071:    iso2: "PE",
+1072:  },
+1073:  {
+1074:    region: "Southeast Asia",
+1075:    verbose: "Philippines",
+1076:    iso2: "PH",
+1077:  },
+1078:  {
+1079:    region: "Europe",
+1080:    verbose: "Poland",
+1081:    iso2: "PL",
+1082:  },
+1083:  {
+1084:    region: "Europe",
+1085:    verbose: "Portugal",
+1086:    iso2: "PT",
+1087:  },
+1088:  {
+1089:    region: "Middle East",
+1090:    verbose: "Qatar",
+1091:    iso2: "QA",
+1092:  },
+1093:  {
+1094:    region: "Europe",
+1095:    verbose: "Romania",
+1096:    iso2: "RO",
+1097:  },
+1098:  {
+1099:    region: "Europe",
+1100:    verbose: "Russian Federation",
+1101:    iso2: "RU",
+1102:  },
+1103:  {
+1104:    region: "G20",
+1105:    verbose: "Russian Federation",
+1106:    iso2: "RU",
+1107:  },
+1108:  {
+1109:    region: "Middle East",
+1110:    verbose: "Saudi Arabia",
+1111:    iso2: "SA",
+1112:  },
+1113:  {
+1114:    region: "G20",
+1115:    verbose: "Saudi Arabia",
+1116:    iso2: "SA",
+1117:  },
+1118:  {
+1119:    region: "Europe",
+1120:    verbose: "Serbia",
+1121:    iso2: "RS",
+1122:  },
+1123:  {
+1124:    region: "Southeast Asia",
+1125:    verbose: "Singapore",
+1126:    iso2: "SG",
+1127:  },
+1128:  {
+1129:    region: "Europe",
+1130:    verbose: "Slovakia",
+1131:    iso2: "SK",
+1132:  },
+1133:  {
+1134:    region: "Europe",
+1135:    verbose: "Slovenia",
+1136:    iso2: "SI",
+1137:  },
+1138:  {
+1139:    region: "Africa",
+1140:    verbose: "Tanzania",
+1141:    iso2: "TZ",
+1142:  },
+1143:  {
+1144:    region: "Africa",
+1145:    verbose: "Namibia",
+1146:    iso2: "NA",
+1147:  },
+1148:  {
+1149:    region: "Africa",
+1150:    verbose: "Libya",
+1151:    iso2: "LY",
+1152:  },
+1153:  {
+1154:    region: "Africa",
+1155:    verbose: "South Africa",
+1156:    iso2: "ZA",
+1157:  },
+1158:  {
+1159:    region: "G20",
+1160:    verbose: "South Africa",
+1161:    iso2: "ZA",
+1162:  },
+1163:  {
+1164:    region: "East Asia",
+1165:    verbose: "South Korea",
+1166:    iso2: "KR",
+1167:  },
+1168:  {
+1169:    region: "G20",
+1170:    verbose: "South Korea",
+1171:    iso2: "KR",
+1172:  },
+1173:  {
+1174:    region: "Europe",
+1175:    verbose: "Spain",
+1176:    iso2: "ES",
+1177:  },
+1178:  {
+1179:    region: "Europe",
+1180:    verbose: "Sweden",
+1181:    iso2: "SE",
+1182:  },
+1183:  {
+1184:    region: "Europe",
+1185:    verbose: "Switzerland",
+1186:    iso2: "CH",
+1187:  },
+1188:  {
+1189:    region: "East Asia",
+1190:    verbose: "Taiwan",
+1191:    iso2: "TW",
+1192:  },
+1193:  {
+1194:    region: "Southeast Asia",
+1195:    verbose: "Thailand",
+1196:    iso2: "TH",
+1197:  },
+1198:  {
+1199:    region: "Africa",
+1200:    verbose: "Tunisia",
+1201:    iso2: "TN",
+1202:  },
+1203:  {
+1204:    region: "Europe",
+1205:    verbose: "Turkey",
+1206:    iso2: "TR",
+1207:  },
+1208:  {
+1209:    region: "G20",
+1210:    verbose: "Turkey",
+1211:    iso2: "TR",
+1212:  },
+1213:  {
+1214:    region: "Europe",
+1215:    verbose: "Ukraine",
+1216:    iso2: "UA",
+1217:  },
+1218:  {
+1219:    region: "Middle East",
+1220:    verbose: "United Arab Emirates",
+1221:    iso2: "AE",
+1222:  },
+1223:  {
+1224:    region: "Europe",
+1225:    verbose: "United Kingdom",
+1226:    iso2: "UK",
+1227:  },
+1228:  {
+1229:    region: "G20",
+1230:    verbose: "United Kingdom",
+1231:    iso2: "UK",
+1232:  },
+1233:  {
+1234:    region: "North America",
+1235:    verbose: "United States",
+1236:    iso2: "US",
+1237:  },
+1238:  {
+1239:    region: "G20",
+1240:    verbose: "United States",
+1241:    iso2: "US",
+1242:  },
+1243:  {
+1244:    region: "Central Asia",
+1245:    verbose: "Uzbekistan",
+1246:    iso2: "UZ",
+1247:  },
+1248:  {
+1249:    region: "Latin America",
+1250:    verbose: "Venezuela",
+1251:    iso2: "VE",
+1252:  },
+1253:  {
+1254:    region: "Southeast Asia",
+1255:    verbose: "Vietnam",
+1256:    iso2: "VN",
+1257:  },
+1258:];
+1259:
+1260:export const CHART_TYPE_TO_SERIES_TYPE = {
+1261:  column: "bar",
+1262:  groupedColumn: "bar",
+1263:  stackedColumn: "bar",
+1264:  normalizedColumn: "bar",
+1265:  bar: "bar",
+1266:  groupedBar: "bar",
+1267:  stackedBar: "bar",
+1268:  normalizedBar: "bar",
+1269:  line: "line",
+1270:  stackedLine: "line",
+1271:  normalizedLine: "line",
+1272:  scatter: "scatter",
+1273:  bubble: "bubble",
+1274:  pie: "pie",
+1275:  donut: "donut",
+1276:  doughnut: "donut",
+1277:  area: "area",
+1278:  stackedArea: "area",
+1279:  normalizedArea: "area",
+1280:  histogram: "histogram",
+1281:  radarLine: "radar-line",
+1282:  radarArea: "radar-area",
+1283:  nightingale: "nightingale",
+1284:  radialColumn: "radial-column",
+1285:  radialBar: "radial-bar",
+1286:  sunburst: "sunburst",
+1287:  rangeBar: "range-bar",
+1288:  rangeArea: "range-area",
+1289:  boxPlot: "box-plot",
+1290:  treemap: "treemap",
+1291:  heatmap: "heatmap",
+1292:  waterfall: "waterfall",
+1293:  funnel: "funnel",
+1294:  coneFunnel: "cone-funnel",
+1295:  pyramid: "pyramid",
+1296:} as const;
+1297:
+1298:export const AG_CHART_TYPES = Object.keys(
+1299:  CHART_TYPE_TO_SERIES_TYPE,
+1300:) as ChartTypeExCombo[];
+1301:
+1302:// For srcDoc= iframes (HtmlViewer, Artifact) — would inherit parent origin.
+1303:// On-prem with allowHtmlJsExecution enabled intentionally treats uploaded and
+1304:// fetched .html file widgets as trusted executable content. allow-same-origin
+1305:// is required so HTML widget API calls send the correct Origin header
+1306:// (not `null`).
+1307:export const IFRAME_SRCDOC_SANDBOX_ATTRIBUTES =
+1308:  "allow-scripts allow-forms allow-downloads allow-popups allow-same-origin";
+1309:
+1310:// For src= iframes (Iframe.tsx) — external URL origin, NOT parent origin.
+1311:// allow-same-origin lets external site use its own cookies/storage.
+1312:// SAFE: different origin cannot access pro.openbb.co localStorage.
+1313:export const IFRAME_SANDBOX_ATTRIBUTES = `${IFRAME_SRCDOC_SANDBOX_ATTRIBUTES} allow-same-origin`;
+1314:
+1315:// Widget Metadata Constants
+1316:export const WIDGET_STUDIO_TYPE = "widget_studio" as const;
+1317:export const WIDGET_METADATA_CONNECTION_TYPE = "widgetMetadata" as const;

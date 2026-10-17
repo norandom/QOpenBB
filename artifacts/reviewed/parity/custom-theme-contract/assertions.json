@@ -1,0 +1,1665 @@
+{
+  "status": "pass",
+  "results": [
+    {
+      "mode": "dark",
+      "theme": "custom-dark",
+      "background": {
+        "visible": true,
+        "fill": "#26394a"
+      },
+      "series": [
+        {
+          "fill": "#d12378",
+          "stroke": "#21dc65",
+          "strokeWidth": 0
+        },
+        {
+          "fill": "#ab34cd",
+          "stroke": "#3ac9ed",
+          "strokeWidth": 0
+        }
+      ],
+      "inputTheme": {
+        "baseTheme": {
+          "baseTheme": {
+            "baseTheme": {
+              "baseTheme": {
+                "baseTheme": {
+                  "baseTheme": {
+                    "baseTheme": "ag-default-dark",
+                    "overrides": {
+                      "line": {
+                        "series": {
+                          "marker": {
+                            "enabled": false
+                          },
+                          "connectMissingData": true
+                        }
+                      },
+                      "pie": {
+                        "series": {
+                          "calloutLabel": {},
+                          "sectorLabel": {
+                            "enabled": true
+                          }
+                        }
+                      },
+                      "donut": {
+                        "series": {
+                          "calloutLabel": {},
+                          "sectorLabel": {
+                            "enabled": true
+                          }
+                        }
+                      },
+                      "scatter": {
+                        "axes": {
+                          "number": {
+                            "title": {
+                              "fontSize": 11,
+                              "spacing": 10,
+                              "enabled": true,
+                              "text": ""
+                            }
+                          }
+                        }
+                      },
+                      "waterfall": {
+                        "series": {
+                          "item": {
+                            "negative": {
+                              "label": {
+                                "enabled": false,
+                                "placement": "inside-center"
+                              }
+                            },
+                            "positive": {
+                              "label": {
+                                "enabled": false,
+                                "placement": "inside-center"
+                              }
+                            },
+                            "total": {
+                              "label": {
+                                "enabled": false,
+                                "placement": "inside-center"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "funnel": {
+                        "series": {
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "bar": {
+                        "series": {}
+                      },
+                      "common": {
+                        "axes": {
+                          "number": {
+                            "label": {}
+                          },
+                          "angle-number": {
+                            "label": {}
+                          },
+                          "radius-number": {
+                            "label": {}
+                          }
+                        },
+                        "zoom": {
+                          "enabled": true,
+                          "anchorPointX": "pointer",
+                          "anchorPointY": "pointer",
+                          "minVisibleItems": 4,
+                          "autoScaling": {
+                            "enabled": true
+                          }
+                        },
+                        "navigator": {
+                          "enabled": false,
+                          "miniChart": {
+                            "enabled": false
+                          }
+                        },
+                        "legend": {
+                          "position": "top",
+                          "maxHeight": 50,
+                          "spacing": 20,
+                          "item": {
+                            "paddingX": 32,
+                            "paddingY": 8,
+                            "marker": {
+                              "shape": "square",
+                              "padding": 5,
+                              "size": 11
+                            },
+                            "label": {
+                              "color": "#fff",
+                              "fontSize": 11
+                            }
+                          }
+                        },
+                        "title": {
+                          "fontSize": 12
+                        }
+                      }
+                    },
+                    "params": {
+                      "fontSize": 12,
+                      "backgroundColor": "#26394a"
+                    },
+                    "palette": {
+                      "fills": [
+                        "#d12378",
+                        "#ab34cd",
+                        "#459d55",
+                        "#34bfe1",
+                        "#e1cc00",
+                        "#9669cb",
+                        "#b5b5b5",
+                        "#bd5aa7",
+                        "#8a6224",
+                        "#ef5452"
+                      ],
+                      "strokes": [
+                        "#21dc65",
+                        "#3ac9ed",
+                        "#6cb176",
+                        "#75d4ef",
+                        "#f6e559",
+                        "#aa86d8",
+                        "#a1a1a1",
+                        "#ce7ab9",
+                        "#997b52",
+                        "#ff7872"
+                      ]
+                    }
+                  },
+                  "overrides": {
+                    "pie": {
+                      "series": {
+                        "calloutLabel": {
+                          "_enabledFromTheme": true
+                        },
+                        "sectorLabel": {
+                          "enabled": false,
+                          "_enabledFromTheme": true
+                        },
+                        "title": {
+                          "_enabledFromTheme": true
+                        }
+                      }
+                    },
+                    "donut": {
+                      "series": {
+                        "calloutLabel": {
+                          "_enabledFromTheme": true
+                        },
+                        "sectorLabel": {
+                          "enabled": false,
+                          "_enabledFromTheme": true
+                        },
+                        "title": {
+                          "_enabledFromTheme": true
+                        }
+                      }
+                    }
+                  }
+                },
+                "overrides": {
+                  "common": {
+                    "zoom": {
+                      "enabled": true
+                    },
+                    "animation": {
+                      "enabled": true,
+                      "duration": 500
+                    },
+                    "axes": {
+                      "number": {
+                        "crosshair": {
+                          "enabled": true,
+                          "snap": true,
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "category": {
+                        "crosshair": {
+                          "enabled": true,
+                          "snap": true,
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "log": {
+                        "crosshair": {
+                          "enabled": true,
+                          "snap": true,
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "time": {
+                        "crosshair": {
+                          "enabled": true,
+                          "snap": true,
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      }
+                    },
+                    "minHeight": 0,
+                    "minWidth": 0,
+                    "navigator": {
+                      "enabled": false,
+                      "height": 18
+                    },
+                    "context": {
+                      "api": {}
+                    }
+                  }
+                }
+              },
+              "overrides": {
+                "common": {
+                  "axes": {
+                    "number": {
+                      "crosshair": {
+                        "label": {}
+                      },
+                      "position": "left",
+                      "label": {
+                        "fontSize": 11,
+                        "autoRotate": false,
+                        "avoidCollisions": true
+                      }
+                    },
+                    "category": {
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "minSpacing": 5,
+                        "autoRotate": true
+                      },
+                      "position": "bottom"
+                    },
+                    "time": {
+                      "position": "bottom",
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "rotation": 0
+                      }
+                    },
+                    "radius-category": {
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "minSpacing": 5
+                      }
+                    },
+                    "angle-category": {
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "minSpacing": 5
+                      }
+                    },
+                    "grouped-category": {
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "minSpacing": 5,
+                        "rotation": 0
+                      }
+                    }
+                  },
+                  "navigator": {
+                    "miniChart": {
+                      "enabled": false
+                    },
+                    "enabled": false
+                  },
+                  "legend": {
+                    "position": "top",
+                    "maxHeight": 50,
+                    "spacing": 20,
+                    "item": {
+                      "paddingX": 32,
+                      "paddingY": 8,
+                      "marker": {
+                        "shape": "square",
+                        "padding": 5,
+                        "size": 11
+                      },
+                      "label": {
+                        "color": "#fff",
+                        "fontSize": 11
+                      }
+                    }
+                  }
+                },
+                "line": {
+                  "series": {
+                    "label": {
+                      "enabled": false
+                    },
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "pie": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "calloutLabel": {
+                      "enabled": true
+                    },
+                    "sectorLabel": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "donut": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "calloutLabel": {
+                      "enabled": true
+                    },
+                    "sectorLabel": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "area": {
+                  "series": {
+                    "label": {
+                      "enabled": false
+                    },
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "bubble": {
+                  "series": {
+                    "label": {
+                      "enabled": false
+                    },
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "histogram": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "bar": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false,
+                      "placement": "outside-end"
+                    }
+                  }
+                },
+                "scatter": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false,
+                      "placement": "top"
+                    }
+                  }
+                },
+                "treemap": {
+                  "series": {
+                    "group": {
+                      "label": {
+                        "enabled": true
+                      }
+                    },
+                    "tile": {
+                      "label": {
+                        "enabled": true
+                      }
+                    },
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  },
+                  "padding": {
+                    "bottom": 10
+                  }
+                },
+                "sunburst": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true,
+                      "position": {
+                        "anchorTo": "pointer"
+                      },
+                      "interaction": {
+                        "enabled": true
+                      }
+                    },
+                    "label": {
+                      "enabled": true
+                    }
+                  },
+                  "padding": {
+                    "bottom": 10
+                  }
+                },
+                "heatmap": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": true
+                    }
+                  },
+                  "padding": {
+                    "bottom": 10
+                  }
+                },
+                "waterfall": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "radar-line": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "radar-area": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "radial-bar": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "radial-column": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "nightingale": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                }
+              }
+            },
+            "overrides": {
+              "common": {
+                "axes": {
+                  "category": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "minSpacing": 5,
+                      "autoRotate": true
+                    },
+                    "position": "bottom"
+                  },
+                  "radius-category": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "minSpacing": 5
+                    }
+                  },
+                  "angle-category": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "minSpacing": 5
+                    }
+                  },
+                  "grouped-category": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "minSpacing": 5,
+                      "rotation": 0
+                    }
+                  },
+                  "number": {
+                    "crosshair": {
+                      "label": {}
+                    },
+                    "label": {
+                      "fontSize": 11,
+                      "autoRotate": false,
+                      "avoidCollisions": true
+                    },
+                    "position": "left"
+                  },
+                  "time": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "rotation": 0
+                    },
+                    "position": "bottom"
+                  }
+                },
+                "legend": {
+                  "item": {
+                    "label": {
+                      "color": "#fff",
+                      "fontSize": 11
+                    },
+                    "paddingX": 32,
+                    "paddingY": 8,
+                    "marker": {
+                      "shape": "square",
+                      "padding": 5,
+                      "size": 11
+                    }
+                  },
+                  "position": "top",
+                  "maxHeight": 50,
+                  "spacing": 20
+                },
+                "navigator": {
+                  "enabled": false,
+                  "miniChart": {
+                    "enabled": false
+                  }
+                }
+              },
+              "line": {
+                "series": {
+                  "label": {
+                    "enabled": false
+                  },
+                  "tooltip": {
+                    "enabled": true
+                  }
+                }
+              },
+              "pie": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "calloutLabel": {
+                    "enabled": true
+                  },
+                  "sectorLabel": {
+                    "enabled": true
+                  }
+                }
+              },
+              "donut": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "calloutLabel": {
+                    "enabled": true
+                  },
+                  "sectorLabel": {
+                    "enabled": true
+                  }
+                }
+              },
+              "area": {
+                "series": {
+                  "label": {
+                    "enabled": false
+                  },
+                  "tooltip": {
+                    "enabled": true
+                  }
+                }
+              },
+              "bubble": {
+                "series": {
+                  "label": {
+                    "enabled": false
+                  },
+                  "tooltip": {
+                    "enabled": true
+                  }
+                }
+              },
+              "histogram": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "bar": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false,
+                    "placement": "outside-end"
+                  }
+                }
+              },
+              "scatter": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false,
+                    "placement": "top"
+                  }
+                }
+              },
+              "treemap": {
+                "series": {
+                  "group": {
+                    "label": {
+                      "enabled": true
+                    }
+                  },
+                  "tile": {
+                    "label": {
+                      "enabled": true
+                    }
+                  },
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "padding": {
+                  "bottom": 10
+                }
+              },
+              "sunburst": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true,
+                    "position": {
+                      "anchorTo": "pointer"
+                    },
+                    "interaction": {
+                      "enabled": true
+                    }
+                  },
+                  "label": {
+                    "enabled": true
+                  }
+                },
+                "padding": {
+                  "bottom": 10
+                }
+              },
+              "heatmap": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": true
+                  }
+                },
+                "padding": {
+                  "bottom": 10
+                }
+              },
+              "waterfall": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  }
+                }
+              },
+              "radar-line": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "radar-area": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "radial-bar": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "radial-column": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "nightingale": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              }
+            }
+          },
+          "overrides": {}
+        },
+        "overrides": {}
+      }
+    },
+    {
+      "mode": "light",
+      "theme": "custom-light",
+      "background": {
+        "visible": true,
+        "fill": "#edf3d7"
+      },
+      "series": [
+        {
+          "fill": "#136eab",
+          "stroke": "#d65123",
+          "strokeWidth": 0
+        },
+        {
+          "fill": "#81ad32",
+          "stroke": "#9b63d2",
+          "strokeWidth": 0
+        }
+      ],
+      "inputTheme": {
+        "baseTheme": {
+          "baseTheme": {
+            "baseTheme": {
+              "baseTheme": {
+                "baseTheme": {
+                  "baseTheme": {
+                    "baseTheme": "ag-default",
+                    "overrides": {
+                      "line": {
+                        "series": {
+                          "marker": {
+                            "enabled": false
+                          },
+                          "connectMissingData": true
+                        }
+                      },
+                      "pie": {
+                        "series": {
+                          "calloutLabel": {},
+                          "sectorLabel": {
+                            "enabled": true
+                          }
+                        }
+                      },
+                      "donut": {
+                        "series": {
+                          "calloutLabel": {},
+                          "sectorLabel": {
+                            "enabled": true
+                          }
+                        }
+                      },
+                      "scatter": {
+                        "axes": {
+                          "number": {
+                            "title": {
+                              "fontSize": 11,
+                              "spacing": 10,
+                              "enabled": true,
+                              "text": ""
+                            }
+                          }
+                        }
+                      },
+                      "waterfall": {
+                        "series": {
+                          "item": {
+                            "negative": {
+                              "label": {
+                                "enabled": false,
+                                "placement": "inside-center"
+                              }
+                            },
+                            "positive": {
+                              "label": {
+                                "enabled": false,
+                                "placement": "inside-center"
+                              }
+                            },
+                            "total": {
+                              "label": {
+                                "enabled": false,
+                                "placement": "inside-center"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "funnel": {
+                        "series": {
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "bar": {
+                        "series": {}
+                      },
+                      "common": {
+                        "axes": {
+                          "number": {
+                            "label": {}
+                          },
+                          "angle-number": {
+                            "label": {}
+                          },
+                          "radius-number": {
+                            "label": {}
+                          }
+                        },
+                        "zoom": {
+                          "enabled": true,
+                          "anchorPointX": "pointer",
+                          "anchorPointY": "pointer",
+                          "minVisibleItems": 4,
+                          "autoScaling": {
+                            "enabled": true
+                          }
+                        },
+                        "navigator": {
+                          "enabled": false,
+                          "miniChart": {
+                            "enabled": false
+                          }
+                        },
+                        "legend": {
+                          "position": "top",
+                          "maxHeight": 50,
+                          "spacing": 20,
+                          "item": {
+                            "paddingX": 32,
+                            "paddingY": 8,
+                            "marker": {
+                              "shape": "square",
+                              "padding": 5,
+                              "size": 11
+                            },
+                            "label": {
+                              "color": "#000",
+                              "fontSize": 11
+                            }
+                          }
+                        },
+                        "title": {
+                          "fontSize": 12
+                        }
+                      }
+                    },
+                    "params": {
+                      "fontSize": 12,
+                      "backgroundColor": "#edf3d7"
+                    },
+                    "palette": {
+                      "fills": [
+                        "#136eab",
+                        "#81ad32",
+                        "#9BC53D",
+                        "#E55934",
+                        "#FA7921",
+                        "#C45AB3",
+                        "#8B7355",
+                        "#E67E22",
+                        "#3498DB",
+                        "#E74C3C"
+                      ],
+                      "strokes": [
+                        "#d65123",
+                        "#9b63d2",
+                        "#7F9B32",
+                        "#C84A2A",
+                        "#D4621B",
+                        "#A84A94",
+                        "#6D5A44",
+                        "#C86A1C",
+                        "#2980B9",
+                        "#C0392B"
+                      ]
+                    }
+                  },
+                  "overrides": {
+                    "pie": {
+                      "series": {
+                        "calloutLabel": {
+                          "_enabledFromTheme": true
+                        },
+                        "sectorLabel": {
+                          "enabled": false,
+                          "_enabledFromTheme": true
+                        },
+                        "title": {
+                          "_enabledFromTheme": true
+                        }
+                      }
+                    },
+                    "donut": {
+                      "series": {
+                        "calloutLabel": {
+                          "_enabledFromTheme": true
+                        },
+                        "sectorLabel": {
+                          "enabled": false,
+                          "_enabledFromTheme": true
+                        },
+                        "title": {
+                          "_enabledFromTheme": true
+                        }
+                      }
+                    }
+                  }
+                },
+                "overrides": {
+                  "common": {
+                    "zoom": {
+                      "enabled": true
+                    },
+                    "animation": {
+                      "enabled": true,
+                      "duration": 500
+                    },
+                    "axes": {
+                      "number": {
+                        "crosshair": {
+                          "enabled": true,
+                          "snap": true,
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "category": {
+                        "crosshair": {
+                          "enabled": true,
+                          "snap": true,
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "log": {
+                        "crosshair": {
+                          "enabled": true,
+                          "snap": true,
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      },
+                      "time": {
+                        "crosshair": {
+                          "enabled": true,
+                          "snap": true,
+                          "label": {
+                            "enabled": false
+                          }
+                        }
+                      }
+                    },
+                    "minHeight": 0,
+                    "minWidth": 0,
+                    "navigator": {
+                      "enabled": false,
+                      "height": 18
+                    },
+                    "context": {
+                      "api": {}
+                    }
+                  }
+                }
+              },
+              "overrides": {
+                "common": {
+                  "axes": {
+                    "number": {
+                      "crosshair": {
+                        "label": {}
+                      },
+                      "position": "left",
+                      "label": {
+                        "fontSize": 11,
+                        "autoRotate": false,
+                        "avoidCollisions": true
+                      }
+                    },
+                    "category": {
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "minSpacing": 5,
+                        "autoRotate": true
+                      },
+                      "position": "bottom"
+                    },
+                    "time": {
+                      "position": "bottom",
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "rotation": 0
+                      }
+                    },
+                    "radius-category": {
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "minSpacing": 5
+                      }
+                    },
+                    "angle-category": {
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "minSpacing": 5
+                      }
+                    },
+                    "grouped-category": {
+                      "label": {
+                        "avoidCollisions": true,
+                        "fontSize": 11,
+                        "minSpacing": 5,
+                        "rotation": 0
+                      }
+                    }
+                  },
+                  "navigator": {
+                    "miniChart": {
+                      "enabled": false
+                    },
+                    "enabled": false
+                  },
+                  "legend": {
+                    "position": "top",
+                    "maxHeight": 50,
+                    "spacing": 20,
+                    "item": {
+                      "paddingX": 32,
+                      "paddingY": 8,
+                      "marker": {
+                        "shape": "square",
+                        "padding": 5,
+                        "size": 11
+                      },
+                      "label": {
+                        "color": "#000",
+                        "fontSize": 11
+                      }
+                    }
+                  }
+                },
+                "line": {
+                  "series": {
+                    "label": {
+                      "enabled": false
+                    },
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "pie": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "calloutLabel": {
+                      "enabled": true
+                    },
+                    "sectorLabel": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "donut": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "calloutLabel": {
+                      "enabled": true
+                    },
+                    "sectorLabel": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "area": {
+                  "series": {
+                    "label": {
+                      "enabled": false
+                    },
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "bubble": {
+                  "series": {
+                    "label": {
+                      "enabled": false
+                    },
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "histogram": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "bar": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false,
+                      "placement": "outside-end"
+                    }
+                  }
+                },
+                "scatter": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false,
+                      "placement": "top"
+                    }
+                  }
+                },
+                "treemap": {
+                  "series": {
+                    "group": {
+                      "label": {
+                        "enabled": true
+                      }
+                    },
+                    "tile": {
+                      "label": {
+                        "enabled": true
+                      }
+                    },
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  },
+                  "padding": {
+                    "bottom": 10
+                  }
+                },
+                "sunburst": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true,
+                      "position": {
+                        "anchorTo": "pointer"
+                      },
+                      "interaction": {
+                        "enabled": true
+                      }
+                    },
+                    "label": {
+                      "enabled": true
+                    }
+                  },
+                  "padding": {
+                    "bottom": 10
+                  }
+                },
+                "heatmap": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": true
+                    }
+                  },
+                  "padding": {
+                    "bottom": 10
+                  }
+                },
+                "waterfall": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    }
+                  }
+                },
+                "radar-line": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "radar-area": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "radial-bar": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "radial-column": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                },
+                "nightingale": {
+                  "series": {
+                    "tooltip": {
+                      "enabled": true
+                    },
+                    "label": {
+                      "enabled": false
+                    }
+                  }
+                }
+              }
+            },
+            "overrides": {
+              "common": {
+                "axes": {
+                  "category": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "minSpacing": 5,
+                      "autoRotate": true
+                    },
+                    "position": "bottom"
+                  },
+                  "radius-category": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "minSpacing": 5
+                    }
+                  },
+                  "angle-category": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "minSpacing": 5
+                    }
+                  },
+                  "grouped-category": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "minSpacing": 5,
+                      "rotation": 0
+                    }
+                  },
+                  "number": {
+                    "crosshair": {
+                      "label": {}
+                    },
+                    "label": {
+                      "fontSize": 11,
+                      "autoRotate": false,
+                      "avoidCollisions": true
+                    },
+                    "position": "left"
+                  },
+                  "time": {
+                    "label": {
+                      "avoidCollisions": true,
+                      "fontSize": 11,
+                      "rotation": 0
+                    },
+                    "position": "bottom"
+                  }
+                },
+                "legend": {
+                  "item": {
+                    "label": {
+                      "color": "#000",
+                      "fontSize": 11
+                    },
+                    "paddingX": 32,
+                    "paddingY": 8,
+                    "marker": {
+                      "shape": "square",
+                      "padding": 5,
+                      "size": 11
+                    }
+                  },
+                  "position": "top",
+                  "maxHeight": 50,
+                  "spacing": 20
+                },
+                "navigator": {
+                  "enabled": false,
+                  "miniChart": {
+                    "enabled": false
+                  }
+                }
+              },
+              "line": {
+                "series": {
+                  "label": {
+                    "enabled": false
+                  },
+                  "tooltip": {
+                    "enabled": true
+                  }
+                }
+              },
+              "pie": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "calloutLabel": {
+                    "enabled": true
+                  },
+                  "sectorLabel": {
+                    "enabled": true
+                  }
+                }
+              },
+              "donut": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "calloutLabel": {
+                    "enabled": true
+                  },
+                  "sectorLabel": {
+                    "enabled": true
+                  }
+                }
+              },
+              "area": {
+                "series": {
+                  "label": {
+                    "enabled": false
+                  },
+                  "tooltip": {
+                    "enabled": true
+                  }
+                }
+              },
+              "bubble": {
+                "series": {
+                  "label": {
+                    "enabled": false
+                  },
+                  "tooltip": {
+                    "enabled": true
+                  }
+                }
+              },
+              "histogram": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "bar": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false,
+                    "placement": "outside-end"
+                  }
+                }
+              },
+              "scatter": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false,
+                    "placement": "top"
+                  }
+                }
+              },
+              "treemap": {
+                "series": {
+                  "group": {
+                    "label": {
+                      "enabled": true
+                    }
+                  },
+                  "tile": {
+                    "label": {
+                      "enabled": true
+                    }
+                  },
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "padding": {
+                  "bottom": 10
+                }
+              },
+              "sunburst": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true,
+                    "position": {
+                      "anchorTo": "pointer"
+                    },
+                    "interaction": {
+                      "enabled": true
+                    }
+                  },
+                  "label": {
+                    "enabled": true
+                  }
+                },
+                "padding": {
+                  "bottom": 10
+                }
+              },
+              "heatmap": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": true
+                  }
+                },
+                "padding": {
+                  "bottom": 10
+                }
+              },
+              "waterfall": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  }
+                }
+              },
+              "radar-line": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "radar-area": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "radial-bar": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "radial-column": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              },
+              "nightingale": {
+                "series": {
+                  "tooltip": {
+                    "enabled": true
+                  },
+                  "label": {
+                    "enabled": false
+                  }
+                }
+              }
+            }
+          },
+          "overrides": {}
+        },
+        "overrides": {}
+      }
+    }
+  ]
+}

@@ -1,0 +1,840 @@
+1:import type {
+2:  GetMainMenuItemsParams,
+3:  IHeaderParams,
+4:  MenuItemDef,
+5:  WithoutGridCommon,
+6:} from "ag-grid-community";
+7:import "ag-grid-enterprise";
+8:import * as HoverCard from "@radix-ui/react-hover-card";
+9:import { provideGlobalGridOptions } from "ag-grid-community";
+10:import type { AgGridReact } from "ag-grid-react";
+11:import clsx from "clsx";
+12:import dayjs from "dayjs";
+13:import {
+14:  lazy,
+15:  memo,
+16:  type MouseEvent as ReactMouseEvent,
+17:  Suspense,
+18:  useCallback,
+19:  useEffect,
+20:  useMemo,
+21:  useRef,
+22:  useState,
+23:} from "react";
+24:import { toast } from "sonner";
+25:import { useDebouncedCallback } from "use-debounce";
+26:import { useCellOnClickHandler } from "~/components/General/Table/hooks/useCellOnClickHandler";
+27:import Icon from "~/components/Icon";
+28:import type { WidgetColumnDefT } from "~/components/types";
+29:import { useWidgetContext } from "~/components/Widget.context";
+30:import {
+31:  formatNumber,
+32:  formatNumberMagnitude,
+33:  formatNumberThousands,
+34:  parseMarkdownParams,
+35:} from "~/lib/utils";
+36:import {
+37:  convertToReadableLabel,
+38:  formatDate,
+39:  formatObjectValue,
+40:  isDate,
+41:  isDateTime,
+42:  isLink,
+43:} from "./AgGridUtils";
+44:import CellOnHover, { type CellOnHoverProps } from "./CellRenderers/CellOnHover";
+45:import { getOpenBBChartTheme } from "./Chart/themes";
+46:import type {
+47:  CellHoverCardProps,
+48:  CellOnClickedProps,
+49:  CellRendererProps,
+50:  TriggerElementProps,
+51:} from "./hooks/types";
+52:import { clearCellSelection } from "./utils";
+53:
+54:const MarkdownContent = lazy(() =>
+55:  import("~/components/Widgets/custom/Markdown").then((module) => ({
+56:    default: module.MarkdownContent,
+57:  })),
+58:);
+59:
+60:export const TOTAL_CELL_LIMIT = 500_000;
+61:const ROW_SELECTION_LIMIT = 10_000;
+62:
+63:function checkCellCount(cellCount: number) {
+64:  if (cellCount > TOTAL_CELL_LIMIT) {
+65:    // Show a error message that the selection is limited to
+66:    // and that the user should refine their selection
+67:    toast.error(`Selection range is limited to ${TOTAL_CELL_LIMIT} cells.`, {
+68:      description: (
+69:        <div className="mb-2">
+70:          Your selection contains {formatNumberThousands(cellCount)} cells. Please
+71:          refine your selection to a smaller range to avoid performance issues.
+72:        </div>
+73:      ),
+74:    });
+75:  }
+76:
+77:  return cellCount <= TOTAL_CELL_LIMIT;
+78:}
+79:
+80:export const CustomHeader = memo(
+81:  (props: IHeaderParams<WithoutGridCommon<AgGridReact> | AgGridReact>) => {
+82:    const colId = props.column?.getColId();
+83:    const colDef = props.column?.getColDef();
+84:    const isRightAligned = useMemo(
+85:      () => colDef?.cellClass === "ag-right-aligned-cell",
+86:      [colDef?.cellClass],
+87:    );
+88:    const [sortState, setSortState] = useState({ prev: null, current: null });
+89:    const refButton = useRef(null);
+90:    const refLabel = useRef<HTMLDivElement>(null);
+91:    const sortUpRef = useRef(null);
+92:    const sortDownRef = useRef(null);
+93:    const clickTimeout = useRef(null);
+94:
+95:    const [isFilterActive, setIsFilterActive] = useState(false);
+96:
+97:    const onMenuClicked = useCallback(
+98:      (e: ReactMouseEvent) => {
+99:        if (!(props?.showColumnMenuAfterMouseClick && refButton?.current)) return;
+100:        e.stopPropagation();
+101:        e.preventDefault();
+102:
+103:        props.showColumnMenuAfterMouseClick(e as any);
+104:      },
+105:      [props?.showColumnMenuAfterMouseClick, refButton?.current, isFilterActive],
+106:    );
+107:
+108:    const onSortRequested = useDebouncedCallback(
+109:      (order: "asc" | "desc" | null, event: any) => {
+110:        if (!props?.api || props?.api?.isDestroyed()) return;
+111:        if (order === sortState.current) {
+112:          order = null;
+113:        }
+114:        props.setSort(order, event.shiftKey);
+115:      },
+116:      200,
+117:    );
+118:
+119:    const shouldDisplayTooltip = useCallback(() => {
+120:      const elem = refLabel?.current;
+121:      return elem!.scrollWidth > elem!.clientWidth;
+122:    }, [refLabel]);
+123:
+124:    useEffect(() => {
+125:      if (
+126:        !(props?.column?.getColDef && props?.api && props?.setTooltip) ||
+127:        props?.api?.isDestroyed()
+128:      )
+129:        return;
+130:
+131:      const headerTooltip = colDef?.headerTooltip;
+132:      const tooltipText = headerTooltip ?? props?.displayName;
+133:
+134:      props.setTooltip(tooltipText, () =>
+135:        headerTooltip ? true : shouldDisplayTooltip(),
+136:      );
+137:    }, [shouldDisplayTooltip, colDef?.headerTooltip, props?.displayName]);
+138:
+139:    useEffect(() => {
+140:      if (!(props.column && props?.api) || props?.api?.isDestroyed()) return;
+141:      props.column.addEventListener("sortChanged", (params) => {
+142:        const newSort = (getSort = params.column.getSort()) =>
+143:          getSort !== undefined ? getSort : null;
+144:
+145:        setSortState({
+146:          prev: sortState.current,
+147:          current: newSort(),
+148:        });
+149:      });
+150:
+151:      const getSort = props.column.getSort();
+152:      setSortState({
+153:        prev: null,
+154:        current: getSort !== undefined ? getSort : null,
+155:      });
+156:    }, []);
+157:
+158:    const onFilterChanged = useCallback(() => {
+159:      const filterActive = props.column.isFilterActive();
+160:      setIsFilterActive(filterActive);
+161:    }, [props.column.isFilterActive]);
+162:
+163:    useEffect(() => {
+164:      if (props.column) {
+165:        props.column.addEventListener("filterChanged", onFilterChanged);
+166:      }
+167:      return () => {
+168:        if (props.column) {
+169:          props.column.removeEventListener("filterChanged", onFilterChanged);
+170:        }
+171:      };
+172:    }, []);
+173:
+174:    const menu = useMemo(() => {
+175:      if (!props.enableMenu) return null;
+176:      return (
+177:        <div
+178:          key={`${colId}-menu`}
+179:          ref={refButton}
+180:          className={clsx("customHeaderMenuButton", {
+181:            "opacity-0": !isFilterActive,
+182:            "opacity-100": isFilterActive,
+183:            "group-hover/header:opacity-100": !isFilterActive,
+184:          })}
+185:          onClick={onMenuClicked}
+186:        >
+187:          <Icon id="hamburger-icon" className="h-4 w-4" key={`${colId}-menu-icon`} />
+188:        </div>
+189:      );
+190:    }, [isFilterActive, refButton, onMenuClicked]);
+191:
+192:    const sort = useMemo(() => {
+193:      if (!props.enableSorting) return null;
+194:
+195:      const sortingActive = sortState.current !== null;
+196:      return (
+197:        <div
+198:          key={`${colId}-sort`}
+199:          className={clsx("flex flex-col", {
+200:            "opacity-0 group-hover/header:opacity-100": !sortingActive,
+201:            "opacity-100": sortingActive,
+202:          })}
+203:        >
+204:          <div
+205:            key={`${colId}-sort-up`}
+206:            ref={sortUpRef}
+207:            onClick={(event) => onSortRequested("asc", event)}
+208:            className={`customSortUpLabel ${
+209:              sortState.current === "asc" ? "active" : "inactive"
+210:            }`}
+211:          >
+212:            <Icon
+213:              id="mdi-triangle-down"
+214:              className={clsx("h-2 w-2 rotate-180", {
+215:                "text-light-400 dark:text-light-500": sortState.current !== "asc",
+216:                "text-brand-darker": sortState.current === "asc",
+217:              })}
+218:            />
+219:          </div>
+220:          <div
+221:            key={`${colId}-sort-down`}
+222:            ref={sortDownRef}
+223:            onClick={(event) => onSortRequested("desc", event)}
+224:            className={`customSortDownLabel ${
+225:              sortState.current === "desc" ? "active" : "inactive"
+226:            }`}
+227:          >
+228:            <Icon
+229:              id="mdi-triangle-down"
+230:              className={clsx("h-2 w-2", {
+231:                "text-light-400 dark:text-light-500": sortState.current !== "desc",
+232:                "text-brand-darker": sortState.current === "desc",
+233:              })}
+234:            />
+235:          </div>
+236:        </div>
+237:      );
+238:    }, [sortState.current]);
+239:
+240:    const onHeaderClick = useCallback(
+241:      (e: ReactMouseEvent & { target: any }) => {
+242:        e.preventDefault();
+243:        e.stopPropagation();
+244:        if (clickTimeout.current !== null) {
+245:          if (!props?.api || props?.api?.isDestroyed()) return;
+246:          // Double click detected
+247:          clearTimeout(clickTimeout.current);
+248:          clickTimeout.current = null;
+249:
+250:          // Handle double click: select the full column
+251:          const currentSelection = props.api.getCellRanges();
+252:          const column =
+253:            props.api.getAllGridColumns()[
+254:              props.api.getAllGridColumns().indexOf(props.column)
+255:            ];
+256:
+257:          if (e.shiftKey && currentSelection.length > 0) {
+258:            const lastRange = currentSelection[currentSelection.length - 1];
+259:            const lastColumn = lastRange.columns[lastRange.columns.length - 1];
+260:            const lastColumnIndex = props.api.getAllGridColumns().indexOf(lastColumn);
+261:            const currentColumnIndex = props.api.getAllGridColumns().indexOf(column);
+262:            const start = Math.min(lastColumnIndex, currentColumnIndex);
+263:            const end = Math.max(lastColumnIndex, currentColumnIndex);
+264:            const columns = props.api.getAllGridColumns().slice(start, end + 1);
+265:
+266:            const rowCount = props.api.getDisplayedRowCount();
+267:
+268:            props.api.clearCellSelection(); // Clear the selection before adding a new one
+269:
+270:            if (!checkCellCount(rowCount * columns.length)) return;
+271:
+272:            props.api.addCellRange({
+273:              rowStartIndex: 0,
+274:              rowEndIndex: rowCount - 1,
+275:              columns: columns,
+276:            });
+277:          } else if (currentSelection.some((range) => range.columns.includes(column))) {
+278:            props.api.clearCellSelection();
+279:          } else {
+280:            if (currentSelection) {
+281:              props.api.clearCellSelection();
+282:            }
+283:            const rowCount = props.api.getDisplayedRowCount();
+284:
+285:            if (!checkCellCount(rowCount)) return;
+286:
+287:            props.api.addCellRange({
+288:              rowStartIndex: 0,
+289:              rowEndIndex: rowCount - 1,
+290:              columns: [column],
+291:            });
+292:          }
+293:        } else {
+294:          // Single click detected, start a timeout to differentiate from double click
+295:          clickTimeout.current = setTimeout(() => {
+296:            clickTimeout.current = null;
+297:
+298:            // if the user clicked on the sort icon, we ignore the click
+299:            if (
+300:              !(
+301:                e.target.closest(".customSortUpLabel") ||
+302:                e.target.closest(".customSortDownLabel")
+303:              )
+304:            ) {
+305:              const newSort = ["asc", "desc", null][
+306:                (sortState.current === "asc"
+307:                  ? 1
+308:                  : sortState.current === "desc"
+309:                    ? 2
+310:                    : 0) % 3
+311:              ] as "asc" | "desc" | null;
+312:
+313:              // Handle single click: sort the column
+314:              if (props.enableSorting) {
+315:                onSortRequested(newSort, e);
+316:              }
+317:            }
+318:          }, 200); // 200ms delay to wait for potential second click
+319:        }
+320:      },
+321:      [props.column, props.api, sortState.current, onSortRequested],
+322:    );
+323:
+324:    useEffect(() => {
+325:      if (!(props.column && props?.api) || props?.api?.isDestroyed()) return;
+326:      const filterActive = props.column.isFilterActive();
+327:      setIsFilterActive(filterActive);
+328:    }, []);
+329:
+330:    return (
+331:      <div
+332:        key={`${colId}-header`}
+333:        onClick={onHeaderClick}
+334:        onContextMenu={(e) => onMenuClicked(e)}
+335:        className={clsx(
+336:          "group/header headerWrapper flex w-full items-center justify-between gap-1",
+337:          {
+338:            "justify-end": isRightAligned,
+339:            "justify-between": !isRightAligned,
+340:          },
+341:        )}
+342:      >
+343:        {isRightAligned && menu}
+344:        <div
+345:          className="flex gap-1 overflow-hidden text-ellipsis"
+346:          key={`${colId}-header-label`}
+347:        >
+348:          {isRightAligned && sort}
+349:          <div
+350:            ref={refLabel}
+351:            className="customHeaderLabel font-medium"
+352:            key={`${colId}-header-label-text`}
+353:          >
+354:            {props.displayName}
+355:          </div>
+356:          {!isRightAligned && sort}
+357:        </div>
+358:        {!isRightAligned && menu}
+359:      </div>
+360:    );
+361:  },
+362:);
+363:
+364:export const colDefFormatter = (
+365:  params: CellRendererProps,
+366:  options: {
+367:    colDef?: WidgetColumnDefT;
+368:    widgetId?: string;
+369:    decimalPlaces?: number;
+370:  } = {},
+371:): CellOnHoverProps => {
+372:  const { colDef, widgetId, decimalPlaces: globalDecimalPlaces = 3 } = options;
+373:  const decimalPlaces = colDef?.decimalPlaces ?? globalDecimalPlaces;
+374:  const { colorValueKey, colorRules } = colDef?.renderFnParams ?? {};
+375:
+376:  const hasColorFns = colDef?.renderFn?.some((fn) =>
+377:    ["columnColor", "greenRed"].includes(fn),
+378:  );
+379:  const color = hasColorFns || colorRules?.length > 0;
+380:  const colorValue = color ? params?.data?.[colorValueKey] : undefined;
+381:
+382:  const colorProps = { color, colorValue, colorRules };
+383:
+384:  if (typeof params.value === "number" && colDef?.cellDataType !== "text") {
+385:    colorProps.colorValue = colorValue ?? params.value;
+386:
+387:    let title = params.value.toLocaleString();
+388:    let value = params.value.toString();
+389:
+390:    if (!colDef?.formatterFn || colDef?.formatterFn?.includes("int")) {
+391:      value = formatNumber(params.value, decimalPlaces);
+392:    }
+393:    if (!colDef?.formatterFn || colDef?.formatterFn !== "none") {
+394:      title = formatNumberThousands(params.value);
+395:    }
+396:    if (colDef?.formatterFn?.startsWith("normalized")) {
+397:      const [int, decimals = "0"] = (params.value * 100).toString().split(".");
+398:      const maxDecimals = params.value < 0.001 ? 6 : 2;
+399:      value = `${int}.${decimals?.slice(0, Math.max(maxDecimals, decimalPlaces))}`;
+400:
+401:      if (value === "0.00") value = "0";
+402:      if (colDef?.formatterFn === "normalizedPercent") {
+403:        value = `${value} %`;
+404:      }
+405:    }
+406:    if (colDef?.formatterFn === "percent") {
+407:      const [int, decimals = "0"] = params.value.toString().split(".");
+408:      value = `${int}.${decimals?.slice(0, Math.max(2, decimalPlaces))} %`;
+409:    }
+410:    if (
+411:      !["normalizedPercent", "percent"].includes(colDef?.formatterFn) &&
+412:      ["income_statement", "balance_sheet", "cash_flow_statement"].includes(widgetId)
+413:    ) {
+414:      if (params.value > 1_000 || params.value < -1_000) {
+415:        value = formatNumberMagnitude(params.value, 0, true, true);
+416:      }
+417:    }
+418:
+419:    if (colDef?.prefix) {
+420:      value = `${colDef.prefix}${value}`;
+421:      title = `${colDef.prefix}${title}`;
+422:    }
+423:    if (colDef?.suffix) {
+424:      value = `${value}${colDef.suffix}`;
+425:      title = `${title}${colDef.suffix}`;
+426:    }
+427:
+428:    return { value, title, ...colorProps };
+429:  }
+430:
+431:  if (colDef?.renderFn?.includes("titleCase")) {
+432:    const titleCase = convertToReadableLabel(params.value)
+433:      .split(" ")
+434:      .map((word: string) =>
+435:        word
+436:          .replace(/(\w{4,})/g, (match) => match.toLowerCase())
+437:          .replace(/(\w{1})/, (match) => match.toUpperCase()),
+438:      )
+439:      .join(" ");
+440:    return { value: titleCase, title: titleCase, ...colorProps };
+441:  }
+442:
+443:  if (
+444:    (colDef?.prefix || colDef?.suffix) &&
+445:    params.value !== null &&
+446:    params.value !== undefined
+447:  ) {
+448:    let stringValue = params.value.toString();
+449:
+450:    if (colDef?.prefix) {
+451:      stringValue = `${colDef.prefix}${stringValue}`;
+452:    }
+453:    if (colDef?.suffix) {
+454:      stringValue = `${stringValue}${colDef.suffix}`;
+455:    }
+456:
+457:    return { value: stringValue, title: stringValue, ...colorProps };
+458:  }
+459:
+460:  if (colDef?.cellDataType === "date" && isDate(params.value)) {
+461:    return { value: formatDate(params.value), ...colorProps };
+462:  }
+463:
+464:  return { value: params.value, title: params.value, ...colorProps };
+465:};
+466:
+467:function getCellRenderer(
+468:  params: CellRendererProps,
+469:  widgetId: string,
+470:  decimalPlaces: number,
+471:) {
+472:  const widgetColDefs = params?.widgetColDefs ?? {};
+473:  const colField = params?.data?.Index ?? params.colDef?.colId ?? params.colDef?.field;
+474:
+475:  const colDef = widgetColDefs?.[colField] ?? {};
+476:  const chartDataType = colDef?.chartDataType ?? params?.colDef?.chartDataType;
+477:  const cellDataType = colDef?.cellDataType ?? params?.colDef?.cellDataType;
+478:  const isDateField =
+479:    (colField?.toString()?.includes("date") || cellDataType === "date") &&
+480:    chartDataType !== "series";
+481:
+482:  if (params.value === null || params.value === undefined) return "-";
+483:
+484:  function getElementProps() {
+485:    const value = params.value?.value ?? params.value;
+486:    const defaultProps: CellOnHoverProps = { value };
+487:
+488:    if (widgetId === "eod_price" && colField === "date") return defaultProps;
+489:
+490:    if (isDateField && isDateTime(value)) {
+491:      const dateObj = dayjs(value);
+492:
+493:      if (dateObj.format("HH:mm:ss").includes("00:00:00")) {
+494:        defaultProps.value = dateObj.format("YYYY-MM-DD");
+495:      }
+496:
+497:      return defaultProps;
+498:    }
+499:
+500:    if (isDateField && isDate(value)) {
+501:      let date = dayjs(value);
+502:
+503:      if (colDef?.formatterFn === "dateToYear") {
+504:        const { calendar_year, period } = params.data ?? {};
+505:        const year = calendar_year ? calendar_year : date.year();
+506:
+507:        if (period) {
+508:          const quarter = Number.parseInt(period.replace("Q", ""), 10);
+509:          date = dayjs().year(year).quarter(quarter);
+510:        }
+511:
+512:        return { value: date.format("YYYY-MM-DD") };
+513:      }
+514:
+515:      if (typeof params.value === "number") return defaultProps;
+516:
+517:      return { value: formatDate(value) };
+518:    }
+519:
+520:    if (typeof value === "boolean") {
+521:      return { value: value.toString() };
+522:    }
+523:
+524:    if (
+525:      typeof value === "object" ||
+526:      ((isDateField || cellDataType === "text") &&
+527:        !(colDef?.formatterFn || colDef?.renderFn))
+528:    ) {
+529:      return { value: formatObjectValue(value) };
+530:    }
+531:
+532:    return colDefFormatter({ ...params, value }, { widgetId, decimalPlaces, colDef });
+533:  }
+534:
+535:  if (typeof params.value === "string" && isLink(params.value)) {
+536:    return (
+537:      <CellOnHover
+538:        value={
+539:          <a
+540:            href={params.value}
+541:            target="_blank"
+542:            rel="noreferrer"
+543:            className="obb-hyper-link underline-offset-2"
+544:          >
+545:            Open link
+546:          </a>
+547:        }
+548:        title={params.value}
+549:      />
+550:    );
+551:  }
+552:
+553:  return <CellOnHover {...getElementProps()} />;
+554:}
+555:
+556:export const CustomCellRenderer = (params: CellRendererProps) => {
+557:  const decimalPlacesToUse = params?.decimalPlacesToUse ?? 2;
+558:  const colField = params?.colDef?.colId ?? params?.colDef?.field;
+559:
+560:  const {
+561:    widgetId: wId,
+562:    storage: { selectedGroup, decimalDigits },
+563:  } = useWidgetContext().widget;
+564:  const widgetId = selectedGroup || wId;
+565:
+566:  const decimalPlaces = decimalDigits ?? decimalPlacesToUse;
+567:
+568:  return useMemo(() => {
+569:    if (colField === "Index" && params?.transpose) {
+570:      return params.valueFormatted;
+571:    }
+572:
+573:    return getCellRenderer(params, widgetId, decimalPlaces);
+574:  }, [params.value, params.data, colField, widgetId, decimalPlaces]);
+575:};
+576:
+577:export function TriggerElement(params: TriggerElementProps) {
+578:  const colField = params.colDef?.colId ?? params.colDef?.field;
+579:  const colDef = params?.widgetColDefs?.[colField] ?? {};
+580:  const hasCellOnClick = colDef?.renderFn?.includes("cellOnClick");
+581:
+582:  const Component = hasCellOnClick ? CellOnClickRenderer : CustomCellRenderer;
+583:
+584:  return <Component {...(params as CellOnClickedProps)} />;
+585:}
+586:
+587:export function HoverCardCellRenderer(params: CellHoverCardProps) {
+588:  const [isOpen, setIsOpen] = useState(false);
+589:
+590:  const { value, markDownContent } = useMemo(() => {
+591:    const { title, markdown, cellField = "value" } = params?.hoverCard ?? {};
+592:    const isObject = typeof params.value === "object";
+593:    const paramsKey = isObject ? "value" : "data";
+594:
+595:    const defaultMarkdown = Object.entries((isObject && params.value) ?? {}).reduce(
+596:      (acc, [key, value]) => {
+597:        if (key === cellField) return acc;
+598:        const label = convertToReadableLabel(key);
+599:        acc += `- **${label}**: ${value ?? "-"}\n\n`;
+600:        return acc;
+601:      },
+602:      title ? `## ${title}\n` : "",
+603:    );
+604:
+605:    const paramValues = { ...params[paramsKey], title };
+606:    let markDownContent = parseMarkdownParams(
+607:      markdown ?? defaultMarkdown,
+608:      paramValues,
+609:    )?.parsedValue;
+610:
+611:    if (title && !markdown?.includes("{title}")) {
+612:      markDownContent = `## ${title}\n${markDownContent}`;
+613:    }
+614:
+615:    const fieldValue = isObject ? params.value?.[cellField] : params.value;
+616:
+617:    return { value: fieldValue ?? null, markDownContent };
+618:  }, [params.value, params.hoverCard, params.data]);
+619:
+620:  const hoverElements = useMemo(
+621:    () => (
+622:      <Suspense fallback={null}>
+623:        <MarkdownContent content={markDownContent} />
+624:      </Suspense>
+625:    ),
+626:    [markDownContent],
+627:  );
+628:
+629:  const triggerElement = <TriggerElement {...params} value={value} />;
+630:
+631:  if (!markDownContent) return triggerElement;
+632:
+633:  return (
+634:    <span className="flex items-center w-full gap-1">
+635:      <HoverCard.Root open={isOpen} openDelay={300} onOpenChange={setIsOpen}>
+636:        <HoverCard.Trigger
+637:          onClick={() => setIsOpen(true)}
+638:          className="cursor-pointer flex items-center
+639:          justify-center relative w-full no-underline whitespace-nowrap"
+640:        >
+641:          {triggerElement}
+642:        </HoverCard.Trigger>
+643:        <HoverCard.Portal>
+644:          <HoverCard.Content
+645:            side="right"
+646:            align="start"
+647:            sideOffset={10}
+648:            updatePositionStrategy="always"
+649:            className="max-w-[400px] max-h-[300px] overflow-y-auto bottom-full mb-2 prose break-words
+650:            prose-sm z-60 flex animate-fade-in flex-col
+651:            gap-1 rounded bg-light-50 p-1.5 text-light-600
+652:            text-xs dark:prose-invert font-medium dark:text-light-300
+653:            prose-p:my-1 shadow dark:bg-dark-750 dark:shadow-[0_2px_10px_0_rgba(0,0,0,0.80)]
+654:            prose-headings:mt-1"
+655:          >
+656:            {hoverElements}
+657:          </HoverCard.Content>
+658:        </HoverCard.Portal>
+659:      </HoverCard.Root>
+660:    </span>
+661:  );
+662:}
+663:
+664:export function CellOnClickRenderer(params: CellOnClickedProps) {
+665:  const handleCellOnClick = useCellOnClickHandler();
+666:
+667:  const handleClick = useCallback(
+668:    (event: ReactMouseEvent) => {
+669:      event.stopPropagation();
+670:      handleCellOnClick(params);
+671:    },
+672:    [handleCellOnClick, params],
+673:  );
+674:
+675:  return (
+676:    <div
+677:      onClick={handleClick}
+678:      data-cell-on-click-renderer="true"
+679:      className="cursor-pointer w-full h-full"
+680:    >
+681:      <CustomCellRenderer {...params} />
+682:    </div>
+683:  );
+684:}
+685:
+686:export function getMainMenuItems(params: GetMainMenuItemsParams<AgGridReact>) {
+687:  // you don't need to switch, we switch below to just demonstrate some different options
+688:  // you have on how to build up the menu to return
+689:  const colDef = params.column?.getColDef();
+690:  const actualWidth = params.column.getActualWidth();
+691:
+692:  const resetColumns = {
+693:    name: "Reset Columns",
+694:    action: () => {
+695:      params.api?.resetColumnState();
+696:      params.api?.resetColumnGroupState();
+697:      params.api?.autoSizeAllColumns();
+698:    },
+699:  } as MenuItemDef;
+700:  const columnToHide = params.defaultItems.map((item) => {
+701:    // override Reset Columns with our own version
+702:    if (typeof item === "string" && item === "resetColumns") {
+703:      return resetColumns;
+704:    }
+705:    return item;
+706:  });
+707:
+708:  const hideColumn = {
+709:    name: "Hide Column",
+710:    action: () => {
+711:      params.api.setColumnsVisible([colDef.field], false);
+712:    },
+713:  } as MenuItemDef;
+714:
+715:  const minimizeColumn = {
+716:    name: "Minimize Column",
+717:    action: () => {
+718:      params.api.setColumnWidths([{ key: colDef.field, newWidth: 150 }]);
+719:    },
+720:  } as MenuItemDef;
+721:
+722:  const indexToInsert = 4;
+723:  columnToHide.splice(indexToInsert, 0, hideColumn);
+724:  if (actualWidth > 200) columnToHide.splice(indexToInsert, 0, minimizeColumn);
+725:
+726:  return columnToHide;
+727:}
+728:
+729:export function setGlobalGridOptions() {
+730:  return provideGlobalGridOptions({
+731:    paginationPageSize: 100,
+732:    cellSelection: true,
+733:    rowSelection: { enableClickSelection: true, mode: "singleRow", checkboxes: false },
+734:    enableCharts: true,
+735:    rowBuffer: 10,
+736:    suppressAnimationFrame: true,
+737:    rowHeight: 32,
+738:    headerHeight: 32,
+739:    getMainMenuItems: getMainMenuItems,
+740:    animateRows: false,
+741:    tooltipShowDelay: 1000,
+742:    getChartToolbarItems: (_) => [],
+743:    columnMenu: "legacy",
+744:    suppressColumnMoveAnimation: true,
+745:    maintainColumnOrder: true,
+746:    suppressFieldDotNotation: true,
+747:    suppressMoveWhenColumnDragging: true,
+748:    defaultColDef: {
+749:      resizable: true,
+750:      sortable: true,
+751:      filter: true,
+752:      suppressAutoSize: true,
+753:      minWidth: 50,
+754:      cellRenderer: TriggerElement,
+755:      filterParams: {
+756:        buttons: ["apply", "clear", "reset", "cancel"],
+757:        closeOnApply: true,
+758:        maxNumConditions: 5,
+759:      },
+760:    },
+761:    components: {
+762:      agColumnHeader: CustomHeader,
+763:    },
+764:    onCellClicked: (params) => {
+765:      clearCellSelection(params);
+766:    },
+767:    onCellDoubleClicked: (params) => {
+768:      if (params?.node) {
+769:        const allColumns = params.api
+770:          .getAllDisplayedColumns()
+771:          // @ts-expect-error - colId property exists but not in types
+772:          .map((col) => col.colId);
+773:        params.api.addCellRange({
+774:          rowStartIndex: params.node.rowIndex,
+775:          rowEndIndex: params.node.rowIndex,
+776:          columns: allColumns,
+777:        });
+778:      }
+779:    },
+780:    postProcessPopup: (params) => {
+781:      // check callback is for menu
+782:      if (params.type !== "columnMenu") {
+783:        return;
+784:      }
+785:    },
+786:    customChartThemes: {
+787:      "openbb-dark": getOpenBBChartTheme("dark"),
+788:      "openbb-light": getOpenBBChartTheme("light"),
+789:    },
+790:  });
+791:}
+792:
+793:/*const CustomDate = forwardRef((props, ref) => {
+794:  const inputRef = useRef(null);
+795:  const [label, setLabel] = useState('');
+796:
+797:  useImperativeHandle(ref, () => ({
+798:    //*********************************************************************************
+799:    //          METHODS REQUIRED BY AG-GRID
+800:    //*********************************************************************************
+801:    getDate() {
+802:      //ag-grid will call us here when in need to check what the current date value is hold by this
+803:      //component.
+804:      return new Date(inputRef.current.value);
+805:    },
+806:
+807:    setDate(date: any) {
+808:      //ag-grid will call us here when it needs this component to update the date that it holds.
+809:      console.log('setDate', date);
+810:      inputRef.current = date;
+811:    }
+812:  }
+813:  ))
+814:
+815:
+816:  useEffect(() => {
+817:    if (inputRef.current) {
+818:      const isInRange = document.querySelector('.ag-picker-field-display') !== null;
+819:      if (isInRange) {
+820:        const isToHidden = document.querySelector('.ag-filter-to.ag-hidden') !== null;
+821:        if (!isToHidden)
+822:          setLabel(!inputRef.current.closest(".ag-filter-to") ? 'Start:' : 'End:');
+823:      } else {
+824:        setLabel('');
+825:      }
+826:    }
+827:  }, []);
+828:
+829:  return (
+830:    <div>
+831:      {label}
+832:      <input
+833:        type="date"
+834:        onFocus={() => inputRef.current.showPicker()}
+835:        className="ag-input-field-input ag-picker-field"
+836:        ref={inputRef}
+837:      />
+838:    </div>
+839:  );
+840:});*/

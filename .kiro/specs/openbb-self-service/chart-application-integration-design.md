@@ -22,6 +22,8 @@ The [original editor contract](echarts-editor-contract.md) establishes one dark 
 
 Subsequent [stock matrix captures](chart-theme-matrix-findings.md) cover dark/light grouped-column, stacked-column and line through original UI transitions. They close the six stock-default observations, while custom themes, expanded editor fields and range effects remain open. Per-case attempt mapping preserves earlier selector/projection failures; original script-route diagnostics remain recorded. These captures do not establish candidate parity or backend persistence.
 
+The next [custom-theme capture](chart-custom-theme-findings.md) establishes two grouped-column cases: actual admin UI saves select custom-dark/custom-light, and effective fills, strokes and backgrounds match the saved palette/parameter inputs. Zero stroke width means stroke inheritance is observed in options, not visible outlines. It does not establish custom line/stacked behavior, arbitrary bases or per-widget override precedence. The [formatting source contract](chart-format-control-contract.md) settles owned callbacks and generated/saved composition; library callback invocation and nested control events still require runtime evidence.
+
 Before freezing runtime tasks, obtain the following finite original-reference evidence in the controller's exclusive heavy queue. This document supplies the capture contract; it does not claim the captures ran.
 
 | Required observation | Record and design consequence |

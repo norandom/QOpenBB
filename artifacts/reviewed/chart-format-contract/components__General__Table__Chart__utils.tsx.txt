@@ -1,0 +1,690 @@
+1:import type {
+2:  AgAxisCaptionOptions,
+3:  AgAxisLabelFormatterParams,
+4:  AgBubbleSeriesTooltipRendererParams,
+5:  AgCartesianSeriesTooltipRendererParams,
+6:  AgCategoryAxisThemeOptions,
+7:  AgDonutSeriesTooltipRendererParams,
+8:  AgGroupedCategoryAxisThemeOptions,
+9:  AgNumberAxisOptions,
+10:  AgPyramidSeriesTooltipRendererParams,
+11:  AgRadarSeriesTooltipRendererParams,
+12:  AgRadialSeriesTooltipRendererParams,
+13:  AgTimeAxisOptions,
+14:  AgTooltipRendererResult,
+15:  AgTreemapSeriesTooltipRendererParams,
+16:} from "ag-charts-community";
+17:import { AgChartsEnterpriseModule } from "ag-charts-enterprise";
+18:import type {
+19:  ChartType,
+20:  ChartTypeExCombo,
+21:  ColDef,
+22:  Column,
+23:  GridChartContext,
+24:} from "ag-grid-community";
+25:import { AllEnterpriseModule, ModuleRegistry } from "ag-grid-enterprise";
+26:import dayjs from "dayjs";
+27:import type { WidgetColumnDefT, WidgetT } from "~/components/types";
+28:import { CHART_TYPE_TO_SERIES_TYPE } from "~/lib/constants";
+29:import { formatNumber, formatNumberMagnitude } from "~/lib/utils";
+30:import { colDefFormatter } from "../AgGrid";
+31:import { getColumnDefs, isDate, isDateTime } from "../AgGridUtils";
+32:import { getWidgetStorage } from "../hooks";
+33:import type { AgGridElement, ChartDataT } from "../hooks/types";
+34:import { getSelectedRangeData } from "../hooks/useCreateChart";
+35:import { customChartWidgetIds } from "./AgChartView";
+36:
+37:ModuleRegistry.registerModules([AllEnterpriseModule.with(AgChartsEnterpriseModule)]);
+38:
+39:type ToolTipRendererParams<
+40:  T = any,
+41:  CTX = GridChartContext,
+42:> = AgCartesianSeriesTooltipRendererParams<T, CTX> &
+43:  AgRadarSeriesTooltipRendererParams<T, CTX> &
+44:  AgRadialSeriesTooltipRendererParams<T, CTX> &
+45:  AgBubbleSeriesTooltipRendererParams<T, CTX> &
+46:  AgTreemapSeriesTooltipRendererParams<T, CTX> &
+47:  AgDonutSeriesTooltipRendererParams<T, CTX> &
+48:  AgPyramidSeriesTooltipRendererParams<T, CTX>;
+49:
+50:type CreateDefaultProps = {
+51:  chartType: string;
+52:  title?: { xLabel: string; yLabel: string };
+53:  getParsedPeriod?: () => { isQuarterly: boolean; isAnnual: boolean };
+54:  getDecimalPlaces?: () => number | undefined;
+55:};
+56:
+57:const parsedPeriodDefault = () => ({ isQuarterly: false, isAnnual: false });
+58:
+59:export function getFiscalPeriodString(
+60:  value: string | Date,
+61:  getParsedPeriod: CreateDefaultProps["getParsedPeriod"],
+62:  chartType = "",
+63:): string {
+64:  const hasTime = isDateTime(value);
+65:
+66:  if (value instanceof Date) {
+67:    const valueStr = value.toISOString().replace("T", " ");
+68:    return valueStr.slice(0, 19).replace(" 00:00:00", "");
+69:  }
+70:
+71:  if (!(isDate(value) || hasTime)) return value;
+72:
+73:  const dateObj = dayjs(value);
+74:
+75:  if (hasTime && dateObj.format("HH:mm:ss").includes("00:00:00")) {
+76:    return dateObj.format("YYYY-MM-DD");
+77:  }
+78:
+79:  const { isQuarterly, isAnnual } = getParsedPeriod();
+80:  if (isQuarterly) {
+81:    const newLine = chartType?.includes("Column") ? "\n" : " ";
+82:    return `Q${dateObj.quarter()}${newLine}${dateObj.year()}`;
+83:  }
+84:
+85:  if (isAnnual) return `FY ${dateObj.year()}`;
+86:
+87:  return value;
+88:}
+89:
+90:function getLgToSm(values: Record<string, any>, decimals?: number) {
+91:  return Object.keys(values || {})
+92:    .filter((key) => values[key] !== undefined && typeof values[key] === "number")
+93:    .sort((a, b) => values[b] - values[a])
+94:    .map((key) => ({ label: key, value: formatNumber(values[key], decimals) }));
+95:}
+96:
+97:export function createDefaultSeries(props: CreateDefaultProps) {
+98:  const { chartType, getParsedPeriod = parsedPeriodDefault, getDecimalPlaces } = props;
+99:
+100:  return {
+101:    label: {
+102:      enabled: false,
+103:      formatter: (params) => {
+104:        if (typeof params.value === "number") {
+105:          return formatNumber(params.value, 0);
+106:        }
+107:
+108:        if (!dayjs(params.value).isValid()) {
+109:          return `${params.value}`.split(" ").reduce((acc, word, i) => {
+110:            if (i % 2 === 0 && `${acc} ${word}`.length < 20) {
+111:              return `${acc} ${word}`;
+112:            }
+113:            return `${acc} ${word}\n`;
+114:          });
+115:        }
+116:
+117:        return getFiscalPeriodString(params.value, getParsedPeriod, chartType);
+118:      },
+119:    },
+120:    tooltip: {
+121:      enabled: true,
+122:      renderer: (params: ToolTipRendererParams): AgTooltipRendererResult => {
+123:        const { xKey, yKey, seriesId, context, stageKey, valueKey, ...rest } = params;
+124:        const {
+125:          datum,
+126:          angleName,
+127:          angleKey,
+128:          sizeKey,
+129:          labelKey = yKey,
+130:          labelName,
+131:        } = rest;
+132:
+133:        const dKey = [xKey, yKey, angleKey, sizeKey, labelKey, stageKey].find(
+134:          (key) => datum?.[key] !== undefined,
+135:        );
+136:        const lKey = [labelKey, valueKey].find((key) => datum?.[key] !== undefined);
+137:
+138:        const dateString = getFiscalPeriodString(datum?.[dKey], getParsedPeriod);
+139:        const labelValue = getFiscalPeriodString(datum?.[lKey], getParsedPeriod);
+140:        // const newLabel = labelName?.includes("AG-GRID") ? labelValue : labelName;
+141:        // const label = datum?.[labelKey] && `${newLabel || labelKey}: ${labelValue}`;
+142:
+143:        const indexColDef = context?.api.getColumnDef("Index");
+144:        let headerName: string | undefined;
+145:
+146:        if (indexColDef) {
+147:          // @ts-expect-error
+148:          headerName = indexColDef?.valueFormatter({
+149:            value: dateString?.toString(),
+150:            colDef: indexColDef,
+151:          });
+152:        }
+153:
+154:        const colDef = context?.api.getColumn(lKey);
+155:
+156:        if (
+157:          [
+158:            "RadialColumn",
+159:            "Radar",
+160:            "Nightingale",
+161:            "BoxPlotSeries",
+162:            "FunnelSeries",
+163:            "RadialBar",
+164:            "HistogramSeries",
+165:          ].find((item) => seriesId.includes(item))
+166:        )
+167:          return {};
+168:
+169:        if (seriesId.includes("HeatmapSeries")) {
+170:          const dateString = getFiscalPeriodString(
+171:            datum?.[params.yKey],
+172:            getParsedPeriod,
+173:          );
+174:          const values = {
+175:            [datum?.[xKey]]: datum?.[params.colorKey],
+176:          };
+177:
+178:          return {
+179:            title: dateString?.toString(),
+180:            data: getLgToSm(values, getDecimalPlaces?.()),
+181:          };
+182:        }
+183:
+184:        if (seriesId.includes("TreemapSeries")) {
+185:          const values = {
+186:            [params.colorName]: datum?.[params.colorKey],
+187:            [params.yName || yKey]: datum?.[yKey],
+188:            [params.sizeName || sizeKey]: datum?.[sizeKey],
+189:          };
+190:
+191:          return {
+192:            title: labelValue?.toString(),
+193:            data: getLgToSm(values, getDecimalPlaces?.()),
+194:          };
+195:        }
+196:
+197:        if (seriesId.includes("BubbleSeries")) {
+198:          const values = {
+199:            [params.xName || xKey]: datum?.[xKey],
+200:            [params.yName || yKey]: datum?.[yKey],
+201:            [params.sizeName || sizeKey]: datum?.[sizeKey],
+202:          };
+203:          return { data: getLgToSm(values, getDecimalPlaces?.()) };
+204:        }
+205:
+206:        if (seriesId.includes("ScatterSeries")) {
+207:          const values = {
+208:            [params.xName || xKey]: datum?.[xKey],
+209:            [params.yName || yKey]: datum?.[yKey],
+210:          };
+211:          return { data: getLgToSm(values, getDecimalPlaces?.()) };
+212:        }
+213:        if (angleName && datum?.[angleKey]) {
+214:          const angleValue = datum?.[angleKey];
+215:          const dateString = getFiscalPeriodString(
+216:            datum?.[params.radiusKey] || datum?.[params.calloutLabelKey],
+217:            getParsedPeriod,
+218:          );
+219:          return {
+220:            data: [{ label: "", value: angleValue?.toLocaleString() }],
+221:            title: labelName || angleName,
+222:            heading: dateString?.toString(),
+223:          };
+224:        }
+225:
+226:        const data = getLgToSm(
+227:          {
+228:            [colDef?.getColDef()?.headerName || lKey]: labelValue,
+229:          },
+230:          getDecimalPlaces?.(),
+231:        );
+232:
+233:        const title = getFiscalPeriodString(params.title, getParsedPeriod);
+234:
+235:        return {
+236:          heading: headerName || dateString?.toString(),
+237:          data,
+238:          title: data?.length > 0 ? undefined : title,
+239:        };
+240:      },
+241:    },
+242:  };
+243:}
+244:
+245:export function createDefaultAxis(props: CreateDefaultProps) {
+246:  const { title, chartType, getParsedPeriod = parsedPeriodDefault } = props;
+247:  const { xLabel, yLabel } = title || {};
+248:
+249:  const defaultTitle = { fontSize: 12, spacing: 10, enabled: true };
+250:
+251:  const formatter = (params: AgAxisLabelFormatterParams<GridChartContext>) => {
+252:    const { context, boundSeries } = params;
+253:    const colId = boundSeries?.find((series) => series.key)?.key;
+254:    const indexColDef = context?.api.getColumnDef("Index");
+255:    let headerName: string | undefined;
+256:
+257:    if (indexColDef) {
+258:      // @ts-expect-error
+259:      headerName = indexColDef?.valueFormatter({
+260:        value: params.value,
+261:        colDef: indexColDef,
+262:      });
+263:    }
+264:
+265:    const value = headerName || params.value;
+266:
+267:    const colDef = context?.api.getColumn(colId || "");
+268:    const cellDataType = colDef?.getColDef()?.cellDataType;
+269:    if (cellDataType === "date" || cellDataType === "dateString") {
+270:      return getFiscalPeriodString(value, getParsedPeriod, chartType);
+271:    }
+272:
+273:    return value;
+274:  };
+275:
+276:  const category = {
+277:    ...(xLabel && { title: { ...defaultTitle, text: xLabel } }),
+278:    label: {
+279:      avoidCollisions: true,
+280:      fontSize: 11,
+281:      minSpacing: 5,
+282:      formatter,
+283:    },
+284:  } as AgCategoryAxisThemeOptions<any, GridChartContext>;
+285:
+286:  return {
+287:    category: {
+288:      ...category,
+289:      position: "bottom",
+290:      label: { ...category.label, autoRotate: true },
+291:    },
+292:    "radius-category": category,
+293:    "angle-category": category,
+294:    "grouped-category": {
+295:      ...category,
+296:      label: { ...category.label, rotation: 0 },
+297:    } as AgGroupedCategoryAxisThemeOptions,
+298:    number: {
+299:      position: "left",
+300:      ...(yLabel && { title: { ...defaultTitle, text: yLabel } }),
+301:      crosshair: {
+302:        label: {
+303:          renderer: (params) => {
+304:            if (typeof params.value === "number")
+305:              return { text: formatNumberMagnitude(params.value, 0) };
+306:
+307:            return { text: params.value };
+308:          },
+309:        },
+310:      },
+311:      label: {
+312:        fontSize: 11,
+313:        autoRotate: false,
+314:        avoidCollisions: true,
+315:        formatter: (params) => {
+316:          if (typeof params.value === "number") {
+317:            if (params.value > 1000000 || params.value < -1000000)
+318:              return formatNumberMagnitude(params.value, 2);
+319:            return params.value;
+320:          }
+321:          return params.value;
+322:        },
+323:      },
+324:    } as AgNumberAxisOptions,
+325:    time: {
+326:      position: "bottom",
+327:      ...(xLabel && { title: { ...defaultTitle, text: xLabel } }),
+328:      label: {
+329:        avoidCollisions: true,
+330:        fontSize: 11,
+331:        rotation: 0,
+332:        formatter,
+333:      },
+334:    } as AgTimeAxisOptions,
+335:  };
+336:}
+337:
+338:export function createChartArtifactAxes(chartType: string) {
+339:  const titleOptions = {
+340:    enabled: true,
+341:    fontSize: 11,
+342:    spacing: 10,
+343:    formatter: (params) => {
+344:      const { boundSeries } = params;
+345:
+346:      const title = new Set(boundSeries?.map((series) => series?.name));
+347:
+348:      return Array.from(title).join(", ");
+349:    },
+350:  } as AgAxisCaptionOptions;
+351:
+352:  return {
+353:    category: {
+354:      label: {
+355:        avoidCollisions: true,
+356:        fontSize: 11,
+357:        autoRotate: false,
+358:        formatter: (params) => {
+359:          if (
+360:            dayjs(params.value).startOf("day").format("MMM DD\n YYYY") ===
+361:            "Invalid Date"
+362:          ) {
+363:            return `${params.value}`.split(" ").reduce((acc, word, i) => {
+364:              if (i % 2 === 0 && `${acc} ${word}`.length < 20) {
+365:                return `${acc} ${word}`;
+366:              }
+367:              return `${acc} ${word}\n`;
+368:            });
+369:          }
+370:
+371:          if (typeof params.value === "number")
+372:            return formatNumber(params.value, 0).replace(/,/g, "");
+373:          if (params.value?.toString()?.length < 10) return params.value;
+374:
+375:          return dayjs(params.value).startOf("day").format("MMM DD\n YYYY");
+376:        },
+377:      },
+378:      title: titleOptions,
+379:    } as AgCategoryAxisThemeOptions,
+380:    number: {
+381:      label: {
+382:        fontSize: 11,
+383:        formatter: (params) => {
+384:          if (typeof params.value === "number") {
+385:            return formatNumberMagnitude(params.value, 0).replace(/,/g, "");
+386:          }
+387:
+388:          return params.value;
+389:        },
+390:      },
+391:      title: {
+392:        ...titleOptions,
+393:        enabled: chartType === "scatter",
+394:      },
+395:    } as AgNumberAxisOptions,
+396:  };
+397:}
+398:
+399:type ProcessSelectedNodeParams = {
+400:  data: Record<string, any>;
+401:  widgetDefs: { [field: string]: WidgetColumnDefT };
+402:  dates: string[];
+403:  dateField: string;
+404:  columns: (string | Column<any>)[];
+405:  rawRowData: Record<string, any>[];
+406:  rawColumns: string[];
+407:  isReallyTransposed: boolean;
+408:  noIndex: boolean;
+409:  indexField?: string;
+410:  hideColumns: string[];
+411:};
+412:
+413:export function processSelectedNode(params: ProcessSelectedNodeParams) {
+414:  const {
+415:    data,
+416:    widgetDefs,
+417:    dates,
+418:    dateField,
+419:    columns,
+420:    rawRowData,
+421:    rawColumns,
+422:    isReallyTransposed,
+423:    noIndex,
+424:    indexField = "Index",
+425:    hideColumns,
+426:  } = params;
+427:
+428:  if (
+429:    isReallyTransposed &&
+430:    ["fiscal_period", "period"].some((item) => item === data?.[indexField])
+431:  )
+432:    return;
+433:
+434:  for (const key of Object.keys(data)) {
+435:    if (hideColumns.includes(key)) continue;
+436:    if (!noIndex && columns?.length === 1) {
+437:      if (key !== indexField && !columns.includes(key)) {
+438:        columns.push(key);
+439:      }
+440:    }
+441:    if (key === indexField && !rawColumns.includes(data[key])) {
+442:      rawColumns.push(data[key]);
+443:    }
+444:  }
+445:
+446:  if (isReallyTransposed) {
+447:    const fieldName = data?.[indexField];
+448:    for (const key of Object.keys(data)) {
+449:      if (key === indexField || !dates.includes(key)) continue;
+450:      const existing = rawRowData.findIndex((item) => item[dateField] === key);
+451:      if (existing !== -1) {
+452:        rawRowData[existing][fieldName] = data[key];
+453:      } else {
+454:        const obj = { [dateField]: key };
+455:        obj[fieldName] = data[key];
+456:        rawRowData.push(obj);
+457:      }
+458:    }
+459:    return;
+460:  }
+461:
+462:  const newData = {};
+463:  for (const key of Object.keys(data)) {
+464:    const colDef = widgetDefs[key];
+465:    newData[key] = data[key];
+466:
+467:    if (
+468:      !(
+469:        ["normalizedPercent", "percent"].includes(colDef?.formatterFn) ||
+470:        colDef?.renderFn?.some((fn) => ["titleCase", "hoverCard"].includes(fn))
+471:      )
+472:    ) {
+473:      continue;
+474:    }
+475:
+476:    const params = { value: data[key] } as any;
+477:    if (colDef?.renderFn?.includes("hoverCard") && typeof params.value === "object") {
+478:      const { hoverCard } = colDef.renderFnParams;
+479:      const cellField = hoverCard?.cellField || "value";
+480:      params.value = params?.value?.[cellField] ?? "";
+481:    }
+482:
+483:    const value = colDefFormatter(params, { colDef })?.value || params.value;
+484:    newData[key] = value;
+485:    if (typeof data[key] === "number") {
+486:      newData[key] = Number(value.replace(/[^0-9.-]+/g, "").trim());
+487:    }
+488:  }
+489:
+490:  rawRowData.push(newData);
+491:}
+492:
+493:export type GetChartDataProps = {
+494:  gridApi?: AgGridElement["api"];
+495:  selectedRowNodes?: any[];
+496:  columnDefs: ColDef[];
+497:  chartType?: string;
+498:  columns: (string | Column<any>)[];
+499:  widget: WidgetT;
+500:  isChartView?: boolean;
+501:};
+502:
+503:export function getChartData(params: GetChartDataProps) {
+504:  const {
+505:    gridApi,
+506:    selectedRowNodes,
+507:    columnDefs,
+508:    chartType,
+509:    columns,
+510:    widget,
+511:    isChartView = false,
+512:  } = params;
+513:
+514:  const hasCustomChart =
+515:    !widget?.external && customChartWidgetIds.includes(widget?.widgetId);
+516:
+517:  const widgetTable = widget?.data?.table || {};
+518:  const widgetColDefs = widgetTable?.columnsDefs ?? [];
+519:
+520:  const storage = getWidgetStorage(widget);
+521:  const period = storage?.period ?? storage?.params?.period;
+522:  const transpose = hasCustomChart ? true : storage?.transpose;
+523:
+524:  const widgetDefs = Object.fromEntries(
+525:    widgetColDefs?.map((column) => [
+526:      column.field,
+527:      {
+528:        field: column.field,
+529:        headerName: column.headerName,
+530:        cellDataType: column.cellDataType,
+531:        chartDataType: column.chartDataType,
+532:        renderFn: column.renderFn,
+533:        formatterFn: column.formatterFn,
+534:        renderFnParams: column.renderFnParams || {},
+535:        rowGroup: column.rowGroup,
+536:        hide: column.hide,
+537:        headerTooltip: column.headerTooltip,
+538:        maxWidth: column.maxWidth,
+539:        minWidth: column.minWidth,
+540:        aggFunc: column.aggFunc,
+541:        pinned: column.pinned,
+542:      } as WidgetColumnDefT,
+543:    ]),
+544:  );
+545:
+546:  const hideColumns = widgetColDefs?.reduce((acc, curr) => {
+547:    if (curr.hide || curr.chartDataType === "excluded") acc.push(curr.field);
+548:    return acc;
+549:  }, [] as string[]);
+550:
+551:  const dateField =
+552:    widgetColDefs?.find(
+553:      (column) => column.headerName === "Date" || column.cellDataType === "date",
+554:    )?.field ?? "date";
+555:
+556:  const allKeys = Object.keys(selectedRowNodes[0] || {});
+557:  const hasDates = allKeys.includes(dateField);
+558:
+559:  // In case the table is transposed and selectedNodes has only dates
+560:  let indexField = "Index";
+561:  let noIndex = !columns.includes("Index");
+562:  const rowDataHasIndex = allKeys?.some((key) => key === "Index");
+563:
+564:  let isReallyTransposed = transpose && rowDataHasIndex;
+565:  // If the widget is external, we determine whether it's really transposed
+566:  // based on the presence of date fields and non-date fields, rather than relying on the storage value
+567:  if (widget?.external) {
+568:    const { nonDate, dateCols } = columns.reduce(
+569:      (acc, key: string) => {
+570:        if (isDate(key) || isDateTime(key)) acc.dateCols.push(key);
+571:        else acc.nonDate.push(key);
+572:        return acc;
+573:      },
+574:      { nonDate: [] as string[], dateCols: [] as string[] },
+575:    );
+576:
+577:    if (nonDate.length === 1 && dateCols.length === columns.length - 1) {
+578:      isReallyTransposed = true;
+579:      indexField = nonDate[0];
+580:      noIndex = false;
+581:    }
+582:  }
+583:
+584:  const dates = isReallyTransposed
+585:    ? columns.filter((item) => item !== indexField)
+586:    : hasDates && !isChartView
+587:      ? selectedRowNodes.map((item) => item?.[dateField] || item?.date)
+588:      : [];
+589:
+590:  const chartData = {
+591:    columns,
+592:    rowData: null,
+593:    widgetId: widget?.widgetId,
+594:    transpose: false,
+595:    period,
+596:    columnDefs,
+597:    chartType: (dates?.length === 1 && ["area", "line"].includes(chartType)
+598:      ? "groupedColumn"
+599:      : chartType) as ChartType,
+600:    isReallyTransposed,
+601:  } as ChartDataT;
+602:
+603:  if (!(isReallyTransposed || hasCustomChart) && isChartView) return chartData;
+604:
+605:  const rawRowData = [] as Record<string, any>[];
+606:  const rawColumns = (isReallyTransposed ? [] : columns) as string[];
+607:
+608:  const processData = (data: Record<string, any>) => {
+609:    processSelectedNode({
+610:      data,
+611:      widgetDefs,
+612:      dates,
+613:      dateField,
+614:      columns,
+615:      rawRowData,
+616:      rawColumns,
+617:      isReallyTransposed,
+618:      noIndex,
+619:      indexField,
+620:      hideColumns,
+621:    });
+622:  };
+623:
+624:  // Extract the data from the selected row nodes
+625:  if (hasCustomChart || !isChartView)
+626:    for (const data of selectedRowNodes) processData(data);
+627:  else if (gridApi) {
+628:    gridApi.forEachNodeAfterFilterAndSort((node) => {
+629:      if (node.rowGroupColumn) {
+630:        const autoColId = node.rowGroupColumn.getColId();
+631:        if (!columns.includes(autoColId)) columns.splice(node.level, 0, autoColId);
+632:      }
+633:      getSelectedRangeData(node, undefined, processData);
+634:    });
+635:  }
+636:  const needsColumnDefs =
+637:    (widget?.external ? isReallyTransposed : transpose) ?? !columnDefs?.length;
+638:
+639:  if (
+640:    !rawColumns.includes(dateField) &&
+641:    Object.keys(rawRowData[0] || {}).includes(dateField)
+642:  ) {
+643:    rawColumns.unshift(dateField);
+644:  }
+645:
+646:  if (rawColumns.includes(dateField)) {
+647:    const dateSorted = gridApi?.getColumn(dateField)?.getSort();
+648:    rawRowData?.sort((a, b) => {
+649:      if (dateSorted === "desc") {
+650:        return dayjs(b?.[dateField]).diff(dayjs(a?.[dateField]));
+651:      }
+652:      return dayjs(a?.[dateField]).diff(dayjs(b?.[dateField]));
+653:    });
+654:  }
+655:
+656:  return {
+657:    ...chartData,
+658:    columns: isReallyTransposed
+659:      ? Array.from(
+660:          new Set([
+661:            dateField,
+662:            ...Object.keys(rawRowData[0] || {}).filter(
+663:              (col) => !hideColumns.includes(col),
+664:            ),
+665:          ]),
+666:        )
+667:      : rawColumns.filter((col) => !hideColumns.includes(col)),
+668:    rowData: rawRowData,
+669:    columnDefs: (needsColumnDefs
+670:      ? getColumnDefs(rawRowData, {
+671:          external: widget?.external,
+672:          data: { table: { ...widgetTable, transpose: false } },
+673:        } as WidgetT)
+674:      : columnDefs
+675:    )
+676:      .filter((col) => rawRowData[0]?.[col.field] !== undefined)
+677:      .sort((a, b) => {
+678:        if (a.cellDataType === "date") return -1;
+679:        if (b.cellDataType === "date") return 1;
+680:        return 0;
+681:      }),
+682:  };
+683:}
+684:
+685:type SeriesMapping = typeof CHART_TYPE_TO_SERIES_TYPE;
+686:export type ChartSeriesT = SeriesMapping[ChartTypeExCombo];
+687:
+688:export function getSeriesType(chartType: ChartType): ChartSeriesT {
+689:  return CHART_TYPE_TO_SERIES_TYPE[chartType as ChartTypeExCombo] ?? "line";
+690:}

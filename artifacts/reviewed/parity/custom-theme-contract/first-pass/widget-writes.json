@@ -1,0 +1,494 @@
+[
+  {
+    "stage": "baseline",
+    "items": {
+      "11111111-1111-4111-8111-111111111111": {
+        "name": "Synthetic Financials",
+        "parentId": "00000000-0000-4000-8000-000000000000",
+        "data": {
+          "name": "Synthetic Financials",
+          "type": "custom",
+          "currentTab": "",
+          "widgets": [
+            {
+              "id": "synthetic_financials",
+              "widgetId": "synthetic_financials",
+              "name": "Synthetic Financials",
+              "type": "table",
+              "widgetType": "single",
+              "connectionType": "single",
+              "external": true,
+              "storage": {
+                "isPivotMode": false,
+                "openToolPanel": null
+              },
+              "endpoint": {
+                "url": "http://127.0.0.1:32775/synthetic_financials",
+                "method": "GET"
+              },
+              "gridData": {
+                "i": "synthetic_financials",
+                "x": 0,
+                "y": 0,
+                "w": 30,
+                "h": 12
+              },
+              "data": {
+                "table": {
+                  "enableCharts": true,
+                  "columnsDefs": [
+                    {
+                      "field": "period",
+                      "headerName": "Period",
+                      "cellDataType": "text",
+                      "chartDataType": "category"
+                    },
+                    {
+                      "field": "revenue",
+                      "headerName": "Revenue (USD millions)",
+                      "cellDataType": "number",
+                      "chartDataType": "series"
+                    },
+                    {
+                      "field": "operatingIncome",
+                      "headerName": "Operating Income (USD millions)",
+                      "cellDataType": "number",
+                      "chartDataType": "series"
+                    }
+                  ],
+                  "filterModel": {},
+                  "columnState": {
+                    "default": {
+                      "version": "34.1.1",
+                      "sideBar": {
+                        "visible": false,
+                        "openToolPanel": null,
+                        "toolPanels": {}
+                      },
+                      "columnSizing": {
+                        "columnSizingModel": [
+                          {
+                            "colId": "period",
+                            "width": 282
+                          },
+                          {
+                            "colId": "revenue",
+                            "width": 281
+                          },
+                          {
+                            "colId": "operatingIncome",
+                            "width": 281
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "params": [],
+              "staleTime": 900000
+            }
+          ],
+          "gridLayout": {
+            "": [
+              {
+                "w": 30,
+                "h": 12,
+                "x": 0,
+                "y": 0,
+                "i": "synthetic_financials",
+                "minW": 8,
+                "minH": 4,
+                "moved": false,
+                "static": false
+              }
+            ]
+          },
+          "groups": [],
+          "storedFileUUIDs": [],
+          "lastUpdated": 1792228799043,
+          "numberOfChanges": 3
+        },
+        "index": "11111111-1111-4111-8111-111111111111",
+        "isShared": false,
+        "created_date": "2026-10-16T00:00:00Z",
+        "updated_date": "2026-10-17T09:19:59.043Z",
+        "created_by": "Synthetic Parity"
+      }
+    }
+  },
+  {
+    "stage": "dark-groupedColumn",
+    "items": {
+      "11111111-1111-4111-8111-111111111111": {
+        "name": "Synthetic Financials",
+        "parentId": "00000000-0000-4000-8000-000000000000",
+        "data": {
+          "name": "Synthetic Financials",
+          "type": "custom",
+          "currentTab": "",
+          "widgets": [
+            {
+              "id": "synthetic_financials",
+              "widgetId": "synthetic_financials",
+              "name": "Synthetic Financials",
+              "type": "table",
+              "widgetType": "single",
+              "connectionType": "single",
+              "external": true,
+              "storage": {
+                "isPivotMode": false,
+                "openToolPanel": null,
+                "chartView": {
+                  "enabled": true
+                },
+                "totalSeries": 2,
+                "chartType": "groupedColumn",
+                "default": {
+                  "chartModel": {
+                    "modelType": "range",
+                    "chartId": "id-f22i39iyuwg",
+                    "chartType": "groupedColumn",
+                    "chartThemeName": "custom-dark",
+                    "chartOptions": {
+                      "common": {
+                        "axes": {
+                          "category": {
+                            "label": {
+                              "avoidCollisions": true,
+                              "fontSize": 11,
+                              "minSpacing": 5,
+                              "autoRotate": true
+                            },
+                            "position": "bottom"
+                          },
+                          "radius-category": {
+                            "label": {
+                              "avoidCollisions": true,
+                              "fontSize": 11,
+                              "minSpacing": 5
+                            }
+                          },
+                          "angle-category": {
+                            "label": {
+                              "avoidCollisions": true,
+                              "fontSize": 11,
+                              "minSpacing": 5
+                            }
+                          },
+                          "grouped-category": {
+                            "label": {
+                              "avoidCollisions": true,
+                              "fontSize": 11,
+                              "minSpacing": 5,
+                              "rotation": 0
+                            }
+                          },
+                          "number": {
+                            "position": "left",
+                            "crosshair": {
+                              "label": {}
+                            },
+                            "label": {
+                              "fontSize": 11,
+                              "autoRotate": false,
+                              "avoidCollisions": true
+                            }
+                          },
+                          "time": {
+                            "position": "bottom",
+                            "label": {
+                              "avoidCollisions": true,
+                              "fontSize": 11,
+                              "rotation": 0
+                            }
+                          }
+                        },
+                        "legend": {
+                          "position": "top",
+                          "maxHeight": 50,
+                          "spacing": 20,
+                          "item": {
+                            "paddingX": 32,
+                            "paddingY": 8,
+                            "marker": {
+                              "shape": "square",
+                              "padding": 5,
+                              "size": 11
+                            },
+                            "label": {
+                              "color": "#fff",
+                              "fontSize": 11
+                            }
+                          }
+                        },
+                        "navigator": {
+                          "enabled": false,
+                          "miniChart": {
+                            "enabled": false
+                          }
+                        }
+                      }
+                    },
+                    "chartPalette": {
+                      "fills": [
+                        "#d12378",
+                        "#ab34cd",
+                        "#459d55",
+                        "#34bfe1",
+                        "#e1cc00",
+                        "#9669cb",
+                        "#b5b5b5",
+                        "#bd5aa7",
+                        "#8a6224",
+                        "#ef5452"
+                      ],
+                      "strokes": [
+                        "#21dc65",
+                        "#3ac9ed",
+                        "#6cb176",
+                        "#75d4ef",
+                        "#f6e559",
+                        "#aa86d8",
+                        "#a1a1a1",
+                        "#ce7ab9",
+                        "#997b52",
+                        "#ff7872"
+                      ],
+                      "sequentialColors": [
+                        [
+                          "#2162aa",
+                          "#5090dc",
+                          "#7ec0ff"
+                        ],
+                        [
+                          "#cc7100",
+                          "#ffa03a",
+                          "#ffd171"
+                        ],
+                        [
+                          "#076f29",
+                          "#459d55",
+                          "#75cd82"
+                        ],
+                        [
+                          "#008fb0",
+                          "#34bfe1",
+                          "#70f1ff"
+                        ],
+                        [
+                          "#b19c00",
+                          "#e1cc00",
+                          "#fffe5d"
+                        ],
+                        [
+                          "#6a3c9a",
+                          "#9669cb",
+                          "#c597fe"
+                        ],
+                        [
+                          "#878787",
+                          "#b5b5b5",
+                          "#e5e5e5"
+                        ],
+                        [
+                          "#8c2c79",
+                          "#bd5aa7",
+                          "#f088d7"
+                        ],
+                        [
+                          "#5d3800",
+                          "#8a6224",
+                          "#b98f53"
+                        ],
+                        [
+                          "#b91926",
+                          "#ef5452",
+                          "#ff867f"
+                        ]
+                      ],
+                      "fillsFallback": [
+                        "#5090dc",
+                        "#ffa03a",
+                        "#459d55",
+                        "#34bfe1",
+                        "#e1cc00",
+                        "#9669cb",
+                        "#b5b5b5",
+                        "#bd5aa7",
+                        "#8a6224",
+                        "#ef5452"
+                      ],
+                      "divergingColors": [
+                        "#ffa03a",
+                        "#e1cc00",
+                        "#459d55"
+                      ],
+                      "hierarchyColors": [
+                        "#192834",
+                        "#253746",
+                        "#324859",
+                        "#3f596c",
+                        "#4d6a80"
+                      ],
+                      "secondSequentialColors": [
+                        "#5090dc",
+                        "#4882c6",
+                        "#4073b0",
+                        "#38659a",
+                        "#305684",
+                        "#28486e",
+                        "#203a58",
+                        "#182b42"
+                      ],
+                      "secondDivergingColors": [
+                        "#459d55",
+                        "#e1cc00",
+                        "#ef5452"
+                      ],
+                      "secondHierarchyColors": [
+                        "#192834",
+                        "#3b5164",
+                        "#496275",
+                        "#577287",
+                        "#668399"
+                      ],
+                      "up": {
+                        "fill": "#459d55",
+                        "stroke": "#6cb176"
+                      },
+                      "down": {
+                        "fill": "#ef5452",
+                        "stroke": "#ff7872"
+                      },
+                      "neutral": {
+                        "fill": "#b5b5b5",
+                        "stroke": "#a1a1a1"
+                      },
+                      "altUp": {
+                        "fill": "#5090dc",
+                        "stroke": "#74a8e6"
+                      },
+                      "altDown": {
+                        "fill": "#ffa03a",
+                        "stroke": "#ffbe70"
+                      },
+                      "altNeutral": {
+                        "fill": "#b5b5b5",
+                        "stroke": "#a1a1a1"
+                      }
+                    },
+                    "cellRange": {
+                      "rowStartIndex": null,
+                      "rowStartPinned": null,
+                      "rowEndIndex": null,
+                      "rowEndPinned": null,
+                      "columns": [
+                        "period",
+                        "revenue",
+                        "operatingIncome"
+                      ]
+                    },
+                    "switchCategorySeries": false,
+                    "suppressChartRanges": true,
+                    "unlinkChart": false,
+                    "version": "34.1.1"
+                  }
+                }
+              },
+              "endpoint": {
+                "url": "http://127.0.0.1:32775/synthetic_financials",
+                "method": "GET"
+              },
+              "gridData": {
+                "i": "synthetic_financials",
+                "x": 0,
+                "y": 0,
+                "w": 30,
+                "h": 12
+              },
+              "data": {
+                "table": {
+                  "enableCharts": true,
+                  "columnsDefs": [
+                    {
+                      "field": "period",
+                      "headerName": "Period",
+                      "cellDataType": "text",
+                      "chartDataType": "category"
+                    },
+                    {
+                      "field": "revenue",
+                      "headerName": "Revenue (USD millions)",
+                      "cellDataType": "number",
+                      "chartDataType": "series"
+                    },
+                    {
+                      "field": "operatingIncome",
+                      "headerName": "Operating Income (USD millions)",
+                      "cellDataType": "number",
+                      "chartDataType": "series"
+                    }
+                  ],
+                  "filterModel": {},
+                  "columnState": {
+                    "default": {
+                      "version": "34.1.1",
+                      "sideBar": {
+                        "visible": false,
+                        "openToolPanel": null,
+                        "toolPanels": {}
+                      },
+                      "columnSizing": {
+                        "columnSizingModel": [
+                          {
+                            "colId": "period",
+                            "width": 282
+                          },
+                          {
+                            "colId": "revenue",
+                            "width": 281
+                          },
+                          {
+                            "colId": "operatingIncome",
+                            "width": 281
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "params": [],
+              "staleTime": 900000
+            }
+          ],
+          "gridLayout": {
+            "": [
+              {
+                "w": 30,
+                "h": 12,
+                "x": 0,
+                "y": 0,
+                "i": "synthetic_financials",
+                "minW": 8,
+                "minH": 4,
+                "moved": false,
+                "static": false
+              }
+            ]
+          },
+          "groups": [],
+          "storedFileUUIDs": [],
+          "lastUpdated": 1792228813825,
+          "numberOfChanges": 3
+        },
+        "index": "11111111-1111-4111-8111-111111111111",
+        "isShared": false,
+        "created_date": "2026-10-16T00:00:00Z",
+        "updated_date": "2026-10-17T09:20:13.825Z",
+        "created_by": "Synthetic Parity"
+      }
+    }
+  }
+]

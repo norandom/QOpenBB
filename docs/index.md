@@ -39,6 +39,8 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Inspect remaining effective chart styling contracts | [Effective-style discovery](../.kiro/specs/openbb-self-service/chart-effective-style-discovery.md) |
 | Inspect observed original dark-theme defaults | [Resolved-theme findings](../.kiro/specs/openbb-self-service/chart-theme-runtime-findings.md) |
 | Inspect original light/dark defaults for the three initial chart families | [Stock theme matrix](../.kiro/specs/openbb-self-service/chart-theme-matrix-findings.md) |
+| Inspect saved custom palettes and background inheritance | [Custom-theme findings](../.kiro/specs/openbb-self-service/chart-custom-theme-findings.md) |
+| Check original numeric, fiscal-date and tooltip formatting rules | [Formatting contract](../.kiro/specs/openbb-self-service/chart-format-control-contract.md) |
 | Review the renderer compatibility investigation and parallel work | [Discovery plan](../.kiro/specs/openbb-self-service/parity-plan.md) and [research](../.kiro/specs/openbb-self-service/parity-research.md) |
 | Check what the renderer probes actually established | [Discovery results](../.kiro/specs/openbb-self-service/parity-findings.md) |
 | Compare original and candidate widget controls | [Paired widget findings](../.kiro/specs/openbb-self-service/parity-widget-findings.md) |

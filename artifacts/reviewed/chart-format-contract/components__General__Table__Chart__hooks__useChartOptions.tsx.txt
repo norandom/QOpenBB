@@ -1,0 +1,517 @@
+1:import type {
+2:  AgBaseAxisOptions,
+3:  AgBaseSeriesOptions,
+4:  AgChartThemeOverrides,
+5:} from "ag-charts-community";
+6:import type { AgChartProps } from "ag-charts-react";
+7:import type {
+8:  CellRangeParams,
+9:  ChartModel,
+10:  ChartOptionsChangedEvent,
+11:} from "ag-grid-community";
+12:import cloneDeep from "lodash/cloneDeep";
+13:import isEqual from "lodash.isequal";
+14:import merge from "lodash.merge";
+15:import { useCallback, useEffect, useMemo, useRef } from "react";
+16:import type { ExtraAction, ExtraActionT } from "~/components/DraggableCard/NavBar";
+17:import type { WidgetT } from "~/components/types";
+18:import { useWidgetContext } from "~/components/Widget.context";
+19:import { useCallbackRef } from "~/hooks/useRefHooks";
+20:import { useShallowThemeStore } from "~/lib/state/theme";
+21:import { useAgGridContext } from "../../hooks";
+22:import {
+23:  getCellRangeState,
+24:  getStateKey,
+25:  getStateStorage,
+26:  getWidgetStorage,
+27:} from "../../hooks/useUpdateColumnState";
+28:import { getOpenBBChartTheme } from "../themes";
+29:import {
+30:  createDefaultAxis,
+31:  createDefaultSeries,
+32:  getFiscalPeriodString,
+33:  getSeriesType,
+34:} from "../utils";
+35:
+36:export function getDefaultChartOptions(
+37:  chartOptions: AgChartProps["options"] | any,
+38:  chartType: ChartModel["chartType"],
+39:) {
+40:  const { axes, ...options } = chartOptions;
+41:  const { connectMissingData, ...newSeries } = options.series ?? {};
+42:  const { label, calloutLabel, marker, ...series } = newSeries;
+43:  const pieTypes = {
+44:    ...options,
+45:    series: {
+46:      ...series,
+47:      calloutLabel: { ...label, enabled: true },
+48:      sectorLabel: { ...label, enabled: true },
+49:    },
+50:  };
+51:
+52:  const defaultOptions = {
+53:    common: { axes },
+54:    line: options,
+55:    pie: pieTypes,
+56:    donut: pieTypes,
+57:    area: { ...options, series: newSeries },
+58:    bubble: { ...options, series: newSeries },
+59:    histogram: { ...options, series: { ...series, label } },
+60:    bar: {
+61:      ...options,
+62:      series: {
+63:        ...series,
+64:        label: { ...label, placement: "outside-end" },
+65:      },
+66:    },
+67:    scatter: {
+68:      ...options,
+69:      series: { ...series, label: { ...label, placement: "top" } },
+70:    },
+71:    treemap: {
+72:      series: {
+73:        group: {
+74:          label: { ...label, enabled: true },
+75:        },
+76:        tile: {
+77:          label: { ...label, enabled: true },
+78:        },
+79:        tooltip: series.tooltip,
+80:      },
+81:      padding: {
+82:        bottom: 10,
+83:      },
+84:    },
+85:    sunburst: {
+86:      series: {
+87:        tooltip: {
+88:          ...series?.tooltip,
+89:          position: { anchorTo: "pointer" },
+90:          interaction: { enabled: true },
+91:        },
+92:        label: { ...label, enabled: true },
+93:      },
+94:      padding: {
+95:        bottom: 10,
+96:      },
+97:    },
+98:    heatmap: {
+99:      series: {
+100:        tooltip: series?.tooltip,
+101:        label: { ...label, enabled: true },
+102:      },
+103:      padding: {
+104:        bottom: 10,
+105:      },
+106:    },
+107:    waterfall: { series },
+108:  } as AgChartThemeOverrides;
+109:
+110:  const polars = [
+111:    "radar-line",
+112:    "radar-area",
+113:    "radial-bar",
+114:    "radial-column",
+115:    "nightingale",
+116:  ];
+117:
+118:  for (const type of polars) {
+119:    defaultOptions[type] = {
+120:      series: { ...series, label },
+121:    };
+122:  }
+123:
+124:  const seriesType = getSeriesType(chartType);
+125:
+126:  if (!defaultOptions[seriesType]) {
+127:    defaultOptions[seriesType] = { ...options, series: { ...series, label } };
+128:  }
+129:
+130:  return defaultOptions as AgChartThemeOverrides;
+131:}
+132:
+133:export function useChartCloseButtonListener() {
+134:  const updateWidget = useWidgetContext().updateWidget;
+135:  const chartRef = useAgGridContext()?.chartRef;
+136:
+137:  const setCloseButtonListener = useCallback(() => {
+138:    const element = chartRef?.current?.chartElement;
+139:    const closeButton = element?.getElementsByClassName(
+140:      "ag-tabs-close-button ag-chart-tabbed-menu-close-button",
+141:    )?.[0];
+142:    if (!closeButton) return;
+143:    closeButton?.addEventListener("click", () => {
+144:      updateWidget((prev) => ({
+145:        ...prev,
+146:        storage: {
+147:          ...prev.storage,
+148:          chartSettingsOpen: false,
+149:        },
+150:      }));
+151:    });
+152:  }, [updateWidget, chartRef]);
+153:
+154:  return setCloseButtonListener;
+155:}
+156:
+157:export function useChartToolPanelAction() {
+158:  const { gridRef, chartRef, chartViewElementRef } = useAgGridContext();
+159:
+160:  const updateWidget = useWidgetContext().updateWidget;
+161:  const setCloseButtonListener = useChartCloseButtonListener();
+162:
+163:  const ChartToolPanelActions = useMemo(() => {
+164:    const actions: ExtraActionT[] = [
+165:      {
+166:        icon: "chart-rounded",
+167:        id: "open-chart-settings-button",
+168:        label: "Chart settings",
+169:        onClick: () => {
+170:          const agChartMenuVisible =
+171:            chartViewElementRef?.current?.getElementsByClassName(
+172:              "ag-chart-menu-visible",
+173:            )?.[0];
+174:
+175:          const params = { chartId: chartRef.current?.chartId };
+176:
+177:          if (agChartMenuVisible) {
+178:            gridRef.current.api.closeChartToolPanel(params);
+179:          } else {
+180:            gridRef.current.api.openChartToolPanel(params);
+181:            setTimeout(() => setCloseButtonListener(), 300);
+182:          }
+183:
+184:          updateWidget((prev) => ({
+185:            ...prev,
+186:            storage: {
+187:              ...prev.storage,
+188:              chartSettingsOpen: agChartMenuVisible === undefined,
+189:            },
+190:          }));
+191:        },
+192:      },
+193:    ];
+194:
+195:    return actions;
+196:  }, [chartRef, chartViewElementRef, gridRef, updateWidget, setCloseButtonListener]);
+197:
+198:  return ChartToolPanelActions;
+199:}
+200:
+201:export function useChartBarFillQuickAction() {
+202:  const updateWidget = useWidgetContext().updateWidget;
+203:  const { chartView, totalSeries, chartType, chartBarFillEnabled } =
+204:    useWidgetContext().widget?.storage || {};
+205:
+206:  const isBarOrColumnChart = useMemo(() => {
+207:    if (!chartType) return false;
+208:    const seriesType = getSeriesType(chartType);
+209:    return seriesType === "bar";
+210:  }, [chartType]);
+211:
+212:  const quickAction = useMemo<ExtraAction>(() => {
+213:    const label = chartBarFillEnabled ? "Single bar color" : "Distinct bar colors";
+214:    const disabled = totalSeries > 1;
+215:    return {
+216:      icon: "chart-icon",
+217:      id: "distinct-bar-colors",
+218:      label,
+219:      disabled,
+220:      tooltipMessage:
+221:        disabled && "Cannot toggle bar colors with multiple series present.",
+222:      onClick: () => {
+223:        updateWidget((prev) => ({
+224:          ...prev,
+225:          storage: {
+226:            ...prev.storage,
+227:            chartBarFillEnabled: !chartBarFillEnabled,
+228:          },
+229:        }));
+230:      },
+231:    };
+232:  }, [totalSeries > 1, chartBarFillEnabled]);
+233:
+234:  return isBarOrColumnChart && chartView?.enabled ? quickAction : undefined;
+235:}
+236:
+237:export function useChartQuickActions() {
+238:  const updateWidget = useWidgetContext().updateWidget;
+239:  const {
+240:    chartView,
+241:    chartNavigatorEnabled = false,
+242:    chartMiniChartEnabled = false,
+243:  } = useWidgetContext().widget?.storage || {};
+244:
+245:  const quickActions = useMemo<ExtraAction[]>(() => {
+246:    return [
+247:      {
+248:        icon: "chart-icon",
+249:        id: "toggle-chart-navigator",
+250:        label: `${chartNavigatorEnabled ? "Hide" : "Show"} navigator`,
+251:        onClick: () => {
+252:          updateWidget((prev) => ({
+253:            ...prev,
+254:            storage: {
+255:              ...prev.storage,
+256:              chartNavigatorEnabled: !chartNavigatorEnabled,
+257:              ...(!chartNavigatorEnabled && { chartMiniChartEnabled: false }),
+258:            },
+259:          }));
+260:        },
+261:      },
+262:      {
+263:        icon: "mini-chart-icon",
+264:        id: "toggle-chart-mini-chart",
+265:        label: `${chartMiniChartEnabled ? "Hide" : "Show"} mini chart`,
+266:        onClick: () => {
+267:          updateWidget((prev) => ({
+268:            ...prev,
+269:            storage: {
+270:              ...prev.storage,
+271:              chartMiniChartEnabled: !chartMiniChartEnabled,
+272:              ...(!chartMiniChartEnabled && { chartNavigatorEnabled: false }),
+273:            },
+274:          }));
+275:        },
+276:      },
+277:    ];
+278:  }, [chartNavigatorEnabled, chartMiniChartEnabled, updateWidget]);
+279:
+280:  return chartView?.enabled ? quickActions : [];
+281:}
+282:
+283:const getChartType = (widget: WidgetT, widgetFromJSON: Partial<WidgetT>) => {
+284:  const stateStorage = getStateStorage(widget);
+285:  const chartModel = stateStorage?.chartModel || widget?.storage?.chartModel;
+286:
+287:  return chartModel?.chartType || widgetFromJSON?.data?.table?.chartView?.chartType;
+288:};
+289:
+290:type UseChartOptionsProps = {
+291:  chartSeries?: AgBaseSeriesOptions<any>;
+292:  chartAxis?: { [key: string]: AgBaseAxisOptions };
+293:};
+294:
+295:export default function useChartOptions(props: UseChartOptionsProps = {}) {
+296:  const { chartSeries = {}, chartAxis = {} } = useMemo(
+297:    () => props,
+298:    Object.values(props),
+299:  );
+300:
+301:  const { widget, getWidget, widgetFromJSON, updateWidget } = useWidgetContext();
+302:
+303:  const theme = useShallowThemeStore((s) => s.theme);
+304:  const globalDecimalDigits = useShallowThemeStore((s) => s.decimalDigits);
+305:
+306:  const stateStorage = getStateStorage(widget);
+307:  const chartOptionsRef = useRef<Partial<ChartModel["chartOptions"]>>(
+308:    stateStorage?.chartModel?.chartOptions ?? widget?.storage?.chartOptions ?? {},
+309:  );
+310:  const chartModelRef = useRef<Partial<ChartModel>>(
+311:    stateStorage?.chartModel ?? widget?.storage?.chartModel ?? {},
+312:  );
+313:  const navigatorRef = useRef({
+314:    navigatorEnabled: widget?.storage?.chartNavigatorEnabled,
+315:    miniChartEnabled: widget?.storage?.chartMiniChartEnabled,
+316:  });
+317:
+318:  const chartTypeRef = useRef<ChartModel["chartType"]>(
+319:    getChartType(widget, widgetFromJSON),
+320:  );
+321:
+322:  // need this to avoid re-rendering when storage changes
+323:  useEffect(() => {
+324:    const chartModel = stateStorage?.chartModel;
+325:    const hasChartModel = Object.keys(chartModel ?? {}).length > 0;
+326:    if (hasChartModel && !isEqual(chartOptionsRef.current, chartModel?.chartOptions)) {
+327:      chartOptionsRef.current = chartModel?.chartOptions ?? {};
+328:    }
+329:    if (hasChartModel && !isEqual(chartModelRef.current, chartModel)) {
+330:      chartModelRef.current = chartModel ?? {};
+331:    }
+332:    const newChartType = chartModel?.chartType;
+333:    if (newChartType && newChartType !== chartTypeRef.current) {
+334:      chartTypeRef.current = newChartType;
+335:    }
+336:
+337:    navigatorRef.current = {
+338:      navigatorEnabled: widget?.storage?.chartNavigatorEnabled,
+339:      miniChartEnabled: widget?.storage?.chartMiniChartEnabled,
+340:    };
+341:  }, [
+342:    stateStorage?.chartModel,
+343:    chartOptionsRef,
+344:    chartTypeRef,
+345:    chartModelRef,
+346:    widget?.storage?.chartNavigatorEnabled,
+347:    widget?.storage?.chartMiniChartEnabled,
+348:  ]);
+349:
+350:  const getParsedPeriod = useCallbackRef(() => {
+351:    const widget = getWidget();
+352:
+353:    const storage = getWidgetStorage(widget);
+354:    const period = storage?.period?.toLowerCase();
+355:    const isQuarterly = period?.replace("ly", "") === "quarter";
+356:    const isAnnual = period === "annual";
+357:
+358:    return { isQuarterly, isAnnual };
+359:  });
+360:
+361:  const getDecimalPlaces = useCallbackRef(() => {
+362:    const widget = getWidget();
+363:    const storage = getWidgetStorage(widget);
+364:    return storage?.decimalDigits ?? globalDecimalDigits;
+365:  });
+366:
+367:  const options = useMemo(() => {
+368:    const chartType = chartTypeRef?.current || "line";
+369:
+370:    const { xLabel, yLabel } = widgetFromJSON?.data?.table?.chartView ?? {};
+371:    const createProps = {
+372:      chartType,
+373:      getParsedPeriod,
+374:      title: { xLabel, yLabel },
+375:      getDecimalPlaces,
+376:    };
+377:
+378:    const series = createDefaultSeries(createProps);
+379:    const axes = createDefaultAxis(createProps);
+380:
+381:    const mainTheme = getOpenBBChartTheme(theme);
+382:    const legend = mainTheme.overrides.common.legend;
+383:    legend.item.label.formatter = (params) => {
+384:      return getFiscalPeriodString(params.value, getParsedPeriod);
+385:    };
+386:
+387:    const defaultOptions = getDefaultChartOptions(
+388:      {
+389:        series: merge(series, chartSeries),
+390:        axes: merge(axes, chartAxis),
+391:      },
+392:      chartType,
+393:    );
+394:    const navigatorEnabled = navigatorRef.current.navigatorEnabled;
+395:    const miniChartEnabled = navigatorRef.current.miniChartEnabled;
+396:
+397:    defaultOptions.common.legend = legend;
+398:    defaultOptions.common.navigator = {
+399:      enabled: Boolean(navigatorEnabled || miniChartEnabled),
+400:      miniChart: { enabled: Boolean(miniChartEnabled) },
+401:    };
+402:
+403:    return defaultOptions;
+404:  }, [theme, chartTypeRef, getParsedPeriod, chartSeries, chartAxis, navigatorRef]);
+405:
+406:  const chartThemeOverrides = useMemo(() => {
+407:    const chartOptions = chartOptionsRef?.current ?? {};
+408:
+409:    const cellRange = chartModelRef.current?.cellRange;
+410:
+411:    if (chartOptions?.scatter?.axes?.number && cellRange) {
+412:      const enabled = cellRange?.columns?.length <= 5;
+413:      const numberAxis = chartOptions.scatter.axes.number;
+414:      const hasTitleText = ["top", "right", "left", "bottom"].some(
+415:        (key) => numberAxis?.[key]?.title?.text,
+416:      );
+417:
+418:      if (!hasTitleText) {
+419:        const titleOptions = { enabled, spacing: 10, fontSize: 11 };
+420:
+421:        chartOptions.scatter.axes.number = {
+422:          ...numberAxis,
+423:          top: { ...numberAxis.top, title: titleOptions },
+424:          right: { ...numberAxis.right, title: titleOptions },
+425:          left: { ...numberAxis.left, title: titleOptions },
+426:          bottom: { ...numberAxis.bottom, title: titleOptions },
+427:        };
+428:      }
+429:    }
+430:
+431:    chartOptions.common = options.common;
+432:
+433:    return merge(options, chartOptions) as AgChartThemeOverrides;
+434:  }, [options, chartOptionsRef, chartModelRef]);
+435:
+436:  const onChartOptionsChanged = useCallback(
+437:    (params: ChartOptionsChangedEvent) => {
+438:      const { chartType, chartOptions = {} } = params;
+439:
+440:      const chartModel = params.api
+441:        .getChartModels()
+442:        .find((model) => model.chartId === params.chartId);
+443:
+444:      const stateChartOptions = cloneDeep(chartOptionsRef.current || {});
+445:      const isPivotMode = params.api.isPivotMode();
+446:
+447:      updateWidget((prev) => {
+448:        const stateKey = getStateKey(prev, isPivotMode);
+449:        const {
+450:          chartModel: prevChartModel,
+451:          stateCellRange = prevChartModel?.cellRange,
+452:        } = getCellRangeState(prev, chartType, isPivotMode);
+453:
+454:        const prevChartType = prevChartModel?.chartType || chartType;
+455:
+456:        if (prevChartType !== chartType && stateCellRange?.columns) {
+457:          params.api.updateChart({
+458:            type: "rangeChartUpdate",
+459:            chartId: params.chartId,
+460:            chartType,
+461:            cellRange: stateCellRange,
+462:            switchCategorySeries: chartModel?.switchCategorySeries,
+463:          });
+464:          if (chartModel) chartModel.cellRange = stateCellRange;
+465:        }
+466:
+467:        // @ts-expect-error
+468:        const { theme, ...newChartOptions } = merge(stateChartOptions, chartOptions);
+469:
+470:        const totalSeries = getTotalSeries(params, chartModel?.cellRange);
+471:
+472:        return {
+473:          ...prev,
+474:          storage: {
+475:            ...prev.storage,
+476:            totalSeries,
+477:            chartType,
+478:            isPivotMode,
+479:            [stateKey]: {
+480:              ...(prev.storage?.[stateKey] ?? {}),
+481:              chartModel: {
+482:                ...(prev.storage?.[stateKey]?.chartModel ?? {}),
+483:                ...(chartModel ?? {}),
+484:                chartOptions: newChartOptions,
+485:                chartType,
+486:              },
+487:            },
+488:          },
+489:        };
+490:      });
+491:    },
+492:    [updateWidget, chartOptionsRef],
+493:  );
+494:
+495:  return { onChartOptionsChanged, chartThemeOverrides };
+496:}
+497:
+498:export function getTotalSeries(
+499:  params: ChartOptionsChangedEvent,
+500:  cellRange?: Partial<CellRangeParams>,
+501:) {
+502:  const { columns = [] } = cellRange ?? {};
+503:
+504:  const selectedColumns = columns.map((col) => {
+505:    if (typeof col === "string") return col;
+506:    const showRowGroup = col.getColDef()?.showRowGroup;
+507:    if (typeof showRowGroup === "string") return showRowGroup;
+508:    return col.getColId();
+509:  });
+510:
+511:  const totalSeries = selectedColumns.filter((colId) => {
+512:    const colDef = params?.api?.getColumn(colId)?.getColDef();
+513:    return colDef?.chartDataType === "series" && colDef?.cellDataType === "number";
+514:  }).length;
+515:
+516:  return totalSeries;
+517:}

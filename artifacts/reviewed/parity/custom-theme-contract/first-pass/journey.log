@@ -1,0 +1,15 @@
+waiting dark-groupedColumn
+settled dark-groupedColumn writes=1
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Error: Model mismatch {"type":"groupedColumn","theme":"custom-dark"}
+    at eval (eval at evaluate (:370:30), <anonymous>:3:77)
+    at async <anonymous>:396:30
+    at capture (/mnt/d/Source/QOpenBB/artifacts/parity/custom-theme-contract/journey.mjs:25:26)
+    at async file:///mnt/d/Source/QOpenBB/artifacts/parity/custom-theme-contract/journey.mjs:54:253 {
+  log: []
+}
+
+Node.js v24.22.0

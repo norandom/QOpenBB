@@ -1,0 +1,373 @@
+1:import type {
+2:  AgAxisCaptionOptions,
+3:  AgBarSeriesItemStylerParams,
+4:  AgBarSeriesStyle,
+5:  AgChartBackground,
+6:  AgChartLegendOptions,
+7:  AgChartTheme,
+8:  AgChartThemePalette,
+9:  AgPieSeriesThemeableOptions,
+10:  AgWaterfallSeriesItemOptions,
+11:} from "ag-charts-enterprise";
+12:import {
+13:  colorSchemeDark,
+14:  colorSchemeLight,
+15:  type GridChartContext,
+16:  iconSetAlpine,
+17:  iconSetMaterial,
+18:  iconSetQuartz,
+19:  themeAlpine,
+20:} from "ag-grid-enterprise";
+21:import cloneDeep from "lodash/cloneDeep";
+22:import { useCallback, useMemo, useRef } from "react";
+23:import { useWidgetContext } from "~/components/Widget.context";
+24:import {
+25:  type ThemeSettings,
+26:  useShallowTableChartThemesStore,
+27:} from "~/lib/state/tableChartThemes";
+28:import { formatNumber, formatNumberMagnitude } from "~/lib/utils";
+29:import { customCssPart, getDefaultAgGridTheme } from "../hooks/constants";
+30:
+31:const pieAndDonutSeries = {
+32:  calloutLabel: {
+33:    formatter: (params) => {
+34:      if (typeof params.value === "number") {
+35:        return formatNumber(params.value, 0);
+36:      }
+37:      return params.value;
+38:    },
+39:  },
+40:  sectorLabel: {
+41:    enabled: true,
+42:    formatter: (params) => {
+43:      if (typeof params.value === "number") {
+44:        return formatNumber(params.value, 2);
+45:      }
+46:      return params.value;
+47:    },
+48:  },
+49:} as AgPieSeriesThemeableOptions<any, GridChartContext>;
+50:
+51:const numberAxisOptions = {
+52:  label: {
+53:    formatter: (params) => {
+54:      if (typeof params.value === "number") {
+55:        return formatNumberMagnitude(params.value, 2);
+56:      }
+57:      return params.value;
+58:    },
+59:  },
+60:};
+61:
+62:const titleOptions = {
+63:  fontSize: 11,
+64:  spacing: 10,
+65:  enabled: true,
+66:  text: "",
+67:  formatter: (params) => {
+68:    const { defaultValue, boundSeries } = params;
+69:
+70:    if (defaultValue && defaultValue !== "Axis Title") return defaultValue;
+71:
+72:    if (boundSeries.length > 1) return "";
+73:
+74:    const title = new Set(boundSeries?.map((series) => series?.name));
+75:
+76:    return Array.from(title).join(", ");
+77:  },
+78:} as AgAxisCaptionOptions;
+79:
+80:type ThemeT = "dark" | "light";
+81:
+82:const getLegend = (theme: ThemeT, decimalPlaces?: number) => {
+83:  return {
+84:    position: "top",
+85:    maxHeight: 50,
+86:    spacing: 20,
+87:    item: {
+88:      paddingX: 32,
+89:      paddingY: 8,
+90:      marker: { shape: "square", padding: 5, size: 11 },
+91:      label: {
+92:        color: theme === "dark" ? "#fff" : "#000",
+93:        fontSize: 11,
+94:        formatter: (params) => {
+95:          if (typeof params.value === "number") {
+96:            return formatNumber(params.value, decimalPlaces);
+97:          }
+98:          return params.value;
+99:        },
+100:      },
+101:    },
+102:  } as AgChartLegendOptions<GridChartContext>;
+103:};
+104:
+105:const waterfallLabel = {
+106:  enabled: false,
+107:  placement: "inside-center",
+108:} as AgWaterfallSeriesItemOptions<any, GridChartContext>["label"];
+109:
+110:const defaultFills = [
+111:  "#fac858",
+112:  "#91cc75",
+113:  "#5470c6",
+114:  "#ee6666",
+115:  "#73c0de",
+116:  "#3ba272",
+117:  "#fc8452",
+118:  "#9a60b4",
+119:  "#ea7ccc",
+120:  "#ffb347",
+121:  "#87ceeb",
+122:  "#32cd32",
+123:  "#ff6347",
+124:  "#4169e1",
+125:  "#ff69b4",
+126:];
+127:
+128:export function createItemStyler(
+129:  palette?: AgChartThemePalette,
+130:  shouldFillBars = () => false,
+131:) {
+132:  const fills = palette?.fills || defaultFills;
+133:
+134:  // Track unique categories and their assigned colors
+135:  const categoryColorMap = new Map<string, number>();
+136:  let nextColorIndex = 0;
+137:
+138:  return (
+139:    params: AgBarSeriesItemStylerParams<any, GridChartContext>,
+140:  ): AgBarSeriesStyle => {
+141:    if (!shouldFillBars?.()) return {};
+142:
+143:    // Only apply custom colors for single series (non-stacked) charts
+144:    // Check if this is a stacked chart by looking at datum structure
+145:    // Stacked charts have multiple yKey values across different series
+146:    const datumKeys = Object.keys(params.datum || {});
+147:    const hasMultipleSeriesKeys =
+148:      datumKeys.filter(
+149:        (key) =>
+150:          key !== params.xKey &&
+151:          key !== "date" &&
+152:          key !== "node" &&
+153:          typeof params.datum[key] === "number",
+154:      ).length > 1;
+155:
+156:    // Let AG Charts handle stacked chart coloring
+157:    if (hasMultipleSeriesKeys) return {};
+158:
+159:    // Determine if this is a bar or column chart and get the appropriate value
+160:    const isBarChart = params.seriesId?.includes("BarSeries");
+161:    const valueToUse = isBarChart ? params.xValue : params.yValue;
+162:
+163:    // Get category string for consistent mapping
+164:    const categoryKey = valueToUse?.toString() || "";
+165:
+166:    // Check if we've seen this category before
+167:    let colorIndex = categoryColorMap.get(categoryKey);
+168:    if (colorIndex === undefined) {
+169:      // Assign next sequential color
+170:      colorIndex = nextColorIndex % fills.length;
+171:      categoryColorMap.set(categoryKey, colorIndex);
+172:      nextColorIndex++;
+173:    }
+174:
+175:    return { fill: fills[colorIndex] };
+176:  };
+177:}
+178:
+179:const defaultOverrides = {
+180:  line: { series: { marker: { enabled: false }, connectMissingData: true } },
+181:  pie: { series: pieAndDonutSeries },
+182:  donut: { series: pieAndDonutSeries },
+183:  scatter: { axes: { number: { title: titleOptions } } },
+184:  waterfall: {
+185:    series: {
+186:      item: {
+187:        negative: { label: waterfallLabel },
+188:        positive: { label: waterfallLabel },
+189:        total: { label: waterfallLabel },
+190:      },
+191:    },
+192:  },
+193:  funnel: { series: { label: { enabled: false } } },
+194:  bar: { series: { itemStyler: createItemStyler() } },
+195:  common: {
+196:    axes: {
+197:      number: numberAxisOptions,
+198:      "angle-number": numberAxisOptions,
+199:      "radius-number": numberAxisOptions,
+200:    },
+201:    // padding: { top: 20, bottom: 5, left: 20, right: 40 },
+202:    zoom: {
+203:      enabled: true,
+204:      anchorPointX: "pointer",
+205:      anchorPointY: "pointer",
+206:      minVisibleItems: 4,
+207:      autoScaling: { enabled: true },
+208:    },
+209:    navigator: {
+210:      enabled: false,
+211:      miniChart: { enabled: false },
+212:    },
+213:    legend: getLegend("dark"),
+214:    title: { fontSize: 12 },
+215:  },
+216:} as AgChartTheme<any, GridChartContext>["overrides"];
+217:
+218:export const AgChartDarkTheme = {
+219:  baseTheme: "ag-default-dark",
+220:  overrides: defaultOverrides,
+221:  params: {
+222:    backgroundColor: "#151518",
+223:  },
+224:} as AgChartTheme<any, GridChartContext>;
+225:
+226:export const AgChartLightTheme = {
+227:  baseTheme: "ag-default",
+228:  overrides: {
+229:    ...defaultOverrides,
+230:    common: {
+231:      ...defaultOverrides.common,
+232:      legend: getLegend("light"),
+233:    },
+234:  },
+235:  params: {
+236:    backgroundColor: "#FFFFFF",
+237:  },
+238:} as AgChartTheme<any, GridChartContext>;
+239:
+240:export const OpenBBChartThemes = { dark: AgChartDarkTheme, light: AgChartLightTheme };
+241:
+242:export function getOpenBBChartTheme(theme: ThemeT) {
+243:  return cloneDeep(OpenBBChartThemes[theme]);
+244:}
+245:
+246:export function getCustomChartTheme(
+247:  themeSettings: ThemeSettings["chartTheme"],
+248:  shouldFillBars?: () => boolean,
+249:  navigatorEnabled?: boolean,
+250:  miniChartEnabled?: boolean,
+251:): AgChartTheme<any, GridChartContext> {
+252:  const isDarkMode = themeSettings.baseTheme === "ag-default-dark";
+253:  const baseTheme = isDarkMode ? AgChartDarkTheme : AgChartLightTheme;
+254:  const overrides = cloneDeep(baseTheme.overrides);
+255:  const { backgroundImage, palette, params } = themeSettings;
+256:
+257:  const options = {
+258:    ...baseTheme,
+259:    palette,
+260:    params,
+261:    overrides,
+262:  } as AgChartTheme<any, GridChartContext>;
+263:
+264:  let background: AgChartBackground | undefined;
+265:  if (backgroundImage?.enabled && backgroundImage?.url) {
+266:    const { enabled, ...imageConfig } = { ...backgroundImage };
+267:
+268:    background = { image: imageConfig };
+269:  }
+270:
+271:  options.overrides.common.background = background;
+272:  options.overrides.common.navigator = {
+273:    enabled: Boolean(navigatorEnabled || miniChartEnabled),
+274:    miniChart: { enabled: Boolean(miniChartEnabled) },
+275:  };
+276:
+277:  // Add dynamic itemStyler with the theme's palette
+278:  const itemStyler = createItemStyler(palette, shouldFillBars);
+279:  options.overrides.bar.series.itemStyler = itemStyler;
+280:
+281:  return options;
+282:}
+283:
+284:const iconSetMap = {
+285:  iconSetQuartz: iconSetQuartz(),
+286:  iconSetAlpine: iconSetAlpine,
+287:  iconSetMaterial: iconSetMaterial,
+288:};
+289:
+290:export function useAgThemes(theme: ThemeT) {
+291:  const {
+292:    chartBarFillEnabled = false,
+293:    chartNavigatorEnabled = false,
+294:    chartMiniChartEnabled = false,
+295:  } = useWidgetContext(true)?.widget?.storage ?? {};
+296:
+297:  const shouldFillBars = useCallback(() => chartBarFillEnabled, [chartBarFillEnabled]);
+298:
+299:  const tableTheme = useShallowTableChartThemesStore(
+300:    (state) => state[theme]?.tableTheme,
+301:  );
+302:  const agChartThemes = useShallowTableChartThemesStore((state) => ({
+303:    "custom-dark": state.dark?.chartTheme,
+304:    "custom-light": state.light?.chartTheme,
+305:  }));
+306:
+307:  const agTheme = useMemo(() => {
+308:    if (tableTheme?.params) {
+309:      return themeAlpine
+310:        .withPart(theme === "dark" ? colorSchemeDark : colorSchemeLight)
+311:        .withPart(iconSetMap[tableTheme?.iconSet ?? "iconSetAlpine"])
+312:        .withPart(customCssPart)
+313:        .withParams({
+314:          // deconstruct params because we might need to override some of them in the future
+315:          ...tableTheme.params,
+316:        });
+317:    }
+318:
+319:    return getDefaultAgGridTheme(theme);
+320:  }, [theme, tableTheme]);
+321:
+322:  const defaultChartThemesRef = useRef({
+323:    "openbb-dark": getOpenBBChartTheme("dark"),
+324:    "openbb-light": getOpenBBChartTheme("light"),
+325:  });
+326:
+327:  const { themePalette, customChartThemes, chartThemes } = useMemo(() => {
+328:    let themePalette: AgChartThemePalette | null = null;
+329:    const updatedThemes = {} as Record<
+330:      `custom-${ThemeT}` | `openbb-${ThemeT}`,
+331:      AgChartTheme
+332:    >;
+333:    for (const [key, value] of Object.entries(agChartThemes ?? {})) {
+334:      if (value?.baseTheme && value?.palette && value?.params) {
+335:        themePalette = value.palette;
+336:        updatedThemes[key] = getCustomChartTheme(
+337:          value,
+338:          shouldFillBars,
+339:          chartNavigatorEnabled,
+340:          chartMiniChartEnabled,
+341:        );
+342:        continue;
+343:      }
+344:      const obbKey = key.replace("custom-", "openbb-") as `openbb-${ThemeT}`;
+345:      const obbTheme = defaultChartThemesRef.current[obbKey];
+346:      obbTheme.overrides.bar.series.itemStyler = createItemStyler(null, shouldFillBars);
+347:      obbTheme.overrides.common.navigator = {
+348:        enabled: chartNavigatorEnabled || chartMiniChartEnabled,
+349:        miniChart: { enabled: chartMiniChartEnabled },
+350:      };
+351:
+352:      updatedThemes[obbKey] = obbTheme;
+353:    }
+354:
+355:    let chartTheme = `custom-${theme}` as `custom-${ThemeT}` | `openbb-${ThemeT}`;
+356:    if (!updatedThemes[chartTheme]) chartTheme = `openbb-${theme}`;
+357:
+358:    return {
+359:      themePalette,
+360:      customChartThemes: updatedThemes,
+361:      chartThemes: [chartTheme],
+362:    };
+363:  }, [
+364:    defaultChartThemesRef,
+365:    agChartThemes,
+366:    theme,
+367:    shouldFillBars,
+368:    chartNavigatorEnabled,
+369:    chartMiniChartEnabled,
+370:  ]);
+371:
+372:  return { themePalette, agTheme, chartThemes, customChartThemes };
+373:}
