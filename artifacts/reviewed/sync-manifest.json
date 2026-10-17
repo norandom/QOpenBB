@@ -79,10 +79,12 @@
     "ui-parity-tooltip-geometry-diagnosis",
     "ui-parity-tooltip-geometry-review",
     "ui-parity-family-navigation-plan",
-    "ui-parity-family-navigation-review"
+    "ui-parity-family-navigation-review",
+    "ui-parity-legend-capture",
+    "ui-parity-legend-collector-review"
   ],
   "sourcepins": {
-    "root_at_sync": "cf1c737b5166af51e94a1877f1583bb5648f8983",
+    "root_at_sync": "6cdf281fa6c86263b3f65fe7277da419cfd884f0",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -23759,6 +23761,422 @@
       "publishedSHA256": "66ab5111fd7ac08eff19684099293ef2fe665adbf225fb9c81145a9284d1a0ce",
       "bytes": 1401,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/plan.md",
+      "sourceSHA256": "91b3695a19edfc46ba5abca3f23a8870b595e9c8da86aeb386dadcab948d8b8f",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/plan.md",
+      "publishedSHA256": "91b3695a19edfc46ba5abca3f23a8870b595e9c8da86aeb386dadcab948d8b8f",
+      "bytes": 5451,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/handoff.md",
+      "sourceSHA256": "82666eb43a505b2a8ee03856d25744d8167e366a59e7d8fb40aa38e7639a6bfb",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/handoff.md",
+      "publishedSHA256": "82666eb43a505b2a8ee03856d25744d8167e366a59e7d8fb40aa38e7639a6bfb",
+      "bytes": 3150,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/prepare-run.mjs",
+      "sourceSHA256": "3d9514dddbfdfbfc6afecc1980b243c4088c54513d42352cc55bc9015707d10f",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/prepare-run.mjs",
+      "publishedSHA256": "3d9514dddbfdfbfc6afecc1980b243c4088c54513d42352cc55bc9015707d10f",
+      "bytes": 1272,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/supervise.sh",
+      "sourceSHA256": "428a8e2060528a674be91e49a960972f146a6bf8ca23df74483c413fd457c885",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/supervise.sh",
+      "publishedSHA256": "428a8e2060528a674be91e49a960972f146a6bf8ca23df74483c413fd457c885",
+      "bytes": 617,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/offline-tests.mjs",
+      "sourceSHA256": "19bcbcc1dc1ed4e869b599dd128f82246f5d0d7e347cefdc02e702ec1020fda7",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/offline-tests.mjs",
+      "publishedSHA256": "19bcbcc1dc1ed4e869b599dd128f82246f5d0d7e347cefdc02e702ec1020fda7",
+      "bytes": 13836,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/static-check.mjs",
+      "sourceSHA256": "de9db92185e9fe9bb4662a2f938ce5a734144143f452669833e46c3c9f62148e",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/static-check.mjs",
+      "publishedSHA256": "de9db92185e9fe9bb4662a2f938ce5a734144143f452669833e46c3c9f62148e",
+      "bytes": 2617,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/freeze.mjs",
+      "sourceSHA256": "ccd88cb8c1754b1009d3de68368c27f604d96793765dcb3e87f10b54f3ee79e7",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/freeze.mjs",
+      "publishedSHA256": "ccd88cb8c1754b1009d3de68368c27f604d96793765dcb3e87f10b54f3ee79e7",
+      "bytes": 2938,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline-source-manifest.json",
+      "sourceSHA256": "ac534d3491e22ddf1873da0fa957a043cb7ee468021c2e0770fa2a887e52e9e4",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline-source-manifest.json",
+      "publishedSHA256": "ac534d3491e22ddf1873da0fa957a043cb7ee468021c2e0770fa2a887e52e9e4",
+      "bytes": 2990,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/source-diff.patch",
+      "sourceSHA256": "265687a33093694b9cb69fe3713c0ffdca8c10ef9d605034817d3057885530fc",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/source-diff.patch",
+      "publishedSHA256": "265687a33093694b9cb69fe3713c0ffdca8c10ef9d605034817d3057885530fc",
+      "bytes": 100155,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/offline-verification.json",
+      "sourceSHA256": "dfd26ad0c4cbe55bf6ed03cf5398788429f98f27b939406f2ed7789d762d92d7",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/offline-verification.json",
+      "publishedSHA256": "dfd26ad0c4cbe55bf6ed03cf5398788429f98f27b939406f2ed7789d762d92d7",
+      "bytes": 2174,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/static-verification.json",
+      "sourceSHA256": "e1d47f30e2bfb59abe40632dde690ba9ce6d08d6ba88a33ab56e8406529e4a8b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/static-verification.json",
+      "publishedSHA256": "e1d47f30e2bfb59abe40632dde690ba9ce6d08d6ba88a33ab56e8406529e4a8b",
+      "bytes": 6000,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/cases.mjs",
+      "sourceSHA256": "11d0af588c03ff183aa359085f24bdff3933c21d3aa63365ab0cd3d3384148d5",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/cases.mjs",
+      "publishedSHA256": "11d0af588c03ff183aa359085f24bdff3933c21d3aa63365ab0cd3d3384148d5",
+      "bytes": 3842,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/cleanup.mjs",
+      "sourceSHA256": "545518c2cfa1a90b5103806ee5763de709ea74dad51e044381f8046d82275feb",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/cleanup.mjs",
+      "publishedSHA256": "545518c2cfa1a90b5103806ee5763de709ea74dad51e044381f8046d82275feb",
+      "bytes": 1707,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/controls.mjs",
+      "sourceSHA256": "bdc21f1d2631380d7e15c3b9a3d45ff8487973acf60956a66eef6837fdcb942a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/controls.mjs",
+      "publishedSHA256": "bdc21f1d2631380d7e15c3b9a3d45ff8487973acf60956a66eef6837fdcb942a",
+      "bytes": 2529,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/events.mjs",
+      "sourceSHA256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/events.mjs",
+      "publishedSHA256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752",
+      "bytes": 1118,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/finalize.mjs",
+      "sourceSHA256": "c05b93d860135d46076bc09ae98cc04df5e819f9408f5d3308820ece2111d72d",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/finalize.mjs",
+      "publishedSHA256": "c05b93d860135d46076bc09ae98cc04df5e819f9408f5d3308820ece2111d72d",
+      "bytes": 1158,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/fixture.json",
+      "sourceSHA256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/fixture.json",
+      "publishedSHA256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/geometry.mjs",
+      "sourceSHA256": "cb2bf483bf92d4f2fd7239b61252b7adf3c2eb7e8fb62e7c2315bf3511a5cd02",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/geometry.mjs",
+      "publishedSHA256": "cb2bf483bf92d4f2fd7239b61252b7adf3c2eb7e8fb62e7c2315bf3511a5cd02",
+      "bytes": 2198,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/guards.mjs",
+      "sourceSHA256": "7194a715c1b4b2076026964020c6d9402538f9fb0abb806311baa30e9c529416",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/guards.mjs",
+      "publishedSHA256": "7194a715c1b4b2076026964020c6d9402538f9fb0abb806311baa30e9c529416",
+      "bytes": 2662,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/io.mjs",
+      "sourceSHA256": "56dff7838bef0f2fb69105a9ed404d0c7ad1d13d7d4865d9622258007d82e0b5",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/io.mjs",
+      "publishedSHA256": "56dff7838bef0f2fb69105a9ed404d0c7ad1d13d7d4865d9622258007d82e0b5",
+      "bytes": 4928,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/journey.mjs",
+      "sourceSHA256": "18aead8cc5dd21f7e5eee391c5b8c1b7d4eb168e56a8160f4a5536420dbcfe8c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/journey.mjs",
+      "publishedSHA256": "18aead8cc5dd21f7e5eee391c5b8c1b7d4eb168e56a8160f4a5536420dbcfe8c",
+      "bytes": 16212,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/limits.mjs",
+      "sourceSHA256": "cedba8cbd09d3e4e4d9778ae471eb4c5a54fd29697f47db711b8e4c961f73aac",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/limits.mjs",
+      "publishedSHA256": "cedba8cbd09d3e4e4d9778ae471eb4c5a54fd29697f47db711b8e4c961f73aac",
+      "bytes": 844,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/projection.mjs",
+      "sourceSHA256": "b5fec5a0dc82a428bc5d61105e44050fa21eaf0192ccaf1261a7c8f4c65fd79c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/projection.mjs",
+      "publishedSHA256": "b5fec5a0dc82a428bc5d61105e44050fa21eaf0192ccaf1261a7c8f4c65fd79c",
+      "bytes": 13684,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/run.sh",
+      "sourceSHA256": "b90955f5a99460d89b37e49a1b3184f35627512cf294ce23cfacf6e1932a4525",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/run.sh",
+      "publishedSHA256": "b90955f5a99460d89b37e49a1b3184f35627512cf294ce23cfacf6e1932a4525",
+      "bytes": 1687,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/settlement.mjs",
+      "sourceSHA256": "e8e32acaf5c795365b00c84b7e6c246b36dac1918c308ab456f4148d664f35c9",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/settlement.mjs",
+      "publishedSHA256": "e8e32acaf5c795365b00c84b7e6c246b36dac1918c308ab456f4148d664f35c9",
+      "bytes": 1686,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/start.mjs",
+      "sourceSHA256": "eccdb79d3e8d58ede8b311e22402cd479ecbb1b85a38b82d97ae695d7bf3db15",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/start.mjs",
+      "publishedSHA256": "eccdb79d3e8d58ede8b311e22402cd479ecbb1b85a38b82d97ae695d7bf3db15",
+      "bytes": 2757,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness/status.mjs",
+      "sourceSHA256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness/status.mjs",
+      "publishedSHA256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17",
+      "bytes": 246,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/cleanup.mjs",
+      "sourceSHA256": "1b6e76bc46e34c192071fff178c8d00cc841940524fb98d0886c88ae07038c9a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/cleanup.mjs",
+      "publishedSHA256": "1b6e76bc46e34c192071fff178c8d00cc841940524fb98d0886c88ae07038c9a",
+      "bytes": 1600,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/dashboard.json",
+      "sourceSHA256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/dashboard.json",
+      "publishedSHA256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/events.mjs",
+      "sourceSHA256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/events.mjs",
+      "publishedSHA256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752",
+      "bytes": 1118,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/finalize.mjs",
+      "sourceSHA256": "d64c2efb591c2f1a844e78af1f8387a7779b70ed517527002a0173433bfc4c07",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/finalize.mjs",
+      "publishedSHA256": "d64c2efb591c2f1a844e78af1f8387a7779b70ed517527002a0173433bfc4c07",
+      "bytes": 750,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/fixtures.json",
+      "sourceSHA256": "b46d787085e216e8627ad40203413c5a0d7184470c19feb925d6a978f96c8cfe",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/fixtures.json",
+      "publishedSHA256": "b46d787085e216e8627ad40203413c5a0d7184470c19feb925d6a978f96c8cfe",
+      "bytes": 574,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/freeze.mjs",
+      "sourceSHA256": "1d5a165daa72ea2321804b99c4f501e249067d1ed93ea9d9b3b0187b92bfd0f3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/freeze.mjs",
+      "publishedSHA256": "1d5a165daa72ea2321804b99c4f501e249067d1ed93ea9d9b3b0187b92bfd0f3",
+      "bytes": 2075,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/guards.mjs",
+      "sourceSHA256": "5fb212295df7bf1747ed0139aa5be1c1d9b57f75839b809153de15cf4138634a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/guards.mjs",
+      "publishedSHA256": "5fb212295df7bf1747ed0139aa5be1c1d9b57f75839b809153de15cf4138634a",
+      "bytes": 1739,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/io.mjs",
+      "sourceSHA256": "30072d164ab4603421cc373425d94c7f5317429d0fd4e42da12d3cd0062bd6bc",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/io.mjs",
+      "publishedSHA256": "30072d164ab4603421cc373425d94c7f5317429d0fd4e42da12d3cd0062bd6bc",
+      "bytes": 4689,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/journey.mjs",
+      "sourceSHA256": "ae5acf6b01af3f84f376ceb7e3b270d7ffb6ff676197e7a1c9d405fff2250b95",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/journey.mjs",
+      "publishedSHA256": "ae5acf6b01af3f84f376ceb7e3b270d7ffb6ff676197e7a1c9d405fff2250b95",
+      "bytes": 20575,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/navigation.mjs",
+      "sourceSHA256": "5bd91faca46b9756b604ac8936d052043113c3481dbd52b97a9e6d6523c0af35",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/navigation.mjs",
+      "publishedSHA256": "5bd91faca46b9756b604ac8936d052043113c3481dbd52b97a9e6d6523c0af35",
+      "bytes": 439,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/projection.mjs",
+      "sourceSHA256": "68199c1efee220806c10cb578b864329dca1a1c09f52ea6b35345836d5624773",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/projection.mjs",
+      "publishedSHA256": "68199c1efee220806c10cb578b864329dca1a1c09f52ea6b35345836d5624773",
+      "bytes": 10262,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/run.sh",
+      "sourceSHA256": "f995506348b4d4b14a488dc759c3c53146387d996353fe7d80fc7a77c3a2dcc0",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/run.sh",
+      "publishedSHA256": "f995506348b4d4b14a488dc759c3c53146387d996353fe7d80fc7a77c3a2dcc0",
+      "bytes": 1367,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/start.mjs",
+      "sourceSHA256": "41aca2b1dab3c70586259d350bd2dc6362a574f363bf677086ed654c0400eb90",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/start.mjs",
+      "publishedSHA256": "41aca2b1dab3c70586259d350bd2dc6362a574f363bf677086ed654c0400eb90",
+      "bytes": 2307,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/static-check.mjs",
+      "sourceSHA256": "94c8208f540282b77aad89b22237ead689e4740fb9db2589b4162724c5e76ef5",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/static-check.mjs",
+      "publishedSHA256": "94c8208f540282b77aad89b22237ead689e4740fb9db2589b4162724c5e76ef5",
+      "bytes": 8007,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/baseline/status.mjs",
+      "sourceSHA256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/baseline/status.mjs",
+      "publishedSHA256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17",
+      "bytes": 246,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/harness-manifest.json",
+      "sourceSHA256": "9c6400819ba8d711829ba6abcc1c8b6ace2da1cd554ca01db7ea2627cb9ae1b3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/harness-manifest.json",
+      "publishedSHA256": "9c6400819ba8d711829ba6abcc1c8b6ace2da1cd554ca01db7ea2627cb9ae1b3",
+      "bytes": 3377,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-capture/source-hashes.json",
+      "sourceSHA256": "f8c4ba54c233a97fbb3a7ab5ffc5331873ff1e49532735a1e403a9b76b2e2bf6",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-capture/source-hashes.json",
+      "publishedSHA256": "f8c4ba54c233a97fbb3a7ab5ffc5331873ff1e49532735a1e403a9b76b2e2bf6",
+      "bytes": 6819,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-collector-review/reviewed-collector-publication-allowlist.json",
+      "sourceSHA256": "156ce948584b52ac4902fe507a400dc2f51cfdfa74f4223a6d689ff57586a445",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-collector-review/reviewed-collector-publication-allowlist.json",
+      "publishedSHA256": "156ce948584b52ac4902fe507a400dc2f51cfdfa74f4223a6d689ff57586a445",
+      "bytes": 8125,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-collector-review/review.md",
+      "sourceSHA256": "ed14a3ba2909ebf103df20ee5459a1923ec3e3a7d3cc65f1f9902fd8d4daabb7",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-collector-review/review.md",
+      "publishedSHA256": "ed14a3ba2909ebf103df20ee5459a1923ec3e3a7d3cc65f1f9902fd8d4daabb7",
+      "bytes": 10109,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-collector-review/verification.json",
+      "sourceSHA256": "3e81df7b3dd6248cc0d9bc8dfa23b221fcdf5b707a8b9a993a0c8eade1823f2a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-collector-review/verification.json",
+      "publishedSHA256": "3e81df7b3dd6248cc0d9bc8dfa23b221fcdf5b707a8b9a993a0c8eade1823f2a",
+      "bytes": 13333,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-collector-review/review-checks.mjs",
+      "sourceSHA256": "ebb6c34eb404f7f709e71f27d4f935120d2ad8e6118456a48f884b2fc2cec274",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-collector-review/review-checks.mjs",
+      "publishedSHA256": "ebb6c34eb404f7f709e71f27d4f935120d2ad8e6118456a48f884b2fc2cec274",
+      "bytes": 7357,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-collector-review/publication-allowlist.json",
+      "sourceSHA256": "6534de699e87dcf3bf560ee0e7af6ebb457f4495b77d076b0a60611f1547c6e2",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-collector-review/publication-allowlist.json",
+      "publishedSHA256": "6534de699e87dcf3bf560ee0e7af6ebb457f4495b77d076b0a60611f1547c6e2",
+      "bytes": 573,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-collector-review/publication-scope.md",
+      "sourceSHA256": "2c57afa4e8e038802b44f85e6e6fa5f36c22f952402bb49a6e472e0230944f1c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-collector-review/publication-scope.md",
+      "publishedSHA256": "2c57afa4e8e038802b44f85e6e6fa5f36c22f952402bb49a6e472e0230944f1c",
+      "bytes": 2835,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-collector-review/publication-verification.json",
+      "sourceSHA256": "528e456c6500c4b86febdfa73f5b66fd5050f707e2a9f9a98e8315548a819fd4",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-collector-review/publication-verification.json",
+      "publishedSHA256": "528e456c6500c4b86febdfa73f5b66fd5050f707e2a9f9a98e8315548a819fd4",
+      "bytes": 9194,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-collector-review/publication-supplement-allowlist.json",
+      "sourceSHA256": "b5cabfb4794560aa563e4e99c63159bebd5ef21ec57403dc157af5da022ea2f4",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-collector-review/publication-supplement-allowlist.json",
+      "publishedSHA256": "b5cabfb4794560aa563e4e99c63159bebd5ef21ec57403dc157af5da022ea2f4",
+      "bytes": 822,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -24472,5 +24890,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 158051694
+  "total_payload_bytes": 158372818
 }

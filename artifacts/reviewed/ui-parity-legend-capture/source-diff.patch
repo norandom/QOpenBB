@@ -1,0 +1,1002 @@
+diff --git a/harness/cases.mjs b/harness/cases.mjs
+new file mode 100644
+index 0000000..a6820b7
+--- /dev/null
++++ b/harness/cases.mjs
+@@ -0,0 +1,34 @@
++export async function executeCases(api){
++  const {controls:c,step,menu,number,checkpoint,runCase,record}=api;
++  const value=async name=>(await c.numeric(name)).inputValue();
++  const comboValue=async name=>(await (await c.combo(name)).textContent()).trim();
++  async function range(name,required=null){
++    const locator=await c.numeric(name,'range');await step(name+' range focus',locator,'click',undefined,{potentialMutation:true,raster:true});
++    const actual=await value(name);record('range-focus',{name,actual,required});
++    if(required!==null&&actual!==String(required)){record('subprobe',{name,status:'range-click-changed',actual});return;}
++    await step(name+' ArrowRight',await c.numeric(name,'range'),'press','ArrowRight',{potentialMutation:true,raster:true});
++  }
++  async function numericCase(id,name,target,strict=false){await runCase(id,async()=>{await c.inventory();const baseline=await value(name);await checkpoint(id+'-baseline',true);
++    await number(name,target);await range(name,strict?target:null);await number(name+' restore',baseline,name);record('restoration',{name,expected:baseline,actual:await value(name),rawByteIdentityClaimed:false});});}
++  await runCase('L01',async()=>{await c.inventory();if(await comboValue('Position')!=='Top')throw Error('baseline-unresolved: Position Top');await checkpoint('L01-baseline',true);
++    for(const position of ['Right','Bottom','Left','Top'])await menu('Position',position);});
++  await numericCase('L02','Spacing',44,true);
++  await numericCase('L03','Marker Size',19);
++  await numericCase('L04','Marker Stroke',5);
++  await numericCase('L05','Item Spacing',13);
++  await runCase('L06',async()=>{await c.inventory();const x=await value('Horizontal Spacing'),y=await value('Vertical Spacing');
++    const top=await checkpoint('L06-top-baseline',true);record('layout',{orientation:'row',available:api.arranged(top.snapshot,'row'),status:api.arranged(top.snapshot,'row')?'available':'layout-discriminator-unavailable'});
++    await number('Horizontal Spacing',7);await range('Horizontal Spacing');await number('Horizontal Spacing restore',x,'Horizontal Spacing');
++    await menu('Position','Right');const right=await checkpoint('L06-right-baseline',true);record('layout',{orientation:'column',available:api.arranged(right.snapshot,'column'),status:api.arranged(right.snapshot,'column')?'available':'layout-discriminator-unavailable'});
++    await number('Vertical Spacing',21);await range('Vertical Spacing');await number('Vertical Spacing restore',y,'Vertical Spacing');await menu('Position','Top');});
++  await runCase('L07',async()=>{await c.inventory();const family=await comboValue('Font'),size=await comboValue('Size');await checkpoint('L07-baseline',true);
++    await menu('Font','Courier New, monospace');await menu('Size','18');await menu('Size',size);await menu('Font',family);});
++  await runCase('L08',async()=>{await c.inventory();const spacing=await value('Spacing'),size=await comboValue('Size');
++    await number('Spacing',44);await menu('Size','18');const retained=await checkpoint('L08-retained',true);record('retained-tuple',{observation:retained.id});
++    const enabled=await c.enabled();if(!await enabled.isChecked())throw Error('baseline-unresolved: Enabled');
++    await step('Enabled focus',enabled,'focus');await step('Enabled off',await c.enabled(),'press','Space',{potentialMutation:true,raster:true});
++    await step('Enabled on',await c.enabled(),'press','Space',{potentialMutation:true,raster:true});
++    const on=await checkpoint('L08-on-retained');const same=JSON.stringify(retained.snapshot.effective)===JSON.stringify(on.snapshot.effective);
++    record('retained-tuple-comparison',{before:retained.id,after:on.id,same});if(!same)throw Error('legend-retention-mismatch');
++    await number('Spacing restore',spacing,'Spacing');await menu('Size',size);});
++}
+diff --git a/baseline/cleanup.mjs b/harness/cleanup.mjs
+index 30c1dbb..2a8aa2d 100644
+--- a/baseline/cleanup.mjs
++++ b/harness/cleanup.mjs
+@@ -6,7 +6,7 @@ const docker=(...args)=>execFileSync('docker',args,{encoding:'utf8',timeout:1000
+ const runtime=fs.existsSync(root+'/runtime-private.json')?JSON.parse(fs.readFileSync(root+'/runtime-private.json')):null;
+ let containerAbsent=true,stateAbsent=true;
+ if(runtime){
+-  if(!/^qopenbb-axis-controls-20261017-[a-f0-9]{10}$/.test(runtime.name))throw Error('Unsafe container name');
++  if(!/^qopenbb-legend-20261017-[a-f0-9]{10}$/.test(runtime.name))throw Error('Unsafe container name');
+   const state=path.resolve(runtime.statePath);
+   if(path.dirname(state)!==path.resolve(root)||!/^state-[a-f0-9]{12}$/.test(path.basename(state)))throw Error('Unsafe state path');
+   const found=docker('ps','-a','--no-trunc','--filter','name=^/'+runtime.name+'$','--format','{{.ID}}').trim();
+@@ -17,5 +17,5 @@ if(runtime){
+ fs.rmSync(root+'/credential-private.json',{force:true});
+ const credentialAbsent=!fs.existsSync(root+'/credential-private.json');
+ const remainingOwnedState=fs.readdirSync(root).filter(name=>/^state-[a-f0-9]{12}$/.test(name));
+-json('cleanup-report',{containerAbsent,stateAbsent,credentialAbsent,remainingOwnedState});
++json('cleanup-report',{status:containerAbsent&&stateAbsent&&credentialAbsent&&!remainingOwnedState.length?'cleaned':'cleanup-unverified',containerAbsent,stateAbsent,credentialAbsent,remainingOwnedState});
+ if(!containerAbsent||!stateAbsent||!credentialAbsent||remainingOwnedState.length)throw Error('Cleanup incomplete');
+diff --git a/harness/controls.mjs b/harness/controls.mjs
+new file mode 100644
+index 0000000..03ff542
+--- /dev/null
++++ b/harness/controls.mjs
+@@ -0,0 +1,32 @@
++export function controlTools(page,step){
++  const fail=m=>{throw Error('selector-unresolved: '+m);};
++  async function one(locator,visible=true){if(await locator.count()!==1)fail('unique control');if(visible)await locator.waitFor({state:'visible',timeout:4000});return locator;}
++  async function panel(){
++    const editor=page.locator('.ag-chart-docked-container');await one(editor);
++    const heading=editor.locator('.ag-charts-format-top-level-group-title-bar').filter({hasText:/^Legend$/});await one(heading);
++    const state=await heading.getAttribute('aria-expanded');if(!['true','false'].includes(state))fail('Legend aria-expanded');
++    if(state==='false')await step('Expand Legend',heading,'click');
++    if(await heading.getAttribute('aria-expanded')!=='true')fail('Legend expansion');return heading.locator('..');
++  }
++  async function combo(name){return one((await panel()).getByRole('combobox',{name,exact:true}));}
++  async function enabled(){return one((await panel()).getByLabel('Enabled',{exact:true}).and(page.locator('input[type="checkbox"]')));}
++  async function numeric(name,type='number'){
++    const scope=await panel(),direct=scope.getByLabel(name,{exact:true}).and(page.locator('input[type="'+type+'"]'));
++    if(await direct.count()===1)return one(direct);
++    const candidates=scope.locator('input[type="'+type+'"]');
++    const ids=await candidates.evaluateAll((ns,label)=>ns.filter(n=>{
++      const ids=n.getAttribute('aria-labelledby')?.trim().split(/\s+/);return ids?.length&&ids.map(id=>document.getElementById(id)?.textContent?.trim()||'').join(' ')===label;
++    }).map(n=>({labelledby:n.getAttribute('aria-labelledby')})),name);
++    if(ids.length!==1)fail(name+' '+type+' exact label');
++    const attribute=ids[0].labelledby;if(!/^[\w:\s-]+$/.test(attribute))fail('label identity');
++    return one(scope.locator('input[type="'+type+'"][aria-labelledby="'+attribute+'"]'));
++  }
++  async function inventory(){
++    const scope=await panel();for(const name of ['Font','Weight','Size','Position'])await combo(name);
++    await enabled();for(const name of ['Spacing','Marker Size','Marker Stroke','Item Spacing','Horizontal Spacing','Vertical Spacing']){await numeric(name);await numeric(name,'range');}
++    if(await scope.locator('input,[role="combobox"]').count()!==17)fail('exact seventeen named controls');
++    const colors=scope.locator('.ag-font-panel .ag-color-picker');if(await colors.count()!==1)fail('Font Color wrapper');
++    return scope;
++  }
++  return {one,panel,combo,enabled,numeric,inventory};
++}
+diff --git a/baseline/finalize.mjs b/harness/finalize.mjs
+index 6f3d1b1..a268ea3 100644
+--- a/baseline/finalize.mjs
++++ b/harness/finalize.mjs
+@@ -1,10 +1,11 @@
+-import {root,json,budget,reconcile,limits} from './io.mjs';
+-const [incoming]=process.argv.slice(2);if(!/^\d+$/.test(incoming))throw Error('Final incoming status required');
+-const before=budget();
+-for(const entry of before.entries){
+-  if(entry.path.endsWith('.json')&&entry.bytes>limits.json)throw Error('Final JSON bound '+entry.path);
+-  if(entry.path.endsWith('.png')&&entry.bytes>limits.png)throw Error('Final PNG bound '+entry.path);
+-}
+-json('final-output-inventory',{scope:'Retained public outputs; excludes this newly written receipt from entries',beforeReceipt:before});
+-reconcile();json('run-status',{exitCode:Number(incoming)});const after=reconcile();
+-console.log(JSON.stringify({root,files:after.files,bytes:after.bytes,reconciled:true}));
++import fs from 'node:fs';
++import {json,budget,reconcile,root,limits} from './io.mjs';
++const incoming=Number(process.argv[2]);if(!Number.isInteger(incoming))throw Error('Final status required');
++const read=name=>fs.existsSync(root+'/'+name+'.json')?JSON.parse(fs.readFileSync(root+'/'+name+'.json')):null;
++const cleanup=read('cleanup-report'),browser=read('browser-cleanup');
++const cleaned=cleanup?.status==='cleaned'&&browser?.browserClosed===true&&browser?.contextClosed===true&&!browser?.closeError;
++const status=cleaned?(incoming===0?'observed':'capture-failed'):'cleanup-unverified';
++const inventory=budget();for(const entry of inventory.entries){if(entry.path.endsWith('.json')&&entry.bytes>limits.json)throw Error('Final JSON bound');if(entry.path.endsWith('.png')&&entry.bytes>limits.png)throw Error('Final PNG bound');}
++json('final-output-inventory',{scope:'Retained public outputs; excludes this receipt and subsequent status',inventory});
++json('run-status',{exitCode:incoming,status,cleanupVerified:cleaned,candidateExecuted:false});reconcile();
++console.log(JSON.stringify({status,retained:budget()}));if(!cleaned||incoming!==0)process.exitCode=1;
+diff --git a/baseline/dashboard.json b/harness/fixture.json
+similarity index 100%
+rename from baseline/dashboard.json
+rename to harness/fixture.json
+diff --git a/baseline/fixtures.json b/baseline/fixtures.json
+deleted file mode 100644
+index 28b81dd..0000000
+--- a/baseline/fixtures.json
++++ /dev/null
+@@ -1,7 +0,0 @@
+-{
+-  "units":"Revenue and Operating Income are USD millions; Period identifies reporting quarters, never amounts",
+-  "A":{"cellDataType":"text","periods":["2024-Q1","2024-Q2","2024-Q3","2024-Q4"]},
+-  "B":{"cellDataType":"number","periods":[1704067200000,1711929600000,1719792000000,1727740800000],"utcQuarterStarts":["2024-01-01T00:00:00.000Z","2024-04-01T00:00:00.000Z","2024-07-01T00:00:00.000Z","2024-10-01T00:00:00.000Z"]},
+-  "C":{"cellDataType":"text","periods":["FY24-Q1","FY24-Q2","FY24-Q3","FY24-Q4"]},
+-  "revenue":[100,120,140,160],"operatingIncome":[20,25,30,40]
+-}
+diff --git a/baseline/freeze.mjs b/baseline/freeze.mjs
+deleted file mode 100644
+index 4285c87..0000000
+--- a/baseline/freeze.mjs
++++ /dev/null
+@@ -1,19 +0,0 @@
+-import fs from 'node:fs';
+-import path from 'node:path';
+-import {fileURLToPath} from 'node:url';
+-import {createHash} from 'node:crypto';
+-const base=path.dirname(path.dirname(fileURLToPath(import.meta.url)));
+-const hash=f=>createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+-const entry=name=>({path:name,bytes:fs.statSync(path.join(base,name)).size,sha256:hash(path.join(base,name))});
+-const old=JSON.parse(fs.readFileSync(path.join(base,'frozen/executed-source-manifest.json')));
+-for(const f of old.files)if(hash(path.join(base,'frozen',f.path))!==f.sha256)throw Error('Frozen source changed '+f.path);
+-const files=fs.readdirSync(path.join(base,'harness')).sort().map(n=>entry('harness/'+n));
+-const plan=entry('plan.md');
+-const manifest={schemaVersion:1,plan:{path:'artifacts/ui-parity-axis-followup/plan.md',sha256:plan.sha256},originalSource:old.originalSource,image:old.image,candidateExecuted:false,runtimeExecuted:false,files,
+-  baseline:{attempt:'attempt-20261017T1422580-7c412f5c',manifestSha256:hash(path.join(base,'frozen/executed-source-manifest.json'))},
+-  productionCaps:'Research excluded; future production remains 400 physical/file,300 logical/file,50/function'};
+-fs.writeFileSync(path.join(base,'harness-manifest.json'),JSON.stringify(manifest,null,2));
+-const sourceFiles=[plan,...files,entry('verify-offline.mjs'),entry('prepare-run.mjs'),entry('frozen/executed-source-manifest.json'),...old.files.map(f=>entry('frozen/'+f.path))];
+-const evidence=['offline-verification.json','static-verification.json'].map(entry);
+-fs.writeFileSync(path.join(base,'source-hashes.json'),JSON.stringify({schemaVersion:1,scope:'Source-only follow-up; no runtime grant',baseline:manifest.baseline,originalSource:old.originalSource,image:old.image,sourceFiles,evidence,harnessManifest:entry('harness-manifest.json')},null,2));
+-console.log(JSON.stringify({status:'frozen-source-only',sourceFiles:sourceFiles.length,harnessFiles:files.length,manifestSha256:hash(path.join(base,'harness-manifest.json')),sourceHashesSha256:hash(path.join(base,'source-hashes.json'))}));
+diff --git a/harness/geometry.mjs b/harness/geometry.mjs
+new file mode 100644
+index 0000000..51229da
+--- /dev/null
++++ b/harness/geometry.mjs
+@@ -0,0 +1,36 @@
++// Parent-space boxes already include each node's own transform.
++export function geometryTools(){
++  const fail=m=>{throw Error('scene-unresolved: '+m);};
++  const value=(r,k)=>{const v=r?.[k]?.value;if(typeof v!=='number'||!Number.isFinite(v))fail('finite '+k);return v;};
++  const box=r=>Object.fromEntries(['x','y','width','height'].map(k=>[k,value(r,k)]));
++  const translate=(b,x,y)=>({...b,x:b.x+x,y:b.y+y});
++  function identity(fields,plain=false){
++    for(const [k,v] of [['rotation',0],['scalingX',1],['scalingY',1]]){
++      const r=fields[k];if(r?.kind==='absent')continue;
++      if(r?.value!==v)fail('nonidentity '+k);
++    }
++    if(plain)for(const k of ['translationX','translationY'])if(fields[k]?.kind!=='absent'&&fields[k]?.value!==0)fail('plain Group translation');
++  }
++  function convert(scene){
++    if(!scene.chainValid)fail('exact parent identities');
++    if(scene.root.className!=='Group'||scene.items.some(i=>i.symbols.className!=='Group'))fail('plain Group roles');
++    if(!/^_?Group$/.test(scene.root.constructorName)||scene.items.some(i=>!/^_?Group$/.test(i.symbols.constructorName)))fail('plain Group constructors');
++    identity(scene.root.fields,true);identity(scene.group.fields);
++    const x=value(scene.group.fields,'translationX'),y=value(scene.group.fields,'translationY');
++    return {legend:box(scene.boxes.group),items:scene.items.map((i,index)=>{
++      identity(i.fields);identity(i.symbols.fields,true);identity(i.label.fields);identity(i.marker.fields);
++      const ix=value(i.fields,'translationX'),iy=value(i.fields,'translationY'),b=scene.boxes.items[index];
++      const marker=box(b.marker),label=box(b.label);
++      return {item:translate(box(b.item),x,y),label:translate(label,x+ix,y+iy),marker:translate(marker,x+ix,y+iy),
++        markerLabelGap:label.x-(marker.x+marker.width)};
++    })};
++  }
++  function gap(legend,plot,position){
++    if(position==='top')return plot.y-(legend.y+legend.height);
++    if(position==='bottom')return legend.y-(plot.y+plot.height);
++    if(position==='left')return plot.x-(legend.x+legend.width);
++    if(position==='right')return legend.x-(plot.x+plot.width);
++    fail('position');
++  }
++  return {value,box,identity,convert,gap};
++}
+diff --git a/baseline/guards.mjs b/harness/guards.mjs
+index 420d58c..15447a0 100644
+--- a/baseline/guards.mjs
++++ b/harness/guards.mjs
+@@ -1,21 +1,30 @@
+-function requireValue(condition,message){if(!condition)throw Error(message);}
+-export function assertFinancialData(data,fixture,fixtures){
+-  requireValue(data.value?.length===4,'Exact four finite fixture rows required');
+-  for(const [i,row] of data.value.entries()){
+-    const period=row.period.value,actual=period.type==='category-wrapper'?period.fields.value.value:period.value;
+-    requireValue(actual===fixture.periods[i]&&row.amounts.revenue.value===fixtures.revenue[i]&&row.amounts.operatingIncome.value===fixtures.operatingIncome[i],'Exact synthetic reporting period and USD-million amounts required');
++import {rows} from './limits.mjs';
++export function assertFixture(s,baseline=null){
++  const require=(v,m)=>{if(!v)throw Error('fixture-unresolved: '+m);};
++  require(s.model.chartType.value==='groupedColumn','groupedColumn');
++  require(JSON.stringify(s.model.cellRange.columns)==='["period","revenue","operatingIncome"]','column order');
++  const first=s.model.cellRange.rowStartIndex.value,last=s.model.cellRange.rowEndIndex.value;
++  require(first===null&&last===null||first===0&&last===3,'whole-table or four rows');
++  require(s.model.switchCategorySeries.value===false,'Switch category/series false');
++  require(s.model.aggFunc.kind!=='value'||s.model.aggFunc.value==null,'Aggregate off');
++  for(let i=0;i<4;i++){const r=s.data[i],period=r.period.wrapper?.value?.value??r.period.value;
++    require(period===rows[i].period&&r.amounts.revenue.value===rows[i].revenue&&r.amounts.operatingIncome.value===rows[i].operatingIncome,'quarter/value order');}
++  const names=['Revenue (USD millions)','Operating Income (USD millions)'];
++  require(s.sourceSeries.length===2&&s.live.scene.items.length===2,'two series');
++  for(let i=0;i<2;i++){const source=s.sourceSeries[i].identity,item=s.live.scene.items[i],live=item.series;
++    require(source.xKey.value==='period'&&source.yKey.value===['revenue','operatingIncome'][i]&&source.yName.value===names[i],'source series keys/names');
++    for(let j=0;j<4;j++)require(s.sourceSeries[i].inputValues[j].amount.value===rows[j][source.yKey.value],'source input series values');
++    require(item.datum.seriesId.value===live.identity.id.value&&item.datum.label.text.value===names[i],'legend datum mapping');
++    if(source.id.kind==='value')require(source.id.value===live.identity.id.value,'source/live series id');
++    require(live.visible.value===true&&live.contentGroup.fields.visible.value===true,'both series visible');
++    if(baseline)require(live.identity.id.value===baseline.live.scene.items[i].series.identity.id.value&&item.datum.itemId.value===baseline.live.scene.items[i].datum.itemId.value,'stable generated identities');
+   }
++  if(s.dom.aggregate.length)require(s.dom.aggregate.length===1&&s.dom.aggregate[0].checked===false,'Aggregate checkbox');
++  if(s.dom.switchCategorySeries.length)require(s.dom.switchCategorySeries.length===1&&s.dom.switchCategorySeries[0].checked===false,'Switch checkbox');
+ }
+-export function assertBaseline(snapshot){
+-  requireValue(snapshot.live.axes.length===2,'Two baseline axes required');
+-  for(const [direction,type,position,auto] of [['x','category','bottom',true],['y','number','left',false]]){
+-    const axes=snapshot.live.axes.filter(a=>a.identity.direction.value===direction);requireValue(axes.length===1,'Unique physical baseline role');
+-    const a=axes[0],label=a.style.label.value;
+-    requireValue(a.identity.type.value===type&&a.identity.position.value===position&&a.style.tick.value.enabled.value===false,'Conflicting baseline axis role/type/position/ticks');
+-    requireValue(label.fontFamily.value==='Verdana, sans-serif'&&label.fontSize.value===11&&label.spacing.value===11&&label.autoRotate.value===auto,'Conflicting baseline typography/spacing/Auto Rotate');
+-  }
+-}
+-export function assertLabelUI(actual,expected){
+-  for(const key of ['family','size','spacing','auto'])requireValue(actual[key]===expected[key],'Label restoration mismatch '+key);
+-  if(!actual.auto)requireValue(Number(actual.rotation)===Number(expected.rotation),'Label restoration mismatch manual rotation');
++export function arranged(s,orientation){
++  const items=s.live.scene.items.map(i=>i.proxy?.rect);if(items.some(i=>!i))return false;
++  const a=items[0],b=items[1],v=(r,k)=>r[k]?.value;
++  return orientation==='row'?Math.abs(v(a,'y')-v(b,'y'))<=1&&v(b,'x')>v(a,'x'):
++    Math.abs(v(a,'x')-v(b,'x'))<=1&&v(b,'y')>v(a,'y');
+ }
+diff --git a/baseline/io.mjs b/harness/io.mjs
+index 0ca04d5..6d8447c 100644
+--- a/baseline/io.mjs
++++ b/harness/io.mjs
+@@ -1,6 +1,7 @@
+ import fs from 'node:fs';
+ import path from 'node:path';
+-export const limits={actions:240,changes:80,checkpoints:96,pngs:64,files:320,json:2097152,png:4194304,total:167772160};
++import {limits} from './limits.mjs';
++export {limits};
+ export function increment(value,cap,label){if(value>=cap)throw Error(label+' cap');return value+1;}
+ const excluded=name=>name.startsWith('state-')||name.endsWith('-private.json')||name.endsWith('.log');
+ export function createWriter(directory,{disk=fs,caps=limits}={}){
+@@ -36,12 +37,13 @@ export function createWriter(directory,{disk=fs,caps=limits}={}){
+     });
+     return {files:entries.size,bytes:total,entries:ordered.map(([name,bytes])=>({path:name,bytes}))};
+   }
+-  function check(){const b=budget();if(b.files>caps.files||b.bytes>caps.total)throw Error('Retained output budget overflow');return b;}
++  function check(){const b=budget(),jsonBytes=b.entries.filter(e=>e.path.endsWith('.json')).reduce((n,e)=>n+e.bytes,0);if(b.files>caps.files||b.bytes>caps.total||jsonBytes>caps.jsonTotal)throw Error('Retained output budget overflow');return {...b,jsonBytes};}
+   function prospective(name,size){
+     if(pending.has(name))throw Error('Pending external output');
+     let bytes=total-(entries.get(name)??0)+size,files=entries.size+(entries.has(name)?0:1);
+     for(const [other,p] of pending){bytes+=p.max-(entries.get(other)??0);if(!entries.has(other))files++;}
+-    if(files>caps.files||bytes>caps.total)throw Error('Prospective retained output cap');
++    const jsonBytes=[...entries].filter(([key])=>key.endsWith('.json')).reduce((n,[key,value])=>n+(key===name?0:value),0)+(name.endsWith('.json')?size:0);
++    if(files>caps.files||bytes>caps.total||jsonBytes>caps.jsonTotal)throw Error('Prospective retained output cap');
+   }
+   function refresh(name,file){update(name,disk.existsSync(file)?disk.statSync(file).size:null);}
+   function writeBytes(name,bytes){
+diff --git a/baseline/journey.mjs b/harness/journey.mjs
+index 800be13..82a7631 100644
+--- a/baseline/journey.mjs
++++ b/harness/journey.mjs
+@@ -1,185 +1,139 @@
+ import {chromium} from '/mnt/d/Source/QOpenBB/verification/node_modules/@playwright/test/index.mjs';
+ import fs from 'node:fs';
+ import {createHash} from 'node:crypto';
+-import {root,json,png,limits,check,increment,reconcile} from './io.mjs';
++import {root,json,png,check,reconcile,increment} from './io.mjs';
++import {limits,rows} from './limits.mjs';
+ import {createEventStore} from './events.mjs';
+-import {assertFinancialData,assertBaseline,assertLabelUI} from './guards.mjs';
+ import {install,acquire} from './projection.mjs';
+-import {expandAxis} from './navigation.mjs';
++import {geometryTools} from './geometry.mjs';
++import {settle} from './settlement.mjs';
++import {controlTools} from './controls.mjs';
++import {assertFixture,arranged} from './guards.mjs';
++import {executeCases} from './cases.mjs';
+ const runtime=JSON.parse(fs.readFileSync(root+'/runtime-private.json')),credential=JSON.parse(fs.readFileSync(root+'/credential-private.json'));
+-const fixtures=JSON.parse(fs.readFileSync(new URL('./fixtures.json',import.meta.url)));
+-const cases=[],ledger=[],menus=[],screenshots=[],diagnostics=[],events=[];
+-const observations=new Map(),states=new Map();let observationSequence=0;
+-let browser,context,page,timer,caseTimer,ready=false,phase='entry',fixtureId=null,actions=0,changes=0,checkpoints=0,cached=null,caseStart=0,totalEventCount=0,overflow=null;
+-const assert=(v,m)=>{if(!v)throw Error(m);};
+-const clean=v=>{const s=String(v).replaceAll(runtime.origin,'[owned-origin]').replaceAll(credential.email,'[synthetic-account]').replaceAll(credential.password,'[redacted]');
+-  if(s.length>2048)throw Error('Diagnostic text bound');return s;};
+-const record=r=>{if(diagnostics.length>=64){overflow='Diagnostic bound';return;}diagnostics.push(r);};
+-const pause=ms=>new Promise(r=>setTimeout(r,ms));
+-async function one(l){await l.waitFor({state:'visible',timeout:4000});assert(await l.count()===1,'Unique original control required');return l;}
+-const axis=role=>page.locator('.ag-chart-docked-container').locator('[data-ref="axisGroup"]').filter({has:page.locator('.ag-charts-format-top-level-group-title').filter({hasText:new RegExp('^'+role+' Axis$')})});
+-const labels=role=>axis(role).locator('.ag-font-panel');
+-const combo=(role,ref)=>axis(role).locator('[data-ref="'+ref+'"] [role="combobox"]');
+-const font=(role,ref)=>labels(role).locator('[data-ref="'+ref+'"] [role="combobox"]');
+-const toggle=(role,name)=>name==='Ticks'?axis(role).locator('[data-ref="axisTicksGroup"]').getByRole('checkbox',{name,exact:true}):labels(role).getByRole('checkbox',{name,exact:true});
+-const tickNumber=(role,ref)=>axis(role).locator('[data-ref="'+ref+'"] input[type="number"]:visible');
+-const padding=role=>labels(role).locator('.ag-slider').filter({has:page.locator('label[data-ref="eLabel"]').filter({hasText:/^Padding$/})}).locator('input[type="number"]:visible');
+-const rotation=role=>labels(role).locator('.ag-angle-select').filter({has:page.locator('[data-ref="eLabel"]').filter({hasText:/^Rotation °$/})}).locator('[data-ref="eAngleValue"] input[type="number"]:visible');
+-const eventStore=createEventStore(json);
+-const saveEvents=values=>eventStore.save(values);
+-async function collectEvents(){if(!ready)return;const values=await page.evaluate(()=>window.__axis.events);assert(totalEventCount+values.length<=256,'Run event bound');saveEvents([...events,...values.map(e=>({...e,fixture:fixtureId,sequence:totalEventCount+e.sequence}))]);}
+-async function step(label,l,method,arg,{change=false,authentication=false}={}){
+-  assert(!overflow,'Diagnostic overflow');const target=l?await one(l):null;
+-  actions=increment(actions,limits.actions,'UI interaction');if(change)changes=increment(changes,limits.changes,'Field edit');
+-  const id=fixtureId+'.'+phase+'.u'+actions;
+-  if(ready)await page.evaluate(id=>{window.__axis.action=id;window.__axis.actionEvents=0;},id);
+-  const settledBefore=ready?await checkpoint('before-'+actions):null;
+-  const before=target?await target.evaluate(n=>({tag:n.tagName,type:n.type,value:n.type==='password'?null:n.value,checked:n.checked??null,controls:n.getAttribute('aria-controls')})):null;
+-  cached=null;const entry={id,case:phase,label,method,intendedValue:authentication?'[authentication omitted]':arg??null,change,before,beforeEvidence:settledBefore?.observationId??null,completed:false};ledger.push(entry);json('action-ledger',ledger);
+-  if(target)await target[method](arg);else await page[method](arg);
+-  entry.completed=true;entry.after=target&&await target.count()===1?await target.evaluate(n=>({tag:n.tagName,type:n.type,value:n.type==='password'?null:n.value,checked:n.checked??null,controls:n.getAttribute('aria-controls')})):null;
+-  if(authentication){entry.before=null;entry.after=null;}json('action-ledger',ledger);await collectEvents();
+-  if(ready){const after=await checkpoint('after-'+actions);entry.afterEvidence=after.observationId;json('action-ledger',ledger);}
++const cases=[],ledger=[],menus=[],raster=[],diagnostics=[],records=[],caseIds=Array.from({length:8},(_,i)=>'L0'+(i+1));
++const eventStore=createEventStore(json),pictures=new Map(),geometry=geometryTools();
++let browser,context,page,ready=false,phase='admission',actions=0,admission=0,changes=0,observations=0,baseline=null,fixedPlot=null,fixedLegend=null,caseDeadline=Infinity,journeyDeadline=Infinity,caseTimer,journeyTimer;
++const counts={console:0,pageerror:0,network:0,externalDenied:0,cdp:0};
++const clean=value=>String(value).replaceAll(runtime.origin,'[owned-origin]').replaceAll(credential.email,'[synthetic-account]').replaceAll(credential.password,'[redacted]').slice(0,512);
++const record=(kind,value)=>{if(records.length>=256)throw Error('record-bound');records.push({case:phase,kind,...value});json('case-records',records);};
++function diagnostic(kind,value){counts[kind]=(counts[kind]??0)+1;if(diagnostics.length<20)diagnostics.push({kind,...value});}
++const assert=(condition,message)=>{if(!condition)throw Error(message);};
++function guardTime(){if(Date.now()>=caseDeadline)throw Error('not-run-budget: case deadline');if(Date.now()>=journeyDeadline)throw Error('not-run-budget: journey deadline');}
++async function collectEvents(){if(ready&&!page.isClosed()){const events=await page.evaluate(()=>window.__legend.events);eventStore.save(events);}}
++function counters(){json('counters',{phase,admission,actions,changes,observations,pngs:raster.length,events:eventStore.count(),remainingMs:Math.max(0,journeyDeadline-Date.now()),retained:check()});}
++function saveActions(){
++  const files=[];for(let i=0;i<ledger.length;i+=16)files.push('actions-p'+String(i/16).padStart(2,'0')+'.json');
++  if(ledger.length){const offset=Math.floor((ledger.length-1)/16)*16;json(files.at(-1).slice(0,-5),ledger.slice(offset));}
++  json('action-index',{count:ledger.length,files,chunkSize:16});
+ }
+-async function checkpoint(label,image=false){
+-  const deadline=Date.now()+12000;
+-  await Promise.race([page.evaluate(()=>window.__axisProxy.waitForUpdate()),pause(12000).then(()=>{throw Error('waitForUpdate deadline');})]);
+-  const times=[];let previous=null,snapshot=null;
+-  while(Date.now()<deadline){await page.waitForFunction(()=>!window.__axisProxy.chart.ctx.animationManager.isActive(),null,{timeout:Math.max(1,deadline-Date.now()),polling:50});
+-    snapshot=await page.evaluate(()=>window.__axis.snapshot());const signature=JSON.stringify({live:snapshot.live,geometry:snapshot.geometry});times.push(Date.now());
+-    if(previous===signature&&times.length>=2)break;previous=signature;await pause(110);
+-  }
+-  assert(times.length>=2&&times.at(-1)-times.at(-2)>=100&&Date.now()<=deadline,'Stable geometry deadline');
+-  snapshot.settled={...snapshot.settled,sampleTimes:times,identicalFiniteSamples:true};snapshot.fixture=fixtureId;snapshot.case=phase;
+-  const {dom,settled,...chartState}=snapshot;delete chartState.case;
+-  const signature=createHash('sha256').update(JSON.stringify(chartState)).digest('hex');let name=states.get(signature);
+-  if(!name){checkpoints=increment(checkpoints,limits.checkpoints,'Checkpoint');name=String(checkpoints).padStart(3,'0')+'-'+fixtureId+'-'+phase+'-'+label;states.set(signature,name);json(name,snapshot);}
+-  const observationId='o'+(++observationSequence),observation={id:observationId,fixture:fixtureId,case:phase,label,uiSerial:actions,
+-    checkpoint:name+'.json',chartSha256:signature,dom,settled,eventSequence:snapshot.eventSequence};
+-  const key=fixtureId+'-'+phase+'-p'+Math.floor(observationSequence/16);if(!observations.has(key))observations.set(key,[]);observations.get(key).push(observation);json('observations-'+key,observations.get(key));
+-  cached={name,snapshot,uiSerial:actions,observationId};
+-  if(image){assert(screenshots.length<limits.pngs,'Screenshot count');const imageName=name+'-view'+screenshots.length;
+-    png(imageName,await page.screenshot());screenshots.push(imageName+'.png');observation.screenshot=imageName+'.png';json('screenshots',screenshots);json('observations-'+key,observations.get(key));}
+-  await collectEvents();return cached;
++async function screenshot(state){
++  const snapshot=state.snapshot,scene=snapshot.live.scene;
++  const signature=createHash('sha256').update(JSON.stringify({live:snapshot.live,geometry:snapshot.geometry})).digest('hex');
++  if(pictures.has(signature)){state.raster=pictures.get(signature);return;}
++  const canvas=geometry.box(snapshot.geometry.canvas.css),plot=geometry.box(snapshot.geometry.seriesRect),boxes=snapshot.canvasGeometry;
++  const identity=scene.items.map(i=>({id:i.series.identity.id.value,yKey:i.series.properties.yKey.value}));
++  const clip=box=>{const x=Math.max(canvas.x,canvas.x+box.x),y=Math.max(canvas.y,canvas.y+box.y),right=Math.min(canvas.x+canvas.width,canvas.x+box.x+box.width),bottom=Math.min(canvas.y+canvas.height,canvas.y+box.y+box.height);
++    assert(right>x&&bottom>y,'raster-unresolved: empty crop');return {x,y,width:right-x,height:bottom-y};};
++  fixedPlot??=plot;fixedLegend??=boxes.legend;
++  const legend=boxes.legend.width>0&&boxes.legend.height>0?boxes.legend:fixedLegend;
++  const regions=[['plot',fixedPlot],['legend',legend]];
++  const receipt={signature,observation:state.id,series:identity,seriesRect:plot,crops:[]};
++  for(const [role,box] of regions){assert(raster.length<limits.pngs,'PNG count cap');const name='raster-'+String(raster.length+1).padStart(3,'0')+'-'+role;
++    const region=clip(box);png(name,await page.screenshot({clip:region,timeout:4000}));raster.push({path:name+'.png',role,observation:state.id,clip:region,series:identity});receipt.crops.push(raster.at(-1));}
++  pictures.set(signature,receipt);state.raster=receipt;json('raster-index',raster);
+ }
+-async function before(label){if(cached&&cached.uiSerial===actions)return cached;return checkpoint(label+'-before');}
+-async function transaction(label,fn,image=true){const b=await before(label),first=actions+1;await fn();const a=await checkpoint(label+'-after',image);
+-  transactions.push({fixture:fixtureId,case:phase,label,before:b.name+'.json',after:a.name+'.json',beforeObservation:b.observationId,afterObservation:a.observationId,uiActions:{first,last:actions}});json('transactions',transactions);return a.snapshot;}
+-const transactions=[];
+-async function popup(l){const id=await (await one(l)).getAttribute('aria-controls');assert(id&&/^[\w:-]+$/.test(id),'Unique controlled popup ID required');
+-  const p=page.locator('[id="'+id+'"]');await one(p);return p;}
+-async function menu(l,selected=null,label='menu'){
+-  await step(label+' open',l,'click');const p=await popup(l),items=p.locator('[role="option"]:visible');
+-  const count=await items.count();assert(count>0&&count<=24,'Popup option cap');
+-  const options=await items.evaluateAll(ns=>ns.map(n=>({text:n.textContent.trim(),role:n.getAttribute('role'),selected:n.getAttribute('aria-selected')})));
+-  for(const item of options)assert(item.text.length<=512,'Menu string cap');menus.push({fixture:fixtureId,case:phase,label,options});json('menus',menus);
+-  if(selected!==null){assert(options.filter(o=>o.text===selected).length===1,'Requested menu value absent/ambiguous '+selected);
+-    await step(label+' choose '+selected,p.getByRole('option',{name:selected,exact:true}),'click',undefined,{change:true});
+-  }else await step(label+' close',l,'press','Escape');
+-}
+-async function select(label,l,value){return transaction(label,()=>menu(l,value,label));}
+-async function number(label,l,value){return transaction(label,async()=>{await step(label+' fill',l,'fill',String(value),{change:true});await step(label+' commit',l,'press','Tab');});}
+-async function checked(label,l,value){const t=await one(l);if(await t.isChecked()===value)return;return transaction(label,()=>step(label,l,'setChecked',value,{change:true}));}
+-const expand=role=>expandAxis(axis(role),role,one,step);
+-async function inventory(role,typography=false){
+-  await expand(role);for(const [ref,label] of [['axisTypeSelect','Axis Type'],['axisPositionSelect','Position']]){
+-    const l=combo(role,ref);if(await l.count()&&await l.isVisible())await menu(l,null,role+' '+label);
+-  }
+-  if(typography){await menu(font(role,'familySelect'),null,role+' Font');await menu(font(role,'sizeSelect'),null,role+' Size');}
+-  await checkpoint(role+'-inventory',true);
+-}
+-async function tickCase(role,width,length){await expand(role);const t=toggle(role,'Ticks');const initial=await (await one(t)).isChecked();
+-  await checked(role+'-ticks-on',t,true);const w=tickNumber(role,'axisTicksWidthSlider'),s=tickNumber(role,'axisTicksSizeSlider');
+-  const oldW=await (await one(w)).inputValue(),oldS=await (await one(s)).inputValue();
+-  await number(role+'-tick-width',w,width);await number(role+'-tick-length',s,length);await checked(role+'-ticks-off',t,false);await checked(role+'-ticks-retained',t,true);
+-  await number(role+'-tick-width-restore',w,oldW);await number(role+'-tick-length-restore',s,oldS);await checked(role+'-ticks-baseline',t,initial);
++async function checkpoint(label,image=false){
++  guardTime();assert(observations<limits.observations,'observation cap');
++  let result;
++  try{result=await settle({waitForUpdate:()=>page.evaluate(()=>window.__legendProxy.waitForUpdate()),sample:()=>page.evaluate(()=>window.__legend.snapshot()),deadlineMs:Math.min(limits.settlement,caseDeadline-Date.now(),journeyDeadline-Date.now())});}
++  catch(error){if(error.diagnostic)json('settlement-failure',{case:phase,label,...error.diagnostic});throw error;}
++  const snapshot=result.snapshot;assertFixture(snapshot,baseline);snapshot.canvasGeometry=geometry.convert(snapshot.live.scene);
++  snapshot.canvasGeometry.gap=geometry.gap(snapshot.canvasGeometry.legend,geometry.box(snapshot.geometry.seriesRect),snapshot.effective.position.value);
++  const id='o'+String(++observations).padStart(3,'0'),state={id,case:phase,label,actions,eventSequence:snapshot.eventSequence,snapshot,settled:result.settled};
++  if(image)await screenshot(state);json('observation-'+id,state);await collectEvents();return state;
+ }
+-async function labelCase(role,family,size,spacing,angles){
+-  await inventory(role,true);const f=font(role,'familySelect'),s=font(role,'sizeSelect'),p=padding(role),a=toggle(role,'Auto Rotate');
+-  const old={family:(await f.textContent()).trim(),size:(await s.textContent()).trim(),spacing:await (await one(p)).inputValue(),auto:await (await one(a)).isChecked()};
+-  await select(role+'-font',f,family);await select(role+'-size',s,String(size));await number(role+'-spacing',p,spacing);
+-  await checked(role+'-manual',a,false);const r=rotation(role),oldRotation=await (await one(r)).inputValue();
+-  for(const angle of angles)await number(role+'-rotation-'+angle,r,angle);
+-  await checked(role+'-automatic',a,true);await checked(role+'-manual-retained',a,false);
+-  await select(role+'-font-restore',f,old.family);await select(role+'-size-restore',s,old.size);await number(role+'-spacing-restore',p,old.spacing);
+-  await number(role+'-rotation-restore',r,oldRotation);await checked(role+'-auto-restore',a,old.auto);
+-  const restored={family:(await f.textContent()).trim(),size:(await s.textContent()).trim(),spacing:await (await one(p)).inputValue(),auto:await (await one(a)).isChecked()};
+-  if(!restored.auto)restored.rotation=await (await one(r)).inputValue();
+-  assertLabelUI(restored,{...old,rotation:oldRotation});json('restoration-'+role,{case:phase,expected:{...old,rotation:oldRotation},actual:restored,uiEquivalent:true,rawByteIdentityClaimed:false});
++const targetState=async target=>target&&await target.count()===1?target.evaluate(n=>({tag:n.tagName,type:n.type??null,value:n.type==='password'?null:n.value??null,checked:n.checked??null,text:n.type==='password'?null:n.textContent?.trim().slice(0,512),controls:n.getAttribute('aria-controls')})):null;
++async function step(label,target,method,arg,{authentication=false,potentialMutation=false,raster:wantRaster=false}={}){
++  guardTime();if(ready){assert(changes<limits.changes,'field mutation cap');actions=increment(actions,limits.actions,'chart action');}else admission=increment(admission,limits.admission,'admission action');
++  const id=(ready?'c':'a')+(ready?actions:admission),before=ready?await checkpoint(label+' before'):null;
++  const entry={id,case:phase,label,method,arg:authentication?'[omitted]':arg??null,completed:false,before:authentication?null:await targetState(target),beforeObservation:before?.id??null,eventFirst:eventStore.count()+1};
++  if(before&&(wantRaster||potentialMutation)){await screenshot(before);json('observation-'+before.id,before);}
++  ledger.push(entry);saveActions();if(ready)await page.evaluate(id=>{window.__legend.action=id;window.__legend.actionEvents=0;},id);
++  try{if(target)await target[method](arg);else await page[method](arg);entry.completed=true;entry.after=authentication?null:await targetState(target);
++    if(ready){const after=await checkpoint(label+' after');entry.afterObservation=after.id;
++      const changed=JSON.stringify(before.snapshot.model.chartOptions)!==JSON.stringify(after.snapshot.model.chartOptions);entry.actualFieldMutation=changed;
++      if(changed){changes=increment(changes,limits.changes,'field mutation');if(!potentialMutation)entry.unexpectedMutation=true;}
++      if(wantRaster||changed){assert(before.raster,'raster-unresolved: missing prospective before capture');await screenshot(after);json('observation-'+after.id,after);entry.raster={before:before.raster,after:after.raster};}
++    }
++  }catch(error){entry.error=clean(error.message);throw error;}
++  finally{try{await collectEvents();}finally{entry.eventLast=eventStore.count();saveActions();counters();}}
+ }
+-async function runCase(id,seconds,fn){phase=id;caseStart=Date.now();await page.evaluate(()=>{window.__axis.caseEvents=0;});
+-  caseTimer=setTimeout(()=>page.close().catch(()=>{}),seconds*1000);try{await fn();const boundary=await checkpoint(id+'-boundary');assertFinancialData(boundary.snapshot.explicit.data,fixtures[fixtureId],fixtures);cases.push({id,fixture:fixtureId,status:'observed',elapsedMs:Date.now()-caseStart});json('cases',cases);}finally{clearTimeout(caseTimer);}}
+-async function closeContext(){
+-  let readError=null,readSucceeded=false;
+-  if(ready){
+-    if(!page.isClosed())try{
+-      const e=await page.evaluate(()=>{const p=window.__axis;window.__axisGrid.removeEventListener('chartOptionsChanged',p.listener);p.listener=null;return p.events;});
+-      events.push(...e.map(v=>({...v,fixture:fixtureId,sequence:totalEventCount+v.sequence})));totalEventCount+=e.length;readSucceeded=true;
+-    }catch(error){readError=error;}
+-    if(!readSucceeded){const retained=eventStore.last();events.splice(0,events.length,...retained);totalEventCount=retained.length;}
+-  }
+-  ready=false;cached=null;
+-  try{await context?.close();}catch(error){readError??=error;}
+-  saveEvents(events);if(readError)throw readError;
++let controls;
++async function menu(name,selection){
++  const combo=await controls.combo(name);await step(name+' open',combo,'click');
++  const id=await combo.getAttribute('aria-controls');assert(id&&/^[\w:-]+$/.test(id),'selector-unresolved: popup ownership');
++  const popup=page.locator('[id="'+id+'"]');await controls.one(popup);
++  const options=popup.getByRole('option'),count=await options.count();assert(count>0&&count<=limits.options,'selector-unresolved: options cap');
++  const values=await options.evaluateAll(ns=>ns.map(n=>({name:n.textContent.trim(),role:n.getAttribute('role'),selected:n.getAttribute('aria-selected')})));
++  assert(values.every(v=>v.name.length<=512),'option string cap');
++  if(!menus.some(m=>m.name===name)){assert(['Font','Size','Position'].includes(name)&&menus.length<3,'menu inventory bound');menus.push({name,options:values});json('menus',menus);}
++  if(selection===null){await step(name+' Escape',combo,'press','Escape');return;}
++  assert(values.filter(v=>v.name===selection).length===1,'selector-unresolved: option '+selection);
++  await step(name+' choose '+selection,popup.getByRole('option',{name:selection,exact:true}),'click',undefined,{potentialMutation:true,raster:true});
++  assert((await (await controls.combo(name)).textContent()).trim()===selection,'control-value-unresolved: '+name);
+ }
+-async function entry(id){
+-  fixtureId=id;phase='entry';cached=null;context=await browser.newContext({viewport:{width:1440,height:1000},deviceScaleFactor:1});page=await context.newPage();
+-  page.setDefaultTimeout(4000);page.setDefaultNavigationTimeout(20000);const cdp=await context.newCDPSession(page);await cdp.send('Runtime.enable');await cdp.send('Network.enable');
+-  page.on('console',m=>{if(['error','warning'].includes(m.type()))record({fixture:id,kind:'console',type:m.type(),text:clean(m.text())});});
+-  page.on('pageerror',e=>record({fixture:id,kind:'pageerror',text:clean(e.message)}));
+-  cdp.on('Runtime.exceptionThrown',e=>record({fixture:id,kind:'cdp-exception',text:clean(e.exceptionDetails.text)}));
+-  cdp.on('Network.loadingFailed',e=>record({fixture:id,kind:'cdp-loading-failed',text:clean(e.errorText),type:e.type,canceled:e.canceled}));
+-  await page.route('**/*',route=>new URL(route.request().url()).origin===runtime.origin?route.continue():route.abort());
+-  await page.route('**/api/pro/dash/{sync,validate-and-sync}',async route=>{if(route.request().method()!=='GET')return route.continue();
+-    const response=await route.fetch(),actual=await response.json(),dashboard=JSON.parse(fs.readFileSync(new URL('./dashboard.json',import.meta.url),'utf8').replaceAll('http://127.0.0.1:32773',runtime.origin));
+-    dashboard['11111111-1111-4111-8111-111111111111'].data.widgets[0].data.table.columnsDefs[0].cellDataType=fixtures[id].cellDataType;
+-    return route.fulfill({json:{...actual,owned:Object.fromEntries(Object.entries(dashboard).map(([key,content])=>[key,{content,is_shared:false,created_by:'Synthetic Parity',created_date:'2026-10-17T00:00:00Z',updated_date:'2026-10-17T00:00:00Z'}])),shared:{},entity_shared:{}}});});
+-  await page.route('**/synthetic_financials',route=>route.fulfill({json:fixtures[id].periods.map((period,i)=>({period,revenue:fixtures.revenue[i],operatingIncome:fixtures.operatingIncome[i]}))}));
+-  await step('Login navigation',null,'goto',runtime.origin);await step('Email',page.getByLabel('Email',{exact:true}),'fill',credential.email,{authentication:true,change:true});
+-  await step('Password',page.getByLabel('Password',{exact:true}),'fill',credential.password,{authentication:true,change:true});await step('Login',page.getByRole('button',{name:'Login',exact:true}),'click');
+-  await page.waitForURL(u=>!['/','/login'].includes(u.pathname),{timeout:20000});
++async function number(label,value,name=label){const target=await controls.numeric(name);const n=Number(value),min=Number(await target.getAttribute('min')),max=Number(await target.getAttribute('max'));
++  assert(Number.isInteger(n)&&n>=min&&n<=max,'control-domain-unresolved: '+name);await step(label+' fill',target,'fill',String(value),{potentialMutation:true,raster:true});await step(label+' Tab',await controls.numeric(name),'press','Tab',{potentialMutation:true,raster:true});
++  assert(Number(await (await controls.numeric(name)).inputValue())===n,'control-value-unresolved: '+name);}
++async function runCase(id,fn){phase=id;caseDeadline=Math.min(Date.now()+limits.case,journeyDeadline);const started=Date.now();await page.evaluate(()=>{window.__legend.caseEvents=0;});
++  caseTimer=setTimeout(()=>page.close().catch(()=>{}),Math.max(1,caseDeadline-Date.now()));const item={id,status:'running',startedAt:started};cases.push(item);json('case-'+id,item);
++  try{await checkpoint(id+' start');await fn();await checkpoint(id+' boundary');item.status='observed';}
++  catch(error){item.status=error.message.startsWith('not-run-budget')?'not-run-budget':error.message.split(':')[0];item.reason=clean(error.message);throw error;}
++  finally{clearTimeout(caseTimer);item.elapsedMs=Date.now()-started;json('case-'+id,item);if(['L01','L04','L08'].includes(id))counters();}}
++async function admissionJourney(){
++  await page.route('**/*',route=>{const url=new URL(route.request().url());if(url.origin===runtime.origin)return route.continue();diagnostic('externalDenied',{scheme:url.protocol});return route.abort();});
++  await page.route('**/api/pro/dash/{sync,validate-and-sync}',async route=>{if(route.request().method()!=='GET')return route.continue();const response=await route.fetch(),actual=await response.json();
++    const fixture=JSON.parse(fs.readFileSync(new URL('./fixture.json',import.meta.url),'utf8').replaceAll('http://127.0.0.1:32773',runtime.origin));
++    return route.fulfill({json:{...actual,owned:Object.fromEntries(Object.entries(fixture).map(([key,content])=>[key,{content,is_shared:false,created_by:'Synthetic Parity',created_date:'2026-10-17T00:00:00Z',updated_date:'2026-10-17T00:00:00Z'}])),shared:{},entity_shared:{}}});});
++  await page.route('**/synthetic_financials',route=>route.fulfill({json:rows}));
++  await step('Login navigation',null,'goto',runtime.origin);await step('Email',page.getByLabel('Email',{exact:true}),'fill',credential.email,{authentication:true});
++  await step('Password',page.getByLabel('Password',{exact:true}),'fill',credential.password,{authentication:true});await step('Login',page.getByRole('button',{name:'Login',exact:true}),'click');
++  await page.waitForURL(u=>!['/','/login'].includes(u.pathname),{timeout:4000});
+   if(new URL(page.url()).pathname==='/onboarding'){
+-    await step('First name',page.getByLabel('First Name',{exact:true}),'fill','Synthetic',{change:true});await step('Last name',page.getByLabel('Last Name',{exact:true}),'fill','Axis Controls',{change:true});
+-    const updated=page.waitForResponse(r=>new URL(r.url()).pathname==='/api/user'&&r.request().method()==='PUT',{timeout:4000});
+-    await step('Continue',page.getByRole('button',{name:'Continue',exact:true}),'click');assert((await updated).status()===200,'Successful profile PUT required');
+-    await page.waitForFunction(()=>location.pathname.startsWith('/app')||[...document.querySelectorAll('button')].some(b=>b.textContent.trim()==='Continue'&&!b.disabled),null,{timeout:4000});
+-    json('onboarding-'+id,{profilePutStatus:200,appNavigationOrContinueEnabled:true});
++    await step('First name',page.getByLabel('First Name',{exact:true}),'fill','Synthetic');await step('Last name',page.getByLabel('Last Name',{exact:true}),'fill','Legend Controls');
++    const updated=page.waitForResponse(r=>new URL(r.url()).pathname==='/api/user'&&r.request().method()==='PUT',{timeout:4000});await step('Continue',page.getByRole('button',{name:'Continue',exact:true}),'click');assert((await updated).status()===200,'admission-unresolved: profile');
+   }
+   await step('Synthetic dashboard',null,'goto',runtime.origin+'/app/11111111-1111-4111-8111-111111111111');
+-  for(const value of ['100','140','160'])await page.getByText(value,{exact:true}).first().waitFor({state:'visible',timeout:4000});
+-  await step('Chart entry',page.locator('#chart-view-button'),'click');await page.locator('.ag-charts-canvas canvas').first().waitFor({state:'visible',timeout:4000});
+-  await page.evaluate(install);const identity=await page.evaluate(acquire);json('identity-'+id,identity);assert(identity.chartType.value==='groupedColumn','Original groupedColumn required');
+-  assert(identity.cellRange.columns.value?.join()==='period,revenue,operatingIncome','Exact three financial keys required');
+-  const start=identity.cellRange.rowStartIndex.value,end=identity.cellRange.rowEndIndex.value;
+-  assert(start===null&&end===null||start===0&&end===3,'Original whole-table or explicit four-row bounds required');
+-  const finiteData=await page.evaluate(()=>window.__axis.envelope(window.__axisProxy.getOptions()).data);json('entry-data-'+id,finiteData);
+-  assert(finiteData.value?.length===4,'Exact four finite fixture rows required');
+-  for(const [i,row] of finiteData.value.entries()){const period=row.period.value,actual=period.type==='category-wrapper'?period.fields.value.value:period.value;
+-    assert(actual===fixtures[id].periods[i]&&row.amounts.revenue.value===fixtures.revenue[i]&&row.amounts.operatingIncome.value===fixtures.operatingIncome[i],'Exact synthetic reporting period and USD-million amounts required');}
+-  assert(await page.evaluate(()=>document.documentElement.classList.contains('dark')),'Original dark theme required');ready=true;
+-  const baseline=await checkpoint('entry-baseline');assertBaseline(baseline.snapshot);json('baseline-'+id,{stockAxisStateConfirmed:true,checkpoint:baseline.name+'.json'});
+-  await step('Widget menu',page.locator('button').filter({has:page.locator('svg#list-unordered')}),'click');
+-  await step('Chart settings',page.getByRole('menuitem',{name:'Chart settings',exact:true}),'click');await step('Customize',page.getByRole('tab',{name:'Customize',exact:true}),'click');
++  await page.getByText('160',{exact:true}).first().waitFor({state:'visible',timeout:4000});await step('Chart entry',page.locator('#chart-view-button'),'click');
++  await page.locator('.ag-charts-canvas canvas').waitFor({state:'visible',timeout:4000});await page.evaluate(install);
++  let identity;try{identity=await page.evaluate(acquire);}finally{json('acquisition-stages',await page.evaluate(()=>window.__legend?.receipts??[]));}
++  assert(await page.evaluate(()=>document.documentElement.classList.contains('dark')),'admission-unresolved: dark');
++  assert(identity.model.chartType.value==='groupedColumn','admission-unresolved: groupedColumn');
++  ready=true;phase='admission-controls';await step('Widget menu',page.locator('button').filter({has:page.locator('svg#list-unordered')}),'click');
++  await step('Chart settings',page.getByRole('menuitem',{name:'Chart settings',exact:true}),'click');
++  const editor=page.locator('.ag-chart-docked-container');await controls.one(editor);await step('Customize',editor.getByRole('tab',{name:'Customize',exact:true}),'click');
++  await controls.inventory();const b=await checkpoint('admission-baseline',true);baseline=b.snapshot;
++  assert(baseline.effective.position.value==='top'&&baseline.effective.enabled.value===true,'baseline-unresolved: Legend enabled top');
++  json('identity-fixture',{identity,rows,columns:['period','revenue','operatingIncome'],units:'USD millions',viewport:{width:1440,height:1000,dpr:1},image:runtime.image,source:runtime.source,baseline:b.id});counters();
+ }
+ try{
+   const env={...process.env};delete env.WAYLAND_DISPLAY;
+   browser=await chromium.launch({headless:true,env,args:['--ozone-platform=headless','--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader']});
+-  timer=setTimeout(()=>page?.close().catch(()=>{}),900000);
+-  await entry('A');
+-  await runCase('A05',120,()=>labelCase('Horizontal','Arial, sans-serif',14,17,[315,45]));
+-  await runCase('A06',120,()=>labelCase('Vertical','Courier New, monospace',16,23,[330]));await closeContext();
+-  await entry('B');await runCase('A07',90,async()=>{await inventory('Horizontal');await inventory('Vertical');await expand('Horizontal');await number('B-spacing',padding('Horizontal'),19);
+-    await checked('B-ticks-on',toggle('Horizontal','Ticks'),true);await number('B-tick-width',tickNumber('Horizontal','axisTicksWidthSlider'),3);
+-    await select('B-number',combo('Horizontal','axisTypeSelect'),'Number');await select('B-time',combo('Horizontal','axisTypeSelect'),'Time');});
+-  await runCase('A08',90,async()=>{await menu(combo('Horizontal','axisTimeFormatSelect'),null,'Time Format');await checkpoint('Time-format-inventory');
+-    await select('B-ISO',combo('Horizontal','axisTimeFormatSelect'),'YYYY-MM-DD');await select('B-European',combo('Horizontal','axisTimeFormatSelect'),'DD/MM/YYYY');
+-    await select('B-category',combo('Horizontal','axisTypeSelect'),'Category');});await closeContext();
+-  await entry('C');await runCase('A09',60,async()=>{await inventory('Horizontal');await inventory('Vertical');});await closeContext();
+-  json('summary',{status:'observed',cases,actions,changes,checkpoints,screenshots:screenshots.length,events:totalEventCount,browserVersion:browser.version(),candidateExecuted:false,retained:check()});
+-}catch(error){json('failure',{fixture:fixtureId,case:phase,error:clean(error.message),completedCases:cases.map(c=>c.id),actions,changes,checkpoints,overflow});process.exitCode=1;
++  context=await browser.newContext({viewport:{width:1440,height:1000},deviceScaleFactor:1});page=await context.newPage();page.setDefaultTimeout(4000);page.setDefaultNavigationTimeout(4000);controls=controlTools(page,step);
++  const cdp=await context.newCDPSession(page);await cdp.send('Runtime.enable');await cdp.send('Network.enable');
++  page.on('console',m=>{if(['error','warning'].includes(m.type()))diagnostic('console',{type:m.type()});});page.on('pageerror',()=>diagnostic('pageerror',{}));
++  page.on('response',r=>{if(r.status()>=400){const u=new URL(r.url());if(u.origin===runtime.origin)diagnostic('network',{path:clean(u.pathname),status:r.status()});}});
++  cdp.on('Runtime.exceptionThrown',()=>diagnostic('cdp',{exception:true}));cdp.on('Network.loadingFailed',e=>diagnostic('cdp',{loadingFailed:true,canceled:e.canceled??false}));
++  const admissionTimer=setTimeout(()=>page.close().catch(()=>{}),Math.max(1,runtime.startedAt+limits.startup-Date.now()));
++  try{await admissionJourney();}finally{clearTimeout(admissionTimer);}
++  phase='L01';journeyDeadline=Math.min(Date.now()+limits.journey,runtime.startedAt+limits.inputStop);journeyTimer=setTimeout(()=>page.close().catch(()=>{}),Math.max(1,journeyDeadline-Date.now()));
++  await executeCases({controls,step,menu,number,checkpoint,runCase,record,arranged});json('summary',{status:'observed',candidateExecuted:false,cases,actions,changes,observations});
++}catch(error){json('failure',{case:phase,reason:clean(error.message),actions,changes,observations});process.exitCode=1;
+ }finally{
+-  clearTimeout(timer);clearTimeout(caseTimer);let closeError=null;
+-  try{await closeContext();}catch(e){closeError=clean(e.message);await context?.close();}
+-  await browser?.close();json('diagnostics',{records:diagnostics,overflow});json('browser-cleanup',{browserClosed:!browser?.isConnected(),contextClosed:!page||page.isClosed(),listenerRemovedOrDisposed:!page||page.isClosed(),closeError});
+-  json('counters',{actions,changes,checkpoints,screenshots:screenshots.length,events:totalEventCount});json('retained-bytes',check());reconcile();
++  clearTimeout(caseTimer);clearTimeout(journeyTimer);let closeError=null;
++  try{await collectEvents();if(ready&&!page.isClosed())await page.evaluate(()=>window.__legendGrid.removeEventListener('chartOptionsChanged',window.__legend.listener));}catch(e){closeError=clean(e.message);}
++  ready=false;await context?.close().catch(e=>{closeError??=clean(e.message);});await browser?.close().catch(e=>{closeError??=clean(e.message);});
++  for(const id of caseIds)if(!cases.some(c=>c.id===id))json('case-'+id,{id,status:'not-run-budget',dependency:phase});
++  json('diagnostics',{counts,records:diagnostics});json('browser-cleanup',{browserClosed:!browser?.isConnected(),contextClosed:!page||page.isClosed(),listenerRemovedOrDisposed:!page||page.isClosed(),closeError});counters();reconcile();
+ }
+diff --git a/harness/limits.mjs b/harness/limits.mjs
+new file mode 100644
+index 0000000..beefb9d
+--- /dev/null
++++ b/harness/limits.mjs
+@@ -0,0 +1,9 @@
++export const limits=Object.freeze({actions:160,changes:56,admission:24,events:256,caseEvents:64,actionEvents:8,
++  pngs:80,png:2097152,json:262144,jsonTotal:33554432,total:209715200,files:600,
++  observations:360,nodes:24,controls:32,options:32,string:512,markup:8192,
++  action:4000,settlement:6000,waitForUpdate:4000,samples:10,case:240000,journey:1920000,
++  startup:180000,cleanup:120000,inputStop:2100000,attempt:2220000});
++export const rows=Object.freeze([
++  {period:'2024-Q1',revenue:100,operatingIncome:20},{period:'2024-Q2',revenue:120,operatingIncome:25},
++  {period:'2024-Q3',revenue:140,operatingIncome:30},{period:'2024-Q4',revenue:160,operatingIncome:40}]);
++export const labels=Object.freeze(['Enabled','Font','Weight','Size','Position','Spacing','Marker Size','Marker Stroke','Item Spacing','Horizontal Spacing','Vertical Spacing']);
+diff --git a/baseline/navigation.mjs b/baseline/navigation.mjs
+deleted file mode 100644
+index 6c5a5f9..0000000
+--- a/baseline/navigation.mjs
++++ /dev/null
+@@ -1,7 +0,0 @@
+-export async function expandAxis(group,role,one,step){
+-  if(await group.count()!==1)throw Error('Axis group cardinality');
+-  const heading=group.locator(':scope > .ag-charts-format-top-level-group-title-bar');await one(heading);
+-  const state=await heading.getAttribute('aria-expanded');
+-  if(!['true','false'].includes(state))throw Error('Expansion aria state missing');
+-  if(state==='false')await step('Expand '+role,heading,'click');
+-}
+diff --git a/baseline/projection.mjs b/harness/projection.mjs
+index 8ae0f91..6cf99d1 100644
+--- a/baseline/projection.mjs
++++ b/harness/projection.mjs
+@@ -1,87 +1,100 @@
+ export function install(){
+-  const limit=(a,n,k)=>{if(!Array.isArray(a)||a.length>n)throw Error('Array bound '+k);return a;};
+-  const scalar=(v,k)=>{if(v===null||typeof v==='boolean'||typeof v==='number'&&Number.isFinite(v)||typeof v==='string'&&v.length<=512)return v;throw Error('Scalar '+k);};
+-  const presence=(o,k)=>({own:o!=null&&Object.hasOwn(o,k),in:o!=null&&k in Object(o),
+-    kind:o==null||!(k in Object(o))?'absent':o[k]===undefined?'undefined':o[k]===null?'null':'value',type:o==null||!(k in Object(o))?'absent':typeof o[k]});
+-  const field=(o,k)=>({...presence(o,k),...(o?.[k]!==undefined?{value:scalar(o[k],k)}:{})});
+-  const pick=(o,keys)=>Object.fromEntries(keys.map(k=>[k,field(o,k)]));
+-  const array=(o,k,n,project)=>({...presence(o,k),...(o?.[k]!=null?{value:limit(o[k],n,k).map(project)}:{})});
+-  const nested=(o,k,project)=>({presence:presence(o,k),value:project(o?.[k])});
+-  const dash=o=>array(o,'lineDash',8,x=>scalar(x,'dash'));
+-  const style=o=>({...pick(o,['stroke','strokeWidth','fill','fillOpacity']),lineDash:dash(o)});
+-  const line=o=>pick(o,['enabled','stroke','width']);
+-  const tick=o=>pick(o,['enabled','stroke','width','size']);
+-  const label=o=>({...pick(o,['enabled','fontFamily','fontSize','fontWeight','fontStyle','color','spacing','padding','autoRotate','rotation','format']),
+-    formatter:{...presence(o,'formatter'),...(typeof o?.formatter==='function'?{name:scalar(o.formatter.name.length<=128?o.formatter.name:undefined,'formatter.name')}:{})}});
+-  const grid=o=>({...pick(o,['enabled','width']),style:array(o,'style',4,style)});
+-  const axis=o=>({...pick(o,['type','position']),tick:nested(o,'tick',tick),label:nested(o,'label',label),line:nested(o,'line',line),gridLine:nested(o,'gridLine',grid),keys:array(o,'keys',3,x=>scalar(x,'key'))});
+-  const axisOverride=o=>({...axis(o),positions:Object.fromEntries(['top','bottom','left','right'].map(k=>[k,nested(o,k,axis)]))});
+-  const options=o=>Object.fromEntries(['common','bar'].map(k=>[k,{presence:presence(o,k),axes:Object.fromEntries(['category','number','time'].map(t=>[t,nested(o?.[k]?.axes,t,axisOverride)]))}]));
+-  const dataValue=v=>{if(v instanceof Date)return {type:'Date',milliseconds:v.getTime(),iso:v.toISOString()};
+-    if(v!==null&&typeof v==='object')return {type:'category-wrapper',fields:pick(v,['id','value'])};return {type:typeof v,value:scalar(v,'period')};};
+-  const rows=o=>array(o,'data',4,r=>({period:{...presence(r,'period'),...(r.period!==undefined?{value:dataValue(r.period)}:{})},amounts:pick(r,['revenue','operatingIncome'])}));
+-  const series=o=>({...pick(o,['type','xKey','yKey','yName','id']),data:rows(o)});
+-  const envelope=o=>({axes:array(o,'axes',2,axis),data:rows(o),series:array(o,'series',2,series),themeOverrides:options(o?.theme?.overrides)});
+-  const model=o=>({...pick(o,['chartId','chartType','chartThemeName','switchCategorySeries','aggFunc']),chartOptions:options(o?.chartOptions),
+-    cellRange:{...pick(o?.cellRange,['rowStartIndex','rowEndIndex','rowStartPinned','rowEndPinned']),columns:array(o?.cellRange,'columns',3,x=>scalar(x,'column'))}});
+-  const nodeKeys=['id','visible','opacity','x','y','x1','y1','x2','y2','stroke','strokeWidth','strokeOpacity','text','fill','fontFamily','fontSize','fontWeight','fontStyle',
+-    'textAlign','textBaseline','rotation','rotationCenterX','rotationCenterY','translationX','translationY','scalingX','scalingY'];
+-  const parentKeys=['id','visible','opacity','rotation','rotationCenterX','rotationCenterY','translationX','translationY','scalingX','scalingY'];
+-  const datumKeys=['tickId','tickLabel','tickLabelFormatted','text','visible','translation','x','y','x1','y1','x2','y2','rotation','rotationCenterX','rotationCenterY','stroke','strokeWidth'];
+-  const rect=n=>n?pick(n.getBoundingClientRect(),['x','y','width','height','top','right','bottom','left']):null;
+-  const visible=n=>!!n&&!!n.getClientRects().length&&getComputedStyle(n).visibility!=='hidden';
++  const scalar=(v,k)=>{if(v===null||typeof v==='boolean'||typeof v==='number'&&Number.isFinite(v)||typeof v==='string'&&v.length<=512)return v;throw Error('nonfinite-scalar: '+k);};
++  const field=(o,k)=>{const present=o!=null&&k in Object(o),v=present?o[k]:undefined;
++    return {own:o!=null&&Object.hasOwn(o,k),in:present,kind:!present?'absent':v===undefined?'undefined':v===null?'null':'value',type:present?typeof v:'absent',...(v!==undefined?{value:scalar(v,k)}:{})};};
++  const pick=(o,ks)=>Object.fromEntries(ks.map(k=>[k,field(o,k)]));
++  const shape=o=>{const v=o?.shape;return typeof v==='function'?{...pick(o,[]),type:'function',constructorName:scalar(v.name||v.constructor?.name||'','shape')}:field(o,'shape');};
++  const label=o=>pick(o,['fontFamily','fontSize','fontWeight','fontStyle','color','maxLength']);
++  const marker=o=>({...pick(o,['size','strokeWidth','padding','enabled']),shape:shape(o)});
++  const legend=o=>({...pick(o,['enabled','visible','position','spacing','maxWidth','maxHeight']),item:{...pick(o?.item,['paddingX','paddingY']),marker:marker(o?.item?.marker),label:label(o?.item?.label)}});
++  const options=o=>Object.fromEntries(['common','bar','line'].map(k=>[k,{namespace:{own:o!=null&&Object.hasOwn(o,k),in:o!=null&&k in Object(o),kind:o==null||!(k in Object(o))?'absent':o[k]===undefined?'undefined':o[k]===null?'null':'value',type:o==null||!(k in Object(o))?'absent':typeof o[k]},legend:legend(o?.[k]?.legend)}]));
++  const data=o=>{if(!Array.isArray(o)||o.length!==4)throw Error('fixture-unresolved: four rows');return o.map(r=>({amounts:pick(r,['revenue','operatingIncome']),period:r.period!==null&&typeof r.period==='object'?{wrapper:pick(r.period,['id','value'])}:field(r,'period')}));};
++  const sourceSeries=(o,shared)=>{if(!Array.isArray(o)||o.length!==2)throw Error('fixture-unresolved: two source series');return o.map(s=>({identity:pick(s,['id','type','xKey','yKey','yName']),
++    data:{own:Object.hasOwn(s,'data'),in:'data' in s,kind:!('data' in s)?'absent':s.data===undefined?'undefined':s.data===null?'null':'value',type:typeof s.data,...(s.data!==undefined&&s.data!==null?{value:data(s.data)}:{})},
++    inputValues:data(s.data??shared).map(r=>({period:r.period,amount:r.amounts[s.yKey]}))}));};
++  const columns=o=>{if(!Array.isArray(o)||o.length!==3)throw Error('fixture-unresolved: exact three columns');return o.map(c=>scalar(c,'column'));};
++  const model=o=>({...pick(o,['chartId','chartType','chartThemeName','switchCategorySeries','aggFunc']),chartOptions:options(o?.chartOptions),cellRange:{...pick(o?.cellRange,['rowStartIndex','rowEndIndex','rowStartPinned','rowEndPinned']),columns:columns(o?.cellRange?.columns)}});
++  const transforms=['visible','opacity','translationX','translationY','rotation','scalingX','scalingY'];
++  const rect=n=>n?pick(n.getBoundingClientRect(),['x','y','width','height']):null;
+   const text=v=>v==null?null:scalar(String(v),'DOM text');
+-  const el=n=>n?{tag:n.tagName,type:n.type??null,role:n.getAttribute('role'),ref:n.getAttribute('data-ref'),
+-    label:text((n.getAttribute('aria-label')||n.getAttribute('aria-labelledby')?.split(' ').map(id=>document.getElementById(id)?.textContent||'').join(' ')||
+-      n.closest('.ag-slider,.ag-field')?.querySelector('label')?.textContent||'').trim()),id:n.id,controls:n.getAttribute('aria-controls'),
+-    checked:n.checked??null,disabled:n.disabled??null,value:text(n.value),selected:text(n.textContent?.trim()),
+-    min:n.min??null,max:n.max??null,step:n.step??null,visible:visible(n),rect:rect(n),
+-    inViewport:!!n&&n.getBoundingClientRect().bottom>0&&n.getBoundingClientRect().top<innerHeight&&n.getBoundingClientRect().right>0&&n.getBoundingClientRect().left<innerWidth}:null;
+-  const active=n=>n?{tag:n.tagName,type:n.type??null,ref:n.getAttribute('data-ref'),label:text((n.getAttribute('aria-label')||
+-    n.getAttribute('aria-labelledby')?.split(' ').map(id=>document.getElementById(id)?.textContent||'').join(' ')||'').trim())}:null;
+-  const store={limit,presence,pick,axis,options,envelope,model,rect,el,active,events:[],action:'setup',caseEvents:0,actionEvents:0,overflow:null};
++  const accessible=n=>(n?.getAttribute('aria-label')||n?.getAttribute('aria-labelledby')?.split(/\s+/).map(id=>document.getElementById(id)?.textContent||'').join(' ')||n?.labels?.[0]?.textContent||'').trim();
++  const dom=n=>{if(!n)return null;const css=getComputedStyle(n);return {tag:n.tagName,type:n.type??null,label:text(accessible(n)),text:text(n.textContent?.trim()),role:n.getAttribute('role'),ref:n.getAttribute('data-ref'),
++    checked:n.checked??null,value:n.value??null,attached:n.isConnected,visible:!!n.getClientRects().length&&css.visibility!=='hidden'&&css.display!=='none',enabled:!n.disabled,
++    ariaChecked:n.getAttribute('aria-checked'),hidden:n.getAttribute('aria-hidden'),tabindex:n.getAttribute('tabindex'),controls:n.getAttribute('aria-controls'),
++    labelledby:n.getAttribute('aria-labelledby'),min:n.min??null,max:n.max??null,step:n.step??null,css:pick(css,['display','visibility','opacity']),rect:rect(n)};};
++  const store={pick,field,legend,options,model,data,sourceSeries,rect,dom,accessible,events:[],action:'admission',caseEvents:0,actionEvents:0,overflow:null};
+   store.snapshot=()=>{
+-    if(store.overflow)throw Error('Event failure '+JSON.stringify(store.overflow));
+-    const chart=window.__axisProxy.chart,processed=chart.chartOptions.processedOptions,ancestors=[],ancestorIds=new Map(),nodes=[],nodeIds=new Map();
+-    const parent=p=>{if(ancestorIds.has(p))return ancestorIds.get(p);if(ancestors.length>=96)throw Error('Ancestor bound');
+-      const id='p'+ancestors.length;ancestorIds.set(p,id);ancestors.push({identity:id,fields:pick(p,parentKeys),parentLink:presence(p,'parentNode')});return id;};
+-    const node=(n,d)=>{if(!n)throw Error('Required named scene node missing');if(nodeIds.has(n))return nodeIds.get(n);
+-      if(nodes.length>=136)throw Error('Node bound');const id='n'+nodes.length;nodeIds.set(n,id);const parents=[];
+-      let p=n.parentNode;for(let depth=0;p&&depth<8;depth++,p=p.parentNode)parents.push(parent(p));if(p)throw Error('Ancestor depth bound');
+-      if(!parents.length)throw Error('Vacuous scene ancestry');if(typeof n.getBBox!=='function')throw Error('getBBox unavailable');
+-      nodes.push({identity:id,fields:pick(n,nodeKeys),lineDash:dash(n),parentLink:presence(n,'parentNode'),parents,
+-        bbox:pick(n.getBBox(),['x','y','width','height']),coordinateSpace:'getBBox parent space; local scene transforms; no guessed canvas coordinates',datum:pick(d??n.datum,datumKeys)});return id;};
+-    const selection=s=>{if(typeof s?.each!=='function')throw Error('Required named selection missing');const out=[];
+-      s.each((n,d)=>{if(out.length>=32)throw Error('Tick selection bound');out.push(node(n,d));});return out;};
+-    const axes=limit(chart.axes,2,'live axes').map(a=>({identity:pick(a,['type','direction','position','id']),style:axis(a),
+-      lineNode:node(a.lineNode),tickLineGroup:node(a.tickLineGroup),tickLabelGroup:node(a.tickLabelGroup),
+-      ticks:selection(a.tickLineGroupSelection),labels:selection(a.tickLabelGroupSelection)}));
+-    const groups=limit([...document.querySelectorAll('[data-ref="axisGroup"]')],2,'axis groups').map(g=>({
+-      name:text(g.querySelector('.ag-charts-format-top-level-group-title')?.textContent.trim()),rect:rect(g),visible:visible(g),
+-      controls:limit([...g.querySelectorAll('input,[role="combobox"]')],48,'axis controls').map(el),
+-      sliders:limit([...g.querySelectorAll('.ag-slider')],16,'sliders').map(s=>({label:text(s.querySelector('label[data-ref="eLabel"]')?.textContent.trim()),rect:rect(s)})),
+-      rotationCircle:rect(g.querySelector('.ag-angle-select'))}));
+-    const canvases=limit([...document.querySelectorAll('.ag-charts-canvas canvas')],8,'canvases');
+-    const popupNodes=limit([...document.querySelectorAll('[role="listbox"]')].filter(visible),1,'visible popup');
+-    const popup=popupNodes.map(p=>({id:p.id,rect:rect(p),options:limit([...p.querySelectorAll('[role="option"]')].filter(visible),24,'popup options').map(el)}));
+-    return {model:model(window.__axisGrid.getChartModels()[0]),explicit:envelope(window.__axisProxy.getOptions()),effective:envelope(processed),
+-      live:{axes,nodes,ancestors},geometry:{seriesRect:pick(chart.seriesRect,['x','y','width','height']),padding:pick(chart.padding,['top','right','bottom','left']),
+-        canvas:canvases.map(c=>({css:rect(c),backing:pick(c,['width','height'])})),dpr:devicePixelRatio,editor:rect(document.querySelector('.ag-chart-docked-container'))},
+-      dom:{groups,popup,active:active(document.activeElement),scrollOwner:{tag:document.scrollingElement?.tagName,top:document.scrollingElement?.scrollTop,left:document.scrollingElement?.scrollLeft}},
+-      eventSequence:store.events.length,settled:{animationActive:chart.ctx.animationManager.isActive()}};
++    if(store.overflow)throw Error('event-overflow: '+JSON.stringify(store.overflow));
++    const chart=window.__legendProxy.chart,processed=chart.chartOptions.processedOptions,lg=chart.legend,root=chart.ctx.scene.root;
++    if(typeof lg?.itemSelection?.each!=='function')throw Error('scene-unresolved: selection');
++    const selected=[];lg.itemSelection.each((n,d)=>{if(selected.length>=2)throw Error('scene-unresolved: selection bound');selected.push({n,d});});
++    if(selected.length!==2||chart.series?.length!==2)throw Error('scene-unresolved: exact two items/series');
++    const parents=(n,p,name)=>{if(!n||n.parentNode!==p)throw Error('scene-unresolved: '+name);};
++    const node=n=>({className:scalar(n.constructor?.className||n.constructor?.name||'','class'),constructorName:scalar(n.constructor?.name||'','class'),fields:pick(n,transforms)});
++    if(!root||!lg.group||root.parentNode!=null)throw Error('scene-unresolved: root termination');
++    parents(lg.group,root,'legend -> root');
++    const items=selected.map(({n,d},index)=>{
++      parents(n,lg.group,'item -> legend');parents(n.label,n,'label -> item');parents(n.symbolsGroup,n,'symbols -> item');parents(n.marker,n.symbolsGroup,'marker -> symbols');parents(n.line,n.symbolsGroup,'line -> symbols');
++      const s=chart.series[index];
++      if(!s.contentGroup||s.id!==d?.seriesId||s.properties?.xKey!=='period'||s.properties?.yKey!==['revenue','operatingIncome'][index])throw Error('series-identity-mismatch');
++      if(s.visible!==true||s.contentGroup.visible!==true)throw Error('series-visibility-mismatch');
++      return {...node(n),datum:{...pick(d,['id','seriesId','itemId','enabled']),label:pick(d?.label,['text'])},...pick(n,['spacing','length','pageIndex']),
++        symbols:node(n.symbolsGroup),line:pick(n.line,['visible','strokeWidth']),
++        label:{...node(n.label),style:pick(n.label,['text','fontFamily','fontSize','fontWeight','fontStyle','fill','x','y'])},
++        marker:{...node(n.marker),style:{...pick(n.marker,['size','stroke','strokeWidth','fill','x','y']),shape:shape(n.marker)}},
++        proxy:dom(n.proxyButton?.getElement()),series:{identity:pick(s,['id','type']),properties:pick(s.properties,['xKey','yKey','visible','stroke','strokeWidth']),visible:field(s,'visible'),contentGroup:node(s.contentGroup)}};
++    });
++    const namedNodes=[root,lg.group,...selected.flatMap(({n},index)=>[n,n.symbolsGroup,n.label,n.marker,n.line,chart.series[index].contentGroup])];
++    if(new Set(namedNodes).size!==14)throw Error('scene-unresolved: fourteen distinct named identities');
++    const operands=()=>[...['translationX','translationY'].map(k=>({owner:'legend.group',key:k,record:field(lg.group,k)})),...selected.flatMap(({n},i)=>[
++      ...['translationX','translationY'].map(k=>({owner:'item'+i,key:k,record:field(n,k)})),...['x','y','translationX','translationY'].map(k=>({owner:'marker'+i,key:k,record:field(n.marker,k)}))])];
++    const bbox=n=>{if(typeof n?.getBBox!=='function')throw Error('scene-unresolved: getBBox');return pick(n.getBBox(),['x','y','width','height']);};
++    const before=operands();
++    const boxes={group:bbox(lg.group),items:selected.map(({n})=>({item:bbox(n),label:bbox(n.label),marker:bbox(n.marker)}))};
++    const after=operands(),valid=JSON.stringify(before)===JSON.stringify(after);
++    if(!valid)return {valid:false,reason:'bbox-getter-operands-changed',operands:{before,after},eventSequence:store.events.length};
++    const canvases=[...document.querySelectorAll('.ag-charts-canvas canvas')];if(canvases.length!==1)throw Error('scene-unresolved: exact canvas');
++    const canvas=canvases[0],canvasBox=canvas.getBoundingClientRect();
++    if(devicePixelRatio!==1||Math.abs(chart.ctx.scene.width-canvasBox.width)>.5||Math.abs(chart.ctx.scene.height-canvasBox.height)>.5)throw Error('scene-unresolved: scene canvas dimensions');
++    const toolbar=document.querySelectorAll('.ag-charts-proxy-legend-toolbar');if(toolbar.length!==1)throw Error('scene-unresolved: toolbar');
++    for(let i=0;i<2;i++){const button=selected[i].n.proxyButton?.getElement();if(!button||!toolbar[0].contains(button))throw Error('scene-unresolved: exact proxy button');}
++    const editor=document.querySelectorAll('.ag-chart-docked-container');if(editor.length>1)throw Error('selector-unresolved: editor cardinality');
++    const heads=editor[0]?[...editor[0].querySelectorAll('.ag-charts-format-top-level-group-title-bar')].filter(n=>n.textContent.trim()==='Legend'):[];
++    if(heads.length>1)throw Error('selector-unresolved: Legend title');const panel=heads[0]?.parentElement;
++    const controls=panel?[...panel.querySelectorAll('input,[role="combobox"]')]:[];if(controls.length>32)throw Error('selector-unresolved: controls bound');
++    const color=panel?[...panel.querySelectorAll('.ag-font-panel .ag-color-picker')]:[];if(color.length>1)throw Error('selector-unresolved: Color wrapper');
++    const paginationDOM=[...document.querySelectorAll('.ag-charts-proxy-legend-pagination')];if(paginationDOM.length>1)throw Error('scene-unresolved: pagination');
++    const paginationButtons=paginationDOM[0]?[...paginationDOM[0].querySelectorAll('button')]:[];if(paginationButtons.length>2)throw Error('scene-unresolved: pagination buttons');
++    const source=window.__legendProxy.getOptions(),models=window.__legendGrid.getChartModels();if(models.length!==1)throw Error('identity-unresolved: model cardinality');
++    const fonts=items.map(i=>{const f=i.label.style;const css=`${f.fontStyle.value||'normal'} ${f.fontWeight.value||'normal'} ${f.fontSize.value}px ${f.fontFamily.value}`;return {css,available:document.fonts.check(css)};});
++    return {valid:true,model:model(models[0]),internalOverrides:options(source.theme?.overrides),effective:legend(processed.legend),data:data(processed.data),sourceSeries:sourceSeries(source.series,source.data),
++      live:{legend:legend(lg),pagination:pick(lg.pagination,['visible','currentPage','totalPages']),
++        scene:{root:{...node(root),parentNode:{own:Object.hasOwn(root,'parentNode'),in:'parentNode' in root,type:typeof root.parentNode,value:root.parentNode??null}},group:node(lg.group),items,boxes,chainValid:true,nodeCount:14}},
++      geometry:{padding:pick(chart.padding,['top','right','bottom','left']),seriesRect:pick(chart.seriesRect,['x','y','width','height']),scene:pick(chart.ctx.scene,['width','height']),canvas:{css:rect(canvas),backing:pick(canvas,['width','height'])},seriesArea:rect(document.querySelector('.ag-charts-series-area')),dpr:devicePixelRatio},
++      dom:{toolbar:dom(toolbar[0]),pagination:dom(paginationDOM[0]),paginationButtons:paginationButtons.map(dom),controls:controls.map(dom),color:color.map(dom),panel:rect(panel),active:{tag:document.activeElement?.tagName,type:document.activeElement?.type??null,label:text(accessible(document.activeElement)),ref:document.activeElement?.getAttribute('data-ref')},
++        aggregate:[...document.querySelectorAll('input[type="checkbox"]')].filter(n=>accessible(n)==='Aggregate').map(dom),switchCategorySeries:[...document.querySelectorAll('input[type="checkbox"]')].filter(n=>accessible(n)==='Switch category/series').map(dom)},
++      fonts,operands:{before,after,valid},eventSequence:store.events.length,animationActive:chart.ctx.animationManager.isActive()};
+   };
+-  window.__axis=store;
++  window.__legend=store;
+ }
+ export function acquire(){
+-  const roots=document.querySelectorAll('.ag-root-wrapper');if(roots.length<1||roots.length>4)throw Error('Grid root bound');let api=null;
+-  for(const root of roots){let f=root[Object.keys(root).find(k=>k.startsWith('__reactFiber'))];
+-    for(let depth=0;f&&depth<18;depth++,f=f.return){const c=f.memoizedProps?.value?.gridRef?.current?.api||f.child?.stateNode?.api;
+-      if(typeof c?.getChartModels==='function'){if(api&&api!==c)throw Error('Ambiguous grid');api=c;}}}
+-  if(!api)throw Error('Grid API missing');const models=api.getChartModels();if(models.length!==1)throw Error('Exact one model');
+-  const proxy=api.getChartRef(models[0].chartId)?.chart;if(typeof proxy?.getOptions!=='function'||typeof proxy?.waitForUpdate!=='function')throw Error('Named getters missing');
+-  window.__axisGrid=api;window.__axisProxy=proxy;const p=window.__axis;
+-  if(!p.listener){p.listener=e=>{try{if(p.events.length>=256||p.caseEvents>=64||p.actionEvents>=8)throw Error('Event bound');
+-    p.events.push({sequence:p.events.length+1,action:p.action,identity:p.pick(e,['type','chartId','chartType','chartThemeName']),chartOptions:p.options(e.chartOptions)});p.caseEvents++;p.actionEvents++;
+-  }catch(error){p.overflow={message:error.message,action:p.action};}};api.addEventListener('chartOptionsChanged',p.listener);}
+-  return p.model(models[0]);
++  const p=window.__legend,receipts=[];p.receipts=receipts;
++  const roots=document.querySelectorAll('.ag-root-wrapper');receipts.push({stage:'grid-root',count:roots.length});if(roots.length!==1)throw Error('identity-unresolved: exact grid root');
++  let fiber=roots[0][Object.keys(roots[0]).find(k=>k.startsWith('__reactFiber'))],api=null;
++  for(let depth=0;fiber&&depth<18;depth++,fiber=fiber.return){
++    const candidates=[fiber.memoizedProps?.value?.gridRef?.current?.api,fiber.child?.stateNode?.api];
++    for(const candidate of candidates)if(typeof candidate?.getChartModels==='function'){if(api&&api!==candidate)throw Error('identity-unresolved: ambiguous API');api=candidate;}
++  }
++  receipts.push({stage:'grid-api',present:!!api});if(!api)throw Error('identity-unresolved: API missing');
++  const models=api.getChartModels();receipts.push({stage:'models',count:models.length});if(models.length!==1)throw Error('identity-unresolved: exact model');
++  const proxy=api.getChartRef(models[0].chartId)?.chart;receipts.push({stage:'chart-proxy',present:!!proxy,chart:!!proxy?.chart,getOptions:typeof proxy?.getOptions,waitForUpdate:typeof proxy?.waitForUpdate});
++  if(typeof proxy?.getOptions!=='function'||typeof proxy?.waitForUpdate!=='function'||!proxy.chart)throw Error('identity-unresolved: proxy methods');
++  window.__legendGrid=api;window.__legendProxy=proxy;
++  p.lastOptions=p.options(models[0].chartOptions);
++  p.listener=e=>{try{if(p.events.length>=256||p.caseEvents>=64||p.actionEvents>=8)throw Error('event bound');const projection=p.options(e.chartOptions),previous=p.lastOptions;
++    const deltas=[];const walk=(a,b,path)=>{if(a&&typeof a==='object'&&'kind' in a&&'type' in a){if(JSON.stringify(a)!==JSON.stringify(b))deltas.push({path,before:b??{kind:'absent'},after:a});return;}
++      for(const key of Object.keys(a??{}))walk(a[key],b?.[key],path?path+'.'+key:key);};walk(projection,previous,'');
++    p.events.push({sequence:p.events.length+1,action:p.action,identity:p.pick(e,['type','chartId','chartType','chartThemeName']),chartOptions:projection,deltas});p.lastOptions=projection;p.caseEvents++;p.actionEvents++;
++  }catch(error){p.overflow={reason:error.message,action:p.action};}};
++  api.addEventListener('chartOptionsChanged',p.listener);return {model:p.model(models[0]),receipts};
+ }
+diff --git a/baseline/run.sh b/harness/run.sh
+index b820a45..ce97836 100644
+--- a/baseline/run.sh
++++ b/harness/run.sh
+@@ -3,29 +3,36 @@ set -u
+ cd /mnt/d/Source/QOpenBB
+ export PATH="/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin"
+ export PLAYWRIGHT_BROWSERS_PATH=/mnt/d/Source/QOpenBB/artifacts/playwright-browsers
+-test "${AXIS_HEAVY_GRANTED:-}" = "controller-granted" || exit 79
++test "${LEGEND_HEAVY_GRANTED:-}" = "controller-granted" || exit 79
+ export CAPTURE_ROOT="$1"
+ harness="$CAPTURE_ROOT/harness"
+-test -d "$harness" || exit 78
++test -f "$CAPTURE_ROOT/source-manifest.json" || exit 78
++export ATTEMPT_STARTED_MS="$(date +%s%3N)"
+ cleanup() {
+   incoming=$?
+   trap - EXIT INT TERM
+-  timeout --signal=TERM --kill-after=5s 90s node "$harness/cleanup.mjs" > "$CAPTURE_ROOT/cleanup.log" 2>&1
++  now="$(date +%s%3N)"
++  remaining=$(( (ATTEMPT_STARTED_MS + 2220000 - now) / 1000 ))
++  if [ "$remaining" -gt 119 ]; then remaining=119; fi
++  if [ "$remaining" -lt 1 ]; then remaining=1; fi
++  timeout --signal=TERM --kill-after=1s "${remaining}s" node "$harness/cleanup.mjs" > "$CAPTURE_ROOT/cleanup.log" 2>&1
+   cleanup_code=$?
+   node "$harness/status.mjs" cleanup-status "$cleanup_code" || incoming=1
+-  if [ "$incoming" = 0 ] && [ "$cleanup_code" != 0 ]; then incoming=$cleanup_code; fi
+-  node "$harness/status.mjs" run-status 1 || incoming=1
++  if [ "$cleanup_code" != 0 ]; then incoming=1; fi
+   node "$harness/finalize.mjs" "$incoming" > "$CAPTURE_ROOT/finalize.log" 2>&1 || incoming=1
+   exit "$incoming"
+ }
+ trap cleanup EXIT
+ trap 'exit 130' INT
+ trap 'exit 143' TERM
+-timeout --signal=TERM --kill-after=5s 180s node "$harness/start.mjs" > "$CAPTURE_ROOT/start.log" 2>&1
++timeout --signal=TERM --kill-after=1s 179s node "$harness/start.mjs" > "$CAPTURE_ROOT/start.log" 2>&1
+ status=$?
+ node "$harness/status.mjs" start-status "$status" || exit 1
+ if [ "$status" != 0 ]; then exit "$status"; fi
+-timeout --signal=TERM --kill-after=5s 900s node "$harness/journey.mjs" > "$CAPTURE_ROOT/journey.log" 2>&1
++now="$(date +%s%3N)"
++remaining=$(( (ATTEMPT_STARTED_MS + 2099000 - now) / 1000 ))
++if [ "$remaining" -lt 1 ]; then exit 124; fi
++timeout --signal=TERM --kill-after=1s "${remaining}s" node "$harness/journey.mjs" > "$CAPTURE_ROOT/journey.log" 2>&1
+ status=$?
+ node "$harness/status.mjs" journey-status "$status" || exit 1
+ exit "$status"
+diff --git a/harness/settlement.mjs b/harness/settlement.mjs
+new file mode 100644
+index 0000000..a1418cb
+--- /dev/null
++++ b/harness/settlement.mjs
+@@ -0,0 +1,21 @@
++export async function settle({waitForUpdate,sample,now=Date.now,pause=ms=>new Promise(r=>setTimeout(r,ms)),deadlineMs=6000,updateMs=4000,maxSamples=10}){
++  const started=now(),deadline=started+deadlineMs;
++  let timer;
++  try{await Promise.race([waitForUpdate(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('settlement-unresolved: waitForUpdate deadline')),Math.min(updateMs,deadlineMs));})]);}
++  finally{clearTimeout(timer);}
++  let prior=null,last=null,accepted=null,count=0,invalidCount=0;
++  while(count<maxSamples&&now()<deadline){
++    const at=now();let sampleTimer,value;
++    try{value=await Promise.race([sample(),new Promise((_,reject)=>{sampleTimer=setTimeout(()=>reject(Error('settlement-unresolved: sample deadline')),Math.max(1,deadline-now()));})]);}
++    finally{clearTimeout(sampleTimer);}
++    count++;last={at,value};
++    if(value.valid&&value.animationActive===false){
++      const signature=JSON.stringify({live:value.live,geometry:value.geometry,effective:value.effective,fonts:value.fonts});
++      if(prior&&prior.signature===signature&&at-prior.at>=100){accepted=[prior,last];break;}
++      prior={at,value,signature};
++    }else{prior=null;if(value.reason==='bbox-getter-operands-changed')invalidCount++;}
++    if(count<maxSamples&&now()+100<deadline)await pause(110);else break;
++  }
++  if(!accepted||now()>deadline){const error=Error('settlement-unresolved: finite sample deadline');error.diagnostic={count,elapsedMs:now()-started,invalidCount,last};throw error;}
++  return {snapshot:accepted[1].value,settled:{pair:accepted.map(x=>({at:x.at,operands:x.value.operands,animationActive:x.value.animationActive})),count,elapsedMs:now()-started,invalidCount}};
++}
+diff --git a/baseline/start.mjs b/harness/start.mjs
+index d53d73d..8ed7221 100644
+--- a/baseline/start.mjs
++++ b/harness/start.mjs
+@@ -1,23 +1,26 @@
+ import fs from 'node:fs';
++import path from 'node:path';
+ import {randomBytes} from 'node:crypto';
+ import {execFileSync} from 'node:child_process';
+ import {root,json} from './io.mjs';
+ const docker=(...args)=>execFileSync('docker',args,{encoding:'utf8',timeout:10000,stdio:['ignore','pipe','pipe'],windowsHide:true});
+ const image='sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f';
+ const source='38dffc33389aca0e4a87e0e88d42f7067aa220df';
++if(path.resolve(root)!==fs.realpathSync(root)||!/^attempt-[A-Za-z0-9-]+$/.test(path.basename(root))||path.basename(path.dirname(root))!=='ui-parity-legend-capture')throw Error('Canonical owned attempt required');
+ if(JSON.parse(docker('image','inspect',image,'--format','{{json .Id}}'))!==image||
+   docker('image','inspect',image,'--format','{{index .Config.Labels "org.qopenbb.source.workspace"}}').trim()!==source)throw Error('Image mismatch');
+ if(fs.existsSync(root+'/runtime-private.json'))throw Error('Previous runtime receipt exists');
+-const name='qopenbb-axis-controls-20261017-'+randomBytes(5).toString('hex');
++const startedAt=Number(process.env.ATTEMPT_STARTED_MS);if(!Number.isFinite(startedAt)||Date.now()-startedAt>180000)throw Error('Startup deadline');
++const name='qopenbb-legend-20261017-'+randomBytes(5).toString('hex');
+ const statePath=root+'/state-'+randomBytes(6).toString('hex');
+-const credential={email:'axis-controls-'+randomBytes(6).toString('hex')+'@example.com',password:'Aa1!'+randomBytes(24).toString('hex')};
++const credential={email:'legend-controls-'+randomBytes(6).toString('hex')+'@example.com',password:'Aa1!'+randomBytes(24).toString('hex')};
+ fs.mkdirSync(statePath);fs.writeFileSync(root+'/credential-private.json',JSON.stringify(credential),{mode:0o600});
+-const runtime={name,statePath,image,source,container:null,origin:null,health:null};
++const runtime={name,statePath,image,source,startedAt,ownedProcessId:process.pid,container:null,origin:null,health:null};
+ const save=()=>fs.writeFileSync(root+'/runtime-private.json',JSON.stringify(runtime),{mode:0o600});save();
+ runtime.container=docker('run','-d','--name',name,'--mount',`type=bind,src=${statePath},dst=/data`,
+   '-p','127.0.0.1::3000','-e',`OPENBB_ADMIN_PASSWORD=${credential.password}`,'-e','PUBLIC_URL=http://localhost',
+   '-e',`OPENBB_ADMIN_EMAIL=${credential.email}`,image).trim();save();
+-const deadline=Date.now()+90000;
++const deadline=Math.min(Date.now()+90000,startedAt+180000);
+ while(Date.now()<deadline){
+   const ports=JSON.parse(docker('inspect',runtime.container,'--format','{{json .NetworkSettings.Ports}}'));
+   const port=ports['3000/tcp']?.[0]?.HostPort;
+diff --git a/baseline/static-check.mjs b/baseline/static-check.mjs
+deleted file mode 100644
+index c3ff47d..0000000
+--- a/baseline/static-check.mjs
++++ /dev/null
+@@ -1,74 +0,0 @@
+-import fs from 'node:fs';
+-
+-import path from 'node:path';
+-import {createHash} from 'node:crypto';
+-import {install,acquire} from './projection.mjs';
+-import {expandAxis} from './navigation.mjs';
+-const base=path.resolve(new URL('..',import.meta.url).pathname),checks=[];
+-const assert=(condition,label)=>{if(!condition)throw Error(label);checks.push(label);};
+-const hash=f=>createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+-assert(fs.existsSync(base+'/plan.md'),'follow-up plan exists');
+-const frozen=JSON.parse(fs.readFileSync(base+'/frozen/executed-source-manifest.json'));
+-for(const f of frozen.files)assert(hash(base+'/frozen/'+f.path)===f.sha256,'frozen original bytes '+f.path);
+-assert(hash(base+'/harness/projection.mjs')===hash(base+'/frozen/harness/projection.mjs')&&hash(base+'/harness/navigation.mjs')===hash(base+'/frozen/harness/navigation.mjs'),'geometry scalar and accordion projections unchanged');
+-globalThis.window={};install();const p=window.__axis;
+-const longContainer={tagName:'DIV',getAttribute:()=>null,get textContent(){throw Error('Container text must never be read');}};
+-assert(p.active(longContainer).tag==='DIV'&&Object.keys(p.active(longContainer)).join()==='tag,type,ref,label','active container uses only admitted fields');
+-let longLabel=false;try{p.active({tagName:'DIV',getAttribute:k=>k==='aria-label'?'x'.repeat(513):null});}catch{longLabel=true;}
+-assert(longLabel,'admitted active label retains strict 512-character bound');
+-let expanded='Vertical',expansionActions=0;
+-const mockGroup=role=>({count:async()=>1,locator:()=>({role,getAttribute:async()=>String(expanded===role)})});
+-const expansionStep=async(_label,heading)=>{expansionActions++;expanded=heading.role;};
+-await expandAxis(mockGroup('Horizontal'),'Horizontal',async x=>x,expansionStep);
+-assert(expanded==='Horizontal'&&expansionActions===1,'addressed horizontal role reopens after vertical accordion');
+-await expandAxis(mockGroup('Horizontal'),'Horizontal',async x=>x,expansionStep);
+-assert(expansionActions===1,'already expanded axis adds no action');
+-await expandAxis(mockGroup('Vertical'),'Vertical',async x=>x,expansionStep);
+-assert(expanded==='Vertical'&&expansionActions===2,'addressed vertical role opens through counted UI step');
+-const inherited=Object.create({position:'bottom'});inherited.type=undefined;inherited.tick={enabled:null,width:3};
+-const a=p.axis(inherited);assert(a.position.own===false&&a.position.value==='bottom','inherited scalar');
+-const wholeTable=p.model({cellRange:{rowStartIndex:null,rowEndIndex:null,columns:['period','revenue','operatingIncome']}});
+-assert(wholeTable.cellRange.rowStartIndex.kind==='null'&&wholeTable.cellRange.rowEndIndex.kind==='null','whole-table model bounds remain null');
+-assert(a.type.kind==='undefined'&&a.label.value.rotation.kind==='absent'&&a.tick.value.enabled.kind==='null','undefined absent null distinct');
+-assert(p.envelope({axes:[{type:'time',label:{format:'%Y-%m-%d'}}]}).axes.value[0].label.value.format.value==='%Y-%m-%d','explicit axes format projection');
+-const model={chartId:'synthetic',chartType:'groupedColumn',chartOptions:{},cellRange:{rowStartIndex:0,rowEndIndex:3,columns:['period','revenue','operatingIncome']}};
+-const proxy={getOptions:()=>({}),waitForUpdate:async()=>{}};
+-const api={getChartModels:()=>[model],getChartRef:()=>({chart:proxy}),addEventListener:()=>{}};
+-const root={__reactFiberTest:{memoizedProps:{value:{gridRef:{current:{api}}}}}};
+-globalThis.document={querySelectorAll:()=>[root]};acquire();
+-for(let i=0;i<8;i++)p.listener({type:'chartOptionsChanged',chartId:'synthetic',chartOptions:{}});
+-assert(p.events.length===8&&!p.overflow,'eight ordered options events retained');p.listener({type:'chartOptionsChanged',chartOptions:{}});
+-assert(p.events.length===8&&!!p.overflow,'ninth event fails closed');
+-p.overflow=null;
+-const inheritedParent=Object.create({visible:false,opacity:0.5});inheritedParent.parentNode=null;
+-const parent={visible:true,opacity:1,parentNode:inheritedParent};
+-const sceneNode=()=>({visible:true,opacity:1,parentNode:parent,getBBox:()=>({x:0,y:0,width:10,height:1})});
+-const mockAxis=direction=>({type:direction==='x'?'category':'number',direction,position:direction==='x'?'bottom':'left',
+-  lineNode:sceneNode(),tickLineGroup:sceneNode(),tickLabelGroup:sceneNode(),
+-  tickLineGroupSelection:{each:fn=>fn(sceneNode(),{tickId:'0',tickLabel:'Q1'})},tickLabelGroupSelection:{each:fn=>fn(sceneNode(),{tickId:'0',tickLabel:'Q1'})}});
+-proxy.chart={axes:[mockAxis('x'),mockAxis('y')],chartOptions:{processedOptions:{}},seriesRect:{x:1,y:2,width:3,height:4},padding:{top:1,right:2,bottom:3,left:4},ctx:{animationManager:{isActive:()=>false}}};
+-globalThis.devicePixelRatio=1;document.querySelectorAll=selector=>selector==='.ag-root-wrapper'?[root]:[];document.querySelector=()=>null;
+-const scene=p.snapshot();assert(scene.live.nodes.length===10&&scene.live.ancestors.length===2,'bounded node selection and deduplicated ancestry');
+-assert(scene.live.nodes.every(n=>n.parents.length===2)&&scene.live.ancestors[1].fields.visible.value===false&&scene.live.ancestors[1].fields.opacity.own===false,'nonvacuous parentNode inherited visibility');
+-proxy.chart.axes[0].lineNode.parentNode=null;let vacuous=false;try{p.snapshot();}catch{vacuous=true;}assert(vacuous,'empty ancestry refused');
+-const fixtures=JSON.parse(fs.readFileSync(base+'/harness/fixtures.json'));
+-assert(fixtures.B.periods.every((n,i)=>new Date(n).toISOString()===fixtures.B.utcQuarterStarts[i]),'numeric UTC quarter mapping');
+-assert(fixtures.revenue.join()==='100,120,140,160'&&fixtures.operatingIncome.join()==='20,25,30,40','finite financial amounts');
+-const temp=fs.mkdtempSync(path.join(base,'static-offline-'));process.env.CAPTURE_ROOT=temp;
+-try{const io=await import('./io.mjs');io.json('rewrite',{long:'1234567890'});io.json('rewrite',{x:1});
+-  assert(io.budget().bytes===fs.statSync(temp+'/rewrite.json').size,'retained bytes count overwrites once');
+-  for(const [label,cap] of [['actions',240],['changes',80],['checkpoints',96]]){assert(io.increment(cap-1,cap,label)===cap,label+' boundary allowed');
+-    let stopped=false;try{io.increment(cap,cap,label);}catch{stopped=true;}assert(stopped,label+' overflow refused');}
+-  let refused=false;try{io.json('oversize',{x:'x'.repeat(2097152)});}catch{refused=true;}
+-  assert(refused&&!fs.existsSync(temp+'/oversize.json'),'JSON overbound refused before write');
+-}finally{if(path.dirname(path.resolve(temp))!==base||!path.basename(temp).startsWith('static-offline-'))throw Error('Unsafe static cleanup');fs.rmSync(temp,{recursive:true});assert(!fs.existsSync(temp),'static cleanup verified');}
+-const journey=fs.readFileSync(base+'/harness/journey.mjs','utf8');
+-assert(journey.includes('delete chartState.case')&&journey.includes('JSON.stringify(chartState)')&&!journey.includes('delete chartState.eventSequence'),'event count forces distinct full checkpoint');
+-assert(journey.includes("await checkpoint('before-'+actions)")&&journey.includes("await checkpoint('after-'+actions)"),'fresh per raw action chart reads');
+-assert(!journey.includes("runCase('A01'")&&!journey.includes("runCase('A02'")&&!journey.includes("runCase('A03'")&&!journey.includes("runCase('A04'"),'completed cases excluded from execution');
+-const inventory={checkpointFiles:96,pngFiles:64,harnessFiles:15,observationChunks:64,eventChunks:16,otherReceipts:35,totalFiles:290,
+-  perJsonBytes:2097152,totalBytes:167772160,rawActions:141,fieldEdits:61,groupExpansions:7,observationsPerChunk:16,failClosedAtAllCaps:true};
+-assert(Object.values(inventory).length>0&&inventory.totalFiles<=320,'bounded output file inventory');
+-assert(Buffer.byteLength(JSON.stringify(Array.from({length:16},()=>({chartOptions:p.options({})}))))<2097152,'sixteen finite event projections fit one JSON chunk');
+-const report={status:'passed',checks,inventory,runtimeExecuted:false,originalApplicationStarted:false};
+-fs.writeFileSync(base+'/static-verification.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

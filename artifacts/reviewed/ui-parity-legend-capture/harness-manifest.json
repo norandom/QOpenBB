@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "status": "source-only-ready-for-independent-review",
+  "runtimeExecuted": false,
+  "candidateExecuted": false,
+  "plan": {
+    "path": "artifacts/ui-parity-legend-plan-revised/plan.md",
+    "sha256": "5a33a0237eb351df5a7a6060da2aff5c83379f89999c4a4ca82faa40c92e29ef"
+  },
+  "review": {
+    "path": "artifacts/ui-parity-legend-plan-revision-review/review.md",
+    "sha256": "86926ccfe2a119c39c19bdd6553ffc32f880d85eb92c880d317e8e9e2d54e395"
+  },
+  "baseline": {
+    "attempt": "artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733",
+    "manifest": {
+      "path": "baseline-source-manifest.json",
+      "bytes": 2990,
+      "sha256": "ac534d3491e22ddf1873da0fa957a043cb7ee468021c2e0770fa2a887e52e9e4"
+    }
+  },
+  "originalSource": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "files": [
+    {
+      "path": "harness/cases.mjs",
+      "bytes": 3842,
+      "sha256": "11d0af588c03ff183aa359085f24bdff3933c21d3aa63365ab0cd3d3384148d5"
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "bytes": 1707,
+      "sha256": "545518c2cfa1a90b5103806ee5763de709ea74dad51e044381f8046d82275feb"
+    },
+    {
+      "path": "harness/controls.mjs",
+      "bytes": 2529,
+      "sha256": "bdc21f1d2631380d7e15c3b9a3d45ff8487973acf60956a66eef6837fdcb942a"
+    },
+    {
+      "path": "harness/events.mjs",
+      "bytes": 1118,
+      "sha256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752"
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "bytes": 1158,
+      "sha256": "c05b93d860135d46076bc09ae98cc04df5e819f9408f5d3308820ece2111d72d"
+    },
+    {
+      "path": "harness/fixture.json",
+      "bytes": 2187,
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    },
+    {
+      "path": "harness/geometry.mjs",
+      "bytes": 2198,
+      "sha256": "cb2bf483bf92d4f2fd7239b61252b7adf3c2eb7e8fb62e7c2315bf3511a5cd02"
+    },
+    {
+      "path": "harness/guards.mjs",
+      "bytes": 2662,
+      "sha256": "7194a715c1b4b2076026964020c6d9402538f9fb0abb806311baa30e9c529416"
+    },
+    {
+      "path": "harness/io.mjs",
+      "bytes": 4928,
+      "sha256": "56dff7838bef0f2fb69105a9ed404d0c7ad1d13d7d4865d9622258007d82e0b5"
+    },
+    {
+      "path": "harness/journey.mjs",
+      "bytes": 16212,
+      "sha256": "18aead8cc5dd21f7e5eee391c5b8c1b7d4eb168e56a8160f4a5536420dbcfe8c"
+    },
+    {
+      "path": "harness/limits.mjs",
+      "bytes": 844,
+      "sha256": "cedba8cbd09d3e4e4d9778ae471eb4c5a54fd29697f47db711b8e4c961f73aac"
+    },
+    {
+      "path": "harness/projection.mjs",
+      "bytes": 13684,
+      "sha256": "b5fec5a0dc82a428bc5d61105e44050fa21eaf0192ccaf1261a7c8f4c65fd79c"
+    },
+    {
+      "path": "harness/run.sh",
+      "bytes": 1687,
+      "sha256": "b90955f5a99460d89b37e49a1b3184f35627512cf294ce23cfacf6e1932a4525"
+    },
+    {
+      "path": "harness/settlement.mjs",
+      "bytes": 1686,
+      "sha256": "e8e32acaf5c795365b00c84b7e6c246b36dac1918c308ab456f4148d664f35c9"
+    },
+    {
+      "path": "harness/start.mjs",
+      "bytes": 2757,
+      "sha256": "eccdb79d3e8d58ede8b311e22402cd479ecbb1b85a38b82d97ae695d7bf3db15"
+    },
+    {
+      "path": "harness/status.mjs",
+      "bytes": 246,
+      "sha256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17"
+    }
+  ]
+}

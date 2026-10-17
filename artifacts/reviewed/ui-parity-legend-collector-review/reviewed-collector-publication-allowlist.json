@@ -1,0 +1,222 @@
+[
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/plan.md",
+    "sha256": "91b3695a19edfc46ba5abca3f23a8870b595e9c8da86aeb386dadcab948d8b8f",
+    "bytes": 5451
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/handoff.md",
+    "sha256": "82666eb43a505b2a8ee03856d25744d8167e366a59e7d8fb40aa38e7639a6bfb",
+    "bytes": 3150
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/prepare-run.mjs",
+    "sha256": "3d9514dddbfdfbfc6afecc1980b243c4088c54513d42352cc55bc9015707d10f",
+    "bytes": 1272
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/supervise.sh",
+    "sha256": "428a8e2060528a674be91e49a960972f146a6bf8ca23df74483c413fd457c885",
+    "bytes": 617
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/offline-tests.mjs",
+    "sha256": "19bcbcc1dc1ed4e869b599dd128f82246f5d0d7e347cefdc02e702ec1020fda7",
+    "bytes": 13836
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/static-check.mjs",
+    "sha256": "de9db92185e9fe9bb4662a2f938ce5a734144143f452669833e46c3c9f62148e",
+    "bytes": 2617
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/freeze.mjs",
+    "sha256": "ccd88cb8c1754b1009d3de68368c27f604d96793765dcb3e87f10b54f3ee79e7",
+    "bytes": 2938
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline-source-manifest.json",
+    "sha256": "ac534d3491e22ddf1873da0fa957a043cb7ee468021c2e0770fa2a887e52e9e4",
+    "bytes": 2990
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/source-diff.patch",
+    "sha256": "265687a33093694b9cb69fe3713c0ffdca8c10ef9d605034817d3057885530fc",
+    "bytes": 100155
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/offline-verification.json",
+    "sha256": "dfd26ad0c4cbe55bf6ed03cf5398788429f98f27b939406f2ed7789d762d92d7",
+    "bytes": 2174
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/static-verification.json",
+    "sha256": "e1d47f30e2bfb59abe40632dde690ba9ce6d08d6ba88a33ab56e8406529e4a8b",
+    "bytes": 6000
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/cases.mjs",
+    "sha256": "11d0af588c03ff183aa359085f24bdff3933c21d3aa63365ab0cd3d3384148d5",
+    "bytes": 3842
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/cleanup.mjs",
+    "sha256": "545518c2cfa1a90b5103806ee5763de709ea74dad51e044381f8046d82275feb",
+    "bytes": 1707
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/controls.mjs",
+    "sha256": "bdc21f1d2631380d7e15c3b9a3d45ff8487973acf60956a66eef6837fdcb942a",
+    "bytes": 2529
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/events.mjs",
+    "sha256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752",
+    "bytes": 1118
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/finalize.mjs",
+    "sha256": "c05b93d860135d46076bc09ae98cc04df5e819f9408f5d3308820ece2111d72d",
+    "bytes": 1158
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/fixture.json",
+    "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+    "bytes": 2187
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/geometry.mjs",
+    "sha256": "cb2bf483bf92d4f2fd7239b61252b7adf3c2eb7e8fb62e7c2315bf3511a5cd02",
+    "bytes": 2198
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/guards.mjs",
+    "sha256": "7194a715c1b4b2076026964020c6d9402538f9fb0abb806311baa30e9c529416",
+    "bytes": 2662
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/io.mjs",
+    "sha256": "56dff7838bef0f2fb69105a9ed404d0c7ad1d13d7d4865d9622258007d82e0b5",
+    "bytes": 4928
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/journey.mjs",
+    "sha256": "18aead8cc5dd21f7e5eee391c5b8c1b7d4eb168e56a8160f4a5536420dbcfe8c",
+    "bytes": 16212
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/limits.mjs",
+    "sha256": "cedba8cbd09d3e4e4d9778ae471eb4c5a54fd29697f47db711b8e4c961f73aac",
+    "bytes": 844
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/projection.mjs",
+    "sha256": "b5fec5a0dc82a428bc5d61105e44050fa21eaf0192ccaf1261a7c8f4c65fd79c",
+    "bytes": 13684
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/run.sh",
+    "sha256": "b90955f5a99460d89b37e49a1b3184f35627512cf294ce23cfacf6e1932a4525",
+    "bytes": 1687
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/settlement.mjs",
+    "sha256": "e8e32acaf5c795365b00c84b7e6c246b36dac1918c308ab456f4148d664f35c9",
+    "bytes": 1686
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/start.mjs",
+    "sha256": "eccdb79d3e8d58ede8b311e22402cd479ecbb1b85a38b82d97ae695d7bf3db15",
+    "bytes": 2757
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness/status.mjs",
+    "sha256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17",
+    "bytes": 246
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/cleanup.mjs",
+    "sha256": "1b6e76bc46e34c192071fff178c8d00cc841940524fb98d0886c88ae07038c9a",
+    "bytes": 1600
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/dashboard.json",
+    "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+    "bytes": 2187
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/events.mjs",
+    "sha256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752",
+    "bytes": 1118
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/finalize.mjs",
+    "sha256": "d64c2efb591c2f1a844e78af1f8387a7779b70ed517527002a0173433bfc4c07",
+    "bytes": 750
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/fixtures.json",
+    "sha256": "b46d787085e216e8627ad40203413c5a0d7184470c19feb925d6a978f96c8cfe",
+    "bytes": 574
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/freeze.mjs",
+    "sha256": "1d5a165daa72ea2321804b99c4f501e249067d1ed93ea9d9b3b0187b92bfd0f3",
+    "bytes": 2075
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/guards.mjs",
+    "sha256": "5fb212295df7bf1747ed0139aa5be1c1d9b57f75839b809153de15cf4138634a",
+    "bytes": 1739
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/io.mjs",
+    "sha256": "30072d164ab4603421cc373425d94c7f5317429d0fd4e42da12d3cd0062bd6bc",
+    "bytes": 4689
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/journey.mjs",
+    "sha256": "ae5acf6b01af3f84f376ceb7e3b270d7ffb6ff676197e7a1c9d405fff2250b95",
+    "bytes": 20575
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/navigation.mjs",
+    "sha256": "5bd91faca46b9756b604ac8936d052043113c3481dbd52b97a9e6d6523c0af35",
+    "bytes": 439
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/projection.mjs",
+    "sha256": "68199c1efee220806c10cb578b864329dca1a1c09f52ea6b35345836d5624773",
+    "bytes": 10262
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/run.sh",
+    "sha256": "f995506348b4d4b14a488dc759c3c53146387d996353fe7d80fc7a77c3a2dcc0",
+    "bytes": 1367
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/start.mjs",
+    "sha256": "41aca2b1dab3c70586259d350bd2dc6362a574f363bf677086ed654c0400eb90",
+    "bytes": 2307
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/static-check.mjs",
+    "sha256": "94c8208f540282b77aad89b22237ead689e4740fb9db2589b4162724c5e76ef5",
+    "bytes": 8007
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/baseline/status.mjs",
+    "sha256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17",
+    "bytes": 246
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness-manifest.json",
+    "sha256": "9c6400819ba8d711829ba6abcc1c8b6ace2da1cd554ca01db7ea2627cb9ae1b3",
+    "bytes": 3377
+  },
+  {
+    "sourcePath": "artifacts/ui-parity-legend-capture/source-hashes.json",
+    "sha256": "f8c4ba54c233a97fbb3a7ab5ffc5331873ff1e49532735a1e403a9b76b2e2bf6",
+    "bytes": 6819
+  }
+]

@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "status": "source-only-frozen",
+  "runtimeExecuted": false,
+  "sourceFiles": [
+    {
+      "path": "plan.md",
+      "bytes": 5451,
+      "sha256": "91b3695a19edfc46ba5abca3f23a8870b595e9c8da86aeb386dadcab948d8b8f"
+    },
+    {
+      "path": "handoff.md",
+      "bytes": 3150,
+      "sha256": "82666eb43a505b2a8ee03856d25744d8167e366a59e7d8fb40aa38e7639a6bfb"
+    },
+    {
+      "path": "prepare-run.mjs",
+      "bytes": 1272,
+      "sha256": "3d9514dddbfdfbfc6afecc1980b243c4088c54513d42352cc55bc9015707d10f"
+    },
+    {
+      "path": "supervise.sh",
+      "bytes": 617,
+      "sha256": "428a8e2060528a674be91e49a960972f146a6bf8ca23df74483c413fd457c885"
+    },
+    {
+      "path": "offline-tests.mjs",
+      "bytes": 13836,
+      "sha256": "19bcbcc1dc1ed4e869b599dd128f82246f5d0d7e347cefdc02e702ec1020fda7"
+    },
+    {
+      "path": "static-check.mjs",
+      "bytes": 2617,
+      "sha256": "de9db92185e9fe9bb4662a2f938ce5a734144143f452669833e46c3c9f62148e"
+    },
+    {
+      "path": "freeze.mjs",
+      "bytes": 2938,
+      "sha256": "ccd88cb8c1754b1009d3de68368c27f604d96793765dcb3e87f10b54f3ee79e7"
+    },
+    {
+      "path": "baseline-source-manifest.json",
+      "bytes": 2990,
+      "sha256": "ac534d3491e22ddf1873da0fa957a043cb7ee468021c2e0770fa2a887e52e9e4"
+    },
+    {
+      "path": "source-diff.patch",
+      "bytes": 100155,
+      "sha256": "265687a33093694b9cb69fe3713c0ffdca8c10ef9d605034817d3057885530fc"
+    },
+    {
+      "path": "offline-verification.json",
+      "bytes": 2174,
+      "sha256": "dfd26ad0c4cbe55bf6ed03cf5398788429f98f27b939406f2ed7789d762d92d7"
+    },
+    {
+      "path": "static-verification.json",
+      "bytes": 6000,
+      "sha256": "e1d47f30e2bfb59abe40632dde690ba9ce6d08d6ba88a33ab56e8406529e4a8b"
+    },
+    {
+      "path": "harness/cases.mjs",
+      "bytes": 3842,
+      "sha256": "11d0af588c03ff183aa359085f24bdff3933c21d3aa63365ab0cd3d3384148d5"
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "bytes": 1707,
+      "sha256": "545518c2cfa1a90b5103806ee5763de709ea74dad51e044381f8046d82275feb"
+    },
+    {
+      "path": "harness/controls.mjs",
+      "bytes": 2529,
+      "sha256": "bdc21f1d2631380d7e15c3b9a3d45ff8487973acf60956a66eef6837fdcb942a"
+    },
+    {
+      "path": "harness/events.mjs",
+      "bytes": 1118,
+      "sha256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752"
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "bytes": 1158,
+      "sha256": "c05b93d860135d46076bc09ae98cc04df5e819f9408f5d3308820ece2111d72d"
+    },
+    {
+      "path": "harness/fixture.json",
+      "bytes": 2187,
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    },
+    {
+      "path": "harness/geometry.mjs",
+      "bytes": 2198,
+      "sha256": "cb2bf483bf92d4f2fd7239b61252b7adf3c2eb7e8fb62e7c2315bf3511a5cd02"
+    },
+    {
+      "path": "harness/guards.mjs",
+      "bytes": 2662,
+      "sha256": "7194a715c1b4b2076026964020c6d9402538f9fb0abb806311baa30e9c529416"
+    },
+    {
+      "path": "harness/io.mjs",
+      "bytes": 4928,
+      "sha256": "56dff7838bef0f2fb69105a9ed404d0c7ad1d13d7d4865d9622258007d82e0b5"
+    },
+    {
+      "path": "harness/journey.mjs",
+      "bytes": 16212,
+      "sha256": "18aead8cc5dd21f7e5eee391c5b8c1b7d4eb168e56a8160f4a5536420dbcfe8c"
+    },
+    {
+      "path": "harness/limits.mjs",
+      "bytes": 844,
+      "sha256": "cedba8cbd09d3e4e4d9778ae471eb4c5a54fd29697f47db711b8e4c961f73aac"
+    },
+    {
+      "path": "harness/projection.mjs",
+      "bytes": 13684,
+      "sha256": "b5fec5a0dc82a428bc5d61105e44050fa21eaf0192ccaf1261a7c8f4c65fd79c"
+    },
+    {
+      "path": "harness/run.sh",
+      "bytes": 1687,
+      "sha256": "b90955f5a99460d89b37e49a1b3184f35627512cf294ce23cfacf6e1932a4525"
+    },
+    {
+      "path": "harness/settlement.mjs",
+      "bytes": 1686,
+      "sha256": "e8e32acaf5c795365b00c84b7e6c246b36dac1918c308ab456f4148d664f35c9"
+    },
+    {
+      "path": "harness/start.mjs",
+      "bytes": 2757,
+      "sha256": "eccdb79d3e8d58ede8b311e22402cd479ecbb1b85a38b82d97ae695d7bf3db15"
+    },
+    {
+      "path": "harness/status.mjs",
+      "bytes": 246,
+      "sha256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17"
+    },
+    {
+      "path": "baseline/cleanup.mjs",
+      "bytes": 1600,
+      "sha256": "1b6e76bc46e34c192071fff178c8d00cc841940524fb98d0886c88ae07038c9a"
+    },
+    {
+      "path": "baseline/dashboard.json",
+      "bytes": 2187,
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    },
+    {
+      "path": "baseline/events.mjs",
+      "bytes": 1118,
+      "sha256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752"
+    },
+    {
+      "path": "baseline/finalize.mjs",
+      "bytes": 750,
+      "sha256": "d64c2efb591c2f1a844e78af1f8387a7779b70ed517527002a0173433bfc4c07"
+    },
+    {
+      "path": "baseline/fixtures.json",
+      "bytes": 574,
+      "sha256": "b46d787085e216e8627ad40203413c5a0d7184470c19feb925d6a978f96c8cfe"
+    },
+    {
+      "path": "baseline/freeze.mjs",
+      "bytes": 2075,
+      "sha256": "1d5a165daa72ea2321804b99c4f501e249067d1ed93ea9d9b3b0187b92bfd0f3"
+    },
+    {
+      "path": "baseline/guards.mjs",
+      "bytes": 1739,
+      "sha256": "5fb212295df7bf1747ed0139aa5be1c1d9b57f75839b809153de15cf4138634a"
+    },
+    {
+      "path": "baseline/io.mjs",
+      "bytes": 4689,
+      "sha256": "30072d164ab4603421cc373425d94c7f5317429d0fd4e42da12d3cd0062bd6bc"
+    },
+    {
+      "path": "baseline/journey.mjs",
+      "bytes": 20575,
+      "sha256": "ae5acf6b01af3f84f376ceb7e3b270d7ffb6ff676197e7a1c9d405fff2250b95"
+    },
+    {
+      "path": "baseline/navigation.mjs",
+      "bytes": 439,
+      "sha256": "5bd91faca46b9756b604ac8936d052043113c3481dbd52b97a9e6d6523c0af35"
+    },
+    {
+      "path": "baseline/projection.mjs",
+      "bytes": 10262,
+      "sha256": "68199c1efee220806c10cb578b864329dca1a1c09f52ea6b35345836d5624773"
+    },
+    {
+      "path": "baseline/run.sh",
+      "bytes": 1367,
+      "sha256": "f995506348b4d4b14a488dc759c3c53146387d996353fe7d80fc7a77c3a2dcc0"
+    },
+    {
+      "path": "baseline/start.mjs",
+      "bytes": 2307,
+      "sha256": "41aca2b1dab3c70586259d350bd2dc6362a574f363bf677086ed654c0400eb90"
+    },
+    {
+      "path": "baseline/static-check.mjs",
+      "bytes": 8007,
+      "sha256": "94c8208f540282b77aad89b22237ead689e4740fb9db2589b4162724c5e76ef5"
+    },
+    {
+      "path": "baseline/status.mjs",
+      "bytes": 246,
+      "sha256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17"
+    },
+    {
+      "path": "harness-manifest.json",
+      "bytes": 3377,
+      "sha256": "9c6400819ba8d711829ba6abcc1c8b6ace2da1cd554ca01db7ea2627cb9ae1b3"
+    }
+  ],
+  "scope": "Only artifacts/ui-parity-legend-capture; research excluded from production complexity caps"
+}

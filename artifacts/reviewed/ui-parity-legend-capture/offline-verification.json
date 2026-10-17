@@ -1,0 +1,73 @@
+{
+  "scope": "Offline source collector verification only; no browser/container/runtime",
+  "status": "passed",
+  "tests": 16,
+  "results": [
+    {
+      "name": "seven direct BBox calls and fourteen before/after operands",
+      "status": "passed"
+    },
+    {
+      "name": "parent-space conversion does not double-add marker translation or seriesRect",
+      "status": "passed"
+    },
+    {
+      "name": "lazy BBox operand mutation invalidates complete sample without extra calls",
+      "status": "passed"
+    },
+    {
+      "name": "wrong marker parent fails before any getter",
+      "status": "passed"
+    },
+    {
+      "name": "source-ordered second-series identity/visibility mismatches fail closed",
+      "status": "passed"
+    },
+    {
+      "name": "actual visibility and property visibility disagreement remains visible",
+      "status": "passed"
+    },
+    {
+      "name": "raw absent undefined null value stay distinct and no defaults inserted",
+      "status": "passed"
+    },
+    {
+      "name": "ambiguous API candidates and root cardinality stop acquisition",
+      "status": "passed"
+    },
+    {
+      "name": "nonfinite transforms and wrong role reject conversion",
+      "status": "passed"
+    },
+    {
+      "name": "two inactive equal samples at least 100ms apart",
+      "status": "passed"
+    },
+    {
+      "name": "invalid getter sample only recovers within existing ten polls",
+      "status": "passed"
+    },
+    {
+      "name": "changing/active/missing and deadline outcomes never become success",
+      "status": "passed"
+    },
+    {
+      "name": "incremental I/O rejects prospective count/byte/JSON/path and reconciles drift",
+      "status": "passed"
+    },
+    {
+      "name": "event prefix survives bounded persistence and rejects regression",
+      "status": "passed"
+    },
+    {
+      "name": "event action/case/run bounds preserve finite original-order prefixes",
+      "status": "passed"
+    },
+    {
+      "name": "eight named case actions restore recorded values within counters",
+      "status": "passed"
+    }
+  ],
+  "node": "v24.20.0",
+  "fixtureSha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+}

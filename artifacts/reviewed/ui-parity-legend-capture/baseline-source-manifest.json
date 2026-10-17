@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "plan": {
+    "path": "artifacts/ui-parity-axis-followup/plan.md",
+    "sha256": "1c5ceae2d8dc8f5f8f955b1d961489df89455efed3384beadff980e0e69f41d5"
+  },
+  "originalSource": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "candidateExecuted": false,
+  "runtimeExecuted": false,
+  "files": [
+    {
+      "path": "harness/cleanup.mjs",
+      "bytes": 1600,
+      "sha256": "1b6e76bc46e34c192071fff178c8d00cc841940524fb98d0886c88ae07038c9a"
+    },
+    {
+      "path": "harness/dashboard.json",
+      "bytes": 2187,
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    },
+    {
+      "path": "harness/events.mjs",
+      "bytes": 1118,
+      "sha256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752"
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "bytes": 750,
+      "sha256": "d64c2efb591c2f1a844e78af1f8387a7779b70ed517527002a0173433bfc4c07"
+    },
+    {
+      "path": "harness/fixtures.json",
+      "bytes": 574,
+      "sha256": "b46d787085e216e8627ad40203413c5a0d7184470c19feb925d6a978f96c8cfe"
+    },
+    {
+      "path": "harness/freeze.mjs",
+      "bytes": 2075,
+      "sha256": "1d5a165daa72ea2321804b99c4f501e249067d1ed93ea9d9b3b0187b92bfd0f3"
+    },
+    {
+      "path": "harness/guards.mjs",
+      "bytes": 1739,
+      "sha256": "5fb212295df7bf1747ed0139aa5be1c1d9b57f75839b809153de15cf4138634a"
+    },
+    {
+      "path": "harness/io.mjs",
+      "bytes": 4689,
+      "sha256": "30072d164ab4603421cc373425d94c7f5317429d0fd4e42da12d3cd0062bd6bc"
+    },
+    {
+      "path": "harness/journey.mjs",
+      "bytes": 20575,
+      "sha256": "ae5acf6b01af3f84f376ceb7e3b270d7ffb6ff676197e7a1c9d405fff2250b95"
+    },
+    {
+      "path": "harness/navigation.mjs",
+      "bytes": 439,
+      "sha256": "5bd91faca46b9756b604ac8936d052043113c3481dbd52b97a9e6d6523c0af35"
+    },
+    {
+      "path": "harness/projection.mjs",
+      "bytes": 10262,
+      "sha256": "68199c1efee220806c10cb578b864329dca1a1c09f52ea6b35345836d5624773"
+    },
+    {
+      "path": "harness/run.sh",
+      "bytes": 1367,
+      "sha256": "f995506348b4d4b14a488dc759c3c53146387d996353fe7d80fc7a77c3a2dcc0"
+    },
+    {
+      "path": "harness/start.mjs",
+      "bytes": 2307,
+      "sha256": "41aca2b1dab3c70586259d350bd2dc6362a574f363bf677086ed654c0400eb90"
+    },
+    {
+      "path": "harness/static-check.mjs",
+      "bytes": 8007,
+      "sha256": "94c8208f540282b77aad89b22237ead689e4740fb9db2589b4162724c5e76ef5"
+    },
+    {
+      "path": "harness/status.mjs",
+      "bytes": 246,
+      "sha256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17"
+    }
+  ],
+  "baseline": {
+    "attempt": "attempt-20261017T1422580-7c412f5c",
+    "manifestSha256": "a9c50f4c049a70e74512bcd750a1b2397f5afec98e177d13a7bd31b500a2a821"
+  },
+  "productionCaps": "Research excluded; future production remains 400 physical/file,300 logical/file,50/function"
+}

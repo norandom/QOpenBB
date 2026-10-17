@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-17",
+  "decision": "Safe blocked-source provenance publication only; B01-B04 remain open for this frozen version.",
+  "runtimeExecuted": false,
+  "collectorFiles": 44,
+  "collectorBytes": 268776,
+  "sourceManifest": {
+    "sourcePath": "artifacts/ui-parity-legend-capture/source-hashes.json",
+    "sha256": "f8c4ba54c233a97fbb3a7ab5ffc5331873ff1e49532735a1e403a9b76b2e2bf6",
+    "bytes": 6819
+  },
+  "harnessManifest": {
+    "sourcePath": "artifacts/ui-parity-legend-capture/harness-manifest.json",
+    "sha256": "9c6400819ba8d711829ba6abcc1c8b6ace2da1cd554ca01db7ea2627cb9ae1b3",
+    "bytes": 3377
+  },
+  "allRecordedHashesAndByteLengthsMatched": true,
+  "allCollectorFilesExplicitlySelected": true,
+  "reviewAllowlistVerified": true,
+  "linkChecks": [
+    {
+      "from": "artifacts/ui-parity-legend-capture/plan.md",
+      "target": "../ui-parity-legend-plan-revised/plan.md",
+      "sourcePath": "artifacts/ui-parity-legend-plan-revised/plan.md",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-plan-revised/plan.md",
+      "coverage": "existing reviewed dependency",
+      "sha256": "5a33a0237eb351df5a7a6060da2aff5c83379f89999c4a4ca82faa40c92e29ef"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-capture/plan.md",
+      "target": "../ui-parity-legend-plan-revision-review/review.md",
+      "sourcePath": "artifacts/ui-parity-legend-plan-revision-review/review.md",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-plan-revision-review/review.md",
+      "coverage": "existing reviewed dependency",
+      "sha256": "86926ccfe2a119c39c19bdd6553ffc32f880d85eb92c880d317e8e9e2d54e395"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-plan-revised/plan.md",
+      "sourcePath": "artifacts/ui-parity-legend-plan-revised/plan.md",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-plan-revised/plan.md",
+      "coverage": "existing reviewed dependency",
+      "sha256": "5a33a0237eb351df5a7a6060da2aff5c83379f89999c4a4ca82faa40c92e29ef"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-plan-revision-review/review.md",
+      "sourcePath": "artifacts/ui-parity-legend-plan-revision-review/review.md",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-plan-revision-review/review.md",
+      "coverage": "existing reviewed dependency",
+      "sha256": "86926ccfe2a119c39c19bdd6553ffc32f880d85eb92c880d317e8e9e2d54e395"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-capture/harness/start.mjs",
+      "sourcePath": "artifacts/ui-parity-legend-capture/harness/start.mjs",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-capture/harness/start.mjs",
+      "coverage": "selected publication set",
+      "sha256": "eccdb79d3e8d58ede8b311e22402cd479ecbb1b85a38b82d97ae695d7bf3db15"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-capture/harness/journey.mjs",
+      "sourcePath": "artifacts/ui-parity-legend-capture/harness/journey.mjs",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-capture/harness/journey.mjs",
+      "coverage": "selected publication set",
+      "sha256": "18aead8cc5dd21f7e5eee391c5b8c1b7d4eb168e56a8160f4a5536420dbcfe8c"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-capture/harness/settlement.mjs",
+      "sourcePath": "artifacts/ui-parity-legend-capture/harness/settlement.mjs",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-capture/harness/settlement.mjs",
+      "coverage": "selected publication set",
+      "sha256": "e8e32acaf5c795365b00c84b7e6c246b36dac1918c308ab456f4148d664f35c9"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-capture/harness/journey.mjs",
+      "sourcePath": "artifacts/ui-parity-legend-capture/harness/journey.mjs",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-capture/harness/journey.mjs",
+      "coverage": "selected publication set",
+      "sha256": "18aead8cc5dd21f7e5eee391c5b8c1b7d4eb168e56a8160f4a5536420dbcfe8c"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-capture/harness/finalize.mjs",
+      "sourcePath": "artifacts/ui-parity-legend-capture/harness/finalize.mjs",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-capture/harness/finalize.mjs",
+      "coverage": "selected publication set",
+      "sha256": "c05b93d860135d46076bc09ae98cc04df5e819f9408f5d3308820ece2111d72d"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-capture/harness/cleanup.mjs",
+      "sourcePath": "artifacts/ui-parity-legend-capture/harness/cleanup.mjs",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-capture/harness/cleanup.mjs",
+      "coverage": "selected publication set",
+      "sha256": "545518c2cfa1a90b5103806ee5763de709ea74dad51e044381f8046d82275feb"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-capture/harness/projection.mjs",
+      "sourcePath": "artifacts/ui-parity-legend-capture/harness/projection.mjs",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-capture/harness/projection.mjs",
+      "coverage": "selected publication set",
+      "sha256": "b5fec5a0dc82a428bc5d61105e44050fa21eaf0192ccaf1261a7c8f4c65fd79c"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "../ui-parity-legend-capture/harness/journey.mjs",
+      "sourcePath": "artifacts/ui-parity-legend-capture/harness/journey.mjs",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-capture/harness/journey.mjs",
+      "coverage": "selected publication set",
+      "sha256": "18aead8cc5dd21f7e5eee391c5b8c1b7d4eb168e56a8160f4a5536420dbcfe8c"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "verification.json",
+      "sourcePath": "artifacts/ui-parity-legend-collector-review/verification.json",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-collector-review/verification.json",
+      "coverage": "selected publication set",
+      "sha256": "3e81df7b3dd6248cc0d9bc8dfa23b221fcdf5b707a8b9a993a0c8eade1823f2a"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "review-checks.mjs",
+      "sourcePath": "artifacts/ui-parity-legend-collector-review/review-checks.mjs",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-collector-review/review-checks.mjs",
+      "coverage": "selected publication set",
+      "sha256": "ebb6c34eb404f7f709e71f27d4f935120d2ad8e6118456a48f884b2fc2cec274"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-review/review.md",
+      "target": "publication-allowlist.json",
+      "sourcePath": "artifacts/ui-parity-legend-collector-review/publication-allowlist.json",
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-collector-review/publication-allowlist.json",
+      "coverage": "selected publication set",
+      "sha256": "6534de699e87dcf3bf560ee0e7af6ebb457f4495b77d076b0a60611f1547c6e2"
+    }
+  ],
+  "offlineReplayDependencies": [
+    {
+      "sourcePath": "artifacts/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187,
+      "publishedPath": "artifacts/reviewed/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/fixture.json",
+      "identicalPublishedBytes": true
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-plan-revised/plan.md",
+      "sha256": "5a33a0237eb351df5a7a6060da2aff5c83379f89999c4a4ca82faa40c92e29ef",
+      "bytes": 29062,
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-plan-revised/plan.md",
+      "identicalPublishedBytes": true
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-plan-revision-review/review.md",
+      "sha256": "86926ccfe2a119c39c19bdd6553ffc32f880d85eb92c880d317e8e9e2d54e395",
+      "bytes": 6350,
+      "publishedPath": "artifacts/reviewed/ui-parity-legend-plan-revision-review/review.md",
+      "identicalPublishedBytes": true
+    }
+  ],
+  "inspection": {
+    "noRuntimeDirectoriesOrPrivateState": true,
+    "syntheticFixtureOnly": true,
+    "credentialMatches": "Source generates disposable random credentials and reads private runtime paths; no generated values or private files are selected.",
+    "sanitization": "None; exact frozen source bytes retained.",
+    "omissions": "No raw historical attempt data, profiles, logs, image archives, dependency caches or environment files selected."
+  },
+  "note": "Read/hash/link/publication selection checks only; no executable collector, replay tests, application, browser, Docker, build or install invoked in this publication task."
+}
