@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-17",
+  "shell": "WSL bash invoked through background exec pipes; no desktop/browser attachment",
+  "commands": [
+    {"command": "node --check capture/harness/*.mjs (each file) and bash -n capture/harness/run.sh", "node": "artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node", "exitCode": 0, "scope": "Offline syntax before runtime"},
+    {"command": "node artifacts/ui-parity-color-shadow/capture/harness/static-check.mjs", "exitCode": 0, "scope": "Frozen plan hash, named Shadow/presence, inherited parentNode, retained overwrite bytes and checkpoint cap"},
+    {"command": "R3_HEAVY_GRANTED=yes bash artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/run.sh /mnt/d/Source/QOpenBB/artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1", "exitCode": 1, "scope": "Diagnosed onboarding predicate failure before cases; cleanup exit0"},
+    {"command": "R3_HEAVY_GRANTED=yes bash artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/run.sh /mnt/d/Source/QOpenBB/artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2", "exitCode": 0, "scope": "Original-only nine cases; cleanup exit0"},
+    {"command": "CAPTURE_ROOT=/mnt/d/Source/QOpenBB/artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2 node artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/raster.mjs", "exitCode": 0, "scope": "Post-capture finite PNG crops and exact RGB differences"},
+    {"command": "CAPTURE_ROOT=/mnt/d/Source/QOpenBB/artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2 node artifacts/ui-parity-color-shadow/capture/harness/verify.mjs", "exitCode": 0, "scope": "31 fresh bounded original-effect assertions before package review"},
+    {"command": "node artifacts/ui-parity-color-shadow/capture/harness/package.mjs", "exitCode": 0, "scope": "Explicit publication selection, source/output hashes and publication-depth Markdown links"}
+  ],
+  "runtime": {"original": "38dffc33389aca0e4a87e0e88d42f7067aa220df", "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f", "candidateExecuted": false},
+  "nonClaims": ["No install/build/provider/external-origin execution", "No production/frozen-contract/Git mutation", "No candidate/persistence acceptance"]
+}

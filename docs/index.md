@@ -17,6 +17,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Check original axis stroke, grid width and dash behavior | [Axis/grid findings](../.kiro/specs/openbb-self-service/chart-axis-grid-findings.md) |
 | Reproduce editor close/reopen, theme changes and table return | [UI navigation findings](../.kiro/specs/openbb-self-service/chart-ui-navigation-findings.md) |
 | Preserve independent captions, Weight choices and chart padding | [Caption and padding findings](../.kiro/specs/openbb-self-service/chart-caption-padding-findings.md) |
+| Preserve color-picker alpha, keyboard behavior and Series Shadow | [Color and Shadow findings](../.kiro/specs/openbb-self-service/chart-color-shadow-findings.md) |
 | Review the existing-backend persistence repair | [SQLite query design](../.kiro/specs/openbb-self-service/sqlite-repair-design.md) |
 | Reproduce SQLite query and storage checks | [SQLite verification](../.kiro/specs/openbb-self-service/sqlite-repair-verification.md) |
 | Set up the pinned development tools | [Development toolchain](development.md) |

@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "R3 source-only original color-picker and Shadow capture plan",
+  "publicationDirectory": "artifacts/reviewed/ui-parity-color-shadow",
+  "original": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "originalImage": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "candidate": "ea02ec15956dee8d2c8a06825387a570757db12d",
+  "candidateExecuted": false,
+  "runtimeExecuted": false,
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "0200bca366bcf2e830a75011a0b5ff78bd174391b28013ba8e1a4295a1e1cff2",
+      "bytes": 6960
+    },
+    {
+      "path": ".kiro/steering/testing.md",
+      "sha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f",
+      "bytes": 5216
+    },
+    {
+      "path": ".kiro/steering/complexity.md",
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "bytes": 4171
+    },
+    {
+      "path": ".kiro/steering/delegation.md",
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "bytes": 4333
+    },
+    {
+      "path": ".kiro/steering/documentation.md",
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "bytes": 3981
+    },
+    {
+      "path": ".kiro/steering/ci.md",
+      "sha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd",
+      "bytes": 4078
+    },
+    {
+      "path": ".agents/skills/kiro-verify-completion/SKILL.md",
+      "sha256": "389b056b47c9295df32787fec284a97f53b02555443bdd4343d3e61ac499efbb",
+      "bytes": 3902
+    },
+    {
+      "path": ".kiro/specs/openbb-self-service/spec.json",
+      "sha256": "4b7f3f2ba947370c569cec3a0816f52e80045c2f1ac66a705398d3b0139facb6",
+      "bytes": 13392
+    },
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "sha256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "bytes": 30418
+    },
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "sha256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "bytes": 596346
+    },
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "sha256": "0cf2231a7771e2daf7f15162e3f401231b841b0b2861c973fdf36696e5ff1435",
+      "bytes": 26588
+    },
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "sha256": "3a6d07bae4be9a7197afc5afc4844c4f2b7e3824a994f8edc0d6df70169499b6",
+      "bytes": 5141
+    },
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/locked-echarts-targets.json",
+      "sha256": "6617c4ee4e5f4fdf58be024faee437b30752b4bfe49cd34b1bebd4335c19fc9a",
+      "bytes": 13791
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/report.md",
+      "sha256": "1efcc4e43e36af4ad119591a5a4b73e2efda710f787ba27554db118517107f07",
+      "bytes": 8542
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/source-manifest.json",
+      "sha256": "024190a50faa7b9f3c0113a5114e7130fa56fc51e6d618d9496a7ba68ad9f0d5",
+      "bytes": 4951
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/start.mjs",
+      "sha256": "876af7e309ea5eb7be3581922348ac60e020fe8bdbc301057a9d8f2f03584460",
+      "bytes": 2642
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/journey.mjs",
+      "sha256": "d06c6179be9edb390971e69d6449a2b14577d2201d5039cad0efde44ccebb3e8",
+      "bytes": 15489
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/run.sh",
+      "sha256": "59b1a51b99ed5fd4549197ea2be9429d449b6b5631ac9328268f8bdabde6174a",
+      "bytes": 1059
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/cleanup.mjs",
+      "sha256": "1b3beef5dd51a9b203686ec5ab732184e6d809ebdaf1b26d5d93f5127f2f48ba",
+      "bytes": 1644
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/baseline.json",
+      "sha256": "234db3a85d16469c0ceb7913437752500e16f2974de7d7d548c6c4be407bcb78",
+      "bytes": 60430
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-review/report.md",
+      "sha256": "adc8ae90f312d2a8c01c8da6cde70ebc0c91fab84964f5e6a310e2dcbca3cbbc",
+      "bytes": 7613
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/report.md",
+      "sha256": "caeb5ee676cf3e5a06f4304e3636f32d533fe96962c4451e1eed738c19ea79ed",
+      "bytes": 9845
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Series-default.json",
+      "sha256": "cc58dcaa2e00f2b136482a52b60ecf066eb6b5e44940ca6d72430a4453aba5e5",
+      "bytes": 21862
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Horizontal-Axis-default.json",
+      "sha256": "5531c7071b67f4b43f569f387c2009ca965e4ba2353c58287b950dc9cf3d2283",
+      "bytes": 13610
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-contract-close/source-analysis.md",
+      "sha256": "d82d883269b4887472df90c1d34cc5bc3ceb1d26c3025fb9e9f8b92ce4a578d2",
+      "bytes": 2228
+    }
+  ],
+  "gitBlobs": [
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/package.json",
+      "sha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf",
+      "bytes": 9188
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+      "bytes": 15697
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "sha256": "ff4ffdf77236326f0f476d7a06f1cbc6b876f7d41235b9faca8999b4a3ca8e21",
+      "bytes": 10559
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "ea02ec15956dee8d2c8a06825387a570757db12d",
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+      "sha256": "0581c101adc4a7dc71732965df569201c8e3b14144088c48bce188c849127d9f",
+      "bytes": 3775
+    }
+  ],
+  "installedDependencies": [
+    {
+      "name": "ag-grid-enterprise",
+      "version": "34.1.1",
+      "claim": "Installed matching-version source clues only; not original image byte identity",
+      "files": [
+        {
+          "path": "/mnt/d/Source/QOpenBB/artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/package.json",
+          "sha256": "740fda1969fab489979dbae50dc5a7d4f550cb3d8f226ff4cb59b5fa397aa1a1",
+          "bytes": 5526,
+          "lineRanges": []
+        },
+        {
+          "path": "/mnt/d/Source/QOpenBB/artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.cjs.js",
+          "sha256": "ff634fef7612738444a1618604ea88c0625328f271382f2fb3aaf9a26926d30c",
+          "bytes": 1938578,
+          "lineRanges": [
+            [
+              43077,
+              43545
+            ],
+            [
+              43669,
+              43765
+            ],
+            [
+              46349,
+              46483
+            ],
+            [
+              47462,
+              47530
+            ],
+            [
+              47726,
+              47750
+            ],
+            [
+              48541,
+              48595
+            ],
+            [
+              48675,
+              48729
+            ],
+            [
+              48899,
+              49040
+            ],
+            [
+              52110,
+              52174
+            ],
+            [
+              52320,
+              52355
+            ],
+            [
+              52402,
+              52418
+            ],
+            [
+              52531,
+              52541
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ag-grid-community",
+      "version": "34.1.1",
+      "claim": "Installed matching-version source clues only; not original image byte identity",
+      "files": [
+        {
+          "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-grid-community/package.json",
+          "sha256": "fb4afa64be4daa2ac5e2a7594bcb2d6048e68750e5f2179b1247c7b89bcc8e39",
+          "bytes": 5561,
+          "lineRanges": []
+        },
+        {
+          "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-grid-community/dist/package/main.cjs.js",
+          "sha256": "2b925820d2ae1b6ba5acd90d95066cc3d2e9ea5ab82424e361967199766d3c84",
+          "bytes": 2085596,
+          "lineRanges": [
+            [
+              19612,
+              19654
+            ],
+            [
+              19684,
+              19710
+            ],
+            [
+              20137,
+              20199
+            ],
+            [
+              20207,
+              20265
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ag-charts-community",
+      "version": "12.1.1",
+      "claim": "Installed matching-version source clues only; not original image byte identity",
+      "files": [
+        {
+          "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/package.json",
+          "sha256": "77ae0168d7c6209f2c880a00748fadbb390da794532164d84e0b4382e61c5b88",
+          "bytes": 2422,
+          "lineRanges": []
+        },
+        {
+          "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/dist/package/main.cjs.js",
+          "sha256": "237912c75d2c7e8219fced7bb79e5ed8fca0f620d6f4d259cdfa58748445fcd1",
+          "bytes": 1896344,
+          "lineRanges": [
+            [
+              1220,
+              1290
+            ],
+            [
+              1360,
+              1394
+            ],
+            [
+              3678,
+              3686
+            ],
+            [
+              37159,
+              37188
+            ],
+            [
+              37647,
+              37685
+            ],
+            [
+              37934,
+              37939
+            ],
+            [
+              41814,
+              41832
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "output": {
+    "path": "artifacts/reviewed/ui-parity-color-shadow/plan.md",
+    "localPath": "artifacts/ui-parity-color-shadow/plan.md",
+    "sha256": "f4744865a05e913d3e5b4584f51ace6b40b11787b741afe284621aaa9a53cca9",
+    "bytes": 25134
+  },
+  "nonClaims": [
+    "No browser, container, build, install, network or provider execution",
+    "No private state or environment-file read",
+    "No production source or Git mutation",
+    "No frozen contract edits, implementation tasks, phase approval, runtime effect, persistence or candidate parity claim"
+  ],
+  "verification": "Original source-byte and package-version checks retained; bounded preflight repair changes alpha arrow to Left and clarifies named read-only access. Fresh plan hash, local/installed input bytes, nine-case bounds and publication-relative links checked; independent review pending."
+}

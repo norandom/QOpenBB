@@ -1,0 +1,1626 @@
+{
+  "schemaVersion": 1,
+  "scope": "Selected finite synthetic capture inputs and outputs; metadata files excluded from local cross-hashes to avoid a circular manifest",
+  "files": [
+    {
+      "source": "artifacts/ui-parity-color-shadow-review/audit.mjs",
+      "destination": "ui-parity-color-shadow-review/audit.mjs",
+      "sha256": "35af4eb959ad7b2df5581c55b8862de0d094bd5efe8b5928f226b971f0a56662",
+      "bytes": 1548
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow-review/plan-review.md",
+      "destination": "ui-parity-color-shadow-review/plan-review.md",
+      "sha256": "6d39bb886748586cdbb749a97b109f648a03ff6eecd0afceba661231b43a8685",
+      "bytes": 2958
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow-review/verification.json",
+      "destination": "ui-parity-color-shadow-review/verification.json",
+      "sha256": "bf5bb771a22b45e6d51bacca7aa7dbfc03c4f0fa56e568a2a4071ac1f651531c",
+      "bytes": 4701
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/browser-cleanup.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/browser-cleanup.json",
+      "sha256": "fa601dc6d4a50f7a7cd43ebbe88aebd29cd723aa2540410a7aaa54aebb2cb250",
+      "bytes": 78
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/cleanup-report.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/cleanup-report.json",
+      "sha256": "6721a4ce51b21e4d3e9a2546d15dd79d08fee2e5a9bf13663253fb5fcd137578",
+      "bytes": 92
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/cleanup-status.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/cleanup-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/failure.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/failure.json",
+      "sha256": "3f1f929720118910999ac4099f95c1f599f74ba03a4000f9974e66dc63b7f4d0",
+      "bytes": 271
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/cleanup.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/cleanup.mjs",
+      "sha256": "99fe739ad9eba1f567563ba776fd9d8f77626f5260f95da4319e350e857d53e6",
+      "bytes": 1599
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/fixture.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/io.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/io.mjs",
+      "sha256": "3ec57999b81d8543fd8094ceaebd536ab64e69ddd6dbdf31ccdf7fa7a8c9a130",
+      "bytes": 715
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/journey.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/journey.mjs",
+      "sha256": "09c82e6d426d77036f39c7a94fb05aab1006435bd011807254963b9b360ddaf6",
+      "bytes": 13696
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/projection.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/projection.mjs",
+      "sha256": "4ed7c1c55c000a5a7a084bcd4875c6e73c4ede3c3052c5ba0d615b3ccf6e82b6",
+      "bytes": 8372
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/raster.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/raster.mjs",
+      "sha256": "a77e427c408ee7095c612a3faf603d7e10084483f87b5b540cd5a8f138146da2",
+      "bytes": 4938
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/run.sh",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/run.sh",
+      "sha256": "ced46295160df0e05191ea4e8f5175dd4e2e3f0a0d18aa149ecee9ce3681ac5d",
+      "bytes": 1303
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/start.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/start.mjs",
+      "sha256": "be979ba818639ca863f22bb90dc92937c1ea2845a00379414c6d7daf50acdb81",
+      "bytes": 2305
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/static-check.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/static-check.mjs",
+      "sha256": "a0c00b801d1e0ace385b48710876775e0dfac7a811e5f149da2d242f90372dd7",
+      "bytes": 2132
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/journey-status.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/journey-status.json",
+      "sha256": "ca4b50a6aabd8c09a9998c501233e663a1a779dee115f77beed1cc4e481ab5c3",
+      "bytes": 15
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/run-status.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/run-status.json",
+      "sha256": "ca4b50a6aabd8c09a9998c501233e663a1a779dee115f77beed1cc4e481ab5c3",
+      "bytes": 15
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/runtime-identity.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/runtime-identity.json",
+      "sha256": "b3538cead9f4755f18105a6170bbb40ba5c6b1ddff7a0c313b5e9902d0d221af",
+      "bytes": 234
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/start-status.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/start-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/action-ledger-public.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/action-ledger-public.json",
+      "sha256": "569c3f02eab84b27b14215ce79f0006e16029daa3dc19097c6bb12b2105d2332",
+      "bytes": 48724
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/browser-cleanup.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/browser-cleanup.json",
+      "sha256": "fa601dc6d4a50f7a7cd43ebbe88aebd29cd723aa2540410a7aaa54aebb2cb250",
+      "bytes": 78
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-axis-baseline.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-axis-baseline.json",
+      "sha256": "36a279a84135cd9f6e3b140211a478a8597ef32a39d4e31e98c275171cd3e15a",
+      "bytes": 70433
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-0.png",
+      "sha256": "f718be456da58dcdbceed7653d07760a160ab22b91e3fdadfad947ba8eb0280c",
+      "bytes": 393
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.json",
+      "sha256": "761242ed3a570da9bea22d2a2cff9a1c345a2708f97b1b0c06bac67b34ff6d09",
+      "bytes": 70435
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.png",
+      "sha256": "763821d36f5ffbd42786f397e05c08d361441b74fb801f488715e026575da2e6",
+      "bytes": 42751
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-grid-baseline.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-grid-baseline.json",
+      "sha256": "46302ce4dccdb9ffe5ad576514ce53f6e6a83119d124ba25aabf8049d2532623",
+      "bytes": 70445
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s01-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s01-after.json",
+      "sha256": "36a279a84135cd9f6e3b140211a478a8597ef32a39d4e31e98c275171cd3e15a",
+      "bytes": 70433
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s01-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s01-before.json",
+      "sha256": "a5608576300be44e502f84e5248de24cff1270bdc8ea11c10767060c5a2f8a3d",
+      "bytes": 70584
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s02-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s02-after.json",
+      "sha256": "46302ce4dccdb9ffe5ad576514ce53f6e6a83119d124ba25aabf8049d2532623",
+      "bytes": 70445
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s02-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s02-before.json",
+      "sha256": "36a279a84135cd9f6e3b140211a478a8597ef32a39d4e31e98c275171cd3e15a",
+      "bytes": 70433
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s03-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s03-after.json",
+      "sha256": "761242ed3a570da9bea22d2a2cff9a1c345a2708f97b1b0c06bac67b34ff6d09",
+      "bytes": 70435
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s03-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s03-before.json",
+      "sha256": "46302ce4dccdb9ffe5ad576514ce53f6e6a83119d124ba25aabf8049d2532623",
+      "bytes": 70445
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s01-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s01-after.json",
+      "sha256": "36a279a84135cd9f6e3b140211a478a8597ef32a39d4e31e98c275171cd3e15a",
+      "bytes": 70433
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s01-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s01-before.json",
+      "sha256": "761242ed3a570da9bea22d2a2cff9a1c345a2708f97b1b0c06bac67b34ff6d09",
+      "bytes": 70435
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s02-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s02-after.json",
+      "sha256": "df888c3d05143b11864983d0a14768ace3a9aee3cca83eb498d3b959051d3ccf",
+      "bytes": 70547
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s02-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s02-before.json",
+      "sha256": "36a279a84135cd9f6e3b140211a478a8597ef32a39d4e31e98c275171cd3e15a",
+      "bytes": 70433
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-0.png",
+      "sha256": "f718be456da58dcdbceed7653d07760a160ab22b91e3fdadfad947ba8eb0280c",
+      "bytes": 393
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after.json",
+      "sha256": "2eaf151c5883d84e575823492aeb1e3e2bace51980e306edec002d1bf7947b53",
+      "bytes": 71527
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after.png",
+      "sha256": "67a205a3247d7a0f3aba31f0cbddc95f6514d2f4bc3fa58b6d2e89b4afc7eeb3",
+      "bytes": 61426
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-before.json",
+      "sha256": "df888c3d05143b11864983d0a14768ace3a9aee3cca83eb498d3b959051d3ccf",
+      "bytes": 70547
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-0.png",
+      "sha256": "3f1acbcd6bc8c7cb6ccba358dbe96866671ed0fd75cbc09ddd9e74480d060cc4",
+      "bytes": 394
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after.json",
+      "sha256": "005610d265bd8fa813ca8c3cdd6463f71626d06e0c6084d4f3b3fa25a48a2e9f",
+      "bytes": 71527
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after.png",
+      "sha256": "8c987d0ee35b56f5cde2f1ff755830685c80b6740e4bf86142d5191135a7101c",
+      "bytes": 58075
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-before.json",
+      "sha256": "2eaf151c5883d84e575823492aeb1e3e2bace51980e306edec002d1bf7947b53",
+      "bytes": 71527
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s05-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s05-after.json",
+      "sha256": "061a7a8972f4fe6fcdcc2ff0cb511c216ac7e1c4be4f971ec534f73ed6385a80",
+      "bytes": 72298
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s05-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s05-before.json",
+      "sha256": "005610d265bd8fa813ca8c3cdd6463f71626d06e0c6084d4f3b3fa25a48a2e9f",
+      "bytes": 71527
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-0.png",
+      "sha256": "25876da1b9ee483fa8759cf908267236968d5ee822368c27c18867f1c65597a7",
+      "bytes": 394
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after.json",
+      "sha256": "42b9b9e78e04fac7140ae1d44f001f072a9e51443dd3841cdc078a74d1408cbb",
+      "bytes": 72298
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after.png",
+      "sha256": "b0f9714ab772515d58e6e2fde7307f0bff9c483b1c2afabe0ddb011f0c22f4ec",
+      "bytes": 65035
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-before.json",
+      "sha256": "061a7a8972f4fe6fcdcc2ff0cb511c216ac7e1c4be4f971ec534f73ed6385a80",
+      "bytes": 72298
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s07-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s07-after.json",
+      "sha256": "ff134992b77828d7c97c5a2d285ea895ab9b72a44edadded249c9f4f07ace4d3",
+      "bytes": 72303
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s07-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s07-before.json",
+      "sha256": "42b9b9e78e04fac7140ae1d44f001f072a9e51443dd3841cdc078a74d1408cbb",
+      "bytes": 72298
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-0.png",
+      "sha256": "69a9a461cb5e4254cdf16d5d483020f9758c8ca68cd40f171b8614416e6987c1",
+      "bytes": 395
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after.json",
+      "sha256": "9d13ce6e917614a6aaeafde11e5c5157c45cef5ffb94e504bf988e80aa51d2bd",
+      "bytes": 72345
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after.png",
+      "sha256": "6381f749b035ee25ee703e8a9f6ea59abb6b9dfa2bbc6b2a721b9e79781dc6ad",
+      "bytes": 65855
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-before.json",
+      "sha256": "ff134992b77828d7c97c5a2d285ea895ab9b72a44edadded249c9f4f07ace4d3",
+      "bytes": 72303
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s09-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s09-after.json",
+      "sha256": "15c48edd6cad2f5cb59f621e9d6669a2860da867735e2c9add03d122d7a834f7",
+      "bytes": 72544
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s09-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s09-before.json",
+      "sha256": "9d13ce6e917614a6aaeafde11e5c5157c45cef5ffb94e504bf988e80aa51d2bd",
+      "bytes": 72345
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-0.png",
+      "sha256": "e3c6c6acdbe0463ad5593fcb79f8ad60f00f272ba035e5e5ae53fc0b84777109",
+      "bytes": 396
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after.json",
+      "sha256": "a4da9fe84d4992f0ce7870d1f9a4e8ed98bf076d76b5450c7b748886bd1489ff",
+      "bytes": 72490
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after.png",
+      "sha256": "9c290eeb2672a25ffbffecac7e02e844c54bf2e36a6f8898b97ea55ae60b5ca1",
+      "bytes": 69502
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-before.json",
+      "sha256": "15c48edd6cad2f5cb59f621e9d6669a2860da867735e2c9add03d122d7a834f7",
+      "bytes": 72544
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-0.png",
+      "sha256": "e3c6c6acdbe0463ad5593fcb79f8ad60f00f272ba035e5e5ae53fc0b84777109",
+      "bytes": 396
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after.json",
+      "sha256": "c6c9acbb5f57f2661bfe5de8b34b75593fe18b5766a44728cc3728c0e48ef749",
+      "bytes": 70621
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after.png",
+      "sha256": "5d61f4ef6dd021d9ff76f081f54488ed2c501a6aa971c2893f1dd4cfa16b633c",
+      "bytes": 44245
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-before.json",
+      "sha256": "a4da9fe84d4992f0ce7870d1f9a4e8ed98bf076d76b5450c7b748886bd1489ff",
+      "bytes": 72490
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s12-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s12-after.json",
+      "sha256": "c6c9acbb5f57f2661bfe5de8b34b75593fe18b5766a44728cc3728c0e48ef749",
+      "bytes": 70621
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s12-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s12-before.json",
+      "sha256": "c6c9acbb5f57f2661bfe5de8b34b75593fe18b5766a44728cc3728c0e48ef749",
+      "bytes": 70621
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s13-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s13-after.json",
+      "sha256": "0681f89efacf22348e4ac466fd9d57c17364b8d985aab95d5d4daef400198854",
+      "bytes": 71963
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s13-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s13-before.json",
+      "sha256": "c6c9acbb5f57f2661bfe5de8b34b75593fe18b5766a44728cc3728c0e48ef749",
+      "bytes": 70621
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-0.png",
+      "sha256": "e3c6c6acdbe0463ad5593fcb79f8ad60f00f272ba035e5e5ae53fc0b84777109",
+      "bytes": 396
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after.json",
+      "sha256": "c6c9acbb5f57f2661bfe5de8b34b75593fe18b5766a44728cc3728c0e48ef749",
+      "bytes": 70621
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after.png",
+      "sha256": "5d61f4ef6dd021d9ff76f081f54488ed2c501a6aa971c2893f1dd4cfa16b633c",
+      "bytes": 44245
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-before.json",
+      "sha256": "0681f89efacf22348e4ac466fd9d57c17364b8d985aab95d5d4daef400198854",
+      "bytes": 71963
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03-invalid-check.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03-invalid-check.json",
+      "sha256": "c51471e0ae2725ac5bab351366a749beaca7572dd02b58ba9d6f345500486cb1",
+      "bytes": 523
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s01-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s01-after.json",
+      "sha256": "1b73874d72be664033cafd5dd2f45988aa86255d12971522925c5bd0a929906d",
+      "bytes": 70519
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s01-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s01-before.json",
+      "sha256": "c6c9acbb5f57f2661bfe5de8b34b75593fe18b5766a44728cc3728c0e48ef749",
+      "bytes": 70621
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s02-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s02-after.json",
+      "sha256": "80dcd44768298cbaa54a5176e43f574e7b2eedd833880d0dc36ac0b7974d5e92",
+      "bytes": 70746
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s02-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s02-before.json",
+      "sha256": "1b73874d72be664033cafd5dd2f45988aa86255d12971522925c5bd0a929906d",
+      "bytes": 70519
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-0.png",
+      "sha256": "e3c6c6acdbe0463ad5593fcb79f8ad60f00f272ba035e5e5ae53fc0b84777109",
+      "bytes": 396
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after.json",
+      "sha256": "b884f52cb305540ab1d9677384658fb116114d6298e01b198d269accdc04e923",
+      "bytes": 72577
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after.png",
+      "sha256": "069f26a9b5defb6fb2c1cba521088401db7078b8a3e6216ebc93816ba0742718",
+      "bytes": 56197
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-before.json",
+      "sha256": "80dcd44768298cbaa54a5176e43f574e7b2eedd833880d0dc36ac0b7974d5e92",
+      "bytes": 70746
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-0.png",
+      "sha256": "e3c6c6acdbe0463ad5593fcb79f8ad60f00f272ba035e5e5ae53fc0b84777109",
+      "bytes": 396
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-1.png",
+      "sha256": "e617236558cd503e671b6e414ce9e90ecb5e14ed07d972dced1d31a3374bf278",
+      "bytes": 174
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-2.png",
+      "sha256": "825a837b66cedc60306d768d11f2911b4d70ad7f6f94a897830a2217dfdbc301",
+      "bytes": 172
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after.json",
+      "sha256": "a3ad4703a7b74c2742ede773febce9491c0c6e1d3276f91c52f5caf74af66224",
+      "bytes": 73603
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after.png",
+      "sha256": "f8e461d85fc10e733252953c247e54b6691fb09a082c359ed5779d7a64b3931d",
+      "bytes": 53208
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-before.json",
+      "sha256": "b884f52cb305540ab1d9677384658fb116114d6298e01b198d269accdc04e923",
+      "bytes": 72577
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-0.png",
+      "sha256": "e3c6c6acdbe0463ad5593fcb79f8ad60f00f272ba035e5e5ae53fc0b84777109",
+      "bytes": 396
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-1.png",
+      "sha256": "ed856835b9fbbd401d305762e655ff9ef87a9af809c3e278d07ed4e1ea6c187d",
+      "bytes": 178
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-2.png",
+      "sha256": "3cb64600ad321b619c7535a5f30445a88aa7db6ba1e6caad210d85db1d52f97b",
+      "bytes": 175
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after.json",
+      "sha256": "141740f1f45d17ad29b5599e67d19a870628a06a82a8c2dd5207a6f3fba3d0f3",
+      "bytes": 73697
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after.png",
+      "sha256": "1d9d32dcbf2ed143eb9076689e9f4d391b1a171a54a44e11d3e221b612d7ea4a",
+      "bytes": 63399
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-before.json",
+      "sha256": "a3ad4703a7b74c2742ede773febce9491c0c6e1d3276f91c52f5caf74af66224",
+      "bytes": 73603
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-0.png",
+      "sha256": "e3c6c6acdbe0463ad5593fcb79f8ad60f00f272ba035e5e5ae53fc0b84777109",
+      "bytes": 396
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-1.png",
+      "sha256": "ed856835b9fbbd401d305762e655ff9ef87a9af809c3e278d07ed4e1ea6c187d",
+      "bytes": 178
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-2.png",
+      "sha256": "3cb64600ad321b619c7535a5f30445a88aa7db6ba1e6caad210d85db1d52f97b",
+      "bytes": 175
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after.json",
+      "sha256": "4ad28b986a098ca6be6b426984725f8a96669ecc3348338c6010d8f9c946ac13",
+      "bytes": 71486
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after.png",
+      "sha256": "309452779a62ec4c7b190bdb0543ad1361f109b5251c296122488894891695e4",
+      "bytes": 43137
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-before.json",
+      "sha256": "141740f1f45d17ad29b5599e67d19a870628a06a82a8c2dd5207a6f3fba3d0f3",
+      "bytes": 73697
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s01-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s01-after.json",
+      "sha256": "b2244b7f84d10286766915f57f6228e5f402f6386ef4e51ebfa45959f9c9fcc6",
+      "bytes": 71249
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s01-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s01-before.json",
+      "sha256": "4ad28b986a098ca6be6b426984725f8a96669ecc3348338c6010d8f9c946ac13",
+      "bytes": 71486
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s02-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s02-after.json",
+      "sha256": "b530bd43026cfce7828955c82a3f6cfa1f30cfe5dfd6d7db965f31d29c1a26d7",
+      "bytes": 71514
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s02-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s02-before.json",
+      "sha256": "b2244b7f84d10286766915f57f6228e5f402f6386ef4e51ebfa45959f9c9fcc6",
+      "bytes": 71249
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-0.png",
+      "sha256": "2f4db278d8050b478c6d8f018292daade6b2982de21f53f1367dc84047bee9e3",
+      "bytes": 701
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-1.png",
+      "sha256": "d3303083d3c5fc3ea848b46827151b3c2948a887c6f4218b9a45f4d7a1a50565",
+      "bytes": 191
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-2.png",
+      "sha256": "8edd2c6334c32f1554a8e9b806318c6dffe068a154b4ba735f99136bc04b9fea",
+      "bytes": 325
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.json",
+      "sha256": "444640b707a78fdd406fe67deb4c508516d0cb9b14abc5fc268111d237788ead",
+      "bytes": 71601
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.png",
+      "sha256": "96f17e50f8ad7065089d1e5c259776596af3ef4ba97d3681f73dedee075ea70c",
+      "bytes": 45142
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-before.json",
+      "sha256": "b530bd43026cfce7828955c82a3f6cfa1f30cfe5dfd6d7db965f31d29c1a26d7",
+      "bytes": 71514
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s01-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s01-after.json",
+      "sha256": "0e0edfaa1f3003a0f100b03088f0aac0cfe93e939ab3c6531b12e92bb2fada24",
+      "bytes": 71550
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s01-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s01-before.json",
+      "sha256": "444640b707a78fdd406fe67deb4c508516d0cb9b14abc5fc268111d237788ead",
+      "bytes": 71601
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-0.png",
+      "sha256": "2f4db278d8050b478c6d8f018292daade6b2982de21f53f1367dc84047bee9e3",
+      "bytes": 701
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-1.png",
+      "sha256": "d3303083d3c5fc3ea848b46827151b3c2948a887c6f4218b9a45f4d7a1a50565",
+      "bytes": 191
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-2.png",
+      "sha256": "8edd2c6334c32f1554a8e9b806318c6dffe068a154b4ba735f99136bc04b9fea",
+      "bytes": 325
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after.json",
+      "sha256": "e3e1b4d451baceb26613c42d97186fcc2ce94d06083c3d386911f309d26a65ac",
+      "bytes": 73405
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after.png",
+      "sha256": "af5ef2640ff73f5978afa498bc3af53506e9c8c41fcaf05fef1fd2498543c5ab",
+      "bytes": 60443
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-before.json",
+      "sha256": "0e0edfaa1f3003a0f100b03088f0aac0cfe93e939ab3c6531b12e92bb2fada24",
+      "bytes": 71550
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-0.png",
+      "sha256": "0096d8adfbbb04f6120f3da797fe685ee466d3f125ed706464c9b148bc0c7f09",
+      "bytes": 967
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-1.png",
+      "sha256": "00b0256e2722fcd843c761c46ea7774975e8c58fd8a42893252c6b8b25887d46",
+      "bytes": 200
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-2.png",
+      "sha256": "5ea5f851818552b0d0f8f9da0b31f90cde098589c6684fca5af2e92f7b768b74",
+      "bytes": 530
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after.json",
+      "sha256": "8d9ee9c20f7e9dafaca03c0850758a5b3826dc6204f19c542fa7c2b2a275a171",
+      "bytes": 74440
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after.png",
+      "sha256": "1db43baaa974a36c92ebb19a4f6118fb6776a2b40d3d2cf93556c4f77c4ab035",
+      "bytes": 67355
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-before.json",
+      "sha256": "e3e1b4d451baceb26613c42d97186fcc2ce94d06083c3d386911f309d26a65ac",
+      "bytes": 73405
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-0.png",
+      "sha256": "0096d8adfbbb04f6120f3da797fe685ee466d3f125ed706464c9b148bc0c7f09",
+      "bytes": 967
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-1.png",
+      "sha256": "00b0256e2722fcd843c761c46ea7774975e8c58fd8a42893252c6b8b25887d46",
+      "bytes": 200
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-2.png",
+      "sha256": "5ea5f851818552b0d0f8f9da0b31f90cde098589c6684fca5af2e92f7b768b74",
+      "bytes": 530
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after.json",
+      "sha256": "bcc984b80c174cead57b03ce9b6580b6b27d1b85569d02d1d60ed2679cba07ba",
+      "bytes": 71751
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after.png",
+      "sha256": "a384642b17ff09225f132331774eeaf11477bfb017e01b8e1186920b246a6b95",
+      "bytes": 47216
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-before.json",
+      "sha256": "8d9ee9c20f7e9dafaca03c0850758a5b3826dc6204f19c542fa7c2b2a275a171",
+      "bytes": 74440
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-0.png",
+      "sha256": "af5ef0237aaa661389a8c70bdce999c961e77b77b1ed89319aba15c80e3be922",
+      "bytes": 1970
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-1.png",
+      "sha256": "4a8e454ab5f5a4e55e7e4f229b8d924819022bfea1351c92572de3a55e3b33ab",
+      "bytes": 265
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-2.png",
+      "sha256": "e8100688c055efb859791837c4b4c2bb46aaa5e530714218e38d932dd4b02300",
+      "bytes": 1348
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after.json",
+      "sha256": "00ccee6f86535497c27e8ff1584cf082ec47084ea3e92e90da86abdaf72d02ab",
+      "bytes": 71833
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after.png",
+      "sha256": "fdaa1c7a2318d04c9085fc0d643dd62b6aaf6ff90d1804542ccf723e3babba1d",
+      "bytes": 56250
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-before.json",
+      "sha256": "bcc984b80c174cead57b03ce9b6580b6b27d1b85569d02d1d60ed2679cba07ba",
+      "bytes": 71751
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-0.png",
+      "sha256": "af5ef0237aaa661389a8c70bdce999c961e77b77b1ed89319aba15c80e3be922",
+      "bytes": 1970
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-1.png",
+      "sha256": "4a8e454ab5f5a4e55e7e4f229b8d924819022bfea1351c92572de3a55e3b33ab",
+      "bytes": 265
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-2.png",
+      "sha256": "e8100688c055efb859791837c4b4c2bb46aaa5e530714218e38d932dd4b02300",
+      "bytes": 1348
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after.json",
+      "sha256": "5f2ed13c06a186ee316c30b929971270524d1147d495af0fa91e22b178e46f13",
+      "bytes": 71865
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after.png",
+      "sha256": "c8eb457e312ea3f5f1976e43a20de7567e910218bca15b987d0a4df0d554ae7c",
+      "bytes": 55773
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-before.json",
+      "sha256": "00ccee6f86535497c27e8ff1584cf082ec47084ea3e92e90da86abdaf72d02ab",
+      "bytes": 71833
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-0.png",
+      "sha256": "83fffbbe416b762f65c771d5d4925499653139416e02e2f751a40a76a249e544",
+      "bytes": 2151
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-1.png",
+      "sha256": "695b093df01daf4bb39c1d04893efc8bbcd030442246923d3b05893ac41239fa",
+      "bytes": 325
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-2.png",
+      "sha256": "dfcbe03d95df98f268db44ddb21a63f3cca8edaef13be6deeba21c7eb8029ce4",
+      "bytes": 1403
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after.json",
+      "sha256": "7b4f599a4ec8d5ecbd877f7452d77442e998d35384401a0139ecad2956e15d38",
+      "bytes": 71877
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after.png",
+      "sha256": "d2d639d77f5fe877d148ff1fd7cdc758cec1c4258da930e4bdec8ddd5703ca1f",
+      "bytes": 55780
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-before.json",
+      "sha256": "5f2ed13c06a186ee316c30b929971270524d1147d495af0fa91e22b178e46f13",
+      "bytes": 71865
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-0.png",
+      "sha256": "83fffbbe416b762f65c771d5d4925499653139416e02e2f751a40a76a249e544",
+      "bytes": 2151
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-1.png",
+      "sha256": "695b093df01daf4bb39c1d04893efc8bbcd030442246923d3b05893ac41239fa",
+      "bytes": 325
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-2.png",
+      "sha256": "dfcbe03d95df98f268db44ddb21a63f3cca8edaef13be6deeba21c7eb8029ce4",
+      "bytes": 1403
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after.json",
+      "sha256": "ba09d3dcd6d22da9651905573880e034e364a8eede63584581932fecae111c3b",
+      "bytes": 71888
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after.png",
+      "sha256": "e9cd60c91385a130485576940bd6e8e81e344288b7583236f92a2f5a7489ce82",
+      "bytes": 56176
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-before.json",
+      "sha256": "7b4f599a4ec8d5ecbd877f7452d77442e998d35384401a0139ecad2956e15d38",
+      "bytes": 71877
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-0.png",
+      "sha256": "c43e263b2d52b90491ae0da53e37ac6094d70d5d823e0b8198efe3377bcd8ceb",
+      "bytes": 2668
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-1.png",
+      "sha256": "695b093df01daf4bb39c1d04893efc8bbcd030442246923d3b05893ac41239fa",
+      "bytes": 325
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-2.png",
+      "sha256": "632dd2d4281ffdd9459361cb36c6ddb78828d6831365e556ad8481c3edbc7624",
+      "bytes": 1224
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after.json",
+      "sha256": "d9c68975fe63db4593dc409dde736c47c0fe9ecfea778d1a8cf83983a603b2ba",
+      "bytes": 71884
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after.png",
+      "sha256": "df4c46279583c1c92fc2f4fc0b5694125d19bef10df095400e62b43aaae2d0a2",
+      "bytes": 55840
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-before.json",
+      "sha256": "ba09d3dcd6d22da9651905573880e034e364a8eede63584581932fecae111c3b",
+      "bytes": 71888
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-0.png",
+      "sha256": "c43e263b2d52b90491ae0da53e37ac6094d70d5d823e0b8198efe3377bcd8ceb",
+      "bytes": 2668
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-1.png",
+      "sha256": "695b093df01daf4bb39c1d04893efc8bbcd030442246923d3b05893ac41239fa",
+      "bytes": 325
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-2.png",
+      "sha256": "632dd2d4281ffdd9459361cb36c6ddb78828d6831365e556ad8481c3edbc7624",
+      "bytes": 1224
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after.json",
+      "sha256": "8c62aebf213824abf4a03004f08808aed2dc2570f80248dd535fa9a19e943d2b",
+      "bytes": 71578
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after.png",
+      "sha256": "46582b9109de8891f580dc4607504ac60dae24c408457652523d621cfd36aea4",
+      "bytes": 55890
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-before.json",
+      "sha256": "d9c68975fe63db4593dc409dde736c47c0fe9ecfea778d1a8cf83983a603b2ba",
+      "bytes": 71884
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s01-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s01-after.json",
+      "sha256": "fd02f5a326028239263cbcedcfafd857fbf3e4e0b5c1028e7b470ef510baafdc",
+      "bytes": 71856
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s01-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s01-before.json",
+      "sha256": "8c62aebf213824abf4a03004f08808aed2dc2570f80248dd535fa9a19e943d2b",
+      "bytes": 71578
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-0.png",
+      "sha256": "e3c6c6acdbe0463ad5593fcb79f8ad60f00f272ba035e5e5ae53fc0b84777109",
+      "bytes": 396
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-1.png",
+      "sha256": "ed856835b9fbbd401d305762e655ff9ef87a9af809c3e278d07ed4e1ea6c187d",
+      "bytes": 178
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-2.png",
+      "sha256": "3cb64600ad321b619c7535a5f30445a88aa7db6ba1e6caad210d85db1d52f97b",
+      "bytes": 175
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after.json",
+      "sha256": "b93a62023875f57207290caf2fa05fa92770f8ed75e1510f2ea5cfc15b6853d6",
+      "bytes": 71781
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after.png",
+      "sha256": "5c290277a1f558dab59532acbee4968cf4460f982356ca4e4eedc02193845a45",
+      "bytes": 44382
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-before.json",
+      "sha256": "fd02f5a326028239263cbcedcfafd857fbf3e4e0b5c1028e7b470ef510baafdc",
+      "bytes": 71856
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-0.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-0.png",
+      "sha256": "c43e263b2d52b90491ae0da53e37ac6094d70d5d823e0b8198efe3377bcd8ceb",
+      "bytes": 2668
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-1.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-1.png",
+      "sha256": "695b093df01daf4bb39c1d04893efc8bbcd030442246923d3b05893ac41239fa",
+      "bytes": 325
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-2.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-2.png",
+      "sha256": "632dd2d4281ffdd9459361cb36c6ddb78828d6831365e556ad8481c3edbc7624",
+      "bytes": 1224
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-3.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-3.png",
+      "sha256": "5581edae715c0cc00d6c8c74053ebe7f8a81747b0dcca55db330e10b9901c4fd",
+      "bytes": 74
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after.json",
+      "sha256": "e7ecd0ac09a0885a577785ad62ff26ae2137837bdc96211838ebdf6644d6b489",
+      "bytes": 71856
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after.png",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after.png",
+      "sha256": "b09184538ff10d30d9bebc364682e74f9f033280cdc8c029db54e2eacb654d8c",
+      "bytes": 55869
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-before.json",
+      "sha256": "b93a62023875f57207290caf2fa05fa92770f8ed75e1510f2ea5cfc15b6853d6",
+      "bytes": 71781
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cases.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cases.json",
+      "sha256": "2ac0615a7bb0877e6877ec05502305e14b3b87576cab6a4d7f0ce21d32ce2c39",
+      "bytes": 445
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cleanup-report.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cleanup-report.json",
+      "sha256": "6721a4ce51b21e4d3e9a2546d15dd79d08fee2e5a9bf13663253fb5fcd137578",
+      "bytes": 92
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cleanup-status.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cleanup-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/diagnostic-summary.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/diagnostic-summary.json",
+      "sha256": "44a8b116e460c62896d28b9a40fc7ddfca6698f21c45a813592aefdff48b339a",
+      "bytes": 1532
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/events.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/events.json",
+      "sha256": "d4d4754f50b51e33d0c011b316ecfb43c73b9f4c0e502658b5f3f84a57fc4687",
+      "bytes": 413374
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/cleanup.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/cleanup.mjs",
+      "sha256": "99fe739ad9eba1f567563ba776fd9d8f77626f5260f95da4319e350e857d53e6",
+      "bytes": 1599
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/fixture.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/io.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/io.mjs",
+      "sha256": "3ec57999b81d8543fd8094ceaebd536ab64e69ddd6dbdf31ccdf7fa7a8c9a130",
+      "bytes": 715
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/journey.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/journey.mjs",
+      "sha256": "86a8645098e58313ec24126e571b25b5d0eb1418276e017b199640e46e6286b6",
+      "bytes": 13825
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/projection.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/projection.mjs",
+      "sha256": "4ed7c1c55c000a5a7a084bcd4875c6e73c4ede3c3052c5ba0d615b3ccf6e82b6",
+      "bytes": 8372
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/raster.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/raster.mjs",
+      "sha256": "a77e427c408ee7095c612a3faf603d7e10084483f87b5b540cd5a8f138146da2",
+      "bytes": 4938
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/run.sh",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/run.sh",
+      "sha256": "ced46295160df0e05191ea4e8f5175dd4e2e3f0a0d18aa149ecee9ce3681ac5d",
+      "bytes": 1303
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/start.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/start.mjs",
+      "sha256": "be979ba818639ca863f22bb90dc92937c1ea2845a00379414c6d7daf50acdb81",
+      "bytes": 2305
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/static-check.mjs",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/static-check.mjs",
+      "sha256": "a0c00b801d1e0ace385b48710876775e0dfac7a811e5f149da2d242f90372dd7",
+      "bytes": 2132
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/journey-status.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/journey-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/model-deltas.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/model-deltas.json",
+      "sha256": "8733e4406962f9914fad997ea549a632a1bce2a892a0a0c8b8da70f52b48dd54",
+      "bytes": 9425
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/onboarding-receipt.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/onboarding-receipt.json",
+      "sha256": "4a0d09adf992c1278a500f86e85831aa851356f5048ab9a37ad5a27fe24aaa25",
+      "bytes": 62
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/raster-measurements.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/raster-measurements.json",
+      "sha256": "284f4bc20f76b49f26f1f564b6b13bff3f69c05ce78329c9d025b68807cf3895",
+      "bytes": 50697
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/retained-bytes.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/retained-bytes.json",
+      "sha256": "5543af94e402c68fa62bc41d8b990cabc6dec686da228b0466c25ab86fde3551",
+      "bytes": 3173
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/run-status.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/run-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/runtime-identity.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/runtime-identity.json",
+      "sha256": "b3538cead9f4755f18105a6170bbb40ba5c6b1ddff7a0c313b5e9902d0d221af",
+      "bytes": 234
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/screenshots.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/screenshots.json",
+      "sha256": "35b6a6ed6b3bb6f9aba5590ee95820d200f5fb42868bee1ac4a17b0fb3c36db4",
+      "bytes": 384
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s10-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s10-after.json",
+      "sha256": "4322c14af709fb6e572fc2e45399bf1455281fd24531af9a1b43146534813975",
+      "bytes": 62138
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s10-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s10-before.json",
+      "sha256": "142b2067989afdf65d08678cc8e3af6bfc25921eb34b570adb6ee66e821faaf9",
+      "bytes": 64563
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s11-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s11-after.json",
+      "sha256": "ab8a5956f9cdf45c1ebf92b1659c48a08a124d04542bfa0edee9b4d573eb01c1",
+      "bytes": 61385
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s11-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s11-before.json",
+      "sha256": "4322c14af709fb6e572fc2e45399bf1455281fd24531af9a1b43146534813975",
+      "bytes": 62138
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s12-after.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s12-after.json",
+      "sha256": "a5608576300be44e502f84e5248de24cff1270bdc8ea11c10767060c5a2f8a3d",
+      "bytes": 70584
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s12-before.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s12-before.json",
+      "sha256": "37736eb5004f2a688628fe256c8b7f1a888f84e90f8dac8c4758abbc273f7c55",
+      "bytes": 64443
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/start-status.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/start-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/summary.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/summary.json",
+      "sha256": "88796155b717439abfa071f59d06559160807a3911153fb446110f5fa60d58cd",
+      "bytes": 595
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/verification.json",
+      "destination": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/verification.json",
+      "sha256": "b01716adfc3e1e92b57dbdaedf8d42e794e7065e66dfabc3a6156a5be6dbb1bc",
+      "bytes": 2788
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/commands.json",
+      "destination": "ui-parity-color-shadow/capture/commands.json",
+      "sha256": "9b59bf38a6f75a9b3992ac59a1df8b4f8421218943ad8314e0b4eec1064e851e",
+      "bytes": 2279
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/cleanup.mjs",
+      "destination": "ui-parity-color-shadow/capture/harness/cleanup.mjs",
+      "sha256": "99fe739ad9eba1f567563ba776fd9d8f77626f5260f95da4319e350e857d53e6",
+      "bytes": 1599
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/fixture.json",
+      "destination": "ui-parity-color-shadow/capture/harness/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/io.mjs",
+      "destination": "ui-parity-color-shadow/capture/harness/io.mjs",
+      "sha256": "3ec57999b81d8543fd8094ceaebd536ab64e69ddd6dbdf31ccdf7fa7a8c9a130",
+      "bytes": 715
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/journey.mjs",
+      "destination": "ui-parity-color-shadow/capture/harness/journey.mjs",
+      "sha256": "86a8645098e58313ec24126e571b25b5d0eb1418276e017b199640e46e6286b6",
+      "bytes": 13825
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/package.mjs",
+      "destination": "ui-parity-color-shadow/capture/harness/package.mjs",
+      "sha256": "38283eadc389f8fc6a7cdef4ec0f67c16c0d44d2084f2780a0b653b6f31691dc",
+      "bytes": 5000
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/projection.mjs",
+      "destination": "ui-parity-color-shadow/capture/harness/projection.mjs",
+      "sha256": "4ed7c1c55c000a5a7a084bcd4875c6e73c4ede3c3052c5ba0d615b3ccf6e82b6",
+      "bytes": 8372
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/raster.mjs",
+      "destination": "ui-parity-color-shadow/capture/harness/raster.mjs",
+      "sha256": "a77e427c408ee7095c612a3faf603d7e10084483f87b5b540cd5a8f138146da2",
+      "bytes": 4938
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/run.sh",
+      "destination": "ui-parity-color-shadow/capture/harness/run.sh",
+      "sha256": "ced46295160df0e05191ea4e8f5175dd4e2e3f0a0d18aa149ecee9ce3681ac5d",
+      "bytes": 1303
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/start.mjs",
+      "destination": "ui-parity-color-shadow/capture/harness/start.mjs",
+      "sha256": "be979ba818639ca863f22bb90dc92937c1ea2845a00379414c6d7daf50acdb81",
+      "bytes": 2305
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/static-check.mjs",
+      "destination": "ui-parity-color-shadow/capture/harness/static-check.mjs",
+      "sha256": "a0c00b801d1e0ace385b48710876775e0dfac7a811e5f149da2d242f90372dd7",
+      "bytes": 2132
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/verify.mjs",
+      "destination": "ui-parity-color-shadow/capture/harness/verify.mjs",
+      "sha256": "decb5d8aa050b2a2517a01f019f68d97e6e75a036f324bf0cba113296bc0addd",
+      "bytes": 8989
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/report.md",
+      "destination": "ui-parity-color-shadow/capture/report.md",
+      "sha256": "1e134259b6087b69d53b83e3a3352275ac1d5e323348d6d66707178a9207eb8e",
+      "bytes": 13104
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/plan.md",
+      "destination": "ui-parity-color-shadow/plan.md",
+      "sha256": "f4744865a05e913d3e5b4584f51ace6b40b11787b741afe284621aaa9a53cca9",
+      "bytes": 25134
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/source-hashes.json",
+      "destination": "ui-parity-color-shadow/source-hashes.json",
+      "sha256": "0fe5b67fdc222a431b6611b9427865b92bad3d2c6c6ee6a42c7e16508443a81f",
+      "bytes": 11771
+    }
+  ]
+}

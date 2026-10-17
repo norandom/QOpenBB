@@ -1,0 +1,335 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "from": "ui-parity-color-shadow-review/plan-review.md",
+      "target": "../ui-parity-color-shadow/plan.md",
+      "resolved": "ui-parity-color-shadow/plan.md",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow-review/plan-review.md",
+      "target": "verification.json",
+      "resolved": "ui-parity-color-shadow-review/verification.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "../../ui-parity-color-shadow-review/plan-review.md",
+      "resolved": "ui-parity-color-shadow-review/plan-review.md",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "../plan.md",
+      "resolved": "ui-parity-color-shadow/plan.md",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "../source-hashes.json",
+      "resolved": "ui-parity-color-shadow/source-hashes.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/runtime-identity.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/runtime-identity.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/action-ledger-public.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/action-ledger-public.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/events.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/events.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/model-deltas.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/model-deltas.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C01-baseline.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C01-baseline.png",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.png",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C02.s08-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C02.s11-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C02.s14-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C03-invalid-check.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03-invalid-check.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C03.s05-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C03.s06-after.png",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after.png",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C04.s03-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C04.s03-after.png",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.png",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C05.s03-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C05.s04-after.png",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after.png",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C06.s01-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C06.s01-after-region-2.png",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-2.png",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C07.s01-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C07.s01-after-region-2.png",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-2.png",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C08.s01-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C08.s01-after-region-2.png",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-2.png",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C09.s02-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C09.s02-after-region-2.png",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-2.png",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C09.s03-after.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/C09.s03-after-region-2.png",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-2.png",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/raster-measurements.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/raster-measurements.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/verification.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/verification.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/retained-bytes.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/retained-bytes.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a1/failure.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/failure.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a1/cleanup-report.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a1/cleanup-report.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/diagnostic-summary.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/diagnostic-summary.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/browser-cleanup.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/browser-cleanup.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/cleanup-report.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cleanup-report.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "publication-allowlist.json",
+      "resolved": "ui-parity-color-shadow/capture/publication-allowlist.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "commands.json",
+      "resolved": "ui-parity-color-shadow/capture/commands.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/harness/journey.mjs",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/journey.mjs",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/harness/fixture.json",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/fixture.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "attempt-20261017-r3-a2/harness/projection.mjs",
+      "resolved": "ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/projection.mjs",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/capture/report.md",
+      "target": "output-manifest.json",
+      "resolved": "ui-parity-color-shadow/capture/output-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "source-hashes.json",
+      "resolved": "ui-parity-color-shadow/source-hashes.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "../consuming-contract-freeze/session/editor-field-ledger.json",
+      "resolved": "consuming-contract-freeze/session/editor-field-ledger.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "../consuming-axis-grid-capture/report.md",
+      "resolved": "consuming-axis-grid-capture/report.md",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "../consuming-contract-freeze/appearance/draft.md",
+      "resolved": "consuming-contract-freeze/appearance/draft.md",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "../consuming-contract-freeze/appearance/proposed-types.ts",
+      "resolved": "consuming-contract-freeze/appearance/proposed-types.ts",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "../consuming-axis-grid-capture/fixture.json",
+      "resolved": "consuming-axis-grid-capture/fixture.json",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "../consuming-axis-grid-capture/start.mjs",
+      "resolved": "consuming-axis-grid-capture/start.mjs",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "../consuming-axis-grid-capture/journey.mjs",
+      "resolved": "consuming-axis-grid-capture/journey.mjs",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "../consuming-axis-grid-capture/run.sh",
+      "resolved": "consuming-axis-grid-capture/run.sh",
+      "exists": true
+    },
+    {
+      "from": "ui-parity-color-shadow/plan.md",
+      "target": "../consuming-axis-grid-capture/cleanup.mjs",
+      "resolved": "consuming-axis-grid-capture/cleanup.mjs",
+      "exists": true
+    }
+  ]
+}

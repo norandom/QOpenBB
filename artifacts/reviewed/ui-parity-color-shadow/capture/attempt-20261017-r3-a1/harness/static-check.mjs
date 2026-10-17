@@ -1,0 +1,24 @@
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {install} from './projection.mjs';
+const base=path.resolve(new URL('..',import.meta.url).pathname,'..');
+const expected='f4744865a05e913d3e5b4584f51ace6b40b11787b741afe284621aaa9a53cca9';
+const actual=createHash('sha256').update(fs.readFileSync(base+'/plan.md')).digest('hex');
+if(actual!==expected)throw Error('Frozen plan hash mismatch');
+globalThis.window={};install();const p=window.__color;
+const sample=p.series({shadow:{enabled:false,color:'rgba(249, 195, 61, 0.6)',blur:12,xOffset:-7,yOffset:9},fill:'#123abc'});
+if(sample.shadow.enabled.value!==false||sample.shadow.xOffset.value!==-7||sample.fill.value!=='#123abc')throw Error('Shadow projection failed');
+if(sample.marker.stroke.presence!=='absent'||sample.shadow.color.presence!=='value')throw Error('Presence projection failed');
+const inherited=Object.create({opacity:0.5});inherited.visible=false;
+const parent={visible:true,opacity:0.7,parentNode:inherited};
+const n=p.node({x:1,y:2,width:3,height:4,parentNode:parent,fillShadow:{enabled:false,blur:12}});
+if(n.parents.length!==2||n.parents[1].visible.value!==false||n.parents[1].opacity.own!==false)throw Error('parentNode ancestry failed');
+let refused=false;try{p.limit(Array(17),16,'test');}catch{refused=true;}if(!refused)throw Error('Bound overflow accepted');
+const temp=fs.mkdtempSync(path.join(os.tmpdir(),'qopenbb-r3-io-'));process.env.CAPTURE_ROOT=temp;
+try{const io=await import('./io.mjs');io.json('ledger',{long:'1234567890'});io.json('ledger',{x:1});
+  if(io.budget().retainedJsonBytes!==fs.statSync(temp+'/ledger.json').size)throw Error('Rewrite bytes accumulated');
+  let cap=false;try{io.json('large',{x:'a'.repeat(262144)},{snapshot:true});}catch{cap=true;}if(!cap)throw Error('Snapshot bound missing');
+}finally{fs.rmSync(temp,{recursive:true,force:true});}
+console.log(JSON.stringify({status:'passed',planSha256:actual,checks:['shadow-presence','parentNode-inherited-visibility','bounded-arrays','retained-byte-overwrite','checkpoint-cap'],runtimeExecuted:false}));

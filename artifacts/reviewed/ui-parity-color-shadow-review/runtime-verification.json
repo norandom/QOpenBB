@@ -1,0 +1,4447 @@
+{
+  "scope": "Independent offline original color/Shadow evidence and decoded-PNG audit; no runtime",
+  "checkCount": 1110,
+  "failed": [],
+  "checks": [
+    {
+      "name": "24-viewport-captures",
+      "passed": true
+    },
+    {
+      "name": "viewport:C01-baseline",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C01-baseline:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C01-baseline:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C01-baseline:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C01-baseline:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C02.s03-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C02.s04-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s04-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s04-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s04-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s04-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s04-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s04-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s04-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s04-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C02.s06-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s06-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s06-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s06-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s06-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s06-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s06-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s06-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s06-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C02.s08-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s08-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s08-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s08-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s08-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s08-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s08-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s08-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s08-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C02.s10-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s10-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s10-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s10-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s10-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s10-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s10-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s10-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s10-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C02.s11-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s11-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s11-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s11-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s11-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s11-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s11-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s11-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s11-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C02.s14-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s14-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s14-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s14-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s14-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s14-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s14-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C02.s14-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C02.s14-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C03.s03-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C03.s04-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s04-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s04-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s04-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s04-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s04-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s04-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s04-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s04-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C03.s05-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s05-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s05-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s05-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s05-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s05-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s05-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s05-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s05-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C03.s06-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s06-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s06-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s06-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s06-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s06-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s06-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C03.s06-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C03.s06-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C04.s03-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C04.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C04.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C04.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C04.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C04.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C04.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C04.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C04.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C05.s02-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C05.s03-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C05.s04-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s04-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s04-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s04-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s04-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s04-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s04-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C05.s04-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C05.s04-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C06.s01-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C06.s01-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C06.s01-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C06.s01-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C06.s01-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C06.s01-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C06.s01-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C06.s01-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C06.s01-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C06.s02-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C06.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C06.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C06.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C06.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C06.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C06.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C06.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C06.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C07.s01-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C07.s01-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C07.s01-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C07.s01-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C07.s01-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C07.s01-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C07.s01-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C07.s01-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C07.s01-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C07.s02-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C07.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C07.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C07.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C07.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C07.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C07.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C07.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C07.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C08.s01-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C08.s01-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C08.s01-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C08.s01-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C08.s01-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C08.s01-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C08.s01-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C08.s01-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C08.s01-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C08.s02-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C08.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C08.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C08.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C08.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C08.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C08.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C08.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C08.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C09.s02-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C09.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C09.s02-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C09.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C09.s02-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C09.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C09.s02-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C09.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C09.s02-after:3",
+      "passed": true
+    },
+    {
+      "name": "viewport:C09.s03-after",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C09.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C09.s03-after:0",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C09.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C09.s03-after:1",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C09.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C09.s03-after:2",
+      "passed": true
+    },
+    {
+      "name": "lossless-crop:C09.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "pixel-count:C09.s03-after:3",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C01-axis-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C01-axis-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C01-axis-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C01-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C01-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C01-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C01-grid-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C01-grid-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C01-grid-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C01.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C01.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C01.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C01.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C01.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C01.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C01.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C01.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C01.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C01.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C01.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C01.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C01.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C01.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C01.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C01.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C01.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C01.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s07-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s07-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s07-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s07-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s07-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s07-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s08-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s08-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s08-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s08-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s08-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s08-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s09-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s09-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s09-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s09-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s09-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s09-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s13-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s13-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s13-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s13-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s13-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s13-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s14-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s14-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s14-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C02.s14-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C02.s14-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C02.s14-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C03.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C03.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C03.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C04.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C04.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C04.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C04.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C04.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C04.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C04.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C04.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C04.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C04.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C04.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C04.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C04.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C04.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C04.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C04.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C04.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C04.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C05.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C05.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C05.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C05.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C05.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C05.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C05.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C05.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C05.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C05.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C05.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C05.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C05.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C05.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C05.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C05.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C05.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C05.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C05.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C05.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C05.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C05.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C05.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C05.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C06.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C06.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C06.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C06.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C06.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C06.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C06.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C06.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C06.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C06.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C06.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C06.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C07.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C07.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C07.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C07.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C07.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C07.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C07.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C07.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C07.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C07.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C07.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C07.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C08.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C08.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C08.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C08.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C08.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C08.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C08.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C08.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C08.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C08.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C08.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C08.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C09.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C09.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C09.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C09.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C09.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C09.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C09.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C09.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C09.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C09.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C09.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C09.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C09.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C09.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C09.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:C09.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:C09.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:C09.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:setup.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:setup.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:setup.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:setup.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:setup.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:setup.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:setup.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:setup.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:setup.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:setup.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:setup.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:setup.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:setup.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:setup.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:setup.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "finite-cardinality:setup.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "typed-ancestry:setup.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "settled-bound:setup.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "axis-alpha",
+      "passed": true
+    },
+    {
+      "name": "grid-alpha",
+      "passed": true
+    },
+    {
+      "name": "invalid-no-event",
+      "passed": true
+    },
+    {
+      "name": "complete-shadow:C08.s02-after",
+      "passed": true
+    },
+    {
+      "name": "complete-shadow:C09.s02-after",
+      "passed": true
+    },
+    {
+      "name": "complete-shadow:C09.s03-after",
+      "passed": true
+    },
+    {
+      "name": "same-restored-halo",
+      "passed": true
+    },
+    {
+      "name": "conservative-mutations",
+      "passed": true
+    },
+    {
+      "name": "three-open-events",
+      "passed": true
+    },
+    {
+      "name": "no-grid-opacity",
+      "passed": true
+    },
+    {
+      "name": "cleanup:1",
+      "passed": true
+    },
+    {
+      "name": "identity:1",
+      "passed": true
+    },
+    {
+      "name": "cleanup:2",
+      "passed": true
+    },
+    {
+      "name": "identity:2",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow-review/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow-review/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow-review/plan-review.md",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow-review/plan-review.md",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow-review/verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow-review/verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/raster.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/raster.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a1/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-axis-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-axis-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-baseline.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-grid-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01-grid-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C01.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s07-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s07-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s07-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s07-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s08-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s09-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s09-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s09-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s09-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s13-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s13-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s13-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s13-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C02.s14-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03-invalid-check.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03-invalid-check.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s05-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C03.s06-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C04.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C05.s04-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C06.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C07.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C08.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s01-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s02-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-0.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-1.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after-region-3.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/C09.s03-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cases.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cases.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/events.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/events.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/raster.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/raster.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/model-deltas.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/model-deltas.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/onboarding-receipt.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/onboarding-receipt.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/raster-measurements.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/raster-measurements.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/retained-bytes.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/retained-bytes.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s10-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s10-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s11-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s12-after.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/setup.s12-before.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/summary.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/attempt-20261017-r3-a2/verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/commands.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/commands.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/package.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/package.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/raster.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/raster.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/plan.md",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/plan.md",
+      "passed": true
+    },
+    {
+      "name": "safe:artifacts/ui-parity-color-shadow/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-color-shadow/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:../../ui-parity-color-shadow-review/plan-review.md",
+      "passed": true
+    },
+    {
+      "name": "link-exists:../plan.md",
+      "passed": true
+    },
+    {
+      "name": "link-exists:../source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/events.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/events.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/model-deltas.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/model-deltas.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C01-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C01-baseline.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C01-baseline.png",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C01-baseline.png",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C02.s08-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C02.s08-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C02.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C02.s11-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C02.s14-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C02.s14-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C03-invalid-check.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C03-invalid-check.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C03.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C03.s05-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C03.s06-after.png",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C03.s06-after.png",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C04.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C04.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C04.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C04.s03-after.png",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C05.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C05.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C05.s04-after.png",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C05.s04-after.png",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C06.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C06.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C06.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C06.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C07.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C07.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C07.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C07.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C08.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C08.s01-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C08.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C08.s01-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C09.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C09.s02-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C09.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C09.s02-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C09.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C09.s03-after.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/C09.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/C09.s03-after-region-2.png",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/raster-measurements.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/raster-measurements.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/verification.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/verification.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/retained-bytes.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/retained-bytes.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:commands.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:commands.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "link-exists:attempt-20261017-r3-a2/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "link-included:attempt-20261017-r3-a2/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "link-exists:output-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "link-included:output-manifest.json",
+      "passed": true
+    }
+  ]
+}

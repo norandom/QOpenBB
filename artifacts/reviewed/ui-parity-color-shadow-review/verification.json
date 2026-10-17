@@ -1,0 +1,167 @@
+{
+  "scope": "Independent source-only preflight audit; no runtime",
+  "checkCount": 40,
+  "failed": [],
+  "checks": [
+    {
+      "name": "file:AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "file:.kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "file:.kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "file:.kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "file:.kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "file:.kiro/steering/ci.md",
+      "passed": true
+    },
+    {
+      "name": "file:.agents/skills/kiro-verify-completion/SKILL.md",
+      "passed": true
+    },
+    {
+      "name": "file:.kiro/specs/openbb-self-service/spec.json",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-contract-freeze/appearance/locked-echarts-targets.json",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-axis-grid-capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-axis-grid-capture/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-axis-grid-capture/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-axis-grid-capture/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-axis-grid-capture/run.sh",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-axis-grid-capture/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-axis-grid-capture/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-axis-grid-capture/baseline.json",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/consuming-axis-grid-review/report.md",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/parity/editor-runtime-next/report.md",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/parity/editor-runtime-next/focused/Series-default.json",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/parity/editor-runtime-next/focused/Horizontal-Axis-default.json",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/reviewed/parity/editor-contract-close/source-analysis.md",
+      "passed": true
+    },
+    {
+      "name": "file:artifacts/ui-parity-color-shadow/plan.md",
+      "passed": true
+    },
+    {
+      "name": "file:/mnt/d/Source/QOpenBB/artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/package.json",
+      "passed": true
+    },
+    {
+      "name": "file:/mnt/d/Source/QOpenBB/artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.cjs.js",
+      "passed": true
+    },
+    {
+      "name": "file:/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-grid-community/package.json",
+      "passed": true
+    },
+    {
+      "name": "file:/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-grid-community/dist/package/main.cjs.js",
+      "passed": true
+    },
+    {
+      "name": "file:/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/package.json",
+      "passed": true
+    },
+    {
+      "name": "file:/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/dist/package/main.cjs.js",
+      "passed": true
+    },
+    {
+      "name": "blob:terminalpro/package.json",
+      "passed": true
+    },
+    {
+      "name": "blob:terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "passed": true
+    },
+    {
+      "name": "blob:terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "passed": true
+    },
+    {
+      "name": "blob:terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+      "passed": true
+    },
+    {
+      "name": "nine-cases",
+      "passed": true
+    },
+    {
+      "name": "alpha-left",
+      "passed": true
+    },
+    {
+      "name": "no-candidate-runtime",
+      "passed": true
+    }
+  ]
+}
