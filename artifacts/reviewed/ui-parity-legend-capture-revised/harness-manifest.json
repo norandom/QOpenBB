@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "status": "source-only-ready-for-independent-review",
+  "runtimeExecuted": false,
+  "candidateExecuted": false,
+  "plan": {
+    "path": "artifacts/ui-parity-legend-plan-revised/plan.md",
+    "sha256": "5a33a0237eb351df5a7a6060da2aff5c83379f89999c4a4ca82faa40c92e29ef"
+  },
+  "review": {
+    "path": "artifacts/ui-parity-legend-collector-review/review.md",
+    "sha256": "ed14a3ba2909ebf103df20ee5459a1923ec3e3a7d3cc65f1f9902fd8d4daabb7"
+  },
+  "baseline": {
+    "source": "artifacts/ui-parity-legend-capture/harness",
+    "manifest": {
+      "path": "baseline-source-manifest.json",
+      "bytes": 3377,
+      "sha256": "9c6400819ba8d711829ba6abcc1c8b6ace2da1cd554ca01db7ea2627cb9ae1b3"
+    }
+  },
+  "originalSource": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "initialFrozenUnchanged": true,
+  "sourceInputs": [
+    {
+      "path": "artifacts/ui-parity-legend-collector-review/review.md",
+      "sha256": "ed14a3ba2909ebf103df20ee5459a1923ec3e3a7d3cc65f1f9902fd8d4daabb7",
+      "bytes": 10109
+    },
+    {
+      "path": "artifacts/ui-parity-legend-collector-review/review-checks.mjs",
+      "sha256": "ebb6c34eb404f7f709e71f27d4f935120d2ad8e6118456a48f884b2fc2cec274",
+      "bytes": 7357
+    },
+    {
+      "path": "artifacts/ui-parity-legend-plan-revision-review/review.md",
+      "sha256": "86926ccfe2a119c39c19bdd6553ffc32f880d85eb92c880d317e8e9e2d54e395",
+      "bytes": 6350
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/harness/journey.mjs",
+      "sha256": "8d55aa8f47f0ecf5dfe103feef6bd6b99a9c9caef93a87b8bc1545710f347aeb",
+      "bytes": 18240
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/harness/cleanup.mjs",
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "bytes": 2652
+    }
+  ],
+  "files": [
+    {
+      "path": "harness/browser-process.mjs",
+      "bytes": 1810,
+      "sha256": "20ee3f7e83704bdf94349456d67b39db9b95ad09ea3c603dc291164cbf8d8145"
+    },
+    {
+      "path": "harness/cases.mjs",
+      "bytes": 3842,
+      "sha256": "11d0af588c03ff183aa359085f24bdff3933c21d3aa63365ab0cd3d3384148d5"
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "bytes": 3209,
+      "sha256": "3ae57b16ae4f94f14ebd613a83e8165eae67a6624b6cfbfb168df5e32aaa351d"
+    },
+    {
+      "path": "harness/controls.mjs",
+      "bytes": 2529,
+      "sha256": "bdc21f1d2631380d7e15c3b9a3d45ff8487973acf60956a66eef6837fdcb942a"
+    },
+    {
+      "path": "harness/event-drain.mjs",
+      "bytes": 732,
+      "sha256": "079aae1138d0497aa2913d753dc422f6223bc4d0fcea8b9d5344343bed56b697"
+    },
+    {
+      "path": "harness/events.mjs",
+      "bytes": 1118,
+      "sha256": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752"
+    },
+    {
+      "path": "harness/final-status.mjs",
+      "bytes": 724,
+      "sha256": "b64430456ef8a8631cd4c2c5b3b7dacbda2d08223273402cd3a26e3df7179df1"
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "bytes": 1103,
+      "sha256": "29fa8e988e56f6bb4d399bbcb8864186370b7de9b936fd8a0252b76267372413"
+    },
+    {
+      "path": "harness/fixture.json",
+      "bytes": 2187,
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    },
+    {
+      "path": "harness/geometry.mjs",
+      "bytes": 2198,
+      "sha256": "cb2bf483bf92d4f2fd7239b61252b7adf3c2eb7e8fb62e7c2315bf3511a5cd02"
+    },
+    {
+      "path": "harness/guards.mjs",
+      "bytes": 2662,
+      "sha256": "7194a715c1b4b2076026964020c6d9402538f9fb0abb806311baa30e9c529416"
+    },
+    {
+      "path": "harness/io.mjs",
+      "bytes": 4928,
+      "sha256": "56dff7838bef0f2fb69105a9ed404d0c7ad1d13d7d4865d9622258007d82e0b5"
+    },
+    {
+      "path": "harness/journey.mjs",
+      "bytes": 17363,
+      "sha256": "758f963fd12719753e908577f43761bfff5bef36141480d39a4bbecd6d75ac35"
+    },
+    {
+      "path": "harness/limits.mjs",
+      "bytes": 844,
+      "sha256": "cedba8cbd09d3e4e4d9778ae471eb4c5a54fd29697f47db711b8e4c961f73aac"
+    },
+    {
+      "path": "harness/network.mjs",
+      "bytes": 1802,
+      "sha256": "fdcc198a917f198ed56963286f2297d29d59c8abde6a9622662570c8cdac80a2"
+    },
+    {
+      "path": "harness/projection.mjs",
+      "bytes": 13870,
+      "sha256": "db33988d792d17f266a082773dfb969617a49336d39f557d98311703d541e343"
+    },
+    {
+      "path": "harness/routes.mjs",
+      "bytes": 1451,
+      "sha256": "17cab218f39ac11282ef6a2c6a10ef3676f06f251af7af9da3c72a6cc95f25ea"
+    },
+    {
+      "path": "harness/run.sh",
+      "bytes": 1687,
+      "sha256": "b90955f5a99460d89b37e49a1b3184f35627512cf294ce23cfacf6e1932a4525"
+    },
+    {
+      "path": "harness/settlement.mjs",
+      "bytes": 2028,
+      "sha256": "86537e797076cfe32232c5ec6da1415ca9eab0073ee74cb6c1a0d9707a7058d1"
+    },
+    {
+      "path": "harness/start.mjs",
+      "bytes": 3568,
+      "sha256": "b021bf4eeb8472ae2740a2d576fdd0d083f46aa38cd94a51a408bd32655336f1"
+    },
+    {
+      "path": "harness/status.mjs",
+      "bytes": 246,
+      "sha256": "a87c43387c9e78872fc19154f7f1164920927e843c12053186fb6034a4ad0f17"
+    }
+  ]
+}

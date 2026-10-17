@@ -1,0 +1,49 @@
+{
+  "scope": "Source reads only; reviewed BrowserServer PID/startticks pattern adapted locally, no external file changes",
+  "runtimeExecuted": false,
+  "localInputs": [
+    {
+      "path": "artifacts/ui-parity-legend-collector-review/review.md",
+      "sha256": "ed14a3ba2909ebf103df20ee5459a1923ec3e3a7d3cc65f1f9902fd8d4daabb7",
+      "bytes": 10109
+    },
+    {
+      "path": "artifacts/ui-parity-legend-collector-review/review-checks.mjs",
+      "sha256": "ebb6c34eb404f7f709e71f27d4f935120d2ad8e6118456a48f884b2fc2cec274",
+      "bytes": 7357
+    },
+    {
+      "path": "artifacts/ui-parity-legend-plan-revision-review/review.md",
+      "sha256": "86926ccfe2a119c39c19bdd6553ffc32f880d85eb92c880d317e8e9e2d54e395",
+      "bytes": 6350
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/harness/journey.mjs",
+      "sha256": "8d55aa8f47f0ecf5dfe103feef6bd6b99a9c9caef93a87b8bc1545710f347aeb",
+      "bytes": 18240
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/harness/cleanup.mjs",
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "bytes": 2652
+    }
+  ],
+  "webSources": [
+    {
+      "url": "https://docs.docker.com/reference/cli/docker/network/create/#network-internal-mode---internal",
+      "readOn": "2026-10-17",
+      "claim": "Internal networks omit a default route and filter inter-network traffic; host-gateway access remains possible."
+    },
+    {
+      "url": "https://docs.docker.com/engine/network/drivers/bridge/",
+      "readOn": "2026-10-17",
+      "claim": "Bridge networks support published ports."
+    },
+    {
+      "url": "https://docs.docker.com/engine/network/port-publishing/",
+      "readOn": "2026-10-17",
+      "claim": "127.0.0.1 publication restricts access to the Docker host."
+    }
+  ],
+  "topologyTestExecuted": false
+}

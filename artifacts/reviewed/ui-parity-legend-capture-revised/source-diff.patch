@@ -1,0 +1,367 @@
+diff --git a/harness/browser-process.mjs b/harness/browser-process.mjs
+new file mode 100644
+index 0000000..3066194
+--- /dev/null
++++ b/harness/browser-process.mjs
+@@ -0,0 +1,25 @@
++import fs from 'node:fs';
++// Parse after the closing comm parenthesis; command names can contain spaces.
++export function parseStat(text){
++  const end=text.lastIndexOf(')'),pid=Number(text.slice(0,text.indexOf(' '))),fields=text.slice(end+2).trim().split(/\s+/);
++  if(end<0||!Number.isSafeInteger(pid)||pid<=1||fields.length<20||!/^\d+$/.test(fields[19]))throw Error('browser-identity-unresolved: proc stat');
++  return {pid,startTicks:fields[19]};
++}
++export function readProcess(pid,disk=fs){
++  if(!Number.isSafeInteger(pid)||pid<=1)throw Error('browser-identity-unresolved: PID');
++  try{return parseStat(disk.readFileSync('/proc/'+pid+'/stat','utf8'));}catch(error){if(error.code==='ENOENT')return null;throw error;}
++}
++export function ownershipState(owned,current){
++  if(!owned||!Number.isSafeInteger(owned.pid)||owned.pid<=1||!/^\d+$/.test(owned.startTicks))throw Error('browser-identity-unresolved: missing owned identity');
++  if(!current)return 'absent';
++  if(current.pid!==owned.pid||current.startTicks!==owned.startTicks)throw Error('browser-identity-unresolved: PID reused');return 'owned-present';
++}
++export async function cleanupBrowser(owned,{read=readProcess,kill=(pid,signal)=>process.kill(pid,signal),now=Date.now,pause=ms=>new Promise(r=>setTimeout(r,ms))}={}){
++  const state=()=>ownershipState(owned,read(owned.pid));let matched=false,terminated=false;
++  if(state()==='owned-present'){
++    matched=true;kill(owned.pid,'SIGTERM');terminated=true;const deadline=now()+5000;
++    while(state()==='owned-present'&&now()<deadline)await pause(100);
++    if(state()==='owned-present'){kill(owned.pid,'SIGKILL');await pause(250);}
++  }
++  const absent=state()==='absent';return {identityRecorded:true,pid:owned.pid,startTicks:owned.startTicks,identityMatched:matched,terminated,browserProcessAbsent:absent};
++}
+diff --git a/baseline/cleanup.mjs b/harness/cleanup.mjs
+index 2a8aa2d..d491702 100644
+--- a/baseline/cleanup.mjs
++++ b/harness/cleanup.mjs
+@@ -2,20 +2,33 @@ import fs from 'node:fs';
+ import path from 'node:path';
+ import {execFileSync} from 'node:child_process';
+ import {root,json} from './io.mjs';
++import {ownerLabel,networkOwnership,ownedNetworkIds} from './network.mjs';
++import {cleanupBrowser} from './browser-process.mjs';
+ const docker=(...args)=>execFileSync('docker',args,{encoding:'utf8',timeout:10000,stdio:['ignore','pipe','pipe'],windowsHide:true});
+ const runtime=fs.existsSync(root+'/runtime-private.json')?JSON.parse(fs.readFileSync(root+'/runtime-private.json')):null;
+-let containerAbsent=true,stateAbsent=true;
++let containerAbsent=true,stateAbsent=true,networkAbsent=false,browserProof={identityRecorded:false,browserProcessAbsent:false},browserError=null;
++const browserFile=root+'/owned-browser-private.json';
++try{if(!fs.existsSync(browserFile))throw Error('browser-identity-unresolved: missing receipt');browserProof=await cleanupBrowser(JSON.parse(fs.readFileSync(browserFile)));}
++catch(error){browserError=String(error.message).slice(0,512);}
+ if(runtime){
+   if(!/^qopenbb-legend-20261017-[a-f0-9]{10}$/.test(runtime.name))throw Error('Unsafe container name');
+   const state=path.resolve(runtime.statePath);
+   if(path.dirname(state)!==path.resolve(root)||!/^state-[a-f0-9]{12}$/.test(path.basename(state)))throw Error('Unsafe state path');
+   const found=docker('ps','-a','--no-trunc','--filter','name=^/'+runtime.name+'$','--format','{{.ID}}').trim();
+-  if(found){if(runtime.container&&found!==runtime.container)throw Error('Container ID mismatch');docker('rm','-f',found);}
++  if(found){if(runtime.container&&found!==runtime.container)throw Error('Container ID mismatch');
++    const actual=JSON.parse(docker('inspect',found))[0];if(actual?.Config?.Labels?.[ownerLabel]!==runtime.ownership)throw Error('Container ownership label mismatch');docker('rm','-f',found);}
+   fs.rmSync(state,{recursive:true,force:true});stateAbsent=!fs.existsSync(state);
+   containerAbsent=!docker('ps','-a','--filter','name=^/'+runtime.name+'$','--format','{{.Names}}').trim();
++  if(runtime.networkName!==runtime.name+'-net'||!/^qopenbb-legend-20261017-[a-f0-9]{10}-net$/.test(runtime.networkName))throw Error('Unsafe network name');
++  const ids=ownedNetworkIds(docker,runtime);
++  if(ids.length){const network=JSON.parse(docker('network','inspect',ids[0]))[0];
++    if(runtime.networkId&&runtime.networkId!==ids[0])throw Error('Network ID mismatch');
++    networkOwnership({...runtime,networkId:ids[0]},network);
++    if(Object.keys(network.Containers??{}).length)throw Error('Owned network still has attached containers');docker('network','rm',ids[0]);}
++  networkAbsent=ownedNetworkIds(docker,runtime).length===0;
+ }
+ fs.rmSync(root+'/credential-private.json',{force:true});
+ const credentialAbsent=!fs.existsSync(root+'/credential-private.json');
+ const remainingOwnedState=fs.readdirSync(root).filter(name=>/^state-[a-f0-9]{12}$/.test(name));
+-json('cleanup-report',{status:containerAbsent&&stateAbsent&&credentialAbsent&&!remainingOwnedState.length?'cleaned':'cleanup-unverified',containerAbsent,stateAbsent,credentialAbsent,remainingOwnedState});
+-if(!containerAbsent||!stateAbsent||!credentialAbsent||remainingOwnedState.length)throw Error('Cleanup incomplete');
++json('cleanup-report',{status:containerAbsent&&stateAbsent&&networkAbsent&&browserProof.browserProcessAbsent&&credentialAbsent&&!remainingOwnedState.length&&!browserError?'cleaned':'cleanup-unverified',containerAbsent,stateAbsent,networkAbsent,credentialAbsent,remainingOwnedState,browser:browserProof,browserError});
++if(!containerAbsent||!stateAbsent||!networkAbsent||!browserProof.browserProcessAbsent||browserError||!credentialAbsent||remainingOwnedState.length)throw Error('Cleanup incomplete');
+diff --git a/harness/event-drain.mjs b/harness/event-drain.mjs
+new file mode 100644
+index 0000000..db620f8
+--- /dev/null
++++ b/harness/event-drain.mjs
+@@ -0,0 +1,8 @@
++export function acceptDrain(envelope,{save,persist,expected=null}){
++  if(!envelope||!Array.isArray(envelope.events)||envelope.events.length>256)throw Error('event-drain-unresolved: envelope');
++  save(envelope.events);
++  if(envelope.overflow){persist('event-overflow',envelope.overflow);throw Error('event-overflow: '+String(envelope.overflow.reason??'unknown').slice(0,512));}
++  const count=envelope.events.length;
++  if(expected!==null&&count!==expected){persist('late-events',{expectedSettledSequence:expected,actualDrainedSequence:count,status:'late-events-unresolved'});throw Error('late-events-unresolved: settled '+expected+' drained '+count);}
++  return {count,overflow:null,listenerRemoved:envelope.listenerRemoved===true};
++}
+diff --git a/harness/final-status.mjs b/harness/final-status.mjs
+new file mode 100644
+index 0000000..11b1689
+--- /dev/null
++++ b/harness/final-status.mjs
+@@ -0,0 +1,6 @@
++export function assessFinal({incoming,cleanup,browser,eventDrain,eventOverflow,lateEvents,failure}){
++  const cleanupVerified=cleanup?.status==='cleaned'&&cleanup?.networkAbsent===true&&cleanup?.browser?.identityRecorded===true&&cleanup?.browser?.browserProcessAbsent===true&&browser?.browserIdentityRecorded===true&&browser?.browserClosed===true&&browser?.contextClosed===true&&!browser?.closeError;
++  const eventAccountingVerified=!eventOverflow&&!lateEvents&&eventDrain?.verified===true&&!failure;
++  const status=cleanupVerified?(incoming===0&&eventAccountingVerified?'observed':'capture-failed'):'cleanup-unverified';
++  return {exitCode:incoming,status,cleanupVerified,eventAccountingVerified,candidateExecuted:false};
++}
+diff --git a/baseline/finalize.mjs b/harness/finalize.mjs
+index a268ea3..c357437 100644
+--- a/baseline/finalize.mjs
++++ b/harness/finalize.mjs
+@@ -1,11 +1,10 @@
+ import fs from 'node:fs';
+ import {json,budget,reconcile,root,limits} from './io.mjs';
++import {assessFinal} from './final-status.mjs';
+ const incoming=Number(process.argv[2]);if(!Number.isInteger(incoming))throw Error('Final status required');
+ const read=name=>fs.existsSync(root+'/'+name+'.json')?JSON.parse(fs.readFileSync(root+'/'+name+'.json')):null;
+-const cleanup=read('cleanup-report'),browser=read('browser-cleanup');
+-const cleaned=cleanup?.status==='cleaned'&&browser?.browserClosed===true&&browser?.contextClosed===true&&!browser?.closeError;
+-const status=cleaned?(incoming===0?'observed':'capture-failed'):'cleanup-unverified';
++const result=assessFinal({incoming,cleanup:read('cleanup-report'),browser:read('browser-cleanup'),eventDrain:read('final-event-drain'),eventOverflow:read('event-overflow'),lateEvents:read('late-events'),failure:read('failure')});
+ const inventory=budget();for(const entry of inventory.entries){if(entry.path.endsWith('.json')&&entry.bytes>limits.json)throw Error('Final JSON bound');if(entry.path.endsWith('.png')&&entry.bytes>limits.png)throw Error('Final PNG bound');}
+ json('final-output-inventory',{scope:'Retained public outputs; excludes this receipt and subsequent status',inventory});
+-json('run-status',{exitCode:incoming,status,cleanupVerified:cleaned,candidateExecuted:false});reconcile();
+-console.log(JSON.stringify({status,retained:budget()}));if(!cleaned||incoming!==0)process.exitCode=1;
++json('run-status',result);reconcile();
++console.log(JSON.stringify({status:result.status,retained:budget()}));if(result.status!=='observed')process.exitCode=1;
+diff --git a/baseline/journey.mjs b/harness/journey.mjs
+index 82a7631..6969724 100644
+--- a/baseline/journey.mjs
++++ b/harness/journey.mjs
+@@ -10,17 +10,20 @@ import {settle} from './settlement.mjs';
+ import {controlTools} from './controls.mjs';
+ import {assertFixture,arranged} from './guards.mjs';
+ import {executeCases} from './cases.mjs';
++import {registerRoutes} from './routes.mjs';
++import {readProcess,ownershipState} from './browser-process.mjs';
++import {acceptDrain} from './event-drain.mjs';
+ const runtime=JSON.parse(fs.readFileSync(root+'/runtime-private.json')),credential=JSON.parse(fs.readFileSync(root+'/credential-private.json'));
+ const cases=[],ledger=[],menus=[],raster=[],diagnostics=[],records=[],caseIds=Array.from({length:8},(_,i)=>'L0'+(i+1));
+ const eventStore=createEventStore(json),pictures=new Map(),geometry=geometryTools();
+-let browser,context,page,ready=false,phase='admission',actions=0,admission=0,changes=0,observations=0,baseline=null,fixedPlot=null,fixedLegend=null,caseDeadline=Infinity,journeyDeadline=Infinity,caseTimer,journeyTimer;
++let browser,browserServer,browserIdentity=null,journeyComplete=false,lastSettledSequence=null,context,page,ready=false,phase='admission',actions=0,admission=0,changes=0,observations=0,baseline=null,fixedPlot=null,fixedLegend=null,caseDeadline=Infinity,journeyDeadline=Infinity,caseTimer,journeyTimer;
+ const counts={console:0,pageerror:0,network:0,externalDenied:0,cdp:0};
+ const clean=value=>String(value).replaceAll(runtime.origin,'[owned-origin]').replaceAll(credential.email,'[synthetic-account]').replaceAll(credential.password,'[redacted]').slice(0,512);
+ const record=(kind,value)=>{if(records.length>=256)throw Error('record-bound');records.push({case:phase,kind,...value});json('case-records',records);};
+ function diagnostic(kind,value){counts[kind]=(counts[kind]??0)+1;if(diagnostics.length<20)diagnostics.push({kind,...value});}
+ const assert=(condition,message)=>{if(!condition)throw Error(message);};
+ function guardTime(){if(Date.now()>=caseDeadline)throw Error('not-run-budget: case deadline');if(Date.now()>=journeyDeadline)throw Error('not-run-budget: journey deadline');}
+-async function collectEvents(){if(ready&&!page.isClosed()){const events=await page.evaluate(()=>window.__legend.events);eventStore.save(events);}}
++async function collectEvents(expected=null,final=false){if(ready&&!page.isClosed()){const envelope=await page.evaluate(final=>window.__legend.drain(final),final);return acceptDrain(envelope,{save:eventStore.save,persist:json,expected});}if(ready)throw Error('event-drain-unresolved: page closed');}
+ function counters(){json('counters',{phase,admission,actions,changes,observations,pngs:raster.length,events:eventStore.count(),remainingMs:Math.max(0,journeyDeadline-Date.now()),retained:check()});}
+ function saveActions(){
+   const files=[];for(let i=0;i<ledger.length;i+=16)files.push('actions-p'+String(i/16).padStart(2,'0')+'.json');
+@@ -51,23 +54,23 @@ async function checkpoint(label,image=false){
+   const snapshot=result.snapshot;assertFixture(snapshot,baseline);snapshot.canvasGeometry=geometry.convert(snapshot.live.scene);
+   snapshot.canvasGeometry.gap=geometry.gap(snapshot.canvasGeometry.legend,geometry.box(snapshot.geometry.seriesRect),snapshot.effective.position.value);
+   const id='o'+String(++observations).padStart(3,'0'),state={id,case:phase,label,actions,eventSequence:snapshot.eventSequence,snapshot,settled:result.settled};
+-  if(image)await screenshot(state);json('observation-'+id,state);await collectEvents();return state;
++  if(image)await screenshot(state);json('observation-'+id,state);await collectEvents(snapshot.eventSequence);lastSettledSequence=snapshot.eventSequence;return state;
+ }
+ const targetState=async target=>target&&await target.count()===1?target.evaluate(n=>({tag:n.tagName,type:n.type??null,value:n.type==='password'?null:n.value??null,checked:n.checked??null,text:n.type==='password'?null:n.textContent?.trim().slice(0,512),controls:n.getAttribute('aria-controls')})):null;
+ async function step(label,target,method,arg,{authentication=false,potentialMutation=false,raster:wantRaster=false}={}){
+   guardTime();if(ready){assert(changes<limits.changes,'field mutation cap');actions=increment(actions,limits.actions,'chart action');}else admission=increment(admission,limits.admission,'admission action');
+   const id=(ready?'c':'a')+(ready?actions:admission),before=ready?await checkpoint(label+' before'):null;
+   const entry={id,case:phase,label,method,arg:authentication?'[omitted]':arg??null,completed:false,before:authentication?null:await targetState(target),beforeObservation:before?.id??null,eventFirst:eventStore.count()+1};
+-  if(before&&(wantRaster||potentialMutation)){await screenshot(before);json('observation-'+before.id,before);}
++  if(before&&(wantRaster||potentialMutation)){await screenshot(before);json('observation-'+before.id,before);await collectEvents(before.eventSequence);}
+   ledger.push(entry);saveActions();if(ready)await page.evaluate(id=>{window.__legend.action=id;window.__legend.actionEvents=0;},id);
+   try{if(target)await target[method](arg);else await page[method](arg);entry.completed=true;entry.after=authentication?null:await targetState(target);
+-    if(ready){const after=await checkpoint(label+' after');entry.afterObservation=after.id;
++    if(ready){const after=await checkpoint(label+' after');entry.afterObservation=after.id;entry.settledEventLast=after.eventSequence;
+       const changed=JSON.stringify(before.snapshot.model.chartOptions)!==JSON.stringify(after.snapshot.model.chartOptions);entry.actualFieldMutation=changed;
+       if(changed){changes=increment(changes,limits.changes,'field mutation');if(!potentialMutation)entry.unexpectedMutation=true;}
+       if(wantRaster||changed){assert(before.raster,'raster-unresolved: missing prospective before capture');await screenshot(after);json('observation-'+after.id,after);entry.raster={before:before.raster,after:after.raster};}
+     }
+   }catch(error){entry.error=clean(error.message);throw error;}
+-  finally{try{await collectEvents();}finally{entry.eventLast=eventStore.count();saveActions();counters();}}
++  finally{try{await collectEvents(entry.settledEventLast??null);}finally{entry.eventLast=entry.settledEventLast??null;entry.drainedEventLast=eventStore.count();entry.intervalConsistent=entry.eventLast!==null&&entry.eventLast===entry.drainedEventLast;saveActions();counters();}}
+ }
+ let controls;
+ async function menu(name,selection){
+@@ -92,11 +95,8 @@ async function runCase(id,fn){phase=id;caseDeadline=Math.min(Date.now()+limits.c
+   catch(error){item.status=error.message.startsWith('not-run-budget')?'not-run-budget':error.message.split(':')[0];item.reason=clean(error.message);throw error;}
+   finally{clearTimeout(caseTimer);item.elapsedMs=Date.now()-started;json('case-'+id,item);if(['L01','L04','L08'].includes(id))counters();}}
+ async function admissionJourney(){
+-  await page.route('**/*',route=>{const url=new URL(route.request().url());if(url.origin===runtime.origin)return route.continue();diagnostic('externalDenied',{scheme:url.protocol});return route.abort();});
+-  await page.route('**/api/pro/dash/{sync,validate-and-sync}',async route=>{if(route.request().method()!=='GET')return route.continue();const response=await route.fetch(),actual=await response.json();
+-    const fixture=JSON.parse(fs.readFileSync(new URL('./fixture.json',import.meta.url),'utf8').replaceAll('http://127.0.0.1:32773',runtime.origin));
+-    return route.fulfill({json:{...actual,owned:Object.fromEntries(Object.entries(fixture).map(([key,content])=>[key,{content,is_shared:false,created_by:'Synthetic Parity',created_date:'2026-10-17T00:00:00Z',updated_date:'2026-10-17T00:00:00Z'}])),shared:{},entity_shared:{}}});});
+-  await page.route('**/synthetic_financials',route=>route.fulfill({json:rows}));
++  const fixture=JSON.parse(fs.readFileSync(new URL('./fixture.json',import.meta.url),'utf8').replaceAll('http://127.0.0.1:32773',runtime.origin));
++  await registerRoutes({context,runtime,fixture,rows,diagnostic});
+   await step('Login navigation',null,'goto',runtime.origin);await step('Email',page.getByLabel('Email',{exact:true}),'fill',credential.email,{authentication:true});
+   await step('Password',page.getByLabel('Password',{exact:true}),'fill',credential.password,{authentication:true});await step('Login',page.getByRole('button',{name:'Login',exact:true}),'click');
+   await page.waitForURL(u=>!['/','/login'].includes(u.pathname),{timeout:4000});
+@@ -119,8 +119,11 @@ async function admissionJourney(){
+ }
+ try{
+   const env={...process.env};delete env.WAYLAND_DISPLAY;
+-  browser=await chromium.launch({headless:true,env,args:['--ozone-platform=headless','--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader']});
+-  context=await browser.newContext({viewport:{width:1440,height:1000},deviceScaleFactor:1});page=await context.newPage();page.setDefaultTimeout(4000);page.setDefaultNavigationTimeout(4000);controls=controlTools(page,step);
++  browserServer=await chromium.launchServer({headless:true,env,args:['--ozone-platform=headless','--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader']});
++  browserIdentity=readProcess(browserServer.process().pid);if(!browserIdentity)throw Error('browser-identity-unresolved: launched process missing');
++  fs.writeFileSync(root+'/owned-browser-private.json',JSON.stringify(browserIdentity),{mode:0o600});
++  browser=await chromium.connect(browserServer.wsEndpoint());
++  context=await browser.newContext({serviceWorkers:'block',viewport:{width:1440,height:1000},deviceScaleFactor:1});page=await context.newPage();page.setDefaultTimeout(4000);page.setDefaultNavigationTimeout(4000);controls=controlTools(page,step);
+   const cdp=await context.newCDPSession(page);await cdp.send('Runtime.enable');await cdp.send('Network.enable');
+   page.on('console',m=>{if(['error','warning'].includes(m.type()))diagnostic('console',{type:m.type()});});page.on('pageerror',()=>diagnostic('pageerror',{}));
+   page.on('response',r=>{if(r.status()>=400){const u=new URL(r.url());if(u.origin===runtime.origin)diagnostic('network',{path:clean(u.pathname),status:r.status()});}});
+@@ -128,12 +131,18 @@ try{
+   const admissionTimer=setTimeout(()=>page.close().catch(()=>{}),Math.max(1,runtime.startedAt+limits.startup-Date.now()));
+   try{await admissionJourney();}finally{clearTimeout(admissionTimer);}
+   phase='L01';journeyDeadline=Math.min(Date.now()+limits.journey,runtime.startedAt+limits.inputStop);journeyTimer=setTimeout(()=>page.close().catch(()=>{}),Math.max(1,journeyDeadline-Date.now()));
+-  await executeCases({controls,step,menu,number,checkpoint,runCase,record,arranged});json('summary',{status:'observed',candidateExecuted:false,cases,actions,changes,observations});
++  await executeCases({controls,step,menu,number,checkpoint,runCase,record,arranged});journeyComplete=true;
+ }catch(error){json('failure',{case:phase,reason:clean(error.message),actions,changes,observations});process.exitCode=1;
+ }finally{
+   clearTimeout(caseTimer);clearTimeout(journeyTimer);let closeError=null;
+-  try{await collectEvents();if(ready&&!page.isClosed())await page.evaluate(()=>window.__legendGrid.removeEventListener('chartOptionsChanged',window.__legend.listener));}catch(e){closeError=clean(e.message);}
+-  ready=false;await context?.close().catch(e=>{closeError??=clean(e.message);});await browser?.close().catch(e=>{closeError??=clean(e.message);});
++  let finalDrain=null;try{finalDrain=await collectEvents(lastSettledSequence,true);}catch(e){closeError=clean(e.message);process.exitCode=1;json('failure',{case:phase,reason:closeError,stage:'final-event-drain'});}
++  ready=false;
++  const bounded=async fn=>{let timer;try{await Promise.race([fn(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Browser close deadline')),5000);})]);}catch(e){closeError??=clean(e.message);}finally{clearTimeout(timer);}};
++  try{if(context)await bounded(()=>context.close());}finally{try{if(browser)await bounded(()=>browser.close());}finally{if(browserServer)await bounded(()=>browserServer.close());}}
++  let browserProcessAbsent=false;try{browserProcessAbsent=ownershipState(browserIdentity,readProcess(browserIdentity?.pid))==='absent';}catch(e){closeError??=clean(e.message);}
++  if(!browserProcessAbsent||closeError)process.exitCode=1;
++  json('final-event-drain',{verified:finalDrain?.listenerRemoved===true&&finalDrain?.overflow===null,...finalDrain});
++  json('summary',{status:journeyComplete&&!process.exitCode?'observed':'capture-failed',candidateExecuted:false,cases,actions,changes,observations});
+   for(const id of caseIds)if(!cases.some(c=>c.id===id))json('case-'+id,{id,status:'not-run-budget',dependency:phase});
+-  json('diagnostics',{counts,records:diagnostics});json('browser-cleanup',{browserClosed:!browser?.isConnected(),contextClosed:!page||page.isClosed(),listenerRemovedOrDisposed:!page||page.isClosed(),closeError});counters();reconcile();
++  json('diagnostics',{counts,records:diagnostics});json('browser-cleanup',{browserClosed:!browser?.isConnected(),contextClosed:!page||page.isClosed(),listenerRemovedOrDisposed:finalDrain?.listenerRemoved===true,browserIdentityRecorded:!!browserIdentity,browserProcessAbsent,closeError});counters();reconcile();
+ }
+diff --git a/harness/network.mjs b/harness/network.mjs
+new file mode 100644
+index 0000000..34e0c80
+--- /dev/null
++++ b/harness/network.mjs
+@@ -0,0 +1,21 @@
++export const ownerLabel='org.qopenbb.capture.owner';
++export function networkOwnership(runtime,network){
++  if(network?.Id!==runtime.networkId||network?.Name!==runtime.networkName||network?.Labels?.[ownerLabel]!==runtime.ownership)throw Error('network-isolation-unresolved: network ownership');
++}
++export function networkGuard(runtime,network){
++  networkOwnership(runtime,network);
++  if(network?.Driver!=='bridge'||network?.Internal!==true||network?.EnableIPv6!==false)throw Error('network-isolation-unresolved: internal owned bridge');
++  return {internal:true,driver:network.Driver,ipv6:false,owned:true};
++}
++export function containerNetworkGuard(runtime,container){
++  const networks=container?.NetworkSettings?.Networks,keys=Object.keys(networks??{}),ports=container?.NetworkSettings?.Ports?.['3000/tcp'];
++  if(container?.Id!==runtime.container||container?.Config?.Labels?.[ownerLabel]!==runtime.ownership||keys.length!==1||keys[0]!==runtime.networkName||networks[keys[0]].NetworkID!==runtime.networkId)throw Error('network-isolation-unresolved: extra or wrong attached network');
++  if(!Array.isArray(ports)||ports.length!==1||ports[0].HostIp!=='127.0.0.1'||!/^\d+$/.test(ports[0].HostPort))throw Error('network-isolation-unresolved: loopback publication');
++  return {onlyOwnedNetwork:true,loopbackOnly:true,port:ports[0].HostPort};
++}
++export function ownedNetworkIds(docker,runtime){
++  const lines=docker('network','ls','--no-trunc','--filter','name='+runtime.networkName,'--format','{{.ID}} {{.Name}}').trim().split('\n').filter(Boolean);
++  if(lines.length>4)throw Error('Owned network listing bound');
++  const matches=lines.map(line=>line.trim().split(/\s+/)).filter(([,name])=>name===runtime.networkName);
++  if(matches.length>1)throw Error('Ambiguous owned network');return matches.map(([id])=>id);
++}
+diff --git a/baseline/projection.mjs b/harness/projection.mjs
+index 6cf99d1..9d3e267 100644
+--- a/baseline/projection.mjs
++++ b/harness/projection.mjs
+@@ -96,5 +96,6 @@ export function acquire(){
+       for(const key of Object.keys(a??{}))walk(a[key],b?.[key],path?path+'.'+key:key);};walk(projection,previous,'');
+     p.events.push({sequence:p.events.length+1,action:p.action,identity:p.pick(e,['type','chartId','chartType','chartThemeName']),chartOptions:projection,deltas});p.lastOptions=projection;p.caseEvents++;p.actionEvents++;
+   }catch(error){p.overflow={reason:error.message,action:p.action};}};
++  p.drain=final=>{if(final)api.removeEventListener('chartOptionsChanged',p.listener);return {events:p.events.slice(),overflow:p.overflow?{...p.overflow}:null,listenerRemoved:!!final};};
+   api.addEventListener('chartOptionsChanged',p.listener);return {model:p.model(models[0]),receipts};
+ }
+diff --git a/harness/routes.mjs b/harness/routes.mjs
+new file mode 100644
+index 0000000..b36b4e5
+--- /dev/null
++++ b/harness/routes.mjs
+@@ -0,0 +1,18 @@
++// Context routes include popups; every specialized callback rechecks origin itself.
++export async function registerRoutes({context,runtime,fixture,rows,diagnostic}){
++  async function allowed(route){
++    let url;try{url=new URL(route.request().url());}catch{diagnostic('externalDenied',{invalidURL:true});await route.abort();return false;}
++    if(url.origin===runtime.origin)return true;
++    diagnostic('externalDenied',{scheme:url.protocol});await route.abort();return false;
++  }
++  await context.route('**/*',async route=>{if(await allowed(route))return route.continue();});
++  await context.route('**/api/pro/dash/{sync,validate-and-sync}',async route=>{
++    if(!await allowed(route))return;
++    if(route.request().method()!=='GET')return route.continue();
++    const response=await route.fetch({maxRedirects:0,timeout:4000});
++    if(new URL(response.url()).origin!==runtime.origin||response.status()>=300&&response.status()<400){await route.abort();throw Error('traffic-unresolved: sync redirect');}
++    const actual=await response.json();
++    return route.fulfill({json:{...actual,owned:Object.fromEntries(Object.entries(fixture).map(([key,content])=>[key,{content,is_shared:false,created_by:'Synthetic Parity',created_date:'2026-10-17T00:00:00Z',updated_date:'2026-10-17T00:00:00Z'}])),shared:{},entity_shared:{}}});
++  });
++  await context.route('**/synthetic_financials',async route=>{if(await allowed(route))return route.fulfill({json:rows});});
++}
+diff --git a/baseline/settlement.mjs b/harness/settlement.mjs
+index a1418cb..2b3da0b 100644
+--- a/baseline/settlement.mjs
++++ b/harness/settlement.mjs
+@@ -3,19 +3,21 @@ export async function settle({waitForUpdate,sample,now=Date.now,pause=ms=>new Pr
+   let timer;
+   try{await Promise.race([waitForUpdate(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('settlement-unresolved: waitForUpdate deadline')),Math.min(updateMs,deadlineMs));})]);}
+   finally{clearTimeout(timer);}
+-  let prior=null,last=null,accepted=null,count=0,invalidCount=0;
++  let prior=null,last=null,accepted=null,count=0,invalidCount=0,lastInvalid=null;
++  const invalidDiagnostic=()=>({invalidCount,lastInvalid,omittedEarlierInvalidSamples:Math.max(0,invalidCount-1)});
+   while(count<maxSamples&&now()<deadline){
+     const at=now();let sampleTimer,value;
+     try{value=await Promise.race([sample(),new Promise((_,reject)=>{sampleTimer=setTimeout(()=>reject(Error('settlement-unresolved: sample deadline')),Math.max(1,deadline-now()));})]);}
++    catch(error){error.diagnostic={count,elapsedMs:now()-started,last,...invalidDiagnostic()};throw error;}
+     finally{clearTimeout(sampleTimer);}
+     count++;last={at,value};
+     if(value.valid&&value.animationActive===false){
+       const signature=JSON.stringify({live:value.live,geometry:value.geometry,effective:value.effective,fonts:value.fonts});
+       if(prior&&prior.signature===signature&&at-prior.at>=100){accepted=[prior,last];break;}
+       prior={at,value,signature};
+-    }else{prior=null;if(value.reason==='bbox-getter-operands-changed')invalidCount++;}
++    }else{prior=null;if(value.reason==='bbox-getter-operands-changed'){invalidCount++;lastInvalid={sampleIndex:count,at,reason:value.reason,operands:value.operands};}}
+     if(count<maxSamples&&now()+100<deadline)await pause(110);else break;
+   }
+-  if(!accepted||now()>deadline){const error=Error('settlement-unresolved: finite sample deadline');error.diagnostic={count,elapsedMs:now()-started,invalidCount,last};throw error;}
+-  return {snapshot:accepted[1].value,settled:{pair:accepted.map(x=>({at:x.at,operands:x.value.operands,animationActive:x.value.animationActive})),count,elapsedMs:now()-started,invalidCount}};
++  if(!accepted||now()>deadline){const error=Error('settlement-unresolved: finite sample deadline');error.diagnostic={count,elapsedMs:now()-started,last,...invalidDiagnostic()};throw error;}
++  return {snapshot:accepted[1].value,settled:{pair:accepted.map(x=>({at:x.at,operands:x.value.operands,animationActive:x.value.animationActive})),count,elapsedMs:now()-started,...invalidDiagnostic()}};
+ }
+diff --git a/baseline/start.mjs b/harness/start.mjs
+index 8ed7221..1cf9d87 100644
+--- a/baseline/start.mjs
++++ b/harness/start.mjs
+@@ -3,31 +3,38 @@ import path from 'node:path';
+ import {randomBytes} from 'node:crypto';
+ import {execFileSync} from 'node:child_process';
+ import {root,json} from './io.mjs';
++import {ownerLabel,networkGuard,containerNetworkGuard} from './network.mjs';
+ const docker=(...args)=>execFileSync('docker',args,{encoding:'utf8',timeout:10000,stdio:['ignore','pipe','pipe'],windowsHide:true});
+ const image='sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f';
+ const source='38dffc33389aca0e4a87e0e88d42f7067aa220df';
+-if(path.resolve(root)!==fs.realpathSync(root)||!/^attempt-[A-Za-z0-9-]+$/.test(path.basename(root))||path.basename(path.dirname(root))!=='ui-parity-legend-capture')throw Error('Canonical owned attempt required');
++if(path.resolve(root)!==fs.realpathSync(root)||!/^attempt-[A-Za-z0-9-]+$/.test(path.basename(root))||path.basename(path.dirname(root))!=='ui-parity-legend-capture-revised')throw Error('Canonical owned attempt required');
+ if(JSON.parse(docker('image','inspect',image,'--format','{{json .Id}}'))!==image||
+   docker('image','inspect',image,'--format','{{index .Config.Labels "org.qopenbb.source.workspace"}}').trim()!==source)throw Error('Image mismatch');
+ if(fs.existsSync(root+'/runtime-private.json'))throw Error('Previous runtime receipt exists');
+ const startedAt=Number(process.env.ATTEMPT_STARTED_MS);if(!Number.isFinite(startedAt)||Date.now()-startedAt>180000)throw Error('Startup deadline');
+ const name='qopenbb-legend-20261017-'+randomBytes(5).toString('hex');
++const networkName=name+'-net',ownership=randomBytes(12).toString('hex');
+ const statePath=root+'/state-'+randomBytes(6).toString('hex');
+ const credential={email:'legend-controls-'+randomBytes(6).toString('hex')+'@example.com',password:'Aa1!'+randomBytes(24).toString('hex')};
+ fs.mkdirSync(statePath);fs.writeFileSync(root+'/credential-private.json',JSON.stringify(credential),{mode:0o600});
+-const runtime={name,statePath,image,source,startedAt,ownedProcessId:process.pid,container:null,origin:null,health:null};
++const runtime={name,statePath,image,source,startedAt,ownedProcessId:process.pid,ownership,networkName,networkId:null,container:null,origin:null,health:null};
+ const save=()=>fs.writeFileSync(root+'/runtime-private.json',JSON.stringify(runtime),{mode:0o600});save();
+-runtime.container=docker('run','-d','--name',name,'--mount',`type=bind,src=${statePath},dst=/data`,
++runtime.networkId=docker('network','create','--driver','bridge','--internal','--label',ownerLabel+'='+ownership,networkName).trim();save();
++const networkReceipt=networkGuard(runtime,JSON.parse(docker('network','inspect',runtime.networkId))[0]);
++runtime.container=docker('run','-d','--name',name,'--network',networkName,'--dns','127.0.0.1','--label',ownerLabel+'='+ownership,'--mount',`type=bind,src=${statePath},dst=/data`,
++  '-e','HTTP_PROXY=','-e','HTTPS_PROXY=','-e','ALL_PROXY=','-e','http_proxy=','-e','https_proxy=','-e','all_proxy=',
+   '-p','127.0.0.1::3000','-e',`OPENBB_ADMIN_PASSWORD=${credential.password}`,'-e','PUBLIC_URL=http://localhost',
+   '-e',`OPENBB_ADMIN_EMAIL=${credential.email}`,image).trim();save();
+ const deadline=Math.min(Date.now()+90000,startedAt+180000);
++let publication=null;
+ while(Date.now()<deadline){
+-  const ports=JSON.parse(docker('inspect',runtime.container,'--format','{{json .NetworkSettings.Ports}}'));
+-  const port=ports['3000/tcp']?.[0]?.HostPort;
++  networkGuard(runtime,JSON.parse(docker('network','inspect',runtime.networkId))[0]);
++  publication=containerNetworkGuard(runtime,JSON.parse(docker('inspect',runtime.container))[0]);
++  const port=publication.port;
+   if(port){runtime.origin='http://127.0.0.1:'+port;try{
+-    if((await fetch(runtime.origin+'/api/health',{signal:AbortSignal.timeout(2000)})).status===200){runtime.health=200;break;}
++    if((await fetch(runtime.origin+'/api/health',{redirect:'error',signal:AbortSignal.timeout(2000)})).status===200){runtime.health=200;break;}
+   }catch{}}
+   await new Promise(resolve=>setTimeout(resolve,500));
+ }
+-save();json('runtime-identity',{image,source,health:runtime.health,isolation:{freshRandomAccount:true,disposableState:true,dynamicLoopback:true}});
++save();json('runtime-identity',{image,source,health:runtime.health,isolation:{freshRandomAccount:true,disposableState:true,dynamicLoopback:true,network:networkReceipt,publication,loopbackHealthProbed:runtime.health===200}});
+ if(runtime.health!==200)throw Error('Readiness deadline exceeded');

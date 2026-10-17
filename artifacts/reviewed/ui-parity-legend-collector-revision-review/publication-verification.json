@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-17",
+  "collectorFiles": 51,
+  "collectorBytes": 233276,
+  "allHashesAndByteLengthsMatch": true,
+  "links": [
+    {
+      "from": "artifacts/ui-parity-legend-capture-revised/plan.md",
+      "target": "artifacts/ui-parity-legend-collector-review/review.md",
+      "coverage": "existing reviewed dependency"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-capture-revised/plan.md",
+      "target": "artifacts/ui-parity-legend-plan-revised/plan.md",
+      "coverage": "existing reviewed dependency"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-capture-revised/plan.md",
+      "coverage": "selected"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-capture-revised/handoff.md",
+      "coverage": "selected"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-capture-revised/source-diff.patch",
+      "coverage": "selected"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-capture-revised/provenance.json",
+      "coverage": "selected"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-collector-review/review.md",
+      "coverage": "existing reviewed dependency"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-plan-revised/plan.md",
+      "coverage": "existing reviewed dependency"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-capture-revised/harness/routes.mjs",
+      "coverage": "selected"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-collector-revision-review/verification.json",
+      "coverage": "selected"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-collector-revision-review/review-checks.mjs",
+      "coverage": "selected"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-collector-revision-review/reviewed-collector-publication-allowlist.json",
+      "coverage": "selected"
+    },
+    {
+      "from": "artifacts/ui-parity-legend-collector-revision-review/review.md",
+      "target": "artifacts/ui-parity-legend-collector-revision-review/publication-allowlist.json",
+      "coverage": "selected"
+    }
+  ],
+  "secretInspection": "Only source-generated disposable credential references; no generated credentials or raw runtime state selected.",
+  "runtimeExecuted": false,
+  "status": "Safe blocked-source publication only; B01 remains open"
+}
