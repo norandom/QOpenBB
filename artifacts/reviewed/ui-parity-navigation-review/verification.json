@@ -1,0 +1,1939 @@
+{
+  "scope": "Independent offline audit; no runtime replay or candidate acceptance",
+  "checkCount": 483,
+  "failed": [],
+  "checks": [
+    {
+      "name": "safe-path:run-20261017-r1-a1/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/failure-capture.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/failure-capture.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/run.sh",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a1/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a1/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/N01-table-initial.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/N01-table-initial.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/N01-table-initial.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/N01-table-initial.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/checkpoints.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/checkpoints.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/failure-state.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/failure-state.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/failure-state.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/failure-state.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/failure.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/failure.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/run.sh",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a2/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a2/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/N01-table-initial.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/N01-table-initial.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/N01-table-initial.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/N01-table-initial.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/N01-table-pre-entry.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/N01-table-pre-entry.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/N01-table-pre-entry.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/N01-table-pre-entry.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/checkpoints.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/checkpoints.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/failure-state.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/failure-state.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/failure-state.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/failure-state.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/failure.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/failure.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/run.sh",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a3/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a3/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N01-chart-entered.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N01-chart-entered.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N01-chart-entered.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N01-chart-entered.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N01-click-selection-observed.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N01-click-selection-observed.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N01-click-selection-observed.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N01-click-selection-observed.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N01-table-initial.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N01-table-initial.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N01-table-initial.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N01-table-initial.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N01-table-pre-entry.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N01-table-pre-entry.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N01-table-pre-entry.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N01-table-pre-entry.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N02-Chart.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N02-Chart.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N02-Chart.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N02-Chart.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N02-Customize-prepared.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N02-Customize-prepared.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N02-Customize-prepared.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N02-Customize-prepared.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N02-Set-Up.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N02-Set-Up.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N02-Set-Up.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N02-Set-Up.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N03-closed.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N03-closed.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N03-closed.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N03-closed.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N03-immediate-closed.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N03-immediate-closed.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N03-immediate-closed.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N03-immediate-closed.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N03-pre-close.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N03-pre-close.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N03-pre-close.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N03-pre-close.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N04-pre-reopen.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N04-pre-reopen.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N04-pre-reopen.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N04-pre-reopen.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N04-reopened.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N04-reopened.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N04-reopened.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N04-reopened.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N05-closed.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N05-closed.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N05-closed.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N05-closed.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N05-pre-close.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N05-pre-close.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N05-pre-close.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N05-pre-close.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N05-reopened.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N05-reopened.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N05-reopened.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N05-reopened.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N06-closed.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N06-closed.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N06-closed.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N06-closed.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N06-pre-close.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N06-pre-close.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N06-pre-close.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N06-pre-close.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N06-reopened.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N06-reopened.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N06-reopened.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N06-reopened.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N07-dark-pre.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N07-dark-pre.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N07-dark-pre.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N07-dark-pre.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N07-light-immediate.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N07-light-immediate.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N07-light-immediate.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N07-light-immediate.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N07-light.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N07-light.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N07-light.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N07-light.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N08-dark-immediate.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N08-dark-immediate.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N08-dark-immediate.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N08-dark-immediate.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N08-dark.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N08-dark.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N08-dark.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N08-dark.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N08-light-pre.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N08-light-pre.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N08-light-pre.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N08-light-pre.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N09-column-pre.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N09-column-pre.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N09-column-pre.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N09-column-pre.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N09-line-Customize.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N09-line-Customize.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N09-line-Customize.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N09-line-Customize.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N09-line-untouched.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N09-line-untouched.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N09-line-untouched.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N09-line-untouched.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N10-column-Customize.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N10-column-Customize.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N10-column-Customize.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N10-column-Customize.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N10-column-untouched.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N10-column-untouched.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N10-column-untouched.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N10-column-untouched.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N10-line-pre.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N10-line-pre.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N10-line-pre.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N10-line-pre.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N11-chart-pre.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N11-chart-pre.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N11-chart-pre.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N11-chart-pre.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N11-table-first.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N11-table-first.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N11-table-first.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N11-table-first.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N11-table-restored.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N11-table-restored.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N11-table-restored.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N11-table-restored.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N11-table-stable.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N11-table-stable.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N11-table-stable.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N11-table-stable.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N12-chart-untouched.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N12-chart-untouched.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N12-chart-untouched.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N12-chart-untouched.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N12-table-pre.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N12-table-pre.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/N12-table-pre.png",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/N12-table-pre.png",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/cases.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/cases.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/checkpoints.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/checkpoints.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/run.sh",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/selection-discriminator.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/selection-discriminator.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/summary.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/summary.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:run-20261017-r1-a4/table-width-comparison.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:run-20261017-r1-a4/table-width-comparison.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:plan.md",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:plan.md",
+      "passed": true
+    },
+    {
+      "name": "safe-path:attempt-a1-diagnosis.md",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:attempt-a1-diagnosis.md",
+      "passed": true
+    },
+    {
+      "name": "safe-path:attempt-a2-diagnosis.md",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:attempt-a2-diagnosis.md",
+      "passed": true
+    },
+    {
+      "name": "safe-path:attempt-a3-diagnosis.md",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:attempt-a3-diagnosis.md",
+      "passed": true
+    },
+    {
+      "name": "safe-path:report.md",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:report.md",
+      "passed": true
+    },
+    {
+      "name": "safe-path:manifest.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:manifest.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe-path:source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "safe-path:verification.json",
+      "passed": true
+    },
+    {
+      "name": "publication-hash:verification.json",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/components/Widget.context.tsx",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/components/DraggableCard/DraggableCard.tsx",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/components/General/Table/AgGrid.tsx",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/components/General/Table/utils.tsx",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/components/General/Table/hooks/useTableContext.tsx",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/components/General/Table/hooks/useUpdateColumnState.ts",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/hooks/useAuthKeyPresses.tsx",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/components/Settings/GeneralTab.tsx",
+      "passed": true
+    },
+    {
+      "name": "source-hash:terminalpro/src/index.css",
+      "passed": true
+    },
+    {
+      "name": "identities",
+      "passed": true
+    },
+    {
+      "name": "cleanup:1",
+      "passed": true
+    },
+    {
+      "name": "attempt-exit:1",
+      "passed": true
+    },
+    {
+      "name": "failure-retained:1",
+      "passed": true
+    },
+    {
+      "name": "cleanup:2",
+      "passed": true
+    },
+    {
+      "name": "attempt-exit:2",
+      "passed": true
+    },
+    {
+      "name": "failure-retained:2",
+      "passed": true
+    },
+    {
+      "name": "cleanup:3",
+      "passed": true
+    },
+    {
+      "name": "attempt-exit:3",
+      "passed": true
+    },
+    {
+      "name": "failure-retained:3",
+      "passed": true
+    },
+    {
+      "name": "cleanup:4",
+      "passed": true
+    },
+    {
+      "name": "attempt-exit:4",
+      "passed": true
+    },
+    {
+      "name": "12-ordered-cases",
+      "passed": true
+    },
+    {
+      "name": "36-checkpoints",
+      "passed": true
+    },
+    {
+      "name": "source-values:N01-table-initial",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N01-table-initial",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N01-table-initial",
+      "passed": true
+    },
+    {
+      "name": "source-values:N01-click-selection-observed",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N01-click-selection-observed",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N01-click-selection-observed",
+      "passed": true
+    },
+    {
+      "name": "source-values:N01-table-pre-entry",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N01-table-pre-entry",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N01-table-pre-entry",
+      "passed": true
+    },
+    {
+      "name": "source-values:N01-chart-entered",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N01-chart-entered",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N01-chart-entered",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N01-chart-entered",
+      "passed": true
+    },
+    {
+      "name": "source-values:N02-Chart",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N02-Chart",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N02-Chart",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N02-Chart",
+      "passed": true
+    },
+    {
+      "name": "source-values:N02-Set-Up",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N02-Set-Up",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N02-Set-Up",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N02-Set-Up",
+      "passed": true
+    },
+    {
+      "name": "source-values:N02-Customize-prepared",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N02-Customize-prepared",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N02-Customize-prepared",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N02-Customize-prepared",
+      "passed": true
+    },
+    {
+      "name": "source-values:N03-pre-close",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N03-pre-close",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N03-pre-close",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N03-pre-close",
+      "passed": true
+    },
+    {
+      "name": "source-values:N03-immediate-closed",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N03-immediate-closed",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N03-immediate-closed",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N03-immediate-closed",
+      "passed": true
+    },
+    {
+      "name": "source-values:N03-closed",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N03-closed",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N03-closed",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N03-closed",
+      "passed": true
+    },
+    {
+      "name": "source-values:N04-pre-reopen",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N04-pre-reopen",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N04-pre-reopen",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N04-pre-reopen",
+      "passed": true
+    },
+    {
+      "name": "source-values:N04-reopened",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N04-reopened",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N04-reopened",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N04-reopened",
+      "passed": true
+    },
+    {
+      "name": "source-values:N05-pre-close",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N05-pre-close",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N05-pre-close",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N05-pre-close",
+      "passed": true
+    },
+    {
+      "name": "source-values:N05-closed",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N05-closed",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N05-closed",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N05-closed",
+      "passed": true
+    },
+    {
+      "name": "source-values:N05-reopened",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N05-reopened",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N05-reopened",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N05-reopened",
+      "passed": true
+    },
+    {
+      "name": "source-values:N06-pre-close",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N06-pre-close",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N06-pre-close",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N06-pre-close",
+      "passed": true
+    },
+    {
+      "name": "source-values:N06-closed",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N06-closed",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N06-closed",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N06-closed",
+      "passed": true
+    },
+    {
+      "name": "source-values:N06-reopened",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N06-reopened",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N06-reopened",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N06-reopened",
+      "passed": true
+    },
+    {
+      "name": "source-values:N07-dark-pre",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N07-dark-pre",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N07-dark-pre",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N07-dark-pre",
+      "passed": true
+    },
+    {
+      "name": "source-values:N07-light-immediate",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N07-light-immediate",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N07-light-immediate",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N07-light-immediate",
+      "passed": true
+    },
+    {
+      "name": "source-values:N07-light",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N07-light",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N07-light",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N07-light",
+      "passed": true
+    },
+    {
+      "name": "source-values:N08-light-pre",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N08-light-pre",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N08-light-pre",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N08-light-pre",
+      "passed": true
+    },
+    {
+      "name": "source-values:N08-dark-immediate",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N08-dark-immediate",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N08-dark-immediate",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N08-dark-immediate",
+      "passed": true
+    },
+    {
+      "name": "source-values:N08-dark",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N08-dark",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N08-dark",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N08-dark",
+      "passed": true
+    },
+    {
+      "name": "source-values:N09-column-pre",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N09-column-pre",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N09-column-pre",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N09-column-pre",
+      "passed": true
+    },
+    {
+      "name": "source-values:N09-line-untouched",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N09-line-untouched",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N09-line-untouched",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N09-line-untouched",
+      "passed": true
+    },
+    {
+      "name": "source-values:N09-line-Customize",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N09-line-Customize",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N09-line-Customize",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N09-line-Customize",
+      "passed": true
+    },
+    {
+      "name": "source-values:N10-line-pre",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N10-line-pre",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N10-line-pre",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N10-line-pre",
+      "passed": true
+    },
+    {
+      "name": "source-values:N10-column-untouched",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N10-column-untouched",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N10-column-untouched",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N10-column-untouched",
+      "passed": true
+    },
+    {
+      "name": "source-values:N10-column-Customize",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N10-column-Customize",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N10-column-Customize",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N10-column-Customize",
+      "passed": true
+    },
+    {
+      "name": "source-values:N11-chart-pre",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N11-chart-pre",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N11-chart-pre",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N11-chart-pre",
+      "passed": true
+    },
+    {
+      "name": "source-values:N11-table-first",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N11-table-first",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N11-table-first",
+      "passed": true
+    },
+    {
+      "name": "source-values:N11-table-restored",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N11-table-restored",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N11-table-restored",
+      "passed": true
+    },
+    {
+      "name": "source-values:N11-table-stable",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N11-table-stable",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N11-table-stable",
+      "passed": true
+    },
+    {
+      "name": "source-values:N12-table-pre",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N12-table-pre",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N12-table-pre",
+      "passed": true
+    },
+    {
+      "name": "source-values:N12-chart-untouched",
+      "passed": true
+    },
+    {
+      "name": "budget-complete:N12-chart-untouched",
+      "passed": true
+    },
+    {
+      "name": "tabs-honestly-absent:N12-chart-untouched",
+      "passed": true
+    },
+    {
+      "name": "actual-full-resolved-data:N12-chart-untouched",
+      "passed": true
+    },
+    {
+      "name": "selection-discriminator",
+      "passed": true
+    },
+    {
+      "name": "width-scroll-restoration",
+      "passed": true
+    },
+    {
+      "name": "dock-scroll-and-focus",
+      "passed": true
+    },
+    {
+      "name": "direct-theme-observed",
+      "passed": true
+    },
+    {
+      "name": "new-chart-reentry",
+      "passed": true
+    }
+  ]
+}

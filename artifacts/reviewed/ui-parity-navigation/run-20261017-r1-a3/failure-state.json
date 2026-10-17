@@ -1,0 +1,400 @@
+{
+  "sourceRows": [
+    {
+      "id": "0",
+      "period": "2024-Q1",
+      "revenue": 100,
+      "operatingIncome": 20
+    },
+    {
+      "id": "1",
+      "period": "2024-Q2",
+      "revenue": 120,
+      "operatingIncome": 25
+    },
+    {
+      "id": "2",
+      "period": "2024-Q3",
+      "revenue": 140,
+      "operatingIncome": 30
+    },
+    {
+      "id": "3",
+      "period": "2024-Q4",
+      "revenue": 160,
+      "operatingIncome": 40
+    }
+  ],
+  "columnState": [
+    {
+      "colId": "period",
+      "width": 282,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    },
+    {
+      "colId": "revenue",
+      "width": 347,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    },
+    {
+      "colId": "operatingIncome",
+      "width": 281,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    }
+  ],
+  "rootStorage": {
+    "chartSettingsOpen": {
+      "own": false
+    },
+    "chartType": {
+      "own": false
+    },
+    "totalSeries": {
+      "own": false
+    },
+    "isPivotMode": {
+      "own": false
+    },
+    "chartView": {
+      "own": false
+    },
+    "chartOptions": {
+      "own": false
+    },
+    "chartModel": null,
+    "partitions": []
+  },
+  "chart": null,
+  "table": {
+    "focusedCell": {
+      "rowIndex": 2,
+      "rowPinned": null
+    },
+    "ranges": [],
+    "state": {
+      "scroll": {
+        "top": 0,
+        "left": 65
+      },
+      "focusedCell": {
+        "colId": "operatingIncome",
+        "rowIndex": 2,
+        "rowPinned": null
+      }
+    },
+    "cells": [
+      {
+        "row": "0",
+        "column": "period",
+        "text": "2024-Q1",
+        "rect": {
+          "x": 208.3125,
+          "y": 89,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "0",
+        "column": "revenue",
+        "text": "100",
+        "rect": {
+          "x": 490.3125,
+          "y": 89,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "0",
+        "column": "operatingIncome",
+        "text": "20",
+        "rect": {
+          "x": 837.3125,
+          "y": 89,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "period",
+        "text": "2024-Q2",
+        "rect": {
+          "x": 208.3125,
+          "y": 121,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "revenue",
+        "text": "120",
+        "rect": {
+          "x": 490.3125,
+          "y": 121,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "operatingIncome",
+        "text": "25",
+        "rect": {
+          "x": 837.3125,
+          "y": 121,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "period",
+        "text": "2024-Q3",
+        "rect": {
+          "x": 208.3125,
+          "y": 153,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "revenue",
+        "text": "140",
+        "rect": {
+          "x": 490.3125,
+          "y": 153,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "operatingIncome",
+        "text": "30",
+        "rect": {
+          "x": 837.3125,
+          "y": 153,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "period",
+        "text": "2024-Q4",
+        "rect": {
+          "x": 208.3125,
+          "y": 185,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "revenue",
+        "text": "160",
+        "rect": {
+          "x": 490.3125,
+          "y": 185,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "operatingIncome",
+        "text": "40",
+        "rect": {
+          "x": 837.3125,
+          "y": 185,
+          "width": 281,
+          "height": 32
+        }
+      }
+    ]
+  },
+  "dom": {
+    "dark": true,
+    "htmlClass": "dark",
+    "panel": null,
+    "panelRect": null,
+    "menuVisible": false,
+    "chartNode": null,
+    "chartRect": null,
+    "tabs": [],
+    "headings": [],
+    "controls": [],
+    "scroll": [],
+    "active": {
+      "tag": "DIV",
+      "id": null,
+      "role": "gridcell",
+      "label": "30",
+      "type": null,
+      "node": 5,
+      "visible": true
+    },
+    "activeAncestors": [
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": "row",
+        "label": "2024-Q314030",
+        "type": null,
+        "node": 6,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": "rowgroup",
+        "label": "2024-Q1100202024-Q2120252024-Q3140302024-Q416040",
+        "type": null,
+        "node": 7,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": "presentation",
+        "label": "2024-Q1100202024-Q2120252024-Q3140302024-Q416040",
+        "type": null,
+        "node": 8,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": "presentation",
+        "label": "2024-Q1100202024-Q2120252024-Q3140302024-Q416040",
+        "type": null,
+        "node": 9,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": "presentation",
+        "label": "2024-Q1100202024-Q2120252024-Q3140302024-Q416040",
+        "type": null,
+        "node": 10,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": "grid",
+        "label": "PeriodRevenue (USD millions)Operating Income (USD millions)2024-Q1100202024-Q2120252024-Q3140302024-Q416040",
+        "type": null,
+        "node": 11,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": "presentation",
+        "label": "PeriodRevenue (USD millions)Operating Income (USD millions)2024-Q1100202024-Q2120252024-Q3140302024-Q416040",
+        "type": null,
+        "node": 12,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": "presentation",
+        "label": "Drag here to set row groupsDrag here to set column labelsPeriodRevenue (USD millions)Operating Income (USD millions)2024-Q1100202024-Q2120252024-Q3140302024-Q416040                        to  of       Page  of",
+        "type": null,
+        "node": 13,
+        "visible": true
+      }
+    ],
+    "focusEvents": [
+      {
+        "type": "focusin",
+        "time": 2000,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "columnheader",
+          "label": "Revenue (USD millions)",
+          "type": null,
+          "node": 3,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2189,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "columnheader",
+          "label": "Revenue (USD millions)",
+          "type": null,
+          "node": 3,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2190,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2239,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2240,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "30",
+          "type": null,
+          "node": 5,
+          "visible": true
+        }
+      }
+    ]
+  },
+  "budget": {
+    "paths": 7,
+    "omitted": [
+      {
+        "path": "table.focusedCell.column",
+        "reason": "non-plain-object"
+      }
+    ],
+    "omittedCount": 1,
+    "focusOverflow": 0
+  }
+}

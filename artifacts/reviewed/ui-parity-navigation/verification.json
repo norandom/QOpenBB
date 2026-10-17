@@ -1,0 +1,2293 @@
+{
+  "recordedAt": "2026-10-17T13:40:03.158Z",
+  "status": "PASS",
+  "checkCount": 571,
+  "failedCount": 0,
+  "scope": "Recorded original navigation evidence only; no candidate/persistence/export/release acceptance",
+  "checks": [
+    {
+      "name": "file-hash:run-20261017-r1-a1/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/failure-capture.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/run.sh",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a1/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/N01-table-initial.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/N01-table-initial.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/checkpoints.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/failure-state.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/failure-state.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/failure.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/run.sh",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a2/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/N01-table-initial.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/N01-table-initial.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/N01-table-pre-entry.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/N01-table-pre-entry.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/checkpoints.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/failure-state.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/failure-state.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/failure.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/run.sh",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a3/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N01-chart-entered.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N01-chart-entered.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N01-click-selection-observed.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N01-click-selection-observed.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N01-table-initial.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N01-table-initial.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N01-table-pre-entry.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N01-table-pre-entry.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N02-Chart.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N02-Chart.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N02-Customize-prepared.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N02-Customize-prepared.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N02-Set-Up.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N02-Set-Up.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N03-closed.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N03-closed.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N03-immediate-closed.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N03-immediate-closed.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N03-pre-close.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N03-pre-close.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N04-pre-reopen.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N04-pre-reopen.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N04-reopened.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N04-reopened.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N05-closed.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N05-closed.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N05-pre-close.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N05-pre-close.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N05-reopened.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N05-reopened.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N06-closed.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N06-closed.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N06-pre-close.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N06-pre-close.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N06-reopened.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N06-reopened.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N07-dark-pre.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N07-dark-pre.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N07-light-immediate.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N07-light-immediate.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N07-light.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N07-light.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N08-dark-immediate.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N08-dark-immediate.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N08-dark.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N08-dark.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N08-light-pre.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N08-light-pre.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N09-column-pre.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N09-column-pre.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N09-line-Customize.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N09-line-Customize.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N09-line-untouched.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N09-line-untouched.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N10-column-Customize.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N10-column-Customize.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N10-column-untouched.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N10-column-untouched.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N10-line-pre.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N10-line-pre.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N11-chart-pre.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N11-chart-pre.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N11-table-first.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N11-table-first.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N11-table-restored.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N11-table-restored.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N11-table-stable.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N11-table-stable.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N12-chart-untouched.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N12-chart-untouched.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N12-table-pre.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/N12-table-pre.png",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/cases.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/checkpoints.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/run.sh",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/selection-discriminator.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/summary.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:run-20261017-r1-a4/table-width-comparison.json",
+      "passed": true
+    },
+    {
+      "name": "file-hash:plan.md",
+      "passed": true
+    },
+    {
+      "name": "file-hash:attempt-a1-diagnosis.md",
+      "passed": true
+    },
+    {
+      "name": "file-hash:attempt-a2-diagnosis.md",
+      "passed": true
+    },
+    {
+      "name": "file-hash:attempt-a3-diagnosis.md",
+      "passed": true
+    },
+    {
+      "name": "file-hash:report.md",
+      "passed": true
+    },
+    {
+      "name": "file-hash:manifest.mjs",
+      "passed": true
+    },
+    {
+      "name": "file-hash:verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/components/Widget.context.tsx",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/components/DraggableCard/DraggableCard.tsx",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/components/General/Table/AgGrid.tsx",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/components/General/Table/utils.tsx",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/components/General/Table/hooks/useTableContext.tsx",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/components/General/Table/hooks/useUpdateColumnState.ts",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/hooks/useAuthKeyPresses.tsx",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/components/Settings/GeneralTab.tsx",
+      "passed": true
+    },
+    {
+      "name": "original-source:terminalpro/src/index.css",
+      "passed": true
+    },
+    {
+      "name": "original-identity",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a1:containerAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a1:stateAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a1:credentialAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a1:no-owned-state",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a1:browser-closed",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a1:runtime-exit",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a1:cleanup-exit",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a1:fixture-identical",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a2:containerAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a2:stateAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a2:credentialAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a2:no-owned-state",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a2:browser-closed",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a2:runtime-exit",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a2:cleanup-exit",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a2:fixture-identical",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a3:containerAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a3:stateAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a3:credentialAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a3:no-owned-state",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a3:browser-closed",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a3:runtime-exit",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a3:cleanup-exit",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a3:fixture-identical",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a4:containerAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a4:stateAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a4:credentialAbsent",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a4:no-owned-state",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a4:browser-closed",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a4:runtime-exit",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a4:cleanup-exit",
+      "passed": true
+    },
+    {
+      "name": "run-20261017-r1-a4:fixture-identical",
+      "passed": true
+    },
+    {
+      "name": "exact-twelve-cases",
+      "passed": true
+    },
+    {
+      "name": "case-deadlines",
+      "passed": true
+    },
+    {
+      "name": "36-checkpoints",
+      "passed": true
+    },
+    {
+      "name": "N01-table-initial:source-values",
+      "passed": true
+    },
+    {
+      "name": "N01-table-initial:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N01-table-initial:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N01-table-initial:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N01-table-initial:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N01-table-initial:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N01-click-selection-observed:source-values",
+      "passed": true
+    },
+    {
+      "name": "N01-click-selection-observed:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N01-click-selection-observed:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N01-click-selection-observed:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N01-click-selection-observed:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N01-click-selection-observed:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N01-table-pre-entry:source-values",
+      "passed": true
+    },
+    {
+      "name": "N01-table-pre-entry:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N01-table-pre-entry:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N01-table-pre-entry:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N01-table-pre-entry:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N01-table-pre-entry:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:source-values",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N01-chart-entered:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:source-values",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N02-Chart:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:source-values",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N02-Set-Up:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:source-values",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N02-Customize-prepared:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:source-values",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N03-pre-close:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:source-values",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N03-immediate-closed:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:source-values",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N03-closed:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:source-values",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N04-pre-reopen:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:source-values",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N04-reopened:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:source-values",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N05-pre-close:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:source-values",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N05-closed:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:source-values",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N05-reopened:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:source-values",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N06-pre-close:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:source-values",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N06-closed:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:source-values",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N06-reopened:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:source-values",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N07-dark-pre:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:source-values",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N07-light-immediate:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N07-light:source-values",
+      "passed": true
+    },
+    {
+      "name": "N07-light:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N07-light:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N07-light:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N07-light:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N07-light:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N07-light:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N07-light:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N07-light:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N07-light:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:source-values",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N08-light-pre:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:source-values",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N08-dark-immediate:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:source-values",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N08-dark:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:source-values",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N09-column-pre:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:source-values",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N09-line-untouched:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:source-values",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N09-line-Customize:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:source-values",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N10-line-pre:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:source-values",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N10-column-untouched:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:source-values",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N10-column-Customize:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:source-values",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N11-chart-pre:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N11-table-first:source-values",
+      "passed": true
+    },
+    {
+      "name": "N11-table-first:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N11-table-first:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N11-table-first:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N11-table-first:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N11-table-first:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N11-table-restored:source-values",
+      "passed": true
+    },
+    {
+      "name": "N11-table-restored:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N11-table-restored:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N11-table-restored:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N11-table-restored:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N11-table-restored:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N11-table-stable:source-values",
+      "passed": true
+    },
+    {
+      "name": "N11-table-stable:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N11-table-stable:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N11-table-stable:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N11-table-stable:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N11-table-stable:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N12-table-pre:source-values",
+      "passed": true
+    },
+    {
+      "name": "N12-table-pre:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N12-table-pre:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N12-table-pre:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N12-table-pre:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N12-table-pre:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:source-values",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:root-field-allowlist",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:projection-no-budget-overflow",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:bounded-focus-log",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:chart-resolved-range",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:resolved-chart-values",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:ordered-financial-bindings",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:settled-chart",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:png-signature",
+      "passed": true
+    },
+    {
+      "name": "N12-chart-untouched:png-viewport",
+      "passed": true
+    },
+    {
+      "name": "click-shift-click-original-clears",
+      "passed": true
+    },
+    {
+      "name": "real-drag-selection-created",
+      "passed": true
+    },
+    {
+      "name": "selection-rows-columns",
+      "passed": true
+    },
+    {
+      "name": "resize-281-to-347",
+      "passed": true
+    },
+    {
+      "name": "grid-lines-control-preserved",
+      "passed": true
+    },
+    {
+      "name": "customize-prepared-expanded-scrolled",
+      "passed": true
+    },
+    {
+      "name": "dock-close-flag-and-menu",
+      "passed": true
+    },
+    {
+      "name": "dock-close-focus-body",
+      "passed": true
+    },
+    {
+      "name": "reopen-same-panel-chart",
+      "passed": true
+    },
+    {
+      "name": "reopen-group-scroll-retained",
+      "passed": true
+    },
+    {
+      "name": "reopen-focus-customize-tab",
+      "passed": true
+    },
+    {
+      "name": "setup-focus-no-transform",
+      "passed": true
+    },
+    {
+      "name": "chart-thumbnail-focus-then-tab",
+      "passed": true
+    },
+    {
+      "name": "dark-light-dark-theme",
+      "passed": true
+    },
+    {
+      "name": "theme-preserves-chart-panel-owner",
+      "passed": true
+    },
+    {
+      "name": "theme-resets-customize-groups",
+      "passed": true
+    },
+    {
+      "name": "theme-rebuilds-fields-removes-overflow-focus",
+      "passed": true
+    },
+    {
+      "name": "theme-read-model-vs-stored-model",
+      "passed": true
+    },
+    {
+      "name": "no-root-chartOptions-write",
+      "passed": true
+    },
+    {
+      "name": "family-column-line-column",
+      "passed": true
+    },
+    {
+      "name": "family-preserves-chart-owner",
+      "passed": true
+    },
+    {
+      "name": "family-resets-customize-groups",
+      "passed": true
+    },
+    {
+      "name": "table-widths-restored",
+      "passed": true
+    },
+    {
+      "name": "table-horizontal-scroll65-retained",
+      "passed": true
+    },
+    {
+      "name": "table-selection-cleared-chart-destroyed",
+      "passed": true
+    },
+    {
+      "name": "table-stored-settings-remain-open",
+      "passed": true
+    },
+    {
+      "name": "reentry-new-chart-panel",
+      "passed": true
+    },
+    {
+      "name": "reentry-auto-open-default-chart-focus",
+      "passed": true
+    },
+    {
+      "name": "real-ui-ledger",
+      "passed": true
+    },
+    {
+      "name": "exact-two-family-two-theme-ui-actions",
+      "passed": true
+    },
+    {
+      "name": "no-transform-or-grid-lines-activation",
+      "passed": true
+    },
+    {
+      "name": "diagnostics-bounded",
+      "passed": true
+    },
+    {
+      "name": "no-blocked-external-or-network-failure",
+      "passed": true
+    },
+    {
+      "name": "known-datafeed-exceptions-retained",
+      "passed": true
+    },
+    {
+      "name": "known-light-theme-warning-retained",
+      "passed": true
+    },
+    {
+      "name": "publication-no-private-paths",
+      "passed": true
+    }
+  ]
+}

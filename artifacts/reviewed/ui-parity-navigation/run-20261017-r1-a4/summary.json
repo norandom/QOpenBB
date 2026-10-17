@@ -1,0 +1,80 @@
+{
+  "status": "observed",
+  "cases": [
+    {
+      "id": "N01",
+      "status": "observed",
+      "elapsedMs": 2107
+    },
+    {
+      "id": "N02",
+      "status": "observed",
+      "elapsedMs": 1515
+    },
+    {
+      "id": "N03",
+      "status": "observed",
+      "elapsedMs": 495
+    },
+    {
+      "id": "N04",
+      "status": "observed",
+      "elapsedMs": 815
+    },
+    {
+      "id": "N05",
+      "status": "observed",
+      "elapsedMs": 1149
+    },
+    {
+      "id": "N06",
+      "status": "observed",
+      "elapsedMs": 1147
+    },
+    {
+      "id": "N07",
+      "status": "observed",
+      "elapsedMs": 848
+    },
+    {
+      "id": "N08",
+      "status": "observed",
+      "elapsedMs": 558
+    },
+    {
+      "id": "N09",
+      "status": "observed",
+      "elapsedMs": 1014
+    },
+    {
+      "id": "N10",
+      "status": "observed",
+      "elapsedMs": 764
+    },
+    {
+      "id": "N11",
+      "status": "observed",
+      "elapsedMs": 1981
+    },
+    {
+      "id": "N12",
+      "status": "observed",
+      "elapsedMs": 656
+    }
+  ],
+  "checkpointCount": 36,
+  "actions": 46,
+  "initialRange": {
+    "rowStartIndex": null,
+    "rowStartPinned": null,
+    "rowEndIndex": null,
+    "rowEndPinned": null,
+    "columns": [
+      "period",
+      "revenue",
+      "operatingIncome"
+    ]
+  },
+  "sourceFixtureRows": 4,
+  "candidateExecuted": false
+}

@@ -1,0 +1,25 @@
+{
+  "scope": "Independent original navigation review only; manifest excludes its own hash",
+  "files": [
+    {
+      "path": "artifacts/ui-parity-navigation-review/plan-review.md",
+      "destination": "artifacts/reviewed/ui-parity-navigation-review/plan-review.md",
+      "sha256": "0a4f503026ad58bf01422eccea666c6822caa724e4e897ffdaba46091e06cb65"
+    },
+    {
+      "path": "artifacts/ui-parity-navigation-review/report.md",
+      "destination": "artifacts/reviewed/ui-parity-navigation-review/report.md",
+      "sha256": "636edd8add6301530e444e8582280fb6413fc730c69a61c771d2b2716c93299e"
+    },
+    {
+      "path": "artifacts/ui-parity-navigation-review/audit.mjs",
+      "destination": "artifacts/reviewed/ui-parity-navigation-review/audit.mjs",
+      "sha256": "f93d888d69f611e9c9087886ee59e4f78a329254c9e2d07a0d924eb682500974"
+    },
+    {
+      "path": "artifacts/ui-parity-navigation-review/verification.json",
+      "destination": "artifacts/reviewed/ui-parity-navigation-review/verification.json",
+      "sha256": "0e1a35a62aa35e1e7498f1af7a5aacae46c015394126e74807572998fbc0a101"
+    }
+  ]
+}

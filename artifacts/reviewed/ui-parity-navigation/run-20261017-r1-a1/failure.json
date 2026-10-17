@@ -1,0 +1,6 @@
+{
+  "phase": "setup",
+  "error": "page.evaluate: Error: Named synthetic getWidget getter unavailable\n    at acquireReferences (eval at evaluate (:370:30), <anonymous>:16:24)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+  "stack": "page.evaluate: Error: Named synthetic getWidget getter unavailable\n    at acquireReferences (eval at evaluate (:370:30), <anonymous>:16:24)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at acquire (/mnt/d/Source/QOpenBB/artifacts/ui-parity-navigation/run-20261017-r1-a1/journey.mjs:38:38)\n    at /mnt/d/Source/QOpenBB/artifacts/ui-parity-navigation/run-20261017-r1-a1/journey.mjs:146:62",
+  "completedCases": []
+}

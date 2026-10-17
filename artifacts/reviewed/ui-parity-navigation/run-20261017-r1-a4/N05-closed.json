@@ -1,0 +1,1695 @@
+{
+  "sourceRows": [
+    {
+      "id": "0",
+      "period": "2024-Q1",
+      "revenue": 100,
+      "operatingIncome": 20
+    },
+    {
+      "id": "1",
+      "period": "2024-Q2",
+      "revenue": 120,
+      "operatingIncome": 25
+    },
+    {
+      "id": "2",
+      "period": "2024-Q3",
+      "revenue": 140,
+      "operatingIncome": 30
+    },
+    {
+      "id": "3",
+      "period": "2024-Q4",
+      "revenue": 160,
+      "operatingIncome": 40
+    }
+  ],
+  "columnState": [
+    {
+      "colId": "period",
+      "width": 282,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    },
+    {
+      "colId": "revenue",
+      "width": 347,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    },
+    {
+      "colId": "operatingIncome",
+      "width": 281,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    }
+  ],
+  "rootStorage": {
+    "chartSettingsOpen": {
+      "own": true,
+      "value": false
+    },
+    "chartType": {
+      "own": true,
+      "value": "groupedColumn"
+    },
+    "totalSeries": {
+      "own": true,
+      "value": 2
+    },
+    "isPivotMode": {
+      "own": true,
+      "value": false
+    },
+    "chartView": {
+      "own": true,
+      "value": {
+        "enabled": true
+      }
+    },
+    "chartOptions": {
+      "own": false
+    },
+    "chartModel": null,
+    "partitions": [
+      {
+        "key": "default",
+        "chartModel": {
+          "chartId": "id-3c30ixodqyv",
+          "chartType": "groupedColumn",
+          "chartThemeName": "openbb-dark",
+          "cellRange": {
+            "rowStartIndex": null,
+            "rowStartPinned": null,
+            "rowEndIndex": null,
+            "rowEndPinned": null,
+            "columns": [
+              "period",
+              "revenue",
+              "operatingIncome"
+            ]
+          },
+          "chartOptions": {
+            "common": {
+              "axes": {
+                "category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5,
+                    "autoRotate": true
+                  },
+                  "position": "bottom"
+                },
+                "radius-category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5
+                  }
+                },
+                "angle-category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5
+                  }
+                },
+                "grouped-category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5,
+                    "rotation": 0
+                  }
+                },
+                "number": {
+                  "position": "left",
+                  "crosshair": {
+                    "label": {}
+                  },
+                  "label": {
+                    "fontSize": 11,
+                    "autoRotate": false,
+                    "avoidCollisions": true
+                  }
+                },
+                "time": {
+                  "position": "bottom",
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "rotation": 0
+                  }
+                }
+              },
+              "legend": {
+                "position": "top",
+                "maxHeight": 50,
+                "spacing": 20,
+                "item": {
+                  "paddingX": 32,
+                  "paddingY": 8,
+                  "marker": {
+                    "shape": "square",
+                    "padding": 5,
+                    "size": 11
+                  },
+                  "label": {
+                    "color": "#fff",
+                    "fontSize": 11
+                  }
+                }
+              },
+              "navigator": {
+                "enabled": false,
+                "miniChart": {
+                  "enabled": false
+                }
+              }
+            }
+          },
+          "switchCategorySeries": false,
+          "suppressChartRanges": true
+        },
+        "ranges": {}
+      }
+    ]
+  },
+  "chart": {
+    "model": {
+      "chartId": "id-3c30ixodqyv",
+      "chartType": "groupedColumn",
+      "chartThemeName": "openbb-dark",
+      "cellRange": {
+        "rowStartIndex": null,
+        "rowStartPinned": null,
+        "rowEndIndex": null,
+        "rowEndPinned": null,
+        "columns": [
+          "period",
+          "revenue",
+          "operatingIncome"
+        ]
+      },
+      "chartOptions": {},
+      "switchCategorySeries": false,
+      "suppressChartRanges": true
+    },
+    "raw": {
+      "data": [
+        {
+          "period": {
+            "id": 0,
+            "value": "2024-Q1"
+          },
+          "revenue": 100,
+          "operatingIncome": 20
+        },
+        {
+          "period": {
+            "id": 1,
+            "value": "2024-Q2"
+          },
+          "revenue": 120,
+          "operatingIncome": 25
+        },
+        {
+          "period": {
+            "id": 2,
+            "value": "2024-Q3"
+          },
+          "revenue": 140,
+          "operatingIncome": 30
+        },
+        {
+          "period": {
+            "id": 3,
+            "value": "2024-Q4"
+          },
+          "revenue": 160,
+          "operatingIncome": 40
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "direction": "vertical",
+          "stacked": false,
+          "xKey": "period",
+          "xName": "Period",
+          "yKey": "revenue",
+          "yName": "Revenue (USD millions)"
+        },
+        {
+          "type": "bar",
+          "direction": "vertical",
+          "stacked": false,
+          "xKey": "period",
+          "xName": "Period",
+          "yKey": "operatingIncome",
+          "yName": "Operating Income (USD millions)"
+        }
+      ],
+      "theme": {
+        "baseTheme": "[nested-theme]"
+      }
+    },
+    "effective": {
+      "data": [
+        {
+          "period": {
+            "id": 0,
+            "value": "2024-Q1"
+          },
+          "revenue": 100,
+          "operatingIncome": 20
+        },
+        {
+          "period": {
+            "id": 1,
+            "value": "2024-Q2"
+          },
+          "revenue": 120,
+          "operatingIncome": 25
+        },
+        {
+          "period": {
+            "id": 2,
+            "value": "2024-Q3"
+          },
+          "revenue": 140,
+          "operatingIncome": 30
+        },
+        {
+          "period": {
+            "id": 3,
+            "value": "2024-Q4"
+          },
+          "revenue": 160,
+          "operatingIncome": 40
+        }
+      ],
+      "axes": [
+        {
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          },
+          "label": {
+            "autoRotate": true,
+            "wrapping": "on-space",
+            "enabled": true,
+            "avoidCollisions": true,
+            "minSpacing": 5,
+            "spacing": 11,
+            "color": "#fff",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 11,
+            "fontWeight": 400,
+            "border": {
+              "enabled": false,
+              "stroke": "rgba(255, 255, 255, 0.08)",
+              "strokeWidth": 1
+            },
+            "cornerRadius": 4
+          },
+          "line": {
+            "enabled": true,
+            "width": 1,
+            "stroke": "#c1c1c2"
+          },
+          "tick": {
+            "enabled": false,
+            "width": 1,
+            "size": 6,
+            "stroke": "#c1c1c2"
+          },
+          "keys": [],
+          "position": "bottom",
+          "title": {
+            "enabled": false,
+            "text": "Axis Title",
+            "spacing": 25,
+            "color": "#fff",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 13,
+            "fontWeight": 400
+          },
+          "type": "category",
+          "groupPaddingInner": 0.1,
+          "crosshair": {
+            "enabled": true,
+            "snap": true,
+            "label": {
+              "enabled": false
+            },
+            "stroke": "#7a7a7b",
+            "strokeWidth": 1,
+            "strokeOpacity": 1,
+            "lineDash": [
+              5,
+              6
+            ],
+            "lineDashOffset": 0
+          },
+          "bandHighlight": {
+            "enabled": false,
+            "fill": "#212124",
+            "strokeWidth": 0,
+            "lineDash": []
+          }
+        },
+        {
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "fillOpacity": 1,
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          },
+          "label": {
+            "autoRotate": false,
+            "enabled": true,
+            "avoidCollisions": true,
+            "spacing": 11,
+            "color": "#fff",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 11,
+            "fontWeight": 400,
+            "border": {
+              "enabled": false,
+              "stroke": "rgba(255, 255, 255, 0.08)",
+              "strokeWidth": 1
+            },
+            "cornerRadius": 4
+          },
+          "line": {
+            "enabled": false,
+            "width": 1,
+            "stroke": "#c1c1c2"
+          },
+          "tick": {
+            "enabled": false,
+            "width": 1,
+            "size": 6,
+            "stroke": "#c1c1c2"
+          },
+          "keys": [],
+          "position": "left",
+          "title": {
+            "enabled": false,
+            "text": "Axis Title",
+            "spacing": 25,
+            "color": "#fff",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 13,
+            "fontWeight": 400
+          },
+          "type": "number",
+          "crosshair": {
+            "enabled": true,
+            "snap": true,
+            "label": {
+              "enabled": false
+            },
+            "stroke": "#7a7a7b",
+            "strokeWidth": 1,
+            "strokeOpacity": 1,
+            "lineDash": [
+              5,
+              6
+            ],
+            "lineDashOffset": 0
+          }
+        }
+      ],
+      "series": [
+        {
+          "direction": "vertical",
+          "label": {
+            "enabled": false,
+            "border": {
+              "enabled": false,
+              "stroke": "rgba(255, 255, 255, 0.08)",
+              "strokeWidth": 1
+            },
+            "cornerRadius": 4,
+            "padding": 8,
+            "color": "#fff",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "placement": "outside-end"
+          },
+          "errorBar": {
+            "visible": true,
+            "cap": {
+              "lengthRatio": 0.3
+            },
+            "stroke": "#fff",
+            "strokeWidth": 1,
+            "strokeOpacity": 1
+          },
+          "shadow": {
+            "enabled": false,
+            "xOffset": 3,
+            "yOffset": 3,
+            "blur": 5,
+            "color": "#00000080"
+          },
+          "tooltip": {
+            "enabled": true,
+            "range": "exact",
+            "position": {
+              "anchorTo": "pointer",
+              "xOffset": 0,
+              "yOffset": 0
+            }
+          },
+          "highlight": {
+            "enabled": true,
+            "highlightedItem": {
+              "fill": "rgba(255,255,255, 0.33)",
+              "stroke": "rgba(0, 0, 0, 0.4)",
+              "strokeWidth": 2,
+              "opacity": 1
+            }
+          },
+          "fill": "#5090dc",
+          "fillOpacity": 1,
+          "fillGradientDefaults": {
+            "type": "gradient",
+            "gradient": "linear",
+            "bounds": "item",
+            "colorStops": [
+              "#2162aa",
+              "#5090dc",
+              "#7ec0ff"
+            ],
+            "rotation": 0,
+            "reverse": false
+          },
+          "fillPatternDefaults": {
+            "type": "pattern",
+            "pattern": "forward-slanted-lines",
+            "width": 10,
+            "height": 10,
+            "fill": "#5090dc",
+            "fillOpacity": 1,
+            "backgroundFill": "none",
+            "backgroundFillOpacity": 1,
+            "padding": 2,
+            "rotation": 0,
+            "scale": 1,
+            "stroke": "#5090dc",
+            "strokeWidth": 4,
+            "strokeOpacity": 1
+          },
+          "fillImageDefaults": {
+            "type": "image",
+            "rotation": 0,
+            "backgroundFill": "#5090dc",
+            "backgroundFillOpacity": 1,
+            "fit": "contain",
+            "repeat": "no-repeat"
+          },
+          "stroke": "#74a8e6",
+          "strokeWidth": 0,
+          "lineDash": [
+            0
+          ],
+          "lineDashOffset": 0,
+          "visible": true,
+          "seriesGrouping": {
+            "groupId": "bar-period-grouped",
+            "groupIndex": 0,
+            "groupCount": 2,
+            "stackIndex": 0,
+            "stackCount": 0
+          },
+          "type": "bar",
+          "xKey": "period",
+          "yKey": "revenue",
+          "xName": "Period",
+          "yName": "Revenue (USD millions)"
+        },
+        {
+          "direction": "vertical",
+          "label": {
+            "enabled": false,
+            "border": {
+              "enabled": false,
+              "stroke": "rgba(255, 255, 255, 0.08)",
+              "strokeWidth": 1
+            },
+            "cornerRadius": 4,
+            "padding": 8,
+            "color": "#fff",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "placement": "outside-end"
+          },
+          "errorBar": {
+            "visible": true,
+            "cap": {
+              "lengthRatio": 0.3
+            },
+            "stroke": "#fff",
+            "strokeWidth": 1,
+            "strokeOpacity": 1
+          },
+          "shadow": {
+            "enabled": false,
+            "xOffset": 3,
+            "yOffset": 3,
+            "blur": 5,
+            "color": "#00000080"
+          },
+          "tooltip": {
+            "enabled": true,
+            "range": "exact",
+            "position": {
+              "anchorTo": "pointer",
+              "xOffset": 0,
+              "yOffset": 0
+            }
+          },
+          "highlight": {
+            "enabled": true,
+            "highlightedItem": {
+              "fill": "rgba(255,255,255, 0.33)",
+              "stroke": "rgba(0, 0, 0, 0.4)",
+              "strokeWidth": 2,
+              "opacity": 1
+            }
+          },
+          "fill": "#ffa03a",
+          "fillOpacity": 1,
+          "fillGradientDefaults": {
+            "type": "gradient",
+            "gradient": "linear",
+            "bounds": "item",
+            "colorStops": [
+              "#cc7100",
+              "#ffa03a",
+              "#ffd171"
+            ],
+            "rotation": 0,
+            "reverse": false
+          },
+          "fillPatternDefaults": {
+            "type": "pattern",
+            "pattern": "forward-slanted-lines",
+            "width": 10,
+            "height": 10,
+            "fill": "#ffa03a",
+            "fillOpacity": 1,
+            "backgroundFill": "none",
+            "backgroundFillOpacity": 1,
+            "padding": 2,
+            "rotation": 0,
+            "scale": 1,
+            "stroke": "#ffa03a",
+            "strokeWidth": 4,
+            "strokeOpacity": 1
+          },
+          "fillImageDefaults": {
+            "type": "image",
+            "rotation": 0,
+            "backgroundFill": "#ffa03a",
+            "backgroundFillOpacity": 1,
+            "fit": "contain",
+            "repeat": "no-repeat"
+          },
+          "stroke": "#ffbe70",
+          "strokeWidth": 0,
+          "lineDash": [
+            0
+          ],
+          "lineDashOffset": 0,
+          "visible": true,
+          "seriesGrouping": {
+            "groupId": "bar-period-grouped",
+            "groupIndex": 1,
+            "groupCount": 2,
+            "stackIndex": 0,
+            "stackCount": 0
+          },
+          "type": "bar",
+          "xKey": "period",
+          "yKey": "operatingIncome",
+          "xName": "Period",
+          "yName": "Operating Income (USD millions)"
+        }
+      ],
+      "title": {
+        "enabled": false,
+        "text": "Title",
+        "spacing": 20,
+        "fontWeight": 400,
+        "fontSize": 12,
+        "fontFamily": "Verdana, sans-serif",
+        "color": "#fff",
+        "wrapping": "hyphenate",
+        "layoutStyle": "block",
+        "textAlign": "center"
+      },
+      "legend": {
+        "border": {
+          "enabled": false,
+          "stroke": "#505052",
+          "strokeOpacity": 1,
+          "strokeWidth": 1
+        },
+        "cornerRadius": 4,
+        "fillOpacity": 1,
+        "padding": 0,
+        "enabled": true,
+        "position": "top",
+        "orientation": "horizontal",
+        "spacing": 20,
+        "listeners": {},
+        "toggleSeries": true,
+        "item": {
+          "paddingX": 32,
+          "paddingY": 8,
+          "marker": {
+            "size": 11,
+            "padding": 5,
+            "shape": "square"
+          },
+          "showSeriesStroke": true,
+          "label": {
+            "color": "#fff",
+            "fontSize": 11,
+            "fontFamily": "Verdana, sans-serif",
+            "fontWeight": 400
+          }
+        },
+        "reverseOrder": false,
+        "pagination": {
+          "marker": {
+            "size": 12
+          },
+          "activeStyle": {
+            "fill": "#fff"
+          },
+          "inactiveStyle": {
+            "fill": "#7a7a7b"
+          },
+          "highlightStyle": {
+            "fill": "#fff"
+          },
+          "label": {
+            "color": "#fff"
+          }
+        },
+        "fill": "transparent",
+        "maxHeight": 50
+      }
+    },
+    "animationActive": false
+  },
+  "chartEvents": [
+    {
+      "type": "chartOptionsChanged",
+      "chartId": "id-3c30ixodqyv",
+      "chartType": "groupedColumn",
+      "chartThemeName": "openbb-dark"
+    },
+    {
+      "type": "chartCreated",
+      "chartId": "id-3c30ixodqyv"
+    }
+  ],
+  "table": {
+    "focusedCell": {
+      "rowIndex": 1,
+      "rowPinned": null,
+      "colId": "revenue"
+    },
+    "ranges": [],
+    "state": {
+      "scroll": {
+        "top": 0,
+        "left": 65
+      },
+      "focusedCell": {
+        "colId": "revenue",
+        "rowIndex": 1,
+        "rowPinned": null
+      }
+    },
+    "cells": [
+      {
+        "row": "0",
+        "column": "period",
+        "text": "2024-Q1",
+        "rect": {
+          "x": 208.3125,
+          "y": 439,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "0",
+        "column": "revenue",
+        "text": "100",
+        "rect": {
+          "x": 490.3125,
+          "y": 439,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "0",
+        "column": "operatingIncome",
+        "text": "20",
+        "rect": {
+          "x": 837.3125,
+          "y": 439,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "period",
+        "text": "2024-Q2",
+        "rect": {
+          "x": 208.3125,
+          "y": 471,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "revenue",
+        "text": "120",
+        "rect": {
+          "x": 490.3125,
+          "y": 471,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "operatingIncome",
+        "text": "25",
+        "rect": {
+          "x": 837.3125,
+          "y": 471,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "period",
+        "text": "2024-Q3",
+        "rect": {
+          "x": 208.3125,
+          "y": 503,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "revenue",
+        "text": "140",
+        "rect": {
+          "x": 490.3125,
+          "y": 503,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "operatingIncome",
+        "text": "30",
+        "rect": {
+          "x": 837.3125,
+          "y": 503,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "period",
+        "text": "2024-Q4",
+        "rect": {
+          "x": 208.3125,
+          "y": 535,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "revenue",
+        "text": "160",
+        "rect": {
+          "x": 490.3125,
+          "y": 535,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "operatingIncome",
+        "text": "40",
+        "rect": {
+          "x": 837.3125,
+          "y": 535,
+          "width": 281,
+          "height": 32
+        }
+      }
+    ]
+  },
+  "dom": {
+    "dark": true,
+    "htmlClass": "dark",
+    "panel": {
+      "tag": "DIV",
+      "id": null,
+      "role": null,
+      "label": "ChartSet UpCustomize     Categories   Enabled         Period    Aggregate               Series   Enabled        Revenue (USD millions)    Operating Income (USD millions)   Switch Category / Series     \n                    Grouped Column   Enabled       Direction  Vertical    Reverse     Group Type",
+      "type": null,
+      "node": 24,
+      "visible": false
+    },
+    "panelRect": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "menuVisible": false,
+    "chartNode": 25,
+    "chartRect": {
+      "x": 273.3125,
+      "y": 52.453125,
+      "width": 844,
+      "height": 346
+    },
+    "tabs": [
+      {
+        "tag": "SPAN",
+        "id": null,
+        "role": "tab",
+        "label": "Chart",
+        "type": null,
+        "node": 28,
+        "visible": false,
+        "selected": null
+      },
+      {
+        "tag": "SPAN",
+        "id": null,
+        "role": "tab",
+        "label": "Set Up",
+        "type": null,
+        "node": 36,
+        "visible": false,
+        "selected": null
+      },
+      {
+        "tag": "SPAN",
+        "id": null,
+        "role": "tab",
+        "label": "Customize",
+        "type": null,
+        "node": 37,
+        "visible": false,
+        "selected": null
+      }
+    ],
+    "headings": [],
+    "controls": [],
+    "scroll": [],
+    "active": {
+      "tag": "BODY",
+      "id": null,
+      "role": null,
+      "label": "Search (Ctrl+K)AppsConnectionsLibraryWidgetsAIMy Dashboards\n    Accessibility guide for tree Sidebar.\n    \n      Navigate the tree with the arrow keys. Common tree hotkeys apply. Further keybindings are available:\n    \n    \n      enter to execute primary action on focused item\n      f2 to start renaming the focused item\n      escape to abort renaming an item\n      control+shift+d to start dragging selected items\n    \n  Synthetic FinancialsShared with meNeed more?Let's talkqopenbb-task25Powered by OpenBBToggle Left SidebarSynthetic Financials\n                \n                    \n                        interactive chartinteractive chartPress Space or Enter to toggle visibilityRevenue (USD millions), Legend item 1 of 2Operating Income (USD millions), Legend item 2 of 2.ag-charts-wrapper,.ag-charts-wrapper:after,.ag-charts-wrapper:before,.ag-charts-wrapper *,.ag-charts-wrapper *:after,.ag-charts-wrapper *:before{box-sizing:border-box}.ag-charts-wrapper{--align-items: center;--justify-content: center;position:re",
+      "type": null,
+      "node": 2,
+      "visible": true
+    },
+    "activeAncestors": [
+      {
+        "tag": "HTML",
+        "id": null,
+        "role": null,
+        "label": ":where(.ag-root-wrapper,.ag-popup,.ag-dnd-ghost,.ag-chart),:where(.ag-root-wrapper,.ag-popup,.ag-dnd-ghost,.ag-chart) :where([class^=ag-]){box-sizing:border-box;&:after,&:before{box-sizing:border-box}&:where(div,span,label):focus-visible{box-shadow:inset var(--ag-focus-shadow);outline:none;&:where(.invalid){box-shadow:inset var(--ag-focus-error-shadow)}}&:where(button){color:inherit}}:where(.ag-root-wrapper,.ag-popup,.ag-dnd-ghost,.ag-chart) :where([class^=ag-]) ::-ms-clear{display:none}.ag-aria-description-container{border:0;z-index:9999;clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}.ag-hidden{display:none!important}.ag-invisible{visibility:hidden!important}.ag-unselectable{-webkit-user-select:none;-moz-user-select:none;user-select:none}.ag-selectable{-webkit-user-select:text;-moz-user-select:text;user-select:text}.ag-tab-guard{display:block;height:0;position:absolute;width:0}:where(.ag-virtual-list-viewport) .ag-tab-guard{position:sticky}.ag-t",
+        "type": null,
+        "node": 1,
+        "visible": true
+      }
+    ],
+    "focusEvents": [
+      {
+        "type": "focusin",
+        "time": 2013,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "columnheader",
+          "label": "Revenue (USD millions)",
+          "type": null,
+          "node": 3,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2204,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "columnheader",
+          "label": "Revenue (USD millions)",
+          "type": null,
+          "node": 3,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2205,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2254,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2254,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "30",
+          "type": null,
+          "node": 5,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2449,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "30",
+          "type": null,
+          "node": 5,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2449,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2851,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2853,
+        "element": {
+          "tag": "BUTTON",
+          "id": "chart-view-button",
+          "role": null,
+          "label": "",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 15,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 3927,
+        "element": {
+          "tag": "BUTTON",
+          "id": "chart-view-button",
+          "role": null,
+          "label": "",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 15,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 3928,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 26,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 3988,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 26,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 3988,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 27,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 4068,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 27,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 4164,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 4783,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 4784,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5001,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 5002,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5066,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 5067,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Vertical Axis",
+          "type": null,
+          "node": 43,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5201,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Vertical Axis",
+          "type": null,
+          "node": 43,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 5202,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-329-input",
+          "role": null,
+          "label": "Thickness",
+          "type": "number",
+          "value": "1",
+          "checked": false,
+          "disabled": false,
+          "node": 44,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5617,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-329-input",
+          "role": null,
+          "label": "Thickness",
+          "type": "number",
+          "value": "1",
+          "checked": false,
+          "disabled": false,
+          "node": 44,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 5618,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5637,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": false
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6106,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 74,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6153,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 74,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6153,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 75,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6160,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 75,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6160,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6750,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6750,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6771,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6772,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Categories",
+          "type": null,
+          "node": 76,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6785,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Categories",
+          "type": null,
+          "node": 76,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6786,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "combobox",
+          "label": "Period",
+          "type": null,
+          "node": 40,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6799,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "combobox",
+          "label": "Period",
+          "type": null,
+          "node": 40,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6799,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-99-input",
+          "role": null,
+          "label": "Aggregate",
+          "type": "checkbox",
+          "value": "on",
+          "checked": false,
+          "disabled": false,
+          "node": 41,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 7017,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-99-input",
+          "role": null,
+          "label": "Aggregate",
+          "type": "checkbox",
+          "value": "on",
+          "checked": false,
+          "disabled": false,
+          "node": 41,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 7018,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 7037,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": false
+        }
+      }
+    ]
+  },
+  "budget": {
+    "paths": 389,
+    "omitted": [
+      {
+        "path": "options.common.axes.category.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.radius-category.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.angle-category.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.grouped-category.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.number.crosshair.label.renderer",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.number.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.time.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.legend.item.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "raw.data.0.node",
+        "reason": "non-plain-object"
+      },
+      {
+        "path": "raw.data.0.period.toString",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "raw.data.1.node",
+        "reason": "non-plain-object"
+      },
+      {
+        "path": "raw.data.1.period.toString",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "raw.data.2.node",
+        "reason": "non-plain-object"
+      },
+      {
+        "path": "raw.data.2.period.toString",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "raw.data.3.node",
+        "reason": "non-plain-object"
+      },
+      {
+        "path": "raw.data.3.period.toString",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.data.0.node",
+        "reason": "non-plain-object"
+      },
+      {
+        "path": "effective.data.0.period.toString",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.data.1.node",
+        "reason": "non-plain-object"
+      },
+      {
+        "path": "effective.data.1.period.toString",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.data.2.node",
+        "reason": "non-plain-object"
+      },
+      {
+        "path": "effective.data.2.period.toString",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.data.3.node",
+        "reason": "non-plain-object"
+      },
+      {
+        "path": "effective.data.3.period.toString",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.axes.0.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.axes.1.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.axes.1.crosshair.label.renderer",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.series.0.itemStyler",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.series.0.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.series.0.tooltip.renderer",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.series.1.itemStyler",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.series.1.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.series.1.tooltip.renderer",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "effective.legend.item.label.formatter",
+        "reason": "non-plain-function"
+      }
+    ],
+    "omittedCount": 34,
+    "focusOverflow": 0,
+    "chartEventOverflow": 0
+  }
+}

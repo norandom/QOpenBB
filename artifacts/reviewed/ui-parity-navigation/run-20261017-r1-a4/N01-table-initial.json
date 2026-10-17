@@ -1,0 +1,255 @@
+{
+  "sourceRows": [
+    {
+      "id": "0",
+      "period": "2024-Q1",
+      "revenue": 100,
+      "operatingIncome": 20
+    },
+    {
+      "id": "1",
+      "period": "2024-Q2",
+      "revenue": 120,
+      "operatingIncome": 25
+    },
+    {
+      "id": "2",
+      "period": "2024-Q3",
+      "revenue": 140,
+      "operatingIncome": 30
+    },
+    {
+      "id": "3",
+      "period": "2024-Q4",
+      "revenue": 160,
+      "operatingIncome": 40
+    }
+  ],
+  "columnState": [
+    {
+      "colId": "period",
+      "width": 282,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    },
+    {
+      "colId": "revenue",
+      "width": 281,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    },
+    {
+      "colId": "operatingIncome",
+      "width": 281,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    }
+  ],
+  "rootStorage": {
+    "chartSettingsOpen": {
+      "own": false
+    },
+    "chartType": {
+      "own": false
+    },
+    "totalSeries": {
+      "own": false
+    },
+    "isPivotMode": {
+      "own": false
+    },
+    "chartView": {
+      "own": false
+    },
+    "chartOptions": {
+      "own": false
+    },
+    "chartModel": null,
+    "partitions": []
+  },
+  "chart": null,
+  "chartEvents": [],
+  "table": {
+    "focusedCell": null,
+    "ranges": [],
+    "state": {},
+    "cells": [
+      {
+        "row": "0",
+        "column": "period",
+        "text": "2024-Q1",
+        "rect": {
+          "x": 273.3125,
+          "y": 89,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "0",
+        "column": "revenue",
+        "text": "100",
+        "rect": {
+          "x": 555.3125,
+          "y": 89,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "0",
+        "column": "operatingIncome",
+        "text": "20",
+        "rect": {
+          "x": 836.3125,
+          "y": 89,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "period",
+        "text": "2024-Q2",
+        "rect": {
+          "x": 273.3125,
+          "y": 121,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "revenue",
+        "text": "120",
+        "rect": {
+          "x": 555.3125,
+          "y": 121,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "operatingIncome",
+        "text": "25",
+        "rect": {
+          "x": 836.3125,
+          "y": 121,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "period",
+        "text": "2024-Q3",
+        "rect": {
+          "x": 273.3125,
+          "y": 153,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "revenue",
+        "text": "140",
+        "rect": {
+          "x": 555.3125,
+          "y": 153,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "operatingIncome",
+        "text": "30",
+        "rect": {
+          "x": 836.3125,
+          "y": 153,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "period",
+        "text": "2024-Q4",
+        "rect": {
+          "x": 273.3125,
+          "y": 185,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "revenue",
+        "text": "160",
+        "rect": {
+          "x": 555.3125,
+          "y": 185,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "operatingIncome",
+        "text": "40",
+        "rect": {
+          "x": 836.3125,
+          "y": 185,
+          "width": 281,
+          "height": 32
+        }
+      }
+    ]
+  },
+  "dom": {
+    "dark": true,
+    "htmlClass": "dark",
+    "panel": null,
+    "panelRect": null,
+    "menuVisible": false,
+    "chartNode": null,
+    "chartRect": null,
+    "tabs": [],
+    "headings": [],
+    "controls": [],
+    "scroll": [],
+    "active": {
+      "tag": "BODY",
+      "id": null,
+      "role": null,
+      "label": "Search (Ctrl+K)AppsConnectionsLibraryWidgetsAIMy Dashboards\n    Accessibility guide for tree Sidebar.\n    \n      Navigate the tree with the arrow keys. Common tree hotkeys apply. Further keybindings are available:\n    \n    \n      enter to execute primary action on focused item\n      f2 to start renaming the focused item\n      escape to abort renaming an item\n      control+shift+d to start dragging selected items\n    \n  Synthetic FinancialsShared with meNeed more?Let's talkqopenbb-task25Powered by OpenBBToggle Left SidebarSynthetic Financials:where(.ag-theme-params-1) {\n\t--ag-accent-color: var(--ag-inherited-accent-color, #337dba);\n\t--ag-advanced-filter-builder-button-bar-border: var(--ag-inherited-advanced-filter-builder-button-bar-border, solid var(--ag-border-width) var(--ag-border-color));\n\t--ag-advanced-filter-builder-column-pill-color: var(--ag-inherited-advanced-filter-builder-column-pill-color, #355f2d);\n\t--ag-advanced-filter-builder-indent-size: var(--ag-inherited-advanced-filter-builder-indent-size, ",
+      "type": null,
+      "node": 2,
+      "visible": true
+    },
+    "activeAncestors": [
+      {
+        "tag": "HTML",
+        "id": null,
+        "role": null,
+        "label": ":where(.ag-root-wrapper,.ag-popup,.ag-dnd-ghost,.ag-chart),:where(.ag-root-wrapper,.ag-popup,.ag-dnd-ghost,.ag-chart) :where([class^=ag-]){box-sizing:border-box;&:after,&:before{box-sizing:border-box}&:where(div,span,label):focus-visible{box-shadow:inset var(--ag-focus-shadow);outline:none;&:where(.invalid){box-shadow:inset var(--ag-focus-error-shadow)}}&:where(button){color:inherit}}:where(.ag-root-wrapper,.ag-popup,.ag-dnd-ghost,.ag-chart) :where([class^=ag-]) ::-ms-clear{display:none}.ag-aria-description-container{border:0;z-index:9999;clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}.ag-hidden{display:none!important}.ag-invisible{visibility:hidden!important}.ag-unselectable{-webkit-user-select:none;-moz-user-select:none;user-select:none}.ag-selectable{-webkit-user-select:text;-moz-user-select:text;user-select:text}.ag-tab-guard{display:block;height:0;position:absolute;width:0}:where(.ag-virtual-list-viewport) .ag-tab-guard{position:sticky}.ag-t",
+        "type": null,
+        "node": 1,
+        "visible": true
+      }
+    ],
+    "focusEvents": []
+  },
+  "budget": {
+    "paths": 0,
+    "omitted": [],
+    "omittedCount": 0,
+    "focusOverflow": 0,
+    "chartEventOverflow": 0
+  }
+}

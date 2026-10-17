@@ -1,0 +1,1638 @@
+{
+  "sourceRows": [
+    {
+      "id": "0",
+      "period": "2024-Q1",
+      "revenue": 100,
+      "operatingIncome": 20
+    },
+    {
+      "id": "1",
+      "period": "2024-Q2",
+      "revenue": 120,
+      "operatingIncome": 25
+    },
+    {
+      "id": "2",
+      "period": "2024-Q3",
+      "revenue": 140,
+      "operatingIncome": 30
+    },
+    {
+      "id": "3",
+      "period": "2024-Q4",
+      "revenue": 160,
+      "operatingIncome": 40
+    }
+  ],
+  "columnState": [
+    {
+      "colId": "period",
+      "width": 282,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    },
+    {
+      "colId": "revenue",
+      "width": 347,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    },
+    {
+      "colId": "operatingIncome",
+      "width": 281,
+      "hide": false,
+      "pinned": null,
+      "sort": null
+    }
+  ],
+  "rootStorage": {
+    "chartSettingsOpen": {
+      "own": true,
+      "value": true
+    },
+    "chartType": {
+      "own": true,
+      "value": "groupedColumn"
+    },
+    "totalSeries": {
+      "own": true,
+      "value": 0
+    },
+    "isPivotMode": {
+      "own": true,
+      "value": false
+    },
+    "chartView": {
+      "own": true,
+      "value": {
+        "enabled": false
+      }
+    },
+    "chartOptions": {
+      "own": false
+    },
+    "chartModel": null,
+    "partitions": [
+      {
+        "key": "default",
+        "chartModel": {
+          "chartId": "id-3c30ixodqyv",
+          "chartType": "groupedColumn",
+          "chartThemeName": "openbb-dark",
+          "cellRange": {
+            "rowStartIndex": null,
+            "rowStartPinned": null,
+            "rowEndIndex": null,
+            "rowEndPinned": null,
+            "columns": [
+              "period",
+              "revenue",
+              "operatingIncome"
+            ]
+          },
+          "chartOptions": {
+            "common": {
+              "axes": {
+                "category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5,
+                    "autoRotate": true
+                  },
+                  "position": "bottom"
+                },
+                "radius-category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5
+                  }
+                },
+                "angle-category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5
+                  }
+                },
+                "grouped-category": {
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "minSpacing": 5,
+                    "rotation": 0
+                  }
+                },
+                "number": {
+                  "position": "left",
+                  "crosshair": {
+                    "label": {}
+                  },
+                  "label": {
+                    "fontSize": 11,
+                    "autoRotate": false,
+                    "avoidCollisions": true
+                  }
+                },
+                "time": {
+                  "position": "bottom",
+                  "label": {
+                    "avoidCollisions": true,
+                    "fontSize": 11,
+                    "rotation": 0
+                  }
+                }
+              },
+              "legend": {
+                "position": "top",
+                "maxHeight": 50,
+                "spacing": 20,
+                "item": {
+                  "paddingX": 32,
+                  "paddingY": 8,
+                  "marker": {
+                    "shape": "square",
+                    "padding": 5,
+                    "size": 11
+                  },
+                  "label": {
+                    "color": "#fff",
+                    "fontSize": 11
+                  }
+                }
+              },
+              "navigator": {
+                "enabled": false,
+                "miniChart": {
+                  "enabled": false
+                }
+              }
+            }
+          },
+          "switchCategorySeries": false,
+          "suppressChartRanges": true
+        },
+        "ranges": {}
+      }
+    ]
+  },
+  "chart": null,
+  "chartEvents": [
+    {
+      "type": "chartOptionsChanged",
+      "chartId": "id-3c30ixodqyv",
+      "chartType": "groupedColumn",
+      "chartThemeName": "openbb-dark"
+    },
+    {
+      "type": "chartCreated",
+      "chartId": "id-3c30ixodqyv"
+    },
+    {
+      "type": "chartOptionsChanged",
+      "chartId": "id-3c30ixodqyv",
+      "chartType": "line",
+      "chartThemeName": "openbb-dark"
+    },
+    {
+      "type": "chartOptionsChanged",
+      "chartId": "id-3c30ixodqyv",
+      "chartType": "groupedColumn",
+      "chartThemeName": "openbb-dark"
+    },
+    {
+      "type": "chartOptionsChanged",
+      "chartId": "id-3c30ixodqyv",
+      "chartType": "groupedColumn",
+      "chartThemeName": "openbb-dark"
+    },
+    {
+      "type": "chartOptionsChanged",
+      "chartId": "id-3c30ixodqyv",
+      "chartType": "groupedColumn",
+      "chartThemeName": "openbb-dark"
+    },
+    {
+      "type": "chartDestroyed",
+      "chartId": "id-3c30ixodqyv"
+    }
+  ],
+  "table": {
+    "focusedCell": {
+      "rowIndex": 1,
+      "rowPinned": null,
+      "colId": "revenue"
+    },
+    "ranges": [],
+    "state": {
+      "scroll": {
+        "top": 0,
+        "left": 65
+      },
+      "focusedCell": {
+        "colId": "revenue",
+        "rowIndex": 1,
+        "rowPinned": null
+      }
+    },
+    "cells": [
+      {
+        "row": "0",
+        "column": "period",
+        "text": "2024-Q1",
+        "rect": {
+          "x": 208.3125,
+          "y": 89,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "0",
+        "column": "revenue",
+        "text": "100",
+        "rect": {
+          "x": 490.3125,
+          "y": 89,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "0",
+        "column": "operatingIncome",
+        "text": "20",
+        "rect": {
+          "x": 837.3125,
+          "y": 89,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "period",
+        "text": "2024-Q2",
+        "rect": {
+          "x": 208.3125,
+          "y": 121,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "revenue",
+        "text": "120",
+        "rect": {
+          "x": 490.3125,
+          "y": 121,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "1",
+        "column": "operatingIncome",
+        "text": "25",
+        "rect": {
+          "x": 837.3125,
+          "y": 121,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "period",
+        "text": "2024-Q3",
+        "rect": {
+          "x": 208.3125,
+          "y": 153,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "revenue",
+        "text": "140",
+        "rect": {
+          "x": 490.3125,
+          "y": 153,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "2",
+        "column": "operatingIncome",
+        "text": "30",
+        "rect": {
+          "x": 837.3125,
+          "y": 153,
+          "width": 281,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "period",
+        "text": "2024-Q4",
+        "rect": {
+          "x": 208.3125,
+          "y": 185,
+          "width": 282,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "revenue",
+        "text": "160",
+        "rect": {
+          "x": 490.3125,
+          "y": 185,
+          "width": 347,
+          "height": 32
+        }
+      },
+      {
+        "row": "3",
+        "column": "operatingIncome",
+        "text": "40",
+        "rect": {
+          "x": 837.3125,
+          "y": 185,
+          "width": 281,
+          "height": 32
+        }
+      }
+    ]
+  },
+  "dom": {
+    "dark": true,
+    "htmlClass": "dark",
+    "panel": null,
+    "panelRect": null,
+    "menuVisible": false,
+    "chartNode": null,
+    "chartRect": null,
+    "tabs": [],
+    "headings": [],
+    "controls": [],
+    "scroll": [],
+    "active": {
+      "tag": "BUTTON",
+      "id": "chart-view-button",
+      "role": null,
+      "label": "",
+      "type": "submit",
+      "value": "",
+      "disabled": false,
+      "node": 15,
+      "visible": true
+    },
+    "activeAncestors": [
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": null,
+        "label": "",
+        "type": null,
+        "node": 16,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": null,
+        "label": "",
+        "type": null,
+        "node": 17,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": null,
+        "label": "Synthetic Financials",
+        "type": null,
+        "node": 18,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": null,
+        "label": "Synthetic Financials",
+        "type": null,
+        "node": 19,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": null,
+        "label": "Synthetic Financials",
+        "type": null,
+        "node": 20,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "synthetic_financials",
+        "role": null,
+        "label": "Synthetic Financials:where(.ag-theme-params-1) {\n\t--ag-accent-color: var(--ag-inherited-accent-color, #337dba);\n\t--ag-advanced-filter-builder-button-bar-border: var(--ag-inherited-advanced-filter-builder-button-bar-border, solid var(--ag-border-width) var(--ag-border-color));\n\t--ag-advanced-filter-builder-column-pill-color: var(--ag-inherited-advanced-filter-builder-column-pill-color, #355f2d);\n\t--ag-advanced-filter-builder-indent-size: var(--ag-inherited-advanced-filter-builder-indent-size, calc( var(--ag-spacing)   *  2  +   var(--ag-icon-size) ));\n\t--ag-advanced-filter-builder-join-pill-color: var(--ag-inherited-advanced-filter-builder-join-pill-color, #7a3a37);\n\t--ag-advanced-filter-builder-option-pill-color: var(--ag-inherited-advanced-filter-builder-option-pill-color, #5a3168);\n\t--ag-advanced-filter-builder-value-pill-color: var(--ag-inherited-advanced-filter-builder-value-pill-color, #374c86);\n\t--ag-alt-header-background-color: var(--ag-inherited-alt-header-background-color, #36363f);\n\t--ag-background-",
+        "type": null,
+        "node": 21,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": null,
+        "label": "Synthetic Financials:where(.ag-theme-params-1) {\n\t--ag-accent-color: var(--ag-inherited-accent-color, #337dba);\n\t--ag-advanced-filter-builder-button-bar-border: var(--ag-inherited-advanced-filter-builder-button-bar-border, solid var(--ag-border-width) var(--ag-border-color));\n\t--ag-advanced-filter-builder-column-pill-color: var(--ag-inherited-advanced-filter-builder-column-pill-color, #355f2d);\n\t--ag-advanced-filter-builder-indent-size: var(--ag-inherited-advanced-filter-builder-indent-size, calc( var(--ag-spacing)   *  2  +   var(--ag-icon-size) ));\n\t--ag-advanced-filter-builder-join-pill-color: var(--ag-inherited-advanced-filter-builder-join-pill-color, #7a3a37);\n\t--ag-advanced-filter-builder-option-pill-color: var(--ag-inherited-advanced-filter-builder-option-pill-color, #5a3168);\n\t--ag-advanced-filter-builder-value-pill-color: var(--ag-inherited-advanced-filter-builder-value-pill-color, #374c86);\n\t--ag-alt-header-background-color: var(--ag-inherited-alt-header-background-color, #36363f);\n\t--ag-background-",
+        "type": null,
+        "node": 22,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "role": null,
+        "label": "Synthetic Financials:where(.ag-theme-params-1) {\n\t--ag-accent-color: var(--ag-inherited-accent-color, #337dba);\n\t--ag-advanced-filter-builder-button-bar-border: var(--ag-inherited-advanced-filter-builder-button-bar-border, solid var(--ag-border-width) var(--ag-border-color));\n\t--ag-advanced-filter-builder-column-pill-color: var(--ag-inherited-advanced-filter-builder-column-pill-color, #355f2d);\n\t--ag-advanced-filter-builder-indent-size: var(--ag-inherited-advanced-filter-builder-indent-size, calc( var(--ag-spacing)   *  2  +   var(--ag-icon-size) ));\n\t--ag-advanced-filter-builder-join-pill-color: var(--ag-inherited-advanced-filter-builder-join-pill-color, #7a3a37);\n\t--ag-advanced-filter-builder-option-pill-color: var(--ag-inherited-advanced-filter-builder-option-pill-color, #5a3168);\n\t--ag-advanced-filter-builder-value-pill-color: var(--ag-inherited-advanced-filter-builder-value-pill-color, #374c86);\n\t--ag-alt-header-background-color: var(--ag-inherited-alt-header-background-color, #36363f);\n\t--ag-background-",
+        "type": null,
+        "node": 23,
+        "visible": true
+      }
+    ],
+    "focusEvents": [
+      {
+        "type": "focusin",
+        "time": 2013,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "columnheader",
+          "label": "Revenue (USD millions)",
+          "type": null,
+          "node": 3,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2204,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "columnheader",
+          "label": "Revenue (USD millions)",
+          "type": null,
+          "node": 3,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2205,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2254,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2254,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "30",
+          "type": null,
+          "node": 5,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2449,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "30",
+          "type": null,
+          "node": 5,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2449,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 2851,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "gridcell",
+          "label": "120",
+          "type": null,
+          "node": 4,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 2853,
+        "element": {
+          "tag": "BUTTON",
+          "id": "chart-view-button",
+          "role": null,
+          "label": "",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 15,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 3927,
+        "element": {
+          "tag": "BUTTON",
+          "id": "chart-view-button",
+          "role": null,
+          "label": "",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 15,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 3928,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 26,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 3988,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 26,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 3988,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 27,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 4068,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 27,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 4164,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 4783,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 4784,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5001,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 5002,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5066,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 5067,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Vertical Axis",
+          "type": null,
+          "node": 43,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5201,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Vertical Axis",
+          "type": null,
+          "node": 43,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 5202,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-329-input",
+          "role": null,
+          "label": "Thickness",
+          "type": "number",
+          "value": "1",
+          "checked": false,
+          "disabled": false,
+          "node": 44,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5617,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-329-input",
+          "role": null,
+          "label": "Thickness",
+          "type": "number",
+          "value": "1",
+          "checked": false,
+          "disabled": false,
+          "node": 44,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 5618,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 5637,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": false
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6106,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 74,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6153,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 74,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6153,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 75,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6160,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 75,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6160,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6750,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6750,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6771,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6772,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Categories",
+          "type": null,
+          "node": 76,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6785,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Categories",
+          "type": null,
+          "node": 76,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6786,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "combobox",
+          "label": "Period",
+          "type": null,
+          "node": 40,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 6799,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "combobox",
+          "label": "Period",
+          "type": null,
+          "node": 40,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 6799,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-99-input",
+          "role": null,
+          "label": "Aggregate",
+          "type": "checkbox",
+          "value": "on",
+          "checked": false,
+          "disabled": false,
+          "node": 41,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 7017,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-99-input",
+          "role": null,
+          "label": "Aggregate",
+          "type": "checkbox",
+          "value": "on",
+          "checked": false,
+          "disabled": false,
+          "node": 41,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 7018,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 7037,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": false
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 7255,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 85,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 7302,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 85,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 7302,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 86,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 7307,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 86,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 7307,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 7900,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Set Up",
+          "type": null,
+          "node": 36,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 7900,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 7921,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 7921,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "button",
+          "label": "Grouped Column. Selected",
+          "type": null,
+          "node": 87,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 8151,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "button",
+          "label": "Grouped Column. Selected",
+          "type": null,
+          "node": 87,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 8152,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 8174,
+        "element": {
+          "tag": "BUTTON",
+          "id": null,
+          "role": null,
+          "label": "Close Chart Edit Menu",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 38,
+          "visible": false
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 8391,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 93,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 8438,
+        "element": {
+          "tag": "DIV",
+          "id": "radix-:r39:",
+          "role": "menu",
+          "label": "MetadataSettingsDuplicateCopy toMinimizeQuick actionsChart settingsExport",
+          "type": null,
+          "node": 93,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 8438,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 94,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 8444,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "menuitem",
+          "label": "Chart settings",
+          "type": null,
+          "node": 94,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 8445,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 9052,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 9052,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 9204,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 9206,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-329-input",
+          "role": null,
+          "label": "Thickness",
+          "type": "number",
+          "value": "1",
+          "checked": false,
+          "disabled": false,
+          "node": 44,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 9514,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-329-input",
+          "role": null,
+          "label": "Thickness",
+          "type": "number",
+          "value": "1",
+          "checked": false,
+          "disabled": false,
+          "node": 44,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 10466,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 10517,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 10517,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Vertical Axis",
+          "type": null,
+          "node": 106,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 10633,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "role",
+          "label": "Vertical Axis",
+          "type": null,
+          "node": 106,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 10634,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-1044-input",
+          "role": null,
+          "label": "Thickness",
+          "type": "number",
+          "value": "1",
+          "checked": false,
+          "disabled": false,
+          "node": 107,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 10866,
+        "element": {
+          "tag": "INPUT",
+          "id": "ag-1044-input",
+          "role": null,
+          "label": "Thickness",
+          "type": "number",
+          "value": "1",
+          "checked": false,
+          "disabled": false,
+          "node": 107,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 10867,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 10916,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 10916,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "button",
+          "label": "Line",
+          "type": null,
+          "node": 131,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 10983,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "button",
+          "label": "Line. Selected",
+          "type": null,
+          "node": 131,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 11266,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 11650,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 11650,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 11700,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Chart",
+          "type": null,
+          "node": 28,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 11700,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "button",
+          "label": "Grouped Column",
+          "type": null,
+          "node": 138,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 11757,
+        "element": {
+          "tag": "DIV",
+          "id": null,
+          "role": "button",
+          "label": "Grouped Column. Selected",
+          "type": null,
+          "node": 138,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 12016,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusout",
+        "time": 12434,
+        "element": {
+          "tag": "SPAN",
+          "id": null,
+          "role": "tab",
+          "label": "Customize",
+          "type": null,
+          "node": 37,
+          "visible": true
+        }
+      },
+      {
+        "type": "focusin",
+        "time": 12434,
+        "element": {
+          "tag": "BUTTON",
+          "id": "chart-view-button",
+          "role": null,
+          "label": "",
+          "type": "submit",
+          "value": "",
+          "disabled": false,
+          "node": 15,
+          "visible": true
+        }
+      }
+    ]
+  },
+  "budget": {
+    "paths": 52,
+    "omitted": [
+      {
+        "path": "options.common.axes.category.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.radius-category.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.angle-category.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.grouped-category.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.number.crosshair.label.renderer",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.number.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.axes.time.label.formatter",
+        "reason": "non-plain-function"
+      },
+      {
+        "path": "options.common.legend.item.label.formatter",
+        "reason": "non-plain-function"
+      }
+    ],
+    "omittedCount": 8,
+    "focusOverflow": 0,
+    "chartEventOverflow": 0
+  }
+}
