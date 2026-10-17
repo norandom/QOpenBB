@@ -159,13 +159,13 @@
     },
     "application_integration_slice": {
       "name": "original-workspace-chart-journey",
-      "phase": "tasks-generated",
+      "phase": "implementation-in-progress",
       "design_path": "chart-application-integration-design.md",
       "design_generated": true,
       "design_approved": true,
       "tasks_generated": true,
-      "tasks_approved": false,
-      "implementation_ready": false,
+      "tasks_approved": true,
+      "implementation_ready": true,
       "independent_design_review": "Scoped GO for controller contract freeze and source-safe A1/B1 task planning; affected A2, mapper, full C and D activation remain gated by named runtime contracts. Owner design approval recorded; task approval remains pending.",
       "review_evidence": "artifacts/chart-integration-freeze-review/review.md",
       "reviewed_design_sha256": "196b88811be7b637d21d4c1e37048d6091609942f4696f9a4bcdc5e90cbb5313",
@@ -178,7 +178,7 @@
         "chart-editor-runtime-contract.md"
       ],
       "latest_discovery_review": "artifacts/reviewed/chart-integration-publication-review/report.md",
-      "approval_note": "Owner approved the reviewed application integration design on 2026-10-17. Generate bounded source-safe tasks; named runtime gates and separate task approval remain required.",
+      "approval_note": "Owner approved the reviewed design and then tasks 2.34-2.37 on 2026-10-17. Execute this source-safe boundary autonomously with independent reviews; unresolved runtime joins remain blocked.",
       "task_ids": [
         "2.34",
         "2.35",

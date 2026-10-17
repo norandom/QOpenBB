@@ -23,10 +23,11 @@
     "chart-integration-freeze-review",
     "chart-integration-publication-review",
     "chart-integration-tasks",
-    "chart-integration-task-review"
+    "chart-integration-task-review",
+    "task-2.34"
   ],
   "sourcepins": {
-    "root_at_sync": "c71eb63d873b12ca5f89e1bead781d002163723b",
+    "root_at_sync": "6a456dec17abd82827ae6120490d858ed9714eca",
     "workspace_at_sync": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -3575,6 +3576,110 @@
       "publishedSHA256": "2b56d8462d8e2c16020cf267d4341b245369e8485840609c91178c9bba98c915",
       "bytes": 2680,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/check.log",
+      "sourceSHA256": "4eb842bf5ed54e46ae70dd0cb4a916c02295f3acce1aa01af060d1c86781f910",
+      "publishedpath": "artifacts/reviewed/task-2.34/check.log",
+      "publishedSHA256": "4eb842bf5ed54e46ae70dd0cb4a916c02295f3acce1aa01af060d1c86781f910",
+      "bytes": 1697,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/check.sh",
+      "sourceSHA256": "e970ce37bebbcf207e599991848198b61d6e31636f2d3ddf4d7cd203b000cfa8",
+      "publishedpath": "artifacts/reviewed/task-2.34/check.sh",
+      "publishedSHA256": "e970ce37bebbcf207e599991848198b61d6e31636f2d3ddf4d7cd203b000cfa8",
+      "bytes": 694,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/data-api-changes.json",
+      "sourceSHA256": "06474a8f0da632563eb4620c0e691d922d95dfb021797ec1b9e6e60984b5908c",
+      "publishedpath": "artifacts/reviewed/task-2.34/data-api-changes.json",
+      "publishedSHA256": "06474a8f0da632563eb4620c0e691d922d95dfb021797ec1b9e6e60984b5908c",
+      "bytes": 1446,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/handoff.md",
+      "sourceSHA256": "b6ee8d18012840bd215f2f4a8e4481f9edfccfe128b2e35cf0c8494513ce3f6f",
+      "publishedpath": "artifacts/reviewed/task-2.34/handoff.md",
+      "publishedSHA256": "b6ee8d18012840bd215f2f4a8e4481f9edfccfe128b2e35cf0c8494513ce3f6f",
+      "bytes": 9469,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/identity.json",
+      "sourceSHA256": "ef307dca3d68a6d76dddad75941625bb6331c935c649135f122f9b16fcc67c04",
+      "publishedpath": "artifacts/reviewed/task-2.34/identity.json",
+      "publishedSHA256": "ef307dca3d68a6d76dddad75941625bb6331c935c649135f122f9b16fcc67c04",
+      "bytes": 17098,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/identity.py",
+      "sourceSHA256": "6ab2f657f0d807b3a1fc715d4342d25a88a0e1a69a9a36095198914aae24dc98",
+      "publishedpath": "artifacts/reviewed/task-2.34/identity.py",
+      "publishedSHA256": "6ab2f657f0d807b3a1fc715d4342d25a88a0e1a69a9a36095198914aae24dc98",
+      "bytes": 2588,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/quality-before-cache-exclusion.json",
+      "sourceSHA256": "6e2e1376435999ddc4d8f995fb79736d245b1b0b29bdc07335263266c8f007cb",
+      "publishedpath": "artifacts/reviewed/task-2.34/quality-before-cache-exclusion.json",
+      "publishedSHA256": "6e2e1376435999ddc4d8f995fb79736d245b1b0b29bdc07335263266c8f007cb",
+      "bytes": 251698,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/quality.json",
+      "sourceSHA256": "b8c6566d01c012351625fa9d22b6775962175ce284ab3d5e0bae36e91beaa11e",
+      "publishedpath": "artifacts/reviewed/task-2.34/quality.json",
+      "publishedSHA256": "b8c6566d01c012351625fa9d22b6775962175ce284ab3d5e0bae36e91beaa11e",
+      "bytes": 252003,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/red.log",
+      "sourceSHA256": "f7c70c77c4b3ee6aa55c7e36c90fcfa6e3b88f220b24d981af67bdeb4cf4e47a",
+      "publishedpath": "artifacts/reviewed/task-2.34/red.log",
+      "publishedSHA256": "f7c70c77c4b3ee6aa55c7e36c90fcfa6e3b88f220b24d981af67bdeb4cf4e47a",
+      "bytes": 1048,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/stage.sh",
+      "sourceSHA256": "ae2d7f5d7efe3a11df7ce383d9ae221d78753729e2c1c29453ca6a37aa883171",
+      "publishedpath": "artifacts/reviewed/task-2.34/stage.sh",
+      "publishedSHA256": "ae2d7f5d7efe3a11df7ce383d9ae221d78753729e2c1c29453ca6a37aa883171",
+      "bytes": 909,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/workspace-changes.json",
+      "sourceSHA256": "5674583911f4a842b83ebc3fb49e739eeef746216acf45700b92266fdbb36ae1",
+      "publishedpath": "artifacts/reviewed/task-2.34/workspace-changes.json",
+      "publishedSHA256": "5674583911f4a842b83ebc3fb49e739eeef746216acf45700b92266fdbb36ae1",
+      "bytes": 12077,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/review/check.log",
+      "sourceSHA256": "d7b558a4c2d633452fa1694a6024ead8dcfac95631d86a33cddd9187c4621b94",
+      "publishedpath": "artifacts/reviewed/task-2.34/review/check.log",
+      "publishedSHA256": "d7b558a4c2d633452fa1694a6024ead8dcfac95631d86a33cddd9187c4621b94",
+      "bytes": 1695,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.34/review/verdict.md",
+      "sourceSHA256": "8d31e6a0f80120771566d6786f8f90d43dbed060b15ece086cc562fe5db1513e",
+      "publishedpath": "artifacts/reviewed/task-2.34/review/verdict.md",
+      "publishedSHA256": "8d31e6a0f80120771566d6786f8f90d43dbed060b15ece086cc562fe5db1513e",
+      "bytes": 3510,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -4204,5 +4309,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 11187139
+  "total_payload_bytes": 11743071
 }

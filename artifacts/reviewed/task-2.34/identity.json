@@ -1,0 +1,312 @@
+{
+  "head": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
+  "original_pin": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "stage": "/home/mc/qopenbb-work/task234/terminalpro",
+  "node_version": "v24.22.0",
+  "dirty_tracked_paths": [],
+  "untracked_paths": [
+    "lite/__pycache__/bootstrap.cpython-313.pyc",
+    "terminalpro/src/components/General/Table/Chart/application/types.ts",
+    "terminalpro/src/components/Widgets/perspective/bindings.json",
+    "terminalpro/src/components/Widgets/perspective/financial/aggregations.ts",
+    "terminalpro/src/components/Widgets/perspective/financial/errors.ts",
+    "terminalpro/src/components/Widgets/perspective/financial/fields.ts",
+    "terminalpro/src/components/Widgets/perspective/financial/filters.ts",
+    "terminalpro/src/components/Widgets/perspective/financial/rows.ts",
+    "terminalpro/src/components/Widgets/perspective/financial/schema.ts",
+    "terminalpro/src/components/Widgets/perspective/financial/scopes.ts",
+    "terminalpro/src/components/Widgets/perspective/financial/types.ts",
+    "terminalpro/tests/unit/chart-application/contracts.types.ts",
+    "terminalpro/tests/unit/chart-application/tsconfig.json",
+    "terminalpro/tests/unit/chart-application/vitest.config.mjs",
+    "terminalpro/tests/unit/financial-engine.mjs",
+    "terminalpro/tests/unit/financial-fixtures.json",
+    "terminalpro/tests/unit/financial-normalize.py",
+    "terminalpro/tests/unit/financial.test.ts"
+  ],
+  "exact_source_and_config_bytes": [
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
+      "sha256": "93a7e28b879fc93028b7d681049492332ffaafc04e85404c942cdb770be91534",
+      "staged_sha256": "93a7e28b879fc93028b7d681049492332ffaafc04e85404c942cdb770be91534"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/application/types.ts",
+      "sha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+      "staged_sha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/detachedState.ts",
+      "sha256": "a556556f6cadef9e042301f4798f72585498c4538cf1670f4f6ab0c77f9dbd02",
+      "staged_sha256": "a556556f6cadef9e042301f4798f72585498c4538cf1670f4f6ab0c77f9dbd02"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "sha256": "56f388d56600f2d72d6cc8bf475a2ac5a5c8603f02b48565b56231a82a1e70e8",
+      "staged_sha256": "56f388d56600f2d72d6cc8bf475a2ac5a5c8603f02b48565b56231a82a1e70e8"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/integratedState.ts",
+      "sha256": "9ae81b6bd5baa143bc75a090f1609df95744b04a3003ce92de975ae417f1fe3f",
+      "staged_sha256": "9ae81b6bd5baa143bc75a090f1609df95744b04a3003ce92de975ae417f1fe3f"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/legacyTypes.ts",
+      "sha256": "c0e177ae694b183290b284b22e21e1db3092390ca093ec7986ac612a6e262115",
+      "staged_sha256": "c0e177ae694b183290b284b22e21e1db3092390ca093ec7986ac612a6e262115"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/optionState.ts",
+      "sha256": "f5122d722b585e8eef61cc00cdeb9de2cb3ba33e376c4fffa6de1f38a21b2bb4",
+      "staged_sha256": "f5122d722b585e8eef61cc00cdeb9de2cb3ba33e376c4fffa6de1f38a21b2bb4"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "sha256": "4410f9d66d17b146b9e2d9e59b0dea617305d68c23f65c638927867333b8950c",
+      "staged_sha256": "4410f9d66d17b146b9e2d9e59b0dea617305d68c23f65c638927867333b8950c"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/snapshot.ts",
+      "sha256": "897aab915a746781b7e01062f97f1a4756e2f060b779b2fd170540e9e02339c4",
+      "staged_sha256": "897aab915a746781b7e01062f97f1a4756e2f060b779b2fd170540e9e02339c4"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/snapshotTypes.ts",
+      "sha256": "6ecba6a18a77cad3f027e384b023296187b968b1566a6955a54af638b6c25a14",
+      "staged_sha256": "6ecba6a18a77cad3f027e384b023296187b968b1566a6955a54af638b6c25a14"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/EChartsHost.tsx",
+      "sha256": "906fefc5eed125da005030061f3c6375becedacd26f0c5ee5a89f89c12e3b624",
+      "staged_sha256": "906fefc5eed125da005030061f3c6375becedacd26f0c5ee5a89f89c12e3b624"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesian.ts",
+      "sha256": "584f61b6e231a8693ce046a2a0e049e1e13eb87c537ede8fe5b69d1dcb2f99f9",
+      "staged_sha256": "584f61b6e231a8693ce046a2a0e049e1e13eb87c537ede8fe5b69d1dcb2f99f9"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesianStyle.ts",
+      "sha256": "c8688c04fc437e259b0d30aaee46872f9d48032d1f0629d633223fbb5c57d4b2",
+      "staged_sha256": "c8688c04fc437e259b0d30aaee46872f9d48032d1f0629d633223fbb5c57d4b2"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+      "sha256": "0581c101adc4a7dc71732965df569201c8e3b14144088c48bce188c849127d9f",
+      "staged_sha256": "0581c101adc4a7dc71732965df569201c8e3b14144088c48bce188c849127d9f"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/lifecycle.ts",
+      "sha256": "ce71510b3c064efbb3318a33f2e3f04d3446b17abcc41497fc24f2634f3d3ced",
+      "staged_sha256": "ce71510b3c064efbb3318a33f2e3f04d3446b17abcc41497fc24f2634f3d3ced"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "abb658e8caa298ae8bdef2b3903b4a84af0406c34a9d751b4f11c29470cced59",
+      "staged_sha256": "abb658e8caa298ae8bdef2b3903b4a84af0406c34a9d751b4f11c29470cced59"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "sha256": "c2a2db418147896f87117b4fb98fd65d486bbc8a4d66038c61980a2b3abf2187",
+      "staged_sha256": "c2a2db418147896f87117b4fb98fd65d486bbc8a4d66038c61980a2b3abf2187"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/utils.tsx",
+      "sha256": "feb154b4172ddb044261fb7e196632f9780c801adc3e6400a8f6710aab6619f8",
+      "staged_sha256": "feb154b4172ddb044261fb7e196632f9780c801adc3e6400a8f6710aab6619f8"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-application/contracts.types.ts",
+      "sha256": "c74e593eec9286027d648e6ab655b78b2e2b9d45f3c3ecb74ac57c26ec71f018",
+      "staged_sha256": "c74e593eec9286027d648e6ab655b78b2e2b9d45f3c3ecb74ac57c26ec71f018"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-application/tsconfig.json",
+      "sha256": "ad8d03c058e63b18d6526f7c518e0b813366f6cb326826bc23ff13d5aefbf10e",
+      "staged_sha256": "ad8d03c058e63b18d6526f7c518e0b813366f6cb326826bc23ff13d5aefbf10e"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-application/vitest.config.mjs",
+      "sha256": "4c0c193e2458f8c19581e873ae521a7beddbdae22716fc72e652e4f72565343a",
+      "staged_sha256": "4c0c193e2458f8c19581e873ae521a7beddbdae22716fc72e652e4f72565343a"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/appearance.fixtures.ts",
+      "sha256": "10b0d258386f564eb276f820cc3f87e007197b86b1f05e4e3d52470d699d9bf6",
+      "staged_sha256": "10b0d258386f564eb276f820cc3f87e007197b86b1f05e4e3d52470d699d9bf6"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/cartesian.test.ts",
+      "sha256": "274405c24d0e9946cdda0043d0d8522f9f62a6f308637e197deb6a6194e8024f",
+      "staged_sha256": "274405c24d0e9946cdda0043d0d8522f9f62a6f308637e197deb6a6194e8024f"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/contracts.fixtures.ts",
+      "sha256": "17f8127980e786024f736c8ccaaaff56399b45e34ddb0274cd1ef49e18aa8dbc",
+      "staged_sha256": "17f8127980e786024f736c8ccaaaff56399b45e34ddb0274cd1ef49e18aa8dbc"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/contracts.test.ts",
+      "sha256": "ad1fb443bbbb9f49b377a5bddad32ef44df6f55a48eb228a0feac2ea23a06e81",
+      "staged_sha256": "ad1fb443bbbb9f49b377a5bddad32ef44df6f55a48eb228a0feac2ea23a06e81"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/contracts.types.ts",
+      "sha256": "0546d734296f3d90a87b5cb51e2b8549d31edf5cf17f970032457223e64af98f",
+      "staged_sha256": "0546d734296f3d90a87b5cb51e2b8549d31edf5cf17f970032457223e64af98f"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts",
+      "sha256": "b3b1b7803a96f29940109940d7d94f1ecc96f97c5598c52a08348eb203857c0d",
+      "staged_sha256": "b3b1b7803a96f29940109940d7d94f1ecc96f97c5598c52a08348eb203857c0d"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/editorPayload.fixtures.ts",
+      "sha256": "3fe39492fe9fd9d945f76699c2d1773ae77366dd3b4e8774c6fcdcb0c0762f84",
+      "staged_sha256": "3fe39492fe9fd9d945f76699c2d1773ae77366dd3b4e8774c6fcdcb0c0762f84"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/host.test.tsx",
+      "sha256": "960cf790074d17d2b5531f0a8ae406e6774321532ca24131e563320df9b48b73",
+      "staged_sha256": "960cf790074d17d2b5531f0a8ae406e6774321532ca24131e563320df9b48b73"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts",
+      "sha256": "86fa93020d9baa372963cdfdaf518e6b6453863ed1e46b91e4883b2390367c0b",
+      "staged_sha256": "86fa93020d9baa372963cdfdaf518e6b6453863ed1e46b91e4883b2390367c0b"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/optionState.test.ts",
+      "sha256": "e4fd40fc10d5963120ce32c88374fd7b04bdb85df548607b73e569ab78b72c83",
+      "staged_sha256": "e4fd40fc10d5963120ce32c88374fd7b04bdb85df548607b73e569ab78b72c83"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/optionStateContracts.types.ts",
+      "sha256": "5548acdec0bdcf4f9983bcad384ea1f8e66e282f2fa2650f999e5632d2e62290",
+      "staged_sha256": "5548acdec0bdcf4f9983bcad384ea1f8e66e282f2fa2650f999e5632d2e62290"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/snapshot.fixtures.ts",
+      "sha256": "5f7d682f832ecbb5d69db85c94412b1d635b00aab508a0175dfced0550c4b209",
+      "staged_sha256": "5f7d682f832ecbb5d69db85c94412b1d635b00aab508a0175dfced0550c4b209"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/snapshot.test.ts",
+      "sha256": "e13a4ed572f7bd3875a33c34023abd5290eb3433734785704bb7b7d50dfc0c52",
+      "staged_sha256": "e13a4ed572f7bd3875a33c34023abd5290eb3433734785704bb7b7d50dfc0c52"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/snapshotContracts.types.ts",
+      "sha256": "da72ee92de6eb4ec7106af120b4c5f3b0aaeceb20ba8924a67ea70d7cef80a71",
+      "staged_sha256": "da72ee92de6eb4ec7106af120b4c5f3b0aaeceb20ba8924a67ea70d7cef80a71"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/stateReducers.test.ts",
+      "sha256": "1dcff74f6c4eb87512df99cda21dd2231a2dc0e2f99c614abdf9314181df37a3",
+      "staged_sha256": "1dcff74f6c4eb87512df99cda21dd2231a2dc0e2f99c614abdf9314181df37a3"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/tsconfig.json",
+      "sha256": "e30c68feaf0f9dbb41c7fb0e9379e9aa11f0109dc8dc77135de4bf9ffba0e628",
+      "staged_sha256": "e30c68feaf0f9dbb41c7fb0e9379e9aa11f0109dc8dc77135de4bf9ffba0e628"
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/vitest.config.mjs",
+      "sha256": "2cee58e004b541afcaf1fa5b7aee19dc90fd089358ed0ed90e64854807079413",
+      "staged_sha256": "2cee58e004b541afcaf1fa5b7aee19dc90fd089358ed0ed90e64854807079413"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/appearance.html",
+      "sha256": "1a243807406cd30b953a0de604f7d9fbdd0319fa49254d2b2d3828c488a19d14",
+      "staged_sha256": "1a243807406cd30b953a0de604f7d9fbdd0319fa49254d2b2d3828c488a19d14"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/appearance.spec.ts",
+      "sha256": "b4ed01500d6cf005cfbc5ea55b40f9a5b64ab4bc3e70ab9d3df39207b8405fde",
+      "staged_sha256": "b4ed01500d6cf005cfbc5ea55b40f9a5b64ab4bc3e70ab9d3df39207b8405fde"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/appearance.tsx",
+      "sha256": "8c404334354e2d62f253b283c8f19fca6c6c99b739113fbb428ba6f31e380070",
+      "staged_sha256": "8c404334354e2d62f253b283c8f19fca6c6c99b739113fbb428ba6f31e380070"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/cartesian.html",
+      "sha256": "d920379a48ca25539c7de2f6dd9d7290f7769d4115f522020c498aa98df2e2ef",
+      "staged_sha256": "d920379a48ca25539c7de2f6dd9d7290f7769d4115f522020c498aa98df2e2ef"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/cartesian.spec.ts",
+      "sha256": "857bbcb6c3fa5f1f54c9a2e16d12a35224d2edb397ce8b8cf231186153ab186e",
+      "staged_sha256": "857bbcb6c3fa5f1f54c9a2e16d12a35224d2edb397ce8b8cf231186153ab186e"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/cartesian.tsx",
+      "sha256": "b8ac0ce03a89a60409ebe322c33477e766e3b925104434040305034c6b7757d5",
+      "staged_sha256": "b8ac0ce03a89a60409ebe322c33477e766e3b925104434040305034c6b7757d5"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/fixture.html",
+      "sha256": "ea47bceea07c093a7c442db8f5e43bfb99e0367b0b888b2f09ddc27a8c63fbb3",
+      "staged_sha256": "ea47bceea07c093a7c442db8f5e43bfb99e0367b0b888b2f09ddc27a8c63fbb3"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/fixture.ts",
+      "sha256": "fcb0c89dcde6e4adb15ad8198142691d9b0d10451ef68a7edd249681ecb96ab4",
+      "staged_sha256": "fcb0c89dcde6e4adb15ad8198142691d9b0d10451ef68a7edd249681ecb96ab4"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/host.html",
+      "sha256": "0f47f403849e733a2b7a4ec7278df7462a75c7147fcec03ee5db7b6e98694963",
+      "staged_sha256": "0f47f403849e733a2b7a4ec7278df7462a75c7147fcec03ee5db7b6e98694963"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/host.spec.ts",
+      "sha256": "6eca1de5468f7a877f5cc381512dc05e869e4445d569b8ff3e738c1cfa9933d9",
+      "staged_sha256": "6eca1de5468f7a877f5cc381512dc05e869e4445d569b8ff3e738c1cfa9933d9"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/host.tsx",
+      "sha256": "41bc3c7855a9c2916e0db29d85928723a6c8226b212edd3d46fc8a4386829c5c",
+      "staged_sha256": "41bc3c7855a9c2916e0db29d85928723a6c8226b212edd3d46fc8a4386829c5c"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/playwright.config.ts",
+      "sha256": "c4e6a99bb4b62e3adf533b1e9d232b986085a6cd3dc2c09b8107b491f4594b6e",
+      "staged_sha256": "c4e6a99bb4b62e3adf533b1e9d232b986085a6cd3dc2c09b8107b491f4594b6e"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/smoke.spec.ts",
+      "sha256": "790ad1c5772bccead465160cc2518fbe8dc938b49c34d8ac637ee60dc0759d72",
+      "staged_sha256": "790ad1c5772bccead465160cc2518fbe8dc938b49c34d8ac637ee60dc0759d72"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/toolchain.test.ts",
+      "sha256": "31ffac36336d295a722d78b753c0ebbc1da33415b899365ab878d8d9ebe6b38f",
+      "staged_sha256": "31ffac36336d295a722d78b753c0ebbc1da33415b899365ab878d8d9ebe6b38f"
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/vite.config.ts",
+      "sha256": "66aba22d88e0791d33bc1110d5d89b6c2aca3dfe597a5f8fd9dad42accca0d77",
+      "staged_sha256": "66aba22d88e0791d33bc1110d5d89b6c2aca3dfe597a5f8fd9dad42accca0d77"
+    },
+    {
+      "path": "terminalpro/src/lib/utils/utils.ts",
+      "sha256": "42d80270c073318d648dc57b76c81cbc92f61b732ea33ea1a5f437fb032a99b1",
+      "staged_sha256": "42d80270c073318d648dc57b76c81cbc92f61b732ea33ea1a5f437fb032a99b1"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/AgGridUtils.tsx",
+      "sha256": "c6124fcaad05aff12a922bdce743dc3cebfe6bed8f2d73942ffcc9c19b2076a0",
+      "staged_sha256": "c6124fcaad05aff12a922bdce743dc3cebfe6bed8f2d73942ffcc9c19b2076a0"
+    }
+  ],
+  "original_source_hashes": {
+    "terminalpro/src/components/General/Table/Chart/utils.tsx": "a4a092b6ccb6076006dc51c93f9ea088c608d2aadb24b6183c5683d8ca302ba1",
+    "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+    "terminalpro/src/components/General/Table/hooks/useTableContext.tsx": "63e82095b66945c12a657968fd57ab22ad92105fe6d981b7d2f403a8ee34f8da",
+    "terminalpro/src/components/General/Table/hooks/useUpdateColumnState.ts": "c6b34ad355c19d69f0eb858c9fbb027c7a5cc0cb5e6cae49e3f15bc466f4d0fb",
+    "terminalpro/src/lib/utils/utils.ts": "42d80270c073318d648dc57b76c81cbc92f61b732ea33ea1a5f437fb032a99b1"
+  },
+  "scope_note": "Dirty path lists describe concurrent work, not ownership or acceptance. Only application/types.ts and the new application test configurations/contracts belong to 2.34."
+}
