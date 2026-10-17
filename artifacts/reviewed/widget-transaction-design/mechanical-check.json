@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "scope": "Mechanical draft marker and source inventory check only; no runtime/TypeScript/behavior verification",
+  "setterPaths": 6,
+  "baselineCounts": [
+    {
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "physicalLines": 307,
+      "logicalAndFunction": "not measured"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/Widget.context.tsx",
+      "physicalLines": 201,
+      "logicalAndFunction": "not measured"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/types.d.ts",
+      "physicalLines": 886,
+      "logicalAndFunction": "not measured"
+    }
+  ],
+  "missingMarkers": []
+}

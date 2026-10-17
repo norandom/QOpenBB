@@ -15,6 +15,8 @@ The bounded original-runtime capture resolves the missing axis stroke field and 
 
 The [capture report](../../../artifacts/reviewed/consuming-axis-grid-capture/report.md) links exact action/model/processed/scene records, screenshots, source identities, diagnostics and cleanup. Three UI edits and four synthetic cases completed after a diagnosed onboarding-navigation harness correction. The first failed attempt is retained. Onboarding, candidate rendering, provider access and save/reopen were not accepted by this run; diagnostics must be read with the report rather than described as clean.
 
+Independent [review](../../../artifacts/reviewed/consuming-axis-grid-review/report.md) accepts these finite observations, with 231 offline checks and inspection of all eight screenshots. This is acceptance of original-reference evidence, not candidate parity.
+
 ## Effect on the consuming design
 
 This evidence supplements the [contract draft](chart-consuming-contract-draft.md). Correct the source collector to use `line.stroke`; do not borrow grid color as an axis-line default. Preserve the distinction between model grid width and effective per-style width. The draft's opacity field is still a proposal, not a supported control or proven source projection. These probes target `gridLine.style[0].strokeOpacity`; they do not settle the earlier ledger's `fillOpacity` or every possible opacity mechanism.

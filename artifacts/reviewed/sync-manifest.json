@@ -53,10 +53,12 @@
     "consuming-integration-readiness",
     "consuming-contract-freeze",
     "consuming-axis-grid-capture",
-    "ui-parity-delivery"
+    "ui-parity-delivery",
+    "widget-transaction-design",
+    "consuming-axis-grid-review"
   ],
   "sourcepins": {
-    "root_at_sync": "2faac9f5b2e08a57a15e0f4a4b54a22b6301c987",
+    "root_at_sync": "112ac7bbf4ee4a5e9ec85c624e122e5c91357180",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -10373,6 +10375,78 @@
       "publishedSHA256": "07785ef224f4de94ffb7ee8e82b94d3beb4d2ded929215fc0d7e6679a08caf7e",
       "bytes": 9326,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/widget-transaction-design/draft.md",
+      "sourceSHA256": "66458eb7bf8b9114cd431d4d36c1d2d5653607e74ad3a8e2be5b01e24d1ef067",
+      "publishedpath": "artifacts/reviewed/widget-transaction-design/draft.md",
+      "publishedSHA256": "66458eb7bf8b9114cd431d4d36c1d2d5653607e74ad3a8e2be5b01e24d1ef067",
+      "bytes": 20505,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/widget-transaction-design/source-audit.json",
+      "sourceSHA256": "a77c1991b9303d84632a2d7914ffb1cbe9454022d8e341989f35d4830112458f",
+      "publishedpath": "artifacts/reviewed/widget-transaction-design/source-audit.json",
+      "publishedSHA256": "a77c1991b9303d84632a2d7914ffb1cbe9454022d8e341989f35d4830112458f",
+      "bytes": 2764,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/widget-transaction-design/mechanical-check.json",
+      "sourceSHA256": "1a3a44157d2447d39a44f28fe31de6ef4d61e81fcb70b55afe87ba488f0c7e65",
+      "publishedpath": "artifacts/reviewed/widget-transaction-design/mechanical-check.json",
+      "publishedSHA256": "1a3a44157d2447d39a44f28fe31de6ef4d61e81fcb70b55afe87ba488f0c7e65",
+      "bytes": 713,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/widget-transaction-design/freeze-inputs.ps1",
+      "sourceSHA256": "78fcddabf2968e2693dab9c063bed3f8ba495603dac60d76738a640656cf12fa",
+      "publishedpath": "artifacts/reviewed/widget-transaction-design/freeze-inputs.ps1",
+      "publishedSHA256": "78fcddabf2968e2693dab9c063bed3f8ba495603dac60d76738a640656cf12fa",
+      "bytes": 4124,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/widget-transaction-design/safe-hash-allowlist.json",
+      "sourceSHA256": "77d52bd52faa63e864faedc89cc4a21f2827c33856cdcca2685f9b489d3f6b29",
+      "publishedpath": "artifacts/reviewed/widget-transaction-design/safe-hash-allowlist.json",
+      "publishedSHA256": "77d52bd52faa63e864faedc89cc4a21f2827c33856cdcca2685f9b489d3f6b29",
+      "bytes": 3872,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-axis-grid-review/report.md",
+      "sourceSHA256": "adc8ae90f312d2a8c01c8da6cde70ebc0c91fab84964f5e6a310e2dcbca3cbbc",
+      "publishedpath": "artifacts/reviewed/consuming-axis-grid-review/report.md",
+      "publishedSHA256": "adc8ae90f312d2a8c01c8da6cde70ebc0c91fab84964f5e6a310e2dcbca3cbbc",
+      "bytes": 7613,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-axis-grid-review/audit.ps1",
+      "sourceSHA256": "96df0c9fdccfe061a9943316ad54370a242b885c14a88d2a26dc2fc8262eaa77",
+      "publishedpath": "artifacts/reviewed/consuming-axis-grid-review/audit.ps1",
+      "publishedSHA256": "96df0c9fdccfe061a9943316ad54370a242b885c14a88d2a26dc2fc8262eaa77",
+      "bytes": 6946,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-axis-grid-review/verification.json",
+      "sourceSHA256": "00bf52067a82110869b548e913e1672aada6826662fdd59c3a77dd95c9f8f240",
+      "publishedpath": "artifacts/reviewed/consuming-axis-grid-review/verification.json",
+      "publishedSHA256": "00bf52067a82110869b548e913e1672aada6826662fdd59c3a77dd95c9f8f240",
+      "bytes": 12877,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-axis-grid-review/safe-publication-allowlist.json",
+      "sourceSHA256": "712da93d602e8935169f3af898e42de4d8ced403b7df50b41457bf57c4ea2976",
+      "publishedpath": "artifacts/reviewed/consuming-axis-grid-review/safe-publication-allowlist.json",
+      "publishedSHA256": "712da93d602e8935169f3af898e42de4d8ced403b7df50b41457bf57c4ea2976",
+      "bytes": 10042,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -11086,5 +11160,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 26892719
+  "total_payload_bytes": 26962175
 }

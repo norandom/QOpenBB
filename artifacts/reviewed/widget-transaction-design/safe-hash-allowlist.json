@@ -1,0 +1,101 @@
+{
+  "status": "explicit source and draft allowlist; controller/independent review pending",
+  "files": [
+    {
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "sha256": "a69811c9c137d629ad1b27431ece65ad2f9b07f3001dd29d59caabd79c3e5e42",
+      "bytes": 10024,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/Widget.context.tsx",
+      "sha256": "784f31d48585cd2957a482c2ee22d4e1d96b1e79eb88aaf61aefb2554c945e54",
+      "bytes": 6690,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/types.d.ts",
+      "sha256": "031d88e8b41129d4057c441f72c939be44b62b03f7abac4be3160854768846dd",
+      "bytes": 34932,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/hooks/useRefHooks.tsx",
+      "sha256": "14d934e6f48387d1219b603275ddc77790470c27bd97f6c9cad602ae33b372ae",
+      "bytes": 1746,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/lib/utils/app.ts",
+      "sha256": "8b47f3ee3fad70db4e5ad2eb274abe476f798044022ee1f1eed701f8badf5411",
+      "bytes": 58127,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/lib/utils/utils.ts",
+      "sha256": "42d80270c073318d648dc57b76c81cbc92f61b732ea33ea1a5f437fb032a99b1",
+      "bytes": 46772,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/lib/state/app.ts",
+      "sha256": "6b50124c5991cf90c5a6947f9d42f4dfac647ebb676e3358282f18b9f09e0cc4",
+      "bytes": 71479,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/LayoutAuth/useSyncItems.tsx",
+      "sha256": "bcf37e46c9bb4544daecd9baf52bd2d563347a01c36b91f97fa7223b4f0f4488",
+      "bytes": 6602,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": ".kiro/steering/complexity.md",
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "bytes": 4171,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": ".kiro/steering/documentation.md",
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "bytes": 3981,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": ".kiro/steering/delegation.md",
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "bytes": 4333,
+      "class": "read-only-source-input"
+    },
+    {
+      "path": "artifacts/widget-transaction-design/draft.md",
+      "sha256": "66458eb7bf8b9114cd431d4d36c1d2d5653607e74ad3a8e2be5b01e24d1ef067",
+      "bytes": 20505,
+      "class": "draft-output-pending-independent-review"
+    },
+    {
+      "path": "artifacts/widget-transaction-design/source-audit.json",
+      "sha256": "a77c1991b9303d84632a2d7914ffb1cbe9454022d8e341989f35d4830112458f",
+      "bytes": 2764,
+      "class": "draft-output-pending-independent-review"
+    },
+    {
+      "path": "artifacts/widget-transaction-design/mechanical-check.json",
+      "sha256": "1a3a44157d2447d39a44f28fe31de6ef4d61e81fcb70b55afe87ba488f0c7e65",
+      "bytes": 713,
+      "class": "draft-output-pending-independent-review"
+    },
+    {
+      "path": "artifacts/widget-transaction-design/freeze-inputs.ps1",
+      "sha256": "78fcddabf2968e2693dab9c063bed3f8ba495603dac60d76738a640656cf12fa",
+      "bytes": 4124,
+      "class": "draft-output-pending-independent-review"
+    }
+  ],
+  "excluded": [
+    "Unlisted source/artifact trees",
+    "Environment/credential/private state/runtime files",
+    "Frozen session artifacts",
+    "Production/runtime/suite/browser/network outputs"
+  ]
+}

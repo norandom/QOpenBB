@@ -1,0 +1,75 @@
+{
+  "status": "source-only-design-research; not design approval or verified implementation",
+  "date": "2026-10-17",
+  "candidate": "ea02ec15956dee8d2c8a06825387a570757db12d",
+  "baselines": [
+    {
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "physicalLines": 307,
+      "logicalAndFunction": "not measured"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/Widget.context.tsx",
+      "physicalLines": 201,
+      "logicalAndFunction": "not measured"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/types.d.ts",
+      "physicalLines": 886,
+      "logicalAndFunction": "not measured"
+    }
+  ],
+  "setterPaths": [
+    {
+      "id": "preview",
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "line": 110,
+      "scope": "existing preview widget replacement"
+    },
+    {
+      "id": "stale-time",
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "line": 154,
+      "scope": "existing defaulting"
+    },
+    {
+      "id": "groups",
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "line": 190,
+      "scope": "group helper mutates input; query event in updater"
+    },
+    {
+      "id": "inner-tab",
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "line": 230,
+      "scope": "subscription innerTab"
+    },
+    {
+      "id": "public-updater",
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "line": 259,
+      "scope": "captured request mutation and enclosing store/context effects"
+    },
+    {
+      "id": "refresh",
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "line": 296,
+      "scope": "timestamp and custom-event scheduling in updater"
+    }
+  ],
+  "preferredCandidate": "Additive chart port and completion metadata in existing React widget owner; conditional on explicit fence/conflict/save joins",
+  "alternativeNotRequired": "Whole-owner action reducer/outbox",
+  "unresolved": [
+    "exact external data/theme/input fence publication ordering",
+    "same-field conflict classifier and interaction lifecycle",
+    "contextOverride batching semantics",
+    "saveWidgets/explicit save barrier and real backend readback"
+  ],
+  "nonClaims": [
+    "No arbitrary legacy callback purity or exactly-once execution guarantee",
+    "At-most-once invocation per mounted owner is not backend delivery",
+    "No completion API currently exists in the void updater",
+    "No frozen session artifacts changed",
+    "No production, runtime, suite, browser, build, install or network work"
+  ]
+}
