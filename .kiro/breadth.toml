@@ -212,3 +212,11 @@ planned_checks = ["actual-hook-replay", "committed-effects-once", "priority-reba
 test_paths = ["vendor/workspace/terminalpro/tests/unit/widget-sync/owner.test.tsx"]
 status = "passed"
 evidence = ["Task 2.46 accepted at Workspace 708d6bb: independent 12-test run, scoped actual-module types/lint and complexity pass. Review and regression evidence: artifacts/reviewed/task-2.46/review/review.md. Full application type checking and chart-consumer integration remain unverified."]
+
+[[capabilities]]
+id = "controlled-chart-editor-dock"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["dock-controlled-navigation", "dock-hide-reopen-state-scroll-focus", "customize-tab-theme-lifetime", "dock-light-dark-preview"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartEditorDock.test.tsx"]
+status = "passed"
+evidence = ["Task 2.48 accepted at Workspace a83f711: independent four-test run, lint, size checks and isolated browser navigation pass. Actual production dock/gallery preview retains 260px width and original header treatment. Review: artifacts/reviewed/task-2.48/review/review.md. Scoped types report only reproduced unchanged DS TS2578; Storybook runtime, complete Set Up/Customize controls and application integration remain unverified."]

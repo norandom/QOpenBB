@@ -25,6 +25,17 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 2.45_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
 
+
+- [x] 2.48 Connect the accepted gallery to the original dock navigation
+  - Accepted at Workspace `a83f711`: [review](../../../artifacts/reviewed/task-2.48/review/review.md), four focused tests and isolated dark/light browser navigation passed. Scoped TypeScript retains the reproduced unchanged DS diagnostic; full application integration is pending.
+  - Implement the [dock design](chart-editor-dock-design.md): controlled Chart / Set Up / Customize tabs, collapse/reopen, theme rebuild behavior and retained active-panel state/scroll.
+  - Own `Chart/editor/ChartEditorDock.tsx`, cohesive dock styles/helpers, focused tests and development-only story. Require supplied Set Up/Customize content; introduce no fake production panels, storage owner, flags or renderer activation.
+  - Done when real production component composition preserves the measured navigation behavior, exact gallery callbacks and accessible focus in dark/light previews. Preview fixture panels must be identified as fixtures; application integration remains pending.
+  - Whole production files pass 400 physical / 300 logical / 50 per-function caps and scoped type/lint checks. Reuse existing isolated tooling and screenshots; independently review before acceptance and commit.
+  - _Boundary: Dock component and gallery composition; full panel controls and session wiring remain separate_
+  - _Depends: 2.47_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.

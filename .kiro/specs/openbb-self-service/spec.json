@@ -305,6 +305,23 @@
     },
     "implementation_source_revision": "708d6bb8ce266c10a8615c74d96c79907dba669e",
     "implementation_review": "artifacts/reviewed/task-2.46/review/review.md",
-    "acceptance_scope": "Tasks 2.46 and 2.47 accepted within their bounded component scopes. Full editor and renderer integration remain pending."
+    "acceptance_scope": "Tasks 2.46 and 2.47 accepted within their bounded component scopes. Full editor and renderer integration remain pending.",
+    "dock": {
+      "task_id": "2.48",
+      "design_path": "chart-editor-dock-design.md",
+      "design_approved": true,
+      "tasks_approved": true,
+      "approval_note": "Owner said yes, go after proposal to connect accepted gallery to original docked editor. Bounded component composition authorized; full renderer activation is not inferred.",
+      "phase": "accepted",
+      "implementation_accepted": true,
+      "design_review": "artifacts/reviewed/task-2.48/design-review.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "81c69d8c50ca8fd36be37b4ef04b9a85120aaf7cecc7b1696d98e9fc487c705a",
+      "implementation_source_revision": "a83f71180fe82a9751c1dc763423cb8fc7b5dc6f",
+      "implementation_review": "artifacts/reviewed/task-2.48/review/review.md",
+      "preview": "artifacts/reviewed/task-2.48/implementer/dock-light-dark.png",
+      "acceptance_scope": "Controlled dock/gallery composition and navigation only. Complete Set Up/Customize controls and application/session wiring remain pending.",
+      "typecheck_limitation": "Scoped check reports unchanged DS typography.ts TS2578; Tabs-only baseline reproduces it. No clean full typecheck claimed."
+    }
   }
 }
