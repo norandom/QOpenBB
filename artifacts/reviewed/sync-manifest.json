@@ -43,10 +43,11 @@
     "parity/appearance-saved-composition",
     "parity/appearance-saved-review",
     "appearance-editor-design-review",
-    "appearance-editor-task-plan"
+    "appearance-editor-task-plan",
+    "task-2.41"
   ],
   "sourcepins": {
-    "root_at_sync": "cff08b347cedbaef95aea064d7fc1d5253d5f300",
+    "root_at_sync": "ce1f70294c606ae053d1cc8f4997d321fe4a1d75",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -7827,6 +7828,326 @@
       "publishedSHA256": "c2a1432a68f7eec8fe6b7a197be2645eaaf6679ea1f055a0cf7eb5460f26a058",
       "bytes": 1598,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/setup.py",
+      "sourceSHA256": "e0487a7c981c688bf9a588f1a3344316b63bd130ecad2532350c591d6b42c40a",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/setup.py",
+      "publishedSHA256": "e0487a7c981c688bf9a588f1a3344316b63bd130ecad2532350c591d6b42c40a",
+      "bytes": 4952,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/verify.py",
+      "sourceSHA256": "b302feefcbca65294abfe0e3ec27213bd183bab037e3a6aba9c2256f5a67fcf7",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/verify.py",
+      "publishedSHA256": "b302feefcbca65294abfe0e3ec27213bd183bab037e3a6aba9c2256f5a67fcf7",
+      "bytes": 1789,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/finalize.py",
+      "sourceSHA256": "71fb8269389c87e0820b5052052a9d23b71af677bde054bef613147565a7eda7",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/finalize.py",
+      "publishedSHA256": "71fb8269389c87e0820b5052052a9d23b71af677bde054bef613147565a7eda7",
+      "bytes": 2357,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/report.md",
+      "sourceSHA256": "bcdcf74f17a6b23685f169824d4f737a2d078bc21811f0df2edfbf8df4c63ced",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/report.md",
+      "publishedSHA256": "bcdcf74f17a6b23685f169824d4f737a2d078bc21811f0df2edfbf8df4c63ced",
+      "bytes": 3873,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/frozen-scope.json",
+      "sourceSHA256": "f49be2fa58c3c89668e3ee13c885256753a7428dac877e3a52c36b8bd0fc1f46",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/frozen-scope.json",
+      "publishedSHA256": "f49be2fa58c3c89668e3ee13c885256753a7428dac877e3a52c36b8bd0fc1f46",
+      "bytes": 15407,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/first-command-status.json",
+      "sourceSHA256": "aa673dcf26ef2605b47437565068f249650cd7c2cc37481b938e98dc7c11601b",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/first-command-status.json",
+      "publishedSHA256": "aa673dcf26ef2605b47437565068f249650cd7c2cc37481b938e98dc7c11601b",
+      "bytes": 2577,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/command-status.json",
+      "sourceSHA256": "93639c2f6b681f4998b0f6c2ca30527de8fd5bf90b29f1ee7f8bf896daf2d4b5",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/command-status.json",
+      "publishedSHA256": "93639c2f6b681f4998b0f6c2ca30527de8fd5bf90b29f1ee7f8bf896daf2d4b5",
+      "bytes": 2577,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/final-command-status.json",
+      "sourceSHA256": "053642db35c91958f886335b3a2ffa23b5d12a635e5fd23da0997b6109bbb6f6",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/final-command-status.json",
+      "publishedSHA256": "053642db35c91958f886335b3a2ffa23b5d12a635e5fd23da0997b6109bbb6f6",
+      "bytes": 764,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/initial-lint-failure.log",
+      "sourceSHA256": "323199013a51dbb0a58ad4b6aa822e41f61fa872f0f4cbe86d1d8572b51e7b58",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/initial-lint-failure.log",
+      "publishedSHA256": "323199013a51dbb0a58ad4b6aa822e41f61fa872f0f4cbe86d1d8572b51e7b58",
+      "bytes": 3811,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/format.log",
+      "sourceSHA256": "c5819d9e4b4e581f033a2b4e08a555200378d809fc4f94cdaa35e1d26c2364d5",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/format.log",
+      "publishedSHA256": "c5819d9e4b4e581f033a2b4e08a555200378d809fc4f94cdaa35e1d26c2364d5",
+      "bytes": 1405,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/final-check-0.log",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/final-check-0.log",
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/final-check-1.log",
+      "sourceSHA256": "ae9495c02e1a5c2752e2e2420323299a40b318dbea3829735da6dc00a3a0ea22",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/final-check-1.log",
+      "publishedSHA256": "ae9495c02e1a5c2752e2e2420323299a40b318dbea3829735da6dc00a3a0ea22",
+      "bytes": 44,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/check-0.log",
+      "sourceSHA256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/check-0.log",
+      "publishedSHA256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc",
+      "bytes": 9,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/check-1.log",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/check-1.log",
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/check-2.log",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/check-2.log",
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/check-3.log",
+      "sourceSHA256": "34c96fa014e1e3531fc61b110bd0ea82b5f7e23b358db34025b94b2e947c2026",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/check-3.log",
+      "publishedSHA256": "34c96fa014e1e3531fc61b110bd0ea82b5f7e23b358db34025b94b2e947c2026",
+      "bytes": 3178,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/check-4.log",
+      "sourceSHA256": "1197265c258b98eec5307c5d5d559fbce170e4942bf7b5ad52dc7ff815a5c815",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/check-4.log",
+      "publishedSHA256": "1197265c258b98eec5307c5d5d559fbce170e4942bf7b5ad52dc7ff815a5c815",
+      "bytes": 1531,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/check-5.log",
+      "sourceSHA256": "57ef4de0fcc3ce210877bd2e1d6bd91a485ebd0947d06edcafe4334b34cfa766",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/check-5.log",
+      "publishedSHA256": "57ef4de0fcc3ce210877bd2e1d6bd91a485ebd0947d06edcafe4334b34cfa766",
+      "bytes": 1410,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/implementation/publication-allowlist.json",
+      "sourceSHA256": "9aa3c6b8c64c7817593ddbb84ab9a0c3e1bb3dc612ba4ca313842fbadc390e9a",
+      "publishedpath": "artifacts/reviewed/task-2.41/implementation/publication-allowlist.json",
+      "publishedSHA256": "9aa3c6b8c64c7817593ddbb84ab9a0c3e1bb3dc612ba4ca313842fbadc390e9a",
+      "bytes": 2478,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/controller/complexity.json",
+      "sourceSHA256": "731e1174c3b483180396db96359d7130012dc61ce548c537c73c51974de2a696",
+      "publishedpath": "artifacts/reviewed/task-2.41/controller/complexity.json",
+      "publishedSHA256": "731e1174c3b483180396db96359d7130012dc61ce548c537c73c51974de2a696",
+      "bytes": 256572,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/controller/data-api-changes.json",
+      "sourceSHA256": "06474a8f0da632563eb4620c0e691d922d95dfb021797ec1b9e6e60984b5908c",
+      "publishedpath": "artifacts/reviewed/task-2.41/controller/data-api-changes.json",
+      "publishedSHA256": "06474a8f0da632563eb4620c0e691d922d95dfb021797ec1b9e6e60984b5908c",
+      "bytes": 1446,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/controller/frozen-hashes.json",
+      "sourceSHA256": "8f8b2d5ba83b0c1d4c75bb6b3a413dd49c173a520c097542c661f9f10b447d4f",
+      "publishedpath": "artifacts/reviewed/task-2.41/controller/frozen-hashes.json",
+      "publishedSHA256": "8f8b2d5ba83b0c1d4c75bb6b3a413dd49c173a520c097542c661f9f10b447d4f",
+      "bytes": 495,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/controller/quality.sh",
+      "sourceSHA256": "9a8a7aa412a3fa0f6c8d372326db434df029eb7639eafe70f3e24211cd42b746",
+      "publishedpath": "artifacts/reviewed/task-2.41/controller/quality.sh",
+      "publishedSHA256": "9a8a7aa412a3fa0f6c8d372326db434df029eb7639eafe70f3e24211cd42b746",
+      "bytes": 457,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/controller/scope.py",
+      "sourceSHA256": "e8dfe7e257aea308076207c185c20f7cb45e129c089ac5224170bcf259b37221",
+      "publishedpath": "artifacts/reviewed/task-2.41/controller/scope.py",
+      "publishedSHA256": "e8dfe7e257aea308076207c185c20f7cb45e129c089ac5224170bcf259b37221",
+      "bytes": 1487,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/controller/workspace-changes.json",
+      "sourceSHA256": "21657b8bef5ae01cd8f916d724852c6564d29adbb91796f5a5cfec7fa37efad7",
+      "publishedpath": "artifacts/reviewed/task-2.41/controller/workspace-changes.json",
+      "publishedSHA256": "21657b8bef5ae01cd8f916d724852c6564d29adbb91796f5a5cfec7fa37efad7",
+      "bytes": 12640,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/audit.json",
+      "sourceSHA256": "5ae4977a67d30726e9642d5202238fe19abb3efc9fbba2c1965eca062b076c51",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/audit.json",
+      "publishedSHA256": "5ae4977a67d30726e9642d5202238fe19abb3efc9fbba2c1965eca062b076c51",
+      "bytes": 500,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/audit.py",
+      "sourceSHA256": "02786a8ad99a69e0edeb56725edcb79c3adcdf07e885c17120f77ad3091e9acf",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/audit.py",
+      "publishedSHA256": "02786a8ad99a69e0edeb56725edcb79c3adcdf07e885c17120f77ad3091e9acf",
+      "bytes": 4529,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/breadth-snapshot.toml",
+      "sourceSHA256": "4017b0b6e61086516f0441d0c3ab68b9c5144708be2c9d240d38566d16ae2a5c",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/breadth-snapshot.toml",
+      "publishedSHA256": "4017b0b6e61086516f0441d0c3ab68b9c5144708be2c9d240d38566d16ae2a5c",
+      "bytes": 30336,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/check-0.log",
+      "sourceSHA256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/check-0.log",
+      "publishedSHA256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc",
+      "bytes": 9,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/check-1.log",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/check-1.log",
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/check-2.log",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/check-2.log",
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/check-3.log",
+      "sourceSHA256": "e19b0441471db397f29fc3b0148f92d5ec1ce1c238765e96e996b05ff37167e4",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/check-3.log",
+      "publishedSHA256": "e19b0441471db397f29fc3b0148f92d5ec1ce1c238765e96e996b05ff37167e4",
+      "bytes": 1032,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/check-4.log",
+      "sourceSHA256": "8bceb65bd0aef496b9be274c0a9eb80c085c63e44bc2006e3806249972e05165",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/check-4.log",
+      "publishedSHA256": "8bceb65bd0aef496b9be274c0a9eb80c085c63e44bc2006e3806249972e05165",
+      "bytes": 1526,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/check-5.log",
+      "sourceSHA256": "4bfa5c4ac4f7aa28c29389b01cd403c1eeaba03047484d2047d3509998485731",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/check-5.log",
+      "publishedSHA256": "4bfa5c4ac4f7aa28c29389b01cd403c1eeaba03047484d2047d3509998485731",
+      "bytes": 44,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/command-status.json",
+      "sourceSHA256": "d9953a45610c005134ff5a32b6846bf2a9d3f55e9ec1734cde94d54cb0f52a61",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/command-status.json",
+      "publishedSHA256": "d9953a45610c005134ff5a32b6846bf2a9d3f55e9ec1734cde94d54cb0f52a61",
+      "bytes": 2499,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/freeze.py",
+      "sourceSHA256": "f7059d3659878b688c64a1743dc92c7d384dc994c0d8fa88f1dfad3fed3e23d7",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/freeze.py",
+      "publishedSHA256": "f7059d3659878b688c64a1743dc92c7d384dc994c0d8fa88f1dfad3fed3e23d7",
+      "bytes": 1478,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/frozen-scope.json",
+      "sourceSHA256": "3cf253e727d5c56ddbb879e9734deaa0730395c5dcb0665747b7343f8ded213d",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/frozen-scope.json",
+      "publishedSHA256": "3cf253e727d5c56ddbb879e9734deaa0730395c5dcb0665747b7343f8ded213d",
+      "bytes": 18996,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/verdict.md",
+      "sourceSHA256": "a7fd85601685f41a7a9cb9afbf61ad547cea14d8ad511e3fad5eddfbc7f9bc2e",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/verdict.md",
+      "publishedSHA256": "a7fd85601685f41a7a9cb9afbf61ad547cea14d8ad511e3fad5eddfbc7f9bc2e",
+      "bytes": 6789,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/verify.py",
+      "sourceSHA256": "4bac746c42ae70ea6525253b5ff3da1c8673ecaa6d4a37f2fac92a3c5f3fc639",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/verify.py",
+      "publishedSHA256": "4bac746c42ae70ea6525253b5ff3da1c8673ecaa6d4a37f2fac92a3c5f3fc639",
+      "bytes": 3695,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.41/review/publication-allowlist.json",
+      "sourceSHA256": "d2920cf92ea9e2af919b990e002be2a9c63442119df569a97333b605c0cf054c",
+      "publishedpath": "artifacts/reviewed/task-2.41/review/publication-allowlist.json",
+      "publishedSHA256": "d2920cf92ea9e2af919b990e002be2a9c63442119df569a97333b605c0cf054c",
+      "bytes": 6640,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -8540,5 +8861,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 21061598
+  "total_payload_bytes": 21460930
 }

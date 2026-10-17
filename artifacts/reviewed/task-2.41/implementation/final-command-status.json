@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-application/tsconfig.json",
+      "--noEmit"
+    ],
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/implementation/final-check-0.log"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/@biomejs/biome/bin/biome",
+      "check",
+      "src/components/General/Table/Chart/application",
+      "src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "tests/unit/chart-application",
+      "tests/unit/chart-compatibility/editorEvents.test.ts"
+    ],
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/implementation/final-check-1.log"
+  }
+]

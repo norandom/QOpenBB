@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "path": "setup.py",
+      "sha256": "e0487a7c981c688bf9a588f1a3344316b63bd130ecad2532350c591d6b42c40a"
+    },
+    {
+      "path": "verify.py",
+      "sha256": "b302feefcbca65294abfe0e3ec27213bd183bab037e3a6aba9c2256f5a67fcf7"
+    },
+    {
+      "path": "finalize.py",
+      "sha256": "71fb8269389c87e0820b5052052a9d23b71af677bde054bef613147565a7eda7"
+    },
+    {
+      "path": "report.md",
+      "sha256": "bcdcf74f17a6b23685f169824d4f737a2d078bc21811f0df2edfbf8df4c63ced"
+    },
+    {
+      "path": "frozen-scope.json",
+      "sha256": "f49be2fa58c3c89668e3ee13c885256753a7428dac877e3a52c36b8bd0fc1f46"
+    },
+    {
+      "path": "first-command-status.json",
+      "sha256": "aa673dcf26ef2605b47437565068f249650cd7c2cc37481b938e98dc7c11601b"
+    },
+    {
+      "path": "command-status.json",
+      "sha256": "93639c2f6b681f4998b0f6c2ca30527de8fd5bf90b29f1ee7f8bf896daf2d4b5"
+    },
+    {
+      "path": "final-command-status.json",
+      "sha256": "053642db35c91958f886335b3a2ffa23b5d12a635e5fd23da0997b6109bbb6f6"
+    },
+    {
+      "path": "initial-lint-failure.log",
+      "sha256": "323199013a51dbb0a58ad4b6aa822e41f61fa872f0f4cbe86d1d8572b51e7b58"
+    },
+    {
+      "path": "format.log",
+      "sha256": "c5819d9e4b4e581f033a2b4e08a555200378d809fc4f94cdaa35e1d26c2364d5"
+    },
+    {
+      "path": "final-check-0.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "final-check-1.log",
+      "sha256": "ae9495c02e1a5c2752e2e2420323299a40b318dbea3829735da6dc00a3a0ea22"
+    },
+    {
+      "path": "check-0.log",
+      "sha256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc"
+    },
+    {
+      "path": "check-1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "check-2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "check-3.log",
+      "sha256": "34c96fa014e1e3531fc61b110bd0ea82b5f7e23b358db34025b94b2e947c2026"
+    },
+    {
+      "path": "check-4.log",
+      "sha256": "1197265c258b98eec5307c5d5d559fbce170e4942bf7b5ad52dc7ff815a5c815"
+    },
+    {
+      "path": "check-5.log",
+      "sha256": "57ef4de0fcc3ce210877bd2e1d6bd91a485ebd0947d06edcafe4334b34cfa766"
+    }
+  ],
+  "excludes": [
+    "source-stage-manifest.json",
+    "stage-path.txt",
+    "environment files",
+    "state",
+    "dependencies",
+    "scratch"
+  ]
+}

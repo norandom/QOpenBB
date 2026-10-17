@@ -1,0 +1,80 @@
+[
+  {
+    "command": [
+      "node",
+      "--version"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/implementation/check-0.log",
+    "sha256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-application/tsconfig.json",
+      "--noEmit"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/implementation/check-1.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-compatibility/tsconfig.json",
+      "--noEmit"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/implementation/check-2.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "tests/unit/chart-application/vitest.config.mjs"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/implementation/check-3.log",
+    "sha256": "66f33a4c4c8f39660c979b9a53c6519476c8ac9f3fd8b136627be8b3ab72f983"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "tests/unit/chart-compatibility/vitest.config.mjs"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/implementation/check-4.log",
+    "sha256": "9a73f651a057109038ab96596e1fdc1c3962a9ed20e38ceadf7ec3d288f11505"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/@biomejs/biome/bin/biome",
+      "check",
+      "src/components/General/Table/Chart/application",
+      "src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "tests/unit/chart-application",
+      "tests/unit/chart-compatibility/editorEvents.test.ts"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro",
+    "exitCode": 1,
+    "log": "artifacts/task-2.41/implementation/check-5.log",
+    "sha256": "323199013a51dbb0a58ad4b6aa822e41f61fa872f0f4cbe86d1d8572b51e7b58"
+  }
+]

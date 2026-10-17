@@ -1,0 +1,378 @@
+{
+  "stage": "/home/mc/qopenbb-work/task241-review-20261017120037",
+  "workspaceHead": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
+  "dependencies": {
+    "typescript": {
+      "version": "5.9.2",
+      "packageSha256": "5a0bb7f286c4b3f1413a42c05f902311b161f70e5f52d9da10490443bfd595a3"
+    },
+    "vitest": {
+      "version": "4.1.11",
+      "packageSha256": "a28126d97bcaf567da5bed69443b7f3bcd9a7a8c38c8b66e554686b6bb2c10e0"
+    },
+    "@biomejs/biome": {
+      "version": "2.4.8",
+      "packageSha256": "a07784133fb8b0781a517001794d8488698ddc1917320514cb1f7b5660f437e3"
+    },
+    "jsdom": {
+      "version": "30.0.1",
+      "packageSha256": "e87940b12f720a5b735a5df82108b634a238b8c6ebced71050a346a1675575b9"
+    },
+    "lodash": {
+      "version": "4.18.1",
+      "packageSha256": "5ef0a453b679125b155af19e1477f93b577ea826a57e1545f77608d326966e6a"
+    },
+    "echarts": {
+      "version": "6.0.0",
+      "packageSha256": "7de2ef6ba4e4f1db0babc55eb20cc0ddd76c1e24e8ac49b4ee8cf3021f9d1162"
+    }
+  },
+  "fullSourceCount": 1575,
+  "files": [
+    {
+      "path": "src/components/General/Table/Chart/AgChartView.tsx",
+      "sourceSha256": "93a7e28b879fc93028b7d681049492332ffaafc04e85404c942cdb770be91534",
+      "stageSha256": "93a7e28b879fc93028b7d681049492332ffaafc04e85404c942cdb770be91534"
+    },
+    {
+      "path": "src/components/General/Table/Chart/themes.tsx",
+      "sourceSha256": "c2a2db418147896f87117b4fb98fd65d486bbc8a4d66038c61980a2b3abf2187",
+      "stageSha256": "c2a2db418147896f87117b4fb98fd65d486bbc8a4d66038c61980a2b3abf2187"
+    },
+    {
+      "path": "src/components/General/Table/Chart/utils.tsx",
+      "sourceSha256": "feb154b4172ddb044261fb7e196632f9780c801adc3e6400a8f6710aab6619f8",
+      "stageSha256": "feb154b4172ddb044261fb7e196632f9780c801adc3e6400a8f6710aab6619f8"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/appearanceContracts.ts",
+      "sourceSha256": "544d206dffd39f9cb82388ea0e0f0193ef924a0f4ce2a75dbf30ab4e5fd816e6",
+      "stageSha256": "544d206dffd39f9cb82388ea0e0f0193ef924a0f4ce2a75dbf30ab4e5fd816e6"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/chartRange.ts",
+      "sourceSha256": "d481a9f57cf77092dd4c26b9039f4813ef0fa4f074ade024ac58e7c4a93b00d2",
+      "stageSha256": "d481a9f57cf77092dd4c26b9039f4813ef0fa4f074ade024ac58e7c4a93b00d2"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/financialFormatting.ts",
+      "sourceSha256": "a31738d1b3e4d296873433f6795a7e4035ef516201017bd62825e2e4724898a0",
+      "stageSha256": "a31738d1b3e4d296873433f6795a7e4035ef516201017bd62825e2e4724898a0"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/gridCapture.ts",
+      "sourceSha256": "1f2f83ea14bd8b44043157f649cce130c9ae64aea62de598a09ae299b3bd6e7b",
+      "stageSha256": "1f2f83ea14bd8b44043157f649cce130c9ae64aea62de598a09ae299b3bd6e7b"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/sessionState.ts",
+      "sourceSha256": "f7626adf1d153f5c8f6100eb140ffe0b346a7514b43c1c3c14dd46b005fba63e",
+      "stageSha256": "f7626adf1d153f5c8f6100eb140ffe0b346a7514b43c1c3c14dd46b005fba63e"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/types.ts",
+      "sourceSha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+      "stageSha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/detachedState.ts",
+      "sourceSha256": "a556556f6cadef9e042301f4798f72585498c4538cf1670f4f6ab0c77f9dbd02",
+      "stageSha256": "a556556f6cadef9e042301f4798f72585498c4538cf1670f4f6ab0c77f9dbd02"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "sourceSha256": "56f388d56600f2d72d6cc8bf475a2ac5a5c8603f02b48565b56231a82a1e70e8",
+      "stageSha256": "56f388d56600f2d72d6cc8bf475a2ac5a5c8603f02b48565b56231a82a1e70e8"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/integratedState.ts",
+      "sourceSha256": "9ae81b6bd5baa143bc75a090f1609df95744b04a3003ce92de975ae417f1fe3f",
+      "stageSha256": "9ae81b6bd5baa143bc75a090f1609df95744b04a3003ce92de975ae417f1fe3f"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/legacyTypes.ts",
+      "sourceSha256": "c0e177ae694b183290b284b22e21e1db3092390ca093ec7986ac612a6e262115",
+      "stageSha256": "c0e177ae694b183290b284b22e21e1db3092390ca093ec7986ac612a6e262115"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/optionState.ts",
+      "sourceSha256": "f5122d722b585e8eef61cc00cdeb9de2cb3ba33e376c4fffa6de1f38a21b2bb4",
+      "stageSha256": "f5122d722b585e8eef61cc00cdeb9de2cb3ba33e376c4fffa6de1f38a21b2bb4"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "sourceSha256": "4410f9d66d17b146b9e2d9e59b0dea617305d68c23f65c638927867333b8950c",
+      "stageSha256": "4410f9d66d17b146b9e2d9e59b0dea617305d68c23f65c638927867333b8950c"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/snapshot.ts",
+      "sourceSha256": "897aab915a746781b7e01062f97f1a4756e2f060b779b2fd170540e9e02339c4",
+      "stageSha256": "897aab915a746781b7e01062f97f1a4756e2f060b779b2fd170540e9e02339c4"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/snapshotTypes.ts",
+      "sourceSha256": "6ecba6a18a77cad3f027e384b023296187b968b1566a6955a54af638b6c25a14",
+      "stageSha256": "6ecba6a18a77cad3f027e384b023296187b968b1566a6955a54af638b6c25a14"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/cartesian.ts",
+      "sourceSha256": "584f61b6e231a8693ce046a2a0e049e1e13eb87c537ede8fe5b69d1dcb2f99f9",
+      "stageSha256": "584f61b6e231a8693ce046a2a0e049e1e13eb87c537ede8fe5b69d1dcb2f99f9"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/cartesianStyle.ts",
+      "sourceSha256": "c8688c04fc437e259b0d30aaee46872f9d48032d1f0629d633223fbb5c57d4b2",
+      "stageSha256": "c8688c04fc437e259b0d30aaee46872f9d48032d1f0629d633223fbb5c57d4b2"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+      "sourceSha256": "0581c101adc4a7dc71732965df569201c8e3b14144088c48bce188c849127d9f",
+      "stageSha256": "0581c101adc4a7dc71732965df569201c8e3b14144088c48bce188c849127d9f"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/EChartsHost.tsx",
+      "sourceSha256": "906fefc5eed125da005030061f3c6375becedacd26f0c5ee5a89f89c12e3b624",
+      "stageSha256": "906fefc5eed125da005030061f3c6375becedacd26f0c5ee5a89f89c12e3b624"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/lifecycle.ts",
+      "sourceSha256": "ce71510b3c064efbb3318a33f2e3f04d3446b17abcc41497fc24f2634f3d3ced",
+      "stageSha256": "ce71510b3c064efbb3318a33f2e3f04d3446b17abcc41497fc24f2634f3d3ced"
+    },
+    {
+      "path": "src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sourceSha256": "abb658e8caa298ae8bdef2b3903b4a84af0406c34a9d751b4f11c29470cced59",
+      "stageSha256": "abb658e8caa298ae8bdef2b3903b4a84af0406c34a9d751b4f11c29470cced59"
+    },
+    {
+      "path": "tests/unit/chart-application/appearanceContracts.types.ts",
+      "sourceSha256": "ef75606a2181460dd4aceec82323c9d62839b2acacea349269ee71b9d7f55c0e",
+      "stageSha256": "ef75606a2181460dd4aceec82323c9d62839b2acacea349269ee71b9d7f55c0e"
+    },
+    {
+      "path": "tests/unit/chart-application/appearanceFixtures.json",
+      "sourceSha256": "6617c41cd749ab0276fcaa07ba802f3604b76fd998ebfe6d72367e1fd072a5e7",
+      "stageSha256": "6617c41cd749ab0276fcaa07ba802f3604b76fd998ebfe6d72367e1fd072a5e7"
+    },
+    {
+      "path": "tests/unit/chart-application/chartRange.test.ts",
+      "sourceSha256": "075fcd9d12fdc3b58068a43db889ada5ba68a629a8c3c68d9a1adac3cb80ca13",
+      "stageSha256": "075fcd9d12fdc3b58068a43db889ada5ba68a629a8c3c68d9a1adac3cb80ca13"
+    },
+    {
+      "path": "tests/unit/chart-application/contracts.types.ts",
+      "sourceSha256": "c74e593eec9286027d648e6ab655b78b2e2b9d45f3c3ecb74ac57c26ec71f018",
+      "stageSha256": "c74e593eec9286027d648e6ab655b78b2e2b9d45f3c3ecb74ac57c26ec71f018"
+    },
+    {
+      "path": "tests/unit/chart-application/financialFormatting.sources.json",
+      "sourceSha256": "02b11ec941921aa43a36104490b4c52a72c85591ca898c136d9091612c2a179b",
+      "stageSha256": "02b11ec941921aa43a36104490b4c52a72c85591ca898c136d9091612c2a179b"
+    },
+    {
+      "path": "tests/unit/chart-application/financialFormatting.test.ts",
+      "sourceSha256": "754e593c743b8788932a4dd5481eb9d16a4923548a3d777ca6136eae1edf3ad8",
+      "stageSha256": "754e593c743b8788932a4dd5481eb9d16a4923548a3d777ca6136eae1edf3ad8"
+    },
+    {
+      "path": "tests/unit/chart-application/gridCapture.fixtures.json",
+      "sourceSha256": "7d6a08a2360b241b0d1edd60ece10069cbd2d38295cdbfc87b979a53b429a3f4",
+      "stageSha256": "7d6a08a2360b241b0d1edd60ece10069cbd2d38295cdbfc87b979a53b429a3f4"
+    },
+    {
+      "path": "tests/unit/chart-application/gridCapture.grid.test.ts",
+      "sourceSha256": "32560e51d9e65de049495df6c2ee5d7e6c8d116c7147c1edb9344d331414f2d2",
+      "stageSha256": "32560e51d9e65de049495df6c2ee5d7e6c8d116c7147c1edb9344d331414f2d2"
+    },
+    {
+      "path": "tests/unit/chart-application/gridCapture.test.ts",
+      "sourceSha256": "35239374b5be3cef8c1f3f729f6cb7c84cee87f1c609ce78e093e8b5c4cd707d",
+      "stageSha256": "35239374b5be3cef8c1f3f729f6cb7c84cee87f1c609ce78e093e8b5c4cd707d"
+    },
+    {
+      "path": "tests/unit/chart-application/sessionState.test.ts",
+      "sourceSha256": "6308bbecb1bee60b954855aa1b1e62d1e574fa4815281468f5a32d6b15d54d11",
+      "stageSha256": "6308bbecb1bee60b954855aa1b1e62d1e574fa4815281468f5a32d6b15d54d11"
+    },
+    {
+      "path": "tests/unit/chart-application/tsconfig.json",
+      "sourceSha256": "4d8000a97707c3c82cfa0011d31e3ba72ba39a17a05c79753405bc077b948e1a",
+      "stageSha256": "4d8000a97707c3c82cfa0011d31e3ba72ba39a17a05c79753405bc077b948e1a"
+    },
+    {
+      "path": "tests/unit/chart-application/vitest.config.mjs",
+      "sourceSha256": "4c0c193e2458f8c19581e873ae521a7beddbdae22716fc72e652e4f72565343a",
+      "stageSha256": "4c0c193e2458f8c19581e873ae521a7beddbdae22716fc72e652e4f72565343a"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/appearance.fixtures.ts",
+      "sourceSha256": "10b0d258386f564eb276f820cc3f87e007197b86b1f05e4e3d52470d699d9bf6",
+      "stageSha256": "10b0d258386f564eb276f820cc3f87e007197b86b1f05e4e3d52470d699d9bf6"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/cartesian.test.ts",
+      "sourceSha256": "274405c24d0e9946cdda0043d0d8522f9f62a6f308637e197deb6a6194e8024f",
+      "stageSha256": "274405c24d0e9946cdda0043d0d8522f9f62a6f308637e197deb6a6194e8024f"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/contracts.fixtures.ts",
+      "sourceSha256": "17f8127980e786024f736c8ccaaaff56399b45e34ddb0274cd1ef49e18aa8dbc",
+      "stageSha256": "17f8127980e786024f736c8ccaaaff56399b45e34ddb0274cd1ef49e18aa8dbc"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/contracts.test.ts",
+      "sourceSha256": "ad1fb443bbbb9f49b377a5bddad32ef44df6f55a48eb228a0feac2ea23a06e81",
+      "stageSha256": "ad1fb443bbbb9f49b377a5bddad32ef44df6f55a48eb228a0feac2ea23a06e81"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/contracts.types.ts",
+      "sourceSha256": "0546d734296f3d90a87b5cb51e2b8549d31edf5cf17f970032457223e64af98f",
+      "stageSha256": "0546d734296f3d90a87b5cb51e2b8549d31edf5cf17f970032457223e64af98f"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/editorEvents.test.ts",
+      "sourceSha256": "b3b1b7803a96f29940109940d7d94f1ecc96f97c5598c52a08348eb203857c0d",
+      "stageSha256": "b3b1b7803a96f29940109940d7d94f1ecc96f97c5598c52a08348eb203857c0d"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/editorPayload.fixtures.ts",
+      "sourceSha256": "3fe39492fe9fd9d945f76699c2d1773ae77366dd3b4e8774c6fcdcb0c0762f84",
+      "stageSha256": "3fe39492fe9fd9d945f76699c2d1773ae77366dd3b4e8774c6fcdcb0c0762f84"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/host.test.tsx",
+      "sourceSha256": "960cf790074d17d2b5531f0a8ae406e6774321532ca24131e563320df9b48b73",
+      "stageSha256": "960cf790074d17d2b5531f0a8ae406e6774321532ca24131e563320df9b48b73"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/lifecycle.test.ts",
+      "sourceSha256": "86fa93020d9baa372963cdfdaf518e6b6453863ed1e46b91e4883b2390367c0b",
+      "stageSha256": "86fa93020d9baa372963cdfdaf518e6b6453863ed1e46b91e4883b2390367c0b"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/optionState.test.ts",
+      "sourceSha256": "e4fd40fc10d5963120ce32c88374fd7b04bdb85df548607b73e569ab78b72c83",
+      "stageSha256": "e4fd40fc10d5963120ce32c88374fd7b04bdb85df548607b73e569ab78b72c83"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/optionStateContracts.types.ts",
+      "sourceSha256": "5548acdec0bdcf4f9983bcad384ea1f8e66e282f2fa2650f999e5632d2e62290",
+      "stageSha256": "5548acdec0bdcf4f9983bcad384ea1f8e66e282f2fa2650f999e5632d2e62290"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/snapshot.fixtures.ts",
+      "sourceSha256": "5f7d682f832ecbb5d69db85c94412b1d635b00aab508a0175dfced0550c4b209",
+      "stageSha256": "5f7d682f832ecbb5d69db85c94412b1d635b00aab508a0175dfced0550c4b209"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/snapshot.test.ts",
+      "sourceSha256": "e13a4ed572f7bd3875a33c34023abd5290eb3433734785704bb7b7d50dfc0c52",
+      "stageSha256": "e13a4ed572f7bd3875a33c34023abd5290eb3433734785704bb7b7d50dfc0c52"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/snapshotContracts.types.ts",
+      "sourceSha256": "da72ee92de6eb4ec7106af120b4c5f3b0aaeceb20ba8924a67ea70d7cef80a71",
+      "stageSha256": "da72ee92de6eb4ec7106af120b4c5f3b0aaeceb20ba8924a67ea70d7cef80a71"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/stateReducers.test.ts",
+      "sourceSha256": "1dcff74f6c4eb87512df99cda21dd2231a2dc0e2f99c614abdf9314181df37a3",
+      "stageSha256": "1dcff74f6c4eb87512df99cda21dd2231a2dc0e2f99c614abdf9314181df37a3"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/tsconfig.json",
+      "sourceSha256": "e30c68feaf0f9dbb41c7fb0e9379e9aa11f0109dc8dc77135de4bf9ffba0e628",
+      "stageSha256": "e30c68feaf0f9dbb41c7fb0e9379e9aa11f0109dc8dc77135de4bf9ffba0e628"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/vitest.config.mjs",
+      "sourceSha256": "2cee58e004b541afcaf1fa5b7aee19dc90fd089358ed0ed90e64854807079413",
+      "stageSha256": "2cee58e004b541afcaf1fa5b7aee19dc90fd089358ed0ed90e64854807079413"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/appearance.html",
+      "sourceSha256": "1a243807406cd30b953a0de604f7d9fbdd0319fa49254d2b2d3828c488a19d14",
+      "stageSha256": "1a243807406cd30b953a0de604f7d9fbdd0319fa49254d2b2d3828c488a19d14"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/appearance.spec.ts",
+      "sourceSha256": "b4ed01500d6cf005cfbc5ea55b40f9a5b64ab4bc3e70ab9d3df39207b8405fde",
+      "stageSha256": "b4ed01500d6cf005cfbc5ea55b40f9a5b64ab4bc3e70ab9d3df39207b8405fde"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/appearance.tsx",
+      "sourceSha256": "8c404334354e2d62f253b283c8f19fca6c6c99b739113fbb428ba6f31e380070",
+      "stageSha256": "8c404334354e2d62f253b283c8f19fca6c6c99b739113fbb428ba6f31e380070"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/cartesian.html",
+      "sourceSha256": "d920379a48ca25539c7de2f6dd9d7290f7769d4115f522020c498aa98df2e2ef",
+      "stageSha256": "d920379a48ca25539c7de2f6dd9d7290f7769d4115f522020c498aa98df2e2ef"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/cartesian.spec.ts",
+      "sourceSha256": "857bbcb6c3fa5f1f54c9a2e16d12a35224d2edb397ce8b8cf231186153ab186e",
+      "stageSha256": "857bbcb6c3fa5f1f54c9a2e16d12a35224d2edb397ce8b8cf231186153ab186e"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/cartesian.tsx",
+      "sourceSha256": "b8ac0ce03a89a60409ebe322c33477e766e3b925104434040305034c6b7757d5",
+      "stageSha256": "b8ac0ce03a89a60409ebe322c33477e766e3b925104434040305034c6b7757d5"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/fixture.html",
+      "sourceSha256": "ea47bceea07c093a7c442db8f5e43bfb99e0367b0b888b2f09ddc27a8c63fbb3",
+      "stageSha256": "ea47bceea07c093a7c442db8f5e43bfb99e0367b0b888b2f09ddc27a8c63fbb3"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/fixture.ts",
+      "sourceSha256": "fcb0c89dcde6e4adb15ad8198142691d9b0d10451ef68a7edd249681ecb96ab4",
+      "stageSha256": "fcb0c89dcde6e4adb15ad8198142691d9b0d10451ef68a7edd249681ecb96ab4"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/host.html",
+      "sourceSha256": "0f47f403849e733a2b7a4ec7278df7462a75c7147fcec03ee5db7b6e98694963",
+      "stageSha256": "0f47f403849e733a2b7a4ec7278df7462a75c7147fcec03ee5db7b6e98694963"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/host.spec.ts",
+      "sourceSha256": "6eca1de5468f7a877f5cc381512dc05e869e4445d569b8ff3e738c1cfa9933d9",
+      "stageSha256": "6eca1de5468f7a877f5cc381512dc05e869e4445d569b8ff3e738c1cfa9933d9"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/host.tsx",
+      "sourceSha256": "41bc3c7855a9c2916e0db29d85928723a6c8226b212edd3d46fc8a4386829c5c",
+      "stageSha256": "41bc3c7855a9c2916e0db29d85928723a6c8226b212edd3d46fc8a4386829c5c"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/playwright.config.ts",
+      "sourceSha256": "c4e6a99bb4b62e3adf533b1e9d232b986085a6cd3dc2c09b8107b491f4594b6e",
+      "stageSha256": "c4e6a99bb4b62e3adf533b1e9d232b986085a6cd3dc2c09b8107b491f4594b6e"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/smoke.spec.ts",
+      "sourceSha256": "790ad1c5772bccead465160cc2518fbe8dc938b49c34d8ac637ee60dc0759d72",
+      "stageSha256": "790ad1c5772bccead465160cc2518fbe8dc938b49c34d8ac637ee60dc0759d72"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/toolchain.test.ts",
+      "sourceSha256": "31ffac36336d295a722d78b753c0ebbc1da33415b899365ab878d8d9ebe6b38f",
+      "stageSha256": "31ffac36336d295a722d78b753c0ebbc1da33415b899365ab878d8d9ebe6b38f"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/vite.config.ts",
+      "sourceSha256": "66aba22d88e0791d33bc1110d5d89b6c2aca3dfe597a5f8fd9dad42accca0d77",
+      "stageSha256": "66aba22d88e0791d33bc1110d5d89b6c2aca3dfe597a5f8fd9dad42accca0d77"
+    },
+    {
+      "path": "biome.json",
+      "sourceSha256": "b8f0746b1153361ad4abfeb3625f999455f3e65bc2950c6ff211f0bc63007a49",
+      "stageSha256": "b8f0746b1153361ad4abfeb3625f999455f3e65bc2950c6ff211f0bc63007a49"
+    },
+    {
+      "path": "package.json",
+      "sourceSha256": "22b8936be4a077f40ced2b3ab6a1dd7f0731c5b90f7ba59267fabf07624dafe0",
+      "stageSha256": "22b8936be4a077f40ced2b3ab6a1dd7f0731c5b90f7ba59267fabf07624dafe0"
+    }
+  ]
+}

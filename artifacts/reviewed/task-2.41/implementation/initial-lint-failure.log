@@ -1,0 +1,74 @@
+tests/unit/chart-application/appearanceContracts.types.ts:25:26 lint/correctness/noSelfAssign ━━━━━━━━━━
+
+  × baseline is assigned to itself.
+  
+    23 │   compose({ generated: {} });
+    24 │   // @ts-expect-error The input cannot replace its selected baseline.
+  > 25 │   input.baseline = input.baseline;
+       │                          ^^^^^^^^
+    26 │   // @ts-expect-error Executable formatting belongs outside data-only options.
+    27 │   compose({ ...input, generated: { formatter: () => "USD" } });
+  
+  i This is where is assigned.
+  
+    23 │   compose({ generated: {} });
+    24 │   // @ts-expect-error The input cannot replace its selected baseline.
+  > 25 │   input.baseline = input.baseline;
+       │         ^^^^^^^^
+    26 │   // @ts-expect-error Executable formatting belongs outside data-only options.
+    27 │   compose({ ...input, generated: { formatter: () => "USD" } });
+  
+  i Self assignments have no effect and can be removed.
+  
+
+tests/unit/chart-application/appearanceContracts.types.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     6  6 │     DerivedAppearanceColors,
+     7  7 │   } from "../../../src/components/General/Table/Chart/application/appearanceContracts";
+     8    │ - import·type·{·RuntimeOptions,·ValidationResult·}·from·"../../../src/components/General/Table/Chart/compatibility/legacyTypes";
+        8 │ + import·type·{
+        9 │ + ··RuntimeOptions,
+       10 │ + ··ValidationResult,
+       11 │ + }·from·"../../../src/components/General/Table/Chart/compatibility/legacyTypes";
+     9 12 │   import type { SnapshotDiagnostic } from "../../../src/components/General/Table/Chart/compatibility/snapshotTypes";
+    10 13 │   
+    ····· │ 
+    51 54 │     }
+    52 55 │     // @ts-expect-error Alias resolution must supply the chart background explicitly.
+    53    │ - ··derive({·base:·"ag-default",·foregroundColor:·"#000000",·backgroundColor:·"#ffffff",·textColor:·"#123456"·});
+       56 │ + ··derive({
+       57 │ + ····base:·"ag-default",
+       58 │ + ····foregroundColor:·"#000000",
+       59 │ + ····backgroundColor:·"#ffffff",
+       60 │ + ····textColor:·"#123456",
+       61 │ + ··});
+    54 62 │     // @ts-expect-error Only the captured base identities are admitted statically.
+    55 63 │     derive({ ...tokens, base: "custom" });
+  
+
+tests/unit/chart-application/appearanceFixtures.json format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    462 462 │     "invalidInputPolicy": {
+    463 463 │       "basis": "Approved design policy, not runtime reference observation",
+    464     │ - ····"composition":·[
+    465     │ - ······"accessors",
+    466     │ - ······"nonplain·objects",
+    467     │ - ······"cycles",
+    468     │ - ······"throwing·proxies"
+    469     │ - ····],
+        464 │ + ····"composition":·["accessors",·"nonplain·objects",·"cycles",·"throwing·proxies"],
+    470 465 │       "colorsInvalid": [
+    471 466 │         "missing field",
+  
+
+Checked 21 files in 25ms. No fixes applied.
+Found 3 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

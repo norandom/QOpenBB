@@ -1,0 +1,198 @@
+# Feature -> spec -> checks -> evidence. Planned checks are not passing tests.
+schema_version = 1
+# Original line research: .kiro/specs/openbb-self-service/chart-line-appearance-findings.md.
+# Explicit appearance component checks are recorded below; overall renderer parity remains open.
+draft = true
+owning_spec = "openbb-self-service"
+requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
+
+[[capabilities]]
+id = "chart-appearance-editor-source-contracts"
+requirements = ["1.1", "1.4", "4.2", "4.7", "4.8", "4.9", "10.4", "10.5", "10.6"]
+planned_checks = ["saved-common-replacement-and-family-retention", "normalized-color-and-alias-semantics", "grouped-tooltip-patch-and-session-rejection", "joined-source-contract-regressions"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/appearanceContracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/appearanceFixtures.json"]
+status = "in-progress"
+evidence = ["Task 2.41 frozen type contracts and finite reference fixtures independently checked: both strict compilers, 88 application tests, 260 compatibility tests and scoped lint passed in a fresh isolated stage. The 174-file maintained complexity audit passed. Evidence: artifacts/task-2.41/review/. Composition, colors and tooltip behavior remain planned under tasks 2.42-2.45. Full B2, mapper, editor UI, transformed snapshots, application activation and persistence remain unverified."]
+
+[[capabilities]]
+id = "chart-application-source-contracts"
+requirements = ["1.1", "4.2", "4.7", "4.8", "4.9", "10.4", "10.5", "10.6"]
+planned_checks = ["source-range-precedence", "session-address-and-revision-rejection", "original-reducer-composition", "financial-display-threshold-and-fiscal-semantics", "joined-source-contract-verification"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/contracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/chartRange.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/sessionState.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/financialFormatting.test.ts"]
+status = "passed"
+evidence = ["Tasks 2.34-2.37 independently accepted with scoped GO and VERIFIED completion for source-safe helpers only. Fresh joined evidence: 36 application tests, 260 compatibility tests, both strict compilers, scoped lint, 62 staged identities and 172-file maintained audit pass at Workspace 945e438a9a65c3eeef7073dbce64a03b02f0ff6f. See .kiro/specs/openbb-self-service/chart-application-source-verification.md. Runtime capture, editor, mapper invocation, activation, export and save/restart remain unverified."]
+
+[[capabilities]]
+id = "chart-ordinary-grid-capture"
+requirements = ["1.1", "4.2", "4.7", "4.8", "4.9", "10.4", "10.5", "10.6"]
+planned_checks = ["real-community-displayed-values", "a1-visible-range-to-capture", "immutable-financial-provenance", "bounded-invalid-unsupported-api-failures", "joined-capture-verification"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.test.ts"]
+status = "passed"
+evidence = ["Tasks 2.38-2.40 independently accepted with scoped GO and VERIFIED completion after one containment repair. Fresh independent committed-source check passes 88 application and 260 compatibility tests, both strict compilers, scoped lint, 66 source/config identities and the 173-file maintained audit at Workspace 76edf85a46298f7bc5212ff9944e4b66e9baa4af. See .kiro/specs/openbb-self-service/chart-grid-capture-verification.md. Ordinary adapter only; no application activation or complete renderer acceptance."]
+
+[[capabilities]]
+id = "chart-application-runtime-integration"
+requirements = ["4.2", "4.7", "4.8", "4.9", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
+planned_checks = ["actual-displayed-grid-capture", "effective-theme-and-editor-parity", "table-chart-customize-export-return", "application-save-reopen-restart"]
+test_paths = []
+status = "unverified"
+evidence = ["Original-runtime research only: seven grid cases with 15 assertions, 18 focused editor UI actions with 22 evidence assertions, and appearance audit of 908 finite leaves across eight prior cases. No candidate application check or completed implementation is claimed. See .kiro/specs/openbb-self-service/chart-runtime-next-plan.md and its reviewed evidence links. Independently reviewed follow-up adds 44 appearance assertions plus 262144 source color comparisons, 99 saved-widget composition assertions and 30 editor assertions plus six Sum raster bar checks. See chart-appearance-contract-close.md, chart-appearance-saved-composition.md and chart-editor-contract-close.md under the owning spec. These artifact-only original-reference checks are not maintained candidate regressions. Full appearance/editor, numeric-only and general category resolution, missing-value transformations and persistence remain open. Ordinary explicit-category capture is now independently accepted under chart-ordinary-grid-capture; this does not activate or verify the application journey."]
+
+[[capabilities]]
+id = "sqlite-query-and-storage-compatibility"
+requirements = ["1.1", "1.4", "2.2", "4.2", "4.7", "10.3", "10.5", "10.6"]
+planned_checks = ["isolated-backend-bootstrap", "six-populated-read-paths", "creator-join-cardinality-and-share-isolation", "actual-dashboard-update-engine-reopen", "query-layer-independent-acceptance"]
+test_paths = ["vendor/workspace/backend-api/backend/tests_sqlite/test_bootstrap.py", "vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py", "vendor/workspace/backend-api/backend/tests_sqlite/test_app_reads.py", "vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py"]
+status = "passed"
+evidence = ["Tasks 4.6-4.9 independently accepted with scoped GO: 60 tests, zero skips, cover isolated bootstrap, six populated reads, creator cardinality, sharing isolation, actual bulk storage, queue failures and SQLite engine recreation. Workspace f23cb786a946a6a996deedbe87be9c7ca86b221e. Final maintained audit: 168 files, nine exact exceptions, no errors or violations. See .kiro/specs/openbb-self-service/sqlite-repair-verification.md and artifacts/task-4.9/review/review.md. Application save/environment-restart/sign-in/reopen remains separate and unverified."]
+
+[[capabilities]]
+id = "explicit-cartesian-appearance"
+requirements = ["4.8", "4.9", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
+planned_checks = ["appearance-validation-and-precedence", "legacy-mapper-shape", "visible-gap-and-markers", "retained-title-and-caption-styles", "appearance-rejection-recovery-and-export"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/snapshotContracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.test.ts", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/appearance.spec.ts"]
+status = "passed"
+evidence = ["Tasks 2.28-2.33 independently accepted with scoped GO and VERIFIED completion. At Workspace b96d36d16ba87db2dd595d5796507d473dd0c0c6, 260 units, strict checking, actual scoped lint, thirteen chart-module caps and 47 source/dependency identities pass. Four browser cases independently reproduced with empty CDP diagnostics include actual gap/marker/title/typography/export pixels and rejected-render recovery. See .kiro/specs/openbb-self-service/chart-appearance-verification.md and artifacts/task-2.33/review/review.md. No original application parity claim."]
+
+[[capabilities]]
+id = "renderer-functional-and-visual-parity"
+requirements = ["4.8", "4.9"]
+planned_checks = ["original-source-capability-and-flag-inventory", "original-controls-and-actions-parity", "legacy-state-and-export-parity", "integrated-light-dark-visual-and-interaction-parity"]
+test_paths = []
+status = "unverified"
+evidence = ["Owner parity amendment supersedes reduced-capability acceptance. Tasks 2.6-2.7 checks establish historical Community isolation and dependency removal, not original OpenBB functional parity. Initial artifact-only configuration probe independently reran successfully: six mocked original-component forwarding fixtures, installed-schema and current-boundary assertions; artifacts/parity/configuration/review-evidence.json. Original Full image reached login in an isolated browser but emitted an unresolved CDP exception; no widget or candidate parity ran. See .kiro/specs/openbb-self-service/parity-findings.md. Paired original/backend38 and frontend48 browser fixtures subsequently demonstrated the missing chart toggle and Advanced/Stats/Formulas controls; table values remain visible. See .kiro/specs/openbb-self-service/parity-widget-findings.md. Parity FAILED; no maintained parity test suite or renderer acceptance is claimed. ECharts is owner-selected; a bounded synthetic grouped-column probe covers programmatic settings, refresh, localStorage JSON roundtrip and PNG only. A later disposable Full-app spike and independent rerun verified the original table/chart toggle, visible grouped-column fixture, resize and disposal/table return. See .kiro/specs/openbb-self-service/echarts-findings.md; complete controls/editor, theme fidelity and backend persistence remain unverified. These are artifact-only probes, not maintained regressions or release acceptance. Original editor capture and independent rerun verified three panels, grouped-column control observations, title/legend/stroke UI edits and stacked switching; light mode and broad editor parity remain unverified. Subsequent seven-payload original UI capture establishes bar title/legend/stroke paths and retention across grouped/stacked/line outgoing state, not effective styling or reopened persistence. See .kiro/specs/openbb-self-service/chart-option-discovery.md and artifacts/parity/editor-payload-capture/report.md. These are research artifacts, not maintained tests. See .kiro/specs/openbb-self-service/echarts-editor-contract.md."]
+
+[[capabilities]]
+id = "chart-state-and-lifecycle-foundation"
+requirements = ["1.1", "1.2", "4.8", "4.9", "10.1", "10.3", "10.4", "10.5"]
+planned_checks = ["protected-echarts-restore", "path-specific-state-contracts", "legacy-state-reducers", "renderer-lifecycle-and-real-host", "joined-foundation-verification"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/contracts.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/stateReducers.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/host.test.tsx", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/toolchain.test.ts", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/smoke.spec.ts", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/host.spec.ts"]
+status = "passed"
+evidence = ["Tasks 2.13-2.17 independently accepted at Workspace 042ba87e3208a51857da4ae2d1c3109a680716d9: protected ECharts 6.0.0 restore, 46 focused tests, strict TypeScript, scoped lint, production fixture build and two one-worker Playwright/CDP cases passed. Actual host PNG contents, options, update/resize, hidden recovery, formatter failure and disposal verified. Existing Perspective regression passed 10 unit and four browser cases. All five foundation modules pass current complexity caps and tested source identity checks. Task 2.18 independently accepted with scoped GO for the foundation only. See .kiro/specs/openbb-self-service/chart-foundation-verification.md. Application renderer parity remains unverified."]
+
+[[capabilities]]
+id = "baseline-provenance"
+requirements = ["1.1", "1.2", "1.3", "1.4", "1.5"]
+planned_checks = ["upstream-source-and-image-manifest", "clean-build-dependencies"]
+test_paths = ["tests/delivery/test_workspace_packaging.py"]
+status = "unverified"
+evidence = ["Task 2.1 accepted: frozen Full frontend install and independently rebuilt frontend (7.21s), 2 packaging tests, unchanged Bun lock and size gate passed; artifacts/task-2.1/resume-evidence.json and review-build.log. Workspace e5e4170f1a09bdf14339eb760b7ce09e31e5484f. Backend, commercial renderer removal and application images remain pending. Task 1.1 accepted: 53 acquisition integrity checks and independent review; sources.lock.json and sources/notices.json record revisions and retained notice hashes. Runtime, dependency compatibility and image acceptance remain unverified."]
+
+[[capabilities]]
+id = "compose-lifecycle"
+requirements = ["2.1", "2.2", "2.3", "2.4"]
+planned_checks = ["compose-start-stop-recreate", "component-failure-report"]
+test_paths = []
+status = "unverified"
+evidence = ["Compose parser validation passed with fake fixtures; runtime untested"]
+
+[[capabilities]]
+id = "development-and-private-deployment"
+requirements = ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8"]
+planned_checks = ["wsl-rebuild", "linux-pull-install", "cloudflare-access-http-origin", "bind-mounted-state-and-wsl-parity"]
+test_paths = []
+status = "unverified"
+evidence = ["Task 1.2 protected WSL toolchain setup: 24 successful install/version/import commands with pinned pnpm, uv/uvx and Safe Chain. Application rebuild, clean Linux runner and deployment parity remain unverified; see docs/development.md."]
+
+[[capabilities]]
+id = "workspace-baseline"
+requirements = ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7"]
+planned_checks = ["workspace-login-save-reopen", "widget-discovery-and-values", "external-service-inventory", "fmp-ready-widgets-dashboard-edit-save-reopen-refresh", "perspective-viewer-config-pivot-aggregation-refresh", "commercial-renderer-absence", "configured-view-ai-context"]
+test_paths = ["tests/delivery/test_workspace_startup.py", "tests/delivery/test_workspace_packaging.py", "tests/delivery/test_origin_routing.py", "tests/delivery/test_request_boundary.py", "vendor/workspace/terminalpro/tests/unit/requestBoundary.test.ts", "vendor/workspace/terminalpro/tests/unit/communityBoundary.test.mjs", "vendor/workspace/terminalpro/tests/unit/communityState.test.mjs", "vendor/workspace/terminalpro/tests/unit/communityMount.test.tsx", "vendor/workspace/terminalpro/tests/unit/communityRealGrid.test.tsx", "vendor/workspace/terminalpro/tests/unit/commercialRemoval.test.mjs", "vendor/workspace/terminalpro/tests/unit/communityChartBoundary.test.mjs", "vendor/workspace/terminalpro/tests/unit/communityWidgetSchema.test.mjs", "vendor/workspace/terminalpro/tests/unit/communityCharts.test.tsx", "vendor/workspace/terminalpro/tests/unit/communityArtifactChart.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartThemeCommunity.test.ts", "vendor/workspace/terminalpro/tests/unit/perspectiveLeases.test.ts", "vendor/workspace/terminalpro/tests/unit/perspectiveLifecycle.test.ts", "vendor/workspace/terminalpro/tests/unit/perspectiveHost.test.tsx", "vendor/workspace/terminalpro/tests/unit/perspectiveThemeRace.test.tsx", "vendor/workspace/terminalpro/tests/perspective/perspective.spec.ts"]
+status = "planned"
+evidence = ["Task 2.8 accepted after independent Astra review and one repair round: 10 unit tests, strict selected TypeScript, Biome and 4 production browser cases passed; development cases also passed. Real rows, shared worker/CDP cleanup, themes, resize and failure/retry verified in isolated Host fixture. Stale-theme race reproduced and repaired. Workspace 48e3f59cc48e0ae7aa6f6ce92069fc5b10ee3e86; artifacts/task-2.8/review-round2-verification.json, browser-evidence.json, runtime-freeze.json and committed-complexity.json. Integrated dashboard visual/financial behavior and full-project typecheck remain unverified. Task 2.7 accepted after independent Astra review: 70 task tests and 10 audit controls independently passed, clean protected install and production build passed; no commercial packages/modules/initialization across installed manifests, 6488 graph nodes and 258 JavaScript chunks. Workspace 0341b12524cb822262be631fa820e2ca851a348a; artifacts/task-2.7/review-verification.json, joined-freeze.json and committed-complexity.json. Seven exact type-only size exceptions approved. Full typecheck, browser integration and final-image absence remain unverified. Task 2.6 accepted after independent Astra review and one repair round: pure 8, actual/mocked Community grid 16, existing 89 tests, Biome, build and whole-file size gate passed. Pagination and saved Set/Multi filter findings repaired with retained failing tests; original implementation RED remains transcript-only. Workspace 273c6529571501cb3bc211addb6129e24d91247b. Evidence artifacts/task-2.6/review-round1-verification.json and synced.json. Commercial dependency removal, Perspective and browser integration remain pending. Task 2.4 accepted: 7 actual nginx/config fixtures passed, including prefixes, public scheme, API failures, optional upstreams and SSE; lint and current size gate passed. Original RED process gap retained in tasks/evidence; retrospective baseline had 3 behavioral failures. Artifacts task-2.4/evidence.json and review-final-complexity.json; Workspace 38dffc33389aca0e4a87e0e88d42f7067aa220df. At the task 2.4 checkpoint, image/Compose/browser acceptance was pending; provisional image acceptance is now recorded under dagger-image-delivery. Task 2.3 accepted: 24 URL/header cases, 27 actual caller cases and portable pytest passed; fresh build and size gate passed, including session replacement/removal on saved query functions. Artifacts task-2.3/callers.log, build.log and complexity.json; Workspace 633b0feca5e4506bf5bd2034043b43b6f5377f7b. Test line endings normalized to LF at commit; production build bytes unchanged. Task 2.2 accepted: protected backend dependency restore; 8 startup/packaging tests passed without skips, repeated upstream account/login/dashboard persistence and Unicode TOML credentials verified. Artifacts task-2.2/evidence.json and unicode-green.log, independent size report task-3.3/review-complexity.json. Workspace 76b1b55cbb52b02ee00cd968a0a835dc090ce4cf. At the task 2.2 checkpoint, Full image/Compose/browser acceptance was pending. Owner selected Perspective baseline on 2026-10-16; renderer, financial aggregation and saved-view checks remain planned, not implemented. See docs/chart-replacement-assessment.md."]
+
+[[capabilities]]
+id = "fmp-fred-data-api"
+requirements = ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9"]
+planned_checks = ["fmp-entitled-request", "fred-series-and-metadata", "mixed-fmp-fred-dashboard-refresh", "provider-failure-contracts", "secret-exclusion", "workspace-api-data-fidelity"]
+test_paths = ["tests/providers/test_discovery.py", "tests/providers/test_profile.py", "tests/providers/test_income.py", "tests/providers/test_errors.py", "tests/providers/test_runtime.py", "tests/providers/test_fred.py"]
+status = "planned"
+evidence = ["Task 3.5 accepted: 55 installed provider tests, FRED date/null/metadata and failures, memory-only credentials, no-quota health/readiness and no-disk-cache; separate no-dev production environment excludes test tooling. Fresh independent review passed. Artifacts task-3.5/evidence.json and packaging-verify.log; data revision 49cc413e6ab67eaa0444e07485b0f9243c786f7b. Live/image/catalog acceptance pending. Task 3.4 accepted: 46 installed error/profile/income/discovery tests passed, including echoed credential URLs, distinct failure categories and response/log/traceback redaction. Artifacts task-3.4/review-green.log, source-sync.json and repaired-complexity.json; data revision 9892b7f1789a6530ece386cabac441c710d52848. Live/deployment acceptance pending. Task 3.3 accepted: 11 installed income/profile/discovery tests pass; annual dates/currency/amounts/nulls and request parameters retained. Artifacts task-3.3/green.log, source-sync.json and review-complexity.json; data revision 896e9895c7ac98277cc353e44c43f9b84f95102a. Live/deployment acceptance remains pending. Task 3.2 accepted: 5 profile/discovery tests pass through installed shared route using network fixtures; financial values, currency/nulls, encoded symbols and immutability checked. Artifacts task-3.2/green.log, source-sync.json and review-complexity.json; data revision b243f04b29c99e2fad2101b1486363839576a90c. Live/deployment acceptance remains pending. Task 3.1 accepted: 2 installed discovery/provenance tests passed under protected locked WSL tooling; independent 640-file mirror comparison and combined complexity gate passed. Data fork 2392fc8dcdedeeec15602bf59e83fb473fa94b21. Evidence artifacts/task-3.1/protected-install.log and independent-review-complexity.json. Financial route results, FRED runtime and live integration remain unverified."]
+
+[[capabilities]]
+id = "excel-self-hosted"
+requirements = ["6.1", "6.2", "6.3", "6.4", "6.5"]
+planned_checks = ["trusted-manifest", "excel-login-function-refresh-reopen", "auth-route-schema-compatibility"]
+test_paths = []
+status = "planned"
+evidence = []
+
+[[capabilities]]
+id = "recovery-and-evidence"
+requirements = ["8.1", "8.2", "8.3", "8.4"]
+planned_checks = ["baseline-report", "clean-bind-directory-restore", "release-rollback-contract"]
+test_paths = []
+status = "planned"
+evidence = []
+
+[[capabilities]]
+id = "evidence-contract-validation"
+requirements = ["1.1", "8.1", "9.2", "9.3", "10.5", "10.6", "12.4"]
+planned_checks = ["typed-artifact-boundaries", "independent-identity-matching", "missing-stale-nonpassing-evidence-blocks", "current-agent-checkpoint-unlocks-excel"]
+test_paths = ["tests/contracts/test_evidence.py", "tests/contracts/test_boundaries.py"]
+status = "unverified"
+evidence = ["Task 1.5 accepted after independent review: 107 fixture tests passed and 27 maintained files passed the combined complexity gate with no exceptions. Source acquisition validation passed with runtime_accepted=false. Runtime acceptance, publication and promotion remain unverified. See docs/evidence.md."]
+
+[[capabilities]]
+id = "runtime-and-source-input-contracts"
+requirements = ["2.1", "3.4", "3.6", "3.7", "3.8", "5.3", "5.9", "11.1", "11.6", "11.7"]
+planned_checks = ["selected-service-configuration", "credential-injection-boundaries", "public-origin-routes", "provisional-financial-inventory", "recursive-source-exclusion"]
+test_paths = ["tests/contracts/test_configuration.py", "tests/contracts/test_source_filter.py"]
+status = "unverified"
+evidence = ["Task 1.6 and source-preservation correction accepted after independent review: 59 fixture tests passed, 32 Workspace and seven data API production paths remained eligible, and the combined complexity gate passed. Compose behavior, installed routes and image-layer exclusions remain unverified. See docs/runtime-contracts.md."]
+
+[[capabilities]]
+id = "dagger-image-delivery"
+requirements = ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7"]
+planned_checks = ["local-ci-dagger-parity", "ci-runner-portable-commands", "publish-and-digest-manifest", "failed-check-blocks-promotion", "pull-only-install", "build-secret-exclusion"]
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/task18_inspect.py", "tests/delivery/task18_runner.sh", "tests/delivery/test_workspace_image.py", "tests/delivery/task25_dockerfile_test.py", "tests/delivery/task25_source_filter_test.py", "tests/delivery/task25_runtime.py", "tests/delivery/test_data_image.py", "tests/delivery/test_data_runtime_image.py"]
+status = "unverified"
+evidence = ["Task 3.6 accepted after independent Astra review: 80 regressions and 3 real image tests passed; exact runtime/fork hashes, local package origins, missing/configured key readiness, routes and decoded-layer sentinel exclusion verified. Local image sha256:5c23441a269126ebeee5d315caa922993c638d2527d4789684f32d6270cdc7fb. Evidence artifacts/task-3.6/review-identities.json, review-complexity.json and runtime-true.json. Catalog/live/deployment checks remain pending. Task 2.5 accepted after independent Astra review: 68 focused tests, size gate, archive/dependency identity checks and fresh actual image runtime passed. Full configuration, login 200, wrong-password 401, private files and secret-free logs verified; owned state/container cleaned. Local image sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f. Evidence artifacts/task-2.5/export.json, load.json, review-runtime.json and independent-review-complexity.json. Provisional only: commercial renderers, integrated dashboards, Compose and publication remain pending. Task 1.8 accepted after independent review: 29 focused tests, 46-file complexity gate, exact-identity archive load and network-disabled foundation smoke passed. WSL and fresh Linux userspace produced identical archives using the shared WSL daemon and cached Dagger engine. Sentinel exclusion and 39 required namespace paths were checked. Application builds, GitHub execution, publication and deployment remain unverified; see docs/image-builds.md."]
+
+[[capabilities]]
+id = "background-verification"
+requirements = ["10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
+planned_checks = ["headless-owned-browser", "devtools-diagnostics", "playwright-real-journeys", "bounded-worker-isolation", "breadth-evidence-integrity"]
+test_paths = ["tests/quality/test_python_units.py", "tests/quality/test_scope.py", "tests/quality/test_cli.py", "tests/quality/test_combined.py", "tests/quality/test_ts_adapter.py", "tests/quality/test_exceptions.py", "tests/quality/test_syntax_units.mjs", "tests/e2e/infrastructure.spec.ts", "tests/delivery/test_verification.py"]
+status = "unverified"
+evidence = ["Complexity foundation accepted: 76 Python and 15 Node tests. Task 1.7 independently accepted on WSL: eight owned Chromium/CDP tests, nine Python fixture tests with live unverified, strict TypeScript, and combined complexity across 40 files passed. Retained artifact audit found no synthetic credentials or profiles. Application and native Windows acceptance remain unverified; see docs/verification.md and docs/complexity.md."]
+
+[[capabilities]]
+id = "custom-postgresql-data"
+requirements = []
+planned_checks = []
+test_paths = []
+status = "deferred"
+evidence = ["User explicitly deferred custom PostgreSQL integration until after the upstream baseline"]
+
+[[capabilities]]
+id = "latest-api-regeneration-and-secrets"
+requirements = ["11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7"]
+planned_checks = ["latest-api-fmp-provider-adaptation", "schema-to-widget-and-excel-generation", "workbook-contract-diff", "regenerated-consumer-live-journeys", "env-ignore-and-build-context-exclusion"]
+test_paths = ["tests/contracts/test_catalog.py", "tests/contracts/test_catalog_runtime.py", "tests/contracts/test_configuration.py"]
+status = "planned"
+evidence = ["Task 3.7 accepted after independent Astra review: 79 tests, actual identified-image generation and default drift exit 2 passed; nine generated files reproduced byte-for-byte. Parent joined contracts and verified 61 configuration checks; 13 snapshot/generator files preserve exact bytes under Windows Git checkout filters. Evidence artifacts/task-3.7/generation-verification.json, review-complexity.json and git-checkout-bytes.json. Three supported widgets and adapted FRED/mixed apps are generated; renderer binding 2.9, final served catalog 3.8, live journeys and Excel remain pending."]
+
+[[capabilities]]
+id = "anthropic-before-excel"
+requirements = ["12.1", "12.2", "12.3", "12.4", "12.5"]
+planned_checks = ["workspace-agent-discovery-streaming", "selected-dashboard-data-answer", "anthropic-failure-and-secret-exclusion", "excel-dependency-gate", "dashboards-without-agent"]
+test_paths = []
+status = "planned"
+evidence = []
+[[capabilities]]
+id = "chart-resolved-snapshot-and-cartesian-mapping"
+requirements = ["4.8", "4.9", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
+planned_checks = ["immutable-resolved-observations", "category-and-series-identity", "unit-scale-compatibility", "three-family-numeric-mapping", "settings-only-render-revision", "isolated-snapshot-to-host-browser"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/snapshotContracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/snapshot.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.test.ts", "vendor/workspace/terminalpro/tests/e2e/chart-compatibility/cartesian.spec.ts"]
+status = "passed"
+evidence = ["Tasks 2.19-2.21 independently accepted at Workspace 59118937434b9f5a9bebd4e80bcb54f7ca2d552e: frozen contracts, 26 snapshot tests, 52 mapping tests, strict TypeScript, scoped lint and complexity checks passed. Task 2.22 independently accepted at Workspace 06fdb859bf426eb44dce13c54b21c494fcc244fd: 124 units, strict checking, build, scoped lint and three browser cases passed with empty CDP diagnostics and inspected fresh images. Task 2.23 independently accepted with scoped GO: fresh 124 tests/strict/build, nine-module caps and twenty tested-source/dependency identities passed; matching-source task 2.22 browser evidence retained. See .kiro/specs/openbb-self-service/chart-snapshot-verification.md. Original application parity remains unverified."]
+
+[[capabilities]]
+id = "original-chart-option-state"
+requirements = ["4.8", "4.9", "10.4", "10.5", "10.6"]
+planned_checks = ["original-baseline-transitions", "captured-column-editor-patches", "integrated-detached-event-composition", "joined-option-state-regressions"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionStateContracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionState.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts"]
+status = "passed"
+evidence = ["Tasks 2.24-2.27 independently accepted with scoped GO and VERIFIED completion. Fresh joined checks pass 221 units, strict TypeScript, scoped lint, twelve-module caps and 42 source/dependency identities; independent Astra final review passed at Workspace 5c2df9864bed000170ffccde146273b468e0552e. See .kiro/specs/openbb-self-service/chart-option-state-verification.md. This is stored-state fidelity, not effective rendering or original application parity."]

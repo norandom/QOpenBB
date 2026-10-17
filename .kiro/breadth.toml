@@ -10,9 +10,9 @@ requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 id = "chart-appearance-editor-source-contracts"
 requirements = ["1.1", "1.4", "4.2", "4.7", "4.8", "4.9", "10.4", "10.5", "10.6"]
 planned_checks = ["saved-common-replacement-and-family-retention", "normalized-color-and-alias-semantics", "grouped-tooltip-patch-and-session-rejection", "joined-source-contract-regressions"]
-test_paths = []
-status = "planned"
-evidence = ["Owner approved chart-appearance-editor-integration-design.md. Tasks 2.41-2.45 plan source contracts only; no new production checks have run. Actual test paths must be registered when implemented. Full B2, mapper, editor UI, transformed snapshots, application activation and persistence remain unverified."]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/appearanceContracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/appearanceFixtures.json"]
+status = "in-progress"
+evidence = ["Task 2.41 frozen type contracts and finite reference fixtures independently checked: both strict compilers, 88 application tests, 260 compatibility tests and scoped lint passed in a fresh isolated stage. The 174-file maintained complexity audit passed. Evidence: artifacts/task-2.41/review/. Composition, colors and tooltip behavior remain planned under tasks 2.42-2.45. Full B2, mapper, editor UI, transformed snapshots, application activation and persistence remain unverified."]
 
 [[capabilities]]
 id = "chart-application-source-contracts"

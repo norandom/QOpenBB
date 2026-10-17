@@ -1,0 +1,80 @@
+[
+  {
+    "command": [
+      "node",
+      "--version"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-review-20261017120037",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/review/check-0.log",
+    "sha256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-application/tsconfig.json",
+      "--noEmit"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-review-20261017120037",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/review/check-1.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-compatibility/tsconfig.json",
+      "--noEmit"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-review-20261017120037",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/review/check-2.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "tests/unit/chart-application/vitest.config.mjs"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-review-20261017120037",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/review/check-3.log",
+    "sha256": "e19b0441471db397f29fc3b0148f92d5ec1ce1c238765e96e996b05ff37167e4"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "tests/unit/chart-compatibility/vitest.config.mjs"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-review-20261017120037",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/review/check-4.log",
+    "sha256": "8bceb65bd0aef496b9be274c0a9eb80c085c63e44bc2006e3806249972e05165"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/@biomejs/biome/bin/biome",
+      "check",
+      "src/components/General/Table/Chart/application",
+      "src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "tests/unit/chart-application",
+      "tests/unit/chart-compatibility/editorEvents.test.ts"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task241-review-20261017120037",
+    "exitCode": 0,
+    "log": "artifacts/task-2.41/review/check-5.log",
+    "sha256": "4bfa5c4ac4f7aa28c29389b01cd403c1eeaba03047484d2047d3509998485731"
+  }
+]

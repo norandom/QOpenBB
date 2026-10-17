@@ -1,0 +1,30 @@
+tests/unit/chart-application/appearanceContracts.types.ts:28:26 lint/correctness/noSelfAssign ━━━━━━━━━━
+
+  × baseline is assigned to itself.
+  
+    26 │   compose({ generated: {} });
+    27 │   // @ts-expect-error The input cannot replace its selected baseline.
+  > 28 │   input.baseline = input.baseline;
+       │                          ^^^^^^^^
+    29 │   // @ts-expect-error Executable formatting belongs outside data-only options.
+    30 │   compose({ ...input, generated: { formatter: () => "USD" } });
+  
+  i This is where is assigned.
+  
+    26 │   compose({ generated: {} });
+    27 │   // @ts-expect-error The input cannot replace its selected baseline.
+  > 28 │   input.baseline = input.baseline;
+       │         ^^^^^^^^
+    29 │   // @ts-expect-error Executable formatting belongs outside data-only options.
+    30 │   compose({ ...input, generated: { formatter: () => "USD" } });
+  
+  i Self assignments have no effect and can be removed.
+  
+
+Checked 3 files in 9ms. Fixed 2 files.
+Found 1 error.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+
