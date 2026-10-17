@@ -1,0 +1,84 @@
+{
+  "scope": "Offline synthetic I/O and event persistence only; no application/browser run",
+  "status": "passed",
+  "checks": [
+    "extraneous additions fail final reconciliation",
+    "JSON bytes unchanged and initial existing files counted",
+    "overwrite shrink and PNG bytes counted with original ordering",
+    "only one initial scan despite owned writes",
+    "unchanged hard caps and counter boundaries",
+    "prospective file/total bounds stop before disk mutation",
+    "individual JSON/PNG bounds retained",
+    "path escape, exclusions and symlink writes rejected",
+    "failed new write creates no phantom inventory",
+    "partial failed overwrite refreshes actual retained bytes",
+    "external PNG reservations consume prospective budget",
+    "external PNG success and failed-before-write finalize safely",
+    "extraneous overwrite fails reconciliation",
+    "legacy excluded paths stay excluded; no new writer exclusion bypass",
+    "append persists only changed event chunk and index",
+    "closed-page finalization preserves captured event sequence and bytes",
+    "actual journey closed-page finalizer retains captured events and counter",
+    "actual cleanup evaluation race preserves prefix/counter and reports read failure",
+    "successful last read remains authoritative if page closes immediately afterward",
+    "baseline guards reject wrong role/position/typography instead of resetting UI",
+    "label restore guard rejects incomplete rotation or spacing restoration",
+    "case-boundary guard rejects amount or period drift",
+    "all ordered events retained with unchanged serialized chunks",
+    "event loss, changed prefix and sequence gap rejected",
+    "failed event write retries without loss",
+    "actual finalizer pass leaves truthful final status",
+    "actual finalizer oversize leaves truthful final status",
+    "actual finalizer file-overflow leaves truthful final status",
+    "benchmark implementations produce identical serialized output and retention"
+  ],
+  "benchmarks": [
+    {
+      "implementation": "frozen",
+      "payloadBytes": 315016,
+      "payloadSha256": "53f8cbd5e1fc10d9283741c56717b31e64c9630e8e028cd1fa10c6ce0cbea82f",
+      "retainedFiles": 102,
+      "retainedBytes": 316841,
+      "rewrites": 8,
+      "elapsedMs": [
+        204.1325099999999,
+        203.6229330000001,
+        230.56721599999992,
+        241.31111500000043,
+        218.4893089999996,
+        245.09148399999958,
+        252.3994899999998,
+        237.78446199999962
+      ],
+      "meanMs": 229.17481487499987
+    },
+    {
+      "implementation": "inventory",
+      "payloadBytes": 315016,
+      "payloadSha256": "53f8cbd5e1fc10d9283741c56717b31e64c9630e8e028cd1fa10c6ce0cbea82f",
+      "retainedFiles": 102,
+      "retainedBytes": 316841,
+      "rewrites": 8,
+      "elapsedMs": [
+        10.027463000000353,
+        11.377760999999737,
+        10.975182000000132,
+        12.388331000000107,
+        11.63855599999988,
+        12.189817999999832,
+        11.983948999999484,
+        10.191947000000255
+      ],
+      "meanMs": 11.346625874999972
+    }
+  ],
+  "cleanup": {
+    "rootConfined": true,
+    "rootDeleted": true
+  },
+  "sources": {
+    "io": "30072d164ab4603421cc373425d94c7f5317429d0fd4e42da12d3cd0062bd6bc",
+    "events": "e147eca0fcfd1b8bfff0c2082417f33bb6ebd4d3c4eab1355776284dcc3c5752",
+    "frozenIO": "cd8e6adb31190e728d98a08820c9eb19ed039a22560a28b42e58fee33152d226"
+  }
+}

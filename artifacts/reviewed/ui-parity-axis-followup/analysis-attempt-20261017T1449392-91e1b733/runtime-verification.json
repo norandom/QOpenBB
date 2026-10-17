@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "scope": "Original remaining A05-A09 only",
+  "checks": 1296,
+  "cases": [
+    {
+      "id": "A05",
+      "fixture": "A",
+      "status": "observed",
+      "elapsedMs": 53115
+    },
+    {
+      "id": "A06",
+      "fixture": "A",
+      "status": "observed",
+      "elapsedMs": 75703
+    },
+    {
+      "id": "A07",
+      "fixture": "B",
+      "status": "observed",
+      "elapsedMs": 27036
+    },
+    {
+      "id": "A08",
+      "fixture": "B",
+      "status": "observed",
+      "elapsedMs": 21735
+    },
+    {
+      "id": "A09",
+      "fixture": "C",
+      "status": "observed",
+      "elapsedMs": 9390
+    }
+  ],
+  "events": 39,
+  "counters": {
+    "actions": 121,
+    "changes": 41,
+    "checkpoints": 37,
+    "screenshots": 37,
+    "events": 39
+  },
+  "retained": {
+    "files": 152,
+    "bytes": 30005260
+  },
+  "allFiveCasesVerified": true,
+  "candidateExecuted": false,
+  "persistenceVerified": false,
+  "internalEditorScrollOffsetsMeasured": false
+}

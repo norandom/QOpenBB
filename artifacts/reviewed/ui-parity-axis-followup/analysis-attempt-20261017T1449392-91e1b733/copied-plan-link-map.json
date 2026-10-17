@@ -1,0 +1,79 @@
+{
+  "scope": "Frozen historical copied plan retains canonical-source relative link base",
+  "copiedPlan": "attempt-20261017T1449392-91e1b733/plan.md",
+  "canonicalSource": "artifacts/ui-parity-axis-followup/plan.md",
+  "identicalSha256": "1c5ceae2d8dc8f5f8f955b1d961489df89455efed3384beadff980e0e69f41d5",
+  "publicCanonicalSource": "artifacts/reviewed/ui-parity-axis-followup/plan.md",
+  "links": [
+    {
+      "href": "../ui-parity-axis-controls/plan.md",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-controls/plan.md"
+    },
+    {
+      "href": "../ui-parity-axis-controls/capture/report.md",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-controls/capture/report.md"
+    },
+    {
+      "href": "../ui-parity-axis-controls/capture/verify-partial.mjs",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-controls/capture/verify-partial.mjs"
+    },
+    {
+      "href": "../ui-parity-axis-controls/capture/io-profile-cd8e6adb3119.json",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-controls/capture/io-profile-cd8e6adb3119.json"
+    },
+    {
+      "href": "frozen/executed-source-manifest.json",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/frozen/executed-source-manifest.json"
+    },
+    {
+      "href": "frozen/harness/journey.mjs",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/frozen/harness/journey.mjs"
+    },
+    {
+      "href": "harness/dashboard.json",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/harness/dashboard.json"
+    },
+    {
+      "href": "harness/fixtures.json",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/harness/fixtures.json"
+    },
+    {
+      "href": "harness/projection.mjs",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/harness/projection.mjs"
+    },
+    {
+      "href": "harness/navigation.mjs",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/harness/navigation.mjs"
+    },
+    {
+      "href": "harness/io.mjs",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/harness/io.mjs"
+    },
+    {
+      "href": "harness/events.mjs",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/harness/events.mjs"
+    },
+    {
+      "href": "offline-verification.json",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/offline-verification.json"
+    },
+    {
+      "href": "source-hashes.json",
+      "resolveRelativeTo": "artifacts/ui-parity-axis-followup/",
+      "canonicalTarget": "artifacts/ui-parity-axis-followup/source-hashes.json"
+    }
+  ]
+}

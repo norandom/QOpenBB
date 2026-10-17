@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "Independent artifact-only A05-A09 review; controller metadata copy and final mirror audit required",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-axis-followup-runtime-review/review.md",
+      "sha256": "18ceacac5f5531b821136033a081dbc5fb892905e658b6daa0126234fe64f4e5",
+      "bytes": 8817
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-axis-followup-runtime-review/verification.json",
+      "sha256": "6925a9c15283e457c8344578a90d40e7701f23e43ca0a501dadbee2b955b33ad",
+      "bytes": 3334
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-axis-followup-runtime-review/audit.mjs",
+      "sha256": "cddd577ad593930dad2c40f4148c4c821c6beb0326ff22621a621fe90bcbe31e",
+      "bytes": 11184
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-axis-followup-runtime-review/independent-audit.json",
+      "sha256": "30e09742c0ebc17f509ce16167f332fa5878f2502cc517bd470ede7f889303e0",
+      "bytes": 334574
+    }
+  ]
+}

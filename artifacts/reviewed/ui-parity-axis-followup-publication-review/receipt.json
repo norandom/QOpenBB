@@ -1,0 +1,3241 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "Mechanical normalized manifest bijection and current bytes only",
+  "reviewDate": "2026-10-17",
+  "normalizedManifest": {
+    "sourcePath": "artifacts/ui-parity-delivery/axis-followup-publication-allowlist.json",
+    "sha256": "f4f55553d2ebbf060e5aa91a970cb0f6ad062bdbd0c5c981733b6b12f90cb5b8",
+    "bytes": 46313
+  },
+  "originalManifest": {
+    "sourcePath": "artifacts/ui-parity-axis-followup/publication-allowlist.json",
+    "sha256": "09bd912e8d207bbdc66aa8db2b1217ae26767f1ad630ac26086f5ce36583ede7",
+    "bytes": 65420
+  },
+  "payload": {
+    "files": 200,
+    "bytes": 30706495.0,
+    "originalSelectedFiles": 199,
+    "originalManifestAdded": 1
+  },
+  "checkCount": 803,
+  "failureCount": 0,
+  "checks": [
+    {
+      "label": "Original frozen manifest hash",
+      "passed": true
+    },
+    {
+      "label": "Original 199 entries and normalized 200 entries",
+      "passed": true
+    },
+    {
+      "label": "Normalized source paths unique",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/plan.md",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/plan.md",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/source-hashes.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/source-hashes.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/offline-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/offline-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/static-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/static-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/verify-offline.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/verify-offline.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/verify-runtime.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/verify-runtime.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/verify-owned-absence.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/verify-owned-absence.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/map-copied-plan.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/map-copied-plan.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/analyze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/analyze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/prepare-run.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/prepare-run.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/supervise.sh",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/supervise.sh",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/package-evidence.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/package-evidence.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/report.md",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/report.md",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/events.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/events.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/finalize.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/finalize.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/guards.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/guards.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/harness/status.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/harness/status.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/frozen/executed-source-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/frozen/executed-source-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/001-A-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/001-A-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/003-A-A05-after-23-view1.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/003-A-A05-after-23-view1.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/003-A-A05-after-23.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/003-A-A05-after-23.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/004-A-A05-after-25-view2.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/004-A-A05-after-25-view2.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/004-A-A05-after-25.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/004-A-A05-after-25.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/005-A-A05-after-26-view3.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/005-A-A05-after-26-view3.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/005-A-A05-after-26.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/005-A-A05-after-26.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/006-A-A05-after-28-view4.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/006-A-A05-after-28-view4.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/006-A-A05-after-28.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/006-A-A05-after-28.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/007-A-A05-after-29-view5.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/007-A-A05-after-29-view5.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/007-A-A05-after-29.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/007-A-A05-after-29.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/008-A-A05-after-31-view6.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/008-A-A05-after-31-view6.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/008-A-A05-after-31.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/008-A-A05-after-31.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/009-A-A05-after-33-view7.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/009-A-A05-after-33-view7.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/009-A-A05-after-33.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/009-A-A05-after-33.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/010-A-A05-after-34-view8.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/010-A-A05-after-34-view8.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/010-A-A05-after-34.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/010-A-A05-after-34.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/011-A-A05-after-36-view9.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/011-A-A05-after-36-view9.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/011-A-A05-after-36.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/011-A-A05-after-36.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/012-A-A05-after-38-view10.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/012-A-A05-after-38-view10.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/012-A-A05-after-38.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/012-A-A05-after-38.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/013-A-A05-after-39-view11.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/013-A-A05-after-39-view11.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/013-A-A05-after-39.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/013-A-A05-after-39.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/014-A-A05-after-41-view12.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/014-A-A05-after-41-view12.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/014-A-A05-after-41.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/014-A-A05-after-41.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43-view13.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43-view13.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43-view14.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43-view14.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/016-A-A06-after-52-view15.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/016-A-A06-after-52-view15.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/016-A-A06-after-52.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/016-A-A06-after-52.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/017-A-A06-after-54-view16.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/017-A-A06-after-54-view16.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/017-A-A06-after-54.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/017-A-A06-after-54.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/018-A-A06-after-55-view17.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/018-A-A06-after-55-view17.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/018-A-A06-after-55.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/018-A-A06-after-55.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/019-A-A06-after-57-view18.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/019-A-A06-after-57-view18.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/019-A-A06-after-57.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/019-A-A06-after-57.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/020-A-A06-after-59-view19.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/020-A-A06-after-59-view19.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/020-A-A06-after-59.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/020-A-A06-after-59.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/021-A-A06-after-60-view20.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/021-A-A06-after-60-view20.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/021-A-A06-after-60.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/021-A-A06-after-60.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/022-A-A06-after-62-view21.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/022-A-A06-after-62-view21.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/022-A-A06-after-62.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/022-A-A06-after-62.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/023-A-A06-after-64-view22.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/023-A-A06-after-64-view22.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/023-A-A06-after-64.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/023-A-A06-after-64.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/024-A-A06-after-65-view23.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/024-A-A06-after-65-view23.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/024-A-A06-after-65.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/024-A-A06-after-65.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/025-A-A06-after-67-view24.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/025-A-A06-after-67-view24.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/025-A-A06-after-67.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/025-A-A06-after-67.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/026-B-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/026-B-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79-view25.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79-view25.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79-view26.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79-view26.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/028-B-A07-after-90-view27.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/028-B-A07-after-90-view27.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/028-B-A07-after-90.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/028-B-A07-after-90.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/029-B-A07-after-92-view28.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/029-B-A07-after-92-view28.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/029-B-A07-after-92.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/029-B-A07-after-92.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/030-B-A07-after-93-view29.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/030-B-A07-after-93-view29.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/030-B-A07-after-93.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/030-B-A07-after-93.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/031-B-A07-after-96-view30.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/031-B-A07-after-96-view30.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/031-B-A07-after-96.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/031-B-A07-after-96.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/032-B-A07-after-98-view31.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/032-B-A07-after-98-view31.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/032-B-A07-after-98.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/032-B-A07-after-98.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/033-B-A08-after-102-view32.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/033-B-A08-after-102-view32.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/033-B-A08-after-102.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/033-B-A08-after-102.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/034-B-A08-after-104-view33.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/034-B-A08-after-104-view33.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/034-B-A08-after-104.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/034-B-A08-after-104.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/035-B-A08-after-106-view34.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/035-B-A08-after-106-view34.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/035-B-A08-after-106.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/035-B-A08-after-106.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/036-C-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/036-C-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114-view35.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114-view35.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114-view36.png",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114-view36.png",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-A.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-A.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-B.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-B.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-C.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-C.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cases.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cases.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/counters.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/counters.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-B.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-B.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-C.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-C.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/event-index.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/event-index.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p00.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p00.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p01.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p01.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p02.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p02.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/final-output-inventory.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/final-output-inventory.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/grant-proof.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/grant-proof.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-A.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-A.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-B.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-B.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-C.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-C.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/journey-status.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/journey-status.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/menus.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/menus.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p0.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p0.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p1.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p1.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p2.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p2.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p3.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p3.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p4.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p4.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p5.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p5.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p5.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p5.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p6.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p6.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p7.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p7.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p8.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p8.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p10.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p10.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p11.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p11.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p12.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p12.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A08-p12.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A08-p12.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A08-p13.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A08-p13.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-entry-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-entry-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-A09-p14.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-A09-p14.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-A09-p15.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-A09-p15.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-entry-p13.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-entry-p13.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-entry-p14.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-entry-p14.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/onboarding-B.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/onboarding-B.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/plan.md",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/plan.md",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/preparation.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/preparation.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/restoration-Horizontal.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/restoration-Horizontal.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/restoration-Vertical.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/restoration-Vertical.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/retained-bytes.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/retained-bytes.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/run-status.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/run-status.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/screenshots.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/screenshots.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/source-hashes.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/source-hashes.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/source-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/source-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/start-status.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/start-status.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/summary.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/summary.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/transactions.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/transactions.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/events.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/events.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/finalize.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/finalize.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/guards.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/guards.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/status.mjs",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/status.mjs",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/actual-output-inventory.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/actual-output-inventory.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/copied-plan-link-map.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/copied-plan-link-map.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/event-deltas.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/event-deltas.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/fresh-owned-absence.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/fresh-owned-absence.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/runtime-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/runtime-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Exact bijection for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "label": "Same implicit mirror destination for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/plan.md",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/plan.md",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/source-hashes.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/source-hashes.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/offline-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/offline-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/static-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/static-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/verify-offline.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/verify-offline.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/verify-runtime.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/verify-runtime.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/verify-owned-absence.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/verify-owned-absence.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/map-copied-plan.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/map-copied-plan.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/analyze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/analyze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/prepare-run.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/prepare-run.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/supervise.sh",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/supervise.sh",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/package-evidence.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/package-evidence.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/report.md",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/report.md",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/events.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/events.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/finalize.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/finalize.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/guards.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/guards.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/harness/status.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/harness/status.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/frozen/executed-source-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/frozen/executed-source-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/001-A-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/001-A-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/003-A-A05-after-23-view1.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/003-A-A05-after-23-view1.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/003-A-A05-after-23.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/003-A-A05-after-23.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/004-A-A05-after-25-view2.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/004-A-A05-after-25-view2.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/004-A-A05-after-25.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/004-A-A05-after-25.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/005-A-A05-after-26-view3.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/005-A-A05-after-26-view3.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/005-A-A05-after-26.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/005-A-A05-after-26.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/006-A-A05-after-28-view4.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/006-A-A05-after-28-view4.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/006-A-A05-after-28.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/006-A-A05-after-28.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/007-A-A05-after-29-view5.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/007-A-A05-after-29-view5.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/007-A-A05-after-29.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/007-A-A05-after-29.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/008-A-A05-after-31-view6.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/008-A-A05-after-31-view6.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/008-A-A05-after-31.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/008-A-A05-after-31.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/009-A-A05-after-33-view7.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/009-A-A05-after-33-view7.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/009-A-A05-after-33.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/009-A-A05-after-33.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/010-A-A05-after-34-view8.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/010-A-A05-after-34-view8.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/010-A-A05-after-34.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/010-A-A05-after-34.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/011-A-A05-after-36-view9.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/011-A-A05-after-36-view9.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/011-A-A05-after-36.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/011-A-A05-after-36.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/012-A-A05-after-38-view10.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/012-A-A05-after-38-view10.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/012-A-A05-after-38.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/012-A-A05-after-38.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/013-A-A05-after-39-view11.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/013-A-A05-after-39-view11.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/013-A-A05-after-39.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/013-A-A05-after-39.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/014-A-A05-after-41-view12.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/014-A-A05-after-41-view12.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/014-A-A05-after-41.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/014-A-A05-after-41.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43-view13.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43-view13.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43-view14.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43-view14.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/015-A-A05-after-43.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/016-A-A06-after-52-view15.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/016-A-A06-after-52-view15.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/016-A-A06-after-52.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/016-A-A06-after-52.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/017-A-A06-after-54-view16.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/017-A-A06-after-54-view16.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/017-A-A06-after-54.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/017-A-A06-after-54.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/018-A-A06-after-55-view17.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/018-A-A06-after-55-view17.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/018-A-A06-after-55.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/018-A-A06-after-55.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/019-A-A06-after-57-view18.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/019-A-A06-after-57-view18.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/019-A-A06-after-57.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/019-A-A06-after-57.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/020-A-A06-after-59-view19.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/020-A-A06-after-59-view19.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/020-A-A06-after-59.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/020-A-A06-after-59.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/021-A-A06-after-60-view20.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/021-A-A06-after-60-view20.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/021-A-A06-after-60.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/021-A-A06-after-60.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/022-A-A06-after-62-view21.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/022-A-A06-after-62-view21.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/022-A-A06-after-62.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/022-A-A06-after-62.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/023-A-A06-after-64-view22.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/023-A-A06-after-64-view22.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/023-A-A06-after-64.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/023-A-A06-after-64.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/024-A-A06-after-65-view23.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/024-A-A06-after-65-view23.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/024-A-A06-after-65.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/024-A-A06-after-65.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/025-A-A06-after-67-view24.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/025-A-A06-after-67-view24.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/025-A-A06-after-67.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/025-A-A06-after-67.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/026-B-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/026-B-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79-view25.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79-view25.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79-view26.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79-view26.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/027-B-entry-after-79.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/028-B-A07-after-90-view27.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/028-B-A07-after-90-view27.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/028-B-A07-after-90.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/028-B-A07-after-90.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/029-B-A07-after-92-view28.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/029-B-A07-after-92-view28.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/029-B-A07-after-92.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/029-B-A07-after-92.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/030-B-A07-after-93-view29.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/030-B-A07-after-93-view29.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/030-B-A07-after-93.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/030-B-A07-after-93.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/031-B-A07-after-96-view30.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/031-B-A07-after-96-view30.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/031-B-A07-after-96.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/031-B-A07-after-96.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/032-B-A07-after-98-view31.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/032-B-A07-after-98-view31.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/032-B-A07-after-98.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/032-B-A07-after-98.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/033-B-A08-after-102-view32.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/033-B-A08-after-102-view32.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/033-B-A08-after-102.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/033-B-A08-after-102.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/034-B-A08-after-104-view33.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/034-B-A08-after-104-view33.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/034-B-A08-after-104.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/034-B-A08-after-104.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/035-B-A08-after-106-view34.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/035-B-A08-after-106-view34.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/035-B-A08-after-106.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/035-B-A08-after-106.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/036-C-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/036-C-entry-entry-baseline.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114-view35.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114-view35.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114-view36.png",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114-view36.png",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/037-C-entry-after-114.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-A.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-A.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-B.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-B.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-C.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/baseline-C.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cases.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cases.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/counters.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/counters.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-B.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-B.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-C.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/entry-data-C.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/event-index.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/event-index.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p00.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p00.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p01.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p01.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p02.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/events-p02.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/final-output-inventory.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/final-output-inventory.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/grant-proof.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/grant-proof.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-A.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-A.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-B.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-B.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-C.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/identity-C.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/journey-status.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/journey-status.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/menus.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/menus.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p0.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p0.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p1.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p1.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p2.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p2.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p3.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p3.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p4.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p4.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p5.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A05-p5.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p5.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p5.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p6.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p6.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p7.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p7.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p8.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p8.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-A06-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p10.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p10.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p11.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p11.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p12.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p12.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A07-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A08-p12.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A08-p12.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A08-p13.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-A08-p13.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-entry-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-B-entry-p9.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-A09-p14.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-A09-p14.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-A09-p15.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-A09-p15.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-entry-p13.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-entry-p13.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-entry-p14.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/observations-C-entry-p14.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/onboarding-B.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/onboarding-B.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/plan.md",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/plan.md",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/preparation.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/preparation.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/restoration-Horizontal.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/restoration-Horizontal.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/restoration-Vertical.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/restoration-Vertical.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/retained-bytes.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/retained-bytes.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/run-status.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/run-status.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/screenshots.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/screenshots.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/source-hashes.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/source-hashes.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/source-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/source-manifest.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/start-status.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/start-status.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/summary.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/summary.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/transactions.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/transactions.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/events.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/events.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/finalize.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/finalize.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/guards.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/guards.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/run.sh",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/status.mjs",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/attempt-20261017T1449392-91e1b733/harness/status.mjs",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/actual-output-inventory.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/actual-output-inventory.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/copied-plan-link-map.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/copied-plan-link-map.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/event-deltas.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/event-deltas.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/fresh-owned-absence.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/fresh-owned-absence.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/runtime-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/runtime-verification.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/analysis-attempt-20261017T1449392-91e1b733/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "label": "Current bytes for artifacts/ui-parity-axis-followup/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "label": "Compatible entry keys for artifacts/ui-parity-axis-followup/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "label": "Only added entry is exact original manifest metadata",
+      "passed": true
+    },
+    {
+      "label": "Normalized total 30,706,495 bytes",
+      "passed": true
+    }
+  ],
+  "runtimeStarted": false,
+  "frozenFilesEdited": false,
+  "verdict": "Normalized manifest preserves every selected source/hash/byte entry and implicit destination; adds only exact original manifest. Approved for controller publication with final mirror audit."
+}

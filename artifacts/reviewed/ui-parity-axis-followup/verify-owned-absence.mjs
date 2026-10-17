@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+const root=path.resolve(process.argv[2]),output=path.resolve(process.argv[3]);
+if(!fs.existsSync(output))fs.mkdirSync(output);
+const runtime=JSON.parse(fs.readFileSync(path.join(root,'runtime-private.json')));
+if(!/^qopenbb-axis-controls-20261017-[a-f0-9]{10}$/.test(runtime.name))throw Error('Owned runtime name required');
+const state=path.resolve(runtime.statePath);
+if(path.dirname(state)!==root||!/^state-[a-f0-9]{12}$/.test(path.basename(state)))throw Error('Owned state path required');
+const remaining=execFileSync('docker',['ps','-a','--filter','name=^/'+runtime.name+'$','--format','{{.Names}}'],{encoding:'utf8',timeout:10000,windowsHide:true}).trim();
+const proof={checkedAt:new Date().toISOString(),containerAbsent:!remaining,stateAbsent:!fs.existsSync(state),credentialAbsent:!fs.existsSync(path.join(root,'credential-private.json')),remainingOwnedState:fs.readdirSync(root).filter(n=>/^state-[a-f0-9]{12}$/.test(n)),readOnly:true};
+if(!proof.containerAbsent||!proof.stateAbsent||!proof.credentialAbsent||proof.remainingOwnedState.length)throw Error('Owned runtime remains');
+fs.writeFileSync(path.join(output,'fresh-owned-absence.json'),JSON.stringify(proof,null,2));console.log(JSON.stringify(proof));
