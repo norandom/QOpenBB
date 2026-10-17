@@ -1,0 +1,229 @@
+{
+  "draft": ".kiro/specs/openbb-self-service/chart-appearance-editor-integration-design.md",
+  "draft_sha256": "05d12b46374cfaf1bf9986da24efc8e8fed7ded9b0b13eee333518285926d76b",
+  "candidate_head": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
+  "checks": [
+    {
+      "name": "amendment_scope_traceability",
+      "passed": true,
+      "detail": {
+        "active_count": 69,
+        "present": [
+          "1.1",
+          "1.4",
+          "4.2",
+          "4.7",
+          "4.8",
+          "4.9",
+          "10.1",
+          "10.2",
+          "10.3",
+          "10.4",
+          "10.5",
+          "10.6"
+        ],
+        "not_repeated_in_amendment": [
+          "1.2",
+          "1.3",
+          "1.5",
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.4",
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6",
+          "3.7",
+          "3.8",
+          "4.1",
+          "4.3",
+          "4.4",
+          "4.5",
+          "4.6",
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "5.5",
+          "5.6",
+          "5.7",
+          "5.8",
+          "5.9",
+          "6.1",
+          "6.2",
+          "6.3",
+          "6.4",
+          "6.5",
+          "8.1",
+          "8.2",
+          "8.3",
+          "8.4",
+          "9.1",
+          "9.2",
+          "9.3",
+          "9.4",
+          "9.5",
+          "9.6",
+          "9.7",
+          "11.1",
+          "11.2",
+          "11.3",
+          "11.4",
+          "11.5",
+          "11.6",
+          "11.7",
+          "12.1",
+          "12.2",
+          "12.3",
+          "12.4",
+          "12.5"
+        ]
+      }
+    },
+    {
+      "name": "unchanged_global_coverage",
+      "passed": true,
+      "detail": {
+        "owner": ".kiro/specs/openbb-self-service/design.md",
+        "missing": []
+      }
+    },
+    {
+      "name": "populated_Boundary Commitments",
+      "passed": true,
+      "detail": "Boundary Commitments"
+    },
+    {
+      "name": "populated_Out of Boundary",
+      "passed": true,
+      "detail": "Out of Boundary"
+    },
+    {
+      "name": "populated_Allowed Dependencies",
+      "passed": true,
+      "detail": "Allowed Dependencies"
+    },
+    {
+      "name": "populated_Revalidation Triggers",
+      "passed": true,
+      "detail": "Revalidation Triggers"
+    },
+    {
+      "name": "populated_File Structure Plan",
+      "passed": true,
+      "detail": "File Structure Plan"
+    },
+    {
+      "name": "concrete_paths",
+      "passed": true,
+      "detail": "Explicit create/change and later-join paths"
+    },
+    {
+      "name": "placeholder_scan",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "relative_links_exist",
+      "passed": true,
+      "detail": {
+        "count": 6,
+        "broken": []
+      }
+    },
+    {
+      "name": "candidate_head",
+      "passed": true,
+      "detail": "76edf85a46298f7bc5212ff9944e4b66e9baa4af"
+    },
+    {
+      "name": "original_blob_terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "passed": true,
+      "detail": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a"
+    },
+    {
+      "name": "original_blob_terminalpro/src/components/General/Table/hooks/useUpdateColumnState.ts",
+      "passed": true,
+      "detail": "c6b34ad355c19d69f0eb858c9fbb027c7a5cc0cb5e6cae49e3f15bc466f4d0fb"
+    },
+    {
+      "name": "original_blob_terminalpro/src/components/General/Table/hooks/useTableContext.tsx",
+      "passed": true,
+      "detail": "63e82095b66945c12a657968fd57ab22ad92105fe6d981b7d2f403a8ee34f8da"
+    },
+    {
+      "name": "original_blob_terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
+      "passed": true,
+      "detail": "37a5a127ee597efbe26d47806d1085ccd1447dc11d2f048cf4c98cb8abd70fc7"
+    },
+    {
+      "name": "inspected_existing_physical_caps",
+      "passed": true,
+      "detail": [
+        {
+          "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/types.ts",
+          "sha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+          "physical_lines": 181
+        },
+        {
+          "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/sessionState.ts",
+          "sha256": "f7626adf1d153f5c8f6100eb140ffe0b346a7514b43c1c3c14dd46b005fba63e",
+          "physical_lines": 166
+        },
+        {
+          "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+          "sha256": "4410f9d66d17b146b9e2d9e59b0dea617305d68c23f65c638927867333b8950c",
+          "physical_lines": 40
+        },
+        {
+          "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+          "sha256": "56f388d56600f2d72d6cc8bf475a2ac5a5c8603f02b48565b56231a82a1e70e8",
+          "physical_lines": 87
+        },
+        {
+          "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/optionState.ts",
+          "sha256": "f5122d722b585e8eef61cc00cdeb9de2cb3ba33e376c4fffa6de1f38a21b2bb4",
+          "physical_lines": 200
+        },
+        {
+          "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/legacyTypes.ts",
+          "sha256": "c0e177ae694b183290b284b22e21e1db3092390ca093ec7986ac612a6e262115",
+          "physical_lines": 126
+        },
+        {
+          "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/integratedState.ts",
+          "sha256": "9ae81b6bd5baa143bc75a090f1609df95744b04a3003ce92de975ae417f1fe3f",
+          "physical_lines": 25
+        },
+        {
+          "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/cartesianStyle.ts",
+          "sha256": "c8688c04fc437e259b0d30aaee46872f9d48032d1f0629d633223fbb5c57d4b2",
+          "physical_lines": 278
+        }
+      ]
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/useUpdateColumnState.ts",
+      "sha256": "c6b34ad355c19d69f0eb858c9fbb027c7a5cc0cb5e6cae49e3f15bc466f4d0fb"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/useTableContext.tsx",
+      "sha256": "63e82095b66945c12a657968fd57ab22ad92105fe6d981b7d2f403a8ee34f8da"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
+      "sha256": "37a5a127ee597efbe26d47806d1085ccd1447dc11d2f048cf4c98cb8abd70fc7"
+    }
+  ],
+  "pass": true,
+  "limits": "Read-only design checks, not production tests or complete logical/function complexity measurement. Global coverage remains owned by design.md; direct amendment omissions are reported rather than treated as deleted requirements."
+}

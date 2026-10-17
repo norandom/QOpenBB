@@ -41,10 +41,11 @@
     "parity/editor-contract-close",
     "parity/editor-contract-review",
     "parity/appearance-saved-composition",
-    "parity/appearance-saved-review"
+    "parity/appearance-saved-review",
+    "appearance-editor-design-review"
   ],
   "sourcepins": {
-    "root_at_sync": "0a9c3c03427458fe96394ab61725ade72e71dc4b",
+    "root_at_sync": "1d7d5b67131c74eb77ca339658be551b0eff99a3",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -7753,13 +7754,45 @@
       "publishedSHA256": "1212a94d6b50a8fdfd072d8275f12b50ace904c6535ed35e19e211844cda4d83",
       "bytes": 1363,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/appearance-editor-design-review/review.md",
+      "sourceSHA256": "abfd81af8f5834906dba0bbb74b0b1a02983ba02ddd71f7e22e6cca2e0b642df",
+      "publishedpath": "artifacts/reviewed/appearance-editor-design-review/review.md",
+      "publishedSHA256": "abfd81af8f5834906dba0bbb74b0b1a02983ba02ddd71f7e22e6cca2e0b642df",
+      "bytes": 9214,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/appearance-editor-design-review/audit.py",
+      "sourceSHA256": "1e85015db4079e514eb4742b5d86db381afb5740645068a01ed291460022d393",
+      "publishedpath": "artifacts/reviewed/appearance-editor-design-review/audit.py",
+      "publishedSHA256": "1e85015db4079e514eb4742b5d86db381afb5740645068a01ed291460022d393",
+      "bytes": 4800,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/appearance-editor-design-review/checks.json",
+      "sourceSHA256": "871573bb1ea46f7982d5e0e5e97f9f1c1a02d995d6730c96db71d9e64a4a3323",
+      "publishedpath": "artifacts/reviewed/appearance-editor-design-review/checks.json",
+      "publishedSHA256": "871573bb1ea46f7982d5e0e5e97f9f1c1a02d995d6730c96db71d9e64a4a3323",
+      "bytes": 7193,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/appearance-editor-design-review/publication-allowlist.json",
+      "sourceSHA256": "4f24f30462e0754384dde9dd58458efcc8d438b2aaa98f89bad9a563299cf2e7",
+      "publishedpath": "artifacts/reviewed/appearance-editor-design-review/publication-allowlist.json",
+      "publishedSHA256": "4f24f30462e0754384dde9dd58458efcc8d438b2aaa98f89bad9a563299cf2e7",
+      "bytes": 913,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
     {
       "publishedpath": "artifacts/reviewed/README.md",
-      "publishedSHA256": "7f1b78458307e303ab3270938d51b94656ebcb6983c684d99b27e029674ee233",
-      "bytes": 10027,
+      "publishedSHA256": "72509712149be1be89f121eae0ebe0e11c95dc1d11119222045398acd4fd4ce5",
+      "bytes": 10281,
       "transform": "new synchronization documentation; no historical source"
     }
   ],
@@ -8466,5 +8499,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 21005748
+  "total_payload_bytes": 21028122
 }

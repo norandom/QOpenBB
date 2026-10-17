@@ -6,6 +6,7 @@ The [appearance review](parity/appearance-contract-review/review.md), [saved-opt
 
 ## Included evidence
 
+- [Appearance/editor design review](appearance-editor-design-review/review.md): scoped GO for human review and later source-contract task generation. Sixteen mechanical checks pass; this is design evidence, not implementation or application acceptance.
 - SQLite tasks 4.6 through 4.9: task/reviewer reports, serial verification scripts, actual logs/results, boundary diffs and quality inventories. Start at [the joined review](task-4.9/review/review.md).
 - Chart application design: [design and source-range review](chart-application-design/review/design-review.md), [stock matrix review](chart-application-design/review/theme-matrix-review.md), source paths and capture handoff.
 - Original chart editor, payload and line captures: synthetic fixture inputs, post-login screenshots, finite UI JSON, saved-item writes, patch deltas, sanitized diagnostics and reports. Redundant DOM HTML is omitted; equivalent JSON captures remain.
