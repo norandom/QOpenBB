@@ -25,7 +25,7 @@ Superseding owner constraint, 2026-10-16: preserve existing UX, design, themes, 
 | Wave | Eligible work | Exclusive writable scope | Join and shared ownership |
 | --- | --- | --- | --- |
 | Foundation | Accepted 1.1-1.8 remain prerequisites | Existing checker, inventory and verification foundations | Reuse accepted checks; no new foundation implementation is implied |
-| A: Workspace | Source-safe 2.34-2.37 are accepted; approved A2 design proposes sequential 2.38 -> 2.39 -> 2.40, pending task approval | Controller owns shared test setup/inventory; one Sol worker owns actual-grid fixture, capture adapter and its tests per bounded leaf | No parallel writers within A2; disjoint appearance/editor research may continue, with separate runtime implementation gates |
+| A: Workspace | Source-safe 2.34-2.37 and ordinary capture 2.38-2.40 are independently accepted; remaining appearance/editor/application joins retain their named gates | Controller owns shared test setup/inventory; one Sol worker owns actual-grid fixture, capture adapter and its tests per bounded leaf | No parallel writers within A2; disjoint appearance/editor research may continue, with separate runtime implementation gates |
 | A: Data | 3.1-3.7 keep their recorded status and within-lane prerequisites | Owned provider/data API paths and tests | No independent writes to shared locks, catalog bindings or source snapshots |
 | A: blocked renderer/catalog join | Remaining grid/category paths, B2, mapper, C/D and real-app joins require their named frozen contracts and separately reviewed/approved task graphs | Ownership in the application integration design; no dispatch from this table | Historical 2.8-2.11/2.9 bindings are not executable replacement plans; neither 2.37 nor 2.40 unblocks this row |
 | A: image and dashboard joins | 3.8 waits for the reviewed current renderer/catalog source join; 2.12 then waits for 3.8 and complete renderer source acceptance; 4.1-4.5 wait for 2.12/3.8 and their explicit prerequisites | Controller serializes catalog/source/image records and real-app verification | No renderer-complete, dashboard-baseline or release acceptance while original capability gaps remain; an identified unreleased milestone is separate |
@@ -985,7 +985,7 @@ All paths below are relative to vendor/workspace/terminalpro unless explicitly r
   - _Depends: 2.38_
   - _Requirements: 1.1, 4.2, 4.7, 4.8, 4.9, 10.4, 10.5, 10.6_
 
-- [ ] 2.40 Independently verify the joined ordinary capture boundary
+- [x] 2.40 Independently verify the joined ordinary capture boundary
   - Explicit controller integration task, 1-3 hours. Freeze worker edits and reproduce all chart-application and chart-compatibility units, both strict compilers, scoped lint, exact source/config/test identities and whole maintained complexity using current manifests for both forks. Compare the accepted fixture values to actual GridApi and capture outputs; no browser/build/application activation is part of this gate.
   - Audit the actual diff for unchanged frozen types, accepted range/session/reducer/snapshot/mapper/host behavior, UI and flags. Confirm the adapter owns no persisted storage or lifecycle and the A1/A2 visibility/ordering seam preserves exact financial observations. Keep unrelated dirty catalog/renderer work outside acceptance and selective staging.
   - Done when a fresh independent Astra review accepts tasks 2.38-2.40 only, with real-grid tests discovered and no skips, exact commands/exits/hashes, actual breadth test paths and inventory/source pins aligned. Publish only completed reviewed evidence with source/published hashes before explicit commit/push; do not reuse original-runtime research as candidate application proof.
@@ -1027,7 +1027,7 @@ These are explicit return-to-design/task gates, not numbered implementation task
 
 | Component/join | Required frozen input before a bounded task can be approved |
 | --- | --- |
-| A2 gridCapture | Explicit-category flat capture now has approved chart-grid-capture-design.md and proposed tasks 2.38-2.40, pending implementation approval. The canonical typed signature is unchanged. Numeric-only synthetic categories, general multiple-category resolution, arbitrary getter configuration, hidden-after-entry and remote/transformed cases retain separate missing evidence. |
+| A2 gridCapture | Explicit-category flat capture is independently accepted through tasks 2.38-2.40; see chart-grid-capture-verification.md. The canonical typed signature is unchanged. Numeric-only synthetic categories, general multiple-category resolution, arbitrary getter configuration, hidden-after-entry and remote/transformed cases retain separate missing evidence. |
 | B2 effectiveAppearance | Typed AppearanceInput/Result, finite admitted stock/custom leaves and explicit per-leaf precedence. Six stock defaults/two custom grouped-column observations do not establish arbitrary inheritance. |
 | Mapper | Reviewed A2/B1/B2 outputs; actual formatter invocation, category binding, tooltip mode/null/order/layout and explicit effective-leaf projections. Unknown/mixed-unit semantics remain a separate reviewed parity join. |
 | C docked editor | Flattened visible/conditional per-field ledger, value domains, exact namespaces/events/effects, props/events and bounded family/group ownership. Four column patches do not complete the editor. |

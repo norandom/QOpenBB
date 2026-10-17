@@ -236,3 +236,7 @@ Human approval of the concrete capture amendment remains distinct from approval 
 ## Ordinary grid-capture task plan, 2026-10-17
 
 The approved design is split into sequential tasks 2.38-2.40: actual Community-grid fixture/setup, bounded adapter with tests, and joined verification. Independent Sol review passed with all 69 numeric requirements mapped and no explicit dependency cycles. See the [frozen review](../../../artifacts/reviewed/grid-capture-tasks/review/review.md). The application test configuration avoids the root AG Grid mock; fixture imports require a narrow controller-owned resolveJsonModule addition. These are checked prerequisites and planned tests, not implementation acceptance. Production ownership retains the 400/300/50 caps and application activation remains gated.
+
+## Ordinary grid-capture acceptance, 2026-10-17
+
+Tasks 2.38-2.40 are independently accepted at Workspace 76edf85a46298f7bc5212ff9944e4b66e9baa4af. A revoked-Proxy exception escaped the first error handler; two failing regressions drove a private WeakMap repair, independently reverified. The final join passes 88 application tests, 260 compatibility tests, both strict compilers, scoped lint, 66 source/config identities and the 173-file maintained audit. The [verification report](chart-grid-capture-verification.md) owns scope and evidence. Original UI activation, complete appearance/editor behavior and deployment remain open.

@@ -1,0 +1,443 @@
+{
+  "repository": "https://github.com/norandom/openbb-workspace.git",
+  "base": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
+  "head": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
+  "changes": [
+    {
+      "path": "backend-api/backend/api/crud.py",
+      "status": "M"
+    },
+    {
+      "path": "lite/Dockerfile",
+      "status": "M"
+    },
+    {
+      "path": "lite/__pycache__/bootstrap.cpython-313.pyc",
+      "status": "M"
+    },
+    {
+      "path": "lite/bootstrap.py",
+      "status": "M"
+    },
+    {
+      "path": "lite/build-tools.in",
+      "status": "M"
+    },
+    {
+      "path": "lite/configure-origin.sh",
+      "status": "M"
+    },
+    {
+      "path": "lite/entrypoint.sh",
+      "status": "M"
+    },
+    {
+      "path": "lite/nginx.conf.template",
+      "status": "M"
+    },
+    {
+      "path": "lite/origin_config.py",
+      "status": "M"
+    },
+    {
+      "path": "lite/qopenbb-routes.conf.template",
+      "status": "M"
+    },
+    {
+      "path": "lite/render-frontend-config.full.sh",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/build/runtimeConfig.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/index.html",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/package.json",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/AI/Artifact.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/AI/artifacts/AppArtifact.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/AI/artifacts/ArtifactShared.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/AI/artifacts/ChartArtifact.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/AI/artifacts/HTMLArtifact.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/AI/artifacts/SnowflakeArtifact.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/AI/artifacts/TableArtifact.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/AI/artifacts/TextArtifact.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/AI/hooks/createWidgetUtils.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/DataConnectors/WidgetsBuilder/JSONConfiguration.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/DataConnectors/WidgetsBuilder/communityWidgetSchema.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/DataConnectors/WidgetsBuilder/consts.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/AgGrid.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/AgGridFile.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/AgGridTable.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/AgGridUtils.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/CellContent.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/application/chartRange.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/application/financialFormatting.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/application/gridCapture.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/application/sessionState.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/application/types.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/detachedState.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/integratedState.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/legacyTypes.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/optionState.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/snapshot.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/snapshotTypes.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/EChartsHost.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesian.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesianStyle.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/lifecycle.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/utils.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/ColumnDefinitions.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/ColumnValues.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/SubMenus/TableSettings.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/communityBoundary.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/communityState.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/fileData.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/communityActions.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/types.d.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/useCellOnClickHandler.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/useCopilotFilteredData.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/useTableContext.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/useUpdateColumnState.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/utils.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/utils.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/ThemeSettings/ChartPaletteControls.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/ThemeSettings/ChartParameterControls.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/ThemeSettings/ChartSettings.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/ThemeSettings/TableSettings.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/ThemeSettings/TableThemeControls.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/ThemeSettings/chartThemePreview.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/ThemeSettings/chartThemeState.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/ThemeSettings/tablePreviewData.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/ThemeSettings/useChartSettings.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/AI/NixtlaPopup.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/Currency/CurrencyColumns.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/Currency/CurrencySnapshot.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/Equity/ComparisonAnalysis/constants.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/UnsupportedRenderer.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/communityCharts.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/index.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/PerspectiveHost.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/bindings.json",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/financial/aggregations.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/financial/errors.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/financial/fields.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/financial/filters.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/financial/rows.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/financial/schema.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/financial/scopes.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/financial/types.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/leases.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/lifecycle.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/Widgets/perspective/runtime.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/components/types.d.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/lib/api.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/lib/state/copilot.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/lib/state/tableChartThemes.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/lib/utils/backendOrigin.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/lib/utils/queryResponse.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/main.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/src/router.tsx",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/tests/unit/financial-engine.mjs",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/tests/unit/financial-fixtures.json",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/tests/unit/financial-normalize.py",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/tests/unit/financial.test.ts",
+      "status": "M"
+    },
+    {
+      "path": "terminalpro/vite.config.ts",
+      "status": "M"
+    }
+  ]
+}

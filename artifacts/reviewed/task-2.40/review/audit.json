@@ -1,0 +1,83 @@
+{
+  "head": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
+  "base": "945e438a9a65c3eeef7073dbce64a03b02f0ff6f",
+  "changed_paths": [
+    "terminalpro/src/components/General/Table/Chart/application/gridCapture.ts",
+    "terminalpro/tests/unit/chart-application/gridCapture.fixtures.json",
+    "terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts",
+    "terminalpro/tests/unit/chart-application/gridCapture.test.ts",
+    "terminalpro/tests/unit/chart-application/tsconfig.json"
+  ],
+  "frozen_hashes": {
+    "src/components/General/Table/Chart/application/types.ts": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+    "tests/unit/chart-application/gridCapture.fixtures.json": "7d6a08a2360b241b0d1edd60ece10069cbd2d38295cdbfc87b979a53b429a3f4",
+    "tests/unit/chart-application/tsconfig.json": "4d8000a97707c3c82cfa0011d31e3ba72ba39a17a05c79753405bc077b948e1a"
+  },
+  "maintained_file_count": 173,
+  "errors": [],
+  "violations": [],
+  "capture_measurement": {
+    "repository": "workspace",
+    "path": "terminalpro/src/components/General/Table/Chart/application/gridCapture.ts",
+    "owner": "openbb-self-service",
+    "physical": 196,
+    "functions": [
+      {
+        "name": "reject",
+        "line": 13,
+        "column": 1,
+        "logical": 3
+      },
+      {
+        "name": "fail",
+        "line": 18,
+        "column": 1,
+        "logical": 1
+      },
+      {
+        "name": "object",
+        "line": 25,
+        "column": 1,
+        "logical": 1
+      },
+      {
+        "name": "inspectInput",
+        "line": 28,
+        "column": 1,
+        "logical": 12
+      },
+      {
+        "name": "checkModel",
+        "line": 60,
+        "column": 1,
+        "logical": 14
+      },
+      {
+        "name": "bounds",
+        "line": 93,
+        "column": 1,
+        "logical": 9
+      },
+      {
+        "name": "readRows",
+        "line": 115,
+        "column": 1,
+        "logical": 22
+      },
+      {
+        "name": "<anonymous>",
+        "line": 124,
+        "column": 5,
+        "logical": 1
+      },
+      {
+        "name": "captureDisplayedChart",
+        "line": 160,
+        "column": 61,
+        "logical": 15
+      }
+    ],
+    "logical": 92
+  },
+  "current_manifests_match_controller": true
+}

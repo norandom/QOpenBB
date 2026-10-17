@@ -1,6 +1,6 @@
 # Runtime contracts: results and next implementation boundary
 
-The new original-runtime captures support a bounded ordinary grid adapter design and selected nested editor contracts. They do not yet support complete application activation. The next implementation proposal is [ordinary grid capture](chart-grid-capture-design.md), using the frozen A2 signature and public Community GridApi values. The owner approved the independently reviewed design. Tasks 2.38-2.40 passed independent task-graph review and await implementation approval; no adapter implementation has run.
+The new original-runtime captures support a bounded ordinary grid adapter design and selected nested editor contracts. They do not yet support complete application activation. The implemented adapter boundary is [ordinary grid capture](chart-grid-capture-design.md), using the frozen A2 signature and public Community GridApi values. The owner approved implementation, and tasks 2.38-2.40 are now independently accepted. See [ordinary capture verification](chart-grid-capture-verification.md); the application remains unactivated.
 
 ## What this batch established
 
@@ -10,7 +10,7 @@ The new original-runtime captures support a bounded ordinary grid adapter design
 | Nested editor | 18 UI actions, zero focused action failures, 22 offline assertions, captured events and effective leaves | Axis, series, legend, marker and selected Set Up contracts now have concrete namespaces and effects. Tooltip action is UI/event evidence only. [Findings](chart-editor-runtime-next.md) |
 | Effective appearance | Eight existing cases, 15 input hashes and 908 finite leaf/container observations independently auditable | The existing style subset is insufficient for complete appearance. Custom backgrounds affect grid/subtitle colors; empty saved options cannot establish conflict precedence. [Audit](chart-appearance-next-audit.md) |
 
-The original image and source are unchanged. The candidate remains Workspace 945e438a9a65c3eeef7073dbce64a03b02f0ff6f. No production code, dependencies, controls, flags, build or deployment configuration changed. Prior helper acceptance remains intact.
+The research batch used Workspace 945e438a9a65c3eeef7073dbce64a03b02f0ff6f without changing production. Subsequent ordinary capture is accepted at 76edf85a46298f7bc5212ff9944e4b66e9baa4af. Original image/source and prior helper acceptance remain intact; controls, flags, dependencies and deployment configuration are unchanged.
 
 ## Why the next adapter uses grid values
 
@@ -20,7 +20,7 @@ Reuse the existing public GridApi and snapshot validator. The adapter accepts al
 
 ## Work after this batch
 
-1. Approve reviewed tasks 2.38-2.40 for the real-grid fixture, adapter and independent joined verification. See the [task review](../../../artifacts/reviewed/grid-capture-tasks/review/review.md). The existing implementation contracts remain unchanged.
+1. Reuse accepted tasks 2.38-2.40 for ordinary resolved grid capture. Remaining numeric-only/general category and transformed/remote paths still need their own observed contracts before implementation. Existing implementation contracts remain unchanged.
 2. In parallel research, close finite appearance collision/derived-color rules and the remaining editor invocation/output gaps. A fresh reviewer checks these contracts before their implementation tasks are dispatched.
 3. Join accepted grid, appearance, formatting and editor behavior through the existing application session and entry points. Keep one owner for stored state and one integration lane for control wiring and guard removal.
 4. Verify actual table -> chart -> customize -> export -> return -> save/reopen/restart against the original, including light/dark screenshots and financial values. Then complete the remaining capability matrix before image/release acceptance.

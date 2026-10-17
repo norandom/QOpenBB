@@ -1,0 +1,13 @@
+{
+  "base": "945e438a9a65c3eeef7073dbce64a03b02f0ff6f",
+  "head": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
+  "changed_paths": [
+    "terminalpro/src/components/General/Table/Chart/application/gridCapture.ts",
+    "terminalpro/tests/unit/chart-application/gridCapture.fixtures.json",
+    "terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts",
+    "terminalpro/tests/unit/chart-application/gridCapture.test.ts",
+    "terminalpro/tests/unit/chart-application/tsconfig.json"
+  ],
+  "frozen_types_sha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+  "scope": "Only ordinary capture and its fixture/tests/config changed. Existing helpers, reducers, mapper, snapshot, host, UI and flags unchanged from accepted base. Unrelated dirty work remains excluded from acceptance."
+}
