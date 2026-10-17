@@ -847,7 +847,7 @@ One heavy suite/build at a time; one browser and Vitest worker. Parallel lightwe
   - _Depends: 2.28_
   - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.4_
 
-- [ ] 2.31 Integrate appearance without changing observations
+- [x] 2.31 Integrate appearance without changing observations
   - After both lanes freeze, delegate mapper style validation/projection to the reviewed module. Keep family/source-mode, unit/scale, stable-ID, exact values, ordering, escaping, display precision and stacking semantics intact.
   - Extend mapper integration assertions for all three families, legacy exact option shape, explicit marker colors/widths, title retention, caption fonts and palette selection after reorder. Invalid/unsupported style produces no partial options. Verify null arrays are identical in both connect states and input objects remain unchanged.
   - Done when all existing 221 units plus new helper/integration cases, strict checks, actual lint and independent Astra numerical review pass. Both modified mapper and style module remain within whole-file 400/300/50; no forwarding-only split or compressed code.
@@ -877,3 +877,5 @@ Task 2.28 accepted after independent Astra review: strict TypeScript, 221 units,
 Task 2.30 accepted after independent Sol review: strict TypeScript, four-entry fixture build, actual lint and four source/stage identities passed. Evidence: artifacts/task-2.30/review/review.md. Scaffold only; actual appearance rendering remains task 2.32. Verification stages now use persistent Linux home storage after transient WSL paths disappeared.
 
 Task 2.29 accepted after independent Astra review: 250 units, strict TypeScript, actual lint, exact hashes and thirteen-module caps passed. Evidence: artifacts/task-2.29/review/review.md. Helper projection is accepted; mapper wiring and rendered appearance remain tasks 2.31-2.32.
+
+Task 2.31 accepted after independent Astra numerical review: 260 units, strict TypeScript, actual lint, all thirteen module identities/caps and owned stage hashes passed. Evidence: artifacts/task-2.31/review/review.md. Mapper appearance is integrated; actual rendered outcome acceptance remains task 2.32.
