@@ -220,3 +220,19 @@ planned_checks = ["dock-controlled-navigation", "dock-hide-reopen-state-scroll-f
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chartEditorDock.test.tsx"]
 status = "passed"
 evidence = ["Task 2.48 accepted at Workspace a83f711: independent four-test run, lint, size checks and isolated browser navigation pass. Actual production dock/gallery preview retains 260px width and original header treatment. Review: artifacts/reviewed/task-2.48/review/review.md. Scoped types report only reproduced unchanged DS TS2578; Storybook runtime, complete Set Up/Customize controls and application integration remain unverified."]
+
+[[capabilities]]
+id = "controlled-chart-setup-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-category-aggregation-edits", "stable-series-removal-reorder", "missing-drag-source", "disabled-and-unknown-retention", "setup-light-dark"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartSetupPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.49 accepted at Workspace 3bc1316: six maintained tests and independent empty-ID drag regression pass, scoped lint and complexity pass. Original chips/switch layout is implemented with controlled callbacks. Review: artifacts/reviewed/task-2.49/review/report-round2.md. Scoped types retain reproduced DS TS2578. Owner visual acceptance, financial transformations, storage and application activation remain pending."]
+
+[[capabilities]]
+id = "controlled-chart-titles-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["four-independent-captions", "opaque-choice-retention", "alpha-and-invalid-color", "numeric-drafts", "dock-controlled-state-retention"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartTitlesPanel.test.tsx", "artifacts/reviewed/task-2.49/controller/combined/capture.mjs"]
+status = "passed"
+evidence = ["Task 2.50 accepted at Workspace 495a08f: four focused tests, scoped lint and complexity pass, independently reviewed. Actual dock composition retains controlled edits across close/reopen and tab changes in light/dark; isolated CDP reports no errors. Review: artifacts/reviewed/task-2.50/review/verdict.md. Scope is all four Titles captions, not full Customize. Scoped types retain reproduced DS TS2578; owner visual judgment, chart rendering, storage and application activation remain pending."]

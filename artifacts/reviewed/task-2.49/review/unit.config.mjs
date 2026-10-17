@@ -1,0 +1,1 @@
+export default { resolve: {alias: {react:"/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/react"}}, esbuild: { jsx: "automatic" }, test: { environment: "jsdom", include: ["/mnt/d/Source/QOpenBB/artifacts/task-2.49/review/missing-source.test.tsx"], maxWorkers: 1, fileParallelism: false } };

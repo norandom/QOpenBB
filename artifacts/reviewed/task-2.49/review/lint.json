@@ -1,0 +1,8 @@
+{
+  "command": "wsl --cd /mnt/d/Source/QOpenBB/vendor/workspace/terminalpro /mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node node_modules/@biomejs/biome/bin/biome lint src/components/General/Table/Chart/editor/setup src/components/ds/organisms/ChartSetupPanel.stories.tsx tests/unit/chartSetupPanel.test.tsx",
+  "chunk_id": "f77c72",
+  "wall_time_seconds": 1.4828557,
+  "exit_code": 0,
+  "original_token_count": 11,
+  "output": "Checked 4 files in 123ms. No fixes applied.\n"
+}

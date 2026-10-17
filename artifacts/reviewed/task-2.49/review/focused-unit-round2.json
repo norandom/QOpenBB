@@ -1,0 +1,8 @@
+{
+  "command": "wsl --cd /mnt/d/Source/QOpenBB/vendor/workspace/terminalpro /mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node node_modules/vitest/vitest.mjs run --config /mnt/d/Source/QOpenBB/artifacts/task-2.49/implementer/unit.config.mjs",
+  "chunk_id": "186231",
+  "wall_time_seconds": 4.5936825,
+  "exit_code": 0,
+  "original_token_count": 167,
+  "output": "Both esbuild and oxc options were set. oxc options will be used and esbuild options will be ignored. The following esbuild options were set: `{ jsx: 'automatic' }`\n\n\u001b[1m\u001b[30m\u001b[46m RUN \u001b[49m\u001b[39m\u001b[22m \u001b[36mv4.1.11 \u001b[39m\u001b[90m/mnt/d/Source/QOpenBB/vendor/workspace/terminalpro\u001b[39m\n\n \u001b[32m✓\u001b[39m tests/unit/chartSetupPanel.test.tsx \u001b[2m(\u001b[22m\u001b[2m6 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[33m 419\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m6 passed\u001b[39m\u001b[22m\u001b[90m (6)\u001b[39m\n\u001b[2m   Start at \u001b[22m 20:45:45\n\u001b[2m   Duration \u001b[22m 1.97s\u001b[2m (transform 540ms, setup 0ms, import 738ms, tests 419ms, environment 654ms)\u001b[22m\n\n"
+}

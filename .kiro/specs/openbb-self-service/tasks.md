@@ -36,6 +36,22 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 2.47_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
 
+- [x] 2.49 (P) Implement the real Set Up controls
+  - Follow the frozen [controls design](chart-editor-controls-design.md). Own `Chart/editor/setup/`, focused setup tests and story; preserve stable category/series IDs, exact controlled callbacks and the original chips/switches layout.
+  - Done when category choice, aggregation retention, series removal/reorder and category/series switching work by pointer and keyboard in the real panel. No data calculations, storage writes, flags or renderer activation.
+  - Whole production files pass 400 physical / 300 logical / 50-function caps. Run focused unit/browser, scoped types/lint and independent review; retain known unchanged DS type-check limitations honestly.
+  - _Boundary: Controlled Set Up panel; chart-session transformations remain separate_
+  - _Depends: 2.48_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.50 (P) Implement all four caption sections in Titles
+  - Follow the frozen [controls design](chart-editor-controls-design.md). Own `Chart/editor/titles/`, focused title tests and story; all four captions retain independent text, typography, alpha color and spacing.
+  - Done when every observed control emits a typed edit, disabled values survive, unknown choices remain visible and invalid numeric/color drafts do not corrupt state. Compose the real subsection into the dock preview, clearly identifying remaining Customize groups and storage wiring.
+  - Whole production files pass 400 physical / 300 logical / 50-function caps. Run focused unit/browser, scoped types/lint and independent review; no new reference harness, flags or dependency installation.
+  - _Boundary: Controlled Titles subsection; persisted style mapping and other Customize groups remain separate_
+  - _Depends: 2.48_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.

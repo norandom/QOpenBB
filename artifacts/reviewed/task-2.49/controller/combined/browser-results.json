@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": [
+    "real dock/setup/titles composition",
+    "light/dark",
+    "controlled category/method/switch retention through close/reopen and tabs",
+    "title enabled/text retention through close/reopen and tabs",
+    "Titles transient expansion resets after tab departure"
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "cdp": [
+    "Runtime.enable",
+    "Network.enable"
+  ]
+}

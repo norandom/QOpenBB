@@ -322,6 +322,33 @@
       "preview": "artifacts/reviewed/task-2.48/implementer/dock-light-dark.png",
       "acceptance_scope": "Controlled dock/gallery composition and navigation only. Complete Set Up/Customize controls and application/session wiring remain pending.",
       "typecheck_limitation": "Scoped check reports unchanged DS typography.ts TS2578; Tabs-only baseline reproduces it. No clean full typecheck claimed."
+    },
+    "controls": {
+      "task_ids": [
+        "2.49",
+        "2.50"
+      ],
+      "design_path": "chart-editor-controls-design.md",
+      "design_approved": true,
+      "tasks_approved": true,
+      "approval_note": "Owner replied yes to proceeding with real Set Up/Customize controls and dashboard wiring. This batch implements bounded UI controls; complete application activation is not inferred.",
+      "phase": "accepted",
+      "implementation_accepted": true,
+      "design_review": "artifacts/reviewed/task-2.49/design-review.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "1375e25fff48c78765495979546e57c45e3ac9ea0d4ce54d93a14eae6bd878c7",
+      "implementation_source_revision": "495a08f04c84353ed27adbb556e430928e9b4d36",
+      "implementation_reviews": [
+        "artifacts/reviewed/task-2.49/review/report-round2.md",
+        "artifacts/reviewed/task-2.50/review/verdict.md"
+      ],
+      "previews": [
+        "artifacts/reviewed/task-2.49/controller/combined/dock-setup-light-dark.png",
+        "artifacts/reviewed/task-2.49/controller/combined/dock-titles-light-dark.png"
+      ],
+      "acceptance_scope": "Controlled Set Up and four-caption Titles panels, composed in the existing dock preview. Other Customize groups, chart-state adapters and dashboard activation remain pending.",
+      "owner_visual_accepted": false,
+      "typecheck_limitation": "Scoped checks retain reproduced upstream DS typography.ts TS2578; no full compiler acceptance claimed."
     }
   }
 }

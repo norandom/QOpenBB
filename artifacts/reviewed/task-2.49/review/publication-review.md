@@ -1,0 +1,15 @@
+# Publish the bounded Set Up evidence
+
+The proposed 31-file publication set is safe to synchronize after refreshing the corrected round-two report hash. The source approval is unchanged. All 31 hashes matched actual bytes at initial inspection of `publication.json`, SHA256 `cbbe3bbaacb3b93cd8ac777fe17e8159bc73de96d7a0e05683128bccf72bfd7b`.
+
+## Review Verdict
+- VERDICT: APPROVED
+- SCOPE: Task 2.49 publication allowlist, subject to refreshing the one reviewer-corrected report entry and appending this report before sync.
+- HASHES: All original 31 entries existed and matched their recorded SHA256. During this review, `report-round2.md` was corrected to cite the actual controller parser measurement of 82 logical units / largest function 10 rather than the reviewer's estimate of 81/9. This correction changes that report's hash; the parent must refresh it. Production source hashes remain frozen and unchanged.
+- PUBLICATION SAFETY: No credential, private account/database state, environment file content, browser profile, authentication trace, dependency cache or image archive is included. The single PNG was already visually reviewed as a synthetic component preview. Text scans found only harmless environment variable references, descriptions of excluded state, and complexity inventory exclusion metadata. Local absolute source/dependency paths in reproducible commands are retained as provenance, not secret material.
+- EVIDENCE STATUS: Controller verification explicitly identifies original implementer hashes/report as pre-review and superseded by round two. The retained round-one rejection and failing regression are historical diagnostic evidence; current round-two tests and hashes establish the narrow repaired contract. Browser evidence predates the guard correction, is identified as such, and supports rendering/interactions rather than the repaired null case. That case is covered by fresh maintained and independent regressions.
+- COMPLEXITY: Controller complexity.json has empty errors and violations, includes the final Set Up TSX at 83 physical / 82 logical / largest function 10 and CSS at 22 physical lines. This supports the caps claim. Its broader inventory is recorded evidence, not acceptance of unrelated functionality.
+- CLAIM BOUNDARY: The verification report retains the unchanged TypeScript diagnostic and explicitly excludes full application compilation, dashboard integration, storage and owner visual acceptance. No active or stale evidence is silently promoted to application or financial acceptance.
+- SUMMARY: Approve this bounded publication set with the corrected report hash refreshed; keep parent sync-manifest verification and selective staging as the final delivery steps.
+
+No additional tests or browser sessions were run for this publication review. The allowlist intentionally omits the implementation dependency cache and raw server/browser runtime logs; selected focused test and compiler logs are retained to substantiate results and limitations. The parent will append this completed report to the explicit allowlist and verify destination bytes during synchronization.

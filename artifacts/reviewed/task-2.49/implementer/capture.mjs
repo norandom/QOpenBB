@@ -1,0 +1,37 @@
+import { chromium, expect } from '/mnt/d/Source/QOpenBB/verification/node_modules/@playwright/test/index.mjs';
+import fs from 'node:fs';
+const dir='/mnt/d/Source/QOpenBB/artifacts/task-2.49/implementer';
+const env={...process.env}; delete env.WAYLAND_DISPLAY;
+const browser=await chromium.launch({headless:true,env,args:['--ozone-platform=headless','--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader']});
+try {
+ const context=await browser.newContext({viewport:{width:900,height:600}});
+ const page=await context.newPage(); const errors=[]; const failures=[];
+ page.on('pageerror',e=>errors.push(e.message)); page.on('console',m=>{if(m.type()==='error')errors.push(m.text());}); page.on('requestfailed',r=>failures.push(r.url()));
+ const cdp=await context.newCDPSession(page); await cdp.send('Runtime.enable'); await cdp.send('Network.enable');
+ await page.goto('http://127.0.0.1:6017/',{waitUntil:'networkidle'});
+ const light=page.locator('[data-theme="light"]');
+ await expect(light.getByLabel('Category',{exact:true})).toHaveValue('period');
+ await page.screenshot({path:dir+'/setup-light-dark.png'});
+ await light.getByRole('switch',{name:'Aggregate',exact:true}).click();
+ await light.getByLabel('Aggregation method').selectOption('mean');
+ await light.getByRole('switch',{name:'Aggregate',exact:true}).click();
+ await expect(light.getByLabel('Aggregation method')).toHaveCount(0);
+ await light.getByRole('switch',{name:'Aggregate',exact:true}).click();
+ await expect(light.getByLabel('Aggregation method')).toHaveValue('mean');
+ await light.getByLabel('Category',{exact:true}).selectOption('region');
+ const first=light.getByRole('button',{name:'Reorder Revenue (USD millions)',exact:true});
+ await first.focus(); await first.press('ArrowDown');
+ await expect(light.getByLabel('Setup state')).toContainText('"series":[{"id":"income"');
+ await first.dragTo(light.getByRole('button',{name:'Reorder Operating Income (USD millions)',exact:true}));
+ await expect(light.getByLabel('Setup state')).toContainText('"series":[{"id":"revenue"');
+ await light.getByRole('button',{name:'Remove Operating Income (USD millions)',exact:true}).click();
+ await expect(light.getByRole('button',{name:'Reorder Operating Income (USD millions)',exact:true})).toHaveCount(0);
+ await light.getByRole('switch',{name:'Switch Category / Series',exact:true}).click();
+ await expect(light.getByLabel('Setup state')).toContainText('"switchCategorySeries":true');
+ await light.getByRole('button',{name:'Categories',exact:true}).click();
+ await expect(light.getByLabel('Category',{exact:true})).toHaveCount(0);
+ await light.getByRole('button',{name:'Categories',exact:true}).press('Enter');
+ await expect(light.getByLabel('Category',{exact:true})).toHaveValue('region');
+ expect(errors).toEqual([]); expect(failures).toEqual([]);
+ fs.writeFileSync(dir+'/browser-results.json',JSON.stringify({status:'passed',checks:['light/dark actual panel','controlled category','aggregation hidden retention','keyboard grip reorder','native drag reorder','stable removal','transpose','keyboard collapse retention'],errors,networkFailures:failures,cdp:['Runtime.enable','Network.enable']},null,2));
+} finally {await browser.close();}

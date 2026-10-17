@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "checks": [
+    "light/dark actual panel",
+    "controlled category",
+    "aggregation hidden retention",
+    "keyboard grip reorder",
+    "native drag reorder",
+    "stable removal",
+    "transpose",
+    "keyboard collapse retention"
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "cdp": [
+    "Runtime.enable",
+    "Network.enable"
+  ]
+}

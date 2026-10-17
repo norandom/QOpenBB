@@ -1,0 +1,23 @@
+{
+  "isolated": true,
+  "workers": 1,
+  "cdp": [
+    "Runtime",
+    "Network"
+  ],
+  "checks": [
+    "all captions shown in light/dark",
+    "independent text and disabled retention",
+    "family, opaque weight and numeric size",
+    "linked spacing keyboard and invalid drafts",
+    "alpha hex and picker keyboard",
+    "Escape/Enter close and return focus without rollback"
+  ],
+  "alphaEdit": {
+    "caption": "title",
+    "field": "color",
+    "value": "rgba(40, 199, 162, 0.45)"
+  },
+  "errors": [],
+  "networkFailures": []
+}
