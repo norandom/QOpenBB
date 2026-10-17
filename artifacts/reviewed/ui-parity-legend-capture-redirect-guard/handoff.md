@@ -1,0 +1,11 @@
+# Routing-only source closure is ready for independent review
+
+Review routes.mjs and source-diff.patch against the previous revised collector and the latest B01 finding. Every runtime file besides routing is mechanically compared with the previous revision, allowing only the new artifact-directory name in start/run ownership paths. Both prior frozen collector inventories and manifests are checked before freezing this source. The original UX and accepted eight-case scope remain intact.
+
+The remaining unrestricted continue paths are removed. Every approved HTTP(S) passthrough uses a bounded no-follow, no-retry fetch. All 3xx, Location transitions and foreign response identities abort with bounded unresolved diagnostics before fulfillment. Ordinary nonredirect responses preserve their response object. Synthetic callback tests verify that method/body are left unchanged, no second fetch occurs, and unsupported protocols never reach fetch or fulfill. No redirect navigation or topology test ran.
+
+Fresh verification includes all 25 previous tests, five new routing faults, JavaScript syntax checks, fixture byte equality and the unchanged-runtime comparison. The proposed compatible publication allowlist contains only explicit source, tests, fixtures, frozen baseline and offline receipts with checked sourcePath/SHA256/bytes. It excludes private runtime files, logs, profiles, environment files, credentials, caches and archives. Publication still requires independent review and controller action.
+
+An original app redirect, including a same-origin login redirect, can now stop the future attempt as unresolved. That is the required denial boundary, not a reason to emulate navigation or change the original response. Installed Docker internal-network behavior, loopback viability, original selectors/scene identity, process cleanup and visible Legend effects remain unexecuted admission or interpretation gates already described in the prior revision. No acceptance of those runtime behaviors is claimed here.
+
+This exact frozen revision requires independent approval before any separate one-attempt runtime grant. No production/spec phase, UI parity or broader feature completion is claimed.

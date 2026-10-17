@@ -1,0 +1,52 @@
+diff --git a/baseline/routes.mjs b/harness/routes.mjs
+index b36b4e5..72cc614 100644
+--- a/baseline/routes.mjs
++++ b/harness/routes.mjs
+@@ -2,17 +2,28 @@
+ export async function registerRoutes({context,runtime,fixture,rows,diagnostic}){
+   async function allowed(route){
+     let url;try{url=new URL(route.request().url());}catch{diagnostic('externalDenied',{invalidURL:true});await route.abort();return false;}
++    if(!['http:','https:'].includes(url.protocol)){diagnostic('externalDenied',{reason:'unsupported-protocol',scheme:url.protocol.slice(0,32)});await route.abort();return false;}
+     if(url.origin===runtime.origin)return true;
+-    diagnostic('externalDenied',{scheme:url.protocol});await route.abort();return false;
++    diagnostic('externalDenied',{reason:'unapproved-origin',scheme:url.protocol});await route.abort();return false;
+   }
+-  await context.route('**/*',async route=>{if(await allowed(route))return route.continue();});
++  async function reject(route,reason){diagnostic('externalDenied',{reason});await route.abort();throw Error('traffic-unresolved: '+reason);}
++  async function noFollow(route){
++    // Omitting method/postData overrides preserves this intercepted request's method/body.
++    let response;try{response=await route.fetch({maxRedirects:0,maxRetries:0,timeout:4000});}catch{return reject(route,'request-fetch-failed');}
++    let url;try{url=new URL(response.url());}catch{return reject(route,'invalid-response-identity');}
++    if(!['http:','https:'].includes(url.protocol)||url.origin!==runtime.origin)return reject(route,'foreign-response-identity');
++    const status=response.status(),headers=response.headers();
++    if(status>=300&&status<400)return reject(route,'redirect-response-'+status);
++    if(Object.keys(headers).some(key=>key.toLowerCase()==='location'))return reject(route,'location-transition');
++    return response;
++  }
++  await context.route('**/*',async route=>{if(!await allowed(route))return;return route.fulfill({response:await noFollow(route)});});
+   await context.route('**/api/pro/dash/{sync,validate-and-sync}',async route=>{
+     if(!await allowed(route))return;
+-    if(route.request().method()!=='GET')return route.continue();
+-    const response=await route.fetch({maxRedirects:0,timeout:4000});
+-    if(new URL(response.url()).origin!==runtime.origin||response.status()>=300&&response.status()<400){await route.abort();throw Error('traffic-unresolved: sync redirect');}
++    const response=await noFollow(route);
++    if(route.request().method()!=='GET')return route.fulfill({response});
+     const actual=await response.json();
+-    return route.fulfill({json:{...actual,owned:Object.fromEntries(Object.entries(fixture).map(([key,content])=>[key,{content,is_shared:false,created_by:'Synthetic Parity',created_date:'2026-10-17T00:00:00Z',updated_date:'2026-10-17T00:00:00Z'}])),shared:{},entity_shared:{}}});
++    return route.fulfill({response,json:{...actual,owned:Object.fromEntries(Object.entries(fixture).map(([key,content])=>[key,{content,is_shared:false,created_by:'Synthetic Parity',created_date:'2026-10-17T00:00:00Z',updated_date:'2026-10-17T00:00:00Z'}])),shared:{},entity_shared:{}}});
+   });
+   await context.route('**/synthetic_financials',async route=>{if(await allowed(route))return route.fulfill({json:rows});});
+ }
+diff --git a/baseline/start.mjs b/harness/start.mjs
+index 1cf9d87..e5e5200 100644
+--- a/baseline/start.mjs
++++ b/harness/start.mjs
+@@ -7,7 +7,7 @@ import {ownerLabel,networkGuard,containerNetworkGuard} from './network.mjs';
+ const docker=(...args)=>execFileSync('docker',args,{encoding:'utf8',timeout:10000,stdio:['ignore','pipe','pipe'],windowsHide:true});
+ const image='sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f';
+ const source='38dffc33389aca0e4a87e0e88d42f7067aa220df';
+-if(path.resolve(root)!==fs.realpathSync(root)||!/^attempt-[A-Za-z0-9-]+$/.test(path.basename(root))||path.basename(path.dirname(root))!=='ui-parity-legend-capture-revised')throw Error('Canonical owned attempt required');
++if(path.resolve(root)!==fs.realpathSync(root)||!/^attempt-[A-Za-z0-9-]+$/.test(path.basename(root))||path.basename(path.dirname(root))!=='ui-parity-legend-capture-redirect-guard')throw Error('Canonical owned attempt required');
+ if(JSON.parse(docker('image','inspect',image,'--format','{{json .Id}}'))!==image||
+   docker('image','inspect',image,'--format','{{index .Config.Labels "org.qopenbb.source.workspace"}}').trim()!==source)throw Error('Image mismatch');
+ if(fs.existsSync(root+'/runtime-private.json'))throw Error('Previous runtime receipt exists');

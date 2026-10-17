@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash,randomBytes} from 'node:crypto';
+const base=path.dirname(fileURLToPath(import.meta.url)),manifest=JSON.parse(fs.readFileSync(base+'/harness-manifest.json'));
+const hash=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+for(const f of manifest.files)if(hash(base+'/'+f.path)!==f.sha256)throw Error('Frozen source changed '+f.path);
+if(hash(base+'/../ui-parity-legend-plan-revised/plan.md')!==manifest.plan.sha256)throw Error('Accepted plan changed');
+const name='attempt-'+new Date().toISOString().replace(/[-:.]/g,'').slice(0,16)+'-'+randomBytes(4).toString('hex'),target=path.join(base,name);
+fs.mkdirSync(target);fs.mkdirSync(target+'/harness');
+for(const f of manifest.files)fs.copyFileSync(base+'/'+f.path,target+'/'+f.path);
+fs.copyFileSync(base+'/harness-manifest.json',target+'/source-manifest.json');
+fs.writeFileSync(target+'/preparation.json',JSON.stringify({attempt:name,manifestSha256:hash(base+'/harness-manifest.json'),runtimeStarted:false}));
+console.log(JSON.stringify({target,runtimeStarted:false,futureCommand:'LEGEND_HEAVY_GRANTED=controller-granted bash artifacts/ui-parity-legend-capture-redirect-guard/supervise.sh '+target}));

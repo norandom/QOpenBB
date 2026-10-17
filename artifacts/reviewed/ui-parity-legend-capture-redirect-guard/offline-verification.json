@@ -1,0 +1,129 @@
+{
+  "scope": "Offline source collector verification only; no browser/container/runtime",
+  "status": "passed",
+  "tests": 30,
+  "results": [
+    {
+      "name": "seven direct BBox calls and fourteen before/after operands",
+      "status": "passed"
+    },
+    {
+      "name": "parent-space conversion does not double-add marker translation or seriesRect",
+      "status": "passed"
+    },
+    {
+      "name": "lazy BBox operand mutation invalidates complete sample without extra calls",
+      "status": "passed"
+    },
+    {
+      "name": "wrong marker parent fails before any getter",
+      "status": "passed"
+    },
+    {
+      "name": "source-ordered second-series identity/visibility mismatches fail closed",
+      "status": "passed"
+    },
+    {
+      "name": "actual visibility and property visibility disagreement remains visible",
+      "status": "passed"
+    },
+    {
+      "name": "raw absent undefined null value stay distinct and no defaults inserted",
+      "status": "passed"
+    },
+    {
+      "name": "ambiguous API candidates and root cardinality stop acquisition",
+      "status": "passed"
+    },
+    {
+      "name": "nonfinite transforms and wrong role reject conversion",
+      "status": "passed"
+    },
+    {
+      "name": "two inactive equal samples at least 100ms apart",
+      "status": "passed"
+    },
+    {
+      "name": "invalid getter sample only recovers within existing ten polls",
+      "status": "passed"
+    },
+    {
+      "name": "changing/active/missing and deadline outcomes never become success",
+      "status": "passed"
+    },
+    {
+      "name": "incremental I/O rejects prospective count/byte/JSON/path and reconciles drift",
+      "status": "passed"
+    },
+    {
+      "name": "event prefix survives bounded persistence and rejects regression",
+      "status": "passed"
+    },
+    {
+      "name": "event action/case/run bounds preserve finite original-order prefixes",
+      "status": "passed"
+    },
+    {
+      "name": "eight named case actions restore recorded values within counters",
+      "status": "passed"
+    },
+    {
+      "name": "B01 every context route independently rejects external origins without fetch/fulfill",
+      "status": "passed"
+    },
+    {
+      "name": "B01 same-origin sync disables redirects and rejects external response identity",
+      "status": "passed"
+    },
+    {
+      "name": "B01 backend isolation admission rejects noninternal, foreign, extra networks and nonloopback ports",
+      "status": "passed"
+    },
+    {
+      "name": "B02 recovery retains exact latest invalid fourteen-pair bracket and omission count",
+      "status": "passed"
+    },
+    {
+      "name": "B03 owned PID/startticks cleanup proves absence and never kills reused identity",
+      "status": "passed"
+    },
+    {
+      "name": "B03 surviving owned browser remains unverified after bounded TERM/KILL fallback",
+      "status": "passed"
+    },
+    {
+      "name": "B04 final atomic drain preserves event prefix and persists late overflow",
+      "status": "passed"
+    },
+    {
+      "name": "B04 late event interval cannot be linked to an earlier after-observation",
+      "status": "passed"
+    },
+    {
+      "name": "B03/B04 disconnected transport, missing absence or final overflow can never yield observed",
+      "status": "passed"
+    },
+    {
+      "name": "B01 final generic GET and POST reject foreign redirects after exactly one owned-origin fetch",
+      "status": "passed"
+    },
+    {
+      "name": "B01 final sync non-GET rejects both foreign response identity and redirect Location",
+      "status": "passed"
+    },
+    {
+      "name": "B01 final all 3xx and any Location header reject same-origin transitions without following",
+      "status": "passed"
+    },
+    {
+      "name": "B01 final ordinary generic and sync non-GET responses preserve the original response object and request method/body",
+      "status": "passed"
+    },
+    {
+      "name": "B01 final unsupported protocols fail closed in every handler with zero fetches or fulfillments",
+      "status": "passed"
+    }
+  ],
+  "node": "v24.20.0",
+  "fixtureSha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+}

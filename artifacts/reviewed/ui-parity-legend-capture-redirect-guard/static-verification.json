@@ -1,0 +1,430 @@
+{
+  "status": "passed",
+  "scope": "Source-only syntax, bounded seam scan, fixture equality and unchanged-runtime comparison; no runtime import",
+  "results": [
+    {
+      "path": "harness/browser-process.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/cases.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/controls.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/event-drain.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/events.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/final-status.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/geometry.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/guards.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/io.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/journey.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/limits.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/network.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/projection.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/routes.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/settlement.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/start.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "harness/status.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/browser-process.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/cases.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/cleanup.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/controls.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/event-drain.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/events.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/final-status.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/finalize.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/geometry.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/guards.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/io.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/journey.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/limits.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/network.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/projection.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/routes.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/settlement.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/start.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "baseline/status.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "freeze.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "offline-tests.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "prepare-run.mjs",
+      "syntax": "passed"
+    },
+    {
+      "path": "static-check.mjs",
+      "syntax": "passed"
+    }
+  ],
+  "files": [
+    {
+      "path": "harness/browser-process.mjs",
+      "bytes": 1810,
+      "physicalLines": 25
+    },
+    {
+      "path": "harness/cases.mjs",
+      "bytes": 3842,
+      "physicalLines": 34
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "bytes": 3209,
+      "physicalLines": 34
+    },
+    {
+      "path": "harness/controls.mjs",
+      "bytes": 2529,
+      "physicalLines": 32
+    },
+    {
+      "path": "harness/event-drain.mjs",
+      "bytes": 732,
+      "physicalLines": 8
+    },
+    {
+      "path": "harness/events.mjs",
+      "bytes": 1118,
+      "physicalLines": 20
+    },
+    {
+      "path": "harness/final-status.mjs",
+      "bytes": 724,
+      "physicalLines": 6
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "bytes": 1103,
+      "physicalLines": 10
+    },
+    {
+      "path": "harness/fixture.json",
+      "bytes": 2187,
+      "physicalLines": 81
+    },
+    {
+      "path": "harness/geometry.mjs",
+      "bytes": 2198,
+      "physicalLines": 36
+    },
+    {
+      "path": "harness/guards.mjs",
+      "bytes": 2662,
+      "physicalLines": 30
+    },
+    {
+      "path": "harness/io.mjs",
+      "bytes": 4928,
+      "physicalLines": 79
+    },
+    {
+      "path": "harness/journey.mjs",
+      "bytes": 17363,
+      "physicalLines": 148
+    },
+    {
+      "path": "harness/limits.mjs",
+      "bytes": 844,
+      "physicalLines": 9
+    },
+    {
+      "path": "harness/network.mjs",
+      "bytes": 1802,
+      "physicalLines": 21
+    },
+    {
+      "path": "harness/projection.mjs",
+      "bytes": 13870,
+      "physicalLines": 101
+    },
+    {
+      "path": "harness/routes.mjs",
+      "bytes": 2439,
+      "physicalLines": 29
+    },
+    {
+      "path": "harness/run.sh",
+      "bytes": 1687,
+      "physicalLines": 38
+    },
+    {
+      "path": "harness/settlement.mjs",
+      "bytes": 2028,
+      "physicalLines": 23
+    },
+    {
+      "path": "harness/start.mjs",
+      "bytes": 3575,
+      "physicalLines": 40
+    },
+    {
+      "path": "harness/status.mjs",
+      "bytes": 246,
+      "physicalLines": 4
+    },
+    {
+      "path": "baseline/browser-process.mjs",
+      "bytes": 1810,
+      "physicalLines": 25
+    },
+    {
+      "path": "baseline/cases.mjs",
+      "bytes": 3842,
+      "physicalLines": 34
+    },
+    {
+      "path": "baseline/cleanup.mjs",
+      "bytes": 3209,
+      "physicalLines": 34
+    },
+    {
+      "path": "baseline/controls.mjs",
+      "bytes": 2529,
+      "physicalLines": 32
+    },
+    {
+      "path": "baseline/event-drain.mjs",
+      "bytes": 732,
+      "physicalLines": 8
+    },
+    {
+      "path": "baseline/events.mjs",
+      "bytes": 1118,
+      "physicalLines": 20
+    },
+    {
+      "path": "baseline/final-status.mjs",
+      "bytes": 724,
+      "physicalLines": 6
+    },
+    {
+      "path": "baseline/finalize.mjs",
+      "bytes": 1103,
+      "physicalLines": 10
+    },
+    {
+      "path": "baseline/fixture.json",
+      "bytes": 2187,
+      "physicalLines": 81
+    },
+    {
+      "path": "baseline/geometry.mjs",
+      "bytes": 2198,
+      "physicalLines": 36
+    },
+    {
+      "path": "baseline/guards.mjs",
+      "bytes": 2662,
+      "physicalLines": 30
+    },
+    {
+      "path": "baseline/io.mjs",
+      "bytes": 4928,
+      "physicalLines": 79
+    },
+    {
+      "path": "baseline/journey.mjs",
+      "bytes": 17363,
+      "physicalLines": 148
+    },
+    {
+      "path": "baseline/limits.mjs",
+      "bytes": 844,
+      "physicalLines": 9
+    },
+    {
+      "path": "baseline/network.mjs",
+      "bytes": 1802,
+      "physicalLines": 21
+    },
+    {
+      "path": "baseline/projection.mjs",
+      "bytes": 13870,
+      "physicalLines": 101
+    },
+    {
+      "path": "baseline/routes.mjs",
+      "bytes": 1451,
+      "physicalLines": 18
+    },
+    {
+      "path": "baseline/run.sh",
+      "bytes": 1687,
+      "physicalLines": 38
+    },
+    {
+      "path": "baseline/settlement.mjs",
+      "bytes": 2028,
+      "physicalLines": 23
+    },
+    {
+      "path": "baseline/start.mjs",
+      "bytes": 3568,
+      "physicalLines": 40
+    },
+    {
+      "path": "baseline/status.mjs",
+      "bytes": 246,
+      "physicalLines": 4
+    },
+    {
+      "path": "freeze.mjs",
+      "bytes": 5716,
+      "physicalLines": 38
+    },
+    {
+      "path": "offline-tests.mjs",
+      "bytes": 26130,
+      "physicalLines": 162
+    },
+    {
+      "path": "prepare-run.mjs",
+      "bytes": 1287,
+      "physicalLines": 14
+    },
+    {
+      "path": "static-check.mjs",
+      "bytes": 4400,
+      "physicalLines": 35
+    }
+  ],
+  "unchangedRuntime": [
+    "browser-process.mjs",
+    "cases.mjs",
+    "cleanup.mjs",
+    "controls.mjs",
+    "event-drain.mjs",
+    "events.mjs",
+    "final-status.mjs",
+    "finalize.mjs",
+    "fixture.json",
+    "geometry.mjs",
+    "guards.mjs",
+    "io.mjs",
+    "journey.mjs",
+    "limits.mjs",
+    "network.mjs",
+    "projection.mjs",
+    "run.sh",
+    "settlement.mjs",
+    "start.mjs",
+    "status.mjs"
+  ],
+  "productionCaps": "Research harness/test/baseline exclusions; no production complexity pass claimed",
+  "excluded": "Frozen baseline is the previous revised Legend collector; never copied into redirect-guard runtime harness"
+}
