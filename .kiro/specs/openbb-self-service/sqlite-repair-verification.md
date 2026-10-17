@@ -1,6 +1,6 @@
 # SQLite repair verification
 
-The isolated backend test runtime and seven-site query repair are accepted. Bulk-save verification and the joined SQLite gate are in progress. No application, renderer or deployment acceptance follows from this record.
+The isolated backend test runtime, seven-site query repair and bulk-storage regression boundary are accepted. The joined SQLite gate is in progress. No application, renderer or deployment acceptance follows from this record.
 
 ## Scope and identity
 
@@ -30,8 +30,14 @@ Eight name combinations across all six read paths, distinct owner/creator identi
 
 The independently measured whole-file exception is approved at 1599 physical lines and 582 logical units, with maximum callable size 36 and expiry 2026-11-17. Repaired CRUD SHA-256 is `575b2cdeb0f04aab81af60b34074e4b9c2c6e21cfb6559c695e502361defc6e9`; the original hash is recorded above. Controller registration binds these exact measured baselines to the accepted fork revision. The function cap remains 50 and unrelated CRUD edits require renewed review. Test lint/format and CRUD lint pass. Whole-file CRUD formatting fails on both original and repaired source; unrelated formatting was deliberately left unchanged.
 
+## Accepted bulk storage: task 4.8
+
+Independent Astra review (`artifacts/task-4.8/review/review.md`) reproduced 60 passing tests with zero skips, plus scoped Ruff and formatting checks. Seven additional cases exercise typed bulk insert/update, exact nested widget/layout/chart state and compressed content across SQLite engine recreation, and actual share-helper behavior. Only queue transport is replaced; a separate SQLite connection observes committed bytes during enqueue. Successful enqueue and caught job timeout return normally; other queue errors propagate while the prior commit remains stored, matching existing behavior.
+
+Foreign update and duplicate insertion fail with the existing uniqueness error; foreign deletion raises the existing HTTP 400. Explicit rollback preserves the other owner's data and dates. These tests change no production transaction logic. Initial test failures concerned binary UUID binding and expired ORM access after rollback; corrected test assumptions and final identities are retained in `artifacts/task-4.8/README.md` and execution records. No new production-bug RED claim is made for this test-only task.
+
 ## Remaining integration gates
 
-Task 4.8 must exercise real bulk save/update, compressed storage, engine recreation and failure isolation. Task 4.9 must independently accept the joined suite, verify exact revision-bound exceptions and run the combined maintained-code checker.
+Task 4.9 must independently accept the joined suite, verify exact revision-bound exceptions and run the combined maintained-code checker.
 
 Even after those gates pass, requirements 2.2, 4.2 and 4.7 still need the real application journey: save through the route, restart the environment, sign in, reopen layout/parameters and refresh data against recorded rebuilt images. Full original renderer parity, Anthropic, Excel and image-pull deployment remain separate open work.
