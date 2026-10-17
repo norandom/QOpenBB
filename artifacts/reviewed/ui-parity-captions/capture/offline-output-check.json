@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "60 overwrites retain one file size",
+    "aggregate ledger may exceed snapshot cap",
+    "individual snapshot overflow rejected",
+    "new file exceeding retained total rejected",
+    "rejected writes preserve previous valid bytes"
+  ],
+  "runtimeEvidence": false
+}

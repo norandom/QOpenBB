@@ -1,0 +1,282 @@
+[
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "fill",
+    "label": "synthetic login email",
+    "interactions": 1,
+    "edits": 1
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "fill",
+    "label": "synthetic login password",
+    "interactions": 2,
+    "edits": 2
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "scroll",
+    "label": "Login",
+    "interactions": 3,
+    "edits": 2
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "click",
+    "label": "Login",
+    "interactions": 4,
+    "edits": 2
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "fill",
+    "label": "synthetic first name",
+    "interactions": 5,
+    "edits": 3
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "fill",
+    "label": "synthetic last name",
+    "interactions": 6,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "scroll",
+    "label": "Onboarding Continue",
+    "interactions": 7,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "click",
+    "label": "Onboarding Continue",
+    "interactions": 8,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "scroll",
+    "label": "Chart view",
+    "interactions": 9,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "click",
+    "label": "Chart view",
+    "interactions": 10,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "scroll",
+    "label": "Chart actions",
+    "interactions": 11,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "click",
+    "label": "Chart actions",
+    "interactions": 12,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "scroll",
+    "label": "Chart settings",
+    "interactions": 13,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "click",
+    "label": "Chart settings",
+    "interactions": 14,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "scroll",
+    "label": "Customize",
+    "interactions": 15,
+    "edits": 4
+  },
+  {
+    "case": "setup",
+    "action": "setup",
+    "kind": "click",
+    "label": "Customize",
+    "interactions": 16,
+    "edits": 4
+  },
+  {
+    "case": "01-stock-baseline",
+    "action": "setup",
+    "kind": "scroll",
+    "label": "Chart Style expand",
+    "interactions": 17,
+    "edits": 4
+  },
+  {
+    "case": "01-stock-baseline",
+    "action": "setup",
+    "kind": "click",
+    "label": "Chart Style expand",
+    "interactions": 18,
+    "edits": 4
+  },
+  {
+    "case": "01-stock-baseline",
+    "action": "setup",
+    "kind": "scroll",
+    "label": "Titles expand",
+    "interactions": 19,
+    "edits": 4
+  },
+  {
+    "case": "01-stock-baseline",
+    "action": "setup",
+    "kind": "click",
+    "label": "Titles expand",
+    "interactions": 20,
+    "edits": 4
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "enable-chart-title",
+    "kind": "scroll",
+    "label": "Chart Title",
+    "interactions": 21,
+    "edits": 4
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "enable-chart-title",
+    "kind": "check",
+    "label": "Chart Title",
+    "interactions": 22,
+    "edits": 5
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "text-chart-title",
+    "kind": "scroll",
+    "label": "Chart Title text",
+    "interactions": 23,
+    "edits": 5
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "text-chart-title",
+    "kind": "fill",
+    "label": "Chart Title text",
+    "interactions": 24,
+    "edits": 6
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "text-chart-title",
+    "kind": "keypress",
+    "label": "Chart Title text commit Tab",
+    "interactions": 25,
+    "edits": 6
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "enable-subtitle",
+    "kind": "scroll",
+    "label": "Subtitle",
+    "interactions": 26,
+    "edits": 6
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "enable-subtitle",
+    "kind": "check",
+    "label": "Subtitle",
+    "interactions": 27,
+    "edits": 7
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "text-subtitle",
+    "kind": "scroll",
+    "label": "Subtitle text",
+    "interactions": 28,
+    "edits": 7
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "text-subtitle",
+    "kind": "fill",
+    "label": "Subtitle text",
+    "interactions": 29,
+    "edits": 8
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "text-subtitle",
+    "kind": "keypress",
+    "label": "Subtitle text commit Tab",
+    "interactions": 30,
+    "edits": 8
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "enable-horizontal-axis-title",
+    "kind": "scroll",
+    "label": "Horizontal Axis Title",
+    "interactions": 31,
+    "edits": 8
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "enable-horizontal-axis-title",
+    "kind": "check",
+    "label": "Horizontal Axis Title",
+    "interactions": 32,
+    "edits": 9
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "text-horizontal-axis-title",
+    "kind": "scroll",
+    "label": "Horizontal Axis Title text",
+    "interactions": 33,
+    "edits": 9
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "text-horizontal-axis-title",
+    "kind": "fill",
+    "label": "Horizontal Axis Title text",
+    "interactions": 34,
+    "edits": 10
+  },
+  {
+    "case": "02-all-four-captions",
+    "action": "text-horizontal-axis-title",
+    "kind": "keypress",
+    "label": "Horizontal Axis Title text commit Tab",
+    "interactions": 35,
+    "edits": 10
+  }
+]

@@ -1,0 +1,18 @@
+# Caption capture plan preflight
+
+APPROVED for the bounded original-runtime research described in [the caption plan](../ui-parity-captions/plan.md), after the controller grants the heavy lane. This is plan approval only. No runtime, candidate parity, consuming implementation or Kiro phase approval follows from it.
+
+Reviewed plan SHA256: `a5194d24b08c5e222a4a4ed2d51acd637eae41c8a7689427a5610cff5da86ace`. Original source: `38dffc33389aca0e4a87e0e88d42f7067aa220df`; original image: `sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f`; unexecuted candidate: `ea02ec15956dee8d2c8a06825387a570757db12d`.
+
+The independent source review checked FontPanel's combined Weight mapping and per-property updates, conditional Predefined choice, caption toggles and placeholder behavior, toolbar-dependent title padding, original empty toolbar configuration, axis-position proxies and padding controls. The plan correctly treats installed dependency source as a clue rather than proof of the image's bytes. Its exact labels, unique visible control scopes and failure handling address earlier hidden/duplicate selector failures without creating replacement controls or applying synthetic chart updates.
+
+Two required repairs are complete:
+
+- The plan names the frozen `RoleTypography.fontStyle` omission. The Weight control writes both weight and style; the frozen shape cannot retain the complete observed pair. A later consuming-contract correction needs explicit controller review and per-role presence/type semantics. Neither this capture plan nor an absent style authorizes silently inserting `normal`, editing the frozen package or claiming that the contract gap is closed.
+- The plan supplies numeric action, edit, time, projection, event, markup and output ceilings. Overflow or timeout stops new actions, records unresolved evidence and starts owned cleanup. The limits cannot expand automatically after a failure.
+
+Nine dark groupedColumn cases cover four independent captions, eight Weight bindings, asymmetric padding and retained disabled details. Each actual edit has its own event/model/scene record. The conditional light discriminator remains bounded and requires a recorded reason. Source-predicted namespaces can be disproved by runtime evidence; scene parent coordinates, ancestor visibility and screenshots prevent local node flags or model equality from standing in for rendered geometry.
+
+Fresh offline checks passed: all 19 input/plan hashes in [source-hashes.json](../ui-parity-captions/source-hashes.json) matched, and all 12 plan links resolved from the intended publication location, with its own manifest resolved from the staged package. The inspected FontPanel implementation confirms the four weight/style pairs and separate setters; the frozen proposed type confirms the missing style field. No browser, container, build, install, network call or runtime replay was performed by this reviewer. No production files were changed.
+
+Runtime acceptance still requires exact source/image/script/fixture identity, real original control reachability, observed namespaces and ordered events, stable finite geometry, visual inspection of independent caption/padding effects, preserved failures and diagnostics, and cleanup receipts for the fresh same-origin disposable session. Unavailable scene roles, unsupported selectors, exceeded bounds or incomplete cleanup remain unresolved. The finite projection is read-only; raw state, credentials and owner-private files must remain outside publication. Light, other families, persistence, navigation retention and general inheritance remain separate gaps.

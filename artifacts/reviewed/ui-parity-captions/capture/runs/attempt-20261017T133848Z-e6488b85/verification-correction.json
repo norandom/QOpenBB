@@ -1,0 +1,7 @@
+{
+  "status": "Incomplete mandatory ancestor evidence; no acceptance claim",
+  "originalVerification": "verification.json",
+  "finding": "Runtime collector followed parent instead of original named parentNode. Empty arrays made ancestor visibility assertion vacuous.",
+  "unaffectedEvidence": "47 real UI actions, 60 ordered events, nine case screenshots, finite model/effective values and local bounds, four-row data, budgets and cleanup",
+  "requiredCorrection": "Named parentNode traversal; require nonempty attached caption ancestry, preserve inherited visibility/opacity/transforms and eight-ancestor bound; replay only after controller heavy grant."
+}

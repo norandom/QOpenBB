@@ -1,0 +1,77 @@
+{
+  "kind": "original-runtime-capture",
+  "plan": {
+    "path": "artifacts/ui-parity-captions/plan.md",
+    "sha256": "a5194d24b08c5e222a4a4ed2d51acd637eae41c8a7689427a5610cff5da86ace"
+  },
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "candidate": {
+    "revision": "ea02ec15956dee8d2c8a06825387a570757db12d",
+    "executed": false
+  },
+  "scripts": [
+    {
+      "path": "harness/limits.mjs",
+      "sourcePath": "artifacts/ui-parity-captions/capture/limits.mjs",
+      "sha256": "5d23db33651d7e79d697406bfb60e7ea3cc910acf5d531bec06916661c797894"
+    },
+    {
+      "path": "harness/io.mjs",
+      "sourcePath": "artifacts/ui-parity-captions/capture/io.mjs",
+      "sha256": "8dfeff58609c0f805bf104b990c4b4a9739682d1e2e3b2101107e869252dcfcf"
+    },
+    {
+      "path": "harness/start.mjs",
+      "sourcePath": "artifacts/ui-parity-captions/capture/start.mjs",
+      "sha256": "c0a8aef97b58bed30655d5384aaff5a3c5fcbf5f1bd0624897a8e0b473bb3da7"
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "sourcePath": "artifacts/ui-parity-captions/capture/cleanup.mjs",
+      "sha256": "308b4c5066fa63a5ab484f1d28efea897a3fe06bc22c4ddf3901fa5d5760a363"
+    },
+    {
+      "path": "harness/projection.mjs",
+      "sourcePath": "artifacts/ui-parity-captions/capture/projection.mjs",
+      "sha256": "76033b4d01f23aa291b0e4b5153d98abc69dbb6b7c52314e4681e0bdda45da12"
+    },
+    {
+      "path": "harness/journey.mjs",
+      "sourcePath": "artifacts/ui-parity-captions/capture/journey.mjs",
+      "sha256": "ac24cff89c35d150065eec49aabe3c0ba18ad25de1dc86e3904aee6353e0709a"
+    },
+    {
+      "path": "harness/manifest.mjs",
+      "sourcePath": "artifacts/ui-parity-captions/capture/manifest.mjs",
+      "sha256": "7102b9b16ba6a34bf7276b22fa05eeb8e49faceac54bef374788be207ef9ddb0"
+    },
+    {
+      "path": "harness/offline-check.mjs",
+      "sourcePath": "artifacts/ui-parity-captions/capture/offline-check.mjs",
+      "sha256": "082186839afa3299bdb89deea5256882c9ac006f49d2dc7ea510f71dbef2bbec"
+    },
+    {
+      "path": "harness/publication.mjs",
+      "sourcePath": "artifacts/ui-parity-captions/capture/publication.mjs",
+      "sha256": "0dfbb5e69ae02b4625106a7d94f1a754fc526fd94ecf13a62955f2a3f92852aa"
+    },
+    {
+      "path": "harness/run.sh",
+      "sourcePath": "artifacts/ui-parity-captions/capture/run.sh",
+      "sha256": "23d101a3077cc6136b755e38e70868a3058d6c735c4bf6a3f57e78a1587e999b"
+    },
+    {
+      "path": "harness/fixture.json",
+      "sourcePath": "artifacts/ui-parity-captions/capture/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    }
+  ],
+  "command": "QOPENBB_CAPTIONS_HEAVY_GRANT=controller-granted bash artifacts/ui-parity-captions/capture/run.sh",
+  "dependencyReuse": {
+    "node": "artifacts/task-1.2/node-v24.22.0-linux-x64/bin",
+    "playwright": "verification/node_modules",
+    "browserCache": "artifacts/playwright-browsers"
+  },
+  "productionCaps": "Evidence-only scripts excluded; any future production work retains 400 physical/file, 300 logical/file, 50/function."
+}

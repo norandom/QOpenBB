@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-17",
+  "kind": "source-only capture plan; no new runtime evidence",
+  "publicationBase": "artifacts/reviewed/ui-parity-captions",
+  "candidate": "ea02ec15956dee8d2c8a06825387a570757db12d",
+  "originalSource": [
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/package.json",
+      "sha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "sha256": "ff4ffdf77236326f0f476d7a06f1cbc6b876f7d41235b9faca8999b4a3ca8e21"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/AgGrid.tsx",
+      "sha256": "9261e5a4443f5a7b6ccabd36b7fc1e07d299c5fef40fb13200f2b99e4e675d9d"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/AgChartFromTable.tsx",
+      "sha256": "e12e608341ce89dc2ea6305d20e3f174751e46ee9df6cb70de393682d6cc9041"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "sha256": "0cf2231a7771e2daf7f15162e3f401231b841b0b2861c973fdf36696e5ff1435"
+    },
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "sha256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/report.md",
+      "sha256": "caeb5ee676cf3e5a06f4304e3636f32d533fe96962c4451e1eed738c19ea79ed"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/domain-Legend-Weight.json",
+      "sha256": "559471dd1ca0c705a403f18030e253c8263df00361a3058b19add888e006c1a7"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/unresolved-actions.json",
+      "sha256": "c52c85a039b28bb8e7cf2ababc6b6aa0ec5ad7268dffea423502d9497c988a6e"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused.mjs",
+      "sha256": "7bcae9876488d6ac231e3e9ddd152cf6d40fa5e13b585f65808ba2f928ca1103"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-contract-close/journey.mjs",
+      "sha256": "ad9d9ee26a8f769597539ad1488f6f7c854d13469f4137f9762cb9b06b9d8fad"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-payload-capture/group-Titles.json",
+      "sha256": "1c83ad36c61d78c122a79725292814320ef2aadca04c0938debef78c0d01c7ac"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-payload-capture/group-Chart-Style.json",
+      "sha256": "21e8e3148ba5e0a2ba13b0d45b8e95cd351c712a8fe97f63189788f4f53019be"
+    },
+    {
+      "path": "artifacts/parity/editor-payload-capture/group-Titles.html",
+      "sha256": "354ba134321c0aaa0887cd1929b611315d067663cab116857baffae140f296ba"
+    },
+    {
+      "path": "artifacts/parity/editor-payload-capture/group-Chart-Style.html",
+      "sha256": "a8885592d9a2e527b15e8f7f2aaa27c39787cdbc1b27a4e6356fc4ecac34ea24"
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/journey.mjs",
+      "sha256": "d06c6179be9edb390971e69d6449a2b14577d2201d5039cad0efde44ccebb3e8"
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/source-manifest.json",
+      "sha256": "024190a50faa7b9f3c0113a5114e7130fa56fc51e6d618d9496a7ba68ad9f0d5"
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/report.md",
+      "sha256": "1efcc4e43e36af4ad119591a5a4b73e2efda710f787ba27554db118517107f07"
+    },
+    {
+      "path": "artifacts/reviewed/consuming-axis-grid-capture/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    },
+    {
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/package.json",
+      "sha256": "740fda1969fab489979dbae50dc5a7d4f550cb3d8f226ff4cb59b5fa397aa1a1"
+    },
+    {
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.esm.mjs",
+      "sha256": "76831274e5f22060913871da1e756d5269e71b87ea9a601ecac05baca4504286"
+    },
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "sha256": "3a6d07bae4be9a7197afc5afc4844c4f2b7e3824a994f8edc0d6df70169499b6"
+    }
+  ],
+  "installedChartsSource": {
+    "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/dist/package/main.cjs.js",
+    "sha256": "237912c75d2c7e8219fced7bb79e5ed8fca0f620d6f4d259cdfa58748445fcd1",
+    "status": "source clue; original image byte identity not asserted"
+  },
+  "plan": {
+    "path": "artifacts/ui-parity-captions/plan.md",
+    "sha256": "a5194d24b08c5e222a4a4ed2d51acd637eae41c8a7689427a5610cff5da86ace"
+  }
+}
