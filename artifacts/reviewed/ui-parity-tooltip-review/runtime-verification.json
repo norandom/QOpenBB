@@ -1,0 +1,1665 @@
+{
+  "scope": "Unresolved tooltip research and safe publication; no invocation acceptance",
+  "checkCount": 414,
+  "links": 16,
+  "selectedFiles": 78,
+  "failed": [],
+  "checks": [
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/preparation.md",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/preparation.md",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/preparation.md",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/verify-owned.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/verify-owned.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/verify-owned.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/package.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/package.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/package.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/commands.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/commands.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/commands.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/commands.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/identity-fixture-preflight.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/identity-fixture-preflight.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/identity-fixture-preflight.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/identity-fixture-preflight.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T01.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T01.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T01.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T01.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T02.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T02.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T02.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T02.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T03.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T03.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T03.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T03.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T04.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T04.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T04.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T04.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T05.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T05.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T05.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T05.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T06.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T06.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T06.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T06.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T07.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T07.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T07.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T07.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T08.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T08.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T08.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T08.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/summary.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/summary.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/summary.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/byte-budget.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/byte-budget.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/byte-budget.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/byte-budget.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/identity-fixture-preflight.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/identity-fixture-preflight.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/identity-fixture-preflight.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/identity-fixture-preflight.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T01.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T01.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T01.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T01.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T02.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T02.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T02.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T02.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T03.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T03.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T03.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T03.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T04.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T04.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T04.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T04.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T05.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T05.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T05.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T05.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T06.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T06.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T06.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T06.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T07.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T07.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T07.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T07.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T08.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T08.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T08.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T08.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/summary.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/summary.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/summary.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/byte-budget.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/byte-budget.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/byte-budget.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/byte-budget.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T06-Single-terminal.png",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T06-Single-terminal.png",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T06-Single-terminal.png",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "hash artifacts/ui-parity-tooltip-plan/capture/link-verification.json",
+      "passed": true
+    },
+    {
+      "name": "bytes artifacts/ui-parity-tooltip-plan/capture/link-verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe path artifacts/ui-parity-tooltip-plan/capture/link-verification.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material artifacts/ui-parity-tooltip-plan/capture/link-verification.json",
+      "passed": true
+    },
+    {
+      "name": "78 exact files",
+      "passed": true
+    },
+    {
+      "name": "report link commands.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/identity-fixture-preflight.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/summary.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/T06-Single-terminal.png",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/diagnostics.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a2/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a1/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a1/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a1/failure.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a1/owned-absence-verification.json",
+      "passed": true
+    },
+    {
+      "name": "report link attempt-20261017-r4-a1/fresh-verification-public.json",
+      "passed": true
+    },
+    {
+      "name": "a1 executed manifest",
+      "passed": true
+    },
+    {
+      "name": "a1 executed cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 executed collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 executed contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 executed controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 executed fixture.json",
+      "passed": true
+    },
+    {
+      "name": "a1 executed io.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 executed journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 executed projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 executed run.sh",
+      "passed": true
+    },
+    {
+      "name": "a1 executed start.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 executed static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 executed verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "a1 owned absence",
+      "passed": true
+    },
+    {
+      "name": "a2 executed manifest",
+      "passed": true
+    },
+    {
+      "name": "a2 executed cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 executed collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 executed contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 executed controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 executed fixture.json",
+      "passed": true
+    },
+    {
+      "name": "a2 executed io.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 executed journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 executed projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 executed run.sh",
+      "passed": true
+    },
+    {
+      "name": "a2 executed start.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 executed static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 executed verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "a2 owned absence",
+      "passed": true
+    },
+    {
+      "name": "eight unresolved",
+      "passed": true
+    },
+    {
+      "name": "bounded accounting",
+      "passed": true
+    },
+    {
+      "name": "ready bounded acquisition",
+      "passed": true
+    },
+    {
+      "name": "options five rows",
+      "passed": true
+    },
+    {
+      "name": "options wrapper 0",
+      "passed": true
+    },
+    {
+      "name": "options value 0 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "options value 0 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "options value 0 revenue",
+      "passed": true
+    },
+    {
+      "name": "options wrapper 1",
+      "passed": true
+    },
+    {
+      "name": "options value 1 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "options value 1 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "options value 1 revenue",
+      "passed": true
+    },
+    {
+      "name": "options wrapper 2",
+      "passed": true
+    },
+    {
+      "name": "options value 2 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "options value 2 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "options value 2 revenue",
+      "passed": true
+    },
+    {
+      "name": "options wrapper 3",
+      "passed": true
+    },
+    {
+      "name": "options value 3 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "options value 3 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "options value 3 revenue",
+      "passed": true
+    },
+    {
+      "name": "options wrapper 4",
+      "passed": true
+    },
+    {
+      "name": "options value 4 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "options value 4 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "options value 4 revenue",
+      "passed": true
+    },
+    {
+      "name": "options missing remains undefined",
+      "passed": true
+    },
+    {
+      "name": "options explicit null remains null",
+      "passed": true
+    },
+    {
+      "name": "effective five rows",
+      "passed": true
+    },
+    {
+      "name": "effective wrapper 0",
+      "passed": true
+    },
+    {
+      "name": "effective value 0 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "effective value 0 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "effective value 0 revenue",
+      "passed": true
+    },
+    {
+      "name": "effective wrapper 1",
+      "passed": true
+    },
+    {
+      "name": "effective value 1 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "effective value 1 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "effective value 1 revenue",
+      "passed": true
+    },
+    {
+      "name": "effective wrapper 2",
+      "passed": true
+    },
+    {
+      "name": "effective value 2 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "effective value 2 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "effective value 2 revenue",
+      "passed": true
+    },
+    {
+      "name": "effective wrapper 3",
+      "passed": true
+    },
+    {
+      "name": "effective value 3 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "effective value 3 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "effective value 3 revenue",
+      "passed": true
+    },
+    {
+      "name": "effective wrapper 4",
+      "passed": true
+    },
+    {
+      "name": "effective value 4 cashFlow",
+      "passed": true
+    },
+    {
+      "name": "effective value 4 operatingIncome",
+      "passed": true
+    },
+    {
+      "name": "effective value 4 revenue",
+      "passed": true
+    },
+    {
+      "name": "effective missing remains undefined",
+      "passed": true
+    },
+    {
+      "name": "effective explicit null remains null",
+      "passed": true
+    },
+    {
+      "name": "T01 unresolved",
+      "passed": true
+    },
+    {
+      "name": "T01 finite case",
+      "passed": true
+    },
+    {
+      "name": "T01 no coordinate emitted",
+      "passed": true
+    },
+    {
+      "name": "T01 inactive equal pair",
+      "passed": true
+    },
+    {
+      "name": "T01 nonvacuous false chain",
+      "passed": true
+    },
+    {
+      "name": "T02 unresolved",
+      "passed": true
+    },
+    {
+      "name": "T02 finite case",
+      "passed": true
+    },
+    {
+      "name": "T02 no coordinate emitted",
+      "passed": true
+    },
+    {
+      "name": "T02 inactive equal pair",
+      "passed": true
+    },
+    {
+      "name": "T02 nonvacuous false chain",
+      "passed": true
+    },
+    {
+      "name": "T03 unresolved",
+      "passed": true
+    },
+    {
+      "name": "T03 finite case",
+      "passed": true
+    },
+    {
+      "name": "T03 stopped before mode click",
+      "passed": true
+    },
+    {
+      "name": "T04 unresolved",
+      "passed": true
+    },
+    {
+      "name": "T04 finite case",
+      "passed": true
+    },
+    {
+      "name": "T04 no coordinate emitted",
+      "passed": true
+    },
+    {
+      "name": "T04 inactive equal pair",
+      "passed": true
+    },
+    {
+      "name": "T04 nonvacuous false chain",
+      "passed": true
+    },
+    {
+      "name": "T05 unresolved",
+      "passed": true
+    },
+    {
+      "name": "T05 finite case",
+      "passed": true
+    },
+    {
+      "name": "T05 stopped before mode click",
+      "passed": true
+    },
+    {
+      "name": "T06 unresolved",
+      "passed": true
+    },
+    {
+      "name": "T06 finite case",
+      "passed": true
+    },
+    {
+      "name": "T07 unresolved",
+      "passed": true
+    },
+    {
+      "name": "T07 finite case",
+      "passed": true
+    },
+    {
+      "name": "T07 no coordinate emitted",
+      "passed": true
+    },
+    {
+      "name": "T07 inactive equal pair",
+      "passed": true
+    },
+    {
+      "name": "T07 nonvacuous false chain",
+      "passed": true
+    },
+    {
+      "name": "T08 unresolved",
+      "passed": true
+    },
+    {
+      "name": "T08 finite case",
+      "passed": true
+    },
+    {
+      "name": "no pointer input",
+      "passed": true
+    },
+    {
+      "name": "all 64 actions accounted",
+      "passed": true
+    },
+    {
+      "name": "Single only keyboard",
+      "passed": true
+    },
+    {
+      "name": "24 settled outside series area",
+      "passed": true
+    },
+    {
+      "name": "T08 stopped before selection",
+      "passed": true
+    }
+  ]
+}

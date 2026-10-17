@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+const root='/mnt/d/Source/QOpenBB';
+const source=root+'/artifacts/ui-parity-tooltip-plan';
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const checks=[];
+const check=(name,passed)=>checks.push({name,passed:!!passed});
+const manifest=JSON.parse(fs.readFileSync(source+'/capture/static-verification.json'));
+check('frozen-collector-manifest',sha(fs.readFileSync(source+'/capture/static-verification.json'))==='53487962b319998a928a18fb4a323a41106f47a88a6ab6792f2b54a3f9de041a');
+check('amended-plan',sha(fs.readFileSync(source+'/plan.md'))==='caa3b114e59423cb8284b8cab7d2b11371c62b42e3aa9d6193eeb8c47d808e80');
+check('source-manifest',sha(fs.readFileSync(source+'/source-hashes.json'))==='d5f69221ddec6bdbc11856d7c5c1a78eba00959072b83a39c78dbe31c633edcd');
+for(const file of manifest.files){const bytes=fs.readFileSync(source+'/capture/harness/'+file.name);check('hash:'+file.name,sha(bytes)===file.sha256);check('bytes:'+file.name,bytes.length===file.bytes);}
+check('offline-checks',manifest.checks.length===59&&manifest.checks.every(c=>c.passed)&&manifest.runtimeExecuted===false);
+check('bounded-input-count',manifest.limits.setupActions+7*manifest.limits.caseActions+manifest.limits.keyboardActions===396);
+check('bounded-image-count',24+3+21===manifest.limits.screenshots);
+check('retained-caps',manifest.limits.caseBytes===131072&&manifest.limits.jsonBytes===2097152&&manifest.limits.runBytes===104857600);
+check('lifecycle-caps',manifest.limits.inputStopMs===840000&&manifest.limits.outerMs===900000&&manifest.limits.cleanupMs===60000);
+const result={scope:'Independent frozen tooltip collector identity and accounting; no runtime',checkCount:checks.length,failed:checks.filter(c=>!c.passed),checks};
+fs.writeFileSync(root+'/artifacts/ui-parity-tooltip-review/harness-verification.json',JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify({checks:checks.length,failed:result.failed}));
+if(result.failed.length)process.exitCode=1;

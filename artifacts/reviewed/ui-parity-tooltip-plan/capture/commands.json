@@ -1,0 +1,58 @@
+{
+  "shell": "wsl -d Debian -u mc",
+  "pinnedNode": "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+  "attempts": [
+    {
+      "attempt": "attempt-20261017-r4-a1",
+      "startedAt": "2026-10-17T14:21:26.116Z",
+      "elapsedMs": 37911,
+      "staticChecks": 59,
+      "commands": [
+        {
+          "command": "<pinned-node> capture/harness/static-check.mjs (offline checks before attempt-local copy)",
+          "exitCode": 0
+        },
+        {
+          "command": "env TOOLTIP_HEAVY_GRANTED=yes timeout --signal=TERM --kill-after=1s 900s bash <attempt>/harness/run.sh <attempt>",
+          "exitCode": 1
+        },
+        {
+          "command": "<pinned-node> <attempt>/harness/verify.mjs <attempt>",
+          "exitCode": 1,
+          "result": "46 structural checks; no UI acceptance inference"
+        },
+        {
+          "command": "<pinned-node> capture/verify-owned.mjs <attempt>",
+          "exitCode": 0,
+          "result": "All recorded owned resources absent"
+        }
+      ]
+    },
+    {
+      "attempt": "attempt-20261017-r4-a2",
+      "startedAt": "2026-10-17T14:30:19.194Z",
+      "elapsedMs": 61587,
+      "staticChecks": 68,
+      "commands": [
+        {
+          "command": "<pinned-node> capture/harness/static-check.mjs (offline checks before attempt-local copy)",
+          "exitCode": 0
+        },
+        {
+          "command": "env TOOLTIP_HEAVY_GRANTED=yes timeout --signal=TERM --kill-after=1s 900s bash <attempt>/harness/run.sh <attempt>",
+          "exitCode": 0
+        },
+        {
+          "command": "<pinned-node> <attempt>/harness/verify.mjs <attempt>",
+          "exitCode": 0,
+          "result": "47 structural checks; no UI acceptance inference"
+        },
+        {
+          "command": "<pinned-node> capture/verify-owned.mjs <attempt>",
+          "exitCode": 0,
+          "result": "All recorded owned resources absent"
+        }
+      ]
+    }
+  ]
+}

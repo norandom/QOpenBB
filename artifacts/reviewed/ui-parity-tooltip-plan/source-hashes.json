@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "status": "source-only original-runtime-capture proposal; no runtime or design approval",
+  "original": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "candidateReference": "ea02ec15956dee8d2c8a06825387a570757db12d",
+  "candidateExecuted": false,
+  "sourceOnly": true,
+  "inputs": [
+    {
+      "kind": "explicit-project-input",
+      "path": "AGENTS.md",
+      "sha256": "0200bca366bcf2e830a75011a0b5ff78bd174391b28013ba8e1a4295a1e1cff2",
+      "bytes": 6960
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/delegation.md",
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "bytes": 4333
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/testing.md",
+      "sha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f",
+      "bytes": 5216
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/complexity.md",
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "bytes": 4171
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/documentation.md",
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "bytes": 3981
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/ci.md",
+      "sha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd",
+      "bytes": 4078
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/specs/openbb-self-service/spec.json",
+      "sha256": "4b7f3f2ba947370c569cec3a0816f52e80045c2f1ac66a705398d3b0139facb6",
+      "bytes": 13392
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/specs/openbb-self-service/chart-editor-contract-close.md",
+      "sha256": "7e982b54f722be5aad5e0fc84f37caf6c4be71f36d3ef0ff38efcde060b87d15",
+      "bytes": 3915
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/specs/openbb-self-service/chart-consuming-contract-draft.md",
+      "sha256": "954c9ca07f4996bec0280f6a8b098f7616164a8fd3f6935ba4e0fa54c8d410f0",
+      "bytes": 4109
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "sha256": "0cf2231a7771e2daf7f15162e3f401231b841b0b2861c973fdf36696e5ff1435",
+      "bytes": 26588
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "sha256": "d7c4dd2e70651266a3f3d106a1ce77e7bcffe062c032560b779755db4f763060",
+      "bytes": 421188
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "sha256": "3a6d07bae4be9a7197afc5afc4844c4f2b7e3824a994f8edc0d6df70169499b6",
+      "bytes": 5141
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "sha256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "bytes": 30418
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "sha256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "bytes": 596346
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/parity/editor-contract-close/source-analysis.md",
+      "sha256": "d82d883269b4887472df90c1d34cc5bc3ceb1d26c3025fb9e9f8b92ce4a578d2",
+      "bytes": 2228
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/parity/editor-contract-close/journey.mjs",
+      "sha256": "ad9d9ee26a8f769597539ad1488f6f7c854d13469f4137f9762cb9b06b9d8fad",
+      "bytes": 18370
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/parity/editor-contract-close/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/parity/editor-contract-close/tooltip-Multiple-hover.json",
+      "sha256": "f6480108d6f0f957a6cc48eb4beb958c16a0d14f3fe5bc4868d3e5f4b3f887b7",
+      "bytes": 8855
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/journey.mjs",
+      "sha256": "3dafb2e6ef80994cb7a9d34a4cb99382ab0ee267c7fe2a44641709c410673e02",
+      "bytes": 17065
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".agents/skills/kiro-verify-completion/SKILL.md",
+      "sha256": "389b056b47c9295df32787fec284a97f53b02555443bdd4343d3e61ac499efbb",
+      "bytes": 3902
+    },
+    {
+      "kind": "pinned-original-source",
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/package.json",
+      "sha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf",
+      "bytes": 9188
+    },
+    {
+      "kind": "pinned-original-source",
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/utils.tsx",
+      "sha256": "a4a092b6ccb6076006dc51c93f9ea088c608d2aadb24b6183c5683d8ca302ba1",
+      "bytes": 20723
+    },
+    {
+      "kind": "pinned-original-source",
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+      "bytes": 15697
+    },
+    {
+      "kind": "pinned-original-source",
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/NavBar/useChartGeneration.tsx",
+      "sha256": "e3ef8ecd29cdfff81574e173719b1c07dc9955c1e3851c5e7923310fe011f63f",
+      "bytes": 1701
+    },
+    {
+      "kind": "local-installed-public-dependency-source-clue",
+      "package": "ag-charts-community",
+      "version": "12.1.1",
+      "path": "package.json",
+      "sha256": "77ae0168d7c6209f2c880a00748fadbb390da794532164d84e0b4382e61c5b88",
+      "bytes": 2422
+    },
+    {
+      "kind": "local-installed-public-dependency-source-clue",
+      "package": "ag-charts-community",
+      "version": "12.1.1",
+      "path": "dist/package/main.esm.mjs",
+      "sha256": "e9b1b8be8d27ffc1f2c66e715b863b36d5f3aecef0c79e18cc0101a440956df4",
+      "bytes": 1847559
+    }
+  ],
+  "fixture": {
+    "schemaVersion": 1,
+    "widgetInput": {
+      "storage": {
+        "decimalDigits": 3
+      },
+      "data": {
+        "table": {
+          "enableCharts": true
+        }
+      }
+    },
+    "units": "USD millions",
+    "seriesOrder": [
+      "cashFlow",
+      "operatingIncome",
+      "revenue"
+    ],
+    "columns": [
+      {
+        "field": "observationId",
+        "headerName": "Observation ID",
+        "cellDataType": "text",
+        "chartDataType": "excluded"
+      },
+      {
+        "field": "period",
+        "headerName": "Period",
+        "cellDataType": "text",
+        "chartDataType": "category"
+      },
+      {
+        "field": "cashFlow",
+        "headerName": "Cash <&> flow (USD millions)",
+        "cellDataType": "number",
+        "chartDataType": "series"
+      },
+      {
+        "field": "operatingIncome",
+        "headerName": "Operating Income (USD millions)",
+        "cellDataType": "number",
+        "chartDataType": "series"
+      },
+      {
+        "field": "revenue",
+        "headerName": "Revenue (USD millions)",
+        "cellDataType": "number",
+        "chartDataType": "series"
+      }
+    ],
+    "rows": [
+      {
+        "observationId": "obs-0",
+        "period": "2024-Q1",
+        "cashFlow": -4.125,
+        "operatingIncome": 27.625,
+        "revenue": 12.375
+      },
+      {
+        "observationId": "obs-1",
+        "period": "2024-Q1",
+        "cashFlow": 8.125,
+        "operatingIncome": 12.375,
+        "revenue": 27.625
+      },
+      {
+        "observationId": "obs-2",
+        "period": "2024-Q2",
+        "cashFlow": -7.125,
+        "operatingIncome": 0,
+        "revenue": null
+      },
+      {
+        "observationId": "obs-3",
+        "period": "2024-Q3",
+        "cashFlow": 0,
+        "operatingIncome": -3.375
+      },
+      {
+        "observationId": "obs-4",
+        "period": "2024-Q4",
+        "cashFlow": 2.125,
+        "operatingIncome": 7.125,
+        "revenue": 7.125
+      }
+    ],
+    "initialControlPreconditions": {
+      "chartType": "groupedColumn",
+      "aggregateChecked": false,
+      "switchCategorySeriesChecked": false
+    }
+  },
+  "fixtureCanonicalization": "UTF-8 JSON; sort_keys=true; separators comma/colon; ensure_ascii=false; no trailing newline",
+  "fixtureCanonicalSha256": "bda68b15aee2192684d67086c4a599f852943a3079882d4aeb744e6efab262ad",
+  "fixtureCanonicalBytes": 1356,
+  "outputs": [
+    {
+      "path": "artifacts/ui-parity-tooltip-plan/plan.md",
+      "kind": "proposal",
+      "sha256": "745c11da2995a2ad1a629c5c2c2dfd13162f6ec8b77255988f7ab5375c6eb5dc",
+      "bytes": 23280
+    }
+  ],
+  "publication": {
+    "allowlist": [
+      "artifacts/ui-parity-tooltip-plan/plan.md",
+      "artifacts/ui-parity-tooltip-plan/source-hashes.json"
+    ],
+    "containsRuntimeState": false,
+    "dependencyPaths": "package-relative; local install location omitted",
+    "selfHash": "omitted to avoid self-reference; publishing mirror must hash this file separately"
+  },
+  "verification": {
+    "scope": "offline source/proposal checks only; no runtime",
+    "inputHashesVerified": 26,
+    "caseCount": 8,
+    "relativeLinksVerified": 5,
+    "linksResolvedFrom": "artifacts/reviewed/ui-parity-tooltip-plan/plan.md",
+    "sameDirectoryLinksMappedToOwnedDraft": true,
+    "fixtureCanonicalHashVerified": true,
+    "runtimeExecuted": false
+  }
+}

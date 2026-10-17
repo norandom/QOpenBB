@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "manifestSha256": "c098553db7a38c72eafec8ab0fc3a7e06c41ce74396f9062e44c794b8f6cb123",
+  "files": [
+    {
+      "name": "cleanup.mjs",
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "expectedSha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4"
+    },
+    {
+      "name": "collector.mjs",
+      "sha256": "fd20d2389af53cb4684784ae5d1f15af898791c2832d65e32f8d8ca822eafc64",
+      "expectedSha256": "fd20d2389af53cb4684784ae5d1f15af898791c2832d65e32f8d8ca822eafc64"
+    },
+    {
+      "name": "contract.mjs",
+      "sha256": "acfb993eee84733ac9999a99e1ab8e0bd850f4b85e0b48b838177b59e2f79aed",
+      "expectedSha256": "acfb993eee84733ac9999a99e1ab8e0bd850f4b85e0b48b838177b59e2f79aed"
+    },
+    {
+      "name": "controls.mjs",
+      "sha256": "88f68d6f0840f6aa48a61ad7a8bd0bda5b25b4bcc380ddfd86c9222bbfa9ee59",
+      "expectedSha256": "88f68d6f0840f6aa48a61ad7a8bd0bda5b25b4bcc380ddfd86c9222bbfa9ee59"
+    },
+    {
+      "name": "fixture.json",
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "expectedSha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96"
+    },
+    {
+      "name": "io.mjs",
+      "sha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0",
+      "expectedSha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0"
+    },
+    {
+      "name": "journey.mjs",
+      "sha256": "5c227796428b398ac3607b7113f952b103f0a1a94bee0578a590c9900cff9f74",
+      "expectedSha256": "5c227796428b398ac3607b7113f952b103f0a1a94bee0578a590c9900cff9f74"
+    },
+    {
+      "name": "projection.mjs",
+      "sha256": "ef32bcfe55198d7b473154d157c87b756dacfb84c3ed6a4b9e7905f1c897588c",
+      "expectedSha256": "ef32bcfe55198d7b473154d157c87b756dacfb84c3ed6a4b9e7905f1c897588c"
+    },
+    {
+      "name": "run.sh",
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "expectedSha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac"
+    },
+    {
+      "name": "start.mjs",
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "expectedSha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf"
+    },
+    {
+      "name": "static-check.mjs",
+      "sha256": "8d321b1f2f3aecdcf3af5e91c1bb5b59e0d88edb542ded3fa14fe28712ed0f0c",
+      "expectedSha256": "8d321b1f2f3aecdcf3af5e91c1bb5b59e0d88edb542ded3fa14fe28712ed0f0c"
+    },
+    {
+      "name": "verify.mjs",
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "expectedSha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b"
+    }
+  ]
+}

@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "scope": "Accepted unresolved original-only evidence; all eight tooltip invocation cases remain unresolved",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/browser-cleanup.json",
+      "sha256": "e9cc32042224ae31d6e972de282b89474ee72712b361d3dc5048143beebff05f",
+      "bytes": 80
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/byte-budget.json",
+      "sha256": "b8586dceea6cd249c2ff615778cc35bc64dcaedd570f740806f722a49b82e295",
+      "bytes": 561
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-report.json",
+      "sha256": "2c46d6b251ff254d770c8d2c864e69f5f4ceb6f8acfa35640f86f33b7deba348",
+      "bytes": 143
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/cleanup-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/diagnostics.json",
+      "sha256": "fa6eae44fd98450f5816600f1b1989690e6280b4b10cce91bdd4e191d4a32443",
+      "bytes": 206
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/executed-source-verification.json",
+      "sha256": "db32c0c59a104acdc6ef2718018f1269d88e8e5ba85175970bfd35e3825e841e",
+      "bytes": 2729
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/failure.json",
+      "sha256": "ff0622ce905dcf7de8fda3956dd79e931d886d9dd732f841c4bda07abb50edd7",
+      "bytes": 107
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/fresh-verification-public.json",
+      "sha256": "772d470942954605f6cb59550557100df33ff0ae59939fd631f1a67d76a6b8dc",
+      "bytes": 6425
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/cleanup.mjs",
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "bytes": 2652
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/collector.mjs",
+      "sha256": "fd20d2389af53cb4684784ae5d1f15af898791c2832d65e32f8d8ca822eafc64",
+      "bytes": 3658
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/contract.mjs",
+      "sha256": "45c215c13fb24140011fed52853f53071bd86da042c1cfb1514cc169b56431d9",
+      "bytes": 2533
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/controls.mjs",
+      "sha256": "88f68d6f0840f6aa48a61ad7a8bd0bda5b25b4bcc380ddfd86c9222bbfa9ee59",
+      "bytes": 2236
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/fixture.json",
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "bytes": 2031
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/io.mjs",
+      "sha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0",
+      "bytes": 1327
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/journey.mjs",
+      "sha256": "9d97d87759c3b59d72dbcb5fee1f31aa295ff5fee696fcc2349b9d3a04ba7a73",
+      "bytes": 17939
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/projection.mjs",
+      "sha256": "d224462e60ee7b278d9ec8ec7d4e579fec2f3f9c3f92bb0f9d80a6ae92d052da",
+      "bytes": 7843
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/run.sh",
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "bytes": 2183
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/start.mjs",
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "bytes": 2604
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/static-check.mjs",
+      "sha256": "f0e7f90f04c3395adef98cb82790529d271b2f747454d6fe0e79c95a5d77321b",
+      "bytes": 9435
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/harness/verify.mjs",
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "bytes": 2984
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/identity-fixture-preflight.json",
+      "sha256": "770b270af89ff636bf4514b7e2608afbe9c58ab6738a7264cf4ad64834321e4d",
+      "bytes": 716
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/journey-status.json",
+      "sha256": "ca4b50a6aabd8c09a9998c501233e663a1a779dee115f77beed1cc4e481ab5c3",
+      "bytes": 15
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/owned-absence-verification.json",
+      "sha256": "37a177d2470b42f76a952e2b908c0cfc8ba432a36e4ce9292df816a49f77c513",
+      "bytes": 240
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/run-status.json",
+      "sha256": "ca4b50a6aabd8c09a9998c501233e663a1a779dee115f77beed1cc4e481ab5c3",
+      "bytes": 15
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/runtime-identity.json",
+      "sha256": "b3538cead9f4755f18105a6170bbb40ba5c6b1ddff7a0c313b5e9902d0d221af",
+      "bytes": 234
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/start-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/static-verification.json",
+      "sha256": "53487962b319998a928a18fb4a323a41106f47a88a6ab6792f2b54a3f9de041a",
+      "bytes": 7072
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/summary.json",
+      "sha256": "fece28241b350fd45f039b14d71a7626eb295ce3f2324e038a99e3b7084c7e67",
+      "bytes": 1191
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T01.json",
+      "sha256": "cd6e9bbed4216a8540bd9750b60319d6c04dd00d886f26a3fe1cbbc33073c344",
+      "bytes": 151
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T02.json",
+      "sha256": "f885e96ca41e0bfcf79d10edf25f0754134dd6937096e4fe9d3d3de7662f7852",
+      "bytes": 151
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T03.json",
+      "sha256": "f6fa5e73c68d685cb1894fa0f8af3bb573bae305f4a00ea6a3b93efb738fe381",
+      "bytes": 151
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T04.json",
+      "sha256": "2ae247b632ad9e9a2c40bfcb1fcc1833d70ffadf5ad328ee88815c4df2df2358",
+      "bytes": 151
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T05.json",
+      "sha256": "be573bca5714ac9cade05f39e8bc87d9d351d4b9eaed4ee67a6ee9cce516575e",
+      "bytes": 151
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T06.json",
+      "sha256": "dc3a8a878b71d1e3ab5776ec6180dd5af72e5aaf85a4fc2f723aec5476105f53",
+      "bytes": 151
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T07.json",
+      "sha256": "99b2d544d96585d16a64fd9c1b3c0729a08769e50bfc2acda1d7d6f872b5ffa4",
+      "bytes": 151
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a1/T08.json",
+      "sha256": "d0bcefe56fbfbb2a9ce1be001fa9de044957992ba8793e1b38bfb4d6d996550f",
+      "bytes": 151
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/browser-cleanup.json",
+      "sha256": "721e7350435fb86609e37abc701d227851a8fb51f1edbeb026e5f4d55af484d8",
+      "bytes": 79
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/byte-budget.json",
+      "sha256": "170a5c7075acbc958ef405a72ec9914334b7cf3b677542b3873047d447e680d5",
+      "bytes": 565
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-report.json",
+      "sha256": "2c46d6b251ff254d770c8d2c864e69f5f4ceb6f8acfa35640f86f33b7deba348",
+      "bytes": 143
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/cleanup-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/diagnostics.json",
+      "sha256": "fa6eae44fd98450f5816600f1b1989690e6280b4b10cce91bdd4e191d4a32443",
+      "bytes": 206
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/executed-source-verification.json",
+      "sha256": "b7393584d2686080eb73e4a74b9bd2c4e5685eff42071e0bc5fc7a50ec0ade42",
+      "bytes": 2729
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/fresh-verification-public.json",
+      "sha256": "f71bd86d205cfb6a78e4c95f2040d0dffb647c97c2bd5ebdaf73e6dfac9c84e1",
+      "bytes": 6476
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/cleanup.mjs",
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "bytes": 2652
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/collector.mjs",
+      "sha256": "fd20d2389af53cb4684784ae5d1f15af898791c2832d65e32f8d8ca822eafc64",
+      "bytes": 3658
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/contract.mjs",
+      "sha256": "acfb993eee84733ac9999a99e1ab8e0bd850f4b85e0b48b838177b59e2f79aed",
+      "bytes": 2533
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/controls.mjs",
+      "sha256": "88f68d6f0840f6aa48a61ad7a8bd0bda5b25b4bcc380ddfd86c9222bbfa9ee59",
+      "bytes": 2236
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/fixture.json",
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "bytes": 2031
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/io.mjs",
+      "sha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0",
+      "bytes": 1327
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/journey.mjs",
+      "sha256": "5c227796428b398ac3607b7113f952b103f0a1a94bee0578a590c9900cff9f74",
+      "bytes": 18121
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/projection.mjs",
+      "sha256": "ef32bcfe55198d7b473154d157c87b756dacfb84c3ed6a4b9e7905f1c897588c",
+      "bytes": 9589
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/run.sh",
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "bytes": 2183
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/start.mjs",
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "bytes": 2604
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/static-check.mjs",
+      "sha256": "8d321b1f2f3aecdcf3af5e91c1bb5b59e0d88edb542ded3fa14fe28712ed0f0c",
+      "bytes": 11791
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/verify.mjs",
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "bytes": 2984
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/identity-fixture-preflight.json",
+      "sha256": "0623a28165950896a20067184c4ebc1b78631038526249d8c83b57d403bfe1b4",
+      "bytes": 10765
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/journey-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/owned-absence-verification.json",
+      "sha256": "37a177d2470b42f76a952e2b908c0cfc8ba432a36e4ce9292df816a49f77c513",
+      "bytes": 240
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/run-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/runtime-identity.json",
+      "sha256": "b3538cead9f4755f18105a6170bbb40ba5c6b1ddff7a0c313b5e9902d0d221af",
+      "bytes": 234
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/start-status.json",
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af",
+      "bytes": 15
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/static-verification.json",
+      "sha256": "c098553db7a38c72eafec8ab0fc3a7e06c41ce74396f9062e44c794b8f6cb123",
+      "bytes": 7803
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/summary.json",
+      "sha256": "ee75219f0b41cc669c89134249a996eef14bc5d163d475d9106140164b9dc572",
+      "bytes": 1366
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T01.json",
+      "sha256": "af0645afb8f1fb2e2eff4915e79f4464b5efc2c61c8db17bde9d0fb66c25cc46",
+      "bytes": 14492
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T02.json",
+      "sha256": "4011f1057dfca77abd7d048863a510a4a64983fc3823274b9c2334bc657526f3",
+      "bytes": 11999
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T03.json",
+      "sha256": "60b5fc502233e7e8459a3112336122f06734f79a755d803a77e774d63aecd969",
+      "bytes": 1777
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T04.json",
+      "sha256": "6e71d9891de8db94223f51df10ce3bbfc53119071fa77e7eaf799748adb648a0",
+      "bytes": 14092
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T05.json",
+      "sha256": "9256c47a89789af3affa0492fabfea49b81447ae0ba2cf97d54cd7940e71ae98",
+      "bytes": 2582
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T06-Single-terminal.png",
+      "sha256": "a2019d6808415bb9596d487997a165639d952c03c7ca77b8383e27a0d36dbde9",
+      "bytes": 33969
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T06.json",
+      "sha256": "5d21196e5e29a77c1df950a193781bac7497dcd55ad29e61fc17380a0eea772b",
+      "bytes": 82051
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T07.json",
+      "sha256": "bf6eef82fd0cb1b9e7f3b7ef0bec67082aa971234c047dc1a6f81af1aa25b0dc",
+      "bytes": 16102
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/T08.json",
+      "sha256": "2c14ddb93eb9b684cbb6c6beb74a4b17263ce32c42d5662485c249879ba4a0ab",
+      "bytes": 3071
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/commands.json",
+      "sha256": "456bdf522b75a69a0b3db9601a5107487bd5f6d912d259413178bc3e78547661",
+      "bytes": 1937
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/cleanup.mjs",
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "bytes": 2652
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/collector.mjs",
+      "sha256": "fd20d2389af53cb4684784ae5d1f15af898791c2832d65e32f8d8ca822eafc64",
+      "bytes": 3658
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/contract.mjs",
+      "sha256": "acfb993eee84733ac9999a99e1ab8e0bd850f4b85e0b48b838177b59e2f79aed",
+      "bytes": 2533
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/controls.mjs",
+      "sha256": "88f68d6f0840f6aa48a61ad7a8bd0bda5b25b4bcc380ddfd86c9222bbfa9ee59",
+      "bytes": 2236
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/fixture.json",
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "bytes": 2031
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/io.mjs",
+      "sha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0",
+      "bytes": 1327
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/journey.mjs",
+      "sha256": "5c227796428b398ac3607b7113f952b103f0a1a94bee0578a590c9900cff9f74",
+      "bytes": 18121
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/projection.mjs",
+      "sha256": "ef32bcfe55198d7b473154d157c87b756dacfb84c3ed6a4b9e7905f1c897588c",
+      "bytes": 9589
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/run.sh",
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "bytes": 2183
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/start.mjs",
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "bytes": 2604
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/static-check.mjs",
+      "sha256": "8d321b1f2f3aecdcf3af5e91c1bb5b59e0d88edb542ded3fa14fe28712ed0f0c",
+      "bytes": 11791
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/harness/verify.mjs",
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "bytes": 2984
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/link-verification.json",
+      "sha256": "4dedda8e472a4c0873dcc70c6a87007e4ad05690be88fb7eb3f4fbe24e3ca254",
+      "bytes": 2265
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/package.mjs",
+      "sha256": "98ceffcceaf8db22612c1457be94c0ae1cb765da27638e87ca2eff788bfe0268",
+      "bytes": 4831
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/preparation.md",
+      "sha256": "6f6cf7cb569912492419fd9909ae13d7801344a2fbddcae9b5d843447e6713d8",
+      "bytes": 2663
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/publication-allowlist.json",
+      "sha256": "b044e0a45bd15c361227e68d25fa3b32b2679acef98879aa11a187bb7a7e9783",
+      "bytes": 22606
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/report.md",
+      "sha256": "f2ee081cfcb85a6387d8856aac928a15264819ffddce6f8d0034b3cb514a6151",
+      "bytes": 5754
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/static-verification.json",
+      "sha256": "c098553db7a38c72eafec8ab0fc3a7e06c41ce74396f9062e44c794b8f6cb123",
+      "bytes": 7803
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/verify-owned.mjs",
+      "sha256": "d4ca2b8dab2d4b7c8b19f4eaac8f5f4d0e61d5f456127df3078332f4b2ee91e6",
+      "bytes": 1355
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/plan.md",
+      "sha256": "745c11da2995a2ad1a629c5c2c2dfd13162f6ec8b77255988f7ab5375c6eb5dc",
+      "bytes": 23280
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/source-hashes.json",
+      "sha256": "9e25d29614d728471f1c329cb8cebc2089f22f02c83635c87f2700ae320e3f8b",
+      "bytes": 10436
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/audit.mjs",
+      "sha256": "eec066e4ec7cd2b9a61c867c5516f597fdbe74bb992a08116de2731b7fd3ffe1",
+      "bytes": 2981
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/correction-1-review.md",
+      "sha256": "cc2b5023f05815b1280a629fddf069c3aafff6f523f414d06bc9d44b22a2ed88",
+      "bytes": 2453
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/correction-1-verification.json",
+      "sha256": "05aae3ce0f46d7ccff9c439867f8e6a1d70830cbf880932bcedae8bda484b04e",
+      "bytes": 8801
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/harness-audit.mjs",
+      "sha256": "ee12cf7111deccb87e25166a317483a69f088b2b178a889bf726ddcebaa772c0",
+      "bytes": 2025
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/harness-review.md",
+      "sha256": "43f53a37381041e9be644a836016d71fe414d0c3ee2c413f4b8f8a34edcd4dc7",
+      "bytes": 3586
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/harness-verification.json",
+      "sha256": "0841ebe584ec8b19b2d81254bf5c336a79f9e33eb524f400be95a6b061263d61",
+      "bytes": 2335
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/plan-review.md",
+      "sha256": "960cf53c8fe6e392122ac9e445637f1474109916c7409c97cb3a47b5e425e5af",
+      "bytes": 3509
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/runtime-audit.mjs",
+      "sha256": "f6fcb04b34d7087cdbac4080d8dd6b204794608fad72395eb23355eccaaf18b7",
+      "bytes": 5490
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/runtime-review.md",
+      "sha256": "09f3fa0e63dc77e742bc71064253ded345c0d4d0f81075f00e2e261c23534059",
+      "bytes": 4106
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/runtime-verification.json",
+      "sha256": "8c6d993a3c583b95c22a18286e3628cc5770399782661c744204b998c44b2d68",
+      "bytes": 50699
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-review/verification.json",
+      "sha256": "82756b831a1790167ba98e45b6742c6016793567481f93992662233141b1a532",
+      "bytes": 7973
+    }
+  ],
+  "exclusions": [
+    "Private runtime receipts and logs",
+    "Superseded preflight allowlists",
+    "Source-only correction proposal and future packages",
+    "Historical external reference inputs"
+  ],
+  "selfHash": "Parent records separately"
+}

@@ -1,0 +1,300 @@
+{
+  "scope": "Fresh bounded original capture verification; unresolved case outcomes remain unresolved",
+  "checks": [
+    {
+      "name": "Case cap T01.json",
+      "passed": true
+    },
+    {
+      "name": "Case cap T02.json",
+      "passed": true
+    },
+    {
+      "name": "Case cap T03.json",
+      "passed": true
+    },
+    {
+      "name": "Case cap T04.json",
+      "passed": true
+    },
+    {
+      "name": "Case cap T05.json",
+      "passed": true
+    },
+    {
+      "name": "PNG cap T06-Single-terminal.png",
+      "passed": true
+    },
+    {
+      "name": "Case cap T06.json",
+      "passed": true
+    },
+    {
+      "name": "Case cap T07.json",
+      "passed": true
+    },
+    {
+      "name": "Case cap T08.json",
+      "passed": true
+    },
+    {
+      "name": "JSON retained cap",
+      "passed": true
+    },
+    {
+      "name": "Run retained cap",
+      "passed": true
+    },
+    {
+      "name": "PNG count",
+      "passed": true
+    },
+    {
+      "name": "No credential file",
+      "passed": true
+    },
+    {
+      "name": "Pinned original",
+      "passed": true
+    },
+    {
+      "name": "Fixture",
+      "passed": true
+    },
+    {
+      "name": "Eight cases",
+      "passed": true
+    },
+    {
+      "name": "Input actions",
+      "passed": true
+    },
+    {
+      "name": "Probes",
+      "passed": true
+    },
+    {
+      "name": "Screenshots",
+      "passed": true
+    },
+    {
+      "name": "Case action cap T01",
+      "passed": true
+    },
+    {
+      "name": "Case ledger T01",
+      "passed": true
+    },
+    {
+      "name": "Case time T01",
+      "passed": true
+    },
+    {
+      "name": "Case action cap T02",
+      "passed": true
+    },
+    {
+      "name": "Case ledger T02",
+      "passed": true
+    },
+    {
+      "name": "Case time T02",
+      "passed": true
+    },
+    {
+      "name": "Case action cap T03",
+      "passed": true
+    },
+    {
+      "name": "Case ledger T03",
+      "passed": true
+    },
+    {
+      "name": "Case time T03",
+      "passed": true
+    },
+    {
+      "name": "Case action cap T04",
+      "passed": true
+    },
+    {
+      "name": "Case ledger T04",
+      "passed": true
+    },
+    {
+      "name": "Case time T04",
+      "passed": true
+    },
+    {
+      "name": "Case action cap T05",
+      "passed": true
+    },
+    {
+      "name": "Case ledger T05",
+      "passed": true
+    },
+    {
+      "name": "Case time T05",
+      "passed": true
+    },
+    {
+      "name": "Case action cap T06",
+      "passed": true
+    },
+    {
+      "name": "Case ledger T06",
+      "passed": true
+    },
+    {
+      "name": "Case time T06",
+      "passed": true
+    },
+    {
+      "name": "Case action cap T07",
+      "passed": true
+    },
+    {
+      "name": "Case ledger T07",
+      "passed": true
+    },
+    {
+      "name": "Case time T07",
+      "passed": true
+    },
+    {
+      "name": "Case action cap T08",
+      "passed": true
+    },
+    {
+      "name": "Case ledger T08",
+      "passed": true
+    },
+    {
+      "name": "Case time T08",
+      "passed": true
+    },
+    {
+      "name": "Owned cleanup",
+      "passed": true
+    },
+    {
+      "name": "Browser process absent",
+      "passed": true
+    },
+    {
+      "name": "Browser/context/server close",
+      "passed": true
+    },
+    {
+      "name": "Run exit",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "files": [
+    {
+      "name": "T01.json",
+      "bytes": 14492,
+      "sha256": "af0645afb8f1fb2e2eff4915e79f4464b5efc2c61c8db17bde9d0fb66c25cc46"
+    },
+    {
+      "name": "T02.json",
+      "bytes": 11999,
+      "sha256": "4011f1057dfca77abd7d048863a510a4a64983fc3823274b9c2334bc657526f3"
+    },
+    {
+      "name": "T03.json",
+      "bytes": 1777,
+      "sha256": "60b5fc502233e7e8459a3112336122f06734f79a755d803a77e774d63aecd969"
+    },
+    {
+      "name": "T04.json",
+      "bytes": 14092,
+      "sha256": "6e71d9891de8db94223f51df10ce3bbfc53119071fa77e7eaf799748adb648a0"
+    },
+    {
+      "name": "T05.json",
+      "bytes": 2582,
+      "sha256": "9256c47a89789af3affa0492fabfea49b81447ae0ba2cf97d54cd7940e71ae98"
+    },
+    {
+      "name": "T06-Single-terminal.png",
+      "bytes": 33969,
+      "sha256": "a2019d6808415bb9596d487997a165639d952c03c7ca77b8383e27a0d36dbde9"
+    },
+    {
+      "name": "T06.json",
+      "bytes": 82051,
+      "sha256": "5d21196e5e29a77c1df950a193781bac7497dcd55ad29e61fc17380a0eea772b"
+    },
+    {
+      "name": "T07.json",
+      "bytes": 16102,
+      "sha256": "bf6eef82fd0cb1b9e7f3b7ef0bec67082aa971234c047dc1a6f81af1aa25b0dc"
+    },
+    {
+      "name": "T08.json",
+      "bytes": 3071,
+      "sha256": "2c14ddb93eb9b684cbb6c6beb74a4b17263ce32c42d5662485c249879ba4a0ab"
+    },
+    {
+      "name": "browser-cleanup.json",
+      "bytes": 79,
+      "sha256": "721e7350435fb86609e37abc701d227851a8fb51f1edbeb026e5f4d55af484d8"
+    },
+    {
+      "name": "byte-budget.json",
+      "bytes": 565,
+      "sha256": "170a5c7075acbc958ef405a72ec9914334b7cf3b677542b3873047d447e680d5"
+    },
+    {
+      "name": "cleanup-report.json",
+      "bytes": 143,
+      "sha256": "2c46d6b251ff254d770c8d2c864e69f5f4ceb6f8acfa35640f86f33b7deba348"
+    },
+    {
+      "name": "cleanup-status.json",
+      "bytes": 15,
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+    },
+    {
+      "name": "diagnostics.json",
+      "bytes": 206,
+      "sha256": "fa6eae44fd98450f5816600f1b1989690e6280b4b10cce91bdd4e191d4a32443"
+    },
+    {
+      "name": "identity-fixture-preflight.json",
+      "bytes": 10765,
+      "sha256": "0623a28165950896a20067184c4ebc1b78631038526249d8c83b57d403bfe1b4"
+    },
+    {
+      "name": "journey-status.json",
+      "bytes": 15,
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+    },
+    {
+      "name": "run-status.json",
+      "bytes": 15,
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+    },
+    {
+      "name": "runtime-identity.json",
+      "bytes": 234,
+      "sha256": "b3538cead9f4755f18105a6170bbb40ba5c6b1ddff7a0c313b5e9902d0d221af"
+    },
+    {
+      "name": "start-status.json",
+      "bytes": 15,
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 1366,
+      "sha256": "ee75219f0b41cc669c89134249a996eef14bc5d163d475d9106140164b9dc572"
+    }
+  ],
+  "totalBytes": 201862,
+  "jsonBytes": 167893,
+  "pngs": 1,
+  "inventoryScope": "Safe selected files only; local private receipts and raw logs omitted"
+}

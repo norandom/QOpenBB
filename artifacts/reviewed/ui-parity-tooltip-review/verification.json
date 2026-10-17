@@ -1,0 +1,295 @@
+{
+  "scope": "Independent tooltip source plan preflight; no runtime",
+  "planSha256": "759fd3918f41ea08c8baf6d05ab379736329edc2a280c666b12093c7cf42bc6f",
+  "checkCount": 65,
+  "failed": [],
+  "links": [
+    {
+      "target": "../../../.kiro/specs/openbb-self-service/chart-editor-contract-close.md",
+      "destination": ".kiro/specs/openbb-self-service/chart-editor-contract-close.md",
+      "exists": true
+    },
+    {
+      "target": "../../../.kiro/specs/openbb-self-service/chart-consuming-contract-draft.md",
+      "destination": ".kiro/specs/openbb-self-service/chart-consuming-contract-draft.md",
+      "exists": true
+    },
+    {
+      "target": "../consuming-contract-freeze/appearance/draft.md",
+      "destination": "artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "exists": true
+    },
+    {
+      "target": "../consuming-contract-freeze/session/editor-field-ledger.json",
+      "destination": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "exists": true
+    },
+    {
+      "target": "source-hashes.json",
+      "destination": "artifacts/reviewed/ui-parity-tooltip-plan/source-hashes.json",
+      "exists": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "hash:AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "hash:.kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "hash:.kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "hash:.kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "hash:.kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "hash:.kiro/steering/ci.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/ci.md",
+      "passed": true
+    },
+    {
+      "name": "hash:.kiro/specs/openbb-self-service/spec.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/specs/openbb-self-service/spec.json",
+      "passed": true
+    },
+    {
+      "name": "hash:.kiro/specs/openbb-self-service/chart-editor-contract-close.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/specs/openbb-self-service/chart-editor-contract-close.md",
+      "passed": true
+    },
+    {
+      "name": "hash:.kiro/specs/openbb-self-service/chart-consuming-contract-draft.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/specs/openbb-self-service/chart-consuming-contract-draft.md",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/parity/editor-contract-close/source-analysis.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/parity/editor-contract-close/source-analysis.md",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/parity/editor-contract-close/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/parity/editor-contract-close/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/parity/editor-contract-close/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/parity/editor-contract-close/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/parity/editor-contract-close/tooltip-Multiple-hover.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/parity/editor-contract-close/tooltip-Multiple-hover.json",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:.agents/skills/kiro-verify-completion/SKILL.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.agents/skills/kiro-verify-completion/SKILL.md",
+      "passed": true
+    },
+    {
+      "name": "hash:terminalpro/package.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:terminalpro/package.json",
+      "passed": true
+    },
+    {
+      "name": "hash:terminalpro/src/components/General/Table/Chart/utils.tsx",
+      "passed": true
+    },
+    {
+      "name": "bytes:terminalpro/src/components/General/Table/Chart/utils.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash:terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "passed": true
+    },
+    {
+      "name": "bytes:terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash:terminalpro/src/components/General/Table/NavBar/useChartGeneration.tsx",
+      "passed": true
+    },
+    {
+      "name": "bytes:terminalpro/src/components/General/Table/NavBar/useChartGeneration.tsx",
+      "passed": true
+    },
+    {
+      "name": "hash:package.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:package.json",
+      "passed": true
+    },
+    {
+      "name": "hash:dist/package/main.esm.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:dist/package/main.esm.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:artifacts/ui-parity-tooltip-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/ui-parity-tooltip-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "fixture-canonical-hash",
+      "passed": true
+    },
+    {
+      "name": "fixture-canonical-bytes",
+      "passed": true
+    },
+    {
+      "name": "null-versus-absent",
+      "passed": true
+    },
+    {
+      "name": "duplicate-period-identity",
+      "passed": true
+    },
+    {
+      "name": "source-only",
+      "passed": true
+    },
+    {
+      "name": "eight-cases",
+      "passed": true
+    },
+    {
+      "name": "link:../../../.kiro/specs/openbb-self-service/chart-editor-contract-close.md",
+      "passed": true
+    },
+    {
+      "name": "link:../../../.kiro/specs/openbb-self-service/chart-consuming-contract-draft.md",
+      "passed": true
+    },
+    {
+      "name": "link:../consuming-contract-freeze/appearance/draft.md",
+      "passed": true
+    },
+    {
+      "name": "link:../consuming-contract-freeze/session/editor-field-ledger.json",
+      "passed": true
+    },
+    {
+      "name": "link:source-hashes.json",
+      "passed": true
+    }
+  ]
+}

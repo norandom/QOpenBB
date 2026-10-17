@@ -1,0 +1,135 @@
+{
+  "scope": "Independent frozen tooltip collector identity and accounting; no runtime",
+  "checkCount": 32,
+  "failed": [],
+  "checks": [
+    {
+      "name": "frozen-collector-manifest",
+      "passed": true
+    },
+    {
+      "name": "amended-plan",
+      "passed": true
+    },
+    {
+      "name": "source-manifest",
+      "passed": true
+    },
+    {
+      "name": "hash:cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:fixture.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:fixture.json",
+      "passed": true
+    },
+    {
+      "name": "hash:io.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:run.sh",
+      "passed": true
+    },
+    {
+      "name": "bytes:run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash:start.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "offline-checks",
+      "passed": true
+    },
+    {
+      "name": "bounded-input-count",
+      "passed": true
+    },
+    {
+      "name": "bounded-image-count",
+      "passed": true
+    },
+    {
+      "name": "retained-caps",
+      "passed": true
+    },
+    {
+      "name": "lifecycle-caps",
+      "passed": true
+    }
+  ]
+}
