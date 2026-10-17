@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "scope": "Independent source interpretation and offline metadata review; no Docker, daemon probe, Moby build/test, browser, topology change, Git mutation or frozen write",
+  "node": "v24.20.0",
+  "pins": {
+    "report.md": "452683d6236946992b34584a3ab1844e8f192e5ab0ab53b93962042d6ed77e62",
+    "source-hashes.json": "3b9009fc81f3a7eae88f9542622f59bff1a0ed296e4caaa6472a6439a406da41",
+    "publication-allowlist.json": "f41eea03628a31488df4594d988b8e281447698fb867d8b9a26ffffaafc0d469"
+  },
+  "checks": [
+    "dispatch pins",
+    "all source inputs and 19 publication hashes/bytes",
+    "tag/ref/release and controller-attributed version linkage",
+    "LICENSE NOTICE and public-only selection",
+    "all report local references and commit-scoped code links",
+    "36 protected supplied offline checks",
+    "38 read-only supplied freeze hash/byte checks",
+    "32-case derived publication predicate including routed-mode limits",
+    "frozen source and publication preserved"
+  ],
+  "suppliedOfflineChecks": 36,
+  "suppliedFreezeChecks": 38,
+  "predicateCases": 32,
+  "sourcePublicationFiles": 19,
+  "upstreamRetrieved": 11,
+  "sourceCommit": "6a43e3d5afddf4111da0f864bbc7cae5d7e95001",
+  "binaryIdentity": "Controller-attributed version/short commit only; not a reproducible binary attestation",
+  "frozenPreserved": true
+}

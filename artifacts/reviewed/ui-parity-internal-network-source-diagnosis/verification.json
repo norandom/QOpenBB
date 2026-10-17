@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "scope": "Offline source diagnosis only; no runtime or source execution",
+  "passed": true,
+  "checksCount": 36,
+  "localLinks": 3,
+  "checks": [
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/version-linkage.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/tag-ref.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/tag-object.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/release.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/LICENSE",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/NOTICE",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/network.go",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/container_operations.go",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/inspect.go",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/default_gateway.go",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/endpoint.go",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/endpoint_info.go",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/drivers/bridge/bridge_linux.go",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/drivers/bridge/port_mapping_linux.go",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/report.md",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes: artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/observations.json",
+      "passed": true
+    },
+    {
+      "name": "official tag object resolves matching full commit",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/network.go: if n.Internal() || len(getPortMapInfo(sb)) > 0 {",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/network.go: pm[natPort] = nil",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/container_operations.go: libnetwork.OptionPortMapping(publishedPorts)",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/container_operations.go: ctr.NetworkSettings.Ports = getPortMapInfo(sb)",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/libnetwork/default_gateway.go: if ep.getNetwork().Internal() {",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/libnetwork/default_gateway.go: gw4, gw6 := ep.hasGatewayOrDefaultRoute()",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/libnetwork/endpoint.go: ep.programExternalConnectivity(ctx, gwepAfter4, gwepAfter6)",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/libnetwork/drivers/bridge/bridge_linux.go: if !network.config.Internal {",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/libnetwork/drivers/bridge/bridge_linux.go: pbmReq := portBindingMode{routed: true}",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/libnetwork/drivers/bridge/bridge_linux.go: if gw6Id == eid || (gw6Id == \"\" && gw4Id == eid) {",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/libnetwork/drivers/bridge/port_mapping_linux.go: add4 := !ep.portBindingState.ipv4 && pbmReq.ipv4 || (disableNAT4 && !ep.portBindingState.routed && pbmReq.routed)",
+      "passed": true
+    },
+    {
+      "name": "source anchor: daemon/libnetwork/drivers/bridge/port_mapping_linux.go: add6 := !ep.portBindingState.ipv6 && pbmReq.ipv6 || (disableNAT6 && !ep.portBindingState.routed && pbmReq.routed)",
+      "passed": true
+    },
+    {
+      "name": "internal-only NAT does not add binding; old=false",
+      "passed": true
+    },
+    {
+      "name": "internal-only NAT does not add binding; old=true",
+      "passed": true
+    },
+    {
+      "name": "selected normal gateway can request NAT binding",
+      "passed": true
+    },
+    {
+      "name": "routed mode differs and is outside default-NAT conclusion",
+      "passed": true
+    },
+    {
+      "name": "local report link: version-linkage.json",
+      "passed": true
+    },
+    {
+      "name": "local report link: source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "local report link: ../ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/report.md",
+      "passed": true
+    }
+  ]
+}

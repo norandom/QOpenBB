@@ -1,0 +1,72 @@
+{
+  "scope": "Public upstream source retrieval only; no daemon/runtime probe",
+  "checkedAt": "2026-10-17T16:27:54.093Z",
+  "entries": [
+    {
+      "url": "https://api.github.com/repos/moby/moby/git/tags/d681cdaead9340bd36c513c7f5413a21bc679cfa",
+      "tagObjectSha": "d681cdaead9340bd36c513c7f5413a21bc679cfa",
+      "commit": "6a43e3d5afddf4111da0f864bbc7cae5d7e95001",
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/daemon/container_operations.go",
+      "sha256": "cc31fb20f1cef9563a4210e5d8fced0bc19446e45cf359740a674cd2db0cedd0",
+      "bytes": 39577,
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/daemon/inspect.go",
+      "sha256": "84412d4ebb5a95c9cbb4f9d9b32132955787af0f22385817341b19000157f370",
+      "bytes": 8051,
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/daemon/libnetwork/default_gateway.go",
+      "sha256": "af2f9812660687b5952c4150ba09b980506ad23c3c88f398040ee8e8b382fd68",
+      "bytes": 5841,
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/daemon/libnetwork/drivers/bridge/bridge_linux.go",
+      "sha256": "d51aa0be838a30518615d7988d57f63d5b34c859e800c8804c5529365b40cb48",
+      "bytes": 58640,
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/daemon/libnetwork/drivers/bridge/port_mapping_linux.go",
+      "sha256": "4b29331185d337a9b426cf78282e32da195cf7f7dd09f59c2bb2762cf5cb7e53",
+      "bytes": 17074,
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/daemon/libnetwork/endpoint_info.go",
+      "sha256": "d848431c57a8982b1ae3de5bc99fc67c6f48f967c149403a79441961220acd32",
+      "bytes": 16056,
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/daemon/libnetwork/endpoint.go",
+      "sha256": "7b79a6759645767e2c613fc7026a7d26870b6ca7d62178f965684c4a93302fad",
+      "bytes": 40727,
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/daemon/network.go",
+      "sha256": "fbce4af782a08467bd9b53f3c8c21eb84ec33f3b15f2534c7194fe90b100b6bc",
+      "bytes": 40079,
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/LICENSE",
+      "sha256": "7c87873291f289713ac5df48b1f2010eb6963752bbd6b530416ab99fc37914a8",
+      "bytes": 10765,
+      "matched": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/moby/moby/6a43e3d5afddf4111da0f864bbc7cae5d7e95001/NOTICE",
+      "sha256": "b40ec5b16182103ef1cd69d42a21c98369e35bd483b3973902da4807c0755446",
+      "bytes": 642,
+      "matched": true
+    }
+  ]
+}

@@ -101,10 +101,12 @@
     "ui-parity-tooltip-failure-metadata-plan-revision-review",
     "ui-parity-legend-startup-diagnostic",
     "ui-parity-legend-startup-diagnostic-review",
-    "ui-parity-legend-startup-diagnostic-runtime-review"
+    "ui-parity-legend-startup-diagnostic-runtime-review",
+    "ui-parity-internal-network-source-diagnosis",
+    "ui-parity-internal-network-source-review"
   ],
   "sourcepins": {
-    "root_at_sync": "bb775405a5d7cd6e7c0c9ba2b0df9249684dd957",
+    "root_at_sync": "f1847893b70cbb99a084bfcc2360822ab05ffaca",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -26965,6 +26967,206 @@
       "publishedSHA256": "82ffd8122cff84336bcc138d768a3a0926eb7d2a00d77b2fee93e3c18e60f387",
       "bytes": 850,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/version-linkage.json",
+      "sourceSHA256": "34d74faebdbe6bfd915d3802daccbc1e36525321f2f8cd5a27f0504e802c262d",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/version-linkage.json",
+      "publishedSHA256": "34d74faebdbe6bfd915d3802daccbc1e36525321f2f8cd5a27f0504e802c262d",
+      "bytes": 832,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/tag-ref.json",
+      "sourceSHA256": "b73b3eb073a802e8a5da5271d799acb56618ceb70221622697d00b01265b294f",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/tag-ref.json",
+      "publishedSHA256": "b73b3eb073a802e8a5da5271d799acb56618ceb70221622697d00b01265b294f",
+      "bytes": 345,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/tag-object.json",
+      "sourceSHA256": "cdfc17ed2b956a81bf45269cf91f6c112b104ec4a7f1095ff9fa7f71e7a0a50d",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/tag-object.json",
+      "publishedSHA256": "cdfc17ed2b956a81bf45269cf91f6c112b104ec4a7f1095ff9fa7f71e7a0a50d",
+      "bytes": 1460,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/release.json",
+      "sourceSHA256": "274bcd4151c5c17bcb0793bb1126700b1c8b6d0ad4dec2e120dc15f6dceeba40",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/release.json",
+      "publishedSHA256": "274bcd4151c5c17bcb0793bb1126700b1c8b6d0ad4dec2e120dc15f6dceeba40",
+      "bytes": 3378,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/LICENSE",
+      "sourceSHA256": "7c87873291f289713ac5df48b1f2010eb6963752bbd6b530416ab99fc37914a8",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/LICENSE",
+      "publishedSHA256": "7c87873291f289713ac5df48b1f2010eb6963752bbd6b530416ab99fc37914a8",
+      "bytes": 10765,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/NOTICE",
+      "sourceSHA256": "b40ec5b16182103ef1cd69d42a21c98369e35bd483b3973902da4807c0755446",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/NOTICE",
+      "publishedSHA256": "b40ec5b16182103ef1cd69d42a21c98369e35bd483b3973902da4807c0755446",
+      "bytes": 642,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/network.go",
+      "sourceSHA256": "fbce4af782a08467bd9b53f3c8c21eb84ec33f3b15f2534c7194fe90b100b6bc",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/daemon/network.go",
+      "publishedSHA256": "fbce4af782a08467bd9b53f3c8c21eb84ec33f3b15f2534c7194fe90b100b6bc",
+      "bytes": 40079,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/container_operations.go",
+      "sourceSHA256": "cc31fb20f1cef9563a4210e5d8fced0bc19446e45cf359740a674cd2db0cedd0",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/daemon/container_operations.go",
+      "publishedSHA256": "cc31fb20f1cef9563a4210e5d8fced0bc19446e45cf359740a674cd2db0cedd0",
+      "bytes": 39577,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/inspect.go",
+      "sourceSHA256": "84412d4ebb5a95c9cbb4f9d9b32132955787af0f22385817341b19000157f370",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/daemon/inspect.go",
+      "publishedSHA256": "84412d4ebb5a95c9cbb4f9d9b32132955787af0f22385817341b19000157f370",
+      "bytes": 8051,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/default_gateway.go",
+      "sourceSHA256": "af2f9812660687b5952c4150ba09b980506ad23c3c88f398040ee8e8b382fd68",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/default_gateway.go",
+      "publishedSHA256": "af2f9812660687b5952c4150ba09b980506ad23c3c88f398040ee8e8b382fd68",
+      "bytes": 5841,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/endpoint.go",
+      "sourceSHA256": "7b79a6759645767e2c613fc7026a7d26870b6ca7d62178f965684c4a93302fad",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/endpoint.go",
+      "publishedSHA256": "7b79a6759645767e2c613fc7026a7d26870b6ca7d62178f965684c4a93302fad",
+      "bytes": 40727,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/endpoint_info.go",
+      "sourceSHA256": "d848431c57a8982b1ae3de5bc99fc67c6f48f967c149403a79441961220acd32",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/endpoint_info.go",
+      "publishedSHA256": "d848431c57a8982b1ae3de5bc99fc67c6f48f967c149403a79441961220acd32",
+      "bytes": 16056,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/drivers/bridge/bridge_linux.go",
+      "sourceSHA256": "d51aa0be838a30518615d7988d57f63d5b34c859e800c8804c5529365b40cb48",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/drivers/bridge/bridge_linux.go",
+      "publishedSHA256": "d51aa0be838a30518615d7988d57f63d5b34c859e800c8804c5529365b40cb48",
+      "bytes": 58640,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/drivers/bridge/port_mapping_linux.go",
+      "sourceSHA256": "4b29331185d337a9b426cf78282e32da195cf7f7dd09f59c2bb2762cf5cb7e53",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source/daemon/libnetwork/drivers/bridge/port_mapping_linux.go",
+      "publishedSHA256": "4b29331185d337a9b426cf78282e32da195cf7f7dd09f59c2bb2762cf5cb7e53",
+      "bytes": 17074,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/report.md",
+      "sourceSHA256": "452683d6236946992b34584a3ab1844e8f192e5ab0ab53b93962042d6ed77e62",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/report.md",
+      "publishedSHA256": "452683d6236946992b34584a3ab1844e8f192e5ab0ab53b93962042d6ed77e62",
+      "bytes": 8337,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/source-hashes.json",
+      "sourceSHA256": "3b9009fc81f3a7eae88f9542622f59bff1a0ed296e4caaa6472a6439a406da41",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/source-hashes.json",
+      "publishedSHA256": "3b9009fc81f3a7eae88f9542622f59bff1a0ed296e4caaa6472a6439a406da41",
+      "bytes": 5865,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/verify.mjs",
+      "sourceSHA256": "47f10c0e4138f3b9456a5b6398f38da0d2de8b4fe144e230414c124b181f6484",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/verify.mjs",
+      "publishedSHA256": "47f10c0e4138f3b9456a5b6398f38da0d2de8b4fe144e230414c124b181f6484",
+      "bytes": 4289,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/verification.json",
+      "sourceSHA256": "313ffe0f53437907853f4fdb9c36d1dc51fd450f4288d3e89d97e2a2edde8ecc",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/verification.json",
+      "publishedSHA256": "313ffe0f53437907853f4fdb9c36d1dc51fd450f4288d3e89d97e2a2edde8ecc",
+      "bytes": 5391,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-diagnosis/freeze-check.mjs",
+      "sourceSHA256": "d572c827cce73597c627e0a4825c8877ebc8a3550a3de67edea6f7e300bd1928",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-diagnosis/freeze-check.mjs",
+      "publishedSHA256": "d572c827cce73597c627e0a4825c8877ebc8a3550a3de67edea6f7e300bd1928",
+      "bytes": 861,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-review/reviewed-source-publication-allowlist.json",
+      "sourceSHA256": "f808d2c42f553e349a83caadec57a25dc1994909d2fb87e205102c6ac56ec791",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-review/reviewed-source-publication-allowlist.json",
+      "publishedSHA256": "f808d2c42f553e349a83caadec57a25dc1994909d2fb87e205102c6ac56ec791",
+      "bytes": 3998,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-review/review.md",
+      "sourceSHA256": "a9f37f7f33026b6b996b7cc91526a87f478423e30b20e7f13a9c54b98e7bf1cf",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-review/review.md",
+      "publishedSHA256": "a9f37f7f33026b6b996b7cc91526a87f478423e30b20e7f13a9c54b98e7bf1cf",
+      "bytes": 7927,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-review/audit.mjs",
+      "sourceSHA256": "802ca83b4466b42f89e10b7301f80601b6a059a089d743de2bcbc9bba559d72e",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-review/audit.mjs",
+      "publishedSHA256": "802ca83b4466b42f89e10b7301f80601b6a059a089d743de2bcbc9bba559d72e",
+      "bytes": 7471,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-review/verification.json",
+      "sourceSHA256": "5ac7c82e1a2241d32c7fa68cdb76d73f07a8cadbc3d6fc036aff6e87a865ead3",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-review/verification.json",
+      "publishedSHA256": "5ac7c82e1a2241d32c7fa68cdb76d73f07a8cadbc3d6fc036aff6e87a865ead3",
+      "bytes": 1352,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-review/primary-source-receipt.json",
+      "sourceSHA256": "f344b1d0819ef27d10751d1bdf3e10604070cf4c16d36e5e6966c02bf85df963",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-review/primary-source-receipt.json",
+      "publishedSHA256": "f344b1d0819ef27d10751d1bdf3e10604070cf4c16d36e5e6966c02bf85df963",
+      "bytes": 3112,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-internal-network-source-review/publication-allowlist.json",
+      "sourceSHA256": "7f15e165f30002be9844ecdf8cf6be1486c6bbc3e835ecd280fed2b4d78bdac7",
+      "publishedpath": "artifacts/reviewed/ui-parity-internal-network-source-review/publication-allowlist.json",
+      "publishedSHA256": "7f15e165f30002be9844ecdf8cf6be1486c6bbc3e835ecd280fed2b4d78bdac7",
+      "bytes": 1017,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -27678,5 +27880,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 160085107
+  "total_payload_bytes": 160378194
 }
