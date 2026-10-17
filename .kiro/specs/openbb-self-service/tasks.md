@@ -901,7 +901,7 @@ Sol owns the backend lane; Astra independently reviews query semantics and accep
   - _Depends: 1.2, 1.4, 1.7, 2.5_
   - _Requirements: 1.1, 10.5, 10.6_
 
-- [ ] 4.7 Repair populated dashboard and app reads without changing access semantics
+- [x] 4.7 Repair populated dashboard and app reads without changing access semantics
   - Add regressions for all six populated reads across full, partial-null, null, empty, whitespace and asymmetric empty names. Assert exact displayed attribution, IDs, content and relevant sharing flags.
   - Seed distinct owner, creator, recipient and unrelated users across entities/permission maps, active/inactive shares and exclusion sets. Assert exact visible membership and the existing noex owner-permissions behavior. Capture raw entity query cardinality and fail on Cartesian-product warnings so result dictionaries cannot hide duplicate rows.
   - Retain failing reference evidence before applying exactly the six dialect-aware string expression replacements and missing creator join. Capture actual selects for SQLite execution and MySQL compilation; compilation is not live MySQL acceptance. If newer SQLite supports concat, preserve observed baseline results rather than manufacture six failures; the missing-join regression must expose the real defect.
@@ -931,3 +931,5 @@ Sol owns the backend lane; Astra independently reviews query semantics and accep
   - _Requirements: 1.1, 1.4, 2.2, 4.2, 4.7, 10.3, 10.5, 10.6_
 
 Task 4.6 accepted after independent Astra re-review: two real-model bootstrap/storage tests, Ruff and formatting pass; cleanup passes after success and expected nonzero exit. The initial retained pytest database defect was repaired with an owned temporary root and its three confirmed leftovers removed. Evidence: artifacts/task-4.6/review/review-round2.md. Workspace 693954f43aac8af888cfe6e7bfed6d9dcb72d2f5. Frozen runtime: Python 3.13.15 under /home/mc/qopenbb-work/sqlite-runtime/venv; launcher backend-api/backend/tests_sqlite/run.py. Query repair and application acceptance remain unverified.
+
+Task 4.7 accepted after independent Astra review: 53 tests pass with zero skips versus 10 failing/43 passing baseline cases. Exact seven-site diff, identical test/runtime manifests and preserved sharing/name semantics verified. CRUD measures 1599 physical/582 logical/max function 36; the measured exception is registered with expiry 2026-11-17. Workspace 4579cea149db29a592b28e4a2312c4348f4038dc. See [SQLite verification](sqlite-repair-verification.md) and artifacts/task-4.7/review/verdict.md. Whole-file formatting fails equally before/after; scoped lint passes. Bulk persistence and application acceptance remain open.
