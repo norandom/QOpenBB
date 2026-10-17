@@ -344,3 +344,5 @@ The [relay mount source](chart-legend-capture-plan.md) independently passes the 
 The [Legend UI relay capacity plan](chart-legend-capture-plan.md) passes eight supplied and 53 independent source checks. Its finite capacity assumptions are explicit and do not establish actual image traffic. The next source join is limited to transport, lifecycle and evidence accounting; original controls, cases, theme and visible behavior remain unchanged.
 
 The [corrected relay topology](chart-legend-capture-plan.md) now has independently accepted finite runtime evidence: final HTTP 200, selected topology/configuration checks and recorded exact-resource cleanup. Earlier failed requests and the 525-byte aggregate difference remain explicit. The collector integration can advance toward original Legend capture, with no full-UI or byte-completeness inference from the probe.
+
+The [Legend UI relay Python lane](chart-legend-capture-plan.md) is independently accepted with preserved transport behavior and bounded fresh checkpoints. The source is frozen separately from the ongoing JavaScript integration. No browser run or complete collector acceptance follows from this subtask.

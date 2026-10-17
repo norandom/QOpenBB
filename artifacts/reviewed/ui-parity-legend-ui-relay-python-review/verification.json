@@ -1,0 +1,36 @@
+{
+  "verdict": "APPROVED_PYTHON_ONLY",
+  "pins": {
+    "artifacts/ui-parity-legend-ui-relay-collector/harness/relay.py": "b4274ed8bad51791ed7d6126cdd3cd6f6ccceeafc57a7313b4c7df2c387b028c",
+    "artifacts/ui-parity-legend-ui-relay-collector/test-relay.py": "b0ab59b0ffacce9aa104abc38113ed01bd068f9029391ce4864ffd59ef32feda",
+    "artifacts/ui-parity-legend-relay-mount-source/harness/relay.py": "ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf"
+  },
+  "canonicalTests": {
+    "run": 16,
+    "failures": 0,
+    "errors": 0
+  },
+  "baselineRed": {
+    "run": 2,
+    "failures": 2,
+    "errors": 0
+  },
+  "unchangedDefinitions": [
+    "config_target",
+    "Relay.breach",
+    "Relay.close_pair",
+    "Relay.set_events",
+    "Relay.refresh",
+    "Relay.accept_pair",
+    "Relay.read",
+    "Relay.transfer",
+    "Relay.tick"
+  ],
+  "focusedChecks": [
+    "400 requests during snapshot writes coalesce to four acknowledgements and one fresh closure",
+    "startup/checkpoint/final persistence failures terminate with bounded writes and closed endpoints",
+    "short write fails after one fixed 4096-byte attempt without truncate or extra file"
+  ],
+  "runtimeExecuted": false,
+  "mutableJavaScriptInspected": false
+}

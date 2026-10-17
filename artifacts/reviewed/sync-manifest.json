@@ -119,10 +119,12 @@
     "ui-parity-legend-relay-mount-source-review",
     "ui-parity-legend-ui-relay-capacity",
     "ui-parity-legend-ui-relay-capacity-review",
-    "ui-parity-legend-relay-topology-review"
+    "ui-parity-legend-relay-topology-review",
+    "ui-parity-legend-ui-relay-collector",
+    "ui-parity-legend-ui-relay-python-review"
   ],
   "sourcepins": {
-    "root_at_sync": "d2f43deb60de7720e32e81e2f380d0fb8486e717",
+    "root_at_sync": "d21c1cd3f0543880b57ae8ad1e55d2b937e920ce",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -28943,6 +28945,62 @@
       "publishedSHA256": "1d3ee512741429a438a278d8a4514ae26ba68097fbef10e1e7a1e1e74226b156",
       "bytes": 825,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-collector/harness/relay.py",
+      "sourceSHA256": "b4274ed8bad51791ed7d6126cdd3cd6f6ccceeafc57a7313b4c7df2c387b028c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-collector/harness/relay.py",
+      "publishedSHA256": "b4274ed8bad51791ed7d6126cdd3cd6f6ccceeafc57a7313b4c7df2c387b028c",
+      "bytes": 12572,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-collector/test-relay.py",
+      "sourceSHA256": "b0ab59b0ffacce9aa104abc38113ed01bd068f9029391ce4864ffd59ef32feda",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-collector/test-relay.py",
+      "publishedSHA256": "b0ab59b0ffacce9aa104abc38113ed01bd068f9029391ce4864ffd59ef32feda",
+      "bytes": 18899,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-python-review/reviewed-python-publication-allowlist.json",
+      "sourceSHA256": "b2d7866d3bd24b41d02ef3890dcdcf9d5d0764a383807c0a04661ea6013f0326",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-python-review/reviewed-python-publication-allowlist.json",
+      "publishedSHA256": "b2d7866d3bd24b41d02ef3890dcdcf9d5d0764a383807c0a04661ea6013f0326",
+      "bytes": 400,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-python-review/review.md",
+      "sourceSHA256": "b15ce6bfacaedb2bd7e892b7df05b92f86de3d279f4411a413a877992d3765fe",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-python-review/review.md",
+      "publishedSHA256": "b15ce6bfacaedb2bd7e892b7df05b92f86de3d279f4411a413a877992d3765fe",
+      "bytes": 3633,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-python-review/audit.py",
+      "sourceSHA256": "ea2476e1c61c09470becb06abce9a5b63959a9301449f49297449ab51c601a91",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-python-review/audit.py",
+      "publishedSHA256": "ea2476e1c61c09470becb06abce9a5b63959a9301449f49297449ab51c601a91",
+      "bytes": 7022,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-python-review/verification.json",
+      "sourceSHA256": "d60c1c57fc15c00eb3f4b20177f4b819218f7a64e4c342c94c7eb4115ed46cf0",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-python-review/verification.json",
+      "publishedSHA256": "d60c1c57fc15c00eb3f4b20177f4b819218f7a64e4c342c94c7eb4115ed46cf0",
+      "bytes": 1263,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-python-review/publication-allowlist.json",
+      "sourceSHA256": "996fdbab1c0d6db7679aefef9f002f3a2e1ffa656dcbf86b2fe7eed2d2a8e95f",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-python-review/publication-allowlist.json",
+      "publishedSHA256": "996fdbab1c0d6db7679aefef9f002f3a2e1ffa656dcbf86b2fe7eed2d2a8e95f",
+      "bytes": 824,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -29656,5 +29714,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 161524937
+  "total_payload_bytes": 161569550
 }
