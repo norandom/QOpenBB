@@ -1,6 +1,6 @@
 # Runtime contracts: results and next implementation boundary
 
-The new original-runtime captures support a bounded ordinary grid adapter design and selected nested editor contracts. They do not yet support complete application activation. The next implementation proposal is [ordinary grid capture](chart-grid-capture-design.md), using the frozen A2 signature and public Community GridApi values. Independent design review and human approval precede its implementation task generation.
+The new original-runtime captures support a bounded ordinary grid adapter design and selected nested editor contracts. They do not yet support complete application activation. The next implementation proposal is [ordinary grid capture](chart-grid-capture-design.md), using the frozen A2 signature and public Community GridApi values. The owner approved the independently reviewed design. Tasks 2.38-2.40 passed independent task-graph review and await implementation approval; no adapter implementation has run.
 
 ## What this batch established
 
@@ -20,7 +20,7 @@ Reuse the existing public GridApi and snapshot validator. The adapter accepts al
 
 ## Work after this batch
 
-1. Review and approve the bounded grid-capture amendment, then generate capped tasks for the real-grid fixture, adapter and independent joined verification. The existing implementation contracts remain unchanged.
+1. Approve reviewed tasks 2.38-2.40 for the real-grid fixture, adapter and independent joined verification. See the [task review](../../../artifacts/reviewed/grid-capture-tasks/review/review.md). The existing implementation contracts remain unchanged.
 2. In parallel research, close finite appearance collision/derived-color rules and the remaining editor invocation/output gaps. A fresh reviewer checks these contracts before their implementation tasks are dispatched.
 3. Join accepted grid, appearance, formatting and editor behavior through the existing application session and entry points. Keep one owner for stored state and one integration lane for control wiring and guard removal.
 4. Verify actual table -> chart -> customize -> export -> return -> save/reopen/restart against the original, including light/dark screenshots and financial values. Then complete the remaining capability matrix before image/release acceptance.

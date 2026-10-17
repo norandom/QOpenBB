@@ -30,10 +30,11 @@
     "task-2.37",
     "parity",
     "appearance-next-audit",
-    "runtime-contract-next"
+    "runtime-contract-next",
+    "grid-capture-tasks"
   ],
   "sourcepins": {
-    "root_at_sync": "d1731387f3aafca09ed2130d6b2ed527cf42420b",
+    "root_at_sync": "61e5c17af063008a92a0ecc6c90ee451443dc9b0",
     "workspace_at_sync": "945e438a9a65c3eeef7073dbce64a03b02f0ff6f",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -5302,13 +5303,69 @@
       "publishedSHA256": "72334a3e809907c9b9bb1f9e666e7c7398213a98dfd84615c2287dc557bdbee7",
       "bytes": 1926,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/grid-capture-tasks/draft.md",
+      "sourceSHA256": "31ea307138bfd7a505dde950dc6e7f101d961c9ece3cfc2738b74bed1f47be11",
+      "publishedpath": "artifacts/reviewed/grid-capture-tasks/draft.md",
+      "publishedSHA256": "31ea307138bfd7a505dde950dc6e7f101d961c9ece3cfc2738b74bed1f47be11",
+      "bytes": 11544,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/grid-capture-tasks/merged-preview.md",
+      "sourceSHA256": "2c608e528da50fae7786f63f030cb403f079fae95efdec3bd91ef4017fc7352f",
+      "publishedpath": "artifacts/reviewed/grid-capture-tasks/merged-preview.md",
+      "publishedSHA256": "2c608e528da50fae7786f63f030cb403f079fae95efdec3bd91ef4017fc7352f",
+      "bytes": 151197,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/grid-capture-tasks/mechanical.json",
+      "sourceSHA256": "fe07e16361936ddf56dc69f610d07dbc23138f3180187c487a6a757f0f907b99",
+      "publishedpath": "artifacts/reviewed/grid-capture-tasks/mechanical.json",
+      "publishedSHA256": "fe07e16361936ddf56dc69f610d07dbc23138f3180187c487a6a757f0f907b99",
+      "bytes": 503,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/grid-capture-tasks/prepare.py",
+      "sourceSHA256": "72d9c056751d1aa322baacd0565a39d2a883feaf73ec7e48560e6fb2227a2430",
+      "publishedpath": "artifacts/reviewed/grid-capture-tasks/prepare.py",
+      "publishedSHA256": "72d9c056751d1aa322baacd0565a39d2a883feaf73ec7e48560e6fb2227a2430",
+      "bytes": 4100,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/grid-capture-tasks/review/check.py",
+      "sourceSHA256": "f9cf0de06a54935de868162dd29c000b3d1b27ee37ef9af9c46d39ce0cd56693",
+      "publishedpath": "artifacts/reviewed/grid-capture-tasks/review/check.py",
+      "publishedSHA256": "f9cf0de06a54935de868162dd29c000b3d1b27ee37ef9af9c46d39ce0cd56693",
+      "bytes": 4084,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/grid-capture-tasks/review/mechanical.json",
+      "sourceSHA256": "04a35b20e78c9c1db0d53b25f284d5114a37e9374d2c200bd752fac7aa949cb6",
+      "publishedpath": "artifacts/reviewed/grid-capture-tasks/review/mechanical.json",
+      "publishedSHA256": "04a35b20e78c9c1db0d53b25f284d5114a37e9374d2c200bd752fac7aa949cb6",
+      "bytes": 11066,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/grid-capture-tasks/review/review.md",
+      "sourceSHA256": "58f778233533e8281dd2dad36d145c137b7de195b9742e49e6d1bb02d0fcb7ae",
+      "publishedpath": "artifacts/reviewed/grid-capture-tasks/review/review.md",
+      "publishedSHA256": "58f778233533e8281dd2dad36d145c137b7de195b9742e49e6d1bb02d0fcb7ae",
+      "bytes": 6732,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
     {
       "publishedpath": "artifacts/reviewed/README.md",
-      "publishedSHA256": "78e091134ca828dfddd9df62d7d05472b4f4d1604fa03ecaad1a42c075ab4ed4",
-      "bytes": 7286,
+      "publishedSHA256": "a730340abe67fd4da51cef0e7bcabacc7ee4975715cfded6b1ac241375a1bae3",
+      "bytes": 7606,
       "transform": "new synchronization documentation; no historical source"
     }
   ],
@@ -5991,5 +6048,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 16549472
+  "total_payload_bytes": 16739018
 }

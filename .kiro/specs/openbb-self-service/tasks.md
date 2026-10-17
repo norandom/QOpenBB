@@ -25,9 +25,9 @@ Superseding owner constraint, 2026-10-16: preserve existing UX, design, themes, 
 | Wave | Eligible work | Exclusive writable scope | Join and shared ownership |
 | --- | --- | --- | --- |
 | Foundation | Accepted 1.1-1.8 remain prerequisites | Existing checker, inventory and verification foundations | Reuse accepted checks; no new foundation implementation is implied |
-| A: Workspace | Accepted packaging and renderer slices remain historical; 2.34, then 2.35 and 2.36, then 2.37 become eligible only after this task amendment is approved | Chart/application/types.ts and shared test setup belong to controller; A1 owns chartRange.ts/sessionState.ts and their units; B1 owns financialFormatting.ts and its units | 2.35/2.36 may overlap after independent acceptance of 2.34; 2.37 accepts only their joined source-safe boundary |
+| A: Workspace | Source-safe 2.34-2.37 are accepted; approved A2 design proposes sequential 2.38 -> 2.39 -> 2.40, pending task approval | Controller owns shared test setup/inventory; one Sol worker owns actual-grid fixture, capture adapter and its tests per bounded leaf | No parallel writers within A2; disjoint appearance/editor research may continue, with separate runtime implementation gates |
 | A: Data | 3.1-3.7 keep their recorded status and within-lane prerequisites | Owned provider/data API paths and tests | No independent writes to shared locks, catalog bindings or source snapshots |
-| A: blocked renderer/catalog join | Replacement renderer/catalog binding, A2/B2, mapper, C/D and real-app joins require their named frozen contracts and a separately reviewed/approved bounded task graph | Ownership in the application integration design; no dispatch from this table | Historical 2.8-2.11 and the superseded 2.9 binding are not executable replacement plans; 2.37 alone does not unblock this row |
+| A: blocked renderer/catalog join | Remaining grid/category paths, B2, mapper, C/D and real-app joins require their named frozen contracts and separately reviewed/approved task graphs | Ownership in the application integration design; no dispatch from this table | Historical 2.8-2.11/2.9 bindings are not executable replacement plans; neither 2.37 nor 2.40 unblocks this row |
 | A: image and dashboard joins | 3.8 waits for the reviewed current renderer/catalog source join; 2.12 then waits for 3.8 and complete renderer source acceptance; 4.1-4.5 wait for 2.12/3.8 and their explicit prerequisites | Controller serializes catalog/source/image records and real-app verification | No renderer-complete, dashboard-baseline or release acceptance while original capability gaps remain; an identified unreleased milestone is separate |
 | B: Agent | 5.1-5.5 retain their explicit prerequisites and within-lane order | Agent service and agent-specific tests; controller owns builder/origin integration | No Excel implementation before current-identity 5.5 acceptance |
 | B: Delivery | 7.1-7.6 in order after 4.5 | Portable delivery commands/wrappers/tests and backup/restore | Shared schemas/build joins remain controller-owned |
@@ -222,7 +222,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Requirements: 5.4, 10.3, 12.1, 12.3, 12.5_
 
 - [ ] 2.12 Build and identify the renderer-complete Full image
-  - BLOCKED: historical 2.11 completion cannot authorize this build. Require the separately reviewed/approved current renderer/catalog source-join graph, its complete source acceptance and 3.8 identity verification first. Source-safe 2.34-2.37 acceptance does not satisfy renderer-complete eligibility. Any smaller identified unreleased image milestone needs its own reviewed bounded task and cannot complete 2.12.
+  - BLOCKED: historical 2.11 completion cannot authorize this build. Require the separately reviewed/approved current renderer/catalog source-join graph, its complete source acceptance and 3.8 identity verification first. Source-safe 2.34-2.37 or bounded A2 2.40 acceptance does not satisfy renderer-complete eligibility. Any smaller identified unreleased image milestone needs its own reviewed bounded task and cannot complete 2.12.
   - Rebuild through the existing Dagger definition in the single heavy-build queue. Controller joins final Workspace locks, renderer bindings and verified data/catalog hashes into the candidate identity.
   - Run isolated fixture renderer smoke checks and inspect production chunks, installed dependencies and image contents for removed commercial packages/keys; retain notices and preserve every original capability; unresolved renderer parity blocks this renderer-complete gate.
   - Done when independent review accepts fixture evidence and the new image identity, and actual test paths/artifacts reach breadth. This permits the real dashboard join, not complete release promotion or a substitute for 4.3-4.5 acceptance.
@@ -297,7 +297,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Requirements: 4.3, 4.5, 5.4, 11.1, 11.3_
 
 - [ ] 3.8 Verify the served image and current catalog identity
-  - BLOCKED pending a separately reviewed/approved current renderer/catalog source-join task graph and its acceptance; historical 2.9 Perspective bindings are superseded. Acceptance of 2.37 alone does not satisfy this prerequisite. This existing integration gate must be split into bounded leaves in that followup plan if needed; it is not dispatched from this amendment.
+  - BLOCKED pending a separately reviewed/approved current renderer/catalog source-join task graph and its acceptance; historical 2.9 Perspective bindings are superseded. Acceptance of 2.37 or 2.40 alone does not satisfy this prerequisite. This existing integration gate must be split into bounded leaves in that followup plan if needed; it is not dispatched from this amendment.
   - Compare the identified candidate data/Workspace served schema/catalog with installed generated snapshots and the accepted current renderer binding; ensure generated assets reference the actual preserved OpenBB behavior. Controller alone writes shared snapshots/source locks.
   - Inspect image layers/metadata for provider credentials. If generation changes embedded assets, rebuild the affected candidate through Dagger only and rerun portable reference checks against that exact loaded image; no prior image evidence is reused.
   - Done when independently reviewed loaded-image identities, served metadata and canonical contract hashes agree. This verifies catalog identity, not renderer parity, live-provider acceptance or publication readiness.
@@ -329,7 +329,7 @@ Scopes refer to the concrete paths in the design's File Structure Plan. Shared s
   - _Requirements: 2.1, 2.2, 2.3, 3.1, 3.6, 10.4_
 
 - [ ] 4.3 Verify original dashboard controls and their effects in the real frontend
-  - BLOCKED until 4.2 and the separately reviewed current renderer/application join and complete original capability/flag mapping are accepted. Split the actual matrix into bounded verification leaves in the followup task graph before dispatch; source-safe 2.37 is insufficient.
+  - BLOCKED until 4.2 and the separately reviewed current renderer/application join and complete original capability/flag mapping are accepted. Split the actual matrix into bounded verification leaves in the followup task graph before dispatch; source-safe 2.37 or bounded A2 2.40 is insufficient.
   - Preserve real Playwright account/login/connector registration, absolute same-origin discovery, FMP/FRED add/arrange/resize/remove and observable widget values. Exercise original controls, menus, conditional actions and flag defaults with actual financial results, chart/table transitions, settings and exports under 4.8/4.9.
   - Compare original/candidate integrated light/dark shell, themes, typography, controls, focus and interactions; assert resulting observations and exact state changes. Native Perspective explorer behavior and unavailable legacy controls cannot substitute for the original UX.
   - Done when independently reviewed real-app regressions verify displayed outcomes and failure/recovery with isolated headless one-worker Playwright/CDP diagnostics. Missing controls or capability differences block acceptance and remain visible in the matrix.
@@ -956,13 +956,78 @@ pipeline/.venv/bin/python -m tools.quality.complexity --check --changes workspac
 
 The controller creates these manifests before checking: exact inventory-approved repository/base, actual snapshot identity and complete changed-file entries; unchanged data API receives an explicit empty manifest only if the actual scope warrants it. Dirty inventory/catalog/renderer files may be measured by the repository gate but their unrelated work is not accepted by this slice. A cap failure outside the slice is reported to its owner, not repaired or excluded silently. Preserve source/stage hashes, commands, exits and exclusions with evidence. Review and publish only completed sanitized evidence under `artifacts/reviewed/` before selective commit/push.
 
+## Approved design slice: ordinary displayed-grid capture
+
+The owner approved [the bounded capture design](chart-grid-capture-design.md) after independent runtime/design review. This amendment proposes tasks 2.38-2.40; implementation approval remains separate. Tasks 2.34-2.37 and the complexity/checker foundations are already accepted. This branch depends on those tasks, not on unfinished earlier numerical renderer entries. A2 completion alone does not unblock mapper/editor/application activation, renderer-complete images or delivery.
+
+The three leaves are sequential because the real-grid setup, adapter and integrated tests share a fixture and configuration. No (P) marker applies. A Sol worker handles each bounded implementation leaf; fresh independent review follows each leaf, with Astra for financial capture and the final join. Controller owns shared test configuration, inventory, source pins, evidence publication and commits. Disjoint appearance/editor research may overlap, with one heavy suite/browser/build at a time; it grants no implementation permission for those lanes.
+
+All paths below are relative to vendor/workspace/terminalpro unless explicitly rooted. Frozen application/types.ts, accepted session/range/snapshot behavior, mapper, host, UI and flags remain read-only. No new package, enterprise module, renderer activation or saved-state owner is introduced.
+
+- [ ] 2.38 Freeze the ordinary-grid fixture and exercise the real Community API
+  - Foundation task, 1-3 hours. Own tests/unit/chart-application/gridCapture.fixtures.json and gridCapture.grid.test.ts; controller alone owns the narrowly scoped application tsconfig.json extension for resolveJsonModule. Reuse the existing jsdom/maxWorkers:1 configuration and existing actual Community grid test pattern; do not import root vitest.setup.ts or tests/mocks/ag-grid, which would replace the real API.
+  - Translate only the admitted finite synthetic rows, expected financial arrays, selected IDs and range into the self-contained fixture. Record original reference source/image and per-input hashes separately from current candidate identity. Keep normalized-percent and getter experiments explicitly labelled; arbitrary getter configuration, mixed-unit mapping and category inference are not accepted by these fixtures.
+  - Use the locked Community modules and typed real GridApi, with only necessary DOM environment shims. AllCommunityModule provides getCellValue and client-row-model/filter/sort/column APIs. Wait for observable model completion, assert actual IDs/order and unformatted values, then destroy the grid and remove the owned host. No GridApi mock or enterprise registration may satisfy this setup gate.
+  - Done when executable fixture/setup checks pass for real flat rows, sorting/filtering, stable duplicate-label identities and raw-versus-unformatted getter/formatter values using the current locked environment. Tests must run without the not-yet-created capture adapter; there is no skipped or empty-suite acceptance. Freeze fixture/configuration hashes for 2.39 after independent review and fresh verification.
+  - Complexity: tests/fixture and test-only configuration are documented exclusions. Reuse accepted inventory/checker tasks 1.3/1.4; any unexpected maintained production setup change returns to controller review and must meet 400 physical/300 logical/50 per function. No implicit dependency upgrade or broad compiler relaxation.
+  - _Boundary: Actual Community grid verification environment and finite reference fixture_
+  - _Depends: 1.4, 2.37_
+  - _Requirements: 1.1, 4.8, 4.9, 10.4, 10.5, 10.6_
+
+- [ ] 2.39 Capture resolved ordinary observations without changing their meaning
+  - Core task, 1-3 hours. Own src/components/General/Table/Chart/application/gridCapture.ts, tests/unit/chart-application/gridCapture.test.ts and the adapter integration additions to gridCapture.grid.test.ts. Consume the accepted fixture/configuration and frozen CaptureDisplayedChart contract; request controller review rather than editing shared types or existing helpers.
+  - Consume caller-resolved category/descriptors and ordered range unchanged. Read displayed indices within inclusive valid bounds and use unformatted public grid values. Preserve node IDs, duplicate category labels, numeric zero/negative/fraction/null, supplied units/scale and resolved series order. Never infer category roles, re-filter visibility, parse displayed percentage text, rescale observations or fall back to raw node.data. Test A1 visible-range resolution followed by A2 capture as an explicit seam.
+  - Construct the existing flat snapshot from supplied address/data revision, model and original range provenance through the accepted snapshot validator. Preserve input and metadata immutability and return the original captured stamp. Caller pre/post current-stamp validation remains external; do not claim this input can detect a newer generation or caller-owned transpose metadata.
+  - Cover destroyed/unready API versus ready-empty rows, malformed input, partial/reversed/out-of-count bounds, missing/duplicate IDs, undefined/nonfinite/unhandled values and bounded API failures. Detectable non-client-side/group/pivot/pinned cases receive diagnostics without importing enterprise modules. Bounds and unsupported-value policies are the approved conservative internal contract, not claims about unobserved original clipping or product behavior.
+  - Write meaningful failing regressions before implementation without a feature flag. Done when focused unit and actual-grid integration tests match independent original fixture expectations, waiting/invalid/unresolved behavior and no-write/no-mutation guarantees, with both strict compilers and scoped lint passing. Numeric-only synthetic category, general multiple-category rules, transformed/aggregated/remote paths and UI invocation remain unverified.
+  - Complexity: controller registers gridCapture.ts before its acceptance. Its whole maintained file passes 400 physical lines, 300 logical units and 50 per function using the implemented checker and actual current fork manifests. Tests/evidence are explicit exclusions; no new size exception or additional production helper ownership is assumed. Independent Astra review and fresh verification are required.
+  - _Boundary: Pure ordinary GridApi-to-snapshot capture adapter_
+  - _Depends: 2.38_
+  - _Requirements: 1.1, 4.2, 4.7, 4.8, 4.9, 10.4, 10.5, 10.6_
+
+- [ ] 2.40 Independently verify the joined ordinary capture boundary
+  - Explicit controller integration task, 1-3 hours. Freeze worker edits and reproduce all chart-application and chart-compatibility units, both strict compilers, scoped lint, exact source/config/test identities and whole maintained complexity using current manifests for both forks. Compare the accepted fixture values to actual GridApi and capture outputs; no browser/build/application activation is part of this gate.
+  - Audit the actual diff for unchanged frozen types, accepted range/session/reducer/snapshot/mapper/host behavior, UI and flags. Confirm the adapter owns no persisted storage or lifecycle and the A1/A2 visibility/ordering seam preserves exact financial observations. Keep unrelated dirty catalog/renderer work outside acceptance and selective staging.
+  - Done when a fresh independent Astra review accepts tasks 2.38-2.40 only, with real-grid tests discovered and no skips, exact commands/exits/hashes, actual breadth test paths and inventory/source pins aligned. Publish only completed reviewed evidence with source/published hashes before explicit commit/push; do not reuse original-runtime research as candidate application proof.
+  - Complexity: entire modified maintained scope passes 400 physical/300 logical/50 per function with unchanged-byte exception validation where applicable; tests/evidence/test-only configuration remain declared exclusions. Retain the actual maintained file count and test count rather than assuming the historical baseline counts are current.
+  - No full application, effective appearance, editor, export, save/restart, renderer, image or release acceptance follows this helper gate. Blocked followups below remain binding; no hidden menu, flag or unavailable fallback is authorized.
+  - _Boundary: Controller A2 verification, scope inventory and evidence join_
+  - _Depends: 2.39_
+  - _Requirements: 1.1, 4.2, 4.7, 4.8, 4.9, 10.4, 10.5, 10.6_
+
+### Verification setup and commands for 2.38-2.40
+
+Use a fresh isolated WSL/Linux stage, not a stale task237 archive. Existing pinned Node is 24.22.0, and the accepted dependency tree is /home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules. Read-only prerequisite inspection found AG Grid Community/React 34.1.1, Vitest 4.1.11, jsdom 30.0.1 and application TypeScript 5.9.2; quality tooling separately uses TypeScript 6.0.3. No installation or upgrade is assumed. If the accepted tree is unavailable, restore only through the existing locked protected workflow and record actual identities before acceptance.
+
+The application config already discovers gridCapture.grid.test.ts, uses jsdom and maxWorkers:1, and has no global setupFiles. The controller-owned resolveJsonModule setting is application-only; compatibility compiler settings remain unchanged. Reuse the environment pattern from tests/unit/communityRealGrid.test.tsx, not its broad any types or mocks. Keep any DOM shims local to the owned grid test, clean up global mutations, and never replace the public methods being verified. Unexpected setup scope returns to controller review.
+
+Snapshot exact current fork bytes into the stage, including uncommitted owned inputs, and retain a source/stage hash manifest. Run from its terminalpro directory:
+
+```sh
+node node_modules/typescript/bin/tsc --project tests/unit/chart-application/tsconfig.json --noEmit
+node node_modules/typescript/bin/tsc --project tests/unit/chart-compatibility/tsconfig.json --noEmit
+node node_modules/vitest/vitest.mjs run --config tests/unit/chart-application/vitest.config.mjs
+node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/vitest.config.mjs
+node node_modules/@biomejs/biome/bin/biome check src/components/General/Table/Chart/application tests/unit/chart-application
+```
+
+For focused setup/adapter verification, append the actual owned test paths to the application Vitest command; inspect discovered tests and skip counts. Before 2.39 there is no import of the absent adapter. The existing 36 application and 260 compatibility tests are a historical baseline, not proof that future tests passed.
+
+The controller creates current workspace/data_api manifests with correct repository/base/head and complete changed-file entries, preserving unrelated dirty inputs measured by the full gate. From the root with pinned Node on PATH:
+
+```sh
+pipeline/.venv/bin/python -m tools.quality.complexity --check --changes workspace=artifacts/grid-capture-implementation/workspace-changes.json --changes data_api=artifacts/grid-capture-implementation/data-api-changes.json --output artifacts/grid-capture-implementation/complexity.json
+```
+
+These future manifest paths are task outputs, not existing evidence. Update inventory/source pins together and validate existing exception targets are unchanged before rebinding their revision. No new production-only environment or service is required. Core product.md/tech.md/structure.md remain absent as recorded in the parent specification; the specialized steering and approved requirements/design govern this plan.
+
 ### Blocked application followups
 
 These are explicit return-to-design/task gates, not numbered implementation tasks or fulfilled design coverage:
 
 | Component/join | Required frozen input before a bounded task can be approved |
 | --- | --- |
-| A2 gridCapture | Actual ordinary GridApi fixture category/series, range, raw/valueGetter and displayed-row contract; exact typed capture signature already canonical. Numeric-only, multiple-category, hidden/getter/remote cases each retain their own missing evidence. |
+| A2 gridCapture | Explicit-category flat capture now has approved chart-grid-capture-design.md and proposed tasks 2.38-2.40, pending implementation approval. The canonical typed signature is unchanged. Numeric-only synthetic categories, general multiple-category resolution, arbitrary getter configuration, hidden-after-entry and remote/transformed cases retain separate missing evidence. |
 | B2 effectiveAppearance | Typed AppearanceInput/Result, finite admitted stock/custom leaves and explicit per-leaf precedence. Six stock defaults/two custom grouped-column observations do not establish arbitrary inheritance. |
 | Mapper | Reviewed A2/B1/B2 outputs; actual formatter invocation, category binding, tooltip mode/null/order/layout and explicit effective-leaf projections. Unknown/mixed-unit semantics remain a separate reviewed parity join. |
 | C docked editor | Flattened visible/conditional per-field ledger, value domains, exact namespaces/events/effects, props/events and bounded family/group ownership. Four column patches do not complete the editor. |
