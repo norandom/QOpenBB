@@ -19,3 +19,11 @@ Adapt the replacement library to OpenBB's existing controls and interactions. Pe
 If a library limitation prevents equivalent behavior or appearance, document the concrete difference and obtain the owner's decision before accepting that deviation. The earlier choice of Perspective does not authorize visible UX changes. Standalone native-plugin feasibility tests establish rendering capability only; they do not establish suitability for the integrated OpenBB experience.
 
 Integrated renderer review must compare the resulting widget and surrounding dashboard with the owned OpenBB baseline in light and dark modes. Record screenshots and check layout, typography, controls and interaction continuity alongside financial results and lifecycle checks. Standalone runtime fixtures do not establish dashboard visual consistency.
+
+## Production UI focus and owner visual review
+
+Owner direction, 2026-10-17: prioritize production UI changes over further standalone reference research or verification infrastructure. Reuse the accepted helpers and existing evidence. Organize work around concrete UI deliverables, with focused checks attached to each implementation task. Do not open another harness or capture workstream unless a specific implementation blocker requires it.
+
+When visual similarity is uncertain, show the owner matched original/replacement screenshots in the same theme, viewport and data state, identify the concrete differences, and ask whether the result is similar enough. Record the decision against the shown revision and view. The owner can accept a visual difference without an extended attempt to prove pixel equivalence. Do not infer that decision from silence or extend it to other views.
+
+Keep functional, financial-data and persistence checks focused on the changed behavior. Visual acceptance does not silently remove controls, change feature flags or accept broken actions. A preview used for comparison must state its incomplete scope and must not be presented as full renderer or release acceptance.
