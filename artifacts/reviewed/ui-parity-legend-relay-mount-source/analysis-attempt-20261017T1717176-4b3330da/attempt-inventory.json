@@ -1,0 +1,110 @@
+{
+  "scope": "Actual final attempt inventory after helper receipt finalization; private/log names and sizes only, no contents",
+  "entries": [
+    {
+      "path": "admission-receipts.json",
+      "bytes": 6382
+    },
+    {
+      "path": "cleanup-report.json",
+      "bytes": 698
+    },
+    {
+      "path": "cleanup.log",
+      "bytes": 0
+    },
+    {
+      "path": "final-output-inventory.json",
+      "bytes": 1139
+    },
+    {
+      "path": "finalize.log",
+      "bytes": 0
+    },
+    {
+      "path": "harness/admission.mjs",
+      "bytes": 13091
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "bytes": 6345
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "bytes": 1397
+    },
+    {
+      "path": "harness/io.mjs",
+      "bytes": 3757
+    },
+    {
+      "path": "harness/probe.mjs",
+      "bytes": 6925
+    },
+    {
+      "path": "harness/relay.py",
+      "bytes": 10711
+    },
+    {
+      "path": "harness/run.sh",
+      "bytes": 998
+    },
+    {
+      "path": "health-attempts.json",
+      "bytes": 856
+    },
+    {
+      "path": "helper-launch.json",
+      "bytes": 149
+    },
+    {
+      "path": "preparation.json",
+      "bytes": 183
+    },
+    {
+      "path": "probe-result.json",
+      "bytes": 260
+    },
+    {
+      "path": "probe.log",
+      "bytes": 0
+    },
+    {
+      "path": "relay-config.json",
+      "bytes": 49
+    },
+    {
+      "path": "relay-stats.json",
+      "bytes": 389
+    },
+    {
+      "path": "run-status.json",
+      "bytes": 226
+    },
+    {
+      "path": "runtime-private.json",
+      "bytes": 1131
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 6732
+    },
+    {
+      "path": "supervise.sh",
+      "bytes": 1052
+    },
+    {
+      "path": "supervisor.log",
+      "bytes": 0
+    },
+    {
+      "path": "watchdog-status.json",
+      "bytes": 156
+    }
+  ],
+  "totals": {
+    "files": 25,
+    "bytes": 62626,
+    "publicJsonBytes": 17219
+  }
+}

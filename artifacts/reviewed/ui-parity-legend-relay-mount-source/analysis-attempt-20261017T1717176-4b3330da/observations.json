@@ -1,0 +1,158 @@
+{
+  "attempt": "attempt-20261017T1717176-4b3330da",
+  "outcome": "topology-probe-passed",
+  "healthGets": 10,
+  "health": [
+    {
+      "index": 1,
+      "startedMs": 147,
+      "outcome": "health-unresolved",
+      "reason": "health-transport-or-timeout"
+    },
+    {
+      "index": 2,
+      "startedMs": 3148,
+      "outcome": "health-unresolved",
+      "reason": "health-transport-or-timeout"
+    },
+    {
+      "index": 3,
+      "startedMs": 6149,
+      "outcome": "health-unresolved",
+      "reason": "health-transport-or-timeout"
+    },
+    {
+      "index": 4,
+      "startedMs": 9150,
+      "outcome": "health-unresolved",
+      "reason": "health-transport-or-timeout"
+    },
+    {
+      "index": 5,
+      "startedMs": 12151,
+      "outcome": "health-unresolved",
+      "reason": "health-transport-or-timeout"
+    },
+    {
+      "index": 6,
+      "startedMs": 15153,
+      "outcome": "health-unresolved",
+      "status": 502
+    },
+    {
+      "index": 7,
+      "startedMs": 18153,
+      "outcome": "health-unresolved",
+      "status": 502
+    },
+    {
+      "index": 8,
+      "startedMs": 21153,
+      "outcome": "health-unresolved",
+      "status": 502
+    },
+    {
+      "index": 9,
+      "startedMs": 24155,
+      "outcome": "health-unresolved",
+      "status": 502
+    },
+    {
+      "index": 10,
+      "startedMs": 27155,
+      "outcome": "loopback-healthy",
+      "status": 200
+    }
+  ],
+  "appSingleInternalAttachment": true,
+  "appNoPublication": true,
+  "relayExactTwoAttachments": true,
+  "relayLoopbackBinding": {
+    "HostIp": "127.0.0.1",
+    "HostPort": "32808"
+  },
+  "allSelectedSecurityChecks": true,
+  "mounts": [
+    {
+      "destination": "/relay/relay.py",
+      "type": "bind",
+      "readWrite": false,
+      "sourceIdentityMatched": true
+    },
+    {
+      "destination": "/relay/config.json",
+      "type": "bind",
+      "readWrite": false,
+      "sourceIdentityMatched": true
+    },
+    {
+      "destination": "/evidence/relay-stats.json",
+      "type": "bind",
+      "readWrite": true,
+      "sourceIdentityMatched": true
+    }
+  ],
+  "configuredTmpfs": {
+    "presence": {
+      "present": true,
+      "kind": "value",
+      "type": "object",
+      "unsupported": true
+    },
+    "data": {
+      "present": true,
+      "kind": "value",
+      "type": "string",
+      "value": "rw,nosuid,nodev,size=1048576"
+    },
+    "parentSupported": true,
+    "keyCount": 1,
+    "dataOwn": true,
+    "unexpectedKeyCount": 0
+  },
+  "relayStats": {
+    "phase": "closed",
+    "cleanStop": true,
+    "acceptedPairs": 10,
+    "activePairs": 0,
+    "peakPairs": 1,
+    "peakSockets": 3,
+    "receivedBytes": 2929,
+    "forwardedBytes": 2404,
+    "peakBufferedBytes": 309,
+    "maximumPairBytes": 484,
+    "refusedConnections": 5,
+    "peerClosures": 0,
+    "violations": {
+      "accepted-pairs": 0,
+      "pair-bytes": 0,
+      "total-bytes": 0,
+      "connect-timeout": 0,
+      "transport-truncated": 0,
+      "socket-error": 0,
+      "config-error": 0,
+      "stats-error": 0
+    }
+  },
+  "receivedMinusForwardedBytes": 525,
+  "byteCompletenessClaimed": false,
+  "browsers": 0,
+  "legendCases": 0,
+  "retries": 0,
+  "sourceModified": false,
+  "rawCleanupStatus": "cleaned",
+  "rawRunStatus": "diagnostic-closed",
+  "helper": {
+    "processId": 5044,
+    "startTimeUtc": "2026-10-17T17:17:37.4256047Z",
+    "startTimeTicks": "639278542574256047",
+    "exitCode": 0,
+    "absent": true
+  },
+  "freshOwnedAbsence": true,
+  "resourceAbsenceUpperBoundMs": 62469,
+  "hardCeilingMs": 150000,
+  "manifestSha256": "b03ba2f0939a637d02937326caa24b1287514d6463efd369fa67361c53e99831",
+  "sourceSha256": "64eecc7260f1c9a269cffe919f73405fda94d645b9667705072402a0ea4019c2",
+  "reviewSha256": "9c4ae8a35203fec6e2c9f3a68d3af76127fe9a37d33f5ebc73f1ac6e59db889f"
+}

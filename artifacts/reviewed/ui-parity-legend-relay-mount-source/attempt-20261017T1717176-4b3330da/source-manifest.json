@@ -1,0 +1,177 @@
+{
+  "status": "source-only-ready-for-independent-review",
+  "runtimeExecuted": false,
+  "plan": {
+    "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan/plan.md",
+    "sha256": "1c9a0e527acb77b808aab703df19ef8f6f8eacb1ed325987e51a5ea071703e65",
+    "bytes": 8036
+  },
+  "sourceInputs": [
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/source-hashes.json",
+      "sha256": "7d1dbfc86d2cef42d8b8e73eacf63c85dd0c3676938c95d10210976cd5d263fb",
+      "bytes": 5568
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness-manifest.json",
+      "sha256": "dcb25a5a5bcadf2d5628b0f2ebd2077586c7bde325a063b4eb5bf72f266b8700",
+      "bytes": 3755
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness/admission.mjs",
+      "sha256": "b4b065926be52262f31ea5dbdbec3a9d255c204a25337f9d46054f68513b00d8",
+      "bytes": 12525
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness/cleanup.mjs",
+      "sha256": "dfb81350c2a1debac4e8cb20737644fab64b6c48eac14dcf74a67219a120c34d",
+      "bytes": 6345
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness/finalize.mjs",
+      "sha256": "70c7664d50961b0c3dffc05446701dedb67f94fb816bab6a51ded94ef97820ed",
+      "bytes": 1397
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness/io.mjs",
+      "sha256": "f3b391edc2cc4f60824c103b7b7cab28307f221f8fc7305dc88c41ccae195e53",
+      "bytes": 3757
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness/probe.mjs",
+      "sha256": "61876a25cde310de35ea08947a25f413558c50170e6ba05e32b228a89458e1f2",
+      "bytes": 6926
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness/relay.py",
+      "sha256": "ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf",
+      "bytes": 10711
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness/run.sh",
+      "sha256": "70aee6793937afaf5323985e5000de4eed6095a895107de562ad922d832b4aae",
+      "bytes": 998
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/supervise.sh",
+      "sha256": "60bd9e3a2d44e3fbfeaf98cb06088621a331820b8159f2f7b80b55e51fe9ad80",
+      "bytes": 1053
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/probe-contract.json",
+      "sha256": "42f8eed6a799ed26877a3f6832768faf00546bed266bcee74d351f4afdbada69",
+      "bytes": 2184
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/handoff.md",
+      "sha256": "a10073966fcab56ac344e75d52bca19cb667aa53475809b751f0efae645caa01",
+      "bytes": 8613
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/prepare-run.mjs",
+      "sha256": "3dd052d982a57cef4802f0fe9734db17ac8e9c81ff15f93344a7f755720753ee",
+      "bytes": 1882
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/verify-offline.mjs",
+      "sha256": "11849fdfd3732c3b0d1e5f858ed63676a6b2ddef223b55147a0fdd6c0190de65",
+      "bytes": 21240
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/test-relay.py",
+      "sha256": "e05cbfce89628773dc853fd0f5634079cad5fecf2db66a5d9a18fbee6c2c7144",
+      "bytes": 14046
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/freeze.mjs",
+      "sha256": "ba0dc635f0115efbfbd2e51d6bf962fcea4d615832acbd0eed22917ba6727caf",
+      "bytes": 5337
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/offline-verification.json",
+      "sha256": "eec3af6dc1fe5f353cd3202ec841afa7f9222aa17b09d8a3860840f02c2a4daa",
+      "bytes": 4067
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/relay-source-diff.patch",
+      "sha256": "1dd0e460cab78ca65d2187dee29b24ee5d9c9f6c400c1dd0570fec7806da9b50",
+      "bytes": 21337
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness-manifest.json",
+      "sha256": "dcb25a5a5bcadf2d5628b0f2ebd2077586c7bde325a063b4eb5bf72f266b8700",
+      "bytes": 3755
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-relay-mount-correction/proposal.md",
+      "sha256": "9207c923e3ae55aaa0e575a22e8057000cb0f6450a775931607254945ef9adab",
+      "bytes": 9669
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-relay-mount-correction-review/review.md",
+      "sha256": "9c48ba928e19660dfca64f27c2c2b019b38dcd2023231330815124d524f5a99e",
+      "bytes": 5280
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan-review/review.md",
+      "sha256": "4a9c0a7641cad6e62d1fc4b30bdf1a07109ea60030885af7e26f65e1188c8887",
+      "bytes": 7276
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/report.md",
+      "sha256": "8dc1d929b2b377a55a96e8aea31d02c49f9925e620d97c5a3740ba1aebd62cb2",
+      "bytes": 4550
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/observations.json",
+      "sha256": "cbaf60e3f6eed393156f0ff3c77ea72afbfa26f53ca765bdeb209b8506017149",
+      "bytes": 2217
+    }
+  ],
+  "files": [
+    {
+      "path": "harness/admission.mjs",
+      "sha256": "bee287cb70b436b80ba1d4347bba83dfa8e6775af1e5ce830c9405e148657fb7",
+      "bytes": 13091
+    },
+    {
+      "path": "harness/cleanup.mjs",
+      "sha256": "dfb81350c2a1debac4e8cb20737644fab64b6c48eac14dcf74a67219a120c34d",
+      "bytes": 6345
+    },
+    {
+      "path": "harness/finalize.mjs",
+      "sha256": "70c7664d50961b0c3dffc05446701dedb67f94fb816bab6a51ded94ef97820ed",
+      "bytes": 1397
+    },
+    {
+      "path": "harness/io.mjs",
+      "sha256": "f3b391edc2cc4f60824c103b7b7cab28307f221f8fc7305dc88c41ccae195e53",
+      "bytes": 3757
+    },
+    {
+      "path": "harness/probe.mjs",
+      "sha256": "d953e7cc4d64991f3edd67d50e80c0631008691c964ec3e6df9cea2e8a33a21a",
+      "bytes": 6925
+    },
+    {
+      "path": "harness/relay.py",
+      "sha256": "ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf",
+      "bytes": 10711
+    },
+    {
+      "path": "harness/run.sh",
+      "sha256": "70aee6793937afaf5323985e5000de4eed6095a895107de562ad922d832b4aae",
+      "bytes": 998
+    },
+    {
+      "path": "supervise.sh",
+      "sha256": "7ac094c7f9792dc6706fb6766db33a33a9611141a0c191ed07beea39a73b05ad",
+      "bytes": 1052
+    }
+  ],
+  "originalSource": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "browserCreated": false,
+  "attemptsGranted": 0
+}

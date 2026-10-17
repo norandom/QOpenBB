@@ -1,0 +1,39 @@
+{
+  "status": "absence-verified",
+  "checkedAtUtc": "2026-10-17T17:18:39.894Z",
+  "readOnly": true,
+  "commands": 8,
+  "checks": [
+    {
+      "resource": "relay",
+      "recordedIdChecked": true,
+      "expectedNameChecked": true,
+      "idAbsent": true,
+      "nameAbsent": true
+    },
+    {
+      "resource": "app",
+      "recordedIdChecked": true,
+      "expectedNameChecked": true,
+      "idAbsent": true,
+      "nameAbsent": true
+    },
+    {
+      "resource": "ingress",
+      "recordedIdChecked": true,
+      "expectedNameChecked": true,
+      "idAbsent": true,
+      "nameAbsent": true
+    },
+    {
+      "resource": "internal",
+      "recordedIdChecked": true,
+      "expectedNameChecked": true,
+      "idAbsent": true,
+      "nameAbsent": true
+    }
+  ],
+  "stateAbsent": true,
+  "credentialAbsent": true,
+  "failure": null
+}

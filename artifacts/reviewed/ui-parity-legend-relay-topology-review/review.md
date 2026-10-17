@@ -1,0 +1,23 @@
+# Accept the observed topology and final health result
+
+VERDICT: APPROVED for the single observed topology/health result, recorded cleanup and exact 27-file publication selection. No blocking evidence discrepancy was found. This does not establish complete opaque-byte delivery, WebSocket behavior or full UI capacity, and grants no further runtime.
+
+Reviewed on 2026-10-17 against the [frozen report](../ui-parity-legend-relay-mount-source/analysis-attempt-20261017T1717176-4b3330da/report.md), SHA-256 `9e64e9ab0008c37ef629064c33eaf1d0cdc28e94c832338afce92489aa6bd7a5`, and allowlist `289fa688884eef931aa9e9d2308c74ee2eb9b8c9a41db7c1e2900736f7ba0721`. Eight executed files match accepted manifest `b03ba2f0939a637d02937326caa24b1287514d6463efd369fa67361c53e99831`. Source manifest `64eecc7260f1c9a269cffe919f73405fda94d645b9667705072402a0ea4019c2` and the accepted source review remain unchanged.
+
+The selected receipts pass the executed app/relay classifiers: one internal app attachment without publication; two relay attachments; loopback publication at port 32808; three exact bind tuples; and a supported Tmpfs object with one own `/data` key, no extras and the exact bounded option string. Every selected security comparison is true. These are inspect/configuration observations, not a live mount-filesystem inspection or a universal isolation proof.
+
+The [health receipt](../ui-parity-legend-relay-mount-source/attempt-20261017T1717176-4b3330da/health-attempts.json) records ten starts from 147 through 27,155 ms after publication, each at least 3,000 ms apart. Five fixed transport failures precede four HTTP 502 responses and the final HTTP 200. The unchanged source enforces the two-second request and thirty-second readiness bounds, manual redirects and immediate success stop. Individual completion durations were not separately recorded. The finalizer and actual helper receipt both report exit 0; `topology-probe-passed` is consistent with the finite source contract. No browser or Legend action ran.
+
+Relay counters show ten accepted pairs, five refusals, peak one pair/three sockets, clean close, no active pair and zero violations. **2,929 received minus 2,404 forwarded equals 525 bytes.** The report correctly exposes this difference. Aggregate counters cannot assign those bytes to particular failed pairs or prove every received byte was delivered. Counter admission and the final health response do not erase the failed prefix or establish protocol completeness.
+
+Cleanup records exact ID/name absence for both containers and both networks, followed by state/credential absence. The saved independent check used eight bounded read-only queries against those recorded resources. The helper absence receipt matches PID 5044 and start ticks `639278542574256047`. Saved resource/helper absence times are respectively 62,469/62,525 ms after helper start, both within 150 seconds; these are upper bounds through later checks. This reviewer inspected the absence-check source and receipts without repeating live queries. Fresh filesystem reads confirm local state and credentials absent.
+
+The actual inventory is 25 files, 62,626 total bytes and 17,219 public-JSON bytes, within all retained-output caps. The earlier inventory reconciles after including its own receipt and the finalized helper update. The [reviewed evidence selection](reviewed-evidence-publication-allowlist.json) is byte-identical to the supplied 27-entry list and is approved. It excludes private runtime metadata, state, credentials and raw logs. Exact ownership-token exclusion, generated credential patterns and bounded common-token/private-key scans found no concrete secret; this is not exhaustive detection of every secret format.
+
+The [audit](audit.mjs) passed nine grouped checks, including exact source/receipt identities, actual classifiers, timing/status/counters, cleanup scope, inventory and safe publication. The supplied read-only verifier also passed thirteen checks. The deterministic [receipt](verification.json) records those results.
+
+```powershell
+node artifacts/ui-parity-legend-relay-topology-review/audit.mjs
+```
+
+The [review allowlist](publication-allowlist.json) selects this completed package. Preserve allowlists as metadata without self-hashes, verify destination bytes and retain evidence links. Only this new review directory was written; no Docker/helper query, runtime, network, browser, build, install, source edit or Git mutation ran. Research remains excluded from production caps; future maintained work retains inventory/checker enforcement and 400 physical lines/file, 300 logical units/file and 50/function. The controller owns publication, commits and the separate full UI decision.

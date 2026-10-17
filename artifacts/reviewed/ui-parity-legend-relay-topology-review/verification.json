@@ -1,0 +1,52 @@
+{
+  "verdict": "APPROVED",
+  "scope": "Observed final health/topology and recorded cleanup only; no opaque-byte completeness or full UI capacity",
+  "selectionHash": "289fa688884eef931aa9e9d2308c74ee2eb9b8c9a41db7c1e2900736f7ba0721",
+  "checks": [
+    "Exact source/review/evidence identities and publication bytes",
+    "Eight exact executed files, configuration hash and unchanged finite profile",
+    "Actual admission decisions and selected topology/mount operands",
+    "Ten finite health starts, failed prefix and final 200 only",
+    "Admitted counter/status result with explicit byte-delivery limitation",
+    "Saved exact-resource/helper cleanup proof and current local absence",
+    "Actual finite inventory reconciles earlier inventory and launcher update",
+    "Exact safe selection, private exclusion and bounded token scan",
+    "Supplied read-only verification and final frozen preservation"
+  ],
+  "groupedChecks": 9,
+  "totals": {
+    "files": 25,
+    "bytes": 62626,
+    "publicJsonBytes": 17219
+  },
+  "inventoryAdjustment": {
+    "rawBytes": 61491,
+    "inventoryBytes": 1139,
+    "helperBefore": 153,
+    "helperAfter": 149
+  },
+  "resourceAbsenceUpperBoundMs": 62469,
+  "helperAbsenceUpperBoundMs": 62525,
+  "byteDifference": 525,
+  "suppliedVerifier": {
+    "status": "passed",
+    "checks": 13,
+    "selectedFiles": 27,
+    "attemptFiles": 25,
+    "retainedBytes": 62626,
+    "healthGets": 10,
+    "probeOutcome": "topology-probe-passed",
+    "receivedMinusForwardedBytes": 525,
+    "byteCompletenessClaimed": false,
+    "cleanup": "absence-verified",
+    "runtimeCalls": 0,
+    "allowlistSha256": "289fa688884eef931aa9e9d2308c74ee2eb9b8c9a41db7c1e2900736f7ba0721"
+  },
+  "liveDockerOrHelperQueriesRepeated": false,
+  "currentLocalStateAndCredentialAbsenceChecked": true,
+  "runtimeExecuted": false,
+  "networkOpened": false,
+  "frozenInputsPreserved": true,
+  "command": "node artifacts/ui-parity-legend-relay-topology-review/audit.mjs",
+  "exitCode": 0
+}
