@@ -89,10 +89,12 @@
     "ui-parity-tooltip-segment-keyboard-revised",
     "ui-parity-tooltip-segment-keyboard-revision-review",
     "ui-parity-legend-capture-redirect-guard",
-    "ui-parity-legend-redirect-review"
+    "ui-parity-legend-redirect-review",
+    "ui-parity-tooltip-reservation-analysis",
+    "ui-parity-tooltip-reservation-review"
   ],
   "sourcepins": {
-    "root_at_sync": "65f185ee7e9db4dddbee46015601607dbbeeee26",
+    "root_at_sync": "4579c2498b61dcf8d71d26a40766f9d226bcd2d5",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -25841,6 +25843,94 @@
       "publishedSHA256": "fbd8f97ef550cad852911f45f78c0d9e9bbd96e4469452a16050934eb12e8180",
       "bytes": 789,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+      "sourceSHA256": "72f4a31d7e28be857efff4f3f2114f1b2cae25032d35b13a391d12b408e0ef13",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+      "publishedSHA256": "72f4a31d7e28be857efff4f3f2114f1b2cae25032d35b13a391d12b408e0ef13",
+      "bytes": 11905,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-analysis/freeze-check.mjs",
+      "sourceSHA256": "a51e60f98bf8805760576af038e50f7c39b755860f779f0f4b2539a886461d2d",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-analysis/freeze-check.mjs",
+      "publishedSHA256": "a51e60f98bf8805760576af038e50f7c39b755860f779f0f4b2539a886461d2d",
+      "bytes": 1106,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "sourceSHA256": "9a8ac973294208f21857a272047cd35a05e980b5ca47917124912a0ddea9b629",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-analysis/report.md",
+      "publishedSHA256": "9a8ac973294208f21857a272047cd35a05e980b5ca47917124912a0ddea9b629",
+      "bytes": 13463,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-analysis/source-hashes.json",
+      "sourceSHA256": "a7a10f1cea7d9734dc99f9c830855f52c5e7d41e7b340e076c90421c88afe5a6",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-analysis/source-hashes.json",
+      "publishedSHA256": "a7a10f1cea7d9734dc99f9c830855f52c5e7d41e7b340e076c90421c88afe5a6",
+      "bytes": 7037,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-analysis/verification.json",
+      "sourceSHA256": "34e461367acef742f160a2f79b0cadac703db3094b5991a1d0c597028280bd2a",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-analysis/verification.json",
+      "publishedSHA256": "34e461367acef742f160a2f79b0cadac703db3094b5991a1d0c597028280bd2a",
+      "bytes": 5565,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-analysis/publication-allowlist.json",
+      "sourceSHA256": "dcd1178172292a48a2a75089db750cba6eb3d28e6bb8b5e68ef612c85f97f32d",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-analysis/publication-allowlist.json",
+      "publishedSHA256": "dcd1178172292a48a2a75089db750cba6eb3d28e6bb8b5e68ef612c85f97f32d",
+      "bytes": 2129,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-review/review.md",
+      "sourceSHA256": "2bf94de82122fee3976960465f56c106e9490f68519fc97888a28aab639c1014",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-review/review.md",
+      "publishedSHA256": "2bf94de82122fee3976960465f56c106e9490f68519fc97888a28aab639c1014",
+      "bytes": 8408,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-review/verification.json",
+      "sourceSHA256": "b1b0574d816ac4a2575495d277d27ec52aab3bbd848ef3783b5115ddd374153a",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-review/verification.json",
+      "publishedSHA256": "b1b0574d816ac4a2575495d277d27ec52aab3bbd848ef3783b5115ddd374153a",
+      "bytes": 16056,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-review/audit.mjs",
+      "sourceSHA256": "2dd333f284ce5c975f331397cfa9cf82d2ee36d5096980c71ef80b3c45921c25",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-review/audit.mjs",
+      "publishedSHA256": "2dd333f284ce5c975f331397cfa9cf82d2ee36d5096980c71ef80b3c45921c25",
+      "bytes": 8987,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-review/read-only-calculator.mjs",
+      "sourceSHA256": "3ada4ab7643710db3c488b8bab3c6c5b5f8fb8883ab73a9a9bbe8c6327d8f35d",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-review/read-only-calculator.mjs",
+      "publishedSHA256": "3ada4ab7643710db3c488b8bab3c6c5b5f8fb8883ab73a9a9bbe8c6327d8f35d",
+      "bytes": 624,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-reservation-review/publication-allowlist.json",
+      "sourceSHA256": "dbb3d47d0263a682231024d947c18eee773332269960aa3b20f87f9c7043aaae",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-reservation-review/publication-allowlist.json",
+      "publishedSHA256": "dbb3d47d0263a682231024d947c18eee773332269960aa3b20f87f9c7043aaae",
+      "bytes": 1633,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -26554,5 +26644,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 159552472
+  "total_payload_bytes": 159629385
 }

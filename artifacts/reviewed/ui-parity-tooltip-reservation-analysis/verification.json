@@ -1,0 +1,200 @@
+{
+  "scope": "Source-only reservation arithmetic; no collector adoption or runtime",
+  "command": "node artifacts/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+  "exitCode": 0,
+  "checks": 27,
+  "verdict": "NO_SMALLER_RESERVE_SELECTED: total append proof incomplete",
+  "candidateExamined": 26624,
+  "acceptedReserveUnchanged": 32768,
+  "declaredComponents": {
+    "invocation": 14336,
+    "ledger": 6144,
+    "baseline": 2048,
+    "twoControlReceipts": 2048,
+    "nominalScaffold": 2048,
+    "sum": 26624
+  },
+  "mockOnly": {
+    "accepted": {
+      "allowance": 32768,
+      "stop": "not-run-budget",
+      "tabs": [
+        24,
+        24,
+        22
+      ],
+      "modes": [
+        "keyboard-unreachable-within-bound",
+        "keyboard-unreachable-within-bound",
+        "seeking"
+      ],
+      "totalTabs": 70,
+      "actions": 76,
+      "globalProbes": 94,
+      "emittedInputs": 76,
+      "caseBytes": 82395,
+      "reservedTotal": 115163,
+      "guard": 115072
+    },
+    "experimental": {
+      "allowance": 26624,
+      "stop": null,
+      "tabs": [
+        24,
+        24,
+        24
+      ],
+      "modes": [
+        "keyboard-unreachable-within-bound",
+        "keyboard-unreachable-within-bound",
+        "keyboard-unreachable-within-bound"
+      ],
+      "totalTabs": 72,
+      "actions": 78,
+      "globalProbes": 96,
+      "emittedInputs": 78,
+      "caseBytes": 84701,
+      "reservedTotal": 111325,
+      "guard": 115072
+    },
+    "conditions": "Extracted actual input/keyboard/observe source; controlled clock; one retained DOM sample; Mode/Escape and Escape popup only; no browser controls or real runtime"
+  },
+  "counterexamples": {
+    "uncappedReasonBytes": 27624,
+    "boundaryBytes": 88448,
+    "afterReasonBytes": 116271,
+    "reasonGrowth": 27823,
+    "legalTailBytes": 16000,
+    "afterTailBytes": 132270,
+    "hardCeiling": 131072,
+    "observationErrorBytes": 40000,
+    "failedInputEntryBytes": 6132,
+    "failedInputCaseReasonBytes": 6000,
+    "lateObservation": {
+      "retainedTabs": 70,
+      "emittedTabs": 71,
+      "actions": 77,
+      "globalProbes": 95,
+      "beforeCatchBytes": 82763,
+      "afterCatchBytes": 122850,
+      "afterTailBytes": 138849
+    }
+  },
+  "conditionsForFutureProof": [
+    "Finite bound/rejection rule for case-level and outer-catch reason before serialization, including non-input exceptions.",
+    "Derive every intervening schema/key/array/counter/image/mode/failure-field byte from exact source instead of assuming a 2048 scaffold.",
+    "Retain separate 16000 final-tail proof and all global JSON/run-byte checks; fail-closed partial prefixes remain explicit.",
+    "Independent review before any code adoption; runtime network/lifecycle prerequisites and complete keyboard coverage remain open."
+  ],
+  "runtimeExecuted": false,
+  "results": [
+    {
+      "name": "all accepted reservation and case caps unchanged",
+      "passed": true
+    },
+    {
+      "name": "all fixed case/input/image/time caps unchanged",
+      "passed": true
+    },
+    {
+      "name": "declared arithmetic is 26624",
+      "passed": true
+    },
+    {
+      "name": "guard to hard ceiling equals separate tail reserve",
+      "passed": true
+    },
+    {
+      "name": "accepted 70-Tab mock reproduced exactly",
+      "passed": true
+    },
+    {
+      "name": "experimental 26624 VM closes fixed 72-Tab mock",
+      "passed": true
+    },
+    {
+      "name": "experimental 72 mock stays within unchanged guard",
+      "passed": true
+    },
+    {
+      "name": "failed entry accounts for escaped JSON bytes",
+      "passed": true
+    },
+    {
+      "name": "failed input receipt cap checks serialization",
+      "passed": true
+    },
+    {
+      "name": "multibyte visible state aggregate cap enforced",
+      "passed": true
+    },
+    {
+      "name": "actual failed input emits one counted action",
+      "passed": true
+    },
+    {
+      "name": "actual bounded failed receipt preserves failed status",
+      "passed": true
+    },
+    {
+      "name": "case reason repeats bounded input error outside entry",
+      "passed": true
+    },
+    {
+      "name": "candidate boundary constructed exactly",
+      "passed": true
+    },
+    {
+      "name": "actual case catch has uncapped reason larger than candidate",
+      "passed": true
+    },
+    {
+      "name": "uncapped reason exceeds nominal scaffold 2048",
+      "passed": true
+    },
+    {
+      "name": "counterexample remains below hard ceiling before tail",
+      "passed": true
+    },
+    {
+      "name": "valid full tail respects serialized tail cap",
+      "passed": true
+    },
+    {
+      "name": "JSON object merge accounts for separators",
+      "passed": true
+    },
+    {
+      "name": "uncapped case reason plus legal tail rejected at hard ceiling",
+      "passed": true
+    },
+    {
+      "name": "invalid failed entry remains outside completed retention proof",
+      "passed": true
+    },
+    {
+      "name": "actual T06 post-input observation error reaches uncapped catch",
+      "passed": true
+    },
+    {
+      "name": "observation failure occurs after emitted counted input",
+      "passed": true
+    },
+    {
+      "name": "late counterexample follows 70 retained Tabs with emitted 71st",
+      "passed": true
+    },
+    {
+      "name": "late non-input error grows beyond examined allowance",
+      "passed": true
+    },
+    {
+      "name": "late error and legal tail fail hard case prewrite",
+      "passed": true
+    },
+    {
+      "name": "gap is not unique to candidate or an R01 regression",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+{
+  "date": "2026-10-17",
+  "verdict": "APPROVED",
+  "scope": "Analysis and exact publication only; no smaller reserve selected or implementation/runtime approved",
+  "pins": {
+    "report.md": "9a8ac973294208f21857a272047cd35a05e980b5ca47917124912a0ddea9b629",
+    "source-hashes.json": "a7a10f1cea7d9734dc99f9c830855f52c5e7d41e7b340e076c90421c88afe5a6",
+    "publication-allowlist.json": "dcd1178172292a48a2a75089db750cba6eb3d28e6bb8b5e68ef612c85f97f32d"
+  },
+  "command": "node artifacts/ui-parity-tooltip-reservation-review/audit.mjs",
+  "exitCode": 0,
+  "checks": 113,
+  "runtimeExecuted": false,
+  "calculator": {
+    "exitCode": 0,
+    "checks": 27,
+    "receiptWrite": "suppressed only after exact-byte equality"
+  },
+  "freezeChecker": {
+    "exitCode": 0,
+    "checks": 38
+  },
+  "independent": {
+    "candidate": 26624,
+    "guard": 115072,
+    "hardCeiling": 131072,
+    "boundaryBytes": 88448,
+    "afterReasonBytes": 116271,
+    "afterTailBytes": 132270,
+    "physical": {
+      "beforeRejectedWrite": 88448,
+      "rejectedCompletedBytes": 132270,
+      "afterOuterCatchBytes": 104661,
+      "outerReason": "Case JSON bound",
+      "limit": "Synthetic padded case and API-admissible tail; no browser reachability claim"
+    }
+  },
+  "smallestPrerequisite": "One enforced serialized failure-metadata policy covering both case and outer catch, followed by exact finite interval/scaffold derivation with terminal-write counterexamples; no reserve change yet",
+  "publication": {
+    "contentFiles": 5,
+    "metadataFiles": 1,
+    "destinationHashLinkAudit": "required after copy"
+  },
+  "results": [
+    {
+      "name": "frozen pin report.md",
+      "passed": true
+    },
+    {
+      "name": "frozen pin source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "frozen pin publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/r01-faults.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/verification.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revision-review/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revision-review/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revision-review/read-only-verifier.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revision-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-segment-keyboard-revision-review/verification.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T06.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes .kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes .kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes .kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes .kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes .kiro/specs/openbb-self-service/spec.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-reservation-analysis/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-reservation-analysis/verification.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-reservation-analysis/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-reservation-analysis/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "input/output bytes artifacts/ui-parity-tooltip-reservation-analysis/verification.json",
+      "passed": true
+    },
+    {
+      "name": "five unique content files",
+      "passed": true
+    },
+    {
+      "name": "safe analysis-owned text artifacts/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+      "passed": true
+    },
+    {
+      "name": "no private key or common token artifacts/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe analysis-owned text artifacts/ui-parity-tooltip-reservation-analysis/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "no private key or common token artifacts/ui-parity-tooltip-reservation-analysis/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe analysis-owned text artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "passed": true
+    },
+    {
+      "name": "no private key or common token artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "passed": true
+    },
+    {
+      "name": "safe analysis-owned text artifacts/ui-parity-tooltip-reservation-analysis/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "no private key or common token artifacts/ui-parity-tooltip-reservation-analysis/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "safe analysis-owned text artifacts/ui-parity-tooltip-reservation-analysis/verification.json",
+      "passed": true
+    },
+    {
+      "name": "no private key or common token artifacts/ui-parity-tooltip-reservation-analysis/verification.json",
+      "passed": true
+    },
+    {
+      "name": "candidate arithmetic",
+      "passed": true
+    },
+    {
+      "name": "separate tail arithmetic",
+      "passed": true
+    },
+    {
+      "name": "mock72 arithmetic only",
+      "passed": true
+    },
+    {
+      "name": "late completed in-memory arithmetic",
+      "passed": true
+    },
+    {
+      "name": "boundary exactly88448",
+      "passed": true
+    },
+    {
+      "name": "independent actual catch grows27823",
+      "passed": true
+    },
+    {
+      "name": "API-admissible exact tail",
+      "passed": true
+    },
+    {
+      "name": "disjoint object merge adds15999",
+      "passed": true
+    },
+    {
+      "name": "hard case prewrite rejects completed construction",
+      "passed": true
+    },
+    {
+      "name": "case reason UTF8JSON growth exceeds current reserve",
+      "passed": true
+    },
+    {
+      "name": "outer actual catch retains uncapped40000 reason",
+      "passed": true
+    },
+    {
+      "name": "actual input emitted once before failure",
+      "passed": true
+    },
+    {
+      "name": "input ledger bounded6000 reason persists",
+      "passed": true
+    },
+    {
+      "name": "case duplicates input error outside bounded entry",
+      "passed": true
+    },
+    {
+      "name": "actual writer rejects overlimit merged record",
+      "passed": true
+    },
+    {
+      "name": "physical preceding file is unchanged at rejected write",
+      "passed": true
+    },
+    {
+      "name": "outer catch can subsequently replace prefix with bounded failure",
+      "passed": true
+    },
+    {
+      "name": "report link ../ui-parity-tooltip-segment-keyboard-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "report link ../ui-parity-tooltip-segment-keyboard-revision-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "report link verification.json",
+      "passed": true
+    },
+    {
+      "name": "report link calculate.mjs",
+      "passed": true
+    },
+    {
+      "name": "report link source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "report link publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/r01-faults.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revised/verification.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revision-review/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revision-review/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revision-review/read-only-verifier.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revision-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-segment-keyboard-revision-review/verification.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T06.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen .kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen .kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen .kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen .kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen .kiro/specs/openbb-self-service/spec.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-reservation-analysis/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-reservation-analysis/verification.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-reservation-analysis/freeze-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-reservation-analysis/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "original remains frozen artifacts/ui-parity-tooltip-reservation-analysis/verification.json",
+      "passed": true
+    }
+  ]
+}

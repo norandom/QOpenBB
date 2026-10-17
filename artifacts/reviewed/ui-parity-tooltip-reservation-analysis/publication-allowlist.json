@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "Source-only arithmetic/counterexample publication proposal; no collector adoption or runtime grant",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-reservation-analysis/calculate.mjs",
+      "bytes": 11905,
+      "sha256": "72f4a31d7e28be857efff4f3f2114f1b2cae25032d35b13a391d12b408e0ef13",
+      "sanitization": "None; source-only synthetic arithmetic and fault-injection analysis"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-reservation-analysis/freeze-check.mjs",
+      "bytes": 1106,
+      "sha256": "a51e60f98bf8805760576af038e50f7c39b755860f779f0f4b2539a886461d2d",
+      "sanitization": "None; source-only synthetic arithmetic and fault-injection analysis"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "bytes": 13463,
+      "sha256": "9a8ac973294208f21857a272047cd35a05e980b5ca47917124912a0ddea9b629",
+      "sanitization": "None; source-only synthetic arithmetic and fault-injection analysis"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-reservation-analysis/source-hashes.json",
+      "bytes": 7037,
+      "sha256": "a7a10f1cea7d9734dc99f9c830855f52c5e7d41e7b340e076c90421c88afe5a6",
+      "sanitization": "None; source-only synthetic arithmetic and fault-injection analysis"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-reservation-analysis/verification.json",
+      "bytes": 5565,
+      "sha256": "34e461367acef742f160a2f79b0cadac703db3094b5991a1d0c597028280bd2a",
+      "sanitization": "None; source-only synthetic arithmetic and fault-injection analysis"
+    }
+  ],
+  "omissions": [
+    "No collector source is copied or modified; all accepted source and R01 review files are referenced pinned inputs.",
+    "No credentials, private/runtime state, logs, profiles, dependency contents, image archives or screenshots.",
+    "Publication metadata is copied separately without a self-hash.",
+    "No smaller reserve is selected; experimental 72-Tab mock is not runtime coverage; network/lifecycle prerequisites remain open."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "Approved analysis and publication only; no smaller reserve selected, implementation approval or runtime grant",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-reservation-review/review.md",
+      "sha256": "2bf94de82122fee3976960465f56c106e9490f68519fc97888a28aab639c1014",
+      "bytes": 8408,
+      "sanitization": "None; source-only reservation analysis review and synthetic counterexamples"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-reservation-review/verification.json",
+      "sha256": "b1b0574d816ac4a2575495d277d27ec52aab3bbd848ef3783b5115ddd374153a",
+      "bytes": 16056,
+      "sanitization": "None; source-only reservation analysis review and synthetic counterexamples"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-reservation-review/audit.mjs",
+      "sha256": "2dd333f284ce5c975f331397cfa9cf82d2ee36d5096980c71ef80b3c45921c25",
+      "bytes": 8987,
+      "sanitization": "None; source-only reservation analysis review and synthetic counterexamples"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-reservation-review/read-only-calculator.mjs",
+      "sha256": "3ada4ab7643710db3c488b8bab3c6c5b5f8fb8883ab73a9a9bbe8c6327d8f35d",
+      "bytes": 624,
+      "sanitization": "None; source-only reservation analysis review and synthetic counterexamples"
+    }
+  ],
+  "omissions": [
+    "Publication allowlist copied separately as metadata; no self-hash.",
+    "No runtime state, credentials, logs, profiles, dependencies, images or temporary IO files."
+  ]
+}
