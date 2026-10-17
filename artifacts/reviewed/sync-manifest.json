@@ -50,10 +50,11 @@
     "task-2.44",
     "task-2.43",
     "task-2.45",
-    "consuming-integration-readiness"
+    "consuming-integration-readiness",
+    "consuming-contract-freeze"
   ],
   "sourcepins": {
-    "root_at_sync": "0e8b63837d8195f7dc8decbaeebf8778ca72bfc2",
+    "root_at_sync": "ca9f2d55e4cdfa39497612e54b9c20fc3baf4b4c",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -9810,6 +9811,142 @@
       "publishedSHA256": "1eb149c494bf08410758f65e33af473f89d74d045a6db4551ee0b21a89500e20",
       "bytes": 200,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/controller/draft.md",
+      "sourceSHA256": "0707f53dc6d8c4cf5275f74a8161973d607fe869414eab95233e2e7914c2c77c",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/controller/draft.md",
+      "publishedSHA256": "0707f53dc6d8c4cf5275f74a8161973d607fe869414eab95233e2e7914c2c77c",
+      "bytes": 19135,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/appearance/draft.md",
+      "sourceSHA256": "0cf2231a7771e2daf7f15162e3f401231b841b0b2861c973fdf36696e5ff1435",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "publishedSHA256": "0cf2231a7771e2daf7f15162e3f401231b841b0b2861c973fdf36696e5ff1435",
+      "bytes": 26588,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/appearance/proposed-types.ts",
+      "sourceSHA256": "3a6d07bae4be9a7197afc5afc4844c4f2b7e3824a994f8edc0d6df70169499b6",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "publishedSHA256": "3a6d07bae4be9a7197afc5afc4844c4f2b7e3824a994f8edc0d6df70169499b6",
+      "bytes": 5141,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/appearance/extract_manifest.py",
+      "sourceSHA256": "092aac2a7b77ace35dbf1aef86dcbe5ff4634574c17850d172291eda11b1a923",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/appearance/extract_manifest.py",
+      "publishedSHA256": "092aac2a7b77ace35dbf1aef86dcbe5ff4634574c17850d172291eda11b1a923",
+      "bytes": 20681,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/appearance/field-manifest.json",
+      "sourceSHA256": "d7c4dd2e70651266a3f3d106a1ce77e7bcffe062c032560b779755db4f763060",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "publishedSHA256": "d7c4dd2e70651266a3f3d106a1ce77e7bcffe062c032560b779755db4f763060",
+      "bytes": 421188,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/appearance/input-allowlist.json",
+      "sourceSHA256": "0d24fccebbe3063cafc94679293fee67cc4292b56258fdfd933498e07fabeb1c",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/appearance/input-allowlist.json",
+      "publishedSHA256": "0d24fccebbe3063cafc94679293fee67cc4292b56258fdfd933498e07fabeb1c",
+      "bytes": 5738,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/appearance/output-allowlist.json",
+      "sourceSHA256": "759a95f8d52f74ce61527e80358b3cac3f79a497d8554f0b256db0bc42a43d32",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/appearance/output-allowlist.json",
+      "publishedSHA256": "759a95f8d52f74ce61527e80358b3cac3f79a497d8554f0b256db0bc42a43d32",
+      "bytes": 1138,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/appearance/locked-echarts-targets.json",
+      "sourceSHA256": "6617c4ee4e5f4fdf58be024faee437b30752b4bfe49cd34b1bebd4335c19fc9a",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/appearance/locked-echarts-targets.json",
+      "publishedSHA256": "6617c4ee4e5f4fdf58be024faee437b30752b4bfe49cd34b1bebd4335c19fc9a",
+      "bytes": 13791,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/session/draft.md",
+      "sourceSHA256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "publishedSHA256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "bytes": 30418,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/session/editor-field-ledger.json",
+      "sourceSHA256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "publishedSHA256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "bytes": 596346,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/session/generate-ledger.ps1",
+      "sourceSHA256": "ac1c182246442707c68573f1173983099b71d3063b3a03307330b3efc7d6380e",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/session/generate-ledger.ps1",
+      "publishedSHA256": "ac1c182246442707c68573f1173983099b71d3063b3a03307330b3efc7d6380e",
+      "bytes": 13302,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/session/freeze-inputs.ps1",
+      "sourceSHA256": "d5ba96a54c5ec62dd73fefaaa3a8158a949b2d451b49752eda9575b8a0a0275f",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/session/freeze-inputs.ps1",
+      "publishedSHA256": "d5ba96a54c5ec62dd73fefaaa3a8158a949b2d451b49752eda9575b8a0a0275f",
+      "bytes": 6248,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/session/mechanical-check.json",
+      "sourceSHA256": "bd2d55a33aa94114d8ba91f5ec72afdf9468b1991bb9a0570e9b918853a73ecd",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/session/mechanical-check.json",
+      "publishedSHA256": "bd2d55a33aa94114d8ba91f5ec72afdf9468b1991bb9a0570e9b918853a73ecd",
+      "bytes": 457,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/session/safe-hash-allowlist.json",
+      "sourceSHA256": "8252ce85aebd5b7ee170a1cb02b2074c52424e2eeb9ee6c791aae212ab3263cc",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/session/safe-hash-allowlist.json",
+      "publishedSHA256": "8252ce85aebd5b7ee170a1cb02b2074c52424e2eeb9ee6c791aae212ab3263cc",
+      "bytes": 15495,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/review/report.md",
+      "sourceSHA256": "bfe41d2c85cdd5a2ae9297971ab3c22c11cce39d2ff428f08dd55ac57afc0380",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/review/report.md",
+      "publishedSHA256": "bfe41d2c85cdd5a2ae9297971ab3c22c11cce39d2ff428f08dd55ac57afc0380",
+      "bytes": 9201,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/review/verification.json",
+      "sourceSHA256": "60d635ac82644ceaa3201f508dd5063b464f83df530fa6bd9f5cfaea49f7cf5d",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/review/verification.json",
+      "publishedSHA256": "60d635ac82644ceaa3201f508dd5063b464f83df530fa6bd9f5cfaea49f7cf5d",
+      "bytes": 4219,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-contract-freeze/review/safe-publication-allowlist.json",
+      "sourceSHA256": "ac4037d3fe7df5e7dc4b787bd8e0d57289cb1b1d6791ee2a34ff0fdf64f5b12a",
+      "publishedpath": "artifacts/reviewed/consuming-contract-freeze/review/safe-publication-allowlist.json",
+      "publishedSHA256": "ac4037d3fe7df5e7dc4b787bd8e0d57289cb1b1d6791ee2a34ff0fdf64f5b12a",
+      "bytes": 2769,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -10523,5 +10660,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 23363302
+  "total_payload_bytes": 24555157
 }

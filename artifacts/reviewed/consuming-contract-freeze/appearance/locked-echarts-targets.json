@@ -1,0 +1,506 @@
+{
+  "version": "6.0.0",
+  "claim": "local member existence and declared semantics only; no parity or runtime verification",
+  "files": [
+    {
+      "id": "global",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/util/types.d.ts",
+      "sha256": "bba5a36107e0368290314c4b7e672ca0c3a056b4d34c100e150cf3081090f270",
+      "members": [
+        {
+          "needle": "backgroundColor?: ZRColor",
+          "matches": [
+            {
+              "line": 507,
+              "text": "backgroundColor?: ZRColor;"
+            }
+          ]
+        },
+        {
+          "needle": "interface TextCommonOption",
+          "matches": [
+            {
+              "line": 910,
+              "text": "export interface TextCommonOption<TNuance extends TextCommonOptionNuanceBase = TextCommonOptionNuanceDefault> extends ShadowOptionMixin {"
+            }
+          ]
+        },
+        {
+          "needle": "interface ItemStyleOption",
+          "matches": [
+            {
+              "line": 839,
+              "text": "export interface ItemStyleOption<TCbParams = never> extends ShadowOptionMixin, BorderOptionMixin {"
+            }
+          ]
+        },
+        {
+          "needle": "interface LineStyleOption",
+          "matches": [
+            {
+              "line": 850,
+              "text": "export interface LineStyleOption<Clr = ZRColor> extends ShadowOptionMixin {"
+            }
+          ]
+        },
+        {
+          "needle": "fontWeight?: ZRFontWeight",
+          "matches": [
+            {
+              "line": 913,
+              "text": "fontWeight?: ZRFontWeight;"
+            }
+          ]
+        },
+        {
+          "needle": "fontFamily?: string",
+          "matches": [
+            {
+              "line": 914,
+              "text": "fontFamily?: string;"
+            }
+          ]
+        },
+        {
+          "needle": "fontSize?: number | string",
+          "matches": [
+            {
+              "line": 915,
+              "text": "fontSize?: number | string;"
+            }
+          ]
+        },
+        {
+          "needle": "ZRLineType =",
+          "matches": [
+            {
+              "line": 41,
+              "text": "export declare type ZRLineType = 'solid' | 'dotted' | 'dashed' | number | number[];"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caption",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/component/title/install.d.ts",
+      "sha256": "0571f6015f9650163266a80c35668778e032eb1e8129a9bdf44d0d6775d25c12",
+      "members": [
+        {
+          "needle": "show?: boolean",
+          "matches": [
+            {
+              "line": 8,
+              "text": "show?: boolean;"
+            }
+          ]
+        },
+        {
+          "needle": "text?: string",
+          "matches": [
+            {
+              "line": 9,
+              "text": "text?: string;"
+            },
+            {
+              "line": 15,
+              "text": "subtext?: string;"
+            }
+          ]
+        },
+        {
+          "needle": "subtext?: string",
+          "matches": [
+            {
+              "line": 15,
+              "text": "subtext?: string;"
+            }
+          ]
+        },
+        {
+          "needle": "itemGap?: number",
+          "matches": [
+            {
+              "line": 33,
+              "text": "itemGap?: number;"
+            }
+          ]
+        },
+        {
+          "needle": "padding?: number | number[]",
+          "matches": [
+            {
+              "line": 29,
+              "text": "padding?: number | number[];"
+            }
+          ]
+        },
+        {
+          "needle": "textStyle?: TitleTextStyleOption",
+          "matches": [
+            {
+              "line": 34,
+              "text": "textStyle?: TitleTextStyleOption;"
+            },
+            {
+              "line": 35,
+              "text": "subtextStyle?: TitleTextStyleOption;"
+            }
+          ]
+        },
+        {
+          "needle": "subtextStyle?: TitleTextStyleOption",
+          "matches": [
+            {
+              "line": 35,
+              "text": "subtextStyle?: TitleTextStyleOption;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caption-runtime",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/lib/component/title/install.js",
+      "sha256": "c6a1f97f183920b4acdb6df00bae42348a73eceba5c350190ff97d7d70a1ed08",
+      "members": [
+        {
+          "needle": "if (!titleModel.get('show'))",
+          "matches": [
+            {
+              "line": 103,
+              "text": "if (!titleModel.get('show')) {"
+            }
+          ]
+        },
+        {
+          "needle": "textRect.height + titleModel.get('itemGap')",
+          "matches": [
+            {
+              "line": 126,
+              "text": "y: textRect.height + titleModel.get('itemGap'),"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "axis",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/coord/axisCommonTypes.d.ts",
+      "sha256": "892eafa4e27f3400b4e09f08bf17e7e074492885193a43b5cd53977eaad345b6",
+      "members": [
+        {
+          "needle": "name?: string",
+          "matches": [
+            {
+              "line": 15,
+              "text": "name?: string;"
+            }
+          ]
+        },
+        {
+          "needle": "nameTextStyle?: AxisNameTextStyleOption",
+          "matches": [
+            {
+              "line": 29,
+              "text": "nameTextStyle?: AxisNameTextStyleOption;"
+            }
+          ]
+        },
+        {
+          "needle": "nameGap?: number",
+          "matches": [
+            {
+              "line": 37,
+              "text": "nameGap?: number;"
+            }
+          ]
+        },
+        {
+          "needle": "axisLine?: AxisLineOption",
+          "matches": [
+            {
+              "line": 58,
+              "text": "axisLine?: AxisLineOption;"
+            }
+          ]
+        },
+        {
+          "needle": "splitLine?: SplitLineOption",
+          "matches": [
+            {
+              "line": 61,
+              "text": "splitLine?: SplitLineOption;"
+            }
+          ]
+        },
+        {
+          "needle": "margin?: number",
+          "matches": [
+            {
+              "line": 230,
+              "text": "margin?: number;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "axis-position",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/coord/cartesian/AxisModel.d.ts",
+      "sha256": "bb60188c4aae810d7e63d73db46745604bead4e5945319a1c8a1949105ea7b04",
+      "members": [
+        {
+          "needle": "position?: CartesianAxisPosition",
+          "matches": [
+            {
+              "line": 13,
+              "text": "position?: CartesianAxisPosition;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legend",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/component/legend/LegendModel.d.ts",
+      "sha256": "7f8fe54eca05028dbc6d0d9cbf18bcc40bed9a3c2ee4bb7db0c2f1e31776c744",
+      "members": [
+        {
+          "needle": "itemGap?: number",
+          "matches": [
+            {
+              "line": 114,
+              "text": "itemGap?: number;"
+            }
+          ]
+        },
+        {
+          "needle": "itemWidth?: number",
+          "matches": [
+            {
+              "line": 118,
+              "text": "itemWidth?: number;"
+            }
+          ]
+        },
+        {
+          "needle": "itemHeight?: number",
+          "matches": [
+            {
+              "line": 122,
+              "text": "itemHeight?: number;"
+            }
+          ]
+        },
+        {
+          "needle": "padding?: number | number[]",
+          "matches": [
+            {
+              "line": 109,
+              "text": "padding?: number | number[];"
+            }
+          ]
+        },
+        {
+          "needle": "orient?: LayoutOrient",
+          "matches": [
+            {
+              "line": 96,
+              "text": "orient?: LayoutOrient;"
+            }
+          ]
+        },
+        {
+          "needle": "textStyle?: LabelOption",
+          "matches": [
+            {
+              "line": 58,
+              "text": "textStyle?: LabelOption;"
+            },
+            {
+              "line": 68,
+              "text": "textStyle?: LabelOption;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grid",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/coord/cartesian/GridModel.d.ts",
+      "sha256": "84362b0e18454a909fe9b959a5cc6f9ade6d1376c2189dfef2c95933c4a74fe5",
+      "members": [
+        {
+          "needle": "outerBounds?: BoxLayoutOptionMixin",
+          "matches": [
+            {
+              "line": 42,
+              "text": "outerBounds?: BoxLayoutOptionMixin;"
+            }
+          ]
+        },
+        {
+          "needle": "outerBoundsMode?",
+          "matches": [
+            {
+              "line": 36,
+              "text": "outerBoundsMode?: 'auto' | NullUndefined | 'same' | 'none';"
+            }
+          ]
+        },
+        {
+          "needle": "containLabel?: boolean",
+          "matches": [
+            {
+              "line": 21,
+              "text": "containLabel?: boolean;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bar",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/chart/bar/BarSeries.d.ts",
+      "sha256": "a5ee915064b6f52a5aade9040bec7ca7d1ced5e55c42e05a7e18ee0b18307e75",
+      "members": [
+        {
+          "needle": "interface BarSeriesOption",
+          "matches": [
+            {
+              "line": 25,
+              "text": "export interface BarSeriesOption extends BaseBarSeriesOption<BarStateOption<CallbackDataParams>, BarStatesMixin>, BarStateOption<CallbackDataParams>, SeriesStackOptionMixin, SeriesSamplingOptionMixin, SeriesEncodeOptionMixin {"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "line",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/chart/line/LineSeries.d.ts",
+      "sha256": "21aee9c23a811ddbb9c0f8eca719130ad9c2debc9b91bbf88e796d5b538e174c",
+      "members": [
+        {
+          "needle": "lineStyle?: LineStyleOption",
+          "matches": [
+            {
+              "line": 36,
+              "text": "lineStyle?: LineStyleOption;"
+            },
+            {
+              "line": 45,
+              "text": "lineStyle?: LineStyleOption;"
+            }
+          ]
+        },
+        {
+          "needle": "connectNulls?: boolean",
+          "matches": [
+            {
+              "line": 52,
+              "text": "connectNulls?: boolean;"
+            }
+          ]
+        },
+        {
+          "needle": "showSymbol?: boolean",
+          "matches": [
+            {
+              "line": 53,
+              "text": "showSymbol?: boolean;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "symbol",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/util/types.d.ts",
+      "sha256": "bba5a36107e0368290314c4b7e672ca0c3a056b4d34c100e150cf3081090f270",
+      "members": [
+        {
+          "needle": "interface SymbolOptionMixin",
+          "matches": [
+            {
+              "line": 822,
+              "text": "export interface SymbolOptionMixin<T = never> {"
+            }
+          ]
+        },
+        {
+          "needle": "symbolSize?",
+          "matches": [
+            {
+              "line": 643,
+              "text": "symbolSize?: number;"
+            },
+            {
+              "line": 830,
+              "text": "symbolSize?: number | number[] | (T extends never ? never : SymbolSizeCallback<T>);"
+            },
+            {
+              "line": 876,
+              "text": "symbolSize?: number;"
+            }
+          ]
+        },
+        {
+          "needle": "symbol?",
+          "matches": [
+            {
+              "line": 642,
+              "text": "symbol?: string | string[];"
+            },
+            {
+              "line": 826,
+              "text": "symbol?: string | (T extends never ? never : SymbolCallback<T>);"
+            },
+            {
+              "line": 875,
+              "text": "symbol?: string;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "path": "/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/echarts/types/src/component/tooltip/TooltipModel.d.ts",
+      "sha256": "cc40e5c7fbfc497cd5cca06d4065b075f33d9c465a59b0fbc16b52cf971066ba",
+      "members": [
+        {
+          "needle": "trigger?: 'item' | 'axis' | 'none'",
+          "matches": [
+            {
+              "line": 20,
+              "text": "trigger?: 'item' | 'axis' | 'none';"
+            }
+          ]
+        },
+        {
+          "needle": "renderMode?: 'auto' | TooltipRenderMode",
+          "matches": [
+            {
+              "line": 26,
+              "text": "renderMode?: 'auto' | TooltipRenderMode;"
+            }
+          ]
+        },
+        {
+          "needle": "TopLevelFormatterParams",
+          "matches": [
+            {
+              "line": 4,
+              "text": "export declare type TopLevelFormatterParams = CallbackDataParams | CallbackDataParams[];"
+            },
+            {
+              "line": 5,
+              "text": "export interface TooltipOption extends CommonTooltipOption<TopLevelFormatterParams>, ComponentOption {"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

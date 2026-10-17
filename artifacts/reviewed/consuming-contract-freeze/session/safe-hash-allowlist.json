@@ -1,0 +1,351 @@
+{
+  "status": "explicit-safe-input-and-draft-output-allowlist; controller review required before publication",
+  "scope": "artifacts/consuming-contract-freeze/session",
+  "files": [
+    {
+      "path": ".agents/skills/kiro-spec-design/rules/design-principles.md",
+      "sha256": "5033327db3fc6b93d2381a1795b27e4bb6e9f73561e84128a83dca54671d1bfe",
+      "bytes": 12015,
+      "class": "source-contract-input"
+    },
+    {
+      "path": ".kiro/specs/openbb-self-service/chart-appearance-editor-integration-design.md",
+      "sha256": "05d12b46374cfaf1bf9986da24efc8e8fed7ded9b0b13eee333518285926d76b",
+      "bytes": 20399,
+      "class": "source-contract-input"
+    },
+    {
+      "path": ".kiro/specs/openbb-self-service/chart-application-integration-design.md",
+      "sha256": "196b88811be7b637d21d4c1e37048d6091609942f4696f9a4bcdc5e90cbb5313",
+      "bytes": 46388,
+      "class": "source-contract-input"
+    },
+    {
+      "path": ".kiro/specs/openbb-self-service/chart-consuming-integration-readiness.md",
+      "sha256": "dec75d54ff16e8dafea400405e5ab9252217c133aa408283bd8e519f5ffe9300",
+      "bytes": 10156,
+      "class": "source-contract-input"
+    },
+    {
+      "path": ".kiro/specs/openbb-self-service/chart-editor-contract-close.md",
+      "sha256": "7e982b54f722be5aad5e0fc84f37caf6c4be71f36d3ef0ff38efcde060b87d15",
+      "bytes": 3915,
+      "class": "source-contract-input"
+    },
+    {
+      "path": ".kiro/steering/ci.md",
+      "sha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd",
+      "bytes": 4078,
+      "class": "source-contract-input"
+    },
+    {
+      "path": ".kiro/steering/complexity.md",
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "bytes": 4171,
+      "class": "source-contract-input"
+    },
+    {
+      "path": ".kiro/steering/delegation.md",
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "bytes": 4333,
+      "class": "source-contract-input"
+    },
+    {
+      "path": ".kiro/steering/documentation.md",
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "bytes": 3981,
+      "class": "source-contract-input"
+    },
+    {
+      "path": ".kiro/steering/testing.md",
+      "sha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f",
+      "bytes": 5216,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "artifacts/consuming-contract-freeze/session/draft.md",
+      "sha256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "bytes": 30418,
+      "class": "draft-output-pending-controller-review"
+    },
+    {
+      "path": "artifacts/consuming-contract-freeze/session/editor-field-ledger.json",
+      "sha256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "bytes": 596346,
+      "class": "draft-output-pending-controller-review"
+    },
+    {
+      "path": "artifacts/consuming-contract-freeze/session/freeze-inputs.ps1",
+      "sha256": "d5ba96a54c5ec62dd73fefaaa3a8158a949b2d451b49752eda9575b8a0a0275f",
+      "bytes": 6248,
+      "class": "draft-output-pending-controller-review"
+    },
+    {
+      "path": "artifacts/consuming-contract-freeze/session/generate-ledger.ps1",
+      "sha256": "ac1c182246442707c68573f1173983099b71d3063b3a03307330b3efc7d6380e",
+      "bytes": 13302,
+      "class": "draft-output-pending-controller-review"
+    },
+    {
+      "path": "artifacts/consuming-contract-freeze/session/mechanical-check.json",
+      "sha256": "bd2d55a33aa94114d8ba91f5ec72afdf9468b1991bb9a0570e9b918853a73ecd",
+      "bytes": 457,
+      "class": "draft-output-pending-controller-review"
+    },
+    {
+      "path": "artifacts/reviewed/parity/chart-editor-capture/control-inventory.json",
+      "sha256": "16b9cd05f30d591624098fd093720be7b9e9c3b8d5ded5e85cbe82cae8d5874e",
+      "bytes": 316857,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-contract-close/event-ledger.json",
+      "sha256": "a962a523400404e5236e30e379047c6a92af2ff2496c3da2822fc8b8c2c17058",
+      "bytes": 150123,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-payload-capture/payload-deltas.json",
+      "sha256": "237aa77c3ec40c1309a64110c55271fdf33e448fac258d3686968903383f6d0e",
+      "bytes": 25829,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/control-ledger.json",
+      "sha256": "fff4cb4af4bc1662be58dc188bd0bc95aa27c66e436b2b8193b79f6884dacf20",
+      "bytes": 50902,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/domains.json",
+      "sha256": "e9de04c6e36a1d6664f0314d260d9373f38eddee82f74a440664b4cc43074428",
+      "bytes": 1167,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Horizontal-Axis-auto-rotate-off.json",
+      "sha256": "ebcf58f8214eb578c33d7b9047be6ef6d507683374b5ccbd5e4a22c3cfcb84fd",
+      "bytes": 17953,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Horizontal-Axis-default.json",
+      "sha256": "5531c7071b67f4b43f569f387c2009ca965e4ba2353c58287b950dc9cf3d2283",
+      "bytes": 13610,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Horizontal-Axis-edited.json",
+      "sha256": "ebcf58f8214eb578c33d7b9047be6ef6d507683374b5ccbd5e4a22c3cfcb84fd",
+      "bytes": 17953,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Legend-default.json",
+      "sha256": "792146a0f48ef9e712637ff55acf33a7f225d35d6aee23df82ac6937f12a731d",
+      "bytes": 31810,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Legend-edited.json",
+      "sha256": "bf8292276329862ad11ad8f1469e8f221e183f23a51d86039197be5a9eeaa2e8",
+      "bytes": 44405,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/line-markers-on.json",
+      "sha256": "843c14636f1b8140f285388173a9e8365da6f9270f78f2be068ad2d7d78d9032",
+      "bytes": 52251,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/line-Series-default.json",
+      "sha256": "538cda478e461e3cc2060c437dde1dbb4538e55d806fe1a513dc681ccbbc126b",
+      "bytes": 48655,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/line-Series-edited.json",
+      "sha256": "c4ae907eb6a787098db1beb2d1983e7507131344ac1936ab8b7cd0019503df77",
+      "bytes": 53650,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Series-default.json",
+      "sha256": "cc58dcaa2e00f2b136482a52b60ecf066eb6b5e44940ca6d72430a4453aba5e5",
+      "bytes": 21862,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Series-edited.json",
+      "sha256": "5e6bc7a8e1a3e44d885c8814cebaa7c93635fcad25765e4c2d27ef7d0e0e3c3e",
+      "bytes": 30874,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Series-labels-enabled.json",
+      "sha256": "7ad46dbe140d791328ed99a8a3635b581feab830400e1d568f12f0c36dc67271",
+      "bytes": 28502,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/setup-Aggregate-off.json",
+      "sha256": "2251213952b23738d4d9cc78a7f1f7e92abec29eea71ef691093f8a46dab4a3b",
+      "bytes": 42387,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/setup-Aggregate-on.json",
+      "sha256": "32754a5bcc4235edfd41c9548d5d08a8a71754393a34485afcc690f16816b04d",
+      "bytes": 40133,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/setup-default.json",
+      "sha256": "3fb60cc3594eff244cc9fbcdfca6965da4ee768a99707ce053de00edb0509913",
+      "bytes": 37263,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/setup-Switch-Category-Series-off.json",
+      "sha256": "793ca19e045002506869dd1cd99f468d0d9bbe14adf5ce8375e6bb40c7b5661d",
+      "bytes": 47483,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/setup-Switch-Category-Series-on.json",
+      "sha256": "3c4c943c4055dbb686b73277e96fa39f5fd462f78fcd9c316e558fb277ae672b",
+      "bytes": 45401,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Vertical-Axis-default.json",
+      "sha256": "22f58104a933c53f7b8b82809492a30e9cd846500fa36cb7aee38f686afa5082",
+      "bytes": 19118,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Vertical-Axis-edited.json",
+      "sha256": "7ea64353f5b437eae2f43b0582c8e21f62a85aab5ada8e86f91a495da78b32d5",
+      "bytes": 24344,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-runtime-next/patch-ledger.json",
+      "sha256": "3c587a3695242201f5e9b1f0b08b55979022642ecbf311d48c63e9d76d592996",
+      "bytes": 71580,
+      "class": "existing-selected-reviewed-evidence"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/financialFormatting.ts",
+      "sha256": "a31738d1b3e4d296873433f6795a7e4035ef516201017bd62825e2e4724898a0",
+      "bytes": 2023,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/gridCapture.ts",
+      "sha256": "1f2f83ea14bd8b44043157f649cce130c9ae64aea62de598a09ae299b3bd6e7b",
+      "bytes": 7239,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/sessionState.ts",
+      "sha256": "f8978a8893b09e0a915563ab677c57eeae12be6f4006522ae80ec620a4462c2c",
+      "bytes": 7279,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/types.ts",
+      "sha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+      "bytes": 6519,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "sha256": "c708dae759ba45fe49430a55e9c32b3399d0eff8552781600b305d6644ca4c95",
+      "bytes": 3738,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "sha256": "56430d89d2bb58b4a888bb09458862d1c28cc4d9a1b72d408c8e1b2145794128",
+      "bytes": 1705,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/snapshotTypes.ts",
+      "sha256": "6ecba6a18a77cad3f027e384b023296187b968b1566a6955a54af638b6c25a14",
+      "bytes": 2236,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/cartesian.ts",
+      "sha256": "584f61b6e231a8693ce046a2a0e049e1e13eb87c537ede8fe5b69d1dcb2f99f9",
+      "bytes": 6644,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/EChartsHost.tsx",
+      "sha256": "906fefc5eed125da005030061f3c6375becedacd26f0c5ee5a89f89c12e3b624",
+      "bytes": 2439,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/lifecycle.ts",
+      "sha256": "ce71510b3c064efbb3318a33f2e3f04d3446b17abcc41497fc24f2634f3d3ced",
+      "bytes": 4384,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "sha256": "c2a2db418147896f87117b4fb98fd65d486bbc8a4d66038c61980a2b3abf2187",
+      "bytes": 8932,
+      "class": "source-contract-input"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/Widget.hooks.tsx",
+      "sha256": "a69811c9c137d629ad1b27431ece65ad2f9b07f3001dd29d59caabd79c3e5e42",
+      "bytes": 10024,
+      "class": "source-contract-input"
+    }
+  ],
+  "originalGitInputs": [
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "gitBlob": "19ce7b9e71a4fa9f6e2bd1c1f12709cd6a58de2a",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+      "method": "git show UTF-8 text retaining original line endings"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
+      "gitBlob": "5cb2c43727b5950a9b4264fafa76187ba29ee60c",
+      "sha256": "37a5a127ee597efbe26d47806d1085ccd1447dc11d2f048cf4c98cb8abd70fc7",
+      "method": "git show UTF-8 text retaining original line endings"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/hooks/useTableContext.tsx",
+      "gitBlob": "29d76a0cc9ae106806bf279617d70f33f6b77956",
+      "sha256": "63e82095b66945c12a657968fd57ab22ad92105fe6d981b7d2f403a8ee34f8da",
+      "method": "git show UTF-8 text retaining original line endings"
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/hooks/useUpdateColumnState.ts",
+      "gitBlob": "571db4392a3886cce6a5b9fc9efc4c0d16f0353a",
+      "sha256": "c6b34ad355c19d69f0eb858c9fbb027c7a5cc0cb5e6cae49e3f15bc466f4d0fb",
+      "method": "git show UTF-8 text retaining original line endings"
+    }
+  ],
+  "excluded": [
+    "Environment/credential/private account/database/runtime files",
+    "Unlisted artifact trees, raw diagnostics/request bodies and authentication traces",
+    "Production edits, root/spec edits, browser/network/build/install/suite output"
+  ]
+}

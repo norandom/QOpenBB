@@ -1,0 +1,125 @@
+{
+  "purpose": "Exact finite reviewed inputs and local source hashes; no private runtime/account/diagnostic files",
+  "files": [
+    {
+      "path": "artifacts/reviewed/appearance-next-audit/input-manifest.json",
+      "sha256": "984ba0be1e22446623c13103ea2b578e2ea944ed55a86c6b1196bedfc93b3667"
+    },
+    {
+      "path": "artifacts/reviewed/appearance-next-audit/leaf-ledger.json",
+      "sha256": "3ab0bb89ffdf3c385e4d3a1c6366412bfcc77130753cc5b4d575ba8cede2f101"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-contract-close/cases.json",
+      "sha256": "f429407124be0952217520754aa5c4ea0b682dc4fe16d0a072c94cace999877a"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-contract-close/source-manifest.json",
+      "sha256": "a58755b20ea53daecff204096cede32455c86b754bc0d0876fc7113380ab6735"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-saved-composition/case-inputs.json",
+      "sha256": "789f657c44215dac4c8e9d997653d8a7014ae6b2a57cc16f10bb39da1c6b200d"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-saved-composition/cases.json",
+      "sha256": "fef8c696b34262d9a3f737caecabd001d19946f016ecb8c286efe2d99f4520e5"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-saved-composition/source-manifest.json",
+      "sha256": "ecb62e6f281938186676a179559d5ba91117c369663576bc416cf1e428a927f0"
+    },
+    {
+      "path": "artifacts/reviewed/parity/custom-theme-contract/dark-groupedColumn.json",
+      "sha256": "4aa8f2e757d1faa50529fd39bc9c275e906f35089ba81dbe21bb1fd315fe5259"
+    },
+    {
+      "path": "artifacts/reviewed/parity/custom-theme-contract/light-groupedColumn.json",
+      "sha256": "572e278781012f541db615540ef456787c25ab65416c2d112472e2ec5bea7fbe"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-contract-close/tooltip-Compact-hover.json",
+      "sha256": "e45d59b245cd7c3798c355e8897856bb767a2343274915cd32b2fcb1ff51f522"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-contract-close/tooltip-Multiple-hover.json",
+      "sha256": "f6480108d6f0f957a6cc48eb4beb958c16a0d14f3fe5bc4868d3e5f4b3f887b7"
+    },
+    {
+      "path": "artifacts/reviewed/parity/editor-contract-close/tooltip-Single-hover.json",
+      "sha256": "1a064ac424c96d1efbcbd763b61ffe2ea5b788535915e40bb595fa92419031f1"
+    },
+    {
+      "path": "artifacts/reviewed/parity/theme-matrix/dark-groupedColumn.json",
+      "sha256": "2744badd0bf8d453e9a1201681ec27f1cad7e544041c4bea13d7a3972341ac9b"
+    },
+    {
+      "path": "artifacts/reviewed/parity/theme-matrix/first-pass/dark-line.json",
+      "sha256": "b1a5f295f7db20e1e92d695c4677cfc3ce97a3cde167b75550742c502316681d"
+    },
+    {
+      "path": "artifacts/reviewed/parity/theme-matrix/first-pass/dark-stackedColumn.json",
+      "sha256": "e7de667b5d56fcd8aeb24a5470eae8b87846ac03721af1b3d48952d8be7992fb"
+    },
+    {
+      "path": "artifacts/reviewed/parity/theme-matrix/light-groupedColumn.json",
+      "sha256": "a3d2498a6c9afe6887d0c1fa2bbd9eaecef4793d29f349b17982e313178b79bd"
+    },
+    {
+      "path": "artifacts/reviewed/parity/theme-matrix/light-line.json",
+      "sha256": "503d2ee32829d92d5c9a778f55620ad60dffca8012e05d44a48265524c4b0605"
+    },
+    {
+      "path": "artifacts/reviewed/parity/theme-matrix/light-stackedColumn.json",
+      "sha256": "9c9fa5bb4d57b138857a547b4bc8c3e1f66a49652f2a736eba5d7249efc09394"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/bun.lock",
+      "sha256": "747dd1514aac6aaa3bb63e33e4146b9f0a9bd4f02da2a1e595f15102f4d290f5"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/package.json",
+      "sha256": "22b8936be4a077f40ced2b3ab6a1dd7f0731c5b90f7ba59267fabf07624dafe0"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/appearanceColors.ts",
+      "sha256": "5027531bfe5ea806d4a1b07a8bb57bcb24d39524d1a94844496b862c9f739856"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/appearanceComposition.ts",
+      "sha256": "e6a1b7eb39ba526a9d72c412e2337fc2dedf19d27b87b9f9f047926a3f32242c"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/appearanceContracts.ts",
+      "sha256": "544d206dffd39f9cb82388ea0e0f0193ef924a0f4ce2a75dbf30ab4e5fd816e6"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/financialFormatting.ts",
+      "sha256": "a31738d1b3e4d296873433f6795a7e4035ef516201017bd62825e2e4724898a0"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/types.ts",
+      "sha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/cartesian.ts",
+      "sha256": "584f61b6e231a8693ce046a2a0e049e1e13eb87c537ede8fe5b69d1dcb2f99f9"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/cartesianStyle.ts",
+      "sha256": "c8688c04fc437e259b0d30aaee46872f9d48032d1f0629d633223fbb5c57d4b2"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+      "sha256": "0581c101adc4a7dc71732965df569201c8e3b14144088c48bce188c849127d9f"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "abb658e8caa298ae8bdef2b3903b4a84af0406c34a9d751b4f11c29470cced59"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "sha256": "c2a2db418147896f87117b4fb98fd65d486bbc8a4d66038c61980a2b3abf2187"
+    }
+  ]
+}
