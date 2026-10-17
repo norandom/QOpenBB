@@ -202,8 +202,8 @@ id = "controlled-chart-type-gallery"
 requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
 planned_checks = ["supplied-chart-order-and-model-callback", "gallery-keyboard-and-scroll", "owner-gallery-visual-judgment"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chartTypeGallery.test.tsx"]
-status = "planned"
-evidence = ["Task 2.47 component implemented at Workspace b244082 and independently reviewed: three focused tests, scoped types/lint and isolated real-component dark/light preview pass. Owner visual judgment remains pending; task remains open. See artifacts/reviewed/task-2.47/review/review.md and implementer/gallery-light-dark.png. Storybook runtime and full editor/dashboard integration are unverified."]
+status = "passed"
+evidence = ["Task 2.47 component implemented at Workspace b244082 and independently reviewed: three focused tests, scoped types/lint and isolated real-component dark/light preview pass. Owner accepted the shown gallery on 2026-10-17 (reply: ok); task 2.47 is accepted within component scope. See artifacts/reviewed/task-2.47/review/review.md and implementer/gallery-light-dark.png. Storybook runtime and full editor/dashboard integration are unverified."]
 
 [[capabilities]]
 id = "widget-edit-replay-and-committed-save"

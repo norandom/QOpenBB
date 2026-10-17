@@ -16,11 +16,11 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 1.4, 2.45_
   - _Requirements: 4.7, 4.8, 4.9, 10.4, 10.5, 10.6_
 
-- [ ] 2.47 (P) Implement the original chart-type gallery as a controlled UI component
+- [x] 2.47 (P) Implement the original chart-type gallery as a controlled UI component
   - Follow the [gallery design](chart-gallery-design.md). Own the production gallery/catalog/thumbnail modules and focused tests/story. Keep application flags, guards, storage and rendering integration unchanged.
   - Done when the observed ordered gallery renders in the original compact style, all supplied choices work by pointer/keyboard, and exact model types reach the caller without hidden filtering or fallback. Show an explicitly scoped component preview for owner visual comparison.
   - Whole production files pass 400 physical / 300 logical / 50 per-function caps, scoped type/lint and meaningful component checks with independent review. Reuse existing tooling and original screenshots; no new reference capture infrastructure.
-  - Implemented at Workspace `b244082`; independent component review passed. [Preview and review](../../../artifacts/reviewed/task-2.47/review/review.md) await owner visual judgment. Dashboard integration and Storybook runtime are not accepted.
+  - Implemented at Workspace `b244082`; independent component review passed. Owner accepted the shown [gallery preview](../../../artifacts/reviewed/task-2.47/implementer/gallery-light-dark.png) on 2026-10-17 (reply: "ok"). Dashboard integration and Storybook runtime are not accepted.
   - _Boundary: Controlled chart-type selection UI; no session or storage ownership_
   - _Depends: 2.45_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_

@@ -278,7 +278,7 @@
   },
   "production_ui_followup": {
     "name": "widget-edit-replay-repair",
-    "phase": "widget-repair-accepted-gallery-visual-review",
+    "phase": "bounded-production-tasks-accepted",
     "design_path": "widget-edit-design.md",
     "design_approved": true,
     "tasks_approved": true,
@@ -296,11 +296,15 @@
       "scope": "Controlled production chart-type gallery and explicitly scoped component preview; no full editor/application activation",
       "implementation_revision": "b244082",
       "implementation_review": "artifacts/reviewed/task-2.47/review/review.md",
-      "visual_acceptance": "pending owner judgment of shown component preview",
-      "implementation_accepted": false
+      "visual_acceptance": "Owner replied ok to the shown gallery comparison on 2026-10-17; acceptance covers the shown component view and thumbnail differences only.",
+      "implementation_accepted": true,
+      "visual_evidence": {
+        "path": "artifacts/reviewed/task-2.47/implementer/gallery-light-dark.png",
+        "sha256": "27e103c92d041d185a64da31e1918bda73cd39eda4e9b4dc4d7db628e6d0e90e"
+      }
     },
     "implementation_source_revision": "708d6bb8ce266c10a8615c74d96c79907dba669e",
     "implementation_review": "artifacts/reviewed/task-2.46/review/review.md",
-    "acceptance_scope": "Task 2.46 existing widget owner only; task 2.47 remains open for owner visual judgment. Full editor and renderer integration remain pending."
+    "acceptance_scope": "Tasks 2.46 and 2.47 accepted within their bounded component scopes. Full editor and renderer integration remain pending."
   }
 }
