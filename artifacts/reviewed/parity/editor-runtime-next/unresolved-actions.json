@@ -1,0 +1,26 @@
+[
+  {
+    "label": "horizontal-label-padding-9",
+    "error": "locator.fill: Error: strict mode violation: locator('.ag-chart-docked-container').locator('.ag-slider').filter({ has: locator('label').filter({ hasText: /^Padding$/ }) }).locator('input[type=number]') resolved to 2 elements:\n    1) <input min=\"0\" max=\"30\" step=\"any\" tabindex=\"0\" type=\"number\" data-ref=\"eInput\" id=\"ag-304-input\" class=\"ag-input-field-input ag-number-field-input\"/> aka locator('#ag-304-input')\n    2) <input min=\"0\" max=\"30\" step=\"any\" tabindex=\"0\" type=\"number\" data-ref=\"eInput\" id=\"ag-357-input\" class=\"ag-input-field-input ag-number-field-input\"/> aka locator('#ag-357-input')\n\nCall log:\n\u001b[2m  - waiting for locator('.ag-chart-docked-container').locator('.ag-slider').filter({ has: locator('label').filter({ hasText: /^Padding$/ }) }).locator('input[type=number]')\u001b[22m\n"
+  },
+  {
+    "label": "vertical-thickness-3",
+    "error": "locator.fill: Error: strict mode violation: locator('.ag-chart-docked-container').locator('.ag-slider').filter({ has: locator('label').filter({ hasText: /^Thickness$/ }) }).locator('input[type=number]') resolved to 4 elements:\n    1) <input min=\"0\" max=\"10\" step=\"any\" tabindex=\"0\" type=\"number\" data-ref=\"eInput\" id=\"ag-268-input\" class=\"ag-input-field-input ag-number-field-input\"/> aka locator('#ag-268-input')\n    2) <input min=\"0\" max=\"10\" step=\"any\" tabindex=\"0\" type=\"number\" data-ref=\"eInput\" id=\"ag-276-input\" class=\"ag-input-field-input ag-number-field-input\"/> aka locator('#ag-276-input')\n    3) <input min=\"0\" max=\"10\" step=\"any\" tabindex=\"0\" type=\"number\" data-ref=\"eInput\" id=\"ag-321-input\" class=\"ag-input-field-input ag-number-field-input\"/> aka locator('#ag-321-input')\n    4) <input min=\"0\" max=\"10\" step=\"any\" tabindex=\"0\" type=\"number\" data-ref=\"eInput\" id=\"ag-329-input\" class=\"ag-input-field-input ag-number-field-input\"/> aka locator('#ag-329-input')\n\nCall log:\n\u001b[2m  - waiting for locator('.ag-chart-docked-container').locator('.ag-slider').filter({ has: locator('label').filter({ hasText: /^Thickness$/ }) }).locator('input[type=number]')\u001b[22m\n"
+  },
+  {
+    "label": "vertical-label-size-14",
+    "error": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ag-chart-docked-container').locator('.ag-slider').filter({ has: locator('label').filter({ hasText: /^Size$/ }) }).locator('input[type=number]')\u001b[22m\n"
+  },
+  {
+    "label": "series-tooltip-single",
+    "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ag-chart-docked-container').getByRole('combobox', { name: 'Mode', exact: true })\u001b[22m\n"
+  },
+  {
+    "label": "series-label-placement",
+    "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ag-chart-docked-container').getByRole('combobox', { name: 'Placement', exact: true })\u001b[22m\n"
+  },
+  {
+    "label": "legend-size-14",
+    "error": "locator.fill: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('.ag-chart-docked-container').locator('.ag-slider').filter({ has: locator('label').filter({ hasText: /^Size$/ }) }).locator('input[type=number]')\u001b[22m\n"
+  }
+]

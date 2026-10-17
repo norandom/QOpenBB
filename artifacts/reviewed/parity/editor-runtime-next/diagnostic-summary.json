@@ -1,0 +1,21 @@
+{
+  "consoleErrors": 0,
+  "pageErrors": [
+    "Unexpected token '<'",
+    "Unexpected token '<'"
+  ],
+  "cdpExceptions": [
+    {
+      "message": "Uncaught",
+      "description": "SyntaxError: Unexpected token '<'"
+    },
+    {
+      "message": "Uncaught",
+      "description": "SyntaxError: Unexpected token '<'"
+    }
+  ],
+  "networkFailures": [],
+  "responseStatusCounts": {
+    "200": 237
+  }
+}

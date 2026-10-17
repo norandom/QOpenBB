@@ -1,0 +1,2874 @@
+[
+  {
+    "label": "horizontal-label-padding-9",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.axes.category.top.label.spacing",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 9
+      },
+      {
+        "path": "chartOptions.bar.axes.category.bottom.label.spacing",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 9
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "axes.0.label.spacing",
+        "beforePresent": true,
+        "before": 11,
+        "afterPresent": true,
+        "after": 9
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "horizontal-label-auto-rotate-off",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.axes.category.top.label.autoRotate",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": false
+      },
+      {
+        "path": "chartOptions.bar.axes.category.bottom.label.autoRotate",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": false
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "axes.0.label.autoRotate",
+        "beforePresent": true,
+        "before": true,
+        "afterPresent": true,
+        "after": false
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "vertical-thickness-3",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.axes.number.left.line.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": true
+      },
+      {
+        "path": "chartOptions.bar.axes.number.left.line.width",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "chartOptions.bar.axes.number.right.line.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": true
+      },
+      {
+        "path": "chartOptions.bar.axes.number.right.line.width",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "axes.1.line.enabled",
+        "beforePresent": true,
+        "before": false,
+        "afterPresent": true,
+        "after": true
+      },
+      {
+        "path": "axes.1.line.width",
+        "beforePresent": true,
+        "before": 1,
+        "afterPresent": true,
+        "after": 3
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {},
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {},
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "vertical-label-size-14",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.axes.number.left.label.fontSize",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 14
+      },
+      {
+        "path": "chartOptions.bar.axes.number.right.label.fontSize",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 14
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "axes.1.label.fontSize",
+        "beforePresent": true,
+        "before": 11,
+        "afterPresent": true,
+        "after": 14
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "series-tooltip-single",
+    "modelDelta": [],
+    "effectiveDelta": [],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "series-labels-on",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.series.label.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": true
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "series.0.label.enabled",
+        "beforePresent": true,
+        "before": false,
+        "afterPresent": true,
+        "after": true
+      },
+      {
+        "path": "series.1.label.enabled",
+        "beforePresent": true,
+        "before": false,
+        "afterPresent": true,
+        "after": true
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "series-stroke-width-3",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.series.strokeWidth",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "series.0.strokeWidth",
+        "beforePresent": true,
+        "before": 0,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "series.1.strokeWidth",
+        "beforePresent": true,
+        "before": 0,
+        "afterPresent": true,
+        "after": 3
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "legend-weight-bold",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.legend.item.label.fontWeight",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "bold"
+      },
+      {
+        "path": "chartOptions.bar.legend.item.label.fontStyle",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "normal"
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "legend.item.label.fontWeight",
+        "beforePresent": true,
+        "before": 400,
+        "afterPresent": true,
+        "after": "bold"
+      },
+      {
+        "path": "legend.item.label.fontStyle",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "normal"
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {
+                  "fontWeight": "bold"
+                },
+                "marker": {}
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {}
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "legend-size-14",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.legend.item.label.fontSize",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 14
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "legend.item.label.fontSize",
+        "beforePresent": true,
+        "before": 11,
+        "afterPresent": true,
+        "after": 14
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {}
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "legend-marker-size-15",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.legend.item.marker.size",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 15
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "legend.item.marker.size",
+        "beforePresent": true,
+        "before": 11,
+        "afterPresent": true,
+        "after": 15
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {
+                  "size": 15
+                }
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "legend-horizontal-spacing-40",
+    "modelDelta": [
+      {
+        "path": "chartOptions.bar.legend.item.paddingX",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 40
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "legend.item.paddingX",
+        "beforePresent": true,
+        "before": 32,
+        "afterPresent": true,
+        "after": 40
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "paddingX": 40,
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {
+                  "size": 15
+                }
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "setup/Aggregate/on",
+    "modelDelta": [
+      {
+        "path": "aggFunc",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "sum"
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "data.0.revenue",
+        "beforePresent": true,
+        "before": 100,
+        "afterPresent": true,
+        "after": 220
+      },
+      {
+        "path": "data.0.operatingIncome",
+        "beforePresent": true,
+        "before": 20,
+        "afterPresent": true,
+        "after": 45
+      },
+      {
+        "path": "data.1.revenue",
+        "beforePresent": true,
+        "before": 120,
+        "afterPresent": true,
+        "after": 140
+      },
+      {
+        "path": "data.1.operatingIncome",
+        "beforePresent": true,
+        "before": 25,
+        "afterPresent": true,
+        "after": 30
+      },
+      {
+        "path": "data.1.period.value",
+        "beforePresent": true,
+        "before": "2024-Q1",
+        "afterPresent": true,
+        "after": "2024-Q3"
+      },
+      {
+        "path": "data.2.revenue",
+        "beforePresent": true,
+        "before": 140,
+        "afterPresent": true,
+        "after": 160
+      },
+      {
+        "path": "data.2.operatingIncome",
+        "beforePresent": true,
+        "before": 30,
+        "afterPresent": true,
+        "after": 40
+      },
+      {
+        "path": "data.2.period.value",
+        "beforePresent": true,
+        "before": "2024-Q3",
+        "afterPresent": true,
+        "after": "2024-Q4"
+      },
+      {
+        "path": "data.3.revenue",
+        "beforePresent": true,
+        "before": 160,
+        "afterPresent": false
+      },
+      {
+        "path": "data.3.operatingIncome",
+        "beforePresent": true,
+        "before": 40,
+        "afterPresent": false
+      },
+      {
+        "path": "data.3.period.id",
+        "beforePresent": true,
+        "before": 3,
+        "afterPresent": false
+      },
+      {
+        "path": "data.3.period.value",
+        "beforePresent": true,
+        "before": "2024-Q4",
+        "afterPresent": false
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "paddingX": 40,
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {
+                  "size": 15
+                }
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "setup/Aggregate/off",
+    "modelDelta": [
+      {
+        "path": "aggFunc",
+        "beforePresent": true,
+        "before": "sum",
+        "afterPresent": false
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "data.0.revenue",
+        "beforePresent": true,
+        "before": 220,
+        "afterPresent": true,
+        "after": 100
+      },
+      {
+        "path": "data.0.operatingIncome",
+        "beforePresent": true,
+        "before": 45,
+        "afterPresent": true,
+        "after": 20
+      },
+      {
+        "path": "data.1.revenue",
+        "beforePresent": true,
+        "before": 140,
+        "afterPresent": true,
+        "after": 120
+      },
+      {
+        "path": "data.1.operatingIncome",
+        "beforePresent": true,
+        "before": 30,
+        "afterPresent": true,
+        "after": 25
+      },
+      {
+        "path": "data.1.period.value",
+        "beforePresent": true,
+        "before": "2024-Q3",
+        "afterPresent": true,
+        "after": "2024-Q1"
+      },
+      {
+        "path": "data.2.revenue",
+        "beforePresent": true,
+        "before": 160,
+        "afterPresent": true,
+        "after": 140
+      },
+      {
+        "path": "data.2.operatingIncome",
+        "beforePresent": true,
+        "before": 40,
+        "afterPresent": true,
+        "after": 30
+      },
+      {
+        "path": "data.2.period.value",
+        "beforePresent": true,
+        "before": "2024-Q4",
+        "afterPresent": true,
+        "after": "2024-Q3"
+      },
+      {
+        "path": "data.3.revenue",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 160
+      },
+      {
+        "path": "data.3.operatingIncome",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 40
+      },
+      {
+        "path": "data.3.period.id",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "data.3.period.value",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "2024-Q4"
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "paddingX": 40,
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {
+                  "size": 15
+                }
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "setup/Switch Category / Series/on",
+    "modelDelta": [
+      {
+        "path": "switchCategorySeries",
+        "beforePresent": true,
+        "before": false,
+        "afterPresent": true,
+        "after": true
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "data.0.revenue",
+        "beforePresent": true,
+        "before": 100,
+        "afterPresent": false
+      },
+      {
+        "path": "data.0.operatingIncome",
+        "beforePresent": true,
+        "before": 20,
+        "afterPresent": false
+      },
+      {
+        "path": "data.0.period.id",
+        "beforePresent": true,
+        "before": 0,
+        "afterPresent": false
+      },
+      {
+        "path": "data.0.period.value",
+        "beforePresent": true,
+        "before": "2024-Q1",
+        "afterPresent": false
+      },
+      {
+        "path": "data.1.revenue",
+        "beforePresent": true,
+        "before": 120,
+        "afterPresent": false
+      },
+      {
+        "path": "data.1.operatingIncome",
+        "beforePresent": true,
+        "before": 25,
+        "afterPresent": false
+      },
+      {
+        "path": "data.1.period.id",
+        "beforePresent": true,
+        "before": 1,
+        "afterPresent": false
+      },
+      {
+        "path": "data.1.period.value",
+        "beforePresent": true,
+        "before": "2024-Q1",
+        "afterPresent": false
+      },
+      {
+        "path": "data.2.revenue",
+        "beforePresent": true,
+        "before": 140,
+        "afterPresent": false
+      },
+      {
+        "path": "data.2.operatingIncome",
+        "beforePresent": true,
+        "before": 30,
+        "afterPresent": false
+      },
+      {
+        "path": "data.2.period.id",
+        "beforePresent": true,
+        "before": 2,
+        "afterPresent": false
+      },
+      {
+        "path": "data.2.period.value",
+        "beforePresent": true,
+        "before": "2024-Q3",
+        "afterPresent": false
+      },
+      {
+        "path": "data.3.revenue",
+        "beforePresent": true,
+        "before": 160,
+        "afterPresent": false
+      },
+      {
+        "path": "data.3.operatingIncome",
+        "beforePresent": true,
+        "before": 40,
+        "afterPresent": false
+      },
+      {
+        "path": "data.3.period.id",
+        "beforePresent": true,
+        "before": 3,
+        "afterPresent": false
+      },
+      {
+        "path": "data.3.period.value",
+        "beforePresent": true,
+        "before": "2024-Q4",
+        "afterPresent": false
+      },
+      {
+        "path": "series.0.xKey",
+        "beforePresent": true,
+        "before": "period",
+        "afterPresent": true,
+        "after": "AG-GRID-DEFAULT-CATEGORY"
+      },
+      {
+        "path": "series.0.yKey",
+        "beforePresent": true,
+        "before": "revenue",
+        "afterPresent": true,
+        "after": "period:0"
+      },
+      {
+        "path": "series.0.yName",
+        "beforePresent": true,
+        "before": "Revenue (USD millions)",
+        "afterPresent": true,
+        "after": "2024-Q1"
+      },
+      {
+        "path": "series.1.xKey",
+        "beforePresent": true,
+        "before": "period",
+        "afterPresent": true,
+        "after": "AG-GRID-DEFAULT-CATEGORY"
+      },
+      {
+        "path": "series.1.yKey",
+        "beforePresent": true,
+        "before": "operatingIncome",
+        "afterPresent": true,
+        "after": "period:1"
+      },
+      {
+        "path": "series.1.yName",
+        "beforePresent": true,
+        "before": "Operating Income (USD millions)",
+        "afterPresent": true,
+        "after": "2024-Q1"
+      },
+      {
+        "path": "series.2.type",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "bar"
+      },
+      {
+        "path": "series.2.xKey",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "AG-GRID-DEFAULT-CATEGORY"
+      },
+      {
+        "path": "series.2.yKey",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "period:2"
+      },
+      {
+        "path": "series.2.yName",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "2024-Q3"
+      },
+      {
+        "path": "series.2.fill",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "#459d55"
+      },
+      {
+        "path": "series.2.stroke",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "#6cb176"
+      },
+      {
+        "path": "series.2.strokeWidth",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "series.2.fillOpacity",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 1
+      },
+      {
+        "path": "series.2.lineDash.0",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 0
+      },
+      {
+        "path": "series.2.label.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": true
+      },
+      {
+        "path": "series.2.label.fontFamily",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "Verdana, sans-serif"
+      },
+      {
+        "path": "series.2.label.fontSize",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 12
+      },
+      {
+        "path": "series.2.label.fontWeight",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 400
+      },
+      {
+        "path": "series.2.label.color",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "#fff"
+      },
+      {
+        "path": "series.2.label.padding",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 8
+      },
+      {
+        "path": "series.2.label.placement",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "outside-end"
+      },
+      {
+        "path": "series.2.tooltip.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": true
+      },
+      {
+        "path": "series.2.tooltip.range",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "exact"
+      },
+      {
+        "path": "series.2.shadow.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": false
+      },
+      {
+        "path": "series.2.shadow.color",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "#00000080"
+      },
+      {
+        "path": "series.2.shadow.xOffset",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "series.2.shadow.yOffset",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "series.2.shadow.blur",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 5
+      },
+      {
+        "path": "series.3.type",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "bar"
+      },
+      {
+        "path": "series.3.xKey",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "AG-GRID-DEFAULT-CATEGORY"
+      },
+      {
+        "path": "series.3.yKey",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "period:3"
+      },
+      {
+        "path": "series.3.yName",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "2024-Q4"
+      },
+      {
+        "path": "series.3.fill",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "#34bfe1"
+      },
+      {
+        "path": "series.3.stroke",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "#75d4ef"
+      },
+      {
+        "path": "series.3.strokeWidth",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "series.3.fillOpacity",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 1
+      },
+      {
+        "path": "series.3.lineDash.0",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 0
+      },
+      {
+        "path": "series.3.label.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": true
+      },
+      {
+        "path": "series.3.label.fontFamily",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "Verdana, sans-serif"
+      },
+      {
+        "path": "series.3.label.fontSize",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 12
+      },
+      {
+        "path": "series.3.label.fontWeight",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 400
+      },
+      {
+        "path": "series.3.label.color",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "#fff"
+      },
+      {
+        "path": "series.3.label.padding",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 8
+      },
+      {
+        "path": "series.3.label.placement",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "outside-end"
+      },
+      {
+        "path": "series.3.tooltip.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": true
+      },
+      {
+        "path": "series.3.tooltip.range",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "exact"
+      },
+      {
+        "path": "series.3.shadow.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": false
+      },
+      {
+        "path": "series.3.shadow.color",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "#00000080"
+      },
+      {
+        "path": "series.3.shadow.xOffset",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "series.3.shadow.yOffset",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "series.3.shadow.blur",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 5
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "paddingX": 40,
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {
+                  "size": 15
+                }
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "setup/Switch Category / Series/off",
+    "modelDelta": [
+      {
+        "path": "switchCategorySeries",
+        "beforePresent": true,
+        "before": true,
+        "afterPresent": true,
+        "after": false
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "series.0.xKey",
+        "beforePresent": true,
+        "before": "AG-GRID-DEFAULT-CATEGORY",
+        "afterPresent": true,
+        "after": "period"
+      },
+      {
+        "path": "series.0.yKey",
+        "beforePresent": true,
+        "before": "period:0",
+        "afterPresent": true,
+        "after": "revenue"
+      },
+      {
+        "path": "series.0.yName",
+        "beforePresent": true,
+        "before": "2024-Q1",
+        "afterPresent": true,
+        "after": "Revenue (USD millions)"
+      },
+      {
+        "path": "series.1.xKey",
+        "beforePresent": true,
+        "before": "AG-GRID-DEFAULT-CATEGORY",
+        "afterPresent": true,
+        "after": "period"
+      },
+      {
+        "path": "series.1.yKey",
+        "beforePresent": true,
+        "before": "period:1",
+        "afterPresent": true,
+        "after": "operatingIncome"
+      },
+      {
+        "path": "series.1.yName",
+        "beforePresent": true,
+        "before": "2024-Q1",
+        "afterPresent": true,
+        "after": "Operating Income (USD millions)"
+      },
+      {
+        "path": "series.2.type",
+        "beforePresent": true,
+        "before": "bar",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.xKey",
+        "beforePresent": true,
+        "before": "AG-GRID-DEFAULT-CATEGORY",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.yKey",
+        "beforePresent": true,
+        "before": "period:2",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.yName",
+        "beforePresent": true,
+        "before": "2024-Q3",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.fill",
+        "beforePresent": true,
+        "before": "#459d55",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.stroke",
+        "beforePresent": true,
+        "before": "#6cb176",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.strokeWidth",
+        "beforePresent": true,
+        "before": 3,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.fillOpacity",
+        "beforePresent": true,
+        "before": 1,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.lineDash.0",
+        "beforePresent": true,
+        "before": 0,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.label.enabled",
+        "beforePresent": true,
+        "before": true,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.label.fontFamily",
+        "beforePresent": true,
+        "before": "Verdana, sans-serif",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.label.fontSize",
+        "beforePresent": true,
+        "before": 12,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.label.fontWeight",
+        "beforePresent": true,
+        "before": 400,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.label.color",
+        "beforePresent": true,
+        "before": "#fff",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.label.padding",
+        "beforePresent": true,
+        "before": 8,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.label.placement",
+        "beforePresent": true,
+        "before": "outside-end",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.tooltip.enabled",
+        "beforePresent": true,
+        "before": true,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.tooltip.range",
+        "beforePresent": true,
+        "before": "exact",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.shadow.enabled",
+        "beforePresent": true,
+        "before": false,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.shadow.color",
+        "beforePresent": true,
+        "before": "#00000080",
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.shadow.xOffset",
+        "beforePresent": true,
+        "before": 3,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.shadow.yOffset",
+        "beforePresent": true,
+        "before": 3,
+        "afterPresent": false
+      },
+      {
+        "path": "series.2.shadow.blur",
+        "beforePresent": true,
+        "before": 5,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.type",
+        "beforePresent": true,
+        "before": "bar",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.xKey",
+        "beforePresent": true,
+        "before": "AG-GRID-DEFAULT-CATEGORY",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.yKey",
+        "beforePresent": true,
+        "before": "period:3",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.yName",
+        "beforePresent": true,
+        "before": "2024-Q4",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.fill",
+        "beforePresent": true,
+        "before": "#34bfe1",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.stroke",
+        "beforePresent": true,
+        "before": "#75d4ef",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.strokeWidth",
+        "beforePresent": true,
+        "before": 3,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.fillOpacity",
+        "beforePresent": true,
+        "before": 1,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.lineDash.0",
+        "beforePresent": true,
+        "before": 0,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.label.enabled",
+        "beforePresent": true,
+        "before": true,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.label.fontFamily",
+        "beforePresent": true,
+        "before": "Verdana, sans-serif",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.label.fontSize",
+        "beforePresent": true,
+        "before": 12,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.label.fontWeight",
+        "beforePresent": true,
+        "before": 400,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.label.color",
+        "beforePresent": true,
+        "before": "#fff",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.label.padding",
+        "beforePresent": true,
+        "before": 8,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.label.placement",
+        "beforePresent": true,
+        "before": "outside-end",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.tooltip.enabled",
+        "beforePresent": true,
+        "before": true,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.tooltip.range",
+        "beforePresent": true,
+        "before": "exact",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.shadow.enabled",
+        "beforePresent": true,
+        "before": false,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.shadow.color",
+        "beforePresent": true,
+        "before": "#00000080",
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.shadow.xOffset",
+        "beforePresent": true,
+        "before": 3,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.shadow.yOffset",
+        "beforePresent": true,
+        "before": 3,
+        "afterPresent": false
+      },
+      {
+        "path": "series.3.shadow.blur",
+        "beforePresent": true,
+        "before": 5,
+        "afterPresent": false
+      },
+      {
+        "path": "data.0.revenue",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 100
+      },
+      {
+        "path": "data.0.operatingIncome",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 20
+      },
+      {
+        "path": "data.0.period.id",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 0
+      },
+      {
+        "path": "data.0.period.value",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "2024-Q1"
+      },
+      {
+        "path": "data.1.revenue",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 120
+      },
+      {
+        "path": "data.1.operatingIncome",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 25
+      },
+      {
+        "path": "data.1.period.id",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 1
+      },
+      {
+        "path": "data.1.period.value",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "2024-Q1"
+      },
+      {
+        "path": "data.2.revenue",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 140
+      },
+      {
+        "path": "data.2.operatingIncome",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 30
+      },
+      {
+        "path": "data.2.period.id",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 2
+      },
+      {
+        "path": "data.2.period.value",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "2024-Q3"
+      },
+      {
+        "path": "data.3.revenue",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 160
+      },
+      {
+        "path": "data.3.operatingIncome",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 40
+      },
+      {
+        "path": "data.3.period.id",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 3
+      },
+      {
+        "path": "data.3.period.value",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "2024-Q4"
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "paddingX": 40,
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {
+                  "size": 15
+                }
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "line-markers-on",
+    "modelDelta": [
+      {
+        "path": "chartOptions.line.series.marker.enabled",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": true
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "series.0.marker.enabled",
+        "beforePresent": true,
+        "before": false,
+        "afterPresent": true,
+        "after": true
+      },
+      {
+        "path": "series.1.marker.enabled",
+        "beforePresent": true,
+        "before": false,
+        "afterPresent": true,
+        "after": true
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "line",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "line": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {
+                "enabled": true
+              },
+              "shadow": {}
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "line-marker-shape",
+    "modelDelta": [
+      {
+        "path": "chartOptions.line.series.marker.shape",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": "diamond"
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "series.0.marker.shape",
+        "beforePresent": true,
+        "before": "circle",
+        "afterPresent": true,
+        "after": "diamond"
+      },
+      {
+        "path": "series.1.marker.shape",
+        "beforePresent": true,
+        "before": "circle",
+        "afterPresent": true,
+        "after": "diamond"
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "line",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "line": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {
+                "enabled": true,
+                "shape": "diamond"
+              },
+              "shadow": {}
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "line-marker-size-9",
+    "modelDelta": [
+      {
+        "path": "chartOptions.line.series.marker.size",
+        "beforePresent": false,
+        "afterPresent": true,
+        "after": 9
+      }
+    ],
+    "effectiveDelta": [
+      {
+        "path": "series.0.marker.size",
+        "beforePresent": true,
+        "before": 7,
+        "afterPresent": true,
+        "after": 9
+      },
+      {
+        "path": "series.1.marker.size",
+        "beforePresent": true,
+        "before": 7,
+        "afterPresent": true,
+        "after": 9
+      }
+    ],
+    "newEvents": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "line",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "line": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {
+                "enabled": true,
+                "shape": "diamond",
+                "size": 9
+              },
+              "shadow": {}
+            }
+          }
+        }
+      }
+    ]
+  }
+]

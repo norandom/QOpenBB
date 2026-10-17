@@ -1,0 +1,87 @@
+[
+  {
+    "path": "artifacts/reviewed/parity/theme-matrix/dark-groupedColumn.json",
+    "sha256": "2744badd0bf8d453e9a1201681ec27f1cad7e544041c4bea13d7a3972341ac9b",
+    "case": "stock-dark-grouped"
+  },
+  {
+    "path": "artifacts/reviewed/parity/theme-matrix/first-pass/dark-stackedColumn.json",
+    "sha256": "e7de667b5d56fcd8aeb24a5470eae8b87846ac03721af1b3d48952d8be7992fb",
+    "case": "stock-dark-stacked"
+  },
+  {
+    "path": "artifacts/reviewed/parity/theme-matrix/first-pass/dark-line.json",
+    "sha256": "b1a5f295f7db20e1e92d695c4677cfc3ce97a3cde167b75550742c502316681d",
+    "case": "stock-dark-line"
+  },
+  {
+    "path": "artifacts/reviewed/parity/theme-matrix/light-groupedColumn.json",
+    "sha256": "a3d2498a6c9afe6887d0c1fa2bbd9eaecef4793d29f349b17982e313178b79bd",
+    "case": "stock-light-grouped"
+  },
+  {
+    "path": "artifacts/reviewed/parity/theme-matrix/light-stackedColumn.json",
+    "sha256": "9c9fa5bb4d57b138857a547b4bc8c3e1f66a49652f2a736eba5d7249efc09394",
+    "case": "stock-light-stacked"
+  },
+  {
+    "path": "artifacts/reviewed/parity/theme-matrix/light-line.json",
+    "sha256": "503d2ee32829d92d5c9a778f55620ad60dffca8012e05d44a48265524c4b0605",
+    "case": "stock-light-line"
+  },
+  {
+    "path": "artifacts/reviewed/parity/custom-theme-contract/dark-groupedColumn.json",
+    "sha256": "4aa8f2e757d1faa50529fd39bc9c275e906f35089ba81dbe21bb1fd315fe5259",
+    "case": "custom-dark-grouped"
+  },
+  {
+    "path": "artifacts/reviewed/parity/custom-theme-contract/light-groupedColumn.json",
+    "sha256": "572e278781012f541db615540ef456787c25ab65416c2d112472e2ec5bea7fbe",
+    "case": "custom-light-grouped"
+  },
+  {
+    "repository": "vendor/workspace",
+    "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+    "path": "terminalpro/src/components/General/Table/Chart/themes.tsx",
+    "sha256": "ff4ffdf77236326f0f476d7a06f1cbc6b876f7d41235b9faca8999b4a3ca8e21",
+    "kind": "source-only"
+  },
+  {
+    "repository": "vendor/workspace",
+    "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+    "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+    "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+    "kind": "source-only"
+  },
+  {
+    "repository": "vendor/workspace",
+    "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+    "path": "terminalpro/src/components/General/Table/Chart/utils.tsx",
+    "sha256": "a4a092b6ccb6076006dc51c93f9ea088c608d2aadb24b6183c5683d8ca302ba1",
+    "kind": "source-only"
+  },
+  {
+    "repository": "vendor/workspace",
+    "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+    "path": "terminalpro/src/components/ThemeSettings/ChartSettings.tsx",
+    "sha256": "8137d04aabf92d0225812adeecf485c707639b4f4a44bd51aa8fd92296067211",
+    "kind": "source-only"
+  },
+  {
+    "repository": "vendor/workspace",
+    "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+    "path": "terminalpro/src/lib/state/tableChartThemes.ts",
+    "sha256": "a20fa390f7d6bb548d2475397df4cba601347561e2f465ed4cd63e51f060b673",
+    "kind": "source-only"
+  },
+  {
+    "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+    "sha256": "0581c101adc4a7dc71732965df569201c8e3b14144088c48bce188c849127d9f",
+    "kind": "current-source-only"
+  },
+  {
+    "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/cartesianStyle.ts",
+    "sha256": "c8688c04fc437e259b0d30aaee46872f9d48032d1f0629d633223fbb5c57d4b2",
+    "kind": "current-source-only"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "status": "pass",
+  "claim": "Audit ledger matches pinned source and reviewed runtime files; document links resolve. No production/runtime readiness claim.",
+  "inputHashesVerified": 15,
+  "leafPointersVerified": 908,
+  "relativeLinks": "pass",
+  "command": "py artifacts/appearance-next-audit/audit.py; independent read-only hash/pointer/link verification",
+  "exitCode": 0,
+  "publishedCandidates": [
+    {
+      "path": ".kiro/specs/openbb-self-service/chart-appearance-next-audit.md",
+      "sha256": "975d37f35993964bad73268616048af13712d4514fb25c11314a77796291988e"
+    },
+    {
+      "path": "artifacts/appearance-next-audit/audit.py",
+      "sha256": "a58c5f878616e987c6a6b74873492a45ccdbd5ccd29361ad98c301e0fa22d680"
+    },
+    {
+      "path": "artifacts/appearance-next-audit/custom-differences.json",
+      "sha256": "408dc9536c877e8b2caa8920d94e447b5986837f77ebed8bc85f255d7e2d710d"
+    },
+    {
+      "path": "artifacts/appearance-next-audit/input-manifest.json",
+      "sha256": "984ba0be1e22446623c13103ea2b578e2ea944ed55a86c6b1196bedfc93b3667"
+    },
+    {
+      "path": "artifacts/appearance-next-audit/leaf-ledger.json",
+      "sha256": "3ab0bb89ffdf3c385e4d3a1c6366412bfcc77130753cc5b4d575ba8cede2f101"
+    }
+  ]
+}

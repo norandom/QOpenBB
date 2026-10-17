@@ -1,0 +1,573 @@
+{
+  "table": {
+    "domRows": [
+      {
+        "rowIndex": "0",
+        "cells": [
+          {
+            "columnId": "period",
+            "text": "2024-Q1"
+          },
+          {
+            "columnId": "revenue",
+            "text": "200"
+          },
+          {
+            "columnId": "operatingIncome",
+            "text": "20"
+          }
+        ]
+      },
+      {
+        "rowIndex": "1",
+        "cells": [
+          {
+            "columnId": "period",
+            "text": "2024-Q1"
+          },
+          {
+            "columnId": "revenue",
+            "text": "0"
+          },
+          {
+            "columnId": "operatingIncome",
+            "text": "0"
+          }
+        ]
+      },
+      {
+        "rowIndex": "2",
+        "cells": [
+          {
+            "columnId": "period",
+            "text": "2024-Q2"
+          },
+          {
+            "columnId": "revenue",
+            "text": "-11"
+          },
+          {
+            "columnId": "operatingIncome",
+            "text": "-2"
+          }
+        ]
+      },
+      {
+        "rowIndex": "3",
+        "cells": [
+          {
+            "columnId": "period",
+            "text": "2024-Q3"
+          },
+          {
+            "columnId": "revenue",
+            "text": "150.50"
+          },
+          {
+            "columnId": "operatingIncome",
+            "text": "-"
+          }
+        ]
+      },
+      {
+        "rowIndex": "4",
+        "cells": [
+          {
+            "columnId": "period",
+            "text": "2024-Q4"
+          },
+          {
+            "columnId": "revenue",
+            "text": "280"
+          },
+          {
+            "columnId": "operatingIncome",
+            "text": "30"
+          }
+        ]
+      },
+      {
+        "rowIndex": "5",
+        "cells": [
+          {
+            "columnId": "period",
+            "text": "2025-Q1"
+          },
+          {
+            "columnId": "revenue",
+            "text": "320"
+          },
+          {
+            "columnId": "operatingIncome",
+            "text": "40"
+          }
+        ]
+      }
+    ],
+    "columns": [
+      {
+        "id": "period",
+        "visible": true,
+        "chartDataType": "category",
+        "cellDataType": "text",
+        "valueGetter": "undefined",
+        "valueFormatter": "function"
+      },
+      {
+        "id": "revenue",
+        "visible": true,
+        "chartDataType": "series",
+        "cellDataType": "number",
+        "valueGetter": "function",
+        "valueFormatter": "function"
+      },
+      {
+        "id": "operatingIncome",
+        "visible": true,
+        "chartDataType": "series",
+        "cellDataType": "number",
+        "valueGetter": "undefined",
+        "valueFormatter": "function"
+      },
+      {
+        "id": "region",
+        "visible": false,
+        "chartDataType": "category",
+        "cellDataType": "text",
+        "valueGetter": "undefined",
+        "valueFormatter": "function"
+      },
+      {
+        "id": "margin",
+        "visible": false,
+        "chartDataType": "series",
+        "cellDataType": "number",
+        "valueGetter": "undefined",
+        "valueFormatter": "function"
+      },
+      {
+        "id": "rowKey",
+        "visible": false,
+        "chartDataType": "category",
+        "cellDataType": "text",
+        "valueGetter": "undefined",
+        "valueFormatter": "function"
+      }
+    ],
+    "displayedColumnIds": [
+      "period",
+      "revenue",
+      "operatingIncome"
+    ],
+    "rows": [
+      {
+        "id": "0",
+        "rowIndex": 0,
+        "displayed": true,
+        "group": false,
+        "raw": {
+          "rowKey": "obs-A",
+          "period": "2024-Q1",
+          "region": "North",
+          "revenue": 100,
+          "operatingIncome": 20,
+          "margin": 0.2
+        },
+        "grid": {
+          "rowKey": "obs-A",
+          "period": "2024-Q1",
+          "region": "North",
+          "revenue": 200,
+          "operatingIncome": 20,
+          "margin": 0.2
+        },
+        "formatted": {
+          "rowKey": "obs-A",
+          "period": "2024-Q1",
+          "region": "North",
+          "revenue": "200",
+          "operatingIncome": "20",
+          "margin": "0.20"
+        }
+      },
+      {
+        "id": "1",
+        "rowIndex": 1,
+        "displayed": true,
+        "group": false,
+        "raw": {
+          "rowKey": "obs-B",
+          "period": "2024-Q1",
+          "region": "South",
+          "revenue": 0,
+          "operatingIncome": 0,
+          "margin": 0
+        },
+        "grid": {
+          "rowKey": "obs-B",
+          "period": "2024-Q1",
+          "region": "South",
+          "revenue": 0,
+          "operatingIncome": 0,
+          "margin": 0
+        },
+        "formatted": {
+          "rowKey": "obs-B",
+          "period": "2024-Q1",
+          "region": "South",
+          "revenue": "0",
+          "operatingIncome": "0",
+          "margin": "0"
+        }
+      },
+      {
+        "id": "2",
+        "rowIndex": 2,
+        "displayed": true,
+        "group": false,
+        "raw": {
+          "rowKey": "obs-C",
+          "period": "2024-Q2",
+          "region": "North",
+          "revenue": -5.5,
+          "operatingIncome": -2,
+          "margin": -0.1
+        },
+        "grid": {
+          "rowKey": "obs-C",
+          "period": "2024-Q2",
+          "region": "North",
+          "revenue": -11,
+          "operatingIncome": -2,
+          "margin": -0.1
+        },
+        "formatted": {
+          "rowKey": "obs-C",
+          "period": "2024-Q2",
+          "region": "North",
+          "revenue": "-11",
+          "operatingIncome": "-2",
+          "margin": "-0.10"
+        }
+      },
+      {
+        "id": "3",
+        "rowIndex": 3,
+        "displayed": true,
+        "group": false,
+        "raw": {
+          "rowKey": "obs-D",
+          "period": "2024-Q3",
+          "region": "South",
+          "revenue": 75.25,
+          "operatingIncome": null,
+          "margin": 0.125
+        },
+        "grid": {
+          "rowKey": "obs-D",
+          "period": "2024-Q3",
+          "region": "South",
+          "revenue": 150.5,
+          "operatingIncome": null,
+          "margin": 0.125
+        },
+        "formatted": {
+          "rowKey": "obs-D",
+          "period": "2024-Q3",
+          "region": "South",
+          "revenue": "150.50",
+          "operatingIncome": "null",
+          "margin": "0.13"
+        }
+      },
+      {
+        "id": "4",
+        "rowIndex": 4,
+        "displayed": true,
+        "group": false,
+        "raw": {
+          "rowKey": "obs-E",
+          "period": "2024-Q4",
+          "region": "North",
+          "revenue": 140,
+          "operatingIncome": 30,
+          "margin": 0.2142857143
+        },
+        "grid": {
+          "rowKey": "obs-E",
+          "period": "2024-Q4",
+          "region": "North",
+          "revenue": 280,
+          "operatingIncome": 30,
+          "margin": 0.2142857143
+        },
+        "formatted": {
+          "rowKey": "obs-E",
+          "period": "2024-Q4",
+          "region": "North",
+          "revenue": "280",
+          "operatingIncome": "30",
+          "margin": "0.21"
+        }
+      },
+      {
+        "id": "5",
+        "rowIndex": 5,
+        "displayed": true,
+        "group": false,
+        "raw": {
+          "rowKey": "obs-F",
+          "period": "2025-Q1",
+          "region": "South",
+          "revenue": 160,
+          "operatingIncome": 40,
+          "margin": 0.25
+        },
+        "grid": {
+          "rowKey": "obs-F",
+          "period": "2025-Q1",
+          "region": "South",
+          "revenue": 320,
+          "operatingIncome": 40,
+          "margin": 0.25
+        },
+        "formatted": {
+          "rowKey": "obs-F",
+          "period": "2025-Q1",
+          "region": "South",
+          "revenue": "320",
+          "operatingIncome": "40",
+          "margin": "0.25"
+        }
+      }
+    ],
+    "filterModel": {},
+    "columnState": [
+      {
+        "colId": "period",
+        "sort": null,
+        "sortIndex": null,
+        "hide": false
+      },
+      {
+        "colId": "revenue",
+        "sort": null,
+        "sortIndex": null,
+        "hide": false
+      },
+      {
+        "colId": "operatingIncome",
+        "sort": null,
+        "sortIndex": null,
+        "hide": false
+      },
+      {
+        "colId": "region",
+        "sort": null,
+        "sortIndex": null,
+        "hide": true
+      },
+      {
+        "colId": "margin",
+        "sort": null,
+        "sortIndex": null,
+        "hide": true
+      },
+      {
+        "colId": "rowKey",
+        "sort": null,
+        "sortIndex": null,
+        "hide": true
+      }
+    ]
+  },
+  "chart": {
+    "effective": {
+      "dataKeys": [
+        [
+          "node",
+          "period",
+          "revenue",
+          "operatingIncome"
+        ],
+        [
+          "node",
+          "period",
+          "revenue",
+          "operatingIncome"
+        ],
+        [
+          "node",
+          "period",
+          "revenue",
+          "operatingIncome"
+        ],
+        [
+          "node",
+          "period",
+          "revenue",
+          "operatingIncome"
+        ],
+        [
+          "node",
+          "period",
+          "revenue",
+          "operatingIncome"
+        ],
+        [
+          "node",
+          "period",
+          "revenue",
+          "operatingIncome"
+        ]
+      ],
+      "data": [
+        {
+          "period": {
+            "id": 0,
+            "value": "2024-Q1"
+          },
+          "revenue": 200,
+          "operatingIncome": 20
+        },
+        {
+          "period": {
+            "id": 1,
+            "value": "2024-Q1"
+          },
+          "revenue": 0,
+          "operatingIncome": 0
+        },
+        {
+          "period": {
+            "id": 2,
+            "value": "2024-Q2"
+          },
+          "revenue": -11,
+          "operatingIncome": -2
+        },
+        {
+          "period": {
+            "id": 3,
+            "value": "2024-Q3"
+          },
+          "revenue": 150.5,
+          "operatingIncome": null
+        },
+        {
+          "period": {
+            "id": 4,
+            "value": "2024-Q4"
+          },
+          "revenue": 280,
+          "operatingIncome": 30
+        },
+        {
+          "period": {
+            "id": 5,
+            "value": "2025-Q1"
+          },
+          "revenue": 320,
+          "operatingIncome": 40
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "xKey": "period",
+          "yKey": "revenue"
+        },
+        {
+          "type": "bar",
+          "xKey": "period",
+          "yKey": "operatingIncome"
+        }
+      ]
+    },
+    "model": {
+      "chartId": "id-y5tq5t1fwf",
+      "chartType": "groupedColumn",
+      "chartThemeName": "openbb-dark",
+      "cellRange": {
+        "rowStartIndex": null,
+        "rowStartPinned": null,
+        "rowEndIndex": null,
+        "rowEndPinned": null,
+        "columns": [
+          "period",
+          "revenue",
+          "operatingIncome"
+        ]
+      },
+      "switchCategorySeries": false
+    },
+    "options": {
+      "data": [
+        {
+          "period": {
+            "id": 0,
+            "value": "2024-Q1"
+          },
+          "revenue": 200,
+          "operatingIncome": 20
+        },
+        {
+          "period": {
+            "id": 1,
+            "value": "2024-Q1"
+          },
+          "revenue": 0,
+          "operatingIncome": 0
+        },
+        {
+          "period": {
+            "id": 2,
+            "value": "2024-Q2"
+          },
+          "revenue": -11,
+          "operatingIncome": -2
+        },
+        {
+          "period": {
+            "id": 3,
+            "value": "2024-Q3"
+          },
+          "revenue": 150.5,
+          "operatingIncome": null
+        },
+        {
+          "period": {
+            "id": 4,
+            "value": "2024-Q4"
+          },
+          "revenue": 280,
+          "operatingIncome": 30
+        },
+        {
+          "period": {
+            "id": 5,
+            "value": "2025-Q1"
+          },
+          "revenue": 320,
+          "operatingIncome": 40
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "xKey": "period",
+          "xName": "Period",
+          "yKey": "revenue",
+          "yName": "Revenue (USD millions)"
+        },
+        {
+          "type": "bar",
+          "xKey": "period",
+          "xName": "Period",
+          "yKey": "operatingIncome",
+          "yName": "Operating Income (USD millions)"
+        }
+      ]
+    }
+  }
+}

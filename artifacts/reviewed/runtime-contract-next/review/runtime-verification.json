@@ -1,0 +1,1185 @@
+{
+  "status": "pass",
+  "command": "py artifacts/runtime-contract-next/review/verify_runtime.py",
+  "exitCode": 0,
+  "checks": [
+    "editor-runtime-next unique finite paths",
+    "editor-runtime-next/analysis-status.json within lane",
+    "editor-runtime-next/analysis-status.json hash",
+    "editor-runtime-next/analysis-status.json bytes",
+    "editor-runtime-next/analysis.log within lane",
+    "editor-runtime-next/analysis.log hash",
+    "editor-runtime-next/analysis.log bytes",
+    "editor-runtime-next/analyze.mjs within lane",
+    "editor-runtime-next/analyze.mjs hash",
+    "editor-runtime-next/analyze.mjs bytes",
+    "editor-runtime-next/bounded-stop.json within lane",
+    "editor-runtime-next/bounded-stop.json hash",
+    "editor-runtime-next/bounded-stop.json bytes",
+    "editor-runtime-next/cleanup-exit.txt within lane",
+    "editor-runtime-next/cleanup-exit.txt hash",
+    "editor-runtime-next/cleanup-exit.txt bytes",
+    "editor-runtime-next/cleanup-report.json within lane",
+    "editor-runtime-next/cleanup-report.json hash",
+    "editor-runtime-next/cleanup-report.json bytes",
+    "editor-runtime-next/cleanup.mjs within lane",
+    "editor-runtime-next/cleanup.mjs hash",
+    "editor-runtime-next/cleanup.mjs bytes",
+    "editor-runtime-next/control-ledger.json within lane",
+    "editor-runtime-next/control-ledger.json hash",
+    "editor-runtime-next/control-ledger.json bytes",
+    "editor-runtime-next/diagnostic-summary.json within lane",
+    "editor-runtime-next/diagnostic-summary.json hash",
+    "editor-runtime-next/diagnostic-summary.json bytes",
+    "editor-runtime-next/discover-status.json within lane",
+    "editor-runtime-next/discover-status.json hash",
+    "editor-runtime-next/discover-status.json bytes",
+    "editor-runtime-next/discover.log within lane",
+    "editor-runtime-next/discover.log hash",
+    "editor-runtime-next/discover.log bytes",
+    "editor-runtime-next/discover.mjs within lane",
+    "editor-runtime-next/discover.mjs hash",
+    "editor-runtime-next/discover.mjs bytes",
+    "editor-runtime-next/domains.json within lane",
+    "editor-runtime-next/domains.json hash",
+    "editor-runtime-next/domains.json bytes",
+    "editor-runtime-next/fixture.json within lane",
+    "editor-runtime-next/fixture.json hash",
+    "editor-runtime-next/fixture.json bytes",
+    "editor-runtime-next/focused.mjs within lane",
+    "editor-runtime-next/focused.mjs hash",
+    "editor-runtime-next/focused.mjs bytes",
+    "editor-runtime-next/focused.sh within lane",
+    "editor-runtime-next/focused.sh hash",
+    "editor-runtime-next/focused.sh bytes",
+    "editor-runtime-next/focused/Horizontal-Axis-auto-rotate-off.json within lane",
+    "editor-runtime-next/focused/Horizontal-Axis-auto-rotate-off.json hash",
+    "editor-runtime-next/focused/Horizontal-Axis-auto-rotate-off.json bytes",
+    "editor-runtime-next/focused/Horizontal-Axis-auto-rotate-off.png within lane",
+    "editor-runtime-next/focused/Horizontal-Axis-auto-rotate-off.png hash",
+    "editor-runtime-next/focused/Horizontal-Axis-auto-rotate-off.png bytes",
+    "editor-runtime-next/focused/Horizontal-Axis-default.json within lane",
+    "editor-runtime-next/focused/Horizontal-Axis-default.json hash",
+    "editor-runtime-next/focused/Horizontal-Axis-default.json bytes",
+    "editor-runtime-next/focused/Horizontal-Axis-default.png within lane",
+    "editor-runtime-next/focused/Horizontal-Axis-default.png hash",
+    "editor-runtime-next/focused/Horizontal-Axis-default.png bytes",
+    "editor-runtime-next/focused/Horizontal-Axis-edited.json within lane",
+    "editor-runtime-next/focused/Horizontal-Axis-edited.json hash",
+    "editor-runtime-next/focused/Horizontal-Axis-edited.json bytes",
+    "editor-runtime-next/focused/Horizontal-Axis-edited.png within lane",
+    "editor-runtime-next/focused/Horizontal-Axis-edited.png hash",
+    "editor-runtime-next/focused/Horizontal-Axis-edited.png bytes",
+    "editor-runtime-next/focused/Legend-default.json within lane",
+    "editor-runtime-next/focused/Legend-default.json hash",
+    "editor-runtime-next/focused/Legend-default.json bytes",
+    "editor-runtime-next/focused/Legend-default.png within lane",
+    "editor-runtime-next/focused/Legend-default.png hash",
+    "editor-runtime-next/focused/Legend-default.png bytes",
+    "editor-runtime-next/focused/Legend-edited.json within lane",
+    "editor-runtime-next/focused/Legend-edited.json hash",
+    "editor-runtime-next/focused/Legend-edited.json bytes",
+    "editor-runtime-next/focused/Legend-edited.png within lane",
+    "editor-runtime-next/focused/Legend-edited.png hash",
+    "editor-runtime-next/focused/Legend-edited.png bytes",
+    "editor-runtime-next/focused/Series-default.json within lane",
+    "editor-runtime-next/focused/Series-default.json hash",
+    "editor-runtime-next/focused/Series-default.json bytes",
+    "editor-runtime-next/focused/Series-default.png within lane",
+    "editor-runtime-next/focused/Series-default.png hash",
+    "editor-runtime-next/focused/Series-default.png bytes",
+    "editor-runtime-next/focused/Series-edited.json within lane",
+    "editor-runtime-next/focused/Series-edited.json hash",
+    "editor-runtime-next/focused/Series-edited.json bytes",
+    "editor-runtime-next/focused/Series-edited.png within lane",
+    "editor-runtime-next/focused/Series-edited.png hash",
+    "editor-runtime-next/focused/Series-edited.png bytes",
+    "editor-runtime-next/focused/Series-labels-enabled.json within lane",
+    "editor-runtime-next/focused/Series-labels-enabled.json hash",
+    "editor-runtime-next/focused/Series-labels-enabled.json bytes",
+    "editor-runtime-next/focused/Series-labels-enabled.png within lane",
+    "editor-runtime-next/focused/Series-labels-enabled.png hash",
+    "editor-runtime-next/focused/Series-labels-enabled.png bytes",
+    "editor-runtime-next/focused/Vertical-Axis-default.json within lane",
+    "editor-runtime-next/focused/Vertical-Axis-default.json hash",
+    "editor-runtime-next/focused/Vertical-Axis-default.json bytes",
+    "editor-runtime-next/focused/Vertical-Axis-default.png within lane",
+    "editor-runtime-next/focused/Vertical-Axis-default.png hash",
+    "editor-runtime-next/focused/Vertical-Axis-default.png bytes",
+    "editor-runtime-next/focused/Vertical-Axis-edited.json within lane",
+    "editor-runtime-next/focused/Vertical-Axis-edited.json hash",
+    "editor-runtime-next/focused/Vertical-Axis-edited.json bytes",
+    "editor-runtime-next/focused/Vertical-Axis-edited.png within lane",
+    "editor-runtime-next/focused/Vertical-Axis-edited.png hash",
+    "editor-runtime-next/focused/Vertical-Axis-edited.png bytes",
+    "editor-runtime-next/focused/command-status.json within lane",
+    "editor-runtime-next/focused/command-status.json hash",
+    "editor-runtime-next/focused/command-status.json bytes",
+    "editor-runtime-next/focused/domain-Legend-Shape.json within lane",
+    "editor-runtime-next/focused/domain-Legend-Shape.json hash",
+    "editor-runtime-next/focused/domain-Legend-Shape.json bytes",
+    "editor-runtime-next/focused/domain-Legend-Size.json within lane",
+    "editor-runtime-next/focused/domain-Legend-Size.json hash",
+    "editor-runtime-next/focused/domain-Legend-Size.json bytes",
+    "editor-runtime-next/focused/domain-Legend-Weight.json within lane",
+    "editor-runtime-next/focused/domain-Legend-Weight.json hash",
+    "editor-runtime-next/focused/domain-Legend-Weight.json bytes",
+    "editor-runtime-next/focused/domain-Series-Tooltip-Mode.json within lane",
+    "editor-runtime-next/focused/domain-Series-Tooltip-Mode.json hash",
+    "editor-runtime-next/focused/domain-Series-Tooltip-Mode.json bytes",
+    "editor-runtime-next/focused/domain-Vertical-Axis-Size.json within lane",
+    "editor-runtime-next/focused/domain-Vertical-Axis-Size.json hash",
+    "editor-runtime-next/focused/domain-Vertical-Axis-Size.json bytes",
+    "editor-runtime-next/focused/event-ledger.json within lane",
+    "editor-runtime-next/focused/event-ledger.json hash",
+    "editor-runtime-next/focused/event-ledger.json bytes",
+    "editor-runtime-next/focused/initial-chart.json within lane",
+    "editor-runtime-next/focused/initial-chart.json hash",
+    "editor-runtime-next/focused/initial-chart.json bytes",
+    "editor-runtime-next/focused/initial-chart.png within lane",
+    "editor-runtime-next/focused/initial-chart.png hash",
+    "editor-runtime-next/focused/initial-chart.png bytes",
+    "editor-runtime-next/focused/initial-projection-assertion.json within lane",
+    "editor-runtime-next/focused/initial-projection-assertion.json hash",
+    "editor-runtime-next/focused/initial-projection-assertion.json bytes",
+    "editor-runtime-next/focused/journey.log within lane",
+    "editor-runtime-next/focused/journey.log hash",
+    "editor-runtime-next/focused/journey.log bytes",
+    "editor-runtime-next/focused/line-Series-default.json within lane",
+    "editor-runtime-next/focused/line-Series-default.json hash",
+    "editor-runtime-next/focused/line-Series-default.json bytes",
+    "editor-runtime-next/focused/line-Series-default.png within lane",
+    "editor-runtime-next/focused/line-Series-default.png hash",
+    "editor-runtime-next/focused/line-Series-default.png bytes",
+    "editor-runtime-next/focused/line-Series-edited.json within lane",
+    "editor-runtime-next/focused/line-Series-edited.json hash",
+    "editor-runtime-next/focused/line-Series-edited.json bytes",
+    "editor-runtime-next/focused/line-Series-edited.png within lane",
+    "editor-runtime-next/focused/line-Series-edited.png hash",
+    "editor-runtime-next/focused/line-Series-edited.png bytes",
+    "editor-runtime-next/focused/line-markers-on.json within lane",
+    "editor-runtime-next/focused/line-markers-on.json hash",
+    "editor-runtime-next/focused/line-markers-on.json bytes",
+    "editor-runtime-next/focused/line-markers-on.png within lane",
+    "editor-runtime-next/focused/line-markers-on.png hash",
+    "editor-runtime-next/focused/line-markers-on.png bytes",
+    "editor-runtime-next/focused/setup-Aggregate-off.json within lane",
+    "editor-runtime-next/focused/setup-Aggregate-off.json hash",
+    "editor-runtime-next/focused/setup-Aggregate-off.json bytes",
+    "editor-runtime-next/focused/setup-Aggregate-off.png within lane",
+    "editor-runtime-next/focused/setup-Aggregate-off.png hash",
+    "editor-runtime-next/focused/setup-Aggregate-off.png bytes",
+    "editor-runtime-next/focused/setup-Aggregate-on.json within lane",
+    "editor-runtime-next/focused/setup-Aggregate-on.json hash",
+    "editor-runtime-next/focused/setup-Aggregate-on.json bytes",
+    "editor-runtime-next/focused/setup-Aggregate-on.png within lane",
+    "editor-runtime-next/focused/setup-Aggregate-on.png hash",
+    "editor-runtime-next/focused/setup-Aggregate-on.png bytes",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-off.json within lane",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-off.json hash",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-off.json bytes",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-off.png within lane",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-off.png hash",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-off.png bytes",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-on.json within lane",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-on.json hash",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-on.json bytes",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-on.png within lane",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-on.png hash",
+    "editor-runtime-next/focused/setup-Switch-Category-Series-on.png bytes",
+    "editor-runtime-next/focused/setup-default.json within lane",
+    "editor-runtime-next/focused/setup-default.json hash",
+    "editor-runtime-next/focused/setup-default.json bytes",
+    "editor-runtime-next/focused/setup-default.png within lane",
+    "editor-runtime-next/focused/setup-default.png hash",
+    "editor-runtime-next/focused/setup-default.png bytes",
+    "editor-runtime-next/focused/summary.json within lane",
+    "editor-runtime-next/focused/summary.json hash",
+    "editor-runtime-next/focused/summary.json bytes",
+    "editor-runtime-next/focused/table-dark.png within lane",
+    "editor-runtime-next/focused/table-dark.png hash",
+    "editor-runtime-next/focused/table-dark.png bytes",
+    "editor-runtime-next/journey-status.json within lane",
+    "editor-runtime-next/journey-status.json hash",
+    "editor-runtime-next/journey-status.json bytes",
+    "editor-runtime-next/journey.log within lane",
+    "editor-runtime-next/journey.log hash",
+    "editor-runtime-next/journey.log bytes",
+    "editor-runtime-next/journey.mjs within lane",
+    "editor-runtime-next/journey.mjs hash",
+    "editor-runtime-next/journey.mjs bytes",
+    "editor-runtime-next/outgoing-storage-projection.json within lane",
+    "editor-runtime-next/outgoing-storage-projection.json hash",
+    "editor-runtime-next/outgoing-storage-projection.json bytes",
+    "editor-runtime-next/patch-ledger.json within lane",
+    "editor-runtime-next/patch-ledger.json hash",
+    "editor-runtime-next/patch-ledger.json bytes",
+    "editor-runtime-next/publication.mjs within lane",
+    "editor-runtime-next/publication.mjs hash",
+    "editor-runtime-next/publication.mjs bytes",
+    "editor-runtime-next/report.md within lane",
+    "editor-runtime-next/report.md hash",
+    "editor-runtime-next/report.md bytes",
+    "editor-runtime-next/rerun.sh within lane",
+    "editor-runtime-next/rerun.sh hash",
+    "editor-runtime-next/rerun.sh bytes",
+    "editor-runtime-next/run.sh within lane",
+    "editor-runtime-next/run.sh hash",
+    "editor-runtime-next/run.sh bytes",
+    "editor-runtime-next/selected-leaf-presence.json within lane",
+    "editor-runtime-next/selected-leaf-presence.json hash",
+    "editor-runtime-next/selected-leaf-presence.json bytes",
+    "editor-runtime-next/selector-proof.json within lane",
+    "editor-runtime-next/selector-proof.json hash",
+    "editor-runtime-next/selector-proof.json bytes",
+    "editor-runtime-next/start.mjs within lane",
+    "editor-runtime-next/start.mjs hash",
+    "editor-runtime-next/start.mjs bytes",
+    "editor-runtime-next/stop.mjs within lane",
+    "editor-runtime-next/stop.mjs hash",
+    "editor-runtime-next/stop.mjs bytes",
+    "editor-runtime-next/unresolved-actions.json within lane",
+    "editor-runtime-next/unresolved-actions.json hash",
+    "editor-runtime-next/unresolved-actions.json bytes",
+    "editor-runtime-next/verification.json within lane",
+    "editor-runtime-next/verification.json hash",
+    "editor-runtime-next/verification.json bytes",
+    "editor-runtime-next private files omitted",
+    "editor-runtime-next cleanup",
+    "grid-runtime-next unique finite paths",
+    "grid-runtime-next/report.md within lane",
+    "grid-runtime-next/report.md hash",
+    "grid-runtime-next/report.md bytes",
+    "grid-runtime-next/fixture.json within lane",
+    "grid-runtime-next/fixture.json hash",
+    "grid-runtime-next/fixture.json bytes",
+    "grid-runtime-next/rows.json within lane",
+    "grid-runtime-next/rows.json hash",
+    "grid-runtime-next/rows.json bytes",
+    "grid-runtime-next/prepare.mjs within lane",
+    "grid-runtime-next/prepare.mjs hash",
+    "grid-runtime-next/prepare.mjs bytes",
+    "grid-runtime-next/start.mjs within lane",
+    "grid-runtime-next/start.mjs hash",
+    "grid-runtime-next/start.mjs bytes",
+    "grid-runtime-next/journey.mjs within lane",
+    "grid-runtime-next/journey.mjs hash",
+    "grid-runtime-next/journey.mjs bytes",
+    "grid-runtime-next/cleanup.mjs within lane",
+    "grid-runtime-next/cleanup.mjs hash",
+    "grid-runtime-next/cleanup.mjs bytes",
+    "grid-runtime-next/run.sh within lane",
+    "grid-runtime-next/run.sh hash",
+    "grid-runtime-next/run.sh bytes",
+    "grid-runtime-next/assert.mjs within lane",
+    "grid-runtime-next/assert.mjs hash",
+    "grid-runtime-next/assert.mjs bytes",
+    "grid-runtime-next/publish.mjs within lane",
+    "grid-runtime-next/publish.mjs hash",
+    "grid-runtime-next/publish.mjs bytes",
+    "grid-runtime-next/start.log within lane",
+    "grid-runtime-next/start.log hash",
+    "grid-runtime-next/start.log bytes",
+    "grid-runtime-next/journey.log within lane",
+    "grid-runtime-next/journey.log hash",
+    "grid-runtime-next/journey.log bytes",
+    "grid-runtime-next/cleanup.log within lane",
+    "grid-runtime-next/cleanup.log hash",
+    "grid-runtime-next/cleanup.log bytes",
+    "grid-runtime-next/command-status.json within lane",
+    "grid-runtime-next/command-status.json hash",
+    "grid-runtime-next/command-status.json bytes",
+    "grid-runtime-next/assertions.json within lane",
+    "grid-runtime-next/assertions.json hash",
+    "grid-runtime-next/assertions.json bytes",
+    "grid-runtime-next/assert.log within lane",
+    "grid-runtime-next/assert.log hash",
+    "grid-runtime-next/assert.log bytes",
+    "grid-runtime-next/cleanup-report.json within lane",
+    "grid-runtime-next/cleanup-report.json hash",
+    "grid-runtime-next/cleanup-report.json bytes",
+    "grid-runtime-next/capture-status.json within lane",
+    "grid-runtime-next/capture-status.json hash",
+    "grid-runtime-next/capture-status.json bytes",
+    "grid-runtime-next/diagnostics-public.json within lane",
+    "grid-runtime-next/diagnostics-public.json hash",
+    "grid-runtime-next/diagnostics-public.json bytes",
+    "grid-runtime-next/ordinary.json within lane",
+    "grid-runtime-next/ordinary.json hash",
+    "grid-runtime-next/ordinary.json bytes",
+    "grid-runtime-next/ordinary.png within lane",
+    "grid-runtime-next/ordinary.png hash",
+    "grid-runtime-next/ordinary.png bytes",
+    "grid-runtime-next/ordinary-table.json within lane",
+    "grid-runtime-next/ordinary-table.json hash",
+    "grid-runtime-next/ordinary-table.json bytes",
+    "grid-runtime-next/ordinary-table.png within lane",
+    "grid-runtime-next/ordinary-table.png hash",
+    "grid-runtime-next/ordinary-table.png bytes",
+    "grid-runtime-next/filtered-sorted-bounds.json within lane",
+    "grid-runtime-next/filtered-sorted-bounds.json hash",
+    "grid-runtime-next/filtered-sorted-bounds.json bytes",
+    "grid-runtime-next/filtered-sorted-bounds.png within lane",
+    "grid-runtime-next/filtered-sorted-bounds.png hash",
+    "grid-runtime-next/filtered-sorted-bounds.png bytes",
+    "grid-runtime-next/filtered-sorted-bounds-table.json within lane",
+    "grid-runtime-next/filtered-sorted-bounds-table.json hash",
+    "grid-runtime-next/filtered-sorted-bounds-table.json bytes",
+    "grid-runtime-next/filtered-sorted-bounds-table.png within lane",
+    "grid-runtime-next/filtered-sorted-bounds-table.png hash",
+    "grid-runtime-next/filtered-sorted-bounds-table.png bytes",
+    "grid-runtime-next/numeric-only.json within lane",
+    "grid-runtime-next/numeric-only.json hash",
+    "grid-runtime-next/numeric-only.json bytes",
+    "grid-runtime-next/numeric-only.png within lane",
+    "grid-runtime-next/numeric-only.png hash",
+    "grid-runtime-next/numeric-only.png bytes",
+    "grid-runtime-next/numeric-only-table.json within lane",
+    "grid-runtime-next/numeric-only-table.json hash",
+    "grid-runtime-next/numeric-only-table.json bytes",
+    "grid-runtime-next/numeric-only-table.png within lane",
+    "grid-runtime-next/numeric-only-table.png hash",
+    "grid-runtime-next/numeric-only-table.png bytes",
+    "grid-runtime-next/multiple-category.json within lane",
+    "grid-runtime-next/multiple-category.json hash",
+    "grid-runtime-next/multiple-category.json bytes",
+    "grid-runtime-next/multiple-category.png within lane",
+    "grid-runtime-next/multiple-category.png hash",
+    "grid-runtime-next/multiple-category.png bytes",
+    "grid-runtime-next/multiple-category-table.json within lane",
+    "grid-runtime-next/multiple-category-table.json hash",
+    "grid-runtime-next/multiple-category-table.json bytes",
+    "grid-runtime-next/multiple-category-table.png within lane",
+    "grid-runtime-next/multiple-category-table.png hash",
+    "grid-runtime-next/multiple-category-table.png bytes",
+    "grid-runtime-next/formatted-margin.json within lane",
+    "grid-runtime-next/formatted-margin.json hash",
+    "grid-runtime-next/formatted-margin.json bytes",
+    "grid-runtime-next/formatted-margin.png within lane",
+    "grid-runtime-next/formatted-margin.png hash",
+    "grid-runtime-next/formatted-margin.png bytes",
+    "grid-runtime-next/formatted-margin-table.json within lane",
+    "grid-runtime-next/formatted-margin-table.json hash",
+    "grid-runtime-next/formatted-margin-table.json bytes",
+    "grid-runtime-next/formatted-margin-table.png within lane",
+    "grid-runtime-next/formatted-margin-table.png hash",
+    "grid-runtime-next/formatted-margin-table.png bytes",
+    "grid-runtime-next/hidden-selected.json within lane",
+    "grid-runtime-next/hidden-selected.json hash",
+    "grid-runtime-next/hidden-selected.json bytes",
+    "grid-runtime-next/hidden-selected.png within lane",
+    "grid-runtime-next/hidden-selected.png hash",
+    "grid-runtime-next/hidden-selected.png bytes",
+    "grid-runtime-next/hidden-selected-table.json within lane",
+    "grid-runtime-next/hidden-selected-table.json hash",
+    "grid-runtime-next/hidden-selected-table.json bytes",
+    "grid-runtime-next/hidden-selected-table.png within lane",
+    "grid-runtime-next/hidden-selected-table.png hash",
+    "grid-runtime-next/hidden-selected-table.png bytes",
+    "grid-runtime-next/synthetic-value-getter.json within lane",
+    "grid-runtime-next/synthetic-value-getter.json hash",
+    "grid-runtime-next/synthetic-value-getter.json bytes",
+    "grid-runtime-next/synthetic-value-getter.png within lane",
+    "grid-runtime-next/synthetic-value-getter.png hash",
+    "grid-runtime-next/synthetic-value-getter.png bytes",
+    "grid-runtime-next/synthetic-value-getter-table.json within lane",
+    "grid-runtime-next/synthetic-value-getter-table.json hash",
+    "grid-runtime-next/synthetic-value-getter-table.json bytes",
+    "grid-runtime-next/synthetic-value-getter-table.png within lane",
+    "grid-runtime-next/synthetic-value-getter-table.png hash",
+    "grid-runtime-next/synthetic-value-getter-table.png bytes",
+    "grid-runtime-next private files omitted",
+    "grid-runtime-next cleanup",
+    "publication marker scan",
+    "ordinary numeric arrays",
+    "bounded node identity",
+    "bounded numeric arrays",
+    "bounded series order",
+    "getter raw independent",
+    "getter arrays",
+    "formatted fraction preserved",
+    "grid recorded fifteen checks",
+    "editor actions",
+    "horizontal-label-padding-9 events",
+    "horizontal-label-padding-9 model exact delta keys",
+    "horizontal-label-padding-9 delta value chartOptions.bar.axes.category.top.label.spacing",
+    "horizontal-label-padding-9 delta value chartOptions.bar.axes.category.bottom.label.spacing",
+    "horizontal-label-padding-9 effective exact delta keys",
+    "horizontal-label-padding-9 delta value axes.0.label.spacing",
+    "horizontal-label-auto-rotate-off events",
+    "horizontal-label-auto-rotate-off model exact delta keys",
+    "horizontal-label-auto-rotate-off delta value chartOptions.bar.axes.category.top.label.autoRotate",
+    "horizontal-label-auto-rotate-off delta value chartOptions.bar.axes.category.bottom.label.autoRotate",
+    "horizontal-label-auto-rotate-off effective exact delta keys",
+    "horizontal-label-auto-rotate-off delta value axes.0.label.autoRotate",
+    "vertical-thickness-3 events",
+    "vertical-thickness-3 model exact delta keys",
+    "vertical-thickness-3 delta value chartOptions.bar.axes.number.left.line.enabled",
+    "vertical-thickness-3 delta value chartOptions.bar.axes.number.left.line.width",
+    "vertical-thickness-3 delta value chartOptions.bar.axes.number.right.line.enabled",
+    "vertical-thickness-3 delta value chartOptions.bar.axes.number.right.line.width",
+    "vertical-thickness-3 effective exact delta keys",
+    "vertical-thickness-3 delta value axes.1.line.enabled",
+    "vertical-thickness-3 delta value axes.1.line.width",
+    "vertical-label-size-14 events",
+    "vertical-label-size-14 model exact delta keys",
+    "vertical-label-size-14 delta value chartOptions.bar.axes.number.left.label.fontSize",
+    "vertical-label-size-14 delta value chartOptions.bar.axes.number.right.label.fontSize",
+    "vertical-label-size-14 effective exact delta keys",
+    "vertical-label-size-14 delta value axes.1.label.fontSize",
+    "series-tooltip-single events",
+    "series-tooltip-single model exact delta keys",
+    "series-tooltip-single effective exact delta keys",
+    "series-labels-on events",
+    "series-labels-on model exact delta keys",
+    "series-labels-on delta value chartOptions.bar.series.label.enabled",
+    "series-labels-on effective exact delta keys",
+    "series-labels-on delta value series.0.label.enabled",
+    "series-labels-on delta value series.1.label.enabled",
+    "series-stroke-width-3 events",
+    "series-stroke-width-3 model exact delta keys",
+    "series-stroke-width-3 delta value chartOptions.bar.series.strokeWidth",
+    "series-stroke-width-3 effective exact delta keys",
+    "series-stroke-width-3 delta value series.0.strokeWidth",
+    "series-stroke-width-3 delta value series.1.strokeWidth",
+    "legend-weight-bold events",
+    "legend-weight-bold model exact delta keys",
+    "legend-weight-bold delta value chartOptions.bar.legend.item.label.fontWeight",
+    "legend-weight-bold delta value chartOptions.bar.legend.item.label.fontStyle",
+    "legend-weight-bold effective exact delta keys",
+    "legend-weight-bold delta value legend.item.label.fontWeight",
+    "legend-weight-bold delta value legend.item.label.fontStyle",
+    "legend-size-14 events",
+    "legend-size-14 model exact delta keys",
+    "legend-size-14 delta value chartOptions.bar.legend.item.label.fontSize",
+    "legend-size-14 effective exact delta keys",
+    "legend-size-14 delta value legend.item.label.fontSize",
+    "legend-marker-size-15 events",
+    "legend-marker-size-15 model exact delta keys",
+    "legend-marker-size-15 delta value chartOptions.bar.legend.item.marker.size",
+    "legend-marker-size-15 effective exact delta keys",
+    "legend-marker-size-15 delta value legend.item.marker.size",
+    "legend-horizontal-spacing-40 events",
+    "legend-horizontal-spacing-40 model exact delta keys",
+    "legend-horizontal-spacing-40 delta value chartOptions.bar.legend.item.paddingX",
+    "legend-horizontal-spacing-40 effective exact delta keys",
+    "legend-horizontal-spacing-40 delta value legend.item.paddingX",
+    "setup/Aggregate/on events",
+    "setup/Aggregate/on model exact delta keys",
+    "setup/Aggregate/on delta value aggFunc",
+    "setup/Aggregate/on effective exact delta keys",
+    "setup/Aggregate/on delta value data.0.revenue",
+    "setup/Aggregate/on delta value data.0.operatingIncome",
+    "setup/Aggregate/on delta value data.1.revenue",
+    "setup/Aggregate/on delta value data.1.operatingIncome",
+    "setup/Aggregate/on delta value data.1.period.value",
+    "setup/Aggregate/on delta value data.2.revenue",
+    "setup/Aggregate/on delta value data.2.operatingIncome",
+    "setup/Aggregate/on delta value data.2.period.value",
+    "setup/Aggregate/on delta value data.3.revenue",
+    "setup/Aggregate/on delta value data.3.operatingIncome",
+    "setup/Aggregate/on delta value data.3.period.id",
+    "setup/Aggregate/on delta value data.3.period.value",
+    "setup/Aggregate/off events",
+    "setup/Aggregate/off model exact delta keys",
+    "setup/Aggregate/off delta value aggFunc",
+    "setup/Aggregate/off effective exact delta keys",
+    "setup/Aggregate/off delta value data.0.revenue",
+    "setup/Aggregate/off delta value data.0.operatingIncome",
+    "setup/Aggregate/off delta value data.1.revenue",
+    "setup/Aggregate/off delta value data.1.operatingIncome",
+    "setup/Aggregate/off delta value data.1.period.value",
+    "setup/Aggregate/off delta value data.2.revenue",
+    "setup/Aggregate/off delta value data.2.operatingIncome",
+    "setup/Aggregate/off delta value data.2.period.value",
+    "setup/Aggregate/off delta value data.3.revenue",
+    "setup/Aggregate/off delta value data.3.operatingIncome",
+    "setup/Aggregate/off delta value data.3.period.id",
+    "setup/Aggregate/off delta value data.3.period.value",
+    "setup/Switch Category / Series/on events",
+    "setup/Switch Category / Series/on model exact delta keys",
+    "setup/Switch Category / Series/on delta value switchCategorySeries",
+    "setup/Switch Category / Series/on effective exact delta keys",
+    "setup/Switch Category / Series/on delta value data.0.revenue",
+    "setup/Switch Category / Series/on delta value data.0.operatingIncome",
+    "setup/Switch Category / Series/on delta value data.0.period.id",
+    "setup/Switch Category / Series/on delta value data.0.period.value",
+    "setup/Switch Category / Series/on delta value data.1.revenue",
+    "setup/Switch Category / Series/on delta value data.1.operatingIncome",
+    "setup/Switch Category / Series/on delta value data.1.period.id",
+    "setup/Switch Category / Series/on delta value data.1.period.value",
+    "setup/Switch Category / Series/on delta value data.2.revenue",
+    "setup/Switch Category / Series/on delta value data.2.operatingIncome",
+    "setup/Switch Category / Series/on delta value data.2.period.id",
+    "setup/Switch Category / Series/on delta value data.2.period.value",
+    "setup/Switch Category / Series/on delta value data.3.revenue",
+    "setup/Switch Category / Series/on delta value data.3.operatingIncome",
+    "setup/Switch Category / Series/on delta value data.3.period.id",
+    "setup/Switch Category / Series/on delta value data.3.period.value",
+    "setup/Switch Category / Series/on delta value series.0.xKey",
+    "setup/Switch Category / Series/on delta value series.0.yKey",
+    "setup/Switch Category / Series/on delta value series.0.yName",
+    "setup/Switch Category / Series/on delta value series.1.xKey",
+    "setup/Switch Category / Series/on delta value series.1.yKey",
+    "setup/Switch Category / Series/on delta value series.1.yName",
+    "setup/Switch Category / Series/on delta value series.2.type",
+    "setup/Switch Category / Series/on delta value series.2.xKey",
+    "setup/Switch Category / Series/on delta value series.2.yKey",
+    "setup/Switch Category / Series/on delta value series.2.yName",
+    "setup/Switch Category / Series/on delta value series.2.fill",
+    "setup/Switch Category / Series/on delta value series.2.stroke",
+    "setup/Switch Category / Series/on delta value series.2.strokeWidth",
+    "setup/Switch Category / Series/on delta value series.2.fillOpacity",
+    "setup/Switch Category / Series/on delta value series.2.lineDash.0",
+    "setup/Switch Category / Series/on delta value series.2.label.enabled",
+    "setup/Switch Category / Series/on delta value series.2.label.fontFamily",
+    "setup/Switch Category / Series/on delta value series.2.label.fontSize",
+    "setup/Switch Category / Series/on delta value series.2.label.fontWeight",
+    "setup/Switch Category / Series/on delta value series.2.label.color",
+    "setup/Switch Category / Series/on delta value series.2.label.padding",
+    "setup/Switch Category / Series/on delta value series.2.label.placement",
+    "setup/Switch Category / Series/on delta value series.2.tooltip.enabled",
+    "setup/Switch Category / Series/on delta value series.2.tooltip.range",
+    "setup/Switch Category / Series/on delta value series.2.shadow.enabled",
+    "setup/Switch Category / Series/on delta value series.2.shadow.color",
+    "setup/Switch Category / Series/on delta value series.2.shadow.xOffset",
+    "setup/Switch Category / Series/on delta value series.2.shadow.yOffset",
+    "setup/Switch Category / Series/on delta value series.2.shadow.blur",
+    "setup/Switch Category / Series/on delta value series.3.type",
+    "setup/Switch Category / Series/on delta value series.3.xKey",
+    "setup/Switch Category / Series/on delta value series.3.yKey",
+    "setup/Switch Category / Series/on delta value series.3.yName",
+    "setup/Switch Category / Series/on delta value series.3.fill",
+    "setup/Switch Category / Series/on delta value series.3.stroke",
+    "setup/Switch Category / Series/on delta value series.3.strokeWidth",
+    "setup/Switch Category / Series/on delta value series.3.fillOpacity",
+    "setup/Switch Category / Series/on delta value series.3.lineDash.0",
+    "setup/Switch Category / Series/on delta value series.3.label.enabled",
+    "setup/Switch Category / Series/on delta value series.3.label.fontFamily",
+    "setup/Switch Category / Series/on delta value series.3.label.fontSize",
+    "setup/Switch Category / Series/on delta value series.3.label.fontWeight",
+    "setup/Switch Category / Series/on delta value series.3.label.color",
+    "setup/Switch Category / Series/on delta value series.3.label.padding",
+    "setup/Switch Category / Series/on delta value series.3.label.placement",
+    "setup/Switch Category / Series/on delta value series.3.tooltip.enabled",
+    "setup/Switch Category / Series/on delta value series.3.tooltip.range",
+    "setup/Switch Category / Series/on delta value series.3.shadow.enabled",
+    "setup/Switch Category / Series/on delta value series.3.shadow.color",
+    "setup/Switch Category / Series/on delta value series.3.shadow.xOffset",
+    "setup/Switch Category / Series/on delta value series.3.shadow.yOffset",
+    "setup/Switch Category / Series/on delta value series.3.shadow.blur",
+    "setup/Switch Category / Series/off events",
+    "setup/Switch Category / Series/off model exact delta keys",
+    "setup/Switch Category / Series/off delta value switchCategorySeries",
+    "setup/Switch Category / Series/off effective exact delta keys",
+    "setup/Switch Category / Series/off delta value series.0.xKey",
+    "setup/Switch Category / Series/off delta value series.0.yKey",
+    "setup/Switch Category / Series/off delta value series.0.yName",
+    "setup/Switch Category / Series/off delta value series.1.xKey",
+    "setup/Switch Category / Series/off delta value series.1.yKey",
+    "setup/Switch Category / Series/off delta value series.1.yName",
+    "setup/Switch Category / Series/off delta value series.2.type",
+    "setup/Switch Category / Series/off delta value series.2.xKey",
+    "setup/Switch Category / Series/off delta value series.2.yKey",
+    "setup/Switch Category / Series/off delta value series.2.yName",
+    "setup/Switch Category / Series/off delta value series.2.fill",
+    "setup/Switch Category / Series/off delta value series.2.stroke",
+    "setup/Switch Category / Series/off delta value series.2.strokeWidth",
+    "setup/Switch Category / Series/off delta value series.2.fillOpacity",
+    "setup/Switch Category / Series/off delta value series.2.lineDash.0",
+    "setup/Switch Category / Series/off delta value series.2.label.enabled",
+    "setup/Switch Category / Series/off delta value series.2.label.fontFamily",
+    "setup/Switch Category / Series/off delta value series.2.label.fontSize",
+    "setup/Switch Category / Series/off delta value series.2.label.fontWeight",
+    "setup/Switch Category / Series/off delta value series.2.label.color",
+    "setup/Switch Category / Series/off delta value series.2.label.padding",
+    "setup/Switch Category / Series/off delta value series.2.label.placement",
+    "setup/Switch Category / Series/off delta value series.2.tooltip.enabled",
+    "setup/Switch Category / Series/off delta value series.2.tooltip.range",
+    "setup/Switch Category / Series/off delta value series.2.shadow.enabled",
+    "setup/Switch Category / Series/off delta value series.2.shadow.color",
+    "setup/Switch Category / Series/off delta value series.2.shadow.xOffset",
+    "setup/Switch Category / Series/off delta value series.2.shadow.yOffset",
+    "setup/Switch Category / Series/off delta value series.2.shadow.blur",
+    "setup/Switch Category / Series/off delta value series.3.type",
+    "setup/Switch Category / Series/off delta value series.3.xKey",
+    "setup/Switch Category / Series/off delta value series.3.yKey",
+    "setup/Switch Category / Series/off delta value series.3.yName",
+    "setup/Switch Category / Series/off delta value series.3.fill",
+    "setup/Switch Category / Series/off delta value series.3.stroke",
+    "setup/Switch Category / Series/off delta value series.3.strokeWidth",
+    "setup/Switch Category / Series/off delta value series.3.fillOpacity",
+    "setup/Switch Category / Series/off delta value series.3.lineDash.0",
+    "setup/Switch Category / Series/off delta value series.3.label.enabled",
+    "setup/Switch Category / Series/off delta value series.3.label.fontFamily",
+    "setup/Switch Category / Series/off delta value series.3.label.fontSize",
+    "setup/Switch Category / Series/off delta value series.3.label.fontWeight",
+    "setup/Switch Category / Series/off delta value series.3.label.color",
+    "setup/Switch Category / Series/off delta value series.3.label.padding",
+    "setup/Switch Category / Series/off delta value series.3.label.placement",
+    "setup/Switch Category / Series/off delta value series.3.tooltip.enabled",
+    "setup/Switch Category / Series/off delta value series.3.tooltip.range",
+    "setup/Switch Category / Series/off delta value series.3.shadow.enabled",
+    "setup/Switch Category / Series/off delta value series.3.shadow.color",
+    "setup/Switch Category / Series/off delta value series.3.shadow.xOffset",
+    "setup/Switch Category / Series/off delta value series.3.shadow.yOffset",
+    "setup/Switch Category / Series/off delta value series.3.shadow.blur",
+    "setup/Switch Category / Series/off delta value data.0.revenue",
+    "setup/Switch Category / Series/off delta value data.0.operatingIncome",
+    "setup/Switch Category / Series/off delta value data.0.period.id",
+    "setup/Switch Category / Series/off delta value data.0.period.value",
+    "setup/Switch Category / Series/off delta value data.1.revenue",
+    "setup/Switch Category / Series/off delta value data.1.operatingIncome",
+    "setup/Switch Category / Series/off delta value data.1.period.id",
+    "setup/Switch Category / Series/off delta value data.1.period.value",
+    "setup/Switch Category / Series/off delta value data.2.revenue",
+    "setup/Switch Category / Series/off delta value data.2.operatingIncome",
+    "setup/Switch Category / Series/off delta value data.2.period.id",
+    "setup/Switch Category / Series/off delta value data.2.period.value",
+    "setup/Switch Category / Series/off delta value data.3.revenue",
+    "setup/Switch Category / Series/off delta value data.3.operatingIncome",
+    "setup/Switch Category / Series/off delta value data.3.period.id",
+    "setup/Switch Category / Series/off delta value data.3.period.value",
+    "line-markers-on events",
+    "line-markers-on model exact delta keys",
+    "line-markers-on delta value chartOptions.line.series.marker.enabled",
+    "line-markers-on effective exact delta keys",
+    "line-markers-on delta value series.0.marker.enabled",
+    "line-markers-on delta value series.1.marker.enabled",
+    "line-marker-shape events",
+    "line-marker-shape model exact delta keys",
+    "line-marker-shape delta value chartOptions.line.series.marker.shape",
+    "line-marker-shape effective exact delta keys",
+    "line-marker-shape delta value series.0.marker.shape",
+    "line-marker-shape delta value series.1.marker.shape",
+    "line-marker-size-9 events",
+    "line-marker-size-9 model exact delta keys",
+    "line-marker-size-9 delta value chartOptions.line.series.marker.size",
+    "line-marker-size-9 effective exact delta keys",
+    "line-marker-size-9 delta value series.0.marker.size",
+    "line-marker-size-9 delta value series.1.marker.size",
+    "aggregate independent arithmetic",
+    "legend emits two events",
+    "tooltip no projected delta",
+    "diamond shape",
+    "diamond size",
+    "editor twenty-two recorded checks"
+  ],
+  "publicationHashes": {
+    "editor-runtime-next": [
+      {
+        "path": "analysis-status.json",
+        "sha256": "420d0b86662fc0dc3d1e287aaca3ac7117756ff7ce8b6b72238d3f92e9a4a48b"
+      },
+      {
+        "path": "analysis.log",
+        "sha256": "63ae3fe59ca309e497c837a32803f135cf29fb3645191728758f1ed10999e0e9"
+      },
+      {
+        "path": "analyze.mjs",
+        "sha256": "918b5e8d6cce0579c11ff914567e478a40cc320fe6830fc9c9513c269c1823e7"
+      },
+      {
+        "path": "bounded-stop.json",
+        "sha256": "c364dfc052993d1d46836e8cc63dbd6b222f19be44d748edfe7b4e2a3954dae9"
+      },
+      {
+        "path": "cleanup-exit.txt",
+        "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+      },
+      {
+        "path": "cleanup-report.json",
+        "sha256": "070a0a2ab41af069c6be9c8861449420dc545cab3d22e8c0ea2ccd6539512f97"
+      },
+      {
+        "path": "cleanup.mjs",
+        "sha256": "3995a42039cecf7e22eed5fcd9a3e17f1bbcd795b875eed23f5b01ce1ca9da58"
+      },
+      {
+        "path": "control-ledger.json",
+        "sha256": "fff4cb4af4bc1662be58dc188bd0bc95aa27c66e436b2b8193b79f6884dacf20"
+      },
+      {
+        "path": "diagnostic-summary.json",
+        "sha256": "1e1759caac0007b1150906ecbc94b05631a7c4f3d03f96fbff7091132510020e"
+      },
+      {
+        "path": "discover-status.json",
+        "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+      },
+      {
+        "path": "discover.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "discover.mjs",
+        "sha256": "15b3d640ffd7d9f4bea4f2b3b23e4759b87c128cac6dee8b008d7307a142f4bd"
+      },
+      {
+        "path": "domains.json",
+        "sha256": "e9de04c6e36a1d6664f0314d260d9373f38eddee82f74a440664b4cc43074428"
+      },
+      {
+        "path": "fixture.json",
+        "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+      },
+      {
+        "path": "focused.mjs",
+        "sha256": "7bcae9876488d6ac231e3e9ddd152cf6d40fa5e13b585f65808ba2f928ca1103"
+      },
+      {
+        "path": "focused.sh",
+        "sha256": "87729f5d889eb738695ccd514b763efcaa79fa868f64a5dde880fa838fcd4bf6"
+      },
+      {
+        "path": "focused/Horizontal-Axis-auto-rotate-off.json",
+        "sha256": "ebcf58f8214eb578c33d7b9047be6ef6d507683374b5ccbd5e4a22c3cfcb84fd"
+      },
+      {
+        "path": "focused/Horizontal-Axis-auto-rotate-off.png",
+        "sha256": "e8f454713eebcb85085829ac63294b04efe6c83b3c64d180404308ad7549cb1b"
+      },
+      {
+        "path": "focused/Horizontal-Axis-default.json",
+        "sha256": "5531c7071b67f4b43f569f387c2009ca965e4ba2353c58287b950dc9cf3d2283"
+      },
+      {
+        "path": "focused/Horizontal-Axis-default.png",
+        "sha256": "a44122c529c2054b6e06fb5b2ca20f5eff71cfdfc05612d5efce5b33df192004"
+      },
+      {
+        "path": "focused/Horizontal-Axis-edited.json",
+        "sha256": "ebcf58f8214eb578c33d7b9047be6ef6d507683374b5ccbd5e4a22c3cfcb84fd"
+      },
+      {
+        "path": "focused/Horizontal-Axis-edited.png",
+        "sha256": "e8f454713eebcb85085829ac63294b04efe6c83b3c64d180404308ad7549cb1b"
+      },
+      {
+        "path": "focused/Legend-default.json",
+        "sha256": "792146a0f48ef9e712637ff55acf33a7f225d35d6aee23df82ac6937f12a731d"
+      },
+      {
+        "path": "focused/Legend-default.png",
+        "sha256": "1dff66bb7a8dcc0eb293990f6a6de7d83ed10a7c44223fce54504f179aa7d837"
+      },
+      {
+        "path": "focused/Legend-edited.json",
+        "sha256": "bf8292276329862ad11ad8f1469e8f221e183f23a51d86039197be5a9eeaa2e8"
+      },
+      {
+        "path": "focused/Legend-edited.png",
+        "sha256": "961dff6039374a5127ac58876b30daf506af8c38f217748512d96f1e902f9c9a"
+      },
+      {
+        "path": "focused/Series-default.json",
+        "sha256": "cc58dcaa2e00f2b136482a52b60ecf066eb6b5e44940ca6d72430a4453aba5e5"
+      },
+      {
+        "path": "focused/Series-default.png",
+        "sha256": "53a897c4431ea057dde66b4fd967bd58b8eb8494ee06468cfd86a397f9bbf684"
+      },
+      {
+        "path": "focused/Series-edited.json",
+        "sha256": "5e6bc7a8e1a3e44d885c8814cebaa7c93635fcad25765e4c2d27ef7d0e0e3c3e"
+      },
+      {
+        "path": "focused/Series-edited.png",
+        "sha256": "8ef3d807a457bea7317de2646279ce8ae53b5f05ad4534773b50d1d7f787adf8"
+      },
+      {
+        "path": "focused/Series-labels-enabled.json",
+        "sha256": "7ad46dbe140d791328ed99a8a3635b581feab830400e1d568f12f0c36dc67271"
+      },
+      {
+        "path": "focused/Series-labels-enabled.png",
+        "sha256": "531aa306cd9d202043d889a33dbc839f8a02ce94c4aa924fe2c163a54b0fb878"
+      },
+      {
+        "path": "focused/Vertical-Axis-default.json",
+        "sha256": "22f58104a933c53f7b8b82809492a30e9cd846500fa36cb7aee38f686afa5082"
+      },
+      {
+        "path": "focused/Vertical-Axis-default.png",
+        "sha256": "cd64abc2233faa94b76b311167abe32f0ef2cce1148948be28343e4e2dca6790"
+      },
+      {
+        "path": "focused/Vertical-Axis-edited.json",
+        "sha256": "7ea64353f5b437eae2f43b0582c8e21f62a85aab5ada8e86f91a495da78b32d5"
+      },
+      {
+        "path": "focused/Vertical-Axis-edited.png",
+        "sha256": "b5f55ea92ff82613db1eb0949d7e377529f62b4139c67339c15131b6f6962668"
+      },
+      {
+        "path": "focused/command-status.json",
+        "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+      },
+      {
+        "path": "focused/domain-Legend-Shape.json",
+        "sha256": "349906ca985f8520e96eeb48847cd03181d3c7501b9e19e43725e12e4d4865aa"
+      },
+      {
+        "path": "focused/domain-Legend-Size.json",
+        "sha256": "68bc81e22fecb37e59eb8b3b8633473539aa99bdbe7167967fdbef14fa05d953"
+      },
+      {
+        "path": "focused/domain-Legend-Weight.json",
+        "sha256": "559471dd1ca0c705a403f18030e253c8263df00361a3058b19add888e006c1a7"
+      },
+      {
+        "path": "focused/domain-Series-Tooltip-Mode.json",
+        "sha256": "70c43abe2077b353bb589198d529329424aaf80d4164d84b651be9662b538526"
+      },
+      {
+        "path": "focused/domain-Vertical-Axis-Size.json",
+        "sha256": "68bc81e22fecb37e59eb8b3b8633473539aa99bdbe7167967fdbef14fa05d953"
+      },
+      {
+        "path": "focused/event-ledger.json",
+        "sha256": "9c5cd18a8d652c4c70267d2650b0cd5cf95ade653dc4a0ec71caa6fcb9e67461"
+      },
+      {
+        "path": "focused/initial-chart.json",
+        "sha256": "4a0ce102a506ddffc6d574adaa3e28d67092fe4d3dde90b1fdfe48e220f7378a"
+      },
+      {
+        "path": "focused/initial-chart.png",
+        "sha256": "8609b8e445ebaf5d82ea409c09d44f48256aa424267749c000b2bfce2c11bc38"
+      },
+      {
+        "path": "focused/initial-projection-assertion.json",
+        "sha256": "3b2134dc9181aec6145b8ab81e0201e2350688f9d126e7798eef3ab2a33d03c1"
+      },
+      {
+        "path": "focused/journey.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "focused/line-Series-default.json",
+        "sha256": "538cda478e461e3cc2060c437dde1dbb4538e55d806fe1a513dc681ccbbc126b"
+      },
+      {
+        "path": "focused/line-Series-default.png",
+        "sha256": "141ecc7048fd6caf145790a86a33e6369367285ce0b933b44337e7620afa0ebb"
+      },
+      {
+        "path": "focused/line-Series-edited.json",
+        "sha256": "c4ae907eb6a787098db1beb2d1983e7507131344ac1936ab8b7cd0019503df77"
+      },
+      {
+        "path": "focused/line-Series-edited.png",
+        "sha256": "84abc2fa841193a9b65dc20a024d2e89dcdf7bbd5de743b49f5db871d2d458d7"
+      },
+      {
+        "path": "focused/line-markers-on.json",
+        "sha256": "843c14636f1b8140f285388173a9e8365da6f9270f78f2be068ad2d7d78d9032"
+      },
+      {
+        "path": "focused/line-markers-on.png",
+        "sha256": "be65017f004a55e6fa65b39ec6a84a4769f6392d6c19c17cfc130ed96777ac91"
+      },
+      {
+        "path": "focused/setup-Aggregate-off.json",
+        "sha256": "2251213952b23738d4d9cc78a7f1f7e92abec29eea71ef691093f8a46dab4a3b"
+      },
+      {
+        "path": "focused/setup-Aggregate-off.png",
+        "sha256": "f0ed8a89ffcd24cfbe577b80d6541f723abd29e9b526298660cf32c65deb72b5"
+      },
+      {
+        "path": "focused/setup-Aggregate-on.json",
+        "sha256": "32754a5bcc4235edfd41c9548d5d08a8a71754393a34485afcc690f16816b04d"
+      },
+      {
+        "path": "focused/setup-Aggregate-on.png",
+        "sha256": "a1b31590d837507dd7766aa65b24380b02651f41532151bc20c0845560c50b11"
+      },
+      {
+        "path": "focused/setup-Switch-Category-Series-off.json",
+        "sha256": "793ca19e045002506869dd1cd99f468d0d9bbe14adf5ce8375e6bb40c7b5661d"
+      },
+      {
+        "path": "focused/setup-Switch-Category-Series-off.png",
+        "sha256": "9937cf24f41f0da1a804caf33e86e5c9994ff305b161feeab3306de71baebc65"
+      },
+      {
+        "path": "focused/setup-Switch-Category-Series-on.json",
+        "sha256": "3c4c943c4055dbb686b73277e96fa39f5fd462f78fcd9c316e558fb277ae672b"
+      },
+      {
+        "path": "focused/setup-Switch-Category-Series-on.png",
+        "sha256": "95c552a60757b777510ac9cccfc27d96d9123dad7aa7ac0a51dc325671350136"
+      },
+      {
+        "path": "focused/setup-default.json",
+        "sha256": "3fb60cc3594eff244cc9fbcdfca6965da4ee768a99707ce053de00edb0509913"
+      },
+      {
+        "path": "focused/setup-default.png",
+        "sha256": "479b522790157b05e38497982a3d894e45b0009a0ce5a9884f69bfc17cc9374d"
+      },
+      {
+        "path": "focused/summary.json",
+        "sha256": "e6c1b42a46316ecff2156037c7b32b1b5483cd634f24c0215fc00b311af4b238"
+      },
+      {
+        "path": "focused/table-dark.png",
+        "sha256": "dd9a47931e2f0b962b8c47751bf1510a98c7123f65e90dcec767389a8b0590f6"
+      },
+      {
+        "path": "journey-status.json",
+        "sha256": "ca4b50a6aabd8c09a9998c501233e663a1a779dee115f77beed1cc4e481ab5c3"
+      },
+      {
+        "path": "journey.log",
+        "sha256": "ce72200fa00aff28770179389acf30036f782e6adc69407757c98cae885a9994"
+      },
+      {
+        "path": "journey.mjs",
+        "sha256": "1c56e02a1e2b91fb338ad7e65fc1a7795675b06b1e3d1c5e9fffc5819628bc0a"
+      },
+      {
+        "path": "outgoing-storage-projection.json",
+        "sha256": "cb2eb1adb90d121adf73ddd913271cd3d70dba70f426a2ba075558d9b781cc25"
+      },
+      {
+        "path": "patch-ledger.json",
+        "sha256": "3c587a3695242201f5e9b1f0b08b55979022642ecbf311d48c63e9d76d592996"
+      },
+      {
+        "path": "publication.mjs",
+        "sha256": "f6addcf2fceed268f1805e0723735014df50482a4d43a4daebb09b0d4ac6e678"
+      },
+      {
+        "path": "report.md",
+        "sha256": "caeb5ee676cf3e5a06f4304e3636f32d533fe96962c4451e1eed738c19ea79ed"
+      },
+      {
+        "path": "rerun.sh",
+        "sha256": "3707c740d10d02e65523322887553c06ce0c21ec6ce4f91719fc70e175550697"
+      },
+      {
+        "path": "run.sh",
+        "sha256": "f889c9d358736dcc561d053a5364bafdb8224335f9b960e06bac41a0b08dffc6"
+      },
+      {
+        "path": "selected-leaf-presence.json",
+        "sha256": "c5832384ea93346bcec4085ac5d66f47ced3ba66a2403df70da7dff44755a026"
+      },
+      {
+        "path": "selector-proof.json",
+        "sha256": "07796abbcec53e15ef273adb6ec1b406a22bdeeda39f687d5442dac022a68b11"
+      },
+      {
+        "path": "start.mjs",
+        "sha256": "4e84ba5014053b2af305e3af989b1b8eeb797a4b55f2427474dadc379435b1a9"
+      },
+      {
+        "path": "stop.mjs",
+        "sha256": "1cfe914a2835cbad691bcaf3f3845e394675e5dc4baece80eff393ea03b4cf93"
+      },
+      {
+        "path": "unresolved-actions.json",
+        "sha256": "c52c85a039b28bb8e7cf2ababc6b6aa0ec5ad7268dffea423502d9497c988a6e"
+      },
+      {
+        "path": "verification.json",
+        "sha256": "257d768815d74b8e2e494ab113400f786605986952df7e75dcbe463c5e2a4037"
+      }
+    ],
+    "grid-runtime-next": [
+      {
+        "path": "report.md",
+        "sha256": "5a5bf62ee571a60cd9ba8422acb63cc709f62d4fe36a9573234d75b36b0d4e68"
+      },
+      {
+        "path": "fixture.json",
+        "sha256": "4e11f88fc7eed6fb70117600f431a74cc35634fbbfa42e10252af13b29d85ea0"
+      },
+      {
+        "path": "rows.json",
+        "sha256": "ac0f1cf7d3b2800ea6f4438b4f77c806bfea17e8abe48b287d848e80d592c491"
+      },
+      {
+        "path": "prepare.mjs",
+        "sha256": "5e207fa120d27ed9efba4fe145cf67bc041e37337586831e331e4f19a0d7e574"
+      },
+      {
+        "path": "start.mjs",
+        "sha256": "039ee5f14c4cf643fb75798a4020aac0aab40ee583486bc849fe0c0ca423d34b"
+      },
+      {
+        "path": "journey.mjs",
+        "sha256": "0f72913991b4b4f4c0c8cb9b58c4e1498b70c2b1fdb46e88055f2b0b696b6c3e"
+      },
+      {
+        "path": "cleanup.mjs",
+        "sha256": "596fff859847cd78fad2a400f915311298f3dd0b493f2f1fae3b63bc8c54bdf9"
+      },
+      {
+        "path": "run.sh",
+        "sha256": "09075454aebcbabba860df3e55d48c75e6a17d6490ec74081583c80b2479fb35"
+      },
+      {
+        "path": "assert.mjs",
+        "sha256": "173ef56821024b3adf4904e57438d4a1a4238cabfdc58c44481799521980a12e"
+      },
+      {
+        "path": "publish.mjs",
+        "sha256": "f6a08649164ad0be253bd01ad65d66127ad27c9ef68de7922fe5976c58f333c7"
+      },
+      {
+        "path": "start.log",
+        "sha256": "efb48936ec04391813463a1ce8c4958cc870783555c5322b0ce7f8b873102201"
+      },
+      {
+        "path": "journey.log",
+        "sha256": "35e2bc95710a3e9c7def4c37e60791a49bdbb6f246f68dd2672f440fa88494c7"
+      },
+      {
+        "path": "cleanup.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "command-status.json",
+        "sha256": "eb8de05f01cf7c7586a61e9a71205b4b80421e6a937025212bc32bc798737350"
+      },
+      {
+        "path": "assertions.json",
+        "sha256": "6fd0231266dff2c46db5c0f85393478dc71e2dae581d5b1362c2f68011f63cfd"
+      },
+      {
+        "path": "assert.log",
+        "sha256": "ea563cb3b9018614ac91ae001d3893316f72427182c79d049ae81743c1883f0f"
+      },
+      {
+        "path": "cleanup-report.json",
+        "sha256": "070a0a2ab41af069c6be9c8861449420dc545cab3d22e8c0ea2ccd6539512f97"
+      },
+      {
+        "path": "capture-status.json",
+        "sha256": "cfe553ab46539a0990fbc790217f337b629c55bd3604361bc644bfcad0417238"
+      },
+      {
+        "path": "diagnostics-public.json",
+        "sha256": "fec0066c65d6237647ce2d61bf7bf3a568c5abd6d4f65dab45e651c9a283f62c"
+      },
+      {
+        "path": "ordinary.json",
+        "sha256": "99340b6f1ad053c5eeb40413eea397d0c055776d84b03de261b6c4b5070e41ea"
+      },
+      {
+        "path": "ordinary.png",
+        "sha256": "678e12db52fc2d6c5ec1405140acf1f6d986fcf2e426b58790e1ec9bb5953938"
+      },
+      {
+        "path": "ordinary-table.json",
+        "sha256": "31afc88c93d7532002926e47a244e182a195f34ebd0e5a6c37ed427fb7d77886"
+      },
+      {
+        "path": "ordinary-table.png",
+        "sha256": "fe75eb64ca5f9dd2e02529afd5a37137fa022a42ac779bc68ab1fdc0bac437f6"
+      },
+      {
+        "path": "filtered-sorted-bounds.json",
+        "sha256": "aa23464d3f245bb7a2463021c96af5972b9dd6d0d26b0f83a95925a34f8279fa"
+      },
+      {
+        "path": "filtered-sorted-bounds.png",
+        "sha256": "3920cf6e09c0376d25d307cff7004ef170900054baa52b8f05a18177781e335b"
+      },
+      {
+        "path": "filtered-sorted-bounds-table.json",
+        "sha256": "a14c5428ffcefb174d9420a0b1ee94969f9283dad1aedc9a7a3e9e98173db1d3"
+      },
+      {
+        "path": "filtered-sorted-bounds-table.png",
+        "sha256": "a7e7d4baeca19a9a5045bb6c717532f54f17fbac902445fa38e9f8bb8df9b5e8"
+      },
+      {
+        "path": "numeric-only.json",
+        "sha256": "d3a621efbcaeef7dd0620cc76f2bad85b7357799d2ec34fa374baf41a3046428"
+      },
+      {
+        "path": "numeric-only.png",
+        "sha256": "988361ed051a5a12047d95590072e6b2f20876bb0f58722632bd81897952b8ec"
+      },
+      {
+        "path": "numeric-only-table.json",
+        "sha256": "31afc88c93d7532002926e47a244e182a195f34ebd0e5a6c37ed427fb7d77886"
+      },
+      {
+        "path": "numeric-only-table.png",
+        "sha256": "fe75eb64ca5f9dd2e02529afd5a37137fa022a42ac779bc68ab1fdc0bac437f6"
+      },
+      {
+        "path": "multiple-category.json",
+        "sha256": "eeb760cf95e2ff20f20741510bd6d1fcf09a4c62ad9fd696d55b8f726dc57992"
+      },
+      {
+        "path": "multiple-category.png",
+        "sha256": "678e12db52fc2d6c5ec1405140acf1f6d986fcf2e426b58790e1ec9bb5953938"
+      },
+      {
+        "path": "multiple-category-table.json",
+        "sha256": "e9a884b8705957c8c83370a8d0dbeba98b3f8c3fd442e87a98997e0de531f415"
+      },
+      {
+        "path": "multiple-category-table.png",
+        "sha256": "53c12497fb323382447bf5fe9a0daff8dab784e52132e553e03f121b31476538"
+      },
+      {
+        "path": "formatted-margin.json",
+        "sha256": "7b6be22d95f5610e819305b8c7baa1d9c84826a59f00aed9bd0f58e20e75477c"
+      },
+      {
+        "path": "formatted-margin.png",
+        "sha256": "3511ecfbe9cb777eba14ef9f2be7e37505d95c56399cd8cae614c69d02e60d7e"
+      },
+      {
+        "path": "formatted-margin-table.json",
+        "sha256": "e6e33d590174582ad7b0ca4c4dd3fff0f31c8cf71b6b1fd29747027571eca020"
+      },
+      {
+        "path": "formatted-margin-table.png",
+        "sha256": "b4c1281283eeb6a3e5fa69b54274a0531bcd64e4c7fbaa1e9db40b6aceb24027"
+      },
+      {
+        "path": "hidden-selected.json",
+        "sha256": "388321a7ac139b25a2eaa1b61c6bdf292b14860bf6039bf4c74bff4fe9a404ed"
+      },
+      {
+        "path": "hidden-selected.png",
+        "sha256": "495f11a77899d67f77c8fd3e15a26931f46694048ac161bc6c4758ddc5c21c80"
+      },
+      {
+        "path": "hidden-selected-table.json",
+        "sha256": "bb3bc8a36318e9b1946c94c99869973cbb3ac5d7683ae8da35c2324d3c833e0a"
+      },
+      {
+        "path": "hidden-selected-table.png",
+        "sha256": "a858762f5e2ed25fb1cb81583fc8c2015b456bfdea94d76c947c703273a54104"
+      },
+      {
+        "path": "synthetic-value-getter.json",
+        "sha256": "d7da21374964be492fdef6877a75a2a770069f0ef7914e003628de4eb9d33f47"
+      },
+      {
+        "path": "synthetic-value-getter.png",
+        "sha256": "b9e81f3f01083b543d50138ba4f2a69d8de29c5fe9d58f1048253d53f281201c"
+      },
+      {
+        "path": "synthetic-value-getter-table.json",
+        "sha256": "131886911442055c7ac5aac45602a94c39164f5f5b57bedc3c281dd4f7accfb9"
+      },
+      {
+        "path": "synthetic-value-getter-table.png",
+        "sha256": "4f3bc0667dc13dd68fd84ccf5973a14881415d9ca77bdcf24ef4b8dd56193d92"
+      }
+    ]
+  },
+  "markerHits": [],
+  "privateRuntimeFilesRead": false,
+  "scope": "Frozen finite evidence, not a fresh browser execution or candidate acceptance."
+}

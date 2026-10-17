@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "ordinary observations preserve zero negative fractional null",
+      "passed": true
+    },
+    {
+      "name": "ordinary resolved category and ordered numeric series",
+      "passed": true
+    },
+    {
+      "name": "duplicate categories retain separate wrapper IDs",
+      "passed": true
+    },
+    {
+      "name": "filtered displayed order independently specified",
+      "passed": true
+    },
+    {
+      "name": "inclusive displayed bounds and selected numeric order",
+      "passed": true
+    },
+    {
+      "name": "numeric-only has finite rendered series and six observations",
+      "passed": true
+    },
+    {
+      "name": "multiple-category has finite rendered series and six observations",
+      "passed": true
+    },
+    {
+      "name": "formatted-margin has finite rendered series and six observations",
+      "passed": true
+    },
+    {
+      "name": "hidden-selected has finite rendered series and six observations",
+      "passed": true
+    },
+    {
+      "name": "synthetic-value-getter has finite rendered series and six observations",
+      "passed": true
+    },
+    {
+      "name": "numeric-only generates ordinal category and retains numeric identities",
+      "passed": true
+    },
+    {
+      "name": "two visible categories resolve to period for this fixture",
+      "passed": true
+    },
+    {
+      "name": "dynamically hidden selected series is absent from chart",
+      "passed": true
+    },
+    {
+      "name": "normalizedPercent presentation does not scale chart observations",
+      "passed": true
+    },
+    {
+      "name": "synthetic getter uses grid value rather than raw provider value",
+      "passed": true
+    }
+  ]
+}

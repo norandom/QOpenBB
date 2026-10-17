@@ -1,0 +1,11 @@
+import fs from 'node:fs';import {createHash} from 'node:crypto';
+const root='/mnt/d/Source/QOpenBB/artifacts/parity/grid-runtime-next';
+const raw=fs.readFileSync(root+'/diagnostics.json');
+const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
+const diagnostics=JSON.parse(raw.toString().replaceAll(/http:\/\/127\.0\.0\.1:\d+/g,'http://synthetic-runtime.invalid'));
+fs.writeFileSync(root+'/diagnostics-public.json',JSON.stringify({sourceFile:'diagnostics.json',sourceSha256:digest(raw),sanitization:'Replace disposable loopback origin with synthetic-runtime.invalid; retain finite diagnostics only',...diagnostics},null,2));
+const prefixes=['ordinary','filtered-sorted-bounds','numeric-only','multiple-category','formatted-margin','hidden-selected','synthetic-value-getter'];
+const names=['report.md','fixture.json','rows.json','prepare.mjs','start.mjs','journey.mjs','cleanup.mjs','run.sh','assert.mjs','publish.mjs','start.log','journey.log','cleanup.log','command-status.json','assertions.json','assert.log','cleanup-report.json','capture-status.json','diagnostics-public.json',...prefixes.flatMap(p=>[p+'.json',p+'.png',p+'-table.json',p+'-table.png'])];
+const files=names.map(name=>{const bytes=fs.readFileSync(root+'/'+name);return {path:name,sourcePath:'artifacts/parity/grid-runtime-next/'+name,sha256:digest(bytes),bytes:bytes.length};});
+fs.writeFileSync(root+'/publication-allowlist.json',JSON.stringify({status:'READY_FOR_INDEPENDENT_REVIEW',sourceRevision:'38dffc33389aca0e4a87e0e88d42f7067aa220df',image:'sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f',candidateContractRevision:'945e438a9a65c3eeef7073dbce64a03b02f0ff6f',excluded:['runtime.json','diagnostics.json','credential-private.json','state-*'],notes:'Exact completed synthetic outputs only. Diagnostics are a separately hashed sanitized derivative. No previous failed historical runtime attempt in this lane; shell-only preparation failure is reported in contract.',files},null,2));
+console.log(JSON.stringify({files:files.length,diagnosticsSourceSha256:digest(raw)}));

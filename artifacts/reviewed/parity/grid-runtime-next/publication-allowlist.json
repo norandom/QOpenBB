@@ -1,0 +1,297 @@
+{
+  "status": "READY_FOR_INDEPENDENT_REVIEW",
+  "sourceRevision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "candidateContractRevision": "945e438a9a65c3eeef7073dbce64a03b02f0ff6f",
+  "excluded": [
+    "runtime.json",
+    "diagnostics.json",
+    "credential-private.json",
+    "state-*"
+  ],
+  "notes": "Exact completed synthetic outputs only. Diagnostics are a separately hashed sanitized derivative. No previous failed historical runtime attempt in this lane; shell-only preparation failure is reported in contract.",
+  "files": [
+    {
+      "path": "report.md",
+      "sourcePath": "artifacts/parity/grid-runtime-next/report.md",
+      "sha256": "5a5bf62ee571a60cd9ba8422acb63cc709f62d4fe36a9573234d75b36b0d4e68",
+      "bytes": 3200
+    },
+    {
+      "path": "fixture.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/fixture.json",
+      "sha256": "4e11f88fc7eed6fb70117600f431a74cc35634fbbfa42e10252af13b29d85ea0",
+      "bytes": 3244
+    },
+    {
+      "path": "rows.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/rows.json",
+      "sha256": "ac0f1cf7d3b2800ea6f4438b4f77c806bfea17e8abe48b287d848e80d592c491",
+      "bytes": 885
+    },
+    {
+      "path": "prepare.mjs",
+      "sourcePath": "artifacts/parity/grid-runtime-next/prepare.mjs",
+      "sha256": "5e207fa120d27ed9efba4fe145cf67bc041e37337586831e331e4f19a0d7e574",
+      "bytes": 1880
+    },
+    {
+      "path": "start.mjs",
+      "sourcePath": "artifacts/parity/grid-runtime-next/start.mjs",
+      "sha256": "039ee5f14c4cf643fb75798a4020aac0aab40ee583486bc849fe0c0ca423d34b",
+      "bytes": 1958
+    },
+    {
+      "path": "journey.mjs",
+      "sourcePath": "artifacts/parity/grid-runtime-next/journey.mjs",
+      "sha256": "0f72913991b4b4f4c0c8cb9b58c4e1498b70c2b1fdb46e88055f2b0b696b6c3e",
+      "bytes": 9050
+    },
+    {
+      "path": "cleanup.mjs",
+      "sourcePath": "artifacts/parity/grid-runtime-next/cleanup.mjs",
+      "sha256": "596fff859847cd78fad2a400f915311298f3dd0b493f2f1fae3b63bc8c54bdf9",
+      "bytes": 871
+    },
+    {
+      "path": "run.sh",
+      "sourcePath": "artifacts/parity/grid-runtime-next/run.sh",
+      "sha256": "09075454aebcbabba860df3e55d48c75e6a17d6490ec74081583c80b2479fb35",
+      "bytes": 828
+    },
+    {
+      "path": "assert.mjs",
+      "sourcePath": "artifacts/parity/grid-runtime-next/assert.mjs",
+      "sha256": "173ef56821024b3adf4904e57438d4a1a4238cabfdc58c44481799521980a12e",
+      "bytes": 4055
+    },
+    {
+      "path": "publish.mjs",
+      "sourcePath": "artifacts/parity/grid-runtime-next/publish.mjs",
+      "sha256": "f6a08649164ad0be253bd01ad65d66127ad27c9ef68de7922fe5976c58f333c7",
+      "bytes": 2084
+    },
+    {
+      "path": "start.log",
+      "sourcePath": "artifacts/parity/grid-runtime-next/start.log",
+      "sha256": "efb48936ec04391813463a1ce8c4958cc870783555c5322b0ce7f8b873102201",
+      "bytes": 149
+    },
+    {
+      "path": "journey.log",
+      "sourcePath": "artifacts/parity/grid-runtime-next/journey.log",
+      "sha256": "35e2bc95710a3e9c7def4c37e60791a49bdbb6f246f68dd2672f440fa88494c7",
+      "bytes": 4498
+    },
+    {
+      "path": "cleanup.log",
+      "sourcePath": "artifacts/parity/grid-runtime-next/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "command-status.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/command-status.json",
+      "sha256": "eb8de05f01cf7c7586a61e9a71205b4b80421e6a937025212bc32bc798737350",
+      "bytes": 36
+    },
+    {
+      "path": "assertions.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/assertions.json",
+      "sha256": "6fd0231266dff2c46db5c0f85393478dc71e2dae581d5b1362c2f68011f63cfd",
+      "bytes": 1712
+    },
+    {
+      "path": "assert.log",
+      "sourcePath": "artifacts/parity/grid-runtime-next/assert.log",
+      "sha256": "ea563cb3b9018614ac91ae001d3893316f72427182c79d049ae81743c1883f0f",
+      "bytes": 26
+    },
+    {
+      "path": "cleanup-report.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/cleanup-report.json",
+      "sha256": "070a0a2ab41af069c6be9c8861449420dc545cab3d22e8c0ea2ccd6539512f97",
+      "bytes": 80
+    },
+    {
+      "path": "capture-status.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/capture-status.json",
+      "sha256": "cfe553ab46539a0990fbc790217f337b629c55bd3604361bc644bfcad0417238",
+      "bytes": 19
+    },
+    {
+      "path": "diagnostics-public.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/diagnostics-public.json",
+      "sha256": "fec0066c65d6237647ce2d61bf7bf3a568c5abd6d4f65dab45e651c9a283f62c",
+      "bytes": 2319
+    },
+    {
+      "path": "ordinary.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/ordinary.json",
+      "sha256": "99340b6f1ad053c5eeb40413eea397d0c055776d84b03de261b6c4b5070e41ea",
+      "bytes": 12416
+    },
+    {
+      "path": "ordinary.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/ordinary.png",
+      "sha256": "678e12db52fc2d6c5ec1405140acf1f6d986fcf2e426b58790e1ec9bb5953938",
+      "bytes": 34201
+    },
+    {
+      "path": "ordinary-table.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/ordinary-table.json",
+      "sha256": "31afc88c93d7532002926e47a244e182a195f34ebd0e5a6c37ed427fb7d77886",
+      "bytes": 7801
+    },
+    {
+      "path": "ordinary-table.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/ordinary-table.png",
+      "sha256": "fe75eb64ca5f9dd2e02529afd5a37137fa022a42ac779bc68ab1fdc0bac437f6",
+      "bytes": 36077
+    },
+    {
+      "path": "filtered-sorted-bounds.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/filtered-sorted-bounds.json",
+      "sha256": "aa23464d3f245bb7a2463021c96af5972b9dd6d0d26b0f83a95925a34f8279fa",
+      "bytes": 10085
+    },
+    {
+      "path": "filtered-sorted-bounds.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/filtered-sorted-bounds.png",
+      "sha256": "3920cf6e09c0376d25d307cff7004ef170900054baa52b8f05a18177781e335b",
+      "bytes": 32885
+    },
+    {
+      "path": "filtered-sorted-bounds-table.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/filtered-sorted-bounds-table.json",
+      "sha256": "a14c5428ffcefb174d9420a0b1ee94969f9283dad1aedc9a7a3e9e98173db1d3",
+      "bytes": 6937
+    },
+    {
+      "path": "filtered-sorted-bounds-table.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/filtered-sorted-bounds-table.png",
+      "sha256": "a7e7d4baeca19a9a5045bb6c717532f54f17fbac902445fa38e9f8bb8df9b5e8",
+      "bytes": 38260
+    },
+    {
+      "path": "numeric-only.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/numeric-only.json",
+      "sha256": "d3a621efbcaeef7dd0620cc76f2bad85b7357799d2ec34fa374baf41a3046428",
+      "bytes": 12696
+    },
+    {
+      "path": "numeric-only.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/numeric-only.png",
+      "sha256": "988361ed051a5a12047d95590072e6b2f20876bb0f58722632bd81897952b8ec",
+      "bytes": 33401
+    },
+    {
+      "path": "numeric-only-table.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/numeric-only-table.json",
+      "sha256": "31afc88c93d7532002926e47a244e182a195f34ebd0e5a6c37ed427fb7d77886",
+      "bytes": 7801
+    },
+    {
+      "path": "numeric-only-table.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/numeric-only-table.png",
+      "sha256": "fe75eb64ca5f9dd2e02529afd5a37137fa022a42ac779bc68ab1fdc0bac437f6",
+      "bytes": 36077
+    },
+    {
+      "path": "multiple-category.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/multiple-category.json",
+      "sha256": "eeb760cf95e2ff20f20741510bd6d1fcf09a4c62ad9fd696d55b8f726dc57992",
+      "bytes": 12954
+    },
+    {
+      "path": "multiple-category.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/multiple-category.png",
+      "sha256": "678e12db52fc2d6c5ec1405140acf1f6d986fcf2e426b58790e1ec9bb5953938",
+      "bytes": 34201
+    },
+    {
+      "path": "multiple-category-table.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/multiple-category-table.json",
+      "sha256": "e9a884b8705957c8c83370a8d0dbeba98b3f8c3fd442e87a98997e0de531f415",
+      "bytes": 8289
+    },
+    {
+      "path": "multiple-category-table.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/multiple-category-table.png",
+      "sha256": "53c12497fb323382447bf5fe9a0daff8dab784e52132e553e03f121b31476538",
+      "bytes": 38885
+    },
+    {
+      "path": "formatted-margin.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/formatted-margin.json",
+      "sha256": "7b6be22d95f5610e819305b8c7baa1d9c84826a59f00aed9bd0f58e20e75477c",
+      "bytes": 12779
+    },
+    {
+      "path": "formatted-margin.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/formatted-margin.png",
+      "sha256": "3511ecfbe9cb777eba14ef9f2be7e37505d95c56399cd8cae614c69d02e60d7e",
+      "bytes": 32690
+    },
+    {
+      "path": "formatted-margin-table.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/formatted-margin-table.json",
+      "sha256": "e6e33d590174582ad7b0ca4c4dd3fff0f31c8cf71b6b1fd29747027571eca020",
+      "bytes": 8296
+    },
+    {
+      "path": "formatted-margin-table.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/formatted-margin-table.png",
+      "sha256": "b4c1281283eeb6a3e5fa69b54274a0531bcd64e4c7fbaa1e9db40b6aceb24027",
+      "bytes": 38048
+    },
+    {
+      "path": "hidden-selected.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/hidden-selected.json",
+      "sha256": "388321a7ac139b25a2eaa1b61c6bdf292b14860bf6039bf4c74bff4fe9a404ed",
+      "bytes": 10931
+    },
+    {
+      "path": "hidden-selected.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/hidden-selected.png",
+      "sha256": "495f11a77899d67f77c8fd3e15a26931f46694048ac161bc6c4758ddc5c21c80",
+      "bytes": 30316
+    },
+    {
+      "path": "hidden-selected-table.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/hidden-selected-table.json",
+      "sha256": "bb3bc8a36318e9b1946c94c99869973cbb3ac5d7683ae8da35c2324d3c833e0a",
+      "bytes": 7270
+    },
+    {
+      "path": "hidden-selected-table.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/hidden-selected-table.png",
+      "sha256": "a858762f5e2ed25fb1cb81583fc8c2015b456bfdea94d76c947c703273a54104",
+      "bytes": 34695
+    },
+    {
+      "path": "synthetic-value-getter.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/synthetic-value-getter.json",
+      "sha256": "d7da21374964be492fdef6877a75a2a770069f0ef7914e003628de4eb9d33f47",
+      "bytes": 12409
+    },
+    {
+      "path": "synthetic-value-getter.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/synthetic-value-getter.png",
+      "sha256": "b9e81f3f01083b543d50138ba4f2a69d8de29c5fe9d58f1048253d53f281201c",
+      "bytes": 34383
+    },
+    {
+      "path": "synthetic-value-getter-table.json",
+      "sourcePath": "artifacts/parity/grid-runtime-next/synthetic-value-getter-table.json",
+      "sha256": "131886911442055c7ac5aac45602a94c39164f5f5b57bedc3c281dd4f7accfb9",
+      "bytes": 7797
+    },
+    {
+      "path": "synthetic-value-getter-table.png",
+      "sourcePath": "artifacts/parity/grid-runtime-next/synthetic-value-getter-table.png",
+      "sha256": "4f3bc0667dc13dd68fd84ccf5973a14881415d9ca77bdcf24ef4b8dd56193d92",
+      "bytes": 35957
+    }
+  ]
+}

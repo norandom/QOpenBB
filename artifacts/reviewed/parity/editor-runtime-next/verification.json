@@ -1,0 +1,227 @@
+{
+  "scope": "Finite original editor values and request projection; no candidate parity or settled aggregate pixel geometry.",
+  "checks": [
+    {
+      "label": "Padding patches both category positions",
+      "actual": 9,
+      "expected": 9,
+      "passed": true
+    },
+    {
+      "label": "Padding also patches top",
+      "actual": 9,
+      "expected": 9,
+      "passed": true
+    },
+    {
+      "label": "Effective category spacing",
+      "actual": 9,
+      "expected": 9,
+      "passed": true
+    },
+    {
+      "label": "Effective autoRotate false",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "label": "Vertical line width",
+      "actual": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "label": "Vertical label fontSize",
+      "actual": 14,
+      "expected": 14,
+      "passed": true
+    },
+    {
+      "label": "Legend weight",
+      "actual": "bold",
+      "expected": "bold",
+      "passed": true
+    },
+    {
+      "label": "Legend size",
+      "actual": 14,
+      "expected": 14,
+      "passed": true
+    },
+    {
+      "label": "Legend marker size",
+      "actual": 15,
+      "expected": 15,
+      "passed": true
+    },
+    {
+      "label": "Legend horizontal spacing",
+      "actual": 40,
+      "expected": 40,
+      "passed": true
+    },
+    {
+      "label": "Series labels on",
+      "actual": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "label": "Series stroke width",
+      "actual": [
+        3,
+        3
+      ],
+      "expected": [
+        3,
+        3
+      ],
+      "passed": true
+    },
+    {
+      "label": "Aggregate sums numeric fixture",
+      "actual": [
+        [
+          "2024-Q1",
+          220,
+          45
+        ],
+        [
+          "2024-Q3",
+          140,
+          30
+        ],
+        [
+          "2024-Q4",
+          160,
+          40
+        ]
+      ],
+      "expected": [
+        [
+          "2024-Q1",
+          220,
+          45
+        ],
+        [
+          "2024-Q3",
+          140,
+          30
+        ],
+        [
+          "2024-Q4",
+          160,
+          40
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "label": "Aggregate function",
+      "actual": "sum",
+      "expected": "sum",
+      "passed": true
+    },
+    {
+      "label": "Aggregate off restores original duplicates",
+      "actual": [
+        100,
+        120,
+        140,
+        160
+      ],
+      "expected": [
+        100,
+        120,
+        140,
+        160
+      ],
+      "passed": true
+    },
+    {
+      "label": "Switch model on",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "Switch series key namespace",
+      "actual": [
+        "period:0",
+        "period:1",
+        "period:2",
+        "period:3"
+      ],
+      "expected": [
+        "period:0",
+        "period:1",
+        "period:2",
+        "period:3"
+      ],
+      "passed": true
+    },
+    {
+      "label": "Switch off restores original series",
+      "actual": [
+        "revenue",
+        "operatingIncome"
+      ],
+      "expected": [
+        "revenue",
+        "operatingIncome"
+      ],
+      "passed": true
+    },
+    {
+      "label": "Line marker shape",
+      "actual": [
+        "diamond",
+        "diamond"
+      ],
+      "expected": [
+        "diamond",
+        "diamond"
+      ],
+      "passed": true
+    },
+    {
+      "label": "Line marker size",
+      "actual": [
+        9,
+        9
+      ],
+      "expected": [
+        9,
+        9
+      ],
+      "passed": true
+    },
+    {
+      "label": "Final dashboard POST captured",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "label": "Outgoing final marker values",
+      "actual": {
+        "enabled": true,
+        "shape": "diamond",
+        "size": 9
+      },
+      "expected": {
+        "enabled": true,
+        "shape": "diamond",
+        "size": 9
+      },
+      "passed": true
+    }
+  ]
+}

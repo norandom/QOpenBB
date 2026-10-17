@@ -1,0 +1,341 @@
+{
+  "domRows": [
+    {
+      "rowIndex": "2",
+      "cells": [
+        {
+          "columnId": "period",
+          "text": "2024-Q1"
+        },
+        {
+          "columnId": "revenue",
+          "text": "100"
+        },
+        {
+          "columnId": "operatingIncome",
+          "text": "20"
+        }
+      ]
+    },
+    {
+      "rowIndex": "4",
+      "cells": [
+        {
+          "columnId": "period",
+          "text": "2024-Q1"
+        },
+        {
+          "columnId": "revenue",
+          "text": "0"
+        },
+        {
+          "columnId": "operatingIncome",
+          "text": "0"
+        }
+      ]
+    },
+    {
+      "rowIndex": "3",
+      "cells": [
+        {
+          "columnId": "period",
+          "text": "2024-Q3"
+        },
+        {
+          "columnId": "revenue",
+          "text": "75.25"
+        },
+        {
+          "columnId": "operatingIncome",
+          "text": "-"
+        }
+      ]
+    },
+    {
+      "rowIndex": "1",
+      "cells": [
+        {
+          "columnId": "period",
+          "text": "2024-Q4"
+        },
+        {
+          "columnId": "revenue",
+          "text": "140"
+        },
+        {
+          "columnId": "operatingIncome",
+          "text": "30"
+        }
+      ]
+    },
+    {
+      "rowIndex": "0",
+      "cells": [
+        {
+          "columnId": "period",
+          "text": "2025-Q1"
+        },
+        {
+          "columnId": "revenue",
+          "text": "160"
+        },
+        {
+          "columnId": "operatingIncome",
+          "text": "40"
+        }
+      ]
+    }
+  ],
+  "columns": [
+    {
+      "id": "period",
+      "visible": true,
+      "chartDataType": "category",
+      "cellDataType": "text",
+      "valueGetter": "undefined",
+      "valueFormatter": "function"
+    },
+    {
+      "id": "revenue",
+      "visible": true,
+      "chartDataType": "series",
+      "cellDataType": "number",
+      "valueGetter": "undefined",
+      "valueFormatter": "function"
+    },
+    {
+      "id": "operatingIncome",
+      "visible": true,
+      "chartDataType": "series",
+      "cellDataType": "number",
+      "valueGetter": "undefined",
+      "valueFormatter": "function"
+    },
+    {
+      "id": "region",
+      "visible": false,
+      "chartDataType": "category",
+      "cellDataType": "text",
+      "valueGetter": "undefined",
+      "valueFormatter": "function"
+    },
+    {
+      "id": "margin",
+      "visible": false,
+      "chartDataType": "series",
+      "cellDataType": "number",
+      "valueGetter": "undefined",
+      "valueFormatter": "function"
+    },
+    {
+      "id": "rowKey",
+      "visible": false,
+      "chartDataType": "category",
+      "cellDataType": "text",
+      "valueGetter": "undefined",
+      "valueFormatter": "function"
+    }
+  ],
+  "displayedColumnIds": [
+    "period",
+    "revenue",
+    "operatingIncome"
+  ],
+  "rows": [
+    {
+      "id": "5",
+      "rowIndex": 0,
+      "displayed": true,
+      "group": false,
+      "raw": {
+        "rowKey": "obs-F",
+        "period": "2025-Q1",
+        "region": "South",
+        "revenue": 160,
+        "operatingIncome": 40,
+        "margin": 0.25
+      },
+      "grid": {
+        "rowKey": "obs-F",
+        "period": "2025-Q1",
+        "region": "South",
+        "revenue": 160,
+        "operatingIncome": 40,
+        "margin": 0.25
+      },
+      "formatted": {
+        "rowKey": "obs-F",
+        "period": "2025-Q1",
+        "region": "South",
+        "revenue": "160",
+        "operatingIncome": "40",
+        "margin": "0.25"
+      }
+    },
+    {
+      "id": "4",
+      "rowIndex": 1,
+      "displayed": true,
+      "group": false,
+      "raw": {
+        "rowKey": "obs-E",
+        "period": "2024-Q4",
+        "region": "North",
+        "revenue": 140,
+        "operatingIncome": 30,
+        "margin": 0.2142857143
+      },
+      "grid": {
+        "rowKey": "obs-E",
+        "period": "2024-Q4",
+        "region": "North",
+        "revenue": 140,
+        "operatingIncome": 30,
+        "margin": 0.2142857143
+      },
+      "formatted": {
+        "rowKey": "obs-E",
+        "period": "2024-Q4",
+        "region": "North",
+        "revenue": "140",
+        "operatingIncome": "30",
+        "margin": "0.21"
+      }
+    },
+    {
+      "id": "0",
+      "rowIndex": 2,
+      "displayed": true,
+      "group": false,
+      "raw": {
+        "rowKey": "obs-A",
+        "period": "2024-Q1",
+        "region": "North",
+        "revenue": 100,
+        "operatingIncome": 20,
+        "margin": 0.2
+      },
+      "grid": {
+        "rowKey": "obs-A",
+        "period": "2024-Q1",
+        "region": "North",
+        "revenue": 100,
+        "operatingIncome": 20,
+        "margin": 0.2
+      },
+      "formatted": {
+        "rowKey": "obs-A",
+        "period": "2024-Q1",
+        "region": "North",
+        "revenue": "100",
+        "operatingIncome": "20",
+        "margin": "0.20"
+      }
+    },
+    {
+      "id": "3",
+      "rowIndex": 3,
+      "displayed": true,
+      "group": false,
+      "raw": {
+        "rowKey": "obs-D",
+        "period": "2024-Q3",
+        "region": "South",
+        "revenue": 75.25,
+        "operatingIncome": null,
+        "margin": 0.125
+      },
+      "grid": {
+        "rowKey": "obs-D",
+        "period": "2024-Q3",
+        "region": "South",
+        "revenue": 75.25,
+        "operatingIncome": null,
+        "margin": 0.125
+      },
+      "formatted": {
+        "rowKey": "obs-D",
+        "period": "2024-Q3",
+        "region": "South",
+        "revenue": "75.25",
+        "operatingIncome": "null",
+        "margin": "0.13"
+      }
+    },
+    {
+      "id": "1",
+      "rowIndex": 4,
+      "displayed": true,
+      "group": false,
+      "raw": {
+        "rowKey": "obs-B",
+        "period": "2024-Q1",
+        "region": "South",
+        "revenue": 0,
+        "operatingIncome": 0,
+        "margin": 0
+      },
+      "grid": {
+        "rowKey": "obs-B",
+        "period": "2024-Q1",
+        "region": "South",
+        "revenue": 0,
+        "operatingIncome": 0,
+        "margin": 0
+      },
+      "formatted": {
+        "rowKey": "obs-B",
+        "period": "2024-Q1",
+        "region": "South",
+        "revenue": "0",
+        "operatingIncome": "0",
+        "margin": "0"
+      }
+    }
+  ],
+  "filterModel": {
+    "revenue": {
+      "filterType": "number",
+      "type": "greaterThanOrEqual",
+      "filter": 0
+    }
+  },
+  "columnState": [
+    {
+      "colId": "period",
+      "sort": null,
+      "sortIndex": null,
+      "hide": false
+    },
+    {
+      "colId": "revenue",
+      "sort": "desc",
+      "sortIndex": null,
+      "hide": false
+    },
+    {
+      "colId": "operatingIncome",
+      "sort": null,
+      "sortIndex": null,
+      "hide": false
+    },
+    {
+      "colId": "region",
+      "sort": null,
+      "sortIndex": null,
+      "hide": true
+    },
+    {
+      "colId": "margin",
+      "sort": null,
+      "sortIndex": null,
+      "hide": true
+    },
+    {
+      "colId": "rowKey",
+      "sort": null,
+      "sortIndex": null,
+      "hide": true
+    }
+  ]
+}

@@ -1,0 +1,1406 @@
+{
+  "text": "Chart\nSet Up\nCustomize\nCategories\nPeriod\nAggregate\nSeries\nRevenue (USD millions)\nOperating Income (USD millions)\nSwitch Category / Series",
+  "controls": [
+    {
+      "id": null,
+      "tag": "DIV",
+      "role": "combobox",
+      "label": "",
+      "value": "Period",
+      "html": "<div class=\"ag-wrapper ag-picker-field-wrapper ag-picker-collapsed\" data-ref=\"eWrapper\" tabindex=\"0\" aria-expanded=\"false\" role=\"combobox\" aria-controls=\"ag-select-list-98\"> <div class=\"ag-picker-field-display\" data-ref=\"eDisplayField\" id=\"ag-97-display\">Period</div> <div class=\"ag-picker-field-icon\" data-ref=\"eIcon\" aria-hidden=\"true\"><span class=\"ag-icon ag-icon-small-down\" role=\"presentation\" unselectable=\"on\"></span></div> </div>"
+    },
+    {
+      "id": "ag-99-input",
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": "Aggregate",
+      "value": "on",
+      "checked": false,
+      "disabled": false,
+      "min": "",
+      "max": "",
+      "step": "",
+      "html": "<input class=\"ag-input-field-input ag-toggle-button-input\" data-ref=\"eInput\" aria-labelledby=\"ag-99-label\" type=\"checkbox\" id=\"ag-99-input\" tabindex=\"0\">"
+    },
+    {
+      "id": "ag-92-input",
+      "tag": "INPUT",
+      "type": "checkbox",
+      "role": null,
+      "label": "Switch Category / Series",
+      "value": "on",
+      "checked": false,
+      "disabled": false,
+      "min": "",
+      "max": "",
+      "step": "",
+      "html": "<input class=\"ag-input-field-input ag-toggle-button-input\" data-ref=\"eInput\" aria-labelledby=\"ag-92-label\" type=\"checkbox\" id=\"ag-92-input\" tabindex=\"0\">"
+    }
+  ],
+  "state": {
+    "events": [
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {},
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {},
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {},
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {},
+                "marker": {}
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {
+                  "fontWeight": "bold"
+                },
+                "marker": {}
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {}
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {}
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {
+                  "size": 15
+                }
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "chartOptionsChanged",
+        "chartId": "id-00nm1qjr6nni",
+        "chartType": "groupedColumn",
+        "chartThemeName": "openbb-dark",
+        "chartOptions": {
+          "bar": {
+            "title": {},
+            "subtitle": {},
+            "legend": {
+              "item": {
+                "paddingX": 40,
+                "label": {
+                  "fontSize": 14,
+                  "fontWeight": "bold",
+                  "fontStyle": "normal"
+                },
+                "marker": {
+                  "size": 15
+                }
+              }
+            },
+            "series": {
+              "strokeWidth": 3,
+              "label": {
+                "enabled": true
+              },
+              "tooltip": {},
+              "marker": {},
+              "shadow": {}
+            },
+            "axes": {
+              "number": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "left": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "right": {
+                  "title": {},
+                  "label": {
+                    "fontSize": 14
+                  },
+                  "line": {
+                    "enabled": true,
+                    "width": 3
+                  },
+                  "tick": {},
+                  "gridLine": {}
+                }
+              },
+              "category": {
+                "title": {},
+                "label": {},
+                "line": {},
+                "tick": {},
+                "gridLine": {},
+                "top": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                },
+                "bottom": {
+                  "title": {},
+                  "label": {
+                    "spacing": 9,
+                    "autoRotate": false
+                  },
+                  "line": {},
+                  "tick": {},
+                  "gridLine": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "model": {
+      "chartId": "id-00nm1qjr6nni",
+      "chartType": "groupedColumn",
+      "chartThemeName": "openbb-dark",
+      "switchCategorySeries": false,
+      "suppressChartRanges": true,
+      "unlinkChart": false,
+      "cellRange": {
+        "rowStartIndex": null,
+        "rowEndIndex": null,
+        "rowStartPinned": null,
+        "rowEndPinned": null,
+        "columns": [
+          "period",
+          "revenue",
+          "operatingIncome"
+        ]
+      },
+      "chartOptions": {
+        "bar": {
+          "title": {},
+          "subtitle": {},
+          "legend": {
+            "item": {
+              "paddingX": 40,
+              "label": {
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "fontStyle": "normal"
+              },
+              "marker": {
+                "size": 15
+              }
+            }
+          },
+          "series": {
+            "strokeWidth": 3,
+            "label": {
+              "enabled": true
+            },
+            "tooltip": {},
+            "marker": {},
+            "shadow": {}
+          },
+          "axes": {
+            "number": {
+              "title": {},
+              "label": {},
+              "line": {},
+              "tick": {},
+              "gridLine": {},
+              "left": {
+                "title": {},
+                "label": {
+                  "fontSize": 14
+                },
+                "line": {
+                  "enabled": true,
+                  "width": 3
+                },
+                "tick": {},
+                "gridLine": {}
+              },
+              "right": {
+                "title": {},
+                "label": {
+                  "fontSize": 14
+                },
+                "line": {
+                  "enabled": true,
+                  "width": 3
+                },
+                "tick": {},
+                "gridLine": {}
+              }
+            },
+            "category": {
+              "title": {},
+              "label": {},
+              "line": {},
+              "tick": {},
+              "gridLine": {},
+              "top": {
+                "title": {},
+                "label": {
+                  "spacing": 9,
+                  "autoRotate": false
+                },
+                "line": {},
+                "tick": {},
+                "gridLine": {}
+              },
+              "bottom": {
+                "title": {},
+                "label": {
+                  "spacing": 9,
+                  "autoRotate": false
+                },
+                "line": {},
+                "tick": {},
+                "gridLine": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "options": {
+      "data": [
+        {
+          "revenue": 100,
+          "operatingIncome": 20,
+          "period": {
+            "id": 0,
+            "value": "2024-Q1"
+          }
+        },
+        {
+          "revenue": 120,
+          "operatingIncome": 25,
+          "period": {
+            "id": 1,
+            "value": "2024-Q1"
+          }
+        },
+        {
+          "revenue": 140,
+          "operatingIncome": 30,
+          "period": {
+            "id": 2,
+            "value": "2024-Q3"
+          }
+        },
+        {
+          "revenue": 160,
+          "operatingIncome": 40,
+          "period": {
+            "id": 3,
+            "value": "2024-Q4"
+          }
+        }
+      ]
+    },
+    "effective": {
+      "data": [
+        {
+          "revenue": 100,
+          "operatingIncome": 20,
+          "period": {
+            "id": 0,
+            "value": "2024-Q1"
+          }
+        },
+        {
+          "revenue": 120,
+          "operatingIncome": 25,
+          "period": {
+            "id": 1,
+            "value": "2024-Q1"
+          }
+        },
+        {
+          "revenue": 140,
+          "operatingIncome": 30,
+          "period": {
+            "id": 2,
+            "value": "2024-Q3"
+          }
+        },
+        {
+          "revenue": 160,
+          "operatingIncome": 40,
+          "period": {
+            "id": 3,
+            "value": "2024-Q4"
+          }
+        }
+      ],
+      "title": {
+        "enabled": false,
+        "text": "Title",
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "color": "#fff",
+        "spacing": 20
+      },
+      "subtitle": {
+        "enabled": false,
+        "text": "Subtitle",
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 13,
+        "fontWeight": 400,
+        "color": "#7a7a7b",
+        "spacing": 20
+      },
+      "legend": {
+        "enabled": true,
+        "position": "top",
+        "spacing": 20,
+        "item": {
+          "paddingX": 40,
+          "paddingY": 8,
+          "label": {
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "fontStyle": "normal",
+            "color": "#fff"
+          },
+          "marker": {
+            "size": 15,
+            "padding": 5,
+            "shape": "square"
+          }
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "keys": [],
+          "title": {
+            "enabled": false,
+            "text": "Axis Title",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 13,
+            "fontWeight": 400,
+            "color": "#fff",
+            "spacing": 25
+          },
+          "label": {
+            "enabled": true,
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 11,
+            "fontWeight": 400,
+            "color": "#fff",
+            "spacing": 9,
+            "autoRotate": false,
+            "avoidCollisions": true,
+            "minSpacing": 5
+          },
+          "line": {
+            "enabled": true,
+            "width": 1
+          },
+          "tick": {
+            "enabled": false,
+            "width": 1,
+            "size": 6
+          },
+          "gridLine": {
+            "enabled": false,
+            "width": 1,
+            "style": [
+              {
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "keys": [],
+          "title": {
+            "enabled": false,
+            "text": "Axis Title",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 13,
+            "fontWeight": 400,
+            "color": "#fff",
+            "spacing": 25
+          },
+          "label": {
+            "enabled": true,
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 14,
+            "fontWeight": 400,
+            "color": "#fff",
+            "spacing": 11,
+            "autoRotate": false,
+            "avoidCollisions": true
+          },
+          "line": {
+            "enabled": true,
+            "width": 3
+          },
+          "tick": {
+            "enabled": false,
+            "width": 1,
+            "size": 6
+          },
+          "gridLine": {
+            "enabled": true,
+            "width": 1,
+            "style": [
+              {
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "xKey": "period",
+          "yKey": "revenue",
+          "yName": "Revenue (USD millions)",
+          "fill": "#5090dc",
+          "stroke": "#74a8e6",
+          "strokeWidth": 3,
+          "fillOpacity": 1,
+          "lineDash": [
+            0
+          ],
+          "label": {
+            "enabled": true,
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "color": "#fff",
+            "padding": 8,
+            "placement": "outside-end"
+          },
+          "tooltip": {
+            "enabled": true,
+            "range": "exact"
+          },
+          "marker": {},
+          "shadow": {
+            "enabled": false,
+            "color": "#00000080",
+            "xOffset": 3,
+            "yOffset": 3,
+            "blur": 5
+          }
+        },
+        {
+          "type": "bar",
+          "xKey": "period",
+          "yKey": "operatingIncome",
+          "yName": "Operating Income (USD millions)",
+          "fill": "#ffa03a",
+          "stroke": "#ffbe70",
+          "strokeWidth": 3,
+          "fillOpacity": 1,
+          "lineDash": [
+            0
+          ],
+          "label": {
+            "enabled": true,
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "color": "#fff",
+            "padding": 8,
+            "placement": "outside-end"
+          },
+          "tooltip": {
+            "enabled": true,
+            "range": "exact"
+          },
+          "marker": {},
+          "shadow": {
+            "enabled": false,
+            "color": "#00000080",
+            "xOffset": 3,
+            "yOffset": 3,
+            "blur": 5
+          }
+        }
+      ]
+    }
+  }
+}

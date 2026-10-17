@@ -1,0 +1,36 @@
+{
+  "source": "focused/widget-writes.json",
+  "stage": "final",
+  "path": "items[syntheticDashboard].data.widgets[0].storage",
+  "projection": {
+    "chartType": "line",
+    "totalSeries": 2,
+    "chartView": {
+      "enabled": true
+    },
+    "chartSettingsOpen": true,
+    "default": {
+      "chartModel": {
+        "chartType": "line",
+        "chartThemeName": "openbb-dark",
+        "lineMarker": {
+          "enabled": true,
+          "shape": "diamond",
+          "size": 9
+        },
+        "cellRange": {
+          "rowStartIndex": null,
+          "rowStartPinned": null,
+          "rowEndIndex": null,
+          "rowEndPinned": null,
+          "columns": [
+            "period",
+            "revenue",
+            "operatingIncome"
+          ]
+        }
+      }
+    }
+  },
+  "limitation": "Outgoing request only. No response-body assertion or reload/backend readback."
+}

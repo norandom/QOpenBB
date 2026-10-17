@@ -1,0 +1,61 @@
+{
+  "status": "frozen",
+  "source": "artifacts/runtime-contract-next/review",
+  "excluded": [
+    "appearance-reproduction/**",
+    "grid-reproduction/**"
+  ],
+  "reason": "Reproduction copies duplicate already reviewed public inputs/results; scripts and fresh verification records are retained.",
+  "files": [
+    {
+      "path": "research-review.md",
+      "sha256": "c2bdb225ae0f4aa51c95c319214ec5b90f6f7fc9c6d2a9fdb3143675da93f34e",
+      "bytes": 6985
+    },
+    {
+      "path": "grid-design-review.md",
+      "sha256": "c4c8974a8ef82913fc88ab2769b330317333cbc8daf562f9702f402a967ed4f2",
+      "bytes": 3962
+    },
+    {
+      "path": "appearance-inspection.md",
+      "sha256": "190beaf654b96e9b9ecdb89785cb1b286a4962624601f0c5eeee40f38898557f",
+      "bytes": 3530
+    },
+    {
+      "path": "verify_appearance.py",
+      "sha256": "ab719c6d5eaa3a18106cc8de63442bf1d3a5cf7b70c0c5b35f69e84b7398d705",
+      "bytes": 4302
+    },
+    {
+      "path": "verify_runtime.py",
+      "sha256": "e7fcb8dc24ed8186b6f72916aff457da4256dc243cbd59f6aa9e581b5401b1cb",
+      "bytes": 6495
+    },
+    {
+      "path": "replay_grid.py",
+      "sha256": "067d7db1d85f2cd850cbcac2b1cfc4b1555bac9a8fc8d7883f8e4925600aa006",
+      "bytes": 1630
+    },
+    {
+      "path": "freeze_review.py",
+      "sha256": "aa228db0cec9fd28febd34ca9effd77492b908be3977be95cb9f89feac88ecb1",
+      "bytes": 1081
+    },
+    {
+      "path": "appearance-verification.json",
+      "sha256": "55e07f0ea4427521d6e514b313e8803273336019943aa9d1e4acc71577a138a4",
+      "bytes": 3716
+    },
+    {
+      "path": "runtime-verification.json",
+      "sha256": "6ce05bab48f21ce435840741eede540998d3bea41e4133c59b60206eb0459302",
+      "bytes": 59915
+    },
+    {
+      "path": "grid-replay.json",
+      "sha256": "b87dbc7835e0b3421f9264517f6f7587f31bf6cf97c4a9561f3b4adf144065c5",
+      "bytes": 505
+    }
+  ]
+}

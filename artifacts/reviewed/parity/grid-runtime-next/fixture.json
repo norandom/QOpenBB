@@ -1,0 +1,114 @@
+{
+  "00000000-0000-4000-8000-000000000000": {
+    "name": "root",
+    "isRoot": true,
+    "isFolder": true,
+    "children": [
+      "11111111-1111-4111-8111-111111111111"
+    ],
+    "index": "00000000-0000-4000-8000-000000000000"
+  },
+  "11111111-1111-4111-8111-111111111111": {
+    "name": "Synthetic Financials",
+    "parentId": "00000000-0000-4000-8000-000000000000",
+    "data": {
+      "name": "Synthetic Financials",
+      "type": "custom",
+      "currentTab": "",
+      "widgets": [
+        {
+          "id": "synthetic_financials",
+          "widgetId": "synthetic_financials",
+          "name": "Synthetic Grid Observations",
+          "type": "table",
+          "widgetType": "single",
+          "connectionType": "single",
+          "external": true,
+          "storage": {
+            "chartModel": {
+              "chartType": "groupedColumn",
+              "cellRange": {
+                "columns": [
+                  "period",
+                  "revenue",
+                  "operatingIncome"
+                ]
+              }
+            }
+          },
+          "endpoint": {
+            "url": "__ORIGIN__/synthetic_financials",
+            "method": "GET"
+          },
+          "gridData": {
+            "i": "synthetic_financials",
+            "x": 0,
+            "y": 0,
+            "w": 30,
+            "h": 12
+          },
+          "data": {
+            "table": {
+              "enableCharts": true,
+              "columnsDefs": [
+                {
+                  "field": "period",
+                  "headerName": "Period",
+                  "cellDataType": "text",
+                  "chartDataType": "category"
+                },
+                {
+                  "field": "revenue",
+                  "headerName": "Revenue (USD millions)",
+                  "cellDataType": "number",
+                  "chartDataType": "series"
+                },
+                {
+                  "field": "operatingIncome",
+                  "headerName": "Operating Income (USD millions)",
+                  "cellDataType": "number",
+                  "chartDataType": "series"
+                },
+                {
+                  "field": "region",
+                  "headerName": "Region",
+                  "cellDataType": "text",
+                  "chartDataType": "category",
+                  "hide": true
+                },
+                {
+                  "field": "margin",
+                  "headerName": "Margin",
+                  "cellDataType": "number",
+                  "chartDataType": "series",
+                  "formatterFn": "normalizedPercent",
+                  "hide": true
+                },
+                {
+                  "field": "rowKey",
+                  "headerName": "Synthetic observation ID",
+                  "cellDataType": "text",
+                  "chartDataType": "category",
+                  "hide": true
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "gridLayout": {
+        "": [
+          {
+            "i": "synthetic_financials",
+            "x": 0,
+            "y": 0,
+            "w": 30,
+            "h": 12
+          }
+        ]
+      },
+      "groups": []
+    },
+    "index": "11111111-1111-4111-8111-111111111111"
+  }
+}

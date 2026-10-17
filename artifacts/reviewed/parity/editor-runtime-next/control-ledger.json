@@ -1,0 +1,2233 @@
+[
+  {
+    "source": "focused/Horizontal-Axis-auto-rotate-off.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nHorizontal Axis\nAxis Type\nCategory\nPosition\nBottom\nColor\n#C1C1C2\nThickness\nGrid Lines\nTicks\nLabels\nFont\nVerdana, sans-serif\nWeight\nPredefined\nSize\n11\nColor\n#FFFFFF\nPadding\nAuto Rotate\nRotation °\nVertical Axis",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Axis Type",
+        "value": "Category"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Position",
+        "value": "Bottom"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Grid Lines",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Ticks",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Font",
+        "value": "Verdana, sans-serif"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Weight",
+        "value": "Predefined"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Size",
+        "value": "11"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Padding",
+        "value": "9",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Padding",
+        "value": "9",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Auto Rotate",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "360",
+        "step": "any"
+      }
+    ]
+  },
+  {
+    "source": "focused/Horizontal-Axis-default.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nHorizontal Axis\nAxis Type\nCategory\nPosition\nBottom\nColor\n#C1C1C2\nThickness\nGrid Lines\nTicks\nLabels\nFont\nVerdana, sans-serif\nWeight\nPredefined\nSize\n11\nColor\n#FFFFFF\nPadding\nAuto Rotate\nVertical Axis",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Axis Type",
+        "value": "Category"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Position",
+        "value": "Bottom"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Grid Lines",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Ticks",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Font",
+        "value": "Verdana, sans-serif"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Weight",
+        "value": "Predefined"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Size",
+        "value": "11"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Padding",
+        "value": "11",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Padding",
+        "value": "11",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Auto Rotate",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/Horizontal-Axis-edited.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nHorizontal Axis\nAxis Type\nCategory\nPosition\nBottom\nColor\n#C1C1C2\nThickness\nGrid Lines\nTicks\nLabels\nFont\nVerdana, sans-serif\nWeight\nPredefined\nSize\n11\nColor\n#FFFFFF\nPadding\nAuto Rotate\nRotation °\nVertical Axis",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Axis Type",
+        "value": "Category"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Position",
+        "value": "Bottom"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Grid Lines",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Ticks",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Font",
+        "value": "Verdana, sans-serif"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Weight",
+        "value": "Predefined"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Size",
+        "value": "11"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Padding",
+        "value": "9",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Padding",
+        "value": "9",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Auto Rotate",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "360",
+        "step": "any"
+      }
+    ]
+  },
+  {
+    "source": "focused/Legend-default.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nEnabled\nFont\nVerdana, sans-serif\nWeight\nPredefined\nSize\n11\nColor\n#FFFFFF\nPosition\nTop\nSpacing\nMarker Size\nMarker Stroke\nItem Spacing\nHorizontal Spacing\nVertical Spacing\nSeries\nHorizontal Axis\nVertical Axis",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Enabled",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Font",
+        "value": "Verdana, sans-serif"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Weight",
+        "value": "Predefined"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Size",
+        "value": "11"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Position",
+        "value": "Top"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Spacing",
+        "value": "20",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "200",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Spacing",
+        "value": "20",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "200",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Marker Size",
+        "value": "11",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "40",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Marker Size",
+        "value": "11",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "40",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Marker Stroke",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Marker Stroke",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Item Spacing",
+        "value": "5",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "20",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Item Spacing",
+        "value": "5",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "20",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Horizontal Spacing",
+        "value": "32",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "50",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Horizontal Spacing",
+        "value": "32",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "50",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Vertical Spacing",
+        "value": "8",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "50",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Vertical Spacing",
+        "value": "8",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "50",
+        "step": "any"
+      }
+    ]
+  },
+  {
+    "source": "focused/Legend-edited.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nEnabled\nFont\nVerdana, sans-serif\nWeight\nBold\nSize\n14\nColor\n#FFFFFF\nPosition\nTop\nSpacing\nMarker Size\nMarker Stroke\nItem Spacing\nHorizontal Spacing\nVertical Spacing\nSeries\nHorizontal Axis\nVertical Axis",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Enabled",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Font",
+        "value": "Verdana, sans-serif"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Weight",
+        "value": "Bold"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Size",
+        "value": "14"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Position",
+        "value": "Top"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Spacing",
+        "value": "20",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "200",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Spacing",
+        "value": "20",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "200",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Marker Size",
+        "value": "15",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "40",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Marker Size",
+        "value": "15",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "40",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Marker Stroke",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Marker Stroke",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Item Spacing",
+        "value": "5",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "20",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Item Spacing",
+        "value": "5",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "20",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Horizontal Spacing",
+        "value": "40",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "50",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Horizontal Spacing",
+        "value": "40",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "50",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Vertical Spacing",
+        "value": "8",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "50",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Vertical Spacing",
+        "value": "8",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "50",
+        "step": "any"
+      }
+    ]
+  },
+  {
+    "source": "focused/Series-default.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nTooltips\nTooltip Mode\nMultiple\nStroke Width\nLine Dash\nLine Opacity\nFill Opacity\nLabels\nShadow\nHorizontal Axis\nVertical Axis",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Tooltips",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Tooltip Mode",
+        "value": "Multiple"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Fill Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Fill Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Labels",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Shadow",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/Series-edited.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nTooltips\nTooltip Mode\nSingle\nStroke Width\nLine Dash\nLine Opacity\nFill Opacity\nLabels\nFont\nVerdana, sans-serif\nWeight\nPredefined\nSize\n12\nColor\n#FFFFFF\nShadow\nHorizontal Axis\nVertical Axis",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Tooltips",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Tooltip Mode",
+        "value": "Single"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "3",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "3",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Fill Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Fill Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Labels",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Font",
+        "value": "Verdana, sans-serif"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Weight",
+        "value": "Predefined"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Size",
+        "value": "12"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Shadow",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/Series-labels-enabled.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nTooltips\nTooltip Mode\nSingle\nStroke Width\nLine Dash\nLine Opacity\nFill Opacity\nLabels\nFont\nVerdana, sans-serif\nWeight\nPredefined\nSize\n12\nColor\n#FFFFFF\nShadow\nHorizontal Axis\nVertical Axis",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Tooltips",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Tooltip Mode",
+        "value": "Single"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Fill Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Fill Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Labels",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Font",
+        "value": "Verdana, sans-serif"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Weight",
+        "value": "Predefined"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Size",
+        "value": "12"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Shadow",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/Vertical-Axis-default.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nHorizontal Axis\nVertical Axis\nPosition\nLeft\nColor\n#C1C1C2\nThickness\nGrid Lines\nColor\n#515153\nThickness\nLine Dash\nTicks\nLabels\nFont\nVerdana, sans-serif\nWeight\nPredefined\nSize\n11\nColor\n#FFFFFF\nPadding\nAuto Rotate\nRotation °",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Position",
+        "value": "Left"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Thickness",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Thickness",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Grid Lines",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Ticks",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Font",
+        "value": "Verdana, sans-serif"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Weight",
+        "value": "Predefined"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Size",
+        "value": "11"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Padding",
+        "value": "11",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Padding",
+        "value": "11",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Auto Rotate",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "360",
+        "step": "any"
+      }
+    ]
+  },
+  {
+    "source": "focused/Vertical-Axis-edited.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nHorizontal Axis\nVertical Axis\nPosition\nLeft\nColor\n#C1C1C2\nThickness\nGrid Lines\nColor\n#515153\nThickness\nLine Dash\nTicks\nLabels\nFont\nVerdana, sans-serif\nWeight\nPredefined\nSize\n14\nColor\n#FFFFFF\nPadding\nAuto Rotate\nRotation °",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Position",
+        "value": "Left"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Thickness",
+        "value": "3",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Thickness",
+        "value": "3",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Grid Lines",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Thickness",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Ticks",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Font",
+        "value": "Verdana, sans-serif"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Weight",
+        "value": "Predefined"
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Size",
+        "value": "14"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Padding",
+        "value": "11",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Padding",
+        "value": "11",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Auto Rotate",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "360",
+        "step": "any"
+      }
+    ]
+  },
+  {
+    "source": "focused/initial-chart.json",
+    "text": "      ",
+    "controls": []
+  },
+  {
+    "source": "focused/line-Series-default.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nTooltips\nTooltip Mode\nMultiple\nLine Width\nLine Dash\nLine Opacity\nMarkers\nLabels\nHorizontal Axis\nVertical Axis",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Tooltips",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Tooltip Mode",
+        "value": "Multiple"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Width",
+        "value": "2",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Width",
+        "value": "2",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Markers",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Labels",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/line-Series-edited.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nTooltips\nTooltip Mode\nMultiple\nLine Width\nLine Dash\nLine Opacity\nMarkers\nShape\nDiamond\nSize\nStroke Width\nLabels\nHorizontal Axis\nVertical Axis",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Tooltips",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Tooltip Mode",
+        "value": "Multiple"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Width",
+        "value": "2",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Width",
+        "value": "2",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Markers",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Shape",
+        "value": "Diamond"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Size",
+        "value": "9",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "60",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Size",
+        "value": "9",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "60",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Labels",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/line-markers-on.json",
+    "text": "Chart\nSet Up\nCustomize\nChart Style\nTitles\nLegend\nSeries\nTooltips\nTooltip Mode\nMultiple\nLine Width\nLine Dash\nLine Opacity\nMarkers\nShape\nCircle\nSize\nStroke Width\nLabels\nHorizontal Axis\nVertical Axis",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Tooltips",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Tooltip Mode",
+        "value": "Multiple"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Width",
+        "value": "2",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Width",
+        "value": "2",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Dash",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "30",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Line Opacity",
+        "value": "1",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "1",
+        "step": "0.05"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Markers",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "Shape",
+        "value": "Circle"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Size",
+        "value": "7",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "60",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Size",
+        "value": "7",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "60",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "1"
+      },
+      {
+        "tag": "INPUT",
+        "type": "number",
+        "role": null,
+        "label": "Stroke Width",
+        "value": "0",
+        "checked": false,
+        "disabled": false,
+        "min": "0",
+        "max": "10",
+        "step": "any"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Labels",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/setup-Aggregate-off.json",
+    "text": "Chart\nSet Up\nCustomize\nCategories\nPeriod\nAggregate\nSeries\nRevenue (USD millions)\nOperating Income (USD millions)\nSwitch Category / Series",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "",
+        "value": "Period"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Aggregate",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Switch Category / Series",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/setup-Aggregate-on.json",
+    "text": "Chart\nSet Up\nCustomize\nCategories\nPeriod\nAggregate\nSum\nSeries\nRevenue (USD millions)\nOperating Income (USD millions)\nSwitch Category / Series",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "",
+        "value": "Period"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Aggregate",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "",
+        "value": "Sum"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Switch Category / Series",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/setup-Switch-Category-Series-off.json",
+    "text": "Chart\nSet Up\nCustomize\nCategories\nPeriod\nAggregate\nSeries\nRevenue (USD millions)\nOperating Income (USD millions)\nSwitch Category / Series",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "",
+        "value": "Period"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Aggregate",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Switch Category / Series",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/setup-Switch-Category-Series-on.json",
+    "text": "Chart\nSet Up\nCustomize\nCategory Values\nRevenue (USD millions)\nOperating Income (USD millions)\nSeries Labels\nPeriod\nAggregate\nSwitch Category / Series",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "",
+        "value": "Period"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Aggregate",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Switch Category / Series",
+        "value": "on",
+        "checked": true,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  },
+  {
+    "source": "focused/setup-default.json",
+    "text": "Chart\nSet Up\nCustomize\nCategories\nPeriod\nAggregate\nSeries\nRevenue (USD millions)\nOperating Income (USD millions)\nSwitch Category / Series",
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "combobox",
+        "label": "",
+        "value": "Period"
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Aggregate",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "tag": "INPUT",
+        "type": "checkbox",
+        "role": null,
+        "label": "Switch Category / Series",
+        "value": "on",
+        "checked": false,
+        "disabled": false,
+        "min": "",
+        "max": "",
+        "step": ""
+      }
+    ]
+  }
+]

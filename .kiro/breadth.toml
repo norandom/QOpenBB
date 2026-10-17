@@ -15,6 +15,14 @@ status = "passed"
 evidence = ["Tasks 2.34-2.37 independently accepted with scoped GO and VERIFIED completion for source-safe helpers only. Fresh joined evidence: 36 application tests, 260 compatibility tests, both strict compilers, scoped lint, 62 staged identities and 172-file maintained audit pass at Workspace 945e438a9a65c3eeef7073dbce64a03b02f0ff6f. See .kiro/specs/openbb-self-service/chart-application-source-verification.md. Runtime capture, editor, mapper invocation, activation, export and save/restart remain unverified."]
 
 [[capabilities]]
+id = "chart-application-runtime-integration"
+requirements = ["4.2", "4.7", "4.8", "4.9", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
+planned_checks = ["actual-displayed-grid-capture", "effective-theme-and-editor-parity", "table-chart-customize-export-return", "application-save-reopen-restart"]
+test_paths = []
+status = "unverified"
+evidence = ["Original-runtime research only: seven grid cases with 15 assertions, 18 focused editor UI actions with 22 evidence assertions, and appearance audit of 908 finite leaves across eight prior cases. No candidate application check or completed implementation is claimed. See .kiro/specs/openbb-self-service/chart-runtime-next-plan.md and its reviewed evidence links. Full appearance/editor, numeric-only and general category resolution, transformation output and persistence remain open. Future gridCapture tests are planned, not executed."]
+
+[[capabilities]]
 id = "sqlite-query-and-storage-compatibility"
 requirements = ["1.1", "1.4", "2.2", "4.2", "4.7", "10.3", "10.5", "10.6"]
 planned_checks = ["isolated-backend-bootstrap", "six-populated-read-paths", "creator-join-cardinality-and-share-isolation", "actual-dashboard-update-engine-reopen", "query-layer-independent-acceptance"]
