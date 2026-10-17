@@ -10,7 +10,7 @@ The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approve
 
 ## Dependency gates
 
-Next owner decision: approve tasks 2.28-2.33 in the [implementation plan](../.kiro/specs/openbb-self-service/tasks.md). The [explicit appearance design](../.kiro/specs/openbb-self-service/chart-appearance-design.md) is owner-approved and the task graph passed independent Astra review. Shared contracts precede parallel style/fixture work, followed by mapper integration and browser acceptance. Theme resolution, complete original controls and application activation remain open; this is not renderer acceptance.
+Current work: owner-approved tasks 2.28-2.33 in the [implementation plan](../.kiro/specs/openbb-self-service/tasks.md). The [explicit appearance design](../.kiro/specs/openbb-self-service/chart-appearance-design.md) is owner-approved and the task graph passed independent Astra review. Shared contracts precede parallel style/fixture work, followed by mapper integration and browser acceptance. Theme resolution, complete original controls and application activation remain open; this is not renderer acceptance.
 
 The owner approved the [original option-state design](../.kiro/specs/openbb-self-service/chart-option-state-design.md) and autonomous implementation. Tasks 2.24-2.27, including both parallel implementation lanes and [joined verification](../.kiro/specs/openbb-self-service/chart-option-state-verification.md), are accepted. [Effective theme resolution](../.kiro/specs/openbb-self-service/chart-effective-style-discovery.md) and application integration remain subsequent work.
 

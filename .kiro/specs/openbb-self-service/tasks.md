@@ -822,7 +822,7 @@ Reuse the accepted pinned WSL Node, restored dependencies and isolated staging p
 
 One heavy suite/build at a time; one browser and Vitest worker. Parallel lightweight checks require separate stages and output directories. Browser/CDP sessions are owned, hidden and headless with sanitized evidence and finally cleanup. All maintained new/modified production files pass 400 physical lines, 300 logical units and 50/function as whole files; tests and documentation are recorded exclusions. No new exceptions. Register newly created production files before acceptance, using truthful fork manifests. Foundation checker/inventory tasks are already accepted; this slice extends their scope.
 
-- [ ] 2.28 Freeze explicit appearance contracts and financial fixtures
+- [x] 2.28 Freeze explicit appearance contracts and financial fixtures
   - Add the approved optional title, typography, line and per-series fields and the exact style-validation/projection result types. Preserve existing signatures and valid legacy inputs; freeze helper exports before either lane starts.
   - Add homogeneous-unit, same-scale four-observation fixtures with an interior null, independent expected appearance values and provenance distinguishing original UI observations from synthetic fallback rules. Include palette reorder and nonempty/empty retained titles.
   - Add compile-time positive/negative cases; verify existing discovery includes the new fixtures and existing 221 units remain green. Done when strict checks, scoped lint, whole-file caps and independent Astra contract review pass and fixtures/signatures are frozen.
@@ -871,3 +871,5 @@ One heavy suite/build at a time; one browser and Vitest worker. Parallel lightwe
   - _Boundary: Controller integration of scope, identity, breadth and acceptance records_
   - _Depends: 2.32_
   - _Requirements: 1.1, 4.8, 4.9, 10.4, 10.5, 10.6_
+
+Task 2.28 accepted after independent Astra review: strict TypeScript, 221 units, actual lint on all three owned files, exact stage/source identities and twelve-module caps passed. Evidence: artifacts/task-2.28/review/review.md. Shared appearance contracts and fixtures are frozen for tasks 2.29 and 2.30; runtime appearance remains unverified.
