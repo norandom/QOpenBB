@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash,randomBytes} from 'node:crypto';
+import {createWriter,verifySource} from './harness/io.mjs';
+const base=path.dirname(fileURLToPath(import.meta.url)),project=path.resolve(base,'../..'),hash=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const manifest=JSON.parse(fs.readFileSync(base+'/harness-manifest.json'));
+for(const f of manifest.files)if(hash(base+'/'+f.path)!==f.sha256||fs.statSync(base+'/'+f.path).size!==f.bytes)throw Error('Frozen relay source changed');
+for(const f of [manifest.plan,...manifest.sourceInputs])if(hash(project+'/'+f.sourcePath)!==f.sha256)throw Error('Accepted source input changed');
+const name='attempt-'+new Date().toISOString().replace(/[-:.]/g,'').slice(0,16)+'-'+randomBytes(4).toString('hex'),target=path.join(base,name);
+fs.mkdirSync(target);fs.mkdirSync(target+'/harness');for(const f of manifest.files)fs.copyFileSync(base+'/'+f.path,target+'/'+f.path);
+fs.copyFileSync(base+'/harness-manifest.json',target+'/source-manifest.json');
+const io=createWriter(target);io.json('preparation',{attempt:name,exactCopies:true,files:manifest.files.length,manifestSha256:hash(base+'/harness-manifest.json'),runtimeStarted:false});
+verifySource(target);
+for(const name of ['probe.log','cleanup.log','supervisor.log','finalize.log'])fs.writeFileSync(path.join(target,name),Buffer.alloc(8192,32));io.check();
+const linux='/mnt/d/Source/QOpenBB/artifacts/ui-parity-legend-relay-mount-source/'+name;
+const futureCommand=`Start-Process -FilePath "$env:WINDIR\\System32\\wsl.exe" -WindowStyle Hidden -ArgumentList @('-d','Debian','-u','mc','--','env','LEGEND_RELAY_GRANTED=controller-granted','bash','${linux}/supervise.sh','${linux}') -PassThru`;
+console.log(JSON.stringify({target,runtimeStarted:false,futureCommand}));

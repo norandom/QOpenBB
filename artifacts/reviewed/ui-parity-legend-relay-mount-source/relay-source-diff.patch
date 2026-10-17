@@ -1,0 +1,116 @@
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/harness/admission.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/harness/admission.mjs"
+index c1669b9..313a9c2 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/harness/admission.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/harness/admission.mjs"
+@@ -18,6 +18,17 @@ function selectedList(object,key,limit=8){
+   if(!Array.isArray(value)||value.length>limit)return receipt;
+   return {...receipt,unsupported:false,entries:value.map((_,index)=>selected(value,index))};
+ }
++function tmpfsShape(value){
++  const parentSupported=value!==null&&typeof value==='object'&&!Array.isArray(value),keys=parentSupported?Object.keys(value):null;
++  return {parentSupported,keyCount:keys?.length??null,dataOwn:parentSupported&&own(value,'/data'),unexpectedKeyCount:keys?keys.filter(key=>key!=='/data').length:null};
++}
++function exactRelayMountLayout(raw,runtime){
++  const mounts=raw?.Mounts,tmpfs=raw?.HostConfig?.Tmpfs,shape=tmpfsShape(tmpfs);
++  return {exactMounts:Array.isArray(mounts)&&mounts.length===3&&[
++    ['/relay/relay.py',runtime.relaySourcePath,false],['/relay/config.json',runtime.configPath,false],['/evidence/relay-stats.json',runtime.statsPath,true]
++  ].every(([destination,sourcePath,rw])=>mounts.some(mount=>mount?.Destination===destination&&mount?.Type==='bind'&&mount?.RW===rw&&mount?.Source===sourcePath)),
++    boundedTmpfs:shape.parentSupported&&shape.keyCount===1&&shape.dataOwn&&shape.unexpectedKeyCount===0&&tmpfs['/data']==='rw,nosuid,nodev,size=1048576'};
++}
+ function relayOperands(raw,runtime){
+   const host=raw?.HostConfig,config=raw?.Config,mounts=raw?.Mounts;
+   const sources={'/relay/relay.py':runtime.relaySourcePath,'/relay/config.json':runtime.configPath,'/evidence/relay-stats.json':runtime.statsPath};
+@@ -25,8 +36,8 @@ function relayOperands(raw,runtime){
+     Sysctls:{presence:selected(host,'Sysctls'),ipv4Forwarding:selected(host?.Sysctls,'net.ipv4.ip_forward'),ipv6Forwarding:selected(host?.Sysctls,'net.ipv6.conf.all.forwarding'),keyCount:Object.keys(host?.Sysctls??{}).length},
+     Healthcheck:{presence:selected(config,'Healthcheck'),Test:selectedList(config?.Healthcheck,'Test')},Entrypoint:selectedList(config,'Entrypoint'),Cmd:selectedList(config,'Cmd'),
+     Mounts:{...selected(raw,'Mounts'),...(Array.isArray(mounts)&&mounts.length<=8?{entries:mounts.map(mount=>({Destination:selected(mount,'Destination'),Type:selected(mount,'Type'),RW:selected(mount,'RW'),
+-      Source:{present:own(mount,'Source'),type:typeof mount?.Source,ownedPathMatched:own(sources,mount?.Destination)&&mount?.Source===sources[mount.Destination]}}))}:{})},
+-    Tmpfs:{presence:selected(host,'Tmpfs'),data:selected(host?.Tmpfs,'/data')}};
++      Source:{present:own(mount,'Source'),type:typeof mount?.Source,ownedPathMatched:typeof mount?.Destination==='string'&&own(sources,mount.Destination)&&mount?.Source===sources[mount.Destination]}}))}:{})},
++    Tmpfs:{presence:selected(host,'Tmpfs'),data:selected(host?.Tmpfs,'/data'),...tmpfsShape(host?.Tmpfs)}};
+ }
+ function scalar(value){return typeof value==='boolean'||typeof value==='number'&&Number.isFinite(value)||typeof value==='string'&&value.length<=128?value:null;}
+ function ports(value,target){const entries=value?.[target];return {parentSupported:value!==null&&typeof value==='object'&&!Array.isArray(value),own:own(value,target),kind:entries===undefined?'absent':entries===null?'null':Array.isArray(entries)?'array':'unsupported',
+@@ -50,10 +61,7 @@ export function projectContainer(raw,runtime,kind){
+     healthDisabled:raw?.Config?.Healthcheck?.Test?.length===1&&raw.Config.Healthcheck.Test[0]==='NONE',
+     pythonEntrypoint:raw?.Config?.Entrypoint?.length===1&&raw.Config.Entrypoint[0]==='/opt/.venv/bin/python',
+     exactCommand:JSON.stringify(raw?.Config?.Cmd)===JSON.stringify(['-B','-I','-S','-u','/relay/relay.py','/relay/config.json']),
+-    exactMounts:Array.isArray(raw?.Mounts)&&raw.Mounts.length===4&&[
+-      ['/relay/relay.py',runtime.relaySourcePath,false,'bind'],['/relay/config.json',runtime.configPath,false,'bind'],['/evidence/relay-stats.json',runtime.statsPath,true,'bind'],['/data',null,true,'tmpfs']
+-    ].every(([destination,sourcePath,rw,type])=>raw.Mounts.some(mount=>mount.Destination===destination&&mount.Type===type&&mount.RW===rw&&(sourcePath===null||mount.Source===sourcePath))),
+-    boundedTmpfs:host.Tmpfs?.['/data']==='rw,nosuid,nodev,size=1048576'});
++    ...exactRelayMountLayout(raw,runtime)});
+   return {kind,security,selected:{Privileged:selected(host,'Privileged'),PublishAllPorts:selected(host,'PublishAllPorts'),NetworkMode:selected(host,'NetworkMode'),RestartPolicy:{presence:selected(host,'RestartPolicy'),Name:selected(host.RestartPolicy,'Name')},...(relay?relayOperands(raw,runtime):{})},configured:ports(host.PortBindings,target),runtime:ports(settings?.Ports,target),
+     noConfiguredPublications:host.PortBindings!=null&&typeof host.PortBindings==='object'&&!Array.isArray(host.PortBindings)&&Object.keys(host.PortBindings).length<=8&&Object.values(host.PortBindings).every(list=>Array.isArray(list)&&list.length===0),
+     noRuntimePublications:settings?.Ports!=null&&typeof settings.Ports==='object'&&!Array.isArray(settings.Ports)&&Object.keys(settings.Ports).length<=8&&Object.values(settings.Ports).every(list=>list===null||Array.isArray(list)&&list.length===0),
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/harness/probe.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/harness/probe.mjs"
+index eee6e0b..6ced9b4 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/harness/probe.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/harness/probe.mjs"
+@@ -5,7 +5,7 @@ import {randomBytes,createHash} from 'node:crypto';
+ import {execFileSync} from 'node:child_process';
+ import {root,output,verifySource} from './io.mjs';
+ import {fail,safeFailure,command,ownerLabel,image,source,networkProjection,networkValid,observeContainer,readiness} from './admission.mjs';
+-export function ownedRoot(directory){return path.resolve(directory)===fs.realpathSync(directory)&&path.basename(path.dirname(directory))==='ui-parity-legend-fixed-relay-revised'&&/^attempt-[\w-]+$/.test(path.basename(directory));}
++export function ownedRoot(directory){return path.resolve(directory)===fs.realpathSync(directory)&&path.basename(path.dirname(directory))==='ui-parity-legend-relay-mount-source'&&/^attempt-[\w-]+$/.test(path.basename(directory));}
+ export function appArgs(runtime,credential){return ['run','-d','--name',runtime.name+'-app','--network',runtime.name+'-internal','--dns','127.0.0.1','--label',ownerLabel+'='+runtime.ownership,
+   '--mount',`type=bind,src=${runtime.statePath},dst=/data`,'-e','HTTP_PROXY=','-e','HTTPS_PROXY=','-e','ALL_PROXY=','-e','http_proxy=','-e','https_proxy=','-e','all_proxy=',
+   '-e',`OPENBB_ADMIN_PASSWORD=${credential.password}`,'-e','PUBLIC_URL=http://localhost','-e',`OPENBB_ADMIN_EMAIL=${credential.email}`,image];}
+
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/supervise.sh" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/supervise.sh"
+index 3b12943..3d69fb5 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/supervise.sh"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/supervise.sh"
+@@ -3,7 +3,7 @@ set -u
+ test "${LEGEND_RELAY_GRANTED:-}" = "controller-granted" || exit 79
+ attempt="$1"
+ case "$attempt" in
+-  /mnt/d/Source/QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/attempt-*) ;;
++  /mnt/d/Source/QOpenBB/artifacts/ui-parity-legend-relay-mount-source/attempt-*) ;;
+   *) exit 78 ;;
+ esac
+ test -f "$attempt/source-manifest.json" || exit 78
+
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/prepare-run.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/prepare-run.mjs"
+index fd53a88..75ae3b8 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/prepare-run.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/prepare-run.mjs"
+@@ -13,6 +13,6 @@ fs.copyFileSync(base+'/harness-manifest.json',target+'/source-manifest.json');
+ const io=createWriter(target);io.json('preparation',{attempt:name,exactCopies:true,files:manifest.files.length,manifestSha256:hash(base+'/harness-manifest.json'),runtimeStarted:false});
+ verifySource(target);
+ for(const name of ['probe.log','cleanup.log','supervisor.log','finalize.log'])fs.writeFileSync(path.join(target,name),Buffer.alloc(8192,32));io.check();
+-const linux='/mnt/d/Source/QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/'+name;
++const linux='/mnt/d/Source/QOpenBB/artifacts/ui-parity-legend-relay-mount-source/'+name;
+ const futureCommand=`Start-Process -FilePath "$env:WINDIR\\System32\\wsl.exe" -WindowStyle Hidden -ArgumentList @('-d','Debian','-u','mc','--','env','LEGEND_RELAY_GRANTED=controller-granted','bash','${linux}/supervise.sh','${linux}') -PassThru`;
+ console.log(JSON.stringify({target,runtimeStarted:false,futureCommand}));
+
+diff --git "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/verify-offline.mjs" "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/verify-offline.mjs"
+index 40edd19..5cfe4cf 100644
+--- "a/D:\\Source\\QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/verify-offline.mjs"
++++ "b/D:\\Source\\QOpenBB\\artifacts\\ui-parity-legend-relay-mount-source/verify-offline.mjs"
+@@ -17,7 +17,7 @@ function raw(kind){const relay=kind==='relay';return {Id:runtime[kind+'Id'],Name
+   State:{Status:'running',Running:true,Restarting:false,Dead:false,ExitCode:0,OOMKilled:false,Error:'SECRET_DO_NOT_RETAIN'},
+   HostConfig:{RestartPolicy:{Name:'no'},Privileged:false,PublishAllPorts:false,NetworkMode:runtime.name+'-'+(relay?'ingress':'internal'),PortBindings:relay?{'3100/tcp':[{HostIp:'127.0.0.1',HostPort:''}]}:{},ReadonlyRootfs:true,CapDrop:['ALL'],SecurityOpt:['no-new-privileges'],Sysctls:{'net.ipv4.ip_forward':'0','net.ipv6.conf.all.forwarding':'0'},Tmpfs:{'/data':'rw,nosuid,nodev,size=1048576'}},
+   NetworkSettings:{Ports:relay?{'3100/tcp':[{HostIp:'127.0.0.1',HostPort:'43210'}]}:{'3000/tcp':null},Networks:Object.fromEntries((relay?['internal','ingress']:['internal']).map(key=>[runtime.name+'-'+key,{NetworkID:runtime[key+'NetworkId'],IPAddress:'172.30.0.2'}]))},
+-  Mounts:[['/relay/relay.py',runtime.relaySourcePath,false,'bind'],['/relay/config.json',runtime.configPath,false,'bind'],['/evidence/relay-stats.json',runtime.statsPath,true,'bind'],['/data','',true,'tmpfs']].map(([Destination,Source,RW,Type])=>({Destination,Source,RW,Type}))};}
++  Mounts:[['/relay/relay.py',runtime.relaySourcePath,false,'bind'],['/relay/config.json',runtime.configPath,false,'bind'],['/evidence/relay-stats.json',runtime.statsPath,true,'bind']].map(([Destination,Source,RW,Type])=>({Destination,Source,RW,Type}))};}
+ const response=(status=200,location=false)=>({status,headers:{has:key=>key==='location'&&location},body:null});
+ const cleanStats={phase:'closed',cleanStop:true,acceptedPairs:1,activePairs:0,peakPairs:1,peakSockets:3,receivedBytes:100,forwardedBytes:100,peakBufferedBytes:100,maximumPairBytes:100,refusedConnections:0,peerClosures:0,violations:Object.fromEntries(['accepted-pairs','pair-bytes','total-bytes','connect-timeout','transport-truncated','socket-error','config-error','stats-error'].map(key=>[key,0]))};
+ try{
+@@ -55,10 +55,12 @@ try{
+   await test('bounded log drain retains marker and at most8192 bytes',()=>{const directory=path.join(temporary,'logs');fs.mkdirSync(directory);fs.writeFileSync(directory+'/probe.log',Buffer.alloc(8192));const result=spawnSync(process.execPath,[base+'/harness/io.mjs','--bounded-log','probe.log'],{input:'x'.repeat(100000),env:{...process.env,CAPTURE_ROOT:directory},windowsHide:true});assert.equal(result.status,0);assert.equal(fs.statSync(directory+'/probe.log').size,8192);assert(fs.readFileSync(directory+'/probe.log').includes(Buffer.from('OUTPUT_LIMIT_REACHED')));});
+   await test('attempt source proof rejects modified source without runtime',()=>{const directory=path.join(temporary,'copies');fs.mkdirSync(directory);fs.mkdirSync(directory+'/harness');const files=Array.from({length:8},(_,index)=>({path:'harness/f'+index,bytes:1,sha256:createHash('sha256').update('x').digest('hex')}));for(const file of files)fs.writeFileSync(directory+'/'+file.path,'x');fs.writeFileSync(directory+'/source-manifest.json',JSON.stringify({files}));fs.writeFileSync(directory+'/preparation.json',JSON.stringify({manifestSha256:hash(directory+'/source-manifest.json'),exactCopies:true}));verifySource(directory);fs.writeFileSync(directory+'/harness/f0','y');assert.throws(()=>verifySource(directory));});
+   await test('a200 result cannot override violated relay counters in final status',()=>{const directory=path.join(temporary,'final');fs.mkdirSync(directory);const value=structuredClone(cleanStats);value.violations['transport-truncated']=1;for(const [name,body] of [['relay-stats',value],['cleanup-report',{status:'cleaned'}],['probe-result',{outcome:'readiness-observed'}]])fs.writeFileSync(directory+'/'+name+'.json',JSON.stringify(body));const result=spawnSync(process.execPath,[base+'/harness/finalize.mjs','0'],{env:{...process.env,CAPTURE_ROOT:directory},windowsHide:true});assert.equal(result.status,1);assert.equal(JSON.parse(fs.readFileSync(directory+'/run-status.json')).outcome,'probe-unresolved');});
++  const baseline=spawnSync(process.execPath,[base+'/test-mounts.mjs','--baseline'],{encoding:'utf8',windowsHide:true,maxBuffer:65536});assert.equal(baseline.status,1);assert(baseline.stderr.includes('valid-three-bind-layout-rejected'));
++  const mounts=spawnSync(process.execPath,[base+'/test-mounts.mjs'],{encoding:'utf8',windowsHide:true,maxBuffer:65536});assert.equal(mounts.status,0,mounts.stderr);const mountReport=JSON.parse(mounts.stdout);assert.equal(mountReport.mountTests,11);
+   const python=spawnSync('py',['-3','-B',base+'/test-relay.py'],{encoding:'utf8',windowsHide:true,maxBuffer:65536});assert.equal(python.status,0,python.stderr);assert.match(python.stderr,/Ran 10 tests/);
+-  const syntax=[];for(const file of [...fs.readdirSync(base+'/harness').filter(name=>name.endsWith('.mjs')).map(name=>'harness/'+name),'prepare-run.mjs','verify-offline.mjs','freeze.mjs']){if(!fs.existsSync(base+'/'+file))continue;const result=spawnSync(process.execPath,['--check',base+'/'+file],{encoding:'utf8',windowsHide:true});assert.equal(result.status,0,result.stderr);syntax.push(file);}
+-  for(const file of ['harness/run.sh','supervise.sh']){const bash=spawnSync('wsl',['-d','Debian','-u','mc','--','bash','-n','/mnt/d/Source/QOpenBB/artifacts/ui-parity-legend-fixed-relay-revised/'+file],{encoding:'utf8',windowsHide:true});assert.equal(bash.status,0,bash.stderr);}
++  const syntax=[];for(const file of [...fs.readdirSync(base+'/harness').filter(name=>name.endsWith('.mjs')).map(name=>'harness/'+name),'prepare-run.mjs','verify-offline.mjs','freeze.mjs','test-mounts.mjs','verify-freeze.mjs']){if(!fs.existsSync(base+'/'+file))continue;const result=spawnSync(process.execPath,['--check',base+'/'+file],{encoding:'utf8',windowsHide:true});assert.equal(result.status,0,result.stderr);syntax.push(file);}
++  for(const file of ['harness/run.sh','supervise.sh']){const bash=spawnSync('wsl',['-d','Debian','-u','mc','--','bash','-n','/mnt/d/Source/QOpenBB/artifacts/ui-parity-legend-relay-mount-source/'+file],{encoding:'utf8',windowsHide:true});assert.equal(bash.status,0,bash.stderr);}
+   const version=spawnSync('py',['--version'],{encoding:'utf8',windowsHide:true});assert.equal(version.status,0);
+-  const receipt={status:'passed',scope:'Source syntax and injected/file-only offline faults; no application, socket, Docker, browser or topology executed',javascriptTests:tests.length,pythonTests:10,tests,syntaxFiles:syntax,node:process.version,python:version.stdout.trim(),bash:'Two separate Debian bash -n commands: harness/run.sh and supervise.sh',runtimeExecuted:false,sourceFiles:[...fs.readdirSync(base+'/harness').sort().map(name=>'harness/'+name),'supervise.sh','test-relay.py','verify-offline.mjs','prepare-run.mjs'].map(file=>({path:file,sha256:hash(base+'/'+file)}))};
+-  if(process.argv.includes('--write'))fs.writeFileSync(base+'/offline-verification.json',JSON.stringify(receipt,null,2));console.log(JSON.stringify({status:'passed',javascriptTests:tests.length,pythonTests:10,syntaxFiles:syntax.length,runtimeExecuted:false}));
++  const receipt={status:'passed',scope:'Source syntax and injected/file-only offline faults; no application, socket, Docker, browser or topology executed',javascriptTests:tests.length,mountTests:mountReport.mountTests,mountTestNames:mountReport.tests,baselineRED:{command:'node artifacts/ui-parity-legend-relay-mount-source/test-mounts.mjs --baseline',exitCode:baseline.status,reason:'valid-three-bind-layout-rejected'},pythonTests:10,tests,syntaxFiles:syntax,node:process.version,python:version.stdout.trim(),bash:'Two separate Debian bash -n commands: harness/run.sh and supervise.sh',runtimeExecuted:false,sourceFiles:[...fs.readdirSync(base+'/harness').sort().map(name=>'harness/'+name),'supervise.sh','test-relay.py','verify-offline.mjs','prepare-run.mjs','test-mounts.mjs'].map(file=>({path:file,sha256:hash(base+'/'+file)}))};
++  if(process.argv.includes('--write'))fs.writeFileSync(base+'/offline-verification.json',JSON.stringify(receipt,null,2));console.log(JSON.stringify({status:'passed',javascriptTests:tests.length,mountTests:mountReport.mountTests,pythonTests:10,syntaxFiles:syntax.length,runtimeExecuted:false}));
+ }finally{fs.rmSync(temporary,{recursive:true,force:true});}

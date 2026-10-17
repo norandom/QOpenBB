@@ -1,0 +1,58 @@
+{
+  "verdict": "APPROVED",
+  "scope": "Exact mount-source correction only; separate runtime grant required",
+  "inputHashes": {
+    "harness-manifest.json": "b03ba2f0939a637d02937326caa24b1287514d6463efd369fa67361c53e99831",
+    "source-hashes.json": "64eecc7260f1c9a269cffe919f73405fda94d645b9667705072402a0ea4019c2",
+    "publication-allowlist.json": "514eef21dcad5d3cc2a1956eeee363abf33a3e6d86a39af8a7d9b0d5b52ae79e"
+  },
+  "checks": [
+    "All frozen source/input/selection bytes",
+    "Only mount behavior and revision paths changed",
+    "Actual baseline RED and complete offline matrix",
+    "Six bind orders admit; each exact tuple field and duplicate rejects",
+    "Malformed entries persist and destination coercion is never called",
+    "Only own sole configured data survives; private key/source sentinels excluded",
+    "Safe exact selection, links and final frozen preservation"
+  ],
+  "groupedChecks": 7,
+  "commands": [
+    {
+      "command": "node artifacts/ui-parity-legend-relay-mount-source/test-mounts.mjs --baseline",
+      "exitCode": 1,
+      "reason": "valid-three-bind-layout-rejected"
+    },
+    {
+      "command": "node artifacts/ui-parity-legend-relay-mount-source/verify-offline.mjs",
+      "exitCode": 0,
+      "result": {
+        "status": "passed",
+        "javascriptTests": 25,
+        "mountTests": 11,
+        "pythonTests": 10,
+        "syntaxFiles": 10,
+        "runtimeExecuted": false
+      }
+    },
+    {
+      "command": "node artifacts/ui-parity-legend-relay-mount-source/verify-freeze.mjs",
+      "exitCode": 0,
+      "result": {
+        "status": "passed",
+        "frozenPins": 64,
+        "runtimeFiles": 8,
+        "runtimeExecuted": false
+      }
+    }
+  ],
+  "independentCases": 33,
+  "sourceFiles": 19,
+  "publicationFiles": 20,
+  "runtimeFiles": 8,
+  "frozenInputsPreserved": true,
+  "runtimeExecuted": false,
+  "networkOpened": false,
+  "prepareOrFreezeExecuted": false,
+  "scanScope": "Selected safe source and synthetic offline evidence; bounded common-token/private-key markers and placeholders plus manual review",
+  "complexity": "Research exclusion; future maintained400 physical/file,300 logical/file,50/function with inventory/checker"
+}
