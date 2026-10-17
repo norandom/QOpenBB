@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "status": "source-only revised proposal addressing independent B01/C01; no runtime grant or implementation approval",
+  "original": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "candidateReference": "ea02ec15956dee8d2c8a06825387a570757db12d",
+  "candidateExecuted": false,
+  "inputs": [
+    {
+      "kind": "explicit-project-input",
+      "path": "AGENTS.md",
+      "sha256": "0200bca366bcf2e830a75011a0b5ff78bd174391b28013ba8e1a4295a1e1cff2",
+      "bytes": 6960
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/delegation.md",
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "bytes": 4333
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/testing.md",
+      "sha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f",
+      "bytes": 5216
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/complexity.md",
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "bytes": 4171
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/documentation.md",
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "bytes": 3981
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/steering/ci.md",
+      "sha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd",
+      "bytes": 4078
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": ".kiro/specs/openbb-self-service/spec.json",
+      "sha256": "4b7f3f2ba947370c569cec3a0816f52e80045c2f1ac66a705398d3b0139facb6",
+      "bytes": 13392
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "sha256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "bytes": 596346
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "sha256": "d7c4dd2e70651266a3f3d106a1ce77e7bcffe062c032560b779755db4f763060",
+      "bytes": 421188
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "sha256": "0cf2231a7771e2daf7f15162e3f401231b841b0b2861c973fdf36696e5ff1435",
+      "bytes": 26588
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "sha256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "bytes": 30418
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/ui-parity-captions/capture/report.md",
+      "sha256": "66010a3131f36365ae1f689fe041c2861513fb245d13eb350bda2b7dbf97dfd6",
+      "bytes": 11302
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/ui-parity-color-shadow/capture/report.md",
+      "sha256": "1e134259b6087b69d53b83e3a3352275ac1d5e323348d6d66707178a9207eb8e",
+      "bytes": 13104
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Legend-default.json",
+      "sha256": "792146a0f48ef9e712637ff55acf33a7f225d35d6aee23df82ac6937f12a731d",
+      "bytes": 31810
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/Legend-edited.json",
+      "sha256": "bf8292276329862ad11ad8f1469e8f221e183f23a51d86039197be5a9eeaa2e8",
+      "bytes": 44405
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/parity/editor-runtime-next/focused/domain-Legend-Size.json",
+      "sha256": "68bc81e22fecb37e59eb8b3b8633473539aa99bdbe7167967fdbef14fa05d953",
+      "bytes": 199
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/limits.mjs",
+      "sha256": "5d23db33651d7e79d697406bfb60e7ea3cc910acf5d531bec06916661c797894",
+      "bytes": 1114
+    },
+    {
+      "kind": "explicit-project-input",
+      "path": "artifacts/reviewed/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/projection.mjs",
+      "sha256": "3b97cc98789a5728e33e8233a86ac5506bc3f398be09aeba34fc9411e18cb716",
+      "bytes": 8236
+    },
+    {
+      "kind": "frozen-plan-or-independent-review",
+      "path": "artifacts/ui-parity-legend-plan/plan.md",
+      "sha256": "f62f102b0cc5ed201b1627827a63a80a8ba9059b231fccd07e00bf2d3e3f30ee",
+      "bytes": 24684
+    },
+    {
+      "kind": "frozen-plan-or-independent-review",
+      "path": "artifacts/ui-parity-legend-plan/source-hashes.json",
+      "sha256": "02c9dae3275292f02bf4bac11b1972164f8fa51e7255f6f82e506a2883794272",
+      "bytes": 9134
+    },
+    {
+      "kind": "frozen-plan-or-independent-review",
+      "path": "artifacts/ui-parity-legend-plan-review/review.md",
+      "sha256": "71a4c2dbe7c725cf40ae197b190374d883f0d3a37b6d885ae6202f6dec0489a8",
+      "bytes": 8799
+    },
+    {
+      "kind": "frozen-plan-or-independent-review",
+      "path": "artifacts/ui-parity-legend-plan-review/verification.json",
+      "sha256": "c18584035abfd4d0226cdad28ddd425b7438ad521538d224036e4db865986d4e",
+      "bytes": 15636
+    }
+  ],
+  "originalSource": [
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/package.json",
+      "sha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf",
+      "bytes": 9188
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "sha256": "ff4ffdf77236326f0f476d7a06f1cbc6b876f7d41235b9faca8999b4a3ca8e21",
+      "bytes": 10559
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+      "bytes": 15697
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/AgGrid.tsx",
+      "sha256": "9261e5a4443f5a7b6ccabd36b7fc1e07d299c5fef40fb13200f2b99e4e675d9d",
+      "bytes": 26434
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/AgChartFromTable.tsx",
+      "sha256": "e12e608341ce89dc2ea6305d20e3f174751e46ee9df6cb70de393682d6cc9041",
+      "bytes": 18808
+    }
+  ],
+  "installedSourceClues": [
+    {
+      "kind": "local-installed-public-dependency-source-clue",
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/package.json",
+      "sha256": "740fda1969fab489979dbae50dc5a7d4f550cb3d8f226ff4cb59b5fa397aa1a1",
+      "bytes": 5526,
+      "package": "ag-grid-enterprise",
+      "version": "34.1.1",
+      "packageRelativePath": "package.json",
+      "originalImageByteIdentity": false
+    },
+    {
+      "kind": "local-installed-public-dependency-source-clue",
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.cjs.js",
+      "sha256": "ff634fef7612738444a1618604ea88c0625328f271382f2fb3aaf9a26926d30c",
+      "bytes": 1938578,
+      "package": "ag-grid-enterprise",
+      "version": "34.1.1",
+      "packageRelativePath": "dist/package/main.cjs.js",
+      "originalImageByteIdentity": false
+    },
+    {
+      "kind": "local-installed-public-dependency-source-clue",
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-charts-community/package.json",
+      "sha256": "77ae0168d7c6209f2c880a00748fadbb390da794532164d84e0b4382e61c5b88",
+      "bytes": 2422,
+      "package": "ag-charts-community",
+      "version": "12.1.1",
+      "packageRelativePath": "package.json",
+      "originalImageByteIdentity": false
+    },
+    {
+      "kind": "local-installed-public-dependency-source-clue",
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-charts-community/dist/package/main.cjs.js",
+      "sha256": "237912c75d2c7e8219fced7bb79e5ed8fca0f620d6f4d259cdfa58748445fcd1",
+      "bytes": 1896344,
+      "package": "ag-charts-community",
+      "version": "12.1.1",
+      "packageRelativePath": "dist/package/main.cjs.js",
+      "originalImageByteIdentity": false
+    }
+  ],
+  "outputs": [
+    {
+      "kind": "revised-proposal",
+      "path": "artifacts/ui-parity-legend-plan-revised/plan.md",
+      "sha256": "5a33a0237eb351df5a7a6060da2aff5c83379f89999c4a4ca82faa40c92e29ef",
+      "bytes": 29062
+    },
+    {
+      "kind": "revision-rationale",
+      "path": "artifacts/ui-parity-legend-plan-revised/revision-notes.md",
+      "sha256": "f0d225347c321aa0280f2dd6398e440b6145c50ef442901b0c56dbf3b3c0c70e",
+      "bytes": 2261
+    }
+  ],
+  "publication": {
+    "allowlist": [
+      "artifacts/ui-parity-legend-plan-revised/plan.md",
+      "artifacts/ui-parity-legend-plan-revised/source-hashes.json",
+      "artifacts/ui-parity-legend-plan-revised/revision-notes.md"
+    ],
+    "finalBase": "artifacts/reviewed/ui-parity-legend-plan-revised",
+    "runtimeState": false,
+    "selfHash": "Publication manifest hashes this file separately to avoid self-reference"
+  },
+  "verification": {
+    "scope": "offline source/hash/link inspection only",
+    "caseCount": 8,
+    "relativeLinksVerified": 7,
+    "linksResolvedFrom": "artifacts/reviewed/ui-parity-legend-plan-revised/plan.md",
+    "sameDirectoryLinksMappedToOwnedDraft": true,
+    "runtimeExecuted": false,
+    "inputHashesVerified": 23,
+    "installedSourceHashesVerified": 4,
+    "originalGitHashesVerified": 5,
+    "addressedReviewFindings": [
+      "B01",
+      "C01"
+    ],
+    "allCaseFixtureAndBudgetCapsUnchanged": true,
+    "originalFrozenPlanAndManifestUnchanged": true,
+    "budgetSectionByteContentUnchangedAfterTextDecode": true
+  }
+}

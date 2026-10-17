@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "verdict": "revise-before-collector-implementation",
+  "scope": "independent source-only preflight",
+  "blockers": [
+    {
+      "id": "B01",
+      "summary": "Exclusive projection omits padding and live series confounds promised by L02-L04/L57",
+      "resolution": "Add bounded padding/live-series leaves and narrow bar geometry/stroke claims to fixed plot-crop evidence, or separately review exact bar selection scope"
+    }
+  ],
+  "clarifications": [
+    {
+      "id": "C01",
+      "summary": "Named getBBox calls include lazy caching and LegendMarkerLabel layout; record finite before/after operands and invalidate unexpected changes"
+    }
+  ],
+  "inputs": {
+    "plan": {
+      "sourcePath": "artifacts/ui-parity-legend-plan/plan.md",
+      "sha256": "f62f102b0cc5ed201b1627827a63a80a8ba9059b231fccd07e00bf2d3e3f30ee",
+      "bytes": 24684,
+      "expectedSha256": "f62f102b0cc5ed201b1627827a63a80a8ba9059b231fccd07e00bf2d3e3f30ee"
+    },
+    "sourceManifest": {
+      "sourcePath": "artifacts/ui-parity-legend-plan/source-hashes.json",
+      "sha256": "02c9dae3275292f02bf4bac11b1972164f8fa51e7255f6f82e506a2883794272",
+      "bytes": 9134,
+      "expectedSha256": "02c9dae3275292f02bf4bac11b1972164f8fa51e7255f6f82e506a2883794272"
+    }
+  },
+  "manifestChecks": [
+    {
+      "group": "inputs",
+      "sourcePath": "AGENTS.md",
+      "expectedSha256": "0200bca366bcf2e830a75011a0b5ff78bd174391b28013ba8e1a4295a1e1cff2",
+      "actualSha256": "0200bca366bcf2e830a75011a0b5ff78bd174391b28013ba8e1a4295a1e1cff2",
+      "expectedBytes": 6960,
+      "actualBytes": 6960,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": ".kiro/steering/delegation.md",
+      "expectedSha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "actualSha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "expectedBytes": 4333,
+      "actualBytes": 4333,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": ".kiro/steering/testing.md",
+      "expectedSha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f",
+      "actualSha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f",
+      "expectedBytes": 5216,
+      "actualBytes": 5216,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": ".kiro/steering/complexity.md",
+      "expectedSha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "actualSha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "expectedBytes": 4171,
+      "actualBytes": 4171,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": ".kiro/steering/documentation.md",
+      "expectedSha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "actualSha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "expectedBytes": 3981,
+      "actualBytes": 3981,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": ".kiro/steering/ci.md",
+      "expectedSha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd",
+      "actualSha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd",
+      "expectedBytes": 4078,
+      "actualBytes": 4078,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": ".kiro/specs/openbb-self-service/spec.json",
+      "expectedSha256": "4b7f3f2ba947370c569cec3a0816f52e80045c2f1ac66a705398d3b0139facb6",
+      "actualSha256": "4b7f3f2ba947370c569cec3a0816f52e80045c2f1ac66a705398d3b0139facb6",
+      "expectedBytes": 13392,
+      "actualBytes": 13392,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "expectedSha256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "actualSha256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "expectedBytes": 596346,
+      "actualBytes": 596346,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "expectedSha256": "d7c4dd2e70651266a3f3d106a1ce77e7bcffe062c032560b779755db4f763060",
+      "actualSha256": "d7c4dd2e70651266a3f3d106a1ce77e7bcffe062c032560b779755db4f763060",
+      "expectedBytes": 421188,
+      "actualBytes": 421188,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "expectedSha256": "0cf2231a7771e2daf7f15162e3f401231b841b0b2861c973fdf36696e5ff1435",
+      "actualSha256": "0cf2231a7771e2daf7f15162e3f401231b841b0b2861c973fdf36696e5ff1435",
+      "expectedBytes": 26588,
+      "actualBytes": 26588,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "expectedSha256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "actualSha256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "expectedBytes": 30418,
+      "actualBytes": 30418,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/ui-parity-captions/capture/report.md",
+      "expectedSha256": "66010a3131f36365ae1f689fe041c2861513fb245d13eb350bda2b7dbf97dfd6",
+      "actualSha256": "66010a3131f36365ae1f689fe041c2861513fb245d13eb350bda2b7dbf97dfd6",
+      "expectedBytes": 11302,
+      "actualBytes": 11302,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/ui-parity-color-shadow/capture/report.md",
+      "expectedSha256": "1e134259b6087b69d53b83e3a3352275ac1d5e323348d6d66707178a9207eb8e",
+      "actualSha256": "1e134259b6087b69d53b83e3a3352275ac1d5e323348d6d66707178a9207eb8e",
+      "expectedBytes": 13104,
+      "actualBytes": 13104,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/parity/editor-runtime-next/focused/Legend-default.json",
+      "expectedSha256": "792146a0f48ef9e712637ff55acf33a7f225d35d6aee23df82ac6937f12a731d",
+      "actualSha256": "792146a0f48ef9e712637ff55acf33a7f225d35d6aee23df82ac6937f12a731d",
+      "expectedBytes": 31810,
+      "actualBytes": 31810,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/parity/editor-runtime-next/focused/Legend-edited.json",
+      "expectedSha256": "bf8292276329862ad11ad8f1469e8f221e183f23a51d86039197be5a9eeaa2e8",
+      "actualSha256": "bf8292276329862ad11ad8f1469e8f221e183f23a51d86039197be5a9eeaa2e8",
+      "expectedBytes": 44405,
+      "actualBytes": 44405,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/parity/editor-runtime-next/focused/domain-Legend-Size.json",
+      "expectedSha256": "68bc81e22fecb37e59eb8b3b8633473539aa99bdbe7167967fdbef14fa05d953",
+      "actualSha256": "68bc81e22fecb37e59eb8b3b8633473539aa99bdbe7167967fdbef14fa05d953",
+      "expectedBytes": 199,
+      "actualBytes": 199,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/fixture.json",
+      "expectedSha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "actualSha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "expectedBytes": 2187,
+      "actualBytes": 2187,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/limits.mjs",
+      "expectedSha256": "5d23db33651d7e79d697406bfb60e7ea3cc910acf5d531bec06916661c797894",
+      "actualSha256": "5d23db33651d7e79d697406bfb60e7ea3cc910acf5d531bec06916661c797894",
+      "expectedBytes": 1114,
+      "actualBytes": 1114,
+      "passed": true
+    },
+    {
+      "group": "inputs",
+      "sourcePath": "artifacts/reviewed/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/projection.mjs",
+      "expectedSha256": "3b97cc98789a5728e33e8233a86ac5506bc3f398be09aeba34fc9411e18cb716",
+      "actualSha256": "3b97cc98789a5728e33e8233a86ac5506bc3f398be09aeba34fc9411e18cb716",
+      "expectedBytes": 8236,
+      "actualBytes": 8236,
+      "passed": true
+    },
+    {
+      "group": "originalSource",
+      "sourcePath": "terminalpro/package.json",
+      "expectedSha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf",
+      "actualSha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf",
+      "expectedBytes": 9188,
+      "actualBytes": 9188,
+      "passed": true
+    },
+    {
+      "group": "originalSource",
+      "sourcePath": "terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "expectedSha256": "ff4ffdf77236326f0f476d7a06f1cbc6b876f7d41235b9faca8999b4a3ca8e21",
+      "actualSha256": "ff4ffdf77236326f0f476d7a06f1cbc6b876f7d41235b9faca8999b4a3ca8e21",
+      "expectedBytes": 10559,
+      "actualBytes": 10559,
+      "passed": true
+    },
+    {
+      "group": "originalSource",
+      "sourcePath": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "expectedSha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+      "actualSha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+      "expectedBytes": 15697,
+      "actualBytes": 15697,
+      "passed": true
+    },
+    {
+      "group": "originalSource",
+      "sourcePath": "terminalpro/src/components/General/Table/AgGrid.tsx",
+      "expectedSha256": "9261e5a4443f5a7b6ccabd36b7fc1e07d299c5fef40fb13200f2b99e4e675d9d",
+      "actualSha256": "9261e5a4443f5a7b6ccabd36b7fc1e07d299c5fef40fb13200f2b99e4e675d9d",
+      "expectedBytes": 26434,
+      "actualBytes": 26434,
+      "passed": true
+    },
+    {
+      "group": "originalSource",
+      "sourcePath": "terminalpro/src/components/General/Table/AgChartFromTable.tsx",
+      "expectedSha256": "e12e608341ce89dc2ea6305d20e3f174751e46ee9df6cb70de393682d6cc9041",
+      "actualSha256": "e12e608341ce89dc2ea6305d20e3f174751e46ee9df6cb70de393682d6cc9041",
+      "expectedBytes": 18808,
+      "actualBytes": 18808,
+      "passed": true
+    },
+    {
+      "group": "installedSourceClues",
+      "sourcePath": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/package.json",
+      "expectedSha256": "740fda1969fab489979dbae50dc5a7d4f550cb3d8f226ff4cb59b5fa397aa1a1",
+      "actualSha256": "740fda1969fab489979dbae50dc5a7d4f550cb3d8f226ff4cb59b5fa397aa1a1",
+      "expectedBytes": 5526,
+      "actualBytes": 5526,
+      "passed": true
+    },
+    {
+      "group": "installedSourceClues",
+      "sourcePath": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.cjs.js",
+      "expectedSha256": "ff634fef7612738444a1618604ea88c0625328f271382f2fb3aaf9a26926d30c",
+      "actualSha256": "ff634fef7612738444a1618604ea88c0625328f271382f2fb3aaf9a26926d30c",
+      "expectedBytes": 1938578,
+      "actualBytes": 1938578,
+      "passed": true
+    },
+    {
+      "group": "installedSourceClues",
+      "sourcePath": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-charts-community/package.json",
+      "expectedSha256": "77ae0168d7c6209f2c880a00748fadbb390da794532164d84e0b4382e61c5b88",
+      "actualSha256": "77ae0168d7c6209f2c880a00748fadbb390da794532164d84e0b4382e61c5b88",
+      "expectedBytes": 2422,
+      "actualBytes": 2422,
+      "passed": true
+    },
+    {
+      "group": "installedSourceClues",
+      "sourcePath": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-charts-community/dist/package/main.cjs.js",
+      "expectedSha256": "237912c75d2c7e8219fced7bb79e5ed8fca0f620d6f4d259cdfa58748445fcd1",
+      "actualSha256": "237912c75d2c7e8219fced7bb79e5ed8fca0f620d6f4d259cdfa58748445fcd1",
+      "expectedBytes": 1896344,
+      "actualBytes": 1896344,
+      "passed": true
+    },
+    {
+      "group": "outputs",
+      "sourcePath": "artifacts/ui-parity-legend-plan/plan.md",
+      "expectedSha256": "f62f102b0cc5ed201b1627827a63a80a8ba9059b231fccd07e00bf2d3e3f30ee",
+      "actualSha256": "f62f102b0cc5ed201b1627827a63a80a8ba9059b231fccd07e00bf2d3e3f30ee",
+      "expectedBytes": 24684,
+      "actualBytes": 24684,
+      "passed": true
+    }
+  ],
+  "allManifestChecksPassed": true,
+  "manifestEntryCount": 29,
+  "planLinks": [
+    {
+      "target": "../ui-parity-captions/capture/report.md",
+      "resolvedSourcePath": "artifacts/reviewed/ui-parity-captions/capture/report.md",
+      "exists": true
+    },
+    {
+      "target": "../ui-parity-color-shadow/capture/report.md",
+      "resolvedSourcePath": "artifacts/reviewed/ui-parity-color-shadow/capture/report.md",
+      "exists": true
+    },
+    {
+      "target": "../consuming-contract-freeze/session/editor-field-ledger.json",
+      "resolvedSourcePath": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "exists": true
+    },
+    {
+      "target": "../consuming-contract-freeze/appearance/field-manifest.json",
+      "resolvedSourcePath": "artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "exists": true
+    },
+    {
+      "target": "../consuming-contract-freeze/appearance/draft.md",
+      "resolvedSourcePath": "artifacts/reviewed/consuming-contract-freeze/appearance/draft.md",
+      "exists": true
+    },
+    {
+      "target": "source-hashes.json",
+      "resolvedSourcePath": "artifacts/ui-parity-legend-plan/source-hashes.json",
+      "exists": true
+    },
+    {
+      "target": "../ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/fixture.json",
+      "resolvedSourcePath": "artifacts/reviewed/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/harness/fixture.json",
+      "exists": true
+    }
+  ],
+  "caseCount": 8,
+  "runtimeExecuted": false,
+  "browserExecuted": false,
+  "buildExecuted": false,
+  "productionCodeChanged": false,
+  "imageByteIdentityVerified": false,
+  "negativePaths": "reviewed as proposed; not executed",
+  "complexity": {
+    "physicalLinesPerFile": 400,
+    "logicalUnitsPerFile": 300,
+    "logicalUnitsPerFunction": 50,
+    "scope": "review documentation excluded; no production gate claimed"
+  },
+  "commands": [
+    {
+      "purpose": "steering, plan, source and existing evidence inspection",
+      "tools": "PowerShell Get-Content; rg; git show",
+      "exitCode": 0
+    },
+    {
+      "purpose": "initial offline hash inspection",
+      "command": "python -",
+      "outcome": "Python alias unavailable; no script executed"
+    },
+    {
+      "purpose": "offline SHA256 and byte verification",
+      "command": "py -3 - (standard-library script reading manifest entries; git show for original source)",
+      "exitCode": 0
+    }
+  ],
+  "publication": {
+    "safeFiles": [
+      "review.md",
+      "verification.json"
+    ],
+    "rawRuntimeStateIncluded": false,
+    "allowlist": "publication-allowlist.json",
+    "controllerOwnsMirroring": true
+  }
+}

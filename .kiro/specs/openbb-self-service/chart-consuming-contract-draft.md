@@ -22,6 +22,19 @@ Review found that `Widget.hooks.tsx` changes a captured functional request into 
 
 ## Next acceptance boundary
 
+The follow-up reference tasks narrow the draft's unknowns without changing its frozen interfaces:
+
+| Reference area | Evidence now available | Remaining boundary |
+| --- | --- | --- |
+| [Navigation](chart-ui-navigation-findings.md) | Dock retention, theme/tab resets and return-to-table observations. | Family changes remain mixed with a tab detour; candidate transitions need application tests. |
+| [Captions and padding](chart-caption-padding-findings.md) | Independent caption visibility, eight Weight-role bindings and directional plot padding. | Canonical typography still needs fontStyle; other themes/families remain open. |
+| [Color and Shadow](chart-color-shadow-findings.md) | Keyboard/alpha/invalid-input behavior and retained visible Shadow effects. | Canonical Shadow representation and broader renderer integration remain open. |
+| [Axes](chart-axis-control-findings.md) | Positions, ticks, label edits/restoration, type resets and the tested Time Format rendering failure. | Original quirks need explicit design treatment; no candidate or general time-domain correctness is established. |
+| [Tooltips](chart-tooltip-invocation-findings.md) | Duplicate-label and missing/zero content discriminators, with retained target/display disagreements. | Picked ownership, tied omission and complete keyboard coverage remain unresolved. |
+| [Legend](chart-legend-capture-plan.md) | Reviewed finite capture plan, including geometry and live-series observation boundaries. | Collector review and original runtime evidence remain outstanding. |
+
+These rows supplement the historical ledgers; they do not rewrite their original evidence status or count planned checks as passing tests. The widget completion port, continuous-edit scheduler, settled export contract and full Set Up/family behavior remain separate joins.
+
 Complete the named original captures and the transaction/export contracts, then review the full consuming design before generating bounded implementation tasks. All modified production files must satisfy 400 physical lines, 300 logical units and 50/function, including the whole existing widget owner. Reference captures and design artifacts do not satisfy the real candidate journey: table -> chart -> full editor -> edit/theme -> fresh export -> table -> save/reopen/restart.
 
 No production code, renderer activation, task completion or deployment acceptance is claimed by this document.

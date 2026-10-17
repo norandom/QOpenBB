@@ -70,10 +70,15 @@
     "ui-parity-tooltip-followup-runtime-review",
     "ui-parity-axis-followup",
     "ui-parity-axis-followup-runtime-review",
-    "ui-parity-axis-followup-publication-review"
+    "ui-parity-axis-followup-publication-review",
+    "ui-parity-legend-plan",
+    "ui-parity-legend-plan-revision-review",
+    "ui-parity-legend-plan-review",
+    "ui-parity-legend-plan-revised",
+    "ui-parity-legend-docs-review"
   ],
   "sourcepins": {
-    "root_at_sync": "e21f3d5bf958263c4be824fe90ac44356db7517c",
+    "root_at_sync": "e70854c11e2b2316f8c1b023469f642dd2a1e0bf",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -23486,6 +23491,126 @@
       "publishedSHA256": "60461e65056260e575a74cc984cd84bdbdd467f3615acac2c365cef1c16d7954",
       "bytes": 380,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan/plan.md",
+      "sourceSHA256": "f62f102b0cc5ed201b1627827a63a80a8ba9059b231fccd07e00bf2d3e3f30ee",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan/plan.md",
+      "publishedSHA256": "f62f102b0cc5ed201b1627827a63a80a8ba9059b231fccd07e00bf2d3e3f30ee",
+      "bytes": 24684,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan/source-hashes.json",
+      "sourceSHA256": "02c9dae3275292f02bf4bac11b1972164f8fa51e7255f6f82e506a2883794272",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan/source-hashes.json",
+      "publishedSHA256": "02c9dae3275292f02bf4bac11b1972164f8fa51e7255f6f82e506a2883794272",
+      "bytes": 9134,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-revision-review/reviewed-original-plan-publication-allowlist.json",
+      "sourceSHA256": "b08000b71d119813e33977db7d9427eb3fc8769488aa0076c44ccd1302f21f77",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-revision-review/reviewed-original-plan-publication-allowlist.json",
+      "publishedSHA256": "b08000b71d119813e33977db7d9427eb3fc8769488aa0076c44ccd1302f21f77",
+      "bytes": 367,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-review/review.md",
+      "sourceSHA256": "71a4c2dbe7c725cf40ae197b190374d883f0d3a37b6d885ae6202f6dec0489a8",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-review/review.md",
+      "publishedSHA256": "71a4c2dbe7c725cf40ae197b190374d883f0d3a37b6d885ae6202f6dec0489a8",
+      "bytes": 8799,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-review/verification.json",
+      "sourceSHA256": "c18584035abfd4d0226cdad28ddd425b7438ad521538d224036e4db865986d4e",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-review/verification.json",
+      "publishedSHA256": "c18584035abfd4d0226cdad28ddd425b7438ad521538d224036e4db865986d4e",
+      "bytes": 15636,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-review/publication-allowlist.json",
+      "sourceSHA256": "1a46538fa816ec3c1d7e51fe3f94257451c71ae85646373258b424e19cc86590",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-review/publication-allowlist.json",
+      "publishedSHA256": "1a46538fa816ec3c1d7e51fe3f94257451c71ae85646373258b424e19cc86590",
+      "bytes": 382,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-revised/plan.md",
+      "sourceSHA256": "5a33a0237eb351df5a7a6060da2aff5c83379f89999c4a4ca82faa40c92e29ef",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-revised/plan.md",
+      "publishedSHA256": "5a33a0237eb351df5a7a6060da2aff5c83379f89999c4a4ca82faa40c92e29ef",
+      "bytes": 29062,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-revised/source-hashes.json",
+      "sourceSHA256": "199bd6bebb5ced6072a675c6805bd7fc41fc8c76b74bf6c66e7f2fadf9373092",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-revised/source-hashes.json",
+      "publishedSHA256": "199bd6bebb5ced6072a675c6805bd7fc41fc8c76b74bf6c66e7f2fadf9373092",
+      "bytes": 10832,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-revised/revision-notes.md",
+      "sourceSHA256": "f0d225347c321aa0280f2dd6398e440b6145c50ef442901b0c56dbf3b3c0c70e",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-revised/revision-notes.md",
+      "publishedSHA256": "f0d225347c321aa0280f2dd6398e440b6145c50ef442901b0c56dbf3b3c0c70e",
+      "bytes": 2261,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-revision-review/reviewed-plan-publication-allowlist.json",
+      "sourceSHA256": "8aff9204bfcb73f029eabde0dcaedce3ef5fb4ed33e626c5160aac6bdddd6203",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-revision-review/reviewed-plan-publication-allowlist.json",
+      "publishedSHA256": "8aff9204bfcb73f029eabde0dcaedce3ef5fb4ed33e626c5160aac6bdddd6203",
+      "bytes": 577,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-revision-review/review.md",
+      "sourceSHA256": "86926ccfe2a119c39c19bdd6553ffc32f880d85eb92c880d317e8e9e2d54e395",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-revision-review/review.md",
+      "publishedSHA256": "86926ccfe2a119c39c19bdd6553ffc32f880d85eb92c880d317e8e9e2d54e395",
+      "bytes": 6350,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-revision-review/verification.json",
+      "sourceSHA256": "c5604af425e7c9efbbd255a3fd1bccf757bcb6089bab4b03e8bda02e8a20f442",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-revision-review/verification.json",
+      "publishedSHA256": "c5604af425e7c9efbbd255a3fd1bccf757bcb6089bab4b03e8bda02e8a20f442",
+      "bytes": 18144,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-plan-revision-review/publication-allowlist.json",
+      "sourceSHA256": "bab45eb16f148e9fdbc0d83025ecea7042acf6cc6b74dd8dd0fd54d945e031f6",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-plan-revision-review/publication-allowlist.json",
+      "publishedSHA256": "bab45eb16f148e9fdbc0d83025ecea7042acf6cc6b74dd8dd0fd54d945e031f6",
+      "bytes": 400,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-docs-review/docs-review.md",
+      "sourceSHA256": "da1cc056dd1f9167208090a973fe533e4cca717baef6d9c93ae4ff4614ec2dda",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-docs-review/docs-review.md",
+      "publishedSHA256": "da1cc056dd1f9167208090a973fe533e4cca717baef6d9c93ae4ff4614ec2dda",
+      "bytes": 2528,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-docs-review/docs-publication-allowlist.json",
+      "sourceSHA256": "399a432faaba125be0e2fa73f67a6a6a703feba1f1ff999070f3d0c71b7939c5",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-docs-review/docs-publication-allowlist.json",
+      "publishedSHA256": "399a432faaba125be0e2fa73f67a6a6a703feba1f1ff999070f3d0c71b7939c5",
+      "bytes": 194,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -24199,5 +24324,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 157778243
+  "total_payload_bytes": 157907593
 }
