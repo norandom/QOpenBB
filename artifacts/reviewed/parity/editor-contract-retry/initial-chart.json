@@ -1,0 +1,295 @@
+{
+  "text": "      ",
+  "controls": [],
+  "state": {
+    "model": {
+      "chartId": "id-36cw8um6xsf",
+      "chartType": "groupedColumn",
+      "chartThemeName": "openbb-dark",
+      "switchCategorySeries": false,
+      "suppressChartRanges": true,
+      "unlinkChart": false,
+      "cellRange": {
+        "rowStartIndex": null,
+        "rowEndIndex": null,
+        "rowStartPinned": null,
+        "rowEndPinned": null,
+        "columns": [
+          "period",
+          "revenue",
+          "operatingIncome"
+        ]
+      },
+      "chartOptions": {}
+    },
+    "options": {
+      "data": [
+        {
+          "revenue": 100,
+          "operatingIncome": 20,
+          "period": {
+            "id": 0,
+            "value": "2024-Q1"
+          }
+        },
+        {
+          "revenue": 120,
+          "operatingIncome": 25,
+          "period": {
+            "id": 1,
+            "value": "2024-Q1"
+          }
+        },
+        {
+          "revenue": 140,
+          "operatingIncome": 30,
+          "period": {
+            "id": 2,
+            "value": "2024-Q3"
+          }
+        },
+        {
+          "revenue": 160,
+          "operatingIncome": 40,
+          "period": {
+            "id": 3,
+            "value": "2024-Q4"
+          }
+        }
+      ]
+    },
+    "effective": {
+      "data": [
+        {
+          "revenue": 100,
+          "operatingIncome": 20,
+          "period": {
+            "id": 0,
+            "value": "2024-Q1"
+          }
+        },
+        {
+          "revenue": 120,
+          "operatingIncome": 25,
+          "period": {
+            "id": 1,
+            "value": "2024-Q1"
+          }
+        },
+        {
+          "revenue": 140,
+          "operatingIncome": 30,
+          "period": {
+            "id": 2,
+            "value": "2024-Q3"
+          }
+        },
+        {
+          "revenue": 160,
+          "operatingIncome": 40,
+          "period": {
+            "id": 3,
+            "value": "2024-Q4"
+          }
+        }
+      ],
+      "title": {
+        "enabled": false,
+        "text": "Title",
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "color": "#fff",
+        "spacing": 20
+      },
+      "subtitle": {
+        "enabled": false,
+        "text": "Subtitle",
+        "fontFamily": "Verdana, sans-serif",
+        "fontSize": 13,
+        "fontWeight": 400,
+        "color": "#7a7a7b",
+        "spacing": 20
+      },
+      "legend": {
+        "enabled": true,
+        "position": "top",
+        "spacing": 20,
+        "item": {
+          "paddingX": 32,
+          "paddingY": 8,
+          "label": {
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 11,
+            "fontWeight": 400,
+            "color": "#fff"
+          },
+          "marker": {
+            "size": 11,
+            "padding": 5,
+            "shape": "square"
+          }
+        }
+      },
+      "axes": [
+        {
+          "type": "category",
+          "position": "bottom",
+          "keys": [],
+          "title": {
+            "enabled": false,
+            "text": "Axis Title",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 13,
+            "fontWeight": 400,
+            "color": "#fff",
+            "spacing": 25
+          },
+          "label": {
+            "enabled": true,
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 11,
+            "fontWeight": 400,
+            "color": "#fff",
+            "spacing": 11,
+            "autoRotate": true,
+            "avoidCollisions": true,
+            "minSpacing": 5
+          },
+          "line": {
+            "enabled": true,
+            "width": 1
+          },
+          "tick": {
+            "enabled": false,
+            "width": 1,
+            "size": 6
+          },
+          "gridLine": {
+            "enabled": false,
+            "style": [
+              {
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "number",
+          "position": "left",
+          "keys": [],
+          "title": {
+            "enabled": false,
+            "text": "Axis Title",
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 13,
+            "fontWeight": 400,
+            "color": "#fff",
+            "spacing": 25
+          },
+          "label": {
+            "enabled": true,
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 11,
+            "fontWeight": 400,
+            "color": "#fff",
+            "spacing": 11,
+            "autoRotate": false,
+            "avoidCollisions": true
+          },
+          "line": {
+            "enabled": false,
+            "width": 1
+          },
+          "tick": {
+            "enabled": false,
+            "width": 1,
+            "size": 6
+          },
+          "gridLine": {
+            "enabled": true,
+            "style": [
+              {
+                "stroke": "#515153",
+                "strokeWidth": 1,
+                "lineDash": []
+              }
+            ]
+          }
+        }
+      ],
+      "series": [
+        {
+          "type": "bar",
+          "xKey": "period",
+          "yKey": "revenue",
+          "yName": "Revenue (USD millions)",
+          "fill": "#5090dc",
+          "stroke": "#74a8e6",
+          "strokeWidth": 0,
+          "fillOpacity": 1,
+          "lineDash": [
+            0
+          ],
+          "label": {
+            "enabled": false,
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "color": "#fff",
+            "padding": 8,
+            "placement": "outside-end"
+          },
+          "tooltip": {
+            "enabled": true,
+            "range": "exact"
+          },
+          "marker": {},
+          "shadow": {
+            "enabled": false,
+            "color": "#00000080",
+            "xOffset": 3,
+            "yOffset": 3,
+            "blur": 5
+          }
+        },
+        {
+          "type": "bar",
+          "xKey": "period",
+          "yKey": "operatingIncome",
+          "yName": "Operating Income (USD millions)",
+          "fill": "#ffa03a",
+          "stroke": "#ffbe70",
+          "strokeWidth": 0,
+          "fillOpacity": 1,
+          "lineDash": [
+            0
+          ],
+          "label": {
+            "enabled": false,
+            "fontFamily": "Verdana, sans-serif",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "color": "#fff",
+            "padding": 8,
+            "placement": "outside-end"
+          },
+          "tooltip": {
+            "enabled": true,
+            "range": "exact"
+          },
+          "marker": {},
+          "shadow": {
+            "enabled": false,
+            "color": "#00000080",
+            "xOffset": 3,
+            "yOffset": 3,
+            "blur": 5
+          }
+        }
+      ]
+    }
+  }
+}

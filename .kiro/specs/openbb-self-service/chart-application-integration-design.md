@@ -24,18 +24,18 @@ Subsequent [stock matrix captures](chart-theme-matrix-findings.md) cover dark/li
 
 The next [custom-theme capture](chart-custom-theme-findings.md) establishes two grouped-column cases: actual admin UI saves select custom-dark/custom-light, and effective fills, strokes and backgrounds match the saved palette/parameter inputs. Zero stroke width means stroke inheritance is observed in options, not visible outlines. It does not establish custom line/stacked behavior, arbitrary bases or per-widget override precedence. The [formatting source contract](chart-format-control-contract.md) settles owned callbacks and generated/saved composition; library callback invocation and nested control events still require runtime evidence.
 
-Before freezing runtime tasks, obtain the following finite original-reference evidence in the controller's exclusive heavy queue. This document supplies the capture contract; it does not claim the captures ran.
+Freeze the source-proven contracts below separately from the unresolved library seams. Only tasks consuming an unresolved seam wait for its reference evidence. The following table is a remaining evidence inventory, not a requirement to repeat completed stock/custom captures or finish the entire release before wiring the ordinary journey.
 
 | Required observation | Record and design consequence |
 | --- | --- |
-| Three families in stock dark/light, plus one saved valid custom theme in both modes | Theme inputs, generated common/family overrides, finite settled effective leaves, screenshots and series IDs. Freeze exact precedence and palette assignment; never substitute a generic JSON merge for AG inheritance. |
+| Completed stock matrix and two custom grouped-column cases | Reuse reviewed models/effective leaves and screenshots. General custom-family/per-widget inheritance remains separate; never substitute a generic JSON merge for AG inheritance. |
 | Chart/Set Up/Customize in each family | Actual labels, defaults, ordering, conditional fields, keyboard focus, scroll/close/reopen behavior and original payload deltas. Existing public enum declarations do not establish rendered field completeness. |
 | Set Up category/series selection, reorder, Aggregate and Switch Category / Series | Source/destination ranges, visible results and stored model. Identify which effects need later transformations; no control can be accepted as inert. |
 | Title off/on with retained text, four legend positions, separate fill/stroke, marker toggle and details | Both drawn effect and outgoing original state; distinguish column `bar` and line namespaces. Enabled marker shapes beyond circle need implementation or remain a blocker. |
 | Filter/sort/selection, widget refresh, family switching and return to table | Original displayed range, order, column widths and selection, including repeated categories and duplicate labels. |
 | Export and save/reopen | Actual menu action, downloaded content, saved model, reopen state and theme; a request body alone is insufficient. |
 
-Capture source/image identities, fixture digest, viewport, original flags, console/network diagnostics and sanitized outgoing state. Use the established reference-only processed-options projection after `waitForUpdate`; never import private AG APIs or commercial editor internals into production. Explain the two known original script errors by route before claiming a clean journey. If captures contradict the proposed contracts, return the affected seam for review before worker fan-out. Missing light/custom inheritance, nested controls and formatter behavior are explicit design-freeze risks, not assumed defaults.
+Capture source/image identities, fixture digest, viewport, original flags, console/network diagnostics and sanitized outgoing state. Use the established reference-only processed-options projection after `waitForUpdate`; never import private AG APIs or commercial editor internals into production. The stock report attributes the original HTML-as-JavaScript defect to `/assets/js/datafeeds/udf/dist/bundle.js`; retain it as a baseline defect rather than a clean-run claim. If captures contradict a contract, pause only dependent lanes. Nested controls, general custom inheritance and formatter invocation remain explicit seam prerequisites.
 
 ## Architecture
 
@@ -58,23 +58,127 @@ Dependency direction is legacy types and accepted pure contracts -> capture/styl
 
 ## Components and interfaces
 
+### Boundary commitments and revalidation
+
+**Out of Boundary:** this supplement does not alter the widget schema, provider transformations, dashboard API, theme administration persistence or detached reducer. It does not accept the remaining renderer matrix. **Allowed Dependencies:** existing GridApi 34.1.1 public interfaces, ECharts 6.0.0 public interfaces, existing OpenBB design-system controls, current widget/theme contexts, and the accepted compatibility modules. No new library is needed. **Revalidation Triggers:** a source pin change, changed state-key composition, control event namespace, unit provenance, callback invocation, AG effective default, or mapper field requires review of its dependent tests and lanes. A stock-theme observation does not authorize arbitrary custom-theme inheritance.
+
+### Frozen session and state contracts
+
+The following are proposed implementation contracts supported by current source. They can be reviewed without waiting for all editor fields. Types imported below retain their current definitions in `compatibility/legacyTypes.ts`, `snapshotTypes.ts`, `optionStateTypes.ts`, `echarts/cartesianTypes.ts` and `echarts/lifecycle.ts`; this design does not replace them with a second model.
+
+```typescript
+interface SessionAddress {
+  readonly widgetId: string;
+  readonly stateKey: string;
+  readonly stateAddress: string;
+}
+interface SessionStamp {
+  readonly address: SessionAddress;
+  readonly generation: number;
+  readonly dataRevision: number;
+  readonly renderRevision: number;
+}
+interface ColumnEditCommand {
+  readonly stamp: SessionStamp;
+  readonly chartType: "groupedColumn" | "stackedColumn";
+  readonly event:
+    | { readonly kind: "title-text"; readonly value: string }
+    | { readonly kind: "title-enabled"; readonly value: boolean }
+    | { readonly kind: "legend-position";
+        readonly value: "top" | "bottom" | "left" | "right" }
+    | { readonly kind: "stroke-width"; readonly value: number };
+}
+type SessionResult<T> =
+  | { readonly status: "ready"; readonly stamp: SessionStamp; readonly value: T }
+  | { readonly status: "waiting" | "stale" }
+  | { readonly status: "invalid" | "unresolved";
+      readonly diagnostics: readonly SnapshotDiagnostic[] };
+interface ResolvedRange {
+  readonly columnIds: readonly string[];
+  readonly rowStartIndex?: number;
+  readonly rowEndIndex?: number;
+  readonly originalRange: SnapshotJson;
+}
+interface GridCaptureInput {
+  readonly api: GridApi<Record<string, unknown>>;
+  readonly stamp: SessionStamp;
+  readonly range: ResolvedRange;
+  readonly categoryColumnId: string;
+  readonly columns: readonly SnapshotColumn[];
+  readonly originalModel: SnapshotJson;
+}
+type CaptureDisplayedChart =
+  (input: GridCaptureInput) => SessionResult<ResolvedSnapshotInput>;
+type ApplyColumnEdit =
+  (command: ColumnEditCommand) => SessionResult<ChartStorageOutput>;
+```
+
+These signatures intentionally require resolved category, descriptors and range. They do not pretend `validateSnapshot` determines AG category choice or units. `GridApi` is imported from `ag-grid-community`; all other names are existing types. The `stamp` and result envelopes are ephemeral and never serialized into widget storage. `stateAddress` is `JSON.stringify([widgetId, stateKey])`, an unambiguous session/snapshot identity; persistence still uses the original `stateKey` unchanged. `generation` starts at 1 per mounted session and increases on address change, grid replacement or teardown. `dataRevision` increases on displayed observation/range/order change; `renderRevision` increases for every requested data, family, options or appearance update, including retry after render failure. All counters are finite nonnegative safe integers; overflow tears down and starts a fresh session rather than reusing an old ordering token.
+
+Resolve `stateKey` with existing `communityState.getStateKey(widget, isPivotMode)`: period or `default`, transpose, root selectedGroup, reversed, currentSheet.name, selectedRatio, pivot, filtered for truthy values and joined by underscore. Keep its existing collisions and ordering; do not redesign persisted addresses. `getWidgetStorage` supplies group-specific period/transpose inputs, but `getStateStorage` reads `widget.storage[stateKey]`. Session checks widget ID, stateKey, generation and current renderRevision before consuming delayed work. Synchronous commands consume the displayed revision, derive from the latest widget storage, and schedule the next revision atomically; a queued command from the previous displayed view returns stale without a write.
+
+| State or field | Sole owner and read/write contract |
+| --- | --- |
+| Root `chartType`, `totalSeries`, `isPivotMode` and addressed `chartModel` | Session calls `reduceIntegratedState` with captured key/current model and the latest storage. Reducer merges resolved options and patch, strips root `theme`, retains other partitions and unknown fields. |
+| Option baseline | `selectOptionBaseline`: initialize reads partition model then root model; options read partition chartOptions then root options. Synchronize uses a populated partition or retains previous model/options. Family uses nonempty partition type or previous type. No session reset that contradicts populated-to-empty behavior. |
+| `storage[stateKey][chartType].cellRange` | Range transition owner, separate from option reducer. Preserve bounds and ordered IDs. Options reducer must not masquerade as a range write. |
+| `chartView`, `chartSettingsOpen` | Existing widget actions retain their original root paths and conditions; session supplies renderer/editor actions, not another persisted editor store. |
+| Grid filter, widths, ordering, selection | Existing grid state hook owns these. Flush before capture; restore from its current state on chart exit. Chart session must not save chart layout as table column state. |
+| Theme and generated callbacks | Existing theme/context stores own inputs; appearance/format adapters derive output. No function text is persisted. |
+| Host instance and image | Existing EChartsHost/lifecycle owns mount, ResizeObserver, PNG export and disposal. Session owns export menu dispatch and filename conventions. |
+
+`mapColumnEditorEvent` is authoritative for four exact patches: `bar.title.text`, `bar.title.enabled`, `bar.legend.position`, `bar.series.strokeWidth`. Width must be finite and nonnegative; its observed UI maximum/step belongs to the runtime ledger, not this validator. Do not constrain it to a guessed slider range. These patches apply to both column families; `column` is an editor group token, never the saved option namespace. New line/control events require their own validated discriminated union and observed leaf path; do not accept an arbitrary JSON path from a UI control. Family switches supply destination model/range before the reducer; they are not a patch to ECharts `series.type`.
+
+### Frozen financial display boundary
+
+Formatting is separate from numeric observations and from inherited style. Add `application/financialFormatting.ts` to derive owned display functions from current period, decimalDigits (including 0), bound-column definitions and Index formatter. It reuses existing numeric/fiscal helpers with the corrected [source contract](chart-format-control-contract.md). Callback-bearing values stay outside `RuntimeOptions`, whose current type is deliberately data-only. Keep formatter selection in a separate typed `ChartDisplayPolicy`, consumed by the mapper at render time:
+
+```typescript
+interface TooltipObservation {
+  readonly seriesId: string;
+  readonly label: string;
+  readonly value: number | null;
+}
+interface ChartDisplayPolicy {
+  readonly category: (value: string | number) => string;
+  readonly numericAxis: (value: number) => string;
+  readonly crosshair: (value: number) => string;
+  readonly legend: (label: string) => string;
+  readonly seriesLabel: (value: string | number) => string;
+  readonly tooltipNumber: (value: number) => string;
+}
+```
+
+The mapper's current `toFixed(style.precision)` axis/tooltip functions and identity legend/category functions are fixture behavior, not application parity. Replace their call sites at the mapper join; retain precision only for existing explicit fixture callers until migrated. Numeric axis abbreviates strictly outside +/-1,000,000 using magnitude precision 2; crosshair uses magnitude precision 0; series numeric labels use formatNumber precision 0; tooltip numbers use current widget/global precision. Legend uses fiscal conversion without chart type. Preserve recognized datetime versus date-only versus Date-object differences, including calendar quarter/year semantics. Never apply detached normalized-percent rescaling to integrated observations.
+
+`TooltipObservation` is the typed numeric content boundary, not a claim that AG multiple mode order/layout is known. The eventual renderer builds escaped content from headings and entries, never raw provider HTML. Source sorts ordinary numeric tooltip entries descending; runtime capture must settle which entries AG invokes in each mode and how null entries are displayed before the tooltip join is accepted. Category formatting likewise needs its bound-series/Index invocation resolved. These unresolved invocation seams block those projections only; helper extraction and threshold/fiscal tests can proceed after their design/task approval.
+
 All proposed interfaces use explicit types; unknown external models enter validation as `unknown`, never `any`. The contract-freeze task defines these in `Chart/application/types.ts` with imports from accepted types. P0 dependencies are grid readiness, captured address, provider/column unit metadata, original capture evidence and accepted reducer semantics. Accepted SQLite tasks 4.6-4.9 satisfy the storage prerequisite for the persistence join; actual application save/restart/reopen remains unverified.
 
 ### Displayed-grid capture: 4.8, 4.9
 
-`captureDisplayedChart(input: GridCaptureInput): GridCaptureResult` returns `{status:"captured", input:ResolvedSnapshotInput}` or `{status:"invalid"|"unresolved", diagnostics:readonly SnapshotDiagnostic[]}`. GridCaptureInput contains the actual grid API, captured stateAddress/dataRevision, ordered selected column IDs, resolved category ID, original model/range and column semantic descriptors. It is not a bag of raw provider rows.
+`captureDisplayedChart` implements the canonical `CaptureDisplayedChart` signature above and returns `SessionResult<ResolvedSnapshotInput>`. Successful capture returns `status: "ready"`, the captured `stamp` and `value`; waiting, stale and diagnostic outcomes use that same envelope. There is no separate `GridCaptureResult` type. GridCaptureInput contains the actual grid API, captured stateAddress/dataRevision, ordered selected column IDs, resolved category ID, original model/range and column semantic descriptors. It is not a bag of raw provider rows.
 
 Capture snapshots the displayed filtered/sorted leaf observations in original selected-range bounds after pending column state is flushed. Read raw numeric values through the original grid value semantics, never formatted strings or DOM text. Do not use `rowData:null` from createRangeChart as data. Duplicate category labels retain distinct stable row IDs; display labels never key series. Hidden columns, selected order and original range resolution follow the reference path. A refresh invalidates the old capture; results from an earlier address/revision cannot overwrite the current session.
 
 The [source range contract](chart-grid-range-contract.md) distinguishes integrated and detached inputs. The ordinary integrated path keeps the existing grid and forwards ordered displayed columns plus addressed stored ranges to AG Grid; it does not run the detached extraction pipeline. Detached percent formatting, date re-sorting and recreation omissions cannot be imported into this adapter as integrated behavior. Numeric-only selection, multiple candidate categories, value getters and tool-panel reorder/aggregation still require original runtime observations before freezing capture semantics.
 
-Preserve zero, null, missing, negative and fractional values without rounding or conversion. Unit and positive scale come from explicit widget/column provenance; currency symbols in labels do not establish them. Missing or mixed units cannot be guessed as USD/dimensionless or certified by a synthetic same-unit fixture. The current mapper rejects such input; production unit inference and mixed-axis support remain explicit release blockers until evidenced. Group/pivot/transpose and remote-page data must retain sourceMode truth rather than be relabelled flat. Ordinary filtered/sorted flat observations remain flat with their range/filter provenance retained in existing snapshot JSON metadata.
+Preserve zero, null, missing, negative and fractional values without rounding or conversion. Unit and positive scale come from explicit widget/column provenance; currency symbols in labels do not establish them. Missing or mixed units cannot be guessed as USD/dimensionless or certified by a synthetic same-unit fixture. The current mapper rejects such input, while the original can chart data without explicit unit metadata: that rejection is an unresolved parity defect, not an accepted product restriction. A later semantics join must compare original raw observations and axes with explicit unknown-unit provenance and mixed-unit models, then review a mapper contract preserving those valid journeys without implying financial comparability or inventing conversions. It cannot be closed by an unavailable message. This milestone's labelled USD-million fixture supplies explicit metadata. Group/pivot/transpose and remote-page data retain sourceMode truth rather than being relabelled flat. Ordinary filtered/sorted flat observations retain range/filter provenance in existing snapshot JSON metadata. Unrelated dirty Perspective financial code is outside this design and requires its own review.
 
 ### Effective appearance: 4.8, 4.9
 
 `resolveApplicationAppearance(input: AppearanceInput): AppearanceResult` returns `{status:"resolved", style:ResolvedCartesianStyle}` or `{status:"invalid"|"unresolved", diagnostics:readonly SnapshotDiagnostic[]}`. Input contains active mode, selected original stock/custom theme, validated stored baseline, generated original defaults, family, ordered stable series IDs and formatting context. Store addresses are not decoded inside the resolver.
 
-Freeze a source-and-capture-backed finite precedence table before implementation: original base theme and custom theme parameters, generated defaults/common replacement, then effective common/family/per-series leaves in the original order. Keep default AG palette, distinct-category palette and global theme-editor palette separate. Do not copy AG's resolver, execute arbitrary saved callbacks or claim getOptions supplies inherited defaults. Unknown valid stored fields are retained; unmapped effective fields remain explicit evidence gaps.
+Use the following finite composition contract. Keep default AG palette, distinct-category palette and global theme-editor palette separate. Do not copy AG's resolver, execute arbitrary saved callbacks or claim getOptions supplies inherited defaults. Unknown valid stored fields are retained; unmapped effective fields remain explicit evidence gaps.
+
+| Stage | Frozen behavior | Remaining seam |
+| --- | --- | --- |
+| Theme selection | Active mode chooses custom only when baseTheme, palette and params exist; otherwise OpenBB mode. Exact `ag-default-dark` chooses dark custom base; other saved bases choose light. | Arbitrary custom base combinations require matching reference evidence. |
+| Custom inputs | Replace base palette and params with saved values; clone base overrides before background-image/navigator/item-styler additions. | Enabled image, navigator and distinct-color effects are not proved by default-off captures. |
+| Generated options | Owned axis/series defaults merge caller axis/series overrides. `common` is replaced by newly generated common before merging saved chartOptions. Saved family branches remain; bar omits generated connectMissingData/marker and sets label placement outside-end. | AG final common/family/position-specific resolution remains unproven for unobserved leaves. |
+| Effective render leaves | Six stock observations fix the captured background, typography, title enabled/text, top legend, ordered fills/strokes and line defaults. Two custom grouped-column observations fix their saved fills/strokes/background only. Map by stable series ID after palette assignment in resolved selected order. | Do not infer custom line/stacked or arbitrary per-widget override precedence. |
+
+`AppearanceInput` therefore carries the validated OptionBaseline, CartesianFamily, active mode, selected theme JSON, ordered series IDs and generated data-only options; the separate ChartDisplayPolicy carries trusted callbacks. `AppearanceResult` returns the existing ResolvedCartesianStyle or path diagnostics. The current finite style fields may be implemented from those observed leaves; adding padding, subtitle, axis/title/grid, detailed legend and series controls requires named typed extensions and their ledger paths at the mapper join. B2 cannot mark an unresolved leaf complete by supplying an ECharts default.
 
 The existing mapper lacks padding, detailed legend geometry, axis titles/grid/crosshair, tooltip formatting, subtitle and other visible control projections. Add only the explicit typed fields required by captured controls, in cohesive appearance/formatting modules, with provenance and ECharts public projection. A mapper-only style change cannot certify panel behavior. Financial formatting preserves original fiscal dates, magnitudes, precision and units for display without altering observations. A precision integer alone is insufficient. Background images, distinct-datum colors, navigator and mini-chart remain required features; default-off fixtures do not verify their enabled behavior.
 
@@ -105,6 +209,10 @@ Each ledger row expands into captured field ID/label, family condition, value do
 
 ## File structure and complexity disposition
 
+### File Structure Plan
+
+The lane table below is the authoritative create/modify allocation. New files are `Chart/application/types.ts`, `sessionState.ts`, `chartRange.ts`, `gridCapture.ts`, `financialFormatting.ts`, `effectiveAppearance.ts`, `useApplicationChartSession.ts`, and `Chart/editor/ChartSettingsPanel.tsx`, `ColumnFields.tsx`, `LineFields.tsx`, `AxisFields.tsx`, `SetupFields.tsx`. `sessionState.ts` owns only address/stamp validation and reducer orchestration; the hook owns React/context lifetime. Field components compose existing primitives and emit typed commands; they do not access widget storage. Add further field modules only for a cohesive captured group, with inventory ownership before work. `types.ts` contains the shared contracts above, not AG internals or executable state logic. No generated file exemption applies to these maintained files.
+
 Paths below are relative to `vendor/workspace/terminalpro/src/components/`. Counts were measured on 2026-10-17 using direct physical counts and the existing syntax-units parser under WSL pinned Node 24.22.0. The first Windows attempt could not resolve TypeScript; switching to the already installed WSL toolchain succeeded without installation. This is read-only size evidence, not a fresh full complexity scope gate. Existing checker/inventory foundations are reused.
 
 | Existing file | Current physical | Original physical | Cohesive disposition |
@@ -129,14 +237,22 @@ This is a design sequence for later task generation, not an approved task list. 
 | Lane | Exclusive writable production paths | Prerequisite and output |
 | --- | --- | --- |
 | Controller contract freeze | Chart/application/types.ts; root inventory/breadth/spec records; shared test configuration | Reference captures and size inventory; freeze signatures, event namespaces, fixture semantics and source hashes. |
-| A: displayed observations | Chart/application/gridCapture.ts, chartRange.ts; corresponding new unit files | Frozen contracts; validated snapshots from real GridApi with financial/range tests. No edits to context hooks. |
-| B: effective appearance | Chart/application/effectiveAppearance.ts, financialFormatting.ts; corresponding new unit files | Frozen captured theme/formatter contract; explicit resolved styles. No mapper/type edits during fan-out. |
-| Controller mapper join | Chart/echarts/cartesianTypes.ts, cartesianStyle.ts, cartesian.ts and any reviewed cohesive extracted projection module | A/B independently reviewed; add frozen explicit projections without breaking accepted observations. |
+| A1: source range and session state | Chart/application/chartRange.ts, sessionState.ts; corresponding new unit files | Shared types frozen; implement source range precedence/intersection and addressed reducer/stamp behavior. No AG category/aggregation guesses, context edits or production activation. These modules must be consumed by D in this wave. |
+| B1: financial display policies | Chart/application/financialFormatting.ts; corresponding new unit files | Corrected source formatter contract frozen; pure owned callbacks and threshold/date regressions. No assumption about AG callback invocation. May run with A1. |
+| A2: displayed observations | Chart/application/gridCapture.ts; corresponding new unit files | A1 plus resolved runtime range/category/raw-value contract for the exact ordinary fixture. Validate snapshots from actual GridApi. Numeric-only, multiple-category, getter and remote cases remain separate affected prerequisites. |
+| B2: effective appearance | Chart/application/effectiveAppearance.ts; corresponding new unit files | Reviewed finite stock/custom leaves and explicit per-leaf precedence for admitted cases. May run with A2 after shared types freeze; no mapper/type edits during fan-out. General custom inheritance is not inferred. |
+| Controller mapper join | Chart/echarts/cartesianTypes.ts, cartesianStyle.ts, cartesian.ts and any reviewed cohesive extracted projection module | A2/B1/B2 independently reviewed; add frozen explicit projections without breaking accepted observations. Unresolved formatter invocation and nested leaves block only those projections. |
 | C: docked fields | Chart/editor/** and new editor unit/component files only | Captured complete field inventory and frozen event contracts; working original field groups. Sequential bounded family/group tasks, not one unbounded editor rewrite. |
-| D: application composition | Chart/application/useApplicationChartSession.ts; Chart/AgChartView.tsx; Chart/hooks/useChartOptions.tsx; General/Table/hooks/useTableContext.tsx, hooks/types.d.ts; General/Table/AgGridTable.tsx, AgGridFile.tsx, communityBoundary.ts | Reviewed A/B and mapper join; C may overlap only after props/events freeze. This lane alone removes chart stubs/guards and reconnects current callers. |
+| D: application composition | Chart/application/useApplicationChartSession.ts; Chart/AgChartView.tsx; Chart/hooks/useChartOptions.tsx; General/Table/hooks/useTableContext.tsx, hooks/types.d.ts, hooks/useUpdateColumnState.ts; General/Table/AgGridTable.tsx, AgGridFile.tsx, communityBoundary.ts | Reviewed A1/A2/B1/B2 and mapper join; C may overlap only after props/events freeze. This lane alone removes chart stubs/guards and reconnects current callers and range persistence. Whole-file complexity includes useUpdateColumnState.ts before modification. |
 | Controller real-app join | tests/e2e/chart-application/**; root test registration, evidence mapping and source pins | C/D independent reviews plus accepted SQLite repair; real application verification and selective commits. |
 
 Do not concurrently assign a path to two lanes. Freeze workers before shared joins/commits; stop affected lanes on interface drift. Table/file caller growth may require additional cohesive extraction after measured inventory. Entity theme preview, detached charts and other families receive their own explicit later writable paths and joins rather than being swept into D. No Excel lane starts before Anthropic acceptance.
+
+### Failure and cleanup contract
+
+Grid not ready yields waiting and no capture/write. Invalid input returns path diagnostics without repairing saved JSON. A still-unknown valid original configuration yields unresolved for engineering evidence and blocks acceptance of that journey; this is not permission to ship a new unavailable state. A stale event yields stale without touching any partition. Render failure is reported through the existing error channel, retains persisted model/options, invalidates image export for that render, and retries using a newer renderRevision. Failed persistence follows the existing save error flow, retains edits for retry and cannot be described as saved. A theme error does not rewrite the saved theme as stock.
+
+On chart exit/address change/unmount, invalidate generation before removing owned grid listeners and cancelling owned scheduled work. EChartsHost alone disconnects its ResizeObserver/disposes its engine; session must not double-own that lifecycle. Removing a widget also drops editor references and export closures. Re-entering mounts a fresh host with a current resolved snapshot; returning to table restores the original grid state owner. Hidden/zero-size host deferral is not success: acceptance waits for a nonzero visible chart and asserts actual output. No export may return an image from another address or stale render.
 
 ## Requirements traceability and acceptance
 
@@ -159,6 +275,14 @@ Save through the existing explicit action; inspect the response, close/reopen th
 
 The next useful change is an integrated journey, rather than another disconnected mapper foundation. The design adopts the accepted host/state contracts and existing UI primitives while making actual grid observations and effective original appearance explicit. It is disproved if selection changes financial observations, controls require altered visibility predicates, saved options cannot round-trip, or matched original/candidate captures reveal unexplained visible differences.
 
-Human review can assess this boundary now. Runtime task freeze still requires the finite reference captures and complete whole-file logical/function inventory above. Full nested editor compatibility and remaining families may exceed a single implementation wave; they must be decomposed without shrinking the final UX. No claim of application, release, new design approval or task approval is made here.
+Human review can assess the address/revision/reducer, source range-precedence, owned formatter and lifecycle boundaries now. A1/B1 are concrete parallel candidates after design and task approval; their completion alone is not the milestone. Acceptance joins them into the real table/chart/editor/theme/export/save/reopen route through A2/B2, the mapper, C and D. Full nested editor compatibility and remaining families can require later bounded waves without shrinking the final UX. No application, release, new design approval or task approval is claimed.
+
+The residual critical gap is the invocation contract at the AG boundary: resolved category/series and raw/valueGetter semantics, model/range changes after Set Up edits/reorder, formatter invocation, and exact events/effective projections for nested fields. Each missing fact blocks its named consuming projection or control task. The completed [bounded runtime probe](chart-editor-runtime-contract.md) failed initial serialization after two remediation passes, before any nested edit or save; it closes no event seam. Its duplicate-category screenshot is a baseline observation only. Preserve exit 1 and cleanup 0. The bounded retry subsequently proved one finite initial projection, then timed out at the first nested-control selector; it still establishes zero nested edits or saved payloads. Existing four column patches, source-owned formatting helpers, six stock defaults and the two custom grouped-column palette/background observations remain usable independently. An incomplete nested field ledger blocks full C acceptance, not all source-safe application composition work.
+
+### Parent task-plan followups
+
+Before approving the next implementation wave, the controller must replace task 3.8's Perspective binding dependency on superseded 2.9 with the reviewed current renderer/catalog join. Task 4.3 must assert original controls and their effects under 4.8/4.9, removing its obsolete instruction that unsupported legacy controls stay unavailable and its assumption that native Perspective explorers are the UX. Task 4.5 must verify original model/range/options/theme/settings state across actual restart, replacing Perspective plugin-state wording and avoiding release acceptance of known missing chart capabilities. The top-level lane/dependency table must follow the same replacement; changing three leaf descriptions alone leaves stale dependencies. These are specific review inputs, not edits or approval of tasks.md.
+
+The bounded app milestone may use an identified unreleased Workspace candidate after Dagger-only image build and portable verification. Final publication/deployment still requires the complete approved capability set and immutable image manifest. The owner-run Linux deployment pulls images and uses `docker compose up -d --no-build`, plain HTTP `0.0.0.0:23003` and `./data/workspace`; this design adds no deployment service or tunnel. Anthropic acceptance still precedes any Excel implementation. Neither a chart milestone nor the SQLite repair closes that dependency.
 
 Supporting findings: [grid discovery](chart-next-discovery.md), [effective styles](chart-effective-style-discovery.md), [theme runtime](chart-theme-runtime-findings.md), [editor contract](echarts-editor-contract.md), [completion plan](../../../docs/completion-plan.md). Design follows the local kiro-spec-design extension, boundary, synthesis and dependency rules. Core product.md, tech.md and structure.md steering files are absent; the applicable workspace, complexity, testing, delegation, documentation and CI policies were read instead. Research synthesis is kept in this owned design because the shared research.md is outside this lane's writable scope.

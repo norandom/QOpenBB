@@ -1,0 +1,128 @@
+{
+  "status": "frozen_for_independent_publication_review",
+  "excluded": [
+    "diagnostics.json",
+    "runtime.json",
+    "start.log",
+    "credential-private.json",
+    "state-*",
+    "authentication data"
+  ],
+  "files": [
+    {
+      "path": "fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "path": "journey.mjs",
+      "sha256": "7c9047a357b2f21577677b0dfb589132deb0f044d232ee210e6ecd47d2bf3022",
+      "bytes": 14898
+    },
+    {
+      "path": "pass0-journey.mjs",
+      "sha256": "d3afd45365764427874521cae0862623b8dd331aba60bf7f6a6a5638cb154701",
+      "bytes": 14345
+    },
+    {
+      "path": "pass1-journey.mjs",
+      "sha256": "2df8b7e8f01e8d9a0e947914dc270aec8b374ff536e2e1c5664690c5e82ab5da",
+      "bytes": 14532
+    },
+    {
+      "path": "pass0-failure.log",
+      "sha256": "9c3045723fdd2e08fe4700ee068c356c40cd99c3e1a0bcea032d9f012f171fb7",
+      "bytes": 916
+    },
+    {
+      "path": "pass1-failure.log",
+      "sha256": "432de42ce746a6577264fbee0f44ffd52b611c610cc56e6364f9d9f9ef9285ce",
+      "bytes": 965
+    },
+    {
+      "path": "journey.log",
+      "sha256": "8a80b92b6e0d4bfeadd96819d10d827d4fbfdced791985ebf0923a93c7afc9e1",
+      "bytes": 602
+    },
+    {
+      "path": "initial-chart.json",
+      "sha256": "98e7f98ee98b3a0d3749cbd0705a4030cf7ff5e72e4d8d257f9ed1966d754428",
+      "bytes": 6923
+    },
+    {
+      "path": "initial-chart.png",
+      "sha256": "4e9c81d80810492d330bf633f780241a2ed476070dc6fc129bb49cf46af75ed7",
+      "bytes": 41933
+    },
+    {
+      "path": "initial-projection-assertion.json",
+      "sha256": "3b2134dc9181aec6145b8ab81e0201e2350688f9d126e7798eef3ab2a33d03c1",
+      "bytes": 33
+    },
+    {
+      "path": "projection-repro.mjs",
+      "sha256": "a0f6a36df50d688f76df8ef34b2ea8ffefefa5b76b43b6220b8f803c728f728b",
+      "bytes": 5070
+    },
+    {
+      "path": "projection-repro.log",
+      "sha256": "c0a085bfea4dfb85028e247d4bfa1fa5feb15ca83694a9de50074264a1a3a912",
+      "bytes": 155
+    },
+    {
+      "path": "offline-repro.log",
+      "sha256": "479d34df8f322af5cd98829b7cf8704789dffd67617b0f51ee014cbf055c1e22",
+      "bytes": 111
+    },
+    {
+      "path": "command-status.json",
+      "sha256": "9065b51329fdd88895a135d28d17c0f2ffc1a98d70a6383e07cb5c94e0ddafe6",
+      "bytes": 35
+    },
+    {
+      "path": "cleanup-report.json",
+      "sha256": "070a0a2ab41af069c6be9c8861449420dc545cab3d22e8c0ea2ccd6539512f97",
+      "bytes": 80
+    },
+    {
+      "path": "report.md",
+      "sha256": "b0ab7c3940518edb313b24e5f59141da868aab02b0e11a776467fe69ba6cec93",
+      "bytes": 3761
+    },
+    {
+      "path": "failure.png",
+      "sha256": "dd41b63cbc5372c7e0326f42a1f5f50680747dafa4987b8166e6da623edbd57a",
+      "bytes": 40940
+    },
+    {
+      "path": "failure-ui.txt",
+      "sha256": "341838a2c50f2349593ab3d959c2945828407e46dcf280f8894ca63373176927",
+      "bytes": 804
+    },
+    {
+      "path": "table-dark.png",
+      "sha256": "dd9a47931e2f0b962b8c47751bf1510a98c7123f65e90dcec767389a8b0590f6",
+      "bytes": 32812
+    },
+    {
+      "path": "start.mjs",
+      "sha256": "4efa2ecb97fdfeb59348bc8ba80cc63ea84ccb772c7381f962f2f78931f46c76",
+      "bytes": 2258
+    },
+    {
+      "path": "cleanup.mjs",
+      "sha256": "85c2342231f6c2daa4a519289f6548d341a7f0af34e0568fa21212096df51885",
+      "bytes": 851
+    },
+    {
+      "path": "run.sh",
+      "sha256": "d803ca3273eacbefd1e100a985c078397e25a1595391a06f1105c6f51daae0fa",
+      "bytes": 730
+    },
+    {
+      "path": "rerun.sh",
+      "sha256": "0b3f893815d3a3acc031d381091fd7054967f7c699476bf1a7876d798be6de63",
+      "bytes": 483
+    }
+  ]
+}

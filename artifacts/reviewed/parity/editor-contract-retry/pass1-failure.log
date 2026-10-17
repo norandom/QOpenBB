@@ -1,0 +1,21 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Error: Unexpected value options.data0.period object keys=id,value,toString leaves=id:0|value:2024-Q1
+    at scalar (eval at evaluate (:370:30), <anonymous>:3:134)
+    at eval (eval at evaluate (:370:30), <anonymous>:4:87)
+    at Array.map (<anonymous>)
+    at pick (eval at evaluate (:370:30), <anonymous>:4:77)
+    at eval (eval at evaluate (:370:30), <anonymous>:6:36)
+    at Array.map (<anonymous>)
+    at data (eval at evaluate (:370:30), <anonymous>:6:25)
+    at eval (eval at evaluate (:370:30), <anonymous>:13:465)
+    at async <anonymous>:396:30
+    at state (/mnt/d/Source/QOpenBB/artifacts/parity/editor-contract-retry/journey.mjs:27:52)
+    at async snap (/mnt/d/Source/QOpenBB/artifacts/parity/editor-contract-retry/journey.mjs:43:100)
+    at async file:///mnt/d/Source/QOpenBB/artifacts/parity/editor-contract-retry/journey.mjs:55:1 {
+  log: []
+}
+
+Node.js v24.22.0

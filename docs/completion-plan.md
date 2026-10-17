@@ -20,8 +20,8 @@ The original per-chart Customize panel is supplied by AG Grid Enterprise. Reconn
 
 ## Parallel work and joins
 
-1. Resolve the theme/control capture contract and design the SQLite query repair independently. Both are needed by the real dashboard journey; neither needs a new service.
-2. After contracts and tasks are approved, give separate Sol workers displayed-grid capture and effective-style resolution. Freeze snapshot identities, financial units, state addresses and revision behavior before dispatch. Keep application entry, controls and guard removal in one integration lane.
+1. Review the [application integration design](../.kiro/specs/openbb-self-service/chart-application-integration-design.md). Independent review permits task planning for source-proven session/range state and financial formatting helpers; unresolved original-editor behavior gates only its consuming tasks. SQLite repair is already accepted.
+2. After design and task approval, freeze shared types and give separate Sol workers session/range state (A1) and formatting helpers (B1). Continue finite original-runtime captures independently. Displayed-grid capture (A2), appearance (B2), editor (C) and application activation (D) join only after their named contracts are established. Keep application entry, controls and guard removal in one integration lane.
 3. Join the [accepted SQLite repair](../.kiro/specs/openbb-self-service/sqlite-repair-verification.md) with the application lane at save/reopen. Keep environment restart evidence separate from engine recreation.
 4. Restore and verify the remaining original capabilities against the matrix. No hidden feature flag, reduced menu or inactive button substitutes for an unfinished behavior. Compare actual application screenshots in light and dark modes as well as user outcomes and financial values.
 5. Close final catalog/image identity and dashboard acceptance. Then delivery/publication work can run alongside Anthropic. Excel begins only after Anthropic acceptance.

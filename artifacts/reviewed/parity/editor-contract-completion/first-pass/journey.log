@@ -1,0 +1,16 @@
+file:///mnt/d/Source/QOpenBB/artifacts/parity/editor-contract-completion/journey.mjs:28
+function json(name,v){fs.writeFileSync(dir+'/'+name+'.json',JSON.stringify(v,(k,v)=>typeof v==='function'?'[callback]':v,2));}
+                                                                 ^
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Object'
+    |     property 'context' -> object with constructor 'Object'
+    --- property 'beans' closes the circle
+    at JSON.stringify (<anonymous>)
+    at json (file:///mnt/d/Source/QOpenBB/artifacts/parity/editor-contract-completion/journey.mjs:28:66)
+    at snap (file:///mnt/d/Source/QOpenBB/artifacts/parity/editor-contract-completion/journey.mjs:30:27)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9)
+    at async file:///mnt/d/Source/QOpenBB/artifacts/parity/editor-contract-completion/journey.mjs:42:1
+
+Node.js v24.22.0

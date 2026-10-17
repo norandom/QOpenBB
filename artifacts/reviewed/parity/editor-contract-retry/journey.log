@@ -1,0 +1,17 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('.ag-charts-format-top-level-group-title-bar').filter({ hasText: /^Horizontal Axis$/ })[22m
+
+    at group (/mnt/d/Source/QOpenBB/artifacts/parity/editor-contract-retry/journey.mjs:46:57)
+    at /mnt/d/Source/QOpenBB/artifacts/parity/editor-contract-retry/journey.mjs:59:86 {
+  log: [
+    "  - waiting for locator('.ag-charts-format-top-level-group-title-bar').filter({ hasText: /^Horizontal Axis$/ })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.0
