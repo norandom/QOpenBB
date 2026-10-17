@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-17",
+  "verdict": "APPROVED for source proposal and publication only",
+  "checks": 402,
+  "reportVerifier": {
+    "command": "node artifacts/ui-parity-tooltip-geometry-diagnosis/verify.mjs",
+    "exitCode": 0,
+    "checks": 1255,
+    "readOnlyPreload": "read-only-verifier.mjs",
+    "identicalReceiptWriteSuppressed": true
+  },
+  "pointerRecords": 24,
+  "t05": {
+    "id": "T05.p17",
+    "family": "groupedColumn",
+    "dx": 0,
+    "dy": 0
+  },
+  "t08": {
+    "id": "T08.p52",
+    "family": "stackedColumn",
+    "dx": 0,
+    "dy": 28.275000000000006
+  },
+  "intervals": [
+    {
+      "key": "cashFlow",
+      "top": 150.4375,
+      "bottom": 174
+    },
+    {
+      "key": "operatingIncome",
+      "top": 114.55000000000001,
+      "bottom": 150.4375
+    },
+    {
+      "key": "revenue",
+      "top": 34.4375,
+      "bottom": 114.55000000000001
+    }
+  ],
+  "retainedTabs": 27,
+  "projectedCaseBytes": 41350,
+  "maxima": {
+    "tab": 745,
+    "tabLedger": 440,
+    "otherLedger": 452,
+    "baseline": 562
+  },
+  "conditional72TabEstimate": 100093,
+  "reportLinks": [
+    "../ui-parity-tooltip-followup/capture/report.md",
+    "../ui-parity-tooltip-followup-runtime-review/review.md",
+    "source-hashes.json",
+    "../ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/projection.mjs",
+    "offline-calculations.json",
+    "../ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/journey.mjs",
+    "publication-allowlist.json"
+  ],
+  "reviewedFrozenFiles": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/report.md",
+      "sha256": "9e689aeea647a239314bef20c38a97ab8821fe29732e55f42521255c831d5f94",
+      "bytes": 16511
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/offline-calculations.json",
+      "sha256": "eb6a49aacc277e602b55c66e23b0eef210052e36caba4819799a5aded52375b3",
+      "bytes": 23248
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/source-hashes.json",
+      "sha256": "61d93b321349c8648f4f0377380b5980a99e2d2671fc529ea2f36ef3c4cf5702",
+      "bytes": 7722
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/verify.mjs",
+      "sha256": "3c6cb24cc8adfe8565c6cdaeb0497627817ee218916c4417155ab6176be02d44",
+      "bytes": 7800
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/verification.json",
+      "sha256": "246b3c8d226cdbbfd9624e560228193989b72a4781bacf137f8de46a52d7dbda",
+      "bytes": 321
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/publication-allowlist.json",
+      "sha256": "f4fb599b62dc9f6bc8f2755bf828c2d51e067cccf4e4d6c2d723b9ec134c040c",
+      "bytes": 1946
+    }
+  ],
+  "runtimeExecuted": false,
+  "collectorApproved": false,
+  "actualPickedIdentityAccepted": false,
+  "keyboardAccepted": false,
+  "publicationCopyAudit": "Controller must verify copied bytes and all links, including separately copied allowlist metadata, after synchronization."
+}

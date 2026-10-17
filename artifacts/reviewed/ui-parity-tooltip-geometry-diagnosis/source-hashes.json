@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "status": "source-only diagnosis; independent review pending; no collector/runtime acceptance",
+  "originalRevision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "recordedImage": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "packageVersion": "12.1.1",
+  "sourceIsLocalMatchingInstalledDistribution": true,
+  "imageBytesIndependentlyInspected": false,
+  "runtimeExecuted": false,
+  "inputs": [
+    {
+      "path": ".kiro/steering/documentation.md",
+      "bytes": 3981,
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971"
+    },
+    {
+      "path": ".kiro/steering/testing.md",
+      "bytes": 5216,
+      "sha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f"
+    },
+    {
+      "path": ".kiro/steering/delegation.md",
+      "bytes": 4333,
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9"
+    },
+    {
+      "path": ".kiro/steering/complexity.md",
+      "bytes": 4171,
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088"
+    },
+    {
+      "path": ".kiro/specs/openbb-self-service/spec.json",
+      "bytes": 13392,
+      "sha256": "4b7f3f2ba947370c569cec3a0816f52e80045c2f1ac66a705398d3b0139facb6"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/report.md",
+      "bytes": 9502,
+      "sha256": "3a65389817de160b24557808dedd198a39a6b294870c198d51b46e70283555b6"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup-runtime-review/review.md",
+      "bytes": 8887,
+      "sha256": "337cff9c46139520434fd0671d9436e74085e537e8e6d1fe8ffdc0ef6676feae"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/plan.md",
+      "bytes": 11225,
+      "sha256": "95c7f4384c6c25ea48e99859126e03713c14f09645ed75adbba0e657abf2dbdd"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/source-hashes.json",
+      "bytes": 12269,
+      "sha256": "3c8820b49ec8f694e2e46c212d2d3ebc217be4700c7c44288310a0e7b0ae87c7"
+    },
+    {
+      "path": "artifacts/task-2.1/frontend/terminalpro/package.json",
+      "bytes": 9188,
+      "sha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf"
+    },
+    {
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-charts-community/package.json",
+      "bytes": 2422,
+      "sha256": "77ae0168d7c6209f2c880a00748fadbb390da794532164d84e0b4382e61c5b88"
+    },
+    {
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-charts-community/dist/package/main.esm.mjs",
+      "bytes": 1847559,
+      "sha256": "e9b1b8be8d27ffc1f2c66e715b863b36d5f3aecef0c79e18cc0101a440956df4"
+    },
+    {
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-charts-community/dist/types/src/scene/node.d.ts",
+      "bytes": 4511,
+      "sha256": "891fd7fca43cfbf1d21b1dcc5562bab263149d6e57671fe89023ff6ceb94d779"
+    },
+    {
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-charts-community/dist/types/src/scene/transformable.d.ts",
+      "bytes": 2827,
+      "sha256": "663fbc687a7c796f4d15acf80d01ed869916c89fe1819daff05435484ec35cec"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/runtime-identity.json",
+      "bytes": 234,
+      "sha256": "b3538cead9f4755f18105a6170bbb40ba5c6b1ddff7a0c313b5e9902d0d221af"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/fixture.json",
+      "bytes": 2031,
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/projection.mjs",
+      "bytes": 10302,
+      "sha256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/collector.mjs",
+      "bytes": 3994,
+      "sha256": "9a067f68588e0a098a818753b5d209f03ebf4b8fa41361df5cf1b0a31cacee8a"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/journey.mjs",
+      "bytes": 18240,
+      "sha256": "8d55aa8f47f0ecf5dfe103feef6bd6b99a9c9caef93a87b8bc1545710f347aeb"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/io.mjs",
+      "bytes": 1327,
+      "sha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/harness/contract.mjs",
+      "bytes": 2533,
+      "sha256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T01.json",
+      "bytes": 68605,
+      "sha256": "82e08762ea074627d62a3d40037666f570c494f0eae677457fbf433b9e7419ff"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T02.json",
+      "bytes": 65617,
+      "sha256": "7e8cb9195bc0cab9c9b0d13de04d6a56de0c16e7a55bd55dd3d7f43ee093da53"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T03.json",
+      "bytes": 46622,
+      "sha256": "43112eeee0a2a68c211f044ab8011f1569fdc0cde77c76d92f742a75b524a8a2"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T04.json",
+      "bytes": 97315,
+      "sha256": "a58f0539075ac33b4cf7cb03210b8fc4dd13efbb0514c5b0588299ba0cb994ae"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T05.json",
+      "bytes": 108285,
+      "sha256": "4a723977318f2e2ae2d909574577ce47068c66fba2520b3e551e99f50c1f903f"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T06.json",
+      "bytes": 119493,
+      "sha256": "88d9d35c52f5eb5d18f15cb320e8ced7aae788f45736243e9b67a3865812fc84"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T07.json",
+      "bytes": 95844,
+      "sha256": "b995188900e4eed9dc923fd2f6b60393bf322b00d50b05c2382b838e39b4634e"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-tooltip-followup/capture/attempt-20261017-tooltip-followup-a1/T08.json",
+      "bytes": 80336,
+      "sha256": "88c6a679a24fbe664e7fefe9d8f1f80a0dadfbc74f444f157a3f9f880e2524db"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/ui-parity-tooltip-geometry-diagnosis/report.md",
+      "bytes": 16511,
+      "sha256": "9e689aeea647a239314bef20c38a97ab8821fe29732e55f42521255c831d5f94"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-geometry-diagnosis/offline-calculations.json",
+      "bytes": 23248,
+      "sha256": "eb6a49aacc277e602b55c66e23b0eef210052e36caba4819799a5aded52375b3"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-geometry-diagnosis/verify.mjs",
+      "bytes": 7800,
+      "sha256": "3c6cb24cc8adfe8565c6cdaeb0497627817ee218916c4417155ab6176be02d44"
+    }
+  ],
+  "verification": {
+    "sourceHashResampleEqual": true,
+    "publicationReportHashMatched": true,
+    "offlineCalculationChecks": 229,
+    "productionFilesModified": false,
+    "gitOperations": false,
+    "allowedWrites": "artifacts/ui-parity-tooltip-geometry-diagnosis/"
+  }
+}

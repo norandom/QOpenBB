@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "Proposed bounded source diagnosis; independent review pending; no runtime or collector acceptance",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/report.md",
+      "bytes": 16511,
+      "sha256": "9e689aeea647a239314bef20c38a97ab8821fe29732e55f42521255c831d5f94",
+      "sanitization": "None; source-only synthetic retained-data diagnosis"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/offline-calculations.json",
+      "bytes": 23248,
+      "sha256": "eb6a49aacc277e602b55c66e23b0eef210052e36caba4819799a5aded52375b3",
+      "sanitization": "None; source-only synthetic retained-data diagnosis"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/source-hashes.json",
+      "bytes": 7722,
+      "sha256": "61d93b321349c8648f4f0377380b5980a99e2d2671fc529ea2f36ef3c4cf5702",
+      "sanitization": "None; source-only synthetic retained-data diagnosis"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/verify.mjs",
+      "bytes": 7800,
+      "sha256": "3c6cb24cc8adfe8565c6cdaeb0497627817ee218916c4417155ab6176be02d44",
+      "sanitization": "None; source-only synthetic retained-data diagnosis"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-diagnosis/verification.json",
+      "bytes": 321,
+      "sha256": "246b3c8d226cdbbfd9624e560228193989b72a4781bacf137f8de46a52d7dbda",
+      "sanitization": "None; source-only synthetic retained-data diagnosis"
+    }
+  ],
+  "omissions": [
+    "Installed dependency source is referenced by exact local path and SHA-256, not copied or linked as a published dependency cache.",
+    "No private runtime/process/credential receipts, logs, profiles or provider data.",
+    "All historical 24 pointer records remain in their original reviewed package; no rewritten historical evidence."
+  ]
+}

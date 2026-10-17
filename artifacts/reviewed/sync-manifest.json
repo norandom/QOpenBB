@@ -75,10 +75,12 @@
     "ui-parity-legend-plan-revision-review",
     "ui-parity-legend-plan-review",
     "ui-parity-legend-plan-revised",
-    "ui-parity-legend-docs-review"
+    "ui-parity-legend-docs-review",
+    "ui-parity-tooltip-geometry-diagnosis",
+    "ui-parity-tooltip-geometry-review"
   ],
   "sourcepins": {
-    "root_at_sync": "e70854c11e2b2316f8c1b023469f642dd2a1e0bf",
+    "root_at_sync": "6680899f8160f4cf0a63f562c3db2e0358d6d2bf",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -23611,6 +23613,94 @@
       "publishedSHA256": "399a432faaba125be0e2fa73f67a6a6a703feba1f1ff999070f3d0c71b7939c5",
       "bytes": 194,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-diagnosis/report.md",
+      "sourceSHA256": "9e689aeea647a239314bef20c38a97ab8821fe29732e55f42521255c831d5f94",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-diagnosis/report.md",
+      "publishedSHA256": "9e689aeea647a239314bef20c38a97ab8821fe29732e55f42521255c831d5f94",
+      "bytes": 16511,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-diagnosis/offline-calculations.json",
+      "sourceSHA256": "eb6a49aacc277e602b55c66e23b0eef210052e36caba4819799a5aded52375b3",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-diagnosis/offline-calculations.json",
+      "publishedSHA256": "eb6a49aacc277e602b55c66e23b0eef210052e36caba4819799a5aded52375b3",
+      "bytes": 23248,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-diagnosis/source-hashes.json",
+      "sourceSHA256": "61d93b321349c8648f4f0377380b5980a99e2d2671fc529ea2f36ef3c4cf5702",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-diagnosis/source-hashes.json",
+      "publishedSHA256": "61d93b321349c8648f4f0377380b5980a99e2d2671fc529ea2f36ef3c4cf5702",
+      "bytes": 7722,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-diagnosis/verify.mjs",
+      "sourceSHA256": "3c6cb24cc8adfe8565c6cdaeb0497627817ee218916c4417155ab6176be02d44",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-diagnosis/verify.mjs",
+      "publishedSHA256": "3c6cb24cc8adfe8565c6cdaeb0497627817ee218916c4417155ab6176be02d44",
+      "bytes": 7800,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-diagnosis/verification.json",
+      "sourceSHA256": "246b3c8d226cdbbfd9624e560228193989b72a4781bacf137f8de46a52d7dbda",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-diagnosis/verification.json",
+      "publishedSHA256": "246b3c8d226cdbbfd9624e560228193989b72a4781bacf137f8de46a52d7dbda",
+      "bytes": 321,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-diagnosis/publication-allowlist.json",
+      "sourceSHA256": "f4fb599b62dc9f6bc8f2755bf828c2d51e067cccf4e4d6c2d723b9ec134c040c",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-diagnosis/publication-allowlist.json",
+      "publishedSHA256": "f4fb599b62dc9f6bc8f2755bf828c2d51e067cccf4e4d6c2d723b9ec134c040c",
+      "bytes": 1946,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-review/review.md",
+      "sourceSHA256": "192bbf38e5b8165a0de35d6a8b4ff3b71ce32b32c93bc85b0698dcf03095e420",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-review/review.md",
+      "publishedSHA256": "192bbf38e5b8165a0de35d6a8b4ff3b71ce32b32c93bc85b0698dcf03095e420",
+      "bytes": 8622,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-review/audit.mjs",
+      "sourceSHA256": "4281a887cc2beb96cd40923ca6109ccdd594361c6b08077fd2651a0fb2368009",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-review/audit.mjs",
+      "publishedSHA256": "4281a887cc2beb96cd40923ca6109ccdd594361c6b08077fd2651a0fb2368009",
+      "bytes": 8647,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-review/read-only-verifier.mjs",
+      "sourceSHA256": "32f3b812bb8ebe521116a401996f048621b92d94ae7e8db086a11a79a3019e22",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-review/read-only-verifier.mjs",
+      "publishedSHA256": "32f3b812bb8ebe521116a401996f048621b92d94ae7e8db086a11a79a3019e22",
+      "bytes": 595,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-review/verification.json",
+      "sourceSHA256": "5b7d6401847d914bab47328b51aeeab0af634d0b4e30d74fab8ccef8b78decf1",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-review/verification.json",
+      "publishedSHA256": "5b7d6401847d914bab47328b51aeeab0af634d0b4e30d74fab8ccef8b78decf1",
+      "bytes": 3052,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-geometry-review/publication-allowlist.json",
+      "sourceSHA256": "be7ffde5e521e9b7c4914524758e4ecd05b1c00b68ef54ec4bb37b70a99cffcd",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-geometry-review/publication-allowlist.json",
+      "publishedSHA256": "be7ffde5e521e9b7c4914524758e4ecd05b1c00b68ef54ec4bb37b70a99cffcd",
+      "bytes": 1360,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -24324,5 +24414,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 157907593
+  "total_payload_bytes": 157987417
 }

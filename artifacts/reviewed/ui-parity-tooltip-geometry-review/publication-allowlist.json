@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "Independent source proposal/publication review only; no collector or runtime acceptance",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-review/review.md",
+      "sha256": "192bbf38e5b8165a0de35d6a8b4ff3b71ce32b32c93bc85b0698dcf03095e420",
+      "bytes": 8622,
+      "sanitization": "None; bounded source-only review and synthetic retained-data calculations"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-review/audit.mjs",
+      "sha256": "4281a887cc2beb96cd40923ca6109ccdd594361c6b08077fd2651a0fb2368009",
+      "bytes": 8647,
+      "sanitization": "None; bounded source-only review and synthetic retained-data calculations"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-review/read-only-verifier.mjs",
+      "sha256": "32f3b812bb8ebe521116a401996f048621b92d94ae7e8db086a11a79a3019e22",
+      "bytes": 595,
+      "sanitization": "None; bounded source-only review and synthetic retained-data calculations"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-geometry-review/verification.json",
+      "sha256": "5b7d6401847d914bab47328b51aeeab0af634d0b4e30d74fab8ccef8b78decf1",
+      "bytes": 3052,
+      "sanitization": "None; bounded source-only review and synthetic retained-data calculations"
+    }
+  ]
+}

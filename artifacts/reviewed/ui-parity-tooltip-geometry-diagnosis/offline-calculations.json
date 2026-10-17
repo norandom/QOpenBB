@@ -1,0 +1,1124 @@
+{
+  "date": "2026-10-17",
+  "status": "offline retained-data calculations only; no runtime or picking simulation; proposal requires independent review",
+  "checks": 229,
+  "pointerCount": 24,
+  "groupedCount": 17,
+  "lineCount": 4,
+  "stackedCount": 3,
+  "geometry": [
+    {
+      "case": "T01",
+      "id": "T01.p1",
+      "family": "groupedColumn",
+      "ordinal": 0,
+      "key": "cashFlow",
+      "seriesId": "BarSeries-1",
+      "wrapperId": 0,
+      "rawYValue": -4.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 27.50999999999999,
+        "y": 185.9625
+      },
+      "midpoint": {
+        "x": 27.50999999999999,
+        "y": 185.9625
+      },
+      "recordedCSS": {
+        "x": 347.8225,
+        "y": 310.415625
+      },
+      "midpointCSS": {
+        "x": 347.8225,
+        "y": 310.415625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        }
+      ]
+    },
+    {
+      "case": "T01",
+      "id": "T01.p2",
+      "family": "groupedColumn",
+      "ordinal": 0,
+      "key": "operatingIncome",
+      "seriesId": "BarSeries-2",
+      "wrapperId": 0,
+      "rawYValue": 27.625,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 51.50999999999999,
+        "y": 93.88749999999999
+      },
+      "midpoint": {
+        "x": 51.50999999999999,
+        "y": 93.88749999999999
+      },
+      "recordedCSS": {
+        "x": 371.8225,
+        "y": 218.340625
+      },
+      "midpointCSS": {
+        "x": 371.8225,
+        "y": 218.340625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "27.625"
+        }
+      ]
+    },
+    {
+      "case": "T01",
+      "id": "T01.p3",
+      "family": "groupedColumn",
+      "ordinal": 0,
+      "key": "revenue",
+      "seriesId": "BarSeries-3",
+      "wrapperId": 0,
+      "rawYValue": 12.375,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 75.50999999999999,
+        "y": 138.1125
+      },
+      "midpoint": {
+        "x": 75.50999999999999,
+        "y": 138.1125
+      },
+      "recordedCSS": {
+        "x": 395.8225,
+        "y": 262.565625
+      },
+      "midpointCSS": {
+        "x": 395.8225,
+        "y": 262.565625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ]
+    },
+    {
+      "case": "T02",
+      "id": "T02.p4",
+      "family": "groupedColumn",
+      "ordinal": 1,
+      "key": "revenue",
+      "seriesId": "BarSeries-3",
+      "wrapperId": 1,
+      "rawYValue": 27.625,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 178.91,
+        "y": 93.88749999999999
+      },
+      "midpoint": {
+        "x": 178.91,
+        "y": 93.88749999999999
+      },
+      "recordedCSS": {
+        "x": 499.22249999999997,
+        "y": 218.340625
+      },
+      "midpointCSS": {
+        "x": 499.22249999999997,
+        "y": 218.340625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ]
+    },
+    {
+      "case": "T02",
+      "id": "T02.p5",
+      "family": "groupedColumn",
+      "ordinal": 1,
+      "key": "operatingIncome",
+      "seriesId": "BarSeries-2",
+      "wrapperId": 1,
+      "rawYValue": 12.375,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 154.91,
+        "y": 138.1125
+      },
+      "midpoint": {
+        "x": 154.91,
+        "y": 138.1125
+      },
+      "recordedCSS": {
+        "x": 475.22249999999997,
+        "y": 262.565625
+      },
+      "midpointCSS": {
+        "x": 475.22249999999997,
+        "y": 262.565625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "12.375"
+        }
+      ]
+    },
+    {
+      "case": "T02",
+      "id": "T02.p6",
+      "family": "groupedColumn",
+      "ordinal": 0,
+      "key": "revenue",
+      "seriesId": "BarSeries-3",
+      "wrapperId": 0,
+      "rawYValue": 12.375,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 75.50999999999999,
+        "y": 138.1125
+      },
+      "midpoint": {
+        "x": 75.50999999999999,
+        "y": 138.1125
+      },
+      "recordedCSS": {
+        "x": 395.8225,
+        "y": 262.565625
+      },
+      "midpointCSS": {
+        "x": 395.8225,
+        "y": 262.565625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ]
+    },
+    {
+      "case": "T03",
+      "id": "T03.p7",
+      "family": "groupedColumn",
+      "ordinal": 2,
+      "key": "cashFlow",
+      "seriesId": "BarSeries-1",
+      "wrapperId": 2,
+      "rawYValue": -7.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 234.31,
+        "y": 194.6625
+      },
+      "midpoint": {
+        "x": 234.31,
+        "y": 194.6625
+      },
+      "recordedCSS": {
+        "x": 554.6225,
+        "y": 319.115625
+      },
+      "midpointCSS": {
+        "x": 554.6225,
+        "y": 319.115625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-7.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "case": "T03",
+      "id": "T03.p8",
+      "family": "groupedColumn",
+      "ordinal": 3,
+      "key": "operatingIncome",
+      "seriesId": "BarSeries-2",
+      "wrapperId": 3,
+      "rawYValue": -3.375,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 361.71000000000004,
+        "y": 183.7875
+      },
+      "midpoint": {
+        "x": 361.71000000000004,
+        "y": 183.7875
+      },
+      "recordedCSS": {
+        "x": 682.0225,
+        "y": 308.240625
+      },
+      "midpointCSS": {
+        "x": 682.0225,
+        "y": 308.240625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "0"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "-3.375"
+        }
+      ]
+    },
+    {
+      "case": "T04",
+      "id": "T04.p9",
+      "family": "groupedColumn",
+      "ordinal": 4,
+      "key": "revenue",
+      "seriesId": "BarSeries-3",
+      "wrapperId": 4,
+      "rawYValue": 7.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 489.11,
+        "y": 153.3375
+      },
+      "midpoint": {
+        "x": 489.11,
+        "y": 153.3375
+      },
+      "recordedCSS": {
+        "x": 809.4225,
+        "y": 277.790625
+      },
+      "midpointCSS": {
+        "x": 809.4225,
+        "y": 277.790625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "2.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "7.125"
+        }
+      ]
+    },
+    {
+      "case": "T04",
+      "id": "T04.p10",
+      "family": "groupedColumn",
+      "ordinal": 4,
+      "key": "operatingIncome",
+      "seriesId": "BarSeries-2",
+      "wrapperId": 4,
+      "rawYValue": 7.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 465.11,
+        "y": 153.3375
+      },
+      "midpoint": {
+        "x": 465.11,
+        "y": 153.3375
+      },
+      "recordedCSS": {
+        "x": 785.4225,
+        "y": 277.790625
+      },
+      "midpointCSS": {
+        "x": 785.4225,
+        "y": 277.790625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "2.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "7.125"
+        }
+      ]
+    },
+    {
+      "case": "T04",
+      "id": "T04.p11",
+      "family": "groupedColumn",
+      "ordinal": 0,
+      "key": "cashFlow",
+      "seriesId": "BarSeries-1",
+      "wrapperId": 0,
+      "rawYValue": -4.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 27.50999999999999,
+        "y": 185.9625
+      },
+      "midpoint": {
+        "x": 27.50999999999999,
+        "y": 185.9625
+      },
+      "recordedCSS": {
+        "x": 347.8225,
+        "y": 310.415625
+      },
+      "midpointCSS": {
+        "x": 347.8225,
+        "y": 310.415625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "27.625"
+        },
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ]
+    },
+    {
+      "case": "T04",
+      "id": "T04.p12",
+      "family": "groupedColumn",
+      "ordinal": 1,
+      "key": "cashFlow",
+      "seriesId": "BarSeries-1",
+      "wrapperId": 1,
+      "rawYValue": 8.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 130.91,
+        "y": 150.4375
+      },
+      "midpoint": {
+        "x": 130.91,
+        "y": 150.4375
+      },
+      "recordedCSS": {
+        "x": 451.22249999999997,
+        "y": 274.890625
+      },
+      "midpointCSS": {
+        "x": 451.22249999999997,
+        "y": 274.890625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "8.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "12.375"
+        },
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ]
+    },
+    {
+      "case": "T05",
+      "id": "T05.p13",
+      "family": "groupedColumn",
+      "ordinal": 0,
+      "key": "cashFlow",
+      "seriesId": "BarSeries-1",
+      "wrapperId": 0,
+      "rawYValue": -4.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 27.50999999999999,
+        "y": 185.9625
+      },
+      "midpoint": {
+        "x": 27.50999999999999,
+        "y": 185.9625
+      },
+      "recordedCSS": {
+        "x": 347.8225,
+        "y": 310.415625
+      },
+      "midpointCSS": {
+        "x": 347.8225,
+        "y": 310.415625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        }
+      ]
+    },
+    {
+      "case": "T05",
+      "id": "T05.p14",
+      "family": "groupedColumn",
+      "ordinal": 0,
+      "key": "operatingIncome",
+      "seriesId": "BarSeries-2",
+      "wrapperId": 0,
+      "rawYValue": 27.625,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 51.50999999999999,
+        "y": 93.88749999999999
+      },
+      "midpoint": {
+        "x": 51.50999999999999,
+        "y": 93.88749999999999
+      },
+      "recordedCSS": {
+        "x": 371.8225,
+        "y": 218.340625
+      },
+      "midpointCSS": {
+        "x": 371.8225,
+        "y": 218.340625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "27.625"
+        }
+      ]
+    },
+    {
+      "case": "T05",
+      "id": "T05.p15",
+      "family": "groupedColumn",
+      "ordinal": 0,
+      "key": "revenue",
+      "seriesId": "BarSeries-3",
+      "wrapperId": 0,
+      "rawYValue": 12.375,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 75.50999999999999,
+        "y": 138.1125
+      },
+      "midpoint": {
+        "x": 75.50999999999999,
+        "y": 138.1125
+      },
+      "recordedCSS": {
+        "x": 395.8225,
+        "y": 262.565625
+      },
+      "midpointCSS": {
+        "x": 395.8225,
+        "y": 262.565625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ]
+    },
+    {
+      "case": "T05",
+      "id": "T05.p16",
+      "family": "groupedColumn",
+      "ordinal": 1,
+      "key": "revenue",
+      "seriesId": "BarSeries-3",
+      "wrapperId": 1,
+      "rawYValue": 27.625,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 178.91,
+        "y": 93.88749999999999
+      },
+      "midpoint": {
+        "x": 178.91,
+        "y": 93.88749999999999
+      },
+      "recordedCSS": {
+        "x": 499.22249999999997,
+        "y": 218.340625
+      },
+      "midpointCSS": {
+        "x": 499.22249999999997,
+        "y": 218.340625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ]
+    },
+    {
+      "case": "T05",
+      "id": "T05.p17",
+      "family": "groupedColumn",
+      "ordinal": 4,
+      "key": "revenue",
+      "seriesId": "BarSeries-3",
+      "wrapperId": 4,
+      "rawYValue": 7.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 489.11,
+        "y": 153.3375
+      },
+      "midpoint": {
+        "x": 489.11,
+        "y": 153.3375
+      },
+      "recordedCSS": {
+        "x": 809.4225,
+        "y": 277.790625
+      },
+      "midpointCSS": {
+        "x": 809.4225,
+        "y": 277.790625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ]
+    },
+    {
+      "case": "T07",
+      "id": "T07.p46",
+      "family": "line",
+      "ordinal": 4,
+      "key": "revenue",
+      "seriesId": "LineSeries-3",
+      "wrapperId": 4,
+      "rawYValue": 7.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 123.453125
+      },
+      "center": {
+        "x": 504.69047619047615,
+        "y": 133.246875
+      },
+      "midpoint": {
+        "x": 504.69047619047615,
+        "y": 133.246875
+      },
+      "recordedCSS": {
+        "x": 825.0029761904761,
+        "y": 256.7
+      },
+      "midpointCSS": {
+        "x": 825.0029761904761,
+        "y": 256.7
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "7.125"
+        }
+      ]
+    },
+    {
+      "case": "T07",
+      "id": "T07.p47",
+      "family": "line",
+      "ordinal": 0,
+      "key": "cashFlow",
+      "seriesId": "LineSeries-1",
+      "wrapperId": 0,
+      "rawYValue": -4.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 123.453125
+      },
+      "center": {
+        "x": 12.309523809523824,
+        "y": 198.778125
+      },
+      "midpoint": {
+        "x": 12.309523809523824,
+        "y": 198.778125
+      },
+      "recordedCSS": {
+        "x": 332.62202380952385,
+        "y": 322.23125
+      },
+      "midpointCSS": {
+        "x": 332.62202380952385,
+        "y": 322.23125
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        }
+      ]
+    },
+    {
+      "case": "T07",
+      "id": "T07.p48",
+      "family": "line",
+      "ordinal": 2,
+      "key": "cashFlow",
+      "seriesId": "LineSeries-1",
+      "wrapperId": 2,
+      "rawYValue": -7.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 123.453125
+      },
+      "center": {
+        "x": 258.5,
+        "y": 216.253125
+      },
+      "midpoint": {
+        "x": 258.5,
+        "y": 216.253125
+      },
+      "recordedCSS": {
+        "x": 578.8125,
+        "y": 339.70625
+      },
+      "midpointCSS": {
+        "x": 578.8125,
+        "y": 339.70625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-7.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "case": "T07",
+      "id": "T07.p49",
+      "family": "line",
+      "ordinal": 3,
+      "key": "operatingIncome",
+      "seriesId": "LineSeries-2",
+      "wrapperId": 3,
+      "rawYValue": -3.375,
+      "offset": {
+        "x": 320.3125,
+        "y": 123.453125
+      },
+      "center": {
+        "x": 381.5952380952381,
+        "y": 194.409375
+      },
+      "midpoint": {
+        "x": 381.5952380952381,
+        "y": 194.409375
+      },
+      "recordedCSS": {
+        "x": 701.9077380952381,
+        "y": 317.8625
+      },
+      "midpointCSS": {
+        "x": 701.9077380952381,
+        "y": 317.8625
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "0"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "-3.375"
+        }
+      ]
+    },
+    {
+      "case": "T08",
+      "id": "T08.p50",
+      "family": "stackedColumn",
+      "ordinal": 0,
+      "key": "cashFlow",
+      "seriesId": "BarSeries-4",
+      "wrapperId": 0,
+      "rawYValue": -4.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 51.50999999999999,
+        "y": 179.98125
+      },
+      "midpoint": {
+        "x": 51.50999999999999,
+        "y": 179.98125
+      },
+      "recordedCSS": {
+        "x": 371.8225,
+        "y": 304.434375
+      },
+      "midpointCSS": {
+        "x": 371.8225,
+        "y": 304.434375
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 0
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "27.625"
+        },
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ]
+    },
+    {
+      "case": "T08",
+      "id": "T08.p51",
+      "family": "stackedColumn",
+      "ordinal": 4,
+      "key": "revenue",
+      "seriesId": "BarSeries-6",
+      "wrapperId": 4,
+      "rawYValue": 7.125,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 465.11,
+        "y": 150.25625
+      },
+      "midpoint": {
+        "x": 465.11,
+        "y": 136.84375
+      },
+      "recordedCSS": {
+        "x": 785.4225,
+        "y": 274.709375
+      },
+      "midpointCSS": {
+        "x": 785.4225,
+        "y": 261.296875
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": -13.412499999999994
+      },
+      "displayedRows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "2.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "7.125"
+        },
+        {
+          "label": "Revenue (USD millions)",
+          "value": "7.125"
+        }
+      ]
+    },
+    {
+      "case": "T08",
+      "id": "T08.p52",
+      "family": "stackedColumn",
+      "ordinal": 1,
+      "key": "operatingIncome",
+      "seriesId": "BarSeries-5",
+      "wrapperId": 1,
+      "rawYValue": 12.375,
+      "offset": {
+        "x": 320.3125,
+        "y": 124.453125
+      },
+      "center": {
+        "x": 154.91,
+        "y": 104.21875
+      },
+      "midpoint": {
+        "x": 154.91,
+        "y": 132.49375
+      },
+      "recordedCSS": {
+        "x": 475.22249999999997,
+        "y": 228.671875
+      },
+      "midpointCSS": {
+        "x": 475.22249999999997,
+        "y": 256.946875
+      },
+      "midpointDelta": {
+        "x": 0,
+        "y": 28.275000000000006
+      },
+      "displayedRows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ]
+    }
+  ],
+  "stackedIncomeDerivation": {
+    "totalPositive": 48.125,
+    "localPixelsPerSyntheticUSDmillion": 2.9,
+    "intervals": [
+      {
+        "key": "cashFlow",
+        "top": 150.4375,
+        "bottom": 174,
+        "rawValue": 8.125,
+        "height": 23.5625,
+        "midpoint": 162.21875,
+        "containsOldY": false,
+        "containsProposedY": false
+      },
+      {
+        "key": "operatingIncome",
+        "top": 114.55000000000001,
+        "bottom": 150.4375,
+        "rawValue": 12.375,
+        "height": 35.887499999999996,
+        "midpoint": 132.49375,
+        "containsOldY": false,
+        "containsProposedY": true
+      },
+      {
+        "key": "revenue",
+        "top": 34.437500000000014,
+        "bottom": 114.55000000000001,
+        "rawValue": 27.625,
+        "height": 80.1125,
+        "midpoint": 74.49375,
+        "containsOldY": true,
+        "containsProposedY": false
+      }
+    ]
+  },
+  "keyboard": {
+    "retainedTabs": 27,
+    "actualTabsByMode": [
+      {
+        "mode": "Single",
+        "tabs": 24
+      },
+      {
+        "mode": "Multiple",
+        "tabs": 3
+      }
+    ],
+    "originalCaseBytes": 119493,
+    "projectedCaseBytes": 41350,
+    "maxima": {
+      "tab": 745,
+      "tabLedger": 440,
+      "otherLedger": 452,
+      "baseline": 562
+    },
+    "baselineChecks": [
+      {
+        "mode": "Single",
+        "unchanged": true
+      },
+      {
+        "mode": "Multiple",
+        "unchanged": true
+      }
+    ],
+    "observedMaxima72TabEstimate": 100093,
+    "guardThreshold": 115072,
+    "caseCap": 131072,
+    "unobservedTabs": 45,
+    "estimateIsRuntimeEvidence": false,
+    "estimateIsWorstCaseGuarantee": false,
+    "rawProjection": {
+      "stateKeys": [
+        "active",
+        "tooltip",
+        "liveStatus"
+      ],
+      "hiddenTooltipKeys": [
+        "visible"
+      ],
+      "visibleTooltipKeys": [
+        "visible",
+        "heading",
+        "rows",
+        "compact",
+        "pagination"
+      ],
+      "modeBaselineKeys": [
+        "area",
+        "swapchain"
+      ],
+      "ledgerUnchanged": true,
+      "fullPairPreserved": true,
+      "rawEqualityMustBeCheckedBeforeProjection": true
+    }
+  }
+}
