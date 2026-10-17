@@ -112,10 +112,12 @@
     "ui-parity-legend-fixed-relay-review",
     "ui-parity-legend-fixed-relay-revised",
     "ui-parity-legend-fixed-relay-revision-review",
-    "ui-parity-legend-relay-attempt-review"
+    "ui-parity-legend-relay-attempt-review",
+    "ui-parity-legend-relay-mount-correction",
+    "ui-parity-legend-relay-mount-correction-review"
   ],
   "sourcepins": {
-    "root_at_sync": "0210a450abc5de0513c63978b189189de5547142",
+    "root_at_sync": "e319b0321e7a4b1d11199f1a6b7fb795bfd4ee09",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -28280,6 +28282,94 @@
       "publishedSHA256": "600c0391db6db4a1fec0439c349e80447b47602582b8f18be24a524dec7fe3a0",
       "bytes": 821,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction/proposal.md",
+      "sourceSHA256": "9207c923e3ae55aaa0e575a22e8057000cb0f6450a775931607254945ef9adab",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction/proposal.md",
+      "publishedSHA256": "9207c923e3ae55aaa0e575a22e8057000cb0f6450a775931607254945ef9adab",
+      "bytes": 9669,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction/audit.mjs",
+      "sourceSHA256": "eff58afc7588862851206138adcc84c6857871e97e364178c3ca9930b55bc742",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction/audit.mjs",
+      "publishedSHA256": "eff58afc7588862851206138adcc84c6857871e97e364178c3ca9930b55bc742",
+      "bytes": 2826,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction/source-hashes.json",
+      "sourceSHA256": "7a750d2abdff16efda99b2d489cccb8c25dcb603209389a82208da8f4df07448",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction/source-hashes.json",
+      "publishedSHA256": "7a750d2abdff16efda99b2d489cccb8c25dcb603209389a82208da8f4df07448",
+      "bytes": 2638,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction/verification.json",
+      "sourceSHA256": "2d5215e9a690301a9c42242ec253ee735a58e09cfed66280319d486963aa8c9d",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction/verification.json",
+      "publishedSHA256": "2d5215e9a690301a9c42242ec253ee735a58e09cfed66280319d486963aa8c9d",
+      "bytes": 2938,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction/publication-allowlist.json",
+      "sourceSHA256": "0a844c3728d9c753858a1bef005a5c815656fcc82c3aa33e2e6d9fa3906023d0",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction/publication-allowlist.json",
+      "publishedSHA256": "0a844c3728d9c753858a1bef005a5c815656fcc82c3aa33e2e6d9fa3906023d0",
+      "bytes": 782,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction-review/review.md",
+      "sourceSHA256": "9c48ba928e19660dfca64f27c2c2b019b38dcd2023231330815124d524f5a99e",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction-review/review.md",
+      "publishedSHA256": "9c48ba928e19660dfca64f27c2c2b019b38dcd2023231330815124d524f5a99e",
+      "bytes": 5280,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction-review/audit.mjs",
+      "sourceSHA256": "29c006b4cd6ad6c1701d58ec21a8eb744dc80e3e7209a062e6f53b1ca2e9ae09",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction-review/audit.mjs",
+      "publishedSHA256": "29c006b4cd6ad6c1701d58ec21a8eb744dc80e3e7209a062e6f53b1ca2e9ae09",
+      "bytes": 3580,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction-review/source-hashes.json",
+      "sourceSHA256": "b1b168b537a72f6daec7b60001b748995577ff47301266dacbc118c1828b940c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction-review/source-hashes.json",
+      "publishedSHA256": "b1b168b537a72f6daec7b60001b748995577ff47301266dacbc118c1828b940c",
+      "bytes": 3569,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction-review/reviewed-proposal-publication-allowlist.json",
+      "sourceSHA256": "0a844c3728d9c753858a1bef005a5c815656fcc82c3aa33e2e6d9fa3906023d0",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction-review/reviewed-proposal-publication-allowlist.json",
+      "publishedSHA256": "0a844c3728d9c753858a1bef005a5c815656fcc82c3aa33e2e6d9fa3906023d0",
+      "bytes": 782,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction-review/verification.json",
+      "sourceSHA256": "1e21dc8c561b1a8f74315e363feda630a7886fd34af09afc38d2f29b3d4c48fd",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction-review/verification.json",
+      "publishedSHA256": "1e21dc8c561b1a8f74315e363feda630a7886fd34af09afc38d2f29b3d4c48fd",
+      "bytes": 4353,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-relay-mount-correction-review/publication-allowlist.json",
+      "sourceSHA256": "0dc2f61f92233df7bbc0285c07100cd0959191ebfdf71e2a043682787449785a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-relay-mount-correction-review/publication-allowlist.json",
+      "publishedSHA256": "0dc2f61f92233df7bbc0285c07100cd0959191ebfdf71e2a043682787449785a",
+      "bytes": 1039,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -28993,5 +29083,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 161150441
+  "total_payload_bytes": 161187897
 }

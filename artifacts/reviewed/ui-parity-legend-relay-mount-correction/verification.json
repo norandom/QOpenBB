@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-17",
+  "command": "node artifacts/ui-parity-legend-relay-mount-correction/audit.mjs",
+  "exitCode": 0,
+  "scope": "Read-only source/proposal audit; no proposed predicate, Docker command or runtime executed",
+  "checks": [
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-fixed-relay-revised/harness/admission.mjs",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-fixed-relay-revised/harness/probe.mjs",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-fixed-relay-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-fixed-relay-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-fixed-relay-plan-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/report.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/observations.json",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes .kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes .kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes .kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes .kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes .kiro/steering/ci.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-relay-mount-correction/proposal.md",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-relay-mount-correction/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-relay-mount-correction/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "frozen bytes artifacts/ui-parity-legend-relay-mount-correction/verification.json",
+      "passed": true
+    },
+    {
+      "name": "source currently requires four runtime mounts",
+      "passed": true
+    },
+    {
+      "name": "source separately compares fixed tmpfs string",
+      "passed": true
+    },
+    {
+      "name": "source configures exactly three bind arguments",
+      "passed": true
+    },
+    {
+      "name": "source configures exact original tmpfs",
+      "passed": true
+    },
+    {
+      "name": "proposal preserves exact tmpfs and guard boundary",
+      "passed": true
+    },
+    {
+      "name": "proposal labels matrix planned rather than executed",
+      "passed": true
+    },
+    {
+      "name": "no copied executable or runtime state",
+      "passed": true
+    }
+  ]
+}

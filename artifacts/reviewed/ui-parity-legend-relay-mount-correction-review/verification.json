@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-17",
+  "command": "node artifacts/ui-parity-legend-relay-mount-correction-review/audit.mjs",
+  "exitCode": 0,
+  "scope": "Read-only proposal/source review; no candidate predicate or runtime test",
+  "checks": [
+    {
+      "name": "pinned artifacts/ui-parity-legend-fixed-relay-revised/harness/admission.mjs",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-fixed-relay-revised/harness/probe.mjs",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-fixed-relay-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-fixed-relay-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-fixed-relay-plan-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/report.md",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/observations.json",
+      "passed": true
+    },
+    {
+      "name": "pinned AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "pinned .kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "pinned .kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "pinned .kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "pinned .kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "pinned .kiro/steering/ci.md",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-relay-mount-correction/proposal.md",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-relay-mount-correction/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-relay-mount-correction/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-relay-mount-correction/verification.json",
+      "passed": true
+    },
+    {
+      "name": "pinned artifacts/ui-parity-legend-relay-mount-correction/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "reviewed proposal allowlist identical",
+      "passed": true
+    },
+    {
+      "name": "contract exactly three entries",
+      "passed": true
+    },
+    {
+      "name": "contract exactly one own enumerable key",
+      "passed": true
+    },
+    {
+      "name": "contract rw,nosuid,nodev,size=1048576",
+      "passed": true
+    },
+    {
+      "name": "contract unexpectedKeyCount",
+      "passed": true
+    },
+    {
+      "name": "contract planned disproof tests, not completed candidate tests",
+      "passed": true
+    },
+    {
+      "name": "contract No future probe grant follows",
+      "passed": true
+    },
+    {
+      "name": "selected proposal artifacts/ui-parity-legend-relay-mount-correction/proposal.md",
+      "passed": true
+    },
+    {
+      "name": "bounded placeholder/secret scan artifacts/ui-parity-legend-relay-mount-correction/proposal.md",
+      "passed": true
+    },
+    {
+      "name": "selected proposal artifacts/ui-parity-legend-relay-mount-correction/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "bounded placeholder/secret scan artifacts/ui-parity-legend-relay-mount-correction/audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "selected proposal artifacts/ui-parity-legend-relay-mount-correction/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "bounded placeholder/secret scan artifacts/ui-parity-legend-relay-mount-correction/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "selected proposal artifacts/ui-parity-legend-relay-mount-correction/verification.json",
+      "passed": true
+    },
+    {
+      "name": "bounded placeholder/secret scan artifacts/ui-parity-legend-relay-mount-correction/verification.json",
+      "passed": true
+    },
+    {
+      "name": "review link source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "review link ../ui-parity-legend-relay-mount-correction/proposal.md",
+      "passed": true
+    },
+    {
+      "name": "review link reviewed-proposal-publication-allowlist.json",
+      "passed": true
+    }
+  ]
+}
