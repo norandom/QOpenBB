@@ -1,0 +1,43 @@
+{
+  "sanitization": "None for selected source/receipts: whitelist projection only. No raw private receipt or log is selected.",
+  "generatedCredentialsPublished": false,
+  "omitted": [
+    {
+      "path": "cleanup.log",
+      "bytes": 0,
+      "reason": "Private runtime metadata or raw log; no contents selected"
+    },
+    {
+      "path": "finalize.log",
+      "bytes": 0,
+      "reason": "Private runtime metadata or raw log; no contents selected"
+    },
+    {
+      "path": "launcher-error.log",
+      "bytes": 0,
+      "reason": "Private runtime metadata or raw log; no contents selected"
+    },
+    {
+      "path": "launcher.log",
+      "bytes": 0,
+      "reason": "Private runtime metadata or raw log; no contents selected"
+    },
+    {
+      "path": "probe.log",
+      "bytes": 0,
+      "reason": "Private runtime metadata or raw log; no contents selected"
+    },
+    {
+      "path": "runtime-private.json",
+      "bytes": 609,
+      "reason": "Private runtime metadata or raw log; no contents selected"
+    },
+    {
+      "path": "supervisor.log",
+      "bytes": 0,
+      "reason": "Private runtime metadata or raw log; no contents selected"
+    }
+  ],
+  "metadata": "The allowlist excludes itself; sourcePath/SHA256/bytes refer to exact original selected bytes",
+  "runtimeScope": "One no-browser diagnostic; no UI acceptance or grant extension"
+}

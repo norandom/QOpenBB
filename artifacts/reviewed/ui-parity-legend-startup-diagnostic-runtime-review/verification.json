@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "scope": "Independent existing evidence/source/filesystem review only; no Docker, runtime, network, process probe, retry, build, install or frozen writes",
+  "node": "v24.20.0",
+  "checks": [
+    "dispatch allowlist pin",
+    "accepted source pins",
+    "seven exact executed runtime copies",
+    "27 unique safe selected entries",
+    "three finite same-instance selected observations",
+    "unresolved result retains nonzero status and zero-health source gate",
+    "retained exact cleanup and later absence proofs; current filesystem absence",
+    "actual retained inventory and public bounds",
+    "no generated private values or common credential patterns selected",
+    "supplied read-only evidence verifier",
+    "selected frozen bytes preserved"
+  ],
+  "allowlistSha256": "7c846fea4bc194c8ad83ae32829ee85022af7d3b25beaee2795744b3a2fbb0b1",
+  "runtimeCopies": 7,
+  "selectedFiles": 27,
+  "physicalAttemptFiles": 25,
+  "physicalAttemptBytes": 33226,
+  "publicJsonBytes": 11474,
+  "readEndAfterRunMs": [
+    51.17140500000005,
+    1054.140286,
+    3064.424519
+  ],
+  "outcome": "publication-not-observed-within-window",
+  "exitCode": 1,
+  "cleanup": "cleaned",
+  "absenceEvidence": {
+    "ownedCheckedAt": "2026-10-17T16:16:47.415Z",
+    "launcherCheckedAt": "2026-10-17T16:16:45.5133496Z",
+    "reviewerReranLiveChecks": false
+  },
+  "suppliedVerifier": {
+    "exitCode": 0,
+    "output": {
+      "status": "verified-one-diagnostic-evidence",
+      "readOnly": true,
+      "sourceCopies": 7,
+      "selectedSnapshots": 3,
+      "healthRequests": 0,
+      "browserCreated": false,
+      "cleanup": "cleaned",
+      "freshOwnedAbsence": true,
+      "allowlistFiles": 27,
+      "noRetry": true,
+      "conclusion": "Publication not observed within this finite window; root cause unresolved"
+    }
+  },
+  "frozenPreserved": true,
+  "conclusion": "Configured loopback/dynamic binding was present; runtime allocation was null on three running same-instance observations. No root-cause or future-readiness conclusion."
+}

@@ -1,0 +1,189 @@
+{
+  "attempt": "attempt-20261017T1615437-672fb2a3",
+  "outcome": "publication-not-observed-within-window",
+  "rawResult": {
+    "outcome": "publication-not-observed-within-window",
+    "samples": 3,
+    "originalSource": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+    "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+    "browserCreated": false,
+    "noRetry": true
+  },
+  "rawStatus": {
+    "exitCode": 1,
+    "status": "diagnostic-closed",
+    "outcome": "publication-not-observed-within-window",
+    "browserCreated": false,
+    "noRetry": true
+  },
+  "sourceManifest": {
+    "sourcePath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/source-manifest.json",
+    "sha256": "29096d4612637299972e068e4b4d76dbe1331051e1dce7f885258cb3bc79fe3b",
+    "bytes": 2815
+  },
+  "selectedReceipt": {
+    "sourcePath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/samples.json",
+    "sha256": "cbb4ec3c6a1c3be483d6b95822a1aab6322747c0bd8b88d6bc55392f5c4dca1b",
+    "bytes": 5755
+  },
+  "derived": true,
+  "samples": [
+    {
+      "sample": 1,
+      "plannedOffsetMs": 0,
+      "actualReadEndAfterRunMs": 51.17140500000005,
+      "runtimeTarget": {
+        "own": true,
+        "in": true,
+        "kind": "null",
+        "type": "object",
+        "value": null
+      },
+      "configuredTarget": {
+        "own": true,
+        "in": true,
+        "kind": "value",
+        "type": "object",
+        "arrayLength": 1,
+        "entries": [
+          {
+            "HostIp": {
+              "own": true,
+              "in": true,
+              "kind": "value",
+              "type": "string",
+              "value": "127.0.0.1"
+            },
+            "HostPort": {
+              "own": true,
+              "in": true,
+              "kind": "value",
+              "type": "string",
+              "value": ""
+            }
+          }
+        ]
+      },
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Restarting": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "OOMKilled": false,
+        "StartedAt": "2026-10-17T16:15:59.015421215Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "allOwnershipAndNetworkChecksTrue": true
+    },
+    {
+      "sample": 2,
+      "plannedOffsetMs": 1000,
+      "actualReadEndAfterRunMs": 1054.140286,
+      "runtimeTarget": {
+        "own": true,
+        "in": true,
+        "kind": "null",
+        "type": "object",
+        "value": null
+      },
+      "configuredTarget": {
+        "own": true,
+        "in": true,
+        "kind": "value",
+        "type": "object",
+        "arrayLength": 1,
+        "entries": [
+          {
+            "HostIp": {
+              "own": true,
+              "in": true,
+              "kind": "value",
+              "type": "string",
+              "value": "127.0.0.1"
+            },
+            "HostPort": {
+              "own": true,
+              "in": true,
+              "kind": "value",
+              "type": "string",
+              "value": ""
+            }
+          }
+        ]
+      },
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Restarting": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "OOMKilled": false,
+        "StartedAt": "2026-10-17T16:15:59.015421215Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "allOwnershipAndNetworkChecksTrue": true
+    },
+    {
+      "sample": 3,
+      "plannedOffsetMs": 3000,
+      "actualReadEndAfterRunMs": 3064.424519,
+      "runtimeTarget": {
+        "own": true,
+        "in": true,
+        "kind": "null",
+        "type": "object",
+        "value": null
+      },
+      "configuredTarget": {
+        "own": true,
+        "in": true,
+        "kind": "value",
+        "type": "object",
+        "arrayLength": 1,
+        "entries": [
+          {
+            "HostIp": {
+              "own": true,
+              "in": true,
+              "kind": "value",
+              "type": "string",
+              "value": "127.0.0.1"
+            },
+            "HostPort": {
+              "own": true,
+              "in": true,
+              "kind": "value",
+              "type": "string",
+              "value": ""
+            }
+          }
+        ]
+      },
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Restarting": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "OOMKilled": false,
+        "StartedAt": "2026-10-17T16:15:59.015421215Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "allOwnershipAndNetworkChecksTrue": true
+    }
+  ],
+  "counters": {
+    "snapshots": 3,
+    "healthRequests": 0,
+    "browserProcesses": 0,
+    "containerInstances": 1,
+    "ownedNetworks": 1,
+    "restarts": 0,
+    "recreations": 0,
+    "basis": "Selected receipt classifications and exact executed source; no allocated port, so health call was unreachable"
+  },
+  "conclusion": "Publication was not observed for this one running owned instance within the finite selected window. No unsupported-topology or root-cause claim.",
+  "noRetry": true,
+  "elapsedToCompletedWatchdogMs": 5940
+}

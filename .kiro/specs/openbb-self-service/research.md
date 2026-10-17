@@ -322,3 +322,5 @@ The [Legend startup diagnostic plan](chart-legend-capture-plan.md) passed indepe
 The [tooltip failure-metadata proposal](chart-tooltip-invocation-findings.md) now distinguishes write-unverified outcomes and explicitly retains bounded first-case metadata in the standalone receipt. Independent rereview closes the two initial plan findings. Source implementation and complete interval proof remain pending; the current reserve and runtime prerequisites are unchanged.
 
 The [Legend diagnostic source review](chart-legend-capture-plan.md) passes 21 supplied tests, eight syntax checks and 111 independent synthetic cases. One separately granted no-browser probe is now authorized on the frozen image/topology. Its result remains outside this source acceptance.
+
+The [Legend diagnostic evidence](chart-legend-capture-plan.md) is independently accepted within its finite scope: configured loopback/dynamic binding, null runtime allocation across three reads through about three seconds, same running container, no health/browser, clean owned-resource removal. The source gate explains why no UI ran; the observation alone does not identify Docker causation or future allocation.

@@ -100,10 +100,11 @@
     "ui-parity-tooltip-failure-metadata-plan-revised",
     "ui-parity-tooltip-failure-metadata-plan-revision-review",
     "ui-parity-legend-startup-diagnostic",
-    "ui-parity-legend-startup-diagnostic-review"
+    "ui-parity-legend-startup-diagnostic-review",
+    "ui-parity-legend-startup-diagnostic-runtime-review"
   ],
   "sourcepins": {
-    "root_at_sync": "8392ce617cfdd45e280970e6a5792ada32b92880",
+    "root_at_sync": "bb775405a5d7cd6e7c0c9ba2b0df9249684dd957",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -26708,6 +26709,262 @@
       "publishedSHA256": "b08d21edacbafe0d6e472c709c8faf534183a959da16aad64fa249440b4c2245",
       "bytes": 816,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/cleanup-report.json",
+      "sourceSHA256": "5b94e8801241080817a49d10e2ec4bc97f8bfb9fadfb8be45360145ba4ffcd4c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/cleanup-report.json",
+      "publishedSHA256": "5b94e8801241080817a49d10e2ec4bc97f8bfb9fadfb8be45360145ba4ffcd4c",
+      "bytes": 145,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/final-output-inventory.json",
+      "sourceSHA256": "43cfb17719df4ee7da9a7b20f1850a9f9262865e7fd82dcb7fa1add90edbf8b3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/final-output-inventory.json",
+      "publishedSHA256": "43cfb17719df4ee7da9a7b20f1850a9f9262865e7fd82dcb7fa1add90edbf8b3",
+      "bytes": 1156,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/cleanup.mjs",
+      "sourceSHA256": "28df7d0eddec4f5e53e1f78b320f9a90db80e6feae5af7b2a67e55137617a309",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/cleanup.mjs",
+      "publishedSHA256": "28df7d0eddec4f5e53e1f78b320f9a90db80e6feae5af7b2a67e55137617a309",
+      "bytes": 4775,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/finalize.mjs",
+      "sourceSHA256": "93929b2b69513aa41dd8074c0aa5f330133225b809f7fc95a350ff8bb7db5ff3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/finalize.mjs",
+      "publishedSHA256": "93929b2b69513aa41dd8074c0aa5f330133225b809f7fc95a350ff8bb7db5ff3",
+      "bytes": 1002,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/io.mjs",
+      "sourceSHA256": "0caa4a6ebad8bc1add264e4256296c96de335d48469918a566a6d6af5c34bacc",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/io.mjs",
+      "publishedSHA256": "0caa4a6ebad8bc1add264e4256296c96de335d48469918a566a6d6af5c34bacc",
+      "bytes": 1897,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/probe.mjs",
+      "sourceSHA256": "fe9e3c86e2f5c97db6472eab205b64069ba1a9d1b388dc329b8e29a0e08493c9",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/probe.mjs",
+      "publishedSHA256": "fe9e3c86e2f5c97db6472eab205b64069ba1a9d1b388dc329b8e29a0e08493c9",
+      "bytes": 5719,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/projection.mjs",
+      "sourceSHA256": "82ae646f7c8cf6623291518c1e9dfb956c5a065e284b09d513776e4a27f7b5e7",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/projection.mjs",
+      "publishedSHA256": "82ae646f7c8cf6623291518c1e9dfb956c5a065e284b09d513776e4a27f7b5e7",
+      "bytes": 6229,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/run.sh",
+      "sourceSHA256": "e7716fb74bd1c5140491ab3fcad48e211f1135901d29223dbcfe6d8a84759560",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/harness/run.sh",
+      "publishedSHA256": "e7716fb74bd1c5140491ab3fcad48e211f1135901d29223dbcfe6d8a84759560",
+      "bytes": 723,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/launch.json",
+      "sourceSHA256": "20613f3d85f4551b8d7d69fabd0718eeed6b331431d44f0d615717bee35d4ef0",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/launch.json",
+      "publishedSHA256": "20613f3d85f4551b8d7d69fabd0718eeed6b331431d44f0d615717bee35d4ef0",
+      "bytes": 482,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/network-admission.json",
+      "sourceSHA256": "8141b01e072a436edf73de544b3a6882f50465ea28f06709598c159ba6695d6e",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/network-admission.json",
+      "publishedSHA256": "8141b01e072a436edf73de544b3a6882f50465ea28f06709598c159ba6695d6e",
+      "bytes": 113,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/preparation.json",
+      "sourceSHA256": "bb70b34d8607e0667c4a10187330daeb0faa52452518044a662fa4527b058663",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/preparation.json",
+      "publishedSHA256": "bb70b34d8607e0667c4a10187330daeb0faa52452518044a662fa4527b058663",
+      "bytes": 183,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/prepared-source-verification.json",
+      "sourceSHA256": "f54f97f054c8cca4de115fbd4b63f2da242cbe78a9a341f917ea60530f3c896a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/prepared-source-verification.json",
+      "publishedSHA256": "f54f97f054c8cca4de115fbd4b63f2da242cbe78a9a341f917ea60530f3c896a",
+      "bytes": 293,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/probe-result.json",
+      "sourceSHA256": "34f44bc9ea91221b5f088643940f52656cfd73e08a8d4591b42a8533c061a88b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/probe-result.json",
+      "publishedSHA256": "34f44bc9ea91221b5f088643940f52656cfd73e08a8d4591b42a8533c061a88b",
+      "bytes": 244,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/run-status.json",
+      "sourceSHA256": "00a3161e5c57a5152f71c40a454952ab4821e9a37daf8daea6f1b333286cd5a2",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/run-status.json",
+      "publishedSHA256": "00a3161e5c57a5152f71c40a454952ab4821e9a37daf8daea6f1b333286cd5a2",
+      "bytes": 132,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/samples.json",
+      "sourceSHA256": "cbb4ec3c6a1c3be483d6b95822a1aab6322747c0bd8b88d6bc55392f5c4dca1b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/samples.json",
+      "publishedSHA256": "cbb4ec3c6a1c3be483d6b95822a1aab6322747c0bd8b88d6bc55392f5c4dca1b",
+      "bytes": 5755,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/source-manifest.json",
+      "sourceSHA256": "29096d4612637299972e068e4b4d76dbe1331051e1dce7f885258cb3bc79fe3b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/source-manifest.json",
+      "publishedSHA256": "29096d4612637299972e068e4b4d76dbe1331051e1dce7f885258cb3bc79fe3b",
+      "bytes": 2815,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/supervise.sh",
+      "sourceSHA256": "dd430c91cae06b6e6a2cd05e024d62e90dce6e68c5ae873220985b4452df5bb6",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/supervise.sh",
+      "publishedSHA256": "dd430c91cae06b6e6a2cd05e024d62e90dce6e68c5ae873220985b4452df5bb6",
+      "bytes": 798,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/watchdog-status.json",
+      "sourceSHA256": "932e82b0582e30bff893299d845542fa954caa36ffb18893fee6ccd17c54a2a3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/attempt-20261017T1615437-672fb2a3/watchdog-status.json",
+      "publishedSHA256": "932e82b0582e30bff893299d845542fa954caa36ffb18893fee6ccd17c54a2a3",
+      "bytes": 156,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/observations.json",
+      "sourceSHA256": "6cab328cf297abcfb39b33a930690b7107074c562a4f978d5b821422688d772a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/observations.json",
+      "publishedSHA256": "6cab328cf297abcfb39b33a930690b7107074c562a4f978d5b821422688d772a",
+      "bytes": 5160,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/completed-output-inventory.json",
+      "sourceSHA256": "f24c7b86e7ea2a46f7315ae4acd246dcfaad2461016aeb0809f21b09daee3f84",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/completed-output-inventory.json",
+      "publishedSHA256": "f24c7b86e7ea2a46f7315ae4acd246dcfaad2461016aeb0809f21b09daee3f84",
+      "bytes": 5440,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/publication-notes.json",
+      "sourceSHA256": "f83940bd27659a612f8325656341601a26e96c7ceb7870cd1f967654926437b5",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/publication-notes.json",
+      "publishedSHA256": "f83940bd27659a612f8325656341601a26e96c7ceb7870cd1f967654926437b5",
+      "bytes": 1357,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/owned-absence.json",
+      "sourceSHA256": "9287752a024db16bd70a23452e4c34aa39fc792deb09201726bc15a0ef56fc36",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/owned-absence.json",
+      "publishedSHA256": "9287752a024db16bd70a23452e4c34aa39fc792deb09201726bc15a0ef56fc36",
+      "bytes": 334,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/launcher-absence.json",
+      "sourceSHA256": "1c464319f2de4f433a07531311b7db22316ed8484693c5a5a101de5c0f021919",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/launcher-absence.json",
+      "publishedSHA256": "1c464319f2de4f433a07531311b7db22316ed8484693c5a5a101de5c0f021919",
+      "bytes": 128,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/report.md",
+      "sourceSHA256": "7570c91bdf1644430b1ad395643468fe2905cff9ea46d5aa731a7adc53c63de1",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/report.md",
+      "publishedSHA256": "7570c91bdf1644430b1ad395643468fe2905cff9ea46d5aa731a7adc53c63de1",
+      "bytes": 3552,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/verify-owned-absence.mjs",
+      "sourceSHA256": "3d493a002bd80c718464fc00459bcc8191b2bb9a456d3fc37bec419aaa5d9d58",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/verify-owned-absence.mjs",
+      "publishedSHA256": "3d493a002bd80c718464fc00459bcc8191b2bb9a456d3fc37bec419aaa5d9d58",
+      "bytes": 1684,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/verify-evidence.mjs",
+      "sourceSHA256": "bb105628569e429640fd7e5147fb261d3d22df4431d6ead3b32fb0931bcf3102",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/verify-evidence.mjs",
+      "publishedSHA256": "bb105628569e429640fd7e5147fb261d3d22df4431d6ead3b32fb0931bcf3102",
+      "bytes": 3670,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/package-evidence.mjs",
+      "sourceSHA256": "634368eb8cdac4508613f9079867c61fc3b6e89dc0e8d682a067963db0e8099d",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/package-evidence.mjs",
+      "publishedSHA256": "634368eb8cdac4508613f9079867c61fc3b6e89dc0e8d682a067963db0e8099d",
+      "bytes": 4255,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-runtime-review/reviewed-evidence-publication-allowlist.json",
+      "sourceSHA256": "7c846fea4bc194c8ad83ae32829ee85022af7d3b25beaee2795744b3a2fbb0b1",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-runtime-review/reviewed-evidence-publication-allowlist.json",
+      "publishedSHA256": "7c846fea4bc194c8ad83ae32829ee85022af7d3b25beaee2795744b3a2fbb0b1",
+      "bytes": 6279,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-runtime-review/review.md",
+      "sourceSHA256": "796df125282e68d8cb0d971ba9e6f05caf1e308bda0210df8057187763916cb2",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-runtime-review/review.md",
+      "publishedSHA256": "796df125282e68d8cb0d971ba9e6f05caf1e308bda0210df8057187763916cb2",
+      "bytes": 6707,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-runtime-review/audit.mjs",
+      "sourceSHA256": "2aa0833411f361dea8ab00ff89899093b8a4cf81e74d7f0aef77ac871b936121",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-runtime-review/audit.mjs",
+      "publishedSHA256": "2aa0833411f361dea8ab00ff89899093b8a4cf81e74d7f0aef77ac871b936121",
+      "bytes": 9648,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-runtime-review/verification.json",
+      "sourceSHA256": "cc24ecaf8e70caeca522c3aba48abefebd5dcd46c48f49cb36654479741c099a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-runtime-review/verification.json",
+      "publishedSHA256": "cc24ecaf8e70caeca522c3aba48abefebd5dcd46c48f49cb36654479741c099a",
+      "bytes": 2046,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-startup-diagnostic-runtime-review/publication-allowlist.json",
+      "sourceSHA256": "82ffd8122cff84336bcc138d768a3a0926eb7d2a00d77b2fee93e3c18e60f387",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-startup-diagnostic-runtime-review/publication-allowlist.json",
+      "publishedSHA256": "82ffd8122cff84336bcc138d768a3a0926eb7d2a00d77b2fee93e3c18e60f387",
+      "bytes": 850,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -27421,5 +27678,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 160001380
+  "total_payload_bytes": 160085107
 }
