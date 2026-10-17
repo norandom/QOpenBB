@@ -2,7 +2,7 @@
 
 ## Overview
 
-Proposed amendment awaiting human approval: [appearance/editor integration contracts](chart-appearance-editor-integration-design.md). Independent [Astra design review](../../../artifacts/reviewed/appearance-editor-design-review/review.md) returns scoped GO for saved-option composition, derived color tokens and grouped-column tooltip event tasks after design approval. Complete B2/C and application activation retain their evidence gates; no implementation is approved by this review.
+Owner-approved amendment: [appearance/editor integration contracts](chart-appearance-editor-integration-design.md). Independent [Astra design review](../../../artifacts/reviewed/appearance-editor-design-review/review.md) returns scoped GO for saved-option composition, derived color tokens and grouped-column tooltip event task generation. The owner approved the design; task approval remains separate. Complete B2/C and application activation retain their evidence gates.
 
 Owner-approved application design, 2026-10-17: [connect charts to the existing Workspace journey](chart-application-integration-design.md). Source-proven session/range state and financial display helpers are accepted through tasks 2.34-2.37. The owner-approved [ordinary grid-capture design](chart-grid-capture-design.md) is implemented and independently accepted through tasks 2.38-2.40; see [verification](chart-grid-capture-verification.md). Displayed-grid interpretation, nested controls, mapper invocation and application activation retain their named evidence gates; this approval does not establish renderer parity or deployment readiness.
 

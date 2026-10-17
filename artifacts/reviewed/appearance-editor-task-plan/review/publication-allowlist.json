@@ -1,0 +1,34 @@
+{
+  "decision": "PASS",
+  "scope": "Reviewed task-plan artifacts only; no implementation approval",
+  "entries": [
+    {
+      "source_path": "artifacts/appearance-editor-task-plan/draft.md",
+      "source_sha256": "400277f810a28ededb8ecfc71490744f29fcd3ba6e91e4c7b71caf6a6565d2d3",
+      "publication": "allowed-exact-bytes",
+      "sanitization": "none",
+      "reason": "Reviewed task-plan text or static review evidence; no operator state or credentials"
+    },
+    {
+      "source_path": "artifacts/appearance-editor-task-plan/review/review.md",
+      "source_sha256": "ee05435a7c24db8e6ad873866b105a298ac1d73ecfcca84f33345dc3e2598a68",
+      "publication": "allowed-exact-bytes",
+      "sanitization": "none",
+      "reason": "Reviewed task-plan text or static review evidence; no operator state or credentials"
+    },
+    {
+      "source_path": "artifacts/appearance-editor-task-plan/review/check_plan.py",
+      "source_sha256": "9adf9525b4e656ad89c39dfc6ee8a6ab2d4ce51ffbc9d023d20da0e7810ace22",
+      "publication": "allowed-exact-bytes",
+      "sanitization": "none",
+      "reason": "Reviewed task-plan text or static review evidence; no operator state or credentials"
+    },
+    {
+      "source_path": "artifacts/appearance-editor-task-plan/review/mechanical-check.json",
+      "source_sha256": "ec684c3bb452dd164a7f7d99699d7e95ab47780782d7051c0f2691894abb1c18",
+      "publication": "allowed-exact-bytes",
+      "sanitization": "none",
+      "reason": "Reviewed task-plan text or static review evidence; no operator state or credentials"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ The [appearance review](parity/appearance-contract-review/review.md), [saved-opt
 
 ## Included evidence
 
+- [Appearance/editor task-graph review](appearance-editor-task-plan/review/review.md): five bounded tasks passed independent planning review. The frozen draft retains specification-relative links; canonical tasks are in the owning spec. No implementation is approved by this planning evidence.
 - [Appearance/editor design review](appearance-editor-design-review/review.md): scoped GO for human review and later source-contract task generation. Sixteen mechanical checks pass; this is design evidence, not implementation or application acceptance.
 - SQLite tasks 4.6 through 4.9: task/reviewer reports, serial verification scripts, actual logs/results, boundary diffs and quality inventories. Start at [the joined review](task-4.9/review/review.md).
 - Chart application design: [design and source-range review](chart-application-design/review/design-review.md), [stock matrix review](chart-application-design/review/theme-matrix-review.md), source paths and capture handoff.

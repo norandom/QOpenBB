@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-17T11:44:21.461066+00:00",
+  "updated_at": "2026-10-17T11:51:37.013686+00:00",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -226,7 +226,7 @@
         "implementation_verification": "chart-grid-capture-verification.md",
         "validation": "GO and VERIFIED for tasks 2.38-2.40 ordinary capture only; appearance/editor/application/renderer/release gates remain open",
         "appearance_editor_followup": {
-          "phase": "design-generated",
+          "phase": "tasks-generated",
           "approval_note": "Owner said go after ordinary capture acceptance. Continue parallel appearance/editor contract research; new implementation remains subject to concrete design/task approval.",
           "candidate_revision": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
           "production_changed": false,
@@ -251,11 +251,23 @@
           "validation": "Scoped original-reference research accepted: 44 appearance assertions and 262144 normalized color comparisons; 99 saved-input assertions; 30 editor assertions and six raster bar checks. Full B2/C, candidate integration, missing-value transpose and backend persistence remain open.",
           "design_path": "chart-appearance-editor-integration-design.md",
           "design_generated": true,
-          "design_approved": false,
-          "tasks_generated": false,
+          "design_approved": true,
+          "tasks_generated": true,
           "tasks_approved": false,
           "design_review": "artifacts/reviewed/appearance-editor-design-review/review.md",
-          "reviewed_design_sha256": "05d12b46374cfaf1bf9986da24efc8e8fed7ded9b0b13eee333518285926d76b"
+          "reviewed_design_sha256": "05d12b46374cfaf1bf9986da24efc8e8fed7ded9b0b13eee333518285926d76b",
+          "design_approval_note": "Owner approved the reviewed appearance/editor source-contract design (reply: approved). Generate bounded tasks; implementation still requires task approval.",
+          "task_ids": [
+            "2.41",
+            "2.42",
+            "2.43",
+            "2.44",
+            "2.45"
+          ],
+          "task_graph_review": "PASS",
+          "task_review_mode": "independent",
+          "task_review": "artifacts/reviewed/appearance-editor-task-plan/review/review.md",
+          "reviewed_task_draft_sha256": "400277f810a28ededb8ecfc71490744f29fcd3ba6e91e4c7b71caf6a6565d2d3"
         }
       }
     }

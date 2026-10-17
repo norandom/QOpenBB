@@ -1,0 +1,204 @@
+{
+  "scope": "Static task graph and inventory existence only; no application tests, compiler, lint, browser or size gate executed",
+  "input_sha256": {
+    "artifacts/appearance-editor-task-plan/draft.md": "400277f810a28ededb8ecfc71490744f29fcd3ba6e91e4c7b71caf6a6565d2d3",
+    ".kiro/specs/openbb-self-service/requirements.md": "3200afa4a8412cf097cb2479a1e969f50225748e6903ba9d7405807534a0d43b",
+    ".kiro/specs/openbb-self-service/design.md": "8aca2792cec447668caefe09e908c93597414e67a6e93f7d04552513372ed5c5",
+    ".kiro/specs/openbb-self-service/chart-appearance-editor-integration-design.md": "05d12b46374cfaf1bf9986da24efc8e8fed7ded9b0b13eee333518285926d76b",
+    ".kiro/complexity-budgets.json": "29692e259447432c0c70f913d8ba222b99932feb7bdd419d807a3ad4e95bb9c1",
+    "vendor/workspace/terminalpro/tests/unit/chart-application/tsconfig.json": "4d8000a97707c3c82cfa0011d31e3ba72ba39a17a05c79753405bc077b948e1a",
+    "vendor/workspace/terminalpro/tests/unit/chart-application/vitest.config.mjs": "4c0c193e2458f8c19581e873ae521a7beddbdae22716fc72e652e4f72565343a",
+    "vendor/workspace/terminalpro/tests/unit/chart-compatibility/tsconfig.json": "e30c68feaf0f9dbb41c7fb0e9379e9aa11f0109dc8dc77135de4bf9ffba0e628",
+    "vendor/workspace/terminalpro/tests/unit/chart-compatibility/vitest.config.mjs": "2cee58e004b541afcaf1fa5b7aee19dc90fd089358ed0ed90e64854807079413",
+    "vendor/workspace/terminalpro/biome.json": "b8f0746b1153361ad4abfeb3625f999455f3e65bc2950c6ff211f0bc63007a49"
+  },
+  "canonical_tasks_baseline": {
+    "revision": "cff08b347cedbaef95aea064d7fc1d5253d5f300",
+    "path": ".kiro/specs/openbb-self-service/tasks.md",
+    "git_blob_sha256": "d25a1c14412dc53ffbadbc079631302386c18ee9315be4b579995673556eca1a",
+    "source": "git show of pinned baseline, preventing duplicate suffix after publication"
+  },
+  "expected_criteria_count": 69,
+  "expected_criteria": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6",
+    "3.7",
+    "3.8",
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.6",
+    "4.7",
+    "4.8",
+    "4.9",
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5",
+    "5.6",
+    "5.7",
+    "5.8",
+    "5.9",
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5",
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4",
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.5",
+    "9.6",
+    "9.7",
+    "10.1",
+    "10.2",
+    "10.3",
+    "10.4",
+    "10.5",
+    "10.6",
+    "11.1",
+    "11.2",
+    "11.3",
+    "11.4",
+    "11.5",
+    "11.6",
+    "11.7",
+    "12.1",
+    "12.2",
+    "12.3",
+    "12.4",
+    "12.5"
+  ],
+  "combined_covered_criteria_count": 69,
+  "missing_criteria": [],
+  "unknown_mapped_criteria": [],
+  "new_tasks": {
+    "2.41": {
+      "completed": false,
+      "parallel": false,
+      "depends": [
+        "1.3",
+        "1.4",
+        "2.40"
+      ],
+      "requirements": [
+        "1.1",
+        "1.4",
+        "4.8",
+        "4.9",
+        "10.4",
+        "10.5",
+        "10.6"
+      ],
+      "observable_done": true,
+      "boundary": true
+    },
+    "2.42": {
+      "completed": false,
+      "parallel": true,
+      "depends": [
+        "2.41"
+      ],
+      "requirements": [
+        "1.1",
+        "1.4",
+        "4.2",
+        "4.7",
+        "4.8",
+        "4.9",
+        "10.5",
+        "10.6"
+      ],
+      "observable_done": true,
+      "boundary": true
+    },
+    "2.43": {
+      "completed": false,
+      "parallel": true,
+      "depends": [
+        "2.41"
+      ],
+      "requirements": [
+        "1.1",
+        "1.4",
+        "4.8",
+        "4.9",
+        "10.5",
+        "10.6"
+      ],
+      "observable_done": true,
+      "boundary": true
+    },
+    "2.44": {
+      "completed": false,
+      "parallel": true,
+      "depends": [
+        "2.41"
+      ],
+      "requirements": [
+        "4.2",
+        "4.7",
+        "4.8",
+        "4.9",
+        "10.4",
+        "10.5",
+        "10.6"
+      ],
+      "observable_done": true,
+      "boundary": true
+    },
+    "2.45": {
+      "completed": false,
+      "parallel": false,
+      "depends": [
+        "2.42",
+        "2.43",
+        "2.44"
+      ],
+      "requirements": [
+        "1.1",
+        "1.4",
+        "4.2",
+        "4.7",
+        "4.8",
+        "4.9",
+        "10.1",
+        "10.2",
+        "10.3",
+        "10.4",
+        "10.5",
+        "10.6"
+      ],
+      "observable_done": true,
+      "boundary": true
+    }
+  },
+  "duplicate_new_ids": false,
+  "overlap_existing_ids": [],
+  "missing_dependencies": [],
+  "unaccepted_external_prerequisites": [],
+  "new_graph_cycle": false,
+  "missing_inventory_files": [],
+  "pass": true
+}
