@@ -1,0 +1,214 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/task236/terminalpro[39m
+
+ [32m✓[39m tests/unit/chart-application/financialFormatting.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m18 passed[39m[22m[90m (18)[39m
+[2m   Start at [22m 12:07:53
+[2m   Duration [22m 1.12s[2m (transform 124ms, setup 0ms, import 380ms, tests 6ms, environment 452ms)[22m
+
+src/components/General/Table/Chart/application/financialFormatting.ts format ━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    50 50 │         helpers.formatNumber(value, input.decimalDigits ?? input.globalDecimalDigits),
+    51 51 │     };
+    52    │ - };␍
+       52 │ + };
+    53 53 │   
+  
+
+tests/unit/chart-application/financialFormatting.sources.json format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    20 20 │         "path": "terminalpro/src/components/General/Table/AgGridUtils.tsx",
+    21 21 │         "fullSourceSha256": "152af34753d847c866539ffe99d0de61008182d4c40ef625442d18ae9f07f772",
+    22    │ - ······"names":·[
+    23    │ - ········"datePattern",
+    24    │ - ········"dateTimePattern",
+    25    │ - ········"isDate",
+    26    │ - ········"isDateTime"
+    27    │ - ······],
+       22 │ + ······"names":·["datePattern",·"dateTimePattern",·"isDate",·"isDateTime"],
+    28 23 │         "code": "const datePattern = /^\\d{4}-\\d{2}-\\d{2}$|^\\d{1,2}\\/\\d{1,2}\\/\\d{4}$/;\nconst dateTimePattern = /^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}(\\.\\d*)?/;\nexport function isDate(value: any): boolean {\n  return datePattern.test(value?.toString()) && dayjs(value).isValid();\n}\nexport function isDateTime(value: any): boolean {\n  return dateTimePattern.test(value?.toString()) && dayjs(value).isValid();\n}",
+    29 24 │         "codeSha256": "a9004a55ac8f4690042774083e74975f79e22533ec9576b4b67b59af61b2b1af"
+    ····· │ 
+    32 27 │         "path": "terminalpro/src/components/General/Table/Chart/utils.tsx",
+    33 28 │         "fullSourceSha256": "a4a092b6ccb6076006dc51c93f9ea088c608d2aadb24b6183c5683d8ca302ba1",
+    34    │ - ······"names":·[
+    35    │ - ········"getFiscalPeriodString"
+    36    │ - ······],
+       29 │ + ······"names":·["getFiscalPeriodString"],
+    37 30 │         "code": "export function getFiscalPeriodString(\n  value: string | Date,\n  getParsedPeriod: CreateDefaultProps[\"getParsedPeriod\"],\n  chartType = \"\",\n): string {\n  const hasTime = isDateTime(value);\n\n  if (value instanceof Date) {\n    const valueStr = value.toISOString().replace(\"T\", \" \");\n    return valueStr.slice(0, 19).replace(\" 00:00:00\", \"\");\n  }\n\n  if (!(isDate(value) || hasTime)) return value;\n\n  const dateObj = dayjs(value);\n\n  if (hasTime && dateObj.format(\"HH:mm:ss\").includes(\"00:00:00\")) {\n    return dateObj.format(\"YYYY-MM-DD\");\n  }\n\n  const { isQuarterly, isAnnual } = getParsedPeriod();\n  if (isQuarterly) {\n    const newLine = chartType?.includes(\"Column\") ? \"\\n\" : \" \";\n    return `Q${dateObj.quarter()}${newLine}${dateObj.year()}`;\n  }\n\n  if (isAnnual) return `FY ${dateObj.year()}`;\n\n  return value;\n}",
+    38 31 │         "codeSha256": "90c955e698ee86bc71040731e6d14f04caae9b9ff4a623c59a8f06323d2b2aa7"
+  
+
+tests/unit/chart-application/financialFormatting.test.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     7   7 │   import { describe, expect, it } from "vitest";
+     8   8 │   import { createChartDisplayPolicy } from "../../../src/components/General/Table/Chart/application/financialFormatting";
+     9     │ - import·type·{·FinancialFormattingHelpers,·FinancialFormattingInput·}·from·"../../../src/components/General/Table/Chart/application/types";
+         9 │ + import·type·{
+        10 │ + ··FinancialFormattingHelpers,
+        11 │ + ··FinancialFormattingInput,
+        12 │ + }·from·"../../../src/components/General/Table/Chart/application/types";
+    10  13 │   
+    11  14 │   dayjs.extend(quarterOfYear);
+    12  15 │   // Test-only exact AST excerpts keep the original helpers independent of the application graph.
+    13     │ - const·fixture·=·JSON.parse(readFileSync("tests/unit/chart-application/financialFormatting.sources.json",·"utf8"))·as·{
+        16 │ + const·fixture·=·JSON.parse(
+        17 │ + ··readFileSync("tests/unit/chart-application/financialFormatting.sources.json",·"utf8"),
+        18 │ + )·as·{
+    14  19 │     pin: string;
+    15  20 │     sources: { code: string; codeSha256: string; fullSourceSha256: string }[];
+    16  21 │   };
+    17  22 │   expect(fixture.pin).toBe("38dffc33389aca0e4a87e0e88d42f7067aa220df");
+    18     │ - const·source·=·fixture.sources.map(({·code,·codeSha256·})·=>·{
+    19     │ - ··expect(createHash("sha256").update(code).digest("hex")).toBe(codeSha256);
+    20     │ - ··return·code.replace(/^export·/gm,·"");
+    21     │ - }).join("\n");
+    22     │ - const·helpers·=·new·Function("dayjs",·"round",·ts.transpileModule(`${source}\nreturn·{formatNumber,formatNumberMagnitude,getFiscalPeriodString,isValidDate:(value)=>dayjs(value).isValid()};`,·{·compilerOptions:·{·target:·ts.ScriptTarget.ES2022,·module:·ts.ModuleKind.CommonJS·}·}).outputText)(dayjs,·round)·as·FinancialFormattingHelpers;
+    23     │ - const·policy·=·(overrides:·Partial<FinancialFormattingInput>·=·{})·=>·createChartDisplayPolicy({·chartType:·"groupedColumn",·category:·{},·helpers,·...overrides·});
+        23 │ + const·source·=·fixture.sources
+        24 │ + ··.map(({·code,·codeSha256·})·=>·{
+        25 │ + ····expect(createHash("sha256").update(code).digest("hex")).toBe(codeSha256);
+        26 │ + ····return·code.replace(/^export·/gm,·"");
+        27 │ + ··})
+        28 │ + ··.join("\n");
+        29 │ + const·helpers·=·new·Function(
+        30 │ + ··"dayjs",
+        31 │ + ··"round",
+        32 │ + ··ts.transpileModule(
+        33 │ + ····`${source}\nreturn·{formatNumber,formatNumberMagnitude,getFiscalPeriodString,isValidDate:(value)=>dayjs(value).isValid()};`,
+        34 │ + ····{
+        35 │ + ······compilerOptions:·{
+        36 │ + ········target:·ts.ScriptTarget.ES2022,
+        37 │ + ········module:·ts.ModuleKind.CommonJS,
+        38 │ + ······},
+        39 │ + ····},
+        40 │ + ··).outputText,
+        41 │ + )(dayjs,·round)·as·FinancialFormattingHelpers;
+        42 │ + const·policy·=·(overrides:·Partial<FinancialFormattingInput>·=·{})·=>
+        43 │ + ··createChartDisplayPolicy({
+        44 │ + ····chartType:·"groupedColumn",
+        45 │ + ····category:·{},
+        46 │ + ····helpers,
+        47 │ + ····...overrides,
+        48 │ + ··});
+    24  49 │   
+    25  50 │   describe("owned financial display policy", () => {
+    26     │ - ··it.each([-1000000,·-999999,·0,·0.125,·999999,·1000000])("retains·axis·observation·%s",·(value)·=>·expect(policy().numericAxis(value)).toBe(value));
+    27     │ - ··it.each([[1000001,"1.00·M"],[-1000001,"-1.00·M"],[1234567890,"1.23·B"],[1000000000000,"1.00·T"]])("uses·source·axis·precision·for·%s",·(value,·expected)·=>·expect(policy().numericAxis(value)).toBe(expected));
+        51 │ + ··it.each([
+        52 │ + ····-1000000,·-999999,·0,·0.125,·999999,·1000000,
+        53 │ + ··])("retains·axis·observation·%s",·(value)·=>
+        54 │ + ····expect(policy().numericAxis(value)).toBe(value));
+        55 │ + ··it.each([
+        56 │ + ····[1000001,·"1.00·M"],
+        57 │ + ····[-1000001,·"-1.00·M"],
+        58 │ + ····[1234567890,·"1.23·B"],
+        59 │ + ····[1000000000000,·"1.00·T"],
+        60 │ + ··])("uses·source·axis·precision·for·%s",·(value,·expected)·=>
+        61 │ + ····expect(policy().numericAxis(value)).toBe(expected));
+    28  62 │     it("keeps the three numeric precisions distinct and does not infer units", () => {
+    29  63 │       const display = policy({ decimalDigits: 3 });
+    ······ │ 
+    37  71 │     });
+    38  72 │     it("regenerates current tooltip precision including zero, null fallback and helper default", () => {
+    39     │ - ····expect(policy({·decimalDigits:·0,·globalDecimalDigits:·3·}).tooltipNumber(12.345)).toBe("12");
+    40     │ - ····expect(policy({·decimalDigits:·null,·globalDecimalDigits:·2·}).tooltipNumber(12.345)).toBe("12.35");
+        73 │ + ····expect(
+        74 │ + ······policy({·decimalDigits:·0,·globalDecimalDigits:·3·}).tooltipNumber(12.345),
+        75 │ + ····).toBe("12");
+        76 │ + ····expect(
+        77 │ + ······policy({·decimalDigits:·null,·globalDecimalDigits:·2·}).tooltipNumber(12.345),
+        78 │ + ····).toBe("12.35");
+    41  79 │       expect(policy().tooltipNumber(12.345)).toBe("12.345");
+    42  80 │       expect(policy({ decimalDigits: 0 }).tooltipNumber(0.125)).toBe("0.13");
+    ······ │ 
+    51  89 │     });
+    52  90 │     it("preserves quarter separators and date recognition boundaries", () => {
+    53     │ - ····const·display·=·policy({·period:·"Quarterly",·category:·{·cellDataType:·"dateString"·}·});
+        91 │ + ····const·display·=·policy({
+        92 │ + ······period:·"Quarterly",
+        93 │ + ······category:·{·cellDataType:·"dateString"·},
+        94 │ + ····});
+    54  95 │       expect(display.category("2024-04-15")).toBe("Q2\n2024");
+    55  96 │       expect(display.seriesLabel("2024-04-15 01:02:03")).toBe("Q2\n2024");
+    56  97 │       expect(display.legend("2024-04-15")).toBe("Q2 2024");
+    57     │ - ····expect(policy({·period:·"quarter",·chartType:·"line"·}).seriesLabel("4/15/2024")).toBe("Q2·2024");
+        98 │ + ····expect(
+        99 │ + ······policy({·period:·"quarter",·chartType:·"line"·}).seriesLabel("4/15/2024"),
+       100 │ + ····).toBe("Q2·2024");
+    58 101 │       expect(display.category("2024-04-15 00:00:00")).toBe("2024-04-15");
+    59 102 │       expect(display.category("2024-04-15T01:02:03Z")).toBe("2024-04-15T01:02:03Z");
+    60 103 │       expect(display.category(new Date("2024-04-15T00:00:00Z"))).toBe("2024-04-15");
+    61     │ - ····expect(display.legend(new·Date("2024-04-15T01:02:03Z"))).toBe("2024-04-15·01:02:03");
+       104 │ + ····expect(display.legend(new·Date("2024-04-15T01:02:03Z"))).toBe(
+       105 │ + ······"2024-04-15·01:02:03",
+       106 │ + ····);
+    62 107 │     });
+    63 108 │     it("uses exact period rules and only explicit category date metadata", () => {
+    ······ │ 
+    65 110 │       expect(policy({ period: "yearly" }).legend("2024-04-15")).toBe("2024-04-15");
+    66 111 │       expect(policy({ period: "quarterly" }).category("2024-04-15")).toBe("2024-04-15");
+    67     │ - ····expect(policy({·period:·"quarterly",·category:·{·cellDataType:·"date"·}·}).category("2024-04-15")).toBe("Q2\n2024");
+       112 │ + ····expect(
+       113 │ + ······policy({·period:·"quarterly",·category:·{·cellDataType:·"date"·}·}).category(
+       114 │ + ········"2024-04-15",
+       115 │ + ······),
+       116 │ + ····).toBe("Q2\n2024");
+    68 117 │       expect(policy({ period: "quarterly" }).legend("not a date")).toBe("not a date");
+    69 118 │     });
+    70 119 │     it("retains original invalid-date word wrapping including spaces and trailing newline", () => {
+    71     │ - ····expect(policy().seriesLabel("alpha·beta·gamma·delta·epsilon")).toBe("alpha·beta\n·gamma·delta\n·epsilon\n");
+       120 │ + ····expect(policy().seriesLabel("alpha·beta·gamma·delta·epsilon")).toBe(
+       121 │ + ······"alpha·beta\n·gamma·delta\n·epsilon\n",
+       122 │ + ····);
+    72 123 │       expect(policy().seriesLabel("single")).toBe("single");
+    73 124 │     });
+    74 125 │     it("passes exact Index inputs and uses only truthy formatter results", () => {
+    75     │ - ····const·indexColDef·=·Object.freeze({·valueFormatter:·({·value,·colDef·}:·{·value:·unknown;·colDef:·unknown·})·=>·{·expect(colDef).toBe(indexColDef);·expect(value).toBe("2024-04-15");·return·"2024-07-15";·}·});
+    76     │ - ····const·input·=·Object.freeze({·chartType:·"stackedColumn"·as·const,·period:·"quarterly",·category:·Object.freeze({·cellDataType:·"date",·indexColDef·}),·helpers·});
+       126 │ + ····const·indexColDef·=·Object.freeze({
+       127 │ + ······valueFormatter:·({·value,·colDef·}:·{·value:·unknown;·colDef:·unknown·})·=>·{
+       128 │ + ········expect(colDef).toBe(indexColDef);
+       129 │ + ········expect(value).toBe("2024-04-15");
+       130 │ + ········return·"2024-07-15";
+       131 │ + ······},
+       132 │ + ····});
+       133 │ + ····const·input·=·Object.freeze({
+       134 │ + ······chartType:·"stackedColumn"·as·const,
+       135 │ + ······period:·"quarterly",
+       136 │ + ······category:·Object.freeze({·cellDataType:·"date",·indexColDef·}),
+       137 │ + ······helpers,
+       138 │ + ····});
+    77 139 │       expect(createChartDisplayPolicy(input).category("2024-04-15")).toBe("Q3\n2024");
+    78     │ - ····for·(const·result·of·[0,·false,·null,·undefined,·""]·as·const)·expect(policy({·category:·{·indexColDef:·{·valueFormatter:·()·=>·result·}·}·}).category("original")).toBe("original");
+    79     │ - ····expect(policy({·category:·{·indexColDef:·{·valueFormatter:·()·=>·42·}·}·}).category("original")).toBe(42);
+       140 │ + ····for·(const·result·of·[0,·false,·null,·undefined,·""]·as·const)
+       141 │ + ······expect(
+       142 │ + ········policy({
+       143 │ + ··········category:·{·indexColDef:·{·valueFormatter:·()·=>·result·}·},
+       144 │ + ········}).category("original"),
+       145 │ + ······).toBe("original");
+       146 │ + ····expect(
+       147 │ + ······policy({·category:·{·indexColDef:·{·valueFormatter:·()·=>·42·}·}·}).category(
+       148 │ + ········"original",
+       149 │ + ······),
+       150 │ + ····).toBe(42);
+    80 151 │     });
+  13 more lines truncated
+  
+
+Checked 3 files in 9ms. No fixes applied.
+Found 3 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

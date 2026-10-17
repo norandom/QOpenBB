@@ -8,11 +8,11 @@ requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
 id = "chart-application-source-contracts"
-requirements = ["4.8", "4.9", "10.4", "10.5", "10.6"]
+requirements = ["1.1", "4.2", "4.7", "4.8", "4.9", "10.4", "10.5", "10.6"]
 planned_checks = ["source-range-precedence", "session-address-and-revision-rejection", "original-reducer-composition", "financial-display-threshold-and-fiscal-semantics", "joined-source-contract-verification"]
-test_paths = []
-status = "planned"
-evidence = ["Owner approved chart-application-integration-design.md on 2026-10-17. Tasks 2.34-2.37 passed independent graph review and received owner implementation approval; no application helper implementation or tests are accepted. Runtime capture, editor, mapper and activation retain explicit evidence gates. Existing original-runtime retry proves finite projection only, not nested control behavior."]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/contracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/chartRange.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/sessionState.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/financialFormatting.test.ts"]
+status = "passed"
+evidence = ["Tasks 2.34-2.37 independently accepted with scoped GO and VERIFIED completion for source-safe helpers only. Fresh joined evidence: 36 application tests, 260 compatibility tests, both strict compilers, scoped lint, 62 staged identities and 172-file maintained audit pass at Workspace 945e438a9a65c3eeef7073dbce64a03b02f0ff6f. See .kiro/specs/openbb-self-service/chart-application-source-verification.md. Runtime capture, editor, mapper invocation, activation, export and save/restart remain unverified."]
 
 [[capabilities]]
 id = "sqlite-query-and-storage-compatibility"

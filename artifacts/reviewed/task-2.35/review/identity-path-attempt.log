@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/mnt/d/Source/QOpenBB/tools/quality/ts_adapter.py", line 65, in measure_typescript
+    node, versions = runtime()
+                     ~~~~~~~^^
+  File "/mnt/d/Source/QOpenBB/tools/quality/ts_adapter.py", line 23, in runtime
+    probe = execute(["node", "--version"])
+  File "/mnt/d/Source/QOpenBB/tools/quality/ts_adapter.py", line 14, in execute
+    return subprocess.run(arguments, cwd=ROOT, capture_output=True, text=True,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          encoding="utf-8", check=False, timeout=60,
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          **kwargs)
+                          ^^^^^^^^^
+  File "/mnt/d/Source/QOpenBB/artifacts/task-1.2/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/Source/QOpenBB/artifacts/task-1.2/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/d/Source/QOpenBB/artifacts/task-1.2/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/subprocess.py", line 1991, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: 'node'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/Source/QOpenBB/artifacts/task-2.35/review/identity.py", line 23, in <module>
+    measurements, versions = measure_typescript(production)
+                             ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/mnt/d/Source/QOpenBB/tools/quality/ts_adapter.py", line 71, in measure_typescript
+    raise ValueError(f"TypeScript parser unavailable or invalid response: {error}") from error
+ValueError: TypeScript parser unavailable or invalid response: [Errno 13] Permission denied: 'node'

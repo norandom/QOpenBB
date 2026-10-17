@@ -1,0 +1,19 @@
+{
+  "base": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
+  "head": "945e438a9a65c3eeef7073dbce64a03b02f0ff6f",
+  "changed_paths": [
+    "terminalpro/src/components/General/Table/Chart/application/chartRange.ts",
+    "terminalpro/src/components/General/Table/Chart/application/financialFormatting.ts",
+    "terminalpro/src/components/General/Table/Chart/application/sessionState.ts",
+    "terminalpro/src/components/General/Table/Chart/application/types.ts",
+    "terminalpro/tests/unit/chart-application/chartRange.test.ts",
+    "terminalpro/tests/unit/chart-application/contracts.types.ts",
+    "terminalpro/tests/unit/chart-application/financialFormatting.sources.json",
+    "terminalpro/tests/unit/chart-application/financialFormatting.test.ts",
+    "terminalpro/tests/unit/chart-application/sessionState.test.ts",
+    "terminalpro/tests/unit/chart-application/tsconfig.json",
+    "terminalpro/tests/unit/chart-application/vitest.config.mjs"
+  ],
+  "scope": "Only new application helpers and tests changed since pre-slice source. Existing reducers, mapper, snapshot, host, controls and flags have no committed changes.",
+  "frozen_types_sha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e"
+}

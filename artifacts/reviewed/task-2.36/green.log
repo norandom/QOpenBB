@@ -1,0 +1,47 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/task236/terminalpro[39m
+
+ [31m❯[39m tests/unit/chart-application/financialFormatting.test.ts [2m([22m[2m18 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 11[2mms[22m[39m
+     [32m✓[39m retains axis observation -1000000[32m 1[2mms[22m[39m
+     [32m✓[39m retains axis observation -999999[32m 0[2mms[22m[39m
+     [32m✓[39m retains axis observation 0[32m 0[2mms[22m[39m
+     [32m✓[39m retains axis observation 0.125[32m 0[2mms[22m[39m
+     [32m✓[39m retains axis observation 999999[32m 0[2mms[22m[39m
+     [32m✓[39m retains axis observation 1000000[32m 0[2mms[22m[39m
+     [32m✓[39m uses source axis precision for 1000001[32m 1[2mms[22m[39m
+     [32m✓[39m uses source axis precision for -1000001[32m 0[2mms[22m[39m
+     [32m✓[39m uses source axis precision for 1234567890[32m 0[2mms[22m[39m
+     [32m✓[39m uses source axis precision for 1000000000000[32m 0[2mms[22m[39m
+     [32m✓[39m keeps the three numeric precisions distinct and does not infer units[32m 1[2mms[22m[39m
+     [32m✓[39m regenerates current tooltip precision including zero, null fallback and helper default[32m 0[2mms[22m[39m
+[31m     [31m×[31m preserves zero and nonfinite source behavior[39m[32m 4[2mms[22m[39m
+     [32m✓[39m preserves quarter separators and date recognition boundaries[32m 1[2mms[22m[39m
+     [32m✓[39m uses exact period rules and only explicit category date metadata[32m 0[2mms[22m[39m
+     [32m✓[39m retains original invalid-date word wrapping including spaces and trailing newline[32m 0[2mms[22m[39m
+     [32m✓[39m passes exact Index inputs and uses only truthy formatter results[32m 0[2mms[22m[39m
+     [32m✓[39m retains unguarded Index failures and nonnumeric callback passthrough[32m 0[2mms[22m[39m
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/chart-application/financialFormatting.test.ts > owned financial display policy > preserves zero and nonfinite source behavior
+AssertionError: expected '-Infinity.000 T' to be '-Infinity T' // Object.is equality
+
+Expected: "-Infinity T"
+Received: "-Infinity.000 T"
+
+ ❯ tests/unit/chart-application/financialFormatting.test.ts:50:62
+     48|     expect(policy().crosshair(Number.NaN)).toBe("N/A");
+     49|     expect(policy().seriesLabel(Number.POSITIVE_INFINITY)).toBe("Infin…
+     50|     expect(policy().tooltipNumber(Number.NEGATIVE_INFINITY)).toBe("-In…
+       |                                                              ^
+     51|   });
+     52|   it("preserves quarter separators and date recognition boundaries", (…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m17 passed[39m[22m[90m (18)[39m
+[2m   Start at [22m 12:07:31
+[2m   Duration [22m 990ms[2m (transform 135ms, setup 0ms, import 386ms, tests 11ms, environment 465ms)[22m
+

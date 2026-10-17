@@ -903,7 +903,7 @@ The owner approved the [application integration design](chart-application-integr
   - _Depends: 1.4, 2.33_
   - _Requirements: 1.1, 4.8, 4.9, 10.4, 10.5, 10.6_
 
-- [ ] 2.35 (P) Preserve source range precedence and addressed chart session updates
+- [x] 2.35 (P) Preserve source range precedence and addressed chart session updates
   - A1 task, 1-3 hours; exclusive writes `Chart/application/chartRange.ts`, `sessionState.ts`, `tests/unit/chart-application/chartRange.test.ts` and `sessionState.test.ts`. Consume 2.34's frozen types/configuration; shared types, existing reducers, contexts, grid callers and mapper are read-only.
   - Resolve eligible stored range, configured columns and generated visible columns in original precedence, honoring ignoreCellRange, the stored more-than-one-column condition, configured empty fallback diagnostics, generated-column intersection and selected-ID order. Preserve ordinary stored row bounds and original JSON without mutation. Do not infer category, raw grid values, aggregation or detached transformations.
   - Validate address/stamps and use accepted option baseline/editor/reducer semantics against the latest supplied storage. Reject stale widget/key/generation/render revision without writes; keep ephemeral counters out of storage. Preserve inactive-family/unknown state, populated-to-empty baseline behavior and root-theme stripping. Keep range transition writes separate from options reduction. Counter overflow invalidates the session; no old token is reused.
@@ -913,7 +913,7 @@ The owner approved the [application integration design](chart-application-integr
   - _Depends: 2.34_
   - _Requirements: 4.2, 4.7, 4.8, 4.9, 10.5, 10.6_
 
-- [ ] 2.36 (P) Preserve owned financial display callbacks without changing observations
+- [x] 2.36 (P) Preserve owned financial display callbacks without changing observations
   - B1 task, 1-3 hours; exclusive writes `Chart/application/financialFormatting.ts` and `tests/unit/chart-application/financialFormatting.test.ts`. Consume frozen 2.34 contracts and existing numeric/fiscal helpers. Existing source helpers, mapper, RuntimeOptions, shared configuration and A1 paths remain read-only.
   - Derive typed category, axis, crosshair, legend, series-label and tooltip-number display policies from explicit current period, widget/global precision, column definitions and the source Index formatter contract. Retain zero precision and callback regeneration; never persist functions or replace the data-only RuntimeOptions type.
   - Assert strict +/-1,000,000 boundaries and outside values, magnitude precisions 2/0, series precision 0, current tooltip precision, zero/negative/fractional values and existing nonfinite helper behavior. Preserve date-only/recognized datetime/Date-object, midnight/non-midnight, quarter/year and column-versus-line/legend differences. Expected strings follow the pinned source helpers, not new locale rules.
@@ -923,7 +923,7 @@ The owner approved the [application integration design](chart-application-integr
   - _Depends: 2.34_
   - _Requirements: 4.8, 4.9, 10.5, 10.6_
 
-- [ ] 2.37 Verify and accept the joined source-safe application boundary
+- [x] 2.37 Verify and accept the joined source-safe application boundary
   - Explicit controller integration task, 1-3 hours. Freeze A1/B1 worker edits, inspect their combined diff and independently reproduce all new units plus existing chart compatibility units, strict checks, scoped lint and whole-file complexity against exact joined bytes. No browser/build/runtime activation is part of this gate.
   - Audit accepted reducer/mapper/snapshot/host behavior and original feature flags for unintended changes; prove A1/B1 share the frozen contracts without creating a second storage owner. Maintain source hashes and the explicit changed-file manifests, retaining unrelated dirty work outside accepted ownership.
   - Done when independent Astra review accepts only the source-safe contracts/helpers, with actual test IDs, commands/exits, size evidence and reviewed sanitized artifacts; controller updates breadth/inventory/source records selectively. Mark actual helper checks verified while application, capture, effective appearance, editor, export and save/restart remain unverified.
@@ -1027,3 +1027,9 @@ Task 4.8 accepted after independent Astra review: 60 tests pass with zero skips,
 Task 4.9 accepted after independent Astra final review: scoped GO for tasks 4.6-4.9 at Workspace f23cb786a946a6a996deedbe87be9c7ca86b221e. Fresh 60 tests pass with zero skips; scoped lint and test formatting pass. The explicit maintained-scope audit measures 168 files with nine exact exceptions and no errors or violations, including CRUD at 1599 physical/582 logical/max function 36. Actual test paths, source identity and exception expiry are registered. Evidence: artifacts/task-4.9/review/review.md and [SQLite verification](sqlite-repair-verification.md). Browser restart, renderer parity and deployment remain unverified.
 
 Task 2.34 accepted after independent Astra review at Workspace 4b31dfc3991e5edecb2437f94d85526bd0f9c660. Both strict compiler configurations, 260 compatibility tests, scoped lint and 55 staged source identities pass. The maintained scope checks 169 files with zero errors/violations; application types measure 181 physical/111 logical. Explicit CPython cache exclusion corrects a generated-bytecode inventory error without exempting maintained sources. Frozen contracts are ready for tasks 2.35/2.36; no application runtime or renderer parity is accepted. Evidence: artifacts/task-2.34/review/verdict.md.
+
+Task 2.35 accepted after independent Astra review: 18 tests, both strict compilers, scoped lint and 48 staged identities pass. Range and session modules measure 47/19/13 and 166/96/16 (physical/logical/largest function); the maintained 172-file audit has no errors or violations. Evidence: artifacts/task-2.35/review/verdict.md. Application activation remains unverified.
+
+Task 2.36 accepted after independent Astra financial review: 18 tests, both strict compilers, scoped lint, original-source fixture verification and 52 staged identities pass. The module measures 52 physical/25 logical/5 maximum function units. RED evidence is a missing-module replay after setup failures, as disclosed in the handoff. Evidence: artifacts/task-2.36/review/verdict.md. Joined acceptance remains task 2.37.
+
+Task 2.37 independently accepted with scoped GO at Workspace 945e438a9a65c3eeef7073dbce64a03b02f0ff6f: 296 joined tests, both strict compilers, scoped lint, 62 exact staged identities and the 172-file maintained audit pass. Source-safe tasks 2.34-2.37 are VERIFIED; application and deployment remain unverified. See chart-application-source-verification.md and artifacts/reviewed/task-2.37/review/verdict.md.

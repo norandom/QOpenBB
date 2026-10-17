@@ -1,0 +1,354 @@
+{
+  "head": "1a71fe8af322f1d8e16c8b213af1b35895687d75",
+  "originalPin": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "originals": [
+    {
+      "path": "terminalpro/src/lib/utils/utils.ts",
+      "fullSourceSha256": "42d80270c073318d648dc57b76c81cbc92f61b732ea33ea1a5f437fb032a99b1",
+      "codeSha256": "3e2badb377d7c3edfeee69b43a9ea30440cafb216b041791c0998fc699a51f1f",
+      "exactAstMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/AgGridUtils.tsx",
+      "fullSourceSha256": "152af34753d847c866539ffe99d0de61008182d4c40ef625442d18ae9f07f772",
+      "codeSha256": "a9004a55ac8f4690042774083e74975f79e22533ec9576b4b67b59af61b2b1af",
+      "exactAstMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/utils.tsx",
+      "fullSourceSha256": "a4a092b6ccb6076006dc51c93f9ea088c608d2aadb24b6183c5683d8ca302ba1",
+      "codeSha256": "90c955e698ee86bc71040731e6d14f04caae9b9ff4a623c59a8f06323d2b2aa7",
+      "exactAstMatch": true
+    }
+  ],
+  "identities": [
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/detachedState.ts",
+      "sha256": "a556556f6cadef9e042301f4798f72585498c4538cf1670f4f6ab0c77f9dbd02",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "sha256": "56f388d56600f2d72d6cc8bf475a2ac5a5c8603f02b48565b56231a82a1e70e8",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/integratedState.ts",
+      "sha256": "9ae81b6bd5baa143bc75a090f1609df95744b04a3003ce92de975ae417f1fe3f",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/legacyTypes.ts",
+      "sha256": "c0e177ae694b183290b284b22e21e1db3092390ca093ec7986ac612a6e262115",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/optionState.ts",
+      "sha256": "f5122d722b585e8eef61cc00cdeb9de2cb3ba33e376c4fffa6de1f38a21b2bb4",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "sha256": "4410f9d66d17b146b9e2d9e59b0dea617305d68c23f65c638927867333b8950c",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/snapshot.ts",
+      "sha256": "897aab915a746781b7e01062f97f1a4756e2f060b779b2fd170540e9e02339c4",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/snapshotTypes.ts",
+      "sha256": "6ecba6a18a77cad3f027e384b023296187b968b1566a6955a54af638b6c25a14",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/EChartsHost.tsx",
+      "sha256": "906fefc5eed125da005030061f3c6375becedacd26f0c5ee5a89f89c12e3b624",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesian.ts",
+      "sha256": "584f61b6e231a8693ce046a2a0e049e1e13eb87c537ede8fe5b69d1dcb2f99f9",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesianStyle.ts",
+      "sha256": "c8688c04fc437e259b0d30aaee46872f9d48032d1f0629d633223fbb5c57d4b2",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+      "sha256": "0581c101adc4a7dc71732965df569201c8e3b14144088c48bce188c849127d9f",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/echarts/lifecycle.ts",
+      "sha256": "ce71510b3c064efbb3318a33f2e3f04d3446b17abcc41497fc24f2634f3d3ced",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/appearance.fixtures.ts",
+      "sha256": "10b0d258386f564eb276f820cc3f87e007197b86b1f05e4e3d52470d699d9bf6",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/cartesian.test.ts",
+      "sha256": "274405c24d0e9946cdda0043d0d8522f9f62a6f308637e197deb6a6194e8024f",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/contracts.fixtures.ts",
+      "sha256": "17f8127980e786024f736c8ccaaaff56399b45e34ddb0274cd1ef49e18aa8dbc",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/contracts.test.ts",
+      "sha256": "ad1fb443bbbb9f49b377a5bddad32ef44df6f55a48eb228a0feac2ea23a06e81",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/contracts.types.ts",
+      "sha256": "0546d734296f3d90a87b5cb51e2b8549d31edf5cf17f970032457223e64af98f",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts",
+      "sha256": "b3b1b7803a96f29940109940d7d94f1ecc96f97c5598c52a08348eb203857c0d",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/editorPayload.fixtures.ts",
+      "sha256": "3fe39492fe9fd9d945f76699c2d1773ae77366dd3b4e8774c6fcdcb0c0762f84",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/host.test.tsx",
+      "sha256": "960cf790074d17d2b5531f0a8ae406e6774321532ca24131e563320df9b48b73",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts",
+      "sha256": "86fa93020d9baa372963cdfdaf518e6b6453863ed1e46b91e4883b2390367c0b",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/optionState.test.ts",
+      "sha256": "e4fd40fc10d5963120ce32c88374fd7b04bdb85df548607b73e569ab78b72c83",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/optionStateContracts.types.ts",
+      "sha256": "5548acdec0bdcf4f9983bcad384ea1f8e66e282f2fa2650f999e5632d2e62290",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/snapshot.fixtures.ts",
+      "sha256": "5f7d682f832ecbb5d69db85c94412b1d635b00aab508a0175dfced0550c4b209",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/snapshot.test.ts",
+      "sha256": "e13a4ed572f7bd3875a33c34023abd5290eb3433734785704bb7b7d50dfc0c52",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/snapshotContracts.types.ts",
+      "sha256": "da72ee92de6eb4ec7106af120b4c5f3b0aaeceb20ba8924a67ea70d7cef80a71",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/stateReducers.test.ts",
+      "sha256": "1dcff74f6c4eb87512df99cda21dd2231a2dc0e2f99c614abdf9314181df37a3",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/tsconfig.json",
+      "sha256": "e30c68feaf0f9dbb41c7fb0e9379e9aa11f0109dc8dc77135de4bf9ffba0e628",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-compatibility/vitest.config.mjs",
+      "sha256": "2cee58e004b541afcaf1fa5b7aee19dc90fd089358ed0ed90e64854807079413",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/appearance.html",
+      "sha256": "1a243807406cd30b953a0de604f7d9fbdd0319fa49254d2b2d3828c488a19d14",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/appearance.spec.ts",
+      "sha256": "b4ed01500d6cf005cfbc5ea55b40f9a5b64ab4bc3e70ab9d3df39207b8405fde",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/appearance.tsx",
+      "sha256": "8c404334354e2d62f253b283c8f19fca6c6c99b739113fbb428ba6f31e380070",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/cartesian.html",
+      "sha256": "d920379a48ca25539c7de2f6dd9d7290f7769d4115f522020c498aa98df2e2ef",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/cartesian.spec.ts",
+      "sha256": "857bbcb6c3fa5f1f54c9a2e16d12a35224d2edb397ce8b8cf231186153ab186e",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/cartesian.tsx",
+      "sha256": "b8ac0ce03a89a60409ebe322c33477e766e3b925104434040305034c6b7757d5",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/fixture.html",
+      "sha256": "ea47bceea07c093a7c442db8f5e43bfb99e0367b0b888b2f09ddc27a8c63fbb3",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/fixture.ts",
+      "sha256": "fcb0c89dcde6e4adb15ad8198142691d9b0d10451ef68a7edd249681ecb96ab4",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/host.html",
+      "sha256": "0f47f403849e733a2b7a4ec7278df7462a75c7147fcec03ee5db7b6e98694963",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/host.spec.ts",
+      "sha256": "6eca1de5468f7a877f5cc381512dc05e869e4445d569b8ff3e738c1cfa9933d9",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/host.tsx",
+      "sha256": "41bc3c7855a9c2916e0db29d85928723a6c8226b212edd3d46fc8a4386829c5c",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/playwright.config.ts",
+      "sha256": "c4e6a99bb4b62e3adf533b1e9d232b986085a6cd3dc2c09b8107b491f4594b6e",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/smoke.spec.ts",
+      "sha256": "790ad1c5772bccead465160cc2518fbe8dc938b49c34d8ac637ee60dc0759d72",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/toolchain.test.ts",
+      "sha256": "31ffac36336d295a722d78b753c0ebbc1da33415b899365ab878d8d9ebe6b38f",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/e2e/chart-compatibility/vite.config.ts",
+      "sha256": "66aba22d88e0791d33bc1110d5d89b6c2aca3dfe597a5f8fd9dad42accca0d77",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/application/types.ts",
+      "sha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/application/financialFormatting.ts",
+      "sha256": "a31738d1b3e4d296873433f6795a7e4035ef516201017bd62825e2e4724898a0",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-application/financialFormatting.test.ts",
+      "sha256": "754e593c743b8788932a4dd5481eb9d16a4923548a3d777ca6136eae1edf3ad8",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-application/financialFormatting.sources.json",
+      "sha256": "02b11ec941921aa43a36104490b4c52a72c85591ca898c136d9091612c2a179b",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-application/contracts.types.ts",
+      "sha256": "c74e593eec9286027d648e6ab655b78b2e2b9d45f3c3ecb74ac57c26ec71f018",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-application/tsconfig.json",
+      "sha256": "ad8d03c058e63b18d6526f7c518e0b813366f6cb326826bc23ff13d5aefbf10e",
+      "sourceStageWorkerMatch": true
+    },
+    {
+      "path": "terminalpro/tests/unit/chart-application/vitest.config.mjs",
+      "sha256": "4c0c193e2458f8c19581e873ae521a7beddbdae22716fc72e652e4f72565343a",
+      "sourceStageWorkerMatch": true
+    }
+  ],
+  "measured": {
+    "path": "/mnt/d/Source/QOpenBB/vendor/workspace/terminalpro/src/components/General/Table/Chart/application/financialFormatting.ts",
+    "logical": 25,
+    "functions": [
+      {
+        "name": "createChartDisplayPolicy",
+        "line": 8,
+        "column": 67,
+        "logical": 5
+      },
+      {
+        "name": "getParsedPeriod",
+        "line": 11,
+        "column": 27,
+        "logical": 1
+      },
+      {
+        "name": "fiscal",
+        "line": 15,
+        "column": 18,
+        "logical": 1
+      },
+      {
+        "name": "<anonymous>",
+        "line": 21,
+        "column": 15,
+        "logical": 4
+      },
+      {
+        "name": "<anonymous>",
+        "line": 32,
+        "column": 18,
+        "logical": 1
+      },
+      {
+        "name": "<anonymous>",
+        "line": 36,
+        "column": 16,
+        "logical": 1
+      },
+      {
+        "name": "<anonymous>",
+        "line": 38,
+        "column": 13,
+        "logical": 1
+      },
+      {
+        "name": "<anonymous>",
+        "line": 39,
+        "column": 18,
+        "logical": 5
+      },
+      {
+        "name": "<anonymous>",
+        "line": 42,
+        "column": 45,
+        "logical": 3
+      },
+      {
+        "name": "<anonymous>",
+        "line": 49,
+        "column": 20,
+        "logical": 1
+      }
+    ],
+    "physical": 52,
+    "maximumFunction": 5
+  }
+}

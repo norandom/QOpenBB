@@ -31,6 +31,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Inspect original chart types, controls, flags and required checks | [Renderer capability matrix](renderer-capability-matrix.md) |
 | Understand original saved chart settings and the next adapter boundary | [Original option findings](../.kiro/specs/openbb-self-service/chart-option-discovery.md) |
 | Review the explicit chart appearance contract | [Explicit appearance design](../.kiro/specs/openbb-self-service/chart-appearance-design.md) |
+| Review source-safe chart helpers and remaining runtime joins | [Application helper verification](../.kiro/specs/openbb-self-service/chart-application-source-verification.md) |
 | Review the next real Workspace chart journey and outstanding contracts | [Application integration draft](../.kiro/specs/openbb-self-service/chart-application-integration-design.md) |
 | Inspect original grid selection, range and chart-state inputs | [Grid range source contract](../.kiro/specs/openbb-self-service/chart-grid-range-contract.md) |
 | Check explicit appearance implementation and browser evidence | [Appearance verification](../.kiro/specs/openbb-self-service/chart-appearance-verification.md) |

@@ -1,0 +1,20 @@
+## Review Verdict
+- VERDICT: APPROVED
+- TASK: 2.35
+- MECHANICAL_RESULTS:
+  - Tests: PASS. `wsl -d Debian -u mc -- bash /mnt/d/Source/QOpenBB/artifacts/task-2.35/check.sh`, exit 0; 18 tests in two files, zero skips. Independent output: review/check.log.
+  - TBD/TODO grep: CLEAN across four owned files (also checked FIXME/HACK/XXX).
+  - Secrets grep: CLEAN. No credentials or private account state in owned code or reviewed evidence.
+  - Static checks: PASS. Both application and compatibility strict TypeScript configurations plus scoped Biome completed in the reproduction script, exit 0.
+  - Boundary: WITHIN. Two pure production modules and their two test files; frozen types unchanged at SHA256 5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e. Other concurrent dirty files are outside this review.
+  - Boundary audit: CLEAN. No grid capture, category inference, React activation, reducer edits or renderer/editor changes.
+  - RED phase: VERIFIED. red.log records both missing production-module imports before implementation; historical mapper/type failures and their remedies remain disclosed.
+  - Identity and size: PASS. Independently reproduced 48 source/stage identities and parser measurements in review/identity.json. chartRange.ts: 47 physical, 19 logical, maximum function 13. sessionState.ts: 166 physical, 96 logical, maximum function 16. All satisfy 400/300/50.
+- FINDINGS:
+  1. No blocking findings. The code implements task 2.35 against the application integration design's Frozen session and state contracts and the range contract's Selection and defaults / Range, reorder and tool-panel state. Stored eligibility, ignore behavior, configuration fallback, generated visibility intersection, selection order and row bounds follow those contracts. Original range JSON remains provenance; range persistence overwrites its columns with resolved IDs so removed IDs do not return.
+  2. Session validation precedes storage consumption. The hostile-storage regression proves stale edits/range transitions cannot inspect storage. Safe counter validation and overflow rejection prevent token wraparound; editor patches delegate to the accepted mapper/reducer using supplied latest storage and destination model. Baseline retention, unknown/inactive state preservation and option-root theme removal remain existing reducer semantics. Range writes remain separate.
+  3. FYI: Requirements 4.2, 4.7, 4.8 and 4.9 are supported only at this pure helper boundary. Dashboard persistence, original UI parity, capture, renderer invocation and browser acceptance remain unverified. Requirement 10.5 breadth/inventory updates and the whole maintained-scope quality gate remain controller acceptance work; this verdict does not claim those pending checks passed or accept task 2.37.
+  4. FYI: Reviewed the completed task evidence scripts, handoff, JSON identities and logs for publication. They contain synthetic fixtures, source hashes, local execution paths and diagnostics; no environment files, provider credentials, auth traces, account state or caches. These files are suitable for the controller's explicit reviewed mirror after freeze and manifest validation. Historical green.log reports 13 tests and must remain identified as historical; check.log/review/check.log are the final 18-test runs.
+  5. FYI: The first independent identity invocation lacked the pinned Node PATH and failed before measurement. review/identity-path-attempt.log preserves that environment failure. Re-running with the check script's pinned Node PATH passed; review/identity.log and review/identity.json contain the successful result. Core product/tech/structure steering files are absent, consistently with requirements.md's recorded status.
+- REMEDIATION: None for the reviewed task boundary. Controller must complete its declared current-manifest quality and publication gates before task acceptance.
+- SUMMARY: Task 2.35's pure range and session helpers satisfy their approved boundary with independently passing focused tests, strict compilation, lint, identity and size evidence.

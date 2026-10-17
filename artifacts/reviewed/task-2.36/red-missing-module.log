@@ -1,0 +1,33 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/task236/terminalpro[39m
+
+ [31m❯[39m tests/unit/chart-application/financialFormatting.test.ts [2m([22m[2m0 test[22m[2m)[22m
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/chart-application/financialFormatting.test.ts [ tests/unit/chart-application/financialFormatting.test.ts ]
+Error: Failed to resolve import "../../../src/components/General/Table/Chart/application/financialFormatting" from "tests/unit/chart-application/financialFormatting.test.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /home/mc/qopenbb-work/task236/terminalpro/tests/unit/chart-application/financialFormatting.test.ts:8:41
+  6  |  import ts from "typescript";
+  7  |  import { describe, expect, it } from "vitest";
+  8  |  import { createChartDisplayPolicy } from "../../../src/components/General/Table/Chart/application/financialFormatting";
+     |                                            ^
+  9  |  dayjs.extend(quarterOfYear);
+  10 |  // Test-only exact AST excerpts keep the original helpers independent of the application graph.
+ ❯ TransformPluginContext._formatLog ../../appearance-deps/terminalpro/node_modules/vite/dist/node/chunks/node.js:31066:39
+ ❯ TransformPluginContext.error ../../appearance-deps/terminalpro/node_modules/vite/dist/node/chunks/node.js:31063:14
+ ❯ normalizeUrl ../../appearance-deps/terminalpro/node_modules/vite/dist/node/chunks/node.js:28008:18
+ ❯ ../../appearance-deps/terminalpro/node_modules/vite/dist/node/chunks/node.js:28076:30
+ ❯ TransformPluginContext.transform ../../appearance-deps/terminalpro/node_modules/vite/dist/node/chunks/node.js:28044:4
+ ❯ EnvironmentPluginContainer.transform ../../appearance-deps/terminalpro/node_modules/vite/dist/node/chunks/node.js:30851:14
+ ❯ loadAndTransform ../../appearance-deps/terminalpro/node_modules/vite/dist/node/chunks/node.js:20619:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 12:07:18
+[2m   Duration [22m 747ms[2m (transform 0ms, setup 0ms, import 0ms, tests 0ms, environment 531ms)[22m
+

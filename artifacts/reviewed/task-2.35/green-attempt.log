@@ -1,0 +1,95 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/task235/terminalpro[39m
+
+ [32m✓[39m tests/unit/chart-application/chartRange.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [31m❯[39m tests/unit/chart-application/sessionState.test.ts [2m([22m[2m8 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 12[2mms[22m[39m
+     [32m✓[39m advances independent revisions without reusing tokens[32m 2[2mms[22m[39m
+     [32m✓[39m rejects malformed/overflowing generation[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed/overflowing dataRevision[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed/overflowing renderRevision[32m 0[2mms[22m[39m
+     [32m✓[39m validates address encoding and stale identity/revisions[32m 0[2mms[22m[39m
+     [32m✓[39m delegates initialized and populated-to-empty baselines with address checks[32m 1[2mms[22m[39m
+[31m     [31m×[31m reduces against latest storage and destination model, retaining inactive/unknown state and removing root theme[39m[32m 6[2mms[22m[39m
+     [32m✓[39m writes only the destination family range independently from option reduction[32m 1[2mms[22m[39m
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/chart-application/sessionState.test.ts > addressed chart session > reduces against latest storage and destination model, retaining inactive/unknown state and removing root theme
+AssertionError: expected { status: 'invalid', …(1) } to deeply equal { status: 'ready', …(2) }
+
+- Expected
++ Received
+
+  {
+-   "stamp": {
+-     "address": {
+-       "stateAddress": "[\"widget\",\"partition\"]",
+-       "stateKey": "partition",
+-       "widgetId": "widget",
+-     },
+-     "dataRevision": 0,
+-     "generation": 1,
+-     "renderRevision": 0,
+-   },
+-   "status": "ready",
+-   "value": {
+-     "chartType": "stackedColumn",
+-     "isPivotMode": false,
+-     "partition": {
+-       "chartModel": {
+-         "cellRange": {
+-           "columns": [
+-             "date",
+-             "revenue",
+-           ],
+-         },
+-         "chartOptions": {
+-           "bar": {
+-             "theme": "nested",
+-             "title": {
+-               "enabled": false,
+-               "text": "New",
+-             },
+-           },
+-           "line": {
+-             "series": {
+-               "strokeWidth": 3,
+-             },
+-           },
+-         },
+-         "chartType": "stackedColumn",
+-         "destination": true,
+-         "old": true,
++   "diagnostics": [
++     {
++       "code": "invalid-session",
++       "message": "input must contain chartType and event data fields",
++       "path": [],
+      },
+-       "line": {
+-         "cellRange": {
+-           "columns": [
+-             "date",
+-             "profit",
+    ],
+-         },
+-       },
+-       "unknown": "latest",
+-     },
+-     "totalSeries": 2,
+-     "unknown": "root",
+-   },
++   "status": "invalid",
+  }
+
+ ❯ tests/unit/chart-application/sessionState.test.ts:40:36
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m12 passed[39m[22m[90m (13)[39m
+[2m   Start at [22m 12:06:23
+[2m   Duration [22m 1.19s[2m (transform 86ms, setup 0ms, import 128ms, tests 16ms, environment 841ms)[22m
+

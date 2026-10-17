@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-17T09:53:23Z",
+  "updated_at": "2026-10-17T10:16:19Z",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -165,11 +165,11 @@
       "design_approved": true,
       "tasks_generated": true,
       "tasks_approved": true,
-      "implementation_ready": true,
-      "independent_design_review": "Scoped GO for controller contract freeze and source-safe A1/B1 task planning; affected A2, mapper, full C and D activation remain gated by named runtime contracts. Owner design approval recorded; task approval remains pending.",
+      "implementation_ready": false,
+      "independent_design_review": "Scoped GO for controller contract freeze and source-safe A1/B1 tasks; owner design and task approvals recorded. A2, mapper, full C and D activation remain gated by named runtime contracts.",
       "review_evidence": "artifacts/chart-integration-freeze-review/review.md",
       "reviewed_design_sha256": "196b88811be7b637d21d4c1e37048d6091609942f4696f9a4bcdc5e90cbb5313",
-      "source_revision": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
+      "source_revision": "945e438a9a65c3eeef7073dbce64a03b02f0ff6f",
       "discovery_evidence": [
         "chart-grid-range-contract.md",
         "chart-theme-matrix-findings.md",
@@ -187,7 +187,12 @@
       ],
       "task_graph_review": "passed-independent",
       "task_review_path": "artifacts/reviewed/chart-integration-task-review/review.md",
-      "task_scope": "Source-safe contracts, session/range and financial display only; runtime joins remain gated"
+      "task_scope": "Source-safe contracts, session/range and financial display only; runtime joins remain gated",
+      "source_safe_tasks_accepted": true,
+      "implementation_accepted": false,
+      "evidence_path": "chart-application-source-verification.md",
+      "validation": "GO for source-safe tasks 2.34-2.37 only; whole application and renderer remain unverified",
+      "source_safe_review_path": "artifacts/reviewed/task-2.37/review/verdict.md"
     }
   }
 }
