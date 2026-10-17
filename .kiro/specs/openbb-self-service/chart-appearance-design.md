@@ -4,7 +4,7 @@
 
 Proposed bounded amendment after accepted tasks 2.24-2.27. Extend the existing three-family ECharts mapper so resolved inputs can express separate fill/stroke, title visibility, caption typography, missing-observation connection and circular markers. These are necessary distinctions for preserving OpenBB's appearance. This slice does not infer the entire original theme or reconnect incomplete application controls.
 
-Current Workspace baseline: `5c2df9864bed000170ffccde146273b468e0552e`. Original reference: `38dffc33389aca0e4a87e0e88d42f7067aa220df`. This supplements the parent design and its requirement coverage; human design approval is pending.
+Current Workspace baseline: `5c2df9864bed000170ffccde146273b468e0552e`. Original reference: `38dffc33389aca0e4a87e0e88d42f7067aa220df`. This supplements the parent design and its requirement coverage; the owner approved this design on 2026-10-17.
 
 ## Boundary Commitments
 
@@ -110,4 +110,4 @@ This slice contributes to 4.8 and 4.9 but cannot complete them. Criteria 10.1, 1
 
 Malformed appearance yields invalid diagnostics, unsupported active marker shape yields unsupported, and neither produces partial options. Fixture UI shows the diagnostic while retaining the previous good chart; this is not a new production error UX. Original stored configurations remain untouched.
 
-After human design approval, generate bounded tasks. Freeze types and fixtures first. Style-module work and isolated browser-fixture scaffolding can proceed in disjoint lanes only after shared signatures are fixed; the numerical-mapper join and actual browser verification are sequential gates. Sol owns bounded implementation; Astra reviews contract/financial continuity and final acceptance. No image is promoted by this slice.
+Design is owner-approved; tasks 2.28-2.33 are generated and await task approval. Freeze types and fixtures first. Style-module work and isolated browser-fixture scaffolding can proceed in disjoint lanes only after shared signatures are fixed; the numerical-mapper join and actual browser verification are sequential gates. Sol owns bounded implementation; Astra reviews contract/financial continuity and final acceptance. No image is promoted by this slice.

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Next design for owner review, 2026-10-17: [explicit Cartesian appearance](chart-appearance-design.md) passed independent Astra review. It adds resolved fill/stroke, title visibility, typography and line gap/marker semantics without changing numerical mapping or activating application callers. [Original line findings](chart-line-appearance-findings.md) explain the evidence and limits. Design approval and task generation remain pending.
+Owner-approved design, 2026-10-17: [explicit Cartesian appearance](chart-appearance-design.md) passed independent Astra review. It adds resolved fill/stroke, title visibility, typography and line gap/marker semantics without changing numerical mapping or activating application callers. [Original line findings](chart-line-appearance-findings.md) explain the evidence and limits. Tasks 2.28-2.33 passed independent task-graph review and await task approval.
 
 Current slice: the [original option-state design](chart-option-state-design.md) passed independent Astra review and received owner approval for autonomous implementation. It specifies baseline initialization/partition transitions and captured column-editor patches with existing reducers. See [verification status](chart-option-state-verification.md). Effective styling, editor UI and application activation remain outside this bounded slice.
 

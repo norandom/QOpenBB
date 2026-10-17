@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-17T07:10:41.1969870Z",
+  "updated_at": "2026-10-17T07:13:41.5581594Z",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -106,17 +106,28 @@
     },
     "appearance_slice": {
       "name": "explicit-cartesian-appearance",
-      "phase": "design-generated",
+      "phase": "tasks-generated",
       "design_path": "chart-appearance-design.md",
       "design_generated": true,
       "independent_design_review": "passed-for-human-review",
       "review_evidence": "artifacts/chart-appearance-design/review.md",
       "reviewed_design_sha256": "49e7250ea4d2f3a8f91bf99ee3cad62b74477e29673fced751826ccb8466272b",
-      "design_approved": false,
-      "tasks_generated": false,
+      "design_approved": true,
+      "tasks_generated": true,
       "tasks_approved": false,
       "implementation_ready": false,
-      "source_revision": "5c2df9864bed000170ffccde146273b468e0552e"
+      "source_revision": "5c2df9864bed000170ffccde146273b468e0552e",
+      "approval_note": "Owner approved the explicit Cartesian appearance design; task generation authorized. Task approval remains a separate gate.",
+      "task_ids": [
+        "2.28",
+        "2.29",
+        "2.30",
+        "2.31",
+        "2.32",
+        "2.33"
+      ],
+      "task_graph_review": "passed-independent",
+      "task_review_path": "artifacts/appearance-tasks/review.md"
     }
   }
 }

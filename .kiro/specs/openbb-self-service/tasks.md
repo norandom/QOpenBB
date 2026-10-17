@@ -807,3 +807,67 @@ Task 2.25 accepted after independent Astra review: 39 focused tests, strict Type
 Task 2.26 accepted after independent Sol review: 53 focused editor/composition tests, strict TypeScript, actual repository lint and registered caps passed. Evidence: artifacts/task-2.26/review/review.md. Joined baseline integration and broader renderer parity remain separate gates.
 
 Task 2.27 accepted at Workspace 5c2df9864bed000170ffccde146273b468e0552e after independent Astra final review: scoped GO for 2.24-2.27, completion VERIFIED, fresh 221 units, strict TypeScript, scoped lint, twelve-module caps and 42 source/dependency identities passed. Evidence: artifacts/task-2.27/review/review.md and [option-state verification](chart-option-state-verification.md). Full renderer, browser parity and persistence remain unverified.
+
+## Explicit Cartesian appearance slice (tasks 2.28-2.33)
+
+The owner approved [explicit appearance](chart-appearance-design.md). These tasks supplement existing requirement coverage; they do not activate application controls or complete renderer parity. Task approval is pending. Each leaf is a bounded 1-3 hour work unit with independent review before acceptance.
+
+### Execution and ownership
+
+Freeze the shared contracts and fixtures in 2.28, then run 2.29 and 2.30 concurrently with separate Sol workers. Join serially in 2.31, verify actual browser outcomes in 2.32, and accept joined evidence in 2.33. Astra reviews contracts, numerical continuity and final acceptance; a fresh independent Sol reviewer can review fixture scaffolding. At most controller, two workers and one reviewer. Do not modify a peer's files; shared contract changes stop both lanes for controller review.
+
+Paths below are relative to `vendor/workspace/terminalpro/`. Production files live under `src/components/General/Table/Chart/echarts/`; unit paths under `tests/unit/chart-compatibility/`; browser paths under `tests/e2e/chart-compatibility/`. Controller alone owns root inventory, breadth, source pins, documentation and selective commits. Preserve unrelated working-tree changes. No package/lock changes, new dependencies, application flags, provider calls, AG runtime imports or renderer activation.
+
+Reuse the accepted pinned WSL Node, restored dependencies and isolated staging pattern from tasks 2.24-2.27. Before dispatch, controller checks actual tool/dependency identities and existing unit, strict, fixture build and browser entry points; missing runtime setup must be repaired before dependent work. From the frontend root: `node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/vitest.config.mjs`, `node node_modules/typescript/bin/tsc --project tests/unit/chart-compatibility/tsconfig.json --noEmit`, and `node node_modules/vite/bin/vite.js build --config tests/e2e/chart-compatibility/vite.config.ts`. Browser verification uses root verification Playwright with the existing chart config and pinned cache. Actual repository Biome configuration and the [combined complexity checker](../../../docs/complexity.md) remain authoritative.
+
+One heavy suite/build at a time; one browser and Vitest worker. Parallel lightweight checks require separate stages and output directories. Browser/CDP sessions are owned, hidden and headless with sanitized evidence and finally cleanup. All maintained new/modified production files pass 400 physical lines, 300 logical units and 50/function as whole files; tests and documentation are recorded exclusions. No new exceptions. Register newly created production files before acceptance, using truthful fork manifests. Foundation checker/inventory tasks are already accepted; this slice extends their scope.
+
+- [ ] 2.28 Freeze explicit appearance contracts and financial fixtures
+  - Add the approved optional title, typography, line and per-series fields and the exact style-validation/projection result types. Preserve existing signatures and valid legacy inputs; freeze helper exports before either lane starts.
+  - Add homogeneous-unit, same-scale four-observation fixtures with an interior null, independent expected appearance values and provenance distinguishing original UI observations from synthetic fallback rules. Include palette reorder and nonempty/empty retained titles.
+  - Add compile-time positive/negative cases; verify existing discovery includes the new fixtures and existing 221 units remain green. Done when strict checks, scoped lint, whole-file caps and independent Astra contract review pass and fixtures/signatures are frozen.
+  - _Boundary: cartesianTypes.ts; appearance.fixtures.ts; snapshotContracts.types.ts; controller inventory_
+  - _Depends: 2.27_
+  - _Requirements: 4.8, 4.9, 10.5, 10.6_
+
+- [ ] 2.29 (P) Validate and project explicit appearance
+  - Extract existing style validation into the approved cohesive style module and implement typed caption/series projection. Do not edit or wire the numerical mapper in this lane.
+  - Cover omitted/undefined/null optional inputs, complete typography with finite nonnegative sizes, title visibility requiring retained text, malformed inactive settings and unsupported active enabled marker shapes. Exercise every fill/stroke/marker precedence branch, zero/fractional dimensions and ID-bound overrides after reorder.
+  - Add focused helper tests to the owned Cartesian test file while retaining existing mapper assertions. Verify legacy projection shapes, unchanged inputs and inactive-family omission. Done when focused tests, strict checks, actual lint and independent review pass; register the new style module and pass 400/300/50 before acceptance.
+  - _Boundary: cartesianStyle.ts and cartesian.test.ts only_
+  - _Depends: 2.28_
+  - _Requirements: 4.8, 4.9_
+
+- [ ] 2.30 (P) Build the isolated appearance journey fixture
+  - Build fixture-only controls and diagnostics around the existing real mapper and accepted host using frozen style inputs. Maintain monotonic render revisions independently of the unchanged data revision; rejected input preserves the last good render.
+  - Scaffold observable outcomes for line connection, marker toggle, retained title, distinct caption typography/colors, family roundtrip, resize, export and invalid/unsupported recovery. Capture real options and rendered output without importing unfinished style helpers or copying mapper logic.
+  - Register the added HTML entry in the existing Vite/Playwright configuration without changing previous fixtures or worker bounds. Done when fixture build and applicable type/lint checks pass and independent review confirms the controls and lifecycle seam. New appearance behavior remains explicitly unverified until mapper integration; do not weaken assertions or claim the old mapper implements it.
+  - Applicable maintained configuration passes whole-file caps; browser fixtures/tests are documented exclusions. Shared build execution is controller-serialized.
+  - _Boundary: appearance.html, appearance.tsx and existing browser Vite/Playwright configuration only_
+  - _Depends: 2.28_
+  - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.4_
+
+- [ ] 2.31 Integrate appearance without changing observations
+  - After both lanes freeze, delegate mapper style validation/projection to the reviewed module. Keep family/source-mode, unit/scale, stable-ID, exact values, ordering, escaping, display precision and stacking semantics intact.
+  - Extend mapper integration assertions for all three families, legacy exact option shape, explicit marker colors/widths, title retention, caption fonts and palette selection after reorder. Invalid/unsupported style produces no partial options. Verify null arrays are identical in both connect states and input objects remain unchanged.
+  - Done when all existing 221 units plus new helper/integration cases, strict checks, actual lint and independent Astra numerical review pass. Both modified mapper and style module remain within whole-file 400/300/50; no forwarding-only split or compressed code.
+  - _Boundary: Explicit integration of cartesian.ts with cartesianStyle.ts; cartesian.test.ts after lane freeze_
+  - _Depends: 2.29, 2.30_
+  - _Requirements: 4.8, 4.9, 10.5, 10.6_
+
+- [ ] 2.32 Verify visible appearance and recovery in the real browser
+  - Add the actual Playwright journey against the freshly built real mapper/host fixture. Assert connected versus broken null gaps, circle counts/positions with no null marker, title hide/re-enable retaining text, distinct colors/typography, columns-to-line replacement, resize and exported pixels alongside exact option/data assertions.
+  - Verify appearance-only revisions at unchanged data revision, invalid/unsupported inputs retaining the last good chart and valid correction recovering. Do not substitute DOM labels, a toast or option equality alone for rendered outcome checks.
+  - Run existing smoke, lifecycle and Cartesian browser cases as regressions in the same owned one-worker environment. Record commands, source/dependency identities, exit codes, screenshots/export checks and sanitized CDP errors. Done when independent review reproduces the journey and confirms visible outcomes and cleanup. Failures are diagnosed before rerun.
+  - Tests/fixtures are excluded from production caps; any production fix returns to its owning task and review. Original screenshots support selected semantics only, not full light/dark pixel parity or application acceptance.
+  - _Boundary: appearance.spec.ts and fixture corrections in appearance.tsx after scaffold freeze_
+  - _Depends: 2.31_
+  - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.3, 10.4_
+
+- [ ] 2.33 Accept the joined appearance boundary
+  - Verify exact joined source/dependency identities, fresh units, strict checks, scoped lint and all registered chart-module caps. Reuse independently reproduced browser evidence only when identities match; rerun affected checks after any source change.
+  - Audit scope for unintended application, reducer, snapshot, host, flag, dependency, provider or persistence changes. Update actual breadth paths/evidence, inventory, source pins and a scoped verification report, preserving overall renderer parity as unverified.
+  - Done when independent Astra final review passes with reproducible evidence and explicit remaining theme/default, formatting, original-control and application integration gaps. Selectively commit accepted changes; no release image promotion. Whole maintained scope passes 400/300/50; documentation/evidence paths are exempt.
+  - _Boundary: Controller integration of scope, identity, breadth and acceptance records_
+  - _Depends: 2.32_
+  - _Requirements: 1.1, 4.8, 4.9, 10.4, 10.5, 10.6_
