@@ -10,6 +10,8 @@ The [phase record](../.kiro/specs/openbb-self-service/spec.json) records approve
 
 ## Dependency gates
 
+Next owner decision: the [explicit appearance design](../.kiro/specs/openbb-self-service/chart-appearance-design.md) passed independent Astra review and awaits design approval. It makes original line gap/marker and retained-title behavior expressible in the isolated mapper. Theme resolution, complete original controls and application activation remain open; this is not renderer acceptance.
+
 The owner approved the [original option-state design](../.kiro/specs/openbb-self-service/chart-option-state-design.md) and autonomous implementation. Tasks 2.24-2.27, including both parallel implementation lanes and [joined verification](../.kiro/specs/openbb-self-service/chart-option-state-verification.md), are accepted. [Effective theme resolution](../.kiro/specs/openbb-self-service/chart-effective-style-discovery.md) and application integration remain subsequent work.
 
 | Stage | Work to resolve | Gate before proceeding |

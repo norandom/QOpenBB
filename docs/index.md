@@ -26,7 +26,8 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Track features that the renderer replacement must preserve | [Renderer parity audit](renderer-parity-audit.md) |
 | Inspect original chart types, controls, flags and required checks | [Renderer capability matrix](renderer-capability-matrix.md) |
 | Understand original saved chart settings and the next adapter boundary | [Original option findings](../.kiro/specs/openbb-self-service/chart-option-discovery.md) |
-| Review the next bounded chart implementation design | [Option-state design](../.kiro/specs/openbb-self-service/chart-option-state-design.md) |
+| Review the next bounded chart implementation design | [Explicit appearance design](../.kiro/specs/openbb-self-service/chart-appearance-design.md) |
+| Inspect original line, title and marker observations | [Line appearance findings](../.kiro/specs/openbb-self-service/chart-line-appearance-findings.md) |
 | Check original option-state implementation evidence | [Option-state verification](../.kiro/specs/openbb-self-service/chart-option-state-verification.md) |
 | Inspect remaining effective chart styling contracts | [Effective-style discovery](../.kiro/specs/openbb-self-service/chart-effective-style-discovery.md) |
 | Review the renderer compatibility investigation and parallel work | [Discovery plan](../.kiro/specs/openbb-self-service/parity-plan.md) and [research](../.kiro/specs/openbb-self-service/parity-research.md) |

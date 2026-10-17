@@ -2,6 +2,8 @@
 
 ## Overview
 
+Next design for owner review, 2026-10-17: [explicit Cartesian appearance](chart-appearance-design.md) passed independent Astra review. It adds resolved fill/stroke, title visibility, typography and line gap/marker semantics without changing numerical mapping or activating application callers. [Original line findings](chart-line-appearance-findings.md) explain the evidence and limits. Design approval and task generation remain pending.
+
 Current slice: the [original option-state design](chart-option-state-design.md) passed independent Astra review and received owner approval for autonomous implementation. It specifies baseline initialization/partition transitions and captured column-editor patches with existing reducers. See [verification status](chart-option-state-verification.md). Effective styling, editor UI and application activation remain outside this bounded slice.
 
 Next slice, 2026-10-16: the [snapshot and Cartesian mapping design](chart-snapshot-design.md) passed independent Astra review after one repair pass and received owner design approval. It is isolated development scope, with no application activation or reduction of final parity requirements. [Discovery findings](chart-next-discovery.md) separately record the grid and SQLite contracts.
