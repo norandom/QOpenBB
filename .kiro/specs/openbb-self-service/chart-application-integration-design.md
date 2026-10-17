@@ -54,13 +54,15 @@ Dependency direction is legacy types and accepted pure contracts -> capture/styl
 
 ## Components and interfaces
 
-All proposed interfaces use explicit types; unknown external models enter validation as `unknown`, never `any`. The contract-freeze task defines these in `Chart/application/types.ts` with imports from accepted types. P0 dependencies are grid readiness, captured address, provider/column unit metadata, original capture evidence and accepted reducer semantics. SQLite final acceptance is P0 only for the persistence join; it does not block pure capture/style development.
+All proposed interfaces use explicit types; unknown external models enter validation as `unknown`, never `any`. The contract-freeze task defines these in `Chart/application/types.ts` with imports from accepted types. P0 dependencies are grid readiness, captured address, provider/column unit metadata, original capture evidence and accepted reducer semantics. Accepted SQLite tasks 4.6-4.9 satisfy the storage prerequisite for the persistence join; actual application save/restart/reopen remains unverified.
 
 ### Displayed-grid capture: 4.8, 4.9
 
 `captureDisplayedChart(input: GridCaptureInput): GridCaptureResult` returns `{status:"captured", input:ResolvedSnapshotInput}` or `{status:"invalid"|"unresolved", diagnostics:readonly SnapshotDiagnostic[]}`. GridCaptureInput contains the actual grid API, captured stateAddress/dataRevision, ordered selected column IDs, resolved category ID, original model/range and column semantic descriptors. It is not a bag of raw provider rows.
 
 Capture snapshots the displayed filtered/sorted leaf observations in original selected-range bounds after pending column state is flushed. Read raw numeric values through the original grid value semantics, never formatted strings or DOM text. Do not use `rowData:null` from createRangeChart as data. Duplicate category labels retain distinct stable row IDs; display labels never key series. Hidden columns, selected order and original range resolution follow the reference path. A refresh invalidates the old capture; results from an earlier address/revision cannot overwrite the current session.
+
+The [source range contract](chart-grid-range-contract.md) distinguishes integrated and detached inputs. The ordinary integrated path keeps the existing grid and forwards ordered displayed columns plus addressed stored ranges to AG Grid; it does not run the detached extraction pipeline. Detached percent formatting, date re-sorting and recreation omissions cannot be imported into this adapter as integrated behavior. Numeric-only selection, multiple candidate categories, value getters and tool-panel reorder/aggregation still require original runtime observations before freezing capture semantics.
 
 Preserve zero, null, missing, negative and fractional values without rounding or conversion. Unit and positive scale come from explicit widget/column provenance; currency symbols in labels do not establish them. Missing or mixed units cannot be guessed as USD/dimensionless or certified by a synthetic same-unit fixture. The current mapper rejects such input; production unit inference and mixed-axis support remain explicit release blockers until evidenced. Group/pivot/transpose and remote-page data must retain sourceMode truth rather than be relabelled flat. Ordinary filtered/sorted flat observations remain flat with their range/filter provenance retained in existing snapshot JSON metadata.
 
@@ -128,7 +130,7 @@ This is a design sequence for later task generation, not an approved task list. 
 | Controller mapper join | Chart/echarts/cartesianTypes.ts, cartesianStyle.ts, cartesian.ts and any reviewed cohesive extracted projection module | A/B independently reviewed; add frozen explicit projections without breaking accepted observations. |
 | C: docked fields | Chart/editor/** and new editor unit/component files only | Captured complete field inventory and frozen event contracts; working original field groups. Sequential bounded family/group tasks, not one unbounded editor rewrite. |
 | D: application composition | Chart/application/useApplicationChartSession.ts; Chart/AgChartView.tsx; Chart/hooks/useChartOptions.tsx; General/Table/hooks/useTableContext.tsx, hooks/types.d.ts; General/Table/AgGridTable.tsx, AgGridFile.tsx, communityBoundary.ts | Reviewed A/B and mapper join; C may overlap only after props/events freeze. This lane alone removes chart stubs/guards and reconnects current callers. |
-| Controller real-app join | tests/e2e/chart-application/**; root test registration, evidence mapping and source pins | C/D independent reviews plus SQLite final gate; real application verification and selective commits. |
+| Controller real-app join | tests/e2e/chart-application/**; root test registration, evidence mapping and source pins | C/D independent reviews plus accepted SQLite repair; real application verification and selective commits. |
 
 Do not concurrently assign a path to two lanes. Freeze workers before shared joins/commits; stop affected lanes on interface drift. Table/file caller growth may require additional cohesive extraction after measured inventory. Entity theme preview, detached charts and other families receive their own explicit later writable paths and joins rather than being swept into D. No Excel lane starts before Anthropic acceptance.
 
@@ -137,7 +139,7 @@ Do not concurrently assign a path to two lanes. Freeze workers before shared joi
 | Requirement | Contribution | Observable boundary |
 | --- | --- | --- |
 | 4.8, 4.9 | Original ordinary table chart UX, controls and themes | Reference/candidate real-app comparisons and actual outcomes; full matrix remains open. |
-| 4.2, 4.7 | Original chart state persisted without schema migration | Actual save, dashboard reopen and disposable environment restart, after SQLite final gate. |
+| 4.2, 4.7 | Original chart state persisted without schema migration | Actual save, dashboard reopen and disposable environment restart, using the accepted SQLite repair. |
 | 10.1-10.4 | Isolated bounded application verification | Owned headless profile, one browser worker, CDP evidence and controlled heavy queue. |
 | 10.5, 10.6 | Evidence traceability | Actual implemented tests and revision/image/artifact links in breadth; planned paths remain unverified. |
 
