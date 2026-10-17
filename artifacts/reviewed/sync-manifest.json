@@ -103,10 +103,12 @@
     "ui-parity-legend-startup-diagnostic-review",
     "ui-parity-legend-startup-diagnostic-runtime-review",
     "ui-parity-internal-network-source-diagnosis",
-    "ui-parity-internal-network-source-review"
+    "ui-parity-internal-network-source-review",
+    "ui-parity-legend-fixed-relay-plan",
+    "ui-parity-legend-fixed-relay-plan-review"
   ],
   "sourcepins": {
-    "root_at_sync": "f1847893b70cbb99a084bfcc2360822ab05ffaca",
+    "root_at_sync": "a396767d24f8c3ec1a04cb3536e7d63d377e72d2",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -27167,6 +27169,94 @@
       "publishedSHA256": "7f15e165f30002be9844ecdf8cf6be1486c6bbc3e835ecd280fed2b4d78bdac7",
       "bytes": 1017,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan/plan.md",
+      "sourceSHA256": "1c9a0e527acb77b808aab703df19ef8f6f8eacb1ed325987e51a5ea071703e65",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan/plan.md",
+      "publishedSHA256": "1c9a0e527acb77b808aab703df19ef8f6f8eacb1ed325987e51a5ea071703e65",
+      "bytes": 8036,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan/probe-contract.json",
+      "sourceSHA256": "42f8eed6a799ed26877a3f6832768faf00546bed266bcee74d351f4afdbada69",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan/probe-contract.json",
+      "publishedSHA256": "42f8eed6a799ed26877a3f6832768faf00546bed266bcee74d351f4afdbada69",
+      "bytes": 2184,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan/runtime-evaluation.json",
+      "sourceSHA256": "d762ec49e489a94676e05c3c5a81e14669299b8b0366156be59b6a34b6bf2988",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan/runtime-evaluation.json",
+      "publishedSHA256": "d762ec49e489a94676e05c3c5a81e14669299b8b0366156be59b6a34b6bf2988",
+      "bytes": 1107,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan/freeze-plan.mjs",
+      "sourceSHA256": "2147c3e1caffaa84fc72c4a1969f99b5a19da7ac8572539e57fb3c9d46ccee6f",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan/freeze-plan.mjs",
+      "publishedSHA256": "2147c3e1caffaa84fc72c4a1969f99b5a19da7ac8572539e57fb3c9d46ccee6f",
+      "bytes": 4881,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan/verification.json",
+      "sourceSHA256": "62e355a53d766299f267e5f345e5ff0722376da716cb6ab12b836f7abaae40c7",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan/verification.json",
+      "publishedSHA256": "62e355a53d766299f267e5f345e5ff0722376da716cb6ab12b836f7abaae40c7",
+      "bytes": 542,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan/source-hashes.json",
+      "sourceSHA256": "98360c3c412f13396f548c9b9af27fa2b20eb64f8a4f05b6b71d3886218fe13a",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan/source-hashes.json",
+      "publishedSHA256": "98360c3c412f13396f548c9b9af27fa2b20eb64f8a4f05b6b71d3886218fe13a",
+      "bytes": 3369,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan-review/reviewed-plan-publication-allowlist.json",
+      "sourceSHA256": "ad082fed6d7ee2aeeda18bc7b4e317c3d8645933bab1f9c03b830ee54f3aa819",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan-review/reviewed-plan-publication-allowlist.json",
+      "publishedSHA256": "ad082fed6d7ee2aeeda18bc7b4e317c3d8645933bab1f9c03b830ee54f3aa819",
+      "bytes": 1150,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan-review/review.md",
+      "sourceSHA256": "4a9c0a7641cad6e62d1fc4b30bdf1a07109ea60030885af7e26f65e1188c8887",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan-review/review.md",
+      "publishedSHA256": "4a9c0a7641cad6e62d1fc4b30bdf1a07109ea60030885af7e26f65e1188c8887",
+      "bytes": 7276,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan-review/audit.mjs",
+      "sourceSHA256": "955564b0c6056d47790989f284741a76f161a05df6d1a32e354888bedebcd5af",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan-review/audit.mjs",
+      "publishedSHA256": "955564b0c6056d47790989f284741a76f161a05df6d1a32e354888bedebcd5af",
+      "bytes": 7704,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan-review/verification.json",
+      "sourceSHA256": "105801bee261aec2d9f7dde2dfb6cf1c7776ad5fe298917623910c582bd79b70",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan-review/verification.json",
+      "publishedSHA256": "105801bee261aec2d9f7dde2dfb6cf1c7776ad5fe298917623910c582bd79b70",
+      "bytes": 1117,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay-plan-review/publication-allowlist.json",
+      "sourceSHA256": "696b778b3858fcc40d2f31f3c9262206badfdd6bd197b8facb8eee0aa4ce923b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay-plan-review/publication-allowlist.json",
+      "publishedSHA256": "696b778b3858fcc40d2f31f3c9262206badfdd6bd197b8facb8eee0aa4ce923b",
+      "bytes": 828,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -27880,5 +27970,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 160378194
+  "total_payload_bytes": 160416388
 }

@@ -1,0 +1,94 @@
+{
+  "status": "source-only-relay-proposal-frozen",
+  "runtimeExecuted": false,
+  "sourceFiles": [
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan/plan.md",
+      "sha256": "1c9a0e527acb77b808aab703df19ef8f6f8eacb1ed325987e51a5ea071703e65",
+      "bytes": 8036
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan/probe-contract.json",
+      "sha256": "42f8eed6a799ed26877a3f6832768faf00546bed266bcee74d351f4afdbada69",
+      "bytes": 2184
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan/runtime-evaluation.json",
+      "sha256": "d762ec49e489a94676e05c3c5a81e14669299b8b0366156be59b6a34b6bf2988",
+      "bytes": 1107
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan/freeze-plan.mjs",
+      "sha256": "2147c3e1caffaa84fc72c4a1969f99b5a19da7ac8572539e57fb3c9d46ccee6f",
+      "bytes": 4881
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-plan/verification.json",
+      "sha256": "62e355a53d766299f267e5f345e5ff0722376da716cb6ab12b836f7abaae40c7",
+      "bytes": 542
+    }
+  ],
+  "inputs": [
+    {
+      "sourcePath": "artifacts/ui-parity-internal-network-source-diagnosis/report.md",
+      "sha256": "452683d6236946992b34584a3ab1844e8f192e5ab0ab53b93962042d6ed77e62",
+      "bytes": 8337
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-internal-network-source-diagnosis/source-hashes.json",
+      "sha256": "3b9009fc81f3a7eae88f9542622f59bff1a0ed296e4caaa6472a6439a406da41",
+      "bytes": 5865
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-startup-diagnostic-runtime-review/review.md",
+      "sha256": "796df125282e68d8cb0d971ba9e6f05caf1e308bda0210df8057187763916cb2",
+      "bytes": 6707
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/observations.json",
+      "sha256": "6cab328cf297abcfb39b33a930690b7107074c562a4f978d5b821422688d772a",
+      "bytes": 5160
+    },
+    {
+      "sourcePath": ".kiro/steering/testing.md",
+      "sha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f",
+      "bytes": 5216
+    },
+    {
+      "sourcePath": ".kiro/steering/delegation.md",
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "bytes": 4333
+    },
+    {
+      "sourcePath": ".kiro/steering/documentation.md",
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "bytes": 3981
+    },
+    {
+      "sourcePath": ".kiro/steering/complexity.md",
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "bytes": 4171
+    },
+    {
+      "sourcePath": ".kiro/steering/ci.md",
+      "sha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd",
+      "bytes": 4078
+    }
+  ],
+  "gitSources": [
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "lite/Dockerfile",
+      "sha256": "a7ab87b3582abc0e3346f3ec44e3f1f17f2ed86f6a40a5e43b2378d095e13d60",
+      "bytes": 10120
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "lite/supervisord.conf",
+      "sha256": "889cc348a47d5cc34c709cb35b02a09d5e0b6325cce26ffc32641fd23075514d",
+      "bytes": 919
+    }
+  ]
+}

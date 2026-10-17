@@ -1,0 +1,27 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+const base=path.dirname(fileURLToPath(import.meta.url)),project=path.resolve(base,'../..'),prefix='artifacts/ui-parity-legend-fixed-relay-plan/';
+const sha=bytes=>createHash('sha256').update(bytes).digest('hex'),entry=sourcePath=>({sourcePath,sha256:sha(fs.readFileSync(project+'/'+sourcePath)),bytes:fs.statSync(project+'/'+sourcePath).size});
+const diagnosis='artifacts/ui-parity-internal-network-source-diagnosis/';
+assert.equal(entry(diagnosis+'report.md').sha256,'452683d6236946992b34584a3ab1844e8f192e5ab0ab53b93962042d6ed77e62');
+assert.equal(entry(diagnosis+'source-hashes.json').sha256,'3b9009fc81f3a7eae88f9542622f59bff1a0ed296e4caaa6472a6439a406da41');
+const revision='38dffc33389aca0e4a87e0e88d42f7067aa220df';
+const gitSources=['lite/Dockerfile','lite/supervisord.conf'].map(sourcePath=>{const bytes=execFileSync('git',['-C',project+'/vendor/workspace','show',revision+':'+sourcePath],{windowsHide:true,maxBuffer:262144});return {repository:'vendor/workspace',revision,path:sourcePath,sha256:sha(bytes),bytes:bytes.length};});
+const dockerfile=execFileSync('git',['-C',project+'/vendor/workspace','show',revision+':lite/Dockerfile'],{encoding:'utf8',windowsHide:true,maxBuffer:262144});
+const supervisor=execFileSync('git',['-C',project+'/vendor/workspace','show',revision+':lite/supervisord.conf'],{encoding:'utf8',windowsHide:true,maxBuffer:262144});
+assert(dockerfile.includes('FROM python-base AS runtime'));assert(dockerfile.includes('FROM docker.io/library/node:24.22.0-bookworm-slim'));assert(supervisor.includes('command=/opt/.venv/bin/python -m uvicorn'));
+const contract=JSON.parse(fs.readFileSync(base+'/probe-contract.json'));assert.equal(contract.runtimeExecuted,false);assert.equal(contract.resources.browserProcesses,0);assert.equal(contract.network.appAttachedNetworks,1);assert.equal(contract.network.relayAttachedNetworks,2);
+assert.equal(contract.relayProbeLimits.maximumProcessSocketsIncludingListener,2*contract.relayProbeLimits.maximumConcurrentPairs+1);assert.equal(contract.deadlinesMs.input+contract.deadlinesMs.cleanup,contract.deadlinesMs.hard);
+assert((contract.readiness.maximumHealthGets-1)*contract.readiness.minimumStartSpacingMs+contract.readiness.requestMs<=contract.readiness.windowMsAfterRelayPublication);
+const inputs=[diagnosis+'report.md',diagnosis+'source-hashes.json','artifacts/ui-parity-legend-startup-diagnostic-runtime-review/review.md','artifacts/ui-parity-legend-startup-diagnostic/analysis-attempt-20261017T1615437-672fb2a3/observations.json','.kiro/steering/testing.md','.kiro/steering/delegation.md','.kiro/steering/documentation.md','.kiro/steering/complexity.md','.kiro/steering/ci.md'].map(entry);
+fs.writeFileSync(base+'/runtime-evaluation.json',JSON.stringify({status:'source-supported candidate, exact-image admission unverified',node:'Node occurs in the frontend-build stage; final-image Node availability is not established by the inspected source',python:'Final Python runtime and explicit /opt/.venv/bin/python supervisor command support reuse as a candidate',image:contract.image,gitSources,webSources:['https://docs.python.org/3.13/library/socket.html','https://docs.python.org/3.13/library/selectors.html'],runtimeExecuted:false},null,2));
+fs.writeFileSync(base+'/verification.json',JSON.stringify({status:'passed-source-plan-checks',runtimeExecuted:false,checks:['Pinned diagnosis hashes','Two immutable original Git source blobs','Selected runtime-source anchors','No-browser app/relay attachment contract','Socket and readiness-window arithmetic','Exact local input paths/hashes'],independentRelayPlanReview:'pending',probeOrRelayTests:'not implemented or executed',productionCaps:'Research excluded; future maintained 400 physical/file,300 logical/file,50/function'},null,2));
+const sources=['plan.md','probe-contract.json','runtime-evaluation.json','freeze-plan.mjs','verification.json'].map(name=>entry(prefix+name));
+fs.writeFileSync(base+'/source-hashes.json',JSON.stringify({status:'source-only-relay-proposal-frozen',runtimeExecuted:false,sourceFiles:sources,inputs,gitSources},null,2));
+const allowlist=[...sources,entry(prefix+'source-hashes.json')];for(const file of allowlist){assert.equal(entry(file.sourcePath).sha256,file.sha256);assert.equal(entry(file.sourcePath).bytes,file.bytes);}
+fs.writeFileSync(base+'/publication-allowlist.json',JSON.stringify(allowlist,null,2));
+console.log(JSON.stringify({status:'source-only-plan-frozen',allowlistFiles:allowlist.length,planSha256:entry(prefix+'plan.md').sha256,sourceHashesSha256:entry(prefix+'source-hashes.json').sha256,allowlistSha256:entry(prefix+'publication-allowlist.json').sha256,runtimeExecuted:false}));

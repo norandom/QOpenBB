@@ -1,0 +1,27 @@
+{
+  "status": "source-supported candidate, exact-image admission unverified",
+  "node": "Node occurs in the frontend-build stage; final-image Node availability is not established by the inspected source",
+  "python": "Final Python runtime and explicit /opt/.venv/bin/python supervisor command support reuse as a candidate",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "gitSources": [
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "lite/Dockerfile",
+      "sha256": "a7ab87b3582abc0e3346f3ec44e3f1f17f2ed86f6a40a5e43b2378d095e13d60",
+      "bytes": 10120
+    },
+    {
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "lite/supervisord.conf",
+      "sha256": "889cc348a47d5cc34c709cb35b02a09d5e0b6325cce26ffc32641fd23075514d",
+      "bytes": 919
+    }
+  ],
+  "webSources": [
+    "https://docs.python.org/3.13/library/socket.html",
+    "https://docs.python.org/3.13/library/selectors.html"
+  ],
+  "runtimeExecuted": false
+}

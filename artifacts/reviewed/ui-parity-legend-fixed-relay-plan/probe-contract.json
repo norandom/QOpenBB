@@ -1,0 +1,16 @@
+{
+  "status": "proposal only; no implementation or runtime grant",
+  "originalSource": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "runtimeCandidate": {"nodeOverride": "not source-established in final image", "relayEntrypoint": "/opt/.venv/bin/python", "stdlibOnly": true, "exactImageInterpreterAdmission": "unverified"},
+  "resources": {"appContainers": 1, "relayContainers": 1, "internalNetworks": 1, "ordinaryIngressNetworks": 1, "browserProcesses": 0, "restarts": 0, "recreations": 0},
+  "network": {"appAttachedNetworks": 1, "relayAttachedNetworks": 2, "appPublishedPorts": 0, "relayListenPort": 3100, "relayHostIp": "127.0.0.1", "fixedUpstreamPort": 3000, "upstreamAddress": "exact admitted owned app internal numeric IPv4", "ipv6": false, "ipForwarding": false, "dnsForUpstream": false},
+  "relayProbeLimits": {"maximumConcurrentPairs": 4, "maximumAcceptedPairs": 16, "maximumProcessSocketsIncludingListener": 9, "bufferBytesPerDirection": 65536, "maximumBytesPerPair": 4194304, "maximumTotalForwardedBytesBothDirections": 33554432, "connectTimeoutMs": 2000},
+  "readiness": {"maximumHealthGets": 10, "minimumStartSpacingMs": 3000, "windowMsAfterRelayPublication": 30000, "requestMs": 2000, "endpoint": "/api/health", "redirects": 0, "rejectAny3xxOrLocation": true, "sameInstanceOnly": true},
+  "deadlinesMs": {"input": 90000, "cleanup": 60000, "hard": 150000},
+  "outputs": {"files": 32, "retainedBytes": 2097152, "publicJsonBytes": 524288, "publicJsonFileBytes": 65536, "stringChars": 128},
+  "logging": {"headers": false, "bodies": false, "urls": false, "peerAddresses": false, "credentials": false, "allowed": "fixed reasons, counts, bytes and recorded owned resource identities"},
+  "unchangedFutureUi": {"cases": "L01-L08", "chartActions": 160, "mutations": 56, "events": 256, "pngs": 80, "outputBytes": 209715200, "startupMs": 180000, "journeyMs": 1920000, "stopInputMs": 2100000, "cleanupMs": 120000, "hardMs": 2220000},
+  "futureUiRelayCapacity": "Not approved by probe profile; separate asset/connection accounting and exact-source review required",
+  "runtimeExecuted": false
+}

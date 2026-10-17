@@ -1,0 +1,21 @@
+{
+  "status": "passed-source-only-plan-review-checks",
+  "node": "v24.20.0",
+  "checks": [
+    "Exact controller-supplied plan, manifest and allowlist hashes",
+    "All six publication files and fourteen frozen local references",
+    "Two immutable Git blobs and supported Python runtime candidate",
+    "Single-instance no-browser topology and unchanged image identity",
+    "Exact finite probe limits and readiness arithmetic",
+    "Plan local links resolve and selected public files have no concrete common secret markers",
+    "Reviewed plan allowlist is byte-identical and review links resolve"
+  ],
+  "groupedChecks": 7,
+  "runtimeExecuted": false,
+  "suppliedFreezeScriptExecuted": false,
+  "externalDocumentationFetched": false,
+  "secretScanScope": "Six selected files; bounded common-token and private-key markers plus manual review, not proof against every secret format",
+  "productionCaps": "Research exclusion; future maintained 400 physical/file, 300 logical/file, 50/function with inventory/checker",
+  "command": "node artifacts/ui-parity-legend-fixed-relay-plan-review/audit.mjs",
+  "exitCode": 0
+}
