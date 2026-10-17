@@ -49,10 +49,11 @@
     "appearance-grid-teardown",
     "task-2.44",
     "task-2.43",
-    "task-2.45"
+    "task-2.45",
+    "consuming-integration-readiness"
   ],
   "sourcepins": {
-    "root_at_sync": "7979b5a989988c302cb970858b1f9a178c2151dc",
+    "root_at_sync": "0e8b63837d8195f7dc8decbaeebf8778ca72bfc2",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -9793,6 +9794,22 @@
       "publishedSHA256": "5fac09159c3e3e3a2855f94507d42e45ad05d6d853be011dc8308b75c38cd01d",
       "bytes": 798,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-integration-readiness/review/report.md",
+      "sourceSHA256": "d48e857bd2239e9af2b47dfd8e7e5c5b5dbf4b9f773b2ec96e53829239d3faaa",
+      "publishedpath": "artifacts/reviewed/consuming-integration-readiness/review/report.md",
+      "publishedSHA256": "d48e857bd2239e9af2b47dfd8e7e5c5b5dbf4b9f773b2ec96e53829239d3faaa",
+      "bytes": 5944,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/consuming-integration-readiness/review/publication-allowlist.json",
+      "sourceSHA256": "1eb149c494bf08410758f65e33af473f89d74d045a6db4551ee0b21a89500e20",
+      "publishedpath": "artifacts/reviewed/consuming-integration-readiness/review/publication-allowlist.json",
+      "publishedSHA256": "1eb149c494bf08410758f65e33af473f89d74d045a6db4551ee0b21a89500e20",
+      "bytes": 200,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -10506,5 +10523,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 23357158
+  "total_payload_bytes": 23363302
 }
