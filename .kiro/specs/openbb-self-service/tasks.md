@@ -864,7 +864,7 @@ One heavy suite/build at a time; one browser and Vitest worker. Parallel lightwe
   - _Depends: 2.31_
   - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.3, 10.4_
 
-- [ ] 2.33 Accept the joined appearance boundary
+- [x] 2.33 Accept the joined appearance boundary
   - Verify exact joined source/dependency identities, fresh units, strict checks, scoped lint and all registered chart-module caps. Reuse independently reproduced browser evidence only when identities match; rerun affected checks after any source change.
   - Audit scope for unintended application, reducer, snapshot, host, flag, dependency, provider or persistence changes. Update actual breadth paths/evidence, inventory, source pins and a scoped verification report, preserving overall renderer parity as unverified.
   - Done when independent Astra final review passes with reproducible evidence and explicit remaining theme/default, formatting, original-control and application integration gaps. Selectively commit accepted changes; no release image promotion. Whole maintained scope passes 400/300/50; documentation/evidence paths are exempt.
@@ -881,3 +881,5 @@ Task 2.29 accepted after independent Astra review: 250 units, strict TypeScript,
 Task 2.31 accepted after independent Astra numerical review: 260 units, strict TypeScript, actual lint, all thirteen module identities/caps and owned stage hashes passed. Evidence: artifacts/task-2.31/review/review.md. Mapper appearance is integrated; actual rendered outcome acceptance remains task 2.32.
 
 Task 2.32 accepted after independent Astra browser review: fresh build, all four browser cases, 260 units, strict TypeScript and actual lint passed; exact source/dependency identities, empty CDP diagnostics and owned cleanup verified. Evidence: artifacts/task-2.32/review/review.md. Pixel evidence covers gaps, circles, retained titles, typography, family restoration, export and rejected-render recovery. Full application parity remains open.
+
+Task 2.33 accepted after independent Astra final review: scoped GO and VERIFIED completion for tasks 2.28-2.33. Fresh 260 units, strict TypeScript, actual lint, thirteen-module caps, 47 identities and combined 67-file quality checks passed; matching-source independent browser evidence covers four cases with empty CDP diagnostics. Workspace b96d36d16ba87db2dd595d5796507d473dd0c0c6. See [appearance verification](chart-appearance-verification.md) and artifacts/task-2.33/review/review.md. Overall renderer and release remain unverified.
