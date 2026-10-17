@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash,randomBytes} from 'node:crypto';
+const base=path.dirname(fileURLToPath(import.meta.url)),hash=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const manifest=JSON.parse(fs.readFileSync(base+'/harness-manifest.json'));
+for(const f of manifest.files)if(hash(base+'/'+f.path)!==f.sha256||fs.statSync(base+'/'+f.path).size!==f.bytes)throw Error('Frozen diagnostic source changed');
+if(hash(base+'/../ui-parity-legend-startup-diagnostic-plan/plan.md')!==manifest.plan.sha256)throw Error('Accepted plan changed');
+const name='attempt-'+new Date().toISOString().replace(/[-:.]/g,'').slice(0,16)+'-'+randomBytes(4).toString('hex'),target=path.join(base,name);
+fs.mkdirSync(target);fs.mkdirSync(target+'/harness');for(const f of manifest.files)fs.copyFileSync(base+'/'+f.path,target+'/'+f.path);
+for(const f of manifest.files)if(hash(target+'/'+f.path)!==f.sha256)throw Error('Attempt source copy mismatch');
+fs.copyFileSync(base+'/harness-manifest.json',target+'/source-manifest.json');
+fs.writeFileSync(target+'/preparation.json',JSON.stringify({attempt:name,exactCopies:true,files:manifest.files.length,manifestSha256:hash(base+'/harness-manifest.json'),runtimeStarted:false}));
+console.log(JSON.stringify({target,runtimeStarted:false,futureCommand:'LEGEND_DIAGNOSTIC_GRANTED=controller-granted bash '+target+'/supervise.sh '+target}));

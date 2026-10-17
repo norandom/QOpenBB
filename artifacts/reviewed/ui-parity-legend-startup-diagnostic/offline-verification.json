@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "scope": "Source-only synthetic offline tests; no Docker, browser, health/network request or probe ran",
+  "tests": 21,
+  "results": [
+    {
+      "name": "presence distinguishes absent undefined null and empty arrays without coercion",
+      "status": "passed"
+    },
+    {
+      "name": "selected receipt preserves dynamic configured port separately from allocated runtime port",
+      "status": "passed"
+    },
+    {
+      "name": "forbidden inspect and State fields never enter selected receipts",
+      "status": "passed"
+    },
+    {
+      "name": "absent null undefined and empty runtime target allow only allocation observation",
+      "status": "passed"
+    },
+    {
+      "name": "configured target absence stops independently of runtime absence",
+      "status": "passed"
+    },
+    {
+      "name": "malformed parents, scalar arrays and excessive target arrays stop without a truncated projection",
+      "status": "passed"
+    },
+    {
+      "name": "overlong selected strings retain only length and fail rather than clipping",
+      "status": "passed"
+    },
+    {
+      "name": "exited/restarting/missing state stops even when target publication is missing",
+      "status": "passed"
+    },
+    {
+      "name": "wrong identity, extra network, noninternal network and broad binding refuse admission",
+      "status": "passed"
+    },
+    {
+      "name": "invalid allocated port never admits health",
+      "status": "passed"
+    },
+    {
+      "name": "preassert receipt persists before immediate exit and no later snapshot or health occurs",
+      "status": "passed"
+    },
+    {
+      "name": "immediate valid mapping stops at one snapshot and exactly one health request",
+      "status": "passed"
+    },
+    {
+      "name": "later valid same-instance mapping is delayed observation with early stopping",
+      "status": "passed"
+    },
+    {
+      "name": "persistent missing allocation stops at three predetermined slots without a readiness claim",
+      "status": "passed"
+    },
+    {
+      "name": "a failed write cannot advance to assertions/health or another sample",
+      "status": "passed"
+    },
+    {
+      "name": "deadline preserves already selected operands but stops health",
+      "status": "passed"
+    },
+    {
+      "name": "Docker failure receipts exclude sensitive command/error text and retain only fixed stage/status",
+      "status": "passed"
+    },
+    {
+      "name": "health uses one exact loopback GET and denies redirects/Location without retaining headers or body",
+      "status": "passed"
+    },
+    {
+      "name": "prospective file/byte/public-JSON budgets reject before mutation and private mode is explicit",
+      "status": "passed"
+    },
+    {
+      "name": "owned cleanup removes container before empty network and proves state/credential absence without a browser PID",
+      "status": "passed"
+    },
+    {
+      "name": "cleanup refuses foreign identities, shared network, surviving container and escaping state path",
+      "status": "passed"
+    }
+  ],
+  "syntax": [
+    "freeze.mjs",
+    "prepare-run.mjs",
+    "verify-offline.mjs",
+    "harness\\cleanup.mjs",
+    "harness\\finalize.mjs",
+    "harness\\io.mjs",
+    "harness\\probe.mjs",
+    "harness\\projection.mjs"
+  ],
+  "node": "v24.20.0"
+}

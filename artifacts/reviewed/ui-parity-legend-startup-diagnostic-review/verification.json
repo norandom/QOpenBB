@@ -1,0 +1,146 @@
+{
+  "status": "passed",
+  "scope": "Independent source/offline review only; no Docker, network, browser, container, build, install, preparation or frozen write",
+  "node": "v24.20.0",
+  "pins": {
+    "harness-manifest.json": "29096d4612637299972e068e4b4d76dbe1331051e1dce7f885258cb3bc79fe3b",
+    "source-hashes.json": "95128fc21fd7f16d230e5e7488ee32972822c00134cd045b689ff9e4ba1a4a7b",
+    "publication-allowlist.json": "524d43265b94dd6e5f95fffbe96aa319b2dab2e52e100bcf67254bf1527ce298"
+  },
+  "sourceEntries": 15,
+  "inputEntries": 7,
+  "runtimeFiles": 7,
+  "offline": {
+    "status": "passed",
+    "scope": "Source-only synthetic offline tests; no Docker, browser, health/network request or probe ran",
+    "tests": 21,
+    "results": [
+      {
+        "name": "presence distinguishes absent undefined null and empty arrays without coercion",
+        "status": "passed"
+      },
+      {
+        "name": "selected receipt preserves dynamic configured port separately from allocated runtime port",
+        "status": "passed"
+      },
+      {
+        "name": "forbidden inspect and State fields never enter selected receipts",
+        "status": "passed"
+      },
+      {
+        "name": "absent null undefined and empty runtime target allow only allocation observation",
+        "status": "passed"
+      },
+      {
+        "name": "configured target absence stops independently of runtime absence",
+        "status": "passed"
+      },
+      {
+        "name": "malformed parents, scalar arrays and excessive target arrays stop without a truncated projection",
+        "status": "passed"
+      },
+      {
+        "name": "overlong selected strings retain only length and fail rather than clipping",
+        "status": "passed"
+      },
+      {
+        "name": "exited/restarting/missing state stops even when target publication is missing",
+        "status": "passed"
+      },
+      {
+        "name": "wrong identity, extra network, noninternal network and broad binding refuse admission",
+        "status": "passed"
+      },
+      {
+        "name": "invalid allocated port never admits health",
+        "status": "passed"
+      },
+      {
+        "name": "preassert receipt persists before immediate exit and no later snapshot or health occurs",
+        "status": "passed"
+      },
+      {
+        "name": "immediate valid mapping stops at one snapshot and exactly one health request",
+        "status": "passed"
+      },
+      {
+        "name": "later valid same-instance mapping is delayed observation with early stopping",
+        "status": "passed"
+      },
+      {
+        "name": "persistent missing allocation stops at three predetermined slots without a readiness claim",
+        "status": "passed"
+      },
+      {
+        "name": "a failed write cannot advance to assertions/health or another sample",
+        "status": "passed"
+      },
+      {
+        "name": "deadline preserves already selected operands but stops health",
+        "status": "passed"
+      },
+      {
+        "name": "Docker failure receipts exclude sensitive command/error text and retain only fixed stage/status",
+        "status": "passed"
+      },
+      {
+        "name": "health uses one exact loopback GET and denies redirects/Location without retaining headers or body",
+        "status": "passed"
+      },
+      {
+        "name": "prospective file/byte/public-JSON budgets reject before mutation and private mode is explicit",
+        "status": "passed"
+      },
+      {
+        "name": "owned cleanup removes container before empty network and proves state/credential absence without a browser PID",
+        "status": "passed"
+      },
+      {
+        "name": "cleanup refuses foreign identities, shared network, surviving container and escaping state path",
+        "status": "passed"
+      }
+    ],
+    "syntax": [
+      "freeze.mjs",
+      "prepare-run.mjs",
+      "verify-offline.mjs",
+      "harness\\cleanup.mjs",
+      "harness\\finalize.mjs",
+      "harness\\io.mjs",
+      "harness\\probe.mjs",
+      "harness\\projection.mjs"
+    ],
+    "node": "v24.20.0"
+  },
+  "independent": [
+    {
+      "name": "Every HTTP 3xx rejects with one fake request",
+      "cases": 100,
+      "status": "passed"
+    },
+    {
+      "name": "Location rejects success and error statuses",
+      "cases": 4,
+      "status": "passed"
+    },
+    {
+      "name": "Expired health makes no request; transport failure makes one",
+      "cases": 2,
+      "status": "passed"
+    },
+    {
+      "name": "Later security/shape failure persists operands and stops before health or third sample",
+      "cases": 4,
+      "status": "passed"
+    },
+    {
+      "name": "Interrupted creation ID-save uses exact random name/ownership and inspected ID cleanup",
+      "cases": 1,
+      "status": "passed"
+    }
+  ],
+  "frozenPreserved": true,
+  "shellLineEndings": "LF",
+  "sourcePublication": "15 selected files approved; allowlist metadata separately",
+  "productionCaps": "Research excluded; future production 400 physical/file, 300 logical/file, 50/function"
+}

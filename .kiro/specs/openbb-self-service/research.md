@@ -320,3 +320,5 @@ The [Legend startup evidence review](chart-legend-capture-plan.md) accepts the f
 The [Legend startup diagnostic plan](chart-legend-capture-plan.md) passed independent source review with 66 checks. Source preparation is authorized for one bounded no-browser probe with selected preassert receipts; executable-source review and a separate runtime grant remain prerequisites. This closes a planning boundary, not the startup cause or Legend behavior.
 
 The [tooltip failure-metadata proposal](chart-tooltip-invocation-findings.md) now distinguishes write-unverified outcomes and explicitly retains bounded first-case metadata in the standalone receipt. Independent rereview closes the two initial plan findings. Source implementation and complete interval proof remain pending; the current reserve and runtime prerequisites are unchanged.
+
+The [Legend diagnostic source review](chart-legend-capture-plan.md) passes 21 supplied tests, eight syntax checks and 111 independent synthetic cases. One separately granted no-browser probe is now authorized on the frozen image/topology. Its result remains outside this source acceptance.
