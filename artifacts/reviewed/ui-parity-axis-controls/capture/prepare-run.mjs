@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {createHash,randomBytes} from 'node:crypto';
+const base=path.resolve(new URL('.',import.meta.url).pathname),manifestFile=base+'/harness-manifest.json';
+const hash=f=>createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+const manifest=JSON.parse(fs.readFileSync(manifestFile));
+for(const file of manifest.files)if(hash(base+'/'+file.path)!==file.sha256)throw Error('Frozen harness changed '+file.path);
+if(hash(base+'/../plan.md')!==manifest.plan.sha256)throw Error('Plan changed');
+const attempt='attempt-'+new Date().toISOString().replace(/[-:.]/g,'').replace('T','T').slice(0,16)+'-'+randomBytes(4).toString('hex');
+const target=path.join(base,attempt);fs.mkdirSync(target);fs.mkdirSync(target+'/harness');
+for(const file of manifest.files)fs.copyFileSync(base+'/'+file.path,target+'/'+file.path);
+fs.copyFileSync(manifestFile,target+'/source-manifest.json');
+fs.writeFileSync(target+'/preparation.json',JSON.stringify({attempt,preparedAt:new Date().toISOString(),manifestSha256:hash(manifestFile),runtimeStarted:false}));
+console.log(JSON.stringify({attempt,target,manifestSha256:hash(manifestFile),runtimeStarted:false}));

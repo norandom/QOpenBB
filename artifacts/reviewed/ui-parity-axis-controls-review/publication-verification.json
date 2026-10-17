@@ -1,0 +1,4549 @@
+{
+  "scope": "Exact safe selected bytes, report links and recovery provenance",
+  "checkCount": 1135,
+  "linkCount": 11,
+  "selectedFiles": 240,
+  "failed": [],
+  "checks": [
+    {
+      "name": "worker manifest identity",
+      "passed": true
+    },
+    {
+      "name": "worker report identity",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/failure.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/failure.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/failure.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/failure.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/failure.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/counters.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/counters.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/counters.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/counters.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/counters.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "setup values omitted ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1409125-18fed9af/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "setup values omitted ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1413358-2f46bb8c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/failure.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/failure.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/failure.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/failure.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/failure.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/counters.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/counters.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/counters.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/counters.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/counters.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "setup values omitted ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11-view1.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11-view1.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11-view1.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11-view1.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cases.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cases.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cases.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cases.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/cases.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/menus.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/menus.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/menus.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/menus.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/menus.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1416524-c93ff5a0/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/preparation.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/runtime-identity.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/start-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/journey-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/run-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/onboarding-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-index.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "setup values omitted ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/action-ledger-public.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/diagnostic-summary.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/001-A-entry-before-10.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11-view0.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11-view1.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11-view1.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11-view1.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11-view1.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/002-A-entry-after-11.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/003-A-A02-after-23-view2.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/003-A-A02-after-23-view2.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/003-A-A02-after-23-view2.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/003-A-A02-after-23-view2.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/003-A-A02-after-23.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/003-A-A02-after-23.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/003-A-A02-after-23.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/003-A-A02-after-23.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/003-A-A02-after-23.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/004-A-A02-after-25-view3.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/004-A-A02-after-25-view3.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/004-A-A02-after-25-view3.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/004-A-A02-after-25-view3.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/004-A-A02-after-25.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/004-A-A02-after-25.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/004-A-A02-after-25.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/004-A-A02-after-25.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/004-A-A02-after-25.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/005-A-A02-after-28-view4.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/005-A-A02-after-28-view4.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/005-A-A02-after-28-view4.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/005-A-A02-after-28-view4.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/005-A-A02-after-28.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/005-A-A02-after-28.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/005-A-A02-after-28.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/005-A-A02-after-28.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/005-A-A02-after-28.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/006-A-A02-after-30-view5.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/006-A-A02-after-30-view5.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/006-A-A02-after-30-view5.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/006-A-A02-after-30-view5.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/006-A-A02-after-30.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/006-A-A02-after-30.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/006-A-A02-after-30.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/006-A-A02-after-30.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/006-A-A02-after-30.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/007-A-A03-after-32-view6.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/007-A-A03-after-32-view6.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/007-A-A03-after-32-view6.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/007-A-A03-after-32-view6.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/007-A-A03-after-32.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/007-A-A03-after-32.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/007-A-A03-after-32.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/007-A-A03-after-32.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/007-A-A03-after-32.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/008-A-A03-after-33-view7.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/008-A-A03-after-33-view7.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/008-A-A03-after-33-view7.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/008-A-A03-after-33-view7.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/008-A-A03-after-33.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/008-A-A03-after-33.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/008-A-A03-after-33.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/008-A-A03-after-33.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/008-A-A03-after-33.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/009-A-A03-after-35-view8.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/009-A-A03-after-35-view8.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/009-A-A03-after-35-view8.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/009-A-A03-after-35-view8.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/009-A-A03-after-35.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/009-A-A03-after-35.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/009-A-A03-after-35.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/009-A-A03-after-35.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/009-A-A03-after-35.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/010-A-A03-after-37-view9.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/010-A-A03-after-37-view9.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/010-A-A03-after-37-view9.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/010-A-A03-after-37-view9.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/010-A-A03-after-37.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/010-A-A03-after-37.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/010-A-A03-after-37.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/010-A-A03-after-37.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/010-A-A03-after-37.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/011-A-A03-after-38-view10.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/011-A-A03-after-38-view10.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/011-A-A03-after-38-view10.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/011-A-A03-after-38-view10.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/011-A-A03-after-38.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/011-A-A03-after-38.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/011-A-A03-after-38.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/011-A-A03-after-38.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/011-A-A03-after-38.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/012-A-A03-after-39-view11.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/012-A-A03-after-39-view11.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/012-A-A03-after-39-view11.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/012-A-A03-after-39-view11.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/012-A-A03-after-39.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/012-A-A03-after-39.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/012-A-A03-after-39.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/012-A-A03-after-39.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/012-A-A03-after-39.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/013-A-A03-after-41-view12.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/013-A-A03-after-41-view12.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/013-A-A03-after-41-view12.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/013-A-A03-after-41-view12.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/013-A-A03-after-41.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/013-A-A03-after-41.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/013-A-A03-after-41.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/013-A-A03-after-41.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/013-A-A03-after-41.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/014-A-A03-after-43-view13.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/014-A-A03-after-43-view13.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/014-A-A03-after-43-view13.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/014-A-A03-after-43-view13.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/014-A-A03-after-43.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/014-A-A03-after-43.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/014-A-A03-after-43.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/014-A-A03-after-43.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/014-A-A03-after-43.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/015-A-A04-after-45-view14.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/015-A-A04-after-45-view14.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/015-A-A04-after-45-view14.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/015-A-A04-after-45-view14.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/015-A-A04-after-45.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/015-A-A04-after-45.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/015-A-A04-after-45.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/015-A-A04-after-45.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/015-A-A04-after-45.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/016-A-A04-after-46-view15.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/016-A-A04-after-46-view15.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/016-A-A04-after-46-view15.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/016-A-A04-after-46-view15.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/016-A-A04-after-46.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/016-A-A04-after-46.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/016-A-A04-after-46.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/016-A-A04-after-46.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/016-A-A04-after-46.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/017-A-A04-after-48-view16.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/017-A-A04-after-48-view16.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/017-A-A04-after-48-view16.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/017-A-A04-after-48-view16.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/017-A-A04-after-48.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/017-A-A04-after-48.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/017-A-A04-after-48.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/017-A-A04-after-48.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/017-A-A04-after-48.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/018-A-A04-after-50-view17.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/018-A-A04-after-50-view17.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/018-A-A04-after-50-view17.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/018-A-A04-after-50-view17.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/018-A-A04-after-50.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/018-A-A04-after-50.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/018-A-A04-after-50.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/018-A-A04-after-50.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/018-A-A04-after-50.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/019-A-A04-after-51-view18.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/019-A-A04-after-51-view18.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/019-A-A04-after-51-view18.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/019-A-A04-after-51-view18.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/019-A-A04-after-51.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/019-A-A04-after-51.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/019-A-A04-after-51.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/019-A-A04-after-51.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/019-A-A04-after-51.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/020-A-A04-after-52-view19.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/020-A-A04-after-52-view19.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/020-A-A04-after-52-view19.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/020-A-A04-after-52-view19.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/020-A-A04-after-52.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/020-A-A04-after-52.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/020-A-A04-after-52.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/020-A-A04-after-52.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/020-A-A04-after-52.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/021-A-A04-after-54-view20.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/021-A-A04-after-54-view20.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/021-A-A04-after-54-view20.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/021-A-A04-after-54-view20.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/021-A-A04-after-54.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/021-A-A04-after-54.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/021-A-A04-after-54.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/021-A-A04-after-54.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/021-A-A04-after-54.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56-view21.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56-view21.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56-view21.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56-view21.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56-view22.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56-view22.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56-view22.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56-view22.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/022-A-A04-after-56.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/023-A-A05-after-67-view23.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/023-A-A05-after-67-view23.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/023-A-A05-after-67-view23.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/023-A-A05-after-67-view23.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/023-A-A05-after-67.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/023-A-A05-after-67.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/023-A-A05-after-67.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/023-A-A05-after-67.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/023-A-A05-after-67.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/024-A-A05-after-69-view24.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/024-A-A05-after-69-view24.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/024-A-A05-after-69-view24.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/024-A-A05-after-69-view24.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/024-A-A05-after-69.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/024-A-A05-after-69.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/024-A-A05-after-69.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/024-A-A05-after-69.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/024-A-A05-after-69.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/025-A-A05-after-70-view25.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/025-A-A05-after-70-view25.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/025-A-A05-after-70-view25.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/025-A-A05-after-70-view25.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/025-A-A05-after-70.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/025-A-A05-after-70.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/025-A-A05-after-70.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/025-A-A05-after-70.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/025-A-A05-after-70.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/026-A-A05-after-72-view26.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/026-A-A05-after-72-view26.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/026-A-A05-after-72-view26.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/026-A-A05-after-72-view26.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/026-A-A05-after-72.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/026-A-A05-after-72.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/026-A-A05-after-72.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/026-A-A05-after-72.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/026-A-A05-after-72.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/027-A-A05-after-73-view27.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/027-A-A05-after-73-view27.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/027-A-A05-after-73-view27.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/027-A-A05-after-73-view27.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/027-A-A05-after-73.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/027-A-A05-after-73.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/027-A-A05-after-73.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/027-A-A05-after-73.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/027-A-A05-after-73.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/028-A-A05-after-75-view28.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/028-A-A05-after-75-view28.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/028-A-A05-after-75-view28.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/028-A-A05-after-75-view28.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/028-A-A05-after-75.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/028-A-A05-after-75.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/028-A-A05-after-75.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/028-A-A05-after-75.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/028-A-A05-after-75.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/029-A-A05-after-77-view29.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/029-A-A05-after-77-view29.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/029-A-A05-after-77-view29.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/029-A-A05-after-77-view29.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/029-A-A05-after-77.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/029-A-A05-after-77.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/029-A-A05-after-77.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/029-A-A05-after-77.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/029-A-A05-after-77.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/030-A-A05-after-78-view30.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/030-A-A05-after-78-view30.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/030-A-A05-after-78-view30.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/030-A-A05-after-78-view30.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/030-A-A05-after-78.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/030-A-A05-after-78.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/030-A-A05-after-78.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/030-A-A05-after-78.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/030-A-A05-after-78.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/031-A-A05-after-80-view31.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/031-A-A05-after-80-view31.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/031-A-A05-after-80-view31.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/031-A-A05-after-80-view31.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/031-A-A05-after-80.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/031-A-A05-after-80.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/031-A-A05-after-80.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/031-A-A05-after-80.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/031-A-A05-after-80.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/032-A-A05-after-82-view32.png",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/032-A-A05-after-82-view32.png",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/032-A-A05-after-82-view32.png",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/032-A-A05-after-82-view32.png",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/032-A-A05-after-82.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/032-A-A05-after-82.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/032-A-A05-after-82.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/032-A-A05-after-82.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/032-A-A05-after-82.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/033-A-A05-after-83.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/033-A-A05-after-83.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/033-A-A05-after-83.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/033-A-A05-after-83.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/033-A-A05-after-83.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cases.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cases.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cases.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cases.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/cases.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/entry-data-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-deltas.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-deltas.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-deltas.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-deltas.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/event-deltas.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p00.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p00.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p00.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p00.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p00.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p01.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p01.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p01.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p01.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/events-p01.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/identity-A.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/menus.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/menus.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/menus.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/menus.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/menus.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p0.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A01-p1.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p1.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p1.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p1.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p1.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p1.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p2.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p2.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p2.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p2.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p2.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p3.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p3.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p3.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p3.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A02-p3.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p3.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p3.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p3.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p3.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p3.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p4.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p4.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p4.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p4.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p4.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p5.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p5.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p5.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p5.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A03-p5.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p5.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p5.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p5.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p5.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p5.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p6.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p6.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p6.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p6.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p6.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p7.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p7.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p7.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p7.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A04-p7.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p10.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p10.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p10.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p10.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p10.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p11.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p11.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p11.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p11.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p11.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p7.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p7.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p7.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p7.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p7.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p8.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p8.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p8.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p8.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p8.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p9.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p9.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p9.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p9.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-A05-p9.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/observations-A-entry-p0.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/partial-verification.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/partial-verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/partial-verification.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/partial-verification.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/partial-verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/recovered-event-index.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/recovered-event-index.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/recovered-event-index.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/recovered-event-index.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/recovered-event-index.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/screenshots.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transactions.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transactions.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transactions.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transactions.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c/transactions.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/attempt-notes.md",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/attempt-notes.md",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/attempt-notes.md",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/attempt-notes.md",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/prepare-run.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/prepare-run.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/prepare-run.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/prepare-run.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/supervise.sh",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/supervise.sh",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/supervise.sh",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/supervise.sh",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/package-failure.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/package-failure.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/package-failure.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/package-failure.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/analyze.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/analyze.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/analyze.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/analyze.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/recover-events.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/recover-events.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/recover-events.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/recover-events.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/verify-partial.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/verify-partial.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/verify-partial.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/verify-partial.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/profile-io.mjs",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/profile-io.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/profile-io.mjs",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/profile-io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash ui-parity-axis-controls/capture/io-profile-cd8e6adb3119.json",
+      "passed": true
+    },
+    {
+      "name": "size ui-parity-axis-controls/capture/io-profile-cd8e6adb3119.json",
+      "passed": true
+    },
+    {
+      "name": "safe path ui-parity-axis-controls/capture/io-profile-cd8e6adb3119.json",
+      "passed": true
+    },
+    {
+      "name": "contained path ui-parity-axis-controls/capture/io-profile-cd8e6adb3119.json",
+      "passed": true
+    },
+    {
+      "name": "no credential material ui-parity-axis-controls/capture/io-profile-cd8e6adb3119.json",
+      "passed": true
+    },
+    {
+      "name": "240 unique worker paths",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-20261017T1422580-7c412f5c/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-20261017T1422580-7c412f5c/transaction-findings.json",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-20261017T1422580-7c412f5c/partial-verification.json",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-20261017T1422580-7c412f5c/failure.json",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-20261017T1422580-7c412f5c/counters.json",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-20261017T1422580-7c412f5c/recovered-event-index.json",
+      "passed": true
+    },
+    {
+      "name": "published report link io-profile-cd8e6adb3119.json",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-20261017T1422580-7c412f5c/browser-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-20261017T1422580-7c412f5c/cleanup-report.json",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-20261017T1422580-7c412f5c/watchdog-status.json",
+      "passed": true
+    },
+    {
+      "name": "published report link attempt-notes.md",
+      "passed": true
+    },
+    {
+      "name": "recovery hash event-index.json",
+      "passed": true
+    },
+    {
+      "name": "recovery hash events-p00.json",
+      "passed": true
+    },
+    {
+      "name": "recovery hash events-p01.json",
+      "passed": true
+    },
+    {
+      "name": "recovery explicitly incomplete",
+      "passed": true
+    }
+  ]
+}

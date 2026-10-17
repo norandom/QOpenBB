@@ -1,0 +1,107 @@
+{
+  "scope": "Independent frozen collector preflight; no application runtime",
+  "checkCount": 25,
+  "failed": [],
+  "checks": [
+    {
+      "name": "manifest-identity",
+      "passed": true
+    },
+    {
+      "name": "plan-identity",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash:harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "inventory-sum",
+      "passed": true
+    },
+    {
+      "name": "action-estimates",
+      "passed": true
+    },
+    {
+      "name": "offline-only",
+      "passed": true
+    }
+  ]
+}

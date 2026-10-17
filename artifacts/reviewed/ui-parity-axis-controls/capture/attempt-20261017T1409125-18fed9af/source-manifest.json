@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "plan": {
+    "path": "artifacts/ui-parity-axis-controls/plan.md",
+    "sha256": "f4247a1eb9447f5dd2bd8d3faab6013655ddca95039863b565958a7e09952cb8"
+  },
+  "originalSource": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "candidateExecuted": false,
+  "files": [
+    {
+      "path": "harness/cleanup.mjs",
+      "bytes": 1600,
+      "sha256": "1b6e76bc46e34c192071fff178c8d00cc841940524fb98d0886c88ae07038c9a"
+    },
+    {
+      "path": "harness/dashboard.json",
+      "bytes": 2187,
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30"
+    },
+    {
+      "path": "harness/fixtures.json",
+      "bytes": 574,
+      "sha256": "b46d787085e216e8627ad40203413c5a0d7184470c19feb925d6a978f96c8cfe"
+    },
+    {
+      "path": "harness/freeze.mjs",
+      "bytes": 1524,
+      "sha256": "fe479e39439c8004fb384157ec6c9f64ce02e09fd0ec32647b8e5578f192c972"
+    },
+    {
+      "path": "harness/io.mjs",
+      "bytes": 1625,
+      "sha256": "cd8e6adb31190e728d98a08820c9eb19ed039a22560a28b42e58fee33152d226"
+    },
+    {
+      "path": "harness/journey.mjs",
+      "bytes": 19517,
+      "sha256": "7c51ee592ab7ad3115e1e718c1486f52d75603d5fab3ead700941e8b11d5be07"
+    },
+    {
+      "path": "harness/projection.mjs",
+      "bytes": 9990,
+      "sha256": "a2f784a94486004cc54ace13ac0ed887c718fd6bc4f987147975db637df65b88"
+    },
+    {
+      "path": "harness/run.sh",
+      "bytes": 1328,
+      "sha256": "19cdb26de7a9c4f6777054aad89409919673b65330d16941b9b7ec6757197222"
+    },
+    {
+      "path": "harness/start.mjs",
+      "bytes": 2307,
+      "sha256": "41aca2b1dab3c70586259d350bd2dc6362a574f363bf677086ed654c0400eb90"
+    },
+    {
+      "path": "harness/static-check.mjs",
+      "bytes": 5701,
+      "sha256": "7bf75df5fcabe12dbda356d29b522d50eb9ddb5fd96647a4ff65b207cf6e9f8b"
+    }
+  ],
+  "reused": [
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/start.mjs",
+      "sha256": "be979ba818639ca863f22bb90dc92937c1ea2845a00379414c6d7daf50acdb81",
+      "adapted": true,
+      "destination": "harness/start.mjs"
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/cleanup.mjs",
+      "sha256": "99fe739ad9eba1f567563ba776fd9d8f77626f5260f95da4319e350e857d53e6",
+      "adapted": true,
+      "destination": "harness/cleanup.mjs"
+    },
+    {
+      "source": "artifacts/ui-parity-color-shadow/capture/harness/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "adapted": false,
+      "destination": "harness/dashboard.json"
+    }
+  ],
+  "productionCaps": "Evidence scripts excluded; future production remains 400 physical/file,300 logical/file,50/function"
+}

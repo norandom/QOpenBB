@@ -1,0 +1,361 @@
+{
+  "scope": "Independent source-only axis plan preflight; no application runtime",
+  "planSha256": "f4247a1eb9447f5dd2bd8d3faab6013655ddca95039863b565958a7e09952cb8",
+  "checkCount": 74,
+  "failed": [],
+  "links": [
+    {
+      "target": "source-hashes.json",
+      "published": "artifacts/reviewed/ui-parity-axis-controls/source-hashes.json",
+      "exists": true
+    },
+    {
+      "target": "../consuming-contract-freeze/session/editor-field-ledger.json",
+      "published": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "exists": true
+    },
+    {
+      "target": "../consuming-contract-freeze/appearance/field-manifest.json",
+      "published": "artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "exists": true
+    },
+    {
+      "target": "../consuming-contract-freeze/appearance/proposed-types.ts",
+      "published": "artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "exists": true
+    },
+    {
+      "target": "../consuming-axis-grid-capture/report.md",
+      "published": "artifacts/reviewed/consuming-axis-grid-capture/report.md",
+      "exists": true
+    },
+    {
+      "target": "../ui-parity-navigation/report.md",
+      "published": "artifacts/reviewed/ui-parity-navigation/report.md",
+      "exists": true
+    },
+    {
+      "target": "../ui-parity-captions/capture/report.md",
+      "published": "artifacts/reviewed/ui-parity-captions/capture/report.md",
+      "exists": true
+    },
+    {
+      "target": "../ui-parity-color-shadow/plan.md",
+      "published": "artifacts/reviewed/ui-parity-color-shadow/plan.md",
+      "exists": true
+    },
+    {
+      "target": "../parity/editor-runtime-next/report.md",
+      "published": "artifacts/reviewed/parity/editor-runtime-next/report.md",
+      "exists": true
+    },
+    {
+      "target": "plan.md",
+      "published": "artifacts/reviewed/ui-parity-axis-controls/plan.md",
+      "exists": true
+    },
+    {
+      "target": "source-hashes.json",
+      "published": "artifacts/reviewed/ui-parity-axis-controls/source-hashes.json",
+      "exists": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "sha256:AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:.kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:.kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:.kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:.kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:.kiro/steering/ci.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:.kiro/steering/ci.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-contract-freeze/appearance/field-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-contract-freeze/appearance/proposed-types.ts",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/consuming-axis-grid-capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-axis-grid-capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/consuming-axis-grid-capture/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-axis-grid-capture/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/consuming-axis-grid-capture/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-axis-grid-capture/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/consuming-axis-grid-capture/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-axis-grid-capture/source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/consuming-axis-grid-capture/source-excerpts.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/consuming-axis-grid-capture/source-excerpts.json",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/ui-parity-navigation/report.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/ui-parity-navigation/report.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/ui-parity-captions/plan.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/ui-parity-captions/plan.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/ui-parity-captions/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/ui-parity-captions/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/ui-parity-captions/capture/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/ui-parity-captions/capture/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/ui-parity-color-shadow/plan.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/ui-parity-color-shadow/plan.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/parity/editor-runtime-next/report.md",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/parity/editor-runtime-next/report.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/parity/editor-runtime-next/focused/Horizontal-Axis-auto-rotate-off.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/parity/editor-runtime-next/focused/Horizontal-Axis-auto-rotate-off.json",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/reviewed/parity/editor-payload-capture/group-Horizontal-Axis.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/reviewed/parity/editor-payload-capture/group-Horizontal-Axis.json",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/parity/editor-payload-capture/group-Horizontal-Axis.html",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/parity/editor-payload-capture/group-Horizontal-Axis.html",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/package.json",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/package.json",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.esm.mjs",
+      "passed": true
+    },
+    {
+      "name": "bytes:artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.esm.mjs",
+      "passed": true
+    },
+    {
+      "name": "sha256:artifacts/ui-parity-axis-controls/plan.md",
+      "passed": true
+    },
+    {
+      "name": "sha256:/home/mc/qopenbb-work/appearance-deps/terminalpro/node_modules/ag-charts-community/dist/package/main.cjs.js",
+      "passed": true
+    },
+    {
+      "name": "git-blob:terminalpro/package.json",
+      "passed": true
+    },
+    {
+      "name": "git-blob:terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "passed": true
+    },
+    {
+      "name": "git-blob:terminalpro/src/components/General/Table/Chart/utils.tsx",
+      "passed": true
+    },
+    {
+      "name": "git-blob:terminalpro/src/components/General/Table/Chart/themes.tsx",
+      "passed": true
+    },
+    {
+      "name": "git-blob:terminalpro/src/components/General/Table/AgGrid.tsx",
+      "passed": true
+    },
+    {
+      "name": "nine-cases",
+      "passed": true
+    },
+    {
+      "name": "fixed-reference",
+      "passed": true
+    },
+    {
+      "name": "fixed-candidate",
+      "passed": true
+    },
+    {
+      "name": "numeric-limits",
+      "passed": true
+    },
+    {
+      "name": "publication-link:source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "publication-link:../consuming-contract-freeze/session/editor-field-ledger.json",
+      "passed": true
+    },
+    {
+      "name": "publication-link:../consuming-contract-freeze/appearance/field-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "publication-link:../consuming-contract-freeze/appearance/proposed-types.ts",
+      "passed": true
+    },
+    {
+      "name": "publication-link:../consuming-axis-grid-capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "publication-link:../ui-parity-navigation/report.md",
+      "passed": true
+    },
+    {
+      "name": "publication-link:../ui-parity-captions/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "publication-link:../ui-parity-color-shadow/plan.md",
+      "passed": true
+    },
+    {
+      "name": "publication-link:../parity/editor-runtime-next/report.md",
+      "passed": true
+    },
+    {
+      "name": "publication-link:plan.md",
+      "passed": true
+    },
+    {
+      "name": "publication-link:source-hashes.json",
+      "passed": true
+    }
+  ]
+}

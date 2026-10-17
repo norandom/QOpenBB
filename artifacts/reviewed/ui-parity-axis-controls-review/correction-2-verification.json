@@ -1,0 +1,69 @@
+{
+  "manifestSha256": "f65a5f0c6c9983fe2549d214644be267e62f25ee94f0e123139a900bf94574c8",
+  "files": 10,
+  "hashMismatches": 0,
+  "planSha256": "f4247a1eb9447f5dd2bd8d3faab6013655ddca95039863b565958a7e09952cb8",
+  "failedAttemptObservedRange": {
+    "rowStartIndex": {
+      "own": true,
+      "in": true,
+      "kind": "null",
+      "type": "object",
+      "value": null
+    },
+    "rowEndIndex": {
+      "own": true,
+      "in": true,
+      "kind": "null",
+      "type": "object",
+      "value": null
+    },
+    "rowStartPinned": {
+      "own": true,
+      "in": true,
+      "kind": "null",
+      "type": "object",
+      "value": null
+    },
+    "rowEndPinned": {
+      "own": true,
+      "in": true,
+      "kind": "null",
+      "type": "object",
+      "value": null
+    },
+    "columns": {
+      "own": true,
+      "in": true,
+      "kind": "value",
+      "type": "object",
+      "value": [
+        "period",
+        "revenue",
+        "operatingIncome"
+      ]
+    }
+  },
+  "failedAttemptObservedRows": [
+    {
+      "period": "2024-Q1",
+      "revenue": 100,
+      "operatingIncome": 20
+    },
+    {
+      "period": "2024-Q2",
+      "revenue": 120,
+      "operatingIncome": 25
+    },
+    {
+      "period": "2024-Q3",
+      "revenue": 140,
+      "operatingIncome": 30
+    },
+    {
+      "period": "2024-Q4",
+      "revenue": 160,
+      "operatingIncome": 40
+    }
+  ]
+}

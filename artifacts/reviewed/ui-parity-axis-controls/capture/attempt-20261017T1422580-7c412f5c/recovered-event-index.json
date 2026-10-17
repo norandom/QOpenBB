@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "kind": "Derived recovery index; immutable event chunks unchanged",
+  "originalIndex": {
+    "path": "event-index.json",
+    "sha256": "74a62a755b1ab7fc449991004a476c0ed26fd48f829a6eb8b94a54d82fb1d762"
+  },
+  "count": 31,
+  "files": [
+    "events-p00.json",
+    "events-p01.json"
+  ],
+  "chunks": [
+    {
+      "path": "events-p00.json",
+      "sha256": "d5a61f280f1968e660b8ebc1dc18f157bc2adfc3765c2211241a0fff38f72552",
+      "bytes": 1024374,
+      "count": 16
+    },
+    {
+      "path": "events-p01.json",
+      "sha256": "e279ff9f431e886261dfdc64e33b958f5338bb88ae8a67c28ace5bf89965d73e",
+      "bytes": 962073,
+      "count": 15
+    }
+  ],
+  "lastObservedAction": "A.A05.u83",
+  "isCompleteRun": false,
+  "boundary": "Page closed at case deadline; finalization replaced original index/counter with zero. These chunks prove only their retained ordered events; later unobserved events remain unresolved."
+}

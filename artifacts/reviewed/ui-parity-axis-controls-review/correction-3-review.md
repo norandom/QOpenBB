@@ -1,0 +1,11 @@
+# Reopen the intended axis through the original accordion
+
+Approve corrected manifest `a9c50f4c049a70e74512bcd750a1b2397f5afec98e177d13a7bd31b500a2a821` for a separately granted bounded attempt. Its eleven collector files match their hashes, and 29 offline checks passed on a fresh rerun. The controller's amended plan is `fba60d3b02bbaba092be3ec7a93cfe6a82e4608cd5b5836702da0e6223aa7f6a`. See [verification](correction-3-verification.json).
+
+Attempt `attempt-20261017T1416524-c93ff5a0` completed A01, then stopped before its first Position edit in A02 because Horizontal Position was hidden. Its retained observations o17/o18 show Horizontal Position visible and Vertical Position hidden; o19/o24 show the reverse. Both screenshots were independently inspected and show the corresponding expanded/collapsed headers. Installed Enterprise GroupExpansionFeature explicitly collapses the previously open group. This is original accordion behavior, not an unavailable Position control.
+
+The shared helper checks the intended heading's actual aria-expanded state and performs one counted original click only when collapsed. A02 now opens each addressed role before editing Position; A07 reopens Horizontal after Vertical inventory. Other role entries already use the expansion helper. Static checks exercise sibling collapse and prove no extra click when already expanded. No DOM flag, API setter or repeated locator retry substitutes for the original action.
+
+Thirteen possible expansion clicks raise the conservative action estimate from 180 to 187, within the unchanged 240-action ceiling; 61 potential field edits remain within 80. The nine cases, fixture, output limits and named inspection scope are unchanged. Document scrolling is retained, while internal editor scroll offsets remain unmeasured; neither the captures nor this review establish editor scroll retention.
+
+Attempt 3 retained two full chart states, two screenshots, twenty counted actions and zero options events. Its browser/context/listener, container, state and credentials were closed or removed, with no remaining owned state. All three failed attempts remain evidence. Only the completed stock inventory and observed accordion sequence are established; later axis edits, candidate parity, persistence and production readiness remain open.

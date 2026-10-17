@@ -1,0 +1,21 @@
+{
+  "scope": "Offline synthetic retained-file I/O only; no application/browser execution",
+  "source": "attempt-20261017T1422580-7c412f5c/harness/io.mjs",
+  "sourceSha256": "cd8e6adb31190e728d98a08820c9eb19ed039a22560a28b42e58fee33152d226",
+  "files": 100,
+  "payloadBytes": 315016,
+  "rewrites": 8,
+  "elapsedMs": [
+    279.43514700000003,
+    245.5263890000001,
+    244.8902149999999,
+    236.69152000000008,
+    226.135041,
+    235.33081800000014,
+    217.81145500000002,
+    214.24280699999963
+  ],
+  "meanMs": 237.50792399999997,
+  "retained": 315216,
+  "rootDeleted": true
+}

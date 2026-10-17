@@ -1,0 +1,4194 @@
+{
+  "scope": "Independent immutable axis partial-run evidence audit; A01-A04 only",
+  "attempt": "artifacts/ui-parity-axis-controls/capture/attempt-20261017T1422580-7c412f5c",
+  "checkCount": 1045,
+  "failed": [],
+  "counts": {
+    "states": 33,
+    "observations": 182,
+    "events": 31,
+    "completedCases": 4
+  },
+  "checks": [
+    {
+      "name": "only completed A01-A04",
+      "passed": true
+    },
+    {
+      "name": "A05 failure preserved",
+      "passed": true
+    },
+    {
+      "name": "raw faulty zero index preserved",
+      "passed": true
+    },
+    {
+      "name": "surviving 31 raw events",
+      "passed": true
+    },
+    {
+      "name": "event sequence contiguous",
+      "passed": true
+    },
+    {
+      "name": "event action references",
+      "passed": true
+    },
+    {
+      "name": "20 events in completed cases",
+      "passed": true
+    },
+    {
+      "name": "position events omit theme branches",
+      "passed": true
+    },
+    {
+      "name": "33 full states",
+      "passed": true
+    },
+    {
+      "name": "unique observation IDs",
+      "passed": true
+    },
+    {
+      "name": "002-A-entry-after-11-view0.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "002-A-entry-after-11-view1.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "003-A-A02-after-23-view2.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "004-A-A02-after-25-view3.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "005-A-A02-after-28-view4.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "006-A-A02-after-30-view5.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "007-A-A03-after-32-view6.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "008-A-A03-after-33-view7.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "009-A-A03-after-35-view8.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "010-A-A03-after-37-view9.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "011-A-A03-after-38-view10.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "012-A-A03-after-39-view11.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "013-A-A03-after-41-view12.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "014-A-A03-after-43-view13.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "015-A-A04-after-45-view14.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "016-A-A04-after-46-view15.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "017-A-A04-after-48-view16.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "018-A-A04-after-50-view17.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "019-A-A04-after-51-view18.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "020-A-A04-after-52-view19.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "021-A-A04-after-54-view20.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "022-A-A04-after-56-view21.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "022-A-A04-after-56-view22.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "023-A-A05-after-67-view23.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "024-A-A05-after-69-view24.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "025-A-A05-after-70-view25.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "026-A-A05-after-72-view26.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "027-A-A05-after-73-view27.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "028-A-A05-after-75-view28.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "029-A-A05-after-77-view29.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "030-A-A05-after-78-view30.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "031-A-A05-after-80-view31.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "032-A-A05-after-82-view32.png bounded PNG identity",
+      "passed": true
+    },
+    {
+      "name": "o7 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o7 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o7 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o7 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o8 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o8 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o8 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o8 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o9 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o9 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o9 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o9 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o10 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o10 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o10 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o10 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o11 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o11 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o11 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o11 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o12 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o12 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o12 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o12 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o13 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o13 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o13 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o13 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o14 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o14 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o14 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o14 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o15 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o15 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o15 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o15 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o16 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o16 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o16 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o16 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o17 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o17 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o17 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o17 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o18 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o18 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o18 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o18 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o19 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o19 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o19 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o19 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o20 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o20 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o20 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o20 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o21 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o21 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o21 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o21 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o22 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o22 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o22 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o22 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o23 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o23 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o23 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o23 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o24 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o24 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o24 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o24 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o25 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o25 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o25 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o25 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o26 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o26 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o26 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o26 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o27 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o27 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o27 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o27 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o28 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o28 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o28 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o28 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o29 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o29 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o29 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o29 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o30 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o30 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o30 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o30 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o31 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o31 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o31 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o31 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o32 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o32 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o32 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o32 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o33 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o33 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o33 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o33 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o34 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o34 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o34 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o34 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o35 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o35 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o35 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o35 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o36 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o36 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o36 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o36 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o37 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o37 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o37 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o37 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o38 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o38 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o38 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o38 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o39 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o39 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o39 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o39 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o40 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o40 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o40 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o40 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o41 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o41 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o41 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o41 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o42 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o42 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o42 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o42 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o43 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o43 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o43 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o43 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o44 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o44 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o44 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o44 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o45 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o45 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o45 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o45 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o46 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o46 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o46 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o46 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o47 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o47 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o47 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o47 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o48 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o48 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o48 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o48 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o49 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o49 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o49 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o49 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o50 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o50 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o50 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o50 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o51 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o51 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o51 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o51 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o52 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o52 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o52 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o52 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o53 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o53 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o53 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o53 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o54 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o54 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o54 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o54 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o55 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o55 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o55 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o55 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o56 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o56 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o56 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o56 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o57 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o57 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o57 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o57 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o58 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o58 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o58 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o58 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o59 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o59 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o59 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o59 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o60 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o60 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o60 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o60 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o61 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o61 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o61 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o61 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o62 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o62 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o62 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o62 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o63 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o63 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o63 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o63 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o64 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o64 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o64 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o64 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o65 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o65 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o65 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o65 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o66 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o66 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o66 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o66 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o67 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o67 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o67 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o67 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o68 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o68 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o68 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o68 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o69 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o69 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o69 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o69 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o70 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o70 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o70 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o70 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o71 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o71 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o71 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o71 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o72 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o72 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o72 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o72 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o73 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o73 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o73 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o73 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o74 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o74 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o74 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o74 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o75 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o75 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o75 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o75 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o76 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o76 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o76 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o76 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o77 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o77 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o77 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o77 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o78 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o78 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o78 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o78 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o79 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o79 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o79 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o79 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o80 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o80 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o80 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o80 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o81 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o81 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o81 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o81 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o82 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o82 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o82 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o82 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o83 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o83 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o83 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o83 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o84 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o84 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o84 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o84 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o85 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o85 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o85 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o85 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o86 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o86 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o86 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o86 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o87 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o87 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o87 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o87 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o88 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o88 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o88 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o88 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o89 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o89 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o89 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o89 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o90 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o90 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o90 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o90 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o91 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o91 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o91 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o91 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o92 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o92 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o92 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o92 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o93 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o93 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o93 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o93 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o94 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o94 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o94 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o94 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o95 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o95 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o95 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o95 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o96 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o96 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o96 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o96 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o97 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o97 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o97 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o97 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o98 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o98 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o98 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o98 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o99 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o99 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o99 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o99 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o100 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o100 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o100 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o100 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o101 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o101 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o101 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o101 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o102 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o102 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o102 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o102 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o103 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o103 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o103 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o103 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o104 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o104 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o104 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o104 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o105 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o105 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o105 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o105 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o106 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o106 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o106 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o106 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o107 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o107 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o107 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o107 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o108 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o108 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o108 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o108 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o109 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o109 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o109 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o109 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o110 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o110 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o110 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o110 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o111 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o111 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o111 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o111 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o112 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o112 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o112 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o112 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o113 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o113 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o113 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o113 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o114 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o114 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o114 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o114 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o115 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o115 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o115 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o115 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o116 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o116 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o116 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o116 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o160 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o160 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o160 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o160 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o161 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o161 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o161 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o161 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o162 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o162 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o162 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o162 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o163 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o163 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o163 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o163 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o164 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o164 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o164 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o164 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o165 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o165 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o165 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o165 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o166 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o166 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o166 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o166 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o167 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o167 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o167 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o167 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o168 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o168 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o168 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o168 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o169 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o169 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o169 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o169 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o170 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o170 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o170 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o170 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o171 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o171 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o171 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o171 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o172 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o172 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o172 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o172 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o173 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o173 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o173 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o173 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o174 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o174 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o174 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o174 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o175 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o175 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o175 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o175 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o176 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o176 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o176 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o176 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o177 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o177 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o177 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o177 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o178 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o178 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o178 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o178 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o179 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o179 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o179 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o179 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o180 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o180 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o180 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o180 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o181 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o181 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o181 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o181 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o182 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o182 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o182 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o182 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o117 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o117 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o117 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o117 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o118 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o118 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o118 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o118 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o119 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o119 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o119 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o119 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o120 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o120 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o120 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o120 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o121 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o121 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o121 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o121 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o122 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o122 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o122 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o122 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o123 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o123 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o123 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o123 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o124 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o124 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o124 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o124 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o125 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o125 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o125 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o125 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o126 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o126 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o126 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o126 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o127 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o127 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o127 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o127 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o128 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o128 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o128 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o128 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o129 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o129 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o129 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o129 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o130 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o130 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o130 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o130 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o131 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o131 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o131 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o131 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o132 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o132 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o132 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o132 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o133 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o133 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o133 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o133 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o134 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o134 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o134 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o134 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o135 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o135 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o135 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o135 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o136 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o136 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o136 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o136 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o137 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o137 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o137 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o137 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o138 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o138 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o138 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o138 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o139 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o139 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o139 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o139 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o140 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o140 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o140 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o140 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o141 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o141 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o141 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o141 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o142 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o142 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o142 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o142 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o143 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o143 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o143 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o143 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o144 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o144 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o144 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o144 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o145 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o145 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o145 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o145 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o146 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o146 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o146 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o146 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o147 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o147 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o147 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o147 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o148 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o148 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o148 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o148 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o149 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o149 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o149 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o149 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o150 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o150 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o150 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o150 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o151 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o151 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o151 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o151 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o152 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o152 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o152 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o152 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o153 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o153 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o153 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o153 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o154 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o154 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o154 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o154 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o155 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o155 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o155 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o155 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o156 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o156 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o156 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o156 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o157 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o157 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o157 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o157 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o158 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o158 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o158 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o158 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o159 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o159 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o159 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o159 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o1 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o1 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o1 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o1 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o2 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o2 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o2 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o2 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o3 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o3 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o3 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o3 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o4 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o4 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o4 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o4 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o5 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o5 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o5 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o5 event sequence",
+      "passed": true
+    },
+    {
+      "name": "o6 checkpoint exists",
+      "passed": true
+    },
+    {
+      "name": "o6 chart identity",
+      "passed": true
+    },
+    {
+      "name": "o6 settled pair",
+      "passed": true
+    },
+    {
+      "name": "o6 event sequence",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-position-Top linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-position-Top complete actions",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-position-Bottom linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-position-Bottom complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-position-Right linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-position-Right complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-position-Left linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-position-Left complete actions",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-ticks-on linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-ticks-on complete actions",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-tick-width linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-tick-width complete actions",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-tick-length linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-tick-length complete actions",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-ticks-off linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-ticks-off complete actions",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-ticks-retained linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-ticks-retained complete actions",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-tick-width-restore linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-tick-width-restore complete actions",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-tick-length-restore linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-tick-length-restore complete actions",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-ticks-baseline linked states",
+      "passed": true
+    },
+    {
+      "name": "Horizontal-ticks-baseline complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-ticks-on linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-ticks-on complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-tick-width linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-tick-width complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-tick-length linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-tick-length complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-ticks-off linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-ticks-off complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-ticks-retained linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-ticks-retained complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-tick-width-restore linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-tick-width-restore complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-tick-length-restore linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-tick-length-restore complete actions",
+      "passed": true
+    },
+    {
+      "name": "Vertical-ticks-baseline linked states",
+      "passed": true
+    },
+    {
+      "name": "Vertical-ticks-baseline complete actions",
+      "passed": true
+    },
+    {
+      "name": "001-A-entry-before-10.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "001-A-entry-before-10.json effective data",
+      "passed": true
+    },
+    {
+      "name": "001-A-entry-before-10.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "001-A-entry-before-10.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "001-A-entry-before-10.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "002-A-entry-after-11.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "002-A-entry-after-11.json effective data",
+      "passed": true
+    },
+    {
+      "name": "002-A-entry-after-11.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "002-A-entry-after-11.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "002-A-entry-after-11.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "003-A-A02-after-23.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "003-A-A02-after-23.json effective data",
+      "passed": true
+    },
+    {
+      "name": "003-A-A02-after-23.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "003-A-A02-after-23.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "003-A-A02-after-23.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "004-A-A02-after-25.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "004-A-A02-after-25.json effective data",
+      "passed": true
+    },
+    {
+      "name": "004-A-A02-after-25.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "004-A-A02-after-25.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "004-A-A02-after-25.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "005-A-A02-after-28.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "005-A-A02-after-28.json effective data",
+      "passed": true
+    },
+    {
+      "name": "005-A-A02-after-28.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "005-A-A02-after-28.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "005-A-A02-after-28.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "006-A-A02-after-30.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "006-A-A02-after-30.json effective data",
+      "passed": true
+    },
+    {
+      "name": "006-A-A02-after-30.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "006-A-A02-after-30.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "006-A-A02-after-30.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "007-A-A03-after-32.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "007-A-A03-after-32.json effective data",
+      "passed": true
+    },
+    {
+      "name": "007-A-A03-after-32.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "007-A-A03-after-32.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "007-A-A03-after-32.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "008-A-A03-after-33.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "008-A-A03-after-33.json effective data",
+      "passed": true
+    },
+    {
+      "name": "008-A-A03-after-33.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "008-A-A03-after-33.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "008-A-A03-after-33.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "009-A-A03-after-35.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "009-A-A03-after-35.json effective data",
+      "passed": true
+    },
+    {
+      "name": "009-A-A03-after-35.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "009-A-A03-after-35.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "009-A-A03-after-35.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "010-A-A03-after-37.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "010-A-A03-after-37.json effective data",
+      "passed": true
+    },
+    {
+      "name": "010-A-A03-after-37.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "010-A-A03-after-37.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "010-A-A03-after-37.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "011-A-A03-after-38.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "011-A-A03-after-38.json effective data",
+      "passed": true
+    },
+    {
+      "name": "011-A-A03-after-38.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "011-A-A03-after-38.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "011-A-A03-after-38.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "012-A-A03-after-39.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "012-A-A03-after-39.json effective data",
+      "passed": true
+    },
+    {
+      "name": "012-A-A03-after-39.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "012-A-A03-after-39.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "012-A-A03-after-39.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "013-A-A03-after-41.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "013-A-A03-after-41.json effective data",
+      "passed": true
+    },
+    {
+      "name": "013-A-A03-after-41.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "013-A-A03-after-41.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "013-A-A03-after-41.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "014-A-A03-after-43.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "014-A-A03-after-43.json effective data",
+      "passed": true
+    },
+    {
+      "name": "014-A-A03-after-43.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "014-A-A03-after-43.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "014-A-A03-after-43.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "015-A-A04-after-45.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "015-A-A04-after-45.json effective data",
+      "passed": true
+    },
+    {
+      "name": "015-A-A04-after-45.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "015-A-A04-after-45.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "015-A-A04-after-45.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "016-A-A04-after-46.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "016-A-A04-after-46.json effective data",
+      "passed": true
+    },
+    {
+      "name": "016-A-A04-after-46.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "016-A-A04-after-46.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "016-A-A04-after-46.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "017-A-A04-after-48.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "017-A-A04-after-48.json effective data",
+      "passed": true
+    },
+    {
+      "name": "017-A-A04-after-48.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "017-A-A04-after-48.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "017-A-A04-after-48.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "018-A-A04-after-50.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "018-A-A04-after-50.json effective data",
+      "passed": true
+    },
+    {
+      "name": "018-A-A04-after-50.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "018-A-A04-after-50.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "018-A-A04-after-50.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "019-A-A04-after-51.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "019-A-A04-after-51.json effective data",
+      "passed": true
+    },
+    {
+      "name": "019-A-A04-after-51.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "019-A-A04-after-51.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "019-A-A04-after-51.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "020-A-A04-after-52.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "020-A-A04-after-52.json effective data",
+      "passed": true
+    },
+    {
+      "name": "020-A-A04-after-52.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "020-A-A04-after-52.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "020-A-A04-after-52.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "021-A-A04-after-54.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "021-A-A04-after-54.json effective data",
+      "passed": true
+    },
+    {
+      "name": "021-A-A04-after-54.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "021-A-A04-after-54.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "021-A-A04-after-54.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "022-A-A04-after-56.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "022-A-A04-after-56.json effective data",
+      "passed": true
+    },
+    {
+      "name": "022-A-A04-after-56.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "022-A-A04-after-56.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "022-A-A04-after-56.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "023-A-A05-after-67.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "023-A-A05-after-67.json effective data",
+      "passed": true
+    },
+    {
+      "name": "023-A-A05-after-67.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "023-A-A05-after-67.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "023-A-A05-after-67.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "024-A-A05-after-69.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "024-A-A05-after-69.json effective data",
+      "passed": true
+    },
+    {
+      "name": "024-A-A05-after-69.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "024-A-A05-after-69.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "024-A-A05-after-69.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "025-A-A05-after-70.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "025-A-A05-after-70.json effective data",
+      "passed": true
+    },
+    {
+      "name": "025-A-A05-after-70.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "025-A-A05-after-70.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "025-A-A05-after-70.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "026-A-A05-after-72.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "026-A-A05-after-72.json effective data",
+      "passed": true
+    },
+    {
+      "name": "026-A-A05-after-72.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "026-A-A05-after-72.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "026-A-A05-after-72.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "027-A-A05-after-73.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "027-A-A05-after-73.json effective data",
+      "passed": true
+    },
+    {
+      "name": "027-A-A05-after-73.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "027-A-A05-after-73.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "027-A-A05-after-73.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "028-A-A05-after-75.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "028-A-A05-after-75.json effective data",
+      "passed": true
+    },
+    {
+      "name": "028-A-A05-after-75.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "028-A-A05-after-75.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "028-A-A05-after-75.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "029-A-A05-after-77.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "029-A-A05-after-77.json effective data",
+      "passed": true
+    },
+    {
+      "name": "029-A-A05-after-77.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "029-A-A05-after-77.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "029-A-A05-after-77.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "030-A-A05-after-78.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "030-A-A05-after-78.json effective data",
+      "passed": true
+    },
+    {
+      "name": "030-A-A05-after-78.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "030-A-A05-after-78.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "030-A-A05-after-78.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "031-A-A05-after-80.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "031-A-A05-after-80.json effective data",
+      "passed": true
+    },
+    {
+      "name": "031-A-A05-after-80.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "031-A-A05-after-80.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "031-A-A05-after-80.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "032-A-A05-after-82.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "032-A-A05-after-82.json effective data",
+      "passed": true
+    },
+    {
+      "name": "032-A-A05-after-82.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "032-A-A05-after-82.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "032-A-A05-after-82.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "033-A-A05-after-83.json explicit data",
+      "passed": true
+    },
+    {
+      "name": "033-A-A05-after-83.json effective data",
+      "passed": true
+    },
+    {
+      "name": "033-A-A05-after-83.json axes identity",
+      "passed": true
+    },
+    {
+      "name": "033-A-A05-after-83.json nonempty ancestry",
+      "passed": true
+    },
+    {
+      "name": "033-A-A05-after-83.json actual inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "Horizontal Top explicit/effective/live",
+      "passed": true
+    },
+    {
+      "name": "Horizontal Bottom explicit/effective/live",
+      "passed": true
+    },
+    {
+      "name": "Vertical Right explicit/effective/live",
+      "passed": true
+    },
+    {
+      "name": "Vertical Left explicit/effective/live",
+      "passed": true
+    },
+    {
+      "name": "Horizontal selected tuple",
+      "passed": true
+    },
+    {
+      "name": "Horizontal selected nonempty scene ticks",
+      "passed": true
+    },
+    {
+      "name": "Horizontal selected inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "Horizontal off tuple",
+      "passed": true
+    },
+    {
+      "name": "Horizontal off nonempty scene ticks",
+      "passed": true
+    },
+    {
+      "name": "Horizontal off inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "Horizontal retained tuple",
+      "passed": true
+    },
+    {
+      "name": "Horizontal retained nonempty scene ticks",
+      "passed": true
+    },
+    {
+      "name": "Horizontal retained inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "Horizontal restored baseline",
+      "passed": true
+    },
+    {
+      "name": "Vertical selected tuple",
+      "passed": true
+    },
+    {
+      "name": "Vertical selected nonempty scene ticks",
+      "passed": true
+    },
+    {
+      "name": "Vertical selected inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "Vertical off tuple",
+      "passed": true
+    },
+    {
+      "name": "Vertical off nonempty scene ticks",
+      "passed": true
+    },
+    {
+      "name": "Vertical off inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "Vertical retained tuple",
+      "passed": true
+    },
+    {
+      "name": "Vertical retained nonempty scene ticks",
+      "passed": true
+    },
+    {
+      "name": "Vertical retained inherited visibility",
+      "passed": true
+    },
+    {
+      "name": "Vertical restored baseline",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af cleanup",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1409125-18fed9af source harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c cleanup",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1413358-2f46bb8c source harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 cleanup",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1416524-c93ff5a0 source harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c cleanup",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/dashboard.json",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/freeze.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/navigation.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "attempt-20261017T1422580-7c412f5c source harness/static-check.mjs",
+      "passed": true
+    }
+  ]
+}

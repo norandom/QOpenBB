@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+const root='/mnt/d/Source/QOpenBB';
+const base=root+'/artifacts/ui-parity-axis-controls/capture';
+const hash=f=>createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+const manifest=JSON.parse(fs.readFileSync(base+'/harness-manifest.json'));
+const checks=[];
+const check=(name,passed)=>checks.push({name,passed:!!passed});
+check('manifest-identity',hash(base+'/harness-manifest.json')==='e95ec51ec4cfda25c3b8e31d200dd04a7ae92c726ef840ad78dccc87cc5f8ab2');
+check('plan-identity',hash(base+'/../plan.md')===manifest.plan.sha256&&manifest.plan.sha256==='f4247a1eb9447f5dd2bd8d3faab6013655ddca95039863b565958a7e09952cb8');
+for(const file of manifest.files){check('hash:'+file.path,hash(base+'/'+file.path)===file.sha256);check('bytes:'+file.path,fs.statSync(base+'/'+file.path).size===file.bytes);}
+const report=JSON.parse(fs.readFileSync(base+'/static-verification.json'));
+const i=report.inventory;
+check('inventory-sum',i.checkpointFiles+i.pngFiles+i.harnessFiles+i.observationChunks+i.eventChunks+i.otherReceipts===i.totalFiles&&i.totalFiles===287&&i.totalFiles<320);
+check('action-estimates',i.rawActions===180&&i.fieldEdits===61&&i.rawActions<=240&&i.fieldEdits<=80);
+check('offline-only',report.runtimeExecuted===false&&report.originalApplicationStarted===false&&report.checks.length===23);
+const result={scope:'Independent frozen collector preflight; no application runtime',checkCount:checks.length,failed:checks.filter(c=>!c.passed),checks};
+fs.writeFileSync(root+'/artifacts/ui-parity-axis-controls-review/harness-verification.json',JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify({checks:checks.length,failed:result.failed}));
+if(result.failed.length)process.exitCode=1;
