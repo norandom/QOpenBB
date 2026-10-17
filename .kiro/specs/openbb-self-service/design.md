@@ -2,6 +2,8 @@
 
 ## Overview
 
+Owner-approved application design, 2026-10-17: [connect charts to the existing Workspace journey](chart-application-integration-design.md). The next task plan covers source-proven session/range state and financial display helpers. Displayed-grid interpretation, nested controls, mapper invocation and application activation retain their named evidence gates; this approval does not establish renderer parity or deployment readiness.
+
 Owner-approved persistence supplement: [SQLite query repair](sqlite-repair-design.md). Tasks 4.6-4.9 are independently accepted: isolated runtime, six portable name expressions, one corrected creator join and real bulk-storage regressions. The joined gate passes with 60 tests and a 168-file maintained-scope audit; see [verification](sqlite-repair-verification.md). Browser/environment persistence and renderer parity remain separate acceptance gates.
 
 Owner-approved design, 2026-10-17: [explicit Cartesian appearance](chart-appearance-design.md) passed independent Astra review. It adds resolved fill/stroke, title visibility, typography and line gap/marker semantics without changing numerical mapping or activating application callers. [Original line findings](chart-line-appearance-findings.md) explain the evidence and limits. Tasks 2.28-2.33 passed independent task-graph review and received owner implementation approval.

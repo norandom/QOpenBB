@@ -27,3 +27,5 @@ Earlier task 1.x/2.x/3.x evidence and older parity builds/probes remain backlog 
 The [source/custom-theme review](formatter-contract-review/review.md) and [publication delta review](formatter-contract-review/publication-delta-review.md) cover the later additions. Earlier publication counts identify their reviewed snapshot, not the expanded manifest.
 
 The [integration freeze review](chart-integration-freeze-review/review.md) permits bounded source-safe task planning after phase approvals. The [editor probe](parity/editor-contract-completion/report.md) and [retry](parity/editor-contract-retry/report.md) preserve failures and finite projection progress; neither establishes nested-control parity. Historical failed launchers must not be rerun with their old cleanup paths.
+
+The [application task plan](chart-integration-tasks/draft.md) and [independent task-graph review](chart-integration-task-review/review.md) record the next source-safe implementation boundary. Task planning does not establish implementation or deployment acceptance.

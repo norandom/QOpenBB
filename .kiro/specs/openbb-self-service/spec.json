@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-17T09:41:23Z",
+  "updated_at": "2026-10-17T09:53:23Z",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -159,14 +159,14 @@
     },
     "application_integration_slice": {
       "name": "original-workspace-chart-journey",
-      "phase": "design-review",
+      "phase": "tasks-generated",
       "design_path": "chart-application-integration-design.md",
       "design_generated": true,
-      "design_approved": false,
-      "tasks_generated": false,
+      "design_approved": true,
+      "tasks_generated": true,
       "tasks_approved": false,
       "implementation_ready": false,
-      "independent_design_review": "Scoped GO for controller contract freeze and source-safe A1/B1 task planning; affected A2, mapper, full C and D activation remain gated by named runtime contracts. Human design/task approvals remain pending.",
+      "independent_design_review": "Scoped GO for controller contract freeze and source-safe A1/B1 task planning; affected A2, mapper, full C and D activation remain gated by named runtime contracts. Owner design approval recorded; task approval remains pending.",
       "review_evidence": "artifacts/chart-integration-freeze-review/review.md",
       "reviewed_design_sha256": "196b88811be7b637d21d4c1e37048d6091609942f4696f9a4bcdc5e90cbb5313",
       "source_revision": "f23cb786a946a6a996deedbe87be9c7ca86b221e",
@@ -177,7 +177,17 @@
         "chart-format-control-contract.md",
         "chart-editor-runtime-contract.md"
       ],
-      "latest_discovery_review": "artifacts/reviewed/chart-integration-publication-review/report.md"
+      "latest_discovery_review": "artifacts/reviewed/chart-integration-publication-review/report.md",
+      "approval_note": "Owner approved the reviewed application integration design on 2026-10-17. Generate bounded source-safe tasks; named runtime gates and separate task approval remain required.",
+      "task_ids": [
+        "2.34",
+        "2.35",
+        "2.36",
+        "2.37"
+      ],
+      "task_graph_review": "passed-independent",
+      "task_review_path": "artifacts/reviewed/chart-integration-task-review/review.md",
+      "task_scope": "Source-safe contracts, session/range and financial display only; runtime joins remain gated"
     }
   }
 }
