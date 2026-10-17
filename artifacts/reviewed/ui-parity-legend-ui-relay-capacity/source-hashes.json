@@ -1,0 +1,93 @@
+{
+  "status": "proposal-only-frozen",
+  "runtimeExecuted": false,
+  "sourceInputs": [
+    {
+      "sourcePath": "artifacts/task-2.1/review-build.log",
+      "sha256": "dc8afa54338a8ebdf6a33b9f771f17b0bc1af0b5aa2f485205e737c10b1a630a",
+      "bytes": 24915
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-plan-revised/plan.md",
+      "sha256": "5a33a0237eb351df5a7a6060da2aff5c83379f89999c4a4ca82faa40c92e29ef",
+      "bytes": 29062
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/harness-manifest.json",
+      "sha256": "9ba3ebf7976b2fc8f0a027fd2823c93365cba5e297de5d988311da7c405f4531",
+      "bytes": 5843
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/source-hashes.json",
+      "sha256": "5b0674b7aae4e0a7c9e26fb26b7009def4e42fb73ed67865a31d71b34c502704",
+      "bytes": 8703
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/harness/limits.mjs",
+      "sha256": "cedba8cbd09d3e4e4d9778ae471eb4c5a54fd29697f47db711b8e4c961f73aac",
+      "bytes": 844
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/harness/start.mjs",
+      "sha256": "53c100fff1c114f2b4db00979df67f9b09984aeced6cfb6955fce06e266e81f0",
+      "bytes": 3575
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/harness/routes.mjs",
+      "sha256": "a0728ad2d895419e4a703aee004149b0774349b34724c734865ba64f0c9900b0",
+      "bytes": 2439
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/harness/journey.mjs",
+      "sha256": "758f963fd12719753e908577f43761bfff5bef36141480d39a4bbecd6d75ac35",
+      "bytes": 17363
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/harness/cleanup.mjs",
+      "sha256": "3ae57b16ae4f94f14ebd613a83e8165eae67a6624b6cfbfb168df5e32aaa351d",
+      "bytes": 3209
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-capture-redirect-guard/harness/io.mjs",
+      "sha256": "56dff7838bef0f2fb69105a9ed404d0c7ad1d13d7d4865d9622258007d82e0b5",
+      "bytes": 4928
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/report.md",
+      "sha256": "8dc1d929b2b377a55a96e8aea31d02c49f9925e620d97c5a3740ba1aebd62cb2",
+      "bytes": 4550
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-legend-fixed-relay-revised/harness/relay.py",
+      "sha256": "ab893aa22478d28c0ae0fd596543086a3d0b757da469cd5c08fcfb2a63a408cf",
+      "bytes": 10711
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "proposal.md",
+      "sha256": "6cbc7954d4f60a75eb9c682c368bf6fcf57f0674868a8d98cf75b02c0c93d733",
+      "bytes": 11145
+    },
+    {
+      "path": "capacity-contract.json",
+      "sha256": "126fe5ae170146980411b2f47edc7bb5a7077e6995e3ff3c82ff9e5bb4069670",
+      "bytes": 1619
+    },
+    {
+      "path": "verify.mjs",
+      "sha256": "31f2f95f0820fdcf063c7bca4ec78380bf1bfc6886ea42456b7b374b1b5dde98",
+      "bytes": 6679
+    },
+    {
+      "path": "measurements.json",
+      "sha256": "7fedfeb5b9125b93a7043a51d3400fde7510af73a4bf7f633036e1051a940c3c",
+      "bytes": 2611
+    },
+    {
+      "path": "verification.json",
+      "sha256": "5dc28730116a4fff8f7bf70c23bfdee1e13118a71832501aaf9c000f4562d56b",
+      "bytes": 214
+    }
+  ]
+}

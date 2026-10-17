@@ -116,10 +116,12 @@
     "ui-parity-legend-relay-mount-correction",
     "ui-parity-legend-relay-mount-correction-review",
     "ui-parity-legend-relay-mount-source",
-    "ui-parity-legend-relay-mount-source-review"
+    "ui-parity-legend-relay-mount-source-review",
+    "ui-parity-legend-ui-relay-capacity",
+    "ui-parity-legend-ui-relay-capacity-review"
   ],
   "sourcepins": {
-    "root_at_sync": "82d00f3f76ba422e5cb257a628e8dbb4891050b9",
+    "root_at_sync": "f74271f1f9a732771db9c652f343a69c569b9e4a",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -28580,6 +28582,102 @@
       "publishedSHA256": "6ceb13b8a4193c119988dcb8529c3e1d766822547d3cc252a6e833c148a85aa6",
       "bytes": 839,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity/proposal.md",
+      "sourceSHA256": "6cbc7954d4f60a75eb9c682c368bf6fcf57f0674868a8d98cf75b02c0c93d733",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity/proposal.md",
+      "publishedSHA256": "6cbc7954d4f60a75eb9c682c368bf6fcf57f0674868a8d98cf75b02c0c93d733",
+      "bytes": 11145,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity/capacity-contract.json",
+      "sourceSHA256": "126fe5ae170146980411b2f47edc7bb5a7077e6995e3ff3c82ff9e5bb4069670",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity/capacity-contract.json",
+      "publishedSHA256": "126fe5ae170146980411b2f47edc7bb5a7077e6995e3ff3c82ff9e5bb4069670",
+      "bytes": 1619,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity/verify.mjs",
+      "sourceSHA256": "31f2f95f0820fdcf063c7bca4ec78380bf1bfc6886ea42456b7b374b1b5dde98",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity/verify.mjs",
+      "publishedSHA256": "31f2f95f0820fdcf063c7bca4ec78380bf1bfc6886ea42456b7b374b1b5dde98",
+      "bytes": 6679,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity/measurements.json",
+      "sourceSHA256": "7fedfeb5b9125b93a7043a51d3400fde7510af73a4bf7f633036e1051a940c3c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity/measurements.json",
+      "publishedSHA256": "7fedfeb5b9125b93a7043a51d3400fde7510af73a4bf7f633036e1051a940c3c",
+      "bytes": 2611,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity/verification.json",
+      "sourceSHA256": "5dc28730116a4fff8f7bf70c23bfdee1e13118a71832501aaf9c000f4562d56b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity/verification.json",
+      "publishedSHA256": "5dc28730116a4fff8f7bf70c23bfdee1e13118a71832501aaf9c000f4562d56b",
+      "bytes": 214,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity/source-hashes.json",
+      "sourceSHA256": "e6c4349bb7eb70dc46d1e303c7ed4173002576b2c46350de23e10ee632aeb31b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity/source-hashes.json",
+      "publishedSHA256": "e6c4349bb7eb70dc46d1e303c7ed4173002576b2c46350de23e10ee632aeb31b",
+      "bytes": 3348,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity/publication-allowlist.json",
+      "sourceSHA256": "91514cf9098958482e4ac1ea08c8b34348ec483f188c0e9dda59de08972e12af",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity/publication-allowlist.json",
+      "publishedSHA256": "91514cf9098958482e4ac1ea08c8b34348ec483f188c0e9dda59de08972e12af",
+      "bytes": 1153,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity-review/review.md",
+      "sourceSHA256": "00c4a2b4b8c608424baa5e3e40fdbfeccbcf959369fec3f8c3710decb7c8c3e3",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity-review/review.md",
+      "publishedSHA256": "00c4a2b4b8c608424baa5e3e40fdbfeccbcf959369fec3f8c3710decb7c8c3e3",
+      "bytes": 6858,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity-review/audit.mjs",
+      "sourceSHA256": "9e9d7f6f7380bf7d95301503219245a62ecc49fe72deb4fd3eed9e71b9e48269",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity-review/audit.mjs",
+      "publishedSHA256": "9e9d7f6f7380bf7d95301503219245a62ecc49fe72deb4fd3eed9e71b9e48269",
+      "bytes": 4645,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity-review/reviewed-proposal-publication-allowlist.json",
+      "sourceSHA256": "91514cf9098958482e4ac1ea08c8b34348ec483f188c0e9dda59de08972e12af",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity-review/reviewed-proposal-publication-allowlist.json",
+      "publishedSHA256": "91514cf9098958482e4ac1ea08c8b34348ec483f188c0e9dda59de08972e12af",
+      "bytes": 1153,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity-review/verification.json",
+      "sourceSHA256": "2ba39f4ffcb7ef0cc3c4281be9d9cbed1136a2936724b5e0a04434ef482d7462",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity-review/verification.json",
+      "publishedSHA256": "2ba39f4ffcb7ef0cc3c4281be9d9cbed1136a2936724b5e0a04434ef482d7462",
+      "bytes": 4966,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-ui-relay-capacity-review/publication-allowlist.json",
+      "sourceSHA256": "bcbc987f637e84a9548035980a652a108423875c8fd4080cefde56340513e46c",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-ui-relay-capacity-review/publication-allowlist.json",
+      "publishedSHA256": "bcbc987f637e84a9548035980a652a108423875c8fd4080cefde56340513e46c",
+      "bytes": 814,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -29293,5 +29391,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 161357318
+  "total_payload_bytes": 161402523
 }

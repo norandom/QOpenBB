@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-17",
+  "command": "node artifacts/ui-parity-legend-ui-relay-capacity-review/audit.mjs",
+  "exitCode": 0,
+  "proposalVerification": {
+    "command": "node artifacts/ui-parity-legend-ui-relay-capacity/verify.mjs",
+    "exitCode": 0,
+    "groupedChecks": 8
+  },
+  "scope": "Proposal source and capacity review only",
+  "checks": [
+    {
+      "name": "requested proposal pin",
+      "passed": true
+    },
+    {
+      "name": "requested allowlist pin",
+      "passed": true
+    },
+    {
+      "name": "six proposal files",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-ui-relay-capacity/proposal.md",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-ui-relay-capacity/capacity-contract.json",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-ui-relay-capacity/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-ui-relay-capacity/measurements.json",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-ui-relay-capacity/verification.json",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-ui-relay-capacity/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/task-2.1/review-build.log",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-plan-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-capture-redirect-guard/harness-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-capture-redirect-guard/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-capture-redirect-guard/harness/limits.mjs",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-capture-redirect-guard/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-capture-redirect-guard/harness/routes.mjs",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-capture-redirect-guard/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-capture-redirect-guard/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-capture-redirect-guard/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-fixed-relay-revised/analysis-attempt-20261017T1700437-e5d5e603/report.md",
+      "passed": true
+    },
+    {
+      "name": "pin artifacts/ui-parity-legend-fixed-relay-revised/harness/relay.py",
+      "passed": true
+    },
+    {
+      "name": "bounded scan artifacts/ui-parity-legend-ui-relay-capacity/proposal.md",
+      "passed": true
+    },
+    {
+      "name": "bounded scan artifacts/ui-parity-legend-ui-relay-capacity/capacity-contract.json",
+      "passed": true
+    },
+    {
+      "name": "bounded scan artifacts/ui-parity-legend-ui-relay-capacity/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "bounded scan artifacts/ui-parity-legend-ui-relay-capacity/measurements.json",
+      "passed": true
+    },
+    {
+      "name": "bounded scan artifacts/ui-parity-legend-ui-relay-capacity/verification.json",
+      "passed": true
+    },
+    {
+      "name": "bounded scan artifacts/ui-parity-legend-ui-relay-capacity/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "envelope arithmetic",
+      "passed": true
+    },
+    {
+      "name": "pair arithmetic",
+      "passed": true
+    },
+    {
+      "name": "total arithmetic",
+      "passed": true
+    },
+    {
+      "name": "pair count arithmetic",
+      "passed": true
+    },
+    {
+      "name": "socket and queue caps",
+      "passed": true
+    },
+    {
+      "name": "lifecycle exact",
+      "passed": true
+    },
+    {
+      "name": "unchanged chartActions",
+      "passed": true
+    },
+    {
+      "name": "unchanged fieldMutations",
+      "passed": true
+    },
+    {
+      "name": "unchanged events",
+      "passed": true
+    },
+    {
+      "name": "unchanged pngs",
+      "passed": true
+    },
+    {
+      "name": "unchanged totalBytes",
+      "passed": true
+    },
+    {
+      "name": "unchanged retainedFiles",
+      "passed": true
+    },
+    {
+      "name": "unchanged jsonBytes",
+      "passed": true
+    },
+    {
+      "name": "unchanged observations",
+      "passed": true
+    },
+    {
+      "name": "unchanged selectedNodesPerObservation",
+      "passed": true
+    },
+    {
+      "name": "unchanged admissionActions",
+      "passed": true
+    },
+    {
+      "name": "no execution claim",
+      "passed": true
+    },
+    {
+      "name": "copied selection identical",
+      "passed": true
+    },
+    {
+      "name": "link audit.mjs",
+      "passed": true
+    },
+    {
+      "name": "link reviewed-proposal-publication-allowlist.json",
+      "passed": true
+    }
+  ]
+}

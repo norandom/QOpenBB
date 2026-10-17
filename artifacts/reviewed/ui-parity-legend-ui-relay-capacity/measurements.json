@@ -1,0 +1,87 @@
+{
+  "scope": "Retained candidate-build size table plus pinned original public Git blobs; no exact-image or compressed-transfer measurement",
+  "candidateBuild": {
+    "sourcePath": "artifacts/task-2.1/review-build.log",
+    "sha256": "dc8afa54338a8ebdf6a33b9f771f17b0bc1af0b5aa2f485205e737c10b1a630a",
+    "reportedOutputs": 320,
+    "reportedBytesApprox": 31997430,
+    "roundingAllowanceBytes": 1600,
+    "largest": [
+      {
+        "path": "vendor-monaco.Ce2R8BQw.js",
+        "reportedBytesApprox": 7915720
+      },
+      {
+        "path": "vendor-plotly.Ch6ZAUdD.js",
+        "reportedBytesApprox": 4603730
+      },
+      {
+        "path": "vendor-ag.Ia3PbbCk.js",
+        "reportedBytesApprox": 3852970
+      },
+      {
+        "path": "api.TjZaBPyp.js",
+        "reportedBytesApprox": 1652690
+      },
+      {
+        "path": "vendor-highcharts.CXIqjnvN.js",
+        "reportedBytesApprox": 1418510
+      },
+      {
+        "path": "vendor-starry-night.MpqnmUif.js",
+        "reportedBytesApprox": 1327930
+      },
+      {
+        "path": "exceljs.min.CdTOP8_5.js",
+        "reportedBytesApprox": 929580
+      },
+      {
+        "path": "react-vega.CykL_ZX_.js",
+        "reportedBytesApprox": 843660
+      }
+    ]
+  },
+  "originalPublic": {
+    "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+    "command": "git -C vendor/workspace ls-tree -r -l 38dffc33389aca0e4a87e0e88d42f7067aa220df -- terminalpro/public",
+    "treeSha256": "34635ae74f38024060a9a7484433808c08497ed6f610d391351f9d7b045eca55",
+    "files": 133,
+    "bytes": 25473168,
+    "largest": [
+      {
+        "path": "terminalpro/public/assets/images/openbb_cover.png",
+        "bytes": 2401842
+      },
+      {
+        "path": "terminalpro/public/assets/images/home/tutorials/Data-Connectors.gif",
+        "bytes": 2165444
+      },
+      {
+        "path": "terminalpro/public/assets/data/tickers_fmp.json",
+        "bytes": 1654486
+      },
+      {
+        "path": "terminalpro/public/assets/images/home/tutorials/Chart.gif",
+        "bytes": 1292140
+      },
+      {
+        "path": "terminalpro/public/assets/images/loading-bb-dark.gif",
+        "bytes": 1232491
+      }
+    ]
+  },
+  "sizing": {
+    "envelopeBytes": 57472198,
+    "pairFormula": "2*E+16MiB",
+    "pairEnvelopeBytes": 131721612,
+    "pairCapBytes": 134217728,
+    "totalFormula": "4*E+32MiB",
+    "totalEnvelopeBytes": 263443224,
+    "totalCapBytes": 268435456,
+    "remainingTotalBytes": 4992232,
+    "pairCountFormula": "4*(320+133)+2100 -> round up to4096",
+    "pairCountEnvelope": 3912
+  },
+  "exactImageTransferMeasured": false,
+  "runtimeExecuted": false
+}

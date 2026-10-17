@@ -1,0 +1,13 @@
+{
+  "status": "proposal-only; no executable join or runtime grant",
+  "prerequisites": ["accepted corrected no-browser topology probe", "independent topology evidence review", "independent exact executable join review", "separate controller original-only one-attempt grant"],
+  "relay": {"maximumConcurrentPairs": 16, "maximumAcceptedPairs": 4096, "maximumTcpSocketsIncludingListener": 33, "bufferBytesPerDirection": 65536, "maximumQueuedPayloadBytes": 2097152, "maximumBytesPerPairBothDirections": 134217728, "maximumTotalBytesBothDirections": 268435456, "connectTimeoutMs": 2000, "shortIdleTimeout": false, "fixedDestinationPort": 3000, "dnsUpstream": false, "genericProxy": false, "clientSelectedDestination": false},
+  "lifecycleMs": {"startup": 180000, "journey": 1920000, "stopInput": 2100000, "cleanup": 120000, "hard": 2220000},
+  "readiness": {"healthGets": 10, "minimumStartSpacingMs": 3000, "windowMs": 30000, "requestMs": 2000, "partOfStartup": true},
+  "unchangedEvidence": {"cases": ["L01", "L02", "L03", "L04", "L05", "L06", "L07", "L08"], "admissionActions": 24, "chartActions": 160, "fieldMutations": 56, "events": 256, "selectedNodesPerObservation": 24, "observations": 360, "pngs": 80, "retainedFiles": 600, "jsonBytes": 33554432, "totalBytes": 209715200},
+  "transportEvidenceWithinExistingTotals": {"maximumFiles": 8, "maximumBytes": 131072, "maximumPublicJsonBytes": 65536, "rawStatsBytes": 4096, "counterPhases": ["admission", "L04", "L08", "final"]},
+  "noRetryOrIncreaseAfterFailure": true,
+  "exactImageTransferMeasured": false,
+  "implementationPrepared": false,
+  "runtimeExecuted": false
+}
