@@ -810,7 +810,7 @@ Task 2.27 accepted at Workspace 5c2df9864bed000170ffccde146273b468e0552e after i
 
 ## Explicit Cartesian appearance slice (tasks 2.28-2.33)
 
-The owner approved [explicit appearance](chart-appearance-design.md). These tasks supplement existing requirement coverage; they do not activate application controls or complete renderer parity. Task approval is pending. Each leaf is a bounded 1-3 hour work unit with independent review before acceptance.
+The owner approved [explicit appearance](chart-appearance-design.md). These tasks supplement existing requirement coverage; they do not activate application controls or complete renderer parity. The owner approved tasks 2.28-2.33 on 2026-10-17. Each leaf is a bounded 1-3 hour work unit with independent review before acceptance.
 
 ### Execution and ownership
 
