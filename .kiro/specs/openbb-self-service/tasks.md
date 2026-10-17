@@ -830,7 +830,7 @@ One heavy suite/build at a time; one browser and Vitest worker. Parallel lightwe
   - _Depends: 2.27_
   - _Requirements: 4.8, 4.9, 10.5, 10.6_
 
-- [ ] 2.29 (P) Validate and project explicit appearance
+- [x] 2.29 (P) Validate and project explicit appearance
   - Extract existing style validation into the approved cohesive style module and implement typed caption/series projection. Do not edit or wire the numerical mapper in this lane.
   - Cover omitted/undefined/null optional inputs, complete typography with finite nonnegative sizes, title visibility requiring retained text, malformed inactive settings and unsupported active enabled marker shapes. Exercise every fill/stroke/marker precedence branch, zero/fractional dimensions and ID-bound overrides after reorder.
   - Add focused helper tests to the owned Cartesian test file while retaining existing mapper assertions. Verify legacy projection shapes, unchanged inputs and inactive-family omission. Done when focused tests, strict checks, actual lint and independent review pass; register the new style module and pass 400/300/50 before acceptance.
@@ -875,3 +875,5 @@ One heavy suite/build at a time; one browser and Vitest worker. Parallel lightwe
 Task 2.28 accepted after independent Astra review: strict TypeScript, 221 units, actual lint on all three owned files, exact stage/source identities and twelve-module caps passed. Evidence: artifacts/task-2.28/review/review.md. Shared appearance contracts and fixtures are frozen for tasks 2.29 and 2.30; runtime appearance remains unverified.
 
 Task 2.30 accepted after independent Sol review: strict TypeScript, four-entry fixture build, actual lint and four source/stage identities passed. Evidence: artifacts/task-2.30/review/review.md. Scaffold only; actual appearance rendering remains task 2.32. Verification stages now use persistent Linux home storage after transient WSL paths disappeared.
+
+Task 2.29 accepted after independent Astra review: 250 units, strict TypeScript, actual lint, exact hashes and thirteen-module caps passed. Evidence: artifacts/task-2.29/review/review.md. Helper projection is accepted; mapper wiring and rendered appearance remain tasks 2.31-2.32.
