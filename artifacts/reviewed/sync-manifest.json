@@ -77,10 +77,12 @@
     "ui-parity-legend-plan-revised",
     "ui-parity-legend-docs-review",
     "ui-parity-tooltip-geometry-diagnosis",
-    "ui-parity-tooltip-geometry-review"
+    "ui-parity-tooltip-geometry-review",
+    "ui-parity-family-navigation-plan",
+    "ui-parity-family-navigation-review"
   ],
   "sourcepins": {
-    "root_at_sync": "6680899f8160f4cf0a63f562c3db2e0358d6d2bf",
+    "root_at_sync": "cf1c737b5166af51e94a1877f1583bb5648f8983",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -23701,6 +23703,62 @@
       "publishedSHA256": "be7ffde5e521e9b7c4914524758e4ecd05b1c00b68ef54ec4bb37b70a99cffcd",
       "bytes": 1360,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "sourceSHA256": "5e7fc5641afb6c41be47a2f239bbda7a9aff1c8cbf22a559783358c971142332",
+      "publishedpath": "artifacts/reviewed/ui-parity-family-navigation-plan/plan.md",
+      "publishedSHA256": "5e7fc5641afb6c41be47a2f239bbda7a9aff1c8cbf22a559783358c971142332",
+      "bytes": 28336,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-family-navigation-plan/source-hashes.json",
+      "sourceSHA256": "843bfed3fb790845c2d440826ae85bcf9c09a803ee4c2861ad9b6d6a87cbbe74",
+      "publishedpath": "artifacts/reviewed/ui-parity-family-navigation-plan/source-hashes.json",
+      "publishedSHA256": "843bfed3fb790845c2d440826ae85bcf9c09a803ee4c2861ad9b6d6a87cbbe74",
+      "bytes": 7589,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-family-navigation-plan/publication-allowlist.json",
+      "sourceSHA256": "538e8beac4d998cdf10c0f112f74c774afd709090b51b857bbf8b652726a73ce",
+      "publishedpath": "artifacts/reviewed/ui-parity-family-navigation-plan/publication-allowlist.json",
+      "publishedSHA256": "538e8beac4d998cdf10c0f112f74c774afd709090b51b857bbf8b652726a73ce",
+      "bytes": 1031,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-family-navigation-review/review.md",
+      "sourceSHA256": "aef485e12536ddc6b8536de3a4d7b00e99aa600271470e0d2c680073e9296a7a",
+      "publishedpath": "artifacts/reviewed/ui-parity-family-navigation-review/review.md",
+      "publishedSHA256": "aef485e12536ddc6b8536de3a4d7b00e99aa600271470e0d2c680073e9296a7a",
+      "bytes": 5927,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-family-navigation-review/verify.mjs",
+      "sourceSHA256": "6de2950ae0983052b72ee2e6f9d60f3f3d1e0461c01535f6b8bb3eb8f1ad8cb5",
+      "publishedpath": "artifacts/reviewed/ui-parity-family-navigation-review/verify.mjs",
+      "publishedSHA256": "6de2950ae0983052b72ee2e6f9d60f3f3d1e0461c01535f6b8bb3eb8f1ad8cb5",
+      "bytes": 6283,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-family-navigation-review/verification.json",
+      "sourceSHA256": "37be46531132a210e3516057c2504bd6055e5eb2dc7b2617884244cfb4462775",
+      "publishedpath": "artifacts/reviewed/ui-parity-family-navigation-review/verification.json",
+      "publishedSHA256": "37be46531132a210e3516057c2504bd6055e5eb2dc7b2617884244cfb4462775",
+      "bytes": 13710,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-family-navigation-review/publication-allowlist.json",
+      "sourceSHA256": "66ab5111fd7ac08eff19684099293ef2fe665adbf225fb9c81145a9284d1a0ce",
+      "publishedpath": "artifacts/reviewed/ui-parity-family-navigation-review/publication-allowlist.json",
+      "publishedSHA256": "66ab5111fd7ac08eff19684099293ef2fe665adbf225fb9c81145a9284d1a0ce",
+      "bytes": 1401,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -24414,5 +24472,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 157987417
+  "total_payload_bytes": 158051694
 }

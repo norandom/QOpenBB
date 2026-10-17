@@ -21,6 +21,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Review axis controls, type-transition resets and unchanged time-format rendering | [Axis-control findings](../.kiro/specs/openbb-self-service/chart-axis-control-findings.md) |
 | Review tooltip content, missing-value behavior and unresolved picked ownership | [Tooltip invocation findings](../.kiro/specs/openbb-self-service/chart-tooltip-invocation-findings.md) |
 | Prepare the remaining Legend capture with reviewed measurement limits | [Legend capture plan](../.kiro/specs/openbb-self-service/chart-legend-capture-plan.md) |
+| Separate tab resets from chart-family and saved-range changes | [Family navigation plan](../.kiro/specs/openbb-self-service/chart-family-navigation-plan.md) |
 | Review the existing-backend persistence repair | [SQLite query design](../.kiro/specs/openbb-self-service/sqlite-repair-design.md) |
 | Reproduce SQLite query and storage checks | [SQLite verification](../.kiro/specs/openbb-self-service/sqlite-repair-verification.md) |
 | Set up the pinned development tools | [Development toolchain](development.md) |

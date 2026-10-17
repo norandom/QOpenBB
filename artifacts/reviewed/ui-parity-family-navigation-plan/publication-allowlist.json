@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "status": "proposed-explicit-source-only-publication; independent-review-required",
+  "entries": [
+    {
+      "sourcePath": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "sha256": "5e7fc5641afb6c41be47a2f239bbda7a9aff1c8cbf22a559783358c971142332",
+      "bytes": 28336,
+      "publishedPath": "artifacts/reviewed/ui-parity-family-navigation-plan/plan.md",
+      "sanitization": "none; source-only reviewed proposal"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-family-navigation-plan/source-hashes.json",
+      "sha256": "843bfed3fb790845c2d440826ae85bcf9c09a803ee4c2861ad9b6d6a87cbbe74",
+      "bytes": 7589,
+      "publishedPath": "artifacts/reviewed/ui-parity-family-navigation-plan/source-hashes.json",
+      "sanitization": "none; source-only reviewed proposal"
+    }
+  ],
+  "excluded": [
+    "publication-allowlist.json is publication metadata, not a recursively hashed payload",
+    "all runtime/private evidence",
+    "all installed dependency payloads; hashes only"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "completed-independent-source-review; controller-publication-required",
+  "entries": [
+    {
+      "sourcePath": "artifacts/ui-parity-family-navigation-review/review.md",
+      "sha256": "aef485e12536ddc6b8536de3a4d7b00e99aa600271470e0d2c680073e9296a7a",
+      "bytes": 5927,
+      "publishedPath": "artifacts/reviewed/ui-parity-family-navigation-review/review.md",
+      "sanitization": "none; source-only review and offline verification"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-family-navigation-review/verify.mjs",
+      "sha256": "6de2950ae0983052b72ee2e6f9d60f3f3d1e0461c01535f6b8bb3eb8f1ad8cb5",
+      "bytes": 6283,
+      "publishedPath": "artifacts/reviewed/ui-parity-family-navigation-review/verify.mjs",
+      "sanitization": "none; source-only review and offline verification"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-family-navigation-review/verification.json",
+      "sha256": "37be46531132a210e3516057c2504bd6055e5eb2dc7b2617884244cfb4462775",
+      "bytes": 13710,
+      "publishedPath": "artifacts/reviewed/ui-parity-family-navigation-review/verification.json",
+      "sanitization": "none; source-only review and offline verification"
+    }
+  ],
+  "excluded": [
+    "publication-allowlist.json is metadata, not a recursively hashed payload",
+    "all runtime/private evidence",
+    "all dependency source payloads"
+  ]
+}

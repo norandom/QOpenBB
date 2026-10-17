@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "status": "pass-source-only",
+  "verdict": "accept-for-collector-preparation",
+  "runtimeExecuted": false,
+  "command": "node artifacts/ui-parity-family-navigation-review/verify.mjs",
+  "exitCode": 0,
+  "originalRevision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "maintainedClaimScopeInputs": [
+    {
+      "sourcePath": ".kiro/specs/openbb-self-service/chart-family-navigation-plan.md",
+      "sha256": "037c0722e342bba627534b79bb65c037ba65aa2480d8e9601d93baee2f605a24",
+      "bytes": 1615
+    },
+    {
+      "sourcePath": ".kiro/specs/openbb-self-service/research.md",
+      "sha256": "d248d21a1f1ffd901e8f9c77afccc9a1cc7af5b36e5f864107d36729f93e2640",
+      "bytes": 59196
+    },
+    {
+      "sourcePath": "docs/index.md",
+      "sha256": "8184ac1a3b2cda704a0305b475385b4fce4a4f35b0846432c1647e66ab80d97d",
+      "bytes": 11462
+    },
+    {
+      "sourcePath": ".kiro/breadth.toml",
+      "sha256": "8f8abb2e250c48454d6b14dad77f93fb32e9d6ba0eff85fe5ed84fcaff0e1ae1",
+      "bytes": 33710
+    }
+  ],
+  "reviewedPlan": [
+    {
+      "sourcePath": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "sha256": "5e7fc5641afb6c41be47a2f239bbda7a9aff1c8cbf22a559783358c971142332",
+      "bytes": 28336
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-family-navigation-plan/source-hashes.json",
+      "sha256": "843bfed3fb790845c2d440826ae85bcf9c09a803ee4c2861ad9b6d6a87cbbe74",
+      "bytes": 7589
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-family-navigation-plan/publication-allowlist.json",
+      "sha256": "538e8beac4d998cdf10c0f112f74c774afd709090b51b857bbf8b652726a73ce",
+      "bytes": 1031
+    }
+  ],
+  "checks": [
+    {
+      "path": "AGENTS.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "0200bca366bcf2e830a75011a0b5ff78bd174391b28013ba8e1a4295a1e1cff2",
+      "bytes": 6960
+    },
+    {
+      "path": ".kiro/steering/testing.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f",
+      "bytes": 5216
+    },
+    {
+      "path": ".kiro/steering/delegation.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "bytes": 4333
+    },
+    {
+      "path": ".kiro/steering/complexity.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "bytes": 4171
+    },
+    {
+      "path": ".kiro/steering/documentation.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "bytes": 3981
+    },
+    {
+      "path": ".kiro/steering/ci.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd",
+      "bytes": 4078
+    },
+    {
+      "path": ".kiro/specs/openbb-self-service/spec.json",
+      "kind": "project-or-reviewed-input",
+      "sha256": "4b7f3f2ba947370c569cec3a0816f52e80045c2f1ac66a705398d3b0139facb6",
+      "bytes": 13392
+    },
+    {
+      "path": ".kiro/specs/openbb-self-service/chart-ui-navigation-findings.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "764f64002434048c44f62e14b3d1412b482ae9edbef6d9205835fa4173f09b9a",
+      "bytes": 3799
+    },
+    {
+      "path": ".kiro/specs/openbb-self-service/echarts-editor-contract.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "d831c5405ea0a3896bb10841ce730a483bcaa5891e8508b67670bf5c7bb8c65e",
+      "bytes": 9947
+    },
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "kind": "project-or-reviewed-input",
+      "sha256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "bytes": 596346
+    },
+    {
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "bytes": 30418
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-navigation/report.md",
+      "kind": "project-or-reviewed-input",
+      "sha256": "4ff1b875958bc1a8445f74f79e8477ddd8fa696b4759f0123c5e2f58eafa9b4d",
+      "bytes": 12334
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-navigation/source-manifest.json",
+      "kind": "project-or-reviewed-input",
+      "sha256": "bfc139e2f2afd989a45d850ed105f04a346db0bba7f166c738a9229f2a3d5f3c",
+      "bytes": 58084
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/journey.mjs",
+      "kind": "project-or-reviewed-input",
+      "sha256": "3dafb2e6ef80994cb7a9d34a4cb99382ab0ee267c7fe2a44641709c410673e02",
+      "bytes": 17065
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/projection.mjs",
+      "kind": "project-or-reviewed-input",
+      "sha256": "2bb4690678a9a3baf6fa3bd58ce983ef269d549761c70fa809e3810f5c51458b",
+      "bytes": 11247
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/fixture.json",
+      "kind": "project-or-reviewed-input",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/N01-chart-entered.json",
+      "kind": "project-or-reviewed-input",
+      "sha256": "27883a7011d8202055f14e14a6312bb857f350da6ba6dd200fa79bd738310f75",
+      "bytes": 33174
+    },
+    {
+      "path": "artifacts/reviewed/parity/chart-editor-capture/control-inventory.json",
+      "kind": "project-or-reviewed-input",
+      "sha256": "16b9cd05f30d591624098fd093720be7b9e9c3b8d5ded5e85cbe82cae8d5874e",
+      "bytes": 316857
+    },
+    {
+      "path": "terminalpro/package.json",
+      "kind": "immutable-original-git-blob",
+      "sha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf",
+      "bytes": 9188
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "kind": "immutable-original-git-blob",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+      "bytes": 15697
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/useUpdateColumnState.ts",
+      "kind": "immutable-original-git-blob",
+      "sha256": "c6b34ad355c19d69f0eb858c9fbb027c7a5cc0cb5e6cae49e3f15bc466f4d0fb",
+      "bytes": 21185
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/hooks/useTableContext.tsx",
+      "kind": "immutable-original-git-blob",
+      "sha256": "63e82095b66945c12a657968fd57ab22ad92105fe6d981b7d2f403a8ee34f8da",
+      "bytes": 26090
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
+      "kind": "immutable-original-git-blob",
+      "sha256": "37a5a127ee597efbe26d47806d1085ccd1447dc11d2f048cf4c98cb8abd70fc7",
+      "bytes": 4835
+    },
+    {
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/package.json",
+      "kind": "local-installed-dependency-source-clue",
+      "sha256": "740fda1969fab489979dbae50dc5a7d4f550cb3d8f226ff4cb59b5fa397aa1a1",
+      "bytes": 5526
+    },
+    {
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.cjs.js",
+      "kind": "local-installed-dependency-source-clue",
+      "sha256": "ff634fef7612738444a1618604ea88c0625328f271382f2fb3aaf9a26926d30c",
+      "bytes": 1938578
+    }
+  ],
+  "inventory": {
+    "observedGroups": 12,
+    "observedButtons": 34,
+    "exactNamesOrderVisible": true
+  },
+  "sourceRange": {
+    "rowStartIndex": null,
+    "rowStartPinned": null,
+    "rowEndIndex": null,
+    "rowEndPinned": null,
+    "columns": [
+      "period",
+      "revenue",
+      "operatingIncome"
+    ]
+  },
+  "futureCaseRows": 8,
+  "links": [
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "source-hashes.json",
+      "resolved": "artifacts/reviewed/ui-parity-family-navigation-plan/source-hashes.json",
+      "source": "artifacts/ui-parity-family-navigation-plan/source-hashes.json",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "publication-allowlist.json",
+      "resolved": "artifacts/reviewed/ui-parity-family-navigation-plan/publication-allowlist.json",
+      "source": "artifacts/ui-parity-family-navigation-plan/publication-allowlist.json",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "../../../.kiro/specs/openbb-self-service/chart-ui-navigation-findings.md",
+      "resolved": ".kiro/specs/openbb-self-service/chart-ui-navigation-findings.md",
+      "source": ".kiro/specs/openbb-self-service/chart-ui-navigation-findings.md",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "../ui-parity-navigation/report.md",
+      "resolved": "artifacts/reviewed/ui-parity-navigation/report.md",
+      "source": "artifacts/reviewed/ui-parity-navigation/report.md",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "../consuming-contract-freeze/session/draft.md",
+      "resolved": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "source": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "../consuming-contract-freeze/session/editor-field-ledger.json",
+      "resolved": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "source": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "../parity/chart-editor-capture/control-inventory.json",
+      "resolved": "artifacts/reviewed/parity/chart-editor-capture/control-inventory.json",
+      "source": "artifacts/reviewed/parity/chart-editor-capture/control-inventory.json",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "../ui-parity-navigation/run-20261017-r1-a4/fixture.json",
+      "resolved": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/fixture.json",
+      "source": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/fixture.json",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "../ui-parity-navigation/run-20261017-r1-a4/journey.mjs",
+      "resolved": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/journey.mjs",
+      "source": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/journey.mjs",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "target": "../ui-parity-navigation/run-20261017-r1-a4/projection.mjs",
+      "resolved": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/projection.mjs",
+      "source": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/projection.mjs",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-review/review.md",
+      "target": "../ui-parity-family-navigation-plan/plan.md",
+      "resolved": "artifacts/reviewed/ui-parity-family-navigation-plan/plan.md",
+      "source": "artifacts/ui-parity-family-navigation-plan/plan.md",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-review/review.md",
+      "target": "verification.json",
+      "resolved": "artifacts/reviewed/ui-parity-family-navigation-review/verification.json",
+      "source": "artifacts/ui-parity-family-navigation-review/verification.json",
+      "pendingOwnMetadata": true
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-review/review.md",
+      "target": "verify.mjs",
+      "resolved": "artifacts/reviewed/ui-parity-family-navigation-review/verify.mjs",
+      "source": "artifacts/ui-parity-family-navigation-review/verify.mjs",
+      "pendingOwnMetadata": false
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-review/review.md",
+      "target": "publication-allowlist.json",
+      "resolved": "artifacts/reviewed/ui-parity-family-navigation-review/publication-allowlist.json",
+      "source": "artifacts/ui-parity-family-navigation-review/publication-allowlist.json",
+      "pendingOwnMetadata": true
+    },
+    {
+      "file": "artifacts/ui-parity-family-navigation-review/review.md",
+      "target": "../../../.kiro/specs/openbb-self-service/chart-family-navigation-plan.md",
+      "resolved": ".kiro/specs/openbb-self-service/chart-family-navigation-plan.md",
+      "source": ".kiro/specs/openbb-self-service/chart-family-navigation-plan.md",
+      "pendingOwnMetadata": false
+    }
+  ],
+  "limits": "Static evidence only; collector fit, seed admission, runtime behavior and cleanup remain unverified.",
+  "environmentNote": "Initial python command could not run because python was unavailable; equivalent read-only checks used installed Node. First Node verifier run failed because its prospective-link mapping omitted the plan publication metadata; the mapping was corrected without changing frozen inputs. No application attempt occurred."
+}

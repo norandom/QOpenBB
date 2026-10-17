@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "status": "frozen-source-only-plan-for-independent-review; no-runtime-or-collector-actions",
+  "original": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "candidateReference": "ea02ec15956dee8d2c8a06825387a570757db12d",
+  "candidateExecuted": false,
+  "runtimeExecuted": false,
+  "ownership": "artifacts/ui-parity-family-navigation-plan/**",
+  "coreSteeringAbsent": [
+    "product.md",
+    "tech.md",
+    "structure.md"
+  ],
+  "inputs": [
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "AGENTS.md",
+      "sha256": "0200bca366bcf2e830a75011a0b5ff78bd174391b28013ba8e1a4295a1e1cff2",
+      "bytes": 6960
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": ".kiro/steering/testing.md",
+      "sha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f",
+      "bytes": 5216
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": ".kiro/steering/delegation.md",
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9",
+      "bytes": 4333
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": ".kiro/steering/complexity.md",
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088",
+      "bytes": 4171
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": ".kiro/steering/documentation.md",
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971",
+      "bytes": 3981
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": ".kiro/steering/ci.md",
+      "sha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd",
+      "bytes": 4078
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": ".kiro/specs/openbb-self-service/spec.json",
+      "sha256": "4b7f3f2ba947370c569cec3a0816f52e80045c2f1ac66a705398d3b0139facb6",
+      "bytes": 13392
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": ".kiro/specs/openbb-self-service/chart-ui-navigation-findings.md",
+      "sha256": "764f64002434048c44f62e14b3d1412b482ae9edbef6d9205835fa4173f09b9a",
+      "bytes": 3799
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": ".kiro/specs/openbb-self-service/echarts-editor-contract.md",
+      "sha256": "d831c5405ea0a3896bb10841ce730a483bcaa5891e8508b67670bf5c7bb8c65e",
+      "bytes": 9947
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json",
+      "sha256": "7d1ea00f7033b6cda708e354eb96ba91a7728e063cb3282bb2fde0a1dea1700a",
+      "bytes": 596346
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "artifacts/reviewed/consuming-contract-freeze/session/draft.md",
+      "sha256": "6406def102eac7f77a64da1da12f1686b7d105c8825bd7c3822965c42464cdd3",
+      "bytes": 30418
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "artifacts/reviewed/ui-parity-navigation/report.md",
+      "sha256": "4ff1b875958bc1a8445f74f79e8477ddd8fa696b4759f0123c5e2f58eafa9b4d",
+      "bytes": 12334
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "artifacts/reviewed/ui-parity-navigation/source-manifest.json",
+      "sha256": "bfc139e2f2afd989a45d850ed105f04a346db0bba7f166c738a9229f2a3d5f3c",
+      "bytes": 58084
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/journey.mjs",
+      "sha256": "3dafb2e6ef80994cb7a9d34a4cb99382ab0ee267c7fe2a44641709c410673e02",
+      "bytes": 17065
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/projection.mjs",
+      "sha256": "2bb4690678a9a3baf6fa3bd58ce983ef269d549761c70fa809e3810f5c51458b",
+      "bytes": 11247
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/fixture.json",
+      "sha256": "2de20cebe2674659947f11fecb7497dc5d67fdd740f1c1443f0f746db8ceea30",
+      "bytes": 2187
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "artifacts/reviewed/ui-parity-navigation/run-20261017-r1-a4/N01-chart-entered.json",
+      "sha256": "27883a7011d8202055f14e14a6312bb857f350da6ba6dd200fa79bd738310f75",
+      "bytes": 33174
+    },
+    {
+      "kind": "project-or-reviewed-input",
+      "path": "artifacts/reviewed/parity/chart-editor-capture/control-inventory.json",
+      "sha256": "16b9cd05f30d591624098fd093720be7b9e9c3b8d5ded5e85cbe82cae8d5874e",
+      "bytes": 316857
+    }
+  ],
+  "originalSource": [
+    {
+      "kind": "immutable-original-git-blob",
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/package.json",
+      "sha256": "48d9550e7e7312809a6b36a4a47871f7c5b741447d21d36d8575f52fe0f935bf",
+      "bytes": 9188
+    },
+    {
+      "kind": "immutable-original-git-blob",
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "ffcc22d273f3be0390365202812ebf200455913c2bb0eba1d945982bb8af444a",
+      "bytes": 15697
+    },
+    {
+      "kind": "immutable-original-git-blob",
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/hooks/useUpdateColumnState.ts",
+      "sha256": "c6b34ad355c19d69f0eb858c9fbb027c7a5cc0cb5e6cae49e3f15bc466f4d0fb",
+      "bytes": 21185
+    },
+    {
+      "kind": "immutable-original-git-blob",
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/hooks/useTableContext.tsx",
+      "sha256": "63e82095b66945c12a657968fd57ab22ad92105fe6d981b7d2f403a8ee34f8da",
+      "bytes": 26090
+    },
+    {
+      "kind": "immutable-original-git-blob",
+      "repository": "vendor/workspace",
+      "revision": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "path": "terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
+      "sha256": "37a5a127ee597efbe26d47806d1085ccd1447dc11d2f048cf4c98cb8abd70fc7",
+      "bytes": 4835
+    }
+  ],
+  "installedSourceClues": [
+    {
+      "kind": "local-installed-dependency-source-clue",
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/package.json",
+      "sha256": "740fda1969fab489979dbae50dc5a7d4f550cb3d8f226ff4cb59b5fa397aa1a1",
+      "bytes": 5526,
+      "package": "ag-grid-enterprise",
+      "version": "34.1.1",
+      "originalImageByteIdentity": false
+    },
+    {
+      "kind": "local-installed-dependency-source-clue",
+      "path": "artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.cjs.js",
+      "sha256": "ff634fef7612738444a1618604ea88c0625328f271382f2fb3aaf9a26926d30c",
+      "bytes": 1938578,
+      "package": "ag-grid-enterprise",
+      "version": "34.1.1",
+      "originalImageByteIdentity": false
+    }
+  ],
+  "inventory": {
+    "observedGroups": 12,
+    "observedThumbnailButtons": 34,
+    "runtimeCrossThemePredicates": "unverified",
+    "newFamiliesActivated": []
+  },
+  "futureCases": 8,
+  "verification": {
+    "method": "read-only byte hashes, inventory count, relative link resolution, original immutable blobs; no runtime verification",
+    "publicationDepth": "artifacts/reviewed/ui-parity-family-navigation-plan/"
+  }
+}
