@@ -2,7 +2,7 @@
 
 ## Overview
 
-Owner-approved persistence supplement: [SQLite query repair](sqlite-repair-design.md). It corrects six expressions and one creator join within the existing backend, with explicit tests and a narrow size exception. Tasks 4.6-4.9 passed independent task-graph review and await owner approval. This branch can proceed independently of renderer design once its task gate is satisfied.
+Owner-approved persistence supplement: [SQLite query repair](sqlite-repair-design.md). Tasks 4.6-4.9 are independently accepted: isolated runtime, six portable name expressions, one corrected creator join and real bulk-storage regressions. The joined gate passes with 60 tests and a 168-file maintained-scope audit; see [verification](sqlite-repair-verification.md). Browser/environment persistence and renderer parity remain separate acceptance gates.
 
 Owner-approved design, 2026-10-17: [explicit Cartesian appearance](chart-appearance-design.md) passed independent Astra review. It adds resolved fill/stroke, title visibility, typography and line gap/marker semantics without changing numerical mapping or activating application callers. [Original line findings](chart-line-appearance-findings.md) explain the evidence and limits. Tasks 2.28-2.33 passed independent task-graph review and received owner implementation approval.
 

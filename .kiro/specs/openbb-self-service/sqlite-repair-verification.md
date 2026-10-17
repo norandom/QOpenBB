@@ -1,6 +1,6 @@
 # SQLite repair verification
 
-The isolated backend test runtime, seven-site query repair and bulk-storage regression boundary are accepted. The joined SQLite gate is in progress. No application, renderer or deployment acceptance follows from this record.
+The isolated backend test runtime, seven-site query repair and bulk-storage regression boundary are independently accepted through task 4.9. The final review returns scoped GO for tasks 4.6-4.9. No application, renderer or deployment acceptance follows from this record.
 
 ## Scope and identity
 
@@ -38,6 +38,8 @@ Foreign update and duplicate insertion fail with the existing uniqueness error; 
 
 ## Remaining integration gates
 
-Task 4.9 must independently accept the joined suite, verify exact revision-bound exceptions and run the combined maintained-code checker.
+Independent final Astra review reproduced 60 passing tests with zero skips in 46.73 seconds, scoped Ruff checks and formatting of all eight test files. Its combined checker exits 0 with 168 measured files, nine exact exceptions, 38 excluded paths and no errors or violations, including the actual CRUD measurements and both exact exceptions at Workspace `f23cb786a946a6a996deedbe87be9c7ca86b221e`. Evidence: `artifacts/task-4.9/review/review.md`, `full.json` and `maintained-quality.json` in that directory. Explicit acceptance manifests include every maintained fork path, the committed SQLite tests and unrelated working changes; they are declared audit inputs, not a claim that all paths differ from the pinned HEAD. This avoids omitting the repair merely because it was already committed. The earlier working-diff-only report did not measure CRUD and is not the closing evidence.
 
-Even after those gates pass, requirements 2.2, 4.2 and 4.7 still need the real application journey: save through the route, restart the environment, sign in, reopen layout/parameters and refresh data against recorded rebuilt images. Full original renderer parity, Anthropic, Excel and image-pull deployment remain separate open work.
+The sibling `backend-api/backend/tests_sqlite/**` exclusion explicitly covers only its test launcher, fixtures and regressions. Production CRUD remains inventoried and measured. Working inventory additions for unrelated catalog/Perspective work are preserved; selective index construction excludes those additions from this slice's commits. Final review confirms source hashes, scope, sandbox cleanup, actual suite results and exception binding. Passing the combined audit does not accept the behavior of unrelated work included in its measurement scope.
+
+Requirements 2.2, 4.2 and 4.7 still need the real application journey: save through the route, restart the environment, sign in, reopen layout/parameters and refresh data against recorded rebuilt images. Full original renderer parity, Anthropic, Excel and image-pull deployment remain separate open work.

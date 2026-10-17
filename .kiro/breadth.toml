@@ -10,9 +10,9 @@ requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 id = "sqlite-query-and-storage-compatibility"
 requirements = ["1.1", "1.4", "2.2", "4.2", "4.7", "10.3", "10.5", "10.6"]
 planned_checks = ["isolated-backend-bootstrap", "six-populated-read-paths", "creator-join-cardinality-and-share-isolation", "actual-dashboard-update-engine-reopen", "query-layer-independent-acceptance"]
-test_paths = ["vendor/workspace/backend-api/backend/tests_sqlite/test_bootstrap.py"]
-status = "unverified"
-evidence = ["Task 4.6 independently accepted: two real-model isolation/storage bootstrap tests, lint/format and success/nonzero cleanup checks pass. See artifacts/task-4.6/review/review-round2.md. Six query paths and bulk dashboard persistence remain unverified until tasks 4.7-4.9. Application save/environment-restart/sign-in/reopen remains separate."]
+test_paths = ["vendor/workspace/backend-api/backend/tests_sqlite/test_bootstrap.py", "vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_reads.py", "vendor/workspace/backend-api/backend/tests_sqlite/test_app_reads.py", "vendor/workspace/backend-api/backend/tests_sqlite/test_dashboard_persistence.py"]
+status = "passed"
+evidence = ["Tasks 4.6-4.9 independently accepted with scoped GO: 60 tests, zero skips, cover isolated bootstrap, six populated reads, creator cardinality, sharing isolation, actual bulk storage, queue failures and SQLite engine recreation. Workspace f23cb786a946a6a996deedbe87be9c7ca86b221e. Final maintained audit: 168 files, nine exact exceptions, no errors or violations. See .kiro/specs/openbb-self-service/sqlite-repair-verification.md and artifacts/task-4.9/review/review.md. Application save/environment-restart/sign-in/reopen remains separate and unverified."]
 
 [[capabilities]]
 id = "explicit-cartesian-appearance"

@@ -10,7 +10,7 @@ This plan records source findings on 2026-10-17 at Workspace `b96d36d16ba87db2dd
 | --- | --- | --- |
 | Real table-to-chart journey | `ChartViewButton` returns null, `createChartData` is undefined, saved chart state is rejected and chart-option hooks are stubs | Original table selection, filter/sort, chart entry, edits, theme changes, export and return to table work through actual Workspace contexts |
 | Effective appearance | The mapper accepts explicit styles; it does not resolve active original light/dark/custom themes | Matched original/candidate captures establish palette, typography, legend, axes, spacing and actual control effects |
-| Persistence | Six SQL queries use `func.concat`; an entity-sharing query lacks its creator join | Populated file-backed SQLite reads, sharing isolation and dashboard update/reopen pass; later browser restart/reopen proves the full journey |
+| Persistence | The query/storage repair is independently accepted through task 4.9; the browser journey remains open | 60 file-backed SQLite tests pass; real application save and environment restart/reopen must still prove the full journey |
 | Remaining renderer parity | Accepted Cartesian helpers cover only part of the original capability inventory | Every applicable row in the [capability matrix](renderer-capability-matrix.md) has working replacement behavior and evidence |
 | Runtime and delivery | Controlling Compose and publication commands are not implemented; the Workspace image remains provisional | Matching source/catalog/image identities, real dashboard acceptance and pull-only WSL/Linux operation |
 
@@ -22,7 +22,7 @@ The original per-chart Customize panel is supplied by AG Grid Enterprise. Reconn
 
 1. Resolve the theme/control capture contract and design the SQLite query repair independently. Both are needed by the real dashboard journey; neither needs a new service.
 2. After contracts and tasks are approved, give separate Sol workers displayed-grid capture and effective-style resolution. Freeze snapshot identities, financial units, state addresses and revision behavior before dispatch. Keep application entry, controls and guard removal in one integration lane.
-3. Repair SQLite in a separate backend lane once its bounded design and complexity disposition are approved. Join it with the application lane at save/reopen; keep environment restart evidence separate from engine recreation.
+3. Join the [accepted SQLite repair](../.kiro/specs/openbb-self-service/sqlite-repair-verification.md) with the application lane at save/reopen. Keep environment restart evidence separate from engine recreation.
 4. Restore and verify the remaining original capabilities against the matrix. No hidden feature flag, reduced menu or inactive button substitutes for an unfinished behavior. Compare actual application screenshots in light and dark modes as well as user outcomes and financial values.
 5. Close final catalog/image identity and dashboard acceptance. Then delivery/publication work can run alongside Anthropic. Excel begins only after Anthropic acceptance.
 

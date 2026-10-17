@@ -10,6 +10,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Find the next dependency gate | [Roadmap](roadmap.md) and [implementation tasks](../.kiro/specs/openbb-self-service/tasks.md) |
 | See the path from accepted chart modules to the original application experience | [Completion plan](completion-plan.md) |
 | Review the existing-backend persistence repair | [SQLite query design](../.kiro/specs/openbb-self-service/sqlite-repair-design.md) |
+| Reproduce SQLite query and storage checks | [SQLite verification](../.kiro/specs/openbb-self-service/sqlite-repair-verification.md) |
 | Set up the pinned development tools | [Development toolchain](development.md) |
 | Check maintained code size and explicit fork scope | [Complexity checks](complexity.md) |
 | Validate source, release and acceptance records | [Evidence contracts](evidence.md) |

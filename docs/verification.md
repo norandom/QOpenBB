@@ -1,5 +1,14 @@
 # Verify infrastructure without provider credentials
 
+For the separately accepted backend test and query layers, use the [SQLite repair verification](../.kiro/specs/openbb-self-service/sqlite-repair-verification.md). With the frozen backend Python environment restored, run from the repository root:
+
+```sh
+/home/mc/qopenbb-work/sqlite-runtime/venv/bin/python \
+  vendor/workspace/backend-api/backend/tests_sqlite/run.py
+```
+
+That interpreter path identifies the exercised WSL environment. The maintained launcher creates an isolated child with synthetic configuration, blocks operator env/account reads and network access, and removes its file databases after exit. Its 60 tests cover six read paths, sharing/creator semantics, actual bulk save/update and SQLite engine recreation. They do not prove browser save/reopen, container restart or deployment. No provider credentials are needed.
+
 Run the fixture checks before attaching application acceptance tests. They display a synthetic observation of `123.45 USD`, verify fresh cookie/local-storage state, and deliberately produce console/network failures through the owned browser's CDP session. A green result establishes verification infrastructure only. Workspace, live FMP/FRED, Anthropic, Excel, Compose and deployment remain unverified.
 
 ## Run in WSL or Linux

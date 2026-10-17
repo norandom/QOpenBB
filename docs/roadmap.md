@@ -12,6 +12,8 @@ The [phase record](../.kiro/specs/openbb-self-service/spec.json) distinguishes h
 
 ## Dependency gates
 
+SQLite tasks 4.6-4.9 are independently accepted: 60 regression tests and the maintained-scope complexity audit pass. The [verification record](../.kiro/specs/openbb-self-service/sqlite-repair-verification.md) distinguishes this query/storage result from the remaining application save/restart/reopen gate. No database migration was required.
+
 Appearance tasks 2.28-2.33 are independently accepted with scoped GO: shared contracts, parallel style/fixture work, mapper integration and browser verification. See [appearance verification](../.kiro/specs/openbb-self-service/chart-appearance-verification.md) for current evidence. Next are original theme resolution and control/application integration; full renderer acceptance remains open.
 
 The owner approved the [original option-state design](../.kiro/specs/openbb-self-service/chart-option-state-design.md) and autonomous implementation. Tasks 2.24-2.27, including both parallel implementation lanes and [joined verification](../.kiro/specs/openbb-self-service/chart-option-state-verification.md), are accepted. [Effective theme resolution](../.kiro/specs/openbb-self-service/chart-effective-style-discovery.md) and application integration remain subsequent work.
