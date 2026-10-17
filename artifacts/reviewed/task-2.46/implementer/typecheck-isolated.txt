@@ -1,0 +1,18 @@
+
+<--- Last few GCs --->
+
+[84893:0x35a1d000]    45542 ms: Scavenge 2039.7 (2048.2) -> 2037.8 (2052.2) MB, pooled: 0 MB, 4.82 / 0.00 ms  (average mu = 0.377, current mu = 0.412) allocation failure; 
+[84893:0x35a1d000]    46603 ms: Mark-Compact (reduce) 2041.8 (2052.2) -> 2035.4 (2045.2) MB, pooled: 0 MB, 925.44 / 0.00 ms  (+ 95.5 ms in 19 steps since start of marking, biggest step 5.0 ms, walltime since start of marking 1046 ms) (average mu = 0.329, 
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+ 1: 0x942e80  [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]
+ 2: 0x75f71e node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]
+ 3: 0xc98c20  [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]
+ 4: 0xc98d0f  [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]
+ 5: 0xf3c5e5  [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]
+ 6: 0xf3c612  [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]
+ 7: 0xf3c90a  [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]
+ 8: 0xf4d60a  [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]
+ 9: 0xf519b0  [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]
+10: 0x19ef441  [/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node]

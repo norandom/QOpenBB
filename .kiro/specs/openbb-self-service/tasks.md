@@ -1,5 +1,30 @@
 # Implementation plan
 
+Current production UI priorities are collected in the [UI parity worklist](ui-parity-worklist.md). It distinguishes actual application deliverables from the historical source-helper and reference-test tasks below; it does not alter their recorded approval or acceptance.
+
+## Current production task: widget editing
+
+The owner's latest production-UI "go" authorizes the bounded existing-owner repair below. The [concrete design](widget-edit-design.md) passed independent Astra review after removing the speculative completion/cancellation API. This does not authorize full renderer activation or complete the wider UI-01/UI-06 work packages.
+
+- [x] 2.46 Repair replayed widget edits at the existing production owner
+  - Accepted at Workspace `708d6bb`: [independent review](../../../artifacts/reviewed/task-2.46/review/review.md), 12 focused regressions, scoped types/lint and whole-file caps. Full application type checking remains unverified.
+  - Preserve `useWidgetSync`'s existing API, object-replacement semantics, persistence predicate, override behavior, shared subscriptions and explicit save. Replace captured-function mutation and updater-side effects with pure ordered reduction and committed delivery in that same owner.
+  - Own `Widget.hooks.tsx`, cohesive `components/widgetSync` extraction modules, and focused hook tests. No context/schema, dependency, chart-guard, feature-flag or release changes.
+  - Done when the actual production hook preserves intervening fields during replay and rapid edits, delivers committed effects once in order, and saves the latest committed state. Cover legacy force-save, override, group/refresh and StrictMode behavior with focused tests and independent review.
+  - Register maintained modules and enforce whole-file 400 physical / 300 logical / 50 per-function caps. Reuse installed tooling, scoped type/lint checks and existing test infrastructure. Include focused evidence in the per-task commit.
+  - _Boundary: Existing widget state owner and its effects_
+  - _Depends: 1.4, 2.45_
+  - _Requirements: 4.7, 4.8, 4.9, 10.4, 10.5, 10.6_
+
+- [ ] 2.47 (P) Implement the original chart-type gallery as a controlled UI component
+  - Follow the [gallery design](chart-gallery-design.md). Own the production gallery/catalog/thumbnail modules and focused tests/story. Keep application flags, guards, storage and rendering integration unchanged.
+  - Done when the observed ordered gallery renders in the original compact style, all supplied choices work by pointer/keyboard, and exact model types reach the caller without hidden filtering or fallback. Show an explicitly scoped component preview for owner visual comparison.
+  - Whole production files pass 400 physical / 300 logical / 50 per-function caps, scoped type/lint and meaningful component checks with independent review. Reuse existing tooling and original screenshots; no new reference capture infrastructure.
+  - Implemented at Workspace `b244082`; independent component review passed. [Preview and review](../../../artifacts/reviewed/task-2.47/review/review.md) await owner visual judgment. Dashboard integration and Storybook runtime are not accepted.
+  - _Boundary: Controlled chart-type selection UI; no session or storage ownership_
+  - _Depends: 2.45_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.

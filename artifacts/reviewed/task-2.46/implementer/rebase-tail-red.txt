@@ -1,0 +1,48 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/widget-246-stage/terminalpro[39m
+
+ [31m❯[39m tests/unit/widget-sync/owner.test.tsx [2m([22m[2m12 tests[22m[2m | [22m[31m1 failed[39m[2m | [22m[33m11 skipped[39m[2m)[22m[32m 19[2mms[22m[39m
+     [2m[90m↓[39m[22m replays the production submitted calculation against an intervening field without effects
+     [2m[90m↓[39m[22m replays the same functional request against its supplied current fields without effects
+     [2m[90m↓[39m[22m keeps two batched functional edits and delivers persisted snapshots once in order under StrictMode
+     [2m[90m↓[39m[22m persists a deferred edit rebased after an urgent edit
+[31m     [31m×[31m retains urgent persistence when a fresh local edit follows deferred work[39m[32m 18[2mms[22m[39m
+     [2m[90m↓[39m[22m reconciles deferred override delivery with the committed urgent fields
+     [2m[90m↓[39m[22m keeps deferred dirtiness when an urgent commit was explicitly saved
+     [2m[90m↓[39m[22m saves committed ordinary edits on the explicit save and cleanup
+     [2m[90m↓[39m[22m exposes the committed edit before a consuming layout save
+     [2m[90m↓[39m[22m preserves force-save and replacement rather than patch behavior
+     [2m[90m↓[39m[22m delivers override callbacks after commit without store persistence
+     [2m[90m↓[39m[22m uses the shared subscription and commits group and refresh notifications
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/unit/widget-sync/owner.test.tsx[2m > [22mproduction widget owner[2m > [22mretains urgent persistence when a fresh local edit follows deferred work
+[31m[1mAssertionError[22m: expected { id: 'w', name: 'Original', …(4) } to match object { name: 'urgent', …(1) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[2m    "description": "deferred",[22m
+[32m-   "name": "urgent",[39m
+[31m+   "name": "Original",[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/unit/widget-sync/owner.test.tsx:[2m182:48[22m[39m
+    [90m180|[39m     })[33m;[39m
+    [90m181|[39m     expect(result.current[1]).toMatchObject({ name: "urgent", descript…
+    [90m182|[39m     expect(mocks.store.mock.calls.at(-1)?.[1]).toMatchObject({ name: "…
+    [90m   |[39m                                                [31m^[39m
+    [90m183|[39m   })[33m;[39m
+    [90m184|[39m   it("reconciles deferred override delivery with the committed urgent …
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[33m11 skipped[39m[90m (12)[39m
+[2m   Start at [22m 20:15:54
+[2m   Duration [22m 920ms[2m (transform 119ms, setup 0ms, import 220ms, tests 19ms, environment 535ms)[22m
+

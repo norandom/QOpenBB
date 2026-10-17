@@ -275,5 +275,32 @@
         }
       }
     }
+  },
+  "production_ui_followup": {
+    "name": "widget-edit-replay-repair",
+    "phase": "widget-repair-accepted-gallery-visual-review",
+    "design_path": "widget-edit-design.md",
+    "design_approved": true,
+    "tasks_approved": true,
+    "task_ids": [
+      "2.46",
+      "2.47"
+    ],
+    "approval_note": "Owner redirected work to production UI, permitted owner judgment of visual similarity, and said go. This records authorization for the bounded existing-owner repair necessary for that work; no approval of full consuming contracts or renderer activation is inferred.",
+    "independent_design_review": "PASS; artifacts/reviewed/production-ui-next/widget-update-review.md",
+    "implementation_accepted": true,
+    "worklist_path": "ui-parity-worklist.md",
+    "parallel_gallery": {
+      "design_path": "chart-gallery-design.md",
+      "design_review": "PASS; artifacts/reviewed/production-ui-next/gallery-review.md",
+      "scope": "Controlled production chart-type gallery and explicitly scoped component preview; no full editor/application activation",
+      "implementation_revision": "b244082",
+      "implementation_review": "artifacts/reviewed/task-2.47/review/review.md",
+      "visual_acceptance": "pending owner judgment of shown component preview",
+      "implementation_accepted": false
+    },
+    "implementation_source_revision": "708d6bb8ce266c10a8615c74d96c79907dba669e",
+    "implementation_review": "artifacts/reviewed/task-2.46/review/review.md",
+    "acceptance_scope": "Task 2.46 existing widget owner only; task 2.47 remains open for owner visual judgment. Full editor and renderer integration remain pending."
   }
 }

@@ -1,5 +1,7 @@
 # Connect appearance, editor and session through explicit contracts
 
+Follow the [production UI worklist](ui-parity-worklist.md) for current priorities. Reuse the evidence below; collect more reference data only for a concrete implementation blocker. The owner will judge uncertain visual differences from matched screenshots.
+
 The next integration has concrete draft interfaces and evidence ledgers. It is not ready for implementation: the session write scheduler, original appearance/control behavior and settled export acknowledgement still need their named contracts. Preserve the full original Workspace journey; do not activate a partial editor or remove chart guards from this draft.
 
 The controller's [contract draft](../../../artifacts/reviewed/consuming-contract-freeze/controller/draft.md) joins the appearance and session proposals against Workspace `ea02ec15956dee8d2c8a06825387a570757db12d`. The original reference remains `38dffc33389aca0e4a87e0e88d42f7067aa220df`. This follows the approved [readiness work](chart-consuming-integration-readiness.md), without changing prior task acceptance or granting a new implementation phase.

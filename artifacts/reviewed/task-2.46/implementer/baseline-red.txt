@@ -1,0 +1,37 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/widget-246-stage/terminalpro[39m
+
+ [31m❯[39m tests/unit/widget-sync/owner.test.tsx [2m([22m[2m8 tests[22m[2m | [22m[31m1 failed[39m[2m | [22m[33m7 skipped[39m[2m)[22m[32m 29[2mms[22m[39m
+[31m     [31m×[31m replays the production submitted calculation against an intervening field without effects[39m[32m 27[2mms[22m[39m
+     [2m[90m↓[39m[22m replays the same functional request against its supplied current fields without effects
+     [2m[90m↓[39m[22m keeps two batched functional edits and delivers persisted snapshots once in order under StrictMode
+     [2m[90m↓[39m[22m saves committed ordinary edits on the explicit save and cleanup
+     [2m[90m↓[39m[22m exposes the committed edit before a consuming layout save
+     [2m[90m↓[39m[22m preserves force-save and replacement rather than patch behavior
+     [2m[90m↓[39m[22m delivers override callbacks after commit without store persistence
+     [2m[90m↓[39m[22m uses the shared subscription and commits group and refresh notifications
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/unit/widget-sync/owner.test.tsx[2m > [22mproduction widget owner[2m > [22mreplays the production submitted calculation against an intervening field without effects
+[31m[1mAssertionError[22m: expected 'Original' to be 'A' // Object.is equality[39m
+
+Expected: [32m"A"[39m
+Received: [31m"Original"[39m
+
+[36m [2m❯[22m tests/unit/widget-sync/owner.test.tsx:[2m71:60[22m[39m
+    [90m 69|[39m     [35mconst[39m calculate [33m=[39m mocks[33m.[39mreplay[33m;[39m
+    [90m 70|[39m     [35mconst[39m calls [33m=[39m mocks[33m.[39mstore[33m.[39mmock[33m.[39mcalls[33m.[39mlength[33m;[39m
+    [90m 71|[39m     [34mexpect[39m([34mcalculate[39m({ [33m...[39mmocks[33m.[39mwidget[33m,[39m name[33m:[39m [32m"A"[39m })[33m.[39mname)[33m.[39m[34mtoBe[39m([32m"A"[39m)[33m;[39m
+    [90m   |[39m                                                            [31m^[39m
+    [90m 72|[39m     [34mexpect[39m([34mcalculate[39m({ [33m...[39mmocks[33m.[39mwidget[33m,[39m name[33m:[39m [32m"B"[39m })[33m.[39mname)[33m.[39m[34mtoBe[39m([32m"B"[39m)[33m;[39m
+    [90m 73|[39m     [35mawait[39m [33mPromise[39m[33m.[39m[34mresolve[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[33m7 skipped[39m[90m (8)[39m
+[2m   Start at [22m 20:02:27
+[2m   Duration [22m 1.41s[2m (transform 151ms, setup 0ms, import 309ms, tests 29ms, environment 894ms)[22m
+

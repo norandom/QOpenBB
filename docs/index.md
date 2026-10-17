@@ -8,6 +8,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | --- | --- |
 | Understand the intended financial workflow and its limits | [Goals](goals.md) |
 | Find the next dependency gate | [Roadmap](roadmap.md) and [implementation tasks](../.kiro/specs/openbb-self-service/tasks.md) |
+| Track concrete production changes needed for the original UI | [UI parity worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) |
 | See the path from accepted chart modules to the original application experience | [Completion plan](completion-plan.md) |
 | Inspect the latest original chart appearance and editor contracts | [Runtime findings and next boundary](../.kiro/specs/openbb-self-service/chart-runtime-next-plan.md#appearance-and-editor-follow-up-2026-10-17) |
 | Review the next appearance and tooltip implementation boundary | [Appearance/editor design amendment](../.kiro/specs/openbb-self-service/chart-appearance-editor-integration-design.md) |

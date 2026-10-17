@@ -196,3 +196,19 @@ planned_checks = ["original-baseline-transitions", "captured-column-editor-patch
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionStateContracts.types.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionState.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts"]
 status = "passed"
 evidence = ["Tasks 2.24-2.27 independently accepted with scoped GO and VERIFIED completion. Fresh joined checks pass 221 units, strict TypeScript, scoped lint, twelve-module caps and 42 source/dependency identities; independent Astra final review passed at Workspace 5c2df9864bed000170ffccde146273b468e0552e. See .kiro/specs/openbb-self-service/chart-option-state-verification.md. This is stored-state fidelity, not effective rendering or original application parity."]
+
+[[capabilities]]
+id = "controlled-chart-type-gallery"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["supplied-chart-order-and-model-callback", "gallery-keyboard-and-scroll", "owner-gallery-visual-judgment"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartTypeGallery.test.tsx"]
+status = "planned"
+evidence = ["Task 2.47 component implemented at Workspace b244082 and independently reviewed: three focused tests, scoped types/lint and isolated real-component dark/light preview pass. Owner visual judgment remains pending; task remains open. See artifacts/reviewed/task-2.47/review/review.md and implementer/gallery-light-dark.png. Storybook runtime and full editor/dashboard integration are unverified."]
+
+[[capabilities]]
+id = "widget-edit-replay-and-committed-save"
+requirements = ["4.7", "4.8", "4.9", "10.4", "10.5", "10.6"]
+planned_checks = ["actual-hook-replay", "committed-effects-once", "priority-rebase-retains-edits", "explicit-save-and-cleanup"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/widget-sync/owner.test.tsx"]
+status = "passed"
+evidence = ["Task 2.46 accepted at Workspace 708d6bb: independent 12-test run, scoped actual-module types/lint and complexity pass. Review and regression evidence: artifacts/reviewed/task-2.46/review/review.md. Full application type checking and chart-consumer integration remain unverified."]
