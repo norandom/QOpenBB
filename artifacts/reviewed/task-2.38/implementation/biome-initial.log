@@ -1,0 +1,274 @@
+tests/unit/chart-application/gridCapture.grid.test.ts:88:112 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━
+
+  ! Template literals are preferred over string concatenation.
+  
+    86 │     api.setGridOption("columnDefs", [
+    87 │       { field: "period" },
+  > 88 │       { field: "revenue", valueGetter: ({ data }) => Number(data?.revenue) * 2, valueFormatter: ({ value }) => "USD " + value },
+       │                                                                                                                ^^^^^^^^^^^^^^
+    89 │       { field: "operatingIncome" },
+    90 │     ]);
+  
+  i Safe fix: Use a template literal.
+  
+    86 86 │       api.setGridOption("columnDefs", [
+    87 87 │         { field: "period" },
+    88    │ - ······{·field:·"revenue",·valueGetter:·({·data·})·=>·Number(data?.revenue)·*·2,·valueFormatter:·({·value·})·=>·"USD·"·+·value·},
+       88 │ + ······{·field:·"revenue",·valueGetter:·({·data·})·=>·Number(data?.revenue)·*·2,·valueFormatter:·({·value·})·=>·`USD·${value}`·},
+    89 89 │         { field: "operatingIncome" },
+    90 90 │       ]);
+  
+
+tests/unit/chart-application/gridCapture.fixtures.json format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    107 107 │     ],
+    108 108 │     "ordinary": {
+    109     │ - ····"selectedColumnIds":·[
+    110     │ - ······"period",
+    111     │ - ······"revenue",
+    112     │ - ······"operatingIncome"
+    113     │ - ····],
+    114     │ - ····"ids":·[
+    115     │ - ······"0",
+    116     │ - ······"1",
+    117     │ - ······"2",
+    118     │ - ······"3",
+    119     │ - ······"4",
+    120     │ - ······"5"
+    121     │ - ····],
+    122     │ - ····"categories":·[
+    123     │ - ······"2024-Q1",
+    124     │ - ······"2024-Q1",
+    125     │ - ······"2024-Q2",
+    126     │ - ······"2024-Q3",
+    127     │ - ······"2024-Q4",
+    128     │ - ······"2025-Q1"
+    129     │ - ····],
+    130     │ - ····"revenue":·[
+    131     │ - ······100,
+    132     │ - ······0,
+    133     │ - ······-5.5,
+    134     │ - ······75.25,
+    135     │ - ······140,
+    136     │ - ······160
+    137     │ - ····],
+    138     │ - ····"operatingIncome":·[
+    139     │ - ······20,
+    140     │ - ······0,
+    141     │ - ······-2,
+    142     │ - ······null,
+    143     │ - ······30,
+    144     │ - ······40
+    145     │ - ····]
+        109 │ + ····"selectedColumnIds":·["period",·"revenue",·"operatingIncome"],
+        110 │ + ····"ids":·["0",·"1",·"2",·"3",·"4",·"5"],
+        111 │ + ····"categories":·["2024-Q1",·"2024-Q1",·"2024-Q2",·"2024-Q3",·"2024-Q4",·"2025-Q1"],
+        112 │ + ····"revenue":·[100,·0,·-5.5,·75.25,·140,·160],
+        113 │ + ····"operatingIncome":·[20,·0,·-2,·null,·30,·40]
+    146 114 │     },
+    147 115 │     "bounded": {
+    148     │ - ····"selectedColumnIds":·[
+    149     │ - ······"period",
+    150     │ - ······"operatingIncome",
+    151     │ - ······"revenue"
+    152     │ - ····],
+        116 │ + ····"selectedColumnIds":·["period",·"operatingIncome",·"revenue"],
+    153 117 │       "rowStartIndex": 1,
+    154 118 │       "rowEndIndex": 3,
+    155     │ - ····"displayedIds":·[
+    156     │ - ······"5",
+    157     │ - ······"4",
+    158     │ - ······"0",
+    159     │ - ······"3",
+    160     │ - ······"1"
+    161     │ - ····],
+    162     │ - ····"ids":·[
+    163     │ - ······"4",
+    164     │ - ······"0",
+    165     │ - ······"3"
+    166     │ - ····],
+    167     │ - ····"categories":·[
+    168     │ - ······"2024-Q4",
+    169     │ - ······"2024-Q1",
+    170     │ - ······"2024-Q3"
+    171     │ - ····],
+    172     │ - ····"operatingIncome":·[
+    173     │ - ······30,
+    174     │ - ······20,
+    175     │ - ······null
+    176     │ - ····],
+    177     │ - ····"revenue":·[
+    178     │ - ······140,
+    179     │ - ······100,
+    180     │ - ······75.25
+    181     │ - ····]
+        119 │ + ····"displayedIds":·["5",·"4",·"0",·"3",·"1"],
+        120 │ + ····"ids":·["4",·"0",·"3"],
+        121 │ + ····"categories":·["2024-Q4",·"2024-Q1",·"2024-Q3"],
+        122 │ + ····"operatingIncome":·[30,·20,·null],
+        123 │ + ····"revenue":·[140,·100,·75.25]
+    182 124 │     },
+    183 125 │     "hidden": {
+    184     │ - ····"selectedColumnIds":·[
+    185     │ - ······"period",
+    186     │ - ······"revenue"
+    187     │ - ····]
+        126 │ + ····"selectedColumnIds":·["period",·"revenue"]
+    188 127 │     },
+    189 128 │     "experiments": {
+    ······· │ 
+    197 136 │         "scope": "Synthetic public column definition instrumentation; arbitrary application getter configuration remains unverified",
+    198 137 │         "rawRevenue": 100,
+    199     │ - ······"revenue":·[
+    200     │ - ········200,
+    201     │ - ········0,
+    202     │ - ········-11,
+    203     │ - ········150.5,
+    204     │ - ········280,
+    205     │ - ········320
+    206     │ - ······]
+        138 │ + ······"revenue":·[200,·0,·-11,·150.5,·280,·320]
+    207 139 │       }
+    208 140 │     }
+  
+
+tests/unit/chart-application/gridCapture.grid.test.ts:1:1 assist/source/organizeImports  FIXABLE  ━━━━━━━━━━
+
+  × The imports and exports are not sorted.
+  
+  > 1 │ import { AllCommunityModule, ModuleRegistry, createGrid } from "ag-grid-community";
+      │ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    2 │ import type { ColDef, GridApi } from "ag-grid-community";
+    3 │ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+  
+  i Safe fix: Organize Imports (Biome)
+  
+     1    │ - import·{·AllCommunityModule,·ModuleRegistry,·createGrid·}·from·"ag-grid-community";
+     2    │ - import·type·{·ColDef,·GridApi·}·from·"ag-grid-community";
+        1 │ + import·type·{·ColDef,·GridApi·}·from·"ag-grid-community";
+        2 │ + import·{·AllCommunityModule,·createGrid,·ModuleRegistry·}·from·"ag-grid-community";
+     3  3 │   import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+     4  4 │   import fixture from "./gridCapture.fixtures.json";
+  
+
+tests/unit/chart-application/gridCapture.grid.test.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     9   9 │   let host: HTMLDivElement;
+    10  10 │   beforeEach(() => {
+    11     │ - ··vi.stubGlobal("ResizeObserver",·class·{
+    12     │ - ····observe()·{}
+    13     │ - ····unobserve()·{}
+    14     │ - ····disconnect()·{}
+    15     │ - ··});
+        11 │ + ··vi.stubGlobal(
+        12 │ + ····"ResizeObserver",
+        13 │ + ····class·{
+        14 │ + ······observe()·{}
+        15 │ + ······unobserve()·{}
+        16 │ + ······disconnect()·{}
+        17 │ + ····},
+        18 │ + ··);
+    16  19 │     host = document.createElement("div");
+    17  20 │     document.body.append(host);
+    ······ │ 
+    36  39 │   }
+    37  40 │   function ids() {
+    38     │ - ··return·Array.from({·length:·api.getDisplayedRowCount()·},·(_,·i)·=>·api.getDisplayedRowAtIndex(i)?.id);
+        41 │ + ··return·Array.from(
+        42 │ + ····{·length:·api.getDisplayedRowCount()·},
+        43 │ + ····(_,·i)·=>·api.getDisplayedRowAtIndex(i)?.id,
+        44 │ + ··);
+    39  45 │   }
+    40  46 │   function values(column: string, start = 0, end = api.getDisplayedRowCount() - 1) {
+    ······ │ 
+    58  64 │     it("uses inclusive displayed bounds after filtering and descending sorting", async () => {
+    59  65 │       await grid();
+    60     │ - ····api.setFilterModel({·revenue:·{·filterType:·"number",·type:·"greaterThanOrEqual",·filter:·0·}·});
+    61     │ - ····api.applyColumnState({·state:·[{·colId:·"revenue",·sort:·"desc"·}],·defaultState:·{·sort:·null·}·});
+        66 │ + ····api.setFilterModel({
+        67 │ + ······revenue:·{·filterType:·"number",·type:·"greaterThanOrEqual",·filter:·0·},
+        68 │ + ····});
+        69 │ + ····api.applyColumnState({
+        70 │ + ······state:·[{·colId:·"revenue",·sort:·"desc"·}],
+        71 │ + ······defaultState:·{·sort:·null·},
+        72 │ + ····});
+    62  73 │       await vi.waitFor(() => expect(ids()).toEqual(fixture.bounded.displayedIds));
+    63  74 │       const { rowStartIndex: start, rowEndIndex: end } = fixture.bounded;
+    64  75 │       expect(ids().slice(start, end + 1)).toEqual(fixture.bounded.ids);
+    65  76 │       expect(values("period", start, end)).toEqual(fixture.bounded.categories);
+    66     │ - ····expect(fixture.bounded.selectedColumnIds.slice(1).map(key·=>·values(key,·start,·end))).toEqual([
+    67     │ - ······fixture.bounded.operatingIncome,·fixture.bounded.revenue,
+    68     │ - ····]);
+        77 │ + ····expect(
+        78 │ + ······fixture.bounded.selectedColumnIds.slice(1).map((key)·=>·values(key,·start,·end)),
+        79 │ + ····).toEqual([fixture.bounded.operatingIncome,·fixture.bounded.revenue]);
+    69  80 │     });
+    70  81 │     it("exposes visible columns for caller-owned range intersection", async () => {
+    71  82 │       await grid();
+    72  83 │       api.setColumnsVisible(["operatingIncome"], false);
+    73     │ - ····await·vi.waitFor(()·=>·expect(api.getAllDisplayedColumns().map(column·=>·column.getColId())).toEqual(fixture.hidden.selectedColumnIds));
+        84 │ + ····await·vi.waitFor(()·=>
+        85 │ + ······expect(api.getAllDisplayedColumns().map((column)·=>·column.getColId())).toEqual(
+        86 │ + ········fixture.hidden.selectedColumnIds,
+        87 │ + ······),
+        88 │ + ····);
+    74  89 │       expect(values("revenue")).toEqual(fixture.ordinary.revenue);
+    75  90 │     });
+    76  91 │     it("keeps the dimensionless formatter experiment unscaled", async () => {
+    77     │ - ····await·grid([{·field:·"margin",·valueFormatter:·({·value·})·=>·typeof·value·===·"number"·?·value.toFixed(2)·:·"-"·}]);
+        92 │ + ····await·grid([
+        93 │ + ······{
+        94 │ + ········field:·"margin",
+        95 │ + ········valueFormatter:·({·value·})·=>
+        96 │ + ··········typeof·value·===·"number"·?·value.toFixed(2)·:·"-",
+        97 │ + ······},
+        98 │ + ····]);
+    78  99 │       const rowNode = api.getDisplayedRowAtIndex(0);
+    79 100 │       if (!rowNode) throw new Error("Expected first observation");
+    80 101 │       expect(values("margin")[0]).toBe(fixture.experiments.normalizedPercent.raw);
+    81     │ - ····expect(api.getCellValue({·rowNode,·colKey:·"margin",·useFormatter:·true·})).toBe(fixture.experiments.normalizedPercent.apiFormatted);
+       102 │ + ····expect(api.getCellValue({·rowNode,·colKey:·"margin",·useFormatter:·true·})).toBe(
+       103 │ + ······fixture.experiments.normalizedPercent.apiFormatted,
+       104 │ + ····);
+    82 105 │       expect(rowNode.data?.margin).toBe(0.2);
+    83 106 │     });
+    ······ │ 
+    86 109 │       api.setGridOption("columnDefs", [
+    87 110 │         { field: "period" },
+    88     │ - ······{·field:·"revenue",·valueGetter:·({·data·})·=>·Number(data?.revenue)·*·2,·valueFormatter:·({·value·})·=>·"USD·"·+·value·},
+       111 │ + ······{
+       112 │ + ········field:·"revenue",
+       113 │ + ········valueGetter:·({·data·})·=>·Number(data?.revenue)·*·2,
+       114 │ + ········valueFormatter:·({·value·})·=>·"USD·"·+·value,
+       115 │ + ······},
+    89 116 │         { field: "operatingIncome" },
+    90 117 │       ]);
+    91     │ - ····await·vi.waitFor(()·=>·expect(values("revenue")).toEqual(fixture.experiments.getter.revenue));
+       118 │ + ····await·vi.waitFor(()·=>
+       119 │ + ······expect(values("revenue")).toEqual(fixture.experiments.getter.revenue),
+       120 │ + ····);
+    92 121 │       const rowNode = api.getDisplayedRowAtIndex(0);
+    93 122 │       if (!rowNode) throw new Error("Expected first observation");
+    94 123 │       expect(rowNode.data?.revenue).toBe(fixture.experiments.getter.rawRevenue);
+    95     │ - ····expect(api.getCellValue({·rowNode,·colKey:·"revenue",·useFormatter:·true·})).toBe("USD·200");
+       124 │ + ····expect(api.getCellValue({·rowNode,·colKey:·"revenue",·useFormatter:·true·})).toBe(
+       125 │ + ······"USD·200",
+       126 │ + ····);
+    96 127 │     });
+    97     │ - });␍
+       128 │ + });
+    98 129 │   
+  
+
+Checked 2 files in 18ms. No fixes applied.
+Found 3 errors.
+Found 1 warning.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

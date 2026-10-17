@@ -1,0 +1,37 @@
+{
+  "workspaceHead": "945e438a9a65c3eeef7073dbce64a03b02f0ff6f",
+  "stage": "/home/mc/qopenbb-work/task238-20261017125037/terminalpro",
+  "node": "v24.22.0",
+  "packages": {
+    "ag-grid-community": "34.1.1",
+    "ag-grid-react": "34.1.1",
+    "vitest": "4.1.11",
+    "jsdom": "30.0.1",
+    "typescript": "5.9.2",
+    "@biomejs/biome": "2.4.8"
+  },
+  "ownedAndConfigIdentities": [
+    {
+      "path": "tests/unit/chart-application/gridCapture.fixtures.json",
+      "sourceSha256": "7d6a08a2360b241b0d1edd60ece10069cbd2d38295cdbfc87b979a53b429a3f4",
+      "stageSha256": "7d6a08a2360b241b0d1edd60ece10069cbd2d38295cdbfc87b979a53b429a3f4"
+    },
+    {
+      "path": "tests/unit/chart-application/gridCapture.grid.test.ts",
+      "sourceSha256": "cbeb9f680c6481a4430c5445003bd453aea24b7a9e00a7a36c2401430de70f0d",
+      "stageSha256": "cbeb9f680c6481a4430c5445003bd453aea24b7a9e00a7a36c2401430de70f0d"
+    },
+    {
+      "path": "tests/unit/chart-application/tsconfig.json",
+      "sourceSha256": "b15d59193e26f06673926121943dacf0b71d6f2f923041fb65a3edab592258bf",
+      "stageSha256": "b15d59193e26f06673926121943dacf0b71d6f2f923041fb65a3edab592258bf"
+    },
+    {
+      "path": "tests/unit/chart-application/vitest.config.mjs",
+      "sourceSha256": "4c0c193e2458f8c19581e873ae521a7beddbdae22716fc72e652e4f72565343a",
+      "stageSha256": "4c0c193e2458f8c19581e873ae521a7beddbdae22716fc72e652e4f72565343a"
+    }
+  ],
+  "referenceAssertions": "original rows, both series baseline/bounded arrays and synthetic getter arrays independently compared; all input hashes match",
+  "scope": "Tests/fixture only; production caps excluded; no adapter, application, browser, build or renderer acceptance"
+}

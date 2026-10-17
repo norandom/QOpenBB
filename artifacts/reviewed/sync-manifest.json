@@ -31,10 +31,11 @@
     "parity",
     "appearance-next-audit",
     "runtime-contract-next",
-    "grid-capture-tasks"
+    "grid-capture-tasks",
+    "task-2.38"
   ],
   "sourcepins": {
-    "root_at_sync": "61e5c17af063008a92a0ecc6c90ee451443dc9b0",
+    "root_at_sync": "5fb8de6f68b5ef458fc39b15421b8c48faff6c48",
     "workspace_at_sync": "945e438a9a65c3eeef7073dbce64a03b02f0ff6f",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -5359,13 +5360,253 @@
       "publishedSHA256": "58f778233533e8281dd2dad36d145c137b7de195b9742e49e6d1bb02d0fcb7ae",
       "bytes": 6732,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/report.md",
+      "sourceSHA256": "1c23103a68d8726e88d382bca44bc2b597f27323d41c44d65bd22f91099bc0ec",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/report.md",
+      "publishedSHA256": "1c23103a68d8726e88d382bca44bc2b597f27323d41c44d65bd22f91099bc0ec",
+      "bytes": 2749,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/check-final.sh",
+      "sourceSHA256": "bca39f10a7eb3a690f76994d96f01acb7a2758962311e63b3db8f13f2c001a8a",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/check-final.sh",
+      "publishedSHA256": "bca39f10a7eb3a690f76994d96f01acb7a2758962311e63b3db8f13f2c001a8a",
+      "bytes": 862,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/stage.py",
+      "sourceSHA256": "9b235bb7bd02edad659d8d19247e2367552817ea47defb3b611da39430ca6e90",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/stage.py",
+      "publishedSHA256": "9b235bb7bd02edad659d8d19247e2367552817ea47defb3b611da39430ca6e90",
+      "bytes": 1426,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/evidence.py",
+      "sourceSHA256": "c0e4663260b58d9fb5e8526e0f77201ec5063fbf73d030249b72b246256464cb",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/evidence.py",
+      "publishedSHA256": "c0e4663260b58d9fb5e8526e0f77201ec5063fbf73d030249b72b246256464cb",
+      "bytes": 2333,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/identity.json",
+      "sourceSHA256": "2f17f37b18bbfeb5fa9f3f796a34f503ad2821250e65e1a07b1db8708f7122d8",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/identity.json",
+      "publishedSHA256": "2f17f37b18bbfeb5fa9f3f796a34f503ad2821250e65e1a07b1db8708f7122d8",
+      "bytes": 1694,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/stage-path.txt",
+      "sourceSHA256": "59df7167270f70b6058f5b57cac8ce8749b25c9f466f8e3a585aaa9f490b0cb5",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/stage-path.txt",
+      "publishedSHA256": "59df7167270f70b6058f5b57cac8ce8749b25c9f466f8e3a585aaa9f490b0cb5",
+      "bytes": 57,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/source-stage-manifest.json",
+      "sourceSHA256": "38e965f9273f7dc5c7f0251f736c37405c88288b4756f7cdd257633b15a27b7a",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/source-stage-manifest.json",
+      "publishedSHA256": "38e965f9273f7dc5c7f0251f736c37405c88288b4756f7cdd257633b15a27b7a",
+      "bytes": 398314,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/grid-final.log",
+      "sourceSHA256": "16d3c592fc74135bba66f1369dc581e1d7ef638e58621c1c4e11589b52d6f6ea",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/grid-final.log",
+      "publishedSHA256": "16d3c592fc74135bba66f1369dc581e1d7ef638e58621c1c4e11589b52d6f6ea",
+      "bytes": 524,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/grid-final.exit",
+      "sourceSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/grid-final.exit",
+      "publishedSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/tsc-final.log",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/tsc-final.log",
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/tsc-final.exit",
+      "sourceSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/tsc-final.exit",
+      "publishedSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/biome-final.log",
+      "sourceSHA256": "1f8ddb0ba5a73127294d9f048e678d11d3286d5343343031df3f88b9ced2b7b0",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/biome-final.log",
+      "publishedSHA256": "1f8ddb0ba5a73127294d9f048e678d11d3286d5343343031df3f88b9ced2b7b0",
+      "bytes": 42,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/biome-final.exit",
+      "sourceSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/biome-final.exit",
+      "publishedSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/grid-initial.log",
+      "sourceSHA256": "8514169a13551c8d6483df434757293fcac421a2039e647d93628dbae52e1a42",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/grid-initial.log",
+      "publishedSHA256": "8514169a13551c8d6483df434757293fcac421a2039e647d93628dbae52e1a42",
+      "bytes": 524,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/grid-initial.exit",
+      "sourceSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/grid-initial.exit",
+      "publishedSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/tsc-initial.log",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/tsc-initial.log",
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/tsc-initial.exit",
+      "sourceSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/tsc-initial.exit",
+      "publishedSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/biome-initial.log",
+      "sourceSHA256": "c36be57085ce33f39108522c9f728de22f082c2a07344acfa0fa512bd9425710",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/biome-initial.log",
+      "publishedSHA256": "c36be57085ce33f39108522c9f728de22f082c2a07344acfa0fa512bd9425710",
+      "bytes": 14405,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/implementation/biome-initial.exit",
+      "sourceSHA256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "publishedpath": "artifacts/reviewed/task-2.38/implementation/biome-initial.exit",
+      "publishedSHA256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "bytes": 2,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/verdict.md",
+      "sourceSHA256": "a67671cae5cf7434050422c8392f58933d78dfea9be998d9276fc55c5bfd37e6",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/verdict.md",
+      "publishedSHA256": "a67671cae5cf7434050422c8392f58933d78dfea9be998d9276fc55c5bfd37e6",
+      "bytes": 3149,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/audit.py",
+      "sourceSHA256": "917fc8545d6ca938ce63b70cb1d8df9166c527004db2c13dbb1ab4e1f358945f",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/audit.py",
+      "publishedSHA256": "917fc8545d6ca938ce63b70cb1d8df9166c527004db2c13dbb1ab4e1f358945f",
+      "bytes": 2655,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/identity-audit.json",
+      "sourceSHA256": "f5456be90350ed403974138ecdfd675ed60811476a4187a97b2d10fd3bb504fc",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/identity-audit.json",
+      "publishedSHA256": "f5456be90350ed403974138ecdfd675ed60811476a4187a97b2d10fd3bb504fc",
+      "bytes": 819,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/check.sh",
+      "sourceSHA256": "aa422f8c1c947b14f251d02da9c90e7934af5a2fc420755680ee6ee856d6eaf0",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/check.sh",
+      "publishedSHA256": "aa422f8c1c947b14f251d02da9c90e7934af5a2fc420755680ee6ee856d6eaf0",
+      "bytes": 907,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/runtime.log",
+      "sourceSHA256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/runtime.log",
+      "publishedSHA256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc",
+      "bytes": 9,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/grid.log",
+      "sourceSHA256": "2f813db17b0cdcd969bdaabc4f3a1a1025f0b6b8353c753e290727eecc789585",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/grid.log",
+      "publishedSHA256": "2f813db17b0cdcd969bdaabc4f3a1a1025f0b6b8353c753e290727eecc789585",
+      "bytes": 524,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/grid.exit",
+      "sourceSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/grid.exit",
+      "publishedSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/tsc.log",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/tsc.log",
+      "publishedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/tsc.exit",
+      "sourceSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/tsc.exit",
+      "publishedSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/biome.log",
+      "sourceSHA256": "9b21edba1c2aa814b61c93f36948ea28b3ab68464e9939fdee077031519c1b06",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/biome.log",
+      "publishedSHA256": "9b21edba1c2aa814b61c93f36948ea28b3ab68464e9939fdee077031519c1b06",
+      "bytes": 42,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.38/review/biome.exit",
+      "sourceSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "publishedpath": "artifacts/reviewed/task-2.38/review/biome.exit",
+      "publishedSHA256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
     {
       "publishedpath": "artifacts/reviewed/README.md",
-      "publishedSHA256": "a730340abe67fd4da51cef0e7bcabacc7ee4975715cfded6b1ac241375a1bae3",
-      "bytes": 7606,
+      "publishedSHA256": "afc99bf6d233c747bf0f35e51bdbe2bc1ef226b7a0e6545c438cd25065348b20",
+      "bytes": 8028,
       "transform": "new synchronization documentation; no historical source"
     }
   ],
@@ -6048,5 +6289,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 16739018
+  "total_payload_bytes": 17170493
 }

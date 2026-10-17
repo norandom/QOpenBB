@@ -1,0 +1,13 @@
+# Task 2.38 implementation evidence
+
+The five real Community GridApi fixture checks pass without skips. Application strict TypeScript and scoped Biome pass. This foundation establishes the finite ordinary capture test environment; it does not implement the capture adapter or accept the application journey.
+
+The tests cover exact six-row financial values, separate duplicate-label node IDs, sorted/filtered displayed order with inclusive 1..3 bounds and income/revenue ordering, visible-column IDs, unscaled dimensionless formatter values, and synthetic getter values distinct from raw data and formatted strings. Only AllCommunityModule is registered. ResizeObserver is locally stubbed and restored; each grid and host are destroyed/removed. No root setup or grid mock is imported.
+
+Reference source/image and per-input SHA-256 identities are embedded in the fixture separately from current candidate identities in identity.json. evidence.py independently checks original rows, baseline/bounded numeric arrays, getter arrays, input hashes and exact source/stage hashes. source-stage-manifest.json records the fresh current-source stage including dirty files; it contains paths and hashes only. The fixture and tests are excluded from production complexity caps. No maintained production file changed.
+
+Commands from the fresh stage are retained in check-final.sh: focused Vitest (5 passed, no skips), application tsc --noEmit (exit 0), and scoped Biome (exit 0, two files, no fixes). grid-final.log, tsc-final.log, biome-final.log and corresponding .exit files are authoritative. identity.json records Node and actual locked package versions. Controller-owned config is hashed but was not edited by this worker.
+
+The initial grid suite and compiler passed. Initial Biome exited 1 on formatting; safe formatting resolved it. Initial Windows-created shell wrappers had CRLF endings, yielding a malformed exit filename and one failed copy before verification; wrappers were normalized to LF and the filename normalized before publication. Windows python/python3 launch attempts were unavailable; the existing pipeline Python was used. No dependency install, upgrade, browser or build ran. Foundation tests exercise existing actual API behavior, so no fabricated failing product regression or feature flag was introduced. Task 2.39 retains its required implementation RED gate.
+
+Review the explicit publication-allowlist.json. It excludes transient formatting wrappers/logs and the fixture-generation script; the authoritative fixture is the owned test JSON. Source changes are limited to gridCapture.fixtures.json and gridCapture.grid.test.ts. No acceptance beyond task 2.38 is claimed; independent review and controller acceptance remain required.
