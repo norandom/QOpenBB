@@ -1,0 +1,361 @@
+{
+  "base": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro",
+  "stage": "/home/mc/qopenbb-work/task244-independent-review/terminalpro",
+  "files": [
+    {
+      "path": "src/components/General/Table/Chart/AgChartView.tsx",
+      "sha256": "93a7e28b879fc93028b7d681049492332ffaafc04e85404c942cdb770be91534",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/appearanceContracts.ts",
+      "sha256": "544d206dffd39f9cb82388ea0e0f0193ef924a0f4ce2a75dbf30ab4e5fd816e6",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/chartRange.ts",
+      "sha256": "d481a9f57cf77092dd4c26b9039f4813ef0fa4f074ade024ac58e7c4a93b00d2",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/financialFormatting.ts",
+      "sha256": "a31738d1b3e4d296873433f6795a7e4035ef516201017bd62825e2e4724898a0",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/gridCapture.ts",
+      "sha256": "1f2f83ea14bd8b44043157f649cce130c9ae64aea62de598a09ae299b3bd6e7b",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/sessionState.ts",
+      "sha256": "f8978a8893b09e0a915563ab677c57eeae12be6f4006522ae80ec620a4462c2c",
+      "origin": "owned-current"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/types.ts",
+      "sha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/detachedState.ts",
+      "sha256": "a556556f6cadef9e042301f4798f72585498c4538cf1670f4f6ab0c77f9dbd02",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "sha256": "c708dae759ba45fe49430a55e9c32b3399d0eff8552781600b305d6644ca4c95",
+      "origin": "owned-current"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/integratedState.ts",
+      "sha256": "9ae81b6bd5baa143bc75a090f1609df95744b04a3003ce92de975ae417f1fe3f",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/legacyTypes.ts",
+      "sha256": "c0e177ae694b183290b284b22e21e1db3092390ca093ec7986ac612a6e262115",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/optionState.ts",
+      "sha256": "f5122d722b585e8eef61cc00cdeb9de2cb3ba33e376c4fffa6de1f38a21b2bb4",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "sha256": "56430d89d2bb58b4a888bb09458862d1c28cc4d9a1b72d408c8e1b2145794128",
+      "origin": "owned-current"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/snapshot.ts",
+      "sha256": "897aab915a746781b7e01062f97f1a4756e2f060b779b2fd170540e9e02339c4",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/snapshotTypes.ts",
+      "sha256": "6ecba6a18a77cad3f027e384b023296187b968b1566a6955a54af638b6c25a14",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/EChartsHost.tsx",
+      "sha256": "906fefc5eed125da005030061f3c6375becedacd26f0c5ee5a89f89c12e3b624",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/cartesian.ts",
+      "sha256": "584f61b6e231a8693ce046a2a0e049e1e13eb87c537ede8fe5b69d1dcb2f99f9",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/cartesianStyle.ts",
+      "sha256": "c8688c04fc437e259b0d30aaee46872f9d48032d1f0629d633223fbb5c57d4b2",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+      "sha256": "0581c101adc4a7dc71732965df569201c8e3b14144088c48bce188c849127d9f",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/echarts/lifecycle.ts",
+      "sha256": "ce71510b3c064efbb3318a33f2e3f04d3446b17abcc41497fc24f2634f3d3ced",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/hooks/useChartOptions.tsx",
+      "sha256": "abb658e8caa298ae8bdef2b3903b4a84af0406c34a9d751b4f11c29470cced59",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/themes.tsx",
+      "sha256": "c2a2db418147896f87117b4fb98fd65d486bbc8a4d66038c61980a2b3abf2187",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "src/components/General/Table/Chart/utils.tsx",
+      "sha256": "feb154b4172ddb044261fb7e196632f9780c801adc3e6400a8f6710aab6619f8",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/appearanceContracts.types.ts",
+      "sha256": "ef75606a2181460dd4aceec82323c9d62839b2acacea349269ee71b9d7f55c0e",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/appearanceFixtures.json",
+      "sha256": "6617c41cd749ab0276fcaa07ba802f3604b76fd998ebfe6d72367e1fd072a5e7",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/chartRange.test.ts",
+      "sha256": "075fcd9d12fdc3b58068a43db889ada5ba68a629a8c3c68d9a1adac3cb80ca13",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/contracts.types.ts",
+      "sha256": "c74e593eec9286027d648e6ab655b78b2e2b9d45f3c3ecb74ac57c26ec71f018",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/financialFormatting.sources.json",
+      "sha256": "02b11ec941921aa43a36104490b4c52a72c85591ca898c136d9091612c2a179b",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/financialFormatting.test.ts",
+      "sha256": "754e593c743b8788932a4dd5481eb9d16a4923548a3d777ca6136eae1edf3ad8",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/gridCapture.fixtures.json",
+      "sha256": "7d6a08a2360b241b0d1edd60ece10069cbd2d38295cdbfc87b979a53b429a3f4",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/gridCapture.grid.test.ts",
+      "sha256": "32560e51d9e65de049495df6c2ee5d7e6c8d116c7147c1edb9344d331414f2d2",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/gridCapture.test.ts",
+      "sha256": "35239374b5be3cef8c1f3f729f6cb7c84cee87f1c609ce78e093e8b5c4cd707d",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/sessionState.test.ts",
+      "sha256": "4cb83a1b3caa6db47d05bbfbb83a12b608838d90cf1fe82e42315fd752171c7b",
+      "origin": "owned-current"
+    },
+    {
+      "path": "tests/unit/chart-application/tsconfig.json",
+      "sha256": "4d8000a97707c3c82cfa0011d31e3ba72ba39a17a05c79753405bc077b948e1a",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-application/vitest.config.mjs",
+      "sha256": "4c0c193e2458f8c19581e873ae521a7beddbdae22716fc72e652e4f72565343a",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/appearance.fixtures.ts",
+      "sha256": "10b0d258386f564eb276f820cc3f87e007197b86b1f05e4e3d52470d699d9bf6",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/cartesian.test.ts",
+      "sha256": "274405c24d0e9946cdda0043d0d8522f9f62a6f308637e197deb6a6194e8024f",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/contracts.fixtures.ts",
+      "sha256": "17f8127980e786024f736c8ccaaaff56399b45e34ddb0274cd1ef49e18aa8dbc",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/contracts.test.ts",
+      "sha256": "ad1fb443bbbb9f49b377a5bddad32ef44df6f55a48eb228a0feac2ea23a06e81",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/contracts.types.ts",
+      "sha256": "0546d734296f3d90a87b5cb51e2b8549d31edf5cf17f970032457223e64af98f",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/editorEvents.test.ts",
+      "sha256": "0bda9902f79abfe3d0b6b44c88f2599b2a843142fe7a3f1462071a4abe0fc596",
+      "origin": "owned-current"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/editorPayload.fixtures.ts",
+      "sha256": "3fe39492fe9fd9d945f76699c2d1773ae77366dd3b4e8774c6fcdcb0c0762f84",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/host.test.tsx",
+      "sha256": "960cf790074d17d2b5531f0a8ae406e6774321532ca24131e563320df9b48b73",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/lifecycle.test.ts",
+      "sha256": "86fa93020d9baa372963cdfdaf518e6b6453863ed1e46b91e4883b2390367c0b",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/optionState.test.ts",
+      "sha256": "e4fd40fc10d5963120ce32c88374fd7b04bdb85df548607b73e569ab78b72c83",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/optionStateContracts.types.ts",
+      "sha256": "5548acdec0bdcf4f9983bcad384ea1f8e66e282f2fa2650f999e5632d2e62290",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/snapshot.fixtures.ts",
+      "sha256": "5f7d682f832ecbb5d69db85c94412b1d635b00aab508a0175dfced0550c4b209",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/snapshot.test.ts",
+      "sha256": "e13a4ed572f7bd3875a33c34023abd5290eb3433734785704bb7b7d50dfc0c52",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/snapshotContracts.types.ts",
+      "sha256": "da72ee92de6eb4ec7106af120b4c5f3b0aaeceb20ba8924a67ea70d7cef80a71",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/stateReducers.test.ts",
+      "sha256": "1dcff74f6c4eb87512df99cda21dd2231a2dc0e2f99c614abdf9314181df37a3",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/tsconfig.json",
+      "sha256": "e30c68feaf0f9dbb41c7fb0e9379e9aa11f0109dc8dc77135de4bf9ffba0e628",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/vitest.config.mjs",
+      "sha256": "2cee58e004b541afcaf1fa5b7aee19dc90fd089358ed0ed90e64854807079413",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/appearance.html",
+      "sha256": "1a243807406cd30b953a0de604f7d9fbdd0319fa49254d2b2d3828c488a19d14",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/appearance.spec.ts",
+      "sha256": "b4ed01500d6cf005cfbc5ea55b40f9a5b64ab4bc3e70ab9d3df39207b8405fde",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/appearance.tsx",
+      "sha256": "8c404334354e2d62f253b283c8f19fca6c6c99b739113fbb428ba6f31e380070",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/cartesian.html",
+      "sha256": "d920379a48ca25539c7de2f6dd9d7290f7769d4115f522020c498aa98df2e2ef",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/cartesian.spec.ts",
+      "sha256": "857bbcb6c3fa5f1f54c9a2e16d12a35224d2edb397ce8b8cf231186153ab186e",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/cartesian.tsx",
+      "sha256": "b8ac0ce03a89a60409ebe322c33477e766e3b925104434040305034c6b7757d5",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/fixture.html",
+      "sha256": "ea47bceea07c093a7c442db8f5e43bfb99e0367b0b888b2f09ddc27a8c63fbb3",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/fixture.ts",
+      "sha256": "fcb0c89dcde6e4adb15ad8198142691d9b0d10451ef68a7edd249681ecb96ab4",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/host.html",
+      "sha256": "0f47f403849e733a2b7a4ec7278df7462a75c7147fcec03ee5db7b6e98694963",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/host.spec.ts",
+      "sha256": "6eca1de5468f7a877f5cc381512dc05e869e4445d569b8ff3e738c1cfa9933d9",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/host.tsx",
+      "sha256": "41bc3c7855a9c2916e0db29d85928723a6c8226b212edd3d46fc8a4386829c5c",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/playwright.config.ts",
+      "sha256": "c4e6a99bb4b62e3adf533b1e9d232b986085a6cd3dc2c09b8107b491f4594b6e",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/smoke.spec.ts",
+      "sha256": "790ad1c5772bccead465160cc2518fbe8dc938b49c34d8ac637ee60dc0759d72",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/toolchain.test.ts",
+      "sha256": "31ffac36336d295a722d78b753c0ebbc1da33415b899365ab878d8d9ebe6b38f",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tests/e2e/chart-compatibility/vite.config.ts",
+      "sha256": "66aba22d88e0791d33bc1110d5d89b6c2aca3dfe597a5f8fd9dad42accca0d77",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "biome.json",
+      "sha256": "b8f0746b1153361ad4abfeb3625f999455f3e65bc2950c6ff211f0bc63007a49",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "2d58368253afcfead8f642a087b656c6ff250f1146dc9a7fe79c3973b48b87d7",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "package.json",
+      "sha256": "22b8936be4a077f40ced2b3ab6a1dd7f0731c5b90f7ba59267fabf07624dafe0",
+      "origin": "accepted-2.41"
+    },
+    {
+      "path": "tsconfig.node.json",
+      "sha256": "55d075f9d4ee87e8e1c86e6b26bf0fdd633b15a5eb18c64b78b53336ae5c613e",
+      "origin": "accepted-2.41"
+    }
+  ]
+}

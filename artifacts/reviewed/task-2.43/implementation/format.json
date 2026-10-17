@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+    "node_modules/@biomejs/biome/bin/biome",
+    "format",
+    "--write",
+    "src/components/General/Table/Chart/application/appearanceColors.ts",
+    "tests/unit/chart-application/appearanceColors.test.ts"
+  ],
+  "cwd": "/home/mc/qopenbb-work/task243-colors-20261017/terminalpro",
+  "exit_code": 0,
+  "log": "/mnt/d/Source/QOpenBB/artifacts/task-2.43/implementation/format.log"
+}

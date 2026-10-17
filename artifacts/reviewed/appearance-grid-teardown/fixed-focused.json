@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "tests/unit/chart-application/vitest.config.mjs",
+    "tests/unit/chart-application/gridCapture.grid.test.ts"
+  ],
+  "cwd": "/home/mc/qopenbb-work/appearance-grid-teardown/terminalpro",
+  "exit_code": 0,
+  "duration_seconds": 2.2436744139995426,
+  "test_sha256": "47c9793abc7d528d15b3fce807e669d6ef168b88d2c6f213ac316bfe5d4e41b0"
+}

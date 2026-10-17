@@ -1052,7 +1052,8 @@ The owner approved [the appearance/editor amendment](chart-appearance-editor-int
   - _Depends: 1.3, 1.4, 2.40_
   - _Requirements: 1.1, 1.4, 4.8, 4.9, 10.4, 10.5, 10.6_
 
-- [ ] 2.42 (P) Preserve original saved-option composition without mutating state
+- [x] 2.42 (P) Preserve original saved-option composition without mutating state
+  - Accepted: independent APPROVED/VERIFIED review in `artifacts/reviewed/task-2.42/review/review.md`; 126 application/260 compatibility tests, both strict compilers, scoped lint and 175-file complexity audit pass. Concurrent tooltip changes are excluded from this task-local stage and require the joined gate.
   - Use the approved saved operand baseline.options and generated operand. Return a detached combined value with generated common replacing saved common, then source-equivalent lodash merge semantics; do not reread baseline.model.chartOptions or storage.
   - Preserve family and unknown branches, own undefined/null/array behavior and input identity/contents. Keep callbacks outside data-only options. Contain accessors, cycles, nonplain values and throwing proxies through the public validation boundary without invoking getters or functions.
   - Write meaningful failing regressions before implementation for saved-common replacement, conflicting bar/line families, mismatched baseline/model options and mutation. Expected fixtures and pinned original-source composition serve as the oracle, not the new helper's output.
@@ -1061,7 +1062,8 @@ The owner approved [the appearance/editor amendment](chart-appearance-editor-int
   - _Depends: 2.41_
   - _Requirements: 1.1, 1.4, 4.2, 4.7, 4.8, 4.9, 10.5, 10.6_
 
-- [ ] 2.43 (P) Reproduce derived grid and subtitle colors from explicit tokens
+- [x] 2.43 (P) Reproduce derived grid and subtitle colors from explicit tokens
+  - Accepted: independent APPROVED review in `artifacts/reviewed/task-2.45/review/report.md`; 42 color cases included in the 176-test application suite. Exact normalized arithmetic, explicit aliases and descriptor-safe diagnostics pass; production size is 118 physical/53 logical/16 maximum function units.
   - Accept explicit supported base and foreground/background/text/chart-background tokens. Use the approved normalized-channel operation order, literal ratios and lowercase six-digit output. Do not assume aliases are identical or resolve arbitrary saved theme graphs.
   - Separate descriptor-safe invalid structure from structurally valid unsupported strings; preserve diagnostic paths. Reject missing/non-string/unknown own fields and contain hostile access; unsupported bases/color strings are unresolved without claiming CSS validity.
   - Begin with failing independent expected-color cases, including the #000000/#9b0000 rounding edge yielding #8b0000, dark/light ratios, independent subtitle aliases, upper/lower hex input and black/white bounds. Retain the exhaustive source experiment as historical evidence rather than introducing AG into maintained runtime/tests.
@@ -1070,7 +1072,8 @@ The owner approved [the appearance/editor amendment](chart-appearance-editor-int
   - _Depends: 2.41_
   - _Requirements: 1.1, 1.4, 4.8, 4.9, 10.5, 10.6_
 
-- [ ] 2.44 (P) Integrate grouped-column tooltip edits with the existing addressed session
+- [x] 2.44 (P) Integrate grouped-column tooltip edits with the existing addressed session
+  - Accepted: independent APPROVED/VERIFIED review in `artifacts/reviewed/task-2.44/review-repair/report.md`; 96 application/274 compatibility tests, both strict compilers and scoped lint pass. The existing real-grid test now drains pending AG callbacks before jsdom teardown; the prior failed check and its root-cause evidence remain published. No production animation or UI change.
   - Extend the existing event union and mapper with tooltip-mode values single/shared/compact and exactly the bar.tooltip.mode patch. Preserve Multiple -> shared semantics; reject arbitrary paths and malformed values. The mapper retains its current ValidationResult signature.
   - After session stamp validation, distinguish an exact structurally valid stackedColumn tooltip event as unresolved, before mapping or writes. Mapper-level stacked tooltip rejection remains validation failure. Malformed events remain invalid; proxy/accessor handling is exception-contained. The four existing events retain both original column-family behaviors.
   - Exercise the real existing session and reducer with latest storage and baseline.options, never composed rendering options. Preserve unknown and inactive-family state, current model, prior edits and stale-address/generation/data/render revision behavior; no new save trigger.
@@ -1080,7 +1083,8 @@ The owner approved [the appearance/editor amendment](chart-appearance-editor-int
   - _Depends: 2.41_
   - _Requirements: 4.2, 4.7, 4.8, 4.9, 10.4, 10.5, 10.6_
 
-- [ ] 2.45 Independently verify and join the source contracts without activating the application
+- [x] 2.45 Independently verify and join the source contracts without activating the application
+  - Accepted source gate: independent VERIFIED/scoped GO in `artifacts/reviewed/task-2.45/review/report.md`; 176 application/274 compatibility tests, both strict compilers, 25-file lint, 71 exact staged identities and the 176-file maintained audit pass. See `chart-appearance-source-verification.md`. Source pins and reviewed artifacts are reconciled for selective delivery; application and release gates stay open.
   - Freeze all worker writes and snapshot the actual combined source/config/fixture bytes to a fresh stage. Independently rerun both unit suites, both strict compilers and scoped lint with zero hidden skips; preserve failed attempts and exact command exits.
   - Verify the typed composition/color handoffs and event/session integration together against accepted fixtures. Confirm composition/color outputs remain render-only, stored baseline fields survive tooltip edits and no application guard, menu, flag, dependency or UI path changed.
   - Run the complete maintained inventory gate with explicit fork change manifests and exact source identities. All new/modified production files pass 400 physical/300 logical/50 per function; existing exception target bytes remain unchanged. Tests and synthetic fixtures remain declared exclusions.

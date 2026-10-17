@@ -1,0 +1,7 @@
+2026-10-17: first RED launch attempts through PowerShell -> wsl -> sh -c failed
+before running tests with `sh: 1: Syntax error: "(" unexpected`, exit 1.
+Both attempted checks were the focused editorEvents and sessionState Vitest commands.
+The PowerShell/native argument boundary exposed PATH shell quoting. The replacement
+run_check.py invokes pinned Node through subprocess argument arrays with explicit
+environment and cwd, avoiding a nested shell. No behavioral RED was claimed for
+these launcher failures.

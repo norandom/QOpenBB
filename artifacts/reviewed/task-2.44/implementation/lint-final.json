@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+    "node_modules/@biomejs/biome/bin/biome",
+    "check",
+    "src/components/General/Table/Chart/application/sessionState.ts",
+    "src/components/General/Table/Chart/compatibility/editorEvents.ts",
+    "src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+    "tests/unit/chart-application/sessionState.test.ts",
+    "tests/unit/chart-compatibility/editorEvents.test.ts"
+  ],
+  "cwd": "/home/mc/qopenbb-work/task244-20261017140641/terminalpro",
+  "exit_code": 0,
+  "duration_seconds": 0.41264796257019043
+}

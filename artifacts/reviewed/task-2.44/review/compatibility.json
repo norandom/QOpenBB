@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "tests/unit/chart-compatibility/vitest.config.mjs"
+  ],
+  "cwd": "/home/mc/qopenbb-work/task244-independent-review/terminalpro",
+  "exit_code": 1,
+  "duration_seconds": 5.161785125732422
+}

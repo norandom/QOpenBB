@@ -1,0 +1,113 @@
+{
+  "command": [
+    "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+    "/mnt/d/Source/QOpenBB/tools/quality/syntax_units.ts"
+  ],
+  "exit_code": 0,
+  "files": [
+    {
+      "path": "/mnt/d/Source/QOpenBB/vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "logical": 35,
+      "functions": [],
+      "physical": 41,
+      "sha256": "56430d89d2bb58b4a888bb09458862d1c28cc4d9a1b72d408c8e1b2145794128",
+      "max_function": 0
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/vendor/workspace/terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "logical": 55,
+      "functions": [
+        {
+          "name": "dataFields",
+          "line": 4,
+          "column": 1,
+          "logical": 16
+        },
+        {
+          "name": "<anonymous>",
+          "line": 16,
+          "column": 18,
+          "logical": 1
+        },
+        {
+          "name": "mapEvent",
+          "line": 28,
+          "column": 1,
+          "logical": 15
+        },
+        {
+          "name": "mapColumnEditorEvent",
+          "line": 66,
+          "column": 59,
+          "logical": 18
+        }
+      ],
+      "physical": 98,
+      "sha256": "c708dae759ba45fe49430a55e9c32b3399d0eff8552781600b305d6644ca4c95",
+      "max_function": 18
+    },
+    {
+      "path": "/mnt/d/Source/QOpenBB/vendor/workspace/terminalpro/src/components/General/Table/Chart/application/sessionState.ts",
+      "logical": 107,
+      "functions": [
+        {
+          "name": "invalid",
+          "line": 17,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "record",
+          "line": 24,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "parseStamp",
+          "line": 39,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "validateSessionStamp",
+          "line": 72,
+          "column": 59,
+          "logical": 9
+        },
+        {
+          "name": "advanceSessionStamp",
+          "line": 91,
+          "column": 57,
+          "logical": 14
+        },
+        {
+          "name": "selectSessionBaseline",
+          "line": 106,
+          "column": 61,
+          "logical": 7
+        },
+        {
+          "name": "isTooltipMode",
+          "line": 117,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "applyColumnEdit",
+          "line": 129,
+          "column": 49,
+          "logical": 19
+        },
+        {
+          "name": "applyRangeTransition",
+          "line": 173,
+          "column": 59,
+          "logical": 16
+        }
+      ],
+      "physical": 195,
+      "sha256": "f8978a8893b09e0a915563ab677c57eeae12be6f4006522ae80ec620a4462c2c",
+      "max_function": 19
+    }
+  ]
+}

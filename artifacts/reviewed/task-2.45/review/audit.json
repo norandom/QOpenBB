@@ -1,0 +1,331 @@
+{
+  "worker_allowlist_entries_verified": 29,
+  "frozen_contracts": [
+    {
+      "path": "src/components/General/Table/Chart/application/appearanceContracts.ts",
+      "sha256": "544d206dffd39f9cb82388ea0e0f0193ef924a0f4ce2a75dbf30ab4e5fd816e6"
+    },
+    {
+      "path": "tests/unit/chart-application/appearanceContracts.types.ts",
+      "sha256": "ef75606a2181460dd4aceec82323c9d62839b2acacea349269ee71b9d7f55c0e"
+    },
+    {
+      "path": "tests/unit/chart-application/appearanceFixtures.json",
+      "sha256": "6617c41cd749ab0276fcaa07ba802f3604b76fd998ebfe6d72367e1fd072a5e7"
+    }
+  ],
+  "reference_artifacts_verified": [
+    {
+      "path": "artifacts/reviewed/parity/appearance-saved-composition/source-manifest.json",
+      "sha256": "ecb62e6f281938186676a179559d5ba91117c369663576bc416cf1e428a927f0"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-saved-composition/case-inputs.json",
+      "sha256": "789f657c44215dac4c8e9d997653d8a7014ae6b2a57cc16f10bb39da1c6b200d"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-saved-composition/cases.json",
+      "sha256": "fef8c696b34262d9a3f737caecabd001d19946f016ecb8c286efe2d99f4520e5"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-saved-composition/assertions.json",
+      "sha256": "a685d78dab7cebc863f897d70689df64df66862a9af0ccd55a32fd8904f9856b"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-contract-close/source-manifest.json",
+      "sha256": "a58755b20ea53daecff204096cede32455c86b754bc0d0876fc7113380ab6735"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-contract-close/cases.json",
+      "sha256": "f429407124be0952217520754aa5c4ea0b682dc4fe16d0a072c94cace999877a"
+    },
+    {
+      "path": "artifacts/reviewed/parity/appearance-contract-close/normalized-color-evidence.json",
+      "sha256": "74b1ad224b3fa6008da5050b29ce15920e4e2e752f32aa1bd5b714668e36c45f"
+    }
+  ],
+  "historical_normalized_comparisons": 262144,
+  "current_closure_entries": 71,
+  "workspace_head": "fdf93bd910c37664037ea2ded7601f2ac8e0ec82",
+  "controller_complexity": {
+    "path": "artifacts/task-2.45/controller/complexity.json",
+    "sha256": "7182b4c27405accc064da122c584fd675f80bd5297399f39086230b2eee59f5f",
+    "files": 176,
+    "errors": [],
+    "violations": [],
+    "note": "Measured before tooltip commit at 0a4b2ea; eight owned source identities match current bytes. Parent reconciles final revision pins separately."
+  },
+  "owned_source_identities_verified": {
+    "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/appearanceColors.ts": "5027531bfe5ea806d4a1b07a8bb57bcb24d39524d1a94844496b862c9f739856",
+    "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/appearanceComposition.ts": "e6a1b7eb39ba526a9d72c412e2337fc2dedf19d27b87b9f9f047926a3f32242c",
+    "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/appearanceContracts.ts": "544d206dffd39f9cb82388ea0e0f0193ef924a0f4ce2a75dbf30ab4e5fd816e6",
+    "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/chartRange.ts": "d481a9f57cf77092dd4c26b9039f4813ef0fa4f074ade024ac58e7c4a93b00d2",
+    "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/financialFormatting.ts": "a31738d1b3e4d296873433f6795a7e4035ef516201017bd62825e2e4724898a0",
+    "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/gridCapture.ts": "1f2f83ea14bd8b44043157f649cce130c9ae64aea62de598a09ae299b3bd6e7b",
+    "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/sessionState.ts": "f8978a8893b09e0a915563ab677c57eeae12be6f4006522ae80ec620a4462c2c",
+    "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/types.ts": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e"
+  },
+  "exception_bytes_verified": [
+    {
+      "path": "backend-api/backend/api/crud.py",
+      "sha256": "575b2cdeb0f04aab81af60b34074e4b9c2c6e21cfb6559c695e502361defc6e9",
+      "exact_matches_revision": "0a4b2ea"
+    },
+    {
+      "path": "terminalpro/src/components/General/Table/utils.tsx",
+      "sha256": "e6b175950d521906b0d61f1e3cddd072d11abedee5de948e0fbed6f415fa4513",
+      "exact_matches_revision": "0a4b2ea"
+    },
+    {
+      "path": "terminalpro/src/components/types.d.ts",
+      "sha256": "031d88e8b41129d4057c441f72c939be44b62b03f7abac4be3160854768846dd",
+      "exact_matches_revision": "0a4b2ea"
+    },
+    {
+      "path": "terminalpro/src/lib/state/copilot.ts",
+      "sha256": "e848307a8606a0755f8a2858bfd95b334b5a18ae01f8c5036aaf573734fd020c",
+      "exact_matches_revision": "0a4b2ea"
+    }
+  ],
+  "task_metrics": [
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/Chart/application/appearanceContracts.ts",
+      "owner": "openbb-self-service",
+      "physical": 34,
+      "functions": [],
+      "logical": 20
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/Chart/application/appearanceComposition.ts",
+      "owner": "openbb-self-service",
+      "physical": 59,
+      "functions": [
+        {
+          "name": "inputFields",
+          "line": 5,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "composeAppearanceOptions",
+          "line": 28,
+          "column": 67,
+          "logical": 13
+        }
+      ],
+      "logical": 30
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/Chart/application/appearanceColors.ts",
+      "owner": "openbb-self-service",
+      "physical": 118,
+      "functions": [
+        {
+          "name": "failure",
+          "line": 18,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "inspect",
+          "line": 29,
+          "column": 1,
+          "logical": 15
+        },
+        {
+          "name": "mixColor",
+          "line": 65,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "deriveAppearanceColors",
+          "line": 78,
+          "column": 63,
+          "logical": 16
+        }
+      ],
+      "logical": 53
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/Chart/application/sessionState.ts",
+      "owner": "openbb-self-service",
+      "physical": 195,
+      "functions": [
+        {
+          "name": "invalid",
+          "line": 17,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "record",
+          "line": 24,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "parseStamp",
+          "line": 39,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "validateSessionStamp",
+          "line": 72,
+          "column": 59,
+          "logical": 9
+        },
+        {
+          "name": "advanceSessionStamp",
+          "line": 91,
+          "column": 57,
+          "logical": 14
+        },
+        {
+          "name": "selectSessionBaseline",
+          "line": 106,
+          "column": 61,
+          "logical": 7
+        },
+        {
+          "name": "isTooltipMode",
+          "line": 117,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "applyColumnEdit",
+          "line": 129,
+          "column": 49,
+          "logical": 19
+        },
+        {
+          "name": "applyRangeTransition",
+          "line": 173,
+          "column": 59,
+          "logical": 16
+        }
+      ],
+      "logical": 107
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "owner": "openbb-self-service",
+      "physical": 98,
+      "functions": [
+        {
+          "name": "dataFields",
+          "line": 4,
+          "column": 1,
+          "logical": 16
+        },
+        {
+          "name": "<anonymous>",
+          "line": 16,
+          "column": 18,
+          "logical": 1
+        },
+        {
+          "name": "mapEvent",
+          "line": 28,
+          "column": 1,
+          "logical": 15
+        },
+        {
+          "name": "mapColumnEditorEvent",
+          "line": 66,
+          "column": 59,
+          "logical": 18
+        }
+      ],
+      "logical": 55
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "owner": "openbb-self-service",
+      "physical": 41,
+      "functions": [],
+      "logical": 35
+    }
+  ],
+  "preserved_dependency_paths": [
+    "src/components/General/Table/Chart/compatibility/optionState.ts",
+    "src/components/General/Table/Chart/compatibility/integratedState.ts",
+    "src/components/General/Table/Chart/application/types.ts",
+    "package.json",
+    "bun.lock"
+  ],
+  "changed_committed_paths": [
+    "terminalpro/src/components/General/Table/Chart/application/appearanceComposition.ts",
+    "terminalpro/src/components/General/Table/Chart/application/appearanceContracts.ts",
+    "terminalpro/src/components/General/Table/Chart/application/sessionState.ts",
+    "terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+    "terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+    "terminalpro/tests/unit/chart-application/appearanceComposition.test.ts",
+    "terminalpro/tests/unit/chart-application/appearanceContracts.types.ts",
+    "terminalpro/tests/unit/chart-application/appearanceFixtures.json",
+    "terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts",
+    "terminalpro/tests/unit/chart-application/sessionState.test.ts",
+    "terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts"
+  ],
+  "placeholder_matches": [],
+  "concrete_secret_matches": [],
+  "dependencies": [
+    {
+      "name": "typescript",
+      "version": "5.9.2",
+      "package_sha256": "5a0bb7f286c4b3f1413a42c05f902311b161f70e5f52d9da10490443bfd595a3"
+    },
+    {
+      "name": "vitest",
+      "version": "4.1.11",
+      "package_sha256": "a28126d97bcaf567da5bed69443b7f3bcd9a7a8c38c8b66e554686b6bb2c10e0"
+    },
+    {
+      "name": "@biomejs/biome",
+      "version": "2.4.8",
+      "package_sha256": "a07784133fb8b0781a517001794d8488698ddc1917320514cb1f7b5660f437e3"
+    },
+    {
+      "name": "lodash.merge",
+      "version": "4.6.2",
+      "package_sha256": "5aaf4c24df9052e680d0728754c249fb94c11aef2e76ec3f76320431915c92f1"
+    },
+    {
+      "name": "lodash",
+      "version": "4.18.1",
+      "package_sha256": "5ef0a453b679125b155af19e1477f93b577ea826a57e1545f77608d326966e6a"
+    },
+    {
+      "name": "ag-grid-community",
+      "version": "34.1.1",
+      "package_sha256": "fb4afa64be4daa2ac5e2a7594bcb2d6048e68750e5f2179b1247c7b89bcc8e39"
+    },
+    {
+      "name": "echarts",
+      "version": "6.0.0",
+      "package_sha256": "7de2ef6ba4e4f1db0babc55eb20cc0ddd76c1e24e8ac49b4ee8cf3021f9d1162"
+    }
+  ],
+  "publication_omissions": [
+    {
+      "path": "artifacts/task-2.43/implementation/red-stage-manifest.json",
+      "sha256": "f8d57d764ffd223995527c14b99e72e00e8baa00ee8a63168614c6ff17581f46",
+      "reason": "Full-stage traversal; replaced by labeled closure derivative.",
+      "derivative": "artifacts/task-2.45/review/task243-red-stage-manifest.json"
+    },
+    {
+      "path": "artifacts/task-2.43/implementation/source-manifest.json",
+      "sha256": "7484f073c8f4b0c20954e1c5a46b803edd1d738b8186b2d95ba2944f78f69b7b",
+      "reason": "Full-stage traversal; replaced by labeled closure derivative.",
+      "derivative": "artifacts/task-2.45/review/task243-source-manifest.json"
+    }
+  ]
+}

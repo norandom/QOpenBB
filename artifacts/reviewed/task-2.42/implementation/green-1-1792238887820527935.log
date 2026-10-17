@@ -1,0 +1,75 @@
+cwd: /home/mc/qopenbb-work/task242-1792238812486928978/terminalpro
+command: /mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node node_modules/vitest/vitest.mjs run --config tests/unit/chart-application/vitest.config.mjs tests/unit/chart-application/appearanceComposition.test.ts
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/task242-1792238812486928978/terminalpro[39m
+
+ [31m❯[39m tests/unit/chart-application/appearanceComposition.test.ts [2m([22m[2m38 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 29[2mms[22m[39m
+     [32m✓[39m reproduces captured 'bar-common' winners[32m 2[2mms[22m[39m
+     [32m✓[39m reproduces captured 'bar-family' winners[32m 1[2mms[22m[39m
+     [32m✓[39m reproduces captured 'line-common' winners[32m 0[2mms[22m[39m
+     [32m✓[39m reproduces captured 'line-family' winners[32m 0[2mms[22m[39m
+     [32m✓[39m uses selected baseline options while retaining inactive families and unknown data[32m 1[2mms[22m[39m
+     [32m✓[39m replaces saved common wholesale with generated undefined[32m 0[2mms[22m[39m
+     [32m✓[39m replaces saved common wholesale with generated null[32m 0[2mms[22m[39m
+     [32m✓[39m replaces saved common wholesale with generated undefined[32m 0[2mms[22m[39m
+     [32m✓[39m replaces saved common wholesale with generated {"legend":{"position":"top"}}[32m 0[2mms[22m[39m
+     [32m✓[39m drops saved common when generated common is absent, preserving own undefined[32m 0[2mms[22m[39m
+     [32m✓[39m preserves lodash null, own undefined and indexed array semantics[32m 0[2mms[22m[39m
+     [32m✓[39m matches the pinned owned operation for mixed data-only operands[32m 10[2mms[22m[39m
+     [32m✓[39m leaves frozen input identities and contents intact, including aliased branches[32m 1[2mms[22m[39m
+     [32m✓[39m accepts null-prototype option records without changing their source[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level input undefined[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level input null[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level input undefined[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level input 1[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level input "options"[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level input "2026-10-17T12:08:09.430Z"[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid required option containers undefined[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid required option containers null[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid required option containers undefined[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid required option containers undefined[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid required option containers "2026-10-17T12:08:09.430Z"[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid required option containers null[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid required option containers null[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid nested option data () => "callback" in both operands[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid nested option data Sat Oct 17 2026 14:08:09 GMT+0200 (Central European Summer Time) in both operands[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid nested option data Map{} in both operands[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid nested option data Symbol(value) in both operands[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid nested option data 1n in both operands[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid nested option data NaN in both operands[32m 0[2mms[22m[39m
+     [32m✓[39m rejects invalid nested option data Infinity in both operands[32m 0[2mms[22m[39m
+     [32m✓[39m rejects cycles in either operand and the stored model[32m 0[2mms[22m[39m
+     [32m✓[39m rejects accessors at every public boundary without invoking getters[32m 1[2mms[22m[39m
+[31m     [31m×[31m contains throwing and revoked proxies without ordinary property reads[39m[32m 5[2mms[22m[39m
+     [32m✓[39m rejects non-enumerable, symbol and array-accessor data without executing callbacks[32m 1[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/unit/chart-application/appearanceComposition.test.ts[2m > [22msaved appearance composition[2m > [22mcontains throwing and revoked proxies without ordinary property reads
+[31m[1mAssertionError[22m: expected true to be false // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- false[39m
+[31m+ true[39m
+
+[36m [2m❯[22m invalid tests/unit/chart-application/appearanceComposition.test.ts:[2m32:24[22m[39m
+    [90m 30|[39m [35mfunction[39m [34minvalid[39m(candidate[33m:[39m unknown) {
+    [90m 31|[39m   [35mconst[39m result [33m=[39m [34mcompose[39m(candidate [35mas[39m [33mAppearanceCompositionInput[39m)[33m;[39m
+    [90m 32|[39m   [34mexpect[39m(result[33m.[39mvalid)[33m.[39m[34mtoBe[39m([35mfalse[39m)[33m;[39m
+    [90m   |[39m                        [31m^[39m
+    [90m 33|[39m   [35mif[39m ([33m![39mresult[33m.[39mvalid) [34mexpect[39m([35mtypeof[39m result[33m.[39merror)[33m.[39m[34mtoBe[39m([32m"string"[39m)[33m;[39m
+    [90m 34|[39m }
+[90m [2m❯[22m tests/unit/chart-application/appearanceComposition.test.ts:[2m215:7[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m37 passed[39m[22m[90m (38)[39m
+[2m   Start at [22m 14:08:08
+[2m   Duration [22m 881ms[2m (transform 77ms, setup 0ms, import 125ms, tests 29ms, environment 557ms)[22m
+
+
+exit: 1

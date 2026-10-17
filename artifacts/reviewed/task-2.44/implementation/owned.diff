@@ -1,0 +1,411 @@
+diff --git a/terminalpro/src/components/General/Table/Chart/application/sessionState.ts b/terminalpro/src/components/General/Table/Chart/application/sessionState.ts
+index f57a1d4..87e1a6c 100644
+--- a/terminalpro/src/components/General/Table/Chart/application/sessionState.ts
++++ b/terminalpro/src/components/General/Table/Chart/application/sessionState.ts
+@@ -114,31 +114,60 @@ export const selectSessionBaseline: SelectSessionBaseline = (input) => {
+     : invalid(result.error);
+ };
+ 
++function isTooltipMode(event: unknown): boolean {
++  const fields = record(event);
++  return (
++    !!fields &&
++    Object.keys(fields).length === 2 &&
++    fields.kind === "tooltip-mode" &&
++    (fields.value === "single" ||
++      fields.value === "shared" ||
++      fields.value === "compact")
++  );
++}
++
+ export const applyColumnEdit: ApplyColumnEdit = (input) => {
+   const checked = validateSessionStamp(input.command.stamp, input.currentStamp);
+   if (checked.status !== "ready") return checked;
+-  const mapped = mapColumnEditorEvent({
+-    chartType: input.command.chartType,
+-    event: input.command.event,
+-  });
+-  if (!mapped.valid) return invalid(mapped.error);
+-  const reducerInput = {
+-    storage: input.storage,
+-    stateKey: checked.stamp.address.stateKey,
+-    currentModel: input.currentModel,
+-    resolvedOptions: input.resolvedOptions,
+-    eventOptions: mapped.value,
+-    chartType: input.command.chartType,
+-    totalSeries: input.totalSeries,
+-    isPivotMode: input.isPivotMode,
+-  };
+-  const validated = validateIntegratedInput(reducerInput);
+-  if (!validated.valid) return invalid(validated.error);
+-  return {
+-    status: "ready",
+-    stamp: checked.stamp,
+-    value: reduceIntegratedState(validated.value),
+-  };
++  try {
++    const command = record(input.command);
++    const chartType = command?.chartType;
++    if (!command || (chartType !== "groupedColumn" && chartType !== "stackedColumn"))
++      return invalid("Column command chartType must be groupedColumn or stackedColumn");
++    // Only this exact valid event lacks reference behavior for the stacked family.
++    if (chartType === "stackedColumn" && isTooltipMode(command.event))
++      return {
++        status: "unresolved",
++        diagnostics: [
++          {
++            code: "unresolved-family",
++            path: ["command", "chartType"],
++            message: "tooltip-mode is unresolved for stackedColumn",
++          },
++        ],
++      };
++    const mapped = mapColumnEditorEvent({ chartType, event: command.event });
++    if (!mapped.valid) return invalid(mapped.error);
++    const reducerInput = {
++      storage: input.storage,
++      stateKey: checked.stamp.address.stateKey,
++      currentModel: input.currentModel,
++      resolvedOptions: input.resolvedOptions,
++      eventOptions: mapped.value,
++      chartType,
++      totalSeries: input.totalSeries,
++      isPivotMode: input.isPivotMode,
++    };
++    const validated = validateIntegratedInput(reducerInput);
++    if (!validated.valid) return invalid(validated.error);
++    return {
++      status: "ready",
++      stamp: checked.stamp,
++      value: reduceIntegratedState(validated.value),
++    };
++  } catch {
++    return invalid("Column command or event could not be safely inspected");
++  }
+ };
+ 
+ export const applyRangeTransition: ApplyRangeTransition = (input) => {
+diff --git a/terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts b/terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts
+index 1a12573..ad774c9 100644
+--- a/terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts
++++ b/terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts
+@@ -80,6 +80,17 @@ export const mapColumnEditorEvent: MapColumnEditorEvent = (input) => {
+     const event = dataFields(fields.event, ["kind", "value"]);
+     if (!event)
+       return { valid: false, error: "event must contain kind and value data fields" };
++    if (event.kind === "tooltip-mode") {
++      if (fields.chartType !== "groupedColumn")
++        return { valid: false, error: "tooltip-mode is unresolved for stackedColumn" };
++      const { value } = event;
++      if (value === "single" || value === "shared" || value === "compact")
++        return { valid: true, value: { bar: { tooltip: { mode: value } } } };
++      return {
++        valid: false,
++        error: "event.value for tooltip-mode must be single, shared or compact",
++      };
++    }
+     return mapEvent(event);
+   } catch {
+     return { valid: false, error: "input or event could not be safely inspected" };
+diff --git a/terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts b/terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts
+index 26aaeb0..d0fdb44 100644
+--- a/terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts
++++ b/terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts
+@@ -32,7 +32,8 @@ export type ColumnEditorEvent =
+       readonly kind: "legend-position";
+       readonly value: "top" | "bottom" | "left" | "right";
+     }
+-  | { readonly kind: "stroke-width"; readonly value: number };
++  | { readonly kind: "stroke-width"; readonly value: number }
++  | { readonly kind: "tooltip-mode"; readonly value: "single" | "shared" | "compact" };
+ export interface ColumnEditorInput {
+   readonly chartType: "groupedColumn" | "stackedColumn";
+   readonly event: ColumnEditorEvent;
+diff --git a/terminalpro/tests/unit/chart-application/sessionState.test.ts b/terminalpro/tests/unit/chart-application/sessionState.test.ts
+index a5a7836..e0b1c0e 100644
+--- a/terminalpro/tests/unit/chart-application/sessionState.test.ts
++++ b/terminalpro/tests/unit/chart-application/sessionState.test.ts
+@@ -6,7 +6,11 @@ import {
+   selectSessionBaseline,
+   validateSessionStamp,
+ } from "../../../src/components/General/Table/Chart/application/sessionState";
+-import type { SessionStamp } from "../../../src/components/General/Table/Chart/application/types";
++import type {
++  ColumnEditInput,
++  SessionStamp,
++} from "../../../src/components/General/Table/Chart/application/types";
++import { selectOptionBaseline } from "../../../src/components/General/Table/Chart/compatibility/optionState";
+ 
+ const stamp = (widgetId = "widget", stateKey = "partition"): SessionStamp => ({
+   address: { widgetId, stateKey, stateAddress: JSON.stringify([widgetId, stateKey]) },
+@@ -15,6 +19,197 @@ const stamp = (widgetId = "widget", stateKey = "partition"): SessionStamp => ({
+   renderRevision: 0,
+ });
+ describe("addressed chart session", () => {
++  const tooltipInput = (event: unknown, chartType = "groupedColumn"): ColumnEditInput =>
++    ({
++      command: { stamp: stamp(), chartType, event },
++      currentStamp: stamp(),
++      storage: {},
++      resolvedOptions: {},
++      totalSeries: 2,
++      isPivotMode: false,
++    }) as ColumnEditInput;
++  it.each([
++    "single",
++    "shared",
++    "compact",
++  ] as const)("applies tooltip %s through the real reducer using latest storage and saved baseline", (value) => {
++    const storage = {
++      rootUnknown: { retained: true },
++      other: { chartModel: { chartType: "line" } },
++      partition: {
++        latest: true,
++        line: { cellRange: { columns: ["period", "profit"] } },
++        chartModel: { previousModelField: true },
++      },
++    };
++    const baseline = selectOptionBaseline({
++      kind: "initialize",
++      stateAddress: stamp().address.stateAddress,
++      initialChartType: "groupedColumn",
++      partitionModel: {
++        savedModel: true,
++        chartOptions: {
++          theme: "stock",
++          common: { padding: { top: 9 } },
++          unknownOption: { retained: true },
++          line: { series: { strokeWidth: 7 } },
++          bar: {
++            title: { text: "Earlier edit", enabled: false },
++            legend: { position: "right" },
++            tooltip: { mode: "single", unknown: true },
++          },
++        },
++      },
++    });
++    if (!baseline.valid) throw new Error(baseline.error);
++    const renderedOptions = {
++      bar: { title: { text: "Rendered only" }, fill: "#abcdef" },
++    };
++    const input = {
++      ...tooltipInput({ kind: "tooltip-mode", value }),
++      storage,
++      currentModel: {
++        ...baseline.value.model,
++        chartOptions: renderedOptions,
++        destination: true,
++      },
++      resolvedOptions: baseline.value.options,
++    };
++    const before = JSON.stringify({ input, baseline, renderedOptions });
++    const result = applyColumnEdit(input);
++    expect(result).toEqual({
++      status: "ready",
++      stamp: stamp(),
++      value: {
++        ...storage,
++        chartType: "groupedColumn",
++        totalSeries: 2,
++        isPivotMode: false,
++        partition: {
++          ...storage.partition,
++          chartModel: {
++            previousModelField: true,
++            savedModel: true,
++            destination: true,
++            chartType: "groupedColumn",
++            chartOptions: {
++              common: { padding: { top: 9 } },
++              unknownOption: { retained: true },
++              line: { series: { strokeWidth: 7 } },
++              bar: {
++                title: { text: "Earlier edit", enabled: false },
++                legend: { position: "right" },
++                tooltip: { mode: value, unknown: true },
++              },
++            },
++          },
++        },
++      },
++    });
++    expect(JSON.stringify(result)).not.toContain("Rendered only");
++    expect(JSON.stringify({ input, baseline, renderedOptions })).toBe(before);
++  });
++  it.each([
++    "single",
++    "shared",
++    "compact",
++  ])("reports valid stacked tooltip %s as unresolved before touching storage", (value) => {
++    const input = {
++      ...tooltipInput({ kind: "tooltip-mode", value }, "stackedColumn"),
++      storage: new Proxy(
++        {},
++        {
++          get() {
++            throw new Error("unexpected storage read");
++          },
++          ownKeys() {
++            throw new Error("unexpected storage enumeration");
++          },
++        },
++      ),
++    };
++    expect(applyColumnEdit(input)).toMatchObject({
++      status: "unresolved",
++      diagnostics: [
++        {
++          path: ["command", "chartType"],
++          message: expect.stringContaining("stackedColumn"),
++        },
++      ],
++    });
++  });
++  it("rejects malformed tooltip events and hostile descriptors without writes or getters", () => {
++    let reads = 0;
++    const eventGetter = {
++      kind: "tooltip-mode",
++      get value() {
++        reads += 1;
++        return "shared";
++      },
++    };
++    const revoked = Proxy.revocable({}, {});
++    revoked.revoke();
++    const hostile = new Proxy(
++      {},
++      {
++        ownKeys() {
++          throw new Error("event own keys");
++        },
++      },
++    );
++    const descriptorTrap = new Proxy(
++      { kind: "tooltip-mode", value: "shared" },
++      {
++        getOwnPropertyDescriptor() {
++          throw new Error("event descriptor");
++        },
++      },
++    );
++    for (const event of [
++      eventGetter,
++      hostile,
++      descriptorTrap,
++      revoked.proxy,
++      null,
++      [],
++      { kind: "tooltip-mode", value: "Multiple" },
++      { kind: "tooltip-mode", value: "shared", extra: true },
++      { kind: "tooltip-mode", value: "shared", [Symbol("extra")]: true },
++      Object.create({ kind: "tooltip-mode", value: "shared" }),
++      Object.defineProperty({ kind: "tooltip-mode" }, "value", { value: "shared" }),
++    ]) {
++      for (const family of ["groupedColumn", "stackedColumn"]) {
++        const input = tooltipInput(event, family);
++        const storage = { partition: { retained: true } };
++        expect(applyColumnEdit({ ...input, storage }).status).toBe("invalid");
++        expect(storage).toEqual({ partition: { retained: true } });
++      }
++    }
++    expect(reads).toBe(0);
++  });
++  it("validates every stale stamp dimension before inspecting a tooltip event", () => {
++    const event = new Proxy(
++      {},
++      {
++        getPrototypeOf() {
++          throw new Error("stale event inspection");
++        },
++      },
++    );
++    for (const currentStamp of [
++      stamp("other"),
++      stamp("widget", "other"),
++      { ...stamp(), generation: 2 },
++      { ...stamp(), dataRevision: 1 },
++      { ...stamp(), renderRevision: 1 },
++    ]) {
++      for (const family of ["groupedColumn", "stackedColumn"]) {
++        expect(
++          applyColumnEdit({ ...tooltipInput(event, family), currentStamp }),
++        ).toEqual({ status: "stale" });
++      }
++    }
++  });
+   it("never inspects storage for delayed edits or range events from an obsolete session", () => {
+     const original = stamp();
+     const storage = new Proxy(
+diff --git a/terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts b/terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts
+index 1d5ce29..4041653 100644
+--- a/terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts
++++ b/terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts
+@@ -17,6 +17,68 @@ function patch(event: ColumnEditorEvent, chartType = "groupedColumn"): RuntimeOp
+ }
+ 
+ describe("column editor patches", () => {
++  it.each([
++    "single",
++    "shared",
++    "compact",
++  ] as const)("maps grouped tooltip %s to only the original bar mode leaf", (value) => {
++    const event: ColumnEditorEvent = { kind: "tooltip-mode", value };
++    const before = cloneDeep(event);
++    expect(patch(event)).toEqual({ bar: { tooltip: { mode: value } } });
++    expect(event).toEqual(before);
++    expect(mapColumnEditorEvent({ chartType: "stackedColumn", event }).valid).toBe(
++      false,
++    );
++  });
++  it.each([
++    "Multiple",
++    "multiple",
++    "Single",
++    "Compact",
++    "",
++    null,
++    undefined,
++    true,
++    1,
++    { path: "bar.tooltip.mode", value: "shared" },
++  ])("rejects tooltip labels and malformed stored modes: %j", (value) => {
++    for (const chartType of ["groupedColumn", "stackedColumn"]) {
++      expect(
++        mapColumnEditorEvent({ chartType, event: { kind: "tooltip-mode", value } }),
++      ).toMatchObject({ valid: false });
++    }
++  });
++  it("rejects extra tooltip paths and descriptor traps without reading values", () => {
++    let reads = 0;
++    const accessor = {
++      kind: "tooltip-mode",
++      get value() {
++        reads += 1;
++        return "shared";
++      },
++    };
++    const hostile = new Proxy(
++      {},
++      {
++        getPrototypeOf() {
++          throw new Error("inspection trap");
++        },
++      },
++    );
++    for (const event of [
++      accessor,
++      hostile,
++      { kind: "tooltip-mode", value: "shared", path: "series.tooltip" },
++      { kind: "tooltip-mode", value: "shared", [Symbol("extra")]: true },
++      Object.create({ kind: "tooltip-mode", value: "shared" }),
++      Object.defineProperty({ kind: "tooltip-mode" }, "value", { value: "shared" }),
++    ]) {
++      expect(mapColumnEditorEvent({ chartType: "groupedColumn", event }).valid).toBe(
++        false,
++      );
++    }
++    expect(reads).toBe(0);
++  });
+   const cases: [ColumnEditorEvent, RuntimeOptions][] = [
+     [
+       { kind: "title-text", value: "Synthetic Revenue and EPS" },

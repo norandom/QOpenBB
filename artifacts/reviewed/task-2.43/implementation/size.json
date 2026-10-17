@@ -1,0 +1,41 @@
+{
+  "scope": "Task-local whole file; not the combined maintained inventory gate",
+  "metric": "project-syntax-units-v1",
+  "versions": {
+    "node": "24.22.0",
+    "typescript": "6.0.3"
+  },
+  "sha256": "5027531bfe5ea806d4a1b07a8bb57bcb24d39524d1a94844496b862c9f739856",
+  "measurement": {
+    "path": "/mnt/d/Source/QOpenBB/vendor/workspace/terminalpro/src/components/General/Table/Chart/application/appearanceColors.ts",
+    "logical": 53,
+    "functions": [
+      {
+        "name": "failure",
+        "line": 18,
+        "column": 1,
+        "logical": 1
+      },
+      {
+        "name": "inspect",
+        "line": 29,
+        "column": 1,
+        "logical": 15
+      },
+      {
+        "name": "mixColor",
+        "line": 65,
+        "column": 1,
+        "logical": 8
+      },
+      {
+        "name": "deriveAppearanceColors",
+        "line": 78,
+        "column": 63,
+        "logical": 16
+      }
+    ],
+    "physical": 118
+  },
+  "violations": []
+}

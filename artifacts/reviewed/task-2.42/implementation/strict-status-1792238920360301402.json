@@ -1,0 +1,46 @@
+[
+  {
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-application/tsconfig.json",
+      "--noEmit"
+    ],
+    "exit": 0,
+    "log": "artifacts/task-2.42/implementation/strict-1-1792238915918274921.log",
+    "sha256": "368e2ca49d09cd8e653e1cb04f6c647b9fa0e197dacf61fe7bbe9c11a4e448be",
+    "ownedInputs": [
+      {
+        "path": "src/components/General/Table/Chart/application/appearanceComposition.ts",
+        "sha256": "e6a1b7eb39ba526a9d72c412e2337fc2dedf19d27b87b9f9f047926a3f32242c"
+      },
+      {
+        "path": "tests/unit/chart-application/appearanceComposition.test.ts",
+        "sha256": "5e864260600ea7da73d445ee959f082080cae5ad3f89dfbd816b5fa1c20e22c4"
+      }
+    ]
+  },
+  {
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-compatibility/tsconfig.json",
+      "--noEmit"
+    ],
+    "exit": 2,
+    "log": "artifacts/task-2.42/implementation/strict-2-1792238917988052371.log",
+    "sha256": "21a3feefd1395b306e6cd37f80dbb56c9ba267e396f7ff417928c0d18205b23e",
+    "ownedInputs": [
+      {
+        "path": "src/components/General/Table/Chart/application/appearanceComposition.ts",
+        "sha256": "e6a1b7eb39ba526a9d72c412e2337fc2dedf19d27b87b9f9f047926a3f32242c"
+      },
+      {
+        "path": "tests/unit/chart-application/appearanceComposition.test.ts",
+        "sha256": "5e864260600ea7da73d445ee959f082080cae5ad3f89dfbd816b5fa1c20e22c4"
+      }
+    ]
+  }
+]

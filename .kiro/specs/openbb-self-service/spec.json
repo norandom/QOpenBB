@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-17T11:54:28.129528+00:00",
+  "updated_at": "2026-10-17T12:30:24.203649+00:00",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -226,17 +226,17 @@
         "implementation_verification": "chart-grid-capture-verification.md",
         "validation": "GO and VERIFIED for tasks 2.38-2.40 ordinary capture only; appearance/editor/application/renderer/release gates remain open",
         "appearance_editor_followup": {
-          "phase": "implementation-in-progress",
+          "phase": "source-contracts-accepted",
           "approval_note": "Owner said go after ordinary capture acceptance. Continue parallel appearance/editor contract research; new implementation remains subject to concrete design/task approval.",
           "candidate_revision": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
-          "production_changed": false,
+          "production_changed": true,
           "lanes": [
             "appearance collision and derived-color contracts",
             "tooltip and numeric transpose/editor contracts"
           ],
           "evidence_accepted": true,
           "implementation_approved": true,
-          "implementation_accepted": false,
+          "implementation_accepted": true,
           "findings": [
             "chart-appearance-contract-close.md",
             "chart-appearance-saved-composition.md",
@@ -248,7 +248,7 @@
             "artifacts/reviewed/parity/editor-contract-review/review.md"
           ],
           "publication_addendum": "artifacts/reviewed/parity/appearance-contract-review/publication-link-addendum.md",
-          "validation": "Scoped original-reference research accepted: 44 appearance assertions and 262144 normalized color comparisons; 99 saved-input assertions; 30 editor assertions and six raster bar checks. Full B2/C, candidate integration, missing-value transpose and backend persistence remain open.",
+          "validation": "Scoped GO and VERIFIED for tasks 2.41-2.45 source contracts: 176 application and 274 compatibility tests; full appearance, editor, application, persistence and release gates remain open",
           "design_path": "chart-appearance-editor-integration-design.md",
           "design_generated": true,
           "design_approved": true,
@@ -268,7 +268,10 @@
           "task_review_mode": "independent",
           "task_review": "artifacts/reviewed/appearance-editor-task-plan/review/review.md",
           "reviewed_task_draft_sha256": "400277f810a28ededb8ecfc71490744f29fcd3ba6e91e4c7b71caf6a6565d2d3",
-          "task_approval_note": "Owner approved tasks 2.41-2.45 for implementation (reply: approved); source-contract scope only."
+          "task_approval_note": "Owner approved tasks 2.41-2.45 for implementation (reply: approved); source-contract scope only.",
+          "implementation_source_revision": "ea02ec15956dee8d2c8a06825387a570757db12d",
+          "implementation_review": "artifacts/reviewed/task-2.45/review/report.md",
+          "implementation_verification": "chart-appearance-source-verification.md"
         }
       }
     }

@@ -1,0 +1,351 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/task244-20261017140641/terminalpro[39m
+
+ [31m❯[39m tests/unit/chart-application/sessionState.test.ts [2m([22m[2m21 tests[22m[2m | [22m[31m6 failed[39m[2m)[22m[32m 26[2mms[22m[39m
+[31m     [31m×[31m applies tooltip single through the real reducer using latest storage and saved baseline[39m[32m 10[2mms[22m[39m
+[31m     [31m×[31m applies tooltip shared through the real reducer using latest storage and saved baseline[39m[32m 2[2mms[22m[39m
+[31m     [31m×[31m applies tooltip compact through the real reducer using latest storage and saved baseline[39m[32m 2[2mms[22m[39m
+[31m     [31m×[31m reports valid stacked tooltip single as unresolved before touching storage[39m[32m 2[2mms[22m[39m
+[31m     [31m×[31m reports valid stacked tooltip shared as unresolved before touching storage[39m[32m 1[2mms[22m[39m
+[31m     [31m×[31m reports valid stacked tooltip compact as unresolved before touching storage[39m[32m 1[2mms[22m[39m
+     [32m✓[39m rejects malformed tooltip events and hostile descriptors without writes or getters[32m 2[2mms[22m[39m
+     [32m✓[39m validates every stale stamp dimension before inspecting a tooltip event[32m 1[2mms[22m[39m
+     [32m✓[39m never inspects storage for delayed edits or range events from an obsolete session[32m 0[2mms[22m[39m
+     [32m✓[39m rejects accessors without invoking them and generation zero[32m 0[2mms[22m[39m
+     [32m✓[39m maps accepted editor event {"kind":"title-enabled","value":false}[32m 1[2mms[22m[39m
+     [32m✓[39m maps accepted editor event {"kind":"legend-position","value":"left"}[32m 0[2mms[22m[39m
+     [32m✓[39m maps accepted editor event {"kind":"stroke-width","value":0}[32m 0[2mms[22m[39m
+     [32m✓[39m advances independent revisions without reusing tokens[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed/overflowing generation[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed/overflowing dataRevision[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed/overflowing renderRevision[32m 0[2mms[22m[39m
+     [32m✓[39m validates address encoding and stale identity/revisions[32m 0[2mms[22m[39m
+     [32m✓[39m delegates initialized and populated-to-empty baselines with address checks[32m 0[2mms[22m[39m
+     [32m✓[39m reduces against latest storage and destination model, retaining inactive/unknown state and removing root theme[32m 1[2mms[22m[39m
+     [32m✓[39m writes only the destination family range independently from option reduction[32m 0[2mms[22m[39m
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m6 failed[39m[22m[2m | [22m[1m[32m15 passed[39m[22m[90m (21)[39m
+[2m   Start at [22m 14:07:41
+[2m   Duration [22m 659ms[2m (transform 78ms, setup 0ms, import 108ms, tests 26ms, environment 412ms)[22m
+
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 6 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/unit/chart-application/sessionState.test.ts[2m > [22maddressed chart session[2m > [22mapplies tooltip single through the real reducer using latest storage and saved baseline
+[31m[1mAssertionError[22m: expected { status: 'invalid', …(1) } to deeply equal { status: 'ready', …(2) }[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[32m-   "stamp": {[39m
+[32m-     "address": {[39m
+[32m-       "stateAddress": "[\"widget\",\"partition\"]",[39m
+[32m-       "stateKey": "partition",[39m
+[32m-       "widgetId": "widget",[39m
+[32m-     },[39m
+[32m-     "dataRevision": 0,[39m
+[32m-     "generation": 1,[39m
+[32m-     "renderRevision": 0,[39m
+[32m-   },[39m
+[32m-   "status": "ready",[39m
+[32m-   "value": {[39m
+[32m-     "chartType": "groupedColumn",[39m
+[32m-     "isPivotMode": false,[39m
+[32m-     "other": {[39m
+[32m-       "chartModel": {[39m
+[32m-         "chartType": "line",[39m
+[32m-       },[39m
+[32m-     },[39m
+[32m-     "partition": {[39m
+[32m-       "chartModel": {[39m
+[32m-         "chartOptions": {[39m
+[32m-           "bar": {[39m
+[32m-             "legend": {[39m
+[32m-               "position": "right",[39m
+[32m-             },[39m
+[32m-             "title": {[39m
+[32m-               "enabled": false,[39m
+[32m-               "text": "Earlier edit",[39m
+[32m-             },[39m
+[32m-             "tooltip": {[39m
+[32m-               "mode": "single",[39m
+[32m-               "unknown": true,[39m
+[32m-             },[39m
+[32m-           },[39m
+[32m-           "common": {[39m
+[32m-             "padding": {[39m
+[32m-               "top": 9,[39m
+[32m-             },[39m
+[32m-           },[39m
+[32m-           "line": {[39m
+[32m-             "series": {[39m
+[32m-               "strokeWidth": 7,[39m
+[32m-             },[39m
+[32m-           },[39m
+[32m-           "unknownOption": {[39m
+[32m-             "retained": true,[39m
+[32m-           },[39m
+[32m-         },[39m
+[32m-         "chartType": "groupedColumn",[39m
+[32m-         "destination": true,[39m
+[32m-         "previousModelField": true,[39m
+[32m-         "savedModel": true,[39m
+[31m+   "diagnostics": [[39m
+[31m+     {[39m
+[31m+       "code": "invalid-session",[39m
+[31m+       "message": "event.kind is unsupported",[39m
+[31m+       "path": [],[39m
+[2m      },[22m
+[32m-       "latest": true,[39m
+[32m-       "line": {[39m
+[32m-         "cellRange": {[39m
+[32m-           "columns": [[39m
+[32m-             "period",[39m
+[32m-             "profit",[39m
+[2m    ],[22m
+[32m-         },[39m
+[32m-       },[39m
+[32m-     },[39m
+[32m-     "rootUnknown": {[39m
+[32m-       "retained": true,[39m
+[32m-     },[39m
+[32m-     "totalSeries": 2,[39m
+[32m-   },[39m
+[31m+   "status": "invalid",[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/unit/chart-application/sessionState.test.ts:[2m73:22[22m[39m
+    [90m 71|[39m       const before = JSON.stringify({ input, baseline, renderedOptions…
+    [90m 72|[39m       [35mconst[39m result [33m=[39m [34mapplyColumnEdit[39m(input)[33m;[39m
+    [90m 73|[39m       [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m({
+    [90m   |[39m                      [31m^[39m
+    [90m 74|[39m         status[33m:[39m [32m"ready"[39m[33m,[39m
+    [90m 75|[39m         stamp[33m:[39m [34mstamp[39m()[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/unit/chart-application/sessionState.test.ts[2m > [22maddressed chart session[2m > [22mapplies tooltip shared through the real reducer using latest storage and saved baseline
+[31m[1mAssertionError[22m: expected { status: 'invalid', …(1) } to deeply equal { status: 'ready', …(2) }[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[32m-   "stamp": {[39m
+[32m-     "address": {[39m
+[32m-       "stateAddress": "[\"widget\",\"partition\"]",[39m
+[32m-       "stateKey": "partition",[39m
+[32m-       "widgetId": "widget",[39m
+[32m-     },[39m
+[32m-     "dataRevision": 0,[39m
+[32m-     "generation": 1,[39m
+[32m-     "renderRevision": 0,[39m
+[32m-   },[39m
+[32m-   "status": "ready",[39m
+[32m-   "value": {[39m
+[32m-     "chartType": "groupedColumn",[39m
+[32m-     "isPivotMode": false,[39m
+[32m-     "other": {[39m
+[32m-       "chartModel": {[39m
+[32m-         "chartType": "line",[39m
+[32m-       },[39m
+[32m-     },[39m
+[32m-     "partition": {[39m
+[32m-       "chartModel": {[39m
+[32m-         "chartOptions": {[39m
+[32m-           "bar": {[39m
+[32m-             "legend": {[39m
+[32m-               "position": "right",[39m
+[32m-             },[39m
+[32m-             "title": {[39m
+[32m-               "enabled": false,[39m
+[32m-               "text": "Earlier edit",[39m
+[32m-             },[39m
+[32m-             "tooltip": {[39m
+[32m-               "mode": "shared",[39m
+[32m-               "unknown": true,[39m
+[32m-             },[39m
+[32m-           },[39m
+[32m-           "common": {[39m
+[32m-             "padding": {[39m
+[32m-               "top": 9,[39m
+[32m-             },[39m
+[32m-           },[39m
+[32m-           "line": {[39m
+[32m-             "series": {[39m
+[32m-               "strokeWidth": 7,[39m
+[32m-             },[39m
+[32m-           },[39m
+[32m-           "unknownOption": {[39m
+[32m-             "retained": true,[39m
+[32m-           },[39m
+[32m-         },[39m
+[32m-         "chartType": "groupedColumn",[39m
+[32m-         "destination": true,[39m
+[32m-         "previousModelField": true,[39m
+[32m-         "savedModel": true,[39m
+[31m+   "diagnostics": [[39m
+[31m+     {[39m
+[31m+       "code": "invalid-session",[39m
+[31m+       "message": "event.kind is unsupported",[39m
+[31m+       "path": [],[39m
+[2m      },[22m
+[32m-       "latest": true,[39m
+[32m-       "line": {[39m
+[32m-         "cellRange": {[39m
+[32m-           "columns": [[39m
+[32m-             "period",[39m
+[32m-             "profit",[39m
+[2m    ],[22m
+[32m-         },[39m
+[32m-       },[39m
+[32m-     },[39m
+[32m-     "rootUnknown": {[39m
+[32m-       "retained": true,[39m
+[32m-     },[39m
+[32m-     "totalSeries": 2,[39m
+[32m-   },[39m
+[31m+   "status": "invalid",[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/unit/chart-application/sessionState.test.ts:[2m73:22[22m[39m
+    [90m 71|[39m       const before = JSON.stringify({ input, baseline, renderedOptions…
+    [90m 72|[39m       [35mconst[39m result [33m=[39m [34mapplyColumnEdit[39m(input)[33m;[39m
+    [90m 73|[39m       [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m({
+    [90m   |[39m                      [31m^[39m
+    [90m 74|[39m         status[33m:[39m [32m"ready"[39m[33m,[39m
+    [90m 75|[39m         stamp[33m:[39m [34mstamp[39m()[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/unit/chart-application/sessionState.test.ts[2m > [22maddressed chart session[2m > [22mapplies tooltip compact through the real reducer using latest storage and saved baseline
+[31m[1mAssertionError[22m: expected { status: 'invalid', …(1) } to deeply equal { status: 'ready', …(2) }[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[32m-   "stamp": {[39m
+[32m-     "address": {[39m
+[32m-       "stateAddress": "[\"widget\",\"partition\"]",[39m
+[32m-       "stateKey": "partition",[39m
+[32m-       "widgetId": "widget",[39m
+[32m-     },[39m
+[32m-     "dataRevision": 0,[39m
+[32m-     "generation": 1,[39m
+[32m-     "renderRevision": 0,[39m
+[32m-   },[39m
+[32m-   "status": "ready",[39m
+[32m-   "value": {[39m
+[32m-     "chartType": "groupedColumn",[39m
+[32m-     "isPivotMode": false,[39m
+[32m-     "other": {[39m
+[32m-       "chartModel": {[39m
+[32m-         "chartType": "line",[39m
+[32m-       },[39m
+[32m-     },[39m
+[32m-     "partition": {[39m
+[32m-       "chartModel": {[39m
+[32m-         "chartOptions": {[39m
+[32m-           "bar": {[39m
+[32m-             "legend": {[39m
+[32m-               "position": "right",[39m
+[32m-             },[39m
+[32m-             "title": {[39m
+[32m-               "enabled": false,[39m
+[32m-               "text": "Earlier edit",[39m
+[32m-             },[39m
+[32m-             "tooltip": {[39m
+[32m-               "mode": "compact",[39m
+[32m-               "unknown": true,[39m
+[32m-             },[39m
+[32m-           },[39m
+[32m-           "common": {[39m
+[32m-             "padding": {[39m
+[32m-               "top": 9,[39m
+[32m-             },[39m
+[32m-           },[39m
+[32m-           "line": {[39m
+[32m-             "series": {[39m
+[32m-               "strokeWidth": 7,[39m
+[32m-             },[39m
+[32m-           },[39m
+[32m-           "unknownOption": {[39m
+[32m-             "retained": true,[39m
+[32m-           },[39m
+[32m-         },[39m
+[32m-         "chartType": "groupedColumn",[39m
+[32m-         "destination": true,[39m
+[32m-         "previousModelField": true,[39m
+[32m-         "savedModel": true,[39m
+[31m+   "diagnostics": [[39m
+[31m+     {[39m
+[31m+       "code": "invalid-session",[39m
+[31m+       "message": "event.kind is unsupported",[39m
+[31m+       "path": [],[39m
+[2m      },[22m
+[32m-       "latest": true,[39m
+[32m-       "line": {[39m
+[32m-         "cellRange": {[39m
+[32m-           "columns": [[39m
+[32m-             "period",[39m
+[32m-             "profit",[39m
+[2m    ],[22m
+[32m-         },[39m
+[32m-       },[39m
+[32m-     },[39m
+[32m-     "rootUnknown": {[39m
+[32m-       "retained": true,[39m
+[32m-     },[39m
+[32m-     "totalSeries": 2,[39m
+[32m-   },[39m
+[31m+   "status": "invalid",[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/unit/chart-application/sessionState.test.ts:[2m73:22[22m[39m
+    [90m 71|[39m       const before = JSON.stringify({ input, baseline, renderedOptions…
+    [90m 72|[39m       [35mconst[39m result [33m=[39m [34mapplyColumnEdit[39m(input)[33m;[39m
+    [90m 73|[39m       [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m({
+    [90m   |[39m                      [31m^[39m
+    [90m 74|[39m         status[33m:[39m [32m"ready"[39m[33m,[39m
+    [90m 75|[39m         stamp[33m:[39m [34mstamp[39m()[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/unit/chart-application/sessionState.test.ts[2m > [22maddressed chart session[2m > [22mreports valid stacked tooltip single as unresolved before touching storage
+[41m[1m FAIL [22m[49m tests/unit/chart-application/sessionState.test.ts[2m > [22maddressed chart session[2m > [22mreports valid stacked tooltip shared as unresolved before touching storage
+[41m[1m FAIL [22m[49m tests/unit/chart-application/sessionState.test.ts[2m > [22maddressed chart session[2m > [22mreports valid stacked tooltip compact as unresolved before touching storage
+[31m[1mAssertionError[22m: expected { status: 'invalid', …(1) } to match object { status: 'unresolved', …(1) }
+(1 matching property omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[2m    "diagnostics": [[22m
+[2m      {[22m
+[32m-       "message": StringContaining "stackedColumn",[39m
+[32m-       "path": [[39m
+[32m-         "command",[39m
+[32m-         "chartType",[39m
+[32m-       ],[39m
+[31m+       "message": "event.kind is unsupported",[39m
+[31m+       "path": [],[39m
+[2m      },[22m
+[2m    ],[22m
+[32m-   "status": "unresolved",[39m
+[31m+   "status": "invalid",[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/unit/chart-application/sessionState.test.ts:[2m116:38[22m[39m
+    [90m114|[39m         })[33m,[39m
+    [90m115|[39m       }[33m;[39m
+    [90m116|[39m       [34mexpect[39m([34mapplyColumnEdit[39m(input))[33m.[39m[34mtoMatchObject[39m({
+    [90m   |[39m                                      [31m^[39m
+    [90m117|[39m         status[33m:[39m [32m"unresolved"[39m[33m,[39m
+    [90m118|[39m         diagnostics: [{ path: ["command", "chartType"], message: expec…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯[22m[39m
+

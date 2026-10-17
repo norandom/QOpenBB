@@ -1,0 +1,24 @@
+[
+  {
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/@biomejs/biome/bin/biome",
+      "check",
+      "src/components/General/Table/Chart/application/appearanceComposition.ts",
+      "tests/unit/chart-application/appearanceComposition.test.ts"
+    ],
+    "exit": 0,
+    "log": "artifacts/task-2.42/implementation/lint-1-1792239004881405764.log",
+    "sha256": "54ef5993da911853f564566581b47df62ea74b9fff102bb74f2ff7155c13bb00",
+    "ownedInputs": [
+      {
+        "path": "src/components/General/Table/Chart/application/appearanceComposition.ts",
+        "sha256": "e6a1b7eb39ba526a9d72c412e2337fc2dedf19d27b87b9f9f047926a3f32242c"
+      },
+      {
+        "path": "tests/unit/chart-application/appearanceComposition.test.ts",
+        "sha256": "a718a2b0154593ee9e268fa6f5b9c50e366fdb7de876fde3079a8f711ced19c2"
+      }
+    ]
+  }
+]

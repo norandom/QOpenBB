@@ -1,0 +1,70 @@
+[
+  {
+    "name": "application-strict",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-application/tsconfig.json",
+      "--noEmit"
+    ],
+    "exit": 0,
+    "log": "application-strict.log",
+    "sha256": "5662d36001fd83279ed4759f5ef946e224c12935662b772d8602b39f193d021f"
+  },
+  {
+    "name": "compatibility-strict",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-compatibility/tsconfig.json",
+      "--noEmit"
+    ],
+    "exit": 0,
+    "log": "compatibility-strict.log",
+    "sha256": "9f28eb44c966e9c3da3a424c353eb4882a67e6ec03134dca4e8b5237742b15e2"
+  },
+  {
+    "name": "application-suite",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "tests/unit/chart-application/vitest.config.mjs"
+    ],
+    "exit": 0,
+    "log": "application-suite.log",
+    "sha256": "aaa3714799031c106b2342170c70a4e3f77a17b7931c85f56914be9fcd443062"
+  },
+  {
+    "name": "compatibility-suite",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "tests/unit/chart-compatibility/vitest.config.mjs"
+    ],
+    "exit": 0,
+    "log": "compatibility-suite.log",
+    "sha256": "35985cf6686119d3953a4854c9bd80a9d2c01a6d3318b25ca5eaa01855f8dee5"
+  },
+  {
+    "name": "scoped-lint",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/@biomejs/biome/bin/biome",
+      "check",
+      "src/components/General/Table/Chart/application",
+      "src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "tests/unit/chart-application",
+      "tests/unit/chart-compatibility/editorEvents.test.ts"
+    ],
+    "exit": 0,
+    "log": "scoped-lint.log",
+    "sha256": "ef742fbbcdf8c2676a19bba334f16b17d67aff471720365b1bc3ab72b3123990"
+  }
+]

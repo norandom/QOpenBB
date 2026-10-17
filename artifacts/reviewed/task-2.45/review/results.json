@@ -1,0 +1,92 @@
+[
+  {
+    "name": "versions",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "--version"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task245-independent-review/terminalpro",
+    "exit": 0,
+    "seconds": 0.152,
+    "log": "versions.log",
+    "sha256": "2b796b748c85883d00cfea9775eaa143435f0dc06c69311b444cf0dfc98214bc"
+  },
+  {
+    "name": "application-strict",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-application/tsconfig.json",
+      "--noEmit"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task245-independent-review/terminalpro",
+    "exit": 0,
+    "seconds": 3.154,
+    "log": "application-strict.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "compatibility-strict",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "tests/unit/chart-compatibility/tsconfig.json",
+      "--noEmit"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task245-independent-review/terminalpro",
+    "exit": 0,
+    "seconds": 3.669,
+    "log": "compatibility-strict.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "application-suite",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "tests/unit/chart-application/vitest.config.mjs"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task245-independent-review/terminalpro",
+    "exit": 0,
+    "seconds": 9.769,
+    "log": "application-suite.log",
+    "sha256": "e9dfac3eb9712323960853fc3dc640c9701c0a4c38824ff1aaa692dbf024ee78"
+  },
+  {
+    "name": "compatibility-suite",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "tests/unit/chart-compatibility/vitest.config.mjs"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task245-independent-review/terminalpro",
+    "exit": 0,
+    "seconds": 10.351,
+    "log": "compatibility-suite.log",
+    "sha256": "74ee870a92ae3ddf2f39096ae8bdeee6a837d79d0256abe74da058813d166049"
+  },
+  {
+    "name": "scoped-lint",
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/@biomejs/biome/bin/biome",
+      "check",
+      "src/components/General/Table/Chart/application",
+      "src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "tests/unit/chart-application",
+      "tests/unit/chart-compatibility/editorEvents.test.ts"
+    ],
+    "cwd": "/home/mc/qopenbb-work/task245-independent-review/terminalpro",
+    "exit": 0,
+    "seconds": 0.792,
+    "log": "scoped-lint.log",
+    "sha256": "d65b0f095f3f834e7f15e660b60829e5a28502419f05ad0272b6439d38f4d13a"
+  }
+]

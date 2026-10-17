@@ -1,0 +1,152 @@
+{
+  "task": "2.42",
+  "review": "Implementer inspected synthetic outputs; independent publication review remains parent-owned",
+  "sourceFiles": [
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/application/appearanceComposition.ts",
+      "sha256": "e6a1b7eb39ba526a9d72c412e2337fc2dedf19d27b87b9f9f047926a3f32242c"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/tests/unit/chart-application/appearanceComposition.test.ts",
+      "sha256": "a718a2b0154593ee9e268fa6f5b9c50e366fdb7de876fde3079a8f711ced19c2"
+    }
+  ],
+  "evidenceFiles": [
+    {
+      "path": "artifacts/task-2.42/implementation/accepted-dependency-overlay.json",
+      "sha256": "2e1d6badb3ba29b989198a394541f3b57054572be7cee61d9d8d74ecb3915d08"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/accepted-sibling-overlay-1792238978079747580.json",
+      "sha256": "b288519e23eb4a9351836e117bdc78a694579dfafd46a3dd4ae6d9a1c546c444"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/format-1-1792238980596537597.log",
+      "sha256": "70cca7e7695a55c450310c9b538d92a82b9e4b0098820db6ca8d656a70d8ba1b"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/format-status-1792238981279930716.json",
+      "sha256": "ad5e1b5b5847a0f3ae8946e5df2bec26ebe5addce792a9bd58eb2fea508b2a71"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/frozen-source-identities.json",
+      "sha256": "63c3a4e845309436c23e2e5b2af4fc740d007a6b716903ca8ee445830866906a"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/green-1-1792238879761588818.log",
+      "sha256": "5766d366f8f2c7a635b1853f5323fdeb4d07365883fdd58d8fbf77032d2bbe32"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/green-1-1792238887820527935.log",
+      "sha256": "0b6e5a9434fc74b99e6fa3594451d070ccb56a3d2c866cfe92d7a0420c34d531"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/green-1-1792238904388221982.log",
+      "sha256": "0c6cf2cf467d7317d80db0af66d48969e8a4ff01d8d7b85805064cbed4ee6a9d"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/green-1-1792238991554118562.log",
+      "sha256": "c60292f2d619c3c2769697679dc270d9642a88753594a8be91c540df91c862d3"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/green-status-1792238881407913258.json",
+      "sha256": "09e0c71a35851bdf059bcfcdfaea753dcd3f468028110f7ee0c58459508d39f5"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/green-status-1792238889591835163.json",
+      "sha256": "b027d4ce466fee9038ba658ce2bf862147a5b09a0bca9d16f55e4fb36616b38d"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/green-status-1792238905881026520.json",
+      "sha256": "b7dcca07fb7d3407fa09ff80958224ab050d06a07cbcae11541c0b18a094e783"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/green-status-1792238993730127526.json",
+      "sha256": "b95e4ce45afaab2d1a01ad90647a58f3e22652d423ff8084ffe120b24f2fcc84"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/lint-1-1792238954012063107.log",
+      "sha256": "aeea43ed247de7b5ae8ca4a8f073c3e0ea1f9d7e23e2852ebfa8d319526de446"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/lint-1-1792239004881405764.log",
+      "sha256": "54ef5993da911853f564566581b47df62ea74b9fff102bb74f2ff7155c13bb00"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/lint-status-1792238959100910448.json",
+      "sha256": "53295f8a3a77b8d78cb1580e85a0173cac8b283c4e1246ee1b4d2eef7b8be05e"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/lint-status-1792239005420243075.json",
+      "sha256": "5a2936c795399c9e6209e9e7f64ca4161428c4b96e23551ea87940854aa4a47c"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/red-1-1792238814515283489.log",
+      "sha256": "d2b6ff23b9e887d54d28bec23f1154b7cf97c6e1d441a7d075d89070e3b37543"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/red-status-1792238815917378844.json",
+      "sha256": "9ab85586f24742de841f0b52a86fefbd4d2c83c1f14739e077026b2e70703746"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/report.md",
+      "sha256": "5e88b092f8b9f130c27cd7f2ba56a2908310881d04d0458dbac72ae6a808421d"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/stage.json",
+      "sha256": "a8ebf0fcd9e71ebd6f322475b2a5038714b4582802d3cc6f5a2f9f37346be9b7"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/strict-1-1792238915918274921.log",
+      "sha256": "368e2ca49d09cd8e653e1cb04f6c647b9fa0e197dacf61fe7bbe9c11a4e448be"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/strict-1-1792238945975848634.log",
+      "sha256": "368e2ca49d09cd8e653e1cb04f6c647b9fa0e197dacf61fe7bbe9c11a4e448be"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/strict-1-1792238996083047504.log",
+      "sha256": "368e2ca49d09cd8e653e1cb04f6c647b9fa0e197dacf61fe7bbe9c11a4e448be"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/strict-2-1792238917988052371.log",
+      "sha256": "21a3feefd1395b306e6cd37f80dbb56c9ba267e396f7ff417928c0d18205b23e"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/strict-2-1792238948077229701.log",
+      "sha256": "bda0a3dd2929510eee9f68ac7a60b74355df093f1031a26152a18975a099a525"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/strict-2-1792238998603110278.log",
+      "sha256": "bda0a3dd2929510eee9f68ac7a60b74355df093f1031a26152a18975a099a525"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/strict-status-1792238920360301402.json",
+      "sha256": "cc9b6fd502c19a706524f4cdeb5a70cc1946a658dbed436a961ef6dc923aa818"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/strict-status-1792238950370529539.json",
+      "sha256": "29743b8f44732d40709e3a88ad6f62a76aad1221352f583633d1f4af9f77b54c"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/strict-status-1792239001868476474.json",
+      "sha256": "dd6015ac36b4024b0e3009044c02cd58df31bc6750cfd14364b52b6fea7e8979"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/task-brief.md",
+      "sha256": "40f7c816a145755981601cecd45096e9c51b848a1831b58d569d33c45709b415"
+    },
+    {
+      "path": "artifacts/task-2.42/implementation/verify.py",
+      "sha256": "54ee5903169e3efe63a9638047570cdafa911d0f9a2412a9dfcd16d020180e3f"
+    }
+  ],
+  "omittedHistoricalEvidence": [],
+  "exclusions": [
+    "Credentials and environment files",
+    "Dependency caches and image archives",
+    "User accounts, database state and browser profiles",
+    "Unowned source content"
+  ],
+  "scope": "Explicit task-owned artifacts directory and two owned source files only; no full source traversal"
+}

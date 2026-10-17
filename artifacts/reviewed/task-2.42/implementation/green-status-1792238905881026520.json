@@ -1,0 +1,25 @@
+[
+  {
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "tests/unit/chart-application/vitest.config.mjs",
+      "tests/unit/chart-application/appearanceComposition.test.ts"
+    ],
+    "exit": 0,
+    "log": "artifacts/task-2.42/implementation/green-1-1792238904388221982.log",
+    "sha256": "0c6cf2cf467d7317d80db0af66d48969e8a4ff01d8d7b85805064cbed4ee6a9d",
+    "ownedInputs": [
+      {
+        "path": "src/components/General/Table/Chart/application/appearanceComposition.ts",
+        "sha256": "e6a1b7eb39ba526a9d72c412e2337fc2dedf19d27b87b9f9f047926a3f32242c"
+      },
+      {
+        "path": "tests/unit/chart-application/appearanceComposition.test.ts",
+        "sha256": "5e864260600ea7da73d445ee959f082080cae5ad3f89dfbd816b5fa1c20e22c4"
+      }
+    ]
+  }
+]

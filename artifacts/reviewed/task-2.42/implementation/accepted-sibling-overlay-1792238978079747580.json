@@ -1,0 +1,47 @@
+{
+  "reason": "Use accepted 2.41 source/test pairs for all sibling-owned paths during isolated 2.42 checks; final joined current verification belongs to the independent reviewer.",
+  "inputs": [
+    {
+      "path": "src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "source": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "previousSha256": "4410f9d66d17b146b9e2d9e59b0dea617305d68c23f65c638927867333b8950c",
+      "acceptedSha256": "4410f9d66d17b146b9e2d9e59b0dea617305d68c23f65c638927867333b8950c",
+      "stagedSha256": "4410f9d66d17b146b9e2d9e59b0dea617305d68c23f65c638927867333b8950c"
+    },
+    {
+      "path": "src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "source": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "previousSha256": "56f388d56600f2d72d6cc8bf475a2ac5a5c8603f02b48565b56231a82a1e70e8",
+      "acceptedSha256": "56f388d56600f2d72d6cc8bf475a2ac5a5c8603f02b48565b56231a82a1e70e8",
+      "stagedSha256": "56f388d56600f2d72d6cc8bf475a2ac5a5c8603f02b48565b56231a82a1e70e8"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/sessionState.ts",
+      "source": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro/src/components/General/Table/Chart/application/sessionState.ts",
+      "previousSha256": "f7626adf1d153f5c8f6100eb140ffe0b346a7514b43c1c3c14dd46b005fba63e",
+      "acceptedSha256": "f7626adf1d153f5c8f6100eb140ffe0b346a7514b43c1c3c14dd46b005fba63e",
+      "stagedSha256": "f7626adf1d153f5c8f6100eb140ffe0b346a7514b43c1c3c14dd46b005fba63e"
+    },
+    {
+      "path": "src/components/General/Table/Chart/application/types.ts",
+      "source": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro/src/components/General/Table/Chart/application/types.ts",
+      "previousSha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+      "acceptedSha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e",
+      "stagedSha256": "5e01f153244005180a284d591f0732fd24f5b1bec804c4c59a8e831cb4e8696e"
+    },
+    {
+      "path": "tests/unit/chart-compatibility/editorEvents.test.ts",
+      "source": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts",
+      "previousSha256": "b3b1b7803a96f29940109940d7d94f1ecc96f97c5598c52a08348eb203857c0d",
+      "acceptedSha256": "b3b1b7803a96f29940109940d7d94f1ecc96f97c5598c52a08348eb203857c0d",
+      "stagedSha256": "b3b1b7803a96f29940109940d7d94f1ecc96f97c5598c52a08348eb203857c0d"
+    },
+    {
+      "path": "tests/unit/chart-application/sessionState.test.ts",
+      "source": "/home/mc/qopenbb-work/task241-20261017135547/terminalpro/tests/unit/chart-application/sessionState.test.ts",
+      "previousSha256": "e542a6eab5918435354adf0191a3e2ee24b4f3400bc229b9770683950f344d48",
+      "acceptedSha256": "6308bbecb1bee60b954855aa1b1e62d1e574fa4815281468f5a32d6b15d54d11",
+      "stagedSha256": "6308bbecb1bee60b954855aa1b1e62d1e574fa4815281468f5a32d6b15d54d11"
+    }
+  ]
+}

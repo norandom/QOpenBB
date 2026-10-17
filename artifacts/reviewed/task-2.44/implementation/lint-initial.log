@@ -1,0 +1,302 @@
+Checked 5 files in 13ms. No fixes applied.
+Found 4 errors.
+src/components/General/Table/Chart/application/sessionState.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    117 117 │   function isTooltipMode(event: unknown): boolean {
+    118 118 │     const fields = record(event);
+    119     │ - ··return·!!fields·&&·Object.keys(fields).length·===·2·&&
+        119 │ + ··return·(
+        120 │ + ····!!fields·&&
+        121 │ + ····Object.keys(fields).length·===·2·&&
+    120 122 │       fields.kind === "tooltip-mode" &&
+    121     │ - ····(fields.value·===·"single"·||·fields.value·===·"shared"·||·fields.value·===·"compact");
+        123 │ + ····(fields.value·===·"single"·||
+        124 │ + ······fields.value·===·"shared"·||
+        125 │ + ······fields.value·===·"compact")
+        126 │ + ··);
+    122 127 │   }
+    123 128 │   
+    ······· │ 
+    134 139 │         return {
+    135 140 │           status: "unresolved",
+    136     │ - ········diagnostics:·[{
+    137     │ - ··········code:·"unresolved-family",
+    138     │ - ··········path:·["command",·"chartType"],
+    139     │ - ··········message:·"tooltip-mode·is·unresolved·for·stackedColumn",
+    140     │ - ········}],
+        141 │ + ········diagnostics:·[
+        142 │ + ··········{
+        143 │ + ············code:·"unresolved-family",
+        144 │ + ············path:·["command",·"chartType"],
+        145 │ + ············message:·"tooltip-mode·is·unresolved·for·stackedColumn",
+        146 │ + ··········},
+        147 │ + ········],
+    141 148 │         };
+    142 149 │       const mapped = mapColumnEditorEvent({ chartType, event: command.event });
+  
+
+tests/unit/chart-application/sessionState.test.ts:1:1 assist/source/organizeImports  FIXABLE  ━━━━━━━━━━
+
+  × The imports and exports are not sorted.
+  
+  > 1 │ import { describe, expect, it } from "vitest";
+      │ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    2 │ import {
+    3 │   advanceSessionStamp,
+  
+  i Safe fix: Organize Imports (Biome)
+  
+      7   7 │     validateSessionStamp,
+      8   8 │   } from "../../../src/components/General/Table/Chart/application/sessionState";
+      9     │ - import·type·{·SessionStamp·}·from·"../../../src/components/General/Table/Chart/application/types";
+     10     │ - import·type·{·ColumnEditInput·}·from·"../../../src/components/General/Table/Chart/application/types";
+          9 │ + import·type·{·ColumnEditInput,·SessionStamp·}·from·"../../../src/components/General/Table/Chart/application/types";
+     11  10 │   import { selectOptionBaseline } from "../../../src/components/General/Table/Chart/compatibility/optionState";
+     12  11 │   
+  
+
+tests/unit/chart-application/sessionState.test.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     18  18 │   });
+     19  19 │   describe("addressed chart session", () => {
+     20     │ - ··const·tooltipInput·=·(event:·unknown,·chartType·=·"groupedColumn"):·ColumnEditInput·=>·({
+     21     │ - ····command:·{·stamp:·stamp(),·chartType,·event·},
+     22     │ - ····currentStamp:·stamp(),
+     23     │ - ····storage:·{},
+     24     │ - ····resolvedOptions:·{},
+     25     │ - ····totalSeries:·2,
+     26     │ - ····isPivotMode:·false,
+     27     │ - ··})·as·ColumnEditInput;
+     28     │ - ··it.each(["single",·"shared",·"compact"]·as·const)(
+     29     │ - ····"applies·tooltip·%s·through·the·real·reducer·using·latest·storage·and·saved·baseline",
+     30     │ - ····(value)·=>·{
+     31     │ - ······const·storage·=·{
+     32     │ - ········rootUnknown:·{·retained:·true·},
+     33     │ - ········other:·{·chartModel:·{·chartType:·"line"·}·},
+     34     │ - ········partition:·{
+     35     │ - ··········latest:·true,
+     36     │ - ··········line:·{·cellRange:·{·columns:·["period",·"profit"]·}·},
+     37     │ - ··········chartModel:·{·previousModelField:·true·},
+     38     │ - ········},
+     39     │ - ······};
+     40     │ - ······const·baseline·=·selectOptionBaseline({
+     41     │ - ········kind:·"initialize",
+     42     │ - ········stateAddress:·stamp().address.stateAddress,
+     43     │ - ········initialChartType:·"groupedColumn",
+     44     │ - ········partitionModel:·{
+     45     │ - ··········savedModel:·true,
+     46     │ - ··········chartOptions:·{
+     47     │ - ············theme:·"stock",
+     48     │ - ············common:·{·padding:·{·top:·9·}·},
+     49     │ - ············unknownOption:·{·retained:·true·},
+     50     │ - ············line:·{·series:·{·strokeWidth:·7·}·},
+     51     │ - ············bar:·{
+     52     │ - ··············title:·{·text:·"Earlier·edit",·enabled:·false·},
+     53     │ - ··············legend:·{·position:·"right"·},
+     54     │ - ··············tooltip:·{·mode:·"single",·unknown:·true·},
+     55     │ - ············},
+         20 │ + ··const·tooltipInput·=·(event:·unknown,·chartType·=·"groupedColumn"):·ColumnEditInput·=>
+         21 │ + ····({
+         22 │ + ······command:·{·stamp:·stamp(),·chartType,·event·},
+         23 │ + ······currentStamp:·stamp(),
+         24 │ + ······storage:·{},
+         25 │ + ······resolvedOptions:·{},
+         26 │ + ······totalSeries:·2,
+         27 │ + ······isPivotMode:·false,
+         28 │ + ····})·as·ColumnEditInput;
+         29 │ + ··it.each([
+         30 │ + ····"single",
+         31 │ + ····"shared",
+         32 │ + ····"compact",
+         33 │ + ··]·as·const)("applies·tooltip·%s·through·the·real·reducer·using·latest·storage·and·saved·baseline",·(value)·=>·{
+         34 │ + ····const·storage·=·{
+         35 │ + ······rootUnknown:·{·retained:·true·},
+         36 │ + ······other:·{·chartModel:·{·chartType:·"line"·}·},
+         37 │ + ······partition:·{
+         38 │ + ········latest:·true,
+         39 │ + ········line:·{·cellRange:·{·columns:·["period",·"profit"]·}·},
+         40 │ + ········chartModel:·{·previousModelField:·true·},
+         41 │ + ······},
+         42 │ + ····};
+         43 │ + ····const·baseline·=·selectOptionBaseline({
+         44 │ + ······kind:·"initialize",
+         45 │ + ······stateAddress:·stamp().address.stateAddress,
+         46 │ + ······initialChartType:·"groupedColumn",
+         47 │ + ······partitionModel:·{
+         48 │ + ········savedModel:·true,
+         49 │ + ········chartOptions:·{
+         50 │ + ··········theme:·"stock",
+         51 │ + ··········common:·{·padding:·{·top:·9·}·},
+         52 │ + ··········unknownOption:·{·retained:·true·},
+         53 │ + ··········line:·{·series:·{·strokeWidth:·7·}·},
+         54 │ + ··········bar:·{
+         55 │ + ············title:·{·text:·"Earlier·edit",·enabled:·false·},
+         56 │ + ············legend:·{·position:·"right"·},
+         57 │ + ············tooltip:·{·mode:·"single",·unknown:·true·},
+     56  58 │             },
+     57  59 │           },
+     58     │ - ······});
+     59     │ - ······if·(!baseline.valid)·throw·new·Error(baseline.error);
+     60     │ - ······const·renderedOptions·=·{·bar:·{·title:·{·text:·"Rendered·only"·},·fill:·"#abcdef"·}·};
+     61     │ - ······const·input·=·{
+     62     │ - ········...tooltipInput({·kind:·"tooltip-mode",·value·}),
+     63     │ - ········storage,
+     64     │ - ········currentModel:·{
+     65     │ - ··········...baseline.value.model,
+     66     │ - ··········chartOptions:·renderedOptions,
+     67     │ - ··········destination:·true,
+     68     │ - ········},
+     69     │ - ········resolvedOptions:·baseline.value.options,
+     70     │ - ······};
+     71     │ - ······const·before·=·JSON.stringify({·input,·baseline,·renderedOptions·});
+     72     │ - ······const·result·=·applyColumnEdit(input);
+     73     │ - ······expect(result).toEqual({
+     74     │ - ········status:·"ready",
+     75     │ - ········stamp:·stamp(),
+     76     │ - ········value:·{
+     77     │ - ··········...storage,
+     78     │ - ··········chartType:·"groupedColumn",
+     79     │ - ··········totalSeries:·2,
+     80     │ - ··········isPivotMode:·false,
+     81     │ - ··········partition:·{
+     82     │ - ············...storage.partition,
+     83     │ - ············chartModel:·{
+     84     │ - ··············previousModelField:·true,
+     85     │ - ··············savedModel:·true,
+     86     │ - ··············destination:·true,
+     87     │ - ··············chartType:·"groupedColumn",
+     88     │ - ··············chartOptions:·{
+     89     │ - ················common:·{·padding:·{·top:·9·}·},
+     90     │ - ················unknownOption:·{·retained:·true·},
+     91     │ - ················line:·{·series:·{·strokeWidth:·7·}·},
+     92     │ - ················bar:·{
+     93     │ - ··················title:·{·text:·"Earlier·edit",·enabled:·false·},
+     94     │ - ··················legend:·{·position:·"right"·},
+     95     │ - ··················tooltip:·{·mode:·value,·unknown:·true·},
+     96     │ - ················},
+         60 │ + ······},
+         61 │ + ····});
+         62 │ + ····if·(!baseline.valid)·throw·new·Error(baseline.error);
+         63 │ + ····const·renderedOptions·=·{
+         64 │ + ······bar:·{·title:·{·text:·"Rendered·only"·},·fill:·"#abcdef"·},
+         65 │ + ····};
+         66 │ + ····const·input·=·{
+         67 │ + ······...tooltipInput({·kind:·"tooltip-mode",·value·}),
+         68 │ + ······storage,
+         69 │ + ······currentModel:·{
+         70 │ + ········...baseline.value.model,
+         71 │ + ········chartOptions:·renderedOptions,
+         72 │ + ········destination:·true,
+         73 │ + ······},
+         74 │ + ······resolvedOptions:·baseline.value.options,
+         75 │ + ····};
+         76 │ + ····const·before·=·JSON.stringify({·input,·baseline,·renderedOptions·});
+         77 │ + ····const·result·=·applyColumnEdit(input);
+         78 │ + ····expect(result).toEqual({
+         79 │ + ······status:·"ready",
+         80 │ + ······stamp:·stamp(),
+         81 │ + ······value:·{
+         82 │ + ········...storage,
+         83 │ + ········chartType:·"groupedColumn",
+         84 │ + ········totalSeries:·2,
+         85 │ + ········isPivotMode:·false,
+         86 │ + ········partition:·{
+         87 │ + ··········...storage.partition,
+         88 │ + ··········chartModel:·{
+         89 │ + ············previousModelField:·true,
+         90 │ + ············savedModel:·true,
+         91 │ + ············destination:·true,
+         92 │ + ············chartType:·"groupedColumn",
+  138 more lines truncated
+  
+
+tests/unit/chart-compatibility/editorEvents.test.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     18  18 │   
+     19  19 │   describe("column editor patches", () => {
+     20     │ - ··it.each(["single",·"shared",·"compact"]·as·const)(
+     21     │ - ····"maps·grouped·tooltip·%s·to·only·the·original·bar·mode·leaf",
+     22     │ - ····(value)·=>·{
+     23     │ - ······const·event:·ColumnEditorEvent·=·{·kind:·"tooltip-mode",·value·};
+     24     │ - ······const·before·=·cloneDeep(event);
+     25     │ - ······expect(patch(event)).toEqual({·bar:·{·tooltip:·{·mode:·value·}·}·});
+     26     │ - ······expect(event).toEqual(before);
+     27     │ - ······expect(mapColumnEditorEvent({·chartType:·"stackedColumn",·event·}).valid).toBe(
+     28     │ - ········false,
+     29     │ - ······);
+     30     │ - ····},
+     31     │ - ··);
+         20 │ + ··it.each([
+         21 │ + ····"single",
+         22 │ + ····"shared",
+         23 │ + ····"compact",
+         24 │ + ··]·as·const)("maps·grouped·tooltip·%s·to·only·the·original·bar·mode·leaf",·(value)·=>·{
+         25 │ + ····const·event:·ColumnEditorEvent·=·{·kind:·"tooltip-mode",·value·};
+         26 │ + ····const·before·=·cloneDeep(event);
+         27 │ + ····expect(patch(event)).toEqual({·bar:·{·tooltip:·{·mode:·value·}·}·});
+         28 │ + ····expect(event).toEqual(before);
+         29 │ + ····expect(mapColumnEditorEvent({·chartType:·"stackedColumn",·event·}).valid).toBe(
+         30 │ + ······false,
+         31 │ + ····);
+         32 │ + ··});
+     32  33 │     it.each([
+     33     │ - ····"Multiple",·"multiple",·"Single",·"Compact",·"",·null,·undefined,·true,·1,
+         34 │ + ····"Multiple",
+         35 │ + ····"multiple",
+         36 │ + ····"Single",
+         37 │ + ····"Compact",
+         38 │ + ····"",
+         39 │ + ····null,
+         40 │ + ····undefined,
+         41 │ + ····true,
+         42 │ + ····1,
+     34  43 │       { path: "bar.tooltip.mode", value: "shared" },
+     35  44 │     ])("rejects tooltip labels and malformed stored modes: %j", (value) => {
+    ······· │ 
+     44  53 │       const accessor = {
+     45  54 │         kind: "tooltip-mode",
+     46     │ - ······get·value()·{·reads·+=·1;·return·"shared";·},
+         55 │ + ······get·value()·{
+         56 │ + ········reads·+=·1;
+         57 │ + ········return·"shared";
+         58 │ + ······},
+     47  59 │       };
+     48     │ - ····const·hostile·=·new·Proxy({},·{
+     49     │ - ······getPrototypeOf()·{·throw·new·Error("inspection·trap");·},
+     50     │ - ····});
+         60 │ + ····const·hostile·=·new·Proxy(
+         61 │ + ······{},
+         62 │ + ······{
+         63 │ + ········getPrototypeOf()·{
+         64 │ + ··········throw·new·Error("inspection·trap");
+         65 │ + ········},
+         66 │ + ······},
+         67 │ + ····);
+     51  68 │       for (const event of [
+     52     │ - ······accessor,·hostile,
+         69 │ + ······accessor,
+         70 │ + ······hostile,
+     53  71 │         { kind: "tooltip-mode", value: "shared", path: "series.tooltip" },
+     54  72 │         { kind: "tooltip-mode", value: "shared", [Symbol("extra")]: true },
+    ······· │ 
+     56  74 │         Object.defineProperty({ kind: "tooltip-mode" }, "value", { value: "shared" }),
+     57  75 │       ]) {
+     58     │ - ······expect(mapColumnEditorEvent({·chartType:·"groupedColumn",·event·}).valid).toBe(false);
+         76 │ + ······expect(mapColumnEditorEvent({·chartType:·"groupedColumn",·event·}).valid).toBe(
+         77 │ + ········false,
+         78 │ + ······);
+     59  79 │       }
+     60  80 │       expect(reads).toBe(0);
+  
+
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

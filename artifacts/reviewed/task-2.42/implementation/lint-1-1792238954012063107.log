@@ -1,0 +1,202 @@
+cwd: /home/mc/qopenbb-work/task242-1792238812486928978/terminalpro
+command: /mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node node_modules/@biomejs/biome/bin/biome check src/components/General/Table/Chart/application/appearanceComposition.ts tests/unit/chart-application/appearanceComposition.test.ts
+tests/unit/chart-application/appearanceComposition.test.ts:165:76 lint/style/useNumberNamespace  FIXABLE  ━━━━━━━━━━
+
+  × Use Number.POSITIVE_INFINITY instead of the equivalent global.
+  
+    163 │   );
+    164 │ 
+  > 165 │   it.each([undefined, null, [], () => "callback", new Date(0), Number.NaN, Infinity].map((options) => ({ options })))(
+        │                                                                            ^^^^^^^^
+    166 │     "rejects invalid required option containers $options",
+    167 │     ({ options }) => {
+  
+  i ES2015 moved some globals into the Number namespace for consistency.
+  
+  i Safe fix: Use Number.POSITIVE_INFINITY instead.
+  
+    163 163 │     );
+    164 164 │   
+    165     │ - ··it.each([undefined,·null,·[],·()·=>·"callback",·new·Date(0),·Number.NaN,·Infinity].map((options)·=>·({·options·})))(
+        165 │ + ··it.each([undefined,·null,·[],·()·=>·"callback",·new·Date(0),·Number.NaN,·Number.POSITIVE_INFINITY].map((options)·=>·({·options·})))(
+    166 166 │       "rejects invalid required option containers $options",
+    167 167 │       ({ options }) => {
+  
+
+tests/unit/chart-application/appearanceComposition.test.ts:173:75 lint/style/useNumberNamespace  FIXABLE  ━━━━━━━━━━
+
+  × Use Number.NaN instead of the equivalent global.
+  
+    171 │   );
+    172 │ 
+  > 173 │   it.each([() => "callback", new Date(0), new Map(), Symbol("value"), 1n, NaN, Infinity])(
+        │                                                                           ^^^
+    174 │     "rejects invalid nested option data %s in both operands",
+    175 │     (leaf) => {
+  
+  i ES2015 moved some globals into the Number namespace for consistency.
+  
+  i Safe fix: Use Number.NaN instead.
+  
+    171 171 │     );
+    172 172 │   
+    173     │ - ··it.each([()·=>·"callback",·new·Date(0),·new·Map(),·Symbol("value"),·1n,·NaN,·Infinity])(
+        173 │ + ··it.each([()·=>·"callback",·new·Date(0),·new·Map(),·Symbol("value"),·1n,·Number.NaN,·Infinity])(
+    174 174 │       "rejects invalid nested option data %s in both operands",
+    175 175 │       (leaf) => {
+  
+
+tests/unit/chart-application/appearanceComposition.test.ts:173:80 lint/style/useNumberNamespace  FIXABLE  ━━━━━━━━━━
+
+  × Use Number.POSITIVE_INFINITY instead of the equivalent global.
+  
+    171 │   );
+    172 │ 
+  > 173 │   it.each([() => "callback", new Date(0), new Map(), Symbol("value"), 1n, NaN, Infinity])(
+        │                                                                                ^^^^^^^^
+    174 │     "rejects invalid nested option data %s in both operands",
+    175 │     (leaf) => {
+  
+  i ES2015 moved some globals into the Number namespace for consistency.
+  
+  i Safe fix: Use Number.POSITIVE_INFINITY instead.
+  
+    171 171 │     );
+    172 172 │   
+    173     │ - ··it.each([()·=>·"callback",·new·Date(0),·new·Map(),·Symbol("value"),·1n,·NaN,·Infinity])(
+        173 │ + ··it.each([()·=>·"callback",·new·Date(0),·new·Map(),·Symbol("value"),·1n,·NaN,·Number.POSITIVE_INFINITY])(
+    174 174 │       "rejects invalid nested option data %s in both operands",
+    175 175 │       (leaf) => {
+  
+
+tests/unit/chart-application/appearanceComposition.test.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     74  74 │     });
+     75  75 │   
+     76     │ - ··it.each([undefined,·null,·[],·{·legend:·{·position:·"top"·}·}].map((common)·=>·({·common·})))(
+     77     │ - ····"replaces·saved·common·wholesale·with·generated·$common",
+     78     │ - ····({·common·})·=>·{
+     79     │ - ······const·result·=·value(input({·common:·{·savedOnly:·true·}·},·{·common·}));
+     80     │ - ······expect(result).toStrictEqual({·common·});
+     81     │ - ······expect(Object.hasOwn(result,·"common")).toBe(true);
+     82     │ - ····},
+     83     │ - ··);
+         76 │ + ··it.each(
+         77 │ + ····[undefined,·null,·[],·{·legend:·{·position:·"top"·}·}].map((common)·=>·({
+         78 │ + ······common,
+         79 │ + ····})),
+         80 │ + ··)("replaces·saved·common·wholesale·with·generated·$common",·({·common·})·=>·{
+         81 │ + ····const·result·=·value(input({·common:·{·savedOnly:·true·}·},·{·common·}));
+         82 │ + ····expect(result).toStrictEqual({·common·});
+         83 │ + ····expect(Object.hasOwn(result,·"common")).toBe(true);
+         84 │ + ··});
+     84  85 │   
+     85  86 │     it("drops saved common when generated common is absent, preserving own undefined", () => {
+    ······· │ 
+    154 155 │     it("accepts null-prototype option records without changing their source", () => {
+    155 156 │       const options = Object.assign(Object.create(null), { unknown: { a: 1 } });
+    156     │ - ····expect(value(input(options))).toStrictEqual({·unknown:·{·a:·1·},·common:·undefined·});
+        157 │ + ····expect(value(input(options))).toStrictEqual({
+        158 │ + ······unknown:·{·a:·1·},
+        159 │ + ······common:·undefined,
+        160 │ + ····});
+    157 161 │       expect(Object.getPrototypeOf(options)).toBe(null);
+    158 162 │     });
+    159 163 │   
+    160     │ - ··it.each([undefined,·null,·[],·1,·"options",·new·Date(0)].map((candidate)·=>·({·candidate·})))(
+    161     │ - ····"rejects·malformed·top-level·input·$candidate",
+    162     │ - ····({·candidate·})·=>·invalid(candidate),
+    163     │ - ··);
+        164 │ + ··it.each(
+        165 │ + ····[undefined,·null,·[],·1,·"options",·new·Date(0)].map((candidate)·=>·({
+        166 │ + ······candidate,
+        167 │ + ····})),
+        168 │ + ··)("rejects·malformed·top-level·input·$candidate",·({·candidate·})·=>
+        169 │ + ····invalid(candidate));
+    164 170 │   
+    165     │ - ··it.each([undefined,·null,·[],·()·=>·"callback",·new·Date(0),·Number.NaN,·Infinity].map((options)·=>·({·options·})))(
+    166     │ - ····"rejects·invalid·required·option·containers·$options",
+    167     │ - ····({·options·})·=>·{
+    168     │ - ······invalid({·...input(),·generated:·options·});
+    169     │ - ······invalid({·...input(),·baseline:·{·...input().baseline,·options·}·});
+    170     │ - ····},
+    171     │ - ··);
+        171 │ + ··it.each(
+        172 │ + ····[undefined,·null,·[],·()·=>·"callback",·new·Date(0),·Number.NaN,·Infinity].map(
+        173 │ + ······(options)·=>·({·options·}),
+        174 │ + ····),
+        175 │ + ··)("rejects·invalid·required·option·containers·$options",·({·options·})·=>·{
+        176 │ + ····invalid({·...input(),·generated:·options·});
+        177 │ + ····invalid({·...input(),·baseline:·{·...input().baseline,·options·}·});
+        178 │ + ··});
+    172 179 │   
+    173     │ - ··it.each([()·=>·"callback",·new·Date(0),·new·Map(),·Symbol("value"),·1n,·NaN,·Infinity])(
+    174     │ - ····"rejects·invalid·nested·option·data·%s·in·both·operands",
+    175     │ - ····(leaf)·=>·{
+    176     │ - ······invalid({·...input(),·generated:·{·unknown:·{·leaf·}·}·});
+    177     │ - ······invalid({·...input(),·baseline:·{·...input().baseline,·options:·{·leaf·}·}·});
+    178     │ - ····},
+    179     │ - ··);
+        180 │ + ··it.each([
+        181 │ + ····()·=>·"callback",
+        182 │ + ····new·Date(0),
+        183 │ + ····new·Map(),
+        184 │ + ····Symbol("value"),
+        185 │ + ····1n,
+        186 │ + ····NaN,
+        187 │ + ····Infinity,
+        188 │ + ··])("rejects·invalid·nested·option·data·%s·in·both·operands",·(leaf)·=>·{
+        189 │ + ····invalid({·...input(),·generated:·{·unknown:·{·leaf·}·}·});
+        190 │ + ····invalid({·...input(),·baseline:·{·...input().baseline,·options:·{·leaf·}·}·});
+        191 │ + ··});
+    180 192 │   
+    181 193 │     it("rejects cycles in either operand and the stored model", () => {
+    ······· │ 
+    210 222 │     it("contains throwing and revoked proxies without ordinary property reads", () => {
+    211 223 │       for (const trap of ["getPrototypeOf", "ownKeys", "getOwnPropertyDescriptor"]) {
+    212     │ - ······const·proxy·=·new·Proxy({·leaf:·1·},·{·[trap]:·()·=>·{·throw·new·Error(trap);·}·});
+        224 │ + ······const·proxy·=·new·Proxy(
+        225 │ + ········{·leaf:·1·},
+        226 │ + ········{
+        227 │ + ··········[trap]:·()·=>·{
+        228 │ + ············throw·new·Error(trap);
+        229 │ + ··········},
+        230 │ + ········},
+        231 │ + ······);
+    213 232 │         invalid(proxy);
+    214 233 │         invalid({ ...input(), baseline: proxy });
+    ······· │ 
+    221 240 │       invalid(input({}, revoked.proxy));
+    222 241 │       let reads = 0;
+    223     │ - ····const·proxy·=·new·Proxy(input(),·{·get()·{·reads·+=·1;·throw·new·Error("get");·}·});
+        242 │ + ····const·proxy·=·new·Proxy(input(),·{
+        243 │ + ······get()·{
+        244 │ + ········reads·+=·1;
+        245 │ + ········throw·new·Error("get");
+        246 │ + ······},
+        247 │ + ····});
+    224 248 │       expect(value(proxy)).toStrictEqual({ common: undefined });
+    225 249 │       expect(reads).toBe(0);
+    ······· │ 
+    228 252 │     it("rejects non-enumerable, symbol and array-accessor data without executing callbacks", () => {
+    229 253 │       let calls = 0;
+    230     │ - ····const·callback·=·()·=>·{·calls·+=·1;·return·"USD";·};
+        254 │ + ····const·callback·=·()·=>·{
+        255 │ + ······calls·+=·1;
+        256 │ + ······return·"USD";
+        257 │ + ····};
+    231 258 │       invalid(input({}, { formatter: callback } as unknown as RuntimeOptions));
+    232 259 │       invalid(input(Object.defineProperty({}, "hidden", { value: 1 })));
+  
+
+Checked 2 files in 14ms. No fixes applied.
+Found 4 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
+
+exit: 1

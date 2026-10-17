@@ -1,0 +1,5 @@
+The first audit.py invocation exited 1 before completing the audit because the
+reviewer assumed terminalpro/pnpm-lock.yaml existed at revision 76edf85.
+Git reported: fatal: path 'terminalpro/pnpm-lock.yaml' does not exist in '76edf85'
+The failed git show exited 128. No compiler, suite or lint command was rerun.
+The reviewer's dependency path must use the actual repository lock location.

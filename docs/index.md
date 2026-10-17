@@ -11,6 +11,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | See the path from accepted chart modules to the original application experience | [Completion plan](completion-plan.md) |
 | Inspect the latest original chart appearance and editor contracts | [Runtime findings and next boundary](../.kiro/specs/openbb-self-service/chart-runtime-next-plan.md#appearance-and-editor-follow-up-2026-10-17) |
 | Review the next appearance and tooltip implementation boundary | [Appearance/editor design amendment](../.kiro/specs/openbb-self-service/chart-appearance-editor-integration-design.md) |
+| Verify saved appearance, derived colors and tooltip state contracts | [Appearance source verification](../.kiro/specs/openbb-self-service/chart-appearance-source-verification.md) |
 | Review the existing-backend persistence repair | [SQLite query design](../.kiro/specs/openbb-self-service/sqlite-repair-design.md) |
 | Reproduce SQLite query and storage checks | [SQLite verification](../.kiro/specs/openbb-self-service/sqlite-repair-verification.md) |
 | Set up the pinned development tools | [Development toolchain](development.md) |

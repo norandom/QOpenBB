@@ -1,0 +1,49 @@
+{
+  "workerHashesMatch": true,
+  "fixtureProvenanceHashesMatch": true,
+  "immutableClosureUnchanged": true,
+  "placeholderScan": "CLEAN",
+  "qualityErrors": [],
+  "qualityViolations": [],
+  "qualityFileCount": 175,
+  "compositionMetrics": {
+    "repository": "workspace",
+    "path": "terminalpro/src/components/General/Table/Chart/application/appearanceComposition.ts",
+    "owner": "openbb-self-service",
+    "physical": 59,
+    "functions": [
+      {
+        "name": "inputFields",
+        "line": 5,
+        "column": 1,
+        "logical": 12
+      },
+      {
+        "name": "composeAppearanceOptions",
+        "line": 28,
+        "column": 67,
+        "logical": 13
+      }
+    ],
+    "logical": 30
+  },
+  "dependencyVersions": {
+    "vitest": {
+      "version": "4.1.11",
+      "packageSha256": "a28126d97bcaf567da5bed69443b7f3bcd9a7a8c38c8b66e554686b6bb2c10e0"
+    },
+    "typescript": {
+      "version": "5.9.2",
+      "packageSha256": "5a0bb7f286c4b3f1413a42c05f902311b161f70e5f52d9da10490443bfd595a3"
+    },
+    "lodash.merge": {
+      "version": "4.6.2",
+      "packageSha256": "5aaf4c24df9052e680d0728754c249fb94c11aef2e76ec3f76320431915c92f1"
+    },
+    "@biomejs/biome": {
+      "version": "2.4.8",
+      "packageSha256": "a07784133fb8b0781a517001794d8488698ddc1917320514cb1f7b5660f437e3"
+    }
+  },
+  "scope": "Task 2.42 against accepted bc42d60 sibling closure; no current tooltip acceptance"
+}

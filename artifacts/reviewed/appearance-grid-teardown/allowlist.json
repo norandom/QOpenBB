@@ -1,0 +1,78 @@
+{
+  "files": [
+    {
+      "path": "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts",
+      "sha256": "47c9793abc7d528d15b3fce807e669d6ef168b88d2c6f213ac316bfe5d4e41b0"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/callback-lifecycle-probe.json",
+      "sha256": "d5bba0f74cffebd6cbcf436f08d004f16dadd87bc498b04a192672d2c53a97b1"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/callback-lifecycle-probe.log",
+      "sha256": "9d181f5cbfe39b3d003a7ac9635093fe1bcb0e9bad93b44def7d60d56c604f0c"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/fixed-application.json",
+      "sha256": "7ed9f9d27089514daa1990f2b719cf57c0464dc92ac3dc3d1c5170144dd5c6a0"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/fixed-application.log",
+      "sha256": "c3f815ae2dd063dd403278beab9b658caaaf7b2a4a027c66070a1e4e25503f38"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/fixed-focused.json",
+      "sha256": "d53d98136961ba328c8e2177707fd645a5c61bb34c7969e44d36e4819e340a49"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/fixed-focused.log",
+      "sha256": "44ec67ed1927b9426e32fa5f268e2574efa521d000211130a5f922c7934949ab"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/lifecycle-summary.json",
+      "sha256": "93782da630d5328327357ba8da0ec31c81da866591aae3891156b3bc3debf5b6"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/locked-ag-grid-excerpts.txt",
+      "sha256": "e54831960525e1f4486311b23203d955195dcaab68525e01ec4ab03a1cb99019"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/original-focused.json",
+      "sha256": "5b028a45cfb0f7beb9e1989c533666038f5164452797f2c79ac4678320d7fa6e"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/original-focused.log",
+      "sha256": "3d7ae5e33b16f4d9758bb3d9172360ea423e38dbf39d6071233536be2d9d2c7a"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/original-review-application.json",
+      "sha256": "dfc9f184107c1fbfef0c84a46ec3f86b238ab4616261350197fd38865c919cd9"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/original-review-application.log",
+      "sha256": "0fb1601a8377f3fef2c35c4cc9363b59f0c96d3bf632f7f3dd292b7ebac62af0"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/probe.test.ts",
+      "sha256": "cfd3ca2dcb2b3b552741d8e5b99f93d668b25b7a09fc16721d0cb1f9da28cda1"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/report.md",
+      "sha256": "3277a88c0be503294782e7ce0a9b48c90a178efc85c747c363bf4debeaa091fe"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/run-focused.py",
+      "sha256": "762ca0eb9c517c72e5f84896ebf36c0f4abe01fa79d68ded121a0567b8634adb"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/summarize.py",
+      "sha256": "5d9786f27ce9f81fa7b10ccb0f3eb4d9fe48c422a75d6dff5e1c7afb618e578e"
+    }
+  ],
+  "scope": "Test-only lifecycle repair and synthetic local verification evidence",
+  "excluded": [
+    "allowlist.json (self)",
+    "dependency cache",
+    "isolated workspace"
+  ]
+}

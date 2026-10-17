@@ -1,0 +1,409 @@
+{
+  "scope": "Original implementation, controller quality, frozen failed review, authorized test repair and fresh independent passing review; synthetic source/evidence only.",
+  "files": [
+    {
+      "path": "artifacts/appearance-grid-teardown/allowlist.json",
+      "sha256": "383eb2b3a4079a563be0a4c588e2718f1e552e186c52a2392caddcb52d78e569"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/callback-lifecycle-probe.json",
+      "sha256": "d5bba0f74cffebd6cbcf436f08d004f16dadd87bc498b04a192672d2c53a97b1"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/callback-lifecycle-probe.log",
+      "sha256": "9d181f5cbfe39b3d003a7ac9635093fe1bcb0e9bad93b44def7d60d56c604f0c"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/fixed-application.json",
+      "sha256": "7ed9f9d27089514daa1990f2b719cf57c0464dc92ac3dc3d1c5170144dd5c6a0"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/fixed-application.log",
+      "sha256": "c3f815ae2dd063dd403278beab9b658caaaf7b2a4a027c66070a1e4e25503f38"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/fixed-focused.json",
+      "sha256": "d53d98136961ba328c8e2177707fd645a5c61bb34c7969e44d36e4819e340a49"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/fixed-focused.log",
+      "sha256": "44ec67ed1927b9426e32fa5f268e2574efa521d000211130a5f922c7934949ab"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/lifecycle-summary.json",
+      "sha256": "93782da630d5328327357ba8da0ec31c81da866591aae3891156b3bc3debf5b6"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/locked-ag-grid-excerpts.txt",
+      "sha256": "e54831960525e1f4486311b23203d955195dcaab68525e01ec4ab03a1cb99019"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/original-focused.json",
+      "sha256": "5b028a45cfb0f7beb9e1989c533666038f5164452797f2c79ac4678320d7fa6e"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/original-focused.log",
+      "sha256": "3d7ae5e33b16f4d9758bb3d9172360ea423e38dbf39d6071233536be2d9d2c7a"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/original-review-application.json",
+      "sha256": "dfc9f184107c1fbfef0c84a46ec3f86b238ab4616261350197fd38865c919cd9"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/original-review-application.log",
+      "sha256": "0fb1601a8377f3fef2c35c4cc9363b59f0c96d3bf632f7f3dd292b7ebac62af0"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/probe.test.ts",
+      "sha256": "cfd3ca2dcb2b3b552741d8e5b99f93d668b25b7a09fc16721d0cb1f9da28cda1"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/report.md",
+      "sha256": "3277a88c0be503294782e7ce0a9b48c90a178efc85c747c363bf4debeaa091fe"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/run-focused.py",
+      "sha256": "762ca0eb9c517c72e5f84896ebf36c0f4abe01fa79d68ded121a0567b8634adb"
+    },
+    {
+      "path": "artifacts/appearance-grid-teardown/summarize.py",
+      "sha256": "5d9786f27ce9f81fa7b10ccb0f3eb4d9fe48c422a75d6dff5e1c7afb618e578e"
+    },
+    {
+      "path": "artifacts/task-2.44/controller/complexity-stale-manifest-failure.json",
+      "sha256": "691ba92ac8d442b6c2325de094dd4acfb371897e0c40a05507c025bd0db79f5d"
+    },
+    {
+      "path": "artifacts/task-2.44/controller/complexity.json",
+      "sha256": "b2bdf4d4ee282f631047177cb30195d2bd87d689c2e632eb40c5465af74a2bf1"
+    },
+    {
+      "path": "artifacts/task-2.44/controller/data-api-changes.json",
+      "sha256": "06474a8f0da632563eb4620c0e691d922d95dfb021797ec1b9e6e60984b5908c"
+    },
+    {
+      "path": "artifacts/task-2.44/controller/owned-source-hashes.json",
+      "sha256": "0d8750a2abab5c6b7eaf093baf178ad78f91bd0fe52255d3e357a1ac158ab2db"
+    },
+    {
+      "path": "artifacts/task-2.44/controller/workspace-changes.json",
+      "sha256": "ca760f8b4ee7b48d9bc2111f947f65aa67447e34c21c3eb2da178c7000d5a8a9"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/final-stage-manifest.json",
+      "sha256": "00e8de0ee1920922e4029b1a149df0a76b1762952ff25431faab75a5a00efe40"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/freeze.py",
+      "sha256": "e406f525f7169f0b01889f5a0a85708f8d7af7b055c7795c5d5dfb9af57dbb30"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/green-editor.json",
+      "sha256": "e47dba74b72c560831e863e9d744eed874d44bd620d54760846a4ec8c106da68"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/green-editor.log",
+      "sha256": "f5ec10138e053c5df50db78c09256b41036e54bc0da3c9310785b982d6bebba6"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/green-session.json",
+      "sha256": "9798d27febf62c5923ffba4870d1040dc96c1cb51aeefd3210f9b24896c474c3"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/green-session.log",
+      "sha256": "84e813fcc3b7f5106f1f8cb9198109e0c5b2fe24104b8bb37e7e25bf66caee2e"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/green-stage-manifest.json",
+      "sha256": "3a86a478e93eb97e276aefec397793c152ce8671c7c7060163cebec1795c8abd"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/launcher-failure.txt",
+      "sha256": "509be8884bf0f5d1ed3d25ef37df296d3cffc4c900aa10789e8f1e5fa672dc6e"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/lint-final.json",
+      "sha256": "55259fef549979131e08cd3535ffe2b32260cbb5fb7d60fd29590d232bec1887"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/lint-final.log",
+      "sha256": "585f2fea648f2cfb259bc31b4c95fb950b90292432fadb8d1f8494b669e6aac6"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/lint-fix.json",
+      "sha256": "a3c9e866178b10b84cc2274d3aadfb5b89e6b3a7ff800f63fd82eeafa091788d"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/lint-fix.log",
+      "sha256": "f31e4d5a9ac1cbd0686e99c82b65fc58111996cdb0615fd82e015e8592e09b4f"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/lint-initial.json",
+      "sha256": "d53c2e0749e56af0281a8808aff43570160b40a4c2809157a48e86165bd8f433"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/lint-initial.log",
+      "sha256": "0a9bbc48a16ca206304c0869aa918bec26e99bdf411454ca560c2cc7915ad29a"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/measure.py",
+      "sha256": "608f9957388386d171c4a65f0be172660fcf1f70d949e3d51703df2850076f36"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/owned.diff",
+      "sha256": "c1bfb4a8d47ad3593e59b02fc0c8ae6653fbaa5f4c5b4c74d2f5248b39063687"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/publication-allowlist.json",
+      "sha256": "732094321dcf21ce8004605a98a82d1868dc7f34986b3946a2c2bf557c2a27f4"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/red-editor.json",
+      "sha256": "c062a8e715776b200b06a77783e2d01a8854636f1bee68f58d2ce5dc041b33de"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/red-editor.log",
+      "sha256": "7e1a67a3444c87ffc89c9b2ea5bd76798615ebf5aec493c2a2ea29c6cfb1b861"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/red-session.json",
+      "sha256": "4da033c34db9b8f8705a079fc03cbd346a70055b4972ddd3219f312035544588"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/red-session.log",
+      "sha256": "4a3684ed4b4a9394f18e4fca0584745c3d2bd3de377d3426c9cd1cf4b19994ba"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/red-stage-manifest.json",
+      "sha256": "88abe41096a3ba7c3e19daac83714407cca5dac6f546110e73c91a13d5bb5930"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/report.md",
+      "sha256": "6557f88d4ff6b2f69d5a11e9cef57031a9022ac1513d246904250111332565f6"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/run_check.py",
+      "sha256": "5cc317199d0be3879afcbfb5985a3cfa929b702bdbeebaddb58be10f8a8d53bd"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/size-parser.log",
+      "sha256": "985f022d2c4783c0b49a82f6170845aa0ab132ad1c1ca25e3b14f0746e92d4ff"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/size.json",
+      "sha256": "9f5a60046f8c8c527493a2a6bbb9e7b3cbfa3df0df518799c1ff7d406588b053"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/source-manifest.json",
+      "sha256": "0def2607ab254eb6d01e883f6dfb697b82e95681f7495f7a3014cb64c3fd76a6"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/source/terminalpro/src/components/General/Table/Chart/application/sessionState.ts",
+      "sha256": "f8978a8893b09e0a915563ab677c57eeae12be6f4006522ae80ec620a4462c2c"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/source/terminalpro/src/components/General/Table/Chart/compatibility/editorEvents.ts",
+      "sha256": "c708dae759ba45fe49430a55e9c32b3399d0eff8552781600b305d6644ca4c95"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/source/terminalpro/src/components/General/Table/Chart/compatibility/optionStateTypes.ts",
+      "sha256": "56430d89d2bb58b4a888bb09458862d1c28cc4d9a1b72d408c8e1b2145794128"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/source/terminalpro/tests/unit/chart-application/sessionState.test.ts",
+      "sha256": "4cb83a1b3caa6db47d05bbfbb83a12b608838d90cf1fe82e42315fd752171c7b"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/source/terminalpro/tests/unit/chart-compatibility/editorEvents.test.ts",
+      "sha256": "0bda9902f79abfe3d0b6b44c88f2599b2a843142fe7a3f1462071a4abe0fc596"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/stage.py",
+      "sha256": "9d2380b67de17cc1e1fb7c3b9a527d88cb5e263df60e44f0be36e8960c3d85a4"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/strict-application.json",
+      "sha256": "bdc7087bc7daaa1f44b0d06e9e5f3e099eb51b9012e021bb25a44d1ca594f376"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/strict-application.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/strict-compatibility.json",
+      "sha256": "33451f32462e64cc2395bca869183c02fb553bb708ab01e3510cfc2f4a39fd51"
+    },
+    {
+      "path": "artifacts/task-2.44/implementation/strict-compatibility.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/application.json",
+      "sha256": "925d40c9684ee6b026147f48ce29a4a8916275d8496777a4a24028aca9eee646"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/application.log",
+      "sha256": "330a238bd3d09225314f8308ef69d006ee982f4397a9c5508647d4dab1ff0ca6"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/compatibility.json",
+      "sha256": "f70675bef7206eb43409e4862ba2eff7d98b78cdd08d3877ccf9031875bf5293"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/compatibility.log",
+      "sha256": "103d21687b9bab7ac805b8e04d0dea0ad154266ea57622ebec6ee05a67adfd36"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/fixture.diff",
+      "sha256": "a18a4ce7db9b87ed1b649af34a9c7c5b47104793006d5ef1a615faf1f70bbffc"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/freeze-parser-corrections.txt",
+      "sha256": "74aedd9c1eccf66a23021b47a0a7f619ce635b106528e22c2b427797c2f2c6c8"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/freeze.py",
+      "sha256": "44f671afbe21f1d42c9cc5498ee793b596854aff1c5392af0341f417a65d0fc5"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/gridCapture.grid.test.ts",
+      "sha256": "47c9793abc7d528d15b3fce807e669d6ef168b88d2c6f213ac316bfe5d4e41b0"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/lint.json",
+      "sha256": "ef64ac45d32bbd30158ed6a78f05ac4665681cf77f42633bc0e7ec64b0b35d46"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/lint.log",
+      "sha256": "139fc6ef76f49ef4a03391ef4e58c6d886d77b17deae68ab4eabed4521dafaa4"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/prepare.py",
+      "sha256": "835e0a176029b0b46453621a15f00860e3037c9d7aa1b9e4174125589a5c740b"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/report.md",
+      "sha256": "d40058e5ca5220c734b9f15c96880c94c677dcee1894d7eb591d358538466ca3"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/run_check.py",
+      "sha256": "b057c3ee53ce49b070e253b7e44b79fc03da3594c36c43d68d93bc962bc83c73"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/stage-manifest.json",
+      "sha256": "9a7e5ca9f418488695995e5c5af5379c9502c6f028c00705060299c7f640484a"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/strict-application.json",
+      "sha256": "c39d1e05267e23e7943cfad5bc2ee55b119532388320887676d6244fabdbcb74"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/strict-application.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/strict-compatibility.json",
+      "sha256": "fd19605914e2e57c74bf1310f2eba0ab42cd5d7bb26bc5830c0f348c29af4010"
+    },
+    {
+      "path": "artifacts/task-2.44/review-repair/strict-compatibility.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/task-2.44/review/actual-owned.diff",
+      "sha256": "c1bfb4a8d47ad3593e59b02fc0c8ae6653fbaa5f4c5b4c74d2f5248b39063687"
+    },
+    {
+      "path": "artifacts/task-2.44/review/application.json",
+      "sha256": "dfc9f184107c1fbfef0c84a46ec3f86b238ab4616261350197fd38865c919cd9"
+    },
+    {
+      "path": "artifacts/task-2.44/review/application.log",
+      "sha256": "0fb1601a8377f3fef2c35c4cc9363b59f0c96d3bf632f7f3dd292b7ebac62af0"
+    },
+    {
+      "path": "artifacts/task-2.44/review/audit.py",
+      "sha256": "0ee87d6a3e69b33b0fab0a93a5d25a1163b308d83d31e1132f69d7590cc1bd83"
+    },
+    {
+      "path": "artifacts/task-2.44/review/compatibility-complete.json",
+      "sha256": "e2f29fc5e4f5172eb2302c7a4abdd58b4dfd297a6b3c55ca9bca8c4212294a5c"
+    },
+    {
+      "path": "artifacts/task-2.44/review/compatibility-complete.log",
+      "sha256": "cf83600e0d7ec0408415398ff103aabb6767394200354a4f7f1c3613b60521b4"
+    },
+    {
+      "path": "artifacts/task-2.44/review/compatibility.json",
+      "sha256": "00216528994783c99ff353b14e8683192d0eef1ebbcde35f859b5498a03e3574"
+    },
+    {
+      "path": "artifacts/task-2.44/review/compatibility.log",
+      "sha256": "634dbab71847da66a7929dcd999efa7ef33a4499b7883fb62d9c8902be517580"
+    },
+    {
+      "path": "artifacts/task-2.44/review/input-audit.json",
+      "sha256": "019a23e9f993e4428f1354a90fccb635fbc12dcfd423053b3abc1f748f41cde9"
+    },
+    {
+      "path": "artifacts/task-2.44/review/lint.json",
+      "sha256": "f607d08cc2f2f6c6192cea0eb658d8d1f18323d9f2719dbb04eb92358e2f85ff"
+    },
+    {
+      "path": "artifacts/task-2.44/review/lint.log",
+      "sha256": "0d52f8d4ddf638b07ba2db1b5368879bde140f3dba96c2f964eb20af6d4498a7"
+    },
+    {
+      "path": "artifacts/task-2.44/review/prepare.py",
+      "sha256": "178f23037c6580c9ad4a532282d2d98d7350522ce1aeaa77f7752649dde8817d"
+    },
+    {
+      "path": "artifacts/task-2.44/review/publication-allowlist.json",
+      "sha256": "1b352a417ca6e623d92ff3acb3ada8830f28d9723f49644575a277b75b8ecf36"
+    },
+    {
+      "path": "artifacts/task-2.44/review/repair-stage.py",
+      "sha256": "7c66a4875282356b672c10fbfeedc1953163dd089212c697e2e691e76ae92291"
+    },
+    {
+      "path": "artifacts/task-2.44/review/report.md",
+      "sha256": "b4c7d20054fd1661f32bc9db85bea6f734ffd18665808bf51a3924902c7fc3b9"
+    },
+    {
+      "path": "artifacts/task-2.44/review/run_check.py",
+      "sha256": "f2ba5031de4cf2514589293f9c926f6a6959b58919c38e8cca3261c6270308c7"
+    },
+    {
+      "path": "artifacts/task-2.44/review/size.json",
+      "sha256": "a8150574f7d49148294a9b32fd7136e0d835000a6655c927a32d915e3b7a3ccc"
+    },
+    {
+      "path": "artifacts/task-2.44/review/stage-manifest.json",
+      "sha256": "db0eb05c6b2243805c45b0dda7c66d408868fe396d0676250c4b55186658b43f"
+    },
+    {
+      "path": "artifacts/task-2.44/review/staging-failure.md",
+      "sha256": "b0e7cb98c4b0a5c351a41045c98b6bd1374da05bf66c272f1f4a6cdadf9a56ee"
+    },
+    {
+      "path": "artifacts/task-2.44/review/strict-application.json",
+      "sha256": "16a5c0423bd81b753c3c37e2a27c9a23847b612eb85ceb4fff7c1545b54e1b30"
+    },
+    {
+      "path": "artifacts/task-2.44/review/strict-application.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/task-2.44/review/strict-compatibility.json",
+      "sha256": "66a8583060ed357ede9ffcfce49a6dcb3340a3885659da07e92c2df640a2d51e"
+    },
+    {
+      "path": "artifacts/task-2.44/review/strict-compatibility.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts",
+      "sha256": "47c9793abc7d528d15b3fce807e669d6ef168b88d2c6f213ac316bfe5d4e41b0"
+    }
+  ]
+}

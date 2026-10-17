@@ -1,0 +1,83 @@
+91:   }
+92:   getGlobalListeners(async) {
+93:     return async ? this.globalAsyncListeners : this.globalSyncListeners;
+94:   }
+95:   // this gets called inside the grid's thread, for each event that it
+96:   // wants to set async. the grid then batches the events into one setTimeout()
+97:   // because setTimeout() is an expensive operation. ideally we would have
+98:   // each event in it's own setTimeout(), but we batch for performance.
+99:   dispatchAsync(func) {
+100:     this.asyncFunctionsQueue.push(func);
+101:     if (!this.scheduled) {
+102:       const flush = () => {
+103:         window.setTimeout(this.flushAsyncQueue.bind(this), 0);
+104:       };
+105:       this.frameworkOverrides ? this.frameworkOverrides.wrapIncoming(flush) : flush();
+106:       this.scheduled = true;
+107:     }
+108:   }
+109:   // this happens in the next VM turn only, and empties the queue of events
+110:   flushAsyncQueue() {
+111:     this.scheduled = false;
+112:     const queueCopy = this.asyncFunctionsQueue.slice();
+113:     this.asyncFunctionsQueue = [];
+114:     queueCopy.forEach((func) => func());
+115:   }
+116: };
+117: 
+372:   suppressAggFuncInHeader: false,
+373:   alwaysAggregateAtRootLevel: false,
+374:   aggregateOnlyChangedColumns: false,
+375:   suppressAggFilteredOnly: false,
+376:   removePivotHeaderRowWhenSingleValueColumn: false,
+377:   animateRows: true,
+378:   cellFlashDuration: 500,
+379:   cellFadeDuration: 1e3,
+380:   allowShowChangeAfterFilter: false,
+35920:     return scrollPixel;
+35921:   }
+35922: };
+35923: 
+35924: // packages/ag-grid-community/src/rendering/rowRenderer.ts
+35925: var ROW_ANIMATION_TIMEOUT = 400;
+35926: var RowRenderer = class extends BeanStub {
+35927:   constructor() {
+35928:     super(...arguments);
+35929:     this.beanName = "rowRenderer";
+36820:     }
+36821:     this.rowCtrlsByRowIndex[rowIndex] = rowCtrl;
+36822:     return rowCtrl;
+36823:   }
+36824:   destroyRowCtrls(rowCtrlsMap, animate) {
+36825:     const executeInAWhileFuncs = [];
+36826:     if (rowCtrlsMap) {
+36827:       for (const rowCtrl of Object.values(rowCtrlsMap)) {
+36828:         if (!rowCtrl) {
+36829:           continue;
+36830:         }
+36831:         if (this.cachedRowCtrls && rowCtrl.isCacheable()) {
+36832:           this.cachedRowCtrls.addRow(rowCtrl);
+36833:           continue;
+36834:         }
+36835:         rowCtrl.destroyFirstPass(!animate);
+36836:         if (animate) {
+36837:           const instanceId = rowCtrl.instanceId;
+36838:           this.zombieRowCtrls[instanceId] = rowCtrl;
+36839:           executeInAWhileFuncs.push(() => {
+36840:             rowCtrl.destroySecondPass();
+36841:             delete this.zombieRowCtrls[instanceId];
+36842:           });
+36843:         } else {
+36844:           rowCtrl.destroySecondPass();
+36845:         }
+36846:       }
+36847:     }
+36848:     if (animate) {
+36849:       executeInAWhileFuncs.push(() => {
+36850:         this.updateAllRowCtrls();
+36851:         this.dispatchDisplayedRowsChanged();
+36852:       });
+36853:       window.setTimeout(() => executeInAWhileFuncs.forEach((func) => func()), ROW_ANIMATION_TIMEOUT);
+36854:     }
+36855:   }
+36856:   getRowBuffer() {

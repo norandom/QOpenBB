@@ -1,0 +1,15 @@
+# Derive colors without changing saved chart state
+
+Task 2.43 adds one pure helper and its maintained unit tests. Acceptance requires the frozen `DeriveAppearanceColors` function type, exactly five own string data fields on a plain record, descriptor-safe inspection and exception containment. Missing, non-string, accessor, unknown-own and nonplain inputs are invalid. Structurally valid unsupported base/color strings are unresolved with the affected field path and no guessed color.
+
+For the two supported bases, interpolate encoded sRGB channels in the approved normalized evaluation order, clamp and round to lowercase six-digit hex. Grid uses foreground/background with literal `1-.257` dark and `1-.1` light; subtitle independently uses text/chart-background with `.57` dark and `.38` light. Frozen inputs must remain unchanged. The maintained production file must stay below 400 physical lines, 300 logical units and 50 logical units per function.
+
+Requirements checked: 1.1, 1.4, 4.8, 4.9, 10.5, 10.6. Design checked: `chart-appearance-editor-integration-design.md`, Derived colors, File Structure Plan, Dependency Plan and Complexity, Testing Strategy and Failure Handling. The specification language is English. The configured product, tech and structure steering files are absent; the approved design, task text and supplied complexity/testing/delegation/documentation steering provide this task's concrete contracts.
+
+Completion requires focused Vitest, both existing strict TypeScript configurations, own-file Biome and measured production size. Independent review and the full combined gate remain parent-owned. No AG runtime, parser, theme selector, saved-state, renderer, UI, flag or dependency changes are authorized. Standard RED/GREEN applies under the explicit owner override; no temporary feature flag is introduced.
+
+The stage clones frozen task 2.41 source, adds accepted composition bytes from `0a4b2ea256816111702b2de1d2a284bade9a30ec` using `git show`, and adds only this lane's test/source. The immutable contract prerequisite is `bc42d60`. Pending tooltip and grid-fixture repairs are excluded. `red-stage-manifest.json` records every staged source/config/fixture file hash before implementation.
+
+The initial direct PowerShell-to-bash launcher failed during shell parsing because its inherited PATH contained spaces and parentheses. No test ran in that attempt. The argv-only `verify.py` runner fixes that launch issue and preserves named command metadata and logs without shell interpolation. `red-vitest.json` records the actual preimplementation failing test command: exit 1 because the new production module did not yet exist. That is the TDD RED evidence.
+
+Historical exhaustive reference evidence remains unchanged at `artifacts/reviewed/parity/appearance-contract-close/normalized-color-evidence.json`: 262,144 normalized red-channel comparisons with no mismatch. It is reference evidence, not a rerun or a dependency of the maintained suite. Unit results establish this pure source contract only; full renderer, original editor, visual, persistence and application acceptance remain open.

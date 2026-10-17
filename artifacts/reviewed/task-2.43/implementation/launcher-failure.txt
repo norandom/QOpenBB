@@ -1,0 +1,9 @@
+Sanitized launch diagnostic, before the actual RED run:
+bash: -c: line 1: syntax error near unexpected token `('
+
+The direct PowerShell-to-bash launcher expanded the inherited PATH into unquoted
+shell text. A Windows Program Files (x86) entry prevented shell parsing. No test
+process started and no RED evidence was claimed from that attempt. The inherited
+PATH is omitted because its machine-specific entries add no verification value.
+verify.py subsequently launches the pinned Node executable through subprocess
+argv with an environment mapping; red-vitest.json/log record the actual RED run.

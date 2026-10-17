@@ -1,0 +1,78 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/home/mc/qopenbb-work/task243-colors-20261017/terminalpro[39m
+
+ [31m❯[39m tests/unit/chart-application/appearanceColors.test.ts [2m([22m[2m42 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 21[2mms[22m[39m
+[31m     [31m×[31m uses ag-default ratios for #ffffff against #000000[39m[32m 6[2mms[22m[39m
+     [32m✓[39m uses ag-default-dark ratios for #ffffff against #000000[32m 0[2mms[22m[39m
+     [32m✓[39m uses ag-default ratios for #000000 against #ffffff[32m 0[2mms[22m[39m
+     [32m✓[39m uses ag-default-dark ratios for #000000 against #ffffff[32m 0[2mms[22m[39m
+     [32m✓[39m uses ag-default ratios for #000000 against #000000[32m 0[2mms[22m[39m
+     [32m✓[39m uses ag-default-dark ratios for #ffffff against #ffffff[32m 0[2mms[22m[39m
+     [32m✓[39m keeps subtitle aliases independent under ag-default[32m 0[2mms[22m[39m
+     [32m✓[39m keeps subtitle aliases independent under ag-default-dark[32m 0[2mms[22m[39m
+     [32m✓[39m preserves normalized-channel rounding at the captured byte-shortcut edge[32m 0[2mms[22m[39m
+     [32m✓[39m reproduces the finite reviewed 'explicit-derived-tokens' projection[32m 0[2mms[22m[39m
+     [32m✓[39m accepts mixed-case hex and always emits lowercase six-digit colors[32m 0[2mms[22m[39m
+     [32m✓[39m preserves frozen inputs and accepts null-prototype plain records[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level values undefined[32m 1[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level values null[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level values undefined[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level values tokens[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level values 1[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level values true[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level values () => tokens()[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level values Thu Jan 01 1970 01:00:00 GMT+0100 (Central European Standard Time)[32m 0[2mms[22m[39m
+     [32m✓[39m rejects malformed top-level values Map{}[32m 0[2mms[22m[39m
+     [32m✓[39m requires own string data field base[32m 1[2mms[22m[39m
+     [32m✓[39m requires own string data field foregroundColor[32m 1[2mms[22m[39m
+     [32m✓[39m requires own string data field backgroundColor[32m 1[2mms[22m[39m
+     [32m✓[39m requires own string data field textColor[32m 1[2mms[22m[39m
+     [32m✓[39m requires own string data field chartBackgroundColor[32m 1[2mms[22m[39m
+     [32m✓[39m rejects unknown own fields, including non-enumerable fields and symbols[32m 0[2mms[22m[39m
+     [32m✓[39m never executes an accessor for base[32m 0[2mms[22m[39m
+     [32m✓[39m never executes an accessor for foregroundColor[32m 0[2mms[22m[39m
+     [32m✓[39m never executes an accessor for backgroundColor[32m 0[2mms[22m[39m
+     [32m✓[39m never executes an accessor for textColor[32m 0[2mms[22m[39m
+     [32m✓[39m never executes an accessor for chartBackgroundColor[32m 0[2mms[22m[39m
+     [32m✓[39m contains inspection failures and never performs ordinary proxy property reads[32m 1[2mms[22m[39m
+     [32m✓[39m leaves unsupported base  unresolved[32m 0[2mms[22m[39m
+     [32m✓[39m leaves unsupported base ag-default-DARK unresolved[32m 0[2mms[22m[39m
+     [32m✓[39m leaves unsupported base custom unresolved[32m 0[2mms[22m[39m
+     [32m✓[39m leaves unsupported base __proto__ unresolved[32m 0[2mms[22m[39m
+     [32m✓[39m leaves unsupported foregroundColor strings unresolved[32m 1[2mms[22m[39m
+     [32m✓[39m leaves unsupported backgroundColor strings unresolved[32m 1[2mms[22m[39m
+     [32m✓[39m leaves unsupported textColor strings unresolved[32m 0[2mms[22m[39m
+     [32m✓[39m leaves unsupported chartBackgroundColor strings unresolved[32m 0[2mms[22m[39m
+     [32m✓[39m classifies malformed structure before unsupported values without mutation[32m 0[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/unit/chart-application/appearanceColors.test.ts[2m > [22mexplicit appearance color derivation[2m > [22muses ag-default ratios for #ffffff against #000000
+[31m[1mAssertionError[22m: expected { status: 'resolved', …(2) } to strictly equal { status: 'resolved', …(2) }[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[32m-   "gridLineColor": "#1a1a1a",[39m
+[31m+   "gridLineColor": "#191919",[39m
+[2m    "status": "resolved",[22m
+[2m    "subtleTextColor": "#9e9e9e",[22m
+[2m  }[22m
+
+[36m [2m❯[22m tests/unit/chart-application/appearanceColors.test.ts:[2m65:7[22m[39m
+    [90m 63|[39m         })[33m,[39m
+    [90m 64|[39m       )[33m,[39m
+    [90m 65|[39m     )[33m.[39m[34mtoStrictEqual[39m({
+    [90m   |[39m       [31m^[39m
+    [90m 66|[39m       status[33m:[39m [32m"resolved"[39m[33m,[39m
+    [90m 67|[39m       gridLineColor[33m:[39m grid[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m41 passed[39m[22m[90m (42)[39m
+[2m   Start at [22m 14:20:16
+[2m   Duration [22m 705ms[2m (transform 47ms, setup 0ms, import 68ms, tests 21ms, environment 475ms)[22m
+
