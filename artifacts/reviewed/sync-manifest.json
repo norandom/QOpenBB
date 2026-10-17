@@ -112,7 +112,7 @@
     "ui-parity-legend-fixed-relay-review"
   ],
   "sourcepins": {
-    "root_at_sync": "e23b203068c5339c61ac8610e3bd7ab4f949a291",
+    "root_at_sync": "fc9cbc6051f701aa8bb71fd27592eaaa5be09a5a",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -27789,6 +27789,14 @@
       "publishedSHA256": "32c776e63bfc55bbb3f2d87403f466fc31fc075e57c69ef2719c523dd911d8dc",
       "bytes": 1210,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-legend-fixed-relay/publication-allowlist.json",
+      "sourceSHA256": "e78baa39c45fe4fadeda5ab97dd7b06420618c8ffa0c48ef93d2f547f02a066b",
+      "publishedpath": "artifacts/reviewed/ui-parity-legend-fixed-relay/publication-allowlist.json",
+      "publishedSHA256": "e78baa39c45fe4fadeda5ab97dd7b06420618c8ffa0c48ef93d2f547f02a066b",
+      "bytes": 3370,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -28502,5 +28510,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 160853436
+  "total_payload_bytes": 160856806
 }
