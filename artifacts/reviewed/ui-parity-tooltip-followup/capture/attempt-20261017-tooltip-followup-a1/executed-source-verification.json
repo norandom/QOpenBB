@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "manifestSha256": "31c23562ec901872025a66c7a0bc275e722b938e3e1a715305a830f868628530",
+  "sourceManifestSha256": "3c8820b49ec8f694e2e46c212d2d3ebc217be4700c7c44288310a0e7b0ae87c7",
+  "planSha256": "95c7f4384c6c25ea48e99859126e03713c14f09645ed75adbba0e657abf2dbdd",
+  "files": [
+    {
+      "name": "cleanup.mjs",
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "expectedSha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4"
+    },
+    {
+      "name": "collector.mjs",
+      "sha256": "9a067f68588e0a098a818753b5d209f03ebf4b8fa41361df5cf1b0a31cacee8a",
+      "expectedSha256": "9a067f68588e0a098a818753b5d209f03ebf4b8fa41361df5cf1b0a31cacee8a"
+    },
+    {
+      "name": "contract.mjs",
+      "sha256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9",
+      "expectedSha256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9"
+    },
+    {
+      "name": "controls.mjs",
+      "sha256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60",
+      "expectedSha256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60"
+    },
+    {
+      "name": "fixture.json",
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "expectedSha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96"
+    },
+    {
+      "name": "io.mjs",
+      "sha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0",
+      "expectedSha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0"
+    },
+    {
+      "name": "journey.mjs",
+      "sha256": "8d55aa8f47f0ecf5dfe103feef6bd6b99a9c9caef93a87b8bc1545710f347aeb",
+      "expectedSha256": "8d55aa8f47f0ecf5dfe103feef6bd6b99a9c9caef93a87b8bc1545710f347aeb"
+    },
+    {
+      "name": "projection.mjs",
+      "sha256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04",
+      "expectedSha256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04"
+    },
+    {
+      "name": "run.sh",
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "expectedSha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac"
+    },
+    {
+      "name": "start.mjs",
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "expectedSha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf"
+    },
+    {
+      "name": "static-check.mjs",
+      "sha256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf",
+      "expectedSha256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf"
+    },
+    {
+      "name": "verify.mjs",
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "expectedSha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b"
+    }
+  ],
+  "support": [
+    {
+      "name": "followup-static.mjs",
+      "sha256": "063f6f8db0f0ea5e1e46795753a72bc5982c8f9d48b37d220b55c1ad925c07cb"
+    },
+    {
+      "name": "verify-offline.mjs",
+      "sha256": "ccafd0ab1880c584a64c5bb523dec79cf12bd07f427a4df3f23f7ce8e745fc10"
+    },
+    {
+      "name": "freeze-source.mjs",
+      "sha256": "e05a20bb03893e47df11e4584c9dfd8af0a578623b4a32927351c2f317db2e61"
+    }
+  ],
+  "scope": "Copied frozen bytes verified before the separately granted single execution"
+}

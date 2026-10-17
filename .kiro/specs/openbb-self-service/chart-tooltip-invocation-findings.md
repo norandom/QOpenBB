@@ -1,16 +1,20 @@
-# Keep tooltip invocation unverified after the bounded capture
+# Preserve tooltip content observations without assuming picked ownership
 
-All eight planned invocation cases remain unresolved. The corrected original-runtime attempt admitted the financial fixture but issued no pointer hover. Its 47 structural checks establish bounded collection and cleanup, not tooltip correctness. The [capture report](../../../artifacts/reviewed/ui-parity-tooltip-plan/capture/report.md) preserves both attempts, their executed source copies and the exact limits of each observation.
+The follow-up collected 24 pointer probes across seven cases, with useful content observations and unresolved target-versus-display discrepancies. Keyboard coverage remains incomplete. The [follow-up report](../../../artifacts/reviewed/ui-parity-tooltip-followup/capture/report.md) separates intended targets from displayed content; neither stable samples nor a successful wrapper exit establishes complete tooltip parity.
 
 The five-row synthetic USD-million fixture distinguishes duplicate reporting labels, ties, positive/zero/negative amounts, explicit null and an absent revenue key. Admission preserves the numeric values and distinct duplicate wrappers. The absent key becomes an own-property `undefined` in chart options and effective data; explicit null stays null. Neither transition proves what a rendered tooltip includes or omits.
 
 | Gate | Observed result and remaining question |
 | --- | --- |
-| Pointer coordinates | The source-assumed four-node identity predicate failed for all three series. The retained aggregate predicate does not identify which individual identity failed. No pointer input followed; ownership, ordering, ties and missing-value display remain unverified. |
-| Mode controls | Several cases stopped when Tooltip Mode remained hidden after the recorded Expand Series action. No subsequent option selection or pointer probe occurred in those cases. |
-| Keyboard | Single mode's chart series area was not reached within 24 real Tab presses. This is bounded unreachability, not proof that no keyboard path exists. Later modes were not completed. |
-| Stacked family | The collector incorrectly enumerated all visible editor buttons and exceeded its thumbnail bound before selection. Stacked invocation remains untested. |
+| Single and duplicate labels | Three first-row Single probes display their intended series values. Unequal values distinguish the two Q1 observations in three further probes. |
+| Missing values and order | Shared content retains genuine zeros and negative values while omitting null/undefined revenue. Two complete rows display series in source order. |
+| Grouped ties | Both Q4 targets display cash and income but omit tied revenue. Equal values cannot establish picked-series identity. |
+| Compact | A grouped revenue target of 7.125 displays Revenue 27.625. A stacked income target of 12.375 also displays Revenue 27.625. These are retained disagreements, not accepted ownership behavior. |
+| Keyboard | Single remains outside the series area after 24 real Tabs. Multiple records three Tabs before a budget stop; Compact and arrow traversal remain unrun. This does not establish that no keyboard path exists. |
+| Line and stacked | The line tie displays Revenue 7.125. Stacked shared content includes all three raw values in source order, including both tied values. These observations do not identify a private picked object. |
 
-The successful wrapper exit means unresolved outcomes were recorded, not that the eight cases passed. Both attempts have fresh absence checks for their owned container, state, credentials, browser and supervisor. Original diagnostics remain recorded; no clean-console claim follows.
+The unchanged five-row fixture, original image and bounded input budget were preserved. The follow-up recorded 128 inputs and 25 screenshots; its 95 structural checks and 506 evidence-audit checks are not semantic acceptance gates. Cleanup confirms the owned browser, container, disposable state and supervisor absent. Diagnostics remain recorded; no clean-console claim follows.
 
-The next capture needs a reviewed, named coordinate seam and corrected control/thumbnail predicates, reusing already successful bounded helpers where possible. It must not widen into an arbitrary scene walk, guess coordinates or change the fixture to avoid a failed discriminator. These outcomes leave the tooltip invocation portion of the [consuming contract draft](chart-consuming-contract-draft.md) open.
+The [independent review](../../../artifacts/reviewed/ui-parity-tooltip-followup-runtime-review/review.md) checks the publication scope and findings. Contrary to the frozen report's "read-only" wording, rerunning its audit writes a local verification receipt; it does not restart the application or change the selected evidence bytes. The [relocation note](../../../artifacts/reviewed/ui-parity-tooltip-followup-runtime-review/relocation-notes.md) resolves references inside the exact-byte archived plan copy.
+
+The [earlier two attempts](../../../artifacts/reviewed/ui-parity-tooltip-plan/capture/report.md) remain immutable: they emitted no pointer input because their root/control predicates failed. The follow-up corrects those named seams, but does not determine whether its remaining discrepancies arise from target geometry, original picking or tooltip selection. Resolve that boundary and complete bounded keyboard evidence before freezing invocation behavior in the [consuming contract draft](chart-consuming-contract-draft.md). Candidate UI parity remains unverified.

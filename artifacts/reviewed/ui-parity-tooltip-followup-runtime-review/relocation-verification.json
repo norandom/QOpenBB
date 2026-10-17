@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-17",
+  "scope": "Supplementary offline public relocation review",
+  "passed": true,
+  "brokenSnapshotLinks": 11,
+  "mappedDestinations": [
+    {
+      "label": "frozen earlier plan",
+      "originalTarget": "../ui-parity-tooltip-plan/plan.md",
+      "publicDestination": "../ui-parity-tooltip-plan/plan.md",
+      "exists": true
+    },
+    {
+      "label": "outcome report",
+      "originalTarget": "../ui-parity-tooltip-plan/capture/report.md",
+      "publicDestination": "../ui-parity-tooltip-plan/capture/report.md",
+      "exists": true
+    },
+    {
+      "label": "independent source diagnosis",
+      "originalTarget": "../ui-parity-tooltip-review/runtime-review.md",
+      "publicDestination": "../ui-parity-tooltip-review/runtime-review.md",
+      "exists": true
+    },
+    {
+      "label": "accepted acquisition review",
+      "originalTarget": "../ui-parity-tooltip-review/correction-1-review.md",
+      "publicDestination": "../ui-parity-tooltip-review/correction-1-review.md",
+      "exists": true
+    },
+    {
+      "label": "Baseline copies",
+      "originalTarget": "capture/baseline/harness",
+      "publicDestination": "../ui-parity-tooltip-followup/capture/baseline/harness",
+      "exists": true
+    },
+    {
+      "label": "Proposed collector",
+      "originalTarget": "capture/harness",
+      "publicDestination": "../ui-parity-tooltip-followup/capture/harness",
+      "exists": true
+    },
+    {
+      "label": "Explicit diff",
+      "originalTarget": "capture/source-diff.patch",
+      "publicDestination": "../ui-parity-tooltip-followup/capture/source-diff.patch",
+      "exists": true
+    },
+    {
+      "label": "caption helper's",
+      "originalTarget": "../ui-parity-captions/capture/journey.mjs",
+      "publicDestination": "../ui-parity-captions/capture/journey.mjs",
+      "exists": true
+    },
+    {
+      "label": "five-row fixture",
+      "originalTarget": "capture/harness/fixture.json",
+      "publicDestination": "../ui-parity-tooltip-followup/capture/harness/fixture.json",
+      "exists": true
+    },
+    {
+      "label": "static verification",
+      "originalTarget": "capture/static-verification.json",
+      "publicDestination": "../ui-parity-tooltip-followup/capture/static-verification.json",
+      "exists": true
+    },
+    {
+      "label": "offline verification",
+      "originalTarget": "capture/offline-verification.json",
+      "publicDestination": "../ui-parity-tooltip-followup/capture/offline-verification.json",
+      "exists": true
+    }
+  ],
+  "snapshotAndCanonicalPlanSha256": "95c7f4384c6c25ea48e99859126e03713c14f09645ed75adbba0e657abf2dbdd",
+  "copiedAndCanonicalManifestSha256": "3c8820b49ec8f694e2e46c212d2d3ebc217be4700c7c44288310a0e7b0ae87c7",
+  "frozenFilesModified": false
+}

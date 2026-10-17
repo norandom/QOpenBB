@@ -1,0 +1,508 @@
+{
+  "scope": "offline source checks only; no tooltip invocation, runtime or acceptance claim",
+  "runtimeExecuted": false,
+  "command": "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node /mnt/d/Source/QOpenBB/artifacts/ui-parity-tooltip-followup/capture/verify-offline.mjs",
+  "exitCode": 0,
+  "staticCommand": "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node /mnt/d/Source/QOpenBB/artifacts/ui-parity-tooltip-followup/capture/harness/static-check.mjs",
+  "elapsedMs": 859,
+  "sourceManifestSha256": "3c8820b49ec8f694e2e46c212d2d3ebc217be4700c7c44288310a0e7b0ae87c7",
+  "planSha256": "95c7f4384c6c25ea48e99859126e03713c14f09645ed75adbba0e657abf2dbdd",
+  "staticManifestSha256": "31c23562ec901872025a66c7a0bc275e722b938e3e1a715305a830f868628530",
+  "checks": [
+    {
+      "name": "source-only claim",
+      "passed": true
+    },
+    {
+      "name": "current plan link ../ui-parity-tooltip-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link ../ui-parity-tooltip-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "current plan link ../ui-parity-tooltip-plan/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link ../ui-parity-tooltip-plan/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "current plan link ../ui-parity-tooltip-review/runtime-review.md",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link ../ui-parity-tooltip-review/runtime-review.md",
+      "passed": true
+    },
+    {
+      "name": "current plan link ../ui-parity-tooltip-review/correction-1-review.md",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link ../ui-parity-tooltip-review/correction-1-review.md",
+      "passed": true
+    },
+    {
+      "name": "current plan link capture/baseline/harness",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link capture/baseline/harness",
+      "passed": true
+    },
+    {
+      "name": "current plan link capture/harness",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link capture/harness",
+      "passed": true
+    },
+    {
+      "name": "current plan link source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "current plan link capture/source-diff.patch",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link capture/source-diff.patch",
+      "passed": true
+    },
+    {
+      "name": "current plan link ../ui-parity-captions/capture/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link ../ui-parity-captions/capture/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "current plan link capture/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link capture/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "current plan link capture/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link capture/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "current plan link capture/offline-verification.json",
+      "passed": true
+    },
+    {
+      "name": "publication-depth plan link capture/offline-verification.json",
+      "passed": true
+    },
+    {
+      "name": "source identity AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "source identity .kiro/steering/delegation.md",
+      "passed": true
+    },
+    {
+      "name": "source identity .kiro/steering/testing.md",
+      "passed": true
+    },
+    {
+      "name": "source identity .kiro/steering/complexity.md",
+      "passed": true
+    },
+    {
+      "name": "source identity .kiro/steering/documentation.md",
+      "passed": true
+    },
+    {
+      "name": "source identity .kiro/steering/ci.md",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-plan/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-plan/capture/report.md",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-plan/capture/correction-2-proposal.md",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-review/harness-review.md",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-review/correction-1-review.md",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-review/runtime-review.md",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/reviewed/ui-parity-captions/capture/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/static-verification.json",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/executed-source-verification.json",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/baseline/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/fixture.json",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/run.sh",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/start.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/harness/verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/followup-static.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/freeze-source.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/verify-offline.mjs",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/capture/source-diff.patch",
+      "passed": true
+    },
+    {
+      "name": "source identity artifacts/ui-parity-tooltip-followup/plan.md",
+      "passed": true
+    },
+    {
+      "name": "original executed manifest",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved fixture.json",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest fixture.json",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved io.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest io.mjs",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved run.sh",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest run.sh",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved start.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest start.mjs",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "executed file preserved verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "baseline matches executed manifest verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "exact file inventory harness",
+      "passed": true
+    },
+    {
+      "name": "exact file inventory baseline/harness",
+      "passed": true
+    },
+    {
+      "name": "explicit diff matches bytes",
+      "passed": true
+    },
+    {
+      "name": "unchanged accepted guard start.mjs",
+      "passed": true
+    },
+    {
+      "name": "unchanged accepted guard run.sh",
+      "passed": true
+    },
+    {
+      "name": "unchanged accepted guard io.mjs",
+      "passed": true
+    },
+    {
+      "name": "unchanged accepted guard cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "unchanged accepted guard verify.mjs",
+      "passed": true
+    },
+    {
+      "name": "unchanged accepted guard fixture.json",
+      "passed": true
+    },
+    {
+      "name": "journey changes only persisted control receipts",
+      "passed": true
+    },
+    {
+      "name": "offline support syntax verify-offline.mjs",
+      "passed": true
+    },
+    {
+      "name": "offline support syntax freeze-source.mjs",
+      "passed": true
+    },
+    {
+      "name": "offline support syntax followup-static.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh static command completed",
+      "passed": true
+    },
+    {
+      "name": "fresh static scope",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity cleanup.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity collector.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity controls.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity fixture.json",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity io.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity projection.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity run.sh",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity start.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity static-check.mjs",
+      "passed": true
+    },
+    {
+      "name": "fresh manifest identity verify.mjs",
+      "passed": true
+    }
+  ],
+  "staticChecks": 136,
+  "staticOutput": {
+    "checks": 136,
+    "passed": true,
+    "runtimeExecuted": false,
+    "files": 12
+  }
+}

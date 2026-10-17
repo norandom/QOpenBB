@@ -1,0 +1,26 @@
+{
+  "scope": "Independent bounded tooltip follow-up review; approved for publication with frozen evidence",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-followup-runtime-review/review.md",
+      "sha256": "337cff9c46139520434fd0671d9436e74085e537e8e6d1fe8ffdc0ef6676feae",
+      "bytes": 8887,
+      "sanitization": "None; independent research review and synthetic evidence audit"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-followup-runtime-review/audit.mjs",
+      "sha256": "c365af25f14bd840100be3aafbb324e8b44097c07f8ae10f1586242a11a2f5f0",
+      "bytes": 6383,
+      "sanitization": "None; independent research review and synthetic evidence audit"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-followup-runtime-review/verification.json",
+      "sha256": "4ffba9d6701a446ed3b391ce8f13086a34b68481a5bc5a7f3b93efea934a7d46",
+      "bytes": 45029,
+      "sanitization": "None; independent research review and synthetic evidence audit"
+    }
+  ],
+  "omissions": [
+    "No runtime logs, credentials, profiles or private receipts included"
+  ]
+}

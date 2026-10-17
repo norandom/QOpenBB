@@ -1,0 +1,697 @@
+{
+  "scope": "Derived finite observations; intended target is not proof of actual picked identity",
+  "observations": [
+    {
+      "case": "T01",
+      "id": "T01.p1",
+      "ordinal": 0,
+      "requested": "cashFlow",
+      "target": "cashFlow",
+      "wrapper": 0,
+      "targetYValue": -4.125,
+      "point": {
+        "x": 347.8225,
+        "y": 310.415625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T01.p1.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T01",
+      "id": "T01.p2",
+      "ordinal": 0,
+      "requested": "operatingIncome",
+      "target": "operatingIncome",
+      "wrapper": 0,
+      "targetYValue": 27.625,
+      "point": {
+        "x": 371.8225,
+        "y": 218.340625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "27.625"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T01.p2.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T01",
+      "id": "T01.p3",
+      "ordinal": 0,
+      "requested": "revenue",
+      "target": "revenue",
+      "wrapper": 0,
+      "targetYValue": 12.375,
+      "point": {
+        "x": 395.8225,
+        "y": 262.565625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T01.p3.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T02",
+      "id": "T02.p4",
+      "ordinal": 1,
+      "requested": "revenue",
+      "target": "revenue",
+      "wrapper": 1,
+      "targetYValue": 27.625,
+      "point": {
+        "x": 499.22249999999997,
+        "y": 218.340625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T02.p4.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T02",
+      "id": "T02.p5",
+      "ordinal": 1,
+      "requested": "operatingIncome",
+      "target": "operatingIncome",
+      "wrapper": 1,
+      "targetYValue": 12.375,
+      "point": {
+        "x": 475.22249999999997,
+        "y": 262.565625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "12.375"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T02.p5.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T02",
+      "id": "T02.p6",
+      "ordinal": 0,
+      "requested": "revenue",
+      "target": "revenue",
+      "wrapper": 0,
+      "targetYValue": 12.375,
+      "point": {
+        "x": 395.8225,
+        "y": 262.565625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T02.p6.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T03",
+      "id": "T03.p7",
+      "ordinal": 2,
+      "requested": "operatingIncome",
+      "target": "cashFlow",
+      "wrapper": 2,
+      "targetYValue": -7.125,
+      "point": {
+        "x": 554.6225,
+        "y": 319.115625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-7.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "0"
+        }
+      ],
+      "heading": [
+        "2024-Q2"
+      ],
+      "pagination": false,
+      "image": "T03.p7.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T03",
+      "id": "T03.p8",
+      "ordinal": 3,
+      "requested": "operatingIncome",
+      "target": "operatingIncome",
+      "wrapper": 3,
+      "targetYValue": -3.375,
+      "point": {
+        "x": 682.0225,
+        "y": 308.240625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "0"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "-3.375"
+        }
+      ],
+      "heading": [
+        "2024-Q3"
+      ],
+      "pagination": false,
+      "image": "T03.p8.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T04",
+      "id": "T04.p9",
+      "ordinal": 4,
+      "requested": "revenue",
+      "target": "revenue",
+      "wrapper": 4,
+      "targetYValue": 7.125,
+      "point": {
+        "x": 809.4225,
+        "y": 277.790625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "2.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "7.125"
+        }
+      ],
+      "heading": [
+        "2024-Q4"
+      ],
+      "pagination": false,
+      "image": "T04.p9.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T04",
+      "id": "T04.p10",
+      "ordinal": 4,
+      "requested": "operatingIncome",
+      "target": "operatingIncome",
+      "wrapper": 4,
+      "targetYValue": 7.125,
+      "point": {
+        "x": 785.4225,
+        "y": 277.790625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "2.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "7.125"
+        }
+      ],
+      "heading": [
+        "2024-Q4"
+      ],
+      "pagination": false,
+      "image": "T04.p10.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T04",
+      "id": "T04.p11",
+      "ordinal": 0,
+      "requested": "cashFlow",
+      "target": "cashFlow",
+      "wrapper": 0,
+      "targetYValue": -4.125,
+      "point": {
+        "x": 347.8225,
+        "y": 310.415625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "27.625"
+        },
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T04.p11.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T04",
+      "id": "T04.p12",
+      "ordinal": 1,
+      "requested": "cashFlow",
+      "target": "cashFlow",
+      "wrapper": 1,
+      "targetYValue": 8.125,
+      "point": {
+        "x": 451.22249999999997,
+        "y": 274.890625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "8.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "12.375"
+        },
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T04.p12.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T05",
+      "id": "T05.p13",
+      "ordinal": 0,
+      "requested": "cashFlow",
+      "target": "cashFlow",
+      "wrapper": 0,
+      "targetYValue": -4.125,
+      "point": {
+        "x": 347.8225,
+        "y": 310.415625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        }
+      ],
+      "heading": [],
+      "pagination": false,
+      "image": "T05.p13.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T05",
+      "id": "T05.p14",
+      "ordinal": 0,
+      "requested": "operatingIncome",
+      "target": "operatingIncome",
+      "wrapper": 0,
+      "targetYValue": 27.625,
+      "point": {
+        "x": 371.8225,
+        "y": 218.340625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "27.625"
+        }
+      ],
+      "heading": [],
+      "pagination": false,
+      "image": "T05.p14.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T05",
+      "id": "T05.p15",
+      "ordinal": 0,
+      "requested": "revenue",
+      "target": "revenue",
+      "wrapper": 0,
+      "targetYValue": 12.375,
+      "point": {
+        "x": 395.8225,
+        "y": 262.565625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ],
+      "heading": [],
+      "pagination": false,
+      "image": "T05.p15.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T05",
+      "id": "T05.p16",
+      "ordinal": 1,
+      "requested": "revenue",
+      "target": "revenue",
+      "wrapper": 1,
+      "targetYValue": 27.625,
+      "point": {
+        "x": 499.22249999999997,
+        "y": 218.340625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ],
+      "heading": [],
+      "pagination": false,
+      "image": "T05.p16.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T05",
+      "id": "T05.p17",
+      "ordinal": 4,
+      "requested": "revenue",
+      "target": "revenue",
+      "wrapper": 4,
+      "targetYValue": 7.125,
+      "point": {
+        "x": 809.4225,
+        "y": 277.790625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ],
+      "heading": [],
+      "pagination": false,
+      "image": "T05.p17.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T07",
+      "id": "T07.p46",
+      "ordinal": 4,
+      "requested": "revenue",
+      "target": "revenue",
+      "wrapper": 4,
+      "targetYValue": 7.125,
+      "point": {
+        "x": 825.0029761904761,
+        "y": 256.7
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "7.125"
+        }
+      ],
+      "heading": [
+        "2024-Q4"
+      ],
+      "pagination": false,
+      "image": "T07.p46.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T07",
+      "id": "T07.p47",
+      "ordinal": 0,
+      "requested": "cashFlow",
+      "target": "cashFlow",
+      "wrapper": 0,
+      "targetYValue": -4.125,
+      "point": {
+        "x": 332.62202380952385,
+        "y": 322.23125
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T07.p47.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T07",
+      "id": "T07.p48",
+      "ordinal": 2,
+      "requested": "cashFlow",
+      "target": "cashFlow",
+      "wrapper": 2,
+      "targetYValue": -7.125,
+      "point": {
+        "x": 578.8125,
+        "y": 339.70625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-7.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "0"
+        }
+      ],
+      "heading": [
+        "2024-Q2"
+      ],
+      "pagination": false,
+      "image": "T07.p48.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T07",
+      "id": "T07.p49",
+      "ordinal": 3,
+      "requested": "operatingIncome",
+      "target": "operatingIncome",
+      "wrapper": 3,
+      "targetYValue": -3.375,
+      "point": {
+        "x": 701.9077380952381,
+        "y": 317.8625
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "0"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "-3.375"
+        }
+      ],
+      "heading": [
+        "2024-Q3"
+      ],
+      "pagination": false,
+      "image": "T07.p49.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T08",
+      "id": "T08.p50",
+      "ordinal": 0,
+      "requested": "cashFlow",
+      "target": "cashFlow",
+      "wrapper": 0,
+      "targetYValue": -4.125,
+      "point": {
+        "x": 371.8225,
+        "y": 304.434375
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "-4.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "27.625"
+        },
+        {
+          "label": "Revenue (USD millions)",
+          "value": "12.375"
+        }
+      ],
+      "heading": [
+        "2024-Q1"
+      ],
+      "pagination": false,
+      "image": "T08.p50.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T08",
+      "id": "T08.p51",
+      "ordinal": 4,
+      "requested": "revenue",
+      "target": "revenue",
+      "wrapper": 4,
+      "targetYValue": 7.125,
+      "point": {
+        "x": 785.4225,
+        "y": 274.709375
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Cash <&> flow (USD millions)",
+          "value": "2.125"
+        },
+        {
+          "label": "Operating Income (USD millions)",
+          "value": "7.125"
+        },
+        {
+          "label": "Revenue (USD millions)",
+          "value": "7.125"
+        }
+      ],
+      "heading": [
+        "2024-Q4"
+      ],
+      "pagination": false,
+      "image": "T08.p51.png",
+      "leaveVisible": false,
+      "settledPair": true
+    },
+    {
+      "case": "T08",
+      "id": "T08.p52",
+      "ordinal": 1,
+      "requested": "operatingIncome",
+      "target": "operatingIncome",
+      "wrapper": 1,
+      "targetYValue": 12.375,
+      "point": {
+        "x": 475.22249999999997,
+        "y": 228.671875
+      },
+      "status": "stable",
+      "rows": [
+        {
+          "label": "Revenue (USD millions)",
+          "value": "27.625"
+        }
+      ],
+      "heading": [],
+      "pagination": false,
+      "image": "T08.p52.png",
+      "leaveVisible": false,
+      "settledPair": true
+    }
+  ]
+}

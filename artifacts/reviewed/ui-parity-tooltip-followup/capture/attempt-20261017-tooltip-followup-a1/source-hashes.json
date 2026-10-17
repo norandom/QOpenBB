@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "status": "source-only proposal; independent review and controller grant required; no runtime acceptance",
+  "runtimeExecuted": false,
+  "original": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+  "image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+  "fixtureCanonicalSha256": "bda68b15aee2192684d67086c4a599f852943a3079882d4aeb744e6efab262ad",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "kind": "immutable-input",
+      "bytes": 6960,
+      "sha256": "0200bca366bcf2e830a75011a0b5ff78bd174391b28013ba8e1a4295a1e1cff2"
+    },
+    {
+      "path": ".kiro/steering/delegation.md",
+      "kind": "immutable-input",
+      "bytes": 4333,
+      "sha256": "d98403a13707e87a37f30b18ec65f35ab93331304058a4a4cfa3ec669bfb1bb9"
+    },
+    {
+      "path": ".kiro/steering/testing.md",
+      "kind": "immutable-input",
+      "bytes": 5216,
+      "sha256": "f326897dd05ff9976522f7f3270b485d4247c2643debfb9ffd2f3da3a616fe4f"
+    },
+    {
+      "path": ".kiro/steering/complexity.md",
+      "kind": "immutable-input",
+      "bytes": 4171,
+      "sha256": "b8b3899b658718a1d5d0734131914f5f9a80e5af126d30cbb413640dd698f088"
+    },
+    {
+      "path": ".kiro/steering/documentation.md",
+      "kind": "immutable-input",
+      "bytes": 3981,
+      "sha256": "3cba7aae60709091e95908f7dc1f04cee4b539a12a37eb1dd3b35bb2f1634971"
+    },
+    {
+      "path": ".kiro/steering/ci.md",
+      "kind": "immutable-input",
+      "bytes": 4078,
+      "sha256": "94a2b0c0339ba45995e8828cdd0eae42a8ceaab2941fb8410ffbcf376aa89dbd"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-plan/plan.md",
+      "kind": "immutable-input",
+      "bytes": 23280,
+      "sha256": "745c11da2995a2ad1a629c5c2c2dfd13162f6ec8b77255988f7ab5375c6eb5dc"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-plan/source-hashes.json",
+      "kind": "immutable-input",
+      "bytes": 10436,
+      "sha256": "9e25d29614d728471f1c329cb8cebc2089f22f02c83635c87f2700ae320e3f8b"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-plan/capture/report.md",
+      "kind": "immutable-input",
+      "bytes": 5754,
+      "sha256": "f2ee081cfcb85a6387d8856aac928a15264819ffddce6f8d0034b3cb514a6151"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-plan/capture/correction-2-proposal.md",
+      "kind": "immutable-input",
+      "bytes": 3654,
+      "sha256": "b38d059bde822f4f8dd08643c62f811473e349c51608368b8c2586f3458f2bca"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-review/harness-review.md",
+      "kind": "immutable-input",
+      "bytes": 3586,
+      "sha256": "43f53a37381041e9be644a836016d71fe414d0c3ee2c413f4b8f8a34edcd4dc7"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-review/correction-1-review.md",
+      "kind": "immutable-input",
+      "bytes": 2453,
+      "sha256": "cc2b5023f05815b1280a629fddf069c3aafff6f523f414d06bc9d44b22a2ed88"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-review/runtime-review.md",
+      "kind": "immutable-input",
+      "bytes": 4106,
+      "sha256": "09f3fa0e63dc77e742bc71064253ded345c0d4d0f81075f00e2e261c23534059"
+    },
+    {
+      "path": "artifacts/reviewed/ui-parity-captions/capture/journey.mjs",
+      "kind": "immutable-input",
+      "bytes": 22664,
+      "sha256": "1da4c6c2d6be44c198afd3e4d295bd3c021e278acb9313707f76f6ba57d6c255"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/static-verification.json",
+      "kind": "immutable-input",
+      "bytes": 7803,
+      "sha256": "c098553db7a38c72eafec8ab0fc3a7e06c41ce74396f9062e44c794b8f6cb123"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/executed-source-verification.json",
+      "kind": "immutable-input",
+      "bytes": 2729,
+      "sha256": "b7393584d2686080eb73e4a74b9bd2c4e5685eff42071e0bc5fc7a50ec0ade42"
+    }
+  ],
+  "baseline": [
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/cleanup.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 2652,
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/cleanup.mjs"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/collector.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 3658,
+      "sha256": "fd20d2389af53cb4684784ae5d1f15af898791c2832d65e32f8d8ca822eafc64",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/collector.mjs"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/contract.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 2533,
+      "sha256": "acfb993eee84733ac9999a99e1ab8e0bd850f4b85e0b48b838177b59e2f79aed",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/contract.mjs"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/controls.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 2236,
+      "sha256": "88f68d6f0840f6aa48a61ad7a8bd0bda5b25b4bcc380ddfd86c9222bbfa9ee59",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/controls.mjs"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/fixture.json",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 2031,
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/fixture.json"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/io.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 1327,
+      "sha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/io.mjs"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/journey.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 18121,
+      "sha256": "5c227796428b398ac3607b7113f952b103f0a1a94bee0578a590c9900cff9f74",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/journey.mjs"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/projection.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 9589,
+      "sha256": "ef32bcfe55198d7b473154d157c87b756dacfb84c3ed6a4b9e7905f1c897588c",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/projection.mjs"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/run.sh",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 2183,
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/run.sh"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/start.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 2604,
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/start.mjs"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/static-check.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 11791,
+      "sha256": "8d321b1f2f3aecdcf3af5e91c1bb5b59e0d88edb542ded3fa14fe28712ed0f0c",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/static-check.mjs"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/baseline/harness/verify.mjs",
+      "kind": "byte-identical-executed-copy",
+      "bytes": 2984,
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b",
+      "sourcePath": "artifacts/ui-parity-tooltip-plan/capture/attempt-20261017-r4-a2/harness/verify.mjs"
+    }
+  ],
+  "proposed": [
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/cleanup.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 2652,
+      "sha256": "497b06a7c78c7840de4282bc29dd6344066ac915662429da6fcba2f3d5995ff4"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/collector.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 3994,
+      "sha256": "9a067f68588e0a098a818753b5d209f03ebf4b8fa41361df5cf1b0a31cacee8a"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/contract.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 2533,
+      "sha256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/controls.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 3159,
+      "sha256": "93afe9c2f3e6169953c6b2a3a8ca94f14983a96a2dca86df747d9513062e6a60"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/fixture.json",
+      "kind": "proposed-not-executed",
+      "bytes": 2031,
+      "sha256": "e23c37b16aeaf04324bb2058f5d3dcd043ab52441e23542d09caefdee1213e96"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/io.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 1327,
+      "sha256": "0241334f0a14a15a0739ea7b287ce87374f37ab5b13490c22c829597486ee9a0"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/journey.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 18240,
+      "sha256": "8d55aa8f47f0ecf5dfe103feef6bd6b99a9c9caef93a87b8bc1545710f347aeb"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/projection.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 10302,
+      "sha256": "db9393126b9ebb4953454245c5f30b1cc4ad70d2b2fddae17afc35e55f0bce04"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/run.sh",
+      "kind": "proposed-not-executed",
+      "bytes": 2183,
+      "sha256": "6248dd2fef1afef269ff4acbcdccd72734b17017603c190f791f0ebec176a4ac"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/start.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 2604,
+      "sha256": "7268a7538c79f44a067d0d841220e1f97937a0f9c237e4bbfdc3ebf697397bdf"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/static-check.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 12175,
+      "sha256": "1a1129f1d0b6eb42837316a193557f6e87e20019df27df4ba338efb74ae10fdf"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/harness/verify.mjs",
+      "kind": "proposed-not-executed",
+      "bytes": 2984,
+      "sha256": "5a3e3f461f13934a7668eb04a2703dcc6c50bf686ebb5f3f25c345cfd72d3a7b"
+    }
+  ],
+  "support": [
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/followup-static.mjs",
+      "kind": "offline-support",
+      "bytes": 7280,
+      "sha256": "063f6f8db0f0ea5e1e46795753a72bc5982c8f9d48b37d220b55c1ad925c07cb"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/freeze-source.mjs",
+      "kind": "offline-support",
+      "bytes": 3593,
+      "sha256": "e05a20bb03893e47df11e4584c9dfd8af0a578623b4a32927351c2f317db2e61"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/verify-offline.mjs",
+      "kind": "offline-support",
+      "bytes": 4898,
+      "sha256": "ccafd0ab1880c584a64c5bb523dec79cf12bd07f427a4df3f23f7ce8e745fc10"
+    },
+    {
+      "path": "artifacts/ui-parity-tooltip-followup/capture/source-diff.patch",
+      "kind": "offline-support",
+      "bytes": 14642,
+      "sha256": "e5bd566a6638a1d4880169cb21a1749fb9361be5e4e2973d751548460aedd29b"
+    }
+  ],
+  "plan": {
+    "path": "artifacts/ui-parity-tooltip-followup/plan.md",
+    "kind": "follow-up-plan",
+    "bytes": 11225,
+    "sha256": "95c7f4384c6c25ea48e99859126e03713c14f09645ed75adbba0e657abf2dbdd"
+  }
+}

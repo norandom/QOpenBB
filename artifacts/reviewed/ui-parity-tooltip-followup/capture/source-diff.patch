@@ -1,0 +1,150 @@
+--- baseline/harness/collector.mjs
++++ harness/collector.mjs
+@@ -5,7 +5,11 @@
+ const finite=x=>typeof x==='number'&&Number.isFinite(x);
+ export function coordinate(g,ordinal,key,family){
+   if(g.dpr!==1||g.animationActive!==false)throw Error('coordinate-unresolved: DPR/animation');
+-  const s=g.series.find(s=>s.yKey===key);if(!s||!s.chainValid)throw Error('coordinate-unresolved: exact parent chain');
++  const s=g.series.find(s=>s.yKey===key);
++  if(!s||!s.chainValid||s.terminalValid!==true||
++    !['contentGroup','managedParent','seriesRoot','sceneRoot'].every(k=>s.nodePresence?.[k]===true)||
++    !['contentGroup','managedParent','seriesRoot','sceneRoot'].every(k=>s.nodeKinds?.[k]==='object')||
++    !['contentToManaged','managedToSeriesRoot','seriesRootToSceneRoot'].every(k=>s.links?.[k]===true))throw Error('coordinate-unresolved: exact parent chain');
+   const n=s.nodes.find(n=>v(n.fields.datumIndex)===ordinal);
+   if(!n)throw Error('no-hittable-node: missing datum ordinal');
+   for(let i=0;i<4;i++){const t=s.transforms[i],plain=i===1||i===3;
+--- baseline/harness/contract.mjs
++++ harness/contract.mjs
+@@ -2,7 +2,7 @@
+ import {createHash} from 'node:crypto';
+ export const source='38dffc33389aca0e4a87e0e88d42f7067aa220df';
+ export const image='sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f';
+-export const planHash='745c11da2995a2ad1a629c5c2c2dfd13162f6ec8b77255988f7ab5375c6eb5dc';
++export const planHash='95c7f4384c6c25ea48e99859126e03713c14f09645ed75adbba0e657abf2dbdd';
+ export const fixtureHash='bda68b15aee2192684d67086c4a599f852943a3079882d4aeb744e6efab262ad';
+ export const limits=Object.freeze({cases:8,setupActions:24,caseActions:36,keyboardActions:120,totalActions:396,
+   caseMs:60000,keyboardMs:120000,startupMs:180000,casesMs:600000,cleanupMs:60000,outerMs:900000,inputStopMs:840000,
+--- baseline/harness/controls.mjs
++++ harness/controls.mjs
+@@ -1,4 +1,13 @@
+-export function controls(page,input){
++export async function expandSeries(heading,click,retain){
++  const before=await heading.getAttribute('aria-expanded');
++  const receipt={kind:'series-expansion',before,after:null,clicked:false,status:'before'};retain({...receipt});
++  if(!['true','false'].includes(before))throw Error('Series expanded contract missing');
++  if(before==='false'){receipt.clicked=true;await click('Expand Series',heading);}
++  receipt.after=await heading.getAttribute('aria-expanded');receipt.status='after';retain({...receipt});
++  if(receipt.after!=='true')throw Error('Series expansion unresolved');
++}
++export const columnNames=/^(Grouped Column|Stacked Column)(\. Selected)?$/;
++export function controls(page,input,retain=()=>{}){
+   const panel=()=>page.locator('.ag-chart-docked-container');
+   async function one(locator){await locator.waitFor({state:'visible',timeout:4000});if(await locator.count()!==1)throw Error('Unique visible control required');return locator;}
+   const click=async(label,l)=>input(label,await one(l),'click');
+@@ -6,15 +15,20 @@
+   async function open(){if(await panel().isVisible())return;await click('Widget menu',page.locator('button').filter({has:page.locator('svg#list-unordered')}));
+     await click('Chart settings',page.getByRole('menuitem',{name:'Chart settings',exact:true}));}
+   async function mode(name){await open();await click('Customize',panel().getByRole('tab',{name:'Customize',exact:true}));
+-    const heading=await one(group().locator('.ag-charts-format-top-level-group-title-bar'));
+-    const expanded=await heading.evaluate(n=>n.closest('.ag-charts-format-top-level-group').className.includes('expanded'));
+-    if(!expanded)await click('Expand Series',heading);
++    const heading=await one(group().locator(':scope > .ag-charts-format-top-level-group-title-bar'));
++    await expandSeries(heading,click,retain);
+     await click('Tooltip Mode',group().getByRole('combobox',{name:'Tooltip Mode',exact:true}));
+     await click('Mode '+name,page.getByRole('option',{name,exact:true}));}
+   async function family(name){await open();await click('Chart',panel().getByRole('tab',{name:'Chart',exact:true}));
+-    let thumbnails=null;if(name==='stackedColumn'){const buttons=await panel().getByRole('button').evaluateAll(xs=>xs.filter(n=>n.getClientRects().length).map(n=>({role:n.getAttribute('role')||'button',name:n.getAttribute('aria-label')||n.textContent.trim(),selected:n.getAttribute('aria-pressed')})));
+-      if(buttons.length>32)throw Error('Thumbnail bound 32');thumbnails=buttons;}
+-    await click('Family '+name,panel().getByRole('button',{name:{groupedColumn:'Grouped Column',line:'Line',stackedColumn:'Stacked Column'}[name],exact:true}));return thumbnails;}
++    let thumbnails=null;if(name==='stackedColumn'){
++      const candidates=panel().getByRole('button',{name:columnNames,exact:true}),count=await candidates.count();
++      retain({kind:'column-thumbnail-count',count});if(count>32)throw Error('Thumbnail bound 32');
++      thumbnails=await candidates.evaluateAll(xs=>xs.filter(n=>n.getClientRects().length).map(n=>({role:n.getAttribute('role')||'button',name:n.getAttribute('aria-label')||n.textContent.trim(),selected:n.getAttribute('aria-pressed')})));
++      retain({kind:'column-thumbnails',thumbnails});}
++    const target={groupedColumn:/^Grouped Column(\. Selected)?$/,line:'Line',stackedColumn:/^Stacked Column(\. Selected)?$/}[name];
++    const button=panel().getByRole('button',{name:target,exact:true});
++    if(name==='stackedColumn'&&await button.count()!==1)throw Error('selector-unresolved: unique Stacked Column required');
++    await click('Family '+name,button);return thumbnails;}
+   async function close(){const close=page.locator('.ag-tabs-close-button.ag-chart-tabbed-menu-close-button');if(await close.isVisible())await click('Close editor',close);}
+   return {one,mode,family,close};
+ }
+--- baseline/harness/journey.mjs
++++ harness/journey.mjs
+@@ -27,7 +27,8 @@
+     entry.status='observed';if(ready){const observed=await page.evaluate(dom);entry.after={active:observed.active,tooltip:observed.tooltip?{visible:observed.tooltip.visible,heading:observed.tooltip.heading,rows:observed.tooltip.rows}:null,liveStatus:observed.liveStatus};entry.eventsTo=await page.evaluate(()=>window.__tooltip.events.length);}else entry.after={setup:true};
+   }catch(e){entry.status='failed';entry.reason=String(e.message).split('\n')[0].replaceAll(credential.email,'[redacted]').replaceAll(credential.password,'[redacted]');throw e;}
+   finally{entry.elapsedMs=Date.now()-started;persist();}}
+-const ui=()=>controls(page,input);
++const ui=()=>controls(page,input,receipt=>{if(!current)throw Error('Case receipt required');
++  (current.controlReceipts??=[]).push(receipt);persist();});
+ async function screenshot(name){if(shots>=limits.screenshots)throw Error('Screenshot bound');const bytes=await page.screenshot();png(name,bytes);shots++;return name+'.png';}
+ async function probe(ordinal,key,fallback){
+   guard();if(probes>=limits.probes)throw Error('Probe bound');probes++;
+--- baseline/harness/projection.mjs
++++ harness/projection.mjs
+@@ -65,15 +65,22 @@
+   const p=window.__tooltip,c=window.__tooltipProxy.chart;
+   const canvas=[...document.querySelectorAll('.ag-charts-canvas canvas')].filter(p.visible);if(canvas.length!==1)throw Error('One visible chart canvas required');
+   const areas=[...document.querySelectorAll('.ag-charts-series-area')].filter(p.visible);if(areas.length!==1)throw Error('One series area required');
+-  const series=p.cap(c.series,3,'Live series').map(s=>{const group=s.contentGroup,managed=group?.parentNode,root=c.ctx.root,sr=c.seriesRoot;
+-    const chainValid=!!group&&!!managed&&!!sr&&!!root&&group!==managed&&managed!==sr&&sr!==root&&
+-      group.parentNode===managed&&managed.parentNode===sr&&sr.parentNode===root&&(root.parentNode===null||root.parentNode===undefined);
++  const series=p.cap(c.series,3,'Live series').map(s=>{const group=s.contentGroup,managed=group?.parentNode,root=c.ctx.scene.root,sr=c.seriesRoot;
++    const present=n=>n!==null&&n!==undefined;
++    const nodePresence={contentGroup:present(group),managedParent:present(managed),seriesRoot:present(sr),sceneRoot:present(root)};
++    const kind=n=>n===null?'null':typeof n;
++    const nodeKinds={contentGroup:kind(group),managedParent:kind(managed),seriesRoot:kind(sr),sceneRoot:kind(root)};
++    const links={contentToManaged:present(group)&&present(managed)&&group!==managed&&group.parentNode===managed,
++      managedToSeriesRoot:present(managed)&&present(sr)&&managed!==sr&&managed.parentNode===sr,
++      seriesRootToSceneRoot:present(sr)&&present(root)&&sr!==root&&sr.parentNode===root};
++    const terminalValid=present(root)&&(root.parentNode===null||root.parentNode===undefined);
++    const chainValid=Object.values(nodePresence).every(Boolean)&&Object.values(nodeKinds).every(k=>k==='object')&&Object.values(links).every(Boolean)&&terminalValid;
+     const rootTerminal={own:Object.hasOwn(root??{},'parentNode'),in:'parentNode' in Object(root??{}),type:typeof root?.parentNode,
+       value:root?.parentNode===undefined?{kind:'undefined'}:root.parentNode===null?null:{kind:'nonterminal-object'}};
+     const transforms=[group,managed,sr,root].map(n=>p.pick(n,['translationX','translationY','rotation','scalingX','scalingY']));
+     const nodes=p.cap(s.getNodeData(),5,'Nodes').filter(n=>n.datumIndex===request.ordinal).map(n=>({fields:p.pick(n,['datumIndex','yValue','x','y','width','height']),
+       xValue:p.category(n.xValue),point:p.pick(n.point,['x','y']),midPoint:p.pick(n.midPoint,['x','y'])}));
+-    return {id:s.id,type:s.type,yKey:s.properties.yKey,chainValid,rootTerminal,transforms,nodes};});
++    return {id:s.id,type:s.type,yKey:s.properties.yKey,nodePresence,nodeKinds,links,terminalValid,chainValid,rootTerminal,transforms,nodes};});
+   if(typeof c.ctx.animationManager.isActive!=='function')throw Error('Animation query unavailable');
+   return {seriesRect:p.box(c.seriesRect),scene:{width:c.ctx.scene.width,height:c.ctx.scene.height},canvas:p.rect(canvas[0]),area:p.rect(areas[0]),
+     dpr:devicePixelRatio,animationActive:c.ctx.animationManager.isActive(),series,request};
+--- baseline/harness/static-check.mjs
++++ harness/static-check.mjs
+@@ -5,6 +5,7 @@
+ import {cases,fixture,fixtureHash,planHash,hash,canonical,limits} from './contract.mjs';
+ import {coordinate} from './collector.mjs';
+ import {install,geometry,acquire} from './projection.mjs';
++import {followupChecks} from '../followup-static.mjs';
+ const here=path.dirname(fileURLToPath(import.meta.url)),checks=[];
+ function check(name,condition){checks.push({name,passed:!!condition});if(!condition)throw Error(name);}
+ const f=fixture();check('fixture hash',hash(canonical(f))===fixtureHash);
+@@ -51,14 +52,18 @@
+ const transform=(x,y)=>({translationX:field(x),translationY:field(y),rotation:absent,scalingX:absent,scalingY:absent});
+ const plain={translationX:absent,translationY:absent,rotation:absent,scalingX:absent,scalingY:absent};
+ const g={dpr:1,animationActive:false,seriesRect:{x:10,y:20,width:200,height:200},scene:{width:400,height:400},canvas:{x:100,y:100,width:400,height:400},area:{x:100,y:100,width:400,height:400},
+-  series:[{id:'s',yKey:'cashFlow',chainValid:true,transforms:[transform(0,0),plain,transform(10,20),plain],nodes:[{fields:{datumIndex:field(0),x:field(20),y:field(30),width:field(10),height:field(20)},xValue:{id:field('wrapper-0')},point:{x:field(25),y:field(40)}}]}]};
++  series:[{id:'s',yKey:'cashFlow',chainValid:true,terminalValid:true,
++    nodePresence:{contentGroup:true,managedParent:true,seriesRoot:true,sceneRoot:true},
++    nodeKinds:{contentGroup:'object',managedParent:'object',seriesRoot:'object',sceneRoot:'object'},
++    links:{contentToManaged:true,managedToSeriesRoot:true,seriesRootToSceneRoot:true},
++    transforms:[transform(0,0),plain,transform(10,20),plain],nodes:[{fields:{datumIndex:field(0),x:field(20),y:field(30),width:field(10),height:field(20)},xValue:{id:field('wrapper-0')},point:{x:field(25),y:field(40)}}]}]};
+ check('bar coordinate uses translations once',JSON.stringify(coordinate(g,0,'cashFlow','groupedColumn').point)===JSON.stringify({x:135,y:160}));
+ check('line point coordinate',JSON.stringify(coordinate(g,0,'cashFlow','line').point)===JSON.stringify({x:135,y:160}));
+ const sourceRoot={parentNode:undefined},sourceSeriesRoot={parentNode:sourceRoot,translationX:10,translationY:20},managed={parentNode:sourceSeriesRoot},content={parentNode:managed,translationX:0,translationY:0};
+ const fakeElement={getClientRects:()=>[{}],getBoundingClientRect:()=>({x:100,y:100,width:400,height:400})};
+ globalThis.window={};globalThis.document={querySelectorAll:()=>[fakeElement]};globalThis.getComputedStyle=()=>({visibility:'visible',opacity:'1'});globalThis.devicePixelRatio=1;
+ install();window.__tooltipProxy={chart:{seriesRect:{x:10,y:20,width:200,height:200},seriesRoot:sourceSeriesRoot,
+-  ctx:{root:sourceRoot,scene:{width:400,height:400},animationManager:{isActive:()=>false}},series:[{id:'s',type:'bar',properties:{yKey:'cashFlow'},contentGroup:content,
++  ctx:{scene:{root:sourceRoot,width:400,height:400},animationManager:{isActive:()=>false}},series:[{id:'s',type:'bar',properties:{yKey:'cashFlow'},contentGroup:content,
+     getNodeData:()=>[{datumIndex:0,x:20,y:30,width:10,height:20,xValue:{id:'wrapper-0',value:'2024-Q1'},point:{x:25,y:40}}]}]}};
+ const undefinedRoot=geometry({ordinal:0,key:'cashFlow'});
+ check('actual geometry accepts source undefined root terminal',undefinedRoot.series[0].chainValid&&undefinedRoot.series[0].rootTerminal.own&&undefinedRoot.series[0].rootTerminal.in&&undefinedRoot.series[0].rootTerminal.type==='undefined'&&undefinedRoot.series[0].rootTerminal.value.kind==='undefined');
+@@ -86,6 +91,7 @@
+   ['unexpected plain translation',x=>x.series[0].transforms[1].translationX=field(0)],['DPR mismatch',x=>x.dpr=2],['scene mismatch',x=>x.scene.width=401],['active animation',x=>x.animationActive=true]]){
+   const copy=structuredClone(g);mutate(copy);let rejected=false;try{coordinate(copy,0,'cashFlow','groupedColumn');}catch{rejected=true;}check('reject '+name,rejected);}
+ const plan=path.resolve(here,'../../plan.md');check('frozen source plan',hash(fs.readFileSync(plan))===planHash);
++await followupChecks(check);
+ const files=fs.readdirSync(here).filter(n=>fs.statSync(here+'/'+n).isFile()).map(name=>({name,bytes:fs.statSync(here+'/'+name).size,sha256:hash(fs.readFileSync(here+'/'+name))}));
+ const result={scope:'offline collector preparation only',runtimeExecuted:false,checks,files,limits};
+ fs.writeFileSync(path.resolve(here,'../static-verification.json'),JSON.stringify(result,null,2));

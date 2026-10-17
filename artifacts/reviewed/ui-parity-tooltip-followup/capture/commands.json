@@ -1,0 +1,34 @@
+{
+  "shell": "wsl -d Debian -u mc",
+  "pinnedNode": "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+  "attempt": "attempt-20261017-tooltip-followup-a1",
+  "startedAt": "2026-10-17T14:47:32.499Z",
+  "wrapperElapsedMs": 78840,
+  "journeyElapsedMs": 43274,
+  "commands": [
+    {
+      "command": "<pinned-node> capture/verify-offline.mjs",
+      "exitCode": 0,
+      "result": "122 offline identity/link checks and 136 static checks"
+    },
+    {
+      "command": "<pinned-node> capture/prepare-attempt.mjs",
+      "exitCode": 0,
+      "result": "12 frozen collector files and verification support copied before execution"
+    },
+    {
+      "command": "env TOOLTIP_HEAVY_GRANTED=yes timeout --signal=TERM --kill-after=1s 900s bash <attempt>/harness/run.sh <attempt>",
+      "exitCode": 0
+    },
+    {
+      "command": "<pinned-node> <attempt>/harness/verify.mjs <attempt>",
+      "exitCode": 0,
+      "result": "95 structural checks; no semantic acceptance"
+    },
+    {
+      "command": "<pinned-node> capture/verify-owned.mjs <attempt>",
+      "exitCode": 0,
+      "result": "Fresh owned resources absent; heavy lane released"
+    }
+  ]
+}
