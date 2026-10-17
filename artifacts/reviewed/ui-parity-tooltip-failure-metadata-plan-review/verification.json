@@ -1,0 +1,262 @@
+{
+  "date": "2026-10-17",
+  "verdict": "REJECTED",
+  "scope": "Source-plan review; two narrow terminal-evidence corrections required; no implementation/runtime grant",
+  "pins": {
+    "plan.md": "b3856296d8b97244f2baf0f15efb844cf4d79a824078682069e3d6cf1da92edd",
+    "source-hashes.json": "7310b2f88334df1d06cff18bd390adfedfc4e6ea888a7423629003ad85c36c02",
+    "publication-allowlist.json": "5bf17c132b780a4c8119551c03de78226fddb25c608adcaea2748e13dde13976"
+  },
+  "command": "node artifacts/ui-parity-tooltip-failure-metadata-plan-review/audit.mjs",
+  "exitCode": 0,
+  "checks": 53,
+  "runtimeExecuted": false,
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "Important",
+      "contract": "Three-value caseWrite omits attempted-write failure with unverified prior prefix",
+      "evidence": "Actual unchanged writer executed only in VM with injected filesystem failure after a partial write; no real file damaged"
+    },
+    {
+      "id": "F02",
+      "severity": "Important",
+      "contract": "First case failure survives only in memory if case writes reject; standalone receipt specifies outer metadata only",
+      "evidence": "Plan-defined schema counterexample; proposed policy is not implemented"
+    }
+  ],
+  "fixedFallbackBytes": [
+    144,
+    119,
+    145,
+    120
+  ],
+  "publication": {
+    "contentFiles": 3,
+    "metadataFiles": 1,
+    "links": [
+      "../ui-parity-tooltip-reservation-review/review.md",
+      "source-hashes.json",
+      "../ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "../ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "../ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "../ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs"
+    ],
+    "approvedScope": "Safe publication as rejected source proposal accompanied by this review",
+    "destinationAudit": "required after synchronization"
+  },
+  "results": [
+    {
+      "name": "frozen proposal pin plan.md",
+      "passed": true
+    },
+    {
+      "name": "frozen proposal pin source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "frozen proposal pin publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "actual hash/bytes artifacts/ui-parity-tooltip-reservation-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "actual hash/bytes artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "passed": true
+    },
+    {
+      "name": "actual hash/bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "actual hash/bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "actual hash/bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "actual hash/bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "actual hash/bytes artifacts/ui-parity-tooltip-failure-metadata-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "actual hash/bytes artifacts/ui-parity-tooltip-failure-metadata-plan/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "actual hash/bytes artifacts/ui-parity-tooltip-failure-metadata-plan/verification.json",
+      "passed": true
+    },
+    {
+      "name": "three selected unique files",
+      "passed": true
+    },
+    {
+      "name": "safe owned text artifacts/ui-parity-tooltip-failure-metadata-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key/token/placeholder artifacts/ui-parity-tooltip-failure-metadata-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "safe owned text artifacts/ui-parity-tooltip-failure-metadata-plan/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key/token/placeholder artifacts/ui-parity-tooltip-failure-metadata-plan/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "safe owned text artifacts/ui-parity-tooltip-failure-metadata-plan/verification.json",
+      "passed": true
+    },
+    {
+      "name": "no concrete private key/token/placeholder artifacts/ui-parity-tooltip-failure-metadata-plan/verification.json",
+      "passed": true
+    },
+    {
+      "name": "512metadatacap proposed only",
+      "passed": true
+    },
+    {
+      "name": "fixed fallback fits case/message-over-byte-cap",
+      "passed": true
+    },
+    {
+      "name": "fixed fallback fits case/message-unavailable",
+      "passed": true
+    },
+    {
+      "name": "fixed fallback fits outer/message-over-byte-cap",
+      "passed": true
+    },
+    {
+      "name": "fixed fallback fits outer/message-unavailable",
+      "passed": true
+    },
+    {
+      "name": "complete metadata can equal512 case",
+      "passed": true
+    },
+    {
+      "name": "one ASCII character exceeds cap case",
+      "passed": true
+    },
+    {
+      "name": "escapes require serialized-byte cap case",
+      "passed": true
+    },
+    {
+      "name": "complete metadata can equal512 outer",
+      "passed": true
+    },
+    {
+      "name": "one ASCII character exceeds cap outer",
+      "passed": true
+    },
+    {
+      "name": "escapes require serialized-byte cap outer",
+      "passed": true
+    },
+    {
+      "name": "existing reserve and limits unchanged",
+      "passed": true
+    },
+    {
+      "name": "F01 actual writer reached writeFileSync before injected failure",
+      "passed": true
+    },
+    {
+      "name": "F01 preceding bytes no longer established",
+      "passed": true
+    },
+    {
+      "name": "F01 three proposed outcomes are insufficient",
+      "passed": true
+    },
+    {
+      "name": "F01 proposal explicitly only three outcomes",
+      "passed": true
+    },
+    {
+      "name": "F02 receipt description carries outer only",
+      "passed": true
+    },
+    {
+      "name": "F02 rejection outcome leaves first failure in attempted object only",
+      "passed": true
+    },
+    {
+      "name": "F02 two bounded metadata objects are finite without history",
+      "passed": true
+    },
+    {
+      "name": "plan link ../ui-parity-tooltip-reservation-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "plan link source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "plan link ../ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "plan link ../ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "plan link ../ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "plan link ../ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "original preserved artifacts/ui-parity-tooltip-reservation-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "original preserved artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "passed": true
+    },
+    {
+      "name": "original preserved artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "original preserved artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "original preserved artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "original preserved artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "original preserved artifacts/ui-parity-tooltip-failure-metadata-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "original preserved artifacts/ui-parity-tooltip-failure-metadata-plan/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "original preserved artifacts/ui-parity-tooltip-failure-metadata-plan/verification.json",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "date": "2026-10-17",
+  "verdict": "APPROVED",
+  "scope": "Targeted F01/F02 plan closure and exact publication only; no implementation or runtime grant",
+  "pins": {
+    "plan.md": "248354c82919366fec8c440b3a2f298f715a069bb6de7b96434a948baf527257",
+    "source-hashes.json": "e4e0f5dc1babce58dcc3b2d3ac92ed5550f295612b7a10514951d459787c4f9d",
+    "publication-allowlist.json": "7a7c512988059bbee6e2a1c4a1a9184bc5dcfc7645c4aae87936a605c35e9ba2"
+  },
+  "command": "node artifacts/ui-parity-tooltip-failure-metadata-plan-revision-review/audit.mjs",
+  "exitCode": 0,
+  "checks": 44,
+  "runtimeExecuted": false,
+  "implementationExecuted": false,
+  "findingsClosed": [
+    "F01",
+    "F02"
+  ],
+  "scaffoldProofCompleted": false,
+  "reservationReduced": false,
+  "publication": {
+    "contentFiles": 4,
+    "metadataFiles": 1,
+    "links": [
+      "../ui-parity-tooltip-failure-metadata-plan-review/review.md",
+      "../ui-parity-tooltip-reservation-review/review.md",
+      "source-hashes.json",
+      "../ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "../ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "../ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "../ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs"
+    ],
+    "destinationAudit": "required after synchronization"
+  },
+  "results": [
+    {
+      "name": "frozen dispatch pin plan.md",
+      "passed": true
+    },
+    {
+      "name": "frozen dispatch pin source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "frozen dispatch pin publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-reservation-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-reservation-analysis/report.md",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan/plan.md",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan/verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan-review/verification.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan-review/publication-allowlist.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan-revised/revision-notes.md",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "hash and bytes artifacts/ui-parity-tooltip-failure-metadata-plan-revised/verification.json",
+      "passed": true
+    },
+    {
+      "name": "exact13inputs4contentfiles",
+      "passed": true
+    },
+    {
+      "name": "formatter512policy unchanged",
+      "passed": true
+    },
+    {
+      "name": "F01 all4outcomes explicit",
+      "passed": true
+    },
+    {
+      "name": "F01 unknown stage conservatively unverified",
+      "passed": true
+    },
+    {
+      "name": "F01 prewrite guarantee is stage-specific",
+      "passed": true
+    },
+    {
+      "name": "F02 existing firstCaseFailure copied when applicable",
+      "passed": true
+    },
+    {
+      "name": "F02 wrapper accounted separate from1024objectbytes",
+      "passed": true
+    },
+    {
+      "name": "F02 durable claims require successful containing write",
+      "passed": true
+    },
+    {
+      "name": "source/runtime/reserve boundary unchanged",
+      "passed": true
+    },
+    {
+      "name": "link ../ui-parity-tooltip-failure-metadata-plan-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "link ../ui-parity-tooltip-reservation-review/review.md",
+      "passed": true
+    },
+    {
+      "name": "link source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "link ../ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "passed": true
+    },
+    {
+      "name": "link ../ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "passed": true
+    },
+    {
+      "name": "link ../ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "passed": true
+    },
+    {
+      "name": "link ../ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "passed": true
+    },
+    {
+      "name": "safe owned text artifacts/ui-parity-tooltip-failure-metadata-plan-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "no concrete secret or placeholder artifacts/ui-parity-tooltip-failure-metadata-plan-revised/plan.md",
+      "passed": true
+    },
+    {
+      "name": "safe owned text artifacts/ui-parity-tooltip-failure-metadata-plan-revised/revision-notes.md",
+      "passed": true
+    },
+    {
+      "name": "no concrete secret or placeholder artifacts/ui-parity-tooltip-failure-metadata-plan-revised/revision-notes.md",
+      "passed": true
+    },
+    {
+      "name": "safe owned text artifacts/ui-parity-tooltip-failure-metadata-plan-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "no concrete secret or placeholder artifacts/ui-parity-tooltip-failure-metadata-plan-revised/source-hashes.json",
+      "passed": true
+    },
+    {
+      "name": "safe owned text artifacts/ui-parity-tooltip-failure-metadata-plan-revised/verification.json",
+      "passed": true
+    },
+    {
+      "name": "no concrete secret or placeholder artifacts/ui-parity-tooltip-failure-metadata-plan-revised/verification.json",
+      "passed": true
+    }
+  ]
+}

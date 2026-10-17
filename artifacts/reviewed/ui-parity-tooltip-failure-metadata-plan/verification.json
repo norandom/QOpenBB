@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-17",
+  "scope": "Proposal-only source/link/hash reads and four fixed fallback JSON shape measurements; no collector/calculator/mock runtime execution",
+  "sourceInputs": 6,
+  "inputHashesUnchanged": true,
+  "links": [
+    {
+      "target": "artifacts/ui-parity-tooltip-reservation-review/review.md",
+      "sha256": "2bf94de82122fee3976960465f56c106e9490f68519fc97888a28aab639c1014"
+    },
+    {
+      "target": "artifacts/ui-parity-tooltip-failure-metadata-plan/source-hashes.json",
+      "sha256": "7310b2f88334df1d06cff18bd390adfedfc4e6ea888a7423629003ad85c36c02"
+    },
+    {
+      "target": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "sha256": "859c9d16781d7a862ccd014b563755e830e912fcaa93cd46e7c8d82e61fdf12a"
+    },
+    {
+      "target": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "sha256": "230e64b9f175c7ab4949ab89f0c117a60e7e04ae2806bf96854d53ff47f30707"
+    },
+    {
+      "target": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "sha256": "4e64d9e306fdcccadb393a9bdbadc1b84efa02009e22a2a5aa4708e2a2e8cf8d"
+    },
+    {
+      "target": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "sha256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9"
+    }
+  ],
+  "proposedFailureMetadataBytes": 512,
+  "fixedFallbackShapes": [
+    {
+      "value": {
+        "reason": "Failure message omitted: serialized metadata limit",
+        "reasonCode": "message-over-byte-cap",
+        "reasonOmitted": true,
+        "failureOrigin": "case"
+      },
+      "bytes": 144
+    },
+    {
+      "value": {
+        "reason": "Failure message unavailable",
+        "reasonCode": "message-unavailable",
+        "reasonOmitted": true,
+        "failureOrigin": "case"
+      },
+      "bytes": 119
+    },
+    {
+      "value": {
+        "reason": "Failure message omitted: serialized metadata limit",
+        "reasonCode": "message-over-byte-cap",
+        "reasonOmitted": true,
+        "failureOrigin": "outer"
+      },
+      "bytes": 145
+    },
+    {
+      "value": {
+        "reason": "Failure message unavailable",
+        "reasonCode": "message-unavailable",
+        "reasonOmitted": true,
+        "failureOrigin": "outer"
+      },
+      "bytes": 120
+    }
+  ],
+  "unchangedExistingConstants": {
+    "inputReserve": 32768,
+    "caseGuard": 115072,
+    "tailReserve": 16000,
+    "caseBytes": 131072
+  },
+  "implementationExecuted": false,
+  "scaffoldProofCompleted": false,
+  "reservationReduced": false,
+  "runtimeExecuted": false
+}

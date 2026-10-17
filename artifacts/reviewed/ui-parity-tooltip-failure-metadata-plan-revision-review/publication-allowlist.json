@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "Approved F01/F02 plan closure and publication only; no implementation or runtime grant",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revision-review/review.md",
+      "sha256": "74233efdea046024aeef678f08c1ee879cd29da763f00328f0d56c8bb5be1cfd",
+      "bytes": 4108,
+      "sanitization": "None; targeted independent source-plan closure review"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revision-review/verification.json",
+      "sha256": "390a113d4d8053a56cbe8b5328ba76402f18cbe598e6ea01af5527df3aab2795",
+      "bytes": 6806,
+      "sanitization": "None; targeted independent source-plan closure review"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revision-review/audit.mjs",
+      "sha256": "7409f2cb2598239bf50129532f6f332c69af37c7fd65658f064fe7dd11a4d115",
+      "bytes": 4505,
+      "sanitization": "None; targeted independent source-plan closure review"
+    }
+  ],
+  "omissions": [
+    "Allowlist copied separately as metadata; no self-hash.",
+    "No runtime state, credentials, logs, profiles, dependencies or images."
+  ]
+}

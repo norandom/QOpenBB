@@ -94,10 +94,14 @@
     "ui-parity-tooltip-reservation-review",
     "ui-parity-legend-startup-review",
     "ui-parity-legend-startup-diagnostic-plan",
-    "ui-parity-legend-startup-diagnostic-plan-review"
+    "ui-parity-legend-startup-diagnostic-plan-review",
+    "ui-parity-tooltip-failure-metadata-plan",
+    "ui-parity-tooltip-failure-metadata-plan-review",
+    "ui-parity-tooltip-failure-metadata-plan-revised",
+    "ui-parity-tooltip-failure-metadata-plan-revision-review"
   ],
   "sourcepins": {
-    "root_at_sync": "e30d1dd0c97e03738cbef2bf2fc2538da49008db",
+    "root_at_sync": "8817ef87ee84cdf900ae5047cee71734fcfcbb10",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -26406,6 +26410,142 @@
       "publishedSHA256": "bc420ee5f73552cb4d1fd21e8e331bf9b4ed8455d3cdf9dfc4fe0c770dc38864",
       "bytes": 1572,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan/plan.md",
+      "sourceSHA256": "b3856296d8b97244f2baf0f15efb844cf4d79a824078682069e3d6cf1da92edd",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan/plan.md",
+      "publishedSHA256": "b3856296d8b97244f2baf0f15efb844cf4d79a824078682069e3d6cf1da92edd",
+      "bytes": 12460,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan/source-hashes.json",
+      "sourceSHA256": "7310b2f88334df1d06cff18bd390adfedfc4e6ea888a7423629003ad85c36c02",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan/source-hashes.json",
+      "publishedSHA256": "7310b2f88334df1d06cff18bd390adfedfc4e6ea888a7423629003ad85c36c02",
+      "bytes": 1385,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan/verification.json",
+      "sourceSHA256": "c60f66774de27cead94244709863b3d2b07d85b4403f2d9601637693ef9ad69f",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan/verification.json",
+      "publishedSHA256": "c60f66774de27cead94244709863b3d2b07d85b4403f2d9601637693ef9ad69f",
+      "bytes": 2611,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan/publication-allowlist.json",
+      "sourceSHA256": "5bf17c132b780a4c8119551c03de78226fddb25c608adcaea2748e13dde13976",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan/publication-allowlist.json",
+      "publishedSHA256": "5bf17c132b780a4c8119551c03de78226fddb25c608adcaea2748e13dde13976",
+      "bytes": 589,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-review/review.md",
+      "sourceSHA256": "832e8244d616e6a6298823f9e438e4e2cb7bec4cb60b6126ccc4a7074f1a9cc0",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-review/review.md",
+      "publishedSHA256": "832e8244d616e6a6298823f9e438e4e2cb7bec4cb60b6126ccc4a7074f1a9cc0",
+      "bytes": 7344,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-review/verification.json",
+      "sourceSHA256": "ce43caf0167774ec5729b61098dd31a97f2ecfb58a094a0d61a610c7c2e49874",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-review/verification.json",
+      "publishedSHA256": "ce43caf0167774ec5729b61098dd31a97f2ecfb58a094a0d61a610c7c2e49874",
+      "bytes": 8165,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-review/audit.mjs",
+      "sourceSHA256": "bdb033088154536b4c3b3435afec83f4010c776954b11826671657811bab190e",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-review/audit.mjs",
+      "publishedSHA256": "bdb033088154536b4c3b3435afec83f4010c776954b11826671657811bab190e",
+      "bytes": 7083,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-review/publication-allowlist.json",
+      "sourceSHA256": "0544a300850ff971cb5ec98e38dda7dc55fd12cf01433331c336683011a89d81",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-review/publication-allowlist.json",
+      "publishedSHA256": "0544a300850ff971cb5ec98e38dda7dc55fd12cf01433331c336683011a89d81",
+      "bytes": 1322,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revised/plan.md",
+      "sourceSHA256": "248354c82919366fec8c440b3a2f298f715a069bb6de7b96434a948baf527257",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-revised/plan.md",
+      "publishedSHA256": "248354c82919366fec8c440b3a2f298f715a069bb6de7b96434a948baf527257",
+      "bytes": 15126,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revised/revision-notes.md",
+      "sourceSHA256": "c6a7f21338fbca064e1141d2dbd4e2bdf130e5fe552f6e9e0abafac9603c9ba4",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-revised/revision-notes.md",
+      "publishedSHA256": "c6a7f21338fbca064e1141d2dbd4e2bdf130e5fe552f6e9e0abafac9603c9ba4",
+      "bytes": 1302,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revised/source-hashes.json",
+      "sourceSHA256": "e4e0f5dc1babce58dcc3b2d3ac92ed5550f295612b7a10514951d459787c4f9d",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-revised/source-hashes.json",
+      "publishedSHA256": "e4e0f5dc1babce58dcc3b2d3ac92ed5550f295612b7a10514951d459787c4f9d",
+      "bytes": 2865,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revised/verification.json",
+      "sourceSHA256": "d5c5180a4511266cc8d646802baae60a7c3aae2e2cf40ea619e6ad6933b51d3f",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-revised/verification.json",
+      "publishedSHA256": "d5c5180a4511266cc8d646802baae60a7c3aae2e2cf40ea619e6ad6933b51d3f",
+      "bytes": 2715,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revised/publication-allowlist.json",
+      "sourceSHA256": "7a7c512988059bbee6e2a1c4a1a9184bc5dcfc7645c4aae87936a605c35e9ba2",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-revised/publication-allowlist.json",
+      "publishedSHA256": "7a7c512988059bbee6e2a1c4a1a9184bc5dcfc7645c4aae87936a605c35e9ba2",
+      "bytes": 819,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revision-review/review.md",
+      "sourceSHA256": "74233efdea046024aeef678f08c1ee879cd29da763f00328f0d56c8bb5be1cfd",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-revision-review/review.md",
+      "publishedSHA256": "74233efdea046024aeef678f08c1ee879cd29da763f00328f0d56c8bb5be1cfd",
+      "bytes": 4108,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revision-review/verification.json",
+      "sourceSHA256": "390a113d4d8053a56cbe8b5328ba76402f18cbe598e6ea01af5527df3aab2795",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-revision-review/verification.json",
+      "publishedSHA256": "390a113d4d8053a56cbe8b5328ba76402f18cbe598e6ea01af5527df3aab2795",
+      "bytes": 6806,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revision-review/audit.mjs",
+      "sourceSHA256": "7409f2cb2598239bf50129532f6f332c69af37c7fd65658f064fe7dd11a4d115",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-revision-review/audit.mjs",
+      "publishedSHA256": "7409f2cb2598239bf50129532f6f332c69af37c7fd65658f064fe7dd11a4d115",
+      "bytes": 4505,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/ui-parity-tooltip-failure-metadata-plan-revision-review/publication-allowlist.json",
+      "sourceSHA256": "eb16d1392f728f4a74510969857ffbb0d1aec7d5d83f20b662095363e5c5e084",
+      "publishedpath": "artifacts/reviewed/ui-parity-tooltip-failure-metadata-plan-revision-review/publication-allowlist.json",
+      "publishedSHA256": "eb16d1392f728f4a74510969857ffbb0d1aec7d5d83f20b662095363e5c5e084",
+      "bytes": 1250,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -27119,5 +27259,5 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 159831577
+  "total_payload_bytes": 159912032
 }

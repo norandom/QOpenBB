@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "scope": "Rejected plan review; publication of exact review evidence only; no implementation or runtime approval",
+  "files": [
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-failure-metadata-plan-review/review.md",
+      "sha256": "832e8244d616e6a6298823f9e438e4e2cb7bec4cb60b6126ccc4a7074f1a9cc0",
+      "bytes": 7344,
+      "sanitization": "None; independent source-plan review and synthetic offline counterexamples"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-failure-metadata-plan-review/verification.json",
+      "sha256": "ce43caf0167774ec5729b61098dd31a97f2ecfb58a094a0d61a610c7c2e49874",
+      "bytes": 8165,
+      "sanitization": "None; independent source-plan review and synthetic offline counterexamples"
+    },
+    {
+      "sourcePath": "artifacts/ui-parity-tooltip-failure-metadata-plan-review/audit.mjs",
+      "sha256": "bdb033088154536b4c3b3435afec83f4010c776954b11826671657811bab190e",
+      "bytes": 7083,
+      "sanitization": "None; independent source-plan review and synthetic offline counterexamples"
+    }
+  ],
+  "omissions": [
+    "Publication allowlist copied separately as metadata; no self-hash.",
+    "No runtime/private state, credentials, logs, profiles, dependencies or images."
+  ]
+}

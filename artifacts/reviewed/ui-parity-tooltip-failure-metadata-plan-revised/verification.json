@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-17",
+  "scope": "Source/link/hash verification of two plan corrections only",
+  "findingsAddressed": [
+    "F01",
+    "F02"
+  ],
+  "reviewedPlan": {
+    "sourcePath": "artifacts/ui-parity-tooltip-failure-metadata-plan-review/review.md",
+    "sha256": "832e8244d616e6a6298823f9e438e4e2cb7bec4cb60b6126ccc4a7074f1a9cc0",
+    "bytes": 7344
+  },
+  "inputsVerified": 13,
+  "inputHashesUnchanged": true,
+  "links": [
+    {
+      "from": "plan.md",
+      "target": "artifacts/ui-parity-tooltip-failure-metadata-plan-review/review.md",
+      "sha256": "832e8244d616e6a6298823f9e438e4e2cb7bec4cb60b6126ccc4a7074f1a9cc0"
+    },
+    {
+      "from": "plan.md",
+      "target": "artifacts/ui-parity-tooltip-reservation-review/review.md",
+      "sha256": "2bf94de82122fee3976960465f56c106e9490f68519fc97888a28aab639c1014"
+    },
+    {
+      "from": "plan.md",
+      "target": "artifacts/ui-parity-tooltip-failure-metadata-plan-revised/source-hashes.json",
+      "sha256": "e4e0f5dc1babce58dcc3b2d3ac92ed5550f295612b7a10514951d459787c4f9d"
+    },
+    {
+      "from": "plan.md",
+      "target": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/journey.mjs",
+      "sha256": "859c9d16781d7a862ccd014b563755e830e912fcaa93cd46e7c8d82e61fdf12a"
+    },
+    {
+      "from": "plan.md",
+      "target": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/keyboard-retention.mjs",
+      "sha256": "230e64b9f175c7ab4949ab89f0c117a60e7e04ae2806bf96854d53ff47f30707"
+    },
+    {
+      "from": "plan.md",
+      "target": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/io.mjs",
+      "sha256": "4e64d9e306fdcccadb393a9bdbadc1b84efa02009e22a2a5aa4708e2a2e8cf8d"
+    },
+    {
+      "from": "plan.md",
+      "target": "artifacts/ui-parity-tooltip-segment-keyboard-revised/harness/contract.mjs",
+      "sha256": "1cb3f0a0084b8f8ecc5ce2ba73ac1a5eecc9fb312aac9f0dd7827ad29d4ebfd9"
+    }
+  ],
+  "policy": {
+    "caseWrite": [
+      "succeeded",
+      "rejected-prior-prefix",
+      "not-attempted",
+      "write-unverified"
+    ],
+    "uncertainStageDefaultsTo": "write-unverified",
+    "firstCaseFailure": "Optional one existing bounded four-field object, at most512 bytes, wrapper separately budgeted",
+    "persistenceClaim": "Only a successful containing write; no claim when standalone receipt fails"
+  },
+  "fixedFallbackShapesUnchanged": true,
+  "proposedMetadataBytes": 512,
+  "unchangedExistingConstants": {
+    "inputReserve": 32768,
+    "caseGuard": 115072,
+    "tailReserve": 16000,
+    "caseBytes": 131072
+  },
+  "implementationExecuted": false,
+  "scaffoldProofCompleted": false,
+  "reservationReduced": false,
+  "runtimeExecuted": false,
+  "independentRereviewPending": true
+}
