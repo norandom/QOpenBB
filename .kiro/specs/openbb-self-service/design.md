@@ -2,7 +2,7 @@
 
 ## Overview
 
-Next UI-10 amendment: [ordinary horizontal bars](chart-horizontal-bars-design.md) passed independent design review and awaits owner approval. It covers groupedBar/stackedBar only; implementation and the rest of UI-10 remain pending.
+Next UI-10 amendment: [ordinary horizontal bars](chart-horizontal-bars-design.md) is owner-approved. Its four independently reviewed tasks await implementation approval. It covers groupedBar/stackedBar only; implementation and the rest of UI-10 remain pending.
 
 Owner-approved amendment: [appearance/editor integration contracts](chart-appearance-editor-integration-design.md). Independent [Astra design review](../../../artifacts/reviewed/appearance-editor-design-review/review.md) returns scoped GO for saved-option composition, derived color tokens and grouped-column tooltip event task generation. The owner approved the design; task approval remains separate. Complete B2/C and application activation retain their evidence gates.
 

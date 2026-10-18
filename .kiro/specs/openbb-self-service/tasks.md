@@ -2,6 +2,57 @@
 
 Current production UI priorities are collected in the [UI parity worklist](ui-parity-worklist.md). It distinguishes actual application deliverables from the historical source-helper and reference-test tasks below; it does not alter their recorded approval or acceptance.
 
+## Ordinary horizontal bars: UI-10 first slice
+
+Owner approved the [horizontal-bar design](chart-horizontal-bars-design.md). The four tasks below restore `groupedBar` and `stackedBar` in ordinary Table/File widgets. Other gallery choices stay visible under their original predicates; their implementation and complete UI-10 acceptance remain pending. Task approval is separate from design approval.
+
+Execution: controller contract freeze -> two disjoint Sol lanes (2.79 and 2.80) -> controller application join. Astra reviews the prerequisite and the final integration; each implementation retains independent task review and a per-task commit. At most four active agents and one heavy build/browser check. Accepted foundation tasks 1.3/1.4 supply the inventory/checker; do not create another harness. Each task is a bounded 1-3 hour work unit; if a concrete contract cannot be settled or a lane exceeds its boundary, report the exact blocker rather than silently expanding scope.
+
+Production ownership uses the exact paths in the approved design. All paths below beginning `tests/` are relative to `vendor/workspace/terminalpro/`. Shared configurations, source pins, breadth, inventory and artifact publication remain controller-owned. No worker may edit another lane's files or revert unrelated changes. Before fan-out, the controller records any needed cohesive extraction paths in its handoff; no broad wildcard ownership or unreviewed size exception.
+
+- [ ] 2.78 Freeze original horizontal-bar expectations and the shared family contract
+  - Controller owns this explicit contract/setup integration task: reuse the installed original reference and existing isolated browser infrastructure, verify tool/package/source identities and disposable state, and bind the exact verification commands before dependent work. If runtime recovery is necessary, restore only the owned existing fixture; no alternate application or new capture framework.
+  - Establish grouped/stacked top-to-bottom category order, unequal signed-stack endpoints, zero/missing observations, navigator target/extent and full miniature behavior. Inspect retained source first; perform only the bounded original observation needed to settle unresolved effects. Independently review the resulting fixture and reference expectations before renderer work. Original failures or necessary visible deviations require owner decision; never hide the action.
+  - Own new `tests/unit/chart-compatibility/fixtures/horizontal-bars.json` with synthetic inputs, independent expected results and exact original provenance; the other lanes read it without modifying it. Record the finite axis/title/direction and family-transition contract beside the design. Extend the existing family union/predicate in `echarts/cartesianTypes.ts` and existing axis/session type declarations only where necessary, without enabling production callers. Preserve exact saved types, semantic IDs, original range transitions and runtime-only structural axes.
+  - Done when original expectations are attributable and independently reviewed, the typed groupedBar/stackedBar contract is consumable by both lanes, current consumers still compile under their existing scoped gate, and each lane has exact non-overlapping files/tests and runnable commands. A guessed navigator target or category order prevents completion.
+  - Update the existing complexity inventory/changed-file scope for any production type changes. Whole modified production files pass 400 physical / 300 logical / 50 per-function caps; synthetic fixtures and documentation are cap-exempt. No full application compiler claim follows from the known existing DS diagnostic.
+  - _Boundary: Shared horizontal-bar contract and existing reference/toolchain setup_
+  - _Depends: 1.4, 2.77_
+  - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.4, 10.5, 10.6_
+
+- [ ] 2.79 (P) Render grouped and stacked horizontal bars with original actions
+  - Sol renderer lane owns only the design's `echarts/` mapping/layout/color/navigator files, excluding controller-owned `cartesianTypes.ts`. Reuse the existing snapshot, display policy and native ECharts host. Extend orientation and signed stacking without transposing source observations or rewriting saved types.
+  - Implement the source-established category order, grouping/stacking, labels, tooltips, palette and financial formatting. Navigator/miniature follows the independently frozen original contract, including the main extent and unchanged overview; do not infer its target from bar direction. Preserve all accepted column/line projections and existing action predicates.
+  - Own new `tests/unit/chart-compatibility/cartesian.horizontal.test.ts` and any required changes to existing `cartesian.application.test.ts`, `cartesian.geometry.test.ts`, `cartesian.grid.test.ts`. Read the shared horizontal fixture; do not change it or the controls/session tests. Use the existing compatibility Vitest config and one worker.
+  - Done when independent expected observations and endpoints distinguish grouped from stacked bars, missing/zero/negative values remain correct, applicable actions project correctly, and affected existing column/line checks pass. No caller activation or standalone preview counts as application acceptance.
+  - Whole modified production files pass 400 physical / 300 logical / 50 per-function caps and affected scoped type/lint checks; reuse the current inventory and explicit fork scope. Focused tests accompany the production change, not a separate evidence-only workstream.
+  - _Boundary: Existing ECharts Cartesian projection and action geometry_
+  - _Depends: 2.78_
+  - _Requirements: 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
+
+- [ ] 2.80 (P) Bind the existing axis and title controls to physical direction
+  - Sol controls lane owns the design's `ApplicationAxisEditor`, `ApplicationCustomizeEditor` and named editor-binding files. Keep Horizontal before Vertical while resolving the semantic axis from current direction: bars show number horizontally and category vertically. Preserve original category-only controls, eligibility, position choices, typography and themes.
+  - Both displayed values and latest-state intent rehydration use the current concrete bindings. Writes preserve actual option type and both original positions for that direction; retain unknown/inactive branches and the disclosed structural-axis/Auto Rotate limitations. Do not add saved axes, controls, flags or an alternate editor.
+  - Own new `tests/unit/chart-application/editorHorizontalAxes.test.tsx` plus existing `editorBindings.test.ts` and `editorSavedLeaves.test.ts`. Reuse existing application config, component helpers and shared source fixture read-only; do not change mapper or caller/session test files.
+  - Done when physical title/axis edits change the correct semantic option leaves, section order stays Horizontal/Vertical, stale render bindings cannot misroute an edit, and accepted column/line controls retain behavior. No inert control or hidden gallery choice is permitted.
+  - Whole modified production files pass 400 physical / 300 logical / 50 per-function caps and affected scoped type/lint checks. Any cohesive extraction path is agreed with the controller before editing; tests/docs are cap-exempt.
+  - _Boundary: Existing controlled editor composition and option bindings_
+  - _Depends: 2.78_
+  - _Requirements: 4.7, 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
+
+- [ ] 2.81 Join horizontal bars to the real Workspace journey
+  - Controller owns the design's caller initialization, existing session runtime/scope/selection and `AgChartView` admission files after both lanes freeze and pass independent review. Initialize and transition category/y and number/x correctly, preserve original per-family ranges/options and the existing sole Widget persistence owner, and keep other-family buttons/flags intact.
+  - Own new `tests/unit/chart-application/callerHorizontalBars.test.ts` and focused changes to `applicationSession.test.tsx` / `applicationSessionTransactions.test.ts` only when the changed lifecycle requires them. Own new `tests/e2e/live-chart/horizontal-bars.spec.ts`; reuse existing login/import/editor/persistence/diagnostics/action helpers. Modify shared browser helpers only for a demonstrated reusable need, not a second harness.
+  - Exercise column -> groupedBar -> stackedBar -> column with unequal signed observations and distinct retained ranges. Verify actual drawn orientation, labels/tooltips, physical title/axis edits, applicable navigator/miniature effects, table return, current export and backend fresh-session reopen of a bar family including unknown settings. Inspect representative integrated light/dark views and retain original restore limitations. Reuse accepted aggregation, save-failure and restart evidence unless a changed owner creates a specific regression risk.
+  - Done when the affected real-route browser check passes with one headless worker and unchanged strict diagnostics, the exported image matches the latest saved view, independent Astra review approves the integrated scope, and uncertain visible differences have an owner decision. A source-overlaid runtime is disclosed; this does not accept a release image or the rest of UI-10.
+  - Run the existing combined complexity gate over all production files touched by 2.78-2.81 with explicit fork manifests: 400 physical / 300 logical / 50 per-function. Preserve unrelated working-tree changes. Update breadth/UI-10 only for proven horizontal-bar behavior. Sync one concise reviewed delivery record and necessary screenshots before the task commit/push; raw diagnostics remain local.
+  - _Boundary: Explicit ordinary Table/File application integration_
+  - _Depends: 2.79, 2.80_
+  - _Requirements: 4.7, 4.8, 4.9, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6_
+
+Verification commands reuse the installed pinned toolchain: from Workspace `terminalpro`, `node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/vitest.config.mjs <owned-test-paths>` or the existing chart-application config. From QOpenBB, the existing Playwright CLI/config selects `horizontal-bars.spec.ts` with the owned runtime/evidence environment. The existing `python -m tools.quality.complexity --check --changes workspace=<current-manifest> --changes data_api=<current-manifest> --output <ignored-report>` remains the size gate. Task 2.78 verifies exact executable paths and records scoped type/lint invocations; examples here are planned commands, not completed evidence. No dependency installation or Dagger build is part of this slice.
+
+
 ## Current production task: widget editing
 
 The owner's latest production-UI "go" authorizes the bounded existing-owner repair below. The [concrete design](widget-edit-design.md) passed independent Astra review after removing the speculative completion/cancellation API. This does not authorize full renderer activation or complete the wider UI-01/UI-06 work packages.
