@@ -753,6 +753,24 @@
       "acceptance_review": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/review.md",
       "acceptance_scope": "Ordinary Table/File normalizedColumn and normalizedBar only; other families and release-image acceptance remain pending.",
       "visual_approval": "Owner replied Keep this appearance to the normalized-column comparison, explicitly accepting the extra +/-50% axis ticks."
+    },
+    "area_charts": {
+      "name": "ordinary-area-charts",
+      "scope": [
+        "area",
+        "stackedArea",
+        "normalizedArea"
+      ],
+      "phase": "design-generated",
+      "design_path": "chart-area-design.md",
+      "design_review": "artifacts/reviewed/live-editor/area-charts/design-review.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "0cb461aee254c8985ef1a481b02b2dbb3cbc014c8eeaedd49f0dd5d2acbc9422",
+      "design_approved": false,
+      "tasks_generated": false,
+      "tasks_approved": false,
+      "implementation_accepted": false,
+      "starting_workspace_revision": "375fe8990c698ef5e9d4c972f92e6b77c242dae3"
     }
   }
 }
