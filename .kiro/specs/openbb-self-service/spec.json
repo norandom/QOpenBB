@@ -448,6 +448,35 @@
         "complexity_violations": 0,
         "evidence_retention": "Compact public reviews and screenshots; raw run logs and full measurements remain local"
       }
+    },
+    "labels_markers": {
+      "task_ids": [
+        "2.60",
+        "2.61",
+        "2.62"
+      ],
+      "design_path": "chart-labels-markers-design.md",
+      "design_approved": true,
+      "tasks_approved": true,
+      "approval_note": "Owner explicitly requested autonomous continuation with the same UI focus on 2026-10-18. This bounded continuation retains existing requirements, controls and approved appearance; live application parity is not inferred.",
+      "phase": "accepted",
+      "implementation_accepted": true,
+      "design_review": "artifacts/reviewed/task-2.60/design-review.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "75052111c0539d1d863f00d6e56a7997882438cc1043eda21ece3d42c5c98601",
+      "implementation_source_revision": "b506a3327a55dc326e0a3e573fddceae0c4ab965",
+      "implementation_reviews": [
+        "artifacts/reviewed/task-2.60/review/verdict.md",
+        "artifacts/reviewed/task-2.61/review/verdict.md",
+        "artifacts/reviewed/task-2.62/review/verdict.md"
+      ],
+      "previews": [
+        "artifacts/reviewed/task-2.62/implementer/dock-labels-light-dark.png",
+        "artifacts/reviewed/task-2.62/implementer/dock-markers-light-dark.png"
+      ],
+      "acceptance_scope": "Controlled ordinary Labels and Markers panels composed in bar/line dock previews with original conditions. Additional family-specific controls, axes, live rendering, storage integration and application activation remain pending.",
+      "owner_visual_accepted": false,
+      "typecheck_limitation": "Scoped checks retain reproduced upstream DS typography.ts TS2578; no full compiler acceptance claimed."
     }
   }
 }

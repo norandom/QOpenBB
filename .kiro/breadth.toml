@@ -308,3 +308,27 @@ planned_checks = ["exact-controlled-edits", "numeric-validity", "retained-state"
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-editor/vitest.config.mjs", "vendor/workspace/terminalpro/tests/unit/chartEditorDock.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartSeriesStylePanel.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartShadowPanel.test.tsx"]
 status = "passed"
 evidence = ["Task 2.59 accepted at Workspace 1db535a. Original Series grouping and controlled edits retained across dock and tab transitions in both themes pass focused checks and independent review. Review: artifacts/reviewed/task-2.59/review/verdict.md. Controlled UI only; owner visual judgment, full family coverage, rendering, storage and application activation remain pending. Existing DS typecheck limitation disclosed where applicable. Joined browser/CDP run used the local ignored task-2.59 capture; its reviewed outcome and screenshots are retained in the review record. The maintained component tests do not alone prove the composed browser flow."]
+
+[[capabilities]]
+id = "controlled-chart-labels-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "retained-state", "original-family-conditions", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartLabelsPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.60 accepted at Workspace b506a33. Exact typography edits, horizontal Size/Color, unknown choices, alpha and toggle retention pass focused checks and independent review. Review: artifacts/reviewed/task-2.60/review/verdict.md. Controlled UI only; other family variants, owner visual acceptance, live rendering and storage remain pending. Existing DS typecheck limitation disclosed."]
+
+[[capabilities]]
+id = "controlled-chart-markers-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "retained-state", "original-family-conditions", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartMarkersPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.61 accepted at Workspace b506a33. Exact shape/numeric edits, expanded maxima, invalid correction and retained hidden values pass focused checks and independent review. Review: artifacts/reviewed/task-2.61/review/verdict.md. Controlled UI only; other family variants, owner visual acceptance, live rendering and storage remain pending. Existing DS typecheck limitation disclosed."]
+
+[[capabilities]]
+id = "chart-labels-markers-dock-preview"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "retained-state", "original-family-conditions", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-editor/vitest.config.mjs", "vendor/workspace/terminalpro/tests/unit/chartEditorDock.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartLabelsPanel.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartMarkersPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.62 accepted at Workspace b506a33. Original bar/line conditions and grouping, keyboard edits and retained values across dock/tab transitions in both themes pass focused checks and independent review. Review: artifacts/reviewed/task-2.62/review/verdict.md. Controlled UI only; other family variants, owner visual acceptance, live rendering and storage remain pending. Existing DS typecheck limitation disclosed. Joined browser/CDP used the local ignored task-2.62 capture; its reviewed result and screenshots are retained. Component tests alone do not prove this browser flow."]

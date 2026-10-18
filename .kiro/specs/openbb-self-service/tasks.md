@@ -124,6 +124,30 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 2.57, 2.58_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
 
+- [x] 2.60 (P) Restore ordinary Series Labels typography controls
+  - Follow chart-labels-markers-design.md: preserve Labels toggle, Font, Weight and horizontal Size/Color row with exact controlled edits, alpha and retained unknown choices.
+  - Done when focused tests and independent review pass, preserving hidden values and keyboard/color-picker behavior without adding ordinary placement or text fields.
+  - Register maintained files and enforce 400 physical / 300 logical / 50-function caps. Reuse accepted controls; no dependencies, flags, rendering or storage changes.
+  - _Boundary: Controlled ordinary Labels subsection_
+  - _Depends: 2.59_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.61 (P) Restore the original Series Markers group
+  - Preserve enabled, Shape, Size and Stroke Width with caller choice order, unknown shape, fractional values, correctable invalid drafts and disabled retention.
+  - Done when focused tests and independent review pass, retaining original numeric limits and presentation. No invented Color field or scatter/bubble toggle.
+  - Register maintained files and enforce 400/300/50 caps; caller owns eligibility and option mapping.
+  - _Boundary: Controlled Markers subsection_
+  - _Depends: 2.59_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.62 Compose Labels and Markers in the original bar/line editor flows
+  - Join the real panels in the accepted dock with original bar/line order and conditions. Keep remaining family-specific controls and live-binding limits explicit outside the UI controls.
+  - Done when one joined light/dark browser check and independent review pass for exact edits and dock/tab retention, then compact evidence, inventory, breadth and source pins are synced, committed and pushed.
+  - Development story is excluded from production caps; enforce 400/300/50 on maintained components. No application activation or persistence changes.
+  - _Boundary: Controller-owned combined preview and delivery metadata_
+  - _Depends: 2.60, 2.61_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.
