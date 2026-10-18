@@ -34,9 +34,17 @@ The existing flow remains raw snapshot -> resolved appearance -> Cartesian proje
 
 Independent areas use their own zero baseline. Stacked areas require original ordered algebraic accumulation, not the separate positive/negative stacks used by bars. Normalized areas require their own source-backed extent calculation. Preliminary pinned-source inference for ordered values `[7,-6,5]` gives cumulative endpoints `[7,1,6]` and normalization extent 7; the bar denominator would be 12. This distinction must be frozen by the prerequisite below before implementation, including sign changes between categories.
 
-A pure typed area projection receives immutable raw snapshot, ordered selected columns, family and enabled-series membership. It returns drawn segments/boundaries and gap metadata without modifying raw observations. Renderer-internal missing-value coercion must not become a financial zero in labels, tooltips, exports or persistence. Handle zero-only, all-hidden, all-missing, repeated category labels and large finite values explicitly. Preserve raw labels/tooltips and original percent-axis/crosshair precedence.
+A pure typed area projection receives immutable raw snapshot, ordered selected columns, family and enabled-series membership. It returns drawn segments/boundaries and gap metadata without modifying raw observations. Preserve original processed-label semantics separately from raw observations: the original normalized area with multiple series displays a zero label for a missing cell. A dedicated labelValues array carries processed label inputs; raw snapshot, table values, tooltip lookup and saved data remain unchanged. PNG export naturally includes the original displayed labels. Handle zero-only, all-hidden, all-missing, repeated category labels and large finite values explicitly. Preserve raw tooltips, original processed area labels and percent-axis/crosshair precedence.
 
 Use native ECharts line/area rendering where it reproduces the frozen geometry. Do not assume its default stacking or gap fill matches AG Charts. A bounded native geometry check is required before committing to a stack strategy; if native options cannot preserve the original fill boundaries, return a concrete adapter design for review rather than silently changing the shape.
+
+### Native geometry refinement
+
+The existing ECharts SVG runtime demonstrates that native all-sign stacking reproduces complete area rows, but propagates lower-series gaps into upper series. Use explicit source-derived spans instead: each fill span is an isolated transparent baseline plus delta-area pair; separate internal stroke spans and one stable public marker/label series preserve raw row indexing. The pure projection supplies ordered paired lower/upper points, stroke points, marker endpoints and finite extent. Duplicate row indexes inside a span are meaningful split endpoints, not duplicate financial rows to deduplicate.
+
+For numeric/time X, declare pair dimensions and encoding so Y is the stacked dimension; the native probe uses `[y,x]` with explicit names. Do not let ECharts choose X as its first numeric stacked dimension. Finite signed crossings, negative deltas, null termination and duplicate-X endpoints are tested in the existing SVG renderer before adoption. This refinement adds no custom renderItem or new dependency.
+
+Internal geometry IDs use an `openbb-area-` namespace, are silent, have no symbols or tooltip, and never enter public legend data. Public main IDs remain the selected column IDs, with marker arrays exactly matching raw row order. The existing tooltip mapper excludes internal geometry parameters before raw lookup. Miniature cloning must preserve hidden baselines and internal stroke/fill roles instead of forcing every line to width two. It independently reprojects full inputs, retaining the same geometry roles. All area families use the existing legend callback to keep explicit endpoints current; no second selection owner is added.
 
 ### Appearance and editor contract
 
@@ -46,7 +54,7 @@ Preserve the original single-date conversion of exact `area` or `line` to `group
 
 ### Legend, navigator and persistence
 
-Reuse the accepted native legend scope and latest-request callback for normalizedArea. Hiding a series must recompute the original normalization and stack membership. Theme/data/resize updates retain current transient selection; family/session replacement resets it under the accepted lifecycle contract. No saved legend-selection field is introduced.
+Reuse the accepted native legend scope and latest-request callback for all three area families because explicit stacked endpoints must be recomputed when membership changes. Hiding a series must recompute the original normalization and stack membership. Theme/data/resize updates retain current transient selection; family/session replacement resets it under the accepted lifecycle contract. No saved legend-selection field is introduced.
 
 Keep physical-X category navigation. Construct the miniature from full selected-series inputs independently of main legend membership where confirmed by the original area contract. Miniature fill boundaries and gap semantics use the same area projection. Export reflects current rendered geometry. Save/reopen restores exact family, range, options and unknown branches; transient selection follows the observed original lifetime.
 
@@ -57,7 +65,7 @@ Production paths are relative to `vendor/workspace/terminalpro/src/components/Ge
 | Ownership | Paths | Responsibility |
 | --- | --- | --- |
 | Controller contract prerequisite | `echarts/cartesianTypes.ts`; new `echarts/cartesianAreaTypes.ts`; test fixture `tests/unit/chart-compatibility/fixtures/area-charts.json` | Family types and typed numerical seam; frozen original semantics before fan-out; keep isCartesianFamily admission unchanged until join |
-| Sol renderer lane | New `echarts/cartesianArea.ts`; `echarts/cartesian.ts`, `echarts/cartesianSeries.ts`, `echarts/cartesianAxes.ts`, `echarts/cartesianDisplay.ts`, `echarts/cartesianStyle.ts`, `echarts/cartesianNavigator.ts`, `echarts/cartesianLayout.ts`, `echarts/cartesianBarColors.ts` | Area projection, native fill/line/marker geometry, domain/spacing, formatting and overview |
+| Sol renderer lane | New `echarts/cartesianArea.ts` and cohesive `echarts/cartesianAreaSpans.ts`; `echarts/cartesian.ts`, `echarts/cartesianSeries.ts`, `echarts/cartesianAxes.ts`, `echarts/cartesianDisplay.ts`, `echarts/cartesianTooltip.ts`, `echarts/cartesianStyle.ts`, `echarts/cartesianNavigator.ts`, `echarts/cartesianLayout.ts`, `echarts/cartesianBarColors.ts` | Area projection, native fill/line/marker geometry, domain/spacing, formatting and overview |
 | Sol appearance/editor lane | `application/effectiveAppearance.ts`, `application/effectiveAppearanceDefaults.ts`, `application/effectiveAppearanceSeries.ts`; `compatibility/editorBindings/eligibility.ts`, `compatibility/editorBindings/mapApplicationEditorEvent.ts`, `compatibility/editorBindings/selectApplicationEditorState.ts`, `compatibility/editorBindings/rehydrateApplicationEditorEvent.ts` | Area namespace, source-backed defaults and original visible control effects |
 | Controller join | `echarts/cartesianTypes.ts` admission predicate after lane freeze; `application/applicationSessionProjection.ts`, `application/axisStructure.ts`; `AgChartView.tsx`, `caller/chartInputs.ts` only where shared predicates do not suffice | Atomic family activation, normalized callback/overview composition and retained family ranges |
 | Controller delivery | `.kiro/complexity-budgets.json`, `.kiro/breadth.toml`, `.kiro/specs/openbb-self-service/`, `sources.lock.json`; tests under `tests/unit/chart-compatibility/`, `tests/unit/chart-application/`, `tests/e2e/live-chart/` | Combined scope audit, actual application acceptance, selective artifact sync and commits |
@@ -78,14 +86,14 @@ Contract disagreement or native geometry mismatch blocks dependent work. It does
 
 | Criteria | Evidence required |
 | --- | --- |
-| 4.8, 4.9 | Unequal signed/ordered area fixtures, native boundaries, missing/gap and zero cases; raw labels/tooltips, original percent formatting and control effects; all seven accepted families retain behavior |
+| 4.8, 4.9 | Unequal signed/ordered area fixtures, native boundaries, missing/gap and zero cases; original processed labels/raw tooltips, original percent formatting and control effects; all seven accepted families retain behavior |
 | 4.7, 4.8 | Distinct family ranges, unknown/inactive branches, exact saved types and fresh-session reopen; no raw financial value mutation |
 | 10.1, 10.2, 10.3 | One isolated Workspace journey across three area types, legend, markers/fill/stroke, navigation/overview, themes, current PNG and save/reopen with CDP diagnostics |
 | 10.4, 10.5, 10.6 | Frozen parallel ownership, independent review, combined caps, actual test paths and scoped acceptance status |
 
 Add behavior-named area mapper/caller tests and a single `tests/e2e/live-chart/area-charts.spec.ts` using existing helpers. Reuse accepted persistence failure/restart and host cleanup evidence unless changed ownership creates a concrete regression risk. Publish one concise review and only necessary synthetic screenshots. This amendment covers the stated criteria within the main approved design; other requirements remain owned by that design.
 
-Wrong ordered accumulation, raw-to-percentage tooltip substitution, coerced missing financial observations, disconnected area controls, hidden actions, stale export or lost saved branches prevent acceptance. Broader UI-10 and release-image status remain pending.
+Wrong ordered accumulation, raw-to-percentage tooltip substitution, mutation of missing raw observations, disconnected area controls, hidden actions, stale export or lost saved branches prevent acceptance. Broader UI-10 and release-image status remain pending.
 
 ## Research basis
 

@@ -765,7 +765,7 @@
       "design_path": "chart-area-design.md",
       "design_review": "artifacts/reviewed/live-editor/area-charts/design-review.md",
       "design_review_status": "PASS",
-      "reviewed_design_sha256": "0cb461aee254c8985ef1a481b02b2dbb3cbc014c8eeaedd49f0dd5d2acbc9422",
+      "reviewed_design_sha256": "12b1a359ad392dd129f38953af2b8bed7f7bf813fdef10f027dabef5acaff032",
       "design_approved": true,
       "tasks_generated": true,
       "tasks_approved": true,
@@ -781,7 +781,16 @@
       "task_graph_review": "artifacts/reviewed/live-editor/area-charts/task-review.md",
       "task_graph_review_mode": "independent",
       "task_graph_review_status": "PASS",
-      "approval_note": "Owner explicitly directed autonomous UI/UX progression. Design/task progression and bounded implementation are authorized; independent review, original parity constraints and concrete visual-owner decisions remain."
+      "approval_note": "Owner explicitly directed autonomous UI/UX progression. Design/task progression and bounded implementation are authorized; independent review, original parity constraints and concrete visual-owner decisions remain.",
+      "completed_tasks": {
+        "2.86": {
+          "workspace_revision": "1d907aff0c6530551bb7e55a805655d743daa058",
+          "review": "artifacts/reviewed/live-editor/area-charts/contract-acceptance/review.md"
+        }
+      },
+      "contract_status": "accepted",
+      "contracts_path": "chart-area-contracts.md",
+      "native_design_review": "artifacts/reviewed/live-editor/area-charts/native-design-review.md"
     },
     "autonomous_ui_ux": true
   }

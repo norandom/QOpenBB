@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "c072e79a60cf5210b26e2b7443e4f92291d0d7f3",
-    "workspace_at_sync": "375fe8990c698ef5e9d4c972f92e6b77c242dae3",
+    "root_at_sync": "0f71a586053d5600c74c9d96a6b441a00f67e651",
+    "workspace_at_sync": "1d907aff0c6530551bb7e55a805655d743daa058",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31434,6 +31434,38 @@
       "publishedSHA256": "a470252f416f3a778ea4703c622c2d7a8c15e41f0ebf0b3d7c0146c8ee75612c",
       "bytes": 182,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/native-design-review.md",
+      "sourceSHA256": "d56e453039301a7533f15e31f245417df764e3e81ec14b17deed6a256b1b2d61",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/native-design-review.md",
+      "publishedSHA256": "d56e453039301a7533f15e31f245417df764e3e81ec14b17deed6a256b1b2d61",
+      "bytes": 3174,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/contract-acceptance/review.md",
+      "sourceSHA256": "f3461ca49cf4c2de2cf2aed58bddde9031f0261a10305bae1138341605e88d70",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/contract-acceptance/review.md",
+      "publishedSHA256": "f3461ca49cf4c2de2cf2aed58bddde9031f0261a10305bae1138341605e88d70",
+      "bytes": 3984,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/contract-acceptance/original-normalized-labels.png",
+      "sourceSHA256": "afe341afba66b5c2297c7d4e052b995381c41b3b6b06efd90bddee37c2805dd6",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/contract-acceptance/original-normalized-labels.png",
+      "publishedSHA256": "afe341afba66b5c2297c7d4e052b995381c41b3b6b06efd90bddee37c2805dd6",
+      "bytes": 30558,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/contract-acceptance/publication.json",
+      "sourceSHA256": "cd7b8ce36a5b3bc15575b8ada9b05b97b40f15a5e9ef2571ac0aa83c714f3147",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/contract-acceptance/publication.json",
+      "publishedSHA256": "cd7b8ce36a5b3bc15575b8ada9b05b97b40f15a5e9ef2571ac0aa83c714f3147",
+      "bytes": 566,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32147,7 +32179,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165801979,
+  "total_payload_bytes": 165840261,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
