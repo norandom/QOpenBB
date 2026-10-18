@@ -635,6 +635,14 @@
         "task_2_77_complete": false,
         "original_control_restored": true,
         "result": "Original Add a series restored; removal, save/reopen, adding uncaptured values and second reopen passed in actual Workspace."
+      },
+      "setup_transformations_checkpoint": {
+        "workspace_revision": "6db2fb96db507a604541114e8bf0841276e6794e",
+        "review": "artifacts/reviewed/live-editor/setup-transformations/review.md",
+        "task_2_77_complete": false,
+        "production_changed": false,
+        "transport_limitation": "Earlier CSV request cancellation remains unexplained; instrumented run passed without relaxing diagnostics.",
+        "result": "Sum and Avg, category/series orientation, transformed backend reopen and restoring original observations passed the actual Workspace check."
       }
     }
   }
