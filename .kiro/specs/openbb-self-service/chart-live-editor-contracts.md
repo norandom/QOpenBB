@@ -100,3 +100,7 @@ Aggregation precedes switching, and disabling either recomputes from the retaine
 The original unset legend outline control displays zero, while drawn legend markers inherit the series outline capped at two pixels. `ResolvedApplicationAppearance.legend.markerStroke` retains the control value; `legendMarkerStrokeWidth` carries the effective drawn width. An explicitly saved zero overrides inheritance.
 
 Session task 2.74 owns the original event-local legend enable state: chart model/API updates set the visible Enabled toggle and expanded details according to whether more than one value column is selected, without writing a theme option. The user can subsequently enable it manually. Static editor eligibility keeps the section present; do not persist this transient reset as a changed saved flag.
+
+## Measured layout
+
+Application rendering receives finite positive `CartesianMappingContext.viewport` dimensions from the existing host ResizeObserver. The optional host `onResize` callback reports initial and changed size; it owns no settings or persistence. The session waits for dimensions before translating application appearance, remaps after size changes and permits export only after the current projection draws. Existing legacy mapper calls remain unchanged. Use public text measurement and native legend interaction to preserve independent spacing and overlap-triggered label rotation; do not substitute hidden labels for Auto Rotate or introduce a second observer/store.

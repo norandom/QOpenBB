@@ -385,6 +385,6 @@ evidence = ["Task 2.68 accepted at Workspace bc202e4. Exact controlled edits, co
 id = "live-chart-editor-integration"
 requirements = ["4.2", "4.7", "4.8", "4.9", "10.1", "10.3", "10.4", "10.5", "10.6"]
 planned_checks = ["editor-to-render", "consecutive-edits", "setup-raw-observations", "real-table-route", "export-current-revision", "backend-save-reopen"]
-test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/effectiveAppearance.test.ts"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/effectiveAppearance.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/editorBindings.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/editorSavedLeaves.test.ts", "vendor/workspace/terminalpro/tests/unit/chartApplicationEditorPanel.test.tsx"]
 status = "planned"
 evidence = ["Tasks 2.69-2.77 connect accepted controls to the existing application. Appearance resolution passed task 2.70 focused tests and independent review (artifacts/reviewed/live-editor/appearance-review.md); remaining implementation and actual application join are pending. No live integration acceptance claimed."]

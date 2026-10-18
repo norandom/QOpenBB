@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "3676c05069263cafd51cd4443b6f73c45ffbc2a1",
-    "workspace_at_sync": "a709c520b04e7265495b914aeb3478d296c7f221",
+    "root_at_sync": "001be8c8569f578f01893c9bdca774666d995d8e",
+    "workspace_at_sync": "f4aaa97542e557fbcb039264b0e163ebfa73709b",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -30762,6 +30762,22 @@
       "publishedSHA256": "12121bf59439ef8cc0576270d6b1de23d51c7d53abcb19d4292489e3e4e52654",
       "bytes": 176,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/bindings-review.md",
+      "sourceSHA256": "14f7c5393313483d6a26f57937b29e174c7f4861390094d33e1743c455900f08",
+      "publishedpath": "artifacts/reviewed/live-editor/bindings-review.md",
+      "publishedSHA256": "14f7c5393313483d6a26f57937b29e174c7f4861390094d33e1743c455900f08",
+      "bytes": 8905,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/bindings-publication.json",
+      "sourceSHA256": "0a54dd8fee058773ac9b3e7d5a5181e7f533e8df4132110d5fa97b2da3b5c751",
+      "publishedpath": "artifacts/reviewed/live-editor/bindings-publication.json",
+      "publishedSHA256": "0a54dd8fee058773ac9b3e7d5a5181e7f533e8df4132110d5fa97b2da3b5c751",
+      "bytes": 174,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -31475,7 +31491,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165231672,
+  "total_payload_bytes": 165240751,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

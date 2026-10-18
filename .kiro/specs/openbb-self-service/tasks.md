@@ -213,7 +213,7 @@ Every production task below passes whole-file 400 physical/300 logical/50 per-fu
   - _Boundary:_ Effective appearance resolver and pure helpers
   - _Depends:_ 2.69
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
-- [ ] 2.71 (P) Editor implementer, parallel to 2.70: own new `compatibility/editorBindings/**`, `editor/ApplicationChartEditor.tsx` and cohesive production composition files. Bind existing panels to frozen selectors/events, including full font choices and original family/data eligibility. Emit exact validated bar/line/axis patches; preserve unrelated fields and retained disabled values. No session/store writes. Test each event leaf, ordinary panel value hydration, independent axes and original applicability. Completion: production composition imports the accepted controls without preview state; caps pass.
+- [x] 2.71 (P) Editor implementer, parallel to 2.70: own new `compatibility/editorBindings/**`, `editor/ApplicationChartEditor.tsx` and cohesive production composition files. Bind existing panels to frozen selectors/events, including full font choices and original family/data eligibility. Emit exact validated bar/line/axis patches; preserve unrelated fields and retained disabled values. No session/store writes. Test each event leaf, ordinary panel value hydration, independent axes and original applicability. Completion: production composition imports the accepted controls without preview state; caps pass.
   - _Boundary:_ Editor bindings and production panel composition
   - _Depends:_ 2.69
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
