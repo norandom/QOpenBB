@@ -19,7 +19,7 @@ Production paths below are relative to `vendor/workspace/terminalpro/src/compone
   - _Depends: 1.4, 2.81_
   - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.4, 10.5, 10.6_
 
-- [ ] 2.83 (P) Render normalized signed columns and bars with an independent overview
+- [x] 2.83 (P) Render normalized signed columns and bars with an independent overview
   - Sol renderer owns new `echarts/cartesianNormalization.ts`, plus `echarts/cartesian.ts`, `echarts/cartesianSeries.ts`, `echarts/cartesianAxes.ts`, `echarts/cartesianDisplay.ts`, `echarts/cartesianNavigator.ts`. Read the frozen types/fixture; do not edit lifecycle, host or application owners.
   - Normalize drawn coordinates after existing setup projection, preserving raw observations and signed accumulation. Derive finite domains from endpoints plus zero; apply the frozen default percent-axis precedence while retaining raw financial labels/tooltips and category formatting. Handle missing, zero and all-hidden values without fabricated financial zeros or nonfinite geometry.
   - Reproject main geometry from enabled membership. Independently compute the full selected-series overview with all series enabled. Keep physical-X navigation: category crop for columns and numeric crop retaining rows for bars; viewport clipping never changes the denominator. Preserve all five accepted families.
