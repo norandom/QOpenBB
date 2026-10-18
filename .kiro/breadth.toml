@@ -284,3 +284,27 @@ planned_checks = ["exact-controlled-edits", "retained-state", "light-dark-contro
 test_paths = ["artifacts/reviewed/task-2.56/implementer/capture.mjs"]
 status = "passed"
 evidence = ["Task 2.56 accepted at Workspace 86da20c. Original grouping and controlled edits retained across dock and tab transitions in both themes pass focused checks and independent review. Review: artifacts/reviewed/task-2.56/review/verdict.md. Controlled UI only; owner visual judgment, rendering, storage and application activation remain pending. Existing DS typecheck limitation disclosed."]
+
+[[capabilities]]
+id = "controlled-chart-series-style-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "numeric-validity", "retained-state", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartSeriesStylePanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.57 accepted at Workspace 1db535a. Caller-ordered labels and fields, exact numeric edits, native bounds/steps, draft correction and external updates pass focused checks and independent review. Review: artifacts/reviewed/task-2.57/review/verdict.md. Controlled UI only; owner visual judgment, full family coverage, rendering, storage and application activation remain pending. Existing DS typecheck limitation disclosed where applicable."]
+
+[[capabilities]]
+id = "controlled-chart-shadow-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "numeric-validity", "retained-state", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartShadowPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.58 accepted at Workspace 1db535a. Exact enabled/color/numeric edits, retained hidden values, negative offsets and alpha color pass focused checks and independent review. Review: artifacts/reviewed/task-2.58/review/verdict.md. Controlled UI only; owner visual judgment, full family coverage, rendering, storage and application activation remain pending. Existing DS typecheck limitation disclosed where applicable."]
+
+[[capabilities]]
+id = "chart-series-shadow-dock-preview"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "numeric-validity", "retained-state", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-editor/vitest.config.mjs", "vendor/workspace/terminalpro/tests/unit/chartEditorDock.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartSeriesStylePanel.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartShadowPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.59 accepted at Workspace 1db535a. Original Series grouping and controlled edits retained across dock and tab transitions in both themes pass focused checks and independent review. Review: artifacts/reviewed/task-2.59/review/verdict.md. Controlled UI only; owner visual judgment, full family coverage, rendering, storage and application activation remain pending. Existing DS typecheck limitation disclosed where applicable. Joined browser/CDP run used the local ignored task-2.59 capture; its reviewed outcome and screenshots are retained in the review record. The maintained component tests do not alone prove the composed browser flow."]

@@ -409,6 +409,45 @@
       "acceptance_scope": "Controlled Background and Tooltips panels composed in the existing dock preview. Remaining Series and axis controls, mapper bindings, storage integration and application activation remain pending.",
       "owner_visual_accepted": false,
       "typecheck_limitation": "Scoped checks retain reproduced upstream DS typography.ts TS2578; no full compiler acceptance claimed."
+    },
+    "series_shadow": {
+      "task_ids": [
+        "2.57",
+        "2.58",
+        "2.59"
+      ],
+      "design_path": "chart-series-shadow-design.md",
+      "design_approved": true,
+      "tasks_approved": true,
+      "approval_note": "Owner explicitly requested autonomous continuation with the same UI focus on 2026-10-18. This bounded continuation retains existing requirements, controls and approved appearance; live application parity is not inferred.",
+      "phase": "accepted",
+      "implementation_accepted": true,
+      "design_review": "artifacts/reviewed/task-2.59/review/verdict.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "4fe741620c737036853838b56f6d2ff3c6986ab26ec16388f6a86d290856882b",
+      "implementation_source_revision": "1db535ac6195f07f671ddea17baca449bb068b64",
+      "implementation_reviews": [
+        "artifacts/reviewed/task-2.57/review/verdict.md",
+        "artifacts/reviewed/task-2.58/review/verdict.md",
+        "artifacts/reviewed/task-2.59/review/verdict.md"
+      ],
+      "previews": [
+        "artifacts/reviewed/task-2.59/implementer/dock-series-light-dark.png",
+        "artifacts/reviewed/task-2.59/implementer/dock-shadow-light-dark.png"
+      ],
+      "acceptance_scope": "Controlled Series styling and Shadow panels composed in the existing dock preview. Labels, other family-specific controls, axes, mapper bindings, storage integration and application activation remain pending.",
+      "owner_visual_accepted": false,
+      "typecheck_limitation": "Scoped checks retain reproduced upstream DS typography.ts TS2578 where DS imports apply; no full compiler acceptance claimed.",
+      "verification": {
+        "editor_unit_tests": 41,
+        "editor_test_files": 10,
+        "unit_runner": "vendor/workspace/terminalpro/tests/unit/chart-editor/vitest.config.mjs",
+        "light_dark_browser": "passed, including decimal readability and retained edits",
+        "maintained_files_checked": 195,
+        "complexity_errors": 0,
+        "complexity_violations": 0,
+        "evidence_retention": "Compact public reviews and screenshots; raw run logs and full measurements remain local"
+      }
     }
   }
 }

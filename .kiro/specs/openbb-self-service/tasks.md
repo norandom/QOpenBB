@@ -100,6 +100,30 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 2.54, 2.55_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
 
+- [x] 2.57 Restore the original Series numeric styling controls
+  - Follow chart-series-shadow-design.md. Preserve caller labels/order, exact scalar edits and native numeric bounds/steps with correctable invalid drafts and no mount edits.
+  - Done when focused tests and both-theme pointer/keyboard checks pass independent review, including external updates and family-specific caller descriptors.
+  - Register maintained files and enforce whole-file 400 physical / 300 logical / 50-function caps; no renderer, storage, dependency or flag changes.
+  - _Boundary: Controlled Series style panel and reusable chart numeric input_
+  - _Depends: 2.56_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.58 Restore the Series Shadow subsection
+  - Preserve original toggle, Color, Blur and offsets using accepted numeric/color inputs; keep hidden values, alpha and negative offsets without new fields.
+  - Done when focused tests and both-theme pointer/keyboard checks pass independent review. Preparation may overlap 2.57, but production waits for its acceptance.
+  - Register maintained files and enforce whole-file 400/300/50 caps; caller retains family eligibility and storage ownership.
+  - _Boundary: Controlled Shadow subsection_
+  - _Depends: 2.57_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.59 Compose Series styling and Shadow in the accepted dock preview
+  - Compose numeric rows after Tooltips and Shadow afterward; restore original numeric font, thin tracks and spinner-free fields. Disclose missing Labels/family-specific controls and axes outside product controls.
+  - Done when edited values survive dock and tab transitions in both themes, independent review passes, and reviewed artifacts, inventory, breadth and source pins are synced, committed and pushed.
+  - Development story is excluded from production caps; audit maintained production modules at 400/300/50. No application activation or storage changes.
+  - _Boundary: Controller-owned combined development story and delivery metadata_
+  - _Depends: 2.57, 2.58_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.

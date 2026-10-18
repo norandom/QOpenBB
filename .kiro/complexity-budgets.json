@@ -3,15 +3,15 @@
   "metric": "project-syntax-units-v1",
   "limits": {"physical": 400, "logical": 300, "function": 50},
   "exceptions": [
-    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"physical","baseline":1601,"revision":"86da20c60dd7457bdb41b1b185822110b99b480c","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"logical","baseline":845,"revision":"86da20c60dd7457bdb41b1b185822110b99b480c","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"function","baseline":52,"revision":"86da20c60dd7457bdb41b1b185822110b99b480c","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":22,"line":853,"name":"<anonymous>"}},
-    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"physical","baseline":886,"revision":"86da20c60dd7457bdb41b1b185822110b99b480c","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"logical","baseline":581,"revision":"86da20c60dd7457bdb41b1b185822110b99b480c","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"physical","baseline":505,"revision":"86da20c60dd7457bdb41b1b185822110b99b480c","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"function","baseline":62,"revision":"86da20c60dd7457bdb41b1b185822110b99b480c","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":1,"line":86,"name":"getTableData"}},
-    {"repository":"workspace","path":"backend-api/backend/api/crud.py","metric":"physical","baseline":1599,"revision":"86da20c60dd7457bdb41b1b185822110b99b480c","rationale":"Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.","review":".kiro/specs/openbb-self-service/sqlite-repair-verification.md","expires_on":"2026-11-17"},
-    {"repository":"workspace","path":"backend-api/backend/api/crud.py","metric":"logical","baseline":582,"revision":"86da20c60dd7457bdb41b1b185822110b99b480c","rationale":"Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.","review":".kiro/specs/openbb-self-service/sqlite-repair-verification.md","expires_on":"2026-11-17"}
+    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"physical","baseline":1601,"revision":"1db535ac6195f07f671ddea17baca449bb068b64","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"logical","baseline":845,"revision":"1db535ac6195f07f671ddea17baca449bb068b64","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"function","baseline":52,"revision":"1db535ac6195f07f671ddea17baca449bb068b64","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":22,"line":853,"name":"<anonymous>"}},
+    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"physical","baseline":886,"revision":"1db535ac6195f07f671ddea17baca449bb068b64","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"logical","baseline":581,"revision":"1db535ac6195f07f671ddea17baca449bb068b64","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"physical","baseline":505,"revision":"1db535ac6195f07f671ddea17baca449bb068b64","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
+    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"function","baseline":62,"revision":"1db535ac6195f07f671ddea17baca449bb068b64","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":1,"line":86,"name":"getTableData"}},
+    {"repository":"workspace","path":"backend-api/backend/api/crud.py","metric":"physical","baseline":1599,"revision":"1db535ac6195f07f671ddea17baca449bb068b64","rationale":"Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.","review":".kiro/specs/openbb-self-service/sqlite-repair-verification.md","expires_on":"2026-11-17"},
+    {"repository":"workspace","path":"backend-api/backend/api/crud.py","metric":"logical","baseline":582,"revision":"1db535ac6195f07f671ddea17baca449bb068b64","rationale":"Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.","review":".kiro/specs/openbb-self-service/sqlite-repair-verification.md","expires_on":"2026-11-17"}
   ],
   "scope_limits": "All QOpenBB maintained production files; whole explicit changed files in owned forks. Unchanged upstream is outside initial enforcement. No implicit oversized-file exceptions.",
   "repositories": [
@@ -68,7 +68,7 @@
     {
       "id": "workspace",
       "repository": "https://github.com/norandom/openbb-workspace.git",
-      "revision": "86da20c60dd7457bdb41b1b185822110b99b480c",
+      "revision": "1db535ac6195f07f671ddea17baca449bb068b64",
       "source_lock_key": "workspace",
       "root": "vendor/workspace",
       "mode": "changed",
@@ -131,6 +131,10 @@
         "terminalpro/src/components/General/Table/Chart/editor/padding/ChartPaddingPanel.tsx",
         "terminalpro/src/components/General/Table/Chart/editor/background/ChartBackgroundPanel.tsx",
         "terminalpro/src/components/General/Table/Chart/editor/tooltips/ChartTooltipsPanel.tsx",
+        "terminalpro/src/components/General/Table/Chart/editor/series/ChartNumberInput.tsx",
+        "terminalpro/src/components/General/Table/Chart/editor/series/ChartSeriesStylePanel.tsx",
+        "terminalpro/src/components/General/Table/Chart/editor/shadow/ChartShadowPanel.tsx",
+        "terminalpro/src/components/General/Table/Chart/editor/series/chartNumberInput.css",
         "terminalpro/src/components/General/Table/Chart/AgChartView.tsx",
         "terminalpro/src/components/General/Table/Chart/hooks/useChartOptions.tsx",
         "terminalpro/src/components/General/Table/AgGrid.tsx",
@@ -187,6 +191,7 @@
         "terminalpro/src/components/Widgets/perspective/PerspectiveHost.tsx"
       ]}],
       "exclusions": [
+        {"patterns": ["terminalpro/src/components/ds/organisms/ChartSeriesStylePanel.stories.tsx", "terminalpro/src/components/ds/organisms/ChartShadowPanel.stories.tsx"], "reason": "Development-only controlled chart editor previews; production controls remain capped", "source": "Workspace Storybook component entries"},
         {"patterns": ["terminalpro/src/components/ds/organisms/ChartBackgroundPanel.stories.tsx", "terminalpro/src/components/ds/organisms/ChartTooltipsPanel.stories.tsx"], "reason": "Development-only controlled chart editor previews; production controls remain capped", "source": "Workspace Storybook component entries"},
         {"patterns": ["terminalpro/src/components/ds/organisms/ChartLegendPanel.stories.tsx", "terminalpro/src/components/ds/organisms/ChartPaddingPanel.stories.tsx"], "reason": "Development-only controlled chart editor previews; production controls remain capped", "source": "Workspace Storybook component entries"},
         {"patterns": ["terminalpro/src/components/ds/organisms/ChartSetupPanel.stories.tsx", "terminalpro/src/components/ds/organisms/ChartTitlesPanel.stories.tsx", "terminalpro/src/components/ds/organisms/ChartEditorControls.stories.tsx"], "reason": "Development-only controlled chart editor previews; production controls remain capped", "source": "Workspace Storybook component entries"},

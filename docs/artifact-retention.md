@@ -6,6 +6,14 @@ For routine UI work, keep the affected unit/contract tests, scoped lint/types an
 
 Publish a concise verification record with the source revision, check commands/results, review decision and remaining limitations. Include the light/dark screenshots that let the owner judge the changed view. Raw logs, intermediate screenshots, duplicate size reports and one-off preview scaffolding stay local. Reuse maintained test fixtures and browser runners.
 
+The editor components share `vendor/workspace/terminalpro/tests/unit/chart-editor/vitest.config.mjs`. From `vendor/workspace/terminalpro`, use the installed pinned toolchain to run:
+
+```sh
+pnpm exec vitest run --config tests/unit/chart-editor/vitest.config.mjs
+```
+
+For a local panel change, append its test filename, such as `tests/unit/chartShadowPanel.test.tsx`. The shared configuration selects editor panels, dock navigation and the gallery, runs one worker, and does not load the application Vite configuration. It replaces per-task unit-runner copies without removing behavioral assertions. This command is a component check, not dashboard, financial or deployment acceptance.
+
 ## Historical cleanup
 
 The first cleanup retires 118 historical run-log and preview-scaffolding files from UI tasks 2.47 through 2.56, totaling about 102 KB. It reduces navigation clutter, not repository storage substantially. Reports, screenshots, structured results, source hashes, original reference captures and active regression inputs remain. The three browser captures currently named in the breadth map and their runner dependencies are retained, as is the missing-source regression fixture.

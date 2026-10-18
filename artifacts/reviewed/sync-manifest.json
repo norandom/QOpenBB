@@ -133,10 +133,13 @@
     "task-2.53",
     "task-2.55",
     "task-2.54",
-    "task-2.56"
+    "task-2.56",
+    "task-2.57",
+    "task-2.58",
+    "task-2.59"
   ],
   "sourcepins": {
-    "root_at_sync": "f9b4e2072dc087cbce5b55d13936d3e186180f6f",
+    "root_at_sync": "81b040f7aa5ffa838be4a3bf18059ad72582d037",
     "workspace_at_sync": "76edf85a46298f7bc5212ff9944e4b66e9baa4af",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -30413,6 +30416,94 @@
       "publishedSHA256": "9c719f9828c3f9b9cc8733d159c9ce8634b12daa2793996b2c56b1ff4ec13865",
       "bytes": 839,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.57/review/verdict.md",
+      "sourceSHA256": "e1d5b857f64d95afdca1e4392661658078361e8b385d00cc2320f521ab32dd22",
+      "publishedpath": "artifacts/reviewed/task-2.57/review/verdict.md",
+      "publishedSHA256": "e1d5b857f64d95afdca1e4392661658078361e8b385d00cc2320f521ab32dd22",
+      "bytes": 3332,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.57/implementer/series-light-dark.png",
+      "sourceSHA256": "7c0dd72d82b17b1f2a27f2e58ab81b105a252692cdb74100f1dad585a9aec4f0",
+      "publishedpath": "artifacts/reviewed/task-2.57/implementer/series-light-dark.png",
+      "publishedSHA256": "7c0dd72d82b17b1f2a27f2e58ab81b105a252692cdb74100f1dad585a9aec4f0",
+      "bytes": 34542,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.57/design-review.md",
+      "sourceSHA256": "47a1d60449fb059e703549844d1071139832cc34d56ff5a73461954e9c579907",
+      "publishedpath": "artifacts/reviewed/task-2.57/design-review.md",
+      "publishedSHA256": "47a1d60449fb059e703549844d1071139832cc34d56ff5a73461954e9c579907",
+      "bytes": 2480,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.57/publication.json",
+      "sourceSHA256": "379b3323c1012c072cf02299c3a9246917f939314e508f7494e41dd90e50bcb2",
+      "publishedpath": "artifacts/reviewed/task-2.57/publication.json",
+      "publishedSHA256": "379b3323c1012c072cf02299c3a9246917f939314e508f7494e41dd90e50bcb2",
+      "bytes": 488,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.58/review/verdict.md",
+      "sourceSHA256": "c7b711023c623697303706cf29dceef6e16bea19b4b2436e7c0395e70f93789f",
+      "publishedpath": "artifacts/reviewed/task-2.58/review/verdict.md",
+      "publishedSHA256": "c7b711023c623697303706cf29dceef6e16bea19b4b2436e7c0395e70f93789f",
+      "bytes": 2911,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.58/implementer/shadow-light-dark.png",
+      "sourceSHA256": "1245334d875e07b757326896f2508203c7f217976983f10819839640d04d258e",
+      "publishedpath": "artifacts/reviewed/task-2.58/implementer/shadow-light-dark.png",
+      "publishedSHA256": "1245334d875e07b757326896f2508203c7f217976983f10819839640d04d258e",
+      "bytes": 33754,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.58/publication.json",
+      "sourceSHA256": "d54f73b31f9b9c812ce9109b0508ee1c1d9dfb1979ee0706b0d6fef430dbe7c1",
+      "publishedpath": "artifacts/reviewed/task-2.58/publication.json",
+      "publishedSHA256": "d54f73b31f9b9c812ce9109b0508ee1c1d9dfb1979ee0706b0d6fef430dbe7c1",
+      "bytes": 338,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.59/review/verdict.md",
+      "sourceSHA256": "490eb1c5178f30eb88aced9fd583c475e586adcb4f7de659cc90664cbfefa428",
+      "publishedpath": "artifacts/reviewed/task-2.59/review/verdict.md",
+      "publishedSHA256": "490eb1c5178f30eb88aced9fd583c475e586adcb4f7de659cc90664cbfefa428",
+      "bytes": 3399,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.59/implementer/dock-series-light-dark.png",
+      "sourceSHA256": "7aabfe10bbbc9b1fe2b4ae1219879dbcab888f3d2b18389248f1b137d53def5b",
+      "publishedpath": "artifacts/reviewed/task-2.59/implementer/dock-series-light-dark.png",
+      "publishedSHA256": "7aabfe10bbbc9b1fe2b4ae1219879dbcab888f3d2b18389248f1b137d53def5b",
+      "bytes": 78087,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.59/implementer/dock-shadow-light-dark.png",
+      "sourceSHA256": "b157ace5f54bf3ae8673bd13474e99df5b74f650b92f247650eb423335689792",
+      "publishedpath": "artifacts/reviewed/task-2.59/implementer/dock-shadow-light-dark.png",
+      "publishedSHA256": "b157ace5f54bf3ae8673bd13474e99df5b74f650b92f247650eb423335689792",
+      "bytes": 77698,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/task-2.59/publication.json",
+      "sourceSHA256": "a3eebecfc950c5b7fd2b8726d0baa2fc1476530ce2dea92423a1aeb6d9565321",
+      "publishedpath": "artifacts/reviewed/task-2.59/publication.json",
+      "publishedSHA256": "a3eebecfc950c5b7fd2b8726d0baa2fc1476530ce2dea92423a1aeb6d9565321",
+      "bytes": 515,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -31126,7 +31217,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 164430069,
+  "total_payload_bytes": 164667613,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
