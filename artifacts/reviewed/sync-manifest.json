@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "b8d75b140e6b972219c403f5fc9df5404648b414",
-    "workspace_at_sync": "49e9cb25a1ef1b7c9c35a1dad030281a97c2ecb8",
+    "root_at_sync": "52fe030e1785ad7c4f8e5ff094425fdb45783f8e",
+    "workspace_at_sync": "07d214dafdcf4097dbe1a2d741c407785f7e73cf",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -30906,6 +30906,22 @@
       "publishedSHA256": "63553701a92863c789836b83111ad92bbb076fe3ed22e29a7d40c4dbca3bb24c",
       "bytes": 173,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/save-failure-review.md",
+      "sourceSHA256": "86f777a788d7c9165d9c2055eff0649bf3439194e0ee3a4242ba185781a4853c",
+      "publishedpath": "artifacts/reviewed/live-editor/save-failure-review.md",
+      "publishedSHA256": "86f777a788d7c9165d9c2055eff0649bf3439194e0ee3a4242ba185781a4853c",
+      "bytes": 3642,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/save-failure-publication.json",
+      "sourceSHA256": "c4e8d6d7792cd577de911a3b0d6115a6a16f906218f4578a15cc7c7b0f069b67",
+      "publishedpath": "artifacts/reviewed/live-editor/save-failure-publication.json",
+      "publishedSHA256": "c4e8d6d7792cd577de911a3b0d6115a6a16f906218f4578a15cc7c7b0f069b67",
+      "bytes": 184,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -31619,7 +31635,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165302947,
+  "total_payload_bytes": 165306773,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
