@@ -505,6 +505,41 @@
       "acceptance_scope": "Controlled Grid Lines and Ticks composed under independent Horizontal/Vertical Axis bar/line previews. Remaining axis fields and family conditions, live binding, persistence and application activation remain pending.",
       "owner_visual_accepted": false,
       "typecheck_limitation": "Known upstream DS typography.ts TS2578 remains; no full compiler acceptance claimed."
+    },
+    "axis_fields": {
+      "task_ids": [
+        "2.66",
+        "2.67",
+        "2.68"
+      ],
+      "design_path": "chart-axis-fields-design.md",
+      "design_approved": true,
+      "tasks_approved": true,
+      "approval_note": "Owner explicitly requested autonomous continuation with the same UI focus on 2026-10-18. This bounded continuation retains existing requirements, controls and approved appearance; live application parity is not inferred.",
+      "phase": "accepted",
+      "implementation_accepted": true,
+      "design_review": "artifacts/reviewed/task-2.66/design-review.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "f2e689e47b014e906a6925690accf85ef1a8c8dcfa79e930c98a6952593e5597",
+      "implementation_source_revision": "bc202e457087794e984b1bd4d44518a868560811",
+      "implementation_reviews": [
+        "artifacts/reviewed/task-2.66/review/verdict.md",
+        "artifacts/reviewed/task-2.67/review/verdict.md",
+        "artifacts/reviewed/task-2.68/review/verdict.md"
+      ],
+      "previews": [
+        "artifacts/reviewed/task-2.68/implementer/dock-axis-fields-light-dark.png",
+        "artifacts/reviewed/task-2.68/implementer/dock-axis-labels-light-dark.png"
+      ],
+      "acceptance_scope": "Controlled ordinary Cartesian axis fields and Labels with rotation composed in independent bar/line preview axes. Full font menus, data-driven and family eligibility, live binding, persistence and application activation remain pending.",
+      "owner_visual_accepted": false,
+      "typecheck_limitation": "Known upstream DS typography.ts TS2578 remains; no full compiler acceptance claimed.",
+      "owner_visual_approval": {
+        "scope": "Auto Rotate checkbox and rotation dial shown in dock-axis-labels-light-dark.png only",
+        "decision": "Yes, keep it",
+        "source_revision": "bc202e457087794e984b1bd4d44518a868560811",
+        "date": "2026-10-18"
+      }
     }
   }
 }

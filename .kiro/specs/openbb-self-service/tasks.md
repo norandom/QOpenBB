@@ -170,6 +170,30 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 2.63, 2.64_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
 
+- [x] 2.66 (P) Restore the main Cartesian axis fields
+  - Follow chart-axis-fields-design.md: original conditional Axis Type, Time Format, Position, Color and Thickness with exact controlled edits and retained hidden values.
+  - Done when focused tests and independent review pass for caller choice order, unknown values, alpha, zero/fractional thickness and invalid correction. No mapper, dependencies, flags or storage changes.
+  - Register scope and enforce 400 physical / 300 logical / 50-function caps.
+  - _Boundary: Controlled axis main fields_
+  - _Depends: 2.65_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.67 (P) Restore axis Labels and rotation controls
+  - Preserve typography, horizontal Size/Color, Padding, Auto Rotate and conditional dial/numeric rotation. No Labels enable toggle. Retain manual rotation across auto transitions.
+  - Done when focused tests and independent review pass for normalized signed angles, pointer cleanup, keyboard edits, conditional retention and correctable drafts.
+  - Register maintained components/styles and enforce 400/300/50 caps; caller owns effective original option mapping.
+  - _Boundary: Controlled axis Labels and its rotation input_
+  - _Depends: 2.65_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.68 Compose the remaining ordinary Cartesian axis controls
+  - Join main fields before Grid Lines/Ticks and Labels after them, preserving independent axes and original conditional time-format behavior in bar/line fixtures.
+  - Done when one focused light/dark browser/CDP check and independent review pass for exact fields, auto/manual rotation, pointer/keyboard and dock/tab retention. Publish compact evidence, update inventory/breadth/pins and push per-task commits.
+  - Story excluded from production caps; maintained code passes400/300/50. Keep family eligibility, full font menus, live chart binding and persistence explicitly pending.
+  - _Boundary: Controller-owned joined editor preview and delivery metadata_
+  - _Depends: 2.66, 2.67_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.
