@@ -621,6 +621,13 @@
         "task_2_77_complete": false,
         "owner_accepted": true,
         "result": "Default light line view accepted by owner; independent reviews and actual application/filter join passed."
+      },
+      "manual_rotation_checkpoint": {
+        "workspace_revision": "f1e08583a1803136b5b8ef1a5c270df665bb0533",
+        "review": "artifacts/reviewed/live-editor/manual-rotation/review.md",
+        "task_2_77_complete": false,
+        "production_changed": false,
+        "result": "Manual 45-degree category-label rotation passed actual groupedColumn/stackedColumn/line rendering and line fresh-session/backend-restart persistence."
       }
     }
   }
