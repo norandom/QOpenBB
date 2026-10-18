@@ -250,7 +250,7 @@ Controller addition to 2.69/2.73: freeze an explicit application raw-observation
 
 ### Wave 4: one application acceptance join
 
-- [ ] 2.77 Controller and independent Astra reviewer: run the existing application browser infrastructure against the actual Full route with disposable backend state, headless owned browser and one worker. Extend maintained e2e tests by behavior, not task number. Cover groupedColumn/stackedColumn/line from the ordinary table, every applicable editor section, theme, filtered/sorted data, Set Up, table return, current export, backend save/reopen/restart and failure/retry. Inspect console/network diagnostics and actual displayed values. Use representative light/dark screenshots sufficient to assess the integrated widget. Failure fixes return to the owning task and receive focused review; rerun only affected checks and the necessary join.
+- [x] 2.77 Controller and independent Astra reviewer: run the existing application browser infrastructure against the actual Full route with disposable backend state, headless owned browser and one worker. Extend maintained e2e tests by behavior, not task number. Cover groupedColumn/stackedColumn/line from the ordinary table, every applicable editor section, theme, filtered/sorted data, Set Up, table return, current export, backend save/reopen/restart and failure/retry. Inspect console/network diagnostics and actual displayed values. Use representative light/dark screenshots sufficient to assess the integrated widget. Failure fixes return to the owning task and receive focused review; rerun only affected checks and the necessary join.
   - _Boundary:_ Actual application acceptance and evidence
   - _Depends:_ 2.76
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6

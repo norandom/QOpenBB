@@ -558,14 +558,14 @@
       "tasks_approved": true,
       "approval_note": "Owner approved connecting existing controls to the live chart and original saved-settings flow on 2026-10-18, under the established autonomous workflow. Exact contracts receive independent review before consumers; full renderer release is not accepted.",
       "phase": "implementation",
-      "implementation_accepted": false,
+      "implementation_accepted": true,
       "design_review": "artifacts/reviewed/live-editor/design-review.md",
       "reviewed_design_sha256": "3ff3ed45c19cbec690265a7302f98467c8165fb2c038b0f70fe68a43c0cf614a",
       "starting_workspace_revision": "bc202e457087794e984b1bd4d44518a868560811",
       "contracts_accepted": true,
       "contracts_workspace_revision": "f4ba1bfb7f6c282485f0e31e2165d6aa1e2b7c08",
       "contracts_review": "artifacts/reviewed/live-editor/contracts-review.md",
-      "verification_note": "Contract declarations lint and complexity pass. Affected strict typecheck reports only pre-existing typography.ts TS2578; runtime integration remains unverified.",
+      "verification_note": "Task 2.77 accepted after actual application browser, independent Astra review and 84-file production size audit. Representative editor actions, unknown saved branches, failure/retry, reopen/restart and current PNG passed. Historical CSV cancellation and original restore limitations remain disclosed. Not full renderer or release acceptance.",
       "completed_tasks": {
         "2.70": {
           "workspace_revision": "a709c520b04e7265495b914aeb3478d296c7f221",
@@ -601,6 +601,11 @@
           "workspace_revision": "49e9cb25a1ef1b7c9c35a1dad030281a97c2ecb8",
           "review": "artifacts/reviewed/live-editor/actions-review.md",
           "scope": "actions only; actual application join remains pending"
+        },
+        "2.77": {
+          "workspace_revision": "aa2e0bfe4253edf6bf6ef2f18822d4304f07fdd8",
+          "review": "artifacts/reviewed/live-editor/ordinary-closeout/review.md",
+          "scope": "ordinary groupedColumn/stackedColumn/line application integration; original restore limitations retained; UI-10 through UI-16 and release pending"
         }
       },
       "browser_checkpoint": {
