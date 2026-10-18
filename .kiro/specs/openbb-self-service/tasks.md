@@ -2,6 +2,56 @@
 
 Current production UI priorities are collected in the [UI parity worklist](ui-parity-worklist.md). It distinguishes actual application deliverables from the historical source-helper and reference-test tasks below; it does not alter their recorded approval or acceptance.
 
+## Ordinary 100% stacked columns and bars: UI-10 next slice
+
+Owner approved the [normalized-bar design](chart-normalized-bars-design.md), including a working horizontal overview. Tasks 2.82-2.85 below await task-phase approval. They cover exactly `normalizedColumn` and `normalizedBar`; broader UI-10 and release acceptance remain pending.
+
+Execution: controller prerequisite 2.82 -> parallel Sol lanes 2.83 / 2.84 -> controller application join 2.85. Each task is a 1-3 hour unit with independent review and a selective commit. Astra reviews the contract and final integration. Keep at most four active agents, one heavy browser/build check, and one worker per focused unit-test process. No worker may revert another lane's changes. Shared files freeze before fan-out; stop affected lanes if the contract changes. Root inventory, breadth, source pins and publication belong exclusively to the controller.
+
+Production paths below are relative to `vendor/workspace/terminalpro/src/components/General/Table/Chart/`; test paths are relative to `vendor/workspace/terminalpro/`. All tasks require whole modified production files to pass 400 physical lines / 300 logical units / 50 per function using the existing tasks 1.3/1.4 checker and explicit fork manifests. Register the new helper; agree cohesive extraction paths before editing, with no implicit size exception. Tests, synthetic fixtures and documentation are cap-exempt. Focused verification accompanies each implementation; no new harness or separate evidence-only lane.
+
+- [ ] 2.82 Freeze normalized geometry, legend contracts and the reference runtime
+  - Controller owns `echarts/cartesianTypes.ts`, request interfaces only in `echarts/lifecycle.ts`, `application/applicationSessionTypes.ts`, and new `tests/unit/chart-compatibility/fixtures/normalized-bars.json`. Freeze family predicates without activating callers, immutable projection inputs/output, stable series-ID/native legend-key mapping, callback/scope/error fields and the independent overview seam for both lanes and the join.
+  - Reuse the installed original runtime, retained sources and isolated synthetic probe to settle remaining percent-axis/crosshair precedence, zero/missing fallback domain, legend reset/save lifetime and both miniature outcomes. Record source revision/package hashes, exact executable paths and scoped verification commands; restore only the existing owned fixture if necessary. No new installation, capture framework or Dagger build.
+  - Freeze independent signed expectations for max(positive sum, absolute negative sum), enabled-series membership, raw tooltip/label formatting and full-series miniature normalization. The approved working horizontal overview is explicit; contradictions or further necessary visible deviations stop the dependent work for a concrete owner decision.
+  - Done when the fixture and typed contracts pass independent Astra review, existing scoped consumers pass their applicable checks, whole-file caps pass, and both lanes have exact read-only contracts and runnable commands. Record known baseline compiler limitations without claiming a full application compiler pass. Subsequent lifecycle implementation ownership transfers exclusively to 2.84.
+  - _Boundary: Shared normalized contract and existing reference/toolchain setup_
+  - _Depends: 1.4, 2.81_
+  - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.4, 10.5, 10.6_
+
+- [ ] 2.83 (P) Render normalized signed columns and bars with an independent overview
+  - Sol renderer owns new `echarts/cartesianNormalization.ts`, plus `echarts/cartesian.ts`, `echarts/cartesianSeries.ts`, `echarts/cartesianAxes.ts`, `echarts/cartesianDisplay.ts`, `echarts/cartesianNavigator.ts`. Read the frozen types/fixture; do not edit lifecycle, host or application owners.
+  - Normalize drawn coordinates after existing setup projection, preserving raw observations and signed accumulation. Derive finite domains from endpoints plus zero; apply the frozen default percent-axis precedence while retaining raw financial labels/tooltips and category formatting. Handle missing, zero and all-hidden values without fabricated financial zeros or nonfinite geometry.
+  - Reproject main geometry from enabled membership. Independently compute the full selected-series overview with all series enabled. Keep physical-X navigation: category crop for columns and numeric crop retaining rows for bars; viewport clipping never changes the denominator. Preserve all five accepted families.
+  - Own new `tests/unit/chart-compatibility/cartesian.normalized.test.ts` and necessary changes only to existing `cartesian.application.test.ts`; verify unequal signed native endpoints, membership changes, null/zero/all-hidden cases, raw labels/tooltips, percent axes and independent overview using the frozen fixture and existing one-worker config.
+  - Done when these focused checks and affected scoped lint/type checks pass, the pure helper is registered in the existing inventory by the controller, whole modified files pass 400/300/50 caps, and independent review accepts the renderer. This is not caller or application acceptance.
+  - _Boundary: ECharts Cartesian arithmetic, presentation and overview projection_
+  - _Depends: 2.82_
+  - _Requirements: 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
+
+- [ ] 2.84 (P) Keep native legend interactions current across chart revisions
+  - Sol lifecycle owns implementation in `echarts/lifecycle.ts` and `echarts/EChartsHost.tsx` after interface freeze. Own only `tests/unit/chart-compatibility/lifecycle.test.ts` and `host.test.tsx` for focused verification; do not edit renderer arithmetic or application session types.
+  - Pass request fields atomically and subscribe once to native legend changes using the latest accepted callback. ECharts remains the only transient selection owner: retain matching stable IDs and native zoom, enable new IDs, reset on scope change/disposal, and apply reprojected options without event recursion. Do not persist selections or add a parallel React store.
+  - Route failures through the existing error channel and invalidate current export; remove listeners, release partially initialized instances and reject late callbacks after disposal. Export must reflect current native geometry under the existing revision gate.
+  - Done when focused tests establish latest-request behavior, pruning/new IDs, all-hidden handling, scope reset, zoom retention, theme/data/resize updates, initialization cleanup, failure/export freshness and nonrecursive events. Scoped lint/type checks and whole-file 400/300/50 caps pass, with independent review before joining.
+  - _Boundary: Native ECharts host interaction and lifecycle_
+  - _Depends: 2.82_
+  - _Requirements: 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
+
+- [ ] 2.85 Join both normalized families to the existing Workspace journey
+  - Controller owns this explicit integration task after both lanes freeze and pass review: `AgChartView.tsx`, `application/effectiveAppearance.ts`, `application/axisStructure.ts`, `application/applicationSessionProjection.ts`, `application/useApplicationChartSession.ts`, `compatibility/editorBindings/mapApplicationEditorEvent.ts`, `compatibility/editorBindings/selectApplicationEditorState.ts`; `caller/chartInputs.ts` only if shared predicate propagation is insufficient. Compose the frozen callback over immutable current inputs, assign stable scope and pass all request fields atomically. No new storage owner or family registry.
+  - Admit exactly both normalized families through current guards, preserving distinct family ranges, saved types, unknown/inactive branches, physical-axis controls, existing themes/actions and all five accepted families. Do not hide or disable any control or flag. Arithmetic/overview and native state ownership remain in the reviewed lanes.
+  - Own existing `tests/unit/chart-application/editorBindings.test.ts`, `editorSavedLeaves.test.ts`, new `callerNormalizedBars.test.ts`, and only necessary changes to `applicationSession.test.tsx` / `applicationSessionTransactions.test.ts`. Own new `tests/e2e/live-chart/normalized-bars.spec.ts`, reusing existing import/editor/action/persistence/diagnostics helpers. Shared helper changes require a demonstrated need and remain controller-only.
+  - Run one joined actual Workspace journey covering both orientations with signed observations, raw tooltip, legend hide/restore followed by ordinary revision updates, distinct ranges and physical-axis edit, navigator/full independent overview, light/dark appearance, current exported image and fresh backend reopen preserving unknown branches. Reuse accepted aggregation/save-failure/restart evidence unless a changed owner creates a concrete regression risk; do not expand into another matrix.
+  - Done when focused units and the single isolated journey pass strict diagnostics, representative views/export are inspected, uncertain visible differences have an owner decision, independent Astra integration review passes and the combined 2.82-2.85 whole-file 400/300/50 audit passes. If integration cannot remain a bounded 1-3 hour unit, report the concrete remaining boundary instead of silently expanding it.
+  - Update breadth/UI-10 only for proven behavior; sync one concise reviewed record and necessary synthetic screenshots before selective commit/push. Disclose source overlays and preserve unrelated edits. Release images and remaining UI-10 are not accepted by this task.
+  - _Boundary: Explicit ordinary Table/File normalized application integration_
+  - _Depends: 2.83, 2.84_
+  - _Requirements: 4.7, 4.8, 4.9, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6_
+
+Planned commands reuse the pinned installed toolchain. From Workspace `terminalpro`, run `node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/vitest.config.mjs <owned-test-paths>` or the existing chart-application config. From QOpenBB, select `normalized-bars.spec.ts` with the existing Playwright CLI/config and owned runtime/evidence environment. Use `python -m tools.quality.complexity --check --changes workspace=<current-manifest> --changes data_api=<current-manifest> --output <ignored-report>`. Task 2.82 verifies executable paths and exact scoped type/lint commands. These are planned checks, not completed evidence.
+
+
 ## Ordinary horizontal bars: UI-10 first slice
 
 Owner approved the [horizontal-bar design](chart-horizontal-bars-design.md). The four tasks below restore `groupedBar` and `stackedBar` in ordinary Table/File widgets. Other gallery choices stay visible under their original predicates; their implementation and complete UI-10 acceptance remain pending. Owner approved tasks 2.78-2.81; implementation proceeds under the established autonomous workflow.

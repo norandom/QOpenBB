@@ -1,7 +1,7 @@
 {
   "feature_name": "openbb-self-service",
   "created_at": "2026-10-16T07:07:02Z",
-  "updated_at": "2026-10-17T12:30:24.203649+00:00",
+  "updated_at": "2026-10-18T18:23:51.656344+00:00",
   "language": "en",
   "phase": "implementation-in-progress",
   "approvals": {
@@ -709,17 +709,27 @@
         "normalizedColumn",
         "normalizedBar"
       ],
-      "phase": "design-generated",
+      "phase": "tasks-generated",
       "design_path": "chart-normalized-bars-design.md",
       "design_review": "artifacts/reviewed/live-editor/normalized-bars/design-review.md",
       "design_review_status": "PASS",
       "reviewed_design_sha256": "69f5f6ff90ccc508fec0ef60240736e712fe226875744210d8c381d1b1c823dc",
-      "design_approved": false,
-      "tasks_generated": false,
+      "design_approved": true,
+      "tasks_generated": true,
       "tasks_approved": false,
       "implementation_accepted": false,
       "starting_workspace_revision": "c0d002ebbc72477f6c0445c48c049e77ee2fb8b5",
-      "approval_note": "Owner ok after horizontal slice authorized continuing the UI parity workflow; this concrete next design awaits phase approval."
+      "approval_note": "Owner go approved the reviewed normalized design including the working horizontal overview. Tasks 2.82-2.85 are generated and independently reviewed; implementation awaits task-phase approval.",
+      "tasks": [
+        "2.82",
+        "2.83",
+        "2.84",
+        "2.85"
+      ],
+      "task_graph_review": "artifacts/reviewed/live-editor/normalized-bars/task-review.md",
+      "task_graph_review_mode": "independent",
+      "task_graph_review_status": "PASS",
+      "miniature_repair_approved": true
     }
   }
 }
