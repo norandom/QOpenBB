@@ -20,7 +20,7 @@ Production ownership uses the exact paths in the approved design. All paths belo
   - _Depends: 1.4, 2.77_
   - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.4, 10.5, 10.6_
 
-- [ ] 2.79 (P) Render grouped and stacked horizontal bars with original actions
+- [x] 2.79 (P) Render grouped and stacked horizontal bars with original actions
   - Sol renderer lane owns only the design's `echarts/` mapping/layout/color/navigator files, excluding controller-owned `cartesianTypes.ts`. Reuse the existing snapshot, display policy and native ECharts host. Extend orientation and signed stacking without transposing source observations or rewriting saved types.
   - Implement the source-established category order, grouping/stacking, labels, tooltips, palette and financial formatting. Navigator/miniature follows the independently frozen original contract, including the main extent and unchanged overview; do not infer its target from bar direction. Preserve all accepted column/line projections and existing action predicates.
   - Own new `tests/unit/chart-compatibility/cartesian.horizontal.test.ts` and any required changes to existing `cartesian.application.test.ts`, `cartesian.geometry.test.ts`, `cartesian.grid.test.ts`. Read the shared horizontal fixture; do not change it or the controls/session tests. Use the existing compatibility Vitest config and one worker.
