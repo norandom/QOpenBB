@@ -702,6 +702,24 @@
       "acceptance_review": "artifacts/reviewed/live-editor/horizontal-bars/application-acceptance/review.md",
       "acceptance_scope": "Ordinary Table/File groupedBar and stackedBar; other families and release-image acceptance remain pending.",
       "accepted_design_sha256": "25278494bb970b836e9b13c47c5a438f8e21bf79e92a4dd527b46059a9aee579"
+    },
+    "normalized_bars": {
+      "name": "ordinary-normalized-bars",
+      "scope": [
+        "normalizedColumn",
+        "normalizedBar"
+      ],
+      "phase": "design-generated",
+      "design_path": "chart-normalized-bars-design.md",
+      "design_review": "artifacts/reviewed/live-editor/normalized-bars/design-review.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "69f5f6ff90ccc508fec0ef60240736e712fe226875744210d8c381d1b1c823dc",
+      "design_approved": false,
+      "tasks_generated": false,
+      "tasks_approved": false,
+      "implementation_accepted": false,
+      "starting_workspace_revision": "c0d002ebbc72477f6c0445c48c049e77ee2fb8b5",
+      "approval_note": "Owner ok after horizontal slice authorized continuing the UI parity workflow; this concrete next design awaits phase approval."
     }
   }
 }

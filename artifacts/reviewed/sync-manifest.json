@@ -149,7 +149,7 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "e656f15a4ac315a77f18781370e808d8d18e9f66",
+    "root_at_sync": "d268cd661ce51035e3f186926027220e1d936216",
     "workspace_at_sync": "c0d002ebbc72477f6c0445c48c049e77ee2fb8b5",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -31250,6 +31250,38 @@
       "publishedSHA256": "b18b46147eb751f3e97b92a270ffec93831b5ac2ff5ebb963a319f2a29d7222f",
       "bytes": 996,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/design-review.md",
+      "sourceSHA256": "15bbf835760184d6e9b3eb3786163d24f4c3a944a1622fe7e7cb8fa530d7ac62",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/design-review.md",
+      "publishedSHA256": "15bbf835760184d6e9b3eb3786163d24f4c3a944a1622fe7e7cb8fa530d7ac62",
+      "bytes": 2307,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/publication.json",
+      "sourceSHA256": "080bfcc15a06ea62efaeddbc5eb152d11fe2046eaed748d5c3d1a7e3237e4be0",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/publication.json",
+      "publishedSHA256": "080bfcc15a06ea62efaeddbc5eb152d11fe2046eaed748d5c3d1a7e3237e4be0",
+      "bytes": 188,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/design-draft.md",
+      "sourceSHA256": "69f5f6ff90ccc508fec0ef60240736e712fe226875744210d8c381d1b1c823dc",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/design-draft.md",
+      "publishedSHA256": "69f5f6ff90ccc508fec0ef60240736e712fe226875744210d8c381d1b1c823dc",
+      "bytes": 13757,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/design-input-publication.json",
+      "sourceSHA256": "d4ecfd7e3038ca3943ac41418bf395c00ecee080256810f94ca32107d8414ee3",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/design-input-publication.json",
+      "publishedSHA256": "d4ecfd7e3038ca3943ac41418bf395c00ecee080256810f94ca32107d8414ee3",
+      "bytes": 187,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -31963,7 +31995,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165654385,
+  "total_payload_bytes": 165670824,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
