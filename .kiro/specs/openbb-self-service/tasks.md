@@ -194,6 +194,71 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 2.66, 2.67_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
 
+## Live editor integration through the existing application
+
+Reviewed task graph for owner-authorized autonomous integration, 2026-10-18. See [live integration design](chart-live-editor-integration-design.md). This plan ends at a functioning ordinary Workspace journey with save/reopen, not at helper acceptance.
+
+Every production task below passes whole-file 400 physical/300 logical/50 per-function caps, inventory coverage, affected strict type checks/lint and focused behavior tests. Reuse the accepted complexity foundation and explicit fork change manifest. Controller freezes exact existing executable commands before dispatch; no package installation or copied preview runner is part of this plan. Each task requires independent review and fresh relevant verification before acceptance. Workers are not alone and must preserve other lanes' changes.
+
+### Wave 0: freeze contracts and checks
+
+- [x] 2.69 Controller: record exact root/fork revisions and dirty-path ownership, actual panel prop/event inventory and caller paths. Freeze `application/appearanceModel.ts`, `compatibility/editorBindings/types.ts`, required mapper type extensions and session editor-command contracts. Include every applicable accepted control field and exact saved namespace. Define production theme/semantic-column input sources and latest-storage Widget updater call. Map required renderer effects to the field manifest. Update root complexity inventory and planned breadth paths. Ownership: shared contracts, root manifests and canonical design/task metadata only. Completion: Astra independently reviews persistence, financial semantics and lane boundaries; frozen types compile; commands use installed pinned tools. Non-code planning is cap-exempt; type files are capped.
+  - _Boundary:_ Shared contracts and canonical metadata
+  - _Depends:_ 2.68
+  - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
+
+### Wave 1: independent render and editor lanes
+
+- [ ] 2.70 (P) Appearance implementer: own new `application/effectiveAppearance.ts` and cohesive appearance resolver helpers only. Consume accepted composition/colors and frozen contracts; resolve all applicable captions, layout, axes, legend, series, tooltip and palette fields for three families. Preserve original saved baseline; do not normalize it in place. Test stock/custom theme precedence, explicit false/zero, missing overrides, disabled retained values and stable IDs. Completion: full field manifest has an effective result; unresolved application inputs are concrete defects rather than silent fallbacks; caps pass.
+  - _Boundary:_ Effective appearance resolver and pure helpers
+  - _Depends:_ 2.69
+  - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
+- [ ] 2.71 (P) Editor implementer, parallel to 2.70: own new `compatibility/editorBindings/**`, `editor/ApplicationChartEditor.tsx` and cohesive production composition files. Bind existing panels to frozen selectors/events, including full font choices and original family/data eligibility. Emit exact validated bar/line/axis patches; preserve unrelated fields and retained disabled values. No session/store writes. Test each event leaf, ordinary panel value hydration, independent axes and original applicability. Completion: production composition imports the accepted controls without preview state; caps pass.
+  - _Boundary:_ Editor bindings and production panel composition
+  - _Depends:_ 2.69
+  - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
+
+Release a worker slot for independent review after each task. Shared contract changes are controller-only and pause both consumers until reconciled.
+
+### Wave 2: render projection and Set Up
+
+Controller addition to 2.69/2.73: freeze an explicit application raw-observation semantic policy because ordinary WidgetColumnDef lacks unit/scale. 2.73 owns its application descriptor adapter and independent no-conversion/no-invented-unit tests; 2.72 consumes its frozen mapper contract. Preserve existing strict declared-unit mapper behavior for current callers. Freeze any shared mapper contract changes before parallel dispatch, with production writes remaining in 2.72.
+
+- [ ] 2.72 (P) Renderer implementer: after 2.70, own mapper `echarts/cartesian*` implementation/validation files and their tests, excluding controller-owned contracts. Extract caption/layout, axis, series and tooltip projections cohesively before exceeding caps. Project every applicable manifest field to public ECharts APIs; use existing financial display callbacks. Resolve concrete tooltip/marker/geometry gaps from source and finite evidence. Completion: numerical observations unchanged, nulls retained, all applicable fields have observable option/render effects; caps pass. No UI acceptance claimed yet.
+  - _Boundary:_ ECharts projection and validation
+  - _Depends:_ 2.70
+  - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
+- [ ] 2.73 (P) Setup implementer, parallel to 2.72: own new pure setup/transform modules under `application/` and focused tests. Reuse range/capture reducers and source semantics for category/series choice, order, aggregate and switch orientation. Freeze any newly required transform contract through controller before coding it. Preserve IDs, original model/range, units, missing values and sourceMode. Test duplicate categories, negative/null data, sum examples, reordered columns and transpose round trip using independent expected results. Completion: every reachable ordinary Set Up action has a real transformation and saved-state transition; caps pass.
+  - _Boundary:_ Setup transforms and semantic descriptors
+  - _Depends:_ 2.69
+  - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
+
+### Wave 3: session and ordinary callers
+
+- [ ] 2.74 Session implementer: after 2.71/2.72/2.73, own `application/useApplicationChartSession.ts` and cohesive React/session transaction modules, plus a narrowly reviewed general edit application adapter if needed. Compose capture, selected baseline, appearance, editor and host using existing Widget latest-state updates. Retain original resolvedOptions and unknown/inactive partitions. Handle consecutive edits, delayed stale work, refresh, theme, address changes and disposal. Existing Widget owner is read-only. Completion: tests prove two immediate edits survive without duplicate replay persistence, stale callbacks cannot write, failure recovery retains edits, defaults are never persisted; caps pass.
+  - _Boundary:_ Application chart session and edit transactions
+  - _Depends:_ 2.71, 2.72, 2.73
+  - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
+- [ ] 2.75 Caller implementer: after 2.74, own exact existing `AgChartView`, `useChartOptions`, `useTableContext`, AgGridTable/File chart activation and community boundary paths frozen in 2.69. Restore createChartData, toggle, live host and actual dock; restore table state and original no-series/flag predicates. Pass valid saved chart models through boundary while retaining invalid/unknown saved data safely. Cohesively extract oversized callers before acceptance. Completion: actual Full Workspace table route reaches production session without test-only injection; existing Plotly routing preserved; scoped caller/component checks and caps pass.
+  - _Boundary:_ Existing table chart callers and community boundary
+  - _Depends:_ 2.74
+  - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
+- [ ] 2.76 Actions implementer: after 2.75, own narrowly named existing chart action adapters and corresponding session/host action interfaces, serialized with 2.74/2.75. Connect original quick actions, navigator/mini-chart extent, dock open/close and current-revision PNG export. Completion: each existing applicable action changes the expected chart/table effect; stale/disposed render cannot export; caps pass. Do not add a toolbar or capability flag.
+  - _Boundary:_ Existing chart actions and export
+  - _Depends:_ 2.75
+  - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
+
+### Wave 4: one application acceptance join
+
+- [ ] 2.77 Controller and independent Astra reviewer: run the existing application browser infrastructure against the actual Full route with disposable backend state, headless owned browser and one worker. Extend maintained e2e tests by behavior, not task number. Cover groupedColumn/stackedColumn/line from the ordinary table, every applicable editor section, theme, filtered/sorted data, Set Up, table return, current export, backend save/reopen/restart and failure/retry. Inspect console/network diagnostics and actual displayed values. Use representative light/dark screenshots sufficient to assess the integrated widget. Failure fixes return to the owning task and receive focused review; rerun only affected checks and the necessary join.
+  - _Boundary:_ Actual application acceptance and evidence
+  - _Depends:_ 2.76
+  - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
+  - Completion: original saved leaves and displayed settings survive a new application session/backend restart, except the explicitly disclosed original numeric-rotation/Auto Rotate and structural-axis restore limitations, which must be recorded separately and must not be claimed as round-trip parity; earlier edits and unknown branches remain; failure preserves unsaved work; no stub route or inert applicable control remains. Required production caps and final shared-module inventory audit pass. One concise review record identifies source identity, commands/results, reviewer decision, limitations and screenshots. Update UI-02 through UI-09 and breadth only to the extent proven. Preserve UI-10 through UI-16 as pending release obligations. Test/evidence-only edits are cap-exempt; any repair production files must pass caps.
+
+The implementation continues through 2.77 under the user's live-integration authorization once this concrete contract/task graph passes independent review. Do not stop after L1 or request a new generic permission to perform the already authorized join. A concrete unresolved compatibility difference is escalated with its observed consequence, rather than accepted through a hidden feature reduction.
+
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.

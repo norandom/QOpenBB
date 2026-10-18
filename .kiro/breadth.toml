@@ -380,3 +380,11 @@ planned_checks = ["exact-controlled-edits", "conditional-retention", "light-dark
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chartAxisFieldsPanel.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartAxisLabelsPanel.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartEditorDock.test.tsx"]
 status = "passed"
 evidence = ["Task 2.68 accepted at Workspace bc202e4. Exact controlled edits, conditional retention and correction reviewed. Evidence: artifacts/reviewed/task-2.68/review/verdict.md. Live rendering, full menus/eligibility, storage and owner visual acceptance remain pending; known DS typecheck limitation disclosed. Independent axes, time-format and auto/manual rotation, pointer/keyboard and dock/tab retention passed local ignored joined browser/CDP capture; component tests alone do not prove that flow. Compact review and screenshots retained."]
+
+[[capabilities]]
+id = "live-chart-editor-integration"
+requirements = ["4.2", "4.7", "4.8", "4.9", "10.1", "10.3", "10.4", "10.5", "10.6"]
+planned_checks = ["editor-to-render", "consecutive-edits", "setup-raw-observations", "real-table-route", "export-current-revision", "backend-save-reopen"]
+test_paths = []
+status = "planned"
+evidence = ["Tasks 2.69-2.77 connect accepted controls to the existing application. Contract review and implementation are in progress; no live integration acceptance claimed."]
