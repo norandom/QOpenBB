@@ -228,7 +228,7 @@ Controller addition to 2.69/2.73: freeze an explicit application raw-observation
   - _Boundary:_ ECharts projection and validation
   - _Depends:_ 2.70
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
-- [ ] 2.73 (P) Setup implementer, parallel to 2.72: own new pure setup/transform modules under `application/` and focused tests. Reuse range/capture reducers and source semantics for category/series choice, order, aggregate and switch orientation. Freeze any newly required transform contract through controller before coding it. Preserve IDs, original model/range, units, missing values and sourceMode. Test duplicate categories, negative/null data, sum examples, reordered columns and transpose round trip using independent expected results. Completion: every reachable ordinary Set Up action has a real transformation and saved-state transition; caps pass.
+- [x] 2.73 (P) Setup implementer, parallel to 2.72: own new pure setup/transform modules under `application/` and focused tests. Reuse range/capture reducers and source semantics for category/series choice, order, aggregate and switch orientation. Freeze any newly required transform contract through controller before coding it. Preserve IDs, original model/range, units, missing values and sourceMode. Test duplicate categories, negative/null data, sum examples, reordered columns and transpose round trip using independent expected results. Completion: every reachable ordinary Set Up action has a real transformation and saved-state transition; caps pass.
   - _Boundary:_ Setup transforms and semantic descriptors
   - _Depends:_ 2.69
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
