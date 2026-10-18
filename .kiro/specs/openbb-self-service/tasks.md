@@ -239,7 +239,7 @@ Controller addition to 2.69/2.73: freeze an explicit application raw-observation
   - _Boundary:_ Application chart session and edit transactions
   - _Depends:_ 2.71, 2.72, 2.73
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
-- [ ] 2.75 Caller implementer: after 2.74, own exact existing `AgChartView`, `useChartOptions`, `useTableContext`, AgGridTable/File chart activation and community boundary paths frozen in 2.69. Restore createChartData, toggle, live host and actual dock; restore table state and original no-series/flag predicates. Pass valid saved chart models through boundary while retaining invalid/unknown saved data safely. Cohesively extract oversized callers before acceptance. Completion: actual Full Workspace table route reaches production session without test-only injection; existing Plotly routing preserved; scoped caller/component checks and caps pass.
+- [x] 2.75 Caller implementer: after 2.74, own exact existing `AgChartView`, `useChartOptions`, `useTableContext`, AgGridTable/File chart activation and community boundary paths frozen in 2.69. Restore createChartData, toggle, live host and actual dock; restore table state and original no-series/flag predicates. Pass valid saved chart models through boundary while retaining invalid/unknown saved data safely. Cohesively extract oversized callers before acceptance. Completion: actual Full Workspace table route reaches production session without test-only injection; existing Plotly routing preserved; scoped caller/component checks and caps pass.
   - _Boundary:_ Existing table chart callers and community boundary
   - _Depends:_ 2.74
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
