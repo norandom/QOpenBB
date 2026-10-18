@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "01daf588fc9b23d2e3818163e39e8d6947375a12",
-    "workspace_at_sync": "10a732265e04d3dcc71f9d6e7e509f699df52b8c",
+    "root_at_sync": "79db4fd8d755b41a6e9956d163c2d164d4c08075",
+    "workspace_at_sync": "6278bb042b500ba9207347cbb30a09d5442bdd53",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31314,6 +31314,22 @@
       "publishedSHA256": "aa772670a4d0b09011d11a439dab60348fc9c71cf2b8cf9b209c24a641166e01",
       "bytes": 201,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/lifecycle-acceptance/review-final.md",
+      "sourceSHA256": "da2ee6f3ac3a923b50bb11bede1965dc9228b38805b5897a3715c3a3307f5bef",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/lifecycle-acceptance/review-final.md",
+      "publishedSHA256": "da2ee6f3ac3a923b50bb11bede1965dc9228b38805b5897a3715c3a3307f5bef",
+      "bytes": 2401,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/lifecycle-acceptance/publication.json",
+      "sourceSHA256": "90fdb7ac9081bf151605a97a504e0632e1f556c1bf0c408ec929acabc5f77ed5",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/lifecycle-acceptance/publication.json",
+      "publishedSHA256": "90fdb7ac9081bf151605a97a504e0632e1f556c1bf0c408ec929acabc5f77ed5",
+      "bytes": 208,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32027,7 +32043,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165677788,
+  "total_payload_bytes": 165680397,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

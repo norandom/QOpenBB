@@ -29,7 +29,7 @@ Production paths below are relative to `vendor/workspace/terminalpro/src/compone
   - _Depends: 2.82_
   - _Requirements: 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
 
-- [ ] 2.84 (P) Keep native legend interactions current across chart revisions
+- [x] 2.84 (P) Keep native legend interactions current across chart revisions
   - Sol lifecycle owns implementation in `echarts/lifecycle.ts` and `echarts/EChartsHost.tsx` after interface freeze. Own only `tests/unit/chart-compatibility/lifecycle.test.ts` and `host.test.tsx` for focused verification; do not edit renderer arithmetic or application session types.
   - Pass request fields atomically and subscribe once to native legend changes using the latest accepted callback. ECharts remains the only transient selection owner: retain matching stable IDs and native zoom, enable new IDs, reset on scope change/disposal, and apply reprojected options without event recursion. Do not persist selections or add a parallel React store.
   - Route failures through the existing error channel and invalidate current export; remove listeners, release partially initialized instances and reject late callbacks after disposal. Export must reflect current native geometry under the existing revision gate.
