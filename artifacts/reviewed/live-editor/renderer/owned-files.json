@@ -1,0 +1,27 @@
+{
+  "controller_owned_contracts": [
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts"
+  ],
+  "production": [
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesian.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianAdmission.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianApplicationValidation.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianAxes.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianDisplay.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianGrid.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianLayout.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianMarkers.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianSeries.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianStyle.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianTooltip.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts",
+    "terminalpro/src/components/General/Table/Chart/echarts/EChartsHost.tsx"
+  ],
+  "tests": [
+    "terminalpro/tests/unit/chart-compatibility/cartesian.application.fixtures.ts",
+    "terminalpro/tests/unit/chart-compatibility/cartesian.application.test.ts",
+    "terminalpro/tests/unit/chart-compatibility/cartesian.grid.test.ts",
+    "terminalpro/tests/unit/chart-compatibility/host.test.tsx",
+    "terminalpro/tests/unit/chart-compatibility/cartesian.geometry.test.ts"
+  ]
+}
