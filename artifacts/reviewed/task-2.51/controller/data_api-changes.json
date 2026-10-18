@@ -1,0 +1,51 @@
+{
+  "repository": "https://github.com/norandom/openbb-data-api.git",
+  "base": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
+  "head": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
+  "changes": [
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fmp/pyproject.toml"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fmp/openbb_fmp/__init__.py"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fmp/openbb_fmp/provider.py"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fmp/openbb_fmp/models/equity_profile.py"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fmp/openbb_fmp/models/income_statement.py"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fmp/openbb_fmp/utils/definitions.py"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fmp/openbb_fmp/utils/helpers.py"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fmp/openbb_fmp/utils/errors.py"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fred/openbb_fred/models/series.py"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fred/openbb_fred/utils/rate_limiter.py"
+    },
+    {
+      "status": "M",
+      "path": "openbb_platform/providers/fred/openbb_fred/utils/response.py"
+    }
+  ]
+}

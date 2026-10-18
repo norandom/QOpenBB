@@ -236,3 +236,27 @@ planned_checks = ["four-independent-captions", "opaque-choice-retention", "alpha
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chartTitlesPanel.test.tsx", "artifacts/reviewed/task-2.49/controller/combined/capture.mjs"]
 status = "passed"
 evidence = ["Task 2.50 accepted at Workspace 495a08f: four focused tests, scoped lint and complexity pass, independently reviewed. Actual dock composition retains controlled edits across close/reopen and tab changes in light/dark; isolated CDP reports no errors. Review: artifacts/reviewed/task-2.50/review/verdict.md. Scope is all four Titles captions, not full Customize. Scoped types retain reproduced DS TS2578; owner visual judgment, chart rendering, storage and application activation remain pending."]
+
+[[capabilities]]
+id = "controlled-chart-legend-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-legend-edits", "legend-retention", "legend-numeric-drafts", "legend-light-dark"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartLegendPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.51 accepted at Workspace f34de0a. Exact field edits, disabled and unknown retention, alpha picker, decimal and expanded-range behavior pass focused checks and independent review. Review: artifacts/reviewed/task-2.51/review/verdict.md. Controlled UI only; owner visual judgment, financial rendering, storage and application activation remain pending. Existing DS typecheck limitation is disclosed where applicable."]
+
+[[capabilities]]
+id = "controlled-chart-padding-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["independent-padding-sides", "padding-numeric-drafts", "padding-light-dark"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartPaddingPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.52 accepted at Workspace f34de0a. Four independent sides, decimal and expanded-range behavior, invalid draft retention pass focused checks and independent review. Review: artifacts/reviewed/task-2.52/review/verdict.md. Controlled UI only; owner visual judgment, financial rendering, storage and application activation remain pending. Existing DS typecheck limitation is disclosed where applicable."]
+
+[[capabilities]]
+id = "chart-legend-padding-dock-preview"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["dock-controlled-state-retention", "dock-customize-composition", "dock-light-dark"]
+test_paths = ["artifacts/reviewed/task-2.53/implementer/capture.mjs"]
+status = "passed"
+evidence = ["Task 2.53 accepted at Workspace f34de0a. Real component composition, controlled edits retained through dock close/reopen and tab transitions in both themes pass focused checks and independent review. Review: artifacts/reviewed/task-2.53/review/verdict.md. Controlled UI only; owner visual judgment, financial rendering, storage and application activation remain pending. Existing DS typecheck limitation is disclosed where applicable."]

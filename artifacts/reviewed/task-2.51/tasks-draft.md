@@ -1,0 +1,23 @@
+- [ ] 2.51 (P) Restore the Legend controls in the original dock style
+  - Follow chart-legend-padding-design.md. Implement every observed Legend field, exact typed callbacks, retained disabled/unknown values and alpha color behavior. Preserve original labels, order and size/color row; introduce no Shape choice or family filtering.
+  - Done when the real panel works by pointer/keyboard, decimals and expanded slider bounds retain caller values, and focused checks and independent review pass. Combined dock composition belongs to 2.53.
+  - Register maintained scope and enforce whole-file 400 physical / 300 logical / 50-function caps. Keep existing DS compiler limitations explicit; no storage, renderer activation, flags or new dependencies.
+  - _Boundary: Controlled Legend panel; controller owns combined story and metadata_
+  - _Depends: 2.50_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [ ] 2.52 (P) Restore independent chart padding controls
+  - Follow chart-legend-padding-design.md. Implement the original Padding subsection, four sides in original order, exact controlled edits and linked numeric/range inputs without an invented toggle.
+  - Done when side edits remain independent and decimal/invalid/current-value cases pass with independent review. Chart Style grouping in the combined dock belongs to 2.53; other Chart Style controls remain pending.
+  - Register maintained scope and enforce whole-file 400 physical / 300 logical / 50-function caps. Run focused unit/browser, scoped type/lint and independent review. No geometry, storage, flags or dependency changes.
+  - _Boundary: Controlled Padding subsection; controller owns Chart Style preview grouping_
+  - _Depends: 2.50_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [ ] 2.53 Compose Legend and Padding in the accepted chart editor preview
+  - Place real Padding under the original Chart Style group and real Legend after Titles, retaining Set Up, gallery and dock navigation. Keep incomplete sections identified in preview prose outside the controls.
+  - Done when controlled edits survive close/reopen and tab changes, isolated light/dark browser checks pass with independent review, and reviewed artifacts, breadth and source pins are synchronized and pushed.
+  - Development stories are excluded from production caps; verify registered production modules still satisfy 400/300/50. Do not change renderer activation, storage or shared control behavior.
+  - _Boundary: Controller-owned combined development story and delivery metadata_
+  - _Depends: 2.51, 2.52_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_

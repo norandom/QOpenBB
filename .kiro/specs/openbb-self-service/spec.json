@@ -350,6 +350,35 @@
       "owner_visual_accepted": true,
       "owner_visual_approval_note": "Owner replied ok after the combined Set Up and Titles previews were shown. Approval applies to these views at Workspace 495a08f; remaining controls and live chart integration are pending.",
       "typecheck_limitation": "Scoped checks retain reproduced upstream DS typography.ts TS2578; no full compiler acceptance claimed."
+    },
+    "legend_padding": {
+      "task_ids": [
+        "2.51",
+        "2.52",
+        "2.53"
+      ],
+      "design_path": "chart-legend-padding-design.md",
+      "design_approved": true,
+      "tasks_approved": true,
+      "approval_note": "Owner explicitly requested autonomous continuation with the same UI focus on 2026-10-18. This bounded continuation retains existing requirements, controls and approved appearance; live application parity is not inferred.",
+      "phase": "accepted",
+      "implementation_accepted": true,
+      "design_review": "artifacts/reviewed/task-2.51/design-review.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "bf9446e4d06d971d7a52b4e67a83c1a6af18cc3ffdd90e06211e573c5b42f6a6",
+      "implementation_source_revision": "f34de0a2239ec7732ec50566ca61c5938f8a978e",
+      "implementation_reviews": [
+        "artifacts/reviewed/task-2.51/review/verdict.md",
+        "artifacts/reviewed/task-2.52/review/verdict.md",
+        "artifacts/reviewed/task-2.53/review/verdict.md"
+      ],
+      "previews": [
+        "artifacts/reviewed/task-2.53/implementer/dock-legend-light-dark.png",
+        "artifacts/reviewed/task-2.53/implementer/dock-padding-light-dark.png"
+      ],
+      "acceptance_scope": "Controlled Legend and Padding components, composed with accepted Set Up and Titles in the existing dock preview. Other Customize sections, mapper bindings, storage integration and application activation remain pending.",
+      "owner_visual_accepted": false,
+      "typecheck_limitation": "Legend and combined story retain reproduced upstream DS typography.ts TS2578; no full compiler acceptance claimed."
     }
   }
 }

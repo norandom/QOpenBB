@@ -52,6 +52,30 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 2.48_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
 
+- [x] 2.51 (P) Restore the Legend controls in the original dock style
+  - Follow chart-legend-padding-design.md. Implement every observed Legend field, exact typed callbacks, retained disabled/unknown values and alpha color behavior. Preserve original labels, order and size/color row; introduce no Shape choice or family filtering.
+  - Done when the real panel works by pointer/keyboard, decimals and expanded slider bounds retain caller values, and focused checks and independent review pass. Combined dock composition belongs to 2.53.
+  - Register maintained scope and enforce whole-file 400 physical / 300 logical / 50-function caps. Keep existing DS compiler limitations explicit; no storage, renderer activation, flags or new dependencies.
+  - _Boundary: Controlled Legend panel; controller owns combined story and metadata_
+  - _Depends: 2.50_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.52 (P) Restore independent chart padding controls
+  - Follow chart-legend-padding-design.md. Implement the original Padding subsection, four sides in original order, exact controlled edits and linked numeric/range inputs without an invented toggle.
+  - Done when side edits remain independent and decimal/invalid/current-value cases pass with independent review. Chart Style grouping in the combined dock belongs to 2.53; other Chart Style controls remain pending.
+  - Register maintained scope and enforce whole-file 400 physical / 300 logical / 50-function caps. Run focused unit/browser, scoped type/lint and independent review. No geometry, storage, flags or dependency changes.
+  - _Boundary: Controlled Padding subsection; controller owns Chart Style preview grouping_
+  - _Depends: 2.50_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.53 Compose Legend and Padding in the accepted chart editor preview
+  - Place real Padding under the original Chart Style group and real Legend after Titles, retaining Set Up, gallery and dock navigation. Keep incomplete sections identified in preview prose outside the controls.
+  - Done when controlled edits survive close/reopen and tab changes, isolated light/dark browser checks pass with independent review, and reviewed artifacts, breadth and source pins are synchronized and pushed.
+  - Development stories are excluded from production caps; verify registered production modules still satisfy 400/300/50. Do not change renderer activation, storage or shared control behavior.
+  - _Boundary: Controller-owned combined development story and delivery metadata_
+  - _Depends: 2.51, 2.52_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.

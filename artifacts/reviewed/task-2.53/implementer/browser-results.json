@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": [
+    "real dock padding/legend composition",
+    "light/dark",
+    "independent retained padding edits",
+    "legend enabled/details retention",
+    "legend position/decimal spacing survives tab remount",
+    "expanded maximum retained",
+    "Set Up remains available"
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "cdp": [
+    "Runtime.enable",
+    "Network.enable"
+  ]
+}

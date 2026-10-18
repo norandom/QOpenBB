@@ -1,0 +1,19 @@
+{
+  "isolated": true,
+  "workers": 1,
+  "cdp": [
+    "Runtime",
+    "Network"
+  ],
+  "checks": [
+    "original field order and paired size/color geometry",
+    "light/dark layout",
+    "all controls and independent exact numeric edits",
+    "decimal expanded maximum and invalid drafts",
+    "range keyboard linkage",
+    "Enabled keyboard retention",
+    "alpha and color picker focus"
+  ],
+  "errors": [],
+  "networkFailures": []
+}

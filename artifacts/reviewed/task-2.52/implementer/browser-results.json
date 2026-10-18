@@ -1,0 +1,20 @@
+{
+  "isolated": true,
+  "workers": 1,
+  "cdp": [
+    "Runtime",
+    "Network"
+  ],
+  "checks": [
+    "light/dark real subsection",
+    "no mount edits",
+    "independent side edits",
+    "decimal above maximum expands slider",
+    "invalid drafts emit nothing and recover",
+    "range pointer and keyboard",
+    "Tab focus",
+    "light state isolated"
+  ],
+  "errors": [],
+  "networkFailures": []
+}

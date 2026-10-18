@@ -1,0 +1,16 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 3000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-theme="light"]').getByRole('button', { name: 'Chart Style', exact: true })[22m
+
+    at /mnt/d/Source/QOpenBB/artifacts/task-2.53/implementer/capture.mjs:15:67 {
+  log: [
+    `  - waiting for locator('[data-theme="light"]').getByRole('button', { name: 'Chart Style', exact: true })`
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.0

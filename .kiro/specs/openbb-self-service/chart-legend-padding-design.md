@@ -1,0 +1,29 @@
+# Restore Legend and chart padding controls
+
+Continue the owner-approved UI work autonomously with two bounded production panels. Retain the accepted dock, Titles and Set Up appearance. These components emit edits for the existing chart owner; live renderer and storage wiring remain separate obligations. Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6.
+
+## Ownership and parallel join
+
+Task 2.51 owns `Chart/editor/legend/`, `tests/unit/chartLegendPanel.test.tsx` and `ds/organisms/ChartLegendPanel.stories.tsx`. Task 2.52 owns `Chart/editor/padding/`, `tests/unit/chartPaddingPanel.test.tsx` and `ds/organisms/ChartPaddingPanel.stories.tsx`. Both depend on accepted 2.50 and can run independently. Neither edits existing Titles, Set Up, dock, dependencies, flags, application guards, storage or mapper modules. Controller task 2.53 owns the combined story and metadata; its join waits for both panels. Existing color input may be imported read-only, with its existing CSS, without changing accepted Titles.
+
+## Legend contract
+
+Export `ChartLegendPanel`, `ChartLegendState`, `ChartLegendEdit` from `legend/ChartLegendPanel.tsx`. State has `enabled: boolean`, `font`, `weight`, `color`, `position` strings; `size`, `spacing`, `markerSize`, `markerStroke`, `itemSpacing`, `horizontalSpacing`, `verticalSpacing` numbers. Edit is a discriminated union `{field, value}` retaining each field's type. Props contain `value`, `onEdit`, caller-supplied `fonts`, `weights`, `positions` string choice arrays and `sizes` numeric choices, each `{value,label}`; `bounds` maps the six numeric spacing/marker fields to `{min,max,step}`.
+
+Use the collapsed Legend group and observed order: Enabled; Font; Weight; Size and Color side by side; Position; Spacing; Marker Size; Marker Stroke; Item Spacing; Horizontal Spacing; Vertical Spacing. Labels sit above fields, using the existing dark/light tokens and blue switches. Within the expanded Legend group, Enabled remains visible; turning it off hides the detail controls without mutating their values. This follows the original AgGroupComponent setEnabled/toggleGroupExpand behavior. Do not add a Shape selector. Caller decisions own family eligibility and selected-series predicates, not this component. Keep supplied ordering and unknown selections, with no default or mount/open emissions. Weight remains an opaque combined choice key; paired fontWeight/fontStyle writes belong to the existing adapter boundary.
+
+References: `artifacts/reviewed/parity/chart-editor-capture/stacked-legend.json` and PNG; `artifacts/reviewed/consuming-contract-freeze/session/editor-field-ledger.json`; `artifacts/reviewed/ui-parity-legend-plan-revised/plan.md`. The latter is source evidence and a plan, not completed runtime-effect verification. Preview baseline: enabled, Verdana, Predefined, size 11, theme color, top, spacing 20, marker size 11, marker stroke 0, item spacing 5, horizontal 32 and vertical 8. Read-only reuse of the existing alpha-capable CaptionColorInput is preferred; preserve invalid-draft and Enter/Escape/focus behavior.
+
+## Padding contract
+
+Export `ChartPaddingPanel`, `ChartPaddingState`, `ChartPaddingEdit` from `padding/ChartPaddingPanel.tsx`. State is `Record<"top"|"right"|"bottom"|"left", number>`, edits are `{side, value:number}`, props are `value`, `onEdit`, and `bounds:{min,max,step}`. Render the Padding subsection with Top, Right, Bottom, Left in that order, each label above a linked slider and numeric field. No Enabled toggle. The parent places it under Chart Style. Do not claim this implements Background or the full Chart Style section; the development preview states its partial scope outside the controls.
+
+Reference: `artifacts/reviewed/ui-parity-captions/capture/runs/attempt-20261017T134459Z-3656a1b9/001-stock-padding.json` and `063-padding-start.png`, plus `chart-caption-padding-findings.md`. Baseline is 20 on each side. Each callback changes exactly one side; no plot geometry or financial calculations belong here.
+
+## Numeric behavior and verification
+
+Original slider maxima expand for existing values; supplied bounds are presentation bounds, not stored-value deletion rules. Set effective range maximum to at least the finite current value. Preserve caller values on mount, including values outside the supplied range. Numeric drafts accept finite decimal values at or above the supplied minimum, including fractions and values above the initial slider maximum; a controlled parent update expands the range. Range input uses supplied step (baseline 1), while numeric entry permits any finite decimal. Empty, malformed, nonfinite or below-minimum drafts must not emit an edit. Keep invalid drafts correctable. This distinction is intentional and does not change accepted Titles spacing behavior.
+
+Use existing installed tools only. Each lane runs focused meaningful tests, scoped type/lint checks and one serialized isolated browser preview with CDP diagnostics. Verify independent field callbacks, unknown/disabled retention, decimal/dynamic-bound inputs, pointer/keyboard use, and dark/light layout against the existing screenshots. Controller checks composition and retains real controls without fake missing sections. Known upstream DS TS2578 remains a disclosed compiler limitation if reproduced; no broad application type claim.
+
+All maintained production files pass 400 physical lines, 300 logical units and 50 per function. Register actual files and story exclusions in the existing inventory, update breadth and preserve unrelated financial-lane work. Independently review each task, synchronize selected reviewed artifacts, and commit each task separately before pushing. The owner's instruction to continue autonomously authorizes these implementation details within the existing UI worklist; it does not accept unseen visuals or complete application parity.

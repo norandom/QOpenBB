@@ -1,0 +1,53 @@
+import { chromium, expect } from '/mnt/d/Source/QOpenBB/verification/node_modules/@playwright/test/index.mjs';
+import fs from 'node:fs';
+const dir='/mnt/d/Source/QOpenBB/artifacts/task-2.51/implementer';
+const env={...process.env}; delete env.WAYLAND_DISPLAY;
+const browser=await chromium.launch({headless:true,env,args:['--ozone-platform=headless','--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader']});
+try {
+  const context=await browser.newContext({viewport:{width:700,height:1040}});
+  const page=await context.newPage(); const errors=[]; const networkFailures=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+  page.on('requestfailed',r=>networkFailures.push(r.url()));
+  const cdp=await context.newCDPSession(page);
+  await cdp.send('Runtime.enable'); await cdp.send('Network.enable');
+  await page.goto('http://127.0.0.1:6021/',{waitUntil:'networkidle',timeout:20000});
+  for (const theme of ['light','dark']) await page.locator(`[data-theme="${theme}"]`).getByRole('button',{name:'Legend',exact:true}).click();
+  const dark=page.locator('[data-theme="dark"]');
+  const size=await dark.getByLabel('Size',{exact:true}).boundingBox();
+  const color=await dark.getByLabel('Color',{exact:true}).boundingBox();
+  if(Math.abs(size.y-color.y)>1||size.x>=color.x)throw Error('Size and Color are not side by side');
+  await expect(dark.getByLabel('Font',{exact:true})).toHaveCSS('border-top-width','0px');
+  await page.screenshot({path:dir+'/legend-light-dark.png',fullPage:true});
+  await dark.getByLabel('Font',{exact:true}).selectOption('Arial');
+  await dark.getByLabel('Weight',{exact:true}).selectOption('400-italic');
+  await dark.getByLabel('Size',{exact:true}).selectOption('18');
+  await dark.getByLabel('Position',{exact:true}).selectOption('right');
+  for (const [label,field] of [['Spacing','spacing'],['Marker Size','markerSize'],['Marker Stroke','markerStroke'],['Item Spacing','itemSpacing'],['Horizontal Spacing','horizontalSpacing'],['Vertical Spacing','verticalSpacing']]) {
+    const input=dark.getByLabel(label+' value',{exact:true});
+    await input.fill('81.25');
+    await expect(dark.locator('output')).toHaveText(JSON.stringify({field,value:81.25}));
+    await expect(dark.getByLabel(label,{exact:true})).toHaveAttribute('max',label==='Spacing'?'200':'81.25');
+    await input.fill(''); await expect(input).toHaveAttribute('aria-invalid','true');
+    await expect(dark.locator('output')).toHaveText(JSON.stringify({field,value:81.25}));
+    await input.fill('20'); await dark.getByLabel(label,{exact:true}).focus(); await page.keyboard.press('ArrowLeft');
+    await expect(input).toHaveValue('19');
+  }
+  await dark.getByRole('switch',{name:'Enabled'}).focus(); await page.keyboard.press('Space');
+  await expect(dark.getByLabel('Font',{exact:true})).toHaveCount(0);
+  await page.keyboard.press('Space');
+  await expect(dark.getByLabel('Font',{exact:true})).toHaveValue('Arial');
+  await expect(dark.getByLabel('Vertical Spacing value')).toHaveValue('19');
+  await dark.getByLabel('Color',{exact:true}).fill('bad-color'); await expect(dark.getByLabel('Color',{exact:true})).toHaveAttribute('aria-invalid','true');
+  await dark.getByLabel('Color',{exact:true}).fill('#27C6A080');
+  await dark.getByRole('button',{name:'Choose color'}).click();
+  const dialog=dark.getByRole('dialog'); await dialog.getByRole('slider',{name:'Alpha'}).focus(); await page.keyboard.press('ArrowLeft');
+  await expect(dark.locator('output')).toContainText('rgba(');
+  await page.screenshot({path:dir+'/legend-color-popover.png',fullPage:true});
+  await page.keyboard.press('Escape'); await expect(dialog).toHaveCount(0); await expect(dark.getByRole('button',{name:'Choose color'})).toBeFocused();
+  await dark.getByRole('button',{name:'Choose color'}).click(); await dark.getByRole('dialog').getByRole('slider',{name:'Hue'}).focus(); await page.keyboard.press('Enter');
+  await expect(dark.getByRole('dialog')).toHaveCount(0); await expect(dark.getByRole('button',{name:'Choose color'})).toBeFocused();
+  fs.writeFileSync(dir+'/browser-results.json',JSON.stringify({isolated:true,workers:1,cdp:['Runtime','Network'],checks:['original field order and paired size/color geometry','light/dark layout','all controls and independent exact numeric edits','decimal expanded maximum and invalid drafts','range keyboard linkage','Enabled keyboard retention','alpha and color picker focus'],errors,networkFailures},null,2));
+  if(errors.length||networkFailures.length)throw Error('Browser diagnostics failed');
+  await context.close();
+} finally {await browser.close();}
