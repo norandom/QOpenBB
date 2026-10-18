@@ -28,6 +28,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Set up the pinned development tools | [Development toolchain](development.md) |
 | Check maintained code size and explicit fork scope | [Complexity checks](complexity.md) |
 | Validate source, release and acceptance records | [Evidence contracts](evidence.md) |
+| Keep development checks and committed evidence compact | [Artifact retention](artifact-retention.md) |
 | Inspect selected-service inputs and build-source exclusions | [Runtime and source contracts](runtime-contracts.md) |
 | Run isolated fixture browser and API checks | [Verification infrastructure](verification.md) |
 | Inspect the foundation image workflow and its evidence limits | [Image builds](image-builds.md) |
