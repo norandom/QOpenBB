@@ -1,6 +1,6 @@
-# Horizontal-bar contract: source settled, miniature decision pending
+# Horizontal-bar contract
 
-Task 2.78 remains incomplete. Original numerical behavior and the navigator contract are established; the original grouped-bar miniature fails at runtime. The renderer/control fan-out waits for the owner's repair decision and final independent contract review.
+Original numerical behavior and the navigator contract are established. The owner approved repairing the original empty miniature with a working horizontal-bar overview (reply: "go"). Independent Astra review accepted task 2.78; the renderer/control lanes can now consume this contract. Their implementation and actual application acceptance remain pending.
 
 ## Numerical and axis contract
 
@@ -22,7 +22,7 @@ Enabling Show mini chart produces `AG Charts - internal config error: keys must 
 
 Enterprise miniature theme code omits bar direction (21955-21960, 22121-22168); Community defaults to vertical bars (40874). That is a source-derived default, not a working original overview. A vertical categorical overview would not align its horizontal positions with the main chart's numeric-X zoom range.
 
-Proposed repair for owner decision: show a full-data horizontal-bar overview in the existing miniature area, retain all selected series and signed-stack semantics, and keep the slider/mask aligned with numeric X. Preserve original controls, flags, theme and dimensions. This would intentionally repair the original empty overview; it must not be reported as pixel-identical original behavior.
+Owner-approved repair: show a full-data horizontal-bar overview in the existing miniature area, retain all selected series and signed-stack semantics, and keep the slider/mask aligned with numeric X. Preserve original controls, flags, theme and dimensions. This intentionally repairs the original empty overview; it must not be reported as pixel-identical original behavior. Cropping the main numeric range must not remove category rows or alter the miniature's full extent. Both groupedBar and stackedBar use this repair, retaining their respective grouping and signed stacking.
 
 ## Evidence boundary
 

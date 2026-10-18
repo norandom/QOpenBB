@@ -676,9 +676,17 @@
       "task_graph_review": "artifacts/reviewed/live-editor/horizontal-bars/task-review.md",
       "task_graph_review_mode": "independent",
       "task_graph_review_status": "PASS",
-      "contract_status": "pending-owner-miniature-repair-decision",
+      "contract_status": "accepted",
       "contracts_path": "chart-horizontal-bars-contracts.md",
-      "reference_finding": "artifacts/reviewed/live-editor/horizontal-bars/miniature-finding/review.md"
+      "reference_finding": "artifacts/reviewed/live-editor/horizontal-bars/miniature-finding/review.md",
+      "completed_tasks": {
+        "2.78": {
+          "workspace_revision": "64517dbb941d1080abd3f48cb42f5aecf46e0238",
+          "review": "artifacts/reviewed/live-editor/horizontal-bars/contract-acceptance/review.md"
+        }
+      },
+      "miniature_repair_approved": true,
+      "miniature_repair_approval": "Owner replied go to working horizontal-bar overview, preserving original controls, styling and numeric-X navigation."
     }
   }
 }
