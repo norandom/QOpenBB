@@ -628,6 +628,13 @@
         "task_2_77_complete": false,
         "production_changed": false,
         "result": "Manual 45-degree category-label rotation passed actual groupedColumn/stackedColumn/line rendering and line fresh-session/backend-restart persistence."
+      },
+      "series_add_checkpoint": {
+        "workspace_revision": "e826581bb387a0ce0e39a6a71646d53d5cab4793",
+        "review": "artifacts/reviewed/live-editor/series-add/review.md",
+        "task_2_77_complete": false,
+        "original_control_restored": true,
+        "result": "Original Add a series restored; removal, save/reopen, adding uncaptured values and second reopen passed in actual Workspace."
       }
     }
   }
