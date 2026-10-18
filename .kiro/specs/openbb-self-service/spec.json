@@ -377,7 +377,8 @@
         "artifacts/reviewed/task-2.53/implementer/dock-padding-light-dark.png"
       ],
       "acceptance_scope": "Controlled Legend and Padding components, composed with accepted Set Up and Titles in the existing dock preview. Other Customize sections, mapper bindings, storage integration and application activation remain pending.",
-      "owner_visual_accepted": false,
+      "owner_visual_accepted": true,
+      "owner_visual_approval_note": "Owner replied ok after the Legend and Padding dock previews were shown on 2026-10-18. Approval applies to those views at Workspace f34de0a; remaining controls and live chart integration are pending.",
       "typecheck_limitation": "Legend and combined story retain reproduced upstream DS typography.ts TS2578; no full compiler acceptance claimed."
     }
   }
