@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "f8b4f9c58b8de84399e42d07012a4ca6a942afe9",
-    "workspace_at_sync": "95fca92742162cb4a04af14f698177792dc9426a",
+    "root_at_sync": "cf814cb2cd3964ced2a9481bb18691abf141b423",
+    "workspace_at_sync": "1b0a4f37f67eff6540b763a5220111e0099ac20a",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31482,6 +31482,22 @@
       "publishedSHA256": "0bfff9a9e6a2a3c6152bd202c4a3276501bc04eaf2b1f03c0ebd365ff53c22f8",
       "bytes": 195,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/values-acceptance/review.md",
+      "sourceSHA256": "5105fbdbad5b805657e44c946940012921ffe5ed46007a6d73b7d110cac7675d",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/values-acceptance/review.md",
+      "publishedSHA256": "5105fbdbad5b805657e44c946940012921ffe5ed46007a6d73b7d110cac7675d",
+      "bytes": 3577,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/values-acceptance/publication.json",
+      "sourceSHA256": "6020a89e666e57e56bbdcad17b6e6d11b57901ca6723a092abeef642ca6ccc4f",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/values-acceptance/publication.json",
+      "publishedSHA256": "6020a89e666e57e56bbdcad17b6e6d11b57901ca6723a092abeef642ca6ccc4f",
+      "bytes": 195,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32195,7 +32211,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165843496,
+  "total_payload_bytes": 165847268,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

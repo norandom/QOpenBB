@@ -19,7 +19,7 @@ Paths follow the area design: production paths relative to Workspace `terminalpr
   - _Depends: 1.4, 2.85_
   - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.4, 10.5, 10.6_
 
-- [ ] 2.87 (P) Project original area boundaries without changing raw observations
+- [x] 2.87 (P) Project original area boundaries without changing raw observations
   - Own new `echarts/cartesianArea.ts`, cohesive `echarts/cartesianAreaSpans.ts`, and `tests/unit/chart-compatibility/cartesian.area-values.test.ts`; read frozen interfaces/fixture only. Implement independent, ordered stacked and normalized area projection, enabled membership, raw-versus-drawn separation and gap metadata. Do not change native renderer, editor or caller admission.
   - Preserve source-backed zero/missing/hidden semantics and finite large-value behavior. Expected signed endpoints and denominator must be independently calculated from the frozen fixture, including reordered series and cross-category sign changes.
   - Done when RED/GREEN focused numerical checks cover these effects, raw snapshot remains unchanged, scoped static checks and 400/300/50 caps pass, controller registers the helper, and independent financial review accepts the projection.
