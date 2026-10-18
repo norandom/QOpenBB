@@ -28,7 +28,7 @@ UI-04 and UI-05 prepare controls and transformations against frozen contracts. T
 
 | ID | Production change | Observable completion | Current status |
 | --- | --- | --- | --- |
-| UI-10 | Complete Cartesian variants and combination charts | Orientation, stacking, normalization, area/line combinations and per-series axes match original settings and stored types | Three basic mappings exist; broader coverage pending |
+| UI-10 | Complete Cartesian variants and combination charts | Orientation, stacking, normalization, area/line combinations and per-series axes match original settings and stored types | Ordinary groupedColumn/stackedColumn/line accepted. Next: [groupedBar/stackedBar design](chart-horizontal-bars-design.md), independently reviewed and awaiting owner approval; other UI-10 families remain pending |
 | UI-11 | Complete scatter/bubble, distribution and radial charts | XY/size, bins, pie/donut aliases and radial categories preserve values, controls and stored settings | Pending by family |
 | UI-12 | Complete range, hierarchy and specialty charts | Range bounds, quartiles, hierarchy, heatmaps, waterfall and funnel-family settings retain their original meanings | Pending by family |
 | UI-13 | Connect standalone, table-derived, AI chart and theme-preview entry points | Existing entry points render and edit their saved configurations through the replacement, preserving original access conditions | Pending by entry point |

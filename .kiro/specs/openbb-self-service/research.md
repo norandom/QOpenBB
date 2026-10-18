@@ -346,3 +346,10 @@ The [Legend UI relay capacity plan](chart-legend-capture-plan.md) passes eight s
 The [corrected relay topology](chart-legend-capture-plan.md) now has independently accepted finite runtime evidence: final HTTP 200, selected topology/configuration checks and recorded exact-resource cleanup. Earlier failed requests and the 525-byte aggregate difference remain explicit. The collector integration can advance toward original Legend capture, with no full-UI or byte-completeness inference from the probe.
 
 The [Legend UI relay Python lane](chart-legend-capture-plan.md) is independently accepted with preserved transport behavior and bounded fresh checkpoints. The source is frozen separately from the ongoing JavaScript integration. No browser run or complete collector acceptance follows from this subtask.
+
+
+## Ordinary horizontal-bar extension, 2026-10-18
+
+Two bounded Sol source investigations and independent Astra design review support the [horizontal-bar amendment](chart-horizontal-bars-design.md). Current admission and initial axes only support the accepted three-family journey. Existing coordinate mapping is reusable; editor headings, titles and section order must follow physical direction while preserving semantic IDs and original saved leaves.
+
+Synthesis: extend the current Cartesian owners for groupedBar/stackedBar; add no dependency, state store or generic registry. Normalization and combinations need separate numerical/per-series contracts. Original category order, signed stacking and navigator/miniature effects are a bounded source/runtime prerequisite, not inferred from orientation. Core steering product/tech/structure remains absent. Kiro extension discovery, design synthesis/review, project complexity/delegation and COBESY documentation guidance informed this decision. No runtime verification is claimed.
