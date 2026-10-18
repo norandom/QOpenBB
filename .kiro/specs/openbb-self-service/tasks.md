@@ -30,7 +30,7 @@ Production ownership uses the exact paths in the approved design. All paths belo
   - _Depends: 2.78_
   - _Requirements: 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
 
-- [ ] 2.80 (P) Bind the existing axis and title controls to physical direction
+- [x] 2.80 (P) Bind the existing axis and title controls to physical direction
   - Sol controls lane owns the design's `ApplicationAxisEditor`, `ApplicationCustomizeEditor` and named editor-binding files. Keep Horizontal before Vertical while resolving the semantic axis from current direction: bars show number horizontally and category vertically. Preserve original category-only controls, eligibility, position choices, typography and themes.
   - Both displayed values and latest-state intent rehydration use the current concrete bindings. Writes preserve actual option type and both original positions for that direction; retain unknown/inactive branches and the disclosed structural-axis/Auto Rotate limitations. Do not add saved axes, controls, flags or an alternate editor.
   - Own new `tests/unit/chart-application/editorHorizontalAxes.test.tsx` plus existing `editorBindings.test.ts` and `editorSavedLeaves.test.ts`. Reuse existing application config, component helpers and shared source fixture read-only; do not change mapper or caller/session test files.
