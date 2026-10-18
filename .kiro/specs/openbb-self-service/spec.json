@@ -709,17 +709,17 @@
         "normalizedColumn",
         "normalizedBar"
       ],
-      "phase": "tasks-generated",
+      "phase": "implementation-in-progress",
       "design_path": "chart-normalized-bars-design.md",
       "design_review": "artifacts/reviewed/live-editor/normalized-bars/design-review.md",
       "design_review_status": "PASS",
       "reviewed_design_sha256": "69f5f6ff90ccc508fec0ef60240736e712fe226875744210d8c381d1b1c823dc",
       "design_approved": true,
       "tasks_generated": true,
-      "tasks_approved": false,
+      "tasks_approved": true,
       "implementation_accepted": false,
       "starting_workspace_revision": "c0d002ebbc72477f6c0445c48c049e77ee2fb8b5",
-      "approval_note": "Owner go approved the reviewed normalized design including the working horizontal overview. Tasks 2.82-2.85 are generated and independently reviewed; implementation awaits task-phase approval.",
+      "approval_note": "Owner approved tasks 2.82-2.85. Execute prerequisite, parallel renderer/lifecycle lanes and application join with independent review and per-task commits. Working horizontal overview is approved; wider UI-10/release acceptance remains pending.",
       "tasks": [
         "2.82",
         "2.83",
@@ -729,7 +729,15 @@
       "task_graph_review": "artifacts/reviewed/live-editor/normalized-bars/task-review.md",
       "task_graph_review_mode": "independent",
       "task_graph_review_status": "PASS",
-      "miniature_repair_approved": true
+      "miniature_repair_approved": true,
+      "completed_tasks": {
+        "2.82": {
+          "workspace_revision": "10a732265e04d3dcc71f9d6e7e509f699df52b8c",
+          "review": "artifacts/reviewed/live-editor/normalized-bars/contract-acceptance/review.md"
+        }
+      },
+      "contract_status": "accepted",
+      "contracts_path": "chart-normalized-bars-contracts.md"
     }
   }
 }
