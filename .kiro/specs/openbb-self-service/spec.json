@@ -477,6 +477,34 @@
       "acceptance_scope": "Controlled ordinary Labels and Markers panels composed in bar/line dock previews with original conditions. Additional family-specific controls, axes, live rendering, storage integration and application activation remain pending.",
       "owner_visual_accepted": false,
       "typecheck_limitation": "Scoped checks retain reproduced upstream DS typography.ts TS2578; no full compiler acceptance claimed."
+    },
+    "axis_details": {
+      "task_ids": [
+        "2.63",
+        "2.64",
+        "2.65"
+      ],
+      "design_path": "chart-axis-details-design.md",
+      "design_approved": true,
+      "tasks_approved": true,
+      "approval_note": "Owner explicitly requested autonomous continuation with the same UI focus on 2026-10-18. This bounded continuation retains existing requirements, controls and approved appearance; live application parity is not inferred.",
+      "phase": "accepted",
+      "implementation_accepted": true,
+      "design_review": "artifacts/reviewed/task-2.63/design-review.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "3d5c6a931a8ad7c83a97cc84aeef17071ba5a1d415dd6d42323831f8430dcd00",
+      "implementation_source_revision": "3f3db3f35b0b0ae0d207f50889ae701a4031302c",
+      "implementation_reviews": [
+        "artifacts/reviewed/task-2.63/review/verdict.md",
+        "artifacts/reviewed/task-2.64/review/verdict.md",
+        "artifacts/reviewed/task-2.65/review/verdict.md"
+      ],
+      "previews": [
+        "artifacts/reviewed/task-2.65/implementer/dock-axis-light-dark.png"
+      ],
+      "acceptance_scope": "Controlled Grid Lines and Ticks composed under independent Horizontal/Vertical Axis bar/line previews. Remaining axis fields and family conditions, live binding, persistence and application activation remain pending.",
+      "owner_visual_accepted": false,
+      "typecheck_limitation": "Known upstream DS typography.ts TS2578 remains; no full compiler acceptance claimed."
     }
   }
 }

@@ -332,3 +332,27 @@ planned_checks = ["exact-controlled-edits", "retained-state", "original-family-c
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-editor/vitest.config.mjs", "vendor/workspace/terminalpro/tests/unit/chartEditorDock.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartLabelsPanel.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartMarkersPanel.test.tsx"]
 status = "passed"
 evidence = ["Task 2.62 accepted at Workspace b506a33. Original bar/line conditions and grouping, keyboard edits and retained values across dock/tab transitions in both themes pass focused checks and independent review. Review: artifacts/reviewed/task-2.62/review/verdict.md. Controlled UI only; other family variants, owner visual acceptance, live rendering and storage remain pending. Existing DS typecheck limitation disclosed. Joined browser/CDP used the local ignored task-2.62 capture; its reviewed result and screenshots are retained. Component tests alone do not prove this browser flow."]
+
+[[capabilities]]
+id = "controlled-axis-grid-lines-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "retained-state", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartGridLinesPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.63 accepted at Workspace 3f3db3f. Exact controlled edits, alpha, decimal correction and retained values reviewed. Evidence: artifacts/reviewed/task-2.63/review/verdict.md. Remaining axis controls, live rendering, storage and owner visual acceptance remain pending; known DS typecheck limitation disclosed."]
+
+[[capabilities]]
+id = "controlled-axis-ticks-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "retained-state", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartTicksPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.64 accepted at Workspace 3f3db3f. Exact controlled edits, alpha, decimal correction and retained values reviewed. Evidence: artifacts/reviewed/task-2.64/review/verdict.md. Remaining axis controls, live rendering, storage and owner visual acceptance remain pending; known DS typecheck limitation disclosed."]
+
+[[capabilities]]
+id = "axis-details-dock-preview"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "retained-state", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartGridLinesPanel.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartTicksPanel.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartEditorDock.test.tsx"]
+status = "passed"
+evidence = ["Task 2.65 accepted at Workspace 3f3db3f. Exact controlled edits, alpha, decimal correction and retained values reviewed. Evidence: artifacts/reviewed/task-2.65/review/verdict.md. Remaining axis controls, live rendering, storage and owner visual acceptance remain pending; known DS typecheck limitation disclosed. Independent axis state and dock/tab retention passed local ignored joined browser/CDP capture; component tests alone do not prove the joined flow. Compact reviewed result and screenshot retained."]

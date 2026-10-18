@@ -148,6 +148,28 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 2.60, 2.61_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
 
+- [x] 2.63 (P) Restore axis Grid Lines controls
+  - Follow chart-axis-details-design.md: preserve Grid Lines toggle, Color, Thickness and Line Dash, controlled exact edits, alpha, decimal correction and disabled retention.
+  - Done when focused tests and independent review pass using existing controls, with no mapper, flags or storage changes. Register production scope and enforce 400 physical / 300 logical / 50-function caps.
+  - _Boundary: Controlled Grid Lines subsection_
+  - _Depends: 2.62_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.64 (P) Restore axis Ticks controls
+  - Preserve Ticks toggle, Color, Width and caller-conditional Length, exact edits, expanded maxima and retained hidden values. No invented Axis Line switch.
+  - Done when focused tests and independent review pass for toggles, alpha, decimals and Length hiding without mutation. Register production scope and enforce 400/300/50 caps.
+  - _Boundary: Controlled Ticks subsection_
+  - _Depends: 2.62_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.65 Compose axis details in the original editor dock
+  - Join Grid Lines then Ticks under Horizontal/Vertical Axis with independent retained state. Keep pending base fields, Labels and live integration explicit outside controls.
+  - Done when one focused light/dark browser/CDP check and independent review pass, compact evidence is synced, inventory/breadth/source pins updated and per-task commits pushed.
+  - Story is excluded from production caps; enforce 400/300/50 on maintained controls and confirm reused shared modules remain unchanged.
+  - _Boundary: Controller-owned preview composition and delivery metadata_
+  - _Depends: 2.63, 2.64_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.
