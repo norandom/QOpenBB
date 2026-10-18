@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "de7faf7419f899e78b912dfea2ae66bf7518071d",
-    "workspace_at_sync": "3f72bc639fbe9322162c4adab90c706cefcbd0dc",
+    "root_at_sync": "e656f15a4ac315a77f18781370e808d8d18e9f66",
+    "workspace_at_sync": "c0d002ebbc72477f6c0445c48c049e77ee2fb8b5",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31202,6 +31202,54 @@
       "publishedSHA256": "5c79b97b79cdc6420ea0c95576f4a0ad1c3b12f531c590bab2694e64abbba840",
       "bytes": 201,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/horizontal-bars/application-acceptance/review.md",
+      "sourceSHA256": "4cb01290215b4da5d4034b753114e52b206db4da662dc4316bce5dde18670e3a",
+      "publishedpath": "artifacts/reviewed/live-editor/horizontal-bars/application-acceptance/review.md",
+      "publishedSHA256": "4cb01290215b4da5d4034b753114e52b206db4da662dc4316bce5dde18670e3a",
+      "bytes": 4308,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/horizontal-bars/application-acceptance/saved-ordinary-observations.png",
+      "sourceSHA256": "a281dabf4c9f6f24f77b8b4fa258938226d7de2548bbe070c10cbf97399061ac",
+      "publishedpath": "artifacts/reviewed/live-editor/horizontal-bars/application-acceptance/saved-ordinary-observations.png",
+      "publishedSHA256": "a281dabf4c9f6f24f77b8b4fa258938226d7de2548bbe070c10cbf97399061ac",
+      "bytes": 15584,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/horizontal-bars/application-acceptance/stacked-bar-dark.png",
+      "sourceSHA256": "867c9570446b058882e3fe5b04a50b67b93454ea0968141a552450cb8fe472b4",
+      "publishedpath": "artifacts/reviewed/live-editor/horizontal-bars/application-acceptance/stacked-bar-dark.png",
+      "publishedSHA256": "867c9570446b058882e3fe5b04a50b67b93454ea0968141a552450cb8fe472b4",
+      "bytes": 21898,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/horizontal-bars/application-acceptance/stacked-bar-light.png",
+      "sourceSHA256": "486596fd253715755b819b1bb35aefa2c6f511cc2de1e43d533a2788ca2405f0",
+      "publishedpath": "artifacts/reviewed/live-editor/horizontal-bars/application-acceptance/stacked-bar-light.png",
+      "publishedSHA256": "486596fd253715755b819b1bb35aefa2c6f511cc2de1e43d533a2788ca2405f0",
+      "bytes": 22269,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/horizontal-bars/application-acceptance/stacked-bar-mini.png",
+      "sourceSHA256": "3aea9e098a9a492fce25e4544bd71417d602a109e28bfaa7841bc1b19546fffa",
+      "publishedpath": "artifacts/reviewed/live-editor/horizontal-bars/application-acceptance/stacked-bar-mini.png",
+      "publishedSHA256": "3aea9e098a9a492fce25e4544bd71417d602a109e28bfaa7841bc1b19546fffa",
+      "bytes": 23500,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/horizontal-bars/application-acceptance/publication.json",
+      "sourceSHA256": "b18b46147eb751f3e97b92a270ffec93831b5ac2ff5ebb963a319f2a29d7222f",
+      "publishedpath": "artifacts/reviewed/live-editor/horizontal-bars/application-acceptance/publication.json",
+      "publishedSHA256": "b18b46147eb751f3e97b92a270ffec93831b5ac2ff5ebb963a319f2a29d7222f",
+      "bytes": 996,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -31915,7 +31963,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165565830,
+  "total_payload_bytes": 165654385,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

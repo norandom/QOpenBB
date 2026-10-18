@@ -656,14 +656,14 @@
         "groupedBar",
         "stackedBar"
       ],
-      "phase": "implementation",
+      "phase": "accepted",
       "design_path": "chart-horizontal-bars-design.md",
       "design_review": "artifacts/reviewed/live-editor/horizontal-bars/review.md",
       "design_review_status": "APPROVED",
       "reviewed_design_sha256": "97e58b19b22ebfb32deac18d234eaefe42f5514ddfae5f05bc7436de2e9b7a69",
       "design_approved": true,
       "tasks_approved": true,
-      "implementation_accepted": false,
+      "implementation_accepted": true,
       "starting_workspace_revision": "aa2e0bfe4253edf6bf6ef2f18822d4304f07fdd8",
       "approval_note": "Owner explicitly approved tasks 2.78-2.81. Proceed through the reviewed contract prerequisite, parallel renderer/controls and application join with per-task review and commits. Broader UI-10 and release acceptance remain pending.",
       "tasks": [
@@ -691,10 +691,17 @@
         "2.80": {
           "workspace_revision": "3f72bc639fbe9322162c4adab90c706cefcbd0dc",
           "review": "artifacts/reviewed/live-editor/horizontal-bars/controls-acceptance/review.md"
+        },
+        "2.81": {
+          "workspace_revision": "c0d002ebbc72477f6c0445c48c049e77ee2fb8b5",
+          "review": "artifacts/reviewed/live-editor/horizontal-bars/application-acceptance/review.md"
         }
       },
       "miniature_repair_approved": true,
-      "miniature_repair_approval": "Owner replied go to working horizontal-bar overview, preserving original controls, styling and numeric-X navigation."
+      "miniature_repair_approval": "Owner replied go to working horizontal-bar overview, preserving original controls, styling and numeric-X navigation.",
+      "acceptance_review": "artifacts/reviewed/live-editor/horizontal-bars/application-acceptance/review.md",
+      "acceptance_scope": "Ordinary Table/File groupedBar and stackedBar; other families and release-image acceptance remain pending.",
+      "accepted_design_sha256": "25278494bb970b836e9b13c47c5a438f8e21bf79e92a4dd527b46059a9aee579"
     }
   }
 }
