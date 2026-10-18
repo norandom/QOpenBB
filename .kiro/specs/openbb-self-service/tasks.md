@@ -4,7 +4,7 @@ Current production UI priorities are collected in the [UI parity worklist](ui-pa
 
 ## Ordinary horizontal bars: UI-10 first slice
 
-Owner approved the [horizontal-bar design](chart-horizontal-bars-design.md). The four tasks below restore `groupedBar` and `stackedBar` in ordinary Table/File widgets. Other gallery choices stay visible under their original predicates; their implementation and complete UI-10 acceptance remain pending. Task approval is separate from design approval.
+Owner approved the [horizontal-bar design](chart-horizontal-bars-design.md). The four tasks below restore `groupedBar` and `stackedBar` in ordinary Table/File widgets. Other gallery choices stay visible under their original predicates; their implementation and complete UI-10 acceptance remain pending. Owner approved tasks 2.78-2.81; implementation proceeds under the established autonomous workflow.
 
 Execution: controller contract freeze -> two disjoint Sol lanes (2.79 and 2.80) -> controller application join. Astra reviews the prerequisite and the final integration; each implementation retains independent task review and a per-task commit. At most four active agents and one heavy build/browser check. Accepted foundation tasks 1.3/1.4 supply the inventory/checker; do not create another harness. Each task is a bounded 1-3 hour work unit; if a concrete contract cannot be settled or a lane exceeds its boundary, report the exact blocker rather than silently expanding scope.
 
