@@ -243,7 +243,7 @@ Controller addition to 2.69/2.73: freeze an explicit application raw-observation
   - _Boundary:_ Existing table chart callers and community boundary
   - _Depends:_ 2.74
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
-- [ ] 2.76 Actions implementer: after 2.75, own narrowly named existing chart action adapters and corresponding session/host action interfaces, serialized with 2.74/2.75. Connect original quick actions, navigator/mini-chart extent, dock open/close and current-revision PNG export. Completion: each existing applicable action changes the expected chart/table effect; stale/disposed render cannot export; caps pass. Do not add a toolbar or capability flag.
+- [x] 2.76 Actions implementer: after 2.75, own narrowly named existing chart action adapters and corresponding session/host action interfaces, serialized with 2.74/2.75. Connect original quick actions, navigator/mini-chart extent, dock open/close and current-revision PNG export. Completion: each existing applicable action changes the expected chart/table effect; stale/disposed render cannot export; caps pass. Do not add a toolbar or capability flag.
   - _Boundary:_ Existing chart actions and export
   - _Depends:_ 2.75
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6
