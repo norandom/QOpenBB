@@ -565,7 +565,14 @@
       "contracts_accepted": true,
       "contracts_workspace_revision": "f4ba1bfb7f6c282485f0e31e2165d6aa1e2b7c08",
       "contracts_review": "artifacts/reviewed/live-editor/contracts-review.md",
-      "verification_note": "Contract declarations lint and complexity pass. Affected strict typecheck reports only pre-existing typography.ts TS2578; runtime integration remains unverified."
+      "verification_note": "Contract declarations lint and complexity pass. Affected strict typecheck reports only pre-existing typography.ts TS2578; runtime integration remains unverified.",
+      "completed_tasks": {
+        "2.70": {
+          "workspace_revision": "a709c520b04e7265495b914aeb3478d296c7f221",
+          "review": "artifacts/reviewed/live-editor/appearance-review.md",
+          "scope": "appearance only; actual application join remains pending"
+        }
+      }
     }
   }
 }

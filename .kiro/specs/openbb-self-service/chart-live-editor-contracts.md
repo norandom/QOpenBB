@@ -62,6 +62,10 @@ Axis type/time choices and original predicates are recorded in chart-axis-fields
 
 The mapper validates runtime shape/value constraints despite static types. Session validates latest original namespace and eligibility before reduction, and never supplies generated/resolved appearance as reducer resolvedOptions. Every relocated type file must pass 400 physical / 300 logical / 50 per-function caps and strict affected type checking. These declarations have not yet been compiled in the production tree.
 
+## Selected theme input
+
+The resolver owns stock defaults, including conditional defaults. The caller materializes only selected-theme parameter effects and explicit theme overrides into admitted data-only leaves in `ApplicationThemeInput.overrides`, with explicit overrides winning. It must not blindly expand stock or conditional defaults into that object: for example, an implicit bar stroke width or title spacing must remain available to recompute after a saved stroke or subtitle edit. An explicit custom width or spacing still wins. Resolve common/family hierarchy before emitting parameter effects so a family value cannot hide an explicit common override. Palette stays separate and formatter callbacks stay in `ChartDisplayPolicy`. The appearance resolver then applies generated and saved composition. Materialized theme values never enter the persisted baseline. This finite projection includes custom typography, padding and axis/grid colors; it must not silently discard original params.
+
 ## Production caller inputs
 
 Observed source mapping on 2026-10-18. This is a read-only source inventory, not browser acceptance evidence. Paths below are relative to `vendor/workspace/terminalpro/src/`.
@@ -84,3 +88,15 @@ L4 existing caller ownership: `General/Table/Chart/AgChartView.tsx`, `Chart/hook
 L5 existing action adapter ownership: the named `useChartCloseButtonListener`, `useChartToolPanelAction`, `useChartBarFillQuickAction`, and `useChartQuickActions` exports in `Chart/hooks/useChartOptions.tsx` are current no-op adapters. Connect these through the session/host contracts after L4; this inventory does not establish which extractions the frozen L0 contracts will require.
 
 Disproof condition for caller readiness: a production ordinary table reaches the editor with raw rather than processed data, loses explicit category/number semantics, chooses another mode's palette, bypasses the widget owner, or calls the dormant default helper before resolving its dependencies.
+
+## Ordinary Set Up projection
+
+`CartesianMappingContext.setupProjection` is a transient finite witness from the pure ordinary Set Up adapter: `ordinary-aggregate` carries one of sum/first/last/min/max/count/avg and requires snapshot `sourceMode: grouped`; `ordinary-switch` optionally carries the aggregation operator and requires `sourceMode: transformed`. Without a witness only flat observations are admitted. Reject mismatched modes, unknown operators, pivot and remote-page sources. The adapter validates its original complete flat capture and retains address/data revision; the witness never enters the saved model. Arithmetic correctness requires independent expected-value tests, not trust in this tag.
+
+Aggregation precedes switching, and disabling either recomputes from the retained original capture. Category changes recapture actual grid values because the existing snapshot contains only its selected category. The source handoff and existing numerical capture references are retained locally in `artifacts/live-editor/setup-source.md`; consuming task evidence will identify the exercised cases. Count derives counts rather than currency, and switching cannot invent homogeneous units for mixed declared columns.
+
+## Legend control state and rendering
+
+The original unset legend outline control displays zero, while drawn legend markers inherit the series outline capped at two pixels. `ResolvedApplicationAppearance.legend.markerStroke` retains the control value; `legendMarkerStrokeWidth` carries the effective drawn width. An explicitly saved zero overrides inheritance.
+
+Session task 2.74 owns the original event-local legend enable state: chart model/API updates set the visible Enabled toggle and expanded details according to whether more than one value column is selected, without writing a theme option. The user can subsequently enable it manually. Static editor eligibility keeps the section present; do not persist this transient reset as a changed saved flag.

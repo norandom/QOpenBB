@@ -209,7 +209,7 @@ Every production task below passes whole-file 400 physical/300 logical/50 per-fu
 
 ### Wave 1: independent render and editor lanes
 
-- [ ] 2.70 (P) Appearance implementer: own new `application/effectiveAppearance.ts` and cohesive appearance resolver helpers only. Consume accepted composition/colors and frozen contracts; resolve all applicable captions, layout, axes, legend, series, tooltip and palette fields for three families. Preserve original saved baseline; do not normalize it in place. Test stock/custom theme precedence, explicit false/zero, missing overrides, disabled retained values and stable IDs. Completion: full field manifest has an effective result; unresolved application inputs are concrete defects rather than silent fallbacks; caps pass.
+- [x] 2.70 (P) Appearance implementer: own new `application/effectiveAppearance.ts` and cohesive appearance resolver helpers only. Consume accepted composition/colors and frozen contracts; resolve all applicable captions, layout, axes, legend, series, tooltip and palette fields for three families. Preserve original saved baseline; do not normalize it in place. Test stock/custom theme precedence, explicit false/zero, missing overrides, disabled retained values and stable IDs. Completion: full field manifest has an effective result; unresolved application inputs are concrete defects rather than silent fallbacks; caps pass.
   - _Boundary:_ Effective appearance resolver and pure helpers
   - _Depends:_ 2.69
   - _Requirements:_ 4.2, 4.7, 4.8, 4.9, 10.1, 10.3, 10.4, 10.5, 10.6

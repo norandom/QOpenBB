@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "a190a9e3ba94ebabd71923d68079d076b50e783e",
-    "workspace_at_sync": "f4ba1bfb7f6c282485f0e31e2165d6aa1e2b7c08",
+    "root_at_sync": "3676c05069263cafd51cd4443b6f73c45ffbc2a1",
+    "workspace_at_sync": "a709c520b04e7265495b914aeb3478d296c7f221",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -30746,6 +30746,22 @@
       "publishedSHA256": "479518c80cfdeaa8bce28259e194bb66c6b5bacbea53b7ba0b932bffaa84987e",
       "bytes": 327,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/appearance-review.md",
+      "sourceSHA256": "21eaf4fa1722cb3d6bd26d120433dd3b9c98a14fbcbd699e588063b3585c6fed",
+      "publishedpath": "artifacts/reviewed/live-editor/appearance-review.md",
+      "publishedSHA256": "21eaf4fa1722cb3d6bd26d120433dd3b9c98a14fbcbd699e588063b3585c6fed",
+      "bytes": 4927,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/appearance-publication.json",
+      "sourceSHA256": "12121bf59439ef8cc0576270d6b1de23d51c7d53abcb19d4292489e3e4e52654",
+      "publishedpath": "artifacts/reviewed/live-editor/appearance-publication.json",
+      "publishedSHA256": "12121bf59439ef8cc0576270d6b1de23d51c7d53abcb19d4292489e3e4e52654",
+      "bytes": 176,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -31459,7 +31475,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165226569,
+  "total_payload_bytes": 165231672,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
