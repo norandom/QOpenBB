@@ -761,16 +761,28 @@
         "stackedArea",
         "normalizedArea"
       ],
-      "phase": "design-generated",
+      "phase": "implementation-in-progress",
       "design_path": "chart-area-design.md",
       "design_review": "artifacts/reviewed/live-editor/area-charts/design-review.md",
       "design_review_status": "PASS",
       "reviewed_design_sha256": "0cb461aee254c8985ef1a481b02b2dbb3cbc014c8eeaedd49f0dd5d2acbc9422",
-      "design_approved": false,
-      "tasks_generated": false,
-      "tasks_approved": false,
+      "design_approved": true,
+      "tasks_generated": true,
+      "tasks_approved": true,
       "implementation_accepted": false,
-      "starting_workspace_revision": "375fe8990c698ef5e9d4c972f92e6b77c242dae3"
-    }
+      "starting_workspace_revision": "375fe8990c698ef5e9d4c972f92e6b77c242dae3",
+      "tasks": [
+        "2.86",
+        "2.87",
+        "2.88",
+        "2.89",
+        "2.90"
+      ],
+      "task_graph_review": "artifacts/reviewed/live-editor/area-charts/task-review.md",
+      "task_graph_review_mode": "independent",
+      "task_graph_review_status": "PASS",
+      "approval_note": "Owner explicitly directed autonomous UI/UX progression. Design/task progression and bounded implementation are authorized; independent review, original parity constraints and concrete visual-owner decisions remain."
+    },
+    "autonomous_ui_ux": true
   }
 }

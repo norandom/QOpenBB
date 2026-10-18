@@ -149,7 +149,7 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "a121858a727ebd21dc115e956abcf6647bf59097",
+    "root_at_sync": "c072e79a60cf5210b26e2b7443e4f92291d0d7f3",
     "workspace_at_sync": "375fe8990c698ef5e9d4c972f92e6b77c242dae3",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
@@ -31418,6 +31418,22 @@
       "publishedSHA256": "4181341d2441a0b85802523104e3c495143edff91e661bfe8dac4fcb3348de6a",
       "bytes": 184,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/task-review.md",
+      "sourceSHA256": "b7fefca5007b3c0cf2251acf3bff86c197144f66d010dde4c696836a82fd8737",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/task-review.md",
+      "publishedSHA256": "b7fefca5007b3c0cf2251acf3bff86c197144f66d010dde4c696836a82fd8737",
+      "bytes": 2384,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/task-publication.json",
+      "sourceSHA256": "a470252f416f3a778ea4703c622c2d7a8c15e41f0ebf0b3d7c0146c8ee75612c",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/task-publication.json",
+      "publishedSHA256": "a470252f416f3a778ea4703c622c2d7a8c15e41f0ebf0b3d7c0146c8ee75612c",
+      "bytes": 182,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32131,7 +32147,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165799413,
+  "total_payload_bytes": 165801979,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -2,6 +2,60 @@
 
 Current production UI priorities are collected in the [UI parity worklist](ui-parity-worklist.md). It distinguishes actual application deliverables from the historical source-helper and reference-test tasks below; it does not alter their recorded approval or acceptance.
 
+## Ordinary area charts: autonomous UI-10 continuation
+
+Owner requested autonomous UI/UX progression after reviewing the [area design](chart-area-design.md). This authorizes design/task progression and implementation within the original parity constraints; independent reviews, complexity caps and owner decisions on uncertain visible deviations remain. No repeated phase confirmation is required for this bounded track.
+
+Execution: 2.86 contract -> 2.87 numerical / 2.88 editor in parallel -> 2.89 renderer after 2.87 (may overlap 2.88) -> 2.90 application join. Sol implements bounded units; Astra reviews financial contracts and integration. At most four active agents, one heavy browser/build run, selective per-task commits. Each task is a 1-3 hour unit; unresolved native geometry requires a concrete adapter design repair, never an approximation or hidden feature reduction.
+
+Paths follow the area design: production paths relative to Workspace `terminalpro/src/components/General/Table/Chart/`, tests relative to Workspace `terminalpro/`. All modified production files must pass existing whole-file 400 physical / 300 logical / 50 per-function checks with explicit change manifests. Controller owns inventory, breadth, source pins and artifact publication. No lane reverts another lane's edits; production interfaces freeze before dependent work. No flags or new dependencies.
+
+- [ ] 2.86 Freeze original area contracts and native geometry compatibility
+  - Own `echarts/cartesianTypes.ts` type-only extensions, new `echarts/cartesianAreaTypes.ts`, fixture `tests/unit/chart-compatibility/fixtures/area-charts.json`, and focused contract/native discriminator tests in `tests/unit/chart-compatibility/cartesian.area-contract.test.ts`. Runtime admission and transitive normalization predicates remain unchanged.
+  - Reuse installed original source/runtime and native ECharts fixtures. Freeze signed ordered accumulation, normalization extent, raw labels/tooltips, null/gap/zero/single-series behavior, category/percent axis and crosshair, original control/default predicates, legend lifetime and miniature construction. Separate source inference from observed effects and preserve original single-date caller conversion.
+  - Use one bounded synthetic original journey only for unresolved visible contracts; verify native fill/stroke boundaries for signed crossings and missing stacks. A failed native discriminator requires reviewed adapter design correction before dependent production work, not bar-style substitution. Capture executable paths/package identities and actual results without new harness/install.
+  - Done when independent Astra review accepts immutable typed projection inputs/output and fixture, native strategy is demonstrated for the discriminators, scoped consumer checks and whole-file caps pass, and downstream tasks have runnable focused commands. Tests/docs are cap-exempt; production contract files are not.
+  - _Boundary: Frozen area numerical/editor contract and existing runtime prerequisite_
+  - _Depends: 1.4, 2.85_
+  - _Requirements: 4.8, 4.9, 10.1, 10.2, 10.4, 10.5, 10.6_
+
+- [ ] 2.87 (P) Project original area boundaries without changing raw observations
+  - Own new `echarts/cartesianArea.ts` and `tests/unit/chart-compatibility/cartesian.area-values.test.ts`; read frozen interfaces/fixture only. Implement independent, ordered stacked and normalized area projection, enabled membership, raw-versus-drawn separation and gap metadata. Do not change native renderer, editor or caller admission.
+  - Preserve source-backed zero/missing/hidden semantics and finite large-value behavior. Expected signed endpoints and denominator must be independently calculated from the frozen fixture, including reordered series and cross-category sign changes.
+  - Done when RED/GREEN focused numerical checks cover these effects, raw snapshot remains unchanged, scoped static checks and 400/300/50 caps pass, controller registers the helper, and independent financial review accepts the projection.
+  - _Boundary: Pure area numerical projection_
+  - _Depends: 2.86_
+  - _Requirements: 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
+
+- [ ] 2.88 (P) Bind original area settings to the existing editor
+  - Own `application/effectiveAppearance.ts`, `application/effectiveAppearanceDefaults.ts`, `application/effectiveAppearanceSeries.ts`, `compatibility/editorBindings/eligibility.ts`, `compatibility/editorBindings/mapApplicationEditorEvent.ts`, `compatibility/editorBindings/selectApplicationEditorState.ts`, `compatibility/editorBindings/rehydrateApplicationEditorEvent.ts`. Own `tests/unit/chart-application/editorArea.test.tsx`; no shared renderer/contract edits.
+  - Read/write the original area namespace and preserve inactive branches; apply frozen marker, labels, fill/stroke, dash, opacity, shadow and connect-missing predicates/defaults. Keep existing editor widgets, labels, layout and flags. Area is neither a bar namespace nor automatically every line control.
+  - Done when actual editor actions yield correct saved leaves and resolved values for all three area types, existing seven-family regressions remain valid, RED/GREEN checks and scoped static checks pass, whole modified files satisfy 400/300/50, and independent review accepts the lane. Live geometry joins later.
+  - _Boundary: Area appearance and original editor bindings_
+  - _Depends: 2.86_
+  - _Requirements: 4.7, 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
+
+- [ ] 2.89 (P) Render area fills, boundaries and independent overview
+  - Own `echarts/cartesian.ts`, `echarts/cartesianSeries.ts`, `echarts/cartesianAxes.ts`, `echarts/cartesianDisplay.ts`, `echarts/cartesianStyle.ts`, `echarts/cartesianNavigator.ts`, `echarts/cartesianLayout.ts`, `echarts/cartesianBarColors.ts`, and `tests/unit/chart-compatibility/cartesian.area.test.ts`. Read accepted pure projection and frozen appearance contract. Cohesive extractions must be assigned before edits.
+  - Use the proven native strategy for ordered signed fills/strokes, null gaps and normalized coordinates, preserving raw labels/tooltips, area markers, axis spacing/domain and percent formatting. Keep all seven accepted families unchanged; no bar-normalization fallback for areas.
+  - Project overview from independent full inputs where the original contract requires it, preserving physical-X navigation and full extent. Native legend membership changes main geometry without corrupting the overview.
+  - Done when native geometry, renderer options and affected regression checks pass with RED evidence, scoped static checks and 400/300/50 caps pass, and independent review accepts the renderer. No application activation in this lane.
+  - _Boundary: ECharts area mapping and overview_
+  - _Depends: 2.86, 2.87_
+  - _Requirements: 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
+
+- [ ] 2.90 Join all three area families into the existing Workspace journey
+  - Controller owns `echarts/cartesianTypes.ts` final admission predicates, `application/applicationSessionProjection.ts`, `application/axisStructure.ts`, and necessary `AgChartView.tsx` / `caller/chartInputs.ts` changes. Activate only after both renderer and editor lanes are frozen/reviewed; reuse native callback/scope and existing persistence owners.
+  - Own `tests/unit/chart-application/callerArea.test.ts`, necessary `applicationSession.test.tsx` cases, and `tests/e2e/live-chart/area-charts.spec.ts`. Reuse existing helpers; preserve exact family/range/unknown branches and original single-date entry conditions.
+  - Run one joined actual Workspace journey through three area types: signed observations, raw tooltip, marker/fill/stroke control effects, legend plus theme/data updates, category navigator/full overview, light/dark view, current PNG and fresh-session reopen. Reuse already accepted save-failure/restart evidence unless changed owners create a concrete risk.
+  - Done when focused tests and isolated browser/CDP journey pass, representative views/export are inspected, uncertain visible deviations receive an owner decision, independent Astra integration review passes, and the combined scope passes 400/300/50. Sync concise review and necessary synthetic screenshots before selective commit/push; update breadth and UI-10 only for demonstrated scope. Release-image and other families remain pending.
+  - _Boundary: Explicit ordinary Table/File area integration_
+  - _Depends: 2.88, 2.89_
+  - _Requirements: 4.7, 4.8, 4.9, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6_
+
+Commands reuse the installed pinned Node, chart-compatibility/chart-application Vitest configs, scoped Biome, existing isolated Playwright config and `python -m tools.quality.complexity --check` with explicit fork manifests. Task 2.86 records exact executable paths. No planned command is passing evidence.
+
+
 ## Ordinary 100% stacked columns and bars: UI-10 next slice
 
 Owner approved the [normalized-bar design](chart-normalized-bars-design.md), including a working horizontal overview. Owner approved tasks 2.82-2.85 for implementation. They cover exactly `normalizedColumn` and `normalizedBar`; broader UI-10 and release acceptance remain pending.

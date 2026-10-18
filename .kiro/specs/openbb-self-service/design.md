@@ -2,7 +2,7 @@
 
 ## Overview
 
-Next UI-10 amendment: [ordinary area charts](chart-area-design.md) has passed independent design review and awaits owner approval. Horizontal and normalized bars/columns are accepted through task 2.85; remaining Cartesian/combination families and release acceptance remain pending. See the [current UI worklist](ui-parity-worklist.md).
+Next UI-10 amendment: [ordinary area charts](chart-area-design.md) is approved under the owner's autonomous UI/UX direction; tasks 2.86-2.90 passed independent review and are in progress. Horizontal and normalized bars/columns are accepted through task 2.85; remaining Cartesian/combination families and release acceptance remain pending. See the [current UI worklist](ui-parity-worklist.md).
 
 Owner-approved amendment: [appearance/editor integration contracts](chart-appearance-editor-integration-design.md). Independent [Astra design review](../../../artifacts/reviewed/appearance-editor-design-review/review.md) returns scoped GO for saved-option composition, derived color tokens and grouped-column tooltip event task generation. The owner approved the design; task approval remains separate. Complete B2/C and application activation retain their evidence gates.
 
