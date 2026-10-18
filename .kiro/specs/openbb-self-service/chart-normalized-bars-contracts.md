@@ -1,6 +1,6 @@
 # Frozen normalized-family interfaces
 
-Task 2.82 supplies the contracts for tasks 2.83-2.85. Production callers remain on their accepted admission checks until the application join. Independent review accepted these findings and the numerical fixture in task 2.82; tasks 2.83 and 2.84 consume this frozen contract.
+Task 2.82 supplies the contracts for tasks 2.83-2.85. Task 2.85 joins these interfaces into the ordinary Table/File callers. Independent review accepted these findings and the numerical fixture in task 2.82; tasks 2.83 and 2.84 consume this frozen contract.
 
 ## Projection ownership
 

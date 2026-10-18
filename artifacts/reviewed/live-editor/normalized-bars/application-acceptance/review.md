@@ -1,0 +1,26 @@
+## Review Verdict
+
+- VERDICT: APPROVED
+- TASK: 2.85, ordinary Table/File normalized application integration only.
+- MECHANICAL_RESULTS:
+  - Tests: PASS. Independently ran pinned Node with `node_modules/vitest/vitest.mjs run --config tests/unit/chart-application/vitest.config.mjs` and `callerNormalizedBars.test.ts`, `applicationSession.test.tsx`, `applicationSessionTransactions.test.ts`, `editorBindings.test.ts`, and `editorSavedLeaves.test.ts` under `tests/unit/chart-application/`: 103 tests in five files, exit 0.
+  - Static checks: PASS. Independently ran pinned Node/Biome lint on all eight modified production files: eight checked, exit 0. `git diff --check` passed. This does not claim a clean full compiler run; the known upstream typography TS2578 remains disclosed.
+  - TBD/TODO grep: CLEAN for introduced production lines, including FIXME/HACK/XXX.
+  - Secrets review: CLEAN; no credentials or secret-bearing additions in the reviewed diff.
+  - Boundary: WITHIN. Eight production paths match the explicit join ownership. `caller/chartInputs.ts` needs the horizontal predicate to reconstruct normalizedBar physical axes. Two unit files and one browser regression implement the permitted checks.
+  - Boundary audit: CLEAN. No arithmetic moved into application state, no second legend-selection owner, no new persistence fields, dependencies, flags or family registry.
+  - RED phase: VERIFIED in `join-red.log`: the new normalized hook and caller behaviors fail before the join (2 failing, 11 passing). They pass in the independent final run.
+  - Complexity: PASS. Inspected `join-complexity.json` and the explicit combined change manifest; no errors or violations under the 400 physical / 300 logical / 50 per-function caps for the combined 2.82-2.85 boundary.
+  - Browser: PASS. Inspected final `runtime/normalized-join-4/browser-results.json`: one expected pass, zero skipped/unexpected/flaky, one worker, no retries, 58.9 seconds total. Controller reports process exit 0. Command: pinned Node with `verification/node_modules/@playwright/test/cli.js test normalized-bars.spec.ts --config vendor/workspace/terminalpro/tests/e2e/live-chart/playwright.config.ts` from QOpenBB, using the isolated runtime descriptor.
+- FINDINGS:
+  1. No blocking source or integration findings. Shared predicates admit exactly seven accepted families. The normalized request pairs scope and callback with options/revision; scope uses state address, generation and family. The callback captures the current projected snapshot, style, viewport, theme and action values, avoids mutable Widget reads, and gives the navigator independently projected full-series options. Existing stamped onError ownership remains intact.
+  2. Final browser assertions exercise both signed orientations, raw tooltip/labels, native legend hide/restore, unchanged full overview, hidden-series retention across theme updates, numeric-X navigation, physical-axis editing, distinct saved family ranges, unknown branches, fresh backend reopen and current PNG export. Independent inspection of the final column, cropped horizontal overview, light view and exported image found the expected signed geometry and raw values.
+  3. Earlier browser captures exposed verification timing and an incorrect navigator hit target. The final test waits for stable frames and locates the handle using actual editor padding; the final pass replaces those failed/intermediate observations. Production code did not change to accommodate the checks.
+  4. Browser diagnostics contain no page errors or unexpected console/network failures. The existing narrowly allowed missing `/assets/js/datafeeds/udf/dist/bundle.js` 404 and corresponding aborted request remain present in both sessions; this is not a zero-network-error claim.
+  5. Owner decision, relayed by the controller: "Keep this appearance" accepts the additional +/-50% numeric ticks. The working horizontal overview is the previously approved adaptation. Exact original all-missing displayed fallback remains unobserved and is not claimed.
+- REMEDIATION: None for this task. Controller still owns breadth/source-pin updates, evidence publication and selective delivery.
+- SUMMARY: Approve the two normalized families in the ordinary Workspace journey, with independent source/unit/static review and final isolated browser evidence; broader renderer parity, remaining UI-10 and release-image acceptance stay open.
+
+Reviewed source is Workspace base `8a85b73468c4a1f630c58752665be67e26231f7e` plus the eight join production edits and their tests, against root `d0f84aa`. Browser verification used a source-overlaid runtime, not a newly built release image. The controller owns the final committed identities and sanitized publication manifest. Review applied the approved normalized design/contracts, task boundary, requirements 4.7-4.9 and 10.1-10.6, and `kiro-review` without changing production sources or unrelated financial work.
+
+Publication review: the local acceptance folder contains this record and five synthetic PNGs only (column, light/dark bar, cropped overview and export). All representative views were inspected; no account details, credentials, raw diagnostics or private runtime descriptor are included. Final mirror/hash verification remains controller-owned.

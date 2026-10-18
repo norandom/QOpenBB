@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "f95d56a787da08a2e987951ad8de9493610c7203",
-    "workspace_at_sync": "8a85b73468c4a1f630c58752665be67e26231f7e",
+    "root_at_sync": "d0f84aa01f0ec031217441b4ae87024ed0d18a2a",
+    "workspace_at_sync": "375fe8990c698ef5e9d4c972f92e6b77c242dae3",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31346,6 +31346,62 @@
       "publishedSHA256": "e9a1de28aaa80cdd39cd2afb7bcfc7bbfe295cfc180d65d117c3860054d10895",
       "bytes": 207,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/application-acceptance/export.png",
+      "sourceSHA256": "1aad0db30abd6a8c6705453cce743b9b2b9b6439adf5dc3a6cb926381a9e9e35",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/export.png",
+      "publishedSHA256": "1aad0db30abd6a8c6705453cce743b9b2b9b6439adf5dc3a6cb926381a9e9e35",
+      "bytes": 14123,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/application-acceptance/normalized-bar-dark.png",
+      "sourceSHA256": "e6e45825844d17c9bb9a87801a3b939ac492c0fe1eb833c02879e295548af96e",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/normalized-bar-dark.png",
+      "publishedSHA256": "e6e45825844d17c9bb9a87801a3b939ac492c0fe1eb833c02879e295548af96e",
+      "bytes": 23484,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/application-acceptance/normalized-bar-light.png",
+      "sourceSHA256": "6f07d513350e3c5fa1b7cfba75f56a3f0b41e90e49454972f518543ba5609947",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/normalized-bar-light.png",
+      "publishedSHA256": "6f07d513350e3c5fa1b7cfba75f56a3f0b41e90e49454972f518543ba5609947",
+      "bytes": 23792,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/application-acceptance/normalized-bar-mini.png",
+      "sourceSHA256": "a884a359572a3eefc52bce583ac1609ee2ed911e0ae013298273ae14583b1fa2",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/normalized-bar-mini.png",
+      "publishedSHA256": "a884a359572a3eefc52bce583ac1609ee2ed911e0ae013298273ae14583b1fa2",
+      "bytes": 25053,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/application-acceptance/normalized-column.png",
+      "sourceSHA256": "f40dede03ffbb912fc5c5524ee8091228e5d73998022a6f0391f68ac629e2583",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/normalized-column.png",
+      "publishedSHA256": "f40dede03ffbb912fc5c5524ee8091228e5d73998022a6f0391f68ac629e2583",
+      "bytes": 19864,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/application-acceptance/review.md",
+      "sourceSHA256": "6ef51df874041d8dc0127b6e766c89318697c71237cbfc0c675af452aae441ff",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/review.md",
+      "publishedSHA256": "6ef51df874041d8dc0127b6e766c89318697c71237cbfc0c675af452aae441ff",
+      "bytes": 5287,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/normalized-bars/application-acceptance/publication.json",
+      "sourceSHA256": "10bb7cfc62b92d39707eb8cfa8b6d5691762113d1341f8c04903179d08d1b1c2",
+      "publishedpath": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/publication.json",
+      "publishedSHA256": "10bb7cfc62b92d39707eb8cfa8b6d5691762113d1341f8c04903179d08d1b1c2",
+      "bytes": 1180,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32059,7 +32115,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165683872,
+  "total_payload_bytes": 165796655,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

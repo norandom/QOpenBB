@@ -709,7 +709,7 @@
         "normalizedColumn",
         "normalizedBar"
       ],
-      "phase": "implementation-in-progress",
+      "phase": "accepted",
       "design_path": "chart-normalized-bars-design.md",
       "design_review": "artifacts/reviewed/live-editor/normalized-bars/design-review.md",
       "design_review_status": "PASS",
@@ -717,7 +717,7 @@
       "design_approved": true,
       "tasks_generated": true,
       "tasks_approved": true,
-      "implementation_accepted": false,
+      "implementation_accepted": true,
       "starting_workspace_revision": "c0d002ebbc72477f6c0445c48c049e77ee2fb8b5",
       "approval_note": "Owner approved tasks 2.82-2.85. Execute prerequisite, parallel renderer/lifecycle lanes and application join with independent review and per-task commits. Working horizontal overview is approved; wider UI-10/release acceptance remains pending.",
       "tasks": [
@@ -742,10 +742,17 @@
         "2.83": {
           "workspace_revision": "8a85b73468c4a1f630c58752665be67e26231f7e",
           "review": "artifacts/reviewed/live-editor/normalized-bars/renderer-acceptance/review-final.md"
+        },
+        "2.85": {
+          "workspace_revision": "375fe8990c698ef5e9d4c972f92e6b77c242dae3",
+          "review": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/review.md"
         }
       },
       "contract_status": "accepted",
-      "contracts_path": "chart-normalized-bars-contracts.md"
+      "contracts_path": "chart-normalized-bars-contracts.md",
+      "acceptance_review": "artifacts/reviewed/live-editor/normalized-bars/application-acceptance/review.md",
+      "acceptance_scope": "Ordinary Table/File normalizedColumn and normalizedBar only; other families and release-image acceptance remain pending.",
+      "visual_approval": "Owner replied Keep this appearance to the normalized-column comparison, explicitly accepting the extra +/-50% axis ticks."
     }
   }
 }

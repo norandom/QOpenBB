@@ -38,7 +38,7 @@ Production paths below are relative to `vendor/workspace/terminalpro/src/compone
   - _Depends: 2.82_
   - _Requirements: 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
 
-- [ ] 2.85 Join both normalized families to the existing Workspace journey
+- [x] 2.85 Join both normalized families to the existing Workspace journey
   - Controller owns this explicit integration task after both lanes freeze and pass review: `AgChartView.tsx`, `application/effectiveAppearance.ts`, `application/axisStructure.ts`, `application/applicationSessionProjection.ts`, `application/useApplicationChartSession.ts`, `compatibility/editorBindings/mapApplicationEditorEvent.ts`, `compatibility/editorBindings/selectApplicationEditorState.ts`; `caller/chartInputs.ts` only if shared predicate propagation is insufficient. Compose the frozen callback over immutable current inputs, assign stable scope and pass all request fields atomically. No new storage owner or family registry.
   - Admit exactly both normalized families through current guards, preserving distinct family ranges, saved types, unknown/inactive branches, physical-axis controls, existing themes/actions and all five accepted families. Do not hide or disable any control or flag. Arithmetic/overview and native state ownership remain in the reviewed lanes.
   - Own existing `tests/unit/chart-application/editorBindings.test.ts`, `editorSavedLeaves.test.ts`, new `callerNormalizedBars.test.ts`, and only necessary changes to `applicationSession.test.tsx` / `applicationSessionTransactions.test.ts`. Own new `tests/e2e/live-chart/normalized-bars.spec.ts`, reusing existing import/editor/action/persistence/diagnostics helpers. Shared helper changes require a demonstrated need and remain controller-only.
