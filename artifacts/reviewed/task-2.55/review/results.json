@@ -1,0 +1,83 @@
+{
+  "unit": {
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "/mnt/d/Source/QOpenBB/artifacts/task-2.55/implementer/unit.config.mjs"
+    ],
+    "exit": 0
+  },
+  "lint": {
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/@biomejs/biome/bin/biome",
+      "lint",
+      "src/components/General/Table/Chart/editor/tooltips/ChartTooltipsPanel.tsx",
+      "src/components/ds/organisms/ChartTooltipsPanel.stories.tsx",
+      "tests/unit/chartTooltipsPanel.test.tsx"
+    ],
+    "exit": 0
+  },
+  "types": {
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--skipLibCheck",
+      "--strict",
+      "--target",
+      "esnext",
+      "--module",
+      "esnext",
+      "--moduleResolution",
+      "bundler",
+      "--jsx",
+      "react-jsx",
+      "--allowSyntheticDefaultImports",
+      "src/components/General/Table/Chart/editor/tooltips/ChartTooltipsPanel.tsx",
+      "src/components/ds/organisms/ChartTooltipsPanel.stories.tsx"
+    ],
+    "exit": 2
+  },
+  "baseline": {
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--skipLibCheck",
+      "--strict",
+      "--target",
+      "esnext",
+      "--module",
+      "esnext",
+      "--moduleResolution",
+      "bundler",
+      "--jsx",
+      "react-jsx",
+      "--allowSyntheticDefaultImports",
+      "src/components/ds/atoms/Switch.tsx"
+    ],
+    "exit": 2
+  },
+  "hashesMatch": true,
+  "sources": [
+    {
+      "path": "vendor/workspace/terminalpro/src/components/General/Table/Chart/editor/tooltips/ChartTooltipsPanel.tsx",
+      "sha256": "9fa863f91b2341c391b2618c9b00678170fa5c9b53ca8576355ce5f37ce20996",
+      "physical": 52
+    },
+    {
+      "path": "vendor/workspace/terminalpro/src/components/ds/organisms/ChartTooltipsPanel.stories.tsx",
+      "sha256": "9c90999ede665a418c27a38bf8472f304e43831a715c6b6ffc80443f00529ef9",
+      "physical": 44
+    },
+    {
+      "path": "vendor/workspace/terminalpro/tests/unit/chartTooltipsPanel.test.tsx",
+      "sha256": "3bf33a7ed88563cc21f8d45b9b7a10e4cc60ca9e4478e06a365064e18bfd68aa",
+      "physical": 79
+    }
+  ],
+  "sizeExit": 0
+}

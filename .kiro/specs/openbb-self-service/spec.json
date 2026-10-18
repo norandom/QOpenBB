@@ -380,6 +380,35 @@
       "owner_visual_accepted": true,
       "owner_visual_approval_note": "Owner replied ok after the Legend and Padding dock previews were shown on 2026-10-18. Approval applies to those views at Workspace f34de0a; remaining controls and live chart integration are pending.",
       "typecheck_limitation": "Legend and combined story retain reproduced upstream DS typography.ts TS2578; no full compiler acceptance claimed."
+    },
+    "background_tooltip": {
+      "task_ids": [
+        "2.54",
+        "2.55",
+        "2.56"
+      ],
+      "design_path": "chart-background-tooltip-design.md",
+      "design_approved": true,
+      "tasks_approved": true,
+      "approval_note": "Owner explicitly requested autonomous continuation with the same UI focus on 2026-10-18. This bounded continuation retains existing requirements, controls and approved appearance; live application parity is not inferred.",
+      "phase": "accepted",
+      "implementation_accepted": true,
+      "design_review": "artifacts/reviewed/task-2.54/design-review.md",
+      "design_review_status": "PASS",
+      "reviewed_design_sha256": "5bbef64df51fa4b49f2f905aca73de9272370a00988788351ecc7c014e28af18",
+      "implementation_source_revision": "86da20c60dd7457bdb41b1b185822110b99b480c",
+      "implementation_reviews": [
+        "artifacts/reviewed/task-2.54/review/verdict.md",
+        "artifacts/reviewed/task-2.55/review/verdict.md",
+        "artifacts/reviewed/task-2.56/review/verdict.md"
+      ],
+      "previews": [
+        "artifacts/reviewed/task-2.56/implementer/dock-background-light-dark.png",
+        "artifacts/reviewed/task-2.56/implementer/dock-tooltips-light-dark.png"
+      ],
+      "acceptance_scope": "Controlled Background and Tooltips panels composed in the existing dock preview. Remaining Series and axis controls, mapper bindings, storage integration and application activation remain pending.",
+      "owner_visual_accepted": false,
+      "typecheck_limitation": "Scoped checks retain reproduced upstream DS typography.ts TS2578; no full compiler acceptance claimed."
     }
   }
 }

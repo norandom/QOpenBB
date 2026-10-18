@@ -1,0 +1,20 @@
+{
+  "isolated": true,
+  "workers": 1,
+  "cdp": [
+    "Runtime",
+    "Network"
+  ],
+  "checks": [
+    "light/dark real subsection",
+    "no mount edits",
+    "exact mappings",
+    "native keyboard Home/End mode edits",
+    "pointer toggle hides mode",
+    "Space restores retained mode",
+    "Tab focus",
+    "pointer mode selection"
+  ],
+  "errors": [],
+  "networkFailures": []
+}

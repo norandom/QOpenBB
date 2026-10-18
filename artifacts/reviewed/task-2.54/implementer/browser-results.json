@@ -1,0 +1,18 @@
+{
+  "isolated": true,
+  "workers": 1,
+  "cdp": [
+    "Runtime",
+    "Network"
+  ],
+  "checks": [
+    "light/dark real subsection",
+    "no mount edits",
+    "raw alpha edits",
+    "invalid drafts recover",
+    "pointer toggle and keyboard restore retain fill",
+    "picker keyboard open/close and focus"
+  ],
+  "errors": [],
+  "networkFailures": []
+}

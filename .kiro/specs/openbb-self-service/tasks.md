@@ -76,6 +76,30 @@ The owner's latest production-UI "go" authorizes the bounded existing-owner repa
   - _Depends: 2.51, 2.52_
   - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
 
+- [x] 2.54 (P) Restore the chart Background controls
+  - Follow chart-background-tooltip-design.md. Implement the original Background toggle and Color control with exact edits, alpha support, invalid draft handling and disabled value retention.
+  - Done when real pointer/keyboard interactions and no-mount-edit cases pass focused checks and independent review, preserving the accepted styling. No new opacity control or renderer/storage changes.
+  - Register maintained files and enforce whole-file 400 physical / 300 logical / 50-function caps; reuse existing tools and keep known compiler limitations explicit.
+  - _Boundary: Controlled Background subsection; composition belongs to 2.56_
+  - _Depends: 2.53_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.55 (P) Restore the original Tooltips toggle and mode selection
+  - Follow chart-background-tooltip-design.md. Preserve exact Single/Multiple/Compact values, caller choice order, unknown modes and retained hidden settings without introducing extra tooltip options.
+  - Done when the real subsection works by pointer/keyboard, controlled edits remain exact, disabled values survive and focused checks plus independent review pass.
+  - Register maintained files and enforce whole-file 400/300/50 caps; no renderer/storage/feature-flag or dependency changes.
+  - _Boundary: Controlled Tooltips subsection; Series grouping belongs to 2.56_
+  - _Depends: 2.53_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
+- [x] 2.56 Compose Background and Tooltips in the accepted dock preview
+  - Place Background after Padding under Chart Style and Tooltips under Series, preserving accepted sections and original layout. Keep incomplete Series/axis and live-binding scope clear outside the controls.
+  - Done when retained color/mode edits survive dock close/reopen and tab changes in both themes, scoped browser checks and independent review pass, and reviewed artifacts, inventory, breadth and source pins are committed and pushed.
+  - Development story is excluded from production caps; register and audit the maintained panel modules at 400/300/50. No application activation or storage behavior changes.
+  - _Boundary: Controller-owned combined development story and delivery metadata_
+  - _Depends: 2.54, 2.55_
+  - _Requirements: 4.8, 4.9, 10.1, 10.4, 10.5, 10.6_
+
 Design approved by the owner on 2026-10-16 ("go"). The owner approved these implementation tasks on 2026-10-16 ("approve"). Unchecked tasks remain unimplemented or unverified. Each executable leaf targets one 1-3 hour engineering work unit; investigate unexpected scope before splitting a task, rather than silently expanding it. External access, entitlement decisions and build waits are not promised completion times.
 
 The separately approved chart-foundation design has [six foundation tasks](#approved-design-slice-chart-state-and-lifecycle-foundation), approved by the owner on 2026-10-16. Its explicit dependency branch overrides the historical numeric sequence only within that scope. [Independent task review](chart-foundation-task-review.md) passed.

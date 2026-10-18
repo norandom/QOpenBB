@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "isolated": true,
+  "workers": 1,
+  "checks": [
+    "actual combined story in both themes",
+    "Background after Padding within Chart Style",
+    "Tooltips within initially collapsed Series",
+    "exact three mode values",
+    "independent alpha background and padding edits",
+    "toggle hidden fill/mode retention",
+    "dock close/reopen retains values",
+    "tab remount retains values and resets Series expansion",
+    "Set Up, gallery, Titles, Legend remain available"
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "cdp": [
+    "Runtime.enable",
+    "Network.enable"
+  ]
+}

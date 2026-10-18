@@ -260,3 +260,27 @@ planned_checks = ["dock-controlled-state-retention", "dock-customize-composition
 test_paths = ["artifacts/reviewed/task-2.53/implementer/capture.mjs"]
 status = "passed"
 evidence = ["Task 2.53 accepted at Workspace f34de0a. Real component composition, controlled edits retained through dock close/reopen and tab transitions in both themes pass focused checks and independent review. Review: artifacts/reviewed/task-2.53/review/verdict.md. Controlled UI only; owner visual judgment, financial rendering, storage and application activation remain pending. Existing DS typecheck limitation is disclosed where applicable."]
+
+[[capabilities]]
+id = "controlled-chart-background-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "retained-state", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartBackgroundPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.54 accepted at Workspace 86da20c. Exact visibility and fill edits, retained alpha color, invalid drafts and picker focus pass focused checks and independent review. Review: artifacts/reviewed/task-2.54/review/verdict.md. Controlled UI only; owner visual judgment, rendering, storage and application activation remain pending. Existing DS typecheck limitation disclosed."]
+
+[[capabilities]]
+id = "controlled-chart-tooltips-panel"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "retained-state", "light-dark-controls"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartTooltipsPanel.test.tsx"]
+status = "passed"
+evidence = ["Task 2.55 accepted at Workspace 86da20c. Exact caller choice order and mode values, unknown mode and disabled retention pass focused checks and independent review. Review: artifacts/reviewed/task-2.55/review/verdict.md. Controlled UI only; owner visual judgment, rendering, storage and application activation remain pending. Existing DS typecheck limitation disclosed."]
+
+[[capabilities]]
+id = "chart-background-tooltip-dock-preview"
+requirements = ["4.8", "4.9", "10.1", "10.4", "10.5", "10.6"]
+planned_checks = ["exact-controlled-edits", "retained-state", "light-dark-controls"]
+test_paths = ["artifacts/reviewed/task-2.56/implementer/capture.mjs"]
+status = "passed"
+evidence = ["Task 2.56 accepted at Workspace 86da20c. Original grouping and controlled edits retained across dock and tab transitions in both themes pass focused checks and independent review. Review: artifacts/reviewed/task-2.56/review/verdict.md. Controlled UI only; owner visual judgment, rendering, storage and application activation remain pending. Existing DS typecheck limitation disclosed."]

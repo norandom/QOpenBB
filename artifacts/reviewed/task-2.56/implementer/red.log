@@ -1,0 +1,84 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toHaveAttribute(expected) failed
+
+Locator: locator('[data-theme="light"]').getByRole('button', { name: 'Series', exact: true })
+Expected: "false"
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toHaveAttribute" locator('[data-theme="light"]').getByRole('button', { name: 'Series', exact: true }) with timeout 5000ms
+  - waiting for locator('[data-theme="light"]').getByRole('button', { name: 'Series', exact: true })
+
+    at captureRawStack (/mnt/d/Source/QOpenBB/verification/node_modules/.pnpm/playwright-core@1.64.0/node_modules/playwright-core/lib/coreBundle.js:9282:17)
+    at callMatcherAsStep (/mnt/d/Source/QOpenBB/verification/node_modules/.pnpm/playwright@1.64.0/node_modules/playwright/lib/matchers/expect.js:13316:57)
+    at Object.toHaveAttribute (/mnt/d/Source/QOpenBB/verification/node_modules/.pnpm/playwright@1.64.0/node_modules/playwright/lib/matchers/expect.js:13308:23)
+    at /mnt/d/Source/QOpenBB/artifacts/task-2.56/implementer/capture.mjs:14:70 {
+  matcherResult: {
+    name: 'toHaveAttribute',
+    expected: 'false',
+    message: 'expect(locator).toHaveAttribute(expected) failed\n' +
+      '\n' +
+      `Locator: locator('[data-theme="light"]').getByRole('button', { name: 'Series', exact: true })\n` +
+      'Expected: "false"\n' +
+      'Timeout: 5000ms\n' +
+      'Error: element(s) not found\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toHaveAttribute" locator('[data-theme="light"]').getByRole('button', { name: 'Series', exact: true }) with timeout 5000ms\n` +
+      `  - waiting for locator('[data-theme="light"]').getByRole('button', { name: 'Series', exact: true })\n`,
+    pass: false,
+    actual: undefined,
+    log: [
+      `  - Expect "toHaveAttribute" locator('[data-theme="light"]').getByRole('button', { name: 'Series', exact: true }) with timeout 5000ms`,
+      `  - waiting for locator('[data-theme="light"]').getByRole('button', { name: 'Series', exact: true })`
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- main:\n' +
+      `  - 'heading "light: Controlled editor preview" [level=1]'\n` +
+      '  - paragraph: "Production controls preview: Set Up, Titles, Legend and chart padding. Background, other Customize controls, chart rendering and persistence remain pending. Menu choices are examples."\n' +
+      '  - button "Chart settings"\n' +
+      '  - button "Rebuild preview theme"\n' +
+      '  - complementary "Chart editor":\n' +
+      '    - button "Collapse chart editor"\n' +
+      '    - tablist "Chart editor sections":\n' +
+      '      - tab "Chart"\n' +
+      '      - tab "Set Up"\n' +
+      '      - tab "Customize" [selected]\n' +
+      '    - tabpanel "Customize":\n' +
+      '      - button "Chart Style"\n' +
+      '      - button "Titles"\n' +
+      '      - button "Legend"\n' +
+      `  - 'heading "dark: Controlled editor preview" [level=1]'\n` +
+      '  - paragraph: "Production controls preview: Set Up, Titles, Legend and chart padding. Background, other Customize controls, chart rendering and persistence remain pending. Menu choices are examples."\n' +
+      '  - button "Chart settings"\n' +
+      '  - button "Rebuild preview theme"\n' +
+      '  - complementary "Chart editor":\n' +
+      '    - button "Collapse chart editor"\n' +
+      '    - tablist "Chart editor sections":\n' +
+      '      - tab "Chart"\n' +
+      '      - tab "Set Up" [selected]\n' +
+      '      - tab "Customize"\n' +
+      '    - tabpanel "Set Up":\n' +
+      '      - button "Categories" [expanded]\n' +
+      '      - combobox "Category":\n' +
+      '        - option "Period" [selected]\n' +
+      '        - option "Region"\n' +
+      '      - switch "Aggregate"\n' +
+      '      - text: Aggregate\n' +
+      '      - button "Series" [expanded]\n' +
+      '      - button "Reorder Revenue"\n' +
+      '      - text: Revenue\n' +
+      '      - button "Remove Revenue"\n' +
+      '      - button "Reorder EPS"\n' +
+      '      - text: EPS\n' +
+      '      - button "Remove EPS"\n' +
+      '      - switch "Switch Category / Series"\n' +
+      '      - text: Switch Category / Series'
+  }
+}
+
+Node.js v24.22.0

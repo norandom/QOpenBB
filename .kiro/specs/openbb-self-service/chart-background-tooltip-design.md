@@ -1,0 +1,27 @@
+# Restore Background and Tooltips in their original groups
+
+Continue the authorized UI worklist with the two observed subpanels, using the accepted controls and theme styles. The owner requested autonomous continuation and then confirmed the next Customize work. Requirements 4.8, 4.9, 10.1, 10.4, 10.5 and 10.6 apply within this controlled-component boundary. No renderer, storage, provider, feature-flag or dependency change is authorized by this slice.
+
+## Contracts and ownership
+
+Task 2.54 owns `Chart/editor/background/ChartBackgroundPanel.tsx`, its focused `tests/unit/chartBackgroundPanel.test.tsx` and `ds/organisms/ChartBackgroundPanel.stories.tsx`. Export `ChartBackgroundPanel`, `ChartBackgroundState` (`visible:boolean`, `fill:string`) and a discriminated `ChartBackgroundEdit` (`{field:"visible",value:boolean}` or `{field:"fill",value:string}`). Props are `value` and `onEdit`. Render the Background label/toggle, then Color while visible is true. Reuse existing `CaptionColorInput`, DS Switch and accepted Titles CSS read-only. Do not add a background opacity input. Preserve raw accepted color strings, alpha, correctable invalid drafts and existing picker focus/Enter/Escape behavior. Mount/open must not normalize or emit edits. Disabling hides Color without clearing fill; enabling restores it.
+
+Task 2.55 owns `Chart/editor/tooltips/ChartTooltipsPanel.tsx`, its focused `tests/unit/chartTooltipsPanel.test.tsx` and `ds/organisms/ChartTooltipsPanel.stories.tsx`. Export `ChartTooltipsPanel`, `ChartTooltipsState` (`enabled:boolean`, `mode:string`) and discriminated `ChartTooltipsEdit` for enabled/mode. Props are `value`, `onEdit` and `modes:readonly {value:string,label:string}[]`. Render Tooltips label/toggle, then Tooltip Mode when enabled. Preserve supplied choice order and unknown current mode without fallback or mount edits. The observed menu maps Single to `single`, Multiple to `shared`, Compact to `compact`. The component passes exact values; no new title, delay, range, position or formatting fields. Disabling hides the mode control without changing mode.
+
+Both tasks depend on accepted 2.53 and run independently. They may add scoped CSS within their owned directories if necessary, but may not edit shared accepted controls. Local drafts belong to the reused color input; saved state stays with the caller. Use native controls consistent with the accepted panels, proper names for keyboard/screen-reader access, and the existing vertical label/field layout.
+
+Controller task 2.56 depends on both accepted panels. It owns only the combined development story and delivery metadata. Place Background after Padding within Chart Style; place Tooltips inside a collapsed Series parent group in the original group order. Keep Titles, Legend, Set Up and gallery behavior intact. Do not invent a standalone top-level Tooltips group. Identify unimplemented Series/axis controls and live bindings in preview prose outside the product controls. Parent-controlled values survive dock closing/reopening and tab remounts; transient parent expansion follows the existing dock lifecycle.
+
+## Existing evidence and limits
+
+Background: `artifacts/reviewed/parity/chart-editor-capture-review/group-Chart-Style.json` and PNG establish Padding followed by Background, enabled with dark fixture fill `#151518`. Original installed AG source in `artifacts/task-2.1/frontend/terminalpro/node_modules/ag-grid-enterprise/dist/package/main.cjs.js`, lines 48043-48077 and 48135-48165, establishes construction and ordering. Bindings are `background.visible` and `background.fill` at the later adapter boundary.
+
+Tooltips: `artifacts/reviewed/parity/editor-runtime-next/focused/Series-default.json` and PNG show Tooltips before Stroke Width; `domain-Series-Tooltip-Mode.json` supplies the three menu choices. `artifacts/reviewed/parity/editor-contract-close/event-ledger.json` supplies mode events. Original source lines 48776-48827 and 48889-48953 establish the subsection and `tooltip.enabled`/`tooltip.mode` bindings. The historical toggle event namespace/effect remains unresolved in runtime evidence; source-backed UI implementation is not a claim of verified tooltip rendering.
+
+Generic toggle groups in the same source (22556, 22610, 46479) collapse details and retain other values. The new components emit the boolean edit only. Light preview colors are caller examples; do not infer fully verified theme defaults from one dark fixture.
+
+## Verification and delivery
+
+Use focused RED/GREEN component tests, scoped lint/types, existing isolated Vite/Playwright/CDP tooling and synthetic light/dark previews. One browser lane at a time. Reuse existing dependencies; do not add a reference-capture system or repeat unrelated suites. Check exact edit types, disabled retention, raw/alpha and invalid colors, keyboard mode selection, unknown modes and no mount emissions. Controller checks actual dock composition, retained edits and unchanged accepted controls. The known unchanged DS typography.ts TS2578 must remain disclosed if reproduced; no full compiler claim.
+
+All maintained production files pass 400 physical lines, 300 logical units and 50 per function. Register actual source files and development-story exclusions in the existing inventory; preserve unrelated financial-lane changes. Independent reviews precede acceptance and selective per-task commits. Synchronize selected reviewed artifacts before commits and push. This slice does not complete full Customize, live chart rendering, persistence or deployment.
