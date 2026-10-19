@@ -26,6 +26,13 @@ CODE_NAMESPACES = {
     ('openbb_platform', 'core', 'openbb_core', 'app', 'logs'): {'.py'},
 }
 PUBLIC_SOURCE_FILES = {
+    'terminalpro/src/components/AI/artifacts/AppArtifact.tsx',
+    'terminalpro/src/components/AI/artifacts/ArtifactShared.tsx',
+    'terminalpro/src/components/AI/artifacts/ChartArtifact.tsx',
+    'terminalpro/src/components/AI/artifacts/HTMLArtifact.tsx',
+    'terminalpro/src/components/AI/artifacts/SnowflakeArtifact.tsx',
+    'terminalpro/src/components/AI/artifacts/TableArtifact.tsx',
+    'terminalpro/src/components/AI/artifacts/TextArtifact.tsx',
     'terminalpro/src/lib/state/main.json',
     'terminalpro/public/assets/data/indices_fmp.json',
     'terminalpro/public/assets/data/tickers_fmp.json',

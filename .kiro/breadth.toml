@@ -404,3 +404,19 @@ planned_checks = ["signed-normalization", "transient-native-legend", "full-indep
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.normalized.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/callerNormalizedBars.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/applicationSession.test.tsx", "vendor/workspace/terminalpro/tests/e2e/live-chart/normalized-bars.spec.ts"]
 status = "passed"
 evidence = ["Tasks 2.82-2.85 accepted for ordinary normalizedColumn/normalizedBar only. Independent Astra reviews, 61 renderer checks, 26 lifecycle checks, 103 application checks and final browser journey 1/1 passed with zero skips. Signed geometry, raw labels/tooltips, transient legend denominator changes, full independent overview, actual numeric navigation, themes, distinct family ranges, save/fresh-session reopen and current PNG verified. Combined 18-file production change scope passed size checks. Owner accepted the appearance including extra 50% ticks. See artifacts/reviewed/live-editor/normalized-bars/application-acceptance/review.md. Original all-missing inference and existing compiler limitations remain disclosed. Source-overlaid development runtime only; release-image and broader UI-10/UI-11 through UI-16 acceptance remain pending."]
+
+[[capabilities]]
+id = "ordinary-area-chart-integration"
+requirements = ["4.8", "4.9", "10.1", "10.3", "10.4", "10.5", "10.6"]
+planned_checks = ["area-geometry", "area-editor-save-reopen", "original-area-scales"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/callerArea.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.area.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/area-charts.spec.ts"]
+status = "passed"
+evidence = ["Tasks 2.86-2.90 accepted for ordinary area, stackedArea and normalizedArea; original rounded scales verified against matched data. Review: artifacts/reviewed/live-editor/area-charts/application-acceptance/review.md. Development source-overlay evidence; broader renderer and release acceptance remain pending."]
+
+[[capabilities]]
+id = "chart-gallery-navigation-refinement"
+requirements = ["4.7", "4.9", "10.1", "10.2", "10.5", "10.6"]
+planned_checks = ["supported-family-scroll", "hidden-scroll-retention", "gallery-appearance"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartTypeGallery.test.tsx", "vendor/workspace/terminalpro/tests/e2e/live-chart/gallery-navigation.spec.ts"]
+status = "passed"
+evidence = ["Task 2.92 accepted; supported-family, tab and theme scroll continuity verified. Owner accepted gallery appearance only, explicitly excluding different left-hand chart data. Review: artifacts/reviewed/live-editor/gallery-refinement/review.md. Live/Pending renderer branch continuity remains outside this scope."]

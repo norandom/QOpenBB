@@ -19,6 +19,13 @@ The owner requested a local image check while resuming UI work on 2026-10-19. Th
 
 ## Gallery refinement before local image inspection
 
+- [x] 2.93 Retain required AI component source during image staging
+  - Local image compilation exposed six missing imports because the global artifact-output exclusion also removed seven tracked React source files. Independent review approved an exact-file exception in `PUBLIC_SOURCE_FILES` for AppArtifact, ArtifactShared, ChartArtifact, HTMLArtifact, SnowflakeArtifact, TableArtifact and TextArtifact under `terminalpro/src/components/AI/artifacts/`.
+  - Sol owns `pipeline/qopenbb_ci/source_filter.py` and focused source-filter regressions; independent Sol reviews the diff. Done when all seven source files survive staging, sibling generated/private/nested artifact paths remain excluded, focused tests pass and the whole production file meets 400 physical/300 logical/50 per-function caps.
+  - Preserve application, PWA, dependencies and Dagger behavior. Controller restages the exact locked sources and retries the ordinary build only after review.
+  - _Boundary: Exact build-input preservation; no general artifact-directory exception_
+  - _Requirements: 1.1, 1.2, 9.1, 10.5, 10.6_
+
 - [x] 2.92 Preserve gallery navigation and refine miniature drawings
   - Owner approved this refinement on 2026-10-19. Follow the existing [gallery design](chart-gallery-design.md), including its transient scroll amendment. Controller owns caller/dock/gallery navigation; Sol owns thumbnail drawings and focused tests; independent Sol reviews the final diff. No shared writable paths between lanes.
   - Done when supported-family changes, tab navigation and theme updates preserve gallery scroll; hidden mounts cannot overwrite it; area/scatter miniatures are compared in qView; existing order, controls and selection remain. Reuse the existing browser helpers and focused unit suite. Whole modified production files must pass 400 physical/300 logical/50 per-function caps.

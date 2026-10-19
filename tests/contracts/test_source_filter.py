@@ -86,3 +86,21 @@ def test_production_paths_named_like_runtime_state_are_retained(tmp_path, source
     for path in reject:
         put(tmp_path, path)
     assert set(select_source(tmp_path, source, LOCK[source]['revision'], POLICY, LOCK)) == set(keep)
+
+
+def test_ai_artifact_components_are_exact_public_source_exceptions(tmp_path):
+    prefix = 'terminalpro/src/components/AI/artifacts/'
+    keep = [prefix + name + '.tsx' for name in (
+        'AppArtifact', 'ArtifactShared', 'ChartArtifact', 'HTMLArtifact',
+        'SnowflakeArtifact', 'TableArtifact', 'TextArtifact')]
+    reject = [prefix + name for name in (
+        'GeneratedArtifact.tsx', 'session.json', '.env', '.env.production',
+        'private.key', 'account.sqlite', 'AppArtifact.ts', 'AppArtifact.tsx.bak',
+        'artifacts/AppArtifact.tsx', 'nested/AppArtifact.tsx',
+        'evidence/AppArtifact.tsx', 'state/AppArtifact.tsx', 'id_rsa')]
+    reject += ['terminalpro/artifacts/AppArtifact.tsx',
+               'terminalpro/src/components/Other/artifacts/AppArtifact.tsx']
+    for path in keep + reject:
+        put(tmp_path, path)
+    chosen = select_source(tmp_path, 'workspace', LOCK['workspace']['revision'], POLICY, LOCK)
+    assert set(chosen) == set(keep)
