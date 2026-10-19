@@ -1,5 +1,7 @@
 # Implementation plan
 
+2026-10-19 owner handover: [prototype-first roadmap](../../../docs/roadmap.md) and [spec ownership](../../spec-ownership.toml) govern current sequencing. Historical tasks retain their unchecked or evidenced state. Transferred feature work does not block the prototype; the [agile workflow](../../steering/delivery-workflow.md) replaces whole-spec delivery gates.
+
 Current production UI priorities are collected in the [UI parity worklist](ui-parity-worklist.md). It distinguishes actual application deliverables from the historical source-helper and reference-test tasks below; it does not alter their recorded approval or acceptance.
 
 ## Owner-reported dense pricing labels

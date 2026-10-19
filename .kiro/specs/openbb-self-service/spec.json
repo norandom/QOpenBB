@@ -4,6 +4,15 @@
   "updated_at": "2026-10-18T18:23:51.656344+00:00",
   "language": "en",
   "phase": "implementation-in-progress",
+  "delivery_amendment": {
+    "mode": "prototype-first-agile",
+    "owner_direction_date": "2026-10-19",
+    "roadmap": "docs/roadmap.md",
+    "ownership_map": ".kiro/spec-ownership.toml",
+    "workflow": ".kiro/steering/delivery-workflow.md",
+    "prototype_accepted": false,
+    "note": "Historical full-scope approvals remain recorded. Successor work is transferred open; prototype delivery is the active milestone."
+  },
   "approvals": {
     "requirements": {
       "generated": true,

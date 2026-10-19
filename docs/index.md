@@ -7,6 +7,7 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | If you need to... | Read |
 | --- | --- |
 | Understand the intended financial workflow and its limits | [Goals](goals.md) |
+| Map provider coverage to research widgets, commands and linked time views | [Provider coverage](provider-coverage.md) and [widget requirements](../.kiro/specs/openbb-self-service/parameterized-widget-requirements.md) |
 | Find the next dependency gate | [Roadmap](roadmap.md) and [implementation tasks](../.kiro/specs/openbb-self-service/tasks.md) |
 | Track concrete production changes needed for the original UI | [UI parity worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) |
 | See the path from accepted chart modules to the original application experience | [Completion plan](completion-plan.md) |

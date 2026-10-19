@@ -1,0 +1,47 @@
+# Scope handover, not test acceptance; historical criteria/evidence stay intact.
+schema_version = 1
+roadmap = "docs/roadmap.md"
+active_delivery = "prototype"
+
+[[ownership]]
+spec = "openbb-self-service"
+scope = "Existing foundation, prototype CI/CD, packaging, pull-only deployment and recovery"
+legacy_tasks = ["3.8: installed catalog/release identity only", "4.1-4.5: prototype integration only", "7.1-7.6", "8.1-8.2 and 8.4-8.6: prototype services only"]
+state = "active"
+release_gate = true
+
+[[ownership]]
+spec = "market-data-integrations"
+scope = "FMP horizontal expansion, yfinance, FRED and future providers; shared identity and semantics"
+legacy_tasks = ["3: provider/catalog expansion only; installed baseline identity stays with deployment", "4.4: broader mixed-provider fidelity"]
+state = "transferred-open"
+release_gate = false
+
+[[ownership]]
+spec = "analyst-workspace"
+scope = "Reusable widgets, commands, linked time/instrument context, theme and remaining renderer/table functionality"
+legacy_tasks = ["2: remaining renderer/UI expansion", "4.3: complete controls parity", "UI-10 through UI-16: remaining obligations"]
+state = "transferred-open"
+release_gate = false
+
+[[ownership]]
+spec = "workspace-ai"
+scope = "Anthropic agent discovery, streaming, selected-widget grounding and recovery"
+legacy_tasks = ["5.1-5.5"]
+state = "transferred-open"
+release_gate = false
+
+[[ownership]]
+spec = "openbb-excel"
+scope = "OpenBB Excel add-in, functions, authentication and Office acceptance"
+legacy_tasks = ["6.1-6.6", "8.3"]
+depends_on = ["workspace-ai: accepted Anthropic integration"]
+state = "transferred-open"
+release_gate = false
+
+[[ownership]]
+spec = "custom-data-source"
+scope = "User datasets and later PostgreSQL integration"
+legacy_tasks = []
+state = "deferred"
+release_gate = false

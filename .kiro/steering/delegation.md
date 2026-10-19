@@ -1,5 +1,7 @@
 # Role-based models and bounded fan-out
 
+2026-10-19 owner amendment: [prototype-first delivery](delivery-workflow.md) replaces whole-spec phase gating with bounded agile slices. Role models, independent review and Anthropic-before-Excel remain. Successor feature lanes must not delay deployment.
+
 User-requested policy, 2026-10-16, adapted from ../because-security-quant-terminal/AGENTS.md and its terminal-control-surface/parallel-execution-proposal.md. The reference project's historical task approvals and run budgets do not transfer.
 
 ## Team and models

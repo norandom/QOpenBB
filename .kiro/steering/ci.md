@@ -1,5 +1,7 @@
 # Build and delivery policy
 
+2026-10-19 owner amendment: [prototype-first delivery](delivery-workflow.md) is the active scope. AI and Excel have separate specifications and do not block the prototype. Dagger-only builds, portable verification/publication and image-pull deployment remain required.
+
 User direction, 2026-10-16: Dagger builds the images in GitHub; the private Linux server installs via image pull. Adapted from the sibling project's single-pipeline convention.
 
 - Dagger owns image builds only. It does not own testing, consumer generation, publication, release promotion or deployment. This explicit owner clarification supersedes the earlier broader build/check/publish interpretation.

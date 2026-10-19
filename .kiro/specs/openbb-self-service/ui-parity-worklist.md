@@ -1,10 +1,14 @@
 # Finish the production Workspace UI
 
+2026-10-19 handover: unfinished functionality belongs to `analyst-workspace`; the new visual reference is Bloomberg-inspired, using existing widgets/theme/chart work. [Prototype deployment](../../../docs/roadmap.md) takes priority. Earlier acceptance below remains historical, not a claim of complete parity.
+
 This is the consolidated remaining production worklist, introduced after the owner's 2026-10-17 direction to prioritize UI implementation. It replaces the scattered follow-up tables as the progress index. Existing accepted tasks 2.13-2.45 remain reusable foundations; they do not count as completed application integration. Formal contract/task approvals remain recorded in [spec.json](spec.json) and [tasks.md](tasks.md).
 
 Each row identifies a production outcome. Larger rows must be implemented through bounded leaves with explicit file ownership, rather than dispatched as an unrestricted task. Tests belong to the implementation they verify. Additional reference capture requires a concrete implementation question that existing code/evidence cannot answer.
 
 ## Ordinary table and chart journey
+
+Dashboard-building follow-up: [parameterized widget requirements](parameterized-widget-requirements.md) records the owner's named instrument/series selectors and inline news request. This draft does not change the acceptance status of the renderer work below.
 
 2026-10-19 continuation: task 2.96 implements the owner-approved [category-axis persistence improvement](chart-axis-persistence-amendment.md). Source review is complete; identified-image browser acceptance remains pending. This changes the prior structural persistence limitation only for type and time format. Position and rotation remain outside this slice.
 

@@ -1,5 +1,7 @@
 # Complete the original Workspace experience
 
+Historical plan: superseded for release sequencing by the owner's 2026-10-19 [prototype-first roadmap](roadmap.md). Remaining functional obligations transfer to `analyst-workspace`; they are not claimed complete and no longer all block the prototype. The sections below preserve the earlier integration context.
+
 The next milestone is a working chart journey inside the existing Workspace table widget. The accepted renderer modules do not yet reach that application entry point. Completion requires the original controls, themes and outcomes, followed by a verified image-pull installation. Three working chart families are an intermediate integration milestone, not a reduced release scope.
 
 This plan records source findings on 2026-10-17 at Workspace `b96d36d16ba87db2dd595d5796507d473dd0c0c6`, compared with original `38dffc33389aca0e4a87e0e88d42f7067aa220df`. It does not claim a new runtime test or approve new implementation tasks. [Phase status](../.kiro/specs/openbb-self-service/spec.json) owns approvals; [appearance verification](../.kiro/specs/openbb-self-service/chart-appearance-verification.md) owns the latest accepted renderer evidence.
