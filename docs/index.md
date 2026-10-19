@@ -21,7 +21,7 @@ Deploy the prototype next, then extend its provider coverage and analyst workflo
 
 The prototype combines Full Workspace and the self-hosted OpenBB data API in [root Compose](../compose.yaml). It serves HTTP on port 23003 behind owner-managed Cloudflare Access and cloudflared, with relative bind-mounted state. Dagger builds images; portable commands handle verification and publication. Installation will pull immutable images.
 
-Compose and build tooling exist. Candidate-image smoke, registry publication and installation acceptance remain open; the development alpha is the accepted release; later stable releases will use pinned versions. [Prototype delivery](prototype-delivery.md) tracks those gates. The older Compose proposal and historical UI plans are reference material, not current installation instructions.
+The [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-39237590906-1) is published with public prebuilt images. Candidate-image browser smoke and assembled Compose acceptance remain open. Later stable releases will use pinned versions. [Prototype delivery](prototype-delivery.md) tracks those gates. The older Compose proposal and historical UI plans are reference material, not current installation instructions.
 
 Broader FMP/FRED/Yahoo coverage belongs to market-data-integrations. Reusable widgets, linked research context, commands, theme and renderer completion belong to analyst-workspace. AI, Excel and custom sources have separate specs. Dashboard persistence acceptance is part of the analyst spec; infrastructure recovery verification is deferred. See [spec ownership](../.kiro/spec-ownership.toml) for transferred obligations.
 

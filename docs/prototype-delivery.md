@@ -2,6 +2,8 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
+Published: [alpha-39237590906-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39237590906-1). Both public `latest` images were pulled anonymously and matched the release manifest. [Verification record](../artifacts/reviewed/alpha-release/verification.md).
+
 ## Build and publication
 
 `bash pipeline/ci.sh check` runs maintained-scope complexity checks and focused delivery tests. `bash pipeline/ci.sh build --output NEW_DIRECTORY --release-version alpha-ID` builds both services serially through Dagger and records their inspected and loaded identities. Dagger builds images only.
@@ -23,6 +25,6 @@ GitHub Actions runs checks for PRs. Only the main-branch publication job receive
 
 The owner accepted shipping the current development alpha with the existing functionality. That does not mark unfinished renderer, provider, persistence, AI or Excel work complete. Candidate-image browser/Compose verification and live-data checks remain recorded follow-up evidence; broader work belongs to the successor specs in the [roadmap](roadmap.md).
 
-The earlier CI failure occurred after Workspace export, in engine identity verification. The repair resolves the pinned image through Docker instead of equating a local image ID with a registry manifest digest. Focused tests cover both Docker storage representations; the hosted run must establish the repaired build outcome.
+The earlier CI failure occurred after Workspace export, in engine identity verification. The repair resolves the pinned image through Docker instead of equating a local image ID with a registry manifest digest. Focused tests cover both Docker storage representations; the hosted run now confirms the repaired build outcome.
 
 On 2026-10-19 automatic approval review rejected starting the isolated local Workspace test runtime with only "blocked by policy". That run did not establish fresh browser acceptance. The existing preview was not replaced.

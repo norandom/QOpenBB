@@ -20,7 +20,7 @@ Pull both images together when updating development. Stable versions will use pi
 
 ## Configure
 
-Put [compose.yaml](../compose.yaml) and [.env.sample](../.env.sample) from the alpha version in your installation directory. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-39237590906-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-39237590906-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-39237590906-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
@@ -46,7 +46,7 @@ Keep `.env` private. AI, Excel and optional provider settings can stay blank. Pr
 
 ## Pull and start
 
-For private images, first authenticate with `docker login REGISTRY_HOST` using pull access.
+The alpha images are public. No registry login is required.
 
 ```bash
 docker compose config --quiet

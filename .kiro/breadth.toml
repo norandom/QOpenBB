@@ -460,5 +460,5 @@ id = "alpha-image-publication"
 requirements = ["7.1", "7.2", "7.3", "7.4"]
 planned_checks = ["hosted-alpha-build", "registry-latest-identities", "tagged-alpha-release"]
 test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_prototype_compose.py"]
-status = "unverified"
-evidence = ["Portable engine verification and alpha publication have focused regression coverage. Hosted build/publication and actual tagged release remain to be observed. Development latest is owner-authorized; exact image references remain in each completed release manifest."]
+status = "passed"
+evidence = ["Hosted run 39237590906 passed 134 delivery checks, quality verification, both Dagger builds and publication. Tagged alpha-39237590906-1 exists; both public latest images were pulled anonymously and matched the release manifest. See artifacts/reviewed/alpha-release/verification.md. Application runtime acceptance is separate."]

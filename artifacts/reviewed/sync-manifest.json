@@ -149,7 +149,8 @@
     "live-editor",
     "live-editor/date-axis",
     "live-editor/axis-persistence",
-    "prototype-delivery"
+    "prototype-delivery",
+    "alpha-release"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -31733,6 +31734,30 @@
       "publishedSHA256": "b756f3432b8192409f9018b2432bfb3a4a61b6651820c79491139f5c2062d48a",
       "bytes": 2816,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/alpha-release-39237590906/manifest.json",
+      "sourceSHA256": "d371fdb9024b57b88862ed0310bdc7b4964a5d5e09071e92063fa83e0b6e501d",
+      "publishedpath": "artifacts/reviewed/alpha-release/manifest.json",
+      "publishedSHA256": "d371fdb9024b57b88862ed0310bdc7b4964a5d5e09071e92063fa83e0b6e501d",
+      "bytes": 6582,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/alpha-anonymous-pull.json",
+      "sourceSHA256": "5665519379e4de224e37ad73f31bcc763df7adc85895e65c3a4faed4fa04810d",
+      "publishedpath": "artifacts/reviewed/alpha-release/anonymous-pull.json",
+      "publishedSHA256": "5665519379e4de224e37ad73f31bcc763df7adc85895e65c3a4faed4fa04810d",
+      "bytes": 613,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/alpha-release-39237590906/verification.md",
+      "sourceSHA256": "732f0b8193274b65f38ebe224863e939a05c3d8307484395dbcdfa213e7971ca",
+      "publishedpath": "artifacts/reviewed/alpha-release/verification.md",
+      "publishedSHA256": "732f0b8193274b65f38ebe224863e939a05c3d8307484395dbcdfa213e7971ca",
+      "bytes": 1565,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32446,7 +32471,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 166121218,
+  "total_payload_bytes": 166127867,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
