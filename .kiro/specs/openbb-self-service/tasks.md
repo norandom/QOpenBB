@@ -35,7 +35,7 @@ Paths follow the area design: production paths relative to Workspace `terminalpr
   - _Depends: 2.86_
   - _Requirements: 4.7, 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
 
-- [ ] 2.89 (P) Render area fills, boundaries and independent overview
+- [x] 2.89 (P) Render area fills, boundaries and independent overview
   - Own new `echarts/cartesianAreaSeries.ts` for native area series assembly, plus `echarts/cartesian.ts`, `echarts/cartesianSeries.ts`, `echarts/cartesianAxes.ts`, `echarts/cartesianDisplay.ts`, `echarts/cartesianTooltip.ts`, `echarts/cartesianStyle.ts`, `echarts/cartesianNavigator.ts`, `echarts/cartesianLayout.ts`, `echarts/cartesianBarColors.ts`, and `tests/unit/chart-compatibility/cartesian.area.test.ts`. Read accepted pure projection and frozen appearance contract. Cohesive extractions must be assigned before edits.
   - Use isolated baseline/delta fill spans, separate internal strokes and stable row-indexed public marker/label series from the reviewed native refinement. Exclude internal tooltip parameters and preserve hidden geometry in miniature cloning. Reproject all area families on legend changes. Use the proven native strategy for ordered signed fills/strokes, null gaps and normalized coordinates, preserving original processed labels/raw tooltips, area markers, axis spacing/domain and percent formatting. Keep all seven accepted families unchanged; no bar-normalization fallback for areas.
   - Project overview from independent full inputs where the original contract requires it, preserving physical-X navigation and full extent. Native legend membership changes main geometry without corrupting the overview.

@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "cf814cb2cd3964ced2a9481bb18691abf141b423",
-    "workspace_at_sync": "1b0a4f37f67eff6540b763a5220111e0099ac20a",
+    "root_at_sync": "aed52b7df84b1f88230974a273d91cef48a520b9",
+    "workspace_at_sync": "b523f1455b632e42711de5e6193045fee6d3987c",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31498,6 +31498,22 @@
       "publishedSHA256": "6020a89e666e57e56bbdcad17b6e6d11b57901ca6723a092abeef642ca6ccc4f",
       "bytes": 195,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/renderer-acceptance/review.md",
+      "sourceSHA256": "e569374cfd6ecc43081404882d2469d80ad9979f4ffdf0be6d3269558c9d2caf",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/renderer-acceptance/review.md",
+      "publishedSHA256": "e569374cfd6ecc43081404882d2469d80ad9979f4ffdf0be6d3269558c9d2caf",
+      "bytes": 5567,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/renderer-acceptance/publication.json",
+      "sourceSHA256": "373ff499fb5ab5352f0feae15c1117667835fc2c9cace6150b4304629eb29fd3",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/renderer-acceptance/publication.json",
+      "publishedSHA256": "373ff499fb5ab5352f0feae15c1117667835fc2c9cace6150b4304629eb29fd3",
+      "bytes": 205,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32211,7 +32227,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165847268,
+  "total_payload_bytes": 165853040,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
