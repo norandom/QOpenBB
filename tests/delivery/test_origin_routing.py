@@ -71,9 +71,13 @@ def test_nginx_real_routes(tmp_path, agent_available):
     main = main.replace('127.0.0.1:8000', f'127.0.0.1:{fixture.server_port}').replace('/etc/nginx/qopenbb-routes.conf', '/fixture/routes.conf').replace('/usr/share/nginx/html', '/fixture')
     (tmp_path / 'nginx.conf').write_text('events {}\nhttp { access_log off; error_log /dev/stderr warn;\n' + main + '\n}')
     (tmp_path / 'index.html').write_text('fixture SPA')
+    asset = tmp_path / 'assets' / 'existing.js'
+    asset.parent.mkdir()
+    asset.write_text('window.fixtureAsset = true;')
+    asset.chmod(0o644)
     tmp_path.chmod(0o755)
     for path in tmp_path.iterdir():
-        path.chmod(0o644)
+        path.chmod(0o755 if path.is_dir() else 0o644)
     name = 'qopenbb-origin-' + uuid.uuid4().hex
     command = ['docker', 'run', '--name', name, '--rm', '--network', 'host', '-v', f'{tmp_path}:/fixture:ro', 'sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2', 'nginx', '-c', '/fixture/nginx.conf', '-g', 'daemon off;']
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -92,6 +96,10 @@ def test_nginx_real_routes(tmp_path, agent_available):
                 time.sleep(0.1)
         else:
             raise AssertionError('nginx failed to start')
+        status, body = request('/assets/js/datafeeds/udf/dist/bundle.js')
+        assert status == 404 and 'fixture SPA' not in body
+        assert request('/assets/existing.js') == (200, 'window.fixtureAsset = true;')
+        assert request('/app/deep') == (200, 'fixture SPA')
         import http.client
         connection = http.client.HTTPConnection('127.0.0.1', port, timeout=3)
         connection.request('GET', '/data')

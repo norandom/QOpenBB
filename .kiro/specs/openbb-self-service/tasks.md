@@ -19,6 +19,12 @@ The owner requested a local image check while resuming UI work on 2026-10-19. Th
 
 ## Gallery refinement before local image inspection
 
+- [x] 2.94 Return missing static assets as 404 in the packaged frontend
+  - Actual image inspection found the missing datafeed JavaScript path returning SPA HTML with status 200, producing a browser syntax exception. Add a dedicated `/assets/` location with `try_files $uri =404` in `lite/nginx.conf.template`; preserve SPA deep links, API routing and all existing flags.
+  - Sol owns that template and focused assertions in `tests/delivery/test_origin_routing.py`; independent Sol reviews. Done when actual nginx serves existing assets, rejects missing assets without SPA HTML, and retains deep-link fallback; template stays under 400 physical lines. Then rebuild and verify the exact packaged page through existing browser checks.
+  - _Boundary: Static asset routing only; no application or feature change_
+  - _Requirements: 1.2, 3.2, 9.1, 10.5, 10.6_
+
 - [x] 2.93 Retain required AI component source during image staging
   - Local image compilation exposed six missing imports because the global artifact-output exclusion also removed seven tracked React source files. Independent review approved an exact-file exception in `PUBLIC_SOURCE_FILES` for AppArtifact, ArtifactShared, ChartArtifact, HTMLArtifact, SnowflakeArtifact, TableArtifact and TextArtifact under `terminalpro/src/components/AI/artifacts/`.
   - Sol owns `pipeline/qopenbb_ci/source_filter.py` and focused source-filter regressions; independent Sol reviews the diff. Done when all seven source files survive staging, sibling generated/private/nested artifact paths remain excluded, focused tests pass and the whole production file meets 400 physical/300 logical/50 per-function caps.
