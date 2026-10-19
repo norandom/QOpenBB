@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "90c774a817461de1dd99d3c3742674a4f6e09c15",
-    "workspace_at_sync": "8099f95efb442066c6f17b5d7b2a8fc4f37ba23f",
+    "root_at_sync": "f0904e35479430924f361399f8a48c2add1d73e0",
+    "workspace_at_sync": "e4251f41dbdaeec619297a51c06c320b409ce3f8",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31530,6 +31530,30 @@
       "publishedSHA256": "9dc214e013504018d8733cae44821cb7fd388eee1bb7b8d820e6be7c482d3ae7",
       "bytes": 197,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/tab-font/review.md",
+      "sourceSHA256": "9e72b847b4febd9ea5be91d20f1055ee8213d75eaa19748f18d57494d1128c55",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/tab-font/review.md",
+      "publishedSHA256": "9e72b847b4febd9ea5be91d20f1055ee8213d75eaa19748f18d57494d1128c55",
+      "bytes": 1986,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/runtime/area-tab-font/browser-output/area-charts-area-families--69978-bservations-and-saved-state/normalizedArea-default.png",
+      "sourceSHA256": "a6da159993542b8de82c3f0364ee24ace3b80821cffb1b8a0f28464a4c34083d",
+      "publishedpath": "artifacts/reviewed/live-editor/runtime/area-tab-font/browser-output/area-charts-area-families--69978-bservations-and-saved-state/normalizedArea-default.png",
+      "publishedSHA256": "a6da159993542b8de82c3f0364ee24ace3b80821cffb1b8a0f28464a4c34083d",
+      "bytes": 24811,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/tab-font/publication.json",
+      "sourceSHA256": "6801c32623e747a1b95fe208c221b1628de9ea245ce28b0e3b721a65462bcff3",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/tab-font/publication.json",
+      "publishedSHA256": "6801c32623e747a1b95fe208c221b1628de9ea245ce28b0e3b721a65462bcff3",
+      "bytes": 458,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32243,7 +32267,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165857023,
+  "total_payload_bytes": 165884278,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

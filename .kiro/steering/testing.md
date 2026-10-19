@@ -4,6 +4,8 @@ Adapted at the user's request on 2026-10-16 from the sibling because-security-qu
 
 ## Background browser checks
 
+Owner preference, 2026-10-19: open original/replacement PNG comparisons in qView for visual review. Launch the requested viewer visibly; keep automated browser verification headless and isolated. Opening a comparison does not imply visual acceptance.
+
 - Use a QOpenBB-owned isolated browser instance/profile. A new tab in the operator's browser is not isolation. Playwright tests use fresh contexts.
 - Run headless in the background. Never move the desktop pointer, inject system keyboard events, steal focus, or attach to the user's browser.
 - Hide Windows helper consoles as well: Python CREATE_NO_WINDOW, Node windowsHide, or PowerShell Start-Process -WindowStyle Hidden. Capture output and clean up only owned processes.
