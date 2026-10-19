@@ -1,0 +1,13 @@
+# Daily date labels and combined dashboard verified
+
+On 2026-10-19, the owner's daily pricing chart showed all 76 date labels overlapping. Workspace commit e0958f6 removes the forced one-index maximum tick interval. Integer category indices and all observations remain intact; three-category labels retain their existing behavior. No chart controls, theme, data frequency or animation were removed.
+
+Independent source review approved the change. The reviewer reran the existing geometry/application suites: 53 tests passed. The dense synthetic regression checks readable tick density and all 76 observations in both series; the short-series regression preserves three category labels. The changed production file measures 229 physical lines, 88 logical units and a maximum callable size of 9, within 400/300/50 caps.
+
+The pinned Dagger build exported Workspace from e0958f6; the portable loader verified image sha256:541a383fc4ff0c84eca5af1d4444d4ce2343e651cf8ee2db10e243b88e9f6e04. The existing preview was replaced on port 55529, preserving its account and data. The prior stopped container and an offline state backup remain available locally. No frontend or backend source overlay is mounted.
+
+An isolated headless Playwright run against this image passed: the existing price dashboard and a new combined dashboard reopened successfully. The combined dashboard contains daily AAPL/MSFT prices, separate annual income-statement charts in USD billions and ten issuer news items with source links. Both price views displayed four readable date ticks. The capture kept animation enabled, waited 2.5 seconds and then required three matching first-chart screenshots at 500ms intervals. The controller inspected the settled images, including complete annual bars. Browser/CDP diagnostics passed with only the previously documented missing external datafeed bundle exception.
+
+Local evidence: artifacts/live-editor/date-axis/{export.json,load.json,review-tests.txt,browser/browser-results.json}; artifacts/live-editor/real-sandbox/{comprehensive-verified.png,daily-price-verified.png,verify-comprehensive.spec.ts}. These provider-data screenshots, raw datasets, account state and image archives are intentionally excluded from public evidence. This report is the only publication artifact.
+
+Limits: examples are local snapshots, not live-refreshing feeds. The existing UI-09 limitation remains: structural Time-axis selection does not survive reopening. This repair uses the existing Category axis and only adjusts tick density. Registry publication, complete renderer parity and production deployment are not accepted by this check.

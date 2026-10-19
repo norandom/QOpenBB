@@ -146,7 +146,8 @@
     "task-2.66",
     "task-2.67",
     "task-2.68",
-    "live-editor"
+    "live-editor",
+    "live-editor/date-axis"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -31705,6 +31706,14 @@
       "publishedpath": "artifacts/reviewed/live-editor/local-images/final-publication.json",
       "publishedSHA256": "b56348b70897f816172e5edda42b35061dd8ce43b7db1e545ffe0d7c27c91768",
       "bytes": 621,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/date-axis/verification.md",
+      "sourceSHA256": "2d7b0153446bf8e5f96473c390c0905f4f94c59151945b7422e93dda118c6ec0",
+      "publishedpath": "artifacts/reviewed/live-editor/date-axis/verification.md",
+      "publishedSHA256": "2d7b0153446bf8e5f96473c390c0905f4f94c59151945b7422e93dda118c6ec0",
+      "bytes": 2632,
       "transform": "exact-byte-copy"
     }
   ],

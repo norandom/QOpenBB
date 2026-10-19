@@ -428,3 +428,11 @@ planned_checks = ["identified-dagger-images", "packaged-login-shell", "image-onl
 test_paths = ["tests/delivery/test_workspace_runtime.py", "tests/delivery/task25_runtime.py", "tests/delivery/test_data_runtime_image.py", "vendor/workspace/terminalpro/tests/e2e/live-chart/packaged-page.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/gallery-navigation.spec.ts"]
 status = "passed"
 evidence = ["Task 2.91 accepted for local development images only. Actual Dagger export/load, Workspace packaging, exact image-only browser shell/gallery2passed, offline data3passed. Review and immutable identities: artifacts/reviewed/live-editor/local-images/final-review.md. Missing external datafeed404 remains disclosed; no registry publication, live-provider, AI/Excel, full renderer or deployment acceptance."]
+
+[[capabilities]]
+id = "dense-daily-price-labels"
+requirements = ["4.7", "4.9", "10.1", "10.5", "10.6"]
+planned_checks = ["adaptive-date-ticks", "all-observations-retained", "small-series-parity", "saved-dashboard-reopen"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.geometry.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.application.test.ts"]
+status = "passed"
+evidence = ["Task 2.95: 53 focused tests and identified rebuilt-image browser check passed; saved daily and combined dashboard views preserve observations and readable ticks. Report: artifacts/reviewed/live-editor/date-axis/verification.md. Provider-data screenshots and one-off seed/verification runner remain local. Structural Time-axis persistence remains outside this repair."]

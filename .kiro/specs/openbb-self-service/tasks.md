@@ -2,6 +2,14 @@
 
 Current production UI priorities are collected in the [UI parity worklist](ui-parity-worklist.md). It distinguishes actual application deliverables from the historical source-helper and reference-test tasks below; it does not alter their recorded approval or acceptance.
 
+## Owner-reported dense pricing labels
+
+- [x] 2.95 Keep daily-price date labels readable in the saved dashboard
+  - Owner request, 2026-10-19: repair overlapping dates and combine prices, annual financials and issuer news in one local dashboard. Preserve all daily observations, original controls and animation.
+  - Bounded source repair: remove the forced one-index maximum tick interval from the existing ordinal line/area adapter; retain integer tick indices and existing small-series behavior. No new renderer or state owner.
+  - Ownership: cartesianAxes.ts and existing geometry tests; controller owns the local dashboard, identified Dagger rebuild and preview restart. Done when 400 physical/300 logical/50 function caps, focused tests, independent review and settled save/reopen browser evidence pass.
+  - Keep provider data, screenshots containing it, account state and image archives local. Publish one sanitized verification record. Separate Time-axis structural persistence remains an open defect, outside this density repair.
+
 ## Unreleased local image inspection
 
 The owner requested a local image check while resuming UI work on 2026-10-19. This bounded development check packages the accepted UI revision; it does not satisfy the renderer-complete 2.12 or deployment 4.1 gates.
