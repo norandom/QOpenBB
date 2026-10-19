@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "aed52b7df84b1f88230974a273d91cef48a520b9",
-    "workspace_at_sync": "b523f1455b632e42711de5e6193045fee6d3987c",
+    "root_at_sync": "90c774a817461de1dd99d3c3742674a4f6e09c15",
+    "workspace_at_sync": "8099f95efb442066c6f17b5d7b2a8fc4f37ba23f",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31514,6 +31514,22 @@
       "publishedSHA256": "373ff499fb5ab5352f0feae15c1117667835fc2c9cace6150b4304629eb29fd3",
       "bytes": 205,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/zero-repair/review.md",
+      "sourceSHA256": "0a7e177e270792ef7ce0d0f7affdfa189836d234ad6524bc04cc5f07e70ec9fc",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/zero-repair/review.md",
+      "publishedSHA256": "0a7e177e270792ef7ce0d0f7affdfa189836d234ad6524bc04cc5f07e70ec9fc",
+      "bytes": 3786,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/zero-repair/publication.json",
+      "sourceSHA256": "9dc214e013504018d8733cae44821cb7fd388eee1bb7b8d820e6be7c482d3ae7",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/zero-repair/publication.json",
+      "publishedSHA256": "9dc214e013504018d8733cae44821cb7fd388eee1bb7b8d820e6be7c482d3ae7",
+      "bytes": 197,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32227,7 +32243,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165853040,
+  "total_payload_bytes": 165857023,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
