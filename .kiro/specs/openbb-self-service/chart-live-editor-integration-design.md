@@ -1,5 +1,7 @@
 # Connect the existing editor to the live chart
 
+Owner amendment, 2026-10-19: [category-axis persistence](chart-axis-persistence-amendment.md) supersedes this document's runtime-only rule only for the selected category type and time format. Position and rotation retain their existing contract; the Widget remains the sole persistence owner.
+
 Implementation amendment, 2026-10-18. The owner has authorized the live ordinary table-to-chart journey and saved settings. This amendment carries that work through the actual Workspace route, rather than accepting another isolated preview. Canonical approval metadata remains controller-owned.
 
 ## Outcome and limits

@@ -6,6 +6,8 @@ Each row identifies a production outcome. Larger rows must be implemented throug
 
 ## Ordinary table and chart journey
 
+2026-10-19 continuation: task 2.96 implements the owner-approved [category-axis persistence improvement](chart-axis-persistence-amendment.md). Source review is complete; identified-image browser acceptance remains pending. This changes the prior structural persistence limitation only for type and time format. Position and rotation remain outside this slice.
+
 | ID | Production change | Owner / dependency | Observable completion | Current status |
 | --- | --- | --- | --- | --- |
 | UI-01 | Make widget updates replay-safe, then define completion with the chart consumer | Existing `Widget.hooks.tsx`; reuse existing widget storage and persistence | Successive edits use current state; React replay does not duplicate persistence or context updates; chart completion is defined at its real integration boundary | Accepted for the ordinary three-family journey in task 2.77; original restore limitations remain disclosed |

@@ -4,6 +4,12 @@ Current production UI priorities are collected in the [UI parity worklist](ui-pa
 
 ## Owner-reported dense pricing labels
 
+- [ ] 2.96 Preserve category-axis type and selected time format after reopening
+  - Owner approved this next step on 2026-10-19. Apply the narrow [axis persistence amendment](chart-axis-persistence-amendment.md), sections 1-3, under requirement 4.9 and UI-09. This deliberately supersedes the upstream runtime-only limitation for type and format; position and rotation remain unchanged.
+  - Sol owns the pure codec, session transaction/restoration, caller family reset and focused unit tests. Controller owns the existing-harness browser regression, inventory, identified image build and preview handoff. Astra independently reviews the implementation.
+  - Done when legacy defaults, valid JSON round-trip, invalid settings diagnostics, external synchronization, family reset, stale edits and unrelated-field preservation pass; each modified production file passes 400 physical/300 logical/50 function caps; the rebuilt-image browser proves Time/date format and return-to-Category after fresh-session reopen.
+  - No additional store, backend schema, UI control, feature flag or dataset transformation. Runtime acceptance remains pending if isolated verification cannot run.
+
 - [x] 2.95 Keep daily-price date labels readable in the saved dashboard
   - Owner request, 2026-10-19: repair overlapping dates and combine prices, annual financials and issuer news in one local dashboard. Preserve all daily observations, original controls and animation.
   - Bounded source repair: remove the forced one-index maximum tick interval from the existing ordinal line/area adapter; retain integer tick indices and existing small-series behavior. No new renderer or state owner.

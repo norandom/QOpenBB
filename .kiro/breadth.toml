@@ -436,3 +436,11 @@ planned_checks = ["adaptive-date-ticks", "all-observations-retained", "small-ser
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.geometry.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.application.test.ts"]
 status = "passed"
 evidence = ["Task 2.95: 53 focused tests and identified rebuilt-image browser check passed; saved daily and combined dashboard views preserve observations and readable ticks. Report: artifacts/reviewed/live-editor/date-axis/verification.md. Provider-data screenshots and one-off seed/verification runner remain local. Structural Time-axis persistence remains outside this repair."]
+
+[[capabilities]]
+id = "saved-category-axis-preference"
+requirements = ["4.9", "10.5", "10.6"]
+planned_checks = ["type-format-json-roundtrip", "legacy-defaults", "family-reset", "external-synchronization", "fresh-session-time-spacing"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/axisPersistence.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/axis-persistence.spec.ts"]
+status = "unverified"
+evidence = ["Task 2.96 source independently reviewed: 40 focused tests and combined complexity pass. Browser regression collects but has not executed; automatic approval review blocked starting the isolated runtime. Keep task incomplete until the identified-image save/reopen journey passes."]

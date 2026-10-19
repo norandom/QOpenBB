@@ -1,0 +1,15 @@
+# Axis preference source reviewed; browser acceptance pending
+
+Task 2.96 source implementation is independently approved at Workspace commit 6689407. The owner authorized retaining category-axis type and the selected time format across dashboard reopening. This deliberately improves the original runtime-only behavior while preserving the existing controls, position and rotation contracts.
+
+The optional versioned qopenbbAxisSettings field remains inside the existing selected chartModel and is written through the existing Widget transaction/reducer. Legacy models retain their defaults. Malformed preferences produce the existing invalid-state diagnostic. Unrelated fields survive, stale commands do not write, externally replaced preferences synchronize, and actual family changes retain their established reset behavior.
+
+Independent verification passed 40 focused tests across the codec, session, transaction and caller suites. The retained RED run contains eight relevant behavioral failures. The combined physical/Python/JavaScript/TypeScript complexity gate passed with no errors or violations; all five changed production files satisfy 400 physical lines, 300 logical units and 50 units per function. Inventory revision alignment retains unchanged exception files, caps, rationales and expiry dates.
+
+Strict isolated compilation reports the existing typography.ts TS2578 diagnostic. It is not a green application compilation result. No new codec diagnostics remain. The full session configuration retains existing upstream diagnostics and is not represented as passing.
+
+The new browser regression collects successfully and was independently reviewed. It verifies saved type/format, fresh-session controls, formatted canvas text, the seven-day/twenty-four-day point-spacing ratio, restoration of equal Category spacing, and application diagnostics. It has not executed: automatic approval review rejected starting the isolated test container, with only "blocked by policy" supplied as the reason. The running user preview has not been changed. Task 2.96 remains unchecked until identified-image browser acceptance passes.
+
+The pinned Dagger image build and portable loader completed successfully for source 6689407, producing local image sha256:21676786b39c0516a42517974bc29ea72191aa6ed9d08c9dc203c66d8919d584. Export and loaded identities match. The image has not been started, browser-verified or published to a registry. The existing port-55529 preview continues using the prior verified image.
+
+Local evidence: artifacts/live-editor/axis-persistence/implementation/{red.log,green.log,codec-types.log,syntax-units.json}, complexity.json, collection/browser-results.json, export.json and load.json. The focused commands use pinned Node, the existing chart-application Vitest configuration and one worker. Browser collection uses the existing live-chart Playwright configuration. Raw logs, private runtime descriptors, provider data and image archives remain local; only this concise report is published.

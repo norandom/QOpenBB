@@ -1,5 +1,7 @@
 # Bind every accepted panel field to its original write
 
+Owner amendment, 2026-10-19: the [axis persistence contract](chart-axis-persistence-amendment.md) adds a narrow saved preference for category type and time format. It supersedes the runtime-only storage rule below for those two fields; all original live event mappings, position and rotation behavior remain unchanged.
+
 Task 2.69 defines finite contracts beneath `vendor/workspace/terminalpro/src/components/General/Table/Chart/`. These declarations do not establish live rendering or persistence acceptance. See [integration design](chart-live-editor-integration-design.md).
 
 `F` is `bar` for groupedColumn/stackedColumn and `line` for line. `A` is the actual original axis option type (category/number/time/grouped-category). `P` below means BOTH original positions for the resolved direction: x writes bottom then top; y writes left then right. It does not mean just the current position. `AxisBinding` carries actual direction and type, resolved from current concrete axes. Ordinary initial horizontal/vertical bindings are category/x and number/y. Theme style writes use both `F.axes.A.P` branches. Source override reads return the first defined value in bottom/top or left/right order, including wildcard object reads; they do not merge both positions. Effective inherited unpositioned styles remain available through original theme composition. Accepted panels expose neither footnote nor axis range; neither is added here.
