@@ -6,7 +6,7 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 [![Candidate CI](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 
-[Documentation](docs/index.md) · [Roadmap](docs/roadmap.md) · [Delivery status](docs/prototype-delivery.md) · [Provider coverage](docs/provider-coverage.md) · [Breadth evidence](.kiro/breadth.toml)
+[Install](docs/install.md) · [Documentation](docs/index.md) · [Roadmap](docs/roadmap.md) · [Delivery status](docs/prototype-delivery.md) · [Provider coverage](docs/provider-coverage.md) · [Breadth evidence](.kiro/breadth.toml)
 
 ## Status at a glance
 
