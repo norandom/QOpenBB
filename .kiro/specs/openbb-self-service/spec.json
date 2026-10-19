@@ -798,6 +798,10 @@
         "2.89": {
           "workspace_revision": "b523f1455b632e42711de5e6193045fee6d3987c",
           "review": "artifacts/reviewed/live-editor/area-charts/renderer-acceptance/review.md"
+        },
+        "2.90": {
+          "workspace_revision": "bf7cb8408631cdcf3c8cce6dc042fb6bc0963018",
+          "review": "artifacts/reviewed/live-editor/area-charts/application-acceptance/review.md"
         }
       },
       "contract_status": "accepted",
@@ -810,6 +814,14 @@
       "owner_accepted": true,
       "scope": "Chart / Set Up / Customize tab typography only",
       "review": "artifacts/reviewed/live-editor/area-charts/tab-font/review.md"
+    },
+    "local_image_checkpoint": {
+      "task": "2.91",
+      "phase": "planned",
+      "task_review": "artifacts/live-editor/local-images/task-review.md",
+      "scope": "Unreleased identified Workspace and data images; packaged frontend accessibility only",
+      "prerequisite": "Accepted area integration 2.90",
+      "release_gates_unchanged": true
     }
   }
 }

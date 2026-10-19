@@ -2,6 +2,29 @@
 
 Current production UI priorities are collected in the [UI parity worklist](ui-parity-worklist.md). It distinguishes actual application deliverables from the historical source-helper and reference-test tasks below; it does not alter their recorded approval or acceptance.
 
+## Unreleased local image inspection
+
+The owner requested a local image check while resuming UI work on 2026-10-19. This bounded development check packages the accepted UI revision; it does not satisfy the renderer-complete 2.12 or deployment 4.1 gates.
+
+- [ ] 2.91 Build and inspect the current unreleased local images
+  - Controller owns exact source pins, filtered stages, Dagger export/load records and one concise reviewed record. Use the existing pinned image_cli commands with fresh stage directories and clean exact-commit owned source checkouts; preserve unrelated working changes and exclude private files.
+  - Serialize Workspace and data-api builds through the single heavy-work queue. Record source revisions, archive hashes, engine identity and loaded image IDs. Do not publish or label these images release-ready.
+  - Run the existing Workspace packaging smoke and data-image offline checks with disposable state and missing/synthetic provider keys. Reuse tests/delivery/workspace_runtime.py with an explicit image-only mode mutually exclusive with source overlay; retain private descriptors and ownership cleanup. Keep source-overlay mode unchanged. Image-only mode mounts only disposable /data and records that fact without asserting full release verification.
+  - Reuse isolated Playwright fixtures to open the frontend from the exact loaded image, log in with the disposable account, and verify visible application shell and diagnostics. No Vite server or source mount may establish this packaged-image result. Own only necessary test-helper changes and a focused built-page check; do not introduce another harness.
+  - Done when independent review accepts actual build/runtime identities, packaging/offline results and the inspected built page. Sync one concise record and necessary screenshot before commit. Production changes require a separately bounded owning-task repair and the existing 400/300/50 caps; tests and evidence are cap-exempt.
+  - This checkpoint does not accept all chart families, catalog identity 3.8, controlling Compose 4.1, live providers, Anthropic, Excel, publication or deployment.
+  - _Boundary: Unreleased local image packaging and built-page accessibility_
+  - _Depends: 2.90, 2.5, 3.6_
+  - _Requirements: 1.1, 1.2, 3.2, 9.1, 10.5, 10.6_
+
+## Gallery refinement before local image inspection
+
+- [ ] 2.92 Preserve gallery navigation and refine miniature drawings
+  - Owner approved this refinement on 2026-10-19. Follow the existing [gallery design](chart-gallery-design.md), including its transient scroll amendment. Controller owns caller/dock/gallery navigation; Sol owns thumbnail drawings and focused tests; independent Sol reviews the final diff. No shared writable paths between lanes.
+  - Done when supported-family changes, tab navigation and theme updates preserve gallery scroll; hidden mounts cannot overwrite it; area/scatter miniatures are compared in qView; existing order, controls and selection remain. Reuse the existing browser helpers and focused unit suite. Whole modified production files must pass 400 physical/300 logical/50 per-function caps.
+  - _Boundary: Gallery appearance and transient navigation only; no new storage, flags or renderer admission_
+  - _Requirements: 4.7, 4.9, 10.1, 10.2, 10.5, 10.6_
+
 ## Ordinary area charts: autonomous UI-10 continuation
 
 Owner requested autonomous UI/UX progression after reviewing the [area design](chart-area-design.md). This authorizes design/task progression and implementation within the original parity constraints; independent reviews, complexity caps and owner decisions on uncertain visible deviations remain. No repeated phase confirmation is required for this bounded track.
@@ -44,7 +67,7 @@ Paths follow the area design: production paths relative to Workspace `terminalpr
   - _Depends: 2.86, 2.87_
   - _Requirements: 4.8, 4.9, 10.3, 10.4, 10.5, 10.6_
 
-- [ ] 2.90 Join all three area families into the existing Workspace journey
+- [x] 2.90 Join all three area families into the existing Workspace journey
   - Controller owns `echarts/cartesianTypes.ts` final admission predicates, `application/applicationSessionProjection.ts`, `application/axisStructure.ts`, and necessary `AgChartView.tsx` / `caller/chartInputs.ts` changes. Activate only after both renderer and editor lanes are frozen/reviewed; reuse native callback/scope and existing persistence owners.
   - Own `tests/unit/chart-application/callerArea.test.ts`, necessary `applicationSession.test.tsx` cases, and `tests/e2e/live-chart/area-charts.spec.ts`. Reuse existing helpers; preserve exact family/range/unknown branches and original single-date entry conditions.
   - Run one joined actual Workspace journey through three area types: signed observations, raw tooltip, marker/fill/stroke control effects, legend plus theme/data updates, category navigator/full overview, light/dark view, current PNG and fresh-session reopen. Reuse already accepted save-failure/restart evidence unless changed owners create a concrete risk.
