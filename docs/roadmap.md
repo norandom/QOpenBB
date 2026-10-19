@@ -10,12 +10,14 @@ Scope: existing Full Workspace and installed data API. Further provider coverage
 | --- | --- | --- |
 | P1: freeze candidate | Reconcile pending fixes, fork pins and supported-capability manifest | No unrelated edits included; source identities and known gaps recorded |
 | P2: CI/CD | Portable checks/publication, thin GitHub runner and Dagger image builds | Checks fail closed; PR jobs exclude publication/provider secrets; immutable image identities |
-| P3: assembled prototype | Real service images in executable Compose | Existing isolated E2E proves login, supported data/widget use, save/reopen, restart and diagnostics against candidate images |
-| P4: install/recover | Pull-only instructions, release manifest, backup/restore and rollback | WSL rehearsal and state recovery; owner-run server outcome recorded separately |
+| P3: assembled prototype | Real service images in executable Compose | Existing isolated E2E proves login, supported data/widget use and diagnostics against candidate images |
+| P4: install | Pull-only instructions and release manifest | Installation rehearsal; owner-run server outcome recorded separately |
+
+Owner clarification: saved research-context persistence acceptance moves to `analyst-workspace`. Infrastructure backup/restore and rollback verification remain deferred delivery work. Neither blocks the prototype; the bind mount and existing tests remain intact.
 
 Target: HTTP on `0.0.0.0:23003`, `qbb.hanse-hedge.fund` through owner-managed cloudflared, relative bind-mounted data. The owner deploys locally with Compose; no SSH, tunnel service or Jupyter dependency.
 
-Current gaps: `.github/` is absent, Compose remains a proposal, and publication/release acceptance are open. Reuse existing Dagger build/export and browser tools. Pending bundle-script removal and axis persistence require candidate reconciliation and image verification. A local preview or source-level check is not a published release.
+Current state: Compose, portable build/publication tooling and the GitHub candidate workflow are implemented. Candidate-image smoke, publication and release acceptance remain open. The missing-script fix is in the new image; axis persistence acceptance transfers to the analyst spec. A local image or source-level check is not a published release.
 
 ## Subsequent workstreams
 

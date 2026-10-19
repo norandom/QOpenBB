@@ -5,8 +5,8 @@ active_delivery = "prototype"
 
 [[ownership]]
 spec = "openbb-self-service"
-scope = "Existing foundation, prototype CI/CD, packaging, pull-only deployment and recovery"
-legacy_tasks = ["3.8: installed catalog/release identity only", "4.1-4.5: prototype integration only", "7.1-7.6", "8.1-8.2 and 8.4-8.6: prototype services only"]
+scope = "Existing foundation, prototype CI/CD, packaging and pull-only deployment"
+legacy_tasks = ["3.8: installed catalog/release identity only", "4.1-4.4: prototype smoke only, excluding persistence acceptance", "7.1-7.4", "8.1-8.2 and 8.5-8.6: prototype services only"]
 state = "active"
 release_gate = true
 
@@ -19,9 +19,16 @@ release_gate = false
 
 [[ownership]]
 spec = "analyst-workspace"
-scope = "Reusable widgets, commands, linked time/instrument context, theme and remaining renderer/table functionality"
-legacy_tasks = ["2: remaining renderer/UI expansion", "4.3: complete controls parity", "UI-10 through UI-16: remaining obligations"]
+scope = "Reusable widgets, commands, linked time/instrument context, research-context persistence, theme and remaining renderer/table functionality"
+legacy_tasks = ["2: remaining renderer/UI expansion", "4.3: complete controls parity", "4.1-4.2 and 4.5: dashboard persistence acceptance", "UI-09: remaining persistence obligations", "UI-10 through UI-16: remaining obligations"]
 state = "transferred-open"
+release_gate = false
+
+[[deferred_delivery]]
+spec = "openbb-self-service"
+scope = "Infrastructure backup/restore and compatible rollback verification"
+legacy_tasks = ["7.5-7.6", "8.4"]
+state = "deferred-open"
 release_gate = false
 
 [[ownership]]

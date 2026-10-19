@@ -1,6 +1,6 @@
 # Prototype delivery status
 
-The two-service prototype now has a Compose definition, portable build orchestration, identity-checked publication tooling and a GitHub candidate workflow. It is not yet a published or accepted deployment. Candidate-image E2E, recovery and the prototype promotion gate remain open.
+The two-service prototype now has a Compose definition, portable build orchestration, identity-checked publication tooling and a GitHub candidate workflow. It is not yet a published or accepted deployment. Candidate-image smoke and the prototype promotion gate remain open. Dashboard persistence acceptance belongs to analyst-workspace; infrastructure recovery verification is deferred and does not block this prototype.
 
 ## Run the source and configuration checks
 
@@ -8,7 +8,7 @@ With the pinned Python/Node toolchains restored and owned sources acquired at `s
 
 `python -m qopenbb_ci.build_cli --output NEW_RUN_DIRECTORY --release-version prototype-ID` uses the pipeline virtualenv and existing Dagger stage/export/load commands. Both service builds run serially. The output directory must be new. `summary.json` appears only after both image loads succeed.
 
-The pinned GitHub workflow runs the portable checks for pull requests and main. Manual dispatch can additionally build candidate images. It has no package-write permission and cannot publish or promote; this remains intentional until image-based acceptance and recovery are connected.
+The pinned GitHub workflow runs the portable checks for pull requests and main. Manual dispatch can additionally build candidate images. It currently has no package-write permission and cannot publish or promote; image-based smoke acceptance and the prototype publication gate still need connecting.
 
 ## Publication boundary
 
@@ -18,8 +18,8 @@ Compose consumes `WORKSPACE_IMAGE` and `DATA_API_IMAGE`, exposes HTTP on `0.0.0.
 
 ## Remaining release gates
 
-1. Verify the candidate image with the existing isolated browser flow, including axis persistence and absence of the obsolete script error.
-2. Verify the real Compose pair, supported catalog identity/routing, restart persistence and backup/restore using disposable state.
+1. Verify login and supported dashboard use in the candidate image with the existing isolated browser flow, including absence of the obsolete script error.
+2. Verify the real Compose pair and supported catalog identity/routing using disposable state. Preserve persistence/recovery tests for their deferred acceptance, without treating them as prototype release gates.
 3. Join these results into an explicit prototype acceptance/promotion contract, keeping the existing full AI/Excel release gate intact.
 4. Wire eligible publication to CI, publish digest-pinned images and the release manifest, then rehearse pull-only installation. Record the owner's server outcome separately.
 

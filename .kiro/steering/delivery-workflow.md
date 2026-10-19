@@ -6,7 +6,7 @@ This amendment supersedes whole-spec phase gates where they would require comple
 
 The current prototype includes existing Full Workspace and the installed data API baseline. Provider expansion, analyst workspace/theme, AI/Anthropic, Excel and custom data sources have separate spec ownership and do not block this release. Preserve the Anthropic-before-Excel dependency between successor specs. Quant plugins remain later work.
 
-Release gates cover the declared prototype: authentication, usable supported widgets, actual service routing, saved dashboard reopening/restart persistence, visible failures, image identity and state recovery. Keep financial semantics and browser/CDP checks. Do not suppress application errors or remove tests to make a prototype pass. Record future capability gaps explicitly without claiming full parity.
+Release gates cover the declared prototype: authentication, usable supported widgets, actual service routing, visible failures and image identity. Owner clarification: dashboard persistence acceptance belongs to analyst-workspace; backup/restore and rollback verification remain deferred delivery work. Neither blocks the prototype. Keep the configured bind mount, existing implementation and E2E regressions; deferred acceptance is not a pass. Keep financial semantics and browser/CDP checks. Do not suppress application errors to make a prototype pass.
 
 Dagger builds images only. Portable commands own checks, publication and release manifests; GitHub Actions stays a thin runner portable to Gitea. Deploy immutable image pulls through Compose, HTTP on 0.0.0.0:23003, owner-managed cloudflared and relative bind mounts. Never start parser-only placeholder images.
 

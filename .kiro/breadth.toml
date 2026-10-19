@@ -11,10 +11,10 @@ requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 [[capabilities]]
 id = "prototype-compose-build-publication"
 requirements = ["9.1", "9.2", "9.4", "9.7", "10.1", "10.2", "10.3"]
-planned_checks = ["candidate-image-browser-journey", "compose-routing-restart-persistence", "prototype-recovery", "immutable-registry-install"]
+planned_checks = ["candidate-image-browser-smoke", "compose-routing", "immutable-registry-install"]
 test_paths = ["tests/delivery/test_prototype_compose.py", "tests/delivery/test_build_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_quality_cli.py"]
 status = "unverified"
-evidence = ["Source/configuration checks only; see artifacts/reviewed/prototype-delivery/verification.md. Dagger Workspace candidate built and loaded. Automatic review blocked starting isolated runtime; candidate E2E, Compose/recovery and registry publication remain unverified. No production release acceptance claimed."]
+evidence = ["Source/configuration checks only; see artifacts/reviewed/prototype-delivery/verification.md. Dagger Workspace candidate built and loaded. Automatic review blocked starting isolated runtime; candidate smoke, Compose routing and registry publication remain unverified. Subsequent owner clarification transfers dashboard persistence acceptance to analyst-workspace and defers infrastructure recovery; neither blocks the prototype. Historical report retains its original scope. No production release acceptance claimed."]
 
 [[capabilities]]
 id = "chart-appearance-editor-source-contracts"
