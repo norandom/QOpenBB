@@ -24,7 +24,7 @@ ECharts supports integrated table charts for selected chart families. Perspectiv
 
 ## Operating boundaries
 
-Development uses Windows/WSL with the same service topology on private Linux. The target exposes HTTP on `0.0.0.0:23003`; the owner manages cloudflared at `https://qbb.hanse-hedge.fund`. State uses relative bind directories under `./data`. Dagger builds images. Portable repository commands own verification and publication; GitHub Actions remains replaceable by Gitea Actions. The server pulls immutable images without compiling application source.
+Development uses Windows/WSL with the same service topology on private Linux. The target exposes HTTP on `0.0.0.0:23003`; the owner manages cloudflared at `https://qopenbb.example.com`. State uses relative bind directories under `./data`. Dagger builds images. Portable repository commands own verification and publication; GitHub Actions remains replaceable by Gitea Actions. The server pulls immutable images without compiling application source.
 
 Jupyter, notebook images, wheel distribution, custom financial-model workbooks and commercial-service recreation are outside the prototype. Installed adapters do not imply access to every former hosted catalog, premium widget or ready-made dashboard. EconDB is optional follow-up work.
 

@@ -6,7 +6,8 @@ Deploy the prototype next, then extend its provider coverage and analyst workflo
 
 | Your task | Start here |
 | --- | --- |
-| Install from prebuilt images | [Installation guide](install.md) |
+| Install prebuilt alpha images for development | [Installation guide](install.md) |
+| Configure optional remote access | [Tips and Tricks](tips-and-tricks.md) |
 | Understand the purpose and operating boundaries | [Goals](goals.md) |
 | See the sequence and owning specifications | [Roadmap](roadmap.md) |
 | Build, verify and prepare the prototype for installation | [Prototype delivery](prototype-delivery.md) |

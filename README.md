@@ -55,7 +55,7 @@ The [Bloomberg-inspired visual reference](https://github.com/iconicvenom/bloombe
 
 ## Operate the prototype
 
-Development uses Windows/WSL Docker; deployment uses the same Compose topology on private Linux. The origin serves HTTP on `0.0.0.0:23003`; the owner manages Cloudflare Access and cloudflared for `qbb.hanse-hedge.fund`. State uses relative bind directories, not Docker-managed data volumes.
+Development uses Windows/WSL Docker; deployment uses the same Compose topology on private Linux. The origin serves HTTP on `0.0.0.0:23003`; the owner manages Cloudflare Access and cloudflared for `qopenbb.example.com`. State uses relative bind directories, not Docker-managed data volumes.
 
 Dagger builds images only. Portable commands run verification and publication; GitHub Actions is the current runner, with Gitea portability retained. The intended installation pulls immutable images and runs Compose without compiling source on the server. **There is no accepted published release yet.** Use [delivery status](docs/prototype-delivery.md) for the remaining gates rather than treating the historical Compose proposal as an installation guide.
 

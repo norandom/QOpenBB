@@ -6,7 +6,7 @@ services:
     ports:
       - "0.0.0.0:23003:3000"
     environment:
-      PUBLIC_URL: ${PUBLIC_URL:-https://qbb.hanse-hedge.fund}
+      PUBLIC_URL: ${PUBLIC_URL:-http://127.0.0.1:23003}
       # Empty values preserve the image's persisted/generated bootstrap settings.
       OPENBB_ADMIN_EMAIL: ${OPENBB_ADMIN_EMAIL:-}
       OPENBB_ADMIN_PASSWORD: ${OPENBB_ADMIN_PASSWORD:-}

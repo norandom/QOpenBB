@@ -32,7 +32,7 @@ The controller owns shared contracts, source pins, breadth mapping and selective
 
 ## Deployment acceptance
 
-The final installation uses one Compose file and pulled immutable images. Workspace publishes plain HTTP on `0.0.0.0:23003`; state stays in bind-mounted paths under `./data`. The owner supplies Cloudflare Access and cloudflared for `qbb.hanse-hedge.fund`. WSL and private Linux use the same topology. Dagger builds images; portable repository commands verify and publish them.
+The final installation uses one Compose file and pulled immutable images. Workspace publishes plain HTTP on `0.0.0.0:23003`; state stays in bind-mounted paths under `./data`. The owner supplies Cloudflare Access and cloudflared for `qopenbb.example.com`. WSL and private Linux use the same topology. Dagger builds images; portable repository commands verify and publish them.
 
 Before calling this deployable, verify original dashboard interactions, FMP/FRED results and failures, persistence across restart, Anthropic, the Excel journey and clean backup restoration against recorded image identities. Provider fixtures, a health endpoint or a successful image build cannot close these gates. Jupyter and PostgreSQL remain outside this baseline.
 

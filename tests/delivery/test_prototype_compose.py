@@ -71,14 +71,14 @@ def test_only_reviewed_image_services_and_private_state(parse):
 def test_credentials_stay_with_service_and_bootstrap_remains_optional(parse):
     selected = services(parse)
     assert selected["workspace"]["environment"] == {
-        "PUBLIC_URL": "https://qbb.hanse-hedge.fund", "EXCEL_ENABLED": "false",
+        "PUBLIC_URL": "http://127.0.0.1:23003", "EXCEL_ENABLED": "false",
         "OPENBB_ADMIN_EMAIL": "", "OPENBB_ADMIN_PASSWORD": ""}
     assert selected["data-api"]["environment"] == {
         "FMP_API_KEY": "synthetic-fmp", "FRED_API_KEY": "synthetic-fred",
         "OPENBB_API_AUTH": "false"}
-    changed = services(parse, {"PUBLIC_URL": "http://127.0.0.1:23003",
+    changed = services(parse, {"PUBLIC_URL": "https://qopenbb.example.com",
                               "OPENBB_ADMIN_PASSWORD": "synthetic-bootstrap"})
-    assert changed["workspace"]["environment"]["PUBLIC_URL"] == "http://127.0.0.1:23003"
+    assert changed["workspace"]["environment"]["PUBLIC_URL"] == "https://qopenbb.example.com"
     assert changed["workspace"]["environment"]["OPENBB_ADMIN_PASSWORD"] == "synthetic-bootstrap"
     probe = selected["data-api"]["healthcheck"]["test"]
     assert probe[:3] == ["CMD", "python", "-c"]

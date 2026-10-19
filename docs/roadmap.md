@@ -15,7 +15,7 @@ Scope: existing Full Workspace and installed data API. Further provider coverage
 
 Owner clarification: saved research-context persistence acceptance moves to `analyst-workspace`. Infrastructure backup/restore and rollback verification remain deferred delivery work. Neither blocks the prototype; the bind mount and existing tests remain intact.
 
-Target: HTTP on `0.0.0.0:23003`, `qbb.hanse-hedge.fund` through owner-managed cloudflared, relative bind-mounted data. The owner deploys locally with Compose; no SSH, tunnel service or Jupyter dependency.
+Target: HTTP on `0.0.0.0:23003`, `qopenbb.example.com` through owner-managed cloudflared, relative bind-mounted data. The owner deploys locally with Compose; no SSH, tunnel service or Jupyter dependency.
 
 Current state: Compose, portable build/publication tooling and the GitHub candidate workflow are implemented. Candidate-image smoke, publication and release acceptance remain open. The missing-script fix is in the new image; axis persistence acceptance transfers to the analyst spec. A local image or source-level check is not a published release.
 
