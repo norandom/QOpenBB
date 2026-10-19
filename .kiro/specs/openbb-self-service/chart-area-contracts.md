@@ -28,6 +28,8 @@ All three area model identities read/write the area series namespace; family ran
 
 Area module40722-40755 defaults fill opacity0.8, stroke opacity1, stroke width0 unless supplied stroke then2, disabled circle markers size7, disabled labels, disabled shadow offsets3/3 blur5. Final application composition still applies the original theme/generated/saved precedence. Do not substitute raw property-class defaults or line defaults. Preserve the exact single-date fallback only where original caller derives one date; a one-row non-transposed ordinary chart view does not derive dates and does not trigger it.
 
+Original axis-scale refinement, approved by the owner on 2026-10-19: use the existing source-backed 1/2/5 nice-domain rule over projected area bounds and actual plot length. At the matched six-row reference viewport, ordinary area uses [-10, 10], stacked area [-5, 10], and normalized area [-50, 100] with 50-point percentage steps. Raw financial observations and stack projection remain unchanged. This is an area presentation correction; accepted line/bar behavior retains its existing path.
+
 ## Evidence and limits
 
 Native ECharts6.0.0 SVG discriminators independently check endpoints, pixel positions, polygon return edges and null breaks for signed/negative deltas, null termination and duplicate X. They demonstrate the representation, not the production span generator. One source-overlaid original Workspace journey rendered all three area families, lower/middle gaps and normalized legend/miniature behavior. Hiding Second recomputed main geometry and visibly left the orange full overview unchanged. One CSV401 was recorded before the fixture transport rendered the data; this is not clean network or deployment evidence.

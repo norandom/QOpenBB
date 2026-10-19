@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "f0904e35479430924f361399f8a48c2add1d73e0",
-    "workspace_at_sync": "e4251f41dbdaeec619297a51c06c320b409ce3f8",
+    "root_at_sync": "be42809ed58f349e803720fbb2714e05679efe67",
+    "workspace_at_sync": "0fc244bf0c66f0abbef9d9ec812e2c599aa3dc9d",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31554,6 +31554,46 @@
       "publishedSHA256": "6801c32623e747a1b95fe208c221b1628de9ea245ce28b0e3b721a65462bcff3",
       "bytes": 458,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/axis-review.md",
+      "sourceSHA256": "243486053462c7eadffaacfb1ecf049d4dd64f38b52b9a48c2c42d56bd3ec84c",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/axis-review.md",
+      "publishedSHA256": "243486053462c7eadffaacfb1ecf049d4dd64f38b52b9a48c2c42d56bd3ec84c",
+      "bytes": 3215,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/runtime/area-layout-final/browser-output/area-charts-area-families--69978-bservations-and-saved-state/area-default.png",
+      "sourceSHA256": "d165ff7b781bee52fbeef705ce88571ab24039c578b81cc8a067039061acb613",
+      "publishedpath": "artifacts/reviewed/live-editor/runtime/area-layout-final/browser-output/area-charts-area-families--69978-bservations-and-saved-state/area-default.png",
+      "publishedSHA256": "d165ff7b781bee52fbeef705ce88571ab24039c578b81cc8a067039061acb613",
+      "bytes": 20297,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/runtime/area-layout-final/browser-output/area-charts-area-families--69978-bservations-and-saved-state/stackedArea-default.png",
+      "sourceSHA256": "e60cc97cafb2b67e28f106c183f38cf84eff290ecf2df9601887e5a5d859ab9c",
+      "publishedpath": "artifacts/reviewed/live-editor/runtime/area-layout-final/browser-output/area-charts-area-families--69978-bservations-and-saved-state/stackedArea-default.png",
+      "publishedSHA256": "e60cc97cafb2b67e28f106c183f38cf84eff290ecf2df9601887e5a5d859ab9c",
+      "bytes": 20984,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/runtime/area-layout-final/browser-output/area-charts-area-families--69978-bservations-and-saved-state/normalizedArea-default.png",
+      "sourceSHA256": "e8c9f7ccb96eddd1263f9763f855da58f1014760b1b4e15afc522e7e6eeac093",
+      "publishedpath": "artifacts/reviewed/live-editor/runtime/area-layout-final/browser-output/area-charts-area-families--69978-bservations-and-saved-state/normalizedArea-default.png",
+      "publishedSHA256": "e8c9f7ccb96eddd1263f9763f855da58f1014760b1b4e15afc522e7e6eeac093",
+      "bytes": 23231,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/area-charts/axis-publication.json",
+      "sourceSHA256": "97c58b60642c134e05930d3c9cd01e6857ae5c0b34c96a76e433f19c8d63421f",
+      "publishedpath": "artifacts/reviewed/live-editor/area-charts/axis-publication.json",
+      "publishedSHA256": "97c58b60642c134e05930d3c9cd01e6857ae5c0b34c96a76e433f19c8d63421f",
+      "bytes": 961,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32267,7 +32307,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165884278,
+  "total_payload_bytes": 165952966,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
