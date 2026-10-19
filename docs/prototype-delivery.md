@@ -8,7 +8,7 @@ With the pinned Python/Node toolchains restored and owned sources acquired at `s
 
 `python -m qopenbb_ci.build_cli --output NEW_RUN_DIRECTORY --release-version prototype-ID` uses the pipeline virtualenv and existing Dagger stage/export/load commands. Both service builds run serially. The output directory must be new. `summary.json` appears only after both image loads succeed.
 
-The pinned GitHub workflow runs the portable checks for pull requests and main. Manual dispatch can additionally build candidate images. It currently has no package-write permission and cannot publish or promote; image-based smoke acceptance and the prototype publication gate still need connecting.
+The pinned GitHub workflow runs portable checks for pull requests and main. Main pushes build both candidate images through Dagger after checks pass; manual dispatch also builds by default and can opt out. Successful builds retain image archives for three days and upload identity reports. Pull requests run checks only. The workflow has no package-write permission and cannot publish or promote; image-based smoke acceptance and the prototype publication gate still need connecting.
 
 ## Publication boundary
 
