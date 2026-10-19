@@ -197,6 +197,80 @@ def test_loader_rejects_arbitrary_loaded_id(tmp_path, monkeypatch):
         images.load(tmp_path / 'archive.tar', expected)
 
 
+@pytest.mark.parametrize('store', ['classic', 'containerd'])
+@pytest.mark.parametrize('mutation,code', [
+    (None, None),
+    ('configured', 'engine_configured_reference_mismatch'),
+    ('digest', 'engine_locked_digest_missing'),
+    ('identity', 'engine_image_identity_mismatch'),
+    ('stopped', 'engine_not_running'),
+    ('missing_field', 'engine_inspection_invalid'),
+    ('missing_image', 'engine_inspection_failed'),
+    ('malformed_json', 'engine_inspection_invalid'),
+])
+def test_engine_verifies_resolved_pinned_identity(monkeypatch, store, mutation, code):
+    from qopenbb_ci import image_cli
+    digest = 'sha256:' + '1' * 64
+    reference = 'registry.example:5000/engine:v1@' + digest
+    identity = 'sha256:' + ('2' * 64 if store == 'classic' else '1' * 64)
+    observed = {'Id': 'container-id', 'Image': identity,
+                'Config': {'Image': reference}, 'State': {'Running': True}}
+    image = {'Id': identity, 'RepoDigests': ['registry.example:5000/engine@' + digest]}
+    if mutation == 'configured':
+        observed['Config']['Image'] = 'registry.example/engine:mutable'
+    elif mutation == 'digest':
+        image['RepoDigests'] = ['registry.example:5000/engine@sha256:' + '3' * 64]
+    elif mutation == 'identity':
+        observed['Image'] = 'sha256:' + '3' * 64
+    elif mutation == 'stopped':
+        observed['State']['Running'] = False
+    elif mutation == 'missing_field':
+        del image['Id']
+    calls = []
+    def output(command, **kwargs):
+        calls.append(command)
+        if command[1] == 'image' and mutation == 'missing_image':
+            raise subprocess.CalledProcessError(1, command, output='synthetic-private-value')
+        if mutation == 'malformed_json':
+            return 'synthetic-private-value'
+        return json.dumps([observed if command[1] == 'container' else image])
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', output)
+    if code:
+        with pytest.raises(image_cli.EngineVerificationError, match=code):
+            image_cli.verify_engine(reference)
+    else:
+        result = image_cli.verify_engine(reference)
+        assert result['image_id'] == identity
+        assert result['verified_repository_digest'] == image['RepoDigests'][0]
+        assert calls == [['docker', 'container', 'inspect', 'dagger-engine-' + '1' * 16],
+                         ['docker', 'image', 'inspect', reference]]
+
+
+def test_engine_failure_report_preserves_safe_diagnostic(tmp_path, monkeypatch, capsys):
+    from qopenbb_ci import image_cli
+    report = tmp_path / 'report.json'
+    monkeypatch.setattr('sys.argv', ['image_cli', 'export', '--stage', str(tmp_path),
+                                   '--tools', 'unused', '--lock', 'unused', '--policy', 'unused',
+                                   '--sdk-python', 'unused', '--archive', 'unused', '--report', str(report)])
+    def fail(args):
+        raise image_cli.EngineVerificationError('engine_image_identity_mismatch')
+    monkeypatch.setattr(image_cli, 'export', fail)
+    assert image_cli.main() == 2
+    assert json.loads(report.read_text()) == {
+        'valid': False, 'error': 'EngineVerificationError', 'error_code': 'engine_image_identity_mismatch'}
+    assert 'engine_image_identity_mismatch' in capsys.readouterr().out
+
+
+@pytest.mark.parametrize('reference', ['engine:latest', 'engine@sha256:short', 'engine@sha256:' + 'A' * 64])
+def test_engine_rejects_unpinned_reference_without_inspecting(monkeypatch, reference):
+    from qopenbb_ci import image_cli
+    def forbidden(*args, **kwargs):
+        raise AssertionError('invalid reference reached Docker')
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', forbidden)
+    with pytest.raises(image_cli.EngineVerificationError, match='engine_reference_invalid'):
+        image_cli.verify_engine(reference)
+
+
 def test_invalid_archive_has_value_free_error_report(tmp_path, monkeypatch, capsys):
     from qopenbb_ci import image_cli
     target, report = tmp_path / 'invalid.tar', tmp_path / 'report.json'

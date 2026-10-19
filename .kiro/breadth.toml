@@ -454,3 +454,11 @@ planned_checks = ["type-format-json-roundtrip", "legacy-defaults", "family-reset
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/axisPersistence.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/axis-persistence.spec.ts"]
 status = "unverified"
 evidence = ["Task 2.96 source independently reviewed: 40 focused tests and combined complexity pass. Browser regression collects but has not executed; automatic approval review blocked starting the isolated runtime. Keep task incomplete until the identified-image save/reopen journey passes."]
+
+[[capabilities]]
+id = "alpha-image-publication"
+requirements = ["7.1", "7.2", "7.3", "7.4"]
+planned_checks = ["hosted-alpha-build", "registry-latest-identities", "tagged-alpha-release"]
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_prototype_compose.py"]
+status = "unverified"
+evidence = ["Portable engine verification and alpha publication have focused regression coverage. Hosted build/publication and actual tagged release remain to be observed. Development latest is owner-authorized; exact image references remain in each completed release manifest."]

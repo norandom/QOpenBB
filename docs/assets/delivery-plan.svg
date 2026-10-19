@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img" aria-labelledby="title desc">
+  <title id="title">QOpenBB delivery plan</title>
+  <desc id="desc">Publish prebuilt alpha images and a tagged release, install with Compose, then expand provider coverage and the analyst workspace. Anthropic and Excel form a separate lane; custom sources and Quant plugins follow later.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#64748b"/></marker></defs>
+  <rect width="1000" height="330" rx="12" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif" fill="#0f172a">
+    <text x="24" y="32" font-size="18" font-weight="bold">Ship the development alpha, then extend the analyst workflow</text>
+    <g fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M242 96 H268"/><path d="M478 96 H504"/><path d="M714 96 H740"/>
+      <path d="M242 233 H268"/>
+    </g>
+    <g stroke="#94a3b8" fill="#ffffff">
+      <rect x="24" y="58" width="218" height="76" rx="8" fill="#dbeafe"/>
+      <rect x="274" y="58" width="204" height="76" rx="8"/>
+      <rect x="510" y="58" width="204" height="76" rx="8"/>
+      <rect x="746" y="58" width="230" height="76" rx="8"/>
+      <rect x="24" y="202" width="218" height="62" rx="8"/>
+      <rect x="274" y="202" width="204" height="62" rx="8"/>
+      <rect x="596" y="202" width="380" height="62" rx="8"/>
+    </g>
+    <g font-size="15" font-weight="bold">
+      <text x="40" y="84">Prebuilt alpha</text><text x="290" y="84">Development install</text>
+      <text x="526" y="84">Provider breadth</text><text x="762" y="84">Analyst workspace</text>
+      <text x="40" y="228">Anthropic AI</text><text x="290" y="228">OpenBB Excel</text>
+      <text x="612" y="228">Custom sources / Quant plugins</text>
+    </g>
+    <g font-size="13" fill="#334155">
+      <text x="40" y="108">latest images + tagged release</text><text x="290" y="108">Pull images, run Compose</text>
+      <text x="526" y="108">FMP / FRED / Yahoo</text><text x="762" y="108">Widgets, commands, linked time</text>
+      <text x="24" y="183">Separate lane: Anthropic acceptance precedes Excel</text>
+      <text x="596" y="183">Later extensions</text>
+      <text x="40" y="249">Selected-data assistance</text><text x="290" y="249">Add-in and functions</text>
+      <text x="612" y="249">Own datasets and research modules</text>
+      <text x="24" y="306">Arrows show delivery sequence, not completion. Stable releases will use pinned versions.</text>
+    </g>
+  </g>
+</svg>

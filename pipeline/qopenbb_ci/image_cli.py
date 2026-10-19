@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import tempfile
@@ -75,14 +76,38 @@ def export(args: argparse.Namespace) -> dict:
             'sdk_version': sdk, 'base': tools['base_images']['python']}
 
 
+class EngineVerificationError(ValueError):
+    """Value-free engine failure code safe for publication in build reports."""
+
+
 def verify_engine(reference: str) -> dict:
+    if not re.fullmatch(r'[^\s@]+@sha256:[0-9a-f]{64}', reference):
+        raise EngineVerificationError('engine_reference_invalid')
     digest = reference.rsplit('@sha256:', 1)[1]
     name = 'dagger-engine-' + digest[:16]
-    observed = json.loads(subprocess.check_output(['docker', 'container', 'inspect', name], text=True))[0]
-    if observed['Config']['Image'] != reference or observed['Image'] != 'sha256:' + digest:
-        raise ValueError('running Dagger engine differs from locked digest')
+    try:
+        observed = json.loads(subprocess.check_output(['docker', 'container', 'inspect', name], text=True))[0]
+        image = json.loads(subprocess.check_output(['docker', 'image', 'inspect', reference], text=True))[0]
+        repository = reference.split('@', 1)[0]
+        if ':' in repository.rsplit('/', 1)[-1]:
+            repository = repository.rsplit(':', 1)[0]
+        # Classic Docker uses the config digest for Image; containerd can use the
+        # manifest digest. Resolve the immutable reference through the same daemon.
+        if observed['Config']['Image'] != reference:
+            raise EngineVerificationError('engine_configured_reference_mismatch')
+        if repository + '@sha256:' + digest not in image['RepoDigests']:
+            raise EngineVerificationError('engine_locked_digest_missing')
+        if observed['Image'] != image['Id']:
+            raise EngineVerificationError('engine_image_identity_mismatch')
+        if not observed['State']['Running']:
+            raise EngineVerificationError('engine_not_running')
+    except (OSError, subprocess.SubprocessError) as error:
+        raise EngineVerificationError('engine_inspection_failed') from error
+    except (KeyError, TypeError, IndexError, json.JSONDecodeError) as error:
+        raise EngineVerificationError('engine_inspection_invalid') from error
     return {'container_id': observed['Id'], 'image_id': observed['Image'],
-            'configured_reference': observed['Config']['Image']}
+            'configured_reference': observed['Config']['Image'],
+            'verified_repository_digest': repository + '@sha256:' + digest}
 
 
 def write_report(path: Path, result: dict) -> None:
@@ -113,6 +138,8 @@ def main() -> int:
     except (OSError, ValueError, KeyError, TypeError, IndexError, tarfile.TarError,
             subprocess.SubprocessError) as error:
         result = {'valid': False, 'error': type(error).__name__}
+        if isinstance(error, EngineVerificationError):
+            result['error_code'] = str(error)
         if hasattr(args, 'report'):
             try:
                 write_report(args.report, result)

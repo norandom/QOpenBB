@@ -1,7 +1,7 @@
-# Pull the reviewed release's immutable image references; builds belong to Dagger.
+# Development follows latest alpha images; stable versions will use pinned references.
 services:
   workspace:
-    image: ${WORKSPACE_IMAGE:?Set WORKSPACE_IMAGE to the release digest reference}
+    image: ${WORKSPACE_IMAGE:-ghcr.io/norandom/qopenbb-workspace:latest}
     restart: unless-stopped
     ports:
       - "0.0.0.0:23003:3000"
@@ -20,7 +20,7 @@ services:
         condition: service_healthy
 
   data-api:
-    image: ${DATA_API_IMAGE:?Set DATA_API_IMAGE to the release digest reference}
+    image: ${DATA_API_IMAGE:-ghcr.io/norandom/qopenbb-data-api:latest}
     restart: unless-stopped
     environment:
       FMP_API_KEY: ${FMP_API_KEY:?Set FMP_API_KEY in the private environment}

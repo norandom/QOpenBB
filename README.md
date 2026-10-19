@@ -25,18 +25,9 @@ Snapshot: 2026-10-19. Follow the CI link for live run status; a green check does
 
 ## Delivery plan
 
-```mermaid
-flowchart LR
-    A["Existing prototype<br/>Compose + local images"] --> B["Next: image smoke<br/>and CI publication gate"]
-    B --> C["Publish immutable images<br/>Pull and deploy"]
-    C --> D["Provider breadth<br/>FMP / FRED / Yahoo"]
-    D --> E["Analyst workspace<br/>Widgets + commands + linked time"]
-    C -. independent lane .-> F["Anthropic AI"]
-    F --> G["OpenBB Excel"]
-    C -. later .-> H["Custom sources<br/>and Quant plugins"]
-```
+![Delivery plan: prebuilt alpha, Compose installation, provider coverage and analyst workflows; separate AI-to-Excel lane and later extensions.](docs/assets/delivery-plan.svg)
 
-Solid arrows show the main delivery sequence and the Anthropic-before-Excel dependency, not completed work. Dotted branches are separate workstreams, not release prerequisites. AI is independent of prototype acceptance. Custom sources have their own spec; Quant plugins remain a later extension. Existing persistence code, tests and the `./data/workspace` bind mount stay in place. Dashboard persistence acceptance belongs to the analyst spec; infrastructure recovery verification is deferred. Neither blocks this prototype.
+The diagram shows delivery sequence and the Anthropic-before-Excel dependency, not completed work. Separate workstreams are not alpha release prerequisites. AI is independent of prototype acceptance. Custom sources have their own spec; Quant plugins remain a later extension. Existing persistence code, tests and the `./data/workspace` bind mount stay in place. Dashboard persistence acceptance belongs to the analyst spec; infrastructure recovery verification is deferred. Neither blocks this prototype.
 
 ## One analytical experience across providers
 

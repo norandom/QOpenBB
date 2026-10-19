@@ -2,7 +2,7 @@
 
 Run QOpenBB on Linux or in WSL with Docker Compose. Use the prebuilt Workspace and data API alpha images; no application build tools are needed on the installation host.
 
-The first registry image references are pending publication. They will be listed here when available. Build status is tracked in [prototype delivery](prototype-delivery.md).
+Development uses the moving `latest` tags below. Each published alpha also has a [tagged GitHub prerelease](https://github.com/norandom/QOpenBB/releases) with installation files and a manifest of exact image digests. Build and publication status are tracked in [GitHub Actions](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml).
 
 ## Requirements
 
@@ -13,10 +13,10 @@ The first registry image references are pending publication. They will be listed
 
 | Service | Environment variable | Alpha image |
 | --- | --- | --- |
-| Workspace and application backend | `WORKSPACE_IMAGE` | Pending publication |
-| OpenBB data API | `DATA_API_IMAGE` | Pending publication |
+| Workspace and application backend | `WORKSPACE_IMAGE` | `ghcr.io/norandom/qopenbb-workspace:latest` |
+| OpenBB data API | `DATA_API_IMAGE` | `ghcr.io/norandom/qopenbb-data-api:latest` |
 
-Use both images from the same alpha version. Published references use the form `registry/namespace/image@sha256:DIGEST`.
+Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
 ## Configure
 
@@ -34,8 +34,8 @@ Edit `.env`:
 
 | Setting | Value |
 | --- | --- |
-| `WORKSPACE_IMAGE` | Published Workspace alpha reference |
-| `DATA_API_IMAGE` | Matching data API alpha reference |
+| `WORKSPACE_IMAGE` | `ghcr.io/norandom/qopenbb-workspace:latest` |
+| `DATA_API_IMAGE` | `ghcr.io/norandom/qopenbb-data-api:latest` |
 | `PUBLIC_URL` | `http://127.0.0.1:23003` |
 | `FMP_API_KEY` | Your FMP key |
 | `FRED_API_KEY` | Your FRED key |

@@ -13,3 +13,7 @@ Dagger builds images only. Portable commands own checks, publication and release
 Keep one delivery slice active; fan out only disjoint bounded work. Retain per-task commits, independent review, background browser/xdist worker limits and caps of 400 physical lines/file, 300 logical units/file and 50/function. Publish concise reviewed evidence.
 
 The roadmap owns sequencing; the spec ownership map owns handover; the breadth map retains actual criterion/test/evidence links. Transferred work stays open. The original full scope must not be called complete merely because the prototype ships.
+
+## Development alpha publication amendment
+
+Owner direction on 2026-10-19: ship the current development alpha as prebuilt `latest` images and create a tagged GitHub prerelease. Stable releases later use pinned versions. For this alpha, successful source checks, identified builds and verified registry identities permit publication; remaining browser, financial, renderer and persistence acceptance stays open rather than being relabeled complete. The release manifest retains exact image digests even though development Compose defaults to `latest`. PRs never publish. This amendment supersedes the earlier immutable-only development-install and whole-prototype publication sequencing above.

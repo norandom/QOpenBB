@@ -65,8 +65,8 @@ jobs:
           echo "$RUNNER_TEMP/qopenbb-tools" >> "$GITHUB_PATH"
       - name: Build candidate images through Dagger
         if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.build_images)
-        run: bash pipeline/ci.sh build --output artifacts/ci-candidate --release-version prototype-${{ github.run_id }}-${{ github.run_attempt }}
-      # Publication remains closed until candidate-image smoke and promotion gates join.
+        run: bash pipeline/ci.sh build --output artifacts/ci-candidate --release-version alpha-${{ github.run_id }}-${{ github.run_attempt }}
+      # Alpha publication runs separately with write permissions, never for PRs.
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always() && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.build_images))
         with:
@@ -82,3 +82,70 @@ jobs:
           compression-level: 0
           retention-days: 3
           if-no-files-found: error
+  publish-alpha:
+    needs: candidate
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.build_images))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9
+        with:
+          version: '0.12.5'
+          enable-cache: false
+      - name: Restore protected publication tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/qopenbb-tools"
+          curl -fsSL https://github.com/AikidoSec/safe-chain/releases/download/1.5.25/safe-chain-linuxstatic-x64 -o "$RUNNER_TEMP/qopenbb-tools/safe-chain"
+          echo "3462a8395f822b392b7c0808c70116ef90e17a5a1479e604cfc41d57bfbd827c  $RUNNER_TEMP/qopenbb-tools/safe-chain" | sha256sum -c -
+          chmod +x "$RUNNER_TEMP/qopenbb-tools/safe-chain"
+          export PATH="$RUNNER_TEMP/qopenbb-tools:$PATH"
+          export SAFE_CHAIN_MINIMUM_PACKAGE_AGE_HOURS=48
+          uv python install 3.13.15
+          safe-chain uv sync --project pipeline --locked --python 3.13.15
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: candidate-images
+          path: artifacts/ci-candidate
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: candidate-reports
+          path: artifacts/ci-candidate
+      - name: Publish alpha images and latest aliases
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REGISTRY_USER: ${{ github.actor }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s' "$GHCR_TOKEN" | docker login ghcr.io -u "$REGISTRY_USER" --password-stdin
+          pipeline/.venv/bin/python -m qopenbb_ci.alpha_cli --build-output artifacts/ci-candidate --registry-namespace ghcr.io/norandom --manifest artifacts/alpha-release/manifest.json
+      - name: Create tagged alpha prerelease
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ALPHA_TAG: alpha-${{ github.run_id }}-${{ github.run_attempt }}
+          SOURCE_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp compose.yaml .env.sample artifacts/alpha-release/
+          cat > artifacts/alpha-release/notes.md <<'NOTES'
+          Development alpha with prebuilt Workspace and data API images.
+
+          Development tags: `ghcr.io/norandom/qopenbb-workspace:latest` and `ghcr.io/norandom/qopenbb-data-api:latest`.
+          The attached manifest records exact image digests and source revisions for this alpha.
+          Download compose.yaml and .env.sample, follow docs/install.md, then run docker compose pull and docker compose up -d --no-build.
+          Private packages require registry pull access. Broader provider/renderer completion, AI and Excel remain follow-up work.
+          This alpha does not claim complete browser, financial, persistence or recovery acceptance.
+          NOTES
+          gh release create "$ALPHA_TAG" --target "$SOURCE_SHA" --prerelease --title "QOpenBB $ALPHA_TAG" --notes-file artifacts/alpha-release/notes.md artifacts/alpha-release/manifest.json artifacts/alpha-release/compose.yaml artifacts/alpha-release/.env.sample
+      - name: Log out of registry
+        if: always()
+        run: docker logout ghcr.io

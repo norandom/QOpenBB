@@ -85,10 +85,16 @@ def test_credentials_stay_with_service_and_bootstrap_remains_optional(parse):
     assert "http://127.0.0.1:6900/readyz" in probe[3]
 
 
-@pytest.mark.parametrize("missing", INPUTS)
+@pytest.mark.parametrize("missing", ["FMP_API_KEY", "FRED_API_KEY"])
 @pytest.mark.parametrize("value", [None, ""])
 def test_required_selected_service_inputs_fail_closed(parse, missing, value):
     result = parse({missing: value})
     assert result.returncode != 0
     assert missing in result.stderr
     assert not result.stdout.strip()
+
+
+def test_development_images_default_to_latest(parse):
+    selected = services(parse, {"WORKSPACE_IMAGE": None, "DATA_API_IMAGE": None})
+    for service in ("workspace", "data-api"):
+        assert selected[service]["image"] == "ghcr.io/norandom/qopenbb-" + service + ":latest"
