@@ -24,11 +24,24 @@ Current state: Compose, portable build/publication tooling and the GitHub candid
 | Spec | Responsibility | Sequence |
 | --- | --- | --- |
 | [openbb-self-service](../.kiro/specs/openbb-self-service/spec.json) | Foundation and prototype delivery | Active now; close with explicit scope/evidence handover |
-| [market-data-integrations](../.kiro/specs/market-data-integrations/requirements.md) | FMP horizontal coverage, yfinance/FRED and future providers; shared identity and semantics | After prototype; installed adapters stay in baseline |
-| [analyst-workspace](../.kiro/specs/analyst-workspace/requirements.md) | Widgets, commands, linked instrument/time views, consistent visuals and remaining renderer/table functionality | After prototype; build on existing work |
+| [market-data-integrations](../.kiro/specs/market-data-integrations/requirements.md) | Broad primary FMP coverage, yfinance price gaps, FRED economic series and future providers; consistent UX with labeled provenance | After prototype; installed adapters stay in baseline |
+| [analyst-workspace](../.kiro/specs/analyst-workspace/requirements.md) | Saved research context, widgets, commands, linked instrument/time views, Bloomberg-inspired theme and remaining renderer/table functionality | After prototype; build on existing work |
 | [workspace-ai](../.kiro/specs/workspace-ai/requirements.md) | Anthropic, grounding, streaming and recovery | Independent of prototype |
 | [openbb-excel](../.kiro/specs/openbb-excel/requirements.md) | Add-in, generated functions, authentication and Office acceptance | Retained dependency: Anthropic accepted first |
 | [custom-data-source](../.kiro/specs/custom-data-source/requirements.md) | Own datasets and later PostgreSQL | Deferred |
+
+Build the analyst experience on existing widget, theme and ECharts work. FMP, yfinance and FRED should use interchangeable interaction patterns where their data contracts permit, with provider provenance visible. Shared controls must preserve instrument identity, time ranges, currency, units and frequency rather than imply that different datasets are equivalent.
+
+Renderer responsibilities belong to analyst-workspace:
+
+| Renderer | Existing scope and remaining work |
+| --- | --- |
+| ECharts | Integrated table charts for selected families; remaining controls, families and saved-state behavior need their own acceptance |
+| Perspective 5.6 | Packages, runtime host and isolated tests exist; production dashboard binding and analytical workflow acceptance remain open |
+| Plotly | Retain useful supported widgets and their financial semantics |
+| Highcharts | Removed; removal does not mean ECharts replaces every former renderer capability |
+
+These renderer obligations do not block the prototype. Full original visual parity is not a prototype release gate. The Bloomberg-inspired theme should extend the existing work and keep widget controls, commands and linked views consistent.
 
 Quant plugins remain later work. Successor specs are initialized scope descriptions, not approved detailed requirements or tasks. Do not generate all their implementation plans before shipping the prototype.
 
@@ -38,6 +51,6 @@ Quant plugins remain later work. Successor specs are initialized scope descripti
 
 The [provider map](provider-coverage.md) describes horizontal scope. Track provider availability separately from adapter, widget, consistency and E2E acceptance. Shared semantics cover readable identities, units, time, provenance and linking; provider origin should not change the analyst's interaction pattern.
 
-Keep isolated Playwright/CDP, bounded xdist, financial semantics, persistence and failure/recovery checks. Run affected checks per change and the integrated prototype journey at the release gate. Publish concise reviewed evidence; do not turn each check into another planning project.
+Keep isolated Playwright/CDP, bounded xdist, financial semantics and existing persistence and failure/recovery regressions. Run affected checks per change and the integrated prototype journey at the release gate. Saved research-context acceptance belongs to analyst-workspace; infrastructure backup/restore and rollback verification remain deferred. Publish concise reviewed evidence; do not turn each check into another planning project.
 
 The [agile delivery amendment](../.kiro/steering/delivery-workflow.md) supersedes older sequencing and whole-spec gates. Retain independent review, complexity caps and per-task commits. Transfer unfinished work without marking it complete.

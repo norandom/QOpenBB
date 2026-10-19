@@ -1,48 +1,77 @@
 # QOpenBB
 
-QOpenBB aims to give financial engineers a self-hosted Full OpenBB Workspace: build dashboards from FMP and FRED data, keep layouts and state under local control, then use Anthropic AI and Excel against the same data API.
+A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-The repository currently contains approved requirements and design, an approved implementation task plan, source pins, and feasibility research. Foundation tasks are accepted, including protected tooling, verification and Dagger source-image export. The Full frontend builds from frozen inputs; private bootstrap and session request isolation are verified. Installed FMP profile/income routes and failure handling pass fixture checks against core 2.0.1. Single-origin routing and the locked FMP/FRED runtime pass fixture verification. The provisional Full image now builds, loads and passes independent health/login/private-state checks. The identified data image also passes offline route, readiness and package-origin checks. The Community table boundary and generated three-dataset catalog are accepted. Commercial renderer removal is accepted after independent source, dependency and build review. The standalone Perspective runtime is accepted on isolated browser evidence; financial widget binding now awaits renderer parity discovery; no deployable application release is accepted. Start with the [documentation index](docs/index.md), [goals](docs/goals.md), and [roadmap](docs/roadmap.md).
+**Next milestone: deploy the current prototype.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
-## Current evidence
+[![Candidate CI](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 
-Renderer work is now in [compatibility discovery](.kiro/specs/openbb-self-service/parity-plan.md). The owner requires the original OpenBB UX, themes, features and flag behavior. Earlier Community isolation and commercial-removal acceptance is historical evidence, not acceptance of the resulting capability reductions. Financial widget integration is paused while the [source capability matrix](docs/renderer-capability-matrix.md) and replacement contracts are reconciled; no renderer parity or deployable release is claimed.
+[Documentation](docs/index.md) · [Roadmap](docs/roadmap.md) · [Delivery status](docs/prototype-delivery.md) · [Provider coverage](docs/provider-coverage.md) · [Breadth evidence](.kiro/breadth.toml)
 
-Direct read-only provider checks returned HTTP 200 for FMP company profile and income statement data and FRED GDP. Anthropic model discovery also returned HTTP 200; inference remains untested. These checks establish limited upstream access, not working Workspace widgets, a compatible OpenBB provider, or a working agent. See the [feasibility report](.kiro/specs/openbb-self-service/feasibility.md) for scope and remaining gaps.
+## Status at a glance
 
-The latest API target requires compatibility work: OpenBB 5 / core 2 excludes the released FMP provider, whose dependency constraint requires core below 2. The maintained FMP profile/income adaptation and provisional Full image packaging are accepted on their recorded checks. Integrated dashboards, live-provider fidelity and release verification remain pending. [Source pins](sources.lock.json) record acquisition snapshots, not validated releases.
+Snapshot: 2026-10-19. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
-## Intended operating contract
+| Area | What exists | What remains |
+| --- | --- | --- |
+| Prototype | Full Workspace, installed data API, two-service Compose, local image builds | Candidate login/dashboard and routing smoke, registry publication, pull-only install |
+| CI/CD | Hosted checks passed; Dagger builds enabled on main; portable build/publication commands | First hosted image-build result and gated publication integration |
+| Data | Adapted FMP profile/income routes and FRED series catalog; real-data snapshot dashboard | Broader live FMP coverage, Yahoo adapter, named discovery and consistent provider contracts |
+| Visuals | Selected ECharts table-chart journeys; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
+| Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and persistence acceptance |
+| Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
 
-- Develop on Windows/WSL Docker and deploy the same Compose topology on a private Linux server.
-- Serve plain HTTP at `0.0.0.0:23003`. The owner manages Cloudflare Access and the tunnel for `https://qbb.hanse-hedge.fund`.
-- Bind persistent state under `./data`, initially `./data/workspace` to `/data`; use no Docker-managed data volumes.
-- Use Dagger only for image builds. Portable repository commands verify and publish; GitHub Actions runs them now, with a later move to Gitea Actions in mind. Deploy by pulling recorded image digests.
-- Accept the Full dashboard and FMP/FRED journey first, then Anthropic. Excel implementation waits for Anthropic acceptance.
+## Delivery plan
 
-Jupyter is managed separately. Custom PostgreSQL integration remains deferred.
-
-## Sources and decisions
-
-| Resource | Use |
-| --- | --- |
-| [Workspace fork](https://github.com/norandom/openbb-workspace) | Frontend, application backend, Full packaging, Excel source |
-| [Data API fork](https://github.com/norandom/openbb-data-api) | OpenBB data API and provider adaptation |
-| [Requirements](.kiro/specs/openbb-self-service/requirements.md) | Observable acceptance criteria and scope |
-| [Research](.kiro/specs/openbb-self-service/research.md) | Source references and proposed integration contracts |
-| [Technical design](.kiro/specs/openbb-self-service/design.md) | Approved service contracts, file boundaries and acceptance strategy |
-| [Implementation tasks](.kiro/specs/openbb-self-service/tasks.md) | Bounded tasks with exclusive lanes, complexity caps and acceptance joins |
-| [Phase status](.kiro/specs/openbb-self-service/spec.json) | Historical approvals and active renderer parity discovery gate |
-| [Contribution guide](docs/contributing.md) | Evidence, documentation, and code-comment conventions |
-
-Real credentials belong only in the ignored `.env`. The public [.env.sample](.env.sample) has empty values. Never include secrets in builds, images, browser assets, reports, or logs.
-
-## Check the proposal syntax
-
-From this repository root:
-
-```powershell
-docker compose --project-directory . --env-file .kiro/specs/openbb-self-service/compose.validation.env -f .kiro/specs/openbb-self-service/compose.proposed.yaml --profile excel config --quiet
+```mermaid
+flowchart LR
+    A["Existing prototype<br/>Compose + local images"] --> B["Next: image smoke<br/>and CI publication gate"]
+    B --> C["Publish immutable images<br/>Pull and deploy"]
+    C --> D["Provider breadth<br/>FMP / FRED / Yahoo"]
+    D --> E["Analyst workspace<br/>Widgets + commands + linked time"]
+    C -. independent lane .-> F["Anthropic AI"]
+    F --> G["OpenBB Excel"]
+    C -. later .-> H["Custom sources<br/>and Quant plugins"]
 ```
 
-This command checks the [Compose proposal](.kiro/specs/openbb-self-service/compose.proposed.yaml) with fake fixture values. It does not build or start the application. Requirements, design and tasks are approved. Implementation follows the reviewed task graph with independent review and fresh verification at each acceptance gate.
+Solid arrows show the main delivery sequence and the Anthropic-before-Excel dependency, not completed work. Dotted branches are separate workstreams, not release prerequisites. AI is independent of prototype acceptance. Custom sources have their own spec; Quant plugins remain a later extension. Existing persistence code, tests and the `./data/workspace` bind mount stay in place. Dashboard persistence acceptance belongs to the analyst spec; infrastructure recovery verification is deferred. Neither blocks this prototype.
+
+## One analytical experience across providers
+
+An analyst should be able to compare an equity, a commodity and a yield curve without learning each provider's API conventions. The planned workspace uses readable instrument names, familiar commands and linked dates, with consistent tables, charts and controls. Source labels stay visible.
+
+Consistency preserves financial meaning: a spot benchmark is different from a futures contract; a yield curve's horizontal axis is tenor, not time; a filing's publication date differs from its reporting period. The [provider map](docs/provider-coverage.md) separates published coverage from installed and verified functionality.
+
+The [Bloomberg-inspired visual reference](https://github.com/iconicvenom/bloomberg_free) guides the future theme and widget presentation. Existing OpenBB components and our chart work remain the foundation.
+
+## Renderer roles
+
+| Component | Role and current boundary |
+| --- | --- |
+| Apache ECharts | Implemented chart engine for selected table-to-chart journeys. Full family and caller compatibility remains open. |
+| FINOS Perspective | Installed runtime, React host and isolated verification foundation. Pivot/explorer widget integration remains work for `analyst-workspace`. |
+| Plotly | Existing endpoint-chart renderer retained. |
+| Highcharts | Removed dependency. Legacy Highcharts configurations are not universally translated into ECharts. |
+
+## Operate the prototype
+
+Development uses Windows/WSL Docker; deployment uses the same Compose topology on private Linux. The origin serves HTTP on `0.0.0.0:23003`; the owner manages Cloudflare Access and cloudflared for `qbb.hanse-hedge.fund`. State uses relative bind directories, not Docker-managed data volumes.
+
+Dagger builds images only. Portable commands run verification and publication; GitHub Actions is the current runner, with Gitea portability retained. The intended installation pulls immutable images and runs Compose without compiling source on the server. **There is no accepted published release yet.** Use [delivery status](docs/prototype-delivery.md) for the remaining gates rather than treating the historical Compose proposal as an installation guide.
+
+Credentials belong in ignored `.env`; [.env.sample](.env.sample) contains public placeholders. Jupyter is managed separately.
+
+## Find the owning workstream
+
+| Workstream | Scope |
+| --- | --- |
+| [Prototype delivery](.kiro/specs/openbb-self-service/spec.json) | Current baseline, CI/CD, image publication and installation |
+| [Market data](.kiro/specs/market-data-integrations/requirements.md) | FMP horizontal coverage, FRED, Yahoo and future provider adapters |
+| [Analyst workspace](.kiro/specs/analyst-workspace/requirements.md) | Reusable widgets, command line, linked context, theme, renderer completion and saved research context |
+| [Workspace AI](.kiro/specs/workspace-ai/requirements.md) | Anthropic discovery, grounding and streaming |
+| [OpenBB Excel](.kiro/specs/openbb-excel/requirements.md) | Add-in and generated functions; retains the Anthropic-first dependency |
+| [Custom data](.kiro/specs/custom-data-source/requirements.md) | Own datasets and later PostgreSQL |
+
+Successor specs are initialized scopes, not completed implementations. [Spec ownership](.kiro/spec-ownership.toml) records the handover. The [breadth map](.kiro/breadth.toml) retains actual tests and evidence; the [contribution guide](docs/contributing.md) explains working conventions.
+
+Sources are owned in the [Workspace fork](https://github.com/norandom/openbb-workspace) and [data API fork](https://github.com/norandom/openbb-data-api), with revisions in [sources.lock.json](sources.lock.json).

@@ -1,8 +1,34 @@
 # QOpenBB documentation
 
-Use QOpenBB to work toward a private financial-data workspace with reproducible sources and observable data contracts. The immediate engineering problem is proving that Full Workspace, the latest selected OpenBB API, and FMP/FRED work together. Direct provider access alone does not answer that question.
+Deploy the prototype next, then extend its provider coverage and analyst workflows. Start with the delivery status to see what is implemented, what has been verified and what still prevents release.
 
 ## Choose your next action
+
+| Your task | Start here |
+| --- | --- |
+| Understand the purpose and operating boundaries | [Goals](goals.md) |
+| See the sequence and owning specifications | [Roadmap](roadmap.md) |
+| Build, verify and prepare the prototype for installation | [Prototype delivery](prototype-delivery.md) |
+| Map FMP, FRED and Yahoo coverage to research needs | [Provider coverage](provider-coverage.md) |
+| Check renderer responsibilities, including Perspective integration | [Roadmap renderer scope](roadmap.md#subsequent-workstreams) |
+| Check which capabilities have actual evidence | [Breadth map](../.kiro/breadth.toml) and [reviewed artifacts](../artifacts/reviewed/README.md) |
+| Set up development or contribute | [Development](development.md) and [contribution guide](contributing.md) |
+| Keep verification focused and artifacts manageable | [Verification](verification.md) and [artifact retention](artifact-retention.md) |
+
+## Current deployment boundary
+
+The prototype combines Full Workspace and the self-hosted OpenBB data API in [root Compose](../compose.yaml). It serves HTTP on port 23003 behind owner-managed Cloudflare Access and cloudflared, with relative bind-mounted state. Dagger builds images; portable commands handle verification and publication. Installation will pull immutable images.
+
+Compose and build tooling exist. Candidate-image smoke, registry publication and installation acceptance remain open; there is no accepted published release yet. [Prototype delivery](prototype-delivery.md) tracks those gates. The older Compose proposal and historical UI plans are reference material, not current installation instructions.
+
+Broader FMP/FRED/Yahoo coverage belongs to market-data-integrations. Reusable widgets, linked research context, commands, theme and renderer completion belong to analyst-workspace. AI, Excel and custom sources have separate specs. Dashboard persistence acceptance is part of the analyst spec; infrastructure recovery verification is deferred. See [spec ownership](../.kiro/spec-ownership.toml) for transferred obligations.
+
+## Technical reference and historical evidence
+
+Earlier findings remain available to explain implementation decisions and reproduce checks. Their next-step language reflects the work at that time. The [agile delivery amendment](../.kiro/steering/delivery-workflow.md) and [current roadmap](roadmap.md) govern sequencing.
+
+<details>
+<summary>Browse implementation records and technical guides</summary>
 
 | If you need to... | Read |
 | --- | --- |
@@ -71,22 +97,10 @@ Use QOpenBB to work toward a private financial-data workspace with reproducible 
 | Verify the isolated ECharts dependency, host and mappings | [Chart foundation](chart-foundation.md) and [snapshot verification](../.kiro/specs/openbb-self-service/chart-snapshot-verification.md) |
 | Contribute code, comments, evidence, or documentation | [Contribution guide](contributing.md) |
 
-## Understand the proposed system
-
-| Component | Intended responsibility |
-| --- | --- |
-| Full Workspace | Dashboard UI, application authentication, saved state, bundled application backend |
-| Self-hosted OpenBB data API | Provider requests, financial-data responses, generated widget metadata |
-| Anthropic agent | Workspace discovery and streamed answers using selected dashboard data |
-| Excel add-in | Functions and authentication adapted to the accepted self-hosted contracts |
-| Existing Workspace nginx | One HTTP origin with verified routing to the services |
-
-FMP and FRED remain external providers. Workspace application authentication, data API access, and Cloudflare Access are separate contracts. The owner already manages Cloudflare infrastructure; application and Office behavior through that boundary still require acceptance tests.
-
-The service arrangement and paths in the [Compose proposal](../.kiro/specs/openbb-self-service/compose.proposed.yaml) are proposals. There is no accepted runtime or installation runbook yet. The [README](../README.md#check-the-proposal-syntax) contains the available parser check.
+</details>
 
 ## Find the authoritative detail
 
-Requirements own acceptance criteria. Research and feasibility reports own source findings and experimental evidence. [sources.lock.json](../sources.lock.json) owns acquired revisions; it is not a release manifest. The [breadth map](../.kiro/breadth.toml) connects capabilities to requirements, planned checks, actual test paths, and evidence status.
+Requirements own acceptance criteria; spec.json records approval state. Research and verification records describe findings for their stated revisions. [sources.lock.json](../sources.lock.json) pins acquired source revisions, not a published release. The [breadth map](../.kiro/breadth.toml) connects capabilities to criteria, actual test paths and evidence; planned checks do not count as passing tests.
 
-Project rules live in [AGENTS.md](../AGENTS.md) and steering: [documentation](../.kiro/steering/documentation.md), [complexity](../.kiro/steering/complexity.md), [testing](../.kiro/steering/testing.md), [CI and delivery](../.kiro/steering/ci.md), and [delegation](../.kiro/steering/delegation.md). These pages explain the work; they do not replace the specification or approve its next phase.
+Project rules live in [AGENTS.md](../AGENTS.md) and steering: [documentation](../.kiro/steering/documentation.md), [complexity](../.kiro/steering/complexity.md), [testing](../.kiro/steering/testing.md), [CI](../.kiro/steering/ci.md), [delivery workflow](../.kiro/steering/delivery-workflow.md) and [delegation](../.kiro/steering/delegation.md).
