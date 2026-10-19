@@ -41,29 +41,38 @@ class WorkspaceRuntime:
         self.descriptor = descriptor
 
     @classmethod
-    def start(cls, image, source, public_origin):
+    def start(cls, image, source, public_origin, *, image_only=False):
+        if image_only == (source is not None):
+            raise ValueError("Choose exactly one of source overlay or image-only mode")
         if not re.fullmatch(r"http://127\.0\.0\.1:[0-9]+", public_origin or ""):
             raise ValueError("Explicit loopback frontend public origin required")
         if not 0 < int(public_origin.rsplit(":", 1)[1]) < 65536:
             raise ValueError("Invalid frontend port")
-        source = Path(source).resolve(strict=True)
-        if not (source / "database.py").is_file() or not (source / "__init__.py").is_file():
-            raise ValueError("Expected the complete backend api source directory")
+        if source is not None:
+            source = Path(source).resolve(strict=True)
+            if not (source / "database.py").is_file() or not (source / "__init__.py").is_file():
+                raise ValueError("Expected the complete backend api source directory")
         image_id = json.loads(docker("image", "inspect", image))[0]["Id"]
         # An explicit ephemeral port survives Docker restart; an empty binding does not.
         with socket.socket() as reservation:
             reservation.bind(("127.0.0.1", 0))
             backend_port = reservation.getsockname()[1]
+        if image_only:
+            backend_port = int(public_origin.rsplit(":", 1)[1])
         state = Path(tempfile.mkdtemp(prefix=PREFIX)).resolve()
         runtime = cls({"name": PREFIX + uuid4().hex, "state": str(state),
-                       "image": image_id, "source_overlay": source_identity(source),
+                       "image": image_id,
+                       "source_overlay": source_identity(source) if source else None,
+                       "packaged_image_only": image_only,
                        "public_origin": public_origin,
                        "release_image_verified": False})
         try:
+            overlay_mount = (["--mount", f"type=bind,src={source},dst=/opt/code/api,readonly"]
+                             if source else [])
             runtime.descriptor["container"] = docker(
                 "run", "-d", "--name", runtime.descriptor["name"],
                 "--mount", f"type=bind,src={state},dst=/data",
-                "--mount", f"type=bind,src={source},dst=/opt/code/api,readonly",
+                *overlay_mount,
                 "-p", f"127.0.0.1:{backend_port}:3000", "-e", f"PUBLIC_URL={public_origin}",
                 "-e", f"OPENBB_ADMIN_EMAIL=browser-{uuid4().hex}@example.com",
                 image_id).strip()
@@ -72,6 +81,9 @@ class WorkspaceRuntime:
             if binding["HostIp"] != "127.0.0.1" or inspected["Image"] != image_id:
                 raise AssertionError("Runtime isolation or image identity mismatch")
             runtime.descriptor["origin"] = "http://127.0.0.1:" + binding["HostPort"]
+            runtime.validate_ownership()
+            if image_only and runtime.origin != public_origin:
+                raise AssertionError("Packaged browser origin must match PUBLIC_URL")
             runtime.wait_ready()
             _, configuration = request(runtime.origin, "/config.js")
             payload = configuration.decode().strip().removeprefix("window.__APP_CONFIG__ = ").removesuffix(";")
@@ -115,6 +127,7 @@ class WorkspaceRuntime:
     def restart(self):
         self.validate_ownership()
         docker("restart", self.descriptor["name"])
+        self.validate_ownership()
         inspected = json.loads(docker("inspect", self.descriptor["name"]))[0]
         binding = inspected["NetworkSettings"]["Ports"]["3000/tcp"][0]
         if self.origin != "http://127.0.0.1:" + binding["HostPort"]:
@@ -132,9 +145,16 @@ class WorkspaceRuntime:
             inspected = json.loads(docker("inspect", self.descriptor["name"]))[0]
             if inspected["Id"] != self.descriptor["container"]:
                 raise ValueError("Owned container identity changed")
+            if inspected["Image"] != self.descriptor["image"]:
+                raise ValueError("Owned container image changed")
             mounts = {mount["Destination"]: mount["Source"] for mount in inspected["Mounts"]}
             if mounts.get("/data") != str(state):
                 raise ValueError("Owned state mount changed")
+            if self.descriptor.get("packaged_image_only"):
+                actual = inspected["Mounts"]
+                if (len(actual) != 1 or actual[0].get("Type") != "bind"
+                        or actual[0].get("RW") is not True):
+                    raise ValueError("Packaged image requires only the disposable /data bind mount")
 
     def close(self):
         self.validate_ownership()
@@ -176,15 +196,18 @@ def main():
     parser.add_argument("action", choices=["start", "restart", "stop", "status"])
     parser.add_argument("--private", type=Path, required=True)
     parser.add_argument("--image")
-    parser.add_argument("--source", type=Path)
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--source", type=Path)
+    mode.add_argument("--image-only", action="store_true")
     parser.add_argument("--public-origin")
     args = parser.parse_args()
     if args.action == "start":
         if args.private.exists():
             parser.error("Private descriptor already exists; stop its runtime first")
-        if not args.image or not args.source or not args.public_origin:
-            parser.error("start requires --image, --source and --public-origin")
-        runtime = WorkspaceRuntime.start(args.image, args.source, args.public_origin)
+        if not args.image or not (args.source or args.image_only) or not args.public_origin:
+            parser.error("start requires --image, --public-origin and --source or --image-only")
+        runtime = WorkspaceRuntime.start(args.image, args.source, args.public_origin,
+                                         image_only=args.image_only)
         try:
             runtime.write_private(args.private)
         except Exception:

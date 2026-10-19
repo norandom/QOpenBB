@@ -1,5 +1,7 @@
 # Build and load identified images
 
+The 2026-10-19 local development checkpoint built and loaded the current Workspace and data API images through Dagger. Packaged login, shell, gallery navigation and offline data-runtime checks passed. See the [review and limits](../artifacts/reviewed/live-editor/local-images/final-review.md) and [exact image identities](../artifacts/reviewed/live-editor/local-images/image-identities.json). These images have no registry digest and do not constitute a Compose deployment or renderer-complete release.
+
 Use the portable commands below to acquire locked owned sources, filter them before upload, export a Dagger image and load that exact archive. `foundation-smoke` retains the infrastructure fixture. The `workspace` selection builds the adapted Full application through the same catalog. Its provisional image still contains commercial renderers; task 2.12 must replace it before publication or dashboard baseline acceptance. The `data-api` selection builds the locked local provider runtime. Anthropic and Excel images remain separate tasks.
 
 Restore the [locked tools](development.md) first. Run in WSL/Linux from the repository root. The Dagger SDK entry point is `.dagger/src/qopenbb/export.py`; its sole builder is `qopenbb.images.build(service, ...)`. `dagger run` starts the pinned engine and SDK session. It does not load a Dagger module or upload the repository as module source. There is no `dagger call` interface or `dagger.json` bootstrap.

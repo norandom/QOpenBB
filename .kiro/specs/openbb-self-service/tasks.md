@@ -6,7 +6,7 @@ Current production UI priorities are collected in the [UI parity worklist](ui-pa
 
 The owner requested a local image check while resuming UI work on 2026-10-19. This bounded development check packages the accepted UI revision; it does not satisfy the renderer-complete 2.12 or deployment 4.1 gates.
 
-- [ ] 2.91 Build and inspect the current unreleased local images
+- [x] 2.91 Build and inspect the current unreleased local images
   - Controller owns exact source pins, filtered stages, Dagger export/load records and one concise reviewed record. Use the existing pinned image_cli commands with fresh stage directories and clean exact-commit owned source checkouts; preserve unrelated working changes and exclude private files.
   - Serialize Workspace and data-api builds through the single heavy-work queue. Record source revisions, archive hashes, engine identity and loaded image IDs. Do not publish or label these images release-ready.
   - Run the existing Workspace packaging smoke and data-image offline checks with disposable state and missing/synthetic provider keys. Reuse tests/delivery/workspace_runtime.py with an explicit image-only mode mutually exclusive with source overlay; retain private descriptors and ownership cleanup. Keep source-overlay mode unchanged. Image-only mode mounts only disposable /data and records that fact without asserting full release verification.

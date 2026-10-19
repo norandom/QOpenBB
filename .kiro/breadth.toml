@@ -420,3 +420,11 @@ planned_checks = ["supported-family-scroll", "hidden-scroll-retention", "gallery
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chartTypeGallery.test.tsx", "vendor/workspace/terminalpro/tests/e2e/live-chart/gallery-navigation.spec.ts"]
 status = "passed"
 evidence = ["Task 2.92 accepted; supported-family, tab and theme scroll continuity verified. Owner accepted gallery appearance only, explicitly excluding different left-hand chart data. Review: artifacts/reviewed/live-editor/gallery-refinement/review.md. Live/Pending renderer branch continuity remains outside this scope."]
+
+[[capabilities]]
+id = "current-local-image-inspection"
+requirements = ["1.1", "1.2", "3.2", "9.1", "10.5", "10.6"]
+planned_checks = ["identified-dagger-images", "packaged-login-shell", "image-only-gallery", "offline-data-runtime"]
+test_paths = ["tests/delivery/test_workspace_runtime.py", "tests/delivery/task25_runtime.py", "tests/delivery/test_data_runtime_image.py", "vendor/workspace/terminalpro/tests/e2e/live-chart/packaged-page.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/gallery-navigation.spec.ts"]
+status = "passed"
+evidence = ["Task 2.91 accepted for local development images only. Actual Dagger export/load, Workspace packaging, exact image-only browser shell/gallery2passed, offline data3passed. Review and immutable identities: artifacts/reviewed/live-editor/local-images/final-review.md. Missing external datafeed404 remains disclosed; no registry publication, live-provider, AI/Excel, full renderer or deployment acceptance."]

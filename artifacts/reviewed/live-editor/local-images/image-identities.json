@@ -1,0 +1,28 @@
+{
+  "scope": "unreleased local image inspection",
+  "release_verified": false,
+  "services": {
+    "workspace": {
+      "loaded_image_id": "sha256:79eb31596c4cb89dc10b81ec2a190263a212446bb9f5307157de9fac24fe4b39",
+      "archive_sha256": "d1cec47a31d9a00fdf96aae5e9438c953464464a890c4323e6948e9500c1f5bf",
+      "image_config_digest": "sha256:17e6753db6aad37c84d49c0dd749601ce37eca4d660f75bfb0792d65b31946a8",
+      "image_manifest_digest": "sha256:79eb31596c4cb89dc10b81ec2a190263a212446bb9f5307157de9fac24fe4b39",
+      "registry_digest": null,
+      "sources": {
+        "org.qopenbb.source.workspace": "027d7703bb1c5447c0d058256598fa7b52049d2e",
+        "org.qopenbb.source.data_api": "49cc413e6ab67eaa0444e07485b0f9243c786f7b"
+      }
+    },
+    "data": {
+      "loaded_image_id": "sha256:bd9194307a51357c6730e310dd9c460150df98e7aa964b976f37038554755d79",
+      "archive_sha256": "aa27cba1cbc27c0840965c5b1b03fad40a66ad48714c45f8ac7176ac57828f71",
+      "image_config_digest": "sha256:28cb99236858a34173cef318f0909d9eb84ca306065eda0d526a33bdc7241faf",
+      "image_manifest_digest": "sha256:bd9194307a51357c6730e310dd9c460150df98e7aa964b976f37038554755d79",
+      "registry_digest": null,
+      "sources": {
+        "org.qopenbb.source.workspace": "027d7703bb1c5447c0d058256598fa7b52049d2e",
+        "org.qopenbb.source.data_api": "49cc413e6ab67eaa0444e07485b0f9243c786f7b"
+      }
+    }
+  }
+}

@@ -821,7 +821,11 @@
       "task_review": "artifacts/live-editor/local-images/task-review.md",
       "scope": "Unreleased identified Workspace and data images; packaged frontend accessibility only",
       "prerequisite": "Accepted area integration 2.90",
-      "release_gates_unchanged": true
+      "release_gates_unchanged": true,
+      "status": "accepted-local-development-only",
+      "workspace_image_source": "027d7703bb1c5447c0d058256598fa7b52049d2e",
+      "verification_commit": "11c3424",
+      "evidence": "artifacts/reviewed/live-editor/local-images/final-review.md"
     },
     "gallery_refinement": {
       "task": "2.92",
