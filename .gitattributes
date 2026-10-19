@@ -4,4 +4,6 @@ sources/notices/** -text
 artifacts/reviewed/** -text -whitespace
 # Canonical catalog bytes and generator hashes must survive Windows checkouts.
 contracts/*.json text eol=lf
+pipeline/*.sh text eol=lf
+.github/workflows/*.yml text eol=lf
 pipeline/qopenbb_ci/catalog*.py text eol=lf

@@ -148,7 +148,8 @@
     "task-2.68",
     "live-editor",
     "live-editor/date-axis",
-    "live-editor/axis-persistence"
+    "live-editor/axis-persistence",
+    "prototype-delivery"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -31723,6 +31724,14 @@
       "publishedpath": "artifacts/reviewed/live-editor/axis-persistence/verification.md",
       "publishedSHA256": "ec1f1eca8b3433bef8d207521d9056667bde0930320c7088de214394c0fdcd32",
       "bytes": 3017,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/prototype-release/verification.md",
+      "sourceSHA256": "b756f3432b8192409f9018b2432bfb3a4a61b6651820c79491139f5c2062d48a",
+      "publishedpath": "artifacts/reviewed/prototype-delivery/verification.md",
+      "publishedSHA256": "b756f3432b8192409f9018b2432bfb3a4a61b6651820c79491139f5c2062d48a",
+      "bytes": 2816,
       "transform": "exact-byte-copy"
     }
   ],

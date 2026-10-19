@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "prototype-compose-build-publication"
+requirements = ["9.1", "9.2", "9.4", "9.7", "10.1", "10.2", "10.3"]
+planned_checks = ["candidate-image-browser-journey", "compose-routing-restart-persistence", "prototype-recovery", "immutable-registry-install"]
+test_paths = ["tests/delivery/test_prototype_compose.py", "tests/delivery/test_build_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_quality_cli.py"]
+status = "unverified"
+evidence = ["Source/configuration checks only; see artifacts/reviewed/prototype-delivery/verification.md. Dagger Workspace candidate built and loaded. Automatic review blocked starting isolated runtime; candidate E2E, Compose/recovery and registry publication remain unverified. No production release acceptance claimed."]
+
+[[capabilities]]
 id = "chart-appearance-editor-source-contracts"
 requirements = ["1.1", "1.4", "4.2", "4.7", "4.8", "4.9", "10.4", "10.5", "10.6"]
 planned_checks = ["saved-common-replacement-and-family-retention", "normalized-color-and-alias-semantics", "grouped-tooltip-patch-and-session-rejection", "joined-source-contract-regressions"]

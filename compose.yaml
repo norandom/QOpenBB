@@ -1,0 +1,39 @@
+# Pull the reviewed release's immutable image references; builds belong to Dagger.
+services:
+  workspace:
+    image: ${WORKSPACE_IMAGE:?Set WORKSPACE_IMAGE to the release digest reference}
+    restart: unless-stopped
+    ports:
+      - "0.0.0.0:23003:3000"
+    environment:
+      PUBLIC_URL: ${PUBLIC_URL:-https://qbb.hanse-hedge.fund}
+      # Empty values preserve the image's persisted/generated bootstrap settings.
+      OPENBB_ADMIN_EMAIL: ${OPENBB_ADMIN_EMAIL:-}
+      OPENBB_ADMIN_PASSWORD: ${OPENBB_ADMIN_PASSWORD:-}
+      EXCEL_ENABLED: "false"
+    volumes:
+      - type: bind
+        source: ./data/workspace
+        target: /data
+    depends_on:
+      data-api:
+        condition: service_healthy
+
+  data-api:
+    image: ${DATA_API_IMAGE:?Set DATA_API_IMAGE to the release digest reference}
+    restart: unless-stopped
+    environment:
+      FMP_API_KEY: ${FMP_API_KEY:?Set FMP_API_KEY in the private environment}
+      FRED_API_KEY: ${FRED_API_KEY:?Set FRED_API_KEY in the private environment}
+      OPENBB_API_AUTH: "false"
+    healthcheck:
+      # Readiness checks installed routes and configuration without provider calls.
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:6900/readyz', timeout=5).close()"
+      interval: 10s
+      timeout: 6s
+      start_period: 30s
+      retries: 6
