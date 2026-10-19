@@ -1,0 +1,34 @@
+# ECharts: done and open
+
+ECharts renders editable charts created from table data. It supplies the chart engine behind the existing Workspace chart editor; it is not a universal translator for old Highcharts payloads.
+
+Checked items below describe the implemented and reviewed scope, not every feature of the ECharts library. Remaining work belongs to analyst-workspace and does not block the accepted alpha.
+
+## Done
+
+- [x] Install ECharts 6.0.0 and provide the React host, lifecycle and chart-state foundation.
+- [x] Connect the ordinary Table/File journey to the existing Chart, Set Up and Customize editor.
+- [x] Render line, grouped column and stacked column charts in that journey.
+- [x] Render grouped and stacked horizontal bars.
+- [x] Render normalized columns and bars.
+- [x] Render ordinary, stacked and normalized area charts.
+- [x] Connect representative title, series, axis, legend, tooltip and theme edits for the accepted ordinary journey.
+- [x] Connect ordinary category/series selection, ordering, filtering, Sum/Avg and orientation changes.
+- [x] Apply owner-reviewed visual refinements, including line legends, gallery drawings and tab typography.
+
+## Open
+
+- [ ] Complete combination charts and per-series axis behavior.
+- [ ] Complete scatter/bubble, distribution and radial families.
+- [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
+- [ ] Complete standalone, AI-chart and theme-preview caller integration.
+- [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.
+- [ ] Complete remaining saved-state behavior, exports and caller-specific controls.
+- [ ] Verify the broader renderer inventory in the assembled application without hidden feature reductions.
+- [ ] Apply the shared analyst theme and instrument/time-linking contracts as those features are implemented.
+
+## Evidence and ownership
+
+The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) records accepted ordinary, horizontal, normalized and area journeys and the remaining UI-10 through UI-16 obligations. The [capability matrix](renderer-capability-matrix.md) records exact families and caller boundaries. These remain the detailed records behind this checklist.
+
+[Renderer roles](../README.md#renderer-roles) · [Perspective](perspective-status.md) · [Plotly](plotly-status.md) · [Roadmap](roadmap.md)

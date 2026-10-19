@@ -4,7 +4,9 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 **Next milestone: deploy the current prototype.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
-[![Candidate CI](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
+[![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
+
+[![Alpha channel](https://img.shields.io/badge/channel-alpha-orange)](docs/install.md) [![Development image tag](https://img.shields.io/badge/dev_images-latest-blue)](docs/install.md) [![Stable images](https://img.shields.io/badge/stable_images-planned-lightgrey)](docs/roadmap.md)
 
 [Install](docs/install.md) · [Documentation](docs/index.md) · [Roadmap](docs/roadmap.md) · [Delivery status](docs/prototype-delivery.md) · [Provider coverage](docs/provider-coverage.md) · [Breadth evidence](.kiro/breadth.toml)
 
@@ -48,16 +50,16 @@ The [Bloomberg-inspired visual reference](https://github.com/iconicvenom/bloombe
 
 | Component | Role and current boundary |
 | --- | --- |
-| Apache ECharts | Implemented chart engine for selected table-to-chart journeys. Full family and caller compatibility remains open. |
-| FINOS Perspective | Installed runtime, React host and isolated verification foundation. Pivot/explorer widget integration remains work for `analyst-workspace`. |
-| Plotly | Existing endpoint-chart renderer retained. |
+| Apache ECharts | Implemented chart engine for selected table-to-chart journeys. Full family and caller compatibility remains open. [Done / todo](docs/echarts-status.md) |
+| FINOS Perspective | Installed runtime, React host and isolated verification foundation. Pivot/explorer widget integration remains work for `analyst-workspace`. [Done / todo](docs/perspective-status.md) |
+| Plotly | Existing endpoint-chart renderer retained. [Done / todo](docs/plotly-status.md) |
 | Highcharts | Removed dependency. Legacy Highcharts configurations are not universally translated into ECharts. |
 
 ## Operate the prototype
 
 Development uses Windows/WSL Docker; deployment uses the same Compose topology on private Linux. The origin serves HTTP on `0.0.0.0:23003`; the owner manages Cloudflare Access and cloudflared for `qopenbb.example.com`. State uses relative bind directories, not Docker-managed data volumes.
 
-Dagger builds images only. Portable commands run verification and publication; GitHub Actions is the current runner, with Gitea portability retained. The intended installation pulls immutable images and runs Compose without compiling source on the server. **There is no accepted published release yet.** Use [delivery status](docs/prototype-delivery.md) for the remaining gates rather than treating the historical Compose proposal as an installation guide.
+Dagger builds images only. Portable commands run verification and publication; GitHub Actions is the current runner, with Gitea portability retained. Development installation pulls the prebuilt `latest` alpha images; later stable releases use pinned versions. Installation uses these images and runs Compose without compiling source on the server. **The current release is the development alpha.** Use [delivery status](docs/prototype-delivery.md) for the remaining gates rather than treating the historical Compose proposal as an installation guide.
 
 Credentials belong in ignored `.env`; [.env.sample](.env.sample) contains public placeholders. Jupyter is managed separately.
 

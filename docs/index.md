@@ -12,7 +12,7 @@ Deploy the prototype next, then extend its provider coverage and analyst workflo
 | See the sequence and owning specifications | [Roadmap](roadmap.md) |
 | Build, verify and prepare the prototype for installation | [Prototype delivery](prototype-delivery.md) |
 | Map FMP, FRED and Yahoo coverage to research needs | [Provider coverage](provider-coverage.md) |
-| Check renderer responsibilities, including Perspective integration | [Roadmap renderer scope](roadmap.md#subsequent-workstreams) |
+| Check renderer responsibilities and done/todo lists | [ECharts](echarts-status.md), [FINOS Perspective](perspective-status.md) and [Plotly](plotly-status.md) |
 | Check which capabilities have actual evidence | [Breadth map](../.kiro/breadth.toml) and [reviewed artifacts](../artifacts/reviewed/README.md) |
 | Set up development or contribute | [Development](development.md) and [contribution guide](contributing.md) |
 | Keep verification focused and artifacts manageable | [Verification](verification.md) and [artifact retention](artifact-retention.md) |
@@ -21,7 +21,7 @@ Deploy the prototype next, then extend its provider coverage and analyst workflo
 
 The prototype combines Full Workspace and the self-hosted OpenBB data API in [root Compose](../compose.yaml). It serves HTTP on port 23003 behind owner-managed Cloudflare Access and cloudflared, with relative bind-mounted state. Dagger builds images; portable commands handle verification and publication. Installation will pull immutable images.
 
-Compose and build tooling exist. Candidate-image smoke, registry publication and installation acceptance remain open; there is no accepted published release yet. [Prototype delivery](prototype-delivery.md) tracks those gates. The older Compose proposal and historical UI plans are reference material, not current installation instructions.
+Compose and build tooling exist. Candidate-image smoke, registry publication and installation acceptance remain open; the development alpha is the accepted release; later stable releases will use pinned versions. [Prototype delivery](prototype-delivery.md) tracks those gates. The older Compose proposal and historical UI plans are reference material, not current installation instructions.
 
 Broader FMP/FRED/Yahoo coverage belongs to market-data-integrations. Reusable widgets, linked research context, commands, theme and renderer completion belong to analyst-workspace. AI, Excel and custom sources have separate specs. Dashboard persistence acceptance is part of the analyst spec; infrastructure recovery verification is deferred. See [spec ownership](../.kiro/spec-ownership.toml) for transferred obligations.
 
