@@ -14,6 +14,8 @@ Match the observed compact right-dock content, three thumbnail columns, group he
 
 Keep the selected value in the caller. Preserve scroll when selection changes without remounting the gallery. Use ordinary keyboard-accessible buttons and visible focus. Do not introduce a separate toolbar or a new product navigation surface.
 
+Owner-authorized refinement, 2026-10-19: the application temporarily unmounts the editor while a supported chart family is reprojected. Keep its gallery scroll position in a transient caller ref and restore it when the gallery becomes visible. Hidden scroll events must not replace that position with zero. Do not retain stale editor bindings or write navigation state into saved financial settings. Refine the owned area/scatter thumbnail drawings against the retained original views; keep group order, buttons and theme structure. Live-to-pending renderer transitions remain outside this bounded repair.
+
 ## Preview and verification
 
 Use the existing Storybook/component development entry to render the real production component with the documented inventory in dark/light themes. Selection must update the preview's selected value through the same callback contract. Clearly label this as a gallery component preview outside the product, not a working full chart editor. Set Up, Customize, chart rendering and persistence are separate integration tasks; do not add fake tabs or inert controls to imply they work.

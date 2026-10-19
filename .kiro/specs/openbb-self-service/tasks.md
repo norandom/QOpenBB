@@ -19,7 +19,7 @@ The owner requested a local image check while resuming UI work on 2026-10-19. Th
 
 ## Gallery refinement before local image inspection
 
-- [ ] 2.92 Preserve gallery navigation and refine miniature drawings
+- [x] 2.92 Preserve gallery navigation and refine miniature drawings
   - Owner approved this refinement on 2026-10-19. Follow the existing [gallery design](chart-gallery-design.md), including its transient scroll amendment. Controller owns caller/dock/gallery navigation; Sol owns thumbnail drawings and focused tests; independent Sol reviews the final diff. No shared writable paths between lanes.
   - Done when supported-family changes, tab navigation and theme updates preserve gallery scroll; hidden mounts cannot overwrite it; area/scatter miniatures are compared in qView; existing order, controls and selection remain. Reuse the existing browser helpers and focused unit suite. Whole modified production files must pass 400 physical/300 logical/50 per-function caps.
   - _Boundary: Gallery appearance and transient navigation only; no new storage, flags or renderer admission_

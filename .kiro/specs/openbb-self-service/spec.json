@@ -822,6 +822,13 @@
       "scope": "Unreleased identified Workspace and data images; packaged frontend accessibility only",
       "prerequisite": "Accepted area integration 2.90",
       "release_gates_unchanged": true
+    },
+    "gallery_refinement": {
+      "task": "2.92",
+      "status": "accepted",
+      "workspace_revision": "54970e91c20737acaf8e297fab39abb3c18e4d0c",
+      "review": "artifacts/reviewed/live-editor/gallery-refinement/review.md",
+      "scope": "Gallery only; left-hand series excluded from visual comparison"
     }
   }
 }

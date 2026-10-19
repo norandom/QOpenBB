@@ -149,8 +149,8 @@
     "live-editor"
   ],
   "sourcepins": {
-    "root_at_sync": "d63fd94474e0bc7aad172efcf5464706cb7555d8",
-    "workspace_at_sync": "bf7cb8408631cdcf3c8cce6dc042fb6bc0963018",
+    "root_at_sync": "adc66e9b136ef25a5f71f1c389a408fb10012caf",
+    "workspace_at_sync": "54970e91c20737acaf8e297fab39abb3c18e4d0c",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
@@ -31610,6 +31610,38 @@
       "publishedSHA256": "d755ad2e7299d04ea7e13f037b496960a2eb4803ab7b770679f8828e513af005",
       "bytes": 208,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/gallery-refinement/review.md",
+      "sourceSHA256": "f71b83f8b9fe85682eb73fc0aeb48d658b11b2f25f6ef50d7c9e5db9cc8cfb7f",
+      "publishedpath": "artifacts/reviewed/live-editor/gallery-refinement/review.md",
+      "publishedSHA256": "f71b83f8b9fe85682eb73fc0aeb48d658b11b2f25f6ef50d7c9e5db9cc8cfb7f",
+      "bytes": 3095,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/runtime/gallery-final/browser-output/gallery-navigation-gallery-9001b-across-chart-family-changes/gallery-area-dark.png",
+      "sourceSHA256": "822f0b75033dda2bef3ebb6f8f121606af9ff091a290572f4897c33a43d896ca",
+      "publishedpath": "artifacts/reviewed/live-editor/runtime/gallery-final/browser-output/gallery-navigation-gallery-9001b-across-chart-family-changes/gallery-area-dark.png",
+      "publishedSHA256": "822f0b75033dda2bef3ebb6f8f121606af9ff091a290572f4897c33a43d896ca",
+      "bytes": 22796,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/runtime/gallery-final/browser-output/gallery-navigation-gallery-9001b-across-chart-family-changes/gallery-area-light.png",
+      "sourceSHA256": "e31321e6cbaa1b5e33a6a996b44c6d56bb56088dbb50bac69ebff2c316143714",
+      "publishedpath": "artifacts/reviewed/live-editor/runtime/gallery-final/browser-output/gallery-navigation-gallery-9001b-across-chart-family-changes/gallery-area-light.png",
+      "publishedSHA256": "e31321e6cbaa1b5e33a6a996b44c6d56bb56088dbb50bac69ebff2c316143714",
+      "bytes": 22231,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/live-editor/gallery-refinement/publication.json",
+      "sourceSHA256": "ad1b27c12214ad609e620fcc6bfd650bfdfc53fec3e70f98a489b1851a5a5217",
+      "publishedpath": "artifacts/reviewed/live-editor/gallery-refinement/publication.json",
+      "publishedSHA256": "ad1b27c12214ad609e620fcc6bfd650bfdfc53fec3e70f98a489b1851a5a5217",
+      "bytes": 711,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32323,7 +32355,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 165958355,
+  "total_payload_bytes": 166007188,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
