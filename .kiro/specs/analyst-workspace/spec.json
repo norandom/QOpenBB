@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-20T07:48:32Z",
+  "updated_at": "2026-10-20T09:00:52Z",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -24,8 +24,19 @@
     "contract": "chart-port-milestone.md",
     "authorization": "Owner requested autonomous chart port on 2026-10-20; completed-feature releases require real FMP acceptance.",
     "phase": "bounded-implementation",
-    "design_review": "C1 design and code independently approved. Mapper, session, appearance and navigator source tasks independently approved; production join frozen in combo-production-join.md.",
-    "completed_tasks": ["C1", "C2a", "C2b", "C2", "C3a", "C3b", "C4a"],
+    "design_review": "C1, mapper, session, appearance, navigator and production editor/caller join independently approved. Application acceptance remains open.",
+    "completed_tasks": [
+      "C1",
+      "C2a",
+      "C2b",
+      "C2",
+      "C3a",
+      "C3b",
+      "C4a",
+      "C3c",
+      "C3",
+      "C4b"
+    ],
     "feature_accepted": false
   }
 }

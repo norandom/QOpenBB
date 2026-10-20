@@ -9,6 +9,16 @@ import textwrap
 import pytest
 
 from qopenbb_ci import quality_cli
+from qopenbb_ci.source_filter import ALLOW, source_scope
+
+
+@pytest.mark.parametrize("source", ["workspace", "data_api"])
+def test_repository_build_policy_matches_locked_source_revision(source):
+    root = Path(__file__).resolve().parents[2]
+    policy = json.loads((root / "contracts/sources.json").read_text())
+    lock = json.loads((root / "sources.lock.json").read_text())
+
+    assert source_scope(source, lock[source]["revision"], policy, lock) == ALLOW[source]
 
 
 @pytest.fixture

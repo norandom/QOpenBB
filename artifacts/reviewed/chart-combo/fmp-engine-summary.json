@@ -1,0 +1,36 @@
+{
+  "endpoint": "https://financialmodelingprep.com/stable/income-statement",
+  "parameters": {
+    "symbol": "AAPL",
+    "period": "annual",
+    "limit": "5"
+  },
+  "retrieved_at_utc": "2026-10-20T07:45:21.891216+00:00",
+  "raw_sha256": "9e0dae1fb5c1d067473f7f9749cb4969afc6d767ebaa4358376215ff4ea42648",
+  "rows": 5,
+  "units": {
+    "revenue": "USD",
+    "netIncome": "USD",
+    "eps": "USD/share"
+  },
+  "scaling": "none",
+  "checks": {
+    "hash": 1,
+    "csvRows": 5,
+    "seriesValues": 15,
+    "groupedCategoryAlignment": 5,
+    "tooltipRows": 5,
+    "visibleDateLabels": 5,
+    "independentAxes": 1,
+    "finiteSvg": 1
+  },
+  "renderer": "ECharts SVG SSR",
+  "fontMeasurement": "mock text length times 6; no visual parity claim",
+  "limitations": [
+    "engine only",
+    "no application/widget/provider integration",
+    "no save/reopen",
+    "no visual parity",
+    "no feature completion"
+  ]
+}

@@ -18,7 +18,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete combination charts and per-series axis behavior.
+- [ ] Complete combination charts and per-series axis behavior. Source/editor integration is reviewed; image/browser and real-FMP application acceptance remain open in the [active milestone](../.kiro/specs/analyst-workspace/chart-port-milestone.md).
 - [ ] Complete scatter/bubble, distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.

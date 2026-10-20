@@ -31761,12 +31761,20 @@
       "transform": "exact-byte-copy"
     },
     {
-      "bytes": 10033,
+      "bytes": 13499,
       "transform": "exact-byte-copy",
       "publishedpath": "artifacts/reviewed/chart-combo/verification.md",
-      "sourceSHA256": "85eb61e151631a860764276bfb69f32f3b99dfbd75070e5a26118880f9387141",
-      "publishedSHA256": "85eb61e151631a860764276bfb69f32f3b99dfbd75070e5a26118880f9387141",
+      "sourceSHA256": "7bacd7a0db206bc9a69b5ed768816e4fd656554603de097a33392cdf692663a5",
+      "publishedSHA256": "7bacd7a0db206bc9a69b5ed768816e4fd656554603de097a33392cdf692663a5",
       "sourcepath": "artifacts/chart-combo/verification.md"
+    },
+    {
+      "sourcepath": "artifacts/chart-combo/fmp-engine/summary.json",
+      "sourceSHA256": "33031642bd3ed64f0f963ef978c4a77a928797b7e472f30fb6088211e18f66f6",
+      "publishedpath": "artifacts/reviewed/chart-combo/fmp-engine-summary.json",
+      "publishedSHA256": "33031642bd3ed64f0f963ef978c4a77a928797b7e472f30fb6088211e18f66f6",
+      "bytes": 905,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -32480,7 +32488,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 166137900.0,
+  "total_payload_bytes": 166142271,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

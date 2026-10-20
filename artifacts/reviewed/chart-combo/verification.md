@@ -1,8 +1,8 @@
 # Combination chart port verification
 
-C1, C2, C3a, C3b and C4a are accepted assignment, mixed-renderer, appearance/session and navigator components. Application/editor integration and real-FMP acceptance remain open. No image release follows these source tasks.
+C1, C2, C3 and the C4a/C4b source integration are accepted. Combination charts now connect to the existing Table/File editor in source. Image/browser acceptance and real-FMP application acceptance remain open. No alpha has been published for this milestone.
 
-Workspace source: `99e3f8637960d4981695e73bb8fedd974215c113`.
+C1 Workspace source: `99e3f8637960d4981695e73bb8fedd974215c113`.
 
 Independent Sol review inspected both complete files against the retained original ComboChartModel and approved with no blocking findings. The reviewer reran 21 focused Vitest tests and strict scoped TypeScript checking successfully. Coverage includes builtin splits, custom ordering, first duplicate wins, missing/unsupported assignments, primary-only coercion, immutable state and malformed input.
 
@@ -91,3 +91,27 @@ Run `comboAppearance.test.ts`, `comboEditorTransactions.test.ts` and `comboSessi
 The ten-file portable complexity gate passed: maxima 379 physical lines/file, 136 logical units/file and 24 units/function. An isolated committed baseline and the final ten-file candidate again produced identical session TypeScript diagnostics, both exiting 2. The baseline source was `11515eee`; the unrelated navigator changes were excluded from that comparison. This is baseline-relative evidence, not a passing project compile.
 
 Appearance remains independently resolved by geometry. Combo setup defers cross-column unit comparison to actual numeric axes while retaining validation and aggregation provenance. Existing ordinary defaults remain unchanged. Actual editor routing and source-refresh hooks are not accepted by this task.
+
+## Retrieved FMP data: engine check
+
+An independent Astra reviewer reran the ignored real-data probe successfully: one test passed with no skips. It used the existing five annual AAPL income-statement records, verified their provenance hash and CSV headers, and compared all 15 unscaled revenue/net-income/EPS values with actual ECharts series output. Checks also covered date labels, grouped-column alignment, raw tooltips, finite SVG and independent USD versus USD/share axes.
+
+The exact command and probe remain local under `artifacts/chart-combo/fmp-engine/`. No new provider request was made. The initial probe assumed positional CSV fields; a header-based correction and the original failure are retained locally. Font measurements are mocked, so this proves neither visual parity nor Workspace integration. Raw data and rendered financial values are excluded from publication. The public sanitized summary contains provenance, units and check counts only.
+
+## C3c/C4b: existing editor and caller integration
+
+Workspace source: `74254b6dc037277449d3a89c69d265aa61412eec`.
+
+Independent Astra review approved the 24-file production join and reran 51 application tests plus 24 compatibility tests. Actual Table/File components now expose combo assignments in Set Up and geometry-specific Customize controls. Tests cover live custom-cache recovery, restored builtins, external replacement and stale edits, mixed-unit setup/count, concrete-axis refresh defaults and unchanged full navigator overview during main legend filtering.
+
+Run the five chart-application suites `callerRoute`, `comboEditorControls`, `comboProductionJoin`, `applicationSession` and `applicationSessionTransactions` using their existing Vitest configuration. The independently repeated compatibility suites are recorded in local `review-contracts.log`. The new `tests/e2e/live-chart/combo-charts.spec.ts` is maintained but unexecuted.
+
+The reviewer identified and verified fixes for Custom Combo gallery reachability, pending-family reconciliation, restored-builtin editing and stale external-assignment caches. A restored-builtin failure was captured before its correction. A separate ordinary-line test mismatch was reproduced on clean baseline `ed5d8de`; its stale expectation was corrected to retain both coordinate and raw-value assertions.
+
+The committed source passed the explicit 24-file portable scope/complexity gate. Maximum measurements are 383 physical lines/file, 136 logical units/file and 39 units/function. An isolated baseline comparison added no TypeScript diagnostic lines and removed an existing chart-family registration error. Both runs still exit 2 because unrelated project diagnostics remain.
+
+This accepts source integration and component behavior. It does not establish browser console/network cleanliness, actual FMP dashboard behavior, image rendering, save/reopen or export in a running application.
+
+## Candidate source pin repair
+
+Source staging correctly rejected the stale Workspace pin in `contracts/sources.json`. The policy now matches the source lock at `74254b6`; source allowlists and the data API revision are unchanged. A repository-level regression exercises the existing `source_scope` validation for both sources. The initial run failed on the Workspace mismatch (1 failed, 9 passed); the repair and independent review each passed all 10 tests. This accepts source coherence, not image or runtime acceptance.

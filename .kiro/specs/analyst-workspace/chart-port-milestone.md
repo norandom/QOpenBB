@@ -27,10 +27,10 @@ Reference: original Workspace 38dffc33389aca0e4a87e0e88d42f7067aa220df and retai
 - [x] C2. Implement mixed-series geometry and distinct numeric-axis mapping using existing ECharts/area helpers, following [the frozen mapper contract](combo-mapper-design.md). Keep original observations and financial units separate from presentation.
 - [x] C2a. Implement admission, axis planning and shared coordinate/domain helpers within the mapper contract's exclusive files; review and commit before C2b.
 - [x] C2b. Assemble the inactive mixed mapper and extend the existing area helper; independently verify actual ECharts geometry before C3/C4 activation.
-- [ ] C3. Connect per-series editor choices and saved state through existing session/widget ownership; preserve unknown/inactive settings. Freeze editor/mapper interfaces before parallel work.
+- [x] C3. Connect per-series editor choices and saved state through existing session/widget ownership; preserve unknown/inactive settings. Freeze editor/mapper interfaces before parallel work.
 - [x] C3a. Implement assignment transactions and transient custom cache within [the editor contract](combo-editor-design.md). This C1-dependent lane may run alongside C2a/C2b: its application/caller ownership is disjoint from mapper files; no activation or shared appearance edits are allowed. Serialize reviews, verification using shared files, and commits.
 - [x] C3b. Resolve type-wide appearance and editor selection after the assignment transaction is accepted.
-- [ ] C3c/C4b. Connect controls and production routing as one [cohesive join](combo-production-join.md), after the state/appearance contracts are accepted.
+- [x] C3c/C4b. Connect controls and production routing as one [cohesive join](combo-production-join.md), after the state/appearance contracts are accepted. Source/component acceptance only; the real application gate below remains open.
 - [ ] C4. Join caller, navigator, refresh, export and save/reopen behavior; verify actual FMP data in an isolated application. No milestone acceptance based only on mocked APIs or synthetic rows.
 - [x] C4a. Extend navigator axis/series cloning independently of C3b, using the contract below. Ownership is confined to `echarts/cartesianNavigator.ts`, new `cartesianNavigatorOverview.ts` and `tests/unit/chart-compatibility/cartesian.navigator.test.ts`. No application activation.
 - [ ] C5. Independent feature review, update breadth/checklists, sync concise evidence, commit/push the finished milestone and dispatch the alpha pipeline once.
