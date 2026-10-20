@@ -152,7 +152,8 @@
     "prototype-delivery",
     "alpha-release",
     "chart-combo",
-    "chart-xy-bubble-correction"
+    "chart-xy-bubble-correction",
+    "chart-xy-label-refinement"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -31818,22 +31819,6 @@
       "transform": "exact-byte-copy"
     },
     {
-      "sourcepath": "artifacts/chart-xy/spread-review/browser-final/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
-      "sourceSHA256": "3ef96c6befab823170b9ebf3c56389e5d3c32d8137b70b9a571fbd6feabc5255",
-      "publishedpath": "artifacts/reviewed/chart-samples/aapl-annual-bubble.png",
-      "publishedSHA256": "3ef96c6befab823170b9ebf3c56389e5d3c32d8137b70b9a571fbd6feabc5255",
-      "bytes": 22234,
-      "transform": "exact-byte-copy; owner-authorized selected real-FMP chart sample"
-    },
-    {
-      "sourcepath": "artifacts/chart-samples/provenance.json",
-      "sourceSHA256": "dcabd142906c213dfa61ee2aefef9545ea7ecd47844bd330c3412ac384073da6",
-      "publishedpath": "artifacts/reviewed/chart-samples/provenance.json",
-      "publishedSHA256": "dcabd142906c213dfa61ee2aefef9545ea7ecd47844bd330c3412ac384073da6",
-      "bytes": 3748,
-      "transform": "exact-byte-copy"
-    },
-    {
       "sourcepath": "artifacts/chart-xy/spread-review/reference/small/browser-output/reference-original-bubble-reference/original-mini-light-small.png",
       "sourceSHA256": "823a2a62810a38041bd784e9655783262b97250dd5d7b8185f2be337eaec481c",
       "publishedpath": "artifacts/reviewed/chart-xy/bubble-original.png",
@@ -31847,6 +31832,38 @@
       "publishedpath": "artifacts/reviewed/chart-xy/bubble-correction.md",
       "publishedSHA256": "e73604f7fdafccab141f087545462b0c4f9eecd3dd8039c7c4a16dd2dfed0862",
       "bytes": 5360,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-xy/label-review/browser-refined/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
+      "sourceSHA256": "43f9f27409fd3d94afb2cd64c2a1749bdb5363c9854b78d439e197f68a699fe6",
+      "publishedpath": "artifacts/reviewed/chart-samples/aapl-annual-bubble.png",
+      "publishedSHA256": "43f9f27409fd3d94afb2cd64c2a1749bdb5363c9854b78d439e197f68a699fe6",
+      "bytes": 16003,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-samples/provenance.json",
+      "sourceSHA256": "ad9f2f8acfaf39f1f6ddf308184d7eaeffe10ccc30d2b9490f16cfd6fca81918",
+      "publishedpath": "artifacts/reviewed/chart-samples/provenance.json",
+      "publishedSHA256": "ad9f2f8acfaf39f1f6ddf308184d7eaeffe10ccc30d2b9490f16cfd6fca81918",
+      "bytes": 3762,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-xy/label-review/reference/matched/browser-output/reference-original-bubble-reference/original-dark-matched.png",
+      "sourceSHA256": "cd23a2ab1ac444c2a66be3cd76780aa74c3a63c99e2c3e479f4f0213e1d79999",
+      "publishedpath": "artifacts/reviewed/chart-xy/bubble-label-original.png",
+      "publishedSHA256": "cd23a2ab1ac444c2a66be3cd76780aa74c3a63c99e2c3e479f4f0213e1d79999",
+      "bytes": 11061,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-xy/label-review/verification.md",
+      "sourceSHA256": "668baa30cdd115c612f116b5eaf687e05110e02a852c5b03b89994b4f23a26be",
+      "publishedpath": "artifacts/reviewed/chart-xy/bubble-label-refinement.md",
+      "publishedSHA256": "668baa30cdd115c612f116b5eaf687e05110e02a852c5b03b89994b4f23a26be",
+      "bytes": 4031,
       "transform": "exact-byte-copy"
     }
   ],

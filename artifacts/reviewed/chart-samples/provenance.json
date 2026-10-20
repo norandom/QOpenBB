@@ -15,16 +15,16 @@
       "sanitization": "None; existing chart-only PNG copied byte-for-byte after visual inspection."
     },
     {
-      "source_path": "artifacts/chart-xy/spread-review/browser-final/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
+      "source_path": "artifacts/chart-xy/label-review/browser-refined/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
       "name": "aapl-annual-bubble.png",
       "milestone": "xy-chart-milestone.md",
       "evidence": "chart-xy",
-      "caption": "AAPL FY2021-FY2025 captured FMP annual income statements, retrieved 2026-10-20 (stable income-statement, annual, limit 5). Five raw observations, no aggregation or rescaling. X revenue and Y net income are USD; B formats billions. Bubble diameter maps linearly from EPS (USD/share), saved minimum 10 / maximum 40 pixels. Rounded axes and clipped 18-pixel miniature verified in Workspace 72bdc11.",
-      "image": "sha256:02a6530a5a0a41a9450ea1acf19f3211c2a43b07a88e55f21c7972e252785ae4",
+      "caption": "AAPL FY2021-FY2025 captured FMP annual income statements, retrieved 2026-10-20 (stable income-statement, annual, limit 5). Five raw observations, no aggregation or rescaling. X revenue and Y net income are USD; B formats billions. Bubble diameter maps linearly from EPS (USD/share), saved minimum 10 / maximum 40 pixels. Original-like numeric labels and main/miniature clipping verified in Workspace 9185c5f.",
+      "image": "sha256:4c7f0907ed4df0874f0053fff25d55b29317c162880749410995a2d2a18e7ecd",
       "published_path": "artifacts/reviewed/chart-samples/aapl-annual-bubble.png",
-      "source_sha256": "3ef96c6befab823170b9ebf3c56389e5d3c32d8137b70b9a571fbd6feabc5255",
-      "published_sha256": "3ef96c6befab823170b9ebf3c56389e5d3c32d8137b70b9a571fbd6feabc5255",
-      "bytes": 22234,
+      "source_sha256": "43f9f27409fd3d94afb2cd64c2a1749bdb5363c9854b78d439e197f68a699fe6",
+      "published_sha256": "43f9f27409fd3d94afb2cd64c2a1749bdb5363c9854b78d439e197f68a699fe6",
+      "bytes": 16003,
       "sanitization": "None; existing chart-only PNG copied byte-for-byte after visual inspection."
     },
     {

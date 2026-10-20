@@ -53,7 +53,8 @@ These are completion criteria for the remaining port. Earlier checked source/fun
 
 - [x] Repair bubble endpoint spacing and miniature clipping against the original application; replace the real-FMP sample after verification.
 - [x] Publish the corrected image milestone.
-- [ ] Match original axis labels more closely and resolve slight main-marker edge overlap; requested after the owner comparison on 2026-10-20.
+- [x] Match original axis labels more closely and resolve slight main-marker edge overlap; independently verified in small/wide FMP views after the owner request.
+- [ ] Publish the label-refinement image milestone.
 - [x] Resolve paired/unpaired X/Y/size identities with source-compatible ordering and incomplete-group behavior; independently reviewed focused tests and complexity checks passed.
 - [x] Implement the inactive numeric mapper, with independent review and actual ECharts geometry/tooltip checks.
 - [x] Connect and source-review the existing editor/application, including original empty-domain behavior for excluded one-sided bounds.

@@ -110,7 +110,7 @@ requirements = ["analyst-workspace/xy-chart-milestone.md:Acceptance"]
 planned_checks = ["numeric-xy-rendering", "bubble-size-semantics", "paired-editor", "real-fmp-application", "save-reopen-export", "navigator-theme-refresh"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/xy-charts.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/xy-fmp.spec.ts"]
 status = "unverified"
-evidence = ["X6 spread and miniature correction independently verified at Workspace 72bdc11, image 02a6530a: FMP and Scatter application journeys passed. X7 axis-label density/cropping and slight main-marker edge overlap remain open; full visual parity remains unverified. See artifacts/reviewed/chart-xy/bubble-correction.md.", "Independent X4 review accepted image e7cb9923 (Workspace e64ce8c): three XY application journeys, including captured AAPL annual FMP coordinates and EPS sizes, plus ordinary and combination regressions passed with no retries/skips. Test-only revision 17a35f3 adds Scatter coverage and fixes the ordinary theme observer. X5 published alpha-39432626385-1; both services verified anonymously by digest, release tag and latest. See artifacts/reviewed/chart-xy/verification.md."]
+evidence = ["X7 closer labels and main/mini clipping independently verified on image 4c7f0907, production source 9185c5f; release source 8aeecf4 adds only the reviewed browser synchronization fix. Small/wide FMP and Scatter journeys pass. Legend icon and minor spacing still differ; full pixel parity remains unverified. See artifacts/reviewed/chart-xy/bubble-label-refinement.md.", "Independent X4 review accepted image e7cb9923 (Workspace e64ce8c): three XY application journeys, including captured AAPL annual FMP coordinates and EPS sizes, plus ordinary and combination regressions passed with no retries/skips. Test-only revision 17a35f3 adds Scatter coverage and fixes the ordinary theme observer. X5 published alpha-39432626385-1; both services verified anonymously by digest, release tag and latest. See artifacts/reviewed/chart-xy/verification.md."]
 
 [[capabilities]]
 id = "bubble-range-and-miniature-clipping"
@@ -119,6 +119,14 @@ planned_checks = ["rounded-xy-bounds", "miniature-painted-containment", "fmp-sav
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.clip.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.navigator.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/xy-fmp.spec.ts"]
 status = "passed"
 evidence = ["Independent source review and packaged image 02a6530a from Workspace 72bdc11: rounded X360-420B/Y90-120B and actual 18px miniature clip pass with unchanged captured FMP observations through lifecycle/export. Published alpha-39470157459-1; six anonymous image pulls match the manifest. See artifacts/reviewed/chart-xy/bubble-correction.md."]
+
+[[capabilities]]
+id = "bubble-label-refinement"
+requirements = ["analyst-workspace/xy-chart-milestone.md:X7"]
+planned_checks = ["measured-label-density", "matched-original-small-wide", "main-marker-clipping", "fmp-save-reopen-export"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.ticks.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.navigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.clip.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/xy-fmp.spec.ts"]
+status = "passed"
+evidence = ["Independent source and packaged review accepted image 4c7f0907 / production 9185c5f: captured-FMP journey passed in 31.4s, Scatter in 24.2s, zero skips/retries. Small/wide labels, raw miniature formatting, plot clipping and lifecycle/export verified; explicit bounds and financial observations retained. Hosted publication pending. See artifacts/reviewed/chart-xy/bubble-label-refinement.md."]
 
 [[capabilities]]
 id = "combination-chart-port"

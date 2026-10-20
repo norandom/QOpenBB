@@ -34,7 +34,9 @@ See the [ECharts checklist](docs/echarts-status.md) for remaining chart families
 Published: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
 
 - [x] Correct the reported bubble spacing and miniature overflow, then replace its FMP sample after verification.
-- [x] Publish the corrected image milestone; remaining axis-label polish stays open.
+- [x] Publish the bubble-spacing and miniature-clipping correction.
+- [x] Match original label density and clip main markers; verify small/wide FMP views and save/reopen/export.
+- [ ] Publish the label-refinement image milestone.
 - [x] Implement and review the inactive X/Y/size field-assignment contract.
 - [x] Implement and review the inactive numeric renderer, including actual ECharts geometry checks.
 - [x] Connect and source-review rendering, editor controls and saved XY settings.
