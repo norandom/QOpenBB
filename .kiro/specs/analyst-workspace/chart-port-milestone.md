@@ -28,7 +28,7 @@ Reference: original Workspace 38dffc33389aca0e4a87e0e88d42f7067aa220df and retai
 - [x] C2a. Implement admission, axis planning and shared coordinate/domain helpers within the mapper contract's exclusive files; review and commit before C2b.
 - [ ] C2b. Assemble the inactive mixed mapper and extend the existing area helper; independently verify actual ECharts geometry before C3/C4 activation.
 - [ ] C3. Connect per-series editor choices and saved state through existing session/widget ownership; preserve unknown/inactive settings. Freeze editor/mapper interfaces before parallel work.
-- [ ] C3a. Implement assignment transactions and transient custom cache within [the editor contract](combo-editor-design.md). This C1-dependent lane may run alongside C2a/C2b: its application/caller ownership is disjoint from mapper files; no activation or shared appearance edits are allowed. Serialize reviews, verification using shared files, and commits.
+- [x] C3a. Implement assignment transactions and transient custom cache within [the editor contract](combo-editor-design.md). This C1-dependent lane may run alongside C2a/C2b: its application/caller ownership is disjoint from mapper files; no activation or shared appearance edits are allowed. Serialize reviews, verification using shared files, and commits.
 - [ ] C3b. Resolve type-wide appearance and editor selection after the assignment transaction is accepted.
 - [ ] C3c. Compose the original Set Up and Customize controls after the state/appearance contracts are accepted.
 - [ ] C4. Join caller, navigator, refresh, export and save/reopen behavior; verify actual FMP data in an isolated application. No milestone acceptance based only on mocked APIs or synthetic rows.

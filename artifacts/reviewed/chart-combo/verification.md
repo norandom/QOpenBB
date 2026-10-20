@@ -1,6 +1,6 @@
 # Combination chart port verification
 
-C1 and C2a are accepted as inactive assignment and axis-planning components. Combination-chart rendering, editor integration and real-FMP application acceptance remain open. No image release follows these helper tasks.
+C1, C2a and C3a are accepted as inactive assignment, axis-planning and session components. Combination-chart rendering, editor integration and real-FMP application acceptance remain open. No image release follows these helper tasks.
 
 Workspace source: `99e3f8637960d4981695e73bb8fedd974215c113`.
 
@@ -34,3 +34,22 @@ Coverage includes declared units per axis, separate same-unit secondary axes, al
 The portable complexity gate passed with explicit C2a source scope. Production physical/logical/max-function measurements are: types 74/42/no functions, admission 302/131/33 and axes 152/83/24. Scoped strict checking reports only the existing `typography.ts:1` unused directive; this is not a passing whole-project typecheck. Full-project attempts also encounter existing project-reference/compiler configuration errors.
 
 C2a does not assemble mixed series or connect the application. Nonfinite derived geometry throws internally; the C2b public mapper must translate it into diagnostics without partial options. The independently accepted C1 root commit `d60835a` also passed the portable GitHub checks in run 39389836206; image building and alpha publication were skipped as intended.
+
+## C3a: session transactions
+
+Workspace source: `5d74f94bb4423a19891a19b61404e221e0f3b785`.
+
+Independent Sol review approved the inactive assignment/family transactions and reran six combo tests plus 22 existing ordinary-session tests. The transactions use the existing local session owner, rehydrate latest storage, reject stale or removed targets, retain live custom assignments locally and serialize current assignments only. Unknown model fields remain intact. No hook, gallery or editor routing was added.
+
+The portable complexity gate passed for all six touched production modules. Maximum measurements were 171 physical lines/file, 117 logical units/file and 19 units/function.
+
+An isolated checkout of the preceding committed Workspace source and the same checkout with only these six source changes produced identical diagnostics under `tests/unit/chart-application/session.tsconfig.json`: both exited 2, with no added or removed diagnostic lines. This supports absence of new compiler diagnostics in that comparison; it does not establish passing project compilation. Raw logs, the exact comparison script and temporary checkout identity remain under ignored `artifacts/chart-combo/c3a/`.
+
+The focused commands, from `terminalpro`, are:
+
+```sh
+node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/vitest.config.mjs tests/unit/chart-compatibility/comboSessionAssignments.test.ts
+node node_modules/vitest/vitest.mjs run --config tests/unit/chart-application/vitest.config.mjs tests/unit/chart-application/applicationSession.test.tsx tests/unit/chart-application/applicationSessionTransactions.test.ts
+```
+
+Initial RED was a missing-module failure, not assertion execution.
