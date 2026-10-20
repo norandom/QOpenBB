@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       build_images:
-        description: Build candidate images (does not publish or promote)
+        description: Build and publish a completed alpha milestone (main only)
         type: boolean
         default: true
 permissions:
@@ -55,7 +55,7 @@ jobs:
       - name: Focused portable checks
         run: bash pipeline/ci.sh check
       - name: Install pinned Dagger CLI
-        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.build_images)
+        if: github.event_name == 'workflow_dispatch' && inputs.build_images
         shell: bash
         run: |
           set -euo pipefail
@@ -64,18 +64,18 @@ jobs:
           tar -xzf "$RUNNER_TEMP/dagger.tar.gz" -C "$RUNNER_TEMP/qopenbb-tools" dagger
           echo "$RUNNER_TEMP/qopenbb-tools" >> "$GITHUB_PATH"
       - name: Build candidate images through Dagger
-        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.build_images)
+        if: github.event_name == 'workflow_dispatch' && inputs.build_images
         run: bash pipeline/ci.sh build --output artifacts/ci-candidate --release-version alpha-${{ github.run_id }}-${{ github.run_attempt }}
       # Alpha publication runs separately with write permissions, never for PRs.
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        if: always() && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.build_images))
+        if: always() && (github.event_name == 'workflow_dispatch' && inputs.build_images)
         with:
           name: candidate-reports
           path: artifacts/ci-candidate/**/*.json
           if-no-files-found: warn
       - name: Retain built image archives
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        if: success() && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.build_images))
+        if: success() && (github.event_name == 'workflow_dispatch' && inputs.build_images)
         with:
           name: candidate-images
           path: artifacts/ci-candidate/*/image.tar
@@ -84,7 +84,7 @@ jobs:
           if-no-files-found: error
   publish-alpha:
     needs: candidate
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.build_images))
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' && inputs.build_images)
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     permissions:

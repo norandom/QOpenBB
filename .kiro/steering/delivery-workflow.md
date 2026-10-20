@@ -17,3 +17,13 @@ The roadmap owns sequencing; the spec ownership map owns handover; the breadth m
 ## Development alpha publication amendment
 
 Owner direction on 2026-10-19: ship the current development alpha as prebuilt `latest` images and create a tagged GitHub prerelease. Stable releases later use pinned versions. For this alpha, successful source checks, identified builds and verified registry identities permit publication; remaining browser, financial, renderer and persistence acceptance stays open rather than being relabeled complete. The release manifest retains exact image digests even though development Compose defaults to `latest`. PRs never publish. This amendment supersedes the earlier immutable-only development-install and whole-prototype publication sequencing above.
+
+## Completed-feature cadence and real-data acceptance
+
+Owner direction, 2026-10-20: normal pushes run checks only. Build and publish images once a meaningful feature milestone, possibly spanning several commits, is complete. The controller dispatches `prototype.yml` on main with `build_images=true` after independent review and the milestone's acceptance checks. Do not dispatch for each implementation commit or documentation update.
+
+Chart porting completion means usable replacement functionality, not merely removal of a Highcharts dependency. Preserve reachable controls, saved configurations and caller behavior; no hidden flags, disabled buttons or unavailable placeholders count as completed replacements. Track each applicable chart family and entry point explicitly.
+
+Every chart milestone must exercise real FMP data through the application and verify displayed values, units, dates and transformations against the provider response. Record endpoint, parameters, retrieval time and source/image revision without credentials. Cover the milestone's relevant editor controls, theme, refresh, save/reopen and export behavior. Keep synthetic regressions for edge cases, but they cannot alone establish feature completion. Provider entitlement failures remain visible blockers for the affected live-data check; do not silently replace those checks with synthetic data. If an FMP dataset cannot represent a chart's financial meaning, record the gap and choose an appropriate real dataset before accepting it.
+
+The previously published alpha remains available. Its publication does not retroactively establish complete chart-port or live-FMP acceptance.

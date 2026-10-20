@@ -27,6 +27,15 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [ ] Verify the broader renderer inventory in the assembled application without hidden feature reductions.
 - [ ] Apply the shared analyst theme and instrument/time-linking contracts as those features are implemented.
 
+## Milestone acceptance
+
+- [ ] Exercise each completed chart milestone with real FMP responses in the application, checking plotted values, units, dates and transformations.
+- [ ] Verify the milestone's applicable controls, refresh, save/reopen, theme and export behavior; retain synthetic edge-case checks.
+- [ ] Close the former Highcharts caller/configuration gaps with functioning replacements, not unavailable placeholders or hidden features.
+- [ ] After independent review, dispatch the image pipeline once for the completed milestone and publish its tagged alpha.
+
+These are completion criteria for the remaining port. Earlier checked source/functionality items above do not imply comprehensive live-FMP acceptance. Ordinary pushes run checks without rebuilding images.
+
 ## Evidence and ownership
 
 The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) records accepted ordinary, horizontal, normalized and area journeys and the remaining UI-10 through UI-16 obligations. The [capability matrix](renderer-capability-matrix.md) records exact families and caller boundaries. These remain the detailed records behind this checklist.
