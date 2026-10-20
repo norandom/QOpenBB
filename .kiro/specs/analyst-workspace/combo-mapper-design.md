@@ -75,7 +75,7 @@ Select numeric columns in `snapshot.selectedColumnIds` order. Require exactly on
 
 The existing `resolveApplicationAppearance` is a single-family resolver: it merges a family's option layers and requires exactly two concrete axes. C3 must compose the combo inputs deliberately. Calling it once and copying its series settings to every geometry would erase independently saved appearance.
 
-`axes.category` is the concrete bottom X axis. `axes.primary` is required only when a selected primary series exists. Each selected secondary series requires its own `axes.secondary[colId]`, with number type and right position. These keys are transient drawing bindings; they do not add persistent secondary-axis editor IDs. C3 retains the original xAxis/yAxis editor semantics, first-two-concrete-axis targeting and theme numeric-axis inheritance.
+`axes.category` is the concrete X axis, with bottom as its default and top also allowed. `axes.primary` is required only when a selected primary series exists. Each selected secondary series requires its own `axes.secondary[colId]`, with number type; right is the default and left is also allowed. These keys are transient drawing bindings; they do not add persistent secondary-axis editor IDs. C3 retains the original xAxis/yAxis editor semantics, first-two-concrete-axis targeting and theme numeric-axis inheritance.
 
 Validate finite positive viewport dimensions and the existing observation/display context. Reuse existing style validation through immutable, geometry-specific Cartesian style views where practical. Do not mutate these views into the supplied appearance object.
 
@@ -85,9 +85,9 @@ All combo geometry shares one X coordinate system. Existing standalone line/area
 
 For categorical X, use a single category axis with one stable row-index category per snapshot row. Convert index coordinates consistently for line, bar and every area fragment. Preserve duplicate category labels as separate observations. Display labels and tooltips still read the original category values. For number/time X, use one shared continuous conversion through the existing category-coordinate rules, validate observations, and apply it to every geometry. Do not silently replace malformed continuous categories with indexes.
 
-Generate a left numeric axis only when at least one primary series exists. This conditional behavior follows `ComboChartProxy`: an all-secondary custom combo has the bottom X and distinct right numeric axes, with no empty left axis. Allocate numeric axis indexes deterministically: primary first if present, followed by secondary series in selected-column order. Keep this mapping stable when legend visibility changes.
+Generate a primary numeric axis, defaulting to left, only when at least one primary series exists. This conditional behavior follows `ComboChartProxy`: an all-secondary custom combo has the X axis and distinct secondary numeric axes, with no empty left axis. Allocate numeric axis indexes deterministically: primary first if present, followed by secondary series in selected-column order. Keep this mapping stable when legend visibility changes.
 
-Every public series and every private area fragment receives the correct `yAxisIndex`. Multiple secondary series remain separate axes even when their units match. Apply each resolved axis style to its own axis. Compute right-axis offsets and required plot margin from visible label/title measurements using the existing layout helpers; do not place multiple right axes at the same unaccounted position. If necessary, extract a cohesive axis-style helper rather than copying the full standalone axes implementation.
+Every public series and every private area fragment receives the correct `yAxisIndex`. Multiple secondary series remain separate axes even when their units match. Apply each resolved axis style to its own axis. Compute offsets on both numeric-axis sides and required plot margins from visible label/title measurements using the existing layout helpers; do not place multiple right axes at the same unaccounted position. If necessary, extract a cohesive axis-style helper rather than copying the full standalone axes implementation.
 
 Reuse `unitDiagnostics` separately for each numeric axis. Under declared-units policy, every drawn column needs explicit units and scale. Under raw-observations policy, absent metadata is allowed, but malformed metadata and conflicting known units/scales on the same axis remain rejected. USD revenue and USD/share EPS can occupy different axes. Two incompatible primary series cannot share one scale. Never convert, normalize or rescale stored observations to make an axis compatible.
 
@@ -135,7 +135,7 @@ Production additions and every modified production file must pass 400 physical l
 Focused regressions must independently establish:
 
 - Selected numeric projection, absent/duplicate/malformed assignments, primary-only secondary rejection and immutable inputs.
-- Primary plus multiple distinct secondary axes, all-secondary input, stable indexes under legend hiding and right-axis layout accommodation.
+- Primary plus multiple distinct secondary axes, all-secondary input, stable indexes under legend hiding and left/right-axis layout accommodation.
 - USD primary with USD/share secondary succeeds; incompatible primary metadata, malformed scales and declared-unit gaps fail without partial options.
 - Shared categorical alignment for mixed columns/lines/areas, duplicate labels and continuous category validation.
 - Grouped columns beside signed stacked columns, area/column stack separation, independent versus stacked areas, negative/null/zero observations and overflow diagnostics.
@@ -146,3 +146,7 @@ Focused regressions must independently establish:
 C2b also runs an isolated headless ECharts render check for mixed category alignment and independent numeric scales; option shapes alone cannot establish correct rendering. Retain existing area regression coverage when changing its helper. Use focused unit/static checks and the established portable gate with explicit fork scope. The controller supplies exact commands discovered in the current checkout and serializes heavy runs. Record revision, command, exit code and evidence location; planned tests remain planned until executed.
 
 C2 acceptance requires the complete mapper, independent review and fresh verification. C3/C4 application behavior and the completed milestone's real-FMP acceptance remain separate gates. No C2 completion dispatches the alpha image pipeline.
+
+## Original axis editing clarification
+
+The original axis editor permits top/bottom category positions and left/right numeric positions (getAxisPositionSelectParams 12580-12605). Concrete position writes target one axes[index] (18777-18800); axis identity and financial grouping remain independent of its side. These are accepted mapper inputs, not reasons to disable controls. Original save/reopen retains theme overrides but not concrete position edits (getChartModel 7634-7651, getChartThemeOverrides 8640-8642), so restored defaults are source behavior. Combo category/series inversion is unavailable in the original supportsInvertedCategorySeries 19816-19818; C3 must preserve that original eligibility.

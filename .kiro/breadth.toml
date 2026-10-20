@@ -12,9 +12,9 @@ requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 id = "combination-chart-port"
 requirements = ["analyst-workspace/chart-port-milestone.md:Outcome and acceptance"]
 planned_checks = ["mixed-rendering", "per-series-editor", "save-reopen-export", "real-fmp-application"]
-test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/comboAssignments.test.ts"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/comboAssignments.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/combo.admission.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/combo.axes.test.ts"]
 status = "unverified"
-evidence = ["C1 assignment helper independently approved: 21 focused tests, scoped strict TypeScript and complexity checks pass at Workspace 99e3f8637960d4981695e73bb8fedd974215c113. See artifacts/reviewed/chart-combo/verification.md. Mapper, editor and real-FMP runtime acceptance remain open; no image release triggered."]
+evidence = ["C1 assignment helper independently approved: 21 focused tests and scoped strict TypeScript pass. C2a admission/axis planning independently approved after two fixes: 40 focused tests and complexity gate pass at Workspace d5334ae2011ddb8c2875c01143b7d92fbd3f5767; inherited typography strict-check diagnostic remains. See artifacts/reviewed/chart-combo/verification.md. Mixed mapper, editor and real-FMP runtime acceptance remain open; no image release triggered."]
 
 [[capabilities]]
 id = "prototype-compose-build-publication"
