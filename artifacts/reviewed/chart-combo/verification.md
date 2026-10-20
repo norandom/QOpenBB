@@ -115,3 +115,19 @@ This accepts source integration and component behavior. It does not establish br
 ## Candidate source pin repair
 
 Source staging correctly rejected the stale Workspace pin in `contracts/sources.json`. The policy now matches the source lock at `74254b6`; source allowlists and the data API revision are unchanged. A repository-level regression exercises the existing `source_scope` validation for both sources. The initial run failed on the Workspace mismatch (1 failed, 9 passed); the repair and independent review each passed all 10 tests. This accepts source coherence, not image or runtime acceptance.
+
+## Local packaged candidate and C4 readiness
+
+The canonical `qopenbb_ci.image_cli` acquire/stage/export/load sequence completed with exit 0 through Dagger 0.21.8. Source staging used the committed Workspace `74254b6dc037277449d3a89c69d265aa61412eec` and data API `49cc413e6ab67eaa0444e07485b0f9243c786f7b`. The frontend bundle compiled; the archive passed the loader's identity and re-export checks.
+
+- Loaded Linux/amd64 image: `sha256:46917e184c07578f1d054fedfa64de8a9fbf07886f6502198327ba46cbb3258a`.
+- Image config digest: `sha256:283013c961dd4a4099a351f14a047cab585aaa7db3c5efaf9ec214fc00dff950`.
+- Archive SHA-256: `0933d8a7fa9f1d7d346c93e584267ab6a2e6c136193074701a5c1ee350735a8c`.
+- Local build reports: `/home/mc/qopenbb-work/combo-candidate-20261020-74254b6/`.
+- Root `9422d28` checks passed in GitHub run `39397678391`; publication was skipped as intended.
+
+A separate test-only Workspace commit `40426db` adds `tests/e2e/live-chart/combo-fmp.spec.ts`. It received independent source review after stale drawing evidence and line-width assertions were repaired. Syntax and captured fixture consistency were checked; the browser scenario is unexecuted. The production source lock intentionally remains at the exact candidate revision above.
+
+The opt-in `QOPENBB_COMBO_FMP_EVIDENCE` directory must contain the ignored `raw.json`, `annual.csv` and `provenance.json`. The scenario verifies provenance, all 15 unchanged observations, separate axis drawing, an actual line-width change, saved assignments/style, reopen and PNG structure. Browser output may contain licensed data and must remain ignored. Missing evidence skips the scenario and does not count as acceptance.
+
+Automatic approval review previously rejected the isolated runtime start with only `blocked by policy`. No equivalent runtime start was retried. This candidate has not been booted or browser-verified. C4/C5, real-FMP application acceptance and milestone publication remain open.
