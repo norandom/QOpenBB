@@ -28,13 +28,29 @@ The retained `ag-charts-enterprise/dist/umd/ag-charts-enterprise.js` uses a line
 
 Owned `Chart/utils.tsx::createDefaultSeries` formats scatter tooltips with X/Y and bubble tooltips with X/Y/size through `getLgToSm`. Baseline `Chart/hooks/useChartOptions.tsx` enables scatter default axis titles when the selected range has at most five columns, unless an orientation already supplies custom title text.
 
-## Characterization still required
+## Numeric and editor characterization
 
-- Confirm missing, zero, negative and equal bubble-size behavior, including scale-domain and fallback rules.
-- Establish exact marker-shape equivalence and effective defaults in both themes.
-- Trace aggregation and Switch Category / Series reachability for XY charts; do not remove controls by inference.
-- Establish numeric-X navigator, mini-chart, zoom and reset behavior.
-- Confirm how insufficient numeric selections appear in the original editor and chart, without replacing them with invented points.
+The following source characterization was completed on 2026-10-20. Charts references identify `artifacts/task-2.1/frontend/terminalpro/node_modules/ag-charts-enterprise/dist/umd/ag-charts-enterprise.js`; Grid references identify the retained Grid bundle above. An isolated Node evaluation of the extracted original `ContinuousScale` verified the scale results below. This is not browser or application acceptance.
+
+- Bubble size domains are per-series processed minima/maxima, with an internal `marker.domain` override (Charts 44186-44213). Zero and negative finite numbers participate unchanged. Independent column processing means size values on rows with invalid coordinates still contribute to the size domain (16334-16365, 16586-16645).
+- Diameter is linear over `[size,maxSize]`, normally `[7,30]`. Domains `[0,10]`, `[-10,10]` and `[-10,-2]` map their endpoints/midpoint to `[7,18.5,30]`. Equal domains, including `[0,0]`, give diameter 18.5 (14045-14104, 44351, 44403).
+- Missing, null and invalid processed sizes use the minimum marker size for valid-coordinate points (44403). Missing sizes do not contribute to the domain. Invalid coordinates become NaN and are hidden (23753-23755). No fabricated coordinates or size observations are needed.
+- The scale defaults to no clamping (14045-14104). With explicit domain `[1,3]`, values `[-1,0,1,2,3,4]` map to `[-16,-4.5,7,18.5,30,41.5]`. Nonpositive resulting diameters are hidden (23755). The ordinary mapper need not expose the cross-filtering domain override.
+- Both themes retain circle shape, size 7, fill opacity 0.8, stroke width 1 and disabled labels; bubble maxSize is 30 (38950-38965, 44717-44738, 46183-46203). Application `themes.tsx` does not override XY geometry. Grid shape choices are square, circle, cross, diamond, plus, triangle and heart (14188-14193). Existing `echarts/cartesianMarkers.ts` retains their original paths and nominal dimensions; reuse it.
+- Triangle has default centered marker anchor (Charts 24487-24495), but its unit vertices occupy vertical bounds `[0,0.87]` (24412-24417). Preserve its bounding-box center offset of `-0.065 * diameter`, as existing `cartesianSeries.ts` does. Bubble must calculate the offset per point; a renderer test remains required.
+- Insufficient selections produce no assignments: bubble with two selected fields is empty in both modes (Grid 8498-8539). The original hides the plot and displays "No data available to be charted." below two scatter fields, below three bubble fields, or for no data rows (10518-10544, 19151).
+- Setup headings are Labels and X Y Values. Incomplete selected groups retain X/Y/size annotations (12301-12330). Aggregate is reachable with a real Labels category, defaults to sum, and offers sum/first/last/min/max/count/avg; all selected numeric columns aggregate before pairing (11641-11680, 10024-10089). Switch Category / Series is unavailable for XY by explicit source guards (19656-19661, 19816-19819, 11764-11767, 7675-7678).
+- Navigator and mini-chart are exposed for XY. Their application flags default false and are mutually exclusive; either enables the navigator. Original mini-chart axes retain numeric X (Charts 68934-69065, 75544-75565), and navigator position is a normalized X range (69173-69177). Preserve later Y autoscale, minimum-visible-items, wheel/pan and double-click/reset duties; current lifecycle behavior does not yet prove those interactions.
+
+See [X2 mapper contract](xy-mapper-design.md) for the inactive implementation boundary.
+
+## Application characterization still required
+
+- Render missing, zero, negative and equal sizes against the established source contract.
+- Verify exact marker-shape geometry, rasterization and effective appearance in both application themes.
+- Exercise category aggregation through the existing transaction owner.
+- Establish application numeric-X navigator, mini-chart, zoom and reset parity.
+- Verify empty-state presentation, point tooltip association and numeric-axis padding/ticks without replacing missing observations with invented points.
 
 These questions prevent treating the source inventory as an implementation-ready contract. The proposed reuse fails if it changes original field assignment, stored options, reachable controls or numerical observations.
 

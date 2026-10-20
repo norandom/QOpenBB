@@ -11,7 +11,7 @@ Verify the application with captured FMP annual data: revenue as X (USD), net in
 ## Tasks
 
 - [x] X1. Freeze and implement the inactive numeric-field assignment contract, with focused tests for paired/unpaired scatter/bubble, selected order, incomplete groups, defaults, malformed input and immutability. Own `compatibility/xyAssignments.ts` and its unit test only. No gallery activation, state writes or geometry. Independently accepted at `e343e16`; see [evidence](../../../artifacts/reviewed/chart-xy/verification.md).
-- [ ] X2. Freeze the numeric mapper and appearance contract, resolving bubble-size, marker and axis behavior against the retained original source; implement the inactive mapper and focused real-engine checks.
+- [ ] X2. Implement the [independently reviewed numeric mapper contract](xy-mapper-design.md), including bubble-size, marker, axis and appearance behavior, and focused real-engine checks. Ownership is new `echarts/xy*.ts` and focused XY mapper tests; no shared helper or production routing edits.
 - [ ] X3. Connect pairing and XY field roles to the existing editor/session after the shared interface is frozen. Preserve option paths and inactive settings.
 - [ ] X4. Join family routing, caller defaults, appearance, navigator and refresh behavior. Verify captured-FMP application journeys and prior-family regressions.
 - [ ] X5. Independent feature review, breadth and README/docs checklist reconciliation, reviewed evidence sync, commits/push and one tagged alpha publication with anonymous pull verification.
