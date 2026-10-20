@@ -1,6 +1,6 @@
 # Combination chart port verification
 
-C1, C2a and C3a are accepted as inactive assignment, axis-planning and session components. Combination-chart rendering, editor integration and real-FMP application acceptance remain open. No image release follows these helper tasks.
+C1, C2 and C3a are accepted as inactive assignment, mixed-renderer and session components. Application/editor integration and real-FMP acceptance remain open. No image release follows these source tasks.
 
 Workspace source: `99e3f8637960d4981695e73bb8fedd974215c113`.
 
@@ -53,3 +53,19 @@ node node_modules/vitest/vitest.mjs run --config tests/unit/chart-application/vi
 ```
 
 Initial RED was a missing-module failure, not assertion execution.
+
+## C2b: mixed renderer
+
+Workspace source: `11515eee1d4f4c7e9bcc3bc59b0df537b5fd02d9`.
+
+Independent Astra review approved the mapper and reran 52 tests: eight mixed-geometry cases, three actual ECharts SVG rendering cases and 41 existing area regressions. Rendered geometry covers category/number/time alignment and independent financial scales. Other checks cover separate stacks, raw tooltip values, global palette positions, reserved public/internal IDs, style isolation and area fragment axis bindings.
+
+From `terminalpro`:
+
+```sh
+node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/vitest.config.mjs tests/unit/chart-compatibility/combo.geometry.test.ts tests/unit/chart-compatibility/combo.render.test.ts tests/unit/chart-compatibility/cartesian.area.test.ts tests/unit/chart-compatibility/cartesian.area-contract.test.ts tests/unit/chart-compatibility/cartesian.area-values.test.ts
+```
+
+The portable complexity gate passed. Physical/logical/max-function measurements: mapper 88/41/14, series assembly 96/45/21 and the modified area helper 236/76/9. The scoped compiler still reports the inherited typography directive diagnostic. Initial RED was a missing mapper import.
+
+SVG rendering establishes engine geometry, not the live Workspace editor or full application journey. Navigator, refresh, save/reopen and actual FMP application checks remain open. The C3a root commit's ordinary pipeline runs checks only; no new image has been published for this incomplete milestone.

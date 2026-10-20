@@ -86,6 +86,10 @@ Make only family-neutral baseline/range/setup helpers and initial-session hydrat
 
 ## Appearance and editor projection
 
+C3b's reviewed boundary also owns a cohesive `effectiveAppearanceLayers.ts` extraction, `setupProjection.ts` and `setupTypes.ts`, plus type-only optional `comboGeometry` and `comboAxes` fields on the existing `ApplicationSessionLocal`. The appearance input omits both `family` and `axisRuntime`; optional concrete axes default from assignments. Selection accepts storage/context and reads transient geometry/axes from that existing local owner.
+
+The optional `combo-per-axis` setup policy rejects inversion and defers only cross-column unit comparison, reporting `axisUnits: "deferred"`. Existing callers retain the single-axis default. Preserve per-observation validation, aggregation/count semantics and provenance; C2 still validates compatibility separately on each actual numeric axis. No general unit-validation bypass is permitted. Geometry edits must revalidate current eligibility inside the latest-state transaction and return the existing session commit type.
+
 Resolve active area, bar and line appearance independently from the existing baseline/generated/theme layers, using full selected-series order for palette allocation. Populate the frozen C2 `ResolvedComboStyle`. Extract reusable layer resolution from `effectiveAppearance.ts` if necessary; do not copy its merge precedence into a competing implementation.
 
 Keep shared title, legend, padding, background and tooltip behavior separate from selected geometry's series styling. Series, marker, label, shadow and connection edits target the existing geometry option branch. Customize's geometry selector is transient; retain the selected type while active, otherwise choose the first active type in area/bar/line order.
