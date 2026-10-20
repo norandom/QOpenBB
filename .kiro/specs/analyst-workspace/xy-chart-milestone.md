@@ -4,9 +4,13 @@ Restore scatter and bubble in the ordinary Table/File journey, preserving the ex
 
 ## Actual FMP chart sample
 
+**Spread and miniature correction verified (2026-10-20):** the updated sample uses rounded ranges and an 18-pixel miniature with actual pixel clipping. The same FMP observations and EPS sizes pass through save/reopen and export. Denser/cropped axis labels and slight main-marker edge overlap remain visual differences; full visual parity is not claimed.
+
 ![AAPL annual bubble chart](../../../artifacts/reviewed/chart-samples/aapl-annual-bubble.png)
 
-AAPL FY2021-FY2025 FMP annual statements: X revenue (USD), Y net income (USD), bubble diameter linear in EPS (USD/share). Five unchanged observations, no aggregation; B formats billions. Accepted Workspace `e64ce8c`.
+AAPL FY2021-FY2025 FMP annual statements: X revenue (USD), Y net income (USD), bubble diameter linear in EPS (USD/share), saved minimum 10 / maximum 40 pixels. Five unchanged observations, no aggregation; B formats billions. Verified Workspace `72bdc11`.
+
+See the [correction evidence](../../../artifacts/reviewed/chart-xy/bubble-correction.md) and [original reference](../../../artifacts/reviewed/chart-xy/bubble-original.png).
 
 [Application and release evidence](../../../artifacts/reviewed/chart-xy/verification.md); [Image and source provenance](../../../artifacts/reviewed/chart-samples/provenance.json). Captured FMP data through File Table; live data API routing is not established.
 
@@ -23,6 +27,10 @@ Verify the application with captured FMP annual data: revenue as X (USD), net in
 - [x] X3. Connect pairing and XY field roles to the existing editor/session through the [reviewed production join](xy-production-join.md). Preserve option paths and inactive settings. Source accepted at `ea740ce`, with independently reviewed empty-selection recovery at `e64ce8c`; packaged-image behavior remains under X4.
 - [x] X4. Complete that same cohesive join: family routing, caller defaults, appearance, navigator and refresh behavior. Preserve original empty geometry for one-sided bounds that exclude all observations; the inactive mapper's safety diagnostic is not final parity. Verify captured-FMP application journeys and prior-family regressions.
 - [x] X5. Independent feature review, breadth and README/docs checklist reconciliation, reviewed evidence sync, commits/push and one tagged alpha publication with anonymous pull verification.
+- [ ] X6. Correct the reported bubble spread: compare original automatic bounds, preserve explicit user bounds and EPS diameter mapping, and clip miniature marker geometry to its track. Verify the same captured FMP observations, navigation/reset, resize and export; independently review, replace the sample and publish one corrected image milestone. Production changes retain the existing complexity caps.
+- [ ] X7. Resolve remaining axis-label density/cropping and slight main-marker edge overlap against the original appearance; owner comparison requested in qView.
+
+X1-X5 record the earlier delivered scope. X6 source and packaged-application checks passed at `72bdc11`; hosted publication is pending. The earlier coordinate and diameter checks did not establish painted containment. X7 stays separate and open.
 
 Task X1 is independent of the unresolved geometry questions in [source research](xy-chart-research.md). X2 and X3 may run in parallel only after an independently reviewed interface and exclusive file ownership are recorded. Shared production integration and commits remain serialized.
 

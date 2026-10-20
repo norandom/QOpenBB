@@ -151,7 +151,8 @@
     "live-editor/axis-persistence",
     "prototype-delivery",
     "alpha-release",
-    "chart-combo"
+    "chart-combo",
+    "chart-xy-bubble-correction"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -31801,14 +31802,6 @@
       "transform": "exact-byte-copy; owner-authorized selected real-FMP chart sample"
     },
     {
-      "sourcepath": "artifacts/chart-xy/browser-e64ce8c/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
-      "sourceSHA256": "8a0709d3ec329043607c65e110607c6b8788aa7560705199237a895640c7f472",
-      "publishedpath": "artifacts/reviewed/chart-samples/aapl-annual-bubble.png",
-      "publishedSHA256": "8a0709d3ec329043607c65e110607c6b8788aa7560705199237a895640c7f472",
-      "bytes": 21387,
-      "transform": "exact-byte-copy; owner-authorized selected real-FMP chart sample"
-    },
-    {
       "sourcepath": "artifacts/chart-histogram/browser-h4-c1ee9ae-02/browser-output/histogram-fmp-40-captured--2f924-equencies-through-lifecycle/default-canvas.png",
       "sourceSHA256": "d8d3718746e8421f0ce0312cf46eaeb3fd9fe756f6d3ac873710b567892d9e3b",
       "publishedpath": "artifacts/reviewed/chart-samples/aapl-quarterly-revenue-histogram.png",
@@ -31817,19 +31810,43 @@
       "transform": "exact-byte-copy; owner-authorized selected real-FMP chart sample"
     },
     {
-      "sourcepath": "artifacts/chart-samples/provenance.json",
-      "sourceSHA256": "af5c8cb65183777c5c9223f57dfaf5f4976b3abce3d30c0edf555a0b73ebba28",
-      "publishedpath": "artifacts/reviewed/chart-samples/provenance.json",
-      "publishedSHA256": "af5c8cb65183777c5c9223f57dfaf5f4976b3abce3d30c0edf555a0b73ebba28",
-      "bytes": 3729,
-      "transform": "exact-byte-copy"
-    },
-    {
       "sourcepath": "artifacts/chart-pie/verification.md",
       "sourceSHA256": "fd6ba51387f08219679ef420b8ac63d2115079528fc209a9aab78af203b72e96",
       "publishedpath": "artifacts/reviewed/chart-pie/verification.md",
       "publishedSHA256": "fd6ba51387f08219679ef420b8ac63d2115079528fc209a9aab78af203b72e96",
       "bytes": 2926,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-xy/spread-review/browser-final/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
+      "sourceSHA256": "3ef96c6befab823170b9ebf3c56389e5d3c32d8137b70b9a571fbd6feabc5255",
+      "publishedpath": "artifacts/reviewed/chart-samples/aapl-annual-bubble.png",
+      "publishedSHA256": "3ef96c6befab823170b9ebf3c56389e5d3c32d8137b70b9a571fbd6feabc5255",
+      "bytes": 22234,
+      "transform": "exact-byte-copy; owner-authorized selected real-FMP chart sample"
+    },
+    {
+      "sourcepath": "artifacts/chart-samples/provenance.json",
+      "sourceSHA256": "dcabd142906c213dfa61ee2aefef9545ea7ecd47844bd330c3412ac384073da6",
+      "publishedpath": "artifacts/reviewed/chart-samples/provenance.json",
+      "publishedSHA256": "dcabd142906c213dfa61ee2aefef9545ea7ecd47844bd330c3412ac384073da6",
+      "bytes": 3748,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-xy/spread-review/reference/small/browser-output/reference-original-bubble-reference/original-mini-light-small.png",
+      "sourceSHA256": "823a2a62810a38041bd784e9655783262b97250dd5d7b8185f2be337eaec481c",
+      "publishedpath": "artifacts/reviewed/chart-xy/bubble-original.png",
+      "publishedSHA256": "823a2a62810a38041bd784e9655783262b97250dd5d7b8185f2be337eaec481c",
+      "bytes": 9935,
+      "transform": "exact-byte-copy; owner-authorized selected real-FMP original reference"
+    },
+    {
+      "sourcepath": "artifacts/chart-xy/spread-review/verification.md",
+      "sourceSHA256": "47ca917fe6a5ac9937c70da94b9e885c90c47931a613cf431cf8970bb058d4c2",
+      "publishedpath": "artifacts/reviewed/chart-xy/bubble-correction.md",
+      "publishedSHA256": "47ca917fe6a5ac9937c70da94b9e885c90c47931a613cf431cf8970bb058d4c2",
+      "bytes": 4447,
       "transform": "exact-byte-copy"
     }
   ],

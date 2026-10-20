@@ -15,16 +15,16 @@
       "sanitization": "None; existing chart-only PNG copied byte-for-byte after visual inspection."
     },
     {
-      "source_path": "artifacts/chart-xy/browser-e64ce8c/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
+      "source_path": "artifacts/chart-xy/spread-review/browser-final/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
       "name": "aapl-annual-bubble.png",
       "milestone": "xy-chart-milestone.md",
       "evidence": "chart-xy",
-      "caption": "AAPL FY2021-FY2025 captured FMP annual income statements, retrieved 2026-10-20 (stable income-statement, annual, limit 5). Five raw observations; no aggregation or scaling. B is display formatting. X is revenue (USD), Y is net income (USD), and bubble diameter maps linearly from EPS (USD/share). Exported chart from accepted Workspace e64ce8c.",
-      "image": "sha256:e7cb9923ae29338539dd215378bb8618352e05401b499c15eba16997ce6ca3f4",
+      "caption": "AAPL FY2021-FY2025 captured FMP annual income statements, retrieved 2026-10-20 (stable income-statement, annual, limit 5). Five raw observations, no aggregation or rescaling. X revenue and Y net income are USD; B formats billions. Bubble diameter maps linearly from EPS (USD/share), saved minimum 10 / maximum 40 pixels. Rounded axes and clipped 18-pixel miniature verified in Workspace 72bdc11.",
+      "image": "sha256:02a6530a5a0a41a9450ea1acf19f3211c2a43b07a88e55f21c7972e252785ae4",
       "published_path": "artifacts/reviewed/chart-samples/aapl-annual-bubble.png",
-      "source_sha256": "8a0709d3ec329043607c65e110607c6b8788aa7560705199237a895640c7f472",
-      "published_sha256": "8a0709d3ec329043607c65e110607c6b8788aa7560705199237a895640c7f472",
-      "bytes": 21387,
+      "source_sha256": "3ef96c6befab823170b9ebf3c56389e5d3c32d8137b70b9a571fbd6feabc5255",
+      "published_sha256": "3ef96c6befab823170b9ebf3c56389e5d3c32d8137b70b9a571fbd6feabc5255",
+      "bytes": 22234,
       "sanitization": "None; existing chart-only PNG copied byte-for-byte after visual inspection."
     },
     {

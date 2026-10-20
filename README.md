@@ -19,7 +19,7 @@ Snapshot: 2026-10-20. Follow the CI link for live run status; a green check does
 | Prototype | Full Workspace, installed data API, two-service Compose, local image builds | Candidate login/dashboard and routing smoke; assembled Compose acceptance |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
 | Data | Adapted FMP profile/income routes and FRED series catalog; real-data snapshot dashboard | Broader live FMP coverage, Yahoo adapter, named discovery and consistent provider contracts |
-| Visuals | Selected ECharts table-chart journeys, including accepted combination, scatter, bubble and histogram charts with captured FMP data; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
+| Visuals | Selected ECharts table-chart journeys with captured FMP data; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Bubble axis-label polish; Perspective dashboard integration, remaining renderer/table functions and shared theme |
 | Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and persistence acceptance |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
 
@@ -33,6 +33,8 @@ See the [ECharts checklist](docs/echarts-status.md) for remaining chart families
 
 Published: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
 
+- [x] Correct the reported bubble spacing and miniature overflow, then replace its FMP sample after verification.
+- [ ] Publish the corrected image milestone; remaining axis-label polish stays open.
 - [x] Implement and review the inactive X/Y/size field-assignment contract.
 - [x] Implement and review the inactive numeric renderer, including actual ECharts geometry checks.
 - [x] Connect and source-review rendering, editor controls and saved XY settings.

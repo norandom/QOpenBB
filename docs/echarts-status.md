@@ -8,7 +8,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 - [x] Render Histogram in the ordinary Table/File journey with captured-FMP bin/count acceptance, editor controls, navigation, save/reopen and export. See the [published milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md).
 
-- [x] Render scatter and bubble in the ordinary Table/File journey, including numeric assignments, pairing, appearance, navigation, saved state and captured-FMP acceptance. See the [published milestone](../.kiro/specs/analyst-workspace/xy-chart-milestone.md).
+- [x] Repair the reported bubble spread and miniature overflow in a packaged image with captured FMP data; see [X6 evidence](../artifacts/reviewed/chart-xy/bubble-correction.md). Remaining axis-label polish stays open.
 
 - [x] Render Column & Line, Area & Column and Custom Combination with per-series axes, saved styling, navigator/theme/refresh retention and captured-FMP application acceptance. See the [accepted milestone](../.kiro/specs/analyst-workspace/chart-port-milestone.md).
 
@@ -51,6 +51,9 @@ These are completion criteria for the remaining port. Earlier checked source/fun
 
 ## Scatter/bubble progress
 
+- [x] Repair bubble endpoint spacing and miniature clipping against the original application; replace the real-FMP sample after verification.
+- [ ] Publish the corrected image milestone.
+- [ ] Resolve remaining axis-label density/cropping and slight main-marker edge overlap after the owner comparison.
 - [x] Resolve paired/unpaired X/Y/size identities with source-compatible ordering and incomplete-group behavior; independently reviewed focused tests and complexity checks passed.
 - [x] Implement the inactive numeric mapper, with independent review and actual ECharts geometry/tooltip checks.
 - [x] Connect and source-review the existing editor/application, including original empty-domain behavior for excluded one-sided bounds.
