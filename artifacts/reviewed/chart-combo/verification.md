@@ -1,6 +1,6 @@
 # Combination chart port verification
 
-C1, C2, C3a and C4a are accepted assignment, mixed-renderer, session and navigator components. Application/editor integration and real-FMP acceptance remain open. No image release follows these source tasks.
+C1, C2, C3a, C3b and C4a are accepted assignment, mixed-renderer, appearance/session and navigator components. Application/editor integration and real-FMP acceptance remain open. No image release follows these source tasks.
 
 Workspace source: `99e3f8637960d4981695e73bb8fedd974215c113`.
 
@@ -79,3 +79,15 @@ Independent Sol review approved the navigator and reran 84 tests across seven fi
 Checks cover independent main/overview axis mapping, index/ID conflicts, private area fragments, stack and name collisions, full-overview separation from hidden main geometry, immutable inputs, slider targets and retained ranges. The portable complexity gate passed; navigator metrics are 135 physical/45 logical/15 maximum function units, and overview helpers 99/52/9. Scoped TypeScript remains limited by the inherited typography diagnostic.
 
 The initial RED run failed on a fixture theme issue. After implementation, the corrected regression was run against an isolated copy of the preceding navigator: one case failed and one passed. This establishes regression sensitivity but is not evidence of a successful tests-before-code sequence. Raw logs remain local. Combination-chart routing, real application lifecycle and FMP acceptance are still open.
+
+## C3b: geometry appearance and axis transactions
+
+Workspace source: `ed5d8de2748a4b05547c3b01a93a1c175361afeb`.
+
+Independent Astra review initially rejected stale concrete axes after assignment/gallery changes. A composed edit-then-assignment regression reproduced the failure; the repair rebuilds transient axes, preserves saved numeric styling and assignment category type, and applies the original gallery category reset. Review then approved 15 focused combo tests and 55 ordinary appearance/setup/session regressions.
+
+Run `comboAppearance.test.ts`, `comboEditorTransactions.test.ts` and `comboSessionAssignments.test.ts` under the chart-compatibility Vitest config. Run `effectiveAppearance.test.ts`, `setupProjection.test.ts` and `applicationSession.test.tsx` under the chart-application config. All tests reside under their corresponding `tests/unit/` directories.
+
+The ten-file portable complexity gate passed: maxima 379 physical lines/file, 136 logical units/file and 24 units/function. An isolated committed baseline and the final ten-file candidate again produced identical session TypeScript diagnostics, both exiting 2. The baseline source was `11515eee`; the unrelated navigator changes were excluded from that comparison. This is baseline-relative evidence, not a passing project compile.
+
+Appearance remains independently resolved by geometry. Combo setup defers cross-column unit comparison to actual numeric axes while retaining validation and aggregation provenance. Existing ordinary defaults remain unchanged. Actual editor routing and source-refresh hooks are not accepted by this task.
