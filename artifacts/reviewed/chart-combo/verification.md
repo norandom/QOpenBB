@@ -1,6 +1,6 @@
 # Combination chart port verification
 
-C1, C2 and C3a are accepted as inactive assignment, mixed-renderer and session components. Application/editor integration and real-FMP acceptance remain open. No image release follows these source tasks.
+C1, C2, C3a and C4a are accepted assignment, mixed-renderer, session and navigator components. Application/editor integration and real-FMP acceptance remain open. No image release follows these source tasks.
 
 Workspace source: `99e3f8637960d4981695e73bb8fedd974215c113`.
 
@@ -69,3 +69,13 @@ node node_modules/vitest/vitest.mjs run --config tests/unit/chart-compatibility/
 The portable complexity gate passed. Physical/logical/max-function measurements: mapper 88/41/14, series assembly 96/45/21 and the modified area helper 236/76/9. The scoped compiler still reports the inherited typography directive diagnostic. Initial RED was a missing mapper import.
 
 SVG rendering establishes engine geometry, not the live Workspace editor or full application journey. Navigator, refresh, save/reopen and actual FMP application checks remain open. The C3a root commit's ordinary pipeline runs checks only; no new image has been published for this incomplete milestone.
+
+## C4a: independent navigator scales
+
+Workspace source: `ec9128827b71d656bdf5c7c32b1e2458035f626c`.
+
+Independent Sol review approved the navigator and reran 84 tests across seven files: `cartesian.navigator`, `cartesian.area`, `cartesian.area-contract`, `cartesian.area-values`, `cartesian.normalized`, `cartesian.horizontal` and `lifecycle`, using the same chart-compatibility Vitest config. Nine navigator tests include actual combo output and ECharts SVG/grid binding checks.
+
+Checks cover independent main/overview axis mapping, index/ID conflicts, private area fragments, stack and name collisions, full-overview separation from hidden main geometry, immutable inputs, slider targets and retained ranges. The portable complexity gate passed; navigator metrics are 135 physical/45 logical/15 maximum function units, and overview helpers 99/52/9. Scoped TypeScript remains limited by the inherited typography diagnostic.
+
+The initial RED run failed on a fixture theme issue. After implementation, the corrected regression was run against an isolated copy of the preceding navigator: one case failed and one passed. This establishes regression sensitivity but is not evidence of a successful tests-before-code sequence. Raw logs remain local. Combination-chart routing, real application lifecycle and FMP acceptance are still open.

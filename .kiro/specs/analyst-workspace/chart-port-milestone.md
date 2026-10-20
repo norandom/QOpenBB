@@ -32,6 +32,7 @@ Reference: original Workspace 38dffc33389aca0e4a87e0e88d42f7067aa220df and retai
 - [ ] C3b. Resolve type-wide appearance and editor selection after the assignment transaction is accepted.
 - [ ] C3c. Compose the original Set Up and Customize controls after the state/appearance contracts are accepted.
 - [ ] C4. Join caller, navigator, refresh, export and save/reopen behavior; verify actual FMP data in an isolated application. No milestone acceptance based only on mocked APIs or synthetic rows.
+- [x] C4a. Extend navigator axis/series cloning independently of C3b, using the contract below. Ownership is confined to `echarts/cartesianNavigator.ts`, new `cartesianNavigatorOverview.ts` and `tests/unit/chart-compatibility/cartesian.navigator.test.ts`. No application activation.
 - [ ] C5. Independent feature review, update breadth/checklists, sync concise evidence, commit/push the finished milestone and dispatch the alpha pipeline once.
 
 Every implementation task requires independent review and a per-task commit. Production files must pass 400 physical lines/file, 300 logical units/file and 50 logical units/function; maintained inventory must include additions. Reuse focused unit/static/browser commands and one heavy integration run. Existing untracked Perspective financial work is outside this milestone.
@@ -39,3 +40,11 @@ Every implementation task requires independent review and a per-task commit. Pro
 ## Real-data evidence
 
 One fresh authorized FMP request retrieved five AAPL annual income statements on 2026-10-20. Ignored `artifacts/chart-combo/fmp/` contains the raw response, unscaled CSV and sanitized provenance. Revenue and net income are USD; EPS is USD/share. Primary/secondary-axis comparisons must respect those different units. Retrieval success alone is not application acceptance. Do not publish credentials or raw licensed provider payloads in the public evidence mirror.
+
+## C4a navigator contract
+
+Independent Astra source review approves a disjoint navigator task consuming completed ECharts options. Keep the existing signature and `overviewOptions = options` default. Normalize singular/array axes locally; append overview axes after main axes onto miniature grid 1. Each overview series, including private area fragments, retains its own X/Y mapping using main-axis counts plus overview indexes. Missing indexes mean zero; axis-ID selectors must resolve consistently, with malformed/conflicting references rejected.
+
+Clone domains, interval, inverse and category data from the overview. Hide miniature numeric axes and clear outward offsets while retaining existing miniature horizontal labels. Allocate deterministic collision-free `openbb-mini-` IDs/names against main namespaces; allocate separate miniature stack identities preserving area/column stack relationships. Main axes/series, legend and tooltip remain unchanged. Miniature series come from the supplied full overview even when main geometry is hidden.
+
+Slider targets main X axes only. Preserve ordinary/horizontal filtering, original axis representation when miniature is disabled, and original object identity when both controls are disabled. Keep the single-main-grid contract and `retainNavigatorExtent` behavior. Tests cover multiple/all-secondary axes, area fragments, hidden-main/full-overview separation with actual combo output, collisions, immutability, ordinary/horizontal/disabled compatibility, retained ranges and actual ECharts miniature rendering. Run affected navigator regressions; apply 400/300/50 caps and independent review before acceptance.
