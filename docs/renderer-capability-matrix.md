@@ -1,5 +1,7 @@
 # Renderer capability matrix
 
+Current accepted scope is tracked in the [ECharts checklist](echarts-status.md). The ordinary Table/File combination-chart milestone was accepted on 2026-10-20; see its [reviewed evidence](../artifacts/reviewed/chart-combo/verification.md). The inventory below records the earlier source gaps, not the current completion status.
+
 Restore the contracts below before accepting renderer parity. This source inventory establishes missing behavior and proposed checks; it does not establish runtime reachability or a successful replacement. Preserve the existing widget controls, financial data, saved settings and light/dark appearance while adapting the renderer.
 
 Evidence date: 2026-10-16. Baseline: owned Workspace `38dffc33389aca0e4a87e0e88d42f7067aa220df` (B). Removed-renderer revision: `48e3f59cc48e0ae7aa6f6ce92069fc5b10ee3e86` (R). Working tree (W) was inspected with `git diff 48e3f59 -- terminalpro/src/components/General/Table terminalpro/src/components/Widgets/communityCharts.ts`; it had no changes in that bounded scope. Source symbols below refer to B unless marked W. Paths are relative to `vendor/workspace/terminalpro/`. The [preliminary audit](renderer-parity-audit.md) records wider registry and authoring gaps.

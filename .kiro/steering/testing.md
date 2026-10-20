@@ -4,6 +4,8 @@ Adapted at the user's request on 2026-10-16 from the sibling because-security-qu
 
 ## Background browser checks
 
+Owner authorization, 2026-10-20: run routine local candidate startup and verification autonomously, including WSL Docker. Use the owned disposable runtime and loopback bindings; do not request conversational approval for each run. Tool-enforced rejections still apply and must be reported rather than bypassed.
+
 Owner preference, 2026-10-19: open original/replacement PNG comparisons in qView for visual review. Launch the requested viewer visibly; keep automated browser verification headless and isolated. Opening a comparison does not imply visual acceptance.
 
 - Use a QOpenBB-owned isolated browser instance/profile. A new tab in the operator's browser is not isolation. Playwright tests use fresh contexts.
@@ -20,6 +22,7 @@ Owner preference, 2026-10-19: open original/replacement PNG comparisons in qView
 - Run only one heavy suite/build at a time. It may overlap lightweight read-only checks. Serialize dependency installation, shared fixture mutations, and commits.
 - For Python tests that use pytest-xdist, cap workers at two (`-n 2 --maxprocesses=2`); avoid unrestricted `-n auto`. Use selected files with `-n0 --no-cov` for focused review or memory diagnosis when those plugins exist.
 - Start direct Playwright acceptance runs at one worker. Increase to two only after per-worker isolation of accounts, ports, Compose project names, volumes, and outputs is proven. The sibling project's PostgreSQL isolation does not prove QOpenBB isolation.
+- Budget packaged Workspace logins against the existing five-per-minute client-IP limit. Runtime startup consumes one login; save/reopen journeys usually consume two each. After four browser logins in the startup window, separate the next batch by at least a minute plus a margin. Fresh contexts share the limiter. Do not change request headers or application limits to make checks pass; record any HTTP 429 scheduling failure and rerun only the blocked scope after the window clears.
 - Use disposable state and worker-scoped fixtures; never the owner's live Workspace volume or provider account for ordinary tests. Live FMP checks are explicitly marked and separately configured; missing credentials mean skipped/unverified live evidence, not a pass.
 - Capture each command, revision/image digest, exit code, and artifact location. Diagnose failures; do not retry until a pass without explaining the underlying fault or nondeterminism.
 

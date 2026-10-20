@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-20T11:33:25Z",
+  "updated_at": "2026-10-20T11:50:00Z",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -23,8 +23,8 @@
     "name": "combination-chart-port",
     "contract": "chart-port-milestone.md",
     "authorization": "Owner requested autonomous chart port on 2026-10-20; completed-feature releases require real FMP acceptance.",
-    "phase": "accepted-awaiting-publication",
-    "design_review": "Independent feature review approved source 6123991 and packaged image ddb58fb8: FMP, save/reopen/export and lifecycle acceptance passed. Tagged alpha publication remains pending.",
+    "phase": "accepted-published",
+    "design_review": "Independent feature review approved source 6123991 and local packaged image ddb58fb8: FMP, save/reopen/export and lifecycle acceptance passed. CI rebuilt the same source and published alpha-39415813584-1; anonymous image pulls and registry identities verified separately.",
     "completed_tasks": [
       "C1",
       "C2a",
@@ -37,8 +37,11 @@
       "C3",
       "C4b",
       "C4c",
-      "C4"
+      "C4",
+      "C5"
     ],
-    "feature_accepted": true
+    "feature_accepted": true,
+    "release": "alpha-39415813584-1",
+    "evidence": "artifacts/reviewed/chart-combo/verification.md"
   }
 }

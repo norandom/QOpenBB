@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-39237590906-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-39415813584-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 
@@ -12,16 +12,24 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 ## Status at a glance
 
-Snapshot: 2026-10-19. Follow the CI link for live run status; a green check does not establish deployment acceptance.
+Snapshot: 2026-10-20. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
 | Area | What exists | What remains |
 | --- | --- | --- |
 | Prototype | Full Workspace, installed data API, two-service Compose, local image builds | Candidate login/dashboard and routing smoke; assembled Compose acceptance |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
 | Data | Adapted FMP profile/income routes and FRED series catalog; real-data snapshot dashboard | Broader live FMP coverage, Yahoo adapter, named discovery and consistent provider contracts |
-| Visuals | Selected ECharts table-chart journeys; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
+| Visuals | Selected ECharts table-chart journeys, including accepted combination charts with captured FMP data; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
 | Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and persistence acceptance |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
+
+Current [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-milestone.md):
+
+- [x] Accept Column & Line, Area & Column and Custom Combination, including distinct axes and editor controls.
+- [x] Verify captured FMP values, save/reopen/export and navigator/theme/refresh retention in the packaged image.
+- [x] Publish and verify the updated alpha images, including anonymous pulls of both services.
+
+See the [ECharts checklist](docs/echarts-status.md) for remaining chart families and callers.
 
 ## Delivery plan
 

@@ -1,6 +1,10 @@
 # Combination chart port verification
 
-C1, C2, C3 and the C4a/C4b source integration are accepted. Combination charts now connect to the existing Table/File editor in source. Image/browser acceptance and real-FMP application acceptance remain open. No alpha has been published for this milestone.
+The bounded combination-chart milestone is independently accepted on Workspace `6123991` in local packaged image `ddb58fb8`. Editor, captured-FMP values, save/reopen/export and navigator/theme/refresh checks passed. CI run `39415813584` published `alpha-39415813584-1` from the same source revisions. Release verification is recorded at the end of this report; the CI image is a separate build from the browser-tested local candidate.
+
+## Historical task checkpoints
+
+The checkpoints below retain the evidence and open gates as recorded at each stage. The corrected packaged-image acceptance and release outcome at the end supersede their earlier pending statuses.
 
 C1 Workspace source: `99e3f8637960d4981695e73bb8fedd974215c113`.
 
@@ -161,3 +165,18 @@ On the corrected image, actual FMP checks again verified all 15 unscaled File ob
 These results concern the bounded combination-chart milestone. They do not certify other unfinished renderer families, production-server deployment, all provider endpoints or a clean project-wide TypeScript compile. The previous refresh failure is resolved by source `6123991` in the identified packaged image.
 
 Independent Astra feature review approved C4/C4c and the C5 review gate for this exact source/image. No blocking combination-chart gaps remain; publication is the outstanding delivery step.
+
+## Published combination-chart alpha
+
+On 2026-10-20, [run 39415813584](https://github.com/norandom/QOpenBB/actions/runs/39415813584) completed successfully and published [alpha-39415813584-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39415813584-1), targeting root `f7425373549f91b41cb371abf596df2b3cfb616c`. The manifest pins Workspace `61239915182fe409e517b70c81c68fc085e68b94` and data API `49cc413e6ab67eaa0444e07485b0f9243c786f7b`. Public Compose, `default.env.sample` and manifest downloads matched GitHub's asset hashes.
+
+| CI service | Registry manifest digest |
+| --- | --- |
+| Workspace | `sha256:861fc60b78957c83829956d997ecd139fb1afcf04e18636b3b81398af75b1dc6` |
+| Data API | `sha256:19264eeb7e7c26134400c46f31d2c5c9419bd3cd42a136aca2f87146801e18ea` |
+
+Independent release verification passed six anonymous pulls: immutable digest, alpha tag and `latest` for each service. Docker used a temporary empty configuration; existing authentication was untouched. Remote config digests, Linux/amd64 platform, source labels and all manifest labels matched. The first verifier assertion assumed Docker's local image ID always represented the config digest; Docker 29's containerd store reports the manifest digest here. Comparing the remote config digest directly resolved that verification assumption without changing the images.
+
+Verification command exited 0: `wsl -d Debian -u mc -- /mnt/d/Source/QOpenBB/pipeline/.venv/bin/python /mnt/d/Source/QOpenBB/artifacts/chart-combo/release-39415813584/verify_anonymous.py`. Local reports and downloaded assets remain in that ignored directory. Release manifest SHA-256: `6e8a543ce686f031a674ba5c9ef902ff14110114c6621c86d557b91ecf69ac40`.
+
+C5 delivery is complete. README and documentation checkboxes now match the bounded acceptance. CI rebuilt the reviewed source; no browser run was performed on these CI digests. Browser acceptance remains attached to the separately identified local packaged image above. Assembled Compose, production-server deployment and unfinished renderer families remain open.

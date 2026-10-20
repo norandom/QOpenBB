@@ -28,7 +28,14 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [ ] Verify the broader renderer inventory in the assembled application without hidden feature reductions.
 - [ ] Apply the shared analyst theme and instrument/time-linking contracts as those features are implemented.
 
-## Milestone acceptance
+## Current combination-chart delivery
+
+- [x] Independently accept the editor and packaged-image journeys with captured FMP data, save/reopen/export and navigator/theme/refresh retention.
+- [x] Publish the updated tagged alpha and verify anonymous image pulls.
+
+See the [reviewed evidence](../artifacts/reviewed/chart-combo/verification.md). Publication does not establish acceptance of the unfinished families below.
+
+## Remaining port acceptance
 
 - [ ] Exercise each completed chart milestone with real FMP responses in the application, checking plotted values, units, dates and transformations.
 - [ ] Verify the milestone's applicable controls, refresh, save/reopen, theme and export behavior; retain synthetic edge-case checks.

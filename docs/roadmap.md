@@ -17,7 +17,7 @@ Owner clarification: saved research-context persistence acceptance moves to `ana
 
 Target: HTTP on `0.0.0.0:23003`, `qopenbb.example.com` through owner-managed cloudflared, relative bind-mounted data. The owner deploys locally with Compose; no SSH, tunnel service or Jupyter dependency.
 
-Current state: Compose, portable build/publication tooling and the GitHub candidate workflow are implemented. Candidate-image smoke, publication and release acceptance remain open. The missing-script fix is in the new image; axis persistence acceptance transfers to the analyst spec. A local image or source-level check is not a published release.
+Current state: [alpha-39415813584-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39415813584-1) is published with prebuilt images. Combination-chart acceptance covers an identified local packaged image and captured FMP data; CI rebuilt the same source revisions. Assembled Compose and owner-run server acceptance remain open. Axis persistence acceptance belongs to the analyst spec. See the [current chart checklist](echarts-status.md) for the bounded scope.
 
 ## Subsequent workstreams
 
