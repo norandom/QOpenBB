@@ -9,12 +9,20 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "histogram-binning"
+requirements = ["analyst-workspace/histogram-milestone.md:H1", "analyst-workspace/histogram-design.md:Frozen H1 interface"]
+planned_checks = ["original-binning-membership", "defensive-inputs", "finite-immutable-output"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogramBins.test.ts"]
+status = "passed"
+evidence = ["Workspace 4217001 inactive helper independently accepted: 71 focused tests, independent original-engine numerical probes, scoped strict TypeScript and explicit-scope complexity passed. No application activation. See artifacts/reviewed/chart-histogram/verification.md."]
+
+[[capabilities]]
 id = "histogram-chart-port"
 requirements = ["analyst-workspace/histogram-milestone.md:Acceptance contract"]
 planned_checks = ["original-binning-membership", "numeric-interval-geometry", "existing-editor-controls", "real-fmp-quarterly-frequency", "navigator-save-reopen-export"]
 test_paths = []
 status = "planned"
-evidence = ["H0 independent design review approved H1 pure binning boundary. One captured FMP response contains 40 AAPL quarters, independently matched to CSV and provenance. No histogram implementation or application acceptance yet. See artifacts/reviewed/chart-histogram/verification.md."]
+evidence = ["H0 independent design review approved H1 pure binning boundary. One captured FMP response contains 40 AAPL quarters, independently matched to CSV and provenance. Inactive H1 binning accepted separately; no histogram application acceptance yet. See artifacts/reviewed/chart-histogram/verification.md."]
 
 [[capabilities]]
 id = "xy-field-assignments"

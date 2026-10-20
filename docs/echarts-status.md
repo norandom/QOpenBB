@@ -22,7 +22,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete histogram; its [milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md) now has an accepted numerical contract.
+- [ ] Complete histogram; its [milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md) now has independently accepted inactive binning.
 - [ ] Complete remaining distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
@@ -56,6 +56,15 @@ These are completion criteria for the remaining port. Earlier checked source/fun
 - [x] Publish and verify the completed milestone.
 
 Source and packaged-image application acceptance passed. The updated alpha is published with both public image identities and anonymous pulls verified. See [task evidence](../artifacts/reviewed/chart-xy/verification.md).
+
+## Histogram progress
+
+- [x] Review the numerical contract and capture 40 quarterly FMP revenue observations.
+- [x] Implement and independently accept inactive binning, including boundaries and observation membership.
+- [ ] Render numeric intervals and connect existing editor controls.
+- [ ] Accept identified-image FMP journeys and publish the completed milestone.
+
+See [verification](../artifacts/reviewed/chart-histogram/verification.md). The existing alpha does not activate histogram yet.
 
 ## Evidence and ownership
 

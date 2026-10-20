@@ -42,7 +42,8 @@ Published: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone
 Current: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
 
 - [x] Review the binning contract and capture 40 quarterly FMP observations.
-- [ ] Implement and verify binning, rendering and existing editor controls.
+- [x] Implement and independently verify the inactive binning module.
+- [ ] Connect rendering and existing editor controls.
 - [ ] Accept real-FMP application behavior and publish the completed milestone.
 
 ## Delivery plan

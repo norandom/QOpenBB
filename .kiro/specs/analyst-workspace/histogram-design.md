@@ -73,6 +73,8 @@ If finite inputs still yield nonfinite, collapsed or unrepresentable derived end
 
 ## Mapper and application contract
 
+The independently reviewed [H2 supplement](histogram-mapper-design.md) adds saved color and legend-selection fields and freezes renderer details. It takes precedence for H2; H1 is unchanged.
+
 H2 defines `translateHistogram(input): CartesianTranslationResult` in `echarts/histogram.ts`, using the existing supported/invalid/unsupported result union. Freeze its input in `echarts/histogramTypes.ts`:
 
 ```ts
