@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-20T16:46:29.101110+00:00",
+  "updated_at": "2026-10-20T17:02:30.185825+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -23,17 +23,19 @@
     "name": "histogram-chart-port",
     "contract": "histogram-milestone.md",
     "authorization": "Owner requested autonomous chart port; continue after XY publication on 2026-10-20.",
-    "phase": "accepted-awaiting-publication",
-    "design_review": "Independent source and image review accepted production c1ee9ae and packaged image sha256:d346ac72142f4cab3ddc5c1527dd4383e97608aada180816f96a39ee996e80f3. Six histogram/prior-family browser journeys pass; matching miniature visual comparison accepted with disclosed small spacing/handle differences. Release source ae45e30 adds only three reviewed browser files. H5 publication remains open.",
+    "phase": "accepted-published",
+    "design_review": "Independent source and image review accepted production c1ee9ae and packaged image sha256:d346ac72142f4cab3ddc5c1527dd4383e97608aada180816f96a39ee996e80f3. Six histogram/prior-family browser journeys pass; matching miniature visual comparison accepted with disclosed small spacing/handle differences. Release source ae45e30 adds only three reviewed browser files. H5 published alpha-39460489280-1; both services verified anonymously by digest, release tag and latest.",
     "completed_tasks": [
       "H0",
       "H1",
       "H2",
       "H3",
-      "H4"
+      "H4",
+      "H5"
     ],
     "feature_accepted": true,
-    "evidence": "artifacts/reviewed/chart-histogram/verification.md"
+    "evidence": "artifacts/reviewed/chart-histogram/verification.md",
+    "release": "alpha-39460489280-1"
   },
   "completed_milestones": [
     {

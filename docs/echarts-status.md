@@ -6,7 +6,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Done
 
-- [x] Render Histogram in the ordinary Table/File journey with captured-FMP bin/count acceptance, editor controls, navigation, save/reopen and export. See the [accepted milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md); publication is pending.
+- [x] Render Histogram in the ordinary Table/File journey with captured-FMP bin/count acceptance, editor controls, navigation, save/reopen and export. See the [published milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md).
 
 - [x] Render scatter and bubble in the ordinary Table/File journey, including numeric assignments, pairing, appearance, navigation, saved state and captured-FMP acceptance. See the [published milestone](../.kiro/specs/analyst-workspace/xy-chart-milestone.md).
 
@@ -68,9 +68,9 @@ Source and packaged-image application acceptance passed. The updated alpha is pu
 - [x] Source-review endpoint-label overflow and original Bin count control order.
 - [x] Source-review miniature height, plot alignment and full-bin labels.
 - [x] Accept identified-image FMP journeys, synthetic edge cases and prior-family regressions.
-- [ ] Publish and verify the completed histogram milestone.
+- [x] Publish and verify the completed histogram milestone.
 
-See [verification](../artifacts/reviewed/chart-histogram/verification.md). The existing alpha does not activate histogram yet.
+See [verification](../artifacts/reviewed/chart-histogram/verification.md). The updated alpha includes histogram; both public image identities and anonymous pulls are verified.
 
 ## Evidence and ownership
 

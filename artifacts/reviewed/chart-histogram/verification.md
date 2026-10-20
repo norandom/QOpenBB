@@ -1,5 +1,9 @@
 # Histogram verification
 
+Histogram H0-H5 is accepted and published in [alpha-39460489280-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39460489280-1). Six candidate-image journeys and six anonymous release-image pulls passed. The ordinary Table/File scope includes captured FMP values, editor controls, navigation, save/reopen and export.
+
+The sections below preserve evidence at each acceptance stage. Earlier statements about pending work describe that stage; H4 and H5 record the final outcome and remaining limitations.
+
 ## H0 numerical contract
 
 Independent Astra review approved the histogram numerical contract and H1 boundary on 2026-10-20. H1 owns two inactive pure compatibility modules and one focused test; no production routing or browser acceptance is established. H2/H3 retain mapper and integration review gates. See the [milestone](../../../.kiro/specs/analyst-workspace/histogram-milestone.md) and [design](../../../.kiro/specs/analyst-workspace/histogram-design.md).
@@ -108,3 +112,15 @@ Commands used the existing `run-browser.sh` for the two histogram specs, `run-pr
 - `artifacts/chart-histogram/prior-xy-c1ee9ae/browser-results.json`: 2 passed, SHA256 `bb58df7f16b607f22ddd0249ab9974b0e7d670bc38441ea2dac77e0e33f2f469`.
 
 The visual collector passed once in 26.8 seconds with empty diagnostic arrays; its report is `artifacts/chart-histogram/reference/navigation/candidate/capture-overview/report.md`. Financial PNGs, raw captures, private runtime descriptors and traces remain ignored. H4 closes within the ordinary Table/File histogram scope. H5 release publication remains open; unfinished chart families and callers remain unchecked.
+
+
+## H5 published alpha
+
+[CI run 39460489280](https://github.com/norandom/QOpenBB/actions/runs/39460489280) passed checks, both Dagger builds and publication from root `82932663f243d9e920a895f1d6a1da6ec4d18dcc`. [Tagged prerelease alpha-39460489280-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39460489280-1) includes Compose, the public environment template and the exact image manifest. Workspace is pinned to `ae45e30e5c574a0b6a3fd61f713abf1b6e7f5c27`; data API remains `49cc413e6ab67eaa0444e07485b0f9243c786f7b`.
+
+- workspace: `ghcr.io/norandom/qopenbb-workspace@sha256:158e11d4b145ec6d51ac201c4361761574e581b5a23dd7fde3bbfc94953d7342`.
+- data-api: `ghcr.io/norandom/qopenbb-data-api@sha256:946dcb1bbae0bee8f8d314d481eac91a891121d03196c134ecad9031f6a8cae7`.
+
+Six pulls succeeded with a fresh empty Docker configuration: digest, alpha tag and latest for each service. Remote manifest/configuration digests, source labels, platform and pulled repository digests matched the release manifest. Manifest SHA256: `d670b311b9d9266b6c968b960627212bfb4f59ff8312f73747280d6887bc834a`. Local verification reports are under `artifacts/chart-histogram/release-39460489280/`; credentials and image archives are excluded.
+
+CI rebuilt the pinned source. Browser acceptance belongs to the identified local candidate above, whose production is identical; the pulled release images were checked for identity, not rerun through the browser. README, install links, renderer checklist, roadmap, spec and breadth records are reconciled. Assembled Compose, owner-server deployment, remaining chart families/callers and the disclosed table-visibility issue remain open. Histogram H0-H5 is complete within its stated ordinary Table/File scope.

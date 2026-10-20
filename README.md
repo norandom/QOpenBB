@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-39432626385-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-39460489280-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 
@@ -19,7 +19,7 @@ Snapshot: 2026-10-20. Follow the CI link for live run status; a green check does
 | Prototype | Full Workspace, installed data API, two-service Compose, local image builds | Candidate login/dashboard and routing smoke; assembled Compose acceptance |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
 | Data | Adapted FMP profile/income routes and FRED series catalog; real-data snapshot dashboard | Broader live FMP coverage, Yahoo adapter, named discovery and consistent provider contracts |
-| Visuals | Selected ECharts table-chart journeys, including accepted combination, scatter and bubble charts with captured FMP data; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
+| Visuals | Selected ECharts table-chart journeys, including accepted combination, scatter, bubble and histogram charts with captured FMP data; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
 | Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and persistence acceptance |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
 
@@ -49,7 +49,7 @@ Current: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
 - [x] Source-review endpoint-label overflow and original Bin count control order.
 - [x] Source-review miniature height, plot alignment and full-bin labels.
 - [x] Accept real-FMP application behavior, synthetic edge cases and prior-family regressions.
-- [ ] Publish and verify the completed histogram milestone.
+- [x] Publish and verify the completed histogram milestone.
 
 ## Delivery plan
 
