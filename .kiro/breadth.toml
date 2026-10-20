@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "histogram-production-join"
+requirements = ["analyst-workspace/histogram-milestone.md:H3", "analyst-workspace/histogram-production-join.md:Component gate and later application acceptance"]
+planned_checks = ["capture-before-aggregation", "original-controls-and-saved-options", "empty-selection-recovery", "retained-histogram-navigation"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/histogramProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/histogramSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/histogramEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogramNavigator.test.ts"]
+status = "passed"
+evidence = ["Workspace 85a3068 production join independently source-accepted. 301 distinct affected tests passed; whole-file complexity passed across 36 production paths. Baseline-relative TypeScript has 2713 inherited diagnostics in both runs, none added. Identified-image application/FMP/visual acceptance remains open. See artifacts/reviewed/chart-histogram/verification.md."]
+
+[[capabilities]]
 id = "histogram-interval-mapper"
 requirements = ["analyst-workspace/histogram-milestone.md:H2", "analyst-workspace/histogram-mapper-design.md:Ownership and acceptance"]
 planned_checks = ["actual-interval-svg-geometry", "range-frequency-tooltip", "legend-retained-data", "bounds-and-appearance"]

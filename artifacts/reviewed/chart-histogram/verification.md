@@ -37,3 +37,17 @@ Workspace `ea32516191e3710ad015da9fd655cdb95896e522` extends the supported histo
 The metadata regression failed before implementation; final focused mapper/SVG tests passed 34 cases. Scoped TypeScript retains only inherited typography TS2578. Final explicit-scope complexity passed, with maxima 69 physical / 49 logical / 21 per function. Evidence is artifacts/chart-histogram/h2-metadata-*. H3 remains in progress.
 
 Independent H3 ownership review also approved one gallery-reset guard in comboSessionAssignments.ts: preserve the inactive stored inversion setting on entry to histogram while its effective setting is false; other family resets remain unchanged. H3 must prove both behaviors and pass whole-file limits before acceptance. This is a reviewed integration change, not completed application evidence.
+
+## H3 production join source accepted
+
+Workspace `85a30686590e1fb7bc832d14d620c2eae38f16a8` connects histogram to the existing Table/File chart session, setup, editor and host. The reviewed scope contains 36 production files and four tests. The accepted H1/H2 calculation remains the single projection path; navigation and legend updates retain its full interval data. Inactive saved settings survive family changes, and the original Bin count control displays explicit or calculated bin length.
+
+The affected test set passed 301 distinct cases in 19 files: 155 application and 146 compatibility tests, including 25 new H3 tests. Runs use pinned Node and the existing application/compatibility Vitest configurations with one worker. Evidence: artifacts/chart-histogram/h3-application-regressions.log, h3-common-controls.log and h3-compatibility-regressions.log. Tests cover capture before aggregation, first-field selection, empty-selection recovery, saved options, numeric bounds, retained navigation, native legend restoration and session lifecycle.
+
+RED checks found stale bin-count input after a new revision, top/right bound lookup and equal Y-bound degeneration; each has a passing regression. Fixture errors in rowData, padding event shape and capture timing were corrected without production workarounds. Independent source review approved the frozen changes and independently reran all 25 new H3 tests, which passed.
+
+The combined explicit-scope checker passed for all 36 production files, with maxima 383 physical lines, 186 logical units/file and 40/function. Baseline-relative TypeScript ran the same baseline tests twice: both runs report 2713 inherited diagnostics, with no added or removed diagnostic headlines after ignoring line shifts. This establishes no new diagnostics, not a clean full compilation. The comparison binds every production file hash in artifacts/chart-histogram/join-static/comparison.json.
+
+The authentic original Revenue reference shows X from zero through 150 billion and Y from zero through 10; the current mapper uses tighter extents. This concrete automatic-axis difference remains an H4 repair obligation.
+
+H4 still owes image-only browser acceptance with the captured FMP data, original automatic axis/outer-extent comparison and previous-family application regressions. The published alpha is unchanged; no histogram feature or publication acceptance is claimed.
