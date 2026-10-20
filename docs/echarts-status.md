@@ -48,10 +48,11 @@ These are completion criteria for the remaining port. Earlier checked source/fun
 ## Scatter/bubble progress
 
 - [x] Resolve paired/unpaired X/Y/size identities with source-compatible ordering and incomplete-group behavior; independently reviewed focused tests and complexity checks passed.
-- [ ] Implement numeric rendering and existing editor controls.
+- [x] Implement the inactive numeric mapper, with independent review and actual ECharts geometry/tooltip checks.
+- [ ] Connect the existing editor and application, including original empty-domain behavior for excluded one-sided bounds.
 - [ ] Accept captured-FMP application journeys and publish the completed milestone.
 
-The assignment helper is inactive. It does not establish a usable scatter/bubble widget yet. See [task evidence](../artifacts/reviewed/chart-xy/verification.md).
+The assignment helper and numeric mapper are inactive. They do not establish a usable scatter/bubble widget yet. See [task evidence](../artifacts/reviewed/chart-xy/verification.md).
 
 ## Evidence and ownership
 

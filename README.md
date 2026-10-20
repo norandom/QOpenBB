@@ -34,6 +34,7 @@ See the [ECharts checklist](docs/echarts-status.md) for remaining chart families
 Next: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
 
 - [x] Implement and review the inactive X/Y/size field-assignment contract.
+- [x] Implement and review the inactive numeric renderer, including actual ECharts geometry checks.
 - [ ] Connect rendering and editor controls, accept real-FMP application behavior and publish the completed milestone.
 
 ## Delivery plan

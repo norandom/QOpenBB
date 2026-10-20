@@ -11,9 +11,9 @@ Verify the application with captured FMP annual data: revenue as X (USD), net in
 ## Tasks
 
 - [x] X1. Freeze and implement the inactive numeric-field assignment contract, with focused tests for paired/unpaired scatter/bubble, selected order, incomplete groups, defaults, malformed input and immutability. Own `compatibility/xyAssignments.ts` and its unit test only. No gallery activation, state writes or geometry. Independently accepted at `e343e16`; see [evidence](../../../artifacts/reviewed/chart-xy/verification.md).
-- [ ] X2. Implement the [independently reviewed numeric mapper contract](xy-mapper-design.md), including bubble-size, marker, axis and appearance behavior, and focused real-engine checks. Ownership is new `echarts/xy*.ts` and focused XY mapper tests; no shared helper or production routing edits.
+- [x] X2. Implement the [independently reviewed numeric mapper contract](xy-mapper-design.md), including bubble-size, marker, axis and appearance behavior, and focused real-engine checks. Ownership is new `echarts/xy*.ts` and focused XY mapper tests; no shared helper or production routing edits. Independently accepted at `7e509d3`; the documented excluded-bound diagnostic remains an X4 parity obligation.
 - [ ] X3. Connect pairing and XY field roles to the existing editor/session after the shared interface is frozen. Preserve option paths and inactive settings.
-- [ ] X4. Join family routing, caller defaults, appearance, navigator and refresh behavior. Verify captured-FMP application journeys and prior-family regressions.
+- [ ] X4. Join family routing, caller defaults, appearance, navigator and refresh behavior. Preserve original empty geometry for one-sided bounds that exclude all observations; the inactive mapper's safety diagnostic is not final parity. Verify captured-FMP application journeys and prior-family regressions.
 - [ ] X5. Independent feature review, breadth and README/docs checklist reconciliation, reviewed evidence sync, commits/push and one tagged alpha publication with anonymous pull verification.
 
 Task X1 is independent of the unresolved geometry questions in [source research](xy-chart-research.md). X2 and X3 may run in parallel only after an independently reviewed interface and exclusive file ownership are recorded. Shared production integration and commits remain serialized.

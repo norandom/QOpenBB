@@ -64,6 +64,12 @@ Acceptance requires plotted coordinates and sizes, displayed values and units, a
 
 ## Bounded next task order
 
+Integration inspection identified three constraints for X3: `setupProjection.ts` needs an explicit XY policy so USD coordinates and USD/share bubble sizes are not rejected by the ordinary single-axis unit check; `effectiveAppearanceLayers.ts` currently maps unfamiliar families to bar and must not be used as an XY resolver; original XY appearance writes top-level `series.shape/size/maxSize/strokeWidth`, while existing Cartesian marker controls write `series.marker.*`. Preserve these different saved paths through the existing option reducer.
+
+Use the existing capture, setup aggregation, widget transaction owner and stamps. Pairing is a stamped family-specific option change; it needs no second store or persisted assignment list. The Labels selector determines whether X2 receives category or Y point labels. Axis appearance must resolve numeric X/Y explicitly. Caller defaults, navigator and wheel/reset integration remain X4 obligations before activation.
+
+The X2 renderer check found that ECharts can reverse an extent when a lone explicit minimum exceeds all observations or a lone maximum falls below them. Original Charts `normalisedExtentWithMetadata` (30524-30543) instead produces an empty domain; `NumberAxis` (32086-32089), `LinearScale.niceDomain` (32052-32053) and marker visibility (23753-23755) preserve empty geometry. X2's inactive safety diagnostic is not final parity for this setting. Before X4 acceptance, reproduce that empty-domain behavior without reversing bounds or inventing observations.
+
 1. Freeze XY assignment/options and edge-case behavior. Own new `compatibility/xyAssignments.ts`, its focused tests and the bounded design record; keep it inactive. The controller owns shared interface edits.
 2. Implement an inactive mapper in new `echarts/xy*.ts` and focused mapper/render tests: numeric coordinates, size mapping, axes, labels and tooltips.
 3. Implement session/editor behavior in new `application/xy*.ts`, `editor/xy/*` and focused transaction/control tests. Keep the existing session as sole state owner. This lane may overlap task 2 only after interfaces are frozen and writable paths are disjoint.

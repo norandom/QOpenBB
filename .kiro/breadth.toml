@@ -17,6 +17,14 @@ status = "passed"
 evidence = ["Inactive X1 resolver at Workspace e343e16 independently accepted: 33 focused tests and scoped strict TypeScript passed; complexity 89 physical/72 logical/17 maximum function. No application activation or renderer acceptance. See artifacts/reviewed/chart-xy/verification.md."]
 
 [[capabilities]]
+id = "xy-numeric-mapper"
+requirements = ["analyst-workspace/xy-chart-milestone.md:X2", "analyst-workspace/xy-mapper-design.md:Evidence required"]
+planned_checks = ["raw-numeric-geometry", "independent-size-domains", "marker-anchoring", "tooltip-identity-order"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.render.test.ts"]
+status = "passed"
+evidence = ["Inactive X2 mapper at Workspace 7e509d3 independently accepted: 31 mapper tests plus 33 X1 tests passed, including actual ECharts numeric/triangle/tooltip checks; combined complexity clean. Scoped TypeScript retains inherited typography.ts TS2578, no XY diagnostics. Excluded one-sided bounds return a documented safety diagnostic pending X4 original-empty-domain parity. No application acceptance. See artifacts/reviewed/chart-xy/verification.md."]
+
+[[capabilities]]
 id = "scatter-bubble-chart-port"
 requirements = ["analyst-workspace/xy-chart-milestone.md:Acceptance"]
 planned_checks = ["numeric-xy-rendering", "bubble-size-semantics", "paired-editor", "real-fmp-application", "save-reopen-export", "navigator-theme-refresh"]
