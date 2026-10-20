@@ -6,6 +6,8 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Done
 
+- [x] Render scatter and bubble in the ordinary Table/File journey, including numeric assignments, pairing, appearance, navigation, saved state and captured-FMP acceptance. See the [published milestone](../.kiro/specs/analyst-workspace/xy-chart-milestone.md).
+
 - [x] Render Column & Line, Area & Column and Custom Combination with per-series axes, saved styling, navigator/theme/refresh retention and captured-FMP application acceptance. See the [accepted milestone](../.kiro/specs/analyst-workspace/chart-port-milestone.md).
 
 - [x] Install ECharts 6.0.0 and provide the React host, lifecycle and chart-state foundation.
@@ -20,7 +22,6 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete scatter/bubble; the [milestone](../.kiro/specs/analyst-workspace/xy-chart-milestone.md) tracks implementation and application acceptance.
 - [ ] Complete distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
@@ -51,9 +52,9 @@ These are completion criteria for the remaining port. Earlier checked source/fun
 - [x] Implement the inactive numeric mapper, with independent review and actual ECharts geometry/tooltip checks.
 - [x] Connect and source-review the existing editor/application, including original empty-domain behavior for excluded one-sided bounds.
 - [x] Accept captured-FMP application journeys, synthetic scatter/bubble edge cases and prior-family regressions.
-- [ ] Publish and verify the completed milestone.
+- [x] Publish and verify the completed milestone.
 
-Source and packaged-image application acceptance passed. The published alpha still contains the previous milestone; scatter/bubble publication remains open. See [task evidence](../artifacts/reviewed/chart-xy/verification.md).
+Source and packaged-image application acceptance passed. The updated alpha is published with both public image identities and anonymous pulls verified. See [task evidence](../artifacts/reviewed/chart-xy/verification.md).
 
 ## Evidence and ownership
 

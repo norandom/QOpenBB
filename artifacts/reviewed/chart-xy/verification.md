@@ -81,3 +81,14 @@ All final commands exited zero, with one browser worker, no retries, skips or fl
 Scatter verifies six complete signed-coordinate observations across two shared-X series, marker diameter, series-specific tooltips, reordered saved fields, themes, refresh, save/reopen, export and application/CDP diagnostics. Bubble verifies raw FMP coordinates and linear EPS sizes, synthetic missing/signed/equal sizes, aggregation, empty-selection recovery and numeric navigation/reset. Captured AAPL annual income-statement data covers 2021-2025; raw SHA256 is `9e0dae1fb5c1d067473f7f9749cb4969afc6d767ebaa4358376215ff4ea42648`. Financial screenshots and raw data remain private.
 
 This establishes the defined ordinary Table/File milestone, not exhaustive visual parity for every marker or interaction permutation, standalone/AI callers, or complete renderer replacement. X5 registry publication and anonymous pull verification remain open.
+
+## X5 published alpha
+
+[CI run 39432626385](https://github.com/norandom/QOpenBB/actions/runs/39432626385) passed checks, both Dagger builds and publication from root `b5feb442312c5ecc4c80bbc94d16ccf4ccc4896f`. [Tagged prerelease alpha-39432626385-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39432626385-1) includes Compose, the environment template and manifest. Workspace is pinned to `17a35f3468452c5ae92cbf9f57de4d7bd92cde12`; data API remains `49cc413e6ab67eaa0444e07485b0f9243c786f7b`.
+
+- workspace: `ghcr.io/norandom/qopenbb-workspace@sha256:7738ba65854e5d049c9117f27d9549d62007ee4187a31fa1827d7a0d0537d0bb`.
+- data-api: `ghcr.io/norandom/qopenbb-data-api@sha256:2d7f8b3daa9e6f5b565725cbe3454002329c6ae7a4371285849f2721c93d099c`.
+
+Six pulls succeeded with a fresh empty Docker configuration: digest, release tag and latest for each service. Registry configuration digest, source labels, architecture and pulled digest matched the release manifest. Local reports are under `artifacts/chart-xy/release-39432626385/`; credentials and image archives are excluded. The registry images were rebuilt by CI; application acceptance was performed on the identified local candidate above, not on the pulled release images. README, renderer checklist, roadmap, install links, spec and breadth records are reconciled. Assembled Compose, owner-server deployment and remaining chart families are still open.
+
+The first anonymous verifier attempt stopped after a successful pull because it assumed Docker image IDs always equal configuration digests. This daemon reports manifest IDs. The corrected verifier accepts either identified storage representation while independently checking registry configuration and manifest digests, labels and pulled references; all six final pulls passed.

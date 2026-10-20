@@ -2,7 +2,7 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-39415813584-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39415813584-1), built from Workspace `6123991` and data API `49cc413`. See the [combination-chart and release verification record](../artifacts/reviewed/chart-combo/verification.md). The [earlier alpha evidence](../artifacts/reviewed/alpha-release/verification.md) remains historical.
+Published: [alpha-39432626385-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39432626385-1), built from Workspace `17a35f3` and data API `49cc413`. See the [scatter/bubble and release verification record](../artifacts/reviewed/chart-xy/verification.md). The [earlier alpha evidence](../artifacts/reviewed/alpha-release/verification.md) remains historical.
 
 ## Build and publication
 
@@ -23,7 +23,7 @@ GitHub Actions runs checks for PRs and ordinary main pushes. After a reviewed fe
 
 ## Acceptance boundary
 
-The owner accepted shipping the current development alpha with the existing functionality. The combination-chart milestone passed browser checks on an identified local packaged image, including captured FMP values, editor controls, save/reopen/export and navigator/theme/refresh retention. CI rebuilt the same source revisions; registry verification is separate from browser acceptance. Assembled Compose and production-server acceptance remain open. Unfinished renderer, provider, persistence, AI and Excel work belongs to successor specs in the [roadmap](roadmap.md).
+The owner accepted shipping the current development alpha with the existing functionality. The scatter/bubble milestone passed browser checks on an identified local packaged image, including captured FMP values, editor controls, save/reopen/export and navigator/theme/refresh retention. The local candidate contains production revision `e64ce8c`; release revision `17a35f3` adds only the reviewed browser tests. CI rebuilt that pinned revision; registry verification is separate from browser acceptance. Assembled Compose and production-server acceptance remain open. Unfinished renderer, provider, persistence, AI and Excel work belongs to successor specs in the [roadmap](roadmap.md).
 
 The earlier CI failure occurred after Workspace export, in engine identity verification. The repair resolves the pinned image through Docker instead of equating a local image ID with a registry manifest digest. Focused tests cover both Docker storage representations; the hosted run now confirms the repaired build outcome.
 

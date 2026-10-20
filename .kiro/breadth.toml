@@ -38,7 +38,7 @@ requirements = ["analyst-workspace/xy-chart-milestone.md:Acceptance"]
 planned_checks = ["numeric-xy-rendering", "bubble-size-semantics", "paired-editor", "real-fmp-application", "save-reopen-export", "navigator-theme-refresh"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/xy-charts.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/xy-fmp.spec.ts"]
 status = "passed"
-evidence = ["Independent X4 review accepted image e7cb9923 (Workspace e64ce8c): three XY application journeys, including captured AAPL annual FMP coordinates and EPS sizes, plus ordinary and combination regressions passed with no retries/skips. Test-only revision 17a35f3 adds Scatter coverage and fixes the ordinary theme observer. Publication remains X5. See artifacts/reviewed/chart-xy/verification.md."]
+evidence = ["Independent X4 review accepted image e7cb9923 (Workspace e64ce8c): three XY application journeys, including captured AAPL annual FMP coordinates and EPS sizes, plus ordinary and combination regressions passed with no retries/skips. Test-only revision 17a35f3 adds Scatter coverage and fixes the ordinary theme observer. X5 published alpha-39432626385-1; both services verified anonymously by digest, release tag and latest. See artifacts/reviewed/chart-xy/verification.md."]
 
 [[capabilities]]
 id = "combination-chart-port"
