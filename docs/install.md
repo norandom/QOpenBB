@@ -20,7 +20,7 @@ Pull both images together when updating development. Stable versions will use pi
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-39470157459-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-39470157459-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-39470157459-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-39476320841-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-39476320841-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-39476320841-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace

@@ -28,6 +28,15 @@ Local Dagger image `sha256:4c7f0907ed4df0874f0053fff25d55b29317c162880749410995a
 - The initial candidate journey completed the small-chart and export checks but failed the newly added wider-view check because the test sampled the canvas before resize settled. The reviewed test fix waits for the 619-pixel canvas before observing it; renderer code was unchanged. The complete rerun passed.
 - Parent and independent reviewer inspected the matched 359×284 original/export and the 619×284 wide view. qView was opened for the matched dark comparison. The published sample is the clean export; the intermediate light screenshot contains a lingering tooltip and is excluded.
 
-Independent Astra review accepted the bounded X7 result. The legend icon and minor spacing still differ; this is closer label matching, not full pixel parity. Hosted image publication remains pending.
+Independent Astra review accepted the bounded X7 result. The legend icon and minor spacing still differ; this is closer label matching, not full pixel parity.
 
 Ignored evidence: `artifacts/chart-xy/label-review/`; the initial browser failure is under `artifacts/chart-xy/spread-review/browser-x7-red/`.
+
+## Published refinement
+
+[CI run 39476320841](https://github.com/norandom/QOpenBB/actions/runs/39476320841) passed from root `77035731fca15fb24ac26bfa91a9a4b476937cdc`. [Tagged alpha alpha-39476320841-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39476320841-1) contains Compose, the environment template and image manifest. Both images were rebuilt by Dagger. Six anonymous pulls (digest, alpha tag and latest for each service) matched the manifest's registry/configuration digests, platform and source labels.
+
+- workspace: `ghcr.io/norandom/qopenbb-workspace@sha256:3cd4a18e40b1dbd243671b7a5638924df5d17e6e394dfd147d4ec3b7a0dcd9e0`.
+- data-api: `ghcr.io/norandom/qopenbb-data-api@sha256:4f04da112697adeec7241fad4c13a57cb2c8facb46d523544370e9013e1faa39`.
+
+Application checks ran on the identified local candidate; CI publication and image identity were verified separately. Owner-server deployment and exact pixel parity remain unverified.

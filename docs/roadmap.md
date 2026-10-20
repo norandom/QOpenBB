@@ -17,7 +17,7 @@ Owner clarification: saved research-context persistence acceptance moves to `ana
 
 Target: HTTP on `0.0.0.0:23003`, `qopenbb.example.com` through owner-managed cloudflared, relative bind-mounted data. The owner deploys locally with Compose; no SSH, tunnel service or Jupyter dependency.
 
-Current state: [alpha-39470157459-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39470157459-1) is published with prebuilt images. Combination, scatter/bubble and histogram acceptance cover identified local packaged images and captured FMP data. The current release adds the reviewed bubble-range and miniature-clipping correction; CI image identities were verified separately. X7 axis-label polish remains open. Assembled Compose and owner-run server acceptance remain open. Axis persistence acceptance belongs to the analyst spec. See the [current chart checklist](echarts-status.md) for the bounded scope.
+Current state: [alpha-39476320841-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39476320841-1) is published with prebuilt images. Combination, scatter/bubble and histogram acceptance cover identified local packaged images and captured FMP data. The current release includes the independently reviewed closer-label and main-marker clipping refinement; CI image identities were verified separately. Minor visual differences remain documented. Assembled Compose and owner-run server acceptance remain open. Axis persistence acceptance belongs to the analyst spec. See the [current chart checklist](echarts-status.md) for the bounded scope.
 
 ## Subsequent workstreams
 

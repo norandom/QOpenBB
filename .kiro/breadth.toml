@@ -126,7 +126,7 @@ requirements = ["analyst-workspace/xy-chart-milestone.md:X7"]
 planned_checks = ["measured-label-density", "matched-original-small-wide", "main-marker-clipping", "fmp-save-reopen-export"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.ticks.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.navigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.clip.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/xy-fmp.spec.ts"]
 status = "passed"
-evidence = ["Independent source and packaged review accepted image 4c7f0907 / production 9185c5f: captured-FMP journey passed in 31.4s, Scatter in 24.2s, zero skips/retries. Small/wide labels, raw miniature formatting, plot clipping and lifecycle/export verified; explicit bounds and financial observations retained. Hosted publication pending. See artifacts/reviewed/chart-xy/bubble-label-refinement.md."]
+evidence = ["Independent source and packaged review accepted image 4c7f0907 / production 9185c5f: captured-FMP journey passed in 31.4s, Scatter in 24.2s, zero skips/retries. Small/wide labels, raw miniature formatting, plot clipping and lifecycle/export verified; explicit bounds and financial observations retained. Published alpha-39476320841-1; six anonymous image pulls match the manifest. See artifacts/reviewed/chart-xy/bubble-label-refinement.md."]
 
 [[capabilities]]
 id = "combination-chart-port"

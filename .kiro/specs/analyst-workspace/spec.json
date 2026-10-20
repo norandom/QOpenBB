@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-20T18:13:10.511518+00:00",
+  "updated_at": "2026-10-20T18:50:28.042372+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -30,8 +30,7 @@
       "P1"
     ],
     "feature_accepted": false,
-    "evidence": "artifacts/reviewed/chart-pie/verification.md",
-    "paused_for": "X7 application accepted; finish its image publication before resuming pie."
+    "evidence": "artifacts/reviewed/chart-pie/verification.md"
   },
   "completed_milestones": [
     {
@@ -103,7 +102,7 @@
     "authorization": "Owner reported broken published bubble sample on 2026-10-20; repair under existing autonomous chart-port direction.",
     "feature_accepted": true,
     "evidence": "artifacts/reviewed/chart-xy/bubble-correction.md",
-    "visual_followup": "X7 closer labels and main-marker clipping independently accepted; hosted publication pending.",
+    "visual_followup": "X7 closer labels and clipping accepted and published as alpha-39476320841-1.",
     "release": "alpha-39470157459-1"
   },
   "active_refinement": {
@@ -111,11 +110,12 @@
     "contract": "xy-chart-milestone.md",
     "task": "X7",
     "authorization": "Owner requested closer original label matching on 2026-10-20.",
-    "phase": "application-accepted-publication-pending",
+    "phase": "accepted-published",
     "feature_accepted": true,
     "production_revision": "9185c5f12aca4d12b7f731f17d57f7c252fd0452",
     "release_revision": "8aeecf4c1d40a58b0be3fcdcbd3ec7c6e460e8f4",
     "evidence": "artifacts/reviewed/chart-xy/bubble-label-refinement.md",
-    "limits": "Bounded closer labels and clipping; legend icon and minor spacing remain different."
+    "limits": "Bounded closer labels and clipping; legend icon and minor spacing remain different.",
+    "release": "alpha-39476320841-1"
   }
 }

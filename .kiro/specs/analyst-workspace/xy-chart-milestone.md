@@ -30,7 +30,7 @@ Verify the application with captured FMP annual data: revenue as X (USD), net in
 - [x] X6. Correct the reported bubble spread: compare original automatic bounds, preserve explicit user bounds and EPS diameter mapping, and clip miniature marker geometry to its track. Verify the same captured FMP observations, navigation/reset, resize and export; independently review, replace the sample and publish one corrected image milestone. Production changes retain the existing complexity caps.
 - [x] X7. Resolve remaining axis-label density/cropping and slight main-marker edge overlap against the original appearance. Owner requested closer label matching after the qView comparison on 2026-10-20; preserve explicit bounds, observations and EPS sizes while automatic rounding follows available plot space.
 
-X1-X5 record the earlier delivered scope. X6 source and packaged-application checks passed at `72bdc11`; published as [alpha-39470157459-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39470157459-1). The earlier coordinate and diameter checks did not establish painted containment. X7 source and packaged checks are independently accepted; its hosted publication is pending.
+X1-X5 record the earlier delivered scope. X6 source and packaged-application checks passed at `72bdc11`; published as [alpha-39470157459-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39470157459-1). The earlier coordinate and diameter checks did not establish painted containment. X7 source and packaged checks are independently accepted; published as [alpha-39476320841-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39476320841-1).
 
 ### X7 refinement contract
 
