@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-20T13:18:33.952646+00:00",
+  "updated_at": "2026-10-20T13:41:01.787044+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -23,14 +23,15 @@
     "name": "scatter-bubble-chart-port",
     "contract": "xy-chart-milestone.md",
     "authorization": "Owner requested autonomous chart port; continue instruction on 2026-10-20.",
-    "phase": "implementation-in-progress",
-    "design_review": "X3 and X4 source join independently reviewed, including the empty-selection recovery fix. The first image passed captured-FMP acceptance but failed synthetic re-add recovery. Rebuilt candidate acceptance remains open under X4.",
+    "phase": "accepted-awaiting-publication",
+    "design_review": "Independent Astra review accepted X4: image-only candidate e64ce8c passed three XY journeys, captured FMP data, ordinary and combination regressions. Revision 17a35f3 changes tests only. X5 publication remains open.",
     "completed_tasks": [
       "X1",
       "X2",
-      "X3"
+      "X3",
+      "X4"
     ],
-    "feature_accepted": false,
+    "feature_accepted": true,
     "evidence": "artifacts/reviewed/chart-xy/verification.md"
   },
   "completed_milestones": [

@@ -64,3 +64,20 @@ Observer repairs are committed at `2f4b029`: use accessible heading/chip locator
 The recovery fix at Workspace `e64ce8c5760703d23cd003ca2c4497a39e90cea1` propagates the existing XY empty-selection policy through two missed setup validations. Ordinary chart validation defaults are unchanged. The owner regression reproduced rejection before the fix and then passed Labels changes and sequential X/Y re-addition after empty-selection refresh. All 25 focused owner/setup/transaction regressions passed; independent review approved the bounded fix. Both production files pass the combined complexity gate, and the repeated baseline-relative TypeScript comparison adds no diagnostics.
 
 README and renderer checkboxes were reconciled: source integration remains checked; rebuilt-candidate acceptance and publication remain unchecked. The next gate is the rebuilt image's synthetic recovery and FMP journeys, followed by previous-family regressions. The first candidate's FMP result does not certify the rebuilt candidate.
+
+## X4 accepted application milestone
+
+Independent Astra review approved X4 on 2026-10-20. The corrected image `sha256:e7cb9923ae29338539dd215378bb8618352e05401b499c15eba16997ce6ca3f4` contains production source `e64ce8c5760703d23cd003ca2c4497a39e90cea1`, without a source overlay. Workspace `17a35f3468452c5ae92cbf9f57de4d7bd92cde12` changes only the two browser test files; application/build inputs are unchanged.
+
+| Final packaged-image check | Result | Local evidence under artifacts/chart-xy |
+| --- | --- | --- |
+| Synthetic Bubble and captured-FMP Bubble | 2 passed, 42.1s | browser-e64ce8c |
+| Multiple-series Scatter | 1 passed, 23.6s | browser-e64ce8c-scatter-innertext |
+| Previous combination family | 1 passed, 16.8s | previous-combo-e64ce8c |
+| Previous ordinary families, including backend restart | 1 passed, 1.0m | previous-ordinary-fixed-e64ce8c |
+
+All final commands exited zero, with one browser worker, no retries, skips or flaky results. Tests ran through the existing live-chart Playwright configuration on port 55533. The ordinary regression first exposed a test-only absent-class comparison bug; normalizing the missing class to false fixes it without weakening theme assertions. Scatter tooltip checks use rendered innerText to retain visible line breaks. Both test edits received independent Sol source review.
+
+Scatter verifies six complete signed-coordinate observations across two shared-X series, marker diameter, series-specific tooltips, reordered saved fields, themes, refresh, save/reopen, export and application/CDP diagnostics. Bubble verifies raw FMP coordinates and linear EPS sizes, synthetic missing/signed/equal sizes, aggregation, empty-selection recovery and numeric navigation/reset. Captured AAPL annual income-statement data covers 2021-2025; raw SHA256 is `9e0dae1fb5c1d067473f7f9749cb4969afc6d767ebaa4358376215ff4ea42648`. Financial screenshots and raw data remain private.
+
+This establishes the defined ordinary Table/File milestone, not exhaustive visual parity for every marker or interaction permutation, standalone/AI callers, or complete renderer replacement. X5 registry publication and anonymous pull verification remain open.

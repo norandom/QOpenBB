@@ -36,7 +36,8 @@ Next: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
 - [x] Implement and review the inactive X/Y/size field-assignment contract.
 - [x] Implement and review the inactive numeric renderer, including actual ECharts geometry checks.
 - [x] Connect and source-review rendering, editor controls and saved XY settings.
-- [ ] Accept real-FMP application behavior in the candidate image and publish the completed milestone.
+- [x] Accept real-FMP application behavior, synthetic edge cases and prior-family regressions in the candidate image.
+- [ ] Publish and verify the completed scatter/bubble milestone.
 
 ## Delivery plan
 
