@@ -60,9 +60,9 @@ evidence = ["Workspace 4217001 inactive helper independently accepted: 71 focuse
 id = "histogram-chart-port"
 requirements = ["analyst-workspace/histogram-milestone.md:Acceptance contract"]
 planned_checks = ["original-binning-membership", "numeric-interval-geometry", "existing-editor-controls", "real-fmp-quarterly-frequency", "navigator-save-reopen-export"]
-test_paths = []
-status = "planned"
-evidence = ["H0 independent design review approved H1 pure binning boundary. One captured FMP response contains 40 AAPL quarters, independently matched to CSV and provenance. Inactive H1 binning accepted separately; no histogram application acceptance yet. See artifacts/reviewed/chart-histogram/verification.md."]
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/histogram-fmp.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/histogram-charts.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/histogram-observer.ts"]
+status = "passed"
+evidence = ["H4 independently accepted production c1ee9ae in packaged image d346ac7 with no overlay: two histogram journeys, four ordinary/combo/XY regressions, matching FMP miniature visual comparison. Release source ae45e30 adds only reviewed browser tests. H5 publication remains open. See artifacts/reviewed/chart-histogram/verification.md."]
 
 [[capabilities]]
 id = "xy-field-assignments"

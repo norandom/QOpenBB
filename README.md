@@ -48,7 +48,8 @@ Current: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
 - [x] Source-review automatic axis rounding and retained zoom/reset scales.
 - [x] Source-review endpoint-label overflow and original Bin count control order.
 - [x] Source-review miniature height, plot alignment and full-bin labels.
-- [ ] Accept real-FMP application behavior and publish the completed milestone.
+- [x] Accept real-FMP application behavior, synthetic edge cases and prior-family regressions.
+- [ ] Publish and verify the completed histogram milestone.
 
 ## Delivery plan
 

@@ -1,6 +1,6 @@
 # Renderer capability matrix
 
-Current accepted scope is tracked in the [ECharts checklist](echarts-status.md). The ordinary Table/File combination and scatter/bubble milestones were accepted on 2026-10-20; see [combination evidence](../artifacts/reviewed/chart-combo/verification.md) and [scatter/bubble evidence](../artifacts/reviewed/chart-xy/verification.md). The inventory below records the earlier source gaps, not the current completion status.
+Current accepted scope is tracked in the [ECharts checklist](echarts-status.md). The ordinary Table/File combination and scatter/bubble milestones were accepted on 2026-10-20; see [combination evidence](../artifacts/reviewed/chart-combo/verification.md) and [scatter/bubble evidence](../artifacts/reviewed/chart-xy/verification.md). Histogram is also accepted in the ordinary Table/File journey; see [histogram evidence](../artifacts/reviewed/chart-histogram/verification.md). The inventory below records the earlier source gaps, not the current completion status.
 
 Restore the contracts below before accepting renderer parity. This source inventory establishes missing behavior and proposed checks; it does not establish runtime reachability or a successful replacement. Preserve the existing widget controls, financial data, saved settings and light/dark appearance while adapting the renderer.
 
