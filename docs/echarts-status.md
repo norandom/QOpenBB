@@ -22,7 +22,8 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete distribution and radial families.
+- [ ] Complete histogram; its [milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md) now has an accepted numerical contract.
+- [ ] Complete remaining distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.

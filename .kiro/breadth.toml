@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "histogram-chart-port"
+requirements = ["analyst-workspace/histogram-milestone.md:Acceptance contract"]
+planned_checks = ["original-binning-membership", "numeric-interval-geometry", "existing-editor-controls", "real-fmp-quarterly-frequency", "navigator-save-reopen-export"]
+test_paths = []
+status = "planned"
+evidence = ["H0 independent design review approved H1 pure binning boundary. One captured FMP response contains 40 AAPL quarters, independently matched to CSV and provenance. No histogram implementation or application acceptance yet. See artifacts/reviewed/chart-histogram/verification.md."]
+
+[[capabilities]]
 id = "xy-field-assignments"
 requirements = ["analyst-workspace/xy-chart-milestone.md:X1", "analyst-workspace/xy-assignment-design.md:Rules"]
 planned_checks = ["paired-unpaired-order", "incomplete-groups", "immutable-defensive-input"]

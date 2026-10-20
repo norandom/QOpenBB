@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-20T14:00:56.442758+00:00",
+  "updated_at": "2026-10-20T14:11:30.414595+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -20,21 +20,16 @@
   },
   "ready_for_implementation": false,
   "active_milestone": {
-    "name": "scatter-bubble-chart-port",
-    "contract": "xy-chart-milestone.md",
-    "authorization": "Owner requested autonomous chart port; continue instruction on 2026-10-20.",
-    "phase": "accepted-published",
-    "design_review": "Independent Astra review accepted X4: image-only candidate e64ce8c passed three XY journeys, captured FMP data, ordinary and combination regressions. Revision 17a35f3 changes tests only. CI run 39432626385 published both images; six anonymous pulls and registry identities verified.",
+    "name": "histogram-chart-port",
+    "contract": "histogram-milestone.md",
+    "authorization": "Owner requested autonomous chart port; continue after XY publication on 2026-10-20.",
+    "phase": "implementation-in-progress",
+    "design_review": "Independent Astra H0 review approved the numerical contract and H1 implementation boundary. H2/H3 remain subject to their planned mapper/join reviews.",
     "completed_tasks": [
-      "X1",
-      "X2",
-      "X3",
-      "X4",
-      "X5"
+      "H0"
     ],
-    "feature_accepted": true,
-    "evidence": "artifacts/reviewed/chart-xy/verification.md",
-    "release": "alpha-39432626385-1"
+    "feature_accepted": false,
+    "evidence": "artifacts/reviewed/chart-histogram/verification.md"
   },
   "completed_milestones": [
     {
@@ -61,6 +56,23 @@
       "feature_accepted": true,
       "release": "alpha-39415813584-1",
       "evidence": "artifacts/reviewed/chart-combo/verification.md"
+    },
+    {
+      "name": "scatter-bubble-chart-port",
+      "contract": "xy-chart-milestone.md",
+      "authorization": "Owner requested autonomous chart port; continue instruction on 2026-10-20.",
+      "phase": "accepted-published",
+      "design_review": "Independent Astra review accepted X4: image-only candidate e64ce8c passed three XY journeys, captured FMP data, ordinary and combination regressions. Revision 17a35f3 changes tests only. CI run 39432626385 published both images; six anonymous pulls and registry identities verified.",
+      "completed_tasks": [
+        "X1",
+        "X2",
+        "X3",
+        "X4",
+        "X5"
+      ],
+      "feature_accepted": true,
+      "evidence": "artifacts/reviewed/chart-xy/verification.md",
+      "release": "alpha-39432626385-1"
     }
   ]
 }

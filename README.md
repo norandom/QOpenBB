@@ -31,13 +31,19 @@ Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-
 
 See the [ECharts checklist](docs/echarts-status.md) for remaining chart families and callers.
 
-Current: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
+Published: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
 
 - [x] Implement and review the inactive X/Y/size field-assignment contract.
 - [x] Implement and review the inactive numeric renderer, including actual ECharts geometry checks.
 - [x] Connect and source-review rendering, editor controls and saved XY settings.
 - [x] Accept real-FMP application behavior, synthetic edge cases and prior-family regressions in the candidate image.
 - [x] Publish and verify the completed scatter/bubble milestone.
+
+Current: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
+
+- [x] Review the binning contract and capture 40 quarterly FMP observations.
+- [ ] Implement and verify binning, rendering and existing editor controls.
+- [ ] Accept real-FMP application behavior and publish the completed milestone.
 
 ## Delivery plan
 
