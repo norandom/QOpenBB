@@ -8,6 +8,8 @@ This X3/X4 implementation contract was independently reviewed and approved on 20
 
 Use one bounded implementer for this join. Session dispatch, ready-state unions, setup policy, caller defaults and editor routing touch shared contracts; their current seams do not justify two simultaneous writable lanes. Split work into cohesive `application/xy*.ts`, `editor/xy/*` and numeric navigator modules inside the same assignment. The controller owns final integration review and release verification.
 
+A separate verification worker may author new `tests/e2e/live-chart/xy-*` scenarios against the controls and data contracts below. Its ownership excludes application code and existing shared test helpers. Runtime execution remains serialized after the identified candidate is ready; authored scenarios are not passed checks.
+
 Extend `ApplicationChartFamily` with `XyChartType` and add an explicit `isXyChartFamily` guard. Extend the ready-state union with `kind: "xy"` and XY-specific editor data; do not make a Cartesian appearance pretend to be XY. Reuse the common ready fields (stamp, options, revision, model, snapshot, legend scope/projection and setup props), but allow the XY branch its own editor projection type where the current Cartesian editor contract cannot represent it.
 
 Use these minimal transient contracts:

@@ -25,12 +25,20 @@ status = "passed"
 evidence = ["Inactive X2 mapper at Workspace 7e509d3 independently accepted: 31 mapper tests plus 33 X1 tests passed, including actual ECharts numeric/triangle/tooltip checks; combined complexity clean. Scoped TypeScript retains inherited typography.ts TS2578, no XY diagnostics. Excluded one-sided bounds return a documented safety diagnostic pending X4 original-empty-domain parity. No application acceptance. See artifacts/reviewed/chart-xy/verification.md."]
 
 [[capabilities]]
+id = "xy-editor-session-join"
+requirements = ["analyst-workspace/xy-chart-milestone.md:X3", "analyst-workspace/xy-production-join.md:Projection and persistence"]
+planned_checks = ["stamped-xy-edits", "pairing-field-roles", "mixed-unit-empty-setup", "appearance-position-persistence"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/xyProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/xyEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/xySessionOwner.test.tsx"]
+status = "passed"
+evidence = ["Workspace ea740ce source join independently accepted after two concrete review fixes. Focused application/session and real-engine tests passed; no added baseline-relative TypeScript diagnostics and combined complexity clean. Packaged-image/FMP acceptance remains open. See artifacts/reviewed/chart-xy/verification.md."]
+
+[[capabilities]]
 id = "scatter-bubble-chart-port"
 requirements = ["analyst-workspace/xy-chart-milestone.md:Acceptance"]
 planned_checks = ["numeric-xy-rendering", "bubble-size-semantics", "paired-editor", "real-fmp-application", "save-reopen-export", "navigator-theme-refresh"]
-test_paths = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/xy-charts.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/xy-fmp.spec.ts"]
 status = "planned"
-evidence = ["X1 assignment foundation is separate from feature acceptance. Mapper, editor and application checks remain open."]
+evidence = ["Browser scenarios authored and source-reviewed, not yet executed against the XY candidate. Source integration accepted separately; real-FMP application and publication remain open."]
 
 [[capabilities]]
 id = "combination-chart-port"

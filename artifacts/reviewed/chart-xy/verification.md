@@ -30,3 +30,25 @@ Scoped strict TypeScript reports only inherited `src/components/ds/plugins/typog
 One-sided explicit bounds excluding all observations currently return an invalid diagnostic because ECharts otherwise reverses the extent. Source characterization establishes that the original renderer instead uses an empty domain with invisible points. The inactive contract permits this temporary safety response, but X4 must implement original-compatible empty geometry before feature acceptance.
 
 Independent review approved the bounded mapper after the tooltip fix. Editor integration, original visual parity, actual FMP application/lifecycle checks and publication remain open. No image build was dispatched for these source-only tasks; the published combination-chart alpha remains the development release.
+
+## X3 editor/session integration and X4 source join
+
+Workspace `ea740ce32571cfb70e22baecc5ef38a4cc211188` connects scatter/bubble to the existing Table/File chart session and controls. X3 source acceptance is complete; X4 packaged-image acceptance remains open. The published alpha still contains the preceding combination milestone.
+
+The integration preserves paired field order, labels, mixed units, empty/incomplete selections, stamped edits, refresh and saved XY settings. Numeric navigation retains at least four observations where available. One-sided bounds excluding all observations now produce empty geometry and restore when removed. These are source and component results, not a claim that the candidate browser journey has passed.
+
+Independent Astra review initially rejected two reachable control defects: collapsing appearance layers lost saved-format precedence, and numeric axis position controls were absent. Focused RED tests reproduced both failures. The correction preserves ordered layers and restores X top/bottom and Y left/right choices through the existing transaction owner. Rereview approved the source; actual ECharts SVG checks verify moved axes.
+
+Verification used pinned Node 24.22.0 and `node_modules/vitest/vitest.mjs run --config tests/unit/chart-application/vitest.config.mjs` or the corresponding `chart-compatibility/vitest.config.mjs`, with selected test files:
+
+| Scope | Result |
+| --- | --- |
+| XY and shared application/setup/caller/editor regression, nine files | 119 passed before final review repairs |
+| Final XY session, editor and owner tests after repairs, three files | 15 passed |
+| XY mapper and real-engine SVG checks before repairs | 31 passed |
+| Final real-engine SVG checks, including restored bounds and top/right axes | 6 passed |
+| Existing host, lifecycle and navigator regressions | 35 passed |
+
+The final explicit-scope combined complexity gate passed for all 39 changed production files. A fresh baseline-relative TypeScript comparison used the unchanged baseline test universe: both revisions report the same 2,713 inherited diagnostics, with none added or removed. This excludes new tests from that comparison and is not a clean full compile. Local commands, logs, source hashes and scope manifests remain under ignored `artifacts/chart-xy/join*`.
+
+The three new XY browser files passed syntax checks and independent source review. They assert complete main-plot point geometry, raw captured-FMP coordinates and linear size mapping, lifecycle behavior, and decoded exported-PNG geometry. No browser execution or candidate-image acceptance is claimed here. Bound restoration uses session/mapper/real-engine tests because the existing UI has no bound editor. Raw FMP data and financial screenshots remain private.

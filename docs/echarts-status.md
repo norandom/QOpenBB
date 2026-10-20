@@ -49,10 +49,10 @@ These are completion criteria for the remaining port. Earlier checked source/fun
 
 - [x] Resolve paired/unpaired X/Y/size identities with source-compatible ordering and incomplete-group behavior; independently reviewed focused tests and complexity checks passed.
 - [x] Implement the inactive numeric mapper, with independent review and actual ECharts geometry/tooltip checks.
-- [ ] Connect the existing editor and application, including original empty-domain behavior for excluded one-sided bounds.
+- [x] Connect and source-review the existing editor/application, including original empty-domain behavior for excluded one-sided bounds.
 - [ ] Accept captured-FMP application journeys and publish the completed milestone.
 
-The assignment helper and numeric mapper are inactive. They do not establish a usable scatter/bubble widget yet. See [task evidence](../artifacts/reviewed/chart-xy/verification.md).
+The source integration is accepted. The published alpha still contains the previous milestone; packaged-image scatter/bubble and captured-FMP acceptance remain open. See [task evidence](../artifacts/reviewed/chart-xy/verification.md).
 
 ## Evidence and ownership
 
