@@ -43,7 +43,8 @@ Current: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
 
 - [x] Review the binning contract and capture 40 quarterly FMP observations.
 - [x] Implement and independently verify the inactive binning module.
-- [ ] Connect rendering and existing editor controls.
+- [x] Implement and independently verify inactive interval rendering.
+- [ ] Connect the existing editor and application controls.
 - [ ] Accept real-FMP application behavior and publish the completed milestone.
 
 ## Delivery plan

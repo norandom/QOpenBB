@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "histogram-interval-mapper"
+requirements = ["analyst-workspace/histogram-milestone.md:H2", "analyst-workspace/histogram-mapper-design.md:Ownership and acceptance"]
+planned_checks = ["actual-interval-svg-geometry", "range-frequency-tooltip", "legend-retained-data", "bounds-and-appearance"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogram.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogram.render.test.ts"]
+status = "passed"
+evidence = ["Workspace 88c837f inactive mapper independently accepted after native-legend retention repair: 33 focused tests, including 10 actual ECharts SVG tests, pass. Combined complexity passed; scoped TypeScript retains only inherited typography.ts TS2578. No production routing or application acceptance. See artifacts/reviewed/chart-histogram/verification.md."]
+
+[[capabilities]]
 id = "histogram-binning"
 requirements = ["analyst-workspace/histogram-milestone.md:H1", "analyst-workspace/histogram-design.md:Frozen H1 interface"]
 planned_checks = ["original-binning-membership", "defensive-inputs", "finite-immutable-output"]

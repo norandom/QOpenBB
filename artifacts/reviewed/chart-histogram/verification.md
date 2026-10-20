@@ -19,3 +19,13 @@ The initial RED run failed all 69 cases against the unimplemented function. Fina
 The combined maintained-scope checker passed using explicit Workspace/data-API change manifests. Production sizes: histogramTypes.ts 25 physical / 18 logical; histogramBins.ts 189 physical / 169 logical / maximum 26 per function, below 400/300/50 caps. The inventory includes both new modules; unrelated catalog/Perspective work is excluded from the commit.
 
 The separately reviewed H2 mapper design corrects axis-bound semantics: bounds outside the data extend normally unless minimum exceeds domain maximum or maximum falls below domain minimum. H2 rendering, H3 integration, H4 identified-image FMP acceptance and H5 publication remain open. README and docs checkboxes reflect inactive H1 acceptance only.
+
+## H2 inactive interval mapper accepted
+
+Workspace `88c837f24376135902a9691f9340baceef29989e` adds eight cohesive mapper modules and three test/fixture files. Shared production and H1 files are unchanged. Final focused Vitest passed 33 tests, including ten actual ECharts SVG tests. These inspect unequal interval widths and frequency heights, clipping, centered labels, color/opacity, axes/bounds, empty outer intervals, range/Frequency tooltips and retained-data overview rendering.
+
+Independent review found a real hidden-series defect: removing public data when legend selection was false prevented native restoration from retained intervals. The regression failed before repair. The accepted mapper retains data and lets native legend selection hide it; the same chart now restores/hides/restores three rectangles while H1 runs once. Reviewer independently reran that regression after inspecting the fix. SVG SSR must render after each native action before inspecting its refreshed display list; geometry assertions remain intact.
+
+Final evidence is artifacts/chart-histogram/h2-legend-{red,green,typecheck}.log and h2-legend-syntax-units.json. Scoped TypeScript reports only the inherited typography.ts TS2578 diagnostic, not a clean full-repository compilation. The final combined explicit-scope complexity gate passed: maximum 69 physical lines, 48 logical units/file and 21/function across H2 production files.
+
+The H3 integration handoff and H4 browser source preparation received separate reviews. They do not establish runtime acceptance. Original automatic axis/outer-extent visual comparison, editor/navigation integration, real-FMP browser journeys and publication remain open. README/docs/breadth record H2 as inactive only.

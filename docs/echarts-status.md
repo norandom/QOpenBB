@@ -61,7 +61,8 @@ Source and packaged-image application acceptance passed. The updated alpha is pu
 
 - [x] Review the numerical contract and capture 40 quarterly FMP revenue observations.
 - [x] Implement and independently accept inactive binning, including boundaries and observation membership.
-- [ ] Render numeric intervals and connect existing editor controls.
+- [x] Render numeric intervals with independently checked geometry and native legend restoration in the inactive mapper.
+- [ ] Connect existing editor and application controls.
 - [ ] Accept identified-image FMP journeys and publish the completed milestone.
 
 See [verification](../artifacts/reviewed/chart-histogram/verification.md). The existing alpha does not activate histogram yet.
