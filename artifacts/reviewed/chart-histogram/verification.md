@@ -29,3 +29,11 @@ Independent review found a real hidden-series defect: removing public data when 
 Final evidence is artifacts/chart-histogram/h2-legend-{red,green,typecheck}.log and h2-legend-syntax-units.json. Scoped TypeScript reports only the inherited typography.ts TS2578 diagnostic, not a clean full-repository compilation. The final combined explicit-scope complexity gate passed: maximum 69 physical lines, 48 logical units/file and 21/function across H2 production files.
 
 The H3 integration handoff and H4 browser source preparation received separate reviews. They do not establish runtime acceptance. Original automatic axis/outer-extent visual comparison, editor/navigation integration, real-FMP browser journeys and publication remain open. README/docs/breadth record H2 as inactive only.
+
+## Reviewed metadata seam for H3
+
+Workspace `ea32516191e3710ad015da9fd655cdb95896e522` extends the supported histogram result with its validated projection and resolved domain. H3 needs the complete bin list, including empty intervals, for the original Bin count display. The mapper remains the sole assembly path and invokes H1 once; failure behavior and Cartesian structural compatibility are unchanged. Independent review approved the narrow three-production-file amendment and its focused regression. The admission change narrows types only.
+
+The metadata regression failed before implementation; final focused mapper/SVG tests passed 34 cases. Scoped TypeScript retains only inherited typography TS2578. Final explicit-scope complexity passed, with maxima 69 physical / 49 logical / 21 per function. Evidence is artifacts/chart-histogram/h2-metadata-*. H3 remains in progress.
+
+Independent H3 ownership review also approved one gallery-reset guard in comboSessionAssignments.ts: preserve the inactive stored inversion setting on entry to histogram while its effective setting is false; other family resets remain unchanged. H3 must prove both behaviors and pass whole-file limits before acceptance. This is a reviewed integration change, not completed application evidence.

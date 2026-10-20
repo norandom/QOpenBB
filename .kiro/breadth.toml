@@ -14,7 +14,7 @@ requirements = ["analyst-workspace/histogram-milestone.md:H2", "analyst-workspac
 planned_checks = ["actual-interval-svg-geometry", "range-frequency-tooltip", "legend-retained-data", "bounds-and-appearance"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogram.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogram.render.test.ts"]
 status = "passed"
-evidence = ["Workspace 88c837f inactive mapper independently accepted after native-legend retention repair: 33 focused tests, including 10 actual ECharts SVG tests, pass. Combined complexity passed; scoped TypeScript retains only inherited typography.ts TS2578. No production routing or application acceptance. See artifacts/reviewed/chart-histogram/verification.md."]
+evidence = ["Workspace 88c837f inactive mapper independently accepted after native-legend retention repair: 33 focused tests, including 10 actual ECharts SVG tests, pass. Combined complexity passed; scoped TypeScript retains only inherited typography.ts TS2578. Integration metadata amendment ea32516 exposes validated calculation/domain with one H1 call; 34 focused tests pass. No production routing or application acceptance. See artifacts/reviewed/chart-histogram/verification.md."]
 
 [[capabilities]]
 id = "histogram-binning"

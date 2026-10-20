@@ -32,6 +32,8 @@ Changing the control writes `histogram.series.binCount`; it never writes calcula
 
 ## Retained geometry and navigation
 
+The supported H2 result exposes readonly `projection` (validated input, complete calculation and selected field) and `domain` (resolved axis bounds), alongside options. Failure branches remain unchanged. Reuse `projection.calculation.bins` for empty intervals and the original control count; do not reconstruct mapper assembly or run H1 separately.
+
 Build main options once per accepted data/options projection. Retain their resolved interval data and mapper input in the projection closure. Legend, zoom, pan, reset and mask updates consume that retained geometry; they do not invoke H1 or rerun category aggregation. A real data refresh or bin-setting edit creates a new projection and may recalculate bins.
 
 The H2 worker and join author agreed this narrow existing-series-module export, subject to H2 review:
@@ -89,7 +91,7 @@ All paths below are relative to `vendor/workspace/terminalpro/src/components/Gen
 
 New H3 production files are `application/histogramSessionTypes.ts`, `histogramSessionSelection.ts`, `histogramSessionProjection.ts`, `histogramAppearance.ts`, `histogramEditorTransaction.ts`, `histogramCapture.ts`; `editor/histogram/HistogramBinControls.tsx`; `echarts/histogramNavigator.ts`, `histogramNavigationWindow.ts`. Application filenames after the first inherit `application/`. Split only these responsibilities; any additional helper or shared path requires an updated controller-approved handoff.
 
-Read-only reuse includes `application/comboSessionAssignments.ts` (383/136/19): its generic non-combo family transaction already carries the extended family union and should not grow. The gallery already contains Histogram; `chartTypeGalleryCatalog.ts` needs no activation edit. `EChartsHost.tsx`, `ApplicationChartEditor.tsx`, `ApplicationCustomizeEditor.tsx`, `ApplicationAxisEditor.tsx`, metadata/rehydration helpers and `xyAxisPositions.ts` already expose usable contracts; do not edit them speculatively. If actual type checking disproves a reuse assumption, identify the exact failing contract before extending ownership.
+Reviewed ownership amendment: H3 also owns `application/comboSessionAssignments.ts` (baseline 383/136/19) for the gallery reset guard only: reset `switchCategorySeries` for other families, but retain its stored value on entry to histogram. Test stored true retention, effective false histogram setup and unchanged ordinary-family reset. The whole-file caps still apply. The gallery already contains Histogram; `chartTypeGalleryCatalog.ts` needs no activation edit. `EChartsHost.tsx`, `ApplicationChartEditor.tsx`, `ApplicationCustomizeEditor.tsx`, `ApplicationAxisEditor.tsx`, metadata/rehydration helpers and `xyAxisPositions.ts` already expose usable contracts; do not edit them speculatively. If actual type checking disproves a reuse assumption, identify the exact failing contract before extending ownership.
 
 Every modified production file must pass 400 physical lines, 300 logical units and 50/function. `applyApplicationSetupTransaction` starts at 40/function; extract a cohesive histogram selection/policy helper before exceeding 50. No implicit exception or compressed statements. Controller updates maintained inventory and explicit changed-fork manifests before acceptance; run the existing combined checker, not a hand-count substitute.
 
