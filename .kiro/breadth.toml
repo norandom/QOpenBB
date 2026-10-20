@@ -30,7 +30,7 @@ requirements = ["analyst-workspace/xy-chart-milestone.md:X3", "analyst-workspace
 planned_checks = ["stamped-xy-edits", "pairing-field-roles", "mixed-unit-empty-setup", "appearance-position-persistence"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/xyProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/xyEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/xySessionOwner.test.tsx"]
 status = "passed"
-evidence = ["Workspace ea740ce source join independently accepted after two concrete review fixes. Focused application/session and real-engine tests passed; no added baseline-relative TypeScript diagnostics and combined complexity clean. Packaged-image/FMP acceptance remains open. See artifacts/reviewed/chart-xy/verification.md."]
+evidence = ["Workspace ea740ce source join independently accepted after two concrete review fixes. Focused application/session and real-engine tests passed; no added baseline-relative TypeScript diagnostics and combined complexity clean. Empty-selection recovery independently repaired at e64ce8c with 25 focused regressions passed. Rebuilt-candidate browser acceptance remains open. See artifacts/reviewed/chart-xy/verification.md."]
 
 [[capabilities]]
 id = "scatter-bubble-chart-port"
@@ -38,7 +38,7 @@ requirements = ["analyst-workspace/xy-chart-milestone.md:Acceptance"]
 planned_checks = ["numeric-xy-rendering", "bubble-size-semantics", "paired-editor", "real-fmp-application", "save-reopen-export", "navigator-theme-refresh"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/xy-charts.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/xy-fmp.spec.ts"]
 status = "planned"
-evidence = ["Browser scenarios authored and source-reviewed, not yet executed against the XY candidate. Source integration accepted separately; real-FMP application and publication remain open."]
+evidence = ["First candidate ea740ce passed the complete captured-FMP journey but failed synthetic empty-selection re-add recovery. Source fix e64ce8c is independently accepted; rebuilt-candidate browser acceptance and publication remain open. See artifacts/reviewed/chart-xy/verification.md."]
 
 [[capabilities]]
 id = "combination-chart-port"

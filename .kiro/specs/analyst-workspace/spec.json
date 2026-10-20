@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-20T12:48:43.360514+00:00",
+  "updated_at": "2026-10-20T13:18:33.952646+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -24,7 +24,7 @@
     "contract": "xy-chart-milestone.md",
     "authorization": "Owner requested autonomous chart port; continue instruction on 2026-10-20.",
     "phase": "implementation-in-progress",
-    "design_review": "X3 and the X4 production join independently source-reviewed after appearance-layer and numeric-axis-position repairs. Focused tests and complexity passed; candidate-image FMP/browser acceptance remains open under X4.",
+    "design_review": "X3 and X4 source join independently reviewed, including the empty-selection recovery fix. The first image passed captured-FMP acceptance but failed synthetic re-add recovery. Rebuilt candidate acceptance remains open under X4.",
     "completed_tasks": [
       "X1",
       "X2",
