@@ -20,7 +20,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete scatter/bubble; [source research and next tasks](../.kiro/specs/analyst-workspace/xy-chart-research.md) are recorded, with edge-case characterization still open.
+- [ ] Complete scatter/bubble; the [milestone](../.kiro/specs/analyst-workspace/xy-chart-milestone.md) tracks implementation and application acceptance.
 - [ ] Complete distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
@@ -44,6 +44,14 @@ See the [reviewed evidence](../artifacts/reviewed/chart-combo/verification.md). 
 - [ ] After independent review, dispatch the image pipeline once for the completed milestone and publish its tagged alpha.
 
 These are completion criteria for the remaining port. Earlier checked source/functionality items above do not imply comprehensive live-FMP acceptance. Ordinary pushes run checks without rebuilding images.
+
+## Scatter/bubble progress
+
+- [x] Resolve paired/unpaired X/Y/size identities with source-compatible ordering and incomplete-group behavior; independently reviewed focused tests and complexity checks passed.
+- [ ] Implement numeric rendering and existing editor controls.
+- [ ] Accept captured-FMP application journeys and publish the completed milestone.
+
+The assignment helper is inactive. It does not establish a usable scatter/bubble widget yet. See [task evidence](../artifacts/reviewed/chart-xy/verification.md).
 
 ## Evidence and ownership
 

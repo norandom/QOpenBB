@@ -9,6 +9,22 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "xy-field-assignments"
+requirements = ["analyst-workspace/xy-chart-milestone.md:X1", "analyst-workspace/xy-assignment-design.md:Rules"]
+planned_checks = ["paired-unpaired-order", "incomplete-groups", "immutable-defensive-input"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/xyAssignments.test.ts"]
+status = "passed"
+evidence = ["Inactive X1 resolver at Workspace e343e16 independently accepted: 33 focused tests and scoped strict TypeScript passed; complexity 89 physical/72 logical/17 maximum function. No application activation or renderer acceptance. See artifacts/reviewed/chart-xy/verification.md."]
+
+[[capabilities]]
+id = "scatter-bubble-chart-port"
+requirements = ["analyst-workspace/xy-chart-milestone.md:Acceptance"]
+planned_checks = ["numeric-xy-rendering", "bubble-size-semantics", "paired-editor", "real-fmp-application", "save-reopen-export", "navigator-theme-refresh"]
+test_paths = []
+status = "planned"
+evidence = ["X1 assignment foundation is separate from feature acceptance. Mapper, editor and application checks remain open."]
+
+[[capabilities]]
 id = "combination-chart-port"
 requirements = ["analyst-workspace/chart-port-milestone.md:Outcome and acceptance"]
 planned_checks = ["mixed-rendering", "per-series-editor", "save-reopen-export", "real-fmp-application"]

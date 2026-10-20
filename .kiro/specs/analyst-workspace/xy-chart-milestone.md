@@ -1,0 +1,21 @@
+# Scatter and bubble chart milestone
+
+Restore scatter and bubble in the ordinary Table/File journey, preserving the existing Workspace controls, themes and saved options. This follows the published combination-chart milestone under the owner's autonomous chart-port direction. Standalone and AI callers remain open separately.
+
+## Acceptance
+
+Selected numeric columns must retain their original X/Y/size assignment, order and observations. Both axes are numeric. Pairing, labels, marker appearance and applicable navigator/editor controls must work through the existing widget state owner. No hidden controls, replacement editor or silent data transformation counts as parity.
+
+Verify the application with captured FMP annual data: revenue as X (USD), net income as Y (USD), EPS as bubble size (USD/share), fiscal period as label. Check actual coordinates, sizes, tooltips, both themes, refresh, save/reopen and export. Synthetic regressions cover incomplete groups, multiple series, missing values and size-scale edge cases. Publish images once the complete milestone passes independent review and application acceptance.
+
+## Tasks
+
+- [x] X1. Freeze and implement the inactive numeric-field assignment contract, with focused tests for paired/unpaired scatter/bubble, selected order, incomplete groups, defaults, malformed input and immutability. Own `compatibility/xyAssignments.ts` and its unit test only. No gallery activation, state writes or geometry. Independently accepted at `e343e16`; see [evidence](../../../artifacts/reviewed/chart-xy/verification.md).
+- [ ] X2. Freeze the numeric mapper and appearance contract, resolving bubble-size, marker and axis behavior against the retained original source; implement the inactive mapper and focused real-engine checks.
+- [ ] X3. Connect pairing and XY field roles to the existing editor/session after the shared interface is frozen. Preserve option paths and inactive settings.
+- [ ] X4. Join family routing, caller defaults, appearance, navigator and refresh behavior. Verify captured-FMP application journeys and prior-family regressions.
+- [ ] X5. Independent feature review, breadth and README/docs checklist reconciliation, reviewed evidence sync, commits/push and one tagged alpha publication with anonymous pull verification.
+
+Task X1 is independent of the unresolved geometry questions in [source research](xy-chart-research.md). X2 and X3 may run in parallel only after an independently reviewed interface and exclusive file ownership are recorded. Shared production integration and commits remain serialized.
+
+Each production task must pass the existing whole-file complexity gate: 400 physical lines, 300 logical units per file and 50 per function. Extend maintained inventory for additions; tests and documentation are excluded. Keep per-task independent review and commits. Retain unrelated Perspective work.

@@ -31,6 +31,11 @@ Current [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-m
 
 See the [ECharts checklist](docs/echarts-status.md) for remaining chart families and callers.
 
+Next: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
+
+- [x] Implement and review the inactive X/Y/size field-assignment contract.
+- [ ] Connect rendering and editor controls, accept real-FMP application behavior and publish the completed milestone.
+
 ## Delivery plan
 
 ![Delivery plan: prebuilt alpha, Compose installation, provider coverage and analyst workflows; separate AI-to-Excel lane and later extensions.](docs/assets/delivery-plan.svg)
