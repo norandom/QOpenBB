@@ -2,6 +2,14 @@
 
 Restore scatter and bubble in the ordinary Table/File journey, preserving the existing Workspace controls, themes and saved options. This follows the published combination-chart milestone under the owner's autonomous chart-port direction. Standalone and AI callers remain open separately.
 
+## Actual FMP chart sample
+
+![AAPL annual bubble chart](../../../artifacts/reviewed/chart-samples/aapl-annual-bubble.png)
+
+AAPL FY2021-FY2025 FMP annual statements: X revenue (USD), Y net income (USD), bubble diameter linear in EPS (USD/share). Five unchanged observations, no aggregation; B formats billions. Accepted Workspace `e64ce8c`.
+
+[Application and release evidence](../../../artifacts/reviewed/chart-xy/verification.md); [Image and source provenance](../../../artifacts/reviewed/chart-samples/provenance.json). Captured FMP data through File Table; live data API routing is not established.
+
 ## Acceptance
 
 Selected numeric columns must retain their original X/Y/size assignment, order and observations. Both axes are numeric. Pairing, labels, marker appearance and applicable navigator/editor controls must work through the existing widget state owner. No hidden controls, replacement editor or silent data transformation counts as parity.

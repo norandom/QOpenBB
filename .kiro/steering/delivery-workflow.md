@@ -35,3 +35,9 @@ Before closing each task or accepted milestone, update the affected checkboxes i
 Check only the scope that the evidence establishes. Leave deferred, blocked and unverified items unchecked; reopen a checkbox when its acceptance no longer holds. A dispatched pipeline does not complete publication: check that item only after the release and image identities are verified. Link the evidence or owning task so readers can inspect the result.
 
 Include checkbox reconciliation in implementer handoffs and independent completion review. Documentation-only reconciliation does not trigger an image rebuild.
+
+## Chart samples in milestone documents
+
+Owner direction, 2026-10-20: include real-FMP chart samples inline in each chart milestone Markdown file, and backfill completed milestones. Use representative screenshots from verified application runs, linked to the reviewed evidence. Captions identify the financial data, units/period, transformation and tested source or image. Do not substitute synthetic diagrams for real-data samples or imply that a screenshot alone proves correctness.
+
+Publish a small selected set under `artifacts/reviewed/`, inspect it for credentials and private account details, and record source paths and exact hashes in the sync manifest. This instruction permits those selected financial chart screenshots; raw captures, authentication state and unrelated run artifacts remain private. For an unfinished family, mark its sample pending until a real rendered example exists. Add sample publication and link checks to milestone completion review; documentation-only backfills do not trigger an image rebuild.

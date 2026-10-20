@@ -1,0 +1,44 @@
+{
+  "publication_authorization": "Owner instruction 2026-10-20: publish selected actual FMP chart samples inline in milestone documents.",
+  "entries": [
+    {
+      "source_path": "artifacts/chart-combo/browser-final-6123991/browser-output/combo-fmp-captured-FMP-obs-7f77a--through-save-reopen-export/saved-ordinary-observations.png",
+      "name": "aapl-annual-combination.png",
+      "milestone": "chart-port-milestone.md",
+      "evidence": "chart-combo",
+      "caption": "AAPL FY2021-FY2025 captured FMP annual income statements, retrieved 2026-10-20 (stable income-statement, annual, limit 5). Five raw observations; no aggregation or scaling. B is display formatting. Revenue and net income columns use USD on the left axis; EPS uses USD/share on the right. Exported chart from accepted Workspace 6123991.",
+      "image": "sha256:ddb58fb80a4eb4e13ab7bd6b6a0d600a6849baca6be771b7fe1832d8f9d972a0",
+      "published_path": "artifacts/reviewed/chart-samples/aapl-annual-combination.png",
+      "source_sha256": "a631280fbf211e44f091bed3ac9d8692bc4758de89b84b89dd89150590409c84",
+      "published_sha256": "a631280fbf211e44f091bed3ac9d8692bc4758de89b84b89dd89150590409c84",
+      "bytes": 17361,
+      "sanitization": "None; existing chart-only PNG copied byte-for-byte after visual inspection."
+    },
+    {
+      "source_path": "artifacts/chart-xy/browser-e64ce8c/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
+      "name": "aapl-annual-bubble.png",
+      "milestone": "xy-chart-milestone.md",
+      "evidence": "chart-xy",
+      "caption": "AAPL FY2021-FY2025 captured FMP annual income statements, retrieved 2026-10-20 (stable income-statement, annual, limit 5). Five raw observations; no aggregation or scaling. B is display formatting. X is revenue (USD), Y is net income (USD), and bubble diameter maps linearly from EPS (USD/share). Exported chart from accepted Workspace e64ce8c.",
+      "image": "sha256:e7cb9923ae29338539dd215378bb8618352e05401b499c15eba16997ce6ca3f4",
+      "published_path": "artifacts/reviewed/chart-samples/aapl-annual-bubble.png",
+      "source_sha256": "8a0709d3ec329043607c65e110607c6b8788aa7560705199237a895640c7f472",
+      "published_sha256": "8a0709d3ec329043607c65e110607c6b8788aa7560705199237a895640c7f472",
+      "bytes": 21387,
+      "sanitization": "None; existing chart-only PNG copied byte-for-byte after visual inspection."
+    },
+    {
+      "source_path": "artifacts/chart-histogram/browser-h4-c1ee9ae-02/browser-output/histogram-fmp-40-captured--2f924-equencies-through-lifecycle/default-canvas.png",
+      "name": "aapl-quarterly-revenue-histogram.png",
+      "milestone": "histogram-milestone.md",
+      "evidence": "chart-histogram",
+      "caption": "AAPL 40 quarterly revenues, reporting dates 2016-09-24 through 2026-06-27, from captured FMP income statements retrieved 2026-10-20 (stable income-statement, quarter, limit 40). X retains raw USD (B is display formatting); Y is dimensionless Frequency. Revenue selected explicitly, None category, no aggregation; default bin frequencies are 2/7/4/1/9/8/2/4/2/0/1. Canvas from accepted Workspace c1ee9ae.",
+      "image": "sha256:d346ac72142f4cab3ddc5c1527dd4383e97608aada180816f96a39ee996e80f3",
+      "published_path": "artifacts/reviewed/chart-samples/aapl-quarterly-revenue-histogram.png",
+      "source_sha256": "d8d3718746e8421f0ce0312cf46eaeb3fd9fe756f6d3ac873710b567892d9e3b",
+      "published_sha256": "d8d3718746e8421f0ce0312cf46eaeb3fd9fe756f6d3ac873710b567892d9e3b",
+      "bytes": 3590,
+      "sanitization": "None; existing chart-only PNG copied byte-for-byte after visual inspection."
+    }
+  ]
+}

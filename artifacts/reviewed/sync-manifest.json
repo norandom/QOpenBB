@@ -31791,6 +31791,38 @@
       "sourceSHA256": "fb3d482fb69d50ff8e21751a31e5368bec1f931eab79b279292f8f4f27878393",
       "publishedSHA256": "fb3d482fb69d50ff8e21751a31e5368bec1f931eab79b279292f8f4f27878393",
       "sourcepath": "artifacts/chart-histogram/verification.md"
+    },
+    {
+      "sourcepath": "artifacts/chart-combo/browser-final-6123991/browser-output/combo-fmp-captured-FMP-obs-7f77a--through-save-reopen-export/saved-ordinary-observations.png",
+      "sourceSHA256": "a631280fbf211e44f091bed3ac9d8692bc4758de89b84b89dd89150590409c84",
+      "publishedpath": "artifacts/reviewed/chart-samples/aapl-annual-combination.png",
+      "publishedSHA256": "a631280fbf211e44f091bed3ac9d8692bc4758de89b84b89dd89150590409c84",
+      "bytes": 17361,
+      "transform": "exact-byte-copy; owner-authorized selected real-FMP chart sample"
+    },
+    {
+      "sourcepath": "artifacts/chart-xy/browser-e64ce8c/browser-output/xy-fmp-captured-AAPL-raw-c-59be5-e-refresh-and-reopen-export/saved-ordinary-observations.png",
+      "sourceSHA256": "8a0709d3ec329043607c65e110607c6b8788aa7560705199237a895640c7f472",
+      "publishedpath": "artifacts/reviewed/chart-samples/aapl-annual-bubble.png",
+      "publishedSHA256": "8a0709d3ec329043607c65e110607c6b8788aa7560705199237a895640c7f472",
+      "bytes": 21387,
+      "transform": "exact-byte-copy; owner-authorized selected real-FMP chart sample"
+    },
+    {
+      "sourcepath": "artifacts/chart-histogram/browser-h4-c1ee9ae-02/browser-output/histogram-fmp-40-captured--2f924-equencies-through-lifecycle/default-canvas.png",
+      "sourceSHA256": "d8d3718746e8421f0ce0312cf46eaeb3fd9fe756f6d3ac873710b567892d9e3b",
+      "publishedpath": "artifacts/reviewed/chart-samples/aapl-quarterly-revenue-histogram.png",
+      "publishedSHA256": "d8d3718746e8421f0ce0312cf46eaeb3fd9fe756f6d3ac873710b567892d9e3b",
+      "bytes": 3590,
+      "transform": "exact-byte-copy; owner-authorized selected real-FMP chart sample"
+    },
+    {
+      "sourcepath": "artifacts/chart-samples/provenance.json",
+      "sourceSHA256": "af5c8cb65183777c5c9223f57dfaf5f4976b3abce3d30c0edf555a0b73ebba28",
+      "publishedpath": "artifacts/reviewed/chart-samples/provenance.json",
+      "publishedSHA256": "af5c8cb65183777c5c9223f57dfaf5f4976b3abce3d30c0edf555a0b73ebba28",
+      "bytes": 3729,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [

@@ -2,6 +2,14 @@
 
 Owner direction, 2026-10-20: continue chart porting autonomously, preserve the existing UX and reachable behavior, and accept complete milestones with real FMP data before dispatching the alpha image pipeline. This bounded milestone belongs to analyst-workspace; the remaining analyst features are not prerequisites.
 
+## Actual FMP chart sample
+
+![AAPL annual combination chart](../../../artifacts/reviewed/chart-samples/aapl-annual-combination.png)
+
+AAPL FY2021-FY2025 FMP annual statements: revenue and net income columns in USD; EPS line in USD/share on the right axis. Five unchanged observations, no aggregation; B formats billions. Accepted Workspace `6123991`.
+
+[Application and release evidence](../../../artifacts/reviewed/chart-combo/verification.md); [Image and source provenance](../../../artifacts/reviewed/chart-samples/provenance.json). Captured FMP data through File Table; live data API routing is not established.
+
 ## Outcome and acceptance
 
 Restore the ordinary Table/File combination-chart journey: Column Line, Area Column and saved Custom Combo assignments. Existing gallery/context-menu choices must render correctly, preserve settings and data, and keep the existing editor style. Do not count an unavailable placeholder or hidden control as implementation.

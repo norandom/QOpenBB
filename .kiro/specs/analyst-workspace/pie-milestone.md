@@ -2,6 +2,10 @@
 
 Restore Pie, Donut and saved `doughnut` configurations in the ordinary Table/File journey. Build on the accepted histogram release, Workspace `ae45e30`. Preserve the existing gallery, editor, dashboard shell and saved-state owner. This milestone is authorized by the owner's continuing autonomous chart-port instruction; the prototype-first workflow retains bounded design and independent implementation reviews.
 
+## Actual FMP chart sample: pending
+
+An actual FMP pie/donut sample awaits P4 identified-image acceptance. The prepared fixture contains AAPL FY2025 Q1-Q4 revenue and gross profit in unchanged USD, reporting dates 2024-12-28 through 2025-09-27, selected from the retained FMP capture. Each donut ring uses its own denominator. Fixture preparation is not chart acceptance; see the [planned real-data contract](pie-design.md). Publish the accepted chart-only sample here with its source and image provenance.
+
 ## Acceptance contract
 
 1. Pie uses the first selected numeric field. Donut uses all selected fields in selection order as concentric rings. Each ring has its own denominator; revenue and gross profit must never be summed into one shared denominator. Keep the saved `doughnut` spelling while mapping its renderer family to donut.

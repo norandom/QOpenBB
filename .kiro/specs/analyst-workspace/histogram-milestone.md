@@ -2,6 +2,14 @@
 
 Restore Histogram in the ordinary Table/File chart journey while preserving the existing Workspace controls and saved options. This is the next bounded slice after the accepted and published XY milestone at Workspace `17a35f3468452c5ae92cbf9f57de4d7bd92cde12`. Independent H0 review accepted the numerical contract and H1 boundary on 2026-10-20. Implementation, identified-image application acceptance and publication are complete. Release: `alpha-39460489280-1`.
 
+## Actual FMP chart sample
+
+![AAPL quarterly revenue histogram](../../../artifacts/reviewed/chart-samples/aapl-quarterly-revenue-histogram.png)
+
+AAPL 40 FMP quarterly revenues, reporting dates 2016-09-24 through 2026-06-27: X raw USD (B formats billions), Y observation Frequency. Revenue selected, None category, no aggregation; default bins count 2/7/4/1/9/8/2/4/2/0/1. Accepted Workspace `c1ee9ae`.
+
+[Application and release evidence](../../../artifacts/reviewed/chart-histogram/verification.md); [Image and source provenance](../../../artifacts/reviewed/chart-samples/provenance.json). Captured FMP data through File Table; live data API routing is not established.
+
 ## Acceptance contract
 
 1. Use the first selected numeric field in selection order. Category selection and the existing category aggregation happen before binning; each resulting observation contributes one count. Keep finite zero and negative observations. Missing or invalid values contribute no count. Other selected numeric fields remain saved but do not create histogram series.
@@ -36,4 +44,4 @@ H1-H3 use the existing compatibility/application Vitest configurations with sele
 
 H4 compares every occupied interval and frequency with an independent reference calculation from the captured provider rows, including any category aggregation in separate checks. The 40-quarter revenue sample establishes count correctness, not a statistically representative distribution. Add synthetic signed, missing, repeated, boundary and gapped-bin cases, and verify original-versus-replacement appearance where source inspection alone cannot establish it.
 
-H5 publishes only reviewed sanitized evidence. Raw provider captures, financial screenshots, credentials, traces and intermediate logs remain ignored. Reconcile [the renderer matrix](../../../docs/renderer-capability-matrix.md), the owning spec and root `.kiro/breadth.toml`; keep unverified items open. Anthropic-before-Excel remains unchanged.
+H5 publishes only reviewed sanitized evidence. Selected chart-only FMP screenshots are published below under the owner's 2026-10-20 instruction. Raw provider captures, other financial screenshots, credentials, traces and intermediate logs remain ignored. Reconcile [the renderer matrix](../../../docs/renderer-capability-matrix.md), the owning spec and root `.kiro/breadth.toml`; keep unverified items open. Anthropic-before-Excel remains unchanged.
