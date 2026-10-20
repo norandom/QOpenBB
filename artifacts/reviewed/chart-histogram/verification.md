@@ -51,3 +51,15 @@ The combined explicit-scope checker passed for all 36 production files, with max
 The authentic original Revenue reference shows X from zero through 150 billion and Y from zero through 10; the current mapper uses tighter extents. This concrete automatic-axis difference remains an H4 repair obligation.
 
 H4 still owes image-only browser acceptance with the captured FMP data, original automatic axis/outer-extent comparison and previous-family application regressions. The published alpha is unchanged; no histogram feature or publication acceptance is claimed.
+
+## Automatic-axis refinement source accepted
+
+Workspace `f003fdc7132274fc21511a9546559633bdef5bb7` adds viewport-dependent histogram axis rounding while preserving raw intervals, frequencies and explicit bounds. The shared ordinary-chart step calculation is exported without changing its body or callers. Histogram uses bounded outward rounding and measured axis space; retained navigation uses the same policy. Independent source review accepted the seven production files and four affected test files.
+
+The initial regression run failed three cases for missing rounding and retained pixel budgets. The affected gate then passed 137 cases across seven compatibility files. Review reproduced an ECharts merge behavior: omitting an interval retains the prior native value. A new regression failed before explicit clearing and passed afterward; the final navigator file passes eight cases. Fourteen application tests also pass after correcting two test-fixture typing errors discovered while inspecting the fresh H3 baseline. The independent reviewer reran all 47 histogram compatibility cases successfully; see axis-independent.log. Logs are artifacts/chart-histogram/axis-red.log, axis-green.log, axis-merge-red.log, axis-merge-green.log and axis-application-green.log.
+
+Actual-engine assertions cover reference-sized X ticks at 0/50/100/150 billion, Y ticks at 0/5/10 and rectangle geometry. Narrow/wide, signed, explicit-bound, tiny/extreme, navigator and fallback cases preserve financial observations and avoid forced X zero inclusion. Four-bin frequencies are checked independently as 12/9/14/5.
+
+The final static comparison uses the same corrected existing application fixture in both runs and binds its hash separately. Both runs retain 2713 diagnostic headlines, with none added by the production refinement. This does not claim a clean repository compilation. The earlier one-error comparison and two fixture errors remain recorded in ignored diagnostics. The final explicit-scope complexity gate passes within 400/300/50 caps. Evidence: artifacts/chart-histogram/axis-static-final/comparison.json and axis-complexity-final.json.
+
+The authentic original default reference supports the target rounding. Its four-bin input displayed 4 but did not repaint within the bounded wait; no original four-bin visual match is claimed. The original reference collection also has a disclosed CSV request failure and is not candidate acceptance. Raw financial images remain ignored. H4 image-only FMP, lifecycle, export and visual verification remains open; no new image has been published.

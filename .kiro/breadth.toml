@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "histogram-automatic-axes"
+requirements = ["analyst-workspace/histogram-axis-refinement.md:Bounds, finite output and acceptance"]
+planned_checks = ["viewport-nice-extents", "explicit-bounds-and-finite-fallback", "native-interval-clear", "retained-navigation-rounding"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogram.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogram.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogramNavigator.test.ts"]
+status = "passed"
+evidence = ["Workspace f003fdc source refinement independently accepted; original-sized numeric ticks and rectangle geometry, finite bounds and native interval clearing checked. Candidate-image visual/FMP acceptance remains open. See artifacts/reviewed/chart-histogram/verification.md."]
+
+[[capabilities]]
 id = "histogram-production-join"
 requirements = ["analyst-workspace/histogram-milestone.md:H3", "analyst-workspace/histogram-production-join.md:Component gate and later application acceptance"]
 planned_checks = ["capture-before-aggregation", "original-controls-and-saved-options", "empty-selection-recovery", "retained-histogram-navigation"]

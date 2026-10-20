@@ -1,6 +1,6 @@
 # Histogram automatic-axis refinement
 
-Independent design review approved this bounded correction on 2026-10-20. H4's authentic original reference shows that the replacement retains the right bins but omits viewport-dependent automatic axis rounding. This addresses the existing visual-comparison obligation; H1 membership, saved controls and financial observations remain unchanged. Implementation and candidate-image acceptance remain open.
+Independent design review approved this bounded correction on 2026-10-20. H4's authentic original reference shows that the replacement retains the right bins but omits viewport-dependent automatic axis rounding. This addresses the existing visual-comparison obligation; H1 membership, saved controls and financial observations remain unchanged. Source implementation is independently accepted at Workspace `f003fdc7132274fc21511a9546559633bdef5bb7`. Candidate-image acceptance remains open.
 
 ## Source evidence and policy
 
