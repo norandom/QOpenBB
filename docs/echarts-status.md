@@ -24,7 +24,8 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete remaining distribution and radial families.
+- [ ] Complete pie/donut through the [active milestone](../.kiro/specs/analyst-workspace/pie-milestone.md).
+- [ ] Complete other distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.
@@ -71,6 +72,15 @@ Source and packaged-image application acceptance passed. The updated alpha is pu
 - [x] Publish and verify the completed histogram milestone.
 
 See [verification](../artifacts/reviewed/chart-histogram/verification.md). The updated alpha includes histogram; both public image identities and anonymous pulls are verified.
+
+## Pie and donut progress
+
+- [x] Review original first-field pie, concentric donut assignments and saved alias.
+- [ ] Implement and independently accept inactive assignment and rendering modules.
+- [ ] Connect existing controls and accept identified-image FMP/lifecycle behavior.
+- [ ] Publish and verify the completed milestone.
+
+P0 design acceptance permits only the inactive assignment task. Pie/donut is not yet accepted in the integrated application.
 
 ## Evidence and ownership
 

@@ -39,7 +39,7 @@ Published: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone
 - [x] Accept real-FMP application behavior, synthetic edge cases and prior-family regressions in the candidate image.
 - [x] Publish and verify the completed scatter/bubble milestone.
 
-Current: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
+Previous: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
 
 - [x] Review the binning contract and capture 40 quarterly FMP observations.
 - [x] Implement and independently verify the inactive binning module.
@@ -50,6 +50,13 @@ Current: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
 - [x] Source-review miniature height, plot alignment and full-bin labels.
 - [x] Accept real-FMP application behavior, synthetic edge cases and prior-family regressions.
 - [x] Publish and verify the completed histogram milestone.
+
+Current: [pie and donut port](.kiro/specs/analyst-workspace/pie-milestone.md).
+
+- [x] Review original field selection, concentric rings and saved alias.
+- [ ] Implement and independently verify inactive assignments and rendering.
+- [ ] Connect the existing editor and accept real-FMP application behavior.
+- [ ] Publish and verify the completed milestone.
 
 ## Delivery plan
 
