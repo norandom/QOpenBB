@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "combination-chart-port"
+requirements = ["analyst-workspace/chart-port-milestone.md:Outcome and acceptance"]
+planned_checks = ["mixed-rendering", "per-series-editor", "save-reopen-export", "real-fmp-application"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/comboAssignments.test.ts"]
+status = "unverified"
+evidence = ["C1 assignment helper independently approved: 21 focused tests, scoped strict TypeScript and complexity checks pass at Workspace 99e3f8637960d4981695e73bb8fedd974215c113. See artifacts/reviewed/chart-combo/verification.md. Mapper, editor and real-FMP runtime acceptance remain open; no image release triggered."]
+
+[[capabilities]]
 id = "prototype-compose-build-publication"
 requirements = ["9.1", "9.2", "9.4", "9.7", "10.1", "10.2", "10.3"]
 planned_checks = ["candidate-image-browser-smoke", "compose-routing", "immutable-registry-install"]

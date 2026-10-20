@@ -150,7 +150,8 @@
     "live-editor/date-axis",
     "live-editor/axis-persistence",
     "prototype-delivery",
-    "alpha-release"
+    "alpha-release",
+    "chart-combo"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -31758,6 +31759,14 @@
       "publishedSHA256": "732f0b8193274b65f38ebe224863e939a05c3d8307484395dbcdfa213e7971ca",
       "bytes": 1565,
       "transform": "exact-byte-copy"
+    },
+    {
+      "bytes": 2124,
+      "transform": "exact-byte-copy",
+      "publishedpath": "artifacts/reviewed/chart-combo/verification.md",
+      "sourceSHA256": "def5dcefe4c5df1df945b5efae64d8543ed654bc2e471fc9f6e25dbe377a528a",
+      "publishedSHA256": "def5dcefe4c5df1df945b5efae64d8543ed654bc2e471fc9f6e25dbe377a528a",
+      "sourcepath": "artifacts/chart-combo/verification.md"
     }
   ],
   "generated_metadata": [
@@ -32471,7 +32480,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 166127867,
+  "total_payload_bytes": 166129991.0,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
