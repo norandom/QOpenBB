@@ -149,3 +149,15 @@ The repair is source-reviewed; it still needs the lifecycle and FMP journeys on 
 ## Corrected candidate ready for runtime verification
 
 Dagger build/export and portable image load completed with exit 0 for Workspace `61239915182fe409e517b70c81c68fc085e68b94`. Loaded Linux/amd64 image: `sha256:ddb58fb80a4eb4e13ab7bd6b6a0d600a6849baca6be771b7fe1832d8f9d972a0`; config digest: `sha256:c5b3a698745597581fba228a7c20bf4640ec819b99ab676006c6911f30f23a3c`; archive SHA-256: `dce49d0f6a5f2220dceb8a1090241398df74034fb05dcb7a39fa4849289fd33f`. Source-policy checks passed (10 tests), and root `54d61cb` CI run `39407716346` succeeded without image publication. The corrected candidate has not yet passed its browser acceptance gate.
+
+## Corrected packaged-image acceptance
+
+The owner started the corrected image `sha256:ddb58fb80a4eb4e13ab7bd6b6a0d600a6849baca6be771b7fe1832d8f9d972a0` at loopback port 55531. The runtime descriptor confirms packaged-image-only mode, no source overlay and ready Full configuration/login. The final batch passed the shell, synthetic combination save/reopen/export and captured-FMP journeys. Its lifecycle case stopped at login with HTTP 429 before exercising a chart. An isolated lifecycle run then passed in 17.4 seconds, with zero retries/skips.
+
+The 429 was a test-scheduling failure: login allows five requests per minute per client IP. Startup consumes one login and the first two journeys consume four, including reopening. A later shell login succeeded; the lifecycle rerun used the normal login route after the window cleared. Neither headers nor rate limits were changed. Future runs must budget these logins and separate batches by a full minute plus a margin.
+
+On the corrected image, actual FMP checks again verified all 15 unscaled File observations, all five fiscal categories and compact-formatted tooltip values before/after reopen, separate USD/USD-share axes, rendered width, saved assignments/style and PNG export. The lifecycle check verified both builtins, hidden-main/full-miniature behavior, changed navigator extent, theme retention and the completed dashboard-triggered File refresh with unchanged response data and retained interactions. All four journeys include their applicable console/network assertions. Raw reports, financial PNGs and failure captures remain ignored under `browser-final-6123991` and `browser-final-lifecycle-6123991`.
+
+These results concern the bounded combination-chart milestone. They do not certify other unfinished renderer families, production-server deployment, all provider endpoints or a clean project-wide TypeScript compile. The previous refresh failure is resolved by source `6123991` in the identified packaged image.
+
+Independent Astra feature review approved C4/C4c and the C5 review gate for this exact source/image. No blocking combination-chart gaps remain; publication is the outstanding delivery step.

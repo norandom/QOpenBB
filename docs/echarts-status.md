@@ -6,6 +6,8 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Done
 
+- [x] Render Column & Line, Area & Column and Custom Combination with per-series axes, saved styling, navigator/theme/refresh retention and captured-FMP application acceptance. See the [accepted milestone](../.kiro/specs/analyst-workspace/chart-port-milestone.md).
+
 - [x] Install ECharts 6.0.0 and provide the React host, lifecycle and chart-state foundation.
 - [x] Connect the ordinary Table/File journey to the existing Chart, Set Up and Customize editor.
 - [x] Render line, grouped column and stacked column charts in that journey.
@@ -18,7 +20,6 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete combination charts and per-series axis behavior. Packaged FMP, save/reopen and export checks passed; a File-refresh repair still awaits rebuilt-image acceptance in the [active milestone](../.kiro/specs/analyst-workspace/chart-port-milestone.md).
 - [ ] Complete scatter/bubble, distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
