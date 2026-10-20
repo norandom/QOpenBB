@@ -145,3 +145,7 @@ C4c corrects the source defect at Workspace `61239915182fe409e517b70c81c68fc085e
 The two production files pass the portable scope/complexity gate: 293/16 physical lines, 114/5 logical units and 26/2 maximum function units. A new optional-endpoint type error found during review was corrected. Final isolated baseline/candidate comparison reports the same 2,713 inherited TypeScript diagnostics, both exit 2, with no added diagnostics after normalizing line shifts. This is not a passing project-wide compilation.
 
 The repair is source-reviewed; it still needs the lifecycle and FMP journeys on its rebuilt packaged image. C4/C5 and milestone publication remain open.
+
+## Corrected candidate ready for runtime verification
+
+Dagger build/export and portable image load completed with exit 0 for Workspace `61239915182fe409e517b70c81c68fc085e68b94`. Loaded Linux/amd64 image: `sha256:ddb58fb80a4eb4e13ab7bd6b6a0d600a6849baca6be771b7fe1832d8f9d972a0`; config digest: `sha256:c5b3a698745597581fba228a7c20bf4640ec819b99ab676006c6911f30f23a3c`; archive SHA-256: `dce49d0f6a5f2220dceb8a1090241398df74034fb05dcb7a39fa4849289fd33f`. Source-policy checks passed (10 tests), and root `54d61cb` CI run `39407716346` succeeded without image publication. The corrected candidate has not yet passed its browser acceptance gate.
