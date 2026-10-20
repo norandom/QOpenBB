@@ -116,7 +116,7 @@ This accepts source integration and component behavior. It does not establish br
 
 Source staging correctly rejected the stale Workspace pin in `contracts/sources.json`. The policy now matches the source lock at `74254b6`; source allowlists and the data API revision are unchanged. A repository-level regression exercises the existing `source_scope` validation for both sources. The initial run failed on the Workspace mismatch (1 failed, 9 passed); the repair and independent review each passed all 10 tests. This accepts source coherence, not image or runtime acceptance.
 
-## Local packaged candidate and C4 readiness
+## Historical checkpoint: local packaged candidate and C4 readiness
 
 The canonical `qopenbb_ci.image_cli` acquire/stage/export/load sequence completed with exit 0 through Dagger 0.21.8. Source staging used the committed Workspace `74254b6dc037277449d3a89c69d265aa61412eec` and data API `49cc413e6ab67eaa0444e07485b0f9243c786f7b`. The frontend bundle compiled; the archive passed the loader's identity and re-export checks.
 
@@ -131,3 +131,17 @@ A separate test-only Workspace commit `40426db` adds `tests/e2e/live-chart/combo
 The opt-in `QOPENBB_COMBO_FMP_EVIDENCE` directory must contain the ignored `raw.json`, `annual.csv` and `provenance.json`. The scenario verifies provenance, all 15 unchanged observations, separate axis drawing, an actual line-width change, saved assignments/style, reopen and PNG structure. Browser output may contain licensed data and must remain ignored. Missing evidence skips the scenario and does not count as acceptance.
 
 Automatic approval review previously rejected the isolated runtime start with only `blocked by policy`. No equivalent runtime start was retried. This candidate has not been booted or browser-verified. C4/C5, real-FMP application acceptance and milestone publication remain open.
+
+## Packaged application checks and refresh repair
+
+The owner started the exact `46917e18` candidate in packaged-image-only mode at loopback port 55530. The shell/login check passed. The synthetic combination journey passed gallery changes, saved custom assignments, reopen and PNG export. The captured FMP journey passed on the same image: the actual File response retained all 15 original observations; tooltips before and after reopening matched all five fiscal periods, correctly rounded USD billions and USD/share values. Separate numeric-axis drawing, rendered line width, saved assignments/style and console/network diagnostics passed. Parent and independent reviewer privately inspected the exported financial PNG. Source-only approval is superseded by this runtime evidence for those journeys.
+
+Browser evidence stays local in `browser-run-1`, `browser-run-2` and `browser-run-6` beneath `artifacts/chart-combo/`. The failed intermediate runs identified test assumptions about gallery labels, imported header title-casing, automatic date-tick thinning and compact number formatting. Corrections preserve all 15 input-value and formatted-display checks. Financial screenshots, response data, tooltips and raw browser results are not public artifacts. The accepted test corrections are committed at Workspace `c4702b0`.
+
+The lifecycle check exercised Area & Column, hidden main-series/full-miniature behavior, a changed navigator range and theme retention. After correcting stale pointer coordinates and selecting the supported dashboard Refresh data action, it exposed a real defect: successful File refresh reset the navigator range. `browser-lifecycle-5` retains that failure. File widgets do not expose the navbar timer; the dashboard refresh action was used, with the actual completed File GET and its returned data verified.
+
+C4c corrects the source defect at Workspace `61239915182fe409e517b70c81c68fc085e68b94`: the File query retains previous successful data only for matching source/parser identity while refreshing. This keeps the existing chart mounted without adding persisted interaction state or another chart owner. Four focused tests using the real File component, query hook and query client pass; independent review repeated them. The preceding RED run failed the same-source mount-retention case and passed the other three. Initial loading, changed source/parser and visible failed-refresh behavior remain covered.
+
+The two production files pass the portable scope/complexity gate: 293/16 physical lines, 114/5 logical units and 26/2 maximum function units. A new optional-endpoint type error found during review was corrected. Final isolated baseline/candidate comparison reports the same 2,713 inherited TypeScript diagnostics, both exit 2, with no added diagnostics after normalizing line shifts. This is not a passing project-wide compilation.
+
+The repair is source-reviewed; it still needs the lifecycle and FMP journeys on its rebuilt packaged image. C4/C5 and milestone publication remain open.
