@@ -52,8 +52,8 @@ These are completion criteria for the remaining port. Earlier checked source/fun
 ## Scatter/bubble progress
 
 - [x] Repair bubble endpoint spacing and miniature clipping against the original application; replace the real-FMP sample after verification.
-- [ ] Publish the corrected image milestone.
-- [ ] Resolve remaining axis-label density/cropping and slight main-marker edge overlap after the owner comparison.
+- [x] Publish the corrected image milestone.
+- [ ] Match original axis labels more closely and resolve slight main-marker edge overlap; requested after the owner comparison on 2026-10-20.
 - [x] Resolve paired/unpaired X/Y/size identities with source-compatible ordering and incomplete-group behavior; independently reviewed focused tests and complexity checks passed.
 - [x] Implement the inactive numeric mapper, with independent review and actual ECharts geometry/tooltip checks.
 - [x] Connect and source-review the existing editor/application, including original empty-domain behavior for excluded one-sided bounds.

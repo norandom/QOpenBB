@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-39460489280-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-39470157459-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 
@@ -34,7 +34,7 @@ See the [ECharts checklist](docs/echarts-status.md) for remaining chart families
 Published: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
 
 - [x] Correct the reported bubble spacing and miniature overflow, then replace its FMP sample after verification.
-- [ ] Publish the corrected image milestone; remaining axis-label polish stays open.
+- [x] Publish the corrected image milestone; remaining axis-label polish stays open.
 - [x] Implement and review the inactive X/Y/size field-assignment contract.
 - [x] Implement and review the inactive numeric renderer, including actual ECharts geometry checks.
 - [x] Connect and source-review rendering, editor controls and saved XY settings.

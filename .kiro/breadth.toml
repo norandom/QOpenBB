@@ -118,7 +118,7 @@ requirements = ["analyst-workspace/xy-chart-milestone.md:X6"]
 planned_checks = ["rounded-xy-bounds", "miniature-painted-containment", "fmp-save-reopen-export"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.clip.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/xy.navigator.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/xy-fmp.spec.ts"]
 status = "passed"
-evidence = ["Independent source review and packaged image 02a6530a from Workspace 72bdc11: rounded X360-420B/Y90-120B and actual 18px miniature clip pass with unchanged captured FMP observations through lifecycle/export. Hosted publication pending. See artifacts/reviewed/chart-xy/bubble-correction.md."]
+evidence = ["Independent source review and packaged image 02a6530a from Workspace 72bdc11: rounded X360-420B/Y90-120B and actual 18px miniature clip pass with unchanged captured FMP observations through lifecycle/export. Published alpha-39470157459-1; six anonymous image pulls match the manifest. See artifacts/reviewed/chart-xy/bubble-correction.md."]
 
 [[capabilities]]
 id = "combination-chart-port"

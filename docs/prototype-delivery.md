@@ -2,7 +2,7 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-39460489280-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39460489280-1), built from Workspace `ae45e30` and data API `49cc413`. See the [histogram and release verification record](../artifacts/reviewed/chart-histogram/verification.md). The [earlier alpha evidence](../artifacts/reviewed/alpha-release/verification.md) remains historical.
+Published: [alpha-39470157459-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39470157459-1), built from Workspace `72bdc11` and data API `49cc413`. See the [bubble correction and release verification record](../artifacts/reviewed/chart-xy/bubble-correction.md). The [earlier alpha evidence](../artifacts/reviewed/alpha-release/verification.md) remains historical.
 
 ## Build and publication
 
@@ -23,7 +23,7 @@ GitHub Actions runs checks for PRs and ordinary main pushes. After a reviewed fe
 
 ## Acceptance boundary
 
-The owner accepted shipping the current development alpha with the existing functionality. The histogram milestone passed browser checks on an identified local packaged image, including captured FMP values, editor controls, save/reopen/export and navigator/theme/refresh retention. The local candidate contains production revision `c1ee9ae`; release revision `ae45e30` adds only the reviewed browser tests. CI rebuilt that pinned revision; registry verification is separate from browser acceptance. Assembled Compose and production-server acceptance remain open. Unfinished renderer, provider, persistence, AI and Excel work belongs to successor specs in the [roadmap](roadmap.md).
+The owner accepted shipping the current development alpha with the existing functionality. The bubble correction passed captured-FMP and Scatter browser journeys on local packaged image `02a6530a`, built from Workspace `72bdc11`. Rounded ranges, an actual 18-pixel miniature clip, unchanged financial observations and save/reopen/export were verified. CI rebuilt the same source; registry verification is separate from browser acceptance. X7 axis-label polish and slight main-marker edge overlap remain open. Assembled Compose and production-server acceptance remain open. Unfinished renderer, provider, persistence, AI and Excel work belongs to successor specs in the [roadmap](roadmap.md).
 
 The earlier CI failure occurred after Workspace export, in engine identity verification. The repair resolves the pinned image through Docker instead of equating a local image ID with a registry manifest digest. Focused tests cover both Docker storage representations; the hosted run now confirms the repaired build outcome.
 

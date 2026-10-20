@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-20T17:52:36.2022675Z",
+  "updated_at": "2026-10-20T18:13:10.511518+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -31,7 +31,7 @@
     ],
     "feature_accepted": false,
     "evidence": "artifacts/reviewed/chart-pie/verification.md",
-    "paused_for": "bubble-range-and-clipping"
+    "paused_for": "X7: owner requested closer original axis-label matching after the bubble comparison."
   },
   "completed_milestones": [
     {
@@ -99,10 +99,11 @@
     "name": "bubble-range-and-clipping",
     "contract": "xy-chart-milestone.md",
     "task": "X6",
-    "phase": "application-accepted-publication-pending",
+    "phase": "accepted-published",
     "authorization": "Owner reported broken published bubble sample on 2026-10-20; repair under existing autonomous chart-port direction.",
-    "feature_accepted": false,
+    "feature_accepted": true,
     "evidence": "artifacts/reviewed/chart-xy/bubble-correction.md",
-    "visual_followup": "X7: axis-label density/cropping and slight main-marker edge overlap remain open; owner comparison requested."
+    "visual_followup": "X7: owner requested closer original label matching on 2026-10-20; axis-label density/cropping and slight main-marker edge overlap remain open.",
+    "release": "alpha-39470157459-1"
   }
 }

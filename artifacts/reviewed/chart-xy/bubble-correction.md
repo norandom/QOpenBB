@@ -30,6 +30,15 @@ Local Dagger image `sha256:02a6530a5a0a41a9450ea1acf19f3211c2a43b07a88e55f21c797
 - Parent inspected the final exported PNG and opened it beside the original in qView. The replacement retains denser tick labels and a different legend state from the reference; this is not a claim of exact visual parity.
 - Independent Astra review accepted the bounded spread/miniature correction against the final result JSON and PNG. It retained the axis-label differences and slight main-marker edge overlap as open visual work.
 
-The corrected chart sample is the actual application export, not a redrawn illustration. Hosted publication remains pending.
+The corrected chart sample is the actual application export, not a redrawn illustration.
 
 Raw source logs, original reference captures and command scripts remain in ignored `artifacts/chart-xy/spread-review/`. Original captures passed with one isolated browser worker and zero retries. Public evidence retains the relevant chart samples and this concise record.
+
+## Published correction
+
+[CI run 39470157459](https://github.com/norandom/QOpenBB/actions/runs/39470157459) passed from root `7492d428c2def11eec6b5b9efd1bf47c78d39747`. [Tagged alpha alpha-39470157459-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39470157459-1) contains Compose, the environment template and manifest. Both images were rebuilt by Dagger; six anonymous pulls (digest, alpha tag and latest for each service) matched the manifest's registry/configuration digests, platform and source labels.
+
+- workspace: `ghcr.io/norandom/qopenbb-workspace@sha256:aaf3fd45faab1bc9aaf5a26f23fff9f480bfd8b5e25d3bddc45b7703ca0fb907`.
+- data-api: `ghcr.io/norandom/qopenbb-data-api@sha256:6662e37dcc8f84a05712297bf64271c576120561f1a502d03b90fe4c6ea40b48`.
+
+Application checks ran on the identified local candidate built from the same Workspace source, not on the CI registry images. Owner-server deployment and X7 visual polish remain open.
