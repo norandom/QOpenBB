@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-20T17:11:27.847908+00:00",
+  "updated_at": "2026-10-20T17:18:11.192138+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -24,11 +24,13 @@
     "contract": "pie-milestone.md",
     "authorization": "Owner continued autonomous chart port after histogram publication on 2026-10-20.",
     "phase": "implementation-in-progress",
-    "design_review": "Independent P0 review approved inactive P1 assignment boundary against original PieChartProxy. P2 numerical/rendering and P3 integration designs retain later review gates.",
+    "design_review": "Independent P0 review approved inactive P1 assignment boundary against original PieChartProxy. P2 numerical/rendering and P3 integration designs retain later review gates. P1 inactive assignments independently accepted at 0a2dd86: 30 tests, strict typing and caps pass; no renderer or application activation.",
     "completed_tasks": [
-      "P0"
+      "P0",
+      "P1"
     ],
-    "feature_accepted": false
+    "feature_accepted": false,
+    "evidence": "artifacts/reviewed/chart-pie/verification.md"
   },
   "completed_milestones": [
     {

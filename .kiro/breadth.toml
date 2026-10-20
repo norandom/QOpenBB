@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "pie-donut-assignments"
+requirements = ["analyst-workspace/pie-design.md:P1 rules and acceptance"]
+planned_checks = ["first-selected-pie", "ordered-concentric-rings", "saved-alias", "atomic-invalid-input", "immutable-outputs"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/pieAssignments.test.ts"]
+status = "passed"
+evidence = ["Inactive P1 independently accepted at Workspace 0a2dd86: 30 focused tests, scoped strict TypeScript and whole-file caps pass. No rendering, application or release acceptance. See artifacts/reviewed/chart-pie/verification.md."]
+
+[[capabilities]]
 id = "pie-donut-chart-port"
 requirements = ["analyst-workspace/pie-milestone.md:Acceptance contract"]
 planned_checks = ["original-first-field-and-ring-order", "independent-ring-denominators", "saved-doughnut-alias", "existing-controls", "real-fmp-quarterly-composition", "save-reopen-export"]
