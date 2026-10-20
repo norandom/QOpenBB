@@ -27,3 +27,11 @@ Chart porting completion means usable replacement functionality, not merely remo
 Every chart milestone must exercise real FMP data through the application and verify displayed values, units, dates and transformations against the provider response. Record endpoint, parameters, retrieval time and source/image revision without credentials. Cover the milestone's relevant editor controls, theme, refresh, save/reopen and export behavior. Keep synthetic regressions for edge cases, but they cannot alone establish feature completion. Provider entitlement failures remain visible blockers for the affected live-data check; do not silently replace those checks with synthetic data. If an FMP dataset cannot represent a chart's financial meaning, record the gap and choose an appropriate real dataset before accepting it.
 
 The previously published alpha remains available. Its publication does not retroactively establish complete chart-port or live-FMP acceptance.
+
+## Completion checklist maintenance
+
+Before closing each task or accepted milestone, update the affected checkboxes in `README.md` and maintained pages under `docs/`, including renderer done/todo lists. Reconcile them with the owning spec, `.kiro/breadth.toml` and reviewed evidence in the same completion commit. These are summaries of the owning criteria, not separate acceptance requirements.
+
+Check only the scope that the evidence establishes. Leave deferred, blocked and unverified items unchecked; reopen a checkbox when its acceptance no longer holds. A dispatched pipeline does not complete publication: check that item only after the release and image identities are verified. Link the evidence or owning task so readers can inspect the result.
+
+Include checkbox reconciliation in implementer handoffs and independent completion review. Documentation-only reconciliation does not trigger an image rebuild.

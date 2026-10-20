@@ -40,3 +40,5 @@ Use synthetic fixtures or disposable accounts for ordinary tests. Real credentia
 ## Keep navigation current
 
 Add or move reader-facing pages through [docs/index.md](index.md). Keep the README focused on purpose, status, operating constraints, and entry points. When evidence changes, update the owning report and breadth map first, then revise summary claims and roadmap gates. Add an executable startup or deployment runbook only after its commands have been exercised against the recorded baseline.
+
+Before closing a task or milestone, update its affected checkboxes in `README.md` and `docs/` in the completion commit. Match the owning spec and reviewed evidence; leave deferred or unverified work open. Include this reconciliation in worker handoffs and completion review. See the [delivery process](../.kiro/steering/delivery-workflow.md#completion-checklist-maintenance) for publication and reopening rules.
