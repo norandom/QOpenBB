@@ -51,6 +51,8 @@ Every check below is proposed, not executed. Use deterministic financial data wi
 
 ## Limits and next evidence
 
+Candidate observation, 2026-10-20: in the File table at Workspace `f003fdc`, unchecking Revenue in Table Settings and saving left the column visible for the full 30-second check. Column visibility remains open; the underlying cause has not been established. The histogram fixture instead uses the existing public filter controls, restores all nine source rows, and checks the restored chart data. This does not establish column-settings parity. Local evidence: `artifacts/chart-histogram/browser-h4-f003fdc-20261020-04/`.
+
 ### Follow-up caller trace
 
 Read-only Luna tracing at the same Workspace baseline distinguishes two export paths. `General/Table/hooks/useTableContext.tsx::useAgExportFuncs` itself has no tier predicate. Its XLSX callback reaches `MoveToDropDown/utils.tsx::getExportFns`, which includes XLSX when the callback exists, except for widget type `chart`, where only PNG is offered. `NavBar` additionally controls ellipsis visibility. The grid context-menu export is separately gated by tier `pro`; do not apply that gate to the generic dropdown.

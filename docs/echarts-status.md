@@ -22,7 +22,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete histogram; its [milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md) now has independently accepted inactive binning.
+- [ ] Complete histogram; its [milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md) has source acceptance through editor integration and automatic axes. Candidate-image verification and final visual refinements are in progress.
 - [ ] Complete remaining distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
@@ -64,6 +64,7 @@ Source and packaged-image application acceptance passed. The updated alpha is pu
 - [x] Render numeric intervals with independently checked geometry and native legend restoration in the inactive mapper.
 - [x] Connect and independently source-review existing editor and application controls.
 - [x] Source-review automatic axis rounding and retained zoom/reset scales.
+- [x] Source-review endpoint-label overflow and original Bin count control order.
 - [ ] Accept identified-image FMP journeys and publish the completed milestone.
 
 See [verification](../artifacts/reviewed/chart-histogram/verification.md). The existing alpha does not activate histogram yet.

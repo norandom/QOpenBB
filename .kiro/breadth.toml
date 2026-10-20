@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "histogram-endpoint-labels"
+requirements = ["analyst-workspace/histogram-label-refinement.md:Acceptance and ownership"]
+planned_checks = ["conditional-endpoint-overflow", "native-tick-grid-geometry", "zoom-reset-label-restoration", "original-control-order"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogram.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogramNavigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/histogramEditorControls.test.tsx"]
+status = "passed"
+evidence = ["Workspace b18082d source independently accepted: 28 focused actual-engine/editor tests; no added baseline-relative TypeScript diagnostics; whole-file caps passed. Corrected-image acceptance remains open. See artifacts/reviewed/chart-histogram/verification.md."]
+
+[[capabilities]]
 id = "histogram-automatic-axes"
 requirements = ["analyst-workspace/histogram-axis-refinement.md:Bounds, finite output and acceptance"]
 planned_checks = ["viewport-nice-extents", "explicit-bounds-and-finite-fallback", "native-interval-clear", "retained-navigation-rounding"]

@@ -46,6 +46,7 @@ Current: [histogram port](.kiro/specs/analyst-workspace/histogram-milestone.md).
 - [x] Implement and independently verify inactive interval rendering.
 - [x] Connect and independently source-review the existing editor and application controls.
 - [x] Source-review automatic axis rounding and retained zoom/reset scales.
+- [x] Source-review endpoint-label overflow and original Bin count control order.
 - [ ] Accept real-FMP application behavior and publish the completed milestone.
 
 ## Delivery plan
