@@ -65,6 +65,7 @@ Source and packaged-image application acceptance passed. The updated alpha is pu
 - [x] Connect and independently source-review existing editor and application controls.
 - [x] Source-review automatic axis rounding and retained zoom/reset scales.
 - [x] Source-review endpoint-label overflow and original Bin count control order.
+- [x] Source-review miniature height, plot alignment and full-bin labels.
 - [ ] Accept identified-image FMP journeys and publish the completed milestone.
 
 See [verification](../artifacts/reviewed/chart-histogram/verification.md). The existing alpha does not activate histogram yet.

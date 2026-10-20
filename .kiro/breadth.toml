@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "histogram-overview-layout"
+requirements = ["analyst-workspace/histogram-overview-refinement.md:Exact ownership"]
+planned_checks = ["native-miniature-height", "both-side-label-containment", "retained-full-bin-extent", "ordinary-navigator-defaults"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/histogramNavigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.navigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/histogramProductionJoin.test.ts"]
+status = "passed"
+evidence = ["Workspace c1ee9ae source independently accepted: 40 focused tests, no added baseline-relative TypeScript diagnostics, whole-file caps passed. Corrected-image acceptance remains open. See artifacts/reviewed/chart-histogram/verification.md."]
+
+[[capabilities]]
 id = "histogram-endpoint-labels"
 requirements = ["analyst-workspace/histogram-label-refinement.md:Acceptance and ownership"]
 planned_checks = ["conditional-endpoint-overflow", "native-tick-grid-geometry", "zoom-reset-label-restoration", "original-control-order"]
