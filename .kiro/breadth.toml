@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "box-plot-inactive-axis-navigation"
+requirements = ["analyst-workspace/box-plot-axis-navigation-design.md:B3c acceptance", "analyst-workspace/box-plot-milestone.md:B3c"]
+planned_checks = ["source-nicing-ticks", "zoom-density-before-rounding", "explicit-bound-empty-envelope", "main-overview-navigation", "horizontal-single-crop", "host-lifecycle-guards"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotValueAxis.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotNavigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotIntegration.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlot.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlot.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/host.test.tsx"]
+status = "passed"
+evidence = ["Inactive B3c accepted at Workspace b34984e: 80 tests/seven files, Biome 23 reviewed files and combined caps pass; 21 files changed. Canonical typing retains 3427 identical inherited diagnostics, exit2. B3d activation and B4 FMP/owner visual decisions remain open. See artifacts/reviewed/chart-box/verification.md."]
+
+[[capabilities]]
 id = "range-area-inactive-renderer"
 requirements = ["analyst-workspace/range-area-renderer-design.md:R3 acceptance", "analyst-workspace/range-chart-plan.md:Delivery status"]
 planned_checks = ["per-measure-envelope", "null-run-gaps", "band-boundary-geometry", "equal-domain-raw-labels", "tooltip-null-identity", "singleton-empty-child-replacement"]

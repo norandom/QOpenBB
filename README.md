@@ -74,6 +74,7 @@ Current: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
 - [x] Implement and independently verify the inactive box/whisker renderer.
 - [x] Preserve original category identities in the inactive Box Plot capture helper.
 - [x] Independently accept inactive Box capture and original aggregate setup.
+- [x] Independently accept inactive Box axes/navigation and the existing-host adapter join.
 - [ ] Connect the existing editor and saved-state flow.
 - [ ] Accept real-FMP behavior and original/replacement appearance in an identified image.
 - [ ] Publish and verify the completed milestone.
