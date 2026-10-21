@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "box-plot-visual-refinement-source"
+requirements = ["analyst-workspace/box-plot-visual-refinement.md:Completion checks"]
+planned_checks = ["original-fill-legend", "category-wrapping-collision-budget", "numeric-label-policy", "main-miniature-separation", "raw-miniature-ticks"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlot.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotCategoryPlan.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotNavigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotIntegration.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotValueAxis.test.ts"]
+status = "passed"
+evidence = ["Source-only refinement accepted at 1458dbd7d74ce5e97a8de7e387fd70ff8fc87316: 69 focused checks plus 51 integration checks, caps/formatting pass; inherited typing output unchanged. Fresh-image and visual acceptance remain pending. See artifacts/reviewed/chart-box/verification.md."]
+
+[[capabilities]]
 id = "box-plot-editor-session"
 requirements = ["analyst-workspace/box-plot-editor-design.md:Source acceptance", "analyst-workspace/box-plot-milestone.md:B3"]
 planned_checks = ["original-controls-saved-paths", "latest-widget-transactions", "family-observation-recapture", "configured-native-visibility", "main-mini-navigation", "prior-family-regressions"]

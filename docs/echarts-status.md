@@ -30,6 +30,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Independently accept inactive Box axes/navigation and the existing-host adapter join (B3c).
 - [x] Connect and source-review the Box editor/session and saved settings (B3d).
 - [x] Run both Box browser journeys against the identified candidate image.
+- [x] Source-review Box appearance refinements; see [verification](../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).
 - [ ] Complete the Box original/replacement and default miniature comparisons.
 - [x] Independently accept inactive Box capture and original aggregate setup (B3b).
 - [ ] Complete other distribution and radial families.

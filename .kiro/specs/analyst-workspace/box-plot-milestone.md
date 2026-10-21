@@ -42,3 +42,5 @@ Retained FMP AAPL quarterly income statements, 40 observations across 11 fiscal 
 ![Candidate horizontal Box Plot](../../../artifacts/reviewed/chart-box/box-horizontal-long-labels-light.png)
 
 Original comparison is now captured. Fill/legend, vertical scale/category layout and miniature spacing need refinement; see the [documented miniature comparison](../../../artifacts/reviewed/chart-box/verification.md#b4-original-capture-and-default-miniature-comparison).
+
+The [bounded visual refinement](box-plot-visual-refinement.md) is source-accepted. Fresh-image comparison remains open; see [verification](../../../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).

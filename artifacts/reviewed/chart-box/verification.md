@@ -107,3 +107,13 @@ Original default miniature:
 Current candidate default miniature:
 
 ![Candidate Box miniature](box-default-horizontal-miniature-light.png)
+
+## B4 visual refinement: source accepted, image comparison pending
+
+Workspace `1458dbd7d74ce5e97a8de7e387fd70ff8fc87316` restores the original default fill mix, native legend paint and dash, category band defaults, wrapped/thinned category labels and the 18px miniature layout. The label plan uses the original 30% cross-dimension budget; disabling collision avoidance preserves numeric endpoint labels. Main-axis layout and rendering share the same measured plan. Raw values, summaries and saved controls retain their existing contracts.
+
+Independent source review: approved, with the numeric endpoint and finite label-budget findings corrected before acceptance. Focused verification passed 120 tests: appearance/native legend 19, category/navigation/value-axis/actual-engine rendering 50, and editor/session/admission/lifecycle integration 51. Commands use the maintained chart-application and chart-compatibility Vitest configurations with one worker; exact file groups and local logs are recorded in `artifacts/chart-box/visual-source-review.md` and `visual-join.sh`. Scoped Biome checked all 16 changed files. The combined explicit-scope size gate passed with no errors or violations. Canonical session typing still exits 2 with 2,711 inherited diagnostics; baseline and final candidate output are byte-identical. Final Biome-only formatting followed the tests and was independently reviewed.
+
+The inventory now recognizes the exact temporary `run_this.sh` owner-command handoff as a disposable artifact; reusable logic remains in maintained helpers. No broad shell-script exclusion was added.
+
+This is source acceptance only. The screenshots above still show the previous candidate and its known discrepancies. A new Dagger-built candidate, retained-FMP browser checks and original/replacement review remain required. B4/B5 and publication stay open.
