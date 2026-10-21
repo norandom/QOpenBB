@@ -4,6 +4,8 @@ Adapted at the user's request on 2026-10-16 from the sibling because-security-qu
 
 ## Background browser checks
 
+Owner preference, 2026-10-21: put commands that require owner execution in the repository-root `run_this.sh`. Keep this temporary file Git-ignored, use LF line endings, syntax-check it with `bash -n`, and give the owner `bash run_this.sh` as the entry point. Update its contents for the current requested operation and identify that operation before asking the owner to run it. Keep credentials out of the script and its output.
+
 Owner authorization, 2026-10-20: run routine local candidate startup and verification autonomously, including WSL Docker. Use the owned disposable runtime and loopback bindings; do not request conversational approval for each run. Tool-enforced rejections still apply and must be reported rather than bypassed.
 
 Owner preference, 2026-10-19: open original/replacement PNG comparisons in qView for visual review. Launch the requested viewer visibly; keep automated browser verification headless and isolated. Opening a comparison does not imply visual acceptance.

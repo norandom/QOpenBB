@@ -91,3 +91,19 @@ Original/replacement visual comparison, default horizontal miniature comparison 
 ![Candidate horizontal Box Plot, light theme](box-horizontal-long-labels-light.png)
 
 Provider provenance: `/stable/income-statement?symbol=AAPL&period=quarter&limit=40`, retained at `2026-10-20T14:06:05.149732+00:00`. Raw response SHA-256 `390dc8cbfc8302720a203bd9782d5e3b1f7363a4f762bdfcef079dbbe4c72f6b`; imported CSV SHA-256 `120e1dac7d9e0a541293fb9c8d40982959ce3a03fa8b33ef027ea52ceceb32cb`. No provider key or private account state is published.
+
+## B4 original capture and default miniature comparison
+
+Candidate run 5 passed both scenarios, exit 0, including default horizontal miniature light/dark geometry and the downstream styled/lifecycle checks. Test revision: `a3b71d2a85e7c80076d7b5fbc1bf0bfc7408f2bd`; application image/source remain `05c1c6fc` / `ba98f00`. The original-reference scenario passed separately, exit 0, at `artifacts/chart-box/reference-run1`; six views captured from original image `f48eb1c9` with the existing 43-file backend overlay (`23b6323e40a2edaa7267e25f72d032da8e92ccef09cc09545cb749fe2d2a15de`). The owner started both runtimes; controller status confirmed the original runtime at loopback port 57879. Independent evidence audit: `artifacts/chart-box/b4-browser-review.md`.
+
+Both vertical captures are 619 by 284 at DPR 1. Original horizontal/miniature captures are 619 by 592; candidate captures are 619 by 593. The reference scenario uses the same retained CSV, field order and native resize sequence. This is a comparison with a recorded one-pixel height difference, not a claim of identical dimensions.
+
+Visual refinement remains required: replacement bodies/legend use darker fills, the vertical numeric scale currently ends at 150B rather than the original 200B, and main numeric labels sit too close to the miniature. Default miniature direction is horizontal on both sides. Source investigation is in progress; B4/B5 and image publication remain open. The samples below document the discrepancy rather than accepted visual parity.
+
+Original default miniature:
+
+![Original Box miniature](original-box-default-horizontal-miniature-light.png)
+
+Current candidate default miniature:
+
+![Candidate Box miniature](box-default-horizontal-miniature-light.png)

@@ -31900,14 +31900,6 @@
       "transform": "exact-byte-copy"
     },
     {
-      "sourcepath": "artifacts/chart-box/verification.md",
-      "sourceSHA256": "9ed2da824462b998245c22280eda00cfabf1825899628f70d26ca8b7e70b24be",
-      "publishedpath": "artifacts/reviewed/chart-box/verification.md",
-      "publishedSHA256": "9ed2da824462b998245c22280eda00cfabf1825899628f70d26ca8b7e70b24be",
-      "bytes": 17888,
-      "transform": "exact-byte-copy"
-    },
-    {
       "sourcepath": "artifacts/chart-box/browser-ci-39638122414-run4/browser-output/box-plot-retained-AAPL-Box-5a260-s-refresh-and-reopen-export/box-default-vertical-light.png",
       "sourceSHA256": "8e92b77b8928d7e04805f14b2e0831bbf073d2d0ad295c098c49315ba2a35843",
       "publishedpath": "artifacts/reviewed/chart-box/box-default-vertical-light.png",
@@ -31921,6 +31913,30 @@
       "publishedpath": "artifacts/reviewed/chart-box/box-horizontal-long-labels-light.png",
       "publishedSHA256": "3152f99a198e6d0f4ad02e990335460c61f0ed9ba18bb61bac19e0e586eaab69",
       "bytes": 17733,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-box/verification.md",
+      "sourceSHA256": "c1a7ed57afb27592e54d44713b20acb082a95c9e5686b0aa0f79bfe31353ad42",
+      "publishedpath": "artifacts/reviewed/chart-box/verification.md",
+      "publishedSHA256": "c1a7ed57afb27592e54d44713b20acb082a95c9e5686b0aa0f79bfe31353ad42",
+      "bytes": 19635,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-box/reference-run1/browser-output/box-reference-original-Box-df942-izontal-miniature-reference/original-box-default-horizontal-miniature-light.png",
+      "sourceSHA256": "f1febad049eca6bb5b7ab4f1e5ee1824c3b6f05f6e19ac72f288cfde3f20addf",
+      "publishedpath": "artifacts/reviewed/chart-box/original-box-default-horizontal-miniature-light.png",
+      "publishedSHA256": "f1febad049eca6bb5b7ab4f1e5ee1824c3b6f05f6e19ac72f288cfde3f20addf",
+      "bytes": 18899,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-box/browser-ci-39638122414-run5/browser-output/box-plot-retained-AAPL-Box-5a260-s-refresh-and-reopen-export/box-default-horizontal-miniature-light.png",
+      "sourceSHA256": "3cddb40b192807186b14b529d8cd93b25a1495ff25fe25dacbcebe5807d9b76f",
+      "publishedpath": "artifacts/reviewed/chart-box/box-default-horizontal-miniature-light.png",
+      "publishedSHA256": "3cddb40b192807186b14b529d8cd93b25a1495ff25fe25dacbcebe5807d9b76f",
+      "bytes": 21787,
       "transform": "exact-byte-copy"
     }
   ],
