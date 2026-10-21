@@ -85,11 +85,11 @@ See [verification](../artifacts/reviewed/chart-histogram/verification.md). The u
 - [x] Connect and source-review existing controls and application flow.
 - [x] Repair title/legend editor transactions found by the first image run; source tests and independent review pass.
 - [x] Restore effective pie legend defaults and retain original title/legend appearance; source checks pass.
-- [x] Implement and source-review native legend paging, keyboard access and fitted donut titles; image acceptance remains open.
-- [ ] Accept identified-image FMP, appearance and lifecycle behavior.
+- [x] Implement and source-review native legend paging, keyboard access and fitted donut titles.
+- [x] Accept identified-image FMP, owner-reviewed appearance and lifecycle behavior.
 - [ ] Publish and verify the completed milestone.
 
-P1 assignments, P2 rendering and P3 application integration are source-accepted. Candidate-image visual, FMP and lifecycle acceptance remains open.
+P4 application acceptance passed on the identified pie/donut candidate: captured-FMP values, synthetic edge cases, controls, paging, refresh, save/reopen, export and five prior-family journeys. The owner accepted the disclosed default appearance differences. P5 publication and verification of both public images remain open. See [verification](../artifacts/reviewed/chart-pie/verification.md).
 
 ## Evidence and ownership
 

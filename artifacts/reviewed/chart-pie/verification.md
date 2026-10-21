@@ -1,6 +1,26 @@
 # Pie and donut verification
 
-P1 assignments were independently accepted at Workspace `0a2dd8659c89cc6368ce3d6359cf05c0e632b69a` as inactive foundation code. P2 rendering is now independently accepted as described below. P3 now connects the original controls and application flow, as described below. Candidate-image acceptance and publication remain open; the published alpha is unchanged.
+P4 application acceptance passed on 2026-10-21. The owner accepted the disclosed appearance differences, and independent feature review approved all seven final-image browser journeys. P5 alpha publication remains pending. Scope is the ordinary Table/File chart journey; other families and callers remain open.
+
+## P4 final image acceptance
+
+- Workspace production: `9d1883849f480f45c89c53867554590d45b12428`.
+- Image: `sha256:2459fc315b735cb2f66083bb11a10bacaed2b0fdad7f11f46191937661591d81`.
+- Release source: `9e0f2eea031048fe882178eb7af6851e4b596124` adds only the four reviewed browser-harness files; production bytes are unchanged from the tested source.
+- Owned runtime: packaged image only, without source overlays; configuration and login ready.
+- Actual isolated browser results: FMP 1, synthetic 1, ordinary/combination 2, scatter/bubble 2 and histogram 1 passed, with no skipped/flaky acceptance checks. The first XY batch passed its first journey but hit HTTP 429 at scatter reopen because batches were scheduled too closely. After the login window cleared, only that blocked scatter journey was rerun; the original failure remains recorded.
+
+The FMP journey checks raw tooltips and separate ring proportions, both themes, existing style controls, side-legend ellipsis/full tooltips, canvas paging and independent selection, refresh, save/reopen and PNG export from the second legend page. Unfiltered browser diagnostics pass. The synthetic journey retains duplicate/signed/missing observations, aggregation, empty recovery and saved `doughnut` controls. The shared lifecycle repair also passes all five prior-family journeys on this same image.
+
+Run commands use `bash artifacts/chart-pie/run-pie-browser.sh PRIVATE ORIGIN EVIDENCE fmp|synthetic` and `bash artifacts/chart-pie/run-prior-browser.sh PRIVATE ORIGIN EVIDENCE ordinary-combo|xy|histogram`, with pinned Node and one isolated headless browser worker. Final local evidence directories are `p4-browser-fmp-8`, `p4-browser-synthetic-5`, `p4-final-ordinary-combo`, `p4-final-xy`, `p4-final-scatter` and `p4-final-histogram`, all beneath `artifacts/chart-pie/`. Raw logs, disposable account state and intermediate failed captures remain local. Independent review: `artifacts/chart-pie/p4-feature-review.md`.
+
+The three published chart-only samples come from the final FMP run and exactly match the owner-accepted default PNG bytes. Captures use 619 × 284 CSS pixels at DPR 1 (crop width rounds to 620 pixels). The accepted differences are slightly shifted outer labels, no thin slice separators and a Pie diameter about 10 pixels smaller than the original. Styled controls are separately exercised in a larger widget, not presented as a matched-size default comparison.
+
+FMP source: `https://financialmodelingprep.com/stable/income-statement`, symbol AAPL, period quarter, limit 40; retained capture retrieved at `2026-10-20T14:06:05.149732+00:00`. Four FY2025 quarters, reporting dates 2024-12-28 through 2025-09-27, retain original USD values. Revenue denominator is USD 416,161,000,000; gross-profit denominator is USD 195,201,000,000. Each ring independently distributes its own measure; overlapping revenue and gross profit are never combined. The raw capture and derived CSV hashes are retained below. No new provider request was made for these checks.
+
+The historical source reviews below retain the defects and repairs found during P4. Their pending statements describe those earlier checkpoints; final packaged acceptance is established above. Production caps pass. Scoped production typing retains the documented unchanged upstream typography diagnostic; the authored browser files pass scoped typing. This does not claim a globally clean upstream typecheck or complete renderer coverage.
+
+## Historical implementation evidence
 
 ## P0 design and fixture
 

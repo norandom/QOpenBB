@@ -31812,10 +31812,10 @@
     },
     {
       "sourcepath": "artifacts/chart-pie/verification.md",
-      "sourceSHA256": "e2bc204dcc24d8210c9c3dc5f4279d4c4fa95730db5c95185675c932413fe632",
+      "sourceSHA256": "9195be814e61d2b5580b5c13e920707a545486824a55a222a6b5dd23d9ee2b9c",
       "publishedpath": "artifacts/reviewed/chart-pie/verification.md",
-      "publishedSHA256": "e2bc204dcc24d8210c9c3dc5f4279d4c4fa95730db5c95185675c932413fe632",
-      "bytes": 19333,
+      "publishedSHA256": "9195be814e61d2b5580b5c13e920707a545486824a55a222a6b5dd23d9ee2b9c",
+      "bytes": 22780,
       "transform": "exact-byte-copy"
     },
     {
@@ -31864,6 +31864,30 @@
       "publishedpath": "artifacts/reviewed/chart-xy/bubble-label-refinement.md",
       "publishedSHA256": "828f987f29924a1dc71abc096d08251c50255b0b5a831c812e76c226ef16a73b",
       "bytes": 4944,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-pie/p4-browser-fmp-8/browser-output/pie-fmp-captured-AAPL-quar-75ee9-s-refresh-and-reopen-export/default-pie-light.png",
+      "sourceSHA256": "ef360e8750ded3daac16d4ab4823fd16aa6775f7fae60578c0dd4076b49f08c2",
+      "publishedpath": "artifacts/reviewed/chart-pie/default-pie-light.png",
+      "publishedSHA256": "ef360e8750ded3daac16d4ab4823fd16aa6775f7fae60578c0dd4076b49f08c2",
+      "bytes": 13595,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-pie/p4-browser-fmp-8/browser-output/pie-fmp-captured-AAPL-quar-75ee9-s-refresh-and-reopen-export/default-donut-light.png",
+      "sourceSHA256": "fdafd59de053046d15af43c1cb43586092c71fc257facc4f036dc82680a46762",
+      "publishedpath": "artifacts/reviewed/chart-pie/default-donut-light.png",
+      "publishedSHA256": "fdafd59de053046d15af43c1cb43586092c71fc257facc4f036dc82680a46762",
+      "bytes": 18763,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-pie/p4-browser-fmp-8/browser-output/pie-fmp-captured-AAPL-quar-75ee9-s-refresh-and-reopen-export/default-donut-dark.png",
+      "sourceSHA256": "0f9af855b2c6c613796333f5ca870480ddbae6d8fcb75d2fe4ea20b445d1857a",
+      "publishedpath": "artifacts/reviewed/chart-pie/default-donut-dark.png",
+      "publishedSHA256": "0f9af855b2c6c613796333f5ca870480ddbae6d8fcb75d2fe4ea20b445d1857a",
+      "bytes": 19678,
       "transform": "exact-byte-copy"
     }
   ],

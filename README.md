@@ -12,14 +12,14 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 ## Status at a glance
 
-Snapshot: 2026-10-20. Follow the CI link for live run status; a green check does not establish deployment acceptance.
+Snapshot: 2026-10-21. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
 | Area | What exists | What remains |
 | --- | --- | --- |
 | Prototype | Full Workspace, installed data API, two-service Compose, local image builds | Candidate login/dashboard and routing smoke; assembled Compose acceptance |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
 | Data | Adapted FMP profile/income routes and FRED series catalog; real-data snapshot dashboard | Broader live FMP coverage, Yahoo adapter, named discovery and consistent provider contracts |
-| Visuals | Selected ECharts table-chart journeys with captured FMP data; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Bubble axis-label polish; Perspective dashboard integration, remaining renderer/table functions and shared theme |
+| Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Pie/donut publication; Perspective dashboard integration, remaining renderer/table functions and shared theme |
 | Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and persistence acceptance |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
 
@@ -63,8 +63,8 @@ Current: [pie and donut port](.kiro/specs/analyst-workspace/pie-milestone.md).
 - [x] Connect and source-review the existing editor and application flow.
 - [x] Repair title/legend editor transactions found by the first image run; source tests and independent review pass.
 - [x] Restore effective pie legend defaults and retain original title/legend appearance; source checks pass.
-- [x] Implement and source-review native legend paging, keyboard access and fitted donut titles; image acceptance remains open.
-- [ ] Accept real-FMP behavior and matched appearance in the candidate image.
+- [x] Implement and source-review native legend paging, keyboard access and fitted donut titles.
+- [x] Accept real-FMP behavior and the owner-reviewed appearance in the candidate image.
 - [ ] Publish and verify the completed milestone.
 
 ## Delivery plan

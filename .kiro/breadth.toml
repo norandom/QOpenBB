@@ -4,7 +4,7 @@ requirements = ["analyst-workspace/pie-appearance-repair-design.md:P4-tooltip-re
 planned_checks = ["native-pending-tooltip", "replacement-order", "tooltip-recovery", "failure-cleanup"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/tooltipLifecycle.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts"]
 status = "passed"
-evidence = ["Source acceptance at 9d18838: actual-engine failure reproduction, visible tooltip recovery and lifecycle ordering/failure checks pass. Packaged FMP diagnostics remain pending. See artifacts/reviewed/chart-pie/verification.md."]
+evidence = ["Source repair 9d18838 retains actual-engine timer/recovery and lifecycle ordering/failure regressions. Final P4 FMP diagnostics pass on the identified image; P5 publication remains open. See artifacts/reviewed/chart-pie/verification.md."]
 
 [[capabilities]]
 id = "pie-donut-side-legend-budget"
@@ -12,7 +12,7 @@ requirements = ["analyst-workspace/pie-appearance-repair-design.md:P4-side-legen
 planned_checks = ["side-width-budget", "drawable-rings", "reachable-keys", "explicit-dimensions"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/pieLayout.test.ts"]
 status = "passed"
-evidence = ["Source regression and native-render checks accepted at cdb1684; focused final layout tests 9/9 and caps pass. Actual right-legend FMP image check remains pending. See artifacts/reviewed/chart-pie/verification.md."]
+evidence = ["Source repair cdb1684 passed final 9/9 layout regressions and caps. Final P4 right-legend placement, complete-caption hover and reachable-page checks pass. See artifacts/reviewed/chart-pie/verification.md."]
 
 [[capabilities]]
 id = "pie-donut-paged-legend-source"
@@ -20,7 +20,7 @@ requirements = ["analyst-workspace/pie-appearance-repair-design.md:V2-L", "analy
 planned_checks = ["measured-paging", "native-selection", "keyboard-lifecycle", "session-propagation"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/pieLayout.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/pieLegendBinding.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/pieSessionOwner.test.tsx"]
 status = "passed"
-evidence = ["Source acceptance at e5e3e36: layout/render/native 25, binding/lifecycle 29 and session 5 tests pass. Independent review accepted corrected no-fit handling; combined caps pass. Packaged browser and visual acceptance remain open. See artifacts/reviewed/chart-pie/verification.md."]
+evidence = ["Source acceptance at e5e3e36 includes layout/render/native 25, binding/lifecycle 29 and session 5 checks. Final P4 native mouse/keyboard paging, save/reopen and current-page export pass. See artifacts/reviewed/chart-pie/verification.md."]
 
 [[capabilities]]
 id = "pie-donut-native-legend-proof"
@@ -28,7 +28,7 @@ requirements = ["analyst-workspace/pie-appearance-repair-design.md:V2-P"]
 planned_checks = ["native-hit-target", "canonical-key-sync", "independent-ring-selection", "off-page-zero-recovery"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/pieLegend.render.test.ts"]
 status = "passed"
-evidence = ["Independent final-byte real-ECharts proof: 3/3 pass at ab50456. Metadata type foundation reviewed and capped. Adapter, keyboard, lifecycle and browser acceptance remain open. See artifacts/reviewed/chart-pie/verification.md."]
+evidence = ["Independent final-byte actual-ECharts proof passed 3/3 at ab50456. The subsequent adapter and final P4 native interaction/lifecycle checks pass without another selection owner. See artifacts/reviewed/chart-pie/verification.md."]
 
 [[capabilities]]
 id = "pie-donut-effective-appearance-repair"
@@ -36,7 +36,7 @@ requirements = ["analyst-workspace/pie-appearance-repair-design.md:Task V1", "an
 planned_checks = ["effective-assignment-defaults", "explicit-legend-overrides", "retained-title-legend-style", "immutable-admission"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/pieAppearanceDefaults.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/pieProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/pie.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/pie.render.test.ts"]
 status = "passed"
-evidence = ["V1 source 008fbd1 independently accepted: 42 application and 49 mapper/engine checks, lint and caps pass. No changed-path TypeScript diagnostic; inherited dependency errors remain. V2 layout and P4 rebuilt-image acceptance remain open. See artifacts/reviewed/chart-pie/verification.md."]
+evidence = ["V1 source 008fbd1 passed 42 application and 49 mapper/engine checks, lint and caps; inherited TypeScript limitations remain documented. Final P4 application and owner-reviewed appearance acceptance pass. See artifacts/reviewed/chart-pie/verification.md."]
 
 [[capabilities]]
 id = "pie-donut-common-control-repair"
@@ -44,7 +44,7 @@ requirements = ["analyst-workspace/pie-milestone.md:P4", "analyst-workspace/pie-
 planned_checks = ["title-subtitle-edits", "legend-edits", "latest-font-pair", "stale-event-rejection"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/pieProductionJoin.test.ts"]
 status = "passed"
-evidence = ["Source repair ff8878c: independent 19/19 transaction tests, scoped lint and caps pass. The initial image exposed this defect; rebuilt-image lifecycle and visual acceptance remain pending. See artifacts/reviewed/chart-pie/verification.md."]
+evidence = ["Source repair ff8878c passed independent 19/19 transaction checks, lint and caps. Final P4 title/legend edits, lifecycle and export pass. See artifacts/reviewed/chart-pie/verification.md."]
 
 # Feature -> spec -> checks -> evidence. Planned checks are not passing tests.
 # Prototype-first successor ownership: .kiro/spec-ownership.toml and docs/roadmap.md.
@@ -62,7 +62,7 @@ requirements = ["analyst-workspace/pie-integration-design.md:Execution and accep
 planned_checks = ["saved-alias", "original-label-controls", "latest-state-edits", "independent-ring-projection", "empty-transpose-recovery", "family-navigation-return", "tooltip-modes"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/pieProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/pieSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/pieEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/pieLabelControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx"]
 status = "passed"
-evidence = ["P3 source independently accepted at Workspace 2d91255: joined caller/session/editor checks, mapper regressions, lint and caps pass. Type comparison retains inherited errors without a new defect; lifecycle mock failure reproduced on baseline. P4 browser, FMP and visual acceptance remain open. See artifacts/reviewed/chart-pie/verification.md."]
+evidence = ["P3 source 2d91255 and subsequent repairs are accepted. Final P4 captured-FMP, synthetic, control, lifecycle and owner-reviewed appearance checks pass; inherited TypeScript limitations remain disclosed. See artifacts/reviewed/chart-pie/verification.md."]
 
 [[capabilities]]
 id = "pie-donut-rendering"
@@ -84,9 +84,9 @@ evidence = ["Inactive P1 independently accepted at Workspace 0a2dd86: 30 focused
 id = "pie-donut-chart-port"
 requirements = ["analyst-workspace/pie-milestone.md:Acceptance contract"]
 planned_checks = ["original-first-field-and-ring-order", "independent-ring-denominators", "saved-doughnut-alias", "existing-controls", "real-fmp-quarterly-composition", "save-reopen-export"]
-test_paths = []
-status = "planned"
-evidence = ["P1-P3 source is independently accepted. Candidate-image real-FMP, visual, lifecycle and publication acceptance remain open. See .kiro/specs/analyst-workspace/pie-milestone.md."]
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/pie-fmp.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/pie-charts.spec.ts"]
+status = "passed"
+evidence = ["P4 accepted at Workspace 9d1883849f480f45c89c53867554590d45b12428, image sha256:2459fc315b735cb2f66083bb11a10bacaed2b0fdad7f11f46191937661591d81: two pie/donut journeys and five prior-family journeys pass. Raw USD observations use separate ring denominators; the owner accepted disclosed default appearance differences. Independent feature review is approved; P5 publication remains open. See artifacts/reviewed/chart-pie/verification.md."]
 
 [[capabilities]]
 id = "histogram-overview-layout"
