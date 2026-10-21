@@ -1,6 +1,6 @@
 # Box Plot verification
 
-B0 numerical design, B1 numerical helper and B2 inactive renderer are independently accepted. Application integration, appearance/behavior and publication remain open. The existing published alpha is unchanged.
+B0 numerical design, B1 numerical helper, B2 inactive renderer and B3a category capture are independently accepted. Application integration, appearance/behavior and publication remain open. The existing published alpha is unchanged.
 
 The original Grid 34.1.1 `BoxPlotChartProxy` calculates each category/field independently: sorted minimum and maximum, with quartiles at `(n - 1) * q` and the original interpolation expression. It does not use IQR fences or separate outlier points. The reviewer checked the retained bundle SHA-256 `1a195685c473488defe1ce535e3115c26a42b2be94ad6ccc7fefa351eac7094f` and the actual source around lines 9664-9820. Original Workspace: `38dffc33389aca0e4a87e0e88d42f7067aa220df`.
 
@@ -29,3 +29,11 @@ The engine checks cover vertical/horizontal box geometry, original band/group pa
 Final typing reports no diagnostics in B2 files. Both baseline and candidate retain 3,427 inherited diagnostics and compiler exit 2. Raw diagnostic comparison differs only at unchanged TableSettings.tsx(185,38), TS2769, where union members render in reversed order; independent review accepted that exact semantic-equivalence case. The raw comparison remains marked false and is retained locally, rather than presented as a clean TypeScript build. Initial checker execution lacked the pinned Node PATH; the corrected pinned-tool run passed.
 
 Source review and reviewed-file hashes are retained in `artifacts/chart-box/b2-source-review.md` and `b2-source-reviewed-files.json`; focused test, lint, typing and complexity logs stay local. B3 must reconcile original effective numeric nicing/ticks and preserve existing capture, controls and host failure behavior before activation. B4 real-FMP image acceptance and B5 publication are still open.
+
+## B3a category capture
+
+Workspace `bca180284cefb7848b052dd4b8a4160fe0c0d5e8` adds only the inactive category-capture helper and its focused test. It preserves the normalized statistical category separately from the raw aggregation key, including missing/typed categories, Date epoch versus Date string identity, and default selection's per-row ordinal key. The default ordinal correction was caught during independent contract review before implementation. Raw inputs are not arbitrarily coerced; unsupported or throwing inputs return diagnostics. No grid capture, aggregation, editor, mapper or saved-state path was changed.
+
+Independent review freshly passed 58 tests, strict scoped TypeScript and scoped Biome. Combined complexity passes with zero errors or violations: 79 physical lines, 41 logical units and maximum 17 per function. Missing-helper RED preceded implementation; initial test-title formatting and fixture typing failures were corrected and retained locally. Final reviewed source hashes and raw verification logs are under `artifacts/chart-box/b3a-*`.
+
+The [integration contract](../../../.kiro/specs/analyst-workspace/box-plot-integration-design.md) retains B3b capture/aggregation, B3c original scale/navigation and B3d editor/session integration as open gates. B4 real-FMP image/appearance acceptance and B5 publication remain open. The parallel Range lane changes disjoint new files; shared integration and builds stay serialized.

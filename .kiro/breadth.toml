@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "box-plot-category-capture"
+requirements = ["analyst-workspace/box-plot-integration-design.md:Source-backed capture contract", "analyst-workspace/box-plot-milestone.md:B3a"]
+planned_checks = ["default-row-identity", "raw-aggregation-key", "typed-missing-date-categories", "no-arbitrary-coercion"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotCapture.test.ts"]
+status = "passed"
+evidence = ["Inactive B3a accepted at Workspace bca1802: 58 tests, strict typing, Biome and combined caps pass. Capture/setup integration is still open. See artifacts/reviewed/chart-box/verification.md."]
+
+[[capabilities]]
 id = "range-chart-min-max-summary"
 requirements = ["analyst-workspace/range-chart-plan.md:R1 frozen task contract"]
 planned_checks = ["finite-min-max", "signed-zero-extremes", "null-empty-count", "immutable-atomic-input"]

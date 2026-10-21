@@ -1,0 +1,120 @@
+# B3 Box Plot integration boundary
+
+Prepare the existing Table/File session to consume the accepted inactive mapper. The first executable slice is **B3a**, a small inactive category-identity helper; it can proceed independently of the Range foundation after independent review. Activation waits for the numeric-axis gate below. B3a is independently accepted; full B3 integration and the editor's visible behavior remain unchanged.
+
+Inspected 2026-10-21 at Workspace `95188eb3ac92188e62f32b8ba9d4897a6c8cc176`, root `afb7638`. The [milestone](box-plot-milestone.md), [B1 contract](box-plot-design.md) and [B2 mapper](box-plot-renderer-design.md) remain authoritative. Analyst-workspace language is English. Core product/tech/structure steering files are absent; applicable complexity, testing, delegation, documentation, delivery and workspace-experience steering were read. Discovery follows the local kiro-spec-design integration guidance; the prototype-first bounded-delivery amendment applies instead of whole-spec phase advancement. No spec approval metadata changes here.
+
+## Source-backed capture contract
+
+Reuse the retained original identities in [B1 source contract](box-plot-design.md#source-contract). Grid references below identify physical lines of the retained Grid34.1.1 bundle; Charts references identify the retained Charts12.1.1 bundles recorded in the B2 design. Local inputs `artifacts/chart-box/integration-map.md`, `original-contract.md` and `b2-constant-domain.md` are discovery notes, not public acceptance dependencies.
+
+The original has **two distinct grouping stages**. Grid `ChartDatasource.aggregateRowsByDimension` G10024-10096 groups raw dimensions by object-property key when Aggregate is enabled. Only afterward `StatisticalChartProxy.groupDataByCategory` G9798-9820 groups statistical observations using default category 1, null/undefined as empty string and Date epoch milliseconds. Normalizing first and then grouping solely by that normalized category changes financial results.
+
+Freeze this B3a interface in new `application/boxPlotCapture.ts` (paths below are relative to `terminalpro/src/components/General/Table/Chart/`):
+
+```ts
+export interface BoxCapturedCategory {
+  readonly category: string | number;
+  readonly aggregationKey: string;
+}
+export type BoxCategoryCaptureResult =
+  | { readonly status: "ready"; readonly value: BoxCapturedCategory }
+  | { readonly status: "unresolved";
+      readonly diagnostics: readonly SnapshotDiagnostic[] };
+export function captureBoxCategory(
+  raw: unknown, defaultCategory: boolean,
+  defaultRowNumber?: number,
+): BoxCategoryCaptureResult;
+```
+
+`SnapshotDiagnostic` is the existing compatibility type. Success returns detached scalar metadata. A failure has code `box-category-capture`, path `["category"]` and an actionable message; the later grid caller prefixes the displayed row path. The helper reads no grid, storage, theme or runtime state, performs no aggregation, and does not alter B2 or activate a family.
+
+| Input | Statistical `category` | Preaggregation `aggregationKey` |
+| --- | --- | --- |
+| Default category selected | numeric `1`, independently of raw input | `String(defaultRowNumber)` from original selected-range `i + 1` |
+| `null` / `undefined` | `""` / `""` | `"null"` / `"undefined"` |
+| String, including empty string | unchanged | unchanged |
+| Finite primitive number | unchanged, including signed zero | `String(raw)` |
+| Ordinary finite native Date | intrinsic epoch milliseconds | intrinsic Date string in the current runtime/timezone |
+
+Default selection takes precedence without reading/coercing raw input. When `defaultCategory=true`, require `defaultRowNumber` to be a positive safe integer; missing, fractional, nonpositive, nonfinite or malformed ordinal returns unresolved. This explicit caller value preserves the original raw category synthesized as `i + 1` within the selected displayed range (G9964-9966). It is distinct from the eventual statistical category1. When defaultCategory=false the optional ordinal is unused. A malformed nonboolean default selector is unresolved. Date admission is intentionally bounded to an ordinary current-realm Date with `Date.prototype`, no own coercion hooks (`toString`, `valueOf`, `Symbol.toPrimitive`), and finite intrinsic timestamp. Use `Date.prototype.getTime.call` and `Date.prototype.toString.call`; never invoke arbitrary input coercion. Subclasses, foreign objects, invalid Dates, booleans, symbols, bigint and nonfinite numbers return unresolved. Catch inspection failures. These cases remain explicit unsupported capture inputs, not silently converted categories or claims of original equivalence.
+
+Keep every string key as data, including `__proto__`, `constructor` and `toString`; never index an ordinary object with it. B3a only records that key. At later aggregation admission, inherited Object.prototype keys must report the original-incompatible aggregate case explicitly: the original ordinary-object accumulator can fail there. Do not infer acceptance of repaired prototype behavior from using Map. Ordinary nonaggregated string categories remain admissible.
+
+Retained-method execution during this design confirmed:
+
+- Without Aggregate, null/undefined/empty merge statistically; numeric `1` and string `"1"` remain distinct. Default selection groups the entire selected range under 1.
+- With a retained aggFunc and default category, original per-row keys `"1"`, `"2"`, etc. preserve separate aggregate buckets before statistical grouping under 1. G17744 forwards the existing aggFunc; G11676 only hides its controls. Do not infer that hidden controls disable a saved aggregate.
+- With Aggregate, null and string `"null"` share a raw-key bucket; undefined and string `"undefined"` share another; empty string is a third. Each bucket keeps its first raw representative before later statistical grouping. Thus several aggregate results can become observations in one empty-category box.
+- Equal Date instances share statistical identity and raw aggregate key. A Date and its numeric epoch share statistical identity but different raw aggregate keys. Dates one millisecond apart within the same displayed second can share the Date-string aggregate key; preserve the first representative epoch.
+
+The bounded oracle extracted only the two retained methods, stubbed `_last` and disabled the numerical aggregation module to inspect bucket membership. It proves grouping order/identity, not sums or application behavior. Reproduce with pinned Node and `artifacts/chart-box/b3-plan-category-oracle.mjs`; output is `b3-plan-category-oracle.json`, exit 0. No browser or provider ran.
+
+## Consumption before aggregation
+
+The single integration owner adds `"box-observations"` to SnapshotPolicy and a Box-only optional `SnapshotRow.boxPlotAggregationKey?: string`. Under that policy capture requires this string for every row, validates/copies it as JSON, and permits no numeric fields. Other policies keep existing behavior. This is transient capture provenance; never write it into ChartModel or Widget preferences.
+
+`gridCapture.ts` calls B3a at the raw public `getCellValue` boundary, before null rejection. For default category, do not read a category cell: supply `index - start + 1` as defaultRowNumber, matching original selected-range `i + 1`. Store the returned category and key together. Keep row IDs, displayed order, selected range and unformatted magnitudes. Snapshot validation must not discard the key. Family changes require fresh family-policy capture; carrying a capture from a family that lacked the key is unresolved until recaptured, never reconstructed from normalized categories.
+
+New `application/boxPlotSetupProjection.ts` owns the Box grouping adapter. Without aggFunc retain each observation; with aggFunc group by the recorded raw key in first-occurrence order, preserve each bucket's first normalized category, and apply the existing `aggregateSetupRows` numerical reducer once per bucket. A bucket may temporarily use one shared category for that reducer, then restore the first representative; do not reaggregate its output. Retain sourceRowIds and count-unit metadata. The Box setup policy must admit a retained aggFunc for default category rather than inherit `selectedColumns`' existing default-category aggregate rejection; keep the original control visibility. Default raw row keys then prevent a saved sum/count from collapsing all rows into one aggregate. Feed resulting rows to the existing B2 statistical Map grouping, which still performs five-number summaries once per field/group. No transpose: Grid G19697-19703 gives box-plot `canSwitchDirection` but no `canInvert`; G19816-19818 and G11764-11767 therefore exclude Switch Category / Series.
+
+The first integrated aggregate scope is finite primitive numeric observations plus null. Raw primitive nonnumbers can be omitted only after the chosen aggregate semantics are established; do not normalize them to null before first/last/count and claim parity. Original G9975-10002 additionally unwraps value objects and invokes their conversion hooks. Existing Histogram/Pie normalizers have different semantics and must not be borrowed. Before activation, add a bounded retained-source aggregate comparison for sum/first/last/min/max/count/avg over finite|null observations and report any unsupported value-object capture. If a reachable Table/File input requires those wrappers, that is an activation blocker rather than permission to run arbitrary hooks.
+
+## Effective numeric axis activation gate
+
+B2 `boxPlotDomain` is the observed extent after explicit bound substitution; it is **not** the original display extent. Preserve that result. Original `LinearScale.niceDomain` uses four bounded iterations from current endpoints against original endpoints; explicit min/max are applied before nice and not clamped back afterward. For `[5.5,5.5]`, tickCount 1 or 2 leaves equality, while tickCount5/min1/max6 expands to `[5,6]`; integer5/zero can remain equal. Source: community C28727-28748, C30262-30301, C18557-18580, C19263-19287 and C19661-19690; retained execution is in `b2-constant-domain.md`.
+
+Before activation, freeze one source-derived `BoxValueAxisPlan` in new `echarts/boxPlotValueAxis.ts`: semantic extent, final display extent, exact raw ticks and finite transport mapping. Its tick inputs must come from actual post-layout number-axis span, resolved tick spacing and the original collision/count decision. Geometry, numeric labels/crosshair, clipping and miniature must consume the same plan; disable ECharts independent nicing and supply explicit transport bounds/custom ticks. A final equal domain uses midpoint transport with only its original raw tick. Empty domain emits no invented values. Reject nonfinite arithmetic.
+
+**Current blocker:** no inspected session/host contract supplies the original post-layout tick count or reproduces its collision loop. B2's viewport-based `niceNumberExtent` and constant single tick do not resolve that. Do not freeze a guessed tick count or claim original display parity. A separate small axis-helper slice may implement the already sourced nice/tick arithmetic with explicit caller tick parameters, but activation waits for a reviewed tick-selection/layout contract. Freeze its exact type and callback ownership in an addendum before changing B2's mapper interface; B3a does not depend on this blocker.
+
+## Existing controls, options and lifecycle
+
+Keep persisted model spelling `boxPlot` and original family option spelling `box-plot`. Reuse baseline/options composition and `reduceSessionOptions`; do not persist ECharts options. Original Grid direction selection is reachable through `canSwitchDirection` and `series.direction` (G11941-11978); rebuild category/number positions on direction change while retaining style and saved values. Show the established Direction selector in its original setup position using existing choice primitives. This restores an existing control without introducing a second editor.
+
+Preserve common titles/subtitle, legend, padding/background, tooltip, axes and source series panels. Grid G13978 exposes tooltips, strokeWidth, lineDash, strokeOpacity, fillOpacity, whiskers and caps. Box excludes axis-type selection and configurable ticks (G12564/G12677); do not expose Cartesian labels/markers/shadow/connectMissingData or Switch Category / Series. Existing eligibility and panels must represent original reachability, not suppress an original action to fit B2.
+
+New Box controls use the established input/color/group components: `box-plot.series.whisker.{stroke,strokeWidth,strokeOpacity,lineDash,lineDashOffset}` and `box-plot.series.cap.lengthRatio`, with original slider ranges and labels (G14393-14416, G13668-13700). Preserve `lineDash` as arrays and saved values outside UI maxima where valid. Generic series edits target `box-plot.series`; axes/captions target original family paths via concrete axis bindings. Use a Box edit discriminant; foreign-family intents return stale before any reducer. Direction changes raise the existing chart-model update path. Rehydrate against latest Widget storage/stamp, not stale UI values.
+
+Resolve defaults -> theme common/family -> composed generated/saved common/family through existing composition, preserving its intentional generated-common replacement. B2's exact Box defaults/inheritance apply: main strokeWidth2 from Box theme; unspecified whisker leaves inherit the final main stroke leaves only after layering. Keep selected-field palette IDs/order stable across legend hide. Extend caller theme and generated options under `box-plot`, not a new alias; preserve inactive/unknown options during family return and save/reopen. B3 control tests must prove both saved paths and rendered outcomes, including inherited and explicit whisker styles.
+
+Use the current session, Widget transaction, EChartsHost and export registration. Mapper failures become invalid/unresolved session projections and existing visible diagnostics. Engine mount/update/resize failures reach onError; legend and future navigator callback failures must release the failed engine, invalidate export and reach that same channel. Existing lifecycle catches legend failures, but its datazoom listener currently calls refreshNavigatorMask without equivalent protection: repair under the integration owner if Box navigator callbacks are introduced. Do not swallow renderer exceptions, emit partial geometry or leave stale export available.
+
+Retain `chartNavigatorEnabled` and `chartMiniChartEnabled` and their existing actions/defaults. Original Grid default navigator height18 and Charts mini height40 are source-backed; Charts C21962-21973 permits Box miniature series while omitting direction/tooltips/visibility/name leaves from its inheritance. A copied custom-series renderItem still closes over the main layout and cannot serve as a miniature. New `boxPlotNavigator.ts` must recompose Box geometry with the overview's own axes/viewport and full observations; both views share statistics and resolved styles. Preserve horizontal navigator behavior, percent extent across updates, reset behavior, all series and legend semantics. Source-backed horizontal-direction/zoom-domain details are still required before this adapter is frozen; do not silently disable the miniature or reuse histogram bins. This gate blocks full B3, not B3a.
+
+## Exclusive ownership and bounded task split
+
+The controller owns inventories/manifests, breadth, spec status, summary checkboxes, evidence, commits and builds. One integration owner owns **all** shared files below and all new Box application/axis/navigation/editor modules. No Range worker edits these paths; Range remains inactive. A later browser worker owns new files only after the B3 application fixture/control contract is frozen. Changes to this reservation list or the mapper interface return to the controller before dispatch.
+
+1. **B3a, dispatchable after design review:** new `application/boxPlotCapture.ts` and new `tests/unit/chart-application/boxPlotCapture.test.ts` only. No shared production edits, activation, aggregate implementation, browser/build/provider work. Prove the table above, finite native Date equality, one-millisecond raw-key collision, typed categories, default raw-input precedence, distinct keys for supplied default ordinals1/2, invalid/missing ordinal diagnostics, no coercion-hook execution, immutable inputs and unresolved failures. Use the retained-method membership oracle for expected results, including default+retained-aggregate bucket membership. Parent adds the new maintained path to the existing inventory. Completion requires focused RED/GREEN, strict scoped typing, 400 physical/300 logical/50 per function and independent review. The Range inactive worker may run concurrently with disjoint files.
+2. **B3b, capture/setup join:** shared `application/{gridCapture.ts,histogramCapture.ts,applicationSessionCapture.ts,setupProjection.ts}`, `compatibility/{snapshotTypes.ts,snapshot.ts}`; new `application/boxPlotSetupProjection.ts`. Add explicit observation policy/key admission and source-backed aggregate adapter. New `tests/unit/chart-application/boxPlotSetup.test.ts`. B3a is required; bounded finite|null aggregate oracle must pass before acceptance. No gallery activation yet.
+3. **B3c, axis/navigation contract then implementation:** reserved new `echarts/{boxPlotValueAxis.ts,boxPlotNavigator.ts,boxPlotNavigationWindow.ts}` and modifications `echarts/{boxPlotTypes.ts,boxPlotAdmission.ts,boxPlotDomain.ts,boxPlotAxes.ts,boxPlotGeometry.ts,boxPlotSeries.ts,boxPlot.ts,lifecycle.ts}`. Exact tick/layout and navigator contracts above remain gates; this is a reservation, not an executable handoff until those contracts are reviewed. New compatibility tests `boxPlotValueAxis.test.ts`, `boxPlotNavigator.test.ts`, `boxPlotIntegration.render.test.ts`; reuse existing real-engine runner.
+4. **B3d, one owner activates and joins controls:** new `application/{boxPlotSessionTypes.ts,boxPlotSessionSelection.ts,boxPlotAppearance.ts,boxPlotEditorState.ts,boxPlotSessionProjection.ts,boxPlotEditorTransaction.ts}` and `editor/box/BoxPlotControls.tsx`. Shared `AgChartView.tsx`; `caller/{useCallerDock.ts,themeInputs.ts,generatedOptions.ts}`; `application/{comboSessionTypes.ts,applicationChartSessionTypes.ts,useApplicationChartSession.ts,applicationSessionDispatch.ts,applicationSetupSelection.ts,applicationSessionSelection.ts,applicationSessionSetup.ts,applicationSessionRuntime.ts,familyTransition.ts,comboSessionAssignments.ts}`; `compatibility/editorBindings/{types.ts,selectApplicationEditorState.ts,mapApplicationEditorEvent.ts}`; `editor/{ApplicationCustomizeEditor.tsx,ApplicationSeriesEditor.tsx,ApplicationChartEditor.tsx,combo/comboEditorMode.ts,setup/ChartSetupPanel.tsx}`. New application tests `boxPlotProductionJoin.test.ts`, `boxPlotSessionOwner.test.tsx`, `boxPlotEditorControls.test.tsx`; extend existing `callerRoute.test.tsx` and root `chartTypeGallery.test.tsx`. No gallery catalog/thumbnail changes are necessary. B3b/c and original controls contract are prerequisites.
+5. **B4 future browser lane:** exclusively new `tests/e2e/live-chart/box-plot.spec.ts` and `box-plot-fixture.ts`, consuming the existing live-chart harness. Controller serializes any required shared fixture/config changes; no copied runner, provider account or parallel live login work. Freeze file naming against the actual harness before dispatch. B4 real-FMP/image, appearance, theme, refresh, empty recovery, save/reopen and PNG acceptance remain open.
+
+Baseline measurement used existing `project-syntax-units-v1` parser/TypeScript6.0.3 and pinned WSL Node24.22.0 via `b3-plan-inventory.mjs`, exit0, output `b3-plan-baseline.json`. All 40 inspected candidate shared production files are below caps; no oversized function requires an exception. Largest file: AgChartView293 physical; largest logical total: lifecycle219; largest callable: applyApplicationSetupTransaction39. Relevant headroom (physical/logical/max callable): useApplicationChartSession247/86/11; gridCapture205/96/23; setupProjection264/97/22; lifecycle289/219/32. Windows Node24.20 first failed to resolve the WSL-installed TypeScript package; no install or source change was made. These are current baseline counts, not postimplementation quality acceptance.
+
+If added work crosses any whole-file/function cap, extract the cohesive responsibility before accepting it. Reserved extraction files are `application/applicationSessionProjectionDispatch.ts` for family projection routing and `echarts/lifecycleNavigation.ts` for navigator interaction binding/error cleanup; adding either requires controller approval of the precise moved boundary and measurement. No implicit exception, suppressed metric or unrelated upstream rewrite. Docs/tests are exempt. Existing foundation checker/inventory are reused, not reimplemented.
+
+## Review and verification handoff
+
+B3a focused command, from existing WSL terminalpro with pinned Node on PATH:
+
+```sh
+node node_modules/vitest/vitest.mjs run --config tests/unit/chart-application/vitest.config.mjs tests/unit/chart-application/boxPlotCapture.test.ts
+```
+
+The config is jsdom/maxWorkers1. Strict typing follows the established same-command accepted-baseline/candidate diagnostic comparison; do not claim the inherited project diagnostics are clean or generalize B2's one exact union-order allowance. Controller supplies a root-local scoped config for the new helper/test if useful, preserving raw diagnostic output. Controller runs the existing combined complexity gate with current explicit workspace/data_api manifests, following [complexity instructions](../../../docs/complexity.md), and records exact revisions/commands/exits. No identical broad checks solely to create another report.
+
+At the B3 join, run changed application/compatibility suites plus affected existing family lifecycle/caller regressions once. Check stale commands, foreign intents, family return, category/field edits/order/removal to zero and recovery, aggregate once, latest saved paths, native legend remap and export failure/recovery. B4 then establishes financial/application acceptance with retained FMP source provenance and matched original/replacement views in the existing isolated one-worker browser/image workflow. No synthetic or source-only pass closes B4. Prototype publication follows the completed milestone, not this draft.
+
+**Review readiness:** READY_FOR_REVIEW for the B3a executable boundary and subsequent ownership reservations. Full B3 activation is blocked on the explicit numeric tick-layout and navigator contracts and bounded aggregate comparison above. A finding that an ordinary reachable original control or input cannot fit these boundaries reopens the relevant contract; it cannot be hidden, disabled or relabeled complete. Independent Astra review is the next gate. This design performed only source reads and bounded read-only retained-method/size inspection; no production edits, tests, builds, browser, installs, provider requests or commits ran.
+
+## B3a acceptance
+
+- [x] Independently accept the inactive category-identity helper and focused checks.
+- [ ] Complete B3b capture/aggregation integration.
+- [ ] Complete B3c original numeric-axis and navigator contracts.
+- [ ] Complete B3d editor/session integration and B4 application acceptance.
+
+Source: Workspace `bca180284cefb7848b052dd4b8a4160fe0c0d5e8`. Fresh independent verification passed 58 tests, strict scoped TypeScript, Biome and combined complexity. See [verification](../../../artifacts/reviewed/chart-box/verification.md). The helper does not activate Box Plot.
