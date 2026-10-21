@@ -32,9 +32,10 @@
     "feature_accepted": false,
     "source_base": "9e0f2eea031048fe882178eb7af6851e4b596124",
     "scope": "Ordinary Table/File Box Plot; other callers/families remain open.",
-    "design_review": "B0 numerical contract and B1 inactive helper independently accepted; 31 focused tests, strict typing and combined caps pass. B2/B3 contracts and rendering/application/publication acceptance remain open.",
+    "design_review": "B0/B1 accepted. B2 inactive renderer design independently approved after category alignment, semantic domain, typing and failure-boundary corrections; implementation remains open. B3 must reconcile original effective numeric nicing/ticks before activation.",
     "evidence": "artifacts/reviewed/chart-box/verification.md",
-    "b1_source": "85ca9ea247cc0c97add941b5007661b75941e734"
+    "b1_source": "85ca9ea247cc0c97add941b5007661b75941e734",
+    "renderer_design": "box-plot-renderer-design.md"
   },
   "completed_milestones": [
     {
