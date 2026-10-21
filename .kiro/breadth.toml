@@ -1,3 +1,11 @@
+[[capabilities]]
+id = "pie-donut-common-control-repair"
+requirements = ["analyst-workspace/pie-milestone.md:P4", "analyst-workspace/pie-integration-design.md:Execution and acceptance"]
+planned_checks = ["title-subtitle-edits", "legend-edits", "latest-font-pair", "stale-event-rejection"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/pieProductionJoin.test.ts"]
+status = "passed"
+evidence = ["Source repair ff8878c: independent 19/19 transaction tests, scoped lint and caps pass. The initial image exposed this defect; rebuilt-image lifecycle and visual acceptance remain pending. See artifacts/reviewed/chart-pie/verification.md."]
+
 # Feature -> spec -> checks -> evidence. Planned checks are not passing tests.
 # Prototype-first successor ownership: .kiro/spec-ownership.toml and docs/roadmap.md.
 # Historical criterion/test/evidence links below remain; transfers are not passes.

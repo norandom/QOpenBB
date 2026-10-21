@@ -31,3 +31,9 @@ All production paths are relative to `vendor/workspace/terminalpro/src/component
 P1 is inactive foundation work. Its acceptance does not establish a visible chart or a completed family. P2 depends on P1 and its own frozen numerical contract; P3 depends on accepted P2. Browser preparation may overlap P3 only with explicit disjoint ownership. Serialize shared edits and heavy checks.
 
 Box plot, other polar/distribution families, standalone/AI callers, provider expansion and broader analytical workflows remain open. Preserve unrelated Perspective/catalog work. Use Sol for bounded implementation and Astra for financial/integration review, following [delegation](../../steering/delegation.md).
+
+## P4 findings and repair
+
+The first image run verified the retained FMP quarter proportions and raw tooltips in both themes, then exposed rejected title edits. Source repair `ff8878c` narrows title/subtitle and legend font context to the shared validator's supported fields. Independent review and 19 focused transaction tests pass; its rebuilt-image verification remains pending.
+
+Matched original captures confirm pie's default hidden legend and donut's paged two-row legend, outer ring title and surrounding-ring label fitting. These visual differences remain open. P4 and publication are not accepted; see the [verification record](../../../artifacts/reviewed/chart-pie/verification.md).

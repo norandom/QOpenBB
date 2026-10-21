@@ -83,6 +83,7 @@ See [verification](../artifacts/reviewed/chart-histogram/verification.md). The u
 - [x] Implement and independently accept inactive assignment semantics.
 - [x] Implement and independently accept inactive rendering.
 - [x] Connect and source-review existing controls and application flow.
+- [x] Repair title/legend editor transactions found by the first image run; source tests and independent review pass.
 - [ ] Accept identified-image FMP, appearance and lifecycle behavior.
 - [ ] Publish and verify the completed milestone.
 
