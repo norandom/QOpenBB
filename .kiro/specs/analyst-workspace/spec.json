@@ -27,15 +27,17 @@
     "design": "box-plot-design.md",
     "completed_tasks": [
       "B0",
-      "B1"
+      "B1",
+      "B2"
     ],
     "feature_accepted": false,
     "source_base": "9e0f2eea031048fe882178eb7af6851e4b596124",
     "scope": "Ordinary Table/File Box Plot; other callers/families remain open.",
-    "design_review": "B0/B1 accepted. B2 inactive renderer design independently approved after category alignment, semantic domain, typing and failure-boundary corrections; implementation remains open. B3 must reconcile original effective numeric nicing/ticks before activation.",
+    "design_review": "B0/B1/B2 independently accepted. Inactive mapper: 40 focused tests including real ECharts SVG; scoped Biome and combined caps pass. No new typing failures; one exact inherited diagnostic union-order difference accepted. B3 original effective numeric nicing/ticks and application integration remain open.",
     "evidence": "artifacts/reviewed/chart-box/verification.md",
     "b1_source": "85ca9ea247cc0c97add941b5007661b75941e734",
-    "renderer_design": "box-plot-renderer-design.md"
+    "renderer_design": "box-plot-renderer-design.md",
+    "b2_source": "95188eb3ac92188e62f32b8ba9d4897a6c8cc176"
   },
   "completed_milestones": [
     {

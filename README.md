@@ -71,7 +71,7 @@ Current: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
 
 - [x] Review original statistics and freeze the numerical helper contract.
 - [x] Implement and independently verify original-matching numerical summaries.
-- [ ] Implement and independently verify box/whisker rendering.
+- [x] Implement and independently verify the inactive box/whisker renderer.
 - [ ] Connect the existing editor and saved-state flow.
 - [ ] Accept real-FMP behavior and original/replacement appearance in an identified image.
 - [ ] Publish and verify the completed milestone.
