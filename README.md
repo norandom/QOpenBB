@@ -76,7 +76,8 @@ Current: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
 - [x] Independently accept inactive Box capture and original aggregate setup.
 - [x] Independently accept inactive Box axes/navigation and the existing-host adapter join.
 - [x] Connect and independently source-review the existing editor and saved-state flow.
-- [ ] Accept real-FMP behavior and original/replacement appearance in an identified image.
+- [x] Pass retained-FMP and edge-case browser journeys against the packaged candidate.
+- [ ] Accept original/replacement appearance and close the Box milestone.
 - [ ] Publish and verify the completed milestone.
 
 Parallel preparation: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).

@@ -31,6 +31,12 @@ Original-contract research and current integration tracing are independent read-
 
 Standalone/AI callers, other specialty/radial families, provider expansion and analyst workflow changes remain open. One heavy build or suite runs at a time; browser checks use the existing one-worker isolated configuration and login-rate budget. Normal pushes run checks only; the completed milestone triggers one image publication.
 
-## Actual FMP chart sample: pending
+## Actual FMP chart samples: browser scenarios verified, visual comparison pending
 
-Use observations derived from the retained FMP income-statement capture if its units and grouping fit the confirmed original contract. Record endpoint, parameters, retrieval timestamp, selection, transformations and hashes. Publish a small chart-only example here after application acceptance; fixture preparation is not a passed chart test.
+Two packaged-candidate browser scenarios pass; see [verified scope and test corrections](../../../artifacts/reviewed/chart-box/verification.md#b4-packaged-candidate-browser-progress). B4 remains open for original appearance and default miniature comparisons. No new release is published.
+
+Retained FMP AAPL quarterly income statements, 40 observations across 11 fiscal years, 2016-09-24 through 2026-06-27. Revenue and net income use original reported USD; display labels may abbreviate billions. Partial fiscal years are labelled. Candidate source `ba98f00`, image `05c1c6fc`; these images do not establish original/replacement parity.
+
+![Candidate vertical Box Plot](../../../artifacts/reviewed/chart-box/box-default-vertical-light.png)
+
+![Candidate horizontal Box Plot](../../../artifacts/reviewed/chart-box/box-horizontal-long-labels-light.png)

@@ -9,10 +9,10 @@ evidence = ["B3d source acceptance at ba98f00: 94 focused and 51 selected prior-
 [[capabilities]]
 id = "box-plot-application-journeys"
 requirements = ["analyst-workspace/box-plot-milestone.md:B4"]
-planned_checks = ["retained-fmp-raw-usd-summaries", "partial-fiscal-years", "controls-themes-navigation", "refresh-reopen-export", "empty-recovery", "original-appearance"]
+planned_checks = ["retained-fmp-raw-usd-summaries", "partial-fiscal-years", "controls-themes-navigation", "refresh-reopen-export", "empty-recovery"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/box-plot.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/box-plot-fixture.ts"]
-status = "planned"
-evidence = ["Prepared at Workspace563a746: two tests discovered and source-reviewed, formatting and retained-fixture check pass. Runtime not executed; fresh original-reference startup rejected by automatic approval review. No application/visual acceptance."]
+status = "passed"
+evidence = ["Run4: two retained-FMP/synthetic browser scenarios passed, exit0, on packaged image05c1c6fc from ba98f00. Independent review and scope: artifacts/reviewed/chart-box/verification.md. Original appearance/default miniature and B4/B5 milestone acceptance remain open."]
 
 [[capabilities]]
 id = "box-plot-inactive-axis-navigation"
