@@ -21,7 +21,7 @@ Production paths are relative to `vendor/workspace/terminalpro/src/components/Ge
 - [x] B3a. Preserve raw aggregation identity and normalized statistical categories in the inactive [capture helper](box-plot-integration-design.md). Independently verified; no application activation.
 - [x] B3b. Independently accept inactive capture and original aggregate setup under the [setup contract](box-plot-setup-design.md). Inherited verification failures are disclosed in [verification](../../../artifacts/reviewed/chart-box/verification.md).
 - [x] B3c. Independently accept inactive [axes/navigation and the existing-host adapter join](box-plot-axis-navigation-design.md); original/replacement visual decisions remain at B4.
-- [ ] B3. Connect the existing session, gallery and editor to the mapper. Preserve all reachable controls and saved settings. Define exact file ownership and any necessary cohesive extraction before dispatch; no implicit size exceptions.
+- [x] B3. Connect the existing session, gallery and editor to the mapper. Preserve all reachable controls and saved settings. Define exact file ownership and any necessary cohesive extraction before dispatch; no implicit size exceptions.
 - [ ] B4. Verify an identified image with real FMP observations and focused synthetic edge cases, original visual comparison, controls, lifecycle and export. Reuse the existing isolated browser harness and run affected prior-family checks at the join.
 - [ ] B5. Complete independent feature review, update README/docs and breadth, publish reviewed FMP chart samples, commit/push the task work and dispatch one image build. Close only after tagged release and both public image identities/pulls are verified.
 

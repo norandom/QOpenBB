@@ -1,4 +1,20 @@
 [[capabilities]]
+id = "box-plot-editor-session"
+requirements = ["analyst-workspace/box-plot-editor-design.md:Source acceptance", "analyst-workspace/box-plot-milestone.md:B3"]
+planned_checks = ["original-controls-saved-paths", "latest-widget-transactions", "family-observation-recapture", "configured-native-visibility", "main-mini-navigation", "prior-family-regressions"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartTypeGallery.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotNavigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts"]
+status = "passed"
+evidence = ["B3d source acceptance at ba98f00: 94 focused and 51 selected prior-family tests pass; Biome/caps pass. Typing 2711 inherited diagnostics, exit2, exact raw differences reviewed. Browser/image/FMP acceptance remains open. See artifacts/reviewed/chart-box/verification.md."]
+
+[[capabilities]]
+id = "box-plot-application-journeys"
+requirements = ["analyst-workspace/box-plot-milestone.md:B4"]
+planned_checks = ["retained-fmp-raw-usd-summaries", "partial-fiscal-years", "controls-themes-navigation", "refresh-reopen-export", "empty-recovery", "original-appearance"]
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/box-plot.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/box-plot-fixture.ts"]
+status = "planned"
+evidence = ["Prepared at Workspace563a746: two tests discovered and source-reviewed, formatting and retained-fixture check pass. Runtime not executed; fresh original-reference startup rejected by automatic approval review. No application/visual acceptance."]
+
+[[capabilities]]
 id = "box-plot-inactive-axis-navigation"
 requirements = ["analyst-workspace/box-plot-axis-navigation-design.md:B3c acceptance", "analyst-workspace/box-plot-milestone.md:B3c"]
 planned_checks = ["source-nicing-ticks", "zoom-density-before-rounding", "explicit-bound-empty-envelope", "main-overview-navigation", "horizontal-single-crop", "host-lifecycle-guards"]

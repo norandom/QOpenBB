@@ -115,7 +115,8 @@ At the B3 join, run changed application/compatibility suites plus affected exist
 - [x] Independently accept the inactive category-identity helper and focused checks.
 - [x] Complete B3b inactive capture/aggregation integration; see the [accepted setup contract](box-plot-setup-design.md).
 - [x] Complete B3c inactive numeric-axis/navigation and existing-host adapter join; see the [accepted addendum](box-plot-axis-navigation-design.md).
-- [ ] Complete B3d editor/session integration and B4 application acceptance.
+- [x] Complete B3d editor/session integration; see the [accepted source join](box-plot-editor-design.md).
+- [ ] Complete B4 identified-image application and original-appearance acceptance.
 
 Source: Workspace `bca180284cefb7848b052dd4b8a4160fe0c0d5e8`. Fresh independent verification passed 58 tests, strict scoped TypeScript, Biome and combined complexity. See [verification](../../../artifacts/reviewed/chart-box/verification.md). The helper does not activate Box Plot.
 
