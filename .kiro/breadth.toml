@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "pie-donut-rendering"
+requirements = ["analyst-workspace/pie-renderer-design.md:Bounded P2 acceptance and P3 handover"]
+planned_checks = ["independent-ring-denominators", "native-legend-reprojection", "dual-labels", "zero-outlines", "raw-fmp-values", "immutable-admission"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/pie.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/pie.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/snapshot.test.ts"]
+status = "passed"
+evidence = ["Inactive P2 independently accepted at Workspace 300c231: 93 focused tests including 13 SVG engine tests, caps pass. Scoped TypeScript retains only inherited typography TS2578. No application or pixel-parity acceptance. See artifacts/reviewed/chart-pie/verification.md."]
+
+[[capabilities]]
 id = "pie-donut-assignments"
 requirements = ["analyst-workspace/pie-design.md:P1 rules and acceptance"]
 planned_checks = ["first-selected-pie", "ordered-concentric-rings", "saved-alias", "atomic-invalid-input", "immutable-outputs"]
@@ -22,7 +30,7 @@ requirements = ["analyst-workspace/pie-milestone.md:Acceptance contract"]
 planned_checks = ["original-first-field-and-ring-order", "independent-ring-denominators", "saved-doughnut-alias", "existing-controls", "real-fmp-quarterly-composition", "save-reopen-export"]
 test_paths = []
 status = "planned"
-evidence = ["P0 independently approves the inactive P1 assignment design against original source. No implementation, application or publication acceptance. See .kiro/specs/analyst-workspace/pie-design.md."]
+evidence = ["P1 assignments and P2 inactive rendering are independently accepted. Existing-editor integration, real-FMP application, visual and publication acceptance remain open. See .kiro/specs/analyst-workspace/pie-milestone.md."]
 
 [[capabilities]]
 id = "histogram-overview-layout"

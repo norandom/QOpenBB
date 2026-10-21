@@ -81,11 +81,11 @@ See [verification](../artifacts/reviewed/chart-histogram/verification.md). The u
 
 - [x] Review original first-field pie, concentric donut assignments and saved alias.
 - [x] Implement and independently accept inactive assignment semantics.
-- [ ] Implement and independently accept rendering.
+- [x] Implement and independently accept inactive rendering.
 - [ ] Connect existing controls and accept identified-image FMP/lifecycle behavior.
 - [ ] Publish and verify the completed milestone.
 
-P1 assignment semantics are accepted as an inactive module. Pie/donut is not yet accepted in the integrated application.
+P1 assignments and P2 rendering are independently accepted as inactive modules. Pie/donut is not yet accepted in the integrated application.
 
 ## Evidence and ownership
 
