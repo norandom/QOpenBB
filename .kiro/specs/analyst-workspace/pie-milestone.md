@@ -41,6 +41,10 @@ Matched original captures confirm pie's default hidden legend and donut's paged 
 The [appearance repair design](pie-appearance-repair-design.md) separates the remaining work:
 
 - [x] V1. Restore effective legend defaults and retain pie-specific title/legend appearance through admission. Independently source-accepted at `008fbd1`; image acceptance remains pending.
-- [ ] V2. Match donut paging, field titles and surrounding-ring label fitting within the existing renderer. Interface review remains pending.
+- [ ] V2. Match donut paging, field titles and surrounding-ring label fitting within the existing renderer. Interface and native-selection proof accepted; implementation/source review remains open.
 
 Both repairs still require the P4 image/browser gate; source checks alone do not close either visual comparison or publication.
+
+- [x] V2-P. Prove native multi-component legend selection and freeze renderer metadata (`ab50456`).
+- [ ] V2-L. Implement measured paging layout, field titles and surrounding-ring label fitting.
+- [ ] V2-H. Implement lifecycle paging, keyboard access, cleanup and export retention.

@@ -1,6 +1,6 @@
 # P4 pie appearance repair design
 
-Restore original pie/donut appearance in two sequential repair tasks, followed by the existing identified-image gate. P4 remains unaccepted. V1 was independently source-accepted at `008fbd1` on 2026-10-21 under the authorized P4 parity repair. V2 remains a proposal requiring its own interface review. Neither task has application acceptance. The separate font-validation repair joined as `ff8878c`; its transaction implementation and control tests remain outside this visual task's scope. V1 owns only the existing default-legend assertion in `tests/unit/chart-application/pieProductionJoin.test.ts` and its explicit-enabled one-field slice-legend/reprojection regression, as independently reviewed.
+V1 source is independently accepted at `008fbd1`. The native selection proof and immutable metadata foundation are independently accepted at `ab50456`; V2-L/V2-H implementation is authorized under the reviewed interface below. Their source review and P4 image/visual acceptance remain open. The accepted font repair `ff8878c` remains outside V2 ownership.
 
 ## Evidence and scope
 
@@ -29,7 +29,7 @@ Installed ECharts 6.0.0 was inspected at `/home/mc/qopenbb-work/echarts-probe/no
 
 ## Task V1: effective default and retained appearance
 
-One owner changes only `application/pieAppearance.ts`, `application/pieSessionSelection.ts`, `echarts/pieTypes.ts`, `echarts/pieAdmission.ts` and a new focused `tests/unit/chart-application/pieAppearanceDefaults.test.ts`. Paths are relative to `vendor/workspace/terminalpro/src/components/General/Table/Chart/` unless prefixed `tests/`.
+One owner changes only `application/pieAppearance.ts`, `application/pieSessionSelection.ts`, `echarts/pieTypes.ts`, `echarts/pieAdmission.ts` and a new focused `tests/unit/chart-application/pieAppearanceDefaults.test.ts`. The reviewed V1 scope also included only the default-legend assertion and explicit-enabled one-field slice-legend/reprojection case in `tests/unit/chart-application/pieProductionJoin.test.ts`. Paths are relative to `vendor/workspace/terminalpro/src/components/General/Table/Chart/` unless prefixed `tests/`.
 
 Pass the effective assignment count into `resolvePieAppearance`; use `assignment.assignments.length > 1` only as the fallback legend enabled value. Pie renders at most one assignment even when setup retains multiple numeric selections. Donut uses its actual resolved rings, including transpose. Explicit common/family theme and saved values continue to override this fallback. Do not patch persisted options during render or interpret selected numeric count as rendered count.
 
@@ -65,9 +65,113 @@ Only the existing renderer lifecycle owns the transient page anchor. Preserve it
 
 Before completing this adapter, prove in actual ECharts that a click in a visible component updates the canonical all-key selection and that reprojection keeps every component synchronized. If this fails, stop and review that seam; do not bypass it with a parallel selection store. Also prove that hidden page components neither paint nor steal hits and that the first provider remains the painted series.
 
-### Owned join files and checks
+### Frozen V2 metadata and lifecycle contract
 
-Existing V2 production scope: `echarts/pie.ts`, `pieTypes.ts`, `pieAdmission.ts`, `pieData.ts`, `pieLayout.ts`, `pieSeries.ts`, `lifecycle.ts`, `EChartsHost.tsx`; `application/pieSessionProjection.ts`, `application/applicationChartSessionTypes.ts`, `application/useApplicationChartSession.ts`. New helpers are `pieLabels.ts`, `pieLegendLayout.ts` and `pieLegendBinding.ts`. Use a pie-specific supported-result extension rather than broadening unrelated Cartesian behavior. `AgChartView` already spreads `session.hostProps`; no second mount is needed. Shared type seams may only carry the optional immutable metadata. Any further production file requires controller ownership review.
+These definitions supersede the provisional metadata description above. V1's approved types remain unchanged. The controller creates `echarts/pieLegendTypes.ts` after independent interface review and before any two-lane implementation. All rectangles are finite CSS-pixel coordinates in the chart container; width/height are nonnegative. All keys are existing `pie-item:` identities, never display text. IDs have a reserved `openbb-pie-legend-` prefix and are unique within options.
+
+```ts
+interface PieLegendRect {
+  readonly x: number;
+  readonly y: number;
+  readonly width: number;
+  readonly height: number;
+}
+interface PieLegendItem {
+  readonly key: string;
+  readonly label: string;
+  readonly legendId: string;
+  readonly bounds: PieLegendRect;
+}
+interface PieLegendPage {
+  readonly anchorKey: string;
+  readonly items: readonly PieLegendItem[];
+}
+interface PieLegendPagination {
+  readonly canonicalLegendId: string;
+  readonly pages: readonly PieLegendPage[];
+  readonly pager: {
+    readonly previousId: string;
+    readonly nextId: string;
+    readonly counterId: string;
+    readonly previousBounds: PieLegendRect;
+    readonly nextBounds: PieLegendRect;
+  };
+}
+```
+
+Every eligible key occurs in exactly one page; each page is nonempty and its anchor is its first key. Bounds are the item's placement on its own page, not an accumulating offset. Include metadata for a visible one-page legend too, so keyboard slice access is consistent; hide/disable pager graphics for fewer than two pages. Omit metadata for a disabled or empty legend. Canonical legend is always array index zero, `show:false`, `selectedMode:true`, with every key exactly once. Each item has one native single-entry plain legend component, `selectedMode:true`, positioned by its measured cell. Every component receives the same full selection map. The pure mapper initially shows page zero and includes all page components, hiding the others. `legendPagination` is a rendering descriptor only: no selected map, current page, callback, provider data or revision is stored in it.
+
+Extend the successful `TranslatePie` result in `echarts/pieTypes.ts` with optional `legendPagination?: PieLegendPagination`; keep invalid/unsupported variants unchanged. Do not widen `CartesianTranslationResult` globally. Pass the descriptor unchanged through the `kind: "pie"` ready member in `application/applicationChartSessionTypes.ts`, `application/pieSessionProjection.ts`, `application/useApplicationChartSession.ts` host props, and optional `ChartRenderRequest.legendPagination` in `echarts/lifecycle.ts`. `echarts/EChartsHost.tsx` includes it in latest refs, lifecycle update arguments and update-effect dependencies. Non-pie branches explicitly omit it. The existing `projectLegendSelection` callback still returns only ECharts options; all page packing and titles depend on unchanged observations/style/viewport, while selected fractions only change polar geometry. Fresh session projections replace metadata whenever those layout inputs change.
+
+`echarts/pieLegendBinding.ts` exports this lifecycle-owned interface (types may be exported from the binding rather than duplicated in the pure metadata module):
+
+```ts
+interface PieLegendPorts {
+  readonly container: HTMLDivElement;
+  readonly isActive: () => boolean;
+  readonly readSelected: () => Readonly<Record<string, boolean>>;
+  readonly toggle: (key: string) => void;
+  readonly repaint: () => void;
+  readonly fail: (error: unknown) => void;
+}
+interface PieLegendBinding {
+  project(options: EChartsOption, plan: PieLegendPagination | undefined,
+    scope: string | undefined): EChartsOption;
+  sync(): void;
+  handleClick(event: unknown): void;
+  dispose(): void;
+}
+declare function createPieLegendBinding(ports: PieLegendPorts): PieLegendBinding;
+```
+
+`project` returns a new options object with current-page visibility, pager counter/enabled paint, and pager event metadata; it must not mutate mapper options. It selects an anchor on first plan/scope, preserves it when a key still exists, or clamps the prior page ordinal when that key disappears. Changing page sets the anchor to the target page's first key. New scope resets page zero. Omitted plan clears paging/accessibility. `project` never calls `setOption`, `dispatchAction` or the session. `sync`, called only after successful `setOption`, updates DOM accessibility controls from the accepted plan and `readSelected`; failure releases the renderer through the existing lifecycle error path. If render fails, release/dispose removes the provisional binding and controls, so no unaccepted drawing can be exported.
+
+The lifecycle creates one binding for each engine generation and disposes it in `release`. It registers one `instance.on("click", listener)` forwarding only current-generation events to `handleClick`, and unregisters the same listener on release. Binding `project` runs after `legendOptions(request)` and before the single existing `setOption(...,{notMerge:true})`; `sync` runs after that call succeeds. Canonical selection remains read from native legend zero. `toggle` dispatches native `legendToggleSelect` with the stable key and no legendId filter, causing the existing `legendselectchanged` listener to reproject financial geometry. `repaint` invokes the same forced render path as current legend refresh, for the current request, without advancing revision. `isActive` rejects disposed, applying, unsized or stale-generation work. One shared lifecycle interaction-error handler releases the renderer and calls the current request's `onError`, preserving export invalidation.
+
+Pager graphics use supported `graphic.info` event data `{ kind: "pie-legend-page", direction: -1 | 1, token: number }`; `project` assigns a new binding-local draw token. `handleClick` requires `componentType === "graphic"`, the exact kind/direction and current token. Disabled boundary directions do nothing. It does not intercept legend clicks, chart pointer events or native hover. ECharts 6's inspected `component/graphic/GraphicView.js:setEventData` exposes `info` in graphic click events. A stale queued pager event cannot affect a newer drawing even within the same engine generation.
+
+Add `echarts/pieLegendAccessibility.ts` only for DOM control projection/disposal, called by the binding; it owns no page or selection state. Use stable keyed buttons/switches inside the existing host container, retain focus across sync, and remove them on dispose. Visible item proxy bounds match the native item. Proxy controls pass pointer events through so mouse selection remains native; Enter/Space dispatch exactly one native action. Off-page items remain in accessible traversal; focusing one asks the same binding to reveal its page and places its focus outline over that item's new visible bounds. Pager controls are named Previous/Next legend page, have real disabled states, and Enter/Space use the same binding action as graphic clicks. Announce the current page with an accessible status. `aria-checked` is read from the native canonical map after render, never cached as another selected-state owner. Canvas pager/counter remains the exported visual, and accessibility DOM must not alter chart size or appear in PNG export.
+
+### V2-P: mandatory native selection proof before adapter production
+
+One worker owns only new `tests/unit/chart-compatibility/pieLegend.render.test.ts`. No production changes, image build, dependencies or browser run. After the controller grants the unit-test slot, reuse the existing P2 configuration and fake text measurement with actual SVG SSR ECharts:
+
+```sh
+node node_modules/vitest/vitest.mjs run \
+  --config tests/unit/chart-compatibility/vitest.config.mjs \
+  tests/unit/chart-compatibility/pieLegend.render.test.ts
+```
+
+Run from the staged `terminalpro` checkout with the existing pinned Node/dependencies; record that checkout/revision and command/exit. The configuration already supplies the bounded worker policy. This is a planned command until executed. The inherited `lifecycle.test.ts` mock omits ECharts `ComponentModel` and fails before collection, as recorded in the P3 evidence. Do not cite that suite as passing or use a full ECharts mock for this proof.
+
+Build a tiny test-only option from existing pie fixtures: two independently keyed rings, painted series before transparent companions, a hidden full-key canonical legend and visible per-item components across two pages. Prove all four conditions:
+
+1. Actual engine rendering retains every initially enabled sector despite other legend components having single-entry data. Hidden canonical/page components do not draw text or hit targets; visible swatches use painted main-series colors.
+2. Invoke the visible legend's actual registered click target in the engine view (following its generated clickable hit rectangle, rather than manually calling the application's handler). Confirm exactly one native `legendselectchanged` event, canonical key becomes false, every legend component agrees for that key, and the equal-caption item in the other ring stays true. This exercises native click dispatch. A separate explicit `dispatchAction` is useful but is insufficient alone.
+3. Reproject using canonical native selection and existing `translatePie`, then decorate test options with the same components. Assert correct ring-local remaining fractions, aligned companions, and retained off-page keys. Restore through the visible native click. Switch page by updating component visibility and repeat on page two, preserving page-one selection.
+4. Disable every item in one ring, then restore a page-two key; check zero-total outlines/recovery, no other-ring filtering, and rendered SVG current-page text after a notMerge repaint. This proves native semantics/exportable drawing only, not production lifecycle/PNG export or keyboard behavior.
+
+Read-only source support: ECharts 6 `component/legend/LegendModel.js:_updateData` builds `_availableNames` from all raw series independently of each component's displayed `data`; `legendAction.js:legendSelectActionHandler` synchronizes selection across components; `processor/dataFilter.js` nevertheless requires every legend to select each datum. That last interaction makes this proof a hard prerequisite. If it fails, stop V2 adapter implementation and revise the seam; no parallel selection map is authorized. The proof file becomes a retained regression and is handed to the layout owner after its reviewed acceptance.
+
+### Bounded ownership and execution waves
+
+Default to one V2 implementer after V2-P. Two implementation lanes are allowed only after the controller lands the exact `echarts/pieLegendTypes.ts` interface above and the proof passes; all production files listed here are explicitly under `src/components/General/Table/Chart/`.
+
+| Wave/owner | Exclusive writable production paths | Tests/output |
+| --- | --- | --- |
+| V2-P proof owner | None | New `tests/unit/chart-compatibility/pieLegend.render.test.ts`; real-engine selection proof |
+| Controller interface foundation | New `echarts/pieLegendTypes.ts` only | Reviewed types and ownership/inventory entry |
+| V2-L pure layout owner | `echarts/pieTypes.ts`, `echarts/pie.ts`, `echarts/pieData.ts`, `echarts/pieLayout.ts`, `echarts/pieSeries.ts`; new `echarts/pieLabels.ts`, `echarts/pieLegendLayout.ts` | `pie.render.test.ts`, new `pieLayout.test.ts`, accepted proof file; mapper metadata/default pages, bounded geometry/title fit |
+| V2-H lifecycle owner | `echarts/lifecycle.ts`, `echarts/EChartsHost.tsx`; new `echarts/pieLegendBinding.ts`, `echarts/pieLegendAccessibility.ts` | New `pieLegendBinding.test.ts`; `lifecycle.test.ts` mock repair and lifecycle regressions; no pure layout edits |
+| Controller integration after both reviews | `application/pieSessionProjection.ts`, `application/applicationChartSessionTypes.ts`, `application/useApplicationChartSession.ts` | `pieSessionOwner.test.tsx`; existing application/browser scenarios and join checks |
+
+The lifecycle owner fixes the known test mock narrowly by retaining actual module exports and overriding only `init`, or by a reviewed equivalent mock boundary; it must independently show the suite collects and executes. Do not count this repair as native engine evidence. A meaningful failing lifecycle assertion must fail under an intentionally broken page/release/selection path. New accessibility helper tests verify native dispatch ports and focus behavior; actual UI keyboard interaction remains P4.
+
+Neither lane edits `application/pieAppearance.ts`, `application/pieSessionSelection.ts`, `echarts/pieAdmission.ts`, shared fixtures or V1 tests after V1 acceptance unless the controller reviews a necessary contract correction. No lane edits the other's tests, the font transaction, production-join tests, inventories, specs or commits. Workers are not alone in the checkout and must preserve concurrent changes. The controller handles inventory/breadth updates and serializes shared propagation, heavy checks and commits. Every lane passes whole-file 400 physical/300 logical/50-function checks, including shared lifecycle/host files; the accessibility extraction has a real DOM projection responsibility, not a cap workaround.
+
+### Remaining joined checks
+
+`AgChartView` already spreads `session.hostProps`; no second mount is needed. Shared type seams carry only the optional immutable descriptor. The table above is the complete V2 writable production scope; further paths require controller ownership review. Current radius calculation remains in place, corrected for the actual maximum visible-page legend footprint. Full iterative polar layout remains deferred unless a matched comparison or meaningful fitting case demonstrates a residual failure.
 
 Extend existing `tests/unit/chart-compatibility/pie.test.ts`, `pie.render.test.ts`, `lifecycle.test.ts` and add focused `pieLayout.test.ts`/`pieLegendBinding.test.ts`. Exercise real ECharts click/actions, duplicate category names across rings, page 2 selection/restore, all disabled/zero outlines, page changes followed by export, same-scope refresh, resize reflow, stale/disposed handlers and family reset. Geometry checks cover dynamic field titles, surrounding-ring suppression and a fitting inner-label case, narrow-ring numeric suppression, wider/single rings that fit, disabled labels reclaiming room, saved typography/rotation/radii and long categories. Prior-family lifecycle regressions must pass.
 
@@ -80,3 +184,5 @@ Independent review checks source contracts and native interaction evidence befor
 Verify page 2 exposes the remaining Gross Profit items; toggling Gross Profit Q3 must leave Revenue Q3 unchanged and recompute only its ring denominator. Repeat meaningful callout/sector control edits, title/legend styling, refresh, save/reopen, theme switch and export; compare the original styled reference where applicable. Check console/network failures. Numeric labels absent solely because they do not fit must not be classified as disabled controls. Acceptance requires the actual images and effects, not visible buttons or unit options. Publish only the reviewed concise record and representative financial screenshots after controller acceptance; keep this diagnosis and intermediate runs local.
 
 Core steering `product.md`, `tech.md` and `structure.md` were absent at inspection. Applicable complexity, testing, delegation and documentation steering plus the pie milestone/integration/renderer designs were read. This read-only design did not change implementation, dependencies, providers, browser runtimes or commits.
+
+Controller join ownership includes `tests/unit/chart-compatibility/pie.test.ts` only if a concrete V2 output/admission regression requires it. No additional matrix is required.

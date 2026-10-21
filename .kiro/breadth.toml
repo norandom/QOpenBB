@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "pie-donut-native-legend-proof"
+requirements = ["analyst-workspace/pie-appearance-repair-design.md:V2-P"]
+planned_checks = ["native-hit-target", "canonical-key-sync", "independent-ring-selection", "off-page-zero-recovery"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/pieLegend.render.test.ts"]
+status = "passed"
+evidence = ["Independent final-byte real-ECharts proof: 3/3 pass at ab50456. Metadata type foundation reviewed and capped. Adapter, keyboard, lifecycle and browser acceptance remain open. See artifacts/reviewed/chart-pie/verification.md."]
+
+[[capabilities]]
 id = "pie-donut-effective-appearance-repair"
 requirements = ["analyst-workspace/pie-appearance-repair-design.md:Task V1", "analyst-workspace/pie-milestone.md:P4"]
 planned_checks = ["effective-assignment-defaults", "explicit-legend-overrides", "retained-title-legend-style", "immutable-admission"]
