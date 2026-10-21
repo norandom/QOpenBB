@@ -4,7 +4,7 @@ requirements = ["analyst-workspace/pie-appearance-repair-design.md:P4-tooltip-re
 planned_checks = ["native-pending-tooltip", "replacement-order", "tooltip-recovery", "failure-cleanup"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/tooltipLifecycle.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts"]
 status = "passed"
-evidence = ["Source repair 9d18838 retains actual-engine timer/recovery and lifecycle ordering/failure regressions. Final P4 FMP diagnostics pass on the identified image; P5 publication remains open. See artifacts/reviewed/chart-pie/verification.md."]
+evidence = ["Source repair 9d18838 retains actual-engine timer/recovery and lifecycle ordering/failure regressions. Final P4 FMP diagnostics pass on the identified image; P5 publication verified as alpha-39584871538-1. See artifacts/reviewed/chart-pie/verification.md."]
 
 [[capabilities]]
 id = "pie-donut-side-legend-budget"
@@ -82,11 +82,11 @@ evidence = ["Inactive P1 independently accepted at Workspace 0a2dd86: 30 focused
 
 [[capabilities]]
 id = "pie-donut-chart-port"
-requirements = ["analyst-workspace/pie-milestone.md:Acceptance contract"]
-planned_checks = ["original-first-field-and-ring-order", "independent-ring-denominators", "saved-doughnut-alias", "existing-controls", "real-fmp-quarterly-composition", "save-reopen-export"]
+requirements = ["analyst-workspace/pie-milestone.md:Acceptance contract", "analyst-workspace/pie-milestone.md:P5"]
+planned_checks = ["original-first-field-and-ring-order", "independent-ring-denominators", "saved-doughnut-alias", "existing-controls", "real-fmp-quarterly-composition", "save-reopen-export", "release-manifest-and-six-anonymous-pulls"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/pie-fmp.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/pie-charts.spec.ts"]
 status = "passed"
-evidence = ["P4 accepted at Workspace 9d1883849f480f45c89c53867554590d45b12428, image sha256:2459fc315b735cb2f66083bb11a10bacaed2b0fdad7f11f46191937661591d81: two pie/donut journeys and five prior-family journeys pass. Raw USD observations use separate ring denominators; the owner accepted disclosed default appearance differences. Independent feature review is approved; P5 publication remains open. See artifacts/reviewed/chart-pie/verification.md."]
+evidence = ["P4 accepted at Workspace 9d1883849f480f45c89c53867554590d45b12428, image sha256:2459fc315b735cb2f66083bb11a10bacaed2b0fdad7f11f46191937661591d81: two pie/donut journeys and five prior-family journeys pass. Raw USD observations use separate ring denominators; the owner accepted disclosed default appearance differences. Independent feature review is approved; P5 published alpha-39584871538-1 from Workspace 9e0f2ee/data API 49cc413; both public service identities and six anonymous pulls verified separately from the local P4 image. Ordinary Table/File scope only; other families and callers remain open. See artifacts/reviewed/chart-pie/verification.md."]
 
 [[capabilities]]
 id = "histogram-overview-layout"

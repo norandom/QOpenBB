@@ -1,6 +1,6 @@
 # Pie and donut verification
 
-P4 application acceptance passed on 2026-10-21. The owner accepted the disclosed appearance differences, and independent feature review approved all seven final-image browser journeys. P5 alpha publication remains pending. Scope is the ordinary Table/File chart journey; other families and callers remain open.
+P4 application acceptance passed on 2026-10-21. The owner accepted the disclosed appearance differences, and independent feature review approved all seven final-image browser journeys. P5 published [alpha-39584871538-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39584871538-1); both public image identities and six anonymous pulls are verified. Scope is the ordinary Table/File chart journey; other families and callers remain open.
 
 ## P4 final image acceptance
 
@@ -115,3 +115,16 @@ The corrected side-legend image `sha256:4efd6c3ea6633a9407aad6aae8af99f625c986a9
 The real ECharts regression reproduces the exact null-content exception: resize queues a tooltip refresh, then notMerge replaces its view while the engine remains active. Source `9d1883849f480f45c89c53867554590d45b12428` issues public `hideTip` inside the existing applying guard before replacement. This clears the old target so the callback becomes harmless; it does not cancel the engine timer or disable later tooltips. Actual visible HTML tooltip recovery, selection retention, transitions without next tooltip options, action ordering and failure cleanup are covered. The final focused run passes 34 tests; independent review reruns the affected real-engine and lifecycle checks. Combined caps pass (lifecycle: 289 physical/219 logical/32 per function). Scoped typing reports only the unchanged upstream typography TS2578, with no changed-file diagnostics.
 
 The repair is two production lines plus focused tests. No dependency patch or private engine API was added. Local evidence: `p4-tooltip-repair.md`, `p4-tooltip-design-review.md`, `p4-tooltip-source-review.md`. The next identified image must pass the full FMP journey and affected shared lifecycle regressions. Publication remains pending.
+
+## P5 published alpha
+
+[CI run 39584871538](https://github.com/norandom/QOpenBB/actions/runs/39584871538) passed hosted checks, both Dagger builds and publication. The tagged prerelease points to root `455eceb5c537a192dcfb27694caf05beaba78a42`. Release Workspace `9e0f2eea031048fe882178eb7af6851e4b596124` differs from the locally tested production source only in the four reviewed browser-harness files. Data API remains `49cc413e6ab67eaa0444e07485b0f9243c786f7b`.
+
+| Service | Manifest digest | Config digest |
+| --- | --- | --- |
+| workspace | `sha256:d4ea3d5d7f92c7b14461e2ea5d0fde774a6ce2a2611165e10557a920d0bff010` | `sha256:3b8d21e63ebeed7f7b9cf7f37dc7e02e24a0309126e44baf06132bcf966c8163` |
+| data-api | `sha256:317594d49ce67726373011c8e670a43576d1224e9dd1fe58dfb7f5ae28275dbc` | `sha256:ebc2897c8322d2f801152ae8d488b15fdfabd85c148caa34622de83721979550` |
+
+Both services passed anonymous Docker pulls by immutable digest, alpha release tag and `latest`, using a fresh empty Docker configuration. Remote manifest/config digests, Linux/amd64 platform, source/service labels and local repository digests match the completed release manifest. Six pulls passed. Manifest SHA-256: `497d5ed7c5c14bc79b9c77884dcb5bf656fc5f52dfe9d17746002115b98f99ec`; local pull-record SHA-256: `7cbce7e24a09b15e9e90ad113b930453dc5c95b75a53a0512d72c8a13063a186`. The public manifest is a [release asset](https://github.com/norandom/QOpenBB/releases/download/alpha-39584871538-1/manifest.json). Raw pull logs and registry responses remain local under `artifacts/chart-pie/release-39584871538/`.
+
+CI-built publication identities are verified separately from the local packaged image used for browser acceptance. No browser run against the CI-built bytes or assembled Compose/server deployment is claimed. Pie/Donut completion covers the ordinary Table/File journey; other chart families, callers and deferred analyst capabilities remain open.

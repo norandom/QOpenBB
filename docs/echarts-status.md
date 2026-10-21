@@ -6,9 +6,11 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Done
 
+- [x] Render Pie and Donut, including saved `doughnut`, in the ordinary Table/File journey with captured-FMP values, controls, native legend paging, save/reopen and export. See the [published milestone](../.kiro/specs/analyst-workspace/pie-milestone.md).
+
 - [x] Render Histogram in the ordinary Table/File journey with captured-FMP bin/count acceptance, editor controls, navigation, save/reopen and export. See the [published milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md).
 
-- [x] Repair the reported bubble spread and miniature overflow in a packaged image with captured FMP data; see [X6 evidence](../artifacts/reviewed/chart-xy/bubble-correction.md). Remaining axis-label polish stays open.
+- [x] Repair the reported bubble spread and miniature overflow in a packaged image with captured FMP data; see [X6 evidence](../artifacts/reviewed/chart-xy/bubble-correction.md). Closer axis labels and main-marker clipping are also [accepted and published](../artifacts/reviewed/chart-xy/bubble-label-refinement.md).
 
 - [x] Render Column & Line, Area & Column and Custom Combination with per-series axes, saved styling, navigator/theme/refresh retention and captured-FMP application acceptance. See the [accepted milestone](../.kiro/specs/analyst-workspace/chart-port-milestone.md).
 
@@ -24,7 +26,6 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete pie/donut through the [active milestone](../.kiro/specs/analyst-workspace/pie-milestone.md).
 - [ ] Complete other distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
@@ -87,9 +88,9 @@ See [verification](../artifacts/reviewed/chart-histogram/verification.md). The u
 - [x] Restore effective pie legend defaults and retain original title/legend appearance; source checks pass.
 - [x] Implement and source-review native legend paging, keyboard access and fitted donut titles.
 - [x] Accept identified-image FMP, owner-reviewed appearance and lifecycle behavior.
-- [ ] Publish and verify the completed milestone.
+- [x] Publish and verify the completed milestone.
 
-P4 application acceptance passed on the identified pie/donut candidate: captured-FMP values, synthetic edge cases, controls, paging, refresh, save/reopen, export and five prior-family journeys. The owner accepted the disclosed default appearance differences. P5 publication and verification of both public images remain open. See [verification](../artifacts/reviewed/chart-pie/verification.md).
+P4 application acceptance passed on the identified pie/donut candidate: captured-FMP values, synthetic edge cases, controls, paging, refresh, save/reopen, export and five prior-family journeys. The owner accepted the disclosed default appearance differences. P5 published `alpha-39584871538-1`; both CI-built public image identities and six anonymous pulls are verified separately from local browser acceptance. See [verification](../artifacts/reviewed/chart-pie/verification.md).
 
 ## Evidence and ownership
 

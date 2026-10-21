@@ -38,7 +38,7 @@ All production paths are relative to `vendor/workspace/terminalpro/src/component
 - [x] P2. Implement the independently reviewed [inactive ECharts mapper](pie-renderer-design.md), with original value/legend/label semantics and actual-engine geometry assertions. Reuse existing appearance, formatting and host primitives. Inactive mapper independently accepted 2026-10-21; identified-image acceptance is recorded under P4 below.
 - [x] P3. Connect the existing session, caller, gallery and editor under the reviewed [integration design](pie-integration-design.md). The integration owner and separate label-control lane have disjoint file ownership. Preserve saved options, selection and all reachable controls; source acceptance does not close application acceptance.
 - [x] P4. Run the identified image with captured FMP values and synthetic edge cases, compare original appearance, exercise lifecycle/export and run affected regressions. Reuse the existing isolated browser harness.
-- [ ] P5. Complete independent feature review, reconcile README/docs checkboxes, breadth and sanitized evidence, push the task commits and dispatch one image build. Close publication only after the release and anonymous image pulls are verified.
+- [x] P5. Complete independent feature review, reconcile README/docs checkboxes, breadth and sanitized evidence, push the task commits and dispatch one image build. Close publication only after the release and anonymous image pulls are verified.
 
 ## Boundary and sequencing
 
@@ -46,7 +46,7 @@ P1 is inactive foundation work. Its acceptance does not establish a visible char
 
 Box plot, other polar/distribution families, standalone/AI callers, provider expansion and broader analytical workflows remain open. Preserve unrelated Perspective/catalog work. Use Sol for bounded implementation and Astra for financial/integration review, following [delegation](../../steering/delegation.md).
 
-## P4 acceptance and remaining publication
+## P4 acceptance and P5 publication
 
 P4 passed on Workspace `9d1883849f480f45c89c53867554590d45b12428`, image `sha256:2459fc315b735cb2f66083bb11a10bacaed2b0fdad7f11f46191937661591d81`. The final seven browser journeys cover retained FMP raw values and separate ring proportions; native mouse and keyboard legend paging; title, label, callout, stroke, fill and shadow controls; theme/refresh retention; passive initial save/reopen; noninitial-page PNG export; synthetic duplicates, signed/missing observations, aggregation, empty recovery and saved `doughnut`; and ordinary/combo, XY and histogram regressions. Diagnostics remain unfiltered. See the [reviewed evidence](../../../artifacts/reviewed/chart-pie/verification.md).
 
@@ -61,4 +61,4 @@ The [appearance repair design](pie-appearance-repair-design.md) records the acce
 - [x] V2-L. Implement measured paging layout, field titles and surrounding-ring label fitting.
 - [x] V2-H. Implement lifecycle paging, keyboard access, cleanup and export retention.
 
-The title/legend transaction, automatic side-width and tooltip-replacement repairs are included in the tested source. Earlier failed runs and their diagnoses remain in the verification history. Independent feature review is approved. P5 publication and verification of both public image identities/pulls remain open; the published alpha is unchanged.
+The title/legend transaction, automatic side-width and tooltip-replacement repairs are included in the tested source. Earlier failed runs and their diagnoses remain in the verification history. Independent feature review is approved. P5 published [alpha-39584871538-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39584871538-1) from Workspace `9e0f2ee` (reviewed P4 source plus test-only commit) and data API `49cc413`. Both CI-built services passed six anonymous pulls in total: digest, release tag and `latest` for each service. Exact published manifest/config identities and evidence hashes are in the verification record. The published pair is distinct from the local image used for P4 browser acceptance. This completes Pie/Donut only in the ordinary Table/File journey; other chart families and callers remain open.
