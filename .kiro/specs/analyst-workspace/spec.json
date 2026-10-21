@@ -201,5 +201,18 @@
     "evidence": "artifacts/reviewed/chart-xy/bubble-label-refinement.md",
     "limits": "Bounded closer labels and clipping; legend icon and minor spacing remain different.",
     "release": "alpha-39476320841-1"
-  }
+  },
+  "parallel_preparation": [
+    {
+      "name": "range-chart-port",
+      "contract": "range-chart-plan.md",
+      "authorization": "Owner approved two parallel chart lanes on 2026-10-21; shared integration and builds remain serialized.",
+      "completed_tasks": [
+        "R1"
+      ],
+      "source": "0bc5109671c3ca1af43b863a0da3616ab78ae968",
+      "feature_accepted": false,
+      "evidence": "artifacts/reviewed/chart-range/verification.md"
+    }
+  ]
 }

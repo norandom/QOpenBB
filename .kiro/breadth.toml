@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "range-chart-min-max-summary"
+requirements = ["analyst-workspace/range-chart-plan.md:R1 frozen task contract"]
+planned_checks = ["finite-min-max", "signed-zero-extremes", "null-empty-count", "immutable-atomic-input"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeSummary.test.ts"]
+status = "passed"
+evidence = ["Inactive R1 accepted at Workspace 0bc5109: 42 tests, strict typing, Biome and combined caps pass. No rendered Range/application acceptance. See artifacts/reviewed/chart-range/verification.md."]
+
+[[capabilities]]
 id = "box-plot-inactive-renderer"
 requirements = ["analyst-workspace/box-plot-renderer-design.md:Geometry contract", "analyst-workspace/box-plot-milestone.md:B2"]
 planned_checks = ["typed-grouping-raw-values", "box-whisker-geometry", "category-pointer-alignment", "legend-remap-export", "invalid-empty-recovery"]

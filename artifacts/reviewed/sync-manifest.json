@@ -153,7 +153,8 @@
     "alpha-release",
     "chart-combo",
     "chart-xy-bubble-correction",
-    "chart-xy-label-refinement"
+    "chart-xy-label-refinement",
+    "chart-range"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -31896,6 +31897,14 @@
       "publishedpath": "artifacts/reviewed/chart-box/verification.md",
       "publishedSHA256": "42dcf0f80847ff6e79cab3fd42e4e79af077864a54225b61a3c3f106a2e52dcc",
       "bytes": 5854,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-range/verification.md",
+      "sourceSHA256": "b11fd0ba407fe22fce971da088be4b1404e9a84d9ccb6958a85bb139d413c920",
+      "publishedpath": "artifacts/reviewed/chart-range/verification.md",
+      "publishedSHA256": "b11fd0ba407fe22fce971da088be4b1404e9a84d9ccb6958a85bb139d413c920",
+      "bytes": 1914,
       "transform": "exact-byte-copy"
     }
   ],

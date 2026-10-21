@@ -1,0 +1,85 @@
+# Range chart foundation plan
+
+R1 independently accepted, 2026-10-21. R1 provides an inactive finite-observation min/max helper shared by ordinary Table/File Range Bar and Range Area. It can run beside Box integration because it owns two new files and imports only the existing diagnostic type. Box remains the current delivery milestone; Range activation waits for a controller-owned join and a separately reviewed application contract.
+
+This is a source-backed plan, not implementation or visual acceptance. Workspace baseline: `95188eb3ac92188e62f32b8ba9d4897a6c8cc176`. The [renderer inventory](../../../docs/renderer-capability-matrix.md) and [open checklist](../../../docs/echarts-status.md) still own the wider caller boundaries. Raw source findings and exact hashes are retained in ignored `artifacts/chart-range/source-contract.md`.
+
+## Original assignment contract
+
+Retained Grid 34.1.1 dispatches both `rangeBar` and `rangeArea` to `RangeChartProxy` (G9112-9123). It creates one series for each selected measure in field order, using the first category and that measure's display name. It supplies generated `min:<seriesIndex>` / `max:<seriesIndex>` keys and tooltip endpoint names Min / Max (G9723-9749). It does not pair adjacent selected columns as low/high coordinates. Selecting revenue and net income yields two independently summarized ranges.
+
+For each category/measure, the proxy omits values failing `typeof value === 'number' && !isNaN(value)`, then calculates `Math.min(...values)` and `Math.max(...values)`. An empty retained set emits null endpoints (G9777-9796). Category insertion order is preserved; missing categories group under an empty string, Date categories use epoch identity, and the default category groups all rows under 1 (G9798-9820). Existing configured aggregation precedes these statistics and may collapse a category to a singleton (G9846-9864, G10024 onward). R1 owns neither grouping nor aggregation.
+
+The original raw proxy admits infinities. QOpenBB capture already normalizes observations to finite numbers or null. R1 deliberately accepts that finite domain and diagnoses nonfinite inputs; it makes no parity claim for original nonfinite or argument-spread limits. It must not call the Box helper: Box interpolates quartiles and can reject overflowing intermediate arithmetic even when min/max are finite.
+
+## R1 frozen task contract
+
+After independent architecture/numerical review, a fresh bounded implementer owns only these new paths under `vendor/workspace/terminalpro/`:
+
+- `src/components/General/Table/Chart/compatibility/rangeSummary.ts`
+- `tests/unit/chart-compatibility/rangeSummary.test.ts`
+
+The worker is not alone in the checkout. Preserve all other edits. Do not change Box files, shared snapshot policies, registries, imports in existing runtime files, editor/capture/state modules, dependencies or build configuration. The controller owns inventory, evidence and breadth updates. No activation, commits, builds, browser work or provider requests belong to R1.
+
+```ts
+import type { SnapshotDiagnostic } from "./snapshotTypes";
+
+export interface RangeSummary {
+  readonly min: number;
+  readonly max: number;
+}
+export type RangeSummaryResult =
+  | { readonly status: "resolved"; readonly count: number;
+      readonly summary: RangeSummary | null }
+  | { readonly status: "invalid";
+      readonly diagnostics: readonly SnapshotDiagnostic[] };
+export function calculateRangeSummary(values: unknown): RangeSummaryResult;
+```
+
+Accept a dense array containing only finite numbers or null. Validate every entry before returning a resolved result. Null omits an observation; count includes repeated numeric observations. Empty/all-null input resolves to count 0 and summary null. Otherwise return a fresh min/max summary without mutating or sorting the input. A singleton has equal endpoints. Preserve `Math.min`/`Math.max` signed-zero behavior: a sample containing both signs of zero has min -0 and max +0. A finite extreme must remain an endpoint without arithmetic on the endpoint difference.
+
+Invalid array shape, holes, undefined, strings, booleans, NaN, infinities or throwing reads return `status: "invalid"` with no partial summary. Reuse `SnapshotDiagnostic`, code `invalid-input`, root path for unreadable/invalid shape and `[index]` for an invalid observation. Catch failures at the public boundary using the existing defensive helper style. Do not add statistical options, resource limits or another validation framework.
+
+R1 completion requires focused tests for signed/zero/decimal/unsorted values, duplicates, singleton, null omission, empty/all-null, extreme finite values, immutability and each invalid/throwing case. Assert the min/max oracle independently of the implementation, including `Object.is` for zero signs. Confirm that importing/calling the helper has no renderer or application side effects. R1 does not test grouping or controls that it does not implement.
+
+Run the existing one-worker Vitest configuration from `vendor/workspace/terminalpro` with the pinned WSL Node toolchain:
+
+```sh
+node node_modules/vitest/vitest.mjs run \
+  --config tests/unit/chart-compatibility/vitest.config.mjs \
+  tests/unit/chart-compatibility/rangeSummary.test.ts
+```
+
+Capture a meaningful missing-helper RED and passing GREEN. The controller prepares ignored `artifacts/chart-range/r1-tsconfig.json` following `artifacts/chart-box/b1-tsconfig.json`, with exactly the two R1 paths and unchanged strict ES2022/Bundler/noEmit settings. Run `node vendor/workspace/terminalpro/node_modules/typescript/bin/tsc --project artifacts/chart-range/r1-tsconfig.json` from the root. Run scoped Biome using the installed configuration. Record actual commands, revision, exits and outputs rather than treating proposed commands as evidence.
+
+Foundation enforcement already exists. Before acceptance, the controller adds the production path to `.kiro/complexity-budgets.json` and supplies explicit current manifests for both forks to the [combined checker](../../../docs/complexity.md):
+
+```sh
+pipeline/.venv/bin/python -m tools.quality.complexity --check \
+  --changes workspace=artifacts/chart-range/workspace-changes.json \
+  --changes data_api=artifacts/chart-range/data-api-changes.json \
+  --output artifacts/chart-range/r1-complexity.json
+```
+
+The whole production file must pass 400 physical lines, 300 logical syntax units and 50 units per callable. Tests/docs are excluded by policy. Do not rebuild the checker or borrow stale Box manifests. Independent review, fresh scoped verification, controller-owned breadth/status reconciliation and selective commit precede task acceptance. R1 acceptance leaves Range family completion unchecked.
+
+## Subsequent dependency and activation gate
+
+Share the numerical helper between Range Bar and Range Area, then use separate renderer mappers: Range Bar draws grouped intervals with saved direction; Range Area draws a band with two boundaries, markers and missing-data spans. Those responsibilities differ enough to avoid one conditional geometry implementation. Freeze their exact new-file ownership and input/output contracts in the next bounded design. Do not extract or modify Box's grouping, axis or tooltip modules during parallel work; source similarity alone does not authorize a shared-file change.
+
+Later source/application review must preserve the original category/field ordering, pre-statistics aggregation, missing groups, financial names, controls and saved options. Source differences already identified: Range Bar supports horizontal direction and excludes category-axis type/tick selectors; Range Area has distinct axis eligibility and missing-data/interpolation semantics. Exact effective defaults, axis nicing and control transactions remain an activation prerequisite, not an R1 dependency. See the local source note for the bounded evidence.
+
+Use retained `artifacts/chart-box/fmp/quarter.csv` with its `provenance.json` and original `raw.json`: 40 AAPL quarterly revenue/net-income observations, raw reported USD, grouped by fiscal year, partial years explicitly labelled. For each field the intended range is the minimum and maximum quarterly amount observed within that fiscal year, not an annual total, OHLC price range or forecast interval. Keep fields separate and preserve dates/currency/period provenance. FY2017 revenue endpoints are USD 45,408,000,000 and 78,351,000,000; the independent fixture provenance records those source extrema. Do not rename revenue/netIncome to low/high or alter values for chart fitting. No provider capture or fixture rewrite is needed for R1.
+
+Before activation, independently verify expected extrema against the unchanged raw capture and exercise both originals and replacement in an identified application image: selected ordering, aggregation, null/singleton gaps, supported direction/axes, tooltip/labels/legend, theme, navigation, refresh, save/reopen and export. Use isolated headless browser/CDP and one browser worker; serialize heavy gates with Box. Selected real-FMP samples remain pending until verified and reviewed. No screenshot or visual-parity claim exists for Range in this plan.
+
+R1 is disproved if the source assignment requires low/high field pairing, if its helper changes observations or endpoint signs, or if its allowed files cause application activation. Any such finding stops acceptance and returns the contract to review. Standalone and AI callers remain outside this bounded ordinary Table/File plan.
+
+## Delivery status
+
+- [x] R1: independently accept the inactive finite min/max helper, focused tests, strict typing and complexity checks.
+- [ ] Freeze and implement Range Bar/Area renderer contracts.
+- [ ] Integrate existing controls and saved state.
+- [ ] Accept real-FMP application behavior and appearance, then publish images.
+
+R1 source: Workspace `0bc5109671c3ca1af43b863a0da3616ab78ae968`. See [verification](../../../artifacts/reviewed/chart-range/verification.md). This preparation lane does not activate Range or delay the current Box Plot release.

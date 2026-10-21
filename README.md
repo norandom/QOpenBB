@@ -76,6 +76,11 @@ Current: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
 - [ ] Accept real-FMP behavior and original/replacement appearance in an identified image.
 - [ ] Publish and verify the completed milestone.
 
+Parallel preparation: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
+
+- [x] Independently accept the inactive range-summary helper.
+- [ ] Implement and integrate the range renderers, then verify with real FMP data.
+
 ## Delivery plan
 
 ![Delivery plan: prebuilt alpha, Compose installation, provider coverage and analyst workflows; separate AI-to-Excel lane and later extensions.](docs/assets/delivery-plan.svg)
