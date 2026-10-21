@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-21T10:45:29.985400+00:00",
+  "updated_at": "2026-10-21T11:10:00.530063+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -20,81 +20,19 @@
   },
   "ready_for_implementation": false,
   "active_milestone": {
-    "name": "pie-donut-chart-port",
-    "contract": "pie-milestone.md",
-    "authorization": "Owner continued autonomous chart port after histogram publication on 2026-10-20.",
-    "phase": "accepted-published",
-    "design_review": "P0-P3 and subsequent title/legend, layout/lifecycle, side-width and tooltip source repairs are independently accepted. P4 final seven identified-image journeys pass at Workspace 9d18838; the owner accepted disclosed default appearance differences. Independent feature review is approved; P5 published alpha-39584871538-1; both public image identities and six anonymous pulls verified separately from local browser acceptance. TypeScript baseline limitations remain documented.",
-    "renderer_design": "pie-renderer-design.md",
-    "renderer_design_review": "Independent P2 source/actual-engine review and P3 integration are accepted; P4 financial, lifecycle and owner-reviewed appearance checks now pass. P5 publication verified for ordinary Table/File Pie/Donut.",
-    "integration_design": "pie-integration-design.md",
-    "integration_design_review": "P3 source integration and subsequent repairs are independently accepted. P4 controls, financial values, paging, refresh, save/reopen and export pass in the final identified image; P5 publication verified; other callers remain open.",
+    "name": "box-plot-chart-port",
+    "contract": "box-plot-milestone.md",
+    "authorization": "Owner approved Box Plot as the next autonomous chart milestone on 2026-10-21.",
+    "phase": "implementation-in-progress",
+    "design": "box-plot-design.md",
     "completed_tasks": [
-      "P0",
-      "P1",
-      "P2",
-      "P3",
-      "P4",
-      "P5"
+      "B0"
     ],
-    "feature_accepted": true,
-    "evidence": "artifacts/reviewed/chart-pie/verification.md",
-    "p4_control_repair": {
-      "revision": "ff8878cc0a811d6ac082b7db16ce4c1b5da7023e",
-      "source_review": "accepted",
-      "packaged_acceptance": "accepted in final P4 image"
-    },
-    "p4_appearance_repair": {
-      "revision": "008fbd1668121dab9a33bb11c9db6e8c789309ca",
-      "source_review": "V1 accepted",
-      "packaged_acceptance": "accepted in final P4 image",
-      "V2": "source and P4 identified-image application accepted; P5 publication verified"
-    },
-    "p4_legend_foundation": "ab50456d73243a0c0b9a45eaa5e2b397ca8c0e0c",
-    "p4_appearance_source": "e5e3e36a79fa6c84285d5c8063428680095813a7",
-    "p4_side_legend_source": "cdb1684ae14ba93f4e0bad9895035238c775420b",
-    "p4_default_appearance": "Owner accepted disclosed default differences on 2026-10-21; final P4 behavior checks pass",
-    "p4_tooltip_source": "9d1883849f480f45c89c53867554590d45b12428",
-    "p4_acceptance": {
-      "status": "accepted",
-      "source": "9d1883849f480f45c89c53867554590d45b12428",
-      "image": "sha256:2459fc315b735cb2f66083bb11a10bacaed2b0fdad7f11f46191937661591d81",
-      "journeys": 7,
-      "evidence": "artifacts/reviewed/chart-pie/verification.md",
-      "scheduling_note": "Original final XY batch retained with a login HTTP 429; only the blocked scatter journey reran after the limiter window, then passed without source/test changes",
-      "run_paths": [
-        "artifacts/chart-pie/p4-browser-fmp-8",
-        "artifacts/chart-pie/p4-browser-synthetic-5",
-        "artifacts/chart-pie/p4-final-ordinary-combo",
-        "artifacts/chart-pie/p4-final-xy",
-        "artifacts/chart-pie/p4-final-scatter",
-        "artifacts/chart-pie/p4-final-histogram"
-      ]
-    },
-    "release_revision": "9e0f2eea031048fe882178eb7af6851e4b596124",
-    "release": "alpha-39584871538-1",
-    "p5_publication": {
-      "status": "verified",
-      "release": "alpha-39584871538-1",
-      "ci_run": 39584871538,
-      "workspace_revision": "9e0f2eea031048fe882178eb7af6851e4b596124",
-      "data_api_revision": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
-      "anonymous_pulls": 6,
-      "images": {
-        "workspace": {
-          "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:d4ea3d5d7f92c7b14461e2ea5d0fde774a6ce2a2611165e10557a920d0bff010",
-          "manifest_digest": "sha256:d4ea3d5d7f92c7b14461e2ea5d0fde774a6ce2a2611165e10557a920d0bff010",
-          "config_digest": "sha256:3b8d21e63ebeed7f7b9cf7f37dc7e02e24a0309126e44baf06132bcf966c8163"
-        },
-        "data-api": {
-          "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:317594d49ce67726373011c8e670a43576d1224e9dd1fe58dfb7f5ae28275dbc",
-          "manifest_digest": "sha256:317594d49ce67726373011c8e670a43576d1224e9dd1fe58dfb7f5ae28275dbc",
-          "config_digest": "sha256:ebc2897c8322d2f801152ae8d488b15fdfabd85c148caa34622de83721979550"
-        }
-      },
-      "evidence": "artifacts/reviewed/chart-pie/verification.md",
-      "scope": "ordinary Table/File Pie and Donut; local P4 image and CI publication verified separately"
-    }
+    "feature_accepted": false,
+    "source_base": "9e0f2eea031048fe882178eb7af6851e4b596124",
+    "scope": "Ordinary Table/File Box Plot; other callers/families remain open.",
+    "design_review": "Independent Astra review approved B0 and frozen B1 on 2026-10-21; B2/B3 contracts and all implementation/application/publication acceptance remain open.",
+    "evidence": "artifacts/reviewed/chart-box/verification.md"
   },
   "completed_milestones": [
     {
@@ -156,6 +94,83 @@
       "feature_accepted": true,
       "evidence": "artifacts/reviewed/chart-histogram/verification.md",
       "release": "alpha-39460489280-1"
+    },
+    {
+      "name": "pie-donut-chart-port",
+      "contract": "pie-milestone.md",
+      "authorization": "Owner continued autonomous chart port after histogram publication on 2026-10-20.",
+      "phase": "accepted-published",
+      "design_review": "P0-P3 and subsequent title/legend, layout/lifecycle, side-width and tooltip source repairs are independently accepted. P4 final seven identified-image journeys pass at Workspace 9d18838; the owner accepted disclosed default appearance differences. Independent feature review is approved; P5 published alpha-39584871538-1; both public image identities and six anonymous pulls verified separately from local browser acceptance. TypeScript baseline limitations remain documented.",
+      "renderer_design": "pie-renderer-design.md",
+      "renderer_design_review": "Independent P2 source/actual-engine review and P3 integration are accepted; P4 financial, lifecycle and owner-reviewed appearance checks now pass. P5 publication verified for ordinary Table/File Pie/Donut.",
+      "integration_design": "pie-integration-design.md",
+      "integration_design_review": "P3 source integration and subsequent repairs are independently accepted. P4 controls, financial values, paging, refresh, save/reopen and export pass in the final identified image; P5 publication verified; other callers remain open.",
+      "completed_tasks": [
+        "P0",
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5"
+      ],
+      "feature_accepted": true,
+      "evidence": "artifacts/reviewed/chart-pie/verification.md",
+      "p4_control_repair": {
+        "revision": "ff8878cc0a811d6ac082b7db16ce4c1b5da7023e",
+        "source_review": "accepted",
+        "packaged_acceptance": "accepted in final P4 image"
+      },
+      "p4_appearance_repair": {
+        "revision": "008fbd1668121dab9a33bb11c9db6e8c789309ca",
+        "source_review": "V1 accepted",
+        "packaged_acceptance": "accepted in final P4 image",
+        "V2": "source and P4 identified-image application accepted; P5 publication verified"
+      },
+      "p4_legend_foundation": "ab50456d73243a0c0b9a45eaa5e2b397ca8c0e0c",
+      "p4_appearance_source": "e5e3e36a79fa6c84285d5c8063428680095813a7",
+      "p4_side_legend_source": "cdb1684ae14ba93f4e0bad9895035238c775420b",
+      "p4_default_appearance": "Owner accepted disclosed default differences on 2026-10-21; final P4 behavior checks pass",
+      "p4_tooltip_source": "9d1883849f480f45c89c53867554590d45b12428",
+      "p4_acceptance": {
+        "status": "accepted",
+        "source": "9d1883849f480f45c89c53867554590d45b12428",
+        "image": "sha256:2459fc315b735cb2f66083bb11a10bacaed2b0fdad7f11f46191937661591d81",
+        "journeys": 7,
+        "evidence": "artifacts/reviewed/chart-pie/verification.md",
+        "scheduling_note": "Original final XY batch retained with a login HTTP 429; only the blocked scatter journey reran after the limiter window, then passed without source/test changes",
+        "run_paths": [
+          "artifacts/chart-pie/p4-browser-fmp-8",
+          "artifacts/chart-pie/p4-browser-synthetic-5",
+          "artifacts/chart-pie/p4-final-ordinary-combo",
+          "artifacts/chart-pie/p4-final-xy",
+          "artifacts/chart-pie/p4-final-scatter",
+          "artifacts/chart-pie/p4-final-histogram"
+        ]
+      },
+      "release_revision": "9e0f2eea031048fe882178eb7af6851e4b596124",
+      "release": "alpha-39584871538-1",
+      "p5_publication": {
+        "status": "verified",
+        "release": "alpha-39584871538-1",
+        "ci_run": 39584871538,
+        "workspace_revision": "9e0f2eea031048fe882178eb7af6851e4b596124",
+        "data_api_revision": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
+        "anonymous_pulls": 6,
+        "images": {
+          "workspace": {
+            "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:d4ea3d5d7f92c7b14461e2ea5d0fde774a6ce2a2611165e10557a920d0bff010",
+            "manifest_digest": "sha256:d4ea3d5d7f92c7b14461e2ea5d0fde774a6ce2a2611165e10557a920d0bff010",
+            "config_digest": "sha256:3b8d21e63ebeed7f7b9cf7f37dc7e02e24a0309126e44baf06132bcf966c8163"
+          },
+          "data-api": {
+            "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:317594d49ce67726373011c8e670a43576d1224e9dd1fe58dfb7f5ae28275dbc",
+            "manifest_digest": "sha256:317594d49ce67726373011c8e670a43576d1224e9dd1fe58dfb7f5ae28275dbc",
+            "config_digest": "sha256:ebc2897c8322d2f801152ae8d488b15fdfabd85c148caa34622de83721979550"
+          }
+        },
+        "evidence": "artifacts/reviewed/chart-pie/verification.md",
+        "scope": "ordinary Table/File Pie and Donut; local P4 image and CI publication verified separately"
+      }
     }
   ],
   "active_correction": {

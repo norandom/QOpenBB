@@ -67,6 +67,14 @@ Published: [pie and donut port](.kiro/specs/analyst-workspace/pie-milestone.md).
 - [x] Accept real-FMP behavior and the owner-reviewed appearance in the candidate image.
 - [x] Publish and verify the completed milestone.
 
+Current: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
+
+- [x] Review original statistics and freeze the numerical helper contract.
+- [ ] Implement and independently verify original-matching summaries and rendering.
+- [ ] Connect the existing editor and saved-state flow.
+- [ ] Accept real-FMP behavior and original/replacement appearance in an identified image.
+- [ ] Publish and verify the completed milestone.
+
 ## Delivery plan
 
 ![Delivery plan: prebuilt alpha, Compose installation, provider coverage and analyst workflows; separate AI-to-Excel lane and later extensions.](docs/assets/delivery-plan.svg)

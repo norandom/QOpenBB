@@ -26,6 +26,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
+- [ ] Complete Box Plot through the [active milestone](../.kiro/specs/analyst-workspace/box-plot-milestone.md).
 - [ ] Complete other distribution and radial families.
 - [ ] Complete range, hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
