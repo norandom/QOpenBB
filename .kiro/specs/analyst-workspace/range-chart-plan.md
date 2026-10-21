@@ -79,10 +79,12 @@ R1 is disproved if the source assignment requires low/high field pairing, if its
 
 - [x] R1: independently accept the inactive finite min/max helper, focused tests, strict typing and complexity checks.
 - [x] R2: independently accept the inactive [Range Bar renderer core](range-renderer-design.md).
-- [ ] Freeze and implement the separate Range Area renderer contract.
+- [x] R3: independently accept the inactive [Range Area renderer core](range-area-renderer-design.md).
 - [ ] Integrate existing controls and saved state.
 - [ ] Accept real-FMP application behavior and appearance, then publish images.
 
 R1 source: Workspace `0bc5109671c3ca1af43b863a0da3616ab78ae968`. See [verification](../../../artifacts/reviewed/chart-range/verification.md). This preparation lane does not activate Range or delay the current Box Plot release.
 
 R2 inactive Range Bar is independently accepted at Workspace `1732847552a762c38e1cb1408d1efebccdeb0e6a`. Seventeen focused tests pass (nine unit and eight actual ECharts SVG); Biome passes 11 files and combined complexity has zero errors/violations. Scoped strict typing retains only inherited typography.ts TS2578; canonical strict baseline/candidate each retain 3,427 identical diagnostics, compiler exit 2. Range Area, application integration, real-FMP image/browser acceptance and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged. See [verification](../../../artifacts/reviewed/chart-range/verification.md).
+
+R3 inactive Range Area is independently accepted at Workspace `c6d4329960a5176775a47aba2bfefcac36d0cd8e`. Sixteen focused tests pass (10 unit and six actual ECharts SVG); Biome passes 10 files and combined complexity reports zero errors/violations. Scoped typing retains only inherited typography.ts TS2578, exit 2. Final canonical baseline/candidate each retain 3,427 identical inherited diagnostics, exit 2, with no added/removed diagnostics. Application integration, real-FMP image/browser acceptance, visual comparison and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged. See [verification](../../../artifacts/reviewed/chart-range/verification.md).

@@ -82,7 +82,8 @@ Parallel preparation: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart
 
 - [x] Independently accept the inactive range-summary helper.
 - [x] Independently accept the inactive Range Bar renderer core.
-- [ ] Implement Range Area, integrate the range renderers, then verify with real FMP data.
+- [x] Independently accept the inactive Range Area renderer core.
+- [ ] Integrate the range renderers, then verify with real FMP data.
 
 ## Delivery plan
 

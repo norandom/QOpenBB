@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "range-area-inactive-renderer"
+requirements = ["analyst-workspace/range-area-renderer-design.md:R3 acceptance", "analyst-workspace/range-chart-plan.md:Delivery status"]
+planned_checks = ["per-measure-envelope", "null-run-gaps", "band-boundary-geometry", "equal-domain-raw-labels", "tooltip-null-identity", "singleton-empty-child-replacement"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeArea.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeArea.render.test.ts"]
+status = "passed"
+evidence = ["Inactive R3 accepted at Workspace c6d4329960a5176775a47aba2bfefcac36d0cd8e: 16 tests (10 unit/6 actual SVG), Biome 10 files and combined caps pass. Final canonical typing has 3427 identical inherited diagnostics, exit2; scoped typing retains sole inherited typography TS2578. Five-row retained FMP raw comparison passes only; application/visual/publication acceptance remains open. See artifacts/reviewed/chart-range/verification.md."]
+
+[[capabilities]]
 id = "range-bar-inactive-renderer"
 requirements = ["analyst-workspace/range-renderer-design.md:R2 acceptance", "analyst-workspace/range-chart-plan.md:Delivery status"]
 planned_checks = ["per-measure-extrema", "explicit-scale-data-independence", "equal-domain-midpoint", "grouped-interval-padding", "null-hidden-fields", "raw-unit-labels-tooltip"]

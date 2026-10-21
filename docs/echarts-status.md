@@ -29,7 +29,8 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [ ] Complete Box Plot through the [active milestone](../.kiro/specs/analyst-workspace/box-plot-milestone.md). Its inactive numerical helper, renderer, category capture and aggregate setup are independently accepted; axes/navigation, editor integration and application acceptance remain open.
 - [x] Independently accept inactive Box capture and original aggregate setup (B3b).
 - [ ] Complete other distribution and radial families.
-- [ ] Complete Range Bar/Area through the [parallel foundation plan](../.kiro/specs/analyst-workspace/range-chart-plan.md). The inactive min/max helper and Range Bar core are accepted; Range Area and application acceptance remain open.
+- [ ] Complete Range Bar/Area through the [parallel foundation plan](../.kiro/specs/analyst-workspace/range-chart-plan.md). The inactive min/max helper and Range Bar/Area cores are accepted; application acceptance remains open.
+- [x] Independently accept the inactive Range Area renderer core (R3).
 - [x] Independently accept the inactive Range Bar renderer core (R2).
 - [ ] Complete hierarchy, heatmap, waterfall and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
