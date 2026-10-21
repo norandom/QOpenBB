@@ -81,7 +81,8 @@ Current: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
 Parallel preparation: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
 
 - [x] Independently accept the inactive range-summary helper.
-- [ ] Implement and integrate the range renderers, then verify with real FMP data.
+- [x] Independently accept the inactive Range Bar renderer core.
+- [ ] Implement Range Area, integrate the range renderers, then verify with real FMP data.
 
 ## Delivery plan
 

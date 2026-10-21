@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "range-bar-inactive-renderer"
+requirements = ["analyst-workspace/range-renderer-design.md:R2 acceptance", "analyst-workspace/range-chart-plan.md:Delivery status"]
+planned_checks = ["per-measure-extrema", "explicit-scale-data-independence", "equal-domain-midpoint", "grouped-interval-padding", "null-hidden-fields", "raw-unit-labels-tooltip"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeBar.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeBar.render.test.ts"]
+status = "passed"
+evidence = ["Inactive R2 accepted at Workspace 1732847552a762c38e1cb1408d1efebccdeb0e6a: 17 tests (9 unit/8 real SVG), Biome 11 files, combined caps zero errors/violations. Canonical strict retains 3427 identical inherited diagnostics, compiler exit2; scoped strict retains sole inherited typography TS2578. Source FMP extrema verified only; Range Area/application/FMP image acceptance remain open. See artifacts/reviewed/chart-range/verification.md."]
+
+[[capabilities]]
 id = "box-plot-capture-aggregate-setup"
 requirements = ["analyst-workspace/box-plot-setup-design.md:B3b acceptance", "analyst-workspace/box-plot-milestone.md:B3b"]
 planned_checks = ["raw-key-grouping", "original-seven-aggregates", "signed-zero-order", "absent-null-provenance", "atomic-invalid-overflow", "inactive-policy-boundary"]

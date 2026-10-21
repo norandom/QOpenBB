@@ -78,8 +78,11 @@ R1 is disproved if the source assignment requires low/high field pairing, if its
 ## Delivery status
 
 - [x] R1: independently accept the inactive finite min/max helper, focused tests, strict typing and complexity checks.
-- [ ] Freeze and implement Range Bar/Area renderer contracts.
+- [x] R2: independently accept the inactive [Range Bar renderer core](range-renderer-design.md).
+- [ ] Freeze and implement the separate Range Area renderer contract.
 - [ ] Integrate existing controls and saved state.
 - [ ] Accept real-FMP application behavior and appearance, then publish images.
 
 R1 source: Workspace `0bc5109671c3ca1af43b863a0da3616ab78ae968`. See [verification](../../../artifacts/reviewed/chart-range/verification.md). This preparation lane does not activate Range or delay the current Box Plot release.
+
+R2 inactive Range Bar is independently accepted at Workspace `1732847552a762c38e1cb1408d1efebccdeb0e6a`. Seventeen focused tests pass (nine unit and eight actual ECharts SVG); Biome passes 11 files and combined complexity has zero errors/violations. Scoped strict typing retains only inherited typography.ts TS2578; canonical strict baseline/candidate each retain 3,427 identical diagnostics, compiler exit 2. Range Area, application integration, real-FMP image/browser acceptance and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged. See [verification](../../../artifacts/reviewed/chart-range/verification.md).
