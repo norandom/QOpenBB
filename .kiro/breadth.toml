@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "chart-tooltip-replacement-lifecycle"
+requirements = ["analyst-workspace/pie-appearance-repair-design.md:P4-tooltip-replacement-correction"]
+planned_checks = ["native-pending-tooltip", "replacement-order", "tooltip-recovery", "failure-cleanup"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/tooltipLifecycle.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts"]
+status = "passed"
+evidence = ["Source acceptance at 9d18838: actual-engine failure reproduction, visible tooltip recovery and lifecycle ordering/failure checks pass. Packaged FMP diagnostics remain pending. See artifacts/reviewed/chart-pie/verification.md."]
+
+[[capabilities]]
 id = "pie-donut-side-legend-budget"
 requirements = ["analyst-workspace/pie-appearance-repair-design.md:P4-side-legend-correction"]
 planned_checks = ["side-width-budget", "drawable-rings", "reachable-keys", "explicit-dimensions"]

@@ -52,3 +52,5 @@ Both repairs still require the P4 image/browser gate; source checks alone do not
 V2 layout, lifecycle and session propagation are source-accepted at `e5e3e36`. P4 still requires the rebuilt image, real-FMP browser effects and original-image comparison.
 
 The owner accepted the default appearance on 2026-10-21, including disclosed Pie size, callout placement and separator differences. Synthetic pie lifecycle and five prior-family browser journeys pass on image `e87cb9c`. The FMP styled-controls run exposed side-legend width consuming the plot. Source `cdb1684` restores the original side-width budget; its rebuilt FMP check remains open.
+
+The corrected side-legend image passes its FMP side-control checks and synthetic lifecycle journey. FMP7 then reports a real tooltip replacement exception before reopen. Source `9d18838` neutralizes the reproduced pending callback through the public hideTip action; independent source review and focused regressions pass. Rebuilt FMP diagnostics, reopen/export and P4/P5 remain open.
