@@ -26,13 +26,15 @@
     "phase": "implementation-in-progress",
     "design": "box-plot-design.md",
     "completed_tasks": [
-      "B0"
+      "B0",
+      "B1"
     ],
     "feature_accepted": false,
     "source_base": "9e0f2eea031048fe882178eb7af6851e4b596124",
     "scope": "Ordinary Table/File Box Plot; other callers/families remain open.",
-    "design_review": "Independent Astra review approved B0 and frozen B1 on 2026-10-21; B2/B3 contracts and all implementation/application/publication acceptance remain open.",
-    "evidence": "artifacts/reviewed/chart-box/verification.md"
+    "design_review": "B0 numerical contract and B1 inactive helper independently accepted; 31 focused tests, strict typing and combined caps pass. B2/B3 contracts and rendering/application/publication acceptance remain open.",
+    "evidence": "artifacts/reviewed/chart-box/verification.md",
+    "b1_source": "85ca9ea247cc0c97add941b5007661b75941e734"
   },
   "completed_milestones": [
     {

@@ -70,7 +70,8 @@ Published: [pie and donut port](.kiro/specs/analyst-workspace/pie-milestone.md).
 Current: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
 
 - [x] Review original statistics and freeze the numerical helper contract.
-- [ ] Implement and independently verify original-matching summaries and rendering.
+- [x] Implement and independently verify original-matching numerical summaries.
+- [ ] Implement and independently verify box/whisker rendering.
 - [ ] Connect the existing editor and saved-state flow.
 - [ ] Accept real-FMP behavior and original/replacement appearance in an identified image.
 - [ ] Publish and verify the completed milestone.
