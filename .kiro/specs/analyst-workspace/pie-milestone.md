@@ -41,7 +41,7 @@ Matched original captures confirm pie's default hidden legend and donut's paged 
 The [appearance repair design](pie-appearance-repair-design.md) separates the remaining work:
 
 - [x] V1. Restore effective legend defaults and retain pie-specific title/legend appearance through admission. Independently source-accepted at `008fbd1`; image acceptance remains pending.
-- [ ] V2. Match donut paging, field titles and surrounding-ring label fitting within the existing renderer. Interface and native-selection proof accepted; implementation/source review remains open.
+- [x] V2. Match donut paging, field titles and surrounding-ring label fitting within the existing renderer. Layout, lifecycle and session source are independently accepted; P4 behavior acceptance remains open.
 
 Both repairs still require the P4 image/browser gate; source checks alone do not close either visual comparison or publication.
 
@@ -50,3 +50,5 @@ Both repairs still require the P4 image/browser gate; source checks alone do not
 - [x] V2-H. Implement lifecycle paging, keyboard access, cleanup and export retention.
 
 V2 layout, lifecycle and session propagation are source-accepted at `e5e3e36`. P4 still requires the rebuilt image, real-FMP browser effects and original-image comparison.
+
+The owner accepted the default appearance on 2026-10-21, including disclosed Pie size, callout placement and separator differences. Synthetic pie lifecycle and five prior-family browser journeys pass on image `e87cb9c`. The FMP styled-controls run exposed side-legend width consuming the plot. Source `cdb1684` restores the original side-width budget; its rebuilt FMP check remains open.

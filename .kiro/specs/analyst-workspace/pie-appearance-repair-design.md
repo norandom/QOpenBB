@@ -188,3 +188,9 @@ Verify page 2 exposes the remaining Gross Profit items; toggling Gross Profit Q3
 Core steering `product.md`, `tech.md` and `structure.md` were absent at inspection. Applicable complexity, testing, delegation and documentation steering plus the pie milestone/integration/renderer designs were read. This read-only design did not change implementation, dependencies, providers, browser runtimes or commits.
 
 Controller join ownership includes `tests/unit/chart-compatibility/pie.test.ts` only if a concrete V2 output/admission regression requires it. No additional matrix is required.
+
+## P4 side-legend correction
+
+The identified `e5e3e36` image exposes a side-legend sizing defect: after moving the legend right, the mapper allocates almost the entire plot width to legend columns and leaves no drawable rings. This is separate from the default appearance accepted by the owner on 2026-10-21.
+
+Restore the original orientation-aware available-width rule from `Legend.calculateLegendDimensions`: for side legends without an explicit maximum width, use the original aspect-ratio coefficient rather than the full padded viewport width. Preserve explicit dimensions, the accepted top/bottom layout, stable keys, selection and all reachable pages. The layout owner may modify only `echarts/pieLegendLayout.ts` and its existing `pieLayout.test.ts`; the controller owns records and image verification. Require a failing regression before the fix, positive drawable rings and reachable keys for the reported side layout, explicit-bound behavior, whole-file 400/300/50 caps and independent review. Verify the actual right-legend control in the rebuilt FMP journey before closing P4.

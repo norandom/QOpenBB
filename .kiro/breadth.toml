@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "pie-donut-side-legend-budget"
+requirements = ["analyst-workspace/pie-appearance-repair-design.md:P4-side-legend-correction"]
+planned_checks = ["side-width-budget", "drawable-rings", "reachable-keys", "explicit-dimensions"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/pieLayout.test.ts"]
+status = "passed"
+evidence = ["Source regression and native-render checks accepted at cdb1684; focused final layout tests 9/9 and caps pass. Actual right-legend FMP image check remains pending. See artifacts/reviewed/chart-pie/verification.md."]
+
+[[capabilities]]
 id = "pie-donut-paged-legend-source"
 requirements = ["analyst-workspace/pie-appearance-repair-design.md:V2-L", "analyst-workspace/pie-appearance-repair-design.md:V2-H"]
 planned_checks = ["measured-paging", "native-selection", "keyboard-lifecycle", "session-propagation"]
