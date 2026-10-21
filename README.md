@@ -63,7 +63,7 @@ Current: [pie and donut port](.kiro/specs/analyst-workspace/pie-milestone.md).
 - [x] Connect and source-review the existing editor and application flow.
 - [x] Repair title/legend editor transactions found by the first image run; source tests and independent review pass.
 - [x] Restore effective pie legend defaults and retain original title/legend appearance; source checks pass.
-- [x] Prove native paged-legend selection without a second selection store; adapter implementation remains open.
+- [x] Implement and source-review native legend paging, keyboard access and fitted donut titles; image acceptance remains open.
 - [ ] Accept real-FMP behavior and matched appearance in the candidate image.
 - [ ] Publish and verify the completed milestone.
 

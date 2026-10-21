@@ -1,6 +1,6 @@
 # P4 pie appearance repair design
 
-V1 source is independently accepted at `008fbd1`. The native selection proof and immutable metadata foundation are independently accepted at `ab50456`; V2-L/V2-H implementation is authorized under the reviewed interface below. Their source review and P4 image/visual acceptance remain open. The accepted font repair `ff8878c` remains outside V2 ownership.
+V1 source is independently accepted at `008fbd1`. The native selection proof and immutable metadata foundation are independently accepted at `ab50456`; V2-L/V2-H implementation is authorized under the reviewed interface below. V2 source is independently accepted at `e5e3e36`; P4 image/visual acceptance remains open. The accepted font repair `ff8878c` remains outside V2 ownership.
 
 ## Evidence and scope
 
@@ -98,6 +98,8 @@ interface PieLegendPagination {
   };
 }
 ```
+
+For insufficient layout space, match the original legend visibility rule: force a minimum cell only when both effective maxWidth and maxHeight are explicitly defined. Otherwise an unsatisfiable layout keeps the hidden canonical all-key legend but emits no visible items, pager, pagination descriptor or visible legend reservation. This does not change saved enabled state or native selection; a later fitting viewport or style projection restores normal layout.
 
 Every eligible key occurs in exactly one page; each page is nonempty and its anchor is its first key. Bounds are the item's placement on its own page, not an accumulating offset. Include metadata for a visible one-page legend too, so keyboard slice access is consistent; hide/disable pager graphics for fewer than two pages. Omit metadata for a disabled or empty legend. Canonical legend is always array index zero, `show:false`, `selectedMode:true`, with every key exactly once. Each item has one native single-entry plain legend component, `selectedMode:true`, positioned by its measured cell. Every component receives the same full selection map. The pure mapper initially shows page zero and includes all page components, hiding the others. `legendPagination` is a rendering descriptor only: no selected map, current page, callback, provider data or revision is stored in it.
 

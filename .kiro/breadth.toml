@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "pie-donut-paged-legend-source"
+requirements = ["analyst-workspace/pie-appearance-repair-design.md:V2-L", "analyst-workspace/pie-appearance-repair-design.md:V2-H"]
+planned_checks = ["measured-paging", "native-selection", "keyboard-lifecycle", "session-propagation"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/pieLayout.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/pieLegendBinding.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/pieSessionOwner.test.tsx"]
+status = "passed"
+evidence = ["Source acceptance at e5e3e36: layout/render/native 25, binding/lifecycle 29 and session 5 tests pass. Independent review accepted corrected no-fit handling; combined caps pass. Packaged browser and visual acceptance remain open. See artifacts/reviewed/chart-pie/verification.md."]
+
+[[capabilities]]
 id = "pie-donut-native-legend-proof"
 requirements = ["analyst-workspace/pie-appearance-repair-design.md:V2-P"]
 planned_checks = ["native-hit-target", "canonical-key-sync", "independent-ring-selection", "off-page-zero-recovery"]

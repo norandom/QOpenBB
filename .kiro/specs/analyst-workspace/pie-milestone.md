@@ -46,5 +46,7 @@ The [appearance repair design](pie-appearance-repair-design.md) separates the re
 Both repairs still require the P4 image/browser gate; source checks alone do not close either visual comparison or publication.
 
 - [x] V2-P. Prove native multi-component legend selection and freeze renderer metadata (`ab50456`).
-- [ ] V2-L. Implement measured paging layout, field titles and surrounding-ring label fitting.
-- [ ] V2-H. Implement lifecycle paging, keyboard access, cleanup and export retention.
+- [x] V2-L. Implement measured paging layout, field titles and surrounding-ring label fitting.
+- [x] V2-H. Implement lifecycle paging, keyboard access, cleanup and export retention.
+
+V2 layout, lifecycle and session propagation are source-accepted at `e5e3e36`. P4 still requires the rebuilt image, real-FMP browser effects and original-image comparison.
