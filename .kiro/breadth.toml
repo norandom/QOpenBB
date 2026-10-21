@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "pie-donut-effective-appearance-repair"
+requirements = ["analyst-workspace/pie-appearance-repair-design.md:Task V1", "analyst-workspace/pie-milestone.md:P4"]
+planned_checks = ["effective-assignment-defaults", "explicit-legend-overrides", "retained-title-legend-style", "immutable-admission"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/pieAppearanceDefaults.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/pieProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/pie.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/pie.render.test.ts"]
+status = "passed"
+evidence = ["V1 source 008fbd1 independently accepted: 42 application and 49 mapper/engine checks, lint and caps pass. No changed-path TypeScript diagnostic; inherited dependency errors remain. V2 layout and P4 rebuilt-image acceptance remain open. See artifacts/reviewed/chart-pie/verification.md."]
+
+[[capabilities]]
 id = "pie-donut-common-control-repair"
 requirements = ["analyst-workspace/pie-milestone.md:P4", "analyst-workspace/pie-integration-design.md:Execution and acceptance"]
 planned_checks = ["title-subtitle-edits", "legend-edits", "latest-font-pair", "stale-event-rejection"]

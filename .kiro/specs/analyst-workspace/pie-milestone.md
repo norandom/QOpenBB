@@ -37,3 +37,10 @@ Box plot, other polar/distribution families, standalone/AI callers, provider exp
 The first image run verified the retained FMP quarter proportions and raw tooltips in both themes, then exposed rejected title edits. Source repair `ff8878c` narrows title/subtitle and legend font context to the shared validator's supported fields. Independent review and 19 focused transaction tests pass; its rebuilt-image verification remains pending.
 
 Matched original captures confirm pie's default hidden legend and donut's paged two-row legend, outer ring title and surrounding-ring label fitting. These visual differences remain open. P4 and publication are not accepted; see the [verification record](../../../artifacts/reviewed/chart-pie/verification.md).
+
+The [appearance repair design](pie-appearance-repair-design.md) separates the remaining work:
+
+- [x] V1. Restore effective legend defaults and retain pie-specific title/legend appearance through admission. Independently source-accepted at `008fbd1`; image acceptance remains pending.
+- [ ] V2. Match donut paging, field titles and surrounding-ring label fitting within the existing renderer. Interface review remains pending.
+
+Both repairs still require the P4 image/browser gate; source checks alone do not close either visual comparison or publication.
