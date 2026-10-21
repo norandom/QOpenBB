@@ -1,10 +1,18 @@
 [[capabilities]]
+id = "box-plot-capture-aggregate-setup"
+requirements = ["analyst-workspace/box-plot-setup-design.md:B3b acceptance", "analyst-workspace/box-plot-milestone.md:B3b"]
+planned_checks = ["raw-key-grouping", "original-seven-aggregates", "signed-zero-order", "absent-null-provenance", "atomic-invalid-overflow", "inactive-policy-boundary"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotSetup.test.ts"]
+status = "passed"
+evidence = ["Inactive B3b accepted at Workspace 7912870: 88 focused tests, eight-file Biome and combined caps pass. Strict typing: 2713 inherited diagnostics, exit2, two reviewed printed-order differences, raw comparison false. Shared checks: 112 passed/four Pie failures reproduced at bca1802. No application acceptance. See artifacts/reviewed/chart-box/verification.md."]
+
+[[capabilities]]
 id = "box-plot-category-capture"
 requirements = ["analyst-workspace/box-plot-integration-design.md:Source-backed capture contract", "analyst-workspace/box-plot-milestone.md:B3a"]
 planned_checks = ["default-row-identity", "raw-aggregation-key", "typed-missing-date-categories", "no-arbitrary-coercion"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotCapture.test.ts"]
 status = "passed"
-evidence = ["Inactive B3a accepted at Workspace bca1802: 58 tests, strict typing, Biome and combined caps pass. Capture/setup integration is still open. See artifacts/reviewed/chart-box/verification.md."]
+evidence = ["Inactive B3a accepted at Workspace bca1802: 58 tests, strict typing, Biome and combined caps pass. B3b inactive capture/setup is accepted; application integration remains open. See artifacts/reviewed/chart-box/verification.md."]
 
 [[capabilities]]
 id = "range-chart-min-max-summary"

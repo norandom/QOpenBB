@@ -113,8 +113,10 @@ At the B3 join, run changed application/compatibility suites plus affected exist
 ## B3a acceptance
 
 - [x] Independently accept the inactive category-identity helper and focused checks.
-- [ ] Complete B3b capture/aggregation integration.
+- [x] Complete B3b inactive capture/aggregation integration; see the [accepted setup contract](box-plot-setup-design.md).
 - [ ] Complete B3c original numeric-axis and navigator contracts.
 - [ ] Complete B3d editor/session integration and B4 application acceptance.
 
 Source: Workspace `bca180284cefb7848b052dd4b8a4160fe0c0d5e8`. Fresh independent verification passed 58 tests, strict scoped TypeScript, Biome and combined complexity. See [verification](../../../artifacts/reviewed/chart-box/verification.md). The helper does not activate Box Plot.
+
+B3b inactive capture/setup is independently accepted at Workspace `7912870325e9ee12dadddf8a8fbe1a5fbf1a7ee6`. Fresh focused checks passed 88 tests; Biome passed eight files and combined complexity passed. Strict typing retains 2,713 inherited diagnostics, exit 2; raw comparison remains false with exactly two reviewed printed-order differences. Selected shared checks passed 112 tests and failed four Pie assertions reproduced at accepted B3a `bca1802`. B3c axes/navigation, B3d activation, B4 real-FMP/image/browser acceptance and B5 publication remain open. The published alpha is unchanged. See [verification](../../../artifacts/reviewed/chart-box/verification.md).

@@ -1,6 +1,6 @@
 # Box Plot verification
 
-B0 numerical design, B1 numerical helper, B2 inactive renderer and B3a category capture are independently accepted. Application integration, appearance/behavior and publication remain open. The existing published alpha is unchanged.
+B0 numerical design, B1 numerical helper, B2 inactive renderer B3a category capture and B3b inactive capture/setup are independently accepted. Application integration, appearance/behavior and publication remain open. The existing published alpha is unchanged.
 
 The original Grid 34.1.1 `BoxPlotChartProxy` calculates each category/field independently: sorted minimum and maximum, with quartiles at `(n - 1) * q` and the original interpolation expression. It does not use IQR fences or separate outlier points. The reviewer checked the retained bundle SHA-256 `1a195685c473488defe1ce535e3115c26a42b2be94ad6ccc7fefa351eac7094f` and the actual source around lines 9664-9820. Original Workspace: `38dffc33389aca0e4a87e0e88d42f7067aa220df`.
 
@@ -37,3 +37,17 @@ Workspace `bca180284cefb7848b052dd4b8a4160fe0c0d5e8` adds only the inactive cate
 Independent review freshly passed 58 tests, strict scoped TypeScript and scoped Biome. Combined complexity passes with zero errors or violations: 79 physical lines, 41 logical units and maximum 17 per function. Missing-helper RED preceded implementation; initial test-title formatting and fixture typing failures were corrected and retained locally. Final reviewed source hashes and raw verification logs are under `artifacts/chart-box/b3a-*`.
 
 The [integration contract](../../../.kiro/specs/analyst-workspace/box-plot-integration-design.md) retains B3b capture/aggregation, B3c original scale/navigation and B3d editor/session integration as open gates. B4 real-FMP image/appearance acceptance and B5 publication remain open. The parallel Range lane changes disjoint new files; shared integration and builds stay serialized.
+
+## B3b inactive capture and aggregate setup
+
+B3b inactive capture/setup is independently accepted at Workspace `7912870325e9ee12dadddf8a8fbe1a5fbf1a7ee6`. Fresh focused checks passed 88 tests; Biome passed eight files and combined complexity passed. Strict typing retains 2,713 inherited diagnostics, exit 2; raw comparison remains false with exactly two reviewed printed-order differences. Selected shared checks passed 112 tests and failed four Pie assertions reproduced at accepted B3a `bca1802`. B3c axes/navigation, B3d activation, B4 real-FMP/image/browser acceptance and B5 publication remain open. The published alpha is unchanged.
+
+The inactive Box snapshot policy, raw-key grid capture and original finite-observation aggregates preserve absent versus null observations, signed-zero/order semantics, selected-field provenance and count units. They do not activate Box in the gallery/session. Independent approval and eight frozen hashes: `artifacts/chart-box/b3b-review.md`.
+
+On 2026-10-21, the reviewer ran `b3b-focused.sh reviewer-focused` by absolute mounted path under WSL Debian with pinned Node 24.22.0: 88 passed, exit 0. `b3b-reviewer-static.sh` passed Biome on eight files, exit 0. Combined `b3b-complexity.json` reports zero errors/violations; owned maximum is 286 physical lines, 124 logical units and 29 per callable, within 400/300/50. The new adapter measures 113/70/22. Meaningful RED preceded implementation.
+
+`b3b-typing-comparison.json` remains raw `pass=false`. Both compiler runs emit 2,713 inherited diagnostics, exit 2; only printed-order differences at useGridOptions.tsx:133 and useTableContext.tsx:133 were independently accepted. No owned-file diagnostics or suppressions remain. This is bounded diagnostic-delta acceptance, not a clean typecheck.
+
+`b3b-reviewer-regressions.sh` passed 112 tests and failed four Pie assertions, exit 1. `b3b-pie-baseline.sh` reproduced the same names, locations and mismatch bodies at accepted B3a with identical dependencies/config: 15 passed/four failed. The other five selected files passed: gridCapture, gridCapture.grid, setupProjection, histogramProductionJoin and applicationSessionTransactions. This establishes no observed new failure delta, not clean Pie coverage.
+
+Raw scripts, logs, exits, baseline comparison and hashes remain local under `artifacts/chart-box/b3b-*`. No build/browser/provider acceptance is claimed.
