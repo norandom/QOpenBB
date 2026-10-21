@@ -1,6 +1,6 @@
 # Pie and donut verification
 
-P1 assignments were independently accepted at Workspace `0a2dd8659c89cc6368ce3d6359cf05c0e632b69a` as inactive foundation code. P2 rendering is now independently accepted as described below. Original controls, application/image acceptance and publication remain open; the published alpha is unchanged.
+P1 assignments were independently accepted at Workspace `0a2dd8659c89cc6368ce3d6359cf05c0e632b69a` as inactive foundation code. P2 rendering is now independently accepted as described below. P3 now connects the original controls and application flow, as described below. Candidate-image acceptance and publication remain open; the published alpha is unchanged.
 
 ## P0 design and fixture
 
@@ -29,3 +29,17 @@ The implementer and independent reviewer each passed 93 focused tests across fou
 Scoped strict TypeScript reports only the inherited `src/components/ds/plugins/typography.ts:1` TS2578 unused directive; no changed-file diagnostic. Scoped Biome lint passes after declaration-style corrections. The full explicit-scope checker passes all eight changed production files: maximum 252 physical lines, 122 logical units and 29 per function. New mapper modules alone reach at most 252/86/14. No exception is needed.
 
 Reproduction uses the established one-worker `chart-compatibility/vitest.config.mjs` with `pieAssignments.test.ts`, `pie.test.ts`, `pie.render.test.ts` and `snapshot.test.ts`; scoped `p2-tsconfig.json` and both explicit `p2-*-scope.json` manifests feed the existing tools. Detailed logs and independent review remain local under `artifacts/chart-pie/`. Shared application integration, original/candidate visual comparison (including thick-stroke inset), FMP image acceptance and release remain P3-P5. No image build was dispatched for P2.
+
+## P3 application join
+
+Independent Astra source review accepted Workspace `2d91255d763b87c6ddbc4a13c7fdcfdb77599e63` on 2026-10-21 against the [integration design](../../../.kiro/specs/analyst-workspace/pie-integration-design.md). Separate Sol workers implemented the shared integration and label controls; the label leaf also passed independent Sol review. The existing caller, Widget transaction, host and dock now admit Pie, Donut and saved `doughnut`. No new state owner or feature flag was introduced.
+
+The join preserves first-field pie and ordered independent donut rings, ordinary numeric-wrapper capture, once-only aggregation, donut transpose and empty recovery. Common appearance and family-transition logic were extracted for reuse. The existing editor gains independent Callout Labels/Sector Labels and original numeric controls; pie omits the original-inapplicable axis/navigation panels. Switching back restores applicable navigation without changing retained flags. Latest-state typography and saved option paths remain in the shared reducer. Compact tooltips omit the category heading; single/shared retain the hovered item heading and raw value.
+
+Independent final verification passed 36 caller/session/editor tests and 26 mapper tests. Separate leaf verification passed six new and three existing label tests. The implementer also passed affected common appearance/setup, prior-family/caller and root editor/gallery regressions; these runs overlap and are not summed as unique tests. All 45 changed production files pass nonmutating Biome lint and the explicit-scope complexity gate: maxima 293 physical lines, 143 logical units and 39 per function, with no new exception.
+
+Final baseline-relative TypeScript reports 2,714 diagnostics at the unchanged source and 2,713 for the candidate. One setup-policy mismatch is removed. Four remaining diagnostic headlines change only their union spelling/order at existing icon, Zod and combo-test errors; review found no new diagnostic defect. The candidate includes three reviewed existing-test adaptations for the new pie/editor union, recorded with hashes; the four new P3 test files are checked separately and have no diagnostics. This is not a clean whole-app compilation. Local comparison: `artifacts/chart-pie/p3-static-final/comparison.json`.
+
+The lifecycle unit suite fails before collection because its existing ECharts mock lacks `ComponentModel`. A clean baseline archive reproduces the same failure (`p3-static/baseline-lifecycle.log`); it is not reported as a passing regression. Host/mapper/join checks pass, but packaged lifecycle/export remains an explicit P4 gate. The initial new context-property error found by type comparison was corrected before final review.
+
+Reviewed source/test commands and byte hashes remain in `artifacts/chart-pie/p3-source-review.md` and local logs. P4 still requires an identified candidate image, real retained FMP quarterly values, matched original/candidate screenshots in both themes, refresh, save/reopen and export. No candidate build or release was dispatched for this source-only task; the real-data chart sample remains pending.

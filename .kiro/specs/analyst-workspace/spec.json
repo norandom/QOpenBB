@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-21T06:43:18.632935+00:00",
+  "updated_at": "2026-10-21T07:52:43.482389+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -24,13 +24,16 @@
     "contract": "pie-milestone.md",
     "authorization": "Owner continued autonomous chart port after histogram publication on 2026-10-20.",
     "phase": "implementation-in-progress",
-    "design_review": "Independent P0 review approved inactive P1 assignment boundary against original PieChartProxy. P2 numerical/rendering and P3 integration designs retain later review gates. P1 inactive assignments independently accepted at 0a2dd86: 30 tests, strict typing and caps pass; no renderer or application activation. P2 inactive mapper independently accepted at 300c231: 93 focused tests and caps pass; scoped types retain only inherited typography TS2578. P3/P4 remain open.",
+    "design_review": "Independent reviews accepted P0/P1 assignments at 0a2dd86, P2 rendering at 300c231 and P3 application integration at 2d91255. Reviewed tests, lint and complexity checks support source acceptance. Inherited TypeScript and lifecycle-mock limitations are documented in the verification record. P4 identified-image/visual/FMP acceptance and P5 publication remain open.",
     "renderer_design": "pie-renderer-design.md",
-    "renderer_design_review": "Independent Astra review approved the inactive P2 mapper contract and implementation on 2026-10-21. Actual-engine tests pass; P3/P4 application acceptance remains open.",
+    "renderer_design_review": "Independent Astra review approved the inactive P2 mapper contract and implementation on 2026-10-21. Actual-engine tests pass; P3 source integration is separately accepted. P4 image acceptance remains open.",
+    "integration_design": "pie-integration-design.md",
+    "integration_design_review": "Independent Astra review accepted P3 source at 2d91255 on 2026-10-21, including separately reviewed label controls. P4 image, financial and visual acceptance remains open.",
     "completed_tasks": [
       "P0",
       "P1",
-      "P2"
+      "P2",
+      "P3"
     ],
     "feature_accepted": false,
     "evidence": "artifacts/reviewed/chart-pie/verification.md"

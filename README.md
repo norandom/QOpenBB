@@ -60,7 +60,8 @@ Current: [pie and donut port](.kiro/specs/analyst-workspace/pie-milestone.md).
 - [x] Review original field selection, concentric rings and saved alias.
 - [x] Implement and independently verify inactive pie/donut assignments.
 - [x] Implement and independently verify inactive rendering.
-- [ ] Connect the existing editor and accept real-FMP application behavior.
+- [x] Connect and source-review the existing editor and application flow.
+- [ ] Accept real-FMP behavior and matched appearance in the candidate image.
 - [ ] Publish and verify the completed milestone.
 
 ## Delivery plan

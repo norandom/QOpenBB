@@ -9,6 +9,14 @@ owning_spec = "openbb-self-service"
 requirements_file = ".kiro/specs/openbb-self-service/requirements.md"
 
 [[capabilities]]
+id = "pie-donut-application-join"
+requirements = ["analyst-workspace/pie-integration-design.md:Execution and acceptance", "analyst-workspace/pie-milestone.md:P3"]
+planned_checks = ["saved-alias", "original-label-controls", "latest-state-edits", "independent-ring-projection", "empty-transpose-recovery", "family-navigation-return", "tooltip-modes"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/pieProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/pieSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/pieEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/pieLabelControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx"]
+status = "passed"
+evidence = ["P3 source independently accepted at Workspace 2d91255: joined caller/session/editor checks, mapper regressions, lint and caps pass. Type comparison retains inherited errors without a new defect; lifecycle mock failure reproduced on baseline. P4 browser, FMP and visual acceptance remain open. See artifacts/reviewed/chart-pie/verification.md."]
+
+[[capabilities]]
 id = "pie-donut-rendering"
 requirements = ["analyst-workspace/pie-renderer-design.md:Bounded P2 acceptance and P3 handover"]
 planned_checks = ["independent-ring-denominators", "native-legend-reprojection", "dual-labels", "zero-outlines", "raw-fmp-values", "immutable-admission"]
@@ -30,7 +38,7 @@ requirements = ["analyst-workspace/pie-milestone.md:Acceptance contract"]
 planned_checks = ["original-first-field-and-ring-order", "independent-ring-denominators", "saved-doughnut-alias", "existing-controls", "real-fmp-quarterly-composition", "save-reopen-export"]
 test_paths = []
 status = "planned"
-evidence = ["P1 assignments and P2 inactive rendering are independently accepted. Existing-editor integration, real-FMP application, visual and publication acceptance remain open. See .kiro/specs/analyst-workspace/pie-milestone.md."]
+evidence = ["P1-P3 source is independently accepted. Candidate-image real-FMP, visual, lifecycle and publication acceptance remain open. See .kiro/specs/analyst-workspace/pie-milestone.md."]
 
 [[capabilities]]
 id = "histogram-overview-layout"
