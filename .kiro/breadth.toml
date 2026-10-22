@@ -4,7 +4,7 @@ requirements = ["analyst-workspace/box-plot-visual-refinement.md:Fresh-image rep
 planned_checks = ["eleven-group-collision", "empty-formatted-labels", "caller-gap-precedence", "actual-main-grid-and-zoom", "main-label-miniature-separation"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotCategoryPlan.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotIntegration.render.test.ts"]
 status = "passed"
-evidence = ["Source-only acceptance at da5979cb020af7737f9a76544ae527d8f2a30831: 38 focused checks pass; caps and formatting pass. New-image FMP/browser acceptance remains open. See artifacts/reviewed/chart-box/verification.md."]
+evidence = ["Source acceptance at da5979cb020af7737f9a76544ae527d8f2a30831: 38 focused checks pass; caps and formatting pass. Subsequent repaired image 4b7c12f0 passes two retained-FMP/synthetic browser scenarios and owner appearance approval on 2026-10-22. See artifacts/reviewed/chart-box/verification.md."]
 
 [[capabilities]]
 id = "box-plot-visual-refinement-source"
@@ -12,7 +12,7 @@ requirements = ["analyst-workspace/box-plot-visual-refinement.md:Completion chec
 planned_checks = ["original-fill-legend", "category-wrapping-collision-budget", "numeric-label-policy", "main-miniature-separation", "raw-miniature-ticks"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlot.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotCategoryPlan.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotNavigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotIntegration.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotValueAxis.test.ts"]
 status = "passed"
-evidence = ["Source-only refinement accepted at 1458dbd7d74ce5e97a8de7e387fd70ff8fc87316: 69 focused checks plus 51 integration checks, caps/formatting pass; inherited typing output unchanged. Fresh-image and visual acceptance remain pending. See artifacts/reviewed/chart-box/verification.md."]
+evidence = ["Refinement accepted at 1458dbd7d74ce5e97a8de7e387fd70ff8fc87316: 69 focused checks plus 51 integration checks, caps/formatting pass; inherited typing output unchanged. Subsequent repaired candidate da5979c / 4b7c12f0 and owner visual approval complete B4. See artifacts/reviewed/chart-box/verification.md."]
 
 [[capabilities]]
 id = "box-plot-editor-session"
@@ -20,7 +20,7 @@ requirements = ["analyst-workspace/box-plot-editor-design.md:Source acceptance",
 planned_checks = ["original-controls-saved-paths", "latest-widget-transactions", "family-observation-recapture", "configured-native-visibility", "main-mini-navigation", "prior-family-regressions"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx", "vendor/workspace/terminalpro/tests/unit/chartTypeGallery.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotNavigator.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts"]
 status = "passed"
-evidence = ["B3d source acceptance at ba98f00: 94 focused and 51 selected prior-family tests pass; Biome/caps pass. Typing 2711 inherited diagnostics, exit2, exact raw differences reviewed. Browser/image/FMP acceptance remains open. See artifacts/reviewed/chart-box/verification.md."]
+evidence = ["B3d source acceptance at ba98f00: 94 focused and 51 selected prior-family tests pass; Biome/caps pass. Typing 2711 inherited diagnostics, exit2, exact raw differences reviewed. Subsequent B4 application and B5 publication acceptance cover ordinary Table/File Box Plot. See artifacts/reviewed/chart-box/verification.md."]
 
 [[capabilities]]
 id = "box-plot-application-journeys"
@@ -28,7 +28,7 @@ requirements = ["analyst-workspace/box-plot-milestone.md:B4"]
 planned_checks = ["retained-fmp-raw-usd-summaries", "partial-fiscal-years", "controls-themes-navigation", "refresh-reopen-export", "empty-recovery"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/box-plot.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/box-plot-fixture.ts"]
 status = "passed"
-evidence = ["Repaired candidate: two retained-FMP/synthetic browser scenarios passed, exit0, on packaged image4b7c12f0 from da5979c (CI39739701922), without overlay. Independent review and scope: artifacts/reviewed/chart-box/verification.md. Owner approved original appearance/default miniature on 2026-10-22; B4 is accepted and B5 publication remains open."]
+evidence = ["Repaired candidate: two retained-FMP/synthetic browser scenarios passed, exit0, on packaged image 4b7c12f0 from da5979c (CI 39739701922), without overlay. Owner approved original appearance/default miniature on 2026-10-22. B4 accepted; B5 published alpha-39757904293-1 after both CI jobs passed and six anonymous pulls verified both public service identities. Browser-candidate and CI-built bytes are distinct. See artifacts/reviewed/chart-box/verification.md."]
 
 [[capabilities]]
 id = "box-plot-inactive-axis-navigation"
@@ -98,9 +98,9 @@ evidence = ["Inactive B1 accepted at Workspace 85ca9ea: 31 focused tests, scoped
 id = "box-plot-chart-port"
 requirements = ["analyst-workspace/box-plot-milestone.md:Acceptance contract"]
 planned_checks = ["original-five-number-summary", "category-field-groups", "controls-and-saved-paths", "captured-fmp-values", "visual-comparison", "refresh-reopen-export", "release-public-pulls"]
-test_paths = []
-status = "planned"
-evidence = ["B0/B1/B2 inactive numerical and renderer work is independently accepted; application integration and acceptance remain open. See .kiro/specs/analyst-workspace/box-plot-milestone.md."]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxSummary.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlot.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/box-plot.spec.ts", "tests/delivery/test_alpha_cli.py"]
+status = "passed"
+evidence = ["Independent source and packaged review accepted ordinary Table/File Box Plot at Workspace da5979cb020af7737f9a76544ae527d8f2a30831 and local image sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025. Two retained-FMP/synthetic browser scenarios and owner appearance/default miniature approval complete B4. B5 published alpha-39757904293-1; CI 39757904293 passed both jobs, and six anonymous digest/tag/latest pulls match both public manifest identities. Published bytes are distinct from the browser candidate; other callers/families remain open. See artifacts/reviewed/chart-box/verification.md and artifacts/reviewed/chart-box/release-manifest.json."]
 
 [[capabilities]]
 id = "chart-tooltip-replacement-lifecycle"

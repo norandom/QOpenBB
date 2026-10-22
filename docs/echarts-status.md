@@ -6,6 +6,8 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Done
 
+- [x] Render Box Plot in the ordinary Table/File journey with retained-FMP raw-USD summaries, controls, navigation, lifecycle, save/reopen and PNG export. Owner appearance acceptance and B5 publication are complete; see the [published milestone](../.kiro/specs/analyst-workspace/box-plot-milestone.md).
+
 - [x] Render Pie and Donut, including saved `doughnut`, in the ordinary Table/File journey with captured-FMP values, controls, native legend paging, save/reopen and export. See the [published milestone](../.kiro/specs/analyst-workspace/pie-milestone.md).
 
 - [x] Render Histogram in the ordinary Table/File journey with captured-FMP bin/count acceptance, editor controls, navigation, save/reopen and export. See the [published milestone](../.kiro/specs/analyst-workspace/histogram-milestone.md).
@@ -26,14 +28,6 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete Box Plot through the [active milestone](../.kiro/specs/analyst-workspace/box-plot-milestone.md). Its inactive numerical helper, renderer, category capture and aggregate setup are independently accepted; axes/navigation and the existing-host adapter join are also accepted; editor/session activation is independently source-accepted; two identified-image browser scenarios pass; owner appearance and B4 acceptance are complete; B5 publication remains open.
-- [x] Independently accept inactive Box axes/navigation and the existing-host adapter join (B3c).
-- [x] Connect and source-review the Box editor/session and saved settings (B3d).
-- [x] Run both Box browser journeys against the identified candidate image.
-- [x] Source-review Box appearance refinements; see [verification](../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).
-- [x] Repair Box collision and duplicate layout handling at source level; [repaired-image browser checks pass; owner visual acceptance is recorded](../artifacts/reviewed/chart-box/verification.md#b4-runtime-layout-repair-source-accepted-new-image-required).
-- [x] Complete the Box original/replacement and default miniature comparisons; owner approved on 2026-10-22.
-- [x] Independently accept inactive Box capture and original aggregate setup (B3b).
 - [ ] Complete other distribution and radial families.
 - [ ] Complete Range Bar/Area through the [parallel foundation plan](../.kiro/specs/analyst-workspace/range-chart-plan.md). The inactive min/max helper and Range Bar/Area cores are accepted; application acceptance remains open.
 - [x] Independently accept the inactive Range Area renderer core (R3).
@@ -102,6 +96,19 @@ See [verification](../artifacts/reviewed/chart-histogram/verification.md). The u
 - [x] Publish and verify the completed milestone.
 
 P4 application acceptance passed on the identified pie/donut candidate: captured-FMP values, synthetic edge cases, controls, paging, refresh, save/reopen, export and five prior-family journeys. The owner accepted the disclosed default appearance differences. P5 published `alpha-39584871538-1`; both CI-built public image identities and six anonymous pulls are verified separately from local browser acceptance. See [verification](../artifacts/reviewed/chart-pie/verification.md).
+
+## Box Plot progress
+
+- [x] Independently accept inactive Box axes/navigation and the existing-host adapter join (B3c).
+- [x] Connect and source-review the Box editor/session and saved settings (B3d).
+- [x] Run both Box browser journeys against the identified candidate image.
+- [x] Source-review Box appearance refinements; see [verification](../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).
+- [x] Repair Box collision and duplicate layout handling at source level; [repaired-image browser checks pass; owner visual acceptance is recorded](../artifacts/reviewed/chart-box/verification.md#b4-runtime-layout-repair-source-accepted-new-image-required).
+- [x] Complete the Box original/replacement and default miniature comparisons; owner approved on 2026-10-22.
+- [x] Independently accept inactive Box capture and original aggregate setup (B3b).
+- [x] Publish `alpha-39757904293-1` and verify both public service identities and six anonymous pulls.
+
+B4 accepted Workspace `da5979c` and local image `4b7c12f0` after two browser scenarios and owner appearance approval on 2026-10-22. B5 publication passed CI run `39757904293` and independent anonymous-pull verification; published bytes and browser-candidate bytes are recorded separately. See [verification](../artifacts/reviewed/chart-box/verification.md).
 
 ## Evidence and ownership
 

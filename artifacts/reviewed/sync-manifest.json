@@ -31957,10 +31957,26 @@
     },
     {
       "sourcepath": "artifacts/chart-box/verification.md",
-      "sourceSHA256": "d48127d4870c63879621954851c8c5ee7b291434cb55f5211dec624071ca50e8",
+      "sourceSHA256": "c3568cc13bb83388ad771554595486d0d9ae11a8a3b24c04e4af2e512a8b8f6d",
       "publishedpath": "artifacts/reviewed/chart-box/verification.md",
-      "publishedSHA256": "d48127d4870c63879621954851c8c5ee7b291434cb55f5211dec624071ca50e8",
-      "bytes": 26066,
+      "publishedSHA256": "c3568cc13bb83388ad771554595486d0d9ae11a8a3b24c04e4af2e512a8b8f6d",
+      "bytes": 27448,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-box/release-39757904293/manifest.json",
+      "sourceSHA256": "368bd86154dffc04b35438ce4e5e5bf0d00efddd06478dc18bc4c0c3365dacc0",
+      "publishedpath": "artifacts/reviewed/chart-box/release-manifest.json",
+      "publishedSHA256": "368bd86154dffc04b35438ce4e5e5bf0d00efddd06478dc18bc4c0c3365dacc0",
+      "bytes": 6582,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-box/release-39757904293/anonymous-pulls.json",
+      "sourceSHA256": "2f13d464a762155cea5c7d9aa8bec23bf4e1ef55f590e7c1ad848bb67db79763",
+      "publishedpath": "artifacts/reviewed/chart-box/anonymous-pulls.json",
+      "publishedSHA256": "2f13d464a762155cea5c7d9aa8bec23bf4e1ef55f590e7c1ad848bb67db79763",
+      "bytes": 4263,
       "transform": "exact-byte-copy"
     }
   ],

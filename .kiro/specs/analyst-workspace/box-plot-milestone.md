@@ -23,7 +23,7 @@ Production paths are relative to `vendor/workspace/terminalpro/src/components/Ge
 - [x] B3c. Independently accept inactive [axes/navigation and the existing-host adapter join](box-plot-axis-navigation-design.md); original/replacement visual decisions remain at B4.
 - [x] B3. Connect the existing session, gallery and editor to the mapper. Preserve all reachable controls and saved settings. Define exact file ownership and any necessary cohesive extraction before dispatch; no implicit size exceptions.
 - [x] B4. Verify an identified image with real FMP observations and focused synthetic edge cases, original visual comparison, controls, lifecycle and export. Reuse the existing isolated browser harness and run affected prior-family checks at the join.
-- [ ] B5. Complete independent feature review, update README/docs and breadth, publish reviewed FMP chart samples, commit/push the task work and dispatch one image build. Close only after tagged release and both public image identities/pulls are verified.
+- [x] B5. Complete independent feature review, update README/docs and breadth, publish reviewed FMP chart samples, commit/push the task work and dispatch one image build. Close only after tagged release and both public image identities/pulls are verified.
 
 ## Fan-out and boundaries
 
@@ -33,7 +33,7 @@ Standalone/AI callers, other specialty/radial families, provider expansion and a
 
 ## Actual FMP chart samples: browser and appearance accepted
 
-Two packaged-candidate browser scenarios pass; see [verified scope and test corrections](../../../artifacts/reviewed/chart-box/verification.md#b4-packaged-candidate-browser-progress). B4 is accepted after owner approval of the original/replacement and miniature comparisons. B5 publication remains open.
+Two packaged-candidate browser scenarios pass; see [verified scope and test corrections](../../../artifacts/reviewed/chart-box/verification.md#b4-packaged-candidate-browser-progress). B4 is accepted after owner approval of the original/replacement and miniature comparisons. B5 is complete: [alpha-39757904293-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39757904293-1) is published, both CI jobs passed and six anonymous digest/tag/`latest` pulls verified both public service identities. See [manifest](../../../artifacts/reviewed/chart-box/release-manifest.json) and [pull evidence](../../../artifacts/reviewed/chart-box/anonymous-pulls.json). The CI-built images are distinct from the accepted browser candidate; publication does not assert browser execution against those bytes.
 
 Retained FMP AAPL quarterly income statements, 40 observations across 11 fiscal years, 2016-09-24 through 2026-06-27. Revenue and net income use original reported USD; display labels may abbreviate billions. Partial fiscal years are labelled. Current candidate source `da5979c`, image `4b7c12f0`; both browser scenarios pass. Owner visual acceptance was granted on 2026-10-22.
 

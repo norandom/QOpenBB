@@ -147,3 +147,16 @@ These samples use the retained 40 AAPL quarterly income observations across 11 f
 ## B4 accepted: owner visual approval
 
 On 2026-10-22 the owner approved the qView original/replacement comparisons for candidate `4b7c12f0` at Workspace `da5979c`. The disclosed small spacing, box styling and miniature differences are accepted. The independently reviewed behavioral checks and this appearance decision close B4 for ordinary Table/File Box Plot. B5 publication and anonymous image verification remain open; this decision does not claim parity for other callers or chart families.
+
+## B5 publication verified
+
+[alpha-39757904293-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39757904293-1) is published as a non-draft prerelease. Both candidate and publication jobs passed in CI `39757904293`. Its Git tag resolves to root `29d3df94f221952a11f9f815f9aa59e111406e30`; source pins are Workspace `da5979c` and data API `49cc413`.
+
+Both Linux/amd64 images passed anonymous pulls using a fresh temporary empty Docker configuration: immutable digest, release tag and `latest` for each service, six successful pulls total. Inspected manifest/config identities and source labels match the release manifest. This verifies publication separately from the accepted local browser candidate; the published CI image bytes were not used for the preceding browser run. Assembled Compose and owner-server acceptance remain separate.
+
+| Service | Published immutable reference |
+| --- | --- |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:fd5ebf74f1d945c7add6afe82e142a2efe381bcca6208b3f53384d1e16b12928` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:72d4c59a46b65c966f26085f05e53749c62ed5257268159d8039a0d954c9a551` |
+
+[Release manifest](release-manifest.json) and [anonymous pull evidence](anonymous-pulls.json) retain the exact identities. Box Plot is complete for the ordinary Table/File journey; remaining families and callers are unchanged.
