@@ -93,7 +93,7 @@ Current: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
 - [x] Accept numeric/time category geometry in both inactive Range renderer cores.
 - [x] Preserve Range date/type provenance through Grid capture and statistical setup.
 - [x] Compose Range charts with calendar/numeric axes, saved styling and measured layout.
-- [x] Connect Range sessions, retained editor controls, navigation and pointer interactions.
+- [x] Connect Range sessions, retained editor controls, navigation and pointer interactions, including original zoom defaults.
 - [ ] Verify both Range families in the packaged application with real FMP data.
 
 ## Delivery plan

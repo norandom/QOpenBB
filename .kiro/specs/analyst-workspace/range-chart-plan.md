@@ -157,3 +157,5 @@ R4f accepted at Workspace `9f5a9c2d22d99fcd72d7721705c6e2fe0a6dfd43`; see the [a
 ## R4g live integration
 
 Workspace `1a692c8fe1e78825aded85d4fa0b905eef77eddc` connects both Range families to the existing editor and renderer host. The [live contract](range-live-design.md) and [reviewed evidence](../../../artifacts/reviewed/chart-range/verification.md#r4g-live-range-integration-accepted) define source acceptance. The next gate is an identified packaged image with retained-FMP financial checks, original-runtime comparison, save/reopen/export and selected screenshots. The published alpha is unchanged.
+
+R4h follow-up `6188a1f651f2c29f3bfa5ea16f9b91749856a465` restores integrated Range zoom defaults below explicit overrides; [source verification](../../../artifacts/reviewed/chart-range/verification.md#r4h-integrated-zoom-defaults). Browser/FMP and publication gates remain unchecked.

@@ -36,7 +36,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Independently accept numeric/time category geometry in both inactive Range renderer cores (R4d).
 - [x] Preserve Range category type and native-Date evidence through capture and setup (R4e).
 - [x] Compose Range Bar/Area with continuous axes, saved styling, measured chrome and reverse geometry (R4f).
-- [x] Connect live Range sessions, retained controls, navigation and pointer lifecycle (R4g); [source evidence](../artifacts/reviewed/chart-range/verification.md#r4g-live-range-integration-accepted). Packaged real-FMP/browser acceptance remains open.
+- [x] Connect live Range sessions, retained controls, navigation and pointer lifecycle (R4g); [source evidence](../artifacts/reviewed/chart-range/verification.md#r4g-live-range-integration-accepted). Integrated Range zoom defaults are restored (R4h). Packaged real-FMP/browser acceptance remains open.
 - [x] Independently accept the inactive Range Area renderer core (R3).
 - [x] Independently accept the inactive Range Bar renderer core (R2).
 - [ ] Complete hierarchy, heatmap, waterfall and other specialty families.

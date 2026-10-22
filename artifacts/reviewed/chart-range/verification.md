@@ -1,6 +1,6 @@
 # Range chart verification
 
-Range Bar/Area source integration is independently accepted through R4g below. Packaged-image behavior, original-runtime comparison, real-FMP application acceptance and publication remain open. The published Box alpha is unchanged. Earlier sections retain their historical acceptance boundaries.
+Range Bar/Area source integration is independently accepted through R4h below. Packaged-image behavior, original-runtime comparison, real-FMP application acceptance and publication remain open. The published Box alpha is unchanged. Earlier sections retain their historical acceptance boundaries.
 
 Retained Grid 34.1.1 RangeChartProxy emits one series per selected measure and calculates minimum/maximum observations within each category. It does not pair adjacent fields into low/high coordinates. The [reviewed contract](../../../.kiro/specs/analyst-workspace/range-chart-plan.md) preserves that meaning within the existing finite-number/null capture domain. Original infinities and argument-spread limits are outside this bounded helper.
 
@@ -91,3 +91,9 @@ Independent review approved the source after five corrections: drag suppression 
 No-fix formatting passes all 71 changed source/test paths. Explicit inventory-backed complexity passes all 54 production paths with maxima 392 physical lines, 231 logical units and 43 units/function; zero errors or violations. Canonical TypeScript retains the same 3,432 inherited diagnostic headers after line/column normalization, compiler exit 2. The comparison is recorded in `artifacts/chart-range/r4g-typing-comparison.json`; this is zero new diagnostics, not a clean typecheck.
 
 Local commands and outputs: `r4g-join.sh`, `r4g-lifecycle.sh`, `r4g-b-green-final.log`, `r4g-biome.log`, `r4g-complexity.json`, and independent `r4g-review.md`, under `artifacts/chart-range/`. The [live contract](../../../.kiro/specs/analyst-workspace/range-live-design.md) owns this boundary. Actual packaged-image behavior, retained-runtime navigation comparison, FMP financial/appearance checks, browser save/reopen/export and samples remain open. No Range image publication or visual acceptance is claimed; the published Box alpha remains unchanged.
+
+## R4h integrated zoom defaults
+
+Workspace `6188a1f651f2c29f3bfa5ea16f9b91749856a465` restores the original Workspace zoom defaults at the Range caller boundary: enabled wheel/pan, pointer anchors, four configured visible items and dependent autoscaling. Defaults have lower precedence than explicit theme, generated and effective saved-family settings. Ordinary callers and standalone engine defaults remain unchanged.
+
+Independent review accepted the three-file repair. Eight focused caller tests pass, including actual navigation carriers with both navigator controls hidden and explicit override checks. Reconstructed baseline evidence shows the two new cases fail against committed R4g; it was captured after implementation because WSL was temporarily unavailable, and is not historical TDD evidence. Final formatting and two-file complexity checks pass. Canonical typing retains 3,432 inherited diagnostic headers with zero normalized delta, compiler exit 2. Review and logs remain under `artifacts/chart-range/r4h-*`. Packaged browser/FMP and original-runtime acceptance remain open.
