@@ -78,6 +78,7 @@ Current: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
 - [x] Connect and independently source-review the existing editor and saved-state flow.
 - [x] Pass retained-FMP and edge-case browser journeys against the packaged candidate.
 - [x] Source-review the Box fill, legend, category-label and miniature refinements; fresh image comparison pending.
+- [x] Source-review the real-sample collision and wheel-zoom layout repair; new candidate verification pending.
 - [ ] Accept original/replacement appearance and close the Box milestone.
 - [ ] Publish and verify the completed milestone.
 

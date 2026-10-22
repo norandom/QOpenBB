@@ -49,3 +49,17 @@ All production paths below are under `terminalpro/src/components/General/Table/C
 - [x] Sync reviewed samples, README/docs checkboxes and breadth before per-task commits/pushes. Dispatch publication only after the completed feature gate.
 
 Review constraints: resolve leaf options with existing generic/positional layer precedence and runtime axis options. Category wrapping/thinning changes display labels only; preserve raw group slots, category domain, navigation membership and summaries. Band width uses the same source defaults and current navigation window as box geometry. Raw miniature formatting also applies to singleton constant transport.
+
+## Fresh-image repair: category collision and final plot bounds
+
+Candidate `1458dbd`, built in CI `39732295616`, passed the synthetic browser scenario but stopped in the retained-FMP wheel-zoom check. Its default vertical capture still ends at 150B and shows three unrotated fiscal labels; the original ends at 200B and retains alternating rotated labels. B4 remains open.
+
+The original checks rotated label boxes in two dimensions. The replacement checks projected one-dimensional intervals, which rejects the final long label in the actual 11-group sample. The earlier 12-group test removes that label when thinning and misses the defect. Original caller-generated category options also specify `minSpacing: 5`; preserve this at the Box caller layer, with explicit generated, positioned, saved-family and runtime values retaining their precedence.
+
+Wheel zoom did change the selected range to about 90.9%. ECharts then shrank the main plot around labels despite `containLabel: false`, reducing the actual width below the planner's width. The miniature already disables this second layout pass. Establish the main-grid discrepancy with actual engine bounds before setting Box main `outerBoundsMode: none`.
+
+- [x] Independently review the bounded repair before production edits. Astra confirmed the two-dimensional collision contract, caller precedence and ECharts outer-bound behavior on 2026-10-22.
+- [x] Collision lane: own `boxPlotCategoryPlan.ts` and its existing unit test; implement the original two-dimensional collision contract and test the exact 11-group boundary case. Preserve raw slots, wrapping and navigation membership.
+- [x] Bounds lane: own `boxPlotAxisLayout.ts` and `boxPlotIntegration.render.test.ts`; prove the actual/planned grid discrepancy at 619 by 593 with a modest wheel-sized zoom, then enforce one layout owner and verify plotted width and edge behavior.
+- [x] Controller: own the Box appearance caller-default merge and `boxPlotProductionJoin.test.ts`; preserve explicit zero and positional/runtime overrides. Shared caller generation, numerical ticks and statistical summaries remain unchanged.
+- [ ] Retain the 400/300/50 production caps, independent review and focused integration/typing checks. Reuse the browser scenario unchanged against a new identified image; source acceptance alone cannot close B4.

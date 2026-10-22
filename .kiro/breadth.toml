@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "box-plot-runtime-layout-repair"
+requirements = ["analyst-workspace/box-plot-visual-refinement.md:Fresh-image repair"]
+planned_checks = ["eleven-group-collision", "empty-formatted-labels", "caller-gap-precedence", "actual-main-grid-and-zoom", "main-label-miniature-separation"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotProductionJoin.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotCategoryPlan.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/boxPlotIntegration.render.test.ts"]
+status = "passed"
+evidence = ["Source-only acceptance at da5979cb020af7737f9a76544ae527d8f2a30831: 38 focused checks pass; caps and formatting pass. New-image FMP/browser acceptance remains open. See artifacts/reviewed/chart-box/verification.md."]
+
+[[capabilities]]
 id = "box-plot-visual-refinement-source"
 requirements = ["analyst-workspace/box-plot-visual-refinement.md:Completion checks"]
 planned_checks = ["original-fill-legend", "category-wrapping-collision-budget", "numeric-label-policy", "main-miniature-separation", "raw-miniature-ticks"]

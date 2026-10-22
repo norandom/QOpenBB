@@ -117,3 +117,13 @@ Independent source review: approved, with the numeric endpoint and finite label-
 The inventory now recognizes the exact temporary `run_this.sh` owner-command handoff as a disposable artifact; reusable logic remains in maintained helpers. No broad shell-script exclusion was added.
 
 This is source acceptance only. The screenshots above still show the previous candidate and its known discrepancies. A new Dagger-built candidate, retained-FMP browser checks and original/replacement review remain required. B4/B5 and publication stay open.
+
+## B4 runtime layout repair: source accepted, new image required
+
+Workspace `da5979cb020af7737f9a76544ae527d8f2a30831` corrects the Box category collision calculation and restores the original caller's 5px category gap. Explicit generated, positioned, saved and runtime overrides still win. Empty formatted labels do not cause collisions. The Box main grid now retains its planned bounds instead of allowing ECharts to shrink it a second time. Statistical summaries and financial values are unchanged.
+
+The preceding candidate, CI `39732295616`, image `sha256:d5fdfc32a1994f76a7cf7debcf35204143d968ca3257d52d2d274703edd681f5`, passed the synthetic browser scenario but failed the retained-FMP wheel-zoom assertion. Zoom changed the selected range, but the extra layout pass prevented the plotted bodies from growing. The actual 11-year sample also exposed a category-label collision missed by the previous 12-group fixture. That image is not accepted for B4.
+
+Independent source review approved this bounded repair. Focused checks pass: 16 caller-precedence tests, 17 category-plan tests and five actual-engine integration tests. Regressions establish failures before the repairs and verify the resulting label/layout behavior; the engine geometry fixture uses synthetic USD values with the retained sample's fiscal boundaries, not live FMP observations. Scoped Biome checks all six changed files. Final combined size checks pass with no errors or violations. Canonical TypeScript baseline/candidate outputs are byte-identical (2,711 inherited diagnostics, exit 2); the final empty-label guard and import sorting do not alter the typing surface. Local evidence: `runtime-caller-check.md`, `runtime-collision-empty-*.log`, `runtime-bounds-green.log`, `runtime-repair-review.md` and `runtime-repair-complexity.json` under `artifacts/chart-box/`.
+
+A new identified image must pass the unchanged retained-FMP browser journey and original/replacement comparison. B4 appearance acceptance, B5 and publication remain open; the published alpha is unchanged.
