@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "manual-prerelease-image-builds"
+requirements = ["openbb-self-service/requirements.md:7", "docs/prototype-delivery.md:Build and publication"]
+planned_checks = ["release-event-selection", "tagged-source-checkout", "existing-release-assets", "hosted-manual-publication"]
+test_paths = ["tests/delivery/test_prototype_workflow.py", "tests/delivery/test_alpha_cli.py"]
+status = "unverified"
+evidence = ["Source independently reviewed; portable delivery gate passed 145 tests. Hosted manual prerelease publication remains pending the next accepted milestone. See artifacts/reviewed/ci-release-scanning/verification.md."]
+
+[[capabilities]]
 id = "range-live-integration"
 requirements = ["analyst-workspace/range-live-design.md:Joined acceptance and delivery"]
 planned_checks = ["retained-editor", "category-semantics", "save-fresh-owner", "independent-navigation", "pointer-lifecycle", "theme-paint", "failure-cleanup"]

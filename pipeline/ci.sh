@@ -9,7 +9,7 @@ case "${1:-}" in
       tests/delivery/test_image_builds.py tests/delivery/test_workspace_image.py \
       tests/delivery/test_data_image.py tests/delivery/test_prototype_compose.py \
       tests/delivery/test_publication.py tests/delivery/test_build_cli.py \
-      tests/delivery/test_quality_cli.py tests/delivery/test_alpha_cli.py -n0
+      tests/delivery/test_quality_cli.py tests/delivery/test_alpha_cli.py tests/delivery/test_prototype_workflow.py -n0
     ;;
   build)
     shift

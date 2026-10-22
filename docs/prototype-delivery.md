@@ -26,7 +26,16 @@ pipeline/.venv/bin/python -m qopenbb_ci.alpha_cli \
 
 It publishes unique alpha tags for both services, verifies their remote identities and shared source revisions, then updates `latest`. It writes a completed manifest only when both aliases match. Updating two registry tags is not atomic: a failed second update can leave mixed aliases. Use the pair of exact references in a completed release manifest to reproduce an alpha.
 
-GitHub Actions runs checks for PRs and ordinary main pushes. After a reviewed feature milestone passes its real-data acceptance, dispatch `gh workflow run prototype.yml --ref main -f build_images=true` once for the set of commits. Manual runs can build images; publication additionally requires main and receives package/release write permissions. It downloads the built archives, publishes the images and creates a tagged prerelease. Package visibility determines whether users need registry pull credentials. See [installation](install.md).
+GitHub Actions runs checks for PRs and ordinary main pushes. After a reviewed feature milestone passes its real-data acceptance, dispatch `gh workflow run prototype.yml --ref main -f build_images=true` once for the set of commits. The main-branch dispatch builds both images, publishes them and creates a tagged prerelease. See [installation](install.md).
+
+Publishing a prerelease manually on GitHub also builds both images through Dagger from that release's tagged QOpenBB commit and its pinned application sources. Use a commit containing the updated workflow. Successful publication attaches `manifest.json`, `compose.yaml` and `.env.sample` to the existing release, preserving its notes. The immutable image version remains `alpha-RUN_ID-ATTEMPT`; the manifest additionally identifies the GitHub release tag and QOpenBB commit. Both verified images receive `latest` aliases. Stable releases and ordinary pushes do not publish images.
+
+Publication jobs share a concurrency group to avoid simultaneous `latest` promotion. GitHub concurrency is not an unlimited release queue; wait for one publication to finish before submitting another. A failed build does not establish available release images. Workflow-created prereleases already follow a successful build and do not recursively trigger another workflow through `GITHUB_TOKEN`.
+
+- [x] Verify prerelease event selection, tagged checkout and existing-release asset upload with focused tests and independent review.
+- [ ] Verify the first manually published prerelease through the hosted build/publication path.
+
+CodeQL runs separately from image delivery; see [security scanning](security-scanning.md) for language coverage and scan status.
 
 ## Acceptance boundary
 
