@@ -23,7 +23,7 @@
     "name": "box-plot-chart-port",
     "contract": "box-plot-milestone.md",
     "authorization": "Owner approved Box Plot as the next autonomous chart milestone on 2026-10-21.",
-    "phase": "runtime-layout-repair-image-pending",
+    "phase": "runtime-browser-passed-visual-pending",
     "design": "box-plot-design.md",
     "completed_tasks": [
       "B0",
@@ -70,7 +70,10 @@
       "runtime_repair": {
         "source": "da5979cb020af7737f9a76544ae527d8f2a30831",
         "review": "approved-source-only",
-        "image_comparison": "pending"
+        "image_comparison": "owner-decision-pending",
+        "image": "sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025",
+        "ci_run": 39739701922,
+        "browser": "two-scenarios-passed"
       }
     }
   },

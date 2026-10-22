@@ -31,7 +31,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Connect and source-review the Box editor/session and saved settings (B3d).
 - [x] Run both Box browser journeys against the identified candidate image.
 - [x] Source-review Box appearance refinements; see [verification](../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).
-- [x] Repair Box collision and duplicate layout handling at source level; [new-image verification remains open](../artifacts/reviewed/chart-box/verification.md#b4-runtime-layout-repair-source-accepted-new-image-required).
+- [x] Repair Box collision and duplicate layout handling at source level; [repaired-image browser checks pass; visual acceptance remains open](../artifacts/reviewed/chart-box/verification.md#b4-runtime-layout-repair-source-accepted-new-image-required).
 - [ ] Complete the Box original/replacement and default miniature comparisons.
 - [x] Independently accept inactive Box capture and original aggregate setup (B3b).
 - [ ] Complete other distribution and radial families.

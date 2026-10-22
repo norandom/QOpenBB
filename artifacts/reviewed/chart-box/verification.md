@@ -127,3 +127,19 @@ The preceding candidate, CI `39732295616`, image `sha256:d5fdfc32a1994f76a7cf7de
 Independent source review approved this bounded repair. Focused checks pass: 16 caller-precedence tests, 17 category-plan tests and five actual-engine integration tests. Regressions establish failures before the repairs and verify the resulting label/layout behavior; the engine geometry fixture uses synthetic USD values with the retained sample's fiscal boundaries, not live FMP observations. Scoped Biome checks all six changed files. Final combined size checks pass with no errors or violations. Canonical TypeScript baseline/candidate outputs are byte-identical (2,711 inherited diagnostics, exit 2); the final empty-label guard and import sorting do not alter the typing surface. Local evidence: `runtime-caller-check.md`, `runtime-collision-empty-*.log`, `runtime-bounds-green.log`, `runtime-repair-review.md` and `runtime-repair-complexity.json` under `artifacts/chart-box/`.
 
 A new identified image must pass the unchanged retained-FMP browser journey and original/replacement comparison. B4 appearance acceptance, B5 and publication remain open; the published alpha is unchanged.
+
+## B4 repaired image: browser checks pass, visual decision pending
+
+CI [39739701922](https://github.com/norandom/QOpenBB/actions/runs/39739701922) built Workspace `da5979cb020af7737f9a76544ae527d8f2a30831`. The downloaded archive checksum, six reviewed source hashes, source labels and loaded image identity were verified. Candidate `sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025` runs packaged-only on the owned loopback port 55553, without a source overlay. Publication was skipped.
+
+The unchanged `box-plot.spec.ts` passed both scenarios in 108.8 seconds with one worker, no retries, skips or failures (exit 0). The retained-FMP journey covers summaries, raw USD, controls, navigation, themes, refresh, save/reopen and PNG export. The synthetic scenario covers missing values, signed/repeated and singleton observations, and empty-selection recovery. Independent evidence review accepts the behavioral scope only. Local evidence: `artifacts/chart-box/browser-runtime-39739701922-run1/` and `runtime-browser-review.md`.
+
+The vertical comparison now shows the original 0/100/200B scale and alternating rotated fiscal labels. Main/miniature spacing is improved. Small spacing, box styling and miniature differences remain; the owner visual decision is pending in qView. B4/B5 are not closed and no new alpha is published.
+
+These samples use the retained 40 AAPL quarterly income observations across 11 fiscal years, 2016-09-24 through 2026-06-27; revenue/net income are reported USD and partial years are labelled. They are historical provider observations, not a fresh API retrieval. The original vertical view is 619 by 284 at DPR 1, matching this candidate; original horizontal views are 619 by 592 versus candidate 619 by 593.
+
+![Repaired candidate vertical Box Plot](runtime-box-default-vertical-light.png)
+
+![Repaired candidate horizontal Box Plot](runtime-box-horizontal-long-labels-light.png)
+
+![Repaired candidate horizontal miniature](runtime-box-default-horizontal-miniature-light.png)

@@ -35,12 +35,12 @@ Standalone/AI callers, other specialty/radial families, provider expansion and a
 
 Two packaged-candidate browser scenarios pass; see [verified scope and test corrections](../../../artifacts/reviewed/chart-box/verification.md#b4-packaged-candidate-browser-progress). B4 remains open for original appearance and default miniature comparisons. No new release is published.
 
-Retained FMP AAPL quarterly income statements, 40 observations across 11 fiscal years, 2016-09-24 through 2026-06-27. Revenue and net income use original reported USD; display labels may abbreviate billions. Partial fiscal years are labelled. Candidate source `ba98f00`, image `05c1c6fc`; these images do not establish original/replacement parity.
+Retained FMP AAPL quarterly income statements, 40 observations across 11 fiscal years, 2016-09-24 through 2026-06-27. Revenue and net income use original reported USD; display labels may abbreviate billions. Partial fiscal years are labelled. Current candidate source `da5979c`, image `4b7c12f0`; both browser scenarios pass. Owner visual acceptance remains pending.
 
-![Candidate vertical Box Plot](../../../artifacts/reviewed/chart-box/box-default-vertical-light.png)
+![Candidate vertical Box Plot](../../../artifacts/reviewed/chart-box/runtime-box-default-vertical-light.png)
 
-![Candidate horizontal Box Plot](../../../artifacts/reviewed/chart-box/box-horizontal-long-labels-light.png)
+![Candidate horizontal Box Plot](../../../artifacts/reviewed/chart-box/runtime-box-horizontal-long-labels-light.png)
 
-Original comparison is now captured. Fill/legend, vertical scale/category layout and miniature spacing need refinement; see the [documented miniature comparison](../../../artifacts/reviewed/chart-box/verification.md#b4-original-capture-and-default-miniature-comparison).
+Original comparison is captured and the repaired candidate has passed its browser journey. See the [current comparison](../../../artifacts/reviewed/chart-box/verification.md#b4-repaired-image-browser-checks-pass-visual-decision-pending); owner appearance acceptance remains pending.
 
-The [bounded visual refinement](box-plot-visual-refinement.md) is source-accepted. Fresh-image comparison remains open; see [verification](../../../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).
+The [bounded visual refinement](box-plot-visual-refinement.md) is source-accepted. The repaired image passes behavioral checks; owner visual acceptance remains open; see [verification](../../../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).
