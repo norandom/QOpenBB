@@ -82,11 +82,12 @@ Published: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
 - [x] Accept original/replacement appearance and complete Box application verification.
 - [x] Publish and verify the completed milestone.
 
-Parallel preparation: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
+Current: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
 
 - [x] Independently accept the inactive range-summary helper.
 - [x] Independently accept the inactive Range Bar renderer core.
 - [x] Independently accept the inactive Range Area renderer core.
+- [x] Independently accept Range capture/setup reuse while preserving Box behavior.
 - [ ] Integrate the range renderers, then verify with real FMP data.
 
 ## Delivery plan

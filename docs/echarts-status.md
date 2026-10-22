@@ -29,7 +29,8 @@ Checked items below describe the implemented and reviewed scope, not every featu
 ## Open
 
 - [ ] Complete other distribution and radial families.
-- [ ] Complete Range Bar/Area through the [parallel foundation plan](../.kiro/specs/analyst-workspace/range-chart-plan.md). The inactive min/max helper and Range Bar/Area cores are accepted; application acceptance remains open.
+- [ ] Complete Range Bar/Area through the [active integration plan](../.kiro/specs/analyst-workspace/range-chart-plan.md). The inactive min/max helper and Range Bar/Area cores are accepted; application acceptance remains open.
+- [x] Independently accept inactive Range capture/setup and Box regression checks (R4a).
 - [x] Independently accept the inactive Range Area renderer core (R3).
 - [x] Independently accept the inactive Range Bar renderer core (R2).
 - [ ] Complete hierarchy, heatmap, waterfall and other specialty families.

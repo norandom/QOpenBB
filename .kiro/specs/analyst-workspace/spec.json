@@ -20,103 +20,26 @@
   },
   "ready_for_implementation": false,
   "active_milestone": {
-    "name": "box-plot-chart-port",
-    "contract": "box-plot-milestone.md",
-    "authorization": "Owner approved Box Plot as the next autonomous chart milestone on 2026-10-21.",
-    "phase": "accepted-published",
-    "design": "box-plot-design.md",
+    "name": "range-chart-port",
+    "contract": "range-chart-plan.md",
+    "authorization": "Owner approved proceeding to Range Bar/Area after Box publication; R4a follows the reviewed bounded capture contract.",
     "completed_tasks": [
-      "B0",
-      "B1",
-      "B2",
-      "B3a",
-      "B3b",
-      "B3c",
-      "B3d",
-      "B3",
-      "B4",
-      "B5"
+      "R1",
+      "R2",
+      "R3",
+      "R4a"
     ],
-    "feature_accepted": true,
-    "source_base": "9e0f2eea031048fe882178eb7af6851e4b596124",
-    "scope": "Ordinary Table/File Box Plot; other callers/families remain open.",
-    "design_review": "Independent source and packaged-candidate review accepted Workspace da5979cb020af7737f9a76544ae527d8f2a30831 and local image sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025. Two retained-FMP/synthetic browser scenarios passed; owner appearance and default miniature were approved on 2026-10-22. B5 published alpha-39757904293-1 after both CI jobs passed; both public image identities and six anonymous pulls verified separately. Inherited TypeScript baseline limitations remain documented.",
-    "evidence": "artifacts/reviewed/chart-box/verification.md",
-    "b1_source": "85ca9ea247cc0c97add941b5007661b75941e734",
-    "renderer_design": "box-plot-renderer-design.md",
-    "b2_source": "95188eb3ac92188e62f32b8ba9d4897a6c8cc176",
-    "b3a_source": "bca180284cefb7848b052dd4b8a4160fe0c0d5e8",
-    "integration_design": "box-plot-integration-design.md",
-    "b3b_source": "7912870325e9ee12dadddf8a8fbe1a5fbf1a7ee6",
-    "setup_design": "box-plot-setup-design.md",
-    "b3c_source": "b34984e46ee3fd942a5d80999dde77de1988896a",
-    "axis_navigation_design": "box-plot-axis-navigation-design.md",
-    "b3d_source": "ba98f00b91693f3a9c3ae7ba3dea8b42806dceb4",
-    "editor_design": "box-plot-editor-design.md",
-    "browser_preparation_source": "563a746af51edcf1c07aa03c36bf72b290ca3f48",
-    "browser_verification": {
-      "status": "accepted",
-      "tests": 2,
-      "application_source": "da5979cb020af7737f9a76544ae527d8f2a30831",
-      "image": "sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025",
-      "ci_run": 39739701922,
-      "evidence": "artifacts/reviewed/chart-box/verification.md",
-      "owner_appearance": "approved-2026-10-22",
-      "scope": "ordinary Table/File Box Plot; publication identities verified separately"
-    },
-    "visual_refinement": {
-      "source": "1458dbd7d74ce5e97a8de7e387fd70ff8fc87316",
-      "review": "approved-source-only",
-      "design": "box-plot-visual-refinement.md",
-      "evidence": "artifacts/reviewed/chart-box/verification.md",
-      "image_comparison": "owner-approved-2026-10-22",
-      "runtime_repair": {
-        "source": "da5979cb020af7737f9a76544ae527d8f2a30831",
-        "review": "approved-source-and-packaged-candidate",
-        "image_comparison": "owner-approved-2026-10-22",
-        "image": "sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025",
-        "ci_run": 39739701922,
-        "browser": "two-scenarios-passed"
-      }
-    },
-    "initial_browser_verification": {
-      "status": "passed",
-      "tests": 2,
-      "test_source": "a3b71d2a85e7c80076d7b5fbc1bf0bfc7408f2bd",
-      "application_source": "ba98f00b91693f3a9c3ae7ba3dea8b42806dceb4",
-      "image": "sha256:05c1c6fc854a85c11f2859fbb9bc7d7961f14dbff5f687c2a38037cbbe926bfa",
-      "evidence": "artifacts/reviewed/chart-box/verification.md",
-      "remaining": "Historical first-image result; superseded by repaired-candidate B4 acceptance and B5 publication below."
-    },
-    "release_revision": "da5979cb020af7737f9a76544ae527d8f2a30831",
-    "release": "alpha-39757904293-1",
-    "b5_publication": {
-      "status": "verified",
-      "release": "alpha-39757904293-1",
-      "ci_run": 39757904293,
-      "ci_jobs": "both-passed",
-      "workspace_revision": "da5979cb020af7737f9a76544ae527d8f2a30831",
-      "data_api_revision": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
-      "anonymous_pulls": 6,
-      "images": {
-        "workspace": {
-          "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:fd5ebf74f1d945c7add6afe82e142a2efe381bcca6208b3f53384d1e16b12928",
-          "manifest_digest": "sha256:fd5ebf74f1d945c7add6afe82e142a2efe381bcca6208b3f53384d1e16b12928",
-          "config_digest": "sha256:6970ec794c5f7ec07ce6c64d53be2256821fe0be92aa51e3ea7a526c27758df7"
-        },
-        "data-api": {
-          "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:72d4c59a46b65c966f26085f05e53749c62ed5257268159d8039a0d954c9a551",
-          "manifest_digest": "sha256:72d4c59a46b65c966f26085f05e53749c62ed5257268159d8039a0d954c9a551",
-          "config_digest": "sha256:34e48d310363f048514f5570b43ed8e779782e44758b86494323c0195dfc6b09"
-        }
-      },
-      "manifest": "artifacts/reviewed/chart-box/release-manifest.json",
-      "anonymous_pull_evidence": "artifacts/reviewed/chart-box/anonymous-pulls.json",
-      "release_evidence": "https://github.com/norandom/QOpenBB/releases/tag/alpha-39757904293-1",
-      "verification_exit": 0,
-      "evidence": "artifacts/reviewed/chart-box/verification.md",
-      "scope": "ordinary Table/File Box Plot; accepted local browser candidate and CI publication verified separately"
-    }
+    "source": "0bc5109671c3ca1af43b863a0da3616ab78ae968",
+    "feature_accepted": false,
+    "evidence": "artifacts/reviewed/chart-range/verification.md",
+    "r2_source": "1732847552a762c38e1cb1408d1efebccdeb0e6a",
+    "renderer_design": "range-renderer-design.md",
+    "review": "R2 inactive Range Bar is independently accepted at Workspace `1732847552a762c38e1cb1408d1efebccdeb0e6a`. Seventeen focused tests pass (nine unit and eight actual ECharts SVG); Biome passes 11 files and combined complexity has zero errors/violations. Scoped strict typing retains only inherited typography.ts TS2578; canonical strict baseline/candidate each retain 3,427 identical diagnostics, compiler exit 2. Range Area, application integration, real-FMP image/browser acceptance and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged.",
+    "r3_source": "c6d4329960a5176775a47aba2bfefcac36d0cd8e",
+    "area_renderer_design": "range-area-renderer-design.md",
+    "r3_review": "R3 inactive Range Area is independently accepted at Workspace `c6d4329960a5176775a47aba2bfefcac36d0cd8e`. Sixteen focused tests pass (10 unit and six actual ECharts SVG); Biome passes 10 files and combined complexity reports zero errors/violations. Scoped typing retains only inherited typography.ts TS2578, exit 2. Final canonical baseline/candidate each retain 3,427 identical inherited diagnostics, exit 2, with no added/removed diagnostics. Application integration, real-FMP image/browser acceptance, visual comparison and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged.",
+    "r4a_source": "102b53ad677f057903af50ea315c3c790ee67789",
+    "phase": "application-integration-in-progress"
   },
   "completed_milestones": [
     {
@@ -255,6 +178,105 @@
         "evidence": "artifacts/reviewed/chart-pie/verification.md",
         "scope": "ordinary Table/File Pie and Donut; local P4 image and CI publication verified separately"
       }
+    },
+    {
+      "name": "box-plot-chart-port",
+      "contract": "box-plot-milestone.md",
+      "authorization": "Owner approved Box Plot as the next autonomous chart milestone on 2026-10-21.",
+      "phase": "accepted-published",
+      "design": "box-plot-design.md",
+      "completed_tasks": [
+        "B0",
+        "B1",
+        "B2",
+        "B3a",
+        "B3b",
+        "B3c",
+        "B3d",
+        "B3",
+        "B4",
+        "B5"
+      ],
+      "feature_accepted": true,
+      "source_base": "9e0f2eea031048fe882178eb7af6851e4b596124",
+      "scope": "Ordinary Table/File Box Plot; other callers/families remain open.",
+      "design_review": "Independent source and packaged-candidate review accepted Workspace da5979cb020af7737f9a76544ae527d8f2a30831 and local image sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025. Two retained-FMP/synthetic browser scenarios passed; owner appearance and default miniature were approved on 2026-10-22. B5 published alpha-39757904293-1 after both CI jobs passed; both public image identities and six anonymous pulls verified separately. Inherited TypeScript baseline limitations remain documented.",
+      "evidence": "artifacts/reviewed/chart-box/verification.md",
+      "b1_source": "85ca9ea247cc0c97add941b5007661b75941e734",
+      "renderer_design": "box-plot-renderer-design.md",
+      "b2_source": "95188eb3ac92188e62f32b8ba9d4897a6c8cc176",
+      "b3a_source": "bca180284cefb7848b052dd4b8a4160fe0c0d5e8",
+      "integration_design": "box-plot-integration-design.md",
+      "b3b_source": "7912870325e9ee12dadddf8a8fbe1a5fbf1a7ee6",
+      "setup_design": "box-plot-setup-design.md",
+      "b3c_source": "b34984e46ee3fd942a5d80999dde77de1988896a",
+      "axis_navigation_design": "box-plot-axis-navigation-design.md",
+      "b3d_source": "ba98f00b91693f3a9c3ae7ba3dea8b42806dceb4",
+      "editor_design": "box-plot-editor-design.md",
+      "browser_preparation_source": "563a746af51edcf1c07aa03c36bf72b290ca3f48",
+      "browser_verification": {
+        "status": "accepted",
+        "tests": 2,
+        "application_source": "da5979cb020af7737f9a76544ae527d8f2a30831",
+        "image": "sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025",
+        "ci_run": 39739701922,
+        "evidence": "artifacts/reviewed/chart-box/verification.md",
+        "owner_appearance": "approved-2026-10-22",
+        "scope": "ordinary Table/File Box Plot; publication identities verified separately"
+      },
+      "visual_refinement": {
+        "source": "1458dbd7d74ce5e97a8de7e387fd70ff8fc87316",
+        "review": "approved-source-only",
+        "design": "box-plot-visual-refinement.md",
+        "evidence": "artifacts/reviewed/chart-box/verification.md",
+        "image_comparison": "owner-approved-2026-10-22",
+        "runtime_repair": {
+          "source": "da5979cb020af7737f9a76544ae527d8f2a30831",
+          "review": "approved-source-and-packaged-candidate",
+          "image_comparison": "owner-approved-2026-10-22",
+          "image": "sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025",
+          "ci_run": 39739701922,
+          "browser": "two-scenarios-passed"
+        }
+      },
+      "initial_browser_verification": {
+        "status": "passed",
+        "tests": 2,
+        "test_source": "a3b71d2a85e7c80076d7b5fbc1bf0bfc7408f2bd",
+        "application_source": "ba98f00b91693f3a9c3ae7ba3dea8b42806dceb4",
+        "image": "sha256:05c1c6fc854a85c11f2859fbb9bc7d7961f14dbff5f687c2a38037cbbe926bfa",
+        "evidence": "artifacts/reviewed/chart-box/verification.md",
+        "remaining": "Historical first-image result; superseded by repaired-candidate B4 acceptance and B5 publication below."
+      },
+      "release_revision": "da5979cb020af7737f9a76544ae527d8f2a30831",
+      "release": "alpha-39757904293-1",
+      "b5_publication": {
+        "status": "verified",
+        "release": "alpha-39757904293-1",
+        "ci_run": 39757904293,
+        "ci_jobs": "both-passed",
+        "workspace_revision": "da5979cb020af7737f9a76544ae527d8f2a30831",
+        "data_api_revision": "49cc413e6ab67eaa0444e07485b0f9243c786f7b",
+        "anonymous_pulls": 6,
+        "images": {
+          "workspace": {
+            "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:fd5ebf74f1d945c7add6afe82e142a2efe381bcca6208b3f53384d1e16b12928",
+            "manifest_digest": "sha256:fd5ebf74f1d945c7add6afe82e142a2efe381bcca6208b3f53384d1e16b12928",
+            "config_digest": "sha256:6970ec794c5f7ec07ce6c64d53be2256821fe0be92aa51e3ea7a526c27758df7"
+          },
+          "data-api": {
+            "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:72d4c59a46b65c966f26085f05e53749c62ed5257268159d8039a0d954c9a551",
+            "manifest_digest": "sha256:72d4c59a46b65c966f26085f05e53749c62ed5257268159d8039a0d954c9a551",
+            "config_digest": "sha256:34e48d310363f048514f5570b43ed8e779782e44758b86494323c0195dfc6b09"
+          }
+        },
+        "manifest": "artifacts/reviewed/chart-box/release-manifest.json",
+        "anonymous_pull_evidence": "artifacts/reviewed/chart-box/anonymous-pulls.json",
+        "release_evidence": "https://github.com/norandom/QOpenBB/releases/tag/alpha-39757904293-1",
+        "verification_exit": 0,
+        "evidence": "artifacts/reviewed/chart-box/verification.md",
+        "scope": "ordinary Table/File Box Plot; accepted local browser candidate and CI publication verified separately"
+      }
     }
   ],
   "active_correction": {
@@ -289,7 +311,8 @@
       "completed_tasks": [
         "R1",
         "R2",
-        "R3"
+        "R3",
+        "R4a"
       ],
       "source": "0bc5109671c3ca1af43b863a0da3616ab78ae968",
       "feature_accepted": false,
@@ -299,7 +322,8 @@
       "review": "R2 inactive Range Bar is independently accepted at Workspace `1732847552a762c38e1cb1408d1efebccdeb0e6a`. Seventeen focused tests pass (nine unit and eight actual ECharts SVG); Biome passes 11 files and combined complexity has zero errors/violations. Scoped strict typing retains only inherited typography.ts TS2578; canonical strict baseline/candidate each retain 3,427 identical diagnostics, compiler exit 2. Range Area, application integration, real-FMP image/browser acceptance and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged.",
       "r3_source": "c6d4329960a5176775a47aba2bfefcac36d0cd8e",
       "area_renderer_design": "range-area-renderer-design.md",
-      "r3_review": "R3 inactive Range Area is independently accepted at Workspace `c6d4329960a5176775a47aba2bfefcac36d0cd8e`. Sixteen focused tests pass (10 unit and six actual ECharts SVG); Biome passes 10 files and combined complexity reports zero errors/violations. Scoped typing retains only inherited typography.ts TS2578, exit 2. Final canonical baseline/candidate each retain 3,427 identical inherited diagnostics, exit 2, with no added/removed diagnostics. Application integration, real-FMP image/browser acceptance, visual comparison and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged."
+      "r3_review": "R3 inactive Range Area is independently accepted at Workspace `c6d4329960a5176775a47aba2bfefcac36d0cd8e`. Sixteen focused tests pass (10 unit and six actual ECharts SVG); Biome passes 10 files and combined complexity reports zero errors/violations. Scoped typing retains only inherited typography.ts TS2578, exit 2. Final canonical baseline/candidate each retain 3,427 identical inherited diagnostics, exit 2, with no added/removed diagnostics. Application integration, real-FMP image/browser acceptance, visual comparison and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged.",
+      "r4a_source": "102b53ad677f057903af50ea315c3c790ee67789"
     }
   ]
 }

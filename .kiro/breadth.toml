@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "range-inactive-capture-setup"
+requirements = ["analyst-workspace/range-capture-design.md:Verification and Acceptance"]
+planned_checks = ["neutral-policy", "raw-and-statistical-grouping", "default-date-absent-identity", "aggregation-provenance", "box-regression"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/rangeSetup.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotSetup.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/setupProjection.test.ts"]
+status = "passed"
+evidence = ["R4a source 102b53ad677f057903af50ea315c3c790ee67789: 16 new cases and 168 affected join checks pass; timezone portability fixed and 16 cases rerun with TZ unset. Caps/formatting pass; inherited typing output unchanged. Inactive only. See artifacts/reviewed/chart-range/verification.md."]
+
+[[capabilities]]
 id = "box-plot-runtime-layout-repair"
 requirements = ["analyst-workspace/box-plot-visual-refinement.md:Fresh-image repair"]
 planned_checks = ["eleven-group-collision", "empty-formatted-labels", "caller-gap-precedence", "actual-main-grid-and-zoom", "main-label-miniature-separation"]

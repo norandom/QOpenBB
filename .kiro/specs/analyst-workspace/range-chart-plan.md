@@ -94,7 +94,9 @@ R3 inactive Range Area is independently accepted at Workspace `c6d4329960a517677
 The next bounded task is the independently reviewed [capture/setup contract](range-capture-design.md). Reuse the original shared statistical grouping path through a neutral Range policy; retain accepted Box behavior and keep both Range families inactive.
 
 - [x] Verify source equivalence and independently approve the bounded R4a contract.
-- [ ] Implement the five-file capture/setup extension and focused Range regression.
-- [ ] Pass affected Box/capture/setup checks, whole-file complexity and no-new-diagnostic typing; independently review and commit.
+- [x] Implement the five-file capture/setup extension and focused Range regression.
+- [x] Pass affected Box/capture/setup checks, whole-file complexity and no-new-diagnostic typing; independently review and commit.
 
 Appearance, axes, editor/session activation and real-FMP image acceptance follow this source slice. No new release is required for an inactive capture helper.
+
+R4a source accepted at Workspace `102b53ad677f057903af50ea315c3c790ee67789`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4a-inactive-capturesetup-accepted). Range application activation remains open.
