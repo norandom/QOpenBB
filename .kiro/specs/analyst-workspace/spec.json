@@ -23,7 +23,7 @@
     "name": "box-plot-chart-port",
     "contract": "box-plot-milestone.md",
     "authorization": "Owner approved Box Plot as the next autonomous chart milestone on 2026-10-21.",
-    "phase": "runtime-browser-passed-visual-pending",
+    "phase": "accepted-publication-pending",
     "design": "box-plot-design.md",
     "completed_tasks": [
       "B0",
@@ -33,9 +33,10 @@
       "B3b",
       "B3c",
       "B3d",
-      "B3"
+      "B3",
+      "B4"
     ],
-    "feature_accepted": false,
+    "feature_accepted": true,
     "source_base": "9e0f2eea031048fe882178eb7af6851e4b596124",
     "scope": "Ordinary Table/File Box Plot; other callers/families remain open.",
     "design_review": "B3d editor/session activation is independently source-accepted at Workspace `ba98f00b91693f3a9c3ae7ba3dea8b42806dceb4`. Focused application, gallery and mapper/host checks pass 94 tests; 51 selected prior-family checks pass. Scoped Biome and whole-file complexity pass. Typing retains inherited diagnostics; see the reviewed comparison below. B4 identified-image/FMP/visual acceptance and B5 publication remain open.",
@@ -66,11 +67,11 @@
       "review": "approved-source-only",
       "design": "box-plot-visual-refinement.md",
       "evidence": "artifacts/reviewed/chart-box/verification.md",
-      "image_comparison": "pending",
+      "image_comparison": "owner-approved-2026-10-22",
       "runtime_repair": {
         "source": "da5979cb020af7737f9a76544ae527d8f2a30831",
         "review": "approved-source-only",
-        "image_comparison": "owner-decision-pending",
+        "image_comparison": "owner-approved-2026-10-22",
         "image": "sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025",
         "ci_run": 39739701922,
         "browser": "two-scenarios-passed"

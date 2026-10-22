@@ -26,13 +26,13 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Open
 
-- [ ] Complete Box Plot through the [active milestone](../.kiro/specs/analyst-workspace/box-plot-milestone.md). Its inactive numerical helper, renderer, category capture and aggregate setup are independently accepted; axes/navigation and the existing-host adapter join are also accepted; editor/session activation is independently source-accepted; two identified-image browser scenarios pass; original appearance and milestone acceptance remain open.
+- [ ] Complete Box Plot through the [active milestone](../.kiro/specs/analyst-workspace/box-plot-milestone.md). Its inactive numerical helper, renderer, category capture and aggregate setup are independently accepted; axes/navigation and the existing-host adapter join are also accepted; editor/session activation is independently source-accepted; two identified-image browser scenarios pass; owner appearance and B4 acceptance are complete; B5 publication remains open.
 - [x] Independently accept inactive Box axes/navigation and the existing-host adapter join (B3c).
 - [x] Connect and source-review the Box editor/session and saved settings (B3d).
 - [x] Run both Box browser journeys against the identified candidate image.
 - [x] Source-review Box appearance refinements; see [verification](../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).
-- [x] Repair Box collision and duplicate layout handling at source level; [repaired-image browser checks pass; visual acceptance remains open](../artifacts/reviewed/chart-box/verification.md#b4-runtime-layout-repair-source-accepted-new-image-required).
-- [ ] Complete the Box original/replacement and default miniature comparisons.
+- [x] Repair Box collision and duplicate layout handling at source level; [repaired-image browser checks pass; owner visual acceptance is recorded](../artifacts/reviewed/chart-box/verification.md#b4-runtime-layout-repair-source-accepted-new-image-required).
+- [x] Complete the Box original/replacement and default miniature comparisons; owner approved on 2026-10-22.
 - [x] Independently accept inactive Box capture and original aggregate setup (B3b).
 - [ ] Complete other distribution and radial families.
 - [ ] Complete Range Bar/Area through the [parallel foundation plan](../.kiro/specs/analyst-workspace/range-chart-plan.md). The inactive min/max helper and Range Bar/Area cores are accepted; application acceptance remains open.

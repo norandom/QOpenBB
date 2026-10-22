@@ -28,7 +28,7 @@ requirements = ["analyst-workspace/box-plot-milestone.md:B4"]
 planned_checks = ["retained-fmp-raw-usd-summaries", "partial-fiscal-years", "controls-themes-navigation", "refresh-reopen-export", "empty-recovery"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/box-plot.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/box-plot-fixture.ts"]
 status = "passed"
-evidence = ["Repaired candidate: two retained-FMP/synthetic browser scenarios passed, exit0, on packaged image4b7c12f0 from da5979c (CI39739701922), without overlay. Independent review and scope: artifacts/reviewed/chart-box/verification.md. Original appearance/default miniature and B4/B5 milestone acceptance remain open."]
+evidence = ["Repaired candidate: two retained-FMP/synthetic browser scenarios passed, exit0, on packaged image4b7c12f0 from da5979c (CI39739701922), without overlay. Independent review and scope: artifacts/reviewed/chart-box/verification.md. Owner approved original appearance/default miniature on 2026-10-22; B4 is accepted and B5 publication remains open."]
 
 [[capabilities]]
 id = "box-plot-inactive-axis-navigation"

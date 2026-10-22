@@ -143,3 +143,7 @@ These samples use the retained 40 AAPL quarterly income observations across 11 f
 ![Repaired candidate horizontal Box Plot](runtime-box-horizontal-long-labels-light.png)
 
 ![Repaired candidate horizontal miniature](runtime-box-default-horizontal-miniature-light.png)
+
+## B4 accepted: owner visual approval
+
+On 2026-10-22 the owner approved the qView original/replacement comparisons for candidate `4b7c12f0` at Workspace `da5979c`. The disclosed small spacing, box styling and miniature differences are accepted. The independently reviewed behavioral checks and this appearance decision close B4 for ordinary Table/File Box Plot. B5 publication and anonymous image verification remain open; this decision does not claim parity for other callers or chart families.

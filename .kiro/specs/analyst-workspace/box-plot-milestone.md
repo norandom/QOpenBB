@@ -22,7 +22,7 @@ Production paths are relative to `vendor/workspace/terminalpro/src/components/Ge
 - [x] B3b. Independently accept inactive capture and original aggregate setup under the [setup contract](box-plot-setup-design.md). Inherited verification failures are disclosed in [verification](../../../artifacts/reviewed/chart-box/verification.md).
 - [x] B3c. Independently accept inactive [axes/navigation and the existing-host adapter join](box-plot-axis-navigation-design.md); original/replacement visual decisions remain at B4.
 - [x] B3. Connect the existing session, gallery and editor to the mapper. Preserve all reachable controls and saved settings. Define exact file ownership and any necessary cohesive extraction before dispatch; no implicit size exceptions.
-- [ ] B4. Verify an identified image with real FMP observations and focused synthetic edge cases, original visual comparison, controls, lifecycle and export. Reuse the existing isolated browser harness and run affected prior-family checks at the join.
+- [x] B4. Verify an identified image with real FMP observations and focused synthetic edge cases, original visual comparison, controls, lifecycle and export. Reuse the existing isolated browser harness and run affected prior-family checks at the join.
 - [ ] B5. Complete independent feature review, update README/docs and breadth, publish reviewed FMP chart samples, commit/push the task work and dispatch one image build. Close only after tagged release and both public image identities/pulls are verified.
 
 ## Fan-out and boundaries
@@ -31,16 +31,16 @@ Original-contract research and current integration tracing are independent read-
 
 Standalone/AI callers, other specialty/radial families, provider expansion and analyst workflow changes remain open. One heavy build or suite runs at a time; browser checks use the existing one-worker isolated configuration and login-rate budget. Normal pushes run checks only; the completed milestone triggers one image publication.
 
-## Actual FMP chart samples: browser scenarios verified, visual comparison pending
+## Actual FMP chart samples: browser and appearance accepted
 
-Two packaged-candidate browser scenarios pass; see [verified scope and test corrections](../../../artifacts/reviewed/chart-box/verification.md#b4-packaged-candidate-browser-progress). B4 remains open for original appearance and default miniature comparisons. No new release is published.
+Two packaged-candidate browser scenarios pass; see [verified scope and test corrections](../../../artifacts/reviewed/chart-box/verification.md#b4-packaged-candidate-browser-progress). B4 is accepted after owner approval of the original/replacement and miniature comparisons. B5 publication remains open.
 
-Retained FMP AAPL quarterly income statements, 40 observations across 11 fiscal years, 2016-09-24 through 2026-06-27. Revenue and net income use original reported USD; display labels may abbreviate billions. Partial fiscal years are labelled. Current candidate source `da5979c`, image `4b7c12f0`; both browser scenarios pass. Owner visual acceptance remains pending.
+Retained FMP AAPL quarterly income statements, 40 observations across 11 fiscal years, 2016-09-24 through 2026-06-27. Revenue and net income use original reported USD; display labels may abbreviate billions. Partial fiscal years are labelled. Current candidate source `da5979c`, image `4b7c12f0`; both browser scenarios pass. Owner visual acceptance was granted on 2026-10-22.
 
 ![Candidate vertical Box Plot](../../../artifacts/reviewed/chart-box/runtime-box-default-vertical-light.png)
 
 ![Candidate horizontal Box Plot](../../../artifacts/reviewed/chart-box/runtime-box-horizontal-long-labels-light.png)
 
-Original comparison is captured and the repaired candidate has passed its browser journey. See the [current comparison](../../../artifacts/reviewed/chart-box/verification.md#b4-repaired-image-browser-checks-pass-visual-decision-pending); owner appearance acceptance remains pending.
+Original comparison is captured and the repaired candidate has passed its browser journey. See the [current comparison](../../../artifacts/reviewed/chart-box/verification.md#b4-repaired-image-browser-checks-pass-visual-decision-pending); owner appearance acceptance was granted on 2026-10-22.
 
-The [bounded visual refinement](box-plot-visual-refinement.md) is source-accepted. The repaired image passes behavioral checks; owner visual acceptance remains open; see [verification](../../../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).
+The [bounded visual refinement](box-plot-visual-refinement.md) is source-accepted. The repaired image passes behavioral checks; owner visual acceptance is recorded below; see [verification](../../../artifacts/reviewed/chart-box/verification.md#b4-visual-refinement-source-accepted-image-comparison-pending).
