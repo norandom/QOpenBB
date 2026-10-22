@@ -16,6 +16,7 @@ Deploy the prototype next, then extend its provider coverage and analyst workflo
 | Check which capabilities have actual evidence | [Breadth map](../.kiro/breadth.toml) and [reviewed artifacts](../artifacts/reviewed/README.md) |
 | Set up development or contribute | [Development](development.md) and [contribution guide](contributing.md) |
 | Keep verification focused and artifacts manageable | [Verification](verification.md) and [artifact retention](artifact-retention.md) |
+| Review automated security analysis | [CodeQL coverage and status](security-scanning.md) |
 
 ## Current deployment boundary
 

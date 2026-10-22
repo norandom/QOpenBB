@@ -1,0 +1,15 @@
+name: QOpenBB maintained source
+
+# Application forks publish their own results; artifacts contain historical copies.
+# Keep the default query suite for its high precision security checks.
+paths:
+  - .dagger
+  - pipeline
+  - services
+  - tools
+  - verification
+  - tests
+paths-ignore:
+  - '**/node_modules/**'
+  - '**/.venv/**'
+  - '**/__pycache__/**'
