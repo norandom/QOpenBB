@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "range-inactive-category-geometry"
+requirements = ["analyst-workspace/range-category-design.md:Interaction boundary and join checks"]
+planned_checks = ["uneven-number-time-spacing", "source-bandwidth", "area-path-order", "raw-observation-identity", "constant-empty-and-window"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeCategoryCoordinates.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeBarCategoryCoordinates.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeBarCategoryCoordinates.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeAreaCategoryCoordinates.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeAreaCategoryCoordinates.render.test.ts"]
+status = "passed"
+evidence = ["R4d source c348a497451df7d876ee127a0a0463f66807c95d: 135 joined cases pass; independent reviews, formatting and caps accepted; inherited typing unchanged. Inactive source/SVG geometry only. See artifacts/reviewed/chart-range/verification.md."]
+
+[[capabilities]]
 id = "range-inactive-value-axis"
 requirements = ["analyst-workspace/range-value-axis-design.md:Observable behavior"]
 planned_checks = ["raw-domain-and-constant", "linear-ticks-and-window", "finite-validation", "box-regression", "range-svg-handoff"]

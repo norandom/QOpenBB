@@ -33,6 +33,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Independently accept inactive Range capture/setup and Box regression checks (R4a).
 - [x] Independently accept inactive Range series appearance and option precedence (R4b).
 - [x] Independently accept inactive Range numeric value-axis planning and Box regression checks (R4c).
+- [x] Independently accept numeric/time category geometry in both inactive Range renderer cores (R4d).
 - [x] Independently accept the inactive Range Area renderer core (R3).
 - [x] Independently accept the inactive Range Bar renderer core (R2).
 - [ ] Complete hierarchy, heatmap, waterfall and other specialty families.

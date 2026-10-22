@@ -123,3 +123,14 @@ The [numeric axis contract](range-value-axis-design.md) extracts the accepted li
 Continuous category geometry, calendar ticks and application/editor layout follow; this slice does not activate either Range family.
 
 R4c source accepted at Workspace `491d6caaf0653a52675d54756eb642e65cc0c443`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4c-inactive-numeric-value-axis-accepted). Both Range families remain inactive in the application.
+
+## R4d category geometry
+
+The [category geometry contract](range-category-design.md) fixes one shared coordinate interface, then separates Bar and Area consumers into disjoint implementation lanes. Supplied number/time domains must produce actual uneven spacing while retaining observation identity.
+
+- [x] Accept the shared coordinate foundation before fan-out.
+- [x] Independently accept both existing renderer integrations and their joined SVG checks.
+
+Caller Date inference, calendar tick planning, hierarchy labels and source-exact pointer interaction remain application integration requirements. They are not established by the supplied-plan renderer checks.
+
+R4d source accepted at Workspace `c348a497451df7d876ee127a0a0463f66807c95d`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4d-continuous-category-geometry-accepted). Both Range families remain inactive in the application.

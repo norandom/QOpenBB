@@ -90,6 +90,7 @@ Current: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
 - [x] Independently accept Range capture/setup reuse while preserving Box behavior.
 - [x] Independently accept inactive Range series styling and saved-option precedence.
 - [x] Independently accept Range numeric value-axis planning and renderer handoff.
+- [x] Accept numeric/time category geometry in both inactive Range renderer cores.
 - [ ] Integrate the range renderers, then verify with real FMP data.
 
 ## Delivery plan
