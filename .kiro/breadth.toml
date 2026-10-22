@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "range-category-capture"
+requirements = ["analyst-workspace/range-category-capture-design.md:Focused acceptance cases"]
+planned_checks = ["first-raw-date", "actual-column-metadata", "model-precedence", "selected-bounds", "single-cell-read", "snapshot-admission", "setup-retention"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/rangeCategoryCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/rangeSetup.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/boxPlotSetup.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/snapshot.test.ts"]
+status = "passed"
+evidence = ["R4e source 5e85724c93701d86024dce2e3587a83510542c14: 225 affected capture/setup/snapshot cases pass; independent review, formatting and caps accepted; inherited typing unchanged. Capture inputs only; Range application activation remains open. See artifacts/reviewed/chart-range/verification.md."]
+
+[[capabilities]]
 id = "range-inactive-category-geometry"
 requirements = ["analyst-workspace/range-category-design.md:Interaction boundary and join checks"]
 planned_checks = ["uneven-number-time-spacing", "source-bandwidth", "area-path-order", "raw-observation-identity", "constant-empty-and-window"]

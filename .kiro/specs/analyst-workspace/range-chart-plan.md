@@ -134,3 +134,12 @@ The [category geometry contract](range-category-design.md) fixes one shared coor
 Caller Date inference, calendar tick planning, hierarchy labels and source-exact pointer interaction remain application integration requirements. They are not established by the supplied-plan renderer checks.
 
 R4d source accepted at Workspace `c348a497451df7d876ee127a0a0463f66807c95d`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4d-continuous-category-geometry-accepted). Both Range families remain inactive in the application.
+
+## R4e category capture
+
+The [capture contract](range-category-capture-design.md) retains raw Date evidence and actual column metadata before normalization. Capture resolves the source category kind; existing statistical setup preserves those facts.
+
+- [x] Accept capture provenance and its regression checks. Calendar planning and session activation remain open.
+
+
+R4e capture accepted at Workspace `5e85724c93701d86024dce2e3587a83510542c14`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4e-category-capture-accepted). Calendar planning and application activation remain open.
