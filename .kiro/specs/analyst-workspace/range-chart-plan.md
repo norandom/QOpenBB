@@ -100,3 +100,13 @@ The next bounded task is the independently reviewed [capture/setup contract](ran
 Appearance, axes, editor/session activation and real-FMP image acceptance follow this source slice. No new release is required for an inactive capture helper.
 
 R4a source accepted at Workspace `102b53ad677f057903af50ea315c3c790ee67789`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4a-inactive-capturesetup-accepted). Range application activation remains open.
+
+## R4b series appearance
+
+The independently reviewed [series appearance contract](range-series-appearance-design.md) resolves original Range field styling in isolation. It preserves generated/saved/theme precedence and independent marker paint without changing the editor or activating the renderers.
+
+- [x] Independently verify defaults, source conditional options and the normalized generated-input contract.
+- [ ] Implement the inactive field-style resolver and generated-series helper.
+- [ ] Accept focused tests, size/typing checks and independent source review; update evidence and pins.
+
+Next axis/layout work must preserve both families' inferred time/numeric categories. Range Bar hides some axis selectors but is not category-only; Range Area exposes additional type/tick controls. Coordinate geometry, tick formatting and tooltip hit lookup must be extended together before activation. Do not substitute Box's hardcoded editor eligibility or an ordinal-only mapper for these original behaviors.
