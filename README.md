@@ -92,6 +92,7 @@ Current: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
 - [x] Independently accept Range numeric value-axis planning and renderer handoff.
 - [x] Accept numeric/time category geometry in both inactive Range renderer cores.
 - [x] Preserve Range date/type provenance through Grid capture and statistical setup.
+- [x] Compose Range charts with calendar/numeric axes, saved styling and measured layout.
 - [ ] Integrate the range renderers, then verify with real FMP data.
 
 ## Delivery plan

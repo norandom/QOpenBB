@@ -1,6 +1,6 @@
 # Range chart foundation plan
 
-R1 independently accepted, 2026-10-21. R1 provides an inactive finite-observation min/max helper shared by ordinary Table/File Range Bar and Range Area. It can run beside Box integration because it owns two new files and imports only the existing diagnostic type. Box remains the current delivery milestone; Range activation waits for a controller-owned join and a separately reviewed application contract.
+Range Bar/Area now have independently accepted capture, scale, geometry and composed application mapping. The next delivery work connects the existing session, editor, navigation and pointer lifecycle, then verifies the complete journey with real FMP data. Both Range families remain inactive in the published alpha.
 
 This is a source-backed plan, not implementation or visual acceptance. Workspace baseline: `95188eb3ac92188e62f32b8ba9d4897a6c8cc176`. The [renderer inventory](../../../docs/renderer-capability-matrix.md) and [open checklist](../../../docs/echarts-status.md) still own the wider caller boundaries. Raw source findings and exact hashes are retained in ignored `artifacts/chart-range/source-contract.md`.
 
@@ -143,3 +143,13 @@ The [capture contract](range-category-capture-design.md) retains raw Date eviden
 
 
 R4e capture accepted at Workspace `5e85724c93701d86024dce2e3587a83510542c14`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4e-category-capture-accepted). Calendar planning and application activation remain open.
+
+## R4f composed application mapping
+
+- [x] Accept continuous numerical/calendar planning and saved interval policies.
+- [x] Compose both Range cores with measured axes, captions, legend, theme and existing styling.
+- [x] Independently review reverse geometry and the joined rendering/typing/complexity evidence.
+- [ ] Connect the live session, existing editor, navigator and pointer lifecycle before activation.
+- [ ] Verify real-FMP application behavior, appearance, save/reopen/export and publish the completed milestone.
+
+R4f accepted at Workspace `9f5a9c2d22d99fcd72d7721705c6e2fe0a6dfd43`; see the [application contract](range-application-design.md) and [verification](../../../artifacts/reviewed/chart-range/verification.md#r4f-composed-application-mapping-accepted). Session direction changes must transfer semantic axis preferences without retaining a stale physical position. This slice supplies the composed renderer; it does not establish that live lifecycle.

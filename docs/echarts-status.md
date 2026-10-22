@@ -35,6 +35,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Independently accept inactive Range numeric value-axis planning and Box regression checks (R4c).
 - [x] Independently accept numeric/time category geometry in both inactive Range renderer cores (R4d).
 - [x] Preserve Range category type and native-Date evidence through capture and setup (R4e).
+- [x] Compose Range Bar/Area with continuous axes, saved styling, measured chrome and reverse geometry (R4f). Live editor/navigation activation remains open.
 - [x] Independently accept the inactive Range Area renderer core (R3).
 - [x] Independently accept the inactive Range Bar renderer core (R2).
 - [ ] Complete hierarchy, heatmap, waterfall and other specialty families.

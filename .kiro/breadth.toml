@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "range-composed-application"
+requirements = ["analyst-workspace/range-application-design.md:Planned checks and acceptance"]
+planned_checks = ["numeric-calendar-plans", "saved-axis-policy", "measured-chrome", "actual-svg", "native-date-capture-join", "reverse-geometry", "empty-plot"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/rangeApplication.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeNumericAxis.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeCategoryAxis.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeCalendarAxis.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeValuePolicy.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeValueAxis.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeReverse.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeEmptyPlot.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/rangeArea.render.test.ts"]
+status = "passed"
+evidence = ["R4f source 9f5a9c2d22d99fcd72d7721705c6e2fe0a6dfd43: 226 compatibility and 7 composed application tests pass; independent review, formatting/caps accepted; inherited typing unchanged. Live session/navigation and real-FMP browser acceptance remain open. See artifacts/reviewed/chart-range/verification.md."]
+
+[[capabilities]]
 id = "range-category-capture"
 requirements = ["analyst-workspace/range-category-capture-design.md:Focused acceptance cases"]
 planned_checks = ["first-raw-date", "actual-column-metadata", "model-precedence", "selected-bounds", "single-cell-read", "snapshot-admission", "setup-retention"]
