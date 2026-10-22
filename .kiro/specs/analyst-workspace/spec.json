@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-22T14:46:01.719364Z",
+  "updated_at": "2026-10-22T17:25:56.083674+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -332,7 +332,8 @@
         "R4c",
         "R4d",
         "R4e",
-        "R4f"
+        "R4f",
+        "R4g"
       ],
       "source": "0bc5109671c3ca1af43b863a0da3616ab78ae968",
       "feature_accepted": false,
@@ -353,7 +354,9 @@
       "r4e_source": "5e85724c93701d86024dce2e3587a83510542c14",
       "category_capture_design": "range-category-capture-design.md",
       "r4f_source": "9f5a9c2d22d99fcd72d7721705c6e2fe0a6dfd43",
-      "application_mapping_design": "range-application-design.md"
+      "application_mapping_design": "range-application-design.md",
+      "r4g_source": "1a692c8fe1e78825aded85d4fa0b905eef77eddc",
+      "live_integration_design": "range-live-design.md"
     }
   ]
 }

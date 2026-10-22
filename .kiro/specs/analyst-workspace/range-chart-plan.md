@@ -149,7 +149,11 @@ R4e capture accepted at Workspace `5e85724c93701d86024dce2e3587a83510542c14`; se
 - [x] Accept continuous numerical/calendar planning and saved interval policies.
 - [x] Compose both Range cores with measured axes, captions, legend, theme and existing styling.
 - [x] Independently review reverse geometry and the joined rendering/typing/complexity evidence.
-- [ ] Connect the live session, existing editor, navigator and pointer lifecycle before activation.
+- [x] Connect the live session, existing editor, navigator and pointer lifecycle (R4g source accepted).
 - [ ] Verify real-FMP application behavior, appearance, save/reopen/export and publish the completed milestone.
 
 R4f accepted at Workspace `9f5a9c2d22d99fcd72d7721705c6e2fe0a6dfd43`; see the [application contract](range-application-design.md) and [verification](../../../artifacts/reviewed/chart-range/verification.md#r4f-composed-application-mapping-accepted). Session direction changes must transfer semantic axis preferences without retaining a stale physical position. This slice supplies the composed renderer; it does not establish that live lifecycle.
+
+## R4g live integration
+
+Workspace `1a692c8fe1e78825aded85d4fa0b905eef77eddc` connects both Range families to the existing editor and renderer host. The [live contract](range-live-design.md) and [reviewed evidence](../../../artifacts/reviewed/chart-range/verification.md#r4g-live-range-integration-accepted) define source acceptance. The next gate is an identified packaged image with retained-FMP financial checks, original-runtime comparison, save/reopen/export and selected screenshots. The published alpha is unchanged.
