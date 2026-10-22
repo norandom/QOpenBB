@@ -13,6 +13,6 @@ The adaptation branch is `qopenbb/baseline`. The data API workflow is also avail
 The workflows pin CodeQL v4.39.1 and checkout actions to exact commits. They use the standard security queries and no-build extraction, with two query threads and at most two language jobs per repository. Checkout has read permission; only analysis jobs receive permission to upload security events. They do not receive provider keys or registry credentials. Dependency caches and historical artifact copies are excluded from the declared source scope.
 
 - [x] Independently review the workflow configuration and pass actionlint.
-- [ ] Confirm successful extraction, analysis and result upload in all three repositories.
+- [x] Confirm successful extraction, analysis and result upload in all three repositories: [QOpenBB](https://github.com/norandom/QOpenBB/actions/runs/39837779554), [Workspace](https://github.com/norandom/openbb-workspace/actions/runs/39836160955), [data API](https://github.com/norandom/openbb-data-api/actions/runs/39837250943).
 
 A successful scan records analysis coverage; it does not mean every finding is resolved or replace financial/browser acceptance. Review uploaded alerts separately. Image publication continues through the [prototype delivery workflow](prototype-delivery.md).
