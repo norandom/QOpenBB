@@ -106,7 +106,9 @@ R4a source accepted at Workspace `102b53ad677f057903af50ea315c3c790ee67789`; see
 The independently reviewed [series appearance contract](range-series-appearance-design.md) resolves original Range field styling in isolation. It preserves generated/saved/theme precedence and independent marker paint without changing the editor or activating the renderers.
 
 - [x] Independently verify defaults, source conditional options and the normalized generated-input contract.
-- [ ] Implement the inactive field-style resolver and generated-series helper.
-- [ ] Accept focused tests, size/typing checks and independent source review; update evidence and pins.
+- [x] Implement the inactive field-style resolver and generated-series helper.
+- [x] Accept focused tests, size/typing checks and independent source review; update evidence and pins.
 
 Next axis/layout work must preserve both families' inferred time/numeric categories. Range Bar hides some axis selectors but is not category-only; Range Area exposes additional type/tick controls. Coordinate geometry, tick formatting and tooltip hit lookup must be extended together before activation. Do not substitute Box's hardcoded editor eligibility or an ordinal-only mapper for these original behaviors.
+
+R4b source accepted at Workspace `912f97e1732bfd1b8d91c110e8e37b19a559233c`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4b-inactive-series-appearance-accepted). Axis/layout and application integration remain open.

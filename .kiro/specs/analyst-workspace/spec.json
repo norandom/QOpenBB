@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-22T10:30:54.632622Z",
+  "updated_at": "2026-10-22T11:03:02.018660Z",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -27,7 +27,8 @@
       "R1",
       "R2",
       "R3",
-      "R4a"
+      "R4a",
+      "R4b"
     ],
     "source": "0bc5109671c3ca1af43b863a0da3616ab78ae968",
     "feature_accepted": false,
@@ -39,7 +40,9 @@
     "area_renderer_design": "range-area-renderer-design.md",
     "r3_review": "R3 inactive Range Area is independently accepted at Workspace `c6d4329960a5176775a47aba2bfefcac36d0cd8e`. Sixteen focused tests pass (10 unit and six actual ECharts SVG); Biome passes 10 files and combined complexity reports zero errors/violations. Scoped typing retains only inherited typography.ts TS2578, exit 2. Final canonical baseline/candidate each retain 3,427 identical inherited diagnostics, exit 2, with no added/removed diagnostics. Application integration, real-FMP image/browser acceptance, visual comparison and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged.",
     "r4a_source": "102b53ad677f057903af50ea315c3c790ee67789",
-    "phase": "application-integration-in-progress"
+    "phase": "application-integration-in-progress",
+    "r4b_source": "912f97e1732bfd1b8d91c110e8e37b19a559233c",
+    "series_appearance_design": "range-series-appearance-design.md"
   },
   "completed_milestones": [
     {
@@ -312,7 +315,8 @@
         "R1",
         "R2",
         "R3",
-        "R4a"
+        "R4a",
+        "R4b"
       ],
       "source": "0bc5109671c3ca1af43b863a0da3616ab78ae968",
       "feature_accepted": false,
@@ -323,7 +327,9 @@
       "r3_source": "c6d4329960a5176775a47aba2bfefcac36d0cd8e",
       "area_renderer_design": "range-area-renderer-design.md",
       "r3_review": "R3 inactive Range Area is independently accepted at Workspace `c6d4329960a5176775a47aba2bfefcac36d0cd8e`. Sixteen focused tests pass (10 unit and six actual ECharts SVG); Biome passes 10 files and combined complexity reports zero errors/violations. Scoped typing retains only inherited typography.ts TS2578, exit 2. Final canonical baseline/candidate each retain 3,427 identical inherited diagnostics, exit 2, with no added/removed diagnostics. Application integration, real-FMP image/browser acceptance, visual comparison and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged.",
-      "r4a_source": "102b53ad677f057903af50ea315c3c790ee67789"
+      "r4a_source": "102b53ad677f057903af50ea315c3c790ee67789",
+      "r4b_source": "912f97e1732bfd1b8d91c110e8e37b19a559233c",
+      "series_appearance_design": "range-series-appearance-design.md"
     }
   ]
 }
