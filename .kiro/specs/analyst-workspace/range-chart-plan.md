@@ -112,3 +112,14 @@ The independently reviewed [series appearance contract](range-series-appearance-
 Next axis/layout work must preserve both families' inferred time/numeric categories. Range Bar hides some axis selectors but is not category-only; Range Area exposes additional type/tick controls. Coordinate geometry, tick formatting and tooltip hit lookup must be extended together before activation. Do not substitute Box's hardcoded editor eligibility or an ordinal-only mapper for these original behaviors.
 
 R4b source accepted at Workspace `912f97e1732bfd1b8d91c110e8e37b19a559233c`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4b-inactive-series-appearance-accepted). Axis/layout and application integration remain open.
+
+## R4c numeric value axis
+
+The [numeric axis contract](range-value-axis-design.md) extracts the accepted linear tick algorithm for shared use and supplies raw Range bounds and ticks. It preserves equal-value data and keeps Box callers on the same algorithm.
+
+- [x] Freeze the neutral tick and Range raw-scale contract.
+- [x] Implement and independently accept the value-axis planner with Box regression and actual Range renderer handoff checks.
+
+Continuous category geometry, calendar ticks and application/editor layout follow; this slice does not activate either Range family.
+
+R4c source accepted at Workspace `491d6caaf0653a52675d54756eb642e65cc0c443`; see [verification](../../../artifacts/reviewed/chart-range/verification.md#r4c-inactive-numeric-value-axis-accepted). Both Range families remain inactive in the application.
