@@ -1,6 +1,6 @@
 # Waterfall in the existing chart editor
 
-Restore Waterfall in the ordinary Table/File chart journey without changing the gallery, editor, theme or saved-state format. The Range milestone is published; this is the next bounded chart delivery. Numerical, renderer and disconnected appearance/control source lanes are accepted; editor/session integration and packaged application acceptance remain pending.
+Restore Waterfall in the ordinary Table/File chart journey without changing the gallery, editor, theme or saved-state format. The Range milestone is published; this is the next bounded chart delivery. Numerical, renderer, controls and editor/session source join are accepted; packaged application acceptance remains pending.
 
 ## Original behavior to preserve
 
@@ -30,7 +30,7 @@ Independently check the intermediate balances against gross profit, operating in
 
 - [x] W0. Independently review the W1 contract, source assignment and financial example; resolve the original-runtime zero, missing-value, tooltip and legend ambiguities. W2 interfaces still require their own frozen contract.
 - [x] W1. Implement the small cumulative-movement projection below, with meaningful numerical regressions. This prepares rendering and does not activate the gallery route.
-- [ ] W2. Join the renderer, Waterfall appearance and existing editor/session paths. Freeze exact renderer/control interfaces before parallel implementation. Reuse ordinary capture, Set Up, persistence, layout, host and navigation/pointer lifecycle; no second session framework or temporary feature flag.
+- [ ] W2. Join the renderer, Waterfall appearance and existing editor/session paths. W2C source join is independently accepted; packaged runtime acceptance remains open. Reuse ordinary capture, Set Up, persistence, layout, host and navigation/pointer lifecycle; no second session framework or temporary feature flag.
 - [ ] W3. Pass the identified packaged application journey with the FMP bridge, original comparison, relevant controls, navigation, refresh, save/fresh reopen and PNG export. Publish a selected real-FMP screenshot here after review.
 - [ ] W4. Reconcile README/docs checkboxes and breadth, commit the accepted milestone, dispatch one image publication run and verify the tagged release and both public images.
 
@@ -65,6 +65,10 @@ Real-FMP chart sample: pending the first verified application rendering. Standal
 
 W1 source: `59e49e8cecf5dad5add5dfe215d0f8f91da57c5f`. Independent review accepts 34 focused regressions, scoped lint/strict typing and 66 physical / 47 logical / 26 maximum function units. The scoped compiler configuration overrides an inherited deprecation-version mismatch; this is not whole-application type acceptance. See [verification](../../../artifacts/reviewed/chart-waterfall/verification.md).
 
-W2B appearance and disconnected controls are independently accepted at `d03cc33399ec93c32ba6d3c864b35621f713fc8a`: 27 focused tests, scoped lint and combined complexity pass; scoped typing retains the same inherited typography diagnostic. The [integration design](waterfall-integration-design.md) owns the editor/session join. W2 overall remains open.
+W2B appearance and disconnected controls are independently accepted at `d03cc33399ec93c32ba6d3c864b35621f713fc8a`: 27 focused tests, scoped lint and combined complexity pass; scoped typing retains the same inherited typography diagnostic. The [integration design](waterfall-integration-design.md) owns the editor/session join, whose W2C source acceptance is recorded below. W2 overall remains open.
 
 W2A renderer source is independently accepted at `923fc4c6007b8b96b5b85e427206f4e7b4f1be45`: 30 focused tests, three independent financial/native-engine probes, scoped lint and combined complexity pass. Numeric/time categories, full-prefix navigation, source identity and separate chart/series tooltip settings are covered at this source boundary. Scoped current/baseline typing retains identical inherited `typography.ts:122` TS7031; no clean whole-application compile is claimed. The renderer test now uses explicit captured movements instead of an ignored CSV dependency and was normalized to LF after review; production hashes are unchanged. The independent local probe reconciles native geometry with the retained raw FMP response. This does not establish packaged Waterfall, connected UI, persistence/reopen or publication acceptance. See the [verification report](../../../artifacts/reviewed/chart-waterfall/verification.md).
+
+W2C renderer/editor/session source join is independently accepted at `077d557f64dd3bc46f6679e404319ab0ad4ce796`: the shared gate passes 155 tests in 16 files; prior UI and transaction reviews pass six and 19 respectively. Parent production maxima are 308 physical / 143 logical / 39 function units across 17 files; final combined caps pass. Legend reset, short-palette fallback, projection context and Histogram guard are resolved. Four inherited Pie legend-array assertion failures were reproduced against baseline and corrected only in tests at `afb9d4f6ba18ab3a95471f3994fd13ca5d0d8cd5`. Both compiler programs retain 2,753 diagnostics; independent review of 63 message variants found no added semantic diagnostic. No clean compile is claimed.
+
+Final source/browser-preparation revision `c6cd70fa0c071439464155617d80035fddc7f760` includes two independently approved browser test/fixture files. Twenty pure matcher probes accept three valid drawings and reject 17 invalid drawings; no candidate browser or image ran. W2 packaged runtime, W3 financial/application acceptance and W4 publication remain open. See the [verification report](../../../artifacts/reviewed/chart-waterfall/verification.md) for the review boundary and local evidence.

@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "waterfall-editor-session-source-join"
+requirements = ["analyst-workspace/waterfall-milestone.md:W2 join constraints", "analyst-workspace/waterfall-integration-design.md"]
+planned_checks = ["first-effective-field-admission", "projection-provenance", "stamped-editor-transactions", "legend-preservation", "theme-palette-fallback", "shared-family-regressions"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/waterfallSession.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/waterfallSessionProjection.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/waterfallSessionHook.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/waterfallTheme.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/waterfallUiJoin.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/waterfallEditorTransaction.test.ts"]
+status = "passed"
+evidence = ["W2C source 077d557f64dd3bc46f6679e404319ab0ad4ce796 independently accepted: shared 155 tests/16 files; prior UI six and transaction 19 pass. Parent 17 production files meet 308/143/39 maxima; combined caps pass. Baseline/current retain 2753 diagnostics; independent review pairs 63 message variants with inherited diagnostics, no added semantic diagnostic. Final source/browser-preparation c6cd70fa0c071439464155617d80035fddc7f760; no packaged browser or image acceptance. See artifacts/reviewed/chart-waterfall/verification.md."]
+
+[[capabilities]]
 id = "waterfall-renderer-source"
 requirements = ["analyst-workspace/waterfall-integration-design.md:Lane A", "analyst-workspace/waterfall-milestone.md:W2 join constraints"]
 planned_checks = ["signed-native-geometry", "source-identity-prefix-navigation", "continuous-categories", "separate-chart-series-tooltips", "retained-fmp-native-provenance"]
@@ -26,9 +34,9 @@ evidence = ["W1 source 59e49e8cecf5dad5add5dfe215d0f8f91da57c5f: independent rev
 id = "waterfall-packaged-journey"
 requirements = ["analyst-workspace/waterfall-milestone.md:W2 join constraints", "analyst-workspace/waterfall-milestone.md:Bounded delivery tasks"]
 planned_checks = ["retained-fmp-income-bridge", "first-field-admission", "original-appearance-controls", "navigation-prefix-preservation", "refresh-fresh-reopen-export"]
-test_paths = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/waterfall-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/waterfall-fixture.ts"]
 status = "unverified"
-evidence = ["Bounded original-runtime observations establish zero/missing/legend behavior only. Replacement rendering and packaged FMP acceptance are pending."]
+evidence = ["Source join accepted separately. Browser preparation at c6cd70fa0c071439464155617d80035fddc7f760 independently approved: two maintained files, 20 pure matcher probes with 17 invalid drawings rejected. No candidate browser or image ran; packaged FMP acceptance remains pending. See artifacts/reviewed/chart-waterfall/verification.md."]
 
 [[capabilities]]
 id = "range-milestone-publication"

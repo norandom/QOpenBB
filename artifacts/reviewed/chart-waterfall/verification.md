@@ -1,6 +1,6 @@
 # Waterfall verification
 
-Waterfall is in development. W2A renderer source is independently accepted; the editor/session join and packaged real-FMP application journey remain open. The published Range alpha remains the installable release. No Waterfall image publication is accepted.
+Waterfall is in development. The renderer/editor/session source join is independently accepted; W2 packaged runtime and W3 real-FMP application acceptance remain open. Browser preparation is reviewed, with no candidate browser run or Waterfall image accepted. The published Range alpha remains the installable release.
 
 ## W0: original behavior and numerical contract
 
@@ -32,6 +32,18 @@ The source evidence covers signed cumulative geometry, source row identity, nume
 
 After review, waterfall.render.test.ts replaced its ignored CSV dependency with the same five literal captured movements and was normalized to LF for commit. The independent expected balances remain; all five production hashes are unchanged. The portable rerun passed all 30 tests in three files. Local evidence: artifacts/chart-waterfall/w2-renderer/review.md, portable-tests.log and combined-complexity.json. Only this summary report is mirrored into reviewed artifacts; raw private evidence is not published.
 
+## W2C: editor/session source join
+
+Accepted at Workspace 077d557f64dd3bc46f6679e404319ab0ad4ce796 on 2026-10-23. Independent parent review accepted the bounded source join after the shared one-worker gate passed 155 tests in 16 files, no skips. The prior independent UI and transaction scopes passed six and 19 tests respectively. Scoped lint passed all 17 parent production files; independent size maxima are 308 physical lines/file, 143 logical units/file and 39 units/function. The final combined inventory checker reports zero errors and zero violations.
+
+Review resolved direction edits resetting fixed-sign legend visibility, short indexed palettes losing the sole series fill, missing raw-observation context in projection and Histogram's newly widened intent guard. Four inherited Pie assertions expected an object instead of the accepted legend array; baseline production reproduced all four failures. The approved test-only correction at afb9d4f6ba18ab3a95471f3994fd13ca5d0d8cd5 preserves the appearance and selection checks; no Pie production changed.
+
+Both compiler programs retain 2,753 diagnostics. Exact comparison still fails on 63 message variants; independent AST and manual review paired all variants with inherited diagnostics and found no added semantic diagnostic. This is reviewed diagnostic equivalence, not a clean compile. Source/unit sessions, ECharts SVG and storage rehydration substantiate the bounded join; they do not establish the packaged Table/File journey. Local evidence: artifacts/chart-waterfall/w2-parent-review.md, w2-ui/review.md, w2-transactions/review.md, w2-join-types/join-regressions-final.log and combined-complexity-final.json.
+
+## W3 browser preparation
+
+Final source/browser-preparation revision is c6cd70fa0c071439464155617d80035fddc7f760. Independent review approved the two maintained test/fixture files after 20 pure matcher probes: three valid drawings accepted and 17 invalid drawings rejected. Retained raw-FMP arithmetic is checked independently. These are preparation checks; no browser, candidate runtime or image was exercised in this lane. The maintained scenario still needs an identified packaged runtime for financial geometry, controls, navigation, refresh, fresh reopen and PNG verification. Local evidence: artifacts/chart-waterfall/w3-browser-preparation/preparation.md and matcher-review-probes.json. Raw private evidence is not mirrored.
+
 ## Remaining acceptance
 
-W2 overall remains open. Editor/session integration, packaged retained-FMP rendering and navigation, refresh, save/fresh reopen, export, appearance comparison and milestone publication remain open. Connected UI and transaction changes are outside this accepted source record. The owning contract is .kiro/specs/analyst-workspace/waterfall-milestone.md.
+W2 overall remains open despite accepted W2C source integration. Packaged retained-FMP rendering and navigation, refresh, save/fresh reopen, export, appearance comparison and milestone publication remain open. No Waterfall image or packaged browser acceptance is claimed. The owning contract is .kiro/specs/analyst-workspace/waterfall-milestone.md.

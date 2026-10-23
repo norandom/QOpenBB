@@ -40,7 +40,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Implement and independently review the requested Range axis and legend refinements (R4i); default Area appearance accepted; navigator spacing and corrected default behavior pass both packaged FMP journeys; the accepted image pair is published.
 - [x] Independently accept the inactive Range Area renderer core (R3).
 - [x] Independently accept the inactive Range Bar renderer core (R2).
-- [ ] Complete [Waterfall](../.kiro/specs/analyst-workspace/waterfall-milestone.md): original behavior, numerical helper, W2A renderer source and disconnected appearance/control adapters independently accepted; editor/session integration and packaged real-FMP acceptance pending.
+- [ ] Complete [Waterfall](../.kiro/specs/analyst-workspace/waterfall-milestone.md): original behavior, numerical helper, renderer, controls and editor/session source join independently accepted; packaged real-FMP acceptance pending. Browser tests are prepared and reviewed; no candidate browser run is accepted.
 - [ ] Complete hierarchy, heatmap and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.
