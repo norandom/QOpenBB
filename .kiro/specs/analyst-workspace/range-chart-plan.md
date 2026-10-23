@@ -1,8 +1,8 @@
 # Range chart foundation plan
 
-Range Bar/Area now have independently accepted capture, scale, geometry and composed application mapping. The next delivery work connects the existing session, editor, navigation and pointer lifecycle, then verifies the complete journey with real FMP data. Both Range families remain inactive in the published alpha.
+Range Bar/Area are accepted in the ordinary Table/File journey on the identified local image: retained-FMP extrema, controls, navigation, fresh reopen and export pass. Image publication is the remaining delivery gate; the published alpha is unchanged until that gate passes.
 
-This is a source-backed plan, not implementation or visual acceptance. Workspace baseline: `95188eb3ac92188e62f32b8ba9d4897a6c8cc176`. The [renderer inventory](../../../docs/renderer-capability-matrix.md) and [open checklist](../../../docs/echarts-status.md) still own the wider caller boundaries. Raw source findings and exact hashes are retained in ignored `artifacts/chart-range/source-contract.md`.
+The R1-R4j sections retain the staged contracts and historical acceptance boundaries; their source-only caveats describe those checkpoints. The current application acceptance is recorded at the end of this document. Workspace baseline: `95188eb3ac92188e62f32b8ba9d4897a6c8cc176`. The [renderer inventory](../../../docs/renderer-capability-matrix.md) and [open checklist](../../../docs/echarts-status.md) still own the wider caller boundaries. Raw source findings and exact hashes are retained in ignored `artifacts/chart-range/source-contract.md`.
 
 ## Original assignment contract
 
@@ -80,8 +80,9 @@ R1 is disproved if the source assignment requires low/high field pairing, if its
 - [x] R1: independently accept the inactive finite min/max helper, focused tests, strict typing and complexity checks.
 - [x] R2: independently accept the inactive [Range Bar renderer core](range-renderer-design.md).
 - [x] R3: independently accept the inactive [Range Area renderer core](range-area-renderer-design.md).
-- [ ] Integrate existing controls and saved state.
-- [ ] Accept real-FMP application behavior and appearance, then publish images.
+- [x] Integrate existing controls and saved state.
+- [x] Accept real-FMP application behavior and appearance.
+- [ ] Publish images and verify public pulls.
 
 R1 source: Workspace `0bc5109671c3ca1af43b863a0da3616ab78ae968`. See [verification](../../../artifacts/reviewed/chart-range/verification.md). This preparation lane does not activate Range or delay the current Box Plot release.
 
@@ -150,7 +151,8 @@ R4e capture accepted at Workspace `5e85724c93701d86024dce2e3587a83510542c14`; se
 - [x] Compose both Range cores with measured axes, captions, legend, theme and existing styling.
 - [x] Independently review reverse geometry and the joined rendering/typing/complexity evidence.
 - [x] Connect the live session, existing editor, navigator and pointer lifecycle (R4g source accepted).
-- [ ] Verify real-FMP application behavior, appearance, save/reopen/export and publish the completed milestone.
+- [x] Verify real-FMP application behavior, appearance and save/reopen/export.
+- [ ] Publish the completed milestone and verify the public images.
 
 R4f accepted at Workspace `9f5a9c2d22d99fcd72d7721705c6e2fe0a6dfd43`; see the [application contract](range-application-design.md) and [verification](../../../artifacts/reviewed/chart-range/verification.md#r4f-composed-application-mapping-accepted). Session direction changes must transfer semantic axis preferences without retaining a stale physical position. This slice supplies the composed renderer; it does not establish that live lifecycle.
 
@@ -167,18 +169,19 @@ Owner comparison on 2026-10-22 requests closer original appearance before Range 
 - [x] Match original Area year-label density and unwrapped partial-year labels, including Bar label formatting.
 - [x] Match Area endpoints at the plot edges and outlined legend markers with their line samples; preserve grouped Bar spacing.
 - [x] Independently review scoped source regressions, formatting, typing delta and complexity.
-- [ ] Compare an updated packaged image with the original using the retained FMP data, including legend paint/export.
+- [x] Compare the updated packaged image with the original using retained FMP data, including legend paint/export; owner accepts default Area appearance.
 
-The first packaged replacement has passing Bar and Area behavior journeys, but visual acceptance and publication remain open. These refinements must preserve navigation, selected field identity, financial values and saved options.
+At the first packaged checkpoint, Bar and Area behavior passed while visual acceptance and publication remained open. The corrected application is now accepted; publication is pending. These refinements must preserve navigation, selected field identity, financial values and saved options.
 
-R4i source accepted at Workspace `07b91c8163f9b502c1188fd56bcab052e6ab9a40`; [source verification](../../../artifacts/reviewed/chart-range/verification.md#r4i-original-appearance-refinement). Refined visual acceptance and publication remain open.
+R4i source accepted at Workspace `07b91c8163f9b502c1188fd56bcab052e6ab9a40`; [source verification](../../../artifacts/reviewed/chart-range/verification.md#r4i-original-appearance-refinement). Refined default Area appearance is owner-accepted; publication remains pending.
 
 
 ## Packaged checkpoint and FMP samples
 
 - [x] Verify Bar and Area behavior in the identified R4i image, including fresh reopen and PNG export; preserve the separate run outcomes in the [evidence](../../../artifacts/reviewed/chart-range/verification.md#r4i-packaged-checkpoint-2026-10-23).
 - [x] Obtain owner acceptance of the default Area appearance.
-- [ ] Move the navigator below the main axis labels and verify the packaged layout before milestone publication.
+- [x] Move the navigator below the main axis labels and verify the corrected packaged layout/export.
+- [ ] Publish the accepted milestone and verify both public image identities and pulls.
 
 These default light views show 40 historical AAPL quarters grouped into 11 fiscal years. Each band/bar is the quarterly minimum-to-maximum revenue or net income in raw USD, not an annual total. Application source `07b91c8`; publication remains pending.
 
@@ -187,7 +190,16 @@ These default light views show 40 historical AAPL quarters grouped into 11 fisca
 ![AAPL quarterly revenue and net income range bars by fiscal year](../../../artifacts/reviewed/chart-range/range-bar-fmp-light.png)
 
 
-R4j navigator spacing source repair is independently accepted at Workspace `8047c09`: 16 focused tests pass, scoped typing has zero additions and complexity meets all caps. Rebuilt-image layout/export verification remains open; see [evidence](../../../artifacts/reviewed/chart-range/verification.md#r4j-navigator-label-spacing).
+R4j navigator spacing source repair is independently accepted at Workspace `8047c09`: 16 focused tests pass, scoped typing has zero additions and complexity meets all caps. This source checkpoint was superseded by the correction and passing packaged gate below; see [evidence](../../../artifacts/reviewed/chart-range/verification.md#r4j-navigator-label-spacing).
 
 
-The `8047c09` packaged run rejected both Range families in the hidden-navigator/default-zoom state. Correction `e2b87ed` is independently source-reviewed with 18 passing focused tests; both rebuilt-image journeys remain required. See [failure and correction](../../../artifacts/reviewed/chart-range/verification.md#r4j-packaged-rejection-and-hidden-miniature-correction).
+The `8047c09` packaged run rejected both Range families in the hidden-navigator/default-zoom state. Correction `e2b87ed` is independently source-reviewed with 18 passing focused tests; both corrected rebuilt-image journeys now pass, as recorded below. See [failure and correction](../../../artifacts/reviewed/chart-range/verification.md#r4j-packaged-rejection-and-hidden-miniature-correction).
+
+
+## Accepted Range application milestone
+
+Both journeys pass in one run on source `e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e` and image `sha256:1ff9d136027b0e0ae0f55b89f3faae5892602b2aeb3cee5482f408dc3a3bb0b0`. The [acceptance record](../../../artifacts/reviewed/chart-range/verification.md#range-packaged-acceptance) retains the earlier failed candidate and its correction. Original default Area appearance is owner-accepted; no blanket pixel-equivalence claim is made.
+
+The saved/reopened Area export below uses the same retained AAPL quarterly min/max observations in raw USD, with step interpolation and markers enabled. The navigator now sits below the main fiscal-year labels.
+
+![Saved AAPL quarterly ranges with separated navigator and axis labels](../../../artifacts/reviewed/chart-range/range-area-fmp-navigator.png)

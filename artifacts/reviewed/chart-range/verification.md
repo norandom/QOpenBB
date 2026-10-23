@@ -138,3 +138,12 @@ The packaged `8047c09` image failed both Range journeys before family selection 
 Workspace `e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e` skips miniature projection when the miniature is disabled. It preserves the visible-miniature spacing correction, inside zoom carriers, wheel/pan settings and existing control eligibility. Both real-default cases fail against the previous source and pass after the repair, including installed-ECharts rendering with finite SVG output and explicit wheel/pan assertions.
 
 Independent review approves this source correction for a new build. The final focused run passes 18 cases across three suites; formatting and complexity pass (200 physical lines, 54 logical units, largest function 14). Exact scoped baseline/current TypeScript diagnostics retain one inherited typography TS2578 and zero additions. These checks do not replace packaged acceptance: both Range journeys must pass in the rebuilt image before milestone completion or publication.
+
+
+## Range packaged acceptance
+
+The corrected packaged image `sha256:1ff9d136027b0e0ae0f55b89f3faae5892602b2aeb3cee5482f408dc3a3bb0b0`, built from Workspace `e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e`, passes both retained-FMP Range journeys in one run: `browser-e2b87ed-1`, two passed, exit 0. Independent review accepts the ordinary Table/File Range Bar/Area milestone. This supersedes the failed `8047c09` candidate; its failure and repair remain recorded above.
+
+The checks cover actual raw-USD quarterly extrema and tooltips, editor controls, theme/direction changes, miniature stability, slider/wheel/pan/reset, legend toggling, refresh, fresh-context save/reopen, and PNG export with sampled financial-pixel comparisons and browser diagnostics. Direct inspection of both exports confirms separation between main-axis labels and the miniature. The Area outlined-square/line legend also paints correctly in the exported image. No new provider request is claimed: these are the retained historical FMP observations described above.
+
+The owner accepted the refined default Area appearance on 2026-10-23. Long partial-year labels can still clip at the outer canvas boundary, as they do in the original default view. This acceptance covers the bounded Range journey, not exact pixel equality, all renderer families, assembled deployment, or the previously unverified original autoscale-off contrast. Registry publication remains a separate gate.

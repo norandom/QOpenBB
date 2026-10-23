@@ -29,15 +29,15 @@ Checked items below describe the implemented and reviewed scope, not every featu
 ## Open
 
 - [ ] Complete other distribution and radial families.
-- [ ] Complete Range Bar/Area through the [active integration plan](../.kiro/specs/analyst-workspace/range-chart-plan.md). The inactive min/max helper and Range Bar/Area cores are accepted; application acceptance remains open.
+- [x] Complete the ordinary Table/File Range Bar/Area journey with retained-FMP extrema, controls, navigation, fresh reopen and export. See the [accepted application milestone](../.kiro/specs/analyst-workspace/range-chart-plan.md); image publication remains pending.
 - [x] Independently accept inactive Range capture/setup and Box regression checks (R4a).
 - [x] Independently accept inactive Range series appearance and option precedence (R4b).
 - [x] Independently accept inactive Range numeric value-axis planning and Box regression checks (R4c).
 - [x] Independently accept numeric/time category geometry in both inactive Range renderer cores (R4d).
 - [x] Preserve Range category type and native-Date evidence through capture and setup (R4e).
 - [x] Compose Range Bar/Area with continuous axes, saved styling, measured chrome and reverse geometry (R4f).
-- [x] Connect live Range sessions, retained controls, navigation and pointer lifecycle (R4g); [source evidence](../artifacts/reviewed/chart-range/verification.md#r4g-live-range-integration-accepted). Integrated Range zoom defaults are restored (R4h). Packaged real-FMP/browser acceptance remains open.
-- [x] Implement and independently review the requested Range axis and legend refinements (R4i); default Area appearance accepted; navigator spacing and hidden-miniature corrections are source-reviewed; rebuilt-image verification remains open.
+- [x] Connect live Range sessions, retained controls, navigation and pointer lifecycle (R4g); [source evidence](../artifacts/reviewed/chart-range/verification.md#r4g-live-range-integration-accepted). Integrated Range zoom defaults are restored (R4h). Both packaged real-FMP journeys pass; publication remains pending.
+- [x] Implement and independently review the requested Range axis and legend refinements (R4i); default Area appearance accepted; navigator spacing and corrected default behavior pass both packaged FMP journeys; image publication remains pending.
 - [x] Independently accept the inactive Range Area renderer core (R3).
 - [x] Independently accept the inactive Range Bar renderer core (R2).
 - [ ] Complete hierarchy, heatmap, waterfall and other specialty families.
