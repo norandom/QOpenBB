@@ -185,3 +185,6 @@ These default light views show 40 historical AAPL quarters grouped into 11 fisca
 ![AAPL quarterly revenue and net income ranges by fiscal year](../../../artifacts/reviewed/chart-range/range-area-fmp-light.png)
 
 ![AAPL quarterly revenue and net income range bars by fiscal year](../../../artifacts/reviewed/chart-range/range-bar-fmp-light.png)
+
+
+R4j navigator spacing source repair is independently accepted at Workspace `8047c09`: 16 focused tests pass, scoped typing has zero additions and complexity meets all caps. Rebuilt-image layout/export verification remains open; see [evidence](../../../artifacts/reviewed/chart-range/verification.md#r4j-navigator-label-spacing).
