@@ -53,6 +53,12 @@ Strict baseline/current diagnostics are exactly unchanged at 2,753, with zero ad
 The tiny 0.4939px movement was correct. Matcher correction 7cd5a309b9b7316d8a6de4c9a0247c186f893e0f checks actual stroke alpha; independent review approves 26 pure probes.
 Local evidence: artifacts/chart-waterfall/empty-selection/verification.md, review.md and combined-complexity.json. Rebuilt packaged remove/re-add and full W2/W3 acceptance remain pending; no new image or CI build is accepted.
 
+## Category labels and current packaged blocker
+
+Category-label source b127a144359c820bde304650b18b3e4ce3fa2c62 is independently accepted: 79 worker checks and 71 independent checks pass; independent Biome passes six files, four whole production files meet 400/300/50 caps and the combined checker exits 0. Scoped typing reports zero owned/added diagnostics and one inherited diagnostic. Local evidence: artifacts/chart-waterfall/axis-labels/design.md, verification.json, review.md and combined-complexity.json.
+
+Multiline observer and four bounded wheel corrections are independently approved at 3ca78b7a37036e12d00f8620871dc96aba5f7756: 36 pure probes pass (eight valid, 28 rejected); navigation assertions completed in diagnostic runs 8/9, which are not full application acceptance. The packaged c6cd70fa0c071439464155617d80035fddc7f760 candidate remains unaccepted: its first Revenue tooltip failed because legend binding lost WeakMap pointer geometry metadata. Local transient-metadata repair 541961d8de287b1658255234509727b047b63118 is independently accepted: 26 worker checks, 10 independent pointer checks, Biome on three files and combined caps pass. Renderer/helper whole-file maxima are 283 physical / 107 logical / 18 function units; scoped typing retains inherited typography TS7031. The local metadata survives actual legend copies and resize without shared lifecycle changes. Evidence: artifacts/chart-waterfall/pointer-repair/review.md. Rebuilt full packaged acceptance, reviewed screenshots and publication remain pending.
+
 ## Remaining acceptance
 
 W2 overall remains open despite accepted W2C source integration. Packaged retained-FMP rendering and navigation, refresh, save/fresh reopen, export, appearance comparison and milestone publication remain open. No Waterfall image or packaged browser acceptance is claimed. The owning contract is .kiro/specs/analyst-workspace/waterfall-milestone.md.

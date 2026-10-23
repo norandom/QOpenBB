@@ -1,4 +1,20 @@
 [[capabilities]]
+id = "waterfall-pointer-metadata-source-repair"
+requirements = ["analyst-workspace/waterfall-milestone.md:W2 join constraints"]
+planned_checks = ["legend-copy-metadata-retention", "native-bar-pointer-anchors", "cropped-source-identity", "resize-pointer-refresh"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfall.pointer.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfall.render.test.ts"]
+status = "passed"
+evidence = ["Source 541961d8de287b1658255234509727b047b63118 independently approved: 26 worker checks and 10 independent pointer checks, Biome three files pass, production maxima 283/107/18 and combined caps pass. Transient local metadata survives the actual legend options copy and resize; shared lifecycle unchanged. Scoped typing retains inherited typography TS7031; no clean compilation. Rebuilt packaged FMP journey remains pending. See artifacts/reviewed/chart-waterfall/verification.md."]
+
+[[capabilities]]
+id = "waterfall-category-label-source"
+requirements = ["analyst-workspace/waterfall-milestone.md:Evidence and fan-out"]
+planned_checks = ["wrap-before-auto-rotate", "manual-angle-precedence", "numeric-axis-footprint", "cropped-main-full-miniature-labels"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfallAxisLabels.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfall.render.test.ts"]
+status = "passed"
+evidence = ["Source b127a144359c820bde304650b18b3e4ce3fa2c62 independently accepted: 79 worker checks and 71 independent checks; four whole production files meet 400/300/50 caps, combined checker exits 0. Scoped typing has zero owned/added and one inherited diagnostic. Source geometry and layout contract only; packaged appearance, tooltip, navigation and screenshot acceptance remain pending. See artifacts/reviewed/chart-waterfall/verification.md."]
+
+[[capabilities]]
 id = "waterfall-empty-selection-source-repair"
 requirements = ["analyst-workspace/waterfall-empty-selection-repair.md:Completion checks"]
 planned_checks = ["last-series-empty-editor", "fresh-empty-recapture", "re-add-current-values", "empty-renderer-no-fabricated-data", "strict-policy-isolation"]

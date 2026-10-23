@@ -109,6 +109,8 @@ Current: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), foll
 - [ ] Verify the retained-FMP income-statement bridge, controls, save/reopen and export in an identified image.
 - [ ] Publish and verify the accepted milestone images.
 
+Waterfall category-label and tooltip source fixes are independently accepted. The next step is the complete retained-FMP journey in a rebuilt image.
+
 ## Delivery plan
 
 ![Delivery plan: prebuilt alpha, Compose installation, provider coverage and analyst workflows; separate AI-to-Excel lane and later extensions.](docs/assets/delivery-plan.svg)
