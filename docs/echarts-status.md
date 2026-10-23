@@ -40,7 +40,8 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Implement and independently review the requested Range axis and legend refinements (R4i); default Area appearance accepted; navigator spacing and corrected default behavior pass both packaged FMP journeys; the accepted image pair is published.
 - [x] Independently accept the inactive Range Area renderer core (R3).
 - [x] Independently accept the inactive Range Bar renderer core (R2).
-- [ ] Complete [Waterfall](../.kiro/specs/analyst-workspace/waterfall-milestone.md): the maintained retained-FMP journey passes in the candidate, including financial geometry, navigation, tooltips, refresh, fresh reopen and export. The default sign-legend source repair is independently accepted; rebuilt legend/full-journey verification and publication remain pending, so W3 stays open.
+- [x] Implement and accept the bounded [Waterfall](../.kiro/specs/analyst-workspace/waterfall-milestone.md) application journey: retained-FMP financial geometry, default sign legend, controls, navigation, tooltips, refresh, fresh reopen and export pass; owner accepts the appearance.
+- [ ] Publish and verify the accepted Waterfall milestone images. Range remains the published alpha.
 - [ ] Complete hierarchy, heatmap and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.

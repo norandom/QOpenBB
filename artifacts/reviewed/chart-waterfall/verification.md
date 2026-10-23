@@ -1,6 +1,6 @@
 # Waterfall verification
 
-Waterfall is in development. The renderer/editor/session source join is independently accepted; W2 packaged runtime and W3 real-FMP application acceptance remain open. Browser preparation is reviewed, with no candidate browser run or Waterfall image accepted. The published Range alpha remains the installable release.
+Waterfall W2/W3 application acceptance is complete for the bounded retained-FMP Table/File journey. Independent evidence review approves the repaired candidate and the owner accepts its appearance. W4 image publication and release verification remain pending; Range remains the published alpha. Earlier checkpoints below retain their original limits.
 
 ## W0: original behavior and numerical contract
 
@@ -67,6 +67,12 @@ The reviewed reset test matches the original: exact-node double-click retains th
 
 Local legend repair 789d93f87e99d6bdd51a37d9e387cdd934e4e38a is independently accepted: 14 worker and 14 independent checks pass, Biome passes three files and combined complexity exits 0; the whole runtime is 270 physical / 81 logical / maximum 27 function units. Waterfall synchronization preserves its local legend choice; family entry clears a foreign ordinary automatic override while saved Waterfall false remains authoritative. Baseline/current retain 2,755 diagnostics and zero owned additions; all 27 inherited wording variants were independently reviewed for semantic equivalence, not exact-message equality or clean compilation. Evidence: artifacts/chart-waterfall/legend-recovery/independent-review.md. Rebuilt packaged legend and full-journey verification remain pending; W3 stays open.
 
-## Remaining acceptance
+## W2/W3 accepted application checkpoint
 
-W2/W3 overall remain open despite accepted source integration, bounded candidate journey and legend source repair. Rebuilt legend/full-journey visual verification, selected sample and milestone publication remain open. No overall Waterfall image or release acceptance is claimed. The owning contract is .kiro/specs/analyst-workspace/waterfall-milestone.md.
+Candidate-run-5 passes one maintained test in 41.4 seconds, exit 0, with no skipped/flaky/unexpected cases. Application source is 789d93f87e99d6bdd51a37d9e387cdd934e4e38a; test-only source ba03b1289f60a06269fb1a97900e61474475464f adds an explicit false-to-true legend edit without changing application code. Image sha256:46ec7b9edc92ed20deb59d6f4f011bb10c94b934aa9c8faae4c6d5ce5739769b passes retained-FMP geometry, default sign legend, controls, navigation, five horizontal raw-value tooltips, refresh, fresh-context reopen, financial-glyph PNG and observed diagnostic checks. Independent review: artifacts/chart-waterfall/candidate-run-5/review.md. A separate parent Docker inspection confirms the running image, sole /data mount and no source overlay (runtime-identity.json, exit 0).
+
+The owner accepts this appearance. Curated default-light and horizontal-styled samples show AAPL FY2026 Q3, statement date 2026-06-27, raw USD displayed in billions, from the retained FMP capture retrieved 2026-10-20. Acceptance covers the selected light-theme controls and horizontal all-five tooltip proof; it does not establish every control/orientation, dark-theme parity or whole-image equality. Export assertions compare sampled financial glyphs; native dash is persisted and visually present rather than separately asserted. Diagnostics cover the observed intervals. Inherited compiler limitations above remain.
+
+## Remaining publication
+
+W4 remains open: publish the accepted source through the image pipeline and verify the tagged release and public image identities. No Waterfall public release acceptance is claimed yet. The owning contract is .kiro/specs/analyst-workspace/waterfall-milestone.md. Stop after this milestone's delivery work today; no next-family work is authorized.

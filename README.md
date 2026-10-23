@@ -102,14 +102,14 @@ Current: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), foll
 
 - [x] Review the signed-movement contract and original zero, missing-value and legend behavior.
 - [x] Implement and independently accept cumulative movements.
-- [x] Independently accept Waterfall appearance and control adapters; packaged acceptance remains pending.
-- [x] Independently accept the W2A renderer source: 30 tests, three independent probes and combined complexity pass; packaged acceptance remains pending.
-- [x] Independently accept the renderer/editor/session source join; packaged runtime acceptance remains pending.
-- [x] Review the first packaged failure and accept the empty-selection source repair; rebuilt remove/re-add verification remains pending.
-- [ ] Verify the retained-FMP income-statement bridge, controls, save/reopen and export in an identified image.
+- [x] Independently accept Waterfall appearance and control adapters.
+- [x] Independently accept the W2A renderer source: 30 tests, three independent probes and combined complexity pass.
+- [x] Independently accept the renderer/editor/session source join.
+- [x] Review the first packaged failure and verify empty-selection remove/re-add recovery.
+- [x] Verify the retained-FMP income-statement bridge, controls, save/reopen and export in an identified image; owner accepts the appearance.
 - [ ] Publish and verify the accepted milestone images.
 
-Waterfall's retained-FMP journey passes in the candidate; the default sign-legend source repair is independently accepted. Rebuilt visual verification remains pending.
+Waterfall application acceptance is complete for this bounded journey. Image publication remains pending; Range is still the published alpha.
 
 ## Delivery plan
 
