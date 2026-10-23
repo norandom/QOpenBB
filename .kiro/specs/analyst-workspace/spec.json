@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-23T17:21:00Z",
+  "updated_at": "2026-10-23T18:04:19Z",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -34,7 +34,7 @@
     "feature_accepted": false,
     "design_review": "W1 numerical contract and W2 renderer/editor interfaces independently approved for bounded implementation. Original runtime observations passed; W2 source components and application acceptance retain separate gates.",
     "work_plan": "autonomous-2026-10-23.md",
-    "source": "541961d8de287b1658255234509727b047b63118",
+    "source": "789d93f87e99d6bdd51a37d9e387cdd934e4e38a",
     "evidence": "artifacts/reviewed/chart-waterfall/verification.md",
     "w1_review": "Independent Astra review approved: 34 focused tests, scoped lint and scoped strict typing pass; 66 physical/47 logical/max26 complexity. Inactive numerical helper only; application acceptance pending.",
     "integration_design": "waterfall-integration-design.md",
@@ -44,7 +44,7 @@
     "browser_preparation": "Initial real-FMP candidate at c6cd70fa0c071439464155617d80035fddc7f760 exposed last-series removal hiding the editor. Matcher correction 7cd5a309b9b7316d8a6de4c9a0247c186f893e0f independently approved with 26 pure probes; actual stroke alpha is checked while preserving the correct 0.4939px movement geometry. Rebuilt packaged verification remains pending; no new image accepted.",
     "empty_selection_repair": "Independent source review approved 7ae71f1af11efdb5a39733bc7ac01bbef9107f37: 120 affected checks pass, 25 independently rerun; combined complexity exit 0, maxima 276/128/30 across nine production files. Strict baseline/current diagnostics exactly unchanged at 2753, zero added or removed; not a clean compile. Repair completion source checks pass; identified rebuilt packaged remove/re-add remains open.",
     "category_labels": "Independent source review approved b127a144359c820bde304650b18b3e4ce3fa2c62: 79 worker checks and 71 independent checks, four whole production files within 400/300/50, combined checker exit 0. Scoped typing has zero owned/added and one inherited diagnostic. Packaged appearance remains pending.",
-    "current_runtime_blocker": "Packaged c6cd70fa0c071439464155617d80035fddc7f760 remains unaccepted: first Revenue tooltip failed after legend binding lost WeakMap pointer geometry metadata. Local repair 541961d8de287b1658255234509727b047b63118 independently approved: 26 worker checks, 10 independent pointer checks, Biome three files and combined caps pass. Scoped typing retains inherited typography TS7031. Rebuilt full FMP journey remains pending. Multiline observer/four-wheel corrections independently approved at 3ca78b7a37036e12d00f8620871dc96aba5f7756: 36 pure probes pass, eight valid and 28 rejected; navigation diagnostic runs 8/9 do not establish full application acceptance. No reviewable screenshot or publication ready."
+    "current_runtime_blocker": "Maintained candidate-run-3 at test c6d8ef606f4252ffa88a7424af8d2cfac7a9bfb0, application 541961d8de287b1658255234509727b047b63118 and image sha256:33d4ec70226a017e56474c34cf8eb20f2435dd79285b01cb8be9d920ec48eaca passes 1 test/37.8 seconds, exit 0. Independent evidence review accepts bounded financial/navigation/tooltips/refresh/fresh-reopen/export and observed diagnostics. Default sign legend is missing, so W2/W3 overall remain open. New default painted-legend RED fails on the prior image. Local session-runtime repair 789d93f87e99d6bdd51a37d9e387cdd934e4e38a independently accepted: 14 worker and 14 independent checks, Biome three files, combined caps pass and whole runtime 270/81/27. Strict baseline/current 2755/2755, zero owned additions; 27 inherited wording variants independently reviewed semantically, not exact equality or clean compilation. Rebuilt packaged legend/full-journey visual verification pending. No overall image, sample or publication acceptance."
   },
   "completed_milestones": [
     {

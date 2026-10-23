@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "waterfall-default-legend-source-repair"
+requirements = ["analyst-workspace/waterfall-milestone.md:Evidence and fan-out"]
+planned_checks = ["preserve-waterfall-legend-on-data-sync", "clear-foreign-automatic-override-on-family-entry", "preserve-saved-false", "ordinary-family-rule-unchanged"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/waterfallSessionHook.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/waterfallSession.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/waterfall-chart.spec.ts"]
+status = "passed"
+evidence = ["Source 789d93f87e99d6bdd51a37d9e387cdd934e4e38a independently accepted: 14 worker and 14 independent hook/session checks; Biome three files and combined caps pass, whole runtime 270/81/27. Strict baseline/current 2755/2755 with zero owned additions; 27 inherited wording variants independently reviewed semantically, not exact equality or clean compilation. Browser default-legend assertion is retained RED on prior image; rebuilt packaged verification remains pending. See artifacts/reviewed/chart-waterfall/verification.md."]
+
+[[capabilities]]
 id = "waterfall-pointer-metadata-source-repair"
 requirements = ["analyst-workspace/waterfall-milestone.md:W2 join constraints"]
 planned_checks = ["legend-copy-metadata-retention", "native-bar-pointer-anchors", "cropped-source-identity", "resize-pointer-refresh"]
@@ -60,7 +68,7 @@ requirements = ["analyst-workspace/waterfall-milestone.md:W2 join constraints", 
 planned_checks = ["retained-fmp-income-bridge", "first-field-admission", "original-appearance-controls", "navigation-prefix-preservation", "refresh-fresh-reopen-export"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/waterfall-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/waterfall-fixture.ts"]
 status = "unverified"
-evidence = ["Candidate-run-1 at c6cd70fa0c071439464155617d80035fddc7f760 failed when last-series removal hid the editor; source repair independently approved separately. Matcher correction 7cd5a309b9b7316d8a6de4c9a0247c186f893e0f checks actual stroke alpha while preserving the correct 0.4939px movement; 26 pure probes independently approved. Rebuilt packaged remove/re-add and full FMP acceptance remain pending; no new image accepted. See artifacts/reviewed/chart-waterfall/verification.md."]
+evidence = ["Candidate-run-3: maintained test c6d8ef606f4252ffa88a7424af8d2cfac7a9bfb0 passes 1/37.8 seconds, exit 0, on app 541961d8de287b1658255234509727b047b63118/image33d4ec70226a017e56474c34cf8eb20f2435dd79285b01cb8be9d920ec48eaca. Independent evidence review accepts bounded financial geometry, navigation, tooltips, refresh, fresh reopen, PNG glyphs and observed diagnostics. Default sign legend is missing; visual acceptance and W2/W3 overall remain open. Default painted-legend RED fails on the prior image; source repair 789d93f87e99d6bdd51a37d9e387cdd934e4e38a independently accepted separately. Rebuilt packaged legend/full-journey verification remains pending. See artifacts/reviewed/chart-waterfall/verification.md."]
 
 [[capabilities]]
 id = "range-milestone-publication"
