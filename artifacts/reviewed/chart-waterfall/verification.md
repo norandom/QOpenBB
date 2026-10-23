@@ -18,6 +18,12 @@ Commands: pinned Node runs node_modules/vitest/vitest.mjs run --config tests/uni
 
 The independent retained-fixture verifier also passed: five raw-USD movements reconcile with zero difference to the four reported income subtotals. CSV SHA256 e7ab84a4fd92a0afa0ca53422ed9e430ded9ff200209bc158047439f7a7c41b5. This fixture preparation is not browser acceptance.
 
+## W2B: appearance and disconnected controls
+
+Accepted at Workspace d03cc33399ec93c32ba6d3c864b35621f713fc8a. Independent Astra review approved the four appearance/control modules and their frozen shared types. Twenty-seven focused Vitest cases pass; scoped Biome passes six files. Scoped current/baseline strict typing retains the identical inherited typography.ts:122 TS7031 diagnostic; no clean whole-application compile is claimed. The final combined inventory checker exits 0 with no errors/violations. Its first attempt correctly rejected duplicate ownership of the already-owned effectiveAppearance file; the duplicate was removed without changing its original owner.
+
+Local review and commands: artifacts/chart-waterfall/w2-appearance/review.md and verification.json; final combined-complexity-final.json. The source correction preserves chart-level tooltip enable/mode separately from series tooltip settings, and numeric/time category controls remain an integration obligation. Source layer/patch tests do not establish the connected UI or packaged rendering.
+
 ## Remaining acceptance
 
 Renderer/editor integration, retained-FMP rendering, navigation, refresh, save/fresh reopen, export, appearance comparison and milestone publication remain open. The owning contract is .kiro/specs/analyst-workspace/waterfall-milestone.md.

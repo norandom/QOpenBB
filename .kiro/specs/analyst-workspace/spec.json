@@ -26,14 +26,17 @@
     "phase": "implementation",
     "completed_tasks": [
       "W0",
-      "W1"
+      "W1",
+      "W2B"
     ],
     "feature_accepted": false,
-    "design_review": "W1 numerical contract independently approved; bounded original-runtime observations passed. W2 renderer/editor interfaces remain pending.",
+    "design_review": "W1 numerical contract and W2 renderer/editor interfaces independently approved for bounded implementation. Original runtime observations passed; W2 source components and application acceptance retain separate gates.",
     "work_plan": "autonomous-2026-10-23.md",
-    "source": "59e49e8cecf5dad5add5dfe215d0f8f91da57c5f",
+    "source": "d03cc33399ec93c32ba6d3c864b35621f713fc8a",
     "evidence": "artifacts/reviewed/chart-waterfall/verification.md",
-    "w1_review": "Independent Astra review approved: 34 focused tests, scoped lint and scoped strict typing pass; 66 physical/47 logical/max26 complexity. Inactive numerical helper only; application acceptance pending."
+    "w1_review": "Independent Astra review approved: 34 focused tests, scoped lint and scoped strict typing pass; 66 physical/47 logical/max26 complexity. Inactive numerical helper only; application acceptance pending.",
+    "integration_design": "waterfall-integration-design.md",
+    "w2b_review": "Independent appearance/control review accepted 27 tests, scoped lint and zero added scoped typing diagnostics; combined caps pass. Disconnected controls only; renderer and application join remain open."
   },
   "completed_milestones": [
     {

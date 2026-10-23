@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "waterfall-appearance-controls"
+requirements = ["analyst-workspace/waterfall-integration-design.md:Lane B"]
+planned_checks = ["option-precedence", "nested-sign-styles", "native-control-leaf-patches", "separate-chart-series-tooltips"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfallAppearance.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfallEditorControls.test.tsx"]
+status = "passed"
+evidence = ["W2B source d03cc33399ec93c32ba6d3c864b35621f713fc8a: independent review, 27 tests, scoped lint/typing delta and combined caps pass. Disconnected source boundary only; actual editor session and packaged rendering remain pending. See artifacts/reviewed/chart-waterfall/verification.md."]
+
+[[capabilities]]
 id = "waterfall-cumulative-movements"
 requirements = ["analyst-workspace/waterfall-milestone.md:W1 numerical boundary"]
 planned_checks = ["signed-prefix-balances", "zero-null-order", "invalid-overflow", "retained-fmp-income-identities"]
