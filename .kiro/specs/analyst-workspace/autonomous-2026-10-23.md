@@ -30,3 +30,7 @@ Prepare the build, script and exact verification commands before requesting that
 ## Required handoff at 17:00
 
 Record completed tasks, source/root commits, image/release identities, actual passing and failing checks, any pending owner action and the single next task. Preserve unrelated working changes. The current public alpha remains usable even if Waterfall is not ready. No automatic PC or WSL shutdown is requested.
+
+## Evening verification extension
+
+At 18:42 Berlin, after supplying the running candidate, the owner explicitly chose "Continue verification tonight." This extends the verification window beyond the original cutoff. Continue the packaged Waterfall journey and repairs required to satisfy it; retain independent review, per-task commits and the accepted-milestone publication gate. The afternoon checkpoint is recorded in artifacts/chart-waterfall/handoff.md. The candidate startup blocker is resolved.

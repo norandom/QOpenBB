@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-23T10:04:03Z",
+  "updated_at": "2026-10-23T17:00:19Z",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -22,7 +22,7 @@
   "active_milestone": {
     "name": "waterfall-chart-port",
     "contract": "waterfall-milestone.md",
-    "authorization": "Owner approved Waterfall and activated the autonomous work plan through 17:00 Europe/Berlin on 2026-10-23.",
+    "authorization": "Owner approved Waterfall and activated the autonomous work plan through 17:00 Europe/Berlin on 2026-10-23, then explicitly authorized continued evening verification at 18:42.",
     "phase": "implementation",
     "completed_tasks": [
       "W0",
@@ -34,14 +34,15 @@
     "feature_accepted": false,
     "design_review": "W1 numerical contract and W2 renderer/editor interfaces independently approved for bounded implementation. Original runtime observations passed; W2 source components and application acceptance retain separate gates.",
     "work_plan": "autonomous-2026-10-23.md",
-    "source": "c6cd70fa0c071439464155617d80035fddc7f760",
+    "source": "7cd5a309b9b7316d8a6de4c9a0247c186f893e0f",
     "evidence": "artifacts/reviewed/chart-waterfall/verification.md",
     "w1_review": "Independent Astra review approved: 34 focused tests, scoped lint and scoped strict typing pass; 66 physical/47 logical/max26 complexity. Inactive numerical helper only; application acceptance pending.",
     "integration_design": "waterfall-integration-design.md",
     "w2b_review": "Independent appearance/control review accepted 27 tests, scoped lint and zero added scoped typing diagnostics; combined caps pass. Disconnected controls source boundary; later source join accepted as W2C.",
     "w2a_review": "Independent renderer review accepted 30 tests and three financial/native-engine probes; scoped lint and combined caps pass. Current/baseline typing retains identical inherited typography.ts:122 TS7031, not a clean whole-application compile. Literal captured movements replace the ignored CSV dependency; LF normalization leaves production hashes unchanged. Raw FMP provenance independently verified locally. Later source join accepted as W2C; packaged acceptance remains open.",
     "w2c_review": "Independent source join accepted at 077d557f64dd3bc46f6679e404319ab0ad4ce796: shared 155 tests/16 files, prior UI six and transaction 19 pass. Parent 17 production files meet 308/143/39 maxima; final combined caps pass. Baseline/current retain 2753 diagnostics; 63 message variants independently reviewed with no added semantic diagnostic, not a clean compile. Legend reset, palette fallback, projection context and Histogram guard resolved. Inherited Pie test-only correction afb9d4f6ba18ab3a95471f3994fd13ca5d0d8cd5 reproduced four baseline failures. W2 packaged runtime and W3 remain open.",
-    "browser_preparation": "Two maintained test/fixture files independently approved at c6cd70fa0c071439464155617d80035fddc7f760; 20 pure matcher probes accept three valid drawings and reject 17 invalid drawings. No candidate browser run or Waterfall image accepted."
+    "browser_preparation": "Initial real-FMP candidate at c6cd70fa0c071439464155617d80035fddc7f760 exposed last-series removal hiding the editor. Matcher correction 7cd5a309b9b7316d8a6de4c9a0247c186f893e0f independently approved with 26 pure probes; actual stroke alpha is checked while preserving the correct 0.4939px movement geometry. Rebuilt packaged verification remains pending; no new image accepted.",
+    "empty_selection_repair": "Independent source review approved 7ae71f1af11efdb5a39733bc7ac01bbef9107f37: 120 affected checks pass, 25 independently rerun; combined complexity exit 0, maxima 276/128/30 across nine production files. Strict baseline/current diagnostics exactly unchanged at 2753, zero added or removed; not a clean compile. Repair completion source checks pass; identified rebuilt packaged remove/re-add remains open."
   },
   "completed_milestones": [
     {

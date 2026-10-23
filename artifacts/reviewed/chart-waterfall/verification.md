@@ -42,7 +42,16 @@ Both compiler programs retain 2,753 diagnostics. Exact comparison still fails on
 
 ## W3 browser preparation
 
-Final source/browser-preparation revision is c6cd70fa0c071439464155617d80035fddc7f760. Independent review approved the two maintained test/fixture files after 20 pure matcher probes: three valid drawings accepted and 17 invalid drawings rejected. Retained raw-FMP arithmetic is checked independently. These are preparation checks; no browser, candidate runtime or image was exercised in this lane. The maintained scenario still needs an identified packaged runtime for financial geometry, controls, navigation, refresh, fresh reopen and PNG verification. Local evidence: artifacts/chart-waterfall/w3-browser-preparation/preparation.md and matcher-review-probes.json. Raw private evidence is not mirrored.
+Initial source/browser-preparation revision is c6cd70fa0c071439464155617d80035fddc7f760. Independent review approved the two maintained test/fixture files after 20 pure matcher probes: three valid drawings accepted and 17 invalid drawings rejected. Retained raw-FMP arithmetic is checked independently. These were preparation checks; the subsequent candidate run and reviewed corrections are recorded below. The maintained scenario still needs a passing identified packaged runtime for financial geometry, controls, navigation, refresh, fresh reopen and PNG verification. Local evidence: artifacts/chart-waterfall/w3-browser-preparation/preparation.md and matcher-review-probes.json. Raw private evidence is not mirrored.
+
+## First packaged failure and reviewed source repair
+
+The first real-FMP candidate run at c6cd70fa0c071439464155617d80035fddc7f760 exposed last-series removal hiding the editor; that package remains unaccepted.
+Source repair 7ae71f1af11efdb5a39733bc7ac01bbef9107f37 retains editable empty selection and recoverable capture without invented data; independent review approves it.
+All 120 affected checks pass; 25 checks were independently rerun. Combined complexity exits 0; nine production files have maxima 276 physical / 128 logical / 30 function units.
+Strict baseline/current diagnostics are exactly unchanged at 2,753, with zero added or removed; no clean compile is claimed.
+The tiny 0.4939px movement was correct. Matcher correction 7cd5a309b9b7316d8a6de4c9a0247c186f893e0f checks actual stroke alpha; independent review approves 26 pure probes.
+Local evidence: artifacts/chart-waterfall/empty-selection/verification.md, review.md and combined-complexity.json. Rebuilt packaged remove/re-add and full W2/W3 acceptance remain pending; no new image or CI build is accepted.
 
 ## Remaining acceptance
 

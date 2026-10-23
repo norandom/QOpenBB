@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "waterfall-empty-selection-source-repair"
+requirements = ["analyst-workspace/waterfall-empty-selection-repair.md:Completion checks"]
+planned_checks = ["last-series-empty-editor", "fresh-empty-recapture", "re-add-current-values", "empty-renderer-no-fabricated-data", "strict-policy-isolation"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/waterfallSessionHook.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfall.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/snapshot.test.ts"]
+status = "passed"
+evidence = ["Source 7ae71f1af11efdb5a39733bc7ac01bbef9107f37 independently approved after candidate-run-1 exposed last-series removal hiding the editor. 120 affected checks pass, 25 independently rerun; combined caps exit 0, maxima 276/128/30. Strict compiler diagnostics exactly unchanged at 2753, not clean compilation. Rebuilt packaged recovery remains pending. See artifacts/reviewed/chart-waterfall/verification.md."]
+
+[[capabilities]]
 id = "waterfall-editor-session-source-join"
 requirements = ["analyst-workspace/waterfall-milestone.md:W2 join constraints", "analyst-workspace/waterfall-integration-design.md"]
 planned_checks = ["first-effective-field-admission", "projection-provenance", "stamped-editor-transactions", "legend-preservation", "theme-palette-fallback", "shared-family-regressions"]
@@ -36,7 +44,7 @@ requirements = ["analyst-workspace/waterfall-milestone.md:W2 join constraints", 
 planned_checks = ["retained-fmp-income-bridge", "first-field-admission", "original-appearance-controls", "navigation-prefix-preservation", "refresh-fresh-reopen-export"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/waterfall-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/waterfall-fixture.ts"]
 status = "unverified"
-evidence = ["Source join accepted separately. Browser preparation at c6cd70fa0c071439464155617d80035fddc7f760 independently approved: two maintained files, 20 pure matcher probes with 17 invalid drawings rejected. No candidate browser or image ran; packaged FMP acceptance remains pending. See artifacts/reviewed/chart-waterfall/verification.md."]
+evidence = ["Candidate-run-1 at c6cd70fa0c071439464155617d80035fddc7f760 failed when last-series removal hid the editor; source repair independently approved separately. Matcher correction 7cd5a309b9b7316d8a6de4c9a0247c186f893e0f checks actual stroke alpha while preserving the correct 0.4939px movement; 26 pure probes independently approved. Rebuilt packaged remove/re-add and full FMP acceptance remain pending; no new image accepted. See artifacts/reviewed/chart-waterfall/verification.md."]
 
 [[capabilities]]
 id = "range-milestone-publication"

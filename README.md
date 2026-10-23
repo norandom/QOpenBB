@@ -105,6 +105,7 @@ Current: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), foll
 - [x] Independently accept Waterfall appearance and control adapters; packaged acceptance remains pending.
 - [x] Independently accept the W2A renderer source: 30 tests, three independent probes and combined complexity pass; packaged acceptance remains pending.
 - [x] Independently accept the renderer/editor/session source join; packaged runtime acceptance remains pending.
+- [x] Review the first packaged failure and accept the empty-selection source repair; rebuilt remove/re-add verification remains pending.
 - [ ] Verify the retained-FMP income-statement bridge, controls, save/reopen and export in an identified image.
 - [ ] Publish and verify the accepted milestone images.
 
