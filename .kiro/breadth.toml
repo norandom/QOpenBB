@@ -1,4 +1,20 @@
 [[capabilities]]
+id = "waterfall-cumulative-movements"
+requirements = ["analyst-workspace/waterfall-milestone.md:W1 numerical boundary"]
+planned_checks = ["signed-prefix-balances", "zero-null-order", "invalid-overflow", "retained-fmp-income-identities"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfallTotals.test.ts"]
+status = "passed"
+evidence = ["W1 source 59e49e8cecf5dad5add5dfe215d0f8f91da57c5f: independent review, 34 focused numerical tests, scoped lint/typing and combined caps pass. Inactive helper only; no renderer or application acceptance. See artifacts/reviewed/chart-waterfall/verification.md."]
+
+[[capabilities]]
+id = "waterfall-packaged-journey"
+requirements = ["analyst-workspace/waterfall-milestone.md:W2 join constraints", "analyst-workspace/waterfall-milestone.md:Bounded delivery tasks"]
+planned_checks = ["retained-fmp-income-bridge", "first-field-admission", "original-appearance-controls", "navigation-prefix-preservation", "refresh-fresh-reopen-export"]
+test_paths = []
+status = "unverified"
+evidence = ["Bounded original-runtime observations establish zero/missing/legend behavior only. Replacement rendering and packaged FMP acceptance are pending."]
+
+[[capabilities]]
 id = "range-milestone-publication"
 requirements = ["analyst-workspace/range-chart-plan.md:Delivery status", "openbb-self-service/requirements.md:7"]
 planned_checks = ["hosted-both-image-builds", "tagged-release-assets", "anonymous-digest-tag-latest-pulls"]

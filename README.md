@@ -83,7 +83,7 @@ Published: [box plot port](.kiro/specs/analyst-workspace/box-plot-milestone.md).
 - [x] Accept original/replacement appearance and complete Box application verification.
 - [x] Publish and verify the completed milestone.
 
-Current: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
+Published: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
 
 - [x] Independently accept the inactive range-summary helper.
 - [x] Independently accept the inactive Range Bar renderer core.
@@ -97,6 +97,14 @@ Current: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
 - [x] Connect Range sessions, retained editor controls, navigation and pointer interactions, including original zoom defaults.
 - [x] Implement and independently review the requested Range axis and legend refinements (R4i); default Area appearance accepted; navigator spacing and corrected default behavior pass both packaged FMP journeys; the accepted image pair is published.
 - [x] Verify both Range families in the packaged application with real FMP data, save/reopen and export; publication is verified.
+
+Current: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), following the [23 October work plan](.kiro/specs/analyst-workspace/autonomous-2026-10-23.md).
+
+- [x] Review the signed-movement contract and original zero, missing-value and legend behavior.
+- [x] Implement and independently accept cumulative movements.
+- [ ] Join the existing renderer, editor and session journey.
+- [ ] Verify the retained-FMP income-statement bridge, controls, save/reopen and export in an identified image.
+- [ ] Publish and verify the accepted milestone images.
 
 ## Delivery plan
 
