@@ -172,3 +172,16 @@ Owner comparison on 2026-10-22 requests closer original appearance before Range 
 The first packaged replacement has passing Bar and Area behavior journeys, but visual acceptance and publication remain open. These refinements must preserve navigation, selected field identity, financial values and saved options.
 
 R4i source accepted at Workspace `07b91c8163f9b502c1188fd56bcab052e6ab9a40`; [source verification](../../../artifacts/reviewed/chart-range/verification.md#r4i-original-appearance-refinement). Refined visual acceptance and publication remain open.
+
+
+## Packaged checkpoint and FMP samples
+
+- [x] Verify Bar and Area behavior in the identified R4i image, including fresh reopen and PNG export; preserve the separate run outcomes in the [evidence](../../../artifacts/reviewed/chart-range/verification.md#r4i-packaged-checkpoint-2026-10-23).
+- [x] Obtain owner acceptance of the default Area appearance.
+- [ ] Move the navigator below the main axis labels and verify the packaged layout before milestone publication.
+
+These default light views show 40 historical AAPL quarters grouped into 11 fiscal years. Each band/bar is the quarterly minimum-to-maximum revenue or net income in raw USD, not an annual total. Application source `07b91c8`; publication remains pending.
+
+![AAPL quarterly revenue and net income ranges by fiscal year](../../../artifacts/reviewed/chart-range/range-area-fmp-light.png)
+
+![AAPL quarterly revenue and net income range bars by fiscal year](../../../artifacts/reviewed/chart-range/range-bar-fmp-light.png)

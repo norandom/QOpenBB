@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "range-packaged-appearance"
+requirements = ["analyst-workspace/range-chart-plan.md:R4i visual refinement", "analyst-workspace/range-live-design.md:Joined acceptance and delivery"]
+planned_checks = ["retained-fmp-extrema", "controls-navigation", "fresh-reopen-export", "owner-default-appearance", "navigator-label-spacing"]
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/range-chart.spec.ts"]
+status = "unverified"
+evidence = ["R4i image f488a8c3: full Bar journey and focused Area journey pass in separate runs; owner accepted default Area appearance. Independent review accepts this checkpoint but full Range completion requires navigator/main-axis label spacing repair. See artifacts/reviewed/chart-range/verification.md."]
+
+[[capabilities]]
 id = "manual-prerelease-image-builds"
 requirements = ["openbb-self-service/requirements.md:7", "docs/prototype-delivery.md:Build and publication"]
 planned_checks = ["release-event-selection", "tagged-source-checkout", "existing-release-assets", "hosted-manual-publication"]

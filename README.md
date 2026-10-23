@@ -95,7 +95,7 @@ Current: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
 - [x] Preserve Range date/type provenance through Grid capture and statistical setup.
 - [x] Compose Range charts with calendar/numeric axes, saved styling and measured layout.
 - [x] Connect Range sessions, retained editor controls, navigation and pointer interactions, including original zoom defaults.
-- [x] Implement and independently review the requested Range axis and legend refinements (R4i); refined image acceptance remains open.
+- [x] Implement and independently review the requested Range axis and legend refinements (R4i); default Area appearance accepted; navigator label spacing remains open.
 - [ ] Verify both Range families in the packaged application with real FMP data.
 
 ## Delivery plan

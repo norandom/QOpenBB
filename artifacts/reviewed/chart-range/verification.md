@@ -109,3 +109,14 @@ The earlier packaged source `6188a1f` passed real-FMP Bar and Area behavior jour
 The retained original passed financial geometry assertions before a later observation failure. A focused original run recorded an unchanged default-wheel frame and slider cropping of the value axis. Its explicit autoscale-off contrast failed after reload, before the second wheel. Untimed native errors prevent attributing the default-wheel outcome solely to autoscaling. Neither original run passed overall. These limitations remain open; no full parity claim is made.
 
 Next: inspect the refined packaged image, verify actual legend paint/export, obtain visual acceptance and publish selected real-FMP samples. The published Box alpha is unchanged.
+
+
+## R4i packaged checkpoint, 2026-10-23
+
+The owner accepted the refined default Range Area appearance in qView: every-year labels, unwrapped partial-year labels, flush plot edges and outlined square/line legend samples. This decision covers the default view, not the navigator layout.
+
+The identified packaged image `sha256:f488a8c3447ef9a94b088919416ca4d6cdffc4d419c4238000f3733d8c433a2d` contains application source `07b91c8163f9b502c1188fd56bcab052e6ab9a40`. Bar passed its complete retained-FMP journey in `browser-07b91c8-1`; Area passed the focused `browser-07b91c8-area-2` run after a test-only precision repair. The first combined run remains recorded as one pass and one failure. Area miniature y coordinates differed by 0.000040 CSS pixels; the repaired assertion allows at most 0.001 CSS pixels while retaining exact marker count, x/order and diameter. Bar comparison and financial assertions are unchanged.
+
+Both completed journeys check controls, navigation, refresh, fresh-session reopen, financial geometry and PNG export. Direct inspection confirms the Area outlined legend/line samples paint in the application and export. The fixture contains 40 historical AAPL quarterly observations grouped into 11 fiscal years: independent minimum/maximum revenue and net income in raw reported USD, not annual totals or OHLC. Default-light original and replacement screenshots use the same fixture; default-dark parity is not claimed. Original geometry checks passed before a later reference navigation failure, which remains disclosed above.
+
+Independent review accepts this refinement and test repair, but rejects full Range completion pending one concrete layout repair: the miniature begins below the plot without allowing space for the main axis labels, causing overlap. This existed before R4i and is not covered by the owner's default-view acceptance. No new Range release is claimed.
