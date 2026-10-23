@@ -103,6 +103,7 @@ Current: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), foll
 - [x] Review the signed-movement contract and original zero, missing-value and legend behavior.
 - [x] Implement and independently accept cumulative movements.
 - [x] Independently accept Waterfall appearance and control adapters; application activation remains pending.
+- [x] Independently accept the W2A renderer source: 30 tests, three independent probes and combined complexity pass; packaged acceptance remains pending.
 - [ ] Join the existing renderer, editor and session journey.
 - [ ] Verify the retained-FMP income-statement bridge, controls, save/reopen and export in an identified image.
 - [ ] Publish and verify the accepted milestone images.

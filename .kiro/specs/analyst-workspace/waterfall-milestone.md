@@ -1,6 +1,6 @@
 # Waterfall in the existing chart editor
 
-Restore Waterfall in the ordinary Table/File chart journey without changing the gallery, editor, theme or saved-state format. The Range milestone is published; this is the next bounded chart delivery. Implementation and application acceptance are pending.
+Restore Waterfall in the ordinary Table/File chart journey without changing the gallery, editor, theme or saved-state format. The Range milestone is published; this is the next bounded chart delivery. Numerical, renderer and disconnected appearance/control source lanes are accepted; editor/session integration and packaged application acceptance remain pending.
 
 ## Original behavior to preserve
 
@@ -65,4 +65,6 @@ Real-FMP chart sample: pending the first verified application rendering. Standal
 
 W1 source: `59e49e8cecf5dad5add5dfe215d0f8f91da57c5f`. Independent review accepts 34 focused regressions, scoped lint/strict typing and 66 physical / 47 logical / 26 maximum function units. The scoped compiler configuration overrides an inherited deprecation-version mismatch; this is not whole-application type acceptance. See [verification](../../../artifacts/reviewed/chart-waterfall/verification.md).
 
-W2B appearance and disconnected controls are independently accepted at `d03cc33399ec93c32ba6d3c864b35621f713fc8a`: 27 focused tests, scoped lint and combined complexity pass; scoped typing retains the same inherited typography diagnostic. The [integration design](waterfall-integration-design.md) owns remaining renderer, numeric/time category, tooltip and session joins. W2 overall remains open.
+W2B appearance and disconnected controls are independently accepted at `d03cc33399ec93c32ba6d3c864b35621f713fc8a`: 27 focused tests, scoped lint and combined complexity pass; scoped typing retains the same inherited typography diagnostic. The [integration design](waterfall-integration-design.md) owns the editor/session join. W2 overall remains open.
+
+W2A renderer source is independently accepted at `923fc4c6007b8b96b5b85e427206f4e7b4f1be45`: 30 focused tests, three independent financial/native-engine probes, scoped lint and combined complexity pass. Numeric/time categories, full-prefix navigation, source identity and separate chart/series tooltip settings are covered at this source boundary. Scoped current/baseline typing retains identical inherited `typography.ts:122` TS7031; no clean whole-application compile is claimed. The renderer test now uses explicit captured movements instead of an ignored CSV dependency and was normalized to LF after review; production hashes are unchanged. The independent local probe reconciles native geometry with the retained raw FMP response. This does not establish packaged Waterfall, connected UI, persistence/reopen or publication acceptance. See the [verification report](../../../artifacts/reviewed/chart-waterfall/verification.md).

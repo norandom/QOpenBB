@@ -1,6 +1,6 @@
 # Waterfall verification
 
-Waterfall is in development. The published Range alpha remains the installable release. No replacement Waterfall rendering, real-FMP application journey or image publication is accepted yet.
+Waterfall is in development. W2A renderer source is independently accepted; the editor/session join and packaged real-FMP application journey remain open. The published Range alpha remains the installable release. No Waterfall image publication is accepted.
 
 ## W0: original behavior and numerical contract
 
@@ -24,6 +24,14 @@ Accepted at Workspace d03cc33399ec93c32ba6d3c864b35621f713fc8a. Independent Astr
 
 Local review and commands: artifacts/chart-waterfall/w2-appearance/review.md and verification.json; final combined-complexity-final.json. The source correction preserves chart-level tooltip enable/mode separately from series tooltip settings, and numeric/time category controls remain an integration obligation. Source layer/patch tests do not establish the connected UI or packaged rendering.
 
+## W2A: bounded renderer source
+
+Accepted at Workspace 923fc4c6007b8b96b5b85e427206f4e7b4f1be45 on 2026-10-23. Independent review approved 30 focused tests and three additional financial/native-engine probes, with no skips. Scoped Biome passed nine files. Combined explicit-inventory complexity passes with no errors or violations; renderer maxima are 265 physical lines/file, 102 logical units/file and 21 units/function, within 400/300/50 caps. Scoped current/baseline strict typing retains the identical inherited typography.ts:122 TS7031 diagnostic; this is not a clean whole-application compile.
+
+The source evidence covers signed cumulative geometry, source row identity, numeric/time categories, cropping full-prefix totals without rebasing, full-series overview and separate chart/series tooltip settings. The independent local probe verified the retained raw FMP response identity and reconciled five native bar endpoints and signed movement tooltips to its income fields. No new provider request was made. This is local provenance and renderer evidence; it does not establish a packaged Waterfall application journey.
+
+After review, waterfall.render.test.ts replaced its ignored CSV dependency with the same five literal captured movements and was normalized to LF for commit. The independent expected balances remain; all five production hashes are unchanged. The portable rerun passed all 30 tests in three files. Local evidence: artifacts/chart-waterfall/w2-renderer/review.md, portable-tests.log and combined-complexity.json. Only this summary report is mirrored into reviewed artifacts; raw private evidence is not published.
+
 ## Remaining acceptance
 
-Renderer/editor integration, retained-FMP rendering, navigation, refresh, save/fresh reopen, export, appearance comparison and milestone publication remain open. The owning contract is .kiro/specs/analyst-workspace/waterfall-milestone.md.
+W2 overall remains open. Editor/session integration, packaged retained-FMP rendering and navigation, refresh, save/fresh reopen, export, appearance comparison and milestone publication remain open. Connected UI and transaction changes are outside this accepted source record. The owning contract is .kiro/specs/analyst-workspace/waterfall-milestone.md.

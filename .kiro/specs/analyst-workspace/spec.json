@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-23T08:45:00Z",
+  "updated_at": "2026-10-23T09:39:33Z",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -27,16 +27,18 @@
     "completed_tasks": [
       "W0",
       "W1",
-      "W2B"
+      "W2B",
+      "W2A"
     ],
     "feature_accepted": false,
     "design_review": "W1 numerical contract and W2 renderer/editor interfaces independently approved for bounded implementation. Original runtime observations passed; W2 source components and application acceptance retain separate gates.",
     "work_plan": "autonomous-2026-10-23.md",
-    "source": "d03cc33399ec93c32ba6d3c864b35621f713fc8a",
+    "source": "923fc4c6007b8b96b5b85e427206f4e7b4f1be45",
     "evidence": "artifacts/reviewed/chart-waterfall/verification.md",
     "w1_review": "Independent Astra review approved: 34 focused tests, scoped lint and scoped strict typing pass; 66 physical/47 logical/max26 complexity. Inactive numerical helper only; application acceptance pending.",
     "integration_design": "waterfall-integration-design.md",
-    "w2b_review": "Independent appearance/control review accepted 27 tests, scoped lint and zero added scoped typing diagnostics; combined caps pass. Disconnected controls only; renderer and application join remain open."
+    "w2b_review": "Independent appearance/control review accepted 27 tests, scoped lint and zero added scoped typing diagnostics; combined caps pass. Disconnected controls only; editor/session join remains open.",
+    "w2a_review": "Independent renderer review accepted 30 tests and three financial/native-engine probes; scoped lint and combined caps pass. Current/baseline typing retains identical inherited typography.ts:122 TS7031, not a clean whole-application compile. Literal captured movements replace the ignored CSV dependency; LF normalization leaves production hashes unchanged. Raw FMP provenance independently verified locally. W2 overall, editor/session integration and packaged Waterfall acceptance remain open."
   },
   "completed_milestones": [
     {

@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "waterfall-renderer-source"
+requirements = ["analyst-workspace/waterfall-integration-design.md:Lane A", "analyst-workspace/waterfall-milestone.md:W2 join constraints"]
+planned_checks = ["signed-native-geometry", "source-identity-prefix-navigation", "continuous-categories", "separate-chart-series-tooltips", "retained-fmp-native-provenance"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfall.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfall.navigation.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/waterfall.pointer.test.ts"]
+status = "passed"
+evidence = ["W2A source 923fc4c6007b8b96b5b85e427206f4e7b4f1be45: independent review, 30 focused tests, three local financial/native-engine probes, scoped lint and combined caps pass. Current/baseline typing retains identical inherited typography.ts:122 TS7031; no clean whole-application compile. Literal captured movements replace the ignored CSV dependency; test LF normalization leaves production hashes unchanged. Raw FMP provenance independently reconciled locally; editor/session integration and packaged Waterfall acceptance remain pending. See artifacts/reviewed/chart-waterfall/verification.md."]
+
+[[capabilities]]
 id = "waterfall-appearance-controls"
 requirements = ["analyst-workspace/waterfall-integration-design.md:Lane B"]
 planned_checks = ["option-precedence", "nested-sign-styles", "native-control-leaf-patches", "separate-chart-series-tooltips"]
