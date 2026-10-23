@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-23T07:44:41.252789+00:00",
+  "updated_at": "2026-10-23T08:01:50.289246+00:00",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -48,7 +48,7 @@
     "area_renderer_design": "range-area-renderer-design.md",
     "r3_review": "R3 inactive Range Area is independently accepted at Workspace `c6d4329960a5176775a47aba2bfefcac36d0cd8e`. Sixteen focused tests pass (10 unit and six actual ECharts SVG); Biome passes 10 files and combined complexity reports zero errors/violations. Scoped typing retains only inherited typography.ts TS2578, exit 2. Final canonical baseline/candidate each retain 3,427 identical inherited diagnostics, exit 2, with no added/removed diagnostics. Application integration, real-FMP image/browser acceptance, visual comparison and publication remain open. Box Plot remains the active delivery milestone; the published alpha is unchanged.",
     "r4a_source": "102b53ad677f057903af50ea315c3c790ee67789",
-    "phase": "application-accepted-publication-pending",
+    "phase": "accepted-published",
     "r4b_source": "912f97e1732bfd1b8d91c110e8e37b19a559233c",
     "series_appearance_design": "range-series-appearance-design.md",
     "r4c_source": "491d6caaf0653a52675d54756eb642e65cc0c443",
@@ -60,9 +60,20 @@
     "r4f_source": "9f5a9c2d22d99fcd72d7721705c6e2fe0a6dfd43",
     "application_mapping_design": "range-application-design.md",
     "r4i_source": "07b91c8163f9b502c1188fd56bcab052e6ab9a40",
-    "r4i_review": "Default Area appearance owner-accepted; corrected packaged Bar/Area journeys pass together. Independent review accepts bounded application milestone; publication pending.",
+    "r4i_review": "Default Area appearance owner-accepted; both corrected packaged Range journeys pass. Independent review accepts the bounded application milestone; public image publication verified.",
     "image": "sha256:1ff9d136027b0e0ae0f55b89f3faae5892602b2aeb3cee5482f408dc3a3bb0b0",
-    "r4j_source": "e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e"
+    "r4j_source": "e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e",
+    "release": "alpha-39920081345-1",
+    "publication": {
+      "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-39920081345-1",
+      "manifest": "artifacts/reviewed/chart-range/release-manifest.json",
+      "anonymous_pull_evidence": "artifacts/reviewed/chart-range/anonymous-pulls.json",
+      "images": {
+        "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:598ae0a64e037b3b252b6051deab7726efecf87ad34d53063bb4914c19b8c146",
+        "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:cbf50782e0b4abf1758cd0dd1e27c51a1736d509ff1b5b73aa9968a023af883e"
+      },
+      "scope": "local browser acceptance and CI publication verified separately"
+    }
   },
   "completed_milestones": [
     {
@@ -370,10 +381,21 @@
       "live_integration_design": "range-live-design.md",
       "r4h_source": "6188a1f651f2c29f3bfa5ea16f9b91749856a465",
       "r4i_source": "07b91c8163f9b502c1188fd56bcab052e6ab9a40",
-      "r4i_review": "Default Area appearance owner-accepted; corrected packaged Bar/Area journeys pass together. Independent review accepts bounded application milestone; publication pending.",
-      "phase": "application-accepted-publication-pending",
+      "r4i_review": "Default Area appearance owner-accepted; both corrected packaged Range journeys pass. Independent review accepts the bounded application milestone; public image publication verified.",
+      "phase": "accepted-published",
       "image": "sha256:1ff9d136027b0e0ae0f55b89f3faae5892602b2aeb3cee5482f408dc3a3bb0b0",
-      "r4j_source": "e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e"
+      "r4j_source": "e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e",
+      "release": "alpha-39920081345-1",
+      "publication": {
+        "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-39920081345-1",
+        "manifest": "artifacts/reviewed/chart-range/release-manifest.json",
+        "anonymous_pull_evidence": "artifacts/reviewed/chart-range/anonymous-pulls.json",
+        "images": {
+          "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:598ae0a64e037b3b252b6051deab7726efecf87ad34d53063bb4914c19b8c146",
+          "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:cbf50782e0b4abf1758cd0dd1e27c51a1736d509ff1b5b73aa9968a023af883e"
+        },
+        "scope": "local browser acceptance and CI publication verified separately"
+      }
     }
   ]
 }

@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "range-milestone-publication"
+requirements = ["analyst-workspace/range-chart-plan.md:Delivery status", "openbb-self-service/requirements.md:7"]
+planned_checks = ["hosted-both-image-builds", "tagged-release-assets", "anonymous-digest-tag-latest-pulls"]
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py", "tests/delivery/test_prototype_workflow.py"]
+status = "passed"
+evidence = ["Run 39920081345 passed both jobs and published alpha-39920081345-1. Both source pins, release assets and six anonymous image pulls match the manifest. Local browser acceptance is separate from CI image-byte execution. See artifacts/reviewed/chart-range/verification.md, release-manifest.json and anonymous-pulls.json."]
+
+[[capabilities]]
 id = "range-packaged-appearance"
 requirements = ["analyst-workspace/range-chart-plan.md:R4i visual refinement", "analyst-workspace/range-live-design.md:Joined acceptance and delivery"]
 planned_checks = ["retained-fmp-extrema", "controls-navigation", "fresh-reopen-export", "owner-default-appearance", "navigator-label-spacing"]

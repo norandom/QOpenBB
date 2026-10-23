@@ -31893,10 +31893,10 @@
     },
     {
       "sourcepath": "artifacts/chart-range/verification.md",
-      "sourceSHA256": "2259def229988d45ca6236cd901c0fef868c9a692f3aaf2270078cc57c4c8f22",
+      "sourceSHA256": "c808e6832248da4a6f03b2ad7dfa4f118ae636e85baebdf8e707742049aff54e",
       "publishedpath": "artifacts/reviewed/chart-range/verification.md",
-      "publishedSHA256": "2259def229988d45ca6236cd901c0fef868c9a692f3aaf2270078cc57c4c8f22",
-      "bytes": 28323,
+      "publishedSHA256": "c808e6832248da4a6f03b2ad7dfa4f118ae636e85baebdf8e707742049aff54e",
+      "bytes": 29250,
       "transform": "exact-byte-copy"
     },
     {
@@ -32001,6 +32001,22 @@
       "publishedpath": "artifacts/reviewed/chart-range/range-area-fmp-navigator.png",
       "publishedSHA256": "fb7bf47c534fc5d3c775019ad8efde7d30a62ea1070351fdf328c026169f5205",
       "bytes": 68491,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-range/release-39920081345/manifest.json",
+      "sourceSHA256": "0ff84def24f5fcc7cb2a5c4b4a4f70969630e993273e185a8a7b093549f7ab40",
+      "publishedpath": "artifacts/reviewed/chart-range/release-manifest.json",
+      "publishedSHA256": "0ff84def24f5fcc7cb2a5c4b4a4f70969630e993273e185a8a7b093549f7ab40",
+      "bytes": 6740,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-range/release-39920081345/anonymous-pulls.json",
+      "sourceSHA256": "2b2077919dd4ddcd9d57742cd887fdb0862d01aa6f68ec78ec3ac76247927baf",
+      "publishedpath": "artifacts/reviewed/chart-range/anonymous-pulls.json",
+      "publishedSHA256": "2b2077919dd4ddcd9d57742cd887fdb0862d01aa6f68ec78ec3ac76247927baf",
+      "bytes": 5038,
       "transform": "exact-byte-copy"
     }
   ],

@@ -147,3 +147,10 @@ The corrected packaged image `sha256:1ff9d136027b0e0ae0f55b89f3faae5892602b2aeb3
 The checks cover actual raw-USD quarterly extrema and tooltips, editor controls, theme/direction changes, miniature stability, slider/wheel/pan/reset, legend toggling, refresh, fresh-context save/reopen, and PNG export with sampled financial-pixel comparisons and browser diagnostics. Direct inspection of both exports confirms separation between main-axis labels and the miniature. The Area outlined-square/line legend also paints correctly in the exported image. No new provider request is claimed: these are the retained historical FMP observations described above.
 
 The owner accepted the refined default Area appearance on 2026-10-23. Long partial-year labels can still clip at the outer canvas boundary, as they do in the original default view. This acceptance covers the bounded Range journey, not exact pixel equality, all renderer families, assembled deployment, or the previously unverified original autoscale-off contrast. Registry publication remains a separate gate.
+
+
+## Published Range alpha
+
+[alpha-39920081345-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39920081345-1) publishes both service images after hosted checks and Dagger builds. The release manifest pins the accepted Workspace source `e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both services passed anonymous pulls by immutable digest, alpha tag and `latest`; remote manifest/config identities, source labels and release installation assets were verified.
+
+The [manifest](release-manifest.json) records the exact pair and [anonymous pull evidence](anonymous-pulls.json) records all six pulls. Local browser acceptance used image `1ff9d136`; the CI images are separate build outputs from the same pinned source. Their publication checks do not claim browser execution against the CI image bytes, assembled Compose runtime acceptance or owner-server deployment.

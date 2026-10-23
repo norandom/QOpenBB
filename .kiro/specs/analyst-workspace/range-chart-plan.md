@@ -1,6 +1,6 @@
 # Range chart foundation plan
 
-Range Bar/Area are accepted in the ordinary Table/File journey on the identified local image: retained-FMP extrema, controls, navigation, fresh reopen and export pass. Image publication is the remaining delivery gate; the published alpha is unchanged until that gate passes.
+Range Bar/Area are accepted in the ordinary Table/File journey on the identified local image: retained-FMP extrema, controls, navigation, fresh reopen and export pass. Both public service images are published in [alpha-39920081345-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39920081345-1) and anonymous pulls are verified.
 
 The R1-R4j sections retain the staged contracts and historical acceptance boundaries; their source-only caveats describe those checkpoints. The current application acceptance is recorded at the end of this document. Workspace baseline: `95188eb3ac92188e62f32b8ba9d4897a6c8cc176`. The [renderer inventory](../../../docs/renderer-capability-matrix.md) and [open checklist](../../../docs/echarts-status.md) still own the wider caller boundaries. Raw source findings and exact hashes are retained in ignored `artifacts/chart-range/source-contract.md`.
 
@@ -82,7 +82,7 @@ R1 is disproved if the source assignment requires low/high field pairing, if its
 - [x] R3: independently accept the inactive [Range Area renderer core](range-area-renderer-design.md).
 - [x] Integrate existing controls and saved state.
 - [x] Accept real-FMP application behavior and appearance.
-- [ ] Publish images and verify public pulls.
+- [x] Publish images and verify public pulls.
 
 R1 source: Workspace `0bc5109671c3ca1af43b863a0da3616ab78ae968`. See [verification](../../../artifacts/reviewed/chart-range/verification.md). This preparation lane does not activate Range or delay the current Box Plot release.
 
@@ -152,7 +152,7 @@ R4e capture accepted at Workspace `5e85724c93701d86024dce2e3587a83510542c14`; se
 - [x] Independently review reverse geometry and the joined rendering/typing/complexity evidence.
 - [x] Connect the live session, existing editor, navigator and pointer lifecycle (R4g source accepted).
 - [x] Verify real-FMP application behavior, appearance and save/reopen/export.
-- [ ] Publish the completed milestone and verify the public images.
+- [x] Publish the completed milestone and verify the public images.
 
 R4f accepted at Workspace `9f5a9c2d22d99fcd72d7721705c6e2fe0a6dfd43`; see the [application contract](range-application-design.md) and [verification](../../../artifacts/reviewed/chart-range/verification.md#r4f-composed-application-mapping-accepted). Session direction changes must transfer semantic axis preferences without retaining a stale physical position. This slice supplies the composed renderer; it does not establish that live lifecycle.
 
@@ -171,9 +171,9 @@ Owner comparison on 2026-10-22 requests closer original appearance before Range 
 - [x] Independently review scoped source regressions, formatting, typing delta and complexity.
 - [x] Compare the updated packaged image with the original using retained FMP data, including legend paint/export; owner accepts default Area appearance.
 
-At the first packaged checkpoint, Bar and Area behavior passed while visual acceptance and publication remained open. The corrected application is now accepted; publication is pending. These refinements must preserve navigation, selected field identity, financial values and saved options.
+At the first packaged checkpoint, Bar and Area behavior passed while visual acceptance and publication remained open. The corrected application is now accepted; publication is recorded below. These refinements must preserve navigation, selected field identity, financial values and saved options.
 
-R4i source accepted at Workspace `07b91c8163f9b502c1188fd56bcab052e6ab9a40`; [source verification](../../../artifacts/reviewed/chart-range/verification.md#r4i-original-appearance-refinement). Refined default Area appearance is owner-accepted; publication remains pending.
+R4i source accepted at Workspace `07b91c8163f9b502c1188fd56bcab052e6ab9a40`; [source verification](../../../artifacts/reviewed/chart-range/verification.md#r4i-original-appearance-refinement). Refined default Area appearance is owner-accepted; publication is recorded below.
 
 
 ## Packaged checkpoint and FMP samples
@@ -181,9 +181,9 @@ R4i source accepted at Workspace `07b91c8163f9b502c1188fd56bcab052e6ab9a40`; [so
 - [x] Verify Bar and Area behavior in the identified R4i image, including fresh reopen and PNG export; preserve the separate run outcomes in the [evidence](../../../artifacts/reviewed/chart-range/verification.md#r4i-packaged-checkpoint-2026-10-23).
 - [x] Obtain owner acceptance of the default Area appearance.
 - [x] Move the navigator below the main axis labels and verify the corrected packaged layout/export.
-- [ ] Publish the accepted milestone and verify both public image identities and pulls.
+- [x] Publish the accepted milestone and verify both public image identities and pulls.
 
-These default light views show 40 historical AAPL quarters grouped into 11 fiscal years. Each band/bar is the quarterly minimum-to-maximum revenue or net income in raw USD, not an annual total. Application source `07b91c8`; publication remains pending.
+These default light views show 40 historical AAPL quarters grouped into 11 fiscal years. Each band/bar is the quarterly minimum-to-maximum revenue or net income in raw USD, not an annual total. Application source `07b91c8`; publication is recorded below.
 
 ![AAPL quarterly revenue and net income ranges by fiscal year](../../../artifacts/reviewed/chart-range/range-area-fmp-light.png)
 
@@ -203,3 +203,6 @@ Both journeys pass in one run on source `e2b87ed98cd5ef18fb9ca6ddf888802d71fc685
 The saved/reopened Area export below uses the same retained AAPL quarterly min/max observations in raw USD, with step interpolation and markers enabled. The navigator now sits below the main fiscal-year labels.
 
 ![Saved AAPL quarterly ranges with separated navigator and axis labels](../../../artifacts/reviewed/chart-range/range-area-fmp-navigator.png)
+
+
+Publication completed as [alpha-39920081345-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39920081345-1); both image identities and six anonymous pulls are verified separately from local browser acceptance. See [release evidence](../../../artifacts/reviewed/chart-range/verification.md#published-range-alpha).
