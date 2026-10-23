@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-39920081345-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40002594897-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -13,14 +13,14 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 ## Status at a glance
 
-Snapshot: 2026-10-22. Follow the CI link for live run status; a green check does not establish deployment acceptance.
+Snapshot: 2026-10-23. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
 | Area | What exists | What remains |
 | --- | --- | --- |
 | Prototype | Full Workspace, installed data API, two-service Compose, local image builds | Candidate login/dashboard and routing smoke; assembled Compose acceptance |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
 | Data | Adapted FMP profile/income routes and FRED series catalog; real-data snapshot dashboard | Broader live FMP coverage, Yahoo adapter, named discovery and consistent provider contracts |
-| Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut, Box Plot and Range Bar/Area behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
+| Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut, Box Plot, Range Bar/Area and Waterfall behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
 | Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and persistence acceptance |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
 
@@ -98,7 +98,7 @@ Published: [Range Bar/Area](.kiro/specs/analyst-workspace/range-chart-plan.md).
 - [x] Implement and independently review the requested Range axis and legend refinements (R4i); default Area appearance accepted; navigator spacing and corrected default behavior pass both packaged FMP journeys; the accepted image pair is published.
 - [x] Verify both Range families in the packaged application with real FMP data, save/reopen and export; publication is verified.
 
-Current: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), following the [23 October work plan](.kiro/specs/analyst-workspace/autonomous-2026-10-23.md).
+Published: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), following the [23 October work plan](.kiro/specs/analyst-workspace/autonomous-2026-10-23.md).
 
 - [x] Review the signed-movement contract and original zero, missing-value and legend behavior.
 - [x] Implement and independently accept cumulative movements.
@@ -107,9 +107,9 @@ Current: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), foll
 - [x] Independently accept the renderer/editor/session source join.
 - [x] Review the first packaged failure and verify empty-selection remove/re-add recovery.
 - [x] Verify the retained-FMP income-statement bridge, controls, save/reopen and export in an identified image; owner accepts the appearance.
-- [ ] Publish and verify the accepted milestone images.
+- [x] Publish and verify the accepted milestone images.
 
-Waterfall application acceptance is complete for this bounded journey. Image publication remains pending; Range is still the published alpha.
+Waterfall is published in the current alpha. Local application acceptance and public image identities are verified separately; see the [release evidence](artifacts/reviewed/chart-waterfall/verification.md#published-waterfall-alpha).
 
 ## Delivery plan
 

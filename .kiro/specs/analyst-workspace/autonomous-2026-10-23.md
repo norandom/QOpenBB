@@ -34,3 +34,11 @@ Record completed tasks, source/root commits, image/release identities, actual pa
 ## Evening verification extension
 
 At 18:42 Berlin, after supplying the running candidate, the owner explicitly chose "Continue verification tonight." This extends the verification window beyond the original cutoff. Continue the packaged Waterfall journey and repairs required to satisfy it; retain independent review, per-task commits and the accepted-milestone publication gate. The afternoon checkpoint is recorded in artifacts/chart-waterfall/handoff.md. The candidate startup blocker is resolved.
+
+## Final closure after the evening extension
+
+Waterfall is delivered as [alpha-40002594897-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40002594897-1). The owner extended verification at 18:42 Berlin, accepted the appearance and requested that the current task be finished before stopping today. No next-family work was begun.
+
+The maintained real-FMP journey passes 1/41.4 seconds on application 789d93f87e99d6bdd51a37d9e387cdd934e4e38a and local image 46ec7b9edc92ed20deb59d6f4f011bb10c94b934aa9c8faae4c6d5ce5739769b; test-only ba03b1289f60a06269fb1a97900e61474475464f preserves the accepted application code. Publication run [40002594897](https://github.com/norandom/QOpenBB/actions/runs/40002594897) succeeded from root 15b2e782f71011a79b4ed1351386aa01133fb14c, pinning Workspace ba03 and data API cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba. Both release image identities, downloaded installation assets and six anonymous digest/tag/latest pulls are verified. See [final verification](../../../artifacts/reviewed/chart-waterfall/verification.md#published-waterfall-alpha), [manifest](../../../artifacts/reviewed/chart-waterfall/release-manifest.json) and [pull evidence](../../../artifacts/reviewed/chart-waterfall/anonymous-pulls.json).
+
+There is no remaining blocker in the bounded Waterfall milestone. CI image-byte browser execution, assembled Compose and owner-server acceptance remain outside this delivery; broader unchecked chart/caller work stays in the [ECharts status](../../../docs/echarts-status.md) and [roadmap](../../../docs/roadmap.md). These are future scope, not work started today. The parent records the final root closure commit after committing these records. No additional chart task is scheduled in this run.

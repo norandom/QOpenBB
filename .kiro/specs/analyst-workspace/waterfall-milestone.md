@@ -1,6 +1,6 @@
 # Waterfall in the existing chart editor
 
-Waterfall is accepted for the bounded ordinary Table/File journey, with retained-FMP financial verification and owner-approved appearance. Application and test sources are recorded below. Image publication remains pending; Range remains the published alpha.
+Waterfall is accepted for the bounded ordinary Table/File journey, with retained-FMP financial verification and owner-approved appearance. Application and test sources are recorded below. The accepted image pair is published as [alpha-40002594897-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40002594897-1); both image identities and six anonymous pulls are verified separately from local browser acceptance.
 
 ## Original behavior to preserve
 
@@ -32,7 +32,7 @@ Independently check the intermediate balances against gross profit, operating in
 - [x] W1. Implement the small cumulative-movement projection below, with meaningful numerical regressions. This prepares rendering and does not activate the gallery route.
 - [x] W2. Join the renderer, Waterfall appearance and existing editor/session paths. Independently accepted source and packaged journey reuse ordinary capture, Set Up, persistence, layout, host and navigation/pointer lifecycle.
 - [x] W3. Pass the identified packaged application journey with the FMP bridge, original comparison, relevant controls, navigation, refresh, save/fresh reopen and PNG export. Owner accepts the appearance; reviewed samples are below.
-- [ ] W4. Reconcile README/docs checkboxes and breadth, commit the accepted milestone, dispatch one image publication run and verify the tagged release and both public images.
+- [x] W4. Reconcile README/docs checkboxes and breadth, commit the accepted milestone, dispatch one image publication run and verify the tagged release and both public images.
 
 All modified production files must meet 400 physical lines, 300 logical units and 50 units per function through the existing explicit inventory/checker. Existing `echarts/lifecycle.ts` is near its cap and must remain unchanged unless a separately reviewed cohesive extraction is necessary. Tests/documentation are exempt from production caps. Preserve unrelated catalog, Perspective and inventory work.
 
@@ -79,10 +79,14 @@ The maintained candidate-run-3 journey at test revision `c6d8ef606f4252ffa88a742
 
 ## Accepted application and samples
 
-Candidate-run-5 passes one maintained test in 41.4 seconds, exit 0, on application `789d93f87e99d6bdd51a37d9e387cdd934e4e38a` and image `sha256:46ec7b9edc92ed20deb59d6f4f011bb10c94b934aa9c8faae4c6d5ce5739769b`. Test-only revision `ba03b1289f60a06269fb1a97900e61474475464f` explicitly toggles legend false before true to persist the choice; application code is unchanged. Independent review approves the bounded financial/control/navigation/tooltip/refresh/fresh-reopen/export and observed diagnostics evidence; the owner accepts the appearance. The default legend is present. Parent Docker inspection confirms the running image, sole /data mount and no source overlay. W2/W3 are complete; W4 publication remains open. See the [verification report](../../../artifacts/reviewed/chart-waterfall/verification.md) for limits.
+Candidate-run-5 passes one maintained test in 41.4 seconds, exit 0, on application `789d93f87e99d6bdd51a37d9e387cdd934e4e38a` and image `sha256:46ec7b9edc92ed20deb59d6f4f011bb10c94b934aa9c8faae4c6d5ce5739769b`. Test-only revision `ba03b1289f60a06269fb1a97900e61474475464f` explicitly toggles legend false before true to persist the choice; application code is unchanged. Independent review approves the bounded financial/control/navigation/tooltip/refresh/fresh-reopen/export and observed diagnostics evidence; the owner accepts the appearance. The default legend is present. Parent Docker inspection confirms the running image, sole /data mount and no source overlay. W2/W3 and W4 publication are complete. See the [verification report](../../../artifacts/reviewed/chart-waterfall/verification.md) for limits.
 
 Both samples use AAPL FY2026 Q3, statement date 2026-06-27, raw USD displayed in billions, from the retained FMP capture retrieved 2026-10-20. Signed movements retain financial row order; ending balances reconcile to reported income subtotals.
 
 ![Default light Waterfall: retained FMP AAPL FY2026 Q3 income bridge, 2026-06-27, USD.](../../../artifacts/reviewed/chart-waterfall/waterfall-fmp-default-light.png)
 
 ![Horizontal styled Waterfall: the same retained FMP AAPL FY2026 Q3 income bridge, 2026-06-27, USD, with signed labels and connectors.](../../../artifacts/reviewed/chart-waterfall/waterfall-fmp-horizontal-styled-light.png)
+
+## Published milestone
+
+Workflow [40002594897](https://github.com/norandom/QOpenBB/actions/runs/40002594897) publishes [alpha-40002594897-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40002594897-1) from root 15b2e782f71011a79b4ed1351386aa01133fb14c, Workspace ba03b1289f60a06269fb1a97900e61474475464f and data API cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba. Release assets, image identities and all six anonymous digest/tag/latest pulls are verified. The accepted browser image used application 789d93f plus test ba03; CI rebuilt ba03 separately. This establishes source continuity, not browser execution of CI image bytes, assembled Compose or owner-server acceptance. See [release verification](../../../artifacts/reviewed/chart-waterfall/verification.md#published-waterfall-alpha). Finish this milestone and stop today; no next-family work was begun.

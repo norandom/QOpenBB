@@ -1,4 +1,11 @@
 [[capabilities]]
+id = "waterfall-milestone-publication"
+requirements = ["analyst-workspace/waterfall-milestone.md:Bounded delivery tasks"]
+planned_checks = ["hosted-both-image-builds", "tagged-release-assets", "anonymous-digest-tag-latest-pulls"]
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py", "tests/delivery/test_prototype_workflow.py"]
+status = "passed"
+evidence = ["Run 40002594897 passed both jobs and published alpha-40002594897-1 from root 15b2e782f71011a79b4ed1351386aa01133fb14c, Workspace ba03b1289f60a06269fb1a97900e61474475464f and data API cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba. Release assets and all six anonymous digest/tag/latest pulls match source labels and manifest/config identities. Local application 789/test ba03 browser acceptance is separate from CI image-byte runtime, assembled Compose and owner-server acceptance. See artifacts/reviewed/chart-waterfall/verification.md, release-manifest.json and anonymous-pulls.json."]
+[[capabilities]]
 id = "waterfall-default-legend-source-repair"
 requirements = ["analyst-workspace/waterfall-milestone.md:Evidence and fan-out"]
 planned_checks = ["preserve-waterfall-legend-on-data-sync", "clear-foreign-automatic-override-on-family-entry", "preserve-saved-false", "ordinary-family-rule-unchanged"]
@@ -68,7 +75,7 @@ requirements = ["analyst-workspace/waterfall-milestone.md:W2 join constraints", 
 planned_checks = ["retained-fmp-income-bridge", "first-field-admission", "original-appearance-controls", "navigation-prefix-preservation", "refresh-fresh-reopen-export"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/waterfall-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/waterfall-fixture.ts"]
 status = "passed"
-evidence = ["W2/W3 accepted: candidate-run-5 passes 1/41.4 seconds, exit 0, on application 789d93f87e99d6bdd51a37d9e387cdd934e4e38a/image 46ec7b9edc92ed20deb59d6f4f011bb10c94b934aa9c8faae4c6d5ce5739769b; test-only ba03b1289f60a06269fb1a97900e61474475464f explicitly persists legend false-to-true. Independent review accepts bounded retained-FMP financial/control/navigation/tooltip/refresh/fresh-reopen/export and observed diagnostics evidence; owner accepts appearance. Separate parent Docker inspection confirms image/no source overlay. W4 publication remains pending. Curated samples and limits: artifacts/reviewed/chart-waterfall/verification.md."]
+evidence = ["W2/W3 accepted: candidate-run-5 passes 1/41.4 seconds, exit 0, on application 789d93f87e99d6bdd51a37d9e387cdd934e4e38a/image 46ec7b9edc92ed20deb59d6f4f011bb10c94b934aa9c8faae4c6d5ce5739769b; test-only ba03b1289f60a06269fb1a97900e61474475464f explicitly persists legend false-to-true. Independent review accepts bounded retained-FMP financial/control/navigation/tooltip/refresh/fresh-reopen/export and observed diagnostics evidence; owner accepts appearance. Separate parent Docker inspection confirms image/no source overlay. W4 publication is verified separately. Curated samples and limits: artifacts/reviewed/chart-waterfall/verification.md."]
 
 [[capabilities]]
 id = "range-milestone-publication"

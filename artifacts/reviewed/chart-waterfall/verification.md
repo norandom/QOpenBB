@@ -1,6 +1,6 @@
 # Waterfall verification
 
-Waterfall W2/W3 application acceptance is complete for the bounded retained-FMP Table/File journey. Independent evidence review approves the repaired candidate and the owner accepts its appearance. W4 image publication and release verification remain pending; Range remains the published alpha. Earlier checkpoints below retain their original limits.
+Waterfall W2/W3 application acceptance is complete for the bounded retained-FMP Table/File journey. Independent evidence review approves the repaired candidate and the owner accepts its appearance. W4 is verified: alpha-40002594897-1 publishes both service images with matching source pins, release assets and six anonymous pulls. Earlier checkpoints below retain their original limits.
 
 ## W0: original behavior and numerical contract
 
@@ -73,6 +73,8 @@ Candidate-run-5 passes one maintained test in 41.4 seconds, exit 0, with no skip
 
 The owner accepts this appearance. Curated default-light and horizontal-styled samples show AAPL FY2026 Q3, statement date 2026-06-27, raw USD displayed in billions, from the retained FMP capture retrieved 2026-10-20. Acceptance covers the selected light-theme controls and horizontal all-five tooltip proof; it does not establish every control/orientation, dark-theme parity or whole-image equality. Export assertions compare sampled financial glyphs; native dash is persisted and visually present rather than separately asserted. Diagnostics cover the observed intervals. Inherited compiler limitations above remain.
 
-## Remaining publication
+## Published Waterfall alpha
 
-W4 remains open: publish the accepted source through the image pipeline and verify the tagged release and public image identities. No Waterfall public release acceptance is claimed yet. The owning contract is .kiro/specs/analyst-workspace/waterfall-milestone.md. Stop after this milestone's delivery work today; no next-family work is authorized.
+Workflow [40002594897](https://github.com/norandom/QOpenBB/actions/runs/40002594897) passed both publication jobs and created [alpha-40002594897-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40002594897-1) from root 15b2e782f71011a79b4ed1351386aa01133fb14c. The release pins Workspace ba03b1289f60a06269fb1a97900e61474475464f and data API cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba. Downloaded compose.yaml, default.env.sample and manifest.json match their release asset hashes. Both services passed six anonymous pulls in total: digest, alpha tag and latest, with matching source labels and manifest/config identities. See the [release manifest](release-manifest.json) and [anonymous pull evidence](anonymous-pulls.json). Workspace CodeQL at ba03 also passed, as checked by the parent.
+
+Local browser acceptance exercised application 789d93f87e99d6bdd51a37d9e387cdd934e4e38a in image 46ec7b9edc92ed20deb59d6f4f011bb10c94b934aa9c8faae4c6d5ce5739769b with test-only ba03b1289f60a06269fb1a97900e61474475464f. CI rebuilt ba03 into separate published bytes; the source difference is the reviewed test-only legend interaction. Publication/pull verification does not establish browser execution of CI image bytes, assembled Compose acceptance or owner-server deployment. W0-W4 are complete for this bounded milestone, with no remaining Waterfall blocker. The owner authorized evening verification at 18:42 Berlin and then requested finish the current task and stop today; no next-family work was begun.
