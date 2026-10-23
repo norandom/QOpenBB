@@ -188,3 +188,6 @@ These default light views show 40 historical AAPL quarters grouped into 11 fisca
 
 
 R4j navigator spacing source repair is independently accepted at Workspace `8047c09`: 16 focused tests pass, scoped typing has zero additions and complexity meets all caps. Rebuilt-image layout/export verification remains open; see [evidence](../../../artifacts/reviewed/chart-range/verification.md#r4j-navigator-label-spacing).
+
+
+The `8047c09` packaged run rejected both Range families in the hidden-navigator/default-zoom state. Correction `e2b87ed` is independently source-reviewed with 18 passing focused tests; both rebuilt-image journeys remain required. See [failure and correction](../../../artifacts/reviewed/chart-range/verification.md#r4j-packaged-rejection-and-hidden-miniature-correction).

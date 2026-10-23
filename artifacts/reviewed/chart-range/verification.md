@@ -129,3 +129,12 @@ Workspace `8047c093f16fb04c62afb22ced8104651aa95118` places the navigator after 
 Independent source review accepted the production change and five layout regressions. The final affected run passes 16 tests across navigator layout, live projection and navigation windows. The initial RED run includes five meaningful layout failures plus an abandoned tiny-widget policy case; that extra case and its proposed behavior are absent from the final code. No-fix formatting passes. Corrected inventory-backed complexity reports no errors or violations: 196 physical lines, 54 logical units and 14 units in the largest function. An earlier scope run failed on a stale data API base revision and is not counted as passing. Scoped TypeScript baseline/current diagnostics match exactly: one inherited typography TS2578, zero additions; this is not a clean full-project typecheck.
 
 Source acceptance permits a new candidate build, not full Range completion. The next gate is the identified packaged navigator layout and PNG export. Commands/results and independent review remain in local `artifacts/chart-range/r4j-navigator-*` and `r4i-packaged-review.md`. The published alpha remains unchanged.
+
+
+## R4j packaged rejection and hidden-miniature correction
+
+The packaged `8047c09` image failed both Range journeys before family selection completed (`browser-8047c09-1`, two failures). With a top legend, hidden navigator and enabled zoom, the spacing change attempted to project an unused miniature outside the viewport. The renderer rejected its geometry. The earlier layout fixtures did not exercise this combination. This image is not accepted and was not released.
+
+Workspace `e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e` skips miniature projection when the miniature is disabled. It preserves the visible-miniature spacing correction, inside zoom carriers, wheel/pan settings and existing control eligibility. Both real-default cases fail against the previous source and pass after the repair, including installed-ECharts rendering with finite SVG output and explicit wheel/pan assertions.
+
+Independent review approves this source correction for a new build. The final focused run passes 18 cases across three suites; formatting and complexity pass (200 physical lines, 54 logical units, largest function 14). Exact scoped baseline/current TypeScript diagnostics retain one inherited typography TS2578 and zero additions. These checks do not replace packaged acceptance: both Range journeys must pass in the rebuilt image before milestone completion or publication.
