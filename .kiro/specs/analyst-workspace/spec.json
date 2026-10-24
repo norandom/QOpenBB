@@ -23,19 +23,21 @@
     "name": "radar-line-area-port",
     "contract": "radar-milestone.md",
     "authorization": "Owner approved Radar Line and Radar Area as the next milestone on 2026-10-24. Bounded plan first; original behavior and interfaces must pass RD0 review before production implementation.",
-    "phase": "inactive-adapters-accepted-integration-pending",
+    "phase": "capture-setup-accepted-live-routing-pending",
     "completed_tasks": [
       "RD0",
       "RD1",
-      "RD2"
+      "RD2",
+      "RD3a"
     ],
     "feature_accepted": false,
     "application_accepted": false,
-    "source": "b7a7fcb0899bee0328503aff9a23d8ccd81d35c2",
+    "source": "eb74a5e7a0ee48b395efa8cf2a113cfdd5cb5933",
     "design": "radar-contract.md",
     "review": "artifacts/reviewed/chart-radar/rd0-review.md",
     "rd2_source": "c8b0561e37e2aebd5011bb8b1ef79b3c7c5f1f66",
-    "rd1_source": "b7a7fcb0899bee0328503aff9a23d8ccd81d35c2"
+    "rd1_source": "b7a7fcb0899bee0328503aff9a23d8ccd81d35c2",
+    "rd3a_source": "eb74a5e7a0ee48b395efa8cf2a113cfdd5cb5933"
   },
   "completed_milestones": [
     {

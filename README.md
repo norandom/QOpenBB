@@ -118,7 +118,8 @@ Next chart milestone: [Radar Line and Radar Area](.kiro/specs/analyst-workspace/
 - [x] Freeze original Radar behavior and the retained-FMP example; independently reviewed inactive contracts and fixture.
 - [x] Independently accept the inactive Radar renderer.
 - [x] Independently accept inactive Radar editor/session adapters.
-- [ ] Integrate both adapters into the existing chart editor.
+- [x] Independently accept Radar capture and setup (RD3a).
+- [ ] Connect live session, editor and caller routing (RD3b); overall integration remains pending.
 - [ ] Accept both packaged chart journeys and publish the milestone images.
 
 ![Delivery plan: prebuilt alpha, Compose installation, provider coverage and analyst workflows; separate AI-to-Excel lane and later extensions.](docs/assets/delivery-plan.svg)

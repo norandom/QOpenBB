@@ -33,6 +33,8 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Accept Radar's original-behavior contract, retained-FMP fixture and inactive interfaces (RD0); [review](../artifacts/reviewed/chart-radar/rd0-review.md). Live application integration remains open.
 - [x] Independently accept inactive Radar editor/session adaptation (RD2): nine focused checks, validated Polar edits and preserved appearance composition. Live routing and controls remain pending integration.
 - [x] Independently accept the inactive Radar renderer (RD1): fifteen focused checks including eight ECharts SSR cases cover geometry, retained FMP values and appearance options. Live routing and browser parity remain open.
+- [x] Accept Radar capture/setup (RD3a) at Workspace `eb74a5e7a0ee48b395efa8cf2a113cfdd5cb5933`: 172 focused regression tests, eight-file Biome and combined complexity pass; four inherited typing errors remain unchanged. [Evidence](../artifacts/reviewed/chart-radar/verification.md).
+- [ ] Complete live routing (RD3b), overall integration (RD3), packaged FMP/visual acceptance (RD4) and publication (RD5).
 - [x] Complete the ordinary Table/File Range Bar/Area journey with retained-FMP extrema, controls, navigation, fresh reopen and export. See the [accepted application milestone](../.kiro/specs/analyst-workspace/range-chart-plan.md); the accepted image pair is published.
 - [x] Independently accept inactive Range capture/setup and Box regression checks (R4a).
 - [x] Independently accept inactive Range series appearance and option precedence (R4b).
