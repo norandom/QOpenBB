@@ -25,11 +25,11 @@ The retained FMP example is FY2025 quarterly AAPL cost of revenue plus gross pro
   - N0 is controller-owned. A delegated probe worker may edit only the new original probe `terminalpro/tests/e2e/live-chart/nightingale-original.spec.ts` while the controller owns, after semantic freeze, inactive declarations `Chart/compatibility/nightingaleContracts.ts` plus `terminalpro/tests/unit/chart-compatibility/fixtures/nightingaleContract.ts`. Reuse existing browser helpers; any additional helper requires an explicit ownership adjustment. No live application edit belongs to N0.
   - Identify exact N1/N2 new-file lists and shared types before fan-out. Measure modified shared-file baselines. The controller alone edits `.kiro/complexity-budgets.json`, shared interfaces, source locks and the combined change manifests; these writes are serialized. Each lane supplies its scoped measurements and hashes, not competing inventory edits.
   - Done when independent contract/plan review accepts the financial semantics, runtime evidence and executable lane boundaries.
-- [ ] N1 (P). Implement the inactive Nightingale renderer and assignments.
+- [x] N1 (P). Implement the inactive Nightingale renderer and assignments.
   - Depends on N0. Own only the reviewed new Nightingale rendering/assignment files and focused tests, with no shared dispatch or editor edits.
   - Implement original geometry, mode transforms, missing/sign rules, theme/legend/tooltip semantics. Verify meaningful numerical and native rendering results.
   - Done when focused checks, scoped static checks, complete-file complexity and independent review pass. No live activation belongs here.
-- [ ] N2 (P). Implement inactive Nightingale control/session adaptation.
+- [x] N2 (P). Implement inactive Nightingale control/session adaptation.
   - Depends on N0; independent of N1 only after shared interfaces freeze. Own reviewed new Nightingale editor/session files and focused tests.
   - Map original reachable controls and persisted options through existing owners. Preserve unsupported-neighbor family state and stale-command rules.
   - Done when control-to-option/state effects, saved defaults and rejection behavior pass focused checks, complexity and independent review.
@@ -51,7 +51,7 @@ Use the existing portable Vitest, scoped Biome, TypeScript baseline comparison, 
 
 Use at most four agents: controller, two disjoint workers and an independent reviewer. Sol handles bounded implementation; Astra handles numerical/integration contracts and difficult review. Serialize heavy builds and browser runs; at most three independent verification processes, one browser worker. Do not mutate the owner's local Compose data for tests. Preserve unrelated catalog, Perspective and inventory edits.
 
-The [independent plan review](../../../artifacts/reviewed/chart-nightingale/plan-review.md) passed on 2026-10-24. N0 is independently accepted; the contract freezes exact disjoint N1/N2 files, shared interfaces and commands. N1/N2 may proceed without shared live routing edits. This milestone follows the prototype-first steering amendment; it does not mark the full analyst-workspace specification complete.
+The [independent plan review](../../../artifacts/reviewed/chart-nightingale/plan-review.md) passed on 2026-10-24. N0 is independently accepted; the contract freezes exact disjoint N1/N2 files, shared interfaces and commands. N1/N2 are independently accepted at Workspace f6f6c1721248b1b4e201a96f7dc8bd1c992787c1 and 7cffa0894c494ebe59769d4df9a055135a72d65f; shared live routing is N3. Eighteen focused tests pass across both lanes; no packaged acceptance is claimed. This milestone follows the prototype-first steering amendment; it does not mark the full analyst-workspace specification complete.
 
 ## FMP samples
 

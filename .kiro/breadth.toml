@@ -987,3 +987,19 @@ planned_checks = ["original-mode-controls-tooltips", "retained-fmp-reconciliatio
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/nightingale-original.spec.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/fixtures/nightingaleContract.ts"]
 status = "passed"
 evidence = ["N0 Workspace 5fd57cf6d22893b5a26510a6ba3f25726a4386d5 independently approved: one original browser test passes44.5s; exact12 retained FMP amounts/four dates/four totals reconcile; inactive declarations177 physical/110 logical units, combined cap gate clean. Four inherited TypeScript diagnostics unchanged. Exact geometry remains source-derived; original CSV/parse errors disclosed. Owner approved retaining valid normalized data when a category is missing. No replacement or financial browser acceptance claimed. See artifacts/reviewed/chart-nightingale/verification.md and n0-review.md."]
+
+[[capabilities]]
+id = "nightingale-n1-inactive"
+requirements = ["analyst-workspace/nightingale-milestone.md:N1", "analyst-workspace/nightingale-contract.md"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/nightingaleMapping.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/nightingaleEngine.test.ts"]
+status = "passed"
+evidence = ["Workspace f6f6c1721248b1b4e201a96f7dc8bd1c992787c1 independently accepted. 10 tests pass including four actual native ECharts SVG cases; signed/normalized sparse data and category bands verified. Five production files fit caps; scoped lint and combined gate pass. Scoped TypeScript retains four unchanged baseline diagnostics. Live application and packaged financial/visual acceptance remain N3/N4. See artifacts/reviewed/chart-nightingale/verification.md and n1-review.md."]
+
+[[capabilities]]
+id = "nightingale-n2-inactive"
+requirements = ["analyst-workspace/nightingale-milestone.md:N2", "analyst-workspace/nightingale-contract.md"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/nightingaleSession.test.ts"]
+status = "passed"
+evidence = ["Workspace 7cffa0894c494ebe59769d4df9a055135a72d65f independently accepted. 8 tests pass including mounted control intent; model-root grouping, option applicability and inactive preservation verified. Five production files fit caps; scoped lint and combined gate pass. Scoped TypeScript retains four unchanged baseline diagnostics. Live application and packaged financial/visual acceptance remain N3/N4. See artifacts/reviewed/chart-nightingale/verification.md and n2-review.md."]

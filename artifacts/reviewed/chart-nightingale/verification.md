@@ -21,3 +21,13 @@ pipeline/.venv/bin/python -m tools.quality.complexity --check --changes workspac
 ```
 
 The source characterization and inactive declarations do not require a feature RED/GREEN claim. N1/N2 must add focused numerical, native-engine and mutation regressions before activation. N4 still owns identified packaged real-FMP checks, light/dark appearance, refresh, fresh-session reopen and export. Real-data milestone screenshots remain pending; synthetic reference screenshots are not published as FMP samples. The previously published Radar alpha and local Compose data are unchanged.
+
+## Inactive implementation acceptance
+
+N1 and N2 passed independent review on 2026-10-24, committed separately as `f6f6c1721248b1b4e201a96f7dc8bd1c992787c1` and `7cffa0894c494ebe59769d4df9a055135a72d65f`. Both remain inactive until N3 connects the existing Table/File application. No packaged image or UI acceptance is inferred from these checks.
+
+- N1: ten focused tests pass (six mapping, four actual native ECharts SVG engine). The tests cover signed/normalized geometry, centered category bands, grouped widths, sparse missing/negative observations, duplicates and the owner-approved missing-value correction. Native polar bars render the sectors; a bounded graphic layer handles category labels. Five production modules pass caps, maximum 179 physical lines, 52 logical units and 19/function. Scoped lint passes eight files; the controller's combined gate exits 0. [Independent renderer review](n1-review.md).
+- N2: eight focused tests pass, including a mounted control emitting its orientation intent. Group Type mutations remain at model root; appearance edits map only applicable polar axes and preserve inactive options. Five production modules pass caps, maximum 147 physical lines, 58 logical units and 21/function. Scoped lint passes six files; the controller's combined gate exits 0. [Independent controls review](n2-review.md).
+- Both scoped strict TypeScript comparisons retain the same four inherited diagnostics without additions. Reviewers independently reran the focused tests and lint and verified frozen source hashes. RED evidence includes missing implementation and concrete grouping/angle failures before correction.
+
+N3 must preserve model-root Group Type during setup and reject stale root edits, connect the existing state owners and controls, and supply original background strokes for inbuilt palettes through caller palette provenance. Custom palette strokes must remain intact. N4 still owns real-FMP browser, theme, refresh/reopen/export and appearance acceptance; one publication follows the accepted milestone.
