@@ -923,7 +923,7 @@ requirements = ["analyst-workspace/radar-milestone.md:Acceptance contract"]
 planned_checks = ["original-polar-semantics", "retained-fmp-quarterly-revenue", "radar-controls-themes", "refresh-fresh-reopen-export", "published-image-identities"]
 test_paths = []
 status = "planned"
-evidence = ["RD0 accepted at Workspace d12d0b724e2d70ccccdfdc8274e814762e2425f7: original Radar observations/source contract, 15 retained FMP values, inactive declarations, scoped static checks and independent review. RD1/RD2 inactive adapters and RD3a capture/setup are subsequently accepted in their capability entries below; live RD3b routing and RD4/RD5 acceptance remain pending. See artifacts/reviewed/chart-radar/verification.md and rd0-review.md."]
+evidence = ["RD0 accepted at Workspace d12d0b724e2d70ccccdfdc8274e814762e2425f7: original Radar observations/source contract, 15 retained FMP values, inactive declarations, scoped static checks and independent review. RD1/RD2 inactive adapters and RD3a capture/setup are subsequently accepted in their capability entries below; RD3/RD3b source integration is subsequently accepted in its capability entry below; RD4/RD5 acceptance remains pending. See artifacts/reviewed/chart-radar/verification.md and rd0-review.md."]
 
 [[capabilities]]
 id = "radar-inactive-editor-session"
@@ -947,4 +947,12 @@ requirements = ["analyst-workspace/radar-milestone.md:RD3a", "analyst-workspace/
 planned_checks = ["observation-normalization", "duplicate-category-order", "aggregate-before-inversion", "ready-empty-selection"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/radarCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarSetup.test.ts"]
 status = "passed"
-evidence = ["RD3a Workspace eb74a5e7a0ee48b395efa8cf2a113cfdd5cb5933 independently accepted: 172 affected tests, eight Biome files, combined complexity zero errors/violations, and four unchanged inherited TypeScript errors. RD3 overall, live RD3b routing and RD4/RD5 remain pending. See artifacts/reviewed/chart-radar/verification.md."]
+evidence = ["RD3a Workspace eb74a5e7a0ee48b395efa8cf2a113cfdd5cb5933 independently accepted: 172 affected tests, eight Biome files, combined complexity zero errors/violations, and four unchanged inherited TypeScript errors. RD3/RD3b source integration is subsequently accepted in its capability entry below; RD4/RD5 remain pending. See artifacts/reviewed/chart-radar/verification.md."]
+
+[[capabilities]]
+id = "radar-source-integration"
+requirements = ["analyst-workspace/radar-milestone.md:RD3", "analyst-workspace/radar-milestone.md:RD3b", "analyst-workspace/radar-contract.md:Shared inactive declarations and ownership"]
+planned_checks = ["table-file-routing", "session-editor-persistence", "selection-legend-resize", "prior-family-regressions"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/radarSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/radarEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/histogramSessionOwner.test.tsx"]
+status = "passed"
+evidence = ["RD3/RD3b source integration af226971c53922de5925d9b068fbfbd81df02527 independently approved: 88 distinct tests, 14 independently rerun, 18 Biome files, all 14 production files within caps, combined exit 0 with zero errors/violations. Scoped TypeScript exit 2 retains 2680 inherited errors without additions/removals. Historical RED is missing. Packaged FMP/visual acceptance and publication remain RD4/RD5. See artifacts/reviewed/chart-radar/verification.md."]

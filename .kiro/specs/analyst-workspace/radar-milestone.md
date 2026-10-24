@@ -2,7 +2,7 @@
 
 Restore Radar Line and Radar Area inside the existing Table/File chart editor. The owner approved this next milestone on 2026-10-24. Waterfall remains the published alpha while Radar is implemented. This plan does not activate a new chart or establish runtime acceptance.
 
-The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) and RD0 [contract review](../../../artifacts/reviewed/chart-radar/rd0-review.md) passed on 2026-10-24. The frozen [adapter contract](radar-contract.md), declarations and fixture now support RD1/RD2 fan-out. Inactive renderer/editor adapters and RD3a capture/setup have independent acceptance. RD3 overall, live routing (RD3b), packaged FMP/visual acceptance (RD4) and publication (RD5) remain pending; see the [verification record](../../../artifacts/reviewed/chart-radar/verification.md).
+The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) and RD0 [contract review](../../../artifacts/reviewed/chart-radar/rd0-review.md) passed on 2026-10-24. The frozen [adapter contract](radar-contract.md), declarations and fixture now support RD1/RD2 fan-out. Inactive renderer/editor adapters and RD3a capture/setup have independent acceptance. Source integration (RD3/RD3b) is independently accepted at Workspace `af226971c53922de5925d9b068fbfbd81df02527`. Packaged FMP/visual acceptance (RD4) and publication (RD5) remain pending; see the [verification record](../../../artifacts/reviewed/chart-radar/verification.md).
 
 ## Acceptance contract
 
@@ -36,7 +36,7 @@ Use the retained FMP quarterly AAPL income data documented in [Range verificatio
   - Depends on RD0; independent of RD1 after the interface is frozen. Own new Radar-only files under Chart `application/` and `editor/`, plus their focused tests.
   - Preserve original controls, selection, saved overrides and family transitions through existing state owners. No duplicate persistence or new toolbar.
   - Done when control-to-option and saved-state checks pass independent review and complexity checks. Do not edit shared type unions or family dispatch.
-- [ ] RD3. Integrate the two reviewed lanes into the existing journey.
+- [x] RD3. Integrate the two reviewed lanes into the existing journey.
   - Depends on RD1 and RD2. One controller-assigned worker owns shared family types, capture/setup selection, session dispatch, view routing and transition edits. Keep one owner for each shared file.
   - Extend the maintained inventory with integration-only changes before their acceptance. Reuse the host and lifecycle; any necessary extraction must preserve existing families.
   - Done when both families work through the real editor, affected prior-family regressions pass, and the combined change scope meets the caps and independent review.
@@ -44,7 +44,7 @@ Use the retained FMP quarterly AAPL income data documented in [Range verificatio
   - Depends on RD1/RD2. Own `compatibility/snapshotTypes.ts`, `compatibility/snapshot.ts`, `application/histogramCapture.ts`, `application/gridCapture.ts`, `application/setupProjection.ts` and new `application/radarCapture.ts`, with focused capture/setup tests. Additional helpers require a reviewed ownership adjustment.
   - Register the named Radar observation policy; preserve finite/wrapped/date/missing values, duplicate categories, aggregation-before-inversion, selected field order and empty selection. No application family union, renderer/editor routing or caller edits in this subtask.
   - Done when scoped regressions establish those contracts without changing previous policies, whole-file caps pass and independent review accepts the change.
-- [ ] RD3b. Connect the live session, editor and caller paths.
+- [x] RD3b. Connect the live session, editor and caller paths.
   - Depends on RD3a. One worker owns the remaining shared routing and new Radar session projection. Preserve existing state/stamp/persistence owners; use the accepted RD1/RD2 adapters.
   - Done when the real ready/session path supports both families, existing editor controls reach their renderer/state effects, relevant family transitions pass, and combined caps and independent review pass. Packaged visual/FMP acceptance remains RD4.
 - [ ] RD4. Accept the packaged FMP and visual journey.

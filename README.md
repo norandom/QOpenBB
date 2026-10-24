@@ -119,7 +119,7 @@ Next chart milestone: [Radar Line and Radar Area](.kiro/specs/analyst-workspace/
 - [x] Independently accept the inactive Radar renderer.
 - [x] Independently accept inactive Radar editor/session adapters.
 - [x] Independently accept Radar capture and setup (RD3a).
-- [ ] Connect live session, editor and caller routing (RD3b); overall integration remains pending.
+- [x] Independently accept source integration through the existing session, editor and caller routes (RD3/RD3b).
 - [ ] Accept both packaged chart journeys and publish the milestone images.
 
 ![Delivery plan: prebuilt alpha, Compose installation, provider coverage and analyst workflows; separate AI-to-Excel lane and later extensions.](docs/assets/delivery-plan.svg)
