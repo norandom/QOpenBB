@@ -170,6 +170,14 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-radial/rc0-final/review.md",
+      "sourceSHA256": "5d3f95686248d68a6747d30765932790fc15b2867dd2a0fc7e819a5ec24e8ce1",
+      "publishedpath": "artifacts/reviewed/chart-radial/renderer-contract-review.md",
+      "publishedSHA256": "5d3f95686248d68a6747d30765932790fc15b2867dd2a0fc7e819a5ec24e8ce1",
+      "bytes": 4469,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-radial/checkpoint-review.md",
       "sourceSHA256": "e049fc21c0e4d655b4442ae691c045252da36d150d36daf7001f239cf1467884",
       "publishedpath": "artifacts/reviewed/chart-radial/checkpoint-review.md",
@@ -179,10 +187,10 @@
     },
     {
       "sourcepath": "artifacts/chart-radial/verification.md",
-      "sourceSHA256": "94b859c4fcec1a485d221e48612c3a800429d3d71039df02544763225a45fbc7",
+      "sourceSHA256": "096ba618ccdfd9157793d2e763993f2666ea1fa184cadca3e0e5b19f1c079120",
       "publishedpath": "artifacts/reviewed/chart-radial/verification.md",
-      "publishedSHA256": "94b859c4fcec1a485d221e48612c3a800429d3d71039df02544763225a45fbc7",
-      "bytes": 2140,
+      "publishedSHA256": "096ba618ccdfd9157793d2e763993f2666ea1fa184cadca3e0e5b19f1c079120",
+      "bytes": 2642,
       "transform": "exact-byte-copy"
     },
     {
@@ -33049,7 +33057,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167176834,
+  "total_payload_bytes": 167181805,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

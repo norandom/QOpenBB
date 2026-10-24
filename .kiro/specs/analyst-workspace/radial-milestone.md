@@ -10,7 +10,7 @@ Reuse existing capture, setup, session, persistence and native ECharts owners. V
 
 ## Work and dependency queue
 
-- [ ] RC0. Freeze the original numerical/control contract and shared adapter interfaces. Astra researches original semantics; a Sol explorer independently maps reuse, exact file ownership and size constraints. The controller joins findings, obtains independent contract review and retains a minimal original runtime probe. Source-derived facts and observed behavior remain distinct.
+- [x] RC0. Freeze the original numerical/control contract and shared adapter interfaces. Astra researches original semantics; a Sol explorer independently maps reuse, exact file ownership and size constraints. The controller joins findings, obtains independent contract review and retains a minimal original runtime probe. Source-derived facts and observed behavior remain distinct.
 - [ ] RC1 (P). Implement reviewed ECharts geometry and series mapping after RC0. Own only the exact renderer files/tests frozen in the contract. Preserve missing values and financial meaning; verify actual rendered output and edge cases.
 - [x] RC2 (P). Implement inactive control/session adaptation after RC0C. Own only the exact control files/tests frozen in the contract, separate from RC1. Reuse existing option paths and validate control-to-render/save effects.
 - [ ] RC3. Integrate after RC1/RC2 acceptance. One worker owns shared routing, capture, setup, session and caller files. Preserve prior families and stale-command protection.
@@ -56,4 +56,13 @@ The helper computes local geometry only; family scales, grouping, missing values
 - [x] RC0G: pure Column path helper, Workspace 26f1c8c; 30 focused tests, strict typing and lint pass.
 - [x] RC2: controls and selection adapter, Workspace 2339c73; 11 focused tests and lint pass, four inherited typing diagnostics unchanged.
 
-Independent reviews and the combined maintained-scope gate pass. See the [source verification](../../../artifacts/reviewed/chart-radial/verification.md). These files have no live routing consumer. No Radial appearance or financial application acceptance is claimed. The original normalized Column missing-value behavior still needs an owner decision.
+Independent reviews and the combined maintained-scope gate pass. See the [source verification](../../../artifacts/reviewed/chart-radial/verification.md). These files have no live routing consumer. No Radial appearance or financial application acceptance is claimed. The owner approved keeping valid normalized Column observations visible when another category is missing on 2026-10-24. The next one-hour batch runs 16:41:07-17:41:07 UTC.
+
+## Reviewed renderer lanes
+
+RC0 is frozen in the [numerical renderer design](radial-renderer-design.md), with original source expectations distinguished from packaged acceptance. The owner approved the missing-value correction. The controller-owned radialModel.ts and shared radial.fixtures.ts pass scoped typing with the same four inherited diagnostics; the combined maintained-scope gate passes.
+
+- [ ] RC1N: numerical preparation owns radialData.ts, radialScale.ts, radialLayout.ts and radialNumerical.test.ts.
+- [ ] RC1P: paint and translation own radial.ts, radialSeries.ts, radialChrome.ts and radialEngine.test.ts.
+
+Both consume the frozen prepared-pixel model. No lane edits shared routing, Nightingale code or accepted controls. Source reviews and a joined renderer check precede RC3 application integration.

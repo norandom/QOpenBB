@@ -24,19 +24,23 @@
     "contract": "radial-milestone.md",
     "design": "radial-contract.md",
     "authorization": "Owner explicitly authorized parallel start and one-hour autonomous progress on 2026-10-24.",
-    "phase": "inactive-adapters",
+    "phase": "renderer-implementation",
     "completed_tasks": [
       "RC0C",
       "RC0G",
-      "RC2"
+      "RC2",
+      "RC0"
     ],
     "feature_accepted": false,
     "application_accepted": false,
     "rc0c_source": "f18bb5c",
     "rc0g_source": "26f1c8c81333bf7cb09f69cc3e24d213bd7c4096",
     "rc2_source": "2339c73",
-    "pending_decision": "Original normalized Column suppresses valid observations when a category is missing; owner correction decision required.",
-    "evidence": "artifacts/reviewed/chart-radial/verification.md"
+    "pending_decision": null,
+    "evidence": "artifacts/reviewed/chart-radial/verification.md",
+    "missing_value_policy": "Owner approved 2026-10-24: keep valid normalized Column observations visible and omit only missing values.",
+    "renderer_design": "radial-renderer-design.md",
+    "rc0_source": "fa7f464bf7ca95248b755971c08ffcd5730236ae"
   },
   "completed_milestones": [
     {

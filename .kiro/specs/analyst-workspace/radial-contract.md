@@ -1,6 +1,6 @@
 # Radial compatibility contract
 
-Status: numerical contract remains a draft. The inactive controls/interface subset RC0C passed independent review; full RC0 still requires the Column missing-value decision and numerical adapter freeze. The owner authorized autonomous progress, not an unreviewed visible change.
+Status: RC0 numerical and control interfaces are independently frozen. The [renderer design](radial-renderer-design.md) owns exact formulas and lane boundaries. The owner approved retaining valid normalized Column observations when another category is missing; application and visual acceptance remain open.
 
 ## Scope and source identity
 
@@ -32,7 +32,7 @@ Column uses constant-width sides for a given category/group band, not a sector w
 
 Bar swaps those roles: category rings are subdivided by groups, while stacked numerical values accumulate angle. Signed zero location follows the full numerical angular domain; do not start every signed bar at the top. Original LinearAngleScale uses full-circle power-of-two nice-tick behavior. The original installed angle-axis factory gives compact grouped domain [0,20], stacked [0,40] and normalized [0,160]. Thus 100 spans 225 degrees; the last visible normalized tick 140 is not the domain maximum. Mixed signed domains are [-10,30], [-10,70] and [-50,150]. These executable source observations supplement browser tick observations; they do not establish replacement geometry acceptance.
 
-Missing/nonfinite values stay absent. Original run 3 retains a normalized Column failure: the bounded tooltip probe finds no later valid E=30 from Primary, while Bar exposes it and passes the same journey. The independently inspected Column early return explains whole-series suppression when a category is missing; lack of a tooltip hit alone would not prove that cause. Any correction needs an explicit owner decision; the failed original assertion remains retained. Nightingale's earlier correction is precedent, not automatic acceptance for these families.
+Missing/nonfinite values stay absent. Original run 3 retains a normalized Column failure: the bounded tooltip probe finds no later valid E=30 from Primary, while Bar exposes it and passes the same journey. The independently inspected Column early return explains whole-series suppression when a category is missing; lack of a tooltip hit alone would not prove that cause. The owner approved correcting this on 2026-10-24: omit only the missing observation and keep valid observations visible. Retain the failed original assertion as evidence; do not reproduce the whole-series suppression.
 
 ## Effective axis styles and control projection
 

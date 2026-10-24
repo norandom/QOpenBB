@@ -62,7 +62,7 @@ The owner authorized starting the next family while the accepted predecessor fin
 | Order | Work | State | Dependency |
 | --- | --- | --- | --- |
 | 1 | Nightingale | Accepted and published | Tagged assets and public image pulls verified |
-| 2 | [Radial Column and Radial Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) | Inactive controls and Column geometry helper accepted | Decide Column missing-value behavior; finish numerical mapping before integration |
+| 2 | [Radial Column and Radial Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) | Inactive controls and Column geometry helper accepted | Missing-value correction approved; implement reviewed numerical mapping before integration |
 | 3 | Treemap and Sunburst | Queued directly next | Original hierarchy semantics, meaningful FMP fixture and reviewed file boundaries |
 | Later | Heatmap, funnel family and remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
 

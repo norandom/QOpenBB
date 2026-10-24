@@ -16,6 +16,10 @@ Reviews: [controls contract](controls-contract-review.md), [materialization](con
 
 ## Remaining decisions and work
 
-The owner must decide whether to keep valid Column observations visible when another category is missing. Whole RC0, family numerical mapping, live controls/session integration, real-FMP packaged comparison and publication remain open. Treemap/Sunburst are queued directly afterward.
+The owner approved keeping valid Column observations visible when another category is missing. RC0 is now frozen after independent numerical review. Family numerical mapping, live controls/session integration, real-FMP packaged comparison and publication remain open. Treemap/Sunburst are queued directly afterward.
 
 The retained FMP AAPL quarterly cost-of-revenue and gross-profit fixture reconciles to reported revenue. No new provider fetch or replacement FMP screenshot is claimed at this inactive checkpoint. Financial chart samples will accompany packaged acceptance.
+
+## Numerical boundary freeze
+
+RC0 is independently accepted at Workspace fa7f464bf7ca95248b755971c08ffcd5730236ae. The prepared-pixel model and shared compact fixture pass scoped typing with the same four inherited diagnostics; the combined gate has no errors or violations. See [renderer contract review](renderer-contract-review.md). Numerical preparation and painting have exclusive files; neither changes routing. No new runtime or image acceptance is claimed.
