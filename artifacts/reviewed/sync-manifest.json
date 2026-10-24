@@ -170,6 +170,54 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-nightingale/n4/candidate-run-4/browser-output/nightingale-chart-N4-candi-915c9-le-native-financial-journey/nightingale-widget-dark.png",
+      "sourceSHA256": "5bd54fd9bdaf383261be3e70fda1aeb0440aa127d536eb093db969f3d46aba65",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/replacement-dark.png",
+      "publishedSHA256": "5bd54fd9bdaf383261be3e70fda1aeb0440aa127d536eb093db969f3d46aba65",
+      "bytes": 38050,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-nightingale/n4/candidate-run-4/browser-output/nightingale-chart-N4-candi-915c9-le-native-financial-journey/nightingale-widget-light.png",
+      "sourceSHA256": "cb66c4bf56fe1fafc3e0518beab74a388dfe17584822b5584e0239844b4acd34",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/replacement-light.png",
+      "publishedSHA256": "cb66c4bf56fe1fafc3e0518beab74a388dfe17584822b5584e0239844b4acd34",
+      "bytes": 34447,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-nightingale/n4/original-run-2/browser-output/nightingale-chart-N4-origi-6b530-matched-financial-reference/nightingale-widget-dark.png",
+      "sourceSHA256": "3c05c4e73fae418d5cbde5a78a36df91dcab77b67b34765a9e9ce3536bddfade",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/original-dark.png",
+      "publishedSHA256": "3c05c4e73fae418d5cbde5a78a36df91dcab77b67b34765a9e9ce3536bddfade",
+      "bytes": 42315,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-nightingale/n4/original-run-2/browser-output/nightingale-chart-N4-origi-6b530-matched-financial-reference/nightingale-widget-light.png",
+      "sourceSHA256": "93aa9ad50561033c4a95e1ab07ff94e447e13b008cb2cb605e69a8848e7824f3",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/original-light.png",
+      "publishedSHA256": "93aa9ad50561033c4a95e1ab07ff94e447e13b008cb2cb605e69a8848e7824f3",
+      "bytes": 37974,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-nightingale/n4/runtime-identity.json",
+      "sourceSHA256": "0e27f91202aad46ca4f73262b860bdacd7c1aee8630e81e47e380a1c2885eb76",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/n4-runtime-identity.json",
+      "publishedSHA256": "0e27f91202aad46ca4f73262b860bdacd7c1aee8630e81e47e380a1c2885eb76",
+      "bytes": 530,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-nightingale/n4/review.md",
+      "sourceSHA256": "65689b1b25d09a6adf9dfa0d4aee118e45eed567197449e42065742960a44192",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/n4-review.md",
+      "publishedSHA256": "65689b1b25d09a6adf9dfa0d4aee118e45eed567197449e42065742960a44192",
+      "bytes": 4108,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-nightingale/n4/layout-refinement/review.md",
       "sourceSHA256": "77602794227d19d70251e896426690350edab2150f6da1caee4dfe1b7710d135",
       "publishedpath": "artifacts/reviewed/chart-nightingale/n4-layout-review.md",
@@ -211,10 +259,10 @@
     },
     {
       "sourcepath": "artifacts/chart-nightingale/verification.md",
-      "sourceSHA256": "45f2c96b2f18bd0b2b8fb3e3fd1654419b0cc6630707eb303ba28a137b18447a",
+      "sourceSHA256": "c21393d090919f341186a79acf925698e1853eb4662bc3ff2291dcbeffdc72c9",
       "publishedpath": "artifacts/reviewed/chart-nightingale/verification.md",
-      "publishedSHA256": "45f2c96b2f18bd0b2b8fb3e3fd1654419b0cc6630707eb303ba28a137b18447a",
-      "bytes": 8309,
+      "publishedSHA256": "c21393d090919f341186a79acf925698e1853eb4662bc3ff2291dcbeffdc72c9",
+      "bytes": 9444,
       "transform": "exact-byte-copy"
     },
     {
@@ -32905,7 +32953,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 166958615,
+  "total_payload_bytes": 167117174,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

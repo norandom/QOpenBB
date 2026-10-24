@@ -37,7 +37,7 @@ The retained FMP example is FY2025 quarterly AAPL cost of revenue plus gross pro
   - Depends on N1 and N2. One worker owns shared capture/setup, family unions, editor/caller routing and session integration. Freeze a minimal exact path list and split capture from routing only if review shows a distinct oversized boundary.
   - Preserve prior families, ready-empty recovery, field/mode changes, native legend updates, resize and existing persistence. No alternate state owner or disabled control.
   - Done when real session/editor/caller checks and affected regressions pass, shared-file caps pass and independent review accepts the integration.
-- [ ] N4. Accept packaged real-data behavior and visible parity.
+- [x] N4. Accept packaged real-data behavior and visible parity.
   - Depends on N3. Build an identified candidate with Dagger, then reuse the isolated one-worker browser flow and retained FMP fixture. Keep fresh-session reopen as the final operation in each journey.
   - Browser-test authoring may overlap N3 after accepted N1/N2 interfaces freeze: one separate worker owns only new `terminalpro/tests/e2e/live-chart/nightingale-chart.spec.ts` and `nightingale-fixture.ts`. Reuse existing helpers; no shared helper or application edits. Browser execution, image builds and N4 acceptance still wait for reviewed N3 integration and identified runtimes.
   - Verify acceptance criteria 2-4; fix concrete defects and rerun affected checks. Retain exact original/candidate identities and selected reviewed samples.
@@ -56,8 +56,15 @@ The [independent plan review](../../../artifacts/reviewed/chart-nightingale/plan
 
 ## FMP samples
 
-Pending N4. No synthetic drawing or generated illustration substitutes for an accepted application capture.
+Retained FMP AAPL FY2025 quarterly cost of revenue and gross profit, reported USD; the two components reconcile exactly to quarterly revenue. Original frontend `38dffc3`; tested replacement `596a523` (local image identity in the review). The owner accepted the light appearance. One CSS pixel of canvas-height difference remains.
 
-N3 is independently accepted at Workspace `716cd1a95087d9c1d3755b8192671a48f48b2192`. The 11 final owner/editor tests, scoped lint and combined complexity gate pass; strict TypeScript adds no diagnostics to the inherited baseline. [Review](../../../artifacts/reviewed/chart-nightingale/n3-review.md). N4 packaged FMP and appearance acceptance remains open.
+| Theme | Original | Replacement |
+| --- | --- | --- |
+| Light | ![Original Nightingale, light](../../../artifacts/reviewed/chart-nightingale/original-light.png) | ![Replacement Nightingale, light](../../../artifacts/reviewed/chart-nightingale/replacement-light.png) |
+| Dark | ![Original Nightingale, dark](../../../artifacts/reviewed/chart-nightingale/original-dark.png) | ![Replacement Nightingale, dark](../../../artifacts/reviewed/chart-nightingale/replacement-dark.png) |
 
-N4 layout refinement is source-reviewed at Workspace `596a5234f7dec5c672dd97b09e365bfb90aac755` after the first real-FMP captures. [Review](../../../artifacts/reviewed/chart-nightingale/n4-layout-review.md). The outer circle and top-ray value labels now follow the reference; rebuilt visual acceptance and the complete browser journey remain pending.
+N3 is independently accepted at Workspace `716cd1a95087d9c1d3755b8192671a48f48b2192`. The 11 final owner/editor tests, scoped lint and combined complexity gate pass; strict TypeScript adds no diagnostics to the inherited baseline. [Review](../../../artifacts/reviewed/chart-nightingale/n3-review.md). N4 packaged FMP and appearance acceptance is recorded below.
+
+N4 layout refinement is source-reviewed at Workspace `596a5234f7dec5c672dd97b09e365bfb90aac755` after the first real-FMP captures. [Review](../../../artifacts/reviewed/chart-nightingale/n4-layout-review.md). The outer circle and top-ray value labels now follow the reference; the rebuilt browser journey passed and the owner accepted the refined appearance.
+
+N4 is accepted: [independent review](../../../artifacts/reviewed/chart-nightingale/n4-review.md). Original reference 29.6 seconds; candidate complete journey 1.2 minutes, with no skips or retries. Regression tests committed at `e29db76041944a368c7dac446c2f894afea05e68`; application bytes tested at `596a5234f7dec5c672dd97b09e365bfb90aac755` are unchanged by this test-only commit. Publication remains N5.

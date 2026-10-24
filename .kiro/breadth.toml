@@ -1011,3 +1011,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleEditorControls.test.tsx"]
 status = "passed"
 evidence = ["Workspace 716cd1a95087d9c1d3755b8192671a48f48b2192: independent final 11 owner/editor tests, scoped lint and combined caps pass. Group Type persistence, stale commands, setup/capture and palette provenance reviewed. Strict TypeScript has 2680 inherited diagnostics with zero normalized delta, not a clean compile. Packaged financial and visual acceptance remains N4. See artifacts/reviewed/chart-nightingale/n3-review.md."]
+
+[[capabilities]]
+id = "nightingale-n4-packaged-fmp"
+requirements = ["analyst-workspace/nightingale-milestone.md:N4", "analyst-workspace/nightingale-contract.md"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/nightingale-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/nightingale-fixture.ts"]
+status = "passed"
+evidence = ["Original-run-2 passed29.6s; candidate-run-4 passed1.2m, one worker/no skips/retries. Exact FMP USD components, modes, native legend, aggregation, controls, export, refresh and fresh reopen. Owner accepted light appearance. See artifacts/reviewed/chart-nightingale/n4-review.md and n4-runtime-identity.json. Local candidate only; future CI image bytes separately verified."]

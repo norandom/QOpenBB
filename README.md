@@ -119,7 +119,8 @@ Current chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale
 - [x] Implement the inactive native renderer (N1).
 - [x] Implement the inactive existing-style controls (N2).
 - [x] Connect the Table/File application and persistence paths (N3).
-- [ ] Accept real-data browser behavior and appearance, then publish once (N4-N5).
+- [x] Accept real-data browser behavior and appearance (N4).
+- [ ] Publish the accepted milestone once (N5).
 
 Published chart milestone: [Radar Line and Radar Area](.kiro/specs/analyst-workspace/radar-milestone.md).
 

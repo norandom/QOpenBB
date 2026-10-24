@@ -32,9 +32,10 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Implement the inactive native Nightingale renderer.
 - [x] Implement the inactive original-style controls.
 - [x] Integrate Nightingale through the existing Table/File application.
-- [ ] Accept real-data behavior and appearance, then publish the milestone.
+- [x] Accept real-data behavior and appearance.
+- [ ] Publish the accepted milestone.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N3 are independently accepted; packaged real-FMP and visual checks are next. Radar remains the published alpha. Radial Column/Bar follow later.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Publication is next. Radar remains the published alpha. Radial Column/Bar follow later.
 
 ## Open
 
