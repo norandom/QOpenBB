@@ -156,7 +156,8 @@
     "chart-xy-label-refinement",
     "chart-range",
     "chart-waterfall",
-    "chart-radar/plan-review"
+    "chart-radar/plan-review",
+    "chart-radar/rd0"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -32067,6 +32068,22 @@
       "publishedpath": "artifacts/reviewed/chart-radar/plan-review.md",
       "publishedSHA256": "b32537b97ea19145752b691f0ee586cf4eed149af94b544296c231d702e49583",
       "bytes": 2236,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radar/verification.md",
+      "sourceSHA256": "c07709a45ffdaa66a0801a069dee5c83ad7746a3b55fe205e9e25d688633b6d5",
+      "publishedpath": "artifacts/reviewed/chart-radar/verification.md",
+      "publishedSHA256": "c07709a45ffdaa66a0801a069dee5c83ad7746a3b55fe205e9e25d688633b6d5",
+      "bytes": 4726,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radar/rd0-review.md",
+      "sourceSHA256": "9bfdb2e0f90ff7606072516573136315c406d2eb00177a4109335196e3629299",
+      "publishedpath": "artifacts/reviewed/chart-radar/rd0-review.md",
+      "publishedSHA256": "9bfdb2e0f90ff7606072516573136315c406d2eb00177a4109335196e3629299",
+      "bytes": 3510,
       "transform": "exact-byte-copy"
     }
   ],

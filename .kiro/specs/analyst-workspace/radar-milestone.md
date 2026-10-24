@@ -2,7 +2,7 @@
 
 Restore Radar Line and Radar Area inside the existing Table/File chart editor. The owner approved this next milestone on 2026-10-24. Waterfall remains the published alpha while Radar is implemented. This plan does not activate a new chart or establish runtime acceptance.
 
-The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) passed on 2026-10-24. RD0 remains open; the review approves the plan, not the unresolved engine semantics or implementation.
+The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) and RD0 [contract review](../../../artifacts/reviewed/chart-radar/rd0-review.md) passed on 2026-10-24. The frozen [adapter contract](radar-contract.md), declarations and fixture now support RD1/RD2 fan-out. Replacement rendering and release acceptance remain open.
 
 ## Acceptance contract
 
@@ -22,7 +22,7 @@ Use the retained FMP quarterly AAPL income data documented in [Range verificatio
 
 ## Bounded tasks
 
-- [ ] RD0. Freeze the original Radar contract and shared adapter interfaces.
+- [x] RD0. Freeze the original Radar contract and shared adapter interfaces.
   - Observe both families in the running original using the existing isolated browser helpers. Resolve negative/zero/missing values, duplicate categories, ordering, domain, markers, axes and navigator behavior through a small discriminating fixture.
   - Freeze the FMP example and independently check values, units and fiscal-period alignment. Record original failures honestly.
   - Specify mapper input/output, option precedence, family keys and session selection responsibilities. Assign exact new file paths and focused commands before workers write production code.

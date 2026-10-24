@@ -1,0 +1,27 @@
+# Radar prerequisite verification
+
+RD0 establishes the original Radar contract, retained FMP fixture and inactive interfaces. It does not establish replacement rendering, visual parity or publication. The existing Waterfall alpha remains unchanged.
+
+Independent review approves RD0. Workspace source `d12d0b724e2d70ccccdfdc8274e814762e2425f7` contains the inactive declaration, shared fixture and original-browser characterization tests. Probe files were normalized to LF before commit without changing executable text. The next work is the two inactive implementation lanes.
+
+## Evidence
+
+- Original source: Workspace `38dffc33389aca0e4a87e0e88d42f7067aa220df`, image `sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f`. Owned isolated Playwright reference runs used one worker. Run4 passed one test in 33.8 seconds; run6 passed its Area-only test in 27.3 seconds. Run5 failed on the original stale Area tooltip and retains the completed Line axis/navigation observations.
+- The mixed fixture establishes signed radial geometry, repeated spokes, distinct Line/Area missing-value behavior and observable polar-axis thickness changes. Retained AG Grid 34.1.1 and AG Charts 12.1.1 source supplies capture/aggregation/inversion order, raw domain rules and the polar tick-selection contract. Source-derived facts are distinguished from browser observations in the owning contract.
+- FMP fixture: 15 quarterly AAPL revenue amounts for FY2023-2026, all original USD; FY2026 Q4 remains missing. PowerShell derivation and independent Python reconciliation match the 40-record retained provider response, SHA256 `390dc8cbfc8302720a203bd9782d5e3b1f7363a4f762bdfcef079dbbe4c72f6b`. Retrieval was 2026-10-20; no new fetch. Independent review also matched the committed shared TypeScript fixture.
+- Inactive declaration `compatibility/radarContracts.ts`: SHA256 `ea9b189b715471059741fa5c1b1eae086f212ccf898b93e691f7987a0b09c820`; 162 physical lines, 103 logical units, no executable functions. Non-mutating Biome checked one file and exited zero. The combined complexity checker exited zero with no violations for the declared scope.
+- Pinned TypeScript 6.0.3 with existing Vite declarations: baseline/current each exit one with four byte-identical inherited diagnostics, zero added or owned diagnostics. These are typography TS7031 and three runtimeConfigSchema Zod-type diagnostics. This is scoped non-regression evidence, not a clean application compile.
+
+## Verification commands and scope
+
+The reference wrapper invokes the existing Playwright CLI with `artifacts/chart-radar/original/reference.config.ts` and separate evidence roots. Declaration lint runs from `vendor/workspace/terminalpro` using its existing Biome binary. Type comparisons use the pinned verification TypeScript binary with `artifacts/chart-radar/interfaces/{baseline,current}-tsconfig.json`; exact logs and final exit files remain local.
+
+The root command `pipeline/.venv/bin/python -m tools.quality.complexity --check --changes workspace=artifacts/chart-radar/workspace-changes.json --changes data_api=artifacts/chart-radar/data-api-changes.json --output artifacts/chart-radar/complexity-final.json` passes with explicit fork identities. The changed production scope is the inactive declaration; unrelated unfinished catalog/Perspective work is not accepted by this milestone.
+
+## Limits and retained failures
+
+The original Area tooltip stayed on the first datum at the tested negative/zero hit coordinates. Some original CSV requests failed after quick actions, so no clean-network claim is made. The original navigator/miniature actions caused no observed drawing or slider change; their visible controls remain part of the original flow. Replacement data correctness is not waived by an original failure.
+
+Initial probe collection failed for missing ESM configuration, and an import-readiness check found two matching cells. Both were corrected without production edits. Run3 was accidentally repeated into the same output directory; its initial log bytes were overwritten, so it is not counted as independent evidence. The retained run4/run5/run6 results above are the relevant observations. The first complexity invocation omitted repository identity in its input manifests; corrected manifests produced the final passing result. None of these failures is concealed as a passing check.
+
+The full shared contract and task ownership are in `.kiro/specs/analyst-workspace/radar-contract.md`. Actual Radar rendering, financial chart screenshots, light/dark comparison, fresh reopen, export and image publication remain open. Dependency excerpts, raw provider captures, browser traces and credentials are excluded from the reviewed mirror.
