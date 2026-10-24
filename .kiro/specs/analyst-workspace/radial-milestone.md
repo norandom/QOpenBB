@@ -11,7 +11,7 @@ Reuse existing capture, setup, session, persistence and native ECharts owners. V
 ## Work and dependency queue
 
 - [ ] RC0. Freeze the original numerical/control contract and shared adapter interfaces. Astra researches original semantics; a Sol explorer independently maps reuse, exact file ownership and size constraints. The controller joins findings, obtains independent contract review and retains a minimal original runtime probe. Source-derived facts and observed behavior remain distinct.
-- [ ] RC1 (P). Implement native rendering and assignments after RC0. Own only the exact renderer files/tests frozen in the contract. Preserve missing values and financial meaning; verify actual native output and edge cases.
+- [ ] RC1 (P). Implement reviewed ECharts geometry and assignments after RC0. Own only the exact renderer files/tests frozen in the contract. Preserve missing values and financial meaning; verify actual rendered output and edge cases.
 - [ ] RC2 (P). Implement control/session adaptation after RC0. Own only the exact control files/tests frozen in the contract, separate from RC1. Reuse existing option paths and validate control-to-render/save effects.
 - [ ] RC3. Integrate after RC1/RC2 acceptance. One worker owns shared routing, capture, setup, session and caller files. Preserve prior families and stale-command protection.
 - [ ] RC4. Accept an identified packaged image with real-FMP browser checks and original comparisons. Keep tests lean, inspect actual visible effects, and make fresh-session reopen the last operation.
@@ -32,3 +32,6 @@ Queue hierarchy charts, Treemap and Sunburst, next under UI-12. Start their orig
 ## FMP examples
 
 Pending verified application captures. Prefer a financially meaningful retained dataset; do not force a hierarchy or part-to-whole interpretation onto unrelated records.
+
+
+Research and scheduling passed [independent review](../../../artifacts/reviewed/chart-radial/plan-review.md). The [source-grounded contract draft](radial-contract.md) records the unresolved runtime/interface gates. RC0 and all implementation checkboxes remain open.

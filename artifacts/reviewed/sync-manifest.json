@@ -160,7 +160,7 @@
     "chart-radar/rd0",
     "chart-radar/rd4-behavior",
     "chart-radar/rd5-publication",
-    "chart-nightingale"
+    "chart-nightingale", "chart-radial/plan"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -169,6 +169,14 @@
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
   },
   "entries": [
+    {
+      "sourcepath": "artifacts/chart-radial/plan-review.md",
+      "sourceSHA256": "f93c071d626023a98d753862758466ee8bd5bf286bcda1363035f87a6294a115",
+      "publishedpath": "artifacts/reviewed/chart-radial/plan-review.md",
+      "publishedSHA256": "f93c071d626023a98d753862758466ee8bd5bf286bcda1363035f87a6294a115",
+      "bytes": 7022,
+      "transform": "exact-byte-copy"
+    },
     {
       "sourcepath": "artifacts/chart-nightingale/n5/review.md",
       "sourceSHA256": "2fbb61ae81f8d6a889411cde549893fc98ba81db0672d7428664d4bd47bbb5e4",
@@ -32977,7 +32985,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167133661,
+  "total_payload_bytes": 167140683,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
