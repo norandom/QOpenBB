@@ -917,3 +917,10 @@ planned_checks = ["hosted-alpha-build", "registry-latest-identities", "tagged-al
 test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_prototype_compose.py"]
 status = "passed"
 evidence = ["Hosted run 39237590906 passed 134 delivery checks, quality verification, both Dagger builds and publication. Tagged alpha-39237590906-1 exists; both public latest images were pulled anonymously and matched the release manifest. See artifacts/reviewed/alpha-release/verification.md. Application runtime acceptance is separate."]
+[[capabilities]]
+id = "radar-line-area-milestone"
+requirements = ["analyst-workspace/radar-milestone.md:Acceptance contract"]
+planned_checks = ["original-polar-semantics", "retained-fmp-quarterly-revenue", "radar-controls-themes", "refresh-fresh-reopen-export", "published-image-identities"]
+test_paths = []
+status = "planned"
+evidence = ["Owner approved Radar Line and Radar Area as the next bounded milestone on 2026-10-24. Source discovery finds gallery entries but no integrated replacement. RD0 must resolve delegated original-engine semantics before production work; planned checks are not executed evidence."]

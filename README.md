@@ -113,6 +113,12 @@ Waterfall is published in the current alpha. Local application acceptance and pu
 
 ## Delivery plan
 
+Next chart milestone: [Radar Line and Radar Area](.kiro/specs/analyst-workspace/radar-milestone.md).
+
+- [ ] Freeze original Radar behavior and the retained-FMP example.
+- [ ] Implement renderer and editor/session adapters, then integrate them.
+- [ ] Accept both packaged chart journeys and publish the milestone images.
+
 ![Delivery plan: prebuilt alpha, Compose installation, provider coverage and analyst workflows; separate AI-to-Excel lane and later extensions.](docs/assets/delivery-plan.svg)
 
 The diagram shows delivery sequence and the Anthropic-before-Excel dependency, not completed work. Separate workstreams are not alpha release prerequisites. AI is independent of prototype acceptance. Custom sources have their own spec; Quant plugins remain a later extension. Existing persistence code, tests and the `./data/workspace` bind mount stay in place. Dashboard persistence acceptance belongs to the analyst spec; infrastructure recovery verification is deferred. Neither blocks this prototype.

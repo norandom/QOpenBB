@@ -155,7 +155,8 @@
     "chart-xy-bubble-correction",
     "chart-xy-label-refinement",
     "chart-range",
-    "chart-waterfall"
+    "chart-waterfall",
+    "chart-radar/plan-review"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -32058,6 +32059,14 @@
       "publishedpath": "artifacts/reviewed/chart-waterfall/anonymous-pulls.json",
       "publishedSHA256": "c78c34402f9405a1dd22552dc57bcc0391d07623fbeb17bbaadfaf4602fc6210",
       "bytes": 5038,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radar/plan-review.md",
+      "sourceSHA256": "b32537b97ea19145752b691f0ee586cf4eed149af94b544296c231d702e49583",
+      "publishedpath": "artifacts/reviewed/chart-radar/plan-review.md",
+      "publishedSHA256": "b32537b97ea19145752b691f0ee586cf4eed149af94b544296c231d702e49583",
+      "bytes": 2236,
       "transform": "exact-byte-copy"
     }
   ],

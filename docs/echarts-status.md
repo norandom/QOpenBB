@@ -29,6 +29,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 ## Open
 
 - [ ] Complete other distribution and radial families.
+- [ ] Next: Radar Line and Radar Area. The [bounded milestone plan](../.kiro/specs/analyst-workspace/radar-milestone.md) separates original-behavior confirmation, parallel adapters, integration and packaged FMP acceptance. No Radar implementation or runtime acceptance is claimed yet.
 - [x] Complete the ordinary Table/File Range Bar/Area journey with retained-FMP extrema, controls, navigation, fresh reopen and export. See the [accepted application milestone](../.kiro/specs/analyst-workspace/range-chart-plan.md); the accepted image pair is published.
 - [x] Independently accept inactive Range capture/setup and Box regression checks (R4a).
 - [x] Independently accept inactive Range series appearance and option precedence (R4b).

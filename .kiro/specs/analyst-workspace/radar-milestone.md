@@ -1,0 +1,64 @@
+# Radar Line and Radar Area
+
+Restore Radar Line and Radar Area inside the existing Table/File chart editor. The owner approved this next milestone on 2026-10-24. Waterfall remains the published alpha while Radar is implemented. This plan does not activate a new chart or establish runtime acceptance.
+
+The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) passed on 2026-10-24. RD0 remains open; the review approves the plan, not the unresolved engine semantics or implementation.
+
+## Acceptance contract
+
+1. Preserve the original `radarLine` and `radarArea` choices, gallery, Set Up, Customize, themes and widget framing. No new editor, hidden flags, disabled controls or artificial analytical scores.
+2. Preserve selected categories and fields, their order, filtering, aggregation, inversion and saved settings wherever the original Radar journey supports them. Freeze the original engine's negative, missing, duplicate-category and radial-domain behavior before translating it; do not infer Cartesian behavior.
+3. Preserve the applicable label, line, fill, marker, legend, tooltip and axis controls, including their defaults and persistence. Record baseline reachability separately from schema or menu presence. Original navigator controls are exposed, but their actual Radar effect still needs observation.
+4. Verify financial values against retained FMP responses in an identified packaged application. Cover both families, refresh, fresh-session reopen, PNG export and observed console/network diagnostics. Compare light/dark appearance against the original. Ask the owner about concrete uncertain visual differences.
+5. After independent acceptance, publish representative FMP screenshots, update README/docs and breadth, commit and push, then dispatch one image publication run. Verify the tagged release and both public images. Keep local browser acceptance distinct from CI image identity verification.
+
+## Source and financial boundary
+
+Original Workspace `38dffc33389aca0e4a87e0e88d42f7067aa220df` maps these names to `radar-line` and `radar-area`. Its `AgChartView.tsx` forwards selection, inversion and aggregation to AG Grid. `hooks/useChartOptions.tsx` strips generated Cartesian marker and connect-missing options for polar charts; `utils.tsx` leaves Radar tooltip content to AG Charts. The retained AG Grid 34.1.1 / AG Charts 12.1.1 contract and an original-runtime probe must settle delegated behavior.
+
+Current Workspace `ba03b1289f60a06269fb1a97900e61474475464f` has gallery names but no accepted Radar adapter or application family. Reuse the ordinary capture, theme, editor and lifecycle owners. Pie's ring geometry, percentages and layout are not Radar contracts. Standalone and AI-chart callers, other radial families and analyst theme redesign remain separate work.
+
+Use the retained FMP quarterly AAPL income data documented in [Range verification](../../../artifacts/reviewed/chart-range/verification.md). Proposed principal example: quarters Q1-Q4 as spokes, complete fiscal years as revenue series, raw reported USD. Align fiscal periods explicitly, reject duplicate year/quarter records rather than silently combine them, and keep absent quarters missing. Freeze the exact years, record hash and values in RD0 after inspecting the retained response. A partial-year example exercises missing data. No new provider retrieval or fixture validation is claimed yet.
+
+## Bounded tasks
+
+- [ ] RD0. Freeze the original Radar contract and shared adapter interfaces.
+  - Observe both families in the running original using the existing isolated browser helpers. Resolve negative/zero/missing values, duplicate categories, ordering, domain, markers, axes and navigator behavior through a small discriminating fixture.
+  - Freeze the FMP example and independently check values, units and fiscal-period alignment. Record original failures honestly.
+  - Specify mapper input/output, option precedence, family keys and session selection responsibilities. Assign exact new file paths and focused commands before workers write production code.
+  - Before fan-out, provide reviewed inactive shared declarations and fixtures required by both lanes. Neither lane may import unfinished peer output. The controller registers each lane's production scope in the maintained inventory before that lane's acceptance, preserving unrelated inventory changes.
+  - Done when an independent reviewer accepts these contracts and the two lane boundaries. No production activation belongs to RD0.
+- [ ] RD1 (P). Implement the inactive Radar assignment and renderer.
+  - Depends on RD0. Own new Radar-only files under Chart `compatibility/` and `echarts/`, plus their focused tests. Do not edit shared dispatch or application/editor files.
+  - Implement both families against the frozen numerical/domain/missing-value contract and existing theme tokens. Verify geometry and raw tooltip values, not only generated options.
+  - Done when focused financial/edge-case checks, scoped static checks and whole-file complexity pass independent review. The gallery remains inactive until the join.
+- [ ] RD2 (P). Implement inactive Radar editor/session adaptation.
+  - Depends on RD0; independent of RD1 after the interface is frozen. Own new Radar-only files under Chart `application/` and `editor/`, plus their focused tests.
+  - Preserve original controls, selection, saved overrides and family transitions through existing state owners. No duplicate persistence or new toolbar.
+  - Done when control-to-option and saved-state checks pass independent review and complexity checks. Do not edit shared type unions or family dispatch.
+- [ ] RD3. Integrate the two reviewed lanes into the existing journey.
+  - Depends on RD1 and RD2. One controller-assigned worker owns shared family types, capture/setup selection, session dispatch, view routing and transition edits. Keep one owner for each shared file.
+  - Extend the maintained inventory with integration-only changes before their acceptance. Reuse the host and lifecycle; any necessary extraction must preserve existing families.
+  - Done when both families work through the real editor, affected prior-family regressions pass, and the combined change scope meets the caps and independent review.
+- [ ] RD4. Accept the packaged FMP and visual journey.
+  - Depends on RD3. Build one identified candidate and use the maintained isolated Playwright/CDP flow with one browser worker. Put owner-run startup commands in ignored `run_this.sh` when required.
+  - Verify contract items 2-4, including real data and saved settings after fresh reopen. Reuse existing helpers; add only Radar-specific assertions. Repair concrete failures without widening the milestone.
+  - Done when independent review accepts the bounded evidence and any uncertain visible differences have an owner decision. Publish a small set of exact-byte reviewed chart samples.
+- [ ] RD5. Publish and close the milestone.
+  - Depends on RD4. Reconcile README, docs, spec state and breadth; sync reviewed artifacts before per-task commit/push.
+  - Dispatch the Dagger image pipeline once for the accepted milestone, then verify release assets and anonymous digest/tag/latest pulls for both images.
+  - Done when publication evidence is independently reviewed and linked. Ordinary task pushes do not rebuild images.
+
+## Execution limits and evidence
+
+Paths above are relative to `vendor/workspace/terminalpro/src/components/General/Table/Chart/`. Proposed new renderer boundary: `compatibility/radarAssignments.ts` and `echarts/radar*.ts`; new session boundary: `application/radar*.ts` and, if needed, `editor/radar/`. RD0 freezes exact filenames and interfaces, not overlapping wildcard ownership. RD2 can verify state independently, but its final renderer projection is accepted only at RD3 against RD1's actual output.
+
+The shared join must explicitly examine `application/comboSessionTypes.ts`, `application/histogramCapture.ts`, `gridCapture.ts`, `setupProjection.ts`, `application/applicationSetupSelection.ts`, `application/useApplicationChartSession.ts`, `application/applicationSessionDispatch.ts`, editor routing, `AgChartView.tsx`, family transitions and caller theme/input defaults. This is a seam checklist, not permission to edit every file. Freeze a minimal changed-file list at RD0, measure whole-file baselines and decide required cohesive extractions before editing; split RD3 into sequential capture and routing tasks if that list exceeds one cohesive review unit. Do not reuse Cartesian coercion or Pie percentages implicitly.
+
+Use Sol 6.1 for the two bounded implementation lanes and Astra for independent financial/interface review. At most four active agents including the controller; one heavy build/suite at a time. RD1 and RD2 may run together only after RD0 freezes disjoint writable paths. Production caps are 400 physical lines/file, 300 logical units/file and 50/function, measured on whole modified files with the existing [combined checker](../../../docs/complexity.md). Tests and this plan are excluded from production caps. Preserve unrelated catalog, Perspective and inventory work.
+
+Reuse the existing Vitest, Playwright and non-mutating scoped Biome commands; compare scoped typing against the documented inherited baseline rather than claim a clean application compile. Record exact executed commands, source/image identities, test counts and limitations in one concise milestone report. Planned tests are not passing evidence. Runtime startup recovery on 2026-10-24 establishes availability only, not Radar behavior.
+
+## FMP samples
+
+Pending RD4: original/replacement Radar Line and Radar Area using the frozen quarterly revenue example. No generated illustration substitutes for a verified financial chart.
