@@ -63,7 +63,7 @@ The owner authorized starting the next family while the accepted predecessor fin
 | --- | --- | --- | --- |
 | 1 | Nightingale | Accepted and published | Tagged assets and public image pulls verified |
 | 2 | [Radial Column and Radial Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) | Application integration accepted at source level | Verify the packaged FMP journey and original appearance |
-| 3 | Treemap and Sunburst | Queued directly next | Original hierarchy semantics, meaningful FMP fixture and reviewed file boundaries |
+| 3 | [Treemap and Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) | Source research complete; original probe next | Original hierarchy semantics, meaningful FMP fixture and reviewed file boundaries |
 | Later | Heatmap, funnel family and remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
 
 Renderer and control lanes may run concurrently after their shared contract is accepted. Shared application integration, local heavy checks and publication gates remain serialized. This queue does not mark planned tests or unsupported original paths complete.

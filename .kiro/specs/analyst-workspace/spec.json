@@ -577,13 +577,14 @@
         "treemap",
         "sunburst"
       ],
-      "phase": "queued",
+      "phase": "source-research-complete",
       "authorization": "Owner requested queueing the next roadmap item directly after Radial on 2026-10-24.",
       "prerequisites": [
         "Original hierarchy semantics and reachability",
         "Meaningful retained FMP fixture",
         "Reviewed shared contract and exact file boundaries"
-      ]
+      ],
+      "contract": "hierarchy-milestone.md"
     }
   ]
 }

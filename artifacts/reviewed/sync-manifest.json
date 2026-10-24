@@ -170,6 +170,22 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-hierarchy/plan-review.md",
+      "sourceSHA256": "eb8e65528f87e4cebcdf47fbc82e390c2d1acbff84a49b17cf4ce15629110d9c",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/plan-review.md",
+      "publishedSHA256": "eb8e65528f87e4cebcdf47fbc82e390c2d1acbff84a49b17cf4ce15629110d9c",
+      "bytes": 5070,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-hierarchy/research-contract.md",
+      "sourceSHA256": "ac7334fe41d8c2094596b3e498bfd1c32646ce58f113ddaf183c72ffb1b42f55",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/research-contract.md",
+      "publishedSHA256": "ac7334fe41d8c2094596b3e498bfd1c32646ce58f113ddaf183c72ffb1b42f55",
+      "bytes": 14535,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-radial/rc3-checkpoint-review.md",
       "sourceSHA256": "bd53bb1799c0df262cfbb8dc43491cea7aebdc96247c615bddedc82d653c5e9c",
       "publishedpath": "artifacts/reviewed/chart-radial/application-checkpoint-review.md",
@@ -33113,7 +33129,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167214763,
+  "total_payload_bytes": 167234368,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

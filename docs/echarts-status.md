@@ -35,7 +35,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Accept real-data behavior and appearance.
 - [x] Publish the accepted milestone as [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1); release assets and six anonymous pulls verified.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale is the current published alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) renderer, controls and application integration are independently accepted at source level; packaged and visual acceptance remain open. Treemap/Sunburst are queued directly next.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale is the current published alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) renderer, controls and application integration are independently accepted at source level; packaged and visual acceptance remain open. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) source research is complete; original behavior probing is next.
 
 ## Open
 
