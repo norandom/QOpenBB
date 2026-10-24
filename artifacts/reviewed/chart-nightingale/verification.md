@@ -49,3 +49,12 @@ Matched captures exposed extra radial lines and diagonal value labels. A bounded
 The refined candidate passes the complete one-worker journey (candidate-run-4, 1.2 minutes) against retained FMP AAPL FY2025 quarterly cost of revenue and gross profit in reported USD. The original reference passes in 29.6 seconds. Candidate image `sha256:6edd63b48c0c265a18d8c06315a037691ab98d9fe332bfeac8efc7a850c60604` has source `596a5234f7dec5c672dd97b09e365bfb90aac755`; actual Docker labels and the sole disposable data bind are verified.
 
 Checks cover exact component values, grouped/stacked/normalized geometry and raw tooltips, native legend hide/restore, count aggregation, stroke and axis effects, nonzero inner radius, orientation, refresh, PNG export and fresh-session save/reopen. Candidate diagnostics pass. The original retains known transport diagnostics. The owner accepted the refined light appearance in qView on 2026-10-24. Light/dark captures are published; canvas heights differ by one CSS pixel at DPR 1, so these are matched-view comparisons, not pixel-identical claims. Independent review: n4-review.md. Local acceptance does not certify future CI-built image bytes.
+
+## Published Nightingale alpha
+
+[alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1) is published from root `6d0dce31e9fa28165976c2c47e3cd7f329ed8ae6`, Workspace `e29db76041944a368c7dac446c2f894afea05e68` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Workflow `40104927952` completed both image-build and publication jobs. Three installation assets match their release hashes; six anonymous pulls verify both services by digest, release tag and latest, including source/provenance labels and platform. [Independent review](publication-review.md).
+
+- Workspace: `ghcr.io/norandom/qopenbb-workspace@sha256:73e5da5356a4b02ab00991f1c64ee93262d1ce92274f0054b317718446e7157a`.
+- Data API: `ghcr.io/norandom/qopenbb-data-api@sha256:602e1fd61abac162064b45c9a67e7736162400247b492a8fe10964581f7160b0`.
+
+The release manifest and anonymous-pull report are mirrored exactly. Local browser acceptance remains tied to source `596a523` and image `6edd63b`; the later source commit adds tests only. These CI-built bytes were verified for publication/pull integrity, not newly browser-tested or deployed to the owner server.

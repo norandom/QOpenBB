@@ -170,6 +170,30 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-nightingale/n5/review.md",
+      "sourceSHA256": "2fbb61ae81f8d6a889411cde549893fc98ba81db0672d7428664d4bd47bbb5e4",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/publication-review.md",
+      "publishedSHA256": "2fbb61ae81f8d6a889411cde549893fc98ba81db0672d7428664d4bd47bbb5e4",
+      "bytes": 3297,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-nightingale/n5/anonymous-pulls.json",
+      "sourceSHA256": "84d4fbfd626c5d092bb55a3c91fa42bb01cafaa7c3e5e4ddaecc9d902ae90ef1",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/anonymous-pulls.json",
+      "publishedSHA256": "84d4fbfd626c5d092bb55a3c91fa42bb01cafaa7c3e5e4ddaecc9d902ae90ef1",
+      "bytes": 5283,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-nightingale/n5/manifest.json",
+      "sourceSHA256": "db2ec181d79fc2d292d967dd957acc83096ccb43a952f226e0b9236ea80decaa",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/release-manifest.json",
+      "publishedSHA256": "db2ec181d79fc2d292d967dd957acc83096ccb43a952f226e0b9236ea80decaa",
+      "bytes": 6740,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-nightingale/n4/candidate-run-4/browser-output/nightingale-chart-N4-candi-915c9-le-native-financial-journey/nightingale-widget-dark.png",
       "sourceSHA256": "5bd54fd9bdaf383261be3e70fda1aeb0440aa127d536eb093db969f3d46aba65",
       "publishedpath": "artifacts/reviewed/chart-nightingale/replacement-dark.png",
@@ -259,10 +283,10 @@
     },
     {
       "sourcepath": "artifacts/chart-nightingale/verification.md",
-      "sourceSHA256": "c21393d090919f341186a79acf925698e1853eb4662bc3ff2291dcbeffdc72c9",
+      "sourceSHA256": "737a0b8050f8ba099e4f01d0fa203735abc927396ce89f02624a5ef523e16c57",
       "publishedpath": "artifacts/reviewed/chart-nightingale/verification.md",
-      "publishedSHA256": "c21393d090919f341186a79acf925698e1853eb4662bc3ff2291dcbeffdc72c9",
-      "bytes": 9444,
+      "publishedSHA256": "737a0b8050f8ba099e4f01d0fa203735abc927396ce89f02624a5ef523e16c57",
+      "bytes": 10611,
       "transform": "exact-byte-copy"
     },
     {
@@ -32953,7 +32977,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167117174,
+  "total_payload_bytes": 167133661,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

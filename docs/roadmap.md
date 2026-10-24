@@ -17,7 +17,7 @@ Owner clarification: saved research-context persistence acceptance moves to `ana
 
 Target: HTTP on `0.0.0.0:23003`, `qopenbb.example.com` through owner-managed cloudflared, relative bind-mounted data. The owner deploys locally with Compose; no SSH, tunnel service or Jupyter dependency.
 
-Current state: [alpha-40086673952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40086673952-1) is published with prebuilt images. Combination, scatter/bubble, histogram, pie/donut, Box Plot, Range Bar/Area, Waterfall and Radar Line/Area acceptance cover identified local packaged images and captured FMP data in the ordinary Table/File journey. Radar passes both financial/control/lifecycle journeys and has owner-approved appearance. Both publication jobs, release assets and six anonymous image pulls are verified separately from local browser acceptance. The pictured visual differences are accepted; pixel identity is not claimed. Assembled Compose and owner-run server acceptance remain open. See the [current chart checklist](echarts-status.md) and [Radar evidence](../artifacts/reviewed/chart-radar/verification.md#published-radar-alpha).
+Current state: [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1) is published with prebuilt images. Combination, scatter/bubble, histogram, pie/donut, Box Plot, Range Bar/Area, Waterfall Radar Line/Area and Nightingale acceptance cover identified local packaged images and captured FMP data in the ordinary Table/File journey. Nightingale passes its financial/control/lifecycle journey and has owner-approved appearance. Both publication jobs, release assets and six anonymous image pulls are verified separately from local browser acceptance. The pictured visual differences are accepted; pixel identity is not claimed. Assembled Compose and owner-run server acceptance remain open. See the [current chart checklist](echarts-status.md) and [Nightingale evidence](../artifacts/reviewed/chart-nightingale/verification.md#published-nightingale-alpha).
 
 ## Subsequent workstreams
 
@@ -61,7 +61,7 @@ The owner authorized starting the next family while the accepted predecessor fin
 
 | Order | Work | State | Dependency |
 | --- | --- | --- | --- |
-| 1 | Nightingale | Feature accepted; image publication running | Verify tagged assets and public image pulls |
+| 1 | Nightingale | Accepted and published | Tagged assets and public image pulls verified |
 | 2 | [Radial Column and Radial Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) | Original-contract and reuse assessments running in parallel | Freeze shared interfaces before renderer/control implementation |
 | 3 | Treemap and Sunburst | Queued directly next | Original hierarchy semantics, meaningful FMP fixture and reviewed file boundaries |
 | Later | Heatmap, funnel family and remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |

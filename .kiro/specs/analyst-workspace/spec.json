@@ -20,32 +20,14 @@
   },
   "ready_for_implementation": false,
   "active_milestone": {
-    "name": "nightingale-chart-port",
-    "contract": "nightingale-milestone.md",
-    "authorization": "Owner approved continuing with Nightingale after Radar and the local Compose update on 2026-10-24. Bounded original contract first, then reviewed implementation and one publication.",
-    "phase": "publication",
-    "completed_tasks": [
-      "N0",
-      "N1",
-      "N2",
-      "N3",
-      "N4"
-    ],
-    "feature_accepted": true,
-    "application_accepted": true,
-    "planning_source": "194691e589ad75afb74d227574402dfb43ba6aea",
-    "plan_review": "artifacts/reviewed/chart-nightingale/plan-review.md",
-    "n0_source": "5fd57cf6d22893b5a26510a6ba3f25726a4386d5",
-    "design": "nightingale-contract.md",
-    "review": "artifacts/reviewed/chart-nightingale/n0-review.md",
-    "normalized_missing_decision": "Owner approved keeping valid values visible on 2026-10-24; omit only missing observations.",
-    "n1_source": "f6f6c1721248b1b4e201a96f7dc8bd1c992787c1",
-    "n2_source": "7cffa0894c494ebe59769d4df9a055135a72d65f",
-    "n3_source": "716cd1a95087d9c1d3755b8192671a48f48b2192",
-    "n4_source": "e29db76041944a368c7dac446c2f894afea05e68",
-    "n4_runtime_source": "596a5234f7dec5c672dd97b09e365bfb90aac755",
-    "n4_image": "sha256:6edd63b48c0c265a18d8c06315a037691ab98d9fe332bfeac8efc7a850c60604",
-    "n4_review": "Packaged FMP journey independently accepted; owner accepted refined light appearance."
+    "name": "radial-column-bar-port",
+    "contract": "radial-milestone.md",
+    "design": "radial-contract.md",
+    "authorization": "Owner explicitly authorized parallel start and one-hour autonomous progress on 2026-10-24.",
+    "phase": "contract-assessment",
+    "completed_tasks": [],
+    "feature_accepted": false,
+    "application_accepted": false
   },
   "completed_milestones": [
     {
@@ -433,6 +415,50 @@
         },
         "scope": "local browser acceptance and CI publication verified separately"
       }
+    },
+    {
+      "name": "nightingale-chart-port",
+      "contract": "nightingale-milestone.md",
+      "authorization": "Owner approved continuing with Nightingale after Radar and the local Compose update on 2026-10-24. Bounded original contract first, then reviewed implementation and one publication.",
+      "phase": "accepted-published",
+      "completed_tasks": [
+        "N0",
+        "N1",
+        "N2",
+        "N3",
+        "N4",
+        "N5"
+      ],
+      "feature_accepted": true,
+      "application_accepted": true,
+      "planning_source": "194691e589ad75afb74d227574402dfb43ba6aea",
+      "plan_review": "artifacts/reviewed/chart-nightingale/plan-review.md",
+      "n0_source": "5fd57cf6d22893b5a26510a6ba3f25726a4386d5",
+      "design": "nightingale-contract.md",
+      "review": "artifacts/reviewed/chart-nightingale/n0-review.md",
+      "normalized_missing_decision": "Owner approved keeping valid values visible on 2026-10-24; omit only missing observations.",
+      "n1_source": "f6f6c1721248b1b4e201a96f7dc8bd1c992787c1",
+      "n2_source": "7cffa0894c494ebe59769d4df9a055135a72d65f",
+      "n3_source": "716cd1a95087d9c1d3755b8192671a48f48b2192",
+      "n4_source": "e29db76041944a368c7dac446c2f894afea05e68",
+      "n4_runtime_source": "596a5234f7dec5c672dd97b09e365bfb90aac755",
+      "n4_image": "sha256:6edd63b48c0c265a18d8c06315a037691ab98d9fe332bfeac8efc7a850c60604",
+      "n4_review": "Packaged FMP journey independently accepted; owner accepted refined light appearance.",
+      "release": "alpha-40104927952-1",
+      "publication": {
+        "run": 40104927952,
+        "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1",
+        "root_source": "6d0dce31e9fa28165976c2c47e3cd7f329ed8ae6",
+        "workspace_source": "e29db76041944a368c7dac446c2f894afea05e68",
+        "data_api_source": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba",
+        "manifest": "artifacts/reviewed/chart-nightingale/release-manifest.json",
+        "anonymous_pull_evidence": "artifacts/reviewed/chart-nightingale/anonymous-pulls.json",
+        "images": {
+          "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:73e5da5356a4b02ab00991f1c64ee93262d1ce92274f0054b317718446e7157a",
+          "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:602e1fd61abac162064b45c9a67e7736162400247b492a8fe10964581f7160b0"
+        },
+        "scope": "local browser acceptance and CI publication verified separately"
+      }
     }
   ],
   "active_correction": {
@@ -521,13 +547,6 @@
     }
   ],
   "successor_queue": [
-    {
-      "name": "radial-column-bar-port",
-      "contract": "radial-milestone.md",
-      "phase": "contract-assessment",
-      "authorization": "Owner explicitly requested starting now with parallel subagents on 2026-10-24; overlap accepted Nightingale publication without changing its pinned release.",
-      "completed_tasks": []
-    },
     {
       "name": "hierarchy-chart-port",
       "families": [

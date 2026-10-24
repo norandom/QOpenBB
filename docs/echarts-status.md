@@ -26,16 +26,16 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Connect ordinary category/series selection, ordering, filtering, Sum/Avg and orientation changes.
 - [x] Apply owner-reviewed visual refinements, including line legends, gallery drawings and tab typography.
 
-## Current Nightingale milestone
+## Accepted Nightingale milestone
 
 - [x] Freeze original grouped/stacked/normalized behavior and the retained FMP component example.
 - [x] Implement the inactive native Nightingale renderer.
 - [x] Implement the inactive original-style controls.
 - [x] Integrate Nightingale through the existing Table/File application.
 - [x] Accept real-data behavior and appearance.
-- [ ] Publish the accepted milestone.
+- [x] Publish the accepted milestone as [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1); release assets and six anonymous pulls verified.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Publication is next. Radar remains the published alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) contract and reuse assessments are now running in parallel. Treemap/Sunburst are queued directly next.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale is the current published alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) contract and reuse assessments are now running in parallel. Treemap/Sunburst are queued directly next.
 
 ## Open
 

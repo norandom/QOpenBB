@@ -1019,3 +1019,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/nightingale-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/nightingale-fixture.ts"]
 status = "passed"
 evidence = ["Original-run-2 passed29.6s; candidate-run-4 passed1.2m, one worker/no skips/retries. Exact FMP USD components, modes, native legend, aggregation, controls, export, refresh and fresh reopen. Owner accepted light appearance. See artifacts/reviewed/chart-nightingale/n4-review.md and n4-runtime-identity.json. Local candidate only; future CI image bytes separately verified."]
+
+[[capabilities]]
+id = "nightingale-milestone-publication"
+requirements = ["analyst-workspace/nightingale-milestone.md:N5"]
+planned_checks = []
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py"]
+status = "passed"
+evidence = ["alpha-40104927952-1: workflow40104927952 succeeded; assets and six anonymous pulls independently verified. See artifacts/reviewed/chart-nightingale/publication-review.md. CI bytes not browser-tested or owner-server deployed."]

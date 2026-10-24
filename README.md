@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40086673952-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -113,7 +113,7 @@ Waterfall remains available in the current alpha alongside Radar. Local applicat
 
 ## Delivery plan
 
-Current chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale-milestone.md).
+Accepted chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale-milestone.md).
 
 Next development: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-milestone.md), with parallel contract/reuse assessment underway. Treemap/Sunburst are queued next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
 
@@ -122,7 +122,7 @@ Next development: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-miles
 - [x] Implement the inactive existing-style controls (N2).
 - [x] Connect the Table/File application and persistence paths (N3).
 - [x] Accept real-data browser behavior and appearance (N4).
-- [ ] Publish the accepted milestone once (N5).
+- [x] Publish the accepted milestone once (N5): [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1).
 
 Published chart milestone: [Radar Line and Radar Area](.kiro/specs/analyst-workspace/radar-milestone.md).
 

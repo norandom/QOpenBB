@@ -42,7 +42,7 @@ The retained FMP example is FY2025 quarterly AAPL cost of revenue plus gross pro
   - Browser-test authoring may overlap N3 after accepted N1/N2 interfaces freeze: one separate worker owns only new `terminalpro/tests/e2e/live-chart/nightingale-chart.spec.ts` and `nightingale-fixture.ts`. Reuse existing helpers; no shared helper or application edits. Browser execution, image builds and N4 acceptance still wait for reviewed N3 integration and identified runtimes.
   - Verify acceptance criteria 2-4; fix concrete defects and rerun affected checks. Retain exact original/candidate identities and selected reviewed samples.
   - Done when independent behavior review and required owner appearance decisions are recorded. Tests and documentation are excluded from production caps; no parallel harness is planned.
-- [ ] N5. Publish the accepted milestone.
+- [x] N5. Publish the accepted milestone.
   - Depends on N4. Reconcile README/docs, owning spec and breadth, sync curated evidence, commit/push, dispatch one image publication and verify release assets plus anonymous digest/tag/latest pulls.
   - Done when publication evidence and final documentation pass independent review. This does not claim remote-server deployment or browser execution of different CI-built bytes.
 
@@ -67,4 +67,6 @@ N3 is independently accepted at Workspace `716cd1a95087d9c1d3755b8192671a48f48b2
 
 N4 layout refinement is source-reviewed at Workspace `596a5234f7dec5c672dd97b09e365bfb90aac755` after the first real-FMP captures. [Review](../../../artifacts/reviewed/chart-nightingale/n4-layout-review.md). The outer circle and top-ray value labels now follow the reference; the rebuilt browser journey passed and the owner accepted the refined appearance.
 
-N4 is accepted: [independent review](../../../artifacts/reviewed/chart-nightingale/n4-review.md). Original reference 29.6 seconds; candidate complete journey 1.2 minutes, with no skips or retries. Regression tests committed at `e29db76041944a368c7dac446c2f894afea05e68`; application bytes tested at `596a5234f7dec5c672dd97b09e365bfb90aac755` are unchanged by this test-only commit. Publication remains N5.
+N4 is accepted: [independent review](../../../artifacts/reviewed/chart-nightingale/n4-review.md). Original reference 29.6 seconds; candidate complete journey 1.2 minutes, with no skips or retries. Regression tests committed at `e29db76041944a368c7dac446c2f894afea05e68`; application bytes tested at `596a5234f7dec5c672dd97b09e365bfb90aac755` are unchanged by this test-only commit. Publication is verified below.
+
+N5 is complete: [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1). Both CI jobs, three installation assets and six anonymous pulls pass independent review. [Publication evidence](../../../artifacts/reviewed/chart-nightingale/verification.md#published-nightingale-alpha). This does not establish browser acceptance of CI bytes or private-server deployment.
