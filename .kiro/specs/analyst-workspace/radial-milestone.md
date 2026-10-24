@@ -34,7 +34,7 @@ Queue hierarchy charts, Treemap and Sunburst, next under UI-12. Start their orig
 Pending verified application captures. Prefer a financially meaningful retained dataset; do not force a hierarchy or part-to-whole interpretation onto unrelated records.
 
 
-Research and scheduling passed [independent review](../../../artifacts/reviewed/chart-radial/plan-review.md). The [source-grounded contract draft](radial-contract.md) records the unresolved runtime/interface gates. Full RC0 remains open; the separately reviewed inactive slices below are accepted.
+Research and scheduling passed [independent review](../../../artifacts/reviewed/chart-radial/plan-review.md). The [source-grounded contract](radial-contract.md) records the original findings. The historical slices below led to accepted RC0 and RC3 source integration; packaged runtime and appearance acceptance remain open.
 
 ## Bounded controls overlap amendment
 
@@ -56,7 +56,7 @@ The helper computes local geometry only; family scales, grouping, missing values
 - [x] RC0G: pure Column path helper, Workspace 26f1c8c; 30 focused tests, strict typing and lint pass.
 - [x] RC2: controls and selection adapter, Workspace 2339c73; 11 focused tests and lint pass, four inherited typing diagnostics unchanged.
 
-Independent reviews and the combined maintained-scope gate pass. See the [source verification](../../../artifacts/reviewed/chart-radial/verification.md). These files have no live routing consumer. No Radial appearance or financial application acceptance is claimed. The owner approved keeping valid normalized Column observations visible when another category is missing on 2026-10-24. The next one-hour batch runs 16:41:07-17:41:07 UTC.
+Independent reviews and the combined maintained-scope gate pass. See the [source verification](../../../artifacts/reviewed/chart-radial/verification.md). At this inactive checkpoint these files had no live routing consumer; RC3 subsequently integrated both families. No Radial appearance or financial application acceptance is claimed. The owner approved keeping valid normalized Column observations visible when another category is missing on 2026-10-24. The second one-hour batch ran 16:41:07-17:41:07 UTC.
 
 ## Reviewed renderer lanes
 
@@ -76,4 +76,4 @@ RC3 is independently accepted at Workspace 2831436bc1eefb9030d2ab1c154f67603f586
 - [x] Prepare reviewed real-FMP browser journeys for both families.
 - [ ] Execute the identified packaged image and original comparisons (RC4).
 
-The local Dagger candidate build is underway. No Radial packaged, visual or release acceptance is claimed. See [application review](../../../artifacts/reviewed/chart-radial/application-review.md).
+A local Dagger candidate build was started for f9b29dd; its result is not yet verified. No Radial packaged, visual or release acceptance is claimed. See [application review](../../../artifacts/reviewed/chart-radial/application-review.md).

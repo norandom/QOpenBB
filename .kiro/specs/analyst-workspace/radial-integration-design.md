@@ -16,7 +16,7 @@ Consume the frozen exports `RadialChartType`, `RadialEditorState`, `RadialEditIn
 | `application/comboSessionTypes.ts` | Extend `ApplicationChartFamily` with `RadialChartType`; do not admit Radial into combo geometry. |
 | `application/applicationChartSessionTypes.ts` | Add ready discriminant `kind: "radial"` with `RadialEditorState`; extend command intent union with `RadialEditIntent`. |
 | `application/useApplicationChartSession.ts` | Route both Radial families to `projectRadialSession`; extend `onIntent` union. Retain current host/export/resize and transient legend lifecycle. |
-| `application/applicationSessionDispatch.ts` | Route Radial editor commands to its transaction; reject all three Radial-specific panels on foreign families before other family transactions. This centralized guard avoids edits to each neighboring transaction, including `histogramEditorTransaction.ts`. |
+| `application/applicationSessionDispatch.ts` | Route Radial editor commands to its transaction; reject all three Radial-specific panels on foreign families before other family transactions. This centralized guard protects application dispatch. The accepted integration additionally excludes the three Radial-only panels in `histogramEditorTransaction.ts`, whose directly callable transaction and widened intent union require the same rejection. |
 | `application/applicationSetupSelection.ts` | Route both names to `selectRadialSession`, wrapped in the existing ready setup result. |
 | `application/applicationSessionSetup.ts` | Add Radial to root group stale check using `radialGroupKey`; preserve ordinary aggregation/range/transpose transitions and captured policy. |
 | `application/applicationSessionRuntime.ts` | Exclude both Radial families from Cartesian axis restore/read in initialization and both synchronization preference branches. Preserve existing `sessionAssignmentKey`, which already includes `Object.hasOwn` plus root value. |
@@ -67,3 +67,7 @@ RC3 additionally owns compatibility/optionState.ts and tests/unit/chart-compatib
 Verify initialization, synchronization and previous-baseline preservation, absent/undefined/grouped distinctions, and stale-command rejection. Unrelated root undefined, nested undefined, accessors, non-enumerable properties, symbols and cycles retain their existing rejection. All other scope and complexity limits remain unchanged.
 
 The same narrow root-property rule also applies at compatibility/legacyTypes.ts isModel, which independently validates reducer input after optionState. Its isDataObject descriptor guard and recursive isValue checks remain intact. RC3 owns that second guard amendment and tests both decoder boundaries.
+
+## Final shared scope
+
+The accepted RC3 scope also includes the narrow `application/histogramEditorTransaction.ts` panel rejection described above. Focused Histogram production-join coverage verifies that direct callers reject Radial-only intents. The root-property amendments and this guard are included in the final full-file complexity gate; the earlier proposed file count is historical.
