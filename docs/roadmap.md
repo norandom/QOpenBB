@@ -54,3 +54,16 @@ The [provider map](provider-coverage.md) describes horizontal scope. Track provi
 Keep isolated Playwright/CDP, bounded xdist, financial semantics and existing persistence and failure/recovery regressions. Run affected checks per change and the integrated prototype journey at the release gate. Saved research-context acceptance belongs to analyst-workspace; infrastructure backup/restore and rollback verification remain deferred. Publish concise reviewed evidence; do not turn each check into another planning project.
 
 The [agile delivery amendment](../.kiro/steering/delivery-workflow.md) supersedes older sequencing and whole-spec gates. Retain independent review, complexity caps and per-task commits. Transfer unfinished work without marking it complete.
+
+## Active chart delivery queue
+
+The owner authorized starting the next family while the accepted predecessor finishes publication on 2026-10-24. Each release remains pinned to its accepted source; the installed Compose environment is unchanged by development.
+
+| Order | Work | State | Dependency |
+| --- | --- | --- | --- |
+| 1 | Nightingale | Feature accepted; image publication running | Verify tagged assets and public image pulls |
+| 2 | [Radial Column and Radial Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) | Original-contract and reuse assessments running in parallel | Freeze shared interfaces before renderer/control implementation |
+| 3 | Treemap and Sunburst | Queued directly next | Original hierarchy semantics, meaningful FMP fixture and reviewed file boundaries |
+| Later | Heatmap, funnel family and remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
+
+Renderer and control lanes may run concurrently after their shared contract is accepted. Shared application integration, local heavy checks and publication gates remain serialized. This queue does not mark planned tests or unsupported original paths complete.

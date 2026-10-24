@@ -31,8 +31,8 @@
       "N3",
       "N4"
     ],
-    "feature_accepted": false,
-    "application_accepted": false,
+    "feature_accepted": true,
+    "application_accepted": true,
     "planning_source": "194691e589ad75afb74d227574402dfb43ba6aea",
     "plan_review": "artifacts/reviewed/chart-nightingale/plan-review.md",
     "n0_source": "5fd57cf6d22893b5a26510a6ba3f25726a4386d5",
@@ -518,6 +518,29 @@
         },
         "scope": "local browser acceptance and CI publication verified separately"
       }
+    }
+  ],
+  "successor_queue": [
+    {
+      "name": "radial-column-bar-port",
+      "contract": "radial-milestone.md",
+      "phase": "contract-assessment",
+      "authorization": "Owner explicitly requested starting now with parallel subagents on 2026-10-24; overlap accepted Nightingale publication without changing its pinned release.",
+      "completed_tasks": []
+    },
+    {
+      "name": "hierarchy-chart-port",
+      "families": [
+        "treemap",
+        "sunburst"
+      ],
+      "phase": "queued",
+      "authorization": "Owner requested queueing the next roadmap item directly after Radial on 2026-10-24.",
+      "prerequisites": [
+        "Original hierarchy semantics and reachability",
+        "Meaningful retained FMP fixture",
+        "Reviewed shared contract and exact file boundaries"
+      ]
     }
   ]
 }

@@ -115,6 +115,8 @@ Waterfall remains available in the current alpha alongside Radar. Local applicat
 
 Current chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale-milestone.md).
 
+Next development: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-milestone.md), with parallel contract/reuse assessment underway. Treemap/Sunburst are queued next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
+
 - [x] Freeze original behavior and the retained FMP revenue-composition example (N0).
 - [x] Implement the inactive native renderer (N1).
 - [x] Implement the inactive existing-style controls (N2).
