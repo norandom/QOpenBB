@@ -87,3 +87,5 @@ The initial original/candidate journeys passed for both families on source f9b29
 - [ ] Match Bar category grids, circle fitting and legend spacing more closely, as requested by the owner on 2026-10-24 after qView comparison.
 
 The [Column source review](../../../artifacts/reviewed/chart-radial/column-refinement-review.md) and [initial journey review](../../../artifacts/reviewed/chart-radial/initial-journeys-review.md) separate passing behavior from the remaining appearance work. No new Radial release is accepted.
+
+The [Bar refinement design](radial-bar-refinement-design.md) freezes the measured-layout helper, category-grid and legend ownership. Independent design review is complete; implementation and rebuilt acceptance remain open.

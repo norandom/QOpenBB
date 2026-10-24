@@ -170,6 +170,22 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-radial/rc4/bar-refinement-design-review.md",
+      "sourceSHA256": "ebf35a9b5c2c14b8a11013018cded79329daa32290279e7c81f065e765a45f20",
+      "publishedpath": "artifacts/reviewed/chart-radial/bar-refinement-design-review.md",
+      "publishedSHA256": "ebf35a9b5c2c14b8a11013018cded79329daa32290279e7c81f065e765a45f20",
+      "bytes": 6419,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc4/bar-visual-analysis.md",
+      "sourceSHA256": "82603ab8f1d990eb6af50bcd9ff5425f835dea87f02684d6635f00a59909e9dd",
+      "publishedpath": "artifacts/reviewed/chart-radial/bar-visual-analysis.md",
+      "publishedSHA256": "82603ab8f1d990eb6af50bcd9ff5425f835dea87f02684d6635f00a59909e9dd",
+      "bytes": 16184,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-radial/rc4/initial-journeys-review.md",
       "sourceSHA256": "7fe39ef2027c9f549fd737c641ef2c8cabf1ca44ad349cb732a8b68318526250",
       "publishedpath": "artifacts/reviewed/chart-radial/initial-journeys-review.md",
@@ -33145,7 +33161,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167243827,
+  "total_payload_bytes": 167266430,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
