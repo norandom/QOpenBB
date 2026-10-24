@@ -1003,3 +1003,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/nightingaleSession.test.ts"]
 status = "passed"
 evidence = ["Workspace 7cffa0894c494ebe59769d4df9a055135a72d65f independently accepted. 8 tests pass including mounted control intent; model-root grouping, option applicability and inactive preservation verified. Five production files fit caps; scoped lint and combined gate pass. Scoped TypeScript retains four unchanged baseline diagnostics. Live application and packaged financial/visual acceptance remain N3/N4. See artifacts/reviewed/chart-nightingale/verification.md and n2-review.md."]
+
+[[capabilities]]
+id = "nightingale-n3-application"
+requirements = ["analyst-workspace/nightingale-milestone.md:N3", "analyst-workspace/nightingale-contract.md"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleEditorControls.test.tsx"]
+status = "passed"
+evidence = ["Workspace 716cd1a95087d9c1d3755b8192671a48f48b2192: independent final 11 owner/editor tests, scoped lint and combined caps pass. Group Type persistence, stale commands, setup/capture and palette provenance reviewed. Strict TypeScript has 2680 inherited diagnostics with zero normalized delta, not a clean compile. Packaged financial and visual acceptance remains N4. See artifacts/reviewed/chart-nightingale/n3-review.md."]

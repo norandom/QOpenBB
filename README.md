@@ -118,7 +118,7 @@ Current chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale
 - [x] Freeze original behavior and the retained FMP revenue-composition example (N0).
 - [x] Implement the inactive native renderer (N1).
 - [x] Implement the inactive existing-style controls (N2).
-- [ ] Connect the Table/File application and persistence paths (N3).
+- [x] Connect the Table/File application and persistence paths (N3).
 - [ ] Accept real-data browser behavior and appearance, then publish once (N4-N5).
 
 Published chart milestone: [Radar Line and Radar Area](.kiro/specs/analyst-workspace/radar-milestone.md).

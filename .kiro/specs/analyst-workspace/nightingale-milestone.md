@@ -33,12 +33,13 @@ The retained FMP example is FY2025 quarterly AAPL cost of revenue plus gross pro
   - Depends on N0; independent of N1 only after shared interfaces freeze. Own reviewed new Nightingale editor/session files and focused tests.
   - Map original reachable controls and persisted options through existing owners. Preserve unsupported-neighbor family state and stale-command rules.
   - Done when control-to-option/state effects, saved defaults and rejection behavior pass focused checks, complexity and independent review.
-- [ ] N3. Connect the existing Table/File application paths.
+- [x] N3. Connect the existing Table/File application paths.
   - Depends on N1 and N2. One worker owns shared capture/setup, family unions, editor/caller routing and session integration. Freeze a minimal exact path list and split capture from routing only if review shows a distinct oversized boundary.
   - Preserve prior families, ready-empty recovery, field/mode changes, native legend updates, resize and existing persistence. No alternate state owner or disabled control.
   - Done when real session/editor/caller checks and affected regressions pass, shared-file caps pass and independent review accepts the integration.
 - [ ] N4. Accept packaged real-data behavior and visible parity.
   - Depends on N3. Build an identified candidate with Dagger, then reuse the isolated one-worker browser flow and retained FMP fixture. Keep fresh-session reopen as the final operation in each journey.
+  - Browser-test authoring may overlap N3 after accepted N1/N2 interfaces freeze: one separate worker owns only new `terminalpro/tests/e2e/live-chart/nightingale-chart.spec.ts` and `nightingale-fixture.ts`. Reuse existing helpers; no shared helper or application edits. Browser execution, image builds and N4 acceptance still wait for reviewed N3 integration and identified runtimes.
   - Verify acceptance criteria 2-4; fix concrete defects and rerun affected checks. Retain exact original/candidate identities and selected reviewed samples.
   - Done when independent behavior review and required owner appearance decisions are recorded. Tests and documentation are excluded from production caps; no parallel harness is planned.
 - [ ] N5. Publish the accepted milestone.
@@ -56,3 +57,5 @@ The [independent plan review](../../../artifacts/reviewed/chart-nightingale/plan
 ## FMP samples
 
 Pending N4. No synthetic drawing or generated illustration substitutes for an accepted application capture.
+
+N3 is independently accepted at Workspace `716cd1a95087d9c1d3755b8192671a48f48b2192`. The 11 final owner/editor tests, scoped lint and combined complexity gate pass; strict TypeScript adds no diagnostics to the inherited baseline. [Review](../../../artifacts/reviewed/chart-nightingale/n3-review.md). N4 packaged FMP and appearance acceptance remains open.

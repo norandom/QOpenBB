@@ -31,10 +31,10 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Freeze original grouped/stacked/normalized behavior and the retained FMP component example.
 - [x] Implement the inactive native Nightingale renderer.
 - [x] Implement the inactive original-style controls.
-- [ ] Integrate Nightingale through the existing Table/File application.
+- [x] Integrate Nightingale through the existing Table/File application.
 - [ ] Accept real-data behavior and appearance, then publish the milestone.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1/N2 are independently accepted; shared application integration is next. Radar remains the published alpha. Radial Column/Bar follow later.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N3 are independently accepted; packaged real-FMP and visual checks are next. Radar remains the published alpha. Radial Column/Bar follow later.
 
 ## Open
 

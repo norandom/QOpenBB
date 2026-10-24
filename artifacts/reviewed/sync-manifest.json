@@ -170,6 +170,14 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-nightingale/n3/review.md",
+      "sourceSHA256": "294e1f44d431a90ab75177b95c616d3f386157f67d789ec5f8d3210042f6ef82",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/n3-review.md",
+      "publishedSHA256": "294e1f44d431a90ab75177b95c616d3f386157f67d789ec5f8d3210042f6ef82",
+      "bytes": 6964,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-nightingale/n2/review.md",
       "sourceSHA256": "59b093e52017098f3855a04a9e7cb93ec6b4e85aff61ae369085356d1c65a574",
       "publishedpath": "artifacts/reviewed/chart-nightingale/n2-review.md",
@@ -195,10 +203,10 @@
     },
     {
       "sourcepath": "artifacts/chart-nightingale/verification.md",
-      "sourceSHA256": "efb0ad37d019979e4a624fe678b95183717e455d148bc7346f8a3b7cd831b482",
+      "sourceSHA256": "9ec0c98c878c86e9348ed7883444ff33aeb2427f3e9165078b6ff8c59025f106",
       "publishedpath": "artifacts/reviewed/chart-nightingale/verification.md",
-      "publishedSHA256": "efb0ad37d019979e4a624fe678b95183717e455d148bc7346f8a3b7cd831b482",
-      "bytes": 6378,
+      "publishedSHA256": "9ec0c98c878c86e9348ed7883444ff33aeb2427f3e9165078b6ff8c59025f106",
+      "bytes": 7303,
       "transform": "exact-byte-copy"
     },
     {
@@ -32889,7 +32897,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 166945969,
+  "total_payload_bytes": 166953858,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

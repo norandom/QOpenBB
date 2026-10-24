@@ -31,3 +31,9 @@ N1 and N2 passed independent review on 2026-10-24, committed separately as `f6f6
 - Both scoped strict TypeScript comparisons retain the same four inherited diagnostics without additions. Reviewers independently reran the focused tests and lint and verified frozen source hashes. RED evidence includes missing implementation and concrete grouping/angle failures before correction.
 
 N3 must preserve model-root Group Type during setup and reject stale root edits, connect the existing state owners and controls, and supply original background strokes for inbuilt palettes through caller palette provenance. Custom palette strokes must remain intact. N4 still owns real-FMP browser, theme, refresh/reopen/export and appearance acceptance; one publication follows the accepted milestone.
+
+## N3 application integration
+
+N3 at Workspace `716cd1a95087d9c1d3755b8192671a48f48b2192` passed independent integration review and the combined complexity gate on 2026-10-24. The existing Table/File owner now routes Nightingale data, setup and customization to native polar bars. Root Group Type is persisted with stale-command protection; built-in palette strokes use background colors while custom strokes remain supplied values. The approved sparse normalized behavior keeps valid observations visible.
+
+Fresh independent owner/editor checks pass all 11 tests; scoped lint passes all 29 present files. The 24 production files fit the 400/300/50 caps (maxima 357/140/42). Strict TypeScript has 2680 inherited diagnostics on both baseline and candidate, with no normalized delta; this is not a clean application compile. Packaged real-FMP rendering, export and fresh-session persistence remain N4. See n3-review.md.
