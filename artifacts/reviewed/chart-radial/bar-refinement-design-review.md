@@ -26,3 +26,11 @@ The separately exported prepareBarLayout adapter may live in the already approve
 This is a cohesive extraction needed to respect radialLayout's physical cap, not a second domain/layout owner. The adapter must not recompute domain, ticks or series grouping, mutate inputs, access persistence, or own the fallback. radialLayout alone retains the old layout when the adapter returns null. Category fractions must remain finite when the old radius is zero, using normalized bands rather than division by that radius.
 
 Dependency direction remains radialLayout -> radialBarLayout. The new file must not import radialLayout or create a reverse path through radialData. Type-only imports from radialContracts, radialData and radialModel are acceptable; existing measurement and scale helpers may be consumed without introducing a cycle. Additional adapter/helper exports do not relax the whole-file 400/300/50 limits or the required focused/source/runtime review gates. No implementation or tests ran for this amendment approval.
+
+## Approved shared native-legend exception
+
+The source-backed native legend spacing correction may apply to both Radial Column and Radial Bar, provided the authoritative design explicitly replaces its earlier Column-legend exclusion before source freeze. The original global legend defaults supply the same interitem and marker-to-text semantics to both families; this is a bounded paint-mapping correction within radialChrome, not new controls or theme ownership.
+
+Column circle fitting, padding/reservation algorithm, domain, ticks and numerical grids must remain unchanged. Parameterize actual native marker/text-origin tests for both families at marker gaps 0/5/13 and item gaps 32/17, preserving literal brace/pipe labels, stable IDs and selection. If negative plain padding fails the installed renderer's measured behavior, stop for review rather than inventing a spacing fallback. Do not infer wrapped/scroll or vertical reservation equivalence from single-row tests.
+
+Recheck whole-file caps after the extension and rerun identified packaged journeys for both families on the final image. This approval permits the explicit bounded design amendment; it is not approval of unseen implementation or final visual parity.

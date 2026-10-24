@@ -76,16 +76,17 @@ RC3 is independently accepted at Workspace 2831436bc1eefb9030d2ab1c154f67603f586
 - [x] Prepare reviewed real-FMP browser journeys for both families.
 - [ ] Execute the identified packaged image and original comparisons (RC4).
 
-A local Dagger candidate build was started for f9b29dd; its result is not yet verified. No Radial packaged, visual or release acceptance is claimed. See [application review](../../../artifacts/reviewed/chart-radial/application-review.md).
+The pre-refinement f9b29dd candidate was verified by the bounded initial journeys below; it does not contain the later Column and Bar appearance refinements. No final Radial packaged, visual or release acceptance is claimed. See [application review](../../../artifacts/reviewed/chart-radial/application-review.md).
 
 ## RC4 appearance refinements
 
 The initial original/candidate journeys passed for both families on source f9b29dd and image 6e8b6475. Independent review accepts their bounded financial, interaction, refresh, reopen and export evidence; original CSV diagnostics remain retained. Appearance is not accepted.
 
 - [x] Correct Column polar tick density and restore numerical grid circles at source level, Workspace f6cf1790e501f88c8e8590c7b4f368ff0c13de7c. Independent 41-test review, scoped lint/type comparison and combined caps pass.
+- [x] Implement and independently accept Bar category grids, bounded circle fitting, and shared Radial legend spacing at source, Workspace 9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5. Focused 51-test review, scoped checks and combined caps pass; see the [independent source review](../../../artifacts/reviewed/chart-radial/bar-refinement-review.md).
 - [ ] Verify the rebuilt Column correction and compare settled light/dark appearance.
-- [ ] Match Bar category grids, circle fitting and legend spacing more closely, as requested by the owner on 2026-10-24 after qView comparison.
+- [ ] Verify the rebuilt Bar correction, compare appearance, and complete the owner's visual decision.
 
 The [Column source review](../../../artifacts/reviewed/chart-radial/column-refinement-review.md) and [initial journey review](../../../artifacts/reviewed/chart-radial/initial-journeys-review.md) separate passing behavior from the remaining appearance work. No new Radial release is accepted.
 
-The [Bar refinement design](radial-bar-refinement-design.md) freezes the measured-layout helper, category-grid and legend ownership. Independent design review is complete; implementation and rebuilt acceptance remain open.
+The [Bar refinement design](radial-bar-refinement-design.md) records the accepted source scope and measured-layout, category-grid and legend ownership. Source acceptance does not complete RC4; rebuilt verification and appearance acceptance remain open.

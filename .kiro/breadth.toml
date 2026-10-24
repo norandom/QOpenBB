@@ -1067,3 +1067,11 @@ planned_checks = ["Rebuilt packaged Column and affected Bar verification; origin
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialNumerical.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialEngine.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialSession.test.ts"]
 status = "passed"
 evidence = ["Source-only f6cf1790e501f88c8e8590c7b4f368ff0c13de7c: independent41tests, lint, four inherited scoped type diagnostics unchanged, combined caps0. See artifacts/reviewed/chart-radial/column-refinement-review.md. Rebuilt image and appearance unverified."]
+
+[[capabilities]]
+id = "radial-bar-refinement-source"
+requirements = ["analyst-workspace/radial-bar-refinement-design.md"]
+planned_checks = ["rebuilt-column-and-bar-packaged-journeys", "original-appearance-comparison", "owner-appearance-decision"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialNumerical.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialEngine.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialSession.test.ts"]
+status = "passed"
+evidence = ["Source-only acceptance at Workspace 9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5: independent 51/51 focused tests, scoped lint, unchanged four inherited type diagnostics, combined inventory caps pass. See artifacts/reviewed/chart-radial/bar-refinement-review.md. Corrected image/runtime and appearance remain unverified."]
