@@ -170,6 +170,22 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-nightingale/n0-review.md",
+      "sourceSHA256": "3d0cc9067498cefc021cbb05bb68f081895d363cc76edd91c0831d8b09b8a9f1",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/n0-review.md",
+      "publishedSHA256": "3d0cc9067498cefc021cbb05bb68f081895d363cc76edd91c0831d8b09b8a9f1",
+      "bytes": 6097,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-nightingale/verification.md",
+      "sourceSHA256": "6a54ea4bc8c796d59556c59751d9151b7f0a333cbcb1c69d26c793f4ba7e630b",
+      "publishedpath": "artifacts/reviewed/chart-nightingale/verification.md",
+      "publishedSHA256": "6a54ea4bc8c796d59556c59751d9151b7f0a333cbcb1c69d26c793f4ba7e630b",
+      "bytes": 4322,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/task-4.6/cleanup-evidence.json",
       "sourceSHA256": "e3b72db00db231bafaa2eed9f332c413213bb4dcdb18750bb7520bb33c058ce5",
       "publishedpath": "artifacts/reviewed/task-4.6/cleanup-evidence.json",
@@ -32857,7 +32873,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 166369911,
+  "total_payload_bytes": 166932575,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -978,4 +978,12 @@ requirements = ["analyst-workspace/nightingale-milestone.md:Acceptance contract"
 planned_checks = ["original-nightingale-numerical-controls", "retained-fmp-revenue-composition", "mode-control-state-effects", "packaged-refresh-reopen-export", "published-image-identities"]
 test_paths = []
 status = "planned"
-evidence = ["Independent N0-first plan review passed; source research and retained FMP reconciliation inform the probe. No original-runtime or replacement acceptance is claimed. See artifacts/reviewed/chart-nightingale/plan-review.md."]
+evidence = ["N0 contract accepted; source and original observations plus retained FMP fixture are recorded in the separate contract capability. Replacement behavior, packaged acceptance and publication remain planned. See artifacts/reviewed/chart-nightingale/verification.md."]
+
+[[capabilities]]
+id = "nightingale-original-contract"
+requirements = ["analyst-workspace/nightingale-milestone.md:N0", "analyst-workspace/nightingale-contract.md"]
+planned_checks = ["original-mode-controls-tooltips", "retained-fmp-reconciliation", "inactive-interface-caps"]
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/nightingale-original.spec.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/fixtures/nightingaleContract.ts"]
+status = "passed"
+evidence = ["N0 Workspace 5fd57cf6d22893b5a26510a6ba3f25726a4386d5 independently approved: one original browser test passes44.5s; exact12 retained FMP amounts/four dates/four totals reconcile; inactive declarations177 physical/110 logical units, combined cap gate clean. Four inherited TypeScript diagnostics unchanged. Exact geometry remains source-derived; original CSV/parse errors disclosed. Owner approved retaining valid normalized data when a category is missing. No replacement or financial browser acceptance claimed. See artifacts/reviewed/chart-nightingale/verification.md and n0-review.md."]

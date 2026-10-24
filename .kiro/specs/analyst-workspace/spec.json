@@ -23,12 +23,18 @@
     "name": "nightingale-chart-port",
     "contract": "nightingale-milestone.md",
     "authorization": "Owner approved continuing with Nightingale after Radar and the local Compose update on 2026-10-24. Bounded original contract first, then reviewed implementation and one publication.",
-    "phase": "contract-in-progress",
-    "completed_tasks": [],
+    "phase": "inactive-implementation",
+    "completed_tasks": [
+      "N0"
+    ],
     "feature_accepted": false,
     "application_accepted": false,
     "planning_source": "194691e589ad75afb74d227574402dfb43ba6aea",
-    "plan_review": "artifacts/reviewed/chart-nightingale/plan-review.md"
+    "plan_review": "artifacts/reviewed/chart-nightingale/plan-review.md",
+    "n0_source": "5fd57cf6d22893b5a26510a6ba3f25726a4386d5",
+    "design": "nightingale-contract.md",
+    "review": "artifacts/reviewed/chart-nightingale/n0-review.md",
+    "normalized_missing_decision": "Owner approved keeping valid values visible on 2026-10-24; omit only missing observations."
   },
   "completed_milestones": [
     {

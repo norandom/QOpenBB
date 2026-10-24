@@ -28,11 +28,11 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 ## Current Nightingale milestone
 
-- [ ] Freeze original grouped/stacked/normalized behavior and the retained FMP component example.
+- [x] Freeze original grouped/stacked/normalized behavior and the retained FMP component example.
 - [ ] Implement and integrate Nightingale through the existing Table/File controls.
 - [ ] Accept real-data behavior and appearance, then publish the milestone.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) passed independent review; original runtime work is pending. Radar remains the published alpha. Radial Column/Bar follow later.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. Inactive renderer and controls implementation is next. Radar remains the published alpha. Radial Column/Bar follow later.
 
 ## Open
 

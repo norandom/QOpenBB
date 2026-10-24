@@ -12,15 +12,15 @@ Restore Nightingale in the existing Table/File chart workflow. The owner authori
 
 ## Design boundaries and unresolved questions
 
-Original frontend: 38dffc33389aca0e4a87e0e88d42f7067aa220df. Current Workspace: 194691e589ad75afb74d227574402dfb43ba6aea. Current published alpha: alpha-40086673952-1. Financial reconciliation and source research are complete; original runtime probes remain pending. No Nightingale implementation or runtime acceptance is claimed.
+Original frontend: 38dffc33389aca0e4a87e0e88d42f7067aa220df. N0 Workspace source: 5fd57cf6d22893b5a26510a6ba3f25726a4386d5. Current published alpha: alpha-40086673952-1. The [adapter contract](nightingale-contract.md) and [N0 review](../../../artifacts/reviewed/chart-nightingale/n0-review.md) are accepted. One original browser journey, source semantics and retained FMP reconciliation support the inactive interfaces; replacement application acceptance remains open.
 
-The source report identifies default stacking; grouped/stacked/normalized Group Type lives at model-root `seriesGroupType`, with normalization to 100. Radius is linear, signed stacks accumulate separately, and the source normalization denominator is the larger absolute signed extent. Raw tooltip/label values remain separate from normalized geometry. Nightingale has no Radar Shape control, no radial Padding section, and no marker/shadow controls. These source observations guide, but do not substitute for, the original probe.
+Group Type is stored at model root, with linear radius and separate signed stacks. Normalized geometry uses the larger absolute signed extent while tooltips retain raw values; axis ticks remain plain numbers. The original hides a whole normalized series when one category is missing. On 2026-10-24 the owner approved retaining valid values and omitting only the missing observation. This correction must have a focused regression test.
 
-The contract task must resolve the original mode/defaults, signed and missing-value behavior, normalization, radial-domain/angle allocation, aggregation-before-inversion, supported axis controls and legend/navigation effects. Source research reports default stacking and a linear radius scale, pending original browser confirmation. The retained FMP example is FY2025 quarterly cost of revenue plus gross profit: all four exact sums reconcile to reported revenue. Revenue is a reference, never a third stacked series. A single revenue series provides the simple magnitude check. No new provider retrieval is planned.
+The retained FMP example is FY2025 quarterly AAPL cost of revenue plus gross profit, reported USD. Four exact sums reconcile to revenue, which is never a third stacked component. No new provider retrieval was needed. The contract distinguishes observed controls/tooltips from source-derived exact geometry and discloses original transport diagnostics. Representative packaged real-data samples remain N4.
 
 ## Bounded tasks
 
-- [ ] N0. Freeze the original numerical/UI contract and adapter interface.
+- [x] N0. Freeze the original numerical/UI contract and adapter interface.
   - Reuse original-source evidence and one discriminating isolated browser probe; independently reconcile the retained FMP fixture. Distinguish observed, source-derived and unresolved behavior.
   - N0 is controller-owned. A delegated probe worker may edit only the new original probe `terminalpro/tests/e2e/live-chart/nightingale-original.spec.ts` while the controller owns, after semantic freeze, inactive declarations `Chart/compatibility/nightingaleContracts.ts` plus `terminalpro/tests/unit/chart-compatibility/fixtures/nightingaleContract.ts`. Reuse existing browser helpers; any additional helper requires an explicit ownership adjustment. No live application edit belongs to N0.
   - Identify exact N1/N2 new-file lists and shared types before fan-out. Measure modified shared-file baselines. The controller alone edits `.kiro/complexity-budgets.json`, shared interfaces, source locks and the combined change manifests; these writes are serialized. Each lane supplies its scoped measurements and hashes, not competing inventory edits.
@@ -51,7 +51,7 @@ Use the existing portable Vitest, scoped Biome, TypeScript baseline comparison, 
 
 Use at most four agents: controller, two disjoint workers and an independent reviewer. Sol handles bounded implementation; Astra handles numerical/integration contracts and difficult review. Serialize heavy builds and browser runs; at most three independent verification processes, one browser worker. Do not mutate the owner's local Compose data for tests. Preserve unrelated catalog, Perspective and inventory edits.
 
-The [independent plan review](../../../artifacts/reviewed/chart-nightingale/plan-review.md) passed on 2026-10-24. N0 is active; production fan-out remains gated on the reviewed empirical contract, exact file ownership, interfaces and commands. This milestone follows the prototype-first steering amendment; it does not mark the full analyst-workspace specification complete.
+The [independent plan review](../../../artifacts/reviewed/chart-nightingale/plan-review.md) passed on 2026-10-24. N0 is independently accepted; the contract freezes exact disjoint N1/N2 files, shared interfaces and commands. N1/N2 may proceed without shared live routing edits. This milestone follows the prototype-first steering amendment; it does not mark the full analyst-workspace specification complete.
 
 ## FMP samples
 

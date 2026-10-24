@@ -1,0 +1,23 @@
+# Nightingale contract verification
+
+N0 Workspace source `5fd57cf6d22893b5a26510a6ba3f25726a4386d5` is independently accepted: original observations, retained financial fixture and inactive interfaces are frozen for the two implementation lanes. No replacement renderer, live routing, packaged financial browser acceptance or new image publication is claimed. The [contract](../../../.kiro/specs/analyst-workspace/nightingale-contract.md) separates observed behavior from source-derived numerical semantics.
+
+- Original frontend: `38dffc33389aca0e4a87e0e88d42f7067aa220df`; image `sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f`. The disposable comparison used a backend-only source overlay, 43 files with hash `23b6323e40a2edaa7267e25f72d032da8e92ccef09cc09545cb749fe2d2a15de`. It is not an unmodified image-only release test.
+- One isolated original Playwright journey passed in 44.5 seconds, one worker, no retries. The retained run is `artifacts/chart-nightingale/original/run-20261024T120528Z-sl2tbb`. Probe SHA256: `dbbaebd66ee91c0af9734b0c9173273a1df8f3183bee92134c2d4aebb7fa69be`.
+- Native tooltips identify every compact single/grouped/stacked/normalized datum and preserve raw amounts. Legend hiding, aggregation/inversion, axis controls, navigator actions and saved-model reload were exercised. Interior hover targets are source-informed, not independent measurements of exact sector geometry. Mixed data has screenshot/model coverage, not exact negative/missing tooltip acceptance.
+- Original normalized missing data hides the whole affected series. On 2026-10-24 the owner approved correcting this: retain valid observations and omit only the missing observation. This is a documented behavior difference, not a strict parity claim.
+- Diagnostics are not clean: the routed original retains an `Unexpected token '<'` error and a failed CSV request during reload. Behavioral test success does not certify clean transport. The final saved chart still renders.
+- The retained FMP AAPL FY2025 fixture contains four quarterly cost-of-revenue/gross-profit pairs in USD, plus revenue reconciliation references. All 12 amounts, four dates and four additive totals match the hash-verified 40-record response, SHA256 `390dc8cbfc8302720a203bd9782d5e3b1f7363a4f762bdfcef079dbbe4c72f6b`, retrieved 2026-10-20. Revenue is not a third stacked component. No new provider request was made.
+- The inactive declaration measures 177 physical lines and 110 logical units, with no executable functions. The combined checker exits 0 with no errors or violations. Scoped Biome lint and syntax parsing pass. Strict TypeScript current/baseline logs are identical: four existing dependency diagnostics, no new declaration diagnostics. This is comparative checking, not a clean application compile.
+
+## Commands and limits
+
+The existing isolated Playwright configuration runs `nightingale-original.spec.ts` with the qualified original descriptor and a uniquely allocated evidence directory. Credentials, state, raw provider responses and raw browser logs remain local. Earlier failed runs are retained: context arcs did not observe native Path2D; exact tooltip text uses newline fields; stacked series render offscreen. The final probe removes path instrumentation and retains fresh-paint provenance, visible screenshots and exact native tooltip checks.
+
+Scoped static commands use pinned Node 24.22.0, the existing Biome CLI, TypeScript 6.0.3 and `tools/quality/syntax_units.ts`. The combined gate was:
+
+```sh
+pipeline/.venv/bin/python -m tools.quality.complexity --check --changes workspace=artifacts/chart-nightingale/interfaces/workspace-changes.json --changes data_api=artifacts/chart-nightingale/interfaces/api-changes.json --output artifacts/chart-nightingale/interfaces/combined.json
+```
+
+The source characterization and inactive declarations do not require a feature RED/GREEN claim. N1/N2 must add focused numerical, native-engine and mutation regressions before activation. N4 still owns identified packaged real-FMP checks, light/dark appearance, refresh, fresh-session reopen and export. Real-data milestone screenshots remain pending; synthetic reference screenshots are not published as FMP samples. The previously published Radar alpha and local Compose data are unchanged.

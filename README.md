@@ -115,7 +115,7 @@ Waterfall remains available in the current alpha alongside Radar. Local applicat
 
 Current chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale-milestone.md).
 
-- [ ] Freeze original behavior and the retained FMP revenue-composition example (N0).
+- [x] Freeze original behavior and the retained FMP revenue-composition example (N0).
 - [ ] Implement and integrate the renderer and existing controls (N1-N3).
 - [ ] Accept real-data browser behavior and appearance, then publish once (N4-N5).
 
