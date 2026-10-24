@@ -26,6 +26,14 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Connect ordinary category/series selection, ordering, filtering, Sum/Avg and orientation changes.
 - [x] Apply owner-reviewed visual refinements, including line legends, gallery drawings and tab typography.
 
+## Current Nightingale milestone
+
+- [ ] Freeze original grouped/stacked/normalized behavior and the retained FMP component example.
+- [ ] Implement and integrate Nightingale through the existing Table/File controls.
+- [ ] Accept real-data behavior and appearance, then publish the milestone.
+
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) passed independent review; original runtime work is pending. Radar remains the published alpha. Radial Column/Bar follow later.
+
 ## Open
 
 - [ ] Complete other distribution and radial families.

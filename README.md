@@ -13,7 +13,7 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 ## Status at a glance
 
-Snapshot: 2026-10-23. Follow the CI link for live run status; a green check does not establish deployment acceptance.
+Snapshot: 2026-10-24. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
 | Area | What exists | What remains |
 | --- | --- | --- |
@@ -112,6 +112,12 @@ Published: [Waterfall](.kiro/specs/analyst-workspace/waterfall-milestone.md), fo
 Waterfall remains available in the current alpha alongside Radar. Local application acceptance and public image identities are verified separately; see the [release evidence](artifacts/reviewed/chart-waterfall/verification.md#published-waterfall-alpha).
 
 ## Delivery plan
+
+Current chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale-milestone.md).
+
+- [ ] Freeze original behavior and the retained FMP revenue-composition example (N0).
+- [ ] Implement and integrate the renderer and existing controls (N1-N3).
+- [ ] Accept real-data browser behavior and appearance, then publish once (N4-N5).
 
 Published chart milestone: [Radar Line and Radar Area](.kiro/specs/analyst-workspace/radar-milestone.md).
 
