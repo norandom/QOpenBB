@@ -170,6 +170,54 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-radial/rc4/samples/column-replacement-light.png",
+      "sourceSHA256": "ffd527bb5f3f557138d0558fe28d596b52184a5a01578cca303605efda85a741",
+      "publishedpath": "artifacts/reviewed/chart-radial/column-replacement-light.png",
+      "publishedSHA256": "ffd527bb5f3f557138d0558fe28d596b52184a5a01578cca303605efda85a741",
+      "bytes": 47326,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc4/samples/column-original-light.png",
+      "sourceSHA256": "0dc721af03b05058417feb5f5d05705510ad600804bf61e1ab562495d52e96f8",
+      "publishedpath": "artifacts/reviewed/chart-radial/column-original-light.png",
+      "publishedSHA256": "0dc721af03b05058417feb5f5d05705510ad600804bf61e1ab562495d52e96f8",
+      "bytes": 50052,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc4/samples/bar-replacement-light.png",
+      "sourceSHA256": "02f4f11999826768d509d3393da11524c713dfbabc3828891f9e515df7de280b",
+      "publishedpath": "artifacts/reviewed/chart-radial/bar-replacement-light.png",
+      "publishedSHA256": "02f4f11999826768d509d3393da11524c713dfbabc3828891f9e515df7de280b",
+      "bytes": 86075,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc4/samples/bar-original-light.png",
+      "sourceSHA256": "a9ee87b564ea4bc62326525b9f3ab9adeeb5cee55c1348cea613f4d8c9089eac",
+      "publishedpath": "artifacts/reviewed/chart-radial/bar-original-light.png",
+      "publishedSHA256": "a9ee87b564ea4bc62326525b9f3ab9adeeb5cee55c1348cea613f4d8c9089eac",
+      "bytes": 87582,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc4/samples/real-fmp-samples.md",
+      "sourceSHA256": "6587816fbd2413f6d7c37a31beb53034c3897620f11894a7cdc2b63da6042755",
+      "publishedpath": "artifacts/reviewed/chart-radial/real-fmp-samples.md",
+      "publishedSHA256": "6587816fbd2413f6d7c37a31beb53034c3897620f11894a7cdc2b63da6042755",
+      "bytes": 1321,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc4/final-review.md",
+      "sourceSHA256": "57c2dfa645ba4ca92e8ea1b5ece1b18f997bd8b7010ecc07d6b666e4e947c827",
+      "publishedpath": "artifacts/reviewed/chart-radial/final-acceptance-review.md",
+      "publishedSHA256": "57c2dfa645ba4ca92e8ea1b5ece1b18f997bd8b7010ecc07d6b666e4e947c827",
+      "bytes": 6509,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-radial/rc4/bar-refinement/review.md",
       "sourceSHA256": "0ddd8e9b964791a8294af33d89b64b0049a147ab3094e78a4c471f484ad32b4e",
       "publishedpath": "artifacts/reviewed/chart-radial/bar-refinement-review.md",
@@ -299,10 +347,10 @@
     },
     {
       "sourcepath": "artifacts/chart-radial/verification.md",
-      "sourceSHA256": "fbfe9a60073518c6b19a430949d1b431a629719db7e59fca76d3fa35a20f307a",
+      "sourceSHA256": "4ba37655811afbe61e220f100a11f8b520ae55e8afe5538c4aea7aab06057ca3",
       "publishedpath": "artifacts/reviewed/chart-radial/verification.md",
-      "publishedSHA256": "fbfe9a60073518c6b19a430949d1b431a629719db7e59fca76d3fa35a20f307a",
-      "bytes": 4483,
+      "publishedSHA256": "4ba37655811afbe61e220f100a11f8b520ae55e8afe5538c4aea7aab06057ca3",
+      "bytes": 5796,
       "transform": "exact-byte-copy"
     },
     {
@@ -33169,7 +33217,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167272861,
+  "total_payload_bytes": 167553039,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

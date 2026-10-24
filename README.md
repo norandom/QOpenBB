@@ -115,7 +115,7 @@ Waterfall remains available in the current alpha alongside Radar. Local applicat
 
 Accepted chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale-milestone.md).
 
-Next development: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-milestone.md), with renderer, controls and application integration independently accepted at source level. Real-FMP packaged and visual acceptance remain open. [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md) source research is complete; original behavior probing is next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
+Radial Column/Bar is accepted locally at RC4 on the identified image; RC5 publication and anonymous image-pull verification remain open. See the [Radial milestone](.kiro/specs/analyst-workspace/radial-milestone.md). [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md) source research is complete; original behavior probing is next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
 
 - [x] Freeze the Radial control contract and implement its inactive controls.
 - [x] Implement the independently reviewed Radial Column shape helper.
@@ -123,8 +123,9 @@ Next development: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-miles
 - [x] Connect Radial charts to the existing application and session workflow.
 - [x] Correct Radial Column polar tick density and grid circles at source level.
 - [x] Implement and independently accept Bar grids, bounded circle fitting and shared Radial legend spacing at source level.
-- [ ] Verify rebuilt Column and Bar appearance and record the visual decision.
-- [ ] Accept the packaged real-FMP journey and visual comparison.
+- [x] Verify rebuilt Column and Bar appearance; owner approved both final appearances.
+- [x] Accept the identified packaged real-FMP journeys and original comparisons (RC4).
+- [ ] Publish and verify the Radial release images (RC5).
 
 Nightingale delivery:
 

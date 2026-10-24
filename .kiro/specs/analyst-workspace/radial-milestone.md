@@ -14,7 +14,7 @@ Reuse existing capture, setup, session, persistence and native ECharts owners. V
 - [x] RC1 (P). Implement reviewed ECharts geometry and series mapping after RC0. Own only the exact renderer files/tests frozen in the contract. Preserve missing values and financial meaning; verify actual rendered output and edge cases.
 - [x] RC2 (P). Implement inactive control/session adaptation after RC0C. Own only the exact control files/tests frozen in the contract, separate from RC1. Reuse existing option paths and validate control-to-render/save effects.
 - [x] RC3. Integrate after RC1/RC2 acceptance. One worker owns shared routing, capture, setup, session and caller files. Preserve prior families and stale-command protection.
-- [ ] RC4. Accept an identified packaged image with real-FMP browser checks and original comparisons. Keep tests lean, inspect actual visible effects, and make fresh-session reopen the last operation.
+- [x] RC4. Accept an identified packaged image with real-FMP browser checks and original comparisons. Keep tests lean, inspect actual visible effects, and make fresh-session reopen the last operation.
 - [ ] RC5. Reconcile checkboxes/breadth, sync reviewed examples, commit/push and publish once. Verify release assets and anonymous image pulls separately from local browser acceptance.
 
 The controls and pure geometry paths are frozen below. Remaining renderer paths must be frozen before their implementation starts. Each implementation task requires independent review, focused checks and the combined maintained-scope gate. Apply 400 physical lines/file, 300 logical units/file and 50/function. Inventory and shared contract edits belong to the controller. No implicit size exceptions.
@@ -76,7 +76,7 @@ RC3 is independently accepted at Workspace 2831436bc1eefb9030d2ab1c154f67603f586
 - [x] Prepare reviewed real-FMP browser journeys for both families.
 - [ ] Execute the identified packaged image and original comparisons (RC4).
 
-The pre-refinement f9b29dd candidate was verified by the bounded initial journeys below; it does not contain the later Column and Bar appearance refinements. No final Radial packaged, visual or release acceptance is claimed. See [application review](../../../artifacts/reviewed/chart-radial/application-review.md).
+The pre-refinement f9b29dd candidate was verified by the bounded initial journeys below; it does not contain the later Column and Bar appearance refinements. Those results do not substitute for the final identified image checks.
 
 ## RC4 appearance refinements
 
@@ -84,9 +84,13 @@ The initial original/candidate journeys passed for both families on source f9b29
 
 - [x] Correct Column polar tick density and restore numerical grid circles at source level, Workspace f6cf1790e501f88c8e8590c7b4f368ff0c13de7c. Independent 41-test review, scoped lint/type comparison and combined caps pass.
 - [x] Implement and independently accept Bar category grids, bounded circle fitting, and shared Radial legend spacing at source, Workspace 9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5. Focused 51-test review, scoped checks and combined caps pass; see the [independent source review](../../../artifacts/reviewed/chart-radial/bar-refinement-review.md).
-- [ ] Verify the rebuilt Column correction and compare settled light/dark appearance.
-- [ ] Verify the rebuilt Bar correction, compare appearance, and complete the owner's visual decision.
+- [x] Verify the rebuilt Column correction in light/dark packaged journeys and complete the owner's appearance decision.
+- [x] Verify the rebuilt Bar correction in light/dark packaged journeys and complete the owner's appearance decision.
 
-The [Column source review](../../../artifacts/reviewed/chart-radial/column-refinement-review.md) and [initial journey review](../../../artifacts/reviewed/chart-radial/initial-journeys-review.md) separate passing behavior from the remaining appearance work. No new Radial release is accepted.
+The final image at Workspace `9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5`, `sha256:f1b71c759334ea08bf1a197a12ce855ac5252ab2d0acd87469f1398dae0f5291`, passed one Column journey (360.243 seconds) and one Bar journey (274.652 seconds), each with one worker, zero retries/skips and exit 0. Both runs verified retained FY2025 USD tuples, controls, refresh, fresh-session reopen as the last operation and PNG export. Original comparison journeys and retained original CSV diagnostics remain documented separately. The owner approved both final appearances with “Keep these appearances.” See the [independent RC4 review](../../../artifacts/reviewed/chart-radial/final-acceptance-review.md) and [real-FMP comparison samples](../../../artifacts/reviewed/chart-radial/real-fmp-samples.md). RC4 is accepted locally; RC5 publication and image-pull verification remain open.
 
-The [Bar refinement design](radial-bar-refinement-design.md) records the accepted source scope and measured-layout, category-grid and legend ownership. Source acceptance does not complete RC4; rebuilt verification and appearance acceptance remain open.
+The four compact original/replacement PNGs are shown in the [real-FMP comparison samples](../../../artifacts/reviewed/chart-radial/real-fmp-samples.md).
+
+The [Column source review](../../../artifacts/reviewed/chart-radial/column-refinement-review.md), [Bar source review](../../../artifacts/reviewed/chart-radial/bar-refinement-review.md) and [initial journey review](../../../artifacts/reviewed/chart-radial/initial-journeys-review.md) retain the earlier source and original-run evidence. No Radial release is published by this local RC4 acceptance.
+
+The [Bar refinement design](radial-bar-refinement-design.md) records the accepted source scope and measured-layout, category-grid and legend ownership. The final identified image and owner appearance acceptance close RC4; RC5 release publication remains pending.

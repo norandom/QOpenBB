@@ -36,4 +36,10 @@ Readable series names were repaired in 974e4f8a5d241dd99e377182b33f987886223e9a,
 
 Strict baseline/current each report 2,680 inherited primary diagnostics. The Histogram intent narrowing regression was fixed; 26 remaining message-order variants were independently reviewed. See [application review](application-review.md). This is no clean-compile or packaged-runtime claim.
 
-[Browser preparation](browser-preparation-review.md) at f9b29ddd4e2d1367f08eafe67e82e2a8a357f320 is reviewed and statically checked. The candidate image is being built locally with Dagger. Real-FMP runs, original screenshots, appearance acceptance and publication remain pending.
+[Browser preparation](browser-preparation-review.md) at f9b29ddd4e2d1367f08eafe67e82e2a8a357f320 was reviewed and statically checked before the initial candidate runs. That pre-refinement image was not used for final acceptance; final packaged evidence follows.
+
+## RC4 packaged and appearance acceptance
+
+RC4 is independently accepted on the local Dagger candidate image `sha256:f1b71c759334ea08bf1a197a12ce855ac5252ab2d0acd87469f1398dae0f5291`, built from Workspace `9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5`. The Column retained-FMP journey passed once in 360.243 seconds; the Bar journey passed once in 274.652 seconds. Both ran serially with one worker, zero retries, skips or errors. The independent final review verified image/runtime identity, exact retained AAPL FY2025 reported-USD tuples, grouping and control effects, unchanged CSV refresh, fresh-session reopen as the final operation, and UI PNG export. Original comparisons remain separate; their retained CSV request/console diagnostic is disclosed.
+
+The owner approved both final appearances with “Keep these appearances.” The [independent RC4 review](final-acceptance-review.md) records evidence boundaries and the remaining layout differences. Compact [real-FMP comparison samples](real-fmp-samples.md) preserve the four owner-reviewed light-theme original/replacement PNGs; final browser evidence also covers both dark-theme captures. This is local application acceptance only. RC5 publication, registry identity verification and anonymous image pulls remain open; the pre-existing Nightingale alpha is unchanged.

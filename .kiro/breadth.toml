@@ -1058,20 +1058,28 @@ requirements = ["analyst-workspace/radial-milestone.md:RC3", "analyst-workspace/
 planned_checks = ["Identified packaged FMP and visual acceptance in RC4"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerInputs.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/radarCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionState.test.ts"]
 status = "passed"
-evidence = ["Source-only acceptance at 2831436bc1eefb9030d2ab1c154f67603f58689a. Independent review, focused integration/model tests, final Histogram/label joins and combined caps pass. Strict baseline/current each have 2680 inherited diagnostics, 26 display-order variants reviewed; no clean compile claim. Browser runtime remains unverified. See artifacts/reviewed/chart-radial/application-review.md."]
+evidence = ["Source-only acceptance at 2831436bc1eefb9030d2ab1c154f67603f58689a. Independent review, focused integration/model tests, final Histogram/label joins and combined caps pass. Strict baseline/current each have 2680 inherited diagnostics, 26 display-order variants reviewed; no clean compile claim. Packaged behavior is subsequently accepted under radial-packaged-fmp-rc4. See artifacts/reviewed/chart-radial/application-review.md."]
 
 [[capabilities]]
 id = "radial-column-scale-grid-source"
 requirements = ["analyst-workspace/radial-renderer-design.md:RC4 Column scale and grid amendment"]
-planned_checks = ["Rebuilt packaged Column and affected Bar verification; original appearance comparison"]
+planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialNumerical.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialEngine.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialSession.test.ts"]
 status = "passed"
-evidence = ["Source-only f6cf1790e501f88c8e8590c7b4f368ff0c13de7c: independent41tests, lint, four inherited scoped type diagnostics unchanged, combined caps0. See artifacts/reviewed/chart-radial/column-refinement-review.md. Rebuilt image and appearance unverified."]
+evidence = ["Source-only acceptance at Workspace f6cf1790e501f88c8e8590c7b4f368ff0c13de7c: independent 41-test review, lint, four inherited scoped type diagnostics unchanged, combined caps pass. See artifacts/reviewed/chart-radial/column-refinement-review.md. Packaged acceptance is tracked separately under radial-packaged-fmp-rc4."]
 
 [[capabilities]]
 id = "radial-bar-refinement-source"
 requirements = ["analyst-workspace/radial-bar-refinement-design.md"]
-planned_checks = ["rebuilt-column-and-bar-packaged-journeys", "original-appearance-comparison", "owner-appearance-decision"]
+planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialNumerical.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialEngine.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialSession.test.ts"]
 status = "passed"
-evidence = ["Source-only acceptance at Workspace 9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5: independent 51/51 focused tests, scoped lint, unchanged four inherited type diagnostics, combined inventory caps pass. See artifacts/reviewed/chart-radial/bar-refinement-review.md. Corrected image/runtime and appearance remain unverified."]
+evidence = ["Source-only acceptance at Workspace 9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5: independent 51/51 focused tests, scoped lint, unchanged four inherited type diagnostics, combined inventory caps pass. See artifacts/reviewed/chart-radial/bar-refinement-review.md. Packaged acceptance is tracked separately under radial-packaged-fmp-rc4."]
+
+[[capabilities]]
+id = "radial-packaged-fmp-rc4"
+requirements = ["analyst-workspace/radial-milestone.md:RC4"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/radial-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/radial-fixture.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/radial-original.spec.ts"]
+status = "passed"
+evidence = ["Final local image sha256:f1b71c759334ea08bf1a197a12ce855ac5252ab2d0acd87469f1398dae0f5291 at Workspace 9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5. Column 1/1 passed (360.243s); Bar 1/1 passed (274.652s); single worker, zero retries/skips/errors. Verified retained AAPL FY2025 reported USD tuples, controls, successful unchanged CSV refresh, fresh-session reopen as last operation and UI PNG export. Original comparisons and retained original CSV diagnostics are disclosed. Owner approved both final appearances. RC4 independently approved; RC5 publication and anonymous pulls remain pending. See artifacts/reviewed/chart-radial/final-acceptance-review.md and real-fmp-samples.md."]
