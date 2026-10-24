@@ -29,8 +29,9 @@ Checked items below describe the implemented and reviewed scope, not every featu
 ## Open
 
 - [ ] Complete other distribution and radial families.
-- [ ] Next: Radar Line and Radar Area. The [bounded milestone plan](../.kiro/specs/analyst-workspace/radar-milestone.md) separates original-behavior confirmation, parallel adapters, integration and packaged FMP acceptance. No Radar implementation or runtime acceptance is claimed yet.
+- [ ] Next: Radar Line and Radar Area. The [bounded milestone plan](../.kiro/specs/analyst-workspace/radar-milestone.md) separates original-behavior confirmation, parallel adapters, integration and packaged FMP acceptance. Radar rendering and runtime acceptance remain pending.
 - [x] Accept Radar's original-behavior contract, retained-FMP fixture and inactive interfaces (RD0); [review](../artifacts/reviewed/chart-radar/rd0-review.md). Rendering and application integration remain open.
+- [x] Independently accept inactive Radar editor/session adaptation (RD2): nine focused checks, validated Polar edits and preserved appearance composition. Live routing and controls remain pending integration.
 - [x] Complete the ordinary Table/File Range Bar/Area journey with retained-FMP extrema, controls, navigation, fresh reopen and export. See the [accepted application milestone](../.kiro/specs/analyst-workspace/range-chart-plan.md); the accepted image pair is published.
 - [x] Independently accept inactive Range capture/setup and Box regression checks (R4a).
 - [x] Independently accept inactive Range series appearance and option precedence (R4b).

@@ -924,3 +924,11 @@ planned_checks = ["original-polar-semantics", "retained-fmp-quarterly-revenue", 
 test_paths = []
 status = "planned"
 evidence = ["RD0 accepted at Workspace d12d0b724e2d70ccccdfdc8274e814762e2425f7: original Radar observations/source contract, 15 retained FMP values, inactive declarations, scoped static checks and independent review. Renderer and application tests remain planned, not passing. See artifacts/reviewed/chart-radar/verification.md and rd0-review.md."]
+
+[[capabilities]]
+id = "radar-inactive-editor-session"
+requirements = ["analyst-workspace/radar-milestone.md:RD2", "analyst-workspace/radar-contract.md:Shared inactive declarations and ownership"]
+planned_checks = ["appearance-precedence", "validated-polar-edits", "prepared-selection"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarSelection.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarAppearance.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarEditorTransaction.test.ts"]
+status = "passed"
+evidence = ["RD2 inactive source c8b0561e37e2aebd5011bb8b1ef79b3c7c5f1f66 accepted: 9 worker and independent tests, scoped lint, unchanged inherited typing diagnostics and combined complexity pass. No renderer activation or live UI acceptance. See artifacts/reviewed/chart-radar/verification.md."]

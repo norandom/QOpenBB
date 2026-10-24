@@ -32,7 +32,7 @@ Use the retained FMP quarterly AAPL income data documented in [Range verificatio
   - Depends on RD0. Own new Radar-only files under Chart `compatibility/` and `echarts/`, plus their focused tests. Do not edit shared dispatch or application/editor files.
   - Implement both families against the frozen numerical/domain/missing-value contract and existing theme tokens. Verify geometry and raw tooltip values, not only generated options.
   - Done when focused financial/edge-case checks, scoped static checks and whole-file complexity pass independent review. The gallery remains inactive until the join.
-- [ ] RD2 (P). Implement inactive Radar editor/session adaptation.
+- [x] RD2 (P). Implement inactive Radar editor/session adaptation.
   - Depends on RD0; independent of RD1 after the interface is frozen. Own new Radar-only files under Chart `application/` and `editor/`, plus their focused tests.
   - Preserve original controls, selection, saved overrides and family transitions through existing state owners. No duplicate persistence or new toolbar.
   - Done when control-to-option and saved-state checks pass independent review and complexity checks. Do not edit shared type unions or family dispatch.
