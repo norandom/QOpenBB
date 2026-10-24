@@ -59,3 +59,16 @@ Check every modified production file as a whole against 400 physical lines, 300 
 
 - REMEDIATION: The blocking palette issue is resolved in the reviewed plan hash above. No further blocking plan remediation; preserve the stated prerequisites and completion conditions.
 - SUMMARY: The amended RC3 plan covers the actual application seams and preserves the frozen Radial palette contract; renderer acceptance, integration verification and packaged application acceptance remain separately gated.
+
+## RC3 root-presence scope amendment
+
+- VERDICT: APPROVED
+- SCOPE: Add `compatibility/optionState.ts` to the same serialized integration worker's production ownership, and extend existing `vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionState.test.ts`. The amended boundary is 21 existing production files plus the new projection and six existing test files. No accepted renderer/control ownership changes.
+
+Source inspection confirms that `model()` currently passes every ordinary model-root property to `copy(item, path, false, ancestors)`, which rejects undefined. Thus a model with an own undefined `seriesGroupType` cannot currently satisfy the already approved three-state capture/staleness contract. The bounded change is to assign undefined only when `key === "seriesGroupType" && item === undefined`; all other values continue through the existing strict copy call.
+
+This exception belongs after `fields()` validation inside the model-root loop. Retain own enumerable data-property requirements, plain-object checks, accessor rejection without getter invocation, cycle detection, chartType validation, existing chartOptions semantics and strict recursive copying. In particular, do not set the general copy runtime flag to true and do not admit nested undefined group fields. The field remains preserved data at this compatibility boundary; accepted family selection still validates actual group values.
+
+Required focused evidence: root and partition initialization, populated partition synchronization and retained previous baseline preserve own undefined and distinguish it from absence and grouped. Keep rejection of unrelated root undefined and chartType undefined; add a nested `seriesGroupType: undefined` negative case and a root group accessor case with zero getter calls. Retain existing nonenumerable/symbol/plain-object/cycle checks. Extend the already owned RC3 session test to prove that external absent/undefined/grouped transitions reject stale editor/setup commands.
+
+Mechanical result: read-only inspection and PowerShell physical count found 200 lines in the pre-change production file. No tests or type/logical-size checks ran in this amendment review. Include the whole changed file in the existing 400/300/50 inventory gate and run the focused compatibility regression with the integration evidence. Approval concerns the exact scope and exception only; it does not accept unfinished code or waive RC1/RC3 verification prerequisites.

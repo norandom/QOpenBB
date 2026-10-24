@@ -170,6 +170,30 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-radial/rc3-checkpoint-review.md",
+      "sourceSHA256": "bd53bb1799c0df262cfbb8dc43491cea7aebdc96247c615bddedc82d653c5e9c",
+      "publishedpath": "artifacts/reviewed/chart-radial/application-checkpoint-review.md",
+      "publishedSHA256": "bd53bb1799c0df262cfbb8dc43491cea7aebdc96247c615bddedc82d653c5e9c",
+      "bytes": 2868,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc4-preparation/review.md",
+      "sourceSHA256": "1d0f9d1d25246e5e7f830ec229ddb7e773da60f227bfee0d4686a20b45ff1ef2",
+      "publishedpath": "artifacts/reviewed/chart-radial/browser-preparation-review.md",
+      "publishedSHA256": "1d0f9d1d25246e5e7f830ec229ddb7e773da60f227bfee0d4686a20b45ff1ef2",
+      "bytes": 3987,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc3/review.md",
+      "sourceSHA256": "4859e18e0f9549bf1431a0bb383eeb4ca9bb6ac8dc10192c632ff7bbff6d0678",
+      "publishedpath": "artifacts/reviewed/chart-radial/application-review.md",
+      "publishedSHA256": "4859e18e0f9549bf1431a0bb383eeb4ca9bb6ac8dc10192c632ff7bbff6d0678",
+      "bytes": 4237,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-radial/rc1-checkpoint-review.md",
       "sourceSHA256": "4fb2dc9ee254bcd2cba22e212423b0dbc0657d089cb2c214024ebcef7a3c8b34",
       "publishedpath": "artifacts/reviewed/chart-radial/renderer-checkpoint-review.md",
@@ -179,10 +203,10 @@
     },
     {
       "sourcepath": "artifacts/chart-radial/rc3-plan-review.md",
-      "sourceSHA256": "6d029dfc889c2401d8d272a01962c3292f3e5d0e9c4af47b03800be344f9bb1a",
+      "sourceSHA256": "baff79b5a1a3612679adc2d0c0ef7f8df39e1632362bc12d9acadd98223a9655",
       "publishedpath": "artifacts/reviewed/chart-radial/integration-plan-review.md",
-      "publishedSHA256": "6d029dfc889c2401d8d272a01962c3292f3e5d0e9c4af47b03800be344f9bb1a",
-      "bytes": 8098,
+      "publishedSHA256": "baff79b5a1a3612679adc2d0c0ef7f8df39e1632362bc12d9acadd98223a9655",
+      "bytes": 10581,
       "transform": "exact-byte-copy"
     },
     {
@@ -219,10 +243,10 @@
     },
     {
       "sourcepath": "artifacts/chart-radial/verification.md",
-      "sourceSHA256": "83c3e6eddfa8776976f3d49e2a62ce4612643de061984c52635b9f5fb6228aa8",
+      "sourceSHA256": "fbfe9a60073518c6b19a430949d1b431a629719db7e59fca76d3fa35a20f307a",
       "publishedpath": "artifacts/reviewed/chart-radial/verification.md",
-      "publishedSHA256": "83c3e6eddfa8776976f3d49e2a62ce4612643de061984c52635b9f5fb6228aa8",
-      "bytes": 3431,
+      "publishedSHA256": "fbfe9a60073518c6b19a430949d1b431a629719db7e59fca76d3fa35a20f307a",
+      "bytes": 4483,
       "transform": "exact-byte-copy"
     },
     {
@@ -33089,7 +33113,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167200136,
+  "total_payload_bytes": 167214763,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

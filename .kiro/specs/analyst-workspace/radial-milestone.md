@@ -13,7 +13,7 @@ Reuse existing capture, setup, session, persistence and native ECharts owners. V
 - [x] RC0. Freeze the original numerical/control contract and shared adapter interfaces. Astra researches original semantics; a Sol explorer independently maps reuse, exact file ownership and size constraints. The controller joins findings, obtains independent contract review and retains a minimal original runtime probe. Source-derived facts and observed behavior remain distinct.
 - [x] RC1 (P). Implement reviewed ECharts geometry and series mapping after RC0. Own only the exact renderer files/tests frozen in the contract. Preserve missing values and financial meaning; verify actual rendered output and edge cases.
 - [x] RC2 (P). Implement inactive control/session adaptation after RC0C. Own only the exact control files/tests frozen in the contract, separate from RC1. Reuse existing option paths and validate control-to-render/save effects.
-- [ ] RC3. Integrate after RC1/RC2 acceptance. One worker owns shared routing, capture, setup, session and caller files. Preserve prior families and stale-command protection.
+- [x] RC3. Integrate after RC1/RC2 acceptance. One worker owns shared routing, capture, setup, session and caller files. Preserve prior families and stale-command protection.
 - [ ] RC4. Accept an identified packaged image with real-FMP browser checks and original comparisons. Keep tests lean, inspect actual visible effects, and make fresh-session reopen the last operation.
 - [ ] RC5. Reconcile checkboxes/breadth, sync reviewed examples, commit/push and publish once. Verify release assets and anonymous image pulls separately from local browser acceptance.
 
@@ -68,3 +68,12 @@ RC0 is frozen in the [numerical renderer design](radial-renderer-design.md), wit
 Both consume the frozen prepared-pixel model. No lane edits shared routing, Nightingale code or accepted controls. Source reviews and a joined renderer check precede RC3 application integration.
 
 RC1N and RC1P passed independent source review and the joined 23-test renderer check. Both satisfy the combined complexity gate. RC3 now follows the reviewed [integration design](radial-integration-design.md). RC4 test preparation may proceed separately in radial-chart.spec.ts and radial-fixture.ts, reusing the existing isolated helpers; this does not authorize a packaged acceptance claim before the actual run.
+
+## Application source checkpoint
+
+RC3 is independently accepted at Workspace 2831436bc1eefb9030d2ab1c154f67603f58689a; readable-series-label repair is 974e4f8a5d241dd99e377182b33f987886223e9a. The reviewed browser preparation is f9b29ddd4e2d1367f08eafe67e82e2a8a357f320. Integration and model suites pass, with targeted final Histogram and readable-label joins. The fresh strict baseline/current each retain 2,680 primary diagnostics; 26 message-order variants were independently reviewed, with no new diagnostics. The combined cap gate passes.
+
+- [x] Prepare reviewed real-FMP browser journeys for both families.
+- [ ] Execute the identified packaged image and original comparisons (RC4).
+
+The local Dagger candidate build is underway. No Radial packaged, visual or release acceptance is claimed. See [application review](../../../artifacts/reviewed/chart-radial/application-review.md).

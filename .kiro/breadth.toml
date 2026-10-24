@@ -1051,3 +1051,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialNumerical.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialEngine.test.ts"]
 status = "passed"
 evidence = ["Workspace 767512f4b86467d39d36663be9299e2c97f73a9e: independent joined 23 tests pass, 12 adversarial numerical combinations pass, lint and combined caps pass. Four inherited typing diagnostics unchanged. Actual ECharts paint/event evidence is source-level, not application/browser acceptance. See artifacts/reviewed/chart-radial/verification.md."]
+
+[[capabilities]]
+id = "radial-application-source"
+requirements = ["analyst-workspace/radial-milestone.md:RC3", "analyst-workspace/radial-integration-design.md"]
+planned_checks = ["Identified packaged FMP and visual acceptance in RC4"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerInputs.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/radarCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionState.test.ts"]
+status = "passed"
+evidence = ["Source-only acceptance at 2831436bc1eefb9030d2ab1c154f67603f58689a. Independent review, focused integration/model tests, final Histogram/label joins and combined caps pass. Strict baseline/current each have 2680 inherited diagnostics, 26 display-order variants reviewed; no clean compile claim. Browser runtime remains unverified. See artifacts/reviewed/chart-radial/application-review.md."]

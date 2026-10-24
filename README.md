@@ -115,12 +115,13 @@ Waterfall remains available in the current alpha alongside Radar. Local applicat
 
 Accepted chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale-milestone.md).
 
-Next development: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-milestone.md), with the renderer and controls independently accepted. Application integration and real-FMP visual acceptance remain open. Treemap/Sunburst are queued next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
+Next development: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-milestone.md), with renderer, controls and application integration independently accepted at source level. Real-FMP packaged and visual acceptance remain open. Treemap/Sunburst are queued next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
 
 - [x] Freeze the Radial control contract and implement its inactive controls.
 - [x] Implement the independently reviewed Radial Column shape helper.
 - [x] Implement and independently review Radial numerical mapping and ECharts painting.
-- [ ] Complete application integration and real-FMP visual acceptance.
+- [x] Connect Radial charts to the existing application and session workflow.
+- [ ] Accept the packaged real-FMP journey and visual comparison.
 
 Nightingale delivery:
 

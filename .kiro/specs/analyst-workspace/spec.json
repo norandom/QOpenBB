@@ -24,7 +24,7 @@
     "contract": "radial-milestone.md",
     "design": "radial-contract.md",
     "authorization": "Owner explicitly authorized parallel start and one-hour autonomous progress on 2026-10-24.",
-    "phase": "application-integration",
+    "phase": "packaged-verification",
     "completed_tasks": [
       "RC0C",
       "RC0G",
@@ -32,7 +32,9 @@
       "RC0",
       "RC1N",
       "RC1P",
-      "RC1"
+      "RC1",
+      "RC3",
+      "RC4-preparation"
     ],
     "feature_accepted": false,
     "application_accepted": false,
@@ -46,7 +48,10 @@
     "rc0_source": "fa7f464bf7ca95248b755971c08ffcd5730236ae",
     "rc1n_source": "2ced45c54fa27fb64429ccac0432a456f1222ec0",
     "rc1p_source": "767512f4b86467d39d36663be9299e2c97f73a9e",
-    "integration_design": "radial-integration-design.md"
+    "integration_design": "radial-integration-design.md",
+    "rc3_source": "2831436bc1eefb9030d2ab1c154f67603f58689a",
+    "rc1_label_repair": "974e4f8a5d241dd99e377182b33f987886223e9a",
+    "rc4_test_source": "f9b29ddd4e2d1367f08eafe67e82e2a8a357f320"
   },
   "completed_milestones": [
     {
