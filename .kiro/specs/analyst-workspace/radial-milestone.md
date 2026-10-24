@@ -77,3 +77,13 @@ RC3 is independently accepted at Workspace 2831436bc1eefb9030d2ab1c154f67603f586
 - [ ] Execute the identified packaged image and original comparisons (RC4).
 
 A local Dagger candidate build was started for f9b29dd; its result is not yet verified. No Radial packaged, visual or release acceptance is claimed. See [application review](../../../artifacts/reviewed/chart-radial/application-review.md).
+
+## RC4 appearance refinements
+
+The initial original/candidate journeys passed for both families on source f9b29dd and image 6e8b6475. Independent review accepts their bounded financial, interaction, refresh, reopen and export evidence; original CSV diagnostics remain retained. Appearance is not accepted.
+
+- [x] Correct Column polar tick density and restore numerical grid circles at source level, Workspace f6cf1790e501f88c8e8590c7b4f368ff0c13de7c. Independent 41-test review, scoped lint/type comparison and combined caps pass.
+- [ ] Verify the rebuilt Column correction and compare settled light/dark appearance.
+- [ ] Match Bar category grids, circle fitting and legend spacing more closely, as requested by the owner on 2026-10-24 after qView comparison.
+
+The [Column source review](../../../artifacts/reviewed/chart-radial/column-refinement-review.md) and [initial journey review](../../../artifacts/reviewed/chart-radial/initial-journeys-review.md) separate passing behavior from the remaining appearance work. No new Radial release is accepted.

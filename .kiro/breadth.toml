@@ -1059,3 +1059,11 @@ planned_checks = ["Identified packaged FMP and visual acceptance in RC4"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleSessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/nightingaleEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/callerInputs.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/radarCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/optionState.test.ts"]
 status = "passed"
 evidence = ["Source-only acceptance at 2831436bc1eefb9030d2ab1c154f67603f58689a. Independent review, focused integration/model tests, final Histogram/label joins and combined caps pass. Strict baseline/current each have 2680 inherited diagnostics, 26 display-order variants reviewed; no clean compile claim. Browser runtime remains unverified. See artifacts/reviewed/chart-radial/application-review.md."]
+
+[[capabilities]]
+id = "radial-column-scale-grid-source"
+requirements = ["analyst-workspace/radial-renderer-design.md:RC4 Column scale and grid amendment"]
+planned_checks = ["Rebuilt packaged Column and affected Bar verification; original appearance comparison"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialNumerical.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialEngine.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialSession.test.ts"]
+status = "passed"
+evidence = ["Source-only f6cf1790e501f88c8e8590c7b4f368ff0c13de7c: independent41tests, lint, four inherited scoped type diagnostics unchanged, combined caps0. See artifacts/reviewed/chart-radial/column-refinement-review.md. Rebuilt image and appearance unverified."]

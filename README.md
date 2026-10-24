@@ -121,6 +121,8 @@ Next development: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-miles
 - [x] Implement the independently reviewed Radial Column shape helper.
 - [x] Implement and independently review Radial numerical mapping and ECharts painting.
 - [x] Connect Radial charts to the existing application and session workflow.
+- [x] Correct Radial Column polar tick density and grid circles at source level.
+- [ ] Verify the rebuilt Column appearance and refine Bar grids, circle fitting and legend spacing.
 - [ ] Accept the packaged real-FMP journey and visual comparison.
 
 Nightingale delivery:

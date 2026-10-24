@@ -43,6 +43,8 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [x] Implement the bounded Radial Column path helper.
 - [x] Implement and independently review Radial numerical mapping and ECharts painting.
 - [x] Integrate Radial Column/Bar through existing application/session owners.
+- [x] Correct Radial Column polar tick density and grid circles at source level.
+- [ ] Verify the rebuilt Column appearance and refine Bar grids, circle fitting and legend spacing.
 - [ ] Accept packaged real-FMP behavior and appearance.
 - [ ] Complete other distribution and radial families.
 - [x] Accept Radar Line and Radar Area locally (RD4). The [bounded milestone plan](../.kiro/specs/analyst-workspace/radar-milestone.md) separates original-behavior confirmation, parallel adapters, integration and packaged FMP acceptance. Radar source integration and packaged behavioral checks are independently accepted; the owner approved the current Line/Area appearance on 2026-10-24. Publication is verified as alpha-40086673952-1.

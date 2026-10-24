@@ -170,6 +170,22 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-radial/rc4/initial-journeys-review.md",
+      "sourceSHA256": "7fe39ef2027c9f549fd737c641ef2c8cabf1ca44ad349cb732a8b68318526250",
+      "publishedpath": "artifacts/reviewed/chart-radial/initial-journeys-review.md",
+      "publishedSHA256": "7fe39ef2027c9f549fd737c641ef2c8cabf1ca44ad349cb732a8b68318526250",
+      "bytes": 5594,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc4/column-refinement/review.md",
+      "sourceSHA256": "1d21385eb76d621fe546db6bf591ab620e807caa0ff48f2dabe4282eb631a087",
+      "publishedpath": "artifacts/reviewed/chart-radial/column-refinement-review.md",
+      "publishedSHA256": "1d21385eb76d621fe546db6bf591ab620e807caa0ff48f2dabe4282eb631a087",
+      "bytes": 3865,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-hierarchy/plan-review.md",
       "sourceSHA256": "eb8e65528f87e4cebcdf47fbc82e390c2d1acbff84a49b17cf4ce15629110d9c",
       "publishedpath": "artifacts/reviewed/chart-hierarchy/plan-review.md",
@@ -33129,7 +33145,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167234368,
+  "total_payload_bytes": 167243827,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
