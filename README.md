@@ -116,7 +116,7 @@ Waterfall is published in the current alpha. Local application acceptance and pu
 Next chart milestone: [Radar Line and Radar Area](.kiro/specs/analyst-workspace/radar-milestone.md).
 
 - [x] Freeze original Radar behavior and the retained-FMP example; independently reviewed inactive contracts and fixture.
-- [ ] Independently accept the inactive Radar renderer.
+- [x] Independently accept the inactive Radar renderer.
 - [x] Independently accept inactive Radar editor/session adapters.
 - [ ] Integrate both adapters into the existing chart editor.
 - [ ] Accept both packaged chart journeys and publish the milestone images.

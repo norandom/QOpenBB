@@ -932,3 +932,11 @@ planned_checks = ["appearance-precedence", "validated-polar-edits", "prepared-se
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarSelection.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarAppearance.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarEditorTransaction.test.ts"]
 status = "passed"
 evidence = ["RD2 inactive source c8b0561e37e2aebd5011bb8b1ef79b3c7c5f1f66 accepted: 9 worker and independent tests, scoped lint, unchanged inherited typing diagnostics and combined complexity pass. No renderer activation or live UI acceptance. See artifacts/reviewed/chart-radar/verification.md."]
+
+[[capabilities]]
+id = "radar-inactive-renderer"
+requirements = ["analyst-workspace/radar-milestone.md:RD1", "analyst-workspace/radar-contract.md:Geometry and domains"]
+planned_checks = ["signed-radial-geometry", "line-area-missing-data", "retained-fmp-values", "native-echarts-rendering"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarAssignments.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarMapping.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radarEngine.test.ts"]
+status = "passed"
+evidence = ["RD1 inactive source b7a7fcb0899bee0328503aff9a23d8ccd81d35c2 accepted: 15 worker and independent tests including 8 ECharts SSR cases, scoped lint, unchanged inherited typing diagnostics and combined complexity pass. No live routing or browser acceptance. See artifacts/reviewed/chart-radar/verification.md."]

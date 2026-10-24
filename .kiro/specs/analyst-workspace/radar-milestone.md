@@ -28,7 +28,7 @@ Use the retained FMP quarterly AAPL income data documented in [Range verificatio
   - Specify mapper input/output, option precedence, family keys and session selection responsibilities. Assign exact new file paths and focused commands before workers write production code.
   - Before fan-out, provide reviewed inactive shared declarations and fixtures required by both lanes. Neither lane may import unfinished peer output. The controller registers each lane's production scope in the maintained inventory before that lane's acceptance, preserving unrelated inventory changes.
   - Done when an independent reviewer accepts these contracts and the two lane boundaries. No production activation belongs to RD0.
-- [ ] RD1 (P). Implement the inactive Radar assignment and renderer.
+- [x] RD1 (P). Implement the inactive Radar assignment and renderer.
   - Depends on RD0. Own new Radar-only files under Chart `compatibility/` and `echarts/`, plus their focused tests. Do not edit shared dispatch or application/editor files.
   - Implement both families against the frozen numerical/domain/missing-value contract and existing theme tokens. Verify geometry and raw tooltip values, not only generated options.
   - Done when focused financial/edge-case checks, scoped static checks and whole-file complexity pass independent review. The gallery remains inactive until the join.
@@ -40,6 +40,13 @@ Use the retained FMP quarterly AAPL income data documented in [Range verificatio
   - Depends on RD1 and RD2. One controller-assigned worker owns shared family types, capture/setup selection, session dispatch, view routing and transition edits. Keep one owner for each shared file.
   - Extend the maintained inventory with integration-only changes before their acceptance. Reuse the host and lifecycle; any necessary extraction must preserve existing families.
   - Done when both families work through the real editor, affected prior-family regressions pass, and the combined change scope meets the caps and independent review.
+- [ ] RD3a. Accept Radar capture and setup before live routing.
+  - Depends on RD1/RD2. Own `compatibility/snapshotTypes.ts`, `compatibility/snapshot.ts`, `application/histogramCapture.ts`, `application/gridCapture.ts`, `application/setupProjection.ts` and new `application/radarCapture.ts`, with focused capture/setup tests. Additional helpers require a reviewed ownership adjustment.
+  - Register the named Radar observation policy; preserve finite/wrapped/date/missing values, duplicate categories, aggregation-before-inversion, selected field order and empty selection. No application family union, renderer/editor routing or caller edits in this subtask.
+  - Done when scoped regressions establish those contracts without changing previous policies, whole-file caps pass and independent review accepts the change.
+- [ ] RD3b. Connect the live session, editor and caller paths.
+  - Depends on RD3a. One worker owns the remaining shared routing and new Radar session projection. Preserve existing state/stamp/persistence owners; use the accepted RD1/RD2 adapters.
+  - Done when the real ready/session path supports both families, existing editor controls reach their renderer/state effects, relevant family transitions pass, and combined caps and independent review pass. Packaged visual/FMP acceptance remains RD4.
 - [ ] RD4. Accept the packaged FMP and visual journey.
   - Depends on RD3. Build one identified candidate and use the maintained isolated Playwright/CDP flow with one browser worker. Put owner-run startup commands in ignored `run_this.sh` when required.
   - Verify contract items 2-4, including real data and saved settings after fresh reopen. Reuse existing helpers; add only Radar-specific assertions. Repair concrete failures without widening the milestone.
