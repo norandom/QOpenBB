@@ -1,8 +1,8 @@
 # Radar Line and Radar Area
 
-Restore Radar Line and Radar Area inside the existing Table/File chart editor. The owner approved this next milestone on 2026-10-24. Waterfall remains the published alpha. Radar packaged behavior has independent acceptance; the owner approved the current Line/Area appearance on 2026-10-24. RD4 is complete for the bounded Table/File journey; RD5 publication is pending.
+Restore Radar Line and Radar Area inside the existing Table/File chart editor. The owner approved this next milestone on 2026-10-24. Radar is published in the current alpha. Radar packaged behavior has independent acceptance; the owner approved the current Line/Area appearance on 2026-10-24. RD4 is complete for the bounded Table/File journey; RD5 publication is verified as alpha-40086673952-1.
 
-The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) and RD0 [contract review](../../../artifacts/reviewed/chart-radar/rd0-review.md) passed on 2026-10-24. The frozen [adapter contract](radar-contract.md), declarations and fixture now support RD1/RD2 fan-out. Inactive renderer/editor adapters and RD3a capture/setup have independent acceptance. Source integration (RD3/RD3b) is independently accepted at Workspace `af226971c53922de5925d9b068fbfbd81df02527`. Packaged behavioral checks (RD4) are independently accepted with test source `194691e589ad75afb74d227574402dfb43ba6aea`; owner appearance approval completes RD4. Publication (RD5) remains pending. See the [verification record](../../../artifacts/reviewed/chart-radar/verification.md).
+The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) and RD0 [contract review](../../../artifacts/reviewed/chart-radar/rd0-review.md) passed on 2026-10-24. The frozen [adapter contract](radar-contract.md), declarations and fixture now support RD1/RD2 fan-out. Inactive renderer/editor adapters and RD3a capture/setup have independent acceptance. Source integration (RD3/RD3b) is independently accepted at Workspace `af226971c53922de5925d9b068fbfbd81df02527`. Packaged behavioral checks (RD4) are independently accepted with test source `194691e589ad75afb74d227574402dfb43ba6aea`; owner appearance approval completes RD4. Publication (RD5) is verified as [alpha-40086673952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40086673952-1); see the [release evidence](../../../artifacts/reviewed/chart-radar/verification.md#published-radar-alpha). See the [verification record](../../../artifacts/reviewed/chart-radar/verification.md).
 
 ## Acceptance contract
 
@@ -53,7 +53,7 @@ Use the retained FMP quarterly AAPL income data documented in [Range verificatio
   - Depends on RD3. Build one identified candidate and use the maintained isolated Playwright/CDP flow with one browser worker. Put owner-run startup commands in ignored `run_this.sh` when required.
   - Verify contract items 2-4, including real data and saved settings after fresh reopen. Reuse existing helpers; add only Radar-specific assertions. Repair concrete failures without widening the milestone.
   - Done when independent review accepts the bounded evidence and any uncertain visible differences have an owner decision. Publish a small set of exact-byte reviewed chart samples.
-- [ ] RD5. Publish and close the milestone.
+- [x] RD5. Publish and close the milestone.
   - Depends on RD4. Reconcile README, docs, spec state and breadth; sync reviewed artifacts before per-task commit/push.
   - Dispatch the Dagger image pipeline once for the accepted milestone, then verify release assets and anonymous digest/tag/latest pulls for both images.
   - Done when publication evidence is independently reviewed and linked. Ordinary task pushes do not rebuild images.
@@ -82,4 +82,4 @@ Original source `38dffc33389aca0e4a87e0e88d42f7067aa220df`, image `sha256:f48eb1
 | --- | --- |
 | ![Original Radar Area, AAPL revenue FY2023-2025 Q1-Q4 in USD](../../../artifacts/reviewed/chart-radar/original-radar-area-fmp-light.png) | ![Replacement Radar Area, same retained AAPL revenue](../../../artifacts/reviewed/chart-radar/replacement-radar-area-fmp-light.png) |
 
-The owner approved the current Radar Line/Area appearance, including added spokes, right-side radial labels, legend symbols/spacing and lower plot placement. Line uses compact circle symbols; Area uses square symbols where the original uses lines. This accepts the bounded appearance as shown, without claiming pixel identity with the original or changing the application image. RD5 publication remains pending.
+The owner approved the current Radar Line/Area appearance, including added spokes, right-side radial labels, legend symbols/spacing and lower plot placement. Line uses compact circle symbols; Area uses square symbols where the original uses lines. This accepts the bounded appearance as shown, without claiming pixel identity with the original or changing the application image. RD5 is complete: release assets and all six anonymous digest/tag/latest pulls match alpha-40086673952-1. Local browser acceptance remains separate from execution of the published CI bytes and owner-server deployment.

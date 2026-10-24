@@ -158,7 +158,8 @@
     "chart-waterfall",
     "chart-radar/plan-review",
     "chart-radar/rd0",
-    "chart-radar/rd4-behavior"
+    "chart-radar/rd4-behavior",
+    "chart-radar/rd5-publication"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -32073,10 +32074,26 @@
     },
     {
       "sourcepath": "artifacts/chart-radar/verification.md",
-      "sourceSHA256": "7b8aa5baf2ede3edbc2fcb5c810d2bebb0d53ade15faaf774d0ec8e00b36f1f8",
+      "sourceSHA256": "e2c3b1f34fa23693c34ada536c98d76ebb62a0b7ae9ed182a8c6f3833ddbe137",
       "publishedpath": "artifacts/reviewed/chart-radar/verification.md",
-      "publishedSHA256": "7b8aa5baf2ede3edbc2fcb5c810d2bebb0d53ade15faaf774d0ec8e00b36f1f8",
-      "bytes": 13850,
+      "publishedSHA256": "e2c3b1f34fa23693c34ada536c98d76ebb62a0b7ae9ed182a8c6f3833ddbe137",
+      "bytes": 15463,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radar/rd5/release-40086673952/manifest.json",
+      "sourceSHA256": "7b90383d487072884b9c2164cc358f1f3b6e84a361a811161b4d76f16ca793a0",
+      "publishedpath": "artifacts/reviewed/chart-radar/release-manifest.json",
+      "publishedSHA256": "7b90383d487072884b9c2164cc358f1f3b6e84a361a811161b4d76f16ca793a0",
+      "bytes": 6740,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radar/rd5/release-40086673952/anonymous-pulls.json",
+      "sourceSHA256": "aa2bf2a9c09c4836a9db58f41f8c3ddaa807060c368482fed319c305aca13141",
+      "publishedpath": "artifacts/reviewed/chart-radar/anonymous-pulls.json",
+      "publishedSHA256": "aa2bf2a9c09c4836a9db58f41f8c3ddaa807060c368482fed319c305aca13141",
+      "bytes": 5038,
       "transform": "exact-byte-copy"
     },
     {
@@ -32831,7 +32848,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 166348664,
+  "total_payload_bytes": 166362055,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

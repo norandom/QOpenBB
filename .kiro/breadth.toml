@@ -1,4 +1,11 @@
 [[capabilities]]
+id = "radar-milestone-publication"
+requirements = ["analyst-workspace/radar-milestone.md:RD5"]
+planned_checks = ["hosted-both-image-builds", "tagged-release-assets", "anonymous-digest-tag-latest-pulls"]
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py", "tests/delivery/test_prototype_workflow.py"]
+status = "passed"
+evidence = ["Run 40086673952 passed both jobs and published alpha-40086673952-1 from root 2acb5d4660d9a704ae3f8ad626a291f998c650dc, Workspace 194691e589ad75afb74d227574402dfb43ba6aea and data API cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba. Release assets and all six anonymous digest/tag/latest pulls match source labels and manifest/config identities. Local application af226971/test-only194691e browser acceptance is separate from CI image-byte runtime, assembled Compose and owner-server acceptance. See artifacts/reviewed/chart-radar/verification.md, release-manifest.json and anonymous-pulls.json."]
+[[capabilities]]
 id = "waterfall-milestone-publication"
 requirements = ["analyst-workspace/waterfall-milestone.md:Bounded delivery tasks"]
 planned_checks = ["hosted-both-image-builds", "tagged-release-assets", "anonymous-digest-tag-latest-pulls"]
@@ -921,9 +928,9 @@ evidence = ["Hosted run 39237590906 passed 134 delivery checks, quality verifica
 id = "radar-line-area-milestone"
 requirements = ["analyst-workspace/radar-milestone.md:Acceptance contract"]
 planned_checks = ["original-polar-semantics", "retained-fmp-quarterly-revenue", "radar-controls-themes", "refresh-fresh-reopen-export", "published-image-identities"]
-test_paths = []
-status = "planned"
-evidence = ["RD0 accepted at Workspace d12d0b724e2d70ccccdfdc8274e814762e2425f7: original Radar observations/source contract, 15 retained FMP values, inactive declarations, scoped static checks and independent review. RD1/RD2 inactive adapters and RD3a capture/setup are subsequently accepted in their capability entries below; RD3/RD3b source integration is subsequently accepted in its capability entry below; RD4 packaged behavior subsequently passed in its capability entry below; owner approval of the pictured current appearance completes bounded RD4 application acceptance. Overall milestone remains planned only because RD5 publication is pending. See artifacts/reviewed/chart-radar/verification.md and rd0-review.md."]
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/radar-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/radar-original.spec.ts", "tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py", "tests/delivery/test_prototype_workflow.py"]
+status = "passed"
+evidence = ["RD0 accepted at Workspace d12d0b724e2d70ccccdfdc8274e814762e2425f7: original Radar observations/source contract, 15 retained FMP values, inactive declarations, scoped static checks and independent review. RD1/RD2 inactive adapters and RD3a capture/setup are subsequently accepted in their capability entries below; RD3/RD3b source integration is subsequently accepted in its capability entry below; RD4 packaged behavior subsequently passed in its capability entry below; owner approval of the pictured current appearance completes bounded RD4 application acceptance. RD5 is complete: run 40086673952 published alpha-40086673952-1 and all six anonymous image pulls pass; see the publication capability below. See artifacts/reviewed/chart-radar/verification.md and rd0-review.md."]
 
 [[capabilities]]
 id = "radar-inactive-editor-session"
@@ -963,4 +970,4 @@ requirements = ["analyst-workspace/radar-milestone.md:RD4", "analyst-workspace/r
 planned_checks = ["retained-fmp-raw-values", "both-family-controls-themes", "refresh-fresh-reopen-png", "candidate-diagnostics", "original-comparison-captures"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/radar-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/radar-original.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/radar-fixture.ts"]
 status = "passed"
-evidence = ["Independent behavioral review approved candidate-run-4: 2 tests pass in 2.0m; original-run-3: 1 comparison test passes in 35.1s. All 15 retained reported USD values reconcile; both families pass controls, refresh, fresh reopen, PNG export and candidate diagnostics. Original retains one CSV console/request failure. Application image source af226971c53922de5925d9b068fbfbd81df02527; local image sha256:da46760094b602464e9adefa6caae2b100f34307a486076fa9cec4625125a760; test-only source 194691e589ad75afb74d227574402dfb43ba6aea. Owner accepted the pictured current Line/Area appearance on 2026-10-24, completing bounded RD4 application acceptance without pixel-identity claims. RD5 publication remains pending. See artifacts/reviewed/chart-radar/verification.md and paired samples in radar-milestone.md."]
+evidence = ["Independent behavioral review approved candidate-run-4: 2 tests pass in 2.0m; original-run-3: 1 comparison test passes in 35.1s. All 15 retained reported USD values reconcile; both families pass controls, refresh, fresh reopen, PNG export and candidate diagnostics. Original retains one CSV console/request failure. Application image source af226971c53922de5925d9b068fbfbd81df02527; local image sha256:da46760094b602464e9adefa6caae2b100f34307a486076fa9cec4625125a760; test-only source 194691e589ad75afb74d227574402dfb43ba6aea. Owner accepted the pictured current Line/Area appearance on 2026-10-24, completing bounded RD4 application acceptance without pixel-identity claims. RD5 publication is verified by the separate publication capability below. See artifacts/reviewed/chart-radar/verification.md and paired samples in radar-milestone.md."]

@@ -2,14 +2,14 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-39757904293-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39757904293-1), built from Workspace `da5979c` and data API `49cc413`. Both public service identities passed anonymous pulls by digest, release tag and `latest`. See the [Box Plot release verification](../artifacts/reviewed/chart-box/verification.md). The [earlier alpha evidence](../artifacts/reviewed/alpha-release/verification.md) remains historical.
+Published: [alpha-40086673952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40086673952-1), built from Workspace `194691e589ad75afb74d227574402dfb43ba6aea` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public service identities passed anonymous pulls by digest, release tag and `latest`. See the [Radar release verification](../artifacts/reviewed/chart-radar/verification.md#published-radar-alpha). Earlier release records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:fd5ebf74f1d945c7add6afe82e142a2efe381bcca6208b3f53384d1e16b12928` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:72d4c59a46b65c966f26085f05e53749c62ed5257268159d8039a0d954c9a551` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:8f22fdab935ebd7cc6a63bc62d4d2888862fba79ff8c4024ac25e437d04ab44b` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:225f63760084988b8bc9971076eac40b6feb6e1453369451898d35f4f92b56cb` |
 
-The published CI-built pair is distinct from the local image used for the two passing Box Plot browser scenarios. The manifest binds the publication to the reviewed release revisions; it does not claim browser execution against the CI-built bytes.
+The published CI-built pair is distinct from the local image used for the two passing Radar family browser scenarios. The manifest binds the publication to the reviewed release revisions; it does not claim browser execution against the CI-built bytes.
 
 ## Build and publication
 
@@ -39,9 +39,13 @@ CodeQL runs separately from image delivery; see [security scanning](security-sca
 
 ## Acceptance boundary
 
+Radar Line/Area are accepted in the ordinary Table/File journey on application source `af226971c53922de5925d9b068fbfbd81df02527` and local image `sha256:da46760094b602464e9adefa6caae2b100f34307a486076fa9cec4625125a760`. Both retained-FMP family tests pass, including financial geometry, controls, refresh, fresh reopen, PNG export and observed candidate diagnostics. The owner approved the pictured appearance. CI run 40086673952 rebuilt test-only source `194691e589ad75afb74d227574402dfb43ba6aea`; publication assets and six anonymous pulls pass. This does not establish browser execution of the CI image bytes, assembled Compose acceptance or owner-server deployment. See [Radar verification](../artifacts/reviewed/chart-radar/verification.md#published-radar-alpha).
+
+The following Range and Box Plot records describe earlier releases.
+
 Range Bar/Area are accepted in the ordinary Table/File journey on Workspace `e2b87ed98cd5ef18fb9ca6ddf888802d71fc685e` and local packaged image `sha256:1ff9d136027b0e0ae0f55b89f3faae5892602b2aeb3cee5482f408dc3a3bb0b0`. Both retained-FMP journeys pass, including financial extrema, controls, navigation, refresh, fresh reopen and PNG export. The owner accepted default Area appearance; independent review verified corrected navigator spacing. [Alpha-39920081345-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-39920081345-1) publishes the same source after both CI jobs passed. Release assets, source pins and six anonymous image pulls are verified. These are separate local runtime and CI publication results, not browser execution against the CI image bytes. See [Range verification](../artifacts/reviewed/chart-range/verification.md). Assembled Compose and owner-server acceptance remain open.
 
-The following Box Plot record describes the previous release.
+The following Box Plot record describes an earlier release.
 
 The owner accepted the Box Plot milestone in the ordinary Table/File journey. Two browser scenarios passed on Workspace `da5979cb020af7737f9a76544ae527d8f2a30831` and local packaged image `sha256:4b7c12f04ab7d5e254c5f0980b310569340f034fcd0b826adf6b495a57717025`: retained-FMP five-number summaries in raw USD, synthetic edge cases, controls, themes/navigation, refresh, save/reopen and PNG export. The owner approved the original/replacement appearance and default miniature on 2026-10-22. CI run `39757904293` passed both jobs and published the same Workspace source; both service identities and six anonymous pulls were verified separately. The local browser result does not establish execution against the published CI image bytes. See [Box Plot verification](../artifacts/reviewed/chart-box/verification.md). Assembled Compose and owner-server acceptance remain open. Unfinished renderer families/callers, provider, persistence, AI and Excel work belongs to successor specs in the [roadmap](roadmap.md).
 
