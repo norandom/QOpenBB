@@ -59,3 +59,5 @@ The [independent plan review](../../../artifacts/reviewed/chart-nightingale/plan
 Pending N4. No synthetic drawing or generated illustration substitutes for an accepted application capture.
 
 N3 is independently accepted at Workspace `716cd1a95087d9c1d3755b8192671a48f48b2192`. The 11 final owner/editor tests, scoped lint and combined complexity gate pass; strict TypeScript adds no diagnostics to the inherited baseline. [Review](../../../artifacts/reviewed/chart-nightingale/n3-review.md). N4 packaged FMP and appearance acceptance remains open.
+
+N4 layout refinement is source-reviewed at Workspace `596a5234f7dec5c672dd97b09e365bfb90aac755` after the first real-FMP captures. [Review](../../../artifacts/reviewed/chart-nightingale/n4-layout-review.md). The outer circle and top-ray value labels now follow the reference; rebuilt visual acceptance and the complete browser journey remain pending.

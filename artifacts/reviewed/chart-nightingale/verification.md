@@ -37,3 +37,9 @@ N3 must preserve model-root Group Type during setup and reject stale root edits,
 N3 at Workspace `716cd1a95087d9c1d3755b8192671a48f48b2192` passed independent integration review and the combined complexity gate on 2026-10-24. The existing Table/File owner now routes Nightingale data, setup and customization to native polar bars. Root Group Type is persisted with stale-command protection; built-in palette strokes use background colors while custom strokes remain supplied values. The approved sparse normalized behavior keeps valid observations visible.
 
 Fresh independent owner/editor checks pass all 11 tests; scoped lint passes all 29 present files. The 24 production files fit the 400/300/50 caps (maxima 357/140/42). Strict TypeScript has 2680 inherited diagnostics on both baseline and candidate, with no normalized delta; this is not a clean application compile. Packaged real-FMP rendering, export and fresh-session persistence remain N4. See n3-review.md.
+
+## N4 first packaged checks and layout correction
+
+The original FMP reference passes (original-run-2, 29.6 seconds). Candidate image `sha256:5beffd2ad3136b8a7d478c3b72c334d4ecbaf029cba261990414e5851604f130` from Workspace `716cd1a` reaches grouped/normalized geometry, raw tooltips, native legend hide/restore and count aggregation checks. The complete journey is not accepted: retained runs exposed test selectors that must follow displayed title-case labels and region roles, plus an inappropriate Pie-only legend helper. Export and fresh reopen remain unverified.
+
+Matched captures exposed extra radial lines and diagonal value labels. A bounded layout correction removes those lines, moves values to the top ray and adjusts spacing while preserving the native numerical scale. Independent review, 11 focused tests, scoped lint and the combined complexity gate pass; limits are 205 physical lines, 49 logical units and 12/function. Rebuilt appearance remains unverified. See n4-layout-review.md.
