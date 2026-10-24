@@ -11,7 +11,7 @@ Reuse existing capture, setup, session, persistence and native ECharts owners. V
 ## Work and dependency queue
 
 - [x] RC0. Freeze the original numerical/control contract and shared adapter interfaces. Astra researches original semantics; a Sol explorer independently maps reuse, exact file ownership and size constraints. The controller joins findings, obtains independent contract review and retains a minimal original runtime probe. Source-derived facts and observed behavior remain distinct.
-- [ ] RC1 (P). Implement reviewed ECharts geometry and series mapping after RC0. Own only the exact renderer files/tests frozen in the contract. Preserve missing values and financial meaning; verify actual rendered output and edge cases.
+- [x] RC1 (P). Implement reviewed ECharts geometry and series mapping after RC0. Own only the exact renderer files/tests frozen in the contract. Preserve missing values and financial meaning; verify actual rendered output and edge cases.
 - [x] RC2 (P). Implement inactive control/session adaptation after RC0C. Own only the exact control files/tests frozen in the contract, separate from RC1. Reuse existing option paths and validate control-to-render/save effects.
 - [ ] RC3. Integrate after RC1/RC2 acceptance. One worker owns shared routing, capture, setup, session and caller files. Preserve prior families and stale-command protection.
 - [ ] RC4. Accept an identified packaged image with real-FMP browser checks and original comparisons. Keep tests lean, inspect actual visible effects, and make fresh-session reopen the last operation.
@@ -62,7 +62,9 @@ Independent reviews and the combined maintained-scope gate pass. See the [source
 
 RC0 is frozen in the [numerical renderer design](radial-renderer-design.md), with original source expectations distinguished from packaged acceptance. The owner approved the missing-value correction. The controller-owned radialModel.ts and shared radial.fixtures.ts pass scoped typing with the same four inherited diagnostics; the combined maintained-scope gate passes.
 
-- [ ] RC1N: numerical preparation owns radialData.ts, radialScale.ts, radialLayout.ts and radialNumerical.test.ts.
-- [ ] RC1P: paint and translation own radial.ts, radialSeries.ts, radialChrome.ts and radialEngine.test.ts.
+- [x] RC1N: numerical preparation owns radialData.ts, radialScale.ts, radialLayout.ts and radialNumerical.test.ts.
+- [x] RC1P: paint and translation own radial.ts, radialSeries.ts, radialChrome.ts and radialEngine.test.ts.
 
 Both consume the frozen prepared-pixel model. No lane edits shared routing, Nightingale code or accepted controls. Source reviews and a joined renderer check precede RC3 application integration.
+
+RC1N and RC1P passed independent source review and the joined 23-test renderer check. Both satisfy the combined complexity gate. RC3 now follows the reviewed [integration design](radial-integration-design.md). RC4 test preparation may proceed separately in radial-chart.spec.ts and radial-fixture.ts, reusing the existing isolated helpers; this does not authorize a packaged acceptance claim before the actual run.

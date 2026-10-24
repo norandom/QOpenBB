@@ -35,12 +35,13 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Accept real-data behavior and appearance.
 - [x] Publish the accepted milestone as [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1); release assets and six anonymous pulls verified.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale is the current published alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) inactive controls and Column shape helper are independently accepted; full numerical mapping, integration and packaged acceptance remain open. Treemap/Sunburst are queued directly next.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale is the current published alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) renderer and controls are independently accepted; application integration and packaged acceptance remain open. Treemap/Sunburst are queued directly next.
 
 ## Open
 
 - [x] Freeze Radial control interfaces and implement inactive controls.
 - [x] Implement the bounded Radial Column path helper.
+- [x] Implement and independently review Radial numerical mapping and ECharts painting.
 - [ ] Integrate Radial Column/Bar and accept real-FMP behavior and appearance.
 - [ ] Complete other distribution and radial families.
 - [x] Accept Radar Line and Radar Area locally (RD4). The [bounded milestone plan](../.kiro/specs/analyst-workspace/radar-milestone.md) separates original-behavior confirmation, parallel adapters, integration and packaged FMP acceptance. Radar source integration and packaged behavioral checks are independently accepted; the owner approved the current Line/Area appearance on 2026-10-24. Publication is verified as alpha-40086673952-1.

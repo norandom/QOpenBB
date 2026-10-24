@@ -1043,3 +1043,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialColumnShape.test.ts"]
 status = "passed"
 evidence = ["Workspace 26f1c8c81333bf7cb09f69cc3e24d213bd7c4096: 30 actual-path and boundary tests; strict typing, lint, independent review and combined caps pass. Inactive source only; numerical/family integration and packaged FMP acceptance remain open. See artifacts/reviewed/chart-radial/verification.md."]
+
+[[capabilities]]
+id = "radial-renderer-inactive"
+requirements = ["analyst-workspace/radial-milestone.md:RC1", "analyst-workspace/radial-renderer-design.md"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialNumerical.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/radialEngine.test.ts"]
+status = "passed"
+evidence = ["Workspace 767512f4b86467d39d36663be9299e2c97f73a9e: independent joined 23 tests pass, 12 adversarial numerical combinations pass, lint and combined caps pass. Four inherited typing diagnostics unchanged. Actual ECharts paint/event evidence is source-level, not application/browser acceptance. See artifacts/reviewed/chart-radial/verification.md."]
