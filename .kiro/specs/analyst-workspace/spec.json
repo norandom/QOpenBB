@@ -23,17 +23,18 @@
     "name": "radar-line-area-port",
     "contract": "radar-milestone.md",
     "authorization": "Owner approved Radar Line and Radar Area as the next milestone on 2026-10-24. Bounded plan first; original behavior and interfaces must pass RD0 review before production implementation.",
-    "phase": "packaged-behavior-accepted-visual-pending",
+    "phase": "application-accepted-publication-pending",
     "completed_tasks": [
       "RD0",
       "RD1",
       "RD2",
       "RD3a",
       "RD3b",
-      "RD3"
+      "RD3",
+      "RD4"
     ],
-    "feature_accepted": false,
-    "application_accepted": false,
+    "feature_accepted": true,
+    "application_accepted": true,
     "source": "af226971c53922de5925d9b068fbfbd81df02527",
     "design": "radar-contract.md",
     "review": "artifacts/reviewed/chart-radar/rd0-review.md",
@@ -42,7 +43,8 @@
     "rd3a_source": "eb74a5e7a0ee48b395efa8cf2a113cfdd5cb5933",
     "rd3b_source": "af226971c53922de5925d9b068fbfbd81df02527",
     "rd4_behavior_accepted": true,
-    "rd4_visual_accepted": false,
+    "rd4_visual_accepted": true,
+    "rd4_owner_approval": "2026-10-24: owner accepted current Radar Line/Area appearance and the pictured differences; bounded Table/File scope, no pixel-identity claim or UI change.",
     "rd4_test_source": "194691e589ad75afb74d227574402dfb43ba6aea",
     "rd4_image": "sha256:da46760094b602464e9adefa6caae2b100f34307a486076fa9cec4625125a760",
     "rd4_evidence": "artifacts/reviewed/chart-radar/verification.md"

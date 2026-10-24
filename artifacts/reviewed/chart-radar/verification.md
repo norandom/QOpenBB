@@ -1,6 +1,6 @@
 # Radar verification
 
-RD4 packaged behavior is independently accepted: both candidate families and the original retained-FMP comparison pass. Owner visual acceptance remains pending, so RD4 overall, feature/application acceptance and RD5 remain open. The published alpha remains Waterfall. Earlier sections below record acceptance at each source checkpoint.
+RD4 is accepted for the bounded Radar Line/Area Table/File journey: independent behavioral review passed, and the owner approved the current appearance on 2026-10-24. Feature/application acceptance is complete for this scope; RD5 publication remains pending. The published alpha remains Waterfall. Earlier sections below record acceptance at each source checkpoint.
 
 Independent review approves RD0. Workspace source `d12d0b724e2d70ccccdfdc8274e814762e2425f7` contains the inactive declaration, shared fixture and original-browser characterization tests. Probe files were normalized to LF before commit without changing executable text. The next work is the two inactive implementation lanes.
 
@@ -54,7 +54,7 @@ Verification passes 88 distinct tests; the independent reviewer reran 14. Non-mu
 
 RD3 and RD3b are accepted for source integration. Application and feature acceptance remain false. Packaged FMP values, light/dark visual parity, browser diagnostics, refresh/fresh-session reopen and PNG export remain RD4; publication remains RD5. The published alpha remains Waterfall.
 
-## RD4: packaged behavior accepted, visual decision pending
+## RD4: application accepted, publication pending
 
 Independent review approved the retained behavioral evidence on 2026-10-24. Candidate run4 passed both family tests in 2.0 minutes with one worker; original run3 passed its comparison test in 35.1 seconds. Maintained tests are `terminalpro/tests/e2e/live-chart/radar-chart.spec.ts`, `radar-original.spec.ts` and `radar-fixture.ts`, committed at Workspace `194691e589ad75afb74d227574402dfb43ba6aea`.
 
@@ -66,4 +66,4 @@ Candidate page/CDP/network assertions pass after original-page save/refresh and 
 
 Earlier failures remain part of the record. Original run1 expected raw digits in an abbreviated grid cell; run2 exposed ambiguous independent path matching. Candidate run1 assumed a tooltip role and targeted overlapping vertices; run2 required explicitly serialized Line marker defaults; run3 reused the invalidated original session after a fresh login. Reviewed test-only corrections use category readiness, distinct jointly matched paths, native scoped tooltip text at separated vertices, resolved defaults and separate family tests with fresh login last. Full field casing follows the displayed labels. Financial values and tolerances did not change.
 
-Exact commands/results remain local under `artifacts/chart-radar/rd4/`, including `candidate-run-4`, `original-run-3` and `behavior-review.md`. Raw browser JSON, logs and runtime descriptors are excluded from the public mirror. Four exact-byte light samples are linked inline in the owning milestone. Owner review remains open on added spokes, right-side radial labels (partly obscured by Area fill), legend symbols/spacing, lower plot placement and orientation typography. No visual parity or Radar publication is accepted at this checkpoint.
+Exact commands/results remain local under `artifacts/chart-radar/rd4/`, including `candidate-run-4`, `original-run-3` and `behavior-review.md`. Raw browser JSON, logs and runtime descriptors are excluded from the public mirror. Four exact-byte light samples are linked inline in the owning milestone. On 2026-10-24 the owner approved the current Radar Line/Area appearance, including added spokes, right-side radial labels (partly obscured by Area fill), legend symbols/spacing and lower plot placement. The pictured Line circle symbols and Area square symbols differ from the original. This completes bounded RD4 application acceptance; it does not claim pixel identity or general acceptance of other radial families. No UI, source or image changed for this approval. RD5 publication remains pending.

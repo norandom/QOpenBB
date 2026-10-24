@@ -1,8 +1,8 @@
 # Radar Line and Radar Area
 
-Restore Radar Line and Radar Area inside the existing Table/File chart editor. The owner approved this next milestone on 2026-10-24. Waterfall remains the published alpha. Radar packaged behavior has independent acceptance; the owner visual decision is still open.
+Restore Radar Line and Radar Area inside the existing Table/File chart editor. The owner approved this next milestone on 2026-10-24. Waterfall remains the published alpha. Radar packaged behavior has independent acceptance; the owner approved the current Line/Area appearance on 2026-10-24. RD4 is complete for the bounded Table/File journey; RD5 publication is pending.
 
-The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) and RD0 [contract review](../../../artifacts/reviewed/chart-radar/rd0-review.md) passed on 2026-10-24. The frozen [adapter contract](radar-contract.md), declarations and fixture now support RD1/RD2 fan-out. Inactive renderer/editor adapters and RD3a capture/setup have independent acceptance. Source integration (RD3/RD3b) is independently accepted at Workspace `af226971c53922de5925d9b068fbfbd81df02527`. Packaged behavioral checks (RD4) are independently accepted with test source `194691e589ad75afb74d227574402dfb43ba6aea`; overall RD4 visual acceptance and publication (RD5) remain pending. See the [verification record](../../../artifacts/reviewed/chart-radar/verification.md).
+The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) and RD0 [contract review](../../../artifacts/reviewed/chart-radar/rd0-review.md) passed on 2026-10-24. The frozen [adapter contract](radar-contract.md), declarations and fixture now support RD1/RD2 fan-out. Inactive renderer/editor adapters and RD3a capture/setup have independent acceptance. Source integration (RD3/RD3b) is independently accepted at Workspace `af226971c53922de5925d9b068fbfbd81df02527`. Packaged behavioral checks (RD4) are independently accepted with test source `194691e589ad75afb74d227574402dfb43ba6aea`; owner appearance approval completes RD4. Publication (RD5) remains pending. See the [verification record](../../../artifacts/reviewed/chart-radar/verification.md).
 
 ## Acceptance contract
 
@@ -47,9 +47,9 @@ Use the retained FMP quarterly AAPL income data documented in [Range verificatio
 - [x] RD3b. Connect the live session, editor and caller paths.
   - Depends on RD3a. One worker owns the remaining shared routing and new Radar session projection. Preserve existing state/stamp/persistence owners; use the accepted RD1/RD2 adapters.
   - Done when the real ready/session path supports both families, existing editor controls reach their renderer/state effects, relevant family transitions pass, and combined caps and independent review pass. Packaged visual/FMP acceptance remains RD4.
-- [ ] RD4. Accept the packaged FMP and visual journey.
+- [x] RD4. Accept the packaged FMP and visual journey.
   - [x] Independently accept packaged behavior: two candidate tests and one original retained-FMP comparison pass; both families cover refresh, fresh reopen and PNG export.
-  - [ ] Obtain owner visual acceptance for the paired samples and remaining appearance differences.
+  - [x] Owner approved the pictured current Line/Area appearance and disclosed differences on 2026-10-24; no further UI changes were requested.
   - Depends on RD3. Build one identified candidate and use the maintained isolated Playwright/CDP flow with one browser worker. Put owner-run startup commands in ignored `run_this.sh` when required.
   - Verify contract items 2-4, including real data and saved settings after fresh reopen. Reuse existing helpers; add only Radar-specific assertions. Repair concrete failures without widening the milestone.
   - Done when independent review accepts the bounded evidence and any uncertain visible differences have an owner decision. Publish a small set of exact-byte reviewed chart samples.
@@ -70,7 +70,7 @@ Reuse the existing Vitest, Playwright and non-mutating scoped Biome commands; co
 
 ## FMP samples
 
-These exact light-theme captures show retained FMP AAPL quarterly revenue in raw USD, FY2023-2025 with Q1-Q4 spokes. Axis and tooltip labels abbreviate billions; the fixture retains exact reported amounts. Visual acceptance is pending.
+These exact light-theme captures show retained FMP AAPL quarterly revenue in raw USD, FY2023-2025 with Q1-Q4 spokes. Axis and tooltip labels abbreviate billions; the fixture retains exact reported amounts. The owner accepted this current appearance on 2026-10-24.
 
 Original source `38dffc33389aca0e4a87e0e88d42f7067aa220df`, image `sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f`, used the historical backend overlay. Replacement application source `af226971c53922de5925d9b068fbfbd81df02527`, image `sha256:da46760094b602464e9adefa6caae2b100f34307a486076fa9cec4625125a760`, ran image-only. The later test-only commit is `194691e589ad75afb74d227574402dfb43ba6aea`.
 
@@ -82,4 +82,4 @@ Original source `38dffc33389aca0e4a87e0e88d42f7067aa220df`, image `sha256:f48eb1
 | --- | --- |
 | ![Original Radar Area, AAPL revenue FY2023-2025 Q1-Q4 in USD](../../../artifacts/reviewed/chart-radar/original-radar-area-fmp-light.png) | ![Replacement Radar Area, same retained AAPL revenue](../../../artifacts/reviewed/chart-radar/replacement-radar-area-fmp-light.png) |
 
-The owner decision remains open on added spokes, right-side radial labels, legend symbols/spacing and lower plot placement. Line uses compact circle symbols; Area uses square symbols where the original uses lines. Orientation typography and light/dark visual parity are also pending. Passing financial and lifecycle checks does not accept these visible differences.
+The owner approved the current Radar Line/Area appearance, including added spokes, right-side radial labels, legend symbols/spacing and lower plot placement. Line uses compact circle symbols; Area uses square symbols where the original uses lines. This accepts the bounded appearance as shown, without claiming pixel identity with the original or changing the application image. RD5 publication remains pending.
