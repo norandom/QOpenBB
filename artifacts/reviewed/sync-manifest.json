@@ -170,6 +170,70 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-radial/checkpoint-review.md",
+      "sourceSHA256": "e049fc21c0e4d655b4442ae691c045252da36d150d36daf7001f239cf1467884",
+      "publishedpath": "artifacts/reviewed/chart-radial/checkpoint-review.md",
+      "publishedSHA256": "e049fc21c0e4d655b4442ae691c045252da36d150d36daf7001f239cf1467884",
+      "bytes": 3072,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/verification.md",
+      "sourceSHA256": "94b859c4fcec1a485d221e48612c3a800429d3d71039df02544763225a45fbc7",
+      "publishedpath": "artifacts/reviewed/chart-radial/verification.md",
+      "publishedSHA256": "94b859c4fcec1a485d221e48612c3a800429d3d71039df02544763225a45fbc7",
+      "bytes": 2140,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc0g/review.md",
+      "sourceSHA256": "802c7555a38d34e8a7fe558787e5c8f75c978fbd06b12927a8957f49b8b7fe58",
+      "publishedpath": "artifacts/reviewed/chart-radial/geometry-review.md",
+      "publishedSHA256": "802c7555a38d34e8a7fe558787e5c8f75c978fbd06b12927a8957f49b8b7fe58",
+      "bytes": 5309,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc2/review.md",
+      "sourceSHA256": "fbe53eb5ec39fb939b3b062beddb74b1ccfaf516c6ef914aee22ffaa8e48ad1f",
+      "publishedpath": "artifacts/reviewed/chart-radial/controls-review.md",
+      "publishedSHA256": "fbe53eb5ec39fb939b3b062beddb74b1ccfaf516c6ef914aee22ffaa8e48ad1f",
+      "bytes": 3859,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/column-spike/analytical/review.md",
+      "sourceSHA256": "e292d3d4d77857c9c0019ece790044c302b7ea58371384e5bc09b9f9c3b14f4d",
+      "publishedpath": "artifacts/reviewed/chart-radial/geometry-research-review.md",
+      "publishedSHA256": "e292d3d4d77857c9c0019ece790044c302b7ea58371384e5bc09b9f9c3b14f4d",
+      "bytes": 8059,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/original/run-3/review-summary.md",
+      "sourceSHA256": "a2f669cebe33f1334f3426f03c17330e85aab61c46e90b3f49f7145572ee7440",
+      "publishedpath": "artifacts/reviewed/chart-radial/original-observations.md",
+      "publishedSHA256": "a2f669cebe33f1334f3426f03c17330e85aab61c46e90b3f49f7145572ee7440",
+      "bytes": 7240,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc0c/materialization-review.md",
+      "sourceSHA256": "915526e035bf3e3346efc815030fcddc62b590f6d0c69adae74f919898a60221",
+      "publishedpath": "artifacts/reviewed/chart-radial/controls-materialization-review.md",
+      "publishedSHA256": "915526e035bf3e3346efc815030fcddc62b590f6d0c69adae74f919898a60221",
+      "bytes": 2520,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/interfaces-draft/review.md",
+      "sourceSHA256": "965565c3f6b07aff1703b5afe0c74e74a8cde769d9a8e47802f13500a36ec6a5",
+      "publishedpath": "artifacts/reviewed/chart-radial/controls-contract-review.md",
+      "publishedSHA256": "965565c3f6b07aff1703b5afe0c74e74a8cde769d9a8e47802f13500a36ec6a5",
+      "bytes": 3952,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-radial/plan-review.md",
       "sourceSHA256": "f93c071d626023a98d753862758466ee8bd5bf286bcda1363035f87a6294a115",
       "publishedpath": "artifacts/reviewed/chart-radial/plan-review.md",
@@ -32985,7 +33049,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167140683,
+  "total_payload_bytes": 167176834,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -1,6 +1,6 @@
 # Radial compatibility contract
 
-Status: source-grounded draft. RC0 is not complete until original browser observations, the Column geometry spike, exact TypeScript interfaces and fixture ownership pass independent review. The owner authorized autonomous progress, not an unreviewed visible change.
+Status: numerical contract remains a draft. The inactive controls/interface subset RC0C passed independent review; full RC0 still requires the Column missing-value decision and numerical adapter freeze. The owner authorized autonomous progress, not an unreviewed visible change.
 
 ## Scope and source identity
 
@@ -30,15 +30,15 @@ Use separate positive and negative accumulators. Normalization divides by the la
 
 Column uses constant-width sides for a given category/group band, not a sector whose width grows with radius. Grouped series split a category band; stacked series share a band. Column width depends on angular span and chart radius, not datum height. Single-category width and circular baseline/outer clipping are explicit spike/probe cases.
 
-Bar swaps those roles: category rings are subdivided by groups, while stacked numerical values accumulate angle. Signed zero location follows the full numerical angular domain; do not start every signed bar at the top. Original LinearAngleScale uses full-circle power-of-two nice-tick behavior. The exact domain/ticks and ring ordering remain original-probe requirements.
+Bar swaps those roles: category rings are subdivided by groups, while stacked numerical values accumulate angle. Signed zero location follows the full numerical angular domain; do not start every signed bar at the top. Original LinearAngleScale uses full-circle power-of-two nice-tick behavior. The original installed angle-axis factory gives compact grouped domain [0,20], stacked [0,40] and normalized [0,160]. Thus 100 spans 225 degrees; the last visible normalized tick 140 is not the domain maximum. Mixed signed domains are [-10,30], [-10,70] and [-50,150]. These executable source observations supplement browser tick observations; they do not establish replacement geometry acceptance.
 
-Missing/nonfinite values stay absent. Source inspection finds a whole-method early return that may suppress later valid Column observations in normalized mode. Original painted behavior must be recorded, and any departure needs an explicit owner decision. Nightingale's earlier correction is precedent, not automatic acceptance for these families.
+Missing/nonfinite values stay absent. Original run 3 retains a normalized Column failure: the bounded tooltip probe finds no later valid E=30 from Primary, while Bar exposes it and passes the same journey. The independently inspected Column early return explains whole-series suppression when a category is missing; lack of a tooltip hit alone would not prove that cause. Any correction needs an explicit owner decision; the failed original assertion remains retained. Nightingale's earlier correction is precedent, not automatic acceptance for these families.
 
 ## Effective axis styles and control projection
 
 Do not collapse two distinct axes into one effective polar style. Resolve rendering defaults independently on the applicable category and numerical axes; preserve the original editor's projected defaults separately when its first-axis value differs.
 
-Source defaults pending runtime confirmation:
+Runtime defaults and source-derived effective values:
 
 - Column numerical inner-radius ratio 0.5; categorical group/series padding zero.
 - Bar categorical inner-radius ratio 0.2, paddingInner/groupPaddingInner 0.2, paddingOuter 0.1.
@@ -63,6 +63,12 @@ Grouped mode compares components; stacked mode shows composition. Neither ring a
 
 ## Freeze and ownership gate
 
-Controller-owned declarations and fixture are planned at compatibility/radialContracts.ts and tests/unit/chart-compatibility/fixtures/radialContract.ts. No file has been created or frozen yet. The reuse assessment lists proposed exclusive renderer and controls paths; Column geometry helper ownership and full exports will be frozen after the spike. Shared application files remain a serialized integration task.
+Controller-owned declarations and fixture are materialized at compatibility/radialContracts.ts and tests/unit/chart-compatibility/fixtures/radialContract.ts. Their exact bytes passed RC0C review; their draft header refers to the still-pending whole RC0. The [controls review](../../../artifacts/reviewed/chart-radial/controls-contract-review.md) freezes the inactive boundary. The controls and Column geometry helper paths are frozen in the milestone. The pure helper exports buildRadialColumnPath with local pixel input/result types; it is independently accepted as RC0G. Remaining renderer mapping paths and exports still require a freeze. Shared application files remain a serialized integration task.
 
 Acceptance requires original observations, numerical/reference expectations, concrete missing-value decision where needed, exact exported types/defaults, source identity and independent RC0 review. Every changed production file must pass 400 physical lines, 300 logical units and 50/function with inventory-backed checks. Do not count source research, a test list or a screenshot as completed packaged acceptance.
+
+## Observed controls boundary
+
+Original run 3 records 19 states per family, including edited options and reload. Series stroke width 3, fill opacity 0.6 and enabled labels survive reload. Inner radius and thickness write both family axes. Group Padding writes paddingInner and Series Padding writes groupPaddingInner on the category axis. Orientation writes the angular axis only. Both editors project zero padding initially, even though Bar effective category padding is 0.2. Color and label typography target both family axes by source inspection; this probe did not edit those fields.
+
+The Column numerical failure does not block the independently reviewed inactive controls lane. It does block claiming full RC0 or visible parity. Current charts, routing and the published alpha remain unchanged.
