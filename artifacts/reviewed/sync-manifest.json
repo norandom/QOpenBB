@@ -157,7 +157,8 @@
     "chart-range",
     "chart-waterfall",
     "chart-radar/plan-review",
-    "chart-radar/rd0"
+    "chart-radar/rd0",
+    "chart-radar/rd4-behavior"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -32072,10 +32073,42 @@
     },
     {
       "sourcepath": "artifacts/chart-radar/verification.md",
-      "sourceSHA256": "b5954f4309ab96285d334c600c236afe011d28fc214e3ab6f6008c2f9c598d60",
+      "sourceSHA256": "788c05ff3a5833cf74514ff2bfe7877b3c802bf2ae01923b5be1edda5e8a4802",
       "publishedpath": "artifacts/reviewed/chart-radar/verification.md",
-      "publishedSHA256": "b5954f4309ab96285d334c600c236afe011d28fc214e3ab6f6008c2f9c598d60",
-      "bytes": 9910,
+      "publishedSHA256": "788c05ff3a5833cf74514ff2bfe7877b3c802bf2ae01923b5be1edda5e8a4802",
+      "bytes": 13572,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radar/rd4/original-run-3/browser-output/radar-original-original-re-1c19b-t-dark-financial-comparison/original-radar-line-widget-light.png",
+      "sourceSHA256": "aadbdfd4cbff321d9eb64f28a69ca55e25d549edeb036a49a529b22494d7f2a4",
+      "publishedpath": "artifacts/reviewed/chart-radar/original-radar-line-fmp-light.png",
+      "publishedSHA256": "aadbdfd4cbff321d9eb64f28a69ca55e25d549edeb036a49a529b22494d7f2a4",
+      "bytes": 44546,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radar/rd4/candidate-run-4/browser-output/radar-chart-retained-AAPL--eeb38-esh-and-fresh-reopen-export/radar-line-widget-light.png",
+      "sourceSHA256": "14493cad879836e69120c634da93ee276edc3534b1c72503b0aa51ed49c0807b",
+      "publishedpath": "artifacts/reviewed/chart-radar/replacement-radar-line-fmp-light.png",
+      "publishedSHA256": "14493cad879836e69120c634da93ee276edc3534b1c72503b0aa51ed49c0807b",
+      "bytes": 45280,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radar/rd4/original-run-3/browser-output/radar-original-original-re-1c19b-t-dark-financial-comparison/original-radar-area-widget-light.png",
+      "sourceSHA256": "e1820adcaa81655b7d1973d2551441cf1b26ed24684fbbc1575263855b378c67",
+      "publishedpath": "artifacts/reviewed/chart-radar/original-radar-area-fmp-light.png",
+      "publishedSHA256": "e1820adcaa81655b7d1973d2551441cf1b26ed24684fbbc1575263855b378c67",
+      "bytes": 38466,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radar/rd4/candidate-run-4/browser-output/radar-chart-retained-AAPL--bdd50-esh-and-fresh-reopen-export/radar-area-widget-light.png",
+      "sourceSHA256": "ce25174439c180063e8a11974ff8e9ff68bc3537334392a2bc5975aafc05a4d1",
+      "publishedpath": "artifacts/reviewed/chart-radar/replacement-radar-area-fmp-light.png",
+      "publishedSHA256": "ce25174439c180063e8a11974ff8e9ff68bc3537334392a2bc5975aafc05a4d1",
+      "bytes": 39223,
       "transform": "exact-byte-copy"
     },
     {
@@ -32798,7 +32831,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 166177209,
+  "total_payload_bytes": 166348386,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

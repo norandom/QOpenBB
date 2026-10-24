@@ -1,8 +1,8 @@
 # Radar Line and Radar Area
 
-Restore Radar Line and Radar Area inside the existing Table/File chart editor. The owner approved this next milestone on 2026-10-24. Waterfall remains the published alpha while Radar is implemented. This plan does not activate a new chart or establish runtime acceptance.
+Restore Radar Line and Radar Area inside the existing Table/File chart editor. The owner approved this next milestone on 2026-10-24. Waterfall remains the published alpha. Radar packaged behavior has independent acceptance; the owner visual decision is still open.
 
-The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) and RD0 [contract review](../../../artifacts/reviewed/chart-radar/rd0-review.md) passed on 2026-10-24. The frozen [adapter contract](radar-contract.md), declarations and fixture now support RD1/RD2 fan-out. Inactive renderer/editor adapters and RD3a capture/setup have independent acceptance. Source integration (RD3/RD3b) is independently accepted at Workspace `af226971c53922de5925d9b068fbfbd81df02527`. Packaged FMP/visual acceptance (RD4) and publication (RD5) remain pending; see the [verification record](../../../artifacts/reviewed/chart-radar/verification.md).
+The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-review.md) and RD0 [contract review](../../../artifacts/reviewed/chart-radar/rd0-review.md) passed on 2026-10-24. The frozen [adapter contract](radar-contract.md), declarations and fixture now support RD1/RD2 fan-out. Inactive renderer/editor adapters and RD3a capture/setup have independent acceptance. Source integration (RD3/RD3b) is independently accepted at Workspace `af226971c53922de5925d9b068fbfbd81df02527`. Packaged behavioral checks (RD4) are independently accepted with test source `194691e589ad75afb74d227574402dfb43ba6aea`; overall RD4 visual acceptance and publication (RD5) remain pending. See the [verification record](../../../artifacts/reviewed/chart-radar/verification.md).
 
 ## Acceptance contract
 
@@ -16,9 +16,9 @@ The [independent task-plan review](../../../artifacts/reviewed/chart-radar/plan-
 
 Original Workspace `38dffc33389aca0e4a87e0e88d42f7067aa220df` maps these names to `radar-line` and `radar-area`. Its `AgChartView.tsx` forwards selection, inversion and aggregation to AG Grid. `hooks/useChartOptions.tsx` strips generated Cartesian marker and connect-missing options for polar charts; `utils.tsx` leaves Radar tooltip content to AG Charts. The retained AG Grid 34.1.1 / AG Charts 12.1.1 contract and an original-runtime probe must settle delegated behavior.
 
-Current Workspace `ba03b1289f60a06269fb1a97900e61474475464f` has gallery names but no accepted Radar adapter or application family. Reuse the ordinary capture, theme, editor and lifecycle owners. Pie's ring geometry, percentages and layout are not Radar contracts. Standalone and AI-chart callers, other radial families and analyst theme redesign remain separate work.
+At planning baseline `ba03b1289f60a06269fb1a97900e61474475464f`, Workspace had gallery names but no accepted Radar adapter or application family. RD3 subsequently integrated both families at `af226971c53922de5925d9b068fbfbd81df02527`. Reuse the ordinary capture, theme, editor and lifecycle owners. Pie's ring geometry, percentages and layout are not Radar contracts. Standalone and AI-chart callers, other radial families and analyst theme redesign remain separate work.
 
-Use the retained FMP quarterly AAPL income data documented in [Range verification](../../../artifacts/reviewed/chart-range/verification.md). Proposed principal example: quarters Q1-Q4 as spokes, complete fiscal years as revenue series, raw reported USD. Align fiscal periods explicitly, reject duplicate year/quarter records rather than silently combine them, and keep absent quarters missing. Freeze the exact years, record hash and values in RD0 after inspecting the retained response. A partial-year example exercises missing data. No new provider retrieval or fixture validation is claimed yet.
+Use the retained FMP quarterly AAPL income data documented in [Range verification](../../../artifacts/reviewed/chart-range/verification.md). Verified principal example: quarters Q1-Q4 as spokes, FY2023-2025 as revenue series, raw reported USD. Align fiscal periods explicitly, reject duplicate year/quarter records rather than silently combine them, and keep absent quarters missing. RD0 froze all 15 exact amounts and hashes; RD4 reconciled them against the retained response. Partial FY2026 exercises missing Q4. No new provider retrieval was needed.
 
 ## Bounded tasks
 
@@ -48,6 +48,8 @@ Use the retained FMP quarterly AAPL income data documented in [Range verificatio
   - Depends on RD3a. One worker owns the remaining shared routing and new Radar session projection. Preserve existing state/stamp/persistence owners; use the accepted RD1/RD2 adapters.
   - Done when the real ready/session path supports both families, existing editor controls reach their renderer/state effects, relevant family transitions pass, and combined caps and independent review pass. Packaged visual/FMP acceptance remains RD4.
 - [ ] RD4. Accept the packaged FMP and visual journey.
+  - [x] Independently accept packaged behavior: two candidate tests and one original retained-FMP comparison pass; both families cover refresh, fresh reopen and PNG export.
+  - [ ] Obtain owner visual acceptance for the paired samples and remaining appearance differences.
   - Depends on RD3. Build one identified candidate and use the maintained isolated Playwright/CDP flow with one browser worker. Put owner-run startup commands in ignored `run_this.sh` when required.
   - Verify contract items 2-4, including real data and saved settings after fresh reopen. Reuse existing helpers; add only Radar-specific assertions. Repair concrete failures without widening the milestone.
   - Done when independent review accepts the bounded evidence and any uncertain visible differences have an owner decision. Publish a small set of exact-byte reviewed chart samples.
@@ -68,4 +70,16 @@ Reuse the existing Vitest, Playwright and non-mutating scoped Biome commands; co
 
 ## FMP samples
 
-Pending RD4: original/replacement Radar Line and Radar Area using the frozen quarterly revenue example. No generated illustration substitutes for a verified financial chart.
+These exact light-theme captures show retained FMP AAPL quarterly revenue in raw USD, FY2023-2025 with Q1-Q4 spokes. Axis and tooltip labels abbreviate billions; the fixture retains exact reported amounts. Visual acceptance is pending.
+
+Original source `38dffc33389aca0e4a87e0e88d42f7067aa220df`, image `sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f`, used the historical backend overlay. Replacement application source `af226971c53922de5925d9b068fbfbd81df02527`, image `sha256:da46760094b602464e9adefa6caae2b100f34307a486076fa9cec4625125a760`, ran image-only. The later test-only commit is `194691e589ad75afb74d227574402dfb43ba6aea`.
+
+| Radar Line: original | Radar Line: replacement |
+| --- | --- |
+| ![Original Radar Line, AAPL revenue FY2023-2025 Q1-Q4 in USD](../../../artifacts/reviewed/chart-radar/original-radar-line-fmp-light.png) | ![Replacement Radar Line, same retained AAPL revenue](../../../artifacts/reviewed/chart-radar/replacement-radar-line-fmp-light.png) |
+
+| Radar Area: original | Radar Area: replacement |
+| --- | --- |
+| ![Original Radar Area, AAPL revenue FY2023-2025 Q1-Q4 in USD](../../../artifacts/reviewed/chart-radar/original-radar-area-fmp-light.png) | ![Replacement Radar Area, same retained AAPL revenue](../../../artifacts/reviewed/chart-radar/replacement-radar-area-fmp-light.png) |
+
+The owner decision remains open on added spokes, right-side radial labels, legend symbols/spacing and lower plot placement. Line uses compact circle symbols; Area uses square symbols where the original uses lines. Orientation typography and light/dark visual parity are also pending. Passing financial and lifecycle checks does not accept these visible differences.
