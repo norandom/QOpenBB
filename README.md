@@ -119,7 +119,7 @@ Radial Column/Bar is accepted and published; RC5 release assets and anonymous im
 
 - [x] Verify hierarchy FMP values, controls, approved appearance, persistence and export.
 - [x] Publish and verify the hierarchy milestone images: [alpha-40201437272-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40201437272-1).
-- [ ] Complete [Heatmap](.kiro/specs/analyst-workspace/heatmap-milestone.md): appearance is accepted; final empty-state and lifecycle verification remains open.
+- [ ] Complete [Heatmap](.kiro/specs/analyst-workspace/heatmap-milestone.md): application acceptance is complete; milestone publication is next.
 
 - [x] Freeze the Radial control contract and implement its inactive controls.
 - [x] Implement the independently reviewed Radial Column shape helper.

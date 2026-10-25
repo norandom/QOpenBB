@@ -32840,6 +32840,46 @@
       "publishedSHA256": "9dba76054760bb5ab57df61d0b0c638a3ca1ce9ab7da56db66b5a3fef8d1a922",
       "bytes": 3541,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm4/application-review.md",
+      "sourceSHA256": "1079763066d38274712db0c892bdfb1747cfb99b6914c3cd1c27f831cad791a1",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/verification.md",
+      "publishedSHA256": "1079763066d38274712db0c892bdfb1747cfb99b6914c3cd1c27f831cad791a1",
+      "bytes": 4729,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/reference-final/run-2/browser-output/heatmap-original-original--76a1a-MP-and-zero-series-recovery/fmp-default-light.png",
+      "sourceSHA256": "8617564ccec6228c691641feedd6910895ff5a1ea5d6c15bdd13287abf4916d4",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/heatmap-original-light.png",
+      "publishedSHA256": "8617564ccec6228c691641feedd6910895ff5a1ea5d6c15bdd13287abf4916d4",
+      "bytes": 24811,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm4/browser/candidate2-default/browser-output/heatmap-chart-Heatmap-reta-a16a2-ht-and-dark-financial-cells/fmp-default-light.png",
+      "sourceSHA256": "73ff864ae846a011e5d20e90e71df6d286c96ef6e1436273d133f134b007c1a4",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/heatmap-fmp-light.png",
+      "publishedSHA256": "73ff864ae846a011e5d20e90e71df6d286c96ef6e1436273d133f134b007c1a4",
+      "bytes": 25195,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/reference-final/run-2/browser-output/heatmap-original-original--76a1a-MP-and-zero-series-recovery/fmp-default-dark.png",
+      "sourceSHA256": "f9a8825c9117f27096938e7f3fc34da68056eaa66ee33c5e40a2b2c776dcff46",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/heatmap-original-dark.png",
+      "publishedSHA256": "f9a8825c9117f27096938e7f3fc34da68056eaa66ee33c5e40a2b2c776dcff46",
+      "bytes": 24440,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm4/browser/candidate2-default/browser-output/heatmap-chart-Heatmap-reta-a16a2-ht-and-dark-financial-cells/fmp-default-dark.png",
+      "sourceSHA256": "c13caf8ab548ac7dbdc9215b7b9f59d906a9307e1a700ae041bb42d9f5184935",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/heatmap-fmp-dark.png",
+      "publishedSHA256": "c13caf8ab548ac7dbdc9215b7b9f59d906a9307e1a700ae041bb42d9f5184935",
+      "bytes": 24683,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33553,7 +33593,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167924027,
+  "total_payload_bytes": 168027885,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

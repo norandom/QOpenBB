@@ -1223,10 +1223,10 @@ evidence = ["alpha-40201437272-1: both CI jobs, exact source pins, three anonymo
 [[capabilities]]
 id = "heatmap-original-contract"
 requirements = ["analyst-workspace/heatmap-milestone.md:HM0", "openbb-self-service/ui-parity-worklist.md:UI-12"]
-planned_checks = ["original-field-mapping", "duplicate-and-missing-cell-semantics", "native-control-inventory"]
-test_paths = []
-status = "unverified"
-evidence = ["Original mapping/control probes completed; wide matrix and finite Sum subset independently reviewed. Full color/empty-state/control contract remains open. Original diagnostic noise retained; no Heatmap candidate acceptance claimed."]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapData.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapControls.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapRenderer.test.ts"]
+status = "passed"
+evidence = ["Original characterization and mapped contracts are independently accepted in artifacts/reviewed/chart-heatmap/verification.md and linked source reviews. Maintained data/control/renderer regressions protect observed mapping, missing-value and control contracts. Original diagnostic noise is retained; identified candidate application acceptance is tracked separately."]
 
 [[capabilities]]
 id = "heatmap-inactive-data-adapter"
@@ -1291,3 +1291,11 @@ planned_checks = ["rebuilt-image empty-state export, fresh reopen and recovery"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx"]
 status = "passed"
 evidence = ["Workspace 5cae43a52317264067951b111048664292882ec2: 31 caller checks pass, including four Heatmap cases; lint and independent combined caps pass. Scoped typing preserves 390 diagnostics, eight inherited in touched files, with zero additions. artifacts/reviewed/chart-heatmap/empty-state-review.md. Source acceptance only; rebuilt-image lifecycle checks remain open."]
+
+[[capabilities]]
+id = "heatmap-packaged-application"
+requirements = ["analyst-workspace/heatmap-milestone.md:HM4"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/heatmap-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/heatmap-empty.spec.ts"]
+status = "passed"
+evidence = ["artifacts/reviewed/chart-heatmap/verification.md: retained FMP8 light/dark and owner appearance accepted on c7a7633/e47ef653; final controls, populated/empty persistence, recovery, PNG exports and actual File all-missing checks pass on 5cae43a/6dc3dbfe with strict diagnostics. Tests committed at68b1e41. First-login404 remains separate; publication/deployment and selected-range callers are not accepted here."]

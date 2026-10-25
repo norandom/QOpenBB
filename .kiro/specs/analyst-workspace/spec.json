@@ -23,7 +23,7 @@
     "name": "heatmap-port",
     "contract": "heatmap-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 after hierarchy publication.",
-    "phase": "packaged-verification",
+    "phase": "accepted-awaiting-publication",
     "completed_tasks": [
       "source-research",
       "HM0-data-contract",
@@ -33,10 +33,11 @@
       "HM2c",
       "HM3a",
       "HM0",
-      "HM3b"
+      "HM3b",
+      "HM4"
     ],
-    "feature_accepted": false,
-    "application_accepted": false,
+    "feature_accepted": true,
+    "application_accepted": true,
     "starting_workspace_source": "33a81d387b62e962ecced465b78bf2d303530468",
     "original_frontend_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
     "boundary": "Ordinary Table/File journey first; original mapping and controls require browser observation before implementation interfaces freeze.",
@@ -55,7 +56,7 @@
     "hm2c_source": "8b4426b9ca7f0b04ccfdfa05c495a415f7741ddf",
     "hm2b_review": "artifacts/reviewed/chart-heatmap/controls-review.md",
     "hm2c_review": "artifacts/reviewed/chart-heatmap/renderer-review.md",
-    "next": "HM4 identified-image FMP/browser financial and visual acceptance, then HM5 publication.",
+    "next": "HM5 milestone CI publication and public image verification.",
     "integration_design": "heatmap-integration-design.md",
     "hm3a_source": "6262a976abec8f3a0ef508b9a59005ba807df375",
     "hm3a_review": "artifacts/reviewed/chart-heatmap/dispatch-review.md",
@@ -65,7 +66,11 @@
     "hm4_corrective_review": "artifacts/reviewed/chart-heatmap/corrections-review.md",
     "hm4_empty_state_source": "5cae43a52317264067951b111048664292882ec2",
     "hm4_empty_state_review": "artifacts/reviewed/chart-heatmap/empty-state-review.md",
-    "hm4_owner_appearance": "2026-10-25: keep candidate e47ef653 light/dark appearance including approximately 7 px plot-width and small legend-offset differences; lifecycle acceptance remains open."
+    "hm4_owner_appearance": "2026-10-25: keep candidate e47ef653 light/dark appearance including approximately 7 px plot-width and small legend-offset differences. This decision covered appearance; the subsequent HM4 review accepts lifecycle behavior.",
+    "hm4_source": "5cae43a52317264067951b111048664292882ec2",
+    "hm4_test_source": "68b1e41d414234c4e191d39207ca6f84347a5bf5",
+    "hm4_image": "sha256:6dc3dbfef52cbaa16cdc062d672c63a114a2d6dc8a17daf32a148c915390d42d",
+    "hm4_review": "artifacts/reviewed/chart-heatmap/verification.md"
   },
   "completed_milestones": [
     {
