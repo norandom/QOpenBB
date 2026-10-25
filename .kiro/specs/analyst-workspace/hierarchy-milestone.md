@@ -16,8 +16,8 @@ The original source distinguishes size from color. The first numeric field suppl
   - [x] H1a. Add the two inactive type owners and compile-only fixture defined in the contract; independent review and inventory-backed size checks required.
   - [x] H1b. Implement inactive hierarchy validation/displayed-row capture and verify shared guard regressions.
   - [x] H1c. Freeze prepared hierarchy/setup interfaces and implement full-path projection before the renderer/control join.
-- [ ] H2. Implement renderer and controls in disjoint reviewed lanes after H1; independently review each lane.
-  - [ ] Resolve the four bounded readiness items in the [renderer/control plan](hierarchy-renderer-plan.md), then freeze exact interfaces before dispatch.
+- [x] H2. Implement renderer and controls in disjoint reviewed lanes after H1; independently review each lane.
+  - [x] Resolve the four bounded readiness items in the [renderer/control plan](hierarchy-renderer-plan.md), then freeze exact interfaces before dispatch.
 - [ ] H3. Follow the [reviewed integration design](hierarchy-integration-design.md): prepare inactive helpers, then join existing application owners atomically; verify stale commands, refresh, family changes and persistence.
 - [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
 - [ ] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
@@ -57,3 +57,5 @@ H2.0 shared declarations are accepted at Workspace `fc0f02f0b01df8c5629849556b13
 H2.0 dependency preparation is accepted at Workspace `ce91431ae371a6d33350ebde27c8d85ab4ceaea2`. Exact Culori4.0.2 and declarations4.0.1 were installed through the pinned Safe Chain/Bun workflow in an isolated stage; all preexisting lock records are unchanged. Strict typed imports, converter checks and combined caps pass. [Dependency review](../../../artifacts/reviewed/chart-hierarchy/renderer-dependency-review.md). This prepares color conversion; chart interpolation and rendering still require their own acceptance.
 
 H2 controls are independently accepted at Workspace `1b7c3e7decd50ed197ce3c60470876ecdce9ab42`. 32 focused tests, baseline-relative strict checks and inventory caps pass for the inactive scope. [Review](../../../artifacts/reviewed/chart-hierarchy/inactive-controls-review.md). H3 live integration and H4 packaged financial/visual acceptance remain open.
+
+H2 renderer are independently accepted at Workspace `a4b0a7da0c47e63eafc7efa4c450cf73addf5f1d`. 26 focused tests, baseline-relative strict checks and inventory caps pass for the inactive scope. [Review](../../../artifacts/reviewed/chart-hierarchy/inactive-renderer-review.md). H3 live integration and H4 packaged financial/visual acceptance remain open.

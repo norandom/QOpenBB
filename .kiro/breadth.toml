@@ -1139,3 +1139,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyAppearance.test.ts"]
 status = "passed"
 evidence = ["Inactive source 1b7c3e7decd50ed197ce3c60470876ecdce9ab42: 32 independent focused tests, no added strict diagnostics, combined caps pass. artifacts/reviewed/chart-hierarchy/inactive-controls-review.md. Live integration and packaged financial/visual acceptance remain open."]
+
+[[capabilities]]
+id = "hierarchy-inactive-renderer"
+requirements = ["analyst-workspace/hierarchy-renderer-design.md", "analyst-workspace/hierarchy-milestone.md:H2"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyEngine.test.ts"]
+status = "passed"
+evidence = ["Inactive source a4b0a7da0c47e63eafc7efa4c450cf73addf5f1d: 26 independent focused tests, no added strict diagnostics, combined caps pass. artifacts/reviewed/chart-hierarchy/inactive-renderer-review.md. Live integration and packaged financial/visual acceptance remain open."]

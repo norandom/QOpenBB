@@ -22,7 +22,9 @@ If the atomic join cannot fit the available batch, retain it unaccepted and unac
 
 ## Exclusive owner manifest
 
-One integration implementer owns this complete manifest serially. No H2 worker may share these paths. Additions outside it require a concrete seam/cap finding and controller review before editing.
+One integration implementer owns the session, caller and lifecycle manifest serially. Step 1's two inactive hierarchy UI components and their focused `hierarchyEditor.test.tsx` are delegated to a separate worker with exclusive ownership. No worker shares writable paths. The live join remains serialized; additions require a concrete seam/cap finding and controller review.
+
+The frozen UI props reuse accepted types: `HierarchySetupPanelProps` contains readonly `columns: readonly SnapshotColumn[]`, `selection: HierarchySetupSelection` and `onEdit: (edit: HierarchySetupEdit) => void`; `HierarchyCustomizeEditorProps` contains readonly `state: HierarchyEditorState` and `onEdit: (intent: HierarchyAcceptedEditIntent) => void`. Export named components and props; the integration owner consumes these declarations rather than duplicating them.
 
 | Responsibility | New production owners | Existing production owners |
 | --- | --- | --- |
@@ -42,6 +44,8 @@ Controller separately owns root breadth/inventory/spec updates and registration 
 ## Exact session and boundary contracts
 
 Retain the accepted `RetainedApplicationCapture = ChartSnapshot | HierarchySnapshot`. Activate it on `ApplicationSessionState.capture` and the common commit envelope. Keep ordinary `ApplicationSessionContext<F>.capture: ChartSnapshot` unchanged for ordinary consumers. Add `HierarchySessionContext` with hierarchy family inputs, existing local state and `HierarchySnapshot` capture. A capture-free frame type is `Pick<ApplicationSessionContext<F>, "inputs" | "local">`; baseline/range/reducer helpers only need that frame and must accept it directly. This removes initialization and synchronization's fake capture casts without changing ordinary preparation.
+
+Step 1 may bring forward minimal capture-free frame signatures in `applicationSessionTypes.ts`, `applicationSessionSelection.ts`, `applicationSessionEdit.ts` and `applicationSessionRange.ts` to reuse neutral helpers. Limit the frame to consumed inputs and local state; permit the explicit ordinary/hierarchy family union only in that neutral frame. Capture-bearing state/contexts and live routing remain unchanged. The ordinary range algorithm stays ordinary-only; inactive hierarchy helpers use `hierarchyRange.ts`.
 
 `applicationSessionGuards.ts` owns `isHierarchyChartFamily(value: unknown): value is HierarchyChartType`, and retained-capture narrowing. For already validated captures require an **own** `kind === "hierarchy"` plus the hierarchy family path; ordinary guards exclude that own hierarchy tag. Never narrow by an inherited property or by assuming family implies capture shape. Untrusted data still uses H1 validators. Construct exact context objects from validated members; no `as ChartSnapshot`, `as unknown as`, or scalar category alias for hierarchy. Mismatched family/capture is waiting/invalid, never sent to ordinary preparation.
 
