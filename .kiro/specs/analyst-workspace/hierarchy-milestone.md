@@ -1,6 +1,6 @@
 # Treemap and Sunburst parity
 
-Treemap and Sunburst are locally accepted under UI-12 for onboarded users. Retained-FMP financial checks, controls, theme, refresh, fresh-session persistence, export and both owner appearance decisions pass. [Independent verification](../../../artifacts/reviewed/chart-hierarchy/verification.md) records exact source/image boundaries. H5 prebuilt image publication remains open; first-login onboarding is a separate baseline follow-up.
+Treemap and Sunburst are locally accepted under UI-12 for onboarded users. Retained-FMP financial checks, controls, theme, refresh, fresh-session persistence, export and both owner appearance decisions pass. [Independent verification](../../../artifacts/reviewed/chart-hierarchy/verification.md) records exact source/image boundaries. H5 prebuilt image publication is verified; first-login onboarding is a separate baseline follow-up.
 
 ## Acceptance boundary
 
@@ -26,7 +26,7 @@ The original source distinguishes size from color. The first numeric field suppl
   - [x] Repair Tile Padding effects in native composed-default rendering; packaged financial verification passes.
   - [x] Repair first-hover gradient marker visibility after appearance changes; the rebuilt interaction journey passes.
   - [x] Add independently reviewed owned-engine selection and verify an isolated export without replacing other projects' engines.
-- [ ] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
+- [x] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
 
 H0 research is documentation-only and outside production size caps. Before H1-H3 dispatch, freeze exact writable paths and exported interfaces. Every new or modified production file must pass 400 physical lines, 300 logical units and 50/function, with inventory-backed verification. The shared join owns any cohesive extraction needed by files near those limits. No implicit size exception or parallel edits to shared state owners.
 
@@ -42,7 +42,7 @@ Use retained AAPL FY2025 quarterly cost of revenue and gross profit as eight lea
 
 The retained response is FMP /stable/income-statement, symbol AAPL, period quarter, limit 40, retrieved 2026-10-20T14:06:05.149732+00:00; SHA256 390dc8cbfc8302720a203bd9782d5e3b1f7363a4f762bdfcef079dbbe4c72f6b. H4 verifies this reshape against the retained response; no fresh provider request is claimed. A separate synthetic fixture covers color edge cases.
 
-The verified examples below use retained FMP observations. Radial remains the published predecessor; hierarchy publication is pending. The installed Compose environment is unchanged.
+The verified examples below use retained FMP observations. Hierarchy is published as `alpha-40201437272-1`. The installed Compose environment is unchanged.
 
 See the [original-source research](../../../artifacts/reviewed/chart-hierarchy/research-contract.md) and [independent plan review](../../../artifacts/reviewed/chart-hierarchy/plan-review.md). Source research is not a runtime pass.
 
@@ -91,3 +91,7 @@ Treemap uses parent/child area allocations. [Original comparison](../../../artif
 ![Sunburst: AAPL FY2025 revenue components](../../../artifacts/reviewed/chart-hierarchy/sunburst-fmp.png)
 
 Sunburst uses parent/child angular allocations. [Original comparison](../../../artifacts/reviewed/chart-hierarchy/sunburst-original.png).
+
+## Published alpha
+
+[alpha-40201437272-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40201437272-1) publishes both prebuilt images from root `3941cf8982919c6a5a468e1c0cebb1ee0b694c31`. [Publication verification](../../../artifacts/reviewed/chart-hierarchy/publication-review.md) confirms the tagged source, three public assets, six anonymous image pulls and digest-pinned Compose parsing. The published Workspace source adds only the five accepted browser files to the final local interaction source. CI image bytes were not browser-tested, and the installed Compose stack was not upgraded.

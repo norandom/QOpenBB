@@ -17,7 +17,7 @@ Owner clarification: saved research-context persistence acceptance moves to `ana
 
 Target: HTTP on `0.0.0.0:23003`, `qopenbb.example.com` through owner-managed cloudflared, relative bind-mounted data. The owner deploys locally with Compose; no SSH, tunnel service or Jupyter dependency.
 
-Current state: [alpha-40125164959-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40125164959-1) is published with prebuilt images. Combination, scatter/bubble, histogram, pie/donut, Box Plot, Range Bar/Area, Waterfall Radar Line/Area and Nightingale acceptance cover identified local packaged images and captured FMP data in the ordinary Table/File journey. Nightingale passes its financial/control/lifecycle journey and has owner-approved appearance. Both publication jobs, release assets and six anonymous image pulls are verified separately from local browser acceptance. The pictured visual differences are accepted; pixel identity is not claimed. Assembled Compose and owner-run server acceptance remain open. See the [current chart checklist](echarts-status.md) and [Radial evidence](../artifacts/reviewed/chart-radial/verification.md#published-radial-alpha).
+Current state: [alpha-40201437272-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40201437272-1) is published with prebuilt images. Combination, scatter/bubble, histogram, pie/donut, Box Plot, Range Bar/Area, Waterfall, Radar Line/Area, Nightingale, Radial Column/Bar and Treemap/Sunburst acceptance cover identified local packaged images and captured FMP data in the ordinary Table/File journey. Nightingale passes its financial/control/lifecycle journey and has owner-approved appearance. Both publication jobs, release assets and six anonymous image pulls are verified separately from local browser acceptance. The pictured visual differences are accepted; pixel identity is not claimed. Assembled Compose and owner-run server acceptance remain open. See the [current chart checklist](echarts-status.md) and [Hierarchy evidence](../artifacts/reviewed/chart-hierarchy/publication-review.md).
 
 ## Subsequent workstreams
 
@@ -63,7 +63,7 @@ The owner authorized starting the next family while the accepted predecessor fin
 | --- | --- | --- | --- |
 | 1 | Nightingale | Accepted and published | Tagged assets and public image pulls verified |
 | 2 | [Radial Column and Radial Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) | Accepted and published; owner approved both appearances | RC5 assets and anonymous pulls verified |
-| 3 | [Treemap and Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) | Locally accepted for onboarded users; both appearances approved | H5 prebuilt milestone publication |
+| 3 | [Treemap and Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) | Accepted and published for onboarded users; both appearances approved | H5 assets and anonymous pulls verified |
 | Later | Heatmap, funnel family and remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
 
 Renderer and control lanes may run concurrently after their shared contract is accepted. Shared application integration, local heavy checks and publication gates remain serialized. This queue does not mark planned tests or unsupported original paths complete.

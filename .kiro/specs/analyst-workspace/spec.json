@@ -23,7 +23,7 @@
     "name": "treemap-sunburst-port",
     "contract": "hierarchy-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 under the established bounded workflow.",
-    "phase": "accepted-awaiting-publication",
+    "phase": "accepted-published",
     "completed_tasks": [
       "H0",
       "H1a",
@@ -39,7 +39,8 @@
       "H4-tile-padding-source",
       "H4-marker-visibility-source",
       "H4-engine-isolation-source",
-      "H4"
+      "H4",
+      "H5"
     ],
     "feature_accepted": true,
     "application_accepted": true,
@@ -69,7 +70,18 @@
     "h4_financial_source": "99e6878920cf586b94bcf9c59c3177373126d1cf",
     "h4_interaction_image": "sha256:21c08f38e01ddd5ca02b9b5ce0dbc194aa77fa491efb607068a974f319791079",
     "h4_review": "artifacts/reviewed/chart-hierarchy/verification.md",
-    "h4_scope": "Onboarded users: both FMP financial journeys, three candidate cases and two original references accepted; owner accepted both appearances. First-login onboarding remains a separate baseline follow-up."
+    "h4_scope": "Onboarded users: both FMP financial journeys, three candidate cases and two original references accepted; owner accepted both appearances. First-login onboarding remains a separate baseline follow-up.",
+    "release": "alpha-40201437272-1",
+    "publication": {
+      "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-40201437272-1",
+      "manifest": "artifacts/reviewed/chart-hierarchy/release-manifest.json",
+      "review": "artifacts/reviewed/chart-hierarchy/publication-review.md",
+      "images": {
+        "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:284ecc13e40a5443a7e06d2d52fd9c9ba8f9f31eef1de1982777b7cf466d4653",
+        "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:c6feb30cd8ceedd213e134ca0912d97dcff4d19bee62f31ccf0e5a605c776add"
+      },
+      "scope": "Local browser acceptance and CI publication verified separately; installed Compose unchanged."
+    }
   },
   "completed_milestones": [
     {

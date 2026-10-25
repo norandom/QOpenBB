@@ -2,14 +2,14 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-40125164959-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40125164959-1), built from Workspace `9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public image identities passed anonymous digest, release-tag and latest pulls. See [Radial release verification](../artifacts/reviewed/chart-radial/verification.md#published-radial-alpha). Earlier records below remain historical.
+Published: [alpha-40201437272-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40201437272-1), built from Workspace `33a81d387b62e962ecced465b78bf2d303530468` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public image identities passed anonymous digest, release-tag and latest pulls. See [Hierarchy release verification](../artifacts/reviewed/chart-hierarchy/publication-review.md). Earlier records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:f5947359ea5e2e822eefc0effa1876b5ba86b5f973b3c9cf842ab6cd253d89c6` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:533538235e0030596e6d0ed6ef0358f872ae3088f1a12ba1ba8e32c9f476ca5a` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:284ecc13e40a5443a7e06d2d52fd9c9ba8f9f31eef1de1982777b7cf466d4653` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:c6feb30cd8ceedd213e134ca0912d97dcff4d19bee62f31ccf0e5a605c776add` |
 
-The published CI-built pair is distinct from the local image used for the passing Radial Column/Bar financial/control/lifecycle browser journeys. The manifest binds the publication to the reviewed release revisions; it does not claim browser execution against the CI-built bytes.
+The published CI-built pair is distinct from the local image used for the passing Treemap/Sunburst financial/control/lifecycle browser journeys. The manifest binds the publication to the reviewed release revisions; it does not claim browser execution against the CI-built bytes.
 
 ## Build and publication
 

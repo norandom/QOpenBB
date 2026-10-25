@@ -1210,4 +1210,12 @@ requirements = ["analyst-workspace/hierarchy-milestone.md:H4"]
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/hierarchy-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/hierarchy-reference.spec.ts"]
 status = "passed"
-evidence = ["H4 independently accepted for onboarded users: three candidate journeys and two matched original references, retained-FMP eight-leaf total416161000000USD, controls, theme, refresh, fresh reopen/export and clean strict candidate diagnostics. Both owner appearances accepted. Financial source99e6878/image1ab9; marker-repaired synthetic source432c26b/image21c08f; committed harness33a81d387b62e962ecced465b78bf2d303530468 changes only five test files. artifacts/reviewed/chart-hierarchy/verification.md. First-login onboarding remains a separate open baseline follow-up; H5 publication remains open."]
+evidence = ["H4 independently accepted for onboarded users: three candidate journeys and two matched original references, retained-FMP eight-leaf total416161000000USD, controls, theme, refresh, fresh reopen/export and clean strict candidate diagnostics. Both owner appearances accepted. Financial source99e6878/image1ab9; marker-repaired synthetic source432c26b/image21c08f; committed harness33a81d387b62e962ecced465b78bf2d303530468 changes only five test files. artifacts/reviewed/chart-hierarchy/verification.md. First-login onboarding remains a separate open baseline follow-up; H5 publication is verified in hierarchy-milestone-publication."]
+
+[[capabilities]]
+id = "hierarchy-milestone-publication"
+requirements = ["analyst-workspace/hierarchy-milestone.md:H5"]
+planned_checks = []
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py"]
+status = "passed"
+evidence = ["alpha-40201437272-1: both CI jobs, exact source pins, three anonymous assets and six anonymous image pulls verified; artifacts/reviewed/chart-hierarchy/publication-review.md. Compose config-only passes. CI image bytes were not browser-tested; installed Compose and owner-server acceptance are unchanged."]

@@ -35,7 +35,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Accept real-data behavior and appearance.
 - [x] Publish the accepted milestone as [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1); release assets and six anonymous pulls verified.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) is locally accepted for onboarded users, including packaged FMP, controls, appearance, persistence and export. H5 publication remains open.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) is locally accepted for onboarded users, including packaged FMP, controls, appearance, persistence and export. H5 publication and anonymous image pulls are verified.
 
 ## Open
 
@@ -170,6 +170,6 @@ The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) reco
 - [x] Restore native Tile Padding effects with native and packaged financial rendering checks.
 - [x] Repair first-hover gradient marker visibility with native regressions and the rebuilt interaction journey.
 - [x] Verify real-FMP values, appearance, controls and lifecycle for onboarded users (H4).
-- [ ] Publish the accepted hierarchy milestone and verify public image identities (H5).
+- [x] Publish the accepted hierarchy milestone and verify public image identities (H5).
 
-See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). Hierarchy is locally accepted for onboarded users. Publication remains open; first-login onboarding diagnostics are tracked separately.
+See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). Hierarchy is locally accepted for onboarded users. Publication is verified; first-login onboarding diagnostics are tracked separately.
