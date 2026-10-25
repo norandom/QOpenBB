@@ -1,15 +1,15 @@
 # Hierarchy renderer and controls: next batch
 
-Finish the four interface decisions below, then implement Treemap/Sunburst rendering and controls in parallel. The inactive capture/setup foundation is accepted at Workspace `fb0113c78a9b143edd4df3957e84e13ee3b98647`. Rendering, live integration and packaged financial acceptance remain open. This is the next-work plan dated 2026-10-25, not an approved implementation freeze.
+The four readiness decisions are complete and joined in the [renderer/control design](hierarchy-renderer-design.md). Implement Treemap/Sunburst rendering and controls in parallel against the accepted shared declarations. Rendering, live integration and packaged financial acceptance remain open. This plan was updated on 2026-10-25.
 
-The [hierarchy contract](hierarchy-contract.md) owns behavior, the [setup design](hierarchy-setup-design.md) owns prepared financial data, and the [milestone](hierarchy-milestone.md) owns completion. The [independent renderer design review](../../../artifacts/reviewed/chart-hierarchy/renderer-design-review.md) accepts the architectural direction and identifies the remaining decisions.
+The [hierarchy contract](hierarchy-contract.md) owns behavior, the [setup design](hierarchy-setup-design.md) owns prepared financial data, and the [milestone](hierarchy-milestone.md) owns completion. The [independent renderer design review](../../../artifacts/reviewed/chart-hierarchy/renderer-design-review.md) records the initial gaps; the [final join review](../../../artifacts/reviewed/chart-hierarchy/renderer-final-design-review.md) accepts their resolution.
 
 ## Before parallel implementation
 
-- [ ] Observe only equal finite Color and selected-but-all-missing Color in the pinned original. Record legend labels, bar and control availability for both families using one fixture. Keep the financial legend range separate from the paint fallback; never present an invented 0..1 range as observed data.
-- [ ] Freeze exact appearance, editor state and intent interfaces, including their owning files. Reuse existing title/background/padding/tooltip states and transactions. Preserve Size/Color assignment and ordered categories from H1c.
-- [ ] Inventory source-valid saved label and paint policies before narrowing the adapter's types. Preserve supported saved configurations; a diagnostic for an unsupported policy is not equivalent rendering or permission to remove a feature.
-- [ ] Assign the gradient hover indicator an explicit event and lifecycle owner. Freeze how the renderer and existing host cooperate; do not silently omit the visible effect.
+- [x] Observe only equal finite Color and selected-but-all-missing Color in the pinned original. Record legend labels, bar and control availability for both families using one fixture. Keep the financial legend range separate from the paint fallback; never present an invented 0..1 range as observed data.
+- [x] Freeze exact appearance, editor state and intent interfaces, including their owning files. Reuse existing title/background/padding/tooltip states and transactions. Preserve Size/Color assignment and ordered categories from H1c.
+- [x] Inventory source-valid saved label and paint policies before narrowing the adapter's types. Preserve supported saved configurations; a diagnostic for an unsupported policy is not equivalent rendering or permission to remove a feature.
+- [x] Assign the gradient hover indicator an explicit event and lifecycle owner. Freeze how the renderer and existing host cooperate; do not silently omit the visible effect.
 
 These are focused readiness checks. Do not repeat the completed hierarchy observation matrix or expand into a custom layout framework. If an original edge case requires a financial behavior correction, present that specific choice to the owner.
 
