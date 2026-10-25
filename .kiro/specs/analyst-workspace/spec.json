@@ -23,12 +23,13 @@
     "name": "treemap-sunburst-port",
     "contract": "hierarchy-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 under the established bounded workflow.",
-    "phase": "hierarchy-renderer-design",
+    "phase": "hierarchy-renderer-foundation",
     "completed_tasks": [
       "H0",
       "H1a",
       "H1b",
-      "H1c"
+      "H1c",
+      "H2.0-types"
     ],
     "feature_accepted": false,
     "application_accepted": false,
@@ -40,7 +41,9 @@
     "h1b_source": "61d1475205bd6bd18799309e674cb6d96494ff15",
     "h1b_review": "artifacts/reviewed/chart-hierarchy/inactive-capture-review.md",
     "h1c_source": "fb0113c78a9b143edd4df3957e84e13ee3b98647",
-    "h1c_review": "artifacts/reviewed/chart-hierarchy/inactive-setup-review.md"
+    "h1c_review": "artifacts/reviewed/chart-hierarchy/inactive-setup-review.md",
+    "h2_types_source": "fc0f02f0b01df8c5629849556b13db8b957fe808",
+    "h2_types_review": "artifacts/reviewed/chart-hierarchy/renderer-types-review.md"
   },
   "completed_milestones": [
     {

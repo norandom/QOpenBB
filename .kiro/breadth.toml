@@ -1123,3 +1123,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySetupProjection.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySetupTransitions.test.ts"]
 status = "passed"
 evidence = ["Inactive source fb0113c78a9b143edd4df3957e84e13ee3b98647: 13 independently rerun focused tests, baseline-relative static checks and combined size gate; artifacts/reviewed/chart-hierarchy/inactive-setup-review.md. Retained FMP reconciliation is unit evidence, not rendered application acceptance."]
+
+[[capabilities]]
+id = "hierarchy-renderer-declarations"
+requirements = ["analyst-workspace/hierarchy-renderer-plan.md", "analyst-workspace/hierarchy-milestone.md:H2"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyAppearance.typecheck.ts"]
+status = "passed"
+evidence = ["Inactive source fc0f02f0b01df8c5629849556b13db8b957fe808: strict compile fixture has zero diagnostic delta from four inherited errors; independent review and combined caps pass. artifacts/reviewed/chart-hierarchy/renderer-types-review.md. No renderer, control or application acceptance."]

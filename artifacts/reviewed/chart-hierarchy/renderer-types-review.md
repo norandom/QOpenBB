@@ -1,0 +1,17 @@
+# H2.0 declaration implementation review
+
+**APPROVED for the inactive five-file shared declaration seam and one compile-only fixture.** Parent's inventory-backed combined gate remains a closure prerequisite. Reviewed 2026-10-25 against accepted H1c baseline `fb0113c78a9b143edd4df3957e84e13ee3b98647`.
+
+All six current file hashes independently match `frozen-paths.json`, manifest SHA256 `c7f373c890a710a9425592b8777ada9dd90f50dc250df7cdeb0c8f372b25067d`. Read each production declaration and the fixture, the approved editor/appearance/hover contracts and worker static report. No production or test changes were made by this reviewer.
+
+The implementation preserves the approved ownership split: paint/labels, appearance/input, editor state/intents/props, mapping and hover. All new production imports are type-only. There is no runtime activation, live session union change, lifecycle modification or dependency change in this scope. H1c projection and assignments are reused directly; no duplicated financial tree or numeric transform was introduced.
+
+Concrete contracts match the freeze: four wrapping policies; readonly saved advanced-fill data; group versus auto label distinction; Treemap versus Sunburst style discrimination; no invented direct Sunburst fill/stroke; title/subtitle-only editor state and edits; correlated gradient field/value types; no categorical legend or axis placeholder; fresh style/assignments context without a second family; and viewport-derived hover plan with the resize invalidation constraint documented. Optional saved fill members remain optional rather than requiring resolved defaults. Declaring advanced paints establishes retention/admission shape, not their rendering.
+
+Independent strict verification used pinned Node and `verification/node_modules/typescript/bin/tsc --project artifacts/chart-hierarchy/h2-types/tsconfig.json --noEmit --pretty false`. `reviewer-tsc.log` contains exactly the same four inherited diagnostics as the pre-production baseline, with zero added or removed lines and no owned diagnostics. The compiler is not clean: inherited typography implicit-any and three Zod `AnyZodObject` diagnostics remain. A direct WSL invocation also returned nonzero with those same four lines; launcher exit conventions do not turn this into a clean check.
+
+The fixture exercises positive imports/calls and meaningful negative constraints for field/value correlation, axis captions, categorical marker fields, missing image URL, invalid wrapping, family-only fields and nested palette mutation. Worker corrected two formatting-displaced expected-error directives before freeze. The final fixture produced no unused-directive or task-owned diagnostic in the independent run. This is compile evidence, not an executed UI test.
+
+Reviewed worker lint and syntax measurements: six-file lint exit0; production maxima129 physical/86 logical with no function bodies; fixture188 physical/56 logical and largest function28 logical. All satisfy400/300/50. Parent's registered-manifest gate is still required; no broad build or runtime test is warranted for these inactive declarations.
+
+No blocking source findings remain. Finite legend observations, dependency installation, runtime resolution/validation, controls, native rendering/hover, atomic H3 lifecycle/session wiring and H4 financial/visual/fresh-session acceptance remain separate outstanding work. This approval does not close H2 or claim any rendered behavior.

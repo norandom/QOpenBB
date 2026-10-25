@@ -170,6 +170,22 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-hierarchy/h2-readiness-review.md",
+      "sourceSHA256": "628625ee317a65ae1647ba63761e01c3b0feb66a48c4218e95dda702592a36ca",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/renderer-readiness-review.md",
+      "publishedSHA256": "628625ee317a65ae1647ba63761e01c3b0feb66a48c4218e95dda702592a36ca",
+      "bytes": 5978,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-hierarchy/h2-types/review.md",
+      "sourceSHA256": "09b12ccb2ea1b2f5c59581d799e376e77260642f2b1a8b7cc20942379c4fcf29",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/renderer-types-review.md",
+      "publishedSHA256": "09b12ccb2ea1b2f5c59581d799e376e77260642f2b1a8b7cc20942379c4fcf29",
+      "bytes": 3463,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-hierarchy/h2-design-review.md",
       "sourceSHA256": "3a628ade8c83ea55036c55d1ed611b461e6b2e18e348846ac7da2c33068ef22d",
       "publishedpath": "artifacts/reviewed/chart-hierarchy/renderer-design-review.md",
@@ -33313,7 +33329,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167610159,
+  "total_payload_bytes": 167619600,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
