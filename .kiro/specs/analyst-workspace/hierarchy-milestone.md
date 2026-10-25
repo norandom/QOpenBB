@@ -1,10 +1,10 @@
 # Treemap and Sunburst parity
 
-Treemap and Sunburst source integration is independently accepted under UI-12. Packaged financial, visual and persistence acceptance remains open. The implementation preserves the existing Table/File workflow, gallery, theme, controls, saved options and visible flags; H4 must verify these in the packaged application.
+Treemap and Sunburst are locally accepted under UI-12 for onboarded users. Retained-FMP financial checks, controls, theme, refresh, fresh-session persistence, export and both owner appearance decisions pass. [Independent verification](../../../artifacts/reviewed/chart-hierarchy/verification.md) records exact source/image boundaries. H5 prebuilt image publication remains open; first-login onboarding is a separate baseline follow-up.
 
 ## Acceptance boundary
 
-Reuse the existing ECharts host, session lifecycle, persistence and export. Hierarchy needs ordered category paths: the current snapshot stores one category and cannot represent those paths. Freeze a deliberate capture/setup extension before renderer and controls fan out. Do not weaken existing grouped, pivot, tree, pinned or remote-row guards or claim those paths are supported through an ordinary File chart.
+Reuse the existing ECharts host, session lifecycle, persistence and export. Hierarchy uses ordered category paths through the reviewed capture/setup extension. Do not weaken existing grouped, pivot, tree, pinned or remote-row guards or claim those paths are supported through an ordinary File chart.
 
 The original source distinguishes size from color. The first numeric field supplies size, the second color; they are not two additive series. Multiple category columns define ordered levels. Source inspection also finds missing leaf size falling back to one, negative size clamped to zero and duplicate full paths retaining the last row before any explicit grid aggregation. Original application probes confirm missing-size area, negative/zero empty area and last-row duplicate behavior. The owner approved excluding missing sizes from area when a size field is selected; deliberate no-size count weighting is unchanged. Other semantics remain as observed/source-backed in the reviewed contract.
 
@@ -22,10 +22,10 @@ The original source distinguishes size from color. The first numeric field suppl
   - [x] Independently accept inactive Set Up and Customize panels with existing controls.
   - [x] Accept inactive session/caller/lifecycle helpers and behavior-preserving extractions.
   - [x] Complete and independently review the atomic live join.
-- [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
-  - [x] Repair Tile Padding effects in native composed-default rendering; rebuilt packaged verification remains pending.
-  - [x] Repair first-hover gradient marker visibility after appearance changes; rebuilt interaction verification remains pending.
-  - [x] Add independently reviewed owned-engine selection to avoid cross-project Dagger engine replacement; isolated export remains pending.
+- [x] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
+  - [x] Repair Tile Padding effects in native composed-default rendering; packaged financial verification passes.
+  - [x] Repair first-hover gradient marker visibility after appearance changes; the rebuilt interaction journey passes.
+  - [x] Add independently reviewed owned-engine selection and verify an isolated export without replacing other projects' engines.
 - [ ] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
 
 H0 research is documentation-only and outside production size caps. Before H1-H3 dispatch, freeze exact writable paths and exported interfaces. Every new or modified production file must pass 400 physical lines, 300 logical units and 50/function, with inventory-backed verification. The shared join owns any cohesive extraction needed by files near those limits. No implicit size exception or parallel edits to shared state owners.
@@ -40,13 +40,15 @@ A compact discriminator must distinguish ordered category levels, duplicate full
 
 Use retained AAPL FY2025 quarterly cost of revenue and gross profit as eight leaves: fiscal quarter -> revenue component, sized in reported USD. The two components reconcile exactly to each quarter's revenue; the four-quarter total is 416,161,000,000 USD. Revenue is a reconciliation reference, never an extra leaf or internal own amount. Preserve fiscal labels, reporting dates and source provenance; parent totals are derived.
 
-The retained response is FMP /stable/income-statement, symbol AAPL, period quarter, limit 40, retrieved 2026-10-20T14:06:05.149732+00:00; SHA256 390dc8cbfc8302720a203bd9782d5e3b1f7363a4f762bdfcef079dbbe4c72f6b. This is a proposed reshape of retained data, not a fresh provider request or application acceptance. Use a separate synthetic fixture for color edge cases until a financially meaningful second real measure is selected.
+The retained response is FMP /stable/income-statement, symbol AAPL, period quarter, limit 40, retrieved 2026-10-20T14:06:05.149732+00:00; SHA256 390dc8cbfc8302720a203bd9782d5e3b1f7363a4f762bdfcef079dbbe4c72f6b. H4 verifies this reshape against the retained response; no fresh provider request is claimed. A separate synthetic fixture covers color edge cases.
 
-Real-FMP chart examples remain pending verified application captures. Radial is published. Hierarchy is the active implementation milestone; original probing does not change the published alpha or installed Compose.
+The verified examples below use retained FMP observations. Radial remains the published predecessor; hierarchy publication is pending. The installed Compose environment is unchanged.
 
 See the [original-source research](../../../artifacts/reviewed/chart-hierarchy/research-contract.md) and [independent plan review](../../../artifacts/reviewed/chart-hierarchy/plan-review.md). Source research is not a runtime pass.
 
-## H0 acceptance
+## Earlier source checkpoints
+
+These records describe acceptance at each source revision. Their pending-work statements are historical; the H4 result above supersedes them.
 
 The [hierarchy contract](hierarchy-contract.md) defines observed semantics, source-backed canonical paths, owner-approved missing-size handling and H1a exact ownership/types. [Independent design review](../../../artifacts/reviewed/chart-hierarchy/design-review.md) approves this bounded freeze. [Original observations review](../../../artifacts/reviewed/chart-hierarchy/observed-contract-review.md) distinguishes completed probes from diagnostic limitations and deferred H4 checks. The replacement will honor the existing tooltip toggle intent; the original toggle is inert in both observed families. No hierarchy replacement or financial runtime acceptance is claimed.
 
@@ -75,3 +77,17 @@ H3 live application join is independently accepted at Workspace `2647c37f9dd1d84
 H4 preparation found default label boxing padding masking Tile Padding. The independently reviewed source repair is committed at Workspace `99e6878920cf586b94bcf9c59c3177373126d1cf`; native rendering checks preserve geometry and explicit active boxing. [Repair review](../../../artifacts/reviewed/chart-hierarchy/tile-padding-review.md). The initial `2647c37` image does not contain this repair; rebuilt financial and visual acceptance remains open.
 
 The gradient-marker source repair is independently accepted at Workspace `432c26b93328b14b7a9d79d37bafe6203a738cfa`. It makes the seeded marker visible on the first valid hover after a full appearance repaint, including Tooltips Off. [Repair review](../../../artifacts/reviewed/chart-hierarchy/marker-visibility-review.md). Both financial journeys and owner appearance decisions passed on the preceding image; the final synthetic interaction case must pass on a rebuilt image before H4 closes.
+
+H4 chart acceptance covers onboarded users with strict diagnostics observed before login. The pre-existing [first-login onboarding error](../openbb-self-service/first-login-diagnostics.md) remains a separate open baseline gap; failed first-login runs are retained and not counted as chart passes.
+
+## Accepted FMP examples
+
+Both figures show AAPL FY2025 quarterly cost of revenue and gross profit in reported USD: quarter -> component, eight leaves totalling 416,161,000,000 USD. Revenue is reconciliation only. Captured on Workspace `99e6878`, image `1ab9db4`; the later marker-only repair is separately verified on `432c26b`, image `21c08f38`. Owner accepted both appearances on 2026-10-25.
+
+![Treemap: AAPL FY2025 revenue components](../../../artifacts/reviewed/chart-hierarchy/treemap-fmp.png)
+
+Treemap uses parent/child area allocations. [Original comparison](../../../artifacts/reviewed/chart-hierarchy/treemap-original.png).
+
+![Sunburst: AAPL FY2025 revenue components](../../../artifacts/reviewed/chart-hierarchy/sunburst-fmp.png)
+
+Sunburst uses parent/child angular allocations. [Original comparison](../../../artifacts/reviewed/chart-hierarchy/sunburst-original.png).

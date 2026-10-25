@@ -115,7 +115,10 @@ Waterfall remains available in the current alpha alongside Radar. Local applicat
 
 Accepted chart milestone: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-milestone.md).
 
-Radial Column/Bar is accepted and published; RC5 release assets and anonymous image pulls are verified. See the [Radial milestone](.kiro/specs/analyst-workspace/radial-milestone.md). [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md) H0 contract is independently accepted; hierarchy source integration, padding and marker visibility repairs are accepted; financial journeys and both appearances passed, with rebuilt interaction checks still open; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
+Radial Column/Bar is accepted and published; RC5 release assets and anonymous image pulls are verified. See the [Radial milestone](.kiro/specs/analyst-workspace/radial-milestone.md). [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md) is locally accepted for onboarded users; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
+
+- [x] Verify hierarchy FMP values, controls, approved appearance, persistence and export.
+- [ ] Publish the accepted hierarchy milestone images.
 
 - [x] Freeze the Radial control contract and implement its inactive controls.
 - [x] Implement the independently reviewed Radial Column shape helper.

@@ -64,7 +64,7 @@ Export starts Dagger with a fresh empty HOME and Docker configuration and an exp
 For concurrent local projects, direct `image_cli export` also accepts `--engine-container qopenbb-dagger-engine-local`. Provision this dedicated helper separately using the locked engine image, a private cache, and labels `org.qopenbb.owner=qopenbb` and `org.qopenbb.purpose=dagger-engine`. The exporter only connects to it; it does not create, stop or delete engines. Inspection and the build share the same sanitized Docker configuration. Exact image identity, ownership and the same container ID must pass before and after export. This avoids Dagger's default shared-engine replacement behavior; the default CI path is unchanged. This is a build helper, not a deployment Compose service.
 
 - [x] Independently verify owned-engine selection, configuration isolation and failure handling; [source review](../artifacts/reviewed/chart-hierarchy/engine-isolation-review.md).
-- [ ] Verify an actual export through the dedicated engine.
+- [x] Verify an actual export through the dedicated engine: hierarchy candidate `21c08f38` built and loaded on 2026-10-25 with unchanged engine identity and all prior containers preserved. Packaged chart acceptance is tracked in the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md).
 
 ## Interpret the identities
 

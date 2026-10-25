@@ -170,6 +170,46 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-hierarchy/h4/browser/original-sunburst-3/browser-output/hierarchy-reference-H4-ori-86804-d-retained-FY2025-reference/sunburst-widget-light.png",
+      "sourceSHA256": "df5d097d5403c4ccfa454763a7cb3fbfb39745dfdac1b265b1026e7a9980d826",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/sunburst-original.png",
+      "publishedSHA256": "df5d097d5403c4ccfa454763a7cb3fbfb39745dfdac1b265b1026e7a9980d826",
+      "bytes": 60517,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-hierarchy/h4/browser/original-treemap-2/browser-output/hierarchy-reference-H4-ori-50db2-d-retained-FY2025-reference/treemap-widget-light.png",
+      "sourceSHA256": "8f2fb57883392de6aaa597ebfe0777e30dbffe7a6103844675b439ba36991ad4",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/treemap-original.png",
+      "publishedSHA256": "8f2fb57883392de6aaa597ebfe0777e30dbffe7a6103844675b439ba36991ad4",
+      "bytes": 25192,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-hierarchy/h4/browser/candidate2-sunburst-3/browser-output/hierarchy-chart-H4-candida-a52b7--FY2025-financial-lifecycle/sunburst-widget-light.png",
+      "sourceSHA256": "e568a68f4e986be3f429a5970ef9a4888150ff7eeb5d089909cad1979402af64",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/sunburst-fmp.png",
+      "publishedSHA256": "e568a68f4e986be3f429a5970ef9a4888150ff7eeb5d089909cad1979402af64",
+      "bytes": 63144,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-hierarchy/h4/browser/candidate2-treemap-3/browser-output/hierarchy-chart-H4-candida-de311--FY2025-financial-lifecycle/treemap-widget-light.png",
+      "sourceSHA256": "b2c81a17640d83e21bdcc88ac029ad67f65e451ac9396a9552eb20f54df2614b",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/treemap-fmp.png",
+      "publishedSHA256": "b2c81a17640d83e21bdcc88ac029ad67f65e451ac9396a9552eb20f54df2614b",
+      "bytes": 25129,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-hierarchy/h4/final-review.md",
+      "sourceSHA256": "9bfbe23e36938b65729707e3acda14026b258b68b34247f2c2aeb5c9b15818ee",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/verification.md",
+      "publishedSHA256": "9bfbe23e36938b65729707e3acda14026b258b68b34247f2c2aeb5c9b15818ee",
+      "bytes": 6236,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-hierarchy/h4/engine-isolation/review.md",
       "sourceSHA256": "2e125754b18a37518d0d6864db2043c2884d6e9cc6fb4dfc169d28a1f3b9d08d",
       "publishedpath": "artifacts/reviewed/chart-hierarchy/engine-isolation-review.md",
@@ -33417,7 +33457,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167691822,
+  "total_payload_bytes": 167872040,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

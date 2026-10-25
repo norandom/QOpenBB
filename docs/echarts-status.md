@@ -35,7 +35,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Accept real-data behavior and appearance.
 - [x] Publish the accepted milestone as [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1); release assets and six anonymous pulls verified.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) H0 contract is independently accepted; hierarchy source integration is accepted; packaged FMP and visual acceptance is next.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) is locally accepted for onboarded users, including packaged FMP, controls, appearance, persistence and export. H5 publication remains open.
 
 ## Open
 
@@ -71,7 +71,7 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [x] Independently accept the inactive Range Bar renderer core (R2).
 - [x] Implement and accept the bounded [Waterfall](../.kiro/specs/analyst-workspace/waterfall-milestone.md) application journey: retained-FMP financial geometry, default sign legend, controls, navigation, tooltips, refresh, fresh reopen and export pass; owner accepts the appearance.
 - [x] Publish and verify the accepted Waterfall milestone images as alpha-40002594897-1; both source pins, release assets and six anonymous pulls are verified separately from local browser acceptance.
-- [ ] Complete hierarchy, heatmap and other specialty families.
+- [ ] Complete heatmap and other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.
 - [ ] Complete remaining saved-state behavior, exports and caller-specific controls.
@@ -166,9 +166,10 @@ The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) reco
 - [x] Implement and independently review inactive hierarchy renderer (H2).
 - [x] Accept inactive hierarchy Set Up and Customize panels (H3 preparation).
 - [x] Accept inactive hierarchy session, caller and lifecycle helpers (H3 preparation).
-- [x] Integrate hierarchy through the existing application session and editor (H3); packaged H4 acceptance remains open.
-- [x] Restore native Tile Padding effects with composed-default rendering checks; rebuilt browser verification remains open.
-- [x] Repair first-hover gradient marker visibility with native rendering regressions; rebuilt interaction verification remains open.
-- [ ] Verify real-FMP appearance and lifecycle, then publish (H4-H5).
+- [x] Integrate hierarchy through the existing application session and editor (H3).
+- [x] Restore native Tile Padding effects with native and packaged financial rendering checks.
+- [x] Repair first-hover gradient marker visibility with native regressions and the rebuilt interaction journey.
+- [x] Verify real-FMP values, appearance, controls and lifecycle for onboarded users (H4).
+- [ ] Publish the accepted hierarchy milestone and verify public image identities (H5).
 
-See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). Hierarchy source integration is accepted; packaged financial, visual and persistence acceptance remains open.
+See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). Hierarchy is locally accepted for onboarded users. Publication remains open; first-login onboarding diagnostics are tracked separately.

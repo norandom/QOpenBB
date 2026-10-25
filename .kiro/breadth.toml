@@ -1098,7 +1098,7 @@ requirements = ["analyst-workspace/hierarchy-milestone.md:H0"]
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/hierarchy-original.spec.ts"]
 status = "passed"
-evidence = ["Bounded original characterization only: Treemap runs2/5 and Sunburst runs3/6 completed, independent observed/design reviews under artifacts/reviewed/chart-hierarchy. Original diagnostic errors retained; source-pinned local-only probe is not a candidate regression or clean E2E claim. No hierarchy replacement acceptance."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Bounded original characterization only: Treemap runs2/5 and Sunburst runs3/6 completed, independent observed/design reviews under artifacts/reviewed/chart-hierarchy. Original diagnostic errors retained; source-pinned local-only probe is not a candidate regression or clean E2E claim. No hierarchy replacement acceptance."]
 
 [[capabilities]]
 id = "hierarchy-inactive-type-contracts"
@@ -1106,7 +1106,7 @@ requirements = ["analyst-workspace/hierarchy-contract.md:H1a", "analyst-workspac
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyContracts.typecheck.ts"]
 status = "passed"
-evidence = ["Type-only source 2e900d9965902a88adba3338732de2efb054248d: independent scoped strict baseline/candidate have identical four inherited diagnostics, no new errors; formatting and combined size gate pass. artifacts/reviewed/chart-hierarchy/inactive-types-review.md. No runtime validator, capture or rendering acceptance."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Type-only source 2e900d9965902a88adba3338732de2efb054248d: independent scoped strict baseline/candidate have identical four inherited diagnostics, no new errors; formatting and combined size gate pass. artifacts/reviewed/chart-hierarchy/inactive-types-review.md. No runtime validator, capture or rendering acceptance."]
 
 [[capabilities]]
 id = "hierarchy-inactive-capture"
@@ -1114,7 +1114,7 @@ requirements = ["analyst-workspace/hierarchy-capture-design.md", "analyst-worksp
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchySnapshot.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchyCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts"]
 status = "passed"
-evidence = ["Inactive source 61d1475205bd6bd18799309e674cb6d96494ff15: independent focused tests, baseline comparison and combined size gate; artifacts/reviewed/chart-hierarchy/inactive-capture-review.md. No setup projection, live routing, rendering or packaged hierarchy acceptance."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Inactive source 61d1475205bd6bd18799309e674cb6d96494ff15: independent focused tests, baseline comparison and combined size gate; artifacts/reviewed/chart-hierarchy/inactive-capture-review.md. No setup projection, live routing, rendering or packaged hierarchy acceptance."]
 
 [[capabilities]]
 id = "hierarchy-inactive-setup"
@@ -1122,7 +1122,7 @@ requirements = ["analyst-workspace/hierarchy-setup-design.md", "analyst-workspac
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySetupProjection.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySetupTransitions.test.ts"]
 status = "passed"
-evidence = ["Inactive source fb0113c78a9b143edd4df3957e84e13ee3b98647: 13 independently rerun focused tests, baseline-relative static checks and combined size gate; artifacts/reviewed/chart-hierarchy/inactive-setup-review.md. Retained FMP reconciliation is unit evidence, not rendered application acceptance."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Inactive source fb0113c78a9b143edd4df3957e84e13ee3b98647: 13 independently rerun focused tests, baseline-relative static checks and combined size gate; artifacts/reviewed/chart-hierarchy/inactive-setup-review.md. Retained FMP reconciliation is unit evidence, not rendered application acceptance."]
 
 [[capabilities]]
 id = "hierarchy-renderer-declarations"
@@ -1130,7 +1130,7 @@ requirements = ["analyst-workspace/hierarchy-renderer-plan.md", "analyst-workspa
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyAppearance.typecheck.ts"]
 status = "passed"
-evidence = ["Inactive source fc0f02f0b01df8c5629849556b13db8b957fe808: strict compile fixture has zero diagnostic delta from four inherited errors; independent review and combined caps pass. artifacts/reviewed/chart-hierarchy/renderer-types-review.md. No renderer, control or application acceptance."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Inactive source fc0f02f0b01df8c5629849556b13db8b957fe808: strict compile fixture has zero diagnostic delta from four inherited errors; independent review and combined caps pass. artifacts/reviewed/chart-hierarchy/renderer-types-review.md. No renderer, control or application acceptance."]
 
 [[capabilities]]
 id = "hierarchy-inactive-controls"
@@ -1138,7 +1138,7 @@ requirements = ["analyst-workspace/hierarchy-renderer-design.md", "analyst-works
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyAppearance.test.ts"]
 status = "passed"
-evidence = ["Inactive source 1b7c3e7decd50ed197ce3c60470876ecdce9ab42: 32 independent focused tests, no added strict diagnostics, combined caps pass. artifacts/reviewed/chart-hierarchy/inactive-controls-review.md. Live integration and packaged financial/visual acceptance remain open."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Inactive source 1b7c3e7decd50ed197ce3c60470876ecdce9ab42: 32 independent focused tests, no added strict diagnostics, combined caps pass. artifacts/reviewed/chart-hierarchy/inactive-controls-review.md. Live integration and packaged financial/visual acceptance remain open."]
 
 [[capabilities]]
 id = "hierarchy-inactive-renderer"
@@ -1146,7 +1146,7 @@ requirements = ["analyst-workspace/hierarchy-renderer-design.md", "analyst-works
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyEngine.test.ts"]
 status = "passed"
-evidence = ["Inactive source a4b0a7da0c47e63eafc7efa4c450cf73addf5f1d: 26 independent focused tests, no added strict diagnostics, combined caps pass. artifacts/reviewed/chart-hierarchy/inactive-renderer-review.md. Live integration and packaged financial/visual acceptance remain open."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Inactive source a4b0a7da0c47e63eafc7efa4c450cf73addf5f1d: 26 independent focused tests, no added strict diagnostics, combined caps pass. artifacts/reviewed/chart-hierarchy/inactive-renderer-review.md. Live integration and packaged financial/visual acceptance remain open."]
 
 [[capabilities]]
 id = "hierarchy-inactive-editor-panels"
@@ -1154,7 +1154,7 @@ requirements = ["analyst-workspace/hierarchy-integration-design.md", "analyst-wo
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/hierarchyEditor.test.tsx"]
 status = "passed"
-evidence = ["Inactive source a5112cb3312c85524b32fe6bba7c35e1bb23e0b9: nine independently passing interaction tests, unchanged inherited strict diagnostics, combined caps pass. artifacts/reviewed/chart-hierarchy/integration-ui-review.md. Live application and packaged visual acceptance remain open."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Inactive source a5112cb3312c85524b32fe6bba7c35e1bb23e0b9: nine independently passing interaction tests, unchanged inherited strict diagnostics, combined caps pass. artifacts/reviewed/chart-hierarchy/integration-ui-review.md. Live application and packaged visual acceptance remain open."]
 
 [[capabilities]]
 id = "hierarchy-inactive-session-helpers"
@@ -1162,7 +1162,7 @@ requirements = ["analyst-workspace/hierarchy-integration-design.md", "analyst-wo
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySession.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyHoverBinding.test.ts"]
 status = "passed"
-evidence = ["Inactive source 15db313febfda9d9a30b2b2f442daed54183d447: 137 affected application and 36 lifecycle/hover tests pass; independent targeted checks and inventory caps pass. Broad TypeScript errors remain, including four newly reachable CSS-declaration errors in accepted panels; no helper-owned additions. artifacts/reviewed/chart-hierarchy/integration-helpers-review.md. Live join and packaged acceptance remain open."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Inactive source 15db313febfda9d9a30b2b2f442daed54183d447: 137 affected application and 36 lifecycle/hover tests pass; independent targeted checks and inventory caps pass. Broad TypeScript errors remain, including four newly reachable CSS-declaration errors in accepted panels; no helper-owned additions. artifacts/reviewed/chart-hierarchy/integration-helpers-review.md. Live join and packaged acceptance remain open."]
 
 [[capabilities]]
 id = "hierarchy-live-application-join"
@@ -1170,7 +1170,7 @@ requirements = ["analyst-workspace/hierarchy-integration-design.md", "analyst-wo
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySession.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyHoverBinding.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts"]
 status = "passed"
-evidence = ["Source integration 2647c37f9dd1d84b1f41da28383ace73e0b10c15: independent focused review, affected regressions and combined caps pass. Broad TypeScript inherited diagnostics remain; this is not a clean full build or packaged runtime acceptance. artifacts/reviewed/chart-hierarchy/integration-join-review.md. H4 remains unverified."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Source integration 2647c37f9dd1d84b1f41da28383ace73e0b10c15: independent focused review, affected regressions and combined caps pass. Broad TypeScript inherited diagnostics remain; this is not a clean full build or packaged runtime acceptance. artifacts/reviewed/chart-hierarchy/integration-join-review.md. H4 remains unverified."]
 
 [[capabilities]]
 id = "hierarchy-tile-padding-renderer"
@@ -1178,7 +1178,7 @@ requirements = ["analyst-workspace/hierarchy-renderer-design.md", "analyst-works
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyEngine.test.ts"]
 status = "passed"
-evidence = ["Source repair 99e6878920cf586b94bcf9c59c3177373126d1cf: 29 native tests and independent supplemental boxing/Sunburst probes pass; unchanged inherited strict diagnostic; combined caps pass. artifacts/reviewed/chart-hierarchy/tile-padding-review.md. Rebuilt packaged behavior remains unverified."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Source repair 99e6878920cf586b94bcf9c59c3177373126d1cf: 29 native tests and independent supplemental boxing/Sunburst probes pass; unchanged inherited strict diagnostic; combined caps pass. artifacts/reviewed/chart-hierarchy/tile-padding-review.md. Rebuilt packaged behavior remains unverified."]
 
 [[capabilities]]
 id = "hierarchy-marker-first-hover"
@@ -1186,12 +1186,28 @@ requirements = ["analyst-workspace/hierarchy-renderer-design.md", "analyst-works
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyHoverBinding.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyHoverBinding.test.ts"]
 status = "passed"
-evidence = ["Source repair 432c26b93328b14b7a9d79d37bafe6203a738cfa: real ECharts regression fails on the prior binding and passes after explicit marker visibility; 74 affected checks, unchanged inherited strict diagnostic and combined caps pass. artifacts/reviewed/chart-hierarchy/marker-visibility-review.md. Rebuilt packaged interaction acceptance remains open."]
+evidence = ["Historical source checkpoint; current packaged acceptance is recorded in hierarchy-packaged-chart-acceptance. Source repair 432c26b93328b14b7a9d79d37bafe6203a738cfa: real ECharts regression fails on the prior binding and passes after explicit marker visibility; 74 affected checks, unchanged inherited strict diagnostic and combined caps pass. artifacts/reviewed/chart-hierarchy/marker-visibility-review.md. Rebuilt packaged interaction acceptance remains open."]
 
 [[capabilities]]
 id = "owned-dagger-engine-selection"
 requirements = ["9.1", "9.6", "analyst-workspace/hierarchy-milestone.md:H4"]
-planned_checks = ["actual-isolated-engine-export"]
+planned_checks = []
 test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_build_cli.py", "tests/delivery/test_prototype_workflow.py"]
+status = "passed"
+evidence = ["Source implementation independently accepted: 90 focused tests and 23 existing build/workflow regressions pass; 567-file inventory gate passes. Exact engine identity and ownership, consistent sanitized Docker configuration, pre/post container continuity and value-free failure reporting are covered. artifacts/reviewed/chart-hierarchy/engine-isolation-review.md. Actual isolated acquire/stage/export/load and independent live identity review pass for image21c08f38, Workspace432c26b and root0e5c23d. Engine383007a2 stayed unchanged and all eight previously running containers retained their identities; artifacts/chart-hierarchy/h4/reviewerlogs/isolated-build-review.json."]
+
+[[capabilities]]
+id = "first-login-onboarding-diagnostics"
+requirements = ["openbb-self-service/first-login-diagnostics.md"]
+planned_checks = ["new-account-empty-questionnaire", "saved-answers-and-later-login", "strict-onboarding-console-network"]
+test_paths = []
 status = "unverified"
-evidence = ["Source implementation independently accepted: 90 focused tests and 23 existing build/workflow regressions pass; 567-file inventory gate passes. Exact engine identity and ownership, consistent sanitized Docker configuration, pre/post container continuity and value-free failure reporting are covered. artifacts/reviewed/chart-hierarchy/engine-isolation-review.md. Actual isolated export remains pending."]
+evidence = ["Pre-existing absent-questionnaire GET404 and console error recur on each runtime's first browser login; completing normal onboarding removes the error on later logins. Failed runs remain retained. artifacts/chart-hierarchy/h4/browser/candidate-onboarding-comparison.json. Hierarchy acceptance for onboarded users does not close this baseline follow-up."]
+
+[[capabilities]]
+id = "hierarchy-packaged-chart-acceptance"
+requirements = ["analyst-workspace/hierarchy-milestone.md:H4"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/hierarchy-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/hierarchy-reference.spec.ts"]
+status = "passed"
+evidence = ["H4 independently accepted for onboarded users: three candidate journeys and two matched original references, retained-FMP eight-leaf total416161000000USD, controls, theme, refresh, fresh reopen/export and clean strict candidate diagnostics. Both owner appearances accepted. Financial source99e6878/image1ab9; marker-repaired synthetic source432c26b/image21c08f; committed harness33a81d387b62e962ecced465b78bf2d303530468 changes only five test files. artifacts/reviewed/chart-hierarchy/verification.md. First-login onboarding remains a separate open baseline follow-up; H5 publication remains open."]
