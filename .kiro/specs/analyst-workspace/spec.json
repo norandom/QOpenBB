@@ -23,10 +23,11 @@
     "name": "treemap-sunburst-port",
     "contract": "hierarchy-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 under the established bounded workflow.",
-    "phase": "inactive-capture-foundation",
+    "phase": "hierarchy-setup-design",
     "completed_tasks": [
       "H0",
-      "H1a"
+      "H1a",
+      "H1b"
     ],
     "feature_accepted": false,
     "application_accepted": false,
@@ -34,7 +35,9 @@
     "owner_missing_size_decision": "2026-10-25: Exclude selected missing sizes from area; preserve no-size equal count, zero/negative handling and duplicate-path behavior.",
     "h0_review": "artifacts/reviewed/chart-hierarchy/design-review.md",
     "h1a_source": "2e900d9965902a88adba3338732de2efb054248d",
-    "h1a_review": "artifacts/reviewed/chart-hierarchy/inactive-types-review.md"
+    "h1a_review": "artifacts/reviewed/chart-hierarchy/inactive-types-review.md",
+    "h1b_source": "61d1475205bd6bd18799309e674cb6d96494ff15",
+    "h1b_review": "artifacts/reviewed/chart-hierarchy/inactive-capture-review.md"
   },
   "completed_milestones": [
     {

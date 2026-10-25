@@ -127,4 +127,3 @@ H3 later activates RetainedApplicationCapture atomically across applicationSessi
 ## Review clarification: hostile reflection failures
 
 The extracted safe JSON copier must preserve the existing generic root invalid-snapshot fallback for arbitrary failures from Proxy/reflection traps. Never inspect properties of an unregistered thrown value. Recognized internal copy errors may retain their established diagnostics; all other thrown values produce the generic root diagnostic. Include one focused regression where a reflection trap throws an object whose properties themselves throw, proving the fallback remains safe and sanitized.
-

@@ -1107,3 +1107,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyContracts.typecheck.ts"]
 status = "passed"
 evidence = ["Type-only source 2e900d9965902a88adba3338732de2efb054248d: independent scoped strict baseline/candidate have identical four inherited diagnostics, no new errors; formatting and combined size gate pass. artifacts/reviewed/chart-hierarchy/inactive-types-review.md. No runtime validator, capture or rendering acceptance."]
+
+[[capabilities]]
+id = "hierarchy-inactive-capture"
+requirements = ["analyst-workspace/hierarchy-capture-design.md", "analyst-workspace/hierarchy-milestone.md:H1"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchySnapshot.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchyCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts"]
+status = "passed"
+evidence = ["Inactive source 61d1475205bd6bd18799309e674cb6d96494ff15: independent focused tests, baseline comparison and combined size gate; artifacts/reviewed/chart-hierarchy/inactive-capture-review.md. No setup projection, live routing, rendering or packaged hierarchy acceptance."]

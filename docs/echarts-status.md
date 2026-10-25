@@ -35,7 +35,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Accept real-data behavior and appearance.
 - [x] Publish the accepted milestone as [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1); release assets and six anonymous pulls verified.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) H0 contract is independently accepted; inactive types are accepted; capture foundation is next.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) H0 contract is independently accepted; inactive types and capture are accepted; hierarchy setup and rendering are next.
 
 ## Open
 
@@ -159,7 +159,8 @@ The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) reco
 
 - [x] Observe original Treemap/Sunburst behavior and review the bounded H0 contract.
 - [x] Materialize inactive hierarchy types and verify their compile-time shape (H1a).
-- [ ] Implement capture/setup, renderer and controls, then integrate (H1b-H3).
+- [x] Implement inactive hierarchy validation and capture with shared guard regressions (H1b).
+- [ ] Implement hierarchy setup, renderer and controls, then integrate (H1c-H3).
 - [ ] Verify real-FMP appearance and lifecycle, then publish (H4-H5).
 
 See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). No hierarchy replacement is accepted yet.
