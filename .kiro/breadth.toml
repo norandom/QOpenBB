@@ -1259,3 +1259,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapRenderer.test.ts"]
 status = "passed"
 evidence = ["Workspace 8b4426b9ca7f0b04ccfdfa05c495a415f7741ddf: independent 12 renderer and 8 existing data tests, actual ECharts SVG, lint, matching 44 inherited baseline/candidate type diagnostics with no added or owned errors. Final combined caps pass. artifacts/reviewed/chart-heatmap/renderer-review.md. Inactive renderer; application, real FMP, persistence and export remain open."]
+
+[[capabilities]]
+id = "chart-ordinary-transaction-dispatch-extraction"
+requirements = ["analyst-workspace/heatmap-integration-design.md:HM3a"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/applicationSessionTransactions.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/applicationSession.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/comboSessionAssignments.test.ts"]
+status = "passed"
+evidence = ["Workspace 6262a976abec8f3a0ef508b9a59005ba807df375: 36 existing tests, independent AST/import parity and lint, combined caps passed. Scoped typing retains 398 inherited diagnostics with identical sites and zero owned errors; reviewer adjudicated type-print differences, raw message comparison remains failed and canonical typing is not clean. artifacts/reviewed/chart-heatmap/dispatch-review.md. No Heatmap activation."]

@@ -32,7 +32,8 @@ Freeze these decisions after a compact original probe:
 - [x] HM1. Implement the inactive matrix adapter against existing ordinary setup projection, with focused regressions and maintained-path inventory.
 - [x] HM2a. Freeze inactive [renderer/editor declarations](heatmap-renderer-design.md); independently reviewed at Workspace `216e8a296391e64f8e069602332caa09aafa9943`.
 - [x] HM2. Implement the renderer and controls in disjoint lanes against frozen interfaces; independently review each lane.
-- [ ] HM3. Join shared session, guards, caller and editor routes atomically; verify affected families and saved-state transitions.
+- [x] HM3a. Extract ordinary transaction dispatch without changing behavior; [independent review](../../../artifacts/reviewed/chart-heatmap/dispatch-review.md).
+- [ ] HM3. Follow the reviewed [integration design](heatmap-integration-design.md): extract ordinary dispatch, then join session, guards, caller and editor atomically; verify affected families and saved-state transitions.
 - [ ] HM4. Verify an identified packaged image against real FMP values and the original appearance, controls, light/dark themes, refresh, save/reopen and export. Show uncertain differences in qView.
 - [ ] HM5. Publish selected FMP examples, reconcile README/docs/breadth, and build one accepted milestone through CI. Verify the release and public image pulls.
 

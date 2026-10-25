@@ -180,6 +180,7 @@ See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milesto
 - [x] Freeze renderer/editor interfaces; both native behavior corrections approved.
 - [x] Observe original wide-table mapping and accept the inactive matrix adapter.
 - [x] Implement and independently review the inactive renderer and editor, including the two approved behavior corrections.
+- [x] Prepare shared transaction dispatch for integration without changing existing chart behavior.
 - [ ] Integrate and verify the real-FMP application journey before publication.
 
 See the [Heatmap milestone](../.kiro/specs/analyst-workspace/heatmap-milestone.md). The current alpha is unchanged.

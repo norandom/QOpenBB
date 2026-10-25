@@ -32808,6 +32808,14 @@
       "publishedSHA256": "04f78b52f2b67271b49ba7e6c692f062a314178f60b74ccdb0fb9e8c315dcf6b",
       "bytes": 4546,
       "transform": "Local-only evidence links replaced by explicit retained artifact paths; UTF-8 LF publication copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm3a/review.md",
+      "sourceSHA256": "99eecfe6e686de33df6167d50e1d3911d652ac0cc732bb94128cdfb0114f95d3",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/dispatch-review.md",
+      "publishedSHA256": "99eecfe6e686de33df6167d50e1d3911d652ac0cc732bb94128cdfb0114f95d3",
+      "bytes": 4161,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33521,7 +33529,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167905305,
+  "total_payload_bytes": 167909466,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
