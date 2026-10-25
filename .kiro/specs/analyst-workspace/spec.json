@@ -23,11 +23,12 @@
     "name": "heatmap-port",
     "contract": "heatmap-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 after hierarchy publication.",
-    "phase": "inactive-data-accepted",
+    "phase": "inactive-interfaces-accepted",
     "completed_tasks": [
       "source-research",
       "HM0-data-contract",
-      "HM1"
+      "HM1",
+      "HM2a"
     ],
     "feature_accepted": false,
     "application_accepted": false,
@@ -36,7 +37,15 @@
     "boundary": "Ordinary Table/File journey first; original mapping and controls require browser observation before implementation interfaces freeze.",
     "hm1_source": "0d343b00a5d168ced61a41dfbb931e4f6d4c59f9",
     "hm1_review": "artifacts/reviewed/chart-heatmap/data-adapter-review.md",
-    "data_contract": "heatmap-data-contract.md"
+    "data_contract": "heatmap-data-contract.md",
+    "renderer_design": "heatmap-renderer-design.md",
+    "hm2a_source": "216e8a296391e64f8e069602332caa09aafa9943",
+    "hm2a_review": "artifacts/reviewed/chart-heatmap/renderer-types-review.md",
+    "pending_owner_decisions": [],
+    "owner_behavior_decisions": {
+      "tooltip_off": "Suppress tooltips; approved 2026-10-25",
+      "legend_reverse": "Reverse gradient and labels together; keep cell color mapping; approved 2026-10-25"
+    }
   },
   "completed_milestones": [
     {

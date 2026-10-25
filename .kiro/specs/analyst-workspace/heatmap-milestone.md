@@ -30,6 +30,7 @@ Freeze these decisions after a compact original probe:
 - [ ] HM0. Observe original behavior and independently review the data/control contract and exact task boundaries.
   - [x] Freeze the bounded matrix data contract from original observations with independent review. Full HM0 remains open.
 - [x] HM1. Implement the inactive matrix adapter against existing ordinary setup projection, with focused regressions and maintained-path inventory.
+- [x] HM2a. Freeze inactive [renderer/editor declarations](heatmap-renderer-design.md); independently reviewed at Workspace `216e8a296391e64f8e069602332caa09aafa9943`.
 - [ ] HM2. Implement the renderer and controls in disjoint lanes against frozen interfaces; independently review each lane.
 - [ ] HM3. Join shared session, guards, caller and editor routes atomically; verify affected families and saved-state transitions.
 - [ ] HM4. Verify an identified packaged image against real FMP values and the original appearance, controls, light/dark themes, refresh, save/reopen and export. Show uncertain differences in qView.

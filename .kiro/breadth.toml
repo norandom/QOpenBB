@@ -1235,3 +1235,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapData.test.ts"]
 status = "passed"
 evidence = ["Workspace 0d343b00a5d168ced61a41dfbb931e4f6d4c59f9: eight focused tests independently pass, exact-file lint passes, scoped TypeScript retains only inherited typography TS2578. Adapter54 physical/37 logical/maxfunction9; combined cap gate passes. artifacts/reviewed/chart-heatmap/data-adapter-review.md. Inactive only: no route, renderer or real-FMP application acceptance."]
+
+[[capabilities]]
+id = "heatmap-renderer-editor-declarations"
+requirements = ["analyst-workspace/heatmap-renderer-design.md:HM2a"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapAppearance.typecheck.ts"]
+status = "passed"
+evidence = ["Workspace 216e8a296391e64f8e069602332caa09aafa9943: independent lint, AST parity, no runtime emission and baseline-relative typing passed. Reviewer 34 versus worker 37 inherited diagnostics each matched its baseline, with no owned or additional diagnostics; not a clean application typecheck. Declarations: 168 physical, 108 logical lines, no functions; combined caps pass. artifacts/reviewed/chart-heatmap/renderer-types-review.md. Declaration-only; renderer, controls and application acceptance remain open."]

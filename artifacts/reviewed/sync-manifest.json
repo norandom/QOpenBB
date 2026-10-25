@@ -170,6 +170,14 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-heatmap/hm2a/review.md",
+      "sourceSHA256": "d05ff2fd9b0a44c71c9ff8bb02cb58c78e658b377ddeb348414497d45c223f2c",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/renderer-types-review.md",
+      "publishedSHA256": "d05ff2fd9b0a44c71c9ff8bb02cb58c78e658b377ddeb348414497d45c223f2c",
+      "bytes": 3390,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-heatmap/hm1/review.md",
       "sourceSHA256": "a0de3fad9b406f9fd9e31b6b62b4a2ab8ff501c8c94e41277ebf4be3986c2c82",
       "publishedpath": "artifacts/reviewed/chart-heatmap/data-adapter-review.md",
@@ -33497,7 +33505,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167893899,
+  "total_payload_bytes": 167897289,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

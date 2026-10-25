@@ -64,7 +64,7 @@ The owner authorized starting the next family while the accepted predecessor fin
 | 1 | Nightingale | Accepted and published | Tagged assets and public image pulls verified |
 | 2 | [Radial Column and Radial Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) | Accepted and published; owner approved both appearances | RC5 assets and anonymous pulls verified |
 | 3 | [Treemap and Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) | Accepted and published for onboarded users; both appearances approved | H5 assets and anonymous pulls verified |
-| 4 | [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md) | Data mapping confirmed; inactive adapter accepted | Finish renderer/control contract and active integration |
+| 4 | [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md) | Data adapter and shared interfaces accepted | Parallel renderer/control implementation, then active integration |
 | Later | Funnel family and remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
 
 Renderer and control lanes may run concurrently after their shared contract is accepted. Shared application integration, local heavy checks and publication gates remain serialized. This queue does not mark planned tests or unsupported original paths complete.
