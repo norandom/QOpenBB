@@ -1131,3 +1131,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyAppearance.typecheck.ts"]
 status = "passed"
 evidence = ["Inactive source fc0f02f0b01df8c5629849556b13db8b957fe808: strict compile fixture has zero diagnostic delta from four inherited errors; independent review and combined caps pass. artifacts/reviewed/chart-hierarchy/renderer-types-review.md. No renderer, control or application acceptance."]
+
+[[capabilities]]
+id = "hierarchy-inactive-controls"
+requirements = ["analyst-workspace/hierarchy-renderer-design.md", "analyst-workspace/hierarchy-milestone.md:H2"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyAppearance.test.ts"]
+status = "passed"
+evidence = ["Inactive source 1b7c3e7decd50ed197ce3c60470876ecdce9ab42: 32 independent focused tests, no added strict diagnostics, combined caps pass. artifacts/reviewed/chart-hierarchy/inactive-controls-review.md. Live integration and packaged financial/visual acceptance remain open."]
