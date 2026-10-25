@@ -35,7 +35,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Accept real-data behavior and appearance.
 - [x] Publish the accepted milestone as [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1); release assets and six anonymous pulls verified.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) H0 contract is independently accepted; inactive hierarchy renderer, controls and integration helpers are accepted; the atomic live join is next.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) H0 contract is independently accepted; hierarchy source integration is accepted; packaged FMP and visual acceptance is next.
 
 ## Open
 
@@ -166,7 +166,7 @@ The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) reco
 - [x] Implement and independently review inactive hierarchy renderer (H2).
 - [x] Accept inactive hierarchy Set Up and Customize panels (H3 preparation).
 - [x] Accept inactive hierarchy session, caller and lifecycle helpers (H3 preparation).
-- [ ] Integrate hierarchy through the existing application session and editor (H3).
+- [x] Integrate hierarchy through the existing application session and editor (H3); packaged H4 acceptance remains open.
 - [ ] Verify real-FMP appearance and lifecycle, then publish (H4-H5).
 
 See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). No hierarchy replacement is accepted yet.

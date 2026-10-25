@@ -13,7 +13,7 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 ## Status at a glance
 
-Snapshot: 2026-10-24. Follow the CI link for live run status; a green check does not establish deployment acceptance.
+Snapshot: 2026-10-25. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
 | Area | What exists | What remains |
 | --- | --- | --- |
@@ -115,7 +115,7 @@ Waterfall remains available in the current alpha alongside Radar. Local applicat
 
 Accepted chart milestone: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-milestone.md).
 
-Radial Column/Bar is accepted and published; RC5 release assets and anonymous image pulls are verified. See the [Radial milestone](.kiro/specs/analyst-workspace/radial-milestone.md). [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md) H0 contract is independently accepted; inactive hierarchy renderer, controls and integration helpers are accepted; the atomic live join is next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
+Radial Column/Bar is accepted and published; RC5 release assets and anonymous image pulls are verified. See the [Radial milestone](.kiro/specs/analyst-workspace/radial-milestone.md). [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md) H0 contract is independently accepted; hierarchy source integration is accepted; packaged FMP and visual acceptance is next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
 
 - [x] Freeze the Radial control contract and implement its inactive controls.
 - [x] Implement the independently reviewed Radial Column shape helper.

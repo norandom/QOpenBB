@@ -1163,3 +1163,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySession.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyHoverBinding.test.ts"]
 status = "passed"
 evidence = ["Inactive source 15db313febfda9d9a30b2b2f442daed54183d447: 137 affected application and 36 lifecycle/hover tests pass; independent targeted checks and inventory caps pass. Broad TypeScript errors remain, including four newly reachable CSS-declaration errors in accepted panels; no helper-owned additions. artifacts/reviewed/chart-hierarchy/integration-helpers-review.md. Live join and packaged acceptance remain open."]
+
+[[capabilities]]
+id = "hierarchy-live-application-join"
+requirements = ["analyst-workspace/hierarchy-integration-design.md", "analyst-workspace/hierarchy-milestone.md:H3"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySession.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyHoverBinding.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts"]
+status = "passed"
+evidence = ["Source integration 2647c37f9dd1d84b1f41da28383ace73e0b10c15: independent focused review, affected regressions and combined caps pass. Broad TypeScript inherited diagnostics remain; this is not a clean full build or packaged runtime acceptance. artifacts/reviewed/chart-hierarchy/integration-join-review.md. H4 remains unverified."]

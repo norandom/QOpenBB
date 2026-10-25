@@ -1,6 +1,6 @@
 # Treemap and Sunburst parity
 
-Treemap and Sunburst follow Radial Column/Bar under UI-12. The original probes and bounded H0 contract are independently accepted. The inactive capture, setup, renderer and controls are independently accepted; live integration and packaged acceptance remain open. Preserve the existing Table/File workflow, gallery, theme, controls, saved options and visible flags.
+Treemap and Sunburst source integration is independently accepted under UI-12. Packaged financial, visual and persistence acceptance remains open. The implementation preserves the existing Table/File workflow, gallery, theme, controls, saved options and visible flags; H4 must verify these in the packaged application.
 
 ## Acceptance boundary
 
@@ -18,10 +18,10 @@ The original source distinguishes size from color. The first numeric field suppl
   - [x] H1c. Freeze prepared hierarchy/setup interfaces and implement full-path projection before the renderer/control join.
 - [x] H2. Implement renderer and controls in disjoint reviewed lanes after H1; independently review each lane.
   - [x] Resolve the four bounded readiness items in the [renderer/control plan](hierarchy-renderer-plan.md), then freeze exact interfaces before dispatch.
-- [ ] H3. Follow the [reviewed integration design](hierarchy-integration-design.md): prepare inactive helpers, then join existing application owners atomically; verify stale commands, refresh, family changes and persistence.
+- [x] H3. Follow the [reviewed integration design](hierarchy-integration-design.md): prepare inactive helpers, then join existing application owners atomically; verify stale commands, refresh, family changes and persistence.
   - [x] Independently accept inactive Set Up and Customize panels with existing controls.
   - [x] Accept inactive session/caller/lifecycle helpers and behavior-preserving extractions.
-  - [ ] Complete and independently review the atomic live join.
+  - [x] Complete and independently review the atomic live join.
 - [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
 - [ ] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
 
@@ -66,3 +66,5 @@ The H2 renderer is independently accepted at Workspace `a4b0a7da0c47e63eafc7efa4
 H3 inactive ui are independently accepted at Workspace `a5112cb3312c85524b32fe6bba7c35e1bb23e0b9`. [Review](../../../artifacts/reviewed/chart-hierarchy/integration-ui-review.md) records the scoped checks and inherited diagnostics. Live integration and H4 packaged acceptance remain open.
 
 H3 inactive helpers are independently accepted at Workspace `15db313febfda9d9a30b2b2f442daed54183d447`. [Review](../../../artifacts/reviewed/chart-hierarchy/integration-helpers-review.md) records the scoped checks and inherited diagnostics. Live integration and H4 packaged acceptance remain open.
+
+H3 live application join is independently accepted at Workspace `2647c37f9dd1d84b1f41da28383ace73e0b10c15`. [Review](../../../artifacts/reviewed/chart-hierarchy/integration-join-review.md) records the scoped checks and inherited diagnostics. H4 packaged financial, visual and persistence acceptance remains open.
