@@ -47,6 +47,17 @@ Proposed real fixture: AAPL FY2025 quarterly cost of revenue and gross profit, b
 
 Real-FMP Heatmap sample: pending an identified application run. A screenshot alone will not establish the cell values, color mapping or behavior.
 
+## Packaged findings and corrective scope
+
+The first HM4 candidate, image `sha256:1aa5ad54ae5089a821397a21a414c9a3ad31008fb6112b9bf6eeaff7aa16e376` from Workspace `09947a2`, displays all eight retained FMP observations with matching tooltips in both themes. Its first-login run failed strict diagnostics on the separately tracked onboarding 404. The subsequent ordinary login had clean diagnostics, but controls verification stopped because Customize omitted both existing axis panels. These are partial observations, not application acceptance.
+
+Two disjoint corrective tasks precede the next image:
+
+- [x] Match native gradient tick density and raw numeric labels in `echarts/heatmapChrome.ts`, with regressions in `heatmapRenderer.test.ts`. Preserve financial values, cell colors, constant/empty domains and paired legend reversal.
+- [x] Compose the existing horizontal and vertical `HeatmapAxisEditor` panels in `HeatmapCustomizeEditor.tsx`, with an editor interaction regression proving both axes remain reachable and dispatch the correct intent. Do not add a new state owner or change axis contracts.
+
+The two implementers own only these respective production/test paths; the controller owns the join and commits. Independent review, focused tests, lint, baseline-relative typing and the existing inventory-backed caps apply. Rebuild the corrected source before claiming packaged acceptance. Keep the failed runs under local `artifacts/chart-heatmap/hm4/browser/default-1` and `controls-1`; do not suppress onboarding diagnostics or mark unexecuted persistence/export checks complete.
+
 ## Work allocation
 
 Original behavior research and current integration research run independently. After HM0, data/capture work owns new data modules; renderer work owns new ECharts translation modules. Controls may run alongside the renderer only after appearance and command interfaces are frozen. The controller owns shared unions, routing, inventory, integration and selective commits. Independent review checks the joined financial semantics and public behavior. One heavy build or suite runs at a time.
@@ -66,3 +77,5 @@ The owner approved effective tooltip suppression and reversal of legend colors a
 ## Source integration accepted
 
 HM3b is accepted at Workspace `09947a2d7bea7c93b71ad4dc74afcc1ae64f5033`: [review and qualified verification](../../../artifacts/reviewed/chart-heatmap/integration-review.md). The source now preserves empty selections on fresh capture/reopen, handles the native no-category single-series range and routes controls through the existing transaction owner. All 208 distinct planned checks pass with the documented configuration corrections; whole-project typing remains inherited-failure limited. Original retained-FMP light/dark, all-missing and zero-series recovery evidence is prepared locally. Candidate screenshots and financial/browser acceptance remain pending; the public alpha has not changed.
+
+The HM4 corrective source is independently accepted at Workspace `c7a7633fd1b864647f55c08dd5ce0d4654fe93a0` (legend task `0558ccb`). All 14 renderer and four editor checks pass, with qualified scoped typing, lint and inventory-backed caps. See the [corrective review](../../../artifacts/reviewed/chart-heatmap/corrections-review.md). Packaged verification must use a rebuilt image; HM4 remains open.
