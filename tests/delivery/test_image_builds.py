@@ -141,16 +141,19 @@ def test_all_dagger_invocations_have_secret_free_environment(tmp_path, monkeypat
     import argparse
     from qopenbb_ci import image_cli
     root = Path(__file__).resolve().parents[2]
-    monkeypatch.setenv('PUBLICATION_PASSWORD', 'synthetic-publication-secret')
-    monkeypatch.setenv('DAGGER_CLOUD_TOKEN', 'synthetic-cloud-secret')
+    forbidden_keys = ['PUBLICATION_PASSWORD', 'DAGGER_CLOUD_TOKEN', 'FMP_API_KEY',
+                      'ANTHROPIC_API_KEY', 'DOCKER_CONTEXT']
+    for key in forbidden_keys + ['DOCKER_CONFIG', '_EXPERIMENTAL_DAGGER_RUNNER_HOST']:
+        monkeypatch.setenv(key, 'synthetic-private-caller-value')
     monkeypatch.setattr(image_cli, 'verify_stage', lambda *args: {'sources': {}})
     monkeypatch.setattr(image_cli, 'inspect_archive', lambda *args: {})
     monkeypatch.setattr(image_cli, 'verify_engine', lambda *args: {'image_id': 'synthetic'})
     calls = []
     def checked(command, **kwargs):
         environment = kwargs['env']
-        assert 'PUBLICATION_PASSWORD' not in environment
-        assert 'DAGGER_CLOUD_TOKEN' not in environment
+        assert not set(forbidden_keys).intersection(environment)
+        assert 'synthetic-private-caller-value' not in environment.values()
+        assert environment['_EXPERIMENTAL_DAGGER_RUNNER_HOST'].startswith('docker-image://')
         if command[0] == 'dagger':
             assert Path(environment['HOME']).is_dir()
             assert not list(Path(environment['DOCKER_CONFIG']).iterdir())
@@ -281,6 +284,7 @@ def test_invalid_archive_has_value_free_error_report(tmp_path, monkeypatch, caps
     assert 'synthetic-private-value' not in capsys.readouterr().out
 
 
+@pytest.mark.parametrize('engine_container', [None, 'qopenbb-dagger-engine-synthetic'])
 @pytest.mark.parametrize('mutation', [
     'root_extra', 'source_extra', 'missing_license', 'boolean_version', 'bad_revision',
     'bad_digest', 'files_list', 'source_list', 'missing_smoke_hash',
@@ -288,7 +292,7 @@ def test_invalid_archive_has_value_free_error_report(tmp_path, monkeypatch, caps
     'unreadable_tree',
     'unlisted_empty_directory',
 ])
-def test_export_rejects_invalid_provenance_before_any_dagger_call(tmp_path, monkeypatch, mutation):
+def test_export_rejects_invalid_provenance_before_any_dagger_call(tmp_path, monkeypatch, mutation, engine_container):
     import argparse
     from qopenbb_ci import image_cli
     roots, policy, lock = inputs(tmp_path)
@@ -354,8 +358,172 @@ def test_export_rejects_invalid_provenance_before_any_dagger_call(tmp_path, monk
     monkeypatch.setattr(image_cli.subprocess, 'run', forbidden)
     args = argparse.Namespace(stage=destination, tools=Path(__file__).resolve().parents[2] / 'pipeline/tools.lock.json',
                               policy=policy_path, lock=lock_path, sdk_python=Path('/unused/python'),
-                              service='foundation-smoke', archive=tmp_path / 'image.tar')
+                              service='foundation-smoke', archive=tmp_path / 'image.tar',
+                              engine_container=engine_container)
     with pytest.raises(ValueError) as caught:
         image_cli.export(args)
     assert 'SYNTHETIC_SECRET' not in str(caught.value)
     assert calls == []
+
+
+ENGINE_NAME = 'qopenbb-dagger-engine-synthetic'
+
+
+@pytest.fixture
+def explicit_export(tmp_path, monkeypatch):
+    import argparse
+    from qopenbb_ci import image_cli
+    root = Path(__file__).resolve().parents[2]
+    tools = image_cli.read(root / 'pipeline/tools.lock.json')
+    reference = tools['base_images']['dagger_engine']
+    repository, digest = reference.rsplit('@', 1)
+    repository = repository.rsplit(':', 1)[0]
+    observed = {'Id': 'a' * 64, 'Name': '/' + ENGINE_NAME, 'Image': 'sha256:' + '2' * 64,
+                'Config': {'Image': reference, 'Labels': {
+                    'org.qopenbb.owner': 'qopenbb', 'org.qopenbb.purpose': 'dagger-engine'}},
+                'State': {'Running': True}}
+    image = {'Id': observed['Image'], 'RepoDigests': [repository + '@' + digest]}
+    args = argparse.Namespace(stage=tmp_path, tools=root / 'pipeline/tools.lock.json',
+                              policy=root / 'contracts/sources.json', lock=root / 'sources.lock.json',
+                              sdk_python=Path('/synthetic/python'), service='foundation-smoke',
+                              archive=tmp_path / 'image.tar', engine_container=ENGINE_NAME)
+    monkeypatch.setattr(image_cli, 'verify_stage', lambda *args: {'sources': {}})
+    monkeypatch.setattr(image_cli, 'inspect_archive', lambda *args: {})
+    calls = []
+    def output(command, **kwargs):
+        calls.append((command, kwargs))
+        if command[0] == 'docker':
+            assert kwargs['stderr'] == subprocess.PIPE
+            return json.dumps([observed if command[1] == 'container' else image])
+        return 'dagger v0.21.8 synthetic ' if command[0] == 'dagger' else '0.21.8'
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', output)
+    monkeypatch.setattr(image_cli.subprocess, 'run', output)
+    return image_cli, args, observed, image, calls, output
+
+
+@pytest.mark.parametrize('store', ['classic', 'containerd'])
+def test_explicit_engine_uses_one_private_environment_for_inspections_and_runner(explicit_export, monkeypatch, store):
+    image_cli, args, observed, image, calls, output = explicit_export
+    for key in ['PUBLICATION_PASSWORD', 'DAGGER_CLOUD_TOKEN', 'FMP_API_KEY', 'ANTHROPIC_API_KEY',
+                'DOCKER_CONTEXT', 'DOCKER_CONFIG', '_EXPERIMENTAL_DAGGER_RUNNER_HOST']:
+        monkeypatch.setenv(key, 'synthetic-private-caller-value')
+    monkeypatch.setenv('DOCKER_HOST', 'unix:///synthetic-owned-daemon.sock')
+    if store == 'containerd':
+        observed['Image'] = image['Id'] = image['RepoDigests'][0].split('@')[1]
+    active_homes = []
+    def checked(command, **kwargs):
+        if command[0] == 'docker' or command[:2] == ['dagger', 'run']:
+            env = kwargs['env']
+            assert Path(env['HOME']).is_dir()
+            assert env['HOME'] == env['DOCKER_CONFIG']
+            assert list(Path(env['HOME']).iterdir()) == []
+            assert env['DOCKER_HOST'] == 'unix:///synthetic-owned-daemon.sock'
+            assert 'DOCKER_CONTEXT' not in env
+            assert 'synthetic-private-caller-value' not in env.values()
+            active_homes.append(env['HOME'])
+        return output(command, **kwargs)
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', checked)
+    monkeypatch.setattr(image_cli.subprocess, 'run', checked)
+    result = image_cli.export(args)
+    selected = [(command, kwargs['env']) for command, kwargs in calls
+                if command[0] == 'docker' or command[:2] == ['dagger', 'run']]
+    assert len(selected) == 5
+    assert all(env == selected[0][1] for _, env in selected)
+    assert selected[0][1]['_EXPERIMENTAL_DAGGER_RUNNER_HOST'] == 'docker-container://' + ENGINE_NAME
+    assert [command[:3] for command, _ in selected] == [
+        ['docker', 'container', 'inspect'], ['docker', 'image', 'inspect'],
+        ['dagger', 'run', '--'], ['docker', 'container', 'inspect'], ['docker', 'image', 'inspect']]
+    assert len(set(active_homes)) == 1 and not Path(active_homes[0]).exists()
+    assert result['engine_observed']['container_id'] == observed['Id']
+
+
+@pytest.mark.parametrize('name', ['', 'dagger-engine-shared', 'docker-container://owned',
+                                  ENGINE_NAME + ' ', ENGINE_NAME + '/bad',
+                                  'qopenbb-dagger-engine-A', 'qopenbb-dagger-engine-' + 'a' * 65])
+def test_explicit_engine_rejects_names_before_any_process(explicit_export, name):
+    image_cli, args, _, _, calls, _ = explicit_export
+    args.engine_container = name
+    with pytest.raises(image_cli.EngineVerificationError, match='engine_container_invalid'):
+        image_cli.export(args)
+    assert calls == []
+
+
+@pytest.mark.parametrize('mutation,code', [
+    ('name', 'engine_container_invalid'), ('owner', 'engine_ownership_mismatch'),
+    ('purpose', 'engine_ownership_mismatch'), ('labels', 'engine_ownership_mismatch'),
+    ('configured', 'engine_configured_reference_mismatch'), ('mutable', 'engine_configured_reference_mismatch'),
+    ('digest', 'engine_locked_digest_missing'), ('identity', 'engine_image_identity_mismatch'),
+    ('stopped', 'engine_not_running'), ('missing', 'engine_inspection_failed'),
+    ('malformed', 'engine_inspection_invalid'), ('id', 'engine_inspection_invalid'),
+])
+def test_explicit_engine_fails_closed_before_dagger_run(explicit_export, monkeypatch, mutation, code):
+    image_cli, args, observed, image, calls, output = explicit_export
+    if mutation == 'name':
+        observed['Name'] += '-replacement'
+    elif mutation in ['owner', 'purpose']:
+        observed['Config']['Labels']['org.qopenbb.' + mutation] = 'another-project'
+    elif mutation == 'labels':
+        observed['Config']['Labels'] = {}
+    elif mutation in ['configured', 'mutable']:
+        observed['Config']['Image'] = 'engine:latest' if mutation == 'mutable' else 'engine@sha256:' + '4' * 64
+    elif mutation == 'digest':
+        image['RepoDigests'] = []
+    elif mutation == 'identity':
+        observed['Image'] = 'sha256:' + '4' * 64
+    elif mutation == 'stopped':
+        observed['State']['Running'] = False
+    elif mutation == 'id':
+        observed['Id'] = 'short-id'
+    def checked(command, **kwargs):
+        if command[0] == 'docker' and mutation == 'missing':
+            raise subprocess.CalledProcessError(1, command, stderr='synthetic-private-inspect')
+        if command[0] == 'docker' and mutation == 'malformed':
+            return 'synthetic-private-inspect'
+        return output(command, **kwargs)
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', checked)
+    with pytest.raises(image_cli.EngineVerificationError, match=code):
+        image_cli.export(args)
+    assert not any(command[:2] == ['dagger', 'run'] for command, _ in calls)
+
+
+@pytest.mark.parametrize('mutation,code', [('replacement', 'engine_instance_changed'),
+                                         ('ownership', 'engine_ownership_mismatch')])
+def test_explicit_engine_rechecks_identity_after_export(explicit_export, monkeypatch, mutation, code):
+    image_cli, args, observed, _, _, output = explicit_export
+    def run(command, **kwargs):
+        result = output(command, **kwargs)
+        if mutation == 'replacement':
+            observed['Id'] = 'b' * 64
+        else:
+            observed['Config']['Labels']['org.qopenbb.owner'] = 'another-project'
+        return result
+    monkeypatch.setattr(image_cli.subprocess, 'run', run)
+    with pytest.raises(image_cli.EngineVerificationError, match=code):
+        image_cli.export(args)
+
+
+def test_explicit_inspect_failure_does_not_publish_stderr(explicit_export, monkeypatch, capsys):
+    image_cli, args, _, _, _, output = explicit_export
+    args.command, args.report = 'export', args.stage / 'report.json'
+    monkeypatch.setattr(image_cli.argparse.ArgumentParser, 'parse_args', lambda *a: args)
+    def checked(command, **kwargs):
+        if command[0] == 'docker':
+            assert kwargs['stderr'] == subprocess.PIPE
+            raise subprocess.CalledProcessError(1, command, stderr='synthetic-private-inspect')
+        return output(command, **kwargs)
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', checked)
+    assert image_cli.main() == 2
+    captured = capsys.readouterr()
+    assert 'synthetic-private-inspect' not in captured.out + captured.err + args.report.read_text()
+    assert json.loads(args.report.read_text())['error_code'] == 'engine_inspection_failed'
+
+
+def test_engine_container_option_is_export_only():
+    from qopenbb_ci import image_cli
+    args = image_cli.parser().parse_args(['export', '--stage', 'stage', '--tools', 'tools',
+        '--lock', 'lock', '--policy', 'policy', '--sdk-python', 'python', '--archive', 'archive',
+        '--report', 'report', '--engine-container', ENGINE_NAME])
+    assert args.engine_container == ENGINE_NAME
+    with pytest.raises(SystemExit):
+        image_cli.parser().parse_args(['inspect', '--archive', 'archive', '--report', 'report',
+                                     '--engine-container', ENGINE_NAME])

@@ -61,6 +61,11 @@ The stage contains `sources/workspace`, `sources/data_api`, the maintained `smok
 
 Export starts Dagger with a fresh empty HOME and Docker configuration and an explicit environment allowlist. Provider, publication and Dagger cloud credentials are not forwarded. The engine runner reference comes from the digest in `tools.lock.json`; the CLI version must match that lock. The builder has no test, generation, push, promotion or deployment commands.
 
+For concurrent local projects, direct `image_cli export` also accepts `--engine-container qopenbb-dagger-engine-local`. Provision this dedicated helper separately using the locked engine image, a private cache, and labels `org.qopenbb.owner=qopenbb` and `org.qopenbb.purpose=dagger-engine`. The exporter only connects to it; it does not create, stop or delete engines. Inspection and the build share the same sanitized Docker configuration. Exact image identity, ownership and the same container ID must pass before and after export. This avoids Dagger's default shared-engine replacement behavior; the default CI path is unchanged. This is a build helper, not a deployment Compose service.
+
+- [x] Independently verify owned-engine selection, configuration isolation and failure handling; [source review](../artifacts/reviewed/chart-hierarchy/engine-isolation-review.md).
+- [ ] Verify an actual export through the dedicated engine.
+
 ## Interpret the identities
 
 `export.json` records the requested and independently observed engine references, SDK version, base reference, source commits, archive SHA-256, image configuration digest, archive manifest digest, architecture and labels. `load.json` adds the actual loaded ID and any Docker RepoDigests. The archive checksum is a file checksum; it is not a registry digest. A locally loaded image can have no RepoDigests. No registry digest is claimed before publication.

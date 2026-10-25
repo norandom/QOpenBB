@@ -25,6 +25,7 @@ The original source distinguishes size from color. The first numeric field suppl
 - [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
   - [x] Repair Tile Padding effects in native composed-default rendering; rebuilt packaged verification remains pending.
   - [x] Repair first-hover gradient marker visibility after appearance changes; rebuilt interaction verification remains pending.
+  - [x] Add independently reviewed owned-engine selection to avoid cross-project Dagger engine replacement; isolated export remains pending.
 - [ ] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
 
 H0 research is documentation-only and outside production size caps. Before H1-H3 dispatch, freeze exact writable paths and exported interfaces. Every new or modified production file must pass 400 physical lines, 300 logical units and 50/function, with inventory-backed verification. The shared join owns any cohesive extraction needed by files near those limits. No implicit size exception or parallel edits to shared state owners.

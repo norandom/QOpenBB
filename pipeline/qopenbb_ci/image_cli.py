@@ -39,6 +39,7 @@ def parser() -> argparse.ArgumentParser:
     exporting.add_argument('--lock', type=Path, required=True)
     exporting.add_argument('--policy', type=Path, required=True)
     exporting.add_argument('--sdk-python', type=Path, required=True)
+    exporting.add_argument('--engine-container')
     exporting.add_argument('--service', choices=['foundation-smoke', 'workspace', 'data-api'], default='foundation-smoke')
     for command in [exporting, commands.add_parser('load'), commands.add_parser('inspect')]:
         command.add_argument('--archive', type=Path, required=True)
@@ -51,9 +52,14 @@ def export(args: argparse.Namespace) -> dict:
     if provenance.get('service', args.service) != args.service:
         raise ValueError('service differs from staged provenance')
     tools = read(args.tools)
+    container = getattr(args, 'engine_container', None)
+    if container is not None and not re.fullmatch(r'qopenbb-dagger-engine-[a-z0-9][a-z0-9_.-]{0,63}', container):
+        raise EngineVerificationError('engine_container_invalid')
     environment = {key: os.environ[key] for key in ['PATH', 'XDG_RUNTIME_DIR', 'DOCKER_HOST']
                    if key in os.environ}
-    environment['_EXPERIMENTAL_DAGGER_RUNNER_HOST'] = 'docker-image://' + tools['base_images']['dagger_engine']
+    reference = tools['base_images']['dagger_engine']
+    environment['_EXPERIMENTAL_DAGGER_RUNNER_HOST'] = (
+        'docker-container://' + container if container is not None else 'docker-image://' + reference)
     environment['PYTHONPATH'] = str(Path(__file__).resolve().parents[2] / '.dagger/src')
     sdk = subprocess.check_output([str(args.sdk_python.absolute()), '-c',
                                    'import importlib.metadata;print(importlib.metadata.version("dagger-io"))'],
@@ -66,11 +72,16 @@ def export(args: argparse.Namespace) -> dict:
         version = subprocess.check_output(['dagger', 'version'], text=True, env=environment)
         if 'dagger v' + tools['tools']['dagger_cli']['version'] + ' ' not in version:
             raise ValueError('Dagger CLI version differs from tools lock')
+        if container is not None:
+            initial = verify_engine(reference, container, environment)
         subprocess.run(['dagger', 'run', '--', str(args.sdk_python.absolute()), '-m', 'qopenbb.export',
                         '--service', args.service, '--stage', str(args.stage.resolve()),
                         '--base', tools['base_images']['python'], '--archive', str(args.archive.resolve())],
                        env=environment, check=True)
-    engine = verify_engine(tools['base_images']['dagger_engine'])
+        if container is not None:
+            engine = verify_engine(reference, container, environment, initial['container_id'])
+    if container is None:
+        engine = verify_engine(reference)
     return {**inspect_archive(args.archive), 'service': args.service, 'sources': provenance['sources'],
             'engine': tools['base_images']['dagger_engine'], 'engine_observed': engine,
             'sdk_version': sdk, 'base': tools['base_images']['python']}
@@ -80,14 +91,31 @@ class EngineVerificationError(ValueError):
     """Value-free engine failure code safe for publication in build reports."""
 
 
-def verify_engine(reference: str) -> dict:
+def verify_owned_engine(observed: dict, name: str, expected_id: str | None) -> None:
+    if observed['Name'] != '/' + name:
+        raise EngineVerificationError('engine_container_invalid')
+    labels = observed['Config'].get('Labels')
+    if not isinstance(labels, dict) or any(labels.get(key) != value for key, value in {
+            'org.qopenbb.owner': 'qopenbb', 'org.qopenbb.purpose': 'dagger-engine'}.items()):
+        raise EngineVerificationError('engine_ownership_mismatch')
+    if not isinstance(observed['Id'], str) or not re.fullmatch(r'[0-9a-f]{64}', observed['Id']):
+        raise EngineVerificationError('engine_inspection_invalid')
+    if expected_id is not None and observed['Id'] != expected_id:
+        raise EngineVerificationError('engine_instance_changed')
+
+
+def verify_engine(reference: str, container: str | None = None,
+                  environment: dict | None = None, expected_id: str | None = None) -> dict:
     if not re.fullmatch(r'[^\s@]+@sha256:[0-9a-f]{64}', reference):
         raise EngineVerificationError('engine_reference_invalid')
     digest = reference.rsplit('@sha256:', 1)[1]
-    name = 'dagger-engine-' + digest[:16]
+    name = container if container is not None else 'dagger-engine-' + digest[:16]
+    options = {'env': environment, 'stderr': subprocess.PIPE} if container is not None else {}
     try:
-        observed = json.loads(subprocess.check_output(['docker', 'container', 'inspect', name], text=True))[0]
-        image = json.loads(subprocess.check_output(['docker', 'image', 'inspect', reference], text=True))[0]
+        observed = json.loads(subprocess.check_output(['docker', 'container', 'inspect', name], text=True, **options))[0]
+        image = json.loads(subprocess.check_output(['docker', 'image', 'inspect', reference], text=True, **options))[0]
+        if container is not None:
+            verify_owned_engine(observed, container, expected_id)
         repository = reference.split('@', 1)[0]
         if ':' in repository.rsplit('/', 1)[-1]:
             repository = repository.rsplit(':', 1)[0]
@@ -99,11 +127,11 @@ def verify_engine(reference: str) -> dict:
             raise EngineVerificationError('engine_locked_digest_missing')
         if observed['Image'] != image['Id']:
             raise EngineVerificationError('engine_image_identity_mismatch')
-        if not observed['State']['Running']:
+        if not observed['State']['Running'] or (container is not None and observed['State']['Running'] is not True):
             raise EngineVerificationError('engine_not_running')
     except (OSError, subprocess.SubprocessError) as error:
         raise EngineVerificationError('engine_inspection_failed') from error
-    except (KeyError, TypeError, IndexError, json.JSONDecodeError) as error:
+    except (KeyError, TypeError, IndexError, AttributeError, json.JSONDecodeError) as error:
         raise EngineVerificationError('engine_inspection_invalid') from error
     return {'container_id': observed['Id'], 'image_id': observed['Image'],
             'configured_reference': observed['Config']['Image'],
