@@ -18,7 +18,7 @@ The original source distinguishes size from color. The first numeric field suppl
   - [x] H1c. Freeze prepared hierarchy/setup interfaces and implement full-path projection before the renderer/control join.
 - [ ] H2. Implement renderer and controls in disjoint reviewed lanes after H1; independently review each lane.
   - [ ] Resolve the four bounded readiness items in the [renderer/control plan](hierarchy-renderer-plan.md), then freeze exact interfaces before dispatch.
-- [ ] H3. Integrate through existing application owners in one serialized lane; verify stale commands, refresh, family changes and persistence.
+- [ ] H3. Follow the [reviewed integration design](hierarchy-integration-design.md): prepare inactive helpers, then join existing application owners atomically; verify stale commands, refresh, family changes and persistence.
 - [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
 - [ ] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
 
