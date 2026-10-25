@@ -32792,6 +32792,22 @@
       "publishedSHA256": "fda92b59b57cad70bf03075a4f1f514f8657cdcbc8f58cb69a7aced29e1ff3f8",
       "bytes": 7856,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm2b/review.md",
+      "sourceSHA256": "c76193cb7d7ff2af5ab985c99cd6fdc059ee9cb3bbd689fd625997dfae25e2c4",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/controls-review.md",
+      "publishedSHA256": "c76193cb7d7ff2af5ab985c99cd6fdc059ee9cb3bbd689fd625997dfae25e2c4",
+      "bytes": 3470,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm2c/review.md",
+      "sourceSHA256": "ba6a06b4931affaa7f400b2ad529a15f173622f89e53ee9130a0db5a32ac20f8",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/renderer-review.md",
+      "publishedSHA256": "04f78b52f2b67271b49ba7e6c692f062a314178f60b74ccdb0fb9e8c315dcf6b",
+      "bytes": 4546,
+      "transform": "Local-only evidence links replaced by explicit retained artifact paths; UTF-8 LF publication copy"
     }
   ],
   "generated_metadata": [
@@ -33505,7 +33521,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167897289,
+  "total_payload_bytes": 167905305,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -1243,3 +1243,19 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapAppearance.typecheck.ts"]
 status = "passed"
 evidence = ["Workspace 216e8a296391e64f8e069602332caa09aafa9943: independent lint, AST parity, no runtime emission and baseline-relative typing passed. Reviewer 34 versus worker 37 inherited diagnostics each matched its baseline, with no owned or additional diagnostics; not a clean application typecheck. Declarations: 168 physical, 108 logical lines, no functions; combined caps pass. artifacts/reviewed/chart-heatmap/renderer-types-review.md. Declaration-only; renderer, controls and application acceptance remain open."]
+
+[[capabilities]]
+id = "heatmap-inactive-controls"
+requirements = ["analyst-workspace/heatmap-renderer-design.md:HM2b"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapControls.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/heatmapEditorControls.test.tsx"]
+status = "passed"
+evidence = ["Workspace 8fb06e58582c0baea15089fdbf4e03fa70dc0a87: independent 21 pure and 3 DOM tests, lint, frozen hashes; matching 41 inherited baseline/candidate type diagnostics with no added or owned errors. Combined caps pass. artifacts/reviewed/chart-heatmap/controls-review.md. Inactive modules; application behavior is not accepted."]
+
+[[capabilities]]
+id = "heatmap-inactive-renderer"
+requirements = ["analyst-workspace/heatmap-renderer-design.md:HM2c"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapRenderer.test.ts"]
+status = "passed"
+evidence = ["Workspace 8b4426b9ca7f0b04ccfdfa05c495a415f7741ddf: independent 12 renderer and 8 existing data tests, actual ECharts SVG, lint, matching 44 inherited baseline/candidate type diagnostics with no added or owned errors. Final combined caps pass. artifacts/reviewed/chart-heatmap/renderer-review.md. Inactive renderer; application, real FMP, persistence and export remain open."]
