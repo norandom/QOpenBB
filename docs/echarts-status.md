@@ -169,4 +169,4 @@ The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) reco
 - [x] Integrate hierarchy through the existing application session and editor (H3); packaged H4 acceptance remains open.
 - [ ] Verify real-FMP appearance and lifecycle, then publish (H4-H5).
 
-See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). No hierarchy replacement is accepted yet.
+See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). Hierarchy source integration is accepted; packaged financial, visual and persistence acceptance remains open.
