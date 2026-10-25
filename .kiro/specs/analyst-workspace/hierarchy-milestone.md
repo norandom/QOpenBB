@@ -1,6 +1,6 @@
 # Treemap and Sunburst parity
 
-Treemap and Sunburst follow Radial Column/Bar under UI-12. The original probes and bounded H0 contract are independently accepted. Inactive types, validation and displayed-row capture are independently accepted; hierarchy setup, rendering and live integration remain open. Preserve the existing Table/File workflow, gallery, theme, controls, saved options and visible flags.
+Treemap and Sunburst follow Radial Column/Bar under UI-12. The original probes and bounded H0 contract are independently accepted. The inactive capture and setup foundation is independently accepted; rendering and live integration remain open. Preserve the existing Table/File workflow, gallery, theme, controls, saved options and visible flags.
 
 ## Acceptance boundary
 
@@ -12,10 +12,10 @@ The original source distinguishes size from color. The first numeric field suppl
 
 - [x] Research pinned original source and current application reuse gaps.
 - [x] H0. Observe original hierarchy behavior and freeze the numerical, capture, setup and control contract with independent review.
-- [ ] H1. Materialize reviewed shared interfaces and capture/setup foundation; add the maintained-path inventory and cross-family checks.
+- [x] H1. Materialize reviewed shared interfaces and capture/setup foundation; add the maintained-path inventory and cross-family checks.
   - [x] H1a. Add the two inactive type owners and compile-only fixture defined in the contract; independent review and inventory-backed size checks required.
   - [x] H1b. Implement inactive hierarchy validation/displayed-row capture and verify shared guard regressions.
-  - [ ] H1c. Freeze prepared hierarchy/setup interfaces and implement full-path projection before the renderer/control join.
+  - [x] H1c. Freeze prepared hierarchy/setup interfaces and implement full-path projection before the renderer/control join.
 - [ ] H2. Implement renderer and controls in disjoint reviewed lanes after H1; independently review each lane.
 - [ ] H3. Integrate through existing application owners in one serialized lane; verify stale commands, refresh, family changes and persistence.
 - [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
@@ -49,4 +49,4 @@ The [inactive capture design](hierarchy-capture-design.md) and [independent plan
 
 H1b is accepted at Workspace `61d1475205bd6bd18799309e674cb6d96494ff15`: dedicated hierarchy validation and displayed-row capture plus shared safe JSON/grid guards. Affected compatibility/application suites and independent review pass; strict inherited diagnostics remain documented. Combined caps pass for all six production owners. [Capture review](../../../artifacts/reviewed/chart-hierarchy/inactive-capture-review.md). The new capture API has no live application caller yet.
 
-The [H1c setup design](hierarchy-setup-design.md) and [review](../../../artifacts/reviewed/chart-hierarchy/setup-plan-review.md) define the next inactive implementation. The owner approved keeping missing categories distinct from literal names during aggregation. H1c is in progress; its numerical tests and review remain required.
+The [H1c setup design](hierarchy-setup-design.md) and [review](../../../artifacts/reviewed/chart-hierarchy/setup-plan-review.md) define the next inactive implementation. The owner approved keeping missing categories distinct from literal names during aggregation. H1c is independently accepted at Workspace `fb0113c78a9b143edd4df3957e84e13ee3b98647`. Thirteen focused tests cover aggregation, missing observations, retained FMP reconciliation and pure setup edits. Baseline-relative strict checking adds no diagnostics; combined complexity caps pass. [Setup review](../../../artifacts/reviewed/chart-hierarchy/inactive-setup-review.md). These functions have no live application caller yet.

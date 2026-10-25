@@ -1115,3 +1115,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchySnapshot.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchyCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/gridCapture.grid.test.ts"]
 status = "passed"
 evidence = ["Inactive source 61d1475205bd6bd18799309e674cb6d96494ff15: independent focused tests, baseline comparison and combined size gate; artifacts/reviewed/chart-hierarchy/inactive-capture-review.md. No setup projection, live routing, rendering or packaged hierarchy acceptance."]
+
+[[capabilities]]
+id = "hierarchy-inactive-setup"
+requirements = ["analyst-workspace/hierarchy-setup-design.md", "analyst-workspace/hierarchy-milestone.md:H1c"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySetupProjection.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySetupTransitions.test.ts"]
+status = "passed"
+evidence = ["Inactive source fb0113c78a9b143edd4df3957e84e13ee3b98647: 13 independently rerun focused tests, baseline-relative static checks and combined size gate; artifacts/reviewed/chart-hierarchy/inactive-setup-review.md. Retained FMP reconciliation is unit evidence, not rendered application acceptance."]
