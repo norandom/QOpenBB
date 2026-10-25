@@ -183,6 +183,7 @@ See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milesto
 - [x] Prepare shared transaction dispatch for integration without changing existing chart behavior.
 - [x] Integrate Heatmap with the existing session, caller, themes and editor; verify fresh-capture recovery.
 - [x] Restore both axis panels and match native gradient ticks after the first packaged comparison.
+- [x] Restore the accessible zero-series message without duplicating its canvas presentation; source checks accepted.
 - [ ] Verify the packaged real-FMP browser journey and visual parity before publication.
 
 See the [Heatmap milestone](../.kiro/specs/analyst-workspace/heatmap-milestone.md). The current alpha is unchanged.

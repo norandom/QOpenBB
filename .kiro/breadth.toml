@@ -1283,3 +1283,11 @@ planned_checks = ["corrected-image visual, controls and persistence acceptance"]
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapRenderer.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/heatmapEditorControls.test.tsx"]
 status = "passed"
 evidence = ["Workspace c7a7633fd1b864647f55c08dd5ce0d4654fe93a0: 14 renderer and 4 editor checks, independent lint and inventory-backed caps pass; scoped typing has no added/owned diagnostics with inherited limitations. artifacts/reviewed/chart-heatmap/corrections-review.md. Source correction only; initial packaged FMP observations were partial and corrected-image acceptance remains open."]
+
+[[capabilities]]
+id = "heatmap-accessible-empty-selection"
+requirements = ["analyst-workspace/heatmap-milestone.md:Empty-series accessibility correction"]
+planned_checks = ["rebuilt-image empty-state export, fresh reopen and recovery"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/callerRoute.test.tsx"]
+status = "passed"
+evidence = ["Workspace 5cae43a52317264067951b111048664292882ec2: 31 caller checks pass, including four Heatmap cases; lint and independent combined caps pass. Scoped typing preserves 390 diagnostics, eight inherited in touched files, with zero additions. artifacts/reviewed/chart-heatmap/empty-state-review.md. Source acceptance only; rebuilt-image lifecycle checks remain open."]
