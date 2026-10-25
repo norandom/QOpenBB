@@ -21,7 +21,7 @@ One ordinary File widget per dashboard is asserted before extracting the saved m
 
 ## Owner-approved missing-size correction
 
-Owner decision relayed by the controller on 2026-10-25: "Exclude missing sizes." When a size field is selected, a missing size contributes zero geometric weight and no area; valid observations remain visible. Preserve the raw missing datum as missing, not a measured zero. When no size field is selected, retain equal count weighting for all leaves. Zero/negative size handling and duplicate-path behavior remain unchanged. No other numerical correction is authorized.
+Owner decision relayed by the controller on 2026-10-25: "Exclude missing sizes." When a size field is selected, a missing size contributes zero geometric weight and no area; valid observations remain visible. Preserve the raw missing datum as missing, not a measured zero. When no size field is selected, retain equal count weighting for all leaves. Zero/negative size handling and duplicate-path behavior remain unchanged. The later H1c contract separately records the owner-approved category-collision correction below; other numerical semantics remain unchanged.
 
 This deliberately differs from the original missing-leaf weight 1 observed above. The distinction must remain explicit in regression expectations and original comparisons; this approval does not waive the remaining H0 interface/control review.
 
@@ -87,3 +87,7 @@ H1b will freeze and implement hierarchy-specific validation and displayed-row ca
 H3 owns the atomic retained-capture union integration: storage/context/result types, own-kind and family-mismatch guards, and narrowing before every flat selector. Audit existing `state.capture as ChartSnapshot` sites in applicationSessionCapture and applicationSessionRuntime; do not widen a shared context and leave flat consumers casting. Preserve range/data-generation stamps and stale-command rejection. No partial union propagation is accepted between tasks.
 
 H2 renderer and controls run in disjoint lanes only after their exact input/appearance contracts are frozen. H4 owns real-FMP examples, visual controls and theme, refresh, export and final fresh-session reopen. Every applicable existing control must remain available; unverified common-control effects remain explicit acceptance work rather than disabled features.
+
+## Owner-approved aggregation identity correction
+
+On 2026-10-25 the owner approved keeping missing categories distinct from literal names such as null during aggregation. The original object-key aggregation can merge a null category with the literal string null; replacement aggregation uses the canonical path tuple instead. This is a deliberate correction, not original parity. Other canonical equivalences remain unchanged. See the [setup design](hierarchy-setup-design.md) and [independent review](../../../artifacts/reviewed/chart-hierarchy/setup-plan-review.md).

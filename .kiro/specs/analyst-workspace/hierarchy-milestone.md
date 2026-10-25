@@ -48,3 +48,5 @@ H1a is accepted at Workspace `2e900d9965902a88adba3338732de2efb054248d`: two ina
 The [inactive capture design](hierarchy-capture-design.md) and [independent plan review](../../../artifacts/reviewed/chart-hierarchy/capture-plan-review.md) freeze H1b's six-file boundary. Inactive validation and capture are accepted; live session integration remains H3.
 
 H1b is accepted at Workspace `61d1475205bd6bd18799309e674cb6d96494ff15`: dedicated hierarchy validation and displayed-row capture plus shared safe JSON/grid guards. Affected compatibility/application suites and independent review pass; strict inherited diagnostics remain documented. Combined caps pass for all six production owners. [Capture review](../../../artifacts/reviewed/chart-hierarchy/inactive-capture-review.md). The new capture API has no live application caller yet.
+
+The [H1c setup design](hierarchy-setup-design.md) and [review](../../../artifacts/reviewed/chart-hierarchy/setup-plan-review.md) define the next inactive implementation. The owner approved keeping missing categories distinct from literal names during aggregation. H1c is in progress; its numerical tests and review remain required.
