@@ -167,6 +167,7 @@ The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) reco
 - [x] Accept inactive hierarchy Set Up and Customize panels (H3 preparation).
 - [x] Accept inactive hierarchy session, caller and lifecycle helpers (H3 preparation).
 - [x] Integrate hierarchy through the existing application session and editor (H3); packaged H4 acceptance remains open.
+- [x] Restore native Tile Padding effects with composed-default rendering checks; rebuilt browser verification remains open.
 - [ ] Verify real-FMP appearance and lifecycle, then publish (H4-H5).
 
 See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). Hierarchy source integration is accepted; packaged financial, visual and persistence acceptance remains open.

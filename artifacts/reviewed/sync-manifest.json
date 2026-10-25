@@ -170,6 +170,14 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-hierarchy/h4/tile-padding-fix/review.md",
+      "sourceSHA256": "8bae4516ee0c74f9e11d059f11dcebab5797ea02d301b402890b5a1155ba5f36",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/tile-padding-review.md",
+      "publishedSHA256": "8bae4516ee0c74f9e11d059f11dcebab5797ea02d301b402890b5a1155ba5f36",
+      "bytes": 5938,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-hierarchy/h3-join/review.md",
       "sourceSHA256": "0751bc96b57f31ce4b60ff9665bd31aefc2f9a58da05cb93bd17cf6b2aea8a43",
       "publishedpath": "artifacts/reviewed/chart-hierarchy/integration-join-review.md",
@@ -33393,7 +33401,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167680651,
+  "total_payload_bytes": 167686589,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

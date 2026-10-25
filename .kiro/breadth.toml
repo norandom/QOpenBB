@@ -1171,3 +1171,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySession.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/hierarchySessionOwner.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyHoverBinding.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/lifecycle.test.ts"]
 status = "passed"
 evidence = ["Source integration 2647c37f9dd1d84b1f41da28383ace73e0b10c15: independent focused review, affected regressions and combined caps pass. Broad TypeScript inherited diagnostics remain; this is not a clean full build or packaged runtime acceptance. artifacts/reviewed/chart-hierarchy/integration-join-review.md. H4 remains unverified."]
+
+[[capabilities]]
+id = "hierarchy-tile-padding-renderer"
+requirements = ["analyst-workspace/hierarchy-renderer-design.md", "analyst-workspace/hierarchy-milestone.md:H4"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyEngine.test.ts"]
+status = "passed"
+evidence = ["Source repair 99e6878920cf586b94bcf9c59c3177373126d1cf: 29 native tests and independent supplemental boxing/Sunburst probes pass; unchanged inherited strict diagnostic; combined caps pass. artifacts/reviewed/chart-hierarchy/tile-padding-review.md. Rebuilt packaged behavior remains unverified."]
