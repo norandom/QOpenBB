@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40125164959-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -113,9 +113,9 @@ Waterfall remains available in the current alpha alongside Radar. Local applicat
 
 ## Delivery plan
 
-Accepted chart milestone: [Nightingale](.kiro/specs/analyst-workspace/nightingale-milestone.md).
+Accepted chart milestone: [Radial Column/Bar](.kiro/specs/analyst-workspace/radial-milestone.md).
 
-Radial Column/Bar is accepted locally at RC4 on the identified image; RC5 publication and anonymous image-pull verification remain open. See the [Radial milestone](.kiro/specs/analyst-workspace/radial-milestone.md). [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md) source research is complete; original behavior probing is next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
+Radial Column/Bar is accepted and published; RC5 release assets and anonymous image pulls are verified. See the [Radial milestone](.kiro/specs/analyst-workspace/radial-milestone.md). [Treemap/Sunburst](.kiro/specs/analyst-workspace/hierarchy-milestone.md) source research is complete; original behavior probing is next; see the [delivery queue](docs/roadmap.md#active-chart-delivery-queue).
 
 - [x] Freeze the Radial control contract and implement its inactive controls.
 - [x] Implement the independently reviewed Radial Column shape helper.
@@ -125,7 +125,7 @@ Radial Column/Bar is accepted locally at RC4 on the identified image; RC5 public
 - [x] Implement and independently accept Bar grids, bounded circle fitting and shared Radial legend spacing at source level.
 - [x] Verify rebuilt Column and Bar appearance; owner approved both final appearances.
 - [x] Accept the identified packaged real-FMP journeys and original comparisons (RC4).
-- [ ] Publish and verify the Radial release images (RC5).
+- [x] Publish and verify the Radial release images (RC5): [alpha-40125164959-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40125164959-1).
 
 Nightingale delivery:
 

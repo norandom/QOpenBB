@@ -2,14 +2,14 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1), built from Workspace `e29db76041944a368c7dac446c2f894afea05e68` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public service identities passed anonymous pulls by digest, release tag and latest. See [Nightingale release verification](../artifacts/reviewed/chart-nightingale/verification.md#published-nightingale-alpha). Earlier release records below remain historical.
+Published: [alpha-40125164959-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40125164959-1), built from Workspace `9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public image identities passed anonymous digest, release-tag and latest pulls. See [Radial release verification](../artifacts/reviewed/chart-radial/verification.md#published-radial-alpha). Earlier records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:73e5da5356a4b02ab00991f1c64ee93262d1ce92274f0054b317718446e7157a` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:602e1fd61abac162064b45c9a67e7736162400247b492a8fe10964581f7160b0` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:f5947359ea5e2e822eefc0effa1876b5ba86b5f973b3c9cf842ab6cd253d89c6` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:533538235e0030596e6d0ed6ef0358f872ae3088f1a12ba1ba8e32c9f476ca5a` |
 
-The published CI-built pair is distinct from the local image used for the passing Nightingale financial/control/lifecycle browser journey. The manifest binds the publication to the reviewed release revisions; it does not claim browser execution against the CI-built bytes.
+The published CI-built pair is distinct from the local image used for the passing Radial Column/Bar financial/control/lifecycle browser journeys. The manifest binds the publication to the reviewed release revisions; it does not claim browser execution against the CI-built bytes.
 
 ## Build and publication
 

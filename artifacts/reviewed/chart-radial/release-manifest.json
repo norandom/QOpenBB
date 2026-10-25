@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "valid": true,
+  "channel": "alpha",
+  "release_version": "alpha-40125164959-1",
+  "sources": {
+    "workspace": {
+      "revision": "9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5",
+      "repository": "https://github.com/norandom/openbb-workspace.git"
+    },
+    "data_api": {
+      "revision": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba",
+      "repository": "https://github.com/norandom/openbb-data-api.git"
+    }
+  },
+  "images": {
+    "workspace": {
+      "schema_version": 1,
+      "valid": true,
+      "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:f5947359ea5e2e822eefc0effa1876b5ba86b5f973b3c9cf842ab6cd253d89c6",
+      "tag_reference": "ghcr.io/norandom/qopenbb-workspace:alpha-40125164959-1",
+      "archive_sha256": "8cc00493d60c0af9978c82107b8bba1e7a78575b8fb902921dd64199a5627cb3",
+      "loaded_image_id": "sha256:7dab439bf96de67b340fc924ddd57d60cee616679aaad3bc503cb7f5663476be",
+      "remote": {
+        "manifest_digest": "sha256:f5947359ea5e2e822eefc0effa1876b5ba86b5f973b3c9cf842ab6cd253d89c6",
+        "config_digest": "sha256:7dab439bf96de67b340fc924ddd57d60cee616679aaad3bc503cb7f5663476be",
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "service": "workspace",
+      "sources": {
+        "workspace": {
+          "revision": "9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5",
+          "repository": "https://github.com/norandom/openbb-workspace.git"
+        },
+        "data_api": {
+          "revision": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba",
+          "repository": "https://github.com/norandom/openbb-data-api.git"
+        }
+      },
+      "labels": {
+        "org.qopenbb.build-assets": "[{\"digest\": \"3462a8395f822b392b7c0808c70116ef90e17a5a1479e604cfc41d57bfbd827c\", \"mode\": \"755\", \"path\": \".qopenbb-build-assets/3462a8395f822b392b7c0808c70116ef90e17a5a1479e604cfc41d57bfbd827c\", \"target\": \"/usr/local/bin/safe-chain\", \"url\": \"https://github.com/AikidoSec/safe-chain/releases/download/1.5.25/safe-chain-linuxstatic-x64\"}, {\"digest\": \"68a509da24b06b4223a1c0175fb5eb5bc79342b76cbeff0cfe51ac3f5b17b6b2\", \"mode\": null, \"path\": \".qopenbb-build-assets/68a509da24b06b4223a1c0175fb5eb5bc79342b76cbeff0cfe51ac3f5b17b6b2\", \"target\": \"/tmp/uv.tar.gz\", \"url\": \"https://github.com/astral-sh/uv/releases/download/0.12.5/uv-x86_64-unknown-linux-gnu.tar.gz\"}, {\"digest\": \"3462a8395f822b392b7c0808c70116ef90e17a5a1479e604cfc41d57bfbd827c\", \"mode\": \"755\", \"path\": \".qopenbb-build-assets/3462a8395f822b392b7c0808c70116ef90e17a5a1479e604cfc41d57bfbd827c\", \"target\": \"/usr/local/bin/safe-chain\", \"url\": \"https://github.com/AikidoSec/safe-chain/releases/download/1.5.25/safe-chain-linuxstatic-x64\"}]",
+        "org.qopenbb.dockerfile.derived.sha256": "2f2c28cceb1945b2fff3d7f52be9b84fa1dcf87f169dd0d94deac915dfe17da0",
+        "org.qopenbb.dockerfile.source.sha256": "a7ab87b3582abc0e3346f3ec44e3f1f17f2ed86f6a40a5e43b2378d095e13d60",
+        "org.qopenbb.provenance.sha256": "6e0b2d174f3e3428ff65d3cbe285dab39049a029040a2767157a519e80b3f1ab",
+        "org.qopenbb.release": "alpha-40125164959-1",
+        "org.qopenbb.repository.data_api": "https://github.com/norandom/openbb-data-api.git",
+        "org.qopenbb.repository.workspace": "https://github.com/norandom/openbb-workspace.git",
+        "org.qopenbb.scope": "provisional-full",
+        "org.qopenbb.service": "workspace",
+        "org.qopenbb.source.data_api": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba",
+        "org.qopenbb.source.workspace": "9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5"
+      },
+      "latest_reference": "ghcr.io/norandom/qopenbb-workspace:latest",
+      "latest_remote": {
+        "manifest_digest": "sha256:f5947359ea5e2e822eefc0effa1876b5ba86b5f973b3c9cf842ab6cd253d89c6",
+        "config_digest": "sha256:7dab439bf96de67b340fc924ddd57d60cee616679aaad3bc503cb7f5663476be",
+        "os": "linux",
+        "architecture": "amd64"
+      }
+    },
+    "data-api": {
+      "schema_version": 1,
+      "valid": true,
+      "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:533538235e0030596e6d0ed6ef0358f872ae3088f1a12ba1ba8e32c9f476ca5a",
+      "tag_reference": "ghcr.io/norandom/qopenbb-data-api:alpha-40125164959-1",
+      "archive_sha256": "f07bb72b13527cc5f0c5be6e7e3cf082423a0db6c3ee7f4980d446fb255e91e7",
+      "loaded_image_id": "sha256:5cd90221b9fc12583dbe719e04e5501c12cea1e7b11d68866dd041400874d96f",
+      "remote": {
+        "manifest_digest": "sha256:533538235e0030596e6d0ed6ef0358f872ae3088f1a12ba1ba8e32c9f476ca5a",
+        "config_digest": "sha256:5cd90221b9fc12583dbe719e04e5501c12cea1e7b11d68866dd041400874d96f",
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "service": "data-api",
+      "sources": {
+        "workspace": {
+          "revision": "9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5",
+          "repository": "https://github.com/norandom/openbb-workspace.git"
+        },
+        "data_api": {
+          "revision": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba",
+          "repository": "https://github.com/norandom/openbb-data-api.git"
+        }
+      },
+      "labels": {
+        "org.qopenbb.build-assets": "[{\"digest\": \"68a509da24b06b4223a1c0175fb5eb5bc79342b76cbeff0cfe51ac3f5b17b6b2\", \"url\": \"https://github.com/astral-sh/uv/releases/download/0.12.5/uv-x86_64-unknown-linux-gnu.tar.gz\"}, {\"digest\": \"3462a8395f822b392b7c0808c70116ef90e17a5a1479e604cfc41d57bfbd827c\", \"url\": \"https://github.com/AikidoSec/safe-chain/releases/download/1.5.25/safe-chain-linuxstatic-x64\"}]",
+        "org.qopenbb.provenance.sha256": "06eb9a8d6f79f5569757e9067a93c1204370849ccbbcbd19a44d44874f0822fc",
+        "org.qopenbb.repository.data_api": "https://github.com/norandom/openbb-data-api.git",
+        "org.qopenbb.repository.workspace": "https://github.com/norandom/openbb-workspace.git",
+        "org.qopenbb.runtime-inputs.sha256": "ddf76c260148f61ee0979b5d4995f704dc920fce2e05895a166a81e00f3f5dff",
+        "org.qopenbb.scope": "data-runtime",
+        "org.qopenbb.service": "data-api",
+        "org.qopenbb.source.data_api": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba",
+        "org.qopenbb.source.workspace": "9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5"
+      },
+      "latest_reference": "ghcr.io/norandom/qopenbb-data-api:latest",
+      "latest_remote": {
+        "manifest_digest": "sha256:533538235e0030596e6d0ed6ef0358f872ae3088f1a12ba1ba8e32c9f476ca5a",
+        "config_digest": "sha256:5cd90221b9fc12583dbe719e04e5501c12cea1e7b11d68866dd041400874d96f",
+        "os": "linux",
+        "architecture": "amd64"
+      }
+    }
+  },
+  "release": {
+    "tag": "alpha-40125164959-1",
+    "repository": "norandom/QOpenBB",
+    "source_revision": "fe6826f35b0a76789a4d3841f5b2b8cc852de6a8"
+  }
+}

@@ -15,7 +15,7 @@ Reuse existing capture, setup, session, persistence and native ECharts owners. V
 - [x] RC2 (P). Implement inactive control/session adaptation after RC0C. Own only the exact control files/tests frozen in the contract, separate from RC1. Reuse existing option paths and validate control-to-render/save effects.
 - [x] RC3. Integrate after RC1/RC2 acceptance. One worker owns shared routing, capture, setup, session and caller files. Preserve prior families and stale-command protection.
 - [x] RC4. Accept an identified packaged image with real-FMP browser checks and original comparisons. Keep tests lean, inspect actual visible effects, and make fresh-session reopen the last operation.
-- [ ] RC5. Reconcile checkboxes/breadth, sync reviewed examples, commit/push and publish once. Verify release assets and anonymous image pulls separately from local browser acceptance.
+- [x] RC5. Reconcile checkboxes/breadth, sync reviewed examples, commit/push and publish once. Verify release assets and anonymous image pulls separately from local browser acceptance.
 
 The controls and pure geometry paths are frozen below. Remaining renderer paths must be frozen before their implementation starts. Each implementation task requires independent review, focused checks and the combined maintained-scope gate. Apply 400 physical lines/file, 300 logical units/file and 50/function. Inventory and shared contract edits belong to the controller. No implicit size exceptions.
 
@@ -74,7 +74,7 @@ RC1N and RC1P passed independent source review and the joined 23-test renderer c
 RC3 is independently accepted at Workspace 2831436bc1eefb9030d2ab1c154f67603f58689a; readable-series-label repair is 974e4f8a5d241dd99e377182b33f987886223e9a. The reviewed browser preparation is f9b29ddd4e2d1367f08eafe67e82e2a8a357f320. Integration and model suites pass, with targeted final Histogram and readable-label joins. The fresh strict baseline/current each retain 2,680 primary diagnostics; 26 message-order variants were independently reviewed, with no new diagnostics. The combined cap gate passes.
 
 - [x] Prepare reviewed real-FMP browser journeys for both families.
-- [ ] Execute the identified packaged image and original comparisons (RC4).
+- [x] Execute the identified packaged image and original comparisons (RC4).
 
 The pre-refinement f9b29dd candidate was verified by the bounded initial journeys below; it does not contain the later Column and Bar appearance refinements. Those results do not substitute for the final identified image checks.
 
@@ -87,10 +87,14 @@ The initial original/candidate journeys passed for both families on source f9b29
 - [x] Verify the rebuilt Column correction in light/dark packaged journeys and complete the owner's appearance decision.
 - [x] Verify the rebuilt Bar correction in light/dark packaged journeys and complete the owner's appearance decision.
 
-The final image at Workspace `9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5`, `sha256:f1b71c759334ea08bf1a197a12ce855ac5252ab2d0acd87469f1398dae0f5291`, passed one Column journey (360.243 seconds) and one Bar journey (274.652 seconds), each with one worker, zero retries/skips and exit 0. Both runs verified retained FY2025 USD tuples, controls, refresh, fresh-session reopen as the last operation and PNG export. Original comparison journeys and retained original CSV diagnostics remain documented separately. The owner approved both final appearances with “Keep these appearances.” See the [independent RC4 review](../../../artifacts/reviewed/chart-radial/final-acceptance-review.md) and [real-FMP comparison samples](../../../artifacts/reviewed/chart-radial/real-fmp-samples.md). RC4 is accepted locally; RC5 publication and image-pull verification remain open.
+The final image at Workspace `9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5`, `sha256:f1b71c759334ea08bf1a197a12ce855ac5252ab2d0acd87469f1398dae0f5291`, passed one Column journey (360.243 seconds) and one Bar journey (274.652 seconds), each with one worker, zero retries/skips and exit 0. Both runs verified retained FY2025 USD tuples, controls, refresh, fresh-session reopen as the last operation and PNG export. Original comparison journeys and retained original CSV diagnostics remain documented separately. The owner approved both final appearances with “Keep these appearances.” See the [independent RC4 review](../../../artifacts/reviewed/chart-radial/final-acceptance-review.md) and [real-FMP comparison samples](../../../artifacts/reviewed/chart-radial/real-fmp-samples.md). RC4 is accepted locally; RC5 publication and image-pull verification are complete below.
 
 The four compact original/replacement PNGs are shown in the [real-FMP comparison samples](../../../artifacts/reviewed/chart-radial/real-fmp-samples.md).
 
 The [Column source review](../../../artifacts/reviewed/chart-radial/column-refinement-review.md), [Bar source review](../../../artifacts/reviewed/chart-radial/bar-refinement-review.md) and [initial journey review](../../../artifacts/reviewed/chart-radial/initial-journeys-review.md) retain the earlier source and original-run evidence. No Radial release is published by this local RC4 acceptance.
 
-The [Bar refinement design](radial-bar-refinement-design.md) records the accepted source scope and measured-layout, category-grid and legend ownership. The final identified image and owner appearance acceptance close RC4; RC5 release publication remains pending.
+The [Bar refinement design](radial-bar-refinement-design.md) records the accepted source scope and measured-layout, category-grid and legend ownership. The final identified image and owner appearance acceptance close RC4; RC5 release publication is complete below.
+
+## Published release
+
+RC5 is complete: [alpha-40125164959-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40125164959-1). Both CI jobs, three installation assets and six anonymous image pulls passed independent review. See [publication evidence](../../../artifacts/reviewed/chart-radial/verification.md#published-radial-alpha). This does not establish browser acceptance of CI bytes or private-server deployment.

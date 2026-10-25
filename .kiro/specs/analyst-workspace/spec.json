@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-24",
+  "updated_at": "2026-10-25",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -20,52 +20,13 @@
   },
   "ready_for_implementation": false,
   "active_milestone": {
-    "name": "radial-column-bar-port",
-    "contract": "radial-milestone.md",
-    "design": "radial-contract.md",
-    "authorization": "Owner explicitly authorized parallel start and one-hour autonomous progress on 2026-10-24.",
-    "phase": "accepted-unpublished",
-    "completed_tasks": [
-      "RC0C",
-      "RC0G",
-      "RC2",
-      "RC0",
-      "RC1N",
-      "RC1P",
-      "RC1",
-      "RC3",
-      "RC4-preparation",
-      "RC4"
-    ],
-    "feature_accepted": true,
-    "application_accepted": true,
-    "rc0c_source": "f18bb5c",
-    "rc0g_source": "26f1c8c81333bf7cb09f69cc3e24d213bd7c4096",
-    "rc2_source": "2339c73",
-    "pending_decision": null,
-    "evidence": "artifacts/reviewed/chart-radial/verification.md",
-    "missing_value_policy": "Owner approved 2026-10-24: keep valid normalized Column observations visible and omit only missing values.",
-    "renderer_design": "radial-renderer-design.md",
-    "rc0_source": "fa7f464bf7ca95248b755971c08ffcd5730236ae",
-    "rc1n_source": "2ced45c54fa27fb64429ccac0432a456f1222ec0",
-    "rc1p_source": "767512f4b86467d39d36663be9299e2c97f73a9e",
-    "integration_design": "radial-integration-design.md",
-    "rc3_source": "2831436bc1eefb9030d2ab1c154f67603f58689a",
-    "rc1_label_repair": "974e4f8a5d241dd99e377182b33f987886223e9a",
-    "rc4_test_source": "f9b29ddd4e2d1367f08eafe67e82e2a8a357f320",
-    "column_refinement_source": "f6cf1790e501f88c8e8590c7b4f368ff0c13de7c",
-    "bar_refinement_source": "9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5",
-    "appearance": "Owner approved final Column and Bar appearances on 2026-10-24.",
-    "rc4_acceptance": {
-      "status": "accepted",
-      "workspace_source": "9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5",
-      "image": "sha256:f1b71c759334ea08bf1a197a12ce855ac5252ab2d0acd87469f1398dae0f5291",
-      "column_tests": 1,
-      "bar_tests": 1,
-      "owner_appearance": "approved-2026-10-24",
-      "evidence": "artifacts/reviewed/chart-radial/final-acceptance-review.md"
-    },
-    "rc5_publication": "pending"
+    "name": "treemap-sunburst-port",
+    "contract": "hierarchy-milestone.md",
+    "authorization": "Owner authorized the next batch on 2026-10-25 under the established bounded workflow.",
+    "phase": "contract-assessment",
+    "completed_tasks": [],
+    "feature_accepted": false,
+    "application_accepted": false
   },
   "completed_milestones": [
     {
@@ -497,6 +458,67 @@
         },
         "scope": "local browser acceptance and CI publication verified separately"
       }
+    },
+    {
+      "name": "radial-column-bar-port",
+      "contract": "radial-milestone.md",
+      "design": "radial-contract.md",
+      "authorization": "Owner explicitly authorized parallel start and one-hour autonomous progress on 2026-10-24.",
+      "phase": "accepted-published",
+      "completed_tasks": [
+        "RC0C",
+        "RC0G",
+        "RC2",
+        "RC0",
+        "RC1N",
+        "RC1P",
+        "RC1",
+        "RC3",
+        "RC4-preparation",
+        "RC4",
+        "RC5"
+      ],
+      "feature_accepted": true,
+      "application_accepted": true,
+      "rc0c_source": "f18bb5c",
+      "rc0g_source": "26f1c8c81333bf7cb09f69cc3e24d213bd7c4096",
+      "rc2_source": "2339c73",
+      "pending_decision": null,
+      "evidence": "artifacts/reviewed/chart-radial/verification.md",
+      "missing_value_policy": "Owner approved 2026-10-24: keep valid normalized Column observations visible and omit only missing values.",
+      "renderer_design": "radial-renderer-design.md",
+      "rc0_source": "fa7f464bf7ca95248b755971c08ffcd5730236ae",
+      "rc1n_source": "2ced45c54fa27fb64429ccac0432a456f1222ec0",
+      "rc1p_source": "767512f4b86467d39d36663be9299e2c97f73a9e",
+      "integration_design": "radial-integration-design.md",
+      "rc3_source": "2831436bc1eefb9030d2ab1c154f67603f58689a",
+      "rc1_label_repair": "974e4f8a5d241dd99e377182b33f987886223e9a",
+      "rc4_test_source": "f9b29ddd4e2d1367f08eafe67e82e2a8a357f320",
+      "column_refinement_source": "f6cf1790e501f88c8e8590c7b4f368ff0c13de7c",
+      "bar_refinement_source": "9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5",
+      "appearance": "Owner approved final Column and Bar appearances on 2026-10-24.",
+      "rc4_acceptance": {
+        "status": "accepted",
+        "workspace_source": "9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5",
+        "image": "sha256:f1b71c759334ea08bf1a197a12ce855ac5252ab2d0acd87469f1398dae0f5291",
+        "column_tests": 1,
+        "bar_tests": 1,
+        "owner_appearance": "approved-2026-10-24",
+        "evidence": "artifacts/reviewed/chart-radial/final-acceptance-review.md"
+      },
+      "rc5_publication": "accepted alpha-40125164959-1",
+      "release": "alpha-40125164959-1",
+      "publication": {
+        "run": 40125164959,
+        "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-40125164959-1",
+        "manifest": "artifacts/reviewed/chart-radial/release-manifest.json",
+        "anonymous_pull_evidence": "artifacts/reviewed/chart-radial/anonymous-pulls.json",
+        "images": {
+          "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:f5947359ea5e2e822eefc0effa1876b5ba86b5f973b3c9cf842ab6cd253d89c6",
+          "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:533538235e0030596e6d0ed6ef0358f872ae3088f1a12ba1ba8e32c9f476ca5a"
+        },
+        "scope": "Local browser acceptance and CI publication verified separately; installed Compose unchanged."
+      }
     }
   ],
   "active_correction": {
@@ -584,21 +606,5 @@
       }
     }
   ],
-  "successor_queue": [
-    {
-      "name": "hierarchy-chart-port",
-      "families": [
-        "treemap",
-        "sunburst"
-      ],
-      "phase": "source-research-complete",
-      "authorization": "Owner requested queueing the next roadmap item directly after Radial on 2026-10-24.",
-      "prerequisites": [
-        "Original hierarchy semantics and reachability",
-        "Meaningful retained FMP fixture",
-        "Reviewed shared contract and exact file boundaries"
-      ],
-      "contract": "hierarchy-milestone.md"
-    }
-  ]
+  "successor_queue": []
 }

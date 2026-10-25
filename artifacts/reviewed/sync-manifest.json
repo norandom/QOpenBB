@@ -170,6 +170,38 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-radial/rc5/closure-review.md",
+      "sourceSHA256": "077ac3df2af21910cbf8a69bcf490017664f47a03dc8d53717df5cd7f3077fee",
+      "publishedpath": "artifacts/reviewed/chart-radial/publication-closure-review.md",
+      "publishedSHA256": "077ac3df2af21910cbf8a69bcf490017664f47a03dc8d53717df5cd7f3077fee",
+      "bytes": 2421,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc5/review.md",
+      "sourceSHA256": "38398b1c8ab66b8776e7b134ea06686e96badcaef304f23a1a09fb74de3e5199",
+      "publishedpath": "artifacts/reviewed/chart-radial/publication-review.md",
+      "publishedSHA256": "38398b1c8ab66b8776e7b134ea06686e96badcaef304f23a1a09fb74de3e5199",
+      "bytes": 4210,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc5/anonymous-pulls.json",
+      "sourceSHA256": "e14f54872fbbbf11a6d4bb0837300aed3cf2048569f42c5029789a7dfdf68b3e",
+      "publishedpath": "artifacts/reviewed/chart-radial/anonymous-pulls.json",
+      "publishedSHA256": "e14f54872fbbbf11a6d4bb0837300aed3cf2048569f42c5029789a7dfdf68b3e",
+      "bytes": 5283,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-radial/rc5/manifest.json",
+      "sourceSHA256": "55e291fe320afb8b2e136d070d90a7e1ff995282cfd58ddb740ac9559f1fc03d",
+      "publishedpath": "artifacts/reviewed/chart-radial/release-manifest.json",
+      "publishedSHA256": "55e291fe320afb8b2e136d070d90a7e1ff995282cfd58ddb740ac9559f1fc03d",
+      "bytes": 6740,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-radial/rc4/samples/column-replacement-light.png",
       "sourceSHA256": "ffd527bb5f3f557138d0558fe28d596b52184a5a01578cca303605efda85a741",
       "publishedpath": "artifacts/reviewed/chart-radial/column-replacement-light.png",
@@ -347,10 +379,10 @@
     },
     {
       "sourcepath": "artifacts/chart-radial/verification.md",
-      "sourceSHA256": "4ba37655811afbe61e220f100a11f8b520ae55e8afe5538c4aea7aab06057ca3",
+      "sourceSHA256": "9d72f900d1bc9c5cb418f038d359b4380f4eb2ed9f5e76cc485824aeb9123a08",
       "publishedpath": "artifacts/reviewed/chart-radial/verification.md",
-      "publishedSHA256": "4ba37655811afbe61e220f100a11f8b520ae55e8afe5538c4aea7aab06057ca3",
-      "bytes": 5796,
+      "publishedSHA256": "9d72f900d1bc9c5cb418f038d359b4380f4eb2ed9f5e76cc485824aeb9123a08",
+      "bytes": 6874,
       "transform": "exact-byte-copy"
     },
     {
@@ -33217,7 +33249,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167553039,
+  "total_payload_bytes": 167572771,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

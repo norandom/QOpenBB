@@ -32,6 +32,6 @@ Use retained AAPL FY2025 quarterly cost of revenue and gross profit as eight lea
 
 The retained response is FMP /stable/income-statement, symbol AAPL, period quarter, limit 40, retrieved 2026-10-20T14:06:05.149732+00:00; SHA256 390dc8cbfc8302720a203bd9782d5e3b1f7363a4f762bdfcef079dbbe4c72f6b. This is a proposed reshape of retained data, not a fresh provider request or application acceptance. Use a separate synthetic fixture for color edge cases until a financially meaningful second real measure is selected.
 
-Real-FMP chart examples remain pending verified application captures. Radial remains the active delivery milestone; this research does not change the published alpha or installed Compose.
+Real-FMP chart examples remain pending verified application captures. Radial is published. Hierarchy is the active contract-assessment milestone; original probing does not change the published alpha or installed Compose.
 
 See the [original-source research](../../../artifacts/reviewed/chart-hierarchy/research-contract.md) and [independent plan review](../../../artifacts/reviewed/chart-hierarchy/plan-review.md). Source research is not a runtime pass.

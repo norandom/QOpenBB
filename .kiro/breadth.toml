@@ -1082,4 +1082,12 @@ requirements = ["analyst-workspace/radial-milestone.md:RC4"]
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/radial-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/radial-fixture.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/radial-original.spec.ts"]
 status = "passed"
-evidence = ["Final local image sha256:f1b71c759334ea08bf1a197a12ce855ac5252ab2d0acd87469f1398dae0f5291 at Workspace 9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5. Column 1/1 passed (360.243s); Bar 1/1 passed (274.652s); single worker, zero retries/skips/errors. Verified retained AAPL FY2025 reported USD tuples, controls, successful unchanged CSV refresh, fresh-session reopen as last operation and UI PNG export. Original comparisons and retained original CSV diagnostics are disclosed. Owner approved both final appearances. RC4 independently approved; RC5 publication and anonymous pulls remain pending. See artifacts/reviewed/chart-radial/final-acceptance-review.md and real-fmp-samples.md."]
+evidence = ["Final local image sha256:f1b71c759334ea08bf1a197a12ce855ac5252ab2d0acd87469f1398dae0f5291 at Workspace 9d007b2f40b65ec5f1e2e760787a9fc2d9e4e3d5. Column 1/1 passed (360.243s); Bar 1/1 passed (274.652s); single worker, zero retries/skips/errors. Verified retained AAPL FY2025 reported USD tuples, controls, successful unchanged CSV refresh, fresh-session reopen as last operation and UI PNG export. Original comparisons and retained original CSV diagnostics are disclosed. Owner approved both final appearances. RC4 independently approved; RC5 publication and anonymous pulls subsequently verified separately. See artifacts/reviewed/chart-radial/final-acceptance-review.md and real-fmp-samples.md."]
+
+[[capabilities]]
+id = "radial-milestone-publication"
+requirements = ["analyst-workspace/radial-milestone.md:RC5"]
+planned_checks = []
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py"]
+status = "passed"
+evidence = ["alpha-40125164959-1: both CI jobs, three assets and six anonymous pulls independently verified; artifacts/reviewed/chart-radial/publication-review.md. CI bytes not browser-tested or owner-server deployed."]

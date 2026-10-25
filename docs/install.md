@@ -18,18 +18,18 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Verified public image pair for `alpha-40104927952-1`:
+Verified public image pair for `alpha-40125164959-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:73e5da5356a4b02ab00991f1c64ee93262d1ce92274f0054b317718446e7157a` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:602e1fd61abac162064b45c9a67e7736162400247b492a8fe10964581f7160b0` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:f5947359ea5e2e822eefc0effa1876b5ba86b5f973b3c9cf842ab6cd253d89c6` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:533538235e0030596e6d0ed6ef0358f872ae3088f1a12ba1ba8e32c9f476ca5a` |
 
-Both services passed anonymous pulls by digest, release tag and `latest`. See [release verification](../artifacts/reviewed/chart-nightingale/verification.md#published-nightingale-alpha).
+Both services passed anonymous pulls by digest, release tag and `latest`. See [release verification](../artifacts/reviewed/chart-radial/verification.md#published-radial-alpha).
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40104927952-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40104927952-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40125164959-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40125164959-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40125164959-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
