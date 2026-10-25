@@ -170,6 +170,14 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-hierarchy/h3-ui/review.md",
+      "sourceSHA256": "3ab1b9718322166dba6993576fd1298a3f4701eb2cef988e928b5362a4fc076d",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/integration-ui-review.md",
+      "publishedSHA256": "3ab1b9718322166dba6993576fd1298a3f4701eb2cef988e928b5362a4fc076d",
+      "bytes": 4416,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-hierarchy/h2-renderer/review.md",
       "sourceSHA256": "4fac0cc845e6bb6e7b19afb4daf05d91543625db3807a7cd1a021fe155d8ada0",
       "publishedpath": "artifacts/reviewed/chart-hierarchy/inactive-renderer-review.md",
@@ -179,10 +187,10 @@
     },
     {
       "sourcepath": "artifacts/chart-hierarchy/h3-plan-review.md",
-      "sourceSHA256": "30b9ad10c45932403c9f56c35203b4d99ca8b3f8a9ab42e1891fc0511e84ca48",
+      "sourceSHA256": "333d32144ffd885b0ab0b169300e5436b40b5d3d5acf631bc9e602cb1105d305",
       "publishedpath": "artifacts/reviewed/chart-hierarchy/integration-design-review.md",
-      "publishedSHA256": "30b9ad10c45932403c9f56c35203b4d99ca8b3f8a9ab42e1891fc0511e84ca48",
-      "bytes": 15762,
+      "publishedSHA256": "333d32144ffd885b0ab0b169300e5436b40b5d3d5acf631bc9e602cb1105d305",
+      "bytes": 18259,
       "transform": "exact-byte-copy"
     },
     {
@@ -33369,7 +33377,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167654520,
+  "total_payload_bytes": 167661433,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

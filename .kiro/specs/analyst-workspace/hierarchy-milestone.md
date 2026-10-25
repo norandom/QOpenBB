@@ -1,6 +1,6 @@
 # Treemap and Sunburst parity
 
-Treemap and Sunburst follow Radial Column/Bar under UI-12. The original probes and bounded H0 contract are independently accepted. The inactive capture and setup foundation is independently accepted; rendering and live integration remain open. Preserve the existing Table/File workflow, gallery, theme, controls, saved options and visible flags.
+Treemap and Sunburst follow Radial Column/Bar under UI-12. The original probes and bounded H0 contract are independently accepted. The inactive capture, setup, renderer and controls are independently accepted; live integration and packaged acceptance remain open. Preserve the existing Table/File workflow, gallery, theme, controls, saved options and visible flags.
 
 ## Acceptance boundary
 
@@ -19,6 +19,8 @@ The original source distinguishes size from color. The first numeric field suppl
 - [x] H2. Implement renderer and controls in disjoint reviewed lanes after H1; independently review each lane.
   - [x] Resolve the four bounded readiness items in the [renderer/control plan](hierarchy-renderer-plan.md), then freeze exact interfaces before dispatch.
 - [ ] H3. Follow the [reviewed integration design](hierarchy-integration-design.md): prepare inactive helpers, then join existing application owners atomically; verify stale commands, refresh, family changes and persistence.
+  - [x] Independently accept inactive Set Up and Customize panels with existing controls.
+  - [ ] Accept session/caller/lifecycle helpers, then complete the atomic live join.
 - [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
 - [ ] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
 
@@ -36,7 +38,7 @@ Use retained AAPL FY2025 quarterly cost of revenue and gross profit as eight lea
 
 The retained response is FMP /stable/income-statement, symbol AAPL, period quarter, limit 40, retrieved 2026-10-20T14:06:05.149732+00:00; SHA256 390dc8cbfc8302720a203bd9782d5e3b1f7363a4f762bdfcef079dbbe4c72f6b. This is a proposed reshape of retained data, not a fresh provider request or application acceptance. Use a separate synthetic fixture for color edge cases until a financially meaningful second real measure is selected.
 
-Real-FMP chart examples remain pending verified application captures. Radial is published. Hierarchy is the active contract-assessment milestone; original probing does not change the published alpha or installed Compose.
+Real-FMP chart examples remain pending verified application captures. Radial is published. Hierarchy is the active implementation milestone; original probing does not change the published alpha or installed Compose.
 
 See the [original-source research](../../../artifacts/reviewed/chart-hierarchy/research-contract.md) and [independent plan review](../../../artifacts/reviewed/chart-hierarchy/plan-review.md). Source research is not a runtime pass.
 
@@ -58,4 +60,6 @@ H2.0 dependency preparation is accepted at Workspace `ce91431ae371a6d33350ebde27
 
 H2 controls are independently accepted at Workspace `1b7c3e7decd50ed197ce3c60470876ecdce9ab42`. 32 focused tests, baseline-relative strict checks and inventory caps pass for the inactive scope. [Review](../../../artifacts/reviewed/chart-hierarchy/inactive-controls-review.md). H3 live integration and H4 packaged financial/visual acceptance remain open.
 
-H2 renderer are independently accepted at Workspace `a4b0a7da0c47e63eafc7efa4c450cf73addf5f1d`. 26 focused tests, baseline-relative strict checks and inventory caps pass for the inactive scope. [Review](../../../artifacts/reviewed/chart-hierarchy/inactive-renderer-review.md). H3 live integration and H4 packaged financial/visual acceptance remain open.
+The H2 renderer is independently accepted at Workspace `a4b0a7da0c47e63eafc7efa4c450cf73addf5f1d`. 26 focused tests, baseline-relative strict checks and inventory caps pass for the inactive scope. [Review](../../../artifacts/reviewed/chart-hierarchy/inactive-renderer-review.md). H3 live integration and H4 packaged financial/visual acceptance remain open.
+
+H3 inactive ui are independently accepted at Workspace `a5112cb3312c85524b32fe6bba7c35e1bb23e0b9`. [Review](../../../artifacts/reviewed/chart-hierarchy/integration-ui-review.md) records the scoped checks and inherited diagnostics. Live integration and H4 packaged acceptance remain open.
