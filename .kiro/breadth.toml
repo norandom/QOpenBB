@@ -1226,4 +1226,12 @@ requirements = ["analyst-workspace/heatmap-milestone.md:HM0", "openbb-self-servi
 planned_checks = ["original-field-mapping", "duplicate-and-missing-cell-semantics", "native-control-inventory"]
 test_paths = []
 status = "unverified"
-evidence = ["Pinned original wrapper and replacement integration source inspected. Matrix construction, aggregation, color domain and native controls require the pending original browser probe. No Heatmap application acceptance claimed."]
+evidence = ["Original mapping/control probes completed; wide matrix and finite Sum subset independently reviewed. Full color/empty-state/control contract remains open. Original diagnostic noise retained; no Heatmap candidate acceptance claimed."]
+
+[[capabilities]]
+id = "heatmap-inactive-data-adapter"
+requirements = ["analyst-workspace/heatmap-data-contract.md:HM1"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/heatmapData.test.ts"]
+status = "passed"
+evidence = ["Workspace 0d343b00a5d168ced61a41dfbb931e4f6d4c59f9: eight focused tests independently pass, exact-file lint passes, scoped TypeScript retains only inherited typography TS2578. Adapter54 physical/37 logical/maxfunction9; combined cap gate passes. artifacts/reviewed/chart-heatmap/data-adapter-review.md. Inactive only: no route, renderer or real-FMP application acceptance."]

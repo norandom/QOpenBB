@@ -23,15 +23,20 @@
     "name": "heatmap-port",
     "contract": "heatmap-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 after hierarchy publication.",
-    "phase": "original-contract-assessment",
+    "phase": "inactive-data-accepted",
     "completed_tasks": [
-      "source-research"
+      "source-research",
+      "HM0-data-contract",
+      "HM1"
     ],
     "feature_accepted": false,
     "application_accepted": false,
     "starting_workspace_source": "33a81d387b62e962ecced465b78bf2d303530468",
     "original_frontend_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
-    "boundary": "Ordinary Table/File journey first; original mapping and controls require browser observation before implementation interfaces freeze."
+    "boundary": "Ordinary Table/File journey first; original mapping and controls require browser observation before implementation interfaces freeze.",
+    "hm1_source": "0d343b00a5d168ced61a41dfbb931e4f6d4c59f9",
+    "hm1_review": "artifacts/reviewed/chart-heatmap/data-adapter-review.md",
+    "data_contract": "heatmap-data-contract.md"
   },
   "completed_milestones": [
     {

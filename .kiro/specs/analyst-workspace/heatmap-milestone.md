@@ -12,9 +12,9 @@ The first application acceptance target is the ordinary Table/File journey. Sele
 
 Pinned original frontend: `38dffc33389aca0e4a87e0e88d42f7067aa220df`. Candidate starting source: `33a81d387b62e962ecced465b78bf2d303530468`.
 
-Original wrapper source supplies numeric labels, theme styling and a tooltip using the chart's x, y and color keys. AG Charts owns the actual matrix construction and native controls. Two displayed category axes do not establish whether the editor accepts two category fields or expands numeric series into the second axis. Observe this before choosing a snapshot shape.
+Two bounded original probes establish a wide matrix: one selected category labels row occurrences and numeric field names label columns. Duplicate labels remain separate with aggregation off. Negative and zero observations remain visible; a missing cell leaves its valid companion visible. Native Sum matches the existing ordinary aggregation owner. The [reviewed data contract](heatmap-data-contract.md) therefore reuses ordinary snapshots and setup projection; no third capture kind is planned.
 
-The replacement exposes Heatmap in its gallery but has no live Heatmap session or renderer. Current capture narrowing treats any non-hierarchy capture as ordinary. A third capture kind therefore requires explicit guards and reviewed routing; it must not pass through a single-category projection accidentally.
+Native Series, gradient Legend, Chart Style and both axis controls were inventoried, including a visible line-width change. These observations do not yet establish complete control parity, color-domain edge semantics, empty selections or candidate behavior. The first capture followed section inspection and is not an untouched appearance baseline.
 
 Freeze these decisions after a compact original probe:
 
@@ -28,7 +28,8 @@ Freeze these decisions after a compact original probe:
 
 - [x] Inspect pinned original wrapper and current integration seams.
 - [ ] HM0. Observe original behavior and independently review the data/control contract and exact task boundaries.
-- [ ] HM1. Add reviewed data contracts, validation, capture and setup with focused financial regressions and maintained-path inventory.
+  - [x] Freeze the bounded matrix data contract from original observations with independent review. Full HM0 remains open.
+- [x] HM1. Implement the inactive matrix adapter against existing ordinary setup projection, with focused regressions and maintained-path inventory.
 - [ ] HM2. Implement the renderer and controls in disjoint lanes against frozen interfaces; independently review each lane.
 - [ ] HM3. Join shared session, guards, caller and editor routes atomically; verify affected families and saved-state transitions.
 - [ ] HM4. Verify an identified packaged image against real FMP values and the original appearance, controls, light/dark themes, refresh, save/reopen and export. Show uncertain differences in qView.
@@ -40,7 +41,7 @@ Every executable production task must name its exclusive files and public inputs
 
 Reuse the existing isolated Playwright/CDP helpers with one worker and no retries. A small synthetic discriminator must establish actual original semantics before implementing the replacement. Preserve original diagnostics as observations; they do not waive candidate errors. New-account onboarding remains the [separate baseline follow-up](../openbb-self-service/first-login-diagnostics.md).
 
-Proposed real fixture: AAPL FY2025 quarterly cost of revenue and gross profit, both reported USD, from retained FMP `/stable/income-statement` observations retrieved on 2026-10-20. The same eight observations already reconcile to 416,161,000,000 USD in the [hierarchy milestone](hierarchy-milestone.md). Reshape only after the original field mapping is known. Do not mix percentages and USD on one color scale or convert missing observations to zero. This is retained provider evidence, not a fresh API request.
+Proposed real fixture: AAPL FY2025 quarterly cost of revenue and gross profit, both reported USD, from retained FMP `/stable/income-statement` observations retrieved on 2026-10-20. The same eight observations already reconcile to 416,161,000,000 USD in the [hierarchy milestone](hierarchy-milestone.md). The prepared fixture uses fiscal-quarter rows and two numeric columns; all eight values independently match the retained raw records. Do not mix percentages and USD on one color scale or convert missing observations to zero. This is retained provider evidence, not a fresh API request.
 
 Real-FMP Heatmap sample: pending an identified application run. A screenshot alone will not establish the cell values, color mapping or behavior.
 
@@ -49,3 +50,7 @@ Real-FMP Heatmap sample: pending an identified application run. A screenshot alo
 Original behavior research and current integration research run independently. After HM0, data/capture work owns new data modules; renderer work owns new ECharts translation modules. Controls may run alongside the renderer only after appearance and command interfaces are frozen. The controller owns shared unions, routing, inventory, integration and selective commits. Independent review checks the joined financial semantics and public behavior. One heavy build or suite runs at a time.
 
 Local source research is retained in `artifacts/chart-heatmap/original-research.md` and `integration-research.md`. These findings are source evidence, not completed browser checks. The [independent assessment-plan review](../../../artifacts/reviewed/chart-heatmap/plan-review.md) approves this research boundary only. HM0 remains open until the original probe resolves the mapping and control questions above.
+
+## Accepted inactive foundation
+
+HM1 is independently accepted at Workspace `0d343b00a5d168ced61a41dfbb931e4f6d4c59f9`. Eight focused tests pass; scoped typing adds no diagnostics to the inherited baseline. The 54-line adapter passes the inventory-backed caps. [Review](../../../artifacts/reviewed/chart-heatmap/data-adapter-review.md). This module is not connected to application routes and does not render Heatmap. Native color/empty-state semantics, renderer/control implementation and packaged acceptance remain open.
