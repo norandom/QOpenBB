@@ -1,6 +1,6 @@
 # Heatmap parity
 
-Heatmap application acceptance is complete for the ordinary Table/File journey and onboarded users. Financial values, appearance, controls, refresh, persistence, recovery and PNG export are independently reviewed. Next, publish the accepted milestone through CI; publication remains open.
+Heatmap application acceptance is complete for the ordinary Table/File journey and onboarded users. Financial values, appearance, controls, refresh, persistence, recovery and PNG export are independently reviewed. The accepted milestone is published as [alpha-40228938438-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1); public assets and image pulls are verified.
 
 ## Scope
 
@@ -35,7 +35,7 @@ The reviewed data, renderer/control and integration contracts cover:
 - [x] HM3a. Extract ordinary transaction dispatch without changing behavior; [independent review](../../../artifacts/reviewed/chart-heatmap/dispatch-review.md).
 - [x] HM3. Follow the reviewed [integration design](heatmap-integration-design.md): extract ordinary dispatch, then join session, guards, caller and editor atomically; verify affected families and saved-state transitions.
 - [x] HM4. Verify an identified packaged image against real FMP values and the original appearance, controls, light/dark themes, refresh, save/reopen and export. Show uncertain differences in qView.
-- [ ] HM5. Publish selected FMP examples, reconcile README/docs/breadth, and build one accepted milestone through CI. Verify the release and public image pulls.
+- [x] HM5. Publish selected FMP examples, reconcile README/docs/breadth, and build one accepted milestone through CI. Verify the release and public image pulls.
 
 Every executable production task must name its exclusive files and public inputs/outputs before dispatch. Caps remain 400 physical lines per file, 300 logical units per file and 50 per function, enforced by the existing inventory/checker. The shared dispatch owner is already 362 physical lines at the starting source; plan a cohesive extraction if needed instead of squeezing additional branches into it. Research, documentation and tests are excluded from production caps.
 
@@ -114,3 +114,7 @@ Both figures show AAPL FY2025 quarterly cost of revenue and gross profit, report
 ![Heatmap: AAPL FY2025 revenue components, dark theme](../../../artifacts/reviewed/chart-heatmap/heatmap-fmp-dark.png)
 
 [Original dark comparison](../../../artifacts/reviewed/chart-heatmap/heatmap-original-dark.png).
+
+## Published alpha
+
+[alpha-40228938438-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1) publishes both prebuilt images from root `64c1cad70037449273475688b9668b895a129da4`. [Independent publication verification](../../../artifacts/reviewed/chart-heatmap/publication-review.md) confirms both CI jobs, the exact tagged source, three public assets, six anonymous image pulls and digest-pinned Compose parsing. CI image bytes were not browser-tested, and the installed Compose stack was not upgraded. The next queued family is Funnel/Cone Funnel/Pyramid; native-behavior assessment precedes its implementation contract.

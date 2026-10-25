@@ -32880,6 +32880,38 @@
       "publishedSHA256": "c13caf8ab548ac7dbdc9215b7b9f59d906a9307e1a700ae041bb42d9f5184935",
       "bytes": 24683,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm5/publication-review.md",
+      "sourceSHA256": "6406a2fd3e18bd3a6b9ffb70f86d62913ba834c963e84ff8a90f864111e28262",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/publication-review.md",
+      "publishedSHA256": "6406a2fd3e18bd3a6b9ffb70f86d62913ba834c963e84ff8a90f864111e28262",
+      "bytes": 2959,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm5/release-manifest.json",
+      "sourceSHA256": "7920183ad300f3bebf8c46f896bc11ced80645905ff35ff31e91143d9c033508",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/release-manifest.json",
+      "publishedSHA256": "7920183ad300f3bebf8c46f896bc11ced80645905ff35ff31e91143d9c033508",
+      "bytes": 6740,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm5/anonymous-pulls.json",
+      "sourceSHA256": "96ed77f7492f8b653c3ddbf0e9689e99d9205b920cbe7c7cb31f04a4d2c4b412",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/anonymous-pulls.json",
+      "publishedSHA256": "96ed77f7492f8b653c3ddbf0e9689e99d9205b920cbe7c7cb31f04a4d2c4b412",
+      "bytes": 4832,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-heatmap/hm5/public-assets.json",
+      "sourceSHA256": "c776d1f224c177f1eee862a613edcd3f6a8a90a44978457f83625c727406e768",
+      "publishedpath": "artifacts/reviewed/chart-heatmap/public-assets.json",
+      "publishedSHA256": "c776d1f224c177f1eee862a613edcd3f6a8a90a44978457f83625c727406e768",
+      "bytes": 995,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33593,7 +33625,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168027885,
+  "total_payload_bytes": 168043411,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

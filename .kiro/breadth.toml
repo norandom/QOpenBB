@@ -1299,3 +1299,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/heatmap-chart.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/heatmap-empty.spec.ts"]
 status = "passed"
 evidence = ["artifacts/reviewed/chart-heatmap/verification.md: retained FMP8 light/dark and owner appearance accepted on c7a7633/e47ef653; final controls, populated/empty persistence, recovery, PNG exports and actual File all-missing checks pass on 5cae43a/6dc3dbfe with strict diagnostics. Tests committed at68b1e41. First-login404 remains separate; publication/deployment and selected-range callers are not accepted here."]
+
+[[capabilities]]
+id = "heatmap-milestone-publication"
+requirements = ["analyst-workspace/heatmap-milestone.md:HM5"]
+planned_checks = []
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py"]
+status = "passed"
+evidence = ["alpha-40228938438-1: both CI jobs, exact root/source pins, three anonymous assets and six anonymous image pulls verified; artifacts/reviewed/chart-heatmap/publication-review.md. Digest-pinned Compose config-only passes. Published image bytes were not browser-tested; installed Compose and owner-server acceptance are unchanged."]

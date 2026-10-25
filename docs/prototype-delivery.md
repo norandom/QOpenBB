@@ -2,14 +2,14 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-40201437272-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40201437272-1), built from Workspace `33a81d387b62e962ecced465b78bf2d303530468` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public image identities passed anonymous digest, release-tag and latest pulls. See [Hierarchy release verification](../artifacts/reviewed/chart-hierarchy/publication-review.md). Earlier records below remain historical.
+Published: [alpha-40228938438-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1), built from Workspace `68b1e41d414234c4e191d39207ca6f84347a5bf5` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public image identities passed anonymous digest, release-tag and latest pulls. See [Heatmap release verification](../artifacts/reviewed/chart-heatmap/publication-review.md). Earlier records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:284ecc13e40a5443a7e06d2d52fd9c9ba8f9f31eef1de1982777b7cf466d4653` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:c6feb30cd8ceedd213e134ca0912d97dcff4d19bee62f31ccf0e5a605c776add` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:c834cc9797588cb87b8987061928ce50c5fa3e389c3a75825e58fe68d2681f4a` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:996466ff214ee7379c6d528c1dc24b1a12c3c11064c0f8050222c1dd30f02375` |
 
-The published CI-built pair is distinct from the local image used for the passing Treemap/Sunburst financial/control/lifecycle browser journeys. The manifest binds the publication to the reviewed release revisions; it does not claim browser execution against the CI-built bytes.
+The published CI-built pair is distinct from the local image used for the passing Heatmap financial/control/lifecycle browser journeys. The manifest binds the publication to the reviewed release revisions; it does not claim browser execution against the CI-built bytes.
 
 ## Build and publication
 

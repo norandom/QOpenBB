@@ -23,7 +23,7 @@
     "name": "heatmap-port",
     "contract": "heatmap-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 after hierarchy publication.",
-    "phase": "accepted-awaiting-publication",
+    "phase": "accepted-published",
     "completed_tasks": [
       "source-research",
       "HM0-data-contract",
@@ -34,7 +34,8 @@
       "HM3a",
       "HM0",
       "HM3b",
-      "HM4"
+      "HM4",
+      "HM5"
     ],
     "feature_accepted": true,
     "application_accepted": true,
@@ -56,7 +57,7 @@
     "hm2c_source": "8b4426b9ca7f0b04ccfdfa05c495a415f7741ddf",
     "hm2b_review": "artifacts/reviewed/chart-heatmap/controls-review.md",
     "hm2c_review": "artifacts/reviewed/chart-heatmap/renderer-review.md",
-    "next": "HM5 milestone CI publication and public image verification.",
+    "next": "Funnel-family native-behavior assessment is queued; implementation contract not yet approved.",
     "integration_design": "heatmap-integration-design.md",
     "hm3a_source": "6262a976abec8f3a0ef508b9a59005ba807df375",
     "hm3a_review": "artifacts/reviewed/chart-heatmap/dispatch-review.md",
@@ -70,7 +71,23 @@
     "hm4_source": "5cae43a52317264067951b111048664292882ec2",
     "hm4_test_source": "68b1e41d414234c4e191d39207ca6f84347a5bf5",
     "hm4_image": "sha256:6dc3dbfef52cbaa16cdc062d672c63a114a2d6dc8a17daf32a148c915390d42d",
-    "hm4_review": "artifacts/reviewed/chart-heatmap/verification.md"
+    "hm4_review": "artifacts/reviewed/chart-heatmap/verification.md",
+    "publication": {
+      "release": "alpha-40228938438-1",
+      "run": "40228938438",
+      "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1",
+      "root_source": "64c1cad70037449273475688b9668b895a129da4",
+      "workspace_source": "68b1e41d414234c4e191d39207ca6f84347a5bf5",
+      "data_api_source": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba",
+      "manifest": "artifacts/reviewed/chart-heatmap/release-manifest.json",
+      "review": "artifacts/reviewed/chart-heatmap/publication-review.md",
+      "anonymous_pull_evidence": "artifacts/reviewed/chart-heatmap/anonymous-pulls.json",
+      "images": {
+        "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:c834cc9797588cb87b8987061928ce50c5fa3e389c3a75825e58fe68d2681f4a",
+        "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:996466ff214ee7379c6d528c1dc24b1a12c3c11064c0f8050222c1dd30f02375"
+      },
+      "scope": "Local candidate application acceptance and CI publication verified separately; no installed-stack upgrade or CI-image browser claim."
+    }
   },
   "completed_milestones": [
     {
@@ -714,5 +731,11 @@
       }
     }
   ],
-  "successor_queue": []
+  "successor_queue": [
+    {
+      "name": "funnel-family",
+      "phase": "native-assessment-queued",
+      "scope": "Funnel, Cone Funnel and Pyramid; original Table/File behavior and financial fixture must be observed before implementation contract approval."
+    }
+  ]
 }

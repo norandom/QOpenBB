@@ -71,8 +71,9 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [x] Independently accept the inactive Range Bar renderer core (R2).
 - [x] Implement and accept the bounded [Waterfall](../.kiro/specs/analyst-workspace/waterfall-milestone.md) application journey: retained-FMP financial geometry, default sign legend, controls, navigation, tooltips, refresh, fresh reopen and export pass; owner accepts the appearance.
 - [x] Publish and verify the accepted Waterfall milestone images as alpha-40002594897-1; both source pins, release assets and six anonymous pulls are verified separately from local browser acceptance.
-- [ ] Complete [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md); application acceptance is complete; milestone publication remains open.
+- [x] Complete [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md); application acceptance and milestone publication are verified.
 - [ ] Complete other specialty families.
+- [ ] Add Sankey as an additional chart type: assess source/target/value mapping, financial units and flow reconciliation, then implement with the existing editor and theme. Requested scope; implementation and acceptance remain pending.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.
 - [ ] Complete remaining saved-state behavior, exports and caller-specific controls.
@@ -185,6 +186,6 @@ See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milesto
 - [x] Restore both axis panels and match native gradient ticks after the first packaged comparison.
 - [x] Restore the accessible zero-series message without duplicating its canvas presentation; source checks accepted.
 - [x] Verify the packaged real-FMP browser journey and visual parity before publication.
-- [ ] Publish and verify the accepted Heatmap milestone images.
+- [x] Publish and verify the accepted Heatmap milestone images: [alpha-40228938438-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1).
 
-See the [Heatmap milestone](../.kiro/specs/analyst-workspace/heatmap-milestone.md). The current alpha is unchanged.
+See the [Heatmap milestone](../.kiro/specs/analyst-workspace/heatmap-milestone.md) and [publication verification](../artifacts/reviewed/chart-heatmap/publication-review.md).
