@@ -20,7 +20,8 @@ The original source distinguishes size from color. The first numeric field suppl
   - [x] Resolve the four bounded readiness items in the [renderer/control plan](hierarchy-renderer-plan.md), then freeze exact interfaces before dispatch.
 - [ ] H3. Follow the [reviewed integration design](hierarchy-integration-design.md): prepare inactive helpers, then join existing application owners atomically; verify stale commands, refresh, family changes and persistence.
   - [x] Independently accept inactive Set Up and Customize panels with existing controls.
-  - [ ] Accept session/caller/lifecycle helpers, then complete the atomic live join.
+  - [x] Accept inactive session/caller/lifecycle helpers and behavior-preserving extractions.
+  - [ ] Complete and independently review the atomic live join.
 - [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
 - [ ] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
 
@@ -63,3 +64,5 @@ H2 controls are independently accepted at Workspace `1b7c3e7decd50ed197ce3c60470
 The H2 renderer is independently accepted at Workspace `a4b0a7da0c47e63eafc7efa4c450cf73addf5f1d`. 26 focused tests, baseline-relative strict checks and inventory caps pass for the inactive scope. [Review](../../../artifacts/reviewed/chart-hierarchy/inactive-renderer-review.md). H3 live integration and H4 packaged financial/visual acceptance remain open.
 
 H3 inactive ui are independently accepted at Workspace `a5112cb3312c85524b32fe6bba7c35e1bb23e0b9`. [Review](../../../artifacts/reviewed/chart-hierarchy/integration-ui-review.md) records the scoped checks and inherited diagnostics. Live integration and H4 packaged acceptance remain open.
+
+H3 inactive helpers are independently accepted at Workspace `15db313febfda9d9a30b2b2f442daed54183d447`. [Review](../../../artifacts/reviewed/chart-hierarchy/integration-helpers-review.md) records the scoped checks and inherited diagnostics. Live integration and H4 packaged acceptance remain open.

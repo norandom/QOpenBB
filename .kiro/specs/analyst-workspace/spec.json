@@ -23,7 +23,7 @@
     "name": "treemap-sunburst-port",
     "contract": "hierarchy-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 under the established bounded workflow.",
-    "phase": "hierarchy-integration-helpers",
+    "phase": "hierarchy-live-integration",
     "completed_tasks": [
       "H0",
       "H1a",
@@ -33,7 +33,8 @@
       "H2.0-dependency",
       "H2-controls",
       "H2-renderer",
-      "H3-inactive-ui"
+      "H3-inactive-ui",
+      "H3-inactive-helpers"
     ],
     "feature_accepted": false,
     "application_accepted": false,
@@ -53,7 +54,8 @@
     "h2_controls_source": "1b7c3e7decd50ed197ce3c60470876ecdce9ab42",
     "h2_renderer_source": "a4b0a7da0c47e63eafc7efa4c450cf73addf5f1d",
     "integration_design": "hierarchy-integration-design.md",
-    "h3_ui_source": "a5112cb3312c85524b32fe6bba7c35e1bb23e0b9"
+    "h3_ui_source": "a5112cb3312c85524b32fe6bba7c35e1bb23e0b9",
+    "h3_helpers_source": "15db313febfda9d9a30b2b2f442daed54183d447"
   },
   "completed_milestones": [
     {

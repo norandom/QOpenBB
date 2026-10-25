@@ -1,6 +1,6 @@
 # H3 hierarchy application integration plan
 
-**Design independently approved; implementation waits for H2 acceptance.** This is a serial integration plan against accepted H1c and H2 declarations at Workspace `fc0f02f`, pending independent acceptance of the two H2 implementation lanes. It introduces no production edits. The controller owns commit boundaries, inventory, heavy-check scheduling and final review. H4 browser comparison remains separate.
+**H2 and inactive H3 prerequisites are independently accepted.** The serial atomic join below is next. The controller owns commit boundaries, inventory, heavy-check scheduling and final review. H4 browser comparison remains separate.
 
 All production paths below are relative to `vendor/workspace/terminalpro/src/components/General/Table/Chart/`. Preserve other workers' changes. Do not edit H1 capture/preparation or H2 renderer/controls except through an explicit reviewed finding. Parent-approved H2 helper additions `application/hierarchyAppearanceValues.ts` and `echarts/hierarchyLabels.ts` remain H2-owned.
 
