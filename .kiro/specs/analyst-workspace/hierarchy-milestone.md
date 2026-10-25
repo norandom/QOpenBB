@@ -1,18 +1,20 @@
 # Treemap and Sunburst parity
 
-Treemap and Sunburst follow Radial Column/Bar under UI-12. Original-source and application-reuse research is complete; the next gate is a small original browser probe. Implementation has not started. Preserve the existing Table/File workflow, gallery, theme, controls, saved options and visible flags.
+Treemap and Sunburst follow Radial Column/Bar under UI-12. The original probes and bounded H0 contract are independently accepted. Inactive H1a type materialization is next; executable capture and rendering are not implemented. Preserve the existing Table/File workflow, gallery, theme, controls, saved options and visible flags.
 
 ## Acceptance boundary
 
 Reuse the existing ECharts host, session lifecycle, persistence and export. Hierarchy needs ordered category paths: the current snapshot stores one category and cannot represent those paths. Freeze a deliberate capture/setup extension before renderer and controls fan out. Do not weaken existing grouped, pivot, tree, pinned or remote-row guards or claim those paths are supported through an ordinary File chart.
 
-The original source distinguishes size from color. The first numeric field supplies size, the second color; they are not two additive series. Multiple category columns define ordered levels. Source inspection also finds missing leaf size falling back to one, negative size clamped to zero and duplicate full paths retaining the last row before any explicit grid aggregation. These are source-derived findings, not observed application behavior or approved correction policies. Probe them before freezing the financial contract; ask the owner before changing consequential original semantics.
+The original source distinguishes size from color. The first numeric field supplies size, the second color; they are not two additive series. Multiple category columns define ordered levels. Source inspection also finds missing leaf size falling back to one, negative size clamped to zero and duplicate full paths retaining the last row before any explicit grid aggregation. Original application probes confirm missing-size area, negative/zero empty area and last-row duplicate behavior. The owner approved excluding missing sizes from area when a size field is selected; deliberate no-size count weighting is unchanged. Other semantics remain as observed/source-backed in the reviewed contract.
 
 ## Bounded sequence
 
 - [x] Research pinned original source and current application reuse gaps.
-- [ ] H0. Observe original hierarchy behavior and freeze the numerical, capture, setup and control contract with independent review.
+- [x] H0. Observe original hierarchy behavior and freeze the numerical, capture, setup and control contract with independent review.
 - [ ] H1. Materialize reviewed shared interfaces and capture/setup foundation; add the maintained-path inventory and cross-family checks.
+  - [ ] H1a. Add the two inactive type owners and compile-only fixture defined in the contract; independent review and inventory-backed size checks required.
+  - [ ] H1b. Freeze executable capture/setup boundaries, implement their inactive foundation, and run meaningful validation/guard regressions.
 - [ ] H2. Implement renderer and controls in disjoint reviewed lanes after H1; independently review each lane.
 - [ ] H3. Integrate through existing application owners in one serialized lane; verify stale commands, refresh, family changes and persistence.
 - [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
@@ -35,3 +37,7 @@ The retained response is FMP /stable/income-statement, symbol AAPL, period quart
 Real-FMP chart examples remain pending verified application captures. Radial is published. Hierarchy is the active contract-assessment milestone; original probing does not change the published alpha or installed Compose.
 
 See the [original-source research](../../../artifacts/reviewed/chart-hierarchy/research-contract.md) and [independent plan review](../../../artifacts/reviewed/chart-hierarchy/plan-review.md). Source research is not a runtime pass.
+
+## H0 acceptance
+
+The [hierarchy contract](hierarchy-contract.md) defines observed semantics, source-backed canonical paths, owner-approved missing-size handling and H1a exact ownership/types. [Independent design review](../../../artifacts/reviewed/chart-hierarchy/design-review.md) approves this bounded freeze. [Original observations review](../../../artifacts/reviewed/chart-hierarchy/observed-contract-review.md) distinguishes completed probes from diagnostic limitations and deferred H4 checks. The replacement will honor the existing tooltip toggle intent; the original toggle is inert in both observed families. No hierarchy replacement or financial runtime acceptance is claimed.

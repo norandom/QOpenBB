@@ -170,6 +170,22 @@
   },
   "entries": [
     {
+      "sourcepath": "artifacts/chart-hierarchy/h0-review/design-review.md",
+      "sourceSHA256": "105e93ef5aa891c5fc1998d8e6d40513b863e94ea6a743fbee658476b2f6f298",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/design-review.md",
+      "publishedSHA256": "105e93ef5aa891c5fc1998d8e6d40513b863e94ea6a743fbee658476b2f6f298",
+      "bytes": 3016,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-hierarchy/h0-review/observed-contract-review.md",
+      "sourceSHA256": "0065bcc4857d93365e0e15e280c7ff20a3cf225446f97df6db110e78036c6d70",
+      "publishedpath": "artifacts/reviewed/chart-hierarchy/observed-contract-review.md",
+      "publishedSHA256": "0065bcc4857d93365e0e15e280c7ff20a3cf225446f97df6db110e78036c6d70",
+      "bytes": 8078,
+      "transform": "exact-byte-copy"
+    },
+    {
       "sourcepath": "artifacts/chart-radial/rc5/closure-review.md",
       "sourceSHA256": "077ac3df2af21910cbf8a69bcf490017664f47a03dc8d53717df5cd7f3077fee",
       "publishedpath": "artifacts/reviewed/chart-radial/publication-closure-review.md",
@@ -33249,7 +33265,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 167572771,
+  "total_payload_bytes": 167583865,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

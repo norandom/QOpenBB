@@ -23,10 +23,15 @@
     "name": "treemap-sunburst-port",
     "contract": "hierarchy-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 under the established bounded workflow.",
-    "phase": "contract-assessment",
-    "completed_tasks": [],
+    "phase": "inactive-contract-materialization",
+    "completed_tasks": [
+      "H0"
+    ],
     "feature_accepted": false,
-    "application_accepted": false
+    "application_accepted": false,
+    "design": "hierarchy-contract.md",
+    "owner_missing_size_decision": "2026-10-25: Exclude selected missing sizes from area; preserve no-size equal count, zero/negative handling and duplicate-path behavior.",
+    "h0_review": "artifacts/reviewed/chart-hierarchy/design-review.md"
   },
   "completed_milestones": [
     {

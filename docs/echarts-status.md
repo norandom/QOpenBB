@@ -35,7 +35,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 - [x] Accept real-data behavior and appearance.
 - [x] Publish the accepted milestone as [alpha-40104927952-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40104927952-1); release assets and six anonymous pulls verified.
 
-The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) source research is complete; original behavior probing is next.
+The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) H0 contract is independently accepted; inactive type materialization is next.
 
 ## Open
 
@@ -154,3 +154,12 @@ B4 accepted Workspace `da5979c` and local image `4b7c12f0` after two browser sce
 The [UI worklist](../.kiro/specs/openbb-self-service/ui-parity-worklist.md) records accepted ordinary, horizontal, normalized and area journeys and the remaining UI-10 through UI-16 obligations. The [capability matrix](renderer-capability-matrix.md) records exact families and caller boundaries. These remain the detailed records behind this checklist.
 
 [Renderer roles](../README.md#renderer-roles) · [Perspective](perspective-status.md) · [Plotly](plotly-status.md) · [Roadmap](roadmap.md)
+
+## Hierarchy port
+
+- [x] Observe original Treemap/Sunburst behavior and review the bounded H0 contract.
+- [ ] Materialize inactive hierarchy types and verify their compile-time shape (H1a).
+- [ ] Implement capture/setup, renderer and controls, then integrate (H1b-H3).
+- [ ] Verify real-FMP appearance and lifecycle, then publish (H4-H5).
+
+See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) and [contract](../.kiro/specs/analyst-workspace/hierarchy-contract.md). No hierarchy replacement is accepted yet.

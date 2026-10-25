@@ -1091,3 +1091,11 @@ planned_checks = []
 test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py"]
 status = "passed"
 evidence = ["alpha-40125164959-1: both CI jobs, three assets and six anonymous pulls independently verified; artifacts/reviewed/chart-radial/publication-review.md. CI bytes not browser-tested or owner-server deployed."]
+
+[[capabilities]]
+id = "hierarchy-original-contract"
+requirements = ["analyst-workspace/hierarchy-milestone.md:H0"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/hierarchy-original.spec.ts"]
+status = "passed"
+evidence = ["Bounded original characterization only: Treemap runs2/5 and Sunburst runs3/6 completed, independent observed/design reviews under artifacts/reviewed/chart-hierarchy. Original diagnostic errors retained; source-pinned local-only probe is not a candidate regression or clean E2E claim. No hierarchy replacement acceptance."]
