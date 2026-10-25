@@ -1,6 +1,6 @@
 # Treemap and Sunburst parity
 
-Treemap and Sunburst follow Radial Column/Bar under UI-12. The original probes and bounded H0 contract are independently accepted. Inactive H1a type materialization is next; executable capture and rendering are not implemented. Preserve the existing Table/File workflow, gallery, theme, controls, saved options and visible flags.
+Treemap and Sunburst follow Radial Column/Bar under UI-12. The original probes and bounded H0 contract are independently accepted. Inactive H1a types are independently accepted; executable capture and rendering are not implemented. Preserve the existing Table/File workflow, gallery, theme, controls, saved options and visible flags.
 
 ## Acceptance boundary
 
@@ -13,7 +13,7 @@ The original source distinguishes size from color. The first numeric field suppl
 - [x] Research pinned original source and current application reuse gaps.
 - [x] H0. Observe original hierarchy behavior and freeze the numerical, capture, setup and control contract with independent review.
 - [ ] H1. Materialize reviewed shared interfaces and capture/setup foundation; add the maintained-path inventory and cross-family checks.
-  - [ ] H1a. Add the two inactive type owners and compile-only fixture defined in the contract; independent review and inventory-backed size checks required.
+  - [x] H1a. Add the two inactive type owners and compile-only fixture defined in the contract; independent review and inventory-backed size checks required.
   - [ ] H1b. Freeze executable capture/setup boundaries, implement their inactive foundation, and run meaningful validation/guard regressions.
 - [ ] H2. Implement renderer and controls in disjoint reviewed lanes after H1; independently review each lane.
 - [ ] H3. Integrate through existing application owners in one serialized lane; verify stale commands, refresh, family changes and persistence.
@@ -41,3 +41,5 @@ See the [original-source research](../../../artifacts/reviewed/chart-hierarchy/r
 ## H0 acceptance
 
 The [hierarchy contract](hierarchy-contract.md) defines observed semantics, source-backed canonical paths, owner-approved missing-size handling and H1a exact ownership/types. [Independent design review](../../../artifacts/reviewed/chart-hierarchy/design-review.md) approves this bounded freeze. [Original observations review](../../../artifacts/reviewed/chart-hierarchy/observed-contract-review.md) distinguishes completed probes from diagnostic limitations and deferred H4 checks. The replacement will honor the existing tooltip toggle intent; the original toggle is inert in both observed families. No hierarchy replacement or financial runtime acceptance is claimed.
+
+H1a is accepted at Workspace `2e900d9965902a88adba3338732de2efb054248d`: two inactive declaration owners and one compile-only fixture. Independent strict checking retains exactly the four inherited baseline diagnostics with no new diagnostics; formatting and combined inventory caps pass. [Type-contract review](../../../artifacts/reviewed/chart-hierarchy/inactive-types-review.md). This is type-shape acceptance, not executable validation or chart rendering.

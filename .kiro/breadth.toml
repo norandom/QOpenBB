@@ -1099,3 +1099,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/hierarchy-original.spec.ts"]
 status = "passed"
 evidence = ["Bounded original characterization only: Treemap runs2/5 and Sunburst runs3/6 completed, independent observed/design reviews under artifacts/reviewed/chart-hierarchy. Original diagnostic errors retained; source-pinned local-only probe is not a candidate regression or clean E2E claim. No hierarchy replacement acceptance."]
+
+[[capabilities]]
+id = "hierarchy-inactive-type-contracts"
+requirements = ["analyst-workspace/hierarchy-contract.md:H1a", "analyst-workspace/hierarchy-milestone.md:H1"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyContracts.typecheck.ts"]
+status = "passed"
+evidence = ["Type-only source 2e900d9965902a88adba3338732de2efb054248d: independent scoped strict baseline/candidate have identical four inherited diagnostics, no new errors; formatting and combined size gate pass. artifacts/reviewed/chart-hierarchy/inactive-types-review.md. No runtime validator, capture or rendering acceptance."]
