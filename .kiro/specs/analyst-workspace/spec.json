@@ -23,7 +23,7 @@
     "name": "heatmap-port",
     "contract": "heatmap-milestone.md",
     "authorization": "Owner authorized the next batch on 2026-10-25 after hierarchy publication.",
-    "phase": "application-integration-in-progress",
+    "phase": "source-integration-accepted",
     "completed_tasks": [
       "source-research",
       "HM0-data-contract",
@@ -31,7 +31,9 @@
       "HM2a",
       "HM2b",
       "HM2c",
-      "HM3a"
+      "HM3a",
+      "HM0",
+      "HM3b"
     ],
     "feature_accepted": false,
     "application_accepted": false,
@@ -53,10 +55,12 @@
     "hm2c_source": "8b4426b9ca7f0b04ccfdfa05c495a415f7741ddf",
     "hm2b_review": "artifacts/reviewed/chart-heatmap/controls-review.md",
     "hm2c_review": "artifacts/reviewed/chart-heatmap/renderer-review.md",
-    "next": "HM3b atomic Heatmap application join, followed by packaged FMP/browser acceptance.",
+    "next": "HM4 identified-image FMP/browser financial and visual acceptance, then HM5 publication.",
     "integration_design": "heatmap-integration-design.md",
     "hm3a_source": "6262a976abec8f3a0ef508b9a59005ba807df375",
-    "hm3a_review": "artifacts/reviewed/chart-heatmap/dispatch-review.md"
+    "hm3a_review": "artifacts/reviewed/chart-heatmap/dispatch-review.md",
+    "hm3b_source": "09947a2d7bea7c93b71ad4dc74afcc1ae64f5033",
+    "hm3b_review": "artifacts/reviewed/chart-heatmap/integration-review.md"
   },
   "completed_milestones": [
     {

@@ -71,7 +71,7 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [x] Independently accept the inactive Range Bar renderer core (R2).
 - [x] Implement and accept the bounded [Waterfall](../.kiro/specs/analyst-workspace/waterfall-milestone.md) application journey: retained-FMP financial geometry, default sign legend, controls, navigation, tooltips, refresh, fresh reopen and export pass; owner accepts the appearance.
 - [x] Publish and verify the accepted Waterfall milestone images as alpha-40002594897-1; both source pins, release assets and six anonymous pulls are verified separately from local browser acceptance.
-- [ ] Complete [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md); inactive renderer and controls are accepted; application verification remains open.
+- [ ] Complete [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md); source integration is accepted; packaged application verification remains open.
 - [ ] Complete other specialty families.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.
@@ -181,6 +181,7 @@ See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milesto
 - [x] Observe original wide-table mapping and accept the inactive matrix adapter.
 - [x] Implement and independently review the inactive renderer and editor, including the two approved behavior corrections.
 - [x] Prepare shared transaction dispatch for integration without changing existing chart behavior.
-- [ ] Integrate and verify the real-FMP application journey before publication.
+- [x] Integrate Heatmap with the existing session, caller, themes and editor; verify fresh-capture recovery.
+- [ ] Verify the packaged real-FMP browser journey and visual parity before publication.
 
 See the [Heatmap milestone](../.kiro/specs/analyst-workspace/heatmap-milestone.md). The current alpha is unchanged.
