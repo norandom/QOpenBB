@@ -24,6 +24,7 @@ The original source distinguishes size from color. The first numeric field suppl
   - [x] Complete and independently review the atomic live join.
 - [ ] H4. Verify an identified packaged image with retained real FMP, original comparisons, visible control effects, theme, export and final fresh-session reopen. Obtain owner appearance decisions where needed.
   - [x] Repair Tile Padding effects in native composed-default rendering; rebuilt packaged verification remains pending.
+  - [x] Repair first-hover gradient marker visibility after appearance changes; rebuilt interaction verification remains pending.
 - [ ] H5. Sync selected financial screenshots and reviewed evidence, reconcile README/docs/breadth, and publish one accepted milestone with verified release and image identities.
 
 H0 research is documentation-only and outside production size caps. Before H1-H3 dispatch, freeze exact writable paths and exported interfaces. Every new or modified production file must pass 400 physical lines, 300 logical units and 50/function, with inventory-backed verification. The shared join owns any cohesive extraction needed by files near those limits. No implicit size exception or parallel edits to shared state owners.
@@ -71,3 +72,5 @@ H3 inactive helpers are independently accepted at Workspace `15db313febfda9d9a30
 H3 live application join is independently accepted at Workspace `2647c37f9dd1d84b1f41da28383ace73e0b10c15`. [Review](../../../artifacts/reviewed/chart-hierarchy/integration-join-review.md) records the scoped checks and inherited diagnostics. H4 packaged financial, visual and persistence acceptance remains open.
 
 H4 preparation found default label boxing padding masking Tile Padding. The independently reviewed source repair is committed at Workspace `99e6878920cf586b94bcf9c59c3177373126d1cf`; native rendering checks preserve geometry and explicit active boxing. [Repair review](../../../artifacts/reviewed/chart-hierarchy/tile-padding-review.md). The initial `2647c37` image does not contain this repair; rebuilt financial and visual acceptance remains open.
+
+The gradient-marker source repair is independently accepted at Workspace `432c26b93328b14b7a9d79d37bafe6203a738cfa`. It makes the seeded marker visible on the first valid hover after a full appearance repaint, including Tooltips Off. [Repair review](../../../artifacts/reviewed/chart-hierarchy/marker-visibility-review.md). Both financial journeys and owner appearance decisions passed on the preceding image; the final synthetic interaction case must pass on a rebuilt image before H4 closes.

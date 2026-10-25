@@ -1179,3 +1179,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyEngine.test.ts"]
 status = "passed"
 evidence = ["Source repair 99e6878920cf586b94bcf9c59c3177373126d1cf: 29 native tests and independent supplemental boxing/Sunburst probes pass; unchanged inherited strict diagnostic; combined caps pass. artifacts/reviewed/chart-hierarchy/tile-padding-review.md. Rebuilt packaged behavior remains unverified."]
+
+[[capabilities]]
+id = "hierarchy-marker-first-hover"
+requirements = ["analyst-workspace/hierarchy-renderer-design.md", "analyst-workspace/hierarchy-milestone.md:H4"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyHoverBinding.render.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/hierarchyHoverBinding.test.ts"]
+status = "passed"
+evidence = ["Source repair 432c26b93328b14b7a9d79d37bafe6203a738cfa: real ECharts regression fails on the prior binding and passes after explicit marker visibility; 74 affected checks, unchanged inherited strict diagnostic and combined caps pass. artifacts/reviewed/chart-hierarchy/marker-visibility-review.md. Rebuilt packaged interaction acceptance remains open."]
