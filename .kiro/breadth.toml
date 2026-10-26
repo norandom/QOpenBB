@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "funnel-inactive-data-adapter"
+requirements = ["analyst-workspace/funnel-contract.md:Data and financial meaning", "analyst-workspace/funnel-milestone.md:F1"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/funnelData.test.ts"]
+status = "passed"
+evidence = ["Workspace 20bae47fe5e88620120c07c049907b092c3a046c: 21 focused tests independently pass; scoped lint and full-file caps pass. Scoped typing retains 33 inherited diagnostics with no added/owned errors. artifacts/reviewed/chart-funnel/data-review.md. Inactive data semantics only; renderer/session/browser acceptance remains pending."]
+
+[[capabilities]]
 id = "funnel-family-application"
 requirements = ["analyst-workspace/funnel-milestone.md:F1-F4", "analyst-workspace/funnel-contract.md"]
 planned_checks = ["first-selected-field and duplicate-stage semantics", "missing-zero-signed admission", "variant geometry and controls", "retained-FMP packaged values and appearance", "refresh fresh-reopen and PNG export"]

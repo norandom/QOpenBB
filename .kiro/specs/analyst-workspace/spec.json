@@ -734,9 +734,14 @@
   "successor_queue": [
     {
       "name": "funnel-family",
-      "phase": "data-policy-approved-interface-preparation",
+      "phase": "inactive-data-adapter-accepted",
       "contract": "funnel-milestone.md",
       "implementation_proposal": "funnel-contract.md",
+      "data_design": "funnel-data-design.md",
+      "f1_source": "20bae47fe5e88620120c07c049907b092c3a046c",
+      "f1_review": "artifacts/reviewed/chart-funnel/data-review.md",
+      "approved_tasks": ["F1-inactive-data-adapter"],
+      "design_review": "artifacts/chart-funnel/f1-design-review.md",
       "assessment_review": "artifacts/reviewed/chart-funnel/assessment-review.md",
       "implementation_approved": false,
       "owner_data_decision": "2026-10-26: approved missing-stage gaps, signed-magnitude Funnel/Cone and nonnegative positive-total Pyramid admission; preserve controls and explicit recovery.",

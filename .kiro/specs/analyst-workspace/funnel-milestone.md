@@ -10,11 +10,11 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
 
 ## Bounded sequence
 
-- [ ] F0. Observe the original variants with retained FMP data and a small edge-case discriminator; independently review the behavior matrix and implementation boundaries.
+- [x] F0. Observe the original variants with retained FMP data and a small edge-case discriminator; independently review the behavior matrix and implementation boundaries.
   - [x] Independently review retained FMP values and bounded native characterization.
   - [x] Owner approved the explicit missing/signed-input rules on 2026-10-26; see the [implementation contract](funnel-contract.md).
-  - [ ] Freeze and independently review executable interfaces and file ownership.
-- [ ] F1. Define and implement the data adapter with focused financial regressions and maintained-path inventory.
+  - [x] Freeze and independently review the [F1 data interfaces and file ownership](funnel-data-design.md). Renderer/editor interfaces remain F2 work.
+- [x] F1. Implement and independently accept the inactive [data adapter](funnel-data-design.md) with focused financial regressions and maintained-path inventory.
 - [ ] F2. Freeze renderer/editor interfaces, then implement renderer and controls in disjoint lanes with independent review.
 - [ ] F3. Join the existing session, caller and editor; verify saved-state transitions and affected families.
 - [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
@@ -35,6 +35,8 @@ Use isolated background Playwright with strict CDP diagnostics, one worker and n
 The native-browser lane owns its original-only probe and ignored run outputs. A separate fixture lane owns the retained-data CSV, provenance and reconciliation. The controller owns the milestone, shared contracts and integration; independent review checks the combined findings before implementation. Only one heavy suite or build runs at a time.
 
 ## Reviewed original findings
+
+F1 source acceptance: Workspace `20bae47fe5e88620120c07c049907b092c3a046c` adds only the contracts, pure adapter and focused tests. Twenty-one tests, scoped lint and complete-file complexity checks pass; baseline-relative typing adds no diagnostics. The [independent source review](../../../artifacts/reviewed/chart-funnel/data-review.md) accepts identity, provenance, missing/signed inputs and stable normalization. Rendering and application integration remain pending.
 
 The [native assessment](../../../artifacts/reviewed/chart-funnel/native-assessment.md) and [independent review](../../../artifacts/reviewed/chart-funnel/assessment-review.md) establish bounded original characterization. Three financial journeys passed rendering, export and visible reload checks. Follow-up observations cover duplicates, Sum, direction, labels and missing/signed values. Historical probe failures remain documented. Original CSV diagnostics were not clean; these are not candidate acceptance results.
 
