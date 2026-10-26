@@ -1,0 +1,51 @@
+# Funnel-family parity
+
+Assess Funnel, Cone Funnel and Pyramid in the original Table/File journey before implementing their replacement. The owner resumed this work on 2026-10-26 after Heatmap publication. Production implementation and application acceptance remain pending.
+
+## Scope
+
+Preserve the existing gallery, editor, themes, reachable controls and saved configurations. Reuse the existing ECharts host and session; do not introduce hidden flags, disabled controls or a second state owner. The current published alpha remains available throughout development.
+
+The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source declarations alone do not establish their visible behavior. Observe data assignment, stage order, duplicate labels, missing/zero/negative values and reachable controls before freezing the replacement contract. Other callers and table capabilities retain their separate obligations.
+
+## Bounded sequence
+
+- [ ] F0. Observe the original variants with retained FMP data and a small edge-case discriminator; independently review the behavior matrix and implementation boundaries.
+  - [x] Independently review retained FMP values and bounded native characterization.
+  - [x] Owner approved the explicit missing/signed-input rules on 2026-10-26; see the [implementation contract](funnel-contract.md).
+  - [ ] Freeze and independently review executable interfaces and file ownership.
+- [ ] F1. Define and implement the data adapter with focused financial regressions and maintained-path inventory.
+- [ ] F2. Freeze renderer/editor interfaces, then implement renderer and controls in disjoint lanes with independent review.
+- [ ] F3. Join the existing session, caller and editor; verify saved-state transitions and affected families.
+- [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
+- [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
+
+This sequence is an assessment agenda, not an approved implementation contract. F0 supplies the concrete interfaces, exclusive file ownership and acceptance checks needed for subsequent tasks. Each production task must pass the existing inventory-backed caps: 400 physical lines per file, 300 logical units per file and 50 per function. Research, documentation and tests are excluded from production caps.
+
+## Financial fixture and verification
+
+Prepare one retained AAPL income-statement quarter with reported USD levels for revenue, gross profit, operating income, pretax income and net income. Record the actual period, provider fields, retrieval provenance and source hash; independently reconcile the CSV with the retained response. These are income-statement levels, not additive expense movements, cash flows or customer-conversion observations. Do not silently sort or alter values to fit a funnel shape.
+
+The independently reconciled fixture selects FY2026 Q2, ended 2026-03-28: revenue 111,184,000,000 USD; gross profit 54,781,000,000; operating income 35,885,000,000; pretax income 35,833,000,000; net income 29,578,000,000. Five source-field comparisons and four accounting identities pass. This quarter has nonincreasing levels; FY2026 Q3 instead has pretax income above operating income and was not altered. Monotonicity is not yet an input restriction for the replacement.
+
+Use isolated background Playwright with strict CDP diagnostics, one worker and no retries. Record original errors honestly; they do not waive candidate failures. Preserve the separate first-login onboarding issue. No new provider request or production build is required for the original assessment.
+
+## Work allocation
+
+The native-browser lane owns its original-only probe and ignored run outputs. A separate fixture lane owns the retained-data CSV, provenance and reconciliation. The controller owns the milestone, shared contracts and integration; independent review checks the combined findings before implementation. Only one heavy suite or build runs at a time.
+
+## Reviewed original findings
+
+The [native assessment](../../../artifacts/reviewed/chart-funnel/native-assessment.md) and [independent review](../../../artifacts/reviewed/chart-funnel/assessment-review.md) establish bounded original characterization. Three financial journeys passed rendering, export and visible reload checks. Follow-up observations cover duplicates, Sum, direction, labels and missing/signed values. Historical probe failures remain documented. Original CSV diagnostics were not clean; these are not candidate acceptance results.
+
+Cone and Pyramid retain tested option values after reload but their reload screenshots visibly lose numeric labels. Selecting Reserve alongside Value leaves Value first; replacing the first selected field alone remains untested. These findings guide replacement acceptance rather than authorize copying native bugs. The owner approved the explicit financial admission rules in the [implementation contract](funnel-contract.md) on 2026-10-26; executable interfaces are next.
+
+## Financial chart samples
+
+Original reference only: AAPL FY2026 Q2 income-statement levels, reported USD, from the retained FMP response retrieved 2026-10-20. Original frontend `38dffc33389aca0e4a87e0e88d42f7067aa220df`, image `sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f`; backend-only overlay identity is in the reviewed assessment. Screenshots follow control inventory with toggles restored; they are not untouched defaults or replacement renders. Pyramid allocates axial thickness by value/total, not equal-area slices or additive revenue composition.
+
+![Original Funnel with five reported FMP income-statement levels](../../../artifacts/reviewed/chart-funnel/original-funnel-fmp.png)
+
+![Original Cone Funnel with the same five reported levels](../../../artifacts/reviewed/chart-funnel/original-cone-fmp.png)
+
+![Original Pyramid with the same five reported levels](../../../artifacts/reviewed/chart-funnel/original-pyramid-fmp.png)

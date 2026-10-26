@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "funnel-family-application"
+requirements = ["analyst-workspace/funnel-milestone.md:F1-F4", "analyst-workspace/funnel-contract.md"]
+planned_checks = ["first-selected-field and duplicate-stage semantics", "missing-zero-signed admission", "variant geometry and controls", "retained-FMP packaged values and appearance", "refresh fresh-reopen and PNG export"]
+test_paths = []
+status = "planned"
+evidence = ["Original characterization and retained FMP fixture independently reviewed: artifacts/reviewed/chart-funnel/assessment-review.md and native-assessment.md. Original-only probes remain local; no replacement tests or implementation accepted. Financial admission rules owner-approved 2026-10-26; source proposal is not application coverage."]
+
+[[capabilities]]
 id = "radar-milestone-publication"
 requirements = ["analyst-workspace/radar-milestone.md:RD5"]
 planned_checks = ["hosted-both-image-builds", "tagged-release-assets", "anonymous-digest-tag-latest-pulls"]

@@ -65,7 +65,7 @@ The owner authorized starting the next family while the accepted predecessor fin
 | 2 | [Radial Column and Radial Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) | Accepted and published; owner approved both appearances | RC5 assets and anonymous pulls verified |
 | 3 | [Treemap and Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) | Accepted and published for onboarded users; both appearances approved | H5 assets and anonymous pulls verified |
 | 4 | [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md) | Accepted and published for onboarded users | HM5 assets and anonymous pulls verified |
-| 5 | Funnel, Cone Funnel and Pyramid | Native-behavior assessment queued; source map prepared | Observe original controls and financial semantics before freezing the implementation contract |
+| 5 | [Funnel, Cone Funnel and Pyramid](../.kiro/specs/analyst-workspace/funnel-milestone.md) | Native characterization reviewed; data rules approved | Freeze executable interfaces before implementation |
 | Later | Sankey (additional chart type) | Requested; assessment and implementation pending | Define source/target/value mapping, financial units and flow reconciliation before implementation; reuse the existing editor and theme |
 | Later | Remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
 

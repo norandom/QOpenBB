@@ -73,6 +73,8 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [x] Publish and verify the accepted Waterfall milestone images as alpha-40002594897-1; both source pins, release assets and six anonymous pulls are verified separately from local browser acceptance.
 - [x] Complete [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md); application acceptance and milestone publication are verified.
 - [ ] Complete other specialty families.
+- [ ] Complete [Funnel, Cone Funnel and Pyramid](../.kiro/specs/analyst-workspace/funnel-milestone.md), starting with the original behavior and retained-FMP data contract.
+- [x] Characterize the original Funnel family with retained FMP values and independent review; [reference examples and limits](../.kiro/specs/analyst-workspace/funnel-milestone.md#financial-chart-samples). Replacement implementation is pending.
 - [ ] Add Sankey as an additional chart type: assess source/target/value mapping, financial units and flow reconciliation, then implement with the existing editor and theme. Requested scope; implementation and acceptance remain pending.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.

@@ -32912,6 +32912,46 @@
       "publishedSHA256": "c776d1f224c177f1eee862a613edcd3f6a8a90a44978457f83625c727406e768",
       "bytes": 995,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/native/assessment.md",
+      "sourceSHA256": "bbf8afcac3b8b859b302677131857f7716f8a339d3b26bf911403cc827fb06cd",
+      "publishedpath": "artifacts/reviewed/chart-funnel/native-assessment.md",
+      "publishedSHA256": "bbf8afcac3b8b859b302677131857f7716f8a339d3b26bf911403cc827fb06cd",
+      "bytes": 9742,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f0-review.md",
+      "sourceSHA256": "79cc6d62b95b71b731649535c85b8d37e50b45fbfbbe59763c6b813ba2d3c6aa",
+      "publishedpath": "artifacts/reviewed/chart-funnel/assessment-review.md",
+      "publishedSHA256": "79cc6d62b95b71b731649535c85b8d37e50b45fbfbbe59763c6b813ba2d3c6aa",
+      "bytes": 13264,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/native/run-1/browser-output/funnel-original-original-Funnel-bounded-native-assessment/native.png",
+      "sourceSHA256": "6c5800fecf0380c3a67e808f318b834ce645f62e923175f483d25e3a904797de",
+      "publishedpath": "artifacts/reviewed/chart-funnel/original-funnel-fmp.png",
+      "publishedSHA256": "6c5800fecf0380c3a67e808f318b834ce645f62e923175f483d25e3a904797de",
+      "bytes": 12885,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/native/run-1/browser-output/funnel-original-original-C-05d9c-l-bounded-native-assessment/native.png",
+      "sourceSHA256": "d8c1d85ed8dd41581c454921f72077ebbcabc6ed08a0b8f7c0e8edd038708947",
+      "publishedpath": "artifacts/reviewed/chart-funnel/original-cone-fmp.png",
+      "publishedSHA256": "d8c1d85ed8dd41581c454921f72077ebbcabc6ed08a0b8f7c0e8edd038708947",
+      "bytes": 18962,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/native/run-1/browser-output/funnel-original-original-Pyramid-bounded-native-assessment/native.png",
+      "sourceSHA256": "ce6e84e30d06c09dd0674487f56e11ce07b82c66d34e71e875fd0f200b365edb",
+      "publishedpath": "artifacts/reviewed/chart-funnel/original-pyramid-fmp.png",
+      "publishedSHA256": "ce6e84e30d06c09dd0674487f56e11ce07b82c66d34e71e875fd0f200b365edb",
+      "bytes": 22866,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33625,7 +33665,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168043411,
+  "total_payload_bytes": 168121130,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
