@@ -1363,3 +1363,11 @@ planned_checks = ["retained-FMP formatted values in both themes", "bounded saved
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-candidate.spec.ts"]
 status = "passed"
 evidence = ["Candidate4ae3695d/source6c76323: defaults3, controls1 and recovery1 pass with strict chart diagnostics. Bounded scope and remaining F4 gaps are recorded in artifacts/reviewed/chart-funnel/candidate-verification.md. Owner appearance approved2026-10-26; overall F4 acceptance remains pending; onboarding404 is separately unresolved."]
+
+[[capabilities]]
+id = "funnel-financial-lifecycle"
+requirements = ["analyst-workspace/funnel-milestone.md:F4"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-journey.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-theme.spec.ts"]
+status = "passed"
+evidence = ["Candidate4ae3695d/source6c76323: lifecycle1 and read-only theme observation1 pass with clean diagnostics. Reviews: artifacts/reviewed/chart-funnel/lifecycle-review.md and theme-probe-review.md. Refresh rereads unchanged retained FMP CSV; palette persistence and PNG contents are not covered. Test-only Workspace commit09cd95e leaves packaged runtime source unchanged."]

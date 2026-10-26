@@ -22,6 +22,8 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
   - [x] F3a. Implement and independently accept the inactive stock/plain-color theme helper.
   - [x] F3b. Connect capture, session, caller and editor atomically; retain correction controls for invalid Pyramid data.
 - [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
+  - [x] Verify retained-FMP table/chart and Funnel/Line round trips, title and unchanged-source refresh; [independent lifecycle review](../../../artifacts/reviewed/chart-funnel/lifecycle-review.md).
+  - [x] Observe ordinary administrator palette controls without edits; [bounded theme probe](../../../artifacts/reviewed/chart-funnel/theme-probe-review.md). Applying custom colors and verifying PNG contents remain open.
   - [x] Verify five bounded candidate browser checks and three matching original references; [evidence and source repairs](../../../artifacts/reviewed/chart-funnel/packaged-progress.md).
   - [x] Verify three refined packaged FMP default views on image `47e8c66f`; numeric-label defaults and Funnel endpoints match. Stage-label alignment and Cone endpoint clipping were found in visual inspection.
   - [x] Independently accept the bounded [stage-label source repair](../../../artifacts/reviewed/chart-funnel/stage-label-review.md).
