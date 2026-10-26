@@ -23,7 +23,9 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
   - [x] F3b. Connect capture, session, caller and editor atomically; retain correction controls for invalid Pyramid data.
 - [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
   - [x] Verify five bounded candidate browser checks and three matching original references; [evidence and source repairs](../../../artifacts/reviewed/chart-funnel/packaged-progress.md).
-  - [ ] Verify the rebuilt label-default and zero-outer-gap refinements; retain remaining control/theme/export obligations.
+  - [x] Verify three refined packaged FMP default views on image `47e8c66f`; numeric-label defaults and Funnel endpoints match. Stage-label alignment and Cone endpoint clipping were found in visual inspection.
+  - [x] Independently accept the bounded [stage-label source repair](../../../artifacts/reviewed/chart-funnel/stage-label-review.md).
+  - [ ] Verify rebuilt stage-label glyphs and obtain visual acceptance; retain remaining control/theme/export obligations.
 - [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
 
 This sequence is an assessment agenda, not an approved implementation contract. F0 supplies the concrete interfaces, exclusive file ownership and acceptance checks needed for subsequent tasks. Each production task must pass the existing inventory-backed caps: 400 physical lines per file, 300 logical units per file and 50 per function. Research, documentation and tests are excluded from production caps.

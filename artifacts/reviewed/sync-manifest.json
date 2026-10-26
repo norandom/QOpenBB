@@ -33024,6 +33024,14 @@
       "publishedSHA256": "b35fdaec7fc7218df219ee5d237e868da93be320719ec79b6183d57f559cf90d",
       "bytes": 15782,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f4/stage-label-repair/review.md",
+      "sourceSHA256": "06ab3db5d12676a8df32f194bdd3e3f1ec64d58ab191e034a33a9cf9bd05bac5",
+      "publishedpath": "artifacts/reviewed/chart-funnel/stage-label-review.md",
+      "publishedSHA256": "06ab3db5d12676a8df32f194bdd3e3f1ec64d58ab191e034a33a9cf9bd05bac5",
+      "bytes": 3525,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33737,7 +33745,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168169813,
+  "total_payload_bytes": 168173338,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
