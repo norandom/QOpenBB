@@ -24,7 +24,15 @@ Original diagnostic samples: AAPL FY2025 quarterly cost of revenue and gross pro
 
 ![Original 100% Stacked Line with cumulative percentages](../../../artifacts/reviewed/chart-stacked-line/original-normalized-line-fmp.png)
 
-Replacement sample: pending an identified candidate. Original CSV diagnostics remain recorded. The native Series panel has no Connect Missing Data switch; Workspace's theme sets `line.series.connectMissingData: true`, overriding the dependency's false default. Preserve the existing UI rather than inventing a control.
+The owner accepted both replacement appearances on 2026-10-26. Three bounded candidate journeys pass: both retained-FMP variants in light/dark with legend, navigator, refresh, reorder, save/reopen and export; signed/missing/zero geometry and empty-series recovery. The recovery failure was a test double-toggle of an already-open editor, resolved without production changes. [Independent progress review](../../../artifacts/reviewed/chart-stacked-line/candidate-progress-review.md) retains the remaining axis, Set Up and topology work. SL3 and publication remain open.
+
+Candidate image `sha256:580475f5f7cde1948508e31bcba59fb70fbcf6d8fef9ac42454f584d38ba7afb`, production source `94d09d1380c787a27c7c369f54213dd625275859`, no source overlay. Maintained browser test committed at `9a3c0fa45209bc68b4bfc3e71d0808a0ab4468d3`; test-only commit changes no production code. Both views below use the same retained FMP AAPL FY2025 reported-USD fixture described above. The normalized plot shows cumulative percentages while tooltips retain raw USD.
+
+![Replacement Stacked Line with AAPL quarterly components](../../../artifacts/reviewed/chart-stacked-line/replacement-stacked-line-fmp.png)
+
+![Replacement 100% Stacked Line with cumulative percentages](../../../artifacts/reviewed/chart-stacked-line/replacement-normalized-line-fmp.png)
+
+ Original CSV diagnostics remain recorded. The native Series panel has no Connect Missing Data switch; Workspace's theme sets `line.series.connectMissingData: true`, overriding the dependency's false default. Preserve the existing UI rather than inventing a control.
 
 ## Ownership and limits
 

@@ -806,13 +806,16 @@
   "successor_queue": [
     {
       "name": "stacked-normalized-line",
-      "phase": "source-integration-accepted",
+      "phase": "packaged-core-journeys-accepted",
+      "browser_test_source": "9a3c0fa45209bc68b4bfc3e71d0808a0ab4468d3",
+      "candidate_image": "sha256:580475f5f7cde1948508e31bcba59fb70fbcf6d8fef9ac42454f584d38ba7afb",
+      "appearance": "Owner accepted ordinary and normalized appearances on 2026-10-26; remaining SL3 behavior checks open.",
       "implementation_source": "94d09d1380c787a27c7c369f54213dd625275859",
       "contract": "stacked-line-contract.md",
       "foundation_source": "21b3515e9da57859d515d96515debb19c6ecf51d",
       "approved_tasks": ["SL2-A", "SL2-B", "SL2-J"],
       "authorization": "Owner approved contract and parallel implementation on 2026-10-26; independent contract and foundation reviews accepted.",
-      "scope": "Bounded original assessment accepted: six characterization cases and independent source/browser review. SL2 source integration accepted after independent review; packaged candidate acceptance pending. See stacked-line-milestone.md."
+      "scope": "Bounded original assessment accepted: six characterization cases and independent source/browser review. SL2 accepted; three packaged core journeys and both appearances accepted. Remaining SL3 axis/control/topology comparisons and publication pending. See stacked-line-milestone.md."
     },
     {
       "name": "sankey",

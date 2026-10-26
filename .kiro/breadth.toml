@@ -1403,3 +1403,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.stacked-line.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/editorStackedLine.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/sessionStackedLine.test.ts"]
 status = "passed"
 evidence = ["Workspace 94d09d1380c787a27c7c369f54213dd625275859: 231 affected checks, scoped lint and combined caps pass. Strict comparison retains one independently adjudicated inherited Zod diagnostic rewording; not a clean compilation. artifacts/reviewed/chart-stacked-line/join-review.md and integration-verification.md. Packaged application acceptance remains open."]
+
+[[capabilities]]
+id = "stacked-line-financial-journeys"
+requirements = ["analyst-workspace/stacked-line-milestone.md:SL3 bounded financial journeys"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/stacked-line.spec.ts"]
+status = "passed"
+evidence = ["Candidate production94d09d1/image580475f5, maintained test9a3c0fa: amount-3, normalized-1 and recovery-2 pass. Both appearances owner-accepted. artifacts/reviewed/chart-stacked-line/candidate-progress-review.md and amount-review.md retain limits. Does not establish full SL3 acceptance or new release."]

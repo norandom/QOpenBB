@@ -124,7 +124,8 @@ Radial Column/Bar is accepted and published; RC5 release assets and anonymous im
 - [x] Accept [Funnel, Cone Funnel and Pyramid](.kiro/specs/analyst-workspace/funnel-milestone.md): owner-approved appearance, financial lifecycle, visible controls and plain-color Cone PNG contents pass within the [reviewed scope](artifacts/reviewed/chart-funnel/verification.md).
 - [x] Publish and verify the accepted Funnel milestone images: [alpha-40334144666-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40334144666-1). Next: [Stacked Line and 100% Stacked Line packaged verification](.kiro/specs/analyst-workspace/stacked-line-milestone.md).
 - [x] Integrate Stacked Line and 100% Stacked Line renderer, editor and session; 231 affected checks pass.
-- [ ] Verify the packaged Stacked Line candidate with retained FMP data and publish its milestone images.
+- [x] Verify three packaged Stacked Line financial/lifecycle journeys; both appearances accepted.
+- [ ] Close remaining Stacked Line axis/control checks and publish its milestone images.
 
 - [x] Freeze the Radial control contract and implement its inactive controls.
 - [x] Implement the independently reviewed Radial Column shape helper.
