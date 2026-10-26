@@ -66,7 +66,7 @@ The owner authorized starting the next family while the accepted predecessor fin
 | 3 | [Treemap and Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) | Accepted and published for onboarded users; both appearances approved | H5 assets and anonymous pulls verified |
 | 4 | [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md) | Accepted and published for onboarded users | HM5 assets and anonymous pulls verified |
 | 5 | [Funnel, Cone Funnel and Pyramid](../.kiro/specs/analyst-workspace/funnel-milestone.md) | Accepted and published for onboarded users | F5 tagged assets and public image pulls verified |
-| 6 | [Stacked Line and 100% Stacked Line](../.kiro/specs/analyst-workspace/stacked-line-milestone.md) | Source assessment reviewed; original browser characterization next | Freeze original stacking/normalization, financial missing/sign rules and saved-state behavior before implementation |
+| 6 | [Stacked Line and 100% Stacked Line](../.kiro/specs/analyst-workspace/stacked-line-milestone.md) | Original characterization accepted; implementation contract next | Freeze original stacking/normalization, financial missing/sign rules and saved-state behavior before implementation |
 | Later | Sankey (additional chart type) | Requested; assessment and implementation pending | Define source/target/value mapping, financial units and flow reconciliation before implementation; reuse the existing editor and theme |
 | Later | Remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
 

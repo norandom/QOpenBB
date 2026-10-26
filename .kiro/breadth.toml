@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "stacked-line-application"
+requirements = ["analyst-workspace/stacked-line-milestone.md:SL1", "analyst-workspace/stacked-line-milestone.md:SL2", "analyst-workspace/stacked-line-milestone.md:SL3"]
+planned_checks = ["signed cumulative and normalized numerical contracts", "existing editor/session saved-state integration", "packaged retained-FMP light/dark controls and lifecycle"]
+test_paths = []
+status = "unverified"
+evidence = ["SL0 original characterization accepted by artifacts/reviewed/chart-stacked-line/native-review.md: six original diagnostic cases and source assessment. These are baseline observations, not replacement tests. Implementation and maintained candidate tests remain pending."]
+
+[[capabilities]]
 id = "funnel-ordinary-session-source"
 requirements = ["analyst-workspace/funnel-integration-design.md:Focused F3 source acceptance", "analyst-workspace/funnel-milestone.md:F3b"]
 planned_checks = []

@@ -2,7 +2,7 @@
 
 ## Stacked Line source assessment, 2026-10-26
 
-Extend the existing Cartesian session rather than introduce a separate renderer or reuse bar stacking unchanged. This is a proposal informed by source inspection, not an accepted implementation contract. The [milestone](stacked-line-milestone.md) owns the bounded sequence; SL0 remains open until original browser characterization and independent review are complete.
+Extend the existing Cartesian session rather than introduce a separate renderer or reuse bar stacking unchanged. This is a proposal informed by source inspection, not an accepted implementation contract. The [milestone](stacked-line-milestone.md) owns the bounded sequence; SL0 was open at this source checkpoint. The subsequent six-case characterization and independent review accepted that bounded assessment; see the milestone and artifacts/reviewed/chart-stacked-line/native-review.md.
 
 The original gallery includes `stackedLine` and `normalizedLine`; Workspace source `0b2190354d2dc5f4175ffb989cf652ac36237c77` excludes them from replacement Cartesian admission. Broad analyst requirements remain unapproved; this assessment follows the owner-authorized chart-parity slice and prototype-first workflow.
 

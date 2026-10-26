@@ -1,10 +1,10 @@
 # Stacked Line and 100% Stacked Line
 
-Assess the two remaining original Line gallery variants before changing their renderer admission. Ordinary Line is already supported. The gallery exposes `stackedLine` and `normalizedLine`, but the current Cartesian family contract does not admit them. This is a source finding, not a demonstrated runtime failure.
+The bounded original assessment is accepted; freeze the implementation contract next. Six original characterization cases and reviewed dependency source establish the baseline for `stackedLine` and `normalizedLine`. Replacement admission remains unimplemented. See the [independent review](../../../artifacts/reviewed/chart-stacked-line/native-review.md) and [observations](../../../artifacts/reviewed/chart-stacked-line/original-browser-progress.md).
 
 ## Bounded delivery
 
-- [ ] SL0. Establish original stacking, normalization, missing/signed/zero handling, controls and saved-state semantics; independently review the assessment.
+- [x] SL0. Establish the bounded original stacking, normalization, missing/signed/zero observations, controls and saved-state semantics; independently review the assessment. Numerical implementation decisions and candidate acceptance remain SL1-SL3.
 - [ ] SL1. Freeze the smallest extension of existing Cartesian/session owners, with explicit numerical contracts, affected file inventory and disjoint task ownership.
 - [ ] SL2. Implement and independently review the scoped renderer, editor and session changes; verify affected financial and persistence regressions.
 - [ ] SL3. Verify an identified packaged candidate with retained FMP data, original comparison, reachable controls, light/dark themes, refresh, save/reopen and export. Ask the owner about material appearance differences.
@@ -18,7 +18,13 @@ The retained AAPL FY2025 quarterly cost-of-revenue and gross-profit fixture is a
 
 Use a small synthetic discriminator for signed, zero, missing and duplicate-category behavior. Keep raw observations separate from cumulative plotted coordinates and normalized values. Original behavior is evidence for a compatibility decision, not automatic permission to copy a financial bug.
 
-Financial chart sample: pending an identified rendered original and replacement. No new provider retrieval or application acceptance is claimed.
+Original diagnostic samples: AAPL FY2025 quarterly cost of revenue and gross profit, retained FMP income-statement data retrieved 2026-10-20, reported USD. Source `38dffc33389aca0e4a87e0e88d42f7067aa220df`, image `f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f`, with the backend-only overlay identified in the review. The second stacked line is cumulative revenue; the normalized second line is 100%. These screenshots are original references, not replacement acceptance or a new provider retrieval.
+
+![Original Stacked Line with additive AAPL quarterly components](../../../artifacts/reviewed/chart-stacked-line/original-stacked-line-fmp.png)
+
+![Original 100% Stacked Line with cumulative percentages](../../../artifacts/reviewed/chart-stacked-line/original-normalized-line-fmp.png)
+
+Replacement sample: pending an identified candidate. Original CSV diagnostics remain recorded. The native Series panel has no Connect Missing Data switch; Workspace's theme sets `line.series.connectMissingData: true`, overriding the dependency's false default. Preserve the existing UI rather than inventing a control.
 
 ## Ownership and limits
 

@@ -33168,6 +33168,38 @@
       "publishedSHA256": "6398ad624edc290f1033e64f2ea6b2e114a0a9037b7ad2468bbd2b7b586fa726",
       "bytes": 4665,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/original-browser-progress.md",
+      "sourceSHA256": "e8efd51bbda36b1a242d4017241de2ae9ebebc6efdd451ec8c11cf6222c45eed",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/original-browser-progress.md",
+      "publishedSHA256": "e8efd51bbda36b1a242d4017241de2ae9ebebc6efdd451ec8c11cf6222c45eed",
+      "bytes": 9535,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/native-review.md",
+      "sourceSHA256": "4a034920ad852587c3fbe670ae392a98369cf4d8e87f876f0f9b3c2516e9a69e",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/native-review.md",
+      "publishedSHA256": "4a034920ad852587c3fbe670ae392a98369cf4d8e87f876f0f9b3c2516e9a69e",
+      "bytes": 5393,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/native-financial-1/browser-output/stacked-line-original-orig-df66f--financial-characterization/selected-two-series.png",
+      "sourceSHA256": "e320d82221a6a354c2eb5f2784e4999ef798306dae4013b7dbb1f4f923d22898",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/original-stacked-line-fmp.png",
+      "publishedSHA256": "e320d82221a6a354c2eb5f2784e4999ef798306dae4013b7dbb1f4f923d22898",
+      "bytes": 23306,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/native-financial-1/browser-output/stacked-line-original-orig-36991--financial-characterization/selected-two-series.png",
+      "sourceSHA256": "1f9d2f7047b63f6efe718d37964553d0850742cee64fd016e3e9e9e57467a5a0",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/original-normalized-line-fmp.png",
+      "publishedSHA256": "1f9d2f7047b63f6efe718d37964553d0850742cee64fd016e3e9e9e57467a5a0",
+      "bytes": 15320,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33881,7 +33913,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168290848,
+  "total_payload_bytes": 168344402,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
