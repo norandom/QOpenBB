@@ -23,13 +23,14 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
   - [x] F3b. Connect capture, session, caller and editor atomically; retain correction controls for invalid Pyramid data.
 - [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
   - [x] Verify retained-FMP table/chart and Funnel/Line round trips, title and unchanged-source refresh; [independent lifecycle review](../../../artifacts/reviewed/chart-funnel/lifecycle-review.md).
-  - [x] Observe ordinary administrator palette controls without edits; [bounded theme probe](../../../artifacts/reviewed/chart-funnel/theme-probe-review.md). Applying custom colors and verifying PNG contents remain open.
+  - [x] Observe ordinary administrator palette controls without edits; [bounded theme probe](../../../artifacts/reviewed/chart-funnel/theme-probe-review.md). The maintained palette journey below supersedes this exploratory probe.
+  - [x] Save two plain colors through the existing administrator UI, verify retained-FMP Cone paint and PNG contents, and restore disposable settings; [palette/export review](../../../artifacts/reviewed/chart-funnel/palette-review.md). Advanced palettes remain deferred.
   - [x] Verify five bounded candidate browser checks and three matching original references; [evidence and source repairs](../../../artifacts/reviewed/chart-funnel/packaged-progress.md).
   - [x] Verify three refined packaged FMP default views on image `47e8c66f`; numeric-label defaults and Funnel endpoints match. Stage-label alignment and Cone endpoint clipping were found in visual inspection.
   - [x] Independently accept the bounded [stage-label source repair](../../../artifacts/reviewed/chart-funnel/stage-label-review.md).
   - [x] Verify rebuilt stage-label glyphs and all five bounded FMP, saved-label and recovery checks on image `4ae3695d`, source `6c76323`.
   - [x] Owner accepted the six light/dark comparison pairs on 2026-10-26 (source `6c76323`, image `4ae3695d`).
-  - [ ] Finish remaining control/theme/export obligations.
+  - [ ] Verify visible direction, Drop-Off and Shadow effects. In the closing F4 review, reconcile earlier Aggregate, common-appearance, missing/zero, persistence and export limitations against source and packaged evidence; this list does not silently close them.
 - [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
 
 This sequence is an assessment agenda, not an approved implementation contract. F0 supplies the concrete interfaces, exclusive file ownership and acceptance checks needed for subsequent tasks. Each production task must pass the existing inventory-backed caps: 400 physical lines per file, 300 logical units per file and 50 per function. Research, documentation and tests are excluded from production caps.

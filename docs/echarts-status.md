@@ -98,7 +98,7 @@ See the [reviewed evidence](../artifacts/reviewed/chart-combo/verification.md). 
 
 ## Remaining port acceptance
 
-Funnel's retained-FMP table/chart, Line/Funnel and source-refresh journey passes with clean diagnostics; see the [lifecycle review](../artifacts/reviewed/chart-funnel/lifecycle-review.md). The existing palette editor is reachable. Custom-palette paint and PNG-content acceptance are still pending.
+Funnel's retained-FMP table/chart, Line/Funnel and source-refresh journey passes with clean diagnostics; see the [lifecycle review](../artifacts/reviewed/chart-funnel/lifecycle-review.md). The [plain-palette and PNG-content journey](../artifacts/reviewed/chart-funnel/palette-review.md) also passes. Visible direction, connector and shadow effects remain to verify before milestone publication.
 
 - [ ] Exercise each completed chart milestone with real FMP responses in the application, checking plotted values, units, dates and transformations.
 - [ ] Verify the milestone's applicable controls, refresh, save/reopen, theme and export behavior; retain synthetic edge-case checks.

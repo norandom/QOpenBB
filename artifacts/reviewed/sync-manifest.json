@@ -33080,6 +33080,14 @@
       "publishedSHA256": "d636ff2ae38166ffd2614e04ab81a06ceaf3e64105d7a06cb6056d28423cbdb6",
       "bytes": 3295,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f4/browser/palette-review.md",
+      "sourceSHA256": "f23384e5bb653ec554df75ad89c952009711793aa74591ded9133f6ce377274c",
+      "publishedpath": "artifacts/reviewed/chart-funnel/palette-review.md",
+      "publishedSHA256": "f23384e5bb653ec554df75ad89c952009711793aa74591ded9133f6ce377274c",
+      "bytes": 3774,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33793,7 +33801,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168231370,
+  "total_payload_bytes": 168235144,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
