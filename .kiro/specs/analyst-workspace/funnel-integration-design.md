@@ -148,6 +148,7 @@ Then one parent-owned atomic integration task owns new application/funnelSession
 | application/applicationSessionTransactions.ts | 254 | Funnel transaction dispatch and wrong-family intent rejection |
 | application/useApplicationChartSession.ts | 261 | onIntent union, ReadyFor narrowing if needed, no-legend update exemption |
 | application/histogramCapture.ts | 39 | Return new Funnel observation policy |
+| application/histogramEditorTransaction.ts | 129 before join | Reject the new Funnel-only intents at the existing Histogram boundary; required by the expanded command union |
 | application/gridCapture.ts | 275 | Include Funnel policy in existing absent-value skip branch; preserve null/zero |
 | application/setupProjection.ts | 299 | Admit dedicated policy, empty selection, unswitched ordinary aggregation |
 | compatibility/snapshotTypes.ts / snapshot.ts | 77 / 169 | Policy type and no-series snapshot admission |

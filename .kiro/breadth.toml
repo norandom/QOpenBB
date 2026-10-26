@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "funnel-ordinary-session-source"
+requirements = ["analyst-workspace/funnel-integration-design.md:Focused F3 source acceptance", "analyst-workspace/funnel-milestone.md:F3b"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/funnelSession.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/funnelApplicationEditor.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/funnelCaller.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/funnelEditorControls.test.tsx"]
+status = "passed"
+evidence = ["Workspace 490afc974a15099380ff65abf2ad1ab135c55f4c: independent source review accepts 25 compatibility/renderer tests and 13 UI tests, consistent-root strict baseline/candidate2789 diagnostics with no additions, lint and combined caps. artifacts/reviewed/chart-funnel/integration-review.md. DOM composition mocks the visual host/session; full packaged behavior and FMP appearance remain F4 obligations."]
+
+[[capabilities]]
 id = "funnel-inactive-theme-helper"
 requirements = ["analyst-workspace/funnel-integration-design.md:Theme reachability and prerequisite", "analyst-workspace/funnel-milestone.md:F3a"]
 planned_checks = []
@@ -36,7 +44,7 @@ requirements = ["analyst-workspace/funnel-milestone.md:F1-F4", "analyst-workspac
 planned_checks = ["first-selected-field and duplicate-stage semantics", "missing-zero-signed admission", "variant geometry and controls", "retained-FMP packaged values and appearance", "refresh fresh-reopen and PNG export"]
 test_paths = []
 status = "planned"
-evidence = ["Original characterization and retained FMP fixture independently reviewed: artifacts/reviewed/chart-funnel/assessment-review.md and native-assessment.md. Original-only probes remain local; no replacement tests or implementation accepted. Financial admission rules owner-approved 2026-10-26; source proposal is not application coverage."]
+evidence = ["Original characterization and retained FMP fixture independently reviewed: artifacts/reviewed/chart-funnel/assessment-review.md and native-assessment.md. Original-only probes remain local; F3b source is now accepted separately, but no packaged replacement acceptance is claimed. Financial admission rules owner-approved 2026-10-26; source proposal is not application coverage."]
 
 [[capabilities]]
 id = "radar-milestone-publication"

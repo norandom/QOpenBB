@@ -1,6 +1,6 @@
 # Funnel-family parity
 
-The inactive data adapter, renderer and controls for Funnel, Cone Funnel and Pyramid are independently accepted. Their combined ECharts/editor check passes. Application session integration, packaged-image parity and publication remain pending. The owner resumed this work on 2026-10-26 after Heatmap publication.
+The inactive data adapter, renderer and controls for Funnel, Cone Funnel and Pyramid are independently accepted. Their combined ECharts/editor check passes. Application session integration is source-accepted; packaged-image parity and publication remain pending. The owner resumed this work on 2026-10-26 after Heatmap publication.
 
 ## Scope
 
@@ -17,10 +17,10 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
 - [x] F1. Implement and independently accept the inactive [data adapter](funnel-data-design.md) with focused financial regressions and maintained-path inventory.
 - [x] F2a. Freeze and independently accept the [renderer/editor declarations](funnel-renderer-design.md).
 - [x] F2. Implement renderer and controls in the design's disjoint lanes with independent review and the inactive composition check.
-- [ ] F3. Join the existing session, caller and editor under the [reviewed integration design](funnel-integration-design.md); verify saved-state transitions and affected families.
+- [x] F3. Join the existing session, caller and editor under the [reviewed integration design](funnel-integration-design.md); verify saved-state transitions and affected families.
   - [x] Independently review the integration contract, including safe theme rejection and missing-value capture.
   - [x] F3a. Implement and independently accept the inactive stock/plain-color theme helper.
-  - [ ] F3b. Connect capture, session, caller and editor atomically; retain correction controls for invalid Pyramid data.
+  - [x] F3b. Connect capture, session, caller and editor atomically; retain correction controls for invalid Pyramid data.
 - [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
 - [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
 
@@ -53,6 +53,8 @@ The [native assessment](../../../artifacts/reviewed/chart-funnel/native-assessme
 Cone and Pyramid retain tested option values after reload but their reload screenshots visibly lose numeric labels. Selecting Reserve alongside Value leaves Value first; replacing the first selected field alone remains untested. These findings guide replacement acceptance rather than authorize copying native bugs. The owner approved the explicit financial admission rules in the [implementation contract](funnel-contract.md) on 2026-10-26; executable interfaces are next.
 
 F3a source acceptance: Workspace `3cbd6c85f2ac09c943e53120a99e89bb7c636abf` adds the inactive stock/plain-color theme helper. Nineteen focused tests, scoped strict typing, lint and inventory-backed caps pass under [independent review](../../../artifacts/reviewed/chart-funnel/theme-helper-review.md). Advanced paints return explicit diagnostics without modifying settings; actual caller recovery and packaged appearance remain pending.
+
+F3b source acceptance: Workspace `490afc974a15099380ff65abf2ad1ab135c55f4c` connects the ordinary capture/session/editor paths. The [independent integration review](../../../artifacts/reviewed/chart-funnel/integration-review.md) accepts 25 compatibility/renderer checks and 13 UI checks, baseline-relative strict typing, lint and caps. Empty/invalid Pyramid data keeps correction controls; recapture retains missing/null/zero distinctions; theme failures preserve settings. Source composition uses a mocked visual host, and JSDOM renderer checks retain fallback font metrics. F4 packaged appearance, actual Settings recovery, fresh save/reopen and PNG acceptance remain open.
 
 ## Financial chart samples
 

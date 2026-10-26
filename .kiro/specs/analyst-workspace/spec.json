@@ -21,7 +21,7 @@
   "ready_for_implementation": false,
   "active_milestone": {
     "name": "funnel-family",
-    "phase": "application-integration-in-progress",
+    "phase": "application-source-accepted",
     "contract": "funnel-milestone.md",
     "implementation_proposal": "funnel-contract.md",
     "data_design": "funnel-data-design.md",
@@ -45,7 +45,7 @@
     "assessment_review": "artifacts/reviewed/chart-funnel/assessment-review.md",
     "implementation_approved": false,
     "owner_data_decision": "2026-10-26: approved missing-stage gaps, signed-magnitude Funnel/Cone and nonnegative positive-total Pyramid admission; preserve controls and explicit recovery.",
-    "scope": "Ordinary Table/File journey; inactive source composition accepted, application integration and image acceptance pending.",
+    "scope": "Ordinary Table/File session and editor source accepted; packaged behavior, appearance and publication remain pending.",
     "completed_tasks": [
       "F0",
       "F1",
@@ -53,16 +53,20 @@
       "F2b",
       "F2c",
       "F2-join",
-      "F3a"
+      "F3a",
+      "F3b",
+      "F3"
     ],
     "feature_accepted": false,
     "application_accepted": false,
     "authorization": "Owner resumed autonomous work on 2026-10-26 and approved explicit missing/signed-input rules.",
-    "next": "Connect capture, session, caller and editor under the reviewed atomic F3b design; then verify an identified image.",
+    "next": "Build an identified packaged candidate and verify FMP values, controls, recovery, appearance, persistence and export under F4.",
     "integration_design": "funnel-integration-design.md",
     "integration_review": "funnel-integration-review.md",
     "f3a_source": "3cbd6c85f2ac09c943e53120a99e89bb7c636abf",
-    "f3a_review": "artifacts/reviewed/chart-funnel/theme-helper-review.md"
+    "f3a_review": "artifacts/reviewed/chart-funnel/theme-helper-review.md",
+    "f3b_source": "490afc974a15099380ff65abf2ad1ab135c55f4c",
+    "f3b_review": "artifacts/reviewed/chart-funnel/integration-review.md"
   },
   "completed_milestones": [
     {
