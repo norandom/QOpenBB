@@ -44,7 +44,7 @@ requirements = ["analyst-workspace/funnel-milestone.md:F1-F4", "analyst-workspac
 planned_checks = ["first-selected-field and duplicate-stage semantics", "missing-zero-signed admission", "variant geometry and controls", "retained-FMP packaged values and appearance", "refresh fresh-reopen and PNG export"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-candidate.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-visual-reference.spec.ts"]
 status = "planned"
-evidence = ["Five bounded packaged candidate checks and three native reference checks pass on identified pre-refinement images; see artifacts/reviewed/chart-funnel/packaged-progress.md. Refined image47e8c66f/source1fe9178 passes three FMP defaults; visual comparison found label alignment/clipping, repaired in6c76323 with21 focused tests and independent review (artifacts/reviewed/chart-funnel/stage-label-review.md). Rebuilt glyph/visual acceptance remains pending. Overall application acceptance remains planned; advanced palettes and onboarding404 remain separately open."]
+evidence = ["Five bounded packaged candidate checks and three native reference checks pass on identified pre-refinement images; see artifacts/reviewed/chart-funnel/packaged-progress.md. Refined image47e8c66f/source1fe9178 passes three FMP defaults; visual comparison found label alignment/clipping, repaired in6c76323 with21 focused tests and independent review (artifacts/reviewed/chart-funnel/stage-label-review.md). Final candidate4ae3695d/source6c76323 passes five bounded browser checks; glyph fixes inspected, owner visual acceptance pending. Overall application acceptance remains planned; advanced palettes and onboarding404 remain separately open."]
 
 [[capabilities]]
 id = "radar-milestone-publication"
@@ -1355,3 +1355,11 @@ planned_checks = []
 test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py"]
 status = "passed"
 evidence = ["alpha-40228938438-1: both CI jobs, exact root/source pins, three anonymous assets and six anonymous image pulls verified; artifacts/reviewed/chart-heatmap/publication-review.md. Digest-pinned Compose config-only passes. Published image bytes were not browser-tested; installed Compose and owner-server acceptance are unchanged."]
+
+[[capabilities]]
+id = "funnel-packaged-financial-defaults-and-recovery"
+requirements = ["analyst-workspace/funnel-milestone.md:F4"]
+planned_checks = ["retained-FMP formatted values in both themes", "bounded saved numeric-label mode", "invalid and empty Pyramid clears and recovers"]
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-candidate.spec.ts"]
+status = "passed"
+evidence = ["Candidate4ae3695d/source6c76323: defaults3, controls1 and recovery1 pass with strict chart diagnostics. Bounded scope and remaining F4 gaps are recorded in artifacts/reviewed/chart-funnel/candidate-verification.md. Owner appearance decision and overall F4 acceptance remain pending; onboarding404 is separately unresolved."]

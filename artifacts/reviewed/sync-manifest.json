@@ -33032,6 +33032,38 @@
       "publishedSHA256": "06ab3db5d12676a8df32f194bdd3e3f1ec64d58ab191e034a33a9cf9bd05bac5",
       "bytes": 3525,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f4/browser/candidate3-review.md",
+      "sourceSHA256": "df4743206b236eb4be2e9e383ea8d3c2f49490502e903fb6eff3d6853509ad8e",
+      "publishedpath": "artifacts/reviewed/chart-funnel/candidate-verification.md",
+      "publishedSHA256": "df4743206b236eb4be2e9e383ea8d3c2f49490502e903fb6eff3d6853509ad8e",
+      "bytes": 4366,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f4/browser/candidate3-defaults-1/browser-output/funnel-candidate-Funnel-ca-27361-unnel-retained-USD-defaults/default-light.png",
+      "sourceSHA256": "6e95951816e57bfc8c6dc6ade1c336d701d67e88e5420b0f7a3debf20cb12196",
+      "publishedpath": "artifacts/reviewed/chart-funnel/candidate-funnel-fmp.png",
+      "publishedSHA256": "6e95951816e57bfc8c6dc6ade1c336d701d67e88e5420b0f7a3debf20cb12196",
+      "bytes": 13943,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f4/browser/candidate3-defaults-1/browser-output/funnel-candidate-Funnel-ca-89aa8-unnel-retained-USD-defaults/default-light.png",
+      "sourceSHA256": "0d74a92fcee0d649fd085b87c9ddc6e9a098a6d83e2551cea228f5c02a4fcb87",
+      "publishedpath": "artifacts/reviewed/chart-funnel/candidate-cone-fmp.png",
+      "publishedSHA256": "0d74a92fcee0d649fd085b87c9ddc6e9a098a6d83e2551cea228f5c02a4fcb87",
+      "bytes": 15897,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f4/browser/candidate3-defaults-1/browser-output/funnel-candidate-Funnel-ca-cf5ec-ramid-retained-USD-defaults/default-light.png",
+      "sourceSHA256": "3470fb41f7c8eee1c2442d079165cb777f86cc2a01155ff4f52346ffb5452919",
+      "publishedpath": "artifacts/reviewed/chart-funnel/candidate-pyramid-fmp.png",
+      "publishedSHA256": "3470fb41f7c8eee1c2442d079165cb777f86cc2a01155ff4f52346ffb5452919",
+      "bytes": 17621,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33745,7 +33777,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168173338,
+  "total_payload_bytes": 168225165,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
