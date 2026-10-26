@@ -21,7 +21,7 @@
   "ready_for_implementation": false,
   "active_milestone": {
     "name": "funnel-family",
-    "phase": "inactive-renderer-controls-accepted",
+    "phase": "application-integration-in-progress",
     "contract": "funnel-milestone.md",
     "implementation_proposal": "funnel-contract.md",
     "data_design": "funnel-data-design.md",
@@ -37,7 +37,9 @@
       "F1-inactive-data-adapter",
       "F2a-render-types",
       "F2b-inactive-renderer",
-      "F2c-inactive-controls"
+      "F2c-inactive-controls",
+      "F3a-inactive-theme-helper",
+      "F3b-atomic-application-integration"
     ],
     "design_review": "artifacts/chart-funnel/f1-design-review.md",
     "assessment_review": "artifacts/reviewed/chart-funnel/assessment-review.md",
@@ -55,7 +57,9 @@
     "feature_accepted": false,
     "application_accepted": false,
     "authorization": "Owner resumed autonomous work on 2026-10-26 and approved explicit missing/signed-input rules.",
-    "next": "Review bounded F3 session/caller integration, including recoverable invalid Pyramid state and native theme paint."
+    "next": "Implement and independently accept the supported-theme helper, then the atomic ordinary application integration.",
+    "integration_design": "funnel-integration-design.md",
+    "integration_review": "funnel-integration-review.md"
   },
   "completed_milestones": [
     {

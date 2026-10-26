@@ -17,7 +17,10 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
 - [x] F1. Implement and independently accept the inactive [data adapter](funnel-data-design.md) with focused financial regressions and maintained-path inventory.
 - [x] F2a. Freeze and independently accept the [renderer/editor declarations](funnel-renderer-design.md).
 - [x] F2. Implement renderer and controls in the design's disjoint lanes with independent review and the inactive composition check.
-- [ ] F3. Join the existing session, caller and editor; verify saved-state transitions and affected families.
+- [ ] F3. Join the existing session, caller and editor under the [reviewed integration design](funnel-integration-design.md); verify saved-state transitions and affected families.
+  - [x] Independently review the integration contract, including safe theme rejection and missing-value capture.
+  - [ ] F3a. Implement and independently accept the inactive stock/plain-color theme helper.
+  - [ ] F3b. Connect capture, session, caller and editor atomically; retain correction controls for invalid Pyramid data.
 - [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
 - [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
 
