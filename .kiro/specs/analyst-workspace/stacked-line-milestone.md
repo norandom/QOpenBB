@@ -1,12 +1,12 @@
 # Stacked Line and 100% Stacked Line
 
-The original assessment and inactive foundation are accepted; parallel renderer/editor implementation is next. Six original characterization cases and reviewed dependency source establish the baseline for `stackedLine` and `normalizedLine`. Replacement admission remains unimplemented. See the [independent review](../../../artifacts/reviewed/chart-stacked-line/native-review.md) and [observations](../../../artifacts/reviewed/chart-stacked-line/original-browser-progress.md).
+Source integration is accepted at Workspace `94d09d1380c787a27c7c369f54213dd625275859`. Stacked Line and 100% Stacked Line use the existing Cartesian renderer, controls and session. All 231 affected checks pass; strict typing retains the specifically reviewed inherited Zod diagnostic. [Source review](../../../artifacts/reviewed/chart-stacked-line/join-review.md) and [verification](../../../artifacts/reviewed/chart-stacked-line/integration-verification.md) identify the evidence. Packaged FMP browser comparison and publication remain open.
 
 ## Bounded delivery
 
 - [x] SL0. Establish the bounded original stacking, normalization, missing/signed/zero observations, controls and saved-state semantics; independently review the assessment. Numerical implementation decisions and candidate acceptance remain SL1-SL3.
 - [x] SL1. Freeze the [reviewed implementation contract](stacked-line-contract.md), affected file inventory and disjoint task ownership; inactive foundation accepted at Workspace `21b3515`.
-- [ ] SL2. Implement and independently review the scoped renderer, editor and session changes; verify affected financial and persistence regressions.
+- [x] SL2. Implement and independently review the scoped renderer, editor and session changes; verify affected financial and persistence regressions.
 - [ ] SL3. Verify an identified packaged candidate with retained FMP data, original comparison, reachable controls, light/dark themes, refresh, save/reopen and export. Ask the owner about material appearance differences.
 - [ ] SL4. Publish representative financial samples, reconcile README/docs/breadth and run the image pipeline once after milestone acceptance. Verify release assets and public image pulls.
 

@@ -4,7 +4,7 @@ requirements = ["analyst-workspace/stacked-line-milestone.md:SL1", "analyst-work
 planned_checks = ["signed cumulative and normalized numerical contracts", "existing editor/session saved-state integration", "packaged retained-FMP light/dark controls and lifecycle"]
 test_paths = []
 status = "unverified"
-evidence = ["SL0 original characterization accepted by artifacts/reviewed/chart-stacked-line/native-review.md: six original diagnostic cases and source assessment. These are baseline observations, not replacement tests. Implementation and maintained candidate tests remain pending."]
+evidence = ["SL0 original characterization accepted by artifacts/reviewed/chart-stacked-line/native-review.md: six original diagnostic cases and source assessment. These are baseline observations, not replacement tests. SL2 source integration is accepted separately below; packaged candidate acceptance remains pending."]
 
 [[capabilities]]
 id = "funnel-ordinary-session-source"
@@ -1395,3 +1395,11 @@ planned_checks = []
 test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py"]
 status = "passed"
 evidence = ["alpha-40334144666-1: both CI jobs, exact tagged sources, three public assets, six anonymous pulls and Compose configuration verified. artifacts/reviewed/chart-funnel/publication-review.md. Published-image browser and installed Compose/server acceptance remain separate."]
+
+[[capabilities]]
+id = "stacked-line-source-integration"
+requirements = ["analyst-workspace/stacked-line-milestone.md:SL2"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.stacked-line.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/editorStackedLine.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/sessionStackedLine.test.ts"]
+status = "passed"
+evidence = ["Workspace 94d09d1380c787a27c7c369f54213dd625275859: 231 affected checks, scoped lint and combined caps pass. Strict comparison retains one independently adjudicated inherited Zod diagnostic rewording; not a clean compilation. artifacts/reviewed/chart-stacked-line/join-review.md and integration-verification.md. Packaged application acceptance remains open."]

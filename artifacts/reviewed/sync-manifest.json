@@ -33232,6 +33232,38 @@
       "publishedSHA256": "8401d727128431968bd4272079b0646bdb9096a60f18edd8a16c822b39454d95",
       "bytes": 6222,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/geometry-review.md",
+      "sourceSHA256": "1af518edba8366bd18b0898ecffb10bcc4431deaa586449eb28ca84d7021ccb8",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/geometry-review.md",
+      "publishedSHA256": "1af518edba8366bd18b0898ecffb10bcc4431deaa586449eb28ca84d7021ccb8",
+      "bytes": 4951,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/editor-review.md",
+      "sourceSHA256": "e95e11cea93135846c7d5ddb1ff06025a353c898ed384f2db10975313fc7ce2f",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/editor-review.md",
+      "publishedSHA256": "e95e11cea93135846c7d5ddb1ff06025a353c898ed384f2db10975313fc7ce2f",
+      "bytes": 3249,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/join-review.md",
+      "sourceSHA256": "d40913adee59388ccc963dfa432734e930197da9d694cd0c58b35b7d301192b2",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/join-review.md",
+      "publishedSHA256": "d40913adee59388ccc963dfa432734e930197da9d694cd0c58b35b7d301192b2",
+      "bytes": 6524,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/integration-verification.md",
+      "sourceSHA256": "a6a9b40736787ec7937eb35cf137369c5de165090fd883123c9d985168f3d50e",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/integration-verification.md",
+      "publishedSHA256": "a6a9b40736787ec7937eb35cf137369c5de165090fd883123c9d985168f3d50e",
+      "bytes": 2997,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33945,7 +33977,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168367944,
+  "total_payload_bytes": 168385665,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
