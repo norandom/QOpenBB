@@ -42,9 +42,9 @@ evidence = ["Workspace 20bae47fe5e88620120c07c049907b092c3a046c: 21 focused test
 id = "funnel-family-application"
 requirements = ["analyst-workspace/funnel-milestone.md:F1-F4", "analyst-workspace/funnel-contract.md"]
 planned_checks = ["first-selected-field and duplicate-stage semantics", "missing-zero-signed admission", "variant geometry and controls", "retained-FMP packaged values and appearance", "refresh fresh-reopen and PNG export"]
-test_paths = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-candidate.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-visual-reference.spec.ts"]
 status = "planned"
-evidence = ["Original characterization and retained FMP fixture independently reviewed: artifacts/reviewed/chart-funnel/assessment-review.md and native-assessment.md. Original-only probes remain local; F3b source is now accepted separately, but no packaged replacement acceptance is claimed. Financial admission rules owner-approved 2026-10-26; source proposal is not application coverage."]
+evidence = ["Five bounded packaged candidate checks and three native reference checks pass on identified pre-refinement images; see artifacts/reviewed/chart-funnel/packaged-progress.md. Label-default and band-spacing source repairs require rebuilt-image verification. Overall application acceptance remains planned; advanced palettes and onboarding404 remain separately open."]
 
 [[capabilities]]
 id = "radar-milestone-publication"
