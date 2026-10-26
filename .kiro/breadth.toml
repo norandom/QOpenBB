@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "funnel-render-interface"
+requirements = ["analyst-workspace/funnel-renderer-design.md:Minimal shared interface", "analyst-workspace/funnel-milestone.md:F2a"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/funnelRender.typecheck.ts"]
+status = "passed"
+evidence = ["Workspace b676e8f9057851ed7cb9e5dcf9200c40b51aff44: independent strict scoped compilation, lint and inventory-backed caps pass. Three variant shapes and invalid capability/readonly cases compile as expected. artifacts/reviewed/chart-funnel/render-types-review.md. Declarations only; rendering, editor and integration remain unaccepted."]
+
+[[capabilities]]
 id = "funnel-inactive-data-adapter"
 requirements = ["analyst-workspace/funnel-contract.md:Data and financial meaning", "analyst-workspace/funnel-milestone.md:F1"]
 planned_checks = []

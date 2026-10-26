@@ -76,6 +76,7 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [ ] Complete [Funnel, Cone Funnel and Pyramid](../.kiro/specs/analyst-workspace/funnel-milestone.md), starting with the original behavior and retained-FMP data contract.
 - [x] Characterize the original Funnel family with retained FMP values and independent review; [reference examples and limits](../.kiro/specs/analyst-workspace/funnel-milestone.md#financial-chart-samples). Replacement implementation is pending.
 - [x] Independently accept the inactive Funnel data adapter: signed/missing values, stage identity, aggregation provenance and finite Pyramid normalization. [Source review](../artifacts/reviewed/chart-funnel/data-review.md); rendering remains pending.
+- [x] Freeze and independently accept the shared Funnel renderer/editor declarations and variant compile checks. [Review](../artifacts/reviewed/chart-funnel/render-types-review.md); geometry and controls are in progress.
 - [ ] Add Sankey as an additional chart type: assess source/target/value mapping, financial units and flow reconciliation, then implement with the existing editor and theme. Requested scope; implementation and acceptance remain pending.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.

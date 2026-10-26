@@ -15,7 +15,8 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
   - [x] Owner approved the explicit missing/signed-input rules on 2026-10-26; see the [implementation contract](funnel-contract.md).
   - [x] Freeze and independently review the [F1 data interfaces and file ownership](funnel-data-design.md). Renderer/editor interfaces remain F2 work.
 - [x] F1. Implement and independently accept the inactive [data adapter](funnel-data-design.md) with focused financial regressions and maintained-path inventory.
-- [ ] F2. Freeze renderer/editor interfaces, then implement renderer and controls in disjoint lanes with independent review.
+- [x] F2a. Freeze and independently accept the [renderer/editor declarations](funnel-renderer-design.md).
+- [ ] F2. Implement renderer and controls in the design's disjoint lanes with independent review.
 - [ ] F3. Join the existing session, caller and editor; verify saved-state transitions and affected families.
 - [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
 - [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
@@ -37,6 +38,10 @@ The native-browser lane owns its original-only probe and ignored run outputs. A 
 ## Reviewed original findings
 
 F1 source acceptance: Workspace `20bae47fe5e88620120c07c049907b092c3a046c` adds only the contracts, pure adapter and focused tests. Twenty-one tests, scoped lint and complete-file complexity checks pass; baseline-relative typing adds no diagnostics. The [independent source review](../../../artifacts/reviewed/chart-funnel/data-review.md) accepts identity, provenance, missing/signed inputs and stable normalization. Rendering and application integration remain pending.
+
+Typing qualification: the initial F1 harness inherited `strict: false`. An [explicit strict follow-up](../../../artifacts/reviewed/chart-funnel/data-strict-followup.md), independently inspected against unchanged source, passes with 22 inherited diagnostics and no added or owned diagnostics. Both checks retain `skipLibCheck`; neither claims a clean full application compile.
+
+F2a source acceptance: Workspace `b676e8f9057851ed7cb9e5dcf9200c40b51aff44` adds readonly render declarations and a compile fixture for the three variants. Independent strict compilation, lint and inventory-backed caps pass (88 physical lines, 60 logical units, no functions). The [review](../../../artifacts/reviewed/chart-funnel/render-types-review.md) accepts this inactive interface only. Geometry and controls can now proceed without editing the shared types; caller theme derivation remains F3 work and must not reintroduce commercial runtime dependencies.
 
 The [native assessment](../../../artifacts/reviewed/chart-funnel/native-assessment.md) and [independent review](../../../artifacts/reviewed/chart-funnel/assessment-review.md) establish bounded original characterization. Three financial journeys passed rendering, export and visible reload checks. Follow-up observations cover duplicates, Sum, direction, labels and missing/signed values. Historical probe failures remain documented. Original CSV diagnostics were not clean; these are not candidate acceptance results.
 
