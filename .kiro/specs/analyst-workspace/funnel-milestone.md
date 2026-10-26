@@ -1,6 +1,6 @@
 # Funnel-family parity
 
-The inactive data adapter, renderer and controls for Funnel, Cone Funnel and Pyramid are independently accepted. Their combined ECharts/editor check passes. Application session integration is source-accepted; packaged-image parity and publication remain pending. The owner resumed this work on 2026-10-26 after Heatmap publication.
+Funnel, Cone Funnel and Pyramid application acceptance is complete for the agreed stock/plain-color scope. Seven representative browser cases, reviewed source/engine contracts and owner-approved appearance support the [closing verdict](../../../artifacts/reviewed/chart-funnel/verification.md). Image publication remains F5 work.
 
 ## Scope
 
@@ -21,7 +21,7 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
   - [x] Independently review the integration contract, including safe theme rejection and missing-value capture.
   - [x] F3a. Implement and independently accept the inactive stock/plain-color theme helper.
   - [x] F3b. Connect capture, session, caller and editor atomically; retain correction controls for invalid Pyramid data.
-- [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
+- [x] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export within the closing review's explicit scope.
   - [x] Verify retained-FMP table/chart and Funnel/Line round trips, title and unchanged-source refresh; [independent lifecycle review](../../../artifacts/reviewed/chart-funnel/lifecycle-review.md).
   - [x] Observe ordinary administrator palette controls without edits; [bounded theme probe](../../../artifacts/reviewed/chart-funnel/theme-probe-review.md). The maintained palette journey below supersedes this exploratory probe.
   - [x] Save two plain colors through the existing administrator UI, verify retained-FMP Cone paint and PNG contents, and restore disposable settings; [palette/export review](../../../artifacts/reviewed/chart-funnel/palette-review.md). Advanced palettes remain deferred.
@@ -30,7 +30,7 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
   - [x] Independently accept the bounded [stage-label source repair](../../../artifacts/reviewed/chart-funnel/stage-label-review.md).
   - [x] Verify rebuilt stage-label glyphs and all five bounded FMP, saved-label and recovery checks on image `4ae3695d`, source `6c76323`.
   - [x] Owner accepted the six light/dark comparison pairs on 2026-10-26 (source `6c76323`, image `4ae3695d`).
-  - [ ] Verify visible direction, Drop-Off and Shadow effects. In the closing F4 review, reconcile earlier Aggregate, common-appearance, missing/zero, persistence and export limitations against source and packaged evidence; this list does not silently close them.
+  - [x] Verify visible direction, Drop-Off and Shadow effects; [control review](../../../artifacts/reviewed/chart-funnel/visible-controls-review.md). The closing review reconciles Aggregate, common appearance, missing/zero, persistence and export obligations against source and packaged evidence, retaining untested browser combinations explicitly.
 - [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
 
 This sequence is an assessment agenda, not an approved implementation contract. F0 supplies the concrete interfaces, exclusive file ownership and acceptance checks needed for subsequent tasks. Each production task must pass the existing inventory-backed caps: 400 physical lines per file, 300 logical units per file and 50 per function. Research, documentation and tests are excluded from production caps.

@@ -33088,6 +33088,22 @@
       "publishedSHA256": "f23384e5bb653ec554df75ad89c952009711793aa74591ded9133f6ce377274c",
       "bytes": 3774,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f4/browser/controls-review.md",
+      "sourceSHA256": "5f89f7431efa7853d9d429c2cc536d64a816e8aeedc7b9c2c9529ca44b11f7f9",
+      "publishedpath": "artifacts/reviewed/chart-funnel/visible-controls-review.md",
+      "publishedSHA256": "5f89f7431efa7853d9d429c2cc536d64a816e8aeedc7b9c2c9529ca44b11f7f9",
+      "bytes": 2693,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f4/verification.md",
+      "sourceSHA256": "a3e2d1950935795d07c28ec94be90fba60a82de86954ba93cd2f078dec24d7c9",
+      "publishedpath": "artifacts/reviewed/chart-funnel/verification.md",
+      "publishedSHA256": "a3e2d1950935795d07c28ec94be90fba60a82de86954ba93cd2f078dec24d7c9",
+      "bytes": 5696,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33801,7 +33817,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168235144,
+  "total_payload_bytes": 168243533,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
