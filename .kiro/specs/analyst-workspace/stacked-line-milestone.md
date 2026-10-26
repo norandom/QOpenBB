@@ -1,13 +1,13 @@
 # Stacked Line and 100% Stacked Line
 
-Source integration is accepted at Workspace `94d09d1380c787a27c7c369f54213dd625275859`. Stacked Line and 100% Stacked Line use the existing Cartesian renderer, controls and session. All 231 affected checks pass; strict typing retains the specifically reviewed inherited Zod diagnostic. [Source review](../../../artifacts/reviewed/chart-stacked-line/join-review.md) and [verification](../../../artifacts/reviewed/chart-stacked-line/integration-verification.md) identify the evidence. Packaged FMP browser comparison and publication remain open.
+Source integration is accepted at Workspace `94d09d1380c787a27c7c369f54213dd625275859`. Stacked Line and 100% Stacked Line use the existing Cartesian renderer, controls and session. All 231 affected checks pass; strict typing retains the specifically reviewed inherited Zod diagnostic. [Source review](../../../artifacts/reviewed/chart-stacked-line/join-review.md) and [verification](../../../artifacts/reviewed/chart-stacked-line/integration-verification.md) identify the evidence. Packaged application acceptance is complete; image publication remains open.
 
 ## Bounded delivery
 
 - [x] SL0. Establish the bounded original stacking, normalization, missing/signed/zero observations, controls and saved-state semantics; independently review the assessment. Numerical implementation decisions and candidate acceptance remain SL1-SL3.
 - [x] SL1. Freeze the [reviewed implementation contract](stacked-line-contract.md), affected file inventory and disjoint task ownership; inactive foundation accepted at Workspace `21b3515`.
 - [x] SL2. Implement and independently review the scoped renderer, editor and session changes; verify affected financial and persistence regressions.
-- [ ] SL3. Verify an identified packaged candidate with retained FMP data, original comparison, reachable controls, light/dark themes, refresh, save/reopen and export. Ask the owner about material appearance differences.
+- [x] SL3. Verify an identified packaged candidate with retained FMP data, original comparison, reachable controls, light/dark themes, refresh, save/reopen and export. Ask the owner about material appearance differences.
 - [ ] SL4. Publish representative financial samples, reconcile README/docs/breadth and run the image pipeline once after milestone acceptance. Verify release assets and public image pulls.
 
 The reviewed contract now freezes the numerical behavior and task boundaries. Inactive foundation acceptance does not establish renderer or application acceptance. Keep the existing gallery, native option paths, session and theme. No hidden flags, disabled controls, fallback to ordinary Line or second state owner.
@@ -24,7 +24,7 @@ Original diagnostic samples: AAPL FY2025 quarterly cost of revenue and gross pro
 
 ![Original 100% Stacked Line with cumulative percentages](../../../artifacts/reviewed/chart-stacked-line/original-normalized-line-fmp.png)
 
-The owner accepted both replacement appearances on 2026-10-26. Three bounded candidate journeys pass: both retained-FMP variants in light/dark with legend, navigator, refresh, reorder, save/reopen and export; signed/missing/zero geometry and empty-series recovery. The recovery failure was a test double-toggle of an already-open editor, resolved without production changes. [Independent progress review](../../../artifacts/reviewed/chart-stacked-line/candidate-progress-review.md) retains the remaining axis, Set Up and topology work. SL3 and publication remain open.
+The owner accepted both replacement appearances on 2026-10-26. Three bounded candidate journeys pass: both retained-FMP variants in light/dark with legend, navigator, refresh, reorder, save/reopen and export; signed/missing/zero geometry and empty-series recovery. The recovery failure was a test double-toggle of an already-open editor, resolved without production changes. [Independent progress review](../../../artifacts/reviewed/chart-stacked-line/candidate-progress-review.md) retains the remaining axis, Set Up and topology work. This earlier core checkpoint was followed by the final acceptance below.
 
 Candidate image `sha256:580475f5f7cde1948508e31bcba59fb70fbcf6d8fef9ac42454f584d38ba7afb`, production source `94d09d1380c787a27c7c369f54213dd625275859`, no source overlay. Maintained browser test committed at `9a3c0fa45209bc68b4bfc3e71d0808a0ab4468d3`; test-only commit changes no production code. Both views below use the same retained FMP AAPL FY2025 reported-USD fixture described above. The normalized plot shows cumulative percentages while tooltips retain raw USD.
 
@@ -44,4 +44,8 @@ Sankey, advanced palettes, other callers and table capabilities remain separate.
 
 ## Repeated-date tooltip repair
 
-Workspace `64b7fecea1619547b439cb4a7fbcbfcf431ed904` preserves separate raw observation blocks at repeated continuous coordinates. The repair passes 13 focused and 91 Cartesian tests and independent source review, with the inherited compiler qualification retained in the [review](../../../artifacts/reviewed/chart-stacked-line/tooltip-repair-review.md). A rebuilt candidate must pass the existing Time journey before SL3 closes; publication remains pending.
+Workspace `64b7fecea1619547b439cb4a7fbcbfcf431ed904` preserves separate raw observation blocks at repeated continuous coordinates. The repair passes 13 focused and 91 Cartesian tests and independent source review, with the inherited compiler qualification retained in the [review](../../../artifacts/reviewed/chart-stacked-line/tooltip-repair-review.md). The rebuilt candidate passed the Time and retained-FMP journeys; publication remains pending.
+
+## Packaged application acceptance
+
+SL3 is accepted on 2026-10-26. Candidate `sha256:948e6cdfcd7cf5340a632bef8a984e2d71c867f12869efcc085dc3d9108053e2` contains production `64b7fecea1619547b439cb4a7fbcbfcf431ed904` without a source overlay. Both stacked variants, retained FMP USD data, controls, duplicate categories, Time geometry/raw tooltips, persistence, export and missing-data topology have bounded evidence in the [final review](../../../artifacts/reviewed/chart-stacked-line/final-review.md). Test source `404fd8022250db3903d7e9c1fa290662720a06cf` includes the navigator-label lookup correction. Existing onboarding 404 and inherited compiler errors remain explicitly qualified; neither is claimed fixed. SL4 stays open until the tagged release and public images are verified.

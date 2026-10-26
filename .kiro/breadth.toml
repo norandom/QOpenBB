@@ -1,10 +1,10 @@
 [[capabilities]]
 id = "stacked-line-application"
 requirements = ["analyst-workspace/stacked-line-milestone.md:SL1", "analyst-workspace/stacked-line-milestone.md:SL2", "analyst-workspace/stacked-line-milestone.md:SL3"]
-planned_checks = ["signed cumulative and normalized numerical contracts", "existing editor/session saved-state integration", "packaged retained-FMP light/dark controls and lifecycle"]
-test_paths = []
-status = "unverified"
-evidence = ["SL0 original characterization accepted by artifacts/reviewed/chart-stacked-line/native-review.md: six original diagnostic cases and source assessment. These are baseline observations, not replacement tests. SL2 source integration is accepted separately below; packaged candidate acceptance remains pending."]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/stacked-line.spec.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/cartesian.stacked-line.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/sessionStackedLine.test.ts"]
+status = "passed"
+evidence = ["Packaged SL3 accepted: artifacts/reviewed/chart-stacked-line/final-review.md. Candidate sha256:948e6cdfcd7cf5340a632bef8a984e2d71c867f12869efcc085dc3d9108053e2 source 64b7fecea1619547b439cb4a7fbcbfcf431ed904; bounded numerical route and inherited compiler qualifications retained. Release publication is separate."]
 
 [[capabilities]]
 id = "funnel-ordinary-session-source"
