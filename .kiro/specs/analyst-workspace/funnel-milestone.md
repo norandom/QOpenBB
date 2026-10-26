@@ -26,7 +26,8 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
   - [x] Verify three refined packaged FMP default views on image `47e8c66f`; numeric-label defaults and Funnel endpoints match. Stage-label alignment and Cone endpoint clipping were found in visual inspection.
   - [x] Independently accept the bounded [stage-label source repair](../../../artifacts/reviewed/chart-funnel/stage-label-review.md).
   - [x] Verify rebuilt stage-label glyphs and all five bounded FMP, saved-label and recovery checks on image `4ae3695d`, source `6c76323`.
-  - [ ] Obtain owner visual acceptance and finish remaining control/theme/export obligations.
+  - [x] Owner accepted the six light/dark comparison pairs on 2026-10-26 (source `6c76323`, image `4ae3695d`).
+  - [ ] Finish remaining control/theme/export obligations.
 - [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
 
 This sequence is an assessment agenda, not an approved implementation contract. F0 supplies the concrete interfaces, exclusive file ownership and acceptance checks needed for subsequent tasks. Each production task must pass the existing inventory-backed caps: 400 physical lines per file, 300 logical units per file and 50 per function. Research, documentation and tests are excluded from production caps.
@@ -73,7 +74,7 @@ Original reference only: AAPL FY2026 Q2 income-statement levels, reported USD, f
 
 ## Refined replacement samples
 
-Candidate image `sha256:4ae3695d4c691f3da326ad2310b2e60ed7ee6fc254d4de9b46fe8c8798437814`, Workspace `6c7632329bbddc89f8986b0183d7b3a8750dd5eb`, verified on 2026-10-26. These ordinary File widgets use the retained FMP AAPL FY2026 Q2 income-statement levels above, in reported USD. The three light/dark default checks, bounded saved-label journey and invalid/no-series recovery pass. Native numeric-label defaults, Funnel outer spacing and stage-label alignment/clipping have been refined. [Independent browser review](../../../artifacts/reviewed/chart-funnel/candidate-verification.md) accepts this bounded evidence. Owner visual acceptance remains pending; these are candidate samples, not a released milestone.
+Candidate image `sha256:4ae3695d4c691f3da326ad2310b2e60ed7ee6fc254d4de9b46fe8c8798437814`, Workspace `6c7632329bbddc89f8986b0183d7b3a8750dd5eb`, verified on 2026-10-26. These ordinary File widgets use the retained FMP AAPL FY2026 Q2 income-statement levels above, in reported USD. The three light/dark default checks, bounded saved-label journey and invalid/no-series recovery pass. Native numeric-label defaults, Funnel outer spacing and stage-label alignment/clipping have been refined. [Independent browser review](../../../artifacts/reviewed/chart-funnel/candidate-verification.md) accepts this bounded evidence. Owner approved these light/dark appearances on 2026-10-26. Remaining behavior acceptance and milestone publication stay open.
 
 ![Candidate Funnel showing retained FMP reported USD levels](../../../artifacts/reviewed/chart-funnel/candidate-funnel-fmp.png)
 

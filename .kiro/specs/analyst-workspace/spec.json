@@ -21,7 +21,7 @@
   "ready_for_implementation": false,
   "active_milestone": {
     "name": "funnel-family",
-    "phase": "application-source-accepted",
+    "phase": "appearance-accepted-behavior-verification",
     "contract": "funnel-milestone.md",
     "implementation_proposal": "funnel-contract.md",
     "data_design": "funnel-data-design.md",
@@ -45,7 +45,7 @@
     "assessment_review": "artifacts/reviewed/chart-funnel/assessment-review.md",
     "implementation_approved": false,
     "owner_data_decision": "2026-10-26: approved missing-stage gaps, signed-magnitude Funnel/Cone and nonnegative positive-total Pyramid admission; preserve controls and explicit recovery.",
-    "scope": "Ordinary Table/File session and editor source accepted; packaged behavior, appearance and publication remain pending.",
+    "scope": "Ordinary Table/File session and editor accepted in source; five bounded packaged checks pass and owner accepted light/dark default appearances. Remaining F4 behaviors and publication stay open.",
     "completed_tasks": [
       "F0",
       "F1",
@@ -60,7 +60,7 @@
     "feature_accepted": false,
     "application_accepted": false,
     "authorization": "Owner resumed autonomous work on 2026-10-26 and approved explicit missing/signed-input rules.",
-    "next": "Build an identified packaged candidate and verify FMP values, controls, recovery, appearance, persistence and export under F4.",
+    "next": "Finish bounded F4 behavior and export checks on the owner-accepted candidate, then publish the completed milestone.",
     "integration_design": "funnel-integration-design.md",
     "integration_review": "funnel-integration-review.md",
     "f3a_source": "3cbd6c85f2ac09c943e53120a99e89bb7c636abf",
@@ -71,7 +71,9 @@
     "f4_refinement_source": "6c7632329bbddc89f8986b0183d7b3a8750dd5eb",
     "f4_stage_label_review": "artifacts/reviewed/chart-funnel/stage-label-review.md",
     "f4_candidate_image": "sha256:4ae3695d4c691f3da326ad2310b2e60ed7ee6fc254d4de9b46fe8c8798437814",
-    "f4_candidate_checks": "five bounded checks passed; owner visual acceptance pending"
+    "f4_candidate_checks": "five bounded checks passed; owner visual acceptance approved",
+    "f4_candidate_review": "artifacts/reviewed/chart-funnel/candidate-verification.md",
+    "owner_appearance_decision": "2026-10-26: approved Funnel, Cone Funnel and Pyramid light/dark comparison-3 appearances on source6c76323/image4ae3695d; remaining F4 behavior and F5 publication not accepted."
   },
   "completed_milestones": [
     {
