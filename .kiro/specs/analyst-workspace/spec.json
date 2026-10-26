@@ -806,8 +806,12 @@
   "successor_queue": [
     {
       "name": "stacked-normalized-line",
-      "phase": "original-assessment-accepted",
-      "scope": "Bounded original assessment accepted: six characterization cases and independent source/browser review. Implementation contract and candidate acceptance pending. See stacked-line-milestone.md."
+      "phase": "inactive-foundation-accepted",
+      "contract": "stacked-line-contract.md",
+      "foundation_source": "21b3515e9da57859d515d96515debb19c6ecf51d",
+      "approved_tasks": ["SL2-A", "SL2-B", "SL2-J"],
+      "authorization": "Owner approved contract and parallel implementation on 2026-10-26; independent contract and foundation reviews accepted.",
+      "scope": "Bounded original assessment accepted: six characterization cases and independent source/browser review. Contract and inactive foundation accepted; SL2 implementation and candidate acceptance pending. See stacked-line-milestone.md."
     },
     {
       "name": "sankey",

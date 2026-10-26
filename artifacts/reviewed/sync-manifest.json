@@ -33200,6 +33200,38 @@
       "publishedSHA256": "1f9d2f7047b63f6efe718d37964553d0850742cee64fd016e3e9e9e57467a5a0",
       "bytes": 15320,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/contract-review.md",
+      "sourceSHA256": "e6da3820c83b27f95b3718724580cfd6ae30285f8c00128699ec8fc54c2ec71c",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/contract-review.md",
+      "publishedSHA256": "e6da3820c83b27f95b3718724580cfd6ae30285f8c00128699ec8fc54c2ec71c",
+      "bytes": 8033,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/foundation-review.md",
+      "sourceSHA256": "2d67edc4fb459805813bfeb3e51f83062e7e43a85c75e00d42e50cf3ee113196",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/foundation-review.md",
+      "publishedSHA256": "2d67edc4fb459805813bfeb3e51f83062e7e43a85c75e00d42e50cf3ee113196",
+      "bytes": 3680,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/grouping-source.md",
+      "sourceSHA256": "4dfd727d5da153321024e4fa0d1020ac079cf715f2381d6d5415e9d7308988b1",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/grouping-source.md",
+      "publishedSHA256": "4dfd727d5da153321024e4fa0d1020ac079cf715f2381d6d5415e9d7308988b1",
+      "bytes": 5607,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/check-prep.md",
+      "sourceSHA256": "8401d727128431968bd4272079b0646bdb9096a60f18edd8a16c822b39454d95",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/check-prep.md",
+      "publishedSHA256": "8401d727128431968bd4272079b0646bdb9096a60f18edd8a16c822b39454d95",
+      "bytes": 6222,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33913,7 +33945,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168344402,
+  "total_payload_bytes": 168367944,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -1,16 +1,16 @@
 # Stacked Line and 100% Stacked Line
 
-The bounded original assessment is accepted; freeze the implementation contract next. Six original characterization cases and reviewed dependency source establish the baseline for `stackedLine` and `normalizedLine`. Replacement admission remains unimplemented. See the [independent review](../../../artifacts/reviewed/chart-stacked-line/native-review.md) and [observations](../../../artifacts/reviewed/chart-stacked-line/original-browser-progress.md).
+The original assessment and inactive foundation are accepted; parallel renderer/editor implementation is next. Six original characterization cases and reviewed dependency source establish the baseline for `stackedLine` and `normalizedLine`. Replacement admission remains unimplemented. See the [independent review](../../../artifacts/reviewed/chart-stacked-line/native-review.md) and [observations](../../../artifacts/reviewed/chart-stacked-line/original-browser-progress.md).
 
 ## Bounded delivery
 
 - [x] SL0. Establish the bounded original stacking, normalization, missing/signed/zero observations, controls and saved-state semantics; independently review the assessment. Numerical implementation decisions and candidate acceptance remain SL1-SL3.
-- [ ] SL1. Freeze the smallest extension of existing Cartesian/session owners, with explicit numerical contracts, affected file inventory and disjoint task ownership.
+- [x] SL1. Freeze the [reviewed implementation contract](stacked-line-contract.md), affected file inventory and disjoint task ownership; inactive foundation accepted at Workspace `21b3515`.
 - [ ] SL2. Implement and independently review the scoped renderer, editor and session changes; verify affected financial and persistence regressions.
 - [ ] SL3. Verify an identified packaged candidate with retained FMP data, original comparison, reachable controls, light/dark themes, refresh, save/reopen and export. Ask the owner about material appearance differences.
 - [ ] SL4. Publish representative financial samples, reconcile README/docs/breadth and run the image pipeline once after milestone acceptance. Verify release assets and public image pulls.
 
-This agenda authorizes assessment under the continuing chart-parity workstream; it does not freeze numerical behavior or claim implementation acceptance. Keep the existing gallery, native option paths, session and theme. No hidden flags, disabled controls, fallback to ordinary Line or second state owner.
+The reviewed contract now freezes the numerical behavior and task boundaries. Inactive foundation acceptance does not establish renderer or application acceptance. Keep the existing gallery, native option paths, session and theme. No hidden flags, disabled controls, fallback to ordinary Line or second state owner.
 
 ## Financial evidence
 
