@@ -45,7 +45,7 @@
     "assessment_review": "artifacts/reviewed/chart-funnel/assessment-review.md",
     "implementation_approved": false,
     "owner_data_decision": "2026-10-26: approved missing-stage gaps, signed-magnitude Funnel/Cone and nonnegative positive-total Pyramid admission; preserve controls and explicit recovery.",
-    "scope": "F4 accepted for ordinary stock/plain-color Funnel, Cone Funnel and Pyramid using seven representative browser cases plus source/engine contracts. Explicit limits are retained in the closing review; F5 publication remains open.",
+    "scope": "F4 accepted for ordinary stock/plain-color Funnel, Cone Funnel and Pyramid using seven representative browser cases plus source/engine contracts. Explicit limits are retained in the closing review; F5 publication and anonymous image pulls are verified.",
     "completed_tasks": [
       "F0",
       "F1",
@@ -806,8 +806,8 @@
   "successor_queue": [
     {
       "name": "stacked-normalized-line",
-      "phase": "assessment-pending",
-      "scope": "Original gallery variants; source inventory shows missing replacement admission. Behavior and implementation contract pending."
+      "phase": "assessment-in-progress",
+      "scope": "Original gallery variants; source assessment reviewed. Original browser characterization and implementation contract pending. See stacked-line-milestone.md."
     },
     {
       "name": "sankey",
