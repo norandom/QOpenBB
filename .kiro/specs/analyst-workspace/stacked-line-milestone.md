@@ -1,6 +1,6 @@
 # Stacked Line and 100% Stacked Line
 
-Source integration is accepted at Workspace `94d09d1380c787a27c7c369f54213dd625275859`. Stacked Line and 100% Stacked Line use the existing Cartesian renderer, controls and session. All 231 affected checks pass; strict typing retains the specifically reviewed inherited Zod diagnostic. [Source review](../../../artifacts/reviewed/chart-stacked-line/join-review.md) and [verification](../../../artifacts/reviewed/chart-stacked-line/integration-verification.md) identify the evidence. Packaged application acceptance is complete; image publication remains open.
+Source integration is accepted at Workspace `94d09d1380c787a27c7c369f54213dd625275859`. Stacked Line and 100% Stacked Line use the existing Cartesian renderer, controls and session. All 231 affected checks pass; strict typing retains the specifically reviewed inherited Zod diagnostic. [Source review](../../../artifacts/reviewed/chart-stacked-line/join-review.md) and [verification](../../../artifacts/reviewed/chart-stacked-line/integration-verification.md) identify the evidence. Packaged application acceptance is complete; image publication is verified below.
 
 ## Bounded delivery
 
@@ -8,7 +8,7 @@ Source integration is accepted at Workspace `94d09d1380c787a27c7c369f54213dd6252
 - [x] SL1. Freeze the [reviewed implementation contract](stacked-line-contract.md), affected file inventory and disjoint task ownership; inactive foundation accepted at Workspace `21b3515`.
 - [x] SL2. Implement and independently review the scoped renderer, editor and session changes; verify affected financial and persistence regressions.
 - [x] SL3. Verify an identified packaged candidate with retained FMP data, original comparison, reachable controls, light/dark themes, refresh, save/reopen and export. Ask the owner about material appearance differences.
-- [ ] SL4. Publish representative financial samples, reconcile README/docs/breadth and run the image pipeline once after milestone acceptance. Verify release assets and public image pulls.
+- [x] SL4. Publish representative financial samples, reconcile README/docs/breadth and run the image pipeline once after milestone acceptance. Verify release assets and public image pulls.
 
 The reviewed contract now freezes the numerical behavior and task boundaries. Inactive foundation acceptance does not establish renderer or application acceptance. Keep the existing gallery, native option paths, session and theme. No hidden flags, disabled controls, fallback to ordinary Line or second state owner.
 
@@ -44,8 +44,12 @@ Sankey, advanced palettes, other callers and table capabilities remain separate.
 
 ## Repeated-date tooltip repair
 
-Workspace `64b7fecea1619547b439cb4a7fbcbfcf431ed904` preserves separate raw observation blocks at repeated continuous coordinates. The repair passes 13 focused and 91 Cartesian tests and independent source review, with the inherited compiler qualification retained in the [review](../../../artifacts/reviewed/chart-stacked-line/tooltip-repair-review.md). The rebuilt candidate passed the Time and retained-FMP journeys; publication remains pending.
+Workspace `64b7fecea1619547b439cb4a7fbcbfcf431ed904` preserves separate raw observation blocks at repeated continuous coordinates. The repair passes 13 focused and 91 Cartesian tests and independent source review, with the inherited compiler qualification retained in the [review](../../../artifacts/reviewed/chart-stacked-line/tooltip-repair-review.md). The rebuilt candidate passed the Time and retained-FMP journeys; publication is verified below.
 
 ## Packaged application acceptance
 
-SL3 is accepted on 2026-10-26. Candidate `sha256:948e6cdfcd7cf5340a632bef8a984e2d71c867f12869efcc085dc3d9108053e2` contains production `64b7fecea1619547b439cb4a7fbcbfcf431ed904` without a source overlay. Both stacked variants, retained FMP USD data, controls, duplicate categories, Time geometry/raw tooltips, persistence, export and missing-data topology have bounded evidence in the [final review](../../../artifacts/reviewed/chart-stacked-line/final-review.md). Test source `404fd8022250db3903d7e9c1fa290662720a06cf` includes the navigator-label lookup correction. Existing onboarding 404 and inherited compiler errors remain explicitly qualified; neither is claimed fixed. SL4 stays open until the tagged release and public images are verified.
+SL3 is accepted on 2026-10-26. Candidate `sha256:948e6cdfcd7cf5340a632bef8a984e2d71c867f12869efcc085dc3d9108053e2` contains production `64b7fecea1619547b439cb4a7fbcbfcf431ed904` without a source overlay. Both stacked variants, retained FMP USD data, controls, duplicate categories, Time geometry/raw tooltips, persistence, export and missing-data topology have bounded evidence in the [final review](../../../artifacts/reviewed/chart-stacked-line/final-review.md). Test source `404fd8022250db3903d7e9c1fa290662720a06cf` includes the navigator-label lookup correction. Existing onboarding 404 and inherited compiler errors remain explicitly qualified; neither is claimed fixed. SL4 publication is verified below.
+
+## Published alpha
+
+[alpha-40371082771-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40371082771-1) publishes Workspace `404fd8022250db3903d7e9c1fa290662720a06cf` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba` from root `fee0f4df87e0bf6ea89128978f39656febc5ca0f`. Both CI jobs, tagged source, public assets, six anonymous pulls and pinned Compose parsing are independently verified in the [publication review](../../../artifacts/reviewed/chart-stacked-line/publication-review.md). CI image bytes have not repeated local browser acceptance; server deployment and backup/restore remain separate.

@@ -806,7 +806,7 @@
   "successor_queue": [
     {
       "name": "stacked-normalized-line",
-      "phase": "packaged-accepted-publication-pending",
+      "phase": "accepted-published",
       "browser_test_source": "404fd8022250db3903d7e9c1fa290662720a06cf",
       "candidate_image": "sha256:948e6cdfcd7cf5340a632bef8a984e2d71c867f12869efcc085dc3d9108053e2",
       "appearance": "Owner accepted both appearances on 2026-10-26.",
@@ -819,7 +819,17 @@
         "SL2-J"
       ],
       "authorization": "Owner approved contract and parallel implementation on 2026-10-26; independent contract and foundation reviews accepted.",
-      "scope": "SL0-SL3 accepted; SL4 release and public image verification pending. See final-review.md and stacked-line-milestone.md."
+      "scope": "SL0-SL4 accepted. Local packaged browser acceptance and CI publication verified separately; server deployment unverified.",
+      "release": "alpha-40371082771-1",
+      "publication": {
+        "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-40371082771-1",
+        "manifest": "artifacts/reviewed/chart-stacked-line/release-manifest.json",
+        "anonymous_pull_evidence": "artifacts/reviewed/chart-stacked-line/anonymous-pulls.json",
+        "images": {
+          "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:96970f0d963b3195407cfd7209d718154659e4d7c5c6847d69928ef9b7571b10",
+          "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:397019cd0d52b529b2027a121c45567cdaca1c580351b5faac79604626c33f07"
+        }
+      }
     },
     {
       "name": "sankey",

@@ -33312,6 +33312,30 @@
       "publishedSHA256": "22494a74e19865d93aab129cf672867b82eaa7484d069fc07314674c4cac0eda",
       "bytes": 5833,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/publication/run-40371082771/manifest.json",
+      "sourceSHA256": "a3de000c16d5c8f8ba4b40d440d2a90acae214815b036bccc2efa6ab3ad4ca1d",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/release-manifest.json",
+      "publishedSHA256": "a3de000c16d5c8f8ba4b40d440d2a90acae214815b036bccc2efa6ab3ad4ca1d",
+      "bytes": 6740,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/publication/run-40371082771/anonymous-pulls.json",
+      "sourceSHA256": "4bd8b289677b5e4d6e6d19f696682eb3c6449a56683617a09458dd7d370445c6",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/anonymous-pulls.json",
+      "publishedSHA256": "fbcdf6dce4e7ec11f85d825598717c0d9cdb2b4306fdf265d9731057d3436f4d",
+      "bytes": 4663,
+      "transform": "remove-local-runtime-path"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/publication/publication-review.md",
+      "sourceSHA256": "1d8930988d6566a6381a8746b2fb8f5cf6ba5e8d924ae78463e2d142ca38db5c",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/publication-review.md",
+      "publishedSHA256": "1d8930988d6566a6381a8746b2fb8f5cf6ba5e8d924ae78463e2d142ca38db5c",
+      "bytes": 2551,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -34025,7 +34049,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168448923,
+  "total_payload_bytes": 168462877,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

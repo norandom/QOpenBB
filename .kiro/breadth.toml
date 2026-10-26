@@ -1411,3 +1411,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/stacked-line.spec.ts"]
 status = "passed"
 evidence = ["Candidate production94d09d1/image580475f5, maintained test9a3c0fa: amount-3, normalized-1 and recovery-2 pass. Both appearances owner-accepted. artifacts/reviewed/chart-stacked-line/candidate-progress-review.md and amount-review.md retain limits. Does not establish full SL3 acceptance or new release."]
+
+[[capabilities]]
+id = "stacked-line-publication"
+requirements = ["analyst-workspace/stacked-line-milestone.md:SL4"]
+planned_checks = []
+test_paths = ["tests/delivery/test_alpha_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_prototype_workflow.py"]
+status = "passed"
+evidence = ["alpha-40371082771-1: both workflow jobs, public release assets, six anonymous pulls and digest-pinned Compose parsing verified. artifacts/reviewed/chart-stacked-line/publication-review.md. Local browser acceptance is separate; no server deployment claim."]
