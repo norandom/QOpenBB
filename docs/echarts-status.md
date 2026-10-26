@@ -78,6 +78,7 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [x] Independently accept the inactive Funnel data adapter: signed/missing values, stage identity, aggregation provenance and finite Pyramid normalization. [Source review](../artifacts/reviewed/chart-funnel/data-review.md); rendering remains pending.
 - [x] Freeze and independently accept the shared Funnel renderer/editor declarations and variant compile checks. [Review](../artifacts/reviewed/chart-funnel/render-types-review.md).
 - [x] Independently accept inactive Funnel geometry, controls and their actual ECharts composition. [Join review](../artifacts/reviewed/chart-funnel/join-review.md); application routing and packaged parity remain pending.
+- [x] Accept the inactive stock/plain-color Funnel theme helper, including native Cone palettes and explicit unsupported-paint diagnostics. [Review](../artifacts/reviewed/chart-funnel/theme-helper-review.md); application integration remains pending.
 - [ ] Add Sankey as an additional chart type: assess source/target/value mapping, financial units and flow reconciliation, then implement with the existing editor and theme. Requested scope; implementation and acceptance remain pending.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
 - [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.

@@ -52,14 +52,17 @@
       "F2a",
       "F2b",
       "F2c",
-      "F2-join"
+      "F2-join",
+      "F3a"
     ],
     "feature_accepted": false,
     "application_accepted": false,
     "authorization": "Owner resumed autonomous work on 2026-10-26 and approved explicit missing/signed-input rules.",
-    "next": "Implement and independently accept the supported-theme helper, then the atomic ordinary application integration.",
+    "next": "Connect capture, session, caller and editor under the reviewed atomic F3b design; then verify an identified image.",
     "integration_design": "funnel-integration-design.md",
-    "integration_review": "funnel-integration-review.md"
+    "integration_review": "funnel-integration-review.md",
+    "f3a_source": "3cbd6c85f2ac09c943e53120a99e89bb7c636abf",
+    "f3a_review": "artifacts/reviewed/chart-funnel/theme-helper-review.md"
   },
   "completed_milestones": [
     {

@@ -19,7 +19,7 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
 - [x] F2. Implement renderer and controls in the design's disjoint lanes with independent review and the inactive composition check.
 - [ ] F3. Join the existing session, caller and editor under the [reviewed integration design](funnel-integration-design.md); verify saved-state transitions and affected families.
   - [x] Independently review the integration contract, including safe theme rejection and missing-value capture.
-  - [ ] F3a. Implement and independently accept the inactive stock/plain-color theme helper.
+  - [x] F3a. Implement and independently accept the inactive stock/plain-color theme helper.
   - [ ] F3b. Connect capture, session, caller and editor atomically; retain correction controls for invalid Pyramid data.
 - [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
 - [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
@@ -51,6 +51,8 @@ F2 source acceptance is split into per-task Workspace commits: `5c7d7bb` for geo
 The [native assessment](../../../artifacts/reviewed/chart-funnel/native-assessment.md) and [independent review](../../../artifacts/reviewed/chart-funnel/assessment-review.md) establish bounded original characterization. Three financial journeys passed rendering, export and visible reload checks. Follow-up observations cover duplicates, Sum, direction, labels and missing/signed values. Historical probe failures remain documented. Original CSV diagnostics were not clean; these are not candidate acceptance results.
 
 Cone and Pyramid retain tested option values after reload but their reload screenshots visibly lose numeric labels. Selecting Reserve alongside Value leaves Value first; replacing the first selected field alone remains untested. These findings guide replacement acceptance rather than authorize copying native bugs. The owner approved the explicit financial admission rules in the [implementation contract](funnel-contract.md) on 2026-10-26; executable interfaces are next.
+
+F3a source acceptance: Workspace `3cbd6c85f2ac09c943e53120a99e89bb7c636abf` adds the inactive stock/plain-color theme helper. Nineteen focused tests, scoped strict typing, lint and inventory-backed caps pass under [independent review](../../../artifacts/reviewed/chart-funnel/theme-helper-review.md). Advanced paints return explicit diagnostics without modifying settings; actual caller recovery and packaged appearance remain pending.
 
 ## Financial chart samples
 

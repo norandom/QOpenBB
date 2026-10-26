@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "funnel-inactive-theme-helper"
+requirements = ["analyst-workspace/funnel-integration-design.md:Theme reachability and prerequisite", "analyst-workspace/funnel-milestone.md:F3a"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/funnelThemePaint.test.ts"]
+status = "passed"
+evidence = ["Workspace 3cbd6c85f2ac09c943e53120a99e89bb7c636abf: independently accepted 19 focused tests, strict baseline22/candidate22 with no added or owned diagnostics, lint and combined caps. artifacts/reviewed/chart-funnel/theme-helper-review.md. Inactive stock/plain-color helper only; advanced palettes deferred, integrated recovery and browser acceptance remain pending."]
+
+[[capabilities]]
 id = "funnel-inactive-renderer-controls"
 requirements = ["analyst-workspace/funnel-renderer-design.md:Disjoint lanes and first join", "analyst-workspace/funnel-milestone.md:F2"]
 planned_checks = []
