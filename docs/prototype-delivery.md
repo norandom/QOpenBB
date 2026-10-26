@@ -2,7 +2,7 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-40228938438-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1), built from Workspace `68b1e41d414234c4e191d39207ca6f84347a5bf5` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public image identities passed anonymous digest, release-tag and latest pulls. See [Heatmap release verification](../artifacts/reviewed/chart-heatmap/publication-review.md). Earlier records below remain historical.
+Published: [alpha-40334144666-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40334144666-1), built from Workspace `0b2190354d2dc5f4175ffb989cf652ac36237c77` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public image identities passed anonymous digest, release-tag and latest pulls. See [Funnel release verification](../artifacts/reviewed/chart-funnel/publication-review.md). Earlier records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |

@@ -17,7 +17,7 @@ Owner clarification: saved research-context persistence acceptance moves to `ana
 
 Target: HTTP on `0.0.0.0:23003`, `qopenbb.example.com` through owner-managed cloudflared, relative bind-mounted data. The owner deploys locally with Compose; no SSH, tunnel service or Jupyter dependency.
 
-Current state: [alpha-40228938438-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1) is published with prebuilt images. Combination, scatter/bubble, histogram, pie/donut, Box Plot, Range Bar/Area, Waterfall, Radar Line/Area, Nightingale, Radial Column/Bar, Treemap/Sunburst and Heatmap acceptance cover identified local packaged images and captured FMP data in the ordinary Table/File journey. Nightingale passes its financial/control/lifecycle journey and has owner-approved appearance. Both publication jobs, release assets and six anonymous image pulls are verified separately from local browser acceptance. The pictured visual differences are accepted; pixel identity is not claimed. Assembled Compose and owner-run server acceptance remain open. See the [current chart checklist](echarts-status.md) and [Heatmap evidence](../artifacts/reviewed/chart-heatmap/publication-review.md).
+Current state: [alpha-40334144666-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40334144666-1) is published with prebuilt images. Combination, scatter/bubble, histogram, pie/donut, Box Plot, Range Bar/Area, Waterfall, Radar Line/Area, Nightingale, Radial Column/Bar, Treemap/Sunburst, Heatmap and Funnel acceptance cover identified local packaged images and captured FMP data in the ordinary Table/File journey. Nightingale passes its financial/control/lifecycle journey and has owner-approved appearance. Both publication jobs, release assets and six anonymous image pulls are verified separately from local browser acceptance. The pictured visual differences are accepted; pixel identity is not claimed. Assembled Compose and owner-run server acceptance remain open. See the [current chart checklist](echarts-status.md) and [Funnel evidence](../artifacts/reviewed/chart-funnel/publication-review.md).
 
 ## Subsequent workstreams
 
@@ -65,7 +65,8 @@ The owner authorized starting the next family while the accepted predecessor fin
 | 2 | [Radial Column and Radial Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) | Accepted and published; owner approved both appearances | RC5 assets and anonymous pulls verified |
 | 3 | [Treemap and Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) | Accepted and published for onboarded users; both appearances approved | H5 assets and anonymous pulls verified |
 | 4 | [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md) | Accepted and published for onboarded users | HM5 assets and anonymous pulls verified |
-| 5 | [Funnel, Cone Funnel and Pyramid](../.kiro/specs/analyst-workspace/funnel-milestone.md) | Ordinary session and editor source accepted | Verify an identified image with retained FMP data, controls, appearance and persistence |
+| 5 | [Funnel, Cone Funnel and Pyramid](../.kiro/specs/analyst-workspace/funnel-milestone.md) | Accepted and published for onboarded users | F5 tagged assets and public image pulls verified |
+| 6 | Stacked Line and 100% Stacked Line | Next original-gallery assessment | Freeze original stacking/normalization, financial missing/sign rules and saved-state behavior before implementation |
 | Later | Sankey (additional chart type) | Requested; assessment and implementation pending | Define source/target/value mapping, financial units and flow reconciliation before implementation; reuse the existing editor and theme |
 | Later | Remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
 

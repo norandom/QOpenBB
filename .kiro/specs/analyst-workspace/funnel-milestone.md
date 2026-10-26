@@ -1,6 +1,6 @@
 # Funnel-family parity
 
-Funnel, Cone Funnel and Pyramid application acceptance is complete for the agreed stock/plain-color scope. Seven representative browser cases, reviewed source/engine contracts and owner-approved appearance support the [closing verdict](../../../artifacts/reviewed/chart-funnel/verification.md). Image publication remains F5 work.
+Funnel, Cone Funnel and Pyramid application acceptance is complete for the agreed stock/plain-color scope. Seven representative browser cases, reviewed source/engine contracts and owner-approved appearance support the [closing verdict](../../../artifacts/reviewed/chart-funnel/verification.md). F5 publication and anonymous image pulls are verified.
 
 ## Scope
 
@@ -31,7 +31,7 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
   - [x] Verify rebuilt stage-label glyphs and all five bounded FMP, saved-label and recovery checks on image `4ae3695d`, source `6c76323`.
   - [x] Owner accepted the six light/dark comparison pairs on 2026-10-26 (source `6c76323`, image `4ae3695d`).
   - [x] Verify visible direction, Drop-Off and Shadow effects; [control review](../../../artifacts/reviewed/chart-funnel/visible-controls-review.md). The closing review reconciles Aggregate, common appearance, missing/zero, persistence and export obligations against source and packaged evidence, retaining untested browser combinations explicitly.
-- [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
+- [x] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
 
 This sequence is an assessment agenda, not an approved implementation contract. F0 supplies the concrete interfaces, exclusive file ownership and acceptance checks needed for subsequent tasks. Each production task must pass the existing inventory-backed caps: 400 physical lines per file, 300 logical units per file and 50 per function. Research, documentation and tests are excluded from production caps.
 
@@ -77,10 +77,16 @@ Original reference only: AAPL FY2026 Q2 income-statement levels, reported USD, f
 
 ## Refined replacement samples
 
-Candidate image `sha256:4ae3695d4c691f3da326ad2310b2e60ed7ee6fc254d4de9b46fe8c8798437814`, Workspace `6c7632329bbddc89f8986b0183d7b3a8750dd5eb`, verified on 2026-10-26. These ordinary File widgets use the retained FMP AAPL FY2026 Q2 income-statement levels above, in reported USD. The three light/dark default checks, bounded saved-label journey and invalid/no-series recovery pass. Native numeric-label defaults, Funnel outer spacing and stage-label alignment/clipping have been refined. [Independent browser review](../../../artifacts/reviewed/chart-funnel/candidate-verification.md) accepts this bounded evidence. Owner approved these light/dark appearances on 2026-10-26. Remaining behavior acceptance and milestone publication stay open.
+Candidate image `sha256:4ae3695d4c691f3da326ad2310b2e60ed7ee6fc254d4de9b46fe8c8798437814`, Workspace `6c7632329bbddc89f8986b0183d7b3a8750dd5eb`, verified on 2026-10-26. These ordinary File widgets use the retained FMP AAPL FY2026 Q2 income-statement levels above, in reported USD. The three light/dark default checks, bounded saved-label journey and invalid/no-series recovery pass. Native numeric-label defaults, Funnel outer spacing and stage-label alignment/clipping have been refined. [Independent browser review](../../../artifacts/reviewed/chart-funnel/candidate-verification.md) accepts this bounded evidence. Owner approved these light/dark appearances on 2026-10-26. This earlier bounded checkpoint is superseded by the F4 closing review and F5 publication below.
 
 ![Candidate Funnel showing retained FMP reported USD levels](../../../artifacts/reviewed/chart-funnel/candidate-funnel-fmp.png)
 
 ![Candidate Cone Funnel showing retained FMP reported USD levels](../../../artifacts/reviewed/chart-funnel/candidate-cone-fmp.png)
 
 ![Candidate Pyramid showing retained FMP reported USD levels](../../../artifacts/reviewed/chart-funnel/candidate-pyramid-fmp.png)
+
+## Published alpha
+
+[alpha-40334144666-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40334144666-1) publishes both prebuilt images from root `e0107cd969c57a5ffe75237e74355f548c7aff65`, Workspace `0b2190354d2dc5f4175ffb989cf652ac36237c77` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. [Independent publication review](../../../artifacts/reviewed/chart-funnel/publication-review.md) verifies both CI jobs, tagged source, three public assets, six anonymous image pulls and digest-pinned Compose parsing. The newer Workspace commit changes tests only; local browser acceptance retains source `6c76323` and image `4ae3695d`. Published-image browser behavior and installed Compose/server operation are not claimed.
+
+Next is a bounded assessment of original Stacked Line and 100% Stacked Line; [source inventory](../../../artifacts/reviewed/chart-funnel/next-family-inventory.md). Sankey remains an additional requested chart type.

@@ -33104,6 +33104,38 @@
       "publishedSHA256": "a3e2d1950935795d07c28ec94be90fba60a82de86954ba93cd2f078dec24d7c9",
       "bytes": 5696,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f5/run-40334144666/manifest.json",
+      "sourceSHA256": "9924a61fa5a5e7f62dc0bb53f2ab7da6e7ba5723bce13f4d90781fd05bfd7f67",
+      "publishedpath": "artifacts/reviewed/chart-funnel/release-manifest.json",
+      "publishedSHA256": "9924a61fa5a5e7f62dc0bb53f2ab7da6e7ba5723bce13f4d90781fd05bfd7f67",
+      "bytes": 6740,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f5/run-40334144666/anonymous-pulls.json",
+      "sourceSHA256": "50cd56d71d125fe789183fca931528461799b97deb738a0501cad85989fa60c2",
+      "publishedpath": "artifacts/reviewed/chart-funnel/anonymous-pulls.json",
+      "publishedSHA256": "50436677a1a84fe7d5cb6310080d3b4679116307dc528bcc783c201a37749783",
+      "bytes": 4663,
+      "transform": "sanitized derivative: removed anonymous_config local path and anonymous_config_retained_pending_coordinated_cleanup; raw evidence retained"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f5/publication-review.md",
+      "sourceSHA256": "4fc5c5fc64bbab231df85f309b68d633c04856a40ffb3bca33fb1ac54f1ee999",
+      "publishedpath": "artifacts/reviewed/chart-funnel/publication-review.md",
+      "publishedSHA256": "4fc5c5fc64bbab231df85f309b68d633c04856a40ffb3bca33fb1ac54f1ee999",
+      "bytes": 4728,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f5/next-family-inventory.md",
+      "sourceSHA256": "ec4dcd4f8969c29e37ba8927b16520606ed0bebe41386a5c8d267aa04baef645",
+      "publishedpath": "artifacts/reviewed/chart-funnel/next-family-inventory.md",
+      "publishedSHA256": "ec4dcd4f8969c29e37ba8927b16520606ed0bebe41386a5c8d267aa04baef645",
+      "bytes": 2601,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33817,7 +33849,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168243533,
+  "total_payload_bytes": 168262265,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

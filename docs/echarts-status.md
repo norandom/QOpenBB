@@ -48,7 +48,7 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [x] Verify rebuilt Column and Bar appearance; owner approved both final appearances.
 - [x] Accept packaged real-FMP behavior and appearance (RC4); see the [independent final review](../artifacts/reviewed/chart-radial/final-acceptance-review.md).
 - [x] Publish and verify the Radial release image identities (RC5).
-- [ ] Complete other distribution and radial families.
+- [ ] Assess and implement original Stacked Line and 100% Stacked Line through the existing Table/File session. The gallery exposes both; replacement admission remains unimplemented.
 - [x] Accept Radar Line and Radar Area locally (RD4). The [bounded milestone plan](../.kiro/specs/analyst-workspace/radar-milestone.md) separates original-behavior confirmation, parallel adapters, integration and packaged FMP acceptance. Radar source integration and packaged behavioral checks are independently accepted; the owner approved the current Line/Area appearance on 2026-10-24. Publication is verified as alpha-40086673952-1.
 - [x] Accept Radar's original-behavior contract, retained-FMP fixture and inactive interfaces (RD0); [review](../artifacts/reviewed/chart-radar/rd0-review.md). Source integration and bounded packaged application acceptance are recorded below.
 - [x] Independently accept inactive Radar editor/session adaptation (RD2): nine focused checks, validated Polar edits and preserved appearance composition. Source routing, packaged behavior and owner appearance approval are recorded below.
@@ -72,9 +72,8 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [x] Implement and accept the bounded [Waterfall](../.kiro/specs/analyst-workspace/waterfall-milestone.md) application journey: retained-FMP financial geometry, default sign legend, controls, navigation, tooltips, refresh, fresh reopen and export pass; owner accepts the appearance.
 - [x] Publish and verify the accepted Waterfall milestone images as alpha-40002594897-1; both source pins, release assets and six anonymous pulls are verified separately from local browser acceptance.
 - [x] Complete [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md); application acceptance and milestone publication are verified.
-- [ ] Complete other specialty families.
 - [x] Accept [Funnel, Cone Funnel and Pyramid](../.kiro/specs/analyst-workspace/funnel-milestone.md) for the reviewed stock/plain-color scope; [closing verification](../artifacts/reviewed/chart-funnel/verification.md).
-- [ ] Publish and verify the accepted Funnel milestone images.
+- [x] Publish and verify the accepted Funnel milestone images: [alpha-40334144666-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40334144666-1).
 - [x] Verify the first packaged Funnel candidate with retained FMP values, invalid-data recovery and bounded saved-label checks; [scope and refinements](../artifacts/reviewed/chart-funnel/packaged-progress.md). Refined defaults pass; the [stage-label repair](../artifacts/reviewed/chart-funnel/stage-label-review.md) passes packaged checks and its light/dark appearance is owner-approved; F4 acceptance is recorded in the closing verification above.
 - [x] Characterize the original Funnel family with retained FMP values and independent review; [reference examples and limits](../.kiro/specs/analyst-workspace/funnel-milestone.md#financial-chart-samples). Replacement source is accepted below; F4 is now accepted within the closing review's scope.
 - [x] Independently accept the inactive Funnel data adapter: signed/missing values, stage identity, aggregation provenance and finite Pyramid normalization. [Source review](../artifacts/reviewed/chart-funnel/data-review.md); F4 is now accepted within the closing review's scope.
@@ -99,7 +98,7 @@ See the [reviewed evidence](../artifacts/reviewed/chart-combo/verification.md). 
 
 ## Remaining port acceptance
 
-Funnel's retained-FMP table/chart, Line/Funnel and source-refresh journey passes with clean diagnostics; see the [lifecycle review](../artifacts/reviewed/chart-funnel/lifecycle-review.md). The [plain-palette and PNG-content journey](../artifacts/reviewed/chart-funnel/palette-review.md) also passes. Visible direction, connector and shadow effects also pass; F4 is accepted and milestone publication remains open.
+Funnel's retained-FMP table/chart, Line/Funnel and source-refresh journey passes with clean diagnostics; see the [lifecycle review](../artifacts/reviewed/chart-funnel/lifecycle-review.md). The [plain-palette and PNG-content journey](../artifacts/reviewed/chart-funnel/palette-review.md) also passes. Visible direction, connector and shadow effects also pass; F4 and milestone publication are accepted within their separately recorded scopes.
 
 - [ ] Exercise each completed chart milestone with real FMP responses in the application, checking plotted values, units, dates and transformations.
 - [ ] Verify the milestone's applicable controls, refresh, save/reopen, theme and export behavior; retain synthetic edge-case checks.

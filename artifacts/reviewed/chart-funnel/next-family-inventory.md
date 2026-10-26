@@ -1,0 +1,14 @@
+# Next original gallery inventory
+
+Prioritize a bounded Stacked Line and 100% Stacked Line assessment after Funnel publication. These are original visible gallery variants, not the additional Sankey request. This is source-only inventory on 2026-10-26; no runtime activation, behavior or appearance was tested.
+
+Evidence:
+
+- `artifacts/reviewed/ui-parity-family-navigation-plan/plan.md`, Exact inventory table, records original Workspace `38dffc33389aca0e4a87e0e88d42f7067aa220df` Line thumbnails: Line, Stacked Line and 100% Stacked Line, with native `lineGroup` tokens `line`, `stackedLine`, `normalizedLine`. Its evidence establishes original DOM visibility, not successful activation.
+- `vendor/workspace/terminalpro/src/components/General/Table/Chart/editor/chartTypeGalleryCatalog.ts:27-28` still exposes `stackedLine` and `normalizedLine`; `editor/ChartTypeThumbnail.tsx:103` supplies their previews.
+- `vendor/workspace/terminalpro/src/components/General/Table/Chart/echarts/cartesianTypes.ts` admits ordinary `line` only in CartesianFamily/isCartesianFamily. `application/comboSessionTypes.ts` builds ApplicationChartFamily from that union and the other accepted families. Production searches found no stacked/normalized Line implementation references beyond gallery previews and retained legacy type mappings. This is an admission/coverage discrepancy, not a demonstrated browser failure.
+- `docs/echarts-status.md` records ordinary line, columns/bars/areas, XY, combination, Pie/Donut, Histogram, Box/Range, Radar/Nightingale/Radial, hierarchy, Waterfall, Heatmap and Funnel acceptance. Those cover the remaining original gallery groups; its unchecked generic distribution/radial and specialty buckets can be replaced with exact outstanding work after review.
+
+The next assessment should inspect original stacking and normalization behavior, sign/zero/missing rules, category/series selection, financial interpretation, saved options and transitions. Freeze public contracts and bounded ownership before implementation, then add the ordinary Table/File route and representative financial/browser acceptance through existing session and host owners. Do not infer semantics from the thumbnail or map both variants silently to ordinary Line.
+
+README and docs roadmap wording can be narrowed by the controller after release. Standalone/AI/theme-preview callers, shared advanced palettes, axis-format persistence and other table/caller obligations remain separate. Sankey remains an additional requested chart type. No production, specification or roadmap file was edited by this inventory task.

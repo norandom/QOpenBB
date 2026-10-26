@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40334144666-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -122,7 +122,7 @@ Radial Column/Bar is accepted and published; RC5 release assets and anonymous im
 - [x] Complete [Heatmap](.kiro/specs/analyst-workspace/heatmap-milestone.md): financial values, appearance, controls, persistence and export accepted.
 - [x] Publish and verify the Heatmap milestone images: [alpha-40228938438-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1).
 - [x] Accept [Funnel, Cone Funnel and Pyramid](.kiro/specs/analyst-workspace/funnel-milestone.md): owner-approved appearance, financial lifecycle, visible controls and plain-color Cone PNG contents pass within the [reviewed scope](artifacts/reviewed/chart-funnel/verification.md).
-- [ ] Publish and verify the accepted Funnel milestone images.
+- [x] Publish and verify the accepted Funnel milestone images: [alpha-40334144666-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40334144666-1). Next: assess original Stacked Line and 100% Stacked Line.
 
 - [x] Freeze the Radial control contract and implement its inactive controls.
 - [x] Implement the independently reviewed Radial Column shape helper.

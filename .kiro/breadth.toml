@@ -1362,7 +1362,7 @@ requirements = ["analyst-workspace/funnel-milestone.md:F4"]
 planned_checks = ["retained-FMP formatted values in both themes", "bounded saved numeric-label mode", "invalid and empty Pyramid clears and recovers"]
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-candidate.spec.ts"]
 status = "passed"
-evidence = ["Candidate4ae3695d/source6c76323: defaults3, controls1 and recovery1 pass with strict chart diagnostics. Bounded scope and remaining F4 gaps are recorded in artifacts/reviewed/chart-funnel/candidate-verification.md. Owner appearance approved2026-10-26; overall F4 acceptance remains pending; onboarding404 is separately unresolved."]
+evidence = ["Candidate4ae3695d/source6c76323: defaults3, controls1 and recovery1 pass with strict chart diagnostics. Bounded scope and remaining F4 gaps are recorded in artifacts/reviewed/chart-funnel/candidate-verification.md. Historical bounded checkpoint; owner appearance approved2026-10-26. Final F4/F5 acceptance is recorded in funnel-family-application and funnel-milestone-publication; onboarding404 is separately unresolved."]
 
 [[capabilities]]
 id = "funnel-financial-lifecycle"
@@ -1378,4 +1378,12 @@ requirements = ["analyst-workspace/funnel-milestone.md:F4"]
 planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-palette.spec.ts"]
 status = "passed"
-evidence = ["Candidate4ae3695d/source6c76323: public palette save, retained-FMP Cone paint, actual PNG colors/text and disposable settings restoration pass with strict diagnostics. artifacts/reviewed/chart-funnel/palette-review.md. Supersedes exploratory read-only theme probe; advanced fills and overall F4/F5 remain open."]
+evidence = ["Candidate4ae3695d/source6c76323: public palette save, retained-FMP Cone paint, actual PNG colors/text and disposable settings restoration pass with strict diagnostics. artifacts/reviewed/chart-funnel/palette-review.md. Supersedes exploratory read-only theme probe. Advanced fills remain deferred; final F4/F5 acceptance is recorded in their separate capability entries."]
+
+[[capabilities]]
+id = "funnel-milestone-publication"
+requirements = ["analyst-workspace/funnel-milestone.md:F5"]
+planned_checks = []
+test_paths = ["tests/delivery/test_image_builds.py", "tests/delivery/test_alpha_cli.py"]
+status = "passed"
+evidence = ["alpha-40334144666-1: both CI jobs, exact tagged sources, three public assets, six anonymous pulls and Compose configuration verified. artifacts/reviewed/chart-funnel/publication-review.md. Published-image browser and installed Compose/server acceptance remain separate."]
