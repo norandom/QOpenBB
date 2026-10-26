@@ -72,3 +72,4 @@ The owner authorized starting the next family while the accepted predecessor fin
 Renderer and control lanes may run concurrently after their shared contract is accepted. Shared application integration, local heavy checks and publication gates remain serialized. This queue does not mark planned tests or unsupported original paths complete.
 
 - [ ] Resolve the existing [first-login onboarding diagnostics](../.kiro/specs/openbb-self-service/first-login-diagnostics.md). This baseline follow-up is separate from chart acceptance for onboarded users.
+- [ ] Complete [shared advanced image, gradient and pattern palettes](../.kiro/specs/analyst-workspace/advanced-palettes.md) with renderer, persistence and export acceptance. Owner decision on 2026-10-26: track this separately while Funnel proceeds with stock/plain CSS colors.

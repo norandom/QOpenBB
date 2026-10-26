@@ -84,6 +84,7 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [ ] Complete remaining saved-state behavior, exports and caller-specific controls.
 - [ ] Verify the broader renderer inventory in the assembled application without hidden feature reductions.
 - [ ] Apply the shared analyst theme and instrument/time-linking contracts as those features are implemented.
+- [ ] Implement [shared advanced image, gradient and pattern palettes](../.kiro/specs/analyst-workspace/advanced-palettes.md), including persistence, explicit unsupported diagnostics and export acceptance. Funnel proceeds with stock/plain CSS colors under the owner decision of 2026-10-26.
 
 ## Current combination-chart delivery
 
