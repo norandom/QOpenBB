@@ -1,6 +1,6 @@
 # Funnel-family parity
 
-Assess Funnel, Cone Funnel and Pyramid in the original Table/File journey before implementing their replacement. The owner resumed this work on 2026-10-26 after Heatmap publication. Production implementation and application acceptance remain pending.
+The inactive data adapter, renderer and controls for Funnel, Cone Funnel and Pyramid are independently accepted. Their combined ECharts/editor check passes. Application session integration, packaged-image parity and publication remain pending. The owner resumed this work on 2026-10-26 after Heatmap publication.
 
 ## Scope
 
@@ -16,7 +16,7 @@ The three gallery variants are `funnel`, `coneFunnel` and `pyramid`. Source decl
   - [x] Freeze and independently review the [F1 data interfaces and file ownership](funnel-data-design.md). Renderer/editor interfaces remain F2 work.
 - [x] F1. Implement and independently accept the inactive [data adapter](funnel-data-design.md) with focused financial regressions and maintained-path inventory.
 - [x] F2a. Freeze and independently accept the [renderer/editor declarations](funnel-renderer-design.md).
-- [ ] F2. Implement renderer and controls in the design's disjoint lanes with independent review.
+- [x] F2. Implement renderer and controls in the design's disjoint lanes with independent review and the inactive composition check.
 - [ ] F3. Join the existing session, caller and editor; verify saved-state transitions and affected families.
 - [ ] F4. Verify an identified packaged image against FMP values, original appearance, reachable controls, themes, refresh, save/reopen and export. Open uncertain visual comparisons in qView.
 - [ ] F5. Publish selected FMP samples, reconcile README/docs/breadth, and run the image pipeline once for the accepted milestone. Verify the tagged release and anonymous pulls.
@@ -42,6 +42,8 @@ F1 source acceptance: Workspace `20bae47fe5e88620120c07c049907b092c3a046c` adds 
 Typing qualification: the initial F1 harness inherited `strict: false`. An [explicit strict follow-up](../../../artifacts/reviewed/chart-funnel/data-strict-followup.md), independently inspected against unchanged source, passes with 22 inherited diagnostics and no added or owned diagnostics. Both checks retain `skipLibCheck`; neither claims a clean full application compile.
 
 F2a source acceptance: Workspace `b676e8f9057851ed7cb9e5dcf9200c40b51aff44` adds readonly render declarations and a compile fixture for the three variants. Independent strict compilation, lint and inventory-backed caps pass (88 physical lines, 60 logical units, no functions). The [review](../../../artifacts/reviewed/chart-funnel/render-types-review.md) accepts this inactive interface only. Geometry and controls can now proceed without editing the shared types; caller theme derivation remains F3 work and must not reintroduce commercial runtime dependencies.
+
+F2 source acceptance is split into per-task Workspace commits: `5c7d7bb` for geometry, `a911ca8` for controls and `a3e1a86` for their composition check. Independent reviews accept [13 geometry/actual-engine checks](../../../artifacts/reviewed/chart-funnel/renderer-review.md), [24 compatibility and 3 component checks](../../../artifacts/reviewed/chart-funnel/controls-review.md), and [3 composed variant checks](../../../artifacts/reviewed/chart-funnel/join-review.md). Scoped typing, lint and complete-file caps pass. The composed tests preserve retained FMP values while independently toggling stage/numeric labels, changing direction and removing Funnel connectors through the existing option reducer. JSDOM uses fallback font metrics; no browser appearance, persistence or export acceptance is claimed.
 
 The [native assessment](../../../artifacts/reviewed/chart-funnel/native-assessment.md) and [independent review](../../../artifacts/reviewed/chart-funnel/assessment-review.md) establish bounded original characterization. Three financial journeys passed rendering, export and visible reload checks. Follow-up observations cover duplicates, Sum, direction, labels and missing/signed values. Historical probe failures remain documented. Original CSV diagnostics were not clean; these are not candidate acceptance results.
 

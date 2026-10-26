@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "funnel-inactive-renderer-controls"
+requirements = ["analyst-workspace/funnel-renderer-design.md:Disjoint lanes and first join", "analyst-workspace/funnel-milestone.md:F2"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/funnelGeometry.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/funnelRenderer.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/funnelControls.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/funnelEditorControls.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/funnelJoin.test.ts"]
+status = "passed"
+evidence = ["Workspace 5c7d7bb geometry, a911ca8 controls, a3e1a861f47057f52faf7120b27375419efbfb16 join: independently accepted 13 geometry/engine +24 compatibility +3 component +3 composition checks, scoped typing/lint/caps. artifacts/reviewed/chart-funnel/renderer-review.md, controls-review.md and join-review.md. Inactive composition only; fallback font metrics, application routing, browser parity, persistence and export remain outside this evidence."]
+
+[[capabilities]]
 id = "funnel-render-interface"
 requirements = ["analyst-workspace/funnel-renderer-design.md:Minimal shared interface", "analyst-workspace/funnel-milestone.md:F2a"]
 planned_checks = []

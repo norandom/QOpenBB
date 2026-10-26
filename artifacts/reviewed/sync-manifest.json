@@ -32976,6 +32976,30 @@
       "publishedSHA256": "97a0c2a846e388abd59666d48fb53bb6da5970b27e19ac64e46b89f3ab415eee",
       "bytes": 1642,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f2b/review.md",
+      "sourceSHA256": "80463a85e668fabf1a92251a37dae026910dd389d6319fdbfcdf1b2cba1e0c7e",
+      "publishedpath": "artifacts/reviewed/chart-funnel/renderer-review.md",
+      "publishedSHA256": "80463a85e668fabf1a92251a37dae026910dd389d6319fdbfcdf1b2cba1e0c7e",
+      "bytes": 4027,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f2c/review.md",
+      "sourceSHA256": "6fc9f481b6fdf1999535b44e5fc1b870b8430d5071e1a5c3ba33f9dcc9253675",
+      "publishedpath": "artifacts/reviewed/chart-funnel/controls-review.md",
+      "publishedSHA256": "6fc9f481b6fdf1999535b44e5fc1b870b8430d5071e1a5c3ba33f9dcc9253675",
+      "bytes": 3235,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-funnel/f2-join/review.md",
+      "sourceSHA256": "1d07eb32e8e324dfe6d00ac745cb7e7e1e69a7a5f1bf7351b3c6ac3a98991030",
+      "publishedpath": "artifacts/reviewed/chart-funnel/join-review.md",
+      "publishedSHA256": "1d07eb32e8e324dfe6d00ac745cb7e7e1e69a7a5f1bf7351b3c6ac3a98991030",
+      "bytes": 4325,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -33689,7 +33713,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168132391,
+  "total_payload_bytes": 168143978,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

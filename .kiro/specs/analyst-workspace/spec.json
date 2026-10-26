@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-25",
+  "updated_at": "2026-10-26",
   "language": "en",
   "phase": "initialized",
   "approvals": {
@@ -20,74 +20,42 @@
   },
   "ready_for_implementation": false,
   "active_milestone": {
-    "name": "heatmap-port",
-    "contract": "heatmap-milestone.md",
-    "authorization": "Owner authorized the next batch on 2026-10-25 after hierarchy publication.",
-    "phase": "accepted-published",
-    "completed_tasks": [
-      "source-research",
-      "HM0-data-contract",
-      "HM1",
-      "HM2a",
-      "HM2b",
-      "HM2c",
-      "HM3a",
-      "HM0",
-      "HM3b",
-      "HM4",
-      "HM5"
+    "name": "funnel-family",
+    "phase": "inactive-renderer-controls-accepted",
+    "contract": "funnel-milestone.md",
+    "implementation_proposal": "funnel-contract.md",
+    "data_design": "funnel-data-design.md",
+    "renderer_design": "funnel-renderer-design.md",
+    "f2b_source": "5c7d7bb3c792f0c1019eba0f7705b44cb105e11f",
+    "f2c_source": "a911ca8a220d770584b8b65d8e03095b31768288",
+    "f2_join_source": "a3e1a861f47057f52faf7120b27375419efbfb16",
+    "f2a_source": "b676e8f9057851ed7cb9e5dcf9200c40b51aff44",
+    "f2a_review": "artifacts/reviewed/chart-funnel/render-types-review.md",
+    "f1_source": "20bae47fe5e88620120c07c049907b092c3a046c",
+    "f1_review": "artifacts/reviewed/chart-funnel/data-review.md",
+    "approved_tasks": [
+      "F1-inactive-data-adapter",
+      "F2a-render-types",
+      "F2b-inactive-renderer",
+      "F2c-inactive-controls"
     ],
-    "feature_accepted": true,
-    "application_accepted": true,
-    "starting_workspace_source": "33a81d387b62e962ecced465b78bf2d303530468",
-    "original_frontend_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
-    "boundary": "Ordinary Table/File journey first; original mapping and controls require browser observation before implementation interfaces freeze.",
-    "hm1_source": "0d343b00a5d168ced61a41dfbb931e4f6d4c59f9",
-    "hm1_review": "artifacts/reviewed/chart-heatmap/data-adapter-review.md",
-    "data_contract": "heatmap-data-contract.md",
-    "renderer_design": "heatmap-renderer-design.md",
-    "hm2a_source": "216e8a296391e64f8e069602332caa09aafa9943",
-    "hm2a_review": "artifacts/reviewed/chart-heatmap/renderer-types-review.md",
-    "pending_owner_decisions": [],
-    "owner_behavior_decisions": {
-      "tooltip_off": "Suppress tooltips; approved 2026-10-25",
-      "legend_reverse": "Reverse gradient and labels together; keep cell color mapping; approved 2026-10-25"
-    },
-    "hm2b_source": "8fb06e58582c0baea15089fdbf4e03fa70dc0a87",
-    "hm2c_source": "8b4426b9ca7f0b04ccfdfa05c495a415f7741ddf",
-    "hm2b_review": "artifacts/reviewed/chart-heatmap/controls-review.md",
-    "hm2c_review": "artifacts/reviewed/chart-heatmap/renderer-review.md",
-    "next": "Funnel-family native-behavior assessment is queued; implementation contract not yet approved.",
-    "integration_design": "heatmap-integration-design.md",
-    "hm3a_source": "6262a976abec8f3a0ef508b9a59005ba807df375",
-    "hm3a_review": "artifacts/reviewed/chart-heatmap/dispatch-review.md",
-    "hm3b_source": "09947a2d7bea7c93b71ad4dc74afcc1ae64f5033",
-    "hm3b_review": "artifacts/reviewed/chart-heatmap/integration-review.md",
-    "hm4_corrective_source": "c7a7633fd1b864647f55c08dd5ce0d4654fe93a0",
-    "hm4_corrective_review": "artifacts/reviewed/chart-heatmap/corrections-review.md",
-    "hm4_empty_state_source": "5cae43a52317264067951b111048664292882ec2",
-    "hm4_empty_state_review": "artifacts/reviewed/chart-heatmap/empty-state-review.md",
-    "hm4_owner_appearance": "2026-10-25: keep candidate e47ef653 light/dark appearance including approximately 7 px plot-width and small legend-offset differences. This decision covered appearance; the subsequent HM4 review accepts lifecycle behavior.",
-    "hm4_source": "5cae43a52317264067951b111048664292882ec2",
-    "hm4_test_source": "68b1e41d414234c4e191d39207ca6f84347a5bf5",
-    "hm4_image": "sha256:6dc3dbfef52cbaa16cdc062d672c63a114a2d6dc8a17daf32a148c915390d42d",
-    "hm4_review": "artifacts/reviewed/chart-heatmap/verification.md",
-    "publication": {
-      "release": "alpha-40228938438-1",
-      "run": "40228938438",
-      "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1",
-      "root_source": "64c1cad70037449273475688b9668b895a129da4",
-      "workspace_source": "68b1e41d414234c4e191d39207ca6f84347a5bf5",
-      "data_api_source": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba",
-      "manifest": "artifacts/reviewed/chart-heatmap/release-manifest.json",
-      "review": "artifacts/reviewed/chart-heatmap/publication-review.md",
-      "anonymous_pull_evidence": "artifacts/reviewed/chart-heatmap/anonymous-pulls.json",
-      "images": {
-        "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:c834cc9797588cb87b8987061928ce50c5fa3e389c3a75825e58fe68d2681f4a",
-        "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:996466ff214ee7379c6d528c1dc24b1a12c3c11064c0f8050222c1dd30f02375"
-      },
-      "scope": "Local candidate application acceptance and CI publication verified separately; no installed-stack upgrade or CI-image browser claim."
-    }
+    "design_review": "artifacts/chart-funnel/f1-design-review.md",
+    "assessment_review": "artifacts/reviewed/chart-funnel/assessment-review.md",
+    "implementation_approved": false,
+    "owner_data_decision": "2026-10-26: approved missing-stage gaps, signed-magnitude Funnel/Cone and nonnegative positive-total Pyramid admission; preserve controls and explicit recovery.",
+    "scope": "Ordinary Table/File journey; inactive source composition accepted, application integration and image acceptance pending.",
+    "completed_tasks": [
+      "F0",
+      "F1",
+      "F2a",
+      "F2b",
+      "F2c",
+      "F2-join"
+    ],
+    "feature_accepted": false,
+    "application_accepted": false,
+    "authorization": "Owner resumed autonomous work on 2026-10-26 and approved explicit missing/signed-input rules.",
+    "next": "Review bounded F3 session/caller integration, including recoverable invalid Pyramid state and native theme paint."
   },
   "completed_milestones": [
     {
@@ -644,6 +612,76 @@
         },
         "scope": "Local browser acceptance and CI publication verified separately; installed Compose unchanged."
       }
+    },
+    {
+      "name": "heatmap-port",
+      "contract": "heatmap-milestone.md",
+      "authorization": "Owner authorized the next batch on 2026-10-25 after hierarchy publication.",
+      "phase": "accepted-published",
+      "completed_tasks": [
+        "source-research",
+        "HM0-data-contract",
+        "HM1",
+        "HM2a",
+        "HM2b",
+        "HM2c",
+        "HM3a",
+        "HM0",
+        "HM3b",
+        "HM4",
+        "HM5"
+      ],
+      "feature_accepted": true,
+      "application_accepted": true,
+      "starting_workspace_source": "33a81d387b62e962ecced465b78bf2d303530468",
+      "original_frontend_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
+      "boundary": "Ordinary Table/File journey first; original mapping and controls require browser observation before implementation interfaces freeze.",
+      "hm1_source": "0d343b00a5d168ced61a41dfbb931e4f6d4c59f9",
+      "hm1_review": "artifacts/reviewed/chart-heatmap/data-adapter-review.md",
+      "data_contract": "heatmap-data-contract.md",
+      "renderer_design": "heatmap-renderer-design.md",
+      "hm2a_source": "216e8a296391e64f8e069602332caa09aafa9943",
+      "hm2a_review": "artifacts/reviewed/chart-heatmap/renderer-types-review.md",
+      "pending_owner_decisions": [],
+      "owner_behavior_decisions": {
+        "tooltip_off": "Suppress tooltips; approved 2026-10-25",
+        "legend_reverse": "Reverse gradient and labels together; keep cell color mapping; approved 2026-10-25"
+      },
+      "hm2b_source": "8fb06e58582c0baea15089fdbf4e03fa70dc0a87",
+      "hm2c_source": "8b4426b9ca7f0b04ccfdfa05c495a415f7741ddf",
+      "hm2b_review": "artifacts/reviewed/chart-heatmap/controls-review.md",
+      "hm2c_review": "artifacts/reviewed/chart-heatmap/renderer-review.md",
+      "next": "Funnel-family native-behavior assessment is queued; implementation contract not yet approved.",
+      "integration_design": "heatmap-integration-design.md",
+      "hm3a_source": "6262a976abec8f3a0ef508b9a59005ba807df375",
+      "hm3a_review": "artifacts/reviewed/chart-heatmap/dispatch-review.md",
+      "hm3b_source": "09947a2d7bea7c93b71ad4dc74afcc1ae64f5033",
+      "hm3b_review": "artifacts/reviewed/chart-heatmap/integration-review.md",
+      "hm4_corrective_source": "c7a7633fd1b864647f55c08dd5ce0d4654fe93a0",
+      "hm4_corrective_review": "artifacts/reviewed/chart-heatmap/corrections-review.md",
+      "hm4_empty_state_source": "5cae43a52317264067951b111048664292882ec2",
+      "hm4_empty_state_review": "artifacts/reviewed/chart-heatmap/empty-state-review.md",
+      "hm4_owner_appearance": "2026-10-25: keep candidate e47ef653 light/dark appearance including approximately 7 px plot-width and small legend-offset differences. This decision covered appearance; the subsequent HM4 review accepts lifecycle behavior.",
+      "hm4_source": "5cae43a52317264067951b111048664292882ec2",
+      "hm4_test_source": "68b1e41d414234c4e191d39207ca6f84347a5bf5",
+      "hm4_image": "sha256:6dc3dbfef52cbaa16cdc062d672c63a114a2d6dc8a17daf32a148c915390d42d",
+      "hm4_review": "artifacts/reviewed/chart-heatmap/verification.md",
+      "publication": {
+        "release": "alpha-40228938438-1",
+        "run": "40228938438",
+        "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1",
+        "root_source": "64c1cad70037449273475688b9668b895a129da4",
+        "workspace_source": "68b1e41d414234c4e191d39207ca6f84347a5bf5",
+        "data_api_source": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba",
+        "manifest": "artifacts/reviewed/chart-heatmap/release-manifest.json",
+        "review": "artifacts/reviewed/chart-heatmap/publication-review.md",
+        "anonymous_pull_evidence": "artifacts/reviewed/chart-heatmap/anonymous-pulls.json",
+        "images": {
+          "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:c834cc9797588cb87b8987061928ce50c5fa3e389c3a75825e58fe68d2681f4a",
+          "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:996466ff214ee7379c6d528c1dc24b1a12c3c11064c0f8050222c1dd30f02375"
+        },
+        "scope": "Local candidate application acceptance and CI publication verified separately; no installed-stack upgrade or CI-image browser claim."
+      }
     }
   ],
   "active_correction": {
@@ -733,22 +771,9 @@
   ],
   "successor_queue": [
     {
-      "name": "funnel-family",
-      "phase": "shared-render-interfaces-accepted",
-      "contract": "funnel-milestone.md",
-      "implementation_proposal": "funnel-contract.md",
-      "data_design": "funnel-data-design.md",
-      "renderer_design": "funnel-renderer-design.md",
-      "f2a_source": "b676e8f9057851ed7cb9e5dcf9200c40b51aff44",
-      "f2a_review": "artifacts/reviewed/chart-funnel/render-types-review.md",
-      "f1_source": "20bae47fe5e88620120c07c049907b092c3a046c",
-      "f1_review": "artifacts/reviewed/chart-funnel/data-review.md",
-      "approved_tasks": ["F1-inactive-data-adapter", "F2a-render-types", "F2b-inactive-renderer", "F2c-inactive-controls"],
-      "design_review": "artifacts/chart-funnel/f1-design-review.md",
-      "assessment_review": "artifacts/reviewed/chart-funnel/assessment-review.md",
-      "implementation_approved": false,
-      "owner_data_decision": "2026-10-26: approved missing-stage gaps, signed-magnitude Funnel/Cone and nonnegative positive-total Pyramid admission; preserve controls and explicit recovery.",
-      "scope": "Funnel, Cone Funnel and Pyramid; original Table/File behavior and financial fixture must be observed before implementation contract approval."
+      "name": "sankey",
+      "phase": "requested",
+      "scope": "Additional chart type; assessment and implementation contract pending."
     }
   ]
 }
