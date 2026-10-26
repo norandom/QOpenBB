@@ -33296,6 +33296,14 @@
       "publishedSHA256": "d22eaf446ab5e3af4e3c1fd723dc72ca7a21a08d04960fdf387fdb20ef3e166f",
       "bytes": 18262,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-stacked-line/tooltip/review.md",
+      "sourceSHA256": "cc2a267456665363b6fc977723fc97e9a7ed1a84dc1db6387ef811f8fa49ae07",
+      "publishedpath": "artifacts/reviewed/chart-stacked-line/tooltip-repair-review.md",
+      "publishedSHA256": "cc2a267456665363b6fc977723fc97e9a7ed1a84dc1db6387ef811f8fa49ae07",
+      "bytes": 2788,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -34009,7 +34017,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168440302,
+  "total_payload_bytes": 168443090,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

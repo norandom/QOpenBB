@@ -41,3 +41,7 @@ Parallel assessment lanes own original-source semantics and replacement integrat
 Every modified maintained production file must pass the inventory-backed 400 physical lines/file, 300 logical units/file and 50 logical units/function caps. Documentation and tests are excluded from production caps. Use one heavy build or suite at a time; browser checks remain isolated, headless, one worker and zero retries. Retain original diagnostics separately from candidate acceptance.
 
 Sankey, advanced palettes, other callers and table capabilities remain separate. The published Funnel alpha stays available during this work.
+
+## Repeated-date tooltip repair
+
+Workspace `64b7fecea1619547b439cb4a7fbcbfcf431ed904` preserves separate raw observation blocks at repeated continuous coordinates. The repair passes 13 focused and 91 Cartesian tests and independent source review, with the inherited compiler qualification retained in the [review](../../../artifacts/reviewed/chart-stacked-line/tooltip-repair-review.md). A rebuilt candidate must pass the existing Time journey before SL3 closes; publication remains pending.
