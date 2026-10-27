@@ -1,0 +1,44 @@
+{
+  "release": "alpha-40467871625-1",
+  "images": {
+    "workspace": "ghcr.io/norandom/qopenbb-workspace@sha256:4754c820716672edcdc5e0fde252a90a4801e3d5d17be78772766ca6bc80d31a",
+    "data-api": "ghcr.io/norandom/qopenbb-data-api@sha256:131eeb9dadfbe3b429845ddb07266fc81cc70b03e5bd558da6fb628e5f8f1162"
+  },
+  "retrieved_at": "2026-10-27T07:52:55.989Z",
+  "observation": {
+    "symbol": "AAPL",
+    "currency": "USD",
+    "period_ending": "2025-09-27",
+    "revenue": 416161000000,
+    "endpoint": "/data/api/v1/equity/fundamental/income",
+    "parameters": {
+      "symbol": "AAPL",
+      "provider": "fmp",
+      "period": "annual"
+    }
+  },
+  "firstLogin": {
+    "visitedOnboarding": true,
+    "questionnaireStatus": 200,
+    "questionnaire": null
+  },
+  "diagnostics": {
+    "errors": [],
+    "failures": [],
+    "consoleErrors": [],
+    "requestFailures": []
+  },
+  "limitation": "One installed income widget; no expanded provider, recovery or owner-server claim",
+  "later_diagnostics": {
+    "errors": [],
+    "failures": [],
+    "consoleErrors": [],
+    "requestFailures": []
+  },
+  "status": "accepted-local-prototype",
+  "test_revision": "ee7a961f055ac4b867c2b4bd640e2d3af8b2dbcb",
+  "test_sha256": "ce91ff9599d64d67c4ef4f9900626911b1656763896dda8faaa181571e45ba18",
+  "test_duration_ms": 21087.892,
+  "later_login_bypasses_onboarding": true,
+  "source_overlay": null
+}

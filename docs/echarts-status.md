@@ -37,7 +37,7 @@ Checked items below describe the implemented and reviewed scope, not every featu
 
 The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md) and [adapter contract](../.kiro/specs/analyst-workspace/nightingale-contract.md) passed independent N0 review. N1-N4 are accepted, including the real-FMP packaged journey and owner appearance decision. Nightingale remains an accepted earlier alpha. [Radial Column/Bar](../.kiro/specs/analyst-workspace/radial-milestone.md) has source and RC4 packaged/visual acceptance on the identified local image; RC5 publication and anonymous image pulls are verified. [Treemap/Sunburst](../.kiro/specs/analyst-workspace/hierarchy-milestone.md) is locally accepted for onboarded users, including packaged FMP, controls, appearance, persistence and export. H5 publication and anonymous image pulls are verified.
 
-## Open
+## Milestone progress and remaining scope
 
 - [x] Freeze Radial control interfaces and implement inactive controls.
 - [x] Implement the bounded Radial Column path helper.
@@ -81,10 +81,10 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 - [x] Independently accept inactive Funnel geometry, controls and their actual ECharts composition. [Join review](../artifacts/reviewed/chart-funnel/join-review.md); application routing is source-accepted below; F4 is now accepted within the closing review's scope.
 - [x] Accept the inactive stock/plain-color Funnel theme helper, including native Cone palettes and explicit unsupported-paint diagnostics. [Review](../artifacts/reviewed/chart-funnel/theme-helper-review.md); application integration is source-accepted below; F4 is now accepted within the closing review's scope.
 - [x] Connect Funnel, Cone Funnel and Pyramid to the ordinary session and editor, with editable empty/invalid data, native-scoped controls and safe theme diagnostics. [Source review](../artifacts/reviewed/chart-funnel/integration-review.md); F4 is now accepted within the closing review's scope.
-- [ ] Add Sankey as an additional chart type: assess source/target/value mapping, financial units and flow reconciliation, then implement with the existing editor and theme. Requested scope; implementation and acceptance remain pending.
+- [ ] Add [Sankey](../.kiro/specs/analyst-workspace/sankey-milestone.md) as an additional chart type with the existing editor and theme. Queued financial contract reviewed; freeze exact interfaces before two implementation lanes. Implementation and acceptance remain pending.
 - [ ] Complete standalone, AI-chart and theme-preview caller integration.
-- [ ] Accept category-axis type/time-format persistence in an identified image; source implementation exists.
-- [ ] Complete remaining saved-state behavior, exports and caller-specific controls.
+- [ ] Accept category-axis type/time-format persistence for remaining families and callers. Stacked Line's bounded Table/File Time and persistence journey is already accepted in its [final review](../artifacts/reviewed/chart-stacked-line/final-review.md).
+- [ ] Complete saved-state behavior, exports and controls for remaining caller scopes; retain the accepted milestone results above.
 - [ ] Verify the broader renderer inventory in the assembled application without hidden feature reductions.
 - [ ] Apply the shared analyst theme and instrument/time-linking contracts as those features are implemented.
 - [ ] Implement [shared advanced image, gradient and pattern palettes](../.kiro/specs/analyst-workspace/advanced-palettes.md), including persistence, explicit unsupported diagnostics and export acceptance. Funnel proceeds with stock/plain CSS colors under the owner decision of 2026-10-26.
@@ -96,7 +96,7 @@ The [Nightingale plan](../.kiro/specs/analyst-workspace/nightingale-milestone.md
 
 See the [reviewed evidence](../artifacts/reviewed/chart-combo/verification.md). Publication does not establish acceptance of the unfinished families below.
 
-## Remaining port acceptance
+## Acceptance criteria for remaining chart and caller slices
 
 Funnel's retained-FMP table/chart, Line/Funnel and source-refresh journey passes with clean diagnostics; see the [lifecycle review](../artifacts/reviewed/chart-funnel/lifecycle-review.md). The [plain-palette and PNG-content journey](../artifacts/reviewed/chart-funnel/palette-review.md) also passes. Visible direction, connector and shadow effects also pass; F4 and milestone publication are accepted within their separately recorded scopes.
 
@@ -105,7 +105,7 @@ Funnel's retained-FMP table/chart, Line/Funnel and source-refresh journey passes
 - [ ] Close the former Highcharts caller/configuration gaps with functioning replacements, not unavailable placeholders or hidden features.
 - [ ] After independent review, dispatch the image pipeline once for the completed milestone and publish its tagged alpha.
 
-These are completion criteria for the remaining port. Earlier checked source/functionality items above do not imply comprehensive live-FMP acceptance. Ordinary pushes run checks without rebuilding images.
+These are recurring completion criteria for remaining slices, not instructions to repeat completed milestone checks. Earlier checked source/functionality items above do not imply comprehensive live-FMP acceptance. Ordinary pushes run checks without rebuilding images.
 
 ## Scatter/bubble progress
 
@@ -200,5 +200,3 @@ See the [hierarchy milestone](../.kiro/specs/analyst-workspace/hierarchy-milesto
 - [x] Publish and verify the accepted Heatmap milestone images: [alpha-40228938438-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40228938438-1).
 
 See the [Heatmap milestone](../.kiro/specs/analyst-workspace/heatmap-milestone.md) and [publication verification](../artifacts/reviewed/chart-heatmap/publication-review.md).
-
-- [x] Publish and verify Stacked Line milestone images: [alpha-40371082771-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40371082771-1).

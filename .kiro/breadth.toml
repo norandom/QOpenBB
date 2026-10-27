@@ -1451,3 +1451,11 @@ planned_checks = []
 test_paths = ["tests/providers/test_runtime.py"]
 status = "passed"
 evidence = ["Nine runtime cases pass; fixed GET /agents.json returns an empty array without provider transport or upstream schema changes. Independently reviewed source only. artifacts/reviewed/prototype-onboarding/agents-source-review.md. AI remains separate; published-image journey pending."]
+
+[[capabilities]]
+id = "prototype-compose-live-income"
+requirements = ["openbb-self-service/first-login-diagnostics.md:ON2", "openbb-self-service/first-login-diagnostics.md:P3/P4", "openbb-self-service/first-login-diagnostics.md:CAT3", "openbb-self-service/first-login-diagnostics.md:CAT4 delivery", "openbb-self-service/first-login-diagnostics.md:CAT5 delivery"]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/prototype-compose.spec.ts"]
+status = "passed"
+evidence = ["alpha-40467871625-1 exact published pair: fresh two-service Compose startup, onboarding200/null, actual AAPL annual income and displayed financial values, refresh, later login and clean first/later diagnostics. One maintained test passed21.1s, no retries, test revisionee7a961. Independent review: artifacts/reviewed/prototype-onboarding/application-review.md. Local rehearsal only; no owner-server, broader-provider or persistence claim."]

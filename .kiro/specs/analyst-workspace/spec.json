@@ -4,6 +4,7 @@
   "updated_at": "2026-10-26",
   "language": "en",
   "phase": "initialized",
+  "phase_scope": "Umbrella requirements, design and tasks remain ungenerated. Approved bounded milestones have their own implementation and acceptance records under the prototype-first delivery amendment.",
   "approvals": {
     "requirements": {
       "generated": false,
@@ -62,7 +63,7 @@
     "feature_accepted": true,
     "application_accepted": true,
     "authorization": "Owner resumed autonomous work on 2026-10-26 and approved explicit missing/signed-input rules.",
-    "next": "Assess original Stacked Line and 100% Stacked Line before freezing implementation contracts.",
+    "next": "Stacked Line SL0-SL4 is accepted and published; remaining scope is tracked in docs/roadmap.md and docs/echarts-status.md.",
     "integration_design": "funnel-integration-design.md",
     "integration_review": "funnel-integration-review.md",
     "f3a_source": "3cbd6c85f2ac09c943e53120a99e89bb7c636abf",

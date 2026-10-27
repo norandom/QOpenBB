@@ -2,14 +2,27 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-40334144666-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40334144666-1), built from Workspace `0b2190354d2dc5f4175ffb989cf652ac36237c77` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both public image identities passed anonymous digest, release-tag and latest pulls. See [Funnel release verification](../artifacts/reviewed/chart-funnel/publication-review.md). Earlier records below remain historical.
+Published: [alpha-40467871625-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1), built from QOpenBB `11e84a3f361fb6db8b9eae5a4843242bee042660`, Workspace `c767b02019efe1e2bc0070fb180003584648935f` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both CI jobs, public release-asset checks and six anonymous digest, release-tag and latest pulls pass. Earlier records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:c834cc9797588cb87b8987061928ce50c5fa3e389c3a75825e58fe68d2681f4a` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:996466ff214ee7379c6d528c1dc24b1a12c3c11064c0f8050222c1dd30f02375` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:4754c820716672edcdc5e0fde252a90a4801e3d5d17be78772766ca6bc80d31a` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:131eeb9dadfbe3b429845ddb07266fc81cc70b03e5bd558da6fb628e5f8f1162` |
 
-The published CI-built pair is distinct from the local image used for the passing Heatmap financial/control/lifecycle browser journeys. The manifest binds the publication to the reviewed release revisions; it does not claim browser execution against the CI-built bytes.
+The manifest binds this pair to the reviewed release sources and catalog runtime-input hashes. The exact pair passed its isolated assembled Compose browser journey without source overlays; the local pull-only installation rehearsal is accepted.
+
+## Current prototype repair
+
+The first-login GET now returns HTTP 200 with JSON `null` when no developer questionnaire exists, preserving the ordinary onboarding flow and saved answers. The data image packages and serves the existing `widgets.json` and `apps.json`. Optional external app preview URLs are omitted so Workspace uses its existing fallback. The supported catalog remains FMP company profile/income and FRED series. See the [onboarding source review](../artifacts/reviewed/prototype-onboarding/source-review.md), [catalog source review](../artifacts/reviewed/prototype-onboarding/catalog-source-review.md) and [preview repair review](../artifacts/reviewed/prototype-onboarding/preview-source-review.md).
+
+Fixed GET `/agents.json` returns HTTP 200 with an empty array, truthfully advertising that the data backend has no configured agents. It preserves the Workspace discovery contract without introducing AI functionality; Anthropic remains in its separate spec. See the [agent-discovery review](../artifacts/reviewed/prototype-onboarding/agents-source-review.md).
+
+Earlier assembled runs exposed the missing catalog, external FRED preview and agent-discovery 404 responses. They remain failed evidence. [CI run 40467871625](https://github.com/norandom/QOpenBB/actions/runs/40467871625) published the four repairs together. The final fresh-account browser journey passed in 21.1 seconds on that exact published pair: onboarding returned HTTP 200/null; the starter displayed annual AAPL revenue of 416,161,000,000 USD for period ending 2025-09-27, matching the actual response and refresh; later login bypassed onboarding. First-session and later-session diagnostic arrays were empty. See the [independent application review](../artifacts/reviewed/prototype-onboarding/application-review.md) and [application result](../artifacts/reviewed/prototype-onboarding/application.json).
+
+- [x] Verify the repaired release assets and both public image identities, including all six anonymous pulls.
+- [x] Complete the isolated published-image Compose journey: first login, installed annual AAPL income widget, displayed identity/date/currency/revenue, refresh and strict diagnostics.
+- [x] Complete the pull-only local installation rehearsal.
+- [ ] Verify owner-server deployment and the generic-widget empty-required-symbol guard. Broader providers, analyst persistence and backup/restore remain separate obligations.
 
 ## Build and publication
 

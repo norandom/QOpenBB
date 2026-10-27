@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40371082771-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -13,13 +13,13 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 ## Status at a glance
 
-Snapshot: 2026-10-25. Follow the CI link for live run status; a green check does not establish deployment acceptance.
+Snapshot: 2026-10-27. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
 | Area | What exists | What remains |
 | --- | --- | --- |
-| Prototype | Full Workspace, installed data API, two-service Compose, local image builds | Candidate login/dashboard and routing smoke; assembled Compose acceptance |
+| Prototype | Published-image Compose login, starter income widget, refresh and diagnostics accepted; local pull-only install rehearsed | Owner-server deployment; generic required-symbol guard |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
-| Data | Adapted FMP profile/income routes and FRED series catalog; real-data snapshot dashboard | Broader live FMP coverage, Yahoo adapter, named discovery and consistent provider contracts |
+| Data | Packaged three-widget catalog; actual annual AAPL income values and refresh accepted through the installed route | Broader live provider/widget acceptance, Yahoo adapter and named discovery |
 | Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut, Box Plot, Range Bar/Area, Waterfall and Radar Line/Area behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
 | Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and persistence acceptance |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
@@ -31,6 +31,16 @@ Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-
 - [x] Publish and verify the updated alpha images, including anonymous pulls of both services.
 
 See the [ECharts checklist](docs/echarts-status.md) for remaining chart families and callers.
+
+The current prototype alpha includes four reviewed repairs: HTTP 200/null for an absent first-login questionnaire, packaging and serving for the existing data catalog, Workspace's fallback for unavailable external app previews, and an empty agent-discovery response for the data-only backend. AI remains a separate spec.
+
+- [x] Verify release assets and both published images through six anonymous pulls.
+- [x] Accept fresh onboarding and later login with clean diagnostics on the published Compose pair.
+- [x] Match the installed starter's annual AAPL income identity, reporting date, USD revenue and refresh to the live response.
+- [x] Complete the isolated pull-only local installation rehearsal.
+- [ ] Verify owner-server deployment and repair the generic-widget empty-required-symbol guard.
+
+See the [independent application review](artifacts/reviewed/prototype-onboarding/application-review.md), [application result](artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](docs/prototype-delivery.md#current-prototype-repair). Broader provider acceptance, analyst persistence and infrastructure recovery remain separate.
 
 Published: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
 
