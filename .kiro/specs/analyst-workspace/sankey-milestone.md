@@ -1,6 +1,6 @@
 # Sankey: queued Table/File milestone
 
-Status: SK0 accepted on 2026-10-27. The [shared contract](sankey-contract.md), inactive declarations and retained FMP allocation fixture are independently reviewed at Workspace `c8503a1d1facc3d2ea31966f09acf70bd0f754d1`. [Review](../../../artifacts/reviewed/chart-sankey/sk0-review.md). SK1 and SK2 are independently accepted at Workspace `5190f5f`; [source review](../../../artifacts/reviewed/chart-sankey/source-review.md). The serial application join is active; application, appearance and publication acceptance remain open.
+Status: SK0 accepted on 2026-10-27. The [shared contract](sankey-contract.md), inactive declarations and retained FMP allocation fixture are independently reviewed at Workspace `c8503a1d1facc3d2ea31966f09acf70bd0f754d1`. [Review](../../../artifacts/reviewed/chart-sankey/sk0-review.md). SK1 and SK2 are independently accepted at Workspace `5190f5f`; [source review](../../../artifacts/reviewed/chart-sankey/source-review.md). The serial application join is source-accepted. Packaged application, appearance and publication acceptance remain open.
 
 Financial engineers should be able to select source, target and value columns in an ordinary Table/File widget and inspect an allocation without losing its units, period or provenance. This additional chart type belongs to [analyst-workspace](requirements.md); it follows the current prototype onboarding/catalog delivery and reuses the chart editor, theme, lifecycle and export infrastructure. It does not expand provider coverage or modify unrelated Perspective/catalog work.
 
@@ -52,7 +52,7 @@ SK3 ownership clarification, 2026-10-27: the serial integration worker may also 
 - [x] SK0: freeze and independently review shared contracts and retained financial fixture.
 - [x] SK1: implement and review inactive capture and financial validation (Workspace `b146da6`; 27 graph and 6 capture checks, including observed-zero reconciliation).
 - [x] SK2: implement and review inactive rendering and setup controls (Workspace `5190f5f`; 16 native-renderer and 5 setup checks, including compact and extreme-value recovery).
-- [ ] SK3: integrate the ordinary Table/File application.
+- [x] SK3: integrate the ordinary Table/File application (source accepted at `138d041`; [review](../../../artifacts/reviewed/chart-sankey/integration-source-review.md)).
 - [ ] SK4: accept real-FMP behavior, appearance and completed-milestone publication.
 
 ## Acceptance to perform, not completed evidence

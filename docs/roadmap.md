@@ -69,7 +69,7 @@ The owner authorized starting the next family while the accepted predecessor fin
 | 4 | [Heatmap](../.kiro/specs/analyst-workspace/heatmap-milestone.md) | Accepted and published for onboarded users | HM5 assets and anonymous pulls verified |
 | 5 | [Funnel, Cone Funnel and Pyramid](../.kiro/specs/analyst-workspace/funnel-milestone.md) | Accepted and published for onboarded users | F5 tagged assets and public image pulls verified |
 | 6 | [Stacked Line and 100% Stacked Line](../.kiro/specs/analyst-workspace/stacked-line-milestone.md) | Accepted and published | Continue with the next bounded roadmap item |
-| Next after prototype | [Sankey](../.kiro/specs/analyst-workspace/sankey-milestone.md) (additional chart type) | Data and presentation modules independently accepted; editor integration active | Complete saved mappings and recovery in the existing editor, then verify the real-FMP journey |
+| Next after prototype | [Sankey](../.kiro/specs/analyst-workspace/sankey-milestone.md) (additional chart type) | Editor integration source independently accepted | Verify the identified image with retained FMP data, then obtain appearance acceptance and publish |
 | Later | Remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
 
 Renderer and control lanes may run concurrently after their shared contract is accepted. Shared application integration, local heavy checks and publication gates remain serialized. This queue does not mark planned tests or unsupported original paths complete.
