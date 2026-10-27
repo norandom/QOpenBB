@@ -875,7 +875,7 @@
   ],
   "theme_preview_milestone": {
     "name": "theme-settings-preview",
-    "phase": "preview-integration-in-progress",
+    "phase": "packaged-verification-pending",
     "contract": "theme-preview-milestone.md",
     "control_map": "theme-preview-controls.md",
     "approved_tasks": [
@@ -888,6 +888,9 @@
     "evidence": "artifacts/reviewed/theme-preview/baseline-review.md",
     "source_baseline": "e12713d29a9572599c7482d293f37cc040eba12f",
     "foundation_source": "fd5c43e31570f177e3441539c2209e76118ba380",
-    "foundation_evidence": "artifacts/reviewed/theme-preview/foundation-source-review.md"
+    "foundation_evidence": "artifacts/reviewed/theme-preview/foundation-source-review.md",
+    "integration_source": "c425134e95ac47961143988b5da315abb2969ae1",
+    "browser_preparation_source": "9bbd8bf",
+    "integration_evidence": "artifacts/reviewed/theme-preview/integration-source-review.md"
   }
 }

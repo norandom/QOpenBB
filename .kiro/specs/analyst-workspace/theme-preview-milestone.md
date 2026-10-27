@@ -1,6 +1,6 @@
 # Theme Settings preview replacement
 
-Status: **TP1 SOURCE ACCEPTED; preview integration in progress**, 2026-10-27. Replace the AG Charts renderer in the existing Charts settings preview with ECharts. Preserve the settings workflow and reachable preview interactions. The owner explicitly requested **"Make Padding work"**: the existing `params.padding` field will now control outer preview padding without changing its stored format. This is the sole intentional behavior correction in this contract.
+Status: **TP2 SOURCE ACCEPTED; packaged verification pending**, 2026-10-27. Replace the AG Charts renderer in the existing Charts settings preview with ECharts. Preserve the settings workflow and reachable preview interactions. The owner explicitly requested **"Make Padding work"**: the existing `params.padding` field will now control outer preview padding without changing its stored format. This is the sole intentional behavior correction in this contract.
 
 This bounded milestone follows [prototype-first delivery](../../steering/delivery-workflow.md); it does not approve or complete the analyst-workspace umbrella specification. Independent review approved this contract and sequential TP1 foundation work. Replacement source, application behavior and publication remain unaccepted. No additional owner decision is currently missing; a demonstrated compatibility limitation requires a specific decision before accepting that deviation.
 
@@ -82,7 +82,7 @@ Reuse `funnel-palette.spec.ts` for real-FMP saved-theme propagation and PNG. Ide
 
 - [x] TP0 contract independently reviewed; actual original interaction findings recorded.
 - [x] TP1 shared foundation accepted, with existing caller regressions and caps. [Source review](../../../artifacts/reviewed/theme-preview/foundation-source-review.md).
-- [ ] TP2 preview and Padding correction accepted at source level.
+- [x] TP2 preview and Padding correction accepted at source level. [Source review](../../../artifacts/reviewed/theme-preview/integration-source-review.md).
 - [ ] TP3 identified-image application, financial and export checks accepted.
 - [ ] Matched light/dark appearance accepted or specific differences approved.
 - [ ] TP4 evidence/docs reconciled; completed-feature publication verified separately.

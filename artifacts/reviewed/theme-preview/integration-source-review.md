@@ -1,0 +1,11 @@
+# Native Theme Settings preview source acceptance
+
+TP2 source is accepted at Workspace `c425134e95ac47961143988b5da315abb2969ae1`. The existing preview now uses ECharts and its shared lifecycle. Padding defaults to 20 px, accepts zero and positive finite values, and retains the existing saved field. Invalid input shows a recoverable preview diagnostic without rewriting the draft or disabling Save. Packaged appearance and persistence remain unverified.
+
+The exact Dolphin sample, palette pairs, 22-field contract, mode drafts and 300 ms debounce remain. Shared legends and point keyboard navigation use the accepted TP1 interfaces. Two/three-series tooltip content follows the original shared mode; other counts retain single-item tooltips. The original setting controls and state/API owners were not changed.
+
+Independent source review passed after one correction: active pager arrows follow Foreground Color, the counter follows Text Color, and inactive arrows follow Subtle Text Color. The reviewer first ran 73 joined checks across the shared foundation and preview, then independently verified the corrective regression. The final preview suite passes 20 checks and read-only Biome passes seven production files. All nine final hashes match. The preceding freeze's actual-import TypeScript comparison was baseline 390/current 390, with no introduced diagnostics; that whole comparison was not repeated for the small internal color-field correction. Application-wide typing is not claimed clean.
+
+The final combined size check passes all seven changed production files (maximum 125 physical lines, 47 logical units and 22 units/function), using the exact 398-line task inventory and live fork. No code-size exception was added; unrelated local catalog changes remain outside this checkpoint.
+
+The separately reviewed browser preparation is committed at `9bbd8bf`: one focused preview journey and the existing retained-FMP palette/PNG journey. Read-only lint and discovery passed; neither scenario has yet run against this candidate. The synthetic preview establishes no financial-data claim. Next: build the reviewed source, verify both journeys and compare the original/replacement in qView under the [milestone contract](../../../.kiro/specs/analyst-workspace/theme-preview-milestone.md).
