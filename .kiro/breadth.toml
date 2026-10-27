@@ -1475,3 +1475,11 @@ planned_checks = []
 test_paths = ["tests/delivery/test_alpha_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_prototype_workflow.py"]
 status = "passed"
 evidence = ["alpha-40489065805-1: both CI jobs, three public release assets, six anonymous pulls and digest-pinned Compose parsing verified. artifacts/reviewed/chart-sankey/publication-review.md. Local browser acceptance remains separate; no server-deployment claim."]
+
+[[capabilities]]
+id = "theme-settings-preview"
+requirements = ["analyst-workspace/theme-preview-milestone.md:TP-A1-TP-A9", "analyst-workspace/theme-preview-controls.md"]
+planned_checks = ["Preserve original preview controls, grid legend, keyboard and tooltip behavior", "Apply owner-approved Padding including zero; save and reopen without schema changes", "Packaged matched light/dark preview and real-FMP saved-palette/PNG journey"]
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartThemeCommunity.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-palette.spec.ts"]
+status = "planned"
+evidence = ["Original six theme-state checks and bounded original browser probe pass; independent contract review approved sequential foundation work. artifacts/reviewed/theme-preview/baseline-review.md. Replacement implementation, application and publication remain open."]
