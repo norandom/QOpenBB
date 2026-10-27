@@ -875,7 +875,7 @@
   ],
   "theme_preview_milestone": {
     "name": "theme-settings-preview",
-    "phase": "foundation-in-progress",
+    "phase": "preview-integration-in-progress",
     "contract": "theme-preview-milestone.md",
     "control_map": "theme-preview-controls.md",
     "approved_tasks": [
@@ -886,6 +886,8 @@
     ],
     "authorization": "Owner requested autonomous roadmap continuation and explicitly approved functional Padding on 2026-10-27; bounded contract independently reviewed.",
     "evidence": "artifacts/reviewed/theme-preview/baseline-review.md",
-    "source_baseline": "e12713d29a9572599c7482d293f37cc040eba12f"
+    "source_baseline": "e12713d29a9572599c7482d293f37cc040eba12f",
+    "foundation_source": "fd5c43e31570f177e3441539c2209e76118ba380",
+    "foundation_evidence": "artifacts/reviewed/theme-preview/foundation-source-review.md"
   }
 }
