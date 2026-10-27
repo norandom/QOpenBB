@@ -2,14 +2,14 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-40489065805-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40489065805-1), built from QOpenBB `c551afe56fa967878c73b39fd4bc71a0d180b9d0`, Workspace `e12713d29a9572599c7482d293f37cc040eba12f` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both CI jobs, public release-asset checks and six anonymous digest, release-tag and latest pulls pass. Earlier records below remain historical.
+Published: [alpha-40506541604-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40506541604-1), built from QOpenBB `2826ea2610b1f8c37b7c9bb5eb109eb41609cd42`, Workspace `cdefb7638c0991281551db66415328e420287009` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both CI jobs, public release-asset checks and six anonymous digest, release-tag and latest pulls pass. Earlier records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:72fa23477449fa003702af91fbe456bd71940c41415f929bfa277e23e54b780f` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:f96ac83099577b3c0baf317448315ba91ef217dd386fd5c537a62c6671e6df3c` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c` |
 
-The manifest binds this pair to the reviewed release sources and catalog runtime-input hashes. Sankey passed the identified local packaged application journey and owner appearance review; [CI publication is verified separately](../artifacts/reviewed/chart-sankey/publication-review.md). The following assembled Compose and pull-only rehearsal evidence belongs to the preceding prototype alpha, not this new CI image pair.
+The manifest binds this pair to the reviewed release sources and catalog runtime-input hashes. Theme Settings preview passed the packaged application journey and owner appearance review on local image `sha256:9b0db4b2a3021cd8554b60bf3302affd9740d7087e672bf42594197f6dc2cd9b` from Workspace `c425134e95ac47961143988b5da315abb2969ae1`; [CI publication is verified separately](../artifacts/reviewed/theme-preview/publication-review.md). The CI source adds only a test screenshot-call correction; its image bytes have not repeated the browser journey. The following assembled Compose and pull-only rehearsal evidence belongs to the preceding prototype alpha, not this new CI image pair.
 
 ## Current prototype repair
 

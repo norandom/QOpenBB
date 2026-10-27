@@ -1,8 +1,8 @@
 # Theme Settings preview replacement
 
-Status: **APPLICATION ACCEPTED; publication pending**, 2026-10-27. Replace the AG Charts renderer in the existing Charts settings preview with ECharts. Preserve the settings workflow and reachable preview interactions. The owner explicitly requested **"Make Padding work"**: the existing `params.padding` field will now control outer preview padding without changing its stored format. This is the sole intentional behavior correction in this contract.
+Status: **ACCEPTED AND PUBLISHED**, 2026-10-27. Replace the AG Charts renderer in the existing Charts settings preview with ECharts. Preserve the settings workflow and reachable preview interactions. The owner explicitly requested **"Make Padding work"**: the existing `params.padding` field will now control outer preview padding without changing its stored format. This is the sole intentional behavior correction in this contract.
 
-This bounded milestone follows [prototype-first delivery](../../steering/delivery-workflow.md); it does not approve or complete the analyst-workspace umbrella specification. Independent review approved this contract and sequential TP1 foundation work. Replacement source and packaged application behavior are accepted; publication remains pending. No additional owner decision is currently missing; a demonstrated compatibility limitation requires a specific decision before accepting that deviation.
+This bounded milestone follows [prototype-first delivery](../../steering/delivery-workflow.md); it does not approve or complete the analyst-workspace umbrella specification. Independent review approved this contract and sequential TP1 foundation work. Replacement source and packaged application behavior are accepted; TP4 publication is verified separately below. No additional owner decision is currently missing; a demonstrated compatibility limitation requires a specific decision before accepting that deviation.
 
 ## Baseline and scope
 
@@ -87,6 +87,12 @@ Reuse `funnel-palette.spec.ts` for real-FMP saved-theme propagation and PNG. Ide
 - [x] TP2 preview and Padding correction accepted at source level. [Source review](../../../artifacts/reviewed/theme-preview/integration-source-review.md).
 - [x] TP3 identified-image application, financial and export checks accepted.
 - [x] Matched light/dark appearance accepted; owner kept the legend wrapping and small spacing differences.
-- [ ] TP4 evidence/docs reconciled; completed-feature publication verified separately.
+- [x] TP4 evidence/docs reconciled; completed-feature publication verified separately.
+
+## Published alpha
+
+[alpha-40506541604-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40506541604-1) publishes Workspace `cdefb7638c0991281551db66415328e420287009` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba` from QOpenBB `2826ea2610b1f8c37b7c9bb5eb109eb41609cd42`. Both CI jobs, three anonymous installation assets, six anonymous image pulls and digest-pinned Compose parsing are independently verified in the [publication review](../../../artifacts/reviewed/theme-preview/publication-review.md). All 27 image/Compose commands and 34 metadata/runner records exited zero.
+
+Local application acceptance belongs to image `sha256:9b0db4b2a3021cd8554b60bf3302affd9740d7087e672bf42594197f6dc2cd9b` from Workspace `c425134e95ac47961143988b5da315abb2969ae1`. The published source differs only by a test screenshot-call correction; production code is unchanged. The CI image bytes have not repeated the browser journey. Owner-server deployment, rollback and backup/restore remain unverified.
 
 Readiness is disproved by any lost reachable control or interaction, fabricated sample/palette data, payload coercion, duplicated lifecycle owner, missing capped-file inventory, failing affected caller regression, unverified image identity or an unsupported behavior described as complete.

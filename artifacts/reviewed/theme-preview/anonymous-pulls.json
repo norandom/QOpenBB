@@ -1,0 +1,99 @@
+{
+  "status": "READY_FOR_REVIEW",
+  "checked_at": "2026-10-27T13:04:18.050858+00:00",
+  "release_version": "alpha-40506541604-1",
+  "root_revision": "2826ea2610b1f8c37b7c9bb5eb109eb41609cd42",
+  "sources": {
+    "workspace": "cdefb7638c0991281551db66415328e420287009",
+    "data_api": "cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba"
+  },
+  "authentication": "Fresh empty Docker config; sanitized environment without DOCKER_AUTH_CONFIG/DOCKER_CONTEXT",
+  "results": [
+    {
+      "service": "workspace",
+      "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335",
+      "exit_code": 0,
+      "image_id": "sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335",
+      "manifest_digest": "sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335",
+      "config_digest": "sha256:4f1dbf84ba532abc5f0d0a67dd9141aab6d9b0fd4d24adcc653f56cce98d7793",
+      "labels_match": true,
+      "repo_digests": [
+        "ghcr.io/norandom/qopenbb-workspace@sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335"
+      ],
+      "os": "linux",
+      "architecture": "amd64"
+    },
+    {
+      "service": "workspace",
+      "reference": "ghcr.io/norandom/qopenbb-workspace:alpha-40506541604-1",
+      "exit_code": 0,
+      "image_id": "sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335",
+      "manifest_digest": "sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335",
+      "config_digest": "sha256:4f1dbf84ba532abc5f0d0a67dd9141aab6d9b0fd4d24adcc653f56cce98d7793",
+      "labels_match": true,
+      "repo_digests": [
+        "ghcr.io/norandom/qopenbb-workspace@sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335"
+      ],
+      "os": "linux",
+      "architecture": "amd64"
+    },
+    {
+      "service": "workspace",
+      "reference": "ghcr.io/norandom/qopenbb-workspace:latest",
+      "exit_code": 0,
+      "image_id": "sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335",
+      "manifest_digest": "sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335",
+      "config_digest": "sha256:4f1dbf84ba532abc5f0d0a67dd9141aab6d9b0fd4d24adcc653f56cce98d7793",
+      "labels_match": true,
+      "repo_digests": [
+        "ghcr.io/norandom/qopenbb-workspace@sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335"
+      ],
+      "os": "linux",
+      "architecture": "amd64"
+    },
+    {
+      "service": "data-api",
+      "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c",
+      "exit_code": 0,
+      "image_id": "sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c",
+      "manifest_digest": "sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c",
+      "config_digest": "sha256:5e979a6270642027187da80e363f63ae3764ef1212b8ba72ef3119bc5faaf64c",
+      "labels_match": true,
+      "repo_digests": [
+        "ghcr.io/norandom/qopenbb-data-api@sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c"
+      ],
+      "os": "linux",
+      "architecture": "amd64"
+    },
+    {
+      "service": "data-api",
+      "reference": "ghcr.io/norandom/qopenbb-data-api:alpha-40506541604-1",
+      "exit_code": 0,
+      "image_id": "sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c",
+      "manifest_digest": "sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c",
+      "config_digest": "sha256:5e979a6270642027187da80e363f63ae3764ef1212b8ba72ef3119bc5faaf64c",
+      "labels_match": true,
+      "repo_digests": [
+        "ghcr.io/norandom/qopenbb-data-api@sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c"
+      ],
+      "os": "linux",
+      "architecture": "amd64"
+    },
+    {
+      "service": "data-api",
+      "reference": "ghcr.io/norandom/qopenbb-data-api:latest",
+      "exit_code": 0,
+      "image_id": "sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c",
+      "manifest_digest": "sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c",
+      "config_digest": "sha256:5e979a6270642027187da80e363f63ae3764ef1212b8ba72ef3119bc5faaf64c",
+      "labels_match": true,
+      "repo_digests": [
+        "ghcr.io/norandom/qopenbb-data-api@sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c"
+      ],
+      "os": "linux",
+      "architecture": "amd64"
+    }
+  ],
+  "compose_pinned_configuration_valid": true,
+  "scope": "Publication identities and anonymous access only; no deployment or CI-image browser acceptance"
+}

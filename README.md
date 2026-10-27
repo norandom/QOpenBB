@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40489065805-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40506541604-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -32,12 +32,12 @@ Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-
 
 See the [ECharts checklist](docs/echarts-status.md) for remaining chart families and callers.
 
-Current [Theme Settings preview milestone](.kiro/specs/analyst-workspace/theme-preview-milestone.md):
+Completed [Theme Settings preview milestone](.kiro/specs/analyst-workspace/theme-preview-milestone.md):
 
 - [x] Replace the preview renderer while preserving controls, keyboard and legend behavior.
 - [x] Make Padding work, including zero, with the existing saved format.
 - [x] Verify packaged save/reopen, retained-FMP palette/PNG and owner-approved light/dark appearance.
-- [ ] Publish and verify the completed milestone images.
+- [x] Publish and verify the completed milestone images: [alpha-40506541604-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40506541604-1). See the [publication review](artifacts/reviewed/theme-preview/publication-review.md).
 
 Completed [Sankey milestone](.kiro/specs/analyst-workspace/sankey-milestone.md):
 
@@ -50,7 +50,7 @@ Completed [Sankey milestone](.kiro/specs/analyst-workspace/sankey-milestone.md):
 The current prototype alpha includes four reviewed repairs: HTTP 200/null for an absent first-login questionnaire, packaging and serving for the existing data catalog, Workspace's fallback for unavailable external app previews, and an empty agent-discovery response for the data-only backend. AI remains a separate spec.
 
 - [x] Verify release assets and both published images through six anonymous pulls.
-- [x] Accept fresh onboarding and later login with clean diagnostics on the published Compose pair.
+- [x] Accept fresh onboarding and later login with clean diagnostics on the earlier prototype alpha Compose pair.
 - [x] Match the installed starter's annual AAPL income identity, reporting date, USD revenue and refresh to the live response.
 - [x] Complete the isolated pull-only local installation rehearsal.
 - [ ] Verify owner-server deployment and repair the generic-widget empty-required-symbol guard.

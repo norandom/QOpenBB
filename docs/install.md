@@ -18,20 +18,20 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published manifest image pair for `alpha-40489065805-1`:
+Published manifest image pair for `alpha-40506541604-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:72fa23477449fa003702af91fbe456bd71940c41415f929bfa277e23e54b780f` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:f96ac83099577b3c0baf317448315ba91ef217dd386fd5c537a62c6671e6df3c` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c` |
 
-Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/chart-sankey/publication-review.md).
+Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/theme-preview/publication-review.md).
 
-This alpha includes the reviewed first-login nullable-response fix, the existing widget/app catalog's packaging and GET routes, Workspace's fallback for external app previews, and an empty agent-discovery response for the data-only backend. The preceding prototype alpha passed its published-image Compose journey and isolated pull-only installation rehearsal; those checks were not repeated on this new CI image pair. Sankey behavior and appearance passed on the identified local candidate, with [publication verified separately](../artifacts/reviewed/chart-sankey/publication-review.md). That earlier prototype acceptance covers fresh onboarding, later login, the starter's live annual AAPL income values and refresh, with clean diagnostics. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md) and [recorded result](../artifacts/reviewed/prototype-onboarding/application.json). Owner-server deployment, broader provider acceptance and AI remain separate.
+This alpha includes the reviewed first-login nullable-response fix, the existing widget/app catalog's packaging and GET routes, Workspace's fallback for external app previews, and an empty agent-discovery response for the data-only backend. The preceding prototype alpha passed its published-image Compose journey and isolated pull-only installation rehearsal; those checks were not repeated on this new CI image pair. Theme Settings preview behavior, functional Padding and owner-approved light/dark appearance passed on the identified local candidate, with [publication verified separately](../artifacts/reviewed/theme-preview/publication-review.md). That earlier prototype acceptance covers fresh onboarding, later login, the starter's live annual AAPL income values and refresh, with clean diagnostics. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md) and [recorded result](../artifacts/reviewed/prototype-onboarding/application.json). Owner-server deployment, broader provider acceptance and AI remain separate.
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40489065805-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40489065805-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40489065805-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40506541604-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40506541604-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40506541604-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
