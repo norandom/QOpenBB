@@ -1443,3 +1443,11 @@ planned_checks = []
 test_paths = ["tests/contracts/test_catalog.py"]
 status = "passed"
 evidence = ["16 catalog cases pass; generated assets independently reviewed. External optional preview metadata uses existing local fallback; widget/route/dataset/schema bytes unchanged. artifacts/reviewed/prototype-onboarding/preview-source-review.md. Published-image browser acceptance remains open."]
+
+[[capabilities]]
+id = "data-only-agent-discovery"
+requirements = ["openbb-self-service/first-login-diagnostics.md:CAT5 source"]
+planned_checks = []
+test_paths = ["tests/providers/test_runtime.py"]
+status = "passed"
+evidence = ["Nine runtime cases pass; fixed GET /agents.json returns an empty array without provider transport or upstream schema changes. Independently reviewed source only. artifacts/reviewed/prototype-onboarding/agents-source-review.md. AI remains separate; published-image journey pending."]

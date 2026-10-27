@@ -43,6 +43,10 @@ def create_app() -> FastAPI:
     async def apps() -> FileResponse:
         return FileResponse(CATALOG / "apps.json", media_type="application/json")
 
+    @app.get("/agents.json", include_in_schema=False)
+    async def agents() -> list[dict[str, object]]:
+        return []
+
     app.mount("/", upstream)
     app.openapi = upstream.openapi
     return app

@@ -55,3 +55,8 @@ Independent review accepted removing only external optional `img`, `img_light` a
 - [x] CAT4 source. Apply the preview adaptation; pass external/local/immutability cases and production caps with independent review.
 - [ ] CAT4 delivery. Review regenerated assets, publish the corrected image pair and complete the same fresh-account starter journey with strict diagnostics.
 - [ ] Separate follow-up: prevent generic widgets from requesting data until required parameters are present, preserving their existing controls and visible validation.
+
+The fresh `alpha-40465574999-1` journey confirms the preview repair, onboarding, live income values and refresh. Strict diagnostics expose the remaining optional `/data/agents.json` discovery 404. The reviewed data-only contract returns HTTP 200 with `[]`, accepted by both Workspace consumers, without claiming AI implementation. A focused no-provider-call regression passes with the existing runtime tests.
+
+- [x] CAT5 source. Serve the fixed empty agent catalog before the upstream mount; independent review and all nine runtime cases pass. See [source evidence](../../../artifacts/reviewed/prototype-onboarding/agents-source-review.md).
+- [ ] CAT5 delivery. Publish and verify the corrected pair, then complete the fresh starter journey and later login with all diagnostics retained.

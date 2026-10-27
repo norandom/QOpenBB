@@ -57,6 +57,14 @@ def test_catalog_routes_are_read_only(runtime, name):
     assert body == {"detail": "Not Found"} or body == {"detail": "Method Not Allowed"}
 
 
+def test_data_only_runtime_advertises_no_agents(runtime, monkeypatch):
+    async def forbidden(*args, **kwargs):
+        raise AssertionError("agent discovery must not call a provider")
+    monkeypatch.setattr("openbb_core.provider.utils.helpers.amake_request", forbidden)
+    assert asyncio.run(get(runtime, "/agents.json")) == (200, [])
+    assert "/agents.json" not in runtime.openapi()["paths"]
+
+
 def test_routes_credentials_and_no_quota_readiness(runtime, monkeypatch):
     from openbb_core.app.service.user_service import UserService
     settings = UserService.read_from_file()
