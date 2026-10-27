@@ -33456,6 +33456,30 @@
       "publishedSHA256": "01c6e6dc637bd9d779ec9bf9549f736057901a8118a72c10a0f3859effc96594",
       "bytes": 49325,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-sankey/release/run-40489065805/manifest.json",
+      "sourceSHA256": "e631986b7c71851081dac0cff292afcabade797d8d1f3ac94cf0e8de7130f803",
+      "publishedpath": "artifacts/reviewed/chart-sankey/release-manifest.json",
+      "publishedSHA256": "e631986b7c71851081dac0cff292afcabade797d8d1f3ac94cf0e8de7130f803",
+      "bytes": 6740,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-sankey/release/run-40489065805/anonymous-pulls.json",
+      "sourceSHA256": "d38e14c8e5b6c6f74649a95f10e67a1695a8238203d2040f8e2ea0a6690c2f67",
+      "publishedpath": "artifacts/reviewed/chart-sankey/anonymous-pulls.json",
+      "publishedSHA256": "38f79c8ff63d583f6e4eda58209dd29f2faebc89e054354e596428ed69a31a67",
+      "bytes": 4663,
+      "transform": "remove-local-runtime-path"
+    },
+    {
+      "sourcepath": "artifacts/chart-sankey/release/publication-review.md",
+      "sourceSHA256": "698a886ca3306cbe880b85adc9741506e35420f8b2dab03cbe31a42e62f7e01d",
+      "publishedpath": "artifacts/reviewed/chart-sankey/publication-review.md",
+      "publishedSHA256": "698a886ca3306cbe880b85adc9741506e35420f8b2dab03cbe31a42e62f7e01d",
+      "bytes": 3091,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -34169,7 +34193,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168595111,
+  "total_payload_bytes": 168609605,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -2,14 +2,14 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-40467871625-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1), built from QOpenBB `11e84a3f361fb6db8b9eae5a4843242bee042660`, Workspace `c767b02019efe1e2bc0070fb180003584648935f` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both CI jobs, public release-asset checks and six anonymous digest, release-tag and latest pulls pass. Earlier records below remain historical.
+Published: [alpha-40489065805-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40489065805-1), built from QOpenBB `c551afe56fa967878c73b39fd4bc71a0d180b9d0`, Workspace `e12713d29a9572599c7482d293f37cc040eba12f` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both CI jobs, public release-asset checks and six anonymous digest, release-tag and latest pulls pass. Earlier records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:4754c820716672edcdc5e0fde252a90a4801e3d5d17be78772766ca6bc80d31a` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:131eeb9dadfbe3b429845ddb07266fc81cc70b03e5bd558da6fb628e5f8f1162` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:72fa23477449fa003702af91fbe456bd71940c41415f929bfa277e23e54b780f` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:f96ac83099577b3c0baf317448315ba91ef217dd386fd5c537a62c6671e6df3c` |
 
-The manifest binds this pair to the reviewed release sources and catalog runtime-input hashes. The exact pair passed its isolated assembled Compose browser journey without source overlays; the local pull-only installation rehearsal is accepted.
+The manifest binds this pair to the reviewed release sources and catalog runtime-input hashes. Sankey passed the identified local packaged application journey and owner appearance review; [CI publication is verified separately](../artifacts/reviewed/chart-sankey/publication-review.md). The following assembled Compose and pull-only rehearsal evidence belongs to the preceding prototype alpha, not this new CI image pair.
 
 ## Current prototype repair
 

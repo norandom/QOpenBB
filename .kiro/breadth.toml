@@ -1467,3 +1467,11 @@ planned_checks = ["Ordinary Table/File mapping, numerical validation and recover
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/sankey-fixture.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/sankeyGraph.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/sankeyCapture.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-compatibility/sankeyEngine.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/sankeySetupPanel.test.tsx", "vendor/workspace/terminalpro/tests/unit/chart-application/sankeySession.test.ts", "vendor/workspace/terminalpro/tests/unit/chart-application/sankeyCaller.test.tsx", "vendor/workspace/terminalpro/tests/e2e/live-chart/sankey-chart.spec.ts"]
 status = "passed"
 evidence = ["Source e12713d, local packaged image b18d296f: one complete retained-FMP journey passes, including correction/filter/refresh/PNG/saved mapping and fresh reopen; clean diagnostics and owner-approved light/dark appearances. artifacts/reviewed/chart-sankey/application-acceptance.md. CI publication and server deployment are separate acceptance."]
+
+[[capabilities]]
+id = "sankey-publication"
+requirements = ["analyst-workspace/sankey-milestone.md:SK4 publication"]
+planned_checks = []
+test_paths = ["tests/delivery/test_alpha_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_prototype_workflow.py"]
+status = "passed"
+evidence = ["alpha-40489065805-1: both CI jobs, three public release assets, six anonymous pulls and digest-pinned Compose parsing verified. artifacts/reviewed/chart-sankey/publication-review.md. Local browser acceptance remains separate; no server-deployment claim."]

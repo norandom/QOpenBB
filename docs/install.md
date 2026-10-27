@@ -18,20 +18,20 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published manifest image pair for `alpha-40467871625-1`:
+Published manifest image pair for `alpha-40489065805-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:4754c820716672edcdc5e0fde252a90a4801e3d5d17be78772766ca6bc80d31a` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:131eeb9dadfbe3b429845ddb07266fc81cc70b03e5bd558da6fb628e5f8f1162` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:72fa23477449fa003702af91fbe456bd71940c41415f929bfa277e23e54b780f` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:f96ac83099577b3c0baf317448315ba91ef217dd386fd5c537a62c6671e6df3c` |
 
-Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See [delivery status](prototype-delivery.md#current-prototype-repair).
+Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/chart-sankey/publication-review.md).
 
-This alpha includes the reviewed first-login nullable-response fix, the existing widget/app catalog's packaging and GET routes, Workspace's fallback for external app previews, and an empty agent-discovery response for the data-only backend. Its published-image Compose journey and isolated pull-only local installation rehearsal are independently accepted. Acceptance covers fresh onboarding, later login, the starter's live annual AAPL income values and refresh, with clean diagnostics. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md) and [recorded result](../artifacts/reviewed/prototype-onboarding/application.json). Owner-server deployment, broader provider acceptance and AI remain separate.
+This alpha includes the reviewed first-login nullable-response fix, the existing widget/app catalog's packaging and GET routes, Workspace's fallback for external app previews, and an empty agent-discovery response for the data-only backend. The preceding prototype alpha passed its published-image Compose journey and isolated pull-only installation rehearsal; those checks were not repeated on this new CI image pair. Sankey behavior and appearance passed on the identified local candidate, with [publication verified separately](../artifacts/reviewed/chart-sankey/publication-review.md). That earlier prototype acceptance covers fresh onboarding, later login, the starter's live annual AAPL income values and refresh, with clean diagnostics. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md) and [recorded result](../artifacts/reviewed/prototype-onboarding/application.json). Owner-server deployment, broader provider acceptance and AI remain separate.
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40467871625-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40467871625-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40489065805-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40489065805-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40489065805-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
