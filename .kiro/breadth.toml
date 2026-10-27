@@ -1459,3 +1459,11 @@ planned_checks = []
 test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/prototype-compose.spec.ts"]
 status = "passed"
 evidence = ["alpha-40467871625-1 exact published pair: fresh two-service Compose startup, onboarding200/null, actual AAPL annual income and displayed financial values, refresh, later login and clean first/later diagnostics. One maintained test passed21.1s, no retries, test revisionee7a961. Independent review: artifacts/reviewed/prototype-onboarding/application-review.md. Local rehearsal only; no owner-server, broader-provider or persistence claim."]
+
+[[capabilities]]
+id = "sankey-income-allocation"
+requirements = ["analyst-workspace/sankey-contract.md", "analyst-workspace/sankey-milestone.md:SK1-SK4"]
+planned_checks = ["Ordinary Table/File mapping, numerical validation and recovery; retained-FMP values, refresh, save/reopen and PNG"]
+test_paths = ["vendor/workspace/terminalpro/tests/e2e/live-chart/sankey-fixture.ts"]
+status = "planned"
+evidence = ["SK0 contracts and fixture only independently accepted: artifacts/reviewed/chart-sankey/sk0-review.md. No application acceptance."]

@@ -32,6 +32,12 @@ Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-
 
 See the [ECharts checklist](docs/echarts-status.md) for remaining chart families and callers.
 
+Current [Sankey milestone](.kiro/specs/analyst-workspace/sankey-milestone.md):
+
+- [x] Freeze reviewed mapping and financial contracts with a retained FMP income-allocation example.
+- [ ] Complete parallel data and rendering implementation, then the existing editor integration.
+- [ ] Accept real-FMP behavior and appearance before publishing the completed milestone.
+
 The current prototype alpha includes four reviewed repairs: HTTP 200/null for an absent first-login questionnaire, packaging and serving for the existing data catalog, Workspace's fallback for unavailable external app previews, and an empty agent-discovery response for the data-only backend. AI remains a separate spec.
 
 - [x] Verify release assets and both published images through six anonymous pulls.

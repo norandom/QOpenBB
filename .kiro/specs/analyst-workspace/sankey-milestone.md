@@ -1,6 +1,6 @@
 # Sankey: queued Table/File milestone
 
-Status: planned on 2026-10-27. Independent Astra financial/interface review found no blocking issues. No implementation, financial behavior, appearance or application acceptance is established by this contract. SK0 must freeze interfaces, numerical tolerance, recovery behavior and exact writable paths before dispatching implementation.
+Status: SK0 accepted on 2026-10-27. The [shared contract](sankey-contract.md), inactive declarations and retained FMP allocation fixture are independently reviewed at Workspace `c8503a1d1facc3d2ea31966f09acf70bd0f754d1`. [Review](../../../artifacts/reviewed/chart-sankey/sk0-review.md). Data and presentation implementation lanes are active; no application, appearance or publication acceptance is established.
 
 Financial engineers should be able to select source, target and value columns in an ordinary Table/File widget and inspect an allocation without losing its units, period or provenance. This additional chart type belongs to [analyst-workspace](requirements.md); it follows the current prototype onboarding/catalog delivery and reuses the chart editor, theme, lifecycle and export infrastructure. It does not expand provider coverage or modify unrelated Perspective/catalog work.
 
@@ -44,6 +44,14 @@ This is a derived income allocation, not cash flows and not links supplied by FM
 At most two implementers work concurrently, after SK0. Shared integration files stay controller-owned: the gallery catalog/thumbnail, setup panel, application session capture/types/projection/transactions/recapture and persisted chart vocabulary. Reuse `EChartsHost` and lifecycle export instead of introducing another host or verification framework.
 
 Every production task must register maintained files in the existing inventory and pass its executable checker: at most 400 physical lines/file, 300 logical syntax units/file and 50/function. Whole modified files count. An oversized existing integration module needs a cohesive split or a separately reviewed narrow exception. Worker handoffs carry these limits, exact paths and the exercised checker command. Documentation-only SK0 drafting has no production size measurement requirement.
+
+## Task progress
+
+- [x] SK0: freeze and independently review shared contracts and retained financial fixture.
+- [ ] SK1: implement and review inactive capture and financial validation.
+- [ ] SK2: implement and review inactive rendering and setup controls.
+- [ ] SK3: integrate the ordinary Table/File application.
+- [ ] SK4: accept real-FMP behavior, appearance and completed-milestone publication.
 
 ## Acceptance to perform, not completed evidence
 

@@ -834,8 +834,21 @@
     },
     {
       "name": "sankey",
-      "phase": "requested",
-      "scope": "Additional chart type; assessment and implementation contract pending."
+      "phase": "implementation-in-progress",
+      "scope": "Inactive shared types and retained fixture accepted; parallel data and presentation implementation active. Application and appearance unverified.",
+      "contract": "sankey-contract.md",
+      "completed_tasks": [
+        "SK0"
+      ],
+      "approved_tasks": [
+        "SK1",
+        "SK2",
+        "SK3",
+        "SK4"
+      ],
+      "authorization": "Owner requested autonomous roadmap continuation; bounded contract independently reviewed on 2026-10-27.",
+      "foundation_source": "c8503a1d1facc3d2ea31966f09acf70bd0f754d1",
+      "evidence": "artifacts/reviewed/chart-sankey/sk0-review.md"
     }
   ]
 }
