@@ -1,6 +1,6 @@
 # Reopen a historical chart gallery
 
-Status: HG0 source foundation accepted, 2026-10-27; HG1/HG2 implementation in progress. Deliver a saved, redeployable FMP gallery that lets an analyst choose a chart, inspect its financial meaning, and reproduce the same observations. The owner requested an overview screenshot in README and a linked guide with one screenshot and explanation per chart. This contract covers that bounded delivery under [prototype-first delivery](../../steering/delivery-workflow.md); it does not close the analyst-workspace specification or other chart callers.
+Status: HG0-HG2 source accepted, 2026-10-27; candidate build and HG3 application verification in progress. Deliver a saved, redeployable FMP gallery that lets an analyst choose a chart, inspect its financial meaning, and reproduce the same observations. The owner requested an overview screenshot in README and a linked guide with one screenshot and explanation per chart. This contract covers that bounded delivery under [prototype-first delivery](../../steering/delivery-workflow.md); it does not close the analyst-workspace specification or other chart callers.
 
 The working audience assumption is that financial engineers value reproducible observations and explicit transformations over visual variety alone. The guide sits beside the gallery workflow; independent review should try to disprove its claims. The proposal fails if an analyst cannot find the gallery, distinguish reported from derived values, or recover an edited dashboard after restart. A pending screenshot or passing data endpoint is not application acceptance.
 
@@ -100,11 +100,11 @@ At closure, reconcile this milestone, `spec.json`, `.kiro/breadth.toml`, README 
 ## Progress
 
 - [x] HG0: freeze twelve schemas and 36 native saved states; independent source review and 15 focused checks accepted.
-- [ ] HG1: packaged snapshot routes and discovery.
-- [ ] HG2: historical projections and reusable dashboards.
+- [x] HG1 source: snapshot routes, discovery composition and explicit packaging inputs; actual image execution remains HG3.
+- [x] HG2 source: historical projections, 36 chart widgets and seven reusable dashboard tabs; actual appearance remains HG3.
 - [ ] HG3: actual application renders and retained-state recreation.
 - [ ] HG4: overview, per-chart guide screenshots and verified publication.
 
-HG0 uses native company labels, AAPL filters, storage-only Sankey bindings and explicit one-percentage-point histogram bins from -6% to +6%. The existing Apps primary action selects the first template; actual gallery navigation is checked at HG3. Generator interface: `python -m qopenbb_ci.gallery_cli --chart-state contracts/gallery/chart-state.json --sources PRICE_PROVENANCE --fundamentals INCOME_SOURCE_PROVENANCE --output contracts/gallery`. It consumes retained raw inputs identified by credential-free provenance; it makes no network requests. This command is planned until HG2 passes.
+HG0 uses native company labels, AAPL filters, storage-only Sankey bindings and explicit one-percentage-point histogram bins from -6% to +6%. The existing Apps primary action selects the first template; actual gallery navigation is checked at HG3. Generator interface: `python -m qopenbb_ci.gallery_cli --chart-state contracts/gallery/chart-state.json --sources PRICE_PROVENANCE --fundamentals INCOME_SOURCE_PROVENANCE --output contracts/gallery`. It consumes retained raw inputs identified by credential-free provenance; it makes no network requests. HG2 executed this command against retained captures with matching hashes and byte-identical regeneration. HG3 must confirm that image startup and refresh consume those assets without provider requests.
 
 [HG0 independent source review](../../../artifacts/reviewed/chart-gallery/source-review.md) records the accepted fixture hashes and native helper checks.

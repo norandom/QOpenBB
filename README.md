@@ -11,6 +11,12 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 [Install](docs/install.md) · [Documentation](docs/index.md) · [Roadmap](docs/roadmap.md) · [Delivery status](docs/prototype-delivery.md) · [Provider coverage](docs/provider-coverage.md) · [Breadth evidence](.kiro/breadth.toml)
 
+Current [historical gallery milestone](.kiro/specs/analyst-workspace/historical-gallery-milestone.md):
+
+- [x] Prepare fixed historical FMP data, 36 native chart configurations and API discovery.
+- [ ] Verify the assembled gallery, save/reopen and retained-state recreation.
+- [ ] Publish one overview and a [per-chart analyst guide](docs/chart-gallery.md) with verified screenshots.
+
 ## Status at a glance
 
 Snapshot: 2026-10-27. Follow the CI link for live run status; a green check does not establish deployment acceptance.

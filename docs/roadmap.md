@@ -78,3 +78,12 @@ Renderer and control lanes may run concurrently after their shared contract is a
 - [x] Close the [first-login onboarding, catalog, preview and agent-discovery batch](../.kiro/specs/openbb-self-service/first-login-diagnostics.md) with the independently accepted published-image Compose journey and local installation rehearsal.
 - [ ] Complete owner-server deployment evidence and the generic-widget empty-required-symbol guard; broader provider and analyst workflows retain separate acceptance.
 - [ ] Complete [shared advanced image, gradient and pattern palettes](../.kiro/specs/analyst-workspace/advanced-palettes.md) with renderer, persistence and export acceptance. Owner decision on 2026-10-26: track this separately while Funnel proceeds with stock/plain CSS colors.
+
+## Historical analyst gallery
+
+The current [gallery milestone](../.kiro/specs/analyst-workspace/historical-gallery-milestone.md) packages fixed FMP observations around January 2025 into reusable dashboards. It adds no chart renderer. The [analyst guide](chart-gallery.md) explains the questions, dimensions and transformations for all 36 chart types.
+
+- [x] Verify native saved states and deterministic historical projections.
+- [x] Implement packaged snapshot lookup and discovery without replacing the existing catalogs.
+- [ ] Verify all rendered examples and retained-state recreation in the assembled application.
+- [ ] Capture the README overview and per-chart screenshots, then publish the completed milestone images.

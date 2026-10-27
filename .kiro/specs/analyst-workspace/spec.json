@@ -922,20 +922,23 @@
     }
   },
   "historical_gallery_milestone": {
-    "phase": "foundation-accepted-implementation-in-progress",
+    "phase": "source-accepted-candidate-in-progress",
     "contract": "historical-gallery-milestone.md",
     "completed_tasks": [
-      "HG0"
+      "HG0",
+      "HG1",
+      "HG2"
     ],
     "pending_tasks": [
-      "HG1",
-      "HG2",
       "HG3",
       "HG4"
     ],
     "fixture": "contracts/gallery/chart-state.json",
     "fixture_sha256": "7955103d90990e24a6515074ab44d90bbc513b5425f7cc8fd637026ed221ef9e",
     "workspace_test_revision": "8e08b00459be5fc93d22741c6cdfe1a0b4c9e207",
-    "scope": "Native source/widget/template compatibility only; 15 focused checks pass. Data projection, runtime, actual navigation, screenshots and retained-state recreation remain pending."
+    "scope": "Source only: 15 native template checks, 21 projection/template checks, 67 runtime/staging checks and combined caps accepted. Independent financial references and source reviews pass. Actual image/browser navigation, 37 screenshots and retained-state recreation remain pending.",
+    "projection_revision": "061f624",
+    "runtime_revision": "d9fafda",
+    "candidate_root": "c1a164eb1b9e915e8a9f10c16c672c4b46e178ea"
   }
 }
