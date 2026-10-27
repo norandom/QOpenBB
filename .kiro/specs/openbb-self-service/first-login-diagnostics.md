@@ -8,10 +8,26 @@ The existing GET `/pro/pro-developer-onboarding-info` handler returns 404 when n
 
 ## Follow-up
 
-- [ ] Review the empty-questionnaire API/UI contract before changing it.
+- [x] Review the empty-questionnaire API/UI contract before changing it.
 - [ ] Repair first-login handling while preserving saved answers, authentication, skip semantics and the existing onboarding flow.
 - [ ] Verify a genuinely new account through onboarding and a later login with strict console/network checks.
 
 Do not suppress 404 diagnostics, seed questionnaire answers or skip onboarding to claim this work complete. The hierarchy run `candidate3-synthetic-1` remains failed; its request and console errors are retained. The comparison across each runtime's first and later cases is in `artifacts/chart-hierarchy/h4/browser/candidate-onboarding-comparison.json`. A later passing chart run applies only to the already-onboarded account.
 
-Implementation is not part of the current hierarchy milestone. This page records the observed gap and its completion criteria, not an approved API redesign.
+This follow-up is separate from the completed hierarchy milestone.
+
+## Authorized prototype batch, 2026-10-27
+
+The owner requested autonomous roadmap batches with role-based subagents and focused verification. Under the prototype-first agile amendment, this slice repairs the existing empty-state mismatch without changing onboarding UX. Independent Sol contract review accepted the following boundary before implementation.
+
+The authenticated GET returns HTTP 200 with JSON `null` when no questionnaire exists. The helper already returns an optional result and the frontend already guards absent answers. Populated responses, authentication, POST, stored answers and skip semantics remain unchanged. A read must not create a questionnaire. Unexpected backend errors must remain visible.
+
+The existing `backend-api/backend/routers/pro/index.py` exceeds the normal production caps. The reviewed exception permits no growth beyond its measured baseline of 2007 physical lines and 608 logical units, and permits only the existing unchanged `login` function's 69 logical units. It expires on 2026-11-27 and covers only the GET empty-result repair. Other functions retain the 50-unit cap. Register and enforce this exception in the existing inventory; do not extract unrelated routes merely to make this small fix fit a counter.
+
+- [x] ON1. Repair the nullable GET contract and pass focused empty/populated/authentication/error regressions against the real route and isolated database; independent source review and scoped complexity checks required.
+- [ ] ON2. Verify a genuinely new account completing ordinary onboarding and a later login, with strict browser diagnostics and no seeded questionnaire or suppressed errors.
+- [ ] P3/P4. Rehearse the published two-service Compose install with disposable relative bind-mounted data and one real FMP income-statement widget through the advertised data route. Verify displayed identity, date, currency and revenue against the browser response, then refresh. Provider entitlement failure is a recorded limitation, not a pass.
+
+Sol owns the route and its focused contract test. A separate Sol worker prepares the existing Playwright journey and small ignored Compose runner; it does not modify production routes or start services concurrently. A fresh reviewer checks each implementation. The controller owns shared inventory, pins, evidence and commits. One heavy check/build runs at a time. Reuse the existing browser fixtures and Docker/request helpers; no new verification platform or broad chart matrix is part of this batch. Owner-server deployment and backup/restore remain separate.
+
+ON1 source acceptance: Workspace `c767b02019efe1e2bc0070fb180003584648935f`; [focused verification and independent review](../../../artifacts/reviewed/prototype-onboarding/source-review.md). ON2 and the assembled prototype remain unverified.

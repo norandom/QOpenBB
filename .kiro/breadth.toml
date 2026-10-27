@@ -1419,3 +1419,11 @@ planned_checks = []
 test_paths = ["tests/delivery/test_alpha_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_prototype_workflow.py"]
 status = "passed"
 evidence = ["alpha-40371082771-1: both workflow jobs, public release assets, six anonymous pulls and digest-pinned Compose parsing verified. artifacts/reviewed/chart-stacked-line/publication-review.md. Local browser acceptance is separate; no server deployment claim."]
+
+[[capabilities]]
+id = "first-login-nullable-questionnaire-source"
+requirements = ["openbb-self-service/first-login-diagnostics.md:ON1"]
+planned_checks = []
+test_paths = ["tests/delivery/test_onboarding_contract.py"]
+status = "passed"
+evidence = ["Four real-route SQLite cases passed on pinned backend image with explicit source overlay c767b02019efe1e2bc0070fb180003584648935f. artifacts/reviewed/prototype-onboarding/source-review.md. Source acceptance only; first-login browser and Compose acceptance remain open."]
