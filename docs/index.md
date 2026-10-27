@@ -12,7 +12,7 @@ Deploy the prototype next, then extend its provider coverage and analyst workflo
 | See the sequence and owning specifications | [Roadmap](roadmap.md) |
 | Build, verify and prepare the prototype for installation | [Prototype delivery](prototype-delivery.md) |
 | Map FMP, FRED and Yahoo coverage to research needs | [Provider coverage](provider-coverage.md) |
-| Choose a chart for an analyst question | [Historical chart guide](chart-gallery.md) (data and recipes ready; screenshots pending) |
+| Choose a chart for an analyst question | [Historical chart guide](chart-gallery.md) (36 chart screenshots, historical data recipes and interpretation) |
 | Check renderer responsibilities and done/todo lists | [ECharts](echarts-status.md), [FINOS Perspective](perspective-status.md) and [Plotly](plotly-status.md) |
 | Check which capabilities have actual evidence | [Breadth map](../.kiro/breadth.toml) and [reviewed artifacts](../artifacts/reviewed/README.md) |
 | Set up development or contribute | [Development](development.md) and [contribution guide](contributing.md) |

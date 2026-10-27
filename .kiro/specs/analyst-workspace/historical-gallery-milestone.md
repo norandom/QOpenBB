@@ -18,7 +18,7 @@ Describe the gallery as historical observations around January 2025, retrieved r
 
 | Criterion | Observable result |
 | --- | --- |
-| HG-A1: discover and reopen | The installed connector exposes a clearly named historical gallery through the actual Apps workflow. An overview and family tabs cover all 36 chart IDs below. Opening an untouched template reuses its existing dashboard; opening after editing preserves the edited dashboard and follows existing numbered-copy behavior. |
+| HG-A1: discover and reopen | The installed connector exposes a clearly named historical gallery through the actual Apps workflow. An overview and family tabs cover all 36 chart IDs below. Opening a template follows the existing change-counter rule: a matching dashboard with zero changes may be reused; otherwise a numbered copy preserves the original. Reopen the saved dashboard through its sidebar entry or URL. |
 | HG-A2: historical data | Every chart resolves a packaged snapshot without calling FMP or using current-date substitutions. Refresh retains the same observations, metadata and transformations. Titles show the actual financial measure, company/group and period; symbol-only titles do not suffice. |
 | HG-A3: financial meaning | Displayed values, labels, axes, color/size mappings and family transformations agree with independently calculated references from the captured inputs. Missing observations are omitted or shown as gaps, never silently changed to zero. |
 | HG-A4: usable existing charts | Every listed chart renders through its ordinary caller with correct saved selections and accessible existing controls. Representative editor, theme, resize, refresh and PNG export checks pass. Family-specific saved assignments survive reopening; a generic HTTP success or visible canvas does not establish this. |
@@ -103,8 +103,17 @@ At closure, reconcile this milestone, `spec.json`, `.kiro/breadth.toml`, README 
 - [x] HG1 source: snapshot routes, discovery composition and explicit packaging inputs; actual image execution remains HG3.
 - [x] HG2 source: historical projections, 36 chart widgets and seven reusable dashboard tabs; actual appearance remains HG3.
 - [ ] HG3: actual application renders and retained-state recreation.
-- [ ] HG4: overview, per-chart guide screenshots and verified publication.
+- [x] HG4 documentation: overview and all 36 per-chart screenshots reviewed and published in the repository.
+- [ ] HG4 delivery: verified image publication after HG3 acceptance.
 
 HG0 uses native company labels, AAPL filters, storage-only Sankey bindings and explicit one-percentage-point histogram bins from -6% to +6%. The existing Apps primary action selects the first template; actual gallery navigation is checked at HG3. Generator interface: `python -m qopenbb_ci.gallery_cli --chart-state contracts/gallery/chart-state.json --sources PRICE_PROVENANCE --fundamentals INCOME_SOURCE_PROVENANCE --output contracts/gallery`. It consumes retained raw inputs identified by credential-free provenance; it makes no network requests. HG2 executed this command against retained captures with matching hashes and byte-identical regeneration. HG3 must confirm that image startup and refresh consume those assets without provider requests.
 
 [HG0 independent source review](../../../artifacts/reviewed/chart-gallery/source-review.md) records the accepted fixture hashes and native helper checks.
+
+## Reviewed gallery captures
+
+The [capture record](../../../artifacts/reviewed/chart-gallery/verification.md) distinguishes the accepted visual evidence from the pending persistence and release checks. The Treemap virtual-root strip is corrected while the FY2024 and quarter headers remain.
+
+![Historical FMP gallery overview](../../../artifacts/reviewed/chart-gallery/overview.png)
+
+[All 36 charts with dimensions and analyst use cases](../../../docs/chart-gallery.md).
