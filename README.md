@@ -36,8 +36,9 @@ Current [Sankey milestone](.kiro/specs/analyst-workspace/sankey-milestone.md):
 
 - [x] Freeze reviewed mapping and financial contracts with a retained FMP income-allocation example.
 - [x] Complete and independently review the parallel data and rendering modules.
-- [x] Connect Sankey to the existing editor and saved-dashboard flow (source reviewed; image verification next).
-- [ ] Accept real-FMP behavior and appearance before publishing the completed milestone.
+- [x] Connect Sankey to the existing editor and saved-dashboard flow (source and packaged application accepted).
+- [x] Accept real-FMP behavior, save/reopen/export and owner-reviewed light/dark appearances.
+- [ ] Publish and verify the completed Sankey milestone images.
 
 The current prototype alpha includes four reviewed repairs: HTTP 200/null for an absent first-login questionnaire, packaging and serving for the existing data catalog, Workspace's fallback for unavailable external app previews, and an empty agent-discovery response for the data-only backend. AI remains a separate spec.
 

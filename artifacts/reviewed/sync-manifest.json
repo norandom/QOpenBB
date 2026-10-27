@@ -33432,6 +33432,30 @@
       "publishedSHA256": "966329b3c4c60f7514c38b5ac418919a0ef1ef751507aea19e9271ccf65d9d64",
       "bytes": 1535,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-sankey/application-acceptance.md",
+      "sourceSHA256": "5bb821f351ea20a805856aebbaed89cc70d921aa4acf93301c9da258c8efd1b1",
+      "publishedpath": "artifacts/reviewed/chart-sankey/application-acceptance.md",
+      "publishedSHA256": "5bb821f351ea20a805856aebbaed89cc70d921aa4acf93301c9da258c8efd1b1",
+      "bytes": 2853,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-sankey/browser/candidate-3/browser-output/sankey-chart-Sankey-retain-41440-efresh-PNG-and-fresh-reopen/fmp-sankey-light.png",
+      "sourceSHA256": "d45a5072a26fa483b2c33fb328db58ca38f3461aea9ebcb9890cbe7186999c84",
+      "publishedpath": "artifacts/reviewed/chart-sankey/fmp-sankey-light.png",
+      "publishedSHA256": "d45a5072a26fa483b2c33fb328db58ca38f3461aea9ebcb9890cbe7186999c84",
+      "bytes": 48067,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/chart-sankey/browser/candidate-3/browser-output/sankey-chart-Sankey-retain-41440-efresh-PNG-and-fresh-reopen/fmp-sankey-dark.png",
+      "sourceSHA256": "01c6e6dc637bd9d779ec9bf9549f736057901a8118a72c10a0f3859effc96594",
+      "publishedpath": "artifacts/reviewed/chart-sankey/fmp-sankey-dark.png",
+      "publishedSHA256": "01c6e6dc637bd9d779ec9bf9549f736057901a8118a72c10a0f3859effc96594",
+      "bytes": 49325,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -34145,7 +34169,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168494866,
+  "total_payload_bytes": 168595111,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

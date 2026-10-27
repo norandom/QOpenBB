@@ -834,8 +834,8 @@
     },
     {
       "name": "sankey",
-      "phase": "implementation-in-progress",
-      "scope": "SK3 source accepted. SK4 first-image behavior exposed terminal label clipping, now source-corrected; updated-image save/reopen and appearance acceptance remain open.",
+      "phase": "packaged-application-accepted",
+      "scope": "SK0-SK3 source and SK4 packaged behavior/appearance accepted; completed-milestone publication remains open.",
       "contract": "sankey-contract.md",
       "completed_tasks": [
         "SK0",
@@ -851,12 +851,15 @@
       ],
       "authorization": "Owner requested autonomous roadmap continuation; bounded contract independently reviewed on 2026-10-27.",
       "foundation_source": "c8503a1d1facc3d2ea31966f09acf70bd0f754d1",
-      "evidence": "artifacts/reviewed/chart-sankey/integration-source-review.md",
+      "evidence": "artifacts/reviewed/chart-sankey/application-acceptance.md",
       "data_source": "b146da6b0f248d039aad14d3e5c29313edac01c5",
       "presentation_source": "5190f5f1764d2a26117cf1b4eeb2d47fbc00d2a8",
       "integration_source": "138d0412b3b0f39b2ae5c2cc7de0826ee512ff1e",
       "label_correction_source": "31fb64c",
-      "browser_test_source": "e12713d29a9572599c7482d293f37cc040eba12f"
+      "browser_test_source": "e12713d29a9572599c7482d293f37cc040eba12f",
+      "candidate_image": "sha256:b18d296f007935dc40c8b329939e15cdd27120e2e573bbca20d7b84ff200d523",
+      "application_source": "e12713d29a9572599c7482d293f37cc040eba12f",
+      "appearance": "Owner accepted light and dark appearances on 2026-10-27."
     }
   ]
 }

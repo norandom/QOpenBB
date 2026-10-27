@@ -1,6 +1,6 @@
 # Sankey: queued Table/File milestone
 
-Status: SK0 accepted on 2026-10-27. The [shared contract](sankey-contract.md), inactive declarations and retained FMP allocation fixture are independently reviewed at Workspace `c8503a1d1facc3d2ea31966f09acf70bd0f754d1`. [Review](../../../artifacts/reviewed/chart-sankey/sk0-review.md). SK1 and SK2 are independently accepted at Workspace `5190f5f`; [source review](../../../artifacts/reviewed/chart-sankey/source-review.md). The serial application join is source-accepted. Packaged application, appearance and publication acceptance remain open.
+Status: SK0 accepted on 2026-10-27. The [shared contract](sankey-contract.md), inactive declarations and retained FMP allocation fixture are independently reviewed at Workspace `c8503a1d1facc3d2ea31966f09acf70bd0f754d1`. [Review](../../../artifacts/reviewed/chart-sankey/sk0-review.md). SK1 and SK2 are independently accepted at Workspace `5190f5f`; [source review](../../../artifacts/reviewed/chart-sankey/source-review.md). The serial application join is source-accepted. Packaged application and owner appearance are accepted; completed-milestone publication remains open.
 
 Financial engineers should be able to select source, target and value columns in an ordinary Table/File widget and inspect an allocation without losing its units, period or provenance. This additional chart type belongs to [analyst-workspace](requirements.md); it follows the current prototype onboarding/catalog delivery and reuses the chart editor, theme, lifecycle and export infrastructure. It does not expand provider coverage or modify unrelated Perspective/catalog work.
 
@@ -55,14 +55,22 @@ SK3 ownership clarification, 2026-10-27: the serial integration worker may also 
 - [x] SK3: integrate the ordinary Table/File application (source accepted at `138d041`; [review](../../../artifacts/reviewed/chart-sankey/integration-source-review.md)).
 - [ ] SK4: accept real-FMP behavior, appearance and completed-milestone publication.
 
-SK4 checkpoint, 2026-10-27: the first image exposed clipped terminal labels. The [source correction and browser-test repairs](../../../artifacts/reviewed/chart-sankey/labels-source-review.md) are independently reviewed; the updated packaged journey and appearance remain open.
+SK4 checkpoint, 2026-10-27: the first image exposed clipped terminal labels. The [source correction and browser-test repairs](../../../artifacts/reviewed/chart-sankey/labels-source-review.md) are independently reviewed; the corrected packaged journey and appearance are accepted below.
 
-## Acceptance to perform, not completed evidence
+## Application acceptance
 
-- [ ] Select source, target and value columns in the ordinary Table/File journey; compare displayed links, units and internal-node reconciliation with the retained FMP records and independently computed sums.
-- [ ] Correct an invalid mapping and inspect a legitimate incomplete-flow warning without losing editor access; retain focused edge-case checks beside the owning modules.
-- [ ] Refresh, save and reopen the same graph with mapping, values and supported theme/style preserved; verify actual PNG output and strict isolated browser diagnostics.
-- [ ] Add the accepted real-FMP diagram sample here, labelled with its reporting period, units and derived-allocation semantics; synchronize the reviewed artifact before committing.
+- [x] Select source, target and value columns in the ordinary Table/File journey; compare displayed links, units and internal-node reconciliation with the retained FMP records and independently computed sums.
+- [x] Correct an invalid mapping and inspect a legitimate incomplete-flow warning without losing editor access; retain focused edge-case checks beside the owning modules.
+- [x] Refresh, save and reopen the same graph with mapping, values and supported theme/style preserved; verify actual PNG output and strict isolated browser diagnostics.
+- [x] Add the accepted real-FMP diagram sample here, labelled with its reporting period, units and derived-allocation semantics; synchronize the reviewed artifact before committing.
 - [ ] Independently review source and identified-image behavior, obtain owner appearance acceptance, then publish once for the completed milestone and reconcile the owning summaries/breadth records.
 
 Advanced image, gradient and pattern palettes remain the separate [shared-theme follow-up](advanced-palettes.md). Standalone/AI/theme-preview callers, broader provider work and other chart families are outside this bounded milestone. No skipped, planned or fixture-only check establishes application completion.
+
+## Accepted financial sample
+
+The [packaged application review](../../../artifacts/reviewed/chart-sankey/application-acceptance.md) records the identified image, full journey and remaining scope. The owner accepted both appearances on 2026-10-27. These AAPL FY2025 USD diagrams allocate a derived annual revenue sum through quarterly reported amounts; they are not cash-flow diagrams.
+
+![AAPL FY2025 income allocation, light theme](../../../artifacts/reviewed/chart-sankey/fmp-sankey-light.png)
+
+![AAPL FY2025 income allocation, dark theme](../../../artifacts/reviewed/chart-sankey/fmp-sankey-dark.png)
