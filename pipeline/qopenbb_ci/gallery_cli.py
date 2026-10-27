@@ -10,7 +10,7 @@ from qopenbb_ci.gallery_projection import RETROSPECTIVE, project_data
 from qopenbb_ci.gallery_templates import build_catalog
 
 
-CONTRACT_SHA256 = "7955103d90990e24a6515074ab44d90bbc513b5425f7cc8fd637026ed221ef9e"
+CONTRACT_SHA256 = "c0f9087a78ca7248651050168727d77f001804df64d73f18230c27c060f64a37"
 
 
 def read_json(path):

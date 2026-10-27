@@ -368,7 +368,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "bar": {
               "title": {
                 "enabled": true,
                 "text": "Selected equities: January 2025 price return (%)"
@@ -403,7 +403,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "bar": {
               "title": {
                 "enabled": true,
                 "text": "Selected equities: January 2025 price return (%)"
@@ -440,7 +440,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "bar": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue components (USD bn)"
@@ -477,7 +477,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "bar": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue component shares (%)"
@@ -514,7 +514,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "bar": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue components (USD bn)"
@@ -551,7 +551,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "bar": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue component shares (%)"
@@ -588,7 +588,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "line": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue components (USD bn)"
@@ -625,7 +625,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "line": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue component shares (%)"
@@ -662,7 +662,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "area": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue components (USD bn)"
@@ -699,7 +699,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "area": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue component shares (%)"
@@ -734,7 +734,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "pie": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2025 Q1 revenue split (USD bn)"
@@ -769,7 +769,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "donut": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2025 Q1 revenue split (USD bn)"
@@ -814,14 +814,14 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "line": {
               "title": {
                 "enabled": true,
                 "text": "Selected equities: January 2025 daily closes (USD/share)"
               }
             }
           },
-          "categoryAxisType": "time"
+          "categoryAxisType": "category"
         }
       }
     },
@@ -850,14 +850,14 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "area": {
               "title": {
                 "enabled": true,
                 "text": "Apple: January 2025 daily close (USD/share)"
               }
             }
           },
-          "categoryAxisType": "time"
+          "categoryAxisType": "category"
         }
       }
     },
@@ -888,14 +888,12 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "scatter": {
+              "paired": true,
               "title": {
                 "enabled": true,
                 "text": "Selected equities: January 2025 volatility and return (%)"
               }
-            },
-            "scatter": {
-              "paired": true
             }
           }
         }
@@ -930,14 +928,12 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "bubble": {
+              "paired": true,
               "title": {
                 "enabled": true,
                 "text": "Selected equities: January 2025 volatility and return (%)"
               }
-            },
-            "bubble": {
-              "paired": true
             }
           }
         }
@@ -972,7 +968,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "radar-line": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2022-FY2024 quarterly revenue (USD bn)"
@@ -1011,7 +1007,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "radar-area": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2022-FY2024 quarterly revenue (USD bn)"
@@ -1048,7 +1044,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "nightingale": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue components (USD bn)"
@@ -1084,7 +1080,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "radial-column": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 quarterly revenue (USD bn)"
@@ -1120,7 +1116,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "radial-bar": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 quarterly revenue (USD bn)"
@@ -1156,7 +1152,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "box-plot": {
               "title": {
                 "enabled": true,
                 "text": "Selected equities: Oct 2024-Jan 2025 daily returns (%)"
@@ -1192,12 +1188,6 @@
             ]
           },
           "chartOptions": {
-            "common": {
-              "title": {
-                "enabled": true,
-                "text": "Apple: Oct 2024-Jan 2025 daily returns (%)"
-              }
-            },
             "histogram": {
               "series": {
                 "bins": [
@@ -1250,6 +1240,10 @@
                     6
                   ]
                 ]
+              },
+              "title": {
+                "enabled": true,
+                "text": "Apple: Oct 2024-Jan 2025 daily returns (%)"
               }
             }
           },
@@ -1291,7 +1285,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "range-bar": {
               "title": {
                 "enabled": true,
                 "text": "Selected equities: Oct 2024-Jan 2025 daily returns (%)"
@@ -1327,7 +1321,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "range-area": {
               "title": {
                 "enabled": true,
                 "text": "Apple: Oct 2024-Jan 2025 daily returns (%)"
@@ -1376,7 +1370,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "treemap": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue hierarchy (USD bn)"
@@ -1417,7 +1411,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "sunburst": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 revenue hierarchy (USD bn)"
@@ -1460,7 +1454,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "heatmap": {
               "title": {
                 "enabled": true,
                 "text": "Selected equities: Oct 2024-Jan 2025 monthly returns (%)"
@@ -1499,7 +1493,7 @@
                 ]
               },
               "chartOptions": {
-                "common": {
+                "sankey": {
                   "title": {
                     "enabled": true,
                     "text": "Apple (AAPL) FY2024 derived revenue allocation (USD bn)"
@@ -1559,7 +1553,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "waterfall": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2025 Q1 revenue to net income (USD bn)"
@@ -1594,7 +1588,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "funnel": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2025 Q1 reported income levels (USD bn)"
@@ -1629,7 +1623,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "cone-funnel": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2025 Q1 reported income levels (USD bn)"
@@ -1664,7 +1658,7 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "pyramid": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2025 Q1 reported income levels (USD bn)"
@@ -1701,7 +1695,19 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "area": {
+              "title": {
+                "enabled": true,
+                "text": "Apple (AAPL) FY2024 Q1-FY2025 Q1 revenue and net income (USD bn)"
+              }
+            },
+            "bar": {
+              "title": {
+                "enabled": true,
+                "text": "Apple (AAPL) FY2024 Q1-FY2025 Q1 revenue and net income (USD bn)"
+              }
+            },
+            "line": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 Q1-FY2025 Q1 revenue and net income (USD bn)"
@@ -1738,7 +1744,19 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "area": {
+              "title": {
+                "enabled": true,
+                "text": "Apple (AAPL) FY2024 Q1-FY2025 Q1 revenue and net income (USD bn)"
+              }
+            },
+            "bar": {
+              "title": {
+                "enabled": true,
+                "text": "Apple (AAPL) FY2024 Q1-FY2025 Q1 revenue and net income (USD bn)"
+              }
+            },
+            "line": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 Q1-FY2025 Q1 revenue and net income (USD bn)"
@@ -1777,7 +1795,19 @@
             ]
           },
           "chartOptions": {
-            "common": {
+            "area": {
+              "title": {
+                "enabled": true,
+                "text": "Apple (AAPL) FY2024 Q1-FY2025 Q1 revenue and net income (USD bn); basic EPS (USD/share)"
+              }
+            },
+            "bar": {
+              "title": {
+                "enabled": true,
+                "text": "Apple (AAPL) FY2024 Q1-FY2025 Q1 revenue and net income (USD bn); basic EPS (USD/share)"
+              }
+            },
+            "line": {
               "title": {
                 "enabled": true,
                 "text": "Apple (AAPL) FY2024 Q1-FY2025 Q1 revenue and net income (USD bn); basic EPS (USD/share)"

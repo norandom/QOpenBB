@@ -22,7 +22,8 @@ def chart_name(chart_type):
 def widget(chart_type, chart, columns):
     title = chart_name(chart_type) + " - " + chart["title"]
     types = {"string": "text", "date": "dateString", "number": "number"}
-    chart_types = {"string": "category", "date": "time", "number": "series"}
+    # Daily prices use equally spaced trading sessions, not elapsed calendar time.
+    chart_types = {"string": "category", "date": "category", "number": "series"}
     widget_id = "qopenbb_gallery_" + chart_type
     return {"widgetId": widget_id, "name": title, "description": chart["title"],
             "category": "Historical Gallery", "subCategory": chart_name(chart_type), "source": ["FMP"],

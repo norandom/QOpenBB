@@ -38,7 +38,7 @@ def test_widgets_cover_exactly_36_native_charts_with_typed_columns():
         assert [c["headerName"] for c in columns] == [c["label"] for c in expected]
         types = {"number": "number", "date": "dateString", "string": "text"}
         assert [c["cellDataType"] for c in columns] == [types[c["type"]] for c in expected]
-        chart_types = {"number": "series", "date": "time", "string": "category"}
+        chart_types = {"number": "series", "date": "category", "string": "category"}
         assert [c["chartDataType"] for c in columns] == [chart_types[c["type"]] for c in expected]
 
 
@@ -89,3 +89,39 @@ def test_inventory_mismatch_fails():
     del contract["charts"]["customCombo"]
     with pytest.raises(ValueError, match="inventory"):
         build_catalog(contract)
+
+
+def test_financial_titles_use_native_family_buckets_after_common_replacement():
+    families = {
+        "bar": "groupedColumn stackedColumn normalizedColumn groupedBar stackedBar normalizedBar",
+        "line": "line stackedLine normalizedLine",
+        "area": "area stackedArea normalizedArea",
+        "radar-line": "radarLine", "radar-area": "radarArea",
+        "radial-column": "radialColumn", "radial-bar": "radialBar",
+        "box-plot": "boxPlot", "range-bar": "rangeBar", "range-area": "rangeArea",
+        "cone-funnel": "coneFunnel",
+    }
+    buckets = {chart: [family] for family, charts in families.items() for chart in charts.split()}
+    for chart_type, chart in CONTRACT["charts"].items():
+        state = chart["state"]
+        model = state.get("chartModel") or state["storage"]["default"]["chartModel"]
+        options = deepcopy(model["chartOptions"])
+        # Native composition replaces common with generated axes before family selection.
+        options["common"] = {"axes": {}}
+        expected = ["area", "bar", "line"] if chart_type.endswith("Combo") else buckets.get(chart_type, [chart_type])
+        for family in expected:
+            assert options[family]["title"] == {"enabled": True, "text": chart["title"]}
+        assert "title" not in model["chartOptions"].get("common", {})
+    assert CONTRACT["charts"]["histogram"]["state"]["chartModel"]["chartOptions"]["histogram"]["series"]["bins"]
+
+
+def test_price_dates_are_admitted_as_equally_spaced_trading_categories():
+    for chart_type in ("line", "area"):
+        chart = CONTRACT["charts"][chart_type]
+        model = chart["state"]["chartModel"]
+        columns = CATALOG["widgets"]["qopenbb_gallery_" + chart_type]["data"]["table"]["columnsDefs"]
+        admitted = [col["field"] for col in columns if col["chartDataType"] in ("category", "series")]
+        assert admitted[0] == "date" and "date" in model["cellRange"]["columns"]
+        assert columns[0]["cellDataType"] == "dateString"
+        assert model["categoryAxisType"] == "category"
+        assert "qopenbbAxisSettings" not in model
