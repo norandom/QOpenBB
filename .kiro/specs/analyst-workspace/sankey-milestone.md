@@ -1,6 +1,6 @@
 # Sankey: queued Table/File milestone
 
-Status: SK0 accepted on 2026-10-27. The [shared contract](sankey-contract.md), inactive declarations and retained FMP allocation fixture are independently reviewed at Workspace `c8503a1d1facc3d2ea31966f09acf70bd0f754d1`. [Review](../../../artifacts/reviewed/chart-sankey/sk0-review.md). Data and presentation implementation lanes are active; no application, appearance or publication acceptance is established.
+Status: SK0 accepted on 2026-10-27. The [shared contract](sankey-contract.md), inactive declarations and retained FMP allocation fixture are independently reviewed at Workspace `c8503a1d1facc3d2ea31966f09acf70bd0f754d1`. [Review](../../../artifacts/reviewed/chart-sankey/sk0-review.md). SK1 and SK2 are independently accepted at Workspace `5190f5f`; [source review](../../../artifacts/reviewed/chart-sankey/source-review.md). The serial application join is active; application, appearance and publication acceptance remain open.
 
 Financial engineers should be able to select source, target and value columns in an ordinary Table/File widget and inspect an allocation without losing its units, period or provenance. This additional chart type belongs to [analyst-workspace](requirements.md); it follows the current prototype onboarding/catalog delivery and reuses the chart editor, theme, lifecycle and export infrastructure. It does not expand provider coverage or modify unrelated Perspective/catalog work.
 
@@ -47,9 +47,11 @@ Every production task must register maintained files in the existing inventory a
 
 ## Task progress
 
+SK3 ownership clarification, 2026-10-27: the serial integration worker may also add `application/sankeySessionTypes.ts`, `editor/sankey/SankeyCustomizePanel.tsx` and `caller/SankeyChartEditor.tsx` under Table/Chart, plus `tests/unit/chart-application/sankeySession.test.ts` and `sankeyCaller.test.tsx`. These keep editable state separate from graph validity and reuse the existing dock and common appearance controls. SK1/SK2 files remain outside that worker's ownership. Implementation starts only after both lanes are independently accepted.
+
 - [x] SK0: freeze and independently review shared contracts and retained financial fixture.
-- [ ] SK1: implement and review inactive capture and financial validation.
-- [ ] SK2: implement and review inactive rendering and setup controls.
+- [x] SK1: implement and review inactive capture and financial validation (Workspace `b146da6`; 27 graph and 6 capture checks, including observed-zero reconciliation).
+- [x] SK2: implement and review inactive rendering and setup controls (Workspace `5190f5f`; 16 native-renderer and 5 setup checks, including compact and extreme-value recovery).
 - [ ] SK3: integrate the ordinary Table/File application.
 - [ ] SK4: accept real-FMP behavior, appearance and completed-milestone publication.
 

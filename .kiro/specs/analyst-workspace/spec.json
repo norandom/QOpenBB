@@ -835,10 +835,12 @@
     {
       "name": "sankey",
       "phase": "implementation-in-progress",
-      "scope": "Inactive shared types and retained fixture accepted; parallel data and presentation implementation active. Application and appearance unverified.",
+      "scope": "Inactive data and presentation source independently accepted; serial Table/File integration active. Application and appearance unverified.",
       "contract": "sankey-contract.md",
       "completed_tasks": [
-        "SK0"
+        "SK0",
+        "SK1",
+        "SK2"
       ],
       "approved_tasks": [
         "SK1",
@@ -848,7 +850,9 @@
       ],
       "authorization": "Owner requested autonomous roadmap continuation; bounded contract independently reviewed on 2026-10-27.",
       "foundation_source": "c8503a1d1facc3d2ea31966f09acf70bd0f754d1",
-      "evidence": "artifacts/reviewed/chart-sankey/sk0-review.md"
+      "evidence": "artifacts/reviewed/chart-sankey/source-review.md",
+      "data_source": "b146da6b0f248d039aad14d3e5c29313edac01c5",
+      "presentation_source": "5190f5f1764d2a26117cf1b4eeb2d47fbc00d2a8"
     }
   ]
 }
