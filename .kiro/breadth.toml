@@ -1435,3 +1435,11 @@ planned_checks = []
 test_paths = ["tests/delivery/test_data_image.py", "tests/providers/test_runtime.py"]
 status = "passed"
 evidence = ["14 packaging and eight isolated ASGI cases pass; three production files satisfy caps; independent source review approved. artifacts/reviewed/prototype-onboarding/catalog-source-review.md. Rebuilt-image and Compose/browser acceptance remain open."]
+
+[[capabilities]]
+id = "self-contained-app-previews"
+requirements = ["openbb-self-service/first-login-diagnostics.md:CAT4 source"]
+planned_checks = []
+test_paths = ["tests/contracts/test_catalog.py"]
+status = "passed"
+evidence = ["16 catalog cases pass; generated assets independently reviewed. External optional preview metadata uses existing local fallback; widget/route/dataset/schema bytes unchanged. artifacts/reviewed/prototype-onboarding/preview-source-review.md. Published-image browser acceptance remains open."]

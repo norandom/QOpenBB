@@ -43,3 +43,15 @@ Independent review approved two disjoint implementation lanes. Package exactly t
 - [ ] CAT3. Independently review the joined source, enforce production size caps, publish once, and rerun the same assembled Compose journey. Do not mark task 3.8's broader renderer bindings or successor features complete from this bounded prototype result.
 
 CAT1/CAT2 source acceptance: [joined verification and independent review](../../../artifacts/reviewed/prototype-onboarding/catalog-source-review.md). CAT3 and the actual live-data journey remain open.
+
+## Starter application and preview repair
+
+The published catalog is reachable in `alpha-40460846959-1`. The supported installation path is Connections → Connect Backend → Apps → QOpenBB starter. Its saved AAPL/annual and GDP parameters load actual provider data. Adding generic widgets directly to an empty dashboard instead mounts missing required symbols and produces validation errors; that separate missing-input guard remains open.
+
+The existing-account probe verified displayed AAPL identity, reporting date, USD revenue and refresh against the live FMP response. Strict diagnostics then found an unavailable external FRED app thumbnail. This probe is not full fresh-install acceptance. Earlier failed runs remain retained.
+
+Independent review accepted removing only external optional `img`, `img_light` and `img_dark` previews during catalog adaptation, with an explicit omission record and the existing AppCard fallback. Preserve local previews, application identity, layout, groups, parameters and data. Regenerate through the clean maintained generator against the retained schema/image/inventory; unrelated renderer work stays excluded. No image proxy or frontend redesign is required.
+
+- [x] CAT4 source. Apply the preview adaptation; pass external/local/immutability cases and production caps with independent review.
+- [ ] CAT4 delivery. Review regenerated assets, publish the corrected image pair and complete the same fresh-account starter journey with strict diagnostics.
+- [ ] Separate follow-up: prevent generic widgets from requesting data until required parameters are present, preserving their existing controls and visible validation.

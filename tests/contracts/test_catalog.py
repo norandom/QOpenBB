@@ -119,6 +119,25 @@ def test_bundled_groups_have_no_dangling_widget_ids(inputs):
     assert "authentication" not in app
 
 
+def test_external_app_previews_use_existing_workspace_fallback(inputs):
+    schema, inventory, widgets = inputs
+    source = {"name": "FRED", "img": "https://example.invalid/fred.png",
+              "img_light": "//example.invalid/light.png", "img_dark": "HTTP://example.invalid/dark.png",
+              "tabs": {"Data": {"layout": [{"i": "profile_fmp_obb",
+                       "state": {"params": {"symbol": "GDP"}}}]}}}
+    original = deepcopy(source)
+    output = generate(schema, inventory, widgets, [source], "/data")
+    app = output["apps.json"][1]
+    assert all(field not in app for field in ("img", "img_light", "img_dark"))
+    assert app["tabs"] == source["tabs"]
+    assert source == original
+    assert {"app": "FRED", "reason": "external-preview-image",
+            "fields": ["img", "img_light", "img_dark"]} in output["catalog-report.json"]["omitted"]
+    source.update(img="/assets/fred.png", img_light="assets/fred-light.png", img_dark="")
+    local = generate(schema, inventory, widgets, [source], "/data")["apps.json"][1]
+    assert all(local[field] == source[field] for field in ("img", "img_light", "img_dark"))
+
+
 def test_frozen_routes_resolve_refs_independently(inputs):
     from qopenbb_ci.catalog import validate_refs
     schema, inventory, _ = inputs

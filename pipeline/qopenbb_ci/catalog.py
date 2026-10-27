@@ -119,6 +119,14 @@ def adapt_apps(bundled: list, widgets: dict) -> tuple[list, list]:
     apps, omitted = [], []
     for source in bundled:
         app = deepcopy(source)
+        external_previews = [field for field in ("img", "img_light", "img_dark")
+                             if isinstance(app.get(field), str)
+                             and app[field].lower().startswith(("http://", "https://", "//"))]
+        for field in external_previews:
+            app.pop(field)
+        if external_previews:
+            omitted.append({"app": app["name"], "reason": "external-preview-image",
+                            "fields": external_previews})
         if "authentication" in app:
             app.pop("authentication")
             omitted.append({"app": app["name"], "reason": "server-owned-provider-credentials",
