@@ -875,7 +875,7 @@
   ],
   "theme_preview_milestone": {
     "name": "theme-settings-preview",
-    "phase": "packaged-verification-pending",
+    "phase": "application-accepted-publication-pending",
     "contract": "theme-preview-milestone.md",
     "control_map": "theme-preview-controls.md",
     "approved_tasks": [
@@ -891,6 +891,11 @@
     "foundation_evidence": "artifacts/reviewed/theme-preview/foundation-source-review.md",
     "integration_source": "c425134e95ac47961143988b5da315abb2969ae1",
     "browser_preparation_source": "9bbd8bf",
-    "integration_evidence": "artifacts/reviewed/theme-preview/integration-source-review.md"
+    "integration_evidence": "artifacts/reviewed/theme-preview/integration-source-review.md",
+    "application_source": "c425134e95ac47961143988b5da315abb2969ae1",
+    "browser_test_source": "cdefb7638c0991281551db66415328e420287009",
+    "candidate_image": "sha256:9b0db4b2a3021cd8554b60bf3302affd9740d7087e672bf42594197f6dc2cd9b",
+    "application_evidence": "artifacts/reviewed/theme-preview/application-acceptance.md",
+    "appearance": "Owner accepted light/dark appearance including 6+4 legend wrapping and small spacing differences on 2026-10-27."
   }
 }

@@ -1479,7 +1479,7 @@ evidence = ["alpha-40489065805-1: both CI jobs, three public release assets, six
 [[capabilities]]
 id = "theme-settings-preview"
 requirements = ["analyst-workspace/theme-preview-milestone.md:TP-A1-TP-A9", "analyst-workspace/theme-preview-controls.md"]
-planned_checks = ["Preserve original preview controls, grid legend, keyboard and tooltip behavior", "Apply owner-approved Padding including zero; save and reopen without schema changes", "Packaged matched light/dark preview and real-FMP saved-palette/PNG journey"]
-test_paths = ["vendor/workspace/terminalpro/tests/unit/chartThemeCommunity.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-palette.spec.ts"]
-status = "planned"
-evidence = ["Original six theme-state checks and bounded original browser probe pass; TP1 shared support independently source-accepted at fd5c43e with 53 focused checks and caps. artifacts/reviewed/theme-preview/foundation-source-review.md. TP2 source accepted at c425134 with 20 preview checks and corrected pager precedence; joined 73-check source review retained. artifacts/reviewed/theme-preview/integration-source-review.md. Packaged application and publication remain open."]
+planned_checks = []
+test_paths = ["vendor/workspace/terminalpro/tests/unit/chartThemeCommunity.test.ts", "vendor/workspace/terminalpro/tests/unit/chartThemePreview.test.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/theme-preview.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/funnel-palette.spec.ts"]
+status = "passed"
+evidence = ["Source c425134, local image9b0db4: two packaged journeys pass with all12 diagnostics arrays empty. Padding0/40 geometry, keyboard/legend, invalid recovery, freshlogin persistence/reset, retainedFMP savedpalette/PNG independently accepted. Owner accepts light/dark differences. artifacts/reviewed/theme-preview/application-acceptance.md. CI publication and server deployment separate."]

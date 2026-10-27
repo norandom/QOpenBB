@@ -1,8 +1,8 @@
 # Theme Settings preview replacement
 
-Status: **TP2 SOURCE ACCEPTED; packaged verification pending**, 2026-10-27. Replace the AG Charts renderer in the existing Charts settings preview with ECharts. Preserve the settings workflow and reachable preview interactions. The owner explicitly requested **"Make Padding work"**: the existing `params.padding` field will now control outer preview padding without changing its stored format. This is the sole intentional behavior correction in this contract.
+Status: **APPLICATION ACCEPTED; publication pending**, 2026-10-27. Replace the AG Charts renderer in the existing Charts settings preview with ECharts. Preserve the settings workflow and reachable preview interactions. The owner explicitly requested **"Make Padding work"**: the existing `params.padding` field will now control outer preview padding without changing its stored format. This is the sole intentional behavior correction in this contract.
 
-This bounded milestone follows [prototype-first delivery](../../steering/delivery-workflow.md); it does not approve or complete the analyst-workspace umbrella specification. Independent review approved this contract and sequential TP1 foundation work. Replacement source, application behavior and publication remain unaccepted. No additional owner decision is currently missing; a demonstrated compatibility limitation requires a specific decision before accepting that deviation.
+This bounded milestone follows [prototype-first delivery](../../steering/delivery-workflow.md); it does not approve or complete the analyst-workspace umbrella specification. Independent review approved this contract and sequential TP1 foundation work. Replacement source and packaged application behavior are accepted; publication remains pending. No additional owner decision is currently missing; a demonstrated compatibility limitation requires a specific decision before accepting that deviation.
 
 ## Baseline and scope
 
@@ -78,13 +78,15 @@ The controller records exact commands against the installed toolchain and bounde
 
 Packaged acceptance uses an isolated headless browser, disposable state and one worker under [testing policy](../../steering/testing.md). Compare original/candidate at the same theme, viewport and sample; include default ten-series layout, a one-series case, a genuinely paged narrow layout, hover/focus and Padding 0/40. Verify mode-switch draft retention, Save, Reset, fresh-context reopen and invalid-to-valid recovery. Collect console, page errors, failed requests and HTTP failures before asserting any one array. Show concrete differences to the owner when visual equivalence is uncertain; do not infer approval from silence.
 
-Reuse `funnel-palette.spec.ts` for real-FMP saved-theme propagation and PNG. Identify the actual data and transformation in the selected inline sample at closure. Preview-only chrome behavior does not certify shared widget chrome propagation. Real-FMP sample: **pending**; no financial screenshot or browser acceptance has been produced for this milestone.
+Reuse `funnel-palette.spec.ts` for real-FMP saved-theme propagation and PNG. Identify the actual data and transformation in the selected inline sample at closure. Preview-only chrome behavior does not certify shared widget chrome propagation. Real-FMP palette/PNG acceptance is recorded in the [packaged application review](../../../artifacts/reviewed/theme-preview/application-acceptance.md). The sample below uses retained AAPL FY2026 Q2 reported USD income levels; it does not describe additive flows.
+
+![AAPL quarterly income levels with saved palette](../../../artifacts/reviewed/theme-preview/fmp-palette.png)
 
 - [x] TP0 contract independently reviewed; actual original interaction findings recorded.
 - [x] TP1 shared foundation accepted, with existing caller regressions and caps. [Source review](../../../artifacts/reviewed/theme-preview/foundation-source-review.md).
 - [x] TP2 preview and Padding correction accepted at source level. [Source review](../../../artifacts/reviewed/theme-preview/integration-source-review.md).
-- [ ] TP3 identified-image application, financial and export checks accepted.
-- [ ] Matched light/dark appearance accepted or specific differences approved.
+- [x] TP3 identified-image application, financial and export checks accepted.
+- [x] Matched light/dark appearance accepted; owner kept the legend wrapping and small spacing differences.
 - [ ] TP4 evidence/docs reconciled; completed-feature publication verified separately.
 
 Readiness is disproved by any lost reachable control or interaction, fabricated sample/palette data, payload coercion, duplicated lifecycle owner, missing capped-file inventory, failing affected caller regression, unverified image identity or an unsupported behavior described as complete.

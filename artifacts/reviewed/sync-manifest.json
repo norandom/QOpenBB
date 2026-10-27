@@ -33504,6 +33504,46 @@
       "publishedSHA256": "6ff78815048a0fbb39f910f076a8746a0ea814e27389ec32409ebfd2cad3dba6",
       "bytes": 2298,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/theme-preview/application-acceptance.md",
+      "sourceSHA256": "e24625388dd930eb90d1a939fd33e4d936feebdc363f922515acb000ea05b875",
+      "publishedpath": "artifacts/reviewed/theme-preview/application-acceptance.md",
+      "publishedSHA256": "e24625388dd930eb90d1a939fd33e4d936feebdc363f922515acb000ea05b875",
+      "bytes": 2522,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/theme-preview/reference/corrected/browser-output/theme-preview-reference-na-236c9-s-preview-bounded-reference/default-light.png",
+      "sourceSHA256": "a8c36d043060c643ead1a9c2bb21168551a810741ec76ffda7b699293089495e",
+      "publishedpath": "artifacts/reviewed/theme-preview/original-light.png",
+      "publishedSHA256": "a8c36d043060c643ead1a9c2bb21168551a810741ec76ffda7b699293089495e",
+      "bytes": 85430,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/theme-preview/browser/candidate-1/browser-output/theme-preview-Theme-Settin-9cdda-teractions-and-saved-drafts/default-light.png",
+      "sourceSHA256": "7375021989dfb654cddc8f1e26cd9edb9a75f6db6fba0b64e31ff4ad433b6254",
+      "publishedpath": "artifacts/reviewed/theme-preview/preview-light.png",
+      "publishedSHA256": "7375021989dfb654cddc8f1e26cd9edb9a75f6db6fba0b64e31ff4ad433b6254",
+      "bytes": 88832,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/theme-preview/browser/candidate-1/browser-output/theme-preview-Theme-Settin-9cdda-teractions-and-saved-drafts/default-dark.png",
+      "sourceSHA256": "c92245382d41043aea2c86897925dc5c01c4e19f0b632f36f49a19bdbd15c78f",
+      "publishedpath": "artifacts/reviewed/theme-preview/preview-dark.png",
+      "publishedSHA256": "c92245382d41043aea2c86897925dc5c01c4e19f0b632f36f49a19bdbd15c78f",
+      "bytes": 87908,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/theme-preview/browser/candidate-1/browser-output/funnel-palette-Funnel-Cone-d029d-ancial-paint-and-PNG-export/custom-cone-visible.png",
+      "sourceSHA256": "e8c62b9f67ffe6680b0e0201e10e9906dc45072560f9a10092e22e1ca2f1a125",
+      "publishedpath": "artifacts/reviewed/theme-preview/fmp-palette.png",
+      "publishedSHA256": "e8c62b9f67ffe6680b0e0201e10e9906dc45072560f9a10092e22e1ca2f1a125",
+      "bytes": 17066,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -34217,7 +34257,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 168616197,
+  "total_payload_bytes": 168897955,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

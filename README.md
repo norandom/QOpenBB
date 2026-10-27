@@ -32,7 +32,14 @@ Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-
 
 See the [ECharts checklist](docs/echarts-status.md) for remaining chart families and callers.
 
-Current [Sankey milestone](.kiro/specs/analyst-workspace/sankey-milestone.md):
+Current [Theme Settings preview milestone](.kiro/specs/analyst-workspace/theme-preview-milestone.md):
+
+- [x] Replace the preview renderer while preserving controls, keyboard and legend behavior.
+- [x] Make Padding work, including zero, with the existing saved format.
+- [x] Verify packaged save/reopen, retained-FMP palette/PNG and owner-approved light/dark appearance.
+- [ ] Publish and verify the completed milestone images.
+
+Completed [Sankey milestone](.kiro/specs/analyst-workspace/sankey-milestone.md):
 
 - [x] Freeze reviewed mapping and financial contracts with a retained FMP income-allocation example.
 - [x] Complete and independently review the parallel data and rendering modules.

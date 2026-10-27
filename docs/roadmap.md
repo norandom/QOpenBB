@@ -70,6 +70,7 @@ The owner authorized starting the next family while the accepted predecessor fin
 | 5 | [Funnel, Cone Funnel and Pyramid](../.kiro/specs/analyst-workspace/funnel-milestone.md) | Accepted and published for onboarded users | F5 tagged assets and public image pulls verified |
 | 6 | [Stacked Line and 100% Stacked Line](../.kiro/specs/analyst-workspace/stacked-line-milestone.md) | Accepted and published | Continue with the next bounded roadmap item |
 | 7 | [Sankey](../.kiro/specs/analyst-workspace/sankey-milestone.md) (additional chart type) | Accepted and published; light/dark appearances approved | Tagged assets and public image pulls verified |
+| 8 | [Theme Settings preview](../.kiro/specs/analyst-workspace/theme-preview-milestone.md) | Packaged behavior and owner appearance accepted; Padding works | Publish and verify milestone images |
 | Later | Remaining caller/table obligations | Open | Follow the capability matrix and actual original reachability |
 
 Renderer and control lanes may run concurrently after their shared contract is accepted. Shared application integration, local heavy checks and publication gates remain serialized. This queue does not mark planned tests or unsupported original paths complete.
