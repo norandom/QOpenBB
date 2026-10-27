@@ -55,6 +55,8 @@ SK3 ownership clarification, 2026-10-27: the serial integration worker may also 
 - [x] SK3: integrate the ordinary Table/File application (source accepted at `138d041`; [review](../../../artifacts/reviewed/chart-sankey/integration-source-review.md)).
 - [ ] SK4: accept real-FMP behavior, appearance and completed-milestone publication.
 
+SK4 checkpoint, 2026-10-27: the first image exposed clipped terminal labels. The [source correction and browser-test repairs](../../../artifacts/reviewed/chart-sankey/labels-source-review.md) are independently reviewed; the updated packaged journey and appearance remain open.
+
 ## Acceptance to perform, not completed evidence
 
 - [ ] Select source, target and value columns in the ordinary Table/File journey; compare displayed links, units and internal-node reconciliation with the retained FMP records and independently computed sums.

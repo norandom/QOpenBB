@@ -835,7 +835,7 @@
     {
       "name": "sankey",
       "phase": "implementation-in-progress",
-      "scope": "Table/File editor integration source independently accepted; identified-image behavior and appearance remain unverified.",
+      "scope": "SK3 source accepted. SK4 first-image behavior exposed terminal label clipping, now source-corrected; updated-image save/reopen and appearance acceptance remain open.",
       "contract": "sankey-contract.md",
       "completed_tasks": [
         "SK0",
@@ -854,7 +854,9 @@
       "evidence": "artifacts/reviewed/chart-sankey/integration-source-review.md",
       "data_source": "b146da6b0f248d039aad14d3e5c29313edac01c5",
       "presentation_source": "5190f5f1764d2a26117cf1b4eeb2d47fbc00d2a8",
-      "integration_source": "138d0412b3b0f39b2ae5c2cc7de0826ee512ff1e"
+      "integration_source": "138d0412b3b0f39b2ae5c2cc7de0826ee512ff1e",
+      "label_correction_source": "31fb64c",
+      "browser_test_source": "e12713d29a9572599c7482d293f37cc040eba12f"
     }
   ]
 }
