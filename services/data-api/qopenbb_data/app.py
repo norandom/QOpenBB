@@ -1,8 +1,12 @@
 """Factory for the internal data process behind the owner-managed origin."""
+from pathlib import Path
+
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
 
 from qopenbb_data.config import configure
+
+CATALOG = Path(__file__).with_name("catalog")
 
 REQUIRED_ROUTES = (
     "/api/v1/equity/profile",
@@ -30,6 +34,14 @@ def create_app() -> FastAPI:
             "status": "unready" if failed else "ready",
             "missing": missing, "missing_routes": absent,
         })
+
+    @app.get("/widgets.json", include_in_schema=False)
+    async def widgets() -> FileResponse:
+        return FileResponse(CATALOG / "widgets.json", media_type="application/json")
+
+    @app.get("/apps.json", include_in_schema=False)
+    async def apps() -> FileResponse:
+        return FileResponse(CATALOG / "apps.json", media_type="application/json")
 
     app.mount("/", upstream)
     app.openapi = upstream.openapi

@@ -19,20 +19,42 @@ def runtime(monkeypatch):
     return create_app()
 
 
-async def get(app, path, query=b""):
+async def get(app, path, query=b"", method="GET", raw=False):
     messages = []
     async def receive():
         return {"type": "http.request", "body": b"", "more_body": False}
     async def send(message):
         messages.append(message)
-    await app({"type": "http", "asgi": {"version": "3.0"},
-               "http_version": "1.1", "method": "GET", "scheme": "http",
+    await app({"type": "http", "asgi": {"version": "3.0", "spec_version": "2.4"},
+               "http_version": "1.1", "method": method, "scheme": "http",
                "path": path, "raw_path": path.encode(), "root_path": "",
                "query_string": query, "headers": [],
                "client": ("127.0.0.1", 1234), "server": ("test", 80)}, receive, send)
     status = next(m["status"] for m in messages if m["type"] == "http.response.start")
     text = b"".join(m.get("body", b"") for m in messages).decode()
-    return status, json.loads(text)
+    return status, text.encode() if raw else json.loads(text)
+
+
+@pytest.mark.parametrize("name", ["widgets.json", "apps.json"])
+def test_catalog_bytes_are_served_without_provider_calls(runtime, monkeypatch, tmp_path, name):
+    import qopenbb_data.app as application
+
+    expected = (Path(__file__).parents[2] / "contracts" / name).read_bytes()
+    (tmp_path / name).write_bytes(expected)
+    monkeypatch.setattr(application, "CATALOG", tmp_path, raising=False)
+    async def forbidden(*args, **kwargs):
+        raise AssertionError("catalog discovery must not call a provider")
+    monkeypatch.setattr("openbb_core.provider.utils.helpers.amake_request", forbidden)
+    status, body = asyncio.run(get(runtime, "/" + name, raw=True))
+    assert status == 200
+    assert body == expected
+
+
+@pytest.mark.parametrize("name", ["widgets.json", "apps.json"])
+def test_catalog_routes_are_read_only(runtime, name):
+    status, body = asyncio.run(get(runtime, "/" + name, method="POST"))
+    assert status in {404, 405}
+    assert body == {"detail": "Not Found"} or body == {"detail": "Method Not Allowed"}
 
 
 def test_routes_credentials_and_no_quota_readiness(runtime, monkeypatch):

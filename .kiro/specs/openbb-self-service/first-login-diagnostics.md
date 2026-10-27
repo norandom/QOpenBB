@@ -31,3 +31,15 @@ The existing `backend-api/backend/routers/pro/index.py` exceeds the normal produ
 Sol owns the route and its focused contract test. A separate Sol worker prepares the existing Playwright journey and small ignored Compose runner; it does not modify production routes or start services concurrently. A fresh reviewer checks each implementation. The controller owns shared inventory, pins, evidence and commits. One heavy check/build runs at a time. Reuse the existing browser fixtures and Docker/request helpers; no new verification platform or broad chart matrix is part of this batch. Owner-server deployment and backup/restore remain separate.
 
 ON1 source acceptance: Workspace `c767b02019efe1e2bc0070fb180003584648935f`; [focused verification and independent review](../../../artifacts/reviewed/prototype-onboarding/source-review.md). ON2 and the assembled prototype remain unverified.
+
+## Catalog integration found by the Compose journey
+
+The published `alpha-40457587542-1` run completed new-account onboarding with GET 200/null, then failed when Add Data requested `/data/widgets.json`. Health, readiness and OpenAPI were available, but the data image neither packaged nor served its generated catalog. This is the remaining task 3.8 prototype integration, not a test URL error or a provider entitlement failure. Retain the failed journey; do not substitute File/CSV rendering for this criterion.
+
+Independent review approved two disjoint implementation lanes. Package exactly the clean committed `contracts/widgets.json` and `contracts/apps.json` through the existing runtime-input allowlist and provenance hashes, then copy them to `/app/qopenbb_data/catalog`. Serve two fixed JSON GET routes before the upstream mount, using that sibling directory. Preserve metadata, `/api/v1` endpoints, authentication policy and existing readiness semantics. Staging rejects absent/tampered assets; runtime missing-file failures remain visible. The existing three widgets and two apps are unchanged. The existing route/component compatibility check against the running API reports no changes or revalidation requirement.
+
+- [x] CAT1. Package the two existing catalog assets with the existing provenance/tamper checks. Owner: packaging worker; files `runtime_inputs.py`, Dagger `data_api.py` and their existing delivery tests.
+- [x] CAT2. Serve exact catalog bytes through the two fixed read-only routes. Owner: runtime worker; files `qopenbb_data/app.py` and existing runtime tests. No new verification framework or readiness redesign.
+- [ ] CAT3. Independently review the joined source, enforce production size caps, publish once, and rerun the same assembled Compose journey. Do not mark task 3.8's broader renderer bindings or successor features complete from this bounded prototype result.
+
+CAT1/CAT2 source acceptance: [joined verification and independent review](../../../artifacts/reviewed/prototype-onboarding/catalog-source-review.md). CAT3 and the actual live-data journey remain open.

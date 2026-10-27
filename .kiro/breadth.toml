@@ -1427,3 +1427,11 @@ planned_checks = []
 test_paths = ["tests/delivery/test_onboarding_contract.py"]
 status = "passed"
 evidence = ["Four real-route SQLite cases passed on pinned backend image with explicit source overlay c767b02019efe1e2bc0070fb180003584648935f. artifacts/reviewed/prototype-onboarding/source-review.md. Source acceptance only; first-login browser and Compose acceptance remain open."]
+
+[[capabilities]]
+id = "packaged-catalog-source"
+requirements = ["openbb-self-service/first-login-diagnostics.md:CAT1", "openbb-self-service/first-login-diagnostics.md:CAT2"]
+planned_checks = []
+test_paths = ["tests/delivery/test_data_image.py", "tests/providers/test_runtime.py"]
+status = "passed"
+evidence = ["14 packaging and eight isolated ASGI cases pass; three production files satisfy caps; independent source review approved. artifacts/reviewed/prototype-onboarding/catalog-source-review.md. Rebuilt-image and Compose/browser acceptance remain open."]

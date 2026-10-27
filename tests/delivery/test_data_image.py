@@ -4,29 +4,33 @@ import pytest
 from qopenbb_ci.staging import stage, verify_stage
 from test_image_builds import inputs
 
-FILES = ('pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
-         'qopenbb_data/config.py', 'qopenbb_data/app.py')
+FILES = tuple('services/data-api/' + name for name in (
+    'pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
+    'qopenbb_data/config.py', 'qopenbb_data/app.py')) + (
+        'contracts/widgets.json', 'contracts/apps.json')
 
 
 def runtime(tmp_path):
     root = tmp_path / 'runtime-root'
     for name in FILES:
-        target = root / 'services/data-api' / name
+        target = root / name
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text('public fixture')
     (root / '.env').write_text('DISPOSABLE_PRIVATE_SENTINEL')
     return root
 
 
-def test_data_stage_has_exact_runtime_hashes(tmp_path):
+@pytest.mark.parametrize('changed', ['services/data-api/qopenbb_data/app.py',
+                                    'contracts/widgets.json', 'contracts/apps.json'])
+def test_data_stage_has_exact_runtime_hashes(tmp_path, changed):
     roots, policy, lock = inputs(tmp_path)
     root = runtime(tmp_path)
     destination = tmp_path / 'stage'
     result = stage(destination, roots, policy, lock, 'data-api', runtime_root=root)
-    assert set(result['runtime_inputs']) == {'services/data-api/' + name for name in FILES}
+    assert set(result['runtime_inputs']) == set(FILES)
     assert verify_stage(destination, policy, lock) == result
     assert not (destination / 'runtime/.env').exists()
-    (destination / 'runtime/services/data-api/qopenbb_data/app.py').write_text('changed')
+    (destination / 'runtime' / changed).write_text('changed')
     with pytest.raises(ValueError, match='hash'):
         verify_stage(destination, policy, lock)
 
