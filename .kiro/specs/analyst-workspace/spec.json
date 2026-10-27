@@ -920,5 +920,22 @@
       },
       "scope": "Both CI jobs, three installation assets, six anonymous pulls and digest Compose parsing verified. Local candidate browser acceptance is separate; no CI-image browser, owner-server, rollback or backup/restore acceptance."
     }
+  },
+  "historical_gallery_milestone": {
+    "phase": "foundation-accepted-implementation-in-progress",
+    "contract": "historical-gallery-milestone.md",
+    "completed_tasks": [
+      "HG0"
+    ],
+    "pending_tasks": [
+      "HG1",
+      "HG2",
+      "HG3",
+      "HG4"
+    ],
+    "fixture": "contracts/gallery/chart-state.json",
+    "fixture_sha256": "7955103d90990e24a6515074ab44d90bbc513b5425f7cc8fd637026ed221ef9e",
+    "workspace_test_revision": "8e08b00459be5fc93d22741c6cdfe1a0b4c9e207",
+    "scope": "Native source/widget/template compatibility only; 15 focused checks pass. Data projection, runtime, actual navigation, screenshots and retained-state recreation remain pending."
   }
 }
