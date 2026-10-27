@@ -6,8 +6,9 @@ import stat
 
 RUNTIME_FILES = frozenset('services/data-api/' + name for name in (
     'pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
-    'qopenbb_data/config.py', 'qopenbb_data/app.py')) | frozenset({
-        'contracts/widgets.json', 'contracts/apps.json'})
+    'qopenbb_data/config.py', 'qopenbb_data/app.py', 'qopenbb_data/gallery.py')) | frozenset({
+        'contracts/widgets.json', 'contracts/apps.json',
+        'contracts/gallery/data.json', 'contracts/gallery/catalog.json'})
 
 
 def copy_runtime(root: Path, destination: Path) -> dict[str, str]:

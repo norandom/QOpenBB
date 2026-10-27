@@ -6,8 +6,9 @@ from test_image_builds import inputs
 
 FILES = tuple('services/data-api/' + name for name in (
     'pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
-    'qopenbb_data/config.py', 'qopenbb_data/app.py')) + (
-        'contracts/widgets.json', 'contracts/apps.json')
+    'qopenbb_data/config.py', 'qopenbb_data/app.py', 'qopenbb_data/gallery.py')) + (
+        'contracts/widgets.json', 'contracts/apps.json',
+        'contracts/gallery/data.json', 'contracts/gallery/catalog.json')
 
 
 def runtime(tmp_path):
@@ -21,7 +22,9 @@ def runtime(tmp_path):
 
 
 @pytest.mark.parametrize('changed', ['services/data-api/qopenbb_data/app.py',
-                                    'contracts/widgets.json', 'contracts/apps.json'])
+                                    'services/data-api/qopenbb_data/gallery.py',
+                                    'contracts/widgets.json', 'contracts/apps.json',
+                                    'contracts/gallery/data.json', 'contracts/gallery/catalog.json'])
 def test_data_stage_has_exact_runtime_hashes(tmp_path, changed):
     roots, policy, lock = inputs(tmp_path)
     root = runtime(tmp_path)
@@ -62,6 +65,15 @@ def test_runtime_input_requires_data_selection(tmp_path):
     roots, policy, lock = inputs(tmp_path)
     with pytest.raises(ValueError):
         stage(tmp_path / 'stage', roots, policy, lock, runtime_root=runtime(tmp_path))
+
+
+@pytest.mark.parametrize('name', ['contracts/gallery/data.json', 'contracts/gallery/catalog.json'])
+def test_missing_gallery_asset_cannot_be_staged(tmp_path, name):
+    roots, policy, lock = inputs(tmp_path)
+    root = runtime(tmp_path)
+    (root / name).unlink()
+    with pytest.raises(FileNotFoundError):
+        stage(tmp_path / 'stage', roots, policy, lock, 'data-api', runtime_root=root)
 
 
 @pytest.mark.parametrize('mutation', ['missing', 'null', 'extra', 'traversal', 'release', 'bad-digest'])

@@ -10,6 +10,12 @@ import pytest
 sys.path.insert(0, str(Path(__file__).parents[2] / "services/data-api"))
 
 
+@pytest.fixture(autouse=True)
+def packaged_catalog(monkeypatch):
+    import qopenbb_data.app as application
+    monkeypatch.setattr(application, "CATALOG", Path(__file__).parents[2] / "contracts")
+
+
 @pytest.fixture
 def runtime(monkeypatch):
     monkeypatch.setenv("FMP_API_KEY", "fixture-runtime-fmp")
@@ -36,16 +42,15 @@ async def get(app, path, query=b"", method="GET", raw=False):
 
 
 @pytest.mark.parametrize("name", ["widgets.json", "apps.json"])
-def test_catalog_bytes_are_served_without_provider_calls(runtime, monkeypatch, tmp_path, name):
-    import qopenbb_data.app as application
-
-    expected = (Path(__file__).parents[2] / "contracts" / name).read_bytes()
-    (tmp_path / name).write_bytes(expected)
-    monkeypatch.setattr(application, "CATALOG", tmp_path, raising=False)
+def test_catalog_composition_is_served_without_provider_calls(runtime, monkeypatch, name):
+    contracts = Path(__file__).parents[2] / "contracts"
+    canonical = json.loads((contracts / name).read_text())
+    gallery = json.loads((contracts / "gallery/catalog.json").read_text())[name.removesuffix(".json")]
+    expected = {**canonical, **gallery} if name == "widgets.json" else canonical + gallery
     async def forbidden(*args, **kwargs):
         raise AssertionError("catalog discovery must not call a provider")
     monkeypatch.setattr("openbb_core.provider.utils.helpers.amake_request", forbidden)
-    status, body = asyncio.run(get(runtime, "/" + name, raw=True))
+    status, body = asyncio.run(get(runtime, "/" + name))
     assert status == 200
     assert body == expected
 

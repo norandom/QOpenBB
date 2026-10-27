@@ -2,9 +2,10 @@
 from pathlib import Path
 
 from fastapi import FastAPI
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import JSONResponse
 
 from qopenbb_data.config import configure
+from qopenbb_data.gallery import load_gallery
 
 CATALOG = Path(__file__).with_name("catalog")
 
@@ -16,6 +17,7 @@ REQUIRED_ROUTES = (
 
 
 def create_app() -> FastAPI:
+    gallery = load_gallery(CATALOG)
     missing = configure()
     from openbb_core.api.rest_api import app as upstream
 
@@ -36,12 +38,19 @@ def create_app() -> FastAPI:
         })
 
     @app.get("/widgets.json", include_in_schema=False)
-    async def widgets() -> FileResponse:
-        return FileResponse(CATALOG / "widgets.json", media_type="application/json")
+    async def widgets() -> dict:
+        return gallery.widgets()
 
     @app.get("/apps.json", include_in_schema=False)
-    async def apps() -> FileResponse:
-        return FileResponse(CATALOG / "apps.json", media_type="application/json")
+    async def apps() -> list:
+        return gallery.apps()
+
+    @app.get("/gallery/data/{dataset_id}", include_in_schema=False)
+    async def gallery_data(dataset_id: str):
+        try:
+            return gallery.dataset(dataset_id)
+        except KeyError:
+            return JSONResponse(status_code=404, content={"detail": "Not Found"})
 
     @app.get("/agents.json", include_in_schema=False)
     async def agents() -> list[dict[str, object]]:
