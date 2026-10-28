@@ -47,13 +47,17 @@ Edit `.env`:
 | --- | --- |
 | `WORKSPACE_IMAGE` | `ghcr.io/norandom/qopenbb-workspace:latest` |
 | `DATA_API_IMAGE` | `ghcr.io/norandom/qopenbb-data-api:latest` |
-| `PUBLIC_URL` | `http://127.0.0.1:23003` |
+| `PUBLIC_URL` | The browser-facing origin: `http://127.0.0.1:23003` locally, or your HTTPS domain behind a proxy |
 | `FMP_API_KEY` | Your FMP key |
 | `FRED_API_KEY` | Your FRED key |
-| `OPENBB_ADMIN_EMAIL` | Optional initial administrator email |
-| `OPENBB_ADMIN_PASSWORD` | Optional initial administrator password |
+| `OPENBB_ADMIN_EMAIL` | Optional bootstrap administrator email |
+| `OPENBB_ADMIN_PASSWORD` | Optional bootstrap password; choose a strong, unique value |
 
 Keep `.env` private. AI, Excel and optional provider settings can stay blank. Provider subscriptions determine which datasets your keys can access.
+
+Use your own password or leave the administrator fields blank to generate credentials on first start. Single-quote a password value in `.env` if it contains `$`, so Compose does not interpolate it. Avoid exporting the same variables in your shell: exported values take precedence over `.env`.
+
+The published `alpha-40652638534-1` incorrectly applies new-password strength rules at login, in both the form and API. A correction is in progress; it is not yet in the images linked here. The intended behavior is to verify existing credentials without strength checks, while keeping strength warnings on password-setting forms.
 
 ## Pull and start
 
@@ -72,7 +76,19 @@ Open <http://127.0.0.1:23003> and log in. If you left the administrator fields b
 docker compose exec workspace credentials
 ```
 
-Do not share that output. Existing state preserves its administrator settings; changing `.env` is not a password-reset procedure.
+Do not share that output. Blank administrator settings reuse persisted bootstrap credentials. Nonempty settings override them at container startup; the initializer creates the configured administrator or updates that account's password.
+
+### Update the bootstrap administrator password
+
+Keep `OPENBB_ADMIN_EMAIL` unchanged and set a nonempty `OPENBB_ADMIN_PASSWORD` in `.env`. Recreate only Workspace so it receives the updated environment:
+
+```bash
+docker compose up -d --no-deps --force-recreate workspace
+```
+
+Wait for startup to finish, then log in with that email and the new password. A plain `docker compose restart` does not load changed `.env` values. Keep `./data/workspace`; no database deletion or dashboard reset is needed.
+
+Until the login correction is published, the existing alpha requires at least eight characters with uppercase, lowercase, a digit and a special character such as `!`, with no whitespace. That login restriction is a known bug, not the intended authentication policy.
 
 To open the supported starter app after login:
 

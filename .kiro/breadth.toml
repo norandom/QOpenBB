@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "existing-password-login"
+requirements = ["openbb-self-service/login-password-policy.md:LP1", "openbb-self-service/login-password-policy.md:LP2", "openbb-self-service/login-password-policy.md:LP3", "openbb-self-service/login-password-policy.md:LP4"]
+planned_checks = ["published Compose password update with retained account", "packaged browser and HTTP credential boundary"]
+test_paths = ["tests/delivery/test_workspace_password_policy.py", "vendor/workspace/terminalpro/tests/unit/routes/login.test.tsx", "vendor/workspace/terminalpro/tests/unit/utils/zodForms.test.tsx"]
+status = "partial"
+evidence = ["Workspace 22180d8: 31 schema and 84 frontend checks accepted by independent review; mocked/stubbed dependencies do not establish runtime authentication. artifacts/reviewed/login-password/source-review.md. Packaged verification and corrected alpha publication remain open."]
+
+[[capabilities]]
 id = "stacked-line-application"
 requirements = ["analyst-workspace/stacked-line-milestone.md:SL1", "analyst-workspace/stacked-line-milestone.md:SL2", "analyst-workspace/stacked-line-milestone.md:SL3"]
 planned_checks = []
