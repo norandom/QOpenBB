@@ -1,6 +1,6 @@
 # Financial modeling foundation tasks
 
-Design and Polars conventions owner-approved, 2026-10-28. Task approval remains pending. This session delivers the plan only. Future implementation follows verified FMP inputs for the selected slice; the broad provider workstream remains first. Repository name/remote and image coordinates are explicit bootstrap inputs, not assumed existing resources.
+Design and Polars conventions owner-approved, 2026-10-28. Task plan owner-approved; execution remains queued behind provider work. This session delivers the plan only. Future implementation follows verified FMP inputs for the selected slice; the broad provider workstream remains first. Repository name/remote and image coordinates are explicit bootstrap inputs, not assumed existing resources.
 
 ## Completion rules and execution lanes
 

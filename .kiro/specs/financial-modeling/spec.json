@@ -15,10 +15,10 @@
     },
     "tasks": {
       "generated": true,
-      "approved": false
+      "approved": true
     }
   },
-  "ready_for_implementation": false,
+  "ready_for_implementation": true,
   "scope": "Separate-repository contract foundation stub only; broad FMP implementation first. No runtime implementation or repository creation.",
   "requirements_review": {
     "status": "passed",
@@ -43,7 +43,7 @@
     "table_engine": "Polars; exact version pinned at bootstrap",
     "style": "Idiomatic typed Python, financial-domain table names and rationale-focused comments",
     "conventions": "python-finance-conventions.md",
-    "authorization": "Owner-selected design constraints; no runtime implementation authorized"
+    "authorization": "Task plan owner-approved; execution remains queued behind provider work and bootstrap prerequisites."
   },
   "design_approval": {
     "date": "2026-10-28",
@@ -54,5 +54,10 @@
     "mode": "independent",
     "reviewer_model": "gpt-6-astra",
     "record": "tasks-review.md"
+  },
+  "implementation_status": "queued-after-provider-work; no implementation started",
+  "tasks_approval": {
+    "date": "2026-10-28",
+    "scope": "Owner approved the 18-task plan; retain FMP-first sequencing and separate-repository bootstrap prerequisites."
   }
 }

@@ -27,4 +27,4 @@ The [house-standard reflection](../analyst-workspace/house-modeling-reflection.m
 
 This document does not authorize implementing the financial engine in the OpenBB fork or starting Excel work before Anthropic acceptance.
 
-Design including Polars conventions is owner-approved. The [18-task implementation plan](tasks.md) has passed independent graph review and awaits task approval. FMP remains first and the modeling repository remains uncreated.
+Design including Polars conventions is owner-approved. The [18-task implementation plan](tasks.md) has passed independent graph review and is owner-approved for later execution. FMP remains first and the modeling repository remains uncreated.
