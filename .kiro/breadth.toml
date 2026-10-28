@@ -1547,3 +1547,11 @@ planned_checks = ["Historical projection and packaged discovery", "36 real chart
 test_paths = ["vendor/workspace/terminalpro/tests/unit/chart-compatibility/galleryTemplate.test.ts", "tests/contracts/test_gallery_projection.py", "tests/contracts/test_gallery_templates.py", "tests/contracts/test_gallery_runtime.py", "tests/delivery/test_data_image.py", "vendor/workspace/terminalpro/tests/e2e/live-chart/historical-gallery.spec.ts", "vendor/workspace/terminalpro/tests/e2e/live-chart/historical-gallery-persistence.spec.ts"]
 status = "passed"
 evidence = ["HG0-HG2 source accepted: 15 native hydration, 21 projection/template and 67 runtime/staging checks; 36 saved chart states and 12 historical datasets; independent financial review and combined caps pass. All 37 native captures visually reviewed; 22 financial tooltip samples and exact snapshot responses passed in initial-10. Initial capture journey exited 1; corrected first-open schema and focused persistence journey now pass: initial 41.9 s/reopen 45.9 s, exact 48 instances/36 types after container recreation, clean CDP diagnostics. alpha-40652638534-1 publication verified separately: both CI jobs, three assets and six anonymous pulls; artifacts/reviewed/chart-gallery/publication-review.md. No CI-image browser or owner-server claim. artifacts/reviewed/chart-gallery/verification.md."]
+
+[[capabilities]]
+id = "accepted-component-source-ci-join"
+requirements = ["market-data-integrations/requirements.md:8.1", "market-data-integrations/requirements.md:8.5"]
+planned_checks = []
+test_paths = ["tests/delivery/test_quality_cli.py", "tests/delivery/test_prototype_workflow.py", "tests/quality/test_ts_adapter.py"]
+status = "passed"
+evidence = ["2026-10-28: Workspace c652b909 and data API d1bb4821 accepted component pins synchronized. Canonical pipeline/ci.sh check: 657 maintained files pass on Node24.22.1/TS6.0.3;193 delivery tests pass; independent17 adapter tests pass. Initial549-file TypeScript batch exceeded60s; bounded180s repair passes without exclusions or relaxed assertions. artifacts/reviewed/market-data-source-join/review.md. Catalog provenance stays historical; no task5.3, live-provider, image or deployment completion claim."]

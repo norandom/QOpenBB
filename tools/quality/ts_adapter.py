@@ -12,7 +12,7 @@ EXTENSIONS = {".js", ".jsx", ".mjs", ".cjs", ".ts", ".tsx", ".mts", ".cts"}
 
 def execute(arguments: list[str], **kwargs) -> subprocess.CompletedProcess:
     return subprocess.run(arguments, cwd=ROOT, capture_output=True, text=True,
-                          encoding="utf-8", check=False, timeout=60,
+                          encoding="utf-8", check=False, timeout=180,
                           creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
                           **kwargs)
 

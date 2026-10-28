@@ -73,3 +73,5 @@ node verification/node_modules/typescript/bin/tsc --project tools/quality/tsconf
 ```
 
 These checks cover scope provenance, exact limits, Python and TypeScript conventions, real JSX/TSX, parser response validation, failure reporting and reviewed exceptions. The Node suite also runs strict no-emit checking against the actual TypeScript AST declarations and pinned `@types/node` 24.10.1; the configuration permits only Node's erasable TypeScript syntax. Task-local RED/GREEN logs and the combined foundation report are retained under ignored `artifacts/task-1.4/`. Breadth evidence and task acceptance remain controlled by the owning specification.
+
+The parser subprocess has a bounded 180-second deadline for the complete maintained scope. The 2026-10-28 Node 24.22.1 join measured 549 JavaScript/TypeScript files; the previous 60-second bound expired on the WSL filesystem. The gate still fails closed on timeout and validates every returned file record.

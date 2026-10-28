@@ -117,4 +117,4 @@ First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks
 - [x] Preserve FRED acquisition times through versioned disk, memory and coalesced requests.
 - [x] Add financial metadata to existing FMP profile and income without baseline contract changes.
 - [x] Preserve generic FRED series semantics and observation provenance.
-- [ ] Adopt these contracts in FMP/FRED fetchers and the running service; verify real-provider data.
+- [ ] Restore additional FMP datasets, wire the shared service contracts and verify real-provider data.
