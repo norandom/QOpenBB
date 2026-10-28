@@ -8,6 +8,8 @@ The shared data boundary is the existing OpenBB Python platform maintained in ou
 
 ## Decisions the workspace must support
 
+Owner clarification, 2026-10-28: data acquisition and house financial modeling are separate concerns. Workspace presents their outputs; house calculations belong in a separate, extensible modeling layer. FMP DCF is an optional comparator. The [house-standard reflection](house-modeling-reflection.md) proposes the modeling requirements, module/service boundary and eventual three-year historical / five-year forecast workflow. Its detailed clauses and deployment design await the respective Kiro approvals; existing analyst acceptance obligations remain in force.
+
 | Workflow | Analyst decision | Required evidence |
 | --- | --- | --- |
 | Quarterly performance | What changed in the business? | Quarterly/annual statements, segment drivers where available, margins, guidance, actuals versus estimates and comparable periods |

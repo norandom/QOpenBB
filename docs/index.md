@@ -14,6 +14,7 @@ The [login correction](../.kiro/specs/openbb-self-service/login-password-policy.
 | Configure optional remote access | [Tips and Tricks](tips-and-tricks.md) |
 | Understand the purpose and operating boundaries | [Goals](goals.md) |
 | See the sequence and owning specifications | [Roadmap](roadmap.md) |
+| Review house financial methods and the separate modeling layer | [House-standard reflection and proposed architecture](../.kiro/specs/analyst-workspace/house-modeling-reflection.md) |
 | Build, verify and prepare the prototype for installation | [Prototype delivery](prototype-delivery.md) |
 | Map FMP, FRED and Yahoo coverage to research needs | [Provider coverage](provider-coverage.md) |
 | Choose a chart for an analyst question | [Historical chart guide](chart-gallery.md) (36 chart screenshots, historical data recipes and interpretation) |
