@@ -167,7 +167,8 @@
     "market-data-metadata",
     "market-data-errors",
     "market-data-fred-acquisition",
-    "market-data-fmp-transport"
+    "market-data-fmp-transport",
+    "market-data-fred-propagation"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34062,6 +34063,22 @@
       "publishedpath": "artifacts/reviewed/market-data-fmp-transport/review.md",
       "publishedSHA256": "4d1a343e73ed9bbc5fcf4cf1ff36440b8cf6a13113b4e81798d9135026fe43da",
       "bytes": 3921,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-fred-propagation/result.md",
+      "sourceSHA256": "6e2bc26b7ea19dc44038c9980f097f5240a7c3c89527f60d5583f04f84c8c959",
+      "publishedpath": "artifacts/reviewed/market-data-fred-propagation/result.md",
+      "publishedSHA256": "6e2bc26b7ea19dc44038c9980f097f5240a7c3c89527f60d5583f04f84c8c959",
+      "bytes": 2119,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-fred-propagation/review.md",
+      "sourceSHA256": "649ca6fb5a0ab8a56f48848353d288c73e85475a06783b6cc894b8e66a073ef8",
+      "publishedpath": "artifacts/reviewed/market-data-fred-propagation/review.md",
+      "publishedSHA256": "649ca6fb5a0ab8a56f48848353d288c73e85475a06783b6cc894b8e66a073ef8",
+      "bytes": 3016,
       "transform": "exact-byte-copy"
     }
   ],

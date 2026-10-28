@@ -134,7 +134,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 1.2, 1.3_
   - _Requirements: 4.1, 6.3, 7.5_
 
-- [ ] 3.2 Propagate provenance through FRED memory and in-flight requests
+- [x] 3.2 Propagate provenance through FRED memory and in-flight requests
   - Own rate-limiter integration after the envelope freezes. Preserve finite retries, coalescing and default raw callers; opt-in callers receive actual acquisition provenance.
   - Done when network/memory/disk/coalesced/bypass tests preserve original timestamps, bounded retry behavior and payload compatibility.
   - Caps: changed rate-limiter/helper scope meets 400/300/50; no broad unrelated rewrite.
@@ -268,3 +268,5 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - 3.1 accepted: data fork `852a80f1b82`, 16 disk/acquisition tests, owning-fork lint and independent review; [evidence](../../../artifacts/reviewed/market-data-fred-acquisition/result.md). Joined 82-file gate passes. Old cache records miss without deletion; raw payload shape remains compatible. Memory/in-flight integration follows in 3.2.
 
 - 2.1 accepted: data fork `20e2ef1b1b4`, 62 transport/profile/income/error checks, independent review and lint; [evidence](../../../artifacts/reviewed/market-data-fmp-transport/result.md). Joined 82-file gate passes. Default callers retain legacy error compatibility; provenance opt-in uses exact typed financial errors and acquisition timestamps. Dataset truncation/completeness belongs to subsequent adapters.
+
+- 3.2 accepted: data fork `a41fbb40273`, 30 propagation/acquisition/FRED tests, independent review and owning-fork lint; [evidence](../../../artifacts/reviewed/market-data-fred-propagation/result.md). Joined 85-file gate passes. Original timestamps survive cache/coalesced paths; raw defaults and finite retry behavior remain. Generic-series financial metadata follows in 3.3.
