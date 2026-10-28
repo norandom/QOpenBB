@@ -172,7 +172,10 @@
     "market-data-fmp-baseline-metadata",
     "market-data-fred-series",
     "node-security-baseline",
-    "market-data-source-join"
+    "market-data-source-join",
+    "market-data-balance",
+    "market-data-cash-flow",
+    "market-data-statements"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34147,6 +34150,46 @@
       "publishedpath": "artifacts/reviewed/market-data-source-join/review.md",
       "publishedSHA256": "8d6764f3b7332b2150f92c7fc44528cd72bb48885247c6d116819bf7f90c921d",
       "bytes": 4960,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-balance/result.md",
+      "sourceSHA256": "fc70e8c93c50fb8115f81fe65b89a4792ebe4cecd63bb2d7eb0abce8618373b6",
+      "publishedpath": "artifacts/reviewed/market-data-balance/result.md",
+      "publishedSHA256": "fc70e8c93c50fb8115f81fe65b89a4792ebe4cecd63bb2d7eb0abce8618373b6",
+      "bytes": 6085,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-cash-flow/result.md",
+      "sourceSHA256": "5ad7d8d694581330040ae7ace90ccb4d1a77bf19d4fd88421fb9753c18d3080a",
+      "publishedpath": "artifacts/reviewed/market-data-cash-flow/result.md",
+      "publishedSHA256": "5ad7d8d694581330040ae7ace90ccb4d1a77bf19d4fd88421fb9753c18d3080a",
+      "bytes": 6045,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-statements/accepted.md",
+      "sourceSHA256": "bf8e933f68d6e2ced378c528504507aadc0c0d9100f5a5555651cb38ec2ae23f",
+      "publishedpath": "artifacts/reviewed/market-data-statements/accepted.md",
+      "publishedSHA256": "bf8e933f68d6e2ced378c528504507aadc0c0d9100f5a5555651cb38ec2ae23f",
+      "bytes": 1838,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-statements/review.md",
+      "sourceSHA256": "62b1800f926fd6b21660be6094dbe0657224d8a02edff422d15984785b076f13",
+      "publishedpath": "artifacts/reviewed/market-data-statements/review.md",
+      "publishedSHA256": "62b1800f926fd6b21660be6094dbe0657224d8a02edff422d15984785b076f13",
+      "bytes": 8034,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-statements/final-source.json",
+      "sourceSHA256": "e86820f1f6dbf7c6822e99967e6734a99d07c6ca7786f3a0f5aa69c3c9ffcf69",
+      "publishedpath": "artifacts/reviewed/market-data-statements/final-source.json",
+      "publishedSHA256": "e86820f1f6dbf7c6822e99967e6734a99d07c6ca7786f3a0f5aa69c3c9ffcf69",
+      "bytes": 776,
       "transform": "exact-byte-copy"
     }
   ],
