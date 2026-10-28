@@ -76,7 +76,7 @@ def test_profile_query_encoding_and_nonmutating_transform(profile_boundary):
     assert query.symbol == "BRK.B,^GSPC,AAPL"
     raw = asyncio.run(Fetcher.aextract_data(query, {"fmp_api_key": SENTINEL}))
     saved = deepcopy(raw)
-    result = Fetcher.transform_data(query, raw)
+    result = Fetcher.transform_data(query, raw).result
     assert [row.symbol for row in result] == ["BRK.B", "^GSPC", "AAPL"]
     assert raw == saved
     assert calls == ["BRK.B", "^GSPC", "AAPL"]
@@ -114,3 +114,68 @@ async def _get_profile(app):
     status = next(m["status"] for m in messages if m["type"] == "http.response.start")
     body = b"".join(m.get("body", b"") for m in messages if m["type"] == "http.response.body")
     return status, body.decode()
+
+
+def test_profile_metadata(profile_boundary):
+    from openbb_fmp.models.equity_profile import FMPEquityProfileFetcher as Fetcher
+    query = Fetcher.transform_query({"symbol": "AAPL,BRK.B"})
+    raw = asyncio.run(Fetcher.aextract_data(query, {"fmp_api_key": SENTINEL}))
+    result = Fetcher.transform_data(query, raw)
+    meta = result.metadata["__qopenbb_financial__"]
+    assert meta["retrieved_at"] == raw.retrieved_at.isoformat().replace("+00:00", "Z")
+    assert meta["fields"]["last_price"]["currency_field"] == "currency"
+    assert meta["fields"]["last_price"]["currency"] is None
+    assert meta["fields"]["last_price"]["unit"] == "currency/share"
+    assert meta["fields"]["market_cap"]["unit"] == "currency"
+    assert meta["fields"]["beta"]["value_origin"] == "provider_calculation"
+    assert meta["bounds"]["returned_count"] == 2
+    assert meta["effective_query"] == {"symbol": "AAPL,BRK.B"}
+    from openbb_core.api.rest_api import app
+    status, text = asyncio.run(_get_profile(app))
+    assert status == 200
+    assert json.loads(text)["extra"]["results_metadata"]["__qopenbb_financial__"]["provider"] == "fmp"
+
+
+@pytest.mark.parametrize("value", ["private-invalid-range", "broken"])
+def test_profile_range_failure_is_safe(profile_boundary, value):
+    from datetime import datetime, UTC
+    from openbb_fmp.models.equity_profile import FMPEquityProfileFetcher as Fetcher
+    from openbb_fmp.utils.helpers import FMPAcquisition
+    from openbb_core.provider.utils.financial_errors import FinancialError
+    row = deepcopy(profile_boundary[0]["AAPL"][0])
+    row["range"] = value
+    query = Fetcher.transform_query({"symbol": "AAPL"})
+    with pytest.raises(FinancialError) as error:
+        Fetcher.transform_data(query, FMPAcquisition([row], datetime.now(UTC)))
+    assert error.value.code == "invalid_response"
+    assert value not in str(error.value)
+
+
+@pytest.mark.parametrize("typed_errors", [False, True])
+@pytest.mark.parametrize("failure", ["authentication", "timeout", "missing_data"])
+def test_provenance_can_preserve_legacy_errors(monkeypatch, typed_errors, failure):
+    from openbb_core.provider.utils import helpers as core
+    from openbb_core.provider.utils.financial_errors import FinancialError
+    from openbb_fmp.utils import helpers
+    from openbb_fmp.utils.errors import FMPUnauthorized, FMPError, FMPEmptyData
+    class Response:
+        status = 401 if failure == "authentication" else 200
+        headers = {}
+        async def json(self):
+            return []
+    async def request(url, **kwargs):
+        assert "typed_errors" not in kwargs
+        if failure == "timeout":
+            raise TimeoutError("unsafe-provider-detail")
+        return await kwargs["response_callback"](Response(), None)
+    monkeypatch.setattr(core, "amake_request", request)
+    expected = FinancialError if typed_errors else {
+        "authentication": FMPUnauthorized, "timeout": FMPError, "missing_data": FMPEmptyData
+    }[failure]
+    with pytest.raises(expected) as error:
+        asyncio.run(helpers.get_data_many("https://fmp.test", with_provenance=True,
+                                         typed_errors=typed_errors))
+    assert error.value.code == failure
+    assert "unsafe-provider-detail" not in str(error.value)
+    if not typed_errors:
+        assert f"FMP[{failure}]" in str(error.value)

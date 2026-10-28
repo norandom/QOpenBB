@@ -115,4 +115,5 @@ First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks
 - [x] Implement safe financial failures and separate query/result validation.
 - [x] Harden FMP transport while preserving baseline consumers.
 - [x] Preserve FRED acquisition times through versioned disk, memory and coalesced requests.
+- [x] Add financial metadata to existing FMP profile and income without baseline contract changes.
 - [ ] Adopt these contracts in FMP/FRED fetchers and the running service; verify real-provider data.

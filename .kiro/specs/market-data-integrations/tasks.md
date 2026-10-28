@@ -60,7 +60,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 1.2, 1.3_
   - _Requirements: 2.4, 2.5, 7.1, 7.2, 7.3, 7.4_
 
-- [ ] 2.2 Adapt existing profile and income behavior to the shared contract
+- [x] 2.2 Adapt existing profile and income behavior to the shared contract
   - Own existing profile/income modules and their existing focused tests, serially. Preserve accepted multi-symbol profile behavior and characterized income zero-limit handling; support verified fiscalYear/calendarYear and filingDate/fillingDate aliases.
   - Done when baseline values remain unchanged and metadata, missing values, acquisition time and query bounds survive serialization; any incompatible baseline behavior returns for explicit compatibility review.
   - Caps: both production files meet 400/300/50; split this unit into profile/income if whole-file extraction cannot fit its timebox.
@@ -270,3 +270,5 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - 2.1 accepted: data fork `20e2ef1b1b4`, 62 transport/profile/income/error checks, independent review and lint; [evidence](../../../artifacts/reviewed/market-data-fmp-transport/result.md). Joined 82-file gate passes. Default callers retain legacy error compatibility; provenance opt-in uses exact typed financial errors and acquisition timestamps. Dataset truncation/completeness belongs to subsequent adapters.
 
 - 3.2 accepted: data fork `a41fbb40273`, 30 propagation/acquisition/FRED tests, independent review and owning-fork lint; [evidence](../../../artifacts/reviewed/market-data-fred-propagation/result.md). Joined 85-file gate passes. Original timestamps survive cache/coalesced paths; raw defaults and finite retry behavior remain. Generic-series financial metadata follows in 3.3.
+
+- 2.2 accepted: data fork `c4de6b13505`, 79 baseline/error/transport checks, independent financial review, lint and Node 24.22.1 combined gate; [evidence](../../../artifacts/reviewed/market-data-fmp-baseline-metadata/result.md). A narrowly reviewed helper option separates acquisition provenance from typed errors, preserving baseline HTTP categories, zero-limit rows and multi-symbol values. No new provider registration is activated.
