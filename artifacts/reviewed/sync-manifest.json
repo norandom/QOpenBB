@@ -175,7 +175,10 @@
     "market-data-source-join",
     "market-data-balance",
     "market-data-cash-flow",
-    "market-data-statements"
+    "market-data-statements",
+    "market-data-discovery",
+    "market-data-daily-history",
+    "market-data-discovery-prices"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34190,6 +34193,46 @@
       "publishedpath": "artifacts/reviewed/market-data-statements/final-source.json",
       "publishedSHA256": "e86820f1f6dbf7c6822e99967e6734a99d07c6ca7786f3a0f5aa69c3c9ffcf69",
       "bytes": 776,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-discovery/result.md",
+      "sourceSHA256": "76283e4e50a49380164b2c2800fb543714636d1f7a07694ca748678c7c4b937a",
+      "publishedpath": "artifacts/reviewed/market-data-discovery/result.md",
+      "publishedSHA256": "76283e4e50a49380164b2c2800fb543714636d1f7a07694ca748678c7c4b937a",
+      "bytes": 5242,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-daily-history/result.md",
+      "sourceSHA256": "fe57bd8534b5465c9575efdeaefa772f2a5a20ca80679828da023557c9037a91",
+      "publishedpath": "artifacts/reviewed/market-data-daily-history/result.md",
+      "publishedSHA256": "fe57bd8534b5465c9575efdeaefa772f2a5a20ca80679828da023557c9037a91",
+      "bytes": 4355,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts\\market-data-discovery-prices\\accepted.md",
+      "sourceSHA256": "16e861adfb9c68a00ca5206e24bfbe0211f900009a1b36170544a0c64da88d9f",
+      "publishedpath": "artifacts/reviewed/market-data-discovery-prices/accepted.md",
+      "publishedSHA256": "16e861adfb9c68a00ca5206e24bfbe0211f900009a1b36170544a0c64da88d9f",
+      "bytes": 2109,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts\\market-data-discovery-prices\\review.md",
+      "sourceSHA256": "eaac136c51c12893bc7689783aa81c23b8c70416bbd7b0832a863dc74a850c4f",
+      "publishedpath": "artifacts/reviewed/market-data-discovery-prices/review.md",
+      "publishedSHA256": "eaac136c51c12893bc7689783aa81c23b8c70416bbd7b0832a863dc74a850c4f",
+      "bytes": 6672,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts\\market-data-discovery-prices\\final-source.json",
+      "sourceSHA256": "047093d49c490abc1b4856e23f9fbf5de52d6bb41831c676ee802db7ef871de9",
+      "publishedpath": "artifacts/reviewed/market-data-discovery-prices/final-source.json",
+      "publishedSHA256": "047093d49c490abc1b4856e23f9fbf5de52d6bb41831c676ee802db7ef871de9",
+      "bytes": 775,
       "transform": "exact-byte-copy"
     }
   ],
