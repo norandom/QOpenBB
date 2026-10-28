@@ -133,3 +133,10 @@ These source adapters are not yet part of a newly published runtime image. The s
 - [ ] Complete periodic key metrics, financial ratios and enterprise-value inputs, then register and verify installed consumers with real provider data.
 
 No new runtime image is published at this adapter-only checkpoint.
+
+## FMP metrics and ratios checkpoint
+
+- [x] Source adapters for periodic key metrics and ratios, with explicit units, provider-calculation labels and unsupported TTM modes. Fourteen of 26 initial data tasks accepted. [Evidence](../artifacts/reviewed/market-data-metrics-ratios/accepted.md).
+- [ ] Add enterprise-value inputs and complete consumer schema/runtime integration before live-provider and widget acceptance.
+
+No new runtime image is published at this source-only checkpoint.
