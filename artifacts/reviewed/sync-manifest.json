@@ -178,7 +178,10 @@
     "market-data-statements",
     "market-data-discovery",
     "market-data-daily-history",
-    "market-data-discovery-prices"
+    "market-data-discovery-prices",
+    "market-data-key-metrics",
+    "market-data-financial-ratios",
+    "market-data-metrics-ratios"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34233,6 +34236,46 @@
       "publishedpath": "artifacts/reviewed/market-data-discovery-prices/final-source.json",
       "publishedSHA256": "047093d49c490abc1b4856e23f9fbf5de52d6bb41831c676ee802db7ef871de9",
       "bytes": 775,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-key-metrics/result.md",
+      "sourceSHA256": "36a7e2cfcb9e406923e4e8f5273f17a63183d7306363fb466d013697611c3449",
+      "publishedpath": "artifacts/reviewed/market-data-key-metrics/result.md",
+      "publishedSHA256": "36a7e2cfcb9e406923e4e8f5273f17a63183d7306363fb466d013697611c3449",
+      "bytes": 4579,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-financial-ratios/result.md",
+      "sourceSHA256": "24637249e3adf358ff92f62665f2e744b734f63f7957508dccadc34a9b12e333",
+      "publishedpath": "artifacts/reviewed/market-data-financial-ratios/result.md",
+      "publishedSHA256": "24637249e3adf358ff92f62665f2e744b734f63f7957508dccadc34a9b12e333",
+      "bytes": 4197,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts\\market-data-metrics-ratios\\accepted.md",
+      "sourceSHA256": "8be7e45e6fbf667cabb6042fabcd9e691c87a8a8329d575122cf8b9e27b22280",
+      "publishedpath": "artifacts/reviewed/market-data-metrics-ratios/accepted.md",
+      "publishedSHA256": "8be7e45e6fbf667cabb6042fabcd9e691c87a8a8329d575122cf8b9e27b22280",
+      "bytes": 2261,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts\\market-data-metrics-ratios\\review.md",
+      "sourceSHA256": "29ebb7bd31c2fe98d93791e4cf098884a2e0c2e199ec3e165198b85e552ad834",
+      "publishedpath": "artifacts/reviewed/market-data-metrics-ratios/review.md",
+      "publishedSHA256": "29ebb7bd31c2fe98d93791e4cf098884a2e0c2e199ec3e165198b85e552ad834",
+      "bytes": 6851,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts\\market-data-metrics-ratios\\final-source.json",
+      "sourceSHA256": "e2d2dda0d03be4d7405567babced071657a04cf6d83f38b6ded58dbd85bebfa7",
+      "publishedpath": "artifacts/reviewed/market-data-metrics-ratios/final-source.json",
+      "publishedSHA256": "e2d2dda0d03be4d7405567babced071657a04cf6d83f38b6ded58dbd85bebfa7",
+      "bytes": 786,
       "transform": "exact-byte-copy"
     }
   ],
