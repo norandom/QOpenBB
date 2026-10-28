@@ -47,7 +47,7 @@ The default steering files `product.md`, `tech.md` and `structure.md` are absent
 
 ## Requirements review gate
 
-Independent Astra review passed after one bounded repair pass on 2026-10-28. Two Sol research lanes supplied the provider and consumer findings above. The reviewed document has eight numbered requirement areas and 44 acceptance criteria. Corrections normalized EARS phrasing, made broad dataset delivery an obligation rather than a catalog-only promise, and retained the named OpenBB reuse mechanisms as binding owner constraints. Human requirements approval remains pending; design/tasks and implementation are not approved.
+Independent Astra review passed after one bounded repair pass on 2026-10-28. Two Sol research lanes supplied the provider and consumer findings above. The reviewed document has eight numbered requirement areas and 44 acceptance criteria. Corrections normalized EARS phrasing, made broad dataset delivery an obligation rather than a catalog-only promise, and retained the named OpenBB reuse mechanisms as binding owner constraints. Requirements were subsequently owner-approved; current phase approvals are recorded in spec.json.
 
 The controller verifies numeric IDs, EARS starts, links and JSON/TOML parsing before commit. This is documentation verification only; no provider, browser, financial calculation or image acceptance is claimed.
 
@@ -117,10 +117,16 @@ Account entitlement, actual stable responses, detailed TTM semantics, paginated 
 
 ## Final design review and decisions
 
-Independent Astra design review passed after one local repair pass on 2026-10-28. All 44 requirements appear in the traceability table. Requirements approval is recorded; design approval remains pending.
+Independent Astra design review passed after one local repair pass on 2026-10-28. All 44 requirements appear in the traceability table. Requirements and design approval are recorded.
 
 The four repaired seams are now explicit in design.md: the generated-descriptor-based service guard enforces explicit provider selection on the named non-baseline operations; common metadata uses `extra.results_metadata.__qopenbb_financial__` while preserving FRED's per-series entries and available vintage facts; advertised-route validation/response/unexpected failures use sanitized handlers and safe logging; FRED cache/in-flight acquisitions retain original retrieval timestamps through an opt-in provenance envelope while default raw callers remain compatible. These are designed behavior changes, not verified runtime claims.
 
 Additional inspected sources were `providers/fred/openbb_fred/models/series.py`, `utils/rate_limiter.py`, `utils/cache.py`, core `api/exception_handlers.py`, `app/model/defaults.py`, `app/static/container.py` and API `router/commands.py`. Cache-key versioning avoids inventing retrieval times for legacy entries; the installed runtime keeps its existing disk-cache-off setting. Required response metadata is not injected through optional output callbacks. No application/source package changes were made.
 
-Controller checks confirm 44/44 criterion mapping, populated boundaries/file plan and valid local document links/metadata. Implementation task generation remains gated on owner design approval. Tasks must include the existing inventory/checker foundation, scoped source ownership, independent review and real-provider/browser acceptance without multiplying test harnesses.
+Controller checks confirm 44/44 criterion mapping, populated boundaries/file plan and valid local document links/metadata. Owner design approval on 2026-10-28 opened task generation. Tasks must include the existing inventory/checker foundation, scoped source ownership, independent review and real-provider/browser acceptance without multiplying test harnesses.
+
+## Task-plan review gate
+
+The first financial-input batch contains 26 executable tasks in six groups. A fresh independent Astra sanity review passed after one repair: task 5.1 now installs and identifies the candidate fork before service integration tests; final root pins and catalogs are promoted together later. The [review](task-plan-review.md) records the bounded gate.
+
+Controller checks found an acyclic dependency graph, explicit done/boundary/complexity criteria on every task, and all 44 requirement IDs mapped across executable tasks and explicitly deferred family obligations. This is planning coverage, not implemented coverage. The owner must approve [tasks](tasks.md) before implementation. Shared contracts precede up to two disjoint implementation lanes, with independent review and serialized joins. No tests, live-provider requests or image builds were run for this documentation change.

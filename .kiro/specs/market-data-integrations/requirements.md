@@ -4,7 +4,7 @@
 
 Financial engineers need exploratory access to FMP, complementary Yahoo Finance prices and FRED economic series through consistent contracts. A dataset must be usable outside any single demonstration dashboard. The same financial meaning must reach widgets and later AI consumers, while the chosen provider remains visible.
 
-This specification supplies data for the [investment-analysis workflow](../analyst-workspace/investment-analysis-contract.md). Its first delivery supports quarterly financial analysis and peer valuation; the complete roadmap retains broader FMP research coverage. Requirements are proposed for owner approval; implementation and provider entitlement are not yet accepted.
+This specification supplies data for the [investment-analysis workflow](../analyst-workspace/investment-analysis-contract.md). Its first delivery supports quarterly financial analysis and peer valuation; the complete roadmap retains broader FMP research coverage. Requirements and design are owner-approved. The first implementation task batch is awaiting approval; implementation and provider entitlement are not yet accepted.
 
 ## Boundary context
 
