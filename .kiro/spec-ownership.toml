@@ -1,14 +1,14 @@
 # Scope handover, not test acceptance; historical criteria/evidence stay intact.
 schema_version = 1
 roadmap = "docs/roadmap.md"
-active_delivery = "prototype"
+active_delivery = "analyst-workspace: investment analysis discovery"
 
 [[ownership]]
 spec = "openbb-self-service"
 scope = "Existing foundation, prototype CI/CD, packaging and pull-only deployment"
 legacy_tasks = ["3.8: installed catalog/release identity only", "4.1-4.4: prototype smoke only, excluding persistence acceptance", "7.1-7.4", "8.1-8.2 and 8.5-8.6: prototype services only"]
-state = "active"
-release_gate = true
+state = "prototype-delivered; follow-ups separately tracked"
+release_gate = false
 
 [[ownership]]
 spec = "market-data-integrations"
@@ -19,7 +19,7 @@ release_gate = false
 
 [[ownership]]
 spec = "analyst-workspace"
-scope = "Reusable widgets, commands, linked time/instrument context, research-context persistence, theme and remaining renderer/table functionality"
+scope = "Investment analysis, quarterly results, peer valuation, DCF/WACC/macro, inline news/transcripts and saved research context; reusable widgets, commands, theme and remaining renderer/table functionality"
 legacy_tasks = ["2: remaining renderer/UI expansion", "4.3: complete controls parity", "4.1-4.2 and 4.5: dashboard persistence acceptance", "UI-09: remaining persistence obligations", "UI-10 through UI-16: remaining obligations"]
 state = "transferred-open"
 release_gate = false

@@ -37,15 +37,17 @@ Deployment [login correction](.kiro/specs/openbb-self-service/login-password-pol
 - [x] Verify browser login, incorrect-password rejection and password changes on the corrected local image.
 - [x] Publish and verify the corrected prebuilt alpha images: [publication review](artifacts/reviewed/login-password/publication-review.md).
 
+- [x] Deliver the first prototype, including accepted chart milestones, login fixes, uv packaging and Valkey; owner confirmed server startup on 2026-10-28. [First-spec closure](.kiro/specs/openbb-self-service/prototype-closure.md).
+
 Snapshot: 2026-10-28. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
 | Area | What exists | What remains |
 | --- | --- | --- |
-| Prototype | Published-image Compose login, starter income widget, refresh and diagnostics accepted; local pull-only install rehearsed | Owner-server deployment; generic required-symbol guard |
+| Prototype | Published-image Compose login, starter income widget, refresh and diagnostics accepted; local pull-only install rehearsed; owner confirms deployed alpha is up | Generic required-symbol guard; broader host acceptance |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
 | Data | Packaged starter widgets and 36-chart historical FMP gallery; annual AAPL income values and refresh accepted through the installed route | Broader live provider/widget acceptance, Yahoo adapter and named discovery |
 | Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut, Box Plot, Range Bar/Area, Waterfall and Radar Line/Area behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
-| Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and broader analyst persistence |
+| Analyst workflow | Existing dashboard editor and widget foundations; [investment-analysis contract](.kiro/specs/analyst-workspace/investment-analysis-contract.md) | Quarterly analysis, peer valuation, FMP DCF/WACC with macro context, inline research and saved assumptions |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
 
 Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-milestone.md):

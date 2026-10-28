@@ -1,5 +1,19 @@
 # Implementation plan
 
+## Current prototype: delivered on 2026-10-28
+
+The [closure and scope reconciliation](prototype-closure.md) records nine completed delivery milestones and the remaining owners. The original all-features task bodies below are historical; an unchecked transferred gate is not an unfinished prototype release.
+
+- [x] Full Workspace/data API packaged and served through two-service Compose (P1).
+- [x] Dagger builds, public image pulls and tagged alpha publication (P2).
+- [x] Installed widgets, onboarding fixes and supported live-FMP journey (P3).
+- [x] Local installation rehearsal and owner-reported server deployment (P4).
+- [x] Accepted chart ports and historical FMP gallery (P5).
+- [x] Inspected Highcharts runtime dependency removal (P6).
+- [x] Login/password policy and bootstrap-password update verification (P7).
+- [x] Native uv packaging with readable Python source (P8).
+- [x] Redis-to-Valkey replacement and verified alpha publication (P9).
+
 2026-10-19 owner handover: [prototype-first roadmap](../../../docs/roadmap.md) and [spec ownership](../../spec-ownership.toml) govern current sequencing. Historical tasks retain their unchecked or evidenced state. Transferred feature work does not block the prototype; the [agile workflow](../../steering/delivery-workflow.md) replaces whole-spec delivery gates.
 
 Current production UI priorities are collected in the [UI parity worklist](ui-parity-worklist.md). It distinguishes actual application deliverables from the historical source-helper and reference-test tasks below; it does not alter their recorded approval or acceptance.

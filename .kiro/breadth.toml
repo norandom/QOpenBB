@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "prototype-owner-deployment"
+requirements = ["openbb-self-service/prototype-closure.md:P4"]
+planned_checks = []
+test_paths = []
+status = "passed"
+evidence = ["Owner reported current alpha is up on 2026-10-28 after alpha-40689838352-1 publication. Owner-reported startup acceptance only; no agent-observed host identity, HTTPS/provider matrix or recovery audit. Local application and public release identities have separate reviewed records in prototype-closure.md."]
+
+[[capabilities]]
 id = "investment-analysis-valuation"
 requirements = ["analyst-workspace/investment-analysis-contract.md:IA1-IA10"]
 planned_checks = ["actual FMP/FRED entitlement and response contract", "quarterly and cash-conversion reconciliation", "peer multiples and EV-equity bridge", "DCF/WACC assumption consistency and sensitivities", "inline research context and saved-state recreation"]

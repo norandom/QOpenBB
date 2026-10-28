@@ -1,8 +1,8 @@
 # Roadmap
 
-Deploy the current QOpenBB prototype next, then evolve it through small verified deliveries. This owner-approved sequence replaces the former all-features-before-release plan. Existing evidence and unfinished obligations remain intact.
+The prototype is deployed; the next delivery track is investment analysis and valuation through small verified slices. This owner-approved sequence replaces the former all-features-before-release plan. Existing evidence and unfinished obligations remain intact.
 
-## Now: deploy the prototype
+## Delivered: prototype foundation
 
 Scope: existing Full Workspace and installed data API. Further provider coverage, renderer families, theme changes, commands, AI, Excel and custom sources are not prerequisites. Preserve working functionality and disclose supported capabilities and gaps.
 
@@ -17,9 +17,9 @@ Owner clarification: saved research-context persistence acceptance moves to `ana
 
 Target: HTTP on `0.0.0.0:23003`, `qopenbb.example.com` through owner-managed cloudflared, relative bind-mounted data. The owner deploys locally with Compose; no SSH, tunnel service or Jupyter dependency.
 
-Latest accepted chart milestone: [alpha-40652638534-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1) includes the 36-chart historical FMP gallery in Apps. Local acceptance covers the changed combination assignment, native save, fresh authenticated reopening and retained-bind Compose recreation. [Publication evidence](../artifacts/reviewed/chart-gallery/publication-review.md) verifies the public image pair separately; browser acceptance has not been repeated on the CI image bytes. Owner-server deployment remains open. See the [current chart checklist](echarts-status.md) for individual chart milestones.
+Latest accepted chart milestone: [alpha-40652638534-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1) includes the 36-chart historical FMP gallery in Apps. Local acceptance covers the changed combination assignment, native save, fresh authenticated reopening and retained-bind Compose recreation. [Publication evidence](../artifacts/reviewed/chart-gallery/publication-review.md) verifies the public image pair separately; browser acceptance has not been repeated on the CI image bytes. This historical chart record is separate from the current owner-confirmed prototype deployment. See the [current chart checklist](echarts-status.md) for individual chart milestones.
 
-The completed prototype batch repairs four observed integration gaps: an absent first-login questionnaire returns HTTP 200/null, the data image packages and serves its existing widget/app catalog, optional external app previews use Workspace's existing fallback, and the data-only backend advertises an empty agent list. [alpha-40467871625-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1) passes CI, release-asset checks, six anonymous pulls and the fresh-account assembled Compose journey. P3 and the local P4 installation rehearsal are accepted for onboarding, later login, live annual AAPL income values, refresh and clean diagnostics. Owner-server deployment, the generic-widget required-symbol guard, broader provider acceptance, analyst persistence and backup/restore remain open. AI remains a separate spec. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md), [application result](../artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](prototype-delivery.md#current-prototype-repair).
+The completed prototype batch repairs four observed integration gaps: an absent first-login questionnaire returns HTTP 200/null, the data image packages and serves its existing widget/app catalog, optional external app previews use Workspace's existing fallback, and the data-only backend advertises an empty agent list. [alpha-40467871625-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1) passes CI, release-asset checks, six anonymous pulls and the fresh-account assembled Compose journey. P3 and the local P4 installation rehearsal are accepted for onboarding, later login, live annual AAPL income values, refresh and clean diagnostics. The generic-widget required-symbol guard, broader provider acceptance, analyst persistence and backup/restore remain open. Current owner-reported startup is recorded below. AI remains a separate spec. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md), [application result](../artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](prototype-delivery.md#current-prototype-repair).
 
 Latest delivery: [alpha-40689838352-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40689838352-1) packages native uv, readable Python source and Valkey. The owner reported that it is up on 2026-10-28. This records startup confirmation, not an independent server-side financial or persistence audit. [Runtime and publication evidence](prototype-delivery.md) remain separately scoped.
 
@@ -34,11 +34,13 @@ The [investment-analysis contract](../.kiro/specs/analyst-workspace/investment-a
 
 These are planned financial capabilities, not completed chart-rendering features. Detailed scope and acceptance are IA1-IA10 in the contract.
 
+[First-spec closure](../.kiro/specs/openbb-self-service/prototype-closure.md) records nine completed delivery milestones and transferred/deferred obligations.
+
 ## Subsequent workstreams
 
 | Spec | Responsibility | Sequence |
 | --- | --- | --- |
-| [openbb-self-service](../.kiro/specs/openbb-self-service/spec.json) | Foundation and prototype delivery | Active now; close with explicit scope/evidence handover |
+| [openbb-self-service](../.kiro/specs/openbb-self-service/spec.json) | Foundation and prototype delivery | Prototype delivered; [closure and remaining work](../.kiro/specs/openbb-self-service/prototype-closure.md) |
 | [market-data-integrations](../.kiro/specs/market-data-integrations/requirements.md) | Broad primary FMP coverage, yfinance price gaps, FRED economic series and future providers; consistent UX with labeled provenance | After prototype; installed adapters stay in baseline |
 | [analyst-workspace](../.kiro/specs/analyst-workspace/requirements.md) | Saved research context, widgets, commands, linked instrument/time views, Bloomberg-inspired theme and remaining renderer/table functionality | After prototype; build on existing work |
 | [workspace-ai](../.kiro/specs/workspace-ai/requirements.md) | Anthropic, grounding, streaming and recovery | Independent of prototype |

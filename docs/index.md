@@ -1,6 +1,6 @@
 # QOpenBB documentation
 
-Deploy the prototype next, then extend its provider coverage and analyst workflows. Start with the delivery status to see what is implemented, what has been verified and what still prevents release.
+The prototype is deployed. Start with the [first-spec closure](../.kiro/specs/openbb-self-service/prototype-closure.md) for completed work and the [investment-analysis contract](../.kiro/specs/analyst-workspace/investment-analysis-contract.md) for the next analyst experience.
 
 The [login correction](../.kiro/specs/openbb-self-service/login-password-policy.md) is published in [alpha-40676586728-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1). Existing-password authentication and bootstrap password replacement are verified within the documented local scope.
 

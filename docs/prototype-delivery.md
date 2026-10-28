@@ -9,7 +9,7 @@ Published: [alpha-40689838352-1](https://github.com/norandom/QOpenBB/releases/ta
 | workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:957f02d18b8365412e68016b1b9e7184a4383cec1fc35774fdc0193ab35d219f` |
 | data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:59b94139b34e2195e83d69be959c3f242fdf4ddccf5b2764c0d5154612aab057` |
 
-The [release manifest](https://github.com/norandom/QOpenBB/releases/download/alpha-40689838352-1/manifest.json) binds this exact pair to native uv backend metadata/lock, readable Python application source under CPython and embedded Valkey 9.0.7. [Publication verification](../artifacts/reviewed/python-source-packaging/publication-review.md) records the public identities and pulls. [Application acceptance](../artifacts/reviewed/python-source-packaging/runtime-review.md) uses local image `sha256:6417e5fb24339894463a5a4bd9d095b127b5ac46694755f4a7c32b96f861833f` from Workspace `dfda735c527663dd7ecc2f80af18e25843f575af`: the 36-chart gallery saves and reopens through a fresh login, and login/password-change checks pass with clean diagnostics. A separate synthetic Redis 7.0.15 snapshot/RQ job and database-marker probe passes container recreation; gallery recreation is not claimed by that browser test. CI image bytes have not repeated browser acceptance. Owner-server deployment and rollback remain unverified.
+The [release manifest](https://github.com/norandom/QOpenBB/releases/download/alpha-40689838352-1/manifest.json) binds this exact pair to native uv backend metadata/lock, readable Python application source under CPython and embedded Valkey 9.0.7. [Publication verification](../artifacts/reviewed/python-source-packaging/publication-review.md) records the public identities and pulls. [Application acceptance](../artifacts/reviewed/python-source-packaging/runtime-review.md) uses local image `sha256:6417e5fb24339894463a5a4bd9d095b127b5ac46694755f4a7c32b96f861833f` from Workspace `dfda735c527663dd7ecc2f80af18e25843f575af`: the 36-chart gallery saves and reopens through a fresh login, and login/password-change checks pass with clean diagnostics. A separate synthetic Redis 7.0.15 snapshot/RQ job and database-marker probe passes container recreation; gallery recreation is not claimed by that browser test. CI image bytes have not repeated browser acceptance. The owner confirmed the current alpha is up on 2026-10-28. This is reported startup, not an independent server audit; rollback remains unverified. See the [first-spec closure](../.kiro/specs/openbb-self-service/prototype-closure.md).
 
 ## Current prototype repair
 
@@ -22,7 +22,8 @@ Earlier assembled runs exposed the missing catalog, external FRED preview and ag
 - [x] Verify the repaired release assets and both public image identities, including all six anonymous pulls.
 - [x] Complete the isolated published-image Compose journey: first login, installed annual AAPL income widget, displayed identity/date/currency/revenue, refresh and strict diagnostics.
 - [x] Complete the pull-only local installation rehearsal.
-- [ ] Verify owner-server deployment and the generic-widget empty-required-symbol guard. Broader providers, analyst persistence and backup/restore remain separate obligations.
+- [x] Receive owner confirmation that the deployed alpha is up (2026-10-28); detailed host inspection is not claimed.
+- [ ] Verify the generic-widget empty-required-symbol guard. Broader providers, analyst persistence and backup/restore remain separate obligations.
 
 ## Build and publication
 
