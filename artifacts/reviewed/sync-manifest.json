@@ -166,7 +166,8 @@
     "market-data-foundation",
     "market-data-metadata",
     "market-data-errors",
-    "market-data-fred-acquisition"
+    "market-data-fred-acquisition",
+    "market-data-fmp-transport"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34045,6 +34046,22 @@
       "publishedpath": "artifacts/reviewed/market-data-fred-acquisition/review.md",
       "publishedSHA256": "991c5eed2b128cfab88ba4bca1fa2a1e7e18fb89d3ec936c93c8bc166cef34ed",
       "bytes": 3058,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-fmp-transport/result.md",
+      "sourceSHA256": "6ba4605a23592133e0b39da7c69ebbbd53535a506d31234cf1bf8091e53a554b",
+      "publishedpath": "artifacts/reviewed/market-data-fmp-transport/result.md",
+      "publishedSHA256": "6ba4605a23592133e0b39da7c69ebbbd53535a506d31234cf1bf8091e53a554b",
+      "bytes": 3723,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-fmp-transport/review.md",
+      "sourceSHA256": "4d1a343e73ed9bbc5fcf4cf1ff36440b8cf6a13113b4e81798d9135026fe43da",
+      "publishedpath": "artifacts/reviewed/market-data-fmp-transport/review.md",
+      "publishedSHA256": "4d1a343e73ed9bbc5fcf4cf1ff36440b8cf6a13113b4e81798d9135026fe43da",
+      "bytes": 3921,
       "transform": "exact-byte-copy"
     }
   ],

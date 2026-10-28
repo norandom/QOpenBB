@@ -52,7 +52,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
 
 ## 2. Restore FMP financial inputs
 
-- [ ] 2.1 Harden shared extraction and freeze provider query conventions
+- [x] 2.1 Harden shared extraction and freeze provider query conventions
   - Own shared FMP transport/classification/period definitions. Reuse safe encoded requests, timestamp successful acquisition, and remove the unsafe multi-request bypass before any restored fetcher uses it.
   - Done when timeout, entitlement, throttling, malformed payload and bounded multi-request fixtures preserve safe categories; annual/quarterly bounds and no-new-retry behavior are stable for downstream adapters.
   - Caps: modified utilities meet 400/300/50, extracting cohesive transport code only if needed; tests excluded.
@@ -266,3 +266,5 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - 1.3 accepted: data fork `ee6e37a7dc1`, 27 safe-error/validation checks plus independent verification and owning-fork lint; [evidence](../../../artifacts/reviewed/market-data-errors/result.md). Final helpers measure 120/67/17 and 36/13/4. API handlers and fetcher adoption remain later tasks. Include owning-fork Ruff configuration in subsequent worker validation.
 
 - 3.1 accepted: data fork `852a80f1b82`, 16 disk/acquisition tests, owning-fork lint and independent review; [evidence](../../../artifacts/reviewed/market-data-fred-acquisition/result.md). Joined 82-file gate passes. Old cache records miss without deletion; raw payload shape remains compatible. Memory/in-flight integration follows in 3.2.
+
+- 2.1 accepted: data fork `20e2ef1b1b4`, 62 transport/profile/income/error checks, independent review and lint; [evidence](../../../artifacts/reviewed/market-data-fmp-transport/result.md). Joined 82-file gate passes. Default callers retain legacy error compatibility; provenance opt-in uses exact typed financial errors and acquisition timestamps. Dataset truncation/completeness belongs to subsequent adapters.
