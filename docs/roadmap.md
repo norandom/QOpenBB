@@ -21,7 +21,18 @@ Latest accepted chart milestone: [alpha-40652638534-1](https://github.com/norand
 
 The completed prototype batch repairs four observed integration gaps: an absent first-login questionnaire returns HTTP 200/null, the data image packages and serves its existing widget/app catalog, optional external app previews use Workspace's existing fallback, and the data-only backend advertises an empty agent list. [alpha-40467871625-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1) passes CI, release-asset checks, six anonymous pulls and the fresh-account assembled Compose journey. P3 and the local P4 installation rehearsal are accepted for onboarding, later login, live annual AAPL income values, refresh and clean diagnostics. Owner-server deployment, the generic-widget required-symbol guard, broader provider acceptance, analyst persistence and backup/restore remain open. AI remains a separate spec. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md), [application result](../artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](prototype-delivery.md#current-prototype-repair).
 
-Latest delivery: [alpha-40676586728-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1) corrects login/current-password validation. [Application acceptance](../artifacts/reviewed/login-password/application-review.md) and [publication verification](../artifacts/reviewed/login-password/publication-review.md) are complete; owner-server login remains to be confirmed.
+Latest delivery: [alpha-40689838352-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40689838352-1) packages native uv, readable Python source and Valkey. The owner reported that it is up on 2026-10-28. This records startup confirmation, not an independent server-side financial or persistence audit. [Runtime and publication evidence](prototype-delivery.md) remain separately scoped.
+
+## Next: investment analysis and valuation
+
+The [investment-analysis contract](../.kiro/specs/analyst-workspace/investment-analysis-contract.md) defines the next analyst workflow: quarterly performance and cash conversion, defensible peer valuation, FMP DCF with a cost-of-capital/macro bridge, then linked expectations, news, transcripts and thesis context. Reuse OpenBB widgets and linking; no embedded browser is required. CFA-level analytical discipline is a quality target, not a certification claim.
+
+- [ ] Verify actual FMP/FRED data coverage and existing implementation reuse for the first financial workflow.
+- [ ] Deliver quarterly financial analysis and peer valuation, with consistent periods, metric definitions and saved research context.
+- [ ] Connect FMP DCF assumptions to rates, credit conditions, WACC and defensible sensitivities.
+- [ ] Complete linked expectations, inline news/transcripts and thesis tracking.
+
+These are planned financial capabilities, not completed chart-rendering features. Detailed scope and acceptance are IA1-IA10 in the contract.
 
 ## Subsequent workstreams
 

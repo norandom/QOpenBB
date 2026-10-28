@@ -38,3 +38,7 @@ Acceptance of each increment requires four connected proofs:
 Then expand FMP research families and add yfinance/FRED or later providers for explicit gaps. A common control does not make their instruments, adjustment rules or frequencies interchangeable. Record actual tests and evidence in the [breadth map](../.kiro/breadth.toml); planned checks remain planned. Reconsider reuse only when a reproducible failure shows that the existing mechanism cannot meet an accepted requirement.
 
 Scope groups by research meaning. A Company group can drive FMP profile, statements, news and estimates. A Date Range group can align equity, commodity and macro views without replacing a FRED series identifier with an equity symbol. Provider-specific instrument resolution and fiscal-period alignment remain data contracts to verify; existing parameter propagation does not solve them automatically.
+
+## Financial workflow acceptance
+
+The [investment-analysis contract](../.kiro/specs/analyst-workspace/investment-analysis-contract.md) supersedes a company-selector-only delivery objective. Existing parameter controls are the mechanism; quarterly analysis, peer valuation and an inspectable DCF/capital-cost bridge are the analyst outcomes. Reuse remains the default, while provider access and financial correctness need their own evidence.

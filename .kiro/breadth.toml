@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "investment-analysis-valuation"
+requirements = ["analyst-workspace/investment-analysis-contract.md:IA1-IA10"]
+planned_checks = ["actual FMP/FRED entitlement and response contract", "quarterly and cash-conversion reconciliation", "peer multiples and EV-equity bridge", "DCF/WACC assumption consistency and sensitivities", "inline research context and saved-state recreation"]
+test_paths = []
+status = "planned"
+evidence = ["Owner-approved direction 2026-10-28; bounded contract and staged sequence recorded. No implementation, valuation calculation or provider entitlement acceptance claimed. Existing extension paths are described in docs/capability-reuse.md; concrete affected tests will be assigned in each slice."]
+
+[[capabilities]]
 id = "workspace-python-valkey-packaging"
 requirements = ["openbb-self-service/python-source-packaging.md:PY1-PY4", "openbb-self-service/valkey-packaging.md:VK1-VK4"]
 planned_checks = []
