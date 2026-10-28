@@ -1,6 +1,6 @@
 # Roadmap
 
-The prototype is deployed; the next delivery track is investment analysis and valuation through small verified slices. This owner-approved sequence replaces the former all-features-before-release plan. Existing evidence and unfinished obligations remain intact.
+The prototype is deployed. The active implementation priority is broad FMP data coverage, followed by house financial modeling in a separate repository. This session establishes the [modeling specification stub](../.kiro/specs/financial-modeling/brief.md), executable-validation requirements and extension rules only. Later FRED/EconDB expansion follows the same separation. Existing evidence and unfinished obligations remain intact.
 
 ## Delivered: prototype foundation
 
@@ -31,7 +31,7 @@ The [investment-analysis contract](../.kiro/specs/analyst-workspace/investment-a
 
 - [ ] Verify actual FMP/FRED data coverage and existing implementation reuse for the first financial workflow.
 - [ ] Deliver quarterly financial analysis and peer valuation, with consistent periods, metric definitions and saved research context.
-- [ ] Connect FMP DCF assumptions to rates, credit conditions, WACC and defensible sensitivities.
+- [ ] Deliver house DCF/WACC and verified sensitivities through the separate modeling layer; retain FMP DCF as an optional comparison.
 - [ ] Complete linked expectations, inline news/transcripts and thesis tracking.
 
 These are planned financial capabilities, not completed chart-rendering features. Detailed scope and acceptance are IA1-IA10 in the contract.
@@ -44,6 +44,7 @@ These are planned financial capabilities, not completed chart-rendering features
 | --- | --- | --- |
 | [openbb-self-service](../.kiro/specs/openbb-self-service/spec.json) | Foundation and prototype delivery | Prototype delivered; [closure and remaining work](../.kiro/specs/openbb-self-service/prototype-closure.md) |
 | [market-data-integrations](../.kiro/specs/market-data-integrations/requirements.md) | Broad primary FMP coverage, yfinance price gaps, FRED economic series and future providers; consistent UX with labeled provenance | After prototype; installed adapters stay in baseline |
+| [financial-modeling](../.kiro/specs/financial-modeling/brief.md) | Separate-repository house methods, financial assertions, model API contracts and reproducible calculations | Stub only now; implementation follows verified provider inputs and Kiro approvals; later three historical / five forecast years |
 | [analyst-workspace](../.kiro/specs/analyst-workspace/requirements.md) | Saved research context, widgets, commands, linked instrument/time views, Bloomberg-inspired theme and remaining renderer/table functionality | After prototype; build on existing work |
 | [workspace-ai](../.kiro/specs/workspace-ai/requirements.md) | Anthropic, grounding, streaming and recovery | Independent of prototype |
 | [openbb-excel](../.kiro/specs/openbb-excel/requirements.md) | Add-in, generated functions, authentication and Office acceptance | Retained dependency: Anthropic accepted first |

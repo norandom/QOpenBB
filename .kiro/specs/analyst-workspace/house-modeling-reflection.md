@@ -4,6 +4,8 @@
 
 ## Conclusion
 
+Follow-up owner direction: broad FMP acquisition is first; modeling will live in a separate Git repository, with only a specification stub in this session. The [financial-modeling stub](../financial-modeling/brief.md) records executable validation, widget/API compatibility, cross-repository breadth and agent-first Kiro extension rules. Later FRED/EconDB work follows the same separation. Its requirements develop this reflection; implementation remains unstarted.
+
 Keep the owned OpenBB provider framework as the data layer. Introduce a separately specified financial-modeling layer for house methods, assumptions, forecasts and verified calculations. Keep Workspace as their consumer. FMP DCF is an optional external comparator, never the authoritative house model or a shortcut for its sensitivities.
 
 The existing requirements cover financial subject matter and data provenance well. They do not yet specify a complete house calculation contract, method governance or an independent modeling boundary. Close those gaps before implementing valuations. Continue the approved statement-acquisition work without embedding model logic in the adapters.

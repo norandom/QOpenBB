@@ -1555,3 +1555,11 @@ planned_checks = []
 test_paths = ["tests/delivery/test_quality_cli.py", "tests/delivery/test_prototype_workflow.py", "tests/quality/test_ts_adapter.py"]
 status = "passed"
 evidence = ["2026-10-28: Workspace c652b909 and data API d1bb4821 accepted component pins synchronized. Canonical pipeline/ci.sh check: 657 maintained files pass on Node24.22.1/TS6.0.3;193 delivery tests pass; independent17 adapter tests pass. Initial549-file TypeScript batch exceeded60s; bounded180s repair passes without exclusions or relaxed assertions. artifacts/reviewed/market-data-source-join/review.md. Catalog provenance stays historical; no task5.3, live-provider, image or deployment completion claim."]
+
+[[capabilities]]
+id = "financial-model-contract-validation"
+requirements = ["financial-modeling/requirements.md:1-6"]
+planned_checks = ["supplied-input model isolation", "financial preconditions invariants postconditions and typed outcomes", "independent numerical checks and mismatch handling", "widget schema and financial-semantic compatibility", "cross-repository versioned impact mapping", "agent extension review and actual evidence"]
+test_paths = []
+status = "planned"
+evidence = ["2026-10-28 owner requested separate modeling repository and specification stub only. Requirements and blueprint do not implement validators, models or consumer checks. Broad FMP acquisition remains the active implementation priority; later FRED/EconDB follows the same separation. No runtime evidence or contract compatibility acceptance claimed."]

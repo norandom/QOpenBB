@@ -9,7 +9,7 @@ This specification supplies data for the [investment-analysis workflow](../analy
 ## Boundary context
 
 - In scope: discoverable provider coverage, named instruments/series, parameterized data access, typed financial results, provenance, visible failures and reusable consumer contracts.
-- Adjacent: analyst-workspace owns dashboards, peer-selection UX, valuation calculations/scenarios, saved assumptions and commands. This spec supplies their financial inputs and provider-calculated outputs, including FMP DCF.
+- Adjacent: analyst-workspace owns dashboards, peer-selection UX, assumption editing, research context and commands. The separate-repository [financial-modeling workstream](../financial-modeling/brief.md) owns house calculation/scenario execution and financial validation. This spec supplies financial inputs and provider-calculated outputs; FMP DCF is an optional comparison, not the house model. This ownership clarification does not expand the approved provider implementation tasks.
 - Deferred: database connectors/PostgreSQL, AI execution, Excel, Quant plugins, Jupyter hosting, new chart engines, automatic cross-provider fallback and a general-purpose SQL/ORM interface.
 - Binding owner constraint: reuse the owned OpenBB Provider/Fetcher, standard query/data models, Query execution, routers and OBBject; widgets and later AI shall use the same maintained command/API schemas. Adapt existing provider code. The [reuse research](research.md#owned-openbb-platform-and-provider-reuse) retains the technical decisions and earlier MD-F1-MD-F5 mapping for design. This is not a new query framework.
 

@@ -1,7 +1,7 @@
 # Scope handover, not test acceptance; historical criteria/evidence stay intact.
 schema_version = 1
 roadmap = "docs/roadmap.md"
-active_delivery = "analyst-workspace: investment analysis discovery"
+active_delivery = "market-data-integrations: broad FMP coverage; financial-modeling specification stub only"
 
 [[ownership]]
 spec = "openbb-self-service"
@@ -19,7 +19,7 @@ release_gate = false
 
 [[ownership]]
 spec = "analyst-workspace"
-scope = "Investment analysis, quarterly results, peer valuation, DCF/WACC/macro, inline news/transcripts and saved research context; reusable widgets, commands, theme and remaining renderer/table functionality"
+scope = "Investment-analysis user journeys and presentation of quarterly results, peer valuation and model outputs; inline news/transcripts, saved research context, widgets, commands, theme and remaining renderer/table functionality. Financial calculation execution belongs to financial-modeling."
 legacy_tasks = ["2: remaining renderer/UI expansion", "4.3: complete controls parity", "4.1-4.2 and 4.5: dashboard persistence acceptance", "UI-09: remaining persistence obligations", "UI-10 through UI-16: remaining obligations"]
 state = "transferred-open"
 release_gate = false
@@ -51,4 +51,12 @@ spec = "custom-data-source"
 scope = "User datasets and later PostgreSQL integration"
 legacy_tasks = []
 state = "deferred"
+release_gate = false
+
+[[ownership]]
+spec = "financial-modeling"
+scope = "Separate-repository house methods, scenario execution, executable financial validation, reproducibility and model service contracts; QOpenBB owns widget consumer integration"
+legacy_tasks = []
+state = "specification-stub; runtime implementation deferred"
+depends_on = ["market-data-integrations: verified inputs for each model slice"]
 release_gate = false
