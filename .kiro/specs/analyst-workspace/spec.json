@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-26",
+  "updated_at": "2026-10-28",
   "language": "en",
   "phase": "initialized",
   "phase_scope": "Umbrella requirements, design and tasks remain ungenerated. Approved bounded milestones have their own implementation and acceptance records under the prototype-first delivery amendment.",
@@ -922,7 +922,7 @@
     }
   },
   "historical_gallery_milestone": {
-    "phase": "source-accepted-candidate-in-progress",
+    "phase": "visuals-published-integration-in-progress",
     "contract": "historical-gallery-milestone.md",
     "completed_tasks": [
       "HG0",
@@ -934,11 +934,15 @@
       "HG4"
     ],
     "fixture": "contracts/gallery/chart-state.json",
-    "fixture_sha256": "7955103d90990e24a6515074ab44d90bbc513b5425f7cc8fd637026ed221ef9e",
-    "workspace_test_revision": "8e08b00459be5fc93d22741c6cdfe1a0b4c9e207",
-    "scope": "Source only: 15 native template checks, 21 projection/template checks, 67 runtime/staging checks and combined caps accepted. Independent financial references and source reviews pass. Actual image/browser navigation, 37 screenshots and retained-state recreation remain pending.",
+    "fixture_sha256": "c54619720b96fed6c29c09fc1e1f866867a2f9707f875bf1341360dc4a383d79",
+    "workspace_test_revision": "cbe148b36365b9ffae2e841fe6fb1ea0eef095c2",
+    "scope": "HG0-HG2 source accepted. All 36 native chart captures plus overview reviewed and published in a182a9b; 22 representative financial tooltip samples passed. Initial application journey failed at first-mount Custom Combination editing; save/reload workaround proven separately. Retained-state recreation and gallery alpha publication remain pending.",
     "projection_revision": "061f624",
     "runtime_revision": "d9fafda",
-    "candidate_root": "c1a164eb1b9e915e8a9f10c16c672c4b46e178ea"
+    "candidate_root": "806f7f82b04ebce33dfbe98c6004adbc3ae6eaa6",
+    "visual_evidence": "artifacts/reviewed/chart-gallery/verification.md",
+    "data_api_candidate_root": "c6f6b150923aa1866af115e4fb0a28c506ababa0",
+    "first_mount_fix_revision": "d6208dd3d44e46760d39c80da47c0b681b91e151",
+    "first_mount_fix_review": "gallery-schema-exception.md"
   }
 }
