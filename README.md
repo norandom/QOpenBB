@@ -15,12 +15,12 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 [Explore all 36 charts: analyst use cases, demo data, dimensions and interpretation](docs/chart-gallery.md)
 
-The gallery uses fixed FMP observations around January 2025, with each chart's market or fiscal period labelled. The local candidate exposes these examples through Apps; inclusion in the published alpha and retained-state recreation are still pending.
+The gallery uses fixed FMP observations around January 2025, with each chart's market or fiscal period labelled. The local candidate exposes these examples through Apps; save/reopen and retained-state recreation have passed. Inclusion in the published alpha is still pending.
 
 Current [historical gallery milestone](.kiro/specs/analyst-workspace/historical-gallery-milestone.md):
 
 - [x] Prepare fixed historical FMP data, 36 native chart configurations and API discovery.
-- [ ] Verify the assembled gallery, save/reopen and retained-state recreation.
+- [x] Verify the assembled gallery, save/reopen and retained-state recreation.
 - [x] Publish one overview and a [per-chart analyst guide](docs/chart-gallery.md) with reviewed screenshots.
 - [ ] Publish the gallery in the prebuilt alpha images.
 

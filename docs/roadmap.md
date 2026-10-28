@@ -85,6 +85,6 @@ The current [gallery milestone](../.kiro/specs/analyst-workspace/historical-gall
 
 - [x] Verify native saved states and deterministic historical projections.
 - [x] Implement packaged snapshot lookup and discovery without replacing the existing catalogs.
-- [ ] Verify all rendered examples and retained-state recreation in the assembled application.
+- [x] Verify all rendered examples and retained-state recreation in the assembled application.
 - [x] Capture and review the README overview and all 36 per-chart screenshots.
-- [ ] Complete retained-state verification and publish the gallery in the prebuilt images.
+- [ ] Publish the gallery in the prebuilt images.

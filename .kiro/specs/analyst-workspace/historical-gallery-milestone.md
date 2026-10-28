@@ -1,6 +1,6 @@
 # Reopen a historical chart gallery
 
-Status: HG0-HG2 source accepted, 2026-10-27; candidate build and HG3 application verification in progress. Deliver a saved, redeployable FMP gallery that lets an analyst choose a chart, inspect its financial meaning, and reproduce the same observations. The owner requested an overview screenshot in README and a linked guide with one screenshot and explanation per chart. This contract covers that bounded delivery under [prototype-first delivery](../../steering/delivery-workflow.md); it does not close the analyst-workspace specification or other chart callers.
+Status: HG0-HG3 accepted, 2026-10-28; HG4 documentation is published and alpha image publication is pending. Deliver a saved, redeployable FMP gallery that lets an analyst choose a chart, inspect its financial meaning, and reproduce the same observations. The owner requested an overview screenshot in README and a linked guide with one screenshot and explanation per chart. This contract covers that bounded delivery under [prototype-first delivery](../../steering/delivery-workflow.md); it does not close the analyst-workspace specification or other chart callers.
 
 The working audience assumption is that financial engineers value reproducible observations and explicit transformations over visual variety alone. The guide sits beside the gallery workflow; independent review should try to disprove its claims. The proposal fails if an analyst cannot find the gallery, distinguish reported from derived values, or recover an edited dashboard after restart. A pending screenshot or passing data endpoint is not application acceptance.
 
@@ -102,7 +102,7 @@ At closure, reconcile this milestone, `spec.json`, `.kiro/breadth.toml`, README 
 - [x] HG0: freeze twelve schemas and 36 native saved states; independent source review and 15 focused checks accepted.
 - [x] HG1 source: snapshot routes, discovery composition and explicit packaging inputs; actual image execution remains HG3.
 - [x] HG2 source: historical projections, 36 chart widgets and seven reusable dashboard tabs; actual appearance remains HG3.
-- [ ] HG3: actual application renders and retained-state recreation.
+- [x] HG3: actual application renders and retained-state recreation; first-mounted editing, refresh/export, native save and fresh reopen accepted.
 - [x] HG4 documentation: overview and all 36 per-chart screenshots reviewed and published in the repository.
 - [ ] HG4 delivery: verified image publication after HG3 acceptance.
 

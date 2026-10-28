@@ -922,27 +922,28 @@
     }
   },
   "historical_gallery_milestone": {
-    "phase": "visuals-published-integration-in-progress",
+    "phase": "local-accepted-publication-pending",
     "contract": "historical-gallery-milestone.md",
     "completed_tasks": [
       "HG0",
       "HG1",
-      "HG2"
+      "HG2",
+      "HG3"
     ],
     "pending_tasks": [
-      "HG3",
-      "HG4"
+      "HG4-publication"
     ],
     "fixture": "contracts/gallery/chart-state.json",
     "fixture_sha256": "c54619720b96fed6c29c09fc1e1f866867a2f9707f875bf1341360dc4a383d79",
-    "workspace_test_revision": "cbe148b36365b9ffae2e841fe6fb1ea0eef095c2",
-    "scope": "HG0-HG2 source accepted. All 36 native chart captures plus overview reviewed and published in a182a9b; 22 representative financial tooltip samples passed. Initial application journey failed at first-mount Custom Combination editing; save/reload workaround proven separately. Retained-state recreation and gallery alpha publication remain pending.",
+    "workspace_test_revision": "f399e01ee9bb73f55ba36c95318ce7773188f20b",
+    "scope": "All 37 captures reviewed and published. First-open correction independently reviewed; initial native edit/refresh/export/save/fresh reopen and retained-state recreation passed with all 48 widget instances covering 36 chart types. Gallery alpha image publication remains pending.",
     "projection_revision": "061f624",
     "runtime_revision": "d9fafda",
-    "candidate_root": "806f7f82b04ebce33dfbe98c6004adbc3ae6eaa6",
+    "candidate_root": "be828b6305e2632b6bf7afe60ea64d885f106ae1",
     "visual_evidence": "artifacts/reviewed/chart-gallery/verification.md",
     "data_api_candidate_root": "c6f6b150923aa1866af115e4fb0a28c506ababa0",
     "first_mount_fix_revision": "d6208dd3d44e46760d39c80da47c0b681b91e151",
-    "first_mount_fix_review": "gallery-schema-exception.md"
+    "first_mount_fix_review": "gallery-schema-exception.md",
+    "accepted_workspace_image": "sha256:4e60fe498e3272908700d9ad206160ce7d5e5f17a775570d4927b65572e7be70"
   }
 }

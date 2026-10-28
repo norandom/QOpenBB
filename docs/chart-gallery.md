@@ -2,7 +2,7 @@
 
 Start with the research question, then check the units and transformation beside the chart. This gallery uses fixed historical FMP observations around January 2025 so that the same view can be inspected again. A price path, a revenue partition and an income bridge answer different questions even when their shapes look similar.
 
-The screenshots below show all 36 native chart configurations in the local candidate, using the retained historical datasets. The gallery is not yet in the published alpha. Retained-state container recreation remains unverified; see the [capture evidence and current limitation](../artifacts/reviewed/chart-gallery/verification.md). Chart availability and renderer acceptance are tracked separately in [chart status](echarts-status.md).
+The screenshots below show all 36 native chart configurations in the local candidate, using the retained historical datasets. The gallery is not yet in the published alpha. First-open editing, save/reopen and retained-state container recreation passed on the local candidate; see the [capture and persistence evidence](../artifacts/reviewed/chart-gallery/verification.md). Chart availability and renderer acceptance are tracked separately in [chart status](echarts-status.md).
 
 | Your question | Start here |
 |---|---|
@@ -20,9 +20,9 @@ On a gallery-enabled installation, open **Apps** and select **QOpenBB Historical
 
 The data API packages the historical observations and native app template together. Gallery dataset reads use that retained snapshot rather than issuing new FMP requests. The snapshot is `fmp-historical-2025-01-v1`; its source timestamps and transformations are retained with the datasets. Provider credentials are still required by the installation's broader readiness contract. A saved dashboard is not a substitute for the matching data API image.
 
-For a newly opened gallery, save and reload the dashboard before changing Custom Combination series types. The immediate first-mount edit currently reverts; the same edit saves correctly after reload. This workaround was checked on the local candidate.
+The accepted local candidate supports changing Custom Combination series types immediately after opening the gallery. The previous save/reload workaround has been removed by a native schema correction.
 
-For container replacement, preserve `./data/workspace` and your private `.env`, and use matching Workspace and data API image references as described in [installation and updates](install.md#state-and-updates). The Workspace bind mount retains user state; the data API image supplies the historical datasets and template. Resume an edited dashboard from the sidebar or its saved URL. Selecting the Apps card again can open another copy. Retained-state recreation remains pending verification for this gallery; if a replacement loses the saved mappings or changes the observations, it fails the reproduction contract.
+For container replacement, preserve `./data/workspace` and your private `.env`, and use matching Workspace and data API image references as described in [installation and updates](install.md#state-and-updates). The Workspace bind mount retains user state; the data API image supplies the historical datasets and template. Resume an edited dashboard from the sidebar or its saved URL. Selecting the Apps card again can open another copy. Retained-state recreation passed for the identified local candidate: all 48 widget instances covering 36 chart types and their layout survived. This is a container-replacement check, not backup/restore or owner-server deployment acceptance.
 
 ## Read the data before the shape
 
