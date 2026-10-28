@@ -4,7 +4,7 @@ Owner direction, 2026-10-28: deliver professional investment-analysis workflows,
 
 This bounded contract extends the initialized analyst specification under the prototype-first workflow. The owner approved the direction; detailed implementation designs and completed functionality are not implied. Provider adapters and entitlement verification belong to `market-data-integrations`.
 
-The shared data boundary is the existing OpenBB Python platform maintained in our owned fork, not a new ORM or notebook service. Widgets and later AI consume its command/API contracts. [Provider ownership and reuse requirements](../market-data-integrations/requirements.md#owned-openbb-platform-and-provider-reuse) govern FMP/yfinance adaptations and the future database extension.
+The shared data boundary is the existing OpenBB Python platform maintained in our owned fork, not a new ORM or notebook service. Widgets and later AI consume its command/API contracts. [Provider ownership and reuse requirements](../market-data-integrations/research.md#owned-openbb-platform-and-provider-reuse) govern FMP/yfinance adaptations and the future database extension.
 
 ## Decisions the workspace must support
 

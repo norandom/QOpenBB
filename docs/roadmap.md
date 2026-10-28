@@ -25,6 +25,8 @@ Latest delivery: [alpha-40689838352-1](https://github.com/norandom/QOpenBB/relea
 
 ## Next: investment analysis and valuation
 
+The [market-data requirements](../.kiro/specs/market-data-integrations/requirements.md) are generated and independently reviewed; owner approval is pending before gap/design work. [Research](../.kiro/specs/market-data-integrations/research.md) confirms reuse of the owned OpenBB framework and retained legacy provider code. Broad exploratory provider coverage supplies the analyst dashboards; it is not limited to one example company.
+
 The [investment-analysis contract](../.kiro/specs/analyst-workspace/investment-analysis-contract.md) defines the next analyst workflow: quarterly performance and cash conversion, defensible peer valuation, FMP DCF with a cost-of-capital/macro bridge, then linked expectations, news, transcripts and thesis context. Reuse OpenBB widgets and linking; no embedded browser is required. CFA-level analytical discipline is a quality target, not a certification claim.
 
 - [ ] Verify actual FMP/FRED data coverage and existing implementation reuse for the first financial workflow.
