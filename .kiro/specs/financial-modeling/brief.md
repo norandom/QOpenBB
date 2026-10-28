@@ -6,7 +6,7 @@
 
 Financial engineers can extend independently versioned house methods without changing OpenBB provider adapters or duplicating formulas in widgets. Each extension carries executable validation rules and consumer contracts. Agents follow a repeatable Kiro requirements/design/tasks/implementation flow with independent financial review.
 
-Read the [foundation requirements](requirements.md), [repository and extension blueprint](repository-blueprint.md), and [requirements review](requirements-review.md). Requirements are ready for owner review; no design or implementation approval is inferred.
+Read the [foundation requirements](requirements.md), [repository and extension blueprint](repository-blueprint.md), and [requirements review](requirements-review.md). Requirements are owner-approved. The [technical design](design.md) and [research](research.md) are independently reviewed and ready for owner design approval; no tasks or implementation are authorized by that review.
 
 ## Boundary candidates
 
