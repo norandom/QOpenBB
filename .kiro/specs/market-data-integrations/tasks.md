@@ -26,7 +26,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
 
 ## 1. Prepare and freeze shared contracts
 
-- [ ] 1.1 Establish the actual baseline, maintained scope and verification runtime
+- [x] 1.1 Establish the actual baseline, maintained scope and verification runtime
   - Controller records root/fork identities and existing dirty paths, restores/checks the existing locked environments, and prepares actual change manifests and scope inventory for this batch.
   - Characterize baseline profile/income/FRED response shapes and income zero-limit semantics. Record historical source recovery points and baseline generation provenance without claiming new live coverage.
   - Done when focused baseline checks run, original unrelated changes remain intact, and the executable complexity invocation rejects a deliberately missing maintained path using the existing checker tests. No new checker is built.
@@ -256,3 +256,7 @@ The approved design explicitly requires separate concrete endpoint/file briefs b
 | Yahoo price supplementation and extended FRED exposure | 3.4, 5.4, 5.5, 5.6 | Compatible owned-source dependency lock, explicit spot/futures/roll semantics and installed route coverage |
 
 All 44 criteria are referenced in executable tasks or this explicit follow-on map. Mapping is not completion. No task may close the umbrella requirements while these obligations remain open. Database and AI execution remain in their separate specs.
+
+## Implementation notes
+
+- 1.1 accepted 2026-10-28: [baseline and independent review](../../../artifacts/reviewed/market-data-foundation/result.md). Existing provider environment restored; source overrides are required for new fork edits. Income zero-limit remains unchanged. Real-provider access remains unverified.

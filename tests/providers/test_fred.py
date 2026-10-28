@@ -5,7 +5,7 @@ import json
 from urllib.parse import parse_qs, urlparse
 
 import pytest
-from test_runtime import get, runtime
+from test_runtime import get, packaged_catalog, runtime
 
 
 @pytest.fixture
