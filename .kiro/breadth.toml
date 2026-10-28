@@ -4,7 +4,7 @@ requirements = ["market-data-integrations/requirements.md:1-8"]
 planned_checks = ["provider family coverage and named discovery", "financial input/output semantics and provenance", "bounded queries and failure contracts", "common widget/programmatic consumer values", "owned-source real-provider acceptance"]
 test_paths = []
 status = "planned"
-evidence = ["Kiro requirements generated and independently reviewed 2026-10-28; eight areas and 44 criteria, owner approval pending. research.md records source-backed provider/consumer findings. No new implementation, subscription or live-provider acceptance claimed."]
+evidence = ["Kiro requirements owner-approved 2026-10-28; eight areas and 44 criteria. Gap analysis and design independently reviewed with all44criteria mapped; owner design approval pending. research.md records source-backed provider/consumer findings. No new implementation, subscription or live-provider acceptance claimed."]
 
 [[capabilities]]
 id = "prototype-owner-deployment"

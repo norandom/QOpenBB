@@ -3,14 +3,14 @@
   "created_at": "2026-10-19T09:18:43.9949215Z",
   "updated_at": "2026-10-28",
   "language": "en",
-  "phase": "requirements-generated",
+  "phase": "design-generated",
   "approvals": {
     "requirements": {
       "generated": true,
-      "approved": false
+      "approved": true
     },
     "design": {
-      "generated": false,
+      "generated": true,
       "approved": false
     },
     "tasks": {
@@ -27,6 +27,15 @@
     "repair_passes": 1,
     "criteria": 44,
     "evidence": "research.md#requirements-review-gate",
+    "human_approval": "approved 2026-10-28"
+  },
+  "design_review": {
+    "status": "passed",
+    "date": "2026-10-28",
+    "reviewer_model": "gpt-6-astra",
+    "repair_passes": 1,
+    "mapped_requirements": 44,
+    "evidence": "research.md#final-design-review-and-decisions",
     "human_approval": "pending"
   }
 }

@@ -50,3 +50,77 @@ The default steering files `product.md`, `tech.md` and `structure.md` are absent
 Independent Astra review passed after one bounded repair pass on 2026-10-28. Two Sol research lanes supplied the provider and consumer findings above. The reviewed document has eight numbered requirement areas and 44 acceptance criteria. Corrections normalized EARS phrasing, made broad dataset delivery an obligation rather than a catalog-only promise, and retained the named OpenBB reuse mechanisms as binding owner constraints. Human requirements approval remains pending; design/tasks and implementation are not approved.
 
 The controller verifies numeric IDs, EARS starts, links and JSON/TOML parsing before commit. This is documentation verification only; no provider, browser, financial calculation or image acceptance is claimed.
+
+---
+
+## Approved-requirements gap analysis
+
+Owner approved the 44 criteria on 2026-10-28. Discovery is an integration-focused extension of the existing framework, with focused external API compatibility research. The controller applied Kiro gap/design rules, COBESY composition and corporate-finance conventions already loaded for this work. No new dependency selection or application implementation occurred.
+
+| Requirements | Existing asset | Gap classification |
+| --- | --- | --- |
+| 1, 6 | Installed OpenAPI, native widget generator and catalog compatibility checks | Missing broad descriptors, bounds/value validation and metadata schema exposure |
+| 2 | Two maintained FMP fetchers and retained historical implementations | Missing restoration/installed routes; unknown live entitlement and latest response details |
+| 3 | Standard search/profile/price models | Missing adapted FMP search; unknown provider identity equivalence |
+| 4 | AnnotatedResult and OBBject metadata transport | Missing common typed financial metadata and field-level semantic guarantees |
+| 5 | Provider registry and existing query executor | Constraint: explicit provider/default policy; no implicit cross-provider financial equivalence |
+| 7 | Sanitized FMP transport and existing exception handlers | Missing stable typed attributes/retry information; unsafe legacy multi-request path |
+| 8 | Owned forks, source pins, Dagger/publication and existing verification | New coverage needs independent actual evidence; historical artifact generation source is distinct |
+
+### Architecture pattern evaluation
+
+| Option | Benefit | Limitation |
+| --- | --- | --- |
+| Extend each provider using existing free-form metadata only | Least shared code | Repeated metadata conventions and no discoverable schema; insufficient consumer consistency |
+| New facade/ORM and parallel query registry | Could centralize all behavior | Duplicates OpenBB, breaks owner reuse constraint; rejected |
+| Extend existing providers plus small typed metadata/catalog/error contracts | Reuses execution and generation while making semantics explicit | Requires a reviewed shared contract and coordinated catalog regeneration |
+
+The hybrid extension is selected for design. Broad restoration has high integration risk and XL scope overall; the first financial-input batch is L scope, not a single implementer task. These are planning categories, not delivery-date promises. Endpoint restoration is split by model, with shared-contract work first.
+
+## Design discovery findings
+
+### Provider restoration
+
+The retained FMP tree supplies balance_sheet, cash_flow, equity_historical, equity_peers, key_metrics and financial_ratios modules. Name/symbol search uses the existing standard EquitySearch model with a new FMP adaptation. Current core/historical FMP lack a dedicated enterprise-values model; an inspectable provider EV-input dataset needs a small standard model, fetcher and native equity route rather than disguising the inputs as key metrics.
+
+Official documentation consulted by the provider lane:
+- [FMP catalog](https://site.financialmodelingprep.com/developer/docs)
+- [Daily EOD history](https://site.financialmodelingprep.com/developer/docs/stable/historical-price-eod-full)
+- [Peer references](https://site.financialmodelingprep.com/developer/docs/stable/peers)
+- [Symbol search](https://site.financialmodelingprep.com/developer/docs/stable/search-symbol) and [name search](https://site.financialmodelingprep.com/developer/docs/stable/search-name)
+- [Enterprise values](https://site.financialmodelingprep.com/developer/docs/stable/enterprise-values)
+
+These establish documented endpoints, not subscription access. Statement/metric/EV documentation reports 1000-record limits and EOD history a 5000-record limit; design applies explicit bounded first-batch policies subject to actual response verification.
+
+Restoration hazards: current statement aliases need fiscalYear/filingDate compatibility; historical limit-zero behavior silently falls back to five; TTM metrics fabricate today's date and mix requests; price transformations mutate input and lose exact zero percentage changes. Legacy multi-request extraction bypasses the complete sanitized transport wrapper. These require focused regressions, not blind file restoration. Full symbol/date coverage is unknown until marked live checks run.
+
+### Consumer contracts
+
+`AnnotatedResult.metadata` is unwrapped into `OBBject.extra.results_metadata`; `extra.metadata` is separate execution information. Financial metadata is validated in fetchers and described by a generated schema/operation extension. Unrestricted OBBject.extra does not itself supply that schema. Output callbacks are unsuitable as the required correctness seam because their activation/validation behavior is optional.
+
+The mounted upstream API owns its exception handlers. Installing only outer-app handlers is insufficient. Existing OpenBB wrappers can retain typed exceptions under original; normalize recognized typed categories without parsing arbitrary provider messages. Preserve baseline 204 empty results and existing detail-compatible status behavior while adding safe machine-readable fields.
+
+The service/API and Python defaults are not interchangeable: native Python container selection can fall back through credential-based provider priorities, while API assembly discards provider from ordinary command defaults. New service commands therefore use explicit provider parameters; generated widgets pin that value. Baseline route defaults remain disclosed and tested. No global Python/core provider-selection rewrite is proposed.
+
+### Design synthesis
+
+- Generalize only shared financial metadata, failure categories and schema descriptions; use existing dataset-specific provider QueryParams/Data classes.
+- Adopt existing Provider/Fetcher/Query/OBBject and upstream widget generation. Keep one runtime descriptor projection, reused by generation, with compatibility validation in the existing pipeline.
+- Separate evidence states from executable provider dispatch. The coverage index is documentation/evidence, not a routing registry.
+- Do not introduce database storage, AI execution, a generic query language, mutable callback layer or a new testing harness.
+- Query bounds and shared metadata freeze before disjoint provider and consumer implementation lanes. The controller owns registrations, pins, generated proposals and joins.
+
+## Risks and open acceptance evidence
+
+Account entitlement, actual stable responses, detailed TTM semantics, paginated completeness and provider-specific identity mappings remain live-verification work. Unknown source dates/vintages stay unknown. A real-provider failure is not repaired by silently substituting a gallery fixture. Existing unrelated catalog renderer edits must be preserved and reconciled before production changes to overlapping files. Modified upstream files still require whole-file complexity enforcement or a reviewed design exception.
+
+
+## Final design review and decisions
+
+Independent Astra design review passed after one local repair pass on 2026-10-28. All 44 requirements appear in the traceability table. Requirements approval is recorded; design approval remains pending.
+
+The four repaired seams are now explicit in design.md: the generated-descriptor-based service guard enforces explicit provider selection on the named non-baseline operations; common metadata uses `extra.results_metadata.__qopenbb_financial__` while preserving FRED's per-series entries and available vintage facts; advertised-route validation/response/unexpected failures use sanitized handlers and safe logging; FRED cache/in-flight acquisitions retain original retrieval timestamps through an opt-in provenance envelope while default raw callers remain compatible. These are designed behavior changes, not verified runtime claims.
+
+Additional inspected sources were `providers/fred/openbb_fred/models/series.py`, `utils/rate_limiter.py`, `utils/cache.py`, core `api/exception_handlers.py`, `app/model/defaults.py`, `app/static/container.py` and API `router/commands.py`. Cache-key versioning avoids inventing retrieval times for legacy entries; the installed runtime keeps its existing disk-cache-off setting. Required response metadata is not injected through optional output callbacks. No application/source package changes were made.
+
+Controller checks confirm 44/44 criterion mapping, populated boundaries/file plan and valid local document links/metadata. Implementation task generation remains gated on owner design approval. Tasks must include the existing inventory/checker foundation, scoped source ownership, independent review and real-provider/browser acceptance without multiplying test harnesses.
