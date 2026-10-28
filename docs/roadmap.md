@@ -36,6 +36,8 @@ Latest delivery: [alpha-40676586728-1](https://github.com/norandom/QOpenBB/relea
 
 Build the analyst experience on existing widget, theme and ECharts work. FMP, yfinance and FRED should use interchangeable interaction patterns where their data contracts permit, with provider provenance visible. Shared controls must preserve instrument identity, time ranges, currency, units and frequency rather than imply that different datasets are equivalent.
 
+The [capability reuse inventory](capability-reuse.md) anchors the next analyst slice in existing OpenBB source and installed catalog evidence. After the current delivery, uv/Python packaging and Valkey work, specify a Company Research App with one shared name/symbol selection across price, profile, statements, news, earnings calls and analyst views. Reuse the existing App JSON, widget controls, linked groups, tables and chart renderers; extend missing installed catalog/provider paths in small increments. Each increment needs source, installed configuration, real-provider and save/reopen acceptance before broader provider expansion. Existing mechanisms are not proof that the proposed App already works; the successor requirements remain scope stubs until their bounded contract is approved.
+
 Renderer responsibilities belong to analyst-workspace:
 
 | Renderer | Existing scope and remaining work |
@@ -43,7 +45,7 @@ Renderer responsibilities belong to analyst-workspace:
 | ECharts | Integrated table charts for selected families; remaining controls, families and saved-state behavior need their own acceptance |
 | Perspective 5.6 | Packages, runtime host and isolated tests exist; production dashboard binding and analytical workflow acceptance remain open |
 | Plotly | Retain useful supported widgets and their financial semantics |
-| Highcharts | Removed; removal does not mean ECharts replaces every former renderer capability |
+| Highcharts | Dependencies/imports removed; legacy `ChartHighcharts` still maps to `UnsupportedRenderer`. Full former-caller parity remains open |
 
 These renderer obligations do not block the prototype. Full original visual parity is not a prototype release gate. The Bloomberg-inspired theme should extend the existing work and keep widget controls, commands and linked views consistent.
 

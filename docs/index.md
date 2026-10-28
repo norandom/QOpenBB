@@ -9,6 +9,7 @@ The [login correction](../.kiro/specs/openbb-self-service/login-password-policy.
 | Your task | Start here |
 | --- | --- |
 | Install prebuilt alpha images for development | [Installation guide](install.md) |
+| Plan a feature using existing OpenBB capabilities | [Capability reuse map](capability-reuse.md) |
 | Understand login and bootstrap password replacement | [Login correction and verification](../.kiro/specs/openbb-self-service/login-password-policy.md) |
 | Configure optional remote access | [Tips and Tricks](tips-and-tricks.md) |
 | Understand the purpose and operating boundaries | [Goals](goals.md) |

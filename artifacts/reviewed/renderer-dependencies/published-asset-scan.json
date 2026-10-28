@@ -1,0 +1,79 @@
+{
+  "root": "/usr/share/nginx/html",
+  "files_scanned": 277,
+  "bytes_scanned": 31243130,
+  "patterns": {
+    "highcharts_word": {
+      "count": 11,
+      "files": [
+        {
+          "file": "useSyncItems.BUfaRUPj.js",
+          "count": 2,
+          "contexts": [
+            "e parameter grouping and linked-parameter behavior.\n\n- #### Raw Data Table for VegaLite + Highcharts\n\n  The \"raw data\" table toggle is now available for VegaLite and Highcharts, matching the\n  behavior already offered on Plotly ch",
+            "or VegaLite + Highcharts\n\n  The \"raw data\" table toggle is now available for VegaLite and Highcharts, matching the\n  behavior already offered on Plotly charts so you can switch\n  between the chart and its underlying data.\n\n- #### "
+          ]
+        },
+        {
+          "file": "api.89mNKhGA.js",
+          "count": 5,
+          "contexts": [
+            "oid 0&&(e.row=0)}return t.flat()},ipe).default([]),Sw=[`advanced_charting`,`chart`,`chart-highcharts`,`chart-vegalite`,`file_viewer`,`html`,`iframe`,`live_grid`,`markdown`,`metric`,`multi_file_viewer`,`newsfeed`,`note`,`rich_note`",
+            "live_grid:`AgWebSockets`,omni:`OmniWidget`},n_e={charting:`Charting`,chart:`Chart`,\"chart-highcharts\":`ChartHighcharts`,\"chart-vegalite\":`ChartVegaLite`,advanced_charting:`Charting`,clock:`ClockWidget`,metric:`MetricWidget`,file_v",
+            "ckets`,omni:`OmniWidget`},n_e={charting:`Charting`,chart:`Chart`,\"chart-highcharts\":`ChartHighcharts`,\"chart-vegalite\":`ChartVegaLite`,advanced_charting:`Charting`,clock:`ClockWidget`,metric:`MetricWidget`,file_viewer:`FileViewerW",
+            "d:hT(mT,`legacy charts or hierarchical/remote tables`),AgGridTable:hT(Rhe),Chart:zhe,ChartHighcharts:hT(mT,`legacy Highcharts configurations`),ChartVegaLite:Bhe,MetricWidget:Vhe,FileViewerWidget:Hhe,OmniWidget:Uhe,ClockWidget:Whe,",
+            " hierarchical/remote tables`),AgGridTable:hT(Rhe),Chart:zhe,ChartHighcharts:hT(mT,`legacy Highcharts configurations`),ChartVegaLite:Bhe,MetricWidget:Vhe,FileViewerWidget:Hhe,OmniWidget:Uhe,ClockWidget:Whe,CountryIndicators:hT(Ghe,"
+          ]
+        },
+        {
+          "file": "WidgetsBuilder.C_Iu9S5b.js",
+          "count": 3,
+          "contexts": [
+            "ies(Object.entries(e).map(([e,t])=>[e,e===`enum`&&Array.isArray(t)?t.filter(e=>e!==`chart-highcharts`):Q(t)]))}var dt={type:`object`,propertyNames:{type:`string`},additionalProperties:JSON.parse('{\"type\":\"object\",\"properties\":{\"na",
+            "\":{\"default\":\"table\",\"anyOf\":[{\"type\":\"string\",\"enum\":[\"advanced_charting\",\"chart\",\"chart-highcharts\",\"chart-vegalite\",\"file_viewer\",\"html\",\"iframe\",\"live_grid\",\"markdown\",\"metric\",\"multi_file_viewer\",\"newsfeed\",\"note\",\"omni\",\"pdf",
+            "\\\\\": \\\\\"line\\\\\" }).\",\"anyOf\":[{\"type\":\"string\",\"enum\":[\"advanced_charting\",\"chart\",\"chart-highcharts\",\"chart-vegalite\",\"file_viewer\",\"html\",\"iframe\",\"live_grid\",\"markdown\",\"metric\",\"multi_file_viewer\",\"newsfeed\",\"note\",\"omni\",\"pdf"
+          ]
+        },
+        {
+          "file": "assets/apiSource.worker-DwCTHwXL.js",
+          "count": 1,
+          "contexts": [
+            "void 0&&(e.row=0)}return t.flat()},il).default([]),ul=[`advanced_charting`,`chart`,`chart-highcharts`,`chart-vegalite`,`file_viewer`,`html`,`iframe`,`live_grid`,`markdown`,`metric`,`multi_file_viewer`,`newsfeed`,`note`,`rich_note`"
+          ]
+        }
+      ]
+    },
+    "cdn": {
+      "count": 0,
+      "files": []
+    },
+    "license_banner": {
+      "count": 0,
+      "files": []
+    },
+    "init_import": {
+      "count": 0,
+      "files": []
+    },
+    "ag_enterprise": {
+      "count": 10,
+      "files": [
+        {
+          "file": "vendor-ag.BbLVgXcp.js",
+          "count": 10,
+          "contexts": [
+            "([ AllCommunityModule ]);\n    `,Q_=e=>{let t=e.map(e=>`import { ${$_(e)} } from '${K_[e]?`ag-grid-enterprise`:`ag-grid-community`}';`);return e.some(e=>e===`IntegratedCharts`||e===`Sparklines`)&&t.push(`import { AgChartsEnterpriseModule }",
+            "=`IntegratedCharts`||e===`Sparklines`)&&t.push(`import { AgChartsEnterpriseModule } from 'ag-charts-enterprise';`),`import { ModuleRegistry } from 'ag-grid-community'; \n${t.join(` \n`)} \n\nModuleRegistry.registerModules([ ${e.map(e=>$_(e,!0))",
+            "obalThis?.agCharts&&n.length>0?r=`Unable to use ${e} as either the ag-charts-community or ag-charts-enterprise script needs to be included alongside ag-grid-enterprise.\n`:t.some(e=>K_[e])&&(r+=`Unable to use ${e} as that requires the ag-gri",
+            "her the ag-charts-community or ag-charts-enterprise script needs to be included alongside ag-grid-enterprise.\n`:t.some(e=>K_[e])&&(r+=`Unable to use ${e} as that requires the ag-grid-enterprise script to be included.\n`),r}function tv({mod",
+            "side ag-grid-enterprise.\n`:t.some(e=>K_[e])&&(r+=`Unable to use ${e} as that requires the ag-grid-enterprise script to be included.\n`),r}function tv({moduleName:e,rowModelType:t}){return`To use the ${e}Module you must set the gridOption \"",
+            "CommunityModule' / 'AgChartsEnterpriseModule'.\n\nimport { AgChartsEnterpriseModule } from 'ag-charts-enterprise';\nimport { ModuleRegistry } from 'ag-grid-community';\nimport { ${e} } from 'ag-grid-enterprise';\n    \nModuleRegistry.registerModu",
+            "ts-enterprise';\nimport { ModuleRegistry } from 'ag-grid-community';\nimport { ${e} } from 'ag-grid-enterprise';\n    \nModuleRegistry.registerModules([${e}.with(AgChartsEnterpriseModule)]);\n    `,iv=e=>`AG Grid: Unable to use the Clipboard A",
+            "nsKey]&&delete e[t.optionsKey]})}}if(n.length&&!t){i&&(n=[`AgCharts.createGauge`]);let t=`ag-charts-enterprise`,r=`https://www.ag-grid.com/charts/javascript/installation/`;e.mode===`integrated`&&(t=`ag-grid-charts-enterprise' or 'ag-grid-en"
+          ]
+        }
+      ]
+    }
+  },
+  "matching_filenames": []
+}

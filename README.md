@@ -15,6 +15,8 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 [Explore all 36 charts: analyst use cases, demo data, dimensions and interpretation](docs/chart-gallery.md)
 
+[What we can reuse from OpenBB, and the smallest next development steps](docs/capability-reuse.md)
+
 The gallery uses fixed FMP observations around January 2025, with each chart's market or fiscal period labelled. Open the gallery through Apps in the published development alpha. Save/reopen and retained-state recreation passed on the identified local candidate; [publication is verified separately](artifacts/reviewed/chart-gallery/publication-review.md).
 
 Current [historical gallery milestone](.kiro/specs/analyst-workspace/historical-gallery-milestone.md):

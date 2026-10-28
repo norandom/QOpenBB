@@ -2,6 +2,8 @@
 
 ECharts renders editable charts created from table data. It supplies the chart engine behind the existing Workspace chart editor; it is not a universal translator for old Highcharts payloads.
 
+[Published artifact inspection](../artifacts/reviewed/renderer-dependencies/verification.md) confirms Highcharts is absent as a runtime dependency in alpha `40676586728-1`. Legacy widget identifiers remain, and `ChartHighcharts` still maps to an unsupported renderer. Dependency removal is complete within that inspected scope; former-caller functionality remains open below.
+
 Checked items below describe the implemented and reviewed scope, not every feature of the ECharts library. Remaining work belongs to analyst-workspace and does not block the accepted alpha.
 
 ## Done

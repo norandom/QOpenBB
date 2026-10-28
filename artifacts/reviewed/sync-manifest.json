@@ -33930,6 +33930,30 @@
       "publishedSHA256": "dec6eab673c12e03b2f20f245f8827a71394a112ef2754668b38878e1c5129d2",
       "bytes": 4032,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/highcharts-removal/published-asset-scan.py",
+      "sourceSHA256": "5fac4e3574e7af9e24f8451e7c5ad3003a053c8cbff6b635a3054472ecce7e27",
+      "publishedpath": "artifacts/reviewed/renderer-dependencies/published-asset-scan.py",
+      "publishedSHA256": "5fac4e3574e7af9e24f8451e7c5ad3003a053c8cbff6b635a3054472ecce7e27",
+      "bytes": 1288,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/highcharts-removal/published-asset-scan.json",
+      "sourceSHA256": "310504e63418faa37f72c72eaa92a18e0024ca16531198b1a0879fde64b983d6",
+      "publishedpath": "artifacts/reviewed/renderer-dependencies/published-asset-scan.json",
+      "publishedSHA256": "310504e63418faa37f72c72eaa92a18e0024ca16531198b1a0879fde64b983d6",
+      "bytes": 6062,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/highcharts-removal/verification.md",
+      "sourceSHA256": "abbe55f73b17e1f492052878e6157282fadb7de4d8f551462ccd487b7e8e4b51",
+      "publishedpath": "artifacts/reviewed/renderer-dependencies/verification.md",
+      "publishedSHA256": "abbe55f73b17e1f492052878e6157282fadb7de4d8f551462ccd487b7e8e4b51",
+      "bytes": 2086,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -34655,7 +34679,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170321184,
+  "total_payload_bytes": 170330620,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

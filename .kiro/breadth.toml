@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "company-research-existing-framework"
+requirements = ["analyst-workspace/requirements.md:Project Description", "market-data-integrations/requirements.md:Project Description"]
+planned_checks = ["named company search backend", "shared company group across installed widgets", "real provider content and financial semantics", "saved company parameters and group membership after reopening"]
+test_paths = ["tests/contracts/test_catalog.py", "tests/contracts/test_catalog_runtime.py", "tests/delivery/test_onboarding_contract.py"]
+status = "partial"
+evidence = ["Source inventory at Workspace22180d8 confirms existing parameter schema, dependent option feeds, linking groups, App export and refresh. docs/capability-reuse.md separates source availability from accepted journeys. Listed tests are existing extension points, not completed Company Research tests. Installed catalog has profile/income/FRED only; new App configuration and broader provider views remain planned."]
+
+[[capabilities]]
 id = "existing-password-login"
 requirements = ["openbb-self-service/login-password-policy.md:LP1", "openbb-self-service/login-password-policy.md:LP2", "openbb-self-service/login-password-policy.md:LP3", "openbb-self-service/login-password-policy.md:LP4"]
 planned_checks = []
