@@ -142,7 +142,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 3.1_
   - _Requirements: 4.1, 7.4, 7.5_
 
-- [ ] 3.3 Preserve generic-series metadata, vintages and transformed units
+- [x] 3.3 Preserve generic-series metadata, vintages and transformed units
   - Own the generic-series model. Preserve existing per-series metadata keys and wide columns; add the reserved common metadata, retained real-time intervals and separate source/effective units/frequency.
   - Done when levels, percent changes and aggregation have truthful semantics; unknown effective units are explicit, and original timestamps survive mixed-age inputs. No point-in-time claim follows from intervals alone.
   - Caps: changed series module/helpers meet 400/300/50; tests excluded.
@@ -272,3 +272,5 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - 3.2 accepted: data fork `a41fbb40273`, 30 propagation/acquisition/FRED tests, independent review and owning-fork lint; [evidence](../../../artifacts/reviewed/market-data-fred-propagation/result.md). Joined 85-file gate passes. Original timestamps survive cache/coalesced paths; raw defaults and finite retry behavior remain. Generic-series financial metadata follows in 3.3.
 
 - 2.2 accepted: data fork `c4de6b13505`, 79 baseline/error/transport checks, independent financial review, lint and Node 24.22.1 combined gate; [evidence](../../../artifacts/reviewed/market-data-fmp-baseline-metadata/result.md). A narrowly reviewed helper option separates acquisition provenance from typed errors, preserving baseline HTTP categories, zero-limit rows and multi-symbol values. No new provider registration is activated.
+
+- 3.3 accepted: data fork `d1bb4821a65`, 21 series/legacy tests, independent review, lint and Node 24.22.1 combined gate; [evidence](../../../artifacts/reviewed/market-data-fred-series/result.md). Legacy wide rows and per-series metadata remain; common metadata preserves available observation intervals, oldest component freshness and explicit unknown transform units. This does not establish point-in-time safety or live access.
