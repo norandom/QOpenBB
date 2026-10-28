@@ -8,7 +8,7 @@ ECharts is pinned to 6.0.0 in the owned Workspace package and Bun lock, with zre
 
 ## Restore and run
 
-Use Node 24.22.0 and Safe Chain 1.5.25 from the [pinned development setup](development.md). In a disposable Linux copy of `terminalpro`, without `.env`, account state or provider credentials, restore through the protected wrapper:
+Use Node 24.22.1 and Safe Chain 1.5.25 from the [pinned development setup](development.md). In a disposable Linux copy of `terminalpro`, without `.env`, account state or provider credentials, restore through the protected wrapper:
 
 ```sh
 export SAFE_CHAIN_MINIMUM_PACKAGE_AGE_HOURS=48

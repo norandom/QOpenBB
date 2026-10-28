@@ -6,10 +6,10 @@ Run the combined quality gate before accepting maintained production changes. It
 
 The pinned command below is historical foundation evidence. For current adaptation work, supply explicit changed-file manifests for both forks as described below, or current clean base/head revisions. Do not reuse the historical heads against changed checkouts.
 
-Restore the pinned [development toolchain](development.md) first. From the repository root in WSL or Linux, put Node 24.22.0 on PATH and use the locked Python environment:
+Restore the pinned [development toolchain](development.md) first. From the repository root in WSL or Linux, put Node 24.22.1 on PATH and use the locked Python environment:
 
 ```sh
-export PATH="$PWD/artifacts/task-1.2/node-v24.22.0-linux-x64/bin:$PATH"
+export PATH="$PWD/artifacts/task-1.2/node-v24.22.1-linux-x64/bin:$PATH"
 mkdir -p artifacts/task-1.4
 pipeline/.venv/bin/python -m tools.quality.complexity --check \
   --base workspace=be00e95019a55d57af146919ee46b7e1a4859226 \
@@ -19,7 +19,7 @@ pipeline/.venv/bin/python -m tools.quality.complexity --check \
   --output artifacts/task-1.4/combined-foundation.json
 ```
 
-This exact command was exercised on 2026-10-16 against the unchanged acquired forks and the task 1.2-1.4 foundation working tree. It checked 23 maintained files with no errors, violations or applied exceptions. The report records CPython 3.13.15, Node 24.22.0 and TypeScript 6.0.3. Application behavior and future fork modifications remain outside this evidence.
+The historical variant of this command, using Node 24.22.0, was exercised on 2026-10-16 against the unchanged acquired forks and the task 1.2-1.4 foundation working tree. It checked 23 maintained files with no errors, violations or applied exceptions. The report records CPython 3.13.15, Node 24.22.0 and TypeScript 6.0.3. Application behavior and future fork modifications remain outside this evidence.
 
 For a changed fork, retain the approved inventory base and supply its actual full head SHA. Git mode verifies the fork origin, exact HEAD and clean worktree, then measures the whole changed files. `--repository-root REPOSITORY=PATH` supports an explicit checkout location. The base and repository identity must match [the inventory](../.kiro/complexity-budgets.json) and source lock; changing these is a reviewed source decision.
 

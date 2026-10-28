@@ -16,7 +16,7 @@ Run the fixture checks before attaching application acceptance tests. They displ
 Restore the pinned [development tools](development.md). From the repository root:
 
 ```sh
-export PATH="$PWD/artifacts/task-1.2/node-v24.22.0-linux-x64/bin:$PATH"
+export PATH="$PWD/artifacts/task-1.2/node-v24.22.1-linux-x64/bin:$PATH"
 PLAYWRIGHT_BROWSERS_PATH="$PWD/artifacts/playwright-browsers" \
   node verification/node_modules/@playwright/test/cli.js install chromium
 # A prepared runner also needs Playwright's Chromium OS dependencies.

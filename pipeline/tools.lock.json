@@ -6,13 +6,13 @@
     "python": { "version": "3.13.15", "provider": "uv managed CPython", "version_file": ".python-version" },
     "uv": { "version": "0.12.5", "source": "https://github.com/astral-sh/uv/releases/tag/0.12.5" },
     "node": {
-      "version": "24.22.0",
+      "version": "24.22.1",
       "channel": "LTS",
       "version_file": ".node-version",
-      "linux_x64_url": "https://nodejs.org/dist/v24.22.0/node-v24.22.0-linux-x64.tar.xz",
-      "linux_x64_sha256": "cc2f601cee82d9a5a233302fe307abc600727035fd7d2c3a3571755989e95008"
+      "linux_x64_url": "https://nodejs.org/dist/v24.22.1/node-v24.22.1-linux-x64.tar.xz",
+      "linux_x64_sha256": "6c172a9ab6718f7b801fb5a7bd486af2ee5e32758086a04b84fcce2aa77095e6"
     },
-    "npm": { "version": "11.19.1", "provider": "Node 24.22.0 distribution" },
+    "npm": { "version": "11.19.1", "provider": "Node 24.22.1 distribution" },
     "pnpm": {
       "version": "10.32.1",
       "linux_x64_url": "https://github.com/pnpm/pnpm/releases/download/v10.32.1/pnpm-linux-x64",
@@ -46,7 +46,7 @@
   },
   "base_images": {
     "python": "docker.io/library/python:3.13.15-slim-bookworm@sha256:2325bb286ec344af3e5898cc224b5844e2707ac6e26b1632516fd3edc84a5e26",
-    "node": "docker.io/library/node:24.22.0-bookworm-slim@sha256:a5f4366e834695d5f363b920c104953a535d3a9864d1bdf74566a0ebe01daee5",
+    "node": "docker.io/library/node:24.22.1-bookworm-slim@sha256:be8204d4bd327363357f532187b752ff62759c31bedf98e9e18fc08c9cbd605c",
     "bun": "docker.io/oven/bun:1.4.3@sha256:ec06c3b6cea04192ae6770c434f668ca41d343ad19fa6472216c7b48be39c598",
     "nginx": "docker.io/library/nginx:1.29.6-alpine@sha256:f46cb72c7df02710e693e863a983ac42f6a9579058a59a35f1ae36c9958e4ce0",
     "playwright": "mcr.microsoft.com/playwright:v1.64.0-noble@sha256:06a9939e57531807f8d5fd76ce44b53165ffb7d7501d87ab10e285c20b1e971f",

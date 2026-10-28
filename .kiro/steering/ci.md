@@ -1,5 +1,7 @@
 # Build and delivery policy
 
+2026-10-28 owner requirement: use Node 24.22.1 or a later supported patched release for active local tooling, CI and build stages (Node2Shell). The exact approved version and checksums belong to `.node-version` and `pipeline/tools.lock.json`; historical evidence retains its original version. Do not run the retired 24.22.0 toolchain for new checks.
+
 2026-10-19 owner amendment: [prototype-first delivery](delivery-workflow.md) is the active scope. AI and Excel have separate specifications and do not block the prototype. Dagger-only builds, portable verification/publication and image-pull deployment remain required.
 
 User direction, 2026-10-16: Dagger builds the images in GitHub; the private Linux server installs via image pull. Adapted from the sibling project's single-pipeline convention.

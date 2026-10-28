@@ -42,7 +42,7 @@ cp "$QOPENBB_TOOLS/pnpm.archive" "$QOPENBB_TOOLS/pnpm/pnpm"
 cp "$QOPENBB_TOOLS/safe_chain.archive" "$QOPENBB_TOOLS/safe-chain/bin/safe-chain"
 chmod +x "$QOPENBB_TOOLS/pnpm/pnpm" "$QOPENBB_TOOLS/safe-chain/bin/safe-chain"
 "$QOPENBB_TOOLS/safe-chain/bin/safe-chain" setup-ci
-export PATH="$QOPENBB_TOOLS/safe-chain/shims:$QOPENBB_TOOLS/safe-chain/bin:$QOPENBB_TOOLS/pnpm:$QOPENBB_TOOLS/node-v24.22.0-linux-x64/bin:$QOPENBB_TOOLS/bun-linux-x64:$PATH"
+export PATH="$QOPENBB_TOOLS/safe-chain/shims:$QOPENBB_TOOLS/safe-chain/bin:$QOPENBB_TOOLS/pnpm:$QOPENBB_TOOLS/node-v24.22.1-linux-x64/bin:$QOPENBB_TOOLS/bun-linux-x64:$PATH"
 export SAFE_CHAIN_MINIMUM_PACKAGE_AGE_HOURS=48
 safe-chain -v
 pnpm safe-chain-verify
@@ -50,7 +50,7 @@ uv safe-chain-verify
 uvx safe-chain-verify
 ```
 
-Node 24.22.0 supplies npm 11.19.1, but maintained verification uses pnpm 10.32.1 and its committed lock. Bun 1.4.3 serves the owned Full Workspace's protected frozen-lock installation, exercised by the retained frontend and image builds. Do not rewrite that lock during toolchain setup.
+Node 24.22.1 supplies npm 11.19.1, but maintained verification uses pnpm 10.32.1 and its committed lock. Bun 1.4.3 serves the owned Full Workspace's protected frozen-lock installation, exercised by the retained frontend and image builds. Do not rewrite that lock during toolchain setup.
 
 [Safe Chain 1.5.25](https://github.com/AikidoSec/safe-chain/tree/1.5.25) supports pnpm, Bun, uv and uvx. `setup-ci` creates project-local executable shims; explicit PATH setup also works outside GitHub. Each verification command above must print `OK: Safe-chain works!`. Keep the default 48-hour package-age protection; resolve an older compatible dependency or report a blocker if a frozen version is too recent. Playwright 1.64.0 was selected because 1.64.1 was inside that window on the setup date. Safe Chain checks package downloads for known malware; it does not establish provider correctness or application acceptance.
 

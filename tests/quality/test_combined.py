@@ -30,7 +30,7 @@ def test_default_combines_python_and_real_tsx_from_a_different_cwd(scoped, monke
     assert report["coverage"]["logical"] == ["python", "javascript", "typescript"]
     assert report["coverage"]["combined_acceptance"] == "passed"
     assert report["coverage"]["parsers"]["typescript"] == "6.0.3"
-    assert report["coverage"]["parsers"]["node"] == "24.22.0"
+    assert report["coverage"]["parsers"]["node"] == "24.22.1"
     assert [(file["repository"], file["path"], file["logical"]) for file in report["files"]] == [
         ("qopenbb", "src/value.py", 1), ("workspace", "view.tsx", 3)]
 

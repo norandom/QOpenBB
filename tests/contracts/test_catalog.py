@@ -102,7 +102,7 @@ def test_actual_workspace_url_composition(inputs, tmp_path):
     endpoint = generate(*inputs, [], "/data")["widgets.json"]["profile_fmp_obb"]["endpoint"]
     script = tmp_path / "composition.ts"
     script.write_text("\n".join(functions) + "\nconsole.log(createURLString(" + json.dumps(endpoint) + ", 'https://qbb.example/data'))")
-    node = root / "artifacts/task-1.2/node-v24.22.0-linux-x64/bin/node"
+    node = root / "artifacts/task-1.2/node-v24.22.1-linux-x64/bin/node"
     result = subprocess.run([str(node), str(script)], text=True, capture_output=True, check=True)
     assert result.stdout.strip() == "https://qbb.example/data/api/v1/profile"
 

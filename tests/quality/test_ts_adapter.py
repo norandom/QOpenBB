@@ -52,7 +52,7 @@ def test_valid_parser_records_and_empty_input():
 def test_parser_process_failures_reject_partial_output(monkeypatch, result):
     from tools.quality import ts_adapter
 
-    monkeypatch.setattr(ts_adapter, "runtime", lambda: ("node", {"node": "24.22.0", "typescript": "6.0.3"}))
+    monkeypatch.setattr(ts_adapter, "runtime", lambda: ("node", {"node": "24.22.1", "typescript": "6.0.3"}))
     monkeypatch.setattr(ts_adapter, "execute", lambda *args, **kwargs: result)
     with pytest.raises(ValueError, match="parser"):
         ts_adapter.measure_typescript(["/fixture.ts"])
@@ -63,5 +63,5 @@ def test_wrong_node_version_fails_before_parsing(monkeypatch):
 
     monkeypatch.setattr(ts_adapter, "execute", lambda *args, **kwargs:
                         SimpleNamespace(returncode=0, stdout="v22.0.0\n", stderr=""))
-    with pytest.raises(ValueError, match="Node.*24.22.0"):
+    with pytest.raises(ValueError, match="Node.*24.22.1"):
         ts_adapter.runtime()

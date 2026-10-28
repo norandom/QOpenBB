@@ -170,7 +170,8 @@
     "market-data-fmp-transport",
     "market-data-fred-propagation",
     "market-data-fmp-baseline-metadata",
-    "market-data-fred-series"
+    "market-data-fred-series",
+    "node-security-baseline"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34113,6 +34114,22 @@
       "publishedpath": "artifacts/reviewed/market-data-fred-series/review.md",
       "publishedSHA256": "b64bb10f9cff4fe0412b0c95adc3cd6b07a472d26025fdfb6304725f5127847e",
       "bytes": 3980,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/node-security-baseline/result.md",
+      "sourceSHA256": "0ac233794f57e5e7a06fc53640a38d9042c87ca78945f50c4bf31528caf3f497",
+      "publishedpath": "artifacts/reviewed/node-security-baseline/result.md",
+      "publishedSHA256": "0ac233794f57e5e7a06fc53640a38d9042c87ca78945f50c4bf31528caf3f497",
+      "bytes": 3157,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/node-security-baseline/review.md",
+      "sourceSHA256": "267c2c34f195bdee0df74d071bdc088d3a2799b8495c8e248be71ca8f36a87e3",
+      "publishedpath": "artifacts/reviewed/node-security-baseline/review.md",
+      "publishedSHA256": "267c2c34f195bdee0df74d071bdc088d3a2799b8495c8e248be71ca8f36a87e3",
+      "bytes": 4293,
       "transform": "exact-byte-copy"
     }
   ],
