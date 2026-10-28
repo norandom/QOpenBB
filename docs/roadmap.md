@@ -113,4 +113,5 @@ First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks
 - [x] Restore and characterize the existing provider verification baseline.
 - [x] Implement typed financial metadata through the native result envelope.
 - [x] Implement safe financial failures and separate query/result validation.
+- [x] Preserve FRED acquisition times through versioned disk records.
 - [ ] Adopt these contracts in FMP/FRED fetchers and the running service; verify real-provider data.

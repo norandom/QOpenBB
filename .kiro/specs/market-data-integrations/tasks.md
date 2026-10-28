@@ -126,7 +126,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
 
 ## 3. Preserve FRED semantics and cache provenance
 
-- [ ] 3.1 (P) Define acquisition envelopes and disk-cache compatibility
+- [x] 3.1 (P) Define acquisition envelopes and disk-cache compatibility
   - Own FRED acquisition/cache modules and isolated disk-cache tests. Version records/keys, preserve original retrieval timestamps and treat old records as misses without deleting unrelated cache data.
   - Done when opt-in acquisition envelopes round-trip and the default raw payload API remains compatible; disk-cache-off remains the installed default.
   - Caps: modified production files meet 400/300/50; tests excluded.
@@ -264,3 +264,5 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - 1.2 accepted: data fork `08978188584`, 34 metadata checks and independent review; [evidence](../../../artifacts/reviewed/market-data-metadata/result.md). Final whole-file size 193/115/9 (physical/logical/max function); shared 77-file gate passes. Runtime consumers and source pin promotion remain later joins.
 
 - 1.3 accepted: data fork `ee6e37a7dc1`, 27 safe-error/validation checks plus independent verification and owning-fork lint; [evidence](../../../artifacts/reviewed/market-data-errors/result.md). Final helpers measure 120/67/17 and 36/13/4. API handlers and fetcher adoption remain later tasks. Include owning-fork Ruff configuration in subsequent worker validation.
+
+- 3.1 accepted: data fork `852a80f1b82`, 16 disk/acquisition tests, owning-fork lint and independent review; [evidence](../../../artifacts/reviewed/market-data-fred-acquisition/result.md). Joined 82-file gate passes. Old cache records miss without deletion; raw payload shape remains compatible. Memory/in-flight integration follows in 3.2.
