@@ -34,7 +34,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Boundary: Baseline and verification setup_
   - _Requirements: 8.1, 8.5_
 
-- [ ] 1.2 Define typed financial metadata without changing existing result envelopes
+- [x] 1.2 Define typed financial metadata without changing existing result envelopes
   - Own the common metadata module and a focused metadata serialization test. Freeze reserved namespace, UTC acquisition timestamps, field semantics, unknown completeness, source identifiers and nonsecret effective queries.
   - Done when AnnotatedResult preserves validated metadata through OBBject and legacy FRED series keys remain collision-free in the fixture; invalid metadata and secret-bearing source/query fields are rejected.
   - Caps: common production model meets 400/300/50; schema output/tests are excluded.
@@ -260,3 +260,5 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 ## Implementation notes
 
 - 1.1 accepted 2026-10-28: [baseline and independent review](../../../artifacts/reviewed/market-data-foundation/result.md). Existing provider environment restored; source overrides are required for new fork edits. Income zero-limit remains unchanged. Real-provider access remains unverified.
+
+- 1.2 accepted: data fork `08978188584`, 34 metadata checks and independent review; [evidence](../../../artifacts/reviewed/market-data-metadata/result.md). Final whole-file size 193/115/9 (physical/logical/max function); shared 77-file gate passes. Runtime consumers and source pin promotion remain later joins.

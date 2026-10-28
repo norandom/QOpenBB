@@ -374,7 +374,7 @@
         "openbb_platform/providers/fred/openbb_fred/models/series.py",
         "openbb_platform/providers/fred/openbb_fred/utils/rate_limiter.py",
         "openbb_platform/providers/fred/openbb_fred/utils/response.py"
-      ]}],
+      ]}, {"spec":"market-data-integrations","include":["openbb_platform/core/openbb_core/provider/**"],"files":["openbb_platform/core/openbb_core/provider/standard_models/financial_metadata.py"]}],
       "exclusions": [
         {"patterns": ["openbb_platform/providers/fmp/LICENSE", "openbb_platform/providers/fmp/provenance.json"], "reason": "Retained upstream notice and imported-artifact provenance data", "source": "openbb_platform/providers/fmp/provenance.json"},
         {"patterns": ["openbb_platform/providers/fmp/openbb_fmp/models/__init__.py", "openbb_platform/providers/fmp/openbb_fmp/utils/__init__.py"], "reason": "Unchanged FMP 1.6.1 archive imports; hash-checked discovery fixture. Remove each exclusion before maintaining that file", "source": "openbb_platform/providers/fmp/provenance.json unchanged_files; tests/providers/test_discovery.py"},

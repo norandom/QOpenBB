@@ -163,7 +163,8 @@
     "chart-nightingale",
     "chart-radial/plan",
     "historical-chart-gallery",
-    "market-data-foundation"
+    "market-data-foundation",
+    "market-data-metadata"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -33994,6 +33995,22 @@
       "publishedpath": "artifacts/reviewed/market-data-foundation/inventory-proposal.md",
       "publishedSHA256": "a27bd44b9f70e28936b307338189699d5049a1d214b836d64a59016be47a2328",
       "bytes": 1558,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-metadata/result.md",
+      "sourceSHA256": "c9eb68789ef7645cb14d74ecf42a84d17e2056c2b3eff2a07fd757295dde12c4",
+      "publishedpath": "artifacts/reviewed/market-data-metadata/result.md",
+      "publishedSHA256": "c9eb68789ef7645cb14d74ecf42a84d17e2056c2b3eff2a07fd757295dde12c4",
+      "bytes": 4219,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-metadata/review.md",
+      "sourceSHA256": "a615ec37fcff7e8c1e515941ed7e157059c2f64860bd96f4e97cf4c6c1fcdc49",
+      "publishedpath": "artifacts/reviewed/market-data-metadata/review.md",
+      "publishedSHA256": "a615ec37fcff7e8c1e515941ed7e157059c2f64860bd96f4e97cf4c6c1fcdc49",
+      "bytes": 3705,
       "transform": "exact-byte-copy"
     }
   ],
