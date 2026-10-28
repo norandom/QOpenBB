@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -25,6 +25,13 @@ Current [historical gallery milestone](.kiro/specs/analyst-workspace/historical-
 - [x] Publish the gallery in the prebuilt alpha images.
 
 ## Status at a glance
+
+Deployment [login correction](.kiro/specs/openbb-self-service/login-password-policy.md):
+
+- [x] Authenticate existing passwords without applying new-password strength rules.
+- [x] Verify `.env` password replacement after Workspace recreation with retained account and data.
+- [x] Verify browser login, incorrect-password rejection and password changes on the corrected local image.
+- [x] Publish and verify the corrected prebuilt alpha images: [publication review](artifacts/reviewed/login-password/publication-review.md).
 
 Snapshot: 2026-10-28. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 

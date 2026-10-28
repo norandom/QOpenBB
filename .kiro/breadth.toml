@@ -1,10 +1,10 @@
 [[capabilities]]
 id = "existing-password-login"
 requirements = ["openbb-self-service/login-password-policy.md:LP1", "openbb-self-service/login-password-policy.md:LP2", "openbb-self-service/login-password-policy.md:LP3", "openbb-self-service/login-password-policy.md:LP4"]
-planned_checks = ["published Compose password update with retained account", "packaged browser and HTTP credential boundary"]
+planned_checks = []
 test_paths = ["tests/delivery/test_workspace_password_policy.py", "vendor/workspace/terminalpro/tests/unit/routes/login.test.tsx", "vendor/workspace/terminalpro/tests/unit/utils/zodForms.test.tsx"]
-status = "partial"
-evidence = ["Workspace 22180d8: 31 schema and 84 frontend checks accepted by independent review; mocked/stubbed dependencies do not establish runtime authentication. artifacts/reviewed/login-password/source-review.md. Packaged verification and corrected alpha publication remain open."]
+status = "passed"
+evidence = ["Workspace 22180d8: 31 schema and 84 frontend checks; actual local image9a0854a browser/API login and password-change journey passes with clean diagnostics. Published-image Compose .env update retains same account and synthetic database content, new200/old401. artifacts/reviewed/login-password/application-review.md. Reset form disabled: no browser warning claim. Publication alpha-40676586728-1 verified separately in artifacts/reviewed/login-password/publication-review.md; owner deployment remains open."]
 
 [[capabilities]]
 id = "stacked-line-application"

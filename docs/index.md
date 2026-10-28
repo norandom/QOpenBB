@@ -2,11 +2,14 @@
 
 Deploy the prototype next, then extend its provider coverage and analyst workflows. Start with the delivery status to see what is implemented, what has been verified and what still prevents release.
 
+The [login correction](../.kiro/specs/openbb-self-service/login-password-policy.md) is published in [alpha-40676586728-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1). Existing-password authentication and bootstrap password replacement are verified within the documented local scope.
+
 ## Choose your next action
 
 | Your task | Start here |
 | --- | --- |
 | Install prebuilt alpha images for development | [Installation guide](install.md) |
+| Understand login and bootstrap password replacement | [Login correction and verification](../.kiro/specs/openbb-self-service/login-password-policy.md) |
 | Configure optional remote access | [Tips and Tricks](tips-and-tricks.md) |
 | Understand the purpose and operating boundaries | [Goals](goals.md) |
 | See the sequence and owning specifications | [Roadmap](roadmap.md) |
@@ -23,7 +26,7 @@ Deploy the prototype next, then extend its provider coverage and analyst workflo
 
 The prototype combines Full Workspace and the self-hosted OpenBB data API in [root Compose](../compose.yaml). It serves HTTP on port 23003 behind owner-managed Cloudflare Access and cloudflared, with relative bind-mounted state. Dagger builds images; portable commands handle verification and publication. Development installs pull prebuilt latest images; each release manifest also records immutable references.
 
-The [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1) includes a 36-chart historical FMP gallery in Apps. Local save/reopen and retained-state recreation are accepted; [public image publication is verified separately](../artifacts/reviewed/chart-gallery/publication-review.md). Browser acceptance has not been repeated on the CI image bytes, and owner-server deployment remains open. Start with [installation](install.md); [prototype delivery](prototype-delivery.md) records source identities and earlier acceptance boundaries.
+The [gallery alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1) includes a 36-chart historical FMP gallery in Apps. Local save/reopen and retained-state recreation are accepted; [public image publication is verified separately](../artifacts/reviewed/chart-gallery/publication-review.md). Browser acceptance has not been repeated on the CI image bytes, and owner-server deployment remains open. Start with [installation](install.md); [prototype delivery](prototype-delivery.md) records source identities and earlier acceptance boundaries.
 
 Broader FMP/FRED/Yahoo coverage belongs to market-data-integrations. Reusable widgets, linked research context, commands, theme and renderer completion belong to analyst-workspace. AI, Excel and custom sources have separate specs. Dashboard persistence acceptance is part of the analyst spec; infrastructure recovery verification is deferred. See [spec ownership](../.kiro/spec-ownership.toml) for transferred obligations.
 

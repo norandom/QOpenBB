@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "stage": "complete",
+  "assertions": {
+    "owned_runtime": true,
+    "loopback_origin": true,
+    "private_email_present": true,
+    "private_password_present": true,
+    "existing_password_outside_strength_policy": true,
+    "private_new_password_complies": true,
+    "candidate_identity_present": true,
+    "wrong_password_http_rejected": true,
+    "wrong_password_ui_stays_at_login": true,
+    "weak_existing_password_http_accepted": true,
+    "browser_submitted_exact_password": true,
+    "authenticated_token_returned": true,
+    "no_login_strength_warning": true,
+    "authenticated_workspace_visible": true,
+    "authenticated_current_user_access": true,
+    "weak_new_password_rejected": true,
+    "wrong_current_password_rejected": true,
+    "weak_current_password_authorizes_strong_replacement": true,
+    "old_password_no_longer_authenticates": true,
+    "new_password_authenticates": true,
+    "new_password_session_authorized": true,
+    "reset_form_feature_flag_identified": true,
+    "clean_diagnostics": true
+  },
+  "diagnostics": {
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "cdpExceptions": 0,
+    "cdpNonNetworkErrors": 0,
+    "failedRequests": [],
+    "unexpectedHttp": []
+  },
+  "image": "sha256:9a0854a4720c099f333c4f597b594c5b327dacabdb7229590eade6015c18d358",
+  "source": "22180d8ec206e088a384f2a3c7345358b1832c7c",
+  "setting_form": "allowForgotPassword=false; reset form disabled; no UI warning claim"
+}

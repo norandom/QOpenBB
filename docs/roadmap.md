@@ -21,6 +21,8 @@ Latest accepted chart milestone: [alpha-40652638534-1](https://github.com/norand
 
 The completed prototype batch repairs four observed integration gaps: an absent first-login questionnaire returns HTTP 200/null, the data image packages and serves its existing widget/app catalog, optional external app previews use Workspace's existing fallback, and the data-only backend advertises an empty agent list. [alpha-40467871625-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1) passes CI, release-asset checks, six anonymous pulls and the fresh-account assembled Compose journey. P3 and the local P4 installation rehearsal are accepted for onboarding, later login, live annual AAPL income values, refresh and clean diagnostics. Owner-server deployment, the generic-widget required-symbol guard, broader provider acceptance, analyst persistence and backup/restore remain open. AI remains a separate spec. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md), [application result](../artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](prototype-delivery.md#current-prototype-repair).
 
+Latest delivery: [alpha-40676586728-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1) corrects login/current-password validation. [Application acceptance](../artifacts/reviewed/login-password/application-review.md) and [publication verification](../artifacts/reviewed/login-password/publication-review.md) are complete; owner-server login remains to be confirmed.
+
 ## Subsequent workstreams
 
 | Spec | Responsibility | Sequence |

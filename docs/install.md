@@ -18,20 +18,20 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published manifest image pair for `alpha-40652638534-1`:
+Published manifest image pair for `alpha-40676586728-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:d8414d603b9a7bd369650fbaacf71e3271367fe3e9bd6b1be02970289aeab713` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:9c46ea9954835acdc6b233cd99c6c0e5bcf918d46b6823bde9b9f4820178b6f0` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:ba994b3f22d05cea141d54084d5aae33723669a7f66b690cd579a95cec6f25f9` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:1aec3870770ceec8b63074da93ed931c678e0a67e7d495d6705ab1d6932c4354` |
 
-Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/chart-gallery/publication-review.md).
+Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/login-password/publication-review.md).
 
-This alpha adds a 36-chart historical FMP gallery in Apps. Local save/reopen and retained-state recreation are accepted; [public image publication is verified separately](../artifacts/reviewed/chart-gallery/publication-review.md). The CI image bytes have not repeated that browser journey. Earlier [live-FMP onboarding acceptance](../artifacts/reviewed/prototype-onboarding/application-review.md) remains a separate record; owner-server deployment remains open.
+This alpha corrects existing-password login and current-password validation. The accepted local candidate completes browser login with a password outside the creation policy, rejects wrong credentials and enforces the new-password policy during a password change, with clean diagnostics. The [application review](../artifacts/reviewed/login-password/application-review.md) separates that candidate proof from public CI image identity checks; browser acceptance has not been repeated on the published image bytes. The reset form is disabled in the tested configuration, so its warnings are covered by source tests, not browser acceptance. Earlier [historical gallery](../artifacts/reviewed/chart-gallery/publication-review.md) and [live-FMP onboarding](../artifacts/reviewed/prototype-onboarding/application-review.md) evidence remain separate; owner-server deployment remains open.
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40652638534-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40652638534-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40676586728-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40676586728-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
@@ -57,7 +57,7 @@ Keep `.env` private. AI, Excel and optional provider settings can stay blank. Pr
 
 Use your own password or leave the administrator fields blank to generate credentials on first start. Single-quote a password value in `.env` if it contains `$`, so Compose does not interpolate it. Avoid exporting the same variables in your shell: exported values take precedence over `.env`.
 
-The published `alpha-40652638534-1` incorrectly applies new-password strength rules at login, in both the form and API. A correction is in progress; it is not yet in the images linked here. The intended behavior is to verify existing credentials without strength checks, while keeping strength warnings on password-setting forms.
+Login checks an existing nonempty password unchanged against the stored credential; it does not apply new-password strength rules. Password creation, reset and replacement retain the strength policy: at least eight characters with uppercase, lowercase, a digit and a special character such as `!`, with no whitespace.
 
 ## Pull and start
 
@@ -88,7 +88,7 @@ docker compose up -d --no-deps --force-recreate workspace
 
 Wait for startup to finish, then log in with that email and the new password. A plain `docker compose restart` does not load changed `.env` values. Keep `./data/workspace`; no database deletion or dashboard reset is needed.
 
-Until the login correction is published, the existing alpha requires at least eight characters with uppercase, lowercase, a digit and a special character such as `!`, with no whitespace. That login restriction is a known bug, not the intended authentication policy.
+Disposable Compose acceptance confirmed the same administrator UUID and synthetic dashboard database content survive this update: the new credential succeeds and the old one fails. This verifies retained database state; it does not establish dashboard UI save/reopen or the owner's deployment.
 
 To open the supported starter app after login:
 

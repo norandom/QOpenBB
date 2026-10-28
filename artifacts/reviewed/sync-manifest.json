@@ -33882,6 +33882,38 @@
       "publishedSHA256": "7ad68071efe133f17a589e1da6da2768ad9e6e8332c4b9ae6df2a52149748d5b",
       "bytes": 5345,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/deployment-login/application-review.md",
+      "sourceSHA256": "0d2538f2579205554bd93a81bfc117946d54ef32f8b83c8faa0253dde9a77cb4",
+      "publishedpath": "artifacts/reviewed/login-password/application-review.md",
+      "publishedSHA256": "0d2538f2579205554bd93a81bfc117946d54ef32f8b83c8faa0253dde9a77cb4",
+      "bytes": 4960,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/deployment-login/browser/run-2/result.json",
+      "sourceSHA256": "710858542a34307b45e3e5f955d13961b767386699066b7d42da5745286f36fb",
+      "publishedpath": "artifacts/reviewed/login-password/application.json",
+      "publishedSHA256": "710858542a34307b45e3e5f955d13961b767386699066b7d42da5745286f36fb",
+      "bytes": 1461,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/deployment-login/release/publication-review.md",
+      "sourceSHA256": "11c2bb2324907fae968d4da1546d6e1411dc87aba0e1506066206d985fb901a8",
+      "publishedpath": "artifacts/reviewed/login-password/publication-review.md",
+      "publishedSHA256": "11c2bb2324907fae968d4da1546d6e1411dc87aba0e1506066206d985fb901a8",
+      "bytes": 2454,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/deployment-login/release/run-40676586728/manifest.json",
+      "sourceSHA256": "18d74dbaedbbb00b58a27c668532f6c16588edd4eeb8d83332578bcf4fdd9314",
+      "publishedpath": "artifacts/reviewed/login-password/release-manifest.json",
+      "publishedSHA256": "18d74dbaedbbb00b58a27c668532f6c16588edd4eeb8d83332578bcf4fdd9314",
+      "bytes": 6740,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -34607,7 +34639,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170296237,
+  "total_payload_bytes": 170311852,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
