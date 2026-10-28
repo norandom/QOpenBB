@@ -9,10 +9,10 @@ Owner approved a recent compatible Valkey release on 2026-10-28. Preserve the tw
 - VK3: verify the actual built image reports Valkey, Python application modules remain source, and required dynamic libraries resolve. Run representative client operations, queue access, application login and persistence after recreation. Load a synthetic snapshot made by the current Redis version; never use owner data for verification.
 - VK4: independently review the source and bounded evidence, update source inventory and deployment documentation, then verify the published image identities. Claim compatibility only for the tested deployment and operations, not arbitrary Redis modules or newer Redis CE data formats.
 
-Research: the official binary's required symbol versions are GLIBC_2.34, OPENSSL_3.0.0 and LIBSYSTEMD_209, compatible with Bookworm's library baseline. Runtime verification remains required. [Valkey migration documentation](https://valkey.io/topics/migration/) covers Redis OSS 7.2 and earlier; Redis CE 7.4+ persistence is outside this contract.
+Research: the official binary's required symbol versions are GLIBC_2.34, OPENSSL_3.0.0 and LIBSYSTEMD_209, compatible with Bookworm's library baseline. The actual candidate passes dynamic-library and running-server identity checks. [Valkey migration documentation](https://valkey.io/topics/migration/) covers Redis OSS 7.2 and earlier; Redis CE 7.4+ persistence is outside this contract.
 
 The implementer owns the maintained Workspace Dockerfile and Supervisor configuration plus one focused packaging regression. The controller owns build/publication, inventory and documentation. Caps remain 400 physical lines, 300 logical units and 50 per function. No other application behavior changes are authorized.
 
 - [x] Accept the pinned server replacement source and focused check: four packaging checks and the joined 76-file complexity gate pass; independent source review accepted.
-- [ ] Verify the combined image, application access and retained data.
+- [x] Verify the combined image, application access and retained data: Redis 7.0.15 synthetic snapshot, RQ queue access, expiry, pub/sub and state after recreation pass on Valkey 9.0.7. Gallery and login journeys pass separately. [Independent runtime review](../../../artifacts/reviewed/python-source-packaging/runtime-review.md).
 - [ ] Publish the updated prebuilt image and reconcile documentation.

@@ -1,6 +1,10 @@
 # Development toolchain
 
-Set up the locked tools before implementing or rebuilding QOpenBB. Use pnpm for maintained JavaScript projects and uv/uvx for Python, with Aikido Safe Chain protecting dependency installation. Task 1.2 establishes dependency installation and version/import checks in WSL; it does not yet provide a running Workspace or data API. Follow the [roadmap](roadmap.md) for the remaining acceptance gates.
+Set up the locked tools before implementing or rebuilding QOpenBB. Use pnpm for maintained JavaScript verification, the existing protected Bun lock for the Full frontend, and uv/uvx for Python, with Aikido Safe Chain protecting dependency installation. The commands below retain the original WSL/Linux toolchain procedure; they do not establish native Windows installation support. Follow the [roadmap](roadmap.md) for current delivery gates.
+
+The maintained Full-image candidate at Workspace `dfda735c527663dd7ecc2f80af18e25843f575af` now uses native `backend-api/backend/pyproject.toml` and `uv.lock`, protected locked installation and readable `.py` application modules under CPython. Poetry/export and Cython are outside the maintained recipe; their retained historical lock/legacy Dockerfiles are not supported alternatives. This migration does not upgrade application dependencies. uv and uvx 0.12.5 are available; uvx supplies isolated tools rather than application-startup resolution. See [Workspace packaging](workspace-build.md) and [image builds](image-builds.md).
+
+The local candidate build and bounded Valkey migration probe passed, including dynamic-library health, source imports, absence of Cython and Redis 7.0.15 synthetic snapshot/RQ job retention across recreation. [Packaged browser acceptance](../artifacts/reviewed/python-source-packaging/runtime-review.md) also passed for the 36-chart gallery with save/fresh-login reopen and login/current-password behavior with clean diagnostics. Gallery recreation was not part of that browser check; retained synthetic database and Valkey markers were checked separately. Publication remains pending. Published `latest` still identifies [alpha-40676586728-1](install.md); do not infer that local source changes are already in those images.
 
 ## Prepare the host
 
@@ -46,7 +50,7 @@ uv safe-chain-verify
 uvx safe-chain-verify
 ```
 
-Node 24.22.0 supplies npm 11.19.1, but maintained verification uses pnpm 10.32.1 and its committed lock. Bun 1.4.3 is reserved for the owned Full Workspace's frozen-lock installation in task 2.1. Its compatibility with that application lock and Safe Chain remains unverified; do not rewrite that lock during foundation setup.
+Node 24.22.0 supplies npm 11.19.1, but maintained verification uses pnpm 10.32.1 and its committed lock. Bun 1.4.3 serves the owned Full Workspace's protected frozen-lock installation, exercised by the retained frontend and image builds. Do not rewrite that lock during toolchain setup.
 
 [Safe Chain 1.5.25](https://github.com/AikidoSec/safe-chain/tree/1.5.25) supports pnpm, Bun, uv and uvx. `setup-ci` creates project-local executable shims; explicit PATH setup also works outside GitHub. Each verification command above must print `OK: Safe-chain works!`. Keep the default 48-hour package-age protection; resolve an older compatible dependency or report a blocker if a frozen version is too recent. Playwright 1.64.0 was selected because 1.64.1 was inside that window on the setup date. Safe Chain checks package downloads for known malware; it does not establish provider correctness or application acceptance.
 
@@ -77,11 +81,11 @@ node verification/node_modules/typescript/bin/tsc --version
 
 Expected versions are Python 3.13.15, pytest 9.1.1, pytest-xdist 3.8.0, Dagger CLI/SDK 0.21.8, Playwright 1.64.0 and TypeScript 6.0.3, together with the host/runtime versions above. Python's `ast` parser follows CPython 3.13.15; the later JavaScript/TypeScript counter uses the TypeScript compiler AST. `uv sync --locked` and pnpm's `--frozen-lockfile` must fail on inconsistent project manifests and locks. Do not regenerate locks merely to make a verification run pass.
 
-The portable `qopenbb-ci` entry point provides package identity and [evidence validation](evidence.md). Task 1.8 accepts the [foundation image workflow](image-builds.md): portable acquisition/staging and archive loading around the pinned Dagger Python SDK through `dagger run`. Only the filtered stage is uploaded. Application builds, generation, publication and promotion remain pending.
+The portable `qopenbb-ci` entry point provides package identity and [evidence validation](evidence.md). The [image workflow](image-builds.md) acquires/stages sources and loads archives around the pinned Dagger Python SDK through `dagger run`; only the filtered stage is uploaded. Published prototype evidence is separate from the current packaging candidate's accepted browser gates and pending publication.
 
 ## Preserve the verification boundary
 
-The base images in [tools.lock.json](../pipeline/tools.lock.json) use registry-returned manifest digests, recorded on 2026-10-16. These are future build inputs, not evidence that an application image builds or runs. Task 1.7 has accepted the pinned headless browser and fixture checks on WSL; follow [verification infrastructure](verification.md) for setup and evidence limits. Task 1.8 owns the first image export/load round trip; actual Compose lifecycle acceptance comes later.
+The base images in [tools.lock.json](../pipeline/tools.lock.json) use registry-returned manifest digests, initially recorded on 2026-10-16. A pinned input alone is not evidence that an application image builds or runs. The retained Task 1.7 headless browser/fixture and Task 1.8 image round-trip checkpoints have narrower scope than application acceptance; follow [verification infrastructure](verification.md) and the current milestone evidence.
 
 The Python project defaults to serial pytest with an xdist ceiling of two. Use at most `-n 2 --maxprocesses=2` when isolated tests exist. Playwright starts at one worker when its runner is implemented. Only one heavy install, build or suite may run at a time. See the [testing policy](../.kiro/steering/testing.md) for state isolation and evidence requirements; installed packages alone do not satisfy requirement 10.4.
 
