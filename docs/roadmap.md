@@ -119,3 +119,10 @@ First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks
 - [x] Add financial metadata to existing FMP profile and income without baseline contract changes.
 - [x] Preserve generic FRED series semantics and observation provenance.
 - [ ] Restore additional FMP datasets, wire the shared service contracts and verify real-provider data.
+
+## FMP statement adapter checkpoint
+
+- [x] Restore bounded balance-sheet and cash-flow adapters with signed/null values, period/date semantics and acquisition provenance. Ten of26initial data tasks are accepted. [Reviewed evidence](../artifacts/reviewed/market-data-statements/accepted.md).
+- [ ] Register the restored datasets and verify installed API/widget contracts and live account access in their owning integration tasks.
+
+These source adapters are not yet part of a newly published runtime image. The separate modeling workstream remains queued after verified provider inputs.

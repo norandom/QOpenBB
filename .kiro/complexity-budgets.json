@@ -358,7 +358,7 @@
     {
       "id": "data_api",
       "repository": "https://github.com/norandom/openbb-data-api.git",
-      "revision": "072a6c6c2bf374d4f33b43bbed5d95c5eff34275",
+      "revision": "93d34aebaef3d1c0ddaaa981f5aefd9bdb2f546d",
       "source_lock_key": "data_api",
       "root": "vendor/data-api",
       "mode": "changed",
@@ -374,7 +374,7 @@
         "openbb_platform/providers/fred/openbb_fred/models/series.py",
         "openbb_platform/providers/fred/openbb_fred/utils/rate_limiter.py",
         "openbb_platform/providers/fred/openbb_fred/utils/response.py"
-      ]}, {"spec":"market-data-integrations","include":["openbb_platform/core/openbb_core/provider/**","openbb_platform/providers/fred/openbb_fred/utils/*","openbb_platform/providers/fmp/openbb_fmp/models/*"],"files":["openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet.py","openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_data.py","openbb_platform/core/openbb_core/provider/standard_models/financial_metadata.py","openbb_platform/core/openbb_core/provider/utils/financial_errors.py","openbb_platform/core/openbb_core/provider/utils/financial_validation.py","openbb_platform/providers/fred/openbb_fred/utils/acquisition.py","openbb_platform/providers/fred/openbb_fred/utils/cache.py"]}],
+      ]}, {"spec":"market-data-integrations","include":["openbb_platform/core/openbb_core/provider/**","openbb_platform/providers/fred/openbb_fred/utils/*","openbb_platform/providers/fmp/openbb_fmp/models/*"],"files":["openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet.py","openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_data.py","openbb_platform/providers/fmp/openbb_fmp/models/cash_flow.py","openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_data.py","openbb_platform/core/openbb_core/provider/standard_models/financial_metadata.py","openbb_platform/core/openbb_core/provider/utils/financial_errors.py","openbb_platform/core/openbb_core/provider/utils/financial_validation.py","openbb_platform/providers/fred/openbb_fred/utils/acquisition.py","openbb_platform/providers/fred/openbb_fred/utils/cache.py"]}],
       "exclusions": [
         {"patterns": ["openbb_platform/providers/fmp/LICENSE", "openbb_platform/providers/fmp/provenance.json"], "reason": "Retained upstream notice and imported-artifact provenance data", "source": "openbb_platform/providers/fmp/provenance.json"},
         {"patterns": ["openbb_platform/providers/fmp/openbb_fmp/models/__init__.py", "openbb_platform/providers/fmp/openbb_fmp/utils/__init__.py"], "reason": "Unchanged FMP 1.6.1 archive imports; hash-checked discovery fixture. Remove each exclusion before maintaining that file", "source": "openbb_platform/providers/fmp/provenance.json unchanged_files; tests/providers/test_discovery.py"},

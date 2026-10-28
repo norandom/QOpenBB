@@ -1,6 +1,6 @@
 # Implementation tasks: reusable financial data, batch 1
 
-Requirements and design were approved on 2026-10-28. This plan makes the approved first financial-input batch executable. It does not authorize all later families by implication or complete the umbrella specification. Task estimates are 1â€“3 hours of focused work, not elapsed delivery promises. If a unit exceeds that boundary, split it at a cohesive seam before continuing; do not waive complexity limits.
+Requirements and design were approved on 2026-10-28. This plan makes the approved first financial-input batch executable. It does not authorize all later families by implication or complete the umbrella specification. Task estimates are 1Ã¢â‚¬â€œ3 hours of focused work, not elapsed delivery promises. If a unit exceeds that boundary, split it at a cohesive seam before continuing; do not waive complexity limits.
 
 ## Execution contract and ownership
 
@@ -76,7 +76,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 2.1_
   - _Requirements: 2.1, 2.4, 4.3, 4.5, 4.7_
 
-- [ ] 2.4 (P) Restore annual and quarterly cash-flow statements
+- [x] 2.4 (P) Restore annual and quarterly cash-flow statements
   - Own only cash-flow fetcher/companion declarations. Preserve sign conventions, zero values, fiscal dates and units; do not infer cash conversion from unspecified definitions.
   - Done when signed/null/quarterly fixtures and pre-I/O bounds pass, with acquisition and financial metadata intact.
   - Caps: each production file meets 400/300/50; tests excluded.
@@ -246,7 +246,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
 
 ## Follow-on scope: not executable in this batch
 
-The approved design explicitly requires separate concrete endpoint/file briefs before these later batches. They remain unchecked scope obligations; this task plan does not pretend that research or a coverage index implements them. Task approval here authorizes only 1.1â€“6.3. Before starting any row below, generate its bounded design/task amendment using retained OpenBB code and the same independent review.
+The approved design explicitly requires separate concrete endpoint/file briefs before these later batches. They remain unchecked scope obligations; this task plan does not pretend that research or a coverage index implements them. Task approval here authorizes only 1.1Ã¢â‚¬â€œ6.3. Before starting any row below, generate its bounded design/task amendment using retained OpenBB code and the same independent review.
 
 | Open delivery | Requirements still open in whole or in part | Next concrete planning input |
 | --- | --- | --- |
@@ -278,3 +278,5 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - CI source identity: the portable gate checks every maintained file in the locked fork. When accepted new helper/model files enter the inventory, synchronize the accepted fork revision and both root source mirrors before pushing. Keep provider registration and catalog proposal promotion in their owning tasks; a component source-pin join does not complete 5.1 or 5.3.
 
 - 2.3 accepted: data fork `072a6c6c2bf374d4f33b43bbed5d95c5eff34275`; [statement evidence](../../../artifacts/reviewed/market-data-statements/accepted.md), independent review and focused numerical/schema checks. Source adapters only; registration/live acceptance remain open.
+
+- 2.4 accepted: data fork `93d34aebaef3d1c0ddaaa981f5aefd9bdb2f546d`; [statement evidence](../../../artifacts/reviewed/market-data-statements/accepted.md), independent review and focused numerical/schema checks. Source adapters only; registration/live acceptance remain open.

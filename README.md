@@ -9,7 +9,7 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 [![Alpha channel](https://img.shields.io/badge/channel-alpha-orange)](docs/install.md) [![Development image tag](https://img.shields.io/badge/dev_images-latest-blue)](docs/install.md) [![Stable images](https://img.shields.io/badge/stable_images-planned-lightgrey)](docs/roadmap.md)
 
-[Install](docs/install.md) Â· [Documentation](docs/index.md) Â· [Roadmap](docs/roadmap.md) Â· [Delivery status](docs/prototype-delivery.md) Â· [Provider coverage](docs/provider-coverage.md) Â· [Breadth evidence](.kiro/breadth.toml)
+[Install](docs/install.md) Ãƒâ€šÃ‚Â· [Documentation](docs/index.md) Ãƒâ€šÃ‚Â· [Roadmap](docs/roadmap.md) Ãƒâ€šÃ‚Â· [Delivery status](docs/prototype-delivery.md) Ãƒâ€šÃ‚Â· [Provider coverage](docs/provider-coverage.md) Ãƒâ€šÃ‚Â· [Breadth evidence](.kiro/breadth.toml)
 
 ![Twelve historical FMP charts in the QOpenBB gallery](artifacts/reviewed/chart-gallery/overview.png)
 
@@ -243,7 +243,7 @@ Credentials belong in ignored `.env`; [.env.sample](.env.sample) contains public
 | Workstream | Scope |
 | --- | --- |
 | [Prototype delivery](.kiro/specs/openbb-self-service/spec.json) | Current baseline, CI/CD, image publication and installation |
-| [Market data](.kiro/specs/market-data-integrations/requirements.md) | FMP horizontal coverage, FRED, Yahoo and future provider adapters. First batch: 9/26 tasks accepted; shared metadata, baseline FMP and FRED provenance accepted; additional FMP datasets next |
+| [Market data](.kiro/specs/market-data-integrations/requirements.md) | FMP horizontal coverage, FRED, Yahoo and future provider adapters. First batch: 10/26 tasks accepted; shared metadata, FMP statements and FRED provenance accepted; registration and further datasets next |
 | [Analyst workspace](.kiro/specs/analyst-workspace/requirements.md) | Reusable widgets, command line, linked context, theme, renderer completion and saved research context |
 | [Workspace AI](.kiro/specs/workspace-ai/requirements.md) | Anthropic discovery, grounding and streaming |
 | [OpenBB Excel](.kiro/specs/openbb-excel/requirements.md) | Add-in and generated functions; retains the Anthropic-first dependency |
