@@ -46,3 +46,11 @@ FRED explicitly identifies [WTI Cushing spot](https://fred.stlouisfed.org/series
 ## From coverage to a working dashboard
 
 The [widget requirements](../.kiro/specs/openbb-self-service/parameterized-widget-requirements.md) own named selection, inline news, command-line navigation and shared time context. The catalog must support research tasks across these families rather than stop at a price-chart starter set. Detailed implementation order and visual acceptance remain to be designed; this map does not approve or claim completed integrations.
+
+## Adapter checkpoint, 2026-10-28
+
+- [x] Balance-sheet and cash-flow source adapters: [accepted statement contracts](../artifacts/reviewed/market-data-statements/accepted.md).
+- [x] Name/symbol discovery, provider peer candidates and bounded daily-price source adapters: [accepted discovery and price contracts](../artifacts/reviewed/market-data-discovery-prices/accepted.md).
+- [ ] Register these restored adapters and verify installed API/widget behavior and live account entitlement. The installed baseline described above remains the registered surface until that join.
+
+These checks track source acceptance, not completion of the broader research families.

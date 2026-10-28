@@ -126,3 +126,10 @@ First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks
 - [ ] Register the restored datasets and verify installed API/widget contracts and live account access in their owning integration tasks.
 
 These source adapters are not yet part of a newly published runtime image. The separate modeling workstream remains queued after verified provider inputs.
+
+## FMP discovery and daily-price checkpoint
+
+- [x] Source adapters for named/symbol discovery, provider peer candidates and bounded daily prices accepted. Twelve of 26 initial data tasks are accepted. [Evidence](../artifacts/reviewed/market-data-discovery-prices/accepted.md).
+- [ ] Complete periodic key metrics, financial ratios and enterprise-value inputs, then register and verify installed consumers with real provider data.
+
+No new runtime image is published at this adapter-only checkpoint.
