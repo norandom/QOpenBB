@@ -1,6 +1,6 @@
 # Historical gallery capture evidence
 
-Reviewed on 2026-10-27. The overview and 36 chart screenshots are accepted visual evidence from the capture candidate. Local packaged gallery integration was accepted on 2026-10-28 as recorded below. Alpha publication remains pending.
+Reviewed on 2026-10-27. The overview and 36 chart screenshots are accepted visual evidence from the capture candidate. Local packaged gallery integration was accepted on 2026-10-28 as recorded below. Publication of [alpha-40652638534-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1) is verified separately in the [release review](publication-review.md).
 
 The overview is one application capture containing twelve widgets, not a montage. Each chart image is an unchanged native widget capture. The existing [sync manifest](../sync-manifest.json) records every source path, exact source/published SHA-256 and byte count. Raw browser output and authentication state remain private and ignored.
 
@@ -34,7 +34,7 @@ The complete `initial-10` browser test exited **1**, after the captures, because
 
 A bounded follow-up reproduced the issue directly after opening the Apps card, without a long gallery tour or resize. Saving and reloading the same dashboard allowed the native edit to succeed and be posted, preserving the EPS secondary axis. Separate fresh-session save/reopen checks also passed. The save/reload boundary probe exited 0 with empty diagnostics; its retained evidence SHA-256 is `366ceb664fd2e23701eb2c7b833fd1240c7ed7f40669bbde2514e43a06fb9d13`.
 
-This workaround is no longer required in the accepted local candidate below. The earlier failures remain historical evidence and are not relabelled as passing tests. The currently published alpha remains a separate, earlier delivery until the gallery publication completes.
+This workaround is no longer required in the accepted local candidate below. The earlier failures remain historical evidence and are not relabelled as passing tests. The corrected gallery is now included in [alpha-40652638534-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1); its image publication is verified separately.
 
 ## Accepted packaged persistence, 2026-10-28
 

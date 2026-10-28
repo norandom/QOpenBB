@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40506541604-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -15,26 +15,26 @@ A self-hosted research workspace for financial engineers. Build on OpenBB, use F
 
 [Explore all 36 charts: analyst use cases, demo data, dimensions and interpretation](docs/chart-gallery.md)
 
-The gallery uses fixed FMP observations around January 2025, with each chart's market or fiscal period labelled. The local candidate exposes these examples through Apps; save/reopen and retained-state recreation have passed. Inclusion in the published alpha is still pending.
+The gallery uses fixed FMP observations around January 2025, with each chart's market or fiscal period labelled. Open the gallery through Apps in the published development alpha. Save/reopen and retained-state recreation passed on the identified local candidate; [publication is verified separately](artifacts/reviewed/chart-gallery/publication-review.md).
 
 Current [historical gallery milestone](.kiro/specs/analyst-workspace/historical-gallery-milestone.md):
 
 - [x] Prepare fixed historical FMP data, 36 native chart configurations and API discovery.
 - [x] Verify the assembled gallery, save/reopen and retained-state recreation.
 - [x] Publish one overview and a [per-chart analyst guide](docs/chart-gallery.md) with reviewed screenshots.
-- [ ] Publish the gallery in the prebuilt alpha images.
+- [x] Publish the gallery in the prebuilt alpha images.
 
 ## Status at a glance
 
-Snapshot: 2026-10-27. Follow the CI link for live run status; a green check does not establish deployment acceptance.
+Snapshot: 2026-10-28. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
 | Area | What exists | What remains |
 | --- | --- | --- |
 | Prototype | Published-image Compose login, starter income widget, refresh and diagnostics accepted; local pull-only install rehearsed | Owner-server deployment; generic required-symbol guard |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
-| Data | Packaged three-widget catalog; actual annual AAPL income values and refresh accepted through the installed route | Broader live provider/widget acceptance, Yahoo adapter and named discovery |
+| Data | Packaged starter widgets and 36-chart historical FMP gallery; annual AAPL income values and refresh accepted through the installed route | Broader live provider/widget acceptance, Yahoo adapter and named discovery |
 | Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut, Box Plot, Range Bar/Area, Waterfall and Radar Line/Area behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
-| Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and persistence acceptance |
+| Analyst workflow | Existing dashboard editor and widget foundations | Familiar commands, linked instruments/time, reusable research views and broader analyst persistence |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
 
 Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-milestone.md):

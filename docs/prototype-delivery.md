@@ -2,14 +2,14 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-40506541604-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40506541604-1), built from QOpenBB `2826ea2610b1f8c37b7c9bb5eb109eb41609cd42`, Workspace `cdefb7638c0991281551db66415328e420287009` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both CI jobs, public release-asset checks and six anonymous digest, release-tag and latest pulls pass. Earlier records below remain historical.
+Published: [alpha-40652638534-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1), built from QOpenBB `6d97dcb8e6e6de2464e468a8e86229e42f7d6d54`, Workspace `f399e01ee9bb73f55ba36c95318ce7773188f20b` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both CI jobs, public release-asset checks and six anonymous digest, release-tag and latest pulls pass. Earlier records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:d8414d603b9a7bd369650fbaacf71e3271367fe3e9bd6b1be02970289aeab713` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:9c46ea9954835acdc6b233cd99c6c0e5bcf918d46b6823bde9b9f4820178b6f0` |
 
-The manifest binds this pair to the reviewed release sources and catalog runtime-input hashes. Theme Settings preview passed the packaged application journey and owner appearance review on local image `sha256:9b0db4b2a3021cd8554b60bf3302affd9740d7087e672bf42594197f6dc2cd9b` from Workspace `c425134e95ac47961143988b5da315abb2969ae1`; [CI publication is verified separately](../artifacts/reviewed/theme-preview/publication-review.md). The CI source adds only a test screenshot-call correction; its image bytes have not repeated the browser journey. The following assembled Compose and pull-only rehearsal evidence belongs to the preceding prototype alpha, not this new CI image pair.
+The manifest binds this pair to the release sources and packaged historical gallery assets. [Gallery publication evidence](../artifacts/reviewed/chart-gallery/publication-review.md) records the image identities and public pulls. Gallery application acceptance uses local image `sha256:4e60fe498e3272908700d9ad206160ce7d5e5f17a775570d4927b65572e7be70` from Workspace `d6208dd3d44e46760d39c80da47c0b681b91e151`. CI publication uses Workspace `f399e01ee9bb73f55ba36c95318ce7773188f20b` with subsequent test-only changes; the CI image bytes have not repeated the browser journey. Owner-server deployment remains unverified.
 
 ## Current prototype repair
 

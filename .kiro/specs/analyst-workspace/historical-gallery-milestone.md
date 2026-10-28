@@ -1,6 +1,6 @@
 # Reopen a historical chart gallery
 
-Status: HG0-HG3 accepted, 2026-10-28; HG4 documentation is published and alpha image publication is pending. Deliver a saved, redeployable FMP gallery that lets an analyst choose a chart, inspect its financial meaning, and reproduce the same observations. The owner requested an overview screenshot in README and a linked guide with one screenshot and explanation per chart. This contract covers that bounded delivery under [prototype-first delivery](../../steering/delivery-workflow.md); it does not close the analyst-workspace specification or other chart callers.
+Status: HG0-HG3 accepted, 2026-10-28; HG4 documentation and [alpha-40652638534-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1) image publication are verified. Deliver a saved, redeployable FMP gallery that lets an analyst choose a chart, inspect its financial meaning, and reproduce the same observations. The owner requested an overview screenshot in README and a linked guide with one screenshot and explanation per chart. This contract covers that bounded delivery under [prototype-first delivery](../../steering/delivery-workflow.md); it does not close the analyst-workspace specification or other chart callers.
 
 The working audience assumption is that financial engineers value reproducible observations and explicit transformations over visual variety alone. The guide sits beside the gallery workflow; independent review should try to disprove its claims. The proposal fails if an analyst cannot find the gallery, distinguish reported from derived values, or recover an edited dashboard after restart. A pending screenshot or passing data endpoint is not application acceptance.
 
@@ -93,7 +93,7 @@ Run packaged acceptance headless with one Playwright worker, a QOpenBB-owned bro
 
 Freeze an Overview tab with 12 complementary examples: `line`, `groupedColumn`, `stackedColumn`, `normalizedArea`, `donut`, `radarLine`, `bubble`, `boxPlot`, `heatmap`, `treemap`, `waterfall`, and `sankey`. Place the other examples on clearly named family tabs so all 36 are reachable. Tune the actual grid/viewport for legible financial titles, labels and legends; record dimensions with the screenshots. The README overview is one genuine application capture, not a montage or generated image. Per-chart captures come from the same verified app and saved configurations, even when a larger chart viewport is needed for the guide.
 
-Publish selected sanitized evidence under `artifacts/reviewed/chart-gallery/`: `overview.png`, `<chartType>.png` for the 36 IDs, one concise verification/review record, and credential-free provenance sufficient to reproduce the selected projections. Inspect every image for credentials/private account details and record exact original/published hashes in the existing sync manifest. Caption the financial measure, units, actual period, transformation and tested source/image. Raw captures, traces, profiles and authentication artifacts remain ignored. Include a small representative screenshot set inline here when accepted; samples are currently pending.
+Publish selected sanitized evidence under `artifacts/reviewed/chart-gallery/`: `overview.png`, `<chartType>.png` for the 36 IDs, one concise verification/review record, and credential-free provenance sufficient to reproduce the selected projections. Inspect every image for credentials/private account details and record exact original/published hashes in the existing sync manifest. Caption the financial measure, units, actual period, transformation and tested source/image. Raw captures, traces, profiles and authentication artifacts remain ignored. The accepted overview is included below; the linked guide contains all 36 per-chart samples.
 
 At closure, reconcile this milestone, `spec.json`, `.kiro/breadth.toml`, README and maintained docs to the evidence. Keep source acceptance, local candidate acceptance, CI publication and owner-server deployment distinct. Dispatch the existing portable/Dagger publication flow once at the completed feature boundary, not for each task or documentation update. A retained bind-state restart proves this gallery's persistence case; it does not establish backup/restore or the entire analyst-workspace scope.
 
@@ -104,7 +104,7 @@ At closure, reconcile this milestone, `spec.json`, `.kiro/breadth.toml`, README 
 - [x] HG2 source: historical projections, 36 chart widgets and seven reusable dashboard tabs; actual appearance remains HG3.
 - [x] HG3: actual application renders and retained-state recreation; first-mounted editing, refresh/export, native save and fresh reopen accepted.
 - [x] HG4 documentation: overview and all 36 per-chart screenshots reviewed and published in the repository.
-- [ ] HG4 delivery: verified image publication after HG3 acceptance.
+- [x] HG4 delivery: [alpha-40652638534-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1) image publication, three installation assets and six anonymous pulls verified; see the [publication review](../../../artifacts/reviewed/chart-gallery/publication-review.md).
 
 HG0 uses native company labels, AAPL filters, storage-only Sankey bindings and explicit one-percentage-point histogram bins from -6% to +6%. The existing Apps primary action selects the first template; actual gallery navigation is checked at HG3. Generator interface: `python -m qopenbb_ci.gallery_cli --chart-state contracts/gallery/chart-state.json --sources PRICE_PROVENANCE --fundamentals INCOME_SOURCE_PROVENANCE --output contracts/gallery`. It consumes retained raw inputs identified by credential-free provenance; it makes no network requests. HG2 executed this command against retained captures with matching hashes and byte-identical regeneration. HG3 must confirm that image startup and refresh consume those assets without provider requests.
 
@@ -112,7 +112,7 @@ HG0 uses native company labels, AAPL filters, storage-only Sankey bindings and e
 
 ## Reviewed gallery captures
 
-The [capture record](../../../artifacts/reviewed/chart-gallery/verification.md) distinguishes the accepted visual evidence from the pending persistence and release checks. The Treemap virtual-root strip is corrected while the FY2024 and quarter headers remain.
+The [capture record](../../../artifacts/reviewed/chart-gallery/verification.md) distinguishes the original capture provenance, accepted local persistence checks and separately verified release identities. The Treemap virtual-root strip is corrected while the FY2024 and quarter headers remain.
 
 ![Historical FMP gallery overview](../../../artifacts/reviewed/chart-gallery/overview.png)
 

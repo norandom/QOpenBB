@@ -18,20 +18,20 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published manifest image pair for `alpha-40506541604-1`:
+Published manifest image pair for `alpha-40652638534-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:0cae952463e0eb927ae54ffd1473e9e62e75a27ab04a2c5fdeaca0cf8e8f7335` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:48c5d80d6b212a4421a5ffb650f193cc7649acbea56bb1399746b4be6936280c` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:d8414d603b9a7bd369650fbaacf71e3271367fe3e9bd6b1be02970289aeab713` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:9c46ea9954835acdc6b233cd99c6c0e5bcf918d46b6823bde9b9f4820178b6f0` |
 
-Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/theme-preview/publication-review.md).
+Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/chart-gallery/publication-review.md).
 
-This alpha includes the reviewed first-login nullable-response fix, the existing widget/app catalog's packaging and GET routes, Workspace's fallback for external app previews, and an empty agent-discovery response for the data-only backend. The preceding prototype alpha passed its published-image Compose journey and isolated pull-only installation rehearsal; those checks were not repeated on this new CI image pair. Theme Settings preview behavior, functional Padding and owner-approved light/dark appearance passed on the identified local candidate, with [publication verified separately](../artifacts/reviewed/theme-preview/publication-review.md). That earlier prototype acceptance covers fresh onboarding, later login, the starter's live annual AAPL income values and refresh, with clean diagnostics. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md) and [recorded result](../artifacts/reviewed/prototype-onboarding/application.json). Owner-server deployment, broader provider acceptance and AI remain separate.
+This alpha adds a 36-chart historical FMP gallery in Apps. Local save/reopen and retained-state recreation are accepted; [public image publication is verified separately](../artifacts/reviewed/chart-gallery/publication-review.md). The CI image bytes have not repeated that browser journey. Earlier [live-FMP onboarding acceptance](../artifacts/reviewed/prototype-onboarding/application-review.md) remains a separate record; owner-server deployment remains open.
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40506541604-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40506541604-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40506541604-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40652638534-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40652638534-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace

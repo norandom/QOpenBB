@@ -4,6 +4,10 @@ Review this curated evidence before staging it. The manifest records exact sourc
 
 The [appearance review](parity/appearance-contract-review/review.md), [saved-option review](parity/appearance-saved-review/review.md), and [editor review](parity/editor-contract-review/review.md) cover the latest original-runtime research. Appearance rounding was corrected after independent rejection; the [publication link addendum](parity/appearance-contract-review/publication-link-addendum.md) binds the final canonical documentation links. Eight appearance cases, four saved-input cases and seven editor actions establish finite reference contracts only. Candidate UI, complete renderer behavior and backend reopen remain unverified. Historical script paths refer to the original artifact folders; reproduce in a disposable copy with the recorded dependencies, rather than modifying this exact-byte mirror.
 
+## Historical FMP gallery
+
+The [36-chart analyst guide](../../docs/chart-gallery.md) links the native screenshots. [Gallery verification](chart-gallery/verification.md) records the capture provenance, first-open correction and retained-state recreation. [Alpha publication review](chart-gallery/publication-review.md) verifies the tagged images and anonymous installation assets separately.
+
 ## Included evidence
 
 - [Appearance/editor task-graph review](appearance-editor-task-plan/review/review.md): five bounded tasks passed independent planning review. The frozen draft retains specification-relative links; canonical tasks are in the owning spec. No implementation is approved by this planning evidence.

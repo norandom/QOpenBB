@@ -2,7 +2,7 @@
 
 Start with the research question, then check the units and transformation beside the chart. This gallery uses fixed historical FMP observations around January 2025 so that the same view can be inspected again. A price path, a revenue partition and an income bridge answer different questions even when their shapes look similar.
 
-The screenshots below show all 36 native chart configurations in the local candidate, using the retained historical datasets. The gallery is not yet in the published alpha. First-open editing, save/reopen and retained-state container recreation passed on the local candidate; see the [capture and persistence evidence](../artifacts/reviewed/chart-gallery/verification.md). Chart availability and renderer acceptance are tracked separately in [chart status](echarts-status.md).
+The screenshots below show all 36 native chart configurations in the local candidate, using the retained historical datasets. The gallery is included in [alpha-40652638534-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40652638534-1). First-open editing, save/reopen and retained-state container recreation passed on the local candidate; see the [capture and persistence evidence](../artifacts/reviewed/chart-gallery/verification.md). Chart availability and renderer acceptance are tracked separately in [chart status](echarts-status.md).
 
 | Your question | Start here |
 |---|---|

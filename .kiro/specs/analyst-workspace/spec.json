@@ -922,21 +922,20 @@
     }
   },
   "historical_gallery_milestone": {
-    "phase": "local-accepted-publication-pending",
+    "phase": "accepted-published",
     "contract": "historical-gallery-milestone.md",
     "completed_tasks": [
       "HG0",
       "HG1",
       "HG2",
-      "HG3"
+      "HG3",
+      "HG4"
     ],
-    "pending_tasks": [
-      "HG4-publication"
-    ],
+    "pending_tasks": [],
     "fixture": "contracts/gallery/chart-state.json",
     "fixture_sha256": "c54619720b96fed6c29c09fc1e1f866867a2f9707f875bf1341360dc4a383d79",
     "workspace_test_revision": "f399e01ee9bb73f55ba36c95318ce7773188f20b",
-    "scope": "All 37 captures reviewed and published. First-open correction independently reviewed; initial native edit/refresh/export/save/fresh reopen and retained-state recreation passed with all 48 widget instances covering 36 chart types. Gallery alpha image publication remains pending.",
+    "scope": "All 37 captures reviewed and published. First-open correction independently reviewed; native edit/refresh/export/save/fresh reopen and retained-state recreation passed with all 48 widget instances covering 36 chart types. Tagged alpha, three public installation assets and six anonymous image pulls verified separately. CI-image browser and owner-server deployment remain unclaimed.",
     "projection_revision": "061f624",
     "runtime_revision": "d9fafda",
     "candidate_root": "be828b6305e2632b6bf7afe60ea64d885f106ae1",
@@ -944,6 +943,9 @@
     "data_api_candidate_root": "c6f6b150923aa1866af115e4fb0a28c506ababa0",
     "first_mount_fix_revision": "d6208dd3d44e46760d39c80da47c0b681b91e151",
     "first_mount_fix_review": "gallery-schema-exception.md",
-    "accepted_workspace_image": "sha256:4e60fe498e3272908700d9ad206160ce7d5e5f17a775570d4927b65572e7be70"
+    "accepted_workspace_image": "sha256:4e60fe498e3272908700d9ad206160ce7d5e5f17a775570d4927b65572e7be70",
+    "published_release": "alpha-40652638534-1",
+    "publication_review": "artifacts/reviewed/chart-gallery/publication-review.md",
+    "publication_root": "6d97dcb8e6e6de2464e468a8e86229e42f7d6d54"
   }
 }
