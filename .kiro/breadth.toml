@@ -1,10 +1,10 @@
 [[capabilities]]
 id = "workspace-python-valkey-packaging"
 requirements = ["openbb-self-service/python-source-packaging.md:PY1-PY4", "openbb-self-service/valkey-packaging.md:VK1-VK4"]
-planned_checks = ["CI publication and anonymous image identity verification"]
+planned_checks = []
 test_paths = ["tests/delivery/test_workspace_packaging.py", "vendor/workspace/terminalpro/tests/e2e/live-chart/historical-gallery.spec.ts"]
-status = "partial"
-evidence = ["Workspace dfda735, local image6417e5: four packaging checks, Dagger build, source-module/library/server inspection, synthetic Redis7.0.15 migration and recreation, 36-chart gallery and login/password lifecycle pass. artifacts/reviewed/python-source-packaging/runtime-review.md. Queue access is verified, not job execution; gallery reopening and synthetic state recreation are separate checks. Publication pending."]
+status = "passed"
+evidence = ["Workspace dfda735, local image6417e5: four packaging checks, Dagger build, source-module/library/server inspection, synthetic Redis7.0.15 migration and recreation, 36-chart gallery and login/password lifecycle pass. artifacts/reviewed/python-source-packaging/runtime-review.md. Queue access is verified, not job execution; gallery reopening and synthetic state recreation are separate checks. Publication alpha-40689838352-1: both CI jobs, three release assets and six anonymous pulls accepted separately; artifacts/reviewed/python-source-packaging/publication-review.md. No CI-image browser or owner-server deployment claim."]
 
 [[capabilities]]
 id = "company-research-existing-framework"

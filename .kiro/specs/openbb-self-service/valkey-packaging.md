@@ -15,4 +15,4 @@ The implementer owns the maintained Workspace Dockerfile and Supervisor configur
 
 - [x] Accept the pinned server replacement source and focused check: four packaging checks and the joined 76-file complexity gate pass; independent source review accepted.
 - [x] Verify the combined image, application access and retained data: Redis 7.0.15 synthetic snapshot, RQ queue access, expiry, pub/sub and state after recreation pass on Valkey 9.0.7. Gallery and login journeys pass separately. [Independent runtime review](../../../artifacts/reviewed/python-source-packaging/runtime-review.md).
-- [ ] Publish the updated prebuilt image and reconcile documentation.
+- [x] Publish the updated prebuilt image and reconcile documentation: `alpha-40689838352-1`, exact source labels and anonymous digest/tag/latest pulls verified. [Publication review](../../../artifacts/reviewed/python-source-packaging/publication-review.md).

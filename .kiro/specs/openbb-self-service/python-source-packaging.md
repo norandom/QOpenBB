@@ -17,4 +17,4 @@ The dependency implementer owns backend `pyproject.toml`, `uv.lock` and the old 
 
 - [x] Remove Cython and Poetry from maintained packaging; native uv lock preserves all historical versions. Source independently accepted with the joined 76-file complexity gate; runtime acceptance is recorded below.
 - [x] Verify the source-based image and existing user journeys: candidate `6417e5fb` passes the 36-chart gallery and login/password lifecycle with clean browser diagnostics. [Independent runtime review](../../../artifacts/reviewed/python-source-packaging/runtime-review.md).
-- [ ] Publish and verify the updated Full Workspace image.
+- [x] Publish and verify the updated Full Workspace image: `alpha-40689838352-1`, both CI jobs, three release assets and six anonymous pulls. [Publication review](../../../artifacts/reviewed/python-source-packaging/publication-review.md).

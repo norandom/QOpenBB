@@ -2,14 +2,14 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-40676586728-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1), built from QOpenBB `eb0b18bf83f2597f126b89e8483e38ccac296ab9`, Workspace `22180d8ec206e088a384f2a3c7345358b1832c7c` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both CI jobs, public release-asset checks and six anonymous digest, release-tag and latest pulls pass. Earlier records below remain historical.
+Published: [alpha-40689838352-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40689838352-1), built from QOpenBB `4aa3969ea4ceedf492ac6ffe7546518db5bc0a12`, Workspace `dfda735c527663dd7ecc2f80af18e25843f575af` and data API `cab81b16bb9ef49272a6f3b0bf04cf9f34bde0ba`. Both CI jobs, three public release assets and six anonymous digest, release-tag and latest pulls pass. Earlier records below remain historical.
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:d8414d603b9a7bd369650fbaacf71e3271367fe3e9bd6b1be02970289aeab713` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:9c46ea9954835acdc6b233cd99c6c0e5bcf918d46b6823bde9b9f4820178b6f0` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:957f02d18b8365412e68016b1b9e7184a4383cec1fc35774fdc0193ab35d219f` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:59b94139b34e2195e83d69be959c3f242fdf4ddccf5b2764c0d5154612aab057` |
 
-The manifest binds this pair to the release sources and packaged historical gallery assets. [Gallery publication evidence](../artifacts/reviewed/chart-gallery/publication-review.md) records the image identities and public pulls. Gallery application acceptance uses local image `sha256:4e60fe498e3272908700d9ad206160ce7d5e5f17a775570d4927b65572e7be70` from Workspace `d6208dd3d44e46760d39c80da47c0b681b91e151`. CI publication uses Workspace `22180d8ec206e088a384f2a3c7345358b1832c7c` with subsequent test-only changes; the CI image bytes have not repeated the browser journey. Owner-server deployment remains unverified.
+The [release manifest](https://github.com/norandom/QOpenBB/releases/download/alpha-40689838352-1/manifest.json) binds this exact pair to native uv backend metadata/lock, readable Python application source under CPython and embedded Valkey 9.0.7. [Publication verification](../artifacts/reviewed/python-source-packaging/publication-review.md) records the public identities and pulls. [Application acceptance](../artifacts/reviewed/python-source-packaging/runtime-review.md) uses local image `sha256:6417e5fb24339894463a5a4bd9d095b127b5ac46694755f4a7c32b96f861833f` from Workspace `dfda735c527663dd7ecc2f80af18e25843f575af`: the 36-chart gallery saves and reopens through a fresh login, and login/password-change checks pass with clean diagnostics. A separate synthetic Redis 7.0.15 snapshot/RQ job and database-marker probe passes container recreation; gallery recreation is not claimed by that browser test. CI image bytes have not repeated browser acceptance. Owner-server deployment and rollback remain unverified.
 
 ## Current prototype repair
 

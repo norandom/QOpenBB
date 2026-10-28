@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40689838352-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -27,6 +27,8 @@ Current [historical gallery milestone](.kiro/specs/analyst-workspace/historical-
 - [x] Publish the gallery in the prebuilt alpha images.
 
 ## Status at a glance
+
+The current alpha uses locked native uv backend packaging, readable Python application source under CPython and embedded Valkey 9.0.7. [Local runtime acceptance](artifacts/reviewed/python-source-packaging/runtime-review.md) covers gallery save/fresh-login reopen and login/password changes; a separate synthetic Redis snapshot/RQ and database-marker probe covers recreation. [Publication verification](artifacts/reviewed/python-source-packaging/publication-review.md) checks the released image identities and public pulls, without repeating browser acceptance on CI image bytes.
 
 Deployment [login correction](.kiro/specs/openbb-self-service/login-password-policy.md):
 

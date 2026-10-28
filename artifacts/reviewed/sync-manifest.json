@@ -33962,6 +33962,14 @@
       "publishedSHA256": "c1d6c1b8189c5ed0086cd26cfab187c93fdf7efe5d0e9fbabe033559b672433c",
       "bytes": 4339,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/python-source-packaging/publication-review.md",
+      "sourceSHA256": "e14dbcb9f5c7caa14a0c665c7eb4175a7a418d22d4f330f8913fa29bdf7cb9db",
+      "publishedpath": "artifacts/reviewed/python-source-packaging/publication-review.md",
+      "publishedSHA256": "e14dbcb9f5c7caa14a0c665c7eb4175a7a418d22d4f330f8913fa29bdf7cb9db",
+      "bytes": 2708,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -34687,7 +34695,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170334959,
+  "total_payload_bytes": 170337667,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

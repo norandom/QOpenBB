@@ -18,20 +18,20 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published manifest image pair for `alpha-40676586728-1`:
+Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-40689838352-1/manifest.json) for `alpha-40689838352-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:ba994b3f22d05cea141d54084d5aae33723669a7f66b690cd579a95cec6f25f9` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:1aec3870770ceec8b63074da93ed931c678e0a67e7d495d6705ab1d6932c4354` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:957f02d18b8365412e68016b1b9e7184a4383cec1fc35774fdc0193ab35d219f` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:59b94139b34e2195e83d69be959c3f242fdf4ddccf5b2764c0d5154612aab057` |
 
-Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/login-password/publication-review.md).
+Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/python-source-packaging/publication-review.md).
 
-This alpha corrects existing-password login and current-password validation. The accepted local candidate completes browser login with a password outside the creation policy, rejects wrong credentials and enforces the new-password policy during a password change, with clean diagnostics. The [application review](../artifacts/reviewed/login-password/application-review.md) separates that candidate proof from public CI image identity checks; browser acceptance has not been repeated on the published image bytes. The reset form is disabled in the tested configuration, so its warnings are covered by source tests, not browser acceptance. Earlier [historical gallery](../artifacts/reviewed/chart-gallery/publication-review.md) and [live-FMP onboarding](../artifacts/reviewed/prototype-onboarding/application-review.md) evidence remain separate; owner-server deployment remains open.
+This alpha packages the backend with native locked uv, readable Python source under CPython and embedded Valkey 9.0.7. The [accepted local candidate](../artifacts/reviewed/python-source-packaging/runtime-review.md) passes the 36-chart gallery with save/fresh-login reopen and login/current-password checks with clean diagnostics. A separate synthetic Redis 7.0.15 snapshot/RQ job and database-marker probe passes recreation; the gallery browser journey itself did not test recreation. Publication checks identify the released images; browser acceptance has not been repeated on those CI image bytes. The disabled reset form's warnings retain source-test coverage, not browser acceptance. Earlier [login](../artifacts/reviewed/login-password/application-review.md), [historical gallery](../artifacts/reviewed/chart-gallery/publication-review.md) and [live-FMP onboarding](../artifacts/reviewed/prototype-onboarding/application-review.md) evidence remain historical; owner-server deployment remains open.
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40676586728-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40676586728-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40689838352-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40689838352-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40689838352-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
