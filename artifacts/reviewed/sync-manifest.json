@@ -164,7 +164,8 @@
     "chart-radial/plan",
     "historical-chart-gallery",
     "market-data-foundation",
-    "market-data-metadata"
+    "market-data-metadata",
+    "market-data-errors"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34011,6 +34012,22 @@
       "publishedpath": "artifacts/reviewed/market-data-metadata/review.md",
       "publishedSHA256": "a615ec37fcff7e8c1e515941ed7e157059c2f64860bd96f4e97cf4c6c1fcdc49",
       "bytes": 3705,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-errors/result.md",
+      "sourceSHA256": "79afd6a868b535a0f02e21f2116fc2d535171c3b465713c7b89dbba07b6d7a8a",
+      "publishedpath": "artifacts/reviewed/market-data-errors/result.md",
+      "publishedSHA256": "79afd6a868b535a0f02e21f2116fc2d535171c3b465713c7b89dbba07b6d7a8a",
+      "bytes": 4397,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-errors/review.md",
+      "sourceSHA256": "6fd9f1f49da814de922462be326f61d3a1cdfdb25a7bbed7b5047250f14d6689",
+      "publishedpath": "artifacts/reviewed/market-data-errors/review.md",
+      "publishedSHA256": "6fd9f1f49da814de922462be326f61d3a1cdfdb25a7bbed7b5047250f14d6689",
+      "bytes": 4860,
       "transform": "exact-byte-copy"
     }
   ],

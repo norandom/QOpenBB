@@ -107,3 +107,10 @@ The current [gallery milestone](../.kiro/specs/analyst-workspace/historical-gall
 - [x] Verify all rendered examples and retained-state recreation in the assembled application.
 - [x] Capture and review the README overview and all 36 per-chart screenshots.
 - [x] Publish the gallery in the prebuilt images.
+
+First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks.md)):
+
+- [x] Restore and characterize the existing provider verification baseline.
+- [x] Implement typed financial metadata through the native result envelope.
+- [x] Implement safe financial failures and separate query/result validation.
+- [ ] Adopt these contracts in FMP/FRED fetchers and the running service; verify real-provider data.

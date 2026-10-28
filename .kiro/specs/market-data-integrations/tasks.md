@@ -42,7 +42,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 1.1_
   - _Requirements: 4.1, 4.2, 4.4, 4.5, 4.6, 4.7, 4.8, 6.2, 7.2_
 
-- [ ] 1.3 (P) Define safe typed failures and result validation
+- [x] 1.3 (P) Define safe typed failures and result validation
   - Own the core error and validation helpers; freeze category/status/retry attributes and bounded recognized-wrapper unwrapping. No arbitrary exception-string parsing or unsafe cause retention.
   - Done when malformed provider rows and nested wrappers produce safe categories, request/result failures remain distinct, and secret canaries never appear in serialized errors.
   - Caps: both helpers meet 400/300/50; focused tests excluded.
@@ -262,3 +262,5 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - 1.1 accepted 2026-10-28: [baseline and independent review](../../../artifacts/reviewed/market-data-foundation/result.md). Existing provider environment restored; source overrides are required for new fork edits. Income zero-limit remains unchanged. Real-provider access remains unverified.
 
 - 1.2 accepted: data fork `08978188584`, 34 metadata checks and independent review; [evidence](../../../artifacts/reviewed/market-data-metadata/result.md). Final whole-file size 193/115/9 (physical/logical/max function); shared 77-file gate passes. Runtime consumers and source pin promotion remain later joins.
+
+- 1.3 accepted: data fork `ee6e37a7dc1`, 27 safe-error/validation checks plus independent verification and owning-fork lint; [evidence](../../../artifacts/reviewed/market-data-errors/result.md). Final helpers measure 120/67/17 and 36/13/4. API handlers and fetcher adoption remain later tasks. Include owning-fork Ruff configuration in subsequent worker validation.
