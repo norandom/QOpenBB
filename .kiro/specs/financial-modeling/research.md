@@ -73,3 +73,9 @@ Choose immutable release-asset contract bundles pinned by source and hashes. Bot
 ## References
 
 The [approved requirements](requirements.md), [house reflection](../analyst-workspace/house-modeling-reflection.md) and [repository blueprint](repository-blueprint.md) establish scope. External references above support technical choices only; they do not prove QOpenBB integration or financial correctness.
+
+## Owner-selected Polars and financial Python amendment
+
+The owner selected Polars for model tables and requested idiomatic Python, finance-domain dataframe/table names and meaningful comments. The [conventions](python-finance-conventions.md) are part of the design and future repository steering. No provider-layer migration or package installation follows from this choice.
+
+Official references checked on 2026-10-28: [expressions and contexts](https://docs.pola.rs/user-guide/concepts/expressions-and-contexts/), [lazy execution](https://docs.pola.rs/user-guide/lazy/using/), [Decimal datatype](https://docs.pola.rs/api/python/stable/reference/api/polars.datatypes.Decimal.html) and [multiprocessing](https://docs.pola.rs/user-guide/misc/multiprocessing/). Use native expressions and explicit materialization; verify exact decimal operations in the pinned version. Spawn-based bounded workers avoid inherited native-thread state. The worker is an execution-limit boundary, not a claim that multiprocessing accelerates Polars.

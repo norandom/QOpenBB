@@ -62,6 +62,7 @@ Ports and adapters govern deployment boundaries. Adapter maps explicitly supplie
 | Layer | Choice | Role |
 | --- | --- | --- |
 | Domain | Typed Python; initial candidate Python 3.13 family | Pure supplied-input execution and Decimal-based financial values |
+| Financial tables | Polars; exact version pinned at repository bootstrap | Typed table schemas, expression-based transformations and bounded materialization |
 | Contracts | Pydantic 2 family; candidate 2.14.1 from current data runtime lock | Boundary validation and generated JSON Schema |
 | HTTP | FastAPI; candidate 0.143.0 from current data runtime lock | OpenAPI 3.1 contract and thin routes |
 | Verification | Existing pytest style and independent Python references | Financial, contract and import-boundary checks |
@@ -69,6 +70,10 @@ Ports and adapters govern deployment boundaries. Adapter maps explicitly supplie
 | Deployment | Independently versioned image in existing Compose | Same-origin access and relative bind state |
 
 Candidate package versions are reuse inputs, not a new verified lock. Repository-bootstrap tasks resolve and verify supported exact pins before installing. If Node tooling is needed, the existing minimum 24.22.1 requirement applies. Dagger builds only; portable commands run checks and publication.
+
+### Financial Python conventions
+
+Owner-selected Polars is the table engine for the modeling repository. Follow [Polars and financial Python conventions](python-finance-conventions.md) for domain names, explicit table grain and joins, missing values, precision, idiomatic functions and useful financial comments. Keep API contracts independent of Polars; scalar calculations and independent Python reference checks remain explicit. These are model-repository conventions, not a provider-layer rewrite.
 
 ## File Structure Plan
 
@@ -234,7 +239,7 @@ Authentication and per-run ownership are required for deployment; Cloudflare Acc
 
 Use a configured data-API base URL and an allowlisted dataset mapping for acquisition, never caller-supplied fetch URLs. Log run/correlation/model/rule IDs and safe error categories; exclude raw assumptions, data and credentials from ordinary logs. Runs are private to their owner initially; shared research is a separately authorized extension.
 
-Start with synchronous bounded evaluation. Each model descriptor declares maximum input rows, horizon and supported scenario size; service configuration supplies request-body, acquisition and evaluation timeouts. Reject oversized inputs before calculation. The service returns 503 for exhausted/failed execution rather than a partial run labeled complete. Evaluation executes in a bounded child process so its configured wall-time deadline can terminate computation; no detached job continues after a failed request. Default service admission limits are 2 MiB request bodies and one active evaluation process; requests over capacity receive 503. The initial evaluation timeout is 60 seconds and data acquisition timeout is 30 seconds; descriptors may tighten, never bypass, configured limits. Concrete measured limits are acceptance inputs for each model slice; no throughput claim or worker queue is introduced here.
+Start with synchronous bounded evaluation. Each model descriptor declares maximum input rows, horizon and supported scenario size; service configuration supplies request-body, acquisition and evaluation timeouts. Reject oversized inputs before calculation. The service returns 503 for exhausted/failed execution rather than a partial run labeled complete. Evaluation executes in a bounded spawn-based child process with a configured Polars thread budget so its configured wall-time deadline can terminate computation; no detached job continues after a failed request. Default service admission limits are 2 MiB request bodies and one active evaluation process; requests over capacity receive 503. The initial evaluation timeout is 60 seconds and data acquisition timeout is 30 seconds; descriptors may tighten, never bypass, configured limits. Concrete measured limits are acceptance inputs for each model slice; no throughput claim or worker queue is introduced here.
 
 ## Testing Strategy
 

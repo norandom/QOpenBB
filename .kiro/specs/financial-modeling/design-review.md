@@ -7,3 +7,5 @@ Independent gpt-6-astra review checked the design against all 31 approved criter
 Independent gpt-6.1-sol discovery identified reusable widget/backend registration and the missing authenticated downstream identity seam. The design addresses the latter through the existing Workspace session authority and a separate internal modeling identity contract; that bridge does not yet exist.
 
 Controller checks found every numeric criterion mapped and no missing local design/research links. This is documentation-only work; no financial model, schema validator, authentication integration, contract test or image was executed or accepted. Runtime and numerical claims remain open. Requirements approval is recorded; design awaits owner approval, and implementation remains deferred behind the provider work.
+
+Polars amendment: independent gpt-6-astra review passed the owner-selected table engine and financial Python conventions, including table grain, join/null handling, precision, independent references and bounded spawn/thread execution. This is design review only; package compatibility and runtime checks remain bootstrap work.

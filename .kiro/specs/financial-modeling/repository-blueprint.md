@@ -81,6 +81,10 @@ The future repository's AGENTS.md shall direct agents to:
 
 Carry COBESY documentation conventions, uv/uvx and the protected package workflow into the new repository. Keep secrets out of fixtures and public artifacts. No Excel implementation before the separately required Anthropic acceptance.
 
+## Python and table conventions
+
+The owner selected Polars for the modeling layer. Transfer [financial Python conventions](python-finance-conventions.md) into the future repository steering and each model task: financial-domain dataframe/table names, explicit grain/schema/precision, idiomatic typed Python and comments explaining financial rationale. The data-provider layer remains separately owned.
+
 ## Current session boundary
 
 Only the stub specification and cross-project roadmap/breadth links are delivered. There is no model API, executable validator, fixture acceptance, plugin runtime, published package or Docker image yet. Requirements review is not implementation verification. Broad FMP work remains the active implementation lane; later FRED/EconDB expansion follows the same provider-versus-model boundary.

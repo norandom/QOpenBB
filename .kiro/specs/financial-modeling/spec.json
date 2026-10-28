@@ -38,5 +38,11 @@
     "status": "passed",
     "reviewer_model": "gpt-6-astra",
     "record": "design-review.md"
+  },
+  "implementation_constraints": {
+    "table_engine": "Polars; exact version pinned at bootstrap",
+    "style": "Idiomatic typed Python, financial-domain table names and rationale-focused comments",
+    "conventions": "python-finance-conventions.md",
+    "authorization": "Owner-selected design constraints; no runtime implementation authorized"
   }
 }
