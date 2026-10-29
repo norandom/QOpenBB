@@ -44,7 +44,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Requirements: 1.1, 4.1, 4.2, 5.1, 5.2, 5.3, 6.1, 6.3_
 
 - [ ] 4. Remaining bounded source adoption
-- [ ] 4.1 (P) Preserve income-statement baseline semantics in declarations
+- [x] 4.1 (P) Preserve income-statement baseline semantics in declarations
   - Adopt static definitions and the baseline provider policy without changing limit-zero, excess-row behavior, aliases or HTTP error compatibility. Describe the response policy instead of inventing a fixed clipping limit.
   - Done: existing income/error cases and declaration/runtime agreement pass. Whole-file caps pass; if adding declarations exceeds the current file budget, extract income data declarations into a single owned companion first.
   - _Boundary: FMP models/income_statement.py, optional cohesive income_statement_data.py and tests/providers/test_income.py only._

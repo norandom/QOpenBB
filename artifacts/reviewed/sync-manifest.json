@@ -34480,6 +34480,30 @@
       "publishedSHA256": "500bd6907f08a9407539ad28f76eacd52b28205d566d111c50ff53090001b084",
       "bytes": 444,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-income/result.md",
+      "sourceSHA256": "bdd02aca55b932f0912d53c0393d2f123e0b89c3c0d27f7d0323e9d0670159da",
+      "publishedpath": "artifacts/reviewed/annotations-income/result.md",
+      "publishedSHA256": "bdd02aca55b932f0912d53c0393d2f123e0b89c3c0d27f7d0323e9d0670159da",
+      "bytes": 3514,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-income/review.md",
+      "sourceSHA256": "d3e6da013259dcee34599901675acadee761ba23bf243373062908d812a03614",
+      "publishedpath": "artifacts/reviewed/annotations-income/review.md",
+      "publishedSHA256": "d3e6da013259dcee34599901675acadee761ba23bf243373062908d812a03614",
+      "bytes": 6347,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-income/accepted.md",
+      "sourceSHA256": "6447c8298ef6b4494b66514cfcef7b6d60370070c8eed5b85bab70abeb142d1f",
+      "publishedpath": "artifacts/reviewed/annotations-income/accepted.md",
+      "publishedSHA256": "6447c8298ef6b4494b66514cfcef7b6d60370070c8eed5b85bab70abeb142d1f",
+      "bytes": 1043,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35205,7 +35229,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170396079,
+  "total_payload_bytes": 170406983,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

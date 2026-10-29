@@ -184,3 +184,46 @@ def test_income_zero_preserves_nonempty_provider_rows(income_boundary, monkeypat
     assert meta["bounds"]["requested_limit"] == 0
     assert meta["bounds"]["effective_limit"] is None
     assert meta["effective_query"]["limit"] == 0
+
+
+@pytest.mark.parametrize("period,basis", [
+    ("annual", "annual"), ("quarter", "discrete_quarter"),
+    ("ttm", "trailing_twelve_months"),
+])
+def test_income_declarations_match_runtime(income_boundary, period, basis):
+    from datetime import UTC, datetime
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_data_annotation, bind_query_annotation, render_field_templates,
+    )
+    from openbb_fmp.models.income_statement import (
+        FMPIncomeStatementData as Data, FMPIncomeStatementFetcher as Fetcher,
+        FMPIncomeStatementQueryParams as Query,
+    )
+    from openbb_fmp.utils.helpers import FMPAcquisition
+    query_annotation = bind_query_annotation(Query)
+    assert query_annotation.provider_policy == "baseline_default"
+    assert query_annotation.response_policy.mode == "income_compatibility"
+    assert query_annotation.response_policy.max_rows is None
+    assert query_annotation.response_policy.limit_parameter is None
+    declaration = bind_data_annotation(Data)
+    original = declaration.model_dump()
+    assert set(declaration.fields) == set(Data.model_fields)
+    assert "reportedCurrency" not in declaration.fields
+    assert {"fields.period_basis", "fields.availability"} <= set(declaration.runtime_properties)
+    templates = render_field_templates(Data)
+    raw = FMPAcquisition(deepcopy(income_boundary[0]), datetime(2025, 11, 1, tzinfo=UTC))
+    query = Query(symbol="AAPL", period=period, limit=0)
+    result = Fetcher.transform_data(query, raw)
+    metadata = result.metadata["__qopenbb_financial__"]
+    assert len(result.result) == len(raw.payload)
+    for name, template in templates.items():
+        actual = metadata["fields"][name]
+        expected = template.model_dump(mode="json")
+        expected["period_basis"] = basis
+        expected["availability"] = (
+            "available" if any(getattr(row, name) is not None for row in result.result) else "missing"
+        )
+        assert actual == expected, name
+    templates["revenue"].unit = "changed"
+    assert bind_data_annotation(Data).model_dump() == original
+    assert metadata["bounds"]["effective_limit"] is None
