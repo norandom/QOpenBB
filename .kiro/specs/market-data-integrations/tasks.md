@@ -152,8 +152,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
 
 ## 4. Expose consistent consumer contracts
 
-- [ ] 4.1 (P) Generate the authoritative financial schema projection
-  - _Blocked: Source annotation prerequisite is missing; [reviewed repair amendment](financial-annotations-amendment.md) is owner design-approved; repair task approval remains pending. No generic or inferred replacement projection is accepted._
+- [x] 4.1 (P) Generate the authoritative financial schema projection
   - Own financial_openapi only. Project installed model annotations to metadata schema references and operation descriptors; do not reconstruct semantics from widgets or add a registry.
   - Done when fixture OpenAPI documents disclose metadata location, query bounds/provider choices and safe response schemas, with resolvable references and deterministic output.
   - Caps: projection meets 400/300/50; generated schemas/tests excluded.
@@ -291,3 +290,6 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - 2.8 accepted: data fork `4bef44cd5622f834df0b9afdb20c0d1f1183f013`; [metrics and ratio evidence](../../../artifacts/reviewed/market-data-metrics-ratios/accepted.md), independent review and focused numerical/schema checks. Source adapters only; registration/live acceptance remain open.
 
 - 2.9 accepted 2026-10-29: data fork `d8589764cfd03a4fca40cabd14de9620a194f0eb`; [enterprise-value source acceptance](../../../artifacts/reviewed/market-data-enterprise-schema/accepted.md), 24 focused/independent tests, owning Ruff and 77-file combined gate. Isolated router is unmounted; registration/live/consumer acceptance remain open.
+
+- 4.1 accepted 2026-10-29: all eleven annotation repair tasks complete; [native projection acceptance](../../../artifacts/reviewed/annotations-native-join/accepted.md), independent 389-test combined suite, final native/lint verification and shared-module audit. Main progress 16/26.
+- Native API integration note: use upstream `iter_api_routes` for lazy route contexts; derive canonical success schemas from actual `route.response_model` rather than retaining alias-based native schemas under `allOf`.

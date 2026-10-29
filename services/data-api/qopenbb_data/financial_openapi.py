@@ -15,6 +15,7 @@ from openbb_core.provider.standard_models.financial_metadata import (
     FinancialResultMetadata,
 )
 from openbb_core.provider.utils.financial_errors import FinancialErrorCode
+from pydantic import BaseModel
 
 EXTENSION = "x-qopenbb-financial"
 PREFIX = "#/components/schemas/"
@@ -133,23 +134,31 @@ def _provider_parameter(document: dict, operation: dict, path_item: dict,
     operation["parameters"] = parameters
 
 
-def _response(operation: dict, schemas: dict, dataset: str, metadata: dict) -> dict:
+def _response(operation: dict, schemas: dict, dataset: str, metadata: dict,
+              response_model=None) -> dict:
     response = operation.get("responses", {}).get("200", {})
     media = response.get("content", {}).get("application/json")
     if media is None or "schema" not in media:
         raise InvalidFinancialAnnotation("Financial operation lacks JSON success schema")
+    base = deepcopy(media["schema"])
+    if response_model is not None:
+        if not isinstance(response_model, type) or not issubclass(response_model, BaseModel):
+            raise InvalidFinancialAnnotation("Financial operation requires a supported response model")
+        # Native OpenAPI aliases can differ from the route's canonical output.
+        base = _model_schema(response_model, schemas, dataset, "native_response")
     name = _name(dataset, "response")
     reference = {"$ref": PREFIX + name}
     if media["schema"] == reference:
         if name not in schemas:
             raise InvalidFinancialAnnotation("Missing projected response component")
-        return reference
+        if response_model is None:
+            return reference
     overlay = {"type": "object", "properties": {"extra": {
         "type": "object", "properties": {"results_metadata": {
             "type": "object", "properties": {"__qopenbb_financial__": metadata}
         }}
     }}}
-    reference = _put(schemas, name, {"allOf": [deepcopy(media["schema"]), overlay]})
+    reference = _put(schemas, name, {"allOf": [base, overlay]})
     media["schema"] = reference
     return reference
 
@@ -170,7 +179,8 @@ def _error_schema(schemas: dict) -> dict:
 
 
 def _operation(document: dict, operation: dict, path_item: dict, dataset: str,
-               variants: dict, schemas: dict, metadata: dict, error: dict) -> None:
+               variants: dict, schemas: dict, metadata: dict, error: dict,
+               response_model=None) -> None:
     descriptors, policies = {}, set()
     for provider, models in sorted(variants.items()):
         policy, descriptors[provider] = _variant(dataset, provider, models, schemas)
@@ -184,7 +194,7 @@ def _operation(document: dict, operation: dict, path_item: dict, dataset: str,
         "provider_policy": policy, "variants": descriptors,
         "metadata_location": FINANCIAL_METADATA_LOCATION, "metadata_schema": metadata,
         "metadata_enforcement": "Fetcher validation; unrestricted extra alone does not enforce this schema.",
-        "response_schema": _response(operation, schemas, dataset, metadata),
+        "response_schema": _response(operation, schemas, dataset, metadata, response_model),
         "error_schema": error,
     }
 
@@ -218,7 +228,8 @@ def project_financial_openapi(document: dict, routes: Iterable, registry_map: Re
             operation = path_item.get(method)
             if operation is None:
                 raise InvalidFinancialAnnotation("Required route lacks OpenAPI operation")
-            _operation(result, operation, path_item, dataset, variants, schemas, metadata, error)
+            _operation(result, operation, path_item, dataset, variants, schemas, metadata, error,
+                       getattr(route, "response_model", None))
             found.add(dataset)
     if found != required_models:
         raise InvalidFinancialAnnotation("Required model lacks route association")

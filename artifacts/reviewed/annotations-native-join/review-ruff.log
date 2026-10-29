@@ -1,0 +1,126 @@
+I001 [*] Import block is un-sorted or un-formatted
+   --> tests/providers/test_financial_openapi.py:299:5
+    |
+298 |   def test_installed_native_baseline_associations_and_success_rows():
+299 | /     from openbb_core.api.rest_api import app
+300 | |     from openbb_core.app.route_iter import iter_api_routes
+301 | |     from openbb_core.provider.registry_map import RegistryMap
+302 | |     from openbb_core.provider.standard_models.financial_annotations import bind_data_annotation
+    | |_______________________________________________________________________________________________^
+303 |
+304 |       registry = RegistryMap()
+    |
+help: Organize imports
+    |
+301 |     from openbb_core.provider.registry_map import RegistryMap
+    -     from openbb_core.provider.standard_models.financial_annotations import bind_data_annotation
+302 +     from openbb_core.provider.standard_models.financial_annotations import (
+303 +         bind_data_annotation,
+304 +     )
+305 |
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+   --> tests/providers/test_financial_openapi.py:330:5
+    |
+328 |   @pytest.fixture
+329 |   def native_first_batch():
+330 | /     from importlib import import_module
+331 | |     from fastapi import FastAPI
+332 | |     from openbb_core.provider.abstract.provider import Provider
+333 | |     from openbb_core.provider.registry import Registry
+334 | |     from openbb_core.provider.registry_map import RegistryMap
+    | |_____________________________________________________________^
+335 |
+336 |       names = {
+    |
+help: Organize imports
+    |
+330 |     from importlib import import_module
+331 +
+332 |     from fastapi import FastAPI
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+   --> tests/providers/test_financial_openapi.py:368:5
+    |
+367 |   def test_native_first_batch_registry_projection(native_first_batch):
+368 | /     from inspect import getfile
+369 | |     from pathlib import Path
+370 | |     from openbb_core.provider.standard_models.financial_annotations import bind_data_annotation, bind_query_annotation
+    | |______________________________________________________________________________________________________________________^
+371 |
+372 |       app, mapping, fetchers = native_first_batch
+    |
+help: Organize imports
+    |
+369 |     from pathlib import Path
+    -     from openbb_core.provider.standard_models.financial_annotations import bind_data_annotation, bind_query_annotation
+370 |
+371 +     from openbb_core.provider.standard_models.financial_annotations import (
+372 +         bind_data_annotation,
+373 +         bind_query_annotation,
+374 +     )
+375 +
+376 |     app, mapping, fetchers = native_first_batch
+    |
+
+RUF059 Unpacked variable `fetchers` is never used
+   --> tests/providers/test_financial_openapi.py:372:19
+    |
+370 |     from openbb_core.provider.standard_models.financial_annotations import bind_data_annotation, bind_query_annotation
+371 |
+372 |     app, mapping, fetchers = native_first_batch
+    |                   ^^^^^^^^
+373 |     required = set(mapping.original_models)
+374 |     assert len(required) == 11 and "EnterpriseValues" in required
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+    |
+371 |
+    -     app, mapping, fetchers = native_first_batch
+372 +     app, mapping, _fetchers = native_first_batch
+373 |     required = set(mapping.original_models)
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+I001 [*] Import block is un-sorted or un-formatted
+   --> tests/providers/test_financial_openapi.py:400:5
+    |
+398 |   @pytest.mark.parametrize("dataset", ["KeyMetrics", "EnterpriseValues", "FredSeries"])
+399 |   def test_native_serialized_financial_metadata_agrees(native_first_batch, dataset):
+400 | /     import asyncio
+401 | |     import json
+402 | |     from datetime import UTC, datetime
+403 | |     from openbb_core.app.model.obbject import OBBject
+404 | |     from openbb_core.provider.standard_models.financial_metadata import FinancialResultMetadata
+405 | |     from openbb_fmp.utils.helpers import FMPAcquisition
+    | |_______________________________________________________^
+406 |
+407 |       app, mapping, fetchers = native_first_batch
+    |
+help: Organize imports
+    |
+402 |     from datetime import UTC, datetime
+403 +
+404 |     from openbb_core.app.model.obbject import OBBject
+    -     from openbb_core.provider.standard_models.financial_metadata import FinancialResultMetadata
+405 +     from openbb_core.provider.standard_models.financial_metadata import (
+406 +         FinancialResultMetadata,
+407 +     )
+408 |     from openbb_fmp.utils.helpers import FMPAcquisition
+    |
+
+F821 Undefined name `data`
+   --> tests/providers/test_financial_openapi.py:480:63
+    |
+478 |     monkeypatch.undo()
+479 |     route = next(route for route in app.routes if getattr(route, "path", None) == "/EnterpriseValues")
+480 |     monkeypatch.setattr(route, "response_model", list[models["data"]])
+    |                                                               ^^^^
+481 |     with pytest.raises(InvalidFinancialAnnotation, match="supported response model"):
+482 |         project_financial_openapi(app.openapi(), app.routes, mapping, required_models=required)
+    |
+
+Found 6 errors.
+[*] 4 fixable with `--fix` (1 unsafe fix available with `--fix --unsafe-fixes`).

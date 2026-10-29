@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.15, pytest-9.1.1, pluggy-1.6.0
+rootdir: /mnt/d/Source/QOpenBB/verification/provider
+configfile: pyproject.toml
+plugins: anyio-4.15.1, xdist-3.8.0
+collected 24 items / 16 deselected / 8 selected
+
+verification/provider ........                                           [100%]
+
+=============================== warnings summary ===============================
+vendor/data-api/openbb_platform/core/openbb_core/provider/utils/client.py:63
+  /mnt/d/Source/QOpenBB/vendor/data-api/openbb_platform/core/openbb_core/provider/utils/client.py:63: DeprecationWarning: Inheritance class ClientSession from ClientSession is discouraged
+    class ClientSession(aiohttp.ClientSession):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 8 passed, 16 deselected, 1 warning in 40.70s =================

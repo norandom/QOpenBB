@@ -1,6 +1,6 @@
 # Financial annotation repair tasks
 
-Design amendment owner-approved on 2026-10-29. This subplan repairs the prerequisite of main task 4.1; it does not add research families or change the main batch's 26-task count. Task plan owner-approved on 2026-10-29. Existing source acceptance remains 15/26.
+Design amendment owner-approved on 2026-10-29. This subplan repairs the prerequisite of main task 4.1; it does not add research families or change the main batch's 26-task count. Task plan owner-approved on 2026-10-29. All 11 repair units are accepted; main source acceptance is now 16/26.
 
 ## Execution rules
 
@@ -82,7 +82,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Depends: 1_
   - _Requirements: 4.1, 4.4, 4.8, 6.1, 6.2, 7.5_
 
-- [ ] 5. Join real declarations and accept the projection component
+- [x] 5. Join real declarations and accept the projection component
   - Validate projection against actual registered baseline models and their route associations, plus an isolated native registry/router test assembled from the accepted first-batch classes. Keep production provider.py and router mounts unchanged until main task 5.1; record this distinction explicitly.
   - Check first-batch coverage, field references, variant policy consistency, static FMP and dynamic FRED descriptors, actual serialized metadata and rejected missing annotations. Fixture-only success cannot close this task. Preserve safe response schema references and existing results/extra locations.
   - Done: one combined affected verification set and independent review establish authoritative declaration/runtime/projection agreement. The controller synchronizes exact source pins, maintained inventory, breadth and concise reviewed evidence before accepting main task 4.1. Its later installed-runtime wiring remains main task 5.2. Whole-file caps and shared-module audit pass.
@@ -91,3 +91,5 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Requirements: 1.1, 4.1, 4.2, 4.4, 4.8, 5.1, 5.2, 5.3, 6.1, 6.2, 6.3, 7.3, 7.5, 8.1, 8.4_
 
 After task 1 is independently accepted, the adoption/projection tasks have disjoint production paths and can be scheduled in any dependency-safe order, at most two implementers concurrently. Shared test setup, contract changes, installation, joins and commits stay serialized. Remaining main tasks 4.2-6.3 keep their existing approvals and responsibilities; local subtask IDs here are scoped to this repair document.
+
+Acceptance: [native registry and projection join](../../../artifacts/reviewed/annotations-native-join/accepted.md). Provider registration and runtime wiring retain their later main tasks.

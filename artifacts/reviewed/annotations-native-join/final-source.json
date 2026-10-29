@@ -1,0 +1,20 @@
+{
+  "root_parent": "ff451333671e0dc0ca8f9e98141568d3541eec50",
+  "workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
+  "data_api_revision": "dca75f9b358c3defe5ab7948f847a120a08ff98e",
+  "files": {
+    "services/data-api/qopenbb_data/financial_openapi.py": "ee8b006ef260a7673265073e236ad70e17c250d99f2f01888823d197468cb65f",
+    "tests/providers/test_financial_openapi.py": "bba93654fa9fe652eaed1fd1092b1e44a9c9e5dce03901219f2cc38a292bdbe1"
+  },
+  "production_counts": {
+    "physical": 236,
+    "logical": 151,
+    "max_function": 27
+  },
+  "combined_tests": 389,
+  "final_native_tests": 8,
+  "ruff": "passed",
+  "shared_module_audit_files": 27,
+  "combined_root_files": 75,
+  "scope": "Source component and real native agreement; runtime wiring and provider registration remain separate"
+}

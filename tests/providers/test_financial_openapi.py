@@ -270,3 +270,224 @@ def test_unresolvable_aliased_query_bound_fails(source):
     source[2].original_models["Prices"]["fmp"]["query"] = AliasedLimit
     with pytest.raises(InvalidFinancialAnnotation, match="public parameter reference"):
         project(source)
+
+
+def _native_result_properties(document, schema):
+    """Follow every success-schema branch, including native allOf constraints."""
+    if "$ref" in schema:
+        schema = document["components"]["schemas"][schema["$ref"].split("/")[-1]]
+    if "results" in schema.get("properties", {}):
+        yield from _native_row_properties(document, schema["properties"]["results"])
+    for kind in ("allOf", "anyOf", "oneOf"):
+        for branch in schema.get(kind, []):
+            yield from _native_result_properties(document, branch)
+
+
+def _native_row_properties(document, schema):
+    if "$ref" in schema:
+        schema = document["components"]["schemas"][schema["$ref"].split("/")[-1]]
+    if schema.get("type") == "array":
+        yield from _native_row_properties(document, schema["items"])
+    elif "properties" in schema:
+        yield set(schema["properties"])
+    for kind in ("allOf", "anyOf", "oneOf"):
+        for branch in schema.get(kind, []):
+            yield from _native_row_properties(document, branch)
+
+
+def test_installed_native_baseline_associations_and_success_rows():
+    from openbb_core.api.rest_api import app
+    from openbb_core.app.route_iter import iter_api_routes
+    from openbb_core.provider.registry_map import RegistryMap
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_data_annotation,
+    )
+
+    registry = RegistryMap()
+    interface = ProviderInterface()
+    required = {"EquityInfo", "IncomeStatement", "FredSeries"}
+    routes = [route for route in iter_api_routes(app)
+              if (getattr(route, "openapi_extra", None) or {}).get("model") in required]
+    assert {route.openapi_extra["model"] for route in routes} == required
+    document = project_financial_openapi(app.openapi(), routes, registry, required_models=required)
+    for route in routes:
+        dataset = route.openapi_extra["model"]
+        assert route.response_model is interface.return_annotations[dataset]
+        operation = document["paths"][route.path]["get"]
+        descriptor = operation["x-qopenbb-financial"]
+        assert descriptor["provider_policy"] == "baseline_default"
+        assert set(descriptor["variants"]) == set(registry.original_models[dataset])
+        for provider, models in registry.original_models[dataset].items():
+            annotation = bind_data_annotation(models["data"])
+            assert set(descriptor["variants"][provider]["fields"]) == set(annotation.fields)
+            canonical = set(models["data"].model_json_schema(by_alias=False, mode="serialization")["properties"])
+            success = operation["responses"]["200"]["content"]["application/json"]["schema"]
+            branches = list(_native_result_properties(document, success))
+            assert branches, dataset
+            assert all(fields == canonical for fields in branches), (dataset, branches, canonical)
+
+
+@pytest.fixture
+def native_first_batch():
+    from importlib import import_module
+
+    from fastapi import FastAPI
+    from openbb_core.provider.abstract.provider import Provider
+    from openbb_core.provider.registry import Registry
+    from openbb_core.provider.registry_map import RegistryMap
+
+    names = {
+        "EquityInfo": ("equity_profile", "FMPEquityProfileFetcher"),
+        "IncomeStatement": ("income_statement", "FMPIncomeStatementFetcher"),
+        "BalanceSheet": ("balance_sheet", "FMPBalanceSheetFetcher"),
+        "CashFlowStatement": ("cash_flow", "FMPCashFlowStatementFetcher"),
+        "EquitySearch": ("equity_search", "FMPEquitySearchFetcher"),
+        "EquityPeers": ("equity_peers", "FMPEquityPeersFetcher"),
+        "EquityHistorical": ("equity_historical", "FMPEquityHistoricalFetcher"),
+        "KeyMetrics": ("key_metrics", "FMPKeyMetricsFetcher"),
+        "FinancialRatios": ("financial_ratios", "FMPFinancialRatiosFetcher"),
+        "EnterpriseValues": ("enterprise_values", "FMPEnterpriseValuesFetcher"),
+    }
+    fetchers = {name: getattr(import_module("openbb_fmp.models." + module), cls)
+                for name, (module, cls) in names.items()}
+    from openbb_fred.models.series import FredSeriesFetcher
+    registry = Registry()
+    registry.include_provider(Provider(name="fmp", description="Isolated accepted classes", fetcher_dict=fetchers))
+    registry.include_provider(Provider(name="fred", description="Isolated dynamic series", fetcher_dict={"FredSeries": FredSeriesFetcher}))
+    mapping = RegistryMap(registry)
+    # Bypass only singleton caching; execute the real native schema assembly.
+    interface = object.__new__(ProviderInterface)
+    ProviderInterface.__init__(interface, mapping)
+    app = FastAPI()
+    for dataset, response in interface.return_annotations.items():
+        def endpoint(provider: str):
+            return []
+        app.add_api_route("/" + dataset, endpoint, response_model=response,
+                          response_model_by_alias=False, openapi_extra={"model": dataset})
+    return app, mapping, fetchers
+
+
+def test_native_first_batch_registry_projection(native_first_batch):
+    from inspect import getfile
+    from pathlib import Path
+
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_data_annotation,
+        bind_query_annotation,
+    )
+
+    app, mapping, _ = native_first_batch
+    required = set(mapping.original_models)
+    assert len(required) == 11 and "EnterpriseValues" in required
+    document = project_financial_openapi(app.openapi(), app.routes, mapping, required_models=required)
+    for dataset, variants in mapping.original_models.items():
+        operation = document["paths"]["/" + dataset]["get"]
+        descriptor = operation["x-qopenbb-financial"]
+        for provider, models in variants.items():
+            assert "vendor/data-api/" in Path(getfile(models["data"])).as_posix()
+            data = bind_data_annotation(models["data"])
+            query = bind_query_annotation(models["query"])
+            variant = descriptor["variants"][provider]
+            assert descriptor["provider_policy"] == query.provider_policy
+            assert variant["response_policy"] == query.response_policy.model_dump(mode="json")
+            assert variant["procedural_bounds"] == query.procedural_bounds.model_dump(mode="json")
+            canonical = set(models["data"].model_json_schema(by_alias=False, mode="serialization")["properties"])
+            assert set(variant["fields"]) == set(data.fields) == canonical
+            assert variant["dynamic_fields"] is (provider == "fred")
+            success = operation["responses"]["200"]["content"]["application/json"]["schema"]
+            branches = list(_native_result_properties(document, success))
+            assert branches, dataset
+            assert all(fields == canonical for fields in branches), dataset
+    for reference in refs(document):
+        assert reference.split("/")[-1] in document["components"]["schemas"]
+
+
+@pytest.mark.parametrize("dataset", ["KeyMetrics", "EnterpriseValues", "FredSeries"])
+def test_native_serialized_financial_metadata_agrees(native_first_batch, dataset):
+    import asyncio
+    import json
+    from datetime import UTC, datetime
+
+    from openbb_core.app.model.obbject import OBBject
+    from openbb_core.provider.standard_models.financial_metadata import (
+        FinancialResultMetadata,
+    )
+    from openbb_fmp.utils.helpers import FMPAcquisition
+
+    app, mapping, fetchers = native_first_batch
+    stamp = datetime(2024, 2, 3, tzinfo=UTC)
+    if dataset == "FredSeries":
+        from openbb_fred.models.series import FredSeriesFetcher
+        fetcher = FredSeriesFetcher
+        query = fetcher.transform_query({"symbol": "GDP", "transform": "pch"})
+        raw = [{"GDP": {"title": "Gross domestic product", "units": "Billions of Dollars",
+                         "frequency": "Quarterly", "seasonal_adjustment": "Seasonally Adjusted",
+                         "notes": None, "data": {"2023-12-31": 0.0},
+                         "_retrieved_at": stamp, "_provenance": {}}}]
+    else:
+        fetcher = fetchers[dataset]
+        query = fetcher.transform_query({"symbol": "ABC"})
+        raw = FMPAcquisition([{"symbol": "ABC", "date": "2023-12-31", "period": "FY",
+                               "fiscalYear": "2023", "reportedCurrency": "EUR",
+                               "marketCap": 100, "evToEBITDA": 0, "stockPrice": 0,
+                               "numberOfShares": 10, "enterpriseValue": -7}], stamp)
+    result = fetcher.transform_data(query, raw)
+
+    class ExecutedQuery:
+        async def execute(self):
+            return result
+
+    native = asyncio.run(OBBject.from_query(ExecutedQuery()))
+    body = json.loads(native.model_dump_json(by_alias=False))
+    metadata = body["extra"]["results_metadata"]["__qopenbb_financial__"]
+    restored = FinancialResultMetadata.model_validate(metadata)
+    assert restored.retrieved_at == stamp
+    assert body["results"] == [row.model_dump(mode="json", by_alias=False) for row in result.result]
+    document = project_financial_openapi(app.openapi(), app.routes, mapping,
+                                         required_models=set(mapping.original_models))
+    descriptor = document["paths"]["/" + dataset]["get"]["x-qopenbb-financial"]
+    provider = "fred" if dataset == "FredSeries" else "fmp"
+    fields = descriptor["variants"][provider]["fields"]
+    if provider == "fred":
+        assert set(fields) == {"date"} and set(metadata["fields"]) == {"GDP"}
+        assert metadata["fields"]["GDP"]["unit"] == "Percent Change"
+        assert metadata["fields"]["GDP"]["source_unit"] == "Billions of Dollars"
+        assert body["extra"]["results_metadata"]["GDP"]["units"] == "Billions of Dollars"
+    else:
+        assert set(fields) == set(metadata["fields"])
+        for name, template in fields.items():
+            for key in ("unit", "scale", "value_origin", "financial_basis"):
+                assert metadata["fields"][name][key] == template[key], (dataset, name, key)
+
+
+def test_native_typed_projection_is_repeatable_and_preserves_native_components(native_first_batch):
+    app, mapping, _ = native_first_batch
+    before = deepcopy(app.openapi())
+    required = set(mapping.original_models)
+    result = project_financial_openapi(before, app.routes, mapping, required_models=required)
+    assert before == app.openapi()
+    assert result == project_financial_openapi(before, app.routes, mapping, required_models=required)
+    assert result == project_financial_openapi(result, app.routes, mapping, required_models=required)
+    for name, schema in before["components"]["schemas"].items():
+        assert result["components"]["schemas"][name] == schema
+    route = next(route for route in app.routes if getattr(route, "path", None) == "/KeyMetrics")
+    response = result["paths"][route.path]["get"]["responses"]["200"]["content"]["application/json"]["schema"]
+    component = result["components"]["schemas"][response["$ref"].split("/")[-1]]
+    component["allOf"][0] = before["paths"][route.path]["get"]["responses"]["200"]["content"]["application/json"]["schema"]
+    with pytest.raises(InvalidFinancialAnnotation, match="collision"):
+        project_financial_openapi(result, app.routes, mapping, required_models=required)
+
+
+def test_native_missing_real_declaration_and_unsupported_response_fail(native_first_batch, monkeypatch):
+    app, mapping, _ = native_first_batch
+    required = set(mapping.original_models)
+    models = mapping.original_models["EnterpriseValues"]["fmp"]
+    monkeypatch.delattr(models["data"], "financial_data_annotation")
+    with pytest.raises(MissingFinancialAnnotation):
+        project_financial_openapi(app.openapi(), app.routes, mapping, required_models=required)
+    monkeypatch.undo()
+    route = next(route for route in app.routes if getattr(route, "path", None) == "/EnterpriseValues")
+    response_data = models["data"]
+    monkeypatch.setattr(route, "response_model", list[response_data])
+    with pytest.raises(InvalidFinancialAnnotation, match="supported response model"):
+        project_financial_openapi(app.openapi(), app.routes, mapping, required_models=required)

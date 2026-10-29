@@ -1,8 +1,8 @@
 # Authoritative financial annotations: prerequisite repair
 
-2026-10-29. Status: design amendment owner-approved on 2026-10-29 after independent gpt-6-astra review. Existing requirements and numerical adapter acceptance remain intact. Task 4.1 is open because its source-declaration prerequisite was not implemented. This document does not approve new implementation tasks.
+2026-10-29. The design and eleven-task repair plan were owner-approved and are now implemented and independently accepted. Main task 4.1 is complete; main source progress is 16/26. See the [native projection acceptance](../../../artifacts/reviewed/annotations-native-join/accepted.md).
 
-## Finding and consequence
+## Finding before the repair
 
 The approved design requires runtime metadata and the API projection to use the same query/data declarations. Accepted adapters validate result metadata, but their static financial semantics still live in runtime helpers and module-level sets. Ordinary Pydantic field schemas do not expose the full units, provider-selection policy or procedural query/response limits.
 
@@ -35,9 +35,9 @@ FRED dynamic columns, source/effective units, seasonal adjustment, transforms an
 
 Income's accepted limit-zero and excess-response behavior is a compatibility policy, not an ordinary fixed response cap. The annotation must describe that behavior without changing it. Existing profile multi-symbol behavior, statement aliases, typed errors and cache freshness remain unchanged.
 
-## Bounded implementation sequence after approval
+## Reviewed repair sequence
 
-These are repair slices for task-plan generation, not newly approved executable tasks. Every production slice keeps the existing 400 physical / 300 logical / 50 per function caps and requires independent review plus affected checks.
+The approved eleven-task plan implemented these repair slices. Every production slice keeps the existing 400 physical / 300 logical / 50 per function caps and requires independent review plus affected checks.
 
 | Slice | Exclusive ownership | Done evidence |
 | --- | --- | --- |
@@ -56,4 +56,4 @@ Enterprise task 2.9 finishes in its existing exclusive ownership first. Its anno
 
 ## Review and next decision
 
-The independent architecture review confirmed this prerequisite gap and the sequence above without requesting a new registry or a broad provider rewrite. No production code or tests were added for the blocked projection. The existing 26-task batch count remains unchanged; task 4.1 stays unchecked. The [11-unit repair plan](financial-annotations-tasks.md) passed independent graph review. Owner task approval is required before implementation.
+The independent architecture review confirmed the prerequisite gap and the bounded sequence without a new registry or broad provider rewrite. The owner approved the [eleven-task plan](financial-annotations-tasks.md), and all units are accepted. Real native integration corrected response-envelope aliases using the actual route model. Provider output remains unchanged. Provider registration and runtime wiring retain their later main tasks.

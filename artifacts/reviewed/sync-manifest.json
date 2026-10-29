@@ -34640,6 +34640,118 @@
       "publishedSHA256": "255c3a303310cd00982bb76719d381e9a8338d6c9179a076a51b3f34b56bba4f",
       "bytes": 1104,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/accepted.md",
+      "sourceSHA256": "c3e523a4b8060e9abcc8ec341f5b7c4f83c3c06d48cf0543f83e06654d83d560",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/accepted.md",
+      "publishedSHA256": "c3e523a4b8060e9abcc8ec341f5b7c4f83c3c06d48cf0543f83e06654d83d560",
+      "bytes": 1927,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/review.md",
+      "sourceSHA256": "e0e9462e1587b7ecc820ea5d190c6e6b8aebd74fff916a55723e9dc99449bfab",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/review.md",
+      "publishedSHA256": "4b5e29b3823bca47a8eb42f8d10d29e418cd20a044be9ba5a109712815338702",
+      "bytes": 7984,
+      "transform": "rebase-relative-evidence-links-for-reviewed-location; review content unchanged"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/debug.md",
+      "sourceSHA256": "237b8f8b8bc5d8f4a4a3324d30d53caacf6528d8c848b608845e0b4fa137a5a8",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/debug.md",
+      "publishedSHA256": "ff503a1c98b70174171ea97e1fc09646ffbc400df511e5be78221b359d57f09a",
+      "bytes": 6621,
+      "transform": "rebase-relative-evidence-links-for-reviewed-location; review content unchanged"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/final-source.json",
+      "sourceSHA256": "b52eccc894a857b939e355e9847205700d153a8a4ccb0c6ce0a675da5215d9b3",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/final-source.json",
+      "publishedSHA256": "b52eccc894a857b939e355e9847205700d153a8a4ccb0c6ce0a675da5215d9b3",
+      "bytes": 805,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/shared-module-audit.json",
+      "sourceSHA256": "2ab1d7e4161cbdd907b25adea51d47f4d90d104e0ef297f0153ce5202e5522c5",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/shared-module-audit.json",
+      "publishedSHA256": "2ab1d7e4161cbdd907b25adea51d47f4d90d104e0ef297f0153ce5202e5522c5",
+      "bytes": 7034,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/native-confirmed-red.log",
+      "sourceSHA256": "a385a8e1ee64bc8f4444e61667de6a8e3ec0df69457973ecc9c28e6dfb1bbba2",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/native-red.log",
+      "publishedSHA256": "a385a8e1ee64bc8f4444e61667de6a8e3ec0df69457973ecc9c28e6dfb1bbba2",
+      "bytes": 6458,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/native-confirmed-red.rc",
+      "sourceSHA256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/native-red.rc",
+      "publishedSHA256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "bytes": 1,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/result.md",
+      "sourceSHA256": "345cdc0554d9f3b9335b97d3255b3ae7608f37e73b5fa08b1497751d1edcbd31",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/result.md",
+      "publishedSHA256": "345cdc0554d9f3b9335b97d3255b3ae7608f37e73b5fa08b1497751d1edcbd31",
+      "bytes": 3689,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/review-combined.log",
+      "sourceSHA256": "a74bd133be69b7cd6dd5ea7e56b227b5869edfd020ff407cfa6068122bd686c2",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/review-combined.log",
+      "publishedSHA256": "a74bd133be69b7cd6dd5ea7e56b227b5869edfd020ff407cfa6068122bd686c2",
+      "bytes": 1307,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/review-combined.rc",
+      "sourceSHA256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/review-combined.rc",
+      "publishedSHA256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/review-native-final.log",
+      "sourceSHA256": "e840ebd59749d54808a2858658d5641f899abe3646b02264af88be1c17f88360",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/review-native-final.log",
+      "publishedSHA256": "e840ebd59749d54808a2858658d5641f899abe3646b02264af88be1c17f88360",
+      "bytes": 935,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/review-native-final.rc",
+      "sourceSHA256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/review-native-final.rc",
+      "publishedSHA256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "bytes": 1,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/review-ruff-final.log",
+      "sourceSHA256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/review-ruff-final.log",
+      "publishedSHA256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-native-join/review-ruff.log",
+      "sourceSHA256": "4d4560036490967f4602806c551cac2f4c0c8cc9ebfef92c2ef62cd13997a570",
+      "publishedpath": "artifacts/reviewed/annotations-native-join/review-ruff.log",
+      "publishedSHA256": "4d4560036490967f4602806c551cac2f4c0c8cc9ebfef92c2ef62cd13997a570",
+      "bytes": 5330,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35365,7 +35477,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170460065,
+  "total_payload_bytes": 170502177,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

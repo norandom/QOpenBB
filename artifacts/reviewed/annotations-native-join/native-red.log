@@ -1,0 +1,92 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.15, pytest-9.1.1, pluggy-1.6.0
+rootdir: /mnt/d/Source/QOpenBB/verification/provider
+configfile: pyproject.toml
+plugins: anyio-4.15.1, xdist-3.8.0
+collected 19 items / 16 deselected / 3 selected
+
+verification/provider .FF                                                [100%]
+
+=================================== FAILURES ===================================
+_________ test_installed_native_baseline_associations_and_success_rows _________
+
+    def test_installed_native_baseline_associations_and_success_rows():
+        from openbb_core.api.rest_api import app
+        from openbb_core.app.route_iter import iter_api_routes
+        from openbb_core.provider.registry_map import RegistryMap
+        from openbb_core.provider.standard_models.financial_annotations import bind_data_annotation
+    
+        registry = RegistryMap()
+        interface = ProviderInterface()
+        required = {"EquityInfo", "IncomeStatement", "FredSeries"}
+        routes = [route for route in iter_api_routes(app)
+                  if (getattr(route, "openapi_extra", None) or {}).get("model") in required]
+        assert {route.openapi_extra["model"] for route in routes} == required
+        document = project_financial_openapi(app.openapi(), routes, registry, required_models=required)
+        for route in routes:
+            dataset = route.openapi_extra["model"]
+            assert route.response_model is interface.return_annotations[dataset]
+            operation = document["paths"][route.path]["get"]
+            descriptor = operation["x-qopenbb-financial"]
+            assert descriptor["provider_policy"] == "baseline_default"
+            assert set(descriptor["variants"]) == set(registry.original_models[dataset])
+            for provider, models in registry.original_models[dataset].items():
+                annotation = bind_data_annotation(models["data"])
+                assert set(descriptor["variants"][provider]["fields"]) == set(annotation.fields)
+                canonical = set(models["data"].model_json_schema(by_alias=False, mode="serialization")["properties"])
+                success = operation["responses"]["200"]["content"]["application/json"]["schema"]
+                branches = list(_native_result_properties(document, success))
+                assert branches, dataset
+>               assert all(fields == canonical for fields in branches), (dataset, branches, canonical)
+E               AssertionError: ('EquityInfo', [{'annualized_dividend_amount', 'beta', 'business_address', 'business_phone_no', 'ceo', 'cik', ...}], {'annualized_dividend_amount', 'beta', 'business_address', 'business_phone_no', 'ceo', 'cik', ...})
+E               assert False
+E                +  where False = all(<generator object test_installed_native_baseline_associations_and_success_rows.<locals>.<genexpr> at 0x7113d14d4860>)
+
+tests/providers/test_financial_openapi.py:325: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  fastapi:models.py:38 email-validator not installed, email fields will be treated as str.
+To install, run: pip install email-validator
+_________________ test_native_first_batch_registry_projection __________________
+
+native_first_batch = (<fastapi.applications.FastAPI object at 0x7113d16cf110>, <openbb_core.provider.registry_map.RegistryMap object at 0x7...FMPBalanceSheetFetcher'>, 'CashFlowStatement': <class 'openbb_fmp.models.cash_flow.FMPCashFlowStatementFetcher'>, ...})
+
+    def test_native_first_batch_registry_projection(native_first_batch):
+        from inspect import getfile
+        from pathlib import Path
+        from openbb_core.provider.standard_models.financial_annotations import bind_data_annotation, bind_query_annotation
+    
+        app, mapping, fetchers = native_first_batch
+        required = set(mapping.original_models)
+        assert len(required) == 11 and "EnterpriseValues" in required
+        document = project_financial_openapi(app.openapi(), app.routes, mapping, required_models=required)
+        for dataset, variants in mapping.original_models.items():
+            operation = document["paths"]["/" + dataset]["get"]
+            descriptor = operation["x-qopenbb-financial"]
+            for provider, models in variants.items():
+                assert "vendor/data-api/" in Path(getfile(models["data"])).as_posix()
+                data = bind_data_annotation(models["data"])
+                query = bind_query_annotation(models["query"])
+                variant = descriptor["variants"][provider]
+                assert descriptor["provider_policy"] == query.provider_policy
+                assert variant["response_policy"] == query.response_policy.model_dump(mode="json")
+                assert variant["procedural_bounds"] == query.procedural_bounds.model_dump(mode="json")
+                canonical = set(models["data"].model_json_schema(by_alias=False, mode="serialization")["properties"])
+                assert set(variant["fields"]) == set(data.fields) == canonical
+                assert variant["dynamic_fields"] is (provider == "fred")
+                success = operation["responses"]["200"]["content"]["application/json"]["schema"]
+>               assert all(fields == canonical for fields in _native_result_properties(document, success)), dataset
+E               AssertionError: EquityInfo
+E               assert False
+E                +  where False = all(<generator object test_native_first_batch_registry_projection.<locals>.<genexpr> at 0x7113d0d5eb50>)
+
+tests/providers/test_financial_openapi.py:391: AssertionError
+=============================== warnings summary ===============================
+vendor/data-api/openbb_platform/core/openbb_core/provider/utils/client.py:63
+  /mnt/d/Source/QOpenBB/vendor/data-api/openbb_platform/core/openbb_core/provider/utils/client.py:63: DeprecationWarning: Inheritance class ClientSession from ClientSession is discouraged
+    class ClientSession(aiohttp.ClientSession):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED verification/provider::test_installed_native_baseline_associations_and_success_rows
+FAILED verification/provider::test_native_first_batch_registry_projection - A...
+============ 2 failed, 1 passed, 16 deselected, 1 warning in 28.55s ============
