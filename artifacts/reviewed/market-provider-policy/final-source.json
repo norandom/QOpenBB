@@ -1,0 +1,38 @@
+{
+  "root_parent": "4ece2676bafca7e7d1deb0b3daf5e431f11e8bd6",
+  "data_api_revision": "dca75f9b358c3defe5ab7948f847a120a08ff98e",
+  "files": {
+    "services/data-api/qopenbb_data/financial_policy.py": "3d0eeef413fd69af3fc173797a38aba7ce30cca5d74d3b4d1368d6ef80e08348",
+    "tests/providers/test_financial_policy.py": "3104b7d856d38d7f6e98ead09d25082f6d1b6f64ce05629687bc93db889b5620"
+  },
+  "production_counts": {
+    "physical": 62,
+    "logical": 40,
+    "max_function": 19
+  },
+  "independent_join": {
+    "passed": 126,
+    "child_exit_code": 0,
+    "pytest_seconds": 20.04,
+    "test_paths": [
+      "tests/providers/test_financial_policy.py",
+      "tests/providers/test_financial_http_errors.py",
+      "tests/providers/test_financial_errors.py",
+      "tests/providers/test_financial_openapi.py"
+    ]
+  },
+  "ruff": "passed",
+  "combined_size_gate": {
+    "files": 77,
+    "node": "24.22.1",
+    "errors": 0,
+    "violations": 0
+  },
+  "runtime_activation": "deferred to task5.2",
+  "finalization": {
+    "reviewed_sha256": "bc0c3217b0ec14f84a3975dfefc4a2692e806d44608b73e2ed215be61fafc3f1",
+    "final_sha256": "3104b7d856d38d7f6e98ead09d25082f6d1b6f64ce05629687bc93db889b5620",
+    "change": "remove trailing whitespace on three parameter-list lines",
+    "identical_ast": true
+  }
+}

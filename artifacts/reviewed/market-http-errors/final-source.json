@@ -3,7 +3,7 @@
   "data_api_revision": "dca75f9b358c3defe5ab7948f847a120a08ff98e",
   "files": {
     "services/data-api/qopenbb_data/financial_errors.py": "5c80fede53e57f75d20c2f64fcf90539ddb8352e7dcb62d1891effd5a55431d8",
-    "tests/providers/test_financial_http_errors.py": "79b9d18ee826184452fa0f86fc3fbb545970340857f66dfb5abd855799b75981"
+    "tests/providers/test_financial_http_errors.py": "83c6555c1816fdf424ab37149e029995e61729f848ae939578ec86b89894c0bc"
   },
   "production_counts": {
     "physical": 208,
@@ -31,5 +31,11 @@
     "change": "remove one terminal blank line",
     "identical_ast": true,
     "physical": 208
+  },
+  "test_finalization": {
+    "reviewed_sha256": "79b9d18ee826184452fa0f86fc3fbb545970340857f66dfb5abd855799b75981",
+    "committed_sha256": "83c6555c1816fdf424ab37149e029995e61729f848ae939578ec86b89894c0bc",
+    "change": "Git normalized one CRLF to LF",
+    "identical_ast": true
   }
 }

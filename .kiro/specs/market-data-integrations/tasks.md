@@ -160,7 +160,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 1.2, 1.3_
   - _Requirements: 1.1, 5.4, 6.1, 6.2, 6.3_
 
-- [ ] 4.2 (P) Enforce provider selection before request execution
+- [x] 4.2 (P) Enforce provider selection before request execution
   - Own financial_policy only. Use generated installed operation descriptors to enforce explicit provider selection on the designed non-baseline paths; preserve three baseline defaults.
   - Done when omitted-provider requests fail before I/O, explicit selection is retained and failures cannot trigger a silent provider substitution. App wiring belongs to task 5.2.
   - Caps: guard meets 400/300/50; tests excluded.
@@ -295,3 +295,9 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - Native API integration note: use upstream `iter_api_routes` for lazy route contexts; derive canonical success schemas from actual `route.response_model` rather than retaining alias-based native schemas under `allOf`.
 
 - Main4.3 accepted 2026-10-29: [safe mounted API failure component](../../../artifacts/reviewed/market-http-errors/accepted.md), independent38 tests, sensitivity control and caps. Shared formatter is the policy guard dependency; activation remains main5.2.
+
+- Main4.2 accepted 2026-10-29: [descriptor-driven provider guard](../../../artifacts/reviewed/market-provider-policy/accepted.md), independent126-test guard/handler/core/projection join and caps. Main source progress18/26; runtime wiring remains5.2.
+
+## Implementation Notes
+
+- HTTP verification: the pinned provider environment has no httpx; reuse the direct ASGI helpers. Native Fetcher classes alias extraction at class creation, so patch `extract_data` and retain a transport tripwire. Normalize UTF-8/LF and one EOF newline before freezing hashes; record subprocess return codes directly.

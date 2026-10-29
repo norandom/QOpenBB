@@ -34763,18 +34763,42 @@
     },
     {
       "sourcepath": "artifacts/market-http-errors/review.md",
-      "sourceSHA256": "71aa2330255de6a7df3c64faf751fd9bcbc50501e692e1c87030c51068008df4",
+      "sourceSHA256": "e51f33d2e9c72b07fb373ba2d656090b4e6bc1e13fc775e734885defc7da7e3d",
       "publishedpath": "artifacts/reviewed/market-http-errors/review.md",
-      "publishedSHA256": "8043088678923b3be1ee26dc9d4b66a690365d2df15827e0c797478b5073eab6",
-      "bytes": 6293,
+      "publishedSHA256": "0783bb117d311fe90c5772664e93c22602e7ae3df3b3ce688beab4bb47dca9a3",
+      "bytes": 6908,
       "transform": "rebase-relative-spec-links-for-reviewed-location; verdict unchanged"
     },
     {
       "sourcepath": "artifacts/market-http-errors/final-source.json",
-      "sourceSHA256": "b8691d007c7dde95418ad39da312a642517862603f1eb1ddf13b2f6dacd8a56c",
+      "sourceSHA256": "37b12ff339e9192a0c8d800bed9d9550094a053ed06629d44d3935284093b242",
       "publishedpath": "artifacts/reviewed/market-http-errors/final-source.json",
-      "publishedSHA256": "b8691d007c7dde95418ad39da312a642517862603f1eb1ddf13b2f6dacd8a56c",
-      "bytes": 1146,
+      "publishedSHA256": "37b12ff339e9192a0c8d800bed9d9550094a053ed06629d44d3935284093b242",
+      "bytes": 1432,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-provider-policy/accepted.md",
+      "sourceSHA256": "f0431eaf8812de176497b8452fe2af8bdcac142d8c1ccd8a27cf057545be405f",
+      "publishedpath": "artifacts/reviewed/market-provider-policy/accepted.md",
+      "publishedSHA256": "f0431eaf8812de176497b8452fe2af8bdcac142d8c1ccd8a27cf057545be405f",
+      "bytes": 1052,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-provider-policy/review.md",
+      "sourceSHA256": "cf1df2b76a2222dcd0df24231b227d0fd66d391b3e1a70dcd2040969f0a0ea27",
+      "publishedpath": "artifacts/reviewed/market-provider-policy/review.md",
+      "publishedSHA256": "1990553465d56badb319abf418e30a878fd69fed803d0a2883cd71dc04b86ba2",
+      "bytes": 4531,
+      "transform": "omit-raw-receipt-appendix-for-publication; verdict and findings unchanged"
+    },
+    {
+      "sourcepath": "artifacts/market-provider-policy/final-source.json",
+      "sourceSHA256": "eeb620d93c4398a01ede1dc7ff905bf69174faed3c688e57de954b03a506621a",
+      "publishedpath": "artifacts/reviewed/market-provider-policy/final-source.json",
+      "publishedSHA256": "eeb620d93c4398a01ede1dc7ff905bf69174faed3c688e57de954b03a506621a",
+      "bytes": 1295,
       "transform": "exact-byte-copy"
     }
   ],
@@ -35501,7 +35525,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170510971,
+  "total_payload_bytes": 170518750,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
