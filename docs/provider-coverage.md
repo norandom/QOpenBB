@@ -26,6 +26,10 @@ See the inventory's per-endpoint source links and [official FMP catalog](https:/
 
 The installed QOpenBB FMP adapter currently registers only company profile and income statements. FRED series also has a catalog widget. The demonstrated price/statement/news dashboard uses uploaded snapshots. Broader published FMP coverage must not be presented as installed or accepted. Every integration needs separate published-coverage, entitlement, adapter, widget and end-to-end status.
 
+## Discovery checkpoint, 2026-10-29
+
+The [machine-readable coverage index](reference/provider-coverage.json) records family scope and source evidence separately from installed command discovery. The [accepted discovery component](../artifacts/reviewed/market-financial-discovery/accepted.md) reads the authoritative financial schemas and preserves unknown access and consumer states. Runtime installation remains task 5.2; reusable widget generation remains task 5.3. The registered baseline above is unchanged.
+
 ## Commodity prices and futures are different instruments
 
 | Instrument/series | Treatment |

@@ -1,0 +1,47 @@
+{
+  "root_parent": "228af95526414862b15d8318b0b5b5f2f9d64365",
+  "data_api_revision": "dca75f9b358c3defe5ab7948f847a120a08ff98e",
+  "files": {
+    "services/data-api/qopenbb_data/financial_catalog.py": "5206eb4d40f44e1e66c27d09b10b68bb588d7ff7af4f9d0513968bc9d70729b5",
+    "docs/reference/provider-coverage.json": "48df243d8aa0ec4bfda6577def7ea57396a5f5824cecb40a24c32da1664345e4",
+    "tests/providers/test_financial_catalog.py": "e1517a7c4da34feb995ee7b5df1b37f475b4fd68c13c83f6ac0f05ceaa35222b"
+  },
+  "production_counts": {
+    "physical": 276,
+    "logical": 191,
+    "max_function": 23
+  },
+  "verification": {
+    "join": {
+      "command": [
+        "verification/provider/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-c",
+        "verification/provider/pyproject.toml",
+        "tests/providers/test_financial_catalog.py",
+        "tests/providers/test_financial_openapi.py",
+        "-n0",
+        "--maxprocesses=2"
+      ],
+      "returncode": 0
+    },
+    "ruff": {
+      "command": [
+        "verification/provider/.venv/bin/ruff",
+        "check",
+        "--no-fix",
+        "services/data-api/qopenbb_data/financial_catalog.py",
+        "tests/providers/test_financial_catalog.py"
+      ],
+      "returncode": 0
+    }
+  },
+  "combined_size_gate": {
+    "files": 79,
+    "errors": 0,
+    "violations": 0,
+    "node": "24.22.1"
+  },
+  "limitations": "Source component only. Runtime discovery activation, provider registration, live access and regenerated widgets remain later tasks."
+}

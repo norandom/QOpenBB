@@ -184,7 +184,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 4.1, 1.1_
   - _Requirements: 1.1, 5.4, 5.5, 6.1, 6.3_
 
-- [ ] 4.5 Build installed discovery with truthful coverage states
+- [x] 4.5 Build installed discovery with truthful coverage states
   - Own financial_catalog and the versioned coverage index, after catalog schema validation. Keep documented/retained/adapted/installed/access/data/widget/AI states independent; link evidence without exposing account details.
   - Done when /datasets.json fixture output identifies installed datasets, unknown access, unsupported families and schema/source identity; historical gallery examples cannot masquerade as live coverage.
   - Caps: discovery code meets 400/300/50; coverage data/tests excluded.
@@ -299,6 +299,8 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - Main4.2 accepted 2026-10-29: [descriptor-driven provider guard](../../../artifacts/reviewed/market-provider-policy/accepted.md), independent126-test guard/handler/core/projection join and caps. Main source progress18/26; runtime wiring remains5.2.
 
 - Main4.4 accepted 2026-10-29: [catalog validation and drift](../../../artifacts/reviewed/market-financial-catalog/accepted.md), independent54-test verification and native three-model projection probe after metadata-map repair. Runtime/catalog promotion remain later tasks.
+
+- Main4.5 accepted 2026-10-29: [installed discovery and coverage index](../../../artifacts/reviewed/market-financial-discovery/accepted.md), independent discovery/projection join, public proof identities and capped source. Main20/26; registration, mounted discovery and reusable widget generation remain5.1-5.3.
 
 ## Implementation Notes
 

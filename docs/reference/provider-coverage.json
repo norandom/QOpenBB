@@ -1,0 +1,594 @@
+{
+  "schema_version": 1,
+  "families": [
+    {
+      "id": "discovery-reference",
+      "provider": "fmp",
+      "label": "Discovery/reference",
+      "status": "open",
+      "outstanding": "Search identifiers, screeners, directories and listing variants remain open beyond the first adapters.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "company-intelligence",
+      "provider": "fmp",
+      "label": "Company intelligence",
+      "status": "open",
+      "outstanding": "Profile and peer source adapters do not complete float, capitalization, management or company intelligence.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "markets",
+      "provider": "fmp",
+      "label": "Markets",
+      "status": "open",
+      "outstanding": "Daily source adaptation does not complete quotes, batches, sessions, intraday or adjustment variants.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "financial-analysis",
+      "provider": "fmp",
+      "label": "Financial analysis",
+      "status": "open",
+      "outstanding": "Install and verify the first financial-input batch; TTM, growth, quarterly detail and segment inputs remain open.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "reports-documents",
+      "provider": "fmp",
+      "label": "Reports/documents",
+      "status": "open",
+      "outstanding": "As-reported statements, annual-report JSON/XLSX and SEC filing discovery remain unimplemented.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "funds",
+      "provider": "fmp",
+      "label": "Funds",
+      "status": "open",
+      "outstanding": "ETF information, holdings, exposures and fund disclosures remain unimplemented.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "expectations",
+      "provider": "fmp",
+      "label": "Expectations",
+      "status": "open",
+      "outstanding": "Estimates, grades, target consensus, partner datasets and DCF parameters require bounded acceptance.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "news-events",
+      "provider": "fmp",
+      "label": "News/events",
+      "status": "open",
+      "outstanding": "News, articles, releases, transcripts and corporate calendars remain unimplemented.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "ownership",
+      "provider": "fmp",
+      "label": "Ownership",
+      "status": "open",
+      "outstanding": "Institutional/13F, insider, beneficial and congressional ownership disclosures remain unimplemented.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "cross-market-research",
+      "provider": "fmp",
+      "label": "Cross-market research",
+      "status": "open",
+      "outstanding": "Sector/industry performance, technical indicators and index constituents/history remain unimplemented.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "other-assets",
+      "provider": "fmp",
+      "label": "Other assets",
+      "status": "open",
+      "outstanding": "FX, crypto, futures and commodities require explicit instrument/expiry/roll semantics and acceptance.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "macro-positioning",
+      "provider": "fmp",
+      "label": "Macro/positioning",
+      "status": "open",
+      "outstanding": "Economic calendar, Treasury rates, risk premiums and COT report variants require separate acceptance.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "additional-families",
+      "provider": "fmp",
+      "label": "Additional families",
+      "status": "open",
+      "outstanding": "ESG, fundraising, market hours and bulk delivery remain open; bulk is a transport choice.",
+      "documented": {
+        "status": "verified",
+        "proof": {
+          "checked_on": "2026-10-19",
+          "evidence_path": "docs/reference/fmp-endpoints.csv",
+          "identity": {
+            "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+          }
+        }
+      }
+    },
+    {
+      "id": "supplementary-fred",
+      "provider": "fred",
+      "label": "Supplementary FRED",
+      "status": "open",
+      "outstanding": "Named FRED series are supplementary; installed schemas do not verify live account or widget behavior.",
+      "documented": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "supplementary-yahoo",
+      "provider": "yfinance",
+      "label": "Supplementary Yahoo",
+      "status": "open",
+      "outstanding": "Yahoo price supplementation is not installed; recovery references do not establish adapted or live coverage.",
+      "documented": {
+        "status": "unknown"
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "model": "EquityInfo",
+      "provider": "fmp",
+      "family": "company-intelligence",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "IncomeStatement",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "BalanceSheet",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-28",
+            "evidence_path": "artifacts/reviewed/market-data-statements/accepted.md",
+            "identity": {
+              "source_sha256": "a95ade737ad3409ce36720e942bd2a2e50ba1cc1a8368ccc05c12f00a558d803"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "CashFlowStatement",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-28",
+            "evidence_path": "artifacts/reviewed/market-data-statements/accepted.md",
+            "identity": {
+              "source_sha256": "3c3fbbc335263ccafdf83c8c9ed49c2d6710e6f9680074db01adb304c8a6b52e"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "EquitySearch",
+      "provider": "fmp",
+      "family": "discovery-reference",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-28",
+            "evidence_path": "artifacts/reviewed/market-data-discovery-prices/accepted.md",
+            "identity": {
+              "source_sha256": "a7c4a7738db6ef62e997ae42f1ca29f4e09baf7c861ad3ffaf74b643db849064"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "EquityPeers",
+      "provider": "fmp",
+      "family": "company-intelligence",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-28",
+            "evidence_path": "artifacts/reviewed/market-data-discovery-prices/accepted.md",
+            "identity": {
+              "source_sha256": "20a0ba5f378add5c9d8789581937437adcfe92dd99cdd1f848e86c1322e123e6"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "EquityHistorical",
+      "provider": "fmp",
+      "family": "markets",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-28",
+            "evidence_path": "artifacts/reviewed/market-data-discovery-prices/accepted.md",
+            "identity": {
+              "source_sha256": "2ae8eeb7387510d3cb8aff15ea39de02a4884ef9bf268aa876bc29aabdfbee13"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "KeyMetrics",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-28",
+            "evidence_path": "artifacts/reviewed/market-data-metrics-ratios/accepted.md",
+            "identity": {
+              "source_sha256": "8176161130c141e4a69b38064e88788a0e0769d91a6aa308579725f4c34d4e22"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "FinancialRatios",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-28",
+            "evidence_path": "artifacts/reviewed/market-data-metrics-ratios/accepted.md",
+            "identity": {
+              "source_sha256": "8a301b1db8d14cf32d4a1722d46f45361c307e4b56fa91e6b76846a4918d1d25"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "EnterpriseValues",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "d63f984e490e8eedeec5d0a51abbf1fd449d8e58c50fa26492f3b8bd02c5de20"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-29",
+            "evidence_path": "artifacts/reviewed/market-data-enterprise-schema/accepted.md",
+            "identity": {
+              "source_sha256": "5e5e11b9679d915259d739b2da2c9e547e44fbfb35f713e62e52f74894417004"
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "FredSeries",
+      "provider": "fred",
+      "family": "supplementary-fred",
+      "states": {}
+    }
+  ]
+}
