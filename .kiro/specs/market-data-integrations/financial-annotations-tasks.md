@@ -68,7 +68,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Boundary: FMP models/equity_search.py, equity_peers.py, discovery_data.py and tests/providers/test_fmp_discovery.py only._
   - _Depends: 1_
   - _Requirements: 4.1, 4.2, 5.1, 6.1, 6.2_
-- [ ] 4.5 (P) Adopt ratio and enterprise-input declarations
+- [x] 4.5 (P) Adopt ratio and enterprise-input declarations
   - Preserve fraction/percentage distinctions, per-share units and unknown valuation dates/bases. Source annotations and runtime metadata share templates. Keep enterprise core schema and isolated router unchanged unless a concrete contract defect requires controller review.
   - Done: existing ratio/enterprise fixtures and agreement checks pass; no house valuation is added. Changed production files pass 400/300/50 and owning checks.
   - _Boundary: FMP financial_ratios.py/financial_ratios_data.py and enterprise_values.py, plus their existing focused tests only._

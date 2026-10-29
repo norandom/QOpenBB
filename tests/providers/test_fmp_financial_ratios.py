@@ -121,3 +121,52 @@ def test_legacy_year_and_actual_period_basis():
     result = Fetcher.transform_data(Fetcher.transform_query({"symbol": "A"}), FMPAcquisition([data], STAMP))
     assert result.result[0].fiscal_year == 2023
     assert result.metadata[FINANCIAL_METADATA_KEY]["fields"]["net_profit_margin"]["period_basis"] == "discrete_quarter"
+
+
+@pytest.mark.parametrize("period,basis", [("FY", "annual"), ("Q4", "discrete_quarter"), (None, None)])
+def test_declarations_match_runtime_and_keep_request_copies(period, basis):
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_query_annotation, render_field_templates,
+    )
+    from openbb_fmp.models.financial_ratios import FMPFinancialRatiosQueryParams
+    from openbb_fmp.models.financial_ratios_data import FMPFinancialRatiosData
+
+    query = Fetcher.transform_query({"symbol": "A", "limit": 1})
+    declaration = bind_query_annotation(FMPFinancialRatiosQueryParams)
+    assert declaration.provider_policy == "explicit"
+    assert declaration.response_policy.mode == "clip"
+    assert declaration.response_policy.limit_parameter == "limit"
+    templates = render_field_templates(FMPFinancialRatiosData)
+    result = Fetcher.transform_data(query, FMPAcquisition([fixture(period), fixture(period)], STAMP))
+    metadata = result.metadata[FINANCIAL_METADATA_KEY]
+    assert metadata["bounds"]["truncated"] is True
+    assert len(result.result) == 1
+    for name, template in templates.items():
+        expected = template.model_dump(mode="json")
+        expected["availability"] = "available" if getattr(result.result[0], name) is not None else "missing"
+        if template.value_origin == "provider_calculation":
+            expected["period_basis"] = basis
+        assert metadata["fields"][name] == expected
+    templates["dividend_yield"].financial_basis["share_count"] = "changed"
+    templates["dividend_yield"].unit = "changed"
+    assert render_field_templates(FMPFinancialRatiosData)["dividend_yield"].unit == "fraction"
+    assert render_field_templates(FMPFinancialRatiosData)["dividend_yield"].financial_basis["share_count"] is None
+    empty = Fetcher.transform_data(query, FMPAcquisition([], STAMP))
+    assert all(field["availability"] == "missing" for field in empty.metadata[FINANCIAL_METADATA_KEY]["fields"].values())
+
+
+def test_clipping_and_bounds_read_the_declared_limit_parameter():
+    from openbb_core.provider.standard_models.financial_annotations import ResponsePolicy
+    from openbb_fmp.models.financial_ratios import FMPFinancialRatiosQueryParams
+    from pydantic import create_model
+
+    alternate = create_model("AlternateRatioLimit", __base__=FMPFinancialRatiosQueryParams, row_cap=(int, 2))
+    alternate.financial_query_annotation = FMPFinancialRatiosQueryParams.financial_query_annotation.model_copy(
+        update={"response_policy": ResponsePolicy(mode="clip", limit_parameter="row_cap")}, deep=True,
+    )
+    query = alternate(symbol="A", limit=1)
+    result = Fetcher.transform_data(query, FMPAcquisition([fixture()] * 3, STAMP))
+    assert len(result.result) == 2
+    bounds = result.metadata[FINANCIAL_METADATA_KEY]["bounds"]
+    assert bounds["requested_limit"] == bounds["effective_limit"] == 2
+    assert bounds["truncated"] is True

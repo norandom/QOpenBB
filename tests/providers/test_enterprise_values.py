@@ -93,3 +93,44 @@ def test_canonical_aliases_and_empty_result():
     assert row.stock_price == -2 and row.number_of_shares == 0 and row.market_cap is None
     assert row.currency == "GBP"
     assert Fetcher.transform_data(query, FMPAcquisition([], STAMP)).result == []
+
+
+@pytest.mark.parametrize("payload", [[observation(reportedCurrency="EUR")], [{"symbol": "ABC"}], []])
+def test_declarations_match_runtime_and_keep_unknown_conventions(payload):
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_query_annotation, render_field_templates,
+    )
+    from openbb_fmp.models.enterprise_values import FMPEnterpriseValuesData, FMPEnterpriseValuesQueryParams
+
+    declaration = bind_query_annotation(FMPEnterpriseValuesQueryParams)
+    assert declaration.provider_policy == "explicit"
+    assert declaration.response_policy.mode == "clip"
+    assert declaration.response_policy.limit_parameter == "limit"
+    query = Fetcher.transform_query({"symbol": "ABC"})
+    result = Fetcher.transform_data(query, FMPAcquisition(payload, STAMP))
+    fields = result.metadata[FINANCIAL_METADATA_KEY]["fields"]
+    templates = render_field_templates(FMPEnterpriseValuesData)
+    for name, template in templates.items():
+        expected = template.model_dump(mode="json")
+        expected["availability"] = "available" if any(getattr(row, name) is not None for row in result.result) else "missing"
+        assert fields[name] == expected
+        assert all(value is None for value in template.financial_basis.values())
+        assert template.valuation_date_field is None
+    templates["stock_price"].financial_basis["market_date"] = "changed"
+    assert render_field_templates(FMPEnterpriseValuesData)["stock_price"].financial_basis["market_date"] is None
+
+
+def test_clipping_and_bounds_read_the_declared_limit_parameter():
+    from openbb_core.provider.standard_models.financial_annotations import ResponsePolicy
+    from openbb_fmp.models.enterprise_values import FMPEnterpriseValuesQueryParams
+    from pydantic import create_model
+
+    alternate = create_model("AlternateEnterpriseLimit", __base__=FMPEnterpriseValuesQueryParams, row_cap=(int, 2))
+    alternate.financial_query_annotation = FMPEnterpriseValuesQueryParams.financial_query_annotation.model_copy(
+        update={"response_policy": ResponsePolicy(mode="clip", limit_parameter="row_cap")}, deep=True,
+    )
+    result = Fetcher.transform_data(alternate(symbol="ABC", limit=1), FMPAcquisition([observation()] * 3, STAMP))
+    assert len(result.result) == 2
+    bounds = result.metadata[FINANCIAL_METADATA_KEY]["bounds"]
+    assert bounds["requested_limit"] == bounds["effective_limit"] == 2
+    assert bounds["truncated"] is True
