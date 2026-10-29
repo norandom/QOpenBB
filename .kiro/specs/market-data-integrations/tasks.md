@@ -176,7 +176,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 1.3_
   - _Requirements: 7.1, 7.2, 7.4, 8.4_
 
-- [ ] 4.4 (P) Preserve financial descriptors in catalog snapshots and drift checks
+- [x] 4.4 (P) Preserve financial descriptors in catalog snapshots and drift checks
   - Own catalog_financial and scoped catalog.py changes. Consume the single projection from 4.1; validate parameter values, provider associations, metadata references and compatibility changes.
   - Done when incompatible field/descriptor/default changes flag affected consumers and invalid parameter examples fail generation; no parallel schema source is created.
   - Caps: changed pipeline scope meets 400/300/50; fixtures/generated snapshots excluded.
@@ -297,6 +297,8 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - Main4.3 accepted 2026-10-29: [safe mounted API failure component](../../../artifacts/reviewed/market-http-errors/accepted.md), independent38 tests, sensitivity control and caps. Shared formatter is the policy guard dependency; activation remains main5.2.
 
 - Main4.2 accepted 2026-10-29: [descriptor-driven provider guard](../../../artifacts/reviewed/market-provider-policy/accepted.md), independent126-test guard/handler/core/projection join and caps. Main source progress18/26; runtime wiring remains5.2.
+
+- Main4.4 accepted 2026-10-29: [catalog validation and drift](../../../artifacts/reviewed/market-financial-catalog/accepted.md), independent54-test verification and native three-model projection probe after metadata-map repair. Runtime/catalog promotion remain later tasks.
 
 ## Implementation Notes
 

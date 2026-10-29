@@ -1,0 +1,60 @@
+{
+  "root_parent": "a8cf8a9abd19ec304d0945cd829c30eeb05af958",
+  "data_api_revision": "dca75f9b358c3defe5ab7948f847a120a08ff98e",
+  "files": {
+    "pipeline/qopenbb_ci/catalog.py": "e60e967f59c19ab0dcd53188d27fec34435ba632fa492f148437d65cbce239ba",
+    "pipeline/qopenbb_ci/catalog_financial.py": "6bfe334b51855c7cf6482b31c42fa6f923e7f0776f72b12e2a023e71423bbdbb",
+    "tests/contracts/test_catalog_financial.py": "3e2086a94790e3bc8357cf9eb8465a22d39cdb88035ee55d74c254f1d2529d89",
+    "pipeline/pyproject.toml": "4baf8836f28acd026e67ca23094870100a2e6090cbbfa1b18907acd6b73713eb",
+    "pipeline/uv.lock": "42cf4d7c0f669e3486cf95c76e5be0663eef927e3e526ab5b8003565379df48f"
+  },
+  "verification": {
+    "focused": {
+      "command": [
+        "pipeline/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-c",
+        "pipeline/pyproject.toml",
+        "tests/contracts/test_catalog_financial.py",
+        "tests/contracts/test_catalog.py",
+        "-n0",
+        "--maxprocesses=2"
+      ],
+      "exit_code": 0
+    },
+    "lint": {
+      "command": [
+        "verification/provider/.venv/bin/ruff",
+        "check",
+        "--no-fix",
+        "pipeline/qopenbb_ci/catalog.py",
+        "pipeline/qopenbb_ci/catalog_financial.py",
+        "tests/contracts/test_catalog_financial.py"
+      ],
+      "exit_code": 0
+    },
+    "native": {
+      "command": [
+        "pipeline/.venv/bin/python",
+        "artifacts/financial-catalog-review/native_probe.py",
+        "validate"
+      ],
+      "exit_code": 0
+    },
+    "sha256": {
+      "pipeline/qopenbb_ci/catalog.py": "e60e967f59c19ab0dcd53188d27fec34435ba632fa492f148437d65cbce239ba",
+      "pipeline/qopenbb_ci/catalog_financial.py": "6bfe334b51855c7cf6482b31c42fa6f923e7f0776f72b12e2a023e71423bbdbb",
+      "tests/contracts/test_catalog_financial.py": "3e2086a94790e3bc8357cf9eb8465a22d39cdb88035ee55d74c254f1d2529d89",
+      "pipeline/pyproject.toml": "4baf8836f28acd026e67ca23094870100a2e6090cbbfa1b18907acd6b73713eb",
+      "pipeline/uv.lock": "42cf4d7c0f669e3486cf95c76e5be0663eef927e3e526ab5b8003565379df48f"
+    }
+  },
+  "combined_size_gate": {
+    "files": 78,
+    "errors": 0,
+    "violations": 0,
+    "node": "24.22.1"
+  },
+  "scope": "Catalog component; no runtime activation, snapshot promotion, image publication or live provider claim."
+}

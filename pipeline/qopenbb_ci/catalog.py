@@ -1,7 +1,16 @@
 """Freeze installed financial routes and adapt only supported consumer metadata."""
-from copy import deepcopy
 import hashlib
 import json
+from copy import deepcopy
+
+from qopenbb_ci.catalog_financial import (
+    EXTENSION,
+    frozen_extension,
+    parameters,
+    resolve,
+    validate_financial,
+    validate_parameters,
+)
 
 
 def canonical(value: object) -> bytes:
@@ -16,16 +25,18 @@ def digest(value: object) -> str:
 def validate_refs(document: dict) -> None:
     def walk(value):
         if isinstance(value, dict):
-            if "$ref" in value:
-                ref = value["$ref"]
-                if not ref.startswith("#/"):
-                    raise ValueError("external schema reference: " + ref)
+            for keyword in ("$ref", "$dynamicRef"):
+                if keyword not in value:
+                    continue
+                ref = value[keyword]
+                if not isinstance(ref, str) or not ref.startswith("#/"):
+                    raise ValueError("external schema reference")
                 target = document
                 try:
                     for part in ref[2:].split("/"):
                         target = target[part.replace("~1", "/").replace("~0", "~")]
-                except (KeyError, TypeError) as exc:
-                    raise ValueError("unresolved schema reference: " + ref) from exc
+                except (KeyError, TypeError):
+                    raise ValueError("unresolved schema reference") from None
             for item in value.values():
                 walk(item)
         elif isinstance(value, list):
@@ -35,21 +46,20 @@ def validate_refs(document: dict) -> None:
 
 
 def provider_choices(parameter: dict, schema: dict) -> list:
-    value = parameter.get("schema", {})
-    if "$ref" in value:
-        value = schema["components"]["schemas"][value["$ref"].split("/")[-1]]
+    value = resolve(schema, parameter.get("schema", {}))
     if "const" in value:
         return [value["const"]]
     return value.get("enum", [])
 
 
-def validate_dataset(dataset: dict, operation: dict, schema: dict) -> None:
-    params = {p["name"]: p for p in operation.get("parameters", [])}
+def validate_dataset(dataset: dict, operation: dict, schema: dict, params: list | None = None) -> None:
+    params = {p["name"]: p for p in (params if params is not None else operation.get("parameters", []))
+              if p.get("in") == "query"}
     query = dataset["parameters"]
     if query.get("provider") != dataset["provider"]:
         raise ValueError("inconsistent dataset provider")
     if dataset["provider"] not in provider_choices(params.get("provider", {}), schema):
-        raise ValueError("unregistered provider: " + dataset["provider"])
+        raise ValueError("unregistered provider")
     if set(query) - params.keys():
         raise ValueError("unknown dataset parameter")
     if any(p.get("required") and name not in query for name, p in params.items()):
@@ -74,10 +84,15 @@ def freeze_routes(schema: dict, inventory: dict) -> dict:
         seen.add(dataset["id"])
         operation = schema["paths"].get(dataset["path"], {}).get("get")
         if not operation:
-            raise ValueError("dataset route absent: " + dataset["path"])
-        validate_dataset(dataset, operation, schema)
+            raise ValueError("dataset route absent")
+        params = parameters(schema, operation, schema["paths"][dataset["path"]])
+        validate_dataset(dataset, operation, schema, params)
+        validate_parameters(schema, params, dataset["parameters"])
+        validate_financial(schema, operation, dataset, params)
         routes.append({"dataset": dataset["id"], "method": "GET", "path": dataset["path"],
-                       **{k: deepcopy(operation[k]) for k in ("operationId", "parameters", "responses")}})
+                       **{k: deepcopy(operation[k]) for k in ("operationId", "responses")},
+                       "parameters": deepcopy(params if EXTENSION in operation else operation["parameters"]),
+                       **frozen_extension(operation)})
     return {"schema_version": 1, "status": "installed", "routes": routes,
             "components": deepcopy(schema.get("components", {}))}
 
@@ -194,7 +209,7 @@ def compatibility(before: dict | None, after: dict) -> dict:
     new = {item["dataset"]: item for item in after["routes"]}
     changes = []
     for key in sorted(old.keys() | new.keys()):
-        fields = [field for field in ("path", "method", "operationId", "parameters", "responses")
+        fields = [field for field in ("path", "method", "operationId", "parameters", "responses", EXTENSION)
                   if contract_dependencies(old.get(key, {}).get(field), before or {})
                   != contract_dependencies(new.get(key, {}).get(field), after)]
         if fields:
