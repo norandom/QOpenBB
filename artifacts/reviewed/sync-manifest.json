@@ -181,7 +181,10 @@
     "market-data-discovery-prices",
     "market-data-key-metrics",
     "market-data-financial-ratios",
-    "market-data-metrics-ratios"
+    "market-data-metrics-ratios",
+    "market-data-enterprise-values",
+    "market-data-financial-openapi",
+    "market-data-enterprise-schema"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34276,6 +34279,46 @@
       "publishedpath": "artifacts/reviewed/market-data-metrics-ratios/final-source.json",
       "publishedSHA256": "e2d2dda0d03be4d7405567babced071657a04cf6d83f38b6ded58dbd85bebfa7",
       "bytes": 786,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-enterprise-values/result.md",
+      "sourceSHA256": "40a67d59806fb356fbe3c337a70b28c081d50d9866c65f1531cf49ba4d5e4e9b",
+      "publishedpath": "artifacts/reviewed/market-data-enterprise-values/result.md",
+      "publishedSHA256": "40a67d59806fb356fbe3c337a70b28c081d50d9866c65f1531cf49ba4d5e4e9b",
+      "bytes": 5838,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-data-financial-openapi/result.md",
+      "sourceSHA256": "7345586ada70e571e05a408dbcd6a62d66400d430eee605f1592240faeff6e07",
+      "publishedpath": "artifacts/reviewed/market-data-financial-openapi/result.md",
+      "publishedSHA256": "7345586ada70e571e05a408dbcd6a62d66400d430eee605f1592240faeff6e07",
+      "bytes": 4771,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts\\market-data-enterprise-schema\\accepted.md",
+      "sourceSHA256": "7c893ca3a09b9b77b1b494bb5e05372e71586388eb201a34cfc53a83d5b5c4c1",
+      "publishedpath": "artifacts/reviewed/market-data-enterprise-schema/accepted.md",
+      "publishedSHA256": "7c893ca3a09b9b77b1b494bb5e05372e71586388eb201a34cfc53a83d5b5c4c1",
+      "bytes": 1900,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts\\market-data-enterprise-schema\\enterprise-review.md",
+      "sourceSHA256": "715a4d9f75d2b8c01c0e0d01451d65f6c34c4c899139eb5abe22351d4dd9b0c4",
+      "publishedpath": "artifacts/reviewed/market-data-enterprise-schema/enterprise-review.md",
+      "publishedSHA256": "715a4d9f75d2b8c01c0e0d01451d65f6c34c4c899139eb5abe22351d4dd9b0c4",
+      "bytes": 5698,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts\\market-data-enterprise-schema\\final-source.json",
+      "sourceSHA256": "cf7070cb0b0ee42fb1e03afbb33ed5e5f89d2a23c905913a37399013fe7a4479",
+      "publishedpath": "artifacts/reviewed/market-data-enterprise-schema/final-source.json",
+      "publishedSHA256": "cf7070cb0b0ee42fb1e03afbb33ed5e5f89d2a23c905913a37399013fe7a4479",
+      "bytes": 756,
       "transform": "exact-byte-copy"
     }
   ],
