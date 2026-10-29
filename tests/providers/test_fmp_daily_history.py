@@ -116,3 +116,49 @@ def test_typed_transport(monkeypatch):
     query = Fetcher.transform_query({**BASE, "symbol": " ^gspc "})
     receipt = asyncio.run(Fetcher.aextract_data(query, {"fmp_api_key": "synthetic"}))
     assert receipt.retrieved_at == STAMP
+
+
+def test_declarations_cover_canonical_fields_and_preserve_runtime_semantics():
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_data_annotation, bind_query_annotation, render_field_templates,
+    )
+    from openbb_fmp.models.equity_historical import (
+        FMPEquityHistoricalData as Data, FMPEquityHistoricalQueryParams as Query,
+    )
+    query = bind_query_annotation(Query)
+    assert query.provider_policy == "explicit"
+    assert query.procedural_bounds.max_calendar_years == 5
+    assert query.response_policy.mode == "clip" and query.response_policy.max_rows == 5000
+    assert Query.model_fields["interval"].default == "1d"
+    assert Query.model_fields["adjustment"].default == "splits_only"
+    annotation = bind_data_annotation(Data)
+    assert set(annotation.fields) == set(Data.model_fields)
+    assert "changePercent" not in annotation.fields
+    templates = render_field_templates(Data)
+    answer = result([row(open=None, vwap=10)])
+    for name, field in answer.metadata[FINANCIAL_METADATA_KEY]["fields"].items():
+        expected = templates[name].model_dump(mode="json")
+        expected["availability"] = "missing" if name == "open" else "available"
+        assert field == expected
+    assert templates["open"].availability == "unknown"
+    templates["open"].unit = "changed"
+    assert render_field_templates(Data)["open"].unit == "currency/share"
+    assert answer.result[0].change_percent == 0
+
+
+def test_declared_bounds_drive_validation_clipping_and_metadata(monkeypatch):
+    from openbb_fmp.models.equity_historical import FMPEquityHistoricalQueryParams as Query
+    original = Query.financial_query_annotation
+    changed = original.model_copy(deep=True)
+    changed.procedural_bounds.max_calendar_years = 1
+    changed.response_policy.max_rows = 2
+    monkeypatch.setattr(Query, "financial_query_annotation", changed)
+    with pytest.raises(FinancialError):
+        Fetcher.transform_query(BASE)
+    query = Fetcher.transform_query({**BASE, "start_date": "2024-02-29"})
+    answer = Fetcher.transform_data(query, FMPAcquisition([row()] * 3, STAMP))
+    assert len(answer.result) == 2
+    bounds = answer.metadata[FINANCIAL_METADATA_KEY]["bounds"]
+    assert bounds["effective_limit"] == 2 and bounds["truncated"] is True
+    assert bounds["completeness"] == "partial"
+    assert original.procedural_bounds.max_calendar_years == 5

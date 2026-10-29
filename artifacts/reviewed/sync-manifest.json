@@ -34448,6 +34448,38 @@
       "publishedSHA256": "97e82fffc2fbf58593ee59cc88b351131aac711a66e51c103ed320154b97db68",
       "bytes": 1112,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-daily-prices/result.md",
+      "sourceSHA256": "601fcccb4754ae04e1f836c7147575bd8f4a0a7e6379f22753ad6ef2398ba63d",
+      "publishedpath": "artifacts/reviewed/annotations-daily-prices/result.md",
+      "publishedSHA256": "601fcccb4754ae04e1f836c7147575bd8f4a0a7e6379f22753ad6ef2398ba63d",
+      "bytes": 4294,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-daily-prices/review.md",
+      "sourceSHA256": "23e4ebe8cdbe328b092ebe1641b64b85967a968cdaddab71392f247e47640799",
+      "publishedpath": "artifacts/reviewed/annotations-daily-prices/review.md",
+      "publishedSHA256": "23e4ebe8cdbe328b092ebe1641b64b85967a968cdaddab71392f247e47640799",
+      "bytes": 3807,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-daily-prices/accepted.md",
+      "sourceSHA256": "ccc71a3301f6742670939eb5b6b065ac6486e13d8ab9db37e2d0d44b16473e10",
+      "publishedpath": "artifacts/reviewed/annotations-daily-prices/accepted.md",
+      "publishedSHA256": "ccc71a3301f6742670939eb5b6b065ac6486e13d8ab9db37e2d0d44b16473e10",
+      "bytes": 1086,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-daily-prices/counts-hashes.json",
+      "sourceSHA256": "500bd6907f08a9407539ad28f76eacd52b28205d566d111c50ff53090001b084",
+      "publishedpath": "artifacts/reviewed/annotations-daily-prices/counts-hashes.json",
+      "publishedSHA256": "500bd6907f08a9407539ad28f76eacd52b28205d566d111c50ff53090001b084",
+      "bytes": 444,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35173,7 +35205,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170386448,
+  "total_payload_bytes": 170396079,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -21,14 +21,14 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Boundary: New data-fork core standard_models/financial_annotations.py and tests/providers/test_financial_annotations.py; controller owns inventory/source pin updates._
   - _Requirements: 4.1, 4.2, 6.1, 7.3_
 
-- [ ] 2. Representative adoption
+- [x] 2. Representative adoption
 - [x] 2.1 (P) Adopt periodic key-metrics declarations
   - Move static units, financial bases and policy to the query/data declarations. Runtime field construction reads those templates and supplies actual period, availability and provenance. Preserve modeled-only output and unknown market dates.
   - Done: existing key-metrics fixtures and declaration/runtime agreement checks pass; no duplicate unit sets remain. Whole changed files pass 400/300/50 and owning checks.
   - _Boundary: FMP models/key_metrics.py, key_metrics_data.py and tests/providers/test_fmp_key_metrics.py only._
   - _Depends: 1_
   - _Requirements: 4.1, 4.2, 4.7, 6.1, 6.2_
-- [ ] 2.2 (P) Adopt daily-price declarations and single-owner bounds
+- [x] 2.2 (P) Adopt daily-price declarations and single-owner bounds
   - Declare the five-calendar-year and 5000-row policies once and make existing validation/clipping read them. Preserve actual interval/adjustment choices from the model and the local percentage conversion trace.
   - Done: existing date/leap/null/zero/duplicate/percentage fixtures and declaration/runtime checks pass. No local resampling or adjustment is introduced; whole production scope passes 400/300/50 and owning checks.
   - _Boundary: FMP models/equity_historical.py and tests/providers/test_fmp_daily_history.py only._
