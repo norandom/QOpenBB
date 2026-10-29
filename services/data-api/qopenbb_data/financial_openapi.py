@@ -234,3 +234,24 @@ def project_financial_openapi(document: dict, routes: Iterable, registry_map: Re
     if found != required_models:
         raise InvalidFinancialAnnotation("Required model lacks route association")
     return result
+
+
+def financial_error_responses(document: dict) -> dict:
+    """Bind response references when the corresponding handlers are installed.
+
+    A standalone projection preserves native response definitions; activation
+    describes the safe envelopes that the installed service actually returns.
+    """
+    result = deepcopy(document)
+    for path_item in result.get("paths", {}).values():
+        for operation in path_item.values():
+            if not isinstance(operation, dict) or EXTENSION not in operation:
+                continue
+            error = operation[EXTENSION]["error_schema"]
+            for status in ("400", "422", "500", "502"):
+                operation["responses"][status] = {
+                    "description": "Financial request or provider failure; inspect the code field.",
+                    "content": {"application/json": {"schema": error}},
+                }
+            operation["responses"]["204"] = {"description": "No provider observations available."}
+    return result

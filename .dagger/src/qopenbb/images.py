@@ -1,7 +1,7 @@
 """Dagger image builds only; the caller uploads an already filtered directory."""
 
-import json
 import hashlib
+import json
 import re
 
 import dagger
@@ -25,7 +25,8 @@ async def build(service: str, context: dagger.Directory, base: str, provenance: 
         image = image.with_label('org.qopenbb.release', provenance['release_version'])
     if service == 'data-api':
         from qopenbb.data_api import data_image
-        image = await data_image(context, base, provenance['runtime_inputs'])
+        image = await data_image(context, base, provenance['runtime_inputs'],
+                                 provenance['sources']['data_api']['revision'])
         image = image.with_label('org.qopenbb.service', service).with_label('org.qopenbb.scope', 'data-runtime')
     for source, identity in sorted(provenance['sources'].items()):
         image = image.with_label('org.qopenbb.source.' + source, identity['revision'])

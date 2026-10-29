@@ -210,6 +210,7 @@ def _descriptor(document: dict, path: str, method: str, operation: dict, path_it
     contracts = {}
     for provider, variant in result["variants"].items():
         scoped = {"command": result["command"], "parameters": result["parameters"],
+                  "responses": operation["responses"],
                   "provider_policy": result["provider_policy"], "variant": variant,
                   "metadata_schema": result["metadata_schema"],
                   "metadata_location": result["metadata_location"],

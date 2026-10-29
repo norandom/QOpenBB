@@ -202,7 +202,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.3_
   - _Requirements: 2.1, 5.1, 5.4, 5.5, 8.1_
 
-- [ ] 5.2 Wire discovery, policy and error handling into the actual service
+- [x] 5.2 Wire discovery, policy and error handling into the actual service
   - Controller-only runtime join in the identified candidate environment from 5.1: install projection and handlers on the upstream app, guard before forwarding and discovery before the mount. Retain health, credential isolation and baseline routes.
   - Done when ASGI tests prove mounted-app error sanitization, omitted-provider rejection, disclosure and Python/API agreement for actual installed models; no AI/browser service is required to query.
   - Caps: whole changed app/config scope meets 400/300/50; tests excluded.
@@ -304,7 +304,11 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 
 - Main5.1 accepted: [installed registration candidate](../../../artifacts/reviewed/market-provider-registration/accepted.md), exact candidate fork13e41631bdef0ee98bfa23bda68d329224b56eb1, independent76-test join and81-file cap gate. Main21/26. Root source/catalog pins remain at the deployed baseline until5.3.
 
+- Main5.2 accepted: [installed service integration](../../../artifacts/reviewed/market-runtime-integration/accepted.md), exact candidate `28423762e8cc3faae978e770899834b41e7cde99`, independent installed-service and image-input checks, 83-file cap gate. Main22/26. Root source/catalog promotion remains5.3.
+
 ## Implementation Notes
+
+- Candidate5.2: `artifacts/market-runtime/candidate-private.json` supersedes the retained5.1 descriptor after the typed FRED repair. Native generation/source revision identifies the installed data fork; the separate runtime-input hash binds maintained service code. Do not inject provider/core source into acceptance PYTHONPATH.
 
 - Candidate5.1: `artifacts/market-registration/candidate-private.json` identifies the retained source/project snapshot. Acceptance uses installed provider/core packages; inject only the root service into PYTHONPATH. Project only the eleven annotated first-batch models, preserving other existing FRED routes. Prefer host Git or immutable blob/archive reads over WSL worktree scans on the mounted fork.
 

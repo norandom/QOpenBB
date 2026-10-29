@@ -1,6 +1,7 @@
 """Build the locked local provider packages; retain only production runtime files."""
 import hashlib
 import json
+
 import dagger
 from dagger import dag
 
@@ -10,7 +11,8 @@ SAFE_URL = 'https://github.com/AikidoSec/safe-chain/releases/download/1.5.25/saf
 SAFE_SHA = '3462a8395f822b392b7c0808c70116ef90e17a5a1479e604cfc41d57bfbd827c'
 
 
-async def data_image(context: dagger.Directory, base: str, runtime_inputs: dict) -> dagger.Container:
+async def data_image(context: dagger.Directory, base: str, runtime_inputs: dict,
+                     source_revision: str) -> dagger.Container:
     builder = (dag.container(platform=dagger.Platform('linux/amd64')).from_(base)
                .with_file('/tmp/uv.tar.gz', dag.http(UV_URL, checksum='sha256:' + UV_SHA))
                .with_exec(['tar', '-xzf', '/tmp/uv.tar.gz', '-C', '/tmp'])
@@ -30,6 +32,11 @@ async def data_image(context: dagger.Directory, base: str, runtime_inputs: dict)
             .with_directory('/opt/venv', builder.directory('/opt/venv'))
             .with_directory('/app/qopenbb_data', context.directory('runtime/services/data-api/qopenbb_data'))
             .with_directory('/app/qopenbb_data/catalog', context.directory('runtime/contracts'))
+            .with_file('/app/qopenbb_data/provider-coverage.json',
+                       context.file('runtime/docs/reference/provider-coverage.json'))
+            .with_env_variable('QOPENBB_DATA_SOURCE_REVISION', source_revision)
+            .with_env_variable('QOPENBB_DATA_GENERATION_REVISION', source_revision)
+            .with_env_variable('QOPENBB_DATA_RUNTIME_SHA256', runtime_hash)
             .with_env_variable('PATH', '/opt/venv/bin:/usr/local/bin:/usr/bin:/bin')
             .with_env_variable('PYTHONDONTWRITEBYTECODE', '1')
             .with_env_variable('PYTHONUNBUFFERED', '1')

@@ -1,10 +1,10 @@
 """Packaged gallery lookup and discovery require no provider or runtime imports."""
 import asyncio
-from copy import deepcopy
 import importlib.util
 import json
-from pathlib import Path
 import sys
+from copy import deepcopy
+from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
@@ -178,6 +178,9 @@ def test_app_registers_local_discovery_and_read_only_dataset_before_upstream(pac
     class App:
         def __init__(self, **kwargs):
             self.routes = []
+            self.middleware = []
+        def add_middleware(self, middleware, **kwargs):
+            self.middleware.append((middleware, kwargs))
         def get(self, path, **kwargs):
             def register(handler):
                 self.routes.append(("GET", path, handler))
@@ -189,12 +192,21 @@ def test_app_registers_local_discovery_and_read_only_dataset_before_upstream(pac
     monkeypatch.setitem(sys.modules, "fastapi.responses", SimpleNamespace(JSONResponse=Response))
     upstream = SimpleNamespace(openapi=lambda: {"paths": {}})
     monkeypatch.setitem(sys.modules, "openbb_core.api.rest_api", SimpleNamespace(app=upstream))
-    monkeypatch.setitem(sys.modules, "qopenbb_data.config", SimpleNamespace(configure=lambda: []))
+    monkeypatch.setitem(sys.modules, "qopenbb_data.config", SimpleNamespace(
+        configure=list, coverage_index=dict, financial_identity=dict))
+    policy = object()
+    monkeypatch.setitem(sys.modules, "qopenbb_data.financial_policy", SimpleNamespace(
+        FinancialProviderPolicy=policy))
     spec = importlib.util.spec_from_file_location("gallery_app_under_test", ROOT / "services/data-api/qopenbb_data/app.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     module.CATALOG = packaged.root
+    # This gallery-only seam uses framework stubs; installed ASGI tests verify
+    # financial projection and mounted error handling against the native runtime.
+    document = upstream.openapi()
+    monkeypatch.setattr(module, "_financial_runtime", lambda template: (template, document, {"datasets": []}))
     app = module.create_app()
+    assert app.middleware == [(policy, {"document": document})]
     assert app.routes[-1] == ("MOUNT", "/", upstream)
     handlers = {path: handler for method, path, handler in app.routes if method == "GET"}
     assert asyncio.run(handlers["/widgets.json"]())["canonical"] == packaged.files["widgets.json"]["canonical"]

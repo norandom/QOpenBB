@@ -24,11 +24,11 @@ Research snapshot: 2026-10-19. The [FMP endpoint inventory](reference/fmp-endpoi
 
 See the inventory's per-endpoint source links and [official FMP catalog](https://site.financialmodelingprep.com/developer/docs). This is a family-level map; bulk delivery is a transport option, not a separate financial asset class.
 
-Published prototype images retain the company-profile and income-statement FMP baseline. The accepted development candidate registers ten first-batch FMP models; service discovery and widget publication remain pending. FRED series also has a catalog widget. The demonstrated price/statement/news dashboard uses uploaded snapshots. Broader published FMP coverage must not be presented as installed or accepted. Every integration needs separate published-coverage, entitlement, adapter, widget and end-to-end status.
+Published prototype images retain the company-profile and income-statement FMP baseline. The accepted development candidate registers ten first-batch FMP models and activates service discovery and safeguards. Reusable widget publication remains pending. FRED series also has a catalog widget. The demonstrated price/statement/news dashboard uses uploaded snapshots. Broader published FMP coverage must not be presented as installed or accepted. Every integration needs separate published-coverage, entitlement, adapter, widget and end-to-end status.
 
 ## Discovery checkpoint, 2026-10-29
 
-The [machine-readable coverage index](reference/provider-coverage.json) records family scope and source evidence separately from installed command discovery. The [accepted discovery component](../artifacts/reviewed/market-financial-discovery/accepted.md) reads the authoritative financial schemas and preserves unknown access and consumer states. Runtime installation remains task 5.2; reusable widget generation remains task 5.3. The registered baseline above is unchanged.
+The [machine-readable coverage index](reference/provider-coverage.json) records family scope and source evidence separately from installed command discovery. The [accepted discovery component](../artifacts/reviewed/market-financial-discovery/accepted.md) reads the authoritative financial schemas and preserves unknown access and consumer states. The [installed service integration](../artifacts/reviewed/market-runtime-integration/accepted.md) now activates discovery, provider selection and safe errors against the exact candidate. Reusable widget generation remains task 5.3. Published image coverage is unchanged; access and consumer proofs remain unknown until verified.
 
 ## Commodity prices and futures are different instruments
 
@@ -58,6 +58,7 @@ The [widget requirements](../.kiro/specs/openbb-self-service/parameterized-widge
 - [x] Periodic key-metrics and ratio source adapters: [accepted financial metadata](../artifacts/reviewed/market-data-metrics-ratios/accepted.md).
 - [x] Enterprise-value source contract and isolated command: [accepted input semantics](../artifacts/reviewed/market-data-enterprise-schema/accepted.md).
 - [x] Register the restored first-batch adapters in an exact-source installed candidate: [acceptance](../artifacts/reviewed/market-provider-registration/accepted.md).
-- [ ] Install the service safeguards/discovery, publish regenerated widgets and verify live account entitlement. Published images retain the baseline until the integrated release.
+- [x] Install service safeguards and discovery in the exact-source candidate: [acceptance](../artifacts/reviewed/market-runtime-integration/accepted.md).
+- [ ] Publish regenerated widgets and verify live account entitlement. Published images retain the baseline until the integrated release.
 
 These checks track source acceptance, not completion of the broader research families.

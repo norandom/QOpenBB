@@ -69,8 +69,12 @@ def _classify(error):
     if type(error) is OpenBBError and type(current) is str:
         return FinancialError("upstream"), 400
     if type(current) is FinancialError:
-        return FinancialError(current.code, provider=current.provider,
-                              retry_after_seconds=current.retry_after_seconds), None
+        safe = FinancialError(current.code, provider=current.provider,
+                              retry_after_seconds=current.retry_after_seconds)
+        # FRED protocol failures historically used OpenBBError/HTTP 400, including
+        # unavailable series; do not turn them into empty successful responses.
+        status = 400 if safe.provider == "fred" and safe.code in {"authentication", "missing_data"} else None
+        return safe, status
     if type(current) in {FMPError, FMPUnauthorized, FMPEmptyData}:
         status = 204 if type(current) is FMPEmptyData else (
             502 if type(current) is FMPUnauthorized else 400)

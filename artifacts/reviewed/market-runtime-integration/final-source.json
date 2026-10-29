@@ -1,0 +1,579 @@
+{
+  "candidate_revision": "28423762e8cc3faae978e770899834b41e7cde99",
+  "archive_sha256": "db6e2a7a71b37953ada4a2860508c415534abaaab9ecac09e9ea58aa5c0e974f",
+  "archive_scope": [
+    "openbb_platform/core",
+    "openbb_platform/extensions/equity",
+    "openbb_platform/extensions/economy",
+    "openbb_platform/providers/fmp",
+    "openbb_platform/providers/fred",
+    "LICENSE"
+  ],
+  "candidate_lock_sha256": "f3e1026c1d0d23eac2aa85436c8d619577860d6a2cf98dfc4a95618fafb41bd1",
+  "base_lock_sha256": "f3e1026c1d0d23eac2aa85436c8d619577860d6a2cf98dfc4a95618fafb41bd1",
+  "root_files": {
+    "services/data-api/qopenbb_data/app.py": "222b1da1b611b51cfac58afe827e04acb125ef97cc03b900a0149eb0d647b27b",
+    "services/data-api/qopenbb_data/config.py": "052f72d31c0eb9f21877d16d2469793dbe3be584df3dcd33e93c016898128faa",
+    "services/data-api/qopenbb_data/financial_errors.py": "452b91234f11fade4891042558dfa6fd8517ab3c1980f586d61a4a4beb47092d",
+    "services/data-api/qopenbb_data/financial_openapi.py": "625decb0486387d96542ad8fa4cf315add97b66330a0bc2b006f1d8513768d37",
+    "services/data-api/qopenbb_data/financial_catalog.py": "8ed511250b2658efe8b2e27f4173fad11dcc75b84b83209a108f45e5fc9e71e1",
+    "pipeline/qopenbb_ci/runtime_inputs.py": "f06d5a8ed64bf6a582f2d13e2c95c9e4ac5ae7e7b65f38424040d0bb7820a8ee",
+    ".dagger/src/qopenbb/data_api.py": "b2891a2644cc0fbc97c0533847fbce65ee5011b048bf6ae05de8c23a5083a74e",
+    ".dagger/src/qopenbb/images.py": "29a64e4b3e95059ddc1fb1488eefc6d579b7555747e5dac1bd5b9f3f15e480f7",
+    "tests/providers/test_runtime.py": "664ff200463f8f38d2c0f98d67479f242ecd508b1f66e5f8f56a454336ce55f8",
+    "tests/providers/test_service_financial.py": "8d94fa34987ecfb0daf8314f6fb22b6d512e2caaa80b37259e844eac4d932cc2",
+    "tests/providers/test_fred.py": "089936b7a073ca1e786c64f39a82e615f1865e76296e1caa5c8ad77731338894",
+    "tests/providers/test_financial_openapi.py": "c1053df3be97c72f1da1d61928dba75c821819889e1e940762304e6b7ca609d3",
+    "tests/providers/test_financial_catalog.py": "b28756750a23a85d7eac0062436199424326f8b74180a34c9e94d268bfb7a2c3",
+    "tests/delivery/test_data_image.py": "cf993b24b8573bfa31d1e35d80eb117befc0d44872ad24a2f43e81dd62affb46",
+    "tests/contracts/test_gallery_runtime.py": "927e0d5f51898acbaba6ecb3daf59f3037936fecbe9e9fd52d20546f63b4e61d"
+  },
+  "source_files": {
+    "openbb_platform/providers/fred/openbb_fred/utils/response.py": "17daecd2bfd8a8e50ef7ce736d7f6318086c874bba19df83da3241101f7fd8a5",
+    "openbb_platform/providers/fred/openbb_fred/models/series.py": "1fb5d2ef1f8c72fcd4950b296328b5fecf8d602ec8476d174ac9f460e2535622"
+  },
+  "measurements": [
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/qopenbb_data/app.py",
+      "physical": 133,
+      "functions": [
+        {
+          "name": "_annotated_models",
+          "line": 23,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "_source_hashes",
+          "line": 37,
+          "column": 1,
+          "logical": 3
+        },
+        {
+          "name": "_financial_runtime",
+          "line": 46,
+          "column": 1,
+          "logical": 24
+        },
+        {
+          "name": "create_app",
+          "line": 82,
+          "column": 1,
+          "logical": 17
+        },
+        {
+          "name": "health",
+          "line": 94,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "ready",
+          "line": 98,
+          "column": 5,
+          "logical": 5
+        },
+        {
+          "name": "widgets",
+          "line": 109,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "apps",
+          "line": 113,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "datasets",
+          "line": 117,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "gallery_data",
+          "line": 121,
+          "column": 5,
+          "logical": 3
+        },
+        {
+          "name": "agents",
+          "line": 128,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "<lambda>",
+          "line": 71,
+          "column": 22,
+          "logical": 1
+        }
+      ],
+      "logical": 74
+    },
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/qopenbb_data/config.py",
+      "physical": 50,
+      "functions": [
+        {
+          "name": "financial_identity",
+          "line": 10,
+          "column": 1,
+          "logical": 7
+        },
+        {
+          "name": "coverage_index",
+          "line": 25,
+          "column": 1,
+          "logical": 3
+        },
+        {
+          "name": "configure",
+          "line": 32,
+          "column": 1,
+          "logical": 16
+        },
+        {
+          "name": "<lambda>",
+          "line": 48,
+          "column": 46,
+          "logical": 1
+        }
+      ],
+      "logical": 34
+    },
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/qopenbb_data/financial_errors.py",
+      "physical": 212,
+      "functions": [
+        {
+          "name": "financial_error_response",
+          "line": 24,
+          "column": 1,
+          "logical": 18
+        },
+        {
+          "name": "_unwrap",
+          "line": 55,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "_classify",
+          "line": 67,
+          "column": 1,
+          "logical": 20
+        },
+        {
+          "name": "_resolve",
+          "line": 96,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "_operations",
+          "line": 109,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "_operation",
+          "line": 125,
+          "column": 1,
+          "logical": 5
+        },
+        {
+          "name": "_response",
+          "line": 135,
+          "column": 1,
+          "logical": 10
+        },
+        {
+          "name": "install_financial_error_handlers",
+          "line": 186,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "__init__",
+          "line": 153,
+          "column": 5,
+          "logical": 2
+        },
+        {
+          "name": "__call__",
+          "line": 157,
+          "column": 5,
+          "logical": 16
+        },
+        {
+          "name": "scoped_handler",
+          "line": 193,
+          "column": 5,
+          "logical": 2
+        },
+        {
+          "name": "tracked_send",
+          "line": 165,
+          "column": 9,
+          "logical": 6
+        },
+        {
+          "name": "handler",
+          "line": 194,
+          "column": 9,
+          "logical": 6
+        }
+      ],
+      "logical": 150
+    },
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/qopenbb_data/financial_openapi.py",
+      "physical": 257,
+      "functions": [
+        {
+          "name": "_name",
+          "line": 24,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "_put",
+          "line": 28,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "_rewrite",
+          "line": 35,
+          "column": 1,
+          "logical": 13
+        },
+        {
+          "name": "_model_schema",
+          "line": 52,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "_query_schema",
+          "line": 61,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "_variant",
+          "line": 77,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "_resolve",
+          "line": 98,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "_provider_parameter",
+          "line": 113,
+          "column": 1,
+          "logical": 18
+        },
+        {
+          "name": "_response",
+          "line": 137,
+          "column": 1,
+          "logical": 20
+        },
+        {
+          "name": "_error_schema",
+          "line": 166,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "_operation",
+          "line": 181,
+          "column": 1,
+          "logical": 9
+        },
+        {
+          "name": "project_financial_openapi",
+          "line": 202,
+          "column": 1,
+          "logical": 27
+        },
+        {
+          "name": "financial_error_responses",
+          "line": 239,
+          "column": 1,
+          "logical": 10
+        }
+      ],
+      "logical": 162
+    },
+    {
+      "repository": "qopenbb",
+      "path": "services/data-api/qopenbb_data/financial_catalog.py",
+      "physical": 277,
+      "functions": [
+        {
+          "name": "_hash",
+          "line": 99,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "_coverage",
+          "line": 104,
+          "column": 1,
+          "logical": 19
+        },
+        {
+          "name": "_proof_keys",
+          "line": 126,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "_states",
+          "line": 137,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "_resolve",
+          "line": 150,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "_context",
+          "line": 165,
+          "column": 1,
+          "logical": 18
+        },
+        {
+          "name": "_parameters",
+          "line": 187,
+          "column": 1,
+          "logical": 5
+        },
+        {
+          "name": "_descriptor",
+          "line": 195,
+          "column": 1,
+          "logical": 18
+        },
+        {
+          "name": "_catalog",
+          "line": 226,
+          "column": 1,
+          "logical": 23
+        },
+        {
+          "name": "build_financial_catalog",
+          "line": 260,
+          "column": 1,
+          "logical": 4
+        },
+        {
+          "name": "public_evidence",
+          "line": 44,
+          "column": 5,
+          "logical": 4
+        },
+        {
+          "name": "proof_required",
+          "line": 56,
+          "column": 5,
+          "logical": 3
+        },
+        {
+          "name": "utc_generation",
+          "line": 92,
+          "column": 5,
+          "logical": 4
+        }
+      ],
+      "logical": 191
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/runtime_inputs.py",
+      "physical": 38,
+      "functions": [
+        {
+          "name": "copy_runtime",
+          "line": 17,
+          "column": 1,
+          "logical": 12
+        },
+        {
+          "name": "verify_runtime",
+          "line": 32,
+          "column": 1,
+          "logical": 6
+        }
+      ],
+      "logical": 25
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/src/qopenbb/data_api.py",
+      "physical": 50,
+      "functions": [
+        {
+          "name": "data_image",
+          "line": 14,
+          "column": 1,
+          "logical": 3
+        }
+      ],
+      "logical": 12
+    },
+    {
+      "repository": "qopenbb",
+      "path": ".dagger/src/qopenbb/images.py",
+      "physical": 35,
+      "functions": [
+        {
+          "name": "build",
+          "line": 11,
+          "column": 1,
+          "logical": 19
+        }
+      ],
+      "logical": 25
+    },
+    {
+      "repository": "data_api",
+      "path": "openbb_platform/providers/fred/openbb_fred/utils/response.py",
+      "physical": 42,
+      "functions": [
+        {
+          "name": "validate_response",
+          "line": 8,
+          "column": 1,
+          "logical": 8
+        },
+        {
+          "name": "observations",
+          "line": 22,
+          "column": 1,
+          "logical": 5
+        },
+        {
+          "name": "safe_error",
+          "line": 31,
+          "column": 1,
+          "logical": 4
+        }
+      ],
+      "logical": 23
+    },
+    {
+      "repository": "data_api",
+      "path": "openbb_platform/providers/fred/openbb_fred/models/series.py",
+      "physical": 339,
+      "functions": [
+        {
+          "name": "_field_metadata",
+          "line": 280,
+          "column": 1,
+          "logical": 2
+        },
+        {
+          "name": "_transformations",
+          "line": 298,
+          "column": 1,
+          "logical": 6
+        },
+        {
+          "name": "_financial_metadata",
+          "line": 318,
+          "column": 1,
+          "logical": 5
+        },
+        {
+          "name": "reserved_namespace",
+          "line": 44,
+          "column": 5,
+          "logical": 3
+        },
+        {
+          "name": "transform_query",
+          "line": 151,
+          "column": 5,
+          "logical": 1
+        },
+        {
+          "name": "aextract_data",
+          "line": 156,
+          "column": 5,
+          "logical": 23
+        },
+        {
+          "name": "transform_data",
+          "line": 243,
+          "column": 5,
+          "logical": 8
+        },
+        {
+          "name": "fetch_one",
+          "line": 176,
+          "column": 9,
+          "logical": 11
+        }
+      ],
+      "logical": 90
+    }
+  ],
+  "deployment_source_revision": "dca75f9b358c3defe5ab7948f847a120a08ff98e",
+  "root_pins_promoted": false,
+  "independent_join": {
+    "command": [
+      "verification/provider/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-c",
+      "verification/provider/pyproject.toml",
+      "tests/providers/test_service_financial.py",
+      "tests/providers/test_runtime.py",
+      "tests/providers/test_fred.py",
+      "tests/providers/test_profile.py",
+      "tests/providers/test_income.py",
+      "tests/providers/test_financial_policy.py",
+      "tests/providers/test_financial_http_errors.py",
+      "tests/providers/test_financial_catalog.py",
+      "tests/providers/test_financial_openapi.py",
+      "tests/providers/test_discovery.py",
+      "-n0",
+      "--maxprocesses=2"
+    ],
+    "returncode": 0,
+    "PYTHONPATH": "/mnt/d/Source/QOpenBB/services/data-api",
+    "native_revision": "28423762e8cc3faae978e770899834b41e7cde99",
+    "passed": 193
+  },
+  "independent_packaging_gallery": {
+    "returncode": 0,
+    "passed": 84,
+    "tests": [
+      "tests/delivery/test_data_image.py",
+      "tests/contracts/test_gallery_runtime.py"
+    ]
+  },
+  "combined_size_gate": {
+    "files": 83,
+    "errors": 0,
+    "violations": 0,
+    "node": "24.22.1"
+  },
+  "limitations": "Installed development service only; consumer regeneration, live entitlement, packaged journey and release remain open."
+}

@@ -235,6 +235,23 @@ def test_unrelated_model_without_annotation_is_preserved(source):
     assert project_financial_openapi(*source, required_models=set()) == source[0]
 
 
+def test_handler_response_binding_is_pure_and_only_changes_financial_operations(source):
+    from qopenbb_data.financial_openapi import financial_error_responses
+
+    document = project(source)
+    document["paths"]["/legacy"] = {"get": {"responses": {"422": {"description": "Legacy"}}}}
+    before = deepcopy(document)
+    result = financial_error_responses(document)
+    operation = result["paths"]["/prices"]["get"]
+    for status in ("400", "422", "500", "502"):
+        assert operation["responses"][status]["content"]["application/json"]["schema"] == (
+            operation["x-qopenbb-financial"]["error_schema"])
+    assert "content" not in operation["responses"]["204"]
+    assert result["paths"]["/legacy"] == before["paths"]["/legacy"]
+    assert result["components"] == before["components"]
+    assert document == before
+
+
 def test_error_contract_preserves_existing_response_definitions(source):
     source[0]["paths"]["/prices"]["get"]["responses"]["422"] = {"description": "Native request error"}
     result = project(source)

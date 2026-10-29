@@ -1,5 +1,32 @@
 """Server-only OpenBB settings; credentials never touch a settings file."""
+import json
 import os
+import re
+from pathlib import Path
+
+COVERAGE = Path(__file__).with_name("provider-coverage.json")
+
+
+def financial_identity() -> dict:
+    """Native source/generator revisions and the separate wrapper input hash."""
+    source = os.environ.get("QOPENBB_DATA_SOURCE_REVISION", "")
+    generation = os.environ.get("QOPENBB_DATA_GENERATION_REVISION", "")
+    image = os.environ.get("QOPENBB_DATA_IMAGE_DIGEST") or None
+    runtime_hash = os.environ.get("QOPENBB_DATA_RUNTIME_SHA256") or None
+    if (not re.fullmatch(r"[0-9a-f]{40}", source)
+            or not re.fullmatch(r"[0-9a-f]{40}", generation)
+            or (image is not None and not re.fullmatch(r"sha256:[0-9a-f]{64}", image))
+            or (runtime_hash is not None and not re.fullmatch(r"[0-9a-f]{64}", runtime_hash))):
+        raise ValueError("Invalid financial runtime identity")
+    return {"source_revision": source, "generation_revision": generation,
+            "image_digest": image, "runtime_inputs_sha256": runtime_hash}
+
+
+def coverage_index() -> dict:
+    try:
+        return json.loads(COVERAGE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        raise ValueError("Invalid provider coverage index") from None
 
 
 def configure() -> list[str]:

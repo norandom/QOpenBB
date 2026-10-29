@@ -1,8 +1,9 @@
 """Runtime settings, route readiness and secret boundaries."""
 import asyncio
-import importlib.metadata as metadata
 import json
+import os
 import sys
+from importlib import metadata
 from pathlib import Path
 
 import pytest
@@ -13,7 +14,13 @@ sys.path.insert(0, str(Path(__file__).parents[2] / "services/data-api"))
 @pytest.fixture(autouse=True)
 def packaged_catalog(monkeypatch):
     import qopenbb_data.app as application
+    import qopenbb_data.config as configuration
     monkeypatch.setattr(application, "CATALOG", Path(__file__).parents[2] / "contracts")
+    monkeypatch.setattr(configuration, "COVERAGE", Path(__file__).parents[2] /
+                        "docs/reference/provider-coverage.json", raising=False)
+    for name in ("SOURCE", "GENERATION"):
+        variable = f"QOPENBB_DATA_{name}_REVISION"
+        monkeypatch.setenv(variable, os.environ.get(variable, "1" * 40))
 
 
 @pytest.fixture
@@ -109,8 +116,9 @@ def test_basic_auth_is_rejected(monkeypatch):
 
 def test_no_disk_cache_or_credential_file(runtime, monkeypatch):
     import os
-    from openbb_fred.utils.cache import enabled
+
     from openbb_core.app.service.user_service import UserService
+    from openbb_fred.utils.cache import enabled
     assert os.environ["OPENBB_FRED_DISK_CACHE"] == "0"
     assert not enabled()
     def forbidden(*args, **kwargs):

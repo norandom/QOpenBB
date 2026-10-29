@@ -39,6 +39,22 @@ def proof(**identity):
             "evidence_path": "artifacts/reviewed/example/accepted.md", "identity": identity}}
 
 
+def test_operation_response_changes_invalidate_consumer_proofs(source, coverage):
+    document = project(source)
+    kwargs = {"source_hashes": {"Prices": {"fmp": HASH}}, "image_digest": IMAGE}
+    contract = build(document, coverage, **kwargs)["datasets"][0]["contract_sha256"]["fmp"]
+    states = coverage["datasets"][0]["states"]
+    states["adapted"] = proof(source_sha256=HASH)
+    states["real_data"] = proof(source_sha256=HASH, contract_sha256=contract)
+    states["widget"] = proof(source_sha256=HASH, contract_sha256=contract, image_digest=IMAGE)
+    operation = document["paths"]["/prices"]["get"]
+    operation["responses"]["422"] = {"description": "Installed safe request failure", "content": {
+        "application/json": {"schema": operation["x-qopenbb-financial"]["error_schema"]}}}
+    result = build(document, coverage, **kwargs)["datasets"][0]["coverage"]["fmp"]
+    assert result["real_data"]["status"] == result["widget"]["status"] == "stale"
+    assert result["adapted"]["status"] == "verified"
+
+
 def test_installed_descriptors_have_resolvable_semantics_and_no_input_mutation(source, coverage):
     document = project(source)
     document["user_settings"] = {"api_key": "DO-NOT-PUBLISH"}
