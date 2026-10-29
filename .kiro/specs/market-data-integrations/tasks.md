@@ -168,7 +168,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 4.1_
   - _Requirements: 5.1, 5.2, 5.3, 6.2_
 
-- [ ] 4.3 (P) Sanitize mounted-API failures and logs
+- [x] 4.3 (P) Sanitize mounted-API failures and logs
   - Own service financial_errors only. Cover typed provider errors, request validation, invalid result rows, response validation and unexpected exceptions using the approved status/detail compatibility.
   - Done when nested wrapper and secret-canary tests prove safe categories/logs and bounded Retry-After; handlers are installation-ready for the upstream app, not only the outer service.
   - Caps: service handler meets 400/300/50; tests excluded.
@@ -293,3 +293,5 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 
 - 4.1 accepted 2026-10-29: all eleven annotation repair tasks complete; [native projection acceptance](../../../artifacts/reviewed/annotations-native-join/accepted.md), independent 389-test combined suite, final native/lint verification and shared-module audit. Main progress 16/26.
 - Native API integration note: use upstream `iter_api_routes` for lazy route contexts; derive canonical success schemas from actual `route.response_model` rather than retaining alias-based native schemas under `allOf`.
+
+- Main4.3 accepted 2026-10-29: [safe mounted API failure component](../../../artifacts/reviewed/market-http-errors/accepted.md), independent38 tests, sensitivity control and caps. Shared formatter is the policy guard dependency; activation remains main5.2.

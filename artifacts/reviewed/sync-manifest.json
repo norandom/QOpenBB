@@ -34752,6 +34752,30 @@
       "publishedSHA256": "4d4560036490967f4602806c551cac2f4c0c8cc9ebfef92c2ef62cd13997a570",
       "bytes": 5330,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-http-errors/accepted.md",
+      "sourceSHA256": "2ebcd55439c5ef7f92545a8f72aa8557506b63522f7f8dca7dea1e5a77d6ad9b",
+      "publishedpath": "artifacts/reviewed/market-http-errors/accepted.md",
+      "publishedSHA256": "2ebcd55439c5ef7f92545a8f72aa8557506b63522f7f8dca7dea1e5a77d6ad9b",
+      "bytes": 1355,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-http-errors/review.md",
+      "sourceSHA256": "71aa2330255de6a7df3c64faf751fd9bcbc50501e692e1c87030c51068008df4",
+      "publishedpath": "artifacts/reviewed/market-http-errors/review.md",
+      "publishedSHA256": "8043088678923b3be1ee26dc9d4b66a690365d2df15827e0c797478b5073eab6",
+      "bytes": 6293,
+      "transform": "rebase-relative-spec-links-for-reviewed-location; verdict unchanged"
+    },
+    {
+      "sourcepath": "artifacts/market-http-errors/final-source.json",
+      "sourceSHA256": "b8691d007c7dde95418ad39da312a642517862603f1eb1ddf13b2f6dacd8a56c",
+      "publishedpath": "artifacts/reviewed/market-http-errors/final-source.json",
+      "publishedSHA256": "b8691d007c7dde95418ad39da312a642517862603f1eb1ddf13b2f6dacd8a56c",
+      "bytes": 1146,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35477,7 +35501,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170502177,
+  "total_payload_bytes": 170510971,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

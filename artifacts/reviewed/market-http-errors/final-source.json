@@ -1,0 +1,35 @@
+{
+  "root_parent": "0012756723e913f593f9a89a6e55cc6a1e3c6ff7",
+  "data_api_revision": "dca75f9b358c3defe5ab7948f847a120a08ff98e",
+  "files": {
+    "services/data-api/qopenbb_data/financial_errors.py": "5c80fede53e57f75d20c2f64fcf90539ddb8352e7dcb62d1891effd5a55431d8",
+    "tests/providers/test_financial_http_errors.py": "79b9d18ee826184452fa0f86fc3fbb545970340857f66dfb5abd855799b75981"
+  },
+  "production_counts": {
+    "physical": 208,
+    "logical": 148,
+    "max_function": 18
+  },
+  "independent_tests": 38,
+  "child_exit_code": 0,
+  "ruff": "passed",
+  "post_implementation_sensitivity": {
+    "disabled_installer_exit": 1,
+    "unmodified_exit": 0,
+    "historical_RED": false
+  },
+  "combined_size_gate": {
+    "files": 77,
+    "node": "24.22.1",
+    "errors": 0,
+    "violations": 0
+  },
+  "runtime_activation": "deferred to task5.2",
+  "finalization": {
+    "reviewed_sha256": "9c57d3f1ddf89e3a6757ee9cda23084f21b8f486d88c0ed1b338160cb265bdd6",
+    "final_sha256": "5c80fede53e57f75d20c2f64fcf90539ddb8352e7dcb62d1891effd5a55431d8",
+    "change": "remove one terminal blank line",
+    "identical_ast": true,
+    "physical": 208
+  }
+}

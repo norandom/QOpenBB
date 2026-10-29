@@ -144,7 +144,8 @@ No new runtime image is published at this source-only checkpoint.
 ## Enterprise inputs and schema prerequisite, 2026-10-29
 
 - [x] Typed enterprise-value input dataset and isolated native command accepted. Fifteen of 26 initial tasks are source-accepted. [Evidence](../artifacts/reviewed/market-data-enterprise-schema/accepted.md).
-- [x] Task 4.1: authoritative financial schema projection. All eleven [repair tasks](../.kiro/specs/market-data-integrations/financial-annotations-tasks.md) are accepted, with real native registry/route agreement, 389 affected tests and final source/size review. [Acceptance evidence](../artifacts/reviewed/annotations-native-join/accepted.md). Main batch: 16/26 accepted; registration/runtime wiring remain later tasks.
+- [x] Task 4.1: authoritative financial schema projection. All eleven [repair tasks](../.kiro/specs/market-data-integrations/financial-annotations-tasks.md) are accepted, with real native registry/route agreement, 389 affected tests and final source/size review. [Acceptance evidence](../artifacts/reviewed/annotations-native-join/accepted.md). Main batch: 17/26 accepted; registration/runtime wiring remain later tasks.
+- [x] Task 4.3: scoped safe API failure component, native mounted-route/canary checks and legacy status compatibility. [Acceptance](../artifacts/reviewed/market-http-errors/accepted.md). Installation remains task 5.2.
 - [ ] Register/mount accepted models, verify installed consumers and live provider access, then publish the integrated image milestone.
 
 The repair keeps static financial declarations in one owner, with dynamic FRED/result semantics resolved at runtime. Existing adapter values and installed baseline behavior remain intact.
