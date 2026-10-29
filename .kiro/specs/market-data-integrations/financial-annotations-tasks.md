@@ -50,7 +50,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Boundary: FMP models/income_statement.py, optional cohesive income_statement_data.py and tests/providers/test_income.py only._
   - _Depends: 1_
   - _Requirements: 4.1, 4.2, 4.3, 6.1, 6.2, 6.3_
-- [ ] 4.2 (P) Adopt balance-sheet and cash-flow declarations
+- [x] 4.2 (P) Adopt balance-sheet and cash-flow declarations
   - Move static templates and declared policy for the two statement families. Preserve instant balances, flow-period inference and the unknown opening-cash date, alongside query bounds and observed clipping.
   - Done: existing balance/cash fixtures and agreement checks pass with unchanged result metadata; all changed production files pass 400/300/50 and owning checks.
   - _Boundary: FMP balance_sheet.py/balance_sheet_data.py and cash_flow.py/cash_flow_data.py, with their existing focused metadata tests only._

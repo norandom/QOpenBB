@@ -137,3 +137,47 @@ def test_quarterly_alias_and_strict_limit():
     for limit in (True, 1.5, "2", None):
         with pytest.raises(FinancialError):
             Fetcher.transform_query({"symbol": "AAPL", "limit": limit})
+
+
+@pytest.mark.parametrize("labels", [["FY"], ["Q1"], ["FY", "Q1"], [None], ["YTD"], []])
+def test_class_declarations_agree_with_runtime_and_are_independent(labels):
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_data_annotation, bind_query_annotation, render_field_templates,
+    )
+    from openbb_fmp.models.balance_sheet import (
+        FMPBalanceSheetQueryParams as Query, FMPBalanceSheetData as Data,
+        FMPBalanceSheetFetcher as StatementFetcher,
+    )
+    query = StatementFetcher.transform_query({"symbol": "A", "period": "quarter"})
+    declaration = bind_query_annotation(Query)
+    assert declaration.provider_policy == "explicit"
+    assert declaration.response_policy.mode == "clip"
+    assert declaration.response_policy.limit_parameter == "limit"
+    assert declaration.response_policy.max_rows is None
+    assert Query.model_fields["limit"].default == 5
+    templates = bind_data_annotation(Data)
+    assert set(templates.fields) == set(Data.model_fields)
+    assert "fields.availability" in templates.runtime_properties
+    before = templates.model_dump()
+    rows = [{"date": "2025-09-30", "period": label, "reportedCurrency": "EUR",
+             "totalDebt": -5, "netIncome": -7, "cashAtBeginningOfPeriod": 0}
+            for label in labels]
+    receipt = datetime(2025, 11, 1, tzinfo=UTC)
+    result = StatementFetcher.transform_data(query, FMPAcquisition(rows, receipt))
+    actual = result.metadata["__qopenbb_financial__"]["fields"]
+    rendered = render_field_templates(Data)
+    for name, template in rendered.items():
+        runtime = actual[name]
+        for attribute in ("definition", "unit", "scale", "currency_field", "value_origin",
+                          "observation_date_field", "publication_date_field", "financial_basis"):
+            assert runtime[attribute] == getattr(template, attribute)
+        amount = name not in {"period_ending", "fiscal_period", "fiscal_year", "filing_date",
+                              "accepted_date", "cik", "symbol", "reported_currency"}
+        assert runtime["period_basis"] == ("instant" if amount else None)
+        assert runtime["availability"] == (
+            "available" if any(getattr(row, name) is not None for row in result.result) else "missing"
+        )
+    first = next(iter(rendered.values()))
+    first.financial_basis["mutated"] = "request-local"
+    assert bind_data_annotation(Data).model_dump() == before
+    assert all("mutated" not in field.financial_basis for field in render_field_templates(Data).values())
