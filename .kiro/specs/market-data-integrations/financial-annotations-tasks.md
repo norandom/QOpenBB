@@ -56,7 +56,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Boundary: FMP balance_sheet.py/balance_sheet_data.py and cash_flow.py/cash_flow_data.py, with their existing focused metadata tests only._
   - _Depends: 1_
   - _Requirements: 4.1, 4.2, 4.3, 4.7, 6.1, 6.2_
-- [ ] 4.3 (P) Adopt profile declarations with baseline defaults
+- [x] 4.3 (P) Adopt profile declarations with baseline defaults
   - Preserve multi-symbol behavior, mixed row currencies, price/market-cap semantics, baseline defaults and typed-error compatibility. Declare unknown quote dates without inferring them from financial dates.
   - Done: existing profile/transport checks and agreement cases pass; metadata remains unchanged and whole-file caps/owning checks pass.
   - _Boundary: FMP models/equity_profile.py and tests/providers/test_profile.py only; shared transport helpers remain frozen._

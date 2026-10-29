@@ -136,6 +136,56 @@ def test_profile_metadata(profile_boundary):
     assert json.loads(text)["extra"]["results_metadata"]["__qopenbb_financial__"]["provider"] == "fmp"
 
 
+def test_profile_declarations_match_runtime_without_shared_mutation(profile_boundary):
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_data_annotation, bind_query_annotation, render_field_templates,
+    )
+    from openbb_fmp.models.equity_profile import (
+        FMPEquityProfileData as Data, FMPEquityProfileQueryParams as Query,
+        FMPEquityProfileFetcher as Fetcher,
+    )
+    policy = bind_query_annotation(Query)
+    assert policy.provider_policy == "baseline_default"
+    assert policy.response_policy.mode == "provider"
+    assert Query.model_fields["symbol"].is_required()
+    declaration = bind_data_annotation(Data)
+    before = declaration.model_dump()
+    assert set(declaration.fields) == set(Data.model_fields)
+    assert "fields.availability" in declaration.runtime_properties
+    query = Fetcher.transform_query({"symbol": "AAPL,BRK.B"})
+    raw = asyncio.run(Fetcher.aextract_data(query, {"fmp_api_key": SENTINEL}))
+    raw.payload[1]["currency"] = "GBP"
+    raw.payload[1]["price"] = 12.5
+    raw.payload[0]["lastFundamentalDate"] = "2026-06-30"
+    result = Fetcher.transform_data(query, raw)
+    assert [row.currency for row in result.result] == ["USD", "GBP"]
+    assert result.result[1].last_price == 12.5
+    rendered = render_field_templates(Data)
+    for name, unit in {
+        "last_price": "currency/share", "year_low": "currency/share",
+        "year_high": "currency/share", "annualized_dividend_amount": "currency/share",
+        "market_cap": "currency", "volume_avg": "shares", "employees": "people",
+        "beta": "dimensionless",
+    }.items():
+        assert rendered[name].unit == unit
+        assert rendered[name].scale == 1
+    actual = result.metadata["__qopenbb_financial__"]
+    for name, field in rendered.items():
+        field.availability = (
+            "available" if any(getattr(row, name) is not None for row in result.result)
+            else "missing"
+        )
+        assert actual["fields"][name] == field.model_dump(mode="json")
+    for name in ("last_price", "market_cap", "year_low", "year_high"):
+        assert actual["fields"][name]["observation_date_field"] is None
+        assert actual["fields"][name]["valuation_date_field"] is None
+        assert actual["fields"][name]["currency"] is None
+        assert actual["fields"][name]["currency_field"] == "currency"
+    rendered["last_price"].unit = "changed"
+    assert render_field_templates(Data)["last_price"].unit == "currency/share"
+    assert bind_data_annotation(Data).model_dump() == before
+
+
 @pytest.mark.parametrize("value", ["private-invalid-range", "broken"])
 def test_profile_range_failure_is_safe(profile_boundary, value):
     from datetime import datetime, UTC
