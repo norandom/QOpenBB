@@ -8,6 +8,8 @@ Use the existing verification environment, scope inventory and checker; no new t
 
 Each executable unit targets 1-3 focused implementation hours. Extract cohesive declarations before accepting oversized files; do not compress finance logic. Freeze the core contract before fan-out. At most two Sol implementers plus an independent Astra reviewer and controller; one heavy suite/build at a time, bounded xdist/browser workers. Existing behavior checks are extended where useful; do not copy harnesses or rerun unchanged broad suites solely for paperwork.
 
+Native OpenBB routes use `response_model_by_alias=False`: template keys and references use canonical Python field names. Input aliases remain unchanged. Projection inspects the route flag and rejects unsupported alias-output mode explicitly. This correction follows the real route contract; it does not change emitted data.
+
 All adoption tasks preserve output rows, result metadata, aliases, limits, dates, errors and retrieval timestamps. They move static definitions to one class-owned source and remove their former copies. Dynamic result properties stay runtime-owned. The new annotations are not another execution registry or financial calculation engine.
 
 ## Tasks

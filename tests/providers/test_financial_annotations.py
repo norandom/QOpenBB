@@ -25,7 +25,7 @@ class Query(BaseModel):
 
 class Row(BaseModel):
     financial_data_annotation: ClassVar[FinancialDataAnnotation] = FinancialDataAnnotation(
-        fields={"price": FinancialFieldTemplate(unit="currency", currency_field="currency"),
+        fields={"value": FinancialFieldTemplate(unit="currency", currency_field="currency"),
                 "currency": FinancialFieldTemplate()},
         runtime_properties=["fields.availability", "retrieved_at"],
     )
@@ -44,24 +44,24 @@ def test_binding_keeps_model_schema_as_ordinary_parameter_authority():
 
 def test_templates_derive_definitions_and_render_independent_metadata():
     bound = bind_data_annotation(Row)
-    assert bound.fields["price"].definition is None
+    assert bound.fields["value"].definition is None
     first = render_field_templates(Row)
     second = render_field_templates(Row)
-    assert first["price"].definition == "Observed price"
-    assert first["price"].unit == "currency"
-    assert first["price"].currency is None
-    first["price"].financial_basis["debt"] = "changed"
-    assert second["price"].financial_basis == {}
-    assert Row.financial_data_annotation.fields["price"].financial_basis == {}
-    assert set(first) == {"price", "currency"}
+    assert first["value"].definition == "Observed price"
+    assert first["value"].unit == "currency"
+    assert first["value"].currency is None
+    first["value"].financial_basis["debt"] = "changed"
+    assert second["value"].financial_basis == {}
+    assert Row.financial_data_annotation.fields["value"].financial_basis == {}
+    assert set(first) == {"value", "currency"}
 
 
 @pytest.mark.parametrize("changes", [
-    {"fields": {"value": FinancialFieldTemplate(unit="currency")}},
-    {"fields": {"price": FinancialFieldTemplate(currency_field="absent")}},
-    {"fields": {"price": FinancialFieldTemplate(observation_date_field="value")}},
+    {"fields": {"price": FinancialFieldTemplate(unit="currency")}},
+    {"fields": {"value": FinancialFieldTemplate(currency_field="absent")}},
+    {"fields": {"value": FinancialFieldTemplate(observation_date_field="price")}},
 ])
-def test_invalid_serialized_references_fail_explicitly(changes):
+def test_invalid_canonical_references_fail_explicitly(changes):
     class Invalid(Row):
         financial_data_annotation: ClassVar[FinancialDataAnnotation] = FinancialDataAnnotation(
             fields={"currency": FinancialFieldTemplate(), **changes["fields"]})
@@ -78,7 +78,7 @@ def test_missing_is_distinct_from_malformed_and_unknown():
         bind_data_annotation(Absent)
     with pytest.raises(InvalidFinancialAnnotation):
         bind_data_annotation(Malformed)
-    template = render_field_templates(Row)["price"]
+    template = render_field_templates(Row)["value"]
     assert template.value_origin == "unknown"
     assert template.currency is None
 
@@ -120,7 +120,7 @@ def test_invalid_query_references_and_description_conflicts():
         bind_query_annotation(NoDates)
     class Conflict(Row):
         financial_data_annotation: ClassVar[FinancialDataAnnotation] = FinancialDataAnnotation(
-            fields={"price": FinancialFieldTemplate(definition="Different definition"),
+            fields={"value": FinancialFieldTemplate(definition="Different definition"),
                     "currency": FinancialFieldTemplate()})
     with pytest.raises(InvalidFinancialAnnotation):
         render_field_templates(Conflict)
@@ -128,8 +128,8 @@ def test_invalid_query_references_and_description_conflicts():
 
 def test_malformed_mutated_declaration_and_binding_copies():
     bound = bind_data_annotation(Row)
-    bound.fields["price"].unit = "changed"
-    assert Row.financial_data_annotation.fields["price"].unit == "currency"
+    bound.fields["value"].unit = "changed"
+    assert Row.financial_data_annotation.fields["value"].unit == "currency"
     class Mutated(Row):
         financial_data_annotation: ClassVar[FinancialDataAnnotation] = FinancialDataAnnotation()
     Mutated.financial_data_annotation.runtime_properties.append("invented")
@@ -159,6 +159,49 @@ def test_query_parameter_clipping_derives_cap_from_actual_query_field():
 def test_absent_static_field_template_is_not_explicit_unknown():
     class Partial(Row):
         financial_data_annotation: ClassVar[FinancialDataAnnotation] = FinancialDataAnnotation(
-            fields={"price": FinancialFieldTemplate()}, dynamic_fields=True)
+            fields={"value": FinancialFieldTemplate()}, dynamic_fields=True)
     with pytest.raises(InvalidFinancialAnnotation):
         bind_data_annotation(Partial)
+
+
+class NativeNames(BaseModel):
+    financial_data_annotation: ClassVar[FinancialDataAnnotation] = FinancialDataAnnotation(
+        fields={"ev_to_ebitda": FinancialFieldTemplate(observation_date_field="date"),
+                "date": FinancialFieldTemplate()})
+    ev_to_ebitda: float = Field(alias="evToEBITDA", description="Provider enterprise value to EBITDA")
+    date: str = Field(alias="observationDate", description="Observation date")
+    internal: str = Field(default="private", exclude=True)
+
+
+def test_native_false_serialization_and_templates_use_canonical_names():
+    row = NativeNames(evToEBITDA=12.5, observationDate="2026-10-29")
+    assert set(row.model_dump(by_alias=False)) == {"ev_to_ebitda", "date"}
+    assert set(render_field_templates(NativeNames)) == set(row.model_dump(by_alias=False))
+    assert render_field_templates(NativeNames)["ev_to_ebitda"].observation_date_field == "date"
+
+
+@pytest.mark.parametrize("fields", [
+    {"evToEBITDA": FinancialFieldTemplate(), "date": FinancialFieldTemplate()},
+    {"ev_to_ebitda": FinancialFieldTemplate(observation_date_field="observationDate"),
+     "date": FinancialFieldTemplate()},
+    {"ev_to_ebitda": FinancialFieldTemplate(), "date": FinancialFieldTemplate(),
+     "internal": FinancialFieldTemplate()},
+])
+def test_alias_only_keys_references_and_excluded_fields_are_rejected(fields):
+    class Invalid(NativeNames):
+        financial_data_annotation: ClassVar[FinancialDataAnnotation] = FinancialDataAnnotation(fields=fields)
+    with pytest.raises(InvalidFinancialAnnotation):
+        bind_data_annotation(Invalid)
+
+
+def test_query_limit_references_use_canonical_names_even_with_input_alias():
+    class Limited(BaseModel):
+        financial_query_annotation: ClassVar[FinancialQueryAnnotation] = FinancialQueryAnnotation(
+            provider_policy="explicit", response_policy=ResponsePolicy(mode="clip", limit_parameter="limit"))
+        limit: int = Field(default=100, alias="rowLimit")
+    assert bind_query_annotation(Limited).response_policy.limit_parameter == "limit"
+    class Invalid(Limited):
+        financial_query_annotation: ClassVar[FinancialQueryAnnotation] = FinancialQueryAnnotation(
+            provider_policy="explicit", response_policy=ResponsePolicy(mode="clip", limit_parameter="rowLimit"))
+    with pytest.raises(InvalidFinancialAnnotation):
+        bind_query_annotation(Invalid)

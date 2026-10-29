@@ -34352,6 +34352,46 @@
       "publishedSHA256": "a1e0162f450197f70ec10c1b61ac8420fa7f1c654aed1bcafe24d65fe5599f95",
       "bytes": 985,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-annotations-core-native-names/result.md",
+      "sourceSHA256": "8193f74043757090131c4e9f52675ce8702d74f0d413b54f99a374b9d704d460",
+      "publishedpath": "artifacts/reviewed/financial-annotations-core-native-names/result.md",
+      "publishedSHA256": "8193f74043757090131c4e9f52675ce8702d74f0d413b54f99a374b9d704d460",
+      "bytes": 2442,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-annotations-core-native-names/interface.md",
+      "sourceSHA256": "8100e7b7c18b5cf647c1ddd8d454c3b79e4706824de3978ddcccd08fd3c99ded",
+      "publishedpath": "artifacts/reviewed/financial-annotations-core-native-names/interface.md",
+      "publishedSHA256": "8100e7b7c18b5cf647c1ddd8d454c3b79e4706824de3978ddcccd08fd3c99ded",
+      "bytes": 1364,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-annotations-core-native-names/review.md",
+      "sourceSHA256": "d3fb98262b2d6f4e1e3cc5839f822f0db3e7f8238bbde5232c3437e0f08df98e",
+      "publishedpath": "artifacts/reviewed/financial-annotations-core-native-names/review.md",
+      "publishedSHA256": "d3fb98262b2d6f4e1e3cc5839f822f0db3e7f8238bbde5232c3437e0f08df98e",
+      "bytes": 3570,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-annotations-core-native-names/accepted.md",
+      "sourceSHA256": "c48c5f7e778db642e0c356b540797cc9c1bd3b5d4f5b97a23ad1ba32a126c3a4",
+      "publishedpath": "artifacts/reviewed/financial-annotations-core-native-names/accepted.md",
+      "publishedSHA256": "c48c5f7e778db642e0c356b540797cc9c1bd3b5d4f5b97a23ad1ba32a126c3a4",
+      "bytes": 850,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-annotations-core-native-names/alias-integration.md",
+      "sourceSHA256": "10146e88ea17b12804ddf5b0a59cf4aa5d56d519d2d9ef8e08b620faee0b1eeb",
+      "publishedpath": "artifacts/reviewed/financial-annotations-core-native-names/alias-integration.md",
+      "publishedSHA256": "10146e88ea17b12804ddf5b0a59cf4aa5d56d519d2d9ef8e08b620faee0b1eeb",
+      "bytes": 3911,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35077,7 +35117,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170350241,
+  "total_payload_bytes": 170362378,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
