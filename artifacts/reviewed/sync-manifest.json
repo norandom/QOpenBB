@@ -34616,6 +34616,30 @@
       "publishedSHA256": "3b20c21137cd81af392073adf66de37e900b37adcf1cb24599be8ab6ccaee4ed",
       "bytes": 989,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-fred/result.md",
+      "sourceSHA256": "2911045820dc3c0f20c45580f8db93fbb0fb6bdee00472b296bb9d9287ed9613",
+      "publishedpath": "artifacts/reviewed/annotations-fred/result.md",
+      "publishedSHA256": "2911045820dc3c0f20c45580f8db93fbb0fb6bdee00472b296bb9d9287ed9613",
+      "bytes": 4468,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-fred/review.md",
+      "sourceSHA256": "d32c9b8e085386ddabd1fe71fc4d95910985dcc661ca1086f44fe94fcff30ba3",
+      "publishedpath": "artifacts/reviewed/annotations-fred/review.md",
+      "publishedSHA256": "d32c9b8e085386ddabd1fe71fc4d95910985dcc661ca1086f44fe94fcff30ba3",
+      "bytes": 4878,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-fred/accepted.md",
+      "sourceSHA256": "255c3a303310cd00982bb76719d381e9a8338d6c9179a076a51b3f34b56bba4f",
+      "publishedpath": "artifacts/reviewed/annotations-fred/accepted.md",
+      "publishedSHA256": "255c3a303310cd00982bb76719d381e9a8338d6c9179a076a51b3f34b56bba4f",
+      "bytes": 1104,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35341,7 +35365,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170449615,
+  "total_payload_bytes": 170460065,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -43,7 +43,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Depends: 1_
   - _Requirements: 1.1, 4.1, 4.2, 5.1, 5.2, 5.3, 6.1, 6.3_
 
-- [ ] 4. Remaining bounded source adoption
+- [x] 4. Remaining bounded source adoption
 - [x] 4.1 (P) Preserve income-statement baseline semantics in declarations
   - Adopt static definitions and the baseline provider policy without changing limit-zero, excess-row behavior, aliases or HTTP error compatibility. Describe the response policy instead of inventing a fixed clipping limit.
   - Done: existing income/error cases and declaration/runtime agreement pass. Whole-file caps pass; if adding declarations exceeds the current file budget, extract income data declarations into a single owned companion first.
@@ -74,7 +74,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Boundary: FMP financial_ratios.py/financial_ratios_data.py and enterprise_values.py, plus their existing focused tests only._
   - _Depends: 1_
   - _Requirements: 4.1, 4.2, 4.7, 6.1, 6.2_
-- [ ] 4.6 (P) Declare dynamic FRED financial metadata
+- [x] 4.6 (P) Declare dynamic FRED financial metadata
   - Describe dynamically named columns and runtime-resolved source/effective units, frequency, transformations, vintage and availability. Static declarations identify the resolution location; do not enumerate series IDs or copy runtime transformation mappings into projection code.
   - Preserve wide results, legacy per-series keys, oldest acquisition time and baseline selection policy. No cache behavior changes.
   - Done: existing FRED series/provenance checks and static/dynamic agreement cases pass; no fabricated fixed units or point-in-time claim. Whole changed file passes 400/300/50 and owning checks; request a cohesive provider-local metadata extraction if necessary.

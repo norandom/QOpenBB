@@ -38,6 +38,52 @@ def execute(**params):
     return FredSeriesFetcher.transform_data(query, raw)
 
 
+def test_dynamic_declarations_preserve_modeled_date_and_baseline_policy():
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_data_annotation, bind_query_annotation, render_field_templates,
+    )
+    from openbb_fred.models.series import FredSeriesData, FredSeriesQueryParams
+
+    query = bind_query_annotation(FredSeriesQueryParams)
+    assert query.provider_policy == 'baseline_default'
+    assert query.response_policy.model_dump() == {
+        'mode': 'provider', 'max_rows': None, 'limit_parameter': None,
+    }
+    assert FredSeriesQueryParams(symbol='gdp').limit == 100000
+    assert FredSeriesQueryParams(symbol='gdp').aggregation_method == 'eop'
+    assert FredSeriesQueryParams.__alias_dict__['transform'] == 'units'
+    data = bind_data_annotation(FredSeriesData)
+    assert data.dynamic_fields is True
+    assert set(data.fields) == {'date'}
+    date = render_field_templates(FredSeriesData)['date']
+    assert date.definition == FredSeriesData.model_fields['date'].description
+    assert date.unit is None
+    assert date.observation_date_field == 'date'
+    assert {'fields', 'fields.unit', 'fields.source_unit', 'fields.source_frequency',
+            'fields.effective_frequency', 'fields.seasonal_adjustment',
+            'fields.requested_transform', 'fields.aggregation', 'fields.availability',
+            'transformations', 'observation_provenance', 'vintage_query_supported',
+            'point_in_time_safe'} <= set(data.runtime_properties)
+
+
+def test_dynamic_resolution_paths_agree_without_adding_static_date_metadata(acquisitions):
+    from openbb_core.provider.standard_models.financial_annotations import bind_data_annotation
+    from openbb_fred.models.series import FredSeriesData
+
+    declaration = bind_data_annotation(FredSeriesData)
+    common = execute(symbol='GDP,CPIAUCSL', transform='pch', frequency='a').metadata[FINANCIAL_METADATA_KEY]
+    assert set(common['fields']) == {'GDP', 'CPIAUCSL'}
+    for path in declaration.runtime_properties:
+        root, *nested = path.split('.')
+        assert root in common
+        if nested:
+            assert all(nested[0] in field for field in common[root].values())
+    assert common['fields']['GDP']['unit'] == 'Percent Change'
+    assert common['fields']['GDP']['effective_frequency'] == 'Annual'
+    assert common['fields']['GDP']['availability'] == 'unknown'
+    assert common['point_in_time_safe'] is False
+
+
 def test_oldest_components_intervals_and_legacy_wide_output(acquisitions):
     result = execute(symbol='GDP,CPIAUCSL', use_cache=False)
     assert [row.model_dump(mode='json') for row in result.result] == [
