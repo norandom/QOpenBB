@@ -194,7 +194,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
 
 ## 5. Join the installed runtime and generated widgets
 
-- [ ] 5.1 Register the independently accepted provider models
+- [x] 5.1 Register the independently accepted provider models
   - Controller-only fork join: mount enterprise subrouter, register first-batch FMP models and retain provenance/notices. Prepare an isolated candidate source/dependency lock from the accepted committed fork and resolve/install it in the existing verification environment, serially. Do not promote root pins or activate later families yet.
   - Done when import/source identity checks prove that the candidate environment uses the exact committed fork and its locked dependencies, and installed-route/model checks expose all accepted first-batch commands with baseline compatibility intact. Task 5.2 uses this identified environment; final root pin/catalog promotion remains atomic in 5.3.
   - Caps: entire changed registration/router/provenance scope passes applicable 400/300/50; generated records excluded.
@@ -302,6 +302,10 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 
 - Main4.5 accepted 2026-10-29: [installed discovery and coverage index](../../../artifacts/reviewed/market-financial-discovery/accepted.md), independent discovery/projection join, public proof identities and capped source. Main20/26; registration, mounted discovery and reusable widget generation remain5.1-5.3.
 
+- Main5.1 accepted: [installed registration candidate](../../../artifacts/reviewed/market-provider-registration/accepted.md), exact candidate fork13e41631bdef0ee98bfa23bda68d329224b56eb1, independent76-test join and81-file cap gate. Main21/26. Root source/catalog pins remain at the deployed baseline until5.3.
+
 ## Implementation Notes
+
+- Candidate5.1: `artifacts/market-registration/candidate-private.json` identifies the retained source/project snapshot. Acceptance uses installed provider/core packages; inject only the root service into PYTHONPATH. Project only the eleven annotated first-batch models, preserving other existing FRED routes. Prefer host Git or immutable blob/archive reads over WSL worktree scans on the mounted fork.
 
 - HTTP verification: the pinned provider environment has no httpx; reuse the direct ASGI helpers. Native Fetcher classes alias extraction at class creation, so patch `extract_data` and retain a transport tripwire. Normalize UTF-8/LF and one EOF newline before freezing hashes; record subprocess return codes directly.

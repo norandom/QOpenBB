@@ -186,7 +186,8 @@
     "market-data-financial-openapi",
     "market-data-enterprise-schema",
     "market-financial-catalog",
-    "market-financial-discovery"
+    "market-financial-discovery",
+    "market-provider-registration"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34850,6 +34851,30 @@
       "publishedSHA256": "52627b2a26e670b0cfb38522a6f009e435b1f1a0b445433beeffd1be75339cd9",
       "bytes": 1517,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-registration/accepted.md",
+      "sourceSHA256": "d23d0e6de4abd078af367c05e53028c233f59d98cabff801e5c0e5ac6adf88ea",
+      "publishedpath": "artifacts/reviewed/market-provider-registration/accepted.md",
+      "publishedSHA256": "d23d0e6de4abd078af367c05e53028c233f59d98cabff801e5c0e5ac6adf88ea",
+      "bytes": 1269,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-registration-review/review.md",
+      "sourceSHA256": "04d7cc62e7fb85e21c74a446aceb69e5cb2904e5c3a1126b1ef76419dc1f2036",
+      "publishedpath": "artifacts/reviewed/market-provider-registration/review.md",
+      "publishedSHA256": "04d7cc62e7fb85e21c74a446aceb69e5cb2904e5c3a1126b1ef76419dc1f2036",
+      "bytes": 4980,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/market-registration/accepted-source.json",
+      "sourceSHA256": "d7a2a0eb848ec57b4f782ec0d4c18acfacb67fe5ac264ea93b92aebe7f17ca70",
+      "publishedpath": "artifacts/reviewed/market-provider-registration/final-source.json",
+      "publishedSHA256": "d7a2a0eb848ec57b4f782ec0d4c18acfacb67fe5ac264ea93b92aebe7f17ca70",
+      "bytes": 3405,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35575,7 +35600,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170533310,
+  "total_payload_bytes": 170542964,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

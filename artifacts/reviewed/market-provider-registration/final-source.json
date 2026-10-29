@@ -1,0 +1,101 @@
+{
+  "candidate_revision": "13e41631bdef0ee98bfa23bda68d329224b56eb1",
+  "archive_sha256": "3bab973b22e805eea1144ce10c1de2ad426ec3ab7f48139c2c4f2daffec6f0a8",
+  "archive_scope": [
+    "openbb_platform/core",
+    "openbb_platform/extensions/equity",
+    "openbb_platform/extensions/economy",
+    "openbb_platform/providers/fmp",
+    "openbb_platform/providers/fred",
+    "LICENSE"
+  ],
+  "candidate_lock_sha256": "f3e1026c1d0d23eac2aa85436c8d619577860d6a2cf98dfc4a95618fafb41bd1",
+  "base_lock_sha256": "f3e1026c1d0d23eac2aa85436c8d619577860d6a2cf98dfc4a95618fafb41bd1",
+  "candidate_project_sha256": "b18cc5514cec0c43fcc9bfe560ee839c88348c149689474d11691fadc243ce69",
+  "dependency_graph": "Unchanged; five source packages reinstalled from the committed archive.",
+  "source_files": {
+    "openbb_platform/providers/fmp/openbb_fmp/provider.py": "ae7c44869e3ef15ec5d077e4e85e764b7e4df339afd143018c875ee667b6dadc",
+    "openbb_platform/extensions/equity/openbb_equity/equity_router.py": "c3667ccd065cfe05bd90cfbf54266afbc909e1dcf0e3ba5d36e2a625ad4578dd",
+    "openbb_platform/providers/fmp/provenance.json": "d2e7e19aa5e1652a42b43d769ca361538352a58c2351c65df5264caee3c51db4"
+  },
+  "root_files": {
+    "tests/providers/test_discovery.py": "4a03f141d7c59a50fdae810f6736f484789aff5c2d5aacc360159e7cfcd05e0f",
+    "tests/providers/test_financial_openapi.py": "8e3cb9d14d410fc846cf0d532ccc0e6da8188ca49f90b18866370534701f8bee"
+  },
+  "measurements": [
+    {
+      "repository": "data_api",
+      "path": "openbb_platform/providers/fmp/openbb_fmp/provider.py",
+      "physical": 35,
+      "functions": [],
+      "logical": 12
+    },
+    {
+      "repository": "data_api",
+      "path": "openbb_platform/extensions/equity/openbb_equity/equity_router.py",
+      "physical": 118,
+      "functions": [
+        {
+          "name": "search",
+          "line": 54,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "screener",
+          "line": 67,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "profile",
+          "line": 84,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "market_snapshots",
+          "line": 97,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "historical_market_cap",
+          "line": 111,
+          "column": 1,
+          "logical": 1
+        }
+      ],
+      "logical": 38
+    }
+  ],
+  "root_parent": "01c1cf62bfb77dd97ffe62e6d81827753174520f",
+  "deployment_source_revision": "dca75f9b358c3defe5ab7948f847a120a08ff98e",
+  "root_pins_promoted": false,
+  "independent_join": {
+    "command": [
+      "verification/provider/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-c",
+      "verification/provider/pyproject.toml",
+      "tests/providers/test_discovery.py",
+      "tests/providers/test_profile.py",
+      "tests/providers/test_income.py",
+      "tests/providers/test_financial_openapi.py",
+      "tests/providers/test_financial_catalog.py",
+      "-n0",
+      "--maxprocesses=2"
+    ],
+    "returncode": 0,
+    "PYTHONPATH": "/mnt/d/Source/QOpenBB/services/data-api",
+    "passed": 76
+  },
+  "combined_size_gate": {
+    "files": 81,
+    "errors": 0,
+    "violations": 0,
+    "node": "24.22.1"
+  },
+  "limitations": "Installed development candidate only; service activation, consumer regeneration and live access remain later tasks."
+}

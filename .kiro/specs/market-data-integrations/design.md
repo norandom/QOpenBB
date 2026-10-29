@@ -67,7 +67,7 @@ Paths starting `core/`, `providers/` or `extensions/` below are inside `vendor/d
 | `providers/fmp/openbb_fmp/utils/{helpers,errors,definitions}.py` | Existing sanitized transport, failure classification and period definitions; close unsafe multi-request bypass before reuse |
 | `providers/fmp/openbb_fmp/provider.py`, `provenance.json` | Register accepted fetchers and record source recovery/adaptation notices |
 | `core/openbb_core/provider/standard_models/enterprise_values.py` | New standard enterprise-value bridge input contract; historical source lacks this model |
-| `extensions/equity/openbb_equity/fundamental/{fundamental_router,enterprise_router}.py` | Mount a small new enterprise-value command under the existing fundamental router; other restored models use existing routes |
+| `extensions/equity/openbb_equity/{equity_router,fundamental/enterprise_router}.py` | The small equity composition root mounts the enterprise child under the existing fundamental router; the oversized legacy fundamental file stays untouched. Other restored models use existing routes |
 | `providers/fred/openbb_fred/models/series.py` | Preserve legacy per-series metadata, add common metadata and retain available vintage/transform facts |
 | `providers/fred/openbb_fred/utils/{rate_limiter,cache,acquisition}.py` | Preserve cache behavior with versioned timestamped acquisition envelopes; acquisition is a new bounded helper |
 | `services/data-api/qopenbb_data/{financial_catalog,financial_errors,financial_openapi,financial_policy}.py` | Small discovery, safe HTTP errors, schema projection and pre-execution provider policy modules |

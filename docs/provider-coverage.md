@@ -24,7 +24,7 @@ Research snapshot: 2026-10-19. The [FMP endpoint inventory](reference/fmp-endpoi
 
 See the inventory's per-endpoint source links and [official FMP catalog](https://site.financialmodelingprep.com/developer/docs). This is a family-level map; bulk delivery is a transport option, not a separate financial asset class.
 
-The installed QOpenBB FMP adapter currently registers only company profile and income statements. FRED series also has a catalog widget. The demonstrated price/statement/news dashboard uses uploaded snapshots. Broader published FMP coverage must not be presented as installed or accepted. Every integration needs separate published-coverage, entitlement, adapter, widget and end-to-end status.
+Published prototype images retain the company-profile and income-statement FMP baseline. The accepted development candidate registers ten first-batch FMP models; service discovery and widget publication remain pending. FRED series also has a catalog widget. The demonstrated price/statement/news dashboard uses uploaded snapshots. Broader published FMP coverage must not be presented as installed or accepted. Every integration needs separate published-coverage, entitlement, adapter, widget and end-to-end status.
 
 ## Discovery checkpoint, 2026-10-29
 
@@ -57,6 +57,7 @@ The [widget requirements](../.kiro/specs/openbb-self-service/parameterized-widge
 - [x] Name/symbol discovery, provider peer candidates and bounded daily-price source adapters: [accepted discovery and price contracts](../artifacts/reviewed/market-data-discovery-prices/accepted.md).
 - [x] Periodic key-metrics and ratio source adapters: [accepted financial metadata](../artifacts/reviewed/market-data-metrics-ratios/accepted.md).
 - [x] Enterprise-value source contract and isolated command: [accepted input semantics](../artifacts/reviewed/market-data-enterprise-schema/accepted.md).
-- [ ] Register these restored adapters and verify installed API/widget behavior and live account entitlement. The installed baseline described above remains the registered surface until that join.
+- [x] Register the restored first-batch adapters in an exact-source installed candidate: [acceptance](../artifacts/reviewed/market-provider-registration/accepted.md).
+- [ ] Install the service safeguards/discovery, publish regenerated widgets and verify live account entitlement. Published images retain the baseline until the integrated release.
 
 These checks track source acceptance, not completion of the broader research families.

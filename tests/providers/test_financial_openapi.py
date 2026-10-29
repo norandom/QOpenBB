@@ -368,9 +368,6 @@ def native_first_batch():
 
 
 def test_native_first_batch_registry_projection(native_first_batch):
-    from inspect import getfile
-    from pathlib import Path
-
     from openbb_core.provider.standard_models.financial_annotations import (
         bind_data_annotation,
         bind_query_annotation,
@@ -384,7 +381,9 @@ def test_native_first_batch_registry_projection(native_first_batch):
         operation = document["paths"]["/" + dataset]["get"]
         descriptor = operation["x-qopenbb-financial"]
         for provider, models in variants.items():
-            assert "vendor/data-api/" in Path(getfile(models["data"])).as_posix()
+            # Installed byte identity belongs to discovery tests; projection must
+            # work with the same provider classes in wheels and source checkouts.
+            assert models["data"].__module__.startswith(f"openbb_{provider}.models.")
             data = bind_data_annotation(models["data"])
             query = bind_query_annotation(models["query"])
             variant = descriptor["variants"][provider]
