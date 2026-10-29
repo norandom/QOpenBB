@@ -125,3 +125,46 @@ def test_unmodeled_provider_amount_omitted():
     emitted = result.result[0].model_dump()
     assert "unknownAmount" not in emitted and "unknown_amount" not in emitted
     assert set(emitted) == set(result.metadata[FINANCIAL_METADATA_KEY]["fields"])
+
+
+def test_declarations_cover_runtime_without_mutating_templates():
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_data_annotation, bind_query_annotation, render_field_templates,
+    )
+    from openbb_fmp.models.key_metrics import FMPKeyMetricsQueryParams
+    from openbb_fmp.models.key_metrics_data import FMPKeyMetricsData
+
+    query_annotation = bind_query_annotation(FMPKeyMetricsQueryParams)
+    assert query_annotation.provider_policy == "explicit"
+    assert query_annotation.response_policy.mode == "clip"
+    assert query_annotation.response_policy.limit_parameter == "limit"
+    assert query_annotation.response_policy.max_rows is None
+    declaration = bind_data_annotation(FMPKeyMetricsData)
+    original = deepcopy(FMPKeyMetricsData.financial_data_annotation.model_dump())
+    templates = render_field_templates(FMPKeyMetricsData)
+    assert set(templates) == set(FMPKeyMetricsData.model_fields)
+    assert not declaration.dynamic_fields
+    assert {"fields.availability", "fields.period_basis"} <= set(declaration.runtime_properties)
+    query = Fetcher.transform_query({"symbol": "ABC", "limit": 1})
+    result = Fetcher.transform_data(query, FMPAcquisition([fixture(), fixture()], STAMP))
+    fields = result.metadata[FINANCIAL_METADATA_KEY]["fields"]
+    for name, template in templates.items():
+        expected = template.model_dump(mode="json")
+        assert {k: v for k, v in fields[name].items() if k not in {"availability", "period_basis"}} == {
+            k: v for k, v in expected.items() if k not in {"availability", "period_basis"}
+        }
+    assert result.metadata[FINANCIAL_METADATA_KEY]["bounds"]["truncated"] is True
+    templates["enterprise_value"].financial_basis["debt"] = "changed"
+    assert render_field_templates(FMPKeyMetricsData)["enterprise_value"].financial_basis["debt"] is None
+    assert FMPKeyMetricsData.financial_data_annotation.model_dump() == original
+
+
+def test_runtime_reads_class_owned_templates(monkeypatch):
+    from openbb_fmp.models.key_metrics_data import FMPKeyMetricsData
+
+    declaration = FMPKeyMetricsData.financial_data_annotation.model_copy(deep=True)
+    declaration.fields["enterprise_value"].financial_basis["debt"] = "test convention"
+    monkeypatch.setattr(FMPKeyMetricsData, "financial_data_annotation", declaration)
+    result = Fetcher.transform_data(Fetcher.transform_query({"symbol": "ABC"}),
+                                   FMPAcquisition([fixture()], STAMP))
+    assert result.metadata[FINANCIAL_METADATA_KEY]["fields"]["enterprise_value"]["financial_basis"]["debt"] == "test convention"
