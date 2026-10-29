@@ -140,3 +140,11 @@ No new runtime image is published at this adapter-only checkpoint.
 - [ ] Add enterprise-value inputs and complete consumer schema/runtime integration before live-provider and widget acceptance.
 
 No new runtime image is published at this source-only checkpoint.
+
+## Enterprise inputs and schema prerequisite, 2026-10-29
+
+- [x] Typed enterprise-value input dataset and isolated native command accepted. Fifteen of 26 initial tasks are source-accepted. [Evidence](../artifacts/reviewed/market-data-enterprise-schema/accepted.md).
+- [ ] Task 4.1: authoritative schema projection. Missing declaration annotations block acceptance; the [bounded repair design](../.kiro/specs/market-data-integrations/financial-annotations-amendment.md) is independently reviewed and awaits owner review.
+- [ ] Register/mount accepted models, verify installed consumers and live provider access, then publish the integrated image milestone.
+
+The repair keeps static financial declarations in one owner, with dynamic FRED/result semantics resolved at runtime. Existing adapter values and installed baseline behavior remain intact.

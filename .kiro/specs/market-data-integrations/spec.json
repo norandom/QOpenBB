@@ -1,7 +1,7 @@
 {
   "feature_name": "market-data-integrations",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-28",
+  "updated_at": "2026-10-29",
   "language": "en",
   "phase": "tasks-generated",
   "approvals": {
@@ -49,5 +49,13 @@
     "scope": "first financial-input batch; later families remain open",
     "evidence": "task-plan-review.md",
     "human_approval": "approved 2026-10-28"
+  },
+  "active_amendment": {
+    "name": "financial-annotations",
+    "document": "financial-annotations-amendment.md",
+    "review": "financial-annotations-review.md",
+    "phase": "design-proposed",
+    "owner_approved": false,
+    "scope": "Repair missing authoritative declaration prerequisite for4.1; accepted result metadata/adapter values unchanged."
   }
 }
