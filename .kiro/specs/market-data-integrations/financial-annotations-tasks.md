@@ -35,7 +35,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Depends: 1_
   - _Requirements: 4.2, 4.4, 6.1, 6.2, 7.3_
 
-- [ ] 3. (P) Implement the shared schema projection
+- [x] 3. (P) Implement the shared schema projection
   - Read the frozen annotations and real route/model associations from installed registry types. Produce x-qopenbb-financial descriptors, namespaced metadata/response references and the actual nested result metadata location. Use actual parameter defaults/enums/provider choices and check provider-policy agreement across variants.
   - Preserve unrelated operations and input documents. Missing required or malformed annotations fail explicitly; unknown declared values remain unknown. Do not infer units from names, copy widget semantics, enumerate FRED series or assert unrestricted extra enforces the financial schema. Error components describe contracts; handler implementation remains main task 4.3.
   - Done: fixture-based projection tests verify determinism, nonmutation, idempotence, serialized aliases, resolvable references and explicit missing/invalid declaration behavior. Real-model verification belongs to task 5 below. Production scope passes 400/300/50 and owning checks.
