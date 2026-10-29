@@ -34560,6 +34560,38 @@
       "publishedSHA256": "6b8e2d472728265665a7490083e7d7084c573ea278cece0bdae34f25f3f83808",
       "bytes": 919,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-discovery/result.md",
+      "sourceSHA256": "3496a689140624d886b891f12ac69e081f794fa005d0a75e65ebc05f623b12f2",
+      "publishedpath": "artifacts/reviewed/annotations-discovery/result.md",
+      "publishedSHA256": "3496a689140624d886b891f12ac69e081f794fa005d0a75e65ebc05f623b12f2",
+      "bytes": 4687,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-discovery/review.md",
+      "sourceSHA256": "d9c8d97560037c18b090d97ee52ca816f8040474d73d6c219a843a9ed7263d6a",
+      "publishedpath": "artifacts/reviewed/annotations-discovery/review.md",
+      "publishedSHA256": "d9c8d97560037c18b090d97ee52ca816f8040474d73d6c219a843a9ed7263d6a",
+      "bytes": 4634,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-discovery/accepted.md",
+      "sourceSHA256": "226c48e94ce7ebdd0e2d4736b8537cd11d24e70cdbc130043ea2a95c341f45ab",
+      "publishedpath": "artifacts/reviewed/annotations-discovery/accepted.md",
+      "publishedSHA256": "226c48e94ce7ebdd0e2d4736b8537cd11d24e70cdbc130043ea2a95c341f45ab",
+      "bytes": 994,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/annotations-discovery/hashes.json",
+      "sourceSHA256": "bdc73e128b8a53087c6a3a6a59d29a069c47531fa9634563fe28291d81ec78db",
+      "publishedpath": "artifacts/reviewed/annotations-discovery/hashes.json",
+      "publishedSHA256": "bdc73e128b8a53087c6a3a6a59d29a069c47531fa9634563fe28291d81ec78db",
+      "bytes": 582,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35285,7 +35317,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170427862,
+  "total_payload_bytes": 170438759,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

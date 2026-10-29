@@ -113,3 +113,41 @@ def test_search_clipping_keeps_duplicates():
     result = Search.transform_data(query, FMPAcquisition(payload, STAMP))
     assert len(result.result) == 1
     assert result.metadata[FINANCIAL_METADATA_KEY]['bounds']['truncated'] is True
+
+@pytest.mark.parametrize('fetcher,params', [(Search, {'query': 'EX'}), (Peers, {'symbol': 'EX'})])
+def test_discovery_declarations_drive_metadata(fetcher, params, monkeypatch):
+    from openbb_core.provider.standard_models.financial_annotations import (
+        bind_data_annotation, bind_query_annotation, render_field_templates,
+    )
+    query = fetcher.transform_query(params)
+    model = fetcher.data_type
+    declaration = bind_query_annotation(type(query))
+    assert declaration.provider_policy == 'explicit'
+    assert declaration.response_policy.mode == 'clip'
+    assert declaration.response_policy.limit_parameter == 'limit'
+    annotation = bind_data_annotation(model)
+    assert set(annotation.fields) == set(model.model_fields)
+    assert 'fields.availability' in annotation.runtime_properties
+    templates = render_field_templates(model)
+    result = fetcher.transform_data(query, FMPAcquisition([{'symbol': 'EX'}], STAMP))
+    for name, template in templates.items():
+        expected = template.model_dump(mode='json')
+        expected['availability'] = 'available' if getattr(result.result[0], name) is not None else 'missing'
+        assert result.metadata[FINANCIAL_METADATA_KEY]['fields'][name] == expected
+    changed = model.financial_data_annotation.model_copy(deep=True)
+    changed.fields['symbol'].scale = 7
+    monkeypatch.setattr(model, 'financial_data_annotation', changed)
+    altered = fetcher.transform_data(query, FMPAcquisition([{'symbol': 'EX'}], STAMP))
+    assert altered.metadata[FINANCIAL_METADATA_KEY]['fields']['symbol']['scale'] == 7
+    assert templates['symbol'].scale is None
+    assert result.metadata[FINANCIAL_METADATA_KEY]['fields']['symbol']['scale'] is None
+
+
+def test_discovery_length_boundaries():
+    assert Search.transform_query({'query': 'x' * 200}).query == 'x' * 200
+    assert Peers.transform_query({'symbol': 'x' * 50}).symbol == 'X' * 50
+    for fetcher, params in [(Search, {'query': 'x' * 201}),
+                            (Search, {'query': ' ' + 'x' * 200}),
+                            (Peers, {'symbol': 'x' * 51})]:
+        with pytest.raises(FinancialError):
+            fetcher.transform_query(params)

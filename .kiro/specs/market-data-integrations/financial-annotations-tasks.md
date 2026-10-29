@@ -62,7 +62,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
   - _Boundary: FMP models/equity_profile.py and tests/providers/test_profile.py only; shared transport helpers remain frozen._
   - _Depends: 1_
   - _Requirements: 4.1, 4.2, 5.2, 6.1, 6.2, 6.3_
-- [ ] 4.4 (P) Adopt discovery and peer declarations
+- [x] 4.4 (P) Adopt discovery and peer declarations
   - Declare identity-field semantics, provider-selection requirement and local bounds. Preserve ambiguous listings, issuer separation and provider-suggestion labels; keep actual source values and missing dates runtime-owned.
   - Done: existing discovery fixtures and agreement checks pass with no parallel unit definitions; production files pass 400/300/50 and owning checks.
   - _Boundary: FMP models/equity_search.py, equity_peers.py, discovery_data.py and tests/providers/test_fmp_discovery.py only._
