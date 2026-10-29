@@ -54,8 +54,20 @@
     "name": "financial-annotations",
     "document": "financial-annotations-amendment.md",
     "review": "financial-annotations-review.md",
-    "phase": "design-proposed",
-    "owner_approved": false,
-    "scope": "Repair missing authoritative declaration prerequisite for4.1; accepted result metadata/adapter values unchanged."
+    "phase": "tasks-generated",
+    "owner_approved": true,
+    "scope": "Repair missing authoritative declaration prerequisite for4.1; accepted result metadata/adapter values unchanged.",
+    "design_approved": true,
+    "design_approval": "Owner approved in conversation 2026-10-29",
+    "tasks_approved": false,
+    "tasks_document": "financial-annotations-tasks.md",
+    "tasks_generated": true,
+    "tasks_review": {
+      "status": "passed",
+      "mode": "independent",
+      "model": "gpt-6-astra",
+      "record": "financial-annotations-task-review.md",
+      "executable_tasks": 11
+    }
   }
 }

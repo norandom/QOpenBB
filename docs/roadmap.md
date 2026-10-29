@@ -144,7 +144,7 @@ No new runtime image is published at this source-only checkpoint.
 ## Enterprise inputs and schema prerequisite, 2026-10-29
 
 - [x] Typed enterprise-value input dataset and isolated native command accepted. Fifteen of 26 initial tasks are source-accepted. [Evidence](../artifacts/reviewed/market-data-enterprise-schema/accepted.md).
-- [ ] Task 4.1: authoritative schema projection. Missing declaration annotations block acceptance; the [bounded repair design](../.kiro/specs/market-data-integrations/financial-annotations-amendment.md) is independently reviewed and awaits owner review.
+- [ ] Task 4.1: authoritative schema projection. Missing declaration annotations block acceptance; the [bounded repair design](../.kiro/specs/market-data-integrations/financial-annotations-amendment.md) is owner design-approved; the [repair tasks](../.kiro/specs/market-data-integrations/financial-annotations-tasks.md) are independently reviewed and await task approval.
 - [ ] Register/mount accepted models, verify installed consumers and live provider access, then publish the integrated image milestone.
 
 The repair keeps static financial declarations in one owner, with dynamic FRED/result semantics resolved at runtime. Existing adapter values and installed baseline behavior remain intact.

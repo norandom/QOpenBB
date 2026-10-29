@@ -1,6 +1,6 @@
 # Authoritative financial annotations: prerequisite repair
 
-2026-10-29. Status: proposed design amendment, independently reviewed by gpt-6-astra; owner review pending. Existing requirements and numerical adapter acceptance remain intact. Task 4.1 is open because its source-declaration prerequisite was not implemented. This document does not approve new implementation tasks.
+2026-10-29. Status: design amendment owner-approved on 2026-10-29 after independent gpt-6-astra review. Existing requirements and numerical adapter acceptance remain intact. Task 4.1 is open because its source-declaration prerequisite was not implemented. This document does not approve new implementation tasks.
 
 ## Finding and consequence
 
@@ -56,4 +56,4 @@ Enterprise task 2.9 finishes in its existing exclusive ownership first. Its anno
 
 ## Review and next decision
 
-The independent architecture review confirmed this prerequisite gap and the sequence above without requesting a new registry or a broad provider rewrite. No production code or tests were added for the blocked projection. The existing 26-task batch count remains unchanged; task 4.1 stays unchecked. After owner review of this amendment, generate bounded repair tasks and review their graph before implementation under the Kiro flow.
+The independent architecture review confirmed this prerequisite gap and the sequence above without requesting a new registry or a broad provider rewrite. No production code or tests were added for the blocked projection. The existing 26-task batch count remains unchanged; task 4.1 stays unchecked. The [11-unit repair plan](financial-annotations-tasks.md) passed independent graph review. Owner task approval is required before implementation.
