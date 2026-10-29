@@ -34320,6 +34320,38 @@
       "publishedSHA256": "cf7070cb0b0ee42fb1e03afbb33ed5e5f89d2a23c905913a37399013fe7a4479",
       "bytes": 756,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-annotations-core/result.md",
+      "sourceSHA256": "b5e0e326b7c56b5e172356d24b27907dad5f45c838f5f31f47bee5f7c832fc44",
+      "publishedpath": "artifacts/reviewed/financial-annotations-core/result.md",
+      "publishedSHA256": "b5e0e326b7c56b5e172356d24b27907dad5f45c838f5f31f47bee5f7c832fc44",
+      "bytes": 3682,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-annotations-core/interface.md",
+      "sourceSHA256": "1e97854eee8afb1258503c3a3f3bdd2313dbc53b67f50924e4d7ab57471af877",
+      "publishedpath": "artifacts/reviewed/financial-annotations-core/interface.md",
+      "publishedSHA256": "1e97854eee8afb1258503c3a3f3bdd2313dbc53b67f50924e4d7ab57471af877",
+      "bytes": 4071,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-annotations-core/review.md",
+      "sourceSHA256": "275e06091f799d2463b69c772b79757c880e46abf173de2d482d0de089e605b4",
+      "publishedpath": "artifacts/reviewed/financial-annotations-core/review.md",
+      "publishedSHA256": "275e06091f799d2463b69c772b79757c880e46abf173de2d482d0de089e605b4",
+      "bytes": 3836,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-annotations-core/accepted.md",
+      "sourceSHA256": "a1e0162f450197f70ec10c1b61ac8420fa7f1c654aed1bcafe24d65fe5599f95",
+      "publishedpath": "artifacts/reviewed/financial-annotations-core/accepted.md",
+      "publishedSHA256": "a1e0162f450197f70ec10c1b61ac8420fa7f1c654aed1bcafe24d65fe5599f95",
+      "bytes": 985,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35045,7 +35077,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170337667,
+  "total_payload_bytes": 170350241,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -1,6 +1,6 @@
 # Financial annotation repair tasks
 
-Design amendment owner-approved on 2026-10-29. This subplan repairs the prerequisite of main task 4.1; it does not add research families or change the main batch's 26-task count. Task approval is pending. Existing source acceptance remains 15/26.
+Design amendment owner-approved on 2026-10-29. This subplan repairs the prerequisite of main task 4.1; it does not add research families or change the main batch's 26-task count. Task plan owner-approved on 2026-10-29. Existing source acceptance remains 15/26.
 
 ## Execution rules
 
@@ -12,7 +12,7 @@ All adoption tasks preserve output rows, result metadata, aliases, limits, dates
 
 ## Tasks
 
-- [ ] 1. Freeze the declaration contract and its validation
+- [x] 1. Freeze the declaration contract and its validation
   - Define typed query/data annotations with static field templates, runtime-resolved properties, procedural limits, response policy and provider-selection requirement. Derive ordinary parameter constraints/defaults and field descriptions from the owning models. Validate actual serialized-field references and preserve explicit unknowns.
   - Reuse FinancialFieldMetadata; make template rendering copy declarations rather than mutate shared state. Reject malformed declarations and distinguish them from missing declarations. Export an interface brief for adoption/projection workers before fan-out.
   - Done: focused tests prove serialization, field references, static/runtime distinction and independent copies. The new module has no network, registry or UI dependency. Inventory includes it and the existing executable size checker passes.
