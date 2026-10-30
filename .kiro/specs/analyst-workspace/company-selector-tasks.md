@@ -22,7 +22,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Depends: 1_
   - _Requirements: 1.1, 1.3, 1.4, 1.5_
 
-- [ ] 3. (P) Deliver exact group compatibility decisions
+- [x] 3. (P) Deliver exact group compatibility decisions
   - Implement the pure group guard against the frozen context contract, validating every member, effective immediate mode, exact Symbol binding, provider/source and competing bindings.
   - Reject mixed/incompatible groups, preview and detached contexts for live group writes. Preserve independent groups and expose an actionable blocked reason without changing membership.
   - Completion: focused pure cases cover compatible groups, source/provider changes, multiple bindings and preview/detached contexts; this module never writes a store. Production code passes 400/300/50.
