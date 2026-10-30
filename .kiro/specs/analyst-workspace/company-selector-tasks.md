@@ -1,12 +1,12 @@
 # Company selector implementation plan
 
-Status: task proposal for owner approval. The owner approved the bounded design and QueryParams size exception on 2026-10-30. No implementation is approved by this document. This is an amendment to analyst-workspace, not approval of its umbrella backlog.
+Status: owner approved tasks and implementation on 2026-10-30, after independent task-plan review. The bounded design and QueryParams size exception were approved earlier that day. This is an amendment to analyst-workspace, not approval of its umbrella backlog.
 
 Read [requirements](company-selector-requirement.md) and [design](company-selector-design.md) before dispatch. Each executable task is a 1-3 hour work unit; elapsed delivery depends on review and runtime availability.
 
 ## Implementation tasks
 
-- [ ] 1. Establish the selector contract and executable size scope
+- [x] 1. Establish the selector contract and executable size scope
   - Reuse the pinned Workspace c652b909627d7634241eee2ed13a561fbb4f177b and data API 28423762e8cc3faae978e770899834b41e7cde99 in clean owned checkouts. Confirm Node 24.22.1, installed native Vitest and existing browser prerequisites without adding a framework or changing dependencies.
   - Freeze the design's versioned selection, search, context, group and commit ports; implement strict decoding, eight eligible bindings, source identity and contradictory-listing rules. Metadata stays outside request parameters.
   - Extend the existing controller-owned complexity inventory for the eight production paths and explicit fork scope. Prove missing scope fails and run the existing checker. Do not activate a future candidate exception now; register its exact reviewed revision/measurements at task 5.
@@ -115,4 +115,4 @@ The existing checker entry is `pipeline/.venv/bin/python -m tools.quality.comple
 
 Controller completion also updates README/docs checkboxes and `.kiro/breadth.toml` with actual tests/evidence, publishes one concise reviewed record and selected screenshots, and preserves raw/private output in ignored paths. No source or task checkbox is marked complete from planned checks. A meaningful accepted feature triggers both image builds/publication once through the existing milestone workflow; ordinary task pushes run checks without image rebuilding. These are existing delivery obligations, not extra implementation or deployment tasks.
 
-Task-plan approval is required before implementation. Neither design approval nor this plan activates a future inventory exception, approves a release, or completes the broader analyst dashboard.
+The owner approved this bounded task plan and implementation on 2026-10-30. Neither design approval nor this plan activates a future inventory exception, approves a release, or completes the broader analyst dashboard.

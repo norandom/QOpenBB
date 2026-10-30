@@ -1,0 +1,27 @@
+{
+  "task": "1",
+  "workspace_revision": "7a70210ab8ac5d93ec69defe0fc4ee54cd8542bf",
+  "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
+  "scope": "Source contract only; no selector UI, runtime or publication acceptance.",
+  "unchanged_exception_files": {
+    "backend-api/backend/api/schemas.py": "7deb1c432e3855aa90bbdc4ebb9abdae4b4f999df77600fb49270c6ceec82645",
+    "terminalpro/src/routes/login.tsx": "553f93e147b251d88471938241a3067efa30473848f02f621413de9e3c220951",
+    "terminalpro/src/lib/types/app.ts": "195e4e0cfac122a9b222709f8e908537f3820e92bedac8429e2d1db90f05e63c",
+    "backend-api/backend/routers/pro/index.py": "22226c679d56700af1eac9589dc2a22c3fa547c16fb3fea5677ae20d065adf6e",
+    "terminalpro/src/lib/state/copilot.ts": "e848307a8606a0755f8a2858bfd95b334b5a18ae01f8c5036aaf573734fd020c",
+    "terminalpro/src/components/types.d.ts": "1b15e9ddd2ebf37140de301370481ed376f118a4ae6e0357478696d9bab49b76",
+    "terminalpro/src/components/General/Table/utils.tsx": "e6b175950d521906b0d61f1e3cddd072d11abedee5de948e0fbed6f415fa4513",
+    "backend-api/backend/api/crud.py": "575b2cdeb0f04aab81af60b34074e4b9c2c6e21cfb6559c695e502361defc6e9"
+  },
+  "files": {
+    "terminalpro/src/components/General/Table/NavBar/companySelection.contract.ts": "05df8c419f6b2c2921e31ddc7e1bbbba785a308b76421d1085d4145d16ee3ac0",
+    "terminalpro/tests/unit/company-selection.test.ts": "da3c2ff07d1295e62c5d39b226f11d516e7f257f4a90c511f7413f3e6e9e792e"
+  },
+  "checks": {
+    "unit_tests": 49,
+    "strict_typescript": "passed",
+    "combined_files": 80,
+    "errors": 0,
+    "violations": 0
+  }
+}

@@ -958,7 +958,7 @@
   },
   "active_amendment": {
     "name": "company-selector",
-    "phase": "tasks-generated",
+    "phase": "implementation",
     "requirements_document": "company-selector-requirement.md",
     "requirements_approved": true,
     "requirements_approval": "Owner confirmed linked Company name and Symbol, then acknowledged the recorded requirement on 2026-10-30; numeric1.1-1.5 labels are editorial.",
@@ -974,8 +974,8 @@
       "draft_sha256": "cc49b22b4276e43ebd39354301cfda7e54f2576a78e975f7164bfc72855baaeb"
     },
     "tasks_generated": true,
-    "tasks_approved": false,
-    "implementation_approved": false,
+    "tasks_approved": true,
+    "implementation_approved": true,
     "scope": "Paired company name/symbol selection over eight owned immediate-query FMP definitions; preserve existing groups/comparison controls. Broader dashboards and authoritative typed instrument groups remain separate.",
     "baseline_sources": {
       "workspace": "c652b909627d7634241eee2ed13a561fbb4f177b",
@@ -1005,6 +1005,7 @@
       "model": "gpt-6-astra",
       "evidence": "company-selector-tasks-review.md",
       "draft_sha256": "936f4809c8c111e0dcd39585bc65d95dbc5d7c940214f879c2cc06b2920daf2e"
-    }
+    },
+    "tasks_approval": "Owner approved reviewed task plan and implementation on 2026-10-30."
   }
 }
