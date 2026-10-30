@@ -14,7 +14,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Boundary: Selection contract, controller foundation integration_
   - _Requirements: 1.2, 1.4, 1.5_
 
-- [ ] 2. (P) Deliver connected-source company search
+- [x] 2. (P) Deliver connected-source company search
   - Use the frozen ports and existing connected-source request helper; preserve the connector prefix and headers while targeting the owned FMP search route. Validate native results, dataset/provider, effective query/limit and mode-specific source endpoint; retain nullable fields, alternatives and actual retrieval timestamps.
   - Implement name/symbol thresholds, 250 ms debounce, limit 20, no automatic retries, private per-mount cache generation, cancellation and stale-response rejection. Authentication/source changes clear obsolete results without persisting secrets.
   - Completion: focused transport/hook cases distinguish empty, malformed, entitlement, rate-limit and network outcomes; late responses cannot replace current results or commit. New production files pass 400/300/50.
