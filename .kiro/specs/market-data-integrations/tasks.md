@@ -210,7 +210,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 5.1, 4.2, 4.3, 4.5_
   - _Requirements: 1.1, 5.1, 5.2, 5.3, 6.2, 6.5, 7.1, 7.2_
 
-- [ ] 5.3 Regenerate native consumer proposals from the identified runtime
+- [x] 5.3 Regenerate native consumer proposals from the identified runtime
   - Controller owns root source/dependency pins and generated contracts; generation adapter changes are serialized. Reuse upstream widget generation and current proposal/drift tooling, preserving unrelated renderer work.
   - Done when fresh proposal artifacts resolve every installed route/schema, carry exact generator/source provenance, retain baseline widget IDs and can drive parameterized queries beyond AAPL examples.
   - Caps: maintained generation adapters meet 400/300/50; generated JSON excluded. Promote only after independent compatibility review.
@@ -306,7 +306,11 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 
 - Main5.2 accepted: [installed service integration](../../../artifacts/reviewed/market-runtime-integration/accepted.md), exact candidate `28423762e8cc3faae978e770899834b41e7cde99`, independent installed-service and image-input checks, 83-file cap gate. Main22/26. Root source/catalog promotion remains5.3.
 
+- Main5.3 accepted 2026-10-30: [native consumer integration](../../../artifacts/reviewed/market-financial-consumers/accepted.md), eleven widgets, preserved baseline IDs, exact local Dagger image and independently reviewed source/catalog pin promotion. Main23/26. Live access, packaged Workspace and image publication remain6.1-6.3.
+
 ## Implementation Notes
+
+- Native widget generation needs a disposable inline results view of the composed financial response. Keep the served projection unchanged; bind catalog_financial.py in generator provenance. Compare drift with an immutable committed baseline, not an already prepared proposal. Use exact-revision Linux checkouts for mounted-source performance; preserve unrelated renderer changes through selective index blobs.
 
 - Candidate5.2: `artifacts/market-runtime/candidate-private.json` supersedes the retained5.1 descriptor after the typed FRED repair. Native generation/source revision identifies the installed data fork; the separate runtime-input hash binds maintained service code. Do not inject provider/core source into acceptance PYTHONPATH.
 

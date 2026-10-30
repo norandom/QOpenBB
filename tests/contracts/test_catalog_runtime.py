@@ -1,13 +1,16 @@
 """Opt-in schema/catalog checks run without provider network access."""
 import json
 import os
-from pathlib import Path
 import subprocess
+from pathlib import Path
 
 import pytest
-
-from qopenbb_ci.catalog_runtime import capture_schema, upstream_widgets, verified_sources
-from qopenbb_ci.catalog import generate, canonical
+from qopenbb_ci.catalog import canonical, generate
+from qopenbb_ci.catalog_runtime import (
+    capture_schema,
+    upstream_widgets,
+    verified_sources,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 IMAGE = os.environ.get("QOPENBB_DATA_IMAGE")
@@ -19,7 +22,7 @@ def test_modified_generator_is_rejected_before_execution(tmp_path):
 
 
 def test_changed_source_blob_fails_closed(tmp_path):
-    from qopenbb_ci.catalog_runtime import UTILS, ASSET
+    from qopenbb_ci.catalog_runtime import ASSET, UTILS
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     for relative in [f"{UTILS}/widgets.py", f"{UTILS}/openapi.py", ASSET]:
         target = tmp_path / relative
@@ -45,7 +48,9 @@ def test_served_schema_and_upstream_generator_repeat(tmp_path):
     first = generate(schema, inventory, raw, bundled, "/data")
     second_raw = upstream_widgets(IMAGE, source, schema, inventory, tmp_path)
     assert canonical(first) == canonical(generate(schema, inventory, second_raw, bundled, "/data"))
-    assert len(first["widgets.json"]) == 3
+    assert len(first["widgets.json"]) == len(inventory["datasets"])
+    assert {"equity_profile_fmp_obb", "equity_fundamental_income_fmp_obb",
+            "economy_fred_series_fred_obb"} <= set(first["widgets.json"])
     assert len(first["apps.json"]) == 2
     assert set(identity["Config"]["Labels"].values()) >= {revision}
     assert provenance["revision"] == revision

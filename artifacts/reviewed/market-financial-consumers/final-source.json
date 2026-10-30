@@ -1,0 +1,162 @@
+{
+  "source_revision": "28423762e8cc3faae978e770899834b41e7cde99",
+  "generator_root_revision": "8aeedd97e30f07a6817398202fd07aef56b2aa8c",
+  "generator_archive_sha256": "858a9558200c875b4a1ef54c84097b6f2f2000d76ad9e4ac32c447ea58b6ba6b",
+  "catalog_image": "sha256:cae1e437cb15cc2578c147eed7835fee225af969fa3c074327d98977d841b9e1",
+  "expected_committed_files": {
+    "pipeline/qopenbb_ci/catalog_upstream.py": "0577af5f4a90bea3191e62af546b0f140c3b84b0b4afddca6f7bb44ba4440ea0",
+    "tests/contracts/test_catalog_runtime.py": "331da52098ac629fa18536ae70802362b092269dd223737bcf74078c73069768",
+    "tests/contracts/test_financial_proposals.py": "b70c6cfd04d7feb7479645550ea9e834007e0a12e94c68c3b0c4f5c64abb7710",
+    ".kiro/specs/market-data-integrations/design.md": "c915a881f7582dd42b4ece2c99251a4d7cffc12e5d25a50a6bc9f76003c5aa1d",
+    "sources.lock.json": "2b6b975253ce3f3d2e355a1545430da8ccb1d513f5630373f5853eb8a0f2aed7",
+    "contracts/sources.json": "7b843b2fcbfb91af55de3dfda74c9af92f26500234137b5531edc13961faa74d",
+    "contracts/apps.json": "2b6a92b2d18c02d8003fcff6ff72ddfc51a8bb7dcf799c8c60b655ad1385c6f6",
+    "contracts/catalog-report.json": "73c311038916b1eee90432f695d6f790bc4c45274deeb9b0bf45ea199462610b",
+    "contracts/compatibility.json": "416be5e4f65600280320e5e34807c29f7b2c8fbb3d2fcf12682ac4d266d4e601",
+    "contracts/datasets.json": "714994fd425b8ee02a4c3d5489614b0b556e800274a68c615647503ecc1d4d8c",
+    "contracts/hashes.json": "49de49086f9f3f0d828777b57d05559668a4ba4a8ce4149709d111a83a6b2bb7",
+    "contracts/openapi.json": "ae82566b2bb10bf6788fb2cc9f4b584de6e2ca8454010b78f0650819cab373bc",
+    "contracts/provenance.json": "55efdfa7219ee7d2618577b766c8257d18a470a21f5ff96634f4f5a7264f4151",
+    "contracts/routes.json": "5d4409c60ab778736ed5bfb6622f22a32b060d31074f4b4b7e186e1f435471b3",
+    "contracts/widgets.json": "891bb59f7c74ec1e637f685b1053e4fc338bc38fb2ddfc2c04d9b20abbdc96fa",
+    "pipeline/qopenbb_ci/catalog_cli.py": "df2257526e7f18e8882fbc303908d51bb926714e218639134b3cedcb0c3b5672",
+    ".kiro/complexity-budgets.json": "45936037436f3466f3dfaa68039416d635964cfa86ecf88b079e43b96dc341fc"
+  },
+  "selective_index_blobs": {
+    "pipeline/qopenbb_ci/catalog_cli.py": "517c436270e58e5d5dad785c199f94a59141f772",
+    ".kiro/complexity-budgets.json": "b028419551e650e5c65cbbe6c89e8de43136017c"
+  },
+  "dependency_files_unchanged": {
+    "services/data-api/pyproject.toml": "bb512a07350afdb40579c52cddbbf62579669222a82f8461d9bf73e4026b1343",
+    "services/data-api/uv.lock": "8279a573c3d0d2c531279563f3e4771adc6daddf3b13eca12a5fd6563ce1940f",
+    "verification/provider/pyproject.toml": "b18cc5514cec0c43fcc9bfe560ee839c88348c149689474d11691fadc243ce69",
+    "verification/provider/uv.lock": "f3e1026c1d0d23eac2aa85436c8d619577860d6a2cf98dfc4a95618fafb41bd1"
+  },
+  "generator_provenance": {
+    "asset": "openbb_platform/providers/fred/openbb_fred/assets/apps.json",
+    "files_sha256": {
+      "openbb_platform/extensions/platform_api/openbb_platform_api/utils/openapi.py": "6a56f718f9a572cd7ae958ff21e8c35460d9cea6d966215c11825f8cd3bf7b8f",
+      "openbb_platform/extensions/platform_api/openbb_platform_api/utils/widgets.py": "3a29e21951e3df720328fd9c4e6b370f2160ddbac6fce82a8d1d27b8cbfedf3f",
+      "openbb_platform/providers/fred/openbb_fred/assets/apps.json": "6fe0b090665956c36a1380bf951db7b66c45b83273ba1b40ab1d5f7a69f08dbd"
+    },
+    "generator": "openbb_platform/extensions/platform_api/openbb_platform_api/utils/widgets.py:build_json",
+    "image": "sha256:cae1e437cb15cc2578c147eed7835fee225af969fa3c074327d98977d841b9e1",
+    "image_labels": {
+      "org.qopenbb.build-assets": "[{\"digest\": \"68a509da24b06b4223a1c0175fb5eb5bc79342b76cbeff0cfe51ac3f5b17b6b2\", \"url\": \"https://github.com/astral-sh/uv/releases/download/0.12.5/uv-x86_64-unknown-linux-gnu.tar.gz\"}, {\"digest\": \"3462a8395f822b392b7c0808c70116ef90e17a5a1479e604cfc41d57bfbd827c\", \"url\": \"https://github.com/AikidoSec/safe-chain/releases/download/1.5.25/safe-chain-linuxstatic-x64\"}]",
+      "org.qopenbb.provenance.sha256": "5738c2cda2731824f7b7f471308b10ff63c1a3a8d02ec88e56821f195efe3c2b",
+      "org.qopenbb.repository.data_api": "https://github.com/norandom/openbb-data-api.git",
+      "org.qopenbb.repository.workspace": "https://github.com/norandom/openbb-workspace.git",
+      "org.qopenbb.runtime-inputs.sha256": "c86ce00bdca4010d5e808c0d28945b93b0c623dd952f4a684307870da8218b92",
+      "org.qopenbb.scope": "data-runtime",
+      "org.qopenbb.service": "data-api",
+      "org.qopenbb.source.data_api": "28423762e8cc3faae978e770899834b41e7cde99",
+      "org.qopenbb.source.workspace": "c652b909627d7634241eee2ed13a561fbb4f177b"
+    },
+    "inventory_sha256": "714994fd425b8ee02a4c3d5489614b0b556e800274a68c615647503ecc1d4d8c",
+    "maintained_generator_sha256": {
+      "catalog.py": "e60e967f59c19ab0dcd53188d27fec34435ba632fa492f148437d65cbce239ba",
+      "catalog_cli.py": "df2257526e7f18e8882fbc303908d51bb926714e218639134b3cedcb0c3b5672",
+      "catalog_financial.py": "6bfe334b51855c7cf6482b31c42fa6f923e7f0776f72b12e2a023e71423bbdbb",
+      "catalog_runtime.py": "a40ca6c0b7f16a45ef7192bd18d892e2d67a81f6e0fda0c2a51488abbeb97c33",
+      "catalog_upstream.py": "0577af5f4a90bea3191e62af546b0f140c3b84b0b4afddca6f7bb44ba4440ea0"
+    },
+    "repeat_identical": true,
+    "revision": "28423762e8cc3faae978e770899834b41e7cde99"
+  },
+  "baseline_routes_sha256": "5d69a3f20b411d4a64b5ba4e1f46244cf3ed3c5db0cd6cfeef0fce044d1f936d",
+  "requires_revalidation": true,
+  "measurements": [
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/catalog_upstream.py",
+      "physical": 59,
+      "functions": [
+        {
+          "name": "_results",
+          "line": 10,
+          "column": 1,
+          "logical": 15
+        },
+        {
+          "name": "widget_schema",
+          "line": 29,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "main",
+          "line": 47,
+          "column": 1,
+          "logical": 7
+        }
+      ],
+      "logical": 44
+    },
+    {
+      "repository": "qopenbb",
+      "path": "pipeline/qopenbb_ci/catalog_cli.py",
+      "physical": 81,
+      "functions": [
+        {
+          "name": "parser",
+          "line": 16,
+          "column": 1,
+          "logical": 11
+        },
+        {
+          "name": "read",
+          "line": 31,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "run",
+          "line": 35,
+          "column": 1,
+          "logical": 21
+        },
+        {
+          "name": "generator_hashes",
+          "line": 62,
+          "column": 1,
+          "logical": 1
+        },
+        {
+          "name": "main",
+          "line": 67,
+          "column": 1,
+          "logical": 9
+        }
+      ],
+      "logical": 56
+    }
+  ],
+  "limitations": "Local generation image and native consumer contracts only. Live entitlement, packaged Workspace behavior and image publication remain tasks6.1-6.3.",
+  "independent_join": {
+    "command": [
+      "pipeline/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-c",
+      "pipeline/pyproject.toml",
+      "tests/contracts/test_catalog.py",
+      "tests/contracts/test_catalog_financial.py",
+      "tests/contracts/test_financial_proposals.py",
+      "tests/contracts/test_catalog_runtime.py",
+      "-n0",
+      "--maxprocesses=2"
+    ],
+    "returncode": 0,
+    "image": "sha256:cae1e437cb15cc2578c147eed7835fee225af969fa3c074327d98977d841b9e1",
+    "pythonpath": "/home/mc/qopenbb-work/financial-proposals-20261030/tooling/pipeline"
+  },
+  "combined_size_gate": {
+    "files": 82,
+    "errors": 0,
+    "violations": 0,
+    "node": "24.22.1"
+  },
+  "generator_archive_scope": "Baseline committed tooling before the two owned changes. Final generator bytes are bound by maintained_generator_sha256.",
+  "root_source_pins_promoted": true,
+  "published_images_changed": false
+}

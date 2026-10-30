@@ -188,7 +188,8 @@
     "market-financial-catalog",
     "market-financial-discovery",
     "market-provider-registration",
-    "market-runtime-integration"
+    "market-runtime-integration",
+    "market-financial-consumers"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34900,6 +34901,30 @@
       "publishedSHA256": "b3c8982382fbc762c5dce6c2b24776d067bee7c35af8d1d439f35328bad73e99",
       "bytes": 14475,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-proposals/accepted.md",
+      "sourceSHA256": "5fea7183522b4c8c3e48dabe222aadded35dbc46b1cdee5d753b3282e7d6d814",
+      "publishedpath": "artifacts/reviewed/market-financial-consumers/accepted.md",
+      "publishedSHA256": "5fea7183522b4c8c3e48dabe222aadded35dbc46b1cdee5d753b3282e7d6d814",
+      "bytes": 1583,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/financial-proposals-review/review.md",
+      "sourceSHA256": "a52fe4ce0b7c55324dd3364c1f1ce8b8472611c254f8438f8921650fb16e6d94",
+      "publishedpath": "artifacts/reviewed/market-financial-consumers/review.md",
+      "publishedSHA256": "7871ba6cca46bad5ca929699abc38cd6fd359b26ca81febd3cb5f8cec0d85f05",
+      "bytes": 6502,
+      "transform": "Publication derivative: local raw evidence links rendered as code paths; source identity link retargeted to published final-source.json; publication note added."
+    },
+    {
+      "sourcepath": "artifacts/financial-proposals/accepted-source.json",
+      "sourceSHA256": "3dc91543357c85c254ebdf88c224f7e117c07c2411d890005f9bcf05cd4f0d9b",
+      "publishedpath": "artifacts/reviewed/market-financial-consumers/final-source.json",
+      "publishedSHA256": "3dc91543357c85c254ebdf88c224f7e117c07c2411d890005f9bcf05cd4f0d9b",
+      "bytes": 7909,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35625,7 +35650,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170566558,
+  "total_payload_bytes": 170582552,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
