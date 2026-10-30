@@ -1,6 +1,6 @@
 # Company selector source progress
 
-Eight of ten tasks are accepted as of 2026-10-30. The existing FMP widgets now have linked Company name and Symbol controls in source. Packaged real-data, save/reopen and retained-state acceptance remain open; these changes are not yet published in images.
+Nine of ten tasks are accepted as of 2026-10-30. The existing FMP widgets now have linked Company name and Symbol controls in source. Packaged real-data, save/reopen and retained-state acceptance remain open; these changes are not yet published in images.
 
 The selector reuses the connected data API, native widget execution, original Profile comparison editor and dashboard groups. It applies only to the eight approved immediate FMP definitions. Period/Limit, raw Symbol correction and ineligible/manual-run controls remain available. Selecting an unchanged symbol updates listing metadata without requesting financial data again.
 
@@ -18,4 +18,6 @@ CI41088351983 exposed an evidence defect: the local gate had minified the invent
 | Reactive groups and native header | [Group context](task5.1-review.md), [header](task5.2-review.md) |
 | Source/catalog join and exact-byte gate | [Join](task6-review.md) |
 
-Next: extend the existing financial browser case, build the packaged candidate, and verify real FMP selection with independent group/FRED sentinels and saved state. Full native TypeScript/build remains unverified under the reused dependency cache; unit tests do not replace that application gate. See the [task plan](../../../.kiro/specs/analyst-workspace/company-selector-tasks.md).
+The existing financial browser file now contains the original Income regression, one combined real-data selection journey and a separately labelled synthetic keyboard/failure/race case. Strict scoped TypeScript and discovery of three cases passed; these are authored checks, not live acceptance. [Case review](task7.1-review.md).
+
+Next: build the packaged candidate and verify real FMP selection with independent group/FRED sentinels and saved state. Full native TypeScript/build remains unverified under the reused dependency cache; unit tests do not replace that application gate. See the [task plan](../../../.kiro/specs/analyst-workspace/company-selector-tasks.md).

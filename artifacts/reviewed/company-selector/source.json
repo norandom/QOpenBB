@@ -45,7 +45,8 @@
     "4.2",
     "5.1",
     "5.2",
-    "6"
+    "6",
+    "7.1"
   ],
   "guard_checks": {
     "unit_tests": 60,
@@ -184,5 +185,13 @@
     "gate_receipt_sha256": "c6cfc13ea6fd7157ac6d473556a5f45005a74d1bce5f6ca74f7d9a619c526eb4",
     "review": "task6-review.md",
     "supersedes": "Task5.2 gate minified inventory to one line; committed404-line inventory failed CI41088351983. Seven blank lines removed without JSON changes; corrected gate measures exact inventory bytes."
+  },
+  "browser_authoring": {
+    "test": "tests/e2e/financial-workspace.spec.mts",
+    "sha256": "21800e9e15e26797dd55c0ed5066423d289e271ee391cb6da3b923bcc0c6450d",
+    "discovered_cases": 3,
+    "scoped_strict_types": "passed",
+    "live_execution": "unverified",
+    "review": "task7.1-review.md"
   }
 }

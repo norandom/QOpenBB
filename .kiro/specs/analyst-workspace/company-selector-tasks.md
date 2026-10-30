@@ -74,7 +74,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Requirements: 1.2, 1.3, 1.4, 1.5_
 
 - [ ] 7. Verify the analyst journey against real FMP data
-- [ ] 7.1 Extend the existing financial browser cases
+- [x] 7.1 Extend the existing financial browser cases
   - Author the combined name-to-MSFT/symbol-to-AAPL journey and independent synthetic keyboard/failure case in the existing financial test. Preserve its Income regression, configuration and fixture isolation; add no harness.
   - Include clipped-viewport assertions against captured actual responses, compatible Profile/Income, independent comparison/FRED sentinels, save/fresh-login and retained-bind recreation checkpoints.
   - Completion: browser cases are discoverable through the existing runner and static checks pass; test discovery is recorded as discovery, not live acceptance. Test code is excluded from production caps; any maintained helper changes pass 400/300/50.
