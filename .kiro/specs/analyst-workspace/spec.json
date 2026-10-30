@@ -958,14 +958,14 @@
   },
   "active_amendment": {
     "name": "company-selector",
-    "phase": "design-generated",
+    "phase": "tasks-generated",
     "requirements_document": "company-selector-requirement.md",
     "requirements_approved": true,
     "requirements_approval": "Owner confirmed linked Company name and Symbol, then acknowledged the recorded requirement on 2026-10-30; numeric1.1-1.5 labels are editorial.",
     "research": "company-selector-research.md",
     "design_document": "company-selector-design.md",
     "design_generated": true,
-    "design_approved": false,
+    "design_approved": true,
     "design_review": {
       "status": "passed",
       "model": "gpt-6-astra",
@@ -973,7 +973,7 @@
       "evidence": "company-selector-design-review.md",
       "draft_sha256": "cc49b22b4276e43ebd39354301cfda7e54f2576a78e975f7164bfc72855baaeb"
     },
-    "tasks_generated": false,
+    "tasks_generated": true,
     "tasks_approved": false,
     "implementation_approved": false,
     "scope": "Paired company name/symbol selection over eight owned immediate-query FMP definitions; preserve existing groups/comparison controls. Broader dashboards and authoritative typed instrument groups remain separate.",
@@ -994,8 +994,17 @@
         "function": 50
       },
       "expires_on": "2026-11-30",
-      "owner_approved": false,
+      "owner_approved": true,
       "active": false
+    },
+    "design_approval": "Owner approved bounded design and scoped QueryParams exception on 2026-10-30.",
+    "tasks_document": "company-selector-tasks.md",
+    "tasks_review": {
+      "status": "passed",
+      "mode": "independent",
+      "model": "gpt-6-astra",
+      "evidence": "company-selector-tasks-review.md",
+      "draft_sha256": "936f4809c8c111e0dcd39585bc65d95dbc5d7c940214f879c2cc06b2920daf2e"
     }
   }
 }

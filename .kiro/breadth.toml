@@ -1581,3 +1581,12 @@ planned_checks = []
 test_paths = ["tests/delivery/test_alpha_cli.py", "tests/delivery/test_publication.py", "tests/delivery/test_prototype_workflow.py", "tests/delivery/test_data_image.py", "tests/contracts/test_financial_proposals.py"]
 status = "passed"
 evidence = ["2026-10-30: alpha-41030227140-1 from6cca7e4, both CI jobs/three public assets/six anonymous image pulls/latest pair/digest-pinned Compose parsing passed. Published data image offline probe verifies15committed inputs,13resident files,11native widgets/financial descriptors and source-contract bindings; owned network-none container cleaned. Independent review; artifacts/reviewed/financial-input-milestone/accepted.md. Local Income UI and real provider evidence remain separate. No CI Workspace browser, current-account entitlement, recovery or owner-server claim. Initial batch26/26; umbrella follow-on scope remains open."]
+
+
+[[capabilities]]
+id = "company-name-symbol-selector"
+requirements = ["analyst-workspace/company-selector-requirement.md:1.1", "analyst-workspace/company-selector-requirement.md:1.2", "analyst-workspace/company-selector-requirement.md:1.3", "analyst-workspace/company-selector-requirement.md:1.4", "analyst-workspace/company-selector-requirement.md:1.5"]
+planned_checks = ["name and symbol explicit selection", "source-qualified identity and ambiguity", "compatible groups and untouched independent groups", "legacy comparison and manual-run behavior", "search failure and stale-response recovery", "real FMP viewport values and retained-state reopening"]
+test_paths = []
+status = "planned"
+evidence = ["2026-10-30 bounded design and scoped QueryParams exception approved by owner. Independently reviewed company-selector-tasks.md awaits task/implementation approval. No selector runtime or test execution; existing financial browser harness will be extended, not counted as selector coverage yet."]
