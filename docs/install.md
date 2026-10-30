@@ -81,6 +81,78 @@ docker compose exec workspace credentials
 
 Do not share that output. Blank administrator settings reuse persisted bootstrap credentials. Nonempty settings override them at container startup; the initializer creates the configured administrator or updates that account's password.
 
+## First login and onboarding
+
+A fresh account starts without a connected data backend or populated dashboard. The images include the components, but this alpha does not automatically register the bundled backend or instantiate its app templates. Complete this setup once for each Workspace account. The connection and saved dashboards belong to that account and are stored in the bind-mounted Workspace data described under [persistence and updates](#persistence-and-updates).
+
+### Connect the bundled data backend
+
+1. Open **Connections**, for example <http://127.0.0.1:23003/app/connections>.
+2. Select **Connect Backend**.
+3. Enter a connection name such as `QOpenBB data API`. Set **URL** to your current Workspace origin followed by `/data`, for example `http://127.0.0.1:23003/data`.
+4. Select **Test**, then **add** after the catalog test succeeds.
+5. Open **Apps** to see the connected backend's templates. The widget library also exposes its eleven native data definitions and the historical gallery widgets.
+
+Use the origin you actually opened in your browser. For a proxied deployment, append `/data` to that public origin rather than using the example's loopback address. The data API uses the provider keys already supplied through `.env`.
+
+### Open a populated example
+
+| App | What it opens |
+| --- | --- |
+| **QOpenBB starter** | Live AAPL company profile and annual income, plus FRED GDP observations |
+| **QOpenBB Historical Chart Gallery - January 2025** | The populated 36-chart showcase using fixed historical FMP observations |
+
+Select an app card to open its dashboard. The starter demonstrates working components; it is not yet the curated investment-research dashboard planned in the [analyst workstream](../.kiro/specs/analyst-workspace/investment-analysis-contract.md).
+
+### Choose companies and economic series
+
+The example parameters are defaults, not the scope of the providers:
+
+| Widget | Parameter | Example values |
+| --- | --- | --- |
+| Company Profile | **Symbol** | `AAPL`, `MSFT`, `GOOGL`, subject to FMP listing coverage and your entitlement |
+| Income | **Symbol**, **Period** | `AAPL` or `MSFT`; `annual` or `quarter` |
+| FRED Series | **Symbol**, date range and frequency controls | `GDP` or `DGS10`; enter the FRED series identifier in the field labelled Symbol |
+
+For another component, use **Add widgets**, choose its definition and fill the required fields. An empty required Symbol produces a validation error until supplied. The current company Symbol input is plain text; company-name autocomplete is not connected yet. FRED observations retain the selected series' units and frequency conventions; they are not limited to GDP.
+
+Save the dashboard with **Ctrl+Shift+S**, then reopen it to confirm the selected parameters. The [accepted Income journey](../artifacts/reviewed/market-packaged-financial/accepted.md) covers AAPL/MSFT, annual/quarterly periods, visible values, error recovery and save/reopen in a fresh browser context. It does not certify every provider/widget or full research-context reopening after container recreation. Provider entitlement still determines which live data can load.
+
+Return to your saved instance through **My Dashboards** or its saved URL. Selecting the template in **Apps** again can create another copy; packaged templates and your saved dashboard instances are separate.
+
+### Check startup problems
+
+For startup diagnostics:
+
+```bash
+docker compose logs --tail=100 workspace data-api
+```
+
+Review logs before sharing them for private information. The data API health check checks configuration and installed routes, not live provider access.
+
+## Persistence and updates
+
+The supplied Compose file bind-mounts `./data/workspace` on the host to `/data` in Workspace. It uses no Docker-managed data volume. Keep the same deployment directory and account when updating.
+
+| Keep on the host | Purpose |
+| --- | --- |
+| `data/workspace/` | Workspace database, account connections, saved dashboards/parameters and generated bootstrap credentials |
+| `.env` | Private provider keys, public origin, administrator overrides and image settings |
+| `compose.yaml` | Service configuration and the relative data bind mount |
+
+Pulling images, restarting or recreating containers, and `docker compose down` retain that host directory. Deleting/replacing it or resolving the relative bind mount to a different directory gives Workspace fresh state. A different account also has its own connections and dashboards. If an update appears empty, check the account and resolved bind path before redoing onboarding.
+
+The data API has no host data mount; transient provider caches are not a durable market-data store. The historical gallery's fixed data is packaged in the image. Keeping Workspace state does not freeze live provider responses.
+
+The application listens on HTTP port 23003 on all host interfaces; the data API has no published host port.
+
+To update, use the next alpha's matching Compose configuration and both image references, preserving your private settings. Review migration notes and protect existing state before updating.
+
+```bash
+docker compose pull
+docker compose up -d --no-build
+```
+
 ### Update the bootstrap administrator password
 
 Keep `OPENBB_ADMIN_EMAIL` unchanged and set a nonempty `OPENBB_ADMIN_PASSWORD` in `.env`. Recreate only Workspace so it receives the updated environment:
@@ -91,36 +163,7 @@ docker compose up -d --no-deps --force-recreate workspace
 
 Wait for startup to finish, then log in with that email and the new password. A plain `docker compose restart` does not load changed `.env` values. Keep `./data/workspace`; no database deletion or dashboard reset is needed.
 
-Disposable Compose acceptance confirmed the same administrator UUID and synthetic dashboard database content survive this update: the new credential succeeds and the old one fails. This verifies retained database state; it does not establish dashboard UI save/reopen or the owner's deployment.
-
-To open the supported starter app after login:
-
-1. Open **Connections**, for example <http://127.0.0.1:23003/app/connections>.
-2. Select **Connect Backend**.
-3. Enter a connection name such as `QOpenBB data API`. Set **URL** to your current Workspace origin followed by `/data`, for example `http://127.0.0.1:23003/data`.
-4. Select **Test**, then **add** after the catalog test succeeds.
-5. Open **Apps**, then the **QOpenBB starter** card. Its saved parameters select AAPL company profile and annual income data, plus the GDP series from FRED.
-
-Connect from the Connections page before opening a dashboard. The starter supplies AAPL/GDP parameters. For another widget, use **Add widgets**, choose a native definition and fill its required fields; an empty required Symbol produces a validation error until supplied. The accepted Income journey selects AAPL/MSFT and annual/quarter periods, verifies visible values and recovery, then saves and reopens the dashboard. This is one complete widget journey, not acceptance of every provider/widget. Provider entitlement still determines which data can load.
-
-For startup diagnostics:
-
-```bash
-docker compose logs --tail=100 workspace data-api
-```
-
-Review logs before sharing them for private information. The data API health check checks configuration and installed routes, not live provider access.
-
-## State and updates
-
-Workspace state is stored in `./data/workspace`. Keep that directory and `.env` when replacing containers. The application listens on HTTP port 23003 on all host interfaces; the data API has no published host port.
-
-To update, use the next alpha's matching Compose configuration and both image references, preserving your private settings. Review migration notes and protect existing state before updating.
-
-```bash
-docker compose pull
-docker compose up -d --no-build
-```
+Disposable Compose acceptance confirmed the same administrator UUID and synthetic dashboard database content survive this update: the new credential succeeds and the old one fails. This verifies retained database state; full analyst dashboard UI reopening after container recreation remains separate acceptance.
 
 Alpha backup/restore and rollback compatibility are not yet verified. To stop containers while keeping the bind-mounted state:
 

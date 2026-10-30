@@ -22,7 +22,7 @@ The data API packages the historical observations and native app template togeth
 
 The accepted local candidate supports changing Custom Combination series types immediately after opening the gallery. The previous save/reload workaround has been removed by a native schema correction.
 
-For container replacement, preserve `./data/workspace` and your private `.env`, and use matching Workspace and data API image references as described in [installation and updates](install.md#state-and-updates). The Workspace bind mount retains user state; the data API image supplies the historical datasets and template. Resume an edited dashboard from the sidebar or its saved URL. Selecting the Apps card again can open another copy. Retained-state recreation passed for the identified local candidate: all 48 widget instances covering 36 chart types and their layout survived. This is a container-replacement check, not backup/restore or owner-server deployment acceptance.
+For container replacement, preserve `./data/workspace` and your private `.env`, and use matching Workspace and data API image references as described in [installation and updates](install.md#persistence-and-updates). The Workspace bind mount retains user state; the data API image supplies the historical datasets and template. Resume an edited dashboard from the sidebar or its saved URL. Selecting the Apps card again can open another copy. Retained-state recreation passed for the identified local candidate: all 48 widget instances covering 36 chart types and their layout survived. This is a container-replacement check, not backup/restore or owner-server deployment acceptance.
 
 ## Read the data before the shape
 

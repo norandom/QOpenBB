@@ -9,4 +9,6 @@ Owner scope clarification: this spec owns acceptance of saved research context: 
 
 The owner-approved investment-analysis direction is captured in the [bounded investment-analysis contract](investment-analysis-contract.md), with IA1-IA10 acceptance criteria and staged delivery. This extends the scope without declaring the umbrella requirements/design/tasks complete. Remaining umbrella requirements will be generated as needed.
 
+Owner clarification, 2026-10-30: company selection needs a searchable **Company name** field and an adjacent linked **Symbol** field. The [company-selector requirement](company-selector-requirement.md) records the interaction, listing disambiguation, reuse of the existing discovery API and the boundary between the deployed technical baseline and future analyst UX. Implementation still requires its bounded design/task review.
+
 
