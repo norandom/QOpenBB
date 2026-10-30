@@ -1,6 +1,6 @@
 {
-  "task": "1",
-  "workspace_revision": "ab3c357a00cd9ad7395ea2cad0cdbec09a2f3598",
+  "task": "company-selector",
+  "workspace_revision": "b5193dbd7a553912daa5ea72df981c3fdb49d365",
   "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
   "scope": "Accepted selector source integration and catalog contracts; packaged real-FMP/browser/persistence and image publication remain open.",
   "unchanged_exception_files": {
@@ -11,7 +11,8 @@
     "terminalpro/src/lib/state/copilot.ts": "e848307a8606a0755f8a2858bfd95b334b5a18ae01f8c5036aaf573734fd020c",
     "terminalpro/src/components/types.d.ts": "1b15e9ddd2ebf37140de301370481ed376f118a4ae6e0357478696d9bab49b76",
     "terminalpro/src/components/General/Table/utils.tsx": "e6b175950d521906b0d61f1e3cddd072d11abedee5de948e0fbed6f415fa4513",
-    "backend-api/backend/api/crud.py": "575b2cdeb0f04aab81af60b34074e4b9c2c6e21cfb6559c695e502361defc6e9"
+    "backend-api/backend/api/crud.py": "575b2cdeb0f04aab81af60b34074e4b9c2c6e21cfb6559c695e502361defc6e9",
+    "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx": "4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055"
   },
   "files": {
     "terminalpro/src/components/General/Table/NavBar/companySelection.contract.ts": "05df8c419f6b2c2921e31ddc7e1bbbba785a308b76421d1085d4145d16ee3ac0",
@@ -27,7 +28,9 @@
     "terminalpro/src/components/Widgets/Helpers/useParamGroupBindings.ts": "75f5ad1452085d0bf0bcfe4f0506e945e081354d747b345687d6fdbacfd6f98d",
     "terminalpro/tests/unit/components/Widgets/Helpers/useParamGroupBindings.test.tsx": "110249259162aae6be3f06a5631adab054a8f892e5c2a6cd9d5bfdeb4de44a5b",
     "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx": "4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055",
-    "terminalpro/tests/unit/components/General/Table/NavBar/QueryParams.test.tsx": "b8ff5a51968a5e3d7ecee07cf6371a5a2a9dbb8462824a076df4c5ea54cad0c7"
+    "terminalpro/tests/unit/components/General/Table/NavBar/QueryParams.test.tsx": "b8ff5a51968a5e3d7ecee07cf6371a5a2a9dbb8462824a076df4c5ea54cad0c7",
+    "terminalpro/src/components/General/Table/NavBar/CompareTermsParam.tsx": "ca85178f2e5c0aa8b3a27b6d2dc372724e2a6eab772bd6ad22b7537f91203ac5",
+    "terminalpro/tests/unit/components/General/Table/NavBar/CompareTermsParam.test.tsx": "d5f5ad5b033324445950338c87da1cfc7d2bdd410e7e97cb70d3d1abfd480d8b"
   },
   "checks": {
     "unit_tests": 49,
@@ -193,5 +196,22 @@
     "scoped_strict_types": "passed",
     "live_execution": "unverified",
     "review": "task7.1-review.md"
+  },
+  "comparison_repair": {
+    "status": "source-reviewed; rebuilt runtime acceptance pending",
+    "workspace_revision": "b5193dbd7a553912daa5ea72df981c3fdb49d365",
+    "source_review": "task7.2-comparison-review.md",
+    "focused_cases": 12,
+    "retained_host_cases": 30,
+    "source_size": [
+      215,
+      79,
+      16
+    ],
+    "inventory_physical": 398,
+    "maintained_files": 681,
+    "gate_receipt_sha256": "2f35b7c4617d8fb9ae11acbdb53cb1aabbc0166c23788d88629733045b953e8d",
+    "inventory_sha256": "6a55ceb165a49426db546a262afa0fd2449a280641fe98b14ebce91f113dca2f",
+    "root_source_delta": "One existing comparison control plus focused unit file; previous eight selector modules unchanged."
   }
 }

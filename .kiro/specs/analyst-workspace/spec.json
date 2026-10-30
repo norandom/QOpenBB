@@ -998,7 +998,7 @@
       "active": true,
       "activation": {
         "date": "2026-10-30",
-        "workspace_revision": "ab3c357a00cd9ad7395ea2cad0cdbec09a2f3598",
+        "workspace_revision": "b5193dbd7a553912daa5ea72df981c3fdb49d365",
         "source_sha256": "4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055",
         "measured": {
           "physical": 993,
@@ -1008,15 +1008,16 @@
         "review": "../../../artifacts/reviewed/company-selector/task5.2-review.md",
         "formal_gate": {
           "status": "passed",
-          "maintained_files": 680,
+          "maintained_files": 681,
           "errors": 0,
           "violations": 0,
-          "receipt_sha256": "c6cfc13ea6fd7157ac6d473556a5f45005a74d1bce5f6ca74f7d9a619c526eb4",
-          "review": "../../../artifacts/reviewed/company-selector/task6-review.md",
-          "inventory_physical": 397,
-          "inventory_sha256": "c015f593f204c09387c8f0cde0746a4fffbacc53c7fb91dd09c60fa5c86887e9",
+          "receipt_sha256": "2f35b7c4617d8fb9ae11acbdb53cb1aabbc0166c23788d88629733045b953e8d",
+          "review": "../../../artifacts/reviewed/company-selector/task7.2-comparison-review.md",
+          "inventory_physical": 398,
+          "inventory_sha256": "6a55ceb165a49426db546a262afa0fd2449a280641fe98b14ebce91f113dca2f",
           "supersedes": "Task5.2 minified-inventory gate; corrected exact-byte task6 gate680 files0errors/violations."
-        }
+        },
+        "unchanged_queryparams_rebinding": "QueryParams source and all historical exception targets remain byte-identical; only Workspace revision moved for the reviewed CompareTerms repair."
       }
     },
     "design_approval": "Owner approved bounded design and scoped QueryParams exception on 2026-10-30.",

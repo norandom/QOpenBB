@@ -83,6 +83,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
 - [ ] 7.2 Execute packaged real-data and persistence acceptance
+  - Repair the runtime-discovered controlled-value comparison regression in the existing CompareTermsParam before rebuilding: add/remove must start from the latest external values when no local edit is pending, while rapid pending edits retain their local list. Cancel obsolete queued writes after a contradictory external change; own acknowledgements and equivalent values preserve the search draft. Preserve the open editor, 600 ms debounce and original controls. Cover external-value add/remove and rapid edits with the existing native test runner; map the modified control and enforce 400/300/50.
   - Build the packaged candidate with the existing Dagger workflow and start owned disposable Workspace/data runtimes using the current financial browser fixtures. Reuse the existing Playwright configuration, one worker, zero retries and actual isolated CDP diagnostics; serialize builds and respect the login budget.
   - Run one combined name-to-MSFT and symbol-to-AAPL journey with compatible Profile/Income, an independent comparison group and FRED sentinel. Assert displayed names/symbols and clipped-viewport financial values against actual responses, including period/currency provenance.
   - Save and fresh-login reopen; recreate the owned Workspace with its retained bind and reopen again. Run a separate labelled synthetic keyboard/failure/race case; retain the original Income regression. Capture one settled light/dark pair only.
@@ -106,7 +107,7 @@ All paths below are Workspace-relative unless marked root. This table assigns ow
 | 5.2 | `terminalpro/src/components/General/Table/NavBar/QueryParams.tsx`; extend existing `terminalpro/tests/unit/components/General/Table/NavBar/QueryParams.test.tsx`; coordinated array normalization in the existing group hook/test and raw recovery in the presenter/test; root candidate exception controlled by controller | One integration owner; fresh Astra review; sequential after task 5.1 |
 | 6 | Root source lock/provenance, inventory and affected existing catalog contract checks | Controller; independent source/scope review |
 | 7.1 | Root `tests/e2e/financial-workspace.spec.mts`, existing financial fixture/config only if necessary | Sol; independent Sol case review before candidate execution |
-| 7.2 | Ignored runtime outputs; no concurrent test/source edits | Controller or one Sol verifier; independent Astra evidence review |
+| 7.2 | Existing NavBar `CompareTermsParam.tsx` and its focused native unit file for the bounded controlled-value repair; controller-owned source pin/inventory and ignored runtime outputs; freeze source/tests before each actual browser run | Controller or one Sol verifier; independent Astra evidence review |
 
 Tasks 2 and 3 explicitly skip the default sequential dependency on one another. Their distinct unit files specialize the design's proposed contract test grouping, using the same existing Vitest entry point. No additional harness is introduced. All other tasks are sequential. At most controller + two implementers + one reviewer are active; installs, builds, shared fixtures and commits are serialized. Each task retains implement, independent review, fresh verification and a selective commit.
 
@@ -117,3 +118,7 @@ The existing checker entry is `pipeline/.venv/bin/python -m tools.quality.comple
 Controller completion also updates README/docs checkboxes and `.kiro/breadth.toml` with actual tests/evidence, publishes one concise reviewed record and selected screenshots, and preserves raw/private output in ignored paths. No source or task checkbox is marked complete from planned checks. A meaningful accepted feature triggers both image builds/publication once through the existing milestone workflow; ordinary task pushes run checks without image rebuilding. These are existing delivery obligations, not extra implementation or deployment tasks.
 
 The owner approved this bounded task plan and implementation on 2026-10-30. Neither design approval nor this plan activates a future inventory exception, approves a release, or completes the broader analyst dashboard.
+
+## Implementation Notes
+
+2026-10-30: packaged integration exposed a local comparison-preservation regression: the original editor displayed an externally updated symbol but appended to its stale initial internal list. Independent Astra review classified a controlled-value add/remove repair as necessary within the approved comparison-preservation scope. Keep one state owner and preserve the original editor flow; do not remount it after every value change or weaken the CSV browser check.
