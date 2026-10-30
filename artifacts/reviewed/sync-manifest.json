@@ -190,7 +190,8 @@
     "market-provider-registration",
     "market-runtime-integration",
     "market-financial-consumers",
-    "market-live-financial-inputs"
+    "market-live-financial-inputs",
+    "market-packaged-financial"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -34950,6 +34951,38 @@
       "publishedSHA256": "ebb7246184577da0c89d63713355b1a10f8f88c81fee8aedc93ccdbab9208abb",
       "bytes": 2646,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/packaged-financial/accepted.md",
+      "sourceSHA256": "964292c9f6cfbe1224876243c9d6a2199f2791ad8dd899a81aed1350ebe1bea5",
+      "publishedpath": "artifacts/reviewed/market-packaged-financial/accepted.md",
+      "publishedSHA256": "964292c9f6cfbe1224876243c9d6a2199f2791ad8dd899a81aed1350ebe1bea5",
+      "bytes": 3353,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/packaged-financial-review/review.md",
+      "sourceSHA256": "95c3dfaa01973408b24677671435ae35932242ca9435c383feda925e3a8bc9a8",
+      "publishedpath": "artifacts/reviewed/market-packaged-financial/review.md",
+      "publishedSHA256": "95c3dfaa01973408b24677671435ae35932242ca9435c383feda925e3a8bc9a8",
+      "bytes": 3953,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/packaged-financial/final-source.json",
+      "sourceSHA256": "292bfcb453a332e0285dc344c1b44dfa2e16c6c792d1f3497f8ca997385fc223",
+      "publishedpath": "artifacts/reviewed/market-packaged-financial/final-source.json",
+      "publishedSHA256": "292bfcb453a332e0285dc344c1b44dfa2e16c6c792d1f3497f8ca997385fc223",
+      "bytes": 7900,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/packaged-financial/browser-8/browser-output/financial-workspace-local--3e935-d-recovery-and-saved-reopen/packaged-native-quarter-income.png",
+      "sourceSHA256": "c7cdb423fc1b8061a58feb5d9015831e792410025545e6486cbff26ea70f690d",
+      "publishedpath": "artifacts/reviewed/market-packaged-financial/income-quarter.png",
+      "publishedSHA256": "c7cdb423fc1b8061a58feb5d9015831e792410025545e6486cbff26ea70f690d",
+      "bytes": 24968,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35675,7 +35708,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170594426,
+  "total_payload_bytes": 170634600,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

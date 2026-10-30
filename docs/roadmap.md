@@ -144,7 +144,7 @@ No new runtime image is published at this source-only checkpoint.
 ## Enterprise inputs and schema prerequisite, 2026-10-29
 
 - [x] Typed enterprise-value input dataset and isolated native command accepted. Fifteen of 26 initial tasks are source-accepted. [Evidence](../artifacts/reviewed/market-data-enterprise-schema/accepted.md).
-- [x] Task 4.1: authoritative financial schema projection. All eleven [repair tasks](../.kiro/specs/market-data-integrations/financial-annotations-tasks.md) are accepted, with real native registry/route agreement, 389 affected tests and final source/size review. [Acceptance evidence](../artifacts/reviewed/annotations-native-join/accepted.md). Main batch: 24/26 accepted; packaged consumer acceptance and image publication remain open.
+- [x] Task 4.1: authoritative financial schema projection. All eleven [repair tasks](../.kiro/specs/market-data-integrations/financial-annotations-tasks.md) are accepted, with real native registry/route agreement, 389 affected tests and final source/size review. [Acceptance evidence](../artifacts/reviewed/annotations-native-join/accepted.md). Main batch: 25/26 accepted; packaged Income exploration is accepted and image publication remains open.
 - [x] Task 4.2: descriptor-driven explicit provider guard; baseline defaults preserved, omitted selections rejected before execution. [Acceptance](../artifacts/reviewed/market-provider-policy/accepted.md). Installed service activation is accepted in task 5.2.
 - [x] Task 4.3: scoped safe API failure component, native mounted-route/canary checks and legacy status compatibility. [Acceptance](../artifacts/reviewed/market-http-errors/accepted.md). Installed service activation is accepted in task 5.2.
 - [x] Task 4.4: preserve and validate financial catalog descriptors and detect consumer drift. [Acceptance](../artifacts/reviewed/market-financial-catalog/accepted.md).
@@ -153,7 +153,7 @@ No new runtime image is published at this source-only checkpoint.
 - [x] Task 5.2: activate discovery, provider policy and safe errors in the exact-source installed service. [Acceptance](../artifacts/reviewed/market-runtime-integration/accepted.md).
 - [x] Task 5.3: eleven reusable native widgets and coordinated source/catalog pin promotion. [Acceptance](../artifacts/reviewed/market-financial-consumers/accepted.md).
 - [x] Task 6.1: real FMP financial inputs and FRED Treasury context, source/API equality and scoped access evidence. [Acceptance](../artifacts/reviewed/market-live-financial-inputs/accepted.md).
-- [ ] Task 6.2: verify the packaged exploratory dashboard.
+- [x] Task 6.2: packaged native Income exploration across companies/periods, visible real values, error recovery and save/reopen. [Acceptance](../artifacts/reviewed/market-packaged-financial/accepted.md). Eleven definitions are discovered; this is one complete UI journey.
 - [ ] Task 6.3: publish and verify the integrated image milestone.
 
 The repair keeps static financial declarations in one owner, with dynamic FRED/result semantics resolved at runtime. Existing adapter values and installed baseline behavior remain intact.

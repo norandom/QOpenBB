@@ -1,0 +1,304 @@
+{
+  "date": "2026-10-30T08:53:32.420859+00:00",
+  "root_revision": "849c36cb8e6ee4d44a61f09e6237ea6cb0402057",
+  "source_revisions": {
+    "workspace": "c652b909627d7634241eee2ed13a561fbb4f177b",
+    "data_api": "28423762e8cc3faae978e770899834b41e7cde99"
+  },
+  "images": {
+    "workspace": "sha256:a05d643aa5b6364bc27f5f68b01d18dc3a57cf8f35ce167370535d61aaee779a",
+    "data-api": "sha256:754b619cd1bdaa4d4641d271d3594659ffaa7665bdd56b4a447c1fc2f9ed1020"
+  },
+  "packaged_image_only": true,
+  "release_image_verified": false,
+  "expected_committed_files": {
+    "tests/e2e/financial-workspace.spec.mts": {
+      "sha256": "242848e1e9600251820bac66cf270f9f5ab8ebf70d1b04add75271c8cf1c722e",
+      "bytes": 17428
+    },
+    "verification/financial-workspace.config.ts": {
+      "sha256": "e3f594c618ae9b4cefeb6cff003f89a3aa552c234d7227fb7f9ca91b87a0e4b1",
+      "bytes": 203
+    },
+    "verification/playwright.config.ts": {
+      "sha256": "0e794b940a6af70c6672d68730777c8724327dc76446baf4c0b9ce3d633bd910",
+      "bytes": 513
+    },
+    ".kiro/complexity-budgets.json": {
+      "sha256": "d31ce6cd51c85822ec392b69fdf8bbfae6c41bef17e7406edbb0cb080e50d8c8",
+      "bytes": 67332
+    }
+  },
+  "browser": {
+    "command": [
+      "/mnt/d/Source/QOpenBB/artifacts/task-1.2/node-v24.22.1-linux-x64/bin/node",
+      "/mnt/d/Source/QOpenBB/verification/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "verification/financial-workspace.config.ts"
+    ],
+    "returncode": 0,
+    "tests_passed": 1,
+    "duration_ms": 26895,
+    "skipped": 0,
+    "retries": 0,
+    "native_definitions_checked": 11,
+    "ui_dataset": "equity/fundamental/income",
+    "observations": [
+      {
+        "symbol": "AAPL",
+        "period": "annual",
+        "row": {
+          "currency": "USD",
+          "fiscal_period": "FY",
+          "period_ending": "2025-09-27",
+          "revenue": 416161000000
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "period": "annual",
+        "row": {
+          "currency": "USD",
+          "fiscal_period": "FY",
+          "period_ending": "2026-06-30",
+          "revenue": 331839000000
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "period": "annual",
+        "row": {
+          "currency": "USD",
+          "fiscal_period": "FY",
+          "period_ending": "2025-09-27",
+          "revenue": 416161000000
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "row": {
+          "currency": "USD",
+          "fiscal_period": "Q3",
+          "period_ending": "2026-06-27",
+          "revenue": 109417000000
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "row": {
+          "currency": "USD",
+          "fiscal_period": "Q3",
+          "period_ending": "2026-06-27",
+          "revenue": 109417000000
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "row": {
+          "currency": "USD",
+          "fiscal_period": "Q3",
+          "period_ending": "2026-06-27",
+          "revenue": 109417000000
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "row": {
+          "currency": "USD",
+          "fiscal_period": "Q3",
+          "period_ending": "2026-06-27",
+          "revenue": 109417000000
+        }
+      }
+    ],
+    "requests": [
+      {
+        "symbol": null,
+        "period": "annual",
+        "provider": "fmp",
+        "limit": null,
+        "phase": "initial"
+      },
+      {
+        "symbol": null,
+        "period": "annual",
+        "provider": "fmp",
+        "limit": null,
+        "phase": "initial"
+      },
+      {
+        "symbol": "AAPL",
+        "period": "annual",
+        "provider": "fmp",
+        "limit": null,
+        "phase": "selected"
+      },
+      {
+        "symbol": "MSFT",
+        "period": "annual",
+        "provider": "fmp",
+        "limit": null,
+        "phase": "selected"
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "provider": "fmp",
+        "limit": null,
+        "phase": "selected"
+      },
+      {
+        "symbol": null,
+        "period": "quarter",
+        "provider": "fmp",
+        "limit": null,
+        "phase": "invalid"
+      },
+      {
+        "symbol": null,
+        "period": "quarter",
+        "provider": "fmp",
+        "limit": null,
+        "phase": "invalid"
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "provider": "fmp",
+        "limit": null,
+        "phase": "selected"
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "provider": "fmp",
+        "limit": null,
+        "phase": "selected"
+      }
+    ],
+    "responses": [
+      {
+        "symbol": null,
+        "period": "annual",
+        "status": 422,
+        "phase": "initial"
+      },
+      {
+        "symbol": null,
+        "period": "annual",
+        "status": 422,
+        "phase": "initial"
+      },
+      {
+        "symbol": "AAPL",
+        "period": "annual",
+        "status": 200,
+        "phase": "selected"
+      },
+      {
+        "symbol": "MSFT",
+        "period": "annual",
+        "status": 200,
+        "phase": "selected"
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "status": 200,
+        "phase": "selected"
+      },
+      {
+        "symbol": null,
+        "period": "quarter",
+        "status": 422,
+        "phase": "invalid"
+      },
+      {
+        "symbol": null,
+        "period": "quarter",
+        "status": 422,
+        "phase": "invalid"
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "status": 200,
+        "phase": "selected"
+      },
+      {
+        "symbol": "AAPL",
+        "period": "quarter",
+        "status": 200,
+        "phase": "selected"
+      }
+    ],
+    "invalid": {
+      "status": 422,
+      "code": "invalid_parameters"
+    },
+    "programmatic_query_compared": true,
+    "diagnostics": {
+      "errors": [],
+      "failures": [
+        {
+          "path": "/data/api/v1/equity/fundamental/income",
+          "status": 422
+        },
+        {
+          "path": "/data/api/v1/equity/fundamental/income",
+          "status": 422
+        },
+        {
+          "path": "/data/api/v1/equity/fundamental/income",
+          "status": 422
+        },
+        {
+          "path": "/data/api/v1/equity/fundamental/income",
+          "status": 422
+        }
+      ],
+      "consoleErrors": [
+        {
+          "message": "Failed to load resource: the server responded with a status of 422 (Unprocessable Content)",
+          "path": "/data/api/v1/equity/fundamental/income"
+        },
+        {
+          "message": "Failed to load resource: the server responded with a status of 422 (Unprocessable Content)",
+          "path": "/data/api/v1/equity/fundamental/income"
+        },
+        {
+          "message": "Failed to load resource: the server responded with a status of 422 (Unprocessable Content)",
+          "path": "/data/api/v1/equity/fundamental/income"
+        },
+        {
+          "message": "Failed to load resource: the server responded with a status of 422 (Unprocessable Content)",
+          "path": "/data/api/v1/equity/fundamental/income"
+        }
+      ],
+      "requestFailures": []
+    },
+    "reopened_diagnostics": {
+      "errors": [],
+      "failures": [],
+      "consoleErrors": [],
+      "requestFailures": []
+    }
+  },
+  "caps": {
+    "files": 79,
+    "errors": 0,
+    "violations": 0,
+    "combined_acceptance": "passed"
+  },
+  "limitations": [
+    "Income UI journey only; eleven native catalog definitions checked, not eleven UI journeys.",
+    "Local exact-image acceptance; published image and operator deployment remain unverified.",
+    "Existing visible currency/date/source and separate API metadata; no financial metadata pane.",
+    "Current operator account entitlements remain unknown."
+  ]
+}

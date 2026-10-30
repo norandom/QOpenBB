@@ -228,7 +228,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
   - _Depends: 5.3_
   - _Requirements: 2.1, 2.6, 4.1, 4.2, 4.3, 4.5, 4.7, 4.8, 8.3, 8.4_
 
-- [ ] 6.2 Verify the packaged exploratory widget journey
+- [x] 6.2 Verify the packaged exploratory widget journey
   - Build the candidate through existing Dagger tooling after source checks; reuse the isolated Workspace harness for installed discovery, changing company/period and comparing visible real values with the accepted API data. Keep browser/CDP diagnostics clean.
   - Done when a second supported symbol works without dashboard-specific plumbing and visible errors/metadata are truthful. New shared-dashboard/scenario persistence remains analyst-workspace scope.
   - Caps: tests/evidence/generated output excluded; production fixes reopen their capped task. This is one integrated journey, not a separate harness per dataset.
@@ -309,6 +309,8 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 - Main5.3 accepted 2026-10-30: [native consumer integration](../../../artifacts/reviewed/market-financial-consumers/accepted.md), eleven widgets, preserved baseline IDs, exact local Dagger image and independently reviewed source/catalog pin promotion. Main23/26. Live access, packaged Workspace and image publication remain6.1-6.3.
 
 - Main6.1 accepted 2026-10-30: [live financial inputs](../../../artifacts/reviewed/market-live-financial-inputs/accepted.md), fifteen live checks, thirteen FMP plus two FRED requests, exact selected-field comparisons and independent offline edge/failure review. Main24/26. Current installer access remains unknown; packaged Workspace and image release remain6.2-6.3.
+
+- Main6.2 accepted 2026-10-30: [packaged exploration](../../../artifacts/reviewed/market-packaged-financial/accepted.md), exact Dagger image pair, eleven native definitions and one real Income UI journey across AAPL/MSFT annual and AAPL quarter. Visible values, missing-input recovery, refresh, save/reopen and CDP pass after independent viewport review. Main25/26; image publication remains6.3.
 
 ## Implementation Notes
 

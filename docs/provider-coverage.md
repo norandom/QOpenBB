@@ -61,6 +61,7 @@ The [widget requirements](../.kiro/specs/openbb-self-service/parameterized-widge
 - [x] Install service safeguards and discovery in the exact-source candidate: [acceptance](../artifacts/reviewed/market-runtime-integration/accepted.md).
 - [x] Regenerate eleven reusable native widgets and promote source/catalog pins: [acceptance](../artifacts/reviewed/market-financial-consumers/accepted.md).
 - [x] Validate the initial eleven datasets with real provider observations: [scope and evidence](../artifacts/reviewed/market-live-financial-inputs/accepted.md). Access succeeded for the recorded verification queries; each installation still needs its own entitlement check.
-- [ ] Verify packaged consumers, then publish updated images. Existing alpha images retain their baseline until that release.
+- [x] Verify the packaged Income journey across AAPL/MSFT and annual/quarterly periods, including visible financial values, errors and save/reopen. [Acceptance](../artifacts/reviewed/market-packaged-financial/accepted.md). Eleven native definitions are discovered; the other ten do not gain full UI acceptance from this test.
+- [ ] Publish updated images. Existing alpha images retain their baseline until that release.
 
 These checks track source acceptance, not completion of the broader research families.

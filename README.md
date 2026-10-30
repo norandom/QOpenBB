@@ -243,7 +243,7 @@ Credentials belong in ignored `.env`; [.env.sample](.env.sample) contains public
 | Workstream | Scope |
 | --- | --- |
 | [Prototype delivery](.kiro/specs/openbb-self-service/spec.json) | Current baseline, CI/CD, image publication and installation |
-| [Market data](.kiro/specs/market-data-integrations/requirements.md) | FMP horizontal coverage, FRED, Yahoo and future provider adapters. First batch: 24/26 tasks accepted; shared contracts and ten FMP adapters accepted; FRED provenance, installed discovery and API safeguards accepted; eleven reusable widgets and live FMP/FRED inputs verified; packaged acceptance and image release next |
+| [Market data](.kiro/specs/market-data-integrations/requirements.md) | FMP horizontal coverage, FRED, Yahoo and future provider adapters. First batch: 25/26 tasks accepted; shared contracts and ten FMP adapters accepted; FRED provenance, installed discovery and API safeguards accepted; eleven reusable widgets and live FMP/FRED inputs verified; packaged Income exploration accepted; image release next |
 | [Analyst workspace](.kiro/specs/analyst-workspace/requirements.md) | Reusable widgets, command line, linked context, theme, renderer completion and saved research context |
 | [Workspace AI](.kiro/specs/workspace-ai/requirements.md) | Anthropic discovery, grounding and streaming |
 | [OpenBB Excel](.kiro/specs/openbb-excel/requirements.md) | Add-in and generated functions; retains the Anthropic-first dependency |
