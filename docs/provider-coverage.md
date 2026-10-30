@@ -62,6 +62,6 @@ The [widget requirements](../.kiro/specs/openbb-self-service/parameterized-widge
 - [x] Regenerate eleven reusable native widgets and promote source/catalog pins: [acceptance](../artifacts/reviewed/market-financial-consumers/accepted.md).
 - [x] Validate the initial eleven datasets with real provider observations: [scope and evidence](../artifacts/reviewed/market-live-financial-inputs/accepted.md). Access succeeded for the recorded verification queries; each installation still needs its own entitlement check.
 - [x] Verify the packaged Income journey across AAPL/MSFT and annual/quarterly periods, including visible financial values, errors and save/reopen. [Acceptance](../artifacts/reviewed/market-packaged-financial/accepted.md). Eleven native definitions are discovered; the other ten do not gain full UI acceptance from this test.
-- [ ] Publish updated images. Existing alpha images retain their baseline until that release.
+- [x] Publish the first financial-input image pair and verify its eleven native definitions. [alpha-41030227140-1](../artifacts/reviewed/financial-input-milestone/accepted.md) includes the accepted initial adapters and contracts; wider provider families and installer-specific access remain open.
 
 These checks track source acceptance, not completion of the broader research families.

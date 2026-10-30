@@ -6,6 +6,7 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 ## Requirements
 
+- Linux or WSL on x86-64; the alpha images target `linux/amd64`.
 - Docker with the Compose plugin.
 - Port 23003 available.
 - FMP and FRED API keys.
@@ -18,20 +19,22 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-40689838352-1/manifest.json) for `alpha-40689838352-1`:
+Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-41030227140-1/manifest.json) for `alpha-41030227140-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:957f02d18b8365412e68016b1b9e7184a4383cec1fc35774fdc0193ab35d219f` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:59b94139b34e2195e83d69be959c3f242fdf4ddccf5b2764c0d5154612aab057` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:b40a2472b3a5f6ca325aa126b7a2131aa517dc1a622f4f1a3a7cae24f105f269` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:743b9fd657e8e2e8346a42fb8b3f8146b49ebf134987ffcd6363c879ffc5e6d1` |
 
-Both CI jobs, public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/python-source-packaging/publication-review.md).
+Both CI jobs, three public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/financial-input-milestone/review.md).
 
-This alpha packages the backend with native locked uv, readable Python source under CPython and embedded Valkey 9.0.7. The [accepted local candidate](../artifacts/reviewed/python-source-packaging/runtime-review.md) passes the 36-chart gallery with save/fresh-login reopen and login/current-password checks with clean diagnostics. A separate synthetic Redis 7.0.15 snapshot/RQ job and database-marker probe passes recreation; the gallery browser journey itself did not test recreation. Publication checks identify the released images; browser acceptance has not been repeated on those CI image bytes. The disabled reset form's warnings retain source-test coverage, not browser acceptance. Earlier [login](../artifacts/reviewed/login-password/application-review.md), [historical gallery](../artifacts/reviewed/chart-gallery/publication-review.md) and [live-FMP onboarding](../artifacts/reviewed/prototype-onboarding/application-review.md) evidence remain historical; owner-server deployment remains open.
+This alpha packages native locked uv, readable Python source under CPython and embedded Valkey 9.0.7. It adds ten FMP financial-input adapters and the generic FRED series contract, served through eleven reusable native widget definitions. [Live provider acceptance](../artifacts/reviewed/market-live-financial-inputs/accepted.md) and the [local packaged Income journey](../artifacts/reviewed/market-packaged-financial/accepted.md) cover the recorded data and user flows. The published data image separately passes installed catalog/source checks without provider calls. CI Workspace image bytes have not repeated browser acceptance, and the owner's deployment is separate.
+
+The earlier [Python-source/Valkey acceptance](../artifacts/reviewed/python-source-packaging/runtime-review.md), [login repair](../artifacts/reviewed/login-password/application-review.md) and [historical chart gallery](../artifacts/reviewed/chart-gallery/publication-review.md) remain scoped historical evidence. Backup/restore and rollback remain unverified.
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-40689838352-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-40689838352-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-40689838352-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-41030227140-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-41030227140-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-41030227140-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
@@ -98,7 +101,7 @@ To open the supported starter app after login:
 4. Select **Test**, then **add** after the catalog test succeeds.
 5. Open **Apps**, then the **QOpenBB starter** card. Its saved parameters select AAPL company profile and annual income data, plus the GDP series from FRED.
 
-Connect from the Connections page before opening a dashboard. Adding a generic widget to an existing dashboard leaves its required symbol empty and currently produces validation errors; the required-symbol guard remains open. Set the required parameters before expecting generic-widget data. The starter supplies AAPL/GDP parameters; the accepted financial comparison covers annual AAPL income, not every provider/widget. Provider entitlement still determines which data can load.
+Connect from the Connections page before opening a dashboard. The starter supplies AAPL/GDP parameters. For another widget, use **Add widgets**, choose a native definition and fill its required fields; an empty required Symbol produces a validation error until supplied. The accepted Income journey selects AAPL/MSFT and annual/quarter periods, verifies visible values and recovery, then saves and reopens the dashboard. This is one complete widget journey, not acceptance of every provider/widget. Provider entitlement still determines which data can load.
 
 For startup diagnostics:
 

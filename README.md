@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-40689838352-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-41030227140-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -81,7 +81,7 @@ The current prototype alpha includes four reviewed repairs: HTTP 200/null for an
 - [x] Complete the isolated pull-only local installation rehearsal.
 - [ ] Verify owner-server deployment and repair the generic-widget empty-required-symbol guard.
 
-See the [independent application review](artifacts/reviewed/prototype-onboarding/application-review.md), [application result](artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](docs/prototype-delivery.md#current-prototype-repair). Broader provider acceptance, analyst persistence and infrastructure recovery remain separate.
+See the [independent application review](artifacts/reviewed/prototype-onboarding/application-review.md), [application result](artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](docs/prototype-delivery.md#earlier-prototype-repair). Broader provider acceptance, analyst persistence and infrastructure recovery remain separate.
 
 Published: [scatter and bubble](.kiro/specs/analyst-workspace/xy-chart-milestone.md).
 
@@ -243,7 +243,7 @@ Credentials belong in ignored `.env`; [.env.sample](.env.sample) contains public
 | Workstream | Scope |
 | --- | --- |
 | [Prototype delivery](.kiro/specs/openbb-self-service/spec.json) | Current baseline, CI/CD, image publication and installation |
-| [Market data](.kiro/specs/market-data-integrations/requirements.md) | FMP horizontal coverage, FRED, Yahoo and future provider adapters. First batch: 25/26 tasks accepted; shared contracts and ten FMP adapters accepted; FRED provenance, installed discovery and API safeguards accepted; eleven reusable widgets and live FMP/FRED inputs verified; packaged Income exploration accepted; image release next |
+| [Market data](.kiro/specs/market-data-integrations/requirements.md) | FMP horizontal coverage, FRED, Yahoo and future provider adapters. First batch: 26/26 tasks accepted and published; shared contracts and ten FMP adapters accepted; FRED provenance, installed discovery and API safeguards accepted; eleven reusable widgets and live FMP/FRED inputs verified; packaged Income exploration and public image release verified; broader families remain follow-on work |
 | [Analyst workspace](.kiro/specs/analyst-workspace/requirements.md) | Reusable widgets, command line, linked context, theme, renderer completion and saved research context |
 | [Workspace AI](.kiro/specs/workspace-ai/requirements.md) | Anthropic discovery, grounding and streaming |
 | [OpenBB Excel](.kiro/specs/openbb-excel/requirements.md) | Add-in and generated functions; retains the Anthropic-first dependency |

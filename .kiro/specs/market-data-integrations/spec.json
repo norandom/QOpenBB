@@ -1,7 +1,7 @@
 {
   "feature_name": "market-data-integrations",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-29",
+  "updated_at": "2026-10-30",
   "language": "en",
   "phase": "tasks-generated",
   "approvals": {
@@ -79,5 +79,16 @@
       "final_native_tests": 8,
       "date": "2026-10-29"
     }
+  },
+  "implementation_progress": {
+    "initial_batch": {
+      "accepted_tasks": 26,
+      "total_tasks": 26,
+      "release": "alpha-41030227140-1",
+      "source_revision": "6cca7e40c7e9830546b7051dc36995902acede35",
+      "evidence": "../../../artifacts/reviewed/financial-input-milestone/accepted.md"
+    },
+    "broader_scope": "open",
+    "follow_on_plan": "tasks.md#follow-on-scope-not-executable-in-this-batch"
   }
 }

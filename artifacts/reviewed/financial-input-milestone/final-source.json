@@ -1,0 +1,445 @@
+{
+  "date": "2026-10-30T09:11:40.448660+00:00",
+  "root_revision": "6cca7e40c7e9830546b7051dc36995902acede35",
+  "source_revisions": {
+    "workspace": "c652b909627d7634241eee2ed13a561fbb4f177b",
+    "data_api": "28423762e8cc3faae978e770899834b41e7cde99"
+  },
+  "workflow": {
+    "id": 41030227140,
+    "url": "https://github.com/norandom/QOpenBB/actions/runs/41030227140",
+    "event": "workflow_dispatch",
+    "path": ".github/workflows/prototype.yml",
+    "head_branch": "main",
+    "run_attempt": 1,
+    "conclusion": "success",
+    "jobs": {
+      "candidate": "success",
+      "publish-alpha": "success"
+    },
+    "dagger_build_step": "success"
+  },
+  "release": {
+    "tag": "alpha-41030227140-1",
+    "url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-41030227140-1",
+    "is_prerelease": true,
+    "tag_commit": "6cca7e40c7e9830546b7051dc36995902acede35",
+    "assets": [
+      {
+        "name": "compose.yaml",
+        "url": "https://github.com/norandom/QOpenBB/releases/download/alpha-41030227140-1/compose.yaml",
+        "status": 200,
+        "sha256": "sha256:0dda6c229eac7e6c7a8c55fa717bf338acbc5cd5e1634b8e2702de5393344724",
+        "bytes": 1359
+      },
+      {
+        "name": "default.env.sample",
+        "url": "https://github.com/norandom/QOpenBB/releases/download/alpha-41030227140-1/default.env.sample",
+        "status": 200,
+        "sha256": "sha256:8958b109b85f8e818e5b6d595b422881ed2e611f45106bde2ec268afc552348b",
+        "bytes": 1299
+      },
+      {
+        "name": "manifest.json",
+        "url": "https://github.com/norandom/QOpenBB/releases/download/alpha-41030227140-1/manifest.json",
+        "status": 200,
+        "sha256": "sha256:5569777ee9a346acb1371c5100e59378b66ca88808cd6190669ac6361ac4c16d",
+        "bytes": 7061
+      }
+    ]
+  },
+  "images": {
+    "workspace": {
+      "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:b40a2472b3a5f6ca325aa126b7a2131aa517dc1a622f4f1a3a7cae24f105f269",
+      "tag_reference": "ghcr.io/norandom/qopenbb-workspace:alpha-41030227140-1",
+      "latest_reference": "ghcr.io/norandom/qopenbb-workspace:latest",
+      "manifest_digest": "sha256:b40a2472b3a5f6ca325aa126b7a2131aa517dc1a622f4f1a3a7cae24f105f269",
+      "config_digest": "sha256:dbe70973bff918a587691231526c39660591b5266d90eea18de202a2cb4bc1d1",
+      "os": "linux",
+      "architecture": "amd64",
+      "provenance_sha256": "00009e5cc022e913438d3eebeb5504e62ed6d77857027a813b80d45a25566c11"
+    },
+    "data-api": {
+      "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:743b9fd657e8e2e8346a42fb8b3f8146b49ebf134987ffcd6363c879ffc5e6d1",
+      "tag_reference": "ghcr.io/norandom/qopenbb-data-api:alpha-41030227140-1",
+      "latest_reference": "ghcr.io/norandom/qopenbb-data-api:latest",
+      "manifest_digest": "sha256:743b9fd657e8e2e8346a42fb8b3f8146b49ebf134987ffcd6363c879ffc5e6d1",
+      "config_digest": "sha256:515f645474f797e0ba2664f175ba22546433a437d5e03fb2b766b4191a007a6d",
+      "os": "linux",
+      "architecture": "amd64",
+      "provenance_sha256": "8a2ad32bdaeebf5c76c295c0a52e531e2184edddb09e3b51b1dbedd0d827ff7f"
+    }
+  },
+  "anonymous_verification": {
+    "pulls": 6,
+    "returncode": 0,
+    "all_manifest_config_labels_platform_repo_digests_match": true,
+    "final_latest_pair_matches": true,
+    "authentication": "Fresh empty Docker config; sanitized environment; no registry credentials",
+    "release_assets": 3,
+    "http_status": 200,
+    "asset_hashes_and_sizes_match": true,
+    "compose_and_env_match_committed_bytes": true,
+    "compose_parser_only": true
+  },
+  "financial_runtime": {
+    "runtime_inputs": {
+      "contracts/apps.json": {
+        "sha256": "2b6a92b2d18c02d8003fcff6ff72ddfc51a8bb7dcf799c8c60b655ad1385c6f6",
+        "bytes": 2649,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": true
+      },
+      "contracts/gallery/catalog.json": {
+        "sha256": "f457ff7d7754c2fc038ed2294010043cf3a10d9ab63771b19ecb3f744b5180f9",
+        "bytes": 65335,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": true
+      },
+      "contracts/gallery/data.json": {
+        "sha256": "e453f9067b2afd7eac12ba7cfbfabc39b1f188f7a207fbc42eefe4254d1fc60c",
+        "bytes": 82749,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": true
+      },
+      "contracts/widgets.json": {
+        "sha256": "891bb59f7c74ec1e637f685b1053e4fc338bc38fb2ddfc2c04d9b20abbdc96fa",
+        "bytes": 78271,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": true
+      },
+      "docs/reference/provider-coverage.json": {
+        "sha256": "a2443e54c0e8fe867fe6f3b204dd61882472e8f333087d959bea7bd20be846a2",
+        "bytes": 24379,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": true
+      },
+      "services/data-api/pyproject.toml": {
+        "sha256": "bb512a07350afdb40579c52cddbbf62579669222a82f8461d9bf73e4026b1343",
+        "bytes": 965,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      },
+      "services/data-api/qopenbb_data/__init__.py": {
+        "sha256": "ae51112ea39957a5fcf04d910e482207dc09d1e939adf085f7986c67ba5a9b3e",
+        "bytes": 28,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      },
+      "services/data-api/qopenbb_data/app.py": {
+        "sha256": "222b1da1b611b51cfac58afe827e04acb125ef97cc03b900a0149eb0d647b27b",
+        "bytes": 5290,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      },
+      "services/data-api/qopenbb_data/config.py": {
+        "sha256": "052f72d31c0eb9f21877d16d2469793dbe3be584df3dcd33e93c016898128faa",
+        "bytes": 2431,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      },
+      "services/data-api/qopenbb_data/financial_catalog.py": {
+        "sha256": "8ed511250b2658efe8b2e27f4173fad11dcc75b84b83209a108f45e5fc9e71e1",
+        "bytes": 12474,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      },
+      "services/data-api/qopenbb_data/financial_errors.py": {
+        "sha256": "452b91234f11fade4891042558dfa6fd8517ab3c1980f586d61a4a4beb47092d",
+        "bytes": 9552,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      },
+      "services/data-api/qopenbb_data/financial_openapi.py": {
+        "sha256": "625decb0486387d96542ad8fa4cf315add97b66330a0bc2b006f1d8513768d37",
+        "bytes": 12188,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      },
+      "services/data-api/qopenbb_data/financial_policy.py": {
+        "sha256": "3d0eeef413fd69af3fc173797a38aba7ce30cca5d74d3b4d1368d6ef80e08348",
+        "bytes": 2955,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      },
+      "services/data-api/qopenbb_data/gallery.py": {
+        "sha256": "9960ea50cf54f7158461ef039ce6d60c3f0431e2fdf7c76e3f6834424376c856",
+        "bytes": 9287,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      },
+      "services/data-api/uv.lock": {
+        "sha256": "8279a573c3d0d2c531279563f3e4771adc6daddf3b13eca12a5fd6563ce1940f",
+        "bytes": 117233,
+        "root_matches": true,
+        "ci_provenance_matches": true,
+        "retained_ci_file_matches": false
+      }
+    },
+    "runtime_inputs_sha256": "4562196f5876468460fa88edec1ca43b9bbe9ec057bbb645545ea126ee8ad322",
+    "resident_inputs": {
+      "contracts/apps.json": {
+        "installed_path": "/app/qopenbb_data/catalog/apps.json",
+        "sha256": "2b6a92b2d18c02d8003fcff6ff72ddfc51a8bb7dcf799c8c60b655ad1385c6f6"
+      },
+      "contracts/gallery/catalog.json": {
+        "installed_path": "/app/qopenbb_data/catalog/gallery/catalog.json",
+        "sha256": "f457ff7d7754c2fc038ed2294010043cf3a10d9ab63771b19ecb3f744b5180f9"
+      },
+      "contracts/gallery/data.json": {
+        "installed_path": "/app/qopenbb_data/catalog/gallery/data.json",
+        "sha256": "e453f9067b2afd7eac12ba7cfbfabc39b1f188f7a207fbc42eefe4254d1fc60c"
+      },
+      "contracts/widgets.json": {
+        "installed_path": "/app/qopenbb_data/catalog/widgets.json",
+        "sha256": "891bb59f7c74ec1e637f685b1053e4fc338bc38fb2ddfc2c04d9b20abbdc96fa"
+      },
+      "docs/reference/provider-coverage.json": {
+        "installed_path": "/app/qopenbb_data/provider-coverage.json",
+        "sha256": "a2443e54c0e8fe867fe6f3b204dd61882472e8f333087d959bea7bd20be846a2"
+      },
+      "services/data-api/qopenbb_data/__init__.py": {
+        "installed_path": "/app/qopenbb_data/__init__.py",
+        "sha256": "ae51112ea39957a5fcf04d910e482207dc09d1e939adf085f7986c67ba5a9b3e"
+      },
+      "services/data-api/qopenbb_data/app.py": {
+        "installed_path": "/app/qopenbb_data/app.py",
+        "sha256": "222b1da1b611b51cfac58afe827e04acb125ef97cc03b900a0149eb0d647b27b"
+      },
+      "services/data-api/qopenbb_data/config.py": {
+        "installed_path": "/app/qopenbb_data/config.py",
+        "sha256": "052f72d31c0eb9f21877d16d2469793dbe3be584df3dcd33e93c016898128faa"
+      },
+      "services/data-api/qopenbb_data/financial_catalog.py": {
+        "installed_path": "/app/qopenbb_data/financial_catalog.py",
+        "sha256": "8ed511250b2658efe8b2e27f4173fad11dcc75b84b83209a108f45e5fc9e71e1"
+      },
+      "services/data-api/qopenbb_data/financial_errors.py": {
+        "installed_path": "/app/qopenbb_data/financial_errors.py",
+        "sha256": "452b91234f11fade4891042558dfa6fd8517ab3c1980f586d61a4a4beb47092d"
+      },
+      "services/data-api/qopenbb_data/financial_openapi.py": {
+        "installed_path": "/app/qopenbb_data/financial_openapi.py",
+        "sha256": "625decb0486387d96542ad8fa4cf315add97b66330a0bc2b006f1d8513768d37"
+      },
+      "services/data-api/qopenbb_data/financial_policy.py": {
+        "installed_path": "/app/qopenbb_data/financial_policy.py",
+        "sha256": "3d0eeef413fd69af3fc173797a38aba7ce30cca5d74d3b4d1368d6ef80e08348"
+      },
+      "services/data-api/qopenbb_data/gallery.py": {
+        "installed_path": "/app/qopenbb_data/gallery.py",
+        "sha256": "9960ea50cf54f7158461ef039ce6d60c3f0431e2fdf7c76e3f6834424376c856"
+      }
+    },
+    "native_count": 11,
+    "financial_descriptor_count": 11,
+    "native_widgets": [
+      {
+        "widget": "economy_fred_series_fred_obb",
+        "path": "/api/v1/economy/fred_series",
+        "provider": "fred",
+        "model": "FredSeries",
+        "source_path": "openbb_platform/providers/fred/openbb_fred/models/series.py",
+        "source_sha256": "1fb5d2ef1f8c72fcd4950b296328b5fecf8d602ec8476d174ac9f460e2535622",
+        "contract_sha256": "e9314dacbab10fb3af2fc7a39a66b831530eefb7113a8b32a11b4e3efdb23546",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_compare_peers_fmp_obb",
+        "path": "/api/v1/equity/compare/peers",
+        "provider": "fmp",
+        "model": "EquityPeers",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/equity_peers.py",
+        "source_sha256": "20a0ba5f378add5c9d8789581937437adcfe92dd99cdd1f848e86c1322e123e6",
+        "contract_sha256": "32ba32128f1e6d974d3bd401c7d2c2b6b6480967550b0a4d1b2432cb000f7f09",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_fundamental_balance_fmp_obb",
+        "path": "/api/v1/equity/fundamental/balance",
+        "provider": "fmp",
+        "model": "BalanceSheet",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet.py",
+        "source_sha256": "a95ade737ad3409ce36720e942bd2a2e50ba1cc1a8368ccc05c12f00a558d803",
+        "contract_sha256": "61e703dd7250e19342db3e0f7480782b74bc2327a22045cff847d76a59507181",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_fundamental_cash_fmp_obb",
+        "path": "/api/v1/equity/fundamental/cash",
+        "provider": "fmp",
+        "model": "CashFlowStatement",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/cash_flow.py",
+        "source_sha256": "3c3fbbc335263ccafdf83c8c9ed49c2d6710e6f9680074db01adb304c8a6b52e",
+        "contract_sha256": "8261ff442ac537863bb0a64ac03715a7c1bb6d3caa118ffca6dd6e3031d4cc31",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_fundamental_enterprise_values_fmp_obb",
+        "path": "/api/v1/equity/fundamental/enterprise_values",
+        "provider": "fmp",
+        "model": "EnterpriseValues",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/enterprise_values.py",
+        "source_sha256": "5e5e11b9679d915259d739b2da2c9e547e44fbfb35f713e62e52f74894417004",
+        "contract_sha256": "e60f782d18437e1983ed0df6ba2cff723ee1110450581a05f07827c9df92e778",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_fundamental_income_fmp_obb",
+        "path": "/api/v1/equity/fundamental/income",
+        "provider": "fmp",
+        "model": "IncomeStatement",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/income_statement.py",
+        "source_sha256": "6b412528f3962765feecb1cdf9c39a3d2365a3f572e547f23ee1964de91bd71d",
+        "contract_sha256": "5034c46e194d6209e10034d6b3294726b08eb9051fd554604280366b36a2c0f9",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_fundamental_metrics_fmp_obb",
+        "path": "/api/v1/equity/fundamental/metrics",
+        "provider": "fmp",
+        "model": "KeyMetrics",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/key_metrics.py",
+        "source_sha256": "8176161130c141e4a69b38064e88788a0e0769d91a6aa308579725f4c34d4e22",
+        "contract_sha256": "02cfb1192e8d79c8b8cabdcb1834cc1700c93f93b66f3058be4a6edc57c252fa",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_fundamental_ratios_fmp_obb",
+        "path": "/api/v1/equity/fundamental/ratios",
+        "provider": "fmp",
+        "model": "FinancialRatios",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/financial_ratios.py",
+        "source_sha256": "8a301b1db8d14cf32d4a1722d46f45361c307e4b56fa91e6b76846a4918d1d25",
+        "contract_sha256": "9d1b6000c35077cfd542a3933e4d53737438c508e5654965b016f415cb34c1c6",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_price_historical_fmp_obb",
+        "path": "/api/v1/equity/price/historical",
+        "provider": "fmp",
+        "model": "EquityHistorical",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/equity_historical.py",
+        "source_sha256": "2ae8eeb7387510d3cb8aff15ea39de02a4884ef9bf268aa876bc29aabdfbee13",
+        "contract_sha256": "4b129a4a018a866d2a09f2dad4c02d64cc3b886a85118a5ed2f37c76303df2b0",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_profile_fmp_obb",
+        "path": "/api/v1/equity/profile",
+        "provider": "fmp",
+        "model": "EquityInfo",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/equity_profile.py",
+        "source_sha256": "49266456fe1080d2d92806468649b479656bd382e5495d4b46d3811b37903dfa",
+        "contract_sha256": "b39c2989863e5eac0a9a5adda1cd6138853e47aa81b3d82ba05000516f8294e8",
+        "kind": "financial descriptor"
+      },
+      {
+        "widget": "equity_search_fmp_obb",
+        "path": "/api/v1/equity/search",
+        "provider": "fmp",
+        "model": "EquitySearch",
+        "source_path": "openbb_platform/providers/fmp/openbb_fmp/models/equity_search.py",
+        "source_sha256": "a7c4a7738db6ef62e997ae42f1ca29f4e09baf7c861ad3ffaf74b643db849064",
+        "contract_sha256": "52030c48392d431a6426d18ee6d312764752c6367efbbd5d7b0e7dc5e6f631f7",
+        "kind": "financial descriptor"
+      }
+    ],
+    "data_image_exactly_matches_accepted_local_image": false,
+    "data_provenance_byte_identical_to_accepted_local_image": false,
+    "data_provenance_difference": {
+      "path": "services/data-api/qopenbb_data/__init__.py",
+      "accepted_local_sha256": "94fd3a75ebc6b57f55361b1a35670f8abe7284e9e1da9a36bd910b5f1669495b",
+      "committed_ci_sha256": "ae51112ea39957a5fcf04d910e482207dc09d1e939adf085f7986c67ba5a9b3e",
+      "normalized_local_sha256": "ae51112ea39957a5fcf04d910e482207dc09d1e939adf085f7986c67ba5a9b3e",
+      "accepted_local_bytes": 29,
+      "committed_ci_bytes": 28,
+      "difference": "CRLF versus LF after a single module docstring",
+      "other_runtime_inputs_byte_identical": 14
+    },
+    "workspace_same_owned_sources_release_version_differs": true,
+    "readyz": {
+      "status": "unready",
+      "missing": [
+        "FMP_API_KEY",
+        "FRED_API_KEY"
+      ],
+      "missing_routes": []
+    },
+    "families_remain_open": true
+  },
+  "offline_container": {
+    "id": "93906c63aeb12ce5a7dddc3a89c9925aa0e10cd020abab28399c6752a31147e8",
+    "owner_label": "financial-milestone-41030227140",
+    "network": "none",
+    "host_ports": false,
+    "mounts": false,
+    "provider_credentials": false,
+    "cleanup_returncode": 0,
+    "removed_owned_container": true
+  },
+  "verification": {
+    "release_verifier_returncode": 0,
+    "candidate_report_download_returncode": 0,
+    "catalog_verifier_returncode": 0,
+    "catalog_initial_attempt": {
+      "returncode": 1,
+      "before_container_startup": true,
+      "cause": "Overstrict accepted-local data provenance equality rejected the known CRLF/LF docstring-only difference.",
+      "resolution": "Required exact single-file difference, normalized bytes/hash, other 14 exact inputs, and CI resident bytes."
+    },
+    "receipt_command_counts": {
+      "metadata": 12,
+      "image": 27,
+      "catalog": 28
+    },
+    "all_recorded_final_commands_returncode": 0,
+    "entrypoints": [
+      "verify_release.py",
+      "verify_images.py",
+      "verify_catalog.py"
+    ],
+    "scripts": {
+      "verify_release.py": "c5011cfe5581d1908d19c8571624d534409645c9f37ca0b16136d661ce270cc0",
+      "verify_images.py": "23d4919174738f4dd3f47acfc50ccf4144f7f30ca7e8ab243f0002c96e4fd3e7",
+      "verify_catalog.py": "31c76bda6651bc0ae656b013ab3c53324b5239bf76a331b516ea92b88b684510"
+    },
+    "commands": [
+      "managed Windows Python verify_release.py --root 6cca7e40c7e9830546b7051dc36995902acede35 --run 41030227140 --workspace c652b909627d7634241eee2ed13a561fbb4f177b --data-api 28423762e8cc3faae978e770899834b41e7cde99 (accepted local image arguments recorded in expected.json)",
+      "gh run download 41030227140 --repo norandom/QOpenBB --name candidate-reports --dir artifacts/financial-milestone-delivery/run-41030227140/candidate-reports",
+      "wsl -d Debian -u mc -- /mnt/d/Source/QOpenBB/pipeline/.venv/bin/python /mnt/d/Source/QOpenBB/artifacts/financial-milestone-delivery/verify_catalog.py --evidence /mnt/d/Source/QOpenBB/artifacts/financial-milestone-delivery/run-41030227140"
+    ]
+  },
+  "retained_acceptance": {
+    "live": "artifacts/reviewed/market-live-financial-inputs/accepted.md",
+    "packaged": "artifacts/reviewed/market-packaged-financial/accepted.md",
+    "caps": {
+      "files": 79,
+      "violations": 0,
+      "scope": "Previously accepted Task 6.2 joined scope; no production changes in Task 6.3."
+    }
+  },
+  "limitations": [
+    "No provider requests or browser journey on published images.",
+    "Income browser and real-provider evidence retained from Tasks 6.1/6.2.",
+    "No current-account entitlement, owner-server deployment or recovery claim.",
+    "Broader financial families remain follow-on scope.",
+    "Installed offline health/catalogs passed; readiness deliberately remains 503 without provider credentials.",
+    "Published images have different config identities from accepted local images; source/input equivalence is bounded as recorded.",
+    "This closes milestone delivery evidence for the first batch only; umbrella market-data scope remains open."
+  ]
+}
