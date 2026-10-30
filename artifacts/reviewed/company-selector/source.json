@@ -1,6 +1,6 @@
 {
   "task": "1",
-  "workspace_revision": "da1a258c780ab645b50229cca65380606db9f37b",
+  "workspace_revision": "4f31bd7753137b70734feff1ae7abca58409a19a",
   "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
   "scope": "Source contract only; no selector UI, runtime or publication acceptance.",
   "unchanged_exception_files": {
@@ -15,12 +15,13 @@
   },
   "files": {
     "terminalpro/src/components/General/Table/NavBar/companySelection.contract.ts": "05df8c419f6b2c2921e31ddc7e1bbbba785a308b76421d1085d4145d16ee3ac0",
-    "terminalpro/tests/unit/company-selection.test.ts": "da3c2ff07d1295e62c5d39b226f11d516e7f257f4a90c511f7413f3e6e9e792e",
+    "terminalpro/tests/unit/company-selection.test.ts": "cd92f10bdd81941b2da38b70dca6c51f81007574a72d842583676eccd84e3208",
     "terminalpro/src/components/General/Table/NavBar/companyGroupSafety.ts": "1c984e53408e9e9e55795584896af4b4a256dfc7d83ebb20e5a6840c5a9bb7b0",
     "terminalpro/tests/unit/company-group-safety.test.ts": "21694ba593ec6ca90b7d50693d38605bb2784d0272d9700c519480616a739d41",
     "terminalpro/src/components/General/Table/NavBar/companySearch.ts": "eed7de3c22e7ca88da09d9afa81a09c996c302736b3e5c0e4d5b2e1e3527e3f3",
     "terminalpro/src/components/General/Table/NavBar/useCompanySearch.ts": "3c820da557b2cb05ce1edf9afdca256a6140361ac0db324cfbbc34c8821989a6",
-    "terminalpro/tests/unit/company-search.test.ts": "8d4b4669e70918bcc1f6e2f1e14d9af2dcee6b55e16550032f148cd5f0470476"
+    "terminalpro/tests/unit/company-search.test.ts": "8d4b4669e70918bcc1f6e2f1e14d9af2dcee6b55e16550032f148cd5f0470476",
+    "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts": "361655619aa2bf6b85cfd57be0b77b1f3c9b6867ebcf37d09484c3539aa6f0b1"
   },
   "checks": {
     "unit_tests": 49,
@@ -33,7 +34,8 @@
   "accepted_tasks": [
     "1",
     "2",
-    "3"
+    "3",
+    "4.1"
   ],
   "guard_checks": {
     "unit_tests": 60,
@@ -63,5 +65,17 @@
       "AgGridUtils",
       "useUpdateColumnState"
     ]
+  },
+  "lifecycle_checks": {
+    "selection_suite_cases": 88,
+    "includes_original_contract_cases": 49,
+    "biome": "passed",
+    "scoped_combined_files": 80,
+    "production_size": [
+      307,
+      134,
+      22
+    ],
+    "review": "Initial Astra found one failure-state bug; repaired source independently approved by Sol after Astra capacity error."
   }
 }

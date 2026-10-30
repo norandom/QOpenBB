@@ -31,7 +31,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Requirements: 1.3, 1.4, 1.5_
 
 - [ ] 4. Compose the linked fields and explicit selection lifecycle
-- [ ] 4.1 Preserve a valid company identity through explicit selection
+- [x] 4.1 Preserve a valid company identity through explicit selection
   - Use the accepted search and safety ports to implement guarded local metadata and explicit commits. Re-read context immediately before writes; call the existing group writer once before the origin's compound local commit, without awaiting between guard and write.
   - Preserve valid metadata only for its source/provider/effective single symbol. Same-symbol choices can update metadata without refreshing financial data. Group-write failure leaves origin metadata unchanged; a later local failure produces unresolved state rather than claiming rollback.
   - Resolve a legacy or peer-updated single symbol through an exact-symbol search only when metadata is absent/invalid; zero or contradictory exact matches remain unresolved. Avoid repeat resolution for a still-valid saved record.

@@ -1,6 +1,6 @@
 # Company selector source progress
 
-Tasks 1, 2 and 3 are source-accepted on 2026-10-30. The owner approved the bounded design, tasks and implementation. The versioned company-selection contract now decodes saved metadata, identifies the eight eligible FMP widgets, preserves source-qualified listing identity and rejects known ambiguity. It introduces no widget UI or provider route.
+Tasks 1, 2, 3 and 4.1 are source-accepted on 2026-10-30. The owner approved the bounded design, tasks and implementation. The versioned company-selection contract now decodes saved metadata, identifies the eight eligible FMP widgets, preserves source-qualified listing identity and rejects known ambiguity. It introduces no widget UI or provider route.
 
 Independent Astra review passed 49 focused tests, strict TypeScript, scoped Biome and the missing-scope regression. The new production module measures 200 physical lines, 190 logical units and a maximum 12 units per function. The scoped portable gate passed 80 files with no errors or violations. Existing exception files are byte-identical; only their source-revision binding moves with the accepted fork commit.
 
@@ -19,3 +19,7 @@ Task 2 adds connected-source name/ticker search with native result/provenance va
 Full native TypeScript/build acceptance remains unverified: the reused local dependency cache cannot build the existing runtimeConfigSchema composite because of three pre-existing Zod type errors. The test uses the actual source-request helper with two unrelated chart-import mocks. No dependency or configuration changes were made; the three generated attempt outputs were removed. These focused source checks do not establish packaged integration.
 
 CI on806a9f0 passed both Prototype41065288631 (210 portable tests) and CodeQL41065288531 after the source-policy correction. Current source progress is3/10; no selector UI or new image publication is claimed.
+
+Task 4.1 adds the selection lifecycle: explicit current-result choices, same-symbol metadata-only updates, fresh compatible-group writes, saved-record validation and exact-symbol name resolution. Auto-resolution changes no financial symbol and never writes a group. Partial local-write failure stays unresolved through later blocked choices until actual reconciliation. The first Astra review found that guard could be downgraded; the focused repair passed independent Sol re-review after Astra was unavailable at capacity. [Lifecycle review](task4.1-review.md).
+
+The current selection suite passes88 cases, including the original49 contract cases; these are not additive totals. Scoped Biome and the80-file portable gate pass, and new production size is307 physical/134 logical/max22. Current progress is4/10 source tasks; paired controls, host wiring, full native graph and real-data acceptance remain open.
