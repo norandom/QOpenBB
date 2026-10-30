@@ -2,7 +2,7 @@
   "task": "1",
   "workspace_revision": "ab3c357a00cd9ad7395ea2cad0cdbec09a2f3598",
   "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
-  "scope": "Source contract only; no selector UI, runtime or publication acceptance.",
+  "scope": "Accepted selector source integration and catalog contracts; packaged real-FMP/browser/persistence and image publication remain open.",
   "unchanged_exception_files": {
     "backend-api/backend/api/schemas.py": "7deb1c432e3855aa90bbdc4ebb9abdae4b4f999df77600fb49270c6ceec82645",
     "terminalpro/src/routes/login.tsx": "553f93e147b251d88471938241a3067efa30473848f02f621413de9e3c220951",
@@ -44,7 +44,8 @@
     "4.1",
     "4.2",
     "5.1",
-    "5.2"
+    "5.2",
+    "6"
   ],
   "guard_checks": {
     "unit_tests": 60,
@@ -167,6 +168,21 @@
         "max_function": 38
       }
     },
-    "scope": "Source integration only; packaged browser/live FMP/persistence acceptance remains open."
+    "scope": "Source integration only; packaged browser/live FMP/persistence acceptance remains open.",
+    "gate_receipt_status": "Superseded by source_join exact-byte gate; historical host measurements unchanged."
+  },
+  "source_join": {
+    "native_cases": 287,
+    "native_evidence": "Controller observation of tool session80335; no rerun solely for a raw log.",
+    "portable_cases": 157,
+    "portable_environment_repair": "156 passed initially; one missing pinned Node path in clean snapshot, then the failed case passed after restoring the existing toolchain path.",
+    "maintained_files": 680,
+    "errors": 0,
+    "violations": 0,
+    "inventory_physical": 397,
+    "inventory_sha256": "c015f593f204c09387c8f0cde0746a4fffbacc53c7fb91dd09c60fa5c86887e9",
+    "gate_receipt_sha256": "c6cfc13ea6fd7157ac6d473556a5f45005a74d1bce5f6ca74f7d9a619c526eb4",
+    "review": "task6-review.md",
+    "supersedes": "Task5.2 gate minified inventory to one line; committed404-line inventory failed CI41088351983. Seven blank lines removed without JSON changes; corrected gate measures exact inventory bytes."
   }
 }

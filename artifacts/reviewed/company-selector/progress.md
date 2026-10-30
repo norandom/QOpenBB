@@ -1,37 +1,21 @@
 # Company selector source progress
 
-Seven of ten source tasks are accepted as of 2026-10-30: search, listing identity, guarded selection, paired controls and current dashboard-group context. The source join and packaged real-FMP/persistence acceptance remain open. The feature reuses the existing data API; no new images are published.
+Eight of ten tasks are accepted as of 2026-10-30. The existing FMP widgets now have linked Company name and Symbol controls in source. Packaged real-data, save/reopen and retained-state acceptance remain open; these changes are not yet published in images.
 
-Independent Astra review passed 49 focused tests, strict TypeScript, scoped Biome and the missing-scope regression. The new production module measures 200 physical lines, 190 logical units and a maximum 12 units per function. The scoped portable gate passed 80 files with no errors or violations. Existing exception files are byte-identical; only their source-revision binding moves with the accepted fork commit.
+The selector reuses the connected data API, native widget execution, original Profile comparison editor and dashboard groups. It applies only to the eight approved immediate FMP definitions. Period/Limit, raw Symbol correction and ineligible/manual-run controls remain available. Selecting an unchanged symbol updates listing metadata without requesting financial data again.
 
-Search and group safety are now source-accepted; selection lifecycle and the paired UI follow. The selector is not shipped: lifecycle, controls, host integration and real-FMP browser/persistence acceptance remain open. No images were built or published for this foundation task.
+The joined six native suites passed **287 cases**. Portable schema/catalog checks passed **157 cases**: 156 initially, then the one case blocked by a missing Node path passed after the existing pinned toolchain was exposed in the clean snapshot. The generated widget contracts agree with the eight selector bindings; the data API and generator source are unchanged. Metadata stays beside parameters in storage and outside financial requests.
 
-See [independent review](task1-review.md), [source identity](source.json) and [task plan](../../../.kiro/specs/analyst-workspace/company-selector-tasks.md).
+The exact-source size gate passed **680 maintained files**, with no errors or violations. QueryParams measures 993 physical lines, 364 logical units and a maximum 38 units per function, within its owner-approved 1000/390/50 exception. Other changed production code retains 400/300/50 limits.
 
-CI found premature inventory entries for the unchanged parameter host and group hook. The correction removes those two future targets until their integration tasks modify them; the contract remains maintained. The corrected full gate passed 673 maintained files, with zero errors or violations. [Independent correction review](task1-inventory-review.md) supersedes the initial scope conclusion. The initial CI run41063840201 failed; corrected CI is pending.
+CI41088351983 exposed an evidence defect: the local gate had minified the inventory while its committed form contained404 lines. This supersedes the earlier task5.2 full-gate conclusion. Removing seven blank lines preserves the JSON exactly and brings the inventory to397 lines. The corrected check measures exact inventory bytes. [Source join review](task6-review.md) records the failure and repair; [source identities](source.json) bind the accepted inputs and corrected receipt.
 
-Task 3 adds the pure group guard: all current members must have compatible FMP source/bindings; preview and detached contexts cannot write a live group. Existing multi-symbol values can be explicitly replaced, and ungrouped local editing stays available. Independent Sol review passed 60 cases, strict TypeScript and Biome; production measures83 physical/67 logical/max27. The scoped portable gate passed80 files. The host must still supply actual fresh dashboard membership at integration. [Group review](task3-review.md).
+| Accepted scope | Independent review |
+| --- | --- |
+| Contract and inventory foundation | [Contract](task1-review.md), [scope correction](task1-inventory-review.md) |
+| Connected search and pure group guard | [Search](task2-review.md), [group safety](task3-review.md) |
+| Selection lifecycle and paired controls | [Lifecycle](task4.1-review.md), [controls](task4.2-review.md) |
+| Reactive groups and native header | [Group context](task5.1-review.md), [header](task5.2-review.md) |
+| Source/catalog join and exact-byte gate | [Join](task6-review.md) |
 
-The second CI attempt passed the full size gate and209 portable tests, but exposed an unsynchronized build-source policy. The policy now follows the same accepted Workspace revision as the source lock; its focused two-source regression passes. Corrected CI remains pending. This changes no runtime or build allowlist.
-
-Task 2 adds connected-source name/ticker search with native result/provenance validation, distinct public financial errors, bounded per-selector TanStack caching, cancellation and source/authentication race protection. Independent Sol review passed35 focused cases and scoped Biome. Adapter size218 physical/79 logical/max14; hook198/99/max21; scoped combined gate81 files passed. [Search review](task2-review.md).
-
-Full native TypeScript/build acceptance remains unverified: the reused local dependency cache cannot build the existing runtimeConfigSchema composite because of three pre-existing Zod type errors. The test uses the actual source-request helper with two unrelated chart-import mocks. No dependency or configuration changes were made; the three generated attempt outputs were removed. These focused source checks do not establish packaged integration.
-
-CI on806a9f0 passed both Prototype41065288631 (210 portable tests) and CodeQL41065288531 after the source-policy correction. Current source progress is3/10; no selector UI or new image publication is claimed.
-
-Task 4.1 adds the selection lifecycle: explicit current-result choices, same-symbol metadata-only updates, fresh compatible-group writes, saved-record validation and exact-symbol name resolution. Auto-resolution changes no financial symbol and never writes a group. Partial local-write failure stays unresolved through later blocked choices until actual reconciliation. The first Astra review found that guard could be downgraded; the focused repair passed independent Sol re-review after Astra was unavailable at capacity. [Lifecycle review](task4.1-review.md).
-
-The current selection suite passes88 cases, including the original49 contract cases; these are not additive totals. Scoped Biome and the80-file portable gate pass, and new production size is307 physical/134 logical/max22. Current progress is4/10 source tasks; paired controls, host wiring, full native graph and real-data acceptance remain open.
-
-Task 4.2 adds the visible Company name/Symbol component using the existing design-system inputs and portal. It distinguishes draft and committed identity, preserves explicit keyboard/pointer selection, raw Symbol debounce/clearing and the existing comparison/group controls. Multiple-list results explicitly replace the list only on selection. Independent Sol review passed27 actual-lifecycle component cases, scoped Biome and size306 physical/147 logical/max29; the scoped portable gate passed80 files. [Control review](task4.2-review.md).
-
-Progress is5/10 source tasks. The component is not yet wired into native widgets; tasks5.1/5.2 own live group context and the header integration. Browser geometry/themes, real FMP values and retained-state reopening remain unverified. No new images are published. A transient GitHub500 rejected the first fork push; the retry and remote commit identity succeeded.
-
-Task 5.1 supplies reactive local/shared dashboard membership and fresh guarded group writes, retaining existing writers. It resolves sparse native definitions, keeps preview edits local and withholds the picker for missing membership. Native group order, option applicability and explicit null overrides now determine the effective source; ambiguous provider bindings cannot be presented as FMP. Existing overlapping local/shared dashboard IDs are refused by the new company writer because the legacy writer cannot target them unambiguously. [Group-context review](task5.1-review.md).
-
-Astra approved after two bounded provider-resolution repairs. Independent evidence:43 real-Zustand cases, scoped Biome, size353 physical/166 logical/max18 and a clean80-file scoped gate. Progress is6/10 source tasks; native header integration, full graph and packaged real-data/persistence acceptance remain open.
-
-Task 5.2 wires the picker into all eight eligible native FMP headers, retaining original Period/Limit, grouping and Profile comparison controls. Changed symbols use the existing execution/SSRM path with one compound parameters-and-metadata update. Same-symbol and implicit-default name updates persist without starting an execution; array-valued lists and raw correction/clearing remain usable. Ineligible/manual-run variants keep their original renderer. [Host review](task5.2-review.md).
-
-Independent Astra review passed104 affected cases:30 actual-host,45 real-store and29 presenter cases. The exact committed QueryParams measures993 physical/364 logical/max38, within the owner-approved1000/390/50 ceiling; only its two size metrics have an expiring exception, bound to the reviewed commit/hash. The corrected full gate passed680 maintained files, with unrelated working edits excluded. [Closing review](task5.2-gate-review.md). Progress is7/10 source tasks, not packaged acceptance or image publication.
+Next: extend the existing financial browser case, build the packaged candidate, and verify real FMP selection with independent group/FRED sentinels and saved state. Full native TypeScript/build remains unverified under the reused dependency cache; unit tests do not replace that application gate. See the [task plan](../../../.kiro/specs/analyst-workspace/company-selector-tasks.md).

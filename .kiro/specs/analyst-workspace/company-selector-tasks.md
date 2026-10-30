@@ -65,7 +65,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Depends: 4.2, 5.1_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
-- [ ] 6. Join the frozen fork source and native catalog contracts
+- [x] 6. Join the frozen fork source and native catalog contracts
   - Pin the accepted Workspace candidate and retain the unchanged data API pin; reconcile native generated-definition provenance and tests against the eight eligibility bindings without broad regeneration or a new provider surface.
   - Run affected native unit/interaction tests, portable schema/catalog drift checks and the combined size gate with explicit base/head or changed-file scope. Verify retained storage metadata never appears in a financial request.
   - Completion: immutable source identities and scoped reports agree, all maintained selector paths have inventory ownership, and the actual candidate passes its approved ceilings. Existing unrelated working-tree changes remain excluded.
