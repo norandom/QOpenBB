@@ -49,7 +49,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
 - [ ] 5. Integrate the selector into native widget execution and groups
-- [ ] 5.1 Supply reactive and freshly checked dashboard group context
+- [x] 5.1 Supply reactive and freshly checked dashboard group context
   - Add reactive local/shared dashboard widget-and-group selection and a fresh imperative context read to the existing group hook; preserve its current writers and permissions. Verify membership changes while suggestions are open affect the next commit.
   - Expose the accepted context/operations to the lifecycle hook without creating a second group store. Preview, override and detached paths cannot call the live writer.
   - Completion: focused group-hook tests show current membership/source changes in both local and shared dashboards, preserve existing writes and reject preview/detached live writes. The modified hook passes 400/300/50.

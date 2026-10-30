@@ -1,6 +1,6 @@
 # Company selector source progress
 
-Tasks 1, 2, 3, 4.1 and 4.2 are source-accepted on 2026-10-30. The owner approved the bounded design, tasks and implementation. The versioned company-selection contract now decodes saved metadata, identifies the eight eligible FMP widgets, preserves source-qualified listing identity and rejects known ambiguity. It introduces no widget UI or provider route.
+Six of ten source tasks are accepted as of 2026-10-30: search, listing identity, guarded selection, paired controls and current dashboard-group context. Native header integration, the source join and packaged real-FMP/persistence acceptance remain open. The feature reuses the existing data API; no new images are published.
 
 Independent Astra review passed 49 focused tests, strict TypeScript, scoped Biome and the missing-scope regression. The new production module measures 200 physical lines, 190 logical units and a maximum 12 units per function. The scoped portable gate passed 80 files with no errors or violations. Existing exception files are byte-identical; only their source-revision binding moves with the accepted fork commit.
 
@@ -27,3 +27,7 @@ The current selection suite passes88 cases, including the original49 contract ca
 Task 4.2 adds the visible Company name/Symbol component using the existing design-system inputs and portal. It distinguishes draft and committed identity, preserves explicit keyboard/pointer selection, raw Symbol debounce/clearing and the existing comparison/group controls. Multiple-list results explicitly replace the list only on selection. Independent Sol review passed27 actual-lifecycle component cases, scoped Biome and size306 physical/147 logical/max29; the scoped portable gate passed80 files. [Control review](task4.2-review.md).
 
 Progress is5/10 source tasks. The component is not yet wired into native widgets; tasks5.1/5.2 own live group context and the header integration. Browser geometry/themes, real FMP values and retained-state reopening remain unverified. No new images are published. A transient GitHub500 rejected the first fork push; the retry and remote commit identity succeeded.
+
+Task 5.1 supplies reactive local/shared dashboard membership and fresh guarded group writes, retaining existing writers. It resolves sparse native definitions, keeps preview edits local and withholds the picker for missing membership. Native group order, option applicability and explicit null overrides now determine the effective source; ambiguous provider bindings cannot be presented as FMP. Existing overlapping local/shared dashboard IDs are refused by the new company writer because the legacy writer cannot target them unambiguously. [Group-context review](task5.1-review.md).
+
+Astra approved after two bounded provider-resolution repairs. Independent evidence:43 real-Zustand cases, scoped Biome, size353 physical/166 logical/max18 and a clean80-file scoped gate. Progress is6/10 source tasks; native header integration, full graph and packaged real-data/persistence acceptance remain open.

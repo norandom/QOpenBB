@@ -1,6 +1,6 @@
 {
   "task": "1",
-  "workspace_revision": "d6fcf07131ec7c134fe06485aa236584cb7ded4d",
+  "workspace_revision": "44dbbc205fcd2097554d91207d324862e9a5dd90",
   "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
   "scope": "Source contract only; no selector UI, runtime or publication acceptance.",
   "unchanged_exception_files": {
@@ -23,7 +23,9 @@
     "terminalpro/tests/unit/company-search.test.ts": "8d4b4669e70918bcc1f6e2f1e14d9af2dcee6b55e16550032f148cd5f0470476",
     "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts": "361655619aa2bf6b85cfd57be0b77b1f3c9b6867ebcf37d09484c3539aa6f0b1",
     "terminalpro/src/components/General/Table/NavBar/CompanySymbolSelector.tsx": "3b62eba3f9c20e5f55b51c5bd3909585ac4f8dc548949c7f42232029054027cd",
-    "terminalpro/tests/unit/company-selector.test.tsx": "8e3428dcbaa9e6e6d645209d4bf8c2970122a09bc2281bf9c61d0de4ef78570e"
+    "terminalpro/tests/unit/company-selector.test.tsx": "8e3428dcbaa9e6e6d645209d4bf8c2970122a09bc2281bf9c61d0de4ef78570e",
+    "terminalpro/src/components/Widgets/Helpers/useParamGroupBindings.ts": "9953f465187dd9ce9d034aacc450db08fdb19029ed2b02c948bda3c46c1753b5",
+    "terminalpro/tests/unit/components/Widgets/Helpers/useParamGroupBindings.test.tsx": "57e4e6a7205fd3087df9e356456cb931c5205c666f672cc7262590ee205bc7dc"
   },
   "checks": {
     "unit_tests": 49,
@@ -38,7 +40,8 @@
     "2",
     "3",
     "4.1",
-    "4.2"
+    "4.2",
+    "5.1"
   ],
   "guard_checks": {
     "unit_tests": 60,
@@ -91,5 +94,16 @@
       29
     ],
     "scope": "Real lifecycle/DS/Radix component tests; no host/browser/theme/FMP/persistence acceptance."
+  },
+  "group_context_checks": {
+    "real_store_cases": 43,
+    "biome": "passed",
+    "scoped_combined_files": 80,
+    "production_size": [
+      353,
+      166,
+      18
+    ],
+    "review": "Astra approved after native group order/applicability and null-override repairs."
   }
 }
