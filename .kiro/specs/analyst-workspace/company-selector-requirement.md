@@ -4,11 +4,11 @@ Owner requirement recorded on 2026-10-30: analysts need a searchable **Company n
 
 ## Expected interaction
 
-- Typing a company name offers matching listings with company name and symbol. Show exchange information to distinguish share classes, listings and similarly named companies; retain currency and provider attribution when available.
-- Selecting a result fills both fields from the same selected listing. Keep name, symbol and listing identity together rather than storing two unrelated text values.
-- Analysts who know a symbol can search through the adjacent Symbol field and select a result that also resolves the company name. Changing the selection updates the linked research context; the bounded design must define the affected widget group and preserve independent groups.
-- Keep the chosen listing's source-qualified identity. Do not infer that equal ticker strings, different share classes or provider peer suggestions identify the same security or a curated peer group.
-- Save/reopen must restore the selected name, symbol and listing consistently. A failed search or unresolved input must not silently retain a different company as if selection succeeded.
+- **1.1** Typing a company name offers matching listings with company name and symbol. Show exchange information to distinguish share classes, listings and similarly named companies; retain currency and provider attribution when available.
+- **1.2** Selecting a result fills both fields from the same selected listing. Keep name, symbol and listing identity together rather than storing two unrelated text values.
+- **1.3** Analysts who know a symbol can search through the adjacent Symbol field and select a result that also resolves the company name. Changing the selection updates the linked research context; the bounded design must define the affected widget group and preserve independent groups.
+- **1.4** Keep the chosen listing's source-qualified identity. Do not infer that equal ticker strings, different share classes or provider peer suggestions identify the same security or a curated peer group.
+- **1.5** Save/reopen must restore the selected name, symbol and listing consistently. A failed search or unresolved input must not silently retain a different company as if selection succeeded.
 
 FRED should follow the same human-readable display principle in its later selector work: series name alongside series ID, with units and frequency visible where relevant. The current generic FRED widget still accepts series IDs; no series-name search is implemented by this note.
 
@@ -23,3 +23,5 @@ The selector design must assess existing Workspace selection controls and parame
 The current native Profile/Income Symbol inputs remain plain text. AAPL and GDP are starter defaults, not limits on supported companies or series. The deployed starter is a technical example, while a curated investment-research dashboard remains the separate [investment-analysis contract](investment-analysis-contract.md).
 
 Before implementation, review the bounded design and tasks under the project's Kiro flow. Test actual user-visible name/symbol selection, ambiguous listings, failure/recovery, linked-group behavior and saved reopening against the existing API contract. Do not label the control complete based on discovery schema or API-only tests.
+
+The [technical design proposal](company-selector-design.md) and [independent review](company-selector-design-review.md) are available. Independent readiness passed; owner design/exception approval, task generation and implementation remain pending. [Discovery and trade-offs](company-selector-research.md) explain the reuse decisions.

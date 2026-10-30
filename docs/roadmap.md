@@ -111,6 +111,8 @@ The current [gallery milestone](../.kiro/specs/analyst-workspace/historical-gall
 
 First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks.md)):
 
+Next bounded analyst UX proposal: [Company name autocomplete with adjacent Symbol](../.kiro/specs/analyst-workspace/company-selector-design.md). Independent design review passed; owner approval of the design and scoped QueryParams exception is pending. Task generation and implementation have not started. The larger analyst-dashboard sequence remains separate.
+
 - [x] Restore and characterize the existing provider verification baseline.
 - [x] Implement typed financial metadata through the native result envelope.
 - [x] Implement safe financial failures and separate query/result validation.
