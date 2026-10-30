@@ -1,6 +1,6 @@
 {
   "task": "1",
-  "workspace_revision": "44dbbc205fcd2097554d91207d324862e9a5dd90",
+  "workspace_revision": "ab3c357a00cd9ad7395ea2cad0cdbec09a2f3598",
   "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
   "scope": "Source contract only; no selector UI, runtime or publication acceptance.",
   "unchanged_exception_files": {
@@ -22,10 +22,12 @@
     "terminalpro/src/components/General/Table/NavBar/useCompanySearch.ts": "3c820da557b2cb05ce1edf9afdca256a6140361ac0db324cfbbc34c8821989a6",
     "terminalpro/tests/unit/company-search.test.ts": "8d4b4669e70918bcc1f6e2f1e14d9af2dcee6b55e16550032f148cd5f0470476",
     "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts": "361655619aa2bf6b85cfd57be0b77b1f3c9b6867ebcf37d09484c3539aa6f0b1",
-    "terminalpro/src/components/General/Table/NavBar/CompanySymbolSelector.tsx": "3b62eba3f9c20e5f55b51c5bd3909585ac4f8dc548949c7f42232029054027cd",
-    "terminalpro/tests/unit/company-selector.test.tsx": "8e3428dcbaa9e6e6d645209d4bf8c2970122a09bc2281bf9c61d0de4ef78570e",
-    "terminalpro/src/components/Widgets/Helpers/useParamGroupBindings.ts": "9953f465187dd9ce9d034aacc450db08fdb19029ed2b02c948bda3c46c1753b5",
-    "terminalpro/tests/unit/components/Widgets/Helpers/useParamGroupBindings.test.tsx": "57e4e6a7205fd3087df9e356456cb931c5205c666f672cc7262590ee205bc7dc"
+    "terminalpro/src/components/General/Table/NavBar/CompanySymbolSelector.tsx": "d5ecebb571cca42eeb0fbe8f28f3118b30fc1f9e665377931d9f842bcbc03f17",
+    "terminalpro/tests/unit/company-selector.test.tsx": "f7745600e75ef107107ac23bf57ce4f435913ccf9a27bd9a2b4c718bea0a9696",
+    "terminalpro/src/components/Widgets/Helpers/useParamGroupBindings.ts": "75f5ad1452085d0bf0bcfe4f0506e945e081354d747b345687d6fdbacfd6f98d",
+    "terminalpro/tests/unit/components/Widgets/Helpers/useParamGroupBindings.test.tsx": "110249259162aae6be3f06a5631adab054a8f892e5c2a6cd9d5bfdeb4de44a5b",
+    "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx": "4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055",
+    "terminalpro/tests/unit/components/General/Table/NavBar/QueryParams.test.tsx": "b8ff5a51968a5e3d7ecee07cf6371a5a2a9dbb8462824a076df4c5ea54cad0c7"
   },
   "checks": {
     "unit_tests": 49,
@@ -41,7 +43,8 @@
     "3",
     "4.1",
     "4.2",
-    "5.1"
+    "5.1",
+    "5.2"
   ],
   "guard_checks": {
     "unit_tests": 60,
@@ -105,5 +108,65 @@
       18
     ],
     "review": "Astra approved after native group order/applicability and null-override repairs."
+  },
+  "host_checks": {
+    "affected_cases": 104,
+    "host_cases": 30,
+    "group_cases": 45,
+    "presenter_cases": 29,
+    "biome": "passed",
+    "full_maintained_files": 680,
+    "errors": 0,
+    "violations": 0,
+    "gate_receipt_sha256": "1a9bf7fe82fb0df58992693f58b8df24ecb6ad9e51aeec6672864848df1b19f7",
+    "production_sizes": {
+      "QueryParams": [
+        993,
+        364,
+        38
+      ],
+      "group_hook": [
+        356,
+        167,
+        18
+      ],
+      "presenter": [
+        306,
+        147,
+        29
+      ]
+    },
+    "exception": {
+      "revision": "ab3c357a00cd9ad7395ea2cad0cdbec09a2f3598",
+      "source_sha256": "4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055",
+      "approved_entries": [
+        {
+          "repository": "workspace",
+          "path": "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx",
+          "metric": "physical",
+          "baseline": 1000,
+          "revision": "ab3c357a00cd9ad7395ea2cad0cdbec09a2f3598",
+          "rationale": "Owner-approved company-selector ceiling 1000; original 938, reviewed candidate 993. Only imports, compound local commit and existing header integration. Source SHA256 4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055. No other oversized-file allowance.",
+          "review": "artifacts/reviewed/company-selector/task5.2-review.md",
+          "expires_on": "2026-11-30"
+        },
+        {
+          "repository": "workspace",
+          "path": "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx",
+          "metric": "logical",
+          "baseline": 390,
+          "revision": "ab3c357a00cd9ad7395ea2cad0cdbec09a2f3598",
+          "rationale": "Owner-approved company-selector ceiling 390; original 345, reviewed candidate 364. Only imports, compound local commit and existing header integration. Source SHA256 4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055. No other oversized-file allowance.",
+          "review": "artifacts/reviewed/company-selector/task5.2-review.md",
+          "expires_on": "2026-11-30"
+        }
+      ],
+      "actual": {
+        "physical": 993,
+        "logical": 364,
+        "max_function": 38
+      }
+    },
+    "scope": "Source integration only; packaged browser/live FMP/persistence acceptance remains open."
   }
 }

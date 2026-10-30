@@ -1,6 +1,6 @@
 # Company selector source progress
 
-Six of ten source tasks are accepted as of 2026-10-30: search, listing identity, guarded selection, paired controls and current dashboard-group context. Native header integration, the source join and packaged real-FMP/persistence acceptance remain open. The feature reuses the existing data API; no new images are published.
+Seven of ten source tasks are accepted as of 2026-10-30: search, listing identity, guarded selection, paired controls and current dashboard-group context. The source join and packaged real-FMP/persistence acceptance remain open. The feature reuses the existing data API; no new images are published.
 
 Independent Astra review passed 49 focused tests, strict TypeScript, scoped Biome and the missing-scope regression. The new production module measures 200 physical lines, 190 logical units and a maximum 12 units per function. The scoped portable gate passed 80 files with no errors or violations. Existing exception files are byte-identical; only their source-revision binding moves with the accepted fork commit.
 
@@ -31,3 +31,7 @@ Progress is5/10 source tasks. The component is not yet wired into native widgets
 Task 5.1 supplies reactive local/shared dashboard membership and fresh guarded group writes, retaining existing writers. It resolves sparse native definitions, keeps preview edits local and withholds the picker for missing membership. Native group order, option applicability and explicit null overrides now determine the effective source; ambiguous provider bindings cannot be presented as FMP. Existing overlapping local/shared dashboard IDs are refused by the new company writer because the legacy writer cannot target them unambiguously. [Group-context review](task5.1-review.md).
 
 Astra approved after two bounded provider-resolution repairs. Independent evidence:43 real-Zustand cases, scoped Biome, size353 physical/166 logical/max18 and a clean80-file scoped gate. Progress is6/10 source tasks; native header integration, full graph and packaged real-data/persistence acceptance remain open.
+
+Task 5.2 wires the picker into all eight eligible native FMP headers, retaining original Period/Limit, grouping and Profile comparison controls. Changed symbols use the existing execution/SSRM path with one compound parameters-and-metadata update. Same-symbol and implicit-default name updates persist without starting an execution; array-valued lists and raw correction/clearing remain usable. Ineligible/manual-run variants keep their original renderer. [Host review](task5.2-review.md).
+
+Independent Astra review passed104 affected cases:30 actual-host,45 real-store and29 presenter cases. The exact committed QueryParams measures993 physical/364 logical/max38, within the owner-approved1000/390/50 ceiling; only its two size metrics have an expiring exception, bound to the reviewed commit/hash. The corrected full gate passed680 maintained files, with unrelated working edits excluded. [Closing review](task5.2-gate-review.md). Progress is7/10 source tasks, not packaged acceptance or image publication.

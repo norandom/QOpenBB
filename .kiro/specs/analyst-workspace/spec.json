@@ -995,7 +995,26 @@
       },
       "expires_on": "2026-11-30",
       "owner_approved": true,
-      "active": false
+      "active": true,
+      "activation": {
+        "date": "2026-10-30",
+        "workspace_revision": "ab3c357a00cd9ad7395ea2cad0cdbec09a2f3598",
+        "source_sha256": "4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055",
+        "measured": {
+          "physical": 993,
+          "logical": 364,
+          "max_function": 38
+        },
+        "review": "../../../artifacts/reviewed/company-selector/task5.2-review.md",
+        "formal_gate": {
+          "status": "passed",
+          "maintained_files": 680,
+          "errors": 0,
+          "violations": 0,
+          "receipt_sha256": "1a9bf7fe82fb0df58992693f58b8df24ecb6ad9e51aeec6672864848df1b19f7",
+          "review": "../../../artifacts/reviewed/company-selector/task5.2-gate-review.md"
+        }
+      }
     },
     "design_approval": "Owner approved bounded design and scoped QueryParams exception on 2026-10-30.",
     "tasks_document": "company-selector-tasks.md",

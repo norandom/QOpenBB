@@ -48,7 +48,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Boundary: Selector presentation_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
-- [ ] 5. Integrate the selector into native widget execution and groups
+- [x] 5. Integrate the selector into native widget execution and groups
 - [x] 5.1 Supply reactive and freshly checked dashboard group context
   - Add reactive local/shared dashboard widget-and-group selection and a fresh imperative context read to the existing group hook; preserve its current writers and permissions. Verify membership changes while suggestions are open affect the next commit.
   - Expose the accepted context/operations to the lifecycle hook without creating a second group store. Preview, override and detached paths cannot call the live writer.
@@ -57,7 +57,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Depends: 4.2_
   - _Requirements: 1.3, 1.4, 1.5_
 
-- [ ] 5.2 Integrate paired selection into the existing parameter host
+- [x] 5.2 Integrate paired selection into the existing parameter host
   - Wire only the eight eligible immediate-query definitions through the dedicated auto-height below-navbar row. Retain GroupDropdown, comparison editing, Period/Limit and unrelated controls; manual-run variants and ineligible widgets use their original renderer.
   - Extend the existing local synchronization path for one functional parameters-plus-metadata update, including its unchanged-symbol metadata-only branch. Preserve local refs, stale/copilot/SSRM behavior; avoid duplicate grouped writes and financial metadata leakage.
   - Completion: integration regressions exercise changed and unchanged symbols, legacy dashboards, multiple values, manual-run fallback, shared reactivity and preview isolation. Only QueryParams may use the approved 1000 physical/390 logical/50 function ceiling; all other changed code passes 400/300/50. Bind exact candidate revision, measured source and expiring 2026-11-30 exception to the independently reviewed inventory before accepting this task.
@@ -103,7 +103,7 @@ All paths below are Workspace-relative unless marked root. This table assigns ow
 | 4.1 | Same NavBar directory: `useCompanySelection.ts`; extend `terminalpro/tests/unit/company-selection.test.ts` | Sol; independent Astra lifecycle review; sequential after tasks 2/3 |
 | 4.2 | Same NavBar directory: `CompanySymbolSelector.tsx`; `terminalpro/tests/unit/company-selector.test.tsx` | Sol; independent Sol UI review; sequential after task 4.1 |
 | 5.1 | `terminalpro/src/components/Widgets/Helpers/useParamGroupBindings.ts`; relevant existing group tests | Sol; fresh Astra integration review; sequential after task 4.2 |
-| 5.2 | `terminalpro/src/components/General/Table/NavBar/QueryParams.tsx`; extend `terminalpro/tests/unit/company-selector.test.tsx`; root candidate exception controlled by controller | One integration owner; fresh Astra review; sequential after task 5.1 |
+| 5.2 | `terminalpro/src/components/General/Table/NavBar/QueryParams.tsx`; extend existing `terminalpro/tests/unit/components/General/Table/NavBar/QueryParams.test.tsx`; coordinated array normalization in the existing group hook/test and raw recovery in the presenter/test; root candidate exception controlled by controller | One integration owner; fresh Astra review; sequential after task 5.1 |
 | 6 | Root source lock/provenance, inventory and affected existing catalog contract checks | Controller; independent source/scope review |
 | 7.1 | Root `tests/e2e/financial-workspace.spec.mts`, existing financial fixture/config only if necessary | Sol; independent Sol case review before candidate execution |
 | 7.2 | Ignored runtime outputs; no concurrent test/source edits | Controller or one Sol verifier; independent Astra evidence review |
