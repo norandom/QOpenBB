@@ -30,7 +30,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Depends: 1_
   - _Requirements: 1.3, 1.4, 1.5_
 
-- [ ] 4. Compose the linked fields and explicit selection lifecycle
+- [x] 4. Compose the linked fields and explicit selection lifecycle
 - [x] 4.1 Preserve a valid company identity through explicit selection
   - Use the accepted search and safety ports to implement guarded local metadata and explicit commits. Re-read context immediately before writes; call the existing group writer once before the origin's compound local commit, without awaiting between guard and write.
   - Preserve valid metadata only for its source/provider/effective single symbol. Same-symbol choices can update metadata without refreshing financial data. Group-write failure leaves origin metadata unchanged; a later local failure produces unresolved state rather than claiming rollback.
@@ -40,9 +40,10 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Depends: 2, 3_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
-- [ ] 4.2 Present the paired company controls without losing comparison editing
+- [x] 4.2 Present the paired company controls without losing comparison editing
   - Compose adjacent labelled Company name/Symbol fields, portal suggestions, accessible keyboard/status behavior and responsive wrapping from installed primitives and the accepted lifecycle hook.
   - Retain the original Profile comparison editor and explicit replace-list action; typing or Tab does not choose a listing. Render loading, empty/error and name-unavailable states distinctly from the committed identity.
+  - Keep the existing raw Symbol update callback, including its 1250 ms debounce and clearing/validation behavior, separate from resolved listing metadata. A listing choice cancels an obsolete raw draft; name searches never apply a raw symbol, and multiple-symbol typing cannot silently replace the list.
   - Completion: component tests cover keyboard choice/cancel, ambiguous options, null names, failure feedback and reachable multiple-symbol editing. The component passes 400/300/50 and does not write storage directly.
   - _Boundary: Selector presentation_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_

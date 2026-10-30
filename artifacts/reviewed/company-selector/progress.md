@@ -1,6 +1,6 @@
 # Company selector source progress
 
-Tasks 1, 2, 3 and 4.1 are source-accepted on 2026-10-30. The owner approved the bounded design, tasks and implementation. The versioned company-selection contract now decodes saved metadata, identifies the eight eligible FMP widgets, preserves source-qualified listing identity and rejects known ambiguity. It introduces no widget UI or provider route.
+Tasks 1, 2, 3, 4.1 and 4.2 are source-accepted on 2026-10-30. The owner approved the bounded design, tasks and implementation. The versioned company-selection contract now decodes saved metadata, identifies the eight eligible FMP widgets, preserves source-qualified listing identity and rejects known ambiguity. It introduces no widget UI or provider route.
 
 Independent Astra review passed 49 focused tests, strict TypeScript, scoped Biome and the missing-scope regression. The new production module measures 200 physical lines, 190 logical units and a maximum 12 units per function. The scoped portable gate passed 80 files with no errors or violations. Existing exception files are byte-identical; only their source-revision binding moves with the accepted fork commit.
 
@@ -23,3 +23,7 @@ CI on806a9f0 passed both Prototype41065288631 (210 portable tests) and CodeQL410
 Task 4.1 adds the selection lifecycle: explicit current-result choices, same-symbol metadata-only updates, fresh compatible-group writes, saved-record validation and exact-symbol name resolution. Auto-resolution changes no financial symbol and never writes a group. Partial local-write failure stays unresolved through later blocked choices until actual reconciliation. The first Astra review found that guard could be downgraded; the focused repair passed independent Sol re-review after Astra was unavailable at capacity. [Lifecycle review](task4.1-review.md).
 
 The current selection suite passes88 cases, including the original49 contract cases; these are not additive totals. Scoped Biome and the80-file portable gate pass, and new production size is307 physical/134 logical/max22. Current progress is4/10 source tasks; paired controls, host wiring, full native graph and real-data acceptance remain open.
+
+Task 4.2 adds the visible Company name/Symbol component using the existing design-system inputs and portal. It distinguishes draft and committed identity, preserves explicit keyboard/pointer selection, raw Symbol debounce/clearing and the existing comparison/group controls. Multiple-list results explicitly replace the list only on selection. Independent Sol review passed27 actual-lifecycle component cases, scoped Biome and size306 physical/147 logical/max29; the scoped portable gate passed80 files. [Control review](task4.2-review.md).
+
+Progress is5/10 source tasks. The component is not yet wired into native widgets; tasks5.1/5.2 own live group context and the header integration. Browser geometry/themes, real FMP values and retained-state reopening remain unverified. No new images are published. A transient GitHub500 rejected the first fork push; the retry and remote commit identity succeeded.

@@ -1,6 +1,6 @@
 {
   "task": "1",
-  "workspace_revision": "4f31bd7753137b70734feff1ae7abca58409a19a",
+  "workspace_revision": "d6fcf07131ec7c134fe06485aa236584cb7ded4d",
   "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
   "scope": "Source contract only; no selector UI, runtime or publication acceptance.",
   "unchanged_exception_files": {
@@ -21,7 +21,9 @@
     "terminalpro/src/components/General/Table/NavBar/companySearch.ts": "eed7de3c22e7ca88da09d9afa81a09c996c302736b3e5c0e4d5b2e1e3527e3f3",
     "terminalpro/src/components/General/Table/NavBar/useCompanySearch.ts": "3c820da557b2cb05ce1edf9afdca256a6140361ac0db324cfbbc34c8821989a6",
     "terminalpro/tests/unit/company-search.test.ts": "8d4b4669e70918bcc1f6e2f1e14d9af2dcee6b55e16550032f148cd5f0470476",
-    "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts": "361655619aa2bf6b85cfd57be0b77b1f3c9b6867ebcf37d09484c3539aa6f0b1"
+    "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts": "361655619aa2bf6b85cfd57be0b77b1f3c9b6867ebcf37d09484c3539aa6f0b1",
+    "terminalpro/src/components/General/Table/NavBar/CompanySymbolSelector.tsx": "3b62eba3f9c20e5f55b51c5bd3909585ac4f8dc548949c7f42232029054027cd",
+    "terminalpro/tests/unit/company-selector.test.tsx": "8e3428dcbaa9e6e6d645209d4bf8c2970122a09bc2281bf9c61d0de4ef78570e"
   },
   "checks": {
     "unit_tests": 49,
@@ -35,7 +37,8 @@
     "1",
     "2",
     "3",
-    "4.1"
+    "4.1",
+    "4.2"
   ],
   "guard_checks": {
     "unit_tests": 60,
@@ -77,5 +80,16 @@
       22
     ],
     "review": "Initial Astra found one failure-state bug; repaired source independently approved by Sol after Astra capacity error."
+  },
+  "control_checks": {
+    "component_cases": 27,
+    "biome": "passed",
+    "scoped_combined_files": 80,
+    "production_size": [
+      306,
+      147,
+      29
+    ],
+    "scope": "Real lifecycle/DS/Radix component tests; no host/browser/theme/FMP/persistence acceptance."
   }
 }
