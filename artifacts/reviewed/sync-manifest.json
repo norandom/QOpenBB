@@ -35012,18 +35012,18 @@
     },
     {
       "sourcepath": "artifacts/company-selector-implementation/progress.md",
-      "sourceSHA256": "ae4858e922e86a9c65759f5cadca85b509ad771b81fe83cffa3e305e64ef7e6d",
+      "sourceSHA256": "d283b5a311bd618baf723c21b08e31ed78c53415dc74617a927925a2af7a49c5",
       "publishedpath": "artifacts/reviewed/company-selector/progress.md",
-      "publishedSHA256": "ae4858e922e86a9c65759f5cadca85b509ad771b81fe83cffa3e305e64ef7e6d",
-      "bytes": 4354,
+      "publishedSHA256": "d283b5a311bd618baf723c21b08e31ed78c53415dc74617a927925a2af7a49c5",
+      "bytes": 5039,
       "transform": "exact-byte-copy"
     },
     {
       "sourcepath": "artifacts/company-selector-implementation/source.json",
-      "sourceSHA256": "eac2afcd005a3280299d662f0c9409ab50f49bac505e0faeeceb7f6710648dfc",
+      "sourceSHA256": "0acf67c07d66a39e563ec39b49c3f08248b0f7bed58f0237cc87a1602d811b15",
       "publishedpath": "artifacts/reviewed/company-selector/source.json",
-      "publishedSHA256": "eac2afcd005a3280299d662f0c9409ab50f49bac505e0faeeceb7f6710648dfc",
-      "bytes": 10703,
+      "publishedSHA256": "0acf67c07d66a39e563ec39b49c3f08248b0f7bed58f0237cc87a1602d811b15",
+      "bytes": 11539,
       "transform": "exact-byte-copy"
     },
     {
@@ -35136,6 +35136,14 @@
       "publishedpath": "artifacts/reviewed/company-selector/task7.2-host-adaptation-review.md",
       "publishedSHA256": "e7c2273181866b131d71a199be9bbaf6ade51798840669f7f4f2e3d742e84cbd",
       "bytes": 5242,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/company-selector-implementation/task7.2-return-review.md",
+      "sourceSHA256": "491701483a48098a70d4e3b6bcff9b0264a33ba8769d6c6bef047cd85677b12b",
+      "publishedpath": "artifacts/reviewed/company-selector/task7.2-return-review.md",
+      "publishedSHA256": "491701483a48098a70d4e3b6bcff9b0264a33ba8769d6c6bef047cd85677b12b",
+      "bytes": 4990,
       "transform": "exact-byte-copy"
     }
   ],
@@ -35862,7 +35870,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170772126,
+  "total_payload_bytes": 170778637,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

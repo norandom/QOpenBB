@@ -998,7 +998,7 @@
       "active": true,
       "activation": {
         "date": "2026-10-30",
-        "workspace_revision": "01d6c27540cd4dfa9a7434780b5bea8ad1a47617",
+        "workspace_revision": "f832a5593223b1e702970c4de8eceda87a17fa5b",
         "source_sha256": "4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055",
         "measured": {
           "physical": 993,
@@ -1011,13 +1011,13 @@
           "maintained_files": 681,
           "errors": 0,
           "violations": 0,
-          "receipt_sha256": "b5ccb45f349ad692b6fce1051e51cb113a7ad60c5d00ba6dc55f926d251cf5dd",
-          "review": "../../../artifacts/reviewed/company-selector/task7.2-draft-source-review.md",
+          "receipt_sha256": "fd6ff0f58d9b3982efa988f6bcd2627e2d00b9457fe53b7c7296fa54c88d505f",
+          "review": "../../../artifacts/reviewed/company-selector/task7.2-return-review.md",
           "inventory_physical": 398,
-          "inventory_sha256": "3ca807fa7c1cee98fa47196076c5d6655bf17610dbbe9aa1388e154220ad7bd0",
+          "inventory_sha256": "5520b45ec1f09da1c53459225e1827c3d06431b7562a2e5207239d64f6f7e69f",
           "supersedes": "Task5.2 minified-inventory gate; corrected exact-byte task6 gate680 files0errors/violations."
         },
-        "unchanged_queryparams_rebinding": "QueryParams and all historical exception targets remain byte-identical; only Workspace revision moved for the reviewed comparison and own-symbol acknowledgement repairs."
+        "unchanged_queryparams_rebinding": "QueryParams and all historical exception targets remain byte-identical; only Workspace revision moved for reviewed local selector repairs."
       }
     },
     "design_approval": "Owner approved bounded design and scoped QueryParams exception on 2026-10-30.",

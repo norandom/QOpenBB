@@ -8,8 +8,8 @@ import { expect, loginDisposableWorkspace, test } from "../../vendor/workspace/t
 const widgetId = "equity_fundamental_income_fmp_obb";
 const incomePath = "/data/api/v1/equity/fundamental/income";
 
-async function revenueCell(widget: Locator, field: string) {
-  const cell = widget.locator(`.ag-row[row-index="0"] [col-id="${field}"]`).first();
+async function revenueCell(widget: Locator, field: string, rowIndex = 0) {
+  const cell = widget.locator(`.ag-row[row-index="${rowIndex}"] [col-id="${field}"]`).first();
   // Column virtualization requires moving the real viewport, not reading grid internals.
   for (let step = 0; step < 25 && !(await cell.count()); step++) {
     await widget
@@ -38,11 +38,20 @@ async function connectInstalledCatalog(page: Page, inspect?: (catalog: Record<st
   await dialog
     .getByPlaceholder("http://127.0.0.1:5056")
     .fill(`${process.env.WORKSPACE_FRONTEND_ORIGIN}/data`);
-  const catalog = page.waitForResponse(
-    (response) => new URL(response.url()).pathname === "/data/widgets.json",
-  );
-  await dialog.getByRole("button", { name: "Test", exact: true }).click();
-  const response = await catalog;
+  const testBackend = dialog.getByRole("button", { name: "Test", exact: true });
+  // The retained account keeps its connector between separate acceptance phases.
+  const duplicateUrl = dialog.getByText('"Installed QOpenBB data API" is already using this URL', { exact: true });
+  await expect.poll(async () => (await testBackend.isEnabled()) || (await duplicateUrl.isVisible())).toBe(true);
+  const reuseConnection = await duplicateUrl.isVisible();
+  let response: Pick<Response, "status" | "json">;
+  if (reuseConnection) {
+    await expect(dialog.getByText('A backend with the name "Installed QOpenBB data API" already exists', { exact: true })).toBeVisible();
+    response = await page.request.get(`${process.env.WORKSPACE_FRONTEND_ORIGIN}/data/widgets.json`);
+  } else {
+    const catalog = page.waitForResponse(item => new URL(item.url()).pathname === "/data/widgets.json");
+    await testBackend.click();
+    response = await catalog;
+  }
   expect(response.status()).toBe(200);
   const catalogDefinition = await response.json();
   inspect?.(catalogDefinition);
@@ -54,8 +63,11 @@ async function connectInstalledCatalog(page: Page, inspect?: (catalog: Record<st
       (param: { paramName: string }) => param.paramName === "period",
     ).value,
   ).toBe("annual");
-  await expect(dialog.getByText("Test successful", { exact: true })).toBeVisible();
-  await dialog.getByRole("button", { name: /^add$/i }).click();
+  if (reuseConnection) await dialog.getByRole("button", { name: "Close", exact: true }).click();
+  else {
+    await expect(dialog.getByText("Test successful", { exact: true })).toBeVisible();
+    await dialog.getByRole("button", { name: /^add$/i }).click();
+  }
   await expect(dialog).not.toBeVisible();
   await page.getByRole("link", { name: "Apps", exact: true }).click();
   const starter = page.getByRole("button").filter({
@@ -285,6 +297,7 @@ test("local packaged financial widgets support native company period recovery an
       }
     }
     expectApplicationDiagnostics({ ...diagnostics,
+      requestFailures: diagnostics.requestFailures.filter(item => !(item.path === searchPath && item.reason === "net::ERR_ABORTED")),
       failures: diagnostics.failures.filter(item => !(item.path === incomePath && item.status === 422)),
       consoleErrors: diagnostics.consoleErrors.filter(item => !(item.path === incomePath && /Failed to load resource.*422/.test(item.message))),
     });
@@ -316,9 +329,15 @@ async function newFinancialDashboard(page: Page) {
 
 async function addFinancialWidget(page: Page, name: string, id: string) {
   const count = await page.locator(`#workarea .widget-${id}`).count();
-  await page.getByRole("main").getByRole("button", { name: "Add widgets", exact: true }).click();
+  const emptyDashboardAdd = page.getByRole("main").getByRole("button", { name: "Add widgets", exact: true });
+  if (await emptyDashboardAdd.isVisible()) await emptyDashboardAdd.click();
+  else await page.getByTestId("dashboard-toolbar-add-widget-button").click();
   const dialog = page.getByRole("dialog");
-  await dialog.getByText(name, { exact: true }).click();
+  // Library search removes the duplicate Recently Added section.
+  await dialog.getByPlaceholder("Search for widgets", { exact: true }).fill(name);
+  const catalogChoice = dialog.getByText(name, { exact: true });
+  await expect(catalogChoice).toHaveCount(1);
+  await catalogChoice.click();
   await dialog.getByRole("button", { name: "Add widgets", exact: true }).click();
   const widgets = page.locator(`#workarea .widget-${id}`);
   await expect(widgets).toHaveCount(count + 1);
@@ -375,6 +394,12 @@ async function chooseCompany(widget: Locator, mode: "name" | "symbol", query: st
   expect(matches).toHaveLength(1);
   const listing = matches[0];
   expect(typeof listing.name).toBe("string");
+  if (mode === "symbol" && query !== symbol) {
+    // Read suggestions after the real raw-symbol acknowledgement, rather than racing its timer.
+    await expect.poll(async () => (await widget.getByRole("status").allTextContents()).some(text =>
+      text.includes(`Current Symbol: ${query}.`) || text.includes(`(${query}).`),
+    )).toBe(true);
+  }
   const option = page.getByRole("listbox").getByRole("option").filter({
     hasText: `${listing.name} (${symbol})`,
   });
@@ -429,8 +454,20 @@ async function verifyFredSentinel(widget: Locator, payload: any) {
   const displayedDate = new Date(await date.innerText()).toISOString().slice(0, 10);
   const row = payload.results.find((item: any) => item.date.slice(0, 10) === displayedDate);
   expect(row, "visible FRED date identifies its actual response observation").toBeDefined();
-  expect(Number.isFinite(row.GDP)).toBe(true);
-  await displayedNumber(await revenueCell(widget, "GDP"), row.GDP);
+  if (row.GDP === null) await expect(await revenueCell(widget, "GDP")).toHaveText("-");
+  // GDP starts with missing 1946 observations; keep those missing and inspect an observed value.
+  for (const observationDate of await widget.locator('.ag-row [col-id="date"]').all()) {
+    const dateKey = new Date(await observationDate.innerText()).toISOString().slice(0, 10);
+    const observation = payload.results.find((item: any) => item.date.slice(0, 10) === dateKey);
+    if (!Number.isFinite(observation?.GDP)) continue;
+    const index = await observationDate.evaluate(element => element.closest(".ag-row")?.getAttribute("row-index"));
+    expect(index).toMatch(/^\d+$/);
+    await observationDate.scrollIntoViewIfNeeded();
+    await expect(observationDate).toBeInViewport();
+    await displayedNumber(await revenueCell(widget, "GDP", Number(index)), observation.GDP);
+    return;
+  }
+  throw new Error("No finite FRED GDP observation was rendered for visible-value verification.");
 }
 
 function selectionState(content: any) {
@@ -448,13 +485,13 @@ async function readFinancialDashboard(page: Page, url: string) {
   return (await response.json()).owned[new URL(url).pathname.split("/").at(-1)!].content;
 }
 
-function allowFinancialInitialization(diagnostics: Awaited<ReturnType<typeof observeApplication>>) {
+function allowFinancialInitializationAndCancellation(diagnostics: Awaited<ReturnType<typeof observeApplication>>) {
   const paths = [profilePath, incomePath, fredPath];
-  // The native empty required Symbol executes before any analyst input.
+  // Empty Symbol requests and cancelled navigation/superseded lookups precede settled value assertions.
   return { ...diagnostics,
     failures: diagnostics.failures.filter(item => !(paths.includes(item.path) && item.status === 422)),
     consoleErrors: diagnostics.consoleErrors.filter(item => !(paths.includes(item.path ?? "") && /Failed to load resource.*422/.test(item.message))),
-    requestFailures: diagnostics.requestFailures.filter(item => !(item.path === searchPath && /ERR_ABORTED/.test(item.reason))),
+    requestFailures: diagnostics.requestFailures.filter(item => !([searchPath, ...paths].includes(item.path) && item.reason === "net::ERR_ABORTED")),
   };
 }
 
@@ -528,7 +565,8 @@ test("real FMP company name MSFT then symbol AAPL linked research survives fresh
       const comparisonStored = baseline.data.widgets.filter((widget: any) => widget.widgetId === profileId)[1];
       const fredStored = baseline.data.widgets.find((widget: any) => widget.widgetId === fredId);
       const sentinelRequests = financialRequests.filter(item => item.path === fredPath || item.path === profilePath && item.symbol.includes(",")).length;
-      for (const [mode, query, symbol] of [["name", "Microsoft", "MSFT"], ["symbol", "AAPL", "AAPL"]] as const) {
+      // AAPL's exact lookup was cached during setup; exercise prefix autocomplete with a fresh query.
+      for (const [mode, query, symbol] of [["name", "Microsoft", "MSFT"], ["symbol", "AAP", "AAPL"]] as const) {
         selected = await chooseCompany(profile, mode, query, symbol);
         await expectSelectedCompany(income, selected.listing);
         const profileData = await captured(profilePath, symbol);
@@ -616,7 +654,7 @@ test("real FMP company name MSFT then symbol AAPL linked research survives fresh
       expect(request.keys.filter(key => !allowed.includes(key)), "selection metadata cannot enter financial query parameters").toEqual([]);
     }
     for (const failure of initialFailures) expect([null, ""]).toContain(failure.symbol);
-    for (const diagnostic of diagnostics) expectApplicationDiagnostics(allowFinancialInitialization(diagnostic));
+    for (const diagnostic of diagnostics) expectApplicationDiagnostics(allowFinancialInitializationAndCancellation(diagnostic));
     if (phase === "initial") writeFileSync(checkpoint, `${JSON.stringify({ stage: "initial-complete",
       images: runtime.images, runtimeName: runtime.name, containerId: runtime.container,
       dashboardPath: new URL(dashboardUrl).pathname, selected, state: expected }, null, 2)}\n`, { flag: "wx" });
@@ -632,6 +670,7 @@ test("synthetic company keyboard cancel entitlement failure and stale search can
   const diagnostics = await observeApplication(page);
   const searches: string[] = [];
   const financialSymbols: string[] = [];
+  let inTestDashboard = false;
   const listings = {
     AAPL: { symbol: "AAPL", name: "Synthetic Apple", exchange: "NASDAQ", exchange_short_name: "NASDAQ",
       currency: "USD", listing_id: "fmp:AAPL:NASDAQ", issuer_id: null },
@@ -651,7 +690,7 @@ test("synthetic company keyboard cancel entitlement failure and stale search can
   const oldCompletion = new Promise<void>(resolve => { oldFinished = resolve; });
   await page.route(`**${incomePath}*`, route => {
     const symbol = new URL(route.request().url()).searchParams.get("symbol") ?? "";
-    financialSymbols.push(symbol);
+    if (inTestDashboard) financialSymbols.push(symbol);
     return route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({
       results: symbol ? [{ symbol, reported_currency: "USD", period_ending: "2025-12-31", fiscal_period: "FY", revenue: symbol === "MSFT" ? 2000000 : 1000000 }] : [],
     }) });
@@ -659,7 +698,7 @@ test("synthetic company keyboard cancel entitlement failure and stale search can
   await page.route(`**${searchPath}*`, async route => {
     const url = new URL(route.request().url());
     const query = url.searchParams.get("query") ?? "";
-    searches.push(query);
+    if (inTestDashboard) searches.push(query);
     if (query === "Denied") return route.fulfill({ status: 403, contentType: "application/json",
       body: JSON.stringify({ code: "entitlement", detail: "Synthetic source access failure" }) });
     if (query === "Old") {
@@ -676,7 +715,10 @@ test("synthetic company keyboard cancel entitlement failure and stale search can
     await loginDisposableWorkspace(page);
     await connectInstalledCatalog(page);
     await newFinancialDashboard(page);
+    inTestDashboard = true;
     const widget = await addFinancialWidget(page, "Income", widgetId);
+    // The startup fallback is replaced; edit the settled native empty-data control.
+    await expect(widget.getByText("No results found", { exact: true })).toBeVisible();
     await setIncomeSymbol(widget, "AAPL");
     await expectSelectedCompany(widget, listings.AAPL);
     const name = widget.getByRole("combobox", { name: "Company name", exact: true });
@@ -730,7 +772,7 @@ test("synthetic company keyboard cancel entitlement failure and stale search can
     expectApplicationDiagnostics({ ...diagnostics,
       failures: diagnostics.failures.filter(item => !(item.path === searchPath && item.status === 403)),
       consoleErrors: diagnostics.consoleErrors.filter(item => !(item.path === searchPath && /Failed to load resource.*403/.test(item.message))),
-      requestFailures: diagnostics.requestFailures.filter(item => !(item.path === searchPath && /ERR_ABORTED/.test(item.reason))),
+      requestFailures: diagnostics.requestFailures.filter(item => !(item.path === searchPath && item.reason === "net::ERR_ABORTED")),
     });
   } finally {
     releaseOld();
