@@ -35012,18 +35012,18 @@
     },
     {
       "sourcepath": "artifacts/company-selector-implementation/progress.md",
-      "sourceSHA256": "b273efa17e0af889b46ffe398d7e4fa9e9b2b5c1fc9e9fbc6928f354f9f21721",
+      "sourceSHA256": "ae4858e922e86a9c65759f5cadca85b509ad771b81fe83cffa3e305e64ef7e6d",
       "publishedpath": "artifacts/reviewed/company-selector/progress.md",
-      "publishedSHA256": "b273efa17e0af889b46ffe398d7e4fa9e9b2b5c1fc9e9fbc6928f354f9f21721",
-      "bytes": 3745,
+      "publishedSHA256": "ae4858e922e86a9c65759f5cadca85b509ad771b81fe83cffa3e305e64ef7e6d",
+      "bytes": 4354,
       "transform": "exact-byte-copy"
     },
     {
       "sourcepath": "artifacts/company-selector-implementation/source.json",
-      "sourceSHA256": "c69c4e6d398432163ee3c0f7ec40b791a9767e30d3fa80376a228725ac4dcc0e",
+      "sourceSHA256": "eac2afcd005a3280299d662f0c9409ab50f49bac505e0faeeceb7f6710648dfc",
       "publishedpath": "artifacts/reviewed/company-selector/source.json",
-      "publishedSHA256": "c69c4e6d398432163ee3c0f7ec40b791a9767e30d3fa80376a228725ac4dcc0e",
-      "bytes": 9922,
+      "publishedSHA256": "eac2afcd005a3280299d662f0c9409ab50f49bac505e0faeeceb7f6710648dfc",
+      "bytes": 10703,
       "transform": "exact-byte-copy"
     },
     {
@@ -35120,6 +35120,22 @@
       "publishedpath": "artifacts/reviewed/company-selector/task7.2-comparison-review.md",
       "publishedSHA256": "e584341ea510c1bea9106742113c1c5b1c71d93c4f598750b3667c3eb3e67fb6",
       "bytes": 7091,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/company-selector-implementation/task7.2-draft-source-review.md",
+      "sourceSHA256": "e445eb889b615da87db4a6eecc1cf7f400d87472991ff1f2c1a46f237e394c10",
+      "publishedpath": "artifacts/reviewed/company-selector/task7.2-draft-source-review.md",
+      "publishedSHA256": "e445eb889b615da87db4a6eecc1cf7f400d87472991ff1f2c1a46f237e394c10",
+      "bytes": 9136,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/company-selector-implementation/task7.2-host-adaptation-review.md",
+      "sourceSHA256": "e7c2273181866b131d71a199be9bbaf6ade51798840669f7f4f2e3d742e84cbd",
+      "publishedpath": "artifacts/reviewed/company-selector/task7.2-host-adaptation-review.md",
+      "publishedSHA256": "e7c2273181866b131d71a199be9bbaf6ade51798840669f7f4f2e3d742e84cbd",
+      "bytes": 5242,
       "transform": "exact-byte-copy"
     }
   ],
@@ -35846,7 +35862,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170756358,
+  "total_payload_bytes": 170772126,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

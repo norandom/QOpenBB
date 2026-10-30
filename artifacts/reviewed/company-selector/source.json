@@ -1,6 +1,6 @@
 {
   "task": "company-selector",
-  "workspace_revision": "b5193dbd7a553912daa5ea72df981c3fdb49d365",
+  "workspace_revision": "01d6c27540cd4dfa9a7434780b5bea8ad1a47617",
   "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
   "scope": "Accepted selector source integration and catalog contracts; packaged real-FMP/browser/persistence and image publication remain open.",
   "unchanged_exception_files": {
@@ -23,12 +23,12 @@
     "terminalpro/src/components/General/Table/NavBar/useCompanySearch.ts": "3c820da557b2cb05ce1edf9afdca256a6140361ac0db324cfbbc34c8821989a6",
     "terminalpro/tests/unit/company-search.test.ts": "8d4b4669e70918bcc1f6e2f1e14d9af2dcee6b55e16550032f148cd5f0470476",
     "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts": "361655619aa2bf6b85cfd57be0b77b1f3c9b6867ebcf37d09484c3539aa6f0b1",
-    "terminalpro/src/components/General/Table/NavBar/CompanySymbolSelector.tsx": "d5ecebb571cca42eeb0fbe8f28f3118b30fc1f9e665377931d9f842bcbc03f17",
-    "terminalpro/tests/unit/company-selector.test.tsx": "f7745600e75ef107107ac23bf57ce4f435913ccf9a27bd9a2b4c718bea0a9696",
+    "terminalpro/src/components/General/Table/NavBar/CompanySymbolSelector.tsx": "74afb26dd872b158ebd6ad2831b8e35c2741cc67c37271a5c0bb67b207fe2cf5",
+    "terminalpro/tests/unit/company-selector.test.tsx": "e49c6f97f1bc89ea951deafce543eabcd83d088e9668269ad52addfa05164824",
     "terminalpro/src/components/Widgets/Helpers/useParamGroupBindings.ts": "75f5ad1452085d0bf0bcfe4f0506e945e081354d747b345687d6fdbacfd6f98d",
     "terminalpro/tests/unit/components/Widgets/Helpers/useParamGroupBindings.test.tsx": "110249259162aae6be3f06a5631adab054a8f892e5c2a6cd9d5bfdeb4de44a5b",
     "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx": "4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055",
-    "terminalpro/tests/unit/components/General/Table/NavBar/QueryParams.test.tsx": "b8ff5a51968a5e3d7ecee07cf6371a5a2a9dbb8462824a076df4c5ea54cad0c7",
+    "terminalpro/tests/unit/components/General/Table/NavBar/QueryParams.test.tsx": "5725b8a9fbc821cc6c6de338f7709b179f42066c8fc41dd2225199ce11550165",
     "terminalpro/src/components/General/Table/NavBar/CompareTermsParam.tsx": "ca85178f2e5c0aa8b3a27b6d2dc372724e2a6eab772bd6ad22b7537f91203ac5",
     "terminalpro/tests/unit/components/General/Table/NavBar/CompareTermsParam.test.tsx": "d5f5ad5b033324445950338c87da1cfc7d2bdd410e7e97cb70d3d1abfd480d8b"
   },
@@ -213,5 +213,23 @@
     "gate_receipt_sha256": "2f35b7c4617d8fb9ae11acbdb53cb1aabbc0166c23788d88629733045b953e8d",
     "inventory_sha256": "6a55ceb165a49426db546a262afa0fd2449a280641fe98b14ebce91f113dca2f",
     "root_source_delta": "One existing comparison control plus focused unit file; previous eight selector modules unchanged."
+  },
+  "own_symbol_acknowledgement_repair": {
+    "status": "source-reviewed; rebuilt runtime acceptance pending",
+    "workspace_revision": "01d6c27540cd4dfa9a7434780b5bea8ad1a47617",
+    "focused_presenter_cases": 52,
+    "reactive_host_cases": 30,
+    "source_size": [
+      394,
+      179,
+      34
+    ],
+    "maintained_files": 681,
+    "inventory_physical": 398,
+    "gate_receipt_sha256": "b5ccb45f349ad692b6fce1051e51cb113a7ad60c5d00ba6dc55f926d251cf5dd",
+    "inventory_sha256": "3ca807fa7c1cee98fa47196076c5d6655bf17610dbbe9aa1388e154220ad7bd0",
+    "source_review": "task7.2-draft-source-review.md",
+    "host_review": "task7.2-host-adaptation-review.md",
+    "scope": "Presenter and focused native tests only; lifecycle/search/group/QueryParams production unchanged."
   }
 }
