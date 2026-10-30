@@ -60,6 +60,7 @@ The [widget requirements](../.kiro/specs/openbb-self-service/parameterized-widge
 - [x] Register the restored first-batch adapters in an exact-source installed candidate: [acceptance](../artifacts/reviewed/market-provider-registration/accepted.md).
 - [x] Install service safeguards and discovery in the exact-source candidate: [acceptance](../artifacts/reviewed/market-runtime-integration/accepted.md).
 - [x] Regenerate eleven reusable native widgets and promote source/catalog pins: [acceptance](../artifacts/reviewed/market-financial-consumers/accepted.md).
-- [ ] Verify live account entitlement and packaged consumers, then publish updated images. Existing alpha images retain their baseline until that release.
+- [x] Validate the initial eleven datasets with real provider observations: [scope and evidence](../artifacts/reviewed/market-live-financial-inputs/accepted.md). Access succeeded for the recorded verification queries; each installation still needs its own entitlement check.
+- [ ] Verify packaged consumers, then publish updated images. Existing alpha images retain their baseline until that release.
 
 These checks track source acceptance, not completion of the broader research families.

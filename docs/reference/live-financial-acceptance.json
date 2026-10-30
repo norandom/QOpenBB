@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-30",
+  "scope": "First-batch live provider/API value acceptance",
+  "provider_source_revision": "28423762e8cc3faae978e770899834b41e7cde99",
+  "live_tests_passed": 15,
+  "formal_source_calls": 15,
+  "exact_field_comparisons": 291,
+  "cases": [
+    {
+      "case": "balance",
+      "dataset": "BalanceSheet",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/fundamental/balance",
+      "parameters": {
+        "symbol": "MSFT",
+        "period": "annual",
+        "limit": 2
+      },
+      "http_status": 200,
+      "returned_rows": 2,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:51.348142+00:00"
+        }
+      ],
+      "field_comparisons": 14,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 6,
+      "private_capture_sha256": "b99f0582022f78bfa67d3ed8443f800fe3a67af4306ef1e226fb44289a9cfb7d"
+    },
+    {
+      "case": "cash",
+      "dataset": "CashFlowStatement",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/fundamental/cash",
+      "parameters": {
+        "symbol": "MSFT",
+        "period": "annual",
+        "limit": 2
+      },
+      "http_status": 200,
+      "returned_rows": 2,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:51.882463+00:00"
+        }
+      ],
+      "field_comparisons": 12,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 4,
+      "private_capture_sha256": "0951a8dc53b2215e6bc3065bf90f7080f360cca16a02893f1ce5e5009585da18"
+    },
+    {
+      "case": "enterprise",
+      "dataset": "EnterpriseValues",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/fundamental/enterprise_values",
+      "parameters": {
+        "symbol": "MSFT",
+        "period": "annual",
+        "limit": 2
+      },
+      "http_status": 200,
+      "returned_rows": 2,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:53.541879+00:00"
+        }
+      ],
+      "field_comparisons": 14,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 12,
+      "private_capture_sha256": "1520253d6057804a60e89506e269befd34b30f6fef567d796e6b67fbf2965e38"
+    },
+    {
+      "case": "fred-DGS10",
+      "dataset": "FredSeries",
+      "provider": "fred",
+      "api_path": "/api/v1/economy/fred_series",
+      "parameters": {
+        "symbol": "DGS10",
+        "start_date": "2025-01-02",
+        "end_date": "2025-01-31",
+        "limit": 31,
+        "use_cache": false
+      },
+      "http_status": 200,
+      "returned_rows": 22,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:54.111894+00:00"
+        },
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:54.705902+00:00"
+        }
+      ],
+      "field_comparisons": 22,
+      "null_or_unprovided_values": 1,
+      "numeric_values": 21,
+      "private_capture_sha256": "f01c659d9b74d5a65b36be91562bc43576b7dd2125ecdaca8b59a4536ea4b77d"
+    },
+    {
+      "case": "income-annual",
+      "dataset": "IncomeStatement",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/fundamental/income",
+      "parameters": {
+        "symbol": "MSFT",
+        "period": "annual",
+        "limit": 2
+      },
+      "http_status": 200,
+      "returned_rows": 2,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:50.250147+00:00"
+        }
+      ],
+      "field_comparisons": 16,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 8,
+      "private_capture_sha256": "9180837747b03ba28da9ccfda53bec8e2ce5e07efd4fc0a174ea82b1eb62e135"
+    },
+    {
+      "case": "income-quarter",
+      "dataset": "IncomeStatement",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/fundamental/income",
+      "parameters": {
+        "symbol": "MSFT",
+        "period": "quarter",
+        "limit": 2
+      },
+      "http_status": 200,
+      "returned_rows": 2,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:50.801710+00:00"
+        }
+      ],
+      "field_comparisons": 16,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 8,
+      "private_capture_sha256": "3c172224c94475ec18005fa83f4abe599451777c5a0995f33fae90c025b13ffd"
+    },
+    {
+      "case": "metrics",
+      "dataset": "KeyMetrics",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/fundamental/metrics",
+      "parameters": {
+        "symbol": "MSFT",
+        "period": "annual",
+        "limit": 2
+      },
+      "http_status": 200,
+      "returned_rows": 2,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:52.417925+00:00"
+        }
+      ],
+      "field_comparisons": 10,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 4,
+      "private_capture_sha256": "6cf6993e2d8bec75deb346b5e8f29a94a9c5e35340b596d2e4ae5b192be8cd41"
+    },
+    {
+      "case": "peers",
+      "dataset": "EquityPeers",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/compare/peers",
+      "parameters": {
+        "symbol": "MSFT",
+        "limit": 5
+      },
+      "http_status": 200,
+      "returned_rows": 5,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:47.433388+00:00"
+        }
+      ],
+      "field_comparisons": 10,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 0,
+      "private_capture_sha256": "40642be540ee9c736e0566837ea0850c998c45db7cb1eb155cfe589d0fed3e57"
+    },
+    {
+      "case": "prices",
+      "dataset": "EquityHistorical",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/price/historical",
+      "parameters": {
+        "symbol": "MSFT",
+        "start_date": "2025-01-02",
+        "end_date": "2025-01-31"
+      },
+      "http_status": 200,
+      "returned_rows": 20,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:49.709454+00:00"
+        }
+      ],
+      "field_comparisons": 140,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 120,
+      "private_capture_sha256": "7d829c083765ce95f800b521da4cb55a8e8505b8f88fb990f1d4acbd8644615a"
+    },
+    {
+      "case": "profile-AAPL",
+      "dataset": "EquityInfo",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/profile",
+      "parameters": {
+        "symbol": "AAPL"
+      },
+      "http_status": 200,
+      "returned_rows": 1,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:48.497324+00:00"
+        }
+      ],
+      "field_comparisons": 4,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 1,
+      "private_capture_sha256": "f629d9f2568d9a618ef35a6e9e38dd39ca4943c7d8ae2855d30c302600970902"
+    },
+    {
+      "case": "profile-GOOGL",
+      "dataset": "EquityInfo",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/profile",
+      "parameters": {
+        "symbol": "GOOGL"
+      },
+      "http_status": 200,
+      "returned_rows": 1,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:49.053897+00:00"
+        }
+      ],
+      "field_comparisons": 4,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 1,
+      "private_capture_sha256": "388769668828b0aa7002456a6f41bd2fe9edc3b4dac13faf043bedc63cf65952"
+    },
+    {
+      "case": "profile-MSFT",
+      "dataset": "EquityInfo",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/profile",
+      "parameters": {
+        "symbol": "MSFT"
+      },
+      "http_status": 200,
+      "returned_rows": 1,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:47.963305+00:00"
+        }
+      ],
+      "field_comparisons": 4,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 1,
+      "private_capture_sha256": "844dabd8dbc1f2bc30d533e443795e0f9583a6bee749afc691c9a2e790160716"
+    },
+    {
+      "case": "ratios",
+      "dataset": "FinancialRatios",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/fundamental/ratios",
+      "parameters": {
+        "symbol": "MSFT",
+        "period": "annual",
+        "limit": 2
+      },
+      "http_status": 200,
+      "returned_rows": 2,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:52.975965+00:00"
+        }
+      ],
+      "field_comparisons": 10,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 4,
+      "private_capture_sha256": "7d01dc1e7dc594d5406b8e196bd817daa103c2099bcb8cbfb1534ec601f4acef"
+    },
+    {
+      "case": "search",
+      "dataset": "EquitySearch",
+      "provider": "fmp",
+      "api_path": "/api/v1/equity/search",
+      "parameters": {
+        "query": "Microsoft",
+        "limit": 5
+      },
+      "http_status": 200,
+      "returned_rows": 5,
+      "source_receipts": [
+        {
+          "status": 200,
+          "received_at": "2026-10-30T06:53:42.056986+00:00"
+        }
+      ],
+      "field_comparisons": 15,
+      "null_or_unprovided_values": 0,
+      "numeric_values": 0,
+      "private_capture_sha256": "4a363154a7cb57e8bb0848da25314f715bbf65e2017936b12a36d123991bfa95"
+    }
+  ],
+  "account_scope": "These queries succeeded with the configured verification credentials. Current installer entitlement remains unknown.",
+  "peer_set_basis": "Illustrative MSFT/AAPL/GOOGL profiles and provider peer candidates; no curated valuation comparables.",
+  "limits": [
+    "No valuation or financial-model calculations",
+    "No point-in-time safety claim",
+    "No packaged Workspace or published-image acceptance",
+    "Later provider families remain open"
+  ]
+}

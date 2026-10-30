@@ -1,0 +1,55 @@
+{
+  "root_parent": "64229a2c2bbb3b9818fbcf6b612aa870ac088a09",
+  "provider_source_revision": "28423762e8cc3faae978e770899834b41e7cde99",
+  "root_files": {
+    "tests/providers/test_live_financial.py": "5fe37619069d7698165012c8d09dcdbe6f87b212fa1109bc67bac952a94912a8",
+    "tests/providers/live_financial_support.py": "ebef79ba0890239e3d6250b511b7eadb64699c70a2c2c466a98daa8e4d3b1f4a",
+    "tests/providers/test_service_financial.py": "982c548029a03003c2259a7451095492498b38ae75b2413331ae33bcc7d3ad71",
+    "verification/provider/pyproject.toml": "51de664bf36a67d5a7887eb0b616560548d67dd97c351c1a7c77a36d5a553ac4",
+    "docs/reference/provider-coverage.json": "a2443e54c0e8fe867fe6f3b204dd61882472e8f333087d959bea7bd20be846a2",
+    "docs/reference/live-financial-acceptance.json": "322bcbcd388ea9a65534e503e9a77600814457a2e28e168606bdc4ef37783a0c"
+  },
+  "unchanged_dependency_files": {
+    "verification/provider/uv.lock": "f3e1026c1d0d23eac2aa85436c8d619577860d6a2cf98dfc4a95618fafb41bd1",
+    "services/data-api/pyproject.toml": "bb512a07350afdb40579c52cddbbf62579669222a82f8461d9bf73e4026b1343",
+    "services/data-api/uv.lock": "8279a573c3d0d2c531279563f3e4771adc6daddf3b13eca12a5fd6563ce1940f"
+  },
+  "live_tests": {
+    "passed": 15,
+    "elapsed_seconds": 26.73,
+    "returncode": 0,
+    "formal_source_calls": 15,
+    "source_field_comparisons": 291
+  },
+  "live_run_runtime_inputs_sha256": "36c5865d83ede65ed90954a986e95e5cf7b30c9d12b8c50a9d260f95e4cdb5f6",
+  "coverage": {
+    "verified_datasets": 11,
+    "current_account_unknown": true,
+    "widget_and_ai_unknown": true,
+    "summary_sha256": "322bcbcd388ea9a65534e503e9a77600814457a2e28e168606bdc4ef37783a0c"
+  },
+  "pytest_configuration_physical_lines": 30,
+  "limitations": "Verification-account queries only; current installer access, packaged Workspace, image publication and later provider families remain unaccepted.",
+  "independent_offline_join": {
+    "command": [
+      "verification/provider/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-c",
+      "verification/provider/pyproject.toml",
+      "tests/providers/test_fmp_transport.py",
+      "tests/providers/test_fred.py",
+      "tests/providers/test_service_financial.py",
+      "tests/providers/test_financial_catalog.py",
+      "-n0",
+      "--maxprocesses=2"
+    ],
+    "PYTHONPATH": "services/data-api",
+    "returncode": 0,
+    "elapsed_seconds": 53.02,
+    "log": "artifacts/live-financial-review/join.log",
+    "live_provider_calls": 0
+  },
+  "published_images_changed": false,
+  "data_scope": "Configured verification credentials and recorded queries only; current installer access remains unknown."
+}

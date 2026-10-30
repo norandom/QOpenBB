@@ -220,7 +220,7 @@ Task 1.1 must reconcile the pre-existing unrelated changes in complexity invento
 
 ## 6. Verify and deliver the bounded batch
 
-- [ ] 6.1 Verify real financial inputs and endpoint access
+- [x] 6.1 Verify real financial inputs and endpoint access
   - Use existing marked provider tests with private configuration; collect sanitized actual responses for one nonfinancial company and a small peer set, plus FRED context. Check statement periods, shares/EV bases, price units and provenance.
   - Done when displayed/programmatic values can be compared with actual provider observations and relevant edge/failure tests pass; denied entitlement stays blocked, not replaced by gallery snapshots. Later-family criteria remain open.
   - Caps: tests/evidence-only excluded; any production repair returns to its owning capped task.
@@ -308,7 +308,11 @@ All 44 criteria are referenced in executable tasks or this explicit follow-on ma
 
 - Main5.3 accepted 2026-10-30: [native consumer integration](../../../artifacts/reviewed/market-financial-consumers/accepted.md), eleven widgets, preserved baseline IDs, exact local Dagger image and independently reviewed source/catalog pin promotion. Main23/26. Live access, packaged Workspace and image publication remain6.1-6.3.
 
+- Main6.1 accepted 2026-10-30: [live financial inputs](../../../artifacts/reviewed/market-live-financial-inputs/accepted.md), fifteen live checks, thirteen FMP plus two FRED requests, exact selected-field comparisons and independent offline edge/failure review. Main24/26. Current installer access remains unknown; packaged Workspace and image release remain6.2-6.3.
+
 ## Implementation Notes
+
+- Live checks are explicitly opt-in with the registered live marker. Load provider keys privately, use the installed candidate and service-only PYTHONPATH, and capture original successful callbacks without URLs/error bodies. Publish query scope, times and hashes rather than raw provider payloads. Global real-data proofs describe implementation validation; account entitlement remains installation-specific.
 
 - Native widget generation needs a disposable inline results view of the composed financial response. Keep the served projection unchanged; bind catalog_financial.py in generator provenance. Compare drift with an immutable committed baseline, not an already prepared proposal. Use exact-revision Linux checkouts for mounted-source performance; preserve unrelated renderer changes through selective index blobs.
 

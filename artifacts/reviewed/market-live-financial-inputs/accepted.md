@@ -1,0 +1,9 @@
+# Live financial inputs accepted
+
+Task 6.1 is accepted on 2026-10-30. All eleven initial native datasets returned real provider data through the installed API. The formal run passed fifteen checks with thirteen FMP requests and two FRED requests. It compared 291 selected fields exactly, including 190 numeric observations, identifiers, dates and one retained missing value. Existing edge and failure handling passed a separate independent offline join.
+
+Coverage includes Microsoft statements, annual and quarterly income, prices, metrics, ratios, enterprise values, search and provider peer candidates; Apple and Alphabet profiles provide additional company examples. January 2025 prices and FRED DGS10 observations have explicit date windows. DGS10 is a ten-year Treasury context series, not a complete yield curve. The example listings are not a curated valuation peer group. Provider-defined conventions, unknown valuation bases and the absence of point-in-time guarantees remain explicit; no financial-model calculations are introduced.
+
+The [sanitized query and receipt summary](../../../docs/reference/live-financial-acceptance.json) binds scope, acquisition times and private capture hashes. Eleven real-data proofs bind the tested fetcher source and response contract. Current installer account access, packaged widget acceptance and AI remain unknown. Source callbacks execute the original requests; no gallery or synthetic data supplies these live results.
+
+See [independent review](review.md) and [source identities](final-source.json). Backend/provider/generator code and dependency sets are unchanged. The runtime-input hash changes after recording the new coverage evidence; the live run's earlier hash is retained rather than relabelled as a packaged image. Workspace verification and image publication remain tasks 6.2-6.3. Existing published images are unchanged. Main progress: 24/26.

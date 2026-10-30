@@ -65,7 +65,7 @@ def test_served_discovery_matches_openapi_without_provider_access(runtime):
         for states in dataset["coverage"].values():
             assert states["installed"]["status"] == "verified"
             assert states["account_access"]["status"] == "unknown"
-            assert states["real_data"]["status"] == "unknown"
+            assert states["real_data"]["status"] == "verified"
             assert states["widget"]["status"] == "unknown"
     assert len([family for family in catalog["coverage"]["families"] if family["provider"] == "fmp"]) == 13
     assert "fixture-runtime" not in json.dumps([catalog, schema])

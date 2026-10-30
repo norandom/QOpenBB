@@ -57,7 +57,7 @@
       "provider": "fmp",
       "label": "Financial analysis",
       "status": "open",
-      "outstanding": "Install and verify the first financial-input batch; TTM, growth, quarterly detail and segment inputs remain open.",
+      "outstanding": "Live first-batch API inputs accepted; packaged Workspace acceptance, TTM, growth, segment inputs and broader quarterly coverage remain open.",
       "documented": {
         "status": "verified",
         "proof": {
@@ -268,6 +268,17 @@
               "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
             }
           }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "49266456fe1080d2d92806468649b479656bd382e5495d4b46d3811b37903dfa",
+              "contract_sha256": "b39c2989863e5eac0a9a5adda1cd6138853e47aa81b3d82ba05000516f8294e8"
+            }
+          }
         }
       }
     },
@@ -293,6 +304,17 @@
             "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
             "identity": {
               "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "6b412528f3962765feecb1cdf9c39a3d2365a3f572e547f23ee1964de91bd71d",
+              "contract_sha256": "5034c46e194d6209e10034d6b3294726b08eb9051fd554604280366b36a2c0f9"
             }
           }
         }
@@ -332,6 +354,17 @@
               "source_sha256": "a95ade737ad3409ce36720e942bd2a2e50ba1cc1a8368ccc05c12f00a558d803"
             }
           }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "a95ade737ad3409ce36720e942bd2a2e50ba1cc1a8368ccc05c12f00a558d803",
+              "contract_sha256": "61e703dd7250e19342db3e0f7480782b74bc2327a22045cff847d76a59507181"
+            }
+          }
         }
       }
     },
@@ -367,6 +400,17 @@
             "evidence_path": "artifacts/reviewed/market-data-statements/accepted.md",
             "identity": {
               "source_sha256": "3c3fbbc335263ccafdf83c8c9ed49c2d6710e6f9680074db01adb304c8a6b52e"
+            }
+          }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "3c3fbbc335263ccafdf83c8c9ed49c2d6710e6f9680074db01adb304c8a6b52e",
+              "contract_sha256": "8261ff442ac537863bb0a64ac03715a7c1bb6d3caa118ffca6dd6e3031d4cc31"
             }
           }
         }
@@ -406,6 +450,17 @@
               "source_sha256": "a7c4a7738db6ef62e997ae42f1ca29f4e09baf7c861ad3ffaf74b643db849064"
             }
           }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "a7c4a7738db6ef62e997ae42f1ca29f4e09baf7c861ad3ffaf74b643db849064",
+              "contract_sha256": "52030c48392d431a6426d18ee6d312764752c6367efbbd5d7b0e7dc5e6f631f7"
+            }
+          }
         }
       }
     },
@@ -441,6 +496,17 @@
             "evidence_path": "artifacts/reviewed/market-data-discovery-prices/accepted.md",
             "identity": {
               "source_sha256": "20a0ba5f378add5c9d8789581937437adcfe92dd99cdd1f848e86c1322e123e6"
+            }
+          }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "20a0ba5f378add5c9d8789581937437adcfe92dd99cdd1f848e86c1322e123e6",
+              "contract_sha256": "32ba32128f1e6d974d3bd401c7d2c2b6b6480967550b0a4d1b2432cb000f7f09"
             }
           }
         }
@@ -480,6 +546,17 @@
               "source_sha256": "2ae8eeb7387510d3cb8aff15ea39de02a4884ef9bf268aa876bc29aabdfbee13"
             }
           }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "2ae8eeb7387510d3cb8aff15ea39de02a4884ef9bf268aa876bc29aabdfbee13",
+              "contract_sha256": "4b129a4a018a866d2a09f2dad4c02d64cc3b886a85118a5ed2f37c76303df2b0"
+            }
+          }
         }
       }
     },
@@ -515,6 +592,17 @@
             "evidence_path": "artifacts/reviewed/market-data-metrics-ratios/accepted.md",
             "identity": {
               "source_sha256": "8176161130c141e4a69b38064e88788a0e0769d91a6aa308579725f4c34d4e22"
+            }
+          }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "8176161130c141e4a69b38064e88788a0e0769d91a6aa308579725f4c34d4e22",
+              "contract_sha256": "02cfb1192e8d79c8b8cabdcb1834cc1700c93f93b66f3058be4a6edc57c252fa"
             }
           }
         }
@@ -554,6 +642,17 @@
               "source_sha256": "8a301b1db8d14cf32d4a1722d46f45361c307e4b56fa91e6b76846a4918d1d25"
             }
           }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "8a301b1db8d14cf32d4a1722d46f45361c307e4b56fa91e6b76846a4918d1d25",
+              "contract_sha256": "9d1b6000c35077cfd542a3933e4d53737438c508e5654965b016f415cb34c1c6"
+            }
+          }
         }
       }
     },
@@ -581,6 +680,17 @@
               "source_sha256": "5e5e11b9679d915259d739b2da2c9e547e44fbfb35f713e62e52f74894417004"
             }
           }
+        },
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "5e5e11b9679d915259d739b2da2c9e547e44fbfb35f713e62e52f74894417004",
+              "contract_sha256": "e60f782d18437e1983ed0df6ba2cff723ee1110450581a05f07827c9df92e778"
+            }
+          }
         }
       }
     },
@@ -588,7 +698,19 @@
       "model": "FredSeries",
       "provider": "fred",
       "family": "supplementary-fred",
-      "states": {}
+      "states": {
+        "real_data": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-30",
+            "evidence_path": "docs/reference/live-financial-acceptance.json",
+            "identity": {
+              "source_sha256": "1fb5d2ef1f8c72fcd4950b296328b5fecf8d602ec8476d174ac9f460e2535622",
+              "contract_sha256": "e9314dacbab10fb3af2fc7a39a66b831530eefb7113a8b32a11b4e3efdb23546"
+            }
+          }
+        }
+      }
     }
   ]
 }
