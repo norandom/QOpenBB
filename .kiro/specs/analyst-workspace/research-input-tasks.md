@@ -61,7 +61,7 @@ No production files, source pins, dependency locks, catalogs, model repository o
   - _Depends: 2_
   - _Requirements: 4.1, 4.2, 4.4, 5.1, 5.2, 5.3, 5.4_
 
-- [ ] 4. Join the lanes and collect the bounded real-provider evidence
+- [x] 4. Join the lanes and collect the bounded real-provider evidence
   - Controller verifies both independently accepted lanes share one actual request-state instance and selects their exact collected nodes in one serial research invocation. Run affected baseline regressions separately; do not reset the research budget between modules.
   - Execute no more than 46 native FMP, three direct DCF and two FRED upstream attempts, fewer when reusing historical evidence or prerequisites fail. Use configured private credentials, original callbacks and sanitized receipts; no automatic retries.
   - Record command, source/contract identity, actual exit code, attempt count and each observation/gap. Authentication/throttling stops further provider requests; required blocked cases remain unverified/failed. A blocked DCF feasibility finding may be conclusive but is not a passed integration.
@@ -101,3 +101,4 @@ The project delivery rules require the evidence/documentation completion task de
 - Task 3.2 accepted 2026-11-06: 18 offline DCF checks passed, live case skipped; independent Astra review approved. Direct probes are implemented, but provider access and custom-input behavior await task 4.
 - Task 2 integration repair accepted 2026-11-06: preserve recognized HTTP failures through legacy callbacks and exact fiscal-year strings before optional integer normalization. 32 offline checks passed; independent Astra review passed the four new regressions. No interface or production change.
 - Task 3.1 accepted 2026-11-06 after one review repair: 23 offline checks passed; independent Astra review verified seven exchange-identity and blocked-prerequisite regressions. Four live nodes collect; actual provider inputs await task 4. Metrics/ratios omit `ttm` from effective-query metadata and retain that explicit finding.
+- Task 4 accepted 2026-11-06: one serial run at `b597df7` passed five live journeys and recorded 49 attempts (46 native FMP, three direct DCF), all HTTP 200. Combined offline join: 73 passed. Independent Astra review approved the evidence; financial compatibility and IA-B readiness remain open. FRED evidence is historical-only. Local run: `artifacts/research-input-readiness/live-20261106T112507Z`.
