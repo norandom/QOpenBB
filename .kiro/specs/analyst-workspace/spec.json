@@ -13,10 +13,11 @@
     "first_slice": "IA-A provider coverage and financial input verification before IA-B dashboard",
     "input_readiness": {
       "name": "research-input-readiness",
-      "phase": "requirements-generated",
+      "phase": "design-generated",
       "requirements_document": "research-input-requirements.md",
       "requirements_generated": true,
-      "requirements_approved": false,
+      "requirements_approved": true,
+      "requirements_approval": "Owner approved the independently reviewed IA-A requirements in conversation on 2026-11-06; proceed to bounded design only.",
       "requirements_review": {
         "status": "passed",
         "model": "gpt-6-astra",
@@ -26,7 +27,16 @@
         "sha256": "50b4ff53aef6f9b5328ac10f41f6723e7b5b1e0f7cae7cd78f9054de4cba568e"
       },
       "research": "research-input-research.md",
-      "design_generated": false,
+      "design_document": "research-input-design.md",
+      "design_review": {
+        "status": "passed",
+        "model": "gpt-6-astra",
+        "mode": "independent",
+        "repair_passes": 1,
+        "evidence": "research-input-design-review.md",
+        "sha256": "dc5af3d18c1072437f3e14b240579f81c987129f31771bb00a822212fc2c504b"
+      },
+      "design_generated": true,
       "design_approved": false,
       "tasks_generated": false,
       "tasks_approved": false,
