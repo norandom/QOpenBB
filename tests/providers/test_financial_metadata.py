@@ -88,11 +88,26 @@ def test_acquisition_normalizes_to_utc_without_replacing_actual_time():
     {"query": "api-key=SECRET_CANARY"},
     {"query": "access_token=SECRET_CANARY"},
     {"query": "access-token:SECRET_CANARY"},
+    {"ttm": "https://example.test/data?apikey=SECRET_CANARY"},
+    {"ttm": "access_token=SECRET_CANARY"},
+    {"ttm": ["exclude", "password:SECRET_CANARY"]},
+    {"ttm": {"mode": "exclude"}},
+    {"ttm": float("nan")},
 ])
 def test_effective_queries_reject_private_or_unvalidated_context(query):
     with pytest.raises(ValidationError) as failure:
         metadata(effective_query=query)
     assert "SECRET_CANARY" not in str(failure.value)
+
+
+@pytest.mark.parametrize("selection", ["exclude", "include", "only"])
+def test_public_ttm_query_roundtrips_without_provider_specific_choices(selection):
+    common = metadata(effective_query={"symbol": "GDP", "ttm": selection})
+    restored = FinancialResultMetadata.model_validate_json(common.model_dump_json())
+    assert restored == common
+    assert restored.schema_version == 1
+    assert restored.effective_query == {"symbol": "GDP", "ttm": selection}
+    assert common.as_metadata()[FINANCIAL_METADATA_KEY]["effective_query"] == restored.effective_query
 
 
 def test_validated_query_names_are_not_subject_to_magic_secret_detection():

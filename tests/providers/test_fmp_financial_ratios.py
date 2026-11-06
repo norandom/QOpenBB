@@ -9,6 +9,7 @@ import pytest
 from openbb_core.provider.standard_models.financial_metadata import FINANCIAL_METADATA_KEY
 from openbb_core.provider.utils.financial_errors import FinancialError, FinancialErrorCode
 from openbb_fmp.models.financial_ratios import FMPFinancialRatiosFetcher as Fetcher
+from openbb_fmp.models.financial_ratios_data import FMPFinancialRatiosData
 from openbb_fmp.utils.helpers import FMPAcquisition
 
 STAMP = datetime(2024, 2, 3, 4, 5, tzinfo=UTC)
@@ -53,6 +54,7 @@ def test_fidelity_metadata():
     {"symbol": ""}, {"symbol": "   "}, {"symbol": "A,B"},
     {"symbol": "A B"}, {"symbol": "A&apikey=bad"}, {"symbol": None},
     {"symbol": "A", "period": "ttm"}, {"symbol": "A", "period": "monthly"},
+    {"symbol": "A", "ttm": "only"}, {"symbol": "A", "ttm": "include"},
     {"symbol": "A", "limit": 0}, {"symbol": "A", "limit": 1001},
     {"symbol": "A", "limit": None}, {"symbol": "A", "limit": -1},
     {"symbol": "A", "limit": True}, {"symbol": "A", "limit": "5"},
@@ -86,10 +88,49 @@ def test_extraction_uses_provenance_encoded_query(monkeypatch):
 
 
 
-@pytest.mark.parametrize("extra", [{"ttm": "only"}, {"ttm": "include"}, {"period": "ttm"}])
-def test_ttm_rejected(extra):
-    with pytest.raises(FinancialError):
-        Fetcher.transform_query({"symbol": "A", **extra})
+@pytest.mark.parametrize("selection", [{}, {"ttm": "exclude"}], ids=["default", "explicit"])
+@pytest.mark.parametrize("period_params,expected_period", [
+    ({}, "annual"), ({"period": "annual"}, "annual"),
+    ({"period": "quarter"}, "quarter"), ({"period": "quarterly"}, "quarter"),
+])
+def test_periodic_query_provenance_preserves_requests_and_values(
+    monkeypatch, selection, period_params, expected_period,
+):
+    calls = []
+    payload = [fixture()]
+    original = deepcopy(payload)
+
+    async def transport(url, **kwargs):
+        calls.append((url, kwargs))
+        return FMPAcquisition(payload, STAMP)
+
+    monkeypatch.setattr("openbb_fmp.utils.helpers.get_data_many", transport)
+    params = {"symbol": " a ", **period_params, **selection}
+    query = Fetcher.transform_query(params)
+    acquired = asyncio.run(Fetcher.aextract_data(query, {"fmp_api_key": "synthetic"}))
+    result = Fetcher.transform_data(query, acquired)
+    assert len(calls) == 1
+    url, kwargs = calls[0]
+    assert urlsplit(url).path == "/stable/ratios"
+    assert parse_qs(urlsplit(url).query) == {
+        "symbol": ["A"], "period": [expected_period], "limit": ["5"], "apikey": ["synthetic"],
+    }
+    assert kwargs == {"with_provenance": True, "typed_errors": True}
+    assert params == {"symbol": " a ", **period_params, **selection}
+    assert payload == original
+    assert [row.model_dump() for row in result.result] == [FMPFinancialRatiosData.model_validate(original[0]).model_dump()]
+    row = result.result[0]
+    assert row.net_profit_margin == -.12 and row.current_ratio == 0 and row.revenue_per_share is None
+    assert row.dividend_yield == .02 and row.dividend_yield_percentage == 2
+    meta = result.metadata[FINANCIAL_METADATA_KEY]
+    assert meta["schema_version"] == 1
+    assert meta["effective_query"] == {
+        "symbol": "A", "period": expected_period, "limit": 5, "ttm": "exclude",
+    }
+    # Periodic selection does not establish fiscal comparability or derive a value.
+    assert meta["transformations"] == [] and meta["point_in_time_safe"] is False
+    assert meta["fields"]["net_profit_margin"]["period_basis"] == "annual"
+    assert meta["fields"]["price_to_earnings"]["financial_basis"]["market_date"] is None
 
 
 def test_order_duplicates_missing_identity_and_bounds():

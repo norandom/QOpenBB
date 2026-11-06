@@ -7,8 +7,9 @@ from urllib.parse import parse_qs, urlsplit
 import pytest
 
 from openbb_core.provider.standard_models.financial_metadata import FINANCIAL_METADATA_KEY
-from openbb_core.provider.utils.financial_errors import FinancialError
+from openbb_core.provider.utils.financial_errors import FinancialError, FinancialErrorCode
 from openbb_fmp.models.key_metrics import FMPKeyMetricsFetcher as Fetcher
+from openbb_fmp.models.key_metrics_data import FMPKeyMetricsData
 from openbb_fmp.utils.helpers import FMPAcquisition
 
 STAMP = datetime(2024, 2, 3, tzinfo=UTC)
@@ -28,9 +29,15 @@ def fixture(**extra):
     {"symbol": "A", "ttm": "only"}, {"symbol": "A", "ttm": "include"},
     *[{"symbol": "A", "limit": x} for x in [0, 1001, True, "5", 5., None]],
 ])
-def test_invalid_before_io(params):
-    with pytest.raises(FinancialError):
-        Fetcher.transform_query(params)
+def test_invalid_before_io(params, monkeypatch):
+    async def forbidden(*args, **kwargs):
+        pytest.fail("Invalid query reached transport")
+    monkeypatch.setattr("openbb_fmp.utils.helpers.get_data_many", forbidden)
+    with pytest.raises(FinancialError) as caught:
+        query = Fetcher.transform_query(params)
+        asyncio.run(Fetcher.aextract_data(query, {}))
+    assert caught.value.code == FinancialErrorCode.INVALID_PARAMETERS
+    assert caught.value.__context__ is None
 
 
 @pytest.mark.parametrize("period", ["annual", "quarter", "quarterly"])
@@ -88,6 +95,52 @@ def test_periodic_transport(monkeypatch):
     assert urlsplit(url).path == "/stable/key-metrics"
     assert parse_qs(urlsplit(url).query) == {"symbol": ["ABC"], "period": ["quarter"], "limit": ["5"], "apikey": ["test"]}
     assert kwargs == {"with_provenance": True, "typed_errors": True}
+
+
+@pytest.mark.parametrize("selection", [{}, {"ttm": "exclude"}], ids=["default", "explicit"])
+@pytest.mark.parametrize("period_params,expected_period", [
+    ({}, "annual"), ({"period": "annual"}, "annual"),
+    ({"period": "quarter"}, "quarter"), ({"period": "quarterly"}, "quarter"),
+])
+def test_periodic_query_provenance_preserves_requests_and_values(
+    monkeypatch, selection, period_params, expected_period,
+):
+    calls = []
+    payload = [fixture()]
+    original = deepcopy(payload)
+
+    async def transport(url, **kwargs):
+        calls.append((url, kwargs))
+        return FMPAcquisition(payload, STAMP)
+
+    monkeypatch.setattr("openbb_fmp.utils.helpers.get_data_many", transport)
+    params = {"symbol": " abc ", **period_params, **selection}
+    query = Fetcher.transform_query(params)
+    acquired = asyncio.run(Fetcher.aextract_data(query, {"fmp_api_key": "synthetic"}))
+    result = Fetcher.transform_data(query, acquired)
+    assert len(calls) == 1
+    url, kwargs = calls[0]
+    assert urlsplit(url).path == "/stable/key-metrics"
+    assert parse_qs(urlsplit(url).query) == {
+        "symbol": ["ABC"], "period": [expected_period], "limit": ["5"], "apikey": ["synthetic"],
+    }
+    assert kwargs == {"with_provenance": True, "typed_errors": True}
+    assert params == {"symbol": " abc ", **period_params, **selection}
+    assert payload == original
+    assert [row.model_dump() for row in result.result] == [FMPKeyMetricsData.model_validate(original[0]).model_dump()]
+    row = result.result[0]
+    assert row.enterprise_value == -2 and row.ev_to_ebitda == 0 and row.return_on_equity == -.2
+    assert row.cash_conversion_cycle is None
+    meta = result.metadata[FINANCIAL_METADATA_KEY]
+    assert meta["schema_version"] == 1
+    assert meta["effective_query"] == {
+        "symbol": "ABC", "period": expected_period, "limit": 5, "ttm": "exclude",
+    }
+    # Periodic selection does not establish fiscal comparability or derive a value.
+    assert meta["transformations"] == [] and meta["point_in_time_safe"] is False
+    assert meta["fields"]["return_on_equity"]["period_basis"] == "annual"
+    assert meta["fields"]["enterprise_value"]["financial_basis"]["market_date"] is None
+
 
 @pytest.mark.parametrize("key,field,value", [
     ("researchAndDevelopmentToRevenue", "research_and_development_to_revenue", -.3),

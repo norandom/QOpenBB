@@ -14,7 +14,7 @@ This plan supplements the accepted [main tasks](tasks.md), rather than reopening
   - _Boundary: Existing verification environment and source inventory; controller-owned setup._
   - _Requirements: 6.1, 8.1_
 
-- [ ] 2. Preserve the validated periodic selection in result metadata
+- [x] 2. Preserve the validated periodic selection in result metadata
   - Add the public query key to the existing core allowlist and emit the validated selector from both periodic provider models as one cohesive change. Keep core provider-neutral; retain credential/value validation. Do not echo raw request parameters or create another default table.
   - Extend existing focused tests for default/explicit exclusion in annual/quarter modes, identical upstream requests and financial results, unsafe query rejection, and unsupported include/only/TTM rejection before transport. Capture the meaningful regression failure before the repair, then refresh both copied local packages through the protected toolchain and verify installed bytes before GREEN.
   - Preserve schema version, envelope location, result order, values, units, aliases, defaults, error semantics and explicit missingness. Document in the test assertions that periodic selection does not establish fiscal comparability or introduce derived values.
@@ -88,3 +88,5 @@ Do not merge unreviewed clean-snapshot output into the working tree. Controller 
 ## Implementation Notes
 
 - Task 1 accepted 2026-11-06: source/package/clean-generator identity and protected tooling verified; 102 focused tests collected and 58 native offline tests selected (19 live deselected), no tests executed. Independent Sol review approved. Ignored baseline and review: artifacts/periodic-query-provenance/. Accepted Workspace checkout remains at f832a559; the unrelated root vendor checkout is untouched. Refresh/check scripts are prepared, not behavior acceptance.
+
+- Task 2 accepted 2026-11-06: three-line core/FMP repair, 19 expected RED failures followed by 125 focused passes after protected package refresh and installed-source hash verification. Owning-fork lint and combined 400/300/50 gate pass; independent Astra review approved with four additional identity/schema/empty-result checks. Native/live/catalog/release acceptance remains open. Review: artifacts/periodic-query-provenance/task2-review.md.
