@@ -19,7 +19,7 @@ No production files, source pins, dependency locks, catalogs, model repository o
 
 ## Tasks
 
-- [ ] 1. Confirm the existing verification environment and freeze the execution scope
+- [x] 1. Confirm the existing verification environment and freeze the execution scope
   - Confirm the installed provider environment, API pin, contract hashes and existing test collection without provider calls. The Windows Workspace vendor checkout is older; use recorded accepted source identities without building it.
   - Locate the existing private key-loading path without printing values; verify configured/missing states only. Missing credentials do not trigger substitute data or count as access acceptance.
   - Freeze the declared sample, historical references, native/direct receipt distinction and exact research node selections. Separate baseline regression selection from the 51-request research budget.
@@ -93,3 +93,7 @@ env PYTHONPATH=services/data-api verification/provider/.venv/bin/python -m pytes
 Task 1 confirms this environment's current source identity and collection. Tasks 3.1/3.2 return actual collected research node IDs, then task 4 supplies those to this same pytest entry point with `QOPENBB_LIVE_ACCEPTANCE=1`, private configured keys and a unique ignored output directory. Never include key values in commands, receipts or reports. This plan does not claim future nodes exist or commands ran. If owner execution is needed, place the exact operation in ignored `run_this.sh` and syntax-check it.
 
 The project delivery rules require the evidence/documentation completion task despite the generic task skill's code-only default: this approved slice's deliverable is an executable verification and readiness assessment. No additional paperwork-only tasks are introduced.
+
+## Implementation Notes
+
+- Task 1 accepted 2026-11-06: 31 tests collected, 16 offline service checks passed; independent Sol review approved. Existing installed API/source and eight contract hashes match. Ignored setup receipt SHA256: `33cd4eda1e50bc50b4d7513d58db9f57f8b2316b1dc7807c00dd6a1ce7c38920`. Research selectors await task 3; no live-access claim.
