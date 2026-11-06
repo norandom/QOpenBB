@@ -25,3 +25,9 @@ This publication contains a sanitized assessment and this concise verification r
 ## Final assessment review
 
 Independent Astra review approved the assessment with all 24 requirements covered and no blocking financial findings. Assessment completion is true; IA-B input readiness and workflow implementation remain false. Original review SHA256: `75bd97ac99f853470ed16096c9ec8bb9122f3f50ef37f81211eadb8e55495692`. Publication checks verify the linked records and this exact-byte mirror; no product deployment acceptance is implied.
+
+## Accounting evidence correction, 2026-11-06
+
+The earlier assessment incorrectly attributed three missing exported accounting definitions to the provider. The test sanitizer had removed dictionary keys containing `account`. The [static audit](accounting-source-audit.json) verifies all 50 original receipt hashes; twelve affected receipts retain comparison semantics. Pinned native source separately proves scale and currency-reference annotations. Original exports remain unchanged; this correction does not reconstruct their missing subtrees or claim new live acceptance.
+
+The sanitizer now preserves accounting definitions and selected values while filtering private identity and transport fields. Three regressions failed before the fix; all 35 existing service-suite tests pass with the additions. [Independent Astra review](accounting-correction-review.md) approved the test and assessment correction, including fresh receipt/source checks. The reviewed narrative's sole publication changes are its public audit link and this correction-review reference. IA-B readiness remains false; the genuine Metrics/Ratios periodic-query metadata omission has a separate proposed design. No production code, image or deployment changed.

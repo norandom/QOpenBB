@@ -1,0 +1,318 @@
+{
+  "date": "2026-11-06",
+  "scope": "Static accounting-metadata correction; no new queries, tests, financial calculations or live acceptance.",
+  "assessment_before_sha256": "2624c08dac959dd632b146d923f8bc520a09e45f38e6f203f693c1a885edd6a4",
+  "narrative_before_sha256": "7e21a953febb5d60d50288c032c878c150be84b41d8807650b36b7e7693b291b",
+  "provider_revision": "28423762e8cc3faae978e770899834b41e7cde99",
+  "source_files": [
+    {
+      "path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_data.py",
+      "sha256": "1a6a0cc83c8118ebae8ff5aed0b74c737629e5996da010c6760412512f06701e",
+      "revision": "28423762e8cc3faae978e770899834b41e7cde99"
+    },
+    {
+      "path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_data.py",
+      "sha256": "9fb453e2d76347450c702b36ebaed2a2ea94eb7a42111b6a45cb9e20fa6e4016",
+      "revision": "28423762e8cc3faae978e770899834b41e7cde99"
+    }
+  ],
+  "historical_sanitizer": {
+    "path": "tests/providers/live_financial_support.py",
+    "revision": "b597df79007c586a86f2ce7c0004bec8c39baf87",
+    "sha256": "38a4bd0ab64cb924770238fb4050643878e6c4660f3fbff72cdcc894a5d6d8e5",
+    "lines": [
+      324,
+      327,
+      328
+    ],
+    "finding": "safe_evidence substring filtering of dictionary keys removed accounting entries containing account; string field names in comparisons survived."
+  },
+  "original_observation_receipt_hashes_verified": 50,
+  "affected_receipts": [
+    {
+      "id": "research-MSFT-balance-annual",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-MSFT-balance-annual.json",
+      "sha256": "f3628fb80534e020372e052229dfa7e67ea08e37f4b4420321a5389da6288f4d",
+      "retained_comparison_semantics": [
+        {
+          "field": "accounts_payable",
+          "definition": "Accounts payable.",
+          "unit": "currency",
+          "period_basis": "instant",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-MSFT-balance-quarter",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-MSFT-balance-quarter.json",
+      "sha256": "9cc79b12a767f6f7d3cff811cc06213e39a2e3d5bd6bfd958e07b61ebf0bf153",
+      "retained_comparison_semantics": [
+        {
+          "field": "accounts_payable",
+          "definition": "Accounts payable.",
+          "unit": "currency",
+          "period_basis": "instant",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-MSFT-cash-annual",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-MSFT-cash-annual.json",
+      "sha256": "0b0a02211520c222e1eaf56f4f682bcde7572f3258bab0ad0bc5282a673dc1e8",
+      "retained_comparison_semantics": [
+        {
+          "field": "change_in_account_receivables",
+          "definition": "Change in account receivables.",
+          "unit": "currency",
+          "period_basis": "annual",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        },
+        {
+          "field": "change_in_account_payable",
+          "definition": "Change in account payable.",
+          "unit": "currency",
+          "period_basis": "annual",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-MSFT-cash-quarter",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-MSFT-cash-quarter.json",
+      "sha256": "229f91261ca5f6ce21657bed248a46cb224be33fe7eb504225791c73eb0dece7",
+      "retained_comparison_semantics": [
+        {
+          "field": "change_in_account_receivables",
+          "definition": "Change in account receivables.",
+          "unit": "currency",
+          "period_basis": "discrete_quarter",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        },
+        {
+          "field": "change_in_account_payable",
+          "definition": "Change in account payable.",
+          "unit": "currency",
+          "period_basis": "discrete_quarter",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-ORCL-balance-annual",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-ORCL-balance-annual.json",
+      "sha256": "a6e5a20a21996c28f4b07926031df2cfa954e9fb53dc4650982aff14e3b267bf",
+      "retained_comparison_semantics": [
+        {
+          "field": "accounts_payable",
+          "definition": "Accounts payable.",
+          "unit": "currency",
+          "period_basis": "instant",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-ORCL-balance-quarter",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-ORCL-balance-quarter.json",
+      "sha256": "33853195cfce81924cc280fcbf5a7d53e304afec289ebbfad5589df8343d5b3a",
+      "retained_comparison_semantics": [
+        {
+          "field": "accounts_payable",
+          "definition": "Accounts payable.",
+          "unit": "currency",
+          "period_basis": "instant",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-ORCL-cash-annual",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-ORCL-cash-annual.json",
+      "sha256": "97a2e76fa033f82ba19bef726b8a8ecddc572167c4cabf2977c8a4387b915a50",
+      "retained_comparison_semantics": [
+        {
+          "field": "change_in_account_receivables",
+          "definition": "Change in account receivables.",
+          "unit": "currency",
+          "period_basis": "annual",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        },
+        {
+          "field": "change_in_account_payable",
+          "definition": "Change in account payable.",
+          "unit": "currency",
+          "period_basis": "annual",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-ORCL-cash-quarter",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-ORCL-cash-quarter.json",
+      "sha256": "5f53b4f4b035745aba4cfebf9564d1f1ca6cce62f8a3fe75accb5e7c89209acf",
+      "retained_comparison_semantics": [
+        {
+          "field": "change_in_account_receivables",
+          "definition": "Change in account receivables.",
+          "unit": "currency",
+          "period_basis": "discrete_quarter",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        },
+        {
+          "field": "change_in_account_payable",
+          "definition": "Change in account payable.",
+          "unit": "currency",
+          "period_basis": "discrete_quarter",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-ADBE-balance-annual",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-ADBE-balance-annual.json",
+      "sha256": "b5e58bfc8f501a7433674f7a37cdf296dc6432c7ab13ce8d559643892c2aa75d",
+      "retained_comparison_semantics": [
+        {
+          "field": "accounts_payable",
+          "definition": "Accounts payable.",
+          "unit": "currency",
+          "period_basis": "instant",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-ADBE-balance-quarter",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-ADBE-balance-quarter.json",
+      "sha256": "aab4fdd596a448309ab27016f923752c53e9e3ff41f863dee9d857b9cdc536fc",
+      "retained_comparison_semantics": [
+        {
+          "field": "accounts_payable",
+          "definition": "Accounts payable.",
+          "unit": "currency",
+          "period_basis": "instant",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-ADBE-cash-annual",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-ADBE-cash-annual.json",
+      "sha256": "1cd666c806c2f230b536dd4f23e278065c1de490fbc540fbb401fb91173cc687",
+      "retained_comparison_semantics": [
+        {
+          "field": "change_in_account_receivables",
+          "definition": "Change in account receivables.",
+          "unit": "currency",
+          "period_basis": "annual",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        },
+        {
+          "field": "change_in_account_payable",
+          "definition": "Change in account payable.",
+          "unit": "currency",
+          "period_basis": "annual",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    },
+    {
+      "id": "research-ADBE-cash-quarter",
+      "path": "artifacts/research-input-readiness/live-20261106T112507Z/receipts/research-ADBE-cash-quarter.json",
+      "sha256": "28e4c00bc9275ce8613bc8c8c9f0687a5d9460516b95a9b2700bfe59f2faa4cf",
+      "retained_comparison_semantics": [
+        {
+          "field": "change_in_account_receivables",
+          "definition": "Change in account receivables.",
+          "unit": "currency",
+          "period_basis": "discrete_quarter",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        },
+        {
+          "field": "change_in_account_payable",
+          "definition": "Change in account payable.",
+          "unit": "currency",
+          "period_basis": "discrete_quarter",
+          "value_origin": "provider_observation",
+          "availability": "available"
+        }
+      ],
+      "exported_financial_metadata_fields": "affected entries absent"
+    }
+  ],
+  "source_only_annotation_evidence": {
+    "unit": "currency",
+    "scale": 1,
+    "currency_field": "reported_currency",
+    "value_origin": "provider_observation",
+    "field_references": [
+      {
+        "family": "balance",
+        "field": "accounts_payable",
+        "lines": {
+          "template": 17,
+          "annotation": 69,
+          "alias": 135,
+          "definition": 248
+        }
+      },
+      {
+        "family": "cash",
+        "field": "change_in_account_receivables",
+        "lines": {
+          "template": 16,
+          "annotation": 48,
+          "alias": 109,
+          "definition": 193
+        }
+      },
+      {
+        "family": "cash",
+        "field": "change_in_account_payable",
+        "lines": {
+          "template": 16,
+          "annotation": 50,
+          "alias": 111,
+          "definition": 201
+        }
+      }
+    ]
+  },
+  "boundaries": [
+    "Original receipts are immutable and are not reconstructed.",
+    "Retained comparisons prove definition, unit, declared period basis, value origin and availability.",
+    "Pinned source annotations separately prove scale and currency-field reference; these are not claimed to survive in the affected historical exported subtree.",
+    "No native provider field repair is required for these three fields.",
+    "TTM effective-query omission and every other financial compatibility unknown remain unresolved; IA-B flags remain false."
+  ]
+}

@@ -65,6 +65,14 @@
         "model": "gpt-6-astra",
         "evidence": "artifacts/reviewed/research-inputs/accepted.md",
         "original_review_sha256": "75bd97ac99f853470ed16096c9ec8bb9122f3f50ef37f81211eadb8e55495692"
+      },
+      "accounting_evidence_correction": {
+        "date": "2026-11-06",
+        "status": "accepted",
+        "review": "../../../artifacts/reviewed/research-inputs/accounting-correction-review.md",
+        "offline_tests": 35,
+        "new_live_calls": 0,
+        "original_receipts_unchanged": true
       }
     }
   },

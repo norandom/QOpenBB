@@ -35197,10 +35197,26 @@
     },
     {
       "sourcepath": "artifacts/research-input-readiness/accepted.md",
-      "sourceSHA256": "021c13c3b27eebae32121e69b2701176069222d78c02ed6a77f129be2a9963da",
+      "sourceSHA256": "4a976eea073ce7b288ce461d5ec43955b9db8fdeb4bc53df254543db9395de32",
       "publishedpath": "artifacts/reviewed/research-inputs/accepted.md",
-      "publishedSHA256": "021c13c3b27eebae32121e69b2701176069222d78c02ed6a77f129be2a9963da",
-      "bytes": 3666,
+      "publishedSHA256": "4a976eea073ce7b288ce461d5ec43955b9db8fdeb4bc53df254543db9395de32",
+      "bytes": 4901,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/research-metadata/assessment-correction-20261106-source-audit.json",
+      "sourceSHA256": "b50737218530ee32b69fff98e13aa454d00a54ed5c0b0581a53b63372fce58ce",
+      "publishedpath": "artifacts/reviewed/research-inputs/accounting-source-audit.json",
+      "publishedSHA256": "b50737218530ee32b69fff98e13aa454d00a54ed5c0b0581a53b63372fce58ce",
+      "bytes": 12405,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/research-metadata/account-correction-review.md",
+      "sourceSHA256": "5123aaf5974f1d82548acbafec054e926775753a1da0202a42c2c25f5ca154e2",
+      "publishedpath": "artifacts/reviewed/research-inputs/accounting-correction-review.md",
+      "publishedSHA256": "5123aaf5974f1d82548acbafec054e926775753a1da0202a42c2c25f5ca154e2",
+      "bytes": 5636,
       "transform": "exact-byte-copy"
     }
   ],
@@ -35927,7 +35943,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171018197,
+  "total_payload_bytes": 171037473,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
