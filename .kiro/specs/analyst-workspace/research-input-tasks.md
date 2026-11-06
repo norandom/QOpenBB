@@ -28,7 +28,7 @@ No production files, source pins, dependency locks, catalogs, model repository o
   - _Boundary: Existing verification environment_
   - _Requirements: 1.3, 1.4, 5.4, 6.3_
 
-- [ ] 2. Freeze shared request controls and source-preserving evidence
+- [x] 2. Freeze shared request controls and source-preserving evidence
   - Extend the existing test-only helper with one shared research-run state, per-provider stop reasons, failed-attempt counting, the 51-attempt ceiling and enforced 15-second timeout. Preserve original baseline behavior when no research state is supplied.
   - Make that single session instance available to both native and DCF modules. Prove cross-module identity and shared stop/budget effects with offline checks; importing identically named fixtures is insufficient evidence.
   - Preserve source callback behavior. Add absent/null distinctions, stable source ordinals, documented alias/date/year normalization and safe native/direct receipts without logging headers, URLs or unsafe provider exception text.
@@ -97,3 +97,4 @@ The project delivery rules require the evidence/documentation completion task de
 ## Implementation Notes
 
 - Task 1 accepted 2026-11-06: 31 tests collected, 16 offline service checks passed; independent Sol review approved. Existing installed API/source and eight contract hashes match. Ignored setup receipt SHA256: `33cd4eda1e50bc50b4d7513d58db9f57f8b2316b1dc7807c00dd6a1ce7c38920`. Research selectors await task 3; no live-access claim.
+- Task 2 accepted 2026-11-06: 28 offline checks passed, including independent Astra rerun. Shared session state, bounded transport, source comparisons and immutable sanitized receipts are frozen; no live-provider acceptance claimed. Lane handoff is retained locally at `artifacts/research-input-readiness/helper-api-handoff.md`.
