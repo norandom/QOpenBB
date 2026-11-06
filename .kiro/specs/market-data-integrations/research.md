@@ -134,3 +134,7 @@ Controller checks found an acyclic dependency graph, explicit done/boundary/comp
 ## Source annotation prerequisite found during task 4.1, 2026-10-29
 
 Independent source inspection confirmed route/registry associations are available, but static financial meanings and procedural bounds still live in runtime helpers. A new inferred projection would duplicate their ownership. The [reviewed amendment](financial-annotations-amendment.md) proposes typed class declarations reused by runtime and projection, with dynamic FRED and observed result values retained at runtime. Task 4.1 remains unchecked; its source-ownership expansion awaits owner review and bounded task generation. Enterprise task 2.9 was separately verified and accepted.
+
+## 2026-11-06: periodic query provenance
+
+Pinned API `28423762e8cc3faae978e770899834b41e7cde99` validates `ttm=exclude` for Metrics/Ratios but omits it from emitted effective-query metadata; core also omits this public key from its allowlist. The [bounded design](periodic-query-provenance-design.md) reuses approved requirements and three existing production files. [Independent review](periodic-query-provenance-review.md) passed; owner design/task approval remains pending. No production repair or live verification is claimed. The separately corrected accounting-field finding originated in the test evidence sanitizer, not missing provider declarations.
