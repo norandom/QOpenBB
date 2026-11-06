@@ -383,6 +383,53 @@ def test_research_receipts_keep_native_direct_boundary_and_redact_unsafe_text(mo
     assert SECRET not in direct_text and "private.example" not in direct_text and "headers" not in direct_text
 
 
+@pytest.mark.parametrize("dataset,field_names", [
+    ("balance", ("accounts_payable",)),
+    ("cash", ("change_in_account_receivables", "change_in_account_payable")),
+])
+def test_research_receipts_preserve_native_accounting_field_metadata(monkeypatch, tmp_path, dataset, field_names):
+    from live_financial_support import ResearchRunState, SourceCapture, write_evidence
+    from openbb_core.provider.standard_models.financial_annotations import render_field_templates
+    from openbb_fmp.models.balance_sheet import FMPBalanceSheetData
+    from openbb_fmp.models.cash_flow import FMPCashFlowStatementData
+
+    model = {"balance": FMPBalanceSheetData, "cash": FMPCashFlowStatementData}[dataset]
+    fields = {name: item.model_dump(mode="json") for name, item in render_field_templates(model).items()}
+    common = {"dataset": "equity/fundamental/" + dataset, "fields": fields}
+    comparisons = [{"field": name, "definition": fields[name]["definition"],
+                    "value_origin": fields[name]["value_origin"], "value": None} for name in field_names]
+    monkeypatch.setenv("QOPENBB_LIVE_EVIDENCE_DIR", str(tmp_path))
+    capture = SourceCapture(monkeypatch, "fmp", ResearchRunState(), endpoint=dataset)
+    write_evidence(dataset, capture, 200, common, comparisons)
+    receipt = json.loads((tmp_path / (dataset + ".json")).read_text())
+    assert receipt["financial_metadata"] == common
+    assert receipt["comparisons"] == comparisons
+    for name in field_names:
+        assert receipt["financial_metadata"]["fields"][name]["definition"] == model.model_fields[name].description
+        assert receipt["financial_metadata"]["fields"][name]["value_origin"] == "provider_observation"
+
+
+def test_evidence_sanitizer_excludes_private_accounts_transport_and_configured_secrets(monkeypatch):
+    from live_financial_support import safe_evidence
+
+    monkeypatch.setenv("FMP_API_KEY", SECRET)
+    monkeypatch.setenv("FRED_API_KEY", "PRIVATE_FRED_CANARY")
+    private = {name: "private-identity-canary" for name in (
+        "account", "accounts", "account_id", "accountIds", "account_identifier", "accountNumber",
+        "account_name", "account_email", "account_holder", "account_owner", "account_details",
+        "account_identity", "provider_account", "brokerage_account", "private_account")}
+    private.update(headers={"Authorization": "Bearer transport-canary"},
+                   api_key="credential-canary", access_token="token-canary", password="password-canary",
+                   cookies="cookie-canary", request_url="https://private.example/request")
+    observation = {"accounts_payable": 0, "change_in_account_receivables": None,
+                   "change_in_account_payable": -7, "accounting_basis": "provider reported"}
+    payload = {"observation": observation, "nested": [{**private, "observation": observation}],
+               "notes": ["prefix " + SECRET, "PRIVATE_FRED_CANARY suffix", "https://private.example/value"]}
+    assert safe_evidence(payload) == {
+        "observation": observation, "nested": [{"observation": observation}],
+        "notes": ["[redacted]", "[redacted]", "[redacted]"]}
+
+
 def test_research_fixture_aliases_share_session_object_budget_and_stops(tmp_path):
     import subprocess
     import sys

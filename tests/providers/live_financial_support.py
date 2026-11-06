@@ -324,9 +324,15 @@ def safe_query(parameters):
 def safe_evidence(value):
     """Discard private transport/account fields even if attached to a selected observation."""
     if isinstance(value, dict):
-        forbidden = ("key", "token", "secret", "password", "authorization", "cookie", "header", "url", "account")
+        forbidden = ("key", "token", "secret", "password", "authorization", "cookie", "header", "url")
+        # Accounting field names carry financial meaning; account identity uses explicit keys.
+        private_accounts = {"account", "accounts", "accountid", "accountids", "accountidentifier",
+                            "accountidentifiers", "accountnumber", "accountnumbers", "accountname",
+                            "accountemail", "accountholder", "accountowner", "accountdetails",
+                            "accountidentity", "provideraccount", "brokerageaccount", "privateaccount"}
         return {key: safe_evidence(item) for key, item in value.items()
-                if not any(part in key.lower().replace("_", "") for part in forbidden)}
+                if key.lower().replace("_", "") not in private_accounts
+                and not any(part in key.lower().replace("_", "") for part in forbidden)}
     if isinstance(value, (list, tuple)):
         return [safe_evidence(item) for item in value]
     if isinstance(value, (date, datetime)):
