@@ -228,6 +228,31 @@ def test_research_http_failure_preserves_callback_and_source(monkeypatch, status
         state.before_request("fmp", "income")
 
 
+@pytest.mark.parametrize("status,code", [(401, "authentication"), (403, "entitlement"), (429, "throttling")])
+def test_research_legacy_callback_failure_retains_observed_http_category(monkeypatch, tmp_path, status, code):
+    from live_financial_support import ResearchRunState, SourceCapture, evidence
+    from openbb_core.provider.utils import helpers
+    from openbb_fmp.utils.helpers import response_callback
+
+    response = type("Response", (), {"status": status})()
+    async def transport(*args, **kwargs):
+        return await kwargs["response_callback"](response, None)
+    monkeypatch.setattr(helpers, "amake_request", transport)
+    monkeypatch.setenv("QOPENBB_LIVE_EVIDENCE_DIR", str(tmp_path))
+    state = ResearchRunState()
+    capture = SourceCapture(monkeypatch, "fmp", state, endpoint="income")
+    with pytest.raises(pytest.fail.Exception, match=code):
+        with evidence("legacy-" + code, capture):
+            asyncio.run(helpers.amake_request(response_callback=response_callback))
+    receipt = json.loads((tmp_path / ("legacy-" + code + ".json")).read_text())
+    assert receipt["failure"] == receipt["source_receipts"][0]["code"] == code
+    assert capture.receipts[0]["status"] == status and state.attempts == 1
+    if code == "entitlement":
+        assert state.blocked_endpoints == {("fmp", "income"): code}
+    else:
+        assert state.blocked_providers == {"fmp": code}
+
+
 def test_research_timeout_is_enforced_and_baseline_timeout_is_preserved(monkeypatch):
     import live_financial_support as support
     from openbb_core.provider.utils import helpers
@@ -290,6 +315,18 @@ def test_source_comparisons_keep_duplicate_ordinals_nulls_aliases_and_normalizat
     with pytest.raises(pytest.fail.Exception):
         pairs([{"symbol": "MSFT", "date": "2025-06-30", "amount": 999}], source,
               {"amount": "value"}, "date")
+
+
+def test_fiscal_year_preserves_exact_route_string_before_normalizing_integer():
+    from live_financial_support import pairs
+
+    source = [{"fiscalYear": "2025"}]
+    for actual, rule in [("2025", None), (2025, "integer_fiscal_year")]:
+        compared = pairs([{"fiscal_year": actual}], source, {"fiscal_year": "fiscalYear"})
+        assert compared[0]["value"] == "2025" and compared[0]["normalization"] == rule
+    for invalid in (2025.0, 2025.1, True):
+        with pytest.raises(pytest.fail.Exception):
+            pairs([{"fiscal_year": invalid}], source, {"fiscal_year": "fiscalYear"})
 
 
 def test_enterprise_reference_is_latest_valid_same_listing_and_keeps_receipt():

@@ -156,6 +156,8 @@ class SourceCapture:
                 return await asyncio.wait_for(original(*args, **kwargs), timeout=15)
             except Exception as error:  # noqa: BLE001 - Only stable codes survive the observer.
                 code = error_code(error)
+                if code == "uncategorized" and attempt_receipt.get("code") in ERROR_CODES:
+                    code = attempt_receipt["code"]
                 attempt_receipt["code"] = code
                 run_state.record_error(provider, code, endpoint)
                 raise
@@ -261,7 +263,10 @@ def pairs(rows, source_rows, mapping, date_field=None):
                        "filingDate": ("filingDate", "fillingDate")}
             source = next((key for key in aliases.get(source, (source,)) if key in raw), source)
             expected = raw.get(source)
-            normalized, rule = normalized_value(field, expected)
+            normalized, rule = ((expected, None) if row.get(field) == expected
+                                else normalized_value(field, expected))
+            if rule == "integer_fiscal_year":
+                require(type(row.get(field)) is int, "integer fiscal-year normalization")
             equal(row.get(field), normalized, "source/API field " + field)
             compared.append({"field": field, "source_field": source, "value": expected,
                              "source_state": "absent" if source not in raw else "null" if expected is None else "value",
