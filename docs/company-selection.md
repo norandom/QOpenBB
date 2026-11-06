@@ -1,6 +1,6 @@
 # Find a company by name or symbol
 
-Use **Company name** and the adjacent **Symbol** field to select an FMP listing in the existing Workspace widgets. Packaged acceptance is complete for the candidate; publication in prebuilt images is pending. The [acceptance review](../artifacts/reviewed/company-selector/20261106-acceptance-review.md) records the tested scope.
+Use **Company name** and the adjacent **Symbol** field to select an FMP listing in the existing Workspace widgets. The feature is included in [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1). The [acceptance review](../artifacts/reviewed/company-selector/20261106-acceptance-review.md) records the tested scope.
 
 ## Select and link a company
 

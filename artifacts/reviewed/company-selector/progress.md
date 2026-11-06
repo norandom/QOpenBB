@@ -1,6 +1,6 @@
 # Company selector acceptance
 
-All 10 bounded tasks are accepted on 2026-11-06. Existing FMP widgets support adjacent Company name/Symbol selection, compatible linked widgets and independent comparisons. Actual financial values and saved identity pass fresh login and retained-bind container recreation. Image publication is pending.
+All 10 bounded tasks are accepted on 2026-11-06. Existing FMP widgets support adjacent Company name/Symbol selection, compatible linked widgets and independent comparisons. Actual financial values and saved identity pass fresh login and retained-bind container recreation. Image publication is verified in [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1). [Publication review](20261106-publication-review.md) and [exact image pair](release-manifest.json).
 
 Start with the [analyst guide](../../../docs/company-selection.md), [task plan](../../../.kiro/specs/analyst-workspace/company-selector-tasks.md) and [independent packaged review](20261106-acceptance-review.md). The analyst-workspace umbrella remains open.
 

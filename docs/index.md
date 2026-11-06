@@ -4,6 +4,8 @@ The prototype is deployed. Start with the [first-spec closure](../.kiro/specs/op
 
 The [login correction](../.kiro/specs/openbb-self-service/login-password-policy.md) is published in [alpha-40676586728-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40676586728-1). Existing-password authentication and bootstrap password replacement are verified within the documented local scope.
 
+[Company selection](company-selection.md) is available in [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1): find an FMP listing by name or symbol and align compatible research widgets. [Publication verification](../artifacts/reviewed/company-selector/20261106-publication-review.md) records the public images and install assets.
+
 ## Choose your next action
 
 | Your task | Start here |

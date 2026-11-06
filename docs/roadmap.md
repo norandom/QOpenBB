@@ -114,7 +114,7 @@ First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks
 [Company name autocomplete with adjacent Symbol](company-selection.md) is accepted: 10/10 tasks passed on 2026-11-06, including real FMP data, compatible groups, independent comparison/FRED and retained-state reopening. [Task plan](../.kiro/specs/analyst-workspace/company-selector-tasks.md) and [acceptance](../artifacts/reviewed/company-selector/20261106-acceptance-review.md). The larger analyst-dashboard sequence remains separate.
 
 - [x] Accept packaged company selection and retained-state reopening.
-- [ ] Publish and verify the company-selector milestone alpha.
+- [x] Publish and verify the company-selector milestone alpha: [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1).
 
 - [x] Restore and characterize the existing provider verification baseline.
 - [x] Implement typed financial metadata through the native result envelope.

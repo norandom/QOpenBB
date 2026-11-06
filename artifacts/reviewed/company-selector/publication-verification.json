@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "release": "alpha-42188370167-1",
+  "release_url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1",
+  "source_revision": "1ee3576242ed8357dbd494c8b0f181eb92ac2809",
+  "sources": {
+    "workspace": {
+      "repository": "https://github.com/norandom/openbb-workspace.git",
+      "revision": "f832a5593223b1e702970c4de8eceda87a17fa5b"
+    },
+    "data_api": {
+      "repository": "https://github.com/norandom/openbb-data-api.git",
+      "revision": "28423762e8cc3faae978e770899834b41e7cde99"
+    }
+  },
+  "anonymous_pulls": [
+    {
+      "service": "workspace",
+      "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab",
+      "returncode": 0,
+      "remote": {
+        "manifest_digest": "sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab",
+        "config_digest": "sha256:8dcde6c1fc765cf9248e3ab207ab5c4a035ef3eaaa5414bf0bd982abcc22fabd",
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "source_labels_match": true,
+      "local_image_id": "sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab",
+      "id_kind": "manifest"
+    },
+    {
+      "service": "workspace",
+      "reference": "ghcr.io/norandom/qopenbb-workspace:alpha-42188370167-1",
+      "returncode": 0,
+      "remote": {
+        "manifest_digest": "sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab",
+        "config_digest": "sha256:8dcde6c1fc765cf9248e3ab207ab5c4a035ef3eaaa5414bf0bd982abcc22fabd",
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "source_labels_match": true,
+      "local_image_id": "sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab",
+      "id_kind": "manifest"
+    },
+    {
+      "service": "workspace",
+      "reference": "ghcr.io/norandom/qopenbb-workspace:latest",
+      "returncode": 0,
+      "remote": {
+        "manifest_digest": "sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab",
+        "config_digest": "sha256:8dcde6c1fc765cf9248e3ab207ab5c4a035ef3eaaa5414bf0bd982abcc22fabd",
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "source_labels_match": true,
+      "local_image_id": "sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab",
+      "id_kind": "manifest"
+    },
+    {
+      "service": "data-api",
+      "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4",
+      "returncode": 0,
+      "remote": {
+        "manifest_digest": "sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4",
+        "config_digest": "sha256:b5b73d45a4b766a26645c595a89768771df8e8446696d74ff4ddcac281cdad72",
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "source_labels_match": true,
+      "local_image_id": "sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4",
+      "id_kind": "manifest"
+    },
+    {
+      "service": "data-api",
+      "reference": "ghcr.io/norandom/qopenbb-data-api:alpha-42188370167-1",
+      "returncode": 0,
+      "remote": {
+        "manifest_digest": "sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4",
+        "config_digest": "sha256:b5b73d45a4b766a26645c595a89768771df8e8446696d74ff4ddcac281cdad72",
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "source_labels_match": true,
+      "local_image_id": "sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4",
+      "id_kind": "manifest"
+    },
+    {
+      "service": "data-api",
+      "reference": "ghcr.io/norandom/qopenbb-data-api:latest",
+      "returncode": 0,
+      "remote": {
+        "manifest_digest": "sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4",
+        "config_digest": "sha256:b5b73d45a4b766a26645c595a89768771df8e8446696d74ff4ddcac281cdad72",
+        "os": "linux",
+        "architecture": "amd64"
+      },
+      "source_labels_match": true,
+      "local_image_id": "sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4",
+      "id_kind": "manifest"
+    }
+  ],
+  "install_asset_sha256": {
+    "compose.yaml": "0dda6c229eac7e6c7a8c55fa717bf338acbc5cd5e1634b8e2702de5393344724",
+    "default.env.sample": "8958b109b85f8e818e5b6d595b422881ed2e611f45106bde2ec268afc552348b",
+    "manifest.json": "c4753db4f86bc24350032e6d34ca485607f5f6fe32dc67794bdcb4d8d7b4f2e1"
+  },
+  "compose_validation": {
+    "status": "passed",
+    "provider_keys": "Parser-only markers; no provider request or service startup",
+    "images": "latest aliases match the release",
+    "http_publish": "0.0.0.0:23003",
+    "workspace_data": "./data/workspace:/data",
+    "named_volumes": false
+  },
+  "scope": "Published assets, anonymous registry access and exact image identities; no CI-image browser rerun, server deployment or backup/restore claim."
+}

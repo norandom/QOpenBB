@@ -19,22 +19,22 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-41030227140-1/manifest.json) for `alpha-41030227140-1`:
+Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-42188370167-1/manifest.json) for `alpha-42188370167-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:b40a2472b3a5f6ca325aa126b7a2131aa517dc1a622f4f1a3a7cae24f105f269` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:743b9fd657e8e2e8346a42fb8b3f8146b49ebf134987ffcd6363c879ffc5e6d1` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4` |
 
-Both CI jobs, three public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/financial-input-milestone/review.md).
+Both CI jobs, three public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/company-selector/20261106-publication-review.md).
 
-This alpha packages native locked uv, readable Python source under CPython and embedded Valkey 9.0.7. It adds ten FMP financial-input adapters and the generic FRED series contract, served through eleven reusable native widget definitions. [Live provider acceptance](../artifacts/reviewed/market-live-financial-inputs/accepted.md) and the [local packaged Income journey](../artifacts/reviewed/market-packaged-financial/accepted.md) cover the recorded data and user flows. The published data image separately passes installed catalog/source checks without provider calls. CI Workspace image bytes have not repeated browser acceptance, and the owner's deployment is separate.
+This alpha packages native locked uv, readable Python source under CPython and embedded Valkey 9.0.7. Its eleven native definitions retain the FMP financial-input adapters and generic FRED series contract. It adds [Company name and Symbol selection](company-selection.md) to eight immediate FMP widgets. [Data-layer acceptance](../artifacts/reviewed/market-live-financial-inputs/accepted.md) and [local selector acceptance](../artifacts/reviewed/company-selector/20261106-acceptance-review.md) describe their tested scope. Published image identities are verified separately; browser acceptance has not been repeated on the CI image bytes, and owner-server deployment remains separate.
 
 The earlier [Python-source/Valkey acceptance](../artifacts/reviewed/python-source-packaging/runtime-review.md), [login repair](../artifacts/reviewed/login-password/application-review.md) and [historical chart gallery](../artifacts/reviewed/chart-gallery/publication-review.md) remain scoped historical evidence. Backup/restore and rollback remain unverified.
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-41030227140-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-41030227140-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-41030227140-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-42188370167-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-42188370167-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
@@ -91,7 +91,7 @@ A fresh account starts without a connected data backend or populated dashboard. 
 2. Select **Connect Backend**.
 3. Enter a connection name such as `QOpenBB data API`. Set **URL** to your current Workspace origin followed by `/data`, for example `http://127.0.0.1:23003/data`.
 4. Select **Test**, then **add** after the catalog test succeeds.
-5. Open **Apps** to see the connected backend's templates. The widget library also exposes its eleven native data definitions and the historical gallery widgets.
+5. Open **Apps** to see the connected backend's templates. The widget library also exposes its eleven native data definitions and the historical gallery widgets. Eligible FMP widgets support [selection by company name or symbol](company-selection.md).
 
 Use the origin you actually opened in your browser. For a proxied deployment, append `/data` to that public origin rather than using the example's loopback address. The data API uses the provider keys already supplied through `.env`.
 

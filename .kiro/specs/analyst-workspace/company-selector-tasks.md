@@ -2,7 +2,7 @@
 
 Status: owner approved tasks and implementation on 2026-10-30, after independent task-plan review. The bounded design and QueryParams size exception were approved earlier that day. This is an amendment to analyst-workspace, not approval of its umbrella backlog.
 
-Acceptance: all 10 executable tasks passed on 2026-11-06. [Packaged acceptance review](../../../artifacts/reviewed/company-selector/20261106-acceptance-review.md). Milestone image publication is pending.
+Acceptance: all 10 executable tasks passed on 2026-11-06. [Packaged acceptance review](../../../artifacts/reviewed/company-selector/20261106-acceptance-review.md). Milestone image publication is verified in [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1); see the [publication review](../../../artifacts/reviewed/company-selector/20261106-publication-review.md).
 
 Read [requirements](company-selector-requirement.md) and [design](company-selector-design.md) before dispatch. Each executable task is a 1-3 hour work unit; elapsed delivery depends on review and runtime availability.
 

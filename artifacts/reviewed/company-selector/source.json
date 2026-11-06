@@ -2,7 +2,7 @@
   "task": "company-selector",
   "workspace_revision": "f832a5593223b1e702970c4de8eceda87a17fa5b",
   "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
-  "scope": "Accepted bounded company selector, including actual packaged FMP/FRED data, fresh login and retained-bind recreation. Image publication is pending.",
+  "scope": "Accepted bounded company selector with actual local packaged data, fresh login and retained-bind recreation; public milestone images and tagged alpha verified separately.",
   "unchanged_exception_files": {
     "backend-api/backend/api/schemas.py": "7deb1c432e3855aa90bbdc4ebb9abdae4b4f999df77600fb49270c6ceec82645",
     "terminalpro/src/routes/login.tsx": "553f93e147b251d88471938241a3067efa30473848f02f621413de9e3c220951",
@@ -304,10 +304,46 @@
     },
     "strict_financial_test_types": "passed",
     "review": "20261106-acceptance-review.md",
-    "publication": "pending",
+    "publication": "verified; see publication",
     "limits": [
       "Whole native application semantic typing retains its recorded baseline gap.",
       "CI-image browser acceptance, owner-server deployment and backup/restore are not established."
     ]
+  },
+  "publication": {
+    "status": "passed",
+    "release_tag": "alpha-42188370167-1",
+    "release_url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1",
+    "source_revision": "1ee3576242ed8357dbd494c8b0f181eb92ac2809",
+    "workflow_run": 42188370167,
+    "manifest": "release-manifest.json",
+    "verification": "publication-verification.json",
+    "review": "20261106-publication-review.md",
+    "anonymous_references": 6,
+    "images": {
+      "workspace": {
+        "immutable": "ghcr.io/norandom/qopenbb-workspace@sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab",
+        "release_tag": "ghcr.io/norandom/qopenbb-workspace:alpha-42188370167-1",
+        "latest": "ghcr.io/norandom/qopenbb-workspace:latest",
+        "remote": {
+          "manifest_digest": "sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab",
+          "config_digest": "sha256:8dcde6c1fc765cf9248e3ab207ab5c4a035ef3eaaa5414bf0bd982abcc22fabd",
+          "os": "linux",
+          "architecture": "amd64"
+        }
+      },
+      "data-api": {
+        "immutable": "ghcr.io/norandom/qopenbb-data-api@sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4",
+        "release_tag": "ghcr.io/norandom/qopenbb-data-api:alpha-42188370167-1",
+        "latest": "ghcr.io/norandom/qopenbb-data-api:latest",
+        "remote": {
+          "manifest_digest": "sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4",
+          "config_digest": "sha256:b5b73d45a4b766a26645c595a89768771df8e8446696d74ff4ddcac281cdad72",
+          "os": "linux",
+          "architecture": "amd64"
+        }
+      }
+    },
+    "scope": "Published assets, anonymous registry access and exact image identities; no CI-image browser rerun, server deployment or backup/restore claim."
   }
 }

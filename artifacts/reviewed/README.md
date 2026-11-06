@@ -10,7 +10,7 @@ The [36-chart analyst guide](../../docs/chart-gallery.md) links the native scree
 
 ## Company selection
 
-The [company-selector review](company-selector/20261106-acceptance-review.md) accepts the bounded local packaged FMP journey, linked widgets, independent comparison/FRED and retained-state recreation. [Source identities](company-selector/source.json) bind the inputs; the [analyst guide](../../docs/company-selection.md) explains the controls. Image publication is tracked separately.
+The [company-selector review](company-selector/20261106-acceptance-review.md) accepts the bounded local packaged FMP journey, linked widgets, independent comparison/FRED and retained-state recreation. [Source identities](company-selector/source.json) bind the inputs; the [analyst guide](../../docs/company-selection.md) explains the controls. [Publication verification](company-selector/20261106-publication-review.md) separately binds the tagged alpha, public image pair and install assets.
 
 ## Included evidence
 

@@ -47,13 +47,13 @@ Snapshot: 2026-11-06. Follow the CI link for live run status; a green check does
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
 | Data | Packaged starter widgets and 36-chart historical FMP gallery; annual AAPL income values and refresh accepted through the installed route | Broader live provider/widget acceptance, Yahoo adapter and named discovery |
 | Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut, Box Plot, Range Bar/Area, Waterfall and Radar Line/Area behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
-| Analyst workflow | Existing dashboard editor; [Company name + Symbol selection](docs/company-selection.md), 10/10 bounded tasks accepted with real FMP data and retained-state reopening; [investment-analysis contract](.kiro/specs/analyst-workspace/investment-analysis-contract.md) | Publish selector images; curated quarterly analysis, peer valuation, FMP DCF/WACC with macro context, inline research and saved assumptions |
+| Analyst workflow | Existing dashboard editor; [Company name + Symbol selection](docs/company-selection.md), 10/10 bounded tasks accepted with real FMP data and retained-state reopening; [investment-analysis contract](.kiro/specs/analyst-workspace/investment-analysis-contract.md) | Curated quarterly analysis, peer valuation, FMP DCF/WACC with macro context, inline research and saved assumptions |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
 
 Company selector delivery:
 
 - [x] Verify linked company selection, actual FMP values, independent FRED/comparison widgets and retained-state reopening. [Acceptance](artifacts/reviewed/company-selector/20261106-acceptance-review.md).
-- [ ] Publish and verify the company-selector milestone images and tagged alpha.
+- [x] Publish and verify the company-selector milestone images and tagged alpha: [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1).
 
 Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-milestone.md):
 

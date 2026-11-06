@@ -1039,7 +1039,15 @@
       "evidence": "../../../artifacts/reviewed/company-selector/20261106-acceptance-review.md",
       "test_sha256": "981fdd38bc9028663bf7d54c1f2f938fbf09b7bfc6337185b7f4ec0114ca7d29",
       "publication": {
-        "status": "pending"
+        "status": "verified",
+        "release_tag": "alpha-42188370167-1",
+        "release_url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1",
+        "source_revision": "1ee3576242ed8357dbd494c8b0f181eb92ac2809",
+        "workflow_run": 42188370167,
+        "manifest": "../../../artifacts/reviewed/company-selector/release-manifest.json",
+        "verification": "../../../artifacts/reviewed/company-selector/publication-verification.json",
+        "review": "../../../artifacts/reviewed/company-selector/20261106-publication-review.md",
+        "scope": "Public image/asset identities and anonymous pulls; CI-image browser and owner-server acceptance remain separate."
       }
     }
   }
