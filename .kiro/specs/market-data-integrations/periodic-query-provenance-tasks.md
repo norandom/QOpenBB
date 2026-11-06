@@ -1,12 +1,12 @@
 # Periodic query provenance implementation tasks
 
-The owner approved the [bounded design](periodic-query-provenance-design.md) on 2026-11-06. This four-task amendment exposes the existing periodic-only selection without changing financial results. Task approval is pending; no production implementation is authorized by this document yet.
+The owner approved the [bounded design](periodic-query-provenance-design.md) on 2026-11-06. This four-task amendment exposes the existing periodic-only selection without changing financial results. The owner approved this task plan and implementation on 2026-11-06.
 
 This plan supplements the accepted [main tasks](tasks.md), rather than reopening their 26 completed units. It covers the twelve scoped design criteria and the existing delivery obligations 8.1-8.5. All other criteria retain their main-plan mapping and open follow-on state. No TTM acquisition, financial calculations, UI work or broader IA-B completion is included.
 
 ## Tasks
 
-- [ ] 1. Establish the existing source and verification baseline
+- [x] 1. Establish the existing source and verification baseline
   - Record the controller and data-fork revisions, installed core/FMP module origins and copied-source hashes before editing. Retain the accepted Workspace pin. Confirm the existing provider environment and protected toolchain are usable; do not recreate infrastructure or install unrelated dependencies.
   - Reuse the accepted complexity inventory/checker foundation. Freeze a clean inventory input and exact fork base/head or change manifests for the three production files; preserve the unrelated dirty inventory and catalog-renderer work. Confirm Node 24.22.1 or a later approved patched version for combined checks.
   - Freeze clean accepted catalog generator inputs and the existing package-refresh commands below. Collect the affected offline tests once, without live access. If installation/source prerequisites fail, diagnose that specific failure rather than restart WSL or broaden the task.
@@ -84,3 +84,7 @@ Existing toolchain and source/catalog join commands:
 - Existing milestone dispatch is `gh workflow run prototype.yml --ref main -f build_images=true`. The existing `prototype.yml` and portable `qopenbb_ci.alpha_cli` own both images and publication. Check exact release manifest, three install assets and existing six anonymous pull combinations. Record a source-only or published-only result honestly if a packaged check is blocked; do not silently close task 4.
 
 Do not merge unreviewed clean-snapshot output into the working tree. Controller promotion is restricted to intended source-lock mirrors (`sources.lock.json`, `contracts/sources.json`), the reviewed inventory revision delta, the eight generated contracts above and scoped documentation/evidence. Preserve unrelated changes byte-for-byte apart from an explicitly reviewed, nonconflicting inventory pin hunk; stage only that intended hunk. An actual merge conflict pauses only that promotion until reconciled.
+
+## Implementation Notes
+
+- Task 1 accepted 2026-11-06: source/package/clean-generator identity and protected tooling verified; 102 focused tests collected and 58 native offline tests selected (19 live deselected), no tests executed. Independent Sol review approved. Ignored baseline and review: artifacts/periodic-query-provenance/. Accepted Workspace checkout remains at f832a559; the unrelated root vendor checkout is untouched. Refresh/check scripts are prepared, not behavior acceptance.
