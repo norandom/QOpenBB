@@ -6,6 +6,8 @@ from pathlib import Path
 import pytest
 from live_financial_support import (
     ROOT,
+    ResearchRequestBlocked,
+    ResearchRunState,
     SourceCapture,
     call,
     equal,
@@ -239,11 +241,6 @@ def research_findings(case, rows, common):
                          "owner": "financial-modeling", "minority_claims": None, "preferred_claims": None,
                          "lease_claims": None, "other_claims": None, "house_calculation": False})
     if dataset in {"metrics", "ratios"}:
-        if "ttm" not in common["effective_query"]:
-            findings.append({"dimension": "ttm_metadata", "status": "unverified",
-                             "reason": "Query requests exclude but native effective_query omits the TTM selector",
-                             "missing_proof": "Native metadata explicitly confirming periodic-only selection",
-                             "owner": "market-data-integrations", "requested_ttm": case["parameters"]["ttm"]})
         findings.append({"dimension": "peer_aggregate_eligibility", "status": "unverified",
                          "reason": "Numeric provider outputs do not prove positive denominators, trailing/forward or fiscal/currency compatibility",
                          "missing_proof": "Verified same-basis denominators and approved peer membership/aggregation method",
@@ -262,9 +259,8 @@ def research_financial_meaning(case, rows, common):
     else:
         financial_meaning(dataset, rows, common, parameters)
     if dataset in {"metrics", "ratios"}:
-        equal(parameters["ttm"], "exclude", "periodic provider outputs requested")
-        if "ttm" in common["effective_query"]:
-            equal(common["effective_query"]["ttm"], "exclude", "periodic metadata selection")
+        equal(parameters.get("ttm", "exclude"), "exclude", "periodic provider outputs requested")
+        equal(common["effective_query"].get("ttm"), "exclude", "periodic metadata selection")
     return research_findings(case, rows, common)
 
 
@@ -328,9 +324,7 @@ def execute_research_case(app, monkeypatch, state, case):
                     if endpoint not in {"search", "peers", "prices"}:
                         require(all(row.get("symbol") == case["company_symbol"] for row in rows), "requested listing identity")
                     validate_rows(app, "/api/v1" + case["route"], "fmp", body)
-                    # The installed periodic metadata omits ttm; retain that gap separately.
-                    metadata_parameters = {key: value for key, value in parameters.items() if key != "ttm"}
-                    record["common"] = common = metadata(body, capture, metadata_parameters)
+                    record["common"] = common = metadata(body, capture, parameters)
                     source = capture.source_rows()
                     require(len(rows) == min(len(source), parameters.get("limit", len(source))), "bounded source row preservation")
                     mapping = case["field_mapping"]
@@ -410,6 +404,49 @@ def research_app():
         patch.setattr(application, "CATALOG", ROOT / "contracts")
         patch.setattr(configuration, "COVERAGE", ROOT / "docs/reference/provider-coverage.json")
         yield application.create_app()
+
+
+PERIODIC_CASES = [(dataset, selection) for dataset in ("metrics", "ratios")
+                  for selection in ("default-annual", "explicit-quarter")]
+
+
+class PeriodicRunState(ResearchRunState):
+    """Share four FMP attempts across the selected cases, including failures."""
+
+    def before_request(self, provider, endpoint=None):
+        if provider != "fmp" or endpoint not in {"metrics", "ratios"}:
+            raise ResearchRequestBlocked("periodic_scope")
+        if self.attempts >= 4:
+            raise ResearchRequestBlocked("request_ceiling")
+        super().before_request(provider, endpoint)
+
+
+@pytest.fixture(scope="session")
+def periodic_run_state():
+    return PeriodicRunState()
+
+
+def periodic_case(dataset, selection):
+    parameters = {"symbol": "MSFT", "limit": 1}
+    if selection == "explicit-quarter":
+        parameters.update(period="quarter", ttm="exclude")
+    return research_case("MSFT", dataset, parameters, "periodic-" + selection)
+
+
+@pytest.mark.live
+@live_only
+@pytest.mark.parametrize("dataset,selection", PERIODIC_CASES,
+                         ids=[dataset + "-" + selection for dataset, selection in PERIODIC_CASES])
+def test_real_periodic_query_provenance(research_app, monkeypatch, periodic_run_state, dataset, selection):
+    case = periodic_case(dataset, selection)
+    before = periodic_run_state.attempts
+    result = execute_research_case(research_app, monkeypatch, periodic_run_state, case)
+    require(result is not None, "periodic source/native validation; inspect immutable receipt")
+    require(periodic_run_state.attempts == before + 1, "one request per periodic case")
+    equal(result["common"]["effective_query"], {
+        "symbol": "MSFT", "limit": 1, "period": "quarter" if selection == "explicit-quarter" else "annual",
+        "ttm": "exclude",
+    }, "validated default/explicit periodic query")
 
 
 @pytest.mark.live
@@ -536,6 +573,33 @@ def research_fake_provider(monkeypatch):
     return controls
 
 
+def test_periodic_live_selection_offline_capture_and_ceiling(
+    research_offline_app, research_fake_provider, monkeypatch, tmp_path,
+):
+    import json
+
+    state = PeriodicRunState()
+    for dataset, selection in PERIODIC_CASES:
+        test_real_periodic_query_provenance(research_offline_app, monkeypatch, state, dataset, selection)
+        case = periodic_case(dataset, selection)
+        receipt = json.loads((tmp_path / (case["case_id"] + ".json")).read_text())
+        assert receipt["query"] == case["parameters"]
+        assert receipt["financial_metadata"]["effective_query"]["ttm"] == "exclude"
+        assert len(receipt["source_receipts"]) == 1 and receipt["failure"] is None
+        assert any(item.get("source_field") for item in receipt["comparisons"])
+        assert "ttm_metadata" not in {item.get("dimension") for item in receipt["comparisons"]}
+        assert next(item for item in receipt["comparisons"] if item.get("dimension") == "reporting_basis")["status"] == "unverified"
+    assert state.attempts == len(research_fake_provider["requests"]) == 4
+    assert [query for _, query in research_fake_provider["requests"]] == [
+        {"symbol": "MSFT", "period": period, "limit": "1"}
+        for _ in ("metrics", "ratios") for period in ("annual", "quarter")]
+    with pytest.raises(ResearchRequestBlocked, match="request_ceiling"):
+        state.before_request("fmp", "metrics")
+    with pytest.raises(ResearchRequestBlocked, match="periodic_scope"):
+        PeriodicRunState().before_request("fred", "DGS10")
+    assert state.attempts == 4
+
+
 @pytest.mark.parametrize("symbol", [company["symbol"] for company in COMPANIES])
 def test_research_offline_full_company_journey(research_offline_app, research_fake_provider, monkeypatch, tmp_path, symbol):
     import json
@@ -563,6 +627,9 @@ def test_research_offline_full_company_journey(research_offline_app, research_fa
         if case["dataset"] in {"income", "balance", "cash", "metrics", "ratios"}:
             basis = next(item for item in comparisons if item.get("dimension") == "reporting_basis")
             assert basis["actual_duration"] is None and basis["ytd_convention"] is None
+        if case["dataset"] in {"metrics", "ratios"}:
+            assert receipt["financial_metadata"]["effective_query"]["ttm"] == "exclude"
+            assert "ttm_metadata" not in {item.get("dimension") for item in comparisons}
         if case["dataset"] == "balance":
             minority = [item for item in comparisons if item.get("source_field") == "minorityInterest"]
             preferred = [item for item in comparisons if item.get("source_field") == "preferredStock"]

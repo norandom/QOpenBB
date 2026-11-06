@@ -23,7 +23,7 @@ This plan supplements the accepted [main tasks](tasks.md), rather than reopening
   - _Depends: 1_
   - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 6.1, 7.1, 7.2, 8.4_
 
-- [ ] 3. Join native consumers, source identity and bounded provider evidence
+- [x] 3. Join native consumers, source identity and bounded provider evidence
   - Extend the existing mounted service assertions so Python and API results retain the same effective selector and financial values. Remove only the obsolete TTM metadata exemption/finding from newly executed research checks; historical IA-A receipts and their hashes remain untouched.
   - Update the exact fork pins and validate a source/native catalog proposal with the clean accepted generator inputs from task 1. Image-backed regeneration belongs to task 4 because the canonical CLI requires an identified candidate image. Check parameter choices/defaults, stable widget identities, financial schemas and native discovery; do not change unrelated catalog behavior or incorporate the unfinished renderer work.
   - Run the affected offline integration selection once after package/source identity is verified. Make at most four fresh FMP requests, one default annual and one explicit quarterly query for each route, using existing bounded capture/sanitization helpers. Compare source values and effective metadata; no retries, FRED calls, repeated 49-call assessment or synthetic substitution for entitlement acceptance.
@@ -90,3 +90,5 @@ Do not merge unreviewed clean-snapshot output into the working tree. Controller 
 - Task 1 accepted 2026-11-06: source/package/clean-generator identity and protected tooling verified; 102 focused tests collected and 58 native offline tests selected (19 live deselected), no tests executed. Independent Sol review approved. Ignored baseline and review: artifacts/periodic-query-provenance/. Accepted Workspace checkout remains at f832a559; the unrelated root vendor checkout is untouched. Refresh/check scripts are prepared, not behavior acceptance.
 
 - Task 2 accepted 2026-11-06: three-line core/FMP repair, 19 expected RED failures followed by 125 focused passes after protected package refresh and installed-source hash verification. Owning-fork lint and combined 400/300/50 gate pass; independent Astra review approved with four additional identity/schema/empty-result checks. Native/live/catalog/release acceptance remains open. Review: artifacts/periodic-query-provenance/task2-review.md.
+
+- Task 3 accepted 2026-11-06: 73 native/offline checks and four real FMP cases passed (four attempts, all HTTP 200); source/native route comparison unchanged. Independent Astra review approved, including fresh discovery/budget checks and historical receipt hash audit. Two real-data proofs renewed; strict Python-client migration documented. Source pin 2e60c0a7aff039eda5f14a9d494beaec822fb9c4. Public evidence: artifacts/reviewed/periodic-query-provenance/accepted.md. Image acceptance remains task 4.

@@ -194,7 +194,8 @@
     "market-packaged-financial",
     "financial-input-milestone",
     "company-selector",
-    "research-input-readiness"
+    "research-input-readiness",
+    "periodic-query-provenance"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -35218,6 +35219,14 @@
       "publishedSHA256": "5123aaf5974f1d82548acbafec054e926775753a1da0202a42c2c25f5ca154e2",
       "bytes": 5636,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/periodic-query-provenance/accepted.md",
+      "sourceSHA256": "86ff9153b1de813ec9f83080fea7a59a9d10ae1be113e4ca5c66ffbaa9a8caac",
+      "publishedpath": "artifacts/reviewed/periodic-query-provenance/accepted.md",
+      "publishedSHA256": "86ff9153b1de813ec9f83080fea7a59a9d10ae1be113e4ca5c66ffbaa9a8caac",
+      "bytes": 5004,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35943,7 +35952,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171037473,
+  "total_payload_bytes": 171042477,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

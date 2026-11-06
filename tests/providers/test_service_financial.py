@@ -6,6 +6,8 @@ import logging
 import os
 from copy import deepcopy
 from datetime import UTC, datetime
+from pathlib import Path
+from urllib.parse import urlencode
 
 import pytest
 from test_discovery import FMP_MODELS
@@ -59,13 +61,22 @@ def test_served_discovery_matches_openapi_without_provider_access(runtime):
     assert any(path.startswith("/api/v1/economy/") and
                "x-qopenbb-financial" not in operation.get("get", {})
                for path, operation in schema["paths"].items())
+    historic = json.loads((Path(__file__).resolve().parents[2] /
+                           "docs/reference/provider-coverage.json").read_text())
+    proofs = {(item["model"], item["provider"]): item["states"]["real_data"]
+              for item in historic["datasets"] if "real_data" in item["states"]}
     for dataset in catalog["datasets"]:
         descriptor = schema["paths"][dataset["command"]["path"]]["get"]["x-qopenbb-financial"]
         assert descriptor["variants"] == dataset["variants"]
-        for states in dataset["coverage"].values():
+        for provider, states in dataset["coverage"].items():
             assert states["installed"]["status"] == "verified"
             assert states["account_access"]["status"] == "unknown"
-            assert states["real_data"]["status"] == "verified"
+            proof = proofs[dataset["dataset"], provider]["proof"]
+            assert states["real_data"]["proof"] == proof
+            current = {"source_sha256": catalog["identity"]["source_hashes"][dataset["dataset"]][provider],
+                       "contract_sha256": dataset["contract_sha256"][provider]}
+            matching = all(current[key] == value for key, value in proof["identity"].items())
+            assert states["real_data"]["status"] == ("verified" if matching else "stale")
             assert states["widget"]["status"] == "unknown"
     assert len([family for family in catalog["coverage"]["families"] if family["provider"] == "fmp"]) == 13
     assert "fixture-runtime" not in json.dumps([catalog, schema])
@@ -96,6 +107,76 @@ def test_explicit_enterprise_matches_python_values_and_financial_metadata(runtim
     assert metadata["fields"]["enterprise_value"]["value_origin"] == "provider_calculation"
     assert body["results"][0]["enterprise_value"] == -7
     assert body["results"][0]["stock_price"] == 0
+
+
+@pytest.mark.parametrize("dataset", ["metrics", "ratios"])
+@pytest.mark.parametrize("period_parameters,period", [
+    ({}, "annual"), ({"period": "annual"}, "annual"), ({"period": "quarter"}, "quarter"),
+], ids=["default-annual", "annual", "quarter"])
+@pytest.mark.parametrize("selection", [{}, {"ttm": "exclude"}], ids=["default", "explicit"])
+def test_periodic_native_and_python_values_share_effective_query(
+    runtime, monkeypatch, dataset, period_parameters, period, selection,
+):
+    from openbb_fmp.models.financial_ratios import FMPFinancialRatiosFetcher
+    from openbb_fmp.models.key_metrics import FMPKeyMetricsFetcher
+    from openbb_fmp.utils.helpers import FMPAcquisition
+
+    fetcher = {"metrics": FMPKeyMetricsFetcher, "ratios": FMPFinancialRatiosFetcher}[dataset]
+    stamp = datetime(2025, 10, 16, tzinfo=UTC)
+    payload = [{"symbol": "ABC", "date": "2025-06-30", "fiscalYear": "2025",
+                "period": "FY" if period == "annual" else "Q4", "reportedCurrency": "EUR",
+                "enterpriseValue": -7, "evToEBITDA": 0, "priceToEarningsRatio": -7,
+                "netProfitMargin": 0}]
+    original = deepcopy(payload)
+    queries = []
+
+    async def extract(query, *args, **kwargs):
+        queries.append(query.model_dump())
+        return FMPAcquisition(deepcopy(payload), stamp)
+
+    monkeypatch.setattr(fetcher, "extract_data", extract)
+    parameters = {"symbol": "ABC", "limit": 1, **period_parameters, **selection}
+    path = "/api/v1/equity/fundamental/" + dataset
+    status, body = asyncio.run(get(runtime, path, urlencode({"provider": "fmp", **parameters}).encode()))
+    result = asyncio.run(fetcher.fetch_data(parameters, {"fmp_api_key": "synthetic"}))
+    assert status == 200 and len(queries) == 2 and queries[0] == queries[1]
+    assert body["results"] == [row.model_dump(mode="json", by_alias=False,
+                                             exclude_unset=True, exclude_none=True) for row in result.result]
+    common = body["extra"]["results_metadata"]["__qopenbb_financial__"]
+    assert common == result.metadata["__qopenbb_financial__"]
+    assert common["effective_query"] == {"symbol": "ABC", "period": period, "limit": 1, "ttm": "exclude"}
+    assert common["schema_version"] == 1 and datetime.fromisoformat(common["retrieved_at"]) == stamp
+    field, zero, absent = {"metrics": ("enterprise_value", "ev_to_ebitda", "market_cap"),
+                           "ratios": ("price_to_earnings", "net_profit_margin", "price_to_book")}[dataset]
+    assert body["results"][0][field] == -7 and body["results"][0][zero] == 0
+    # Native serialization omits missing fields; the Python model retains None.
+    assert absent not in body["results"][0] and getattr(result.result[0], absent) is None
+    assert common["fields"][absent]["availability"] == "missing" and payload == original
+    # Periodic selection preserves source values; it establishes no fiscal comparability.
+    assert common["transformations"] == [] and common["point_in_time_safe"] is False
+    assert common["fields"][field]["value_origin"] == "provider_calculation"
+    assert all(value is None for value in common["fields"][field]["financial_basis"].values())
+
+
+@pytest.mark.parametrize("dataset", ["metrics", "ratios"])
+def test_periodic_discovery_retains_existing_choices_and_widget_identity(runtime, dataset):
+    root = Path(__file__).resolve().parents[2]
+    path = "/api/v1/equity/fundamental/" + dataset
+    operation = runtime.openapi()["paths"][path]["get"]
+    canonical = json.loads((root / "contracts/openapi.json").read_text())["paths"][path]["get"]
+    assert operation["parameters"] == canonical["parameters"]
+    assert operation["x-qopenbb-financial"] == canonical["x-qopenbb-financial"]
+    parameters = {item["name"]: item["schema"] for item in operation["parameters"]}
+    assert parameters["ttm"]["const"] == parameters["ttm"]["default"] == "exclude"
+    assert parameters["ttm"]["fmp"]["choices"] == ["exclude"]
+    assert parameters["period"]["default"] == "annual"
+    assert parameters["period"]["enum"] == ["annual", "quarter"]
+    status, widgets = asyncio.run(get(runtime, "/widgets.json"))
+    widget_id = "equity_fundamental_" + dataset + "_fmp_obb"
+    assert status == 200 and widgets[widget_id]["widgetId"] == widget_id
+    assert widgets[widget_id] == json.loads((root / "contracts/widgets.json").read_text())[widget_id]
+    selection = next(item for item in widgets[widget_id]["params"] if item["paramName"] == "ttm")
+    assert selection["value"] == "exclude" and selection["options"] == [{"label": "exclude", "value": "exclude"}]
 
 
 @pytest.mark.parametrize("kind,status,code", [("typed", 400, "throttling"),

@@ -4,6 +4,12 @@ FMP is QOpenBB's primary research source across financial statements, reports, f
 
 Research snapshot: 2026-10-19. The [FMP endpoint inventory](reference/fmp-endpoints.csv) records 276 published examples across 29 documentation categories, with 271 distinct example URLs. Shared endpoints are retained under their respective categories. It captures the public stable catalog, not every parameter combination, account entitlement or successful response. Each row links its detailed source documentation. No API keys or live provider requests were used for this inventory.
 
+## Periodic query metadata compatibility
+
+The source repair at data API `2e60c0a7aff039eda5f14a9d494beaec822fb9c4` adds `ttm: exclude` to the existing Metrics and Ratios effective-query metadata, including defaulted requests. Source tests, 73 native/offline checks and four real FMP queries passed, with independent integration review. Image acceptance remains pending in the [bounded task plan](../.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md).
+
+Update the maintained core and FMP provider together. Older Python `FinancialResultMetadata` validators reject this added public key; they require the matching reviewed core revision. Consumers that read the effective-query dictionary generically retain the same envelope and schema version. The selector does not enable TTM requests or calculations, change financial values, or establish fiscal comparability. Unresolved duration/YTD, restatement, currency/share/claim conventions and IA-B readiness remain open.
+
 ## Published coverage versus our implementation
 
 | Research family | Published FMP coverage to map into widgets |
