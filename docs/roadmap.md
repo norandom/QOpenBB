@@ -51,7 +51,7 @@ The initial provider batch and company selector are complete. The next [IA-A req
 - [x] Independently accept the [input assessment](../.kiro/specs/analyst-workspace/research-input-assessment.md) and IA-B readiness decision.
 - [ ] Deliver quarterly analysis and peer valuation through the separately approved dashboard/model contracts. A raw-data App alone does not complete IA-B.
 
-No deployed application change or image rebuild is part of this verification batch. IA-A is complete as a reviewed gap assessment. IA-B input and workflow readiness remain open; the next [periodic-query provenance design](../.kiro/specs/market-data-integrations/periodic-query-provenance-design.md) passed independent review and awaits owner design approval. It repairs one existing metadata omission; broader financial compatibility remains open.
+No deployed application change or image rebuild is part of this verification batch. IA-A is complete as a reviewed gap assessment. IA-B input and workflow readiness remain open; the [periodic-query provenance design](../.kiro/specs/market-data-integrations/periodic-query-provenance-design.md) is owner-approved. Its independently reviewed [four-task plan](../.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md) awaits task approval. It repairs one existing metadata omission; broader financial compatibility remains open.
 
 ## Subsequent workstreams
 

@@ -1,7 +1,7 @@
 {
   "feature_name": "market-data-integrations",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-10-30",
+  "updated_at": "2026-11-06",
   "language": "en",
   "phase": "tasks-generated",
   "approvals": {
@@ -93,14 +93,26 @@
   },
   "next_amendment": {
     "name": "periodic-query-provenance",
-    "phase": "design-generated",
+    "phase": "tasks-generated",
     "document": "periodic-query-provenance-design.md",
     "review": "periodic-query-provenance-review.md",
     "requirements_basis": "Existing approved requirements 4.1-4.3 and 6.1-6.3; constraints 4.4-4.7 and 7.1-7.2",
     "design_review": "passed",
-    "design_approved": false,
-    "tasks_generated": false,
+    "design_approved": true,
+    "tasks_generated": true,
     "tasks_approved": false,
-    "implementation_approved": false
+    "implementation_approved": false,
+    "design_approval": "Owner approved the independently reviewed bounded design in conversation on 2026-11-06; task generation authorized.",
+    "tasks_document": "periodic-query-provenance-tasks.md",
+    "executable_tasks": 4,
+    "tasks_review": {
+      "status": "PASS",
+      "mode": "independent",
+      "model": "gpt-6-astra",
+      "document": "periodic-query-provenance-task-review.md",
+      "draft_sha256": "0afaa8d14491b0d4b0e3af3524d2494f6be0644fc59ebafd0f1cd8289b722d24",
+      "review_passes": 1,
+      "repair_passes": 0
+    }
   }
 }

@@ -60,7 +60,8 @@ Company Research input verification: 73 offline checks and five live journeys pa
 
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
 - [x] Correct accounting-field evidence filtering and the assessment; 35 offline checks pass, original live receipts retained.
-- [ ] Approve and implement the [periodic-query metadata repair](.kiro/specs/market-data-integrations/periodic-query-provenance-design.md); independent design review passed.
+- [x] Approve the [periodic-query metadata repair design](.kiro/specs/market-data-integrations/periodic-query-provenance-design.md).
+- [ ] Approve and execute its [four-task plan](.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md); independent task review passed.
 - [ ] Resolve the bounded IA-B prerequisites and deliver the quarterly/peer research dashboard.
 
 Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-milestone.md):
