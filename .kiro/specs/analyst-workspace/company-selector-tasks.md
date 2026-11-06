@@ -2,6 +2,8 @@
 
 Status: owner approved tasks and implementation on 2026-10-30, after independent task-plan review. The bounded design and QueryParams size exception were approved earlier that day. This is an amendment to analyst-workspace, not approval of its umbrella backlog.
 
+Acceptance: all 10 executable tasks passed on 2026-11-06. [Packaged acceptance review](../../../artifacts/reviewed/company-selector/20261106-acceptance-review.md). Milestone image publication is pending.
+
 Read [requirements](company-selector-requirement.md) and [design](company-selector-design.md) before dispatch. Each executable task is a 1-3 hour work unit; elapsed delivery depends on review and runtime availability.
 
 ## Implementation tasks
@@ -73,7 +75,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Depends: 5.2_
   - _Requirements: 1.2, 1.3, 1.4, 1.5_
 
-- [ ] 7. Verify the analyst journey against real FMP data
+- [x] 7. Verify the analyst journey against real FMP data
 - [x] 7.1 Extend the existing financial browser cases
   - Author the combined name-to-MSFT/symbol-to-AAPL journey and independent synthetic keyboard/failure case in the existing financial test. Preserve its Income regression, configuration and fixture isolation; add no harness.
   - Include clipped-viewport assertions against captured actual responses, compatible Profile/Income, independent comparison/FRED sentinels, save/fresh-login and retained-bind recreation checkpoints.
@@ -82,7 +84,7 @@ Read [requirements](company-selector-requirement.md) and [design](company-select
   - _Depends: 6_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
-- [ ] 7.2 Execute packaged real-data and persistence acceptance
+- [x] 7.2 Execute packaged real-data and persistence acceptance
   - Repair the runtime-discovered controlled-value comparison regression in the existing CompareTermsParam before rebuilding: add/remove must start from the latest external values when no local edit is pending, while rapid pending edits retain their local list. Cancel obsolete queued writes after a contradictory external change; own acknowledgements and equivalent values preserve the search draft. Preserve the open editor, 600 ms debounce and original controls. Cover external-value add/remove and rapid edits with the existing native test runner; map the modified control and enforce 400/300/50.
   - Preserve an open Symbol lookup across its own raw-symbol acknowledgement without changing the 1250 ms callback or treating external changes as acknowledgements. Keep source, authentication, dashboard and group invalidation; preserve failed feedback across Enter/blur/Tab without automatic retry. Cover the controlled parent and reactive host behavior with focused native tests. The presenter remains within 400/300/50; QueryParams production stays unchanged.
   - Allow peer exact-symbol resolution when a mounted widget returns to an earlier company after intervening selections. Retire a successful automatic-attempt marker when leaving that selection context; retain suppression for failed, empty, ambiguous or cancelled attempts, including revisits. Preserve source/authentication/dashboard invalidation and stale-result rejection, with focused lifecycle regressions and 400/300/50.
@@ -124,3 +126,5 @@ The owner approved this bounded task plan and implementation on 2026-10-30. Neit
 ## Implementation Notes
 
 2026-10-30: packaged integration exposed a local comparison-preservation regression: the original editor displayed an externally updated symbol but appended to its stale initial internal list. Independent Astra review classified a controlled-value add/remove repair as necessary within the approved comparison-preservation scope. Keep one state owner and preserve the original editor flow; do not remount it after every value change or weaken the CSV browser check.
+
+2026-11-06: accepted packaged real-FMP/FRED, fresh-login and retained-bind recreation. E2E readiness now distinguishes the lazy table from its loading shell, reveals the saved FRED tile before waiting for data, preserves fail-closed response capture and waits for theme settings to save before a new login revokes the previous session. No production change was needed for these verification corrections.

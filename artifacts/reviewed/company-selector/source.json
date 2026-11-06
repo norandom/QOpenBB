@@ -2,7 +2,7 @@
   "task": "company-selector",
   "workspace_revision": "f832a5593223b1e702970c4de8eceda87a17fa5b",
   "previous_workspace_revision": "c652b909627d7634241eee2ed13a561fbb4f177b",
-  "scope": "Accepted selector source integration and catalog contracts; packaged real-FMP/browser/persistence and image publication remain open.",
+  "scope": "Accepted bounded company selector, including actual packaged FMP/FRED data, fresh login and retained-bind recreation. Image publication is pending.",
   "unchanged_exception_files": {
     "backend-api/backend/api/schemas.py": "7deb1c432e3855aa90bbdc4ebb9abdae4b4f999df77600fb49270c6ceec82645",
     "terminalpro/src/routes/login.tsx": "553f93e147b251d88471938241a3067efa30473848f02f621413de9e3c220951",
@@ -37,7 +37,8 @@
     "strict_typescript": "passed",
     "combined_files": 673,
     "errors": 0,
-    "violations": 0
+    "violations": 0,
+    "scope": "Historical contract foundation check only; later source and packaged acceptance are recorded below."
   },
   "ci_inventory_correction": "Only two unchanged future targets removed; full maintained gate passed673. Independent correction review; no source changes.",
   "accepted_tasks": [
@@ -49,7 +50,8 @@
     "5.1",
     "5.2",
     "6",
-    "7.1"
+    "7.1",
+    "7.2"
   ],
   "guard_checks": {
     "unit_tests": 60,
@@ -194,11 +196,12 @@
     "sha256": "21800e9e15e26797dd55c0ed5066423d289e271ee391cb6da3b923bcc0c6450d",
     "discovered_cases": 3,
     "scoped_strict_types": "passed",
-    "live_execution": "unverified",
-    "review": "task7.1-review.md"
+    "live_execution": "passed; see packaged_acceptance",
+    "review": "task7.1-review.md",
+    "final_sha256": "981fdd38bc9028663bf7d54c1f2f938fbf09b7bfc6337185b7f4ec0114ca7d29"
   },
   "comparison_repair": {
-    "status": "source-reviewed; rebuilt runtime acceptance pending",
+    "status": "accepted in the final packaged candidate; see packaged_acceptance",
     "workspace_revision": "b5193dbd7a553912daa5ea72df981c3fdb49d365",
     "source_review": "task7.2-comparison-review.md",
     "focused_cases": 12,
@@ -215,7 +218,7 @@
     "root_source_delta": "One existing comparison control plus focused unit file; previous eight selector modules unchanged."
   },
   "own_symbol_acknowledgement_repair": {
-    "status": "source-reviewed; rebuilt runtime acceptance pending",
+    "status": "accepted in the final packaged candidate; see packaged_acceptance",
     "workspace_revision": "01d6c27540cd4dfa9a7434780b5bea8ad1a47617",
     "focused_presenter_cases": 52,
     "reactive_host_cases": 30,
@@ -233,7 +236,7 @@
     "scope": "Presenter and focused native tests only; lifecycle/search/group/QueryParams production unchanged."
   },
   "peer_return_resolution_repair": {
-    "status": "source-reviewed; rebuilt acceptance pending",
+    "status": "accepted in the final packaged candidate; see packaged_acceptance",
     "workspace_revision": "f832a5593223b1e702970c4de8eceda87a17fa5b",
     "source_review": "task7.2-return-review.md",
     "lifecycle_cases": 89,
@@ -248,5 +251,63 @@
     "inventory_sha256": "5520b45ec1f09da1c53459225e1827c3d06431b7562a2e5207239d64f6f7e69f",
     "root_financial_test_sha256": "41b1fb872849989aa16b62301fcf9272dd9d6d239c36a50db0667e6add69875c",
     "scope": "Successful automatic resolution can recur after intervening companies; failed/ambiguous/cancelled attempts remain suppressed. All other production unchanged."
+  },
+  "packaged_acceptance": {
+    "status": "passed",
+    "date": "2026-11-06",
+    "root_source_revision": "ea3bfd37bde176d5b8e33aaa1a5cd3fb60b05dc9",
+    "test_sha256": "981fdd38bc9028663bf7d54c1f2f938fbf09b7bfc6337185b7f4ec0114ca7d29",
+    "images": {
+      "workspace": "sha256:32c2ddc41f8f396b826081d1dbd89b6436c25a71b6a471d2be5306abacaf077e",
+      "data-api": "sha256:e51e7c742adfa34d71ff9275f54a46c1d6d6b20d32399db8be67fcd5bbf90d03"
+    },
+    "runs": {
+      "income-20261106-1": {
+        "returncode": 0,
+        "expected": 1,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "receipt": "browser-income-20261106-1"
+      },
+      "initial-20261106-4": {
+        "returncode": 0,
+        "expected": 1,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "receipt": "browser-initial-20261106-4"
+      },
+      "reopen-20261106-1": {
+        "returncode": 0,
+        "expected": 1,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "receipt": "browser-reopen-20261106-1"
+      },
+      "synthetic-20261106-final": {
+        "returncode": 0,
+        "expected": 1,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "receipt": "browser-synthetic-20261106-final"
+      }
+    },
+    "retained_bind_recreation": {
+      "verified": true,
+      "container_changed": true,
+      "same_origin": true,
+      "same_images": true,
+      "source_overlay": null
+    },
+    "strict_financial_test_types": "passed",
+    "review": "20261106-acceptance-review.md",
+    "publication": "pending",
+    "limits": [
+      "Whole native application semantic typing retains its recorded baseline gap.",
+      "CI-image browser acceptance, owner-server deployment and backup/restore are not established."
+    ]
   }
 }

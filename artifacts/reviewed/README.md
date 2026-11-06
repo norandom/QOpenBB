@@ -8,6 +8,10 @@ The [appearance review](parity/appearance-contract-review/review.md), [saved-opt
 
 The [36-chart analyst guide](../../docs/chart-gallery.md) links the native screenshots. [Gallery verification](chart-gallery/verification.md) records the capture provenance, first-open correction and retained-state recreation. [Alpha publication review](chart-gallery/publication-review.md) verifies the tagged images and anonymous installation assets separately.
 
+## Company selection
+
+The [company-selector review](company-selector/20261106-acceptance-review.md) accepts the bounded local packaged FMP journey, linked widgets, independent comparison/FRED and retained-state recreation. [Source identities](company-selector/source.json) bind the inputs; the [analyst guide](../../docs/company-selection.md) explains the controls. Image publication is tracked separately.
+
 ## Included evidence
 
 - [Appearance/editor task-graph review](appearance-editor-task-plan/review/review.md): five bounded tasks passed independent planning review. The frozen draft retains specification-relative links; canonical tasks are in the owning spec. No implementation is approved by this planning evidence.

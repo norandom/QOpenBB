@@ -35012,18 +35012,18 @@
     },
     {
       "sourcepath": "artifacts/company-selector-implementation/progress.md",
-      "sourceSHA256": "d283b5a311bd618baf723c21b08e31ed78c53415dc74617a927925a2af7a49c5",
+      "sourceSHA256": "7c21cca737b1a52b36dda4c3645491c2ad57c86fa7a78ba380c96951a9e1459b",
       "publishedpath": "artifacts/reviewed/company-selector/progress.md",
-      "publishedSHA256": "d283b5a311bd618baf723c21b08e31ed78c53415dc74617a927925a2af7a49c5",
-      "bytes": 5039,
+      "publishedSHA256": "7c21cca737b1a52b36dda4c3645491c2ad57c86fa7a78ba380c96951a9e1459b",
+      "bytes": 2447,
       "transform": "exact-byte-copy"
     },
     {
       "sourcepath": "artifacts/company-selector-implementation/source.json",
-      "sourceSHA256": "0acf67c07d66a39e563ec39b49c3f08248b0f7bed58f0237cc87a1602d811b15",
+      "sourceSHA256": "36cf224a9c756c87811d23842cc93108168449eb61cfca26456b355575ec7727",
       "publishedpath": "artifacts/reviewed/company-selector/source.json",
-      "publishedSHA256": "0acf67c07d66a39e563ec39b49c3f08248b0f7bed58f0237cc87a1602d811b15",
-      "bytes": 11539,
+      "publishedSHA256": "36cf224a9c756c87811d23842cc93108168449eb61cfca26456b355575ec7727",
+      "bytes": 13637,
       "transform": "exact-byte-copy"
     },
     {
@@ -35144,6 +35144,30 @@
       "publishedpath": "artifacts/reviewed/company-selector/task7.2-return-review.md",
       "publishedSHA256": "491701483a48098a70d4e3b6bcff9b0264a33ba8769d6c6bef047cd85677b12b",
       "bytes": 4990,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/company-selector-implementation/20261106-acceptance-review.md",
+      "sourceSHA256": "9c850ba135973260a6452e792902b790dc90d4c553ef600ecaa51ba9cdcb8a10",
+      "publishedpath": "artifacts/reviewed/company-selector/20261106-acceptance-review.md",
+      "publishedSHA256": "9c850ba135973260a6452e792902b790dc90d4c553ef600ecaa51ba9cdcb8a10",
+      "bytes": 9349,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/company-selector-implementation/browser-initial-20261106-4/browser-output/financial-workspace-real-F-8b4ce-gin-and-retained-recreation/company-selector-light.png",
+      "sourceSHA256": "7536eff367685126c8fa69b7433674b23a496b2649be3d5d4c369c5d41f2127a",
+      "publishedpath": "artifacts/reviewed/company-selector/company-selector-light.png",
+      "publishedSHA256": "7536eff367685126c8fa69b7433674b23a496b2649be3d5d4c369c5d41f2127a",
+      "bytes": 22670,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/company-selector-implementation/browser-initial-20261106-4/browser-output/financial-workspace-real-F-8b4ce-gin-and-retained-recreation/company-selector-dark.png",
+      "sourceSHA256": "ca5b82c20c9c80b17a3870e70f1bfddc58812a73b9deedbee0fa873383bc1014",
+      "publishedpath": "artifacts/reviewed/company-selector/company-selector-dark.png",
+      "publishedSHA256": "ca5b82c20c9c80b17a3870e70f1bfddc58812a73b9deedbee0fa873383bc1014",
+      "bytes": 23489,
       "transform": "exact-byte-copy"
     }
   ],
@@ -35870,7 +35894,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 170778637,
+  "total_payload_bytes": 170995829,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

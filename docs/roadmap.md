@@ -111,7 +111,10 @@ The current [gallery milestone](../.kiro/specs/analyst-workspace/historical-gall
 
 First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks.md)):
 
-Next bounded analyst UX proposal: [Company name autocomplete with adjacent Symbol](../.kiro/specs/analyst-workspace/company-selector-design.md). The owner approved the design and scoped QueryParams exception on 2026-10-30. The independently reviewed [task plan](../.kiro/specs/analyst-workspace/company-selector-tasks.md) was approved for implementation on 2026-10-30; 9/10 tasks are source-accepted; the selector is not yet shipped. [Source progress](../artifacts/reviewed/company-selector/progress.md). The larger analyst-dashboard sequence remains separate.
+[Company name autocomplete with adjacent Symbol](company-selection.md) is accepted: 10/10 tasks passed on 2026-11-06, including real FMP data, compatible groups, independent comparison/FRED and retained-state reopening. [Task plan](../.kiro/specs/analyst-workspace/company-selector-tasks.md) and [acceptance](../artifacts/reviewed/company-selector/20261106-acceptance-review.md). The larger analyst-dashboard sequence remains separate.
+
+- [x] Accept packaged company selection and retained-state reopening.
+- [ ] Publish and verify the company-selector milestone alpha.
 
 - [x] Restore and characterize the existing provider verification baseline.
 - [x] Implement typed financial metadata through the native result envelope.

@@ -1029,6 +1029,18 @@
       "evidence": "company-selector-tasks-review.md",
       "draft_sha256": "936f4809c8c111e0dcd39585bc65d95dbc5d7c940214f879c2cc06b2920daf2e"
     },
-    "tasks_approval": "Owner approved reviewed task plan and implementation on 2026-10-30."
+    "tasks_approval": "Owner approved reviewed task plan and implementation on 2026-10-30.",
+    "implementation": {
+      "status": "accepted",
+      "accepted_on": "2026-11-06",
+      "tasks_completed": 10,
+      "tasks_total": 10,
+      "scope": "Bounded company-selector amendment only; analyst-workspace umbrella remains open.",
+      "evidence": "../../../artifacts/reviewed/company-selector/20261106-acceptance-review.md",
+      "test_sha256": "981fdd38bc9028663bf7d54c1f2f938fbf09b7bfc6337185b7f4ec0114ca7d29",
+      "publication": {
+        "status": "pending"
+      }
+    }
   }
 }

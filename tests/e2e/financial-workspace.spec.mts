@@ -413,6 +413,8 @@ async function chooseCompany(widget: Locator, mode: "name" | "symbol", query: st
 }
 
 async function expectSelectedCompany(widget: Locator, listing: any) {
+  // The loading shell has the same widget selector; wait for the actual table before scrolling.
+  await expect(widget.getByRole("grid")).toBeVisible();
   await widget.scrollIntoViewIfNeeded();
   await expect(widget.getByRole("combobox", { name: "Company name", exact: true })).toHaveValue(listing.name);
   await expect(widget.getByRole("combobox", { name: "Symbol", exact: true })).toHaveValue(listing.symbol);
@@ -513,6 +515,7 @@ test("real FMP company name MSFT then symbol AAPL linked research survives fresh
   expect(runtime.source_overlay).toBeNull();
   const diagnostics = [await observeApplication(page)];
   const captures: { path: string; symbol: string; payload: any }[] = [];
+  const bodyReadFailures: { path: string; symbol: string; reason: string | null }[] = [];
   const reads: Promise<void>[] = [];
   const financialRequests: { path: string; symbol: string; keys: string[] }[] = [];
   const initialFailures: { path: string; symbol: string | null }[] = [];
@@ -527,7 +530,12 @@ test("real FMP company name MSFT then symbol AAPL linked research survives fresh
       if ([profilePath, incomePath, fredPath].includes(url.pathname) && response.status() === 422)
         initialFailures.push({ path: url.pathname, symbol: url.searchParams.get("symbol") });
       if (![profilePath, incomePath, fredPath].includes(url.pathname) || !response.ok()) return;
-      const read = response.json().then(payload => { captures.push({ path: url.pathname, symbol: url.searchParams.get("symbol") ?? "", payload }); });
+      const read = response.json().then(payload => { captures.push({ path: url.pathname, symbol: url.searchParams.get("symbol") ?? "", payload }); }).catch(error => {
+        const failure = response.request().failure();
+        bodyReadFailures.push({ path: url.pathname, symbol: url.searchParams.get("symbol") ?? "", reason: failure?.errorText ?? null });
+        // Superseded requests can lose their bodies; every unconfirmed or non-owned failure still rejects.
+        if (url.origin !== process.env.WORKSPACE_FRONTEND_ORIGIN || failure?.errorText !== "net::ERR_ABORTED") throw error;
+      });
       reads.push(read);
       void read.catch(() => undefined);
     });
@@ -606,7 +614,16 @@ test("real FMP company name MSFT then symbol AAPL linked research survives fresh
       await profile.scrollIntoViewIfNeeded();
       for (const theme of ["light", "dark"]) {
         const dark = (await page.locator("html").getAttribute("class"))?.split(" ").includes("dark");
-        if (dark !== (theme === "dark")) await page.keyboard.press("Control+m");
+        if (dark !== (theme === "dark")) {
+          const themeSaved = page.waitForResponse(response => {
+            const url = new URL(response.url());
+            return url.origin === process.env.WORKSPACE_FRONTEND_ORIGIN &&
+              url.pathname === "/api/pro/display-settings" && response.request().method() === "POST" &&
+              response.request().postDataJSON()?.theme === theme;
+          });
+          await page.keyboard.press("Control+m");
+          expect((await themeSaved).ok()).toBe(true);
+        }
         await expect(page.locator("html")).toHaveClass(theme === "dark" ? /\bdark\b/ : /^(?!.*\bdark\b)/);
         await expectSelectedCompany(profile, selected.listing);
         await profile.screenshot({ path: info.outputPath(`company-selector-${theme}.png`) });
@@ -643,6 +660,11 @@ test("real FMP company name MSFT then symbol AAPL linked research survives fresh
       await expect(reopened.locator(`#workarea .widget-${profileId}`).nth(1)
         .getByRole("button", { name: "Symbol (2)", exact: true })).toBeVisible();
       const fred = reopened.locator(`#workarea .widget-${fredId}`);
+      const savedFred = expected.widgets.filter((widget: any) => widget.widgetId === fredId);
+      expect(savedFred).toHaveLength(1);
+      // Offscreen widgets fetch when revealed; the persisted layout item survives table mounting.
+      await reopened.locator(`#workarea [data-widget-id="${savedFred[0].id}"]`).scrollIntoViewIfNeeded();
+      await expect(fred.getByRole("grid")).toBeVisible();
       await verifyFredSentinel(fred, await captured(fredPath, "GDP"));
       await Promise.all(reads);
       records.push({ stage: phase === "reopen" ? "fresh-login-after-controller-recreation" : "fresh-login-after-save" });
@@ -660,7 +682,7 @@ test("real FMP company name MSFT then symbol AAPL linked research survives fresh
       dashboardPath: new URL(dashboardUrl).pathname, selected, state: expected }, null, 2)}\n`, { flag: "wx" });
   } finally {
     await info.attach("company-selector-real-financial-journey", { contentType: "application/json",
-      body: JSON.stringify({ phase, images: runtime.images, records, financialRequests, initialFailures, diagnostics,
+      body: JSON.stringify({ phase, images: runtime.images, records, financialRequests, initialFailures, bodyReadFailures, diagnostics,
         limitation: "Actual local packaged FMP/FRED responses required; controller recreates retained bind between phases. Discovery alone is not execution or publication acceptance." }) });
   }
 });
