@@ -2,7 +2,13 @@
 
 The development alpha uses prebuilt `latest` images. Each successful main-branch publication creates a tagged GitHub prerelease with Compose, the public environment template and a manifest containing exact image digests. Stable releases will use pinned versions.
 
-Published: [alpha-41030227140-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-41030227140-1), built from QOpenBB `6cca7e40c7e9830546b7051dc36995902acede35`, Workspace `c652b909627d7634241eee2ed13a561fbb4f177b` and data API `28423762e8cc3faae978e770899834b41e7cde99`. Both CI jobs, three public release assets and six anonymous digest, release-tag and latest pulls pass. Initial financial-input batch: 26/26; broader provider families remain follow-on work.
+Current release: [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1), built from QOpenBB `1ee3576242ed8357dbd494c8b0f181eb92ac2809`, Workspace `f832a5593223b1e702970c4de8eceda87a17fa5b` and data API `28423762e8cc3faae978e770899834b41e7cde99`. The bounded company-selector amendment is accepted, 10/10 tasks. [Local acceptance](../artifacts/reviewed/company-selector/20261106-acceptance-review.md) and [publication verification](../artifacts/reviewed/company-selector/20261106-publication-review.md) retain separate scope. The current immutable pair is listed in [installation](install.md).
+
+On 2026-11-06 the owner reported successful Linux `docker compose pull` and `docker compose up -d --no-build`, healthy data API startup, retained dashboards and working company autocomplete. This closes the owner-reported deployment check for that update. It is not independent server inspection, a claim that all widgets passed, or backup/restore acceptance.
+
+## Previous financial-input release
+
+[alpha-41030227140-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-41030227140-1) was built from QOpenBB `6cca7e40c7e9830546b7051dc36995902acede35`, Workspace `c652b909627d7634241eee2ed13a561fbb4f177b` and data API `28423762e8cc3faae978e770899834b41e7cde99`. Both CI jobs, three public release assets and six anonymous digest, release-tag and latest pulls passed. Initial financial-input batch: 26/26; broader provider families remain follow-on work.
 
 | Service | Exact published reference |
 | --- | --- |

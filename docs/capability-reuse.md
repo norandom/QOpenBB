@@ -1,5 +1,7 @@
 # Build the next research App on existing OpenBB capabilities
 
+Historical baseline: the tables below describe the 2026-10-28 inventory, before the initial provider batch and company selector shipped. For the current eleven-widget catalog, accepted selector and remaining quarterly/peer gaps, use the [2026-11-06 source findings](../.kiro/specs/analyst-workspace/research-input-research.md). Its [bounded IA-A requirements](../.kiro/specs/analyst-workspace/research-input-requirements.md) await owner approval; older future-tense status below is not the current delivery state.
+
 Use the existing App, widget parameters, linked groups and renderers for the next Company Research delivery. First prove that one named company can drive its research views and survive save/reopen; then expand provider coverage. A second dashboard or selector framework is justified only if an observed requirement cannot be met by the existing implementation.
 
 This 2026-10-28 inventory separates shipped evidence from source availability. Workspace source links are pinned to `22180d8ec206e088a384f2a3c7345358b1832c7c`. The [market-data](../.kiro/specs/market-data-integrations/requirements.md) and [analyst-workspace](../.kiro/specs/analyst-workspace/requirements.md) requirements are scope stubs, not approved designs. The sequence below proposes their first bounded slice; it does not authorize all later implementation.

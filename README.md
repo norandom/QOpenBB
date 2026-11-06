@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-41030227140-1) with public prebuilt `latest` images.** Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs so they do not hold up this release.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1) with public prebuilt `latest` images.** The owner confirmed the Linux update, retained dashboards and working company autocomplete on 2026-11-06. Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -45,7 +45,7 @@ Snapshot: 2026-11-06. Follow the CI link for live run status; a green check does
 | --- | --- | --- |
 | Prototype | Published-image Compose login, starter income widget, refresh and diagnostics accepted; local pull-only install rehearsed; owner confirms deployed alpha is up | Generic required-symbol guard; broader host acceptance |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
-| Data | Packaged starter widgets and 36-chart historical FMP gallery; annual AAPL income values and refresh accepted through the installed route | Broader live provider/widget acceptance, Yahoo adapter and named discovery |
+| Data | Eleven native financial widget definitions, accepted initial FMP/FRED input batch, company discovery and 36-chart historical FMP gallery | Broader provider families, Yahoo adapter and complete per-widget analyst journeys |
 | Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut, Box Plot, Range Bar/Area, Waterfall and Radar Line/Area behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
 | Analyst workflow | Existing dashboard editor; [Company name + Symbol selection](docs/company-selection.md), 10/10 bounded tasks accepted with real FMP data and retained-state reopening; [investment-analysis contract](.kiro/specs/analyst-workspace/investment-analysis-contract.md) | Curated quarterly analysis, peer valuation, FMP DCF/WACC with macro context, inline research and saved assumptions |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
@@ -54,6 +54,9 @@ Company selector delivery:
 
 - [x] Verify linked company selection, actual FMP values, independent FRED/comparison widgets and retained-state reopening. [Acceptance](artifacts/reviewed/company-selector/20261106-acceptance-review.md).
 - [x] Publish and verify the company-selector milestone images and tagged alpha: [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1).
+- [x] Receive owner confirmation of the Linux update, retained dashboards and working company autocomplete (2026-11-06); this is an owner report, not independent server inspection.
+
+Next: [Company Research input readiness](.kiro/specs/analyst-workspace/research-input-requirements.md). The independently reviewed requirements identify the remaining quarterly/peer and valuation-input gaps before dashboard implementation. Owner requirements approval is pending; no house calculations are added to providers or widgets.
 
 Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-milestone.md):
 
@@ -84,7 +87,8 @@ The current prototype alpha includes four reviewed repairs: HTTP 200/null for an
 - [x] Accept fresh onboarding and later login with clean diagnostics on the earlier prototype alpha Compose pair.
 - [x] Match the installed starter's annual AAPL income identity, reporting date, USD revenue and refresh to the live response.
 - [x] Complete the isolated pull-only local installation rehearsal.
-- [ ] Verify owner-server deployment and repair the generic-widget empty-required-symbol guard.
+- [x] Receive owner confirmation of the current Linux deployment and the bounded company-selection checks above.
+- [ ] Repair and verify the generic-widget empty-required-symbol guard.
 
 See the [independent application review](artifacts/reviewed/prototype-onboarding/application-review.md), [application result](artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](docs/prototype-delivery.md#earlier-prototype-repair). Broader provider acceptance, analyst persistence and infrastructure recovery remain separate.
 

@@ -424,6 +424,7 @@ evidence = ["Source repair ff8878c passed independent 19/19 transaction checks, 
 # Prototype-first successor ownership: .kiro/spec-ownership.toml and docs/roadmap.md.
 # Historical criterion/test/evidence links below remain; transfers are not passes.
 schema_version = 1
+
 # Original line research: .kiro/specs/openbb-self-service/chart-line-appearance-findings.md.
 # Explicit appearance component checks are recorded below; overall renderer parity remains open.
 draft = true
@@ -1590,3 +1591,11 @@ planned_checks = ["name and symbol explicit selection", "source-qualified identi
 test_paths = ["vendor/workspace/terminalpro/tests/unit/company-selection.test.ts", "vendor/workspace/terminalpro/tests/unit/company-group-safety.test.ts", "vendor/workspace/terminalpro/tests/unit/company-search.test.ts", "vendor/workspace/terminalpro/tests/unit/company-selector.test.tsx", "vendor/workspace/terminalpro/tests/unit/components/Widgets/Helpers/useParamGroupBindings.test.tsx", "vendor/workspace/terminalpro/tests/unit/components/General/Table/NavBar/QueryParams.test.tsx", "tests/e2e/financial-workspace.spec.mts", "vendor/workspace/terminalpro/tests/unit/components/General/Table/NavBar/CompareTermsParam.test.tsx"]
 status = "passed"
 evidence = ["2026-11-06: 10/10 bounded tasks accepted. Actual packaged MSFT/name and AAPL/symbol selection, linked Profile/Income values, independent comparison/FRED, saved fresh login and actual retained-bind recreation passed. Current synthetic keyboard/failure/race and unchanged Income regression pass. Final test 981fdd38bc9028663bf7d54c1f2f938fbf09b7bfc6337185b7f4ec0114ca7d29; exact 681-file source gate 0 issues. See artifacts/reviewed/company-selector/20261106-acceptance-review.md. Public image and asset verification passed for alpha-42188370167-1; CI-image browser, server deployment and backup/restore acceptance remain open."]
+
+[[capabilities]]
+id = "company-research-input-readiness"
+requirements = ["analyst-workspace/research-input-requirements.md:1.1-6.4", "analyst-workspace/investment-analysis-contract.md:IA-A"]
+planned_checks = ["representative company and candidate peer input matrix", "quarterly statement and market/share/enterprise-value compatibility", "FMP DCF/custom-DCF feasibility and FRED benchmark context", "explicit calculation ownership and IA-B readiness decision"]
+test_paths = []
+status = "planned"
+evidence = ["2026-11-06: six requirements/24 criteria independently reviewed after one repair pass; owner approval, verification design/tasks and new input evidence remain pending. research-input-requirements-review.md records requirements review only. Existing26/26provider and10/10selector acceptance are reusable within their recorded scopes, not IA-A completion."]

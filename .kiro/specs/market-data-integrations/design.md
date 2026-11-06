@@ -14,7 +14,7 @@ The first batch supplies financial statements, named discovery, peer candidates 
 
 ### Non-Goals
 
-No database implementation, general SQL language, new ORM, automatic provider fallback, Jupyter host, AI execution, Excel, valuation engine, dashboard redesign or new renderer. Analyst-workspace owns peer choices, financial calculations and saved research scenarios.
+No database implementation, general SQL language, new ORM, automatic provider fallback, Jupyter host, AI execution, Excel, valuation engine, dashboard redesign or new renderer. Analyst-workspace owns peer choices, presentation and saved research scenarios. House financial definitions and calculation execution belong to the separately specified financial-modeling repository; providers retain reported values, documented normalization and labeled provider calculations.
 
 ## Boundary Commitments
 

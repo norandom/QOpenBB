@@ -21,7 +21,7 @@ Latest accepted chart milestone: [alpha-40652638534-1](https://github.com/norand
 
 The completed prototype batch repairs four observed integration gaps: an absent first-login questionnaire returns HTTP 200/null, the data image packages and serves its existing widget/app catalog, optional external app previews use Workspace's existing fallback, and the data-only backend advertises an empty agent list. [alpha-40467871625-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1) passes CI, release-asset checks, six anonymous pulls and the fresh-account assembled Compose journey. P3 and the local P4 installation rehearsal are accepted for onboarding, later login, live annual AAPL income values, refresh and clean diagnostics. The generic-widget required-symbol guard, broader provider acceptance, analyst persistence and backup/restore remain open. Current owner-reported startup is recorded below. AI remains a separate spec. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md), [application result](../artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](prototype-delivery.md#earlier-prototype-repair).
 
-Latest delivery: [alpha-41030227140-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-41030227140-1) ships the initial financial-input batch with eleven native widget definitions. Both images, three release assets and anonymous pulls are verified. [Runtime and publication evidence](prototype-delivery.md) remain separately scoped. The owner reported the previous alpha up on 2026-10-28; that startup report does not establish deployment of this new image pair.
+Latest delivery: [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1) adds accepted company-name/Symbol selection to the published initial financial-input batch. Both images, three release assets and anonymous pulls are verified. On 2026-11-06 the owner confirmed the Linux pull/update, healthy data API, retained dashboards and working autocomplete. This owner report is separate from [local runtime and publication evidence](prototype-delivery.md); no independent server inspection or recovery check is claimed.
 
 ## Next: investment analysis and valuation
 
@@ -37,6 +37,18 @@ The [investment-analysis contract](../.kiro/specs/analyst-workspace/investment-a
 These are planned financial capabilities, not completed chart-rendering features. Detailed scope and acceptance are IA1-IA10 in the contract.
 
 [First-spec closure](../.kiro/specs/openbb-self-service/prototype-closure.md) records nine completed delivery milestones and transferred/deferred obligations.
+
+## Current bounded proposal: Company Research input readiness
+
+The initial provider batch and company selector are complete. The next [IA-A requirements](../.kiro/specs/analyst-workspace/research-input-requirements.md) cover a representative nonfinancial company and at least two candidate peers, quarterly statement compatibility, dated price/share/EV inputs, FMP DCF feasibility and FRED Treasury context. [Source findings](../.kiro/specs/analyst-workspace/research-input-research.md) identify the remaining gaps without repeating completed checks. House calculations stay in the separate modeling workstream.
+
+- [x] Reconcile completed initial-provider and company-selector milestones, including the owner-reported Linux update.
+- [x] Independently review the bounded IA-A requirements: six requirements, 24 criteria, one repair pass.
+- [ ] Obtain owner requirements approval, then review the verification design and tasks.
+- [ ] Complete the missing input evidence and make the IA-B readiness decision.
+- [ ] Deliver quarterly analysis and peer valuation through the separately approved dashboard/model contracts. A raw-data App alone does not complete IA-B.
+
+No new runtime work or image rebuild is part of this requirements batch. IA-A remains open.
 
 ## Subsequent workstreams
 
@@ -96,7 +108,8 @@ The owner authorized starting the next family while the accepted predecessor fin
 Renderer and control lanes may run concurrently after their shared contract is accepted. Shared application integration, local heavy checks and publication gates remain serialized. This queue does not mark planned tests or unsupported original paths complete.
 
 - [x] Close the [first-login onboarding, catalog, preview and agent-discovery batch](../.kiro/specs/openbb-self-service/first-login-diagnostics.md) with the independently accepted published-image Compose journey and local installation rehearsal.
-- [ ] Complete owner-server deployment evidence and the generic-widget empty-required-symbol guard; broader provider and analyst workflows retain separate acceptance.
+- [x] Record owner-confirmed Linux update, retained dashboards and working company autocomplete (2026-11-06).
+- [ ] Complete the generic-widget empty-required-symbol guard; broader provider and analyst workflows retain separate acceptance.
 - [ ] Complete [shared advanced image, gradient and pattern palettes](../.kiro/specs/analyst-workspace/advanced-palettes.md) with renderer, persistence and export acceptance. Owner decision on 2026-10-26: track this separately while Funnel proceeds with stock/plain CSS colors.
 
 ## Historical analyst gallery
@@ -123,28 +136,28 @@ First data batch progress ([tasks](../.kiro/specs/market-data-integrations/tasks
 - [x] Preserve FRED acquisition times through versioned disk, memory and coalesced requests.
 - [x] Add financial metadata to existing FMP profile and income without baseline contract changes.
 - [x] Preserve generic FRED series semantics and observation provenance.
-- [ ] Restore additional FMP datasets, wire the shared service contracts and verify real-provider data.
+- [x] Restore the initial FMP datasets, wire shared service contracts and verify the bounded real-provider queries; [26/26 first-batch tasks](../artifacts/reviewed/financial-input-milestone/accepted.md) are accepted. Wider families remain open.
 
 ## FMP statement adapter checkpoint
 
 - [x] Restore bounded balance-sheet and cash-flow adapters with signed/null values, period/date semantics and acquisition provenance. Ten of26initial data tasks are accepted. [Reviewed evidence](../artifacts/reviewed/market-data-statements/accepted.md).
-- [ ] Register the restored datasets and verify installed API/widget contracts and live account access in their owning integration tasks.
+- [x] Register the initial restored datasets and verify installed contracts and scoped live access in tasks 5.1-6.3, recorded below. Historical source-only checkpoints retain their original scope.
 
-These source adapters are not yet part of a newly published runtime image. The separate modeling workstream remains queued after verified provider inputs.
+At that historical checkpoint these adapters were source-only; the initial batch is now published through task 6.3 below. The separate modeling workstream remains queued after verified provider inputs.
 
 ## FMP discovery and daily-price checkpoint
 
 - [x] Source adapters for named/symbol discovery, provider peer candidates and bounded daily prices accepted. Twelve of 26 initial data tasks are accepted. [Evidence](../artifacts/reviewed/market-data-discovery-prices/accepted.md).
-- [ ] Complete periodic key metrics, financial ratios and enterprise-value inputs, then register and verify installed consumers with real provider data.
+- [x] Complete initial periodic metrics, ratios and enterprise-value inputs, then register consumers and verify the scoped real-provider queries through tasks 5.1-6.3.
 
-No new runtime image is published at this adapter-only checkpoint.
+No image was published at that adapter-only checkpoint; task 6.3 below records subsequent publication.
 
 ## FMP metrics and ratios checkpoint
 
 - [x] Source adapters for periodic key metrics and ratios, with explicit units, provider-calculation labels and unsupported TTM modes. Fourteen of 26 initial data tasks accepted. [Evidence](../artifacts/reviewed/market-data-metrics-ratios/accepted.md).
-- [ ] Add enterprise-value inputs and complete consumer schema/runtime integration before live-provider and widget acceptance.
+- [x] Add initial enterprise-value inputs and complete schema/runtime integration, scoped live-provider verification and the packaged Income journey through tasks 5.1-6.3. Full analyst workflows remain open.
 
-No new runtime image is published at this source-only checkpoint.
+No image was published at that source-only checkpoint; task 6.3 below records subsequent publication.
 
 ## Enterprise inputs and schema prerequisite, 2026-10-29
 
