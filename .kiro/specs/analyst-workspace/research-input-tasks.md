@@ -51,7 +51,7 @@ No production files, source pins, dependency locks, catalogs, model repository o
   - _Depends: 2_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 3.4, 4.3, 5.1, 5.2, 5.3_
 
-- [ ] 3.2 (P) Assess standard and custom DCF through bounded direct probes
+- [x] 3.2 (P) Assess standard and custom DCF through bounded direct probes
   - Use the existing stable-URL transport with explicit GET, API-key header, no redirects and the frozen shared request controls. The FMP-only prerequisite must not require a FRED key.
   - Sequence at most three MSFT requests within one test function: standard DCF, custom defaults and the documented beta=1.0 variation only after a usable baseline. Reset capture context between requests; preserve the shared run state.
   - Record source integration, published documentation, observed access, assumption fields and tested input binding separately. Forecast year is not valuation date, Profile currency is not DCF currency, and an echoed beta is not validated sensitivity support.
@@ -98,3 +98,4 @@ The project delivery rules require the evidence/documentation completion task de
 
 - Task 1 accepted 2026-11-06: 31 tests collected, 16 offline service checks passed; independent Sol review approved. Existing installed API/source and eight contract hashes match. Ignored setup receipt SHA256: `33cd4eda1e50bc50b4d7513d58db9f57f8b2316b1dc7807c00dd6a1ce7c38920`. Research selectors await task 3; no live-access claim.
 - Task 2 accepted 2026-11-06: 28 offline checks passed, including independent Astra rerun. Shared session state, bounded transport, source comparisons and immutable sanitized receipts are frozen; no live-provider acceptance claimed. Lane handoff is retained locally at `artifacts/research-input-readiness/helper-api-handoff.md`.
+- Task 3.2 accepted 2026-11-06: 18 offline DCF checks passed, live case skipped; independent Astra review approved. Direct probes are implemented, but provider access and custom-input behavior await task 4.
