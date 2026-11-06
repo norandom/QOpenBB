@@ -39,8 +39,8 @@ No production files, source pins, dependency locks, catalogs, model repository o
   - _Depends: 1_
   - _Requirements: 1.3, 1.4, 2.2, 3.1, 5.1, 5.3, 5.4, 6.3_
 
-- [ ] 3. Implement the two independent verification lanes
-- [ ] 3.1 (P) Verify the declared company and candidate-peer inputs
+- [x] 3. Implement the two independent verification lanes
+- [x] 3.1 (P) Verify the declared company and candidate-peer inputs
   - Define MSFT, ORCL and ADBE discovery/profile cases and explicit candidate rationale; preserve listing identity, exchange and separate trading/reporting currencies.
   - Cover Income, Balance, Cash, Metrics, Ratios and Enterprise Values in annual/quarter modes, bounded to two/four rows. Use dataset-based semantic dispatch and source mappings for required earnings, cash, working-capital, debt/share and EV fields. Keep unknown duration/YTD/restatement and valuation bases visible.
   - Execute each company journey in declared prerequisite order: identity, financial inputs, then one price window based on its latest successful annual/quarter EV observation. No refetch, fallback price or assumption that pytest parameter order supplies prerequisites. Preserve original baseline node IDs.
@@ -100,3 +100,4 @@ The project delivery rules require the evidence/documentation completion task de
 - Task 2 accepted 2026-11-06: 28 offline checks passed, including independent Astra rerun. Shared session state, bounded transport, source comparisons and immutable sanitized receipts are frozen; no live-provider acceptance claimed. Lane handoff is retained locally at `artifacts/research-input-readiness/helper-api-handoff.md`.
 - Task 3.2 accepted 2026-11-06: 18 offline DCF checks passed, live case skipped; independent Astra review approved. Direct probes are implemented, but provider access and custom-input behavior await task 4.
 - Task 2 integration repair accepted 2026-11-06: preserve recognized HTTP failures through legacy callbacks and exact fiscal-year strings before optional integer normalization. 32 offline checks passed; independent Astra review passed the four new regressions. No interface or production change.
+- Task 3.1 accepted 2026-11-06 after one review repair: 23 offline checks passed; independent Astra review verified seven exchange-identity and blocked-prerequisite regressions. Four live nodes collect; actual provider inputs await task 4. Metrics/ratios omit `ttm` from effective-query metadata and retain that explicit finding.
