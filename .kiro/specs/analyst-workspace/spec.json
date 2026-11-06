@@ -13,7 +13,7 @@
     "first_slice": "IA-A provider coverage and financial input verification before IA-B dashboard",
     "input_readiness": {
       "name": "research-input-readiness",
-      "phase": "implementation",
+      "phase": "assessment-complete",
       "requirements_document": "research-input-requirements.md",
       "requirements_generated": true,
       "requirements_approved": true,
@@ -52,6 +52,19 @@
         "model": "gpt-6.1-sol",
         "evidence": "research-input-tasks-review.md",
         "sha256": "d98a4830a315e8198bf3bedf418591c1e51f718e2b0b82daf8aa21b99af57777"
+      },
+      "completed_tasks": 6,
+      "assessment_document": "research-input-assessment.md",
+      "assessment_record": "docs/reference/research-input-readiness.json",
+      "assessment_complete": true,
+      "ia_b_inputs_ready": false,
+      "ia_b_workflow_implemented": false,
+      "implementation_review": {
+        "status": "passed",
+        "mode": "independent",
+        "model": "gpt-6-astra",
+        "evidence": "artifacts/reviewed/research-inputs/accepted.md",
+        "original_review_sha256": "75bd97ac99f853470ed16096c9ec8bb9122f3f50ef37f81211eadb8e55495692"
       }
     }
   },

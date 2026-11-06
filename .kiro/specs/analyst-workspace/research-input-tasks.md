@@ -71,7 +71,7 @@ No production files, source pins, dependency locks, catalogs, model repository o
   - _Depends: 3.1, 3.2_
   - _Requirements: 1.1, 1.3, 1.4, 2.1, 2.2, 2.3, 3.1, 3.2, 3.3, 4.1, 4.2, 4.3, 4.4, 5.1, 5.3, 5.4, 6.3_
 
-- [ ] 5. Publish the financial input assessment and next delivery decision
+- [x] 5. Publish the financial input assessment and next delivery decision
   - Join the actual receipts and scoped historical evidence into the designed JSON record and one analyst-facing matrix. Include exact widget IDs, sample rationale, source-qualified identities, units/currencies/periods, explicit missing conventions and owning corrective work.
   - Obtain independent financial review of cash-conversion and peer input adequacy, invalid denominators, share/date alignment and DCF/macro limitations. No house calculation or invented financial convention is permitted.
   - Keep assessment completion, IA-B input readiness and workflow implementation separate. A conclusive gap assessment can be complete while IA-B remains blocked; this task always leaves IA-B workflow implementation false.
@@ -102,3 +102,4 @@ The project delivery rules require the evidence/documentation completion task de
 - Task 2 integration repair accepted 2026-11-06: preserve recognized HTTP failures through legacy callbacks and exact fiscal-year strings before optional integer normalization. 32 offline checks passed; independent Astra review passed the four new regressions. No interface or production change.
 - Task 3.1 accepted 2026-11-06 after one review repair: 23 offline checks passed; independent Astra review verified seven exchange-identity and blocked-prerequisite regressions. Four live nodes collect; actual provider inputs await task 4. Metrics/ratios omit `ttm` from effective-query metadata and retain that explicit finding.
 - Task 4 accepted 2026-11-06: one serial run at `b597df7` passed five live journeys and recorded 49 attempts (46 native FMP, three direct DCF), all HTTP 200. Combined offline join: 73 passed. Independent Astra review approved the evidence; financial compatibility and IA-B readiness remain open. FRED evidence is historical-only. Local run: `artifacts/research-input-readiness/live-20261106T112507Z`.
+- Task 5 accepted 2026-11-06: independent Astra financial review approved the 50-observation assessment and all 24 criteria. IA-A assessment is complete; IA-B inputs/workflow remain false. Public evidence: `artifacts/reviewed/research-inputs/accepted.md`. No runtime change or image build.

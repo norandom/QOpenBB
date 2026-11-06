@@ -47,10 +47,11 @@ The initial provider batch and company selector are complete. The next [IA-A req
 - [x] Obtain owner requirements approval (2026-11-06).
 - [x] Approve the bounded verification design (2026-11-06).
 - [x] Approve the [six-task plan](../.kiro/specs/analyst-workspace/research-input-tasks.md) and begin implementation.
-- [ ] Complete the missing input evidence and make the IA-B readiness decision.
+- [x] Collect the bounded real-provider evidence: 46 native FMP requests and three direct DCF probes; five live journeys passed.
+- [x] Independently accept the [input assessment](../.kiro/specs/analyst-workspace/research-input-assessment.md) and IA-B readiness decision.
 - [ ] Deliver quarterly analysis and peer valuation through the separately approved dashboard/model contracts. A raw-data App alone does not complete IA-B.
 
-No new runtime work or image rebuild is part of this requirements batch. IA-A remains open.
+No deployed application change or image rebuild is part of this verification batch. IA-A is complete as a reviewed gap assessment. IA-B input and workflow readiness remain open; the next bounded prerequisite contract requires owner review.
 
 ## Subsequent workstreams
 

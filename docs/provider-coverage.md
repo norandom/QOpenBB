@@ -26,6 +26,12 @@ See the inventory's per-endpoint source links and [official FMP catalog](https:/
 
 The published initial batch registers ten FMP models and the generic FRED series contract, with eleven reusable native widget definitions, discovery and safeguards. Its scoped real-provider observations, packaged Income journey and image publication are accepted; [company selection](company-selection.md) adds bounded linked Profile/Income acceptance. This does not establish every widget's complete research workflow or access for every installation. The earlier price/statement/news demo used uploaded snapshots. Every integration retains separate published-coverage, entitlement, adapter, widget and end-to-end status.
 
+## Company Research input verification, 2026-11-06
+
+One bounded run verified 46 native FMP requests for Microsoft, Oracle and Adobe and three direct MSFT DCF probes. These checks extend the earlier sample to six annual/quarterly financial datasets, same-listing discovery/profile and EV-dated price windows. DCF access and a beta echo do not establish a native DCF widget, house valuation or sensitivity support. FRED DGS10 evidence remains historical-only from 2026-10-30.
+
+The [input assessment](../.kiro/specs/analyst-workspace/research-input-assessment.md) records reusable widget IDs, financial compatibility gaps and follow-on ownership. Independent financial review accepted the gap assessment; IA-B input and workflow readiness remain false. No new provider adapter or image is delivered by this verification work.
+
 ## Discovery checkpoint, 2026-10-29
 
 The [machine-readable coverage index](reference/provider-coverage.json) records family scope and source evidence separately from installed command discovery. The [accepted discovery component](../artifacts/reviewed/market-financial-discovery/accepted.md) reads authoritative financial schemas and preserves unknown access and consumer states. The [installed service integration](../artifacts/reviewed/market-runtime-integration/accepted.md) activates discovery, provider selection and safe errors. The [accepted native consumer catalog](../artifacts/reviewed/market-financial-consumers/accepted.md) preserves baseline widget IDs and editable company/series/period parameters. The initial batch was subsequently published in [alpha-41030227140-1](../artifacts/reviewed/financial-input-milestone/accepted.md) and is retained in the current company-selector alpha; wider families remain unverified.

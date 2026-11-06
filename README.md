@@ -56,7 +56,10 @@ Company selector delivery:
 - [x] Publish and verify the company-selector milestone images and tagged alpha: [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1).
 - [x] Receive owner confirmation of the Linux update, retained dashboards and working company autocomplete (2026-11-06); this is an owner report, not independent server inspection.
 
-Next: [Company Research input readiness](.kiro/specs/analyst-workspace/research-input-requirements.md). The independently reviewed requirements identify the remaining quarterly/peer and valuation-input gaps before dashboard implementation. Requirements are owner-approved. The design is owner-approved. The [six-task plan](.kiro/specs/analyst-workspace/research-input-tasks.md) is approved and implementation has started; house calculations remain in the separate modeling layer.
+Company Research input verification: 73 offline checks and five live journeys passed for Microsoft, Oracle and Adobe, with 46 native FMP requests and three direct DCF probes. The independently accepted [input assessment](.kiro/specs/analyst-workspace/research-input-assessment.md) closes IA-A as a gap assessment; IA-B analytical readiness remains open. Access does not resolve fiscal-period, currency, share-date or valuation-method compatibility; house calculations remain in the separate modeling layer.
+
+- [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
+- [ ] Resolve the bounded IA-B prerequisites and deliver the quarterly/peer research dashboard.
 
 Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-milestone.md):
 

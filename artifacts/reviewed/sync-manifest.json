@@ -193,7 +193,8 @@
     "market-live-financial-inputs",
     "market-packaged-financial",
     "financial-input-milestone",
-    "company-selector"
+    "company-selector",
+    "research-input-readiness"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -35192,6 +35193,14 @@
       "publishedpath": "artifacts/reviewed/company-selector/release-manifest.json",
       "publishedSHA256": "c4753db4f86bc24350032e6d34ca485607f5f6fe32dc67794bdcb4d8d7b4f2e1",
       "bytes": 7061,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/research-input-readiness/accepted.md",
+      "sourceSHA256": "021c13c3b27eebae32121e69b2701176069222d78c02ed6a77f129be2a9963da",
+      "publishedpath": "artifacts/reviewed/research-inputs/accepted.md",
+      "publishedSHA256": "021c13c3b27eebae32121e69b2701176069222d78c02ed6a77f129be2a9963da",
+      "bytes": 3666,
       "transform": "exact-byte-copy"
     }
   ],

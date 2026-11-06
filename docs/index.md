@@ -14,6 +14,7 @@ The [login correction](../.kiro/specs/openbb-self-service/login-password-policy.
 | Connect the bundled backend and open starter dashboards | [First login and onboarding](install.md#first-login-and-onboarding) |
 | Find companies by name and link research widgets | [Company selection](company-selection.md) |
 | Keep account connections and saved dashboards across updates | [Persistence and updates](install.md#persistence-and-updates) |
+| Check verified company inputs and remaining financial gaps | [Company Research input assessment](../.kiro/specs/analyst-workspace/research-input-assessment.md) |
 | Plan a feature using existing OpenBB capabilities | [Capability reuse map](capability-reuse.md) |
 | Understand login and bootstrap password replacement | [Login correction and verification](../.kiro/specs/openbb-self-service/login-password-policy.md) |
 | Configure optional remote access | [Tips and Tricks](tips-and-tricks.md) |
