@@ -2,6 +2,7 @@
 import asyncio
 import json
 import pytest
+from urllib.parse import urlsplit
 from test_income import get_income
 
 SENTINEL = 'failure-fixture-key-only'
@@ -52,7 +53,7 @@ def test_failure_routes(monkeypatch, caplog, capsys, status, payload, category, 
         assert code >= 400, text
         assert f'FMP[{category}]' in text
     assert len(calls) == (2 if route == 'profile' else 1)
-    assert all('financialmodelingprep.com' in url for url in calls)
+    assert all(urlsplit(url).hostname == 'financialmodelingprep.com' for url in calls)
     output = capsys.readouterr()
     assert SENTINEL not in text + caplog.text + output.out + output.err
 
