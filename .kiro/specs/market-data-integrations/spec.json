@@ -118,7 +118,7 @@
     "completed_tasks": 4
   },
   "statement_period_provenance": {
-    "phase": "tasks-generated",
+    "phase": "implementing",
     "requirements_document": "statement-period-provenance-requirements.md",
     "requirements_review": {
       "status": "PASS",
@@ -127,8 +127,8 @@
     },
     "requirements_approved": true,
     "design_approved": true,
-    "tasks_approved": false,
-    "implementation_approved": false,
+    "tasks_approved": true,
+    "implementation_approved": true,
     "scope": "Existing FMP Income, Balance and Cash period provenance; no calculations or IA-B readiness claim.",
     "requirements_approval": "Owner approved in conversation on 2026-11-10; bounded design work authorized.",
     "design_document": "statement-period-provenance-design.md",
@@ -151,6 +151,8 @@
       "document": "statement-period-provenance-task-review.md",
       "draft_sha256": "5fe603eb19769a8eb79d6abc150a5861dc11f501e10fb3d96c9137eed3c79a7a",
       "repair_passes": 0
-    }
+    },
+    "current_task": "1 (source and verification baseline)",
+    "tasks_approval": "Owner approved the seven-task plan and implementation in conversation on 2026-11-10."
   }
 }

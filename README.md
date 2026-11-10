@@ -82,7 +82,8 @@ Company Research input verification: 73 offline checks and five live journeys pa
 - [x] Review the next bounded [statement-period provenance contract](.kiro/specs/market-data-integrations/statement-period-provenance-requirements.md).
 - [x] Approve the statement-period requirements and independently review its [design](.kiro/specs/market-data-integrations/statement-period-provenance-design.md).
 - [x] Approve the design and independently review the [seven-task implementation plan](.kiro/specs/market-data-integrations/statement-period-provenance-tasks.md).
-- [ ] Approve tasks, then implement and accept the statement-period slice.
+- [x] Approve the statement-period implementation tasks.
+- [ ] Implement and accept the statement-period slice.
 
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
 - [x] Correct accounting-field evidence filtering and the assessment; 35 offline checks pass, original live receipts retained.
