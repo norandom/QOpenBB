@@ -4,6 +4,7 @@ import hashlib
 from pathlib import Path
 
 from . import session_files
+from .portable_runtime import output_options
 from .compose_checks import checked_container, checked_network
 from .compose_runtime import ComposeRuntime
 from .native_environment import validate_output
@@ -12,7 +13,7 @@ from .compose_intent import recreation_intent, create_intent, require_intent, re
 
 
 def load(config, path):
-    runtime = ComposeRuntime(config, validate_output(Path(path)))
+    runtime = ComposeRuntime(config, validate_output(Path(path), **output_options(config)))
     runtime.descriptor = read_private(runtime.path)
     descriptor = runtime.descriptor
     endpoint = config.environment.get('CONTAINER_HOST') or config.environment.get('DOCKER_HOST')

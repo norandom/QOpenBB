@@ -9,6 +9,7 @@ from uuid import uuid4
 from .container_command import compose_command, container_command
 from .native_environment import NativeEnvironment, run_command, validate_output
 from . import session_files
+from .portable_runtime import output_options
 from .runtime_descriptor import RuntimeDescriptor, replace_private
 from .compose_checks import validate_config, checked_container, checked_network
 
@@ -137,7 +138,7 @@ def reserve_port(port):
 
 def prepare(request):
     config = request.config
-    path = validate_output(Path(request.session_path))
+    path = validate_output(Path(request.session_path), **output_options(config))
     if path.exists() or path.parent.exists():
         raise ValueError('A new private session directory is required')
     runtime = ComposeRuntime(config, path)

@@ -6,7 +6,7 @@ from urllib.parse import urlsplit
 
 from qopenbb_ci.compose_runtime import start, StartRequest
 from qopenbb_ci.compose_lifecycle import recreate, stop, status
-from qopenbb_ci.native_environment import resolve_environment
+from qopenbb_ci.portable_runtime import resolve_environment
 from qopenbb_ci.runtime_descriptor import public_projection
 
 

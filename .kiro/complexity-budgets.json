@@ -47,6 +47,7 @@
           "pipeline/dev.ps1",
           "pipeline/qopenbb_ci/native_environment.py",
           "pipeline/qopenbb_ci/native_actions.py",
+          "pipeline/qopenbb_ci/portable_runtime.py",
           "pipeline/qopenbb_ci/container_command.py",
           ".kiro/complexity/workspace.json",
           "pipeline/qopenbb_ci/compose_lifecycle.py",

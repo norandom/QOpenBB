@@ -13,7 +13,8 @@ from urllib.request import Request, urlopen
 from qopenbb_ci.compose_runtime import start, StartRequest, ComposeRuntime
 from qopenbb_ci.compose_lifecycle import stop
 from qopenbb_ci.container_command import container_command
-from qopenbb_ci.native_environment import resolve_environment, validate_output, run_command
+from qopenbb_ci.native_environment import validate_output, run_command
+from qopenbb_ci.portable_runtime import resolve_environment, output_options
 
 
 def docker(*args):
@@ -85,10 +86,10 @@ def main(argv=None):
     parser.add_argument('--report', type=Path, required=True)
     parser.add_argument('--private', type=Path)
     args = parser.parse_args(argv)
-    report_path = validate_output(args.report)
+    config = resolve_environment(Path(__file__).resolve().parents[2])
+    report_path = validate_output(args.report, **output_options(config))
     report_path.parent.mkdir(parents=True, exist_ok=True)
     private_path = args.private or report_path.parent / ('runtime-' + uuid4().hex) / 'descriptor.json'
-    config = resolve_environment(Path(__file__).resolve().parents[2])
     runtime = ComposeRuntime(config, private_path)
     report = {'verified': False, 'phase': 'startup'}
     private_values = []
