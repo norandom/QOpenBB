@@ -57,7 +57,8 @@ No deployed application change or image rebuild is part of the IA-A verification
 
 
 - [x] Independently review the bounded [statement-period provenance contract](../.kiro/specs/market-data-integrations/statement-period-provenance-requirements.md).
-- [ ] Approve its bounded design/tasks and deliver Income, Balance and Cash period provenance; financial compatibility remains open.
+- [x] Obtain statement-period requirements approval and independently review the [bounded design](../.kiro/specs/market-data-integrations/statement-period-provenance-design.md).
+- [ ] Approve its design/tasks and deliver Income, Balance and Cash period provenance; financial compatibility remains open.
 
 ## Subsequent workstreams
 

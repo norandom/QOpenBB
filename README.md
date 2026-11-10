@@ -80,6 +80,7 @@ Company selector delivery:
 Company Research input verification: 73 offline checks and five live journeys passed for Microsoft, Oracle and Adobe, with 46 native FMP requests and three direct DCF probes. The independently accepted [input assessment](.kiro/specs/analyst-workspace/research-input-assessment.md) closes IA-A as a gap assessment; IA-B analytical readiness remains open. Access does not resolve fiscal-period, currency, share-date or valuation-method compatibility; house calculations remain in the separate modeling layer.
 
 - [x] Review the next bounded [statement-period provenance contract](.kiro/specs/market-data-integrations/statement-period-provenance-requirements.md).
+- [x] Approve the statement-period requirements and independently review its [design](.kiro/specs/market-data-integrations/statement-period-provenance-design.md).
 - [ ] Implement and accept the statement-period slice after design/task approval.
 
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
