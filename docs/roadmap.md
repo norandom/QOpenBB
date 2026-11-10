@@ -63,6 +63,7 @@ No deployed application change or image rebuild is part of the IA-A verification
 - [x] Prepare isolated sources and the native provider baseline ([evidence](../artifacts/reviewed/statement-period-provenance/baseline.md)).
 - [x] Accept the typed statement core contract ([evidence](../artifacts/reviewed/statement-period-provenance/core.md)).
 - [x] Accept the statement consumer contract ([evidence](../artifacts/reviewed/statement-period-provenance/consumer.md)).
+- [x] Accept FMP statement provenance source integration ([evidence](../artifacts/reviewed/statement-period-provenance/provider.md)).
 - [ ] Deliver Income, Balance and Cash period provenance; financial compatibility remains open.
 
 ## Subsequent workstreams

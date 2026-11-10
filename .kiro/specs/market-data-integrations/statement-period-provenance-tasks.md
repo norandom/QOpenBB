@@ -21,7 +21,7 @@ The owner approved requirements and design on 2026-11-10. This seven-task plan i
   - _Depends: 1_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4, 3.2, 3.3_
 
-- [ ] 3. (P) Integrate provenance into the three FMP statement routes
+- [x] 3. (P) Integrate provenance into the three FMP statement routes
   - Capture only allowlisted source facts before alias normalization can overwrite them. Carry source ordinals and facts with validated rows through each route's unchanged ordering/clipping; construct provenance from those final bundles.
   - Preserve current-alias precedence, duplicate rows, values, null/zero states, bounds, transport and acquisition timestamps. Do not fetch another endpoint or infer starts/duration from fiscal labels.
   - Mark unsupported flow coverage unknown consistently in row and common field metadata. Retain stock semantics and closing dates; beginning cash remains undated without supported source evidence. Correct misleading static period descriptions only.
@@ -103,3 +103,5 @@ The unrelated catalog/inventory working-tree changes and .openidea directory are
 - Task 2 accepted 2026-11-10: API b373da3f8d7, 64 installed tests, independent review and whole-file caps passed after compatibility/error-message repairs. [Evidence](../../../artifacts/reviewed/statement-period-provenance/core.md). Preserve annual/quarter scope; no broader Income query change is authorized.
 
 - Task 4 accepted 2026-11-10: existing projection needs no production change; independent consumer review passed 81 tests. [Evidence](../../../artifacts/reviewed/statement-period-provenance/consumer.md). Final provider revision and actual source/live acceptance remain task 5.
+
+- Task 3 accepted 2026-11-10: API e78d87b2000, 102 independently repeated provider checks, nine installed source matches and the clean combined 110-file gate passed. [Evidence](../../../artifacts/reviewed/statement-period-provenance/provider.md). Register the new FMP helper in both ownership include selection and maintained-file inventory; do not claim baseline-valid query labels prove duration.

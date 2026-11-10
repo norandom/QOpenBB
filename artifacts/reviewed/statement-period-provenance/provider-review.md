@@ -1,0 +1,20 @@
+## Review Verdict
+- VERDICT: APPROVED
+- TASK: 3, FMP statement period provenance (bounded provider review)
+- MECHANICAL_RESULTS:
+  - Tests: PASS, 102 passed, exit 0. From D:/Source/QOpenBB: D:/BuildArtifacts/QOpenBB/statement-period-provenance/provider-venv/Scripts/python.exe -m pytest -c services/data-api/pyproject.toml tests/providers/test_statement_provenance.py tests/providers/test_income.py tests/providers/test_balance_sheet_metadata.py tests/providers/test_cash_flow_metadata.py -n 0 -o cache_dir=D:/BuildArtifacts/QOpenBB/statement-period-provenance/task3/review-cache --junitxml=D:/BuildArtifacts/QOpenBB/statement-period-provenance/task3/review.xml
+  - Evidence: review-tests.log, review.xml; direct malformed-input probes in review-probes.log. Existing aiohttp inheritance deprecation warning only.
+  - TBD/TODO grep: CLEAN for added lines and new helper/test. Secrets grep: CLEAN for concrete credential assignments in changed lines/new files.
+  - Static checks: SPOT_CHECKED imports, value references, safe validation paths and production module loading; git diff --check PASS. No provider-local lint command found.
+  - Source identity: independently recomputed seven FMP and two frozen core source/installed hashes; all match installed-hashes.json. API base b373da3f8d7 plus seven FMP working-tree files.
+  - Complexity: inspected file-measurements.json; all seven production files satisfy 400 physical/300 logical/50 per function. Largest file 363 physical lines, largest function 12 logical units. Parent-owned combined inventory gate remains outstanding.
+  - Boundary: WITHIN seven FMP helper/adapters/data declarations and three affected root tests; core remains unchanged.
+  - Boundary audit: CLEAN; no new acquisition, calculation, widget dependency, provider convention, start-date derivation or broader Income route coverage.
+  - RED phase: VERIFIED red.log/red.xml show 9 missing-sidecar failures and 6 passes before implementation.
+- FINDINGS:
+  1. Suggestion: utils/statement_provenance.py:27 assumes each acquired row is a dict. Directly constructing FMPAcquisition([None]), [123] or ['date-secret'] and calling transform_data now raises TypeError instead of the former sanitized FinancialError. This is not reachable through the three approved acquisition routes: all call get_data_many, whose helpers.py:178-181 rejects non-dict rows before transformation; response_callback also rejects malformed rows. Optional internal-boundary hardening can preserve the former behavior, but this does not block the actual provider contract.
+  2. FYI: helper annotations remain sparse (including StatementBundle.row: object). Runtime behavior and dependency direction are correct; stronger typing is optional maintainability work, not an unmet acceptance criterion.
+- REMEDIATION: None required for bounded task 3 acceptance. Controller must complete the prepared combined inventory gate before marking the task complete.
+- SUMMARY: The provider changes preserve source values, ordering and attribution while consistently reporting unsupported flow duration as unknown; later live financial, consumer-join and widget acceptance remain open.
+
+Reviewed against statement-period-provenance requirements 1.1-1.4, 2.1-2.4 and 3.1-3.2; design data contract, financial classification and transformation/error sections; task 3's exact ownership boundary. Source facts are captured before copied alias normalization, including conflicting current/legacy values and supplied nulls. Stable Balance/Cash sorting and clipping carry bundles together; Income provider order and overflow remain intact. Beginning cash stays undated, closing stocks use supplied statement dates, unknown duration/restatement and false point-in-time safety remain explicit. Annual/quarter scopes receive the sidecar; other Income selectors retain their existing contract. Tests assert payload nonmutation, null/absence distinction, duplicate indices, malformed fact sanitization, instant semantics, zero preservation and unchanged route regressions.

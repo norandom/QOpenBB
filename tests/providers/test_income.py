@@ -187,7 +187,7 @@ def test_income_zero_preserves_nonempty_provider_rows(income_boundary, monkeypat
 
 
 @pytest.mark.parametrize("period,basis", [
-    ("annual", "annual"), ("quarter", "discrete_quarter"),
+    ("annual", None), ("quarter", None),
     ("ttm", "trailing_twelve_months"),
 ])
 def test_income_declarations_match_runtime(income_boundary, period, basis):

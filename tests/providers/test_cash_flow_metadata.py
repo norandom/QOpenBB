@@ -47,7 +47,7 @@ def test_fidelity_metadata_and_nonmutation(period, fiscal):
     assert amount["unit"] == "currency" and amount["scale"] == 1
     assert amount["currency_field"] == "reported_currency"
     assert amount["financial_basis"]["cash"] is None
-    assert amount["period_basis"] == ("annual" if period == "annual" else "discrete_quarter")
+    assert amount["period_basis"] is None
     assert metadata["fields"]["free_cash_flow"]["value_origin"] == "provider_calculation"
     assert metadata["fields"]["free_cash_flow"]["availability"] == "missing"
     assert metadata["bounds"]["completeness"] == "unknown"
@@ -114,9 +114,9 @@ def test_invalid_row_is_safe():
     assert caught.value.__context__ is None
 
 
-@pytest.mark.parametrize("periods,expected", [(["FY"], "annual"),
-    (["Q2"], "discrete_quarter"), (["FY", "Q2"], None), ([None], None), (["YTD"], None)])
-def test_basis_uses_observed_period_labels(periods, expected):
+@pytest.mark.parametrize("periods,expected", [(["FY"], None),
+    (["Q2"], None), (["FY", "Q2"], None), ([None], None), (["YTD"], None)])
+def test_labels_do_not_establish_flow_basis(periods, expected):
     query = Fetcher.transform_query({"symbol": "A", "period": "quarterly"})
     assert query.period == "quarter"
     result = Fetcher.transform_data(query, FMPAcquisition([fixture(p) for p in periods], STAMP))
@@ -200,7 +200,7 @@ def test_class_declarations_agree_with_runtime_and_are_independent(labels):
         for attribute in ("definition", "unit", "scale", "currency_field", "value_origin",
                           "observation_date_field", "publication_date_field", "financial_basis"):
             assert runtime[attribute] == getattr(template, attribute)
-        basis = "annual" if labels == ["FY"] else "discrete_quarter" if labels == ["Q1"] else None
+        basis = None
         expected = "instant" if name in {"cash_at_beginning_of_period", "cash_at_end_of_period"} else basis
         assert runtime["period_basis"] == expected
         assert runtime["availability"] == (
