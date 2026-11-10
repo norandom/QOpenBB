@@ -1,0 +1,13 @@
+# Validated runtime descriptors and private IPC
+
+Task 4 passed independent Astra review on 2026-11-10. It implements a strict version-1 runtime descriptor for the native workflow, preserving the fields used by existing financial/login fixtures and validating session identity, loopback origin, exact image IDs, resource ownership labels and readiness facts. Unknown fields, legacy versions, duplicate JSON keys and inconsistent image/container identities are rejected.
+
+The private reader invokes the accepted protected-file layer, validates the descriptor and returns it only through pipe output. Terminal and ordinary file redirection are refused. Public output is an explicit projection without credentials, connection details, state paths or configuration contents. Argument and read failures use fixed diagnostics rather than echoing private inputs. Typed replacement validates before the existing atomic update.
+
+Native tests on 2026-11-10 passed 64 cases with one POSIX-only skip. Actual Windows subprocess cases cover captured private output, file-redirection refusal, malformed/unprotected/missing files and sanitized argument errors. Other checks cover prepared/ready descriptors, inconsistent identities, terminal refusal and public projection. Review caught the argument parser echoing invalid arguments; two failing subprocess regressions verified the repair. Linux execution remains task 12.
+
+The combined size gate passed for 88 maintained controller files with zero errors or violations, using clean `b9f9687` plus this task. The descriptor and storage/IPC modules remain within 400 physical lines, 300 logical units and 50 units per callable. Unrelated inventory/renderer edits are preserved; unchanged-fork manifests do not claim fork remeasurement.
+
+Raw evidence remains in `D:/BuildArtifacts/QOpenBB/runtime-descriptor`, including `red.log`, `arg-red.log`, `arg-green.log` and `combined.json`. Independent review reproduced the original 62-pass suite with one POSIX skip, then independently passed both added argument regressions (`review/pytest.log`, `review/args.log`). Only this sanitized record is published. No provider calls, image builds, WSL commands, browser runs or server deployment occurred.
+
+The [frozen descriptor contract](../../../.kiro/specs/native-development-workflow/design.md#runtime-descriptor-and-browser-adapter) now supports the next Compose, browser and build lanes. Schema validation does not establish that a daemon resource exists, that a host path is safe to mutate or that an application is ready; the coordinator must verify those facts against the actual runtime.
