@@ -19,22 +19,22 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-42188370167-1/manifest.json) for `alpha-42188370167-1`:
+Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-42231784072-1/manifest.json) for `alpha-42231784072-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:7795861f0a3b2e5df03d945f185621b31a4965890c88eb506f057207a0a47fab` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:c8630e39aded926391204e1b5e4b915584527aedc621ec3c4faed88816d0e4b4` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:6dd6fc83cb46248fdc2e62e582547c3efd25e152640ce931e6bba873d6706ea1` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:51f28fb741431767dac2385b13ca15faafec3885e7b08af55591cce073e42232` |
 
-Both CI jobs, three public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [publication review](../artifacts/reviewed/company-selector/20261106-publication-review.md).
+Both CI jobs, three public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [periodic-query publication and packaged evidence](../artifacts/reviewed/periodic-query-provenance/accepted.md).
 
-This alpha packages native locked uv, readable Python source under CPython and embedded Valkey 9.0.7. Its eleven native definitions retain the FMP financial-input adapters and generic FRED series contract. It adds [Company name and Symbol selection](company-selection.md) to eight immediate FMP widgets. [Data-layer acceptance](../artifacts/reviewed/market-live-financial-inputs/accepted.md) and [local selector acceptance](../artifacts/reviewed/company-selector/20261106-acceptance-review.md) describe their tested scope. Published image identities are verified separately. On 2026-11-06 the owner confirmed the Linux update, retained dashboards and working autocomplete; this owner report does not establish independent server inspection, CI-image browser execution or recovery.
+This alpha packages native locked uv, readable Python source under CPython and embedded Valkey 9.0.7. Its eleven native definitions retain the FMP financial-input adapters and generic FRED series contract, including [Company name and Symbol selection](company-selection.md) in eight immediate FMP widgets. It adds periodic-query provenance for Metrics and Ratios. [Data-layer acceptance](../artifacts/reviewed/market-live-financial-inputs/accepted.md) and [local selector acceptance](../artifacts/reviewed/company-selector/20261106-acceptance-review.md) describe their tested scope. Published image identities are verified separately. On 2026-11-06 the owner confirmed the Linux update to the preceding `alpha-42188370167-1`, retained dashboards and working autocomplete. That report applies only to the preceding alpha; the current release has no new owner-server or browser acceptance. Independent server inspection and recovery remain unverified.
 
 The earlier [Python-source/Valkey acceptance](../artifacts/reviewed/python-source-packaging/runtime-review.md), [login repair](../artifacts/reviewed/login-password/application-review.md) and [historical chart gallery](../artifacts/reviewed/chart-gallery/publication-review.md) remain scoped historical evidence. Backup/restore and rollback remain unverified.
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-42188370167-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-42188370167-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-42231784072-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-42231784072-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-42231784072-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace

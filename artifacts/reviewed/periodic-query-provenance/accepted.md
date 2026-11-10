@@ -1,6 +1,6 @@
 # Periodic query provenance
 
-Metrics and Ratios now expose their validated `ttm: exclude` selection, including defaulted requests. Source/native checks and four fresh FMP comparisons passed. Image and deployment acceptance remain open; this record does not establish IA-B analytical readiness.
+Metrics and Ratios now expose their validated `ttm: exclude` selection, including defaulted requests. Source/native checks and four fresh FMP comparisons passed. Publication and offline packaged checks also passed; independent delivery review passed on 2026-11-10. Owner-server deployment and IA-B analytical readiness remain open.
 
 - [Approved repair and task state](../../../.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md)
 - [Consumer migration](../../../docs/provider-coverage.md#periodic-query-metadata-compatibility)
@@ -31,6 +31,29 @@ Local original run: `artifacts/periodic-query-provenance/live-20261106T135844Z`.
 
 ## Delivery boundary
 
-Native/source acceptance is distinct from image publication, packaged consumer verification and owner-server deployment. No new image is accepted by this record yet. Actual duration/YTD, restatement, valuation/share/claim conventions and both false IA-B readiness flags remain unresolved. The repair changes query provenance, not financial conclusions.
+Native/source acceptance is distinct from image publication, packaged consumer verification and owner-server deployment. The packaged checks below cover the published data API; they do not repeat Workspace browser acceptance or establish owner-server deployment. Actual duration/YTD, restatement, valuation/share/claim conventions and both false IA-B readiness flags remain unresolved. The repair changes query provenance, not financial conclusions.
 
-Independent Astra integration review approved the source/native join on 2026-11-06, with two fresh offline checks and an audit of all four live receipts, the two renewed proofs and 50 unchanged historical receipt hashes. Original review SHA256: `f4b5d9379f42eebbb7b856a27441757a7f1ad08db16eca97c6ca95eae55e5df3`. Image delivery remains the next acceptance gate.
+Independent Astra integration review approved the source/native join on 2026-11-06, with two fresh offline checks and an audit of all four live receipts, the two renewed proofs and 50 unchanged historical receipt hashes. Original review SHA256: `f4b5d9379f42eebbb7b856a27441757a7f1ad08db16eca97c6ca95eae55e5df3`. The published-image checks below follow that source/native acceptance.
+
+## Published alpha and packaged checks
+
+[alpha-42231784072-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42231784072-1) was built once by [workflow 42231784072](https://github.com/norandom/QOpenBB/actions/runs/42231784072) from controller `b37ec1963e1bc138115b431e3c168e5e48a8bd47`. Both candidate and publication jobs succeeded. Workspace remains at `f832a5593223b1e702970c4de8eceda87a17fa5b`; the data API is the reviewed commit above.
+
+| Image | Immutable public reference |
+| --- | --- |
+| Workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:6dd6fc83cb46248fdc2e62e582547c3efd25e152640ce931e6bba873d6706ea1` |
+| Data API | `ghcr.io/norandom/qopenbb-data-api@sha256:51f28fb741431767dac2385b13ca15faafec3885e7b08af55591cce073e42232` |
+
+Three installation assets passed anonymous HTTP, byte-length and GitHub SHA256 checks. Six anonymous image pulls passed: digest, alpha tag and `latest` for both services. Source labels, manifest/config digests, Linux/AMD64 platform and RepoDigests match the release manifest. Docker's local IDs are manifest digests on this daemon; their Descriptor digests were checked separately. Compose parsed with the immutable pair and parser-only credentials; no deployment was performed.
+
+The canonical clean catalog generator ran against this exact data image and committed provider source, with deterministic repeated upstream generation. Its route hash matches the installed source/native proposal. OpenAPI, routes, widgets, apps, datasets and catalog report are unchanged. Only provenance, hashes and the compatibility comparison record changed; the latter now records no route drift against the preceding accepted catalog. This does not remove the separately documented older strict Python-validator migration requirement.
+
+The existing offline packaged runtime suite passed three tests in 76.48 seconds. A separate ownership-labeled, network-disabled container checked health/readiness, six discovery endpoints, 11 native widgets, source/generation identity and all three installed module hashes. Four deterministic Python/native cases covered Metrics and Ratios with default annual or explicit quarterly queries, unchanged negative/zero/missing values, schema version 1 and `ttm: exclude`. No real provider request, new dependency, host mount or published port was used. All owned probe containers were removed.
+
+Packaged commands: `QOPENBB_DATA_IMAGE=<exact local image ID> QOPENBB_DATA_EVIDENCE=<ignored output> pipeline/.venv/bin/python -m pytest -c pipeline/pyproject.toml tests/delivery/test_data_runtime_image.py -n0 --maxprocesses=2`, followed by the bounded installed-source/native probe. Both exited 0. Local packaged summary SHA256: `c64083cd69a80f2be7ed071bdcb6ce97625b22f7c884fa724d304446cbe8be0b`; installed-native report SHA256: `88b2ec5bbfdfd6275384116b694aae27a54d7e92934e6ec92170ac8d6c313a88`. Original publication checks remain under `artifacts/periodic-query-provenance/release/run-42231784072/`; packaged checks are under `task4-packaged-evidence/`. Raw logs, temporary containers' details and configuration directories are not public artifacts.
+
+Use the [development install guide](../../../docs/install.md) for the prebuilt alpha. Historical company-selector server confirmation remains tied to its preceding release. This milestone introduces no new dashboard, calculation layer, Anthropic or Excel behavior.
+
+## Final bounded acceptance, 2026-11-10
+
+Independent Astra delivery re-review approved the corrected release links and deployment boundaries. Fresh read-only joins checked the recorded release, catalog and packaged evidence without repeating provider requests, image pulls or runtime tests. Review SHA256: `31ba5d478b681bd198e731e7e7a2870f103ddbf61e62513fe4f0f6d09e14abda`. All four amendment tasks are accepted; broader market-data scope, owner-server deployment of this alpha and IA-B readiness remain open.

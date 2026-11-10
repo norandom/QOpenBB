@@ -1,7 +1,7 @@
 {
   "feature_name": "market-data-integrations",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-11-06",
+  "updated_at": "2026-11-10",
   "language": "en",
   "phase": "tasks-generated",
   "approvals": {
@@ -93,7 +93,7 @@
   },
   "next_amendment": {
     "name": "periodic-query-provenance",
-    "phase": "implementing",
+    "phase": "implemented",
     "document": "periodic-query-provenance-design.md",
     "review": "periodic-query-provenance-review.md",
     "requirements_basis": "Existing approved requirements 4.1-4.3 and 6.1-6.3; constraints 4.4-4.7 and 7.1-7.2",
@@ -115,6 +115,6 @@
       "repair_passes": 0
     },
     "tasks_approval": "Owner approved the reviewed four-task plan and implementation in conversation on 2026-11-06.",
-    "completed_tasks": 3
+    "completed_tasks": 4
   }
 }

@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1) with public prebuilt `latest` images.** The owner confirmed the Linux update, retained dashboards and working company autocomplete on 2026-11-06. Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-42231784072-1) with public prebuilt `latest` images.** The latest alpha adds periodic-query provenance; the owner confirmed the preceding company-selector alpha on Linux on 2026-11-06. Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -62,7 +62,7 @@ Company Research input verification: 73 offline checks and five live journeys pa
 - [x] Correct accounting-field evidence filtering and the assessment; 35 offline checks pass, original live receipts retained.
 - [x] Approve the [periodic-query metadata repair design](.kiro/specs/market-data-integrations/periodic-query-provenance-design.md).
 - [x] Accept the periodic-query source/native repair: 125 focused tests, 73 integration checks and four real FMP cases passed.
-- [ ] Publish and verify its image milestone ([task plan](.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md), [evidence](artifacts/reviewed/periodic-query-provenance/accepted.md)).
+- [x] Publish and verify its image milestone: [alpha-42231784072-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42231784072-1) ([task plan](.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md), [evidence](artifacts/reviewed/periodic-query-provenance/accepted.md)); owner-server deployment remains unverified for this release.
 - [ ] Resolve the bounded IA-B prerequisites and deliver the quarterly/peer research dashboard.
 
 Previous [combination-chart milestone](.kiro/specs/analyst-workspace/chart-port-milestone.md):
