@@ -184,4 +184,5 @@ The repair keeps static financial declarations in one owner, with dynamic FRED/r
 ## Native development workflow
 
 - [x] Approve the [native Windows workflow requirements](../.kiro/specs/native-development-workflow/requirements.md): Podman/Compose runtime, native Dagger and Playwright migration.
-- [ ] Approve the independently reviewed [migration design](../.kiro/specs/native-development-workflow/design.md), then generate bounded implementation tasks. [Discovery and decisions](../.kiro/specs/native-development-workflow/research.md). Sol workers own separate implementation lanes; Astra reviews difficult integration and the controller joins evidence. Linux CI and server deployment stay supported.
+- [x] Approve the independently reviewed [migration design](../.kiro/specs/native-development-workflow/design.md).
+- [ ] Approve the reviewed [15-task implementation plan](../.kiro/specs/native-development-workflow/tasks.md). [Discovery and decisions](../.kiro/specs/native-development-workflow/research.md). Sol workers own separate implementation lanes; Astra reviews difficult integration and the controller joins evidence. Linux CI and server deployment stay supported.
