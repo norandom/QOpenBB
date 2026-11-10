@@ -1,9 +1,22 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { isAbsolute, relative, resolve } from "node:path";
+import { isAbsolute } from "node:path";
+import { pathToFileURL } from "node:url";
+import type { RuntimeDescriptor } from "../../verification/runtime-descriptor.ts";
 import type { Locator, Page, Response } from "../../verification/node_modules/@playwright/test/index.js";
 import { expectApplicationDiagnostics, observeApplication } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/diagnostics";
 import { saveDashboard } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/editor";
 import { expect, loginDisposableWorkspace, test } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/fixtures";
+
+async function runtimeReader(): Promise<typeof import("../../verification/runtime-descriptor.ts")> {
+  const reader = process.env.QOPENBB_RUNTIME_READER;
+  if (!reader || !isAbsolute(reader)) throw new Error("Checked runtime reader required");
+  return import(pathToFileURL(reader).href);
+}
+
+async function readRuntime(): Promise<RuntimeDescriptor> {
+  const reader = await runtimeReader();
+  return reader.readRuntimeDescriptor(process.env.WORKSPACE_RUNTIME_PRIVATE!);
+}
 
 const widgetId = "equity_fundamental_income_fmp_obb";
 const incomePath = "/data/api/v1/equity/fundamental/income";
@@ -148,7 +161,7 @@ async function refreshIncome(widget: Locator) {
 
 test("local packaged financial widgets support native company period recovery and saved reopen", async ({ page, browser }, info) => {
   test.setTimeout(240000);
-  const runtime = JSON.parse(readFileSync(process.env.WORKSPACE_RUNTIME_PRIVATE!, "utf8"));
+  const runtime = await readRuntime();
   expect(runtime.name).toMatch(/^qopenbb-browser-/);
   expect(runtime.packaged_image_only).toBe(true);
   expect(runtime.source_overlay).toBeNull();
@@ -503,13 +516,12 @@ test("real FMP company name MSFT then symbol AAPL linked research survives fresh
   const checkpoint = process.env.QOPENBB_COMPANY_RETENTION;
   if (!checkpoint || !["initial", "reopen"].includes(phase ?? ""))
     throw Error("Explicit QOPENBB_COMPANY_PHASE initial|reopen and QOPENBB_COMPANY_RETENTION required");
-  const suffix = relative(resolve("artifacts/company-selector-implementation"), resolve(checkpoint));
-  if (!suffix || suffix.startsWith("..") || isAbsolute(suffix)) throw Error("Use ignored company-selector checkpoint path");
+  (await runtimeReader()).checkpointPath(checkpoint);
   if (phase === "initial") {
     // Refuse to overwrite a checkpoint from a previously completed journey.
     expect(existsSync(checkpoint)).toBe(false);
   }
-  const runtime = JSON.parse(readFileSync(process.env.WORKSPACE_RUNTIME_PRIVATE!, "utf8"));
+  const runtime = await readRuntime();
   expect(runtime.name).toMatch(/^qopenbb-browser-/);
   expect(runtime.packaged_image_only).toBe(true);
   expect(runtime.source_overlay).toBeNull();
