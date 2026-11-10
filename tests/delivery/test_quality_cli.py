@@ -10,6 +10,14 @@ import pytest
 
 from qopenbb_ci import quality_cli
 from qopenbb_ci.source_filter import ALLOW, source_scope
+from tools.quality.scope import load_inventory
+
+
+def write_inventory(root, repos):
+    config = {"schema_version": 1, "metric": "project-syntax-units-v1",
+              "limits": {"physical": 400, "logical": 300, "function": 50},
+              "repositories": repos}
+    (root / ".kiro/complexity-budgets.json").write_text(json.dumps(config))
 
 
 @pytest.mark.parametrize("source", ["workspace", "data_api"])
@@ -30,15 +38,14 @@ def project(tmp_path, monkeypatch):
                  "revision": "a" * 40}
         lock[name] = entry
         repo = {"id": name, **entry, "source_lock_key": name,
-                "root": "vendor/" + name,
+                "root": "vendor/" + name, "mode": "changed", "exclusions": [],
                 "owners": [{"files": ["a.py", "b.py"]}]}
         repos.append(repo)
         checkout = tmp_path / repo["root"]
         checkout.mkdir(parents=True)
         for file in ("a.py", "b.py"):
             (checkout / file).write_text("pass\n")
-    inventory = tmp_path / ".kiro/complexity-budgets.json"
-    inventory.write_text(json.dumps({"repositories": repos}))
+    write_inventory(tmp_path, repos)
     (tmp_path / "sources.lock.json").write_text(json.dumps(lock))
     identities = []
     monkeypatch.setattr(quality_cli, "identity", lambda root, entry: identities.append((root, entry)))
@@ -51,8 +58,12 @@ def options(root):
             "--output", str(root / "artifacts/result.json")]
 
 
-def test_exact_full_scopes_and_checker_exit_code(project, monkeypatch):
+@pytest.mark.parametrize("referenced", [False, True])
+def test_exact_full_scopes_and_checker_exit_code(project, monkeypatch, referenced):
     root, repos, identities = project
+    if referenced:
+        (root / ".kiro/workspace.json").write_text(json.dumps(repos[0]))
+        write_inventory(root, [{"include": ".kiro/workspace.json"}, repos[1]])
     calls = []
 
     def run(command, *, check):
@@ -91,7 +102,7 @@ def test_incomplete_or_unverified_scope_fails_before_checker(project, monkeypatc
         def reject(*args):
             raise ValueError("tracked source differs from locked commit")
         monkeypatch.setattr(quality_cli, "identity", reject)
-    (root / ".kiro/complexity-budgets.json").write_text(json.dumps({"repositories": repos}))
+    write_inventory(root, repos)
     monkeypatch.setattr(quality_cli.subprocess, "run", lambda *a, **k: pytest.fail("checker must not run"))
     assert quality_cli.main(options(root)) == 2
 
@@ -125,7 +136,7 @@ def test_ci_acquisition_maps_source_keys_to_actual_inventory_roots(tmp_path):
         '''))
     fake_python.chmod(0o700)
     subprocess.run(["bash", "-euo", "pipefail", "-c", block], cwd=tmp_path, check=True)
-    config = json.loads((root / ".kiro/complexity-budgets.json").read_text())
+    config = load_inventory(root)
     repos = {repo["id"]: repo for repo in config["repositories"]}
     for name in ("workspace", "data_api"):
         checkout = tmp_path / repos[name]["root"]

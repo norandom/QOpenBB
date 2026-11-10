@@ -3,9 +3,60 @@
 import fnmatch
 import json
 import os
+import stat
 from pathlib import Path
 
 from .changes import git_manifest, safe_path, validate_manifest
+
+
+def unique_object(pairs: list[tuple]) -> dict:
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate inventory field: {key}")
+        result[key] = value
+    return result
+
+
+def reference_path(root: Path, name: str) -> Path:
+    safe_path(root, name)
+    current = root.resolve()
+    for part in name.split("/"):
+        current /= part
+        status = current.lstat()
+        if stat.S_ISLNK(status.st_mode) or getattr(status, "st_file_attributes", 0) & 0x400:
+            raise ValueError(f"inventory reference traverses a symlink or reparse point: {name}")
+    return current
+
+
+def read_object(path: Path) -> dict:
+    value = json.loads(path.read_text(encoding="utf-8-sig"), object_pairs_hook=unique_object)
+    if not isinstance(value, dict):
+        raise ValueError("inventory JSON must contain an object")
+    return value
+
+
+def load_inventory(root: Path) -> dict:
+    config = read_object(root / ".kiro/complexity-budgets.json")
+    repositories = config.get("repositories")
+    if not isinstance(repositories, list):
+        raise ValueError("inventory repositories must be an array")
+    resolved = []
+    for repo in repositories:
+        if not isinstance(repo, dict):
+            raise ValueError("repository inventory must be an object")
+        if "include" in repo:
+            if set(repo) != {"include"}:
+                raise ValueError("ambiguous repository inventory reference")
+            repo = read_object(reference_path(root, repo["include"]))
+            if "include" in repo:
+                raise ValueError("recursive repository inventory reference")
+        resolved.append(repo)
+    config["repositories"] = resolved
+    source_lock = root / "sources.lock.json"
+    locked = json.loads(source_lock.read_text(encoding="utf-8")) if source_lock.exists() else {}
+    validate_config(config, locked)
+    return config
 
 
 def matches(name: str, pattern: str) -> bool:
@@ -118,10 +169,7 @@ def collect_repository(root: Path, repo: dict, entries: list[dict], report: dict
 
 
 def collect(root: Path, changes: dict, repository_roots: dict, revisions: dict) -> dict:
-    config = json.loads((root / ".kiro/complexity-budgets.json").read_text(encoding="utf-8-sig"))
-    source_lock = root / "sources.lock.json"
-    locked = json.loads(source_lock.read_text(encoding="utf-8")) if source_lock.exists() else {}
-    validate_config(config, locked)
+    config = load_inventory(root)
     report = {"limits": config["limits"], "scope": [], "exclusions": [], "excluded": [],
               "deleted": [], "pending": [], "errors": []}
     ids = {repo["id"] for repo in config["repositories"]}

@@ -11,7 +11,7 @@ Use Sol for implementation/routine review, Astra for private-storage and difficu
 | Tasks | Exclusive writable scope |
 | --- | --- |
 | 1 | Tool metadata and native tool evidence; controller owns `pipeline/tools.lock.json` and inventory/checker baseline |
-| 2 | `pipeline/dev.ps1`, `pipeline/qopenbb_ci/native_environment.py`, `container_command.py`, focused environment tests |
+| 2 | `pipeline/dev.ps1`, `pipeline/qopenbb_ci/native_environment.py`, `container_command.py`, focused environment tests; approved [inventory split amendment](inventory-split-amendment.md) includes shared checker reader/tests and controller-owned configuration extraction |
 | 3.1-3.2 | `pipeline/qopenbb_ci/session_files.py`, `windows_private_files.py`, private-file tests; sequential ownership |
 | 4 | `pipeline/qopenbb_ci/runtime_descriptor.py`, descriptor/IPC tests; serialized completion of task 3 storage IPC |
 | 5-6 | `pipeline/qopenbb_ci/compose_runtime.py`, `tests/delivery/compose.runtime.yaml`, `workspace_runtime.py`, `workspace-runtime.ps1`, `task25_runtime.py`, Compose tests |
@@ -34,11 +34,11 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
   - _Boundary: Native tooling and inventory foundation_
   - _Requirements: 1.2, 4.1, 5.1, 5.2, 5.3, 6.4_
 
-- [ ] 2. Provide native command and container execution contracts
+- [x] 2. Provide native command and container execution contracts
   - Implement the native entry/environment and shared container command selection from the design. Resolve real executables, explicit Compose provider and selected daemon; preserve required Windows system/temp variables without inheriting provider credentials into builds.
   - Validate working/output/cache roots, spaces in paths and action arguments. Hide helper consoles and propagate errors/exit codes. Freeze the CLI, output-root and subprocess contracts; runtime/build actions cannot report success before their consumers exist.
   - Done: native doctor and focused path/environment tests pass without WSL or profile functions; drive-root, incompatible version and unsafe output cases fail before mutation.
-  - Whole-file 400/300/50 checks pass for the native entry and shared helpers; add their actual paths to the maintained inventory through the controller.
+  - Whole-file 400/300/50 checks pass for the native entry and shared helpers; add their actual paths to the maintained inventory through the controller. Apply the owner-approved [inventory split](inventory-split-amendment.md) and verify equivalent enforcement before accepting this task.
   - _Boundary: Native entry and environment_
   - _Depends: 1_
   - _Requirements: 1.1, 1.2, 1.3, 5.1, 5.2, 5.3, 6.4_
@@ -170,3 +170,4 @@ Every implementation handoff includes exact writable paths, prerequisite commits
 ## Implementation notes
 
 - Task 1 accepted 2026-11-10: protected pinned native environments, explicit Podman/Compose connectivity and the existing combined size gate passed; independent Sol review approved. [Foundation evidence](../../../artifacts/reviewed/native-development-workflow/foundation.md). Use the actual paths in `D:/BuildArtifacts/QOpenBB/native-foundation/resolved-tools.json`. The pinned Dagger executable needs process-local `FORCE_DARK_MODE=1` for noninteractive version detection. Native engine execution and application/browser acceptance remain later tasks. The exact clean checker snapshot avoids overwriting existing Linux dependencies and unrelated work.
+- Task 2 accepted 2026-11-10: native doctor and 16 focused checks pass (one POSIX-only skip). Sol accepted the entry/environment implementation; Astra accepted the owner-approved [inventory split](inventory-split-amendment.md), with 67 focused checks passing and three platform-related skips. The combined gate passes for 83 controller files. [Evidence and limits](../../../artifacts/reviewed/native-development-workflow/entry.md). Runtime/build consumers remain task 11 integration; task 3.1 is next.

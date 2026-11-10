@@ -8,6 +8,7 @@ import tempfile
 
 from qopenbb_ci.sources import identity
 from tools.quality.changes import safe_path
+from tools.quality.scope import load_inventory
 
 
 def manifest(root: Path, repo: dict, lock: dict) -> dict:
@@ -49,7 +50,7 @@ def main(argv: list[str] | None = None) -> int:
         if (inventory != root / ".kiro/complexity-budgets.json"
                 or args.lock.resolve() != root / "sources.lock.json"):
             raise ValueError("checker requires canonical inventory and lock paths under one root")
-        config = json.loads(inventory.read_text(encoding="utf-8-sig"))
+        config = load_inventory(root)
         lock = json.loads(args.lock.read_text(encoding="utf-8"))
         repos = {repo["id"]: repo for repo in config["repositories"]}
         scopes = {name: manifest(root, repos[name], lock) for name in ("workspace", "data_api")}

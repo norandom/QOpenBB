@@ -28,6 +28,13 @@ Current [historical gallery milestone](.kiro/specs/analyst-workspace/historical-
 
 ## Status at a glance
 
+Native Windows developer workflow ([plan](.kiro/specs/native-development-workflow/tasks.md)):
+
+- [x] Qualify pinned tools, Podman/Compose connectivity and the native command entry.
+- [ ] Integrate protected sessions, Compose runtime, Dagger builds and Playwright, then verify Linux compatibility.
+
+[Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.
+
 The current alpha uses locked native uv backend packaging, readable Python application source under CPython and embedded Valkey 9.0.7. [Local runtime acceptance](artifacts/reviewed/python-source-packaging/runtime-review.md) covers gallery save/fresh-login reopen and login/password changes; a separate synthetic Redis snapshot/RQ and database-marker probe covers recreation. [Publication verification](artifacts/reviewed/python-source-packaging/publication-review.md) checks the released image identities and public pulls, without repeating browser acceptance on CI image bytes.
 
 Deployment [login correction](.kiro/specs/openbb-self-service/login-password-policy.md):

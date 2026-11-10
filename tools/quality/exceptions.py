@@ -1,9 +1,10 @@
 """Apply exact, reviewed size baselines without hiding additional growth."""
 
-import json
 import re
 from datetime import date
 from pathlib import Path, PurePosixPath
+
+from .scope import load_inventory
 
 
 FIELDS = {"repository", "path", "metric", "baseline", "revision", "rationale", "review", "expires_on"}
@@ -50,7 +51,7 @@ def validate_entry(entry, scope: dict, limits: dict) -> None:
 
 def apply_exceptions(root: Path, report: dict) -> None:
     report["exceptions"] = []
-    config = json.loads((root / ".kiro/complexity-budgets.json").read_text(encoding="utf-8-sig"))
+    config = load_inventory(root)
     entries = config.get("exceptions", [])
     if not isinstance(entries, list):
         raise ValueError("exceptions must be an array")
