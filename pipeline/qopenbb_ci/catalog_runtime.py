@@ -2,6 +2,7 @@
 from copy import deepcopy
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -10,18 +11,21 @@ import time
 import uuid
 
 from qopenbb_ci.catalog import canonical
+from qopenbb_ci.container_command import container_command
 
 UTILS = "openbb_platform/extensions/platform_api/openbb_platform_api/utils"
 ASSET = "openbb_platform/providers/fred/openbb_fred/assets/apps.json"
 
 
 def docker(*args: str, **kwargs) -> str:
-    return subprocess.run(["docker", *args], check=True, text=True, capture_output=True,
-                          timeout=120, **kwargs).stdout
+    return subprocess.run(container_command(args), check=True, text=True, capture_output=True,
+                          timeout=120, creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0,
+                          **kwargs).stdout
 
 
 def cleanup(container: str) -> None:
-    subprocess.run(["docker", "rm", "-f", container], text=True, capture_output=True, timeout=30)
+    subprocess.run(container_command(["rm", "-f", container]), text=True, capture_output=True,
+                   timeout=30, creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
 
 
 def verified_sources(source: Path, revision: str) -> dict:
@@ -30,7 +34,8 @@ def verified_sources(source: Path, revision: str) -> dict:
     for relative in paths:
         try:
             expected = subprocess.run(["git", "-C", str(source), "show", f"{revision}:{relative}"],
-                                      check=True, capture_output=True, timeout=30).stdout
+                                      check=True, capture_output=True, timeout=30,
+                                      creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0).stdout
             actual = (source / relative).read_bytes()
         except (OSError, subprocess.SubprocessError) as exc:
             raise ValueError("unavailable accepted generator source") from exc

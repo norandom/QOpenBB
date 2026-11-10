@@ -12,9 +12,10 @@ from qopenbb_ci import build_cli
 def fake_commands(monkeypatch, fail=None):
     calls = []
 
-    def run(argv, *, stdout, check):
+    def run(argv, *, stdout, check, creationflags):
         assert argv[:3] == [sys.executable, "-m", "qopenbb_ci.image_cli"]
         assert check is True
+        assert creationflags == (subprocess.CREATE_NO_WINDOW if sys.platform == 'win32' else 0)
         calls.append(argv[3:])
         if len(calls) == fail:
             raise subprocess.CalledProcessError(2, argv)
@@ -43,7 +44,7 @@ def test_serial_services_use_exact_sources_and_build_inputs(monkeypatch, tmp_pat
     for offset, service in ((1, "workspace"), (4, "data-api")):
         stage, export, load = calls[offset:offset + 3]
         assert stage[:5] == ["stage", "--lock", "sources.lock.json",
-                             "--policy", "contracts/sources.json"]
+                             "--policy", str(Path("contracts/sources.json"))]
         assert stage[5:9] == ["--workspace", str(output / "sources/workspace"),
                               "--data-api", str(output / "sources/data_api")]
         assert stage[9:13] == ["--destination", str(output / service / "stage"),
@@ -51,8 +52,8 @@ def test_serial_services_use_exact_sources_and_build_inputs(monkeypatch, tmp_pat
         assert stage[13:] == (["--release-version", "prototype-1"] if offset == 1
                               else ["--runtime-root", str(root)])
         assert export[export.index("--service") + 1] == service
-        assert export[export.index("--tools") + 1] == "pipeline/tools.lock.json"
-        assert export[export.index("--sdk-python") + 1] == ".dagger/.venv/bin/python"
+        assert export[export.index("--tools") + 1] == str(Path("pipeline/tools.lock.json"))
+        assert export[export.index("--sdk-python") + 1] == str(Path(".dagger/.venv/bin/python"))
         assert load == ["load", "--archive", str(output / service / "image.tar"),
                         "--report", str(output / service / "load.json")]
     summary = json.loads((output / "summary.json").read_text())
@@ -81,3 +82,13 @@ def test_invalid_public_release_rejected_before_work(monkeypatch, tmp_path, rele
         build_cli.main(["--output", str(tmp_path / "run"), "--release-version", release])
     assert not calls
     assert not (tmp_path / "run").exists()
+
+def test_native_build_forwards_explicit_tools_without_splitting_paths(monkeypatch, tmp_path):
+    calls = fake_commands(monkeypatch)
+    assert build_cli.main([*options(tmp_path), '--dagger-cli', 'C:/native tools/dagger.exe',
+                           '--engine-container', 'qopenbb-dagger-engine-native',
+                           '--sdk-python', 'C:/sdk python/python.exe']) == 0
+    for command in (calls[2], calls[5]):
+        assert command[command.index('--dagger-cli') + 1] == str(Path('C:/native tools/dagger.exe'))
+        assert command[command.index('--engine-container') + 1] == 'qopenbb-dagger-engine-native'
+        assert command[command.index('--sdk-python') + 1] == str(Path('C:/sdk python/python.exe'))

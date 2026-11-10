@@ -6,6 +6,7 @@ import subprocess
 import time
 
 import pytest
+from qopenbb_ci.container_command import container_command
 
 IMAGE = os.environ.get('QOPENBB_DATA_IMAGE')
 pytestmark = pytest.mark.skipif(not IMAGE, reason='requires explicitly identified loaded data image')
@@ -13,7 +14,8 @@ SENTINEL = 'qopenbb-disposable-task36-never-a-real-key'
 
 
 def docker(*args, check=True):
-    return subprocess.run(['docker', *args], text=True, capture_output=True, check=check)
+    return subprocess.run(container_command(args), text=True, capture_output=True, check=check,
+                          creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
 
 
 def probe(cid, path):

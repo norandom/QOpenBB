@@ -1,6 +1,7 @@
 """Build and load the two prototype images through the existing portable commands."""
 import argparse
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -23,13 +24,16 @@ def parser() -> argparse.ArgumentParser:
                           ("sdk-python", ".dagger/.venv/bin/python")):
         result.add_argument("--" + name, type=Path, default=Path(default))
     result.add_argument("--runtime-root", type=Path, default=Path.cwd())
+    result.add_argument("--dagger-cli", type=Path)
+    result.add_argument("--engine-container")
     return result
 
 
 def invoke(arguments: list[str], log: Path) -> None:
     with log.open("x", encoding="utf-8") as stream:
         subprocess.run([sys.executable, "-m", "qopenbb_ci.image_cli", *arguments],
-                       stdout=stream, check=True)
+                       stdout=stream, check=True,
+                       creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
 
 
 def build_service(args: argparse.Namespace, service: str) -> dict:
@@ -46,7 +50,11 @@ def build_service(args: argparse.Namespace, service: str) -> dict:
     else:
         stage += ["--runtime-root", str(args.runtime_root)]
     invoke(stage, directory / "stage.json")
-    invoke(["export", *common, "--stage", str(staged), "--service", service,
+    explicit = []
+    for option in ("dagger_cli", "engine_container"):
+        if getattr(args, option) is not None:
+            explicit += ["--" + option.replace("_", "-"), str(getattr(args, option))]
+    invoke(["export", *common, *explicit, "--stage", str(staged), "--service", service,
             "--tools", str(args.tools), "--sdk-python", str(args.sdk_python),
             "--archive", str(archive), "--report", str(directory / "export.json")],
            directory / "export.log")

@@ -1,11 +1,13 @@
 """Publish an independently reloaded archive using existing Docker authentication."""
 
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
 
 from qopenbb_ci.images import inspect_archive, load
+from qopenbb_ci.container_command import container_command
 
 DIGEST = r'sha256:[0-9a-f]{64}'
 
@@ -41,8 +43,8 @@ def verify_sources(identity: dict) -> dict:
 
 def docker(*arguments: str) -> str:
     # Capture output: registry diagnostics must never become published evidence.
-    return subprocess.run(['docker', *arguments], check=True, capture_output=True,
-                          text=True).stdout
+    return subprocess.run(container_command(arguments), check=True, capture_output=True,
+                          text=True, creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0).stdout
 
 
 def remote_identity(reference: str) -> dict:

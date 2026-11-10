@@ -10,6 +10,14 @@ import tarfile
 
 import pytest
 
+@pytest.fixture(autouse=True)
+def synthetic_executable_selection(monkeypatch):
+    from qopenbb_ci import container_command, image_cli
+    monkeypatch.setenv('QOPENBB_CONTAINER_CLI', 'docker')
+    monkeypatch.setattr(container_command, 'resolve_executable', lambda value: Path(value))
+    monkeypatch.setattr(image_cli, 'resolve_executable', lambda value: Path(value))
+
+
 from qopenbb_ci import publication, publish_cli
 from qopenbb_ci.images import inspect_archive
 

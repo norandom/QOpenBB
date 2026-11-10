@@ -36,6 +36,7 @@ Native Windows developer workflow ([plan](.kiro/specs/native-development-workflo
 - [x] Validate versioned runtime descriptors and checked private IPC for browser consumers.
 - [x] Run the existing isolated browser infrastructure on native Windows with pinned Chromium.
 - [x] Start the published image pair through native Podman Compose with verified bind state and login.
+- [x] Adapt image commands to explicit native Dagger/SDK/container executables; real export qualification follows.
 - [ ] Integrate protected sessions, Compose runtime, Dagger builds and Playwright, then verify Linux compatibility.
 
 [Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.

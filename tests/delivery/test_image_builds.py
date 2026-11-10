@@ -8,6 +8,15 @@ import tarfile
 
 import pytest
 
+@pytest.fixture(autouse=True)
+def synthetic_executable_selection(monkeypatch):
+    from qopenbb_ci import container_command, image_cli
+    monkeypatch.setenv('QOPENBB_CONTAINER_CLI', 'docker')
+    monkeypatch.setattr(container_command, 'resolve_executable', lambda value: Path(value))
+    monkeypatch.setattr(image_cli, 'resolve_executable', lambda value: Path(value))
+
+
+from qopenbb_ci.container_command import resolve_executable as REAL_EXECUTABLE_RESOLVER
 from qopenbb_ci.staging import stage, verify_stage
 from qopenbb_ci.images import inspect_archive
 
@@ -61,7 +70,12 @@ def test_stage_rejects_wrong_head_and_missing_essential(tmp_path):
 
 def test_stage_rejects_symlink(tmp_path):
     roots, policy, lock = inputs(tmp_path)
-    (roots['workspace'] / 'terminalpro/link').symlink_to('/tmp')
+    try:
+        (roots['workspace'] / 'terminalpro/link').symlink_to('/tmp')
+    except OSError as error:
+        if getattr(error, 'winerror', None) != 1314:
+            raise
+        pytest.skip('Windows fixture requires symbolic-link creation privilege')
     with pytest.raises(ValueError, match='symlink'):
         stage(tmp_path / 'stage', roots, policy, lock)
 
@@ -73,7 +87,12 @@ def test_missing_or_partial_stage_rejected_before_upload(tmp_path):
     partial.mkdir()
     with pytest.raises(FileNotFoundError):
         verify_stage(partial)
-    (partial / 'provenance.json').symlink_to(tmp_path / 'unreadable-secret')
+    try:
+        (partial / 'provenance.json').symlink_to(tmp_path / 'unreadable-secret')
+    except OSError as error:
+        if getattr(error, 'winerror', None) != 1314:
+            raise
+        pytest.skip('Windows fixture requires symbolic-link creation privilege')
     with pytest.raises(ValueError, match='symlink'):
         verify_stage(partial)
 
@@ -170,16 +189,19 @@ def test_all_dagger_invocations_have_secret_free_environment(tmp_path, monkeypat
 
 
 @pytest.mark.parametrize('kind', ['config', 'manifest'])
-def test_loader_preserves_config_when_docker_uses_manifest_id(tmp_path, monkeypatch, kind):
+@pytest.mark.parametrize('announcement', ['Loaded image ID: ', 'Loaded image: '])
+def test_loader_preserves_config_when_docker_uses_manifest_id(tmp_path, monkeypatch, kind, announcement):
     from qopenbb_ci import images
+    monkeypatch.setenv('QOPENBB_CONTAINER_CLI', 'C:/container tools/podman.exe')
     expected = {'image_config_digest': 'sha256:' + '1' * 64,
                 'image_manifest_digest': 'sha256:' + '2' * 64,
                 'architecture': 'amd64', 'os': 'linux', 'labels': {'source': 'synthetic'}}
     loaded_id = expected['image_' + kind + '_digest']
     monkeypatch.setattr(images, 'inspect_archive', lambda *args: expected)
     def output(command, **kwargs):
+        assert command[0] == str(Path('C:/container tools/podman.exe'))
         if command[2] == 'load':
-            return 'Loaded image ID: ' + loaded_id + '\n'
+            return announcement + loaded_id + '\n'
         return json.dumps([{'Id': loaded_id, 'Architecture': 'amd64', 'Os': 'linux',
                             'Config': {'Labels': expected['labels']}, 'RepoDigests': []}])
     monkeypatch.setattr(images.subprocess, 'check_output', output)
@@ -527,3 +549,109 @@ def test_engine_container_option_is_export_only():
     with pytest.raises(SystemExit):
         image_cli.parser().parse_args(['inspect', '--archive', 'archive', '--report', 'report',
                                      '--engine-container', ENGINE_NAME])
+
+def test_source_root_uses_filesystem_identity_not_git_path_spelling(tmp_path, monkeypatch):
+    from qopenbb_ci import sources
+    root = tmp_path / 'checkout with spaces'
+    root.mkdir()
+    entry = {'repository': 'https://github.com/norandom/workspace.git', 'revision': 'a' * 40}
+    replies = {'--show-toplevel': root.as_posix(), 'origin': entry['repository'],
+               'HEAD': entry['revision'], '--untracked-files=no': ''}
+    monkeypatch.setattr(sources, 'git', lambda path, *args: replies[args[-1]])
+    assert sources.identity(root, entry) == entry
+
+@pytest.mark.parametrize('version', ['0.21.11', '0.21.80'])
+def test_native_export_rejects_wrong_cli_before_runner(explicit_export, monkeypatch, version):
+    image_cli, args, _, _, calls, output = explicit_export
+    args.dagger_cli = Path('C:/native tools/dagger.exe')
+    def checked(command, **kwargs):
+        if command[:2] == [str(args.dagger_cli), 'version']:
+            return 'dagger v' + version + ' synthetic '
+        return output(command, **kwargs)
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', checked)
+    with pytest.raises(ValueError, match='CLI version'):
+        image_cli.export(args)
+    assert not any('run' in command for command, _ in calls)
+
+
+def test_native_export_uses_explicit_executable_podman_transport_and_system_environment(explicit_export, monkeypatch):
+    image_cli, args, _, _, calls, output = explicit_export
+    args.dagger_cli = Path('C:/native tools/dagger.exe')
+    monkeypatch.setenv('QOPENBB_CONTAINER_CLI', 'C:/container tools/podman.exe')
+    monkeypatch.setenv('SystemRoot', 'C:/Windows')
+    monkeypatch.setenv('CONTAINER_HOST', 'ssh://selected-daemon')
+    monkeypatch.setenv('TEMP', str(args.stage))
+    def checked(command, **kwargs):
+        if command[0] == str(args.dagger_cli):
+            calls.append((command, kwargs))
+            return 'dagger v0.21.8 synthetic '
+        if command[0] == str(Path('C:/container tools/podman.exe')):
+            return output(['docker', *command[1:]], **kwargs)
+        return output(command, **kwargs)
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', checked)
+    monkeypatch.setattr(image_cli.subprocess, 'run', checked)
+    image_cli.export(args)
+    runner = next((command, options) for command, options in calls if command[1] == 'run')
+    assert runner[0][0] == str(args.dagger_cli)
+    assert runner[1]['env']['_EXPERIMENTAL_DAGGER_RUNNER_HOST'] == 'container+podman://' + ENGINE_NAME
+    for key in ('SystemRoot', 'CONTAINER_HOST', 'TEMP'):
+        assert runner[1]['env'][key] == __import__('os').environ[key]
+    assert runner[1]['env']['FORCE_DARK_MODE'] == '1'
+    expected_flags = subprocess.CREATE_NO_WINDOW if __import__('os').name == 'nt' else 0
+    assert runner[1]['creationflags'] == expected_flags
+
+
+def test_native_podman_requires_owned_engine_before_process(explicit_export, monkeypatch):
+    image_cli, args, _, _, calls, _ = explicit_export
+    args.engine_container = None
+    monkeypatch.setenv('QOPENBB_CONTAINER_CLI', 'C:/container tools/podman.exe')
+    with pytest.raises(image_cli.EngineVerificationError, match='engine_container_required'):
+        image_cli.export(args)
+    assert calls == []
+
+
+@pytest.mark.parametrize('module_name', ['catalog_runtime', 'publication'])
+def test_container_adapters_preserve_selected_executable_and_literal_arguments(monkeypatch, module_name):
+    import importlib
+    module = importlib.import_module('qopenbb_ci.' + module_name)
+    selected = str(Path('C:/container tools/podman.exe'))
+    monkeypatch.setenv('QOPENBB_CONTAINER_CLI', selected)
+    observed = []
+    def run(command, **options):
+        observed.append((command, options))
+        return subprocess.CompletedProcess(command, 0, stdout='synthetic', stderr='')
+    monkeypatch.setattr(module.subprocess, 'run', run)
+    assert module.docker('image', 'inspect', 'literal;$(no shell)') == 'synthetic'
+    assert observed[0][0] == [selected, 'image', 'inspect', 'literal;$(no shell)']
+    assert not observed[0][1].get('shell', False)
+
+
+def test_native_export_rejects_wrong_sdk_without_cli_execution(explicit_export, monkeypatch):
+    image_cli, args, _, _, calls, _ = explicit_export
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', lambda *a, **kw: '0.21.11')
+    with pytest.raises(ValueError, match='SDK version'):
+        image_cli.export(args)
+    assert calls == []
+
+
+def test_native_export_rejects_shell_wrapper_before_process(explicit_export, monkeypatch, tmp_path):
+    image_cli, args, _, _, calls, _ = explicit_export
+    wrapper = tmp_path / 'dagger.cmd'
+    wrapper.write_text('@echo forbidden')
+    args.dagger_cli = wrapper
+    monkeypatch.setattr(image_cli, 'resolve_executable', REAL_EXECUTABLE_RESOLVER)
+    with pytest.raises(ValueError, match='shell wrapper'):
+        image_cli.export(args)
+    assert calls == []
+
+@pytest.mark.parametrize('status', [' M tracked.py', 'M  tracked.py'])
+def test_source_rejects_modified_tracked_files_after_normalizing_root(tmp_path, monkeypatch, status):
+    from qopenbb_ci import sources
+    root = tmp_path / 'checkout'
+    root.mkdir()
+    entry = {'repository': 'https://github.com/norandom/workspace.git', 'revision': 'a' * 40}
+    replies = {'--show-toplevel': root.as_posix(), 'origin': entry['repository'],
+               'HEAD': entry['revision'], '--untracked-files=no': status}
+    monkeypatch.setattr(sources, 'git', lambda path, *args: replies[args[-1]])
+    with pytest.raises(ValueError, match='tracked source'):
+        sources.identity(root, entry)

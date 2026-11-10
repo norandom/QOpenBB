@@ -9,6 +9,8 @@ import subprocess
 import tempfile
 import tarfile
 
+from qopenbb_ci.container_command import container_command, resolve_executable
+from qopenbb_ci.native_environment import SYSTEM_KEYS, CACHE_KEYS, CONNECTION_KEYS
 from qopenbb_ci.images import inspect_archive, load
 from qopenbb_ci.sources import acquire
 from qopenbb_ci.staging import stage, verify_stage
@@ -40,6 +42,7 @@ def parser() -> argparse.ArgumentParser:
     exporting.add_argument('--policy', type=Path, required=True)
     exporting.add_argument('--sdk-python', type=Path, required=True)
     exporting.add_argument('--engine-container')
+    exporting.add_argument('--dagger-cli', type=Path)
     exporting.add_argument('--service', choices=['foundation-smoke', 'workspace', 'data-api'], default='foundation-smoke')
     for command in [exporting, commands.add_parser('load'), commands.add_parser('inspect')]:
         command.add_argument('--archive', type=Path, required=True)
@@ -55,29 +58,28 @@ def export(args: argparse.Namespace) -> dict:
     container = getattr(args, 'engine_container', None)
     if container is not None and not re.fullmatch(r'qopenbb-dagger-engine-[a-z0-9][a-z0-9_.-]{0,63}', container):
         raise EngineVerificationError('engine_container_invalid')
-    environment = {key: os.environ[key] for key in ['PATH', 'XDG_RUNTIME_DIR', 'DOCKER_HOST']
-                   if key in os.environ}
+    environment = build_environment(container, tools['base_images']['dagger_engine'])
+    dagger = str(resolve_executable(str(getattr(args, 'dagger_cli', None) or 'dagger')))
+    python = str(resolve_executable(str(args.sdk_python)))
+    options = {'env': environment, 'creationflags': subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0}
     reference = tools['base_images']['dagger_engine']
-    environment['_EXPERIMENTAL_DAGGER_RUNNER_HOST'] = (
-        'docker-container://' + container if container is not None else 'docker-image://' + reference)
-    environment['PYTHONPATH'] = str(Path(__file__).resolve().parents[2] / '.dagger/src')
-    sdk = subprocess.check_output([str(args.sdk_python.absolute()), '-c',
-                                   'import importlib.metadata;print(importlib.metadata.version("dagger-io"))'],
-                                  text=True, env=environment).strip()
-    if sdk != tools['tools']['dagger_python_sdk']['version']:
-        raise ValueError('Dagger SDK version differs from tools lock')
     with tempfile.TemporaryDirectory(prefix='qopenbb-build-home-') as home:
-        environment['HOME'] = home
-        environment['DOCKER_CONFIG'] = home
-        version = subprocess.check_output(['dagger', 'version'], text=True, env=environment)
-        if 'dagger v' + tools['tools']['dagger_cli']['version'] + ' ' not in version:
+        environment.update({'HOME': home, 'USERPROFILE': home, 'DOCKER_CONFIG': home,
+                            'XDG_CONFIG_HOME': home})
+        sdk = subprocess.check_output([python, '-c',
+                                       'import importlib.metadata;print(importlib.metadata.version("dagger-io"))'],
+                                      text=True, **options).strip()
+        if sdk != tools['tools']['dagger_python_sdk']['version']:
+            raise ValueError('Dagger SDK version differs from tools lock')
+        version = subprocess.check_output([dagger, 'version'], text=True, **options)
+        if not re.match(r'^dagger v' + re.escape(tools['tools']['dagger_cli']['version']) + r'\s', version):
             raise ValueError('Dagger CLI version differs from tools lock')
         if container is not None:
             initial = verify_engine(reference, container, environment)
-        subprocess.run(['dagger', 'run', '--', str(args.sdk_python.absolute()), '-m', 'qopenbb.export',
+        subprocess.run([dagger, 'run', '--', python, '-m', 'qopenbb.export',
                         '--service', args.service, '--stage', str(args.stage.resolve()),
                         '--base', tools['base_images']['python'], '--archive', str(args.archive.resolve())],
-                       env=environment, check=True)
+                       check=True, **options)
         if container is not None:
             engine = verify_engine(reference, container, environment, initial['container_id'])
     if container is None:
@@ -85,6 +87,24 @@ def export(args: argparse.Namespace) -> dict:
     return {**inspect_archive(args.archive), 'service': args.service, 'sources': provenance['sources'],
             'engine': tools['base_images']['dagger_engine'], 'engine_observed': engine,
             'sdk_version': sdk, 'base': tools['base_images']['python']}
+
+
+def build_environment(container: str | None, reference: str) -> dict[str, str]:
+    keys = {*SYSTEM_KEYS, *CACHE_KEYS, *CONNECTION_KEYS, 'XDG_RUNTIME_DIR'} - {'DOCKER_CONTEXT'}
+    environment = {key: os.environ[key] for key in keys if key in os.environ}
+    executable = Path(container_command([], environment)[0])
+    podman = executable.stem.lower() == 'podman'
+    if podman and container is None:
+        raise EngineVerificationError('engine_container_required')
+    if podman:
+        environment['PATH'] = str(executable.parent) + os.pathsep + environment.get('PATH', '')
+    transport = 'container+podman://' if podman else 'docker-container://'
+    environment['_EXPERIMENTAL_DAGGER_RUNNER_HOST'] = (
+        transport + container if container is not None else 'docker-image://' + reference)
+    environment['PYTHONPATH'] = str(Path(__file__).resolve().parents[2] / '.dagger/src')
+    environment['FORCE_DARK_MODE'] = '1'
+    environment['PYTHONDONTWRITEBYTECODE'] = '1'
+    return environment
 
 
 class EngineVerificationError(ValueError):
@@ -110,10 +130,12 @@ def verify_engine(reference: str, container: str | None = None,
         raise EngineVerificationError('engine_reference_invalid')
     digest = reference.rsplit('@sha256:', 1)[1]
     name = container if container is not None else 'dagger-engine-' + digest[:16]
-    options = {'env': environment, 'stderr': subprocess.PIPE} if container is not None else {}
+    options = {'creationflags': subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0}
+    if container is not None:
+        options.update({'env': environment, 'stderr': subprocess.PIPE})
     try:
-        observed = json.loads(subprocess.check_output(['docker', 'container', 'inspect', name], text=True, **options))[0]
-        image = json.loads(subprocess.check_output(['docker', 'image', 'inspect', reference], text=True, **options))[0]
+        observed = json.loads(subprocess.check_output(container_command(['container', 'inspect', name], environment), text=True, **options))[0]
+        image = json.loads(subprocess.check_output(container_command(['image', 'inspect', reference], environment), text=True, **options))[0]
         if container is not None:
             verify_owned_engine(observed, container, expected_id)
         repository = reference.split('@', 1)[0]

@@ -1,13 +1,15 @@
 """Acquire and verify the owned Git snapshot without trusting caller identity."""
 
 from pathlib import Path
+import os
 import re
 import subprocess
 
 
 def git(root: Path, *args: str) -> str:
     return subprocess.check_output(['git', '-C', str(root), *args], text=True,
-                                   stderr=subprocess.DEVNULL).strip()
+                                   stderr=subprocess.DEVNULL,
+                                   creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0).strip()
 
 
 def identity(root: Path, entry: dict) -> dict:
@@ -16,7 +18,7 @@ def identity(root: Path, entry: dict) -> dict:
         raise ValueError('source must be an owned HTTPS Git repository')
     if not re.fullmatch(r'[0-9a-f]{40}', revision):
         raise ValueError('source must have an exact commit')
-    if root.is_symlink() or git(root, 'rev-parse', '--show-toplevel') != str(root.resolve()):
+    if root.is_symlink() or not root.samefile(Path(git(root, 'rev-parse', '--show-toplevel'))):
         raise ValueError('source root must be the checkout root')
     if git(root, 'remote', 'get-url', 'origin') != repository:
         raise ValueError('source origin differs from lock')

@@ -3,11 +3,13 @@
 from pathlib import Path
 import hashlib
 import json
+import os
 import subprocess
 import tarfile
 import tempfile
 import re
 
+from qopenbb_ci.container_command import container_command
 from qopenbb_ci.staging import sha256
 
 
@@ -65,19 +67,22 @@ def inspect_archive(archive: Path, sentinel: bytes | None = None) -> dict:
 def load(archive: Path, expected: dict) -> dict:
     if inspect_archive(archive) != expected:
         raise ValueError('archive differs from inspected identity')
-    output = subprocess.check_output(['docker', 'image', 'load', '--input', str(archive)], text=True)
-    match = re.search(r'^Loaded image ID: (sha256:[0-9a-f]{64})$', output, re.MULTILINE)
+    options = {'creationflags': subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0}
+    output = subprocess.check_output(container_command(['image', 'load', '--input', str(archive)]),
+                                     text=True, **options)
+    match = re.search(r'^Loaded image(?: ID)?: (sha256:[0-9a-f]{64})$', output, re.MULTILINE)
     if not match or match[1] not in {expected['image_config_digest'], expected['image_manifest_digest']}:
         raise ValueError('loaded image ID does not match archive config or manifest')
     image_id = match[1]
     loaded = json.loads(subprocess.check_output(
-        ['docker', 'image', 'inspect', image_id], text=True))[0]
+        container_command(['image', 'inspect', image_id]), text=True, **options))[0]
     if (loaded['Id'] != image_id or loaded['Architecture'] != expected['architecture']
             or loaded['Os'] != expected['os'] or loaded['Config'].get('Labels', {}) != expected['labels']):
         raise ValueError('loaded image identity differs from archive')
     with tempfile.TemporaryDirectory(prefix='qopenbb-loaded-') as temporary:
         saved = Path(temporary) / 'loaded.tar'
-        subprocess.run(['docker', 'image', 'save', '--output', str(saved), image_id], check=True)
+        subprocess.run(container_command(['image', 'save', '--output', str(saved), image_id]),
+                       check=True, **options)
         if inspect_archive(saved)['image_config_digest'] != expected['image_config_digest']:
             raise ValueError('loaded image configuration bytes differ from archive')
     return {**expected, 'loaded_image_id': loaded['Id'],
