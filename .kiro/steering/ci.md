@@ -1,5 +1,8 @@
 # Build and delivery policy
 
+2026-11-10 owner amendment: local development runs native Windows commands from the repository, using Podman Desktop's Docker-compatible interface and Docker Compose. Prefer Compose for runtime orchestration; no WSL shell is required. Native Dagger remains image-build-only. Keep portable Linux CI and pull-only server deployment unchanged. Put Windows disposable build outputs and caches under D:/BuildArtifacts/QOpenBB; keep Linux dependencies within the Linux VM filesystem. The installed native Dagger 0.21.11 was connectivity-checked; the repository's pinned 0.21.8 build toolchain is unchanged until separately verified. Historical WSL evidence below remains historical.
+
+
 2026-10-28 owner requirement: use Node 24.22.1 or a later supported patched release for active local tooling, CI and build stages (Node2Shell). The exact approved version and checksums belong to `.node-version` and `pipeline/tools.lock.json`; historical evidence retains its original version. Do not run the retired 24.22.0 toolchain for new checks.
 
 2026-10-19 owner amendment: [prototype-first delivery](delivery-workflow.md) is the active scope. AI and Excel have separate specifications and do not block the prototype. Dagger-only builds, portable verification/publication and image-pull deployment remain required.

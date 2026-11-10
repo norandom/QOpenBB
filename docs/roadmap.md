@@ -21,7 +21,9 @@ Latest accepted chart milestone: [alpha-40652638534-1](https://github.com/norand
 
 The completed prototype batch repairs four observed integration gaps: an absent first-login questionnaire returns HTTP 200/null, the data image packages and serves its existing widget/app catalog, optional external app previews use Workspace's existing fallback, and the data-only backend advertises an empty agent list. [alpha-40467871625-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1) passes CI, release-asset checks, six anonymous pulls and the fresh-account assembled Compose journey. P3 and the local P4 installation rehearsal are accepted for onboarding, later login, live annual AAPL income values, refresh and clean diagnostics. The generic-widget required-symbol guard, broader provider acceptance, analyst persistence and backup/restore remain open. Current owner-reported startup is recorded below. AI remains a separate spec. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md), [application result](../artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](prototype-delivery.md#earlier-prototype-repair).
 
-Latest delivery: [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1) adds accepted company-name/Symbol selection to the published initial financial-input batch. Both images, three release assets and anonymous pulls are verified. On 2026-11-06 the owner confirmed the Linux pull/update, healthy data API, retained dashboards and working autocomplete. This owner report is separate from [local runtime and publication evidence](prototype-delivery.md); no independent server inspection or recovery check is claimed.
+Latest publication: [alpha-42231784072-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42231784072-1) carries the periodic-query metadata repair. Public assets and image pulls, canonical catalog generation and offline packaged API checks passed; independent delivery review passed on 2026-11-10 in the [milestone receipt](../artifacts/reviewed/periodic-query-provenance/accepted.md). No new Workspace browser or owner-server acceptance is claimed.
+
+The preceding [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1) adds accepted company-name/Symbol selection to the published initial financial-input batch. On 2026-11-06 the owner confirmed that release's Linux pull/update, healthy data API, retained dashboards and working autocomplete. This owner report is separate from [local runtime and publication evidence](prototype-delivery.md); no independent server inspection or recovery check is claimed.
 
 ## Next: investment analysis and valuation
 
@@ -51,7 +53,7 @@ The initial provider batch and company selector are complete. The next [IA-A req
 - [x] Independently accept the [input assessment](../.kiro/specs/analyst-workspace/research-input-assessment.md) and IA-B readiness decision.
 - [ ] Deliver quarterly analysis and peer valuation through the separately approved dashboard/model contracts. A raw-data App alone does not complete IA-B.
 
-No deployed application change or image rebuild is part of this verification batch. IA-A is complete as a reviewed gap assessment. IA-B input and workflow readiness remain open; the [periodic-query provenance design](../.kiro/specs/market-data-integrations/periodic-query-provenance-design.md) is owner-approved. Its approved [four-task plan](../.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md) has accepted source/native integration and four real FMP cases; image delivery remains open. It repairs one existing metadata omission; broader financial compatibility remains open.
+No deployed application change or image rebuild is part of the IA-A verification batch. IA-A is complete as a reviewed gap assessment. IA-B input and workflow readiness remain open; the [periodic-query provenance design](../.kiro/specs/market-data-integrations/periodic-query-provenance-design.md) is owner-approved. Its approved [four-task plan](../.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md) has accepted source/native integration and four real FMP cases. The separately published repair passes image, catalog and offline packaged checks; independent delivery review passed on 2026-11-10. It repairs one existing metadata omission; broader financial compatibility remains open.
 
 ## Subsequent workstreams
 
@@ -178,3 +180,7 @@ No image was published at that source-only checkpoint; task 6.3 below records su
 - [x] Task 6.3: publish and verify both images, the tagged prerelease, three installation assets, six anonymous pulls and installed native catalog. [Acceptance](../artifacts/reviewed/financial-input-milestone/accepted.md). Initial batch complete; the wider specification remains open.
 
 The repair keeps static financial declarations in one owner, with dynamic FRED/result semantics resolved at runtime. Existing adapter values and installed baseline behavior remain intact.
+
+## Native development workflow
+
+- [ ] Review the [native Windows workflow requirements](../.kiro/specs/native-development-workflow/requirements.md): Podman/Compose runtime, native Dagger and Playwright migration. [Discovery inventory](../.kiro/specs/native-development-workflow/research.md). Requirements are drafted; design, tasks and implementation remain subject to the Kiro approval gates. Linux CI and server deployment stay supported.
