@@ -714,3 +714,41 @@ def test_native_engine_normalization_retains_exact_identity_guards(explicit_expo
                         json.dumps([observed if command[1] == 'container' else image]))
     with pytest.raises(image_cli.EngineVerificationError, match=code):
         image_cli.verify_engine(reference, args.engine_container, None, expected_id)
+
+@pytest.mark.parametrize('mutation', [None, 'inspected_id', 'labels', 'saved_config'])
+def test_loader_normalizes_observed_podman_id_without_losing_config_proof(tmp_path, monkeypatch, mutation):
+    from qopenbb_ci import images
+    digest = '87d67aca398f8d3115666245dfc103a8f14a367ec60f8e2ea02ee46ae8435ca6'
+    config = 'sha256:' + digest
+    expected = {'image_config_digest': config,
+                'image_manifest_digest': 'sha256:71768c590cd37e604f152038903baf3c1a70f0b676e74d07288e16b3d1c50ef7',
+                'architecture': 'amd64', 'os': 'linux', 'labels': {'org.qopenbb.scope': 'foundation-only'}}
+    # Podman qualification observed the announcement prefixed and inspect Id bare.
+    loaded = {'Id': digest, 'Architecture': 'amd64', 'Os': 'linux',
+              'Config': {'Labels': dict(expected['labels'])}, 'RepoDigests': []}
+    if mutation == 'inspected_id':
+        loaded['Id'] = 'f' * 64
+    elif mutation == 'labels':
+        loaded['Config']['Labels']['org.qopenbb.scope'] = 'different'
+    inspected, saved = [], []
+    def inspect(path):
+        inspected.append(path)
+        if path.name == 'loaded.tar' and mutation == 'saved_config':
+            return {**expected, 'image_config_digest': 'sha256:' + 'f' * 64}
+        return expected
+    monkeypatch.setattr(images, 'inspect_archive', inspect)
+    monkeypatch.setattr(images.subprocess, 'check_output', lambda command, **kw:
+                        'Loaded image: ' + config + '\n' if command[2] == 'load' else json.dumps([loaded]))
+    monkeypatch.setattr(images.subprocess, 'run', lambda command, **kw: saved.append(command))
+    if mutation is not None:
+        with pytest.raises(ValueError, match='differ'):
+            images.load(tmp_path / 'image.tar', expected)
+        assert bool(saved) is (mutation == 'saved_config')
+        assert (inspected[-1].name == 'loaded.tar') is (mutation == 'saved_config')
+        return
+    result = images.load(tmp_path / 'image.tar', expected)
+    assert result['loaded_image_id'] == config
+    assert result['image_config_digest'] == config
+    assert saved[0][1:3] == ['image', 'save']
+    assert saved[0][-1] == config
+    assert [path.name for path in inspected] == ['image.tar', 'loaded.tar']

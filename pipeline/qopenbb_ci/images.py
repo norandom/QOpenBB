@@ -76,7 +76,8 @@ def load(archive: Path, expected: dict) -> dict:
     image_id = match[1]
     loaded = json.loads(subprocess.check_output(
         container_command(['image', 'inspect', image_id]), text=True, **options))[0]
-    if (loaded['Id'] != image_id or loaded['Architecture'] != expected['architecture']
+    if (loaded['Id'] not in {image_id, image_id.removeprefix('sha256:')}
+            or loaded['Architecture'] != expected['architecture']
             or loaded['Os'] != expected['os'] or loaded['Config'].get('Labels', {}) != expected['labels']):
         raise ValueError('loaded image identity differs from archive')
     with tempfile.TemporaryDirectory(prefix='qopenbb-loaded-') as temporary:
@@ -85,5 +86,5 @@ def load(archive: Path, expected: dict) -> dict:
                        check=True, **options)
         if inspect_archive(saved)['image_config_digest'] != expected['image_config_digest']:
             raise ValueError('loaded image configuration bytes differ from archive')
-    return {**expected, 'loaded_image_id': loaded['Id'],
+    return {**expected, 'loaded_image_id': image_id,
             'repo_digests': loaded.get('RepoDigests', []), 'registry_digest': None}
