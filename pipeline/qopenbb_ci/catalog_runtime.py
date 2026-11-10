@@ -18,7 +18,7 @@ ASSET = "openbb_platform/providers/fred/openbb_fred/assets/apps.json"
 
 
 def docker(*args: str, **kwargs) -> str:
-    return subprocess.run(container_command(args), check=True, text=True, capture_output=True,
+    return subprocess.run(container_command(args), check=True, text=True, encoding="utf-8", capture_output=True,
                           timeout=120, creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0,
                           **kwargs).stdout
 

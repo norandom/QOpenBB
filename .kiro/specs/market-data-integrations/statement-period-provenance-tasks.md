@@ -109,3 +109,5 @@ The unrelated catalog/inventory working-tree changes and .openidea directory are
 - Task 5 accepted 2026-11-10: nine installed hashes, native 11-widget proposal, final 110-file gate and corrected 18-case live matrix passed; independent Astra review accepted. Cumulative traffic was 36 FMP and zero FRED, preserving the failed timestamp-comparator run. [Evidence](../../../artifacts/reviewed/statement-period-provenance/join.md). Packaged/browser and publication gates remain open.
 
 - Task 6 integration repair: accept the same immutable image digest with Docker or Podman inspect formatting. Eighteen mocked cases and independent review pass; whole-file caps are 97/69/max19. [Review](../../../artifacts/reviewed/statement-period-provenance/catalog-id-review.md). Packaged/browser acceptance remains open.
+
+- Task 6 catalog text repair: decode container JSON as UTF-8 explicitly on Windows. A real subprocess regression and independent 19-case run pass; [review](../../../artifacts/reviewed/statement-period-provenance/catalog-encoding-review.md). The original native proposal is retained; task 6 uses the canonical sorted-JSON roundtrip for its comparison.

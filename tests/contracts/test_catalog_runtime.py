@@ -2,12 +2,14 @@
 import json
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 import pytest
 from qopenbb_ci.catalog import canonical, generate
 from qopenbb_ci.catalog_runtime import (
     capture_schema,
+    docker,
     image_identity,
     upstream_widgets,
     verified_sources,
@@ -15,6 +17,14 @@ from qopenbb_ci.catalog_runtime import (
 
 ROOT = Path(__file__).resolve().parents[2]
 IMAGE = os.environ.get("QOPENBB_DATA_IMAGE")
+
+
+def test_container_output_preserves_utf8_description(monkeypatch):
+    description = "Volume in millions of euro (€)."
+    payload = json.dumps({"description": description}, ensure_ascii=False).encode("utf-8")
+    command = [sys.executable, "-c", f"import sys; sys.stdout.buffer.write({payload!r})"]
+    monkeypatch.setattr("qopenbb_ci.catalog_runtime.container_command", lambda args: command)
+    assert json.loads(docker("image", "inspect", "fixture"))["description"] == description
 
 
 @pytest.mark.parametrize("prefix", ["sha256:", ""])
