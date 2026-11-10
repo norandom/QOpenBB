@@ -52,6 +52,10 @@ class PrivateDirectory:
     def open(cls, path):
         return cls(path)
 
+    @classmethod
+    def open_for_removal(cls, path):
+        raise PrivateStorageError('Checked directory removal is not supported on POSIX')
+
     def _pin(self, create):
         self.handles.append(os.open('/', os.O_RDONLY | os.O_DIRECTORY))
         for index, component in enumerate(self.path.parts[1:], 1):
@@ -150,6 +154,11 @@ class PrivateDirectory:
                 os.unlink(name, dir_fd=self.handle)
         except FileNotFoundError:
             self.verify()
+
+    def remove_empty(self):
+        """Remove only the verified entry relative to its pinned parent fd."""
+        self.verify()
+        raise PrivateStorageError('Checked directory removal is not supported on POSIX')
 
     def close(self):
         for fd in reversed(self.handles):

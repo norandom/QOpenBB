@@ -73,8 +73,9 @@ class PrivateDirectory:
     Sharing excludes deletion, so ordinary callers cannot rename any ancestor
     between path validation and file creation. Administrative takeover is excluded.
     """
-    def __init__(self, path, create=False):
+    def __init__(self, path, create=False, delete=False):
         self.path = _path(path)
+        self.delete = delete
         self.handles = []
         self.protection = api.Protection()
         try:
@@ -91,6 +92,10 @@ class PrivateDirectory:
     def open(cls, path):
         return cls(path)
 
+    @classmethod
+    def open_for_removal(cls, path):
+        return cls(path, delete=True)
+
     def _pin(self, create):
         current = Path(self.path.anchor)
         handle = _open(current)
@@ -100,7 +105,7 @@ class PrivateDirectory:
             current /= component
             if create and current == self.path:
                 api.checked(api.create_directory(str(current), C.byref(self.protection.attributes)))
-            handle = _open(current)
+            handle = _open(current, READ_CONTROL | 1 | (DELETE if current == self.path and self.delete else 0))
             self.handles.append(handle)
             _identity(handle, current, True)
         self.protection.verify(self.handles[-1])
@@ -209,6 +214,11 @@ class PrivateDirectory:
                         ('length', W.DWORD), ('name', W.WCHAR * (length // 2 + 1))]
         info = RenameInfo(3, None, length, name)
         api.checked(api.set_info(handle, 22, C.byref(info), C.sizeof(info)))
+
+    def remove_empty(self):
+        """Delete the checked directory by handle; nonempty directories fail."""
+        self.verify()
+        _delete(self.handle)
 
     def close(self):
         for handle in reversed(self.handles):

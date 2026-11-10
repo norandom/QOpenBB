@@ -38,6 +38,7 @@ Native Windows developer workflow ([plan](.kiro/specs/native-development-workflo
 - [x] Start the published image pair through native Podman Compose with verified bind state and login.
 - [x] Adapt image commands to explicit native Dagger/SDK/container executables; real export qualification follows.
 - [x] Connect root financial tests and the fork login fixture to checked private runtime data.
+- [x] Verify state-preserving Compose recreation and owned cleanup.
 - [ ] Integrate protected sessions, Compose runtime, Dagger builds and Playwright, then verify Linux compatibility.
 
 [Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.

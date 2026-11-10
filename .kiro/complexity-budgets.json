@@ -47,7 +47,11 @@
           "pipeline/dev.ps1",
           "pipeline/qopenbb_ci/native_environment.py",
           "pipeline/qopenbb_ci/container_command.py",
-          ".kiro/complexity/workspace.json"
+          ".kiro/complexity/workspace.json",
+          "pipeline/qopenbb_ci/compose_lifecycle.py",
+          "pipeline/qopenbb_ci/compose_intent.py",
+          "pipeline/qopenbb_ci/workspace_runtime.py",
+          "pipeline/qopenbb_ci/workspace_smoke.py"
         ]
       },
 {
