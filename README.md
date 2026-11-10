@@ -42,6 +42,7 @@ Native Windows developer workflow ([plan](.kiro/specs/native-development-workflo
 - [x] Build, export, inspect and load the foundation image through pinned native Dagger and Podman.
 - [x] Join native commands and reviewed source pins; synthetic verification remains distinct from financial acceptance.
 - [x] Qualify both native-built application images and protected retained-state recreation. [Evidence](artifacts/reviewed/native-development-workflow/native-application-image.md).
+- [x] Correct Podman DNS routing and verify all eleven native widget definitions through the rebuilt Workspace image. [Acceptance](artifacts/reviewed/native-development-workflow/podman-dns-acceptance.md).
 - [ ] Integrate protected sessions, Compose runtime, Dagger builds and Playwright, then verify Linux compatibility.
 
 [Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.
