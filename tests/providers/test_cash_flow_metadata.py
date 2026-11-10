@@ -59,9 +59,10 @@ def test_fidelity_metadata_and_nonmutation(period, fiscal):
     {"symbol": "A B"}, {"symbol": "A&apikey=bad"}, {"symbol": None},
     {"symbol": "A", "period": "ttm"}, {"symbol": "A", "period": "monthly"},
     {"symbol": "A", "limit": 0}, {"symbol": "A", "limit": 1001},
-    {"symbol": "A", "limit": None}, {"symbol": "A", "limit": -1},
+    {"symbol": "A", "limit": -1},
     {"symbol": "A", "limit": True}, {"symbol": "A", "limit": "5"},
-    {"symbol": "A", "limit": 5.0}, {"symbol": "A\n"},
+    {"symbol": "A", "limit": 5.0}, {"symbol": "A", "limit": "null"},
+    {"symbol": "A", "limit": ""}, {"symbol": "A\n"},
     {"symbol": "A\r"}, {"symbol": "A\x00"},
 ])
 def test_invalid_query_fails_before_io(params, monkeypatch):
@@ -210,3 +211,9 @@ def test_class_declarations_agree_with_runtime_and_are_independent(labels):
     first.financial_basis["mutated"] = "request-local"
     assert bind_data_annotation(Data).model_dump() == before
     assert all("mutated" not in field.financial_basis for field in render_field_templates(Data).values())
+
+
+@pytest.mark.parametrize("parameters", [{}, {"limit": None}, {"limit": 1}, {"limit": 1000}])
+def test_native_omission_sentinel_uses_declared_default(parameters):
+    query = Fetcher.transform_query({"symbol": "AAPL", **parameters})
+    assert query.limit == (5 if parameters.get("limit") is None else parameters["limit"])

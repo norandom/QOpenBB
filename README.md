@@ -88,6 +88,7 @@ Company Research input verification: 73 offline checks and five live journeys pa
 - [x] Accept the statement consumer contract ([evidence](artifacts/reviewed/statement-period-provenance/consumer.md)).
 - [x] Accept FMP statement provenance source integration ([evidence](artifacts/reviewed/statement-period-provenance/provider.md)).
 - [x] Accept the installed statement/source join and 18-case real FMP matrix ([evidence](artifacts/reviewed/statement-period-provenance/join.md)).
+- [x] Repair optional native statement limits ([evidence](artifacts/reviewed/statement-period-provenance/native-defaults.md)); rebuilt browser acceptance remains open.
 - [ ] Implement and accept the statement-period slice.
 
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.

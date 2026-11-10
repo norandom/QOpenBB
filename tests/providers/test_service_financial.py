@@ -7,7 +7,7 @@ import os
 from copy import deepcopy
 from datetime import UTC, datetime
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import parse_qs, urlencode, urlsplit
 
 import pytest
 from test_discovery import FMP_MODELS
@@ -646,3 +646,45 @@ def test_research_fixture_aliases_share_session_object_budget_and_stops(tmp_path
                             env=environment, capture_output=True, text=True, timeout=45, check=False)
     assert result.returncode == 0, result.stdout + result.stderr
     assert "2 passed" in result.stdout
+
+
+@pytest.mark.parametrize("dataset", ["balance", "cash"])
+@pytest.mark.parametrize("limit", [None, 2], ids=["omitted-default", "explicit-two"])
+def test_statement_native_optional_limit_defaults_and_clips(runtime, monkeypatch, dataset, limit):
+    from openbb_fmp.utils.helpers import FMPAcquisition
+
+    requests = []
+    async def transport(url, **kwargs):
+        parameters = parse_qs(urlsplit(url).query)
+        requests.append(parameters)
+        rows = [{"symbol": "AAPL", "date": f"{year}-09-30", "period": "FY",
+                 "fiscalYear": str(year), "reportedCurrency": "USD"}
+                for year in range(2020, 2026)]
+        return FMPAcquisition(rows, datetime(2025, 11, 1, tzinfo=UTC))
+    monkeypatch.setattr("openbb_fmp.utils.helpers.get_data_many", transport)
+    parameters = {"provider": "fmp", "symbol": "AAPL", "period": "annual"}
+    if limit is not None:
+        parameters["limit"] = limit
+    status, body = asyncio.run(get(runtime, "/api/v1/equity/fundamental/" + dataset,
+                                  urlencode(parameters).encode()))
+    assert status == 200
+    expected = 5 if limit is None else limit
+    assert len(requests) == 1 and requests[0]["limit"] == [str(expected)]
+    assert len(body["results"]) == expected
+    common = body["extra"]["results_metadata"]["__qopenbb_financial__"]
+    assert common["effective_query"] == {"symbol": "AAPL", "period": "annual", "limit": expected}
+    assert common["bounds"]["requested_limit"] == common["bounds"]["effective_limit"] == expected
+    assert common["bounds"]["returned_count"] == expected and common["bounds"]["truncated"] is True
+
+
+@pytest.mark.parametrize("dataset", ["balance", "cash"])
+@pytest.mark.parametrize("limit", ["0", "null", "None", "", "nonnumeric"])
+def test_statement_native_invalid_limit_is_safe_before_fetch(runtime, monkeypatch, dataset, limit):
+    async def forbidden(*args, **kwargs):
+        pytest.fail("Invalid HTTP limit reached provider acquisition")
+    monkeypatch.setattr("openbb_fmp.utils.helpers.get_data_many", forbidden)
+    parameters = {"provider": "fmp", "symbol": "AAPL", "period": "annual", "limit": limit}
+    status, body = asyncio.run(get(runtime, "/api/v1/equity/fundamental/" + dataset,
+                                  urlencode(parameters).encode()))
+    assert status == 422 and body["code"] == "invalid_parameters"
+    assert "nonnumeric" not in json.dumps(body)

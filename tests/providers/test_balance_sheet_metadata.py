@@ -134,7 +134,7 @@ def test_quarterly_alias_and_strict_limit():
     from openbb_fmp.models.balance_sheet import FMPBalanceSheetFetcher as Fetcher
     query = Fetcher.transform_query({"symbol": "aapl", "period": "quarterly"})
     assert query.period == "quarter"
-    for limit in (True, 1.5, "2", None):
+    for limit in (0, -1, 1001, True, 1.5, 5.0, "2", "5", "null", ""):
         with pytest.raises(FinancialError):
             Fetcher.transform_query({"symbol": "AAPL", "limit": limit})
 
@@ -181,3 +181,10 @@ def test_class_declarations_agree_with_runtime_and_are_independent(labels):
     first.financial_basis["mutated"] = "request-local"
     assert bind_data_annotation(Data).model_dump() == before
     assert all("mutated" not in field.financial_basis for field in render_field_templates(Data).values())
+
+
+@pytest.mark.parametrize("parameters", [{}, {"limit": None}, {"limit": 1}, {"limit": 1000}])
+def test_native_omission_sentinel_uses_declared_default(parameters):
+    from openbb_fmp.models.balance_sheet import FMPBalanceSheetFetcher as Fetcher
+    query = Fetcher.transform_query({"symbol": "AAPL", **parameters})
+    assert query.limit == (5 if parameters.get("limit") is None else parameters["limit"])

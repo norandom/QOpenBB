@@ -111,3 +111,5 @@ The unrelated catalog/inventory working-tree changes and .openidea directory are
 - Task 6 integration repair: accept the same immutable image digest with Docker or Podman inspect formatting. Eighteen mocked cases and independent review pass; whole-file caps are 97/69/max19. [Review](../../../artifacts/reviewed/statement-period-provenance/catalog-id-review.md). Packaged/browser acceptance remains open.
 
 - Task 6 catalog text repair: decode container JSON as UTF-8 explicitly on Windows. A real subprocess regression and independent 19-case run pass; [review](../../../artifacts/reviewed/statement-period-provenance/catalog-encoding-review.md). The original native proposal is retained; task 6 uses the canonical sorted-JSON roundtrip for its comparison.
+
+- Task 6 native omission repair accepted: API a965f70c164, 144 installed tests, independent 66-case review and clean combined 110-file gate. [Evidence](../../../artifacts/reviewed/statement-period-provenance/native-defaults.md). Rebuild only the API and repeat the affected browser journey; task 6 remains open.
