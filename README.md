@@ -83,6 +83,7 @@ Company Research input verification: 73 offline checks and five live journeys pa
 - [x] Approve the statement-period requirements and independently review its [design](.kiro/specs/market-data-integrations/statement-period-provenance-design.md).
 - [x] Approve the design and independently review the [seven-task implementation plan](.kiro/specs/market-data-integrations/statement-period-provenance-tasks.md).
 - [x] Approve the statement-period implementation tasks.
+- [x] Prepare isolated sources and the native provider baseline ([evidence](artifacts/reviewed/statement-period-provenance/baseline.md)).
 - [ ] Implement and accept the statement-period slice.
 
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.

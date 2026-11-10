@@ -60,6 +60,7 @@ No deployed application change or image rebuild is part of the IA-A verification
 - [x] Obtain statement-period requirements approval and independently review the [bounded design](../.kiro/specs/market-data-integrations/statement-period-provenance-design.md).
 - [x] Obtain design approval and independently review the [seven-task plan](../.kiro/specs/market-data-integrations/statement-period-provenance-tasks.md), with provider and consumer lanes after the shared contract.
 - [x] Approve the seven-task implementation plan.
+- [x] Prepare isolated sources and the native provider baseline ([evidence](../artifacts/reviewed/statement-period-provenance/baseline.md)).
 - [ ] Deliver Income, Balance and Cash period provenance; financial compatibility remains open.
 
 ## Subsequent workstreams

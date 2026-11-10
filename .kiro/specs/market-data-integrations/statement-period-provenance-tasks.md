@@ -4,7 +4,7 @@ The owner approved requirements and design on 2026-11-10. This seven-task plan i
 
 ## Task list
 
-- [ ] 1. Prepare the exact source and verification baseline
+- [x] 1. Prepare the exact source and verification baseline
   - Create an isolated owned API-fork checkout at the accepted pin and an isolated controller snapshot. Confirm native tool metadata, installed package locations and existing Compose/browser entry points; reuse the accepted environment rather than building another harness.
   - Record clean production/inventory inputs, source identities and selected baseline behavior for Income order/overflow and Balance/Cash stable sort/clip. Resolve the named generated contract files and fixture inputs before workers edit them.
   - Done: installed source identity, focused baseline cases, exact checker scope and disjoint worker boundaries are recorded; unrelated catalog, inventory and .openidea changes remain untouched. Register new maintained modules in a clean inventory proposal so later caps are enforceable.
@@ -95,3 +95,7 @@ The existing combined command is `python -m tools.quality.complexity --check --r
 The approved design's paths and requirements are authoritative. Existing initial-provider tests, financial capture helpers, contract generation, complexity checker and native browser fixtures provide the checks. Record exact selected node IDs and exit codes when executing; these planned checks are not evidence. Do not reopen completed periodic-query or sanitizer tasks unless an actual regression appears.
 
 The unrelated catalog/inventory working-tree changes and .openidea directory are outside scope. Never stage, reset or silently use them as accepted inputs. Reconcile only reviewed source/inventory deltas through a clean accepted copy. No Excel, Anthropic, custom database, house calculation or owner-server operation belongs to this task plan.
+
+## Implementation notes
+
+- Task 1 accepted 2026-11-10: protected native install, seven installed source matches, eight baseline checks and the clean 101-file gate passed; independent review accepted. [Evidence](../../../artifacts/reviewed/statement-period-provenance/baseline.md). Current native catalog helper differs from historical canonical provenance; retain the reviewed native helper and regenerate provenance at the join.
