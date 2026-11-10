@@ -116,7 +116,7 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
   - _Depends: 4_
   - _Requirements: 1.1, 1.2, 1.3, 4.1, 4.2, 4.3, 4.4, 5.2, 5.3, 6.4_
 
-- [ ] 10. Qualify the pinned native build path
+- [x] 10. Qualify the pinned native build path
   - Use the existing foundation image to demonstrate one native export/load through the explicit pinned CLI/SDK/engine and Podman transport. Verify engine identity before and after, archive provenance and actual loaded image identity.
   - Do not claim success from CLI connectivity, mocks or the globally installed 0.21.11 engine. Unsupported pinned transport remains a blocker requiring a reviewed correction, not silent substitution.
   - Done: native foundation export/load and existing archive/image checks pass with exact identities, external outputs and no WSL shell. Record the executable command and failure evidence if qualification fails.
@@ -181,3 +181,5 @@ Every implementation handoff includes exact writable paths, prerequisite commits
 - Task 8 accepted 2026-11-10: 11 actual Windows IPC/consumer checks and strict TypeScript passed; independent Astra review approved. The reader passes caps and the root gate passes 93 files. Actual nonempty fork scope contains only the excluded fixture change, committed as `18930d870caec08df12697e7858e05e8dbe9dd68` on `qopenbb/native-browser-reader`; source/exception pin promotion remains task 11.1. [Evidence](../../../artifacts/reviewed/native-development-workflow/browser-consumer.md). Financial assertions are unchanged; no application/provider journey is claimed.
 
 - Task 6 accepted 2026-11-10: real recreation retained account, origin, images and state; owned cleanup and refusal cases passed. Astra accepted the journal recovery and POSIX fail-closed deletion repairs. Focused suite: 59 passed, two POSIX skips; combined gate: 97 controller files passed. [Evidence and limits](../../../artifacts/reviewed/native-development-workflow/compose-lifecycle.md). Explicit POSIX state-directory deletion is unsupported; Linux execution remains task 12.
+
+- Task 10 accepted 2026-11-10: actual pinned native Dagger foundation stage/export/inspect/load passed, with unchanged engine identity and archive/config provenance. Astra independently checked the archive, staged source hashes and loaded image. [Evidence](../../../artifacts/reviewed/native-development-workflow/native-build-qualification.md). Group 5-10 is complete; task 11.1 joins reviewed source pins and native commands before actual application builds and financial browser acceptance.
