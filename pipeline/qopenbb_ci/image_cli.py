@@ -60,7 +60,7 @@ def export(args: argparse.Namespace) -> dict:
         raise EngineVerificationError('engine_container_invalid')
     environment = build_environment(container, tools['base_images']['dagger_engine'])
     dagger = str(resolve_executable(str(getattr(args, 'dagger_cli', None) or 'dagger')))
-    python = str(resolve_executable(str(args.sdk_python)))
+    python = str(resolve_executable(str(args.sdk_python), preserve_symlinks=True))
     options = {'env': environment, 'creationflags': subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0}
     reference = tools['base_images']['dagger_engine']
     with tempfile.TemporaryDirectory(prefix='qopenbb-build-home-') as home:

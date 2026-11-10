@@ -61,7 +61,10 @@ def test_build_invokes_export_then_load_with_explicit_tools(monkeypatch, tmp_pat
     config = native.NativeEnvironment(Path.cwd(), tmp_path, {'python': Path('python.exe'),
                                       'dagger_cli': Path('dagger.exe')}, {'SAFE': 'yes'})
     monkeypatch.setattr(actions, 'validate_output', lambda value: Path(value))
-    monkeypatch.setattr(actions, 'resolve_executable', lambda value: Path(value))
+    def select_sdk(value, *, preserve_symlinks=False):
+        assert preserve_symlinks is True
+        return Path(value)
+    monkeypatch.setattr(actions, 'resolve_executable', select_sdk)
     calls = []
     def execute(argv, repository, environment, timeout):
         calls.append((argv, repository, environment, timeout))
@@ -86,7 +89,7 @@ def test_failed_export_never_loads(monkeypatch, tmp_path):
     config = native.NativeEnvironment(Path.cwd(), tmp_path, {'python': Path('python.exe'),
                                       'dagger_cli': Path('dagger.exe')}, {})
     monkeypatch.setattr(actions, 'validate_output', lambda value: Path(value))
-    monkeypatch.setattr(actions, 'resolve_executable', lambda value: Path(value))
+    monkeypatch.setattr(actions, 'resolve_executable', lambda value, **kwargs: Path(value))
     calls = []
     def execute(argv, *args):
         calls.append(argv)

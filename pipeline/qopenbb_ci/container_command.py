@@ -5,16 +5,18 @@ import shutil
 from collections.abc import Mapping, Sequence
 
 
-def resolve_executable(value: str) -> Path:
+def resolve_executable(value: str, *, preserve_symlinks: bool = False) -> Path:
     candidate = Path(value) if Path(value).is_absolute() else Path(shutil.which(value) or value)
     if not candidate.is_file():
         raise ValueError(f'Required executable not found: {value}')
+    launch_path = candidate.absolute()
     candidate = candidate.resolve(strict=True)
     if candidate.suffix.lower() in {'.cmd', '.bat', '.ps1', '.sh'}:
         raise ValueError(f'A real executable is required, not a shell wrapper: {candidate}')
     if os.name == 'nt' and candidate.suffix.lower() != '.exe':
         raise ValueError(f'A Windows .exe is required: {candidate}')
-    return candidate
+    # Python finds pyvenv.cfg beside its launch path; dereferencing loses SDK dependencies.
+    return launch_path if preserve_symlinks else candidate
 
 
 def container_command(arguments: Sequence[str], environment: Mapping[str, str] | None = None) -> list[str]:

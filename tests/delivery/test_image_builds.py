@@ -13,12 +13,54 @@ def synthetic_executable_selection(monkeypatch):
     from qopenbb_ci import container_command, image_cli
     monkeypatch.setenv('QOPENBB_CONTAINER_CLI', 'docker')
     monkeypatch.setattr(container_command, 'resolve_executable', lambda value: Path(value))
-    monkeypatch.setattr(image_cli, 'resolve_executable', lambda value: Path(value))
+    monkeypatch.setattr(image_cli, 'resolve_executable', lambda value, **kwargs: Path(value))
 
 
 from qopenbb_ci.container_command import resolve_executable as REAL_EXECUTABLE_RESOLVER
 from qopenbb_ci.staging import stage, verify_stage
 from qopenbb_ci.images import inspect_archive
+
+
+def test_sdk_export_retains_virtual_environment_launch_path(explicit_export, monkeypatch, tmp_path):
+    import sys
+    image_cli, args, _, _, calls, _ = explicit_export
+    sdk = tmp_path / 'sdk' / 'python.exe'
+    sdk.parent.mkdir()
+    sdk.touch()
+    args.sdk_python = sdk
+    original = Path.resolve
+    monkeypatch.setattr(Path, 'resolve', lambda self, **kwargs:
+                        Path(sys.executable) if self == sdk else original(self, **kwargs))
+    monkeypatch.setattr(image_cli, 'resolve_executable', REAL_EXECUTABLE_RESOLVER)
+    args.dagger_cli = Path(sys.executable)
+    # Keep the synthetic CLI version response while using real executable validation.
+    original_output = image_cli.subprocess.check_output
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', lambda command, **kwargs:
+                        'dagger v0.21.8 synthetic' if command[1:] == ['version']
+                        else original_output(command, **kwargs))
+    image_cli.export(args)
+    probe = next(command for command, _ in calls if '-c' in command)
+    runner = next(command for command, _ in calls if command[1:3] == ['run', '--'])
+    assert probe[0] == str(sdk.absolute())
+    assert runner[3] == probe[0]
+
+
+@pytest.mark.skipif(__import__('os').name == 'nt', reason='POSIX virtual environment symlinks')
+def test_sdk_resolver_runs_symlinked_virtual_environment(tmp_path):
+    import sys
+    import venv
+    environment = tmp_path / 'sdk'
+    venv.EnvBuilder(with_pip=False, symlinks=True).create(environment)
+    python = environment / 'bin/python'
+    assert python.is_symlink()
+    metadata = environment / f'lib/python{sys.version_info.major}.{sys.version_info.minor}/site-packages/dagger_io-0.21.8.dist-info'
+    metadata.mkdir(parents=True)
+    (metadata / 'METADATA').write_text('Metadata-Version: 2.1\nName: dagger-io\nVersion: 0.21.8\n')
+    selected = REAL_EXECUTABLE_RESOLVER(str(python), preserve_symlinks=True)
+    assert selected == python.absolute()
+    observed = subprocess.check_output([str(selected), '-I', '-c',
+        'import sys,importlib.metadata;print(sys.prefix);print(importlib.metadata.version("dagger-io"))'], text=True)
+    assert observed.splitlines() == [str(environment), '0.21.8']
 
 
 def checkout(root, name):

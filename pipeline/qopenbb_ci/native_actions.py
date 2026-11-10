@@ -26,7 +26,7 @@ def consumer_environment(config):
 def build(config, args):
     stage = validate_output(args.stage)
     archive = validate_output(args.archive)
-    sdk = resolve_executable(str(args.sdk_python))
+    sdk = resolve_executable(str(args.sdk_python), preserve_symlinks=True)
     if archive.exists() or archive.with_suffix('.export.json').exists() or archive.with_suffix('.load.json').exists():
         raise ValueError('Build archive and reports must be new')
     archive.parent.mkdir(parents=True, exist_ok=True)
