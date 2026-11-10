@@ -35227,6 +35227,14 @@
       "publishedSHA256": "1b7ee88df5344b09884668ce6fbeda0299dba6484f92aa6617493938418ce945",
       "bytes": 9084,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-foundation/accepted.md",
+      "sourceSHA256": "ea1c5cb3a30ddb4c962db9a570a311fe02aea4a5f142c9417782b3d6c346bc4d",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/foundation.md",
+      "publishedSHA256": "ea1c5cb3a30ddb4c962db9a570a311fe02aea4a5f142c9417782b3d6c346bc4d",
+      "bytes": 2213,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -35952,7 +35960,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171046557,
+  "total_payload_bytes": 171048770,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

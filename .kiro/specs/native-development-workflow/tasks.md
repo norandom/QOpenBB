@@ -25,7 +25,7 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
 
 ## Tasks
 
-- [ ] 1. Qualify the native protected toolchain and existing size gate
+- [x] 1. Qualify the native protected toolchain and existing size gate
   - Resolve actual Python, Node, pnpm, uv, Safe Chain, Podman and Compose executables and supported cache/output paths without shell-profile aliases. Preserve the locked versions and Node security floor.
   - Verify noninteractive package protection before frozen dependency restoration. Provision the pinned native Dagger executable with verified checksum, retaining CLI/SDK/engine 0.21.8. Do not invoke the global wrapper or relax version checks.
   - Establish the existing combined complexity gate with explicit current fork identities and a clean inventory baseline. Use the implemented `python -m tools.quality.complexity --check` interface from `docs/complexity.md`, explicit scope and external output; record the resolved native interpreter/command.
@@ -166,3 +166,7 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
 Foundation is `1 -> 2 -> 3.1 -> 3.2 -> 4`. After task 4, runtime `5 -> 6`, browser `7 -> 8`, and build `9 -> 10` have disjoint writable paths. Run at most two implementation lanes at once, reserving one reviewer slot. Shared dependency installation, real Compose sessions, native exports and image builds use the controller's single heavy-operation queue. Tasks `11.1 -> 11.2 -> 11.3` join commands/source pins, qualify the image pair and accept financial browser behavior separately; task 12 closes Linux portability and evidence.
 
 Every implementation handoff includes exact writable paths, prerequisite commits, the frozen design contracts, focused check command and size limits. A contract change pauses dependent lanes for review. No task is complete from planned checks, skipped provider cases or empty reports.
+
+## Implementation notes
+
+- Task 1 accepted 2026-11-10: protected pinned native environments, explicit Podman/Compose connectivity and the existing combined size gate passed; independent Sol review approved. [Foundation evidence](../../../artifacts/reviewed/native-development-workflow/foundation.md). Use the actual paths in `D:/BuildArtifacts/QOpenBB/native-foundation/resolved-tools.json`. The pinned Dagger executable needs process-local `FORCE_DARK_MODE=1` for noninteractive version detection. Native engine execution and application/browser acceptance remain later tasks. The exact clean checker snapshot avoids overwriting existing Linux dependencies and unrelated work.
