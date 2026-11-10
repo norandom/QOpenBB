@@ -12,7 +12,7 @@ The owner approved requirements and design on 2026-11-10. This seven-task plan i
   - _Boundary: Controller-owned source/environment/inventory preparation_
   - _Requirements: 3.1, 3.3, 4.3_
 
-- [ ] 2. Implement the typed statement provenance contract
+- [x] 2. Implement the typed statement provenance contract
   - Add the approved optional statement member and strict row/fact/convention models. Validate indices, counts, presence states, allowlisted keys, conflicts and supported coverage. Reject observation-derived known coverage under v1; live provider conventions remain empty.
   - Keep FinancialSource reference validation at the envelope boundary to avoid circular imports. Reuse safe result validation; preserve FRED metadata and omit the absent statement member for unrelated/older envelopes.
   - Verify old-envelope reading, unchanged FRED serialization, safe malformed input rejection and the explicitly incompatible old strict Python reader. Test synthetic documented conventions without turning them into live FMP assertions.
@@ -99,3 +99,5 @@ The unrelated catalog/inventory working-tree changes and .openidea directory are
 ## Implementation notes
 
 - Task 1 accepted 2026-11-10: protected native install, seven installed source matches, eight baseline checks and the clean 101-file gate passed; independent review accepted. [Evidence](../../../artifacts/reviewed/statement-period-provenance/baseline.md). Current native catalog helper differs from historical canonical provenance; retain the reviewed native helper and regenerate provenance at the join.
+
+- Task 2 accepted 2026-11-10: API b373da3f8d7, 64 installed tests, independent review and whole-file caps passed after compatibility/error-message repairs. [Evidence](../../../artifacts/reviewed/statement-period-provenance/core.md). Preserve annual/quarter scope; no broader Income query change is authorized.

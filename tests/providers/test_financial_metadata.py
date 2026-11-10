@@ -191,3 +191,125 @@ def test_invalid_metadata_is_rejected_without_echoing_input(updates):
     with pytest.raises(ValidationError) as failure:
         metadata(**updates)
     assert "SECRET_CANARY" not in str(failure.value)
+
+
+def statement_row(**updates):
+    return dict(row_index=0, source_ordinal=4, fiscal_year=2025, fiscal_period="FY",
+                period_end="2025-06-30", requested_frequency="annual", **updates)
+
+
+def test_statement_contract_preserves_old_nulls_and_omits_only_absent_member():
+    old = metadata().model_dump(mode="json")
+    assert "statement_provenance" not in old
+    assert old["publication_date_field"] is None
+    assert FinancialResultMetadata.model_validate(old) == metadata()
+    extended = metadata(bounds={"returned_count": 1}, statement_provenance={"rows": [statement_row()]})
+    body = extended.model_dump(mode="json")
+    assert body["statement_provenance"]["rows"][0]["flow_coverage"] == "unknown"
+    assert body["statement_provenance"]["rows"][0]["period_start"] is None
+    from pydantic import create_model
+    old_fields = {name: (field.annotation, field) for name, field in FinancialResultMetadata.model_fields.items()
+                  if name != "statement_provenance"}
+    old_reader = create_model("OldStrictReader", __config__={"extra": "forbid"}, **old_fields)
+    with pytest.raises(ValidationError):
+        old_reader.model_validate(body)
+
+
+@pytest.mark.parametrize("change", [
+    {"row_index": 1}, {"source_ordinal": True}, {"requested_frequency": "monthly"},
+    {"flow_coverage": "annual"}, {"coverage_status": "supported"},
+    {"period_start": "2025-01-01"}, {"duration_days": 365},
+    {"facts": [{"semantic_key": "fiscal_year", "source_field": "token", "value": "SECRET_CANARY", "presence": "value"}]},
+    {"facts": [{"semantic_key": "fiscal_year", "source_field": "fiscalYear", "value": True, "presence": "value"}]},
+    {"facts": [{"semantic_key": "period_end", "source_field": "date", "value": "2024-06-30", "presence": "value"}]},
+    {"instant_dates": {"cash_at_beginning_of_period": "2025-06-30"}},
+])
+def test_statement_rejects_unproven_or_misattributed_evidence(change):
+    row = statement_row() | change
+    with pytest.raises(ValidationError) as error:
+        metadata(bounds={"returned_count": 1}, statement_provenance={"rows": [row]})
+    assert "SECRET_CANARY" not in str(error.value)
+
+
+def test_statement_fact_presence_conflicts_and_documented_coverage():
+    facts = [dict(semantic_key="fiscal_year", source_field=alias, value=value,
+                  presence="null" if value is None else "value", evidence_kind="observation")
+             for alias, value in [("fiscalYear", 2025), ("calendarYear", None)]]
+    row = statement_row(facts=facts, coverage_status="conflicting")
+    common = metadata(bounds={"returned_count": 1}, statement_provenance={"rows": [row]})
+    assert common.statement_provenance.rows[0].facts[1].value is None
+    with pytest.raises(ValidationError):
+        metadata(bounds={"returned_count": 1}, statement_provenance={"rows": [row | {"coverage_status": "unavailable"}]})
+    convention = dict(semantic_key="flow_coverage", flow_coverage="annual",
+                      documentation="https://example.test/docs", evidence_kind="provider_convention")
+    supported = statement_row(flow_coverage="annual", coverage_status="supported", conventions=[convention])
+    assert metadata(bounds={"returned_count": 1}, statement_provenance={"rows": [supported]}).statement_provenance.rows[0].flow_coverage == "annual"
+    supported["conventions"][0]["documentation"] = "https://example.test/docs?token=SECRET_CANARY"
+    with pytest.raises(ValidationError) as error:
+        metadata(bounds={"returned_count": 1}, statement_provenance={"rows": [supported]})
+    assert "SECRET_CANARY" not in str(error.value)
+
+
+def test_statement_counts_and_source_ordinals_are_unique():
+    with pytest.raises(ValidationError):
+        metadata(statement_provenance={"rows": [statement_row()]})
+    with pytest.raises(ValidationError):
+        metadata(bounds={"returned_count": 2}, statement_provenance={"rows": [statement_row(), statement_row() | {"row_index": 1}]})
+
+
+def test_statement_instant_dates_require_declared_stocks_and_keep_beginning_cash_unknown():
+    fields = {name: {"definition": "Reported cash", "period_basis": "instant"}
+              for name in ["cash_at_beginning_of_period", "cash_at_end_of_period"]}
+    instants = {"cash_at_beginning_of_period": None, "cash_at_end_of_period": "2025-06-30"}
+    common = metadata(bounds={"returned_count": 1}, fields=fields,
+                      statement_provenance={"rows": [statement_row(instant_dates=instants)]})
+    assert common.statement_provenance.rows[0].instant_dates["cash_at_beginning_of_period"] is None
+    with pytest.raises(ValidationError):
+        metadata(bounds={"returned_count": 1}, fields={},
+                 statement_provenance={"rows": [statement_row(instant_dates=instants)]})
+    with pytest.raises(ValidationError):
+        metadata(bounds={"returned_count": 1}, effective_query={"period": "quarter"},
+                 statement_provenance={"rows": [statement_row()]})
+
+
+@pytest.mark.parametrize("model_name", ["income_statement_data", "balance_sheet_data", "cash_flow_data"])
+def test_statement_preserves_existing_unknown_labels_and_midnight_source_dates(model_name):
+    from importlib import import_module
+    from openbb_core.provider.standard_models.statement_provenance import StatementPeriodRow
+    module = import_module("openbb_fmp.models." + model_name)
+    model = getattr(module, {"income_statement_data": "FMPIncomeStatementData",
+                             "balance_sheet_data": "FMPBalanceSheetData",
+                             "cash_flow_data": "FMPCashFlowStatementData"}[model_name])
+    source = {"date": "2025-06-30T00:00:00", "fiscalYear": "2025", "period": "H1",
+              "filingDate": "2025-07-15T00:00:00"}
+    baseline = model.model_validate(source)
+    facts = [dict(semantic_key=key, source_field=alias, value=source[alias], presence="value")
+             for key, alias in [("period_end", "date"), ("fiscal_year", "fiscalYear"),
+                                ("fiscal_period", "period"), ("filing_date", "filingDate")]]
+    row = StatementPeriodRow.model_validate(statement_row() | dict(
+        fiscal_year=baseline.fiscal_year, fiscal_period=baseline.fiscal_period,
+        period_end=baseline.period_ending, filing_date=baseline.filing_date, facts=facts))
+    assert row.fiscal_period == "H1"
+    assert row.flow_coverage == "unknown"
+    assert row.facts[0].value == source["date"]
+    assert row.facts[3].value == source["filingDate"]
+
+
+@pytest.mark.parametrize("key,alias", [("period_end", "date"), ("filing_date", "filingDate"),
+                                      ("accepted_date", "acceptedDate")])
+def test_statement_date_parser_errors_never_expose_source_values(key, alias):
+    from openbb_core.provider.standard_models.statement_provenance import StatementFact
+    with pytest.raises(ValidationError) as error:
+        StatementFact(semantic_key=key, source_field=alias, value="SECRET_CANARY", presence="value")
+    assert "SECRET_CANARY" not in str(error.value)
+
+
+
+def test_statement_preserves_existing_integer_year_range():
+    from openbb_fmp.models.income_statement_data import FMPIncomeStatementData
+    from openbb_core.provider.standard_models.statement_provenance import StatementPeriodRow
+    baseline = FMPIncomeStatementData.model_validate({"date": "2025-06-30", "fiscalYear": "999", "period": "H1"})
+    row = StatementPeriodRow.model_validate(statement_row() | dict(
+        fiscal_year=baseline.fiscal_year, fiscal_period=baseline.fiscal_period,
+        facts=[dict(semantic_key="fiscal_year", source_field="fiscalYear", value="999", presence="value")]))
+    assert row.fiscal_year == baseline.fiscal_year == 999
