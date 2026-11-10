@@ -34,6 +34,7 @@ Native Windows developer workflow ([plan](.kiro/specs/native-development-workflo
 - [x] Verify Windows user-only private-file protection and checked-handle access.
 - [x] Verify atomic session-file updates, interruption recovery and confined removal on Windows.
 - [x] Validate versioned runtime descriptors and checked private IPC for browser consumers.
+- [x] Run the existing isolated browser infrastructure on native Windows with pinned Chromium.
 - [ ] Integrate protected sessions, Compose runtime, Dagger builds and Playwright, then verify Linux compatibility.
 
 [Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.

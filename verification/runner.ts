@@ -1,6 +1,7 @@
 import { chromium } from '@playwright/test';
 import type { BrowserContext } from '@playwright/test';
-import { join, resolve } from 'node:path';
+import { join, basename } from 'node:path';
+
 import { startFixture } from './fixture_server.ts';
 import { diagnostics } from './diagnostics.ts';
 import { capturePolicy } from './capture.ts';
@@ -49,7 +50,7 @@ export async function isolatedRun(options: RunOptions = {}) {
     if (options.startupFailure) throw new Error('synthetic startup failure');
     browser = await chromium.launchPersistentContext(join(root, 'profile'), {
       headless: true, env: browserEnvironment(), timeout: 20000,
-      executablePath: resolve('artifacts/playwright-browsers/chromium-1248/chrome-linux64/chrome'),
+      executablePath: chromium.executablePath(),
     });
     record.browser = browser.browser()!.version();
     const observed = await observe(browser, fixture.url, options.fail ?? false);
@@ -72,7 +73,7 @@ export async function isolatedRun(options: RunOptions = {}) {
   return record;
 }
 
-if (process.argv[1]?.endsWith('/runner.ts')) {
+if (basename(process.argv[1] ?? '') === 'runner.ts') {
   isolatedRun({ fail: process.argv.includes('--failure') }).then(result => {
     console.log(JSON.stringify({ status: result.status, root: result.root }));
     process.exitCode = result.exit;

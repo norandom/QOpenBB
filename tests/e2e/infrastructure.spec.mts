@@ -1,4 +1,4 @@
-import { test, expect } from '../../verification/node_modules/@playwright/test/index.js';
+import { test, expect } from '../../verification/node_modules/@playwright/test/index.mjs';
 import { isolatedRun } from '../../verification/runner.ts';
 
 test('fixture observation and independent browser state', async () => {
@@ -11,12 +11,13 @@ test('fixture observation and independent browser state', async () => {
   expect(await closed(result.port)).toBe(true);
 });
 import { readFile, readdir } from 'node:fs/promises';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
+
 import { createConnection } from 'node:net';
 import { spawnSync } from 'node:child_process';
 import { startFixture } from '../../verification/fixture_server.ts';
 import { capturePolicy } from '../../verification/capture.ts';
-import { browserEnvironment } from '../../verification/evidence.ts';
+import { browserEnvironment, checkedOutput } from '../../verification/evidence.ts';
 
 async function closed(port: number) {
   return new Promise<boolean>(resolve => {
@@ -69,7 +70,7 @@ test('existing fixture listener is refused', async () => {
 });
 
 test('unexpected diagnostic failure exits nonzero', () => {
-  const result = spawnSync(process.execPath, ['verification/runner.ts', '--failure'], {
+  const result = spawnSync(process.execPath, [resolve(import.meta.dirname, '../../verification/runner.ts'), '--failure'], {
     encoding: 'utf8', windowsHide: true, timeout: 45000, env: browserEnvironment(),
   });
   expect(result.status).toBe(1);
@@ -80,11 +81,29 @@ test('unexpected diagnostic failure exits nonzero', () => {
 
 test('browser concurrency overrides are refused', () => {
   for (const argument of ['--workers=8', '-j8']) {
-    const result = spawnSync(process.execPath, ['verification/node_modules/@playwright/test/cli.js',
-      'test', '--config', 'verification/playwright.config.ts', '--list', argument], {
+    const result = spawnSync(process.execPath, [resolve(import.meta.dirname, '../../verification/node_modules/@playwright/test/cli.js'),
+      'test', '--config', resolve(import.meta.dirname, '../../verification/playwright.config.ts'), '--list', argument], {
       encoding: 'utf8', windowsHide: true, timeout: 30000, env: browserEnvironment(),
     });
     expect(result.status).not.toBe(0);
     expect(result.stdout + result.stderr).toContain('worker override forbidden');
   }
+});
+
+test('external artifact root and configured native temporary/cache settings are retained', async () => {
+  const result = await isolatedRun();
+  expect(result.status).toBe('passed');
+  expect(result.root.startsWith(resolve(process.env.QOPENBB_VERIFICATION_ROOT!) + (process.platform === 'win32' ? '\\' : '/'))).toBe(true);
+  for (const key of ['TEMP', 'TMP', 'TMPDIR', 'PLAYWRIGHT_BROWSERS_PATH']) {
+    if (process.env[key]) expect(browserEnvironment()[key]).toBe(process.env[key]);
+  }
+});
+
+test('artifact and configured cache paths fail closed before creating resources', () => {
+  for (const path of [resolve('/'), 'relative-output']) expect(() => checkedOutput(path)).toThrow();
+  if (process.platform === 'win32') expect(() => checkedOutput('C:/outside-build-artifacts')).toThrow();
+  const previous = process.env.TMP;
+  process.env.TMP = resolve('/');
+  try { expect(() => browserEnvironment()).toThrow(); }
+  finally { if (previous === undefined) delete process.env.TMP; else process.env.TMP = previous; }
 });

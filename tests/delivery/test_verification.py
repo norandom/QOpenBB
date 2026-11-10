@@ -50,8 +50,41 @@ def test_owned_python_timeout_is_reaped(tmp_path):
     spec.loader.exec_module(module)
     pid_file = tmp_path / 'owned.pid'
     script = 'import os,time,pathlib; pathlib.Path(' + repr(str(pid_file)) + ').write_text(str(os.getpid())); time.sleep(60)'
+    import time
+    started = time.monotonic()
     code, stdout = module.execute([sys.executable, '-c', script], {}, timeout=1)
+    assert time.monotonic() - started < 15
     assert code == 124
     assert stdout == ''
-    with pytest.raises(ProcessLookupError):
-        os.kill(int(pid_file.read_text()), 0)
+    pid = int(pid_file.read_text())
+    if os.name == 'nt':
+        import ctypes
+        from ctypes import wintypes
+        kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+        kernel.OpenProcess.restype = wintypes.HANDLE
+        handle = kernel.OpenProcess(0x1000, False, pid)
+        if handle:
+            status = wintypes.DWORD()
+            try:
+                assert kernel.GetExitCodeProcess(wintypes.HANDLE(handle), ctypes.byref(status))
+                assert status.value != 259
+            finally:
+                kernel.CloseHandle(wintypes.HANDLE(handle))
+    else:
+        with pytest.raises(ProcessLookupError):
+            os.kill(pid, 0)
+
+@pytest.mark.fixture
+def test_posix_browser_outputs_preserve_configured_linux_caches(monkeypatch):
+    from pathlib import PurePosixPath
+    from types import SimpleNamespace
+    spec = importlib.util.spec_from_file_location('verification_runner', 'verification/runner.py')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    monkeypatch.setattr(module, 'os', SimpleNamespace(name='posix'))
+    monkeypatch.setattr(module, 'checked_path', lambda path: path)
+    for path in ['/home/developer/.cache/uv', '/tmp', '/var/tmp/qopenbb']:
+        assert module.output_path(PurePosixPath(path)) == PurePosixPath(path)
+    for path in ['/mnt/c/cache/uv', '/mnt/d/cache/uv']:
+        with pytest.raises(ValueError, match='Linux storage'):
+            module.output_path(PurePosixPath(path))
