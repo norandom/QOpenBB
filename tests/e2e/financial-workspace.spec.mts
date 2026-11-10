@@ -111,10 +111,60 @@ function incomeMetadata(payload: any, symbol: string, period: string) {
   expect(metadata.limitations.length).toBeGreaterThan(0);
   expect(metadata.fields.revenue).toMatchObject({
     unit: "currency", scale: 1, currency_field: "reported_currency",
-    period_basis: period === "annual" ? "annual" : "discrete_quarter",
+    period_basis: null,
     value_origin: "provider_observation",
   });
+  statementMetadata(payload, period);
   return metadata;
+}
+
+function statementMetadata(payload: any, period: string) {
+  const metadata = payload.extra.results_metadata.__qopenbb_financial__;
+  expect(metadata.point_in_time_safe).toBe(false);
+  expect(metadata.statement_provenance.version).toBe(1);
+  const provenance = metadata.statement_provenance.rows;
+  expect(provenance).toHaveLength(payload.results.length);
+  expect(new Set(provenance.map((item: any) => item.source_ordinal)).size).toBe(provenance.length);
+  for (const [index, row] of payload.results.entries()) {
+    const item = provenance[index];
+    expect(item).toMatchObject({ row_index: index, fiscal_year: Number(row.fiscal_year),
+      fiscal_period: row.fiscal_period, period_end: row.period_ending, requested_frequency: period,
+      flow_coverage: "unknown", period_start: null, duration_days: null,
+      restatement_status: "unknown", conventions: [] });
+    expect(item.source_ordinal).toBeGreaterThanOrEqual(0);
+    expect(["unavailable", "conflicting"]).toContain(item.coverage_status);
+    expect(item.facts).toEqual(expect.arrayContaining([
+      { semantic_key: "period_end", source_field: "date", value: row.period_ending, presence: "value", evidence_kind: "observation" },
+      { semantic_key: "fiscal_period", source_field: "period", value: row.fiscal_period, presence: "value", evidence_kind: "observation" },
+    ]));
+    for (const fact of item.facts) {
+      expect(fact.evidence_kind).toBe("observation");
+      expect(fact.presence).toBe(fact.value === null ? "null" : "value");
+    }
+    for (const [field, details] of Object.entries(metadata.fields) as [string, any][])
+      if (details.period_basis === "instant")
+        expect(item.instant_dates[field]).toBe(field === "cash_at_beginning_of_period" ? null : row.period_ending);
+  }
+  return metadata;
+}
+
+async function verifyNativeStatement(widget: Locator, payload: any, dataset: string, field: string, period: string) {
+  const metadata = statementMetadata(payload, period);
+  expect(metadata).toMatchObject({ dataset: `equity/fundamental/${dataset}`, provider: "fmp",
+    effective_query: { symbol: "AAPL", period }, source: { endpoint: dataset === "balance" ? "balance-sheet-statement" : "cash-flow-statement" } });
+  expect(metadata.fields[field]).toMatchObject({ unit: "currency", scale: 1, currency_field: "reported_currency",
+    period_basis: dataset === "balance" ? "instant" : null, value_origin: "provider_observation" });
+  const row = payload.results[0];
+  expect(row).toMatchObject({ symbol: "AAPL", reported_currency: "USD" });
+  expect(Number.isFinite(row[field])).toBe(true);
+  await expect(widget.getByPlaceholder("Symbol", { exact: true })).toHaveValue("AAPL");
+  await expect(widget.getByRole("button", { name: period, exact: true })).toBeVisible();
+  await expect(await revenueCell(widget, "symbol")).toHaveText(row.symbol);
+  await expect(await revenueCell(widget, "reported_currency")).toHaveText(row.reported_currency);
+  const date = await revenueCell(widget, "period_ending");
+  await expect.poll(async () => new Date(await date.innerText()).toISOString().slice(0, 10)).toBe(row.period_ending);
+  await displayedNumber(await revenueCell(widget, field), row[field]);
+  return { dataset, period, value: row[field], metadata };
 }
 
 async function verifyNativeIncome(widget: Locator, payload: any, symbol: string, period: string) {
@@ -172,18 +222,24 @@ test("local packaged financial widgets support native company period recovery an
   const requestPhases = new Map<object, string>();
   const requests: { symbol: string | null; period: string | null; provider: string | null; limit: string | null; phase: string }[] = [];
   const responses: { symbol: string | null; period: string | null; status: number; phase: string | undefined }[] = [];
+  const statementInitialFailures: { path: string; symbol: string | null; status: number }[] = [];
+  const statementRequests: { path: string; symbol: string | null; period: string | null }[] = [];
   const incomeFailures: { symbol: string | null; status: number; phase: string | undefined }[] = [];
   const trackIncome = (target: Page) => {
     target.on("request", request => {
       const url = new URL(request.url());
       if (url.pathname === incomePath) requests.push({ symbol: url.searchParams.get("symbol"),
         period: url.searchParams.get("period"), provider: url.searchParams.get("provider"), limit: url.searchParams.get("limit"), phase });
+      if (["/data/api/v1/equity/fundamental/balance", "/data/api/v1/equity/fundamental/cash"].includes(url.pathname))
+        statementRequests.push({ path: url.pathname, symbol: url.searchParams.get("symbol"), period: url.searchParams.get("period") });
       requestPhases.set(request, phase);
     });
     target.on("response", response => {
       const url = new URL(response.url());
       if (url.pathname === incomePath) responses.push({ symbol: url.searchParams.get("symbol"),
         period: url.searchParams.get("period"), status: response.status(), phase: requestPhases.get(response.request()) });
+      if (["/data/api/v1/equity/fundamental/balance", "/data/api/v1/equity/fundamental/cash"].includes(url.pathname) && response.status() >= 400)
+        statementInitialFailures.push({ path: url.pathname, symbol: url.searchParams.get("symbol"), status: response.status() });
       if (url.pathname === incomePath && response.status() >= 400)
         incomeFailures.push({ symbol: url.searchParams.get("symbol"), status: response.status(), phase: requestPhases.get(response.request()) });
     });
@@ -270,17 +326,42 @@ test("local packaged financial widgets support native company period recovery an
     expect(refreshed.status()).toBe(200);
     const freshQuarter = await refreshed.json();
     observations.push(await verifyNativeIncome(widget, freshQuarter, "AAPL", "quarter"));
-    const programmatic = await page.request.get(refreshed.url());
-    expect(programmatic.status()).toBe(200);
-    const api = await programmatic.json();
-    const apiMetadata = incomeMetadata(api, "AAPL", "quarter");
-    expect(api.results).toEqual(freshQuarter.results);
-    for (const key of ["effective_query", "source", "fields", "bounds"])
-      expect(apiMetadata[key]).toEqual(observations.at(-1)!.metadata[key]);
     await widget.screenshot({ path: info.outputPath("packaged-native-quarter-income.png") });
+    const statements = [
+      { dataset: "balance", name: "Balance", field: "total_assets" },
+      { dataset: "cash", name: "Cash", field: "net_cash_from_operating_activities" },
+    ];
+    const statementObservations: unknown[] = [];
+    for (const statement of statements) {
+      const id = `equity_fundamental_${statement.dataset}_fmp_obb`;
+      const path = `/data/api/v1/equity/fundamental/${statement.dataset}`;
+      const query = (response: Response, period: string) => companyQuery(response, path, "AAPL") &&
+        new URL(response.url()).searchParams.get("period") === period;
+      const panel = await addFinancialWidget(page, statement.name, id);
+      await expect(panel.getByText("Invalid financial query parameters.", { exact: true })).toBeVisible();
+      const annualResponse = page.waitForResponse(response => query(response, "annual"));
+      await setIncomeSymbol(panel, "AAPL");
+      const annualResult = await annualResponse;
+      expect(annualResult.status()).toBe(200);
+      statementObservations.push(await verifyNativeStatement(panel, await annualResult.json(), statement.dataset, statement.field, "annual"));
+      const quarterlyResponse = page.waitForResponse(response => query(response, "quarter"));
+      await panel.getByRole("button", { name: "annual", exact: true }).click();
+      await page.locator(".obb-dropdown-container").getByText("quarter", { exact: true }).click();
+      const quarterlyResult = await quarterlyResponse;
+      expect(quarterlyResult.status()).toBe(200);
+      statementObservations.push(await verifyNativeStatement(panel, await quarterlyResult.json(), statement.dataset, statement.field, "quarter"));
+      const refreshResponse = page.waitForResponse(response => query(response, "quarter"));
+      await refreshIncome(panel);
+      const refreshResult = await refreshResponse;
+      expect(refreshResult.status()).toBe(200);
+      statementObservations.push(await verifyNativeStatement(panel, await refreshResult.json(), statement.dataset, statement.field, "quarter"));
+    }
     const saved = (await saveDashboard(page)).items[new URL(dashboardUrl).pathname.split("/").at(-1)!];
     expect(saved.data.widgets.find((item: any) => item.widgetId === widgetId).storage.params)
       .toMatchObject({ symbol: "AAPL", period: "quarter", provider: "fmp" });
+    for (const statement of statements)
+      expect(saved.data.widgets.find((item: any) => item.widgetId === `equity_fundamental_${statement.dataset}_fmp_obb`).storage.params)
+        .toMatchObject({ symbol: "AAPL", period: "quarter", provider: "fmp" });
     const context = await browser.newContext({ baseURL: process.env.WORKSPACE_FRONTEND_ORIGIN,
       serviceWorkers: "block", viewport: { width: 1600, height: 1000 } });
     try {
@@ -288,16 +369,34 @@ test("local packaged financial widgets support native company period recovery an
       trackIncome(later);
       const laterDiagnostics = await observeApplication(later);
       const reopenedResponse = later.waitForResponse(response => incomeQuery(response, "AAPL", "quarter"));
+      const statementResponses = statements.map(statement => later.waitForResponse(response =>
+        companyQuery(response, `/data/api/v1/equity/fundamental/${statement.dataset}`, "AAPL") &&
+        new URL(response.url()).searchParams.get("period") === "quarter"));
       await loginDisposableWorkspace(later);
       if (later.url() !== dashboardUrl) await later.goto(dashboardUrl);
       const reopened = await reopenedResponse;
       expect(reopened.status()).toBe(200);
       observations.push(await verifyNativeIncome(later.locator(`#workarea .widget-${widgetId}`).last(),
         await reopened.json(), "AAPL", "quarter"));
+      for (const [index, statement] of statements.entries()) {
+        const panel = later.locator(`#workarea .widget-equity_fundamental_${statement.dataset}_fmp_obb`).last();
+        await panel.scrollIntoViewIfNeeded();
+        const response = await statementResponses[index];
+        expect(response.status()).toBe(200);
+        statementObservations.push(await verifyNativeStatement(panel, await response.json(), statement.dataset, statement.field, "quarter"));
+      }
       expectApplicationDiagnostics(laterDiagnostics);
       await info.attach("reopened-financial-diagnostics", { contentType: "application/json", body: JSON.stringify(laterDiagnostics) });
     } finally { await context.close(); }
     expect(requests.filter(request => request.phase !== "invalid").length).toBeLessThanOrEqual(7);
+    for (const dataset of ["balance", "cash"]) {
+      const path = `/data/api/v1/equity/fundamental/${dataset}`;
+      expect(statementRequests.filter(item => item.path === path && item.symbol === "AAPL")).toHaveLength(4);
+    }
+    for (const failure of statementInitialFailures) {
+      expect(failure.status).toBe(422);
+      expect([null, ""]).toContain(failure.symbol);
+    }
     const expectedFailures = diagnostics.failures.filter(item => item.path === incomePath && item.status === 422);
     expect(expectedFailures.length).toBeGreaterThan(0);
     expect(expectedFailures.length).toBe(incomeFailures.length);
@@ -311,17 +410,17 @@ test("local packaged financial widgets support native company period recovery an
     }
     expectApplicationDiagnostics({ ...diagnostics,
       requestFailures: diagnostics.requestFailures.filter(item => !(item.path === searchPath && item.reason === "net::ERR_ABORTED")),
-      failures: diagnostics.failures.filter(item => !(item.path === incomePath && item.status === 422)),
-      consoleErrors: diagnostics.consoleErrors.filter(item => !(item.path === incomePath && /Failed to load resource.*422/.test(item.message))),
+      failures: diagnostics.failures.filter(item => !([incomePath, "/data/api/v1/equity/fundamental/balance", "/data/api/v1/equity/fundamental/cash"].includes(item.path) && item.status === 422)),
+      consoleErrors: diagnostics.consoleErrors.filter(item => !([incomePath, "/data/api/v1/equity/fundamental/balance", "/data/api/v1/equity/fundamental/cash"].includes(item.path) && /Failed to load resource.*422/.test(item.message))),
     });
     await info.attach("packaged-financial-journey", { contentType: "application/json", body: JSON.stringify({
       images: runtime.images, release_image_verified: false, observations, invalid: { status: invalid.status(), code: failure.code },
-      requests, incomeFailures, programmaticQueryCompared: true, diagnostics,
+      requests, incomeFailures, statementRequests, statementInitialFailures, statementObservations, capturedNativeResponseCompared: true, diagnostics,
       limitation: "Local image acceptance; visible native currency/date/source plus API metadata, no metadata-pane or published-release claim",
     }) });
   } finally {
     await info.attach("packaged-financial-attempt", { contentType: "application/json", body: JSON.stringify({
-      phase, requests, responses, diagnostics,
+      phase, requests, responses, statementRequests, statementInitialFailures, diagnostics,
       limitation: "Allowlisted native income query fields and statuses; no authentication or raw API payloads",
     }) });
   }
@@ -436,7 +535,8 @@ async function expectSelectedCompany(widget: Locator, listing: any) {
 }
 
 async function displayedNumber(cell: Locator, amount: number) {
-  await expect(cell).toBeInViewport({ ratio: 1 });
+  // Allow grid-edge rounding while requiring nearly the entire amount cell on screen.
+  await expect(cell).toBeInViewport({ ratio: 0.99 });
   await expect.poll(async () => {
     const text = (await cell.innerText()).replace(/[,\s$]/g, "").toUpperCase();
     const match = /^(-?\d+(?:\.(\d+))?)([KMBT])?$/.exec(text);

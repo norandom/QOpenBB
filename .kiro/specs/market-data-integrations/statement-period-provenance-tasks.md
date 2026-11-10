@@ -48,7 +48,7 @@ The owner approved requirements and design on 2026-11-10. This seven-task plan i
   - _Depends: 3, 4_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 4.1, 4.3_
 
-- [ ] 6. Accept the packaged statement widgets in the native workflow
+- [x] 6. Accept the packaged statement widgets in the native workflow
   - Build the candidate image pair once through existing native Dagger, start an owned Compose session and verify the installed source/catalog identity. Reuse the accepted Workspace source and existing financial Playwright journey; add only affected Income/Balance/Cash assertions.
   - Verify visible source-backed values, annual/quarter controls, refresh, widget discovery and saved selections after fresh-login reopen. Keep current UX/theme and focused CDP diagnostics. Do not expand this into a chart matrix or repeat unrelated infrastructure acceptance.
   - Freeze browser request scope/count before execution, reuse already captured response evidence where possible and do not automatically rerun failures. Credentials and raw payloads remain private. Stop only owned containers/networks and preserve evidence/state after the run.
@@ -113,3 +113,5 @@ The unrelated catalog/inventory working-tree changes and .openidea directory are
 - Task 6 catalog text repair: decode container JSON as UTF-8 explicitly on Windows. A real subprocess regression and independent 19-case run pass; [review](../../../artifacts/reviewed/statement-period-provenance/catalog-encoding-review.md). The original native proposal is retained; task 6 uses the canonical sorted-JSON roundtrip for its comparison.
 
 - Task 6 native omission repair accepted: API a965f70c164, 144 installed tests, independent 66-case review and clean combined 110-file gate. [Evidence](../../../artifacts/reviewed/statement-period-provenance/native-defaults.md). Rebuild only the API and repeat the affected browser journey; task 6 remains open.
+
+- Task 6 accepted 2026-11-10: all three statement widgets pass real-data period/refresh/save/fresh-login checks, with 16 FMP sends in the final run, zero FRED, verified catalog/source identities and owned cleanup. [Evidence](../../../artifacts/reviewed/statement-period-provenance/packaged.md). The reused Workspace labels are historical; rebuild both release images from the final lock in task 7.

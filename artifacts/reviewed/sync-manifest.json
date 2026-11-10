@@ -35563,6 +35563,30 @@
       "publishedSHA256": "89c6af75d0cdc91e83f20e55f93cf60361e7ae511a3b57f4084e0bc784a65827",
       "bytes": 4185,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/statement-period-provenance/task6/accepted.md",
+      "sourceSHA256": "266bad7adeaeb514a69849a38baeece171d8112c0f22d2830077b5c50247bd3e",
+      "publishedpath": "artifacts/reviewed/statement-period-provenance/packaged.md",
+      "publishedSHA256": "266bad7adeaeb514a69849a38baeece171d8112c0f22d2830077b5c50247bd3e",
+      "bytes": 3932,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/statement-period-provenance/task6/review.md",
+      "sourceSHA256": "48f5d089ac18585305f52233c3f5c30d04555ac41b5a2ee5a869eb9df933d3f8",
+      "publishedpath": "artifacts/reviewed/statement-period-provenance/packaged-review.md",
+      "publishedSHA256": "48f5d089ac18585305f52233c3f5c30d04555ac41b5a2ee5a869eb9df933d3f8",
+      "bytes": 6952,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/statement-period-provenance/task6/corrected-viewport/browser-session/evidence/browser-output/financial-workspace-local--3e935-d-recovery-and-saved-reopen/packaged-native-quarter-income.png",
+      "sourceSHA256": "5b1112aeeb7ecf16d434700a57a566a299bc9c43ba2cdee60fa8d186f45e91c9",
+      "publishedpath": "artifacts/reviewed/statement-period-provenance/packaged-income.png",
+      "publishedSHA256": "5b1112aeeb7ecf16d434700a57a566a299bc9c43ba2cdee60fa8d186f45e91c9",
+      "bytes": 31529,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36288,7 +36312,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171160562,
+  "total_payload_bytes": 171202975,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
