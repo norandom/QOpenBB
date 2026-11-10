@@ -8,7 +8,7 @@ from uuid import uuid4
 
 from .container_command import compose_command, container_command
 from .native_environment import NativeEnvironment, run_command, validate_output
-from . import session_files
+from . import session_files, state_files
 from .portable_runtime import output_options
 from .runtime_descriptor import RuntimeDescriptor, replace_private
 from .compose_checks import validate_config, checked_container, checked_network
@@ -95,11 +95,20 @@ class ComposeRuntime:
         return diagnostic
 
     def begin(self):
+        with state_files.PrivateDirectory.open(self.descriptor.state.host_path) as directory:
+            self.state_directory = directory
+            try:
+                return self._begin()
+            finally:
+                self.state_directory = None
+
+    def _begin(self):
         self.verify_configuration()
         self.save(phase='starting')
         self.failure_code = 'runtime_check_rejected'
         try:
             self.stage = 'compose_up'
+            self.state_directory.verify()
             self.command(self.invocation('up', '-d', '--no-build', '--pull', 'never'), compose=True, timeout=240)
             self.stage = 'resource_discovery'
             self.discover()
@@ -156,7 +165,7 @@ def prepare(request):
         directory.create_file('command-failure.txt', b'')
         directory.create_file('failure.json', b'{}')
         state = path.parent / 'state'
-        with session_files.create_session(state) as state_directory:
+        with state_files.create_state(state) as state_directory:
             state_directory.create_file('qopenbb-sentinel', session.encode())
         files = [config.repository / 'compose.yaml', config.repository / 'pipeline/compose.runtime.yaml']
         environment = {'WORKSPACE_IMAGE': images['workspace'], 'DATA_API_IMAGE': images['data-api'],

@@ -35355,6 +35355,22 @@
       "publishedSHA256": "9e1027e7450d687588f81a359cd52c2ae4fd8bcd42d18fd669a47eae282c7dbb",
       "bytes": 1290,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-state-acl/native-application-image.md",
+      "sourceSHA256": "62d1725f71b4da1e84d23b905465690ece81627614e8bf83b13e059c7092b5e0",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/native-application-image.md",
+      "publishedSHA256": "62d1725f71b4da1e84d23b905465690ece81627614e8bf83b13e059c7092b5e0",
+      "bytes": 3877,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-state-acl/image-acceptance-review.md",
+      "sourceSHA256": "a1affd1a9df8cf5eaac0035c0dfade702c2fe61fb41a3657da6ad3354b19b498",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/native-application-image-review.md",
+      "publishedSHA256": "a1affd1a9df8cf5eaac0035c0dfade702c2fe61fb41a3657da6ad3354b19b498",
+      "bytes": 6768,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36080,7 +36096,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171079073,
+  "total_payload_bytes": 171089718,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -6,7 +6,7 @@ import re
 import time
 from urllib.error import URLError
 from urllib.request import Request, urlopen
-from . import session_files
+from . import state_files
 
 
 def request(origin, path, body=None):
@@ -36,7 +36,7 @@ def verify_mapping(runtime, workspace):
     if len(mounts) != 1 or mounts[0].get('Type') != 'bind' or mounts[0].get('Destination') != '/data' or mounts[0].get('RW') is not True:
         raise ValueError('Inspected owned /data bind required')
     observed = runtime.command(['exec', descriptor.container, 'cat', '/data/qopenbb-sentinel']).strip()
-    expected = session_files.read_private(Path(descriptor.state.host_path) / 'qopenbb-sentinel').decode()
+    expected = state_files.read_private(Path(descriptor.state.host_path) / 'qopenbb-sentinel').decode()
     if observed != expected or observed != descriptor.session_id:
         raise ValueError('Host-to-daemon bind sentinel mismatch')
     source = mounts[0]['Source']
@@ -87,7 +87,9 @@ def ready(runtime):
     if parsed['ui']['isLite'] is not False or parsed['urls']['backend'] != '/api' or parsed['copilot']['openbbCopilot'] is not False:
         raise ValueError('Packaged Full same-origin configuration required')
     runtime.stage = 'disposable_login'
-    values = dict(line.split('=', 1) for line in runtime.command(['exec', descriptor.container, 'cat', '/data/secrets.env']).splitlines() if '=' in line)
+    with state_files.PrivateDirectory.open(descriptor.state.host_path) as directory:
+        state_files.verify_generated(directory)
+        values = dict(line.split('=', 1) for line in runtime.command(['exec', descriptor.container, 'cat', '/data/secrets.env']).splitlines() if '=' in line)
     credentials = {'email': values['OPENBB_ADMIN_EMAIL'], 'password': values['OPENBB_ADMIN_PASSWORD']}
     status, body = request(descriptor.origin, '/api/pro/login', {**credentials, 'remember': False})
     token = json.loads(body)

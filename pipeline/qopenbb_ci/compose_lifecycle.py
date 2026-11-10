@@ -3,7 +3,7 @@ import json
 import hashlib
 from pathlib import Path
 
-from . import session_files
+from . import session_files, state_files
 from .portable_runtime import output_options
 from .compose_checks import checked_container, checked_network
 from .compose_runtime import ComposeRuntime
@@ -27,7 +27,7 @@ def load(config, path):
         raise ValueError('Runtime state path mismatch')
     if descriptor.phase == 'stopped' and not state.exists():
         return runtime
-    if session_files.read_private(state / 'qopenbb-sentinel').decode() != descriptor.session_id:
+    if state_files.read_private(state / 'qopenbb-sentinel').decode() != descriptor.session_id:
         raise ValueError('Runtime state ownership mismatch')
     return runtime
 
@@ -147,10 +147,12 @@ def recreate(config, path):
     runtime.save = lambda **updates: memory_update(runtime, updates)
     try:
         remove_resources(runtime, containers, [])
-        runtime.command(runtime.invocation('up', '-d', '--no-build', '--pull', 'never'), compose=True, timeout=240)
-        runtime.descriptor = rediscover(runtime)
-        from .compose_readiness import ready
-        ready(runtime)
+        with state_files.PrivateDirectory.open(runtime.descriptor.state.host_path) as directory:
+            directory.verify()
+            runtime.command(runtime.invocation('up', '-d', '--no-build', '--pull', 'never'), compose=True, timeout=240)
+            runtime.descriptor = rediscover(runtime)
+            from .compose_readiness import ready
+            ready(runtime)
         runtime.save = persist
         runtime.save(phase='ready')
         remove_intent(runtime)
@@ -181,7 +183,7 @@ def remove_state_files(runtime):
     state = Path(runtime.descriptor.state.host_path)
     if not state.exists():
         return
-    with session_files.PrivateDirectory.open_for_removal(state) as directory:
+    with state_files.PrivateDirectory.open_for_removal(state) as directory:
         names = [item.name for item in state.iterdir()]
         # Preflight every entry before deleting any. Nested or container-owned
         # objects require a separately reviewed removal facility.

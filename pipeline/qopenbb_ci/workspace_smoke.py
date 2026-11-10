@@ -10,6 +10,7 @@ from uuid import uuid4
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
+from qopenbb_ci import state_files
 from qopenbb_ci.compose_runtime import start, StartRequest, ComposeRuntime
 from qopenbb_ci.compose_lifecycle import stop
 from qopenbb_ci.container_command import container_command
@@ -41,7 +42,9 @@ def check_packaged(runtime, report, private_values):
     assert status == 200
     _, config = request(origin, '/config.js')
     report['config_sha256'] = hashlib.sha256(config).hexdigest()
-    values = runtime.command(['exec', descriptor.container, 'cat', '/data/secrets.env'])
+    with state_files.PrivateDirectory.open(descriptor.state.host_path) as directory:
+        host_metadata = state_files.verify_generated(directory)
+        values = runtime.command(['exec', descriptor.container, 'cat', '/data/secrets.env'])
     private_values.extend(line.split('=', 1)[1] for line in values.splitlines()
                           if '=' in line and line.split('=', 1)[0] not in ('OPENBB_ADMIN_EMAIL', 'OKTA_DOMAIN')
                           and line.split('=', 1)[1])
@@ -59,9 +62,22 @@ def check_packaged(runtime, report, private_values):
         raise AssertionError('invalid password accepted')
     probe = "import json,pathlib,stat; paths=['/data/openbb.db','/data/secrets.env','/opt/code/scripts/cfgs/config.toml','/opt/code/user_create.json']; print(json.dumps({p:{'mode':oct(stat.S_IMODE(pathlib.Path(p).stat().st_mode)),'bytes':pathlib.Path(p).stat().st_size,'uid':pathlib.Path(p).stat().st_uid} for p in paths}))"
     metadata = json.loads(runtime.command(['exec', descriptor.container, 'python', '-c', probe]))
-    assert all(item['mode'] == '0o600' and item['bytes'] > 0 and item['uid'] != 0 for item in metadata.values())
+    verify_permissions(metadata, host_metadata)
     report.update(health=200, full_config=True, login=200, wrong_password=401, bind_state=True,
                   private_state=metadata, container=descriptor.container, images=descriptor.images)
+
+
+def verify_permissions(metadata, host_metadata):
+    for path, item in metadata.items():
+        assert item['bytes'] > 0 and item['uid'] != 0
+        if os.name == 'nt' and path.startswith('/data/'):
+            checked = host_metadata[Path(path).name]
+            assert checked['bytes'] > 0
+            assert checked['permission_authority'] == 'windows-owner-only-acl'
+            item['permission_authority'] = checked['permission_authority']
+        else:
+            assert item['mode'] == '0o600'
+            item['permission_authority'] = 'posix-mode'
 
 
 def capture_logs(runtime, private_values, path):

@@ -6,7 +6,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import Mock
 import pytest
-from qopenbb_ci import compose_lifecycle as lifecycle, session_files
+from qopenbb_ci import compose_lifecycle as lifecycle, session_files, state_files
 from qopenbb_ci.runtime_descriptor import RuntimeDescriptor
 from test_runtime_descriptor import valid_descriptor
 
@@ -70,7 +70,7 @@ def test_missing_resources_cleanup_is_repeatable(tmp_path):
 @pytest.mark.skipif(os.name != 'nt', reason='POSIX checked directory removal fails closed')
 def test_private_state_removal_and_repeated_absence(tmp_path):
     state=tmp_path/'private'
-    with session_files.create_session(state) as directory:
+    with state_files.create_state(state) as directory:
         directory.create_file('qopenbb-sentinel',b'owned')
         directory.create_file('marker',b'retained')
     owned=SimpleNamespace(descriptor=SimpleNamespace(state=SimpleNamespace(host_path=str(state))))
@@ -81,14 +81,14 @@ def test_private_state_removal_and_repeated_absence(tmp_path):
 
 def test_nested_state_refused_before_any_file_deleted(tmp_path):
     state=tmp_path/'private'
-    with session_files.create_session(state) as directory:
+    with state_files.create_state(state) as directory:
         directory.create_file('qopenbb-sentinel',b'owned')
         directory.create_file('marker',b'retained')
     (state/'nested').mkdir()
     owned=SimpleNamespace(descriptor=SimpleNamespace(state=SimpleNamespace(host_path=str(state))))
     with pytest.raises((OSError,ValueError),match='State retained|not supported'):lifecycle.remove_state_files(owned)
-    assert session_files.read_private(state/'marker')==b'retained'
-    assert session_files.read_private(state/'qopenbb-sentinel')==b'owned'
+    assert state_files.read_private(state/'marker')==b'retained'
+    assert state_files.read_private(state/'qopenbb-sentinel')==b'owned'
 
 
 def test_wrong_daemon_fails_before_configuration_or_resource_mutation(tmp_path,monkeypatch):
@@ -111,6 +111,9 @@ def test_recreate_commits_new_ids_only_after_readiness(tmp_path,monkeypatch):
     with session_files.create_session(private):pass
     current=ComposeRuntime(None,private/'descriptor')
     current.descriptor=owned.descriptor
+    state = private/'state'
+    current.descriptor = current.descriptor.model_copy(update={'state':current.descriptor.state.model_copy(update={'host_path':str(state)})})
+    with state_files.create_state(state):pass
     durable=[]
     def persist(**updates):
         lifecycle.memory_update(current,updates)
@@ -139,7 +142,8 @@ def test_recreate_commits_new_ids_only_after_readiness(tmp_path,monkeypatch):
     assert [item.phase for item in durable]==['recreating','ready']
     assert result.container=='f'*64
     assert result.origin==owned.descriptor.origin and result.images==owned.descriptor.images
-    assert result.state==owned.descriptor.state
+    assert result.state.host_path==str(state)
+    assert result.state.mount_identity==owned.descriptor.state.mount_identity
 
 
 def test_partial_recovery_refuses_replacement_without_recording(tmp_path,monkeypatch):
@@ -161,7 +165,7 @@ def test_interrupted_recreation_recovers_only_journaled_replacements(tmp_path, m
     private=tmp_path/'session'
     with session_files.create_session(private):pass
     state=private/'state'
-    with session_files.create_session(state):pass
+    with state_files.create_state(state):pass
     owned.path=private/'descriptor.json'
     owned.descriptor=owned.descriptor.model_copy(update={'state':owned.descriptor.state.model_copy(update={'host_path':str(state)})})
     owned.descriptor=owned.descriptor.model_copy(update={'phase':'recreating'})
@@ -181,7 +185,7 @@ def test_interrupted_recreation_recovers_only_journaled_replacements(tmp_path, m
     monkeypatch.setattr(lifecycle,'inventory',inspect_candidate)
     owned.save=lambda **updates:lifecycle.memory_update(owned,updates)
     marker=state/'retained-marker'
-    with session_files.PrivateDirectory.open(state) as directory:
+    with state_files.PrivateDirectory.open(state) as directory:
         directory.create_file(marker.name,b'retained-state')
     monkeypatch.setattr(lifecycle,'load',lambda *args:owned)
     removed=[]
@@ -192,7 +196,7 @@ def test_interrupted_recreation_recovers_only_journaled_replacements(tmp_path, m
     assert owned.descriptor.state==candidate.state
     assert result['state_removed'] is False and len(removed)==1
     assert {item['Id'] for item in removed[0][1].values()}=={'e'*64,'f'*64}
-    assert session_files.read_private(marker)==b'retained-state'
+    assert state_files.read_private(marker)==b'retained-state'
     assert not (private/'recreation-intent.json').exists()
 
 
@@ -244,9 +248,9 @@ def test_recovered_mount_failure_never_rewrites_ownership(tmp_path,monkeypatch):
 @pytest.mark.skipif(os.name == 'nt', reason='POSIX-only fail-closed removal contract')
 def test_posix_explicit_removal_preserves_all_entries(tmp_path):
     state=tmp_path/'private'
-    with session_files.create_session(state) as directory:
+    with state_files.create_state(state) as directory:
         directory.create_file('qopenbb-sentinel',b'owned')
         directory.create_file('marker',b'retained')
     owned=SimpleNamespace(descriptor=SimpleNamespace(state=SimpleNamespace(host_path=str(state))))
     with pytest.raises(OSError,match='not supported'):lifecycle.remove_state_files(owned)
-    assert session_files.read_private(state/'marker')==b'retained'
+    assert state_files.read_private(state/'marker')==b'retained'

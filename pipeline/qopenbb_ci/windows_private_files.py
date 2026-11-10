@@ -73,11 +73,15 @@ class PrivateDirectory:
     Sharing excludes deletion, so ordinary callers cannot rename any ancestor
     between path validation and file creation. Administrative takeover is excluded.
     """
+    root_protection_type = api.Protection
+
     def __init__(self, path, create=False, delete=False):
         self.path = _path(path)
         self.delete = delete
         self.handles = []
         self.protection = api.Protection()
+        self.root_protection = (self.protection if self.root_protection_type is api.Protection
+                                else self.root_protection_type())
         try:
             self._pin(create)
         except BaseException:
@@ -104,11 +108,11 @@ class PrivateDirectory:
         for component in self.path.parts[1:]:
             current /= component
             if create and current == self.path:
-                api.checked(api.create_directory(str(current), C.byref(self.protection.attributes)))
+                api.checked(api.create_directory(str(current), C.byref(self.root_protection.attributes)))
             handle = _open(current, READ_CONTROL | 1 | (DELETE if current == self.path and self.delete else 0))
             self.handles.append(handle)
             _identity(handle, current, True)
-        self.protection.verify(self.handles[-1])
+        self.root_protection.verify(self.handles[-1])
 
     @property
     def handle(self):
@@ -118,7 +122,7 @@ class PrivateDirectory:
 
     def verify(self):
         _identity(self.handle, self.path, True)
-        self.protection.verify(self.handle)
+        self.root_protection.verify(self.handle)
 
     @contextmanager
     def file_handle(self, name, access=READ, create=False, sharing=3):
@@ -225,6 +229,8 @@ class PrivateDirectory:
             api.close(handle)
         self.handles.clear()
         self.protection.close()
+        if self.root_protection is not self.protection:
+            self.root_protection.close()
 
     def __enter__(self):
         return self

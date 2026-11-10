@@ -91,10 +91,14 @@ def user_sid():
 
 
 class Protection:
+    ace_flags = 0
+    protected = True
+    inheritance = ''
+
     def __init__(self):
         self.sid = user_sid()
         self.pointer = P()
-        checked(sddl(f'O:{self.sid}D:P(A;;FA;;;{self.sid})', 1, C.byref(self.pointer), None))
+        checked(sddl(f'O:{self.sid}D:P(A;{self.inheritance};FA;;;{self.sid})', 1, C.byref(self.pointer), None))
         self.attributes = SecurityAttributes(C.sizeof(SecurityAttributes), self.pointer, False)
 
     def close(self):
@@ -126,7 +130,7 @@ class Protection:
             local_free(owner_text)
         control, revision = W.WORD(), D()
         checked(get_control(descriptor, C.byref(control), C.byref(revision)))
-        if not acl or not control.value & 0x1000 or not control.value & 4:
+        if not acl or bool(control.value & 0x1000) != self.protected or not control.value & 4:
             raise PrivateStorageError('Private object needs a protected nonnull DACL')
         info = AclSize()
         checked(acl_info(acl, C.byref(info), C.sizeof(info), 2))
@@ -136,7 +140,19 @@ class Protection:
         checked(get_ace(acl, 0, C.byref(ace)))
         header = C.string_at(ace, 8)
         mask = int.from_bytes(header[4:8], 'little')
-        if header[0] != 0 or header[1] != 0 or mask != 0x1f01ff:
+        if header[0] != 0 or header[1] != self.ace_flags or mask != 0x1f01ff:
             raise PrivateStorageError('Private object has an unexpected or inherited ACE')
         if not equal_sid(owner, ace.value + 8):
             raise PrivateStorageError('Private object grants another principal access')
+
+
+class StateRootProtection(Protection):
+    """Only explicit bind-state roots propagate owner-only access."""
+    ace_flags = 3
+    inheritance = 'OICI'
+
+
+class GeneratedStateProtection(Protection):
+    """Exact inherited owner-only file policy, never used for host writes."""
+    ace_flags = 16
+    protected = False

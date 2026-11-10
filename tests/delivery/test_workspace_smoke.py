@@ -52,3 +52,17 @@ def test_empty_directory_removal_refuses_nonempty(tmp_path):
     with session_files.PrivateDirectory.open_for_removal(state) as directory:
         with pytest.raises(OSError):directory.remove_empty()
         assert directory.read_file('marker')==b'retained'
+
+
+def test_windows_bind_uses_host_acl_but_image_files_stay_0600():
+    if os.name != 'nt':
+        pytest.skip('Windows bind permission authority')
+    metadata = {path: {'mode': '0o777' if path.startswith('/data/') else '0o600', 'bytes': 8, 'uid': 1000}
+                for path in ['/data/openbb.db', '/data/secrets.env', '/opt/code/scripts/cfgs/config.toml', '/opt/code/user_create.json']}
+    host = {name: {'bytes': 8, 'permission_authority': 'windows-owner-only-acl'} for name in ['openbb.db', 'secrets.env']}
+    smoke.verify_permissions(metadata, host)
+    with pytest.raises(KeyError):
+        smoke.verify_permissions(metadata, {})
+    metadata['/opt/code/user_create.json']['mode'] = '0o777'
+    with pytest.raises(AssertionError):
+        smoke.verify_permissions(metadata, host)

@@ -104,9 +104,9 @@ def test_podman_bare_image_identity_normalizes_digest():
 def test_mapping_rejects_wrong_sentinel(tmp_path):
     from types import SimpleNamespace
     from qopenbb_ci.compose_readiness import verify_mapping
-    from qopenbb_ci import session_files
+    from qopenbb_ci import state_files
     state = tmp_path / 'private-state'
-    with session_files.create_session(state) as directory:
+    with state_files.create_state(state) as directory:
         directory.create_file('qopenbb-sentinel', b'expected')
     descriptor = SimpleNamespace(state=SimpleNamespace(host_path=str(state)), container='owned', session_id='expected')
     runtime = SimpleNamespace(descriptor=descriptor, command=lambda args: 'wrong', save=lambda **kwargs: pytest.fail('must not save verified mapping'))
@@ -118,6 +118,7 @@ def test_mapping_rejects_wrong_sentinel(tmp_path):
 def test_partial_discovery_failure_still_marks_failed(tmp_path, monkeypatch):
     from qopenbb_ci.compose_runtime import ComposeRuntime
     runtime = ComposeRuntime(None, tmp_path/'unused')
+    runtime.state_directory = __import__('unittest.mock', fromlist=['Mock']).Mock()
     phases = []
     monkeypatch.setattr(runtime, 'record_failure', lambda stage, code: {'stage': stage, 'code': code})
     monkeypatch.setattr(runtime, 'verify_configuration', lambda: None)
@@ -126,7 +127,7 @@ def test_partial_discovery_failure_still_marks_failed(tmp_path, monkeypatch):
     monkeypatch.setattr(runtime, 'command', lambda *args, **kwargs: (_ for _ in ()).throw(ValueError('failure')))
     monkeypatch.setattr(runtime, 'discover', lambda: (_ for _ in ()).throw(ValueError('discovery failure')))
     with pytest.raises(ValueError, match='protected recovery'):
-        runtime.begin()
+        runtime._begin()
     assert phases == ['starting', 'failed']
 
 def test_podman_lowercase_network_inspection():
@@ -146,6 +147,7 @@ def test_noncommand_readiness_failure_retains_sanitized_stage(tmp_path, monkeypa
     with session_files.create_session(private) as directory:
         directory.create_file('failure.json', b'{}')
     runtime = ComposeRuntime(None, private/'descriptor.json')
+    runtime.state_directory = __import__('unittest.mock', fromlist=['Mock']).Mock()
     monkeypatch.setattr(runtime, 'verify_configuration', lambda: None)
     monkeypatch.setattr(runtime, 'save', lambda **kwargs: None)
     monkeypatch.setattr(runtime, 'invocation', lambda *args: list(args))
@@ -156,7 +158,7 @@ def test_noncommand_readiness_failure_retains_sanitized_stage(tmp_path, monkeypa
         raise ValueError('private-password-response-must-not-escape')
     monkeypatch.setattr(compose_readiness, 'ready', reject)
     with pytest.raises(ValueError) as caught:
-        runtime.begin()
+        runtime._begin()
     diagnostic = json.loads(session_files.read_private(private/'failure.json'))
     assert diagnostic == {'stage': 'bind_mapping', 'code': 'runtime_check_rejected'}
     assert 'bind_mapping' in str(caught.value)

@@ -135,7 +135,7 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
   - _Depends: 6, 8, 10_
   - _Requirements: 1.1, 1.3, 3.2, 4.1, 4.2, 5.3, 6.4_
 
-- [ ] 11.2 Build and verify the actual application image pair
+- [x] 11.2 Build and verify the actual application image pair
   - Build the actual Workspace/data image pair once through the qualified path; reuse those exact images for existing packaged smoke and browser acceptance. Serialize heavy builds and suites.
   - Done: exact engine, archive, source, loaded image and installed module identities pass existing packaged checks for both images. No publication or provider call is needed for this build/package qualification.
   - Evidence/generated outputs are excluded from production caps; required production corrections return to their owning task's independent review and 400/300/50 gate.
@@ -168,6 +168,8 @@ Foundation is `1 -> 2 -> 3.1 -> 3.2 -> 4`. After task 4, runtime `5 -> 6`, brows
 Every implementation handoff includes exact writable paths, prerequisite commits, the frozen design contracts, focused check command and size limits. A contract change pauses dependent lanes for review. No task is complete from planned checks, skipped provider cases or empty reports.
 
 ## Implementation notes
+
+- Task 11.2 accepted 2026-11-10: both native-built application images passed package checks; 428 installed Python files match staged sources. The Windows state ACL repair passed independent review (91 checks, three POSIX skips), actual package startup and protected retained-state recreation. The combined gate passed for 101 controller files. [Evidence](../../../artifacts/reviewed/native-development-workflow/native-application-image.md) and [independent acceptance](../../../artifacts/reviewed/native-development-workflow/native-application-image-review.md). No provider calls, publication or server deployment; tasks 11.3 and 12 remain open.
 
 - Task 1 accepted 2026-11-10: protected pinned native environments, explicit Podman/Compose connectivity and the existing combined size gate passed; independent Sol review approved. [Foundation evidence](../../../artifacts/reviewed/native-development-workflow/foundation.md). Use the actual paths in `D:/BuildArtifacts/QOpenBB/native-foundation/resolved-tools.json`. The pinned Dagger executable needs process-local `FORCE_DARK_MODE=1` for noninteractive version detection. Native engine execution and application/browser acceptance remain later tasks. The exact clean checker snapshot avoids overwriting existing Linux dependencies and unrelated work.
 - Task 2 accepted 2026-11-10: native doctor and 16 focused checks pass (one POSIX-only skip). Sol accepted the entry/environment implementation; Astra accepted the owner-approved [inventory split](inventory-split-amendment.md), with 67 focused checks passing and three platform-related skips. The combined gate passes for 83 controller files. [Evidence and limits](../../../artifacts/reviewed/native-development-workflow/entry.md). Runtime/build consumers remain task 11 integration; task 3.1 is next.
