@@ -7,7 +7,12 @@ param(
     [string]$SessionPath,
     [string]$WorkspaceImage,
     [string]$DataImage,
-    [ValidateSet('foundation','workspace','data-api')][string]$BuildSelection
+    [ValidateSet('foundation','workspace','data-api')][string]$BuildSelection,
+    [string]$Stage,
+    [string]$Archive,
+    [string]$SdkPython,
+    [string]$EngineContainer,
+    [string]$VerificationSource
 )
 $ErrorActionPreference = 'Stop'
 $repository = Split-Path -Parent $PSScriptRoot
@@ -20,7 +25,9 @@ try {
     $arguments = @('-B','-m','qopenbb_ci.native_environment','--action',$Action,'--repository',$repository,
                    '--artifacts',$Artifacts,'--tools-file',$ToolsFile)
     foreach ($pair in @(@('session-path',$SessionPath),@('workspace-image',$WorkspaceImage),
-                       @('data-image',$DataImage),@('build-selection',$BuildSelection))) {
+                       @('data-image',$DataImage),@('build-selection',$BuildSelection),
+                       @('stage',$Stage),@('archive',$Archive),@('sdk-python',$SdkPython),
+                       @('engine-container',$EngineContainer),@('verification-source',$VerificationSource))) {
         if ($pair[1]) { $arguments += @('--' + $pair[0],$pair[1]) }
     }
     $previousPath = $env:PYTHONPATH

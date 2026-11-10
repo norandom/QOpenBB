@@ -21,6 +21,47 @@ SYSTEM_KEYS = ('SystemRoot', 'WINDIR', 'COMSPEC', 'PATHEXT', 'PATH', 'SYSTEMDRIV
 CONNECTION_KEYS = ('DOCKER_HOST', 'DOCKER_CONTEXT', 'DOCKER_TLS_VERIFY', 'DOCKER_CERT_PATH',
                    'CONTAINER_HOST', 'CONTAINER_CONNECTION', 'CONTAINER_SSHKEY',
                    'QOPENBB_CONTAINER_CLI', 'PODMAN_COMPOSE_PROVIDER')
+SAFE_FAILURES = frozenset((
+    'Explicit browser cache required', 'Verification snapshot differs from reviewed source',
+    'Locked native verification dependencies required', 'Build archive and reports must be new',
+    'Verification requires a ready owned image pair',
+    'Verification requires running and healthy owned services',
+    'Owned packaged services readiness timeout', 'Owned service exited during startup',
+    'Runtime daemon identity mismatch', 'Runtime state ownership mismatch',
+    'Cannot resolve the effective Docker context', 'Cannot inspect selected Docker context',
+    'Cannot inspect a matching native Podman pipe', 'Cannot inspect selected Podman connection',
+    'Selected connection has no unambiguous matching native Podman pipe',
+    'Selected Podman connection is missing or ambiguous',
+    'Selected Podman identity does not match its registered connection',
+    'Compose >= 2.24.4 is required for explicit override semantics',
+    'Compose provider returned invalid daemon access evidence',
+    'Native tool metadata preflight is Windows-only; use portable Linux CI commands',
+))
+
+
+def safe_failure(error: Exception) -> str:
+    """Only fixed prerequisite diagnostics may cross the private consumer boundary."""
+    message = str(error)
+    if message in SAFE_FAILURES:
+        return message
+    prefixes = {'Required executable not found:': 'Required executable missing; check the explicit tools metadata',
+        'A real executable is required, not a shell wrapper:': 'Use real executable paths, not shell wrappers',
+        'A Windows .exe is required:': 'Use a Windows .exe tool path',
+        'Drive/filesystem roots are forbidden:': 'Drive/filesystem roots are forbidden',
+        'Reparse or symbolic-link paths are forbidden:': 'Reparse or symbolic-link paths are forbidden',
+        'Output/cache path must be project-specific beneath ': 'Use project-specific outputs and caches beneath D:/BuildArtifacts',
+        'Expected QOpenBB repository:': 'Select the QOpenBB repository, with pipeline/tools.lock.json',
+        'Selected container daemon is unavailable (exit ': 'Selected container daemon unavailable; check the selected connection',
+        'Explicit Compose provider is unavailable (exit ': 'Explicit Compose provider unavailable; check its tool path',
+        'Compose provider cannot access selected daemon (exit ': 'Compose cannot access the selected daemon; check its endpoint'}
+    for prefix, diagnostic in prefixes.items():
+        if message.startswith(prefix):
+            return diagnostic
+    if re.fullmatch(r'(python|node|uv|pnpm|safe_chain|dagger_cli|podman|compose) version preflight failed; required (?:\d+\.\d+\.\d+|usable executable)', message):
+        return message
+    if isinstance(error, FileNotFoundError):
+        return 'Required input file missing; check tools metadata, session and staged source paths'
+    return type(error).__name__
 
 
 def checked_path(path: Path) -> Path:
@@ -222,20 +263,30 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument('--workspace-image')
     parser.add_argument('--data-image')
     parser.add_argument('--build-selection', choices=('foundation', 'workspace', 'data-api'))
+    for name in ('stage', 'archive', 'sdk-python', 'verification-source'):
+        parser.add_argument('--' + name, type=Path)
+    parser.add_argument('--engine-container')
     args = parser.parse_args(argv)
-    allowed = {'doctor': (), 'build': ('build_selection',), 'start': ('session_path', 'workspace_image', 'data_image'),
-               'verify': ('session_path',), 'recreate': ('session_path',), 'stop': ('session_path',)}
-    for field in ('session_path', 'workspace_image', 'data_image', 'build_selection'):
+    allowed = {'doctor': (), 'build': ('build_selection', 'stage', 'archive', 'sdk_python', 'engine_container'),
+               'start': ('session_path', 'workspace_image', 'data_image'),
+               'verify': ('session_path', 'verification_source'), 'recreate': ('session_path',), 'stop': ('session_path',)}
+    for field in ('session_path', 'workspace_image', 'data_image', 'build_selection',
+                  'stage', 'archive', 'sdk_python', 'engine_container', 'verification_source'):
         if getattr(args, field) is not None and field not in allowed[args.action]:
             parser.error(f'--{field.replace("_", "-")} is irrelevant to {args.action}')
+    from .native_actions import required_inputs, dispatch
+    try:
+        required_inputs(args)
+    except ValueError as error:
+        print(str(error), file=sys.stderr)
+        return 2
     try:
         config = resolve_environment(args.repository, args.artifacts, args.tools_file)
-        if args.action != 'doctor':
-            raise ValueError(f'{args.action} is unavailable until its reviewed consumer is integrated (task 11.1)')
-        print(json.dumps(doctor(config), indent=2))
-        return 0
+        result, code = (doctor(config), 0) if args.action == 'doctor' else dispatch(config, args)
+        print(json.dumps(result, indent=2))
+        return code
     except (ValueError, OSError, KeyError, subprocess.SubprocessError) as error:
-        print(f'Native preflight failed: {error}', file=sys.stderr)
+        print(f'Native action failed: {safe_failure(error)}', file=sys.stderr)
         return 2
 
 

@@ -88,14 +88,14 @@ def test_doctor_rejects_wrong_version(monkeypatch):
         native.doctor(config)
 
 
-def test_action_arguments_and_unavailable_consumers(monkeypatch, capsys):
+def test_action_arguments_and_required_build_inputs(monkeypatch, capsys):
     from qopenbb_ci import native_environment as native
     with pytest.raises(SystemExit) as error:
         native.main(['--action', 'doctor', '--session-path', 'irrelevant'])
     assert error.value.code == 2
     monkeypatch.setattr(native, 'resolve_environment', lambda *args: object())
     assert native.main(['--action', 'build']) == 2
-    assert 'unavailable until its reviewed consumer' in capsys.readouterr().err
+    assert 'required inputs' in capsys.readouterr().err
 
 
 def test_selected_connection_keeps_actual_endpoint(monkeypatch, tmp_path):

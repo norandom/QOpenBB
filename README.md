@@ -40,6 +40,7 @@ Native Windows developer workflow ([plan](.kiro/specs/native-development-workflo
 - [x] Connect root financial tests and the fork login fixture to checked private runtime data.
 - [x] Verify state-preserving Compose recreation and owned cleanup.
 - [x] Build, export, inspect and load the foundation image through pinned native Dagger and Podman.
+- [x] Join native commands and reviewed source pins; synthetic verification remains distinct from financial acceptance.
 - [ ] Integrate protected sessions, Compose runtime, Dagger builds and Playwright, then verify Linux compatibility.
 
 [Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.

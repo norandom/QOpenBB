@@ -126,7 +126,7 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
   - _Requirements: 1.1, 4.1, 4.2, 4.3, 5.2, 6.1_
 
 - [ ] 11. Integrate and verify the native application workflow
-- [ ] 11.1 Join native commands and reviewed source identities
+- [x] 11.1 Join native commands and reviewed source identities
   - Integrate accepted runtime/browser/build consumers into the native entry point. Promote only the reviewed test-only Workspace fork commit and corresponding source-lock/inventory changes, preserving unrelated work.
   - Freeze the actual financial test node selection and its provider dependencies, query scope and maximum request budget before live execution. Confirm credential availability privately and whether that budget is authorized; obtain missing authorization before dependent work. No retry expansion or unrelated provider requests.
   - Done: supported native actions route to accepted consumers with checked descriptor, explicit tools and exact reviewed source identities; focused dispatch and contract checks pass. The application acceptance inputs are recorded, not represented as executed.
@@ -183,3 +183,5 @@ Every implementation handoff includes exact writable paths, prerequisite commits
 - Task 6 accepted 2026-11-10: real recreation retained account, origin, images and state; owned cleanup and refusal cases passed. Astra accepted the journal recovery and POSIX fail-closed deletion repairs. Focused suite: 59 passed, two POSIX skips; combined gate: 97 controller files passed. [Evidence and limits](../../../artifacts/reviewed/native-development-workflow/compose-lifecycle.md). Explicit POSIX state-directory deletion is unsupported; Linux execution remains task 12.
 
 - Task 10 accepted 2026-11-10: actual pinned native Dagger foundation stage/export/inspect/load passed, with unchanged engine identity and archive/config provenance. Astra independently checked the archive, staged source hashes and loaded image. [Evidence](../../../artifacts/reviewed/native-development-workflow/native-build-qualification.md). Group 5-10 is complete; task 11.1 joins reviewed source pins and native commands before actual application builds and financial browser acceptance.
+
+- Task 11.1 accepted 2026-11-10: native dispatch passed 54 focused checks (one POSIX skip), readiness/diagnostic remediation and independent Astra review. Reviewed fixture pin promoted; 19 exception identities retain unchanged target blobs/limits. Transition and final-pin size gates passed. [Evidence](../../../artifacts/reviewed/native-development-workflow/native-join.md). Owner authorized 80 FMP/16 FRED requests for the frozen existing financial journey set; actual transport admission and execution remain task 11.3.
