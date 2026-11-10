@@ -28,7 +28,7 @@ try {
                        @('data-image',$DataImage),@('build-selection',$BuildSelection),
                        @('stage',$Stage),@('archive',$Archive),@('sdk-python',$SdkPython),
                        @('engine-container',$EngineContainer),@('verification-source',$VerificationSource))) {
-        if ($pair[1]) { $arguments += @('--' + $pair[0],$pair[1]) }
+        if ($pair[1]) { $arguments += @(('--' + $pair[0]), $pair[1]) }
     }
     $previousPath = $env:PYTHONPATH
     $env:PYTHONPATH = Join-Path $repository 'pipeline'
