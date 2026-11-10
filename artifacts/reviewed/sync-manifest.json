@@ -35443,6 +35443,14 @@
       "publishedSHA256": "7f07a97954a1a638615e8b9ebda6b356e94e86c2e4e9f0c3358d733b88c6ae22",
       "bytes": 5331,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-financial-remaining/native-migration-closeout.md",
+      "sourceSHA256": "b77c8da6f6e13aeb229b52b79c589cb54c7bfd8d85fa96e89b99df3c228be04b",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/native-migration-closeout.md",
+      "publishedSHA256": "b77c8da6f6e13aeb229b52b79c589cb54c7bfd8d85fa96e89b99df3c228be04b",
+      "bytes": 2611,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36168,7 +36176,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171119072,
+  "total_payload_bytes": 171121683,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

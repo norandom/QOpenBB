@@ -8,6 +8,8 @@ The [login correction](../.kiro/specs/openbb-self-service/login-password-policy.
 
 ## Choose your next action
 
+Native Windows development is accepted using Podman Compose, with Dagger building images only and outputs under `D:/BuildArtifacts/QOpenBB`. See the [native migration closeout](../artifacts/reviewed/native-development-workflow/native-migration-closeout.md) and [financial browser acceptance](../artifacts/reviewed/native-development-workflow/financial-browser-acceptance.md). These qualified local images do not constitute a new release or server deployment.
+
 | Your task | Start here |
 | --- | --- |
 | Install prebuilt alpha images for development | [Installation guide](install.md) |
@@ -30,6 +32,7 @@ The [login correction](../.kiro/specs/openbb-self-service/login-password-policy.
 | Check renderer responsibilities and done/todo lists | [ECharts](echarts-status.md), [FINOS Perspective](perspective-status.md) and [Plotly](plotly-status.md) |
 | Check which capabilities have actual evidence | [Breadth map](../.kiro/breadth.toml) and [reviewed artifacts](../artifacts/reviewed/README.md) |
 | Set up development or contribute | [Development](development.md) and [contribution guide](contributing.md) |
+| Run the native Windows workflow | [Development entry point](development.md#native-windows-entry-point) and [verification](verification.md) |
 | Keep verification focused and artifacts manageable | [Verification](verification.md) and [artifact retention](artifact-retention.md) |
 | Review automated security analysis | [CodeQL coverage and status](security-scanning.md) |
 

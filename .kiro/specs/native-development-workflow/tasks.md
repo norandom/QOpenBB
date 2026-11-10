@@ -152,7 +152,7 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
   - _Depends: 11.2_
   - _Requirements: 1.1, 1.3, 2.2, 2.3, 3.1, 3.2, 3.3, 3.4, 4.3, 5.3, 6.1, 6.4_
 
-- [ ] 12. Verify Linux compatibility and close the migration evidence
+- [x] 12. Verify Linux compatibility and close the migration evidence
   - Run affected portable tests and the existing `pipeline/ci.sh check` entry point in Linux CI with the same reviewed source; include the changed private-reader consumer contract. Windows results cannot substitute for this check. Use the existing prototype workflow's nonpublishing check path (`build_images=false` for manual dispatch); do not dispatch an application release.
   - Verify final cleanup, artifact placement and absence of private configuration in publishable evidence. Update current developer commands, roadmap/README checkboxes and breadth links to actual test paths/results while preserving historical WSL evidence.
   - Done: Linux compatibility and bounded native acceptance are independently reviewed; one concise sanitized acceptance record identifies revisions, image IDs, commands, exit codes and remaining limitations. Sync selected artifacts before the final selective commit/push. No owner-server deployment claim.
@@ -168,6 +168,8 @@ Foundation is `1 -> 2 -> 3.1 -> 3.2 -> 4`. After task 4, runtime `5 -> 6`, brows
 Every implementation handoff includes exact writable paths, prerequisite commits, the frozen design contracts, focused check command and size limits. A contract change pauses dependent lanes for review. No task is complete from planned checks, skipped provider cases or empty reports.
 
 ## Implementation notes
+
+- Task 12 accepted 2026-11-10: Linux CI 459 passed/12 skipped/one live case deselected; CodeQL passed. Six owned sessions have zero containers/networks with state preserved. Final source/inventory gates and independent review accepted. [Closeout](../../../artifacts/reviewed/native-development-workflow/native-migration-closeout.md).
 
 - Task 11.3 accepted 2026-11-10: all selected financial journeys passed, including actual recreation and fresh login. Cumulative usage 58 FMP/6 FRED sends; zero new denials. Independent Astra review accepted. [Evidence](../../../artifacts/reviewed/native-development-workflow/financial-browser-acceptance.md). Earlier failed attempts below are historical and superseded by this acceptance.
 

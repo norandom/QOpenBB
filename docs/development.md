@@ -1,6 +1,29 @@
 # Development toolchain
 
-Set up the locked tools before implementing or rebuilding QOpenBB. Use pnpm for maintained JavaScript verification, the existing protected Bun lock for the Full frontend, and uv/uvx for Python, with Aikido Safe Chain protecting dependency installation. The commands below retain the original WSL/Linux toolchain procedure; they do not establish native Windows installation support. Follow the [roadmap](roadmap.md) for current delivery gates.
+Run local development from `D:/Source/QOpenBB` with native Windows tools and Podman Compose. Dagger builds images only; no WSL shell is required. Keep disposable outputs, tool caches and browser caches under `D:/BuildArtifacts/QOpenBB`.
+
+## Native Windows entry point
+
+Use [`pipeline/dev.ps1`](../pipeline/dev.ps1) from the repository root. Its default tool metadata is `D:/BuildArtifacts/QOpenBB/native-foundation/resolved-tools.json`; the referenced local executables and protected locked dependencies must already be provisioned. `doctor` validates that setup and daemon access; it is not a fresh-machine installer. Accepted pins include Node 24.22.1, Python 3.13.15, Playwright 1.64.0 and Dagger CLI/SDK 0.21.8.
+
+```powershell
+./pipeline/dev.ps1 -Action doctor
+```
+
+| Action | Required inputs beyond provisioned tools |
+| --- | --- |
+| `build` | `-BuildSelection foundation`, `workspace` or `data-api`; `-Stage`, new `-Archive`, `-SdkPython`, `-EngineContainer` |
+| `start` | `-SessionPath`, `-WorkspaceImage`, `-DataImage` |
+| `verify` | `-SessionPath`; locked verification dependencies and explicit `PLAYWRIGHT_BROWSERS_PATH` |
+| `recreate`, `stop` | `-SessionPath` |
+
+Use the owned session and qualified image identities recorded in the [native migration closeout](../artifacts/reviewed/native-development-workflow/native-migration-closeout.md). `verify` checks synthetic infrastructure only. Separate [financial browser acceptance](../artifacts/reviewed/native-development-workflow/financial-browser-acceptance.md) covers Income, company selection, failure recovery and retained recreation with fresh login. These local images are qualified; this migration does not publish a new release or deploy to the private server. See [verification](verification.md) for Linux CI and evidence boundaries.
+
+## Historical WSL/Linux setup
+
+The following retained procedure and paths describe earlier WSL evidence, not the current Windows setup. Current native and Linux CI results are linked above; limitations below apply to their historical checkpoints.
+
+Set up the locked tools before implementing or rebuilding QOpenBB. Use pnpm for maintained JavaScript verification, the existing protected Bun lock for the Full frontend, and uv/uvx for Python, with Aikido Safe Chain protecting dependency installation. The commands below retain the original WSL/Linux toolchain procedure; they preserve historical installation evidence. Follow the [roadmap](roadmap.md) for current delivery gates.
 
 The maintained Full-image candidate at Workspace `dfda735c527663dd7ecc2f80af18e25843f575af` now uses native `backend-api/backend/pyproject.toml` and `uv.lock`, protected locked installation and readable `.py` application modules under CPython. Poetry/export and Cython are outside the maintained recipe; their retained historical lock/legacy Dockerfiles are not supported alternatives. This migration does not upgrade application dependencies. uv and uvx 0.12.5 are available; uvx supplies isolated tools rather than application-startup resolution. See [Workspace packaging](workspace-build.md) and [image builds](image-builds.md).
 
@@ -12,7 +35,7 @@ Use Linux on amd64, either WSL or a disposable Linux runner, with Git, CA certif
 
 Install uv 0.12.5, Dagger CLI 0.21.8, Docker client/engine 29.7.2 and Compose plugin 5.4.0 through host setup. Use the [uv release](https://github.com/astral-sh/uv/releases/tag/0.12.5), [Dagger release](https://github.com/dagger/dagger/releases/tag/v0.21.8), [Docker instructions](https://docs.docker.com/engine/install/) and [Compose release](https://github.com/docker/compose/releases/tag/v5.4.0). Match [tools.lock.json](../pipeline/tools.lock.json); an unversioned installer or a Dagger 1.0 beta is not the pinned setup. The Docker context must address the local daemon. The user running checks needs daemon access and write access to this checkout and its ignored artifacts.
 
-Keep installation and runner permissions outside core build and verification logic. Changing from GitHub to Gitea later changes this host setup and the thin workflow wrapper. Actual clean-runner execution remains unverified at this checkpoint.
+Keep installation and runner permissions outside core build and verification logic. Changing from GitHub to Gitea later changes this host setup and the thin workflow wrapper. Current Linux CI execution is linked from [verification](verification.md).
 
 ## Install project-local runtimes
 
@@ -87,7 +110,7 @@ The portable `qopenbb-ci` entry point provides package identity and [evidence va
 
 The base images in [tools.lock.json](../pipeline/tools.lock.json) use registry-returned manifest digests, initially recorded on 2026-10-16. A pinned input alone is not evidence that an application image builds or runs. The retained Task 1.7 headless browser/fixture and Task 1.8 image round-trip checkpoints have narrower scope than application acceptance; follow [verification infrastructure](verification.md) and the current milestone evidence.
 
-The Python project defaults to serial pytest with an xdist ceiling of two. Use at most `-n 2 --maxprocesses=2` when isolated tests exist. Playwright starts at one worker when its runner is implemented. Only one heavy install, build or suite may run at a time. See the [testing policy](../.kiro/steering/testing.md) for state isolation and evidence requirements; installed packages alone do not satisfy requirement 10.4.
+The Python project defaults to serial pytest with an xdist ceiling of two. Use at most `-n 2 --maxprocesses=2` when isolated tests exist. Playwright runs at one worker. Only one heavy install, build or suite may run at a time. See the [testing policy](../.kiro/steering/testing.md) for state isolation and evidence requirements; installed packages alone do not satisfy requirement 10.4.
 
 On 2026-10-16, protected frozen restoration succeeded in WSL with fresh Python caches and a fresh pnpm store: eight pipeline packages, 41 SDK packages and four verification packages. A protected uvx invocation also installed and ran pytest. An initial frozen Python restore correctly blocked pluggy 1.7.0 for package age; protected re-resolution selected pluggy 1.6.0 and platformdirs 4.13.0. No package-age bypass was used. This demonstrates this dependency setup; it does not demonstrate a clean CI runner, an application build or a browser journey.
 
