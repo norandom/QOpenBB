@@ -50,7 +50,7 @@ def image_identity(image: str) -> dict:
     if not re.fullmatch(r"sha256:[0-9a-f]{64}", image):
         raise ValueError("use exact local image ID, never a mutable tag")
     identity = json.loads(docker("image", "inspect", image))[0]
-    if identity["Id"] != image:
+    if identity["Id"] not in (image, image.removeprefix("sha256:")):
         raise ValueError("image ID mismatch")
     return identity
 

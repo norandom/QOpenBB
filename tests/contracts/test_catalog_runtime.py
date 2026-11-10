@@ -8,12 +8,46 @@ import pytest
 from qopenbb_ci.catalog import canonical, generate
 from qopenbb_ci.catalog_runtime import (
     capture_schema,
+    image_identity,
     upstream_widgets,
     verified_sources,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
 IMAGE = os.environ.get("QOPENBB_DATA_IMAGE")
+
+
+@pytest.mark.parametrize("prefix", ["sha256:", ""])
+def test_image_identity_accepts_exact_engine_id(monkeypatch, prefix):
+    digest = "a" * 64
+    identity = {"Id": prefix + digest, "Config": {"Labels": {"revision": "accepted"}}}
+    calls = []
+    def inspect(*args):
+        calls.append(args)
+        return json.dumps([identity])
+    monkeypatch.setattr("qopenbb_ci.catalog_runtime.docker", inspect)
+    assert image_identity("sha256:" + digest) == identity
+    assert calls == [("image", "inspect", "sha256:" + digest)]
+
+
+@pytest.mark.parametrize("reported", [
+    "sha256:" + "b" * 64, "b" * 64, "sha512:" + "a" * 64,
+    "a" * 63, "a" * 65, "A" * 64, "sha256:sha256:" + "a" * 64,
+    "a" * 64 + "\n", "latest", None, [], {}, 123,
+])
+def test_image_identity_rejects_different_or_malformed_engine_id(monkeypatch, reported):
+    monkeypatch.setattr("qopenbb_ci.catalog_runtime.docker", lambda *args: json.dumps([{"Id": reported}]))
+    with pytest.raises(ValueError, match="image ID mismatch"):
+        image_identity("sha256:" + "a" * 64)
+
+
+@pytest.mark.parametrize("image", ["latest", "a" * 64, "sha256:" + "a" * 63])
+def test_image_identity_requires_exact_external_id_before_inspection(monkeypatch, image):
+    def unexpected_inspection(*args):
+        pytest.fail("invalid external image must fail before inspection")
+    monkeypatch.setattr("qopenbb_ci.catalog_runtime.docker", unexpected_inspection)
+    with pytest.raises(ValueError, match="exact local image ID"):
+        image_identity(image)
 
 
 def test_modified_generator_is_rejected_before_execution(tmp_path):
