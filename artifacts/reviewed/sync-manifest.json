@@ -35307,6 +35307,14 @@
       "publishedSHA256": "484d19f36aeaedda974a20ae26ff1ddb787349f0a4e6d0f271cc942172befd5a",
       "bytes": 2080,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-build/podman-engine/accepted.md",
+      "sourceSHA256": "b575c056b25f3e437edf6c3d1623085c03a0252d1be74b92ea4e21562f43344f",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/podman-engine-identity.md",
+      "publishedSHA256": "b575c056b25f3e437edf6c3d1623085c03a0252d1be74b92ea4e21562f43344f",
+      "bytes": 1086,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36032,7 +36040,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171069379,
+  "total_payload_bytes": 171070465,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

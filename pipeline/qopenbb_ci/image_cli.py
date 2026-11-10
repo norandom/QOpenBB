@@ -112,7 +112,7 @@ class EngineVerificationError(ValueError):
 
 
 def verify_owned_engine(observed: dict, name: str, expected_id: str | None) -> None:
-    if observed['Name'] != '/' + name:
+    if observed['Name'] not in {name, '/' + name}:
         raise EngineVerificationError('engine_container_invalid')
     labels = observed['Config'].get('Labels')
     if not isinstance(labels, dict) or any(labels.get(key) != value for key, value in {
@@ -143,11 +143,11 @@ def verify_engine(reference: str, container: str | None = None,
             repository = repository.rsplit(':', 1)[0]
         # Classic Docker uses the config digest for Image; containerd can use the
         # manifest digest. Resolve the immutable reference through the same daemon.
-        if observed['Config']['Image'] != reference:
+        if immutable_reference(observed['Config']['Image']) != repository + '@sha256:' + digest:
             raise EngineVerificationError('engine_configured_reference_mismatch')
         if repository + '@sha256:' + digest not in image['RepoDigests']:
             raise EngineVerificationError('engine_locked_digest_missing')
-        if observed['Image'] != image['Id']:
+        if image_digest(observed['Image']) != image_digest(image['Id']):
             raise EngineVerificationError('engine_image_identity_mismatch')
         if not observed['State']['Running'] or (container is not None and observed['State']['Running'] is not True):
             raise EngineVerificationError('engine_not_running')
@@ -158,6 +158,21 @@ def verify_engine(reference: str, container: str | None = None,
     return {'container_id': observed['Id'], 'image_id': observed['Image'],
             'configured_reference': observed['Config']['Image'],
             'verified_repository_digest': repository + '@sha256:' + digest}
+
+
+def immutable_reference(reference: str) -> str:
+    if not isinstance(reference, str) or not re.fullmatch(r'[^\s@]+@sha256:[0-9a-f]{64}', reference):
+        raise EngineVerificationError('engine_configured_reference_mismatch')
+    repository, digest = reference.split('@')
+    if ':' in repository.rsplit('/', 1)[-1]:
+        repository = repository.rsplit(':', 1)[0]
+    return repository + '@' + digest
+
+
+def image_digest(value: str) -> str:
+    if not isinstance(value, str) or not re.fullmatch(r'(?:sha256:)?[0-9a-f]{64}', value):
+        raise EngineVerificationError('engine_inspection_invalid')
+    return value.removeprefix('sha256:')
 
 
 def write_report(path: Path, result: dict) -> None:

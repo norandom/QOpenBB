@@ -655,3 +655,62 @@ def test_source_rejects_modified_tracked_files_after_normalizing_root(tmp_path, 
     monkeypatch.setattr(sources, 'git', lambda path, *args: replies[args[-1]])
     with pytest.raises(ValueError, match='tracked source'):
         sources.identity(root, entry)
+
+@pytest.mark.parametrize('formatting', ['podman', 'docker-prefix', 'mixed-prefix'])
+def test_owned_engine_accepts_equivalent_native_inspection_forms(monkeypatch, formatting):
+    from qopenbb_ci import image_cli
+    name = 'qopenbb-dagger-engine-native-qualification-20261110122244'
+    reference = 'registry.dagger.io/engine:v0.21.8@sha256:c9c1a0a6546380983d42e8d75adde070a2a0935c54b498d8bc9045d9cb2ee336'
+    canonical = reference.replace(':v0.21.8@', '@')
+    image_id = '9f1537a7b5dff83c5404f199cbf73d3023bf5af0a2f3ffada4b68e26194a714f'
+    # These identity fields were observed in the qualification engine's Podman
+    # inspection payload, not inferred from Docker-shaped fixtures.
+    observed = {'Id': '8c14466951bf9ed3b5cbb31fbe971b0ede3e9ff9dd9bcd7ee2fe728898a96c13',
+                'Name': name, 'Image': image_id, 'State': {'Running': True},
+                'Config': {'Image': canonical, 'Labels': {
+                    'org.qopenbb.owner': 'qopenbb', 'org.qopenbb.purpose': 'dagger-engine',
+                    'org.qopenbb.session': name}}}
+    image = {'Id': image_id, 'RepoDigests': [canonical]}
+    if formatting != 'podman':
+        observed['Name'] = '/' + name
+        observed['Image'] = 'sha256:' + image_id
+    if formatting == 'docker-prefix':
+        image['Id'] = 'sha256:' + image_id
+        observed['Config']['Image'] = reference
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', lambda command, **kw:
+                        json.dumps([observed if command[1] == 'container' else image]))
+    result = image_cli.verify_engine(reference, name, None, observed['Id'])
+    assert result['container_id'] == observed['Id']
+    assert result['verified_repository_digest'] == canonical
+    assert result['image_id'].removeprefix('sha256:') == image_id
+
+
+@pytest.mark.parametrize('mutation,code', [
+    ('name', 'engine_container_invalid'), ('digest', 'engine_configured_reference_mismatch'),
+    ('repository', 'engine_configured_reference_mismatch'), ('image', 'engine_image_identity_mismatch'),
+    ('replacement', 'engine_instance_changed'), ('running', 'engine_not_running'),
+    ('malformed_image', 'engine_inspection_invalid')])
+def test_native_engine_normalization_retains_exact_identity_guards(explicit_export, monkeypatch, mutation, code):
+    image_cli, args, observed, image, _, _ = explicit_export
+    reference = observed['Config']['Image']
+    observed['Name'] = args.engine_container
+    observed['Config']['Image'] = reference.replace(':v0.21.8@', '@')
+    expected_id = observed['Id']
+    if mutation == 'name':
+        observed['Name'] = '//' + args.engine_container
+    elif mutation == 'digest':
+        observed['Config']['Image'] = observed['Config']['Image'].split('@')[0] + '@sha256:' + 'f' * 64
+    elif mutation == 'repository':
+        observed['Config']['Image'] = 'unowned.example/engine@' + reference.split('@')[1]
+    elif mutation == 'image':
+        observed['Image'] = 'sha256:' + 'f' * 64
+    elif mutation == 'replacement':
+        observed['Id'] = 'b' * 64
+    elif mutation == 'running':
+        observed['State']['Running'] = 1
+    elif mutation == 'malformed_image':
+        observed['Image'] = image['Id'] = 'sha256:short'
+    monkeypatch.setattr(image_cli.subprocess, 'check_output', lambda command, **kw:
+                        json.dumps([observed if command[1] == 'container' else image]))
+    with pytest.raises(image_cli.EngineVerificationError, match=code):
+        image_cli.verify_engine(reference, args.engine_container, None, expected_id)
