@@ -55,6 +55,10 @@ The initial provider batch and company selector are complete. The next [IA-A req
 
 No deployed application change or image rebuild is part of the IA-A verification batch. IA-A is complete as a reviewed gap assessment. IA-B input and workflow readiness remain open; the [periodic-query provenance design](../.kiro/specs/market-data-integrations/periodic-query-provenance-design.md) is owner-approved. Its approved [four-task plan](../.kiro/specs/market-data-integrations/periodic-query-provenance-tasks.md) has accepted source/native integration and four real FMP cases. The separately published repair passes image, catalog and offline packaged checks; independent delivery review passed on 2026-11-10. It repairs one existing metadata omission; broader financial compatibility remains open.
 
+
+- [x] Independently review the bounded [statement-period provenance contract](../.kiro/specs/market-data-integrations/statement-period-provenance-requirements.md).
+- [ ] Approve its bounded design/tasks and deliver Income, Balance and Cash period provenance; financial compatibility remains open.
+
 ## Subsequent workstreams
 
 | Spec | Responsibility | Sequence |

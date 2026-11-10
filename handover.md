@@ -19,6 +19,8 @@ These are locally qualified images. This migration did not publish a release or 
 
 ## Resume product work
 
+The next bounded [statement-period provenance contract](.kiro/specs/market-data-integrations/statement-period-provenance-requirements.md) passed independent Astra requirements review. Owner approval and bounded design/tasks are next. Source review found Income derives classification from the query; Cash already discloses unknown duration. The existing FRED observation_provenance contract is series-specific and must not be repurposed for statement rows. Preserve completed sanitizer and periodic-query work. No provider calls or production changes were made for this contract.
+
 Follow the [roadmap](docs/roadmap.md) and owning analyst/provider specs for the next investment-analysis slice. IA-A assessment and periodic-query provenance repair are accepted; broader IA-B financial compatibility and dashboard/model contracts remain open. Keep provider contracts separate from house modeling. Do not repeat completed infrastructure checks merely to refresh paperwork.
 
 Use [native development guidance](docs/development.md) from the repository. Tool metadata: D:/BuildArtifacts/QOpenBB/native-foundation/resolved-tools.json. Native pipeline Python: that directory's pipeline-venv/Scripts/python.exe. Use `-B` and repository pipeline on PYTHONPATH. Keep builds, dependencies and disposable outputs under D:/BuildArtifacts.

@@ -116,5 +116,19 @@
     },
     "tasks_approval": "Owner approved the reviewed four-task plan and implementation in conversation on 2026-11-06.",
     "completed_tasks": 4
+  },
+  "statement_period_provenance": {
+    "phase": "requirements-generated",
+    "requirements_document": "statement-period-provenance-requirements.md",
+    "requirements_review": {
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "document": "statement-period-provenance-review.md"
+    },
+    "requirements_approved": false,
+    "design_approved": false,
+    "tasks_approved": false,
+    "implementation_approved": false,
+    "scope": "Existing FMP Income, Balance and Cash period provenance; no calculations or IA-B readiness claim."
   }
 }
