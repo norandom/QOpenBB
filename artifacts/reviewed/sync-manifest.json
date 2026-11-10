@@ -35427,6 +35427,22 @@
       "publishedSHA256": "4940b1d643cf72dd5a31cff916604363d0a2725854c42fe2143bc35d18b53ba7",
       "bytes": 2531,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-financial-remaining/financial-browser-acceptance.md",
+      "sourceSHA256": "1961229804a47b6cafb04fb6575d8e81024a2ee96365d931e69f3ed3dae5a2ad",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/financial-browser-acceptance.md",
+      "publishedSHA256": "1961229804a47b6cafb04fb6575d8e81024a2ee96365d931e69f3ed3dae5a2ad",
+      "bytes": 2493,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-financial-remaining/final-review.md",
+      "sourceSHA256": "7f07a97954a1a638615e8b9ebda6b356e94e86c2e4e9f0c3358d733b88c6ae22",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/financial-browser-review.md",
+      "publishedSHA256": "7f07a97954a1a638615e8b9ebda6b356e94e86c2e4e9f0c3358d733b88c6ae22",
+      "bytes": 5331,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36152,7 +36168,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171111248,
+  "total_payload_bytes": 171119072,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

@@ -125,7 +125,7 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
   - _Depends: 9_
   - _Requirements: 1.1, 4.1, 4.2, 4.3, 5.2, 6.1_
 
-- [ ] 11. Integrate and verify the native application workflow
+- [x] 11. Integrate and verify the native application workflow
 - [x] 11.1 Join native commands and reviewed source identities
   - Integrate accepted runtime/browser/build consumers into the native entry point. Promote only the reviewed test-only Workspace fork commit and corresponding source-lock/inventory changes, preserving unrelated work.
   - Freeze the actual financial test node selection and its provider dependencies, query scope and maximum request budget before live execution. Confirm credential availability privately and whether that budget is authorized; obtain missing authorization before dependent work. No retry expansion or unrelated provider requests.
@@ -143,7 +143,7 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
   - _Depends: 11.1_
   - _Requirements: 1.1, 4.1, 4.2, 4.3, 5.2, 6.1_
 
-- [ ] 11.3 Accept the existing financial browser and recreated-state journeys
+- [x] 11.3 Accept the existing financial browser and recreated-state journeys
   - Start the exact qualified image pair and run the selected financial journeys for name/symbol selection, displayed values, linked refresh, independent comparison, save/reopen and fresh-login recreation with retained state. Preserve failure cases and financial assertions.
   - Require task 11.1's explicit authorized provider scope/budget and credentials for provider-backed cases. Missing inputs leave this task open; offline cases do not substitute for real financial acceptance.
   - Done: packaged readiness, selected financial journeys and recreated-state assertions pass with sanitized diagnostics, bounded workers/logins and owned cleanup. Existing test failures cannot be hidden by exclusions or replaced with health probes.
@@ -168,6 +168,8 @@ Foundation is `1 -> 2 -> 3.1 -> 3.2 -> 4`. After task 4, runtime `5 -> 6`, brows
 Every implementation handoff includes exact writable paths, prerequisite commits, the frozen design contracts, focused check command and size limits. A contract change pauses dependent lanes for review. No task is complete from planned checks, skipped provider cases or empty reports.
 
 ## Implementation notes
+
+- Task 11.3 accepted 2026-11-10: all selected financial journeys passed, including actual recreation and fresh login. Cumulative usage 58 FMP/6 FRED sends; zero new denials. Independent Astra review accepted. [Evidence](../../../artifacts/reviewed/native-development-workflow/financial-browser-acceptance.md). Earlier failed attempts below are historical and superseded by this acceptance.
 
 - Task 11.3 corrected attempt: Income browser journey passed; company selection failed at diagnostics because the guard omitted raw AAP Profile/Income requests deliberately exercised by the existing test. The stopped ledger records 24 FMP/2 FRED sends and two destination denials. The narrow helper correction is reviewed, with 25 offline checks reported passing. [Evidence](../../../artifacts/reviewed/native-development-workflow/financial-aap-scope.md). Synthetic/recreated-state checks remain unexecuted; request the added scope and retry approval, carrying forward usage rather than repeating Income or resetting the budget.
 
