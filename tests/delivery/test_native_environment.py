@@ -104,6 +104,7 @@ def test_selected_connection_keeps_actual_endpoint(monkeypatch, tmp_path):
     tool.write_bytes(b'executable')
     payload = '[{"Name":"chosen","URI":"ssh://selected","Identity":"key","Default":false}]'
     monkeypatch.setattr(native, 'run_command', lambda *args: subprocess.CompletedProcess(args, 0, payload, ''))
+    monkeypatch.setattr(native, 'podman_compose_endpoint', lambda repository, source, *args: source)
     result = native.selected_connection(Path.cwd(), {'QOPENBB_CONTAINER_CLI': str(tool), 'CONTAINER_CONNECTION': 'chosen'})
     assert result['CONTAINER_HOST'] == 'ssh://selected'
     assert result['CONTAINER_SSHKEY'] == 'key'
@@ -177,3 +178,87 @@ def test_child_bytecode_stays_external():
     assert child_environment(root, {'PYTHONPYCACHEPREFIX': configured})['PYTHONPYCACHEPREFIX'] == configured
     with pytest.raises(ValueError):
         child_environment(root, {'PYTHONPYCACHEPREFIX': 'C:/unsafe-cache'})
+
+
+@pytest.mark.parametrize('rootful', [True, False])
+def test_podman_compose_pipe_matches_selected_machine(monkeypatch, tmp_path, rootful):
+    from qopenbb_ci import native_environment as native
+    import json
+    tool = tmp_path / 'podman.exe'
+    tool.write_bytes(b'executable')
+    connection = {'Name': 'chosen-root', 'URI': 'ssh://root@127.0.0.1:1234/run/podman/podman.sock',
+                  'Identity': 'key', 'Default': True, 'IsMachine': True}
+    machine = {'Name': 'chosen', 'Rootful': True, 'State': 'running',
+               'SSHConfig': {'Port': 1234, 'IdentityPath': 'key', 'RemoteUsername': 'user'},
+               'ConnectionInfo': {'PodmanPipe': {'Path': r'\\.\pipe\chosen'}}}
+    if not rootful:
+        connection.update(Name='chosen', URI='ssh://user@127.0.0.1:1234/run/user/1000/podman/podman.sock')
+        machine['Rootful'] = False
+    def execute(argv, *args):
+        if argv[1:3] == ['machine', 'inspect']:
+            assert argv[3:] == ['chosen']
+        payload = [machine] if argv[1:3] == ['machine', 'inspect'] else [connection]
+        return subprocess.CompletedProcess(argv, 0, json.dumps(payload), '')
+    monkeypatch.setattr(native, 'run_command', execute)
+    source = {'QOPENBB_CONTAINER_CLI': str(tool), 'CONTAINER_HOST': connection['URI'],
+              'CONTAINER_SSHKEY': 'key', 'DOCKER_CONTEXT': 'wrong', 'DOCKER_HOST': 'tcp://wrong'}
+    result = native.selected_connection(Path.cwd(), source)
+    assert result['DOCKER_HOST'] == 'npipe:////./pipe/chosen'
+    assert result['CONTAINER_HOST'] == connection['URI']
+    assert result['CONTAINER_SSHKEY'] == 'key'
+    assert 'DOCKER_CONTEXT' not in result
+    assert 'DOCKER_CONTEXT' in source
+
+
+@pytest.mark.parametrize('mismatch', ['rootful', 'port', 'identity', 'state', 'name', 'pipe'])
+def test_podman_pipe_mapping_rejects_mismatch(monkeypatch, tmp_path, mismatch):
+    from qopenbb_ci import native_environment as native
+    import json
+    tool = tmp_path / 'podman.exe'
+    tool.write_bytes(b'executable')
+    connection = {'Name': 'chosen-root', 'URI': 'ssh://root@127.0.0.1:1234/run/podman/podman.sock',
+                  'Identity': 'key', 'Default': True, 'IsMachine': True}
+    machine = {'Name': 'chosen', 'Rootful': True, 'State': 'running',
+               'SSHConfig': {'Port': 1234, 'IdentityPath': 'key', 'RemoteUsername': 'user'},
+               'ConnectionInfo': {'PodmanPipe': {'Path': r'\\.\pipe\chosen'}}}
+    if mismatch == 'rootful': machine['Rootful'] = False
+    if mismatch == 'port': machine['SSHConfig']['Port'] = 4321
+    if mismatch == 'identity': machine['SSHConfig']['IdentityPath'] = 'other'
+    if mismatch == 'state': machine['State'] = 'stopped'
+    if mismatch == 'name': machine['Name'] = 'other'
+    if mismatch == 'pipe': machine['ConnectionInfo']['PodmanPipe']['Path'] = ''
+    def execute(argv, *args):
+        payload = [machine] if argv[1:3] == ['machine', 'inspect'] else [connection]
+        return subprocess.CompletedProcess(argv, 0, json.dumps(payload), '')
+    monkeypatch.setattr(native, 'run_command', execute)
+    with pytest.raises(ValueError, match='matching native Podman pipe'):
+        native.selected_connection(Path.cwd(), {'QOPENBB_CONTAINER_CLI': str(tool)})
+
+
+def test_doctor_rejects_compose_daemon_access_failure(monkeypatch):
+    from qopenbb_ci import native_environment as native
+    config = native.NativeEnvironment(Path.cwd(), Path('D:/BuildArtifacts/QOpenBB'), {}, {})
+    monkeypatch.setattr(native, 'container_command', lambda args, env: ['podman', *args])
+    monkeypatch.setattr(native, 'compose_command', lambda args, env: ['compose', *args])
+    def execute(argv, *args):
+        payload = '{}' if argv[1] == 'info' else '5.7.0'
+        return subprocess.CompletedProcess(argv, 255 if argv[1] == 'ls' else 0, payload, '')
+    monkeypatch.setattr(native, 'run_command', execute)
+    with pytest.raises(ValueError, match='Compose.*daemon'):
+        native.doctor(config)
+
+
+@pytest.mark.parametrize('selection', ['unregistered-host', 'wrong-key', 'ambiguous'])
+def test_podman_selection_never_falls_back_to_default(monkeypatch, tmp_path, selection):
+    from qopenbb_ci import native_environment as native
+    import json
+    tool = tmp_path / 'podman.exe'
+    tool.write_bytes(b'executable')
+    connection = {'Name': 'chosen', 'URI': 'ssh://selected', 'Identity': 'key', 'Default': True}
+    source = {'QOPENBB_CONTAINER_CLI': str(tool)}
+    if selection == 'unregistered-host': source['CONTAINER_HOST'] = 'ssh://other'
+    if selection == 'wrong-key': source['CONTAINER_SSHKEY'] = 'other'
+    entries = [connection, connection] if selection == 'ambiguous' else [connection]
+    monkeypatch.setattr(native, 'run_command', lambda *args: subprocess.CompletedProcess(args, 0, json.dumps(entries), ''))
+    with pytest.raises(ValueError):
+        native.selected_connection(Path.cwd(), source)

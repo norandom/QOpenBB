@@ -8,6 +8,7 @@ import re
 import stat
 import subprocess
 import sys
+from urllib.parse import urlsplit
 from collections.abc import Mapping, Sequence
 from .container_command import compose_command, container_command, resolve_executable
 
@@ -100,14 +101,42 @@ def selected_docker_context(repository: Path, source: dict[str, str], executable
     return source
 
 
+def podman_compose_endpoint(repository: Path, source: dict[str, str], executable: Path,
+                            selected: dict, probe_env: dict[str, str]) -> dict[str, str]:
+    """Map only the selected machine's active rootful/rootless socket to its pipe."""
+    machine_name = selected['Name'].removesuffix('-root') if urlsplit(selected['URI']).username == 'root' else selected['Name']
+    probe = run_command([str(executable), 'machine', 'inspect', machine_name], repository, probe_env)
+    if probe.returncode:
+        raise ValueError('Cannot inspect a matching native Podman pipe')
+    endpoint = urlsplit(selected['URI'])
+    matches = []
+    for machine in json.loads(probe.stdout):
+        ssh = machine.get('SSHConfig', {})
+        rootful = machine.get('Rootful') is True
+        name = machine.get('Name', '') + ('-root' if rootful else '')
+        socket = endpoint.path == '/run/podman/podman.sock' if rootful else bool(re.fullmatch(r'/run/user/\d+/podman/podman.sock', endpoint.path))
+        pipe = machine.get('ConnectionInfo', {}).get('PodmanPipe', {}).get('Path', '')
+        if (selected.get('IsMachine') and selected['Name'] == name and machine.get('State') == 'running'
+                and endpoint.scheme == 'ssh' and endpoint.hostname in ('127.0.0.1', 'localhost', '::1')
+                and endpoint.port == ssh.get('Port') and socket
+                and endpoint.username == ('root' if rootful else ssh.get('RemoteUsername'))
+                and Path(selected['Identity']).resolve() == Path(ssh.get('IdentityPath', '')).resolve()
+                and pipe.startswith('\\\\.\\pipe\\') and len(pipe) > len('\\\\.\\pipe\\')):
+            matches.append('npipe://' + pipe.replace('\\', '/'))
+    if len(matches) != 1:
+        raise ValueError('Selected connection has no unambiguous matching native Podman pipe')
+    source['DOCKER_HOST'] = matches[0]
+    for key in ('DOCKER_CONTEXT', 'DOCKER_TLS_VERIFY', 'DOCKER_CERT_PATH'):
+        source.pop(key, None)
+    return source
+
+
 def selected_connection(repository: Path, source: Mapping[str, str]) -> dict[str, str]:
     """Read the operator-selected Podman connection before isolating build homes."""
     result = dict(source)
     executable = resolve_executable(source['QOPENBB_CONTAINER_CLI'])
     if 'podman' not in executable.stem.lower():
         return selected_docker_context(repository, result, executable)
-    if source.get('CONTAINER_HOST'):
-        return result
     keys = (*SYSTEM_KEYS, *CONNECTION_KEYS, 'HOME', 'USERPROFILE', 'APPDATA', 'LOCALAPPDATA')
     probe_env = {key: value for key, value in source.items() if key.upper() in {item.upper() for item in keys}}
     probe = run_command([str(executable), 'system', 'connection', 'list', '--format', 'json'], repository, probe_env)
@@ -115,13 +144,19 @@ def selected_connection(repository: Path, source: Mapping[str, str]) -> dict[str
         raise ValueError('Cannot inspect selected Podman connection')
     connections = json.loads(probe.stdout)
     name = source.get('CONTAINER_CONNECTION')
-    selected = [item for item in connections if item['Name'] == name] if name else [item for item in connections if item['Default']]
+    host = source.get('CONTAINER_HOST')
+    selected = ([item for item in connections if item['URI'] == host] if host else
+                [item for item in connections if item['Name'] == name] if name else
+                [item for item in connections if item['Default']])
     if len(selected) != 1:
         raise ValueError('Selected Podman connection is missing or ambiguous')
     result.pop('CONTAINER_CONNECTION', None)
     result['CONTAINER_HOST'] = selected[0]['URI']
-    result['CONTAINER_SSHKEY'] = selected[0]['Identity']
-    return result
+    identity = source.get('CONTAINER_SSHKEY', selected[0]['Identity'])
+    if Path(identity).resolve() != Path(selected[0]['Identity']).resolve():
+        raise ValueError('Selected Podman identity does not match its registered connection')
+    result['CONTAINER_SSHKEY'] = identity
+    return podman_compose_endpoint(repository, result, executable, selected[0], probe_env)
 
 
 def resolve_environment(repository: Path, artifacts: Path = ARTIFACTS, tools_file: Path | None = None) -> NativeEnvironment:
@@ -164,9 +199,15 @@ def doctor(config: NativeEnvironment) -> dict:
     match = re.search(r'(\d+)\.(\d+)\.(\d+)', compose.stdout)
     if not match or tuple(map(int, match.groups())) < (2, 24, 4):
         raise ValueError('Compose >= 2.24.4 is required for explicit override semantics')
+    access = run_command(compose_command(['ls', '--format', 'json'], config.environment), config.repository, config.environment)
+    if access.returncode:
+        raise ValueError(f'Compose provider cannot access selected daemon (exit {access.returncode})')
+    if not isinstance(json.loads(access.stdout), list):
+        raise ValueError('Compose provider returned invalid daemon access evidence')
     return {'status': 'ready', 'repository': str(config.repository), 'artifacts': str(config.artifacts),
             'tools': versions, 'compose_version': compose.stdout.strip(),
             'connection': {'endpoint': config.environment.get('CONTAINER_HOST') or config.environment.get('DOCKER_HOST'),
+                           'compose_endpoint': config.environment.get('DOCKER_HOST'),
                            'daemon_id': daemon.get('ID') or daemon.get('host', {}).get('hostname')},
             'scope': 'Native preflight only; build/runtime/browser acceptance remains separate'}
 
