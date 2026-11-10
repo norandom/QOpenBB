@@ -31,6 +31,7 @@ Current [historical gallery milestone](.kiro/specs/analyst-workspace/historical-
 Native Windows developer workflow ([plan](.kiro/specs/native-development-workflow/tasks.md)):
 
 - [x] Qualify pinned tools, Podman/Compose connectivity and the native command entry.
+- [x] Verify Windows user-only private-file protection and checked-handle access.
 - [ ] Integrate protected sessions, Compose runtime, Dagger builds and Playwright, then verify Linux compatibility.
 
 [Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.

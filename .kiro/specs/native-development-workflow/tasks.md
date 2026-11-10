@@ -12,7 +12,7 @@ Use Sol for implementation/routine review, Astra for private-storage and difficu
 | --- | --- |
 | 1 | Tool metadata and native tool evidence; controller owns `pipeline/tools.lock.json` and inventory/checker baseline |
 | 2 | `pipeline/dev.ps1`, `pipeline/qopenbb_ci/native_environment.py`, `container_command.py`, focused environment tests; approved [inventory split amendment](inventory-split-amendment.md) includes shared checker reader/tests and controller-owned configuration extraction |
-| 3.1-3.2 | `pipeline/qopenbb_ci/session_files.py`, `windows_private_files.py`, private-file tests; sequential ownership |
+| 3.1-3.2 | `pipeline/qopenbb_ci/session_files.py`, `windows_private_files.py`, `windows_security.py` (Windows API/security-descriptor bindings), private-file tests; sequential ownership |
 | 4 | `pipeline/qopenbb_ci/runtime_descriptor.py`, descriptor/IPC tests; serialized completion of task 3 storage IPC |
 | 5-6 | `pipeline/qopenbb_ci/compose_runtime.py`, `tests/delivery/compose.runtime.yaml`, `workspace_runtime.py`, `workspace-runtime.ps1`, `task25_runtime.py`, Compose tests |
 | 7-8 | `verification/runner.ts`, `runner.py`, `evidence.ts`, `playwright.config.ts`, `financial-workspace.config.ts`, new `runtime-descriptor.ts`, `tests/e2e/financial-workspace.spec.mts`, isolated Workspace fork `terminalpro/tests/e2e/live-chart/fixtures.ts`, focused browser tests |
@@ -44,7 +44,7 @@ Windows disposable outputs go under `D:/BuildArtifacts/QOpenBB` from repository 
   - _Requirements: 1.1, 1.2, 1.3, 5.1, 5.2, 5.3, 6.4_
 
 - [ ] 3. Protect private session storage
-- [ ] 3.1 Establish verified Windows directory and file protection
+- [x] 3.1 Establish verified Windows directory and file protection
   - Implement protected directory creation, intended-user ownership/DACL verification, handle-based no-reparse access and confined reads/removals. Write no credentials before verified protection.
   - Done: actual Windows API tests prove user-only protection and checked-handle reads; broad/inherited/null ACL, wrong owner, junction/replaced path and unsupported protection fail closed before credential writes.
   - Independent Astra review and whole-file 400/300/50 checks pass for the Windows security helper. No hand-maintained security logic is excluded as test code.
@@ -171,3 +171,4 @@ Every implementation handoff includes exact writable paths, prerequisite commits
 
 - Task 1 accepted 2026-11-10: protected pinned native environments, explicit Podman/Compose connectivity and the existing combined size gate passed; independent Sol review approved. [Foundation evidence](../../../artifacts/reviewed/native-development-workflow/foundation.md). Use the actual paths in `D:/BuildArtifacts/QOpenBB/native-foundation/resolved-tools.json`. The pinned Dagger executable needs process-local `FORCE_DARK_MODE=1` for noninteractive version detection. Native engine execution and application/browser acceptance remain later tasks. The exact clean checker snapshot avoids overwriting existing Linux dependencies and unrelated work.
 - Task 2 accepted 2026-11-10: native doctor and 16 focused checks pass (one POSIX-only skip). Sol accepted the entry/environment implementation; Astra accepted the owner-approved [inventory split](inventory-split-amendment.md), with 67 focused checks passing and three platform-related skips. The combined gate passes for 83 controller files. [Evidence and limits](../../../artifacts/reviewed/native-development-workflow/entry.md). Runtime/build consumers remain task 11 integration; task 3.1 is next.
+- Task 3.1 accepted 2026-11-10: 13 actual Windows security tests and 16 environment checks passed (one POSIX-only skip). Astra independently repeated the 13 Windows checks and passed three additional failure/handle probes. Ancestor pinning requires directory-list access; READ_CONTROL alone did not prevent rename. Both helpers and the 85-file combined gate pass caps. [Evidence and limits](../../../artifacts/reviewed/native-development-workflow/windows-private.md). Task 3.2 owns atomic replacement and portable lifecycle; manage destination handle sharing explicitly.

@@ -1,0 +1,13 @@
+# Windows private-file protection
+
+Task 3.1 passed independent Astra review on 2026-11-10. It provides the Windows protection primitives for disposable native test sessions. The helper creates directories and files with an explicit protected DACL granting full access only to the current user, then verifies owner and permissions before writing payloads. This is a storage prerequisite; Compose and browser integration remain pending.
+
+Directory handles pin the ancestor chain against ordinary rename/replacement. File reads and deletion use the same handles whose type, resolved path and access permissions were checked. Reparse points, extra hard links, unsafe filenames, broad/null/inherited ACLs and filesystems without persistent ACL support are rejected. Administrative takeover is outside this claim.
+
+The native focused run passed 29 tests, including all 13 new Windows cases and 16 existing environment cases; one POSIX-only environment case was skipped. A real rename check showed that a metadata-only directory handle was insufficient, and the final helper adds directory-list access to prevent replacement. Owner-mismatch validation compares the actual handle owner with an alternate intended SID; assigning another owner requires privileges absent from this session and is not claimed as tested takeover.
+
+The combined size gate passed for 85 controller files with zero errors or violations, using clean `29e77d8` plus the two new production helpers. After removing trailing blank lines, the Windows file helper measures 178 physical lines, 136 logical units and 13 maximum callable units; security bindings measure 142/110/22. Empty fork manifests declare unchanged fork scope; there is no fork remeasurement claim. Unrelated inventory and renderer edits remain excluded from this acceptance.
+
+Raw RED/GREEN results and the combined report remain under `D:/BuildArtifacts/QOpenBB/windows-private` (`red.log`, `final.log`, `combined.json`). Independent review in `review/review.md` accepted the code and reproduced all 13 Windows checks. Three additional probes passed: checked-handle read with rename prevention, partial-file cleanup on flush failure, and rejection before write when persistent-ACL support is reported absent. The unsupported-filesystem case injects a capability failure; no unsupported physical volume was tested. Only this sanitized record is published; tests use synthetic payloads and owned external temporary paths.
+
+The [task plan](../../../.kiro/specs/native-development-workflow/tasks.md) keeps atomic replacement and portable session lifecycle in task 3.2, followed by descriptor/IPC and runtime/browser integration. No provider requests, image builds, VM changes or server deployment occurred in this task.
