@@ -35371,6 +35371,30 @@
       "publishedSHA256": "a1affd1a9df8cf5eaac0035c0dfade702c2fe61fb41a3657da6ad3354b19b498",
       "bytes": 6768,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-financial/dns-portability.md",
+      "sourceSHA256": "ae14ebb33b25015fe054deab0cc32cee2a6aee7d181db717cff74e4677befdc3",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/podman-dns.md",
+      "publishedSHA256": "ae14ebb33b25015fe054deab0cc32cee2a6aee7d181db717cff74e4677befdc3",
+      "bytes": 3088,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-financial/dns-review.md",
+      "sourceSHA256": "8d8c5030e36c1c1b229b272eaed541de1a3c44c8008eb2b29b1453c190479c30",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/podman-dns-review.md",
+      "publishedSHA256": "8d8c5030e36c1c1b229b272eaed541de1a3c44c8008eb2b29b1453c190479c30",
+      "bytes": 3549,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/native-dns/pin-review.md",
+      "sourceSHA256": "b5d69a83cdc9b9e490843f51e6f65a6e38a15af9a2abe38dddb9fba53a0399b7",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/podman-dns-pin-review.md",
+      "publishedSHA256": "b5d69a83cdc9b9e490843f51e6f65a6e38a15af9a2abe38dddb9fba53a0399b7",
+      "bytes": 1996,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36096,7 +36120,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171089718,
+  "total_payload_bytes": 171098351,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
