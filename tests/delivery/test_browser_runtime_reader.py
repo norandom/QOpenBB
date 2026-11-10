@@ -99,3 +99,19 @@ def test_reader_rejects_checked_but_not_ready_state(tmp_path):
     assert result.returncode != 0
     assert result.stdout == b''
     assert b'Runtime descriptor read refused' in result.stderr
+
+
+@pytest.mark.skipif(os.name == 'nt', reason='Linux Node child stdout transport diagnosis')
+def test_node_captured_stdout_is_anonymous_unix_stream():
+    probe = ("import os,socket,json; "
+             "s=socket.socket(fileno=os.dup(1)); "
+             "print(json.dumps([int(s.family),int(s.type),s.getsockname(),s.getpeername()]))")
+    script = ("const {execFile}=require('node:child_process'); "
+              "execFile(process.argv[1],['-B','-c',process.argv[2]],"
+              "{encoding:'utf8'},(error,stdout)=>{if(error)process.exitCode=1;"
+              "else process.stdout.write(stdout);});")
+    result = subprocess.run(['node', '-e', script, os.sys.executable, probe],
+                            capture_output=True, text=True, timeout=30)
+    assert result.returncode == 0, result.stderr
+    import socket
+    assert json.loads(result.stdout) == [int(socket.AF_UNIX), int(socket.SOCK_STREAM), '', '']

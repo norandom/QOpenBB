@@ -1,6 +1,8 @@
 """Byte-level private session storage; descriptor schema belongs to its consumer."""
 import os
 from pathlib import Path
+import socket
+import stat
 
 if os.name == 'nt':
     from .windows_private_files import PrivateDirectory, PrivateStorageError
@@ -31,10 +33,33 @@ def remove_private(path: Path) -> None:
         directory.remove_file(path.name)
 
 
+def captured_private_output(stream) -> bool:
+    if stream.isatty():
+        return False
+    fd = stream.fileno()
+    mode = os.fstat(fd).st_mode
+    if stat.S_ISFIFO(mode):
+        return True
+    if os.name == 'nt' or not stat.S_ISSOCK(mode):
+        return False
+    # Node uses anonymous Unix stream socketpairs for captured child stdio.
+    duplicate = os.dup(fd)
+    try:
+        connection = socket.socket(fileno=duplicate)
+    except OSError:
+        os.close(duplicate)
+        return False
+    try:
+        with connection:
+            return (connection.family == socket.AF_UNIX and connection.type == socket.SOCK_STREAM
+                    and connection.getsockname() == '' and connection.getpeername() == '')
+    except OSError:
+        return False
+
+
 def main(argv=None) -> int:
     import argparse
     import json
-    import stat
     import sys
 
     from .runtime_descriptor import read_private as read_descriptor, public_projection
@@ -49,8 +74,7 @@ def main(argv=None) -> int:
     parser.add_argument('--private-ipc', action='store_true')
     args = parser.parse_args(argv)
     try:
-        if args.private_ipc and (sys.stdout.isatty()
-                or not stat.S_ISFIFO(os.fstat(sys.stdout.fileno()).st_mode)):
+        if args.private_ipc and not captured_private_output(sys.stdout):
             raise ValueError('private output requires a captured pipe')
         descriptor = read_descriptor(Path(args.path))
         result = descriptor.model_dump(mode='json') if args.private_ipc else public_projection(descriptor)

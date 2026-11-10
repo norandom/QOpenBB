@@ -145,3 +145,59 @@ def test_posix_permissions_symlinks_and_changed_directory(tmp_path):
         with pytest.raises(OSError):
             session.create_file('new', b'never')
     assert not (root / 'new').exists()
+
+
+@pytest.mark.skipif(os.name == 'nt', reason='POSIX descriptor socket semantics')
+def test_private_output_accepts_only_anonymous_unix_stream(tmp_path):
+    import socket
+    from types import SimpleNamespace
+    def stream(connection):
+        return SimpleNamespace(isatty=lambda: False, fileno=connection.fileno)
+    first, second = socket.socketpair(socket.AF_UNIX, socket.SOCK_STREAM)
+    with first, second:
+        assert storage.captured_private_output(stream(first))
+        first.send(b'captured')
+        assert second.recv(8) == b'captured'
+    first, second = socket.socketpair(socket.AF_UNIX, socket.SOCK_DGRAM)
+    with first, second:
+        assert not storage.captured_private_output(stream(first))
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as network:
+        network.bind(('127.0.0.1', 0))
+        network.listen()
+        assert not storage.captured_private_output(stream(network))
+    with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as disconnected:
+        assert not storage.captured_private_output(stream(disconnected))
+    with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as named:
+        named.bind(str(tmp_path / 'named.sock'))
+        named.listen()
+        with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as client:
+            client.connect(str(tmp_path / 'named.sock'))
+            accepted, _ = named.accept()
+            with accepted:
+                assert not storage.captured_private_output(stream(accepted))
+                assert not storage.captured_private_output(stream(client))
+    with (tmp_path / 'regular').open('w') as regular:
+        assert not storage.captured_private_output(regular)
+
+
+@pytest.mark.parametrize('family,kind,local,peer,accepted', [
+    (1, 1, '', '', True), (2, 1, '', '', False), (1, 2, '', '', False),
+    (1, 1, '/named', '', False), (1, 1, '', '/named', False),
+    (1, 1, b'\x00abstract', '', False),
+])
+def test_private_socket_boundary_on_native_host(monkeypatch, family, kind, local, peer, accepted):
+    import stat
+    from types import SimpleNamespace
+    class Connection:
+        def __enter__(self): return self
+        def __exit__(self, *args): pass
+        def getsockname(self): return local
+        def getpeername(self): return peer
+    connection = Connection()
+    connection.family, connection.type = family, kind
+    monkeypatch.setattr(storage, 'os', SimpleNamespace(name='posix', dup=lambda fd: fd,
+        fstat=lambda fd: SimpleNamespace(st_mode=stat.S_IFSOCK)))
+    monkeypatch.setattr(storage, 'socket', SimpleNamespace(AF_UNIX=1, SOCK_STREAM=1,
+        socket=lambda **kwargs: connection))
+    output = SimpleNamespace(isatty=lambda: False, fileno=lambda: 123)
+    assert storage.captured_private_output(output) is accepted
