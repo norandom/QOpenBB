@@ -16,6 +16,7 @@ from urllib.parse import parse_qsl, urlsplit
 
 VERSION = 1
 MAXIMA = {"fmp": 80, "fred": 16}
+_SYMBOLS = ("AAPL", "MSFT", "AAP")
 LEDGER = "/tmp/qopenbb-financial-budget.json"
 DENIALS = ("destination", "ledger", "persistence", "exhausted", "process")
 
@@ -87,10 +88,10 @@ def fmp_query(path, query):
                 and query["query"] in ("Microsoft", "MSFT", "Apple", "AAP", "AAPL")
                 and query["limit"] in ("5", "10", "20", "100"))
     if path == "/stable/profile":
-        return set(query) == {"symbol", "apikey"} and query["symbol"] in ("AAPL", "MSFT")
+        return set(query) == {"symbol", "apikey"} and query["symbol"] in _SYMBOLS
     return (path == "/stable/income-statement"
             and set(query) == {"symbol", "period", "limit", "apikey"}
-            and query["symbol"] in ("AAPL", "MSFT")
+            and query["symbol"] in _SYMBOLS
             and query["period"] in ("annual", "quarter") and query["limit"] in ("5", "10"))
 
 

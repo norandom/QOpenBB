@@ -27,6 +27,37 @@ FMP = "https://financialmodelingprep.com/stable/profile?symbol=AAPL&apikey=SECRE
 FRED = "https://api.stlouisfed.org/fred/series?series_id=GDP&file_type=json&api_key=SECRET"
 
 
+@pytest.mark.parametrize("suffix", [
+    "profile?symbol=AAP&apikey=SECRET",
+    "income-statement?symbol=AAP&period=annual&limit=5&apikey=SECRET",
+    "income-statement?symbol=AAP&period=quarter&limit=10&apikey=SECRET",
+])
+def test_raw_aap_selection_reserves_existing_company_endpoints(tmp_path, suffix):
+    m = helper()
+    guard = m.Budget(tmp_path / "ledger", "approved-run", "initial")
+    guard.initialize({"fmp": 24, "fred": 2})
+    guard.reserve(request("https://financialmodelingprep.com/stable/" + suffix))
+    assert json.loads(guard.path.read_text())["counts"] == {"fmp": 25, "fred": 2}
+    assert m.MAXIMA == {"fmp": 80, "fred": 16}
+
+
+@pytest.mark.parametrize("suffix", [
+    "profile?symbol=TSLA&apikey=SECRET",
+    "income-statement?symbol=TSLA&period=annual&limit=5&apikey=SECRET",
+    "balance-sheet-statement?symbol=AAP&period=annual&limit=5&apikey=SECRET",
+    "income-statement?symbol=AAP&period=annual&limit=100&apikey=SECRET",
+    "income-statement?symbol=AAP&period=monthly&limit=5&apikey=SECRET",
+    "profile?symbol=AAP&apikey=SECRET&limit=5",
+])
+def test_raw_aap_selection_preserves_destination_boundaries(tmp_path, suffix):
+    m = helper()
+    guard = m.Budget(tmp_path / "ledger", "approved-run", "initial")
+    guard.initialize({"fmp": 24, "fred": 2})
+    with pytest.raises(m.BudgetDenied, match="destination"):
+        guard.reserve(request("https://financialmodelingprep.com/stable/" + suffix))
+    assert json.loads(guard.path.read_text())["counts"] == {"fmp": 24, "fred": 2}
+
+
 def test_ceiling_concurrency_failed_sends_and_recreation(tmp_path):
     m = helper()
     ledger = tmp_path / "ledger.json"

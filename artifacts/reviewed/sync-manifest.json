@@ -35411,6 +35411,22 @@
       "publishedSHA256": "3541b4047512056166088954ce3e4b1d6fa89658c3a1c2b684184426db9c1e45",
       "bytes": 3614,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/aap-guard/acceptance.md",
+      "sourceSHA256": "9a3012703d92f0dede818140f9d36799babb839b4c5e7ce6a1952b98d10f5320",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/financial-aap-scope.md",
+      "publishedSHA256": "9a3012703d92f0dede818140f9d36799babb839b4c5e7ce6a1952b98d10f5320",
+      "bytes": 3463,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/aap-guard/review.md",
+      "sourceSHA256": "4940b1d643cf72dd5a31cff916604363d0a2725854c42fe2143bc35d18b53ba7",
+      "publishedpath": "artifacts/reviewed/native-development-workflow/aap-guard-review.md",
+      "publishedSHA256": "4940b1d643cf72dd5a31cff916604363d0a2725854c42fe2143bc35d18b53ba7",
+      "bytes": 2531,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36136,7 +36152,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171105254,
+  "total_payload_bytes": 171111248,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

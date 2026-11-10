@@ -45,6 +45,8 @@ Native Windows developer workflow ([plan](.kiro/specs/native-development-workflo
 - [x] Correct Podman DNS routing and verify all eleven native widget definitions through the rebuilt Workspace image. [Acceptance](artifacts/reviewed/native-development-workflow/podman-dns-acceptance.md).
 - [ ] Integrate protected sessions, Compose runtime, Dagger builds and Playwright, then verify Linux compatibility.
 
+The corrected-image Income browser journey passed. Company-selection acceptance needs a reviewed AAP guard-scope correction and approval for the remaining run. [Current evidence](artifacts/reviewed/native-development-workflow/financial-aap-scope.md).
+
 [Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.
 
 The current alpha uses locked native uv backend packaging, readable Python application source under CPython and embedded Valkey 9.0.7. [Local runtime acceptance](artifacts/reviewed/python-source-packaging/runtime-review.md) covers gallery save/fresh-login reopen and login/password changes; a separate synthetic Redis snapshot/RQ and database-marker probe covers recreation. [Publication verification](artifacts/reviewed/python-source-packaging/publication-review.md) checks the released image identities and public pulls, without repeating browser acceptance on CI image bytes.
