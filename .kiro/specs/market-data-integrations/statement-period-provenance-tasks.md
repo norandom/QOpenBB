@@ -57,7 +57,7 @@ The owner approved requirements and design on 2026-11-10. This seven-task plan i
   - _Depends: 5_
   - _Requirements: 3.1, 3.3, 4.2, 4.3_
 
-- [ ] 7. Publish and close the accepted feature milestone
+- [x] 7. Publish and close the accepted feature milestone
   - Push reviewed per-task commits and use the existing milestone workflow once with image builds enabled. Dagger builds only; verify actual publication and anonymous image identities, canonical installed catalog and portable Linux checks. Do not equate a dispatched workflow with successful release.
   - Bind CI images to accepted source and document local candidate versus published image evidence. Preserve prior release availability; do not claim owner-server deployment. If source/schema drift appears, leave publication acceptance open and diagnose that drift.
   - Done: tagged prerelease, public images and manifest agree with accepted sources, affected packaged/contract checks pass, and independent delivery review accepts the milestone. Sync selected sanitized evidence before selective commit; update README/docs checkboxes, breadth and spec progress, and publish the strict-client migration note. Broader IA-B readiness remains open.
@@ -117,3 +117,5 @@ The unrelated catalog/inventory working-tree changes and .openidea directory are
 - Task 6 accepted 2026-11-10: all three statement widgets pass real-data period/refresh/save/fresh-login checks, with 16 FMP sends in the final run, zero FRED, verified catalog/source identities and owned cleanup. [Evidence](../../../artifacts/reviewed/statement-period-provenance/packaged.md). The reused Workspace labels are historical; rebuild both release images from the final lock in task 7.
 
 - Task 7 delivery repair: initial workflow `42876893136` passed application checks but failed before building because executable resolution dereferenced the SDK virtual-environment Python. Preserve its validated launch path for SDK callers; native 170-pass suite and independent offline Linux regression accepted. [Review](../../../artifacts/reviewed/statement-period-provenance/sdk-review.md). Publication remains open until the corrected workflow and published-image checks pass.
+
+- Task 7 accepted 2026-11-10: corrected workflow `42878062405` published `alpha-42878062405-1`; three public assets, six anonymous pulls, nine installed source matches, six canonical contract matches and four offline packaged checks pass. Independent Astra delivery review accepted. [Publication](../../../artifacts/reviewed/statement-period-provenance/publication.md). All seven tasks are closed; owner-server deployment and IA-B remain outside this acceptance.

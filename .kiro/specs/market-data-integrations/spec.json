@@ -118,7 +118,7 @@
     "completed_tasks": 4
   },
   "statement_period_provenance": {
-    "phase": "implementing",
+    "phase": "completed",
     "requirements_document": "statement-period-provenance-requirements.md",
     "requirements_review": {
       "status": "PASS",
@@ -143,7 +143,7 @@
     "design_approval": "Owner approved reviewed bounded design in conversation on 2026-11-10; task generation authorized.",
     "tasks_document": "statement-period-provenance-tasks.md",
     "executable_tasks": 7,
-    "completed_tasks": 6,
+    "completed_tasks": 7,
     "tasks_review": {
       "status": "PASS",
       "mode": "independent",
@@ -152,7 +152,13 @@
       "draft_sha256": "5fe603eb19769a8eb79d6abc150a5861dc11f501e10fb3d96c9137eed3c79a7a",
       "repair_passes": 0
     },
-    "current_task": "7 (milestone publication and canonical published-image verification)",
-    "tasks_approval": "Owner approved the seven-task plan and implementation in conversation on 2026-11-10."
+    "current_task": null,
+    "tasks_approval": "Owner approved the seven-task plan and implementation in conversation on 2026-11-10.",
+    "release": "alpha-42878062405-1",
+    "implementation_review": {
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "document": "../../../artifacts/reviewed/statement-period-provenance/delivery-review.md"
+    }
   }
 }

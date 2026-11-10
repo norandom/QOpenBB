@@ -21,7 +21,7 @@ Latest accepted chart milestone: [alpha-40652638534-1](https://github.com/norand
 
 The completed prototype batch repairs four observed integration gaps: an absent first-login questionnaire returns HTTP 200/null, the data image packages and serves its existing widget/app catalog, optional external app previews use Workspace's existing fallback, and the data-only backend advertises an empty agent list. [alpha-40467871625-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-40467871625-1) passes CI, release-asset checks, six anonymous pulls and the fresh-account assembled Compose journey. P3 and the local P4 installation rehearsal are accepted for onboarding, later login, live annual AAPL income values, refresh and clean diagnostics. The generic-widget required-symbol guard, broader provider acceptance, analyst persistence and backup/restore remain open. Current owner-reported startup is recorded below. AI remains a separate spec. See the [application review](../artifacts/reviewed/prototype-onboarding/application-review.md), [application result](../artifacts/reviewed/prototype-onboarding/application.json) and [delivery status](prototype-delivery.md#earlier-prototype-repair).
 
-Latest publication: [alpha-42231784072-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42231784072-1) carries the periodic-query metadata repair. Public assets and image pulls, canonical catalog generation and offline packaged API checks passed; independent delivery review passed on 2026-11-10 in the [milestone receipt](../artifacts/reviewed/periodic-query-provenance/accepted.md). No new Workspace browser or owner-server acceptance is claimed.
+Latest publication: [alpha-42878062405-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42878062405-1) adds statement-period provenance. Public assets and anonymous image pulls, exact catalog comparison and four offline packaged API checks passed; independent delivery review accepted all seven tasks. [Milestone receipt](../artifacts/reviewed/statement-period-provenance/publication.md). Local candidate browser acceptance is recorded separately; CI-image browser and owner-server deployment remain unverified.
 
 The preceding [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42188370167-1) adds accepted company-name/Symbol selection to the published initial financial-input batch. On 2026-11-06 the owner confirmed that release's Linux pull/update, healthy data API, retained dashboards and working autocomplete. This owner report is separate from [local runtime and publication evidence](prototype-delivery.md); no independent server inspection or recovery check is claimed.
 
@@ -67,7 +67,7 @@ No deployed application change or image rebuild is part of the IA-A verification
 - [x] Accept the installed statement/source join and 18-case real FMP matrix ([evidence](../artifacts/reviewed/statement-period-provenance/join.md)).
 - [x] Repair optional native statement limits ([evidence](../artifacts/reviewed/statement-period-provenance/native-defaults.md)).
 - [x] Accept the packaged Income/Balance/Cash browser journey ([evidence](../artifacts/reviewed/statement-period-provenance/packaged.md)).
-- [ ] Deliver Income, Balance and Cash period provenance; financial compatibility remains open.
+- [x] Deliver Income, Balance and Cash period provenance ([publication](../artifacts/reviewed/statement-period-provenance/publication.md)); broader financial compatibility remains open.
 
 ## Subsequent workstreams
 

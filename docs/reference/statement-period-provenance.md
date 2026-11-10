@@ -1,8 +1,8 @@
 # Upgrade strict statement consumers together
 
-The candidate adds row-level period evidence to existing FMP Income, Balance and Cash responses. It preserves financial row fields and widget inputs. Deploy matching core and FMP packages together; update strict Python validators before consuming the new optional `statement_provenance` member.
+The published alpha adds row-level period evidence to existing FMP Income, Balance and Cash responses. It preserves financial row fields and widget inputs. Deploy matching core and FMP packages together; update strict Python validators before consuming the new optional `statement_provenance` member.
 
-This is a source/native candidate, not a published release. The original source/native join used API revision `e78d87b2000e957f277fa125fb31982b55928f1b`. The current candidate is `a965f70c164fe477ce9c99654b9be48e2f1bc9fd`, adding the [native optional-limit repair](../../artifacts/reviewed/statement-period-provenance/native-defaults.md). Package version strings (`openbb-core` 2.0.1 and `openbb-fmp` 1.6.1+qopenbb.1) alone do not identify the change. [Image-backed contract generation and browser acceptance](../../artifacts/reviewed/statement-period-provenance/packaged.md) are accepted; publication remains open.
+Published in [alpha-42878062405-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42878062405-1) from QOpenBB `e09024aa965757d23937ed0472ccce05d9666aea` and API `a965f70c164fe477ce9c99654b9be48e2f1bc9fd`, including the [native optional-limit repair](../../artifacts/reviewed/statement-period-provenance/native-defaults.md). Package version strings (`openbb-core` 2.0.1 and `openbb-fmp` 1.6.1+qopenbb.1) alone do not identify the change. [Publication acceptance](../../artifacts/reviewed/statement-period-provenance/publication.md) verifies the image pair separately from the accepted local browser journey.
 
 ## Consumer compatibility
 
@@ -27,4 +27,4 @@ The corrected native run checked annual and quarterly Income, Balance and Cash f
 
 An earlier 18-request run returned HTTP 200 but failed the acceptance comparator because source timestamps used a space and HTTP timestamps used `T`. The comparator was repaired and independently reviewed; the original failures remain recorded. Total provider traffic was 36 FMP requests and zero FRED requests. No financial calculation or coverage inference was added.
 
-The native schema proposal regenerates all 11 existing catalog widgets. Its canonical local image identity is recorded in packaged acceptance; a published-image identity remains pending. See the [implementation tasks](../../.kiro/specs/market-data-integrations/statement-period-provenance-tasks.md) for the remaining delivery gates.
+The canonical image-backed catalog regenerates all 11 existing widgets. Its six canonical outputs match the published API image byte-for-byte. All seven [implementation tasks](../../.kiro/specs/market-data-integrations/statement-period-provenance-tasks.md) are accepted. Deployment on the owner server and broader analytical compatibility remain separate gates.
