@@ -61,6 +61,29 @@ def project(source):
     return project_financial_openapi(*source, required_models={"Prices"})
 
 
+def test_statement_provenance_schema_graph_uses_existing_projection(source):
+    document = project(source)
+    schemas = document["components"]["schemas"]
+    descriptor = document["paths"]["/prices"]["get"]["x-qopenbb-financial"]
+    metadata = schemas[descriptor["metadata_schema"]["$ref"].split("/")[-1]]
+    assert "statement_provenance" not in metadata.get("required", [])
+    optional = metadata["properties"]["statement_provenance"]["anyOf"]
+    assert {"type": "null"} in optional
+    statement = schemas[next(item["$ref"].split("/")[-1] for item in optional if "$ref" in item)]
+    row = schemas[statement["properties"]["rows"]["items"]["$ref"].split("/")[-1]]
+    assert statement["additionalProperties"] is False and row["additionalProperties"] is False
+    assert {"row_index", "source_ordinal", "requested_frequency", "period_end"} <= set(row["required"])
+    fact = schemas[row["properties"]["facts"]["items"]["$ref"].split("/")[-1]]
+    convention = schemas[row["properties"]["conventions"]["items"]["$ref"].split("/")[-1]]
+    assert fact["additionalProperties"] is False and convention["additionalProperties"] is False
+    assert fact["properties"]["evidence_kind"]["const"] == "observation"
+    assert convention["properties"]["evidence_kind"]["const"] == "provider_convention"
+    assert row["properties"]["restatement_status"]["const"] == "unknown"
+    for reference in refs(document):
+        assert reference.startswith("#/components/schemas/")
+        assert reference.split("/")[-1] in schemas
+
+
 def refs(value):
     if isinstance(value, dict):
         for key, item in value.items():
@@ -465,6 +488,7 @@ def test_native_serialized_financial_metadata_agrees(native_first_batch, dataset
     provider = "fred" if dataset == "FredSeries" else "fmp"
     fields = descriptor["variants"][provider]["fields"]
     if provider == "fred":
+        assert "statement_provenance" not in metadata
         assert set(fields) == {"date"} and set(metadata["fields"]) == {"GDP"}
         assert metadata["fields"]["GDP"]["unit"] == "Percent Change"
         assert metadata["fields"]["GDP"]["source_unit"] == "Billions of Dollars"

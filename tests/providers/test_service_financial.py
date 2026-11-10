@@ -24,6 +24,103 @@ ENTERPRISE = "/api/v1/equity/fundamental/enterprise_values"
 SECRET = "PRIVATE_SERVICE_CANARY"
 
 
+@pytest.fixture
+def statement_contract(monkeypatch):
+    """Exercise the consumer independently of the provider integration lane."""
+    from openbb_core.provider.standard_models.financial_metadata import FinancialResultMetadata
+    from openbb_core.provider.utils.financial_validation import validate_financial_result
+    from openbb_fmp.models.income_statement import FMPIncomeStatementFetcher
+    from openbb_fmp.utils.helpers import FMPAcquisition
+
+    fetcher = FMPIncomeStatementFetcher
+    transform = fetcher.transform_data
+    evidence = {"rows": [dict(
+        row_index=index, source_ordinal=ordinal, fiscal_year=2025, fiscal_period="Q2",
+        period_end="2025-06-30", requested_frequency="quarter",
+        facts=[dict(semantic_key="filing_date", source_field="filingDate",
+                    presence="null", value=None)],
+    ) for index, ordinal in enumerate([4, 1])]}
+    payload = [{"symbol": "ABC", "date": "2025-06-30", "fiscalYear": "2025",
+                "period": "Q2", "revenue": value, "reportedCurrency": "EUR"}
+               for value in [0, None]]
+
+    async def extract(*args, **kwargs):
+        return FMPAcquisition(deepcopy(payload), datetime(2025, 7, 1, tzinfo=UTC))
+
+    def controlled(query, data, **kwargs):
+        result = transform(query, data, **kwargs)
+        common = deepcopy(result.metadata["__qopenbb_financial__"])
+        common["statement_provenance"] = deepcopy(evidence)
+        result.metadata = validate_financial_result(
+            FinancialResultMetadata, common, provider="fmp").as_metadata()
+        return result
+
+    monkeypatch.setattr(fetcher, "extract_data", extract)
+    monkeypatch.setattr(fetcher, "transform_data", controlled)
+    return fetcher, evidence
+
+
+def test_statement_fixture_native_and_python_metadata_are_equivalent(runtime, statement_contract):
+    from openbb_core.provider.standard_models.financial_metadata import FinancialResultMetadata
+    from pydantic import ValidationError, create_model
+
+    fetcher, _ = statement_contract
+    parameters = {"symbol": "ABC", "period": "quarter", "limit": 2}
+    result = asyncio.run(fetcher.fetch_data(parameters, {"fmp_api_key": "synthetic"}))
+    status, body = asyncio.run(get(runtime, "/api/v1/equity/fundamental/income",
+                                  urlencode({"provider": "fmp", **parameters}).encode()))
+    assert status == 200
+    common = body["extra"]["results_metadata"]["__qopenbb_financial__"]
+    assert common == result.metadata["__qopenbb_financial__"]
+    assert body["results"] == [row.model_dump(mode="json", by_alias=False,
+                              exclude_unset=True) for row in result.result]
+    assert body["results"][0]["revenue"] == 0 and body["results"][1]["revenue"] is None
+    rows = common["statement_provenance"]["rows"]
+    assert [row["source_ordinal"] for row in rows] == [4, 1]
+    assert [row["row_index"] for row in rows] == [0, 1]
+    assert all(row["period_end"] == "2025-06-30" for row in rows)
+    assert all(row["facts"][0]["presence"] == "null" and row["facts"][0]["value"] is None for row in rows)
+    assert all(row["flow_coverage"] == "unknown" and row["duration_days"] is None for row in rows)
+    assert common["point_in_time_safe"] is False
+    old_fields = {name: (field.annotation, field) for name, field in FinancialResultMetadata.model_fields.items()
+                  if name != "statement_provenance"}
+    old_reader = create_model("OldStrictConsumer", __config__={"extra": "forbid"}, **old_fields)
+    legacy = {key: value for key, value in common.items() if key != "statement_provenance"}
+    assert old_reader.model_validate(legacy)
+    assert "statement_provenance" not in FinancialResultMetadata.model_validate(legacy).model_dump(mode="json")
+    with pytest.raises(ValidationError, match="extra_forbidden"):
+        old_reader.model_validate(common)
+
+
+@pytest.mark.parametrize("malformation", ["index", "ordinal", "count", "fact", "reference"])
+def test_statement_fixture_malformed_attribution_has_safe_native_error(
+    runtime, statement_contract, caplog, malformation,
+):
+    from openbb_core.provider.utils.financial_errors import FinancialError
+
+    fetcher, evidence = statement_contract
+    if malformation == "index":
+        evidence["rows"][0]["row_index"] = 1
+    elif malformation == "ordinal":
+        evidence["rows"][1]["source_ordinal"] = 4
+    elif malformation == "count":
+        evidence["rows"].pop()
+    elif malformation == "fact":
+        evidence["rows"][0]["facts"][0]["value"] = SECRET
+    else:
+        evidence["rows"][0].update(flow_coverage="annual", coverage_status="supported",
+            conventions=[dict(flow_coverage="annual", documentation="https://example.test/docs?token=" + SECRET)])
+    with pytest.raises(FinancialError) as failure:
+        asyncio.run(fetcher.fetch_data({"symbol": "ABC", "period": "quarter", "limit": 2},
+                                       {"fmp_api_key": "synthetic"}))
+    assert failure.value.code.value == "invalid_response" and SECRET not in str(failure.value)
+    with caplog.at_level(logging.ERROR):
+        status, body = asyncio.run(get(runtime, "/api/v1/equity/fundamental/income",
+                                      b"provider=fmp&symbol=ABC&period=quarter&limit=2"))
+    assert status == 502 and body["code"] == "invalid_response"
+    assert SECRET not in json.dumps(body) + caplog.text
+
+
 @pytest.fixture(autouse=True)
 def no_provider_io(monkeypatch):
     async def forbidden(*args, **kwargs):
@@ -102,6 +199,7 @@ def test_explicit_enterprise_matches_python_values_and_financial_metadata(runtim
     assert body["provider"] == "fmp"
     assert body["results"] == [row.model_dump(mode="json", by_alias=False) for row in result.result]
     metadata = body["extra"]["results_metadata"]["__qopenbb_financial__"]
+    assert "statement_provenance" not in metadata
     assert metadata["fields"] == result.metadata["__qopenbb_financial__"]["fields"]
     assert metadata["fields"]["number_of_shares"]["unit"] == "shares"
     assert metadata["fields"]["enterprise_value"]["value_origin"] == "provider_calculation"

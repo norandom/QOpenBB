@@ -30,7 +30,7 @@ The owner approved requirements and design on 2026-11-10. This seven-task plan i
   - _Depends: 2_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4, 3.1, 3.2_
 
-- [ ] 4. (P) Verify the consumer contract against the frozen core schema
+- [x] 4. (P) Verify the consumer contract against the frozen core schema
   - Add root native-response/schema cases using controlled fixtures for the approved metadata shape. Prove equivalent Python/HTTP metadata, malformed attribution rejection and safe errors. Keep existing FRED and unrelated-provider responses unchanged.
   - Reuse financial OpenAPI projection and native widget generation. Change projection only if required by the added referenced definitions; do not create a schema registry or replace the accepted sanitizer.
   - Prepare strict-client migration documentation tied to the final core/provider revision, explicitly distinguishing generic row consumers from old strict validators.
@@ -101,3 +101,5 @@ The unrelated catalog/inventory working-tree changes and .openidea directory are
 - Task 1 accepted 2026-11-10: protected native install, seven installed source matches, eight baseline checks and the clean 101-file gate passed; independent review accepted. [Evidence](../../../artifacts/reviewed/statement-period-provenance/baseline.md). Current native catalog helper differs from historical canonical provenance; retain the reviewed native helper and regenerate provenance at the join.
 
 - Task 2 accepted 2026-11-10: API b373da3f8d7, 64 installed tests, independent review and whole-file caps passed after compatibility/error-message repairs. [Evidence](../../../artifacts/reviewed/statement-period-provenance/core.md). Preserve annual/quarter scope; no broader Income query change is authorized.
+
+- Task 4 accepted 2026-11-10: existing projection needs no production change; independent consumer review passed 81 tests. [Evidence](../../../artifacts/reviewed/statement-period-provenance/consumer.md). Final provider revision and actual source/live acceptance remain task 5.
