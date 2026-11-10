@@ -24,3 +24,25 @@ Read-only discovery on 2026-11-10 used two independent Sol lanes: runtime/browse
 Use focused path/environment/lifecycle regressions, then reuse existing end-to-end tests. Synthetic infrastructure checks need no provider calls. Live-data acceptance is a separate explicit budget. Do not rebuild every image merely to repeat unchanged assertions.
 
 This spec is a portability amendment to the local-development obligations of `openbb-self-service`, especially requirement 3 and foundation tasks 1.2, 1.7 and 1.8. Their historical accepted WSL evidence remains unchanged. Native acceptance needs new evidence; a successful version or connection command is insufficient.
+
+## Design discovery and synthesis, 2026-11-10
+
+The owner approved requirements and requested the project subagent model for implementation. Two fresh Sol research contexts checked runtime/browser contracts and build toolchain behavior. The controller synthesized the design; Astra independently reviewed the integration seams. Applied skills: `kiro-spec-design` and its discovery, synthesis and review rules; project documentation, complexity, testing and delegation steering. The default product/tech/structure steering files are absent; the existing project-specific steering and accepted specs supply context.
+
+### Design decisions
+
+- **Generalize only the repeated boundary:** one checked private descriptor reader serves root financial tests and the fork's shared login fixture. One explicit container executable selection serves existing commands. Do not add a plugin system or a parallel test harness.
+- **Adopt existing mechanisms:** Compose owns service lifecycle; Playwright resolves its bundled platform browser; Windows security APIs protect private files. Python and TypeScript wrappers carry project ownership and typed contracts rather than reimplement these tools.
+- **Keep bind state:** a named volume would avoid Windows mount translation but depart from the owner's bind-mount deployment preference. Use an owned bind directory and prove the host-to-daemon mapping with a nonsecret sentinel. Failed mapping remains a qualification failure.
+- **Keep Dagger pins together:** retain 0.21.8 CLI/SDK/engine, supplying a real native executable explicitly. The installed 0.21.11 wrapper overwrites runner selection, so it cannot transparently execute the existing locked build. A coordinated version upgrade is separate from this migration.
+- **Preserve browser assertions:** the exact session name/image pair and changed Workspace container ID drive retained-state checks. Only descriptor access and checkpoint location change. The shared fork fixture's direct JSON read is an explicit test-only fork delta requiring independent review and pin promotion.
+
+### External contracts
+
+Compose's ordinary merge may retain an existing published port; use explicit replacement and inspect effective configuration before starting services. The supported `!override` tag requires Compose 2.24.4 or later. [Docker Compose merge reference](https://docs.docker.com/reference/compose-file/merge/).
+
+Playwright exposes bundled browser resolution and configurable browser storage. Use those mechanisms instead of a Linux executable suffix. [BrowserType API](https://playwright.dev/docs/api/class-browsertype), [browser installation and storage](https://playwright.dev/docs/browsers).
+
+### Qualification risks
+
+The pinned Dagger transport must actually execute through Podman with verified engine identity; CLI connectivity alone is insufficient. Windows Safe Chain support and noninteractive interception must be demonstrated before dependency restores. Protected bind directories must remain accessible to the VM without weakening their owner-only Windows ACL. If either fails, retain a scoped blocker and review the exact design change rather than silently changing VM configuration, access controls or version pins.
