@@ -32,6 +32,7 @@ Native Windows developer workflow ([plan](.kiro/specs/native-development-workflo
 
 - [x] Qualify pinned tools, Podman/Compose connectivity and the native command entry.
 - [x] Verify Windows user-only private-file protection and checked-handle access.
+- [x] Verify atomic session-file updates, interruption recovery and confined removal on Windows.
 - [ ] Integrate protected sessions, Compose runtime, Dagger builds and Playwright, then verify Linux compatibility.
 
 [Current evidence and limitations](artifacts/reviewed/native-development-workflow/entry.md). Deployment images and commands are unchanged.

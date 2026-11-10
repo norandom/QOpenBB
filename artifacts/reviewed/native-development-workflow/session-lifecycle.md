@@ -1,0 +1,13 @@
+# Private session-file lifecycle
+
+Task 3.2 provides byte-level session storage with exclusive creation, checked reads, atomic replacement and repeatable confined removal. Windows uses the accepted protected directory and file handles. The POSIX backend uses owner/mode checks and directory-relative operations without following symlinks. Descriptor schema validation and the browser's private IPC reader remain task 4.
+
+The final native focused suite passed 22 tests with one POSIX-only skip on 2026-11-10. It covers successful updates, bounded reads, exact Unicode filenames, duplicate creation, unsafe links, interrupted updates and cleanup without affecting unrelated entries. POSIX code was inspected but has not been executed on Linux; task 12 retains that acceptance obligation.
+
+Independent review found and reproduced two Windows defects before acceptance. Cleanup after a committed rename could delete the new descriptor; it now deletes only a handle still identified as the owned temporary entry. The native rename buffer also lacked a terminating WCHAR; it now allocates that terminator while keeping the filename length in UTF-16 bytes excluding it. The deterministic buffer regression covers eight alignment cases; a bounded native test checks exact filenames and payloads through 32 ASCII/Unicode updates. The reviewer's original postcommit-interruption probe now retains the correctly named new file.
+
+The final combined size gate passed for 87 controller files with no errors or violations, using clean `bb87965` plus the scoped changes. The byte facade, POSIX backend and Windows helper remain below 400 physical lines, 300 logical units and 50 units per callable. Unrelated inventory/renderer changes are preserved. Explicit empty fork manifests declare unchanged fork scope; they do not establish fork remeasurement.
+
+Raw evidence is retained in `D:/BuildArtifacts/QOpenBB/session-lifecycle`: `green6.log`, `red-postcommit.log`, `red-buffer.log`, `combined.json`, and independent review outputs `review/final-tests.log` and `review/postcommit-final.log`. The review verdict is retained alongside them. Only this sanitized record is published. Tests use owned synthetic state; no provider calls, image builds, WSL commands or server deployment occurred.
+
+Replacement is confined within the protected directory. It does not claim compare-and-swap guarantees against another process running as the same user, power-loss durability or privileged administrative takeover. The [task plan](../../../.kiro/specs/native-development-workflow/tasks.md) owns the remaining descriptor, runtime, build, browser and Linux integration work.

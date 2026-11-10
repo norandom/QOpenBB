@@ -188,4 +188,5 @@ The repair keeps static financial declarations in one owner, with dynamic FRED/r
 - [x] Approve the reviewed [15-task implementation plan](../.kiro/specs/native-development-workflow/tasks.md).
 - [x] Qualify the native toolchain and command/environment entry: [task 2 evidence](../artifacts/reviewed/native-development-workflow/entry.md).
 - [x] Verify Windows private-file permissions and checked-handle access: [task 3.1 evidence](../artifacts/reviewed/native-development-workflow/windows-private.md).
+- [x] Accept private-file lifecycle and Windows interruption recovery: [task 3.2 evidence](../artifacts/reviewed/native-development-workflow/session-lifecycle.md). Actual POSIX execution remains in the Linux acceptance task.
 - [ ] Complete private session storage, Compose, Dagger and Playwright migration, followed by Linux compatibility acceptance. [Task graph](../.kiro/specs/native-development-workflow/tasks.md). Sol workers own separate implementation lanes; Astra reviews difficult integration and the controller joins evidence. Linux CI and server deployment stay supported.

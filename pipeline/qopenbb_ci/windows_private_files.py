@@ -5,6 +5,7 @@ from ctypes import wintypes as W
 import os
 from pathlib import Path
 import re
+import uuid
 from . import windows_security as api
 from .windows_security import PrivateStorageError
 
@@ -53,9 +54,9 @@ def _identity(handle, path, directory):
         raise PrivateStorageError('Private object path identity mismatch')
 
 
-def _open(path, access=READ_CONTROL | 1, disposition=3, protection=None):
+def _open(path, access=READ_CONTROL | 1, disposition=3, protection=None, sharing=3):
     attributes = C.byref(protection.attributes) if protection else None
-    handle = api.create_file(str(path), access, 3, attributes, disposition, FLAGS, None)
+    handle = api.create_file(str(path), access, sharing, attributes, disposition, FLAGS, None)
     if handle == C.c_void_p(-1).value:
         raise PrivateStorageError('Cannot open private storage object', C.get_last_error())
     return handle
@@ -115,12 +116,12 @@ class PrivateDirectory:
         self.protection.verify(self.handle)
 
     @contextmanager
-    def file_handle(self, name, access=READ, create=False):
+    def file_handle(self, name, access=READ, create=False, sharing=3):
         """Yield a checked handle; exclusive creation occurs before any payload write."""
         self.verify()
         path = self.path / _leaf(name)
         handle = _open(path, access | READ_CONTROL | DELETE, 1 if create else 3,
-                       self.protection if create else None)
+                       self.protection if create else None, sharing)
         try:
             _identity(handle, path, False)
             self.protection.verify(handle)
@@ -147,6 +148,8 @@ class PrivateDirectory:
         api.checked(api.flush(handle))
 
     def read_file(self, name, limit=1024 * 1024):
+        if type(limit) is not int or limit < 0:
+            raise ValueError('Private file size limit must be a nonnegative integer')
         with self.file_handle(name) as handle:
             chunks, total = [], 0
             while True:
@@ -160,10 +163,52 @@ class PrivateDirectory:
                 chunks.append(buffer.raw[:count.value])
 
     def remove_file(self, name):
-        with self.file_handle(name, 0) as handle:
+        try:
+            with self.file_handle(name, 0) as handle:
+                self.verify()
+                self.protection.verify(handle)
+                _delete(handle)
+        except PrivateStorageError as error:
+            if len(error.args) < 2 or error.args[1] != 2:
+                raise
+
+    def replace_file(self, name, payload):
+        temporary = f'.replace-{uuid.uuid4().hex}'
+        with self.file_handle(name, 0, sharing=7) as target:
+            with self.file_handle(temporary, WRITE, create=True) as source:
+                try:
+                    self._write_handle(source, payload)
+                    self.verify()
+                    _identity(source, self.path / temporary, False)
+                    self.protection.verify(source)
+                    _identity(target, self.path / name, False)
+                    self.protection.verify(target)
+                    self._rename_handle(source, name)
+                except BaseException:
+                    self._discard_temporary(source, temporary)
+                    raise
+
+    def _discard_temporary(self, handle, name):
+        # An interruption can arrive after the rename committed. Never delete
+        # the source handle unless it still identifies the owned temporary name.
+        try:
             self.verify()
+            _identity(handle, self.path / name, False)
             self.protection.verify(handle)
-            _delete(handle)
+        except PrivateStorageError:
+            return
+        _delete(handle)
+
+    def _rename_handle(self, handle, name):
+        # Replacement requires delete sharing on the retained checked target.
+        # Renaming replaces the entry itself; it never follows a substituted link.
+        name = str(self.path / name)
+        length = len(name.encode('utf-16-le'))
+        class RenameInfo(C.Structure):
+            _fields_ = [('flags', W.DWORD), ('root', W.HANDLE),
+                        ('length', W.DWORD), ('name', W.WCHAR * (length // 2 + 1))]
+        info = RenameInfo(3, None, length, name)
+        api.checked(api.set_info(handle, 22, C.byref(info), C.sizeof(info)))
 
     def close(self):
         for handle in reversed(self.handles):
