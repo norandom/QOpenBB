@@ -1,0 +1,26 @@
+services:
+  workspace:
+    restart: "no"
+    ports: !override
+      - target: 3000
+        published: "${QOPENBB_PORT}"
+        host_ip: 127.0.0.1
+        protocol: tcp
+    volumes: !override
+      - type: bind
+        source: ${QOPENBB_STATE}
+        target: /data
+        bind:
+          create_host_path: false
+    labels:
+      org.qopenbb.session: ${QOPENBB_SESSION}
+  data-api:
+    restart: "no"
+    ports: !override []
+    volumes: !override []
+    labels:
+      org.qopenbb.session: ${QOPENBB_SESSION}
+networks:
+  default:
+    labels:
+      org.qopenbb.session: ${QOPENBB_SESSION}

@@ -69,7 +69,7 @@ The globally installed Dagger 0.21.11 wrapper replaces the runner environment. P
 | `pipeline/dev.ps1` (new), `pipeline/qopenbb_ci/native_environment.py`, `container_command.py` (new) | Native command dispatch, validated artifact/tool inputs and explicit container executable; foundation lane |
 | `pipeline/qopenbb_ci/session_files.py`, `windows_private_files.py` (new) | Cross-platform private storage and Windows handle/ACL implementation; foundation lane |
 | `pipeline/qopenbb_ci/compose_runtime.py`, `runtime_descriptor.py` (new) | Compose orchestration and typed descriptor validation; runtime lane |
-| `tests/delivery/compose.runtime.yaml` (new) | Reviewed local override template; runtime lane |
+| `pipeline/compose.runtime.yaml` (new) | Reviewed local override template; runtime lane |
 | `tests/delivery/workspace-runtime.ps1`, `workspace_runtime.py`, `task25_runtime.py` | Route current lifecycle to coordinator while retaining existing readiness and packaging assertions; runtime lane |
 | `pipeline/qopenbb_ci/build_cli.py`, `image_cli.py`, `sources.py` | Explicit executable/engine/SDK parameters, Windows child environment, filesystem-normalized source identity; build lane |
 | `pipeline/qopenbb_ci/images.py`, `catalog_runtime.py`, `publication.py`, `tests/delivery/test_data_runtime_image.py` | Use the shared explicit container command selection in existing load/inspect/verification/publication paths; build lane, publication behavior unchanged |
