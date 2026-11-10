@@ -27,6 +27,7 @@ Native Windows development is accepted using Podman Compose, with Dagger buildin
 | Build, verify and prepare the prototype for installation | [Prototype delivery](prototype-delivery.md) |
 | Map FMP, FRED and Yahoo coverage to research needs | [Provider coverage](provider-coverage.md) |
 | Review the next Company Research batch | [IA-A input-readiness requirements](../.kiro/specs/analyst-workspace/research-input-requirements.md) and [source findings](../.kiro/specs/analyst-workspace/research-input-research.md) |
+| Upgrade strict statement consumers and interpret period evidence | [Statement provenance migration](reference/statement-period-provenance.md) |
 | Review the financial schema projection prerequisite | [Authoritative annotation repair](../.kiro/specs/market-data-integrations/financial-annotations-amendment.md) |
 | Choose a chart for an analyst question | [Historical chart guide](chart-gallery.md) (36 chart screenshots, historical data recipes and interpretation) |
 | Check renderer responsibilities and done/todo lists | [ECharts](echarts-status.md), [FINOS Perspective](perspective-status.md) and [Plotly](plotly-status.md) |

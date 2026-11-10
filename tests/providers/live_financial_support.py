@@ -185,7 +185,7 @@ def call(app, path, parameters):
 
 @contextmanager
 def evidence(case, capture, *, query=None):
-    record = {"status": None, "common": None, "comparisons": [], "observation": None}
+    record = {"status": None, "common": None, "comparisons": [], "observation": None, "private_replay": None}
     try:
         yield record
     except (Exception, pytest.fail.Exception) as error:  # noqa: BLE001 - Discard unsafe provider/validation exception text.
@@ -195,11 +195,11 @@ def evidence(case, capture, *, query=None):
                             if receipt.get("code") in ERROR_CODES), failure)
         failure = failure if failure != "uncategorized" else "acceptance validation error"
         write_evidence(case, capture, record["status"], record["common"], record["comparisons"], failure,
-                       query=query, observation=record["observation"])
+                       query=query, observation=record["observation"], private_replay=record["private_replay"])
         pytest.fail(failure, pytrace=False)
     else:
         write_evidence(case, capture, record["status"], record["common"], record["comparisons"],
-                       query=query, observation=record["observation"])
+                       query=query, observation=record["observation"], private_replay=record["private_replay"])
 
 
 def success(status, body, provider, *, run_state=None, endpoint=None):
@@ -332,7 +332,7 @@ def safe_evidence(value):
                             "accountidentity", "provideraccount", "brokerageaccount", "privateaccount"}
         return {key: safe_evidence(item) for key, item in value.items()
                 if key.lower().replace("_", "") not in private_accounts
-                and not any(part in key.lower().replace("_", "") for part in forbidden)}
+                and (key == "semantic_key" or not any(part in key.lower().replace("_", "") for part in forbidden))}
     if isinstance(value, (list, tuple)):
         return [safe_evidence(item) for item in value]
     if isinstance(value, (date, datetime)):
@@ -344,8 +344,9 @@ def safe_evidence(value):
     return value
 
 
-def write_evidence(case, capture, status, common=None, comparisons=None, failure=None, *, query=None, observation=None):
-    """Export selected source values only; raw remote error text never becomes evidence."""
+def write_evidence(case, capture, status, common=None, comparisons=None, failure=None, *, query=None, observation=None,
+                   private_replay=None):
+    """Retain selected evidence and explicit private replay; exclude remote error text."""
     output = Path(os.environ.get("QOPENBB_LIVE_EVIDENCE_DIR", ROOT / "artifacts/live-financial-checks/run"))
     output.mkdir(parents=True, exist_ok=True)
     require(bool(case) and all(character.isalnum() or character in "-_" for character in case), "safe evidence case ID")
@@ -366,8 +367,11 @@ def write_evidence(case, capture, status, common=None, comparisons=None, failure
         document["run_attempts"] = capture.run_state.attempts
         document["endpoint"] = capture.endpoint
         document["case_outcome"] = capture.run_state.outcomes.get(case)
+    if private_replay is not None:
+        # These sanitized replay inputs remain private alongside the original run.
+        document["private_replay"] = private_replay
     text = json.dumps(safe_evidence(document), indent=2, allow_nan=False)
-    # Success payloads may carry public company URLs; selected values avoid those fields.
+    # Apply credential redaction to selected evidence and optional private replay alike.
     for name in ("FMP_API_KEY", "FRED_API_KEY"):
         secret = os.environ.get(name)
         require(not secret or secret not in text, "credential-free evidence")

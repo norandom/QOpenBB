@@ -39,7 +39,7 @@ The owner approved requirements and design on 2026-11-10. This seven-task plan i
   - _Depends: 2_
   - _Requirements: 2.4, 3.1, 3.2, 3.3_
 
-- [ ] 5. Join installed providers, generated consumers and real statement evidence
+- [x] 5. Join installed providers, generated consumers and real statement evidence
   - Freeze tasks 3 and 4, refresh the protected native packages through existing uv/Safe Chain commands and verify installed source hashes. Join the actual routes with the consumer assertions, promoting only reviewed source/inventory deltas and preparing source/native generated contract proposals. Canonical image-backed generation waits for task 6; task 5 must not depend on an image not yet built.
   - Reuse retained source receipts for deterministic replay where original hashes are available. Execute the annual/quarterly Income/Balance/Cash matrix for MSFT, ORCL and ADBE through the installed candidate with existing live capture/accounting. The initial matrix contains 18 queries, each limit 2; each single capture supplies both source and response comparisons, with no duplicate validation fetch or automatic rerun.
   - Freeze actual collected cases and transport-attempt bounds before execution. Keep request scope visible and respect existing owner authorization without repeated permission prompts. An entitlement or source failure leaves the affected case open; synthetic rows cannot replace its live result.
@@ -105,3 +105,5 @@ The unrelated catalog/inventory working-tree changes and .openidea directory are
 - Task 4 accepted 2026-11-10: existing projection needs no production change; independent consumer review passed 81 tests. [Evidence](../../../artifacts/reviewed/statement-period-provenance/consumer.md). Final provider revision and actual source/live acceptance remain task 5.
 
 - Task 3 accepted 2026-11-10: API e78d87b2000, 102 independently repeated provider checks, nine installed source matches and the clean combined 110-file gate passed. [Evidence](../../../artifacts/reviewed/statement-period-provenance/provider.md). Register the new FMP helper in both ownership include selection and maintained-file inventory; do not claim baseline-valid query labels prove duration.
+
+- Task 5 accepted 2026-11-10: nine installed hashes, native 11-widget proposal, final 110-file gate and corrected 18-case live matrix passed; independent Astra review accepted. Cumulative traffic was 36 FMP and zero FRED, preserving the failed timestamp-comparator run. [Evidence](../../../artifacts/reviewed/statement-period-provenance/join.md). Packaged/browser and publication gates remain open.

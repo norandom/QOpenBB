@@ -35515,6 +35515,22 @@
       "publishedSHA256": "91445938b15ff826648975a7524e38f065d92b33c5a89a8c82fc29293bad959c",
       "bytes": 4034,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/statement-period-provenance/task5/accepted.md",
+      "sourceSHA256": "b3f9b258f9c1d7f96e567f2d1c10fa582edf85cbbb48af3f76368528c3ea36c1",
+      "publishedpath": "artifacts/reviewed/statement-period-provenance/join.md",
+      "publishedSHA256": "b3f9b258f9c1d7f96e567f2d1c10fa582edf85cbbb48af3f76368528c3ea36c1",
+      "bytes": 3559,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/statement-period-provenance/task5/review.md",
+      "sourceSHA256": "44ed5f7a59af24ef1cb9a6f527b8ed7e0dec39063c58a6cb1f081e8292d4bb5b",
+      "publishedpath": "artifacts/reviewed/statement-period-provenance/join-review.md",
+      "publishedSHA256": "44ed5f7a59af24ef1cb9a6f527b8ed7e0dec39063c58a6cb1f081e8292d4bb5b",
+      "bytes": 4135,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36240,7 +36256,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171142406,
+  "total_payload_bytes": 171150100,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
