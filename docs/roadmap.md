@@ -27,11 +27,11 @@ The preceding [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases
 
 ## Next: investment analysis and valuation
 
-The next bounded increment is the [Company Research dashboard](../.kiro/specs/analyst-workspace/company-research-requirements.md): linked company selection, statements, price context, editable candidate peers and saved research configuration. [Readiness reconciliation](../.kiro/specs/analyst-workspace/research-readiness-reconciliation.md) distinguishes closed acquisition defects from unresolved financial comparability. Independent requirements review passed; owner approval is next.
+The next bounded increment is the [Company Research dashboard](../.kiro/specs/analyst-workspace/company-research-requirements.md): linked company selection, statements, price context, editable candidate peers and saved research configuration. [Readiness reconciliation](../.kiro/specs/analyst-workspace/research-readiness-reconciliation.md) distinguishes closed acquisition defects from unresolved financial comparability. Requirements are owner-approved. The [bounded design](../.kiro/specs/analyst-workspace/company-research-design.md) passed independent review; owner design approval is next. It reuses existing Apps, groups and persistence, adds inspectable evidence and independently editable peers, and leaves house calculations in the modeling workstream.
 
 - [x] Reconcile the completed periodic-query and statement-period work with the dated IA-A assessment.
 - [x] Independently review bounded Company Research requirements, including App-template export/import.
-- [ ] Approve requirements and produce the bounded design.
+- [x] Approve requirements and independently review the bounded design.
 - [ ] Approve design and tasks, implement the composite research journey, and publish an accepted milestone.
 
 

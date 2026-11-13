@@ -10,7 +10,7 @@
     "direction_approved": true,
     "implementation_approved": false,
     "prerequisite": "Initial provider batch26/26 and company selector10/10 accepted/published; owner confirmed Linux update, dashboard retention and autocomplete2026-11-06.",
-    "first_slice": "IA-A assessment complete; bounded Company Research dashboard requirements reviewed, awaiting owner approval before design. Full IA-B remains open.",
+    "first_slice": "IA-A assessment complete; Company Research requirements approved and bounded design independently reviewed. Owner design approval is next; full IA-B remains open.",
     "input_readiness": {
       "name": "research-input-readiness",
       "phase": "assessment-complete",
@@ -76,10 +76,10 @@
       }
     },
     "company_research": {
-      "phase": "requirements-generated",
+      "phase": "design-generated",
       "requirements_document": "company-research-requirements.md",
       "requirements_generated": true,
-      "requirements_approved": false,
+      "requirements_approved": true,
       "design_approved": false,
       "tasks_approved": false,
       "implementation_approved": false,
@@ -93,7 +93,19 @@
         "sha256": "71c0d50c5fdec2247d35543694f478dc531893e88e0357e2db5fde6410ed7df4"
       },
       "scope": "Bounded provider-observation research App; house calculations and full IA-B acceptance remain separate.",
-      "next_step": "Owner requirements approval, then bounded design."
+      "next_step": "Owner design approval, then generate and independently review bounded tasks; implementation remains unapproved.",
+      "requirements_approval": "Owner approved the independently reviewed requirements in conversation on 2026-11-13; bounded design generation authorized.",
+      "design_generated": true,
+      "design_document": "company-research-design.md",
+      "research_document": "company-research-research.md",
+      "design_review": {
+        "status": "passed",
+        "model": "gpt-6-astra",
+        "mode": "independent",
+        "repair_passes": 1,
+        "document": "company-research-design-review.md",
+        "sha256": "2d15e3f309fff9eee00ab964bc91448a414ddee472f2f045f0e120c5358cc291"
+      }
     }
   },
   "phase_scope": "Umbrella requirements, design and tasks remain ungenerated. Approved bounded milestones have their own implementation and acceptance records under the prototype-first delivery amendment.",

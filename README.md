@@ -93,7 +93,8 @@ Company Research input verification: 73 offline checks and five live journeys pa
 - [x] Publish and accept all seven statement-period tasks: [alpha-42878062405-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42878062405-1) ([evidence](artifacts/reviewed/statement-period-provenance/publication.md)).
 
 - [x] Reconcile readiness and independently review [Company Research dashboard requirements](.kiro/specs/analyst-workspace/company-research-requirements.md).
-- [ ] Approve the bounded dashboard requirements, then proceed to design.
+- [x] Approve requirements and independently review the [Company Research design](.kiro/specs/analyst-workspace/company-research-design.md).
+- [ ] Approve the bounded design, then generate the parallel implementation task plan.
 
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
 - [x] Correct accounting-field evidence filtering and the assessment; 35 offline checks pass, original live receipts retained.
