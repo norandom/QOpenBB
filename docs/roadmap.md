@@ -27,6 +27,14 @@ The preceding [alpha-42188370167-1](https://github.com/norandom/QOpenBB/releases
 
 ## Next: investment analysis and valuation
 
+The next bounded increment is the [Company Research dashboard](../.kiro/specs/analyst-workspace/company-research-requirements.md): linked company selection, statements, price context, editable candidate peers and saved research configuration. [Readiness reconciliation](../.kiro/specs/analyst-workspace/research-readiness-reconciliation.md) distinguishes closed acquisition defects from unresolved financial comparability. Independent requirements review passed; owner approval is next.
+
+- [x] Reconcile the completed periodic-query and statement-period work with the dated IA-A assessment.
+- [x] Independently review bounded Company Research requirements, including App-template export/import.
+- [ ] Approve requirements and produce the bounded design.
+- [ ] Approve design and tasks, implement the composite research journey, and publish an accepted milestone.
+
+
 The [market-data requirements](../.kiro/specs/market-data-integrations/requirements.md) are owner-approved. The [design](../.kiro/specs/market-data-integrations/design.md) is also owner-approved. The independently reviewed [first task batch](../.kiro/specs/market-data-integrations/tasks.md) is owner-approved and implementation has started: 26 bounded tasks covering shared contracts, FMP financial inputs, FRED provenance, consumer integration and milestone delivery. Later DCF, narrative and wider provider families remain explicit follow-on work. [Research](../.kiro/specs/market-data-integrations/research.md) confirms reuse of the owned OpenBB framework and retained legacy provider code. Broad exploratory provider coverage supplies the analyst dashboards; it is not limited to one example company.
 
 The [investment-analysis contract](../.kiro/specs/analyst-workspace/investment-analysis-contract.md) defines the next analyst workflow: quarterly performance and cash conversion, defensible peer valuation, FMP DCF with a cost-of-capital/macro bridge, then linked expectations, news, transcripts and thesis context. Reuse OpenBB widgets and linking; no embedded browser is required. CFA-level analytical discipline is a quality target, not a certification claim.
@@ -42,7 +50,7 @@ These are planned financial capabilities, not completed chart-rendering features
 
 ## Current bounded proposal: Company Research input readiness
 
-The initial provider batch and company selector are complete. The next [IA-A requirements](../.kiro/specs/analyst-workspace/research-input-requirements.md) cover a representative nonfinancial company and at least two candidate peers, quarterly statement compatibility, dated price/share/EV inputs, FMP DCF feasibility and FRED Treasury context. [Source findings](../.kiro/specs/analyst-workspace/research-input-research.md) identify the remaining gaps without repeating completed checks. House calculations stay in the separate modeling workstream.
+The initial provider batch and company selector are complete. The completed IA-A assessment, guided by the [input requirements](../.kiro/specs/analyst-workspace/research-input-requirements.md), covered a representative nonfinancial company and at least two candidate peers, quarterly statement compatibility, dated price/share/EV inputs, FMP DCF feasibility and FRED Treasury context. [Source findings](../.kiro/specs/analyst-workspace/research-input-research.md) identify the remaining gaps without repeating completed checks. House calculations stay in the separate modeling workstream.
 
 - [x] Reconcile completed initial-provider and company-selector milestones, including the owner-reported Linux update.
 - [x] Independently review the bounded IA-A requirements: six requirements, 24 criteria, one repair pass.

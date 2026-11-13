@@ -92,6 +92,9 @@ Company Research input verification: 73 offline checks and five live journeys pa
 - [x] Accept the packaged Income/Balance/Cash browser journey ([evidence](artifacts/reviewed/statement-period-provenance/packaged.md)).
 - [x] Publish and accept all seven statement-period tasks: [alpha-42878062405-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-42878062405-1) ([evidence](artifacts/reviewed/statement-period-provenance/publication.md)).
 
+- [x] Reconcile readiness and independently review [Company Research dashboard requirements](.kiro/specs/analyst-workspace/company-research-requirements.md).
+- [ ] Approve the bounded dashboard requirements, then proceed to design.
+
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
 - [x] Correct accounting-field evidence filtering and the assessment; 35 offline checks pass, original live receipts retained.
 - [x] Approve the [periodic-query metadata repair design](.kiro/specs/market-data-integrations/periodic-query-provenance-design.md).

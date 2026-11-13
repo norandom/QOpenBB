@@ -26,7 +26,7 @@ Native Windows development is accepted using Podman Compose, with Dagger buildin
 | Extend financial models with executable validation and compatible widgets | [Modeling repository stub](../.kiro/specs/financial-modeling/brief.md) and [extension blueprint](../.kiro/specs/financial-modeling/repository-blueprint.md) |
 | Build, verify and prepare the prototype for installation | [Prototype delivery](prototype-delivery.md) |
 | Map FMP, FRED and Yahoo coverage to research needs | [Provider coverage](provider-coverage.md) |
-| Review the next Company Research batch | [IA-A input-readiness requirements](../.kiro/specs/analyst-workspace/research-input-requirements.md) and [source findings](../.kiro/specs/analyst-workspace/research-input-research.md) |
+| Review the next Company Research batch | [Dashboard requirements](../.kiro/specs/analyst-workspace/company-research-requirements.md) and [current readiness reconciliation](../.kiro/specs/analyst-workspace/research-readiness-reconciliation.md) |
 | Upgrade strict statement consumers and interpret period evidence | [Statement provenance migration](reference/statement-period-provenance.md) |
 | Review the financial schema projection prerequisite | [Authoritative annotation repair](../.kiro/specs/market-data-integrations/financial-annotations-amendment.md) |
 | Choose a chart for an analyst question | [Historical chart guide](chart-gallery.md) (36 chart screenshots, historical data recipes and interpretation) |
