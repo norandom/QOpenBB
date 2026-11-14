@@ -12,7 +12,7 @@
       "path": "backend-api/backend/api/schemas.py",
       "metric": "physical",
       "baseline": 2032,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.",
       "review": ".kiro/specs/openbb-self-service/login-password-policy.md",
       "expires_on": "2026-11-28"
@@ -22,7 +22,7 @@
       "path": "backend-api/backend/api/schemas.py",
       "metric": "logical",
       "baseline": 1291,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.",
       "review": ".kiro/specs/openbb-self-service/login-password-policy.md",
       "expires_on": "2026-11-28"
@@ -32,7 +32,7 @@
       "path": "terminalpro/src/routes/login.tsx",
       "metric": "physical",
       "baseline": 893,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.",
       "review": ".kiro/specs/openbb-self-service/login-password-policy.md",
       "expires_on": "2026-11-28"
@@ -42,7 +42,7 @@
       "path": "terminalpro/src/routes/login.tsx",
       "metric": "logical",
       "baseline": 303,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.",
       "review": ".kiro/specs/openbb-self-service/login-password-policy.md",
       "expires_on": "2026-11-28"
@@ -54,7 +54,7 @@
       "review": ".kiro/specs/analyst-workspace/gallery-schema-exception.md",
       "path": "terminalpro/src/lib/types/app.ts",
       "metric": "physical",
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "repository": "workspace"
     },
     {
@@ -62,7 +62,7 @@
       "path": "backend-api/backend/routers/pro/index.py",
       "metric": "physical",
       "baseline": 2007,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Reviewed no-growth exception for nullable first-login GET only; unchanged login function. No unrelated router changes.",
       "review": ".kiro/specs/openbb-self-service/first-login-diagnostics.md",
       "expires_on": "2026-11-27"
@@ -72,7 +72,7 @@
       "path": "backend-api/backend/routers/pro/index.py",
       "metric": "logical",
       "baseline": 608,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Reviewed no-growth exception for nullable first-login GET only; unchanged login function. No unrelated router changes.",
       "review": ".kiro/specs/openbb-self-service/first-login-diagnostics.md",
       "expires_on": "2026-11-27"
@@ -82,7 +82,7 @@
       "path": "backend-api/backend/routers/pro/index.py",
       "metric": "function",
       "baseline": 69,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Reviewed no-growth exception for nullable first-login GET only; unchanged login function. No unrelated router changes.",
       "review": ".kiro/specs/openbb-self-service/first-login-diagnostics.md",
       "expires_on": "2026-11-27",
@@ -97,7 +97,7 @@
       "path": "terminalpro/src/lib/state/copilot.ts",
       "metric": "physical",
       "baseline": 1601,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
       "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
       "expires_on": "2027-01-14"
@@ -107,7 +107,7 @@
       "path": "terminalpro/src/lib/state/copilot.ts",
       "metric": "logical",
       "baseline": 845,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
       "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
       "expires_on": "2027-01-14"
@@ -117,7 +117,7 @@
       "path": "terminalpro/src/lib/state/copilot.ts",
       "metric": "function",
       "baseline": 52,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
       "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
       "expires_on": "2027-01-14",
@@ -132,7 +132,7 @@
       "path": "terminalpro/src/components/types.d.ts",
       "metric": "physical",
       "baseline": 886,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Reviewed type-only Community import plus five Sankey chart vocabulary changes; no runtime emission or size growth.",
       "review": ".kiro/specs/analyst-workspace/sankey-schema-exception.md",
       "expires_on": "2026-11-27"
@@ -142,7 +142,7 @@
       "path": "terminalpro/src/components/types.d.ts",
       "metric": "logical",
       "baseline": 581,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Reviewed type-only Community import plus five Sankey chart vocabulary changes; no runtime emission or size growth.",
       "review": ".kiro/specs/analyst-workspace/sankey-schema-exception.md",
       "expires_on": "2026-11-27"
@@ -152,7 +152,7 @@
       "path": "terminalpro/src/components/General/Table/utils.tsx",
       "metric": "physical",
       "baseline": 505,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
       "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
       "expires_on": "2027-01-14"
@@ -162,7 +162,7 @@
       "path": "terminalpro/src/components/General/Table/utils.tsx",
       "metric": "function",
       "baseline": 62,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
       "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
       "expires_on": "2027-01-14",
@@ -177,7 +177,7 @@
       "path": "backend-api/backend/api/crud.py",
       "metric": "physical",
       "baseline": 1599,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.",
       "review": ".kiro/specs/openbb-self-service/sqlite-repair-verification.md",
       "expires_on": "2026-11-17"
@@ -187,7 +187,7 @@
       "path": "backend-api/backend/api/crud.py",
       "metric": "logical",
       "baseline": 582,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.",
       "review": ".kiro/specs/openbb-self-service/sqlite-repair-verification.md",
       "expires_on": "2026-11-17"
@@ -197,7 +197,7 @@
       "path": "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx",
       "metric": "physical",
       "baseline": 1000,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Owner-approved company-selector ceiling 1000; original 938, reviewed candidate 993. Only imports, compound local commit and existing header integration. Source SHA256 4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055. No other oversized-file allowance.",
       "review": "artifacts/reviewed/company-selector/task5.2-review.md",
       "expires_on": "2026-11-30"
@@ -207,7 +207,7 @@
       "path": "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx",
       "metric": "logical",
       "baseline": 390,
-      "revision": "71542bbeb85b13c08ace920cdfee786cc6d8287b",
+      "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
       "rationale": "Owner-approved company-selector ceiling 390; original 345, reviewed candidate 364. Only imports, compound local commit and existing header integration. Source SHA256 4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055. No other oversized-file allowance.",
       "review": "artifacts/reviewed/company-selector/task5.2-review.md",
       "expires_on": "2026-11-30"

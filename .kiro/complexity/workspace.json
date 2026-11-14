@@ -1,7 +1,7 @@
 {
   "id": "workspace",
   "repository": "https://github.com/norandom/openbb-workspace.git",
-  "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+  "revision": "50815d82d6a21e8d202eb689e5e3786ad6948ed4",
   "source_lock_key": "workspace",
   "root": "vendor/workspace",
   "mode": "changed",
@@ -19,7 +19,7 @@
     {
       "spec": "analyst-workspace/company-research",
       "include": ["terminalpro/src/**"],
-      "files": ["terminalpro/src/components/General/Table/AgGridTable.tsx", "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts", "terminalpro/src/components/General/ExportTemplatePopup.tsx", "terminalpro/src/components/Widgets/index.ts", "terminalpro/src/lib/companyResearch/config.ts", "terminalpro/src/lib/companyResearch/selectionReconciliation.ts", "terminalpro/src/lib/companyResearch/financialEnvelope.ts", "terminalpro/src/lib/companyResearch/eligibility.ts"]
+      "files": ["terminalpro/src/components/General/Table/AgGridTable.tsx", "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts", "terminalpro/src/components/General/ExportTemplatePopup.tsx", "terminalpro/src/components/Widgets/index.ts", "terminalpro/src/lib/companyResearch/config.ts", "terminalpro/src/lib/companyResearch/selectionReconciliation.ts", "terminalpro/src/lib/companyResearch/financialEnvelope.ts", "terminalpro/src/lib/companyResearch/eligibility.ts", "terminalpro/src/components/General/Table/useTableData.ts", "terminalpro/src/components/General/Table/tableQueryOptions.ts", "terminalpro/src/lib/companyResearch/useEvidenceLifecycle.ts", "terminalpro/src/lib/utils/exportTemplate.ts", "terminalpro/src/lib/utils/researchTemplateState.ts", "terminalpro/src/components/Widgets/CompanyResearch/PeerEditor.tsx", "terminalpro/src/components/Widgets/CompanyResearch/ObservationInspector.tsx", "terminalpro/src/components/Widgets/CompanyResearch/observationPresentation.ts", "terminalpro/src/components/Widgets/CompanyResearch/usePeerObservations.ts", "terminalpro/src/components/Widgets/CompanyResearch/PeerObservations.tsx", "terminalpro/src/components/Widgets/CompanyResearch/PeerResearch.tsx"]
     }
   ],
   "exclusions": [
