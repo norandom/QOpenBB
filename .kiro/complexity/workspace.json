@@ -19,7 +19,7 @@
     {
       "spec": "analyst-workspace/company-research",
       "include": ["terminalpro/src/**"],
-      "files": ["terminalpro/src/components/General/Table/AgGridTable.tsx", "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts", "terminalpro/src/components/General/ExportTemplatePopup.tsx", "terminalpro/src/components/Widgets/index.ts"]
+      "files": ["terminalpro/src/components/General/Table/AgGridTable.tsx", "terminalpro/src/components/General/Table/NavBar/useCompanySelection.ts", "terminalpro/src/components/General/ExportTemplatePopup.tsx", "terminalpro/src/components/Widgets/index.ts", "terminalpro/src/lib/companyResearch/config.ts", "terminalpro/src/lib/companyResearch/selectionReconciliation.ts", "terminalpro/src/lib/companyResearch/financialEnvelope.ts", "terminalpro/src/lib/companyResearch/eligibility.ts"]
     }
   ],
   "exclusions": [
