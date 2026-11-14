@@ -205,7 +205,9 @@
     "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
     "company_research_runtime_root": "4736c310320b16aa7f3b6c9de5c68a0643c4c664",
     "company_research_workspace": "bf180ef506286886da224df9ff184cd1ace2397e",
-    "company_research_data_api": "a965f70c164fe477ce9c99654b9be48e2f1bc9fd"
+    "company_research_data_api": "a965f70c164fe477ce9c99654b9be48e2f1bc9fd",
+    "company_research_release_root": "fbd81eaf11d82b47043592f60736009304f198c8",
+    "company_research_release_tag": "alpha-43604526965-1"
   },
   "entries": [
     {
@@ -35711,6 +35713,22 @@
       "publishedSHA256": "40df845ac2a5bcf7088a0e2162d3a017176549d80c43c324184995758698753d",
       "bytes": 4189,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/publication/publication-review.md",
+      "sourceSHA256": "0d6e2258ac66cb03bae66c5190bd31d55103f1b0479136e29ccc36b57782ccd4",
+      "publishedpath": "artifacts/reviewed/company-research/publication-review.md",
+      "publishedSHA256": "0d6e2258ac66cb03bae66c5190bd31d55103f1b0479136e29ccc36b57782ccd4",
+      "bytes": 5178,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/final-integration-review.md",
+      "sourceSHA256": "4c9c9316f79847481f1f6b4ac51d107bd2a073d32ec0eaa7798a6dbc9fc295b1",
+      "publishedpath": "artifacts/reviewed/company-research/final-integration-review.md",
+      "publishedSHA256": "4c9c9316f79847481f1f6b4ac51d107bd2a073d32ec0eaa7798a6dbc9fc295b1",
+      "bytes": 16997,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36435,8 +36453,8 @@
       "reason": "Only the independently reviewed allowlist is published; raw runtime, private state, and redundant scratch copies remain excluded."
     }
   ],
-  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source and local runtime acceptance are included; milestone publication remains pending.",
-  "total_payload_bytes": 171283433,
+  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations.",
+  "total_payload_bytes": 171305608,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

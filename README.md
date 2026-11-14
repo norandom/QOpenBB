@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-42878062405-1) with public prebuilt `latest` images.** The latest alpha adds statement-period provenance; the owner confirmed the preceding company-selector alpha on Linux on 2026-11-06. Provider expansion, the Bloomberg-inspired analyst workspace, AI and Excel have separate specs.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-43604526965-1) with public prebuilt `latest` images.** The latest alpha adds the [Company Research App](docs/company-research.md), with independently reviewed local financial observations, template portability and retained-data recreation. [Publication evidence](artifacts/reviewed/company-research/publication-review.md) binds the release images separately. The owner-confirmed Linux deployment remains the earlier company-selector alpha; house modeling, full IA-B, AI and Excel remain separate workstreams.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -97,7 +97,7 @@ Company Research input verification: 73 offline checks and five live journeys pa
 - [x] Approve the bounded design and independently review the [13-task implementation plan](.kiro/specs/analyst-workspace/company-research-tasks.md), including the [repaired owner amendment](.kiro/specs/analyst-workspace/company-research-tasks-amendment-rereview.md).
 - [x] Approve the Company Research tasks and accept the [foundation and shared contracts](artifacts/reviewed/company-research/verification.md).
 - [x] Accept the bounded [Company Research App](docs/company-research.md), including local FMP observations, template portability and retained-data recreation. [Runtime review](artifacts/reviewed/company-research/runtime-acceptance.md).
-- [ ] Publish and verify the Company Research milestone images and release assets (task 5.3).
+- [x] Publish and verify the Company Research milestone images and release assets: [alpha-43604526965-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-43604526965-1) ([receipt](artifacts/reviewed/company-research/publication-review.md)).
 
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
 - [x] Correct accounting-field evidence filtering and the assessment; 35 offline checks pass, original live receipts retained.

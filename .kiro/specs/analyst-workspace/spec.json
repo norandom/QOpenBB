@@ -76,7 +76,7 @@
       }
     },
     "company_research": {
-      "phase": "implementation-in-progress",
+      "phase": "accepted-published",
       "approved_tasks_sha256": "a6b64a0ed4c4a5b27e8f83b2623b0ac423dbe6ca0be6ec3c07c50893e9b62f30",
       "approval_only_edit": "Task status and execution authorization updated after owner approval; reviewed executable task text unchanged.",
       "implementation_approval": "Owner approved the repaired task plan and implementation on 2026-11-14 and explicitly requested the project subagent model.",
@@ -96,7 +96,7 @@
         "sha256": "71c0d50c5fdec2247d35543694f478dc531893e88e0357e2db5fde6410ed7df4"
       },
       "scope": "Bounded provider-observation research App; house calculations and full IA-B acceptance remain separate.",
-      "next_step": "Tasks 4.3, 5.1 and 5.2 accepted at artifacts/reviewed/company-research/runtime-acceptance.md on 2026-11-14. Complete task 5.3 release/publication verification; full IA-B and owner-server acceptance remain separate.",
+      "next_step": "Bounded Company Research accepted and published as alpha-43604526965-1 from fbd81eaf11d82b47043592f60736009304f198c8; see artifacts/reviewed/company-research/publication-review.md. Full IA-B, house modeling and owner-server acceptance remain separate.",
       "requirements_approval": "Owner approved the independently reviewed requirements in conversation on 2026-11-13; bounded design generation authorized.",
       "design_generated": true,
       "design_document": "company-research-design.md",
@@ -113,7 +113,7 @@
       "tasks_generated": true,
       "tasks_document": "company-research-tasks.md",
       "executable_tasks": 13,
-      "completed_tasks": 12,
+      "completed_tasks": 13,
       "tasks_review": {
         "status": "passed",
         "mode": "independent",

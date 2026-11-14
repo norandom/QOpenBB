@@ -137,7 +137,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 3.1, 3.3, 3.4, 3.5, 4.1, 4.2_
   - _Requirements: 1.1, 1.2, 1.3, 2.1, 2.3, 2.4, 2.5, 4.1, 5.1, 5.5, 5.6, 6.1_
 
-- [ ] 5. Verify and deliver the bounded milestone
+- [x] 5. Verify and deliver the bounded milestone
 - [x] 5.1 Verify the packaged analyst journey with real FMP observations
   - Build the accepted candidate through existing Dagger definitions and run it in owned native Compose with the existing financial browser runner; budget packaged Workspace logins across 5.1 and 5.2 against the 5-logins-per-minute client-IP rate limiter (`testing.md`) to avoid HTTP 429 false failures. Tests/publication remain outside Dagger.
   - Use a primary company and two peers; check displayed values against source evidence (including `stock_based_compensation`, `ebitda`, `operating_cash_flow` and `free_cash_flow` where returned), readable identity changes, annual/quarter changes, independent price dates, peer edits, inspector metadata (row currency, date basis, accounting-optimization limitation disclosures), peer multiple missing-denominator `unverified` states and refresh behavior.
@@ -157,7 +157,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 5.1_
   - _Requirements: 5.1, 5.2, 5.5, 5.6, 6.2, 6.3_
 
-- [ ] 5.3 Verify milestone publication and close evidence mappings
+- [x] 5.3 Verify milestone publication and close evidence mappings
   - Run the existing release pipeline once for the accepted feature, including its Dagger image build and portable publication steps. Verify immutable image/manifest/source identities and prebuilt pullability; do not rebuild for every task commit.
   - Synchronize only completed sanitized evidence into the reviewed artifact mirror, validate hashes and obtain independent acceptance of the publication set. Update actual test paths/evidence and completed checkboxes in breadth, README and docs.
   - Done: a tagged milestone and its image receipts identify the accepted feature and limitations. Planned/skipped checks stay distinct; full IA-B and owner-server acceptance remain open unless separately evidenced.
@@ -175,3 +175,7 @@ Task approval authorizes this bounded implementation workflow only. House modeli
 ## Local runtime acceptance record
 
 2026-11-14: tasks 4.3, 5.1 and 5.2 independently accepted against artifacts/reviewed/company-research/runtime-acceptance.md. The exact source/image/test identities, initial/reopen outcomes, cumulative FMP count 291, zero FRED, fixture classifications and remaining limitations are recorded there. Task 5.3 remains open. Parent tasks 3 and 4 summarize their accepted children; they are not additional executable tasks. This is 12 of 13 executable tasks, not completion of the analyst-workspace umbrella or full IA-B readiness.
+
+## Published milestone closure
+
+2026-11-14: all 13 executable tasks accepted for alpha-43604526965-1 at CI source fbd81eaf11d82b47043592f60736009304f198c8. Both CI jobs and all three public assets passed. Six anonymous pulls: passed: six digest/release-tag/latest pulls, source labels and linux/amd64 config identities matched; private verification receipt SHA256 88396153f8285eb365fe9e2e98ff49545196a835c33e0d3d9347b05e45e6024d. Independent final review: APPROVED: artifacts/reviewed/company-research/publication-review.md, SHA256 0d6e2258ac66cb03bae66c5190bd31d55103f1b0479136e29ccc36b57782ccd4. The reviewed publication record is artifacts/reviewed/company-research/publication-review.md. Source-bound local financial acceptance and subsequent preventive writer checks retain their distinct identities. This closes criterion 6.4 only within the bounded feature; full IA-B, house modeling, backup/restore and owner-server deployment remain separate.

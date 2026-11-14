@@ -10,7 +10,7 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 - Docker with the Compose plugin.
 - Port 23003 available.
 - FMP and FRED API keys.
-- The alpha's `compose.yaml`, `.env.sample` and matching image references.
+- The alpha's `compose.yaml`, public `default.env.sample` asset and matching image references. Save the downloaded environment template locally as `.env.sample` before the commands below.
 
 | Service | Environment variable | Alpha image |
 | --- | --- | --- |
@@ -19,22 +19,22 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-42878062405-1/manifest.json) for `alpha-42878062405-1`:
+Published [manifest image pair](https://github.com/norandom/QOpenBB/releases/download/alpha-43604526965-1/manifest.json) for `alpha-43604526965-1`:
 
 | Service | Exact published reference |
 | --- | --- |
-| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:d6909de5259d08362e74b9ede98a8ab387e7f8db58da02fe28b7a51f8d753315` |
-| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:6ce9186a0f0a9ddd6022a6703aed65b2899cd3e737e5c468351326c9c9342e6b` |
+| workspace | `ghcr.io/norandom/qopenbb-workspace@sha256:5e456b5f84383f49eb3e9cbda85ec20c9006e31d18619be715e4743c7cc8b570` |
+| data-api | `ghcr.io/norandom/qopenbb-data-api@sha256:fa113636cfb8a7df948053cfa39b8473e987ad68ab39ec54c0f079fa2909fac9` |
 
-Both CI jobs, three public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [statement-period publication and packaged evidence](../artifacts/reviewed/statement-period-provenance/publication.md).
+Both CI jobs, three public release-asset checks and six anonymous pulls by digest, release tag and `latest` pass. See the [Company Research publication evidence](../artifacts/reviewed/company-research/publication-review.md).
 
-This alpha packages native locked uv, readable Python source under CPython and embedded Valkey 9.0.7. Its eleven native definitions retain the FMP financial-input adapters and generic FRED series contract, including [Company name and Symbol selection](company-selection.md) in eight immediate FMP widgets. It retains periodic-query provenance for Metrics and Ratios and adds [statement-period evidence](reference/statement-period-provenance.md) for Income, Balance and Cash. [Data-layer acceptance](../artifacts/reviewed/market-live-financial-inputs/accepted.md) and [local selector acceptance](../artifacts/reviewed/company-selector/20261106-acceptance-review.md) describe their tested scope. Published image identities are verified separately. On 2026-11-06 the owner confirmed the Linux update to the preceding `alpha-42188370167-1`, retained dashboards and working autocomplete. That report applies only to the preceding alpha; the current release has no new owner-server or CI-image browser acceptance. The same accepted sources passed the local candidate statement-widget journey. Independent server inspection and recovery remain unverified.
+This alpha retains native locked uv, readable Python, embedded Valkey and the eleven endpoint-backed financial definitions, and adds the native Peer Research declaration and curated Company Research App. Existing company selection, periodic-query provenance and statement-period evidence remain available. The [local Company Research acceptance](../artifacts/reviewed/company-research/runtime-acceptance.md) checks source-matched observations, template portability and retained-data recreation on the identified local candidate. Published CI image identities are verified separately; their browser behavior has not been rerun. The owner confirmed the earlier alpha-42188370167-1 on Linux on 2026-11-06; that report does not transfer to this release. Independent server inspection and recovery remain unverified.
 
 The earlier [Python-source/Valkey acceptance](../artifacts/reviewed/python-source-packaging/runtime-review.md), [login repair](../artifacts/reviewed/login-password/application-review.md) and [historical chart gallery](../artifacts/reviewed/chart-gallery/publication-review.md) remain scoped historical evidence. Backup/restore and rollback remain unverified.
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-42878062405-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-42878062405-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-42878062405-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-43604526965-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-43604526965-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-43604526965-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace

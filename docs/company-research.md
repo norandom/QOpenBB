@@ -1,6 +1,6 @@
 # Company Research
 
-Open the installed Company Research App to inspect one company, its statements and dated price context, alongside an independent list of candidate peers. This guide describes the bounded local milestone accepted on 2026-11-14; image publication is still pending under task 5.3. See the [runtime review](../artifacts/reviewed/company-research/runtime-acceptance.md) for exact images and limitations.
+Open the installed Company Research App to inspect one company, its statements and dated price context, alongside an independent list of candidate peers. This guide describes the bounded milestone published as [alpha-43604526965-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-43604526965-1). [Publication verification](../artifacts/reviewed/company-research/publication-review.md) is separate from local runtime acceptance; no browser execution against the CI image bytes or new owner-server deployment is claimed. See the [runtime review](../artifacts/reviewed/company-research/runtime-acceptance.md) for exact images and limitations.
 
 ## Use the App
 
