@@ -942,12 +942,17 @@ test("Company Research real FMP analyst choices template portability and retaine
   const facts: unknown[] = [];
   const syncReads = new WeakMap<Page, Promise<any>[]>();
   const syncAccess = new WeakMap<Page, { url: string; authorization?: string }>();
+  const responseLifecycle: { requestIndex: number; path: string; state: "requested" | "headers" | "finished" | "failed";
+    read: "not-started" | "pending" | "resolved" | "not-successful" | "failed"; source: "live" | "deterministic";
+    demandedByCaptured: boolean; status?: number; failure?: "aborted" | "transport" }[] = [];
+  const captureDemands: { path: string; symbol: string; period: string | null; after: number;
+    source: "live" | "deterministic"; matchedRequestIndex: number | null }[] = [];
   const requestEstimate = {
-    status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 250, fred: 0 },
+    status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 320, fred: 0 },
     initial: { measuredPriorPrefixPlanningAllowance: 20, peerSearchAndInitial: 6, priceEdits: 2, statementQuarter: 3, peerQuarter: 4,
       deterministicRawRefreshes: 0, syntheticFailureUnaffectedLive: 3, recoveryRefresh: 4, exportedImport: 9,
       foreignImportAndReopenPeers: 8, explicitRecovery: 10, freshLoginSingleHydration: 9 },
-    retainedReopen: { singleHydration: 9 }, plannedContinuation: 87, priorCumulative: 135, remaining: 115, headroom: 28,
+    retainedReopen: { singleHydration: 9 }, plannedContinuation: 87, priorCumulative: 202, remaining: 118, headroom: 31,
     conditions: "Exact intended-dashboard login landing reuses successful sync; other landing navigates once. Search expiry and legitimate retries consume headroom.",
     loginCounts: { initialTest: 2, retainedReopenTest: 1, excludesControllerReadiness: true },
     accounting: "External cumulative ledger counts actual send reservations including retry=1; exhaustion fails/incompletes acceptance without raising the ceiling.",
@@ -964,9 +969,6 @@ test("Company Research real FMP analyst choices template portability and retaine
         if (!syncAccess.has(target)) syncAccess.set(target, {
           url: response.url(), authorization: response.request().headers().authorization,
         });
-        const read = response.json();
-        successfulSyncs.push(read);
-        void read.catch(() => undefined);
       }
     });
     target.on("request", request => {
@@ -974,6 +976,8 @@ test("Company Research real FMP analyst choices template portability and retaine
       if (url.origin !== process.env.WORKSPACE_FRONTEND_ORIGIN || !url.pathname.startsWith("/data/api/")) return;
       const query = Object.fromEntries(url.searchParams);
       requestIndices.set(request, requests.length);
+      responseLifecycle.push({ requestIndex: requests.length, path: url.pathname, state: "requested", read: "not-started",
+        source: "live", demandedByCaptured: false });
       requests.push({ path: url.pathname, query });
       expect(query.provider).toBe("fmp");
       if (url.pathname === searchPath) {
@@ -993,21 +997,62 @@ test("Company Research real FMP analyst choices template portability and retaine
     target.on("response", response => {
       const url = new URL(response.url());
       if (url.origin !== process.env.WORKSPACE_FRONTEND_ORIGIN || !url.pathname.startsWith("/data/api/")) return;
+      const state = responseLifecycle[requestIndices.get(response.request())!];
+      state.state = "headers";
+      state.status = response.status();
+      state.source = syntheticRequests.has(response.request()) ? "deterministic" : "live";
       if (response.status() === 503) expect(syntheticRequests.has(response.request()), "unexpected real HTTP 503").toBe(true);
-      if (!response.ok()) return;
-      const read = response.json().then(payload => { captures.push({ url, payload, requestIndex: requestIndices.get(response.request())!, source: syntheticRequests.has(response.request()) ? "deterministic" : "live" }); }).catch(error => {
-        throw error;
+    });
+    target.on("requestfailed", request => {
+      const index = requestIndices.get(request);
+      if (index === undefined) return;
+      const state = responseLifecycle[index];
+      state.state = "failed";
+      state.source = syntheticRequests.has(request) ? "deterministic" : "live";
+      state.failure = /ERR_ABORTED|NS_BINDING_ABORTED/.test(request.failure()?.errorText ?? "") ? "aborted" : "transport";
+    });
+    // Headers may precede cancellation; only a completed transport owns a body read.
+    target.on("requestfinished", request => {
+      const url = new URL(request.url());
+      if (url.origin !== process.env.WORKSPACE_FRONTEND_ORIGIN) return;
+      const financial = url.pathname.startsWith("/data/api/");
+      const sync = request.method() === "GET" && url.pathname.endsWith("/pro/dash/validate-and-sync");
+      if (!financial && !sync) return;
+      const index = requestIndices.get(request);
+      const state = index === undefined ? undefined : responseLifecycle[index];
+      if (state) { state.state = "finished"; state.read = "pending"; }
+      const read = request.response().then(async response => {
+        expect(response, "Finished request requires response evidence").not.toBeNull();
+        if (!response!.ok()) { if (state) state.read = "not-successful"; return undefined; }
+        const payload = await response!.json();
+        if (financial) {
+          expect(index).toBeDefined();
+          const source = syntheticRequests.has(request) ? "deterministic" : "live";
+          captures.push({ url, payload, requestIndex: index!, source });
+          state!.read = "resolved";
+          state!.source = source;
+        }
+        return payload;
+      }).catch(() => {
+        if (state) state.read = "failed";
+        throw new Error(`Completed response body read failed: ${url.pathname}; request ${index ?? "sync"}`);
       });
-      reads.push(read);
+      if (financial) reads.push(read);
+      else successfulSyncs.push(read);
       void read.catch(() => undefined);
     });
   }
   observe(page);
   async function captured(path: string, symbol: string, period?: string, after = 0, source: "live" | "deterministic" = "live") {
+    const demand: typeof captureDemands[number] = { path, symbol, period: period ?? null, after, source, matchedRequestIndex: null };
+    captureDemands.push(demand);
     const match = (item: typeof captures[number]) => item.requestIndex >= after && item.source === source && item.url.pathname === path && item.url.searchParams.get("symbol") === symbol &&
       (!period || item.url.searchParams.get("period") === period);
     await expect.poll(() => captures.some(match)).toBe(true);
-    return captures.findLast(match)!.payload;
+    const selected = captures.findLast(match)!;
+    demand.matchedRequestIndex = selected.requestIndex;
+    responseLifecycle[selected.requestIndex].demandedByCaptured = true;
+    return selected.payload;
   }
   const widget = (target: Page, id: string) => target.locator(`#workarea .widget-${id}`).first();
   async function readResearchDashboard(target: Page, url: string) {
@@ -1016,7 +1061,7 @@ test("Company Research real FMP analyst choices template portability and retaine
     let content: any;
     await expect.poll(async () => {
       const successful = await Promise.all(syncReads.get(target) ?? []);
-      content = successful.findLast(item => item.owned?.[id]?.content)?.owned[id].content;
+      content = successful.findLast(item => item?.owned?.[id]?.content)?.owned[id].content;
       return content !== undefined;
     }, { message: "Already-loaded intended dashboard requires successful login sync evidence" }).toBe(true);
     return content;
@@ -1592,7 +1637,7 @@ test("Company Research real FMP analyst choices template portability and retaine
       runtimeName: runtime.name, containerId: runtime.container, dashboardPath: new URL(url).pathname, state: expected, selected }, null, 2)}\n`, { flag: "wx" });
   } finally {
     await info.attach("company-research-sanitized-financial-facts", { contentType: "application/json",
-      body: JSON.stringify({ phase, images: runtime.images, requestEstimate, facts, requests,
+      body: JSON.stringify({ phase, images: runtime.images, requestEstimate, facts, requests, responseLifecycle, captureDemands,
         limitation: "Retained-data recreation only; no backup/restore or owner-server acceptance. Cumulative provider budget enforced by checked external controller." }) });
   }
 });
