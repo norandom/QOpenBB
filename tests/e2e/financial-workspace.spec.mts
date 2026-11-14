@@ -943,11 +943,11 @@ test("Company Research real FMP analyst choices template portability and retaine
   const syncReads = new WeakMap<Page, Promise<any>[]>();
   const syncAccess = new WeakMap<Page, { url: string; authorization?: string }>();
   const requestEstimate = {
-    status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 160, fred: 0 },
+    status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 200, fred: 0 },
     initial: { measuredPriorPrefixPlanningAllowance: 20, peerSearchAndInitial: 6, priceEdits: 2, statementQuarter: 3, peerQuarter: 4,
       deterministicRawRefreshes: 0, syntheticFailureUnaffectedLive: 3, recoveryRefresh: 4, exportedImport: 9,
       foreignImportAndReopenPeers: 8, explicitRecovery: 10, freshLoginSingleHydration: 9 },
-    retainedReopen: { singleHydration: 9 }, plannedContinuation: 87, priorCumulative: 58, remaining: 102, headroom: 15,
+    retainedReopen: { singleHydration: 9 }, plannedContinuation: 87, priorCumulative: 93, remaining: 107, headroom: 20,
     conditions: "Exact intended-dashboard login landing reuses successful sync; other landing navigates once. Search expiry and legitimate retries consume headroom.",
     loginCounts: { initialTest: 2, retainedReopenTest: 1, excludesControllerReadiness: true },
     accounting: "External cumulative ledger counts actual send reservations including retry=1; exhaustion fails/incompletes acceptance without raising the ceiling.",
@@ -1336,6 +1336,12 @@ test("Company Research real FMP analyst choices template portability and retaine
       const fixturePayload = structuredClone(await captured("/data/api/v1/equity/fundamental/ratios", "ORCL", "quarter"));
       const fixtureField = Object.keys(fixturePayload.results[0]).find(key => typeof fixturePayload.results[0][key] === "number")!;
       expect(fixtureField).toBeTruthy();
+      const originalField = fixturePayload.extra.results_metadata.__qopenbb_financial__.fields[fixtureField];
+      const originalCurrency = originalField.currency_field ? fixturePayload.results[0][originalField.currency_field] : originalField.currency;
+      const originalPanel = research.getByRole("region", { name: "ORCL ratios", exact: true });
+      await originalPanel.getByLabel("Field", { exact: true }).selectOption(fixtureField);
+      await expect(originalPanel.locator("dt").filter({ hasText: /^Unit \/ scale \/ row currency$/ }).locator("xpath=following-sibling::dd[1]"))
+        .toHaveText([originalField.unit, originalField.scale, originalCurrency].map(value => value == null ? "Unknown" : String(value)).join(" / "));
       const fixturePath = (url: URL) => url.origin === process.env.WORKSPACE_FRONTEND_ORIGIN && /^\/data\/api\/v1\/equity\/fundamental\/(metrics|ratios)$/.test(url.pathname);
       const fixtureBaselines = new Map<string, any>();
       for (const symbol of ["MSFT", "ORCL"]) for (const dataset of ["metrics", "ratios"])
@@ -1350,7 +1356,9 @@ test("Company Research real FMP analyst choices template portability and retaine
         payload.results[0][fixtureField] = fixtureCase === "missing" ? null : fixtureCase === "zero" ? 0 : -1;
         const field = payload.extra.results_metadata.__qopenbb_financial__.fields[fixtureField];
         if (fixtureCase === "incompatible") {
+          // This scenario owns synthetic metadata; the original field may have unknown scale.
           field.unit = "shares";
+          field.scale = 1;
           field.currency = "EUR";
           delete field.currency_field;
           field.financial_basis = { share_count: "synthetic incompatible diluted basis" };
