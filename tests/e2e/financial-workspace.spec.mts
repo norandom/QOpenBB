@@ -496,7 +496,11 @@ async function chooseCompany(widget: Locator, mode: "name" | "symbol", query: st
   await widget.getByRole("combobox", { name: mode === "name" ? "Company name" : "Symbol", exact: true }).fill(query);
   const search = await response;
   expect(search.status()).toBe(200);
-  const payload = await search.json();
+  return selectCompanyListing(widget, mode, query, symbol, await search.json());
+}
+
+async function selectCompanyListing(widget: Locator, mode: "name" | "symbol", query: string, symbol: string, payload: any) {
+  const page = widget.page();
   const metadata = payload.extra.results_metadata.__qopenbb_financial__;
   expect(metadata).toMatchObject({ dataset: "equity/search", provider: "fmp",
     source: { endpoint: mode === "name" ? "search-name" : "search-symbol" },
@@ -935,18 +939,30 @@ test("Company Research real FMP analyst choices template portability and retaine
   const expectedConsole503 = new Set<object>();
   const reads: Promise<void>[] = [];
   const facts: unknown[] = [];
+  const syncReads = new WeakMap<Page, Promise<any>[]>();
   const requestEstimate = {
     status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 120, fred: 0 },
-    initial: { defaultApp: 6, primaryChanges: 13, peerSearchAndInitial: 6, priceEdits: 2, statementQuarter: 3, peerQuarter: 4,
+    initial: { measuredPriorPrefixPlanningAllowance: 20, peerSearchAndInitial: 6, priceEdits: 2, statementQuarter: 3, peerQuarter: 4,
       deterministicRawRefreshes: 0, syntheticFailureUnaffectedLive: 3, recoveryRefresh: 4, exportedImport: 9,
-      foreignImportAndReopenPeers: 8, explicitRecovery: 6, freshLoginAndReopenUpperBound: 18 },
-    retainedReopen: { loginAndExplicitReopenUpperBound: 18 }, normalSubtotal: 100, sharedLookupAllowance: 4, retryHeadroom: 16,
+      foreignImportAndReopenPeers: 8, explicitRecovery: 6, freshLoginSingleHydration: 9 },
+    retainedReopen: { singleHydration: 9 }, plannedContinuation: 83, priorCumulative: 26, remaining: 94, headroom: 11,
+    conditions: "Exact intended-dashboard login landing reuses successful sync; other landing navigates once. Search expiry and legitimate retries consume headroom.",
     loginCounts: { initialTest: 2, retainedReopenTest: 1, excludesControllerReadiness: true },
     accounting: "External cumulative ledger counts actual send reservations including retry=1; exhaustion fails/incompletes acceptance without raising the ceiling.",
   };
   const requests: { path: string; query: Record<string, string> }[] = [];
   const primaryIds = [profileId, widgetId, "equity_fundamental_balance_fmp_obb", "equity_fundamental_cash_fmp_obb", "equity_price_historical_fmp_obb"];
   function observe(target: Page) {
+    const successfulSyncs: Promise<any>[] = [];
+    syncReads.set(target, successfulSyncs);
+    target.on("response", response => {
+      if (response.request().method() === "GET" && response.ok() &&
+        new URL(response.url()).pathname.endsWith("/pro/dash/validate-and-sync")) {
+        const read = response.json();
+        successfulSyncs.push(read);
+        void read.catch(() => undefined);
+      }
+    });
     target.on("request", request => {
       const url = new URL(request.url());
       if (url.origin !== process.env.WORKSPACE_FRONTEND_ORIGIN || !url.pathname.startsWith("/data/api/")) return;
@@ -988,6 +1004,17 @@ test("Company Research real FMP analyst choices template portability and retaine
     return captures.findLast(match)!.payload;
   }
   const widget = (target: Page, id: string) => target.locator(`#workarea .widget-${id}`).first();
+  async function readResearchDashboard(target: Page, url: string) {
+    if (target.url() !== url) return readFinancialDashboard(target, url);
+    const id = new URL(url).pathname.split("/").at(-1)!;
+    let content: any;
+    await expect.poll(async () => {
+      const successful = await Promise.all(syncReads.get(target) ?? []);
+      content = successful.findLast(item => item.owned?.[id]?.content)?.owned[id].content;
+      return content !== undefined;
+    }, { message: "Already-loaded intended dashboard requires successful login sync evidence" }).toBe(true);
+    return content;
+  }
   const saved = async (target: Page) => (await saveDashboard(target)).items[new URL(target.url()).pathname.split("/").at(-1)!];
   async function revealResearch(target: Page) {
     await expect(target.locator("#workarea [data-widget-id]")).toHaveCount(primaryIds.length + 1);
@@ -1107,6 +1134,7 @@ test("Company Research real FMP analyst choices template portability and retaine
   let selected: any;
   let retainedReadAt = 0;
   try {
+    if (phase === "reopen") retainedReadAt = requests.length;
     await loginDisposableWorkspace(page);
     if (phase === "initial") {
       expect(existsSync(checkpoint)).toBe(false);
@@ -1130,9 +1158,36 @@ test("Company Research real FMP analyst choices template portability and retaine
         originalAapl.set(path, await captured(path, "AAPL", id.includes("fundamental") ? "annual" : undefined));
       }
       await verifyNativeProfile(profile, originalAapl.get(profilePath), "AAPL");
+      const initialProfile = (await saved(page)).data.widgets.find((item: any) => item.widgetId === profileId);
+      const originalSearch = captures.find(item => item.source === "live" && item.url.pathname === searchPath &&
+        item.url.searchParams.get("query") === "AAPL" && item.url.searchParams.get("is_symbol") === "true" &&
+        item.payload.extra.results_metadata.__qopenbb_financial__.retrieved_at === initialProfile.storage.companySelection.retrievedAt);
+      expect(originalSearch).toBeDefined();
       for (const [mode, query, symbol] of [["name", "Microsoft", "MSFT"], ["symbol", "AAPL", "AAPL"]] as const) {
         const changedAt = requests.length;
-        selected = await chooseCompany(profile, mode, query, symbol);
+        if (symbol === "AAPL") {
+          await profile.getByRole("combobox", { name: "Symbol", exact: true }).fill(query);
+          selected = await selectCompanyListing(profile, mode, query, symbol, originalSearch!.payload);
+          const returnedProfile = (await saved(page)).data.widgets.find((item: any) => item.widgetId === profileId);
+          await Promise.all(reads);
+          const actualAcquisition = returnedProfile.storage.companySelection.retrievedAt;
+          const searches = requests.slice(changedAt).filter(item => item.path === searchPath && item.query.query === "AAPL" && item.query.is_symbol === "true");
+          const cachedSearch = actualAcquisition === initialProfile.storage.companySelection.retrievedAt;
+          if (!cachedSearch) {
+            expect(searches.length).toBeGreaterThan(0);
+            const fresh = captures.find(item => item.requestIndex >= changedAt && item.source === "live" && item.url.pathname === searchPath &&
+              item.url.searchParams.get("query") === query && item.url.searchParams.get("is_symbol") === "true" &&
+              item.payload.extra.results_metadata.__qopenbb_financial__.retrieved_at === actualAcquisition);
+            expect(fresh).toBeDefined();
+            expect(fresh!.payload.extra.results_metadata.__qopenbb_financial__).toMatchObject({ dataset: "equity/search", provider: "fmp",
+              source: { endpoint: "search-symbol" }, effective_query: { query, limit: 20 } });
+            expect(fresh!.payload.results.filter((row: any) => row.symbol === symbol)).toEqual([selected.listing]);
+            selected = { ...selected, retrievedAt: actualAcquisition };
+          }
+          facts.push({ context: "same mounted profile AAPL search return", outcome: cachedSearch ? "explicit-cache" : "observed-live-after-expiry",
+            query: { query, is_symbol: true, limit: 20 }, retrievedAt: actualAcquisition, allWidgetAaplSearches: searches.length,
+            evidence: "Profile cache use requires its original acquisition; expiry requires actual matching live response. Other mounted selectors own independent search caches." });
+        } else selected = await chooseCompany(profile, mode, query, symbol);
         for (const id of primaryIds.filter(id => !id.includes("price"))) await expectSelectedCompany(widget(page, id), selected.listing);
         // Only this identical-key return intentionally reuses the original live AAPL evidence.
         // The accepted table adapter keeps that query fresh for 15 minutes; selection timestamps do not invalidate it.
@@ -1402,8 +1457,7 @@ test("Company Research real FMP analyst choices template portability and retaine
       url = `${process.env.WORKSPACE_FRONTEND_ORIGIN}${prior.dashboardPath}`;
       expected = prior.state;
       selected = prior.selected;
-      retainedReadAt = requests.length;
-      const retainedState = selectionState(await readFinancialDashboard(page, url));
+      const retainedState = selectionState(await readResearchDashboard(page, url));
       assertIntended(retainedState);
       expect(retainedState).toEqual(expected);
     }
@@ -1416,9 +1470,9 @@ test("Company Research real FMP analyst choices template portability and retaine
       const reopened = await context.newPage();
       diagnostics.push(await observeApplication(reopened));
       observe(reopened);
-      await loginDisposableWorkspace(reopened);
       const reopenedAt = requests.length;
-      const reopenedState = selectionState(await readFinancialDashboard(reopened, url));
+      await loginDisposableWorkspace(reopened);
+      const reopenedState = selectionState(await readResearchDashboard(reopened, url));
       assertIntended(reopenedState);
       expect(reopenedState).toEqual(expected);
       await expectSelectedCompany(widget(reopened, profileId), selected.listing);
