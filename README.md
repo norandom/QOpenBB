@@ -94,7 +94,8 @@ Company Research input verification: 73 offline checks and five live journeys pa
 
 - [x] Reconcile readiness and independently review [Company Research dashboard requirements](.kiro/specs/analyst-workspace/company-research-requirements.md).
 - [x] Approve requirements and independently review the [Company Research design](.kiro/specs/analyst-workspace/company-research-design.md).
-- [ ] Approve the bounded design, then generate the parallel implementation task plan.
+- [x] Approve the bounded design and independently review the [13-task implementation plan](.kiro/specs/analyst-workspace/company-research-tasks.md).
+- [ ] Approve the tasks and implement the Company Research App through the planned parallel lanes.
 
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
 - [x] Correct accounting-field evidence filtering and the assessment; 35 offline checks pass, original live receipts retained.

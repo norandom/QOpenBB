@@ -1,7 +1,7 @@
 {
   "feature_name": "analyst-workspace",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-11-13",
+  "updated_at": "2026-11-14",
   "language": "en",
   "phase": "initialized",
   "next_workstream": {
@@ -10,7 +10,7 @@
     "direction_approved": true,
     "implementation_approved": false,
     "prerequisite": "Initial provider batch26/26 and company selector10/10 accepted/published; owner confirmed Linux update, dashboard retention and autocomplete2026-11-06.",
-    "first_slice": "IA-A assessment complete; Company Research requirements approved and bounded design independently reviewed. Owner design approval is next; full IA-B remains open.",
+    "first_slice": "IA-A assessment complete; Company Research requirements/design approved and 13-task plan independently reviewed. Task approval is next; full IA-B remains open.",
     "input_readiness": {
       "name": "research-input-readiness",
       "phase": "assessment-complete",
@@ -76,11 +76,11 @@
       }
     },
     "company_research": {
-      "phase": "design-generated",
+      "phase": "tasks-generated",
       "requirements_document": "company-research-requirements.md",
       "requirements_generated": true,
       "requirements_approved": true,
-      "design_approved": false,
+      "design_approved": true,
       "tasks_approved": false,
       "implementation_approved": false,
       "reconciliation_document": "research-readiness-reconciliation.md",
@@ -93,7 +93,7 @@
         "sha256": "71c0d50c5fdec2247d35543694f478dc531893e88e0357e2db5fde6410ed7df4"
       },
       "scope": "Bounded provider-observation research App; house calculations and full IA-B acceptance remain separate.",
-      "next_step": "Owner design approval, then generate and independently review bounded tasks; implementation remains unapproved.",
+      "next_step": "Owner task-plan approval, then bounded implementation with role-based parallel lanes and per-task review/commits.",
       "requirements_approval": "Owner approved the independently reviewed requirements in conversation on 2026-11-13; bounded design generation authorized.",
       "design_generated": true,
       "design_document": "company-research-design.md",
@@ -105,6 +105,19 @@
         "repair_passes": 1,
         "document": "company-research-design-review.md",
         "sha256": "2d15e3f309fff9eee00ab964bc91448a414ddee472f2f045f0e120c5358cc291"
+      },
+      "design_approval": "Owner approved the independently reviewed bounded design in conversation on 2026-11-14; task generation authorized.",
+      "tasks_generated": true,
+      "tasks_document": "company-research-tasks.md",
+      "executable_tasks": 13,
+      "completed_tasks": 0,
+      "tasks_review": {
+        "status": "passed",
+        "mode": "independent",
+        "model": "gpt-6-astra",
+        "repair_passes": 0,
+        "document": "company-research-tasks-review.md",
+        "sha256": "b532b90321cdf83c0b426d58fe31980c0d0620d38ed37c5f90eb753b3ba3a67a"
       }
     }
   },
