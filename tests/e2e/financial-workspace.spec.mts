@@ -38,7 +38,7 @@ async function revenueCell(widget: Locator, field: string, rowIndex = 0) {
   return cell;
 }
 
-async function connectInstalledCatalog(page: Page, inspect?: (catalog: Record<string, any>) => void) {
+async function connectInstalledCatalog(page: Page, inspect?: (catalog: Record<string, any>) => void, appName = "QOpenBB starter") {
   await page.goto("/app/connections");
   await page
     .getByRole("button", { name: "Connect Backend", exact: true })
@@ -84,7 +84,7 @@ async function connectInstalledCatalog(page: Page, inspect?: (catalog: Record<st
   await expect(dialog).not.toBeVisible();
   await page.getByRole("link", { name: "Apps", exact: true }).click();
   const starter = page.getByRole("button").filter({
-    has: page.getByText("QOpenBB starter", { exact: true }),
+    has: page.getByText(appName, { exact: true }),
   });
   await expect(starter).toBeVisible();
   return starter;
@@ -586,9 +586,9 @@ async function verifyFredSentinel(widget: Locator, payload: any) {
 }
 
 function selectionState(content: any) {
-  return { groups: content.data.groups,
+  return { groups: content.data.groups, gridLayout: content.data.gridLayout,
     widgets: content.data.widgets.map((widget: any) => ({ id: widget.id, widgetId: widget.widgetId,
-      paramGroups: widget.paramGroups, params: widget.storage.params, selection: widget.storage.companySelection })) };
+      paramGroups: widget.paramGroups, params: widget.storage.params, selection: widget.storage.companySelection, research: widget.storage.companyResearch })) };
 }
 
 async function readFinancialDashboard(page: Page, url: string) {
@@ -913,5 +913,522 @@ test("synthetic company keyboard cancel entitlement failure and stale search can
     await info.attach("synthetic-company-keyboard-failure-race", { contentType: "application/json",
       body: JSON.stringify({ source: "Synthetic intercepted search and financial values; no live provider acceptance",
         searches, financialSymbols, diagnostics }) });
+  }
+});
+
+// Live observations remain private; attachments contain selected financial facts only.
+test("Company Research real FMP analyst choices template portability and retained recreation", async ({ page, browser }, info) => {
+  test.setTimeout(600000);
+  const phase = process.env.QOPENBB_COMPANY_PHASE;
+  expect(["initial", "reopen"]).toContain(phase);
+  const checkpoint = process.env.QOPENBB_COMPANY_RETENTION!;
+  expect(isAbsolute(checkpoint)).toBe(true);
+  const runtime = await readRuntime();
+  (await runtimeReader()).checkpointPath(checkpoint);
+  expect(runtime.packaged_image_only).toBe(true);
+  expect(runtime.source_overlay).toBeNull();
+  const diagnostics = [await observeApplication(page)];
+  const captures: { url: URL; payload: any; requestIndex: number; source: "live" | "deterministic" }[] = [];
+  const requestIndices = new WeakMap<object, number>();
+  const syntheticRequests = new WeakSet<object>();
+  const expected503 = new Set<object>();
+  const expectedConsole503 = new Set<object>();
+  const reads: Promise<void>[] = [];
+  const facts: unknown[] = [];
+  const requestEstimate = {
+    status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 120, fred: 0 },
+    initial: { defaultApp: 6, primaryChanges: 13, peerSearchAndInitial: 6, priceEdits: 2, statementQuarter: 3, peerQuarter: 4,
+      deterministicRawRefreshes: 0, syntheticFailureUnaffectedLive: 3, recoveryRefresh: 4, exportedImport: 9,
+      foreignImportAndReopenPeers: 8, explicitRecovery: 6, freshLoginAndReopenUpperBound: 18 },
+    retainedReopen: { loginAndExplicitReopenUpperBound: 18 }, normalSubtotal: 100, sharedLookupAllowance: 4, retryHeadroom: 16,
+    loginCounts: { initialTest: 2, retainedReopenTest: 1, excludesControllerReadiness: true },
+    accounting: "External cumulative ledger counts actual send reservations including retry=1; exhaustion fails/incompletes acceptance without raising the ceiling.",
+  };
+  const requests: { path: string; query: Record<string, string> }[] = [];
+  const primaryIds = [profileId, widgetId, "equity_fundamental_balance_fmp_obb", "equity_fundamental_cash_fmp_obb", "equity_price_historical_fmp_obb"];
+  function observe(target: Page) {
+    target.on("request", request => {
+      const url = new URL(request.url());
+      if (url.origin !== process.env.WORKSPACE_FRONTEND_ORIGIN || !url.pathname.startsWith("/data/api/")) return;
+      const query = Object.fromEntries(url.searchParams);
+      requestIndices.set(request, requests.length);
+      requests.push({ path: url.pathname, query });
+      expect(query.provider).toBe("fmp");
+      if (url.pathname === searchPath) {
+        expect(["Microsoft", "Oracle", "Apple", "AAPL", "MSFT", "ORCL"]).toContain(query.query);
+        expect(query.limit).toBe("20");
+      } else {
+        expect(["AAPL", "MSFT", "ORCL"]).toContain(query.symbol);
+        if (url.pathname.includes("/fundamental/")) expect(query.limit).toBe("3");
+        if (/metrics|ratios/.test(url.pathname)) expect(query.ttm).toBe("exclude");
+        if (url.pathname.endsWith("/price/historical")) {
+          // SingleDatePicker applies each endpoint immediately: the middle pair is unavoidable UI state.
+          expect(["2025-01-02/2025-01-31", "2025-01-03/2025-01-31", "2025-01-03/2025-01-30"])
+            .toContain(`${query.start_date}/${query.end_date}`);
+        }
+      }
+    });
+    target.on("response", response => {
+      const url = new URL(response.url());
+      if (url.origin !== process.env.WORKSPACE_FRONTEND_ORIGIN || !url.pathname.startsWith("/data/api/")) return;
+      if (response.status() === 503) expect(syntheticRequests.has(response.request()), "unexpected real HTTP 503").toBe(true);
+      if (!response.ok()) return;
+      const read = response.json().then(payload => { captures.push({ url, payload, requestIndex: requestIndices.get(response.request())!, source: syntheticRequests.has(response.request()) ? "deterministic" : "live" }); }).catch(error => {
+        throw error;
+      });
+      reads.push(read);
+      void read.catch(() => undefined);
+    });
+  }
+  observe(page);
+  async function captured(path: string, symbol: string, period?: string, after = 0, source: "live" | "deterministic" = "live") {
+    const match = (item: typeof captures[number]) => item.requestIndex >= after && item.source === source && item.url.pathname === path && item.url.searchParams.get("symbol") === symbol &&
+      (!period || item.url.searchParams.get("period") === period);
+    await expect.poll(() => captures.some(match)).toBe(true);
+    return captures.findLast(match)!.payload;
+  }
+  const widget = (target: Page, id: string) => target.locator(`#workarea .widget-${id}`).first();
+  const saved = async (target: Page) => (await saveDashboard(target)).items[new URL(target.url()).pathname.split("/").at(-1)!];
+  function assertIntended(state: any) {
+    const byId = (id: string) => state.widgets.find((item: any) => item.widgetId === id);
+    for (const id of primaryIds) {
+      expect(byId(id).params.symbol).toBe("AAPL");
+      expect(byId(id).selection).toMatchObject({ version: 1, provider: "fmp", symbol: "AAPL" });
+    }
+    for (const dataset of ["income", "balance", "cash"])
+      expect(byId(`equity_fundamental_${dataset}_fmp_obb`).params).toMatchObject({ period: "quarter", limit: 3 });
+    expect(byId("equity_price_historical_fmp_obb").params).toMatchObject({ start_date: "2025-01-03", end_date: "2025-01-30" });
+    const config = byId("company_research").research;
+    expect(config).toMatchObject({ version: 1, period: "quarter", limit: 3 });
+    expect(config.peers.map((peer: any) => [peer.identity.symbol, peer.rationale])).toEqual([
+      ["ORCL", "ORCL explicit candidate; comparability unverified."], ["MSFT", "MSFT explicit candidate; comparability unverified."],
+    ]);
+    const symbolGroup = byId(profileId).paramGroups.symbol;
+    for (const id of primaryIds) expect(byId(id).paramGroups.symbol).toBe(symbolGroup);
+    const periodGroup = byId(widgetId).paramGroups.period;
+    for (const dataset of ["income", "balance", "cash"]) expect(byId(`equity_fundamental_${dataset}_fmp_obb`).paramGroups.period).toBe(periodGroup);
+    expect(byId("company_research").paramGroups ?? {}).toEqual({});
+  }
+  function semanticChoices(state: any) {
+    return {
+      widgets: state.widgets.map((item: any) => ({ widgetId: item.widgetId, params: item.params, research: item.research,
+        selection: item.selection ? Object.fromEntries(Object.entries(item.selection).filter(([key]) => !["selectedAt", "retrievedAt"].includes(key))) : undefined,
+        groups: Object.entries(item.paramGroups ?? {}).map(([param, id]) => [param, state.groups.find((group: any) => group.id === id)?.name]),
+      })),
+      layout: Object.entries(state.gridLayout).map(([tab, items]: [string, any]) => [tab, items.map((item: any) => ({ ...item,
+        i: state.widgets.find((widget: any) => widget.id === item.i)?.widgetId ?? item.i }))]),
+      groups: state.groups.map(({ id, ...group }: any) => group),
+    };
+  }
+  async function settleDashboard(target: Page, after: number) {
+    for (const dataset of ["income", "balance", "cash"])
+      await captured(`/data/api/v1/equity/fundamental/${dataset}`, "AAPL", "quarter", after);
+    await captured("/data/api/v1/equity/price/historical", "AAPL", undefined, after);
+    const research = widget(target, "company_research");
+    for (const symbol of ["ORCL", "MSFT"]) for (const dataset of ["metrics", "ratios"]) {
+      const panel = research.getByRole("region", { name: `${symbol} ${dataset}`, exact: true });
+      await panel.scrollIntoViewIfNeeded();
+      await expect(panel.getByRole("status")).toHaveText("success");
+      await captured(`/data/api/v1/equity/fundamental/${dataset}`, symbol, "quarter", after);
+    }
+    await Promise.all(reads);
+  }
+  async function openCatalog(target: Page, name: string) {
+    await target.goto("/app/connections");
+    const refreshedCatalog = target.waitForResponse(response => new URL(response.url()).pathname === "/data/apps.json");
+    const sourceRow = target.getByRole("row").filter({ hasText: "Installed QOpenBB data API" });
+    await sourceRow.getByRole("button").filter({ has: target.locator("svg[id=refresh-icon-ds]") }).click();
+    expect((await refreshedCatalog).ok()).toBe(true);
+    await target.getByRole("link", { name: "Apps", exact: true }).click();
+    const app = target.getByRole("button").filter({ has: target.getByText(name, { exact: true }) });
+    await expect(app).toHaveCount(1);
+    await app.click();
+    await expect(widget(target, "company_research").getByLabel("Peer period", { exact: true })).toBeVisible();
+  }
+  async function inspector(panel: Locator, payload: any, fields = ["stock_based_compensation", "ebitda", "operating_cash_flow", "free_cash_flow"]) {
+    await panel.scrollIntoViewIfNeeded();
+    await panel.getByRole("button", { name: "Inspect observations", exact: true }).click();
+    const dialog = panel.page().getByRole("dialog", { name: "Observation evidence", exact: true });
+    const metadata = payload.extra.results_metadata.__qopenbb_financial__;
+    await expect(dialog.getByText(/^(Stale evidence|Refreshing evidence)/)).toHaveCount(0);
+    const detail = (label: string) => dialog.locator("dt").filter({ hasText: new RegExp(`^${label}$`) }).locator("xpath=following-sibling::dd[1]");
+    await expect(detail("Dataset")).toHaveText(metadata.dataset);
+    await expect(detail("Provider")).toHaveText("fmp");
+    await expect(detail("Endpoint")).toHaveText(metadata.source.endpoint);
+    await expect(detail("Point-in-time safe")).toHaveText("false");
+    await expect(detail("Effective query")).toHaveText(JSON.stringify(metadata.effective_query));
+    await expect(detail("Acquired at")).toHaveText(metadata.retrieved_at);
+    for (const field of fields) {
+      const rowIndex = payload.results.findIndex((row: any) => Object.hasOwn(row, field));
+      if (rowIndex < 0) { facts.push({ dataset: metadata.dataset, field, status: "not-returned; unverified" }); continue; }
+      await dialog.getByRole("combobox", { name: "Original observation", exact: true }).click();
+      await panel.page().getByRole("option", { name: new RegExp(`^Original row ${rowIndex}(?: ·|$)`) }).click();
+      await dialog.getByRole("combobox", { name: "Field", exact: true }).click();
+      await panel.page().getByRole("option", { name: field, exact: true }).click();
+      const value = payload.results[rowIndex][field];
+      const fieldMetadata = metadata.fields[field];
+      const currencyField = fieldMetadata?.currency_field;
+      await expect(detail("Currency")).toHaveText(fieldMetadata?.currency ?? (currencyField && payload.results[rowIndex][currencyField] != null ? String(payload.results[rowIndex][currencyField]) : "Unknown"));
+      await expect(dialog.getByTestId("observation-value")).toHaveText(value == null ? "Missing (null)" : String(value));
+      for (const [label, key] of [["Unit", "unit"], ["Scale", "scale"], ["Period basis", "period_basis"], ["Financial basis", "financial_basis"]])
+        await expect(detail(label)).toHaveText(fieldMetadata?.[key] == null ? "Unknown" : typeof fieldMetadata[key] === "object" ? Object.keys(fieldMetadata[key]).length ? JSON.stringify(fieldMetadata[key]) : "Unknown (none supplied)" : String(fieldMetadata[key]));
+      const row = payload.results[rowIndex];
+      const provenance = metadata.statement_provenance?.rows.find((item: any) => item.row_index === rowIndex);
+      const display = (value: any) => value == null || value === "" ? "Unknown" : typeof value === "object" ? Object.keys(value).length ? JSON.stringify(value) : "Unknown (none supplied)" : String(value);
+      for (const [label, key] of [["Observation date", "observation_date_field"], ["Valuation date", "valuation_date_field"], ["Publication date", "publication_date_field"]]) {
+        const reference = fieldMetadata?.[key] ?? metadata[key];
+        await expect(detail(label)).toHaveText(display(reference ? row[reference] : null));
+      }
+      for (const [label, key] of [["Period end", "period_end"], ["Fiscal year", "fiscal_year"], ["Fiscal period", "fiscal_period"], ["Requested frequency", "requested_frequency"], ["Flow coverage", "flow_coverage"], ["Coverage status", "coverage_status"], ["Period start", "period_start"], ["Duration days", "duration_days"], ["Filing date", "filing_date"], ["Accepted date", "accepted_date"], ["Restatement status", "restatement_status"]])
+        await expect(detail(label)).toHaveText(display(provenance?.[key]));
+      await expect(detail("Original row index")).toHaveText(String(rowIndex));
+      await expect(detail("Source ordinal")).toHaveText(display(provenance?.source_ordinal));
+      await expect(detail("Field instant date")).toHaveText(display(provenance?.instant_dates?.[field]));
+      facts.push({ dataset: metadata.dataset, field, value, unit: fieldMetadata?.unit, periodBasis: fieldMetadata?.period_basis, rowIndex,
+        observationDate: row[fieldMetadata?.observation_date_field ?? metadata.observation_date_field] ?? null, periodEnd: provenance?.period_end ?? null });
+    }
+    await expect(dialog).toContainText("SBC treatment is unknown");
+    await panel.page().keyboard.press("Escape");
+  }
+  let url = "";
+  let expected: any;
+  let selected: any;
+  let retainedReadAt = 0;
+  try {
+    await loginDisposableWorkspace(page);
+    if (phase === "initial") {
+      expect(existsSync(checkpoint)).toBe(false);
+      const app = await connectInstalledCatalog(page, catalog => {
+        for (const id of [...primaryIds, "company_research"]) expect(catalog[id]).toBeDefined();
+      }, "Company Research");
+      const apps = await page.request.get(`${process.env.WORKSPACE_FRONTEND_ORIGIN}/data/apps.json`);
+      expect(apps.ok()).toBe(true);
+      const generated = (await apps.json()).find((item: any) => item.name === "Company Research");
+      expect(generated.tabs.Research.layout.map((item: any) => item.i)).toEqual([...primaryIds, "company_research"]);
+      await app.click();
+      await expect(widget(page, "company_research").getByLabel("Peer period", { exact: true })).toBeVisible();
+      url = page.url();
+      const profile = widget(page, profileId);
+      const originalAapl = new Map<string, any>();
+      for (const id of primaryIds) {
+        const panel = widget(page, id);
+        await panel.scrollIntoViewIfNeeded();
+        const path = id === profileId ? profilePath : id.includes("price") ? "/data/api/v1/equity/price/historical" : `/data/api/v1/equity/fundamental/${id.split("_")[2]}`;
+        originalAapl.set(path, await captured(path, "AAPL", id.includes("fundamental") ? "annual" : undefined));
+      }
+      await verifyNativeProfile(profile, originalAapl.get(profilePath), "AAPL");
+      for (const [mode, query, symbol] of [["name", "Microsoft", "MSFT"], ["symbol", "AAPL", "AAPL"]] as const) {
+        const changedAt = requests.length;
+        selected = await chooseCompany(profile, mode, query, symbol);
+        for (const id of primaryIds.filter(id => !id.includes("price"))) await expectSelectedCompany(widget(page, id), selected.listing);
+        // Only this identical-key return intentionally reuses the original live AAPL evidence.
+        // The accepted table adapter keeps that query fresh for 15 minutes; selection timestamps do not invalidate it.
+        const cachedReturn = symbol === "AAPL";
+        const profilePayload = cachedReturn ? originalAapl.get(profilePath) : await captured(profilePath, symbol, undefined, changedAt);
+        const incomePayload = cachedReturn ? originalAapl.get(incomePath) : await captured(incomePath, symbol, "annual", changedAt);
+        const pricePayload = cachedReturn ? originalAapl.get("/data/api/v1/equity/price/historical") :
+          await captured("/data/api/v1/equity/price/historical", symbol, undefined, changedAt);
+        await verifyNativeProfile(profile, profilePayload, symbol);
+        await verifyNativeIncome(widget(page, widgetId), incomePayload, symbol, "annual");
+        if (cachedReturn) {
+          await inspector(profile, profilePayload, ["last_price"]);
+          await inspector(widget(page, widgetId), incomePayload, ["revenue", "ebitda"]);
+          await inspector(widget(page, "equity_price_historical_fmp_obb"), pricePayload, ["close"]);
+          expect(requests.slice(changedAt).filter(request => [profilePath, incomePath, "/data/api/v1/equity/price/historical"].includes(request.path))).toEqual([]);
+          facts.push({ context: "explicit cached AAPL annual/original-price-window return after MSFT", source: "original successful live response before company changes",
+            acquisition: { profile: profilePayload.extra.results_metadata.__qopenbb_financial__.retrieved_at,
+              income: incomePayload.extra.results_metadata.__qopenbb_financial__.retrieved_at,
+              price: pricePayload.extra.results_metadata.__qopenbb_financial__.retrieved_at },
+            evidence: "Current AAPL selectors, visible profile/income/price values and current inspectors match original responses; no fallback for other actions." });
+        }
+        expect(pricePayload.extra.results_metadata.__qopenbb_financial__.effective_query.symbol).toBe(symbol);
+        await expectSelectedCompany(widget(page, "equity_price_historical_fmp_obb"), selected.listing);
+        if (pricePayload.results[0]?.close != null) await displayedNumber(await revenueCell(widget(page, "equity_price_historical_fmp_obb"), "close"), pricePayload.results[0].close);
+      }
+      const research = widget(page, "company_research");
+      for (const [query, symbol] of [["Microsoft", "MSFT"], ["Oracle", "ORCL"]]) {
+        await research.scrollIntoViewIfNeeded();
+        const response = page.waitForResponse(item => new URL(item.url()).pathname === searchPath && new URL(item.url()).searchParams.get("query") === query);
+        await research.getByLabel("Find candidate peers", { exact: true }).fill(query);
+        const payload = await (await response).json();
+        const listing = payload.results.find((row: any) => row.symbol === symbol);
+        expect(listing).toBeDefined();
+        await research.getByRole("button", { name: `Add ${listing.name} (${symbol})`, exact: true }).click();
+        await research.getByLabel(`Rationale for ${symbol}`, { exact: true }).fill(`${symbol} explicit candidate; comparability unverified.`);
+      }
+      await research.getByRole("button", { name: "Move ORCL up", exact: true }).click();
+      await expect(research.getByRole("list", { name: "Selected peers" }).getByRole("listitem").first()).toContainText("ORCL");
+      await expect(research.getByRole("region", { name: "Peer observations", exact: true })).toContainText("unverified");
+      await expect(research).toContainText("TTM excluded");
+      await expect(research).toContainText("Accounting optimization and stock-based compensation");
+      const price = widget(page, "equity_price_historical_fmp_obb");
+      for (const [oldDate, day] of [["Jan 02, 2025", "3"], ["Jan 31, 2025", "30"]]) {
+        const priceAt = requests.length;
+        await price.scrollIntoViewIfNeeded();
+        await price.getByRole("button", { name: oldDate, exact: true }).click();
+        await page.locator(".obb-dropdown-container").getByRole("button", { name: new RegExp(`January ${day}(?:st|nd|rd|th)?, 2025`) }).click();
+        await page.keyboard.press("Escape");
+        const pricePayload = await captured("/data/api/v1/equity/price/historical", "AAPL", undefined, priceAt);
+        expect(pricePayload.extra.results_metadata.__qopenbb_financial__.effective_query).toMatchObject({
+          symbol: "AAPL", start_date: "2025-01-03", end_date: day === "3" ? "2025-01-31" : "2025-01-30" });
+      }
+      const currentStatementPayloads = new Map<string, any>();
+      for (const period of ["quarter"]) {
+        const changedAt = requests.length;
+        const income = widget(page, widgetId);
+        await income.scrollIntoViewIfNeeded();
+        const current = period === "annual" ? "quarter" : "annual";
+        await income.getByRole("button", { name: current, exact: true }).click();
+        await page.locator(".obb-dropdown-container").getByText(period, { exact: true }).click();
+        await verifyNativeIncome(income, await captured(incomePath, "AAPL", period, changedAt), "AAPL", period);
+        for (const dataset of ["income", "balance", "cash"]) {
+          const payload = await captured(`/data/api/v1/equity/fundamental/${dataset}`, "AAPL", period, changedAt);
+          expect(payload.extra.results_metadata.__qopenbb_financial__.effective_query).toMatchObject({ symbol: "AAPL", period, limit: 3 });
+          await expect(widget(page, `equity_fundamental_${dataset}_fmp_obb`).getByRole("button", { name: period, exact: true })).toBeAttached();
+          currentStatementPayloads.set(dataset, payload);
+        }
+        await expect(price.getByRole("button", { name: "Jan 03, 2025", exact: true })).toBeAttached();
+        await expect(price.getByRole("button", { name: "Jan 30, 2025", exact: true })).toBeAttached();
+      }
+      const peerPeriodAt = requests.length;
+      await research.getByLabel("Peer period", { exact: true }).selectOption("quarter");
+      await expect(research.getByLabel("Peer observation limit", { exact: true })).toHaveValue("3");
+      await expect(research.getByRole("button", { name: "Refresh peer observations", exact: true })).toBeEnabled();
+      for (const symbol of ["MSFT", "ORCL"]) for (const dataset of ["metrics", "ratios"]) {
+        const panel = research.getByRole("region", { name: `${symbol} ${dataset}`, exact: true });
+        await panel.scrollIntoViewIfNeeded();
+        await expect(panel.getByRole("status")).toHaveText("success");
+        await expect(panel).toContainText("unverified");
+        const payload = await captured(`/data/api/v1/equity/fundamental/${dataset}`, symbol, "quarter", peerPeriodAt);
+        const row = payload.results[0];
+        const field = Object.keys(row).find(key => typeof row[key] === "number")!;
+        expect(field).toBeTruthy();
+        await panel.getByLabel("Original row", { exact: true }).selectOption("0");
+        await panel.getByLabel("Field", { exact: true }).selectOption(field);
+        await expect(panel.locator("dt").filter({ hasText: /^Original value$/ }).locator("xpath=following-sibling::dd[1]")).toHaveText(String(row[field]));
+      }
+      const fixturePayload = structuredClone(await captured("/data/api/v1/equity/fundamental/ratios", "ORCL", "quarter"));
+      const fixtureField = Object.keys(fixturePayload.results[0]).find(key => typeof fixturePayload.results[0][key] === "number")!;
+      expect(fixtureField).toBeTruthy();
+      const fixturePath = (url: URL) => url.origin === process.env.WORKSPACE_FRONTEND_ORIGIN && /^\/data\/api\/v1\/equity\/fundamental\/(metrics|ratios)$/.test(url.pathname);
+      const fixtureBaselines = new Map<string, any>();
+      for (const symbol of ["MSFT", "ORCL"]) for (const dataset of ["metrics", "ratios"])
+        fixtureBaselines.set(`${symbol}/${dataset}`, structuredClone(await captured(`/data/api/v1/equity/fundamental/${dataset}`, symbol, "quarter")));
+      let fixtureCase = "missing";
+      await page.route(fixturePath, route => {
+        syntheticRequests.add(route.request());
+        const requestUrl = new URL(route.request().url());
+        if (requestUrl.searchParams.get("symbol") !== "ORCL" || !requestUrl.pathname.endsWith("/ratios"))
+          return route.fulfill({ json: fixtureBaselines.get(`${requestUrl.searchParams.get("symbol")}/${requestUrl.pathname.split("/").at(-1)}`) });
+        const payload = structuredClone(fixturePayload);
+        payload.results[0][fixtureField] = fixtureCase === "missing" ? null : fixtureCase === "zero" ? 0 : -1;
+        const field = payload.extra.results_metadata.__qopenbb_financial__.fields[fixtureField];
+        if (fixtureCase === "incompatible") {
+          field.unit = "shares";
+          field.currency = "EUR";
+          delete field.currency_field;
+          field.financial_basis = { share_count: "synthetic incompatible diluted basis" };
+        }
+        return route.fulfill({ json: payload });
+      });
+      for (fixtureCase of ["missing", "incompatible", "zero", "negative"]) {
+        const fixtureAt = requests.length;
+        await research.getByRole("button", { name: "Refresh peer observations", exact: true }).click();
+        await captured("/data/api/v1/equity/fundamental/ratios", "ORCL", "quarter", fixtureAt, "deterministic");
+        const fixturePanel = research.getByRole("region", { name: "ORCL ratios", exact: true });
+        await expect(fixturePanel.getByRole("status")).toHaveText("success");
+        await fixturePanel.getByLabel("Field", { exact: true }).selectOption(fixtureField);
+        await expect(fixturePanel.locator("dt").filter({ hasText: /^Original value$/ }).locator("xpath=following-sibling::dd[1]"))
+          .toHaveText(fixtureCase === "missing" ? "Unknown" : fixtureCase === "zero" ? "0" : "-1");
+        await expect(fixturePanel).toContainText("unverified");
+        if (fixtureCase === "incompatible") {
+          await expect(fixturePanel).toContainText("shares / 1 / EUR");
+          await expect(fixturePanel).toContainText("synthetic incompatible diluted basis");
+        }
+        await expect(research.getByRole("button", { name: "Refresh peer observations", exact: true })).toBeEnabled();
+        facts.push({ kind: "deterministic owned-route original-evidence fixture", symbol: "ORCL", field: fixtureField, scenario: fixtureCase,
+          limitation: "Raw signed value only, not denominator evidence or eligibility; accepted tests/unit/financial-evidence.test.ts owns conditional denominator semantics." });
+      }
+      await page.unroute(fixturePath);
+      // Deterministic failure on the owned application route; no failed provider call is manufactured.
+      const failureRoute = `${process.env.WORKSPACE_FRONTEND_ORIGIN}/data/api/v1/equity/fundamental/ratios*`;
+      let syntheticFailure = true;
+      await page.route(failureRoute, async route => {
+        if (new URL(route.request().url()).searchParams.get("symbol") !== "ORCL" || !syntheticFailure) return route.continue();
+        syntheticRequests.add(route.request());
+        return route.fulfill({ status: 503, json: { detail: "Deterministic browser peer-dataset failure fixture" } });
+      });
+      const failureDiagnosticStart = { failures: diagnostics[0].failures.length, console: diagnostics[0].consoleErrors.length };
+      await research.getByRole("button", { name: "Refresh peer observations", exact: true }).click();
+      const failedPeer = research.getByRole("region", { name: "ORCL ratios", exact: true });
+      await expect(failedPeer.getByRole("status")).toHaveText("stale");
+      await expect(failedPeer.getByRole("alert")).toContainText("Prior evidence retained as stale");
+      await expect(research.getByRole("region", { name: "MSFT ratios", exact: true }).getByRole("status")).toHaveText("success");
+      await expect(research.getByRole("button", { name: "Refresh peer observations", exact: true })).toBeEnabled();
+      for (const item of diagnostics[0].failures.slice(failureDiagnosticStart.failures))
+        if (item.path === "/data/api/v1/equity/fundamental/ratios" && item.status === 503) expected503.add(item);
+      for (const item of diagnostics[0].consoleErrors.slice(failureDiagnosticStart.console))
+        if (item.path === "/data/api/v1/equity/fundamental/ratios" && /Failed to load resource.*503/.test(item.message)) expectedConsole503.add(item);
+      expect(expected503.size).toBeGreaterThan(0);
+      expect(expected503.size).toBeLessThanOrEqual(2);
+      syntheticFailure = false;
+      const refreshAt = requests.length;
+      await research.getByRole("button", { name: "Refresh peer observations", exact: true }).click();
+      for (const symbol of ["MSFT", "ORCL"]) for (const dataset of ["metrics", "ratios"]) {
+        const payload = await captured(`/data/api/v1/equity/fundamental/${dataset}`, symbol, "quarter", refreshAt);
+        const panel = research.getByRole("region", { name: `${symbol} ${dataset}`, exact: true });
+        await expect(panel.locator("dt").filter({ hasText: /^Acquired at$/ }).locator("xpath=following-sibling::dd[1]")).toHaveText(payload.extra.results_metadata.__qopenbb_financial__.retrieved_at);
+        const field = Object.keys(payload.results[0]).find(key => typeof payload.results[0][key] === "number")!;
+        await panel.getByLabel("Field", { exact: true }).selectOption(field);
+        await expect(panel.locator("dt").filter({ hasText: /^Original value$/ }).locator("xpath=following-sibling::dd[1]")).toHaveText(String(payload.results[0][field]));
+      }
+      await expect(research.getByRole("button", { name: "Refresh peer observations", exact: true })).toBeEnabled();
+      await expect(failedPeer.getByRole("status")).toHaveText("success");
+      await page.unroute(failureRoute);
+      facts.push({ kind: "deterministic owned-route failure/recovery fixture", symbol: "ORCL", dataset: "ratios", status: "stale then success; unaffected MSFT remains success" });
+      for (const dataset of ["income", "cash"]) await inspector(widget(page, `equity_fundamental_${dataset}_fmp_obb`), currentStatementPayloads.get(dataset));
+      for (const theme of ["light", "dark"]) {
+        const dark = (await page.locator("html").getAttribute("class"))?.split(" ").includes("dark");
+        if (dark !== (theme === "dark")) await page.keyboard.press("Control+m");
+        await expect(page.locator("html")).toHaveClass(theme === "dark" ? /\bdark\b/ : /^(?!.*\bdark\b)/);
+        await research.screenshot({ path: info.outputPath(`company-research-${theme}.png`) });
+      }
+      expected = selectionState(await saved(page));
+      assertIntended(expected);
+      const intendedBeforeExport = semanticChoices(expected);
+      // Export is the actual dashboard context-menu action; import transport is an owned catalog fixture.
+      await page.locator(`[data-rct-item-id="${new URL(url).pathname.split("/").at(-1)}"]`).click({ button: "right" });
+      await page.getByText("Export apps.json", { exact: true }).click();
+      const exportDialog = page.getByRole("dialog", { name: "Export App", exact: true });
+      await exportDialog.getByPlaceholder("Enter app name...").fill("Company Research exported acceptance");
+      const downloadEvent = page.waitForEvent("download");
+      await exportDialog.getByRole("button", { name: "Download App", exact: true }).click();
+      const download = await downloadEvent;
+      const stream = await download.createReadStream();
+      expect(stream).toBeTruthy();
+      const chunks: Buffer[] = [];
+      for await (const chunk of stream!) chunks.push(Buffer.from(chunk));
+      const exported = JSON.parse(Buffer.concat(chunks).toString("utf8"));
+      const serialized = JSON.stringify(exported);
+      expect(serialized).not.toMatch(/providerPayload|access_token|api_key|password|__qopenbb_financial__|results_metadata/);
+      expect(exported.tabs.Research.layout).toHaveLength(6);
+      let catalogTemplate = exported;
+      await page.route(`${process.env.WORKSPACE_FRONTEND_ORIGIN}/data/apps.json`, route => route.fulfill({ json: [catalogTemplate] }));
+      await openCatalog(page, exported.name);
+      const imported = await saved(page);
+      const importedState = selectionState(imported);
+      expect(importedState.widgets.map((item: any) => item.id)).not.toEqual(expected.widgets.map((item: any) => item.id));
+      expect(importedState.widgets.map((item: any) => [item.widgetId, item.params, item.selection, item.research]))
+        .toEqual(expected.widgets.map((item: any) => [item.widgetId, item.params, item.selection, item.research]));
+      const semanticLayout = (state: any) => Object.entries(state.gridLayout).map(([tab, items]: [string, any]) => [tab,
+        items.map((item: any) => ({ ...item, i: state.widgets.find((widget: any) => widget.id === item.i)?.widgetId ?? item.i }))]);
+      expect(semanticLayout(importedState)).toEqual(semanticLayout(expected));
+      const semanticGroups = (state: any) => state.groups.map(({ id, ...group }: any) => group);
+      expect(semanticGroups(importedState)).toEqual(semanticGroups(expected));
+      for (const item of importedState.widgets) {
+        const original = expected.widgets.find((other: any) => other.widgetId === item.widgetId);
+        for (const [param, groupId] of Object.entries(item.paramGroups ?? {})) {
+          const importedGroup = importedState.groups.find((group: any) => group.id === groupId);
+          const originalGroup = expected.groups.find((group: any) => group.id === original.paramGroups[param]);
+          expect(importedGroup.name).toBe(originalGroup.name);
+        }
+      }
+      for (const item of importedState.widgets) for (const groupId of Object.values(item.paramGroups ?? {}))
+        expect(importedState.groups.some((group: any) => group.id === groupId)).toBe(true);
+      const foreign = structuredClone(exported);
+      foreign.name = "Synthetic foreign-source Company Research";
+      const foreignKey = JSON.stringify(["synthetic-unknown-source", "https://foreign.invalid/data"]);
+      for (const tab of Object.values(foreign.tabs) as any[]) for (const item of tab.layout) {
+        if (item.state?.storage?.companySelection) {
+          item.state.storage.companySelection.sourceKey = foreignKey;
+          if (item.i === profileId) item.state.storage.companySelection.version = 99;
+        }
+      }
+      catalogTemplate = foreign;
+      const atUnresolved = requests.length;
+      await openCatalog(page, foreign.name);
+      const foreignUrl = page.url();
+      const foreignSaved = await saved(page);
+      const unresolved = foreignSaved.data.widgets.filter((item: any) => item.storage?.companySelection);
+      expect(unresolved).toHaveLength(5);
+      for (const item of unresolved) expect(item.storage.companySelection.sourceKey).toBe(foreignKey);
+      expect(unresolved.find((item: any) => item.widgetId === profileId).storage.companySelection.version).toBe(99);
+      await readFinancialDashboard(page, foreignUrl);
+      await expect(widget(page, profileId).getByRole("status")).toContainText("Select from the current source");
+      const reopenedForeign = await saved(page);
+      for (const item of reopenedForeign.data.widgets.filter((item: any) => item.storage?.companySelection))
+        expect(item.storage.companySelection.sourceKey).toBe(foreignKey);
+      expect(reopenedForeign.data.widgets.find((item: any) => item.widgetId === profileId).storage.companySelection.version).toBe(99);
+      for (const request of requests.slice(atUnresolved)) {
+        expect(["/data/api/v1/equity/fundamental/metrics", "/data/api/v1/equity/fundamental/ratios"]).toContain(request.path);
+        expect(["MSFT", "ORCL"]).toContain(request.query.symbol);
+      }
+      const recoveryAt = requests.length;
+      selected = await chooseCompany(widget(page, profileId), "name", "Apple", "AAPL");
+      for (const id of primaryIds.filter(id => !id.includes("price"))) await expectSelectedCompany(widget(page, id), selected.listing);
+      await verifyNativeProfile(widget(page, profileId), await captured(profilePath, "AAPL", undefined, recoveryAt), "AAPL");
+      for (const dataset of ["income", "balance", "cash"])
+        await captured(`/data/api/v1/equity/fundamental/${dataset}`, "AAPL", "quarter", recoveryAt);
+      await captured("/data/api/v1/equity/price/historical", "AAPL", undefined, recoveryAt);
+      url = page.url();
+      const recoveredState = selectionState(await saved(page));
+      assertIntended(recoveredState);
+      expect(semanticChoices(recoveredState)).toEqual(intendedBeforeExport);
+      expected = recoveredState;
+      for (const item of expected.widgets.filter((item: any) => item.selection)) expect(item.selection.sourceKey).not.toBe(foreignKey);
+      facts.push({ kind: "deterministic foreign-source catalog configuration", retainedOnReopen: true, recovery: "explicit current-source Apple selection" });
+      facts.push({ transport: "deterministic owned apps.json catalog fixture; actual exported App imported by Apps UI", provider: "real FMP observations" });
+    } else {
+      const prior = JSON.parse(readFileSync(checkpoint, "utf8"));
+      expect(prior.stage).toBe("initial-complete");
+      expect(prior.images).toEqual(runtime.images);
+      expect(prior.runtimeName).toBe(runtime.name);
+      expect(prior.containerId).not.toBe(runtime.container);
+      expect(prior.containerId).toBeTruthy();
+      url = `${process.env.WORKSPACE_FRONTEND_ORIGIN}${prior.dashboardPath}`;
+      expected = prior.state;
+      selected = prior.selected;
+      retainedReadAt = requests.length;
+      const retainedState = selectionState(await readFinancialDashboard(page, url));
+      assertIntended(retainedState);
+      expect(retainedState).toEqual(expected);
+    }
+    assertIntended(expected);
+    await Promise.all(reads);
+    if (phase === "initial") {
+    captures.length = 0;
+    const context = await browser.newContext({ baseURL: process.env.WORKSPACE_FRONTEND_ORIGIN, serviceWorkers: "block", viewport: { width: 1600, height: 1000 } });
+    try {
+      const reopened = await context.newPage();
+      diagnostics.push(await observeApplication(reopened));
+      observe(reopened);
+      await loginDisposableWorkspace(reopened);
+      const reopenedAt = requests.length;
+      const reopenedState = selectionState(await readFinancialDashboard(reopened, url));
+      assertIntended(reopenedState);
+      expect(reopenedState).toEqual(expected);
+      await expectSelectedCompany(widget(reopened, profileId), selected.listing);
+      await verifyNativeProfile(widget(reopened, profileId), await captured(profilePath, "AAPL", undefined, reopenedAt), "AAPL");
+      await expect(widget(reopened, "company_research").getByLabel("Rationale for ORCL", { exact: true })).toHaveValue("ORCL explicit candidate; comparability unverified.");
+      await settleDashboard(reopened, reopenedAt);
+    } finally { await context.close(); }
+    } else {
+      // This phase already starts in a fresh authenticated browser context after recreation.
+      await expectSelectedCompany(widget(page, profileId), selected.listing);
+      await verifyNativeProfile(widget(page, profileId), await captured(profilePath, "AAPL", undefined, retainedReadAt), "AAPL");
+      await settleDashboard(page, retainedReadAt);
+    }
+    await Promise.all(reads);
+    for (const diagnostic of diagnostics) expectApplicationDiagnostics({ ...diagnostic,
+      failures: diagnostic.failures.filter(item => !expected503.has(item)),
+      consoleErrors: diagnostic.consoleErrors.filter(item => !expectedConsole503.has(item)),
+      requestFailures: diagnostic.requestFailures,
+    });
+    if (phase === "initial") writeFileSync(checkpoint, `${JSON.stringify({ stage: "initial-complete", images: runtime.images,
+      runtimeName: runtime.name, containerId: runtime.container, dashboardPath: new URL(url).pathname, state: expected, selected }, null, 2)}\n`, { flag: "wx" });
+  } finally {
+    await info.attach("company-research-sanitized-financial-facts", { contentType: "application/json",
+      body: JSON.stringify({ phase, images: runtime.images, requestEstimate, facts, requests,
+        limitation: "Retained-data recreation only; no backup/restore or owner-server acceptance. Cumulative provider budget enforced by checked external controller." }) });
   }
 });
