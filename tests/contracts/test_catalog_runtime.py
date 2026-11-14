@@ -92,10 +92,29 @@ def test_served_schema_and_upstream_generator_repeat(tmp_path):
     first = generate(schema, inventory, raw, bundled, "/data")
     second_raw = upstream_widgets(IMAGE, source, schema, inventory, tmp_path)
     assert canonical(first) == canonical(generate(schema, inventory, second_raw, bundled, "/data"))
-    assert len(first["widgets.json"]) == len(inventory["datasets"])
+    endpoint_widgets = {key: widget for key, widget in first["widgets.json"].items()
+                        if "endpoint" in widget}
+    assert len(endpoint_widgets) == len(inventory["datasets"])
+    assert {widget["endpoint"] for widget in endpoint_widgets.values()} == {
+        dataset["path"] for dataset in inventory["datasets"]}
+    native_widgets = {key: widget for key, widget in first["widgets.json"].items()
+                      if key not in endpoint_widgets}
+    assert set(native_widgets) == {"company_research"}
+    assert native_widgets["company_research"] == {
+        "widgetId": "company_research", "type": "company_research", "name": "Peer Research",
+        "description": "Add candidate peers and inspect provider observations. Saved choices are not frozen data.",
+        "category": "Equity", "gridData": {"w": 40, "h": 20}, "params": [],
+    }
     assert {"equity_profile_fmp_obb", "equity_fundamental_income_fmp_obb",
             "economy_fred_series_fred_obb"} <= set(first["widgets.json"])
-    assert len(first["apps.json"]) == 2
+    assert [app["name"] for app in first["apps.json"]] == ["QOpenBB starter", "FRED", "Company Research"]
+    research = first["apps.json"][-1]
+    assert list(research["tabs"]) == ["Research"]
+    assert [item["i"] for item in research["tabs"]["Research"]["layout"]] == [
+        "equity_profile_fmp_obb", "equity_fundamental_income_fmp_obb",
+        "equity_fundamental_balance_fmp_obb", "equity_fundamental_cash_fmp_obb",
+        "equity_price_historical_fmp_obb", "company_research",
+    ]
     assert set(identity["Config"]["Labels"].values()) >= {revision}
     assert provenance["revision"] == revision
     evidence = os.environ.get("QOPENBB_CATALOG_EVIDENCE")
