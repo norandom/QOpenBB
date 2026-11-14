@@ -941,11 +941,11 @@ test("Company Research real FMP analyst choices template portability and retaine
   const facts: unknown[] = [];
   const syncReads = new WeakMap<Page, Promise<any>[]>();
   const requestEstimate = {
-    status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 120, fred: 0 },
+    status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 160, fred: 0 },
     initial: { measuredPriorPrefixPlanningAllowance: 20, peerSearchAndInitial: 6, priceEdits: 2, statementQuarter: 3, peerQuarter: 4,
       deterministicRawRefreshes: 0, syntheticFailureUnaffectedLive: 3, recoveryRefresh: 4, exportedImport: 9,
       foreignImportAndReopenPeers: 8, explicitRecovery: 6, freshLoginSingleHydration: 9 },
-    retainedReopen: { singleHydration: 9 }, plannedContinuation: 83, priorCumulative: 26, remaining: 94, headroom: 11,
+    retainedReopen: { singleHydration: 9 }, plannedContinuation: 83, priorCumulative: 52, remaining: 108, headroom: 25,
     conditions: "Exact intended-dashboard login landing reuses successful sync; other landing navigates once. Search expiry and legitimate retries consume headroom.",
     loginCounts: { initialTest: 2, retainedReopenTest: 1, excludesControllerReadiness: true },
     accounting: "External cumulative ledger counts actual send reservations including retry=1; exhaustion fails/incompletes acceptance without raising the ceiling.",
