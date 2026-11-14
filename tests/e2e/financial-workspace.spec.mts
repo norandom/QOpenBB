@@ -499,7 +499,7 @@ async function chooseCompany(widget: Locator, mode: "name" | "symbol", query: st
   return selectCompanyListing(widget, mode, query, symbol, await search.json());
 }
 
-async function selectCompanyListing(widget: Locator, mode: "name" | "symbol", query: string, symbol: string, payload: any) {
+async function selectCompanyListing(widget: Locator, mode: "name" | "symbol", query: string, symbol: string, payload: any, beforeChoose?: () => Promise<void>) {
   const page = widget.page();
   const metadata = payload.extra.results_metadata.__qopenbb_financial__;
   expect(metadata).toMatchObject({ dataset: "equity/search", provider: "fmp",
@@ -523,6 +523,7 @@ async function selectCompanyListing(widget: Locator, mode: "name" | "symbol", qu
   await expect(option).toContainText("fmp");
   for (const field of ["exchange", "exchange_short_name", "currency"])
     if (listing[field]) await expect(option).toContainText(listing[field]);
+  await beforeChoose?.();
   await option.click();
   await expectSelectedCompany(widget, listing);
   return { listing, retrievedAt: metadata.retrieved_at };
@@ -940,12 +941,13 @@ test("Company Research real FMP analyst choices template portability and retaine
   const reads: Promise<void>[] = [];
   const facts: unknown[] = [];
   const syncReads = new WeakMap<Page, Promise<any>[]>();
+  const syncAccess = new WeakMap<Page, { url: string; authorization?: string }>();
   const requestEstimate = {
     status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 160, fred: 0 },
     initial: { measuredPriorPrefixPlanningAllowance: 20, peerSearchAndInitial: 6, priceEdits: 2, statementQuarter: 3, peerQuarter: 4,
       deterministicRawRefreshes: 0, syntheticFailureUnaffectedLive: 3, recoveryRefresh: 4, exportedImport: 9,
       foreignImportAndReopenPeers: 8, explicitRecovery: 10, freshLoginSingleHydration: 9 },
-    retainedReopen: { singleHydration: 9 }, plannedContinuation: 87, priorCumulative: 52, remaining: 108, headroom: 21,
+    retainedReopen: { singleHydration: 9 }, plannedContinuation: 87, priorCumulative: 58, remaining: 102, headroom: 15,
     conditions: "Exact intended-dashboard login landing reuses successful sync; other landing navigates once. Search expiry and legitimate retries consume headroom.",
     loginCounts: { initialTest: 2, retainedReopenTest: 1, excludesControllerReadiness: true },
     accounting: "External cumulative ledger counts actual send reservations including retry=1; exhaustion fails/incompletes acceptance without raising the ceiling.",
@@ -956,8 +958,12 @@ test("Company Research real FMP analyst choices template portability and retaine
     const successfulSyncs: Promise<any>[] = [];
     syncReads.set(target, successfulSyncs);
     target.on("response", response => {
-      if (response.request().method() === "GET" && response.ok() &&
+      if (new URL(response.url()).origin === process.env.WORKSPACE_FRONTEND_ORIGIN &&
+        response.request().method() === "GET" && response.ok() &&
         new URL(response.url()).pathname.endsWith("/pro/dash/validate-and-sync")) {
+        if (!syncAccess.has(target)) syncAccess.set(target, {
+          url: response.url(), authorization: response.request().headers().authorization,
+        });
         const read = response.json();
         successfulSyncs.push(read);
         void read.catch(() => undefined);
@@ -1015,16 +1021,44 @@ test("Company Research real FMP analyst choices template portability and retaine
     }, { message: "Already-loaded intended dashboard requires successful login sync evidence" }).toBe(true);
     return content;
   }
-  const saved = async (target: Page) => (await saveDashboard(target)).items[new URL(target.url()).pathname.split("/").at(-1)!];
+  async function saved(target: Page, intended: (content: any) => void | Promise<void>) {
+    const current = new URL(target.url());
+    expect(current.origin).toBe(process.env.WORKSPACE_FRONTEND_ORIGIN);
+    const id = current.pathname.split("/").at(-1)!;
+    const access = syncAccess.get(target);
+    expect(access, "Authenticated same-origin login sync is required").toBeDefined();
+    await target.keyboard.press("Control+Shift+S");
+    let content: any;
+    await expect(async () => {
+      const response = await target.request.get(access!.url, {
+        headers: access!.authorization ? { authorization: access!.authorization } : {},
+        maxRedirects: 0, timeout: 10000,
+      }).catch(() => { throw new Error("Authenticated dashboard read failed"); });
+      expect(response.status()).toBe(200);
+      expect(new URL(response.url()).origin).toBe(current.origin);
+      content = (await response.json()).owned?.[id]?.content;
+      expect(content, "Server must contain the intended owned dashboard").toBeDefined();
+      await intended(content);
+    }).toPass({ timeout: 30000, intervals: [250, 500, 1000] });
+    return content;
+  }
   async function revealResearch(target: Page) {
-    await expect(target.locator("#workarea [data-widget-id]")).toHaveCount(primaryIds.length + 1);
-    const state = await saved(target);
-    for (const id of [...primaryIds, "company_research"]) {
-      const matches = state.data.widgets.filter((item: any) => item.widgetId === id);
-      expect(matches).toHaveLength(1);
-      await target.locator(`#workarea [data-widget-id="${matches[0].id}"]`).scrollIntoViewIfNeeded();
-      await expect(widget(target, id)).toBeVisible();
+    const ids = [...primaryIds, "company_research"];
+    const shells = target.locator("#workarea [data-widget-id]");
+    await expect(shells).toHaveCount(ids.length);
+    for (let index = 0; index < ids.length; index++) {
+      const shell = shells.nth(index);
+      await shell.scrollIntoViewIfNeeded();
+      await expect(shell.locator(ids.map(id => `.widget-${id}`).join(","))).toBeVisible();
     }
+    for (const id of ids) await expect(target.locator(`#workarea .widget-${id}`)).toHaveCount(1);
+  }
+  function assertStoredSelection(content: any, id: string, symbol: string, acquisition?: string, selectedAfter?: number) {
+    const item = content.data.widgets.find((item: any) => item.widgetId === id);
+    expect(item.storage.params.symbol).toBe(symbol);
+    expect(item.storage.companySelection).toMatchObject({ version: 1, provider: "fmp", symbol });
+    if (acquisition) expect(item.storage.companySelection.retrievedAt).toBe(acquisition);
+    if (selectedAfter !== undefined) expect(Date.parse(item.storage.companySelection.selectedAt)).toBeGreaterThanOrEqual(selectedAfter);
   }
   function assertIntended(state: any) {
     const byId = (id: string) => state.widgets.find((item: any) => item.widgetId === id);
@@ -1145,6 +1179,7 @@ test("Company Research real FMP analyst choices template portability and retaine
       expect(apps.ok()).toBe(true);
       const generated = (await apps.json()).find((item: any) => item.name === "Company Research");
       expect(generated.tabs.Research.layout.map((item: any) => item.i)).toEqual([...primaryIds, "company_research"]);
+      const appOpenedAt = await page.evaluate(() => Date.now());
       await app.click();
       await revealResearch(page);
       await expect(widget(page, "company_research").getByLabel("Peer period", { exact: true })).toBeVisible();
@@ -1158,7 +1193,13 @@ test("Company Research real FMP analyst choices template portability and retaine
         originalAapl.set(path, await captured(path, "AAPL", id.includes("fundamental") ? "annual" : undefined));
       }
       await verifyNativeProfile(profile, originalAapl.get(profilePath), "AAPL");
-      const initialProfile = (await saved(page)).data.widgets.find((item: any) => item.widgetId === profileId);
+      const initialProfile = (await saved(page, content => {
+        assertStoredSelection(content, profileId, "AAPL", undefined, appOpenedAt);
+        const selection = content.data.widgets.find((item: any) => item.widgetId === profileId).storage.companySelection;
+        expect(captures.some(item => item.source === "live" && item.url.pathname === searchPath &&
+          item.url.searchParams.get("query") === "AAPL" && item.url.searchParams.get("is_symbol") === "true" &&
+          item.payload.extra.results_metadata.__qopenbb_financial__.retrieved_at === selection.retrievedAt)).toBe(true);
+      })).data.widgets.find((item: any) => item.widgetId === profileId);
       const originalSearch = captures.find(item => item.source === "live" && item.url.pathname === searchPath &&
         item.url.searchParams.get("query") === "AAPL" && item.url.searchParams.get("is_symbol") === "true" &&
         item.payload.extra.results_metadata.__qopenbb_financial__.retrieved_at === initialProfile.storage.companySelection.retrievedAt);
@@ -1166,9 +1207,23 @@ test("Company Research real FMP analyst choices template portability and retaine
       for (const [mode, query, symbol] of [["name", "Microsoft", "MSFT"], ["symbol", "AAPL", "AAPL"]] as const) {
         const changedAt = requests.length;
         if (symbol === "AAPL") {
+          let acquisitionsBeforeChoice = new Set<string>([initialProfile.storage.companySelection.retrievedAt]);
+          let choiceStartedAt = 0;
           await profile.getByRole("combobox", { name: "Symbol", exact: true }).fill(query);
-          selected = await selectCompanyListing(profile, mode, query, symbol, originalSearch!.payload);
-          const returnedProfile = (await saved(page)).data.widgets.find((item: any) => item.widgetId === profileId);
+          selected = await selectCompanyListing(profile, mode, query, symbol, originalSearch!.payload, async () => {
+            await Promise.all(reads);
+            acquisitionsBeforeChoice = new Set([initialProfile.storage.companySelection.retrievedAt,
+              ...captures.filter(item => item.requestIndex >= changedAt && item.source === "live" && item.url.pathname === searchPath &&
+                item.url.searchParams.get("query") === query && item.url.searchParams.get("is_symbol") === "true")
+                .map(item => item.payload.extra.results_metadata.__qopenbb_financial__.retrieved_at)]);
+            choiceStartedAt = await page.evaluate(() => Date.now());
+          });
+          const returnedProfile = (await saved(page, content => {
+            assertStoredSelection(content, profileId, symbol, undefined, choiceStartedAt);
+            const choice = content.data.widgets.find((item: any) => item.widgetId === profileId).storage.companySelection;
+            expect(acquisitionsBeforeChoice.has(choice.retrievedAt)).toBe(true);
+          }))
+            .data.widgets.find((item: any) => item.widgetId === profileId);
           await Promise.all(reads);
           const actualAcquisition = returnedProfile.storage.companySelection.retrievedAt;
           const searches = requests.slice(changedAt).filter(item => item.path === searchPath && item.query.query === "AAPL" && item.query.is_symbol === "true");
@@ -1187,7 +1242,10 @@ test("Company Research real FMP analyst choices template portability and retaine
           facts.push({ context: "same mounted profile AAPL search return", outcome: cachedSearch ? "explicit-cache" : "observed-live-after-expiry",
             query: { query, is_symbol: true, limit: 20 }, retrievedAt: actualAcquisition, allWidgetAaplSearches: searches.length,
             evidence: "Profile cache use requires its original acquisition; expiry requires actual matching live response. Other mounted selectors own independent search caches." });
-        } else selected = await chooseCompany(profile, mode, query, symbol);
+        } else {
+          selected = await chooseCompany(profile, mode, query, symbol);
+          await saved(page, content => assertStoredSelection(content, profileId, symbol, selected.retrievedAt));
+        }
         for (const id of primaryIds.filter(id => !id.includes("price"))) await expectSelectedCompany(widget(page, id), selected.listing);
         // Only this identical-key return intentionally reuses the original live AAPL evidence.
         // The accepted table adapter keeps that query fresh for 15 minutes; selection timestamps do not invalidate it.
@@ -1361,7 +1419,7 @@ test("Company Research real FMP analyst choices template portability and retaine
         await expect(page.locator("html")).toHaveClass(theme === "dark" ? /\bdark\b/ : /^(?!.*\bdark\b)/);
         await research.screenshot({ path: info.outputPath(`company-research-${theme}.png`) });
       }
-      expected = selectionState(await saved(page));
+      expected = selectionState(await saved(page, content => assertIntended(selectionState(content))));
       assertIntended(expected);
       const intendedBeforeExport = semanticChoices(expected);
       // Export is the actual dashboard context-menu action; import transport is an owned catalog fixture.
@@ -1383,7 +1441,10 @@ test("Company Research real FMP analyst choices template portability and retaine
       let catalogTemplate = exported;
       await page.route(`${process.env.WORKSPACE_FRONTEND_ORIGIN}/data/apps.json`, route => route.fulfill({ json: [catalogTemplate] }));
       await openCatalog(page, exported.name);
-      const imported = await saved(page);
+      const imported = await saved(page, content => {
+        assertIntended(selectionState(content));
+        expect(semanticChoices(selectionState(content))).toEqual(intendedBeforeExport);
+      });
       const importedState = selectionState(imported);
       expect(importedState.widgets.map((item: any) => item.id)).not.toEqual(expected.widgets.map((item: any) => item.id));
       expect(importedState.widgets.map((item: any) => [item.widgetId, item.params, item.selection, item.research]))
@@ -1416,7 +1477,13 @@ test("Company Research real FMP analyst choices template portability and retaine
       const atUnresolved = requests.length;
       await openCatalog(page, foreign.name);
       const foreignUrl = page.url();
-      const foreignSaved = await saved(page);
+      const assertForeign = (content: any) => {
+        const choices = content.data.widgets.filter((item: any) => item.storage?.companySelection);
+        expect(choices).toHaveLength(5);
+        for (const item of choices) expect(item.storage.companySelection.sourceKey).toBe(foreignKey);
+        expect(choices.find((item: any) => item.widgetId === profileId).storage.companySelection.version).toBe(99);
+      };
+      const foreignSaved = await saved(page, assertForeign);
       const unresolved = foreignSaved.data.widgets.filter((item: any) => item.storage?.companySelection);
       expect(unresolved).toHaveLength(5);
       for (const item of unresolved) expect(item.storage.companySelection.sourceKey).toBe(foreignKey);
@@ -1424,7 +1491,7 @@ test("Company Research real FMP analyst choices template portability and retaine
       await readFinancialDashboard(page, foreignUrl);
       await revealResearch(page);
       await expect(widget(page, profileId).getByRole("status")).toContainText("Select from the current source");
-      const reopenedForeign = await saved(page);
+      const reopenedForeign = await saved(page, assertForeign);
       for (const item of reopenedForeign.data.widgets.filter((item: any) => item.storage?.companySelection))
         expect(item.storage.companySelection.sourceKey).toBe(foreignKey);
       expect(reopenedForeign.data.widgets.find((item: any) => item.widgetId === profileId).storage.companySelection.version).toBe(99);
@@ -1448,7 +1515,10 @@ test("Company Research real FMP analyst choices template portability and retaine
       expect(recoveredPrice.extra.results_metadata.__qopenbb_financial__.effective_query).toMatchObject({
         symbol: "AAPL", start_date: "2025-01-03", end_date: "2025-01-30" });
       url = page.url();
-      const recoveredState = selectionState(await saved(page));
+      const recoveredState = selectionState(await saved(page, content => {
+        assertIntended(selectionState(content));
+        expect(semanticChoices(selectionState(content))).toEqual(intendedBeforeExport);
+      }));
       assertIntended(recoveredState);
       expect(semanticChoices(recoveredState)).toEqual(intendedBeforeExport);
       expected = recoveredState;
