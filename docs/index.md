@@ -15,6 +15,7 @@ Native Windows development is accepted using Podman Compose, with Dagger buildin
 | Install prebuilt alpha images for development | [Installation guide](install.md) |
 | Connect the bundled backend and open starter dashboards | [First login and onboarding](install.md#first-login-and-onboarding) |
 | Find companies by name and link research widgets | [Company selection](company-selection.md) |
+| Open the curated Company Research App and inspect original observations | [Company Research guide](company-research.md) |
 | Keep account connections and saved dashboards across updates | [Persistence and updates](install.md#persistence-and-updates) |
 | Check verified company inputs and remaining financial gaps | [Company Research input assessment](../.kiro/specs/analyst-workspace/research-input-assessment.md) |
 | Plan a feature using existing OpenBB capabilities | [Capability reuse map](capability-reuse.md) |

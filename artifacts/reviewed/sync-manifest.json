@@ -195,13 +195,17 @@
     "financial-input-milestone",
     "company-selector",
     "research-input-readiness",
-    "periodic-query-provenance"
+    "periodic-query-provenance",
+    "company-research"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
     "workspace_at_sync": "027d7703bb1c5447c0d058256598fa7b52049d2e",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
-    "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
+    "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+    "company_research_runtime_root": "4736c310320b16aa7f3b6c9de5c68a0643c4c664",
+    "company_research_workspace": "bf180ef506286886da224df9ff184cd1ace2397e",
+    "company_research_data_api": "a965f70c164fe477ce9c99654b9be48e2f1bc9fd"
   },
   "entries": [
     {
@@ -35667,6 +35671,46 @@
       "publishedSHA256": "dd918b849b62cd029f48d6fb36a6a9c90e37f39f50f4a847345e6b995e00a7a0",
       "bytes": 800,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/publication-prep/source-acceptance.md",
+      "sourceSHA256": "d3b1bdbfc814536d0cec14f1def3322392290ec9cca0ef9b7c6ca45c20a69658",
+      "publishedpath": "artifacts/reviewed/company-research/source-acceptance.md",
+      "publishedSHA256": "d3b1bdbfc814536d0cec14f1def3322392290ec9cca0ef9b7c6ca45c20a69658",
+      "bytes": 9988,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/completed-runtime-review.md",
+      "sourceSHA256": "f8cb0e741f13fa260d92e05d551e4677c88ee203ef30a6e728b66c38400fb789",
+      "publishedpath": "artifacts/reviewed/company-research/completed-runtime-review.md",
+      "publishedSHA256": "f8cb0e741f13fa260d92e05d551e4677c88ee203ef30a6e728b66c38400fb789",
+      "bytes": 7570,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/retention-acl-correction-review.md",
+      "sourceSHA256": "a724862baa7717e34c3d2fcdc305efed918cc4dd8eb85a2abb7da9f666137bc7",
+      "publishedpath": "artifacts/reviewed/company-research/retention-acl-correction-review.md",
+      "publishedSHA256": "a724862baa7717e34c3d2fcdc305efed918cc4dd8eb85a2abb7da9f666137bc7",
+      "bytes": 4877,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/publication-prep/runtime-acceptance-publication-ready.md",
+      "sourceSHA256": "30c1171179c183711c43d7806caf19baa932dc2bd631c3fd44826749e9e1d786",
+      "publishedpath": "artifacts/reviewed/company-research/runtime-acceptance.md",
+      "publishedSHA256": "30c1171179c183711c43d7806caf19baa932dc2bd631c3fd44826749e9e1d786",
+      "bytes": 7972,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/private-checkpoint-writer-review.md",
+      "sourceSHA256": "40df845ac2a5bcf7088a0e2162d3a017176549d80c43c324184995758698753d",
+      "publishedpath": "artifacts/reviewed/company-research/private-checkpoint-writer-review.md",
+      "publishedSHA256": "40df845ac2a5bcf7088a0e2162d3a017176549d80c43c324184995758698753d",
+      "bytes": 4189,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36391,8 +36435,8 @@
       "reason": "Only the independently reviewed allowlist is published; raw runtime, private state, and redundant scratch copies remain excluded."
     }
   ],
-  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171248837,
+  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source and local runtime acceptance are included; milestone publication remains pending.",
+  "total_payload_bytes": 171283433,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

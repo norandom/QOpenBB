@@ -59,8 +59,8 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 1_
   - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 4.3, 4.4, 4.5, 5.6, 6.1_
 
-- [ ] 3. Build independent research capabilities
-- [ ] 3.1 (P) Generate the curated research App
+- [x] 3. Build independent research capabilities
+- [x] 3.1 (P) Generate the curated research App
   - Compose profile, Income/Balance/Cash, price context and the frozen peer widget declaration using accepted catalog IDs and the existing grid layout. Ensure the peer widget declaration's `widgetId` and `type` match the frozen renderer registration so `Widget.tsx` mounts the peer component directly rather than falling back to `AgGridTable` via `widget?.endpoint`.
   - Declare only eligible primary tables in the Symbol group; link only statements by period so raw accounting-optimization inputs across Income (`ebitda`, weighted-average shares), Balance (cash, debt, equity) and Cash Flow (`stock_based_compensation`, `operating_cash_flow`, `free_cash_flow`, `common_stock_repurchased`) align by period selection. Price dates remain independent and peers/macros stay outside the primary group. Use the explicit Apple example, no silent fallback.
   - Done: focused catalog checks validate layout, declaration and group membership; the App is emitted directly without losing storage through provider-App adaptation. Final runtime mounting waits for 4.3.
@@ -69,7 +69,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 2_
   - _Requirements: 1.1, 1.2, 2.1, 2.3, 2.4, 2.5, 6.1_
 
-- [ ] 3.2 (P) Preserve table evidence through refresh and identity changes
+- [x] 3.2 (P) Preserve table evidence through refresh and identity changes
   - Cohesively extract table query/options from `AgGridTable.tsx` (reducing the 347-line file and 152-line `useGetTableData` hook with sufficient physical and logical headroom for Task 4.1's inspector mount), preserving rows/columns and using the existing authenticated query adapter.
   - Expose original envelope and context-bound lifecycle to consumers. Evaluate the shared identity-reconciliation eligibility check synchronously when computing query `enabled` so empty, unresolved or foreign-source saved identities in `widget.storage?.companySelection` disable HTTP requests on first render before `QueryParams.tsx` mounts `CompanySymbolSelector`. Discard previous-context views and ignore late responses.
   - Retain only same-context successful data on failed refresh, visibly separating envelope acquisition time (`retrieved_at`, never confused with TanStack Query's client-side `dataUpdatedAt` cache timestamp), financial observation dates and failed-attempt time; initial failure remains empty with its inline state.
@@ -79,7 +79,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 2_
   - _Requirements: 1.3, 2.2, 3.3, 5.3, 5.4, 6.1_
 
-- [ ] 3.3 (P) Preserve unresolved saved company identities
+- [x] 3.3 (P) Preserve unresolved saved company identities
   - Integrate the Task 2 frozen selector reconciliation guard into `useCompanySelection.ts` (keeping the 311-line hook file and 188-line hook body within the 50-logical-unit function cap), using saved source identity and current source without a second persisted flag.
   - Inspect raw `metadata: unknown` before `decodeSelection(metadata)` so malformed or unknown-version imported objects (`metadata !== null && metadata !== undefined && decodeSelection(metadata) === null`) are classified as unresolved saved identities (extracting any safe display `{ name, symbol }`) rather than mistaken for absent initial metadata (`metadata == null`) and overwritten by automatic symbol resolution.
   - Prevent automatic same-symbol replacement across sources; retain the unresolved saved name/symbol and reason until explicit current-source reselection. Ensure legitimate same-source Symbol-group updates from a linked widget clear a prior foreign unresolved state while initial mount/reopen preserves it, and preserve initial defaults without saved metadata.
@@ -89,7 +89,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 2_
   - _Requirements: 2.1, 2.2, 5.1, 5.6, 6.1_
 
-- [ ] 3.4 (P) Preserve research choices in safe template export
+- [x] 3.4 (P) Preserve research choices in safe template export
   - Extract pure export serialization from `ExportTemplatePopup.tsx` (currently 384 physical lines with a 182-line `formatDashboardDataForTemplate` function) into cohesive sub-50-unit functions in `exportTemplate.ts` and `researchTemplateState.ts` (reusing `zod`), retaining existing template behavior and group references.
   - Add only validated company selection and research configuration to the allowlist. When exporting validated `companySelection`, explicitly retain `state.params.symbol` (and explicit `period`) even when the value matches the catalog default (`"AAPL"`), preventing default-value omission in `ExportTemplatePopup.tsx` from decoupling `state.params` and `state.storage.companySelection` on import. Exclude provider payloads, credentials and session/request secrets; refuse credential-dependent identities rather than leaking URL components.
   - Reuse the existing import storage merge unchanged and the frozen consumer decoders. Invalid/unknown research versions remain unresolved and retain their original imported configuration.
@@ -99,7 +99,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 2_
   - _Requirements: 5.1, 5.5, 5.6, 6.1_
 
-- [ ] 3.5 (P) Edit an independent candidate peer set
+- [x] 3.5 (P) Edit an independent candidate peer set
   - Reuse company search, installed `react-hook-form` (`useFieldArray` for add/remove/reorder), `@hookform/resolvers/zod`, `use-debounce` and existing themed UI primitives for peer membership and rationale editing. Display readable names, symbols and available listing/exchange facts.
   - Keep the peer array in its single widget-owned configuration, independent of primary selection. Candidate suggestions are not automatic membership or financial validation.
   - Done: component checks preserve peer identity/order/rationale through edits and reject invalid/oversized configuration without silently discarding input. Search absence or entitlement failure leaves existing choices intact.
@@ -108,8 +108,8 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 2_
   - _Requirements: 1.2, 1.3, 2.5, 4.1, 4.6_
 
-- [ ] 4. Integrate the research experience
-- [ ] 4.1 (P) Make original financial observations inspectable
+- [x] 4. Integrate the research experience
+- [x] 4.1 (P) Make original financial observations inspectable
   - Present the original-observation selector and financial metadata using existing frame actions/theme controls and installed `@radix-ui` / `fuse.js` primitives, independent of grid transpose/grouping.
   - Show source, definition, unit/scale, row-resolved currency (`currency` or `originalRows[row_index][currency_field]`), value origin, actual acquisition (`retrieved_at`) and observation/valuation/publication dates, fiscal labels, coverage evidence and explicit unknowns. Surface `financial_basis`, `transformations` and `limitations` so analysts can inspect accounting-optimization provenance: disclose SBC treatment in `ebitda`, `operating_cash_flow` or `free_cash_flow` only when supplied definitions or reconciliations establish it; otherwise show treatment unknown. Preserve the supplied measure unchanged and distinguish future house economic-cost adjustments. Keep duplicate rows individually selectable by `source_ordinal`; do not infer period duration or historical availability.
   - Done: inspector checks match original row ordinals and display unknown/provider-calculation limitations, including evidenced SBC add-back, retained expense and unknown treatment; mount through the table evidence seam without per-cell requests. Keyboard navigation and existing controls remain usable.
@@ -118,7 +118,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 2, 3.2_
   - _Requirements: 1.2, 3.1, 3.2, 3.3, 3.4, 3.5, 6.1_
 
-- [ ] 4.2 (P) Show provider peer observations with explicit limits
+- [x] 4.2 (P) Show provider peer observations with explicit limits
   - Request periodic metrics/ratios separately per selected listing, `ttm=exclude`, using the existing adapter through a bounded 2-request concurrency queue with `refetchInterval: false` (never inheriting `useMultipleQueries` unbounded parallel fan-out or default automatic polling). Count bounded retries in request receipts.
   - Expose dataset/field and original-observation choices with observation/valuation/publication dates, units, row-resolved currency, `financial_basis` and provider origin. Keep duplicate rows available by `source_ordinal` and each failed peer/dataset inline.
   - Use the frozen evidence-only statuses: multiples lacking raw denominator evidence or an applicable EV bridge for an enterprise-value measure in FMP `metrics`/`ratios` responses remain explicitly `unverified` (naming the missing denominator/bridge evidence), explicitly evidenced zero/negative denominators are `not_meaningful`, explicit currency/unit/coverage conflicts are `incompatible` only for a stated comparison requiring matching facts, and apparent matches remain `unverified` for aggregation. Retain generic controls with a persistent valuation limitation notice covering generic table/chart sorting, summary statistics and unadjusted provider conventions (such as SBC treatment and unaligned fiscal calendars).
@@ -128,7 +128,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 2, 3.2_
   - _Requirements: 1.3, 3.4, 3.5, 4.2, 4.3, 4.4, 4.5, 4.6, 5.3, 5.4, 6.1_
 
-- [ ] 4.3 Join the App, peer widget and saved state
+- [x] 4.3 Join the App, peer widget and saved state
   - Compose the peer editor and observations in the existing widget frame; register the frozen renderer and bind validated configuration to existing widget persistence.
   - Join catalog generation and template serialization, verifying group references after import and independent statement/price/peer parameters. Reconcile only reviewed source changes into exact fork/root revisions.
   - Done: installed catalog opens the complete App, all sections are reachable and no section failure blanks unrelated widgets. Saved configuration carries choices, not provider payloads or a frozen valuation snapshot.
@@ -138,7 +138,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Requirements: 1.1, 1.2, 1.3, 2.1, 2.3, 2.4, 2.5, 4.1, 5.1, 5.5, 5.6, 6.1_
 
 - [ ] 5. Verify and deliver the bounded milestone
-- [ ] 5.1 Verify the packaged analyst journey with real FMP observations
+- [x] 5.1 Verify the packaged analyst journey with real FMP observations
   - Build the accepted candidate through existing Dagger definitions and run it in owned native Compose with the existing financial browser runner; budget packaged Workspace logins across 5.1 and 5.2 against the 5-logins-per-minute client-IP rate limiter (`testing.md`) to avoid HTTP 429 false failures. Tests/publication remain outside Dagger.
   - Use a primary company and two peers; check displayed values against source evidence (including `stock_based_compensation`, `ebitda`, `operating_cash_flow` and `free_cash_flow` where returned), readable identity changes, annual/quarter changes, independent price dates, peer edits, inspector metadata (row currency, date basis, accounting-optimization limitation disclosures), peer multiple missing-denominator `unverified` states and refresh behavior.
   - Cover missing/incompatible evidence and failure recovery with clearly labelled deterministic cases where live data cannot safely reproduce the condition. Inspect owned browser console/network diagnostics; preserve current theme and controls.
@@ -148,7 +148,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
   - _Depends: 4.3_
   - _Requirements: 1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4, 3.5, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 5.3, 5.4, 6.1, 6.2_
 
-- [ ] 5.2 Verify retained research configuration and template portability
+- [x] 5.2 Verify retained research configuration and template portability
   - Extend the same existing journey (reusing the authenticated session or staying within the 5-logins-per-minute client-IP rate budget from `testing.md`) to fresh authenticated reopen, template export/import and container recreation retaining the owned data directory.
   - Verify primary identity, period, price window, peer order/rationale, layout and group references. Test unresolved foreign-source identity through save/reopen and explicit recovery, without silently substituting a company.
   - Done: the restored App retains all analyst choices, exports contain no secrets or provider payloads, and evidence explicitly distinguishes retained-data recreation from backup/restore or owner-server deployment.
@@ -171,3 +171,7 @@ Suggested dispatch: 3.1 + 3.2, then 3.3 + 3.4, then 3.5 + 4.1; 4.2 may overlap a
 Thirteen executable tasks cover all 29 criteria. Existing unit/contract checks are attached to their owning tasks; the two browser acceptance tasks share the existing runner and candidate. No optional tests replace required acceptance. A dependency or frozen-contract change stops affected lanes for controller reconciliation.
 
 Task approval authorizes this bounded implementation workflow only. House modeling, broader IA-B readiness, new providers, AI/Excel and server deployment are not included.
+
+## Local runtime acceptance record
+
+2026-11-14: tasks 4.3, 5.1 and 5.2 independently accepted against artifacts/reviewed/company-research/runtime-acceptance.md. The exact source/image/test identities, initial/reopen outcomes, cumulative FMP count 291, zero FRED, fixture classifications and remaining limitations are recorded there. Task 5.3 remains open. Parent tasks 3 and 4 summarize their accepted children; they are not additional executable tasks. This is 12 of 13 executable tasks, not completion of the analyst-workspace umbrella or full IA-B readiness.

@@ -96,7 +96,8 @@ Company Research input verification: 73 offline checks and five live journeys pa
 - [x] Approve requirements and independently review the [Company Research design](.kiro/specs/analyst-workspace/company-research-design.md).
 - [x] Approve the bounded design and independently review the [13-task implementation plan](.kiro/specs/analyst-workspace/company-research-tasks.md), including the [repaired owner amendment](.kiro/specs/analyst-workspace/company-research-tasks-amendment-rereview.md).
 - [x] Approve the Company Research tasks and accept the [foundation and shared contracts](artifacts/reviewed/company-research/verification.md).
-- [ ] Implement and verify the Company Research App through the planned parallel lanes.
+- [x] Accept the bounded [Company Research App](docs/company-research.md), including local FMP observations, template portability and retained-data recreation. [Runtime review](artifacts/reviewed/company-research/runtime-acceptance.md).
+- [ ] Publish and verify the Company Research milestone images and release assets (task 5.3).
 
 - [x] Verify the declared company inputs and publish the independently reviewed IA-A gap assessment.
 - [x] Correct accounting-field evidence filtering and the assessment; 35 offline checks pass, original live receipts retained.
