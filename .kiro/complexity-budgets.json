@@ -1,23 +1,217 @@
 {
   "schema_version": 1,
   "metric": "project-syntax-units-v1",
-  "limits": {"physical": 400, "logical": 300, "function": 50},
-  "exceptions": [{"repository":"workspace","path":"backend-api/backend/api/schemas.py","metric":"physical","baseline":2032,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.","review":".kiro/specs/openbb-self-service/login-password-policy.md","expires_on":"2026-11-28"}, {"repository":"workspace","path":"backend-api/backend/api/schemas.py","metric":"logical","baseline":1291,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.","review":".kiro/specs/openbb-self-service/login-password-policy.md","expires_on":"2026-11-28"}, {"repository":"workspace","path":"terminalpro/src/routes/login.tsx","metric":"physical","baseline":893,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.","review":".kiro/specs/openbb-self-service/login-password-policy.md","expires_on":"2026-11-28"}, {"repository":"workspace","path":"terminalpro/src/routes/login.tsx","metric":"logical","baseline":303,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.","review":".kiro/specs/openbb-self-service/login-password-policy.md","expires_on":"2026-11-28"}, {"rationale":"Reviewed no-growth Sankey vocabulary addition and sparse cellRangeCols record correction only; no other schema changes.","expires_on":"2026-11-27","baseline":927,"review":".kiro/specs/analyst-workspace/gallery-schema-exception.md","path":"terminalpro/src/lib/types/app.ts","metric":"physical","revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","repository":"workspace"},
-    {"repository":"workspace","path":"backend-api/backend/routers/pro/index.py","metric":"physical","baseline":2007,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Reviewed no-growth exception for nullable first-login GET only; unchanged login function. No unrelated router changes.","review":".kiro/specs/openbb-self-service/first-login-diagnostics.md","expires_on":"2026-11-27"},
-    {"repository":"workspace","path":"backend-api/backend/routers/pro/index.py","metric":"logical","baseline":608,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Reviewed no-growth exception for nullable first-login GET only; unchanged login function. No unrelated router changes.","review":".kiro/specs/openbb-self-service/first-login-diagnostics.md","expires_on":"2026-11-27"},
-    {"repository":"workspace","path":"backend-api/backend/routers/pro/index.py","metric":"function","baseline":69,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Reviewed no-growth exception for nullable first-login GET only; unchanged login function. No unrelated router changes.","review":".kiro/specs/openbb-self-service/first-login-diagnostics.md","expires_on":"2026-11-27","function":{"column":1,"line":366,"name":"login"}},
-    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"physical","baseline":1601,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"logical","baseline":845,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/lib/state/copilot.ts","metric":"function","baseline":52,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":22,"line":853,"name":"<anonymous>"}},
-    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"physical","baseline":886,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Reviewed type-only Community import plus five Sankey chart vocabulary changes; no runtime emission or size growth.","review":".kiro/specs/analyst-workspace/sankey-schema-exception.md","expires_on":"2026-11-27"},
-    {"repository":"workspace","path":"terminalpro/src/components/types.d.ts","metric":"logical","baseline":581,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Reviewed type-only Community import plus five Sankey chart vocabulary changes; no runtime emission or size growth.","review":".kiro/specs/analyst-workspace/sankey-schema-exception.md","expires_on":"2026-11-27"},
-    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"physical","baseline":505,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14"},
-    {"repository":"workspace","path":"terminalpro/src/components/General/Table/utils.tsx","metric":"function","baseline":62,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.","review":".kiro/specs/openbb-self-service/task-2.7-exception-review.md","expires_on":"2027-01-14","function":{"column":1,"line":86,"name":"getTableData"}},
-    {"repository":"workspace","path":"backend-api/backend/api/crud.py","metric":"physical","baseline":1599,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.","review":".kiro/specs/openbb-self-service/sqlite-repair-verification.md","expires_on":"2026-11-17"},
-    {"repository":"workspace","path":"backend-api/backend/api/crud.py","metric":"logical","baseline":582,"revision":"e1a12c3a031a23598f41166a0f91b8fb24ac2387","rationale":"Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.","review":".kiro/specs/openbb-self-service/sqlite-repair-verification.md","expires_on":"2026-11-17"}
-  ,
-    {"repository": "workspace", "path": "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx", "metric": "physical", "baseline": 1000, "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387", "rationale": "Owner-approved company-selector ceiling 1000; original 938, reviewed candidate 993. Only imports, compound local commit and existing header integration. Source SHA256 4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055. No other oversized-file allowance.", "review": "artifacts/reviewed/company-selector/task5.2-review.md", "expires_on": "2026-11-30"},
-    {"repository": "workspace", "path": "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx", "metric": "logical", "baseline": 390, "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387", "rationale": "Owner-approved company-selector ceiling 390; original 345, reviewed candidate 364. Only imports, compound local commit and existing header integration. Source SHA256 4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055. No other oversized-file allowance.", "review": "artifacts/reviewed/company-selector/task5.2-review.md", "expires_on": "2026-11-30"}
+  "limits": {
+    "physical": 400,
+    "logical": 300,
+    "function": 50
+  },
+  "exceptions": [
+    {
+      "repository": "workspace",
+      "path": "backend-api/backend/api/schemas.py",
+      "metric": "physical",
+      "baseline": 2032,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.",
+      "review": ".kiro/specs/openbb-self-service/login-password-policy.md",
+      "expires_on": "2026-11-28"
+    },
+    {
+      "repository": "workspace",
+      "path": "backend-api/backend/api/schemas.py",
+      "metric": "logical",
+      "baseline": 1291,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.",
+      "review": ".kiro/specs/openbb-self-service/login-password-policy.md",
+      "expires_on": "2026-11-28"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/routes/login.tsx",
+      "metric": "physical",
+      "baseline": 893,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.",
+      "review": ".kiro/specs/openbb-self-service/login-password-policy.md",
+      "expires_on": "2026-11-28"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/routes/login.tsx",
+      "metric": "logical",
+      "baseline": 303,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Reviewed no-growth existing-credential validation substitution only; new-password policy and authentication handlers unchanged.",
+      "review": ".kiro/specs/openbb-self-service/login-password-policy.md",
+      "expires_on": "2026-11-28"
+    },
+    {
+      "rationale": "Reviewed no-growth Sankey vocabulary addition and sparse cellRangeCols record correction only; no other schema changes.",
+      "expires_on": "2026-11-27",
+      "baseline": 927,
+      "review": ".kiro/specs/analyst-workspace/gallery-schema-exception.md",
+      "path": "terminalpro/src/lib/types/app.ts",
+      "metric": "physical",
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "repository": "workspace"
+    },
+    {
+      "repository": "workspace",
+      "path": "backend-api/backend/routers/pro/index.py",
+      "metric": "physical",
+      "baseline": 2007,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Reviewed no-growth exception for nullable first-login GET only; unchanged login function. No unrelated router changes.",
+      "review": ".kiro/specs/openbb-self-service/first-login-diagnostics.md",
+      "expires_on": "2026-11-27"
+    },
+    {
+      "repository": "workspace",
+      "path": "backend-api/backend/routers/pro/index.py",
+      "metric": "logical",
+      "baseline": 608,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Reviewed no-growth exception for nullable first-login GET only; unchanged login function. No unrelated router changes.",
+      "review": ".kiro/specs/openbb-self-service/first-login-diagnostics.md",
+      "expires_on": "2026-11-27"
+    },
+    {
+      "repository": "workspace",
+      "path": "backend-api/backend/routers/pro/index.py",
+      "metric": "function",
+      "baseline": 69,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Reviewed no-growth exception for nullable first-login GET only; unchanged login function. No unrelated router changes.",
+      "review": ".kiro/specs/openbb-self-service/first-login-diagnostics.md",
+      "expires_on": "2026-11-27",
+      "function": {
+        "column": 1,
+        "line": 366,
+        "name": "login"
+      }
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/lib/state/copilot.ts",
+      "metric": "physical",
+      "baseline": 1601,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
+      "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
+      "expires_on": "2027-01-14"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/lib/state/copilot.ts",
+      "metric": "logical",
+      "baseline": 845,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
+      "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
+      "expires_on": "2027-01-14"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/lib/state/copilot.ts",
+      "metric": "function",
+      "baseline": 52,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
+      "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
+      "expires_on": "2027-01-14",
+      "function": {
+        "column": 22,
+        "line": 853,
+        "name": "<anonymous>"
+      }
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/types.d.ts",
+      "metric": "physical",
+      "baseline": 886,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Reviewed type-only Community import plus five Sankey chart vocabulary changes; no runtime emission or size growth.",
+      "review": ".kiro/specs/analyst-workspace/sankey-schema-exception.md",
+      "expires_on": "2026-11-27"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/types.d.ts",
+      "metric": "logical",
+      "baseline": 581,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Reviewed type-only Community import plus five Sankey chart vocabulary changes; no runtime emission or size growth.",
+      "review": ".kiro/specs/analyst-workspace/sankey-schema-exception.md",
+      "expires_on": "2026-11-27"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/utils.tsx",
+      "metric": "physical",
+      "baseline": 505,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
+      "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
+      "expires_on": "2027-01-14"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/utils.tsx",
+      "metric": "function",
+      "baseline": 62,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Type-only Community import replacement; identical runtime emission and measured size. No growth or behavioral changes covered.",
+      "review": ".kiro/specs/openbb-self-service/task-2.7-exception-review.md",
+      "expires_on": "2027-01-14",
+      "function": {
+        "column": 1,
+        "line": 86,
+        "name": "getTableData"
+      }
+    },
+    {
+      "repository": "workspace",
+      "path": "backend-api/backend/api/crud.py",
+      "metric": "physical",
+      "baseline": 1599,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.",
+      "review": ".kiro/specs/openbb-self-service/sqlite-repair-verification.md",
+      "expires_on": "2026-11-17"
+    },
+    {
+      "repository": "workspace",
+      "path": "backend-api/backend/api/crud.py",
+      "metric": "logical",
+      "baseline": 582,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Owner-approved seven-site SQLite query repair only; no unrelated CRUD changes.",
+      "review": ".kiro/specs/openbb-self-service/sqlite-repair-verification.md",
+      "expires_on": "2026-11-17"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx",
+      "metric": "physical",
+      "baseline": 1000,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Owner-approved company-selector ceiling 1000; original 938, reviewed candidate 993. Only imports, compound local commit and existing header integration. Source SHA256 4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055. No other oversized-file allowance.",
+      "review": "artifacts/reviewed/company-selector/task5.2-review.md",
+      "expires_on": "2026-11-30"
+    },
+    {
+      "repository": "workspace",
+      "path": "terminalpro/src/components/General/Table/NavBar/QueryParams.tsx",
+      "metric": "logical",
+      "baseline": 390,
+      "revision": "e1a12c3a031a23598f41166a0f91b8fb24ac2387",
+      "rationale": "Owner-approved company-selector ceiling 390; original 345, reviewed candidate 364. Only imports, compound local commit and existing header integration. Source SHA256 4ade26d1910e23c6ade5f942c24f41043fa8b770e5a3303778c03e36c649d055. No other oversized-file allowance.",
+      "review": "artifacts/reviewed/company-selector/task5.2-review.md",
+      "expires_on": "2026-11-30"
+    }
   ],
   "scope_limits": "All QOpenBB maintained production files; whole explicit changed files in owned forks. Unchanged upstream is outside initial enforcement. No implicit oversized-file exceptions.",
   "repositories": [
@@ -28,79 +222,103 @@
       "root": ".",
       "mode": "all",
       "owners": [
-      {
-        "spec": "native-development-workflow",
-        "include": [
-          "**/*"
-        ],
-        "files": [
-          "pipeline/qopenbb_ci/windows_private_files.py",
-          "pipeline/qopenbb_ci/windows_security.py",
-          "pipeline/qopenbb_ci/session_files.py",
-          "pipeline/qopenbb_ci/posix_private_files.py",
-          "pipeline/qopenbb_ci/runtime_descriptor.py",
-          "pipeline/qopenbb_ci/compose_runtime.py",
-          "pipeline/qopenbb_ci/compose_checks.py",
-          "pipeline/qopenbb_ci/compose_readiness.py",
-          "pipeline/compose.runtime.yaml",
-          "verification/runtime-descriptor.ts",
-          "pipeline/dev.ps1",
-          "pipeline/qopenbb_ci/native_environment.py",
-          "pipeline/qopenbb_ci/native_actions.py",
-          "pipeline/qopenbb_ci/portable_runtime.py",
-          "pipeline/qopenbb_ci/state_files.py",
-          "pipeline/qopenbb_ci/windows_state_files.py",
-          "pipeline/qopenbb_ci/container_command.py",
-          ".kiro/complexity/workspace.json",
-          "pipeline/qopenbb_ci/compose_lifecycle.py",
-          "pipeline/qopenbb_ci/compose_intent.py",
-          "pipeline/qopenbb_ci/workspace_runtime.py",
-          "pipeline/qopenbb_ci/workspace_smoke.py"
-        ]
-      },
-{
-        "spec": "openbb-self-service",
-        "include": ["**/*"],
-        "files": [
-          ".kiro/spec-ownership.toml",
-        "compose.yaml",
-        ".github/workflows/prototype.yml",".github/workflows/codeql.yml",".github/codeql/codeql-config.yml",
-        "pipeline/ci.sh",
-        "pipeline/qopenbb_ci/build_cli.py",
-          "pipeline/qopenbb_ci/alpha_cli.py",
-        "pipeline/qopenbb_ci/publication.py",
-        "pipeline/qopenbb_ci/publish_cli.py",
-        "pipeline/qopenbb_ci/quality_cli.py",
-        ".dockerignore", ".gitattributes", ".gitignore", ".node-version", ".python-version",
-          ".dagger/pyproject.toml", ".dagger/src/qopenbb/__init__.py", ".dagger/src/qopenbb/images.py", ".dagger/src/qopenbb/export.py",
-          ".dagger/src/qopenbb/workspace.py", ".dagger/src/qopenbb/dockerfile.py", ".dagger/src/qopenbb/data_api.py", "pipeline/qopenbb_ci/runtime_inputs.py",
-          "pipeline/qopenbb_ci/sources.py", "pipeline/qopenbb_ci/staging.py", "pipeline/qopenbb_ci/images.py", "pipeline/qopenbb_ci/image_cli.py",
-          "pipeline/qopenbb_ci/provenance.py", "pipeline/qopenbb_ci/catalog.py", "pipeline/qopenbb_ci/catalog_runtime.py",
-          "pipeline/qopenbb_ci/catalog_upstream.py", "pipeline/qopenbb_ci/catalog_cli.py", "pipeline/pyproject.toml", "pipeline/qopenbb_ci/__init__.py", "pipeline/qopenbb_ci/cli.py",
-          "pipeline/qopenbb_ci/contracts.py", "pipeline/qopenbb_ci/source_contract.py", "pipeline/qopenbb_ci/checks.py", "pipeline/qopenbb_ci/schemas.py",
-          "pipeline/qopenbb_ci/configuration.py", "pipeline/qopenbb_ci/source_filter.py", "contracts/runtime.json", "contracts/sources.json", "contracts/datasets.json",
-          "verification/.npmrc", "verification/package.json", "verification/provider/pyproject.toml", "services/data-api/pyproject.toml", "services/data-api/qopenbb_data/__init__.py",
-          "services/data-api/qopenbb_data/config.py", "services/data-api/qopenbb_data/app.py", "verification/playwright.config.ts", "verification/financial-workspace.config.ts", "verification/fixture_server.ts",
-          "verification/diagnostics.ts", "verification/capture.ts", "verification/evidence.ts", "verification/runner.ts", "verification/runner.py",
-          ".kiro/complexity-budgets.json", "tools/quality/__init__.py", "tools/quality/complexity.py", "tools/quality/python_units.py",
-          "tools/quality/scope.py", "tools/quality/changes.py", "tools/quality/syntax_units.ts", "tools/quality/ts_adapter.py", "tools/quality/exceptions.py", "tools/quality/tsconfig.json"
-        ]
-      }, {"spec": "market-data-integrations", "include": ["services/data-api/qopenbb_data/*", "pipeline/qopenbb_ci/catalog_financial.py"], "files": ["pipeline/qopenbb_ci/catalog_financial.py", "services/data-api/qopenbb_data/financial_openapi.py", "services/data-api/qopenbb_data/financial_errors.py", "services/data-api/qopenbb_data/financial_policy.py", "services/data-api/qopenbb_data/financial_catalog.py"]}, {"spec": "analyst-workspace", "include": ["**/*"], "files": ["services/data-api/qopenbb_data/gallery.py", "pipeline/qopenbb_ci/gallery_projection.py", "pipeline/qopenbb_ci/gallery_templates.py", "pipeline/qopenbb_ci/gallery_cli.py"]}],
+        {
+          "spec": "native-development-workflow",
+          "include": ["**/*"],
+          "files": ["pipeline/qopenbb_ci/windows_private_files.py", "pipeline/qopenbb_ci/windows_security.py", "pipeline/qopenbb_ci/session_files.py", "pipeline/qopenbb_ci/posix_private_files.py", "pipeline/qopenbb_ci/runtime_descriptor.py", "pipeline/qopenbb_ci/compose_runtime.py", "pipeline/qopenbb_ci/compose_checks.py", "pipeline/qopenbb_ci/compose_readiness.py", "pipeline/compose.runtime.yaml", "verification/runtime-descriptor.ts", "pipeline/dev.ps1", "pipeline/qopenbb_ci/native_environment.py", "pipeline/qopenbb_ci/native_actions.py", "pipeline/qopenbb_ci/portable_runtime.py", "pipeline/qopenbb_ci/state_files.py", "pipeline/qopenbb_ci/windows_state_files.py", "pipeline/qopenbb_ci/container_command.py", ".kiro/complexity/workspace.json", "pipeline/qopenbb_ci/compose_lifecycle.py", "pipeline/qopenbb_ci/compose_intent.py", "pipeline/qopenbb_ci/workspace_runtime.py", "pipeline/qopenbb_ci/workspace_smoke.py"]
+        },
+        {
+          "spec": "openbb-self-service",
+          "include": ["**/*"],
+          "files": [".kiro/spec-ownership.toml", "compose.yaml", ".github/workflows/prototype.yml", ".github/workflows/codeql.yml", ".github/codeql/codeql-config.yml", "pipeline/ci.sh", "pipeline/qopenbb_ci/build_cli.py", "pipeline/qopenbb_ci/alpha_cli.py", "pipeline/qopenbb_ci/publication.py", "pipeline/qopenbb_ci/publish_cli.py", "pipeline/qopenbb_ci/quality_cli.py", ".dockerignore", ".gitattributes", ".gitignore", ".node-version", ".python-version", ".dagger/pyproject.toml", ".dagger/src/qopenbb/__init__.py", ".dagger/src/qopenbb/images.py", ".dagger/src/qopenbb/export.py", ".dagger/src/qopenbb/workspace.py", ".dagger/src/qopenbb/dockerfile.py", ".dagger/src/qopenbb/data_api.py", "pipeline/qopenbb_ci/runtime_inputs.py", "pipeline/qopenbb_ci/sources.py", "pipeline/qopenbb_ci/staging.py", "pipeline/qopenbb_ci/images.py", "pipeline/qopenbb_ci/image_cli.py", "pipeline/qopenbb_ci/provenance.py", "pipeline/qopenbb_ci/catalog_runtime.py", "pipeline/qopenbb_ci/catalog_upstream.py", "pipeline/pyproject.toml", "pipeline/qopenbb_ci/__init__.py", "pipeline/qopenbb_ci/cli.py", "pipeline/qopenbb_ci/contracts.py", "pipeline/qopenbb_ci/source_contract.py", "pipeline/qopenbb_ci/checks.py", "pipeline/qopenbb_ci/schemas.py", "pipeline/qopenbb_ci/configuration.py", "pipeline/qopenbb_ci/source_filter.py", "contracts/runtime.json", "contracts/sources.json", "contracts/datasets.json", "verification/.npmrc", "verification/package.json", "verification/provider/pyproject.toml", "services/data-api/pyproject.toml", "services/data-api/qopenbb_data/__init__.py", "services/data-api/qopenbb_data/config.py", "services/data-api/qopenbb_data/app.py", "verification/playwright.config.ts", "verification/financial-workspace.config.ts", "verification/fixture_server.ts", "verification/diagnostics.ts", "verification/capture.ts", "verification/evidence.ts", "verification/runner.ts", "verification/runner.py", ".kiro/complexity-budgets.json", "tools/quality/__init__.py", "tools/quality/complexity.py", "tools/quality/python_units.py", "tools/quality/scope.py", "tools/quality/changes.py", "tools/quality/syntax_units.ts", "tools/quality/ts_adapter.py", "tools/quality/exceptions.py", "tools/quality/tsconfig.json"]
+        },
+        {
+          "spec": "market-data-integrations",
+          "include": ["services/data-api/qopenbb_data/*", "pipeline/qopenbb_ci/catalog_financial.py"],
+          "files": ["pipeline/qopenbb_ci/catalog_financial.py", "services/data-api/qopenbb_data/financial_openapi.py", "services/data-api/qopenbb_data/financial_errors.py", "services/data-api/qopenbb_data/financial_policy.py", "services/data-api/qopenbb_data/financial_catalog.py"]
+        },
+        {
+          "spec": "analyst-workspace",
+          "include": ["**/*"],
+          "files": ["services/data-api/qopenbb_data/gallery.py", "pipeline/qopenbb_ci/gallery_projection.py", "pipeline/qopenbb_ci/gallery_templates.py", "pipeline/qopenbb_ci/gallery_cli.py"]
+        },
+        {
+          "spec": "analyst-workspace/company-research",
+          "include": ["pipeline/qopenbb_ci/*"],
+          "files": ["pipeline/qopenbb_ci/catalog.py", "pipeline/qopenbb_ci/catalog_cli.py"]
+        }
+      ],
       "exclusions": [
-        {"patterns": ["contracts/gallery/data.json", "contracts/gallery/catalog.json"], "reason": "Deterministic historical gallery outputs; generator logic remains capped", "source": "pipeline/qopenbb_ci/gallery_cli.py with retained FMP captures and chart-state.json"}, {"patterns": ["contracts/gallery/chart-state.json"], "reason": "Native saved-state and dataset schema fixture exercised by the QOpenBB integration gate", "source": "vendor/workspace/terminalpro/tests/unit/chart-compatibility/galleryTemplate.test.ts"},
-        {"patterns": ["contracts/routes.json", "contracts/openapi.json", "contracts/widgets.json", "contracts/apps.json", "contracts/catalog-report.json", "contracts/compatibility.json", "contracts/provenance.json", "contracts/hashes.json"], "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped", "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"},
-        {"patterns": ["schemas/*.schema.json"], "reason": "Deterministic public schemas generated from capped maintained Python boundary models", "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"},
-        {"patterns": [".git/**", "**/__pycache__/**", "**/.pytest_cache/**", "**/.ruff_cache/**", "**/.venv/**", "**/node_modules/**"], "reason": "Repository metadata and installed or cached dependencies", "source": "Git, CPython, pytest, Ruff, uv and pnpm"},
-        {"patterns": ["vendor/**", ".upstream/**"], "reason": "Acquisition roots are inventoried separately as owned forks; this exclusion does not apply inside fork scope", "source": "sources.lock.json"},
-        {"patterns": ["run_this.sh", "artifacts/**", "data/**", "backups/**", "test-results/**", "playwright-report/**", "dist/**", "htmlcov/**", ".coverage*", "coverage.xml"], "reason": "Disposable evidence, private runtime state, build output and temporary owner command handoff", "source": "Verification/build tools, operator runtime and .kiro/steering/testing.md"},
-        {"patterns": [".env", ".env.*", "secrets/**", "*.pem", "*.key"], "reason": "Private operator configuration and empty public configuration samples", "source": "Operator configuration; never read for size inventory"},
-        {"patterns": ["docs/**", "*.md", ".agents/**", ".codex/**", ".kiro/settings/**", ".kiro/specs/**", ".kiro/steering/**", ".kiro/breadth.toml"], "reason": "Documentation, agent instructions and acceptance metadata", "source": "Project memory and specification workflow"},
-        {"patterns": ["sources/**", "sources.lock.json", "pipeline/tools.lock.json"], "reason": "Acquisition provenance, copied notices and pinned tool input data", "source": "Source/tool acquisition inventory"},
-        {"patterns": ["tests/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*", "**/test_*.py", "**/*_test.py"], "reason": "Test sources and fixtures are outside production size caps", "source": "pytest and Playwright suites"},
-        {"patterns": ["**/uv.lock", "**/pnpm-lock.yaml", "**/package-lock.json", "**/bun.lock", "**/bun.lockb"], "reason": "Deterministic dependency lockfiles", "source": "uv, pnpm, npm and Bun lock resolution"}
+        {
+          "patterns": ["contracts/gallery/data.json", "contracts/gallery/catalog.json"],
+          "reason": "Deterministic historical gallery outputs; generator logic remains capped",
+          "source": "pipeline/qopenbb_ci/gallery_cli.py with retained FMP captures and chart-state.json"
+        },
+        {
+          "patterns": ["contracts/gallery/chart-state.json"],
+          "reason": "Native saved-state and dataset schema fixture exercised by the QOpenBB integration gate",
+          "source": "vendor/workspace/terminalpro/tests/unit/chart-compatibility/galleryTemplate.test.ts"
+        },
+        {
+          "patterns": ["contracts/routes.json", "contracts/openapi.json", "contracts/widgets.json", "contracts/apps.json", "contracts/catalog-report.json", "contracts/compatibility.json", "contracts/provenance.json", "contracts/hashes.json"],
+          "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+          "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+        },
+        {
+          "patterns": ["schemas/*.schema.json"],
+          "reason": "Deterministic public schemas generated from capped maintained Python boundary models",
+          "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"
+        },
+        {
+          "patterns": [".git/**", "**/__pycache__/**", "**/.pytest_cache/**", "**/.ruff_cache/**", "**/.venv/**", "**/node_modules/**"],
+          "reason": "Repository metadata and installed or cached dependencies",
+          "source": "Git, CPython, pytest, Ruff, uv and pnpm"
+        },
+        {
+          "patterns": ["vendor/**", ".upstream/**"],
+          "reason": "Acquisition roots are inventoried separately as owned forks; this exclusion does not apply inside fork scope",
+          "source": "sources.lock.json"
+        },
+        {
+          "patterns": ["run_this.sh", "artifacts/**", "data/**", "backups/**", "test-results/**", "playwright-report/**", "dist/**", "htmlcov/**", ".coverage*", "coverage.xml"],
+          "reason": "Disposable evidence, private runtime state, build output and temporary owner command handoff",
+          "source": "Verification/build tools, operator runtime and .kiro/steering/testing.md"
+        },
+        {
+          "patterns": [".env", ".env.*", "secrets/**", "*.pem", "*.key"],
+          "reason": "Private operator configuration and empty public configuration samples",
+          "source": "Operator configuration; never read for size inventory"
+        },
+        {
+          "patterns": ["docs/**", "*.md", ".agents/**", ".codex/**", ".kiro/settings/**", ".kiro/specs/**", ".kiro/steering/**", ".kiro/breadth.toml"],
+          "reason": "Documentation, agent instructions and acceptance metadata",
+          "source": "Project memory and specification workflow"
+        },
+        {
+          "patterns": ["sources/**", "sources.lock.json", "pipeline/tools.lock.json"],
+          "reason": "Acquisition provenance, copied notices and pinned tool input data",
+          "source": "Source/tool acquisition inventory"
+        },
+        {
+          "patterns": ["tests/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*", "**/test_*.py", "**/*_test.py"],
+          "reason": "Test sources and fixtures are outside production size caps",
+          "source": "pytest and Playwright suites"
+        },
+        {
+          "patterns": ["**/uv.lock", "**/pnpm-lock.yaml", "**/package-lock.json", "**/bun.lock", "**/bun.lockb"],
+          "reason": "Deterministic dependency lockfiles",
+          "source": "uv, pnpm, npm and Bun lock resolution"
+        },
+        {
+          "patterns": [".git"],
+          "reason": "Git worktree metadata pointer; not maintained production code",
+          "source": "git worktree add --detach"
+        }
       ]
     },
-    {"include": ".kiro/complexity/workspace.json"},
+    {
+      "include": ".kiro/complexity/workspace.json"
+    },
     {
       "id": "data_api",
       "repository": "https://github.com/norandom/openbb-data-api.git",
@@ -108,24 +326,39 @@
       "source_lock_key": "data_api",
       "root": "vendor/data-api",
       "mode": "changed",
-      "owners": [{"spec": "openbb-self-service", "include": ["**/*"], "files": [
-        "openbb_platform/providers/fmp/pyproject.toml",".github/workflows/qopenbb-codeql.yml",
-        "openbb_platform/providers/fmp/openbb_fmp/__init__.py",
-        "openbb_platform/providers/fmp/openbb_fmp/provider.py",
-        "openbb_platform/providers/fmp/openbb_fmp/models/equity_profile.py",
-        "openbb_platform/providers/fmp/openbb_fmp/models/income_statement.py",
-        "openbb_platform/providers/fmp/openbb_fmp/utils/definitions.py",
-        "openbb_platform/providers/fmp/openbb_fmp/utils/helpers.py",
-        "openbb_platform/providers/fmp/openbb_fmp/utils/errors.py",
-        "openbb_platform/providers/fred/openbb_fred/models/series.py",
-        "openbb_platform/providers/fred/openbb_fred/utils/rate_limiter.py",
-        "openbb_platform/providers/fred/openbb_fred/utils/response.py"
-      ]}, {"spec":"market-data-integrations","include":["openbb_platform/core/openbb_core/provider/**","openbb_platform/providers/fred/openbb_fred/utils/*","openbb_platform/providers/fmp/openbb_fmp/models/*","openbb_platform/providers/fmp/openbb_fmp/utils/statement_provenance.py","openbb_platform/extensions/equity/openbb_equity/fundamental/enterprise_router.py","openbb_platform/extensions/equity/openbb_equity/equity_router.py"],"files":["openbb_platform/providers/fmp/openbb_fmp/utils/statement_provenance.py","openbb_platform/providers/fmp/openbb_fmp/models/income_statement_data.py","openbb_platform/core/openbb_core/provider/standard_models/financial_annotations.py","openbb_platform/core/openbb_core/provider/standard_models/enterprise_values.py","openbb_platform/providers/fmp/openbb_fmp/models/enterprise_values.py","openbb_platform/extensions/equity/openbb_equity/fundamental/enterprise_router.py","openbb_platform/extensions/equity/openbb_equity/equity_router.py","openbb_platform/providers/fmp/openbb_fmp/models/financial_ratios.py","openbb_platform/providers/fmp/openbb_fmp/models/financial_ratios_data.py","openbb_platform/providers/fmp/openbb_fmp/models/key_metrics.py","openbb_platform/providers/fmp/openbb_fmp/models/key_metrics_data.py","openbb_platform/providers/fmp/openbb_fmp/models/equity_historical.py","openbb_platform/providers/fmp/openbb_fmp/models/equity_search.py","openbb_platform/providers/fmp/openbb_fmp/models/equity_peers.py","openbb_platform/providers/fmp/openbb_fmp/models/discovery_data.py","openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet.py","openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_data.py","openbb_platform/providers/fmp/openbb_fmp/models/cash_flow.py","openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_data.py","openbb_platform/core/openbb_core/provider/standard_models/statement_provenance.py","openbb_platform/core/openbb_core/provider/standard_models/financial_metadata.py","openbb_platform/core/openbb_core/provider/utils/financial_errors.py","openbb_platform/core/openbb_core/provider/utils/financial_validation.py","openbb_platform/providers/fred/openbb_fred/utils/acquisition.py","openbb_platform/providers/fred/openbb_fred/utils/cache.py"]}],
+      "owners": [
+        {
+          "spec": "openbb-self-service",
+          "include": ["**/*"],
+          "files": ["openbb_platform/providers/fmp/pyproject.toml", ".github/workflows/qopenbb-codeql.yml", "openbb_platform/providers/fmp/openbb_fmp/__init__.py", "openbb_platform/providers/fmp/openbb_fmp/provider.py", "openbb_platform/providers/fmp/openbb_fmp/models/equity_profile.py", "openbb_platform/providers/fmp/openbb_fmp/models/income_statement.py", "openbb_platform/providers/fmp/openbb_fmp/utils/definitions.py", "openbb_platform/providers/fmp/openbb_fmp/utils/helpers.py", "openbb_platform/providers/fmp/openbb_fmp/utils/errors.py", "openbb_platform/providers/fred/openbb_fred/models/series.py", "openbb_platform/providers/fred/openbb_fred/utils/rate_limiter.py", "openbb_platform/providers/fred/openbb_fred/utils/response.py"]
+        },
+        {
+          "spec": "market-data-integrations",
+          "include": ["openbb_platform/core/openbb_core/provider/**", "openbb_platform/providers/fred/openbb_fred/utils/*", "openbb_platform/providers/fmp/openbb_fmp/models/*", "openbb_platform/providers/fmp/openbb_fmp/utils/statement_provenance.py", "openbb_platform/extensions/equity/openbb_equity/fundamental/enterprise_router.py", "openbb_platform/extensions/equity/openbb_equity/equity_router.py"],
+          "files": ["openbb_platform/providers/fmp/openbb_fmp/utils/statement_provenance.py", "openbb_platform/providers/fmp/openbb_fmp/models/income_statement_data.py", "openbb_platform/core/openbb_core/provider/standard_models/financial_annotations.py", "openbb_platform/core/openbb_core/provider/standard_models/enterprise_values.py", "openbb_platform/providers/fmp/openbb_fmp/models/enterprise_values.py", "openbb_platform/extensions/equity/openbb_equity/fundamental/enterprise_router.py", "openbb_platform/extensions/equity/openbb_equity/equity_router.py", "openbb_platform/providers/fmp/openbb_fmp/models/financial_ratios.py", "openbb_platform/providers/fmp/openbb_fmp/models/financial_ratios_data.py", "openbb_platform/providers/fmp/openbb_fmp/models/key_metrics.py", "openbb_platform/providers/fmp/openbb_fmp/models/key_metrics_data.py", "openbb_platform/providers/fmp/openbb_fmp/models/equity_historical.py", "openbb_platform/providers/fmp/openbb_fmp/models/equity_search.py", "openbb_platform/providers/fmp/openbb_fmp/models/equity_peers.py", "openbb_platform/providers/fmp/openbb_fmp/models/discovery_data.py", "openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet.py", "openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_data.py", "openbb_platform/providers/fmp/openbb_fmp/models/cash_flow.py", "openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_data.py", "openbb_platform/core/openbb_core/provider/standard_models/statement_provenance.py", "openbb_platform/core/openbb_core/provider/standard_models/financial_metadata.py", "openbb_platform/core/openbb_core/provider/utils/financial_errors.py", "openbb_platform/core/openbb_core/provider/utils/financial_validation.py", "openbb_platform/providers/fred/openbb_fred/utils/acquisition.py", "openbb_platform/providers/fred/openbb_fred/utils/cache.py"]
+        }
+      ],
       "exclusions": [
-        {"patterns": ["openbb_platform/providers/fmp/LICENSE", "openbb_platform/providers/fmp/provenance.json"], "reason": "Retained upstream notice and imported-artifact provenance data", "source": "openbb_platform/providers/fmp/provenance.json"},
-        {"patterns": ["openbb_platform/providers/fmp/openbb_fmp/models/__init__.py", "openbb_platform/providers/fmp/openbb_fmp/utils/__init__.py"], "reason": "Unchanged FMP 1.6.1 archive imports; hash-checked discovery fixture. Remove each exclusion before maintaining that file", "source": "openbb_platform/providers/fmp/provenance.json unchanged_files; tests/providers/test_discovery.py"},
-        {"patterns": ["tests/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*", "**/test_*.py", "**/*_test.py"], "reason": "Upstream and maintained test sources/fixtures", "source": "OpenBB provider/core test suites"},
-        {"patterns": ["*.md", "**/uv.lock", "**/pnpm-lock.yaml", "**/package-lock.json"], "reason": "Documentation and deterministic dependency locks", "source": "OpenBB documentation and package managers"}
+        {
+          "patterns": ["openbb_platform/providers/fmp/LICENSE", "openbb_platform/providers/fmp/provenance.json"],
+          "reason": "Retained upstream notice and imported-artifact provenance data",
+          "source": "openbb_platform/providers/fmp/provenance.json"
+        },
+        {
+          "patterns": ["openbb_platform/providers/fmp/openbb_fmp/models/__init__.py", "openbb_platform/providers/fmp/openbb_fmp/utils/__init__.py"],
+          "reason": "Unchanged FMP 1.6.1 archive imports; hash-checked discovery fixture. Remove each exclusion before maintaining that file",
+          "source": "openbb_platform/providers/fmp/provenance.json unchanged_files; tests/providers/test_discovery.py"
+        },
+        {
+          "patterns": ["tests/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*", "**/test_*.py", "**/*_test.py"],
+          "reason": "Upstream and maintained test sources/fixtures",
+          "source": "OpenBB provider/core test suites"
+        },
+        {
+          "patterns": ["*.md", "**/uv.lock", "**/pnpm-lock.yaml", "**/package-lock.json"],
+          "reason": "Documentation and deterministic dependency locks",
+          "source": "OpenBB documentation and package managers"
+        }
       ]
     }
   ]
