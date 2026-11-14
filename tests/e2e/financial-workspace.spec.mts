@@ -989,6 +989,16 @@ test("Company Research real FMP analyst choices template portability and retaine
   }
   const widget = (target: Page, id: string) => target.locator(`#workarea .widget-${id}`).first();
   const saved = async (target: Page) => (await saveDashboard(target)).items[new URL(target.url()).pathname.split("/").at(-1)!];
+  async function revealResearch(target: Page) {
+    await expect(target.locator("#workarea [data-widget-id]")).toHaveCount(primaryIds.length + 1);
+    const state = await saved(target);
+    for (const id of [...primaryIds, "company_research"]) {
+      const matches = state.data.widgets.filter((item: any) => item.widgetId === id);
+      expect(matches).toHaveLength(1);
+      await target.locator(`#workarea [data-widget-id="${matches[0].id}"]`).scrollIntoViewIfNeeded();
+      await expect(widget(target, id)).toBeVisible();
+    }
+  }
   function assertIntended(state: any) {
     const byId = (id: string) => state.widgets.find((item: any) => item.widgetId === id);
     for (const id of primaryIds) {
@@ -1021,6 +1031,7 @@ test("Company Research real FMP analyst choices template portability and retaine
     };
   }
   async function settleDashboard(target: Page, after: number) {
+    await revealResearch(target);
     for (const dataset of ["income", "balance", "cash"])
       await captured(`/data/api/v1/equity/fundamental/${dataset}`, "AAPL", "quarter", after);
     await captured("/data/api/v1/equity/price/historical", "AAPL", undefined, after);
@@ -1043,6 +1054,7 @@ test("Company Research real FMP analyst choices template portability and retaine
     const app = target.getByRole("button").filter({ has: target.getByText(name, { exact: true }) });
     await expect(app).toHaveCount(1);
     await app.click();
+    await revealResearch(target);
     await expect(widget(target, "company_research").getByLabel("Peer period", { exact: true })).toBeVisible();
   }
   async function inspector(panel: Locator, payload: any, fields = ["stock_based_compensation", "ebitda", "operating_cash_flow", "free_cash_flow"]) {
@@ -1106,6 +1118,7 @@ test("Company Research real FMP analyst choices template portability and retaine
       const generated = (await apps.json()).find((item: any) => item.name === "Company Research");
       expect(generated.tabs.Research.layout.map((item: any) => item.i)).toEqual([...primaryIds, "company_research"]);
       await app.click();
+      await revealResearch(page);
       await expect(widget(page, "company_research").getByLabel("Peer period", { exact: true })).toBeVisible();
       url = page.url();
       const profile = widget(page, profileId);
@@ -1354,6 +1367,7 @@ test("Company Research real FMP analyst choices template portability and retaine
       for (const item of unresolved) expect(item.storage.companySelection.sourceKey).toBe(foreignKey);
       expect(unresolved.find((item: any) => item.widgetId === profileId).storage.companySelection.version).toBe(99);
       await readFinancialDashboard(page, foreignUrl);
+      await revealResearch(page);
       await expect(widget(page, profileId).getByRole("status")).toContainText("Select from the current source");
       const reopenedForeign = await saved(page);
       for (const item of reopenedForeign.data.widgets.filter((item: any) => item.storage?.companySelection))
@@ -1409,8 +1423,8 @@ test("Company Research real FMP analyst choices template portability and retaine
       expect(reopenedState).toEqual(expected);
       await expectSelectedCompany(widget(reopened, profileId), selected.listing);
       await verifyNativeProfile(widget(reopened, profileId), await captured(profilePath, "AAPL", undefined, reopenedAt), "AAPL");
-      await expect(widget(reopened, "company_research").getByLabel("Rationale for ORCL", { exact: true })).toHaveValue("ORCL explicit candidate; comparability unverified.");
       await settleDashboard(reopened, reopenedAt);
+      await expect(widget(reopened, "company_research").getByLabel("Rationale for ORCL", { exact: true })).toHaveValue("ORCL explicit candidate; comparability unverified.");
     } finally { await context.close(); }
     } else {
       // This phase already starts in a fresh authenticated browser context after recreation.
