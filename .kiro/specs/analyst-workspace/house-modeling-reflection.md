@@ -72,8 +72,9 @@ Existing references: [IA1-IA10](investment-analysis-contract.md) and [market-dat
 | Source-to-result audit trail | IA2 and MD4 cover definitions, source and basis | Modeling: formula identity/version, input IDs and values, substitutions, intermediate results, units, checks, independent verification and mismatch status |
 | Named assumptions separate from facts | IA2, IA6, IA10 partially cover overrides | Modeling: immutable run input snapshot, named scenario, explicit override origin and rationale; Workspace displays/edit controls |
 | Comparable financial periods | IA3 and MD4.3 cover annual/quarter/YTD/trailing distinctions | Modeling: validate period completeness before aggregation, define averaging and day counts; data retains supplied periods and unknowns |
-| EBITDA and earnings quality | IA4 covers adjustment rationale | Modeling: reconcile chosen earnings basis, D&A and every adjustment; distinguish reported, provider and house EBITDA; reconcile to cash separately |
+| EBITDA and earnings quality | IA4 covers adjustment rationale | Modeling: reconcile chosen earnings basis, D&A and every adjustment; distinguish reported, provider and house EBITDA (including EBITDA ex-SBC); reconcile to cash (OCF/FCF ex-SBC) and dilution/buybacks separately |
 | Ratio interpretation | IA4/IA5 cover cash conversion and multiples | Modeling: versioned definitions, denominator and proxy rules; Workspace adds common-size, trend and comparison context, without inventing missing budget/peer data |
+| Accounting optimizations and trend lenses | IA4/IA5 mention adjustments and leases | Modeling: extensible lens architecture for accounting optimizations versus economic state (SBC wage-to-dilution shift, R&D/software capitalization, lease capitalization, working-capital/deferred-revenue timing, recurring restructuring, LTM/calendarization) |
 | WACC and macro | IA7 is directionally strong | Modeling: explicit beta/relevering method, debt definition, tax-shield treatment, risk-premium decisions and dated benchmark selection |
 | DCF | IA6/IA8 cover consistency and real sensitivities | Modeling: FCFF schedule, discount timing, terminal reinvestment, EV/equity bridge, share basis and independently checked scenario surface |
 | Provider DCF | MD2.2 and IA6 | Data preserves FMP output and available assumptions; modeling/Workspace label comparator and non-comparability; absence must not block house DCF |
@@ -93,6 +94,7 @@ Existing references: [IA1-IA10](investment-analysis-contract.md) and [market-dat
 - FM8: The model shall distinguish mathematical invalidity, missing evidence and house-policy exceptions. Hard constraints, warning thresholds and permitted overrides shall be explicit, versioned and visible.
 - FM9: Provider DCF shall be an optional comparison result. House DCF, its assumptions and its sensitivities shall be calculated independently; a provider valuation alone shall not satisfy model acceptance.
 - FM10: Ordinary provider widgets shall remain usable when the modeling service is unavailable. Data API and modeling errors shall retain distinct, actionable meanings.
+- FM11: The modeling system shall support composable, versioned adjustment and trend lenses that evaluate accounting or reporting optimizations against the economic state of the business (starting with stock-based compensation treated as an economic operating cost alongside dilution and buyback-sterilization diagnostics) while keeping unadjusted reported and provider figures inspectable side by side.
 
 These clauses are a proposed requirements amendment. Formal design, task decomposition and implementation approval remain separate Kiro steps.
 
@@ -105,6 +107,36 @@ Historical observations establish the baseline. Named drivers produce revenue, c
 Require cash-to-balance-sheet reconciliation, assets versus liabilities/equity, relevant debt/asset/equity roll-forwards and sign/period checks. Validate whether the explicit horizon reaches a defensible terminal state; five forecast years is a workflow target, not proof of steady state. Exact annual/quarterly forecast granularity, permitted alternative horizons and sector coverage need the modeling requirements decision.
 
 Do not block the first historical-analysis slice on completion of the full forecast engine. First ship verified historical diagnostics and bridges; then driver schedules and the three-statement forecast; then house DCF/WACC/scenarios. Price comparison and provider DCF can be displayed earlier with their provenance.
+
+## Accounting optimizations versus economic state: SBC and extensible trend lenses
+
+Reported GAAP/IFRS statements and management or provider Non-GAAP outputs frequently represent accounting or reporting optimizations relative to the actual economic state of the firm. The Workspace layer exposes raw observations, provenance and limitation notices without silent reinterpretation, while the downstream house modeling layer (`qfm`) evaluates economic-state adjustments separately so both views remain inspectable and auditable side by side.
+
+### Flagship Stock-Based Compensation (SBC) lens
+
+Indirect cash-flow reconciliations may add back non-cash SBC, and some management/provider adjusted EBITDA measures exclude it. Establish treatment from the supplied definition and reconciliation for each measure; ordinary EBITDA does not necessarily exclude SBC, and a field name alone does not establish treatment. The proposed house lens treats recurring equity-settled compensation as an economic operating cost and examines dilution and repurchases separately. Unknown source treatment stays unknown.
+
+The modeling layer must expose three side-by-side views with full `TraceEntry` auditability:
+
+1. **Reported / Provider Basis**: Preserve the supplied figure and disclose whether SBC is included, excluded or unknown using its definition/reconciliation. Do not presume an add-back.
+2. **Economic-State Basis**: Proposed `EBITDA ex-SBC` and `FCF ex-SBC` lenses treat SBC as an economic operating cost. Reconcile the starting measure before adjusting it to avoid subtracting SBC twice; unavailable treatment prevents an evidenced adjustment. Exact bridges and method names remain modeling-spec decisions.
+3. **Dilution & Sterilization Bridge**: SBC as a share of revenue and of OCF/FCF, basic and diluted share-count creep, and `common_stock_repurchased` with a proposed partition between dilution sterilization and net capital return only when issuance, repurchase timing/prices and share-basis evidence support it; aggregate expense and buybacks alone do not establish that split.
+
+### Extensible trend-lens catalog
+
+Encode lenses as Strategy components over composable Polars transformations keyed by versioned lens IDs, declared raw statement/metric inputs, named assumption overrides and deterministic `TraceEntry` outputs. Financial engineers can add or extend lenses as reporting practices evolve without changing Data API acquisition pipelines or Workspace widget contracts:
+
+1. *LTM & Fiscal Calendarization*: aligns non-calendar fiscal year-ends (June, May, November) into comparable trailing and calendar windows, closing the primary IA-B peer-comparison delta.
+2. *Enterprise-to-Equity & Diluted-Share Bridge*: reconciles dated market capitalization, debt, lease liabilities, preferred stock, minority interest, unrestricted cash and option/RSU dilution.
+3. *SBC & Dilution Optimization*: derives `EBITDA ex-SBC`, `FCF ex-SBC` and buyback-sterilization splits against reported figures.
+4. *R&D and Software Capitalization vs. Expensing*: normalizes capitalized development outflows that shift operating expense into CapEx and D&A to flatter EBITDA and OCF.
+5. *Lease Accounting Normalization*: harmonizes ASC 842 and IFRS 16 operating versus finance lease treatment across Enterprise Value, debt and EBITDA/EBIT.
+6. *Working-Capital & Revenue-Timing Quality*: isolates receivables factoring, payables stretching and deferred-revenue divergence from billings and cash conversion.
+7. *Quality-of-Earnings (QoE) Persistence*: flags recurring "one-off" restructuring, acquisition and impairment add-backs across multi-year windows.
+
+### Recommended library reuse for qfm bootstrap
+
+In Company Research (`analyst-workspace`), reuse already-installed UI and validation packages (`zod`, `dayjs`, `react-hook-form`, `@hookform/resolvers`, `use-debounce`, `@radix-ui`, `fuse.js`) rather than adding dependencies. When bootstrapping `qfm` modeling, adopt `patito` or `pandera[polars]` over Polars + Pydantic v2 for table-grain schema contracts, restrict `numpy-financial`/`scipy`/`pyirr` to `src/qfm/verification/` for independent reference recalculation, use `hypothesis`/`fast-check` for accounting-identity and bridge invariant property tests, and use `schemathesis` for OpenAPI contract checks.
 
 ## Method ambiguities to resolve before encoding the standard
 
@@ -132,7 +164,7 @@ This demonstrates why house methodology and worked-example correctness need sepa
 ## Bounded delivery and specification ownership
 
 1. Continue approved market-data tasks for balance sheets, cash flow and subsequent datasets. Preserve source semantics; do not add house valuation logic.
-2. Create a separate `financial-modeling` specification from FM1-FM10. Freeze the input/result and method-version boundaries before assigning parallel implementers. Keep financial methods independent of deployment packaging.
+2. Create a separate `financial-modeling` specification from FM1-FM11. Freeze the input/result and method-version boundaries before assigning parallel implementers. Keep financial methods independent of deployment packaging.
 3. Amend analyst-workspace to own the user journey and presentation of model outputs. Transfer formula/scenario execution ownership into the modeling specification, preserving existing IA acceptance obligations rather than deleting them.
 4. Start modeling with historical normalization, EBITDA/cash bridges, ratios and peer inputs. Then add the historical/forecast model and DCF/WACC. Keep FMP comparator work optional to house valuation acceptance.
 5. If the proposed container boundary is approved, deliver the modeling image and Compose service with the first accepted model capability. Use the existing Dagger publication and bounded browser/numerical verification workflow; no additional orchestration platform.

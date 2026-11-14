@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "date": "2026-10-17",
+  "date": "2026-11-14",
   "scope": [
     "task-4.6",
     "task-4.7",
@@ -35619,6 +35619,54 @@
       "publishedSHA256": "f21f38f64b8368b37c6b3399423f10b71d80da332674a44795ff5f79d2ca86b9",
       "bytes": 5519,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/publication-prep/verification.md",
+      "sourceSHA256": "d6876e3e304a348d5cccae00a44f7aa827423f2635d6fba25c63b975e8756ffd",
+      "publishedpath": "artifacts/reviewed/company-research/verification.md",
+      "publishedSHA256": "d6876e3e304a348d5cccae00a44f7aa827423f2635d6fba25c63b975e8756ffd",
+      "bytes": 4097,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/task1-report.md",
+      "sourceSHA256": "6693fc6fb80b16ff831f41357e25f096a07980ba7785cf052b0b6da2eaf52738",
+      "publishedpath": "artifacts/reviewed/company-research/task1-report.md",
+      "publishedSHA256": "6693fc6fb80b16ff831f41357e25f096a07980ba7785cf052b0b6da2eaf52738",
+      "bytes": 9158,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/task1-review.md",
+      "sourceSHA256": "95503f592db6174c17d194b89d12b99bd0f4688cb2da874b1e4a8d79cf99b5f4",
+      "publishedpath": "artifacts/reviewed/company-research/task1-review.md",
+      "publishedSHA256": "95503f592db6174c17d194b89d12b99bd0f4688cb2da874b1e4a8d79cf99b5f4",
+      "bytes": 2844,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/task2-final-review.md",
+      "sourceSHA256": "aa1701de9d4d9153dc2d6d843b484334d59b68212a2e45db95e2a101e9af2c7d",
+      "publishedpath": "artifacts/reviewed/company-research/task2-final-review.md",
+      "publishedSHA256": "aa1701de9d4d9153dc2d6d843b484334d59b68212a2e45db95e2a101e9af2c7d",
+      "bytes": 4739,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/dependency-setup.md",
+      "sourceSHA256": "7cf5ad5fe0575b9f2c7fcbbaf3fcc28dea4d71a4e83958b20958f64cda6a2e5a",
+      "publishedpath": "artifacts/reviewed/company-research/dependency-setup.md",
+      "publishedSHA256": "7cf5ad5fe0575b9f2c7fcbbaf3fcc28dea4d71a4e83958b20958f64cda6a2e5a",
+      "bytes": 3952,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/dependency-install.json",
+      "sourceSHA256": "dd918b849b62cd029f48d6fb36a6a9c90e37f39f50f4a847345e6b995e00a7a0",
+      "publishedpath": "artifacts/reviewed/company-research/dependency-install.json",
+      "publishedSHA256": "dd918b849b62cd029f48d6fb36a6a9c90e37f39f50f4a847345e6b995e00a7a0",
+      "bytes": 800,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36344,7 +36392,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171223247,
+  "total_payload_bytes": 171248837,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

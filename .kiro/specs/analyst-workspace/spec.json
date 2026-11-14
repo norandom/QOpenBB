@@ -10,7 +10,7 @@
     "direction_approved": true,
     "implementation_approved": false,
     "prerequisite": "Initial provider batch26/26 and company selector10/10 accepted/published; owner confirmed Linux update, dashboard retention and autocomplete2026-11-06.",
-    "first_slice": "IA-A assessment complete; Company Research requirements/design approved and 13-task plan independently reviewed. Task approval is next; full IA-B remains open.",
+    "first_slice": "IA-A assessment complete; Company Research requirements/design approved and amended 13-task plan independently re-reviewed after one repair pass. Task/implementation approved; isolated baseline execution started. Full IA-B remains open.",
     "input_readiness": {
       "name": "research-input-readiness",
       "phase": "assessment-complete",
@@ -76,13 +76,16 @@
       }
     },
     "company_research": {
-      "phase": "tasks-generated",
+      "phase": "implementation-in-progress",
+      "approved_tasks_sha256": "a6b64a0ed4c4a5b27e8f83b2623b0ac423dbe6ca0be6ec3c07c50893e9b62f30",
+      "approval_only_edit": "Task status and execution authorization updated after owner approval; reviewed executable task text unchanged.",
+      "implementation_approval": "Owner approved the repaired task plan and implementation on 2026-11-14 and explicitly requested the project subagent model.",
       "requirements_document": "company-research-requirements.md",
       "requirements_generated": true,
       "requirements_approved": true,
       "design_approved": true,
-      "tasks_approved": false,
-      "implementation_approved": false,
+      "tasks_approved": true,
+      "implementation_approved": true,
       "reconciliation_document": "research-readiness-reconciliation.md",
       "requirements_review": {
         "status": "passed",
@@ -93,7 +96,7 @@
         "sha256": "71c0d50c5fdec2247d35543694f478dc531893e88e0357e2db5fde6410ed7df4"
       },
       "scope": "Bounded provider-observation research App; house calculations and full IA-B acceptance remain separate.",
-      "next_step": "Owner task-plan approval, then bounded implementation with role-based parallel lanes and per-task review/commits.",
+      "next_step": "Tasks 1 and 2 independently accepted; execute disjoint catalog and table-query lanes 3.1 and 3.2.",
       "requirements_approval": "Owner approved the independently reviewed requirements in conversation on 2026-11-13; bounded design generation authorized.",
       "design_generated": true,
       "design_document": "company-research-design.md",
@@ -110,7 +113,7 @@
       "tasks_generated": true,
       "tasks_document": "company-research-tasks.md",
       "executable_tasks": 13,
-      "completed_tasks": 0,
+      "completed_tasks": 2,
       "tasks_review": {
         "status": "passed",
         "mode": "independent",
@@ -118,6 +121,31 @@
         "repair_passes": 0,
         "document": "company-research-tasks-review.md",
         "sha256": "b532b90321cdf83c0b426d58fe31980c0d0620d38ed37c5f90eb753b3ba3a67a"
+      },
+      "identity_clarification": {
+        "document": "company-research-design.md",
+        "sha256": "5c95f9830ba8158e43c21726a0d035470666323c098e7eb16f9afdfb46db340d",
+        "reason": "Clarifies existing nullable ListingChoice identity consistently for primary and peers; source/provider/exact-symbol request duplicates rejected. No new financial or identity capability.",
+        "review": "company-research-identity-decision.md",
+        "model": "gpt-6-astra",
+        "date": "2026-11-14"
+      },
+      "tasks_amendment_review": {
+        "status": "passed",
+        "mode": "independent",
+        "model": "gpt-6-astra",
+        "repair_passes": 1,
+        "document": "company-research-tasks-amendment-rereview.md",
+        "initial_review_document": "company-research-tasks-amendment-review.md",
+        "tasks_sha256": "a84c159061154cc6e2a92f7b45227473a1fdb0ce65b261d17c6385b0821893b3",
+        "reflection_sha256": "83ce37214cd0a23a5fb16b524524ef9090e200d0ff82c4da686798cbb2ec3c12",
+        "scope": "Owner amendment and evidence/ownership clarifications; original tasks_review remains historical. No requirements/design contract change or runtime acceptance."
+      },
+      "owner_amendment": {
+        "date": "2026-11-14",
+        "summary": "Incorporated task review refinements (worktree resolution, financial denominator/currency/date-basis validation rules, selector/table/export/queue spec-trap guards, complexity-cap headroom, installed-library reuse) plus SBC accounting-optimization provenance seam and extensible trend-lens vision in house-modeling-reflection.md.",
+        "tasks_document_sha256": "f1667f689f5deb4bf52b7888daa75203d12333ff6abd43d14a10ac3199b749de",
+        "reflection_document": "house-modeling-reflection.md"
       }
     }
   },

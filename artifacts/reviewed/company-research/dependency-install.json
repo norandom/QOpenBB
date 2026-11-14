@@ -1,0 +1,25 @@
+{
+  "command": [
+    "D:/BuildArtifacts/QOpenBB/native-foundation/protection/bin/safe-chain.exe",
+    "bun",
+    "install",
+    "--frozen-lockfile"
+  ],
+  "cwd": "D:\\BuildArtifacts\\QOpenBB\\company-research\\workspace\\terminalpro",
+  "exit_code": 0,
+  "before": {
+    "package.json": "ffa573fad8456552d4caa372715e1c8e615314669a048c8d718fa6610b3b576a",
+    "bun.lock": "4b2754f9f91b9fe22a501f44b496e8339e1a46a977e08a3bfd6ff555ae8892e7"
+  },
+  "after": {
+    "package.json": "ffa573fad8456552d4caa372715e1c8e615314669a048c8d718fa6610b3b576a",
+    "bun.lock": "4b2754f9f91b9fe22a501f44b496e8339e1a46a977e08a3bfd6ff555ae8892e7"
+  },
+  "unchanged": true,
+  "versions": {
+    "zod": "4.4.3",
+    "dayjs": "1.11.13",
+    "react-hook-form": "7.75.0",
+    "vitest": "4.1.11"
+  }
+}
