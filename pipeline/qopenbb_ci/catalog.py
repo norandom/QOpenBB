@@ -3,6 +3,8 @@ import hashlib
 import json
 from copy import deepcopy
 
+from qopenbb_ci.catalog_research import research_app
+
 from qopenbb_ci.catalog_financial import (
     EXTENSION,
     frozen_extension,
@@ -225,10 +227,12 @@ def generate(schema: dict, inventory: dict, raw: dict, bundled: list, prefix: st
     installed = {**deepcopy(inventory), "status": "installed"}
     widgets, mapping = supported_widgets(raw, inventory, prefix)
     apps, omitted = adapt_apps(bundled, widgets)
+    curated, research_status = research_app(inventory, mapping, widgets)
     return {"openapi.json": deepcopy(schema), "routes.json": routes, "widgets.json": widgets,
             "datasets.json": installed,
-            "apps.json": [starter(inventory, mapping), *apps],
+            "apps.json": [starter(inventory, mapping), *apps, *curated],
             "catalog-report.json": {"schema_version": 1, "mapping": mapping, "omitted": omitted,
+                                    "company_research": research_status,
                                     "renderer_status": "pending-task-2.9",
                                     "served_schema_hash": digest(schema), "public_prefix": prefix,
                                     "endpoint_base": "registered-connector-base"}}
