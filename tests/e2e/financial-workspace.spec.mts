@@ -944,8 +944,8 @@ test("Company Research real FMP analyst choices template portability and retaine
     status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 160, fred: 0 },
     initial: { measuredPriorPrefixPlanningAllowance: 20, peerSearchAndInitial: 6, priceEdits: 2, statementQuarter: 3, peerQuarter: 4,
       deterministicRawRefreshes: 0, syntheticFailureUnaffectedLive: 3, recoveryRefresh: 4, exportedImport: 9,
-      foreignImportAndReopenPeers: 8, explicitRecovery: 6, freshLoginSingleHydration: 9 },
-    retainedReopen: { singleHydration: 9 }, plannedContinuation: 83, priorCumulative: 52, remaining: 108, headroom: 25,
+      foreignImportAndReopenPeers: 8, explicitRecovery: 10, freshLoginSingleHydration: 9 },
+    retainedReopen: { singleHydration: 9 }, plannedContinuation: 87, priorCumulative: 52, remaining: 108, headroom: 21,
     conditions: "Exact intended-dashboard login landing reuses successful sync; other landing navigates once. Search expiry and legitimate retries consume headroom.",
     loginCounts: { initialTest: 2, retainedReopenTest: 1, excludesControllerReadiness: true },
     accounting: "External cumulative ledger counts actual send reservations including retry=1; exhaustion fails/incompletes acceptance without raising the ceiling.",
@@ -1433,19 +1433,28 @@ test("Company Research real FMP analyst choices template portability and retaine
         expect(["MSFT", "ORCL"]).toContain(request.query.symbol);
       }
       const recoveryAt = requests.length;
-      selected = await chooseCompany(widget(page, profileId), "name", "Apple", "AAPL");
-      for (const id of primaryIds.filter(id => !id.includes("price"))) await expectSelectedCompany(widget(page, id), selected.listing);
+      for (const id of primaryIds) {
+        const panel = widget(page, id);
+        await panel.scrollIntoViewIfNeeded();
+        const recovered = await chooseCompany(panel, "name", "Apple", "AAPL");
+        if (id === profileId) selected = recovered;
+        else expect(recovered.listing).toEqual(selected.listing);
+        await expectSelectedCompany(panel, selected.listing);
+      }
       await verifyNativeProfile(widget(page, profileId), await captured(profilePath, "AAPL", undefined, recoveryAt), "AAPL");
       for (const dataset of ["income", "balance", "cash"])
         await captured(`/data/api/v1/equity/fundamental/${dataset}`, "AAPL", "quarter", recoveryAt);
-      await captured("/data/api/v1/equity/price/historical", "AAPL", undefined, recoveryAt);
+      const recoveredPrice = await captured("/data/api/v1/equity/price/historical", "AAPL", undefined, recoveryAt);
+      expect(recoveredPrice.extra.results_metadata.__qopenbb_financial__.effective_query).toMatchObject({
+        symbol: "AAPL", start_date: "2025-01-03", end_date: "2025-01-30" });
       url = page.url();
       const recoveredState = selectionState(await saved(page));
       assertIntended(recoveredState);
       expect(semanticChoices(recoveredState)).toEqual(intendedBeforeExport);
       expected = recoveredState;
       for (const item of expected.widgets.filter((item: any) => item.selection)) expect(item.selection.sourceKey).not.toBe(foreignKey);
-      facts.push({ kind: "deterministic foreign-source catalog configuration", retainedOnReopen: true, recovery: "explicit current-source Apple selection" });
+      facts.push({ kind: "deterministic foreign-source catalog configuration", retainedOnReopen: true,
+        recovery: "explicit current-source Apple selection in each of five primary widgets", widgets: primaryIds });
       facts.push({ transport: "deterministic owned apps.json catalog fixture; actual exported App imported by Apps UI", provider: "real FMP observations" });
     } else {
       const prior = JSON.parse(readFileSync(checkpoint, "utf8"));
