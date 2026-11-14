@@ -943,11 +943,11 @@ test("Company Research real FMP analyst choices template portability and retaine
   const syncReads = new WeakMap<Page, Promise<any>[]>();
   const syncAccess = new WeakMap<Page, { url: string; authorization?: string }>();
   const requestEstimate = {
-    status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 200, fred: 0 },
+    status: "static normal-path estimate, not measured receipts", cumulativeCeiling: { fmp: 250, fred: 0 },
     initial: { measuredPriorPrefixPlanningAllowance: 20, peerSearchAndInitial: 6, priceEdits: 2, statementQuarter: 3, peerQuarter: 4,
       deterministicRawRefreshes: 0, syntheticFailureUnaffectedLive: 3, recoveryRefresh: 4, exportedImport: 9,
       foreignImportAndReopenPeers: 8, explicitRecovery: 10, freshLoginSingleHydration: 9 },
-    retainedReopen: { singleHydration: 9 }, plannedContinuation: 87, priorCumulative: 93, remaining: 107, headroom: 20,
+    retainedReopen: { singleHydration: 9 }, plannedContinuation: 87, priorCumulative: 135, remaining: 115, headroom: 28,
     conditions: "Exact intended-dashboard login landing reuses successful sync; other landing navigates once. Search expiry and legitimate retries consume headroom.",
     loginCounts: { initialTest: 2, retainedReopenTest: 1, excludesControllerReadiness: true },
     accounting: "External cumulative ledger counts actual send reservations including retry=1; exhaustion fails/incompletes acceptance without raising the ceiling.",
@@ -1433,8 +1433,16 @@ test("Company Research real FMP analyst choices template portability and retaine
       // Export is the actual dashboard context-menu action; import transport is an owned catalog fixture.
       await page.locator(`[data-rct-item-id="${new URL(url).pathname.split("/").at(-1)}"]`).click({ button: "right" });
       await page.getByText("Export apps.json", { exact: true }).click();
-      const exportDialog = page.getByRole("dialog", { name: "Export App", exact: true });
-      await exportDialog.getByPlaceholder("Enter app name...").fill("Company Research exported acceptance");
+      const exportDialog = page.getByRole("dialog").filter({
+        has: page.getByRole("heading", { name: "Export App", exact: true }),
+      });
+      await expect(exportDialog).toHaveCount(1);
+      const exportName = "Company Research exported acceptance";
+      const exportDescription = "Company Research acceptance: saved analyst choices and independent peer configuration.";
+      await exportDialog.getByPlaceholder("Enter app name...").fill(exportName);
+      await exportDialog.getByRole("textbox", { name: "Description", exact: true }).fill(exportDescription);
+      await expect(exportDialog.getByPlaceholder("Enter app name...")).toHaveValue(exportName);
+      await expect(exportDialog.getByRole("textbox", { name: "Description", exact: true })).toHaveValue(exportDescription);
       const downloadEvent = page.waitForEvent("download");
       await exportDialog.getByRole("button", { name: "Download App", exact: true }).click();
       const download = await downloadEvent;
@@ -1443,6 +1451,7 @@ test("Company Research real FMP analyst choices template portability and retaine
       const chunks: Buffer[] = [];
       for await (const chunk of stream!) chunks.push(Buffer.from(chunk));
       const exported = JSON.parse(Buffer.concat(chunks).toString("utf8"));
+      expect(exported).toMatchObject({ name: exportName, description: exportDescription });
       const serialized = JSON.stringify(exported);
       expect(serialized).not.toMatch(/providerPayload|access_token|api_key|password|__qopenbb_financial__|results_metadata/);
       expect(exported.tabs.Research.layout).toHaveLength(6);
