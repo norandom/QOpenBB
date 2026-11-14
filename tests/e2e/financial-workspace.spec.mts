@@ -1633,8 +1633,8 @@ test("Company Research real FMP analyst choices template portability and retaine
       consoleErrors: diagnostic.consoleErrors.filter(item => !expectedConsole503.has(item)),
       requestFailures: diagnostic.requestFailures,
     });
-    if (phase === "initial") writeFileSync(checkpoint, `${JSON.stringify({ stage: "initial-complete", images: runtime.images,
-      runtimeName: runtime.name, containerId: runtime.container, dashboardPath: new URL(url).pathname, state: expected, selected }, null, 2)}\n`, { flag: "wx" });
+    if (phase === "initial") await (await runtimeReader()).writeResearchCheckpoint(checkpoint, { stage: "initial-complete", images: runtime.images,
+      runtimeName: runtime.name, containerId: runtime.container, dashboardPath: new URL(url).pathname, state: expected, selected });
   } finally {
     await info.attach("company-research-sanitized-financial-facts", { contentType: "application/json",
       body: JSON.stringify({ phase, images: runtime.images, requestEstimate, facts, requests, responseLifecycle, captureDemands,

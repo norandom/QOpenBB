@@ -66,3 +66,25 @@ export function checkpointPath(value: string): string {
   return path;
 }
 
+export async function writeResearchCheckpoint(path: string, value: unknown): Promise<void> {
+  try {
+    const python = process.env.QOPENBB_RUNTIME_PYTHON;
+    const runtime = process.env.WORKSPACE_RUNTIME_PRIVATE;
+    if (!python || !isAbsolute(python) || !runtime || !isAbsolute(runtime))
+      throw new Error('Checkpoint write refused');
+    const target = checkpointPath(path);
+    const payload = `${JSON.stringify(value, null, 2)}\n`;
+    if (Buffer.byteLength(payload, 'utf8') > 1024 * 1024) throw new Error('Checkpoint write refused');
+    await new Promise<void>((accept, reject) => {
+      const child = execFile(python, ['-B', '-m', 'qopenbb_ci.checkpoint_cli', '--runtime', runtime, '--path', target],
+        { shell: false, windowsHide: true, encoding: 'utf8', maxBuffer: 1024, timeout: 20000 },
+        error => error ? reject(new Error('Checkpoint write refused')) : accept());
+      if (!child.stdin) { child.kill(); reject(new Error('Checkpoint write refused')); return; }
+      child.stdin.on('error', () => reject(new Error('Checkpoint write refused')));
+      child.stdin.end(payload, 'utf8');
+    });
+  } catch {
+    throw new Error('Checkpoint write refused');
+  }
+}
+
