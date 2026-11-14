@@ -1,11 +1,13 @@
 """Curated research layout preserves parameter boundaries and research storage."""
 from copy import deepcopy
 import json
+import os
 from pathlib import Path
 
 import pytest
 
 from qopenbb_ci.catalog import canonical, generate
+from qopenbb_ci.catalog_runtime import ASSET
 
 ROOT = Path(__file__).resolve().parents[2]
 PRIMARY = {
@@ -20,12 +22,18 @@ STATEMENTS = {PRIMARY[key] for key in ("annual-income", "annual-balance-sheet", 
 
 @pytest.fixture
 def inputs():
-    return tuple(json.loads((ROOT / "contracts" / name).read_text())
-                 for name in ("openapi.json", "datasets.json", "widgets.json", "apps.json"))
+    contracts = tuple(json.loads((ROOT / "contracts" / name).read_text())
+                      for name in ("openapi.json", "datasets.json", "widgets.json"))
+    locked_checkout = json.loads((ROOT / "sources.lock.json").read_text())["data_api"]["local_checkout"]
+    source = Path(os.environ.get("QOPENBB_DATA_SOURCE", str(ROOT / locked_checkout)))
+    bundled = json.loads((source / ASSET).read_text(encoding="utf-8"))
+    return (*contracts, bundled)
 
 
 def research(output):
-    return next(app for app in output["apps.json"] if app["name"] == "Company Research")
+    matches = [app for app in output["apps.json"] if app["name"] == "Company Research"]
+    assert len(matches) == 1
+    return matches[0]
 
 
 def test_research_composition_and_frozen_renderer(inputs):
