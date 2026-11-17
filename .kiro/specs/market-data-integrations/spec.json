@@ -40,15 +40,27 @@
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
     "implemented_operations": 0,
-    "accepted_tasks": 3,
+    "accepted_tasks": 4,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/a1-contract-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/a2-contract-review.md"
+      "../../../artifacts/reviewed/fmp-expansion-a/a2-contract-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/contract-freeze-review.md"
     ],
     "new_live_requests": 0,
-    "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance."
+    "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance.",
+    "admission_amendment": {
+      "document": "fmp-expansion-a-admission-amendment.md",
+      "sha256": "47d4939e6ee381b7cb8863b5e93f31780f8bf763e763078d09e69676bc8b14b0",
+      "review": "../../../artifacts/reviewed/fmp-expansion-a/contract-freeze-review.md",
+      "review_status": "approved",
+      "reviewer_model": "gpt-6-astra",
+      "scope": "Bounded mechanism correction within existing owner-approved strict admission outcomes; task count and budget unchanged.",
+      "artifact_status_note": "Reviewed authored proposal statuses are retained to preserve exact reviewed bytes; acceptance is recorded here and in task 1.4 review.",
+      "runtime_implemented": false,
+      "emitter_exception_approved": false
+    }
   },
   "language": "en",
   "phase": "tasks-generated",

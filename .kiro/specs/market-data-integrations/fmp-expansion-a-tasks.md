@@ -63,9 +63,10 @@ All other tasks are serial. Contract/schema/pin changes invalidate affected proo
   - _Boundary: Controller A2 frozen contract fixtures_
   - _Requirements: 2.4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 6.1, 6.3_
 
-- [ ] 1.4 Freeze admission descriptors and adapter handoffs (1-2 hours)
+- [x] 1.4 Freeze admission descriptors and adapter handoffs (1-2 hours)
   - Freeze canonical fields/accepted aliases, actual native controls and endpoint-local ownership from 1.2 and 1.3.
-  - Specify explicit provider subclass opt-in, two-pass SDK presence semantics and direct Fetcher validation cases.
+  - Follow [explicit-route admission amendment](fmp-expansion-a-admission-amendment.md): native-selected class-owned opt-in with separate eleven-variant registry/discovery expected-set joins, pre-validate raw binding, safe selected errors, context lifecycle/provider reuse, effective validation and direct Fetcher cases.
+  - Freeze proposal descriptors and pending 2.1/2.3 verification matrix; native defect characterization is not repaired-admission acceptance.
   - Assign any cohesive declaration extraction before fan-out; standards and routers stay read-only absent reviewed blocker.
   - Done: independent reviewer accepts all eleven contracts plus disjoint handoffs; test descriptors support prereq testing.
   - This resolves the chicken-and-egg: prerequisites use fixture/dedicated query classes; later real subclasses match schemas.
@@ -76,12 +77,15 @@ All other tasks are serial. Contract/schema/pin changes invalidate affected proo
 ## 2. Public admission prerequisites
 
 - [ ] 2.1 Enforce selected-provider admission through public native SDK (2-3 hours)
-  - Controller adds parameter_admission helper and Container._run hooks before defaults and after defaults/before sync_run.
-  - Resolve installed descriptors/RegistryMap; use strict opt-in fixture/dedicated query variants from 1.4 before adapters exist.
+  - Implement [explicit-route admission amendment](fmp-expansion-a-admission-amendment.md) in its exact five controller-owned API paths: admission helper/context, decorators, Container and metadata-only method emitter.
+  - Preserve native validate_call/signatures/arbitrary_types and provider resolution; capture raw supplied membership before validation, reuse matching provider once, consume owned context frame once and reset token in finally.
+  - Resolve installed descriptors/RegistryMap; use dedicated registered strict query variants with actual Container/CommandRunner descriptors and public generated entry, without intercepted _run or fake selection.
+  - Replace/adapt known-defect characterization assertions after repair; historical reproduction is not admission acceptance.
   - Reject caller unsupported keys even at default values; preserve null/bool presence and reject invalid effective defaults.
   - Done: public generated SDK tests prove zero-I/O rejection, valid controls and unchanged baseline/provider resolution.
   - Direct Fetcher dictionaries use the same strict selected query contract; Query/CommandRunner are not certification surfaces.
-  - Whole helper/Container files and functions pass 400/300/50; no modification of oversized CommandRunner.
+  - Prove all amendment matrix cases: safe selected early/effective errors with DEBUG_MODE on/off, defaults, positional/alias/control semantics, nested/thread/task lifecycle and unchanged baseline variants.
+  - Whole new/other modified files pass 400/300/50; emitter change requires independent review of exact final metrics and any narrow revision/expiry-bound exception before acceptance. No speculative exception or CommandRunner rewrite.
   - _Boundary: Controller core admission and public SDK tests_
   - _Depends: 1.4_
   - _Requirements: 2.4, 5.1, 5.2, 5.4, 6.3, 7.1, 7.2, 7.3_
@@ -324,3 +328,5 @@ Task review must PASS independently before maintained tasks/spec metadata are wr
 1.2 accepted 2026-11-17: [A1 contract review](../../../artifacts/reviewed/fmp-expansion-a/a1-contract-review.md), 94 focused native checks. Correct retained estimate aliases to canonical number_analyst_estimated_revenue and number_analysts_estimated_eps; retain source-original mappings separately. Reuse statement-period-provenance/provider-venv with explicit new-worktree source overrides; pipeline-venv lacks provider dependencies.
 
 1.3 accepted 2026-11-17: [A2 contract review](../../../artifacts/reviewed/fmp-expansion-a/a2-contract-review.md), 112 focused native checks. Preserve corrected balance currency/cash-flow aliases, float and quote zero/UTC behavior, and required-nullable balance fields. Growth provider schemas use ratio without the retained frontend multiplier; actual native column projection verifies that distinction. Official float/cash examples are indexed documentation excerpts, not direct or live payload captures.
+
+1.4 accepted 2026-11-17: [contract and architecture review](../../../artifacts/reviewed/fmp-expansion-a/contract-freeze-review.md), 33 focused native characterization checks, 102 quality checks/two platform skips and combined complexity within scope. The additive admission amendment repairs the Container-only prescription while preserving approved outcomes. Reviewed proposal bytes retain their authored status; spec.json records acceptance. Runtime SDK admission and exact final emitter exception remain task 2.1 obligations; no adapter dispatch before 2.3.

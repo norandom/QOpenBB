@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "status": "proposal_ready_pending_independent_review",
+  "amendment": ".kiro/specs/market-data-integrations/fmp-expansion-a-admission-amendment.md",
+  "admission_implementation_paths": [
+    "openbb_platform/core/openbb_core/app/parameter_admission.py",
+    "openbb_platform/core/openbb_core/app/static/utils/admission_context.py",
+    "openbb_platform/core/openbb_core/app/static/utils/decorators.py",
+    "openbb_platform/core/openbb_core/app/static/container.py",
+    "openbb_platform/core/openbb_core/app/static/package_builder/method_definition.py"
+  ],
+  "repair_acceptance": "pending tasks 2.1 and 2.3; no adapter dispatch before acceptance",
+  "read_only": [
+    "standards",
+    "routers",
+    "registry",
+    "transport",
+    "core",
+    "locks",
+    "shared fixtures",
+    "inventories",
+    "other adapters"
+  ],
+  "controller_inventory_patterns_needed": [
+    "openbb_platform/providers/fmp/openbb_fmp/models/income_statement_growth_data.py",
+    "openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_growth_data.py",
+    "openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_growth_data.py"
+  ],
+  "growth_split": "Endpoint-local Data declarations/aliases/schema annotation overrides move to owned *_data.py. Query/admission/acquisition/transform remain adapter-owned; no shared declaration module.",
+  "adapters": {
+    "analyst_estimates": {
+      "task": "3.1",
+      "lane": "A1",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/analyst_estimates.py",
+        "root:tests/providers/test_fmp_analyst_estimates.py",
+        "root:tests/providers/fixtures/fmp_batch_a/analyst_estimates/**"
+      ],
+      "data_declaration_owner": null,
+      "source_inventory": {
+        "physical": 123,
+        "logical": 38,
+        "classes": {
+          "FMPAnalystEstimatesQueryParams": {
+            "physical": 17,
+            "logical": 5
+          },
+          "FMPAnalystEstimatesData": {
+            "physical": 25,
+            "logical": 2
+          },
+          "FMPAnalystEstimatesFetcher": {
+            "physical": 61,
+            "logical": 25
+          }
+        },
+        "functions": {
+          "transform_query": 2,
+          "aextract_data": 20,
+          "transform_data": 2,
+          "get_one": 7
+        },
+        "source_sha256": "d64866a7cdb4719c8c61c7f10f81da919cc9e69b8f85c02af4a7e88840d7c626"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/analyst_estimates.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "price_target": {
+      "task": "3.2",
+      "lane": "A1",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/price_target.py",
+        "root:tests/providers/test_fmp_price_target.py",
+        "root:tests/providers/fixtures/fmp_batch_a/price_target/**"
+      ],
+      "data_declaration_owner": null,
+      "source_inventory": {
+        "physical": 107,
+        "logical": 40,
+        "classes": {
+          "FMPPriceTargetQueryParams": {
+            "physical": 7,
+            "logical": 2
+          },
+          "FMPPriceTargetData": {
+            "physical": 19,
+            "logical": 5
+          },
+          "FMPPriceTargetFetcher": {
+            "physical": 62,
+            "logical": 28
+          }
+        },
+        "functions": {
+          "transform_query": 2,
+          "aextract_data": 23,
+          "transform_data": 2,
+          "get_one": 7
+        },
+        "source_sha256": "ed03eb37a82fd6c3b413c6dc99c8f02417b25fca7afcb4507daebe96b63a22df"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/price_target.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "price_target_consensus": {
+      "task": "3.3",
+      "lane": "A1",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/price_target_consensus.py",
+        "root:tests/providers/test_fmp_price_target_consensus.py",
+        "root:tests/providers/fixtures/fmp_batch_a/price_target_consensus/**"
+      ],
+      "data_declaration_owner": null,
+      "source_inventory": {
+        "physical": 96,
+        "logical": 37,
+        "classes": {
+          "FMPPriceTargetConsensusQueryParams": {
+            "physical": 15,
+            "logical": 6
+          },
+          "FMPPriceTargetConsensusData": {
+            "physical": 2,
+            "logical": 1
+          },
+          "FMPPriceTargetConsensusFetcher": {
+            "physical": 59,
+            "logical": 24
+          }
+        },
+        "functions": {
+          "check_symbol": 4,
+          "transform_query": 2,
+          "aextract_data": 19,
+          "transform_data": 2,
+          "get_one": 7
+        },
+        "source_sha256": "e2cb2c40609d96f7358096b6f690acdff576268827cb6ec09ec88bc34a06e14e"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/price_target_consensus.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "revenue_business_line": {
+      "task": "3.4",
+      "lane": "A1",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/revenue_business_line.py",
+        "root:tests/providers/test_fmp_revenue_business_line.py",
+        "root:tests/providers/fixtures/fmp_batch_a/revenue_business_line/**"
+      ],
+      "data_declaration_owner": null,
+      "source_inventory": {
+        "physical": 99,
+        "logical": 36,
+        "classes": {
+          "FMPRevenueBusinessLineQueryParams": {
+            "physical": 9,
+            "logical": 2
+          },
+          "FMPRevenueBusinessLineData": {
+            "physical": 2,
+            "logical": 1
+          },
+          "FMPRevenueBusinessLineFetcher": {
+            "physical": 68,
+            "logical": 27
+          }
+        },
+        "functions": {
+          "transform_query": 2,
+          "aextract_data": 6,
+          "transform_data": 18
+        },
+        "source_sha256": "b30886d058e7556d7a2ce6211a677faec9e79273774a3352f1066cfa4f1c9b4b"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/revenue_business_line.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "revenue_geographic": {
+      "task": "3.5",
+      "lane": "A1",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/revenue_geographic.py",
+        "root:tests/providers/test_fmp_revenue_geographic.py",
+        "root:tests/providers/fixtures/fmp_batch_a/revenue_geographic/**"
+      ],
+      "data_declaration_owner": null,
+      "source_inventory": {
+        "physical": 106,
+        "logical": 39,
+        "classes": {
+          "FMPRevenueGeographicQueryParams": {
+            "physical": 9,
+            "logical": 2
+          },
+          "FMPRevenueGeographicData": {
+            "physical": 8,
+            "logical": 3
+          },
+          "FMPRevenueGeographicFetcher": {
+            "physical": 68,
+            "logical": 27
+          }
+        },
+        "functions": {
+          "date_validate": 2,
+          "transform_query": 2,
+          "aextract_data": 6,
+          "transform_data": 18
+        },
+        "source_sha256": "7b96b026784b778977b1ef2d525613794c0ec53d39082b02de469b3052607c5f"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/revenue_geographic.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "historical_market_cap": {
+      "task": "3.6",
+      "lane": "A2",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/historical_market_cap.py",
+        "root:tests/providers/test_fmp_historical_market_cap.py",
+        "root:tests/providers/fixtures/fmp_batch_a/historical_market_cap/**"
+      ],
+      "data_declaration_owner": null,
+      "source_inventory": {
+        "physical": 126,
+        "logical": 45,
+        "classes": {
+          "FmpHistoricalMarketCapQueryParams": {
+            "physical": 10,
+            "logical": 2
+          },
+          "FmpHistoricalMarketCapData": {
+            "physical": 6,
+            "logical": 2
+          },
+          "FmpHistoricalMarketCapFetcher": {
+            "physical": 91,
+            "logical": 36
+          }
+        },
+        "functions": {
+          "transform_query": 2,
+          "aextract_data": 27,
+          "transform_data": 6,
+          "generate_urls": 11
+        },
+        "source_sha256": "e7ec73eca3471259207b5567f15d42b0d929d41c22bd7ed423f676c5818951ff"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/historical_market_cap.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "share_statistics": {
+      "task": "3.7",
+      "lane": "A2",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/share_statistics.py",
+        "root:tests/providers/test_fmp_share_statistics.py",
+        "root:tests/providers/fixtures/fmp_batch_a/share_statistics/**"
+      ],
+      "data_declaration_owner": null,
+      "source_inventory": {
+        "physical": 98,
+        "logical": 30,
+        "classes": {
+          "FMPShareStatisticsQueryParams": {
+            "physical": 7,
+            "logical": 2
+          },
+          "FMPShareStatisticsData": {
+            "physical": 15,
+            "logical": 5
+          },
+          "FMPShareStatisticsFetcher": {
+            "physical": 58,
+            "logical": 19
+          }
+        },
+        "functions": {
+          "_normalize_percent": 2,
+          "transform_query": 2,
+          "aextract_data": 6,
+          "transform_data": 10
+        },
+        "source_sha256": "529f6cdf6e2e07edad94f9b23740793b36b39052444d0c63bc7127d616c63bf6"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/share_statistics.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "equity_quote": {
+      "task": "3.8",
+      "lane": "A2",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/equity_quote.py",
+        "root:tests/providers/test_fmp_equity_quote.py",
+        "root:tests/providers/fixtures/fmp_batch_a/equity_quote/**"
+      ],
+      "data_declaration_owner": null,
+      "source_inventory": {
+        "physical": 124,
+        "logical": 48,
+        "classes": {
+          "FMPEquityQuoteQueryParams": {
+            "physical": 7,
+            "logical": 2
+          },
+          "FMPEquityQuoteData": {
+            "physical": 39,
+            "logical": 14
+          },
+          "FMPEquityQuoteFetcher": {
+            "physical": 58,
+            "logical": 26
+          }
+        },
+        "functions": {
+          "validate_last_timestamp": 7,
+          "_normalize_percent": 2,
+          "transform_query": 2,
+          "aextract_data": 21,
+          "transform_data": 2,
+          "get_one": 7
+        },
+        "source_sha256": "8329b1cdcc92ed4794b925640081ae34e093a71979503577fe65b486e813cfef"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/equity_quote.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "income_statement_growth": {
+      "task": "3.9",
+      "lane": "A2",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/income_statement_growth.py",
+        "root:tests/providers/test_fmp_income_statement_growth.py",
+        "root:tests/providers/fixtures/fmp_batch_a/income_statement_growth/**",
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/income_statement_growth_data.py"
+      ],
+      "data_declaration_owner": "openbb_platform/providers/fmp/openbb_fmp/models/income_statement_growth_data.py",
+      "source_inventory": {
+        "physical": 244,
+        "logical": 51,
+        "classes": {
+          "FMPIncomeStatementGrowthQueryParams": {
+            "physical": 10,
+            "logical": 2
+          },
+          "FMPIncomeStatementGrowthData": {
+            "physical": 170,
+            "logical": 33
+          },
+          "FMPIncomeStatementGrowthFetcher": {
+            "physical": 41,
+            "logical": 10
+          }
+        },
+        "functions": {
+          "transform_query": 2,
+          "aextract_data": 5,
+          "transform_data": 2
+        },
+        "source_sha256": "10a662a63ff4781993815f083b5a074a0a5858eea64087b2d11a49afb68cf9d2"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/income_statement_growth.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "balance_sheet_growth": {
+      "task": "3.10",
+      "lane": "A2",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_growth.py",
+        "root:tests/providers/test_fmp_balance_sheet_growth.py",
+        "root:tests/providers/fixtures/fmp_batch_a/balance_sheet_growth/**",
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_growth_data.py"
+      ],
+      "data_declaration_owner": "openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_growth_data.py",
+      "source_inventory": {
+        "physical": 342,
+        "logical": 74,
+        "classes": {
+          "FMPBalanceSheetGrowthQueryParams": {
+            "physical": 13,
+            "logical": 3
+          },
+          "FMPBalanceSheetGrowthData": {
+            "physical": 265,
+            "logical": 55
+          },
+          "FMPBalanceSheetGrowthFetcher": {
+            "physical": 41,
+            "logical": 10
+          }
+        },
+        "functions": {
+          "transform_query": 2,
+          "aextract_data": 5,
+          "transform_data": 2
+        },
+        "source_sha256": "fb9f08cfa2721f97dedee402abff4bdef968d8c6e1d55baff9dc0d5f663c75a0"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/balance_sheet_growth.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    },
+    "cash_flow_growth": {
+      "task": "3.11",
+      "lane": "A2",
+      "dispatch": "blocked_until_1.4_and_2.3_accepted",
+      "write_paths": [
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_growth.py",
+        "root:tests/providers/test_fmp_cash_flow_growth.py",
+        "root:tests/providers/fixtures/fmp_batch_a/cash_flow_growth/**",
+        "api:openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_growth_data.py"
+      ],
+      "data_declaration_owner": "openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_growth_data.py",
+      "source_inventory": {
+        "physical": 292,
+        "logical": 59,
+        "classes": {
+          "FMPCashFlowStatementGrowthQueryParams": {
+            "physical": 10,
+            "logical": 2
+          },
+          "FMPCashFlowStatementGrowthData": {
+            "physical": 216,
+            "logical": 41
+          },
+          "FMPCashFlowStatementGrowthFetcher": {
+            "physical": 43,
+            "logical": 10
+          }
+        },
+        "functions": {
+          "transform_query": 2,
+          "aextract_data": 5,
+          "transform_data": 2
+        },
+        "source_sha256": "b1fd6e773908f80e0c8b3400dfa679127a75ac074bba635ebb988d1c05c9ae03"
+      },
+      "frozen_contract": "tests/providers/fixtures/fmp_batch_a/contracts/cash_flow_growth.json",
+      "compatibility": "Copy exact accepted effective_aliases, accepted_validation_aliases, date_contracts, compatibility and schema overrides; original retained aliases are documentary only.",
+      "completion_caps": {
+        "physical": 400,
+        "logical": 300,
+        "function": 50
+      },
+      "join": "Actual production strict query and row schemas match frozen validation/serialization; endpoint behavior, direct Fetcher and native public SDK/HTTP re-tested after registration."
+    }
+  }
+}

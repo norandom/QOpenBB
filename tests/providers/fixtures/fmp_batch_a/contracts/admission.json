@@ -1,0 +1,1160 @@
+{
+  "schema_version": 1,
+  "status": "proposal_ready_pending_independent_review",
+  "surfaces": [
+    "HTTP",
+    "generated public Python SDK",
+    "direct Fetcher raw dictionaries"
+  ],
+  "supplied_pass": {
+    "before": "validate_call, native filter_inputs and configured defaults",
+    "membership": "only supplied canonical/accepted aliases; unsupported even at native default rejected",
+    "null_bounds": "explicit limit/page null rejected; omission allowed",
+    "boolean_bounds": "reject raw bool before int coercion",
+    "mutates_inputs": false,
+    "inserts_defaults": false
+  },
+  "effective_pass": {
+    "after": "configured defaults",
+    "before": "sync_run",
+    "validation": "same strict selected query class; resolved dates ISO calendar strings"
+  },
+  "direct_fetcher": "transform_query validates untouched dictionary through same strict selected query class",
+  "known_defect": "Container._run hooks alone lose standard-field presence and bool type in generated SDK",
+  "sdk_mechanism": {
+    "route_metadata": "explicit command path on validate before validate_call",
+    "authoritative_selection": [
+      "CommandMap.commands_model",
+      "get_command actual signature/dependencies",
+      "RegistryMap.original_models[model][provider]['query']"
+    ],
+    "activation": {
+      "provider": "fmp",
+      "query": "authoritative selected original query class",
+      "class_owned_marker": "__qopenbb_strict_admission__",
+      "marker_value": true,
+      "class_owned_extra": "forbid",
+      "parallel_pair_registry": false,
+      "runtime_fixture_dependency": false
+    },
+    "scope_join": {
+      "authority": "native registry/discovery expected-set assertions; not runtime activation",
+      "model_keys": [
+        "AnalystEstimates",
+        "BalanceSheetGrowth",
+        "CashFlowStatementGrowth",
+        "EquityQuote",
+        "HistoricalMarketCap",
+        "IncomeStatementGrowth",
+        "PriceTarget",
+        "PriceTargetConsensus",
+        "RevenueBusinessLine",
+        "RevenueGeographic",
+        "ShareStatistics"
+      ],
+      "gates": [
+        "2.3",
+        "4.2"
+      ],
+      "status": "pending prerequisite/final join tests"
+    },
+    "raw_binding": "inspect.signature bind without apply_defaults",
+    "caller_state": "copy supplied keys/accepted aliases/raw values; no mutation; no defaults; no absent-field requirements",
+    "native_validation": "retained validate_call; private route option consumed; preserve wraps/signature/arbitrary_types configuration; never rescue through raw body",
+    "provider_resolution": {
+      "resolver": "existing Container._get_provider explicit/default/credential resolution",
+      "ordered_choices": "actual Literal descriptor order; never sort",
+      "reuse": "matching generated resolver call reuses one preflight selection",
+      "matching": [
+        "container",
+        "authoritative route",
+        "original choice",
+        "ordered priority descriptor",
+        "invocation",
+        "thread/task owner"
+      ],
+      "mismatch": "selected frame fails closed; no matching selected frame preserves ordinary resolution",
+      "uncertain_binding": "do not guess selected provider"
+    },
+    "lifecycle": {
+      "frame": [
+        "container identity",
+        "authoritative route",
+        "model",
+        "query class",
+        "provider",
+        "original provider choice",
+        "ordered provider priorities",
+        "supplied keys/raw values",
+        "invocation identity",
+        "thread/task owner"
+      ],
+      "token": "ContextVar token reset in finally on every outcome; nested calls restore outer token",
+      "consume": "exact matching frame once before async sync_run; clear raw state",
+      "child_tasks": "inherited consumed frame cannot be adopted or reused",
+      "async_callable": "selected lifecycle surrounds await when actual async wrapper is supported"
+    },
+    "effective": "validate selected strict financial query after configured defaults before sync_run; preserve omission/schema defaults; controls separate",
+    "safe_errors": {
+      "selected_only": true,
+      "message": "constant safe invalid_parameters OpenBBError or existing equivalent",
+      "scope": [
+        "raw input",
+        "binding when selection established",
+        "native validation",
+        "filtering",
+        "effective admission"
+      ],
+      "excluded": [
+        "provider entitlement",
+        "transport"
+      ],
+      "no_echo": [
+        "raw values",
+        "user-controlled keys/locations",
+        "validator messages/context",
+        "URLs",
+        "raw cause text"
+      ],
+      "debug_mode": "cannot restore raw selected input exceptions",
+      "baseline": "native behavior unchanged"
+    },
+    "api_write_paths": [
+      "openbb_platform/core/openbb_core/app/parameter_admission.py",
+      "openbb_platform/core/openbb_core/app/static/utils/admission_context.py",
+      "openbb_platform/core/openbb_core/app/static/utils/decorators.py",
+      "openbb_platform/core/openbb_core/app/static/container.py",
+      "openbb_platform/core/openbb_core/app/static/package_builder/method_definition.py"
+    ],
+    "approval": "independent architecture/task-local review pending; no runtime repair claimed"
+  },
+  "repair_verification": {
+    "status": "pending_tasks_2.1_and_2.3",
+    "matrix": {
+      "generated_sdk": [
+        "all eleven dedicated installed variants",
+        "keyword/positional",
+        "omission/null/bools",
+        "unsupported standard/extra at native default",
+        "alias collisions",
+        "required symbol",
+        "zero I/O"
+      ],
+      "selection": [
+        "explicit FMP",
+        "native omitted provider/default/credentials",
+        "ordered priorities",
+        "one reused selection",
+        "other provider",
+        "non-opted strict/unregistered class",
+        "unchanged baseline"
+      ],
+      "defaults": [
+        "valid",
+        "null/bool/range/date invalid",
+        "unknown configured key",
+        "raw invalid before overwrite"
+      ],
+      "controls": [
+        "actual concrete descriptors",
+        "chart only exposed",
+        "unsupported chart_params",
+        "signature/positional duplicates",
+        "native arbitrary_types configuration",
+        "no validation bypass"
+      ],
+      "safe_errors": [
+        "pre-body ValidationError",
+        "unknown key/value sentinel",
+        "malformed list/filter choice",
+        "selected binding/required failures",
+        "DEBUG_MODE on/off",
+        "no raw cause",
+        "no network"
+      ],
+      "lifecycle": [
+        "nested routes/containers",
+        "two threads",
+        "async tasks",
+        "every failure stage",
+        "subsequent baseline",
+        "inherited child context",
+        "actual async await if supported",
+        "finally reset",
+        "consume once"
+      ],
+      "http_fetcher": [
+        "repeated symbol/page",
+        "unknown/default-valued key",
+        "null/bool",
+        "invalid provider",
+        "untouched raw dictionary",
+        "safe HTTP422",
+        "zero extraction"
+      ],
+      "complexity": [
+        "explicit current fork scope",
+        "independently reviewed exact final emitter metrics/exception",
+        "all other files400/logical300/functions50"
+      ]
+    },
+    "final_real_subclass_gate": "tasks_4.1_and_4.2"
+  },
+  "adapters": {
+    "analyst_estimates": {
+      "model_key": "AnalystEstimates",
+      "route": "equity/estimates/historical",
+      "query_class": "fmp_a1_contracts.FMPAnalystEstimatesQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPAnalystEstimatesQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        },
+        "period": {
+          "canonical": "period",
+          "validation_alias": null,
+          "accepted_names": [
+            "period"
+          ],
+          "required": false
+        },
+        "limit": {
+          "canonical": "limit",
+          "validation_alias": null,
+          "accepted_names": [
+            "limit"
+          ],
+          "required": false
+        },
+        "page": {
+          "canonical": "page",
+          "validation_alias": null,
+          "accepted_names": [
+            "page"
+          ],
+          "required": false
+        }
+      },
+      "standard_fields": [
+        "symbol"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/estimates/estimates_router.py",
+        "route_source_sha256": "c41f1d4b50ff66005b4a7a39edfc32f7b4d5ddda1980e9960d4ae6cfeb06d224",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {
+        "period": {
+          "quarterly": "quarter"
+        }
+      },
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "analyst_estimates.json",
+      "row_contract_sha256": "91586de0a77c2317d0477bc1528da2cbdaf7fbe24644c9a105992facbe35f4fa",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "new FMP variant: one required symbol, strict extras and approved bounded defaults",
+        "incompatibilities": [
+          {
+            "retained_source_defect": "numAnalystsRevenue and numAnalystsEps mapped to undeclared count destinations, leaving canonical counts missing.",
+            "approved_correction": "Map numAnalystsRevenue to existing number_analyst_estimated_revenue and numAnalystsEps to existing number_analysts_estimated_eps. No public fields added.",
+            "migration": "Adapters must use effective_aliases; retained_aliases records source history only."
+          }
+        ]
+      },
+      "date_contracts": {
+        "date": {
+          "required": true,
+          "nullable": false
+        }
+      },
+      "response_policy": {
+        "mode": "clip",
+        "max_rows": null,
+        "limit_parameter": "limit"
+      }
+    },
+    "price_target": {
+      "model_key": "PriceTarget",
+      "route": "equity/estimates/price_target",
+      "query_class": "fmp_a1_contracts.FMPPriceTargetQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPPriceTargetQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        },
+        "limit": {
+          "canonical": "limit",
+          "validation_alias": null,
+          "accepted_names": [
+            "limit"
+          ],
+          "required": false
+        }
+      },
+      "standard_fields": [
+        "symbol",
+        "limit"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/estimates/estimates_router.py",
+        "route_source_sha256": "c41f1d4b50ff66005b4a7a39edfc32f7b4d5ddda1980e9960d4ae6cfeb06d224",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {},
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "price_target.json",
+      "row_contract_sha256": "ed5ac21ec95af8012bb03761b76c0221b3982986f02de556f872c22da4dce0e3",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "new FMP variant: one required symbol, strict extras and approved bounded defaults",
+        "incompatibilities": []
+      },
+      "date_contracts": {
+        "published_date": {
+          "required": true,
+          "nullable": false
+        },
+        "published_time": {
+          "required": false,
+          "nullable": true
+        }
+      },
+      "response_policy": {
+        "mode": "clip",
+        "max_rows": null,
+        "limit_parameter": "limit"
+      }
+    },
+    "price_target_consensus": {
+      "model_key": "PriceTargetConsensus",
+      "route": "equity/estimates/consensus",
+      "query_class": "fmp_a1_contracts.FMPPriceTargetConsensusQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPPriceTargetConsensusQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        }
+      },
+      "standard_fields": [
+        "symbol"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/estimates/estimates_router.py",
+        "route_source_sha256": "c41f1d4b50ff66005b4a7a39edfc32f7b4d5ddda1980e9960d4ae6cfeb06d224",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {},
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "price_target_consensus.json",
+      "row_contract_sha256": "ad0f48d8df3de4c3f8c3f7fd96267a8abacec5b382e5dda30c3b83fb472b4579",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "new FMP variant: one required symbol, strict extras and approved bounded defaults",
+        "incompatibilities": []
+      },
+      "date_contracts": {},
+      "response_policy": {
+        "mode": "provider",
+        "max_rows": null,
+        "limit_parameter": null
+      }
+    },
+    "revenue_business_line": {
+      "model_key": "RevenueBusinessLine",
+      "route": "equity/fundamental/revenue_per_segment",
+      "query_class": "fmp_a1_contracts.FMPRevenueBusinessLineQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPRevenueBusinessLineQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        },
+        "period": {
+          "canonical": "period",
+          "validation_alias": null,
+          "accepted_names": [
+            "period"
+          ],
+          "required": false
+        }
+      },
+      "standard_fields": [
+        "symbol"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/fundamental/fundamental_router.py",
+        "route_source_sha256": "beaac600caa6f80d0713a85fb2df240780837e96bb120ba780c25cdb8ff45017",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {
+        "period": {
+          "quarterly": "quarter"
+        }
+      },
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "revenue_business_line.json",
+      "row_contract_sha256": "cd12c8661df5f9c0374f4f6f447211353719a5cfa368055ac5c670227bf39e05",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "new FMP variant: one required symbol, strict extras and approved bounded defaults",
+        "incompatibilities": []
+      },
+      "date_contracts": {
+        "period_ending": {
+          "required": true,
+          "nullable": false
+        },
+        "filing_date": {
+          "required": false,
+          "nullable": true
+        }
+      },
+      "response_policy": {
+        "mode": "clip",
+        "max_rows": 1000,
+        "limit_parameter": null
+      }
+    },
+    "revenue_geographic": {
+      "model_key": "RevenueGeographic",
+      "route": "equity/fundamental/revenue_per_geography",
+      "query_class": "fmp_a1_contracts.FMPRevenueGeographicQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPRevenueGeographicQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        },
+        "period": {
+          "canonical": "period",
+          "validation_alias": null,
+          "accepted_names": [
+            "period"
+          ],
+          "required": false
+        }
+      },
+      "standard_fields": [
+        "symbol"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/fundamental/fundamental_router.py",
+        "route_source_sha256": "beaac600caa6f80d0713a85fb2df240780837e96bb120ba780c25cdb8ff45017",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {
+        "period": {
+          "quarterly": "quarter"
+        }
+      },
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "revenue_geographic.json",
+      "row_contract_sha256": "498b35ae7cdf776ab50bf26b0a3a8c44fdaebc8bcc7be8a056de4b597846ce91",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "new FMP variant: one required symbol, strict extras and approved bounded defaults",
+        "incompatibilities": []
+      },
+      "date_contracts": {
+        "period_ending": {
+          "required": true,
+          "nullable": false
+        },
+        "filing_date": {
+          "required": false,
+          "nullable": true
+        }
+      },
+      "response_policy": {
+        "mode": "clip",
+        "max_rows": 1000,
+        "limit_parameter": null
+      }
+    },
+    "historical_market_cap": {
+      "model_key": "HistoricalMarketCap",
+      "route": "equity/historical_market_cap",
+      "query_class": "fmp_a2_contracts.FmpHistoricalMarketCapQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FmpHistoricalMarketCapQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        },
+        "start_date": {
+          "canonical": "start_date",
+          "validation_alias": null,
+          "accepted_names": [
+            "start_date"
+          ],
+          "required": false
+        },
+        "end_date": {
+          "canonical": "end_date",
+          "validation_alias": null,
+          "accepted_names": [
+            "end_date"
+          ],
+          "required": false
+        }
+      },
+      "standard_fields": [
+        "symbol",
+        "start_date",
+        "end_date"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/equity_router.py",
+        "route_source_sha256": "c3667ccd065cfe05bd90cfbf54266afbc909e1dcf0e3ba5d36e2a625ad4578dd",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {},
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "historical_market_cap.json",
+      "row_contract_sha256": "b9537130dec7cefd57fa0220d4f44805c78272aaedc2a53f557e13dc3e595184",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+        "incompatibilities": []
+      },
+      "date_contracts": {
+        "date": {
+          "required": true,
+          "nullable": false
+        }
+      },
+      "response_policy": {
+        "mode": "clip",
+        "max_rows": 5000,
+        "limit_parameter": null
+      }
+    },
+    "share_statistics": {
+      "model_key": "ShareStatistics",
+      "route": "equity/ownership/share_statistics",
+      "query_class": "fmp_a2_contracts.FMPShareStatisticsQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPShareStatisticsQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        }
+      },
+      "standard_fields": [
+        "symbol"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/ownership/ownership_router.py",
+        "route_source_sha256": "19c1f44cfd93429206f88e9abe53824511ff19cefe5762671b00e3ce236a9fe1",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {},
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "share_statistics.json",
+      "row_contract_sha256": "7c9e2c749a9dcca83aef51db66872650c042f8a314754bef673b32c27539cc67",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+        "incompatibilities": [
+          {
+            "retained_source_defect": "Truthy test converted freeFloat0 to null.",
+            "approved_correction": "Explicit None check preserves zero; public union unchanged.",
+            "migration": "Use characterized validator; optional date never filled with retrieval time."
+          }
+        ]
+      },
+      "date_contracts": {
+        "date": {
+          "required": false,
+          "nullable": true
+        }
+      },
+      "response_policy": {
+        "mode": "provider",
+        "max_rows": null,
+        "limit_parameter": null
+      }
+    },
+    "equity_quote": {
+      "model_key": "EquityQuote",
+      "route": "equity/price/quote",
+      "query_class": "fmp_a2_contracts.FMPEquityQuoteQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPEquityQuoteQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        }
+      },
+      "standard_fields": [
+        "symbol"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/price/price_router.py",
+        "route_source_sha256": "99b9ae3301f0a7e349596816372fb619b271dbd76f0e3c9a4883bd5e52a7e86c",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {},
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "equity_quote.json",
+      "row_contract_sha256": "396bf06aa833d37ee1e3bb86b1258b055911547271c7682465c55bfa64942023",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+        "incompatibilities": [
+          {
+            "retained_source_defect": "Epoch0/changePercentage0 converted to null; UTC timezone stripped.",
+            "approved_correction": "Preserve zeros and UTC awareness; public union unchanged.",
+            "migration": "UTC-aware ISO timestamps include +00:00; never interpret as local time."
+          }
+        ]
+      },
+      "date_contracts": {
+        "participant_timestamp": {
+          "required": false,
+          "nullable": true
+        },
+        "trf_timestamp": {
+          "required": false,
+          "nullable": true
+        },
+        "sip_timestamp": {
+          "required": false,
+          "nullable": true
+        },
+        "last_timestamp": {
+          "required": false,
+          "nullable": true
+        }
+      },
+      "response_policy": {
+        "mode": "provider",
+        "max_rows": null,
+        "limit_parameter": null
+      }
+    },
+    "income_statement_growth": {
+      "model_key": "IncomeStatementGrowth",
+      "route": "equity/fundamental/income_growth",
+      "query_class": "fmp_a2_contracts.FMPIncomeStatementGrowthQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPIncomeStatementGrowthQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        },
+        "limit": {
+          "canonical": "limit",
+          "validation_alias": null,
+          "accepted_names": [
+            "limit"
+          ],
+          "required": false
+        },
+        "period": {
+          "canonical": "period",
+          "validation_alias": null,
+          "accepted_names": [
+            "period"
+          ],
+          "required": false
+        }
+      },
+      "standard_fields": [
+        "symbol",
+        "limit"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/fundamental/fundamental_router.py",
+        "route_source_sha256": "beaac600caa6f80d0713a85fb2df240780837e96bb120ba780c25cdb8ff45017",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {
+        "period": {
+          "quarterly": "quarter"
+        }
+      },
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "income_statement_growth.json",
+      "row_contract_sha256": "941a42259594cb43b243ffb121d5f019f58311e39b2963286f8858d8fd2570e7",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+        "incompatibilities": [
+          {
+            "retained_source_defect": "Growth x-unit_measurement=percent plus x-frontend_multiply=100 selects native normalizedPercent and multiplies fractions for presentation.",
+            "approved_correction": "Provider declarations override all growth fields to x-unit_measurement=ratio and remove x-frontend_multiply in both schema modes; existing field union and numeric fractions unchanged.",
+            "migration": "Native widget formatter projects numeric ratio columns without percent multiplication; standards remain unchanged."
+          }
+        ]
+      },
+      "date_contracts": {
+        "period_ending": {
+          "required": true,
+          "nullable": false
+        }
+      },
+      "response_policy": {
+        "mode": "clip",
+        "max_rows": null,
+        "limit_parameter": "limit"
+      }
+    },
+    "balance_sheet_growth": {
+      "model_key": "BalanceSheetGrowth",
+      "route": "equity/fundamental/balance_growth",
+      "query_class": "fmp_a2_contracts.FMPBalanceSheetGrowthQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPBalanceSheetGrowthQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        },
+        "limit": {
+          "canonical": "limit",
+          "validation_alias": null,
+          "accepted_names": [
+            "limit"
+          ],
+          "required": false
+        },
+        "period": {
+          "canonical": "period",
+          "validation_alias": null,
+          "accepted_names": [
+            "period"
+          ],
+          "required": false
+        }
+      },
+      "standard_fields": [
+        "symbol",
+        "limit"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/fundamental/fundamental_router.py",
+        "route_source_sha256": "beaac600caa6f80d0713a85fb2df240780837e96bb120ba780c25cdb8ff45017",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {
+        "period": {
+          "quarterly": "quarter"
+        }
+      },
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "balance_sheet_growth.json",
+      "row_contract_sha256": "dc2263bf326de40b8af0387baf843bf03f47e5ff4c46c7727b3837208233ab6f",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+        "incompatibilities": [
+          {
+            "retained_source_defect": "reportedCurrency mapped to undeclared currency and was lost.",
+            "approved_correction": "Map to existing reported_currency; no new fields.",
+            "migration": "Use effective_aliases; retained_aliases is historical."
+          },
+          {
+            "retained_source_defect": "Growth x-unit_measurement=percent plus x-frontend_multiply=100 selects native normalizedPercent and multiplies fractions for presentation.",
+            "approved_correction": "Provider declarations override all growth fields to x-unit_measurement=ratio and remove x-frontend_multiply in both schema modes; existing field union and numeric fractions unchanged.",
+            "migration": "Native widget formatter projects numeric ratio columns without percent multiplication; standards remain unchanged."
+          }
+        ]
+      },
+      "date_contracts": {
+        "period_ending": {
+          "required": true,
+          "nullable": false
+        }
+      },
+      "response_policy": {
+        "mode": "clip",
+        "max_rows": null,
+        "limit_parameter": "limit"
+      }
+    },
+    "cash_flow_growth": {
+      "model_key": "CashFlowStatementGrowth",
+      "route": "equity/fundamental/cash_growth",
+      "query_class": "fmp_a2_contracts.FMPCashFlowStatementGrowthQueryParams",
+      "strict_opt_in": {
+        "provider": "fmp",
+        "query_class": "FMPCashFlowStatementGrowthQueryParams",
+        "extra": "forbid",
+        "selection": "native authoritative selected original query class/provider; class namespace owns marker True and extra forbid",
+        "runtime_pair_membership_required": false,
+        "class_owned_marker": "__qopenbb_strict_admission__",
+        "marker_required_value": true,
+        "implementation_status": "pending_task_2.1; accepted query fixtures unchanged"
+      },
+      "canonical_query_fields": {
+        "symbol": {
+          "canonical": "symbol",
+          "validation_alias": null,
+          "accepted_names": [
+            "symbol"
+          ],
+          "required": true
+        },
+        "limit": {
+          "canonical": "limit",
+          "validation_alias": null,
+          "accepted_names": [
+            "limit"
+          ],
+          "required": false
+        },
+        "period": {
+          "canonical": "period",
+          "validation_alias": null,
+          "accepted_names": [
+            "period"
+          ],
+          "required": false
+        }
+      },
+      "standard_fields": [
+        "symbol",
+        "limit"
+      ],
+      "native_controls": {
+        "provider": [
+          "provider_choices.provider"
+        ],
+        "command_signature": {
+          "cc": "CommandContext",
+          "provider_choices": "ProviderChoices",
+          "standard_params": "StandardParams",
+          "extra_params": "ExtraParams"
+        },
+        "route_source": "openbb_platform/extensions/equity/openbb_equity/fundamental/fundamental_router.py",
+        "route_source_sha256": "beaac600caa6f80d0713a85fb2df240780837e96bb120ba780c25cdb8ff45017",
+        "command_dependencies": [],
+        "chart": false,
+        "chart_params": false,
+        "allowed_public_controls": [
+          "provider"
+        ],
+        "certification": "source-signature derived; installed eleven-variant join deferred to 4.2"
+      },
+      "value_aliases": {
+        "period": {
+          "quarterly": "quarter"
+        }
+      },
+      "row_aliases_are_not_query_aliases": true,
+      "row_contract": "cash_flow_growth.json",
+      "row_contract_sha256": "dcb92511cbf7d033afb4413e45590adf64afd2b83aaf00c9a78eec602b8db50e",
+      "accepted_row_compatibility": {
+        "public_field_union": "existing standard plus retained FMP Data; no added fields",
+        "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+        "incompatibilities": [
+          {
+            "retained_source_defect": "Four Activities aliases miss official stable example Activites spellings.",
+            "approved_correction": "Accept only four evidenced spelling pairs into existing canonical fields.",
+            "migration": "Equal aliases allowed; conflicting canonical/retained/official values fail response validation."
+          },
+          {
+            "retained_source_defect": "Growth x-unit_measurement=percent plus x-frontend_multiply=100 selects native normalizedPercent and multiplies fractions for presentation.",
+            "approved_correction": "Provider declarations override all growth fields to x-unit_measurement=ratio and remove x-frontend_multiply in both schema modes; existing field union and numeric fractions unchanged.",
+            "migration": "Native widget formatter projects numeric ratio columns without percent multiplication; standards remain unchanged."
+          }
+        ]
+      },
+      "date_contracts": {
+        "period_ending": {
+          "required": true,
+          "nullable": false
+        }
+      },
+      "response_policy": {
+        "mode": "clip",
+        "max_rows": null,
+        "limit_parameter": "limit"
+      }
+    }
+  }
+}
