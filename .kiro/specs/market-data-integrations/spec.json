@@ -3,7 +3,7 @@
   "created_at": "2026-10-19T09:18:43.9949215Z",
   "updated_at": "2026-11-17",
   "fmp_expansion_b": {
-    "phase": "tasks-generated",
+    "phase": "implementation-in-progress",
     "design": "fmp-expansion-b-design.md",
     "design_review": "fmp-expansion-b-review.md",
     "independent_review": "passed",
@@ -13,9 +13,11 @@
     "tasks_document": "fmp-expansion-b-tasks.md",
     "tasks_review": "fmp-expansion-b-task-review.md",
     "tasks_review_status": "passed",
-    "tasks_approved": false,
+    "tasks_approved": true,
+    "tasks_approval": "Owner approved all 25 tasks and the 36-request live ceiling. Reviewed plan SHA-256 0244808f36f9b78ff648fb27988ae8d3b2f01ff117a0ab6fa36f192a2bf72cfa.",
     "live_budget_proposed": 36,
-    "live_budget_approved": false
+    "live_budget_approved": true,
+    "live_budget_ceiling": 36
   },
   "fmp_expansion": {
     "plan": "fmp-expansion-plan.md",
