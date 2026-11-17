@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "fmp-expansion-24-operation-tranche"
+requirements = ["market-data-integrations/requirements.md:1.1-1.4", "market-data-integrations/requirements.md:2.2-2.6", "market-data-integrations/requirements.md:4.1-4.7", "market-data-integrations/requirements.md:6.1-6.5", "market-data-integrations/requirements.md:7.1-7.5", "market-data-integrations/requirements.md:8.1-8.5"]
+planned_checks = ["per-endpoint bounded query and financial result contracts", "explicit provider and safe pre-I/O rejection", "real native response comparison and entitlement classification", "generated discovery and representative Workspace journeys", "source identity, complexity and independent review"]
+test_paths = []
+status = "planned"
+evidence = ["2026-11-17 planning only: .kiro/specs/market-data-integrations/fmp-expansion-plan.md, fmp-expansion-inventory.md and fmp-expansion-review.md. Independent planning review passed. A11 + B8 + C5 candidates; 19 retained adapters and five new-contract candidates, excluding ten accepted baseline models. Batch A design is owner-approved; fmp-expansion-a-tasks.md has 26 independently reviewed units and awaits task approval, including its 48-request ceiling. fmp-expansion-a-task-review.md records PASS after one repair. No runtime tests executed, endpoints implemented, provider requests made or account/widget acceptance claimed; structural planning checks are not endpoint evidence."]
+
+[[capabilities]]
 id = "shared-provider-research-contract"
 requirements = ["market-data-integrations/requirements.md:1-8"]
 planned_checks = ["provider family coverage and named discovery", "financial input/output semantics and provenance", "bounded queries and failure contracts", "common widget/programmatic consumer values", "owned-source real-provider acceptance"]
