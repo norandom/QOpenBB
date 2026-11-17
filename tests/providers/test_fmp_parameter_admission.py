@@ -658,3 +658,257 @@ def test_nested_baseline_async_await_cannot_adopt_selected_frame(native):
         assert current_frame() is frame
     asyncio.run(selected(container,'MSFT','fmp'))
     assert current_frame() is None
+
+
+PERIODIC_VARIANTS = (
+    'analyst_estimates', 'revenue_business_line', 'revenue_geographic',
+    'income_statement_growth', 'balance_sheet_growth', 'cash_flow_growth',
+)
+
+
+@pytest.mark.parametrize('name', PERIODIC_VARIANTS)
+@pytest.mark.parametrize('selection', ['explicit', 'omitted'])
+@pytest.mark.parametrize('period', ['quarter', 'quarterly'])
+def test_periodic_public_supplied_alias_reaches_fetcher_with_caller_precedence(native,monkeypatch,name,selection,period):
+    methods,runner,calls=native
+    configured={'provider':['fmp'],'period':'annual'}
+    runner.user_settings.defaults.commands[name]=configured
+    original_defaults=deepcopy(configured)
+    resolutions=[]
+    original=Container._resolve_provider
+    def resolve(self,*args):
+        resolutions.append(args)
+        return original(self,*args)
+    monkeypatch.setattr(Container,'_resolve_provider',resolve)
+    payload={'symbol':'MSFT','period':period}
+    if selection == 'explicit':
+        payload['provider']='fmp'
+    original_payload=deepcopy(payload)
+    methods[name](**payload)
+    assert len(calls)==1 and calls[-1]['period']=='quarter'
+    assert len(resolutions)==1
+    assert payload==original_payload and configured==original_defaults
+
+
+@pytest.mark.parametrize('name', PERIODIC_VARIANTS)
+@pytest.mark.parametrize('selection', ['explicit','omitted'])
+def test_periodic_omitted_period_schema_and_configured_defaults(native,monkeypatch,name,selection):
+    methods,runner,calls=native
+    original_filter=filter_inputs
+    observed=[]
+    body=inspect.unwrap(methods[name])
+    def observe(**kwargs):
+        observed.append(deepcopy(kwargs))
+        return original_filter(**kwargs)
+    monkeypatch.setitem(body.__globals__,'filter_inputs',observe)
+    payload={'symbol':'MSFT'}
+    if selection=='explicit':
+        payload['provider']='fmp'
+    original_payload=deepcopy(payload)
+    for configured_period,expected in [(None,'annual'),('quarter','quarter'),('quarterly','quarter')]:
+        configured={'provider':['fmp']}
+        if configured_period is not None:
+            configured['period']=configured_period
+        runner.user_settings.defaults.commands[name]=configured
+        snapshot=deepcopy(configured)
+        before=len(calls)
+        methods[name](**payload)
+        assert len(calls)==before+1 and calls[-1]['period']==expected
+        # Omitted provider fields remain absent until effective schema/default validation.
+        assert 'period' not in observed[-1]['standard_params']
+        assert 'period' not in observed[-1]['extra_params']
+        assert payload==original_payload and configured==snapshot
+
+
+@pytest.mark.parametrize('name', PERIODIC_VARIANTS)
+@pytest.mark.parametrize('selection', ['explicit','omitted'])
+@pytest.mark.parametrize('debug', [False,True])
+def test_periodic_invalid_values_remain_safe_before_extraction(native,monkeypatch,name,selection,debug):
+    from openbb_core.env import Env
+    from openbb_core.app.static.utils.admission_context import current_frame
+    monkeypatch.setitem(Env()._environ,'OPENBB_DEBUG_MODE',str(debug).lower())
+    methods,runner,calls=native
+    runner.user_settings.defaults.commands[name]={'provider':['fmp'],'period':'annual'}
+    for period in (None,'ttm','ytd','RAW_PERIOD_SENTINEL'):
+        payload={'symbol':'MSFT','period':period}
+        if selection=='explicit':
+            payload['provider']='fmp'
+        snapshot=deepcopy(payload)
+        with pytest.raises(Exception) as error:
+            methods[name](**payload)
+        assert str(error.value)=='invalid_parameters'
+        assert error.value.__cause__ is None
+        assert payload==snapshot and calls==[] and current_frame() is None
+
+
+@pytest.mark.parametrize('name', PERIODIC_VARIANTS)
+@pytest.mark.parametrize('selection', ['explicit_other','omitted_other','nonopted_fmp'])
+def test_periodic_alias_does_not_change_baseline_native_filtering(native,monkeypatch,name,selection):
+    from openbb_core.app.static.utils.admission_context import current_frame
+    methods,runner,calls=native
+    payload={'symbol':'MSFT'}
+    if 'limit' in CONTRACTS[name][0].model_fields:
+        payload['limit']=7
+    if selection=='explicit_other':
+        payload['provider']='other'
+    elif selection=='omitted_other':
+        runner.user_settings.defaults.commands[name]={'provider':['other']}
+    else:
+        payload['provider']='fmp'
+        model=describe()['adapters'][name]['model_key']
+        query=ProviderInterface()._registry_map.original_models[model]['fmp']['query']
+        monkeypatch.setattr(query,'__qopenbb_strict_admission__',False)
+    methods[name](period='quarter',**payload)
+    assert calls[-1]['period']=='quarter'
+    before=len(calls)
+    with pytest.raises(Exception) as error:
+        methods[name](period='quarterly',**payload)
+    assert 'quarterly' in str(error.value)
+    assert 'invalid_parameters' not in str(error.value)
+    assert len(calls)==before and current_frame() is None
+
+
+def test_periodic_projection_keeps_raw_and_runs_native_filter_without_revalidation(native,monkeypatch):
+    from openbb_core.app.static.utils.admission_context import current_frame
+    methods,runner,calls=native
+    query=ProviderInterface()._registry_map.original_models['AnalystEstimates']['fmp']['query']
+    original_validate=query.model_validate
+    validations=[]
+    def validate_query(values,**kwargs):
+        validations.append(deepcopy(values))
+        return original_validate(values,**kwargs)
+    monkeypatch.setattr(query,'model_validate',validate_query)
+    frames=[]
+    body=inspect.unwrap(methods['analyst_estimates'])
+    def observe(**kwargs):
+        frame=current_frame()
+        frames.append(frame)
+        assert frame.normalized=={'symbol':'MSFT','period':'quarter'}
+        assert frame.raw=={'symbol':'MSFT','period':'quarterly'}
+        original_inputs=deepcopy(kwargs)
+        before=len(validations)
+        output=filter_inputs(**kwargs)
+        assert len(validations)==before
+        assert output['extra_params']['period']=='quarter'
+        assert kwargs==original_inputs
+        assert frame.normalized=={} and not frame.consumed
+        assert frame.raw['period']=='quarterly'
+        return output
+    monkeypatch.setitem(body.__globals__,'filter_inputs',observe)
+    methods['analyst_estimates'](symbol='MSFT',period='quarterly',provider='fmp')
+    assert calls[-1]['period']=='quarter'
+    assert frames[0].raw=={} and frames[0].normalized=={} and frames[0].consumed
+
+
+@pytest.mark.parametrize('failure',['before','enum','multiplicity','provider'])
+def test_periodic_normalization_clears_on_filter_failures_and_subsequent_baseline(native,monkeypatch,failure):
+    from openbb_core.app.static.utils.admission_context import current_frame
+    methods,runner,calls=native
+    frames=[]
+    body=inspect.unwrap(methods['analyst_estimates'])
+    def failing(**kwargs):
+        if kwargs['provider_choices']['provider']=='fmp':
+            frame=current_frame()
+            frames.append(frame)
+            assert frame.normalized['period']=='quarter'
+            if failure=='before':
+                raise ValueError('RAW_FILTER_SENTINEL')
+            kwargs=deepcopy(kwargs)
+            if failure=='provider':
+                kwargs['provider_choices']['provider']='other'
+            elif failure=='enum':
+                kwargs['info']['period']['fmp']['choices']=['annual']
+            else:
+                kwargs['standard_params']['symbol']='MSFT,ORCL'
+                # A native control remains subject to multiplicity filtering.
+                kwargs['extra_params']['control']='one,two'
+                kwargs['info']['control']={'fmp':{'multiple_items_allowed':False}}
+        return filter_inputs(**kwargs)
+    monkeypatch.setitem(body.__globals__,'filter_inputs',failing)
+    with pytest.raises(Exception,match='^invalid_parameters$'):
+        methods['analyst_estimates'](symbol='MSFT',period='quarterly',provider='fmp')
+    assert frames[0].raw=={} and frames[0].normalized=={}
+    assert calls==[] and current_frame() is None
+    methods['analyst_estimates'](symbol='MSFT',period='quarter',provider='other')
+    assert len(calls)==1 and calls[-1]['period']=='quarter'
+
+
+def test_periodic_nested_calls_restore_normalization_cache(native,monkeypatch):
+    from openbb_core.app.static.utils.admission_context import current_frame
+    methods,runner,calls=native
+    frames=[]
+    body=inspect.unwrap(methods['analyst_estimates'])
+    def nested(**kwargs):
+        frame=current_frame()
+        if not frames:
+            frames.append(frame)
+            methods['analyst_estimates'](symbol='ORCL',period='quarterly',provider='fmp')
+            methods['revenue_geographic'](symbol='ADBE',period='quarterly',provider='fmp')
+            assert current_frame() is frame
+            assert frame.normalized['period']=='quarter' and frame.raw['period']=='quarterly'
+        return filter_inputs(**kwargs)
+    monkeypatch.setitem(body.__globals__,'filter_inputs',nested)
+    methods['analyst_estimates'](symbol='MSFT',period='quarterly',provider='fmp')
+    assert len(calls)==3 and all(item['period']=='quarter' for item in calls)
+    assert frames[0].normalized=={} and frames[0].raw=={} and current_frame() is None
+
+
+def test_periodic_threads_isolate_normalization_cache(native):
+    from concurrent.futures import ThreadPoolExecutor
+    from threading import Barrier
+    from openbb_core.app.static.utils.admission_context import current_frame
+    methods,runner,calls=native
+    barrier=Barrier(2)
+    def run(symbol):
+        barrier.wait(timeout=10)
+        methods['analyst_estimates'](symbol=symbol,period='quarterly',provider='fmp')
+        assert current_frame() is None
+    with ThreadPoolExecutor(max_workers=2) as workers:
+        list(workers.map(run,['MSFT','ORCL']))
+    assert sorted(item['symbol'] for item in calls)==['MSFT','ORCL']
+    assert all(item['period']=='quarter' for item in calls)
+
+
+def test_periodic_async_cache_owner_projection_and_child_rejection(native):
+    import asyncio
+    from openbb_core.app.parameter_admission import descriptor
+    from openbb_core.app.static.utils.admission_context import current_frame,InvalidParameters
+    container=native[0]['analyst_estimates'].__self__
+    priorities=descriptor(container,'/analyst_estimates')[2]
+    frames=[]
+    @validate(_command_path='/analyst_estimates')
+    async def selected(self,symbol: str,period: str,provider: str,**kwargs):
+        frame=current_frame()
+        frames.append(frame)
+        chosen=self._get_provider(provider,'analyst_estimates',priorities)
+        await asyncio.sleep(0)
+        async def child():
+            with pytest.raises(InvalidParameters):
+                filter_inputs(provider_choices={'provider':chosen},standard_params={'symbol':symbol},extra_params={'period':period})
+        await asyncio.create_task(child())
+        assert frame.normalized['period']=='quarter'
+        output=filter_inputs(provider_choices={'provider':chosen},standard_params={'symbol':symbol},extra_params={'period':period})
+        assert output['extra_params']['period']=='quarter'
+        assert frame.normalized=={} and not frame.consumed
+    async def main():
+        await asyncio.gather(asyncio.create_task(selected(container,'MSFT','quarterly','fmp')),selected(container,'ORCL','quarterly','fmp'))
+        assert current_frame() is None
+    asyncio.run(main())
+    assert all(frame.raw=={} and frame.normalized=={} for frame in frames)
+
+
+def test_missing_only_nonperiodic_cache_stays_empty_until_configured_symbol(native,monkeypatch):
+    from openbb_core.app.static.utils.admission_context import current_frame
+    methods,runner,calls=native
+    runner.user_settings.defaults.commands['price_target']={'symbol':'MSFT'}
+    body=inspect.unwrap(methods['price_target'])
+    frames=[]
+    def observe(**kwargs):
+        frame=current_frame()
+        frames.append(frame)
+        assert frame.normalized=={} and frame.raw=={}
+        return filter_inputs(**kwargs)
+    monkeypatch.setitem(body.__globals__,'filter_inputs',observe)
+    methods['price_target'](provider='fmp')
+    assert calls[-1]['symbol']=='MSFT'
+    assert frames[0].normalized=={} and frames[0].raw=={}

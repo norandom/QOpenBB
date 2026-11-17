@@ -48,7 +48,10 @@
       "../../../artifacts/reviewed/fmp-expansion-a/a2-contract-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/contract-freeze-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/sdk-admission-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/sdk-admission-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/sdk-admission-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/sdk-period-followup.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-verification.json"
     ],
     "new_live_requests": 0,
     "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance.",
@@ -63,8 +66,20 @@
       "runtime_implemented": false,
       "emitter_exception_approved": true,
       "sdk_task_accepted": true,
-      "runtime_scope": "SDK accepted with dedicated registered variants; HTTP and joined production-adapter acceptance remain pending.",
-      "api_commit": "0c544ace4d177cc6ff833619ad520bf806b90d91"
+      "runtime_scope": "SDK prerequisite accepted after supplied-value alias correction; HTTP task 2.2 resumed, not yet accepted.",
+      "api_commit": "403323aee033dfcd30b7b24dda5f0f5efc35a339"
+    },
+    "sdk_followup": {
+      "status": "resolved",
+      "finding": "../../../artifacts/reviewed/fmp-expansion-a/sdk-period-followup.md",
+      "affected_tasks": [
+        "2.1",
+        "2.2"
+      ],
+      "reason": "Actual public SDK rejects quarterly for all six periodic variants before Container normalization; frozen query models normalize correctly.",
+      "correction": "fmp-expansion-a-sdk-alias-correction.md",
+      "review": "../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-review.md",
+      "verification": "../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-verification.json"
     }
   },
   "language": "en",

@@ -201,7 +201,9 @@
     "fmp-expansion-a/a1-contracts",
     "fmp-expansion-a/a2-contracts",
     "fmp-expansion-a/contract-freeze",
-    "fmp-expansion-a/sdk-admission"
+    "fmp-expansion-a/sdk-admission",
+    "fmp-expansion-a/sdk-period-followup",
+    "fmp-expansion-a/sdk-alias-correction"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -35782,6 +35784,30 @@
       "publishedSHA256": "9403cd490b4a53d7f9af0cef2f4f0d3866539196e755c5513656788715d5ecd5",
       "bytes": 2055,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.1/review-period-followup.md",
+      "sourceSHA256": "593b4e605b2746a7d6e871bc796e56375dec7b2903c9098f3c6120b8a9f6b3a4",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-period-followup.md",
+      "publishedSHA256": "593b4e605b2746a7d6e871bc796e56375dec7b2903c9098f3c6120b8a9f6b3a4",
+      "bytes": 2737,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/sdk-alias-repair/review.md",
+      "sourceSHA256": "e1a146425da62ff2b7838288c5f0b3094a9b5dab94e9cf29e714bbee3c2e96e8",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-alias-review.md",
+      "publishedSHA256": "e1a146425da62ff2b7838288c5f0b3094a9b5dab94e9cf29e714bbee3c2e96e8",
+      "bytes": 8807,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/sdk-alias-repair/accepted-verification.json",
+      "sourceSHA256": "231a88cf566c1ffa6fa7141d378c304c8bebcc067b3579f94984d08f7c56c82e",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-alias-verification.json",
+      "publishedSHA256": "231a88cf566c1ffa6fa7141d378c304c8bebcc067b3579f94984d08f7c56c82e",
+      "bytes": 852,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36506,8 +36532,8 @@
       "reason": "Only the independently reviewed allowlist is published; raw runtime, private state, and redundant scratch copies remain excluded."
     }
   ],
-  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending. Task 1.3 A2 offline contracts are independently accepted; production and live acceptance remain pending. Task 1.4 contract/admission architecture freeze is independently accepted; runtime admission and final emitter exception remain pending. Task 2.1 SDK admission is independently reviewed and passes the committed-source combined gate with five exact no-growth emitter exceptions; HTTP and production endpoint joins remain pending.",
-  "total_payload_bytes": 171338942,
+  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending. Task 1.3 A2 offline contracts are independently accepted; production and live acceptance remain pending. Task 1.4 contract/admission architecture freeze is independently accepted; runtime admission and final emitter exception remain pending. Task 2.1 SDK admission is independently reviewed and passes the committed-source combined gate with five exact no-growth emitter exceptions; HTTP and production endpoint joins remain pending. A later public-entry probe reopened task 2.1: quarterly value aliases fail before Container for six periodic variants; repair is pending and HTTP acceptance is paused. The supplied-value correction is now independently approved and task 2.1 re-accepted: 186 tests and committed-source 111-file gate passed at API403323aee033dfcd30b7b24dda5f0f5efc35a339. HTTP resumed; its acceptance remains pending.",
+  "total_payload_bytes": 171351338,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",
