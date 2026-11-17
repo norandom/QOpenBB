@@ -23,7 +23,7 @@
       "provider": "fmp",
       "label": "Company intelligence",
       "status": "open",
-      "outstanding": "Profile, peers, bounded historical capitalization and share statistics have source adapters; management, employee, compensation and broader company intelligence remain open. Batch A access and consumer acceptance remain unverified.",
+      "outstanding": "Bounded historical capitalization and share-statistics queries have accepted Batch A live API evidence. Management, employee, compensation and broader company intelligence remain open; access is installation- and query-scoped.",
       "documented": {
         "status": "verified",
         "proof": {
@@ -40,7 +40,7 @@
       "provider": "fmp",
       "label": "Markets",
       "status": "open",
-      "outstanding": "Daily histories and single-listing quote source adapters do not complete batches, sessions, intraday or adjustment variants. Batch A quote access and consumer acceptance remain unverified.",
+      "outstanding": "Batch A single-listing quote has scoped live API evidence. Batches, sessions, intraday and adjustment variants remain open; API acceptance does not establish quote widget behavior.",
       "documented": {
         "status": "verified",
         "proof": {
@@ -57,7 +57,7 @@
       "provider": "fmp",
       "label": "Financial analysis",
       "status": "open",
-      "outstanding": "Initial live API inputs are accepted; Batch A segment and statement-growth adapters are accepted offline. Batch A access and consumer acceptance, TTM and broader financial analysis remain open.",
+      "outstanding": "Batch A segment and statement-growth datasets have scoped live API comparisons. Browser acceptance, TTM and broader financial analysis remain open.",
       "documented": {
         "status": "verified",
         "proof": {
@@ -108,7 +108,7 @@
       "provider": "fmp",
       "label": "Expectations",
       "status": "open",
-      "outstanding": "Estimates, price-target events and target-consensus adapters are accepted offline. Batch A access and consumer acceptance, grades, partner datasets and DCF parameters remain open.",
+      "outstanding": "Batch A estimates, price-target events and consensus have scoped live API evidence. Broader broker/partner datasets and browser acceptance remain open.",
       "documented": {
         "status": "verified",
         "proof": {
@@ -748,13 +748,37 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "3d5f9e4efbf5c7b4b458e4e9bf303d7c113e327c9854fa3db10a199745ed1653"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "3d5f9e4efbf5c7b4b458e4e9bf303d7c113e327c9854fa3db10a199745ed1653",
+              "contract_sha256": "0bb9944968a7ab505d0ec339e0474e59e9a2e2ea46dad9173af1f33eb36b1dc2"
+            }
+          }
         },
         "widget": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/native-browser-verification.json",
+            "identity": {
+              "source_sha256": "3d5f9e4efbf5c7b4b458e4e9bf303d7c113e327c9854fa3db10a199745ed1653",
+              "contract_sha256": "0bb9944968a7ab505d0ec339e0474e59e9a2e2ea46dad9173af1f33eb36b1dc2",
+              "image_digest": "sha256:c0f6a96a6f069170ab455b821cb0b7fc7a0b766a86b90a2323bf47605f155e67"
+            }
+          }
         },
         "future_ai": {
           "status": "unknown"
@@ -797,10 +821,25 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "dc03f136c2cc349ae6004e77053b9420a91348834d127818e3b3b706d027403e"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "dc03f136c2cc349ae6004e77053b9420a91348834d127818e3b3b706d027403e",
+              "contract_sha256": "1b0e7550eab368bf554c1d6b29cb34f521611f73c25f4c504fa6cae5d1686e55"
+            }
+          }
         },
         "widget": {
           "status": "unknown"
@@ -846,10 +885,25 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "d03d3ddd942a2b857cda2ca8aa774c1dfa6aea99de852c2c215d308fffe25840"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "d03d3ddd942a2b857cda2ca8aa774c1dfa6aea99de852c2c215d308fffe25840",
+              "contract_sha256": "a3490680a2d56ec00fe64885fb419cbd25330aba3cf4df0f2e79aa7ffd70203a"
+            }
+          }
         },
         "widget": {
           "status": "unknown"
@@ -895,10 +949,25 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "3d80c658c78a0326356e7605cad5b64c93ebd161f88b683323da6759f9ffcc04"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "3d80c658c78a0326356e7605cad5b64c93ebd161f88b683323da6759f9ffcc04",
+              "contract_sha256": "a56dda014bfd4d9e8b687171c240fa6e00098a0f5ebbf4e451f5e58a2d6471ef"
+            }
+          }
         },
         "widget": {
           "status": "unknown"
@@ -944,13 +1013,37 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "894167fe1938b1a4916c66ff992adc669ecb836f2e43c1828054e4c738d614dd"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "894167fe1938b1a4916c66ff992adc669ecb836f2e43c1828054e4c738d614dd",
+              "contract_sha256": "c41ae20ce74339a91dbb4842455735b9924a31dd89781cc54cfa0c4564259eb0"
+            }
+          }
         },
         "widget": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/native-browser-verification.json",
+            "identity": {
+              "source_sha256": "894167fe1938b1a4916c66ff992adc669ecb836f2e43c1828054e4c738d614dd",
+              "contract_sha256": "c41ae20ce74339a91dbb4842455735b9924a31dd89781cc54cfa0c4564259eb0",
+              "image_digest": "sha256:c0f6a96a6f069170ab455b821cb0b7fc7a0b766a86b90a2323bf47605f155e67"
+            }
+          }
         },
         "future_ai": {
           "status": "unknown"
@@ -993,10 +1086,25 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "4f178556b64bc5007a5f7638750d88ec719596bad634a7b9a5afde93b25c03c4"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "4f178556b64bc5007a5f7638750d88ec719596bad634a7b9a5afde93b25c03c4",
+              "contract_sha256": "7d81754faf214a9b23e4e41be3d20917b916c30ff4ccbad70774a0bd7f1f3204"
+            }
+          }
         },
         "widget": {
           "status": "unknown"
@@ -1042,10 +1150,25 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "82355dad781c97a27031d672020132a915746debe60a7901739eed316b8fb3d8"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "82355dad781c97a27031d672020132a915746debe60a7901739eed316b8fb3d8",
+              "contract_sha256": "9a5e5ad3e0025136a6f189ae917b95c7ca20671138caaa361faed656c4434c60"
+            }
+          }
         },
         "widget": {
           "status": "unknown"
@@ -1091,13 +1214,37 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "ceab68c552e3d8dbee4ed84dbfe588f5ad2c553f4385bdce9cae1f871bdd4966"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "ceab68c552e3d8dbee4ed84dbfe588f5ad2c553f4385bdce9cae1f871bdd4966",
+              "contract_sha256": "73a0da110c16f66b1f3e412cf3ee481b544bbc106de616b79f5f41891fb975b3"
+            }
+          }
         },
         "widget": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/native-browser-verification.json",
+            "identity": {
+              "source_sha256": "ceab68c552e3d8dbee4ed84dbfe588f5ad2c553f4385bdce9cae1f871bdd4966",
+              "contract_sha256": "73a0da110c16f66b1f3e412cf3ee481b544bbc106de616b79f5f41891fb975b3",
+              "image_digest": "sha256:c0f6a96a6f069170ab455b821cb0b7fc7a0b766a86b90a2323bf47605f155e67"
+            }
+          }
         },
         "future_ai": {
           "status": "unknown"
@@ -1140,13 +1287,37 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "c87c483995aa8eadfd5c2025681fd198a5ac801c0757a42d13ff3c6a6c295ade"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "c87c483995aa8eadfd5c2025681fd198a5ac801c0757a42d13ff3c6a6c295ade",
+              "contract_sha256": "a57ed5b25d0a9531dde89b5b84fbc1be466f15e4ef4d9b659a1504739ffe7ca3"
+            }
+          }
         },
         "widget": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/native-browser-verification.json",
+            "identity": {
+              "source_sha256": "c87c483995aa8eadfd5c2025681fd198a5ac801c0757a42d13ff3c6a6c295ade",
+              "contract_sha256": "a57ed5b25d0a9531dde89b5b84fbc1be466f15e4ef4d9b659a1504739ffe7ca3",
+              "image_digest": "sha256:c0f6a96a6f069170ab455b821cb0b7fc7a0b766a86b90a2323bf47605f155e67"
+            }
+          }
         },
         "future_ai": {
           "status": "unknown"
@@ -1189,10 +1360,25 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "6b70722ff73c4c1d987f554147b9c70f4a56181326852f3010364574a5f39a98"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "6b70722ff73c4c1d987f554147b9c70f4a56181326852f3010364574a5f39a98",
+              "contract_sha256": "b3d0fd7008caf985db7e6c4728ec4634962dc966e3209c9efe7c537b8fc335bd"
+            }
+          }
         },
         "widget": {
           "status": "unknown"
@@ -1238,10 +1424,25 @@
           }
         },
         "account_access": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "46f9ab24fdb5956f3a4fe77e925fb1f0ba8169928d1be5997fce33c6f426cca7"
+            }
+          }
         },
         "real_data": {
-          "status": "unknown"
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+            "identity": {
+              "source_sha256": "46f9ab24fdb5956f3a4fe77e925fb1f0ba8169928d1be5997fce33c6f426cca7",
+              "contract_sha256": "e75b33285bf626da4e1233c8a0f459d963581687d7bacf3b02e7822adaff2bcb"
+            }
+          }
         },
         "widget": {
           "status": "unknown"

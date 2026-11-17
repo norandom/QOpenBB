@@ -1,10 +1,12 @@
 """Batch A consumer inputs preserve the accepted native financial contracts."""
 import json
+from hashlib import sha256
 from datetime import date
 from pathlib import Path
 
 import pytest
 from qopenbb_ci.catalog_financial import resolve
+from qopenbb_data.financial_catalog import _descriptor, build_financial_catalog
 
 ROOT = Path(__file__).resolve().parents[2]
 BATCH_A = {
@@ -76,7 +78,7 @@ def test_batch_a_generated_contract_retains_metadata_units_and_consumer_associat
 
 
 @pytest.mark.parametrize("dataset_id", BATCH_A)
-def test_batch_a_coverage_separates_adapter_evidence_from_unverified_consumers(dataset_id):
+def test_batch_a_coverage_binds_scoped_live_evidence_to_actual_source_and_contract(dataset_id):
     model, module, _ = BATCH_A[dataset_id]
     coverage = read(ROOT / "docs/reference/provider-coverage.json")
     record, = [item for item in coverage["datasets"] if (item["model"], item["provider"]) == (model, "fmp")]
@@ -87,6 +89,61 @@ def test_batch_a_coverage_separates_adapter_evidence_from_unverified_consumers(d
     verification = read(ROOT / record["states"]["adapted"]["proof"]["evidence_path"])
     assert record["states"]["adapted"]["proof"]["identity"]["source_sha256"] == verification["model_sha256"]
     assert "installed" not in record["states"]
-    for state in ("account_access", "real_data", "widget", "future_ai"):
-        assert record["states"].get(state, {"status": "unknown"}) == {"status": "unknown"}
+    source = ROOT / f"vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/{module}.py"
+    source_hash = sha256(source.read_bytes()).hexdigest()
+    assert record["states"]["adapted"]["proof"]["identity"]["source_sha256"] == source_hash
+    _, _, route = BATCH_A[dataset_id]
+    document = read(ROOT / "contracts/openapi.json")
+    path = "/api/v1/equity/" + route
+    descriptor = _descriptor(document, path, "get", document["paths"][path]["get"], document["paths"][path])
+    live_path = "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json"
+    accepted = read(ROOT / live_path)
+    assert accepted["task"] == "5.2" and accepted["status"] == "VERIFIED"
+    for state in ("account_access", "real_data"):
+        proof = record["states"][state]["proof"]
+        assert record["states"][state]["status"] == "verified"
+        assert proof["evidence_path"] == live_path
+        assert proof["identity"]["source_sha256"] == source_hash
+    assert record["states"]["real_data"]["proof"]["identity"]["contract_sha256"] == descriptor["contract_sha256"]["fmp"]
+    assert record["states"]["future_ai"] == {"status": "unknown"}
+
+
+def test_batch_a_widget_acceptance_is_four_scoped_models_and_stales_on_another_image():
+    selected = {"AnalystEstimates", "RevenueGeographic", "IncomeStatementGrowth", "EquityQuote"}
+    coverage = read(ROOT / "docs/reference/provider-coverage.json")
+    models = {model: module for model, module, _ in BATCH_A.values()}
+    records = {item["model"]: item for item in coverage["datasets"]
+               if item["provider"] == "fmp" and item["model"] in models}
+    assert len(records) == 11
+    assert all(record["states"]["future_ai"] == {"status": "unknown"} for record in records.values())
+    browser_path = "artifacts/reviewed/fmp-expansion-a/native-browser-verification.json"
+    if not (ROOT / browser_path).exists():
+        assert all(record["states"]["widget"] == {"status": "unknown"} for record in records.values())
+        return  # No browser proof is fabricated to exercise the accepted-image branch.
+    browser = read(ROOT / browser_path)
+    assert browser["task"] == "5.3" and browser["status"] == "VERIFIED"
+    image = browser["spec_updates"]["local_candidate_images"]["data-api"]
+    assert {model for model, record in records.items() if record["states"]["widget"]["status"] == "verified"} == selected
+    for model, record in records.items():
+        if model not in selected:
+            assert record["states"]["widget"] == {"status": "unknown"}
+            continue
+        proof = record["states"]["widget"]["proof"]
+        assert proof["evidence_path"] == browser_path
+        assert proof["identity"] == {**record["states"]["real_data"]["proof"]["identity"], "image_digest": image}
+    document = read(ROOT / "contracts/openapi.json")
+    hashes = {model: {"fmp": sha256((ROOT / f"vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/{module}.py").read_bytes()).hexdigest()}
+              for model, module in models.items()}
+    def projected(runtime_image):
+        result = build_financial_catalog(document, coverage, source_revision=browser["api_commit"],
+            generation_revision=browser["api_commit"], generated_at="2026-11-17T00:00:00+00:00",
+            source_hashes=hashes, image_digest=runtime_image)
+        return {item["dataset"]: item["coverage"]["fmp"] for item in result["datasets"] if item["dataset"] in models}
+    current = projected(image)
+    other = projected("sha256:" + ("0" if image != "sha256:" + "0" * 64 else "1") * 64)
+    for model in models:
+        assert current[model]["account_access"]["status"] == other[model]["account_access"]["status"] == "verified"
+        assert current[model]["real_data"]["status"] == other[model]["real_data"]["status"] == "verified"
+        assert other[model]["widget"]["status"] == ("stale" if model in selected else "unknown")
+        assert current[model]["widget"]["status"] == ("verified" if model in selected else "unknown")
 
