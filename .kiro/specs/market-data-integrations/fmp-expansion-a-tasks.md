@@ -100,7 +100,7 @@ All other tasks are serial. Contract/schema/pin changes invalidate affected proo
   - _Depends: 2.1_
   - _Requirements: 2.4, 5.1, 5.2, 5.3, 6.3, 7.1, 7.2, 7.3_
 
-- [ ] 2.3 Accept joined prerequisites before adapter fan-out (1-2 hours)
+- [x] 2.3 Accept joined prerequisites before adapter fan-out (1-2 hours)
   - Exercise SDK, HTTP and raw Fetcher surfaces with frozen test variants and shared baseline variants.
   - Include unsupported explicit defaults, invalid configured defaults, repeated scalars and no-I/O request counters.
   - Done: independent Astra review plus fresh focused admission/compatibility checks pass at recorded revisions.
@@ -338,3 +338,5 @@ Task review must PASS independently before maintained tasks/spec metadata are wr
 2.1 re-accepted 2026-11-17: [independent alias correction review](../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-review.md), 186 fresh SDK/freeze tests, all six periodic variants through actual Fetcher execution, and final 111-file combined gate with zero errors/violations. API corrective commit 403323aee033dfcd30b7b24dda5f0f5efc35a339. Five unchanged emitter exceptions rebound to that revision. Historical failed alias evidence remains preserved; generic historical audit refresh is disclosed in the review. HTTP task 2.2 resumes without acceptance.
 
 2.2 accepted 2026-11-17: [HTTP admission review](../../../artifacts/reviewed/fmp-expansion-a/http-admission-review.md), 399 joined checks plus 12 independent probes and clean 111-file combined gate. Uses original installed query classes and concrete native controls, rejects invalid raw inputs before extraction, and forwards canonical effective values through copied scopes. Fixture command-router import timing is isolated before dedicated registry patching. Task 2.3 joins these prerequisites before adapter fan-out.
+
+2.3 accepted 2026-11-17: [prerequisite join review](../../../artifacts/reviewed/fmp-expansion-a/admission-join-review.md), 255 shared checks plus 22 independent probes, exact eleven dedicated native models and frozen schemas, unchanged admission interfaces and clean 111-file gate. Adapter fan-out may proceed; actual production registration/result annotation joins remain tasks 4.1/4.2.

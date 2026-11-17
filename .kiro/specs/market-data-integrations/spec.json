@@ -40,7 +40,7 @@
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
     "implemented_operations": 0,
-    "accepted_tasks": 6,
+    "accepted_tasks": 7,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
@@ -53,7 +53,9 @@
       "../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/http-admission-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/http-admission-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/http-admission-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/admission-join-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/admission-join-verification.json"
     ],
     "new_live_requests": 0,
     "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance.",
@@ -68,9 +70,11 @@
       "runtime_implemented": true,
       "emitter_exception_approved": true,
       "sdk_task_accepted": true,
-      "runtime_scope": "SDK and HTTP prerequisites accepted; joined gate task 2.3 remains pending before adapter fan-out.",
+      "runtime_scope": "SDK, HTTP and direct Fetcher dedicated prerequisite join accepted; adapter fan-out authorized by existing task approval. Production registration remains pending.",
       "api_commit": "403323aee033dfcd30b7b24dda5f0f5efc35a339",
-      "http_task_accepted": true
+      "http_task_accepted": true,
+      "join_task_accepted": true,
+      "interfaces_frozen": true
     },
     "sdk_followup": {
       "status": "resolved",
