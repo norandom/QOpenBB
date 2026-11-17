@@ -1,0 +1,110 @@
+[
+  {
+    "model": "historical_dividends",
+    "raw": {
+      "date": "2026-01-01",
+      "symbol": "AAPL",
+      "dividend": 0,
+      "adjDividend": null,
+      "declarationDate": "",
+      "recordDate": "2026-01-02",
+      "paymentDate": "2026-01-10",
+      "yield": 0
+    },
+    "requested_symbol": "AAPL",
+    "expected": {
+      "symbol": "AAPL",
+      "ex_dividend_date": "2026-01-01",
+      "amount": 0.0,
+      "declaration_date": null,
+      "record_date": "2026-01-02",
+      "payment_date": "2026-01-10",
+      "adjusted_amount": null,
+      "dividend_yield": 0.0,
+      "frequency": null
+    }
+  },
+  {
+    "model": "historical_splits",
+    "raw": {
+      "date": "2026-01-01",
+      "symbol": "AAPL",
+      "numerator": 1,
+      "denominator": 10
+    },
+    "requested_symbol": "AAPL",
+    "expected": {
+      "date": "2026-01-01",
+      "numerator": 1.0,
+      "denominator": 10.0,
+      "split_ratio": null,
+      "symbol": "AAPL"
+    }
+  },
+  {
+    "model": "calendar_earnings",
+    "raw": {
+      "date": "2026-01-01",
+      "symbol": "AAPL",
+      "epsActual": 0,
+      "epsEstimated": 1,
+      "revenueActual": null,
+      "revenueEstimated": 100,
+      "lastUpdated": "2026-01-02"
+    },
+    "requested_symbol": null,
+    "expected": {
+      "report_date": "2026-01-01",
+      "symbol": "AAPL",
+      "name": null,
+      "eps_previous": null,
+      "eps_consensus": 1.0,
+      "eps_actual": 0.0,
+      "revenue_consensus": 100.0,
+      "revenue_actual": null,
+      "last_updated": "2026-01-02"
+    }
+  },
+  {
+    "model": "calendar_dividend",
+    "raw": {
+      "date": "2026-01-01",
+      "symbol": "AAPL",
+      "dividend": 0,
+      "adjDividend": null,
+      "declarationDate": "",
+      "recordDate": "2026-01-02",
+      "paymentDate": "2026-01-10",
+      "yield": 0
+    },
+    "requested_symbol": null,
+    "expected": {
+      "ex_dividend_date": "2026-01-01",
+      "symbol": "AAPL",
+      "amount": 0.0,
+      "name": null,
+      "record_date": "2026-01-02",
+      "payment_date": "2026-01-10",
+      "declaration_date": null,
+      "adjusted_amount": null,
+      "dividend_yield": 0.0,
+      "frequency": null
+    }
+  },
+  {
+    "model": "calendar_splits",
+    "raw": {
+      "date": "2026-01-01",
+      "symbol": "AAPL",
+      "numerator": 1,
+      "denominator": 10
+    },
+    "requested_symbol": null,
+    "expected": {
+      "date": "2026-01-01",
+      "symbol": "AAPL",
+      "numerator": 1.0,
+      "denominator": 10.0
+    }
+  }
+]

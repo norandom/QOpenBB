@@ -1,0 +1,45 @@
+{
+  "accessed": "2026-11-17",
+  "authenticated_fmp_calls": 0,
+  "decision": "Raw yield is percentage points; serialize dividend_yield as raw / 100, preserving zero and null separately.",
+  "evidence_class": "Independent numerical corroboration of both published endpoint examples; not inferred from retained adapter math.",
+  "historical_dividends": {
+    "example_source": "https://site.financialmodelingprep.com/developer/docs/stable/dividends-company",
+    "listing": "AAPL",
+    "event_date": "2026-05-11",
+    "raw_yield": 0.3587535875358754,
+    "cash_dividends": [0.26, 0.26, 0.26, 0.27],
+    "cash_unit": "USD/share",
+    "cash_source": "https://investor.apple.com/dividend-history/default.aspx",
+    "close": 292.68,
+    "close_unit": "USD/share",
+    "close_source": "https://www.schwab.wallst.com/ser/perfMonitor/public/dmFetch.asp?doctag=SERP_C_1210_20260513&feed=7276&pageID=C",
+    "formula": "100 * (0.26 + 0.26 + 0.26 + 0.27) / 292.68",
+    "expected_public_ratio": 0.003587535875358754
+  },
+  "calendar_dividend": {
+    "example_source": "https://site.financialmodelingprep.com/developer/docs/stable/dividends-calendar",
+    "listing": "5871.TW",
+    "event_date": "2026-07-29",
+    "adjusted_amount": 5.8,
+    "unadjusted_amount": 5.916,
+    "raw_yield": 5.155555555555556,
+    "close": 112.5,
+    "reference_unit": "TWD/share",
+    "close_source": "https://www.twse.com.tw/rwd/en/afterTrading/STOCK_DAY?date=20260701&stockNo=5871&response=json",
+    "formula": "100 * 5.8 / 112.5",
+    "expected_public_ratio": 0.051555555555555556,
+    "reference_capture": "Controller retrieved primary TWSE JSON; worker web open was unavailable. Independent reviewer must inspect retained controller capture."
+  },
+  "unknown": [
+    "FMP pages name yield but do not explicitly declare its scale or annualization methodology.",
+    "Numerical agreement supports scale; it does not establish a universal trailing/forward basis or price-date convention.",
+    "Currency is not supplied on these rows. Reference-example currency does not authorize assigning a currency to every provider row.",
+    "Adjustment methodology remains unknown. Missing adjusted amount is null, never copied from unadjusted amount."
+  ],
+  "split_orientation": {
+    "source": "https://site.financialmodelingprep.com/developer/docs/stable/splits-calendar",
+    "decision": "numerator=new shares, denominator=old shares; 1/10 means reverse split; never invert or reprice history",
+    "historical_source": "https://site.financialmodelingprep.com/developer/docs/stable/splits-company"
+  }
+}

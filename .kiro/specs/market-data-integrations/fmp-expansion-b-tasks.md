@@ -17,7 +17,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Boundary: Controller · source recovery, .kiro/complexity/ and budgets_
   - _Requirements: 8.1, 8.5_
 
-- [ ] 1.2 Freeze event queries, rows and financial meanings
+- [x] 1.2 Freeze event queries, rows and financial meanings
   - Compare the five retained models with the owned standards and dated official docs. Freeze validation/serialization schemas, stable URL parameters, one-call limits, effective filters, source identity and row attribution. Include multi-day boundaries, duplicate event dates and reported vs estimated values.
   - Record the unit evidence for dividend yield, adjusted-amount nullability and split orientation. A missing unit decision blocks the affected adapter. Record clipping order and caps and distinguish a locally empty historical window from an empty acquisition.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.

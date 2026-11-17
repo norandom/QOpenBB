@@ -1,0 +1,775 @@
+{
+  "status": "FROZEN_FOR_REVIEW",
+  "endpoint": "earnings-calendar",
+  "source_identity": "fmp/stable/earnings-calendar",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "start_date": {
+          "format": "date",
+          "title": "Start Date",
+          "type": "string"
+        },
+        "end_date": {
+          "format": "date",
+          "title": "End Date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ],
+      "title": "FrozenCalendarEarningsQuery",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "start_date": {
+          "format": "date",
+          "title": "Start Date",
+          "type": "string"
+        },
+        "end_date": {
+          "format": "date",
+          "title": "End Date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ],
+      "title": "FrozenCalendarEarningsQuery",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "additionalProperties": true,
+      "properties": {
+        "date": {
+          "description": "The date of the earnings report.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name of the entity.",
+          "title": "Name"
+        },
+        "eps_previous": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The earnings-per-share from the same previously reported period.",
+          "title": "Eps Previous"
+        },
+        "epsEstimated": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The analyst conesus earnings-per-share estimate.",
+          "title": "Epsestimated"
+        },
+        "epsActual": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The actual earnings per share announced.",
+          "title": "Epsactual"
+        },
+        "revenueEstimated": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The revenue forecast consensus.",
+          "title": "Revenueestimated"
+        },
+        "revenueActual": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The actual reported revenue.",
+          "title": "Revenueactual"
+        },
+        "lastUpdated": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The date the data was updated last.",
+          "title": "Lastupdated"
+        }
+      },
+      "required": [
+        "date",
+        "symbol"
+      ],
+      "title": "FrozenCalendarEarningsData",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": true,
+      "properties": {
+        "report_date": {
+          "description": "The date of the earnings report.",
+          "format": "date",
+          "title": "Report Date",
+          "type": "string"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name of the entity.",
+          "title": "Name"
+        },
+        "eps_previous": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The earnings-per-share from the same previously reported period.",
+          "title": "Eps Previous"
+        },
+        "eps_consensus": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The analyst conesus earnings-per-share estimate.",
+          "title": "Eps Consensus"
+        },
+        "eps_actual": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The actual earnings per share announced.",
+          "title": "Eps Actual"
+        },
+        "revenue_consensus": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The revenue forecast consensus.",
+          "title": "Revenue Consensus"
+        },
+        "revenue_actual": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The actual reported revenue.",
+          "title": "Revenue Actual"
+        },
+        "last_updated": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The date the data was updated last.",
+          "title": "Last Updated"
+        }
+      },
+      "required": [
+        "report_date",
+        "symbol"
+      ],
+      "title": "FrozenCalendarEarningsData",
+      "type": "object"
+    }
+  },
+  "retained_baseline": {
+    "query": {
+      "validation": {
+        "additionalProperties": true,
+        "description": "FMP Earnings Calendar Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs#earnings-calendar",
+        "properties": {
+          "start_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Start date of the data, in YYYY-MM-DD format.",
+            "title": "Start Date"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "End date of the data, in YYYY-MM-DD format.",
+            "title": "End Date"
+          }
+        },
+        "title": "FMPCalendarEarningsQueryParams",
+        "type": "object"
+      },
+      "serialization": {
+        "additionalProperties": true,
+        "description": "FMP Earnings Calendar Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs#earnings-calendar",
+        "properties": {
+          "start_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Start date of the data, in YYYY-MM-DD format.",
+            "title": "Start Date"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "End date of the data, in YYYY-MM-DD format.",
+            "title": "End Date"
+          }
+        },
+        "title": "FMPCalendarEarningsQueryParams",
+        "type": "object"
+      }
+    },
+    "data": {
+      "validation": {
+        "additionalProperties": true,
+        "description": "FMP Earnings Calendar Data.",
+        "properties": {
+          "reportDate": {
+            "description": "The date of the earnings report.",
+            "format": "date",
+            "title": "Reportdate",
+            "type": "string"
+          },
+          "symbol": {
+            "description": "Symbol representing the entity requested in the data.",
+            "title": "Symbol",
+            "type": "string"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Name of the entity.",
+            "title": "Name"
+          },
+          "epsPrevious": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The earnings-per-share from the same previously reported period.",
+            "title": "Epsprevious"
+          },
+          "epsConsensus": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The analyst conesus earnings-per-share estimate.",
+            "title": "Epsconsensus"
+          },
+          "epsActual": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The actual earnings per share announced.",
+            "title": "Epsactual"
+          },
+          "revenueConsensus": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The revenue forecast consensus.",
+            "title": "Revenueconsensus"
+          },
+          "revenueActual": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The actual reported revenue.",
+            "title": "Revenueactual"
+          },
+          "lastUpdated": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The date the data was updated last.",
+            "title": "Lastupdated"
+          }
+        },
+        "required": [
+          "reportDate",
+          "symbol"
+        ],
+        "title": "FMPCalendarEarningsData",
+        "type": "object"
+      },
+      "serialization": {
+        "additionalProperties": true,
+        "description": "FMP Earnings Calendar Data.",
+        "properties": {
+          "report_date": {
+            "description": "The date of the earnings report.",
+            "format": "date",
+            "title": "Report Date",
+            "type": "string"
+          },
+          "symbol": {
+            "description": "Symbol representing the entity requested in the data.",
+            "title": "Symbol",
+            "type": "string"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Name of the entity.",
+            "title": "Name"
+          },
+          "eps_previous": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The earnings-per-share from the same previously reported period.",
+            "title": "Eps Previous"
+          },
+          "eps_consensus": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The analyst conesus earnings-per-share estimate.",
+            "title": "Eps Consensus"
+          },
+          "eps_actual": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The actual earnings per share announced.",
+            "title": "Eps Actual"
+          },
+          "revenue_consensus": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The revenue forecast consensus.",
+            "title": "Revenue Consensus"
+          },
+          "revenue_actual": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The actual reported revenue.",
+            "title": "Revenue Actual"
+          },
+          "last_updated": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The date the data was updated last.",
+            "title": "Last Updated"
+          }
+        },
+        "required": [
+          "report_date",
+          "symbol"
+        ],
+        "title": "FMPCalendarEarningsData",
+        "type": "object"
+      }
+    },
+    "aliases": {
+      "report_date": "date",
+      "eps_consensus": "epsEstimated",
+      "eps_actual": "epsActual",
+      "revenue_actual": "revenueActual",
+      "revenue_consensus": "revenueEstimated",
+      "last_updated": "lastUpdated"
+    },
+    "sha256": "c14722cd521d58bfca3e730ce04e622cb932f735538e86085f7c092da345f7fc"
+  },
+  "fields": {
+    "report_date": {
+      "source": "date",
+      "required": true,
+      "nullable": false,
+      "definition": "The date of the earnings report.",
+      "unit": "civil_date",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "symbol": {
+      "source": "symbol",
+      "required": true,
+      "nullable": false,
+      "definition": "Symbol representing the entity requested in the data.",
+      "unit": null,
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "name": {
+      "source": "name",
+      "required": false,
+      "nullable": true,
+      "definition": "Name of the entity.",
+      "unit": null,
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "eps_previous": {
+      "source": "eps_previous",
+      "required": false,
+      "nullable": true,
+      "definition": "The earnings-per-share from the same previously reported period.",
+      "unit": "currency_per_share",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "eps_consensus": {
+      "source": "epsEstimated",
+      "required": false,
+      "nullable": true,
+      "definition": "The analyst conesus earnings-per-share estimate.",
+      "unit": "currency_per_share",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "estimate",
+      "availability": "unknown"
+    },
+    "eps_actual": {
+      "source": "epsActual",
+      "required": false,
+      "nullable": true,
+      "definition": "The actual earnings per share announced.",
+      "unit": "currency_per_share",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "revenue_consensus": {
+      "source": "revenueEstimated",
+      "required": false,
+      "nullable": true,
+      "definition": "The revenue forecast consensus.",
+      "unit": "currency",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "estimate",
+      "availability": "unknown"
+    },
+    "revenue_actual": {
+      "source": "revenueActual",
+      "required": false,
+      "nullable": true,
+      "definition": "The actual reported revenue.",
+      "unit": "currency",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "last_updated": {
+      "source": "lastUpdated",
+      "required": false,
+      "nullable": true,
+      "definition": "The date the data was updated last.",
+      "unit": "civil_date",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    }
+  },
+  "row_admission": {
+    "dates": "Strict YYYY-MM-DD civil dates; blank optional dates become null; missing/blank event date rejects.",
+    "symbols": "Require nonblank market-wide symbol; history binds exact normalized requested symbol, fills absent identity, rejects supplied foreign identity.",
+    "duplicates": "Retain separate source rows even on the same event date; no sorting or deduplication.",
+    "numbers": "Finite supplied numbers; missing stays null where nullable, zero stays zero.",
+    "split_components": "Historical components nullable but positive finite when supplied; calendar components both required; never infer missing values.",
+    "yield": "raw percentage points / 100 for non-null values including zero; sample-level unit evidence in unit_evidence.json"
+  },
+  "wire": {
+    "method": "GET",
+    "origin": "https://financialmodelingprep.com",
+    "path": "/stable/earnings-calendar",
+    "parameters": [
+      "from",
+      "to"
+    ],
+    "public_to_wire": {
+      "start_date": "from",
+      "end_date": "to"
+    },
+    "local_only": []
+  },
+  "procedural_bounds": {
+    "max_calls": 1,
+    "pagination": false,
+    "retries": false,
+    "max_inclusive_days": 7,
+    "max_symbols": 0,
+    "required_market_wide": true,
+    "reject_unknown_or_repeated_scalar": true,
+    "reject_bool_int_and_explicit_null": true,
+    "validate_all_rows_before_clip": true,
+    "preserve_source_order": true,
+    "deduplicate": false,
+    "row_cap": 250,
+    "clip_order": "validate entire acquisition; preserve source order; clip",
+    "cap_basis": "local product policy"
+  },
+  "metadata": {
+    "effective_query": "canonical admitted parameters including defaults; no credentials",
+    "retrieved_at": "UTC retrieval timestamp, runtime only",
+    "field_origin": "per fields entry",
+    "bounds": [
+      "requested_limit",
+      "effective_limit",
+      "returned_count",
+      "truncated",
+      "completeness"
+    ],
+    "completeness": "unknown; a full page proves no exhaustive history",
+    "truncated": "true only when acquired valid rows exceed local cap; otherwise unknown upstream completeness",
+    "empty_acquisition": "safe transport empty-data outcome",
+    "empty_local_filter": "successful annotated empty results; acquisition was nonempty",
+    "malformed": "reject before clipping, including malformed row beyond cap"
+  },
+  "transport": {
+    "helper": "get_data with with_provenance=True, typed safe errors; no direct HTTP/chunk loop",
+    "allow_empty": false,
+    "error_body": "discard provider text and authenticated URL; preserve typed category only",
+    "timeout": "inherit accepted transport configuration, no task-specific override",
+    "timeout_and_connection": "typed failures, no retry or stale-success substitution",
+    "http_provider": "explicit fmp; no implicit provider fallback",
+    "bounds_origin": "one call and product result caps, not documented vendor account maxima"
+  },
+  "limitations": [
+    "Currency and adjustment methodology unknown.",
+    "No confirmed status, fiscal period or timezone inferred.",
+    "Product caps do not assert provider maxima or account entitlement."
+  ]
+}

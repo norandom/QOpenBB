@@ -1,0 +1,392 @@
+{
+  "status": "FROZEN_FOR_REVIEW",
+  "endpoint": "splits-calendar",
+  "source_identity": "fmp/stable/splits-calendar",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "start_date": {
+          "format": "date",
+          "title": "Start Date",
+          "type": "string"
+        },
+        "end_date": {
+          "format": "date",
+          "title": "End Date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ],
+      "title": "FrozenCalendarSplitsQuery",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "start_date": {
+          "format": "date",
+          "title": "Start Date",
+          "type": "string"
+        },
+        "end_date": {
+          "format": "date",
+          "title": "End Date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ],
+      "title": "FrozenCalendarSplitsQuery",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "additionalProperties": true,
+      "properties": {
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "numerator": {
+          "description": "New shares",
+          "exclusiveMinimum": 0,
+          "title": "Numerator",
+          "type": "number"
+        },
+        "denominator": {
+          "description": "Old shares",
+          "exclusiveMinimum": 0,
+          "title": "Denominator",
+          "type": "number"
+        }
+      },
+      "required": [
+        "date",
+        "symbol",
+        "numerator",
+        "denominator"
+      ],
+      "title": "FrozenCalendarSplitsData",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": true,
+      "properties": {
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "numerator": {
+          "description": "New shares",
+          "exclusiveMinimum": 0,
+          "title": "Numerator",
+          "type": "number"
+        },
+        "denominator": {
+          "description": "Old shares",
+          "exclusiveMinimum": 0,
+          "title": "Denominator",
+          "type": "number"
+        }
+      },
+      "required": [
+        "date",
+        "symbol",
+        "numerator",
+        "denominator"
+      ],
+      "title": "FrozenCalendarSplitsData",
+      "type": "object"
+    }
+  },
+  "retained_baseline": {
+    "query": {
+      "validation": {
+        "additionalProperties": true,
+        "description": "FMP Calendar Splits Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs#splits-calendar",
+        "properties": {
+          "start_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Start date of the data, in YYYY-MM-DD format.",
+            "title": "Start Date"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "End date of the data, in YYYY-MM-DD format.",
+            "title": "End Date"
+          }
+        },
+        "title": "FMPCalendarSplitsQueryParams",
+        "type": "object"
+      },
+      "serialization": {
+        "additionalProperties": true,
+        "description": "FMP Calendar Splits Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs#splits-calendar",
+        "properties": {
+          "start_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Start date of the data, in YYYY-MM-DD format.",
+            "title": "Start Date"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "End date of the data, in YYYY-MM-DD format.",
+            "title": "End Date"
+          }
+        },
+        "title": "FMPCalendarSplitsQueryParams",
+        "type": "object"
+      }
+    },
+    "data": {
+      "validation": {
+        "additionalProperties": true,
+        "description": "FMP Calendar Splits Data.",
+        "properties": {
+          "date": {
+            "description": "The date of the data.",
+            "format": "date",
+            "title": "Date",
+            "type": "string"
+          },
+          "symbol": {
+            "description": "Symbol representing the entity requested in the data.",
+            "title": "Symbol",
+            "type": "string"
+          },
+          "numerator": {
+            "description": "Numerator of the stock split.",
+            "title": "Numerator",
+            "type": "number"
+          },
+          "denominator": {
+            "description": "Denominator of the stock split.",
+            "title": "Denominator",
+            "type": "number"
+          }
+        },
+        "required": [
+          "date",
+          "symbol",
+          "numerator",
+          "denominator"
+        ],
+        "title": "FMPCalendarSplitsData",
+        "type": "object"
+      },
+      "serialization": {
+        "additionalProperties": true,
+        "description": "FMP Calendar Splits Data.",
+        "properties": {
+          "date": {
+            "description": "The date of the data.",
+            "format": "date",
+            "title": "Date",
+            "type": "string"
+          },
+          "symbol": {
+            "description": "Symbol representing the entity requested in the data.",
+            "title": "Symbol",
+            "type": "string"
+          },
+          "numerator": {
+            "description": "Numerator of the stock split.",
+            "title": "Numerator",
+            "type": "number"
+          },
+          "denominator": {
+            "description": "Denominator of the stock split.",
+            "title": "Denominator",
+            "type": "number"
+          }
+        },
+        "required": [
+          "date",
+          "symbol",
+          "numerator",
+          "denominator"
+        ],
+        "title": "FMPCalendarSplitsData",
+        "type": "object"
+      }
+    },
+    "aliases": {},
+    "sha256": "3354ebf3b4669bdde75c7e3996b3c1c8776b564866bdc695bd0eda2eb84c8138"
+  },
+  "fields": {
+    "date": {
+      "source": "date",
+      "required": true,
+      "nullable": false,
+      "definition": "The date of the data.",
+      "unit": "civil_date",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "symbol": {
+      "source": "symbol",
+      "required": true,
+      "nullable": false,
+      "definition": "Symbol representing the entity requested in the data.",
+      "unit": null,
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "numerator": {
+      "source": "numerator",
+      "required": true,
+      "nullable": false,
+      "definition": "Numerator of the stock split.",
+      "unit": "shares",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "denominator": {
+      "source": "denominator",
+      "required": true,
+      "nullable": false,
+      "definition": "Denominator of the stock split.",
+      "unit": "shares",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    }
+  },
+  "row_admission": {
+    "dates": "Strict YYYY-MM-DD civil dates; blank optional dates become null; missing/blank event date rejects.",
+    "symbols": "Require nonblank market-wide symbol; history binds exact normalized requested symbol, fills absent identity, rejects supplied foreign identity.",
+    "duplicates": "Retain separate source rows even on the same event date; no sorting or deduplication.",
+    "numbers": "Finite supplied numbers; missing stays null where nullable, zero stays zero.",
+    "split_components": "Historical components nullable but positive finite when supplied; calendar components both required; never infer missing values.",
+    "yield": "raw percentage points / 100 for non-null values including zero; sample-level unit evidence in unit_evidence.json"
+  },
+  "wire": {
+    "method": "GET",
+    "origin": "https://financialmodelingprep.com",
+    "path": "/stable/splits-calendar",
+    "parameters": [
+      "from",
+      "to"
+    ],
+    "public_to_wire": {
+      "start_date": "from",
+      "end_date": "to"
+    },
+    "local_only": []
+  },
+  "procedural_bounds": {
+    "max_calls": 1,
+    "pagination": false,
+    "retries": false,
+    "max_inclusive_days": 7,
+    "max_symbols": 0,
+    "required_market_wide": true,
+    "reject_unknown_or_repeated_scalar": true,
+    "reject_bool_int_and_explicit_null": true,
+    "validate_all_rows_before_clip": true,
+    "preserve_source_order": true,
+    "deduplicate": false,
+    "row_cap": 250,
+    "clip_order": "validate entire acquisition; preserve source order; clip",
+    "cap_basis": "local product policy"
+  },
+  "metadata": {
+    "effective_query": "canonical admitted parameters including defaults; no credentials",
+    "retrieved_at": "UTC retrieval timestamp, runtime only",
+    "field_origin": "per fields entry",
+    "bounds": [
+      "requested_limit",
+      "effective_limit",
+      "returned_count",
+      "truncated",
+      "completeness"
+    ],
+    "completeness": "unknown; a full page proves no exhaustive history",
+    "truncated": "true only when acquired valid rows exceed local cap; otherwise unknown upstream completeness",
+    "empty_acquisition": "safe transport empty-data outcome",
+    "empty_local_filter": "successful annotated empty results; acquisition was nonempty",
+    "malformed": "reject before clipping, including malformed row beyond cap"
+  },
+  "transport": {
+    "helper": "get_data with with_provenance=True, typed safe errors; no direct HTTP/chunk loop",
+    "allow_empty": false,
+    "error_body": "discard provider text and authenticated URL; preserve typed category only",
+    "timeout": "inherit accepted transport configuration, no task-specific override",
+    "timeout_and_connection": "typed failures, no retry or stale-success substitution",
+    "http_provider": "explicit fmp; no implicit provider fallback",
+    "bounds_origin": "one call and product result caps, not documented vendor account maxima"
+  },
+  "limitations": [
+    "Currency and adjustment methodology unknown.",
+    "Civil dates are separate event roles; no timezone inferred.",
+    "Product caps do not assert provider maxima or account entitlement."
+  ]
+}

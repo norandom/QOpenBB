@@ -1,0 +1,865 @@
+{
+  "status": "FROZEN_FOR_REVIEW",
+  "endpoint": "dividends",
+  "source_identity": "fmp/stable/dividends",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start Date"
+        },
+        "end_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End Date"
+        },
+        "limit": {
+          "default": 20,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FrozenHistoricalDividendsQuery",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start Date"
+        },
+        "end_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End Date"
+        },
+        "limit": {
+          "default": 20,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FrozenHistoricalDividendsQuery",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "additionalProperties": true,
+      "properties": {
+        "symbol": {
+          "description": "Exact company listing identity.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "date": {
+          "description": "The ex-dividend date - the date on which the stock begins trading without rights to the dividend.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "dividend": {
+          "description": "The dividend amount per share.",
+          "title": "Dividend",
+          "type": "number"
+        },
+        "declarationDate": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Declaration date of the historical dividends.",
+          "title": "Declarationdate"
+        },
+        "recordDate": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Record date of the historical dividends.",
+          "title": "Recorddate"
+        },
+        "paymentDate": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Payment date of the historical dividends.",
+          "title": "Paymentdate"
+        },
+        "adjDividend": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Provider adjusted cash dividend per share; adjustment methodology unknown.",
+          "title": "Adjdividend"
+        },
+        "yield": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Dividend yield represented by the payment.",
+          "title": "Yield",
+          "x-frontend_multiply": 100,
+          "x-unit_measurement": "percent"
+        },
+        "frequency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Frequency of the payment.",
+          "title": "Frequency"
+        }
+      },
+      "required": [
+        "symbol",
+        "date",
+        "dividend"
+      ],
+      "title": "FrozenHistoricalDividendsData",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": true,
+      "properties": {
+        "symbol": {
+          "description": "Exact company listing identity.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "ex_dividend_date": {
+          "description": "The ex-dividend date - the date on which the stock begins trading without rights to the dividend.",
+          "format": "date",
+          "title": "Ex Dividend Date",
+          "type": "string"
+        },
+        "amount": {
+          "description": "The dividend amount per share.",
+          "title": "Amount",
+          "type": "number"
+        },
+        "declaration_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Declaration date of the historical dividends.",
+          "title": "Declaration Date"
+        },
+        "record_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Record date of the historical dividends.",
+          "title": "Record Date"
+        },
+        "payment_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Payment date of the historical dividends.",
+          "title": "Payment Date"
+        },
+        "adjusted_amount": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Provider adjusted cash dividend per share; adjustment methodology unknown.",
+          "title": "Adjusted Amount"
+        },
+        "dividend_yield": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Dividend yield represented by the payment.",
+          "title": "Dividend Yield",
+          "x-frontend_multiply": 100,
+          "x-unit_measurement": "percent"
+        },
+        "frequency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Frequency of the payment.",
+          "title": "Frequency"
+        }
+      },
+      "required": [
+        "symbol",
+        "ex_dividend_date",
+        "amount"
+      ],
+      "title": "FrozenHistoricalDividendsData",
+      "type": "object"
+    }
+  },
+  "retained_baseline": {
+    "query": {
+      "validation": {
+        "additionalProperties": true,
+        "description": "FMP Historical Dividends Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs#dividends-company",
+        "properties": {
+          "symbol": {
+            "description": "Symbol to get data for.",
+            "title": "Symbol",
+            "type": "string"
+          },
+          "start_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Start date of the data, in YYYY-MM-DD format.",
+            "title": "Start Date"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "End date of the data, in YYYY-MM-DD format.",
+            "title": "End Date"
+          },
+          "limit": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Return N most recent payments.",
+            "title": "Limit"
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "title": "FMPHistoricalDividendsQueryParams",
+        "type": "object"
+      },
+      "serialization": {
+        "additionalProperties": true,
+        "description": "FMP Historical Dividends Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs#dividends-company",
+        "properties": {
+          "symbol": {
+            "description": "Symbol to get data for.",
+            "title": "Symbol",
+            "type": "string"
+          },
+          "start_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Start date of the data, in YYYY-MM-DD format.",
+            "title": "Start Date"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "End date of the data, in YYYY-MM-DD format.",
+            "title": "End Date"
+          },
+          "limit": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Return N most recent payments.",
+            "title": "Limit"
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "title": "FMPHistoricalDividendsQueryParams",
+        "type": "object"
+      }
+    },
+    "data": {
+      "validation": {
+        "additionalProperties": true,
+        "description": "FMP Historical Dividends Data.",
+        "properties": {
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Symbol representing the entity requested in the data.",
+            "title": "Symbol"
+          },
+          "exDividendDate": {
+            "description": "The ex-dividend date - the date on which the stock begins trading without rights to the dividend.",
+            "format": "date",
+            "title": "Exdividenddate",
+            "type": "string"
+          },
+          "amount": {
+            "description": "The dividend amount per share.",
+            "title": "Amount",
+            "type": "number"
+          },
+          "declarationDate": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Declaration date of the historical dividends.",
+            "title": "Declarationdate"
+          },
+          "recordDate": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Record date of the historical dividends.",
+            "title": "Recorddate"
+          },
+          "paymentDate": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Payment date of the historical dividends.",
+            "title": "Paymentdate"
+          },
+          "adjustedAmount": {
+            "description": "Split-adjusted dividend amount.",
+            "title": "Adjustedamount",
+            "type": "number"
+          },
+          "dividendYield": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Dividend yield represented by the payment.",
+            "title": "Dividendyield",
+            "x-frontend_multiply": 100,
+            "x-unit_measurement": "percent"
+          },
+          "frequency": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Frequency of the payment.",
+            "title": "Frequency"
+          }
+        },
+        "required": [
+          "exDividendDate",
+          "amount",
+          "adjustedAmount"
+        ],
+        "title": "FMPHistoricalDividendsData",
+        "type": "object"
+      },
+      "serialization": {
+        "additionalProperties": true,
+        "description": "FMP Historical Dividends Data.",
+        "properties": {
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Symbol representing the entity requested in the data.",
+            "title": "Symbol"
+          },
+          "ex_dividend_date": {
+            "description": "The ex-dividend date - the date on which the stock begins trading without rights to the dividend.",
+            "format": "date",
+            "title": "Ex Dividend Date",
+            "type": "string"
+          },
+          "amount": {
+            "description": "The dividend amount per share.",
+            "title": "Amount",
+            "type": "number"
+          },
+          "declaration_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Declaration date of the historical dividends.",
+            "title": "Declaration Date"
+          },
+          "record_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Record date of the historical dividends.",
+            "title": "Record Date"
+          },
+          "payment_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Payment date of the historical dividends.",
+            "title": "Payment Date"
+          },
+          "adjusted_amount": {
+            "description": "Split-adjusted dividend amount.",
+            "title": "Adjusted Amount",
+            "type": "number"
+          },
+          "dividend_yield": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Dividend yield represented by the payment.",
+            "title": "Dividend Yield",
+            "x-frontend_multiply": 100,
+            "x-unit_measurement": "percent"
+          },
+          "frequency": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Frequency of the payment.",
+            "title": "Frequency"
+          }
+        },
+        "required": [
+          "ex_dividend_date",
+          "amount",
+          "adjusted_amount"
+        ],
+        "title": "FMPHistoricalDividendsData",
+        "type": "object"
+      }
+    },
+    "aliases": {
+      "ex_dividend_date": "date",
+      "amount": "dividend",
+      "adjusted_amount": "adjDividend",
+      "dividend_yield": "yield",
+      "record_date": "recordDate",
+      "payment_date": "paymentDate",
+      "declaration_date": "declarationDate"
+    },
+    "sha256": "88dd04a6d4945b655a824e8f3c7d38f3cfd506a2243dfc9fb2ab7c97842eb12b"
+  },
+  "fields": {
+    "symbol": {
+      "source": "symbol or exact requested listing when absent",
+      "required": true,
+      "nullable": false,
+      "definition": "Symbol representing the entity requested in the data.",
+      "unit": null,
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "ex_dividend_date": {
+      "source": "date",
+      "required": true,
+      "nullable": false,
+      "definition": "The ex-dividend date - the date on which the stock begins trading without rights to the dividend.",
+      "unit": "civil_date",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "amount": {
+      "source": "dividend",
+      "required": true,
+      "nullable": false,
+      "definition": "The dividend amount per share.",
+      "unit": "currency_per_share",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "declaration_date": {
+      "source": "declarationDate",
+      "required": false,
+      "nullable": true,
+      "definition": "Declaration date of the historical dividends.",
+      "unit": "civil_date",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "record_date": {
+      "source": "recordDate",
+      "required": false,
+      "nullable": true,
+      "definition": "Record date of the historical dividends.",
+      "unit": "civil_date",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "payment_date": {
+      "source": "paymentDate",
+      "required": false,
+      "nullable": true,
+      "definition": "Payment date of the historical dividends.",
+      "unit": "civil_date",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "adjusted_amount": {
+      "source": "adjDividend",
+      "required": false,
+      "nullable": true,
+      "definition": "Split-adjusted dividend amount.",
+      "unit": "currency_per_share",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown",
+      "decision": "Preserve absent/null; retained historical required field is deliberately relaxed."
+    },
+    "dividend_yield": {
+      "source": "yield",
+      "required": false,
+      "nullable": true,
+      "definition": "Dividend yield represented by the payment.",
+      "unit": "ratio",
+      "scale": 1,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_calculation",
+      "availability": "unknown",
+      "source_unit": "percentage_points",
+      "decision": "Divide non-null raw value by 100; preserve zero. Example-level independent unit corroboration; annualization and price basis remain unknown."
+    },
+    "frequency": {
+      "source": "frequency",
+      "required": false,
+      "nullable": true,
+      "definition": "Frequency of the payment.",
+      "unit": null,
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    }
+  },
+  "row_admission": {
+    "dates": "Strict YYYY-MM-DD civil dates; blank optional dates become null; missing/blank event date rejects.",
+    "symbols": "Require nonblank market-wide symbol; history binds exact normalized requested symbol, fills absent identity, rejects supplied foreign identity.",
+    "duplicates": "Retain separate source rows even on the same event date; no sorting or deduplication.",
+    "numbers": "Finite supplied numbers; missing stays null where nullable, zero stays zero.",
+    "split_components": "Historical components nullable but positive finite when supplied; calendar components both required; never infer missing values.",
+    "yield": "raw percentage points / 100 for non-null values including zero; sample-level unit evidence in unit_evidence.json"
+  },
+  "wire": {
+    "method": "GET",
+    "origin": "https://financialmodelingprep.com",
+    "path": "/stable/dividends",
+    "parameters": [
+      "symbol",
+      "limit"
+    ],
+    "public_to_wire": {},
+    "local_only": [
+      "start_date",
+      "end_date"
+    ]
+  },
+  "procedural_bounds": {
+    "max_calls": 1,
+    "pagination": false,
+    "retries": false,
+    "max_inclusive_days": null,
+    "max_symbols": 1,
+    "required_market_wide": false,
+    "reject_unknown_or_repeated_scalar": true,
+    "reject_bool_int_and_explicit_null": true,
+    "validate_all_rows_before_clip": true,
+    "preserve_source_order": true,
+    "deduplicate": false,
+    "row_cap": 100,
+    "clip_order": "validate entire acquisition; preserve source order; clip; local ex-date filter",
+    "cap_basis": "requested upstream limit, then local defensive limit"
+  },
+  "metadata": {
+    "effective_query": "canonical admitted parameters including defaults; no credentials",
+    "retrieved_at": "UTC retrieval timestamp, runtime only",
+    "field_origin": "per fields entry",
+    "bounds": [
+      "requested_limit",
+      "effective_limit",
+      "returned_count",
+      "truncated",
+      "completeness"
+    ],
+    "completeness": "unknown; a full page proves no exhaustive history",
+    "truncated": "true only when acquired valid rows exceed local cap; otherwise unknown upstream completeness",
+    "empty_acquisition": "safe transport empty-data outcome",
+    "empty_local_filter": "successful annotated empty results; acquisition was nonempty",
+    "malformed": "reject before clipping, including malformed row beyond cap"
+  },
+  "transport": {
+    "helper": "get_data with with_provenance=True, typed safe errors; no direct HTTP/chunk loop",
+    "allow_empty": false,
+    "error_body": "discard provider text and authenticated URL; preserve typed category only",
+    "timeout": "inherit accepted transport configuration, no task-specific override",
+    "timeout_and_connection": "typed failures, no retry or stale-success substitution",
+    "http_provider": "explicit fmp; no implicit provider fallback",
+    "bounds_origin": "one call and product result caps, not documented vendor account maxima"
+  },
+  "limitations": [
+    "Currency and adjustment methodology unknown.",
+    "Civil dates are separate event roles; no timezone inferred.",
+    "Product caps do not assert provider maxima or account entitlement."
+  ]
+}

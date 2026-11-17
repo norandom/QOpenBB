@@ -1,0 +1,446 @@
+{
+  "status": "FROZEN_FOR_REVIEW",
+  "endpoint": "splits",
+  "source_identity": "fmp/stable/splits",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FrozenHistoricalSplitsQuery",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FrozenHistoricalSplitsQuery",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "additionalProperties": true,
+      "properties": {
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "numerator": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "New shares",
+          "title": "Numerator"
+        },
+        "denominator": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Old shares",
+          "title": "Denominator"
+        },
+        "split_ratio": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Split ratio.",
+          "title": "Split Ratio"
+        },
+        "symbol": {
+          "description": "Exact company listing identity.",
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "symbol"
+      ],
+      "title": "FrozenHistoricalSplitsData",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": true,
+      "properties": {
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "numerator": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "New shares",
+          "title": "Numerator"
+        },
+        "denominator": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Old shares",
+          "title": "Denominator"
+        },
+        "split_ratio": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Split ratio.",
+          "title": "Split Ratio"
+        },
+        "symbol": {
+          "description": "Exact company listing identity.",
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "symbol"
+      ],
+      "title": "FrozenHistoricalSplitsData",
+      "type": "object"
+    }
+  },
+  "retained_baseline": {
+    "query": {
+      "validation": {
+        "additionalProperties": true,
+        "description": "FMP Historical Splits Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs#splits-company",
+        "properties": {
+          "symbol": {
+            "description": "Symbol to get data for.",
+            "title": "Symbol",
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "title": "FMPHistoricalSplitsQueryParams",
+        "type": "object"
+      },
+      "serialization": {
+        "additionalProperties": true,
+        "description": "FMP Historical Splits Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs#splits-company",
+        "properties": {
+          "symbol": {
+            "description": "Symbol to get data for.",
+            "title": "Symbol",
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "title": "FMPHistoricalSplitsQueryParams",
+        "type": "object"
+      }
+    },
+    "data": {
+      "validation": {
+        "additionalProperties": true,
+        "description": "FMP Historical Splits Data.",
+        "properties": {
+          "date": {
+            "description": "The date of the data.",
+            "format": "date",
+            "title": "Date",
+            "type": "string"
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Numerator of the split.",
+            "title": "Numerator"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Denominator of the split.",
+            "title": "Denominator"
+          },
+          "splitRatio": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Split ratio.",
+            "title": "Splitratio"
+          }
+        },
+        "required": [
+          "date"
+        ],
+        "title": "FMPHistoricalSplitsData",
+        "type": "object"
+      },
+      "serialization": {
+        "additionalProperties": true,
+        "description": "FMP Historical Splits Data.",
+        "properties": {
+          "date": {
+            "description": "The date of the data.",
+            "format": "date",
+            "title": "Date",
+            "type": "string"
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Numerator of the split.",
+            "title": "Numerator"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Denominator of the split.",
+            "title": "Denominator"
+          },
+          "split_ratio": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Split ratio.",
+            "title": "Split Ratio"
+          }
+        },
+        "required": [
+          "date"
+        ],
+        "title": "FMPHistoricalSplitsData",
+        "type": "object"
+      }
+    },
+    "aliases": {},
+    "sha256": "070a03e8ee634c41743eb2e0da179af404a28fdaaf83ad214c0b98f4631011f5"
+  },
+  "fields": {
+    "date": {
+      "source": "date",
+      "required": true,
+      "nullable": false,
+      "definition": "The date of the data.",
+      "unit": "civil_date",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "numerator": {
+      "source": "numerator",
+      "required": false,
+      "nullable": true,
+      "definition": "Numerator of the split.",
+      "unit": "shares",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "denominator": {
+      "source": "denominator",
+      "required": false,
+      "nullable": true,
+      "definition": "Denominator of the split.",
+      "unit": "shares",
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "split_ratio": {
+      "source": "split_ratio",
+      "required": false,
+      "nullable": true,
+      "definition": "Split ratio.",
+      "unit": null,
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown"
+    },
+    "symbol": {
+      "source": "symbol or exact requested listing when absent",
+      "required": true,
+      "nullable": false,
+      "unit": null,
+      "scale": null,
+      "currency": null,
+      "period_basis": null,
+      "value_origin": "provider_observation",
+      "availability": "unknown",
+      "definition": "Company listing identity; reject a foreign supplied symbol."
+    }
+  },
+  "row_admission": {
+    "dates": "Strict YYYY-MM-DD civil dates; blank optional dates become null; missing/blank event date rejects.",
+    "symbols": "Require nonblank market-wide symbol; history binds exact normalized requested symbol, fills absent identity, rejects supplied foreign identity.",
+    "duplicates": "Retain separate source rows even on the same event date; no sorting or deduplication.",
+    "numbers": "Finite supplied numbers; missing stays null where nullable, zero stays zero.",
+    "split_components": "Historical components nullable but positive finite when supplied; calendar components both required; never infer missing values.",
+    "yield": "raw percentage points / 100 for non-null values including zero; sample-level unit evidence in unit_evidence.json"
+  },
+  "wire": {
+    "method": "GET",
+    "origin": "https://financialmodelingprep.com",
+    "path": "/stable/splits",
+    "parameters": [
+      "symbol"
+    ],
+    "public_to_wire": {},
+    "local_only": []
+  },
+  "procedural_bounds": {
+    "max_calls": 1,
+    "pagination": false,
+    "retries": false,
+    "max_inclusive_days": null,
+    "max_symbols": 1,
+    "required_market_wide": false,
+    "reject_unknown_or_repeated_scalar": true,
+    "reject_bool_int_and_explicit_null": true,
+    "validate_all_rows_before_clip": true,
+    "preserve_source_order": true,
+    "deduplicate": false,
+    "row_cap": 100,
+    "clip_order": "validate entire acquisition; preserve source order; clip",
+    "cap_basis": "local product policy"
+  },
+  "metadata": {
+    "effective_query": "canonical admitted parameters including defaults; no credentials",
+    "retrieved_at": "UTC retrieval timestamp, runtime only",
+    "field_origin": "per fields entry",
+    "bounds": [
+      "requested_limit",
+      "effective_limit",
+      "returned_count",
+      "truncated",
+      "completeness"
+    ],
+    "completeness": "unknown; a full page proves no exhaustive history",
+    "truncated": "true only when acquired valid rows exceed local cap; otherwise unknown upstream completeness",
+    "empty_acquisition": "safe transport empty-data outcome",
+    "empty_local_filter": "successful annotated empty results; acquisition was nonempty",
+    "malformed": "reject before clipping, including malformed row beyond cap"
+  },
+  "transport": {
+    "helper": "get_data with with_provenance=True, typed safe errors; no direct HTTP/chunk loop",
+    "allow_empty": false,
+    "error_body": "discard provider text and authenticated URL; preserve typed category only",
+    "timeout": "inherit accepted transport configuration, no task-specific override",
+    "timeout_and_connection": "typed failures, no retry or stale-success substitution",
+    "http_provider": "explicit fmp; no implicit provider fallback",
+    "bounds_origin": "one call and product result caps, not documented vendor account maxima"
+  },
+  "limitations": [
+    "Currency and adjustment methodology unknown.",
+    "Civil dates are separate event roles; no timezone inferred.",
+    "Product caps do not assert provider maxima or account entitlement."
+  ]
+}
