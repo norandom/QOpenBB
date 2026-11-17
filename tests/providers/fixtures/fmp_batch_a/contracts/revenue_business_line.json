@@ -1,0 +1,466 @@
+{
+  "model_key": "RevenueBusinessLine",
+  "endpoint": "revenue-product-segmentation",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "period": {
+          "default": "annual",
+          "description": "Fiscal frequency; fixed structure=flat, first 1000 flattened rows, possibly splitting a fiscal period.",
+          "enum": [
+            "annual",
+            "quarter"
+          ],
+          "title": "Period",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPRevenueBusinessLineQueryParams",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "period": {
+          "default": "annual",
+          "description": "Fiscal frequency; fixed structure=flat, first 1000 flattened rows, possibly splitting a fiscal period.",
+          "enum": [
+            "annual",
+            "quarter"
+          ],
+          "title": "Period",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPRevenueBusinessLineQueryParams",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "additionalProperties": true,
+      "description": "FMP Revenue By Business Line Data.",
+      "properties": {
+        "periodEnding": {
+          "description": "The end date of the reporting period.",
+          "format": "date",
+          "title": "Periodending",
+          "type": "string"
+        },
+        "fiscalPeriod": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal period of the reporting period.",
+          "title": "Fiscalperiod"
+        },
+        "fiscalYear": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal year of the reporting period.",
+          "title": "Fiscalyear"
+        },
+        "filingDate": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The filing date of the report.",
+          "title": "Filingdate"
+        },
+        "businessLine": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The business line represented by the revenue data.",
+          "title": "Businessline"
+        },
+        "revenue": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "description": "The total revenue attributed to the business line.",
+          "title": "Revenue",
+          "x-unit_measurement": "currency"
+        }
+      },
+      "required": [
+        "periodEnding",
+        "revenue"
+      ],
+      "title": "FMPRevenueBusinessLineData",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": true,
+      "description": "FMP Revenue By Business Line Data.",
+      "properties": {
+        "period_ending": {
+          "description": "The end date of the reporting period.",
+          "format": "date",
+          "title": "Period Ending",
+          "type": "string"
+        },
+        "fiscal_period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal period of the reporting period.",
+          "title": "Fiscal Period"
+        },
+        "fiscal_year": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal year of the reporting period.",
+          "title": "Fiscal Year"
+        },
+        "filing_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The filing date of the report.",
+          "title": "Filing Date"
+        },
+        "business_line": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The business line represented by the revenue data.",
+          "title": "Business Line"
+        },
+        "revenue": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "description": "The total revenue attributed to the business line.",
+          "title": "Revenue",
+          "x-unit_measurement": "currency"
+        }
+      },
+      "required": [
+        "period_ending",
+        "revenue"
+      ],
+      "title": "FMPRevenueBusinessLineData",
+      "type": "object"
+    }
+  },
+  "query_annotation": {
+    "provider_policy": "explicit",
+    "procedural_bounds": {
+      "max_calendar_years": null,
+      "max_symbols": 1
+    },
+    "response_policy": {
+      "mode": "clip",
+      "max_rows": 1000,
+      "limit_parameter": null
+    },
+    "runtime_properties": [
+      "bounds",
+      "effective_query",
+      "retrieved_at"
+    ]
+  },
+  "data_annotation": {
+    "fields": {
+      "period_ending": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "reported fiscal period; discrete versus year-to-date duration unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": "filing_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {}
+      },
+      "fiscal_period": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "reported fiscal period; discrete versus year-to-date duration unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": "filing_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {}
+      },
+      "fiscal_year": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "reported fiscal period; discrete versus year-to-date duration unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": "filing_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {}
+      },
+      "filing_date": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "reported fiscal period; discrete versus year-to-date duration unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": "filing_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {}
+      },
+      "business_line": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "reported fiscal period; discrete versus year-to-date duration unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": "filing_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {}
+      },
+      "revenue": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "reported fiscal period; discrete versus year-to-date duration unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": "filing_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {}
+      }
+    },
+    "runtime_properties": [
+      "fields.availability",
+      "retrieved_at",
+      "effective_query",
+      "bounds"
+    ],
+    "dynamic_fields": false
+  },
+  "canonical_fields": [
+    "period_ending",
+    "fiscal_period",
+    "fiscal_year",
+    "filing_date",
+    "business_line",
+    "revenue"
+  ],
+  "retained_aliases": {},
+  "accepted_validation_aliases": {
+    "period_ending": {
+      "canonical": "period_ending",
+      "generated_schema_alias": "periodEnding",
+      "source_aliases": [],
+      "serialization": "period_ending"
+    },
+    "fiscal_period": {
+      "canonical": "fiscal_period",
+      "generated_schema_alias": "fiscalPeriod",
+      "source_aliases": [],
+      "serialization": "fiscal_period"
+    },
+    "fiscal_year": {
+      "canonical": "fiscal_year",
+      "generated_schema_alias": "fiscalYear",
+      "source_aliases": [],
+      "serialization": "fiscal_year"
+    },
+    "filing_date": {
+      "canonical": "filing_date",
+      "generated_schema_alias": "filingDate",
+      "source_aliases": [],
+      "serialization": "filing_date"
+    },
+    "business_line": {
+      "canonical": "business_line",
+      "generated_schema_alias": "businessLine",
+      "source_aliases": [],
+      "serialization": "business_line"
+    },
+    "revenue": {
+      "canonical": "revenue",
+      "generated_schema_alias": "revenue",
+      "source_aliases": [],
+      "serialization": "revenue"
+    }
+  },
+  "source_references": [
+    "https://site.financialmodelingprep.com/developer/docs/stable/revenue-product-segmentation"
+  ],
+  "documentation_checked": "2026-11-17",
+  "limitations": [
+    "Retained schema has no currency: reportedCurrency cannot be added. Unknown currency is disclosed.",
+    "Keep exact labels, source order and duplicate labels across parsed rows. No reconciliation or disjoint/exhaustive taxonomy claim. Null required revenue fails; no row dropping.",
+    "Approved request caps are local conservative policies, not verified FMP maxima. One upstream call; live entitlement and consumer acceptance unverified."
+  ],
+  "compatibility": {
+    "public_field_union": "existing standard plus retained FMP Data; no added fields",
+    "query_change": "new FMP variant: one required symbol, strict extras and approved bounded defaults",
+    "incompatibilities": []
+  },
+  "source_recovery": {
+    "member": "openbb_fmp-1.6.1/openbb_fmp/models/revenue_business_line.py",
+    "sha256": "b30886d058e7556d7a2ce6211a677faec9e79273774a3352f1066cfa4f1c9b4b",
+    "recovery_file": "recovery/revenue_business_line.py",
+    "archive_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517",
+    "notices": "../source_manifest.json#/notices"
+  },
+  "documentation_evidence": {
+    "parameter_status": "official examples confirm forwarded spellings; approved caps are local policy",
+    "live_calls": 0,
+    "response_schema_source": "retained archive declarations plus installed native standard; no live fixture claims"
+  },
+  "effective_aliases": {},
+  "date_contracts": {
+    "period_ending": {
+      "required": true,
+      "nullable": false
+    },
+    "filing_date": {
+      "required": false,
+      "nullable": true
+    }
+  }
+}

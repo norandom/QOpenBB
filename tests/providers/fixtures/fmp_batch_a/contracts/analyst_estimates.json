@@ -1,0 +1,1473 @@
+{
+  "model_key": "AnalystEstimates",
+  "endpoint": "analyst-estimates",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "period": {
+          "default": "annual",
+          "description": "Forecast fiscal frequency; quarterly is accepted as an alias.",
+          "enum": [
+            "annual",
+            "quarter"
+          ],
+          "title": "Period",
+          "type": "string"
+        },
+        "limit": {
+          "default": 20,
+          "description": "Maximum returned forecast rows; one upstream request.",
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "page": {
+          "default": 0,
+          "description": "Explicit provider page; total completeness remains unknown.",
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Page",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPAnalystEstimatesQueryParams",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "period": {
+          "default": "annual",
+          "description": "Forecast fiscal frequency; quarterly is accepted as an alias.",
+          "enum": [
+            "annual",
+            "quarter"
+          ],
+          "title": "Period",
+          "type": "string"
+        },
+        "limit": {
+          "default": 20,
+          "description": "Maximum returned forecast rows; one upstream request.",
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "page": {
+          "default": 0,
+          "description": "Explicit provider page; total completeness remains unknown.",
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Page",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPAnalystEstimatesQueryParams",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "additionalProperties": true,
+      "description": "FMP Analyst Estimates Data.",
+      "properties": {
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "estimatedRevenueLow": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated revenue low.",
+          "title": "Estimatedrevenuelow"
+        },
+        "estimatedRevenueHigh": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated revenue high.",
+          "title": "Estimatedrevenuehigh"
+        },
+        "estimatedRevenueAvg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated revenue average.",
+          "title": "Estimatedrevenueavg"
+        },
+        "estimatedSgaExpenseLow": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated SGA expense low.",
+          "title": "Estimatedsgaexpenselow"
+        },
+        "estimatedSgaExpenseHigh": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated SGA expense high.",
+          "title": "Estimatedsgaexpensehigh"
+        },
+        "estimatedSgaExpenseAvg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated SGA expense average.",
+          "title": "Estimatedsgaexpenseavg"
+        },
+        "estimatedEbitdaLow": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBITDA low.",
+          "title": "Estimatedebitdalow"
+        },
+        "estimatedEbitdaHigh": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBITDA high.",
+          "title": "Estimatedebitdahigh"
+        },
+        "estimatedEbitdaAvg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBITDA average.",
+          "title": "Estimatedebitdaavg"
+        },
+        "estimatedEbitLow": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBIT low.",
+          "title": "Estimatedebitlow"
+        },
+        "estimatedEbitHigh": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBIT high.",
+          "title": "Estimatedebithigh"
+        },
+        "estimatedEbitAvg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBIT average.",
+          "title": "Estimatedebitavg"
+        },
+        "estimatedNetIncomeLow": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated net income low.",
+          "title": "Estimatednetincomelow"
+        },
+        "estimatedNetIncomeHigh": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated net income high.",
+          "title": "Estimatednetincomehigh"
+        },
+        "estimatedNetIncomeAvg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated net income average.",
+          "title": "Estimatednetincomeavg"
+        },
+        "estimatedEpsAvg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EPS average.",
+          "title": "Estimatedepsavg"
+        },
+        "estimatedEpsHigh": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EPS high.",
+          "title": "Estimatedepshigh"
+        },
+        "estimatedEpsLow": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EPS low.",
+          "title": "Estimatedepslow"
+        },
+        "numberAnalystEstimatedRevenue": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Number of analysts who estimated revenue.",
+          "title": "Numberanalystestimatedrevenue"
+        },
+        "numberAnalystsEstimatedEps": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Number of analysts who estimated EPS.",
+          "title": "Numberanalystsestimatedeps"
+        }
+      },
+      "required": [
+        "symbol",
+        "date"
+      ],
+      "title": "FMPAnalystEstimatesData",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": true,
+      "description": "FMP Analyst Estimates Data.",
+      "properties": {
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "estimated_revenue_low": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated revenue low.",
+          "title": "Estimated Revenue Low"
+        },
+        "estimated_revenue_high": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated revenue high.",
+          "title": "Estimated Revenue High"
+        },
+        "estimated_revenue_avg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated revenue average.",
+          "title": "Estimated Revenue Avg"
+        },
+        "estimated_sga_expense_low": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated SGA expense low.",
+          "title": "Estimated Sga Expense Low"
+        },
+        "estimated_sga_expense_high": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated SGA expense high.",
+          "title": "Estimated Sga Expense High"
+        },
+        "estimated_sga_expense_avg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated SGA expense average.",
+          "title": "Estimated Sga Expense Avg"
+        },
+        "estimated_ebitda_low": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBITDA low.",
+          "title": "Estimated Ebitda Low"
+        },
+        "estimated_ebitda_high": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBITDA high.",
+          "title": "Estimated Ebitda High"
+        },
+        "estimated_ebitda_avg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBITDA average.",
+          "title": "Estimated Ebitda Avg"
+        },
+        "estimated_ebit_low": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBIT low.",
+          "title": "Estimated Ebit Low"
+        },
+        "estimated_ebit_high": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBIT high.",
+          "title": "Estimated Ebit High"
+        },
+        "estimated_ebit_avg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EBIT average.",
+          "title": "Estimated Ebit Avg"
+        },
+        "estimated_net_income_low": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated net income low.",
+          "title": "Estimated Net Income Low"
+        },
+        "estimated_net_income_high": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated net income high.",
+          "title": "Estimated Net Income High"
+        },
+        "estimated_net_income_avg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated net income average.",
+          "title": "Estimated Net Income Avg"
+        },
+        "estimated_eps_avg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EPS average.",
+          "title": "Estimated Eps Avg"
+        },
+        "estimated_eps_high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EPS high.",
+          "title": "Estimated Eps High"
+        },
+        "estimated_eps_low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated EPS low.",
+          "title": "Estimated Eps Low"
+        },
+        "number_analyst_estimated_revenue": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Number of analysts who estimated revenue.",
+          "title": "Number Analyst Estimated Revenue"
+        },
+        "number_analysts_estimated_eps": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Number of analysts who estimated EPS.",
+          "title": "Number Analysts Estimated Eps"
+        }
+      },
+      "required": [
+        "symbol",
+        "date"
+      ],
+      "title": "FMPAnalystEstimatesData",
+      "type": "object"
+    }
+  },
+  "query_annotation": {
+    "provider_policy": "explicit",
+    "procedural_bounds": {
+      "max_calendar_years": null,
+      "max_symbols": 1
+    },
+    "response_policy": {
+      "mode": "clip",
+      "max_rows": null,
+      "limit_parameter": "limit"
+    },
+    "runtime_properties": [
+      "bounds",
+      "effective_query",
+      "retrieved_at"
+    ]
+  },
+  "data_annotation": {
+    "fields": {
+      "symbol": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "date": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_revenue_low": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_revenue_high": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_revenue_avg": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_sga_expense_low": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_sga_expense_high": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_sga_expense_avg": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_ebitda_low": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_ebitda_high": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_ebitda_avg": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_ebit_low": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_ebit_high": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_ebit_avg": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_net_income_low": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_net_income_high": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_net_income_avg": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_eps_avg": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_eps_high": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "estimated_eps_low": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "number_analyst_estimated_revenue": {
+        "definition": null,
+        "unit": "count",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      },
+      "number_analysts_estimated_eps": {
+        "definition": null,
+        "unit": "count",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "forecast fiscal period; annual or quarter request does not establish duration or vintage",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "forecast_period": "date is forecast fiscal period end; publication/vintage and duration unknown"
+        }
+      }
+    },
+    "runtime_properties": [
+      "fields.availability",
+      "retrieved_at",
+      "effective_query",
+      "bounds"
+    ],
+    "dynamic_fields": false
+  },
+  "canonical_fields": [
+    "symbol",
+    "date",
+    "estimated_revenue_low",
+    "estimated_revenue_high",
+    "estimated_revenue_avg",
+    "estimated_sga_expense_low",
+    "estimated_sga_expense_high",
+    "estimated_sga_expense_avg",
+    "estimated_ebitda_low",
+    "estimated_ebitda_high",
+    "estimated_ebitda_avg",
+    "estimated_ebit_low",
+    "estimated_ebit_high",
+    "estimated_ebit_avg",
+    "estimated_net_income_low",
+    "estimated_net_income_high",
+    "estimated_net_income_avg",
+    "estimated_eps_avg",
+    "estimated_eps_high",
+    "estimated_eps_low",
+    "number_analyst_estimated_revenue",
+    "number_analysts_estimated_eps"
+  ],
+  "retained_aliases": {
+    "estimated_revenue_low": "revenueLow",
+    "estimated_revenue_high": "revenueHigh",
+    "estimated_revenue_avg": "revenueAvg",
+    "estimated_sga_expense_low": "sgaExpenseLow",
+    "estimated_sga_expense_high": "sgaExpenseHigh",
+    "estimated_sga_expense_avg": "sgaExpenseAvg",
+    "estimated_ebitda_low": "ebitdaLow",
+    "estimated_ebitda_high": "ebitdaHigh",
+    "estimated_ebitda_avg": "ebitdaAvg",
+    "estimated_ebit_low": "ebitLow",
+    "estimated_ebit_high": "ebitHigh",
+    "estimated_ebit_avg": "ebitAvg",
+    "estimated_net_income_low": "netIncomeLow",
+    "estimated_net_income_high": "netIncomeHigh",
+    "estimated_net_income_avg": "netIncomeAvg",
+    "estimated_eps_low": "epsLow",
+    "estimated_eps_high": "epsHigh",
+    "estimated_eps_avg": "epsAvg",
+    "number_analysts_estimated_revenue": "numAnalystsRevenue",
+    "number_analysts_eps": "numAnalystsEps"
+  },
+  "accepted_validation_aliases": {
+    "symbol": {
+      "canonical": "symbol",
+      "generated_schema_alias": "symbol",
+      "source_aliases": [],
+      "serialization": "symbol"
+    },
+    "date": {
+      "canonical": "date",
+      "generated_schema_alias": "date",
+      "source_aliases": [],
+      "serialization": "date"
+    },
+    "estimated_revenue_low": {
+      "canonical": "estimated_revenue_low",
+      "generated_schema_alias": "estimatedRevenueLow",
+      "source_aliases": [
+        "revenueLow"
+      ],
+      "serialization": "estimated_revenue_low"
+    },
+    "estimated_revenue_high": {
+      "canonical": "estimated_revenue_high",
+      "generated_schema_alias": "estimatedRevenueHigh",
+      "source_aliases": [
+        "revenueHigh"
+      ],
+      "serialization": "estimated_revenue_high"
+    },
+    "estimated_revenue_avg": {
+      "canonical": "estimated_revenue_avg",
+      "generated_schema_alias": "estimatedRevenueAvg",
+      "source_aliases": [
+        "revenueAvg"
+      ],
+      "serialization": "estimated_revenue_avg"
+    },
+    "estimated_sga_expense_low": {
+      "canonical": "estimated_sga_expense_low",
+      "generated_schema_alias": "estimatedSgaExpenseLow",
+      "source_aliases": [
+        "sgaExpenseLow"
+      ],
+      "serialization": "estimated_sga_expense_low"
+    },
+    "estimated_sga_expense_high": {
+      "canonical": "estimated_sga_expense_high",
+      "generated_schema_alias": "estimatedSgaExpenseHigh",
+      "source_aliases": [
+        "sgaExpenseHigh"
+      ],
+      "serialization": "estimated_sga_expense_high"
+    },
+    "estimated_sga_expense_avg": {
+      "canonical": "estimated_sga_expense_avg",
+      "generated_schema_alias": "estimatedSgaExpenseAvg",
+      "source_aliases": [
+        "sgaExpenseAvg"
+      ],
+      "serialization": "estimated_sga_expense_avg"
+    },
+    "estimated_ebitda_low": {
+      "canonical": "estimated_ebitda_low",
+      "generated_schema_alias": "estimatedEbitdaLow",
+      "source_aliases": [
+        "ebitdaLow"
+      ],
+      "serialization": "estimated_ebitda_low"
+    },
+    "estimated_ebitda_high": {
+      "canonical": "estimated_ebitda_high",
+      "generated_schema_alias": "estimatedEbitdaHigh",
+      "source_aliases": [
+        "ebitdaHigh"
+      ],
+      "serialization": "estimated_ebitda_high"
+    },
+    "estimated_ebitda_avg": {
+      "canonical": "estimated_ebitda_avg",
+      "generated_schema_alias": "estimatedEbitdaAvg",
+      "source_aliases": [
+        "ebitdaAvg"
+      ],
+      "serialization": "estimated_ebitda_avg"
+    },
+    "estimated_ebit_low": {
+      "canonical": "estimated_ebit_low",
+      "generated_schema_alias": "estimatedEbitLow",
+      "source_aliases": [
+        "ebitLow"
+      ],
+      "serialization": "estimated_ebit_low"
+    },
+    "estimated_ebit_high": {
+      "canonical": "estimated_ebit_high",
+      "generated_schema_alias": "estimatedEbitHigh",
+      "source_aliases": [
+        "ebitHigh"
+      ],
+      "serialization": "estimated_ebit_high"
+    },
+    "estimated_ebit_avg": {
+      "canonical": "estimated_ebit_avg",
+      "generated_schema_alias": "estimatedEbitAvg",
+      "source_aliases": [
+        "ebitAvg"
+      ],
+      "serialization": "estimated_ebit_avg"
+    },
+    "estimated_net_income_low": {
+      "canonical": "estimated_net_income_low",
+      "generated_schema_alias": "estimatedNetIncomeLow",
+      "source_aliases": [
+        "netIncomeLow"
+      ],
+      "serialization": "estimated_net_income_low"
+    },
+    "estimated_net_income_high": {
+      "canonical": "estimated_net_income_high",
+      "generated_schema_alias": "estimatedNetIncomeHigh",
+      "source_aliases": [
+        "netIncomeHigh"
+      ],
+      "serialization": "estimated_net_income_high"
+    },
+    "estimated_net_income_avg": {
+      "canonical": "estimated_net_income_avg",
+      "generated_schema_alias": "estimatedNetIncomeAvg",
+      "source_aliases": [
+        "netIncomeAvg"
+      ],
+      "serialization": "estimated_net_income_avg"
+    },
+    "estimated_eps_avg": {
+      "canonical": "estimated_eps_avg",
+      "generated_schema_alias": "estimatedEpsAvg",
+      "source_aliases": [
+        "epsAvg"
+      ],
+      "serialization": "estimated_eps_avg"
+    },
+    "estimated_eps_high": {
+      "canonical": "estimated_eps_high",
+      "generated_schema_alias": "estimatedEpsHigh",
+      "source_aliases": [
+        "epsHigh"
+      ],
+      "serialization": "estimated_eps_high"
+    },
+    "estimated_eps_low": {
+      "canonical": "estimated_eps_low",
+      "generated_schema_alias": "estimatedEpsLow",
+      "source_aliases": [
+        "epsLow"
+      ],
+      "serialization": "estimated_eps_low"
+    },
+    "number_analyst_estimated_revenue": {
+      "canonical": "number_analyst_estimated_revenue",
+      "generated_schema_alias": "numberAnalystEstimatedRevenue",
+      "source_aliases": [
+        "numAnalystsRevenue"
+      ],
+      "serialization": "number_analyst_estimated_revenue"
+    },
+    "number_analysts_estimated_eps": {
+      "canonical": "number_analysts_estimated_eps",
+      "generated_schema_alias": "numberAnalystsEstimatedEps",
+      "source_aliases": [
+        "numAnalystsEps"
+      ],
+      "serialization": "number_analysts_estimated_eps"
+    }
+  },
+  "source_references": [
+    "https://site.financialmodelingprep.com/developer/docs/stable/financial-estimates",
+    "https://site.financialmodelingprep.com/developer/docs/stable/tipranks-search"
+  ],
+  "documentation_checked": "2026-11-17",
+  "limitations": [
+    "Date is forecast fiscal period end, not publication/vintage. Currency and duration unknown; not point-in-time safe.",
+    "FMP estimates can combine analyst inputs, manual adjustments and internally projected fields; not blanket direct analyst consensus.",
+    "Approved request caps are local conservative policies, not verified FMP maxima. One upstream call; live entitlement and consumer acceptance unverified."
+  ],
+  "compatibility": {
+    "public_field_union": "existing standard plus retained FMP Data; no added fields",
+    "query_change": "new FMP variant: one required symbol, strict extras and approved bounded defaults",
+    "incompatibilities": [
+      {
+        "retained_source_defect": "numAnalystsRevenue and numAnalystsEps mapped to undeclared count destinations, leaving canonical counts missing.",
+        "approved_correction": "Map numAnalystsRevenue to existing number_analyst_estimated_revenue and numAnalystsEps to existing number_analysts_estimated_eps. No public fields added.",
+        "migration": "Adapters must use effective_aliases; retained_aliases records source history only."
+      }
+    ]
+  },
+  "source_recovery": {
+    "member": "openbb_fmp-1.6.1/openbb_fmp/models/analyst_estimates.py",
+    "sha256": "d64866a7cdb4719c8c61c7f10f81da919cc9e69b8f85c02af4a7e88840d7c626",
+    "recovery_file": "recovery/analyst_estimates.py",
+    "archive_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517",
+    "notices": "../source_manifest.json#/notices"
+  },
+  "documentation_evidence": {
+    "parameter_status": "official examples confirm forwarded spellings; approved caps are local policy",
+    "live_calls": 0,
+    "response_schema_source": "retained archive declarations plus installed native standard; no live fixture claims"
+  },
+  "effective_aliases": {
+    "estimated_revenue_low": "revenueLow",
+    "estimated_revenue_high": "revenueHigh",
+    "estimated_revenue_avg": "revenueAvg",
+    "estimated_sga_expense_low": "sgaExpenseLow",
+    "estimated_sga_expense_high": "sgaExpenseHigh",
+    "estimated_sga_expense_avg": "sgaExpenseAvg",
+    "estimated_ebitda_low": "ebitdaLow",
+    "estimated_ebitda_high": "ebitdaHigh",
+    "estimated_ebitda_avg": "ebitdaAvg",
+    "estimated_ebit_low": "ebitLow",
+    "estimated_ebit_high": "ebitHigh",
+    "estimated_ebit_avg": "ebitAvg",
+    "estimated_net_income_low": "netIncomeLow",
+    "estimated_net_income_high": "netIncomeHigh",
+    "estimated_net_income_avg": "netIncomeAvg",
+    "estimated_eps_low": "epsLow",
+    "estimated_eps_high": "epsHigh",
+    "estimated_eps_avg": "epsAvg",
+    "number_analyst_estimated_revenue": "numAnalystsRevenue",
+    "number_analysts_estimated_eps": "numAnalystsEps"
+  },
+  "date_contracts": {
+    "date": {
+      "required": true,
+      "nullable": false
+    }
+  }
+}

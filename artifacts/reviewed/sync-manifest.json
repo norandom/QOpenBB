@@ -197,7 +197,8 @@
     "research-input-readiness",
     "periodic-query-provenance",
     "company-research",
-    "fmp-expansion-a/foundation"
+    "fmp-expansion-a/foundation",
+    "fmp-expansion-a/a1-contracts"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -35738,6 +35739,14 @@
       "publishedSHA256": "6bb0d658958f5cf5244180d2df42f186f8d5603d42a70239761b6230594dbe05",
       "bytes": 4035,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/1.2/review-r2.md",
+      "sourceSHA256": "908a90582e00154257ff4d33828b066b5672dd3b12af6b4d3a9a5c89c048bf68",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/a1-contract-review.md",
+      "publishedSHA256": "908a90582e00154257ff4d33828b066b5672dd3b12af6b4d3a9a5c89c048bf68",
+      "bytes": 6117,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36462,8 +36471,8 @@
       "reason": "Only the independently reviewed allowlist is published; raw runtime, private state, and redundant scratch copies remain excluded."
     }
   ],
-  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance.",
-  "total_payload_bytes": 171309643,
+  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending.",
+  "total_payload_bytes": 171315760,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

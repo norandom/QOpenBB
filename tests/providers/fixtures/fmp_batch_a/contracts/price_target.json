@@ -1,0 +1,1167 @@
+{
+  "model_key": "PriceTarget",
+  "endpoint": "price-target-news",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "limit": {
+          "default": 20,
+          "description": "Maximum news events; one upstream request and no public page.",
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPPriceTargetQueryParams",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "limit": {
+          "default": 20,
+          "description": "Maximum news events; one upstream request and no public page.",
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPPriceTargetQueryParams",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "description": "FMP Price Target Data.",
+      "properties": {
+        "publishedDate": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            }
+          ],
+          "description": "Published date of the price target.",
+          "title": "Publisheddate"
+        },
+        "publishedTime": {
+          "anyOf": [
+            {
+              "format": "time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Time of the original rating, UTC.",
+          "title": "Publishedtime"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "exchange": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Exchange where the company is traded.",
+          "title": "Exchange"
+        },
+        "companyName": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name of company that is the subject of rating.",
+          "title": "Companyname"
+        },
+        "analystName": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Analyst name.",
+          "title": "Analystname"
+        },
+        "analystFirm": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name of the analyst firm that published the price target.",
+          "title": "Analystfirm"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Currency the data is denominated in.",
+          "title": "Currency"
+        },
+        "priceTarget": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The current price target.",
+          "title": "Pricetarget"
+        },
+        "adjPriceTarget": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Adjusted price target for splits and stock dividends.",
+          "title": "Adjpricetarget"
+        },
+        "priceTargetPrevious": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Previous price target.",
+          "title": "Pricetargetprevious"
+        },
+        "previousAdjPriceTarget": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Previous adjusted price target.",
+          "title": "Previousadjpricetarget"
+        },
+        "priceWhenPosted": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Price when posted.",
+          "title": "Pricewhenposted"
+        },
+        "ratingCurrent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The analyst's rating for the company.",
+          "title": "Ratingcurrent"
+        },
+        "ratingPrevious": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Previous analyst rating for the company.",
+          "title": "Ratingprevious"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Description of the change in rating from firm's last rating.",
+          "title": "Action"
+        },
+        "newsTitle": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "News title of the price target.",
+          "title": "Newstitle"
+        },
+        "newsUrl": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "News URL of the price target.",
+          "title": "Newsurl"
+        }
+      },
+      "required": [
+        "publishedDate",
+        "symbol"
+      ],
+      "title": "FMPPriceTargetData",
+      "type": "object"
+    },
+    "serialization": {
+      "description": "FMP Price Target Data.",
+      "properties": {
+        "published_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            }
+          ],
+          "description": "Published date of the price target.",
+          "title": "Published Date"
+        },
+        "published_time": {
+          "anyOf": [
+            {
+              "format": "time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Time of the original rating, UTC.",
+          "title": "Published Time"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "exchange": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Exchange where the company is traded.",
+          "title": "Exchange"
+        },
+        "company_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name of company that is the subject of rating.",
+          "title": "Company Name"
+        },
+        "analyst_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Analyst name.",
+          "title": "Analyst Name"
+        },
+        "analyst_firm": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name of the analyst firm that published the price target.",
+          "title": "Analyst Firm"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Currency the data is denominated in.",
+          "title": "Currency"
+        },
+        "price_target": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The current price target.",
+          "title": "Price Target"
+        },
+        "adj_price_target": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Adjusted price target for splits and stock dividends.",
+          "title": "Adj Price Target"
+        },
+        "price_target_previous": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Previous price target.",
+          "title": "Price Target Previous"
+        },
+        "previous_adj_price_target": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Previous adjusted price target.",
+          "title": "Previous Adj Price Target"
+        },
+        "price_when_posted": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Price when posted.",
+          "title": "Price When Posted"
+        },
+        "rating_current": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The analyst's rating for the company.",
+          "title": "Rating Current"
+        },
+        "rating_previous": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Previous analyst rating for the company.",
+          "title": "Rating Previous"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Description of the change in rating from firm's last rating.",
+          "title": "Action"
+        },
+        "news_title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "News title of the price target.",
+          "title": "News Title"
+        },
+        "news_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "News URL of the price target.",
+          "title": "News Url"
+        }
+      },
+      "required": [
+        "published_date",
+        "symbol"
+      ],
+      "title": "FMPPriceTargetData",
+      "type": "object"
+    }
+  },
+  "query_annotation": {
+    "provider_policy": "explicit",
+    "procedural_bounds": {
+      "max_calendar_years": null,
+      "max_symbols": 1
+    },
+    "response_policy": {
+      "mode": "clip",
+      "max_rows": null,
+      "limit_parameter": "limit"
+    },
+    "runtime_properties": [
+      "bounds",
+      "effective_query",
+      "retrieved_at"
+    ]
+  },
+  "data_annotation": {
+    "fields": {
+      "published_date": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "published_time": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "symbol": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "exchange": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "company_name": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "analyst_name": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "analyst_firm": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "currency": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "price_target": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": "currency",
+        "period_basis": null,
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "adj_price_target": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": "currency",
+        "period_basis": null,
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "price_target_previous": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": "currency",
+        "period_basis": null,
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "previous_adj_price_target": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": "currency",
+        "period_basis": null,
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "price_when_posted": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": "currency",
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "rating_current": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "rating_previous": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "action": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "news_title": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "news_url": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": "published_date",
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      }
+    },
+    "runtime_properties": [
+      "fields.availability",
+      "retrieved_at",
+      "effective_query",
+      "bounds"
+    ],
+    "dynamic_fields": false
+  },
+  "canonical_fields": [
+    "published_date",
+    "published_time",
+    "symbol",
+    "exchange",
+    "company_name",
+    "analyst_name",
+    "analyst_firm",
+    "currency",
+    "price_target",
+    "adj_price_target",
+    "price_target_previous",
+    "previous_adj_price_target",
+    "price_when_posted",
+    "rating_current",
+    "rating_previous",
+    "action",
+    "news_title",
+    "news_url"
+  ],
+  "retained_aliases": {
+    "analyst_firm": "analystCompany",
+    "rating_current": "newGrade",
+    "rating_previous": "previousGrade",
+    "news_title": "newsTitle",
+    "news_url": "newsURL"
+  },
+  "accepted_validation_aliases": {
+    "published_date": {
+      "canonical": "published_date",
+      "generated_schema_alias": "publishedDate",
+      "source_aliases": [],
+      "serialization": "published_date"
+    },
+    "published_time": {
+      "canonical": "published_time",
+      "generated_schema_alias": "publishedTime",
+      "source_aliases": [],
+      "serialization": "published_time"
+    },
+    "symbol": {
+      "canonical": "symbol",
+      "generated_schema_alias": "symbol",
+      "source_aliases": [],
+      "serialization": "symbol"
+    },
+    "exchange": {
+      "canonical": "exchange",
+      "generated_schema_alias": "exchange",
+      "source_aliases": [],
+      "serialization": "exchange"
+    },
+    "company_name": {
+      "canonical": "company_name",
+      "generated_schema_alias": "companyName",
+      "source_aliases": [],
+      "serialization": "company_name"
+    },
+    "analyst_name": {
+      "canonical": "analyst_name",
+      "generated_schema_alias": "analystName",
+      "source_aliases": [],
+      "serialization": "analyst_name"
+    },
+    "analyst_firm": {
+      "canonical": "analyst_firm",
+      "generated_schema_alias": "analystFirm",
+      "source_aliases": [
+        "analystCompany"
+      ],
+      "serialization": "analyst_firm"
+    },
+    "currency": {
+      "canonical": "currency",
+      "generated_schema_alias": "currency",
+      "source_aliases": [],
+      "serialization": "currency"
+    },
+    "price_target": {
+      "canonical": "price_target",
+      "generated_schema_alias": "priceTarget",
+      "source_aliases": [],
+      "serialization": "price_target"
+    },
+    "adj_price_target": {
+      "canonical": "adj_price_target",
+      "generated_schema_alias": "adjPriceTarget",
+      "source_aliases": [],
+      "serialization": "adj_price_target"
+    },
+    "price_target_previous": {
+      "canonical": "price_target_previous",
+      "generated_schema_alias": "priceTargetPrevious",
+      "source_aliases": [],
+      "serialization": "price_target_previous"
+    },
+    "previous_adj_price_target": {
+      "canonical": "previous_adj_price_target",
+      "generated_schema_alias": "previousAdjPriceTarget",
+      "source_aliases": [],
+      "serialization": "previous_adj_price_target"
+    },
+    "price_when_posted": {
+      "canonical": "price_when_posted",
+      "generated_schema_alias": "priceWhenPosted",
+      "source_aliases": [],
+      "serialization": "price_when_posted"
+    },
+    "rating_current": {
+      "canonical": "rating_current",
+      "generated_schema_alias": "ratingCurrent",
+      "source_aliases": [
+        "newGrade"
+      ],
+      "serialization": "rating_current"
+    },
+    "rating_previous": {
+      "canonical": "rating_previous",
+      "generated_schema_alias": "ratingPrevious",
+      "source_aliases": [
+        "previousGrade"
+      ],
+      "serialization": "rating_previous"
+    },
+    "action": {
+      "canonical": "action",
+      "generated_schema_alias": "action",
+      "source_aliases": [],
+      "serialization": "action"
+    },
+    "news_title": {
+      "canonical": "news_title",
+      "generated_schema_alias": "newsTitle",
+      "source_aliases": [
+        "newsTitle"
+      ],
+      "serialization": "news_title"
+    },
+    "news_url": {
+      "canonical": "news_url",
+      "generated_schema_alias": "newsUrl",
+      "source_aliases": [
+        "newsURL"
+      ],
+      "serialization": "news_url"
+    }
+  },
+  "source_references": [
+    "https://site.financialmodelingprep.com/education/other/price-target-news-api-endpoint-make-smarter-buy-or-sell-decisions",
+    "https://site.financialmodelingprep.com/education/financial-analysis/building-singlestock-estimate--price-target-heatmaps-without-heavy-code"
+  ],
+  "documentation_checked": "2026-11-17",
+  "limitations": [
+    "Published-time standard description says UTC; actual source precision/timezone must be preserved, never fabricated.",
+    "Official FMP education articles show symbol/page/limit; dedicated guessed stable documentation URL returns 404. Public page intentionally excluded.",
+    "Approved request caps are local conservative policies, not verified FMP maxima. One upstream call; live entitlement and consumer acceptance unverified."
+  ],
+  "compatibility": {
+    "public_field_union": "existing standard plus retained FMP Data; no added fields",
+    "query_change": "new FMP variant: one required symbol, strict extras and approved bounded defaults",
+    "incompatibilities": []
+  },
+  "source_recovery": {
+    "member": "openbb_fmp-1.6.1/openbb_fmp/models/price_target.py",
+    "sha256": "ed03eb37a82fd6c3b413c6dc99c8f02417b25fca7afcb4507daebe96b63a22df",
+    "recovery_file": "recovery/price_target.py",
+    "archive_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517",
+    "notices": "../source_manifest.json#/notices"
+  },
+  "documentation_evidence": {
+    "parameter_status": "official examples confirm forwarded spellings; approved caps are local policy",
+    "live_calls": 0,
+    "response_schema_source": "retained archive declarations plus installed native standard; no live fixture claims"
+  },
+  "effective_aliases": {
+    "analyst_firm": "analystCompany",
+    "rating_current": "newGrade",
+    "rating_previous": "previousGrade",
+    "news_title": "newsTitle",
+    "news_url": "newsURL"
+  },
+  "date_contracts": {
+    "published_date": {
+      "required": true,
+      "nullable": false
+    },
+    "published_time": {
+      "required": false,
+      "nullable": true
+    }
+  }
+}

@@ -45,7 +45,7 @@ All other tasks are serial. Contract/schema/pin changes invalidate affected proo
   - _Boundary: Controller source recovery and complexity inventory_
   - _Requirements: 8.1, 8.5_
 
-- [ ] 1.2 Characterize five A1 retained contracts without production adapters (2-3 hours)
+- [x] 1.2 Characterize five A1 retained contracts without production adapters (2-3 hours)
   - Recover schema/alias declarations into isolated fixture or dedicated test query classes, never production registration.
   - Record validation/serialization schemas, annotations for every field, nullable dates, units and source references.
   - Check official parameter spellings, price-target limit uncertainty, float percent convention and retained field union.
@@ -320,3 +320,5 @@ Task review must PASS independently before maintained tasks/spec metadata are wr
 
 - 1.1 accepted 2026-11-17: [independent foundation review](../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md). Fresh quality: 102 passed, two platform skips; combined complexity: 103 maintained root files, zero violations; missing fork scope exits 2. Empty current fork manifests do not remeasure unchanged fork files. Selected archive/member/license hashes verified. Narrow future ownership patterns retain fail-closed scope checks; native Windows Git root identity now compares resolved paths. Reuse the native snapshot verification dependencies, not the original checkout's unusable cross-platform link.
 
+
+1.2 accepted 2026-11-17: [A1 contract review](../../../artifacts/reviewed/fmp-expansion-a/a1-contract-review.md), 94 focused native checks. Correct retained estimate aliases to canonical number_analyst_estimated_revenue and number_analysts_estimated_eps; retain source-original mappings separately. Reuse statement-period-provenance/provider-venv with explicit new-worktree source overrides; pipeline-venv lacks provider dependencies.

@@ -1,0 +1,451 @@
+{
+  "model_key": "PriceTargetConsensus",
+  "endpoint": "price-target-consensus",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; at most one matching response.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPPriceTargetConsensusQueryParams",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; at most one matching response.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPPriceTargetConsensusQueryParams",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "additionalProperties": true,
+      "description": "FMP Price Target Consensus Data.",
+      "properties": {
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The company name",
+          "title": "Name"
+        },
+        "targetHigh": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "High target of the price target consensus.",
+          "title": "Targethigh"
+        },
+        "targetLow": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Low target of the price target consensus.",
+          "title": "Targetlow"
+        },
+        "targetConsensus": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Consensus target of the price target consensus.",
+          "title": "Targetconsensus"
+        },
+        "targetMedian": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Median target of the price target consensus.",
+          "title": "Targetmedian"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPPriceTargetConsensusData",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": true,
+      "description": "FMP Price Target Consensus Data.",
+      "properties": {
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The company name",
+          "title": "Name"
+        },
+        "target_high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "High target of the price target consensus.",
+          "title": "Target High"
+        },
+        "target_low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Low target of the price target consensus.",
+          "title": "Target Low"
+        },
+        "target_consensus": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Consensus target of the price target consensus.",
+          "title": "Target Consensus"
+        },
+        "target_median": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Median target of the price target consensus.",
+          "title": "Target Median"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPPriceTargetConsensusData",
+      "type": "object"
+    }
+  },
+  "query_annotation": {
+    "provider_policy": "explicit",
+    "procedural_bounds": {
+      "max_calendar_years": null,
+      "max_symbols": 1
+    },
+    "response_policy": {
+      "mode": "provider",
+      "max_rows": null,
+      "limit_parameter": null
+    },
+    "runtime_properties": [
+      "bounds",
+      "effective_query",
+      "retrieved_at"
+    ]
+  },
+  "data_annotation": {
+    "fields": {
+      "symbol": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "forecast_period": null
+        }
+      },
+      "name": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "forecast_period": null
+        }
+      },
+      "target_high": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "forecast_period": null
+        }
+      },
+      "target_low": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "forecast_period": null
+        }
+      },
+      "target_consensus": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "forecast_period": null
+        }
+      },
+      "target_median": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "estimate",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "forecast_period": null
+        }
+      }
+    },
+    "runtime_properties": [
+      "fields.availability",
+      "retrieved_at",
+      "effective_query",
+      "bounds"
+    ],
+    "dynamic_fields": false
+  },
+  "canonical_fields": [
+    "symbol",
+    "name",
+    "target_high",
+    "target_low",
+    "target_consensus",
+    "target_median"
+  ],
+  "retained_aliases": {},
+  "accepted_validation_aliases": {
+    "symbol": {
+      "canonical": "symbol",
+      "generated_schema_alias": "symbol",
+      "source_aliases": [],
+      "serialization": "symbol"
+    },
+    "name": {
+      "canonical": "name",
+      "generated_schema_alias": "name",
+      "source_aliases": [],
+      "serialization": "name"
+    },
+    "target_high": {
+      "canonical": "target_high",
+      "generated_schema_alias": "targetHigh",
+      "source_aliases": [],
+      "serialization": "target_high"
+    },
+    "target_low": {
+      "canonical": "target_low",
+      "generated_schema_alias": "targetLow",
+      "source_aliases": [],
+      "serialization": "target_low"
+    },
+    "target_consensus": {
+      "canonical": "target_consensus",
+      "generated_schema_alias": "targetConsensus",
+      "source_aliases": [],
+      "serialization": "target_consensus"
+    },
+    "target_median": {
+      "canonical": "target_median",
+      "generated_schema_alias": "targetMedian",
+      "source_aliases": [],
+      "serialization": "target_median"
+    }
+  },
+  "source_references": [
+    "https://site.financialmodelingprep.com/developer/docs/stable/price-target-consensus",
+    "https://site.financialmodelingprep.com/faqs",
+    "https://site.financialmodelingprep.com/faqs?code=marketPerformance"
+  ],
+  "documentation_checked": "2026-11-17",
+  "limitations": [
+    "No retained date or currency field: as-of, membership and lineage unknown; not point-in-time safe.",
+    "Official FAQ checked 2026-11-17: six-month window, latest target per analyst company, daily recomputation; response-specific methodology not verified.",
+    "Approved request caps are local conservative policies, not verified FMP maxima. One upstream call; live entitlement and consumer acceptance unverified."
+  ],
+  "compatibility": {
+    "public_field_union": "existing standard plus retained FMP Data; no added fields",
+    "query_change": "new FMP variant: one required symbol, strict extras and approved bounded defaults",
+    "incompatibilities": []
+  },
+  "source_recovery": {
+    "member": "openbb_fmp-1.6.1/openbb_fmp/models/price_target_consensus.py",
+    "sha256": "e2cb2c40609d96f7358096b6f690acdff576268827cb6ec09ec88bc34a06e14e",
+    "recovery_file": "recovery/price_target_consensus.py",
+    "archive_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517",
+    "notices": "../source_manifest.json#/notices"
+  },
+  "documentation_evidence": {
+    "parameter_status": "official examples confirm forwarded spellings; approved caps are local policy",
+    "live_calls": 0,
+    "response_schema_source": "retained archive declarations plus installed native standard; no live fixture claims"
+  },
+  "effective_aliases": {},
+  "date_contracts": {}
+}

@@ -4,7 +4,7 @@ Updated 2026-11-17. Active work is the reviewed FMP expansion plan and Batch A d
 
 ## Active FMP expansion
 
-Task 1.1 is accepted: selected archive/source recovery and executable complexity ownership, with the native Windows Git path comparison repaired. Independent quality checks passed 102 tests with two platform skips; scoped complexity covered 103 root files with no violations, and missing fork scope failed closed. See [foundation review](../artifacts/reviewed/fmp-expansion-a/foundation-review.md). One of 26 tasks is accepted; no additional endpoint or live-data acceptance is claimed. Next is task 1.2, characterization of the five A1 contracts.
+Tasks 1.1 and 1.2 are accepted: source/complexity foundation and five A1 offline contracts. Independent checks passed 102 quality tests (two platform skips) and 94 A1 native tests. Review caught and corrected inherited analyst-count aliases without adding public fields, count units and required-date descriptions. See [foundation review](../artifacts/reviewed/fmp-expansion-a/foundation-review.md) and [A1 review](../artifacts/reviewed/fmp-expansion-a/a1-contract-review.md). Two of 26 tasks are accepted; no additional endpoint or live-data acceptance is claimed. Next is task 1.3, six A2 contract characterizations.
 
 The owner requested substantial FMP endpoint coverage alongside the financial-modeling input/bootstrap plan. The [reviewed plan](specs/market-data-integrations/fmp-expansion-plan.md) names 24 additional candidate operations: A11 financial/valuation, B8 events/content, C5 DCF/as-reported. The [inventory](specs/market-data-integrations/fmp-expansion-inventory.md) distinguishes 19 retained-adapter candidates, five new-contract candidates and the unchanged ten-model baseline.
 
