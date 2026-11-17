@@ -1,6 +1,6 @@
 # Batch B FMP implementation plan
 
-The [design](fmp-expansion-b-design.md) and [independent review](fmp-expansion-b-review.md) define eight operations. Owner design approval covers task generation. All implementation boxes are open. Task execution and the proposed 36-request ceiling await owner decision.
+The [design](fmp-expansion-b-design.md) and [independent review](fmp-expansion-b-review.md) define eight operations. The owner approved execution of the [reviewed task graph](fmp-expansion-b-task-review.md) and a ceiling of 36 live FMP requests. Each checkbox records independent review and fresh verification.
 
 ## Execution contract
 
@@ -10,7 +10,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
 
 ## 1. Foundation and contract freeze
 
-- [ ] 1.1 Isolate the three source trees and enforce the complexity scope
+- [x] 1.1 Isolate the three source trees and enforce the complexity scope
   - Resolve Batch B root, data-api and workspace worktrees and junctions. Verify baseline revisions against the approved design and source tarball SHA-256 5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517. Record eight members, notices and hashes.
   - Run tools.quality.complexity --check with actual repository roots and explicit base/head or changed manifests. Prove missing input fails. Record exact commands, resolved paths and a baseline for existing oversized host files before edits.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.
