@@ -1,0 +1,27 @@
+{
+  "status": "VERIFIED",
+  "claim_type": "FIX",
+  "claim": "Explicit opt-in successful top-level empty-list acquisition; default callers unchanged",
+  "api_commit": "e3eb9922c79c76a77cebf6188f950303a7ba1b9e",
+  "helper_sha256": "e160907bdc2b5c44df805e7c3d117a65f54fca3641f4e1bc17286aca1b5fa485",
+  "tests": {
+    "compatibility": [
+      374,
+      120
+    ],
+    "independent_probes": 44,
+    "exit_codes": [
+      0,
+      0,
+      0
+    ]
+  },
+  "complexity": {
+    "files": 112,
+    "errors": 0,
+    "violations": 0,
+    "report_sha256": "01ef60ae3de3bbdbfd45b85918569ed9f844f5ca129ad0ed65bb0d6ee439cfa2"
+  },
+  "review_sha256": "42eff9361b691b414a91b7eaca35b7d20ac5721794daac581436e710f053606f",
+  "limits": "No actual Batch A registration/live/browser acceptance. Optional empty DataFrame conversions unchanged. First postcommit gate caught config formatter expanding line count; original compact layout restored with identical JSON meaning, final gate passed. Failed report retained."
+}

@@ -113,6 +113,7 @@ All other tasks are serial. Contract/schema/pin changes invalidate affected proo
 ## 3. Disjoint retained adapters
 
 All tasks below depend on 1.4 and 2.3; no adapter may start on an unreviewed prerequisite.
+The controller-owned [empty-list acquisition correction](fmp-expansion-a-empty-list-correction.md) is accepted. Batch A array adapters explicitly pass allow_empty=True; test each actual Fetcher through real helpers and later verify generated SDK/mounted HTTP empty JSON plus metadata at task 4.2.
 Each task adapts the retained module to FMPAcquisition, typed safe errors and AnnotatedResult metadata v1.
 Each validates its real new strict query subclass against frozen schemas before accepting production behavior.
 Common endpoint checks: aliases, exactly one request, invalid inputs before I/O, empty/missing/null/zero,
@@ -340,3 +341,5 @@ Task review must PASS independently before maintained tasks/spec metadata are wr
 2.2 accepted 2026-11-17: [HTTP admission review](../../../artifacts/reviewed/fmp-expansion-a/http-admission-review.md), 399 joined checks plus 12 independent probes and clean 111-file combined gate. Uses original installed query classes and concrete native controls, rejects invalid raw inputs before extraction, and forwards canonical effective values through copied scopes. Fixture command-router import timing is isolated before dedicated registry patching. Task 2.3 joins these prerequisites before adapter fan-out.
 
 2.3 accepted 2026-11-17: [prerequisite join review](../../../artifacts/reviewed/fmp-expansion-a/admission-join-review.md), 255 shared checks plus 22 independent probes, exact eleven dedicated native models and frozen schemas, unchanged admission interfaces and clean 111-file gate. Adapter fan-out may proceed; actual production registration/result annotation joins remain tasks 4.1/4.2.
+
+Shared acquisition correction accepted 2026-11-17: [independent review](../../../artifacts/reviewed/fmp-expansion-a/empty-acquisition-review.md), 494 compatibility checks plus 44 independent probes, frozen admission hashes unchanged and final 112-file combined gate. API e3eb9922c79c76a77cebf6188f950303a7ba1b9e. Only explicit allow_empty=True accepts original top-level arrays; defaults and nested payload failure behavior remain unchanged. Adapter lanes may resume.

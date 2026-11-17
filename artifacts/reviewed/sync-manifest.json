@@ -205,7 +205,8 @@
     "fmp-expansion-a/sdk-period-followup",
     "fmp-expansion-a/sdk-alias-correction",
     "fmp-expansion-a/http-admission",
-    "fmp-expansion-a/admission-join"
+    "fmp-expansion-a/admission-join",
+    "fmp-expansion-a/empty-acquisition"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -35842,6 +35843,22 @@
       "publishedSHA256": "6e9fc70dd67d76e5b8ad961b11c23d3c92c5cc5ef2aa7eee1f513052184adc70",
       "bytes": 833,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/empty-array-review/review.md",
+      "sourceSHA256": "42eff9361b691b414a91b7eaca35b7d20ac5721794daac581436e710f053606f",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/empty-acquisition-review.md",
+      "publishedSHA256": "42eff9361b691b414a91b7eaca35b7d20ac5721794daac581436e710f053606f",
+      "bytes": 4331,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/empty-array-review/accepted-verification.json",
+      "sourceSHA256": "2b9d3c172b6c84ecf26dc63a6a17d727152c949c165f75c9c153a5517e920da5",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/empty-acquisition-verification.json",
+      "publishedSHA256": "2b9d3c172b6c84ecf26dc63a6a17d727152c949c165f75c9c153a5517e920da5",
+      "bytes": 995,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36566,8 +36583,8 @@
       "reason": "Only the independently reviewed allowlist is published; raw runtime, private state, and redundant scratch copies remain excluded."
     }
   ],
-  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending. Task 1.3 A2 offline contracts are independently accepted; production and live acceptance remain pending. Task 1.4 contract/admission architecture freeze is independently accepted; runtime admission and final emitter exception remain pending. Task 2.1 SDK admission is independently reviewed and passes the committed-source combined gate with five exact no-growth emitter exceptions; HTTP and production endpoint joins remain pending. A later public-entry probe reopened task 2.1: quarterly value aliases fail before Container for six periodic variants; repair is pending and HTTP acceptance is paused. The supplied-value correction is now independently approved and task 2.1 re-accepted: 186 tests and committed-source 111-file gate passed at API403323aee033dfcd30b7b24dda5f0f5efc35a339. HTTP resumed; its acceptance remains pending. Task 2.2 HTTP admission independently accepted with 399 joined checks, 12 reviewer probes and a clean combined gate; dedicated variants only. Task 2.3 independently accepted with 255 shared checks,22 independent probes and clean111-file gate; dedicated interfaces frozen for adapter fan-out.",
-  "total_payload_bytes": 171364093,
+  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending. Task 1.3 A2 offline contracts are independently accepted; production and live acceptance remain pending. Task 1.4 contract/admission architecture freeze is independently accepted; runtime admission and final emitter exception remain pending. Task 2.1 SDK admission is independently reviewed and passes the committed-source combined gate with five exact no-growth emitter exceptions; HTTP and production endpoint joins remain pending. A later public-entry probe reopened task 2.1: quarterly value aliases fail before Container for six periodic variants; repair is pending and HTTP acceptance is paused. The supplied-value correction is now independently approved and task 2.1 re-accepted: 186 tests and committed-source 111-file gate passed at API403323aee033dfcd30b7b24dda5f0f5efc35a339. HTTP resumed; its acceptance remains pending. Task 2.2 HTTP admission independently accepted with 399 joined checks, 12 reviewer probes and a clean combined gate; dedicated variants only. Task 2.3 independently accepted with 255 shared checks,22 independent probes and clean111-file gate; dedicated interfaces frozen for adapter fan-out. Shared empty-array opt-in correction accepted with494 compatibility checks,44 independent probes and final112-file gate; baseline defaults and frozen admission preserved.",
+  "total_payload_bytes": 171369419,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

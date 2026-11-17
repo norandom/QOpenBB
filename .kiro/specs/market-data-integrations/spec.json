@@ -55,7 +55,9 @@
       "../../../artifacts/reviewed/fmp-expansion-a/http-admission-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/http-admission-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/admission-join-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/admission-join-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/admission-join-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/empty-acquisition-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/empty-acquisition-verification.json"
     ],
     "new_live_requests": 0,
     "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance.",
@@ -87,6 +89,18 @@
       "correction": "fmp-expansion-a-sdk-alias-correction.md",
       "review": "../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-review.md",
       "verification": "../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-verification.json"
+    },
+    "shared_acquisition_correction": {
+      "status": "accepted",
+      "document": "fmp-expansion-a-empty-list-correction.md",
+      "reason": "Existing helpers reject successful top-level empty arrays required by Batch A.",
+      "adapter_lanes": "ready-to-resume",
+      "scope": "Optional allow_empty false by default; no schema/admission/budget change.",
+      "architecture_review": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/empty-array-debug/architecture-review.md",
+      "proposal_sha256": "0032a4cd4afacb52aea5022dc7e8c8e9dcbe19171d1114cca704604ff4361a53",
+      "api_commit": "e3eb9922c79c76a77cebf6188f950303a7ba1b9e",
+      "review": "../../../artifacts/reviewed/fmp-expansion-a/empty-acquisition-review.md",
+      "verification": "../../../artifacts/reviewed/fmp-expansion-a/empty-acquisition-verification.json"
     }
   },
   "language": "en",
