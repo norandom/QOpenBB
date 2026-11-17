@@ -1,9 +1,9 @@
 # Batch A FMP implementation plan
 
-Proposed executable plan, 2026-11-17. Owner task approval is pending; all completion boxes remain open.
+Owner approved execution and the 48-request ceiling on 2026-11-17. Completion boxes require independent review and fresh evidence.
 Design approval is recorded in spec.json; preserve design SHA-256
 59ca002fc71585e20edfb9dc431b35605e8f2bff2d78b8d04543f7f552cb3a7a.
-Accepted workspaces: D:/BuildArtifacts/QOpenBB/company-research/root and sibling ../data-api.
+Execution workspaces: D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root and sibling ../data-api; the accepted Company Research checkouts remain preserved.
 Baseline root 3b47ead262aac62a1c4a9f275694bd3e72f83056; API a965f70c164fe477ce9c99654b9be48e2f1bc9fd.
 Retained FMP 1.6.1 archive SHA-256: 5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517.
 
@@ -36,7 +36,7 @@ All other tasks are serial. Contract/schema/pin changes invalidate affected proo
 
 ## 1. Characterization and executable scope foundation
 
-- [ ] 1.1 Establish reproducible source and complexity scope (1-2 hours)
+- [x] 1.1 Establish reproducible source and complexity scope (1-2 hours)
   - Verify accepted roots/revisions and retained archive hash/notices; record selected recovery members only.
   - Extend existing inventory/checker to all new/modified root and API production paths with explicit base/head scope.
   - Done: actual repository complexity command is recorded and passes baseline scope; missing scope fails closed.
@@ -315,4 +315,8 @@ Outside Batch A: 2.2 DCF, 3.4 other-asset identities, 3.5 macro identity, 4.8 ma
 2.3 broader families and 1.4 inventory remain open beyond these eleven; B/C batches are not accepted here.
 All eleven installed/account/consumer states remain independent; skipped/fixture checks never certify live acceptance.
 Task review must PASS independently before maintained tasks/spec metadata are written; owner task approval precedes implementation.
+
+## Implementation notes
+
+- 1.1 accepted 2026-11-17: [independent foundation review](../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md). Fresh quality: 102 passed, two platform skips; combined complexity: 103 maintained root files, zero violations; missing fork scope exits 2. Empty current fork manifests do not remeasure unchanged fork files. Selected archive/member/license hashes verified. Narrow future ownership patterns retain fail-closed scope checks; native Windows Git root identity now compares resolved paths. Reuse the native snapshot verification dependencies, not the original checkout's unusable cross-platform link.
 

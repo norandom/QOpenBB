@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "status": "selected recovery source only; no installed capability or live entitlement proof",
+  "archive": {
+    "path": "D:\\Source\\QOpenBB\\artifacts\\task-1.1\\openbb_fmp-1.6.1.tar.gz",
+    "sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+  },
+  "accepted_sources": {
+    "root": {
+      "path": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\root",
+      "head": "4a85a27941ff18b93c3b9b03adea7950a32be7f4",
+      "origin": "https://github.com/norandom/QOpenBB.git"
+    },
+    "data_api": {
+      "path": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\data-api",
+      "head": "a965f70c164fe477ce9c99654b9be48e2f1bc9fd",
+      "origin": "https://github.com/norandom/openbb-data-api.git"
+    },
+    "workspace": {
+      "path": "D:\\BuildArtifacts\\QOpenBB\\company-research\\workspace",
+      "head": "bf180ef506286886da224df9ff184cd1ace2397e",
+      "origin": "https://github.com/norandom/openbb-workspace.git"
+    }
+  },
+  "members": [
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/analyst_estimates.py",
+      "sha256": "d64866a7cdb4719c8c61c7f10f81da919cc9e69b8f85c02af4a7e88840d7c626",
+      "recovery_file": "recovery/analyst_estimates.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/price_target.py",
+      "sha256": "ed03eb37a82fd6c3b413c6dc99c8f02417b25fca7afcb4507daebe96b63a22df",
+      "recovery_file": "recovery/price_target.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/price_target_consensus.py",
+      "sha256": "e2cb2c40609d96f7358096b6f690acdff576268827cb6ec09ec88bc34a06e14e",
+      "recovery_file": "recovery/price_target_consensus.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/revenue_business_line.py",
+      "sha256": "b30886d058e7556d7a2ce6211a677faec9e79273774a3352f1066cfa4f1c9b4b",
+      "recovery_file": "recovery/revenue_business_line.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/revenue_geographic.py",
+      "sha256": "7b96b026784b778977b1ef2d525613794c0ec53d39082b02de469b3052607c5f",
+      "recovery_file": "recovery/revenue_geographic.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/historical_market_cap.py",
+      "sha256": "e7ec73eca3471259207b5567f15d42b0d929d41c22bd7ed423f676c5818951ff",
+      "recovery_file": "recovery/historical_market_cap.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/share_statistics.py",
+      "sha256": "529f6cdf6e2e07edad94f9b23740793b36b39052444d0c63bc7127d616c63bf6",
+      "recovery_file": "recovery/share_statistics.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/equity_quote.py",
+      "sha256": "8329b1cdcc92ed4794b925640081ae34e093a71979503577fe65b486e813cfef",
+      "recovery_file": "recovery/equity_quote.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/income_statement_growth.py",
+      "sha256": "10a662a63ff4781993815f083b5a074a0a5858eea64087b2d11a49afb68cf9d2",
+      "recovery_file": "recovery/income_statement_growth.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/balance_sheet_growth.py",
+      "sha256": "fb9f08cfa2721f97dedee402abff4bdef968d8c6e1d55baff9dc0d5f663c75a0",
+      "recovery_file": "recovery/balance_sheet_growth.py"
+    },
+    {
+      "member": "openbb_fmp-1.6.1/openbb_fmp/models/cash_flow_growth.py",
+      "sha256": "b1fd6e773908f80e0c8b3400dfa679127a75ac074bba635ebb988d1c05c9ae03",
+      "recovery_file": "recovery/cash_flow_growth.py"
+    }
+  ],
+  "notices": {
+    "archive_standalone_notices": [],
+    "retained_path": "openbb_platform/providers/fmp/LICENSE",
+    "sha256": "442baa7865ddf53ba04808a29e4810ac1fd9c83383d4ac76297cec4569e19222",
+    "source": "https://raw.githubusercontent.com/openbq-org/OpenBB/8e306a4de2b3cb0753fbd74d3aca4dcf0fa15472/LICENSE",
+    "provenance_path": "openbb_platform/providers/fmp/provenance.json",
+    "provenance_sha256": "d2e7e19aa5e1652a42b43d769ca361538352a58c2351c65df5264caee3c51db4"
+  }
+}

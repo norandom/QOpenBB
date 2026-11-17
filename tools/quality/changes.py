@@ -71,7 +71,7 @@ def git_manifest(root: Path, repo: dict, base: str, head: str) -> dict:
     # A clean worktree makes the measured bytes attributable to the declared head.
     if git(root, "remote", "get-url", "origin").strip() != repo["repository"]:
         raise ValueError("Git origin does not match inventory repository")
-    if git(root, "rev-parse", "--show-toplevel").strip() != str(root.resolve()):
+    if Path(git(root, "rev-parse", "--show-toplevel").strip()).resolve() != root.resolve():
         raise ValueError("Git root does not match fork root")
     for revision in (base, head):
         if not re.fullmatch(r"[0-9a-f]{40}", revision):

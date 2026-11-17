@@ -103,6 +103,14 @@ def validate_config(config: dict, source_lock: dict) -> None:
             locked = source_lock.get(repo["source_lock_key"], {})
             if any(repo.get(key) != locked.get(key) for key in ("repository", "revision")):
                 raise ValueError(f"{repo['id']}: inventory differs from source lock")
+        for owner in repo["owners"]:
+            patterns = owner.get("patterns", [])
+            if not isinstance(patterns, list):
+                raise ValueError("ownership patterns must be an array")
+            for pattern in patterns:
+                safe_path(Path.cwd(), pattern)
+                if "[" in pattern or "]" in pattern:
+                    raise ValueError("ownership patterns support only * and ? wildcards")
         for item in repo["exclusions"]:
             if not item.get("reason") or not item.get("source") or not item.get("patterns"):
                 raise ValueError("exclusions require patterns, reason and source/generator")
@@ -111,7 +119,8 @@ def validate_config(config: dict, source_lock: dict) -> None:
 def owned(repo: dict, name: str) -> str:
     candidates = [owner for owner in repo["owners"]
                   if any(matches(name, pattern) for pattern in owner["include"])]
-    mapped = [owner for owner in candidates if name in owner["files"]]
+    mapped = [owner for owner in candidates if name in owner["files"] or
+              any(matches(name, pattern) for pattern in owner.get("patterns", []))]
     if len(mapped) != 1:
         raise ValueError(f"{name}: unmapped or ambiguous production file; ownership review required")
     return mapped[0]["spec"]

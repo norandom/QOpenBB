@@ -2,9 +2,9 @@
 id = "fmp-expansion-24-operation-tranche"
 requirements = ["market-data-integrations/requirements.md:1.1-1.4", "market-data-integrations/requirements.md:2.2-2.6", "market-data-integrations/requirements.md:4.1-4.7", "market-data-integrations/requirements.md:6.1-6.5", "market-data-integrations/requirements.md:7.1-7.5", "market-data-integrations/requirements.md:8.1-8.5"]
 planned_checks = ["per-endpoint bounded query and financial result contracts", "explicit provider and safe pre-I/O rejection", "real native response comparison and entitlement classification", "generated discovery and representative Workspace journeys", "source identity, complexity and independent review"]
-test_paths = []
+test_paths = ["tests/quality/test_scope.py", "tests/quality/test_cli.py"]
 status = "planned"
-evidence = ["2026-11-17 planning only: .kiro/specs/market-data-integrations/fmp-expansion-plan.md, fmp-expansion-inventory.md and fmp-expansion-review.md. Independent planning review passed. A11 + B8 + C5 candidates; 19 retained adapters and five new-contract candidates, excluding ten accepted baseline models. Batch A design is owner-approved; fmp-expansion-a-tasks.md has 26 independently reviewed units and awaits task approval, including its 48-request ceiling. fmp-expansion-a-task-review.md records PASS after one repair. No runtime tests executed, endpoints implemented, provider requests made or account/widget acceptance claimed; structural planning checks are not endpoint evidence."]
+evidence = ["2026-11-17: Batch A design and 26-task plan are owner-approved with a 48-request ceiling. Task 1.1 source/complexity foundation accepted: artifacts/reviewed/fmp-expansion-a/foundation-review.md; 102 quality checks passed, two platform skips, 103 maintained root files within caps, missing fork scope fails closed. The test paths here prove foundation behavior only. A11 + B8 + C5 remain 24 endpoint candidates, excluding ten accepted baseline models; no new provider calls, installed endpoints or account/widget acceptance. See .kiro/specs/market-data-integrations/fmp-expansion-a-tasks.md for subsequent task gates."]
 
 [[capabilities]]
 id = "shared-provider-research-contract"

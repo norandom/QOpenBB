@@ -156,3 +156,30 @@ def test_unreadable_maintained_directory_blocks_inventory(scoped, monkeypatch):
     errors = run({"workspace": manifest([])})["errors"]
     assert errors and "qopenbb" in errors[0] and "hidden" in errors[0]
     assert "Permission denied" in errors[0]
+
+def test_pattern_ownership_covers_future_files_without_missing_placeholders(scoped):
+    _, config, write, run = scoped
+    config['repositories'][0]['owners'][0]['patterns'] = ['src/adapters/*.py']
+    baseline = run({'workspace': manifest([])})
+    assert not baseline['errors']
+    assert baseline['files'] == []
+    write('src/adapters/new.py', 'value = 1\n')
+    report = run({'workspace': manifest([])})
+    assert not report['errors']
+    assert report['files'][0]['owner'] == 'fixture'
+
+
+def test_pattern_and_exact_owner_overlap_fails_closed(scoped):
+    _, config, write, run = scoped
+    config['repositories'][0]['owners'][0]['patterns'] = ['src/*.py']
+    config['repositories'][0]['owners'].append(
+        {'spec': 'other', 'include': ['src/**'], 'files': ['src/new.py']})
+    write('src/new.py', 'value = 1\n')
+    assert 'ambiguous' in ' '.join(run({'workspace': manifest([])})['errors'])
+
+
+@pytest.mark.parametrize("patterns", ["src/*", ["../escape/*"], ["/absolute/*"], ["src/[broken"], [None]])
+def test_malformed_ownership_patterns_fail_closed(scoped, patterns):
+    _, config, _, run = scoped
+    config['repositories'][0]['owners'][0]['patterns'] = patterns
+    assert run({'workspace': manifest([])})['errors']
