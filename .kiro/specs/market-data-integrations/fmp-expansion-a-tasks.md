@@ -120,7 +120,7 @@ Common endpoint checks: aliases, exactly one request, invalid inputs before I/O,
 bounds/completeness, financial annotation coverage, auth/entitlement/throttle/retry-after/timeout/malformed errors.
 Do not introduce new metadata fields, infer missing currency/vintage, or deduplicate by date.
 
-- [ ] 3.1 (P) Restore analyst-estimates financial behavior (2-3 hours)
+- [x] 3.1 (P) Restore analyst-estimates financial behavior (2-3 hours)
   - Freeze annual/quarter alias, limit 20 (1..100), page 0 (0..10); forward once and clip to limit.
   - Forecast fiscal end is not publication; retain low/high/average/count, estimate origin and unknown vintage.
   - Done: AnalystEstimates matches frozen query/result schemas and endpoint-specific plus common offline checks pass.
@@ -345,3 +345,5 @@ Task review must PASS independently before maintained tasks/spec metadata are wr
 Shared acquisition correction accepted 2026-11-17: [independent review](../../../artifacts/reviewed/fmp-expansion-a/empty-acquisition-review.md), 494 compatibility checks plus 44 independent probes, frozen admission hashes unchanged and final 112-file combined gate. API e3eb9922c79c76a77cebf6188f950303a7ba1b9e. Only explicit allow_empty=True accepts original top-level arrays; defaults and nested payload failure behavior remain unchanged. Adapter lanes may resume.
 
 3.6 accepted 2026-11-17: [historical_market_cap review](../../../artifacts/reviewed/fmp-expansion-a/historical-market-cap-review.md), 299 focused/compatibility tests and 26 independent probes passed; final notice-only correction independently reverse-hash verified. API 6ef7204bf70a136169e9b04491b380b5d709d809. Actual registration/native result and live/consumer joins remain pending.
+
+3.1 accepted 2026-11-17: [analyst_estimates review](../../../artifacts/reviewed/fmp-expansion-a/analyst-estimates-review.md), 279 focused/compatibility tests and 18 independent probes passed after endpoint-local inherited conversion error repair. API e79eb68b82dc8f0a8f62602b28e0e16cc424e937. Actual registration/native result and live/consumer joins remain pending.
