@@ -140,7 +140,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Depends: 1.4, 2.3_
   - _Requirements: 2.3, 2.4, 2.5, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 5.1, 5.3, 5.4, 6.1, 7.1, 7.2, 7.3, 7.4, 7.5, 8.4_
 
-- [ ] 3.3 (P) Restore price-target-consensus financial behavior (2-3 hours)
+- [x] 3.3 (P) Restore price-target-consensus financial behavior (2-3 hours)
   - One matching-symbol singleton; duplicate or foreign-symbol rows fail; no extra query parameters.
   - Keep high/low/median/consensus separate; dated methodology is limitation text, not response lineage/date.
   - Done: PriceTargetConsensus matches frozen query/result schemas and endpoint-specific plus common offline checks pass.
@@ -353,3 +353,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 3.2 accepted 2026-11-17: [price_target review](../../../artifacts/reviewed/fmp-expansion-a/price-target-review.md), 242 focused/compatibility tests, 41 malformed actual-Fetcher probes and 3 publication precision/offset probes passed. API a1ea752608b068bf6fbfee724cf0a03a016a7e69. Actual registration/native result and live/consumer joins remain pending.
 
 3.8 accepted 2026-11-17: [equity_quote review](../../../artifacts/reviewed/fmp-expansion-a/equity-quote-review.md), 349 provider compatibility tests, 212 malformed actual-Fetcher probes and 4 epoch/metadata probes passed; pipeline catalog join remains separate. API 1fb9a75b266773448ba295f8367166d9d8dc094c. Actual registration/native result and live/consumer joins remain pending.
+
+3.3 accepted 2026-11-17: [price_target_consensus review](../../../artifacts/reviewed/fmp-expansion-a/price-target-consensus-review.md), 182 focused/compatibility tests, 55 malformed actual-Fetcher probes and 3 success/metadata probes passed; original RED retained as labeled tool-transcript extraction. API fd195a6e4e530ddb4ddbe632337ba26a79b0e5ae. Actual registration/native result and live/consumer joins remain pending.
