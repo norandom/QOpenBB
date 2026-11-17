@@ -40,7 +40,7 @@
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
     "implemented_operations": 11,
-    "accepted_tasks": 23,
+    "accepted_tasks": 24,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
@@ -89,10 +89,12 @@
       "../../../artifacts/reviewed/fmp-expansion-a/candidate-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/candidate-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/live-matrix-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/native-browser-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/native-browser-verification.json"
     ],
     "new_live_requests": 0,
-    "note": "All eleven endpoints have nonempty financial comparison evidence: 29 source-identical prior cases plus three corrected cash-flow cases, 1019 rows and 5052 independent source-fact checks. Original three wrong-route failures remain consumed. Cumulative 35/48 FMP requests, zero FRED and zero guard denials. Browser and publication remain pending.",
+    "note": "Four representative local widgets passed eight actual acquisitions: retained initial four display/CSV/native-save cases plus fresh-context reopen four; 70 rows and 372 independently checked financial/identity facts, four CSV exports. Seven failed browser attempts remain retained; the accepted initial journey includes two genuine pre-I/O 422 responses. Same guarded process ends at 43/48 FMP, FRED 0 and zero denials. No eleven-widget, App-template, later CI-image or deployment claim. Final release checks and CI publication remain pending.",
     "admission_amendment": {
       "document": "fmp-expansion-a-admission-amendment.md",
       "sha256": "47d4939e6ee381b7cb8863b5e93f31780f8bf763e763078d09e69676bc8b14b0",
@@ -155,13 +157,14 @@
       "data-api": "sha256:c0f6a96a6f069170ab455b821cb0b7fc7a0b766a86b90a2323bf47605f155e67",
       "workspace": "sha256:82541bb91a2ccb8f02f19e3d89d7d942599f2a289eec8118332fa5f30aaeb666"
     },
-    "live_requests_used": 35,
+    "live_requests_used": 43,
     "cash_flow_growth_route_followup": {
       "status": "source-reviewed-live-pending",
       "api_commit": "a7c6ae2139b4dcc16571d0c23ade483a114a0068",
       "evidence": "../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-route-review.md"
     },
-    "live_matrix_accepted": true
+    "live_matrix_accepted": true,
+    "native_browser_accepted": true
   },
   "language": "en",
   "phase": "tasks-generated",

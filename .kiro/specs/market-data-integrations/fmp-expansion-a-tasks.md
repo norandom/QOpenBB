@@ -281,7 +281,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Depends: 5.1_
   - _Requirements: 1.2, 2.6, 4.1, 4.2, 4.3, 4.7, 8.3, 8.4_
 
-- [ ] 5.3 Verify representative isolated Workspace lifecycle (2-3 hours)
+- [x] 5.3 Verify representative isolated Workspace lifecycle (2-3 hours)
   - On 5.1 candidate, eight browser calls cover estimate/segment/growth/market display, recovery and save/reopen/export.
   - One headless worker reuses existing browser/CDP harness, disposable state, hidden helpers and bounded login scheduling.
   - Done: displayed/programmatic facts, persistence and console/network outcomes recorded with exact local source/image identity.
@@ -377,3 +377,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 3.11 route follow-up 2026-11-17: [independent correction review](../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-route-review.md). Live verification exposed three 404 responses from an API-path typo. The retained source and frozen design already specified cash-flow-statement-growth. Corrected only request and source-metadata endpoint strings; preserved documentation URL and original archive proofs. 477 focused checks and five independent probes passed, with one existing skip. API a7c6ae2139b4dcc16571d0c23ade483a114a0068. Corrected packaged live validation remains pending; all 32 original attempts remain consumed.
 
 5.2 accepted 2026-11-17: [live-matrix review](../../../artifacts/reviewed/fmp-expansion-a/live-matrix-review.md). All eleven endpoints have nonempty financial comparison evidence: 29 source-identical prior cases plus three corrected cash-flow cases, 1019 rows and 5052 independent source-fact checks. Original three wrong-route failures remain consumed. Cumulative 35/48 FMP requests, zero FRED and zero guard denials. Browser and publication remain pending. API a7c6ae2139b4dcc16571d0c23ade483a114a0068.
+
+5.3 accepted 2026-11-17: [native-browser review](../../../artifacts/reviewed/fmp-expansion-a/native-browser-review.md). Four representative local widgets passed eight actual acquisitions: retained initial four display/CSV/native-save cases plus fresh-context reopen four; 70 rows and 372 independently checked financial/identity facts, four CSV exports. Seven failed browser attempts remain retained; the accepted initial journey includes two genuine pre-I/O 422 responses. Same guarded process ends at 43/48 FMP, FRED 0 and zero denials. No eleven-widget, App-template, later CI-image or deployment claim. API a7c6ae2139b4dcc16571d0c23ade483a114a0068.
