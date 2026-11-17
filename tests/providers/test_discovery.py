@@ -16,6 +16,17 @@ FMP_MODELS = {
     "EquityInfo", "IncomeStatement", "BalanceSheet", "CashFlowStatement",
     "EquitySearch", "EquityPeers", "EquityHistorical", "KeyMetrics",
     "FinancialRatios", "EnterpriseValues",
+    "AnalystEstimates",
+    "PriceTarget",
+    "PriceTargetConsensus",
+    "RevenueBusinessLine",
+    "RevenueGeographic",
+    "HistoricalMarketCap",
+    "ShareStatistics",
+    "EquityQuote",
+    "IncomeStatementGrowth",
+    "BalanceSheetGrowth",
+    "CashFlowStatementGrowth",
 }
 
 

@@ -232,7 +232,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
 
 ## 4. Controller registration and consumer integration
 
-- [ ] 4.1 Register reviewed adapters and advance reproducible source pins (1-2 hours)
+- [x] 4.1 Register reviewed adapters and advance reproducible source pins (1-2 hours)
   - Integrate all eleven accepted modules into provider.py and provenance; preserve baseline registrations/routes/notices.
   - Done: installed RegistryMap contains exact expected keys; source recovery hashes and actual commits/pins agree.
   - Offline registration smoke only; no unbudgeted provider request. Shared source pins/inventory remain exclusive.
@@ -365,3 +365,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 3.5 accepted 2026-11-17: [revenue_geographic review](../../../artifacts/reviewed/fmp-expansion-a/revenue-geographic-review.md), 214 endpoint/shared tests and 24 independent adversarial checks passed; Ruff, six source origins and exact frozen contracts verified. API 23a24f9e65a34c1b2b5f9e95f0f8d4cbd3892d56. Actual registration/native result and live/consumer joins remain pending.
 
 3.11 accepted 2026-11-17: [cash_flow_growth review](../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-review.md), 536 checks passed including 12 independent adversarial probes, with one empty-parameter-set skip; independently reviewed newline normalization and fresh 361-test endpoint run passed with the same skip. API e42f67229a8e9e2dc873eb8594d55050adc33963. Actual registration/native result and live/consumer joins remain pending.
+
+4.1 accepted 2026-11-17: [registration review](../../../artifacts/reviewed/fmp-expansion-a/registration-review.md). All eleven additions and ten baseline FMP models are registered offline; five focused checks and independent source-pin probes passed. Exact API source pins agree; the 127-file historical batch audit and 763-file full maintained snapshot passed without violations. Packaged, live and consumer acceptance remain pending. API 04acdb09ed76f432f4091a61630213e19f2d655c.

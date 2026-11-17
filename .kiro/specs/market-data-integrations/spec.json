@@ -39,8 +39,8 @@
     "phase": "implementation-in-progress",
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
-    "implemented_operations": 0,
-    "accepted_tasks": 18,
+    "implemented_operations": 11,
+    "accepted_tasks": 19,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
@@ -79,10 +79,12 @@
       "../../../artifacts/reviewed/fmp-expansion-a/revenue-geographic-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/revenue-geographic-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/registration-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/registration-verification.json"
     ],
     "new_live_requests": 0,
-    "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance.",
+    "note": "Batch A eleven adapters and production registration accepted offline. Actual registered SDK/HTTP/discovery joins, generated consumer contracts, live/browser verification and publication remain pending; B8/C5 remain candidates.",
     "admission_amendment": {
       "document": "fmp-expansion-a-admission-amendment.md",
       "sha256": "47d4939e6ee381b7cb8863b5e93f31780f8bf763e763078d09e69676bc8b14b0",
@@ -94,7 +96,7 @@
       "runtime_implemented": true,
       "emitter_exception_approved": true,
       "sdk_task_accepted": true,
-      "runtime_scope": "SDK, HTTP and direct Fetcher dedicated prerequisite join accepted; adapter fan-out authorized by existing task approval. Production registration remains pending.",
+      "runtime_scope": "SDK/HTTP dedicated prerequisites and all eleven production FMP registrations accepted offline; actual registered SDK/HTTP/result/discovery join remains task 4.2.",
       "api_commit": "403323aee033dfcd30b7b24dda5f0f5efc35a339",
       "http_task_accepted": true,
       "join_task_accepted": true,
