@@ -210,7 +210,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Depends: 1.4, 2.3_
   - _Requirements: 2.3, 2.4, 2.5, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 5.1, 5.3, 5.4, 6.1, 7.1, 7.2, 7.3, 7.4, 7.5, 8.4_
 
-- [ ] 3.10 (P) Restore balance-sheet-statement-growth financial behavior (2-3 hours)
+- [x] 3.10 (P) Restore balance-sheet-statement-growth financial behavior (2-3 hours)
   - Annual/quarter alias and limit 20 (1..100); forward once, clip, reject other period choices.
   - Stock comparison ratios scale 1; retain fiscal end and unknown denominator/restatement/source periods.
   - Done: BalanceSheetGrowth matches frozen query/result schemas and endpoint-specific plus common offline checks pass.
@@ -359,3 +359,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 3.9 accepted 2026-11-17: [income_statement_growth review](../../../artifacts/reviewed/fmp-expansion-a/income-statement-growth-review.md), 555 focused/compatibility tests and 158 independent adversarial cases passed, including native ratio formatting and standard-schema isolation. API a16f40c5ab051aa0afcb37fc7f4382701e26c02b. Actual registration/native result and live/consumer joins remain pending.
 
 3.4 accepted 2026-11-17: [revenue_business_line review](../../../artifacts/reviewed/fmp-expansion-a/revenue-business-line-review.md), 189 focused/compatibility tests and 20 independent probes passed, including split-period clipping and malformed empty-inner rows. API 0fe5fe62aa39b9fd335eaca173b5ed79244995ab. Actual registration/native result and live/consumer joins remain pending.
+
+3.10 accepted 2026-11-17: [balance_sheet_growth review](../../../artifacts/reviewed/fmp-expansion-a/balance-sheet-growth-review.md), 557 focused/compatibility tests and 15 independent adversarial tests passed, including required-nullable fields and native ratio formatting. API 905bd72d1ca1f3bd7a2007d90c8d14b0fcfd61b9. Actual registration/native result and live/consumer joins remain pending.

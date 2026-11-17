@@ -1,0 +1,25 @@
+{
+  "task": "3.10",
+  "module": "balance_sheet_growth",
+  "model_sha256": "6b70722ff73c4c1d987f554147b9c70f4a56181326852f3010364574a5f39a98",
+  "test_sha256": "2a090f2477bbb35eb57673c161c55d0fe9c7033536699e4a31abd151e8ff9168",
+  "additional_sources": {
+    "openbb_platform/providers/fmp/openbb_fmp/models/balance_sheet_growth_data.py": "b6b5c1a3c46bf66181e3b3be8f6a8df517b9a4dcab360b03d204fdabe1ee60e1"
+  },
+  "checks_summary": "557 focused/compatibility tests and 15 independent adversarial tests passed, including required-nullable fields and native ratio formatting",
+  "test_exit_codes": [
+    0,
+    0
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "905bd72d1ca1f3bd7a2007d90c8d14b0fcfd61b9",
+  "review_sha256": "5ec700b758ae71edd37fac45faa98972c9c78f3d0563f5d163d37f935c8fefff",
+  "complexity": {
+    "files": 124,
+    "errors": 0,
+    "violations": 0,
+    "report_sha256": "345060ab3a6263d46ef20c2877f3c7ef08d4503facdb3c00bfebe3e80739e82a"
+  },
+  "limits": "Offline adapter only. Registration, native SDK/HTTP result join, live entitlement, financial comparison and browser acceptance remain pending. Other in-progress modules measured by combined gate are not accepted by this receipt."
+}
