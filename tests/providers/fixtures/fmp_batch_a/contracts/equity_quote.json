@@ -1,0 +1,2503 @@
+{
+  "model_key": "EquityQuote",
+  "endpoint": "quote",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPEquityQuoteQueryParams",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPEquityQuoteQueryParams",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "properties": {
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "assetType": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Type of asset - i.e, stock, ETF, etc.",
+          "title": "Assettype"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name of the company or asset.",
+          "title": "Name"
+        },
+        "exchange": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The name or symbol of the venue where the data is from.",
+          "title": "Exchange"
+        },
+        "bid": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Price of the top bid order.",
+          "title": "Bid"
+        },
+        "bidSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "This represents the number of round lot orders at the given price. The normal round lot size is 100 shares. A size of 2 means there are 200 shares available at the given price.",
+          "title": "Bidsize"
+        },
+        "bidExchange": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The specific trading venue where the purchase order was placed.",
+          "title": "Bidexchange"
+        },
+        "ask": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Price of the top ask order.",
+          "title": "Ask"
+        },
+        "askSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "This represents the number of round lot orders at the given price. The normal round lot size is 100 shares. A size of 2 means there are 200 shares available at the given price.",
+          "title": "Asksize"
+        },
+        "askExchange": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The specific trading venue where the sale order was placed.",
+          "title": "Askexchange"
+        },
+        "quoteConditions": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conditions or condition codes applicable to the quote.",
+          "title": "Quoteconditions"
+        },
+        "quoteIndicators": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Indicators or indicator codes applicable to the participant quote related to the price bands for the issue, or the affect the quote has on the NBBO.",
+          "title": "Quoteindicators"
+        },
+        "salesConditions": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conditions or condition codes applicable to the sale.",
+          "title": "Salesconditions"
+        },
+        "sequenceNumber": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The sequence number represents the sequence in which message events happened. These are increasing and unique per ticker symbol, but will not always be sequential (e.g., 1, 2, 6, 9, 10, 11).",
+          "title": "Sequencenumber"
+        },
+        "marketCenter": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The ID of the UTP participant that originated the message.",
+          "title": "Marketcenter"
+        },
+        "participantTimestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Timestamp for when the quote was generated by the exchange.",
+          "title": "Participanttimestamp"
+        },
+        "trfTimestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Timestamp for when the TRF (Trade Reporting Facility) received the message.",
+          "title": "Trftimestamp"
+        },
+        "sipTimestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Timestamp for when the SIP (Security Information Processor) received the message from the exchange.",
+          "title": "Siptimestamp"
+        },
+        "lastPrice": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Price of the last trade.",
+          "title": "Lastprice"
+        },
+        "lastTick": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether the last sale was an up or down tick.",
+          "title": "Lasttick"
+        },
+        "lastSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Size of the last trade.",
+          "title": "Lastsize"
+        },
+        "lastTimestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Date and Time when the last price was recorded.",
+          "title": "Lasttimestamp"
+        },
+        "open": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The open price.",
+          "title": "Open"
+        },
+        "high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The high price.",
+          "title": "High"
+        },
+        "low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The low price.",
+          "title": "Low"
+        },
+        "close": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The close price.",
+          "title": "Close"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The trading volume.",
+          "title": "Volume"
+        },
+        "exchangeVolume": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Volume of shares exchanged during the trading day on the specific exchange.",
+          "title": "Exchangevolume"
+        },
+        "prevClose": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The previous close price.",
+          "title": "Prevclose"
+        },
+        "change": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Change in price from previous close.",
+          "title": "Change"
+        },
+        "changePercent": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Change in price as a normalized percentage.",
+          "title": "Changepercent",
+          "x-frontend_multiply": 100,
+          "x-unit_measurement": "percent"
+        },
+        "yearHigh": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The one year high (52W High).",
+          "title": "Yearhigh"
+        },
+        "yearLow": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The one year low (52W Low).",
+          "title": "Yearlow"
+        },
+        "ma50": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "50 day moving average price.",
+          "title": "Ma50"
+        },
+        "ma200": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "200 day moving average price.",
+          "title": "Ma200"
+        },
+        "marketCap": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Market cap of the company.",
+          "title": "Marketcap"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPEquityQuoteData",
+      "type": "object"
+    },
+    "serialization": {
+      "properties": {
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "asset_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Type of asset - i.e, stock, ETF, etc.",
+          "title": "Asset Type"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name of the company or asset.",
+          "title": "Name"
+        },
+        "exchange": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The name or symbol of the venue where the data is from.",
+          "title": "Exchange"
+        },
+        "bid": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Price of the top bid order.",
+          "title": "Bid"
+        },
+        "bid_size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "This represents the number of round lot orders at the given price. The normal round lot size is 100 shares. A size of 2 means there are 200 shares available at the given price.",
+          "title": "Bid Size"
+        },
+        "bid_exchange": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The specific trading venue where the purchase order was placed.",
+          "title": "Bid Exchange"
+        },
+        "ask": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Price of the top ask order.",
+          "title": "Ask"
+        },
+        "ask_size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "This represents the number of round lot orders at the given price. The normal round lot size is 100 shares. A size of 2 means there are 200 shares available at the given price.",
+          "title": "Ask Size"
+        },
+        "ask_exchange": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The specific trading venue where the sale order was placed.",
+          "title": "Ask Exchange"
+        },
+        "quote_conditions": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conditions or condition codes applicable to the quote.",
+          "title": "Quote Conditions"
+        },
+        "quote_indicators": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Indicators or indicator codes applicable to the participant quote related to the price bands for the issue, or the affect the quote has on the NBBO.",
+          "title": "Quote Indicators"
+        },
+        "sales_conditions": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conditions or condition codes applicable to the sale.",
+          "title": "Sales Conditions"
+        },
+        "sequence_number": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The sequence number represents the sequence in which message events happened. These are increasing and unique per ticker symbol, but will not always be sequential (e.g., 1, 2, 6, 9, 10, 11).",
+          "title": "Sequence Number"
+        },
+        "market_center": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The ID of the UTP participant that originated the message.",
+          "title": "Market Center"
+        },
+        "participant_timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Timestamp for when the quote was generated by the exchange.",
+          "title": "Participant Timestamp"
+        },
+        "trf_timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Timestamp for when the TRF (Trade Reporting Facility) received the message.",
+          "title": "Trf Timestamp"
+        },
+        "sip_timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Timestamp for when the SIP (Security Information Processor) received the message from the exchange.",
+          "title": "Sip Timestamp"
+        },
+        "last_price": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Price of the last trade.",
+          "title": "Last Price"
+        },
+        "last_tick": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether the last sale was an up or down tick.",
+          "title": "Last Tick"
+        },
+        "last_size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Size of the last trade.",
+          "title": "Last Size"
+        },
+        "last_timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Date and Time when the last price was recorded.",
+          "title": "Last Timestamp"
+        },
+        "open": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The open price.",
+          "title": "Open"
+        },
+        "high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The high price.",
+          "title": "High"
+        },
+        "low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The low price.",
+          "title": "Low"
+        },
+        "close": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The close price.",
+          "title": "Close"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The trading volume.",
+          "title": "Volume"
+        },
+        "exchange_volume": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Volume of shares exchanged during the trading day on the specific exchange.",
+          "title": "Exchange Volume"
+        },
+        "prev_close": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The previous close price.",
+          "title": "Prev Close"
+        },
+        "change": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Change in price from previous close.",
+          "title": "Change"
+        },
+        "change_percent": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Change in price as a normalized percentage.",
+          "title": "Change Percent",
+          "x-frontend_multiply": 100,
+          "x-unit_measurement": "percent"
+        },
+        "year_high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The one year high (52W High).",
+          "title": "Year High"
+        },
+        "year_low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The one year low (52W Low).",
+          "title": "Year Low"
+        },
+        "ma_50": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "50 day moving average price.",
+          "title": "Ma 50"
+        },
+        "ma_200": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "200 day moving average price.",
+          "title": "Ma 200"
+        },
+        "market_cap": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Market cap of the company.",
+          "title": "Market Cap"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPEquityQuoteData",
+      "type": "object"
+    }
+  },
+  "query_annotation": {
+    "provider_policy": "explicit",
+    "procedural_bounds": {
+      "max_calendar_years": null,
+      "max_symbols": 1
+    },
+    "response_policy": {
+      "mode": "provider",
+      "max_rows": null,
+      "limit_parameter": null
+    },
+    "runtime_properties": [
+      "bounds",
+      "effective_query",
+      "retrieved_at"
+    ]
+  },
+  "data_annotation": {
+    "fields": {
+      "symbol": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "asset_type": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "name": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "exchange": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "bid": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "bid_size": {
+        "definition": null,
+        "unit": "round_lots",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "order size in round lots; standard describes normal lot as 100 shares, actual listing lot convention unverified",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "bid_exchange": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "ask": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "ask_size": {
+        "definition": null,
+        "unit": "round_lots",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "order size in round lots; standard describes normal lot as 100 shares, actual listing lot convention unverified",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "ask_exchange": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "quote_conditions": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "quote_indicators": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "sales_conditions": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "sequence_number": {
+        "definition": null,
+        "unit": "count",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "market_center": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "participant_timestamp": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "trf_timestamp": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "sip_timestamp": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "last_price": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "last_timestamp",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "last_tick": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "last_size": {
+        "definition": null,
+        "unit": "shares",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "last_timestamp": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "last_timestamp",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "open": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "high": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "low": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "close": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "volume": {
+        "definition": null,
+        "unit": "shares",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "exchange_volume": {
+        "definition": null,
+        "unit": "shares",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "prev_close": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "change": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "last_timestamp",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "change_percent": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "last_timestamp",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": "percent",
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": "divide_by_100",
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "year_high": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "year_low": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "ma50": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "ma200": {
+        "definition": null,
+        "unit": "currency/share",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      },
+      "market_cap": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": null,
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null,
+          "share_count": null
+        }
+      }
+    },
+    "runtime_properties": [
+      "fields.availability",
+      "retrieved_at",
+      "effective_query",
+      "bounds"
+    ],
+    "dynamic_fields": false
+  },
+  "canonical_fields": [
+    "symbol",
+    "asset_type",
+    "name",
+    "exchange",
+    "bid",
+    "bid_size",
+    "bid_exchange",
+    "ask",
+    "ask_size",
+    "ask_exchange",
+    "quote_conditions",
+    "quote_indicators",
+    "sales_conditions",
+    "sequence_number",
+    "market_center",
+    "participant_timestamp",
+    "trf_timestamp",
+    "sip_timestamp",
+    "last_price",
+    "last_tick",
+    "last_size",
+    "last_timestamp",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "exchange_volume",
+    "prev_close",
+    "change",
+    "change_percent",
+    "year_high",
+    "year_low",
+    "ma50",
+    "ma200",
+    "market_cap"
+  ],
+  "retained_aliases": {
+    "ma50": "priceAvg50",
+    "ma200": "priceAvg200",
+    "last_timestamp": "timestamp",
+    "high": "dayHigh",
+    "low": "dayLow",
+    "last_price": "price",
+    "change_percent": "changePercentage",
+    "prev_close": "previousClose"
+  },
+  "effective_aliases": {
+    "ma50": "priceAvg50",
+    "ma200": "priceAvg200",
+    "last_timestamp": "timestamp",
+    "high": "dayHigh",
+    "low": "dayLow",
+    "last_price": "price",
+    "change_percent": "changePercentage",
+    "prev_close": "previousClose"
+  },
+  "accepted_validation_aliases": {
+    "symbol": {
+      "canonical": "symbol",
+      "generated_schema_alias": "symbol",
+      "source_aliases": [],
+      "serialization": "symbol"
+    },
+    "asset_type": {
+      "canonical": "asset_type",
+      "generated_schema_alias": "assetType",
+      "source_aliases": [],
+      "serialization": "asset_type"
+    },
+    "name": {
+      "canonical": "name",
+      "generated_schema_alias": "name",
+      "source_aliases": [],
+      "serialization": "name"
+    },
+    "exchange": {
+      "canonical": "exchange",
+      "generated_schema_alias": "exchange",
+      "source_aliases": [],
+      "serialization": "exchange"
+    },
+    "bid": {
+      "canonical": "bid",
+      "generated_schema_alias": "bid",
+      "source_aliases": [],
+      "serialization": "bid"
+    },
+    "bid_size": {
+      "canonical": "bid_size",
+      "generated_schema_alias": "bidSize",
+      "source_aliases": [],
+      "serialization": "bid_size"
+    },
+    "bid_exchange": {
+      "canonical": "bid_exchange",
+      "generated_schema_alias": "bidExchange",
+      "source_aliases": [],
+      "serialization": "bid_exchange"
+    },
+    "ask": {
+      "canonical": "ask",
+      "generated_schema_alias": "ask",
+      "source_aliases": [],
+      "serialization": "ask"
+    },
+    "ask_size": {
+      "canonical": "ask_size",
+      "generated_schema_alias": "askSize",
+      "source_aliases": [],
+      "serialization": "ask_size"
+    },
+    "ask_exchange": {
+      "canonical": "ask_exchange",
+      "generated_schema_alias": "askExchange",
+      "source_aliases": [],
+      "serialization": "ask_exchange"
+    },
+    "quote_conditions": {
+      "canonical": "quote_conditions",
+      "generated_schema_alias": "quoteConditions",
+      "source_aliases": [],
+      "serialization": "quote_conditions"
+    },
+    "quote_indicators": {
+      "canonical": "quote_indicators",
+      "generated_schema_alias": "quoteIndicators",
+      "source_aliases": [],
+      "serialization": "quote_indicators"
+    },
+    "sales_conditions": {
+      "canonical": "sales_conditions",
+      "generated_schema_alias": "salesConditions",
+      "source_aliases": [],
+      "serialization": "sales_conditions"
+    },
+    "sequence_number": {
+      "canonical": "sequence_number",
+      "generated_schema_alias": "sequenceNumber",
+      "source_aliases": [],
+      "serialization": "sequence_number"
+    },
+    "market_center": {
+      "canonical": "market_center",
+      "generated_schema_alias": "marketCenter",
+      "source_aliases": [],
+      "serialization": "market_center"
+    },
+    "participant_timestamp": {
+      "canonical": "participant_timestamp",
+      "generated_schema_alias": "participantTimestamp",
+      "source_aliases": [],
+      "serialization": "participant_timestamp"
+    },
+    "trf_timestamp": {
+      "canonical": "trf_timestamp",
+      "generated_schema_alias": "trfTimestamp",
+      "source_aliases": [],
+      "serialization": "trf_timestamp"
+    },
+    "sip_timestamp": {
+      "canonical": "sip_timestamp",
+      "generated_schema_alias": "sipTimestamp",
+      "source_aliases": [],
+      "serialization": "sip_timestamp"
+    },
+    "last_price": {
+      "canonical": "last_price",
+      "generated_schema_alias": "lastPrice",
+      "source_aliases": [
+        "price"
+      ],
+      "serialization": "last_price"
+    },
+    "last_tick": {
+      "canonical": "last_tick",
+      "generated_schema_alias": "lastTick",
+      "source_aliases": [],
+      "serialization": "last_tick"
+    },
+    "last_size": {
+      "canonical": "last_size",
+      "generated_schema_alias": "lastSize",
+      "source_aliases": [],
+      "serialization": "last_size"
+    },
+    "last_timestamp": {
+      "canonical": "last_timestamp",
+      "generated_schema_alias": "lastTimestamp",
+      "source_aliases": [
+        "timestamp"
+      ],
+      "serialization": "last_timestamp"
+    },
+    "open": {
+      "canonical": "open",
+      "generated_schema_alias": "open",
+      "source_aliases": [],
+      "serialization": "open"
+    },
+    "high": {
+      "canonical": "high",
+      "generated_schema_alias": "high",
+      "source_aliases": [
+        "dayHigh"
+      ],
+      "serialization": "high"
+    },
+    "low": {
+      "canonical": "low",
+      "generated_schema_alias": "low",
+      "source_aliases": [
+        "dayLow"
+      ],
+      "serialization": "low"
+    },
+    "close": {
+      "canonical": "close",
+      "generated_schema_alias": "close",
+      "source_aliases": [],
+      "serialization": "close"
+    },
+    "volume": {
+      "canonical": "volume",
+      "generated_schema_alias": "volume",
+      "source_aliases": [],
+      "serialization": "volume"
+    },
+    "exchange_volume": {
+      "canonical": "exchange_volume",
+      "generated_schema_alias": "exchangeVolume",
+      "source_aliases": [],
+      "serialization": "exchange_volume"
+    },
+    "prev_close": {
+      "canonical": "prev_close",
+      "generated_schema_alias": "prevClose",
+      "source_aliases": [
+        "previousClose"
+      ],
+      "serialization": "prev_close"
+    },
+    "change": {
+      "canonical": "change",
+      "generated_schema_alias": "change",
+      "source_aliases": [],
+      "serialization": "change"
+    },
+    "change_percent": {
+      "canonical": "change_percent",
+      "generated_schema_alias": "changePercent",
+      "source_aliases": [
+        "changePercentage"
+      ],
+      "serialization": "change_percent"
+    },
+    "year_high": {
+      "canonical": "year_high",
+      "generated_schema_alias": "yearHigh",
+      "source_aliases": [],
+      "serialization": "year_high"
+    },
+    "year_low": {
+      "canonical": "year_low",
+      "generated_schema_alias": "yearLow",
+      "source_aliases": [],
+      "serialization": "year_low"
+    },
+    "ma50": {
+      "canonical": "ma50",
+      "generated_schema_alias": "ma50",
+      "source_aliases": [
+        "priceAvg50"
+      ],
+      "serialization": "ma_50"
+    },
+    "ma200": {
+      "canonical": "ma200",
+      "generated_schema_alias": "ma200",
+      "source_aliases": [
+        "priceAvg200"
+      ],
+      "serialization": "ma_200"
+    },
+    "market_cap": {
+      "canonical": "market_cap",
+      "generated_schema_alias": "marketCap",
+      "source_aliases": [],
+      "serialization": "market_cap"
+    }
+  },
+  "field_presence": {
+    "symbol": {
+      "required": true,
+      "nullable": false
+    },
+    "asset_type": {
+      "required": false,
+      "nullable": true
+    },
+    "name": {
+      "required": false,
+      "nullable": true
+    },
+    "exchange": {
+      "required": false,
+      "nullable": true
+    },
+    "bid": {
+      "required": false,
+      "nullable": true
+    },
+    "bid_size": {
+      "required": false,
+      "nullable": true
+    },
+    "bid_exchange": {
+      "required": false,
+      "nullable": true
+    },
+    "ask": {
+      "required": false,
+      "nullable": true
+    },
+    "ask_size": {
+      "required": false,
+      "nullable": true
+    },
+    "ask_exchange": {
+      "required": false,
+      "nullable": true
+    },
+    "quote_conditions": {
+      "required": false,
+      "nullable": true
+    },
+    "quote_indicators": {
+      "required": false,
+      "nullable": true
+    },
+    "sales_conditions": {
+      "required": false,
+      "nullable": true
+    },
+    "sequence_number": {
+      "required": false,
+      "nullable": true
+    },
+    "market_center": {
+      "required": false,
+      "nullable": true
+    },
+    "participant_timestamp": {
+      "required": false,
+      "nullable": true
+    },
+    "trf_timestamp": {
+      "required": false,
+      "nullable": true
+    },
+    "sip_timestamp": {
+      "required": false,
+      "nullable": true
+    },
+    "last_price": {
+      "required": false,
+      "nullable": true
+    },
+    "last_tick": {
+      "required": false,
+      "nullable": true
+    },
+    "last_size": {
+      "required": false,
+      "nullable": true
+    },
+    "last_timestamp": {
+      "required": false,
+      "nullable": true
+    },
+    "open": {
+      "required": false,
+      "nullable": true
+    },
+    "high": {
+      "required": false,
+      "nullable": true
+    },
+    "low": {
+      "required": false,
+      "nullable": true
+    },
+    "close": {
+      "required": false,
+      "nullable": true
+    },
+    "volume": {
+      "required": false,
+      "nullable": true
+    },
+    "exchange_volume": {
+      "required": false,
+      "nullable": true
+    },
+    "prev_close": {
+      "required": false,
+      "nullable": true
+    },
+    "change": {
+      "required": false,
+      "nullable": true
+    },
+    "change_percent": {
+      "required": false,
+      "nullable": true
+    },
+    "year_high": {
+      "required": false,
+      "nullable": true
+    },
+    "year_low": {
+      "required": false,
+      "nullable": true
+    },
+    "ma50": {
+      "required": false,
+      "nullable": true
+    },
+    "ma200": {
+      "required": false,
+      "nullable": true
+    },
+    "market_cap": {
+      "required": false,
+      "nullable": true
+    }
+  },
+  "date_contracts": {
+    "participant_timestamp": {
+      "required": false,
+      "nullable": true
+    },
+    "trf_timestamp": {
+      "required": false,
+      "nullable": true
+    },
+    "sip_timestamp": {
+      "required": false,
+      "nullable": true
+    },
+    "last_timestamp": {
+      "required": false,
+      "nullable": true
+    }
+  },
+  "source": {
+    "archive_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517",
+    "member": "openbb_fmp-1.6.1/openbb_fmp/models/equity_quote.py",
+    "member_sha256": "8329b1cdcc92ed4794b925640081ae34e093a71979503577fe65b486e813cfef",
+    "notices": {
+      "archive_standalone_notices": [],
+      "retained_path": "openbb_platform/providers/fmp/LICENSE",
+      "sha256": "442baa7865ddf53ba04808a29e4810ac1fd9c83383d4ac76297cec4569e19222",
+      "source": "https://raw.githubusercontent.com/openbq-org/OpenBB/8e306a4de2b3cb0753fbd74d3aca4dcf0fa15472/LICENSE",
+      "provenance_path": "openbb_platform/providers/fmp/provenance.json",
+      "provenance_sha256": "d2e7e19aa5e1652a42b43d769ca361538352a58c2351c65df5264caee3c51db4"
+    }
+  },
+  "source_references": [
+    "https://site.financialmodelingprep.com/developer/docs/stable/quote",
+    "https://site.financialmodelingprep.com/education/index-articles/instant-stock-intelligence-a-comprehensive-guide-to-fmps-quote-api"
+  ],
+  "documentation_checked": "2026-11-17",
+  "compatibility": {
+    "public_field_union": "existing standard plus retained FMP Data; no added fields",
+    "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+    "incompatibilities": [
+      {
+        "retained_source_defect": "Epoch0/changePercentage0 converted to null; UTC timezone stripped.",
+        "approved_correction": "Preserve zeros and UTC awareness; public union unchanged.",
+        "migration": "UTC-aware ISO timestamps include +00:00; never interpret as local time."
+      }
+    ]
+  },
+  "limitations": [
+    "No live calls; account entitlement and consumer behavior unverified.",
+    "Not point-in-time safe; publication/vintage and restatement unknown.",
+    "Empty array succeeds distinctly from unavailable optional values and response validation failure.",
+    "Currency is not inferred from symbol, exchange or profile.",
+    "last_timestamp identifies quoted data, not market-cap/share-count date.",
+    "Bid/ask/close/previous close distinct; no missing-value substitution.",
+    "No retained currency; currency/share prices with currency unknown."
+  ],
+  "transformations": [
+    {
+      "name": "unix_seconds_utc",
+      "affected_fields": [
+        "last_timestamp"
+      ],
+      "source_basis": "Documented Unix timestamp; retained UTC conversion.",
+      "definition": "datetime.fromtimestamp(timestamp, timezone.utc); preserve epoch0/null."
+    },
+    {
+      "name": "percent_to_ratio",
+      "affected_fields": [
+        "change_percent"
+      ],
+      "source_basis": "Provider changePercentage percentage.",
+      "definition": "change_percent = changePercentage / 100; preserve zero/null."
+    }
+  ],
+  "source_evidence": {
+    "parameters": {
+      "symbol": "required string"
+    },
+    "epoch_semantics": "Official FMP Quote API education reference identifies timestamp as Unix timestamp of quoted data; conversion uses UTC Unix seconds. Retained converter used UTC then stripped timezone.",
+    "official_example_timestamp": 1785430812
+  }
+}

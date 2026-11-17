@@ -1,0 +1,362 @@
+{
+  "model_key": "HistoricalMarketCap",
+  "endpoint": "historical-market-capitalization",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO calendar date; omitted start resolves at acquisition to effective end minus 365 days. Ordered range at most 366 days.",
+          "title": "Start Date"
+        },
+        "end_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO calendar date; omitted end resolves at acquisition to UTC today. Ordered range at most 366 days; fixed upstream limit 5000.",
+          "title": "End Date"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FmpHistoricalMarketCapQueryParams",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO calendar date; omitted start resolves at acquisition to effective end minus 365 days. Ordered range at most 366 days.",
+          "title": "Start Date"
+        },
+        "end_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO calendar date; omitted end resolves at acquisition to UTC today. Ordered range at most 366 days; fixed upstream limit 5000.",
+          "title": "End Date"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FmpHistoricalMarketCapQueryParams",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "description": "FMP Historical Market Cap Data.",
+      "properties": {
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "marketCap": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "description": "Market capitalization of the security.",
+          "title": "Marketcap",
+          "x-unit_measurement": "currency"
+        }
+      },
+      "required": [
+        "date",
+        "symbol",
+        "marketCap"
+      ],
+      "title": "FmpHistoricalMarketCapData",
+      "type": "object"
+    },
+    "serialization": {
+      "description": "FMP Historical Market Cap Data.",
+      "properties": {
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "market_cap": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "description": "Market capitalization of the security.",
+          "title": "Market Cap",
+          "x-unit_measurement": "currency"
+        }
+      },
+      "required": [
+        "date",
+        "symbol",
+        "market_cap"
+      ],
+      "title": "FmpHistoricalMarketCapData",
+      "type": "object"
+    }
+  },
+  "query_annotation": {
+    "provider_policy": "explicit",
+    "procedural_bounds": {
+      "max_calendar_years": null,
+      "max_symbols": 1
+    },
+    "response_policy": {
+      "mode": "clip",
+      "max_rows": 5000,
+      "limit_parameter": null
+    },
+    "runtime_properties": [
+      "bounds",
+      "effective_query",
+      "retrieved_at"
+    ]
+  },
+  "data_annotation": {
+    "fields": {
+      "date": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "date",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "share_count": null,
+          "market_date": "capitalization observation date; price basis unknown"
+        }
+      },
+      "symbol": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "date",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "share_count": null,
+          "market_date": "capitalization observation date; price basis unknown"
+        }
+      },
+      "market_cap": {
+        "definition": null,
+        "unit": "currency",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": null,
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "date",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "share_count": null,
+          "market_date": "capitalization observation date; price basis unknown"
+        }
+      }
+    },
+    "runtime_properties": [
+      "fields.availability",
+      "retrieved_at",
+      "effective_query",
+      "bounds"
+    ],
+    "dynamic_fields": false
+  },
+  "canonical_fields": [
+    "date",
+    "symbol",
+    "market_cap"
+  ],
+  "retained_aliases": {
+    "market_cap": "marketCap"
+  },
+  "effective_aliases": {
+    "market_cap": "marketCap"
+  },
+  "accepted_validation_aliases": {
+    "date": {
+      "canonical": "date",
+      "generated_schema_alias": "date",
+      "source_aliases": [],
+      "serialization": "date"
+    },
+    "symbol": {
+      "canonical": "symbol",
+      "generated_schema_alias": "symbol",
+      "source_aliases": [],
+      "serialization": "symbol"
+    },
+    "market_cap": {
+      "canonical": "market_cap",
+      "generated_schema_alias": "marketCap",
+      "source_aliases": [
+        "marketCap"
+      ],
+      "serialization": "market_cap"
+    }
+  },
+  "field_presence": {
+    "date": {
+      "required": true,
+      "nullable": false
+    },
+    "symbol": {
+      "required": true,
+      "nullable": false
+    },
+    "market_cap": {
+      "required": true,
+      "nullable": false
+    }
+  },
+  "date_contracts": {
+    "date": {
+      "required": true,
+      "nullable": false
+    }
+  },
+  "source": {
+    "archive_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517",
+    "member": "openbb_fmp-1.6.1/openbb_fmp/models/historical_market_cap.py",
+    "member_sha256": "e7ec73eca3471259207b5567f15d42b0d929d41c22bd7ed423f676c5818951ff",
+    "notices": {
+      "archive_standalone_notices": [],
+      "retained_path": "openbb_platform/providers/fmp/LICENSE",
+      "sha256": "442baa7865ddf53ba04808a29e4810ac1fd9c83383d4ac76297cec4569e19222",
+      "source": "https://raw.githubusercontent.com/openbq-org/OpenBB/8e306a4de2b3cb0753fbd74d3aca4dcf0fa15472/LICENSE",
+      "provenance_path": "openbb_platform/providers/fmp/provenance.json",
+      "provenance_sha256": "d2e7e19aa5e1652a42b43d769ca361538352a58c2351c65df5264caee3c51db4"
+    }
+  },
+  "source_references": [
+    "https://site.financialmodelingprep.com/developer/docs",
+    "https://site.financialmodelingprep.com/faqs"
+  ],
+  "documentation_checked": "2026-11-17",
+  "compatibility": {
+    "public_field_union": "existing standard plus retained FMP Data; no added fields",
+    "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+    "incompatibilities": []
+  },
+  "limitations": [
+    "No live calls; account entitlement and consumer behavior unverified.",
+    "Not point-in-time safe; publication/vintage and restatement unknown.",
+    "Empty array succeeds distinctly from unavailable optional values and response validation failure.",
+    "Currency is not inferred from symbol, exchange or profile.",
+    "Resolve at acquisition: end UTC today; start effective end minus365 days. Ordered range at most366 days, one request and local cap5000.",
+    "Capitalization is provider_calculation currency scale1; share count and price basis unknown. No shares inferred by division."
+  ],
+  "transformations": [],
+  "source_evidence": {
+    "parameters": {
+      "symbol": "required string",
+      "limit": "number",
+      "from": "date",
+      "to": "date"
+    },
+    "meaning": "Official docs describe dated capitalization observations; limit5000 retained. Window is local policy."
+  }
+}

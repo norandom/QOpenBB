@@ -55,7 +55,7 @@ All other tasks are serial. Contract/schema/pin changes invalidate affected proo
   - _Boundary: Controller frozen contract fixtures_
   - _Requirements: 2.4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 6.1, 6.3_
 
-- [ ] 1.3 Characterize six A2 retained contracts without production adapters (2-3 hours)
+- [x] 1.3 Characterize six A2 retained contracts without production adapters (2-3 hours)
   - Apply 1.2 recovery/schema/alias/annotation method to cap, float, quote and three growth variants using dedicated test classes.
   - Confirm float percentage/nullable dates, cap date windows, quote epochs and growth fraction/fiscal meanings against frozen policies.
   - Done: six A2 manifests, source references and focused commands pass independent review; contradictions stop affected endpoints.
@@ -322,3 +322,5 @@ Task review must PASS independently before maintained tasks/spec metadata are wr
 
 
 1.2 accepted 2026-11-17: [A1 contract review](../../../artifacts/reviewed/fmp-expansion-a/a1-contract-review.md), 94 focused native checks. Correct retained estimate aliases to canonical number_analyst_estimated_revenue and number_analysts_estimated_eps; retain source-original mappings separately. Reuse statement-period-provenance/provider-venv with explicit new-worktree source overrides; pipeline-venv lacks provider dependencies.
+
+1.3 accepted 2026-11-17: [A2 contract review](../../../artifacts/reviewed/fmp-expansion-a/a2-contract-review.md), 112 focused native checks. Preserve corrected balance currency/cash-flow aliases, float and quote zero/UTC behavior, and required-nullable balance fields. Growth provider schemas use ratio without the retained frontend multiplier; actual native column projection verifies that distinction. Official float/cash examples are indexed documentation excerpts, not direct or live payload captures.

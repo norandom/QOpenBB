@@ -1,0 +1,2316 @@
+{
+  "model_key": "IncomeStatementGrowth",
+  "endpoint": "income-statement-growth",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "limit": {
+          "default": 20,
+          "description": "Maximum returned rows; one request; replaces archived implicit 5.",
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "period": {
+          "default": "annual",
+          "description": "Fiscal frequency; quarterly aliases quarter. Duration/denominator and restatement conventions unknown.",
+          "enum": [
+            "annual",
+            "quarter"
+          ],
+          "title": "Period",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPIncomeStatementGrowthQueryParams",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "limit": {
+          "default": 20,
+          "description": "Maximum returned rows; one request; replaces archived implicit 5.",
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "period": {
+          "default": "annual",
+          "description": "Fiscal frequency; quarterly aliases quarter. Duration/denominator and restatement conventions unknown.",
+          "enum": [
+            "annual",
+            "quarter"
+          ],
+          "title": "Period",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPIncomeStatementGrowthQueryParams",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "description": "FMP Income Statement Growth Data.",
+      "properties": {
+        "periodEnding": {
+          "description": "The end date of the reporting period.",
+          "format": "date",
+          "title": "Periodending",
+          "type": "string"
+        },
+        "fiscalPeriod": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal period of the report.",
+          "title": "Fiscalperiod"
+        },
+        "fiscalYear": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal year of the fiscal period.",
+          "title": "Fiscalyear"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "reportedCurrency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The currency in which the financial data is reported.",
+          "title": "Reportedcurrency"
+        },
+        "growthRevenue": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total revenue.",
+          "title": "Growthrevenue",
+          "x-unit_measurement": "ratio"
+        },
+        "growthCostOfRevenue": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of cost of goods sold.",
+          "title": "Growthcostofrevenue",
+          "x-unit_measurement": "ratio"
+        },
+        "growthGrossProfit": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of gross profit.",
+          "title": "Growthgrossprofit",
+          "x-unit_measurement": "ratio"
+        },
+        "growthGrossProfitMargin": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of gross profit as a percentage of revenue.",
+          "title": "Growthgrossprofitmargin",
+          "x-unit_measurement": "ratio"
+        },
+        "growthGeneralAndAdminExpense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of general and administrative expenses.",
+          "title": "Growthgeneralandadminexpense",
+          "x-unit_measurement": "ratio"
+        },
+        "growthResearchAndDevelopmentExpense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of expenses on research and development.",
+          "title": "Growthresearchanddevelopmentexpense",
+          "x-unit_measurement": "ratio"
+        },
+        "growthSellingAndMarketingExpense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of expenses on selling and marketing activities.",
+          "title": "Growthsellingandmarketingexpense",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherExpenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other operating expenses.",
+          "title": "Growthotherexpenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOperatingExpenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total operating expenses.",
+          "title": "Growthoperatingexpenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growthCostAndExpenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total costs and expenses.",
+          "title": "Growthcostandexpenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growthDepreciationAndAmortization": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of depreciation and amortization expenses.",
+          "title": "Growthdepreciationandamortization",
+          "x-unit_measurement": "ratio"
+        },
+        "growthInterestIncome": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of interest income.",
+          "title": "Growthinterestincome",
+          "x-unit_measurement": "ratio"
+        },
+        "growthInterestExpense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of interest expenses.",
+          "title": "Growthinterestexpense",
+          "x-unit_measurement": "ratio"
+        },
+        "growthNetInterestIncome": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net interest income.",
+          "title": "Growthnetinterestincome",
+          "x-unit_measurement": "ratio"
+        },
+        "growthEbit": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of Earnings Before Interest and Taxes (EBIT).",
+          "title": "Growthebit",
+          "x-unit_measurement": "ratio"
+        },
+        "growthEbitda": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of Earnings Before Interest, Taxes, Depreciation, and Amortization.",
+          "title": "Growthebitda",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOperatingIncome": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of operating income.",
+          "title": "Growthoperatingincome",
+          "x-unit_measurement": "ratio"
+        },
+        "growthNonOperatingIncomeExcludingInterest": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of non-operating income excluding interest.",
+          "title": "Growthnonoperatingincomeexcludinginterest",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalOtherIncomeExpensesNet": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net total other income and expenses.",
+          "title": "Growthtotalotherincomeexpensesnet",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherAdjustmentsToNetIncome": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other adjustments to net income.",
+          "title": "Growthotheradjustmentstonetincome",
+          "x-unit_measurement": "ratio"
+        },
+        "growthNetIncomeDeductions": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net income deductions.",
+          "title": "Growthnetincomedeductions",
+          "x-unit_measurement": "ratio"
+        },
+        "growthIncomeBeforeTax": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of income before taxes.",
+          "title": "Growthincomebeforetax",
+          "x-unit_measurement": "ratio"
+        },
+        "growthIncomeTaxExpense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of income tax expenses.",
+          "title": "Growthincometaxexpense",
+          "x-unit_measurement": "ratio"
+        },
+        "growthNetIncomeFromContinuingOperations": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net income from continuing operations.",
+          "title": "Growthnetincomefromcontinuingoperations",
+          "x-unit_measurement": "ratio"
+        },
+        "growthConsolidatedNetIncome": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net income.",
+          "title": "Growthconsolidatednetincome",
+          "x-unit_measurement": "ratio"
+        },
+        "growthBasicEaringsPerShare": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of Earnings Per Share (EPS).",
+          "title": "Growthbasicearingspershare",
+          "x-unit_measurement": "ratio"
+        },
+        "growthDilutedEarningsPerShare": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of diluted Earnings Per Share (EPS).",
+          "title": "Growthdilutedearningspershare",
+          "x-unit_measurement": "ratio"
+        },
+        "growthWeightedAverageBasicSharesOutstanding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of weighted average shares outstanding.",
+          "title": "Growthweightedaveragebasicsharesoutstanding",
+          "x-unit_measurement": "ratio"
+        },
+        "growthWeightedAverageDilutedSharesOutstanding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of diluted weighted average shares outstanding.",
+          "title": "Growthweightedaveragedilutedsharesoutstanding",
+          "x-unit_measurement": "ratio"
+        }
+      },
+      "required": [
+        "periodEnding",
+        "symbol"
+      ],
+      "title": "FMPIncomeStatementGrowthData",
+      "type": "object"
+    },
+    "serialization": {
+      "description": "FMP Income Statement Growth Data.",
+      "properties": {
+        "period_ending": {
+          "description": "The end date of the reporting period.",
+          "format": "date",
+          "title": "Period Ending",
+          "type": "string"
+        },
+        "fiscal_period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal period of the report.",
+          "title": "Fiscal Period"
+        },
+        "fiscal_year": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal year of the fiscal period.",
+          "title": "Fiscal Year"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "reported_currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The currency in which the financial data is reported.",
+          "title": "Reported Currency"
+        },
+        "growth_revenue": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total revenue.",
+          "title": "Growth Revenue",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_cost_of_revenue": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of cost of goods sold.",
+          "title": "Growth Cost Of Revenue",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_gross_profit": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of gross profit.",
+          "title": "Growth Gross Profit",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_gross_profit_margin": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of gross profit as a percentage of revenue.",
+          "title": "Growth Gross Profit Margin",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_general_and_admin_expense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of general and administrative expenses.",
+          "title": "Growth General And Admin Expense",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_research_and_development_expense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of expenses on research and development.",
+          "title": "Growth Research And Development Expense",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_selling_and_marketing_expense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of expenses on selling and marketing activities.",
+          "title": "Growth Selling And Marketing Expense",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_expenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other operating expenses.",
+          "title": "Growth Other Expenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_operating_expenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total operating expenses.",
+          "title": "Growth Operating Expenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_cost_and_expenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total costs and expenses.",
+          "title": "Growth Cost And Expenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_depreciation_and_amortization": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of depreciation and amortization expenses.",
+          "title": "Growth Depreciation And Amortization",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_interest_income": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of interest income.",
+          "title": "Growth Interest Income",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_interest_expense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of interest expenses.",
+          "title": "Growth Interest Expense",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_net_interest_income": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net interest income.",
+          "title": "Growth Net Interest Income",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_ebit": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of Earnings Before Interest and Taxes (EBIT).",
+          "title": "Growth Ebit",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_ebitda": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of Earnings Before Interest, Taxes, Depreciation, and Amortization.",
+          "title": "Growth Ebitda",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_operating_income": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of operating income.",
+          "title": "Growth Operating Income",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_non_operating_income_excluding_interest": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of non-operating income excluding interest.",
+          "title": "Growth Non Operating Income Excluding Interest",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_other_income_expenses_net": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net total other income and expenses.",
+          "title": "Growth Total Other Income Expenses Net",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_adjustments_to_net_income": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other adjustments to net income.",
+          "title": "Growth Other Adjustments To Net Income",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_net_income_deductions": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net income deductions.",
+          "title": "Growth Net Income Deductions",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_income_before_tax": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of income before taxes.",
+          "title": "Growth Income Before Tax",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_income_tax_expense": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of income tax expenses.",
+          "title": "Growth Income Tax Expense",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_net_income_from_continuing_operations": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net income from continuing operations.",
+          "title": "Growth Net Income From Continuing Operations",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_consolidated_net_income": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net income.",
+          "title": "Growth Consolidated Net Income",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_basic_earings_per_share": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of Earnings Per Share (EPS).",
+          "title": "Growth Basic Earings Per Share",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_diluted_earnings_per_share": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of diluted Earnings Per Share (EPS).",
+          "title": "Growth Diluted Earnings Per Share",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_weighted_average_basic_shares_outstanding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of weighted average shares outstanding.",
+          "title": "Growth Weighted Average Basic Shares Outstanding",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_weighted_average_diluted_shares_outstanding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of diluted weighted average shares outstanding.",
+          "title": "Growth Weighted Average Diluted Shares Outstanding",
+          "x-unit_measurement": "ratio"
+        }
+      },
+      "required": [
+        "period_ending",
+        "symbol"
+      ],
+      "title": "FMPIncomeStatementGrowthData",
+      "type": "object"
+    }
+  },
+  "query_annotation": {
+    "provider_policy": "explicit",
+    "procedural_bounds": {
+      "max_calendar_years": null,
+      "max_symbols": 1
+    },
+    "response_policy": {
+      "mode": "clip",
+      "max_rows": null,
+      "limit_parameter": "limit"
+    },
+    "runtime_properties": [
+      "bounds",
+      "effective_query",
+      "retrieved_at"
+    ]
+  },
+  "data_annotation": {
+    "fields": {
+      "period_ending": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "fiscal_period": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "fiscal_year": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "symbol": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "reported_currency": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_revenue": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_cost_of_revenue": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_gross_profit": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_gross_profit_margin": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_general_and_admin_expense": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_research_and_development_expense": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_selling_and_marketing_expense": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_expenses": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_operating_expenses": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_cost_and_expenses": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_depreciation_and_amortization": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_interest_income": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_interest_expense": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_net_interest_income": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_ebit": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_ebitda": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_operating_income": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_non_operating_income_excluding_interest": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_other_income_expenses_net": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_adjustments_to_net_income": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_net_income_deductions": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_income_before_tax": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_income_tax_expense": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_net_income_from_continuing_operations": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_consolidated_net_income": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_basic_earings_per_share": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_diluted_earnings_per_share": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_weighted_average_basic_shares_outstanding": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_weighted_average_diluted_shares_outstanding": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "flow growth; discrete versus year-to-date duration, source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      }
+    },
+    "runtime_properties": [
+      "fields.availability",
+      "retrieved_at",
+      "effective_query",
+      "bounds"
+    ],
+    "dynamic_fields": false
+  },
+  "canonical_fields": [
+    "period_ending",
+    "fiscal_period",
+    "fiscal_year",
+    "symbol",
+    "reported_currency",
+    "growth_revenue",
+    "growth_cost_of_revenue",
+    "growth_gross_profit",
+    "growth_gross_profit_margin",
+    "growth_general_and_admin_expense",
+    "growth_research_and_development_expense",
+    "growth_selling_and_marketing_expense",
+    "growth_other_expenses",
+    "growth_operating_expenses",
+    "growth_cost_and_expenses",
+    "growth_depreciation_and_amortization",
+    "growth_interest_income",
+    "growth_interest_expense",
+    "growth_net_interest_income",
+    "growth_ebit",
+    "growth_ebitda",
+    "growth_operating_income",
+    "growth_non_operating_income_excluding_interest",
+    "growth_total_other_income_expenses_net",
+    "growth_other_adjustments_to_net_income",
+    "growth_net_income_deductions",
+    "growth_income_before_tax",
+    "growth_income_tax_expense",
+    "growth_net_income_from_continuing_operations",
+    "growth_consolidated_net_income",
+    "growth_basic_earings_per_share",
+    "growth_diluted_earnings_per_share",
+    "growth_weighted_average_basic_shares_outstanding",
+    "growth_weighted_average_diluted_shares_outstanding"
+  ],
+  "retained_aliases": {
+    "period_ending": "date",
+    "fiscal_year": "calendarYear",
+    "fiscal_period": "period",
+    "growth_ebit": "growthEBIT",
+    "growth_ebitda": "growthEBITDA",
+    "growth_basic_earings_per_share": "growthEPS",
+    "growth_gross_profit_margin": "growthGrossProfitRatio",
+    "growth_consolidated_net_income": "growthNetIncome",
+    "growth_diluted_earnings_per_share": "growthEPSDiluted",
+    "growth_weighted_average_basic_shares_outstanding": "growthWeightedAverageShsOut",
+    "growth_weighted_average_diluted_shares_outstanding": "growthWeightedAverageShsOutDil",
+    "growth_research_and_development_expense": "growthResearchAndDevelopmentExpenses",
+    "growth_general_and_admin_expense": "growthGeneralAndAdministrativeExpenses",
+    "growth_selling_and_marketing_expense": "growthSellingAndMarketingExpenses"
+  },
+  "effective_aliases": {
+    "period_ending": "date",
+    "fiscal_year": "calendarYear",
+    "fiscal_period": "period",
+    "growth_ebit": "growthEBIT",
+    "growth_ebitda": "growthEBITDA",
+    "growth_basic_earings_per_share": "growthEPS",
+    "growth_gross_profit_margin": "growthGrossProfitRatio",
+    "growth_consolidated_net_income": "growthNetIncome",
+    "growth_diluted_earnings_per_share": "growthEPSDiluted",
+    "growth_weighted_average_basic_shares_outstanding": "growthWeightedAverageShsOut",
+    "growth_weighted_average_diluted_shares_outstanding": "growthWeightedAverageShsOutDil",
+    "growth_research_and_development_expense": "growthResearchAndDevelopmentExpenses",
+    "growth_general_and_admin_expense": "growthGeneralAndAdministrativeExpenses",
+    "growth_selling_and_marketing_expense": "growthSellingAndMarketingExpenses"
+  },
+  "accepted_validation_aliases": {
+    "period_ending": {
+      "canonical": "period_ending",
+      "generated_schema_alias": "periodEnding",
+      "source_aliases": [
+        "date"
+      ],
+      "serialization": "period_ending"
+    },
+    "fiscal_period": {
+      "canonical": "fiscal_period",
+      "generated_schema_alias": "fiscalPeriod",
+      "source_aliases": [
+        "period"
+      ],
+      "serialization": "fiscal_period"
+    },
+    "fiscal_year": {
+      "canonical": "fiscal_year",
+      "generated_schema_alias": "fiscalYear",
+      "source_aliases": [
+        "calendarYear"
+      ],
+      "serialization": "fiscal_year"
+    },
+    "symbol": {
+      "canonical": "symbol",
+      "generated_schema_alias": "symbol",
+      "source_aliases": [],
+      "serialization": "symbol"
+    },
+    "reported_currency": {
+      "canonical": "reported_currency",
+      "generated_schema_alias": "reportedCurrency",
+      "source_aliases": [],
+      "serialization": "reported_currency"
+    },
+    "growth_revenue": {
+      "canonical": "growth_revenue",
+      "generated_schema_alias": "growthRevenue",
+      "source_aliases": [],
+      "serialization": "growth_revenue"
+    },
+    "growth_cost_of_revenue": {
+      "canonical": "growth_cost_of_revenue",
+      "generated_schema_alias": "growthCostOfRevenue",
+      "source_aliases": [],
+      "serialization": "growth_cost_of_revenue"
+    },
+    "growth_gross_profit": {
+      "canonical": "growth_gross_profit",
+      "generated_schema_alias": "growthGrossProfit",
+      "source_aliases": [],
+      "serialization": "growth_gross_profit"
+    },
+    "growth_gross_profit_margin": {
+      "canonical": "growth_gross_profit_margin",
+      "generated_schema_alias": "growthGrossProfitMargin",
+      "source_aliases": [
+        "growthGrossProfitRatio"
+      ],
+      "serialization": "growth_gross_profit_margin"
+    },
+    "growth_general_and_admin_expense": {
+      "canonical": "growth_general_and_admin_expense",
+      "generated_schema_alias": "growthGeneralAndAdminExpense",
+      "source_aliases": [
+        "growthGeneralAndAdministrativeExpenses"
+      ],
+      "serialization": "growth_general_and_admin_expense"
+    },
+    "growth_research_and_development_expense": {
+      "canonical": "growth_research_and_development_expense",
+      "generated_schema_alias": "growthResearchAndDevelopmentExpense",
+      "source_aliases": [
+        "growthResearchAndDevelopmentExpenses"
+      ],
+      "serialization": "growth_research_and_development_expense"
+    },
+    "growth_selling_and_marketing_expense": {
+      "canonical": "growth_selling_and_marketing_expense",
+      "generated_schema_alias": "growthSellingAndMarketingExpense",
+      "source_aliases": [
+        "growthSellingAndMarketingExpenses"
+      ],
+      "serialization": "growth_selling_and_marketing_expense"
+    },
+    "growth_other_expenses": {
+      "canonical": "growth_other_expenses",
+      "generated_schema_alias": "growthOtherExpenses",
+      "source_aliases": [],
+      "serialization": "growth_other_expenses"
+    },
+    "growth_operating_expenses": {
+      "canonical": "growth_operating_expenses",
+      "generated_schema_alias": "growthOperatingExpenses",
+      "source_aliases": [],
+      "serialization": "growth_operating_expenses"
+    },
+    "growth_cost_and_expenses": {
+      "canonical": "growth_cost_and_expenses",
+      "generated_schema_alias": "growthCostAndExpenses",
+      "source_aliases": [],
+      "serialization": "growth_cost_and_expenses"
+    },
+    "growth_depreciation_and_amortization": {
+      "canonical": "growth_depreciation_and_amortization",
+      "generated_schema_alias": "growthDepreciationAndAmortization",
+      "source_aliases": [],
+      "serialization": "growth_depreciation_and_amortization"
+    },
+    "growth_interest_income": {
+      "canonical": "growth_interest_income",
+      "generated_schema_alias": "growthInterestIncome",
+      "source_aliases": [],
+      "serialization": "growth_interest_income"
+    },
+    "growth_interest_expense": {
+      "canonical": "growth_interest_expense",
+      "generated_schema_alias": "growthInterestExpense",
+      "source_aliases": [],
+      "serialization": "growth_interest_expense"
+    },
+    "growth_net_interest_income": {
+      "canonical": "growth_net_interest_income",
+      "generated_schema_alias": "growthNetInterestIncome",
+      "source_aliases": [],
+      "serialization": "growth_net_interest_income"
+    },
+    "growth_ebit": {
+      "canonical": "growth_ebit",
+      "generated_schema_alias": "growthEbit",
+      "source_aliases": [
+        "growthEBIT"
+      ],
+      "serialization": "growth_ebit"
+    },
+    "growth_ebitda": {
+      "canonical": "growth_ebitda",
+      "generated_schema_alias": "growthEbitda",
+      "source_aliases": [
+        "growthEBITDA"
+      ],
+      "serialization": "growth_ebitda"
+    },
+    "growth_operating_income": {
+      "canonical": "growth_operating_income",
+      "generated_schema_alias": "growthOperatingIncome",
+      "source_aliases": [],
+      "serialization": "growth_operating_income"
+    },
+    "growth_non_operating_income_excluding_interest": {
+      "canonical": "growth_non_operating_income_excluding_interest",
+      "generated_schema_alias": "growthNonOperatingIncomeExcludingInterest",
+      "source_aliases": [],
+      "serialization": "growth_non_operating_income_excluding_interest"
+    },
+    "growth_total_other_income_expenses_net": {
+      "canonical": "growth_total_other_income_expenses_net",
+      "generated_schema_alias": "growthTotalOtherIncomeExpensesNet",
+      "source_aliases": [],
+      "serialization": "growth_total_other_income_expenses_net"
+    },
+    "growth_other_adjustments_to_net_income": {
+      "canonical": "growth_other_adjustments_to_net_income",
+      "generated_schema_alias": "growthOtherAdjustmentsToNetIncome",
+      "source_aliases": [],
+      "serialization": "growth_other_adjustments_to_net_income"
+    },
+    "growth_net_income_deductions": {
+      "canonical": "growth_net_income_deductions",
+      "generated_schema_alias": "growthNetIncomeDeductions",
+      "source_aliases": [],
+      "serialization": "growth_net_income_deductions"
+    },
+    "growth_income_before_tax": {
+      "canonical": "growth_income_before_tax",
+      "generated_schema_alias": "growthIncomeBeforeTax",
+      "source_aliases": [],
+      "serialization": "growth_income_before_tax"
+    },
+    "growth_income_tax_expense": {
+      "canonical": "growth_income_tax_expense",
+      "generated_schema_alias": "growthIncomeTaxExpense",
+      "source_aliases": [],
+      "serialization": "growth_income_tax_expense"
+    },
+    "growth_net_income_from_continuing_operations": {
+      "canonical": "growth_net_income_from_continuing_operations",
+      "generated_schema_alias": "growthNetIncomeFromContinuingOperations",
+      "source_aliases": [],
+      "serialization": "growth_net_income_from_continuing_operations"
+    },
+    "growth_consolidated_net_income": {
+      "canonical": "growth_consolidated_net_income",
+      "generated_schema_alias": "growthConsolidatedNetIncome",
+      "source_aliases": [
+        "growthNetIncome"
+      ],
+      "serialization": "growth_consolidated_net_income"
+    },
+    "growth_basic_earings_per_share": {
+      "canonical": "growth_basic_earings_per_share",
+      "generated_schema_alias": "growthBasicEaringsPerShare",
+      "source_aliases": [
+        "growthEPS"
+      ],
+      "serialization": "growth_basic_earings_per_share"
+    },
+    "growth_diluted_earnings_per_share": {
+      "canonical": "growth_diluted_earnings_per_share",
+      "generated_schema_alias": "growthDilutedEarningsPerShare",
+      "source_aliases": [
+        "growthEPSDiluted"
+      ],
+      "serialization": "growth_diluted_earnings_per_share"
+    },
+    "growth_weighted_average_basic_shares_outstanding": {
+      "canonical": "growth_weighted_average_basic_shares_outstanding",
+      "generated_schema_alias": "growthWeightedAverageBasicSharesOutstanding",
+      "source_aliases": [
+        "growthWeightedAverageShsOut"
+      ],
+      "serialization": "growth_weighted_average_basic_shares_outstanding"
+    },
+    "growth_weighted_average_diluted_shares_outstanding": {
+      "canonical": "growth_weighted_average_diluted_shares_outstanding",
+      "generated_schema_alias": "growthWeightedAverageDilutedSharesOutstanding",
+      "source_aliases": [
+        "growthWeightedAverageShsOutDil"
+      ],
+      "serialization": "growth_weighted_average_diluted_shares_outstanding"
+    }
+  },
+  "field_presence": {
+    "period_ending": {
+      "required": true,
+      "nullable": false
+    },
+    "fiscal_period": {
+      "required": false,
+      "nullable": true
+    },
+    "fiscal_year": {
+      "required": false,
+      "nullable": true
+    },
+    "symbol": {
+      "required": true,
+      "nullable": false
+    },
+    "reported_currency": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_revenue": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_cost_of_revenue": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_gross_profit": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_gross_profit_margin": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_general_and_admin_expense": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_research_and_development_expense": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_selling_and_marketing_expense": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_expenses": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_operating_expenses": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_cost_and_expenses": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_depreciation_and_amortization": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_interest_income": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_interest_expense": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_net_interest_income": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_ebit": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_ebitda": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_operating_income": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_non_operating_income_excluding_interest": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_other_income_expenses_net": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_adjustments_to_net_income": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_net_income_deductions": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_income_before_tax": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_income_tax_expense": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_net_income_from_continuing_operations": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_consolidated_net_income": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_basic_earings_per_share": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_diluted_earnings_per_share": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_weighted_average_basic_shares_outstanding": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_weighted_average_diluted_shares_outstanding": {
+      "required": false,
+      "nullable": true
+    }
+  },
+  "date_contracts": {
+    "period_ending": {
+      "required": true,
+      "nullable": false
+    }
+  },
+  "source": {
+    "archive_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517",
+    "member": "openbb_fmp-1.6.1/openbb_fmp/models/income_statement_growth.py",
+    "member_sha256": "10a662a63ff4781993815f083b5a074a0a5858eea64087b2d11a49afb68cf9d2",
+    "notices": {
+      "archive_standalone_notices": [],
+      "retained_path": "openbb_platform/providers/fmp/LICENSE",
+      "sha256": "442baa7865ddf53ba04808a29e4810ac1fd9c83383d4ac76297cec4569e19222",
+      "source": "https://raw.githubusercontent.com/openbq-org/OpenBB/8e306a4de2b3cb0753fbd74d3aca4dcf0fa15472/LICENSE",
+      "provenance_path": "openbb_platform/providers/fmp/provenance.json",
+      "provenance_sha256": "d2e7e19aa5e1652a42b43d769ca361538352a58c2351c65df5264caee3c51db4"
+    }
+  },
+  "source_references": [
+    "https://site.financialmodelingprep.com/developer/docs/stable/income-statement-growth",
+    "https://site.financialmodelingprep.com/developer/docs"
+  ],
+  "documentation_checked": "2026-11-17",
+  "compatibility": {
+    "public_field_union": "existing standard plus retained FMP Data; no added fields",
+    "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+    "incompatibilities": [
+      {
+        "retained_source_defect": "Growth x-unit_measurement=percent plus x-frontend_multiply=100 selects native normalizedPercent and multiplies fractions for presentation.",
+        "approved_correction": "Provider declarations override all growth fields to x-unit_measurement=ratio and remove x-frontend_multiply in both schema modes; existing field union and numeric fractions unchanged.",
+        "migration": "Native widget formatter projects numeric ratio columns without percent multiplication; standards remain unchanged."
+      }
+    ]
+  },
+  "limitations": [
+    "No live calls; account entitlement and consumer behavior unverified.",
+    "Not point-in-time safe; publication/vintage and restatement unknown.",
+    "Empty array succeeds distinctly from unavailable optional values and response validation failure.",
+    "Currency is not inferred from symbol, exchange or profile.",
+    "Provider calculation; source denominator periods, duration and restatement unverified.",
+    "Balance growth compares stocks; flow growth does not establish discrete quarter versus YTD.",
+    "reported_currency identifies reporting currency context; fractions are dimensionless.",
+    "Retained percent/multiply100 schema instructions are overridden to ratio with no frontend multiply; native formatter preserves fractions.",
+    "Public limit20 (1..100) replaces archived implicit5; one request, no paging."
+  ],
+  "transformations": [],
+  "source_evidence": {
+    "parameters": {
+      "symbol": "required string",
+      "limit": "number",
+      "period": "annual and quarter documented among wider provider choices; this variant restricts to annual/quarter"
+    },
+    "source_values": "Official example returns signed fractional growth values; preserved at ratio scale 1. No multiplication by 100.",
+    "fiscal_aliases": "calendarYear retained alias; fiscalYear generated native alias also accepted into fiscal_year."
+  }
+}

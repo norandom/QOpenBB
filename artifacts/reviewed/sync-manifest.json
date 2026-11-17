@@ -198,7 +198,8 @@
     "periodic-query-provenance",
     "company-research",
     "fmp-expansion-a/foundation",
-    "fmp-expansion-a/a1-contracts"
+    "fmp-expansion-a/a1-contracts",
+    "fmp-expansion-a/a2-contracts"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -35747,6 +35748,14 @@
       "publishedSHA256": "908a90582e00154257ff4d33828b066b5672dd3b12af6b4d3a9a5c89c048bf68",
       "bytes": 6117,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/1.3/review-r2.md",
+      "sourceSHA256": "8ad2026ce554bce32494a096716d1eff821066d16d8ca3376972bb2c0a5377e0",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/a2-contract-review.md",
+      "publishedSHA256": "8ad2026ce554bce32494a096716d1eff821066d16d8ca3376972bb2c0a5377e0",
+      "bytes": 6637,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36471,8 +36480,8 @@
       "reason": "Only the independently reviewed allowlist is published; raw runtime, private state, and redundant scratch copies remain excluded."
     }
   ],
-  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending.",
-  "total_payload_bytes": 171315760,
+  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending. Task 1.3 A2 offline contracts are independently accepted; production and live acceptance remain pending.",
+  "total_payload_bytes": 171322397,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

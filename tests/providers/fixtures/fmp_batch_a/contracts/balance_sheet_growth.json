@@ -1,0 +1,3666 @@
+{
+  "model_key": "BalanceSheetGrowth",
+  "endpoint": "balance-sheet-statement-growth",
+  "query": {
+    "validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "limit": {
+          "default": 20,
+          "description": "Maximum returned rows; one request; replaces archived implicit 5.",
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "period": {
+          "default": "annual",
+          "description": "Fiscal frequency; quarterly aliases quarter. Duration/denominator and restatement conventions unknown.",
+          "enum": [
+            "annual",
+            "quarter"
+          ],
+          "title": "Period",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPBalanceSheetGrowthQueryParams",
+      "type": "object"
+    },
+    "serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "description": "One provider listing identity; maximum 50 characters.",
+          "maxLength": 50,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "limit": {
+          "default": 20,
+          "description": "Maximum returned rows; one request; replaces archived implicit 5.",
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "period": {
+          "default": "annual",
+          "description": "Fiscal frequency; quarterly aliases quarter. Duration/denominator and restatement conventions unknown.",
+          "enum": [
+            "annual",
+            "quarter"
+          ],
+          "title": "Period",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPBalanceSheetGrowthQueryParams",
+      "type": "object"
+    }
+  },
+  "data": {
+    "validation": {
+      "description": "FMP Balance Sheet Growth Data.",
+      "properties": {
+        "periodEnding": {
+          "description": "The end date of the reporting period.",
+          "format": "date",
+          "title": "Periodending",
+          "type": "string"
+        },
+        "fiscalPeriod": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal period of the report.",
+          "title": "Fiscalperiod"
+        },
+        "fiscalYear": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal year of the fiscal period.",
+          "title": "Fiscalyear"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "reportedCurrency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The currency in which the financial data is reported.",
+          "title": "Reportedcurrency"
+        },
+        "growthCashAndCashEquivalents": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of cash and cash equivalents.",
+          "title": "Growthcashandcashequivalents",
+          "x-unit_measurement": "ratio"
+        },
+        "growthShortTermInvestments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of short-term investments.",
+          "title": "Growthshortterminvestments",
+          "x-unit_measurement": "ratio"
+        },
+        "growthCashAndShortTermInvestments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of cash and short-term investments.",
+          "title": "Growthcashandshortterminvestments",
+          "x-unit_measurement": "ratio"
+        },
+        "growthAccountsReceivables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of accounts receivable.",
+          "title": "Growthaccountsreceivables",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherReceivables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other receivables.",
+          "title": "Growthotherreceivables",
+          "x-unit_measurement": "ratio"
+        },
+        "growthNetReceivables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net receivables.",
+          "title": "Growthnetreceivables",
+          "x-unit_measurement": "ratio"
+        },
+        "growthInventory": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of inventory.",
+          "title": "Growthinventory",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherCurrentAssets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other current assets.",
+          "title": "Growthothercurrentassets",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalCurrentAssets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total current assets.",
+          "title": "Growthtotalcurrentassets",
+          "x-unit_measurement": "ratio"
+        },
+        "growthPropertyPlantEquipmentNet": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of net property, plant, and equipment.",
+          "title": "Growthpropertyplantequipmentnet",
+          "x-unit_measurement": "ratio"
+        },
+        "growthGoodwill": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of goodwill.",
+          "title": "Growthgoodwill",
+          "x-unit_measurement": "ratio"
+        },
+        "growthIntangibleAssets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of intangible assets.",
+          "title": "Growthintangibleassets",
+          "x-unit_measurement": "ratio"
+        },
+        "growthGoodwillAndIntangibleAssets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of goodwill and intangible assets.",
+          "title": "Growthgoodwillandintangibleassets",
+          "x-unit_measurement": "ratio"
+        },
+        "growthLongTermInvestments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of long-term investments.",
+          "title": "Growthlongterminvestments",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTaxAssets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of tax assets.",
+          "title": "Growthtaxassets",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherNonCurrentAssets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other non-current assets.",
+          "title": "Growthothernoncurrentassets",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalNonCurrentAssets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total non-current assets.",
+          "title": "Growthtotalnoncurrentassets",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherAssets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other assets.",
+          "title": "Growthotherassets",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalAssets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total assets.",
+          "title": "Growthtotalassets",
+          "x-unit_measurement": "ratio"
+        },
+        "growthAccountPayables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of accounts payable.",
+          "title": "Growthaccountpayables",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherPayables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other payables.",
+          "title": "Growthotherpayables",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalPayables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total payables.",
+          "title": "Growthtotalpayables",
+          "x-unit_measurement": "ratio"
+        },
+        "growthAccruedExpenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of accrued expenses.",
+          "title": "Growthaccruedexpenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growthPrepaidExpenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of prepaid expenses.",
+          "title": "Growthprepaidexpenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growthCapitalLeaseObligationsCurrent": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of current capital lease obligations.",
+          "title": "Growthcapitalleaseobligationscurrent",
+          "x-unit_measurement": "ratio"
+        },
+        "growthShortTermDebt": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of short-term debt.",
+          "title": "Growthshorttermdebt",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTaxPayables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of tax payables.",
+          "title": "Growthtaxpayables",
+          "x-unit_measurement": "ratio"
+        },
+        "growthDeferredRevenue": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of deferred revenue.",
+          "title": "Growthdeferredrevenue",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherCurrentLiabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other current liabilities.",
+          "title": "Growthothercurrentliabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalCurrentLiabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total current liabilities.",
+          "title": "Growthtotalcurrentliabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growthDeferredRevenueNonCurrent": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of non-current deferred revenue.",
+          "title": "Growthdeferredrevenuenoncurrent",
+          "x-unit_measurement": "ratio"
+        },
+        "growthLongTermDebt": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of long-term debt.",
+          "title": "Growthlongtermdebt",
+          "x-unit_measurement": "ratio"
+        },
+        "growthDeferredTaxLiabilitiesNonCurrent": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of non-current deferred tax liabilities.",
+          "title": "Growthdeferredtaxliabilitiesnoncurrent",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherNonCurrentLiabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other non-current liabilities.",
+          "title": "Growthothernoncurrentliabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalNonCurrentLiabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total non-current liabilities.",
+          "title": "Growthtotalnoncurrentliabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherLiabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of other liabilities.",
+          "title": "Growthotherliabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalLiabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of total liabilities.",
+          "title": "Growthtotalliabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growthRetainedEarnings": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of retained earnings.",
+          "title": "Growthretainedearnings",
+          "x-unit_measurement": "ratio"
+        },
+        "growthAccumulatedOtherComprehensiveIncome": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of accumulated other comprehensive income/loss.",
+          "title": "Growthaccumulatedothercomprehensiveincome",
+          "x-unit_measurement": "ratio"
+        },
+        "growthMinorityInterest": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of minority interest.",
+          "title": "Growthminorityinterest",
+          "x-unit_measurement": "ratio"
+        },
+        "growthAdditionalPaidInCapital": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of additional paid-in capital.",
+          "title": "Growthadditionalpaidincapital",
+          "x-unit_measurement": "ratio"
+        },
+        "growthOtherTotalShareholdersEquity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other total stockholders' equity.",
+          "title": "Growthothertotalshareholdersequity",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalShareholdersEquity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total stockholders' equity.",
+          "title": "Growthtotalshareholdersequity",
+          "x-unit_measurement": "ratio"
+        },
+        "growthCommonStock": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of common stock.",
+          "title": "Growthcommonstock",
+          "x-unit_measurement": "ratio"
+        },
+        "growthPreferredStock": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of preferred stock.",
+          "title": "Growthpreferredstock",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTreasuryStock": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of treasury stock.",
+          "title": "Growthtreasurystock",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalEquity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total equity.",
+          "title": "Growthtotalequity",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalLiabilitiesAndShareholdersEquity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total liabilities and stockholders' equity.",
+          "title": "Growthtotalliabilitiesandshareholdersequity",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalInvestments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total investments.",
+          "title": "Growthtotalinvestments",
+          "x-unit_measurement": "ratio"
+        },
+        "growthTotalDebt": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total debt.",
+          "title": "Growthtotaldebt",
+          "x-unit_measurement": "ratio"
+        },
+        "growthNetDebt": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net debt.",
+          "title": "Growthnetdebt",
+          "x-unit_measurement": "ratio"
+        }
+      },
+      "required": [
+        "periodEnding",
+        "symbol",
+        "growthPropertyPlantEquipmentNet",
+        "growthGoodwill",
+        "growthIntangibleAssets",
+        "growthGoodwillAndIntangibleAssets",
+        "growthOtherLiabilities",
+        "growthTotalLiabilities",
+        "growthRetainedEarnings",
+        "growthAccumulatedOtherComprehensiveIncome",
+        "growthCommonStock",
+        "growthPreferredStock"
+      ],
+      "title": "FMPBalanceSheetGrowthData",
+      "type": "object"
+    },
+    "serialization": {
+      "description": "FMP Balance Sheet Growth Data.",
+      "properties": {
+        "period_ending": {
+          "description": "The end date of the reporting period.",
+          "format": "date",
+          "title": "Period Ending",
+          "type": "string"
+        },
+        "fiscal_period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal period of the report.",
+          "title": "Fiscal Period"
+        },
+        "fiscal_year": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The fiscal year of the fiscal period.",
+          "title": "Fiscal Year"
+        },
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "reported_currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The currency in which the financial data is reported.",
+          "title": "Reported Currency"
+        },
+        "growth_cash_and_cash_equivalents": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of cash and cash equivalents.",
+          "title": "Growth Cash And Cash Equivalents",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_short_term_investments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of short-term investments.",
+          "title": "Growth Short Term Investments",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_cash_and_short_term_investments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of cash and short-term investments.",
+          "title": "Growth Cash And Short Term Investments",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_accounts_receivables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of accounts receivable.",
+          "title": "Growth Accounts Receivables",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_receivables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other receivables.",
+          "title": "Growth Other Receivables",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_net_receivables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net receivables.",
+          "title": "Growth Net Receivables",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_inventory": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of inventory.",
+          "title": "Growth Inventory",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_current_assets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other current assets.",
+          "title": "Growth Other Current Assets",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_current_assets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total current assets.",
+          "title": "Growth Total Current Assets",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_property_plant_equipment_net": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of net property, plant, and equipment.",
+          "title": "Growth Property Plant Equipment Net",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_goodwill": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of goodwill.",
+          "title": "Growth Goodwill",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_intangible_assets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of intangible assets.",
+          "title": "Growth Intangible Assets",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_goodwill_and_intangible_assets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of goodwill and intangible assets.",
+          "title": "Growth Goodwill And Intangible Assets",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_long_term_investments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of long-term investments.",
+          "title": "Growth Long Term Investments",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_tax_assets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of tax assets.",
+          "title": "Growth Tax Assets",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_non_current_assets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other non-current assets.",
+          "title": "Growth Other Non Current Assets",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_non_current_assets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total non-current assets.",
+          "title": "Growth Total Non Current Assets",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_assets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other assets.",
+          "title": "Growth Other Assets",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_assets": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total assets.",
+          "title": "Growth Total Assets",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_account_payables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of accounts payable.",
+          "title": "Growth Account Payables",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_payables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other payables.",
+          "title": "Growth Other Payables",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_payables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total payables.",
+          "title": "Growth Total Payables",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_accrued_expenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of accrued expenses.",
+          "title": "Growth Accrued Expenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_prepaid_expenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of prepaid expenses.",
+          "title": "Growth Prepaid Expenses",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_capital_lease_obligations_current": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of current capital lease obligations.",
+          "title": "Growth Capital Lease Obligations Current",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_short_term_debt": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of short-term debt.",
+          "title": "Growth Short Term Debt",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_tax_payables": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of tax payables.",
+          "title": "Growth Tax Payables",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_deferred_revenue": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of deferred revenue.",
+          "title": "Growth Deferred Revenue",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_current_liabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other current liabilities.",
+          "title": "Growth Other Current Liabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_current_liabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total current liabilities.",
+          "title": "Growth Total Current Liabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_deferred_revenue_non_current": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of non-current deferred revenue.",
+          "title": "Growth Deferred Revenue Non Current",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_long_term_debt": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of long-term debt.",
+          "title": "Growth Long Term Debt",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_deferred_tax_liabilities_non_current": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of non-current deferred tax liabilities.",
+          "title": "Growth Deferred Tax Liabilities Non Current",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_non_current_liabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other non-current liabilities.",
+          "title": "Growth Other Non Current Liabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_non_current_liabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total non-current liabilities.",
+          "title": "Growth Total Non Current Liabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_liabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of other liabilities.",
+          "title": "Growth Other Liabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_liabilities": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of total liabilities.",
+          "title": "Growth Total Liabilities",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_retained_earnings": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of retained earnings.",
+          "title": "Growth Retained Earnings",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_accumulated_other_comprehensive_income": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of accumulated other comprehensive income/loss.",
+          "title": "Growth Accumulated Other Comprehensive Income",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_minority_interest": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of minority interest.",
+          "title": "Growth Minority Interest",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_additional_paid_in_capital": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of additional paid-in capital.",
+          "title": "Growth Additional Paid In Capital",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_other_total_shareholders_equity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of other total stockholders' equity.",
+          "title": "Growth Other Total Shareholders Equity",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_shareholders_equity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total stockholders' equity.",
+          "title": "Growth Total Shareholders Equity",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_common_stock": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of common stock.",
+          "title": "Growth Common Stock",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_preferred_stock": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Growth rate of preferred stock.",
+          "title": "Growth Preferred Stock",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_treasury_stock": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of treasury stock.",
+          "title": "Growth Treasury Stock",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_equity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total equity.",
+          "title": "Growth Total Equity",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_liabilities_and_shareholders_equity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total liabilities and stockholders' equity.",
+          "title": "Growth Total Liabilities And Shareholders Equity",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_investments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total investments.",
+          "title": "Growth Total Investments",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_total_debt": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of total debt.",
+          "title": "Growth Total Debt",
+          "x-unit_measurement": "ratio"
+        },
+        "growth_net_debt": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Growth rate of net debt.",
+          "title": "Growth Net Debt",
+          "x-unit_measurement": "ratio"
+        }
+      },
+      "required": [
+        "period_ending",
+        "symbol",
+        "growth_property_plant_equipment_net",
+        "growth_goodwill",
+        "growth_intangible_assets",
+        "growth_goodwill_and_intangible_assets",
+        "growth_other_liabilities",
+        "growth_total_liabilities",
+        "growth_retained_earnings",
+        "growth_accumulated_other_comprehensive_income",
+        "growth_common_stock",
+        "growth_preferred_stock"
+      ],
+      "title": "FMPBalanceSheetGrowthData",
+      "type": "object"
+    }
+  },
+  "query_annotation": {
+    "provider_policy": "explicit",
+    "procedural_bounds": {
+      "max_calendar_years": null,
+      "max_symbols": 1
+    },
+    "response_policy": {
+      "mode": "clip",
+      "max_rows": null,
+      "limit_parameter": "limit"
+    },
+    "runtime_properties": [
+      "bounds",
+      "effective_query",
+      "retrieved_at"
+    ]
+  },
+  "data_annotation": {
+    "fields": {
+      "period_ending": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "fiscal_period": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "fiscal_year": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "symbol": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "reported_currency": {
+        "definition": null,
+        "unit": null,
+        "scale": null,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_observation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_cash_and_cash_equivalents": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_short_term_investments": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_cash_and_short_term_investments": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_accounts_receivables": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_receivables": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_net_receivables": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_inventory": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_current_assets": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_current_assets": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_property_plant_equipment_net": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_goodwill": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_intangible_assets": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_goodwill_and_intangible_assets": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_long_term_investments": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_tax_assets": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_non_current_assets": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_non_current_assets": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_assets": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_assets": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_account_payables": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_payables": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_payables": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_accrued_expenses": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_prepaid_expenses": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_capital_lease_obligations_current": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_short_term_debt": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_tax_payables": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_deferred_revenue": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_current_liabilities": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_current_liabilities": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_deferred_revenue_non_current": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_long_term_debt": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_deferred_tax_liabilities_non_current": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_non_current_liabilities": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_non_current_liabilities": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_liabilities": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_liabilities": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_retained_earnings": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_accumulated_other_comprehensive_income": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_minority_interest": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_additional_paid_in_capital": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_other_total_shareholders_equity": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_shareholders_equity": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_common_stock": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_preferred_stock": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_treasury_stock": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_equity": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_liabilities_and_shareholders_equity": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_investments": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_total_debt": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      },
+      "growth_net_debt": {
+        "definition": null,
+        "unit": "ratio",
+        "scale": 1.0,
+        "currency": null,
+        "currency_field": null,
+        "period_basis": "stock comparison; source denominator periods and restatement unknown",
+        "value_origin": "provider_calculation",
+        "availability": "unknown",
+        "observation_date_field": "period_ending",
+        "valuation_date_field": null,
+        "publication_date_field": null,
+        "source": null,
+        "source_unit": null,
+        "source_frequency": null,
+        "effective_frequency": null,
+        "seasonal_adjustment": null,
+        "requested_transform": null,
+        "aggregation": null,
+        "financial_basis": {
+          "market_date": null
+        }
+      }
+    },
+    "runtime_properties": [
+      "fields.availability",
+      "retrieved_at",
+      "effective_query",
+      "bounds"
+    ],
+    "dynamic_fields": false
+  },
+  "canonical_fields": [
+    "period_ending",
+    "fiscal_period",
+    "fiscal_year",
+    "symbol",
+    "reported_currency",
+    "growth_cash_and_cash_equivalents",
+    "growth_short_term_investments",
+    "growth_cash_and_short_term_investments",
+    "growth_accounts_receivables",
+    "growth_other_receivables",
+    "growth_net_receivables",
+    "growth_inventory",
+    "growth_other_current_assets",
+    "growth_total_current_assets",
+    "growth_property_plant_equipment_net",
+    "growth_goodwill",
+    "growth_intangible_assets",
+    "growth_goodwill_and_intangible_assets",
+    "growth_long_term_investments",
+    "growth_tax_assets",
+    "growth_other_non_current_assets",
+    "growth_total_non_current_assets",
+    "growth_other_assets",
+    "growth_total_assets",
+    "growth_account_payables",
+    "growth_other_payables",
+    "growth_total_payables",
+    "growth_accrued_expenses",
+    "growth_prepaid_expenses",
+    "growth_capital_lease_obligations_current",
+    "growth_short_term_debt",
+    "growth_tax_payables",
+    "growth_deferred_revenue",
+    "growth_other_current_liabilities",
+    "growth_total_current_liabilities",
+    "growth_deferred_revenue_non_current",
+    "growth_long_term_debt",
+    "growth_deferred_tax_liabilities_non_current",
+    "growth_other_non_current_liabilities",
+    "growth_total_non_current_liabilities",
+    "growth_other_liabilities",
+    "growth_total_liabilities",
+    "growth_retained_earnings",
+    "growth_accumulated_other_comprehensive_income",
+    "growth_minority_interest",
+    "growth_additional_paid_in_capital",
+    "growth_other_total_shareholders_equity",
+    "growth_total_shareholders_equity",
+    "growth_common_stock",
+    "growth_preferred_stock",
+    "growth_treasury_stock",
+    "growth_total_equity",
+    "growth_total_liabilities_and_shareholders_equity",
+    "growth_total_investments",
+    "growth_total_debt",
+    "growth_net_debt"
+  ],
+  "retained_aliases": {
+    "period_ending": "date",
+    "fiscal_year": "calendarYear",
+    "fiscal_period": "period",
+    "currency": "reportedCurrency",
+    "growth_other_total_shareholders_equity": "growthOthertotalStockholdersEquity",
+    "growth_total_shareholders_equity": "growthTotalStockholdersEquity",
+    "growth_total_liabilities_and_shareholders_equity": "growthTotalLiabilitiesAndStockholdersEquity",
+    "growth_accumulated_other_comprehensive_income": "growthAccumulatedOtherComprehensiveIncomeLoss",
+    "growth_prepaid_expenses": "growthPrepaids"
+  },
+  "effective_aliases": {
+    "period_ending": "date",
+    "fiscal_year": "calendarYear",
+    "fiscal_period": "period",
+    "reported_currency": "reportedCurrency",
+    "growth_other_total_shareholders_equity": "growthOthertotalStockholdersEquity",
+    "growth_total_shareholders_equity": "growthTotalStockholdersEquity",
+    "growth_total_liabilities_and_shareholders_equity": "growthTotalLiabilitiesAndStockholdersEquity",
+    "growth_accumulated_other_comprehensive_income": "growthAccumulatedOtherComprehensiveIncomeLoss",
+    "growth_prepaid_expenses": "growthPrepaids"
+  },
+  "accepted_validation_aliases": {
+    "period_ending": {
+      "canonical": "period_ending",
+      "generated_schema_alias": "periodEnding",
+      "source_aliases": [
+        "date"
+      ],
+      "serialization": "period_ending"
+    },
+    "fiscal_period": {
+      "canonical": "fiscal_period",
+      "generated_schema_alias": "fiscalPeriod",
+      "source_aliases": [
+        "period"
+      ],
+      "serialization": "fiscal_period"
+    },
+    "fiscal_year": {
+      "canonical": "fiscal_year",
+      "generated_schema_alias": "fiscalYear",
+      "source_aliases": [
+        "calendarYear"
+      ],
+      "serialization": "fiscal_year"
+    },
+    "symbol": {
+      "canonical": "symbol",
+      "generated_schema_alias": "symbol",
+      "source_aliases": [],
+      "serialization": "symbol"
+    },
+    "reported_currency": {
+      "canonical": "reported_currency",
+      "generated_schema_alias": "reportedCurrency",
+      "source_aliases": [
+        "reportedCurrency"
+      ],
+      "serialization": "reported_currency"
+    },
+    "growth_cash_and_cash_equivalents": {
+      "canonical": "growth_cash_and_cash_equivalents",
+      "generated_schema_alias": "growthCashAndCashEquivalents",
+      "source_aliases": [],
+      "serialization": "growth_cash_and_cash_equivalents"
+    },
+    "growth_short_term_investments": {
+      "canonical": "growth_short_term_investments",
+      "generated_schema_alias": "growthShortTermInvestments",
+      "source_aliases": [],
+      "serialization": "growth_short_term_investments"
+    },
+    "growth_cash_and_short_term_investments": {
+      "canonical": "growth_cash_and_short_term_investments",
+      "generated_schema_alias": "growthCashAndShortTermInvestments",
+      "source_aliases": [],
+      "serialization": "growth_cash_and_short_term_investments"
+    },
+    "growth_accounts_receivables": {
+      "canonical": "growth_accounts_receivables",
+      "generated_schema_alias": "growthAccountsReceivables",
+      "source_aliases": [],
+      "serialization": "growth_accounts_receivables"
+    },
+    "growth_other_receivables": {
+      "canonical": "growth_other_receivables",
+      "generated_schema_alias": "growthOtherReceivables",
+      "source_aliases": [],
+      "serialization": "growth_other_receivables"
+    },
+    "growth_net_receivables": {
+      "canonical": "growth_net_receivables",
+      "generated_schema_alias": "growthNetReceivables",
+      "source_aliases": [],
+      "serialization": "growth_net_receivables"
+    },
+    "growth_inventory": {
+      "canonical": "growth_inventory",
+      "generated_schema_alias": "growthInventory",
+      "source_aliases": [],
+      "serialization": "growth_inventory"
+    },
+    "growth_other_current_assets": {
+      "canonical": "growth_other_current_assets",
+      "generated_schema_alias": "growthOtherCurrentAssets",
+      "source_aliases": [],
+      "serialization": "growth_other_current_assets"
+    },
+    "growth_total_current_assets": {
+      "canonical": "growth_total_current_assets",
+      "generated_schema_alias": "growthTotalCurrentAssets",
+      "source_aliases": [],
+      "serialization": "growth_total_current_assets"
+    },
+    "growth_property_plant_equipment_net": {
+      "canonical": "growth_property_plant_equipment_net",
+      "generated_schema_alias": "growthPropertyPlantEquipmentNet",
+      "source_aliases": [],
+      "serialization": "growth_property_plant_equipment_net"
+    },
+    "growth_goodwill": {
+      "canonical": "growth_goodwill",
+      "generated_schema_alias": "growthGoodwill",
+      "source_aliases": [],
+      "serialization": "growth_goodwill"
+    },
+    "growth_intangible_assets": {
+      "canonical": "growth_intangible_assets",
+      "generated_schema_alias": "growthIntangibleAssets",
+      "source_aliases": [],
+      "serialization": "growth_intangible_assets"
+    },
+    "growth_goodwill_and_intangible_assets": {
+      "canonical": "growth_goodwill_and_intangible_assets",
+      "generated_schema_alias": "growthGoodwillAndIntangibleAssets",
+      "source_aliases": [],
+      "serialization": "growth_goodwill_and_intangible_assets"
+    },
+    "growth_long_term_investments": {
+      "canonical": "growth_long_term_investments",
+      "generated_schema_alias": "growthLongTermInvestments",
+      "source_aliases": [],
+      "serialization": "growth_long_term_investments"
+    },
+    "growth_tax_assets": {
+      "canonical": "growth_tax_assets",
+      "generated_schema_alias": "growthTaxAssets",
+      "source_aliases": [],
+      "serialization": "growth_tax_assets"
+    },
+    "growth_other_non_current_assets": {
+      "canonical": "growth_other_non_current_assets",
+      "generated_schema_alias": "growthOtherNonCurrentAssets",
+      "source_aliases": [],
+      "serialization": "growth_other_non_current_assets"
+    },
+    "growth_total_non_current_assets": {
+      "canonical": "growth_total_non_current_assets",
+      "generated_schema_alias": "growthTotalNonCurrentAssets",
+      "source_aliases": [],
+      "serialization": "growth_total_non_current_assets"
+    },
+    "growth_other_assets": {
+      "canonical": "growth_other_assets",
+      "generated_schema_alias": "growthOtherAssets",
+      "source_aliases": [],
+      "serialization": "growth_other_assets"
+    },
+    "growth_total_assets": {
+      "canonical": "growth_total_assets",
+      "generated_schema_alias": "growthTotalAssets",
+      "source_aliases": [],
+      "serialization": "growth_total_assets"
+    },
+    "growth_account_payables": {
+      "canonical": "growth_account_payables",
+      "generated_schema_alias": "growthAccountPayables",
+      "source_aliases": [],
+      "serialization": "growth_account_payables"
+    },
+    "growth_other_payables": {
+      "canonical": "growth_other_payables",
+      "generated_schema_alias": "growthOtherPayables",
+      "source_aliases": [],
+      "serialization": "growth_other_payables"
+    },
+    "growth_total_payables": {
+      "canonical": "growth_total_payables",
+      "generated_schema_alias": "growthTotalPayables",
+      "source_aliases": [],
+      "serialization": "growth_total_payables"
+    },
+    "growth_accrued_expenses": {
+      "canonical": "growth_accrued_expenses",
+      "generated_schema_alias": "growthAccruedExpenses",
+      "source_aliases": [],
+      "serialization": "growth_accrued_expenses"
+    },
+    "growth_prepaid_expenses": {
+      "canonical": "growth_prepaid_expenses",
+      "generated_schema_alias": "growthPrepaidExpenses",
+      "source_aliases": [
+        "growthPrepaids"
+      ],
+      "serialization": "growth_prepaid_expenses"
+    },
+    "growth_capital_lease_obligations_current": {
+      "canonical": "growth_capital_lease_obligations_current",
+      "generated_schema_alias": "growthCapitalLeaseObligationsCurrent",
+      "source_aliases": [],
+      "serialization": "growth_capital_lease_obligations_current"
+    },
+    "growth_short_term_debt": {
+      "canonical": "growth_short_term_debt",
+      "generated_schema_alias": "growthShortTermDebt",
+      "source_aliases": [],
+      "serialization": "growth_short_term_debt"
+    },
+    "growth_tax_payables": {
+      "canonical": "growth_tax_payables",
+      "generated_schema_alias": "growthTaxPayables",
+      "source_aliases": [],
+      "serialization": "growth_tax_payables"
+    },
+    "growth_deferred_revenue": {
+      "canonical": "growth_deferred_revenue",
+      "generated_schema_alias": "growthDeferredRevenue",
+      "source_aliases": [],
+      "serialization": "growth_deferred_revenue"
+    },
+    "growth_other_current_liabilities": {
+      "canonical": "growth_other_current_liabilities",
+      "generated_schema_alias": "growthOtherCurrentLiabilities",
+      "source_aliases": [],
+      "serialization": "growth_other_current_liabilities"
+    },
+    "growth_total_current_liabilities": {
+      "canonical": "growth_total_current_liabilities",
+      "generated_schema_alias": "growthTotalCurrentLiabilities",
+      "source_aliases": [],
+      "serialization": "growth_total_current_liabilities"
+    },
+    "growth_deferred_revenue_non_current": {
+      "canonical": "growth_deferred_revenue_non_current",
+      "generated_schema_alias": "growthDeferredRevenueNonCurrent",
+      "source_aliases": [],
+      "serialization": "growth_deferred_revenue_non_current"
+    },
+    "growth_long_term_debt": {
+      "canonical": "growth_long_term_debt",
+      "generated_schema_alias": "growthLongTermDebt",
+      "source_aliases": [],
+      "serialization": "growth_long_term_debt"
+    },
+    "growth_deferred_tax_liabilities_non_current": {
+      "canonical": "growth_deferred_tax_liabilities_non_current",
+      "generated_schema_alias": "growthDeferredTaxLiabilitiesNonCurrent",
+      "source_aliases": [],
+      "serialization": "growth_deferred_tax_liabilities_non_current"
+    },
+    "growth_other_non_current_liabilities": {
+      "canonical": "growth_other_non_current_liabilities",
+      "generated_schema_alias": "growthOtherNonCurrentLiabilities",
+      "source_aliases": [],
+      "serialization": "growth_other_non_current_liabilities"
+    },
+    "growth_total_non_current_liabilities": {
+      "canonical": "growth_total_non_current_liabilities",
+      "generated_schema_alias": "growthTotalNonCurrentLiabilities",
+      "source_aliases": [],
+      "serialization": "growth_total_non_current_liabilities"
+    },
+    "growth_other_liabilities": {
+      "canonical": "growth_other_liabilities",
+      "generated_schema_alias": "growthOtherLiabilities",
+      "source_aliases": [],
+      "serialization": "growth_other_liabilities"
+    },
+    "growth_total_liabilities": {
+      "canonical": "growth_total_liabilities",
+      "generated_schema_alias": "growthTotalLiabilities",
+      "source_aliases": [],
+      "serialization": "growth_total_liabilities"
+    },
+    "growth_retained_earnings": {
+      "canonical": "growth_retained_earnings",
+      "generated_schema_alias": "growthRetainedEarnings",
+      "source_aliases": [],
+      "serialization": "growth_retained_earnings"
+    },
+    "growth_accumulated_other_comprehensive_income": {
+      "canonical": "growth_accumulated_other_comprehensive_income",
+      "generated_schema_alias": "growthAccumulatedOtherComprehensiveIncome",
+      "source_aliases": [
+        "growthAccumulatedOtherComprehensiveIncomeLoss"
+      ],
+      "serialization": "growth_accumulated_other_comprehensive_income"
+    },
+    "growth_minority_interest": {
+      "canonical": "growth_minority_interest",
+      "generated_schema_alias": "growthMinorityInterest",
+      "source_aliases": [],
+      "serialization": "growth_minority_interest"
+    },
+    "growth_additional_paid_in_capital": {
+      "canonical": "growth_additional_paid_in_capital",
+      "generated_schema_alias": "growthAdditionalPaidInCapital",
+      "source_aliases": [],
+      "serialization": "growth_additional_paid_in_capital"
+    },
+    "growth_other_total_shareholders_equity": {
+      "canonical": "growth_other_total_shareholders_equity",
+      "generated_schema_alias": "growthOtherTotalShareholdersEquity",
+      "source_aliases": [
+        "growthOthertotalStockholdersEquity"
+      ],
+      "serialization": "growth_other_total_shareholders_equity"
+    },
+    "growth_total_shareholders_equity": {
+      "canonical": "growth_total_shareholders_equity",
+      "generated_schema_alias": "growthTotalShareholdersEquity",
+      "source_aliases": [
+        "growthTotalStockholdersEquity"
+      ],
+      "serialization": "growth_total_shareholders_equity"
+    },
+    "growth_common_stock": {
+      "canonical": "growth_common_stock",
+      "generated_schema_alias": "growthCommonStock",
+      "source_aliases": [],
+      "serialization": "growth_common_stock"
+    },
+    "growth_preferred_stock": {
+      "canonical": "growth_preferred_stock",
+      "generated_schema_alias": "growthPreferredStock",
+      "source_aliases": [],
+      "serialization": "growth_preferred_stock"
+    },
+    "growth_treasury_stock": {
+      "canonical": "growth_treasury_stock",
+      "generated_schema_alias": "growthTreasuryStock",
+      "source_aliases": [],
+      "serialization": "growth_treasury_stock"
+    },
+    "growth_total_equity": {
+      "canonical": "growth_total_equity",
+      "generated_schema_alias": "growthTotalEquity",
+      "source_aliases": [],
+      "serialization": "growth_total_equity"
+    },
+    "growth_total_liabilities_and_shareholders_equity": {
+      "canonical": "growth_total_liabilities_and_shareholders_equity",
+      "generated_schema_alias": "growthTotalLiabilitiesAndShareholdersEquity",
+      "source_aliases": [
+        "growthTotalLiabilitiesAndStockholdersEquity"
+      ],
+      "serialization": "growth_total_liabilities_and_shareholders_equity"
+    },
+    "growth_total_investments": {
+      "canonical": "growth_total_investments",
+      "generated_schema_alias": "growthTotalInvestments",
+      "source_aliases": [],
+      "serialization": "growth_total_investments"
+    },
+    "growth_total_debt": {
+      "canonical": "growth_total_debt",
+      "generated_schema_alias": "growthTotalDebt",
+      "source_aliases": [],
+      "serialization": "growth_total_debt"
+    },
+    "growth_net_debt": {
+      "canonical": "growth_net_debt",
+      "generated_schema_alias": "growthNetDebt",
+      "source_aliases": [],
+      "serialization": "growth_net_debt"
+    }
+  },
+  "field_presence": {
+    "period_ending": {
+      "required": true,
+      "nullable": false
+    },
+    "fiscal_period": {
+      "required": false,
+      "nullable": true
+    },
+    "fiscal_year": {
+      "required": false,
+      "nullable": true
+    },
+    "symbol": {
+      "required": true,
+      "nullable": false
+    },
+    "reported_currency": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_cash_and_cash_equivalents": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_short_term_investments": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_cash_and_short_term_investments": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_accounts_receivables": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_receivables": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_net_receivables": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_inventory": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_current_assets": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_current_assets": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_property_plant_equipment_net": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_goodwill": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_intangible_assets": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_goodwill_and_intangible_assets": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_long_term_investments": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_tax_assets": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_non_current_assets": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_non_current_assets": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_assets": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_assets": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_account_payables": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_payables": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_payables": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_accrued_expenses": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_prepaid_expenses": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_capital_lease_obligations_current": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_short_term_debt": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_tax_payables": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_deferred_revenue": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_current_liabilities": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_current_liabilities": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_deferred_revenue_non_current": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_long_term_debt": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_deferred_tax_liabilities_non_current": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_non_current_liabilities": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_non_current_liabilities": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_liabilities": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_total_liabilities": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_retained_earnings": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_accumulated_other_comprehensive_income": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_minority_interest": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_additional_paid_in_capital": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_other_total_shareholders_equity": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_shareholders_equity": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_common_stock": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_preferred_stock": {
+      "required": true,
+      "nullable": true
+    },
+    "growth_treasury_stock": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_equity": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_liabilities_and_shareholders_equity": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_investments": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_total_debt": {
+      "required": false,
+      "nullable": true
+    },
+    "growth_net_debt": {
+      "required": false,
+      "nullable": true
+    }
+  },
+  "date_contracts": {
+    "period_ending": {
+      "required": true,
+      "nullable": false
+    }
+  },
+  "source": {
+    "archive_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517",
+    "member": "openbb_fmp-1.6.1/openbb_fmp/models/balance_sheet_growth.py",
+    "member_sha256": "fb9f08cfa2721f97dedee402abff4bdef968d8c6e1d55baff9dc0d5f663c75a0",
+    "notices": {
+      "archive_standalone_notices": [],
+      "retained_path": "openbb_platform/providers/fmp/LICENSE",
+      "sha256": "442baa7865ddf53ba04808a29e4810ac1fd9c83383d4ac76297cec4569e19222",
+      "source": "https://raw.githubusercontent.com/openbq-org/OpenBB/8e306a4de2b3cb0753fbd74d3aca4dcf0fa15472/LICENSE",
+      "provenance_path": "openbb_platform/providers/fmp/provenance.json",
+      "provenance_sha256": "d2e7e19aa5e1652a42b43d769ca361538352a58c2351c65df5264caee3c51db4"
+    }
+  },
+  "source_references": [
+    "https://site.financialmodelingprep.com/developer/docs/stable/balance-sheet-statement-growth",
+    "https://site.financialmodelingprep.com/developer/docs"
+  ],
+  "documentation_checked": "2026-11-17",
+  "compatibility": {
+    "public_field_union": "existing standard plus retained FMP Data; no added fields",
+    "query_change": "New bounded FMP variant; one required symbol, strict extras. Other providers unchanged.",
+    "incompatibilities": [
+      {
+        "retained_source_defect": "reportedCurrency mapped to undeclared currency and was lost.",
+        "approved_correction": "Map to existing reported_currency; no new fields.",
+        "migration": "Use effective_aliases; retained_aliases is historical."
+      },
+      {
+        "retained_source_defect": "Growth x-unit_measurement=percent plus x-frontend_multiply=100 selects native normalizedPercent and multiplies fractions for presentation.",
+        "approved_correction": "Provider declarations override all growth fields to x-unit_measurement=ratio and remove x-frontend_multiply in both schema modes; existing field union and numeric fractions unchanged.",
+        "migration": "Native widget formatter projects numeric ratio columns without percent multiplication; standards remain unchanged."
+      }
+    ]
+  },
+  "limitations": [
+    "No live calls; account entitlement and consumer behavior unverified.",
+    "Not point-in-time safe; publication/vintage and restatement unknown.",
+    "Empty array succeeds distinctly from unavailable optional values and response validation failure.",
+    "Currency is not inferred from symbol, exchange or profile.",
+    "Provider calculation; source denominator periods, duration and restatement unverified.",
+    "Balance growth compares stocks; flow growth does not establish discrete quarter versus YTD.",
+    "reported_currency identifies reporting currency context; fractions are dimensionless.",
+    "Retained percent/multiply100 schema instructions are overridden to ratio with no frontend multiply; native formatter preserves fractions.",
+    "Public limit20 (1..100) replaces archived implicit5; one request, no paging.",
+    "Ten retained growth fields required-but-nullable: omission fails; explicit null remains missing."
+  ],
+  "transformations": [],
+  "source_evidence": {
+    "parameters": {
+      "symbol": "required string",
+      "limit": "number",
+      "period": "annual and quarter documented among wider provider choices; this variant restricts to annual/quarter"
+    },
+    "source_values": "Official example returns signed fractional growth values; preserved at ratio scale 1. No multiplication by 100.",
+    "fiscal_aliases": "calendarYear retained alias; fiscalYear generated native alias also accepted into fiscal_year."
+  }
+}
