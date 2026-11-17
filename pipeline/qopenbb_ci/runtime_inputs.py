@@ -8,7 +8,8 @@ RUNTIME_FILES = frozenset('services/data-api/' + name for name in (
     'pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
     'qopenbb_data/config.py', 'qopenbb_data/app.py', 'qopenbb_data/gallery.py',
     'qopenbb_data/financial_openapi.py', 'qopenbb_data/financial_catalog.py',
-    'qopenbb_data/financial_policy.py', 'qopenbb_data/financial_errors.py')) | frozenset({
+    'qopenbb_data/financial_policy.py', 'qopenbb_data/financial_errors.py',
+    'qopenbb_data/financial_query_policy.py')) | frozenset({
         'contracts/widgets.json', 'contracts/apps.json',
         'contracts/gallery/data.json', 'contracts/gallery/catalog.json',
         'docs/reference/provider-coverage.json'})

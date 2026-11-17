@@ -168,13 +168,18 @@ def test_served_discovery_matches_openapi_without_provider_access(runtime):
         for provider, states in dataset["coverage"].items():
             assert states["installed"]["status"] == "verified"
             assert states["account_access"]["status"] == "unknown"
-            proof = proofs[dataset["dataset"], provider]["proof"]
+            assert states["widget"]["status"] == "unknown"
+            historical = proofs.get((dataset["dataset"], provider), {"status": "unknown"})
+            if "proof" not in historical:
+                # Installed capability cannot invent account or live-data evidence.
+                assert states["real_data"] == historical
+                continue
+            proof = historical["proof"]
             assert states["real_data"]["proof"] == proof
             current = {"source_sha256": catalog["identity"]["source_hashes"][dataset["dataset"]][provider],
                        "contract_sha256": dataset["contract_sha256"][provider]}
             matching = all(current[key] == value for key, value in proof["identity"].items())
-            assert states["real_data"]["status"] == ("verified" if matching else "stale")
-            assert states["widget"]["status"] == "unknown"
+            assert states["real_data"]["status"] == (historical["status"] if matching else "stale")
     assert len([family for family in catalog["coverage"]["families"] if family["provider"] == "fmp"]) == 13
     assert "fixture-runtime" not in json.dumps([catalog, schema])
     assert asyncio.run(get(runtime, "/datasets.json", method="POST"))[0] in {404, 405}

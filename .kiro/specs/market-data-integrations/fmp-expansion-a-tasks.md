@@ -241,7 +241,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Boundary: Controller provider/source-pin integration_
   - _Requirements: 1.2, 5.4, 5.5, 8.1_
 
-- [ ] 4.2 Prove actual SDK/HTTP/OBBject and installed discovery join (2-3 hours)
+- [x] 4.2 Prove actual SDK/HTTP/OBBject and installed discovery join (2-3 hours)
   - Retest public SDK/native Fetcher admission against actual eleven classes; compare effective queries/metadata with HTTP.
   - Assert all eleven expected keys in installed financial projection, OpenAPI x-qopenbb-financial, catalog and native widgets; 4.3 owns generated snapshots.
   - Done: missing/invalid annotation fails expected-set checks; aliases/defaults/bounds and baseline identities stay compatible.
@@ -367,3 +367,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 3.11 accepted 2026-11-17: [cash_flow_growth review](../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-review.md), 536 checks passed including 12 independent adversarial probes, with one empty-parameter-set skip; independently reviewed newline normalization and fresh 361-test endpoint run passed with the same skip. API e42f67229a8e9e2dc873eb8594d55050adc33963. Actual registration/native result and live/consumer joins remain pending.
 
 4.1 accepted 2026-11-17: [registration review](../../../artifacts/reviewed/fmp-expansion-a/registration-review.md). All eleven additions and ten baseline FMP models are registered offline; five focused checks and independent source-pin probes passed. Exact API source pins agree; the 127-file historical batch audit and 763-file full maintained snapshot passed without violations. Packaged, live and consumer acceptance remain pending. API 04acdb09ed76f432f4091a61630213e19f2d655c.
+
+4.2 accepted 2026-11-17: [actual-join review](../../../artifacts/reviewed/fmp-expansion-a/actual-join-review.md). Actual production SDK/HTTP/OBBject and financial discovery join accepted: 97 worker checks, 45 independent actual-join checks, 71 pipeline checks and seven Linux symlink probes passed. Shared regression initially passed 296 with one outdated historical-proof assertion; the narrow correction passed the original case and three independent false-evidence attacks. Full maintained snapshot passed 763 files. Windows symlink privilege failures remain recorded; no live or candidate-image acceptance is claimed. API 04acdb09ed76f432f4091a61630213e19f2d655c.

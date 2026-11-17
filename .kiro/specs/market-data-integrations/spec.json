@@ -40,7 +40,7 @@
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
     "implemented_operations": 11,
-    "accepted_tasks": 19,
+    "accepted_tasks": 20,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
@@ -81,10 +81,12 @@
       "../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/registration-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/registration-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/registration-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/actual-join-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/actual-join-verification.json"
     ],
     "new_live_requests": 0,
-    "note": "Batch A eleven adapters and production registration accepted offline. Actual registered SDK/HTTP/discovery joins, generated consumer contracts, live/browser verification and publication remain pending; B8/C5 remain candidates.",
+    "note": "Batch A eleven adapters, production registration and actual SDK/HTTP/OBBject/discovery joins accepted offline. Generated consumer contracts, packaged runtime, live/browser verification and publication remain pending; B8/C5 remain candidates.",
     "admission_amendment": {
       "document": "fmp-expansion-a-admission-amendment.md",
       "sha256": "47d4939e6ee381b7cb8863b5e93f31780f8bf763e763078d09e69676bc8b14b0",
@@ -96,7 +98,7 @@
       "runtime_implemented": true,
       "emitter_exception_approved": true,
       "sdk_task_accepted": true,
-      "runtime_scope": "SDK/HTTP dedicated prerequisites and all eleven production FMP registrations accepted offline; actual registered SDK/HTTP/result/discovery join remains task 4.2.",
+      "runtime_scope": "Actual eleven registered FMP variants now pass generated public SDK, mounted HTTP, Fetcher/OBBject JSON and installed financial discovery checks. Runtime packaging includes the strict HTTP query policy module. Generated consumer snapshots, packaged runtime and live/browser acceptance remain subsequent tasks.",
       "api_commit": "403323aee033dfcd30b7b24dda5f0f5efc35a339",
       "http_task_accepted": true,
       "join_task_accepted": true,
@@ -138,7 +140,8 @@
       "balance_sheet_growth",
       "revenue_geographic",
       "cash_flow_growth"
-    ]
+    ],
+    "native_join_accepted": true
   },
   "language": "en",
   "phase": "tasks-generated",

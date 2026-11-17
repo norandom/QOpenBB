@@ -1,4 +1,5 @@
 """Runtime inputs are finite, hashed and separate from owned source snapshots."""
+import ast
 import asyncio
 import hashlib
 import importlib.util
@@ -13,13 +14,31 @@ from test_image_builds import inputs
 
 FINANCIAL_FILES = tuple('services/data-api/qopenbb_data/' + name for name in (
     'financial_openapi.py', 'financial_catalog.py', 'financial_policy.py',
-    'financial_errors.py')) + ('docs/reference/provider-coverage.json',)
+    'financial_errors.py', 'financial_query_policy.py')) + ('docs/reference/provider-coverage.json',)
 
 FILES = tuple('services/data-api/' + name for name in (
     'pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
     'qopenbb_data/config.py', 'qopenbb_data/app.py', 'qopenbb_data/gallery.py')) + (
         'contracts/widgets.json', 'contracts/apps.json',
         'contracts/gallery/data.json', 'contracts/gallery/catalog.json') + FINANCIAL_FILES
+
+
+
+def test_runtime_python_dependencies_are_packaged():
+    """A source-loaded service must not depend on a module omitted from its image."""
+    from qopenbb_ci.runtime_inputs import RUNTIME_FILES
+
+    root = Path(__file__).resolve().parents[2]
+    prefix = "services/data-api/"
+    for name in sorted(RUNTIME_FILES):
+        if not name.endswith(".py"):
+            continue
+        tree = ast.parse((root / name).read_text(encoding="utf-8"))
+        for node in ast.walk(tree):
+            if (isinstance(node, ast.ImportFrom) and node.module
+                    and node.module.startswith("qopenbb_data.")):
+                dependency = prefix + node.module.replace(".", "/") + ".py"
+                assert dependency in RUNTIME_FILES, (name, dependency)
 
 
 def runtime(tmp_path):
