@@ -2,7 +2,7 @@
 
 Run the combined quality gate before accepting maintained production changes. It measures whole files against 400 physical lines, 300 logical syntax units per Python/JavaScript/TypeScript file and 50 units per callable. These limits measure code size; financial correctness still requires the owning feature's checks.
 
-The root [inventory](../.kiro/complexity-budgets.json) owns limits and exceptions. Its Workspace repository entry lives in [workspace.json](../.kiro/complexity/workspace.json), referenced once through `include`. Both files remain measured configuration. The shared loader rejects recursive references, ambiguous objects, missing files and paths that escape the repository or traverse a symlink/reparse point. The portable quality command and exception checks resolve the same inventory.
+The root [inventory](../.kiro/complexity-budgets.json) owns limits and exceptions. Its Workspace and data API repository entries live in [workspace.json](../.kiro/complexity/workspace.json) and [data-api.json](../.kiro/complexity/data-api.json), each referenced once through `include`. All three files remain measured configuration. The shared loader rejects recursive references, ambiguous objects, missing files and paths that escape the repository or traverse a symlink/reparse point. The portable quality command and exception checks resolve the same inventory.
 
 ## Run the portable gate
 

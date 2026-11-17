@@ -200,7 +200,8 @@
     "fmp-expansion-a/foundation",
     "fmp-expansion-a/a1-contracts",
     "fmp-expansion-a/a2-contracts",
-    "fmp-expansion-a/contract-freeze"
+    "fmp-expansion-a/contract-freeze",
+    "fmp-expansion-a/sdk-admission"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
@@ -35765,6 +35766,22 @@
       "publishedSHA256": "ad8a19d388e85dacd817aba52136823d1d8b35a0659558d25cb442dd3a80e2ba",
       "bytes": 4873,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.1/review-r2.md",
+      "sourceSHA256": "2e677f95a87609e5954d51a6088f8a47e365a8029b005321b5c2f1cbf2150b60",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-admission-review.md",
+      "publishedSHA256": "2e677f95a87609e5954d51a6088f8a47e365a8029b005321b5c2f1cbf2150b60",
+      "bytes": 9617,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.1/accepted-verification.json",
+      "sourceSHA256": "9403cd490b4a53d7f9af0cef2f4f0d3866539196e755c5513656788715d5ecd5",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-admission-verification.json",
+      "publishedSHA256": "9403cd490b4a53d7f9af0cef2f4f0d3866539196e755c5513656788715d5ecd5",
+      "bytes": 2055,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36489,8 +36506,8 @@
       "reason": "Only the independently reviewed allowlist is published; raw runtime, private state, and redundant scratch copies remain excluded."
     }
   ],
-  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending. Task 1.3 A2 offline contracts are independently accepted; production and live acceptance remain pending. Task 1.4 contract/admission architecture freeze is independently accepted; runtime admission and final emitter exception remain pending.",
-  "total_payload_bytes": 171327270,
+  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending. Task 1.3 A2 offline contracts are independently accepted; production and live acceptance remain pending. Task 1.4 contract/admission architecture freeze is independently accepted; runtime admission and final emitter exception remain pending. Task 2.1 SDK admission is independently reviewed and passes the committed-source combined gate with five exact no-growth emitter exceptions; HTTP and production endpoint joins remain pending.",
+  "total_payload_bytes": 171338942,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

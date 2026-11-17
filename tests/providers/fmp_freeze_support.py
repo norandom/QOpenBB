@@ -168,7 +168,7 @@ class Capture:
 
 
 def generated_probe(name, monkeypatch):
-    """Execute native emitted public decorators/body, intercepting the Container boundary."""
+    """Characterize the unregistered baseline; strict acceptance uses real Container."""
     # No installed variants exist yet. Suppress only missing route metadata lookups.
     monkeypatch.setattr(MethodDefinition,'is_deprecated_function',staticmethod(lambda path:False))
     monkeypatch.setattr(PathHandler,'get_router_dependencies',staticmethod(lambda path:[]))

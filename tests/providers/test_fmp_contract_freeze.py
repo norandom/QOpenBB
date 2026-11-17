@@ -1,4 +1,4 @@
-"""Contract freeze checks; SDK raw-admission gaps remain explicit blockers."""
+"""Frozen contracts and historical unregistered SDK baseline characterization."""
 import json
 import asyncio
 from pathlib import Path
@@ -45,7 +45,7 @@ def test_direct_dictionary_rejects_extras_and_invalid_supplied_bounds(name):
 
 
 @pytest.mark.parametrize('name', ['price_target','income_statement_growth','balance_sheet_growth','cash_flow_growth'])
-def test_native_emitter_proves_container_cannot_recover_raw_limit(name, monkeypatch):
+def test_unregistered_native_emitter_retains_historical_limit_coercion(name, monkeypatch):
     method = generated_probe(name, monkeypatch)
     omitted = method(symbol='MSFT')
     explicit_null = method(symbol='MSFT',limit=None)
@@ -86,7 +86,7 @@ def test_direct_native_fetcher_dictionary_fails_before_extraction(name):
     assert len(calls) == 1
 
 
-def test_generated_validation_can_echo_raw_value_before_container(monkeypatch):
+def test_unregistered_probe_preserves_native_validation_error_behavior(monkeypatch):
     method = generated_probe('price_target',monkeypatch)
     with pytest.raises(Exception, match='RAW_BOUND_SENTINEL'):
         method(symbol='MSFT',limit='RAW_BOUND_SENTINEL')
@@ -111,13 +111,14 @@ def test_inventory_and_approved_design_remain_bounded():
     root=Path(__file__).resolve().parents[2]
     inventory=root/'.kiro/complexity-budgets.json'
     assert len(inventory.read_text().splitlines()) <= 400
-    config=json.loads(inventory.read_text())
+    from tools.quality.scope import load_inventory
+    config=load_inventory(root)
     serialized=json.dumps(config)
     for path in describe()['sdk_mechanism']['api_write_paths']:
         assert path in serialized
     for path in handoffs()['controller_inventory_patterns_needed']:
         assert path in serialized
-    assert not any(item.get('path','').endswith('method_definition.py') for item in config['exceptions'])
+    # The executable quality gate owns any final measured emitter exception.
     design=root/'.kiro/specs/market-data-integrations/fmp-expansion-a-design.md'
     assert hashlib.sha256(design.read_bytes()).hexdigest() == '59ca002fc71585e20edfb9dc431b35605e8f2bff2d78b8d04543f7f552cb3a7a'
 
