@@ -190,7 +190,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Depends: 1.4, 2.3_
   - _Requirements: 2.3, 2.4, 2.5, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 5.1, 5.3, 5.4, 6.1, 7.1, 7.2, 7.3, 7.4, 7.5, 8.4_
 
-- [ ] 3.8 (P) Restore quote financial behavior (2-3 hours)
+- [x] 3.8 (P) Restore quote financial behavior (2-3 hours)
   - Exactly one matching-symbol row; duplicates fail; epoch conversion uses supported UTC semantics.
   - Preserve OHLC/bid/ask/close meanings, zero/null, share volume and separate market-cap/share date uncertainty.
   - Done: EquityQuote matches frozen query/result schemas and endpoint-specific plus common offline checks pass.
@@ -351,3 +351,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 3.7 accepted 2026-11-17: [share_statistics review](../../../artifacts/reviewed/fmp-expansion-a/share-statistics-review.md), 290 focused/compatibility/characterization tests and 35 independent malformed-fact probes passed. API b2da68f5765881258174ab61c25fb9bc4180c847. Actual registration/native result and live/consumer joins remain pending.
 
 3.2 accepted 2026-11-17: [price_target review](../../../artifacts/reviewed/fmp-expansion-a/price-target-review.md), 242 focused/compatibility tests, 41 malformed actual-Fetcher probes and 3 publication precision/offset probes passed. API a1ea752608b068bf6fbfee724cf0a03a016a7e69. Actual registration/native result and live/consumer joins remain pending.
+
+3.8 accepted 2026-11-17: [equity_quote review](../../../artifacts/reviewed/fmp-expansion-a/equity-quote-review.md), 349 provider compatibility tests, 212 malformed actual-Fetcher probes and 4 epoch/metadata probes passed; pipeline catalog join remains separate. API 1fb9a75b266773448ba295f8367166d9d8dc094c. Actual registration/native result and live/consumer joins remain pending.

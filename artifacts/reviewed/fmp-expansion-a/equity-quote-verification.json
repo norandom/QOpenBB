@@ -1,0 +1,22 @@
+{
+  "task": "3.8",
+  "module": "equity_quote",
+  "model_sha256": "ceab68c552e3d8dbee4ed84dbfe588f5ad2c553f4385bdce9cae1f871bdd4966",
+  "test_sha256": "ea482690d00142bb504ddea2a2f65caa8b335198cdc604f6015c4578cde4092f",
+  "checks_summary": "349 provider compatibility tests, 212 malformed actual-Fetcher probes and 4 epoch/metadata probes passed; pipeline catalog join remains separate",
+  "test_exit_codes": [
+    0,
+    0
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "1fb9a75b266773448ba295f8367166d9d8dc094c",
+  "review_sha256": "de7de189d96587b1fb902f0fdb3fdb4e986862845d4c15c8e5103315eb4de798",
+  "complexity": {
+    "files": 118,
+    "errors": 0,
+    "violations": 0,
+    "report_sha256": "6db32f7180dfe7529ade54b12bdc1f2eaaa6a2e861f88385bde9294484b261d1"
+  },
+  "limits": "Offline adapter only. Registration, native SDK/HTTP result join, live entitlement, financial comparison and browser acceptance remain pending. Other in-progress modules measured by combined gate are not accepted by this receipt."
+}
