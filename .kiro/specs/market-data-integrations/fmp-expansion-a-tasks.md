@@ -220,7 +220,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Depends: 1.4, 2.3_
   - _Requirements: 2.3, 2.4, 2.5, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 5.1, 5.3, 5.4, 6.1, 7.1, 7.2, 7.3, 7.4, 7.5, 8.4_
 
-- [ ] 3.11 (P) Restore cash-flow-statement-growth financial behavior (2-3 hours)
+- [x] 3.11 (P) Restore cash-flow-statement-growth financial behavior (2-3 hours)
   - Annual/quarter alias and limit 20 (1..100); forward once, clip, reject other period choices.
   - Flow growth ratios scale 1; no multiplication by 100 or assertion of discrete-quarter/YTD basis.
   - Done: CashFlowStatementGrowth matches frozen query/result schemas and endpoint-specific plus common offline checks pass.
@@ -363,3 +363,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 3.10 accepted 2026-11-17: [balance_sheet_growth review](../../../artifacts/reviewed/fmp-expansion-a/balance-sheet-growth-review.md), 557 focused/compatibility tests and 15 independent adversarial tests passed, including required-nullable fields and native ratio formatting. API 905bd72d1ca1f3bd7a2007d90c8d14b0fcfd61b9. Actual registration/native result and live/consumer joins remain pending.
 
 3.5 accepted 2026-11-17: [revenue_geographic review](../../../artifacts/reviewed/fmp-expansion-a/revenue-geographic-review.md), 214 endpoint/shared tests and 24 independent adversarial checks passed; Ruff, six source origins and exact frozen contracts verified. API 23a24f9e65a34c1b2b5f9e95f0f8d4cbd3892d56. Actual registration/native result and live/consumer joins remain pending.
+
+3.11 accepted 2026-11-17: [cash_flow_growth review](../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-review.md), 536 checks passed including 12 independent adversarial probes, with one empty-parameter-set skip; independently reviewed newline normalization and fresh 361-test endpoint run passed with the same skip. API e42f67229a8e9e2dc873eb8594d55050adc33963. Actual registration/native result and live/consumer joins remain pending.

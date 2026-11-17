@@ -1,0 +1,25 @@
+{
+  "task": "3.11",
+  "module": "cash_flow_growth",
+  "model_sha256": "066648b5c0d6d6e31518ebf02b60829467d2bf3d9e262e49215e82622d63507b",
+  "test_sha256": "1fe143de76bd6687e1138b29ef592c1bf9992041c7952ec7e37ae7e3a59cca04",
+  "additional_sources": {
+    "openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_growth_data.py": "99d1bdbecd81783dd5ae7e3e2043d5e6b6d29b85910b2af9d054c8ab3f214209"
+  },
+  "checks_summary": "536 checks passed including 12 independent adversarial probes, with one empty-parameter-set skip; independently reviewed newline normalization and fresh 361-test endpoint run passed with the same skip",
+  "test_exit_codes": [
+    0,
+    0
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "e42f67229a8e9e2dc873eb8594d55050adc33963",
+  "review_sha256": "1249eefa0cecad62eb1abbe0f8b486079298c649207972ce1060d7bcbd9f5c78",
+  "complexity": {
+    "files": 126,
+    "errors": 0,
+    "violations": 0,
+    "report_sha256": "3e134e862518ab5daba227231cb598967169da44afe69e25aa0b23ad968a2f53"
+  },
+  "limits": "Offline adapter only. Registration, native SDK/HTTP result join, live entitlement, financial comparison and browser acceptance remain pending. Other in-progress modules measured by combined gate are not accepted by this receipt."
+}
