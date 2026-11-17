@@ -90,7 +90,7 @@ All other tasks are serial. Contract/schema/pin changes invalidate affected proo
   - _Depends: 1.4_
   - _Requirements: 2.4, 5.1, 5.2, 5.4, 6.3, 7.1, 7.2, 7.3_
 
-- [ ] 2.2 Reject invalid HTTP requests before filtering and upstream dispatch (2-3 hours)
+- [x] 2.2 Reject invalid HTTP requests before filtering and upstream dispatch (2-3 hours)
   - Extend financial_query_policy and financial_policy using selected installed schema/aliases and actual control signatures.
   - Reject missing explicit FMP, repeated symbol/page, unknown/other-provider keys, explicit null/bool and malformed symbols.
   - Preserve safe invalid_parameters/422 envelopes without raw values/credentials and baseline variant behavior.
@@ -336,3 +336,5 @@ Task review must PASS independently before maintained tasks/spec metadata are wr
 2.1 reopened 2026-11-17 after [targeted public SDK alias verification](../../../artifacts/reviewed/fmp-expansion-a/sdk-period-followup.md): quarterly fails for all six periodic variants at native filtering before Container normalization. Prior passing checks remain historical evidence but omit this required alias. Task 2.2 edits are frozen pending a bounded SDK repair and re-acceptance.
 
 2.1 re-accepted 2026-11-17: [independent alias correction review](../../../artifacts/reviewed/fmp-expansion-a/sdk-alias-review.md), 186 fresh SDK/freeze tests, all six periodic variants through actual Fetcher execution, and final 111-file combined gate with zero errors/violations. API corrective commit 403323aee033dfcd30b7b24dda5f0f5efc35a339. Five unchanged emitter exceptions rebound to that revision. Historical failed alias evidence remains preserved; generic historical audit refresh is disclosed in the review. HTTP task 2.2 resumes without acceptance.
+
+2.2 accepted 2026-11-17: [HTTP admission review](../../../artifacts/reviewed/fmp-expansion-a/http-admission-review.md), 399 joined checks plus 12 independent probes and clean 111-file combined gate. Uses original installed query classes and concrete native controls, rejects invalid raw inputs before extraction, and forwards canonical effective values through copied scopes. Fixture command-router import timing is isolated before dedicated registry patching. Task 2.3 joins these prerequisites before adapter fan-out.

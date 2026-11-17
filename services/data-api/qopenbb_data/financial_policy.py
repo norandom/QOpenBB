@@ -10,6 +10,7 @@ from starlette._utils import get_route_path
 from starlette.types import ASGIApp, Receive, Scope, Send
 
 from qopenbb_data.financial_errors import financial_error_response
+from qopenbb_data.financial_query_policy import admit_query, compile_queries
 
 
 def _compile(document: dict) -> dict[tuple[str, str], frozenset[str]]:
@@ -40,15 +41,16 @@ def _compile(document: dict) -> dict[tuple[str, str], frozenset[str]]:
 class FinancialProviderPolicy:
     """Compile projected exact operations; preserve native defaults and dispatch."""
 
-    def __init__(self, app: ASGIApp, *, document: dict):
+    def __init__(self, app: ASGIApp, *, document: dict, registry=None, routes=()):
         self.app = app
         self.operations = _compile(document)
+        self.queries = compile_queries(document, registry, routes) if registry is not None else {}
 
     async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
         if scope["type"] == "http":
             choices = self.operations.get((get_route_path(scope), scope["method"]))
             if choices is not None:
-                # Decoding is for validation only; downstream receives the original scope.
+                # Keep raw multiplicity until admission, before native filtering.
                 parameters = parse_qs(scope.get("query_string", b"").decode("latin-1"),
                                       keep_blank_values=True)
                 selected = parameters.get("provider", [])
@@ -59,4 +61,14 @@ class FinancialProviderPolicy:
                     )
                     await response(scope, receive, send)
                     return
+                admission = self.queries.get((get_route_path(scope), scope['method']))
+                if selected == ['fmp'] and admission is not None:
+                    try:
+                        encoded = admit_query(parameters, *admission)
+                    except FinancialError:
+                        response = financial_error_response(
+                            FinancialError(FinancialErrorCode.INVALID_PARAMETERS))
+                        await response(scope, receive, send)
+                        return
+                    scope = dict(scope, query_string=encoded)
         await self.app(scope, receive, send)

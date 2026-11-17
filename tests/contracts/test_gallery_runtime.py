@@ -204,9 +204,9 @@ def test_app_registers_local_discovery_and_read_only_dataset_before_upstream(pac
     # This gallery-only seam uses framework stubs; installed ASGI tests verify
     # financial projection and mounted error handling against the native runtime.
     document = upstream.openapi()
-    monkeypatch.setattr(module, "_financial_runtime", lambda template: (template, document, {"datasets": []}))
+    monkeypatch.setattr(module, "_financial_runtime", lambda template: (template, document, {"datasets": []}, None))
     app = module.create_app()
-    assert app.middleware == [(policy, {"document": document})]
+    assert app.middleware == [(policy, {"document": document, "registry": None, "routes": ()})]
     assert app.routes[-1] == ("MOUNT", "/", upstream)
     handlers = {path: handler for method, path, handler in app.routes if method == "GET"}
     assert asyncio.run(handlers["/widgets.json"]())["canonical"] == packaged.files["widgets.json"]["canonical"]

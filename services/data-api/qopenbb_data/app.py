@@ -76,7 +76,7 @@ def _financial_runtime(template):
         document, coverage_index(), **identity, generated_at=datetime.now(UTC).isoformat(),
         source_hashes=_source_hashes(registry, required))
     discovery["identity"]["runtime_inputs_sha256"] = runtime_hash
-    return native, document, discovery
+    return native, document, discovery, registry
 
 
 def create_app() -> FastAPI:
@@ -86,9 +86,11 @@ def create_app() -> FastAPI:
 
     from qopenbb_data.financial_policy import FinancialProviderPolicy
 
-    native, document, discovery = _financial_runtime(upstream)
+    native, document, discovery, registry = _financial_runtime(upstream)
+    from openbb_core.app.route_iter import iter_api_routes
     app = FastAPI(title="QOpenBB data runtime", docs_url=None, redoc_url=None)
-    app.add_middleware(FinancialProviderPolicy, document=document)
+    app.add_middleware(FinancialProviderPolicy, document=document, registry=registry,
+                       routes=tuple(iter_api_routes(native)))
 
     @app.get("/healthz", include_in_schema=False)
     async def health() -> dict[str, str]:
