@@ -1,0 +1,40 @@
+{
+  "task": "5.2",
+  "slug": "live-matrix",
+  "sources": {
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.2-repair-review/audit.py": "191f7012271083da3ae357e08ef434419410324cf4f46ebc67b64b24df29f427",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.2-repair-review/audit.json": "ae2bdf192db8a7fb4134385051cd4a2fe432888e0d1cb169267607cfcfb63d47",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.2-repair-review/approval-binding.json": "41b301b657fcd7b9336c1d127b65e4a9ae6a9b06a714a803a347a258799dacd3",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/repair-build/candidate-identity.json": "cf59618552812f860b239952327bb1ab9a9bf0fb0e4ba0ef7bf2049ae3507f1f"
+  },
+  "review": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.2-repair-review\\review.md",
+  "receipt": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.2-repair-review\\accepted-verification.json",
+  "complexity_reports": [
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\cashflow-promotion\\full-maintained-snapshot.json"
+  ],
+  "previous_accepted_tasks": 22,
+  "summary": "All eleven endpoints have nonempty financial comparison evidence: 29 source-identical prior cases plus three corrected cash-flow cases, 1019 rows and 5052 independent source-fact checks. Original three wrong-route failures remain consumed. Cumulative 35/48 FMP requests, zero FRED and zero guard denials. Browser and publication remain pending.",
+  "spec_updates": {
+    "live_matrix_accepted": true,
+    "local_candidate_images": {
+      "data-api": "sha256:c0f6a96a6f069170ab455b821cb0b7fc7a0b766a86b90a2323bf47605f155e67",
+      "workspace": "sha256:82541bb91a2ccb8f02f19e3d89d7d942599f2a289eec8118332fa5f30aaeb666"
+    },
+    "live_requests_used": 35,
+    "note": "All eleven endpoints have nonempty financial comparison evidence: 29 source-identical prior cases plus three corrected cash-flow cases, 1019 rows and 5052 independent source-fact checks. Original three wrong-route failures remain consumed. Cumulative 35/48 FMP requests, zero FRED and zero guard denials. Browser and publication remain pending."
+  },
+  "handover": "Batch A task 5.2 is accepted (23 of 26 tasks). All eleven endpoints have nonempty financial comparison evidence: 29 source-identical prior cases plus three corrected cash-flow cases, 1019 rows and 5052 independent source-fact checks. Original three wrong-route failures remain consumed. Cumulative 35/48 FMP requests, zero FRED and zero guard denials. Browser and publication remain pending. Successor runtime remains active at candidate/repair-runtime/session; never restart or reset its ledger. Continue the separately reviewed eight-call browser run from cumulative 35 to 43, then release review and CI publication without deployment. Source API a7c6ae2139b4dcc16571d0c23ade483a114a0068; root ecdb4bf metadata matches the corrected candidate. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).",
+  "test_paths": [],
+  "breadth_evidence": [
+    "2026-11-17: Batch A task 5.2 accepted, 23/26 tasks; B8/C5 remain candidates.",
+    "All eleven endpoints have nonempty financial comparison evidence: 29 source-identical prior cases plus three corrected cash-flow cases, 1019 rows and 5052 independent source-fact checks. Original three wrong-route failures remain consumed. Cumulative 35/48 FMP requests, zero FRED and zero guard denials. Browser and publication remain pending.",
+    "Prior29 retain original image identity; corrected3 ran on successor images. Native API evidence does not establish widget acceptance or later CI image acceptance."
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "a7c6ae2139b4dcc16571d0c23ade483a114a0068",
+  "review_sha256": "08a61b672da1708364ef0a46415b26e1c2499477a0a4fc1684d1a7bec6c6c664",
+  "report_hashes": {
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\cashflow-promotion\\full-maintained-snapshot.json": "7ec9bd67ff355cd63442373c0d4abb8ae67f8be07eb07bb08c690ae7417e42b7"
+  }
+}

@@ -272,7 +272,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Depends: 4.3_
   - _Requirements: 7.2, 8.1, 8.2, 8.4_
 
-- [ ] 5.2 Execute bounded real-provider/native comparison matrix (2-3 hours)
+- [x] 5.2 Execute bounded real-provider/native comparison matrix (2-3 hours)
   - Use 5.1 exact-source candidate; execute 22 direct/native comparisons plus 10 frozen contrasting calls, MSFT primary.
   - Done: identity/value/unit/period/provenance comparisons exist per endpoint or explicit entitlement-blocked acceptance.
   - Compare changing quotes to their own acquisitions; count failures/startup/background/refresh against 48; no automatic retries.
@@ -375,3 +375,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 5.1 accepted 2026-11-17: [candidate review](../../../artifacts/reviewed/fmp-expansion-a/candidate-review.md). Final local API and Workspace candidate images built through Dagger from committed source and loaded through portable commands. Independent exact-image harness probes passed 32 simulated nonempty acquisitions, 21 native HTTP checks, 12 mutation probes and 16 unit checks. Actual isolated Compose readiness verified served UTF-8 schema, canonical plus gallery catalogs, installed package origins and one guarded API process with zero provider requests and zero denials. Initial harness SDK/dependency/null-shape and readiness expectation failures remain recorded; application images were unchanged. Live, browser and CI publication acceptance remain pending. API 04acdb09ed76f432f4091a61630213e19f2d655c.
 
 3.11 route follow-up 2026-11-17: [independent correction review](../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-route-review.md). Live verification exposed three 404 responses from an API-path typo. The retained source and frozen design already specified cash-flow-statement-growth. Corrected only request and source-metadata endpoint strings; preserved documentation URL and original archive proofs. 477 focused checks and five independent probes passed, with one existing skip. API a7c6ae2139b4dcc16571d0c23ade483a114a0068. Corrected packaged live validation remains pending; all 32 original attempts remain consumed.
+
+5.2 accepted 2026-11-17: [live-matrix review](../../../artifacts/reviewed/fmp-expansion-a/live-matrix-review.md). All eleven endpoints have nonempty financial comparison evidence: 29 source-identical prior cases plus three corrected cash-flow cases, 1019 rows and 5052 independent source-fact checks. Original three wrong-route failures remain consumed. Cumulative 35/48 FMP requests, zero FRED and zero guard denials. Browser and publication remain pending. API a7c6ae2139b4dcc16571d0c23ade483a114a0068.
