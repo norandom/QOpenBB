@@ -1,10 +1,10 @@
 # QOpenBB session handover
 
-Updated 2026-11-17. Active work is the reviewed FMP expansion plan and Batch A design described below. The bounded Company Research milestone remains complete: 13 executable tasks accepted, all 29 requirements mapped, and publication independently verified. No further build or provider run is needed for that milestone.
+Updated 2026-11-17. FMP Batch A has accepted local financial evidence and a published release with verified internal-network packaged readiness. The bounded Company Research milestone remains complete: 13 executable tasks accepted, all 29 requirements mapped, and publication independently verified. No further build or provider run is needed for that milestone.
 
 ## Active FMP expansion
 
-Batch A task 5.4 accepted (25 of 26 tasks). Exact-source Linux push check 44131419572 passed for root 32d1140590eac95cd3f4af890249b7ab6d19f832: 465 passed, 12 skipped and one deselected across the configured 21-file delivery selection (aggregate outcomes). Final consumer evidence retains 207 passed/three failed/one skipped plus all three repaired nodes passing. Fresh complexity covers 763 files with zero errors/violations; native Node/TypeScript passed. Sanitized mirror verifies 51 additions and all 4440 historical entries/118 archives. Eleven API models and four representative widgets retain actual evidence; seven widgets remain unknown. No extra financial requests: 43/48 remains consumed. CI image publication and verification remain pending. Keep local acceptance metadata unpublished until the single publication dispatch resolves to tested remote main 32d1140590eac95cd3f4af890249b7ab6d19f832. Complete task 5.5 actual release assets, public image pulls and offline packaged checks; no deployment. Preserve local-versus-CI image identity and the existing guarded ledger. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).
+Batch A complete: 26 of 26 tasks accepted. Published alpha-44132016951-1 from exact root 32d1140590eac95cd3f4af890249b7ab6d19f832: three anonymous assets, six anonymous pulls and exact CI provenance verified. Network-none API passed three synthetic cases with zero real sends. Sixth isolated pair attempt passed packaged health/config/login/wrong-password/private-state/log checks through owned container-local nginx; five failures preserved and cleanup verified. Windows host-loopback remains unverified; no CI financial browser or deployment claim. Live usage remains 43/48, eleven API models/four local widgets accepted; seven widgets unknown. Preserve released root 32 distinct from later closure metadata. No further provider calls, rebuild or deployment is needed for this milestone. B8/C5, house modeling, AI/Excel and owner-server work remain separate. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).
 
 The owner requested substantial FMP endpoint coverage alongside the financial-modeling input/bootstrap plan. The [reviewed plan](specs/market-data-integrations/fmp-expansion-plan.md) names 24 additional candidate operations: A11 financial/valuation, B8 events/content, C5 DCF/as-reported. The [inventory](specs/market-data-integrations/fmp-expansion-inventory.md) distinguishes 19 retained-adapter candidates, five new-contract candidates and the unchanged ten-model baseline.
 
@@ -14,7 +14,15 @@ Use `D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root` and sibling `data-api`, bot
 
 The separate modeling foundation retains its approved 18-task plan. Repository coordinates and selected-method input/definition gates remain open; proposed repository name is `qopenbb-financial-modeling`, not an owner decision. No new repository was created. Full FMP completion, DCF and FRED/WACC are not prerequisites for a narrowly selected historical cash-conversion method.
 
-## Published milestone
+## Latest publication: FMP Batch A
+
+- Release: [alpha-44132016951-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-44132016951-1); [CI run 44132016951](https://github.com/norandom/QOpenBB/actions/runs/44132016951), attempt 1.
+- Released source: root `32d1140590eac95cd3f4af890249b7ab6d19f832`; API `a7c6ae2139b4dcc16571d0c23ade483a114a0068`; Workspace `bf180ef506286886da224df9ff184cd1ace2397e`. Acceptance metadata `8f469a67785fe58abb964e500be966ae1715e164` is later and is not the release build source.
+- Three anonymous asset downloads and six public image pulls passed. The network-isolated API check passed three synthetic cases with zero real-provider calls. The published pair passed identity, readiness, full configuration, login, wrong-password rejection and bind-state checks through its isolated internal network; no financial route was called.
+- Windows host-loopback transport for this published pair remains unverified after the failed host checks. No CI-image financial browser run or new owner-server deployment is claimed. Local financial acceptance covers eleven API models and four representative widgets under the unchanged 43/48 FMP ledger; seven widgets and future AI remain unknown.
+- [Publication review](../artifacts/reviewed/fmp-expansion-a/publication-review.md) owns the final acceptance and immutable image identities. [Provider coverage](../docs/provider-coverage.md) owns the input/UI boundaries. B8/C5, house modeling and AI/Excel are separate work.
+
+## Previously published: Company Research
 
 - Release: [alpha-43604526965-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-43604526965-1).
 - CI run: [43604526965, attempt 1](https://github.com/norandom/QOpenBB/actions/runs/43604526965). Both candidate and publish-alpha passed after one dispatch.
@@ -24,7 +32,7 @@ The separate modeling foundation retains its approved 18-task plan. Repository c
 
 See [Company Research](../docs/company-research.md), [publication review](../artifacts/reviewed/company-research/publication-review.md) and [final integration review](../artifacts/reviewed/company-research/final-integration-review.md). Publication review SHA-256 is `0d6e2258ac66cb03bae66c5190bd31d55103f1b0479136e29ccc36b57782ccd4`.
 
-## Verification and limits
+## Company Research verification and limits
 
 The local packaged financial journey, export/import, explicit foreign-source recovery, fresh authentication and retained-directory recreation passed at root `4736c31` and browser hash prefix `c9a267`. Its local image pair differs from the CI rebuild. Publication checks establish the public images' identities and accessibility, not a second financial browser run against those bytes.
 
@@ -34,7 +42,7 @@ The checkpoint's ACL/content review is closed. Historical broader access, absenc
 
 Source verification passed 509 joined Workspace tests and 135 supported root checks, with one skip and three deselections; the separate peer-adapter suite passed ten tests. Final complexity covered 741 files with zero violations. Release CI passed 461 tests, with 12 skips and one deselection. Existing unrelated compiler/chart/schema baseline failures are not declared green. Full IA-B, house modeling, validated rankings, live macro coverage, backup/restore and owner-server deployment are outside this milestone.
 
-## Checkout continuity
+## Company Research checkout continuity
 
 The clean published implementation checkout is `D:/BuildArtifacts/QOpenBB/company-research/root`; the corresponding Workspace and API checkouts are sibling directories. Release evidence and private failed-run records remain under `D:/BuildArtifacts/QOpenBB/company-research`.
 

@@ -1,0 +1,51 @@
+{
+  "task": "5.5",
+  "slug": "publication",
+  "previous_accepted_tasks": 25,
+  "sources": {
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.5-review\\anonymous-audit.json": "e00056c4ca7a7029bc295130a3f25ba14240759a2588ede083e521fbd677efbc",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.5-review\\api-offline-audit.json": "eba60a6d3d0c5f24a8321ff5e4c56811904444bf1df6a1709a64d8267836511e",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-preparation-review\\actual-identity-audit.json": "60cd6686ace7c6e9a8fbe452902a026d513c81a36e2624ddceac7255cd48f07a",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.5-review\\audit_pair.py": "32116234b818e0af5fe0b3d75b95d74c442518c8be9e96304e0f7ab0b2e7ceda",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.5-review\\pair-audit.json": "9985e2670e23def80d39585745d74b87534eebf1fee7baaa41222c1e8674dd0d",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.5-review\\review.md": "157d27540a37ceab28e4f8e6620212ad8e38020655a848610297dd5b67733142",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\publication-preparation\\release-identity-44132016951.json": "9d093041063587364bf45ac7cd2b7576285f94beb9996e2a3e137d9fec413d77",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\publication-preparation\\run-44132016951\\publication-verification.json": "a6161cfb329f3e7147a789c1f8169168f84904438a80bf47723ea15ad146e289",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\publication-preparation\\workspace-ci-44132016951-internal-http-typed-retry\\report.json": "35ca5f7d8d8bc411df4ca80058a12271e3a40c3b9afb14f94f88ecae8c1d86b8"
+  },
+  "review": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.5-review\\review.md",
+  "receipt": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.5-review\\accepted-verification.json",
+  "complexity_reports": [
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\final-quality\\measurements.json"
+  ],
+  "summary": "Published alpha-44132016951-1 from exact root 32d1140590eac95cd3f4af890249b7ab6d19f832: three anonymous assets, six anonymous pulls and exact CI provenance verified. Network-none API passed three synthetic cases with zero real sends. Sixth isolated pair attempt passed packaged health/config/login/wrong-password/private-state/log checks through owned container-local nginx; five failures preserved and cleanup verified. Windows host-loopback remains unverified; no CI financial browser or deployment claim. Live usage remains 43/48, eleven API models/four local widgets accepted; seven widgets unknown.",
+  "spec_updates": {
+    "live_requests_used": 43,
+    "release_source_root": "32d1140590eac95cd3f4af890249b7ab6d19f832",
+    "publication_accepted": true,
+    "publication_run": 44132016951,
+    "publication_tag": "alpha-44132016951-1",
+    "published_images": {
+      "workspace": "sha256:9f0d09d38e12570a9db1a6fcfa1548a98f020c151234f8d9ae5aa00ec7500e9c",
+      "data-api": "sha256:0293f931882aa5e1e5ba0eb64bc94e3cfe3e2130b5bda65bb582a298ef18f7aa"
+    },
+    "windows_loopback_verified": false,
+    "note": "Published alpha-44132016951-1 from exact root 32d1140590eac95cd3f4af890249b7ab6d19f832: three anonymous assets, six anonymous pulls and exact CI provenance verified. Network-none API passed three synthetic cases with zero real sends. Sixth isolated pair attempt passed packaged health/config/login/wrong-password/private-state/log checks through owned container-local nginx; five failures preserved and cleanup verified. Windows host-loopback remains unverified; no CI financial browser or deployment claim. Live usage remains 43/48, eleven API models/four local widgets accepted; seven widgets unknown."
+  },
+  "handover": "Batch A complete: 26 of 26 tasks accepted. Published alpha-44132016951-1 from exact root 32d1140590eac95cd3f4af890249b7ab6d19f832: three anonymous assets, six anonymous pulls and exact CI provenance verified. Network-none API passed three synthetic cases with zero real sends. Sixth isolated pair attempt passed packaged health/config/login/wrong-password/private-state/log checks through owned container-local nginx; five failures preserved and cleanup verified. Windows host-loopback remains unverified; no CI financial browser or deployment claim. Live usage remains 43/48, eleven API models/four local widgets accepted; seven widgets unknown. Preserve released root 32 distinct from later closure metadata. No further provider calls, rebuild or deployment is needed for this milestone. B8/C5, house modeling, AI/Excel and owner-server work remain separate. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).",
+  "test_paths": [
+    "tests/contracts/test_fmp_batch_a_consumers.py",
+    "tests/contracts/test_gallery_runtime.py"
+  ],
+  "breadth_evidence": [
+    "2026-11-17: Batch A complete 26/26; B8/C5 remain candidates.",
+    "Published alpha-44132016951-1 from exact root 32d1140590eac95cd3f4af890249b7ab6d19f832: three anonymous assets, six anonymous pulls and exact CI provenance verified. Network-none API passed three synthetic cases with zero real sends. Sixth isolated pair attempt passed packaged health/config/login/wrong-password/private-state/log checks through owned container-local nginx; five failures preserved and cleanup verified. Windows host-loopback remains unverified; no CI financial browser or deployment claim. Live usage remains 43/48, eleven API models/four local widgets accepted; seven widgets unknown."
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "a7c6ae2139b4dcc16571d0c23ade483a114a0068",
+  "review_sha256": "157d27540a37ceab28e4f8e6620212ad8e38020655a848610297dd5b67733142",
+  "report_hashes": {
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\final-quality\\measurements.json": "9cbd9d0260893397c788518dc97c81dba202c54bdb8c9f41c34ba62c7dbdca64"
+  }
+}

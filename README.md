@@ -2,7 +2,7 @@
 
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
-**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-43604526965-1) with public prebuilt `latest` images.** The latest alpha adds the [Company Research App](docs/company-research.md), with independently reviewed local financial observations, template portability and retained-data recreation. [Publication evidence](artifacts/reviewed/company-research/publication-review.md) binds the release images separately. The owner-confirmed Linux deployment remains the earlier company-selector alpha; house modeling, full IA-B, AI and Excel remain separate workstreams.
+**Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-44132016951-1) with public prebuilt `latest` images.** The 26-task FMP Batch A increment adds eleven financial inputs; [provider coverage](docs/provider-coverage.md) separates all eleven scoped API checks from four locally verified widget journeys. [Publication verification](artifacts/reviewed/fmp-expansion-a/publication-review.md) covers public assets/images and isolated internal-network identity, readiness and login. Windows host-loopback transport for this published pair remains unverified after failed host checks; no CI-image financial browser run or new owner-server deployment is claimed. The [Company Research App](docs/company-research.md) retains its earlier acceptance.
 
 [![Image build and checks](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml)
 [![CodeQL](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/norandom/QOpenBB/actions/workflows/codeql.yml)
@@ -60,13 +60,13 @@ Deployment [login correction](.kiro/specs/openbb-self-service/login-password-pol
 
 - [x] Deliver the first prototype, including accepted chart milestones, login fixes, uv packaging and Valkey; owner confirmed server startup on 2026-10-28. [First-spec closure](.kiro/specs/openbb-self-service/prototype-closure.md).
 
-Snapshot: 2026-11-06. Follow the CI link for live run status; a green check does not establish deployment acceptance.
+Snapshot: 2026-11-17. Follow the CI link for live run status; a green check does not establish deployment acceptance.
 
 | Area | What exists | What remains |
 | --- | --- | --- |
 | Prototype | Published-image Compose login, starter income widget, refresh and diagnostics accepted; local pull-only install rehearsed; owner confirms deployed alpha is up | Generic required-symbol guard; broader host acceptance |
 | CI/CD | Hosted checks and both Dagger builds passed; public images and tagged alpha published | Later stable release pinning and broader runtime acceptance |
-| Data | Eleven native financial widget definitions, accepted initial FMP/FRED input batch, company discovery and 36-chart historical FMP gallery | Broader provider families, Yahoo adapter and complete per-widget analyst journeys |
+| Data | 22 native endpoint widget definitions, accepted initial FMP/FRED inputs and eleven added FMP API models; four added widgets verified locally; company discovery and 36-chart historical gallery retained | Seven added widget journeys, broader provider families, Yahoo adapter and complete per-widget analyst workflows |
 | Visuals | Selected ECharts table-chart journeys with captured FMP data, including accepted pie/donut, Box Plot, Range Bar/Area, Waterfall and Radar Line/Area behavior and owner-reviewed appearance; verified bubble-range and miniature correction; existing Plotly; Perspective runtime foundation | Perspective dashboard integration, remaining renderer/table functions and shared theme |
 | Analyst workflow | Existing dashboard editor; [Company name + Symbol selection](docs/company-selection.md), 10/10 bounded tasks accepted with real FMP data and retained-state reopening; [investment-analysis contract](.kiro/specs/analyst-workspace/investment-analysis-contract.md) | Curated quarterly analysis, peer valuation, FMP DCF/WACC with macro context, inline research and saved assumptions |
 | Extensions | Separate AI, Excel and custom-source specs | Implementation and end-to-end acceptance; Quant plugins later |
