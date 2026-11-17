@@ -12,7 +12,7 @@ Update the maintained core and FMP provider together. Older Python `FinancialRes
 
 ## Published coverage versus our implementation
 
-The [2026-11-17 expansion plan](../.kiro/specs/market-data-integrations/fmp-expansion-plan.md) targets 24 additional operations in batches of 11 financial/valuation, eight events/content and five DCF/as-reported operations. The [source inventory](../.kiro/specs/market-data-integrations/fmp-expansion-inventory.md) identifies 19 retained-adapter candidates and five new-contract candidates. Independent planning review passed; these are planned additions, not new installed, entitled or accepted endpoints. The ten-model baseline below is unchanged.
+The [2026-11-17 expansion plan](../.kiro/specs/market-data-integrations/fmp-expansion-plan.md) targets 24 additional operations in batches of 11 financial/valuation, eight events/content and five DCF/as-reported operations. The [source inventory](../.kiro/specs/market-data-integrations/fmp-expansion-inventory.md) identifies 19 retained-adapter candidates and five new-contract candidates. Independent planning review passed. Batch A now has eleven registered source adapters with accepted offline SDK/HTTP/discovery joins; the eight Batch B and five Batch C operations remain candidates. The original ten FMP models retain their earlier acceptance scope.
 
 | Research family | Published FMP coverage to map into widgets |
 | --- | --- |
@@ -33,6 +33,14 @@ The [2026-11-17 expansion plan](../.kiro/specs/market-data-integrations/fmp-expa
 See the inventory's per-endpoint source links and [official FMP catalog](https://site.financialmodelingprep.com/developer/docs). This is a family-level map; bulk delivery is a transport option, not a separate financial asset class.
 
 The published initial batch registers ten FMP models and the generic FRED series contract, with eleven reusable native widget definitions, discovery and safeguards. Its scoped real-provider observations, packaged Income journey and image publication are accepted; [company selection](company-selection.md) adds bounded linked Profile/Income acceptance. This does not establish every widget's complete research workflow or access for every installation. The earlier price/statement/news demo used uploaded snapshots. Every integration retains separate published-coverage, entitlement, adapter, widget and end-to-end status.
+
+## Batch A source checkpoint, 2026-11-17
+
+The [accepted native join](../artifacts/reviewed/fmp-expansion-a/actual-join-review.md) covers analyst estimates, price-target events and consensus, business-line and geographic revenue, historical market capitalization, share statistics, a single-listing quote and three statement-growth datasets. The [coverage index](reference/provider-coverage.json) records each adapter separately under its research family. Its documented, retained-source and adapted proofs establish source scope; installed state is derived from the actual service projection.
+
+The maintained consumer inventory adds eleven MSFT examples to the existing eleven datasets. Periodic examples request annual periods, row-limited queries use limit 3, estimates use page 0, and historical capitalization requests 2025-01-02 through 2025-01-31. These examples select reusable native routes and retain provider financial metadata; they add no calculations or provider fetching logic. Portable catalog generation has produced 22 native endpoint widgets plus the retained Peer Research renderer from the exact installed source. The generation-only image is `sha256:58686a7e8be19990181ad534b411f95f970d013d6d01811e46da0c06cf5e7769`, using data API `04acdb09ed76f432f4091a61630213e19f2d655c` and Workspace `bf180ef506286886da224df9ff184cd1ace2397e`. Repeated generation is deterministic; the original twelve widget definitions and the FRED and Company Research app definitions remain unchanged. The starter adds the eleven examples. The curated Company Research five primary datasets remain unchanged. These generated proposals await task 4.3 independent review and do not establish final packaged or live consumer acceptance.
+
+No new live FMP requests support this checkpoint. Account access, real-data comparison, widget behavior and future AI acceptance remain unknown for every new operation; the offline source checks do not establish packaged runtime, browser or publication acceptance. Family completion remains open, including broader financial analysis and expectations.
 
 ## Company Research input verification, 2026-11-06
 

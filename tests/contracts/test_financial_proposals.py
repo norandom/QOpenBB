@@ -9,6 +9,7 @@ import pytest
 from qopenbb_ci.catalog import canonical, digest, freeze_routes, generate, validate_refs
 from qopenbb_ci.catalog_financial import resolve
 from qopenbb_ci.catalog_upstream import widget_schema
+from test_fmp_batch_a_consumers import BATCH_A
 
 ROOT = Path(__file__).resolve().parents[2]
 EXTENSION = "x-qopenbb-financial"
@@ -30,6 +31,7 @@ ACCEPTED = {
     "/api/v1/equity/fundamental/enterprise_values": "fmp",
     "/api/v1/equity/price/historical": "fmp",
 }
+ACCEPTED.update({"/api/v1/equity/" + value[2]: "fmp" for value in BATCH_A.values()})
 
 
 def read(path):
@@ -44,11 +46,11 @@ def proposal():
         "catalog-report.json", "provenance.json")}
 
 
-def test_root_inventory_selects_all_eleven_accepted_models():
+def test_root_inventory_selects_all_twenty_two_accepted_models():
     datasets = read(ROOT / "contracts/datasets.json")["datasets"]
-    assert len(datasets) == 11
+    assert len(datasets) == 22
     assert {item["path"]: item["provider"] for item in datasets} == ACCEPTED
-    assert len({item["id"] for item in datasets}) == 11
+    assert len({item["id"] for item in datasets}) == 22
     for dataset in datasets:
         assert dataset["parameters"]["provider"] == dataset["provider"]
     by_id = {item["id"]: item for item in datasets}
@@ -64,7 +66,9 @@ def test_proposal_retains_baseline_widget_ids_and_complete_native_mapping(propos
     widgets = proposal["widgets.json"]
     datasets = proposal["datasets.json"]["datasets"]
     mapping = proposal["catalog-report.json"]["mapping"]
-    assert len(widgets) == len(mapping) == len(datasets) == 11
+    endpoint_widgets = {key: value for key, value in widgets.items() if "endpoint" in value}
+    assert len(endpoint_widgets) == len(mapping) == len(datasets) == 22
+    assert set(widgets) - set(endpoint_widgets) == {"company_research"}
     assert {item["path"]: item["provider"] for item in mapping} == ACCEPTED
     assert {item["dataset"] for item in mapping} == {item["id"] for item in datasets}
     for path, provider, widget_id in BASELINE.values():
@@ -93,7 +97,7 @@ def test_frozen_proposal_retains_native_financial_semantics_and_references(propo
     routes = proposal["routes.json"]
     validate_refs(routes)
     assert routes == freeze_routes(schema, proposal["datasets.json"])
-    assert len(routes["routes"]) == 11
+    assert len(routes["routes"]) == 22
     for route in routes["routes"]:
         operation = schema["paths"][route["path"]]["get"]
         descriptor = route[EXTENSION]
@@ -118,7 +122,7 @@ def test_native_queries_accept_non_example_company_or_series(proposal, path):
         params["symbol"] = "UNRATE" if ACCEPTED[path] == "fred" else "MSFT"
     if "period" in params:
         params["period"] = "quarter"
-    if path.endswith("/historical"):
+    if "start_date" in params:
         params.update(start_date="2024-01-02", end_date="2024-01-31")
     frozen = freeze_routes(proposal["openapi.json"], inventory)
     assert len(frozen["routes"]) == 1

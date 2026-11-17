@@ -250,7 +250,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Boundary: Controller installed SDK/HTTP/discovery integration_
   - _Requirements: 1.1, 1.3, 5.2, 5.5, 6.1, 6.2, 6.3, 6.5, 8.4_
 
-- [ ] 4.3 Integrate Workspace discovery and portable generated consumer contracts (1-3 hours)
+- [x] 4.3 Integrate Workspace discovery and portable generated consumer contracts (1-3 hours)
   - Generate snapshots from exact 4.1 source pins and 4.2 installed projection; inspect provider parameters/results and actual diffs.
   - If generation requires an image, Dagger builds a generation-only image first; record its sources/digest, distinct from 5.1 final packaged candidate.
   - Done: consumers use installed routes/schemas without provider fetching logic; baseline search/listing identity regressions pass.
@@ -369,3 +369,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 4.1 accepted 2026-11-17: [registration review](../../../artifacts/reviewed/fmp-expansion-a/registration-review.md). All eleven additions and ten baseline FMP models are registered offline; five focused checks and independent source-pin probes passed. Exact API source pins agree; the 127-file historical batch audit and 763-file full maintained snapshot passed without violations. Packaged, live and consumer acceptance remain pending. API 04acdb09ed76f432f4091a61630213e19f2d655c.
 
 4.2 accepted 2026-11-17: [actual-join review](../../../artifacts/reviewed/fmp-expansion-a/actual-join-review.md). Actual production SDK/HTTP/OBBject and financial discovery join accepted: 97 worker checks, 45 independent actual-join checks, 71 pipeline checks and seven Linux symlink probes passed. Shared regression initially passed 296 with one outdated historical-proof assertion; the narrow correction passed the original case and three independent false-evidence attacks. Full maintained snapshot passed 763 files. Windows symlink privilege failures remain recorded; no live or candidate-image acceptance is claimed. API 04acdb09ed76f432f4091a61630213e19f2d655c.
+
+4.3 accepted 2026-11-17: [consumer-catalog review](../../../artifacts/reviewed/fmp-expansion-a/consumer-catalog-review.md). Generated and independently reviewed 22 native dataset/widget definitions plus the retained Company Research renderer from exact generation image 58686a7e8be19990181ad534b411f95f970d013d6d01811e46da0c06cf5e7769. Baseline widgets, routes, datasets and nonstarter apps are unchanged. The initial 151-pass scope had three test assumptions repaired and rechecked; follow-up suites passed 37, 34 and 17 checks, and the independent opt-in image test plus 22 invalid-query mutations passed. Six generated catalogs matched. Final candidate/live/browser/publication gates remain pending. API 04acdb09ed76f432f4091a61630213e19f2d655c.

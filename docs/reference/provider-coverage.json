@@ -23,7 +23,7 @@
       "provider": "fmp",
       "label": "Company intelligence",
       "status": "open",
-      "outstanding": "Profile and peer source adapters do not complete float, capitalization, management or company intelligence.",
+      "outstanding": "Profile, peers, bounded historical capitalization and share statistics have source adapters; management, employee, compensation and broader company intelligence remain open. Batch A access and consumer acceptance remain unverified.",
       "documented": {
         "status": "verified",
         "proof": {
@@ -40,7 +40,7 @@
       "provider": "fmp",
       "label": "Markets",
       "status": "open",
-      "outstanding": "Daily source adaptation does not complete quotes, batches, sessions, intraday or adjustment variants.",
+      "outstanding": "Daily histories and single-listing quote source adapters do not complete batches, sessions, intraday or adjustment variants. Batch A quote access and consumer acceptance remain unverified.",
       "documented": {
         "status": "verified",
         "proof": {
@@ -57,7 +57,7 @@
       "provider": "fmp",
       "label": "Financial analysis",
       "status": "open",
-      "outstanding": "Live first-batch API inputs accepted; packaged Workspace acceptance, TTM, growth, segment inputs and broader quarterly coverage remain open.",
+      "outstanding": "Initial live API inputs are accepted; Batch A segment and statement-growth adapters are accepted offline. Batch A access and consumer acceptance, TTM and broader financial analysis remain open.",
       "documented": {
         "status": "verified",
         "proof": {
@@ -108,7 +108,7 @@
       "provider": "fmp",
       "label": "Expectations",
       "status": "open",
-      "outstanding": "Estimates, grades, target consensus, partner datasets and DCF parameters require bounded acceptance.",
+      "outstanding": "Estimates, price-target events and target-consensus adapters are accepted offline. Batch A access and consumer acceptance, grades, partner datasets and DCF parameters remain open.",
       "documented": {
         "status": "verified",
         "proof": {
@@ -709,6 +709,545 @@
               "contract_sha256": "e9314dacbab10fb3af2fc7a39a66b831530eefb7113a8b32a11b4e3efdb23546"
             }
           }
+        }
+      }
+    },
+    {
+      "model": "AnalystEstimates",
+      "provider": "fmp",
+      "family": "expectations",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/analyst-estimates-verification.json",
+            "identity": {
+              "source_sha256": "3d5f9e4efbf5c7b4b458e4e9bf303d7c113e327c9854fa3db10a199745ed1653"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "PriceTarget",
+      "provider": "fmp",
+      "family": "expectations",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/price-target-verification.json",
+            "identity": {
+              "source_sha256": "dc03f136c2cc349ae6004e77053b9420a91348834d127818e3b3b706d027403e"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "PriceTargetConsensus",
+      "provider": "fmp",
+      "family": "expectations",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/price-target-consensus-verification.json",
+            "identity": {
+              "source_sha256": "d03d3ddd942a2b857cda2ca8aa774c1dfa6aea99de852c2c215d308fffe25840"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "RevenueBusinessLine",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/revenue-business-line-verification.json",
+            "identity": {
+              "source_sha256": "3d80c658c78a0326356e7605cad5b64c93ebd161f88b683323da6759f9ffcc04"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "RevenueGeographic",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/revenue-geographic-verification.json",
+            "identity": {
+              "source_sha256": "894167fe1938b1a4916c66ff992adc669ecb836f2e43c1828054e4c738d614dd"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "HistoricalMarketCap",
+      "provider": "fmp",
+      "family": "company-intelligence",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/historical-market-cap-verification.json",
+            "identity": {
+              "source_sha256": "4f178556b64bc5007a5f7638750d88ec719596bad634a7b9a5afde93b25c03c4"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "ShareStatistics",
+      "provider": "fmp",
+      "family": "company-intelligence",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/share-statistics-verification.json",
+            "identity": {
+              "source_sha256": "82355dad781c97a27031d672020132a915746debe60a7901739eed316b8fb3d8"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "EquityQuote",
+      "provider": "fmp",
+      "family": "markets",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/equity-quote-verification.json",
+            "identity": {
+              "source_sha256": "ceab68c552e3d8dbee4ed84dbfe588f5ad2c553f4385bdce9cae1f871bdd4966"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "IncomeStatementGrowth",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/income-statement-growth-verification.json",
+            "identity": {
+              "source_sha256": "c87c483995aa8eadfd5c2025681fd198a5ac801c0757a42d13ff3c6a6c295ade"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "BalanceSheetGrowth",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/balance-sheet-growth-verification.json",
+            "identity": {
+              "source_sha256": "6b70722ff73c4c1d987f554147b9c70f4a56181326852f3010364574a5f39a98"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "model": "CashFlowStatementGrowth",
+      "provider": "fmp",
+      "family": "financial-analysis",
+      "states": {
+        "documented": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "docs/reference/fmp-endpoints.csv",
+            "identity": {
+              "source_sha256": "4ccc69abbcba18dac2370abc61d7eeab4959feb30c518f0dec94fd73758efeab"
+            }
+          }
+        },
+        "retained_source": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-10-19",
+            "evidence_path": "vendor/data-api/openbb_platform/providers/fmp/provenance.json",
+            "identity": {
+              "source_sha256": "5f6f27af6283075912df42f373c45ed37bc6970097342ed73110fb6101be5517"
+            }
+          }
+        },
+        "adapted": {
+          "status": "verified",
+          "proof": {
+            "checked_on": "2026-11-17",
+            "evidence_path": "artifacts/reviewed/fmp-expansion-a/cash-flow-growth-verification.json",
+            "identity": {
+              "source_sha256": "066648b5c0d6d6e31518ebf02b60829467d2bf3d9e262e49215e82622d63507b"
+            }
+          }
+        },
+        "account_access": {
+          "status": "unknown"
+        },
+        "real_data": {
+          "status": "unknown"
+        },
+        "widget": {
+          "status": "unknown"
+        },
+        "future_ai": {
+          "status": "unknown"
         }
       }
     }

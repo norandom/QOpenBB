@@ -1,0 +1,53 @@
+{
+  "task": "4.3",
+  "slug": "consumer-catalog",
+  "sources": {
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/apps.json": "c30f97d4c5d04a40a6bf8e65afa31cdb2c2d8216f3dc2c904c9a884cf95fc8bd",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/catalog-report.json": "cffbb1e29764ffcbab08fb91037b223fbf45f0056aba74868b51341ab306fb78",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/compatibility.json": "8c3020fe6412886bbb0a1b540d9a25b3d5efe6deb4aed3977330d91b2bf160fc",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/datasets.json": "699e21bb7da55c215c03e530e8843f4f06f94afeb5999cb6adf4a575798a1b31",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/hashes.json": "45862052588c292d0183f1703e10b84543bd59eafd9eb4d8b5e8dcff2f9bb528",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/openapi.json": "707bf8dc6f596f49e6ae2c5f5d03bb20f7137ccb9ff7f6c04d1bd38b1768c819",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/provenance.json": "ec0eb7093398ccfd6d64859964fcc74f8bfd2ecd9cbf4eb4aae6d95d86692ff4",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/routes.json": "266931cd30b3f0f1aeca5930e93fafa73fb034986c0172621800695f8b41d736",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/widgets.json": "23d13c6a51f347c736bb8a5b26a6611b7eab12bbd36e547c8ee59a6ef5e5dd0c",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/docs/provider-coverage.md": "fa5bcb1bb843cdcda092d6c281654a055196deb950e5adf9f81f26cecfe47116",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/docs/reference/provider-coverage.json": "733c629b15429d5c41c5a6bb9df90b3f8a71d07f08d0ee76e497ef8c326017c0",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/contracts/test_catalog.py": "6bcc98d3ff4aec667c4ff023f6c54e4b59b6c921cd44da75d78bb759a5f2315e",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/contracts/test_financial_proposals.py": "978bf50ebc322c8c589aa4adbb00e65757a5156710a6010eff1d5727150bdcf3",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/contracts/test_fmp_batch_a_consumers.py": "3d93456cdcd7581f944a6fc1d82b71985e00b048cde6e8d0b6dcc309fd72c47d"
+  },
+  "review": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.3-review/review.md",
+  "receipt": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.3/accepted-verification.json",
+  "complexity_reports": [
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.3/full-maintained-snapshot.json"
+  ],
+  "previous_accepted_tasks": 20,
+  "summary": "Generated and independently reviewed 22 native dataset/widget definitions plus the retained Company Research renderer from exact generation image 58686a7e8be19990181ad534b411f95f970d013d6d01811e46da0c06cf5e7769. Baseline widgets, routes, datasets and nonstarter apps are unchanged. The initial 151-pass scope had three test assumptions repaired and rechecked; follow-up suites passed 37, 34 and 17 checks, and the independent opt-in image test plus 22 invalid-query mutations passed. Six generated catalogs matched. Final candidate/live/browser/publication gates remain pending.",
+  "spec_updates": {
+    "consumer_catalog_accepted": true,
+    "generation_image": "sha256:58686a7e8be19990181ad534b411f95f970d013d6d01811e46da0c06cf5e7769",
+    "note": "Batch A eleven adapters, production registration, actual SDK/HTTP/OBBject/discovery joins and generated consumer catalog accepted. Final packaged runtime, bounded live/browser verification and publication remain pending; B8/C5 remain candidates."
+  },
+  "handover": "Batch A source and consumer integration is accepted (21 of 26 tasks): eleven additional adapters join the unchanged ten-model FMP baseline, with 22 native dataset/widget definitions including FRED plus the retained Company Research renderer. API pin remains 04acdb09ed76f432f4091a61630213e19f2d655c. Generation-only image sha256:58686a7e8be19990181ad534b411f95f970d013d6d01811e46da0c06cf5e7769 produced reviewed deterministic contracts; baseline consumers are preserved. Continue task 5.1 final candidate packaging and the shared 48-request ledger, then 5.2 real-provider comparisons, 5.3 representative browser lifecycle, 5.4 scoped release review and 5.5 actual publication. No live Batch A requests have been used. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).",
+  "test_paths": [
+    "tests/contracts/test_catalog.py",
+    "tests/contracts/test_catalog_financial.py",
+    "tests/contracts/test_catalog_runtime.py",
+    "tests/contracts/test_company_research.py",
+    "tests/contracts/test_financial_proposals.py",
+    "tests/contracts/test_fmp_batch_a_consumers.py"
+  ],
+  "breadth_evidence": [
+    "2026-11-17: Owner-approved 24-operation candidate plan; Batch A11 has 21/26 tasks accepted through source, registered SDK/HTTP/discovery and actual generated consumer integration. B8/C5 remain candidates. No new live requests or account/widget acceptance.",
+    "Per-task exact-source reviews and verification receipts: .kiro/specs/market-data-integrations/fmp-expansion-a-tasks.md and artifacts/reviewed/fmp-expansion-a/. The original ten FMP models and baseline consumers retain their separately evidenced scope.",
+    "Task 4.3 consumer-catalog review verifies 22 native dataset/widget definitions plus Company Research, exact generation-only image/source identity, repeat determinism, unchanged baseline widgets/routes/datasets/nonstarter apps, actual image integration and 22 rejected invalid-query mutations. Full maintained snapshot passed 763 files. Final candidate packaging, 48-call live/browser acceptance and publication remain pending."
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "04acdb09ed76f432f4091a61630213e19f2d655c",
+  "review_sha256": "cfe916521a51eefcd361d1b7c9942e4d037a3502869f6c24a03abcbad3a2284d",
+  "report_hashes": {
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.3/full-maintained-snapshot.json": "96f806aa49eebaa36b11639fe57d7e20c2e96c8f668bc6037c0db9b64209430e"
+  }
+}

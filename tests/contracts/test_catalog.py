@@ -2,6 +2,7 @@
 from copy import deepcopy
 import json
 from pathlib import Path
+import shutil
 import subprocess
 
 import pytest
@@ -102,8 +103,13 @@ def test_actual_workspace_url_composition(inputs, tmp_path):
     endpoint = generate(*inputs, [], "/data")["widgets.json"]["profile_fmp_obb"]["endpoint"]
     script = tmp_path / "composition.ts"
     script.write_text("\n".join(functions) + "\nconsole.log(createURLString(" + json.dumps(endpoint) + ", 'https://qbb.example/data'))")
-    node = root / "artifacts/task-1.2/node-v24.22.1-linux-x64/bin/node"
-    result = subprocess.run([str(node), str(script)], text=True, capture_output=True, check=True)
+    node = shutil.which("node")
+    assert node is not None, "Pinned Node must be available on developer/CI PATH"
+    options = {"text": True, "capture_output": True, "check": True, "cwd": root,
+               "creationflags": getattr(subprocess, "CREATE_NO_WINDOW", 0)}
+    version = subprocess.run([node, "--version"], **options).stdout.strip().removeprefix("v")
+    assert version == (root / ".node-version").read_text().strip().removeprefix("v")
+    result = subprocess.run([node, str(script)], **options)
     assert result.stdout.strip() == "https://qbb.example/data/api/v1/profile"
 
 
