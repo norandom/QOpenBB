@@ -170,7 +170,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Depends: 1.4, 2.3_
   - _Requirements: 2.3, 2.4, 2.5, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 5.1, 5.3, 5.4, 6.1, 7.1, 7.2, 7.3, 7.4, 7.5, 8.4_
 
-- [ ] 3.6 (P) Restore historical-market-capitalization financial behavior (2-3 hours)
+- [x] 3.6 (P) Restore historical-market-capitalization financial behavior (2-3 hours)
   - Resolve UTC omitted dates, start=end-365 days; ordered <=366 days; from/to and fixed 5000 limit once.
   - Effective dates are ISO strings; cap is provider calculation, no inferred share/price/currency basis.
   - Done: HistoricalMarketCap matches frozen query/result schemas and endpoint-specific plus common offline checks pass.
@@ -343,3 +343,5 @@ Task review must PASS independently before maintained tasks/spec metadata are wr
 2.3 accepted 2026-11-17: [prerequisite join review](../../../artifacts/reviewed/fmp-expansion-a/admission-join-review.md), 255 shared checks plus 22 independent probes, exact eleven dedicated native models and frozen schemas, unchanged admission interfaces and clean 111-file gate. Adapter fan-out may proceed; actual production registration/result annotation joins remain tasks 4.1/4.2.
 
 Shared acquisition correction accepted 2026-11-17: [independent review](../../../artifacts/reviewed/fmp-expansion-a/empty-acquisition-review.md), 494 compatibility checks plus 44 independent probes, frozen admission hashes unchanged and final 112-file combined gate. API e3eb9922c79c76a77cebf6188f950303a7ba1b9e. Only explicit allow_empty=True accepts original top-level arrays; defaults and nested payload failure behavior remain unchanged. Adapter lanes may resume.
+
+3.6 accepted 2026-11-17: [historical_market_cap review](../../../artifacts/reviewed/fmp-expansion-a/historical-market-cap-review.md), 299 focused/compatibility tests and 26 independent probes passed; final notice-only correction independently reverse-hash verified. API 6ef7204bf70a136169e9b04491b380b5d709d809. Actual registration/native result and live/consumer joins remain pending.
