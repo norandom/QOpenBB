@@ -40,7 +40,7 @@
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
     "implemented_operations": 0,
-    "accepted_tasks": 13,
+    "accepted_tasks": 14,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
@@ -69,7 +69,9 @@
       "../../../artifacts/reviewed/fmp-expansion-a/equity-quote-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/equity-quote-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/price-target-consensus-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/price-target-consensus-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/price-target-consensus-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/income-statement-growth-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/income-statement-growth-verification.json"
     ],
     "new_live_requests": 0,
     "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance.",
@@ -120,7 +122,8 @@
       "share_statistics",
       "price_target",
       "equity_quote",
-      "price_target_consensus"
+      "price_target_consensus",
+      "income_statement_growth"
     ]
   },
   "language": "en",
