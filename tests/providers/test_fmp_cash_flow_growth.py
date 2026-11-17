@@ -143,7 +143,7 @@ def test_request_clip_and_provenance(monkeypatch, period, expected):
         monkeypatch, payload, {"symbol": " brk/b ", "period": period, "limit": 2}
     )
     url, _kwargs = calls[0]
-    assert urlsplit(url).path == "/stable/cashflow-statement-growth"
+    assert urlsplit(url).path == "/stable/cash-flow-statement-growth"
     assert "BRK%2FB" in url and "canary%26secret" in url
     assert parse_qs(urlsplit(url).query) == {
         "symbol": ["BRK/B"],
@@ -166,7 +166,7 @@ def test_request_clip_and_provenance(monkeypatch, period, expected):
     )
     assert meta["retrieved_at"] and "canary" not in json.dumps(meta)
     assert meta["point_in_time_safe"] is False
-    assert meta["source"]["endpoint"] == "cashflow-statement-growth"
+    assert meta["source"]["endpoint"] == "cash-flow-statement-growth"
 
 
 def test_default_empty_actual_fetcher(monkeypatch):
@@ -505,3 +505,12 @@ def test_conflicting_activity_spellings_reject(monkeypatch, name, pair, which):
             }
         ],
     )
+
+
+def test_http_not_found_empty_payload_is_failure(monkeypatch):
+    """An empty HTTP failure cannot establish successful empty data or entitlement."""
+    with pytest.raises(FinancialError) as error:
+        run(monkeypatch, [], status=404)
+    assert error.value.code == "missing_data"
+    assert error.value.code != "entitlement"
+    assert "canary" not in str(error.value)

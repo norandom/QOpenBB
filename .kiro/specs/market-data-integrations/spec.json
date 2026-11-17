@@ -90,7 +90,7 @@
       "../../../artifacts/reviewed/fmp-expansion-a/candidate-verification.json"
     ],
     "new_live_requests": 0,
-    "note": "Batch A final local candidate and zero-call readiness accepted. Bounded real-provider matrix, representative browser lifecycle, scoped release review and actual CI publication remain pending.",
+    "note": "Initial live matrix: 29 acquired cases independently verified; three cash-flow growth calls returned HTTP 404 because the adapter API slug lacked a hyphen. Source correction reviewed; corrected candidate diagnostic calls and browser acceptance pending. All 32 attempts remain counted.",
     "admission_amendment": {
       "document": "fmp-expansion-a-admission-amendment.md",
       "sha256": "47d4939e6ee381b7cb8863b5e93f31780f8bf763e763078d09e69676bc8b14b0",
@@ -153,7 +153,12 @@
       "workspace": "sha256:4039c2938757d43fb9969fa94973e11ad3504db743c2c23fa6e751c37e4c914e",
       "data-api": "sha256:f42d79476c8a9a7b68b70019b2921d09552dfab23a86e6868d1bafe2fbe999e3"
     },
-    "live_requests_used": 0
+    "live_requests_used": 32,
+    "cash_flow_growth_route_followup": {
+      "status": "source-reviewed-live-pending",
+      "api_commit": "a7c6ae2139b4dcc16571d0c23ade483a114a0068",
+      "evidence": "../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-route-review.md"
+    }
   },
   "language": "en",
   "phase": "tasks-generated",

@@ -84,7 +84,7 @@ def test_batch_a_coverage_separates_adapter_evidence_from_unverified_consumers(d
         proof = record["states"][state]
         assert proof["status"] == "verified"
         assert (ROOT / proof["proof"]["evidence_path"]).is_file()
-    verification = read(ROOT / f"artifacts/reviewed/fmp-expansion-a/{dataset_id}-verification.json")
+    verification = read(ROOT / record["states"]["adapted"]["proof"]["evidence_path"])
     assert record["states"]["adapted"]["proof"]["identity"]["source_sha256"] == verification["model_sha256"]
     assert "installed" not in record["states"]
     for state in ("account_access", "real_data", "widget", "future_ai"):
