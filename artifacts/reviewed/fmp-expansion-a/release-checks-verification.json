@@ -1,0 +1,48 @@
+{
+  "task": "5.4",
+  "slug": "release-checks",
+  "previous_accepted_tasks": 24,
+  "sources": {
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-preparation-review\\prepush-review.md": "853089f5f61841223480030d899572d9cb10321474b409e35dc12ad605234aa0",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-preparation-review\\coverage-final-audit.json": "954465be9836d156351ed08a869e2443e68a66bc3428c5712cb3e210828d4b9d",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\mirror-verification-date.json": "182f3ee836691672b38425b6e78efeefcc7d377496e28a9204cb0cd1bd8118bb",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\consumer-final-repair\\report.md": "82a791013aea936ebfee8627a13bf8058565a502800947968429729d5c7abee9",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\consumer-final-repair\\targeted-tests.log": "98797cbac84ee269c692db47ff9098abf976c5e269dfc5e68b53b97ed9dce383",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\sourcecheck_evidence.py": "d7045fc5138c37f906739aef36e28d8cf59592a2ba782aa2b259dab1c15b4b9e",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\capture_sourcecheck.py": "7746f3239abbe038c3aa94fc9e4bd520483bb0e47c23ccc99a748c30fefd680d",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.4-review\\audit.py": "d4020a53d4a9374f316a85b904d79e650b2f5954cb2ce5d980d692a35a4732b6",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.4-review\\audit.json": "58122543f616cc0c8719d0b191cbc03c3fa69590d06227162f6d0ad343c0b055",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.4-review\\review.md": "2cad0baf80ed2faa3d80308df17ed07c8a95457576b5008e5de2a21c22c14d85",
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\sourcecheck-44131419572\\sourcecheck-evidence.json": "17e2a52780def6f88ac068bc22b2db39409836c3c1d5471cabadd279f3d02de8"
+  },
+  "review": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.4-review\\review.md",
+  "receipt": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.4-review\\accepted-verification.json",
+  "complexity_reports": [
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\final-quality\\measurements.json"
+  ],
+  "summary": "Exact-source Linux push check 44131419572 passed for root 32d1140590eac95cd3f4af890249b7ab6d19f832: 465 passed, 12 skipped and one deselected across the configured 21-file delivery selection (aggregate outcomes). Final consumer evidence retains 207 passed/three failed/one skipped plus all three repaired nodes passing. Fresh complexity covers 763 files with zero errors/violations; native Node/TypeScript passed. Sanitized mirror verifies 51 additions and all 4440 historical entries/118 archives. Eleven API models and four representative widgets retain actual evidence; seven widgets remain unknown. No extra financial requests: 43/48 remains consumed. CI image publication and verification remain pending.",
+  "spec_updates": {
+    "release_source_root": "32d1140590eac95cd3f4af890249b7ab6d19f832",
+    "live_requests_used": 43,
+    "release_checks_accepted": true,
+    "source_check_run": 44131419572,
+    "note": "Exact-source Linux push check 44131419572 passed for root 32d1140590eac95cd3f4af890249b7ab6d19f832: 465 passed, 12 skipped and one deselected across the configured 21-file delivery selection (aggregate outcomes). Final consumer evidence retains 207 passed/three failed/one skipped plus all three repaired nodes passing. Fresh complexity covers 763 files with zero errors/violations; native Node/TypeScript passed. Sanitized mirror verifies 51 additions and all 4440 historical entries/118 archives. Eleven API models and four representative widgets retain actual evidence; seven widgets remain unknown. No extra financial requests: 43/48 remains consumed. CI image publication and verification remain pending. Local acceptance metadata does not change the tested remote release source."
+  },
+  "handover": "Batch A task 5.4 accepted (25 of 26 tasks). Exact-source Linux push check 44131419572 passed for root 32d1140590eac95cd3f4af890249b7ab6d19f832: 465 passed, 12 skipped and one deselected across the configured 21-file delivery selection (aggregate outcomes). Final consumer evidence retains 207 passed/three failed/one skipped plus all three repaired nodes passing. Fresh complexity covers 763 files with zero errors/violations; native Node/TypeScript passed. Sanitized mirror verifies 51 additions and all 4440 historical entries/118 archives. Eleven API models and four representative widgets retain actual evidence; seven widgets remain unknown. No extra financial requests: 43/48 remains consumed. CI image publication and verification remain pending. Keep local acceptance metadata unpublished until the single publication dispatch resolves to tested remote main 32d1140590eac95cd3f4af890249b7ab6d19f832. Complete task 5.5 actual release assets, public image pulls and offline packaged checks; no deployment. Preserve local-versus-CI image identity and the existing guarded ledger. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).",
+  "test_paths": [
+    "tests/contracts/test_fmp_batch_a_consumers.py",
+    "tests/contracts/test_gallery_runtime.py"
+  ],
+  "breadth_evidence": [
+    "2026-11-17: Batch A task 5.4 accepted, 25/26 tasks; B8/C5 remain candidates.",
+    "Exact-source Linux push check 44131419572 passed for root 32d1140590eac95cd3f4af890249b7ab6d19f832: 465 passed, 12 skipped and one deselected across the configured 21-file delivery selection (aggregate outcomes). Final consumer evidence retains 207 passed/three failed/one skipped plus all three repaired nodes passing. Fresh complexity covers 763 files with zero errors/violations; native Node/TypeScript passed. Sanitized mirror verifies 51 additions and all 4440 historical entries/118 archives. Eleven API models and four representative widgets retain actual evidence; seven widgets remain unknown. No extra financial requests: 43/48 remains consumed. CI image publication and verification remain pending.",
+    "Local browser acceptance does not establish later CI-image browser acceptance."
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "a7c6ae2139b4dcc16571d0c23ade483a114a0068",
+  "review_sha256": "2cad0baf80ed2faa3d80308df17ed07c8a95457576b5008e5de2a21c22c14d85",
+  "report_hashes": {
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\final-quality\\measurements.json": "9cbd9d0260893397c788518dc97c81dba202c54bdb8c9f41c34ba62c7dbdca64"
+  }
+}

@@ -40,7 +40,7 @@
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
     "implemented_operations": 11,
-    "accepted_tasks": 24,
+    "accepted_tasks": 25,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
@@ -91,10 +91,12 @@
       "../../../artifacts/reviewed/fmp-expansion-a/live-matrix-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/native-browser-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/native-browser-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/native-browser-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/release-checks-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/release-checks-verification.json"
     ],
     "new_live_requests": 0,
-    "note": "Four representative local widgets passed eight actual acquisitions: retained initial four display/CSV/native-save cases plus fresh-context reopen four; 70 rows and 372 independently checked financial/identity facts, four CSV exports. Seven failed browser attempts remain retained; the accepted initial journey includes two genuine pre-I/O 422 responses. Same guarded process ends at 43/48 FMP, FRED 0 and zero denials. No eleven-widget, App-template, later CI-image or deployment claim. Final release checks and CI publication remain pending.",
+    "note": "Exact-source Linux push check 44131419572 passed for root 32d1140590eac95cd3f4af890249b7ab6d19f832: 465 passed, 12 skipped and one deselected across the configured 21-file delivery selection (aggregate outcomes). Final consumer evidence retains 207 passed/three failed/one skipped plus all three repaired nodes passing. Fresh complexity covers 763 files with zero errors/violations; native Node/TypeScript passed. Sanitized mirror verifies 51 additions and all 4440 historical entries/118 archives. Eleven API models and four representative widgets retain actual evidence; seven widgets remain unknown. No extra financial requests: 43/48 remains consumed. CI image publication and verification remain pending. Local acceptance metadata does not change the tested remote release source.",
     "admission_amendment": {
       "document": "fmp-expansion-a-admission-amendment.md",
       "sha256": "47d4939e6ee381b7cb8863b5e93f31780f8bf763e763078d09e69676bc8b14b0",
@@ -164,7 +166,10 @@
       "evidence": "../../../artifacts/reviewed/fmp-expansion-a/cash-flow-growth-route-review.md"
     },
     "live_matrix_accepted": true,
-    "native_browser_accepted": true
+    "native_browser_accepted": true,
+    "release_source_root": "32d1140590eac95cd3f4af890249b7ab6d19f832",
+    "release_checks_accepted": true,
+    "source_check_run": 44131419572
   },
   "language": "en",
   "phase": "tasks-generated",

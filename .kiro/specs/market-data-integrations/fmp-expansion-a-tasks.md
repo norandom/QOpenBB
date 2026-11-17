@@ -291,7 +291,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Depends: 5.1, 5.2_
   - _Requirements: 1.2, 6.2, 7.1, 7.2, 8.3, 8.4_
 
-- [ ] 5.4 Complete scoped release checks and reviewed sanitized mirror (1-3 hours)
+- [x] 5.4 Complete scoped release checks and reviewed sanitized mirror (1-3 hours)
   - Run relevant portable contract/regression/complexity release gates once; reuse valid evidence without unrelated suite repeats.
   - Done: independent acceptance review and sanitized mirror manifest verify actual hashes, commands/exits, revisions and limitations.
   - Update truthful breadth/inventory/coverage/source pins; explicit staging and per-task commits retain existing cadence.
@@ -379,3 +379,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 5.2 accepted 2026-11-17: [live-matrix review](../../../artifacts/reviewed/fmp-expansion-a/live-matrix-review.md). All eleven endpoints have nonempty financial comparison evidence: 29 source-identical prior cases plus three corrected cash-flow cases, 1019 rows and 5052 independent source-fact checks. Original three wrong-route failures remain consumed. Cumulative 35/48 FMP requests, zero FRED and zero guard denials. Browser and publication remain pending. API a7c6ae2139b4dcc16571d0c23ade483a114a0068.
 
 5.3 accepted 2026-11-17: [native-browser review](../../../artifacts/reviewed/fmp-expansion-a/native-browser-review.md). Four representative local widgets passed eight actual acquisitions: retained initial four display/CSV/native-save cases plus fresh-context reopen four; 70 rows and 372 independently checked financial/identity facts, four CSV exports. Seven failed browser attempts remain retained; the accepted initial journey includes two genuine pre-I/O 422 responses. Same guarded process ends at 43/48 FMP, FRED 0 and zero denials. No eleven-widget, App-template, later CI-image or deployment claim. API a7c6ae2139b4dcc16571d0c23ade483a114a0068.
+
+5.4 accepted 2026-11-17: [release-checks review](../../../artifacts/reviewed/fmp-expansion-a/release-checks-review.md). Exact-source Linux push check 44131419572 passed for root 32d1140590eac95cd3f4af890249b7ab6d19f832: 465 passed, 12 skipped and one deselected across the configured 21-file delivery selection (aggregate outcomes). Final consumer evidence retains 207 passed/three failed/one skipped plus all three repaired nodes passing. Fresh complexity covers 763 files with zero errors/violations; native Node/TypeScript passed. Sanitized mirror verifies 51 additions and all 4440 historical entries/118 archives. Eleven API models and four representative widgets retain actual evidence; seven widgets remain unknown. No extra financial requests: 43/48 remains consumed. CI image publication and verification remain pending. API a7c6ae2139b4dcc16571d0c23ade483a114a0068.
