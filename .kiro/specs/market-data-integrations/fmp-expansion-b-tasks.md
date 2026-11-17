@@ -1,6 +1,6 @@
 # Batch B FMP implementation plan
 
-The [design](fmp-expansion-b-design.md) and [independent review](fmp-expansion-b-review.md) define eight operations. The owner approved execution of the [reviewed task graph](fmp-expansion-b-task-review.md) and a ceiling of 36 live FMP requests. Each checkbox records independent review and fresh verification.
+The [design](fmp-expansion-b-design.md) and [independent review](fmp-expansion-b-review.md) define eight operations. The owner approved execution of the [reviewed task graph](fmp-expansion-b-task-review.md) and subsequently lifted the 36-request aggregate ceiling. Use the FMP requests needed for Batch B verification and record actual sends. Each checkbox records independent review and fresh verification.
 
 ## Execution contract
 
@@ -178,8 +178,8 @@ Use product limits and the eight endpoint-specific public contracts in the desig
 ## 5. Candidate, acceptance and publication
 
 - [ ] 5.1 Stage an isolated exact-source candidate and request ledger
-  - Freeze all eight direct/native cases, four contrasts, five named widget cases and exact inputs. Ledger starts at zero. Instrument outbound transport before network-enabled startup, cap at 36 including all startup, failures and reruns; disable polling. Use a separate profile, ports and state.
-  - Verify source/lock/image and contract hashes, guarded counters, capacity enforcement and readiness offline. Record installed origins, run IDs and rehearsal with zero real calls. Load credentials only under the approved ledger.
+  - Freeze all eight direct/native cases, four contrasts, five named widget cases and exact inputs. Ledger starts at zero. Instrument outbound transport before network-enabled startup, count all sends including startup, failures and reruns; disable polling. Use a separate profile, ports and state.
+  - Verify source/lock/image and contract hashes, send counters, per-query bounds and readiness offline. Record installed origins, run IDs and rehearsal with zero real calls. Load credentials only under the approved ledger.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.
   - _Boundary: Controller · local candidate and private evidence directory_
   - _Depends: 4.6_
@@ -187,7 +187,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
 
 - [ ] 5.2 Compare live responses across all eight operations
   - Use 16 direct/native sends and four focused contrasts under the shared ledger. Compare each native result with its own acquired rows and confirm amounts/dates, split orientation, missing vs zero, transcript period/text, excerpt or filing metadata. Record source-specific status per operation.
-  - Stop the affected case on denial and dependent cases pending entitlement. Record real counts, retrieval times, private evidence hashes and redacted comparison outcomes. Shared six-send reserve requires a diagnosed reason per use. No substitute data for acceptance.
+  - Stop the affected case on denial and dependent cases pending entitlement. Record real counts, retrieval times, private evidence hashes and redacted comparison outcomes. Record the reason for additional comparisons and reruns. No substitute data for acceptance.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.
   - _Boundary: Controller · approved provider matrix and private captures_
   - _Depends: 5.1_
@@ -195,7 +195,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
 
 - [ ] 5.3 Verify five real widgets through save and reopen
   - Use one hidden isolated browser, one history, one calendar and all three documents. Compare displayed data to captured responses and verify links/status, keyboard access, filter controls, reopen and safe export. Exercise race and failure/recovery via isolated offline interception if needed.
-  - Allocate ten real sends, initial and reopen for five widgets. Count unexpected sends and stop before the cap. Report API vs UI evidence separately, preserve unsampled widget status and keep licensed text private.
+  - Cover initial load and reopen for five widgets. Count actual sends, including additional verification and diagnosed reruns. Report API vs UI evidence separately, preserve unsampled widget status and keep licensed text private.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.
   - _Boundary: Controller · tests/e2e/ Batch B journey using the established Workspace harness_
   - _Depends: 5.2_
