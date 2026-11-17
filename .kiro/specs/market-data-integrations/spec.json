@@ -40,7 +40,7 @@
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
     "implemented_operations": 0,
-    "accepted_tasks": 16,
+    "accepted_tasks": 17,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
@@ -75,7 +75,9 @@
       "../../../artifacts/reviewed/fmp-expansion-a/revenue-business-line-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/revenue-business-line-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/balance-sheet-growth-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/balance-sheet-growth-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/balance-sheet-growth-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/revenue-geographic-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/revenue-geographic-verification.json"
     ],
     "new_live_requests": 0,
     "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance.",
@@ -129,7 +131,8 @@
       "price_target_consensus",
       "income_statement_growth",
       "revenue_business_line",
-      "balance_sheet_growth"
+      "balance_sheet_growth",
+      "revenue_geographic"
     ]
   },
   "language": "en",
