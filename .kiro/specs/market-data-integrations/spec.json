@@ -40,7 +40,7 @@
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
     "implemented_operations": 11,
-    "accepted_tasks": 21,
+    "accepted_tasks": 22,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
@@ -85,10 +85,12 @@
       "../../../artifacts/reviewed/fmp-expansion-a/actual-join-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/actual-join-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/consumer-catalog-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/consumer-catalog-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/consumer-catalog-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/candidate-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/candidate-verification.json"
     ],
     "new_live_requests": 0,
-    "note": "Batch A eleven adapters, production registration, actual SDK/HTTP/OBBject/discovery joins and generated consumer catalog accepted. Final packaged runtime, bounded live/browser verification and publication remain pending; B8/C5 remain candidates.",
+    "note": "Batch A final local candidate and zero-call readiness accepted. Bounded real-provider matrix, representative browser lifecycle, scoped release review and actual CI publication remain pending.",
     "admission_amendment": {
       "document": "fmp-expansion-a-admission-amendment.md",
       "sha256": "47d4939e6ee381b7cb8863b5e93f31780f8bf763e763078d09e69676bc8b14b0",
@@ -145,7 +147,13 @@
     ],
     "native_join_accepted": true,
     "consumer_catalog_accepted": true,
-    "generation_image": "sha256:58686a7e8be19990181ad534b411f95f970d013d6d01811e46da0c06cf5e7769"
+    "generation_image": "sha256:58686a7e8be19990181ad534b411f95f970d013d6d01811e46da0c06cf5e7769",
+    "candidate_runtime_accepted": true,
+    "local_candidate_images": {
+      "workspace": "sha256:4039c2938757d43fb9969fa94973e11ad3504db743c2c23fa6e751c37e4c914e",
+      "data-api": "sha256:f42d79476c8a9a7b68b70019b2921d09552dfab23a86e6868d1bafe2fbe999e3"
+    },
+    "live_requests_used": 0
   },
   "language": "en",
   "phase": "tasks-generated",
