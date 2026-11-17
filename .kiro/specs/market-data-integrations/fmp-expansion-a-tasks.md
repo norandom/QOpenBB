@@ -180,7 +180,7 @@ Do not introduce new metadata fields, infer missing currency/vintage, or dedupli
   - _Depends: 1.4, 2.3_
   - _Requirements: 2.3, 2.4, 2.5, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 5.1, 5.3, 5.4, 6.1, 7.1, 7.2, 7.3, 7.4, 7.5, 8.4_
 
-- [ ] 3.7 (P) Restore shares-float financial behavior (2-3 hours)
+- [x] 3.7 (P) Restore shares-float financial behavior (2-3 hours)
   - Exactly one matching-symbol row; duplicate/foreign symbols fail; nullable source dates match frozen schema.
   - Divide provider free-float percentage by 100; retain zero/null distinction and explicit transformation.
   - Done: ShareStatistics matches frozen query/result schemas and endpoint-specific plus common offline checks pass.
@@ -347,3 +347,5 @@ Shared acquisition correction accepted 2026-11-17: [independent review](../../..
 3.6 accepted 2026-11-17: [historical_market_cap review](../../../artifacts/reviewed/fmp-expansion-a/historical-market-cap-review.md), 299 focused/compatibility tests and 26 independent probes passed; final notice-only correction independently reverse-hash verified. API 6ef7204bf70a136169e9b04491b380b5d709d809. Actual registration/native result and live/consumer joins remain pending.
 
 3.1 accepted 2026-11-17: [analyst_estimates review](../../../artifacts/reviewed/fmp-expansion-a/analyst-estimates-review.md), 279 focused/compatibility tests and 18 independent probes passed after endpoint-local inherited conversion error repair. API e79eb68b82dc8f0a8f62602b28e0e16cc424e937. Actual registration/native result and live/consumer joins remain pending.
+
+3.7 accepted 2026-11-17: [share_statistics review](../../../artifacts/reviewed/fmp-expansion-a/share-statistics-review.md), 290 focused/compatibility/characterization tests and 35 independent malformed-fact probes passed. API b2da68f5765881258174ab61c25fb9bc4180c847. Actual registration/native result and live/consumer joins remain pending.

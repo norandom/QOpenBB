@@ -40,7 +40,7 @@
     "approved_live_request_ceiling": 48,
     "proposed_live_request_ceiling": 48,
     "implemented_operations": 0,
-    "accepted_tasks": 9,
+    "accepted_tasks": 10,
     "total_tasks": 26,
     "implementation_evidence": [
       "../../../artifacts/reviewed/fmp-expansion-a/foundation-review.md",
@@ -61,7 +61,9 @@
       "../../../artifacts/reviewed/fmp-expansion-a/historical-market-cap-review.md",
       "../../../artifacts/reviewed/fmp-expansion-a/historical-market-cap-verification.json",
       "../../../artifacts/reviewed/fmp-expansion-a/analyst-estimates-review.md",
-      "../../../artifacts/reviewed/fmp-expansion-a/analyst-estimates-verification.json"
+      "../../../artifacts/reviewed/fmp-expansion-a/analyst-estimates-verification.json",
+      "../../../artifacts/reviewed/fmp-expansion-a/share-statistics-review.md",
+      "../../../artifacts/reviewed/fmp-expansion-a/share-statistics-verification.json"
     ],
     "new_live_requests": 0,
     "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance.",
@@ -108,7 +110,8 @@
     },
     "offline_adapters": [
       "historical_market_cap",
-      "analyst_estimates"
+      "analyst_estimates",
+      "share_statistics"
     ]
   },
   "language": "en",
