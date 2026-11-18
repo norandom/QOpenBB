@@ -193,7 +193,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 5.1_
   - _Requirements: 1.2, 2.3, 2.5, 2.6, 3.3, 4.1, 4.2, 4.4, 4.5, 4.6, 6.2, 7.1, 7.2, 8.3, 8.4_
 
-- [ ] 5.3 Verify five real widgets through save and reopen
+- [x] 5.3 Verify five real widgets through save and reopen
   - Use one hidden isolated browser, one history, one calendar and all three documents. Compare displayed data to captured responses and verify links/status, keyboard access, filter controls, reopen and safe export. Exercise race and failure/recovery via isolated offline interception if needed.
   - Cover initial load and reopen for five widgets. Count actual sends, including additional verification and diagnosed reruns. Report API vs UI evidence separately, preserve unsampled widget status and keep licensed text private.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.
