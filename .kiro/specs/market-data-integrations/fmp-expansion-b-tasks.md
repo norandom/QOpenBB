@@ -117,7 +117,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 2.2_
   - _Requirements: 2.3, 2.4, 2.5, 4.1, 4.2, 4.5, 7.1, 7.3, 6.4_
 
-- [ ] 3.8 (P) Company filings
+- [x] 3.8 (P) Company filings
   - Implement the FMP provider override that bypasses inherited accepted-date truncation while preserving filing-date semantics. Test explicit symbol, inclusive dates, page zero, rejection beyond bounds, form type output, leading-zero CIK, filing date vs accepted timestamp with offset, and distinct links. No filing-body fetch.
   - Exercise the frozen schema via the production Fetcher, intercepted safe transport and typed metadata. Assert zero sends for invalid input, exactly one for success, and distinguish safe errors, empty/malformed responses and absence of results. Verify source order, applicable clipping and effective query.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.
