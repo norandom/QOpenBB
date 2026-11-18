@@ -5,7 +5,7 @@ from copy import deepcopy
 from urllib.parse import urlencode
 
 import pytest
-from fmp_actual_join_support import BASELINE, EXPECTED, ROOT, Response, get, public_method, result_fields
+from fmp_actual_join_support import BASELINE, EXPECTED, LATER_BATCHES, ROOT, Response, get, public_method, result_fields
 from openbb_core.provider.standard_models.financial_metadata import FINANCIAL_METADATA_KEY
 
 
@@ -20,7 +20,7 @@ def installed():
     routes = {r.openapi_extra['model']: r for r in iter_api_routes(app)
               if (getattr(r, 'openapi_extra', None) or {}).get('model') in EXPECTED | BASELINE}
     assert set(routes) == set(EXPECTED | BASELINE)
-    assert set(registry.registry.providers['fmp'].fetcher_dict) == set(EXPECTED | BASELINE)
+    assert set(registry.registry.providers['fmp'].fetcher_dict) == set(EXPECTED | BASELINE) | LATER_BATCHES
     runner = CommandRunner(CommandMap(RouterLoader.from_extensions()))
     runner.user_settings.credentials.fmp_api_key = 'offline-join-canary'
     methods = {key: public_method(runner, routes[key].path.removeprefix('/api/v1')) for key in EXPECTED}

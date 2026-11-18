@@ -28,6 +28,12 @@ EXPECTED = {
     'BalanceSheetGrowth': ('balance_sheet_growth', 'fundamental/balance_growth'),
     'CashFlowStatementGrowth': ('cash_flow_growth', 'fundamental/cash_growth'),
 }
+# Batch B (task 4.1) registers these eight further FMP fetchers; the registry stays an exact set,
+# so any other addition still fails. Their own join is test_fmp_batch_b_installed_join.py.
+LATER_BATCHES = {
+    'HistoricalDividends', 'HistoricalSplits', 'CalendarEarnings', 'CalendarDividend',
+    'CalendarSplits', 'CompanyNews', 'EarningsCallTranscript', 'CompanyFilings',
+}
 BASELINE = {
     'EquityInfo': 'profile', 'IncomeStatement': 'fundamental/income',
     'BalanceSheet': 'fundamental/balance', 'CashFlowStatement': 'fundamental/cash',
