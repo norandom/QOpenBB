@@ -185,7 +185,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 4.6_
   - _Requirements: 2.6, 7.2, 7.3, 8.1, 8.2, 8.5_
 
-- [ ] 5.2 Compare live responses across all eight operations
+- [x] 5.2 Compare live responses across all eight operations
   - Use 16 direct/native sends and four focused contrasts under the shared ledger. Compare each native result with its own acquired rows and confirm amounts/dates, split orientation, missing vs zero, transcript period/text, excerpt or filing metadata. Record source-specific status per operation.
   - Stop the affected case on denial and dependent cases pending entitlement. Record real counts, retrieval times, private evidence hashes and redacted comparison outcomes. Record the reason for additional comparisons and reruns. No substitute data for acceptance.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.
