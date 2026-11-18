@@ -6,7 +6,7 @@
   "root": "vendor/workspace",
   "mode": "changed",
   "owners": [
-    {"spec": "market-data-integrations", "include": ["terminalpro/src/components/Widgets/CompanyDocuments/**"], "patterns": ["terminalpro/src/components/Widgets/CompanyDocuments/**"], "files": ["terminalpro/src/components/Widgets/CompanyDocuments/CompanyDocuments.tsx"]},
+    {"spec": "market-data-integrations", "include": ["terminalpro/src/components/Widgets/CompanyDocuments/**", "terminalpro/src/lib/utils/documentDashboardState.ts", "terminalpro/src/lib/utils/documentTemplateState.ts", "terminalpro/src/lib/utils/financialQuery.ts"], "patterns": ["terminalpro/src/components/Widgets/CompanyDocuments/**", "terminalpro/src/lib/utils/documentDashboardState.ts", "terminalpro/src/lib/utils/documentTemplateState.ts", "terminalpro/src/lib/utils/financialQuery.ts"], "files": ["terminalpro/src/components/Widgets/CompanyDocuments/CompanyDocuments.tsx", "terminalpro/src/components/Widgets/CompanyDocuments/CompanyDocumentsWidget.tsx", "terminalpro/src/components/Widgets/CompanyDocuments/documentQuery.ts", "terminalpro/src/components/Widgets/CompanyDocuments/useCompanyDocuments.ts", "terminalpro/src/lib/utils/documentDashboardState.ts", "terminalpro/src/lib/utils/documentTemplateState.ts", "terminalpro/src/lib/utils/financialQuery.ts"]},
     {
       "spec": "openbb-self-service",
       "include": ["**/*"],

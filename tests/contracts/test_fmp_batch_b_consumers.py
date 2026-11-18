@@ -75,10 +75,9 @@ def test_exact_eight_native_bindings_and_preserved_financial_contracts(inputs):
         row = resolve(schema, descriptor['variants']['fmp']['row_schema'])
         assert {c['field'] for c in widget['data']['table']['columnsDefs']} == set(row['properties'])
         assert widget['data']['scope'] == ('listing' if handoff['company_selection'] else 'market')
-        if handoff['renderer'] == 'company_documents':
-            assert widget['refetchInterval'] is False
-            assert widget['refetchOnWindowFocus'] is False
-            assert widget['refetchOnReconnect'] is False
+        assert widget['refetchInterval'] is False
+        assert widget['refetchOnWindowFocus'] is False
+        assert widget['refetchOnReconnect'] is False
 
 
 @pytest.mark.parametrize('mutation', ['missing', 'extra', 'foreign', 'wrong-id'])

@@ -86,9 +86,8 @@ def project(widget: dict, dataset: dict, schema: dict) -> None:
     widget['type'] = renderer
     widget['financialContract'] = deepcopy(descriptor)
     widget['data']['scope'] = 'listing' if company else 'market'
-    if renderer == 'company_documents':
-        # Licensed text is acquired only through the authenticated widget endpoint.
-        widget.update(refetchInterval=False, refetchOnWindowFocus=False, refetchOnReconnect=False)
+    # Refreshes of licensed data must follow an explicit query or user action.
+    widget.update(refetchInterval=False, refetchOnWindowFocus=False, refetchOnReconnect=False)
 
 
 

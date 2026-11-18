@@ -159,7 +159,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 4.3_
   - _Requirements: 3.3, 4.1, 6.2, 6.4, 7.2_
 
-- [ ] 4.5 Connect the renderer to acquisition and saved widget state
+- [x] 4.5 Connect the renderer to acquisition and saved widget state
   - Bind Widgets/index.ts, lib/types/app/widgetTypes.ts and utils/zodForms.ts under terminalpro/src as required by the host contract. Reuse authenticated widget acquisition and save only dataset/query choices. Do not persist text, tokens or stale evidence. Retain peer state and app layout.
   - Mounted integration tests prove no duplicate send, context switch clears evidence, late response is ignored, same-context refresh error labels stale data, and save/export/reopen restores choices. Verify existing saved widgets still load.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.
