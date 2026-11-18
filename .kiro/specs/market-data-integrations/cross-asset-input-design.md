@@ -16,20 +16,22 @@ Verify the 14 inputs against the published data image, through its installed nat
 
 ## Request matrix
 
-Frozen before the first send. 26 planned requests; reruns need a recorded reason and a new slot.
+Frozen before the first send: 26 route calls, which cause 34 provider requests. Each FRED series call makes two requests, one for observations and one for series metadata. Reruns need a recorded reason and a new slot. The FRED client's automatic retries are switched off for the run, because a retry would be an unplanned request.
 
 | Group | Calls | Query |
 | --- | --- | --- |
 | ETF recent prices | XLK, DBC, GLD, XLE, XLB, SPY (6) | daily, 2026-08-03 to 2026-11-13 |
 | ETF early-window probe | same six (6) | daily, 2007-01-03 to 2011-12-30, the five-year maximum |
 | ETF identity | same six (6) | profile by symbol |
-| FRED series | DFII10, T10Y2Y, T10YIE, DTWEXBGS, DCOILWTICO, DHHNGSP, STLFSI4, NFCI (8) | one series per request, no date bounds |
+| FRED series | DFII10, T10Y2Y, T10YIE, DTWEXBGS, DCOILWTICO, DHHNGSP, STLFSI4, NFCI (8) | one series per call, no date bounds |
 
-The requirements estimated about 20 requests. The six identity calls answer their open question about instrument type and exchange; they bring the plan to 26.
+The requirements estimated about 20 requests. The six identity calls answer their open question about instrument type and exchange; they bring the plan to 26 route calls. Amendment, 2026-11-18: the task 1 review found that the count of 26 understated provider requests. The plan is 18 FMP and 16 FRED requests, 34 in total. The owner set no fixed cap; the corrected count is reported to the owner.
+
+The matrix identity is the SHA-256 of its canonical JSON form, so it does not depend on line endings. The FRED series route does not return the source institution, so that attribute stays unknown unless another reviewed source supplies it.
 
 ## What is checked
 
-- **Identity (1.1–1.4).** The profile response supplies instrument type, exchange and currency where FMP provides them. A missing attribute is recorded as unknown. If the profile route rejects an ETF, that outcome is recorded and the attribute stays unknown. FRED metadata (title, units, frequency, seasonal adjustment, source) comes from the series response.
+- **Identity (1.1–1.4).** The profile response supplies instrument type, exchange and currency where FMP provides them. A missing attribute is recorded as unknown. If the profile route rejects an ETF, that outcome is recorded and the attribute stays unknown. FRED metadata (title, units, frequency, seasonal adjustment) comes from the series response; it does not include the source institution.
 - **Price meaning (2.1–2.4).** Each public row is compared with its raw row: date, open, high, low, close, volume. The record states the served adjustment basis (`splits_only`) and that dividends are excluded. The oracle counts gaps against the exchange's weekday calendar, duplicate dates and ordering faults. A weekday gap is reported, not judged: holidays are not modelled. Missing FRED observations must stay missing.
 - **History depth (3.1–3.4).** Earliest and latest returned dates per input. An empty or truncated early window is recorded as observed, with the response's own truncation metadata.
 - **Provenance and display status (4.1–4.4).** Provider, route, effective query and retrieval time come from the response metadata. Display status is assigned from the series notes returned by FRED: a "Copyright" marker means third-party copyrighted and restricted. ETF prices are provider-licensed. A status that cannot be established from the response is unknown.

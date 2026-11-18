@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "matrix_sha256": "3f960e31e0c16e574cdb89a2856d235f9715469de6eaf8090aefd40efaf80130",
+  "notice": "Views that use FRED data must display: \"This product uses the FRED® API but is not endorsed or certified by the Federal Reserve Bank of St. Louis.\" The tool ships no provider data; each installation fetches with its own keys.",
+  "inputs": [
+    {
+      "id": "XLK",
+      "role": "technology-equities",
+      "provider": "fmp",
+      "route": "/api/v1/equity/price/historical",
+      "identity": {
+        "instrument_type": "unknown",
+        "exchange": "unknown",
+        "currency": "unknown",
+        "name": "unknown"
+      },
+      "price_basis": {
+        "adjustment": "splits_only",
+        "excludes_dividends": null
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "Daily prices: one symbol per request, at most five calendar years per request, split-adjusted only. History depth depends on the installation's provider plan."
+    },
+    {
+      "id": "DBC",
+      "role": "broad-commodities",
+      "provider": "fmp",
+      "route": "/api/v1/equity/price/historical",
+      "identity": {
+        "instrument_type": "unknown",
+        "exchange": "unknown",
+        "currency": "unknown",
+        "name": "unknown"
+      },
+      "price_basis": {
+        "adjustment": "splits_only",
+        "excludes_dividends": null
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "Daily prices: one symbol per request, at most five calendar years per request, split-adjusted only. History depth depends on the installation's provider plan."
+    },
+    {
+      "id": "GLD",
+      "role": "gold",
+      "provider": "fmp",
+      "route": "/api/v1/equity/price/historical",
+      "identity": {
+        "instrument_type": "unknown",
+        "exchange": "unknown",
+        "currency": "unknown",
+        "name": "unknown"
+      },
+      "price_basis": {
+        "adjustment": "splits_only",
+        "excludes_dividends": null
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "Daily prices: one symbol per request, at most five calendar years per request, split-adjusted only. History depth depends on the installation's provider plan."
+    },
+    {
+      "id": "XLE",
+      "role": "commodity-linked-equities-energy",
+      "provider": "fmp",
+      "route": "/api/v1/equity/price/historical",
+      "identity": {
+        "instrument_type": "unknown",
+        "exchange": "unknown",
+        "currency": "unknown",
+        "name": "unknown"
+      },
+      "price_basis": {
+        "adjustment": "splits_only",
+        "excludes_dividends": null
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "Daily prices: one symbol per request, at most five calendar years per request, split-adjusted only. History depth depends on the installation's provider plan."
+    },
+    {
+      "id": "XLB",
+      "role": "commodity-linked-equities-materials",
+      "provider": "fmp",
+      "route": "/api/v1/equity/price/historical",
+      "identity": {
+        "instrument_type": "unknown",
+        "exchange": "unknown",
+        "currency": "unknown",
+        "name": "unknown"
+      },
+      "price_basis": {
+        "adjustment": "splits_only",
+        "excludes_dividends": null
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "Daily prices: one symbol per request, at most five calendar years per request, split-adjusted only. History depth depends on the installation's provider plan."
+    },
+    {
+      "id": "SPY",
+      "role": "market-reference",
+      "provider": "fmp",
+      "route": "/api/v1/equity/price/historical",
+      "identity": {
+        "instrument_type": "unknown",
+        "exchange": "unknown",
+        "currency": "unknown",
+        "name": "unknown"
+      },
+      "price_basis": {
+        "adjustment": "splits_only",
+        "excludes_dividends": null
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "Daily prices: one symbol per request, at most five calendar years per request, split-adjusted only. History depth depends on the installation's provider plan."
+    },
+    {
+      "id": "DFII10",
+      "role": "real-yield",
+      "provider": "fred",
+      "route": "/api/v1/economy/fred_series",
+      "identity": {
+        "title": "unknown",
+        "units": "unknown",
+        "frequency": "unknown",
+        "seasonal_adjustment": "unknown",
+        "source": "unknown",
+        "instrument_type": "unknown"
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "FRED series: at most 100,000 rows per request. Availability and history are as served to this installation. The series route does not return the source institution."
+    },
+    {
+      "id": "T10Y2Y",
+      "role": "curve-slope",
+      "provider": "fred",
+      "route": "/api/v1/economy/fred_series",
+      "identity": {
+        "title": "unknown",
+        "units": "unknown",
+        "frequency": "unknown",
+        "seasonal_adjustment": "unknown",
+        "source": "unknown",
+        "instrument_type": "unknown"
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "FRED series: at most 100,000 rows per request. Availability and history are as served to this installation. The series route does not return the source institution."
+    },
+    {
+      "id": "T10YIE",
+      "role": "inflation-expectation",
+      "provider": "fred",
+      "route": "/api/v1/economy/fred_series",
+      "identity": {
+        "title": "unknown",
+        "units": "unknown",
+        "frequency": "unknown",
+        "seasonal_adjustment": "unknown",
+        "source": "unknown",
+        "instrument_type": "unknown"
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "FRED series: at most 100,000 rows per request. Availability and history are as served to this installation. The series route does not return the source institution."
+    },
+    {
+      "id": "DTWEXBGS",
+      "role": "dollar",
+      "provider": "fred",
+      "route": "/api/v1/economy/fred_series",
+      "identity": {
+        "title": "unknown",
+        "units": "unknown",
+        "frequency": "unknown",
+        "seasonal_adjustment": "unknown",
+        "source": "unknown",
+        "instrument_type": "unknown"
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "FRED series: at most 100,000 rows per request. Availability and history are as served to this installation. The series route does not return the source institution."
+    },
+    {
+      "id": "DCOILWTICO",
+      "role": "oil-spot",
+      "provider": "fred",
+      "route": "/api/v1/economy/fred_series",
+      "identity": {
+        "title": "unknown",
+        "units": "unknown",
+        "frequency": "unknown",
+        "seasonal_adjustment": "unknown",
+        "source": "unknown",
+        "instrument_type": "unknown"
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "FRED series: at most 100,000 rows per request. Availability and history are as served to this installation. The series route does not return the source institution."
+    },
+    {
+      "id": "DHHNGSP",
+      "role": "gas-spot",
+      "provider": "fred",
+      "route": "/api/v1/economy/fred_series",
+      "identity": {
+        "title": "unknown",
+        "units": "unknown",
+        "frequency": "unknown",
+        "seasonal_adjustment": "unknown",
+        "source": "unknown",
+        "instrument_type": "unknown"
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "FRED series: at most 100,000 rows per request. Availability and history are as served to this installation. The series route does not return the source institution."
+    },
+    {
+      "id": "STLFSI4",
+      "role": "financial-stress",
+      "provider": "fred",
+      "route": "/api/v1/economy/fred_series",
+      "identity": {
+        "title": "unknown",
+        "units": "unknown",
+        "frequency": "unknown",
+        "seasonal_adjustment": "unknown",
+        "source": "unknown",
+        "instrument_type": "unknown"
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "FRED series: at most 100,000 rows per request. Availability and history are as served to this installation. The series route does not return the source institution."
+    },
+    {
+      "id": "NFCI",
+      "role": "financial-stress",
+      "provider": "fred",
+      "route": "/api/v1/economy/fred_series",
+      "identity": {
+        "title": "unknown",
+        "units": "unknown",
+        "frequency": "unknown",
+        "seasonal_adjustment": "unknown",
+        "source": "unknown",
+        "instrument_type": "unknown"
+      },
+      "history": {},
+      "display_status": {
+        "status": "unknown",
+        "basis": "not yet verified"
+      },
+      "usable_in_stories": false,
+      "verification": {
+        "status": "unverified"
+      },
+      "limits": "FRED series: at most 100,000 rows per request. Availability and history are as served to this installation. The series route does not return the source institution."
+    }
+  ]
+}

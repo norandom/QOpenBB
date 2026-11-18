@@ -1,6 +1,6 @@
 # Cross-asset and macro input verification task plan
 
-Status: task plan owner-approved, 2026-11-18, including the 26 planned requests. Follows the [design](cross-asset-input-design.md) and the approved [requirements](cross-asset-input-requirements.md). The owner set no fixed request cap; every send is recorded.
+Status: task plan owner-approved, 2026-11-18, including the 26 planned route calls. Amendment, 2026-11-18: those calls cause 34 provider requests (18 FMP, 16 FRED), because each FRED series call makes two. Follows the [design](cross-asset-input-design.md) and the approved [requirements](cross-asset-input-requirements.md). The owner set no fixed request cap; every send is recorded.
 
 ## Execution contract
 
@@ -8,8 +8,8 @@ Work in `D:/BuildArtifacts/QOpenBB/fmp-expansion-b/root`; private evidence goes 
 
 ## Tasks
 
-- [ ] 1. Freeze the request matrix and the result-record contract
-  - Write the 26-call matrix from the design with exact symbols, series, windows and purposes. Add the JSON schema for `docs/reference/cross-asset-inputs.json` and a contract test that requires all 14 inputs and rejects a copyrighted input marked usable.
+- [x] 1. Freeze the request matrix and the result-record contract
+  - Write the 26-call matrix from the design with exact symbols, series, windows and purposes, and list the provider requests each call causes. Add the JSON schema for `docs/reference/cross-asset-inputs.json` and a contract test that requires all 14 inputs and rejects a copyrighted input marked usable.
   - Seed the record with every input as `unverified`.
   - _Boundary: Controller · matrix, schema, tests/contracts_
   - _Requirements: 4.2, 5.1, 5.5_
