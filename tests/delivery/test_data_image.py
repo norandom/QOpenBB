@@ -14,7 +14,7 @@ from test_image_builds import inputs
 
 FINANCIAL_FILES = tuple('services/data-api/qopenbb_data/' + name for name in (
     'financial_openapi.py', 'financial_catalog.py', 'financial_policy.py',
-    'financial_errors.py', 'financial_query_policy.py')) + ('docs/reference/provider-coverage.json',)
+    'financial_errors.py', 'financial_query_policy.py', 'financial_http_quarter.py')) + ('docs/reference/provider-coverage.json',)
 
 FILES = tuple('services/data-api/' + name for name in (
     'pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
