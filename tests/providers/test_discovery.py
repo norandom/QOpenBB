@@ -12,6 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKAGE = ROOT / "vendor/data-api/openbb_platform/providers/fmp"
+from test_fmp_batch_b_registration import BATCH_B
+
 FMP_MODELS = {
     "EquityInfo", "IncomeStatement", "BalanceSheet", "CashFlowStatement",
     "EquitySearch", "EquityPeers", "EquityHistorical", "KeyMetrics",
@@ -27,7 +29,7 @@ FMP_MODELS = {
     "IncomeStatementGrowth",
     "BalanceSheetGrowth",
     "CashFlowStatementGrowth",
-}
+} | set(BATCH_B)
 
 
 def test_installed_fmp_entry_point_and_core_loader():
@@ -101,6 +103,7 @@ def installed_code_identity():
         "openbb-core": "openbb_platform/core",
         "openbb-equity": "openbb_platform/extensions/equity",
         "openbb-economy": "openbb_platform/extensions/economy",
+        "openbb-news": "openbb_platform/extensions/news",
         "openbb-fmp": "openbb_platform/providers/fmp",
         "openbb-fred": "openbb_platform/providers/fred",
     }

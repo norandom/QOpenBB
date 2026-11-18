@@ -1,8 +1,8 @@
 """The owned news package exposes company news without global/RSS composition."""
 import ast
-import importlib.metadata as metadata
 import json
 import tomllib
+from importlib import metadata
 from pathlib import Path
 from urllib.parse import urlsplit
 from urllib.request import url2pathname
@@ -71,7 +71,7 @@ class FixtureFetcher(Fetcher[FixtureQuery, list[FixtureData]]):
     def transform_data(query, data, **kwargs):
         return data
 provider = ExtensionLoader().provider_objects["fmp"]
-assert len(provider.fetcher_dict) == 21
+assert len(provider.fetcher_dict) == 29
 provider.fetcher_dict = {**provider.fetcher_dict, "CompanyNews": FixtureFetcher}
 from openbb_core.api.rest_api import app
 from openbb_core.app.route_iter import iter_api_routes
@@ -83,7 +83,7 @@ assert "openbb_news.rss" not in sys.modules
 assert "openbb_news.news_router" not in sys.modules
 print("isolated fixture company route discovered; no acquisition")
 ''')
-    result = subprocess.run([sys.executable, str(script)], capture_output=True, text=True)
+    result = subprocess.run([sys.executable, str(script)], check=False, capture_output=True, text=True)
     assert result.returncode == 0, result.stdout + result.stderr
 
 

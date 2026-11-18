@@ -127,7 +127,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
 
 ## 4. Installed application and consumer integration
 
-- [ ] 4.1 Join the eight adapters into the real registry
+- [x] 4.1 Join the eight adapters into the real registry
   - Check archive hashes and actual installed fetcher types and origin. Extend the exact-set assertion to preserve the original 21 identities and add the eight reviewed ones. Refresh API revision and source pin once the fork work is accepted.
   - In an isolated install enumerate exactly 29 FMP models, all eight native bindings and explicit provider-qualified routes. No unintended news commands. Verify applicability of annotations and field descriptors for all eight.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.

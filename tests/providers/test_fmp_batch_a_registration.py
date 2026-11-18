@@ -1,9 +1,10 @@
-"""Actual source-loaded registration and retained-source provenance, offline only."""
+"""Installed registration and retained-source provenance, offline only."""
 
 import importlib
 import json
 import tarfile
 from hashlib import sha256
+from importlib.metadata import distribution
 from inspect import getfile
 from pathlib import Path
 
@@ -43,7 +44,9 @@ def test_actual_registry_exact_keys_fetcher_identity_and_source_origins():
 
     registry = RegistryMap()
     provider = ExtensionLoader().provider_objects["fmp"]
-    expected = BASELINE | BATCH_A
+    from test_fmp_batch_b_registration import BATCH_B
+
+    expected = BASELINE | BATCH_A | BATCH_B
     assert set(provider.fetcher_dict) == set(expected)
     assert {key for key, variants in registry.original_models.items() if "fmp" in variants} == set(expected)
     assert registry.registry.providers["fmp"] is provider
@@ -52,16 +55,12 @@ def test_actual_registry_exact_keys_fetcher_identity_and_source_origins():
         module = importlib.import_module("openbb_fmp.models." + module_name)
         fetcher = getattr(module, class_name)
         assert provider.fetcher_dict[key] is fetcher
-        assert Path(getfile(fetcher)).resolve() == PACKAGE / "openbb_fmp/models" / (module_name + ".py")
+        assert Path(getfile(fetcher)).resolve() == Path(distribution("openbb-fmp").locate_file("openbb_fmp/models/" + module_name + ".py")).resolve()
         assert registry.original_models[key]["fmp"]["query"] is fetcher.query_params_type
         assert registry.original_models[key]["fmp"]["data"] is fetcher.data_type
-    for namespace, directory in {
-        "openbb_core": "core", "openbb_equity": "extensions/equity",
-        "openbb_economy": "extensions/economy", "openbb_fmp": "providers/fmp",
-        "openbb_fred": "providers/fred",
-    }.items():
+    for namespace in ("openbb_core", "openbb_equity", "openbb_economy", "openbb_fmp", "openbb_fred"):
         module = importlib.import_module(namespace)
-        assert Path(module.__file__).resolve().is_relative_to(API / "openbb_platform" / directory)
+        assert Path(module.__file__).resolve().is_relative_to(Path(distribution(namespace.replace("_", "-")).locate_file(namespace)).resolve())
 
 
 def test_actual_native_batch_a_route_associations():
