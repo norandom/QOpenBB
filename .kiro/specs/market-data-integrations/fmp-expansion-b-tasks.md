@@ -85,7 +85,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 2.2_
   - _Requirements: 2.3, 2.4, 2.5, 4.1, 4.2, 4.5, 7.1, 7.3_
 
-- [ ] 3.4 (P) Dividend calendar
+- [x] 3.4 (P) Dividend calendar
   - Keep each date role, nullable adjusted/actual amount and yield scale. Exercise market-wide symbol attribution, blank optional dates, an eighth day rejection and observed clipping above 250.
   - Exercise the frozen schema via the production Fetcher, intercepted safe transport and typed metadata. Assert zero sends for invalid input, exactly one for success, and distinguish safe errors, empty/malformed responses and absence of results. Verify source order, applicable clipping and effective query.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.
