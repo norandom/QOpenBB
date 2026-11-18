@@ -2,6 +2,8 @@
 
 The prototype is deployed. The 25-task FMP Batch B increment is complete in [alpha-44340458084-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-44340458084-1), following Batch A in alpha-44132016951-1. Batch B has accepted evidence for eight event and document API operations and five representative local widget journeys. [Publication verification](../artifacts/reviewed/fmp-expansion-b/5.5-review.md) covers the public artifacts, a network-isolated API check and isolated internal-network readiness and login. Windows host-loopback transport remains unverified. Within the [24-operation expansion plan](../.kiro/specs/market-data-integrations/fmp-expansion-plan.md), Batches A and B are complete ([Batch B tasks](../.kiro/specs/market-data-integrations/fmp-expansion-b-tasks.md)). The five Batch C DCF and as-reported operations remain follow-ons. The separate [modeling foundation](../.kiro/specs/financial-modeling/brief.md) retains its approved 18-task plan; repository coordinates and selected-input readiness remain open. This release does not approve those implementations or new owner-server deployment.
 
+Input verification for the first research story is complete: six ETFs and eight FRED series are verified at the data API ([checkpoint](provider-coverage.md#cross-asset-and-macro-inputs-checkpoint-2026-11-18)). The next step is one thin modeling slice for "Commodities vs tech: which regime are we in?". No factor, story or widget exists yet.
+
 ## Delivered: prototype foundation
 
 Scope: existing Full Workspace and installed data API. Further provider coverage, renderer families, theme changes, commands, AI, Excel and custom sources are not prerequisites. Preserve working functionality and disclose supported capabilities and gaps.

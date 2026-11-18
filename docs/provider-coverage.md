@@ -73,6 +73,45 @@ Saved dashboards and exports hold query choices only, never response text. Split
 
 A production repair of the document query controls (Workspace `ba03ec7`) was required and is part of this image. The coverage index binds each live claim to the shipped adapter source and financial contract. Each widget claim also binds to the browser image above, so a CI-built image reports it as stale until that image is verified. Batch B is published in [alpha-44340458084-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-44340458084-1). Its data image `sha256:3db18506631972b3a3a176f45069cdac6574af7c35543e261ce7153b58ed25e4` passed 20 synthetic Batch B cases under network isolation with zero provider requests, but no browser journey has run on it, so its widget claims project as stale.
 
+## Cross-asset and macro inputs checkpoint, 2026-11-18
+
+The first research story asks which regime favours commodities or technology. This checkpoint verifies the inputs that story needs before any factor is modelled. The [result record](reference/cross-asset-inputs.json) describes each input. The [verification summary](../artifacts/reviewed/cross-asset-inputs/live-verification.json) and the [financial review](../artifacts/reviewed/cross-asset-inputs/5-6-review.md) hold the evidence.
+
+One guarded live run from the published data image sent exactly 34 provider requests (18 FMP, 16 FRED); the image is `sha256:3db18506631972b3a3a176f45069cdac6574af7c35543e261ce7153b58ed25e4`. An independent comparison matched 40,020 price fields and 54,146 series rows to each call's own provider response, with no mismatch.
+
+| Input | Description | Source | Dates returned |
+| --- | --- | --- | --- |
+| XLK | State Street Technology Select Sector SPDR ETF | FMP | 2007-01-03 to 2026-11-13 |
+| DBC | Invesco DB Commodity Index Tracking Fund | FMP | 2007-01-03 to 2026-11-13 |
+| GLD | SPDR Gold Shares | FMP | 2007-01-03 to 2026-11-13 |
+| XLE | State Street Energy Select Sector SPDR ETF | FMP | 2007-01-03 to 2026-11-13 |
+| XLB | State Street Materials Select Sector SPDR ETF | FMP | 2007-01-03 to 2026-11-13 |
+| SPY | State Street SPDR S&P 500 ETF | FMP | 2007-01-03 to 2026-11-13 |
+| DFII10 | Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Quoted on an Investment Basis, Inflation-Indexed | Board of Governors of the Federal Reserve System (US) | 2003-01-02 to 2026-11-16 |
+| T10Y2Y | 10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity | Federal Reserve Bank of St. Louis | 1976-06-01 to 2026-11-17 |
+| T10YIE | 10-Year Breakeven Inflation Rate | Federal Reserve Bank of St. Louis | 2003-01-02 to 2026-11-17 |
+| DTWEXBGS | Nominal Broad U.S. Dollar Index | Board of Governors of the Federal Reserve System (US) | 2006-01-02 to 2026-11-13 |
+| DCOILWTICO | Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma | U.S. Energy Information Administration | 1986-01-02 to 2026-11-11 |
+| DHHNGSP | Henry Hub Natural Gas Spot Price | U.S. Energy Information Administration | 1997-01-07 to 2026-11-11 |
+| STLFSI4 | St. Louis Fed Financial Stress Index | Federal Reserve Bank of St. Louis | 1993-12-31 to 2026-11-13 |
+| NFCI | Chicago Fed National Financial Conditions Index | Federal Reserve Bank of Chicago | 1971-01-08 to 2026-11-13 |
+
+How to read the fund prices:
+- **They are funds, not spot prices or indexes.** The provider describes GLD as holding bullion and DBC as holding futures. All six list on NYSE Arca; "AMEX" in the record is only the provider's exchange code.
+- **Prices are split-adjusted and exclude dividends.** Returns built on them are price returns, not total returns.
+- **Two windows were requested:** 2007-01-03 to 2011-12-30 and 2026-08-03 to 2026-11-13. The earliest date is the window start, not the start of the fund's history. History depth depends on the installation's provider plan.
+- **Weekday gaps are exchange holidays:** 43 in the early window and one in the recent window.
+
+How to read the FRED series:
+- **Missing observations stay missing.** None becomes zero. Henry Hub (DHHNGSP) has about 1,400 missing days across the 2000s and WTI (DCOILWTICO) has 122 in 2003, so factor work must handle them.
+- **STLFSI4 and NFCI are weekly,** ending Friday. The other six series are daily.
+- **Only Henry Hub is typed as a spot benchmark,** because only its provider title says so. The WTI title does not.
+- **Each series has its full served history,** with units, frequency and seasonal adjustment as the provider states them.
+
+Source attribution: every story chart names its source in the headline, using the institution in the record. All eight FRED series are usable in stories (owner decision of 2026-11-18). Views that use FRED data must display: "This product uses the FRED® API but is not endorsed or certified by the Federal Reserve Bank of St. Louis." The tool ships no provider data; each installation fetches with its own keys.
+
+This checkpoint covers data API results only. It adds no widget, factor or story, and no image was built or published. Live usage for this checkpoint is 18 FMP and 16 FRED requests with no guard denial.
+
 ## Company Research input verification, 2026-11-06
 
 One bounded run verified 46 native FMP requests for Microsoft, Oracle and Adobe and three direct MSFT DCF probes. These checks extend the earlier sample to six annual/quarterly financial datasets, same-listing discovery/profile and EV-dated price windows. DCF access and a beta echo do not establish a native DCF widget, house valuation or sensitivity support. FRED DGS10 evidence remains historical-only from 2026-10-30.

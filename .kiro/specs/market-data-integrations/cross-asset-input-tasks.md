@@ -46,7 +46,7 @@ Work in `D:/BuildArtifacts/QOpenBB/fmp-expansion-b/root`; private evidence goes 
   - _Depends: 5_
   - _Requirements: 1.1–1.4, 2.1–2.4, 3.1–3.4, 4.1–4.3_
 
-- [ ] 7. Reconcile documentation, breadth and the sanitized mirror
+- [x] 7. Reconcile documentation, breadth and the sanitized mirror
   - Add the cross-asset and macro inputs checkpoint to `docs/provider-coverage.md`, with the FRED notice. Update README, the docs index, the roadmap and `.kiro/breadth.toml` for verified scope only. Mirror the reviews and a sanitized summary; verify hashes and the absence of credentials and raw provider rows.
   - Check-only CI must pass at the final source. No image build.
   - _Boundary: Controller · docs, breadth, reviewed mirror_

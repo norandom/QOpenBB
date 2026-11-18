@@ -2,6 +2,14 @@
 
 Updated 2026-11-18. FMP Batch B (eight event and document operations) is complete and published in alpha-44340458084-1, after Batch A in alpha-44132016951-1. The bounded Company Research milestone remains complete.
 
+## Latest accepted work: cross-asset and macro input verification
+
+- All seven tasks of [the plan](specs/market-data-integrations/cross-asset-input-tasks.md) are accepted on 2026-11-18. No image was built or published.
+- Result: [record](../docs/reference/cross-asset-inputs.json) for six ETFs and eight FRED series; [checkpoint](../docs/provider-coverage.md#cross-asset-and-macro-inputs-checkpoint-2026-11-18).
+- Owner decisions: FRED data are public; every story chart names its source in the headline; QOpenBB is an academic MIT-licensed project that ships no provider data.
+- Private harness and raw evidence: `D:/BuildArtifacts/QOpenBB/cross-asset-inputs`. A rerun needs a new reviewed acceptance.
+- Next: the `factor-signals` and `research-stories` specs in the [roadmap](steering/roadmap.md), starting with one thin slice for the commodities-versus-technology story.
+
 ## Latest publication: FMP Batch B
 
 - Release: [alpha-44340458084-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-44340458084-1); [CI run 44340458084](https://github.com/norandom/QOpenBB/actions/runs/44340458084), attempt 1. Both jobs passed.
