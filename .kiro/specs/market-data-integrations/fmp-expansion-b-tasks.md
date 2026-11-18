@@ -177,7 +177,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
 
 ## 5. Candidate, acceptance and publication
 
-- [ ] 5.1 Stage an isolated exact-source candidate and request ledger
+- [x] 5.1 Stage an isolated exact-source candidate and request ledger
   - Freeze all eight direct/native cases, four contrasts, five named widget cases and exact inputs. Ledger starts at zero. Instrument outbound transport before network-enabled startup, count all sends including startup, failures and reruns; disable polling. Use a separate profile, ports and state.
   - Verify source/lock/image and contract hashes, send counters, per-query bounds and readiness offline. Record installed origins, run IDs and rehearsal with zero real calls. Load credentials only under the approved ledger.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.
