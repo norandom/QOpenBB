@@ -1,26 +1,48 @@
 # QOpenBB session handover
 
-Updated 2026-11-17. FMP Batch A has accepted local financial evidence and a published release with verified internal-network packaged readiness. The bounded Company Research milestone remains complete: 13 executable tasks accepted, all 29 requirements mapped, and publication independently verified. No further build or provider run is needed for that milestone.
+Updated 2026-11-18. FMP Batch B (eight event and document operations) is complete and published in alpha-44340458084-1, after Batch A in alpha-44132016951-1. The bounded Company Research milestone remains complete.
 
-## Active FMP expansion
+## Latest publication: FMP Batch B
 
-Batch A complete: 26 of 26 tasks accepted. Published alpha-44132016951-1 from exact root 32d1140590eac95cd3f4af890249b7ab6d19f832: three anonymous assets, six anonymous pulls and exact CI provenance verified. Network-none API passed three synthetic cases with zero real sends. Sixth isolated pair attempt passed packaged health/config/login/wrong-password/private-state/log checks through owned container-local nginx; five failures preserved and cleanup verified. Windows host-loopback remains unverified; no CI financial browser or deployment claim. Live usage remains 43/48, eleven API models/four local widgets accepted; seven widgets unknown. Preserve released root 32 distinct from later closure metadata. No further provider calls, rebuild or deployment is needed for this milestone. B8/C5, house modeling, AI/Excel and owner-server work remain separate. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).
+- Release: [alpha-44340458084-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-44340458084-1); [CI run 44340458084](https://github.com/norandom/QOpenBB/actions/runs/44340458084), attempt 1. Both jobs passed.
+- Released source: root `9dfd5853f42c3b63c2da561cf3ac737c7f26b9ea`; API `5583c958d35282cb59037aae8218cec31d540697`; Workspace `ba03ec72299e1f75d9365bcb8e17925ca1149d58`. Both forks are on GitHub as `qopenbb/fmp-expansion-b`. The later 5.4/5.5 acceptance metadata commits are not the build source.
+- Images: Workspace config `sha256:f7346021e3f4883361ae4b170c526d2341c3e5e3cc2035619403c4396e7e889f`, data API config `sha256:3db18506631972b3a3a176f45069cdac6574af7c35543e261ce7153b58ed25e4`. `latest` matches both.
+- Verification:
+  - three anonymous assets and six anonymous pulls
+  - CI provenance equal to the released Git bytes
+  - a network-none API check passing 20 synthetic Batch B cases with zero sends
+  - an isolated internal-network pair passing health, config, login, wrong-password, state and log checks
+- Not verified: Windows host loopback and CI-image browser acceptance. No owner-server deployment is claimed.
+- Local acceptance: eight API operations and five representative widgets, at cumulative 42 FMP requests, zero other providers and zero denials. Split history and the dividend and split calendars have API acceptance only.
+- A production repair of the document query controls (Workspace `ba03ec7`) shipped with this release.
+- [Publication review](../artifacts/reviewed/fmp-expansion-b/5.5-review.md), [release checks](../artifacts/reviewed/fmp-expansion-b/5.4-review.md) and [provider coverage](../docs/provider-coverage.md#batch-b-events-and-documents-checkpoint-2026-11-18).
+- Owner direction for what follows (not yet specified or approved):
+  - ship curated dashboards as product Apps, starting with an Events & Documents App
+  - then Batch C (provider DCF, custom DCF, as-reported statements) with a DCF drill-down App that uses a gated, step-by-step validation flow, aligned with the financial-modeling spec
+  - bring the analyst Apps to a professional-terminal standard, reusing the existing widgets and chart library to support hypotheses beyond tables
+  - start with `kiro-discovery`.
 
-The owner requested substantial FMP endpoint coverage alongside the financial-modeling input/bootstrap plan. The [reviewed plan](specs/market-data-integrations/fmp-expansion-plan.md) names 24 additional candidate operations: A11 financial/valuation, B8 events/content, C5 DCF/as-reported. The [inventory](specs/market-data-integrations/fmp-expansion-inventory.md) distinguishes 19 retained-adapter candidates, five new-contract candidates and the unchanged ten-model baseline.
+## FMP expansion status
 
-The [Batch A design](specs/market-data-integrations/fmp-expansion-a-design.md) and [26-task plan](specs/market-data-integrations/fmp-expansion-a-tasks.md) are owner-approved as of 2026-11-17, including the 48-request ceiling. The independently reviewed task artifact had SHA-256 `dad09e093184ef53a53ceecc569ed4b4e8119358f20e82d51c47087957fcadea`; later status/checkbox updates do not change that approval record. Execution has started with source/complexity setup; two characterization groups, one contract freeze and public input-admission prerequisites precede eleven disjoint adapters. Registration, exact-source runtime, live/browser verification and actual milestone publication follow. Preserve existing native SDK provider resolution versus explicit REST provider selection; use the reviewed admission addendum, preserving the oversized CommandRunner.
+Batches A and B are complete and published; no FMP expansion batch is in execution.
 
-Use `D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root` and sibling `data-api`, both on `work/fmp-expansion-a`. The planning/approval commit is `4a85a27`; unchanged Workspace source is at `D:/BuildArtifacts/QOpenBB/company-research/workspace`. Preserve the completed Company Research source/runtime/evidence and unrelated canonical work. New raw task evidence belongs under `D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence`; earlier planning drafts remain under `D:/BuildArtifacts/QOpenBB/fmp-expansion-planning`. Approved allocation: 22 direct/native, ten contrasts, eight browser and eight shared diagnosed reruns. Freeze the exact matrix and initialize its ledger before candidate startup; every unexpected startup, failure or background request counts. Do not reuse the historical Company Research ledger.
+- **Batch A.** 26/26 tasks accepted. Published in alpha-44132016951-1 from root `32d1140590eac95cd3f4af890249b7ab6d19f832` (see the previous publication below).
+- **Batch B.** 25/25 tasks accepted. Published in alpha-44340458084-1 from root `9dfd5853f42c3b63c2da561cf3ac737c7f26b9ea` (see the latest publication above).
+- **Batch C.** The five provider DCF, custom DCF and as-reported statement operations remain candidates, without a design or task plan.
 
-The separate modeling foundation retains its approved 18-task plan. Repository coordinates and selected-method input/definition gates remain open; proposed repository name is `qopenbb-financial-modeling`, not an owner decision. No new repository was created. Full FMP completion, DCF and FRED/WACC are not prerequisites for a narrowly selected historical cash-conversion method.
+The [reviewed plan](specs/market-data-integrations/fmp-expansion-plan.md) names the 24 candidate operations: A11 financial/valuation, B8 events/content, C5 DCF/as-reported. The [inventory](specs/market-data-integrations/fmp-expansion-inventory.md) separates retained-adapter candidates, new-contract candidates and the unchanged ten-model baseline.
 
-## Latest publication: FMP Batch A
+Batch B work was done in `D:/BuildArtifacts/QOpenBB/fmp-expansion-b/root` with sibling `data-api` and `workspace` checkouts, all on `work/fmp-expansion-b`. Raw and private evidence is under `D:/BuildArtifacts/QOpenBB/fmp-expansion-b/evidence` and must not be published. The Batch A tree at `D:/BuildArtifacts/QOpenBB/fmp-expansion-a` is historical. Any new batch needs its own approved design, task plan, request allowance and fresh ledger; do not reuse an earlier ledger.
+
+The separate modeling foundation retains its approved 18-task plan. Repository coordinates and selected-method input/definition gates remain open. The proposed repository name, `qopenbb-financial-modeling`, is not an owner decision, and no new repository was created. Full FMP completion, DCF and FRED/WACC are not prerequisites for a narrowly selected historical cash-conversion method.
+
+## Previous publication: FMP Batch A
 
 - Release: [alpha-44132016951-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-44132016951-1); [CI run 44132016951](https://github.com/norandom/QOpenBB/actions/runs/44132016951), attempt 1.
 - Released source: root `32d1140590eac95cd3f4af890249b7ab6d19f832`; API `a7c6ae2139b4dcc16571d0c23ade483a114a0068`; Workspace `bf180ef506286886da224df9ff184cd1ace2397e`. Acceptance metadata `8f469a67785fe58abb964e500be966ae1715e164` is later and is not the release build source.
 - Three anonymous asset downloads and six public image pulls passed. The network-isolated API check passed three synthetic cases with zero real-provider calls. The published pair passed identity, readiness, full configuration, login, wrong-password rejection and bind-state checks through its isolated internal network; no financial route was called.
 - Windows host-loopback transport for this published pair remains unverified after the failed host checks. No CI-image financial browser run or new owner-server deployment is claimed. Local financial acceptance covers eleven API models and four representative widgets under the unchanged 43/48 FMP ledger; seven widgets and future AI remain unknown.
-- [Publication review](../artifacts/reviewed/fmp-expansion-a/publication-review.md) owns the final acceptance and immutable image identities. [Provider coverage](../docs/provider-coverage.md) owns the input/UI boundaries. B8/C5, house modeling and AI/Excel are separate work.
+- [Publication review](../artifacts/reviewed/fmp-expansion-a/publication-review.md) owns the final acceptance and immutable image identities. [Provider coverage](../docs/provider-coverage.md) owns the input/UI boundaries. At that time B8/C5, house modeling and AI/Excel were separate work; B8 has since been delivered as Batch B.
 
 ## Previously published: Company Research
 

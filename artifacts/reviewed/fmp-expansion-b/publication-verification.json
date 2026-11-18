@@ -1,0 +1,134 @@
+{
+  "task": "5.5",
+  "slug": "publication",
+  "status": "VERIFIED",
+  "release": "alpha-44340458084-1",
+  "release_url": "https://github.com/norandom/QOpenBB/releases/tag/alpha-44340458084-1",
+  "workflow_run": 44340458084,
+  "attempt": 1,
+  "event": "workflow_dispatch",
+  "jobs": {
+    "candidate": "success",
+    "publish-alpha": "success"
+  },
+  "root_sha": "9dfd5853f42c3b63c2da561cf3ac737c7f26b9ea",
+  "sources": {
+    "workspace": "ba03ec72299e1f75d9365bcb8e17925ca1149d58",
+    "data_api": "5583c958d35282cb59037aae8218cec31d540697"
+  },
+  "images": {
+    "workspace": {
+      "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:c2e9869c5756b689069dfaaac9c53bc17e876d4e2edd1619533ed96927c99fd9",
+      "tag_reference": "ghcr.io/norandom/qopenbb-workspace:alpha-44340458084-1",
+      "latest_reference": "ghcr.io/norandom/qopenbb-workspace:latest",
+      "manifest_digest": "sha256:c2e9869c5756b689069dfaaac9c53bc17e876d4e2edd1619533ed96927c99fd9",
+      "config_digest": "sha256:f7346021e3f4883361ae4b170c526d2341c3e5e3cc2035619403c4396e7e889f",
+      "platform": "linux/amd64"
+    },
+    "data-api": {
+      "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:79d46d09a913a1b6583ae823961ca87b9e4a6bb112739ca738567b131ca79a73",
+      "tag_reference": "ghcr.io/norandom/qopenbb-data-api:alpha-44340458084-1",
+      "latest_reference": "ghcr.io/norandom/qopenbb-data-api:latest",
+      "manifest_digest": "sha256:79d46d09a913a1b6583ae823961ca87b9e4a6bb112739ca738567b131ca79a73",
+      "config_digest": "sha256:3db18506631972b3a3a176f45069cdac6574af7c35543e261ce7153b58ed25e4",
+      "platform": "linux/amd64"
+    }
+  },
+  "assets": {
+    "compose.yaml": {
+      "bytes": 1359,
+      "sha256": "0dda6c229eac7e6c7a8c55fa717bf338acbc5cd5e1634b8e2702de5393344724"
+    },
+    "default.env.sample": {
+      "bytes": 1299,
+      "sha256": "8958b109b85f8e818e5b6d595b422881ed2e611f45106bde2ec268afc552348b"
+    },
+    "manifest.json": {
+      "bytes": 7061,
+      "sha256": "dfd6ad3c0204e8a14be2eb144580914a0021509b8bec8fb2a96f0784234366de"
+    }
+  },
+  "ci_provenance_verified": true,
+  "anonymous_pulls": [
+    {
+      "service": "workspace",
+      "reference": "ghcr.io/norandom/qopenbb-workspace@sha256:c2e9869c5756b689069dfaaac9c53bc17e876d4e2edd1619533ed96927c99fd9",
+      "returncode": 0,
+      "source_labels_match": true
+    },
+    {
+      "service": "workspace",
+      "reference": "ghcr.io/norandom/qopenbb-workspace:alpha-44340458084-1",
+      "returncode": 0,
+      "source_labels_match": true
+    },
+    {
+      "service": "workspace",
+      "reference": "ghcr.io/norandom/qopenbb-workspace:latest",
+      "returncode": 0,
+      "source_labels_match": true
+    },
+    {
+      "service": "data-api",
+      "reference": "ghcr.io/norandom/qopenbb-data-api@sha256:79d46d09a913a1b6583ae823961ca87b9e4a6bb112739ca738567b131ca79a73",
+      "returncode": 0,
+      "source_labels_match": true
+    },
+    {
+      "service": "data-api",
+      "reference": "ghcr.io/norandom/qopenbb-data-api:alpha-44340458084-1",
+      "returncode": 0,
+      "source_labels_match": true
+    },
+    {
+      "service": "data-api",
+      "reference": "ghcr.io/norandom/qopenbb-data-api:latest",
+      "returncode": 0,
+      "source_labels_match": true
+    }
+  ],
+  "final_latest_pair_matches": true,
+  "network_none_api_probe": {
+    "status": "PASS",
+    "network": "none",
+    "credentials": "synthetic-sentinels-only",
+    "cases": 20,
+    "ledger_counts": {
+      "fmp": 0,
+      "other": 0
+    },
+    "ledger_denials": 0,
+    "packaged_inputs_checked": 15,
+    "packaged_mismatches": []
+  },
+  "pair_readiness": {
+    "verified": true,
+    "health": 200,
+    "full_config": true,
+    "login": 200,
+    "wrong_password": 401,
+    "bind_state": true,
+    "logs_secret_free": true,
+    "financial_routes_called": 0,
+    "browser_started": false,
+    "http_transport": "owned Workspace container localhost:3000 nginx",
+    "windows_loopback_verified": false,
+    "containers_removed": true,
+    "network_removed": true
+  },
+  "retained_failures": [
+    "pair-44340458084: compose_up, native Podman API pipe proxy absent (host); owned cleanup also failed on the same pipe; no containers per runtime descriptor and later read-only inspection",
+    "pair-44340458084-r2: host-route service_health rejected (Windows host loopback), owned cleanup and independent no-leftover proof",
+    "pair-internal-44340458084: prepare failed; absent native Podman pipe inferred from a separate diagnostic replay"
+  ],
+  "limits": "No CI-image financial browser run; local browser acceptance used data image 409e1169 and widget coverage projects as stale on the published image until browser-verified. Windows host loopback unverified. No owner-server deployment.",
+  "evidence_sha256": {
+    "release-identity-44340458084.json": "9029d387729d32ecb5146f50aa29e49605b69ea88d2043655faf8d26b537f540",
+    "run-44340458084/publication-verification.json": "6125a10668a8590d909f3b42729f67b3379b5e75ac4388c69e5a82f5024de712",
+    "run-44340458084/manifest.json": "dfd6ad3c0204e8a14be2eb144580914a0021509b8bec8fb2a96f0784234366de",
+    "offline-44340458084/report.json": "7e25b6801040a19e56bcc3f04c1dde43ea7f1debb2115a24116aca988044f69f",
+    "pair-internal-44340458084-r2/report.json": "42b60e1bb7952bd41d39a1c781a8b0be4cd0f3bb2a1ca484f8584c65283decce",
+    "pair-44340458084-r2/report.json": "e3c89986e939440c5a5cf61b0f567a35ac9648ef0c73854c869ac9ab6f9228ce"
+  },
+  "probe_scope_note": "Network-none probe does not re-assert the served OpenAPI canonical hash, financial_identity revisions or the non-root user; packaged bytes, runtime-input and provenance labels are verified."
+}

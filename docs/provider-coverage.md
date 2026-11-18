@@ -71,7 +71,7 @@ The browser itself fulfils those failure cases, so they make no provider request
 
 Saved dashboards and exports hold query choices only, never response text. Split history and the dividend and split calendars have API acceptance only, and their widgets remain unknown. Future AI use is unknown for all eight. Live usage is 42 FMP requests with no other-provider requests and no guard denials.
 
-A production repair of the document query controls (Workspace `ba03ec7`) was required and is part of this image. The coverage index binds each live claim to the shipped adapter source and financial contract. Each widget claim also binds to the browser image above, so a CI-built image reports it as stale until that image is verified.
+A production repair of the document query controls (Workspace `ba03ec7`) was required and is part of this image. The coverage index binds each live claim to the shipped adapter source and financial contract. Each widget claim also binds to the browser image above, so a CI-built image reports it as stale until that image is verified. Batch B is published in [alpha-44340458084-1](https://github.com/norandom/QOpenBB/releases/tag/alpha-44340458084-1). Its data image `sha256:3db18506631972b3a3a176f45069cdac6574af7c35543e261ce7153b58ed25e4` passed 20 synthetic Batch B cases under network isolation with zero provider requests, but no browser journey has run on it, so its widget claims project as stale.
 
 ## Company Research input verification, 2026-11-06
 

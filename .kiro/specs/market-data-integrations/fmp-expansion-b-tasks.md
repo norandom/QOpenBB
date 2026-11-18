@@ -209,7 +209,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 5.3_
   - _Requirements: 1.2, 1.4, 7.2, 8.1, 8.3, 8.4, 8.5_
 
-- [ ] 5.5 Publish the accepted milestone and verify distributed images
+- [x] 5.5 Publish the accepted milestone and verify distributed images
   - Dispatch the established milestone build on the accepted main revision after all applicable gates pass. Verify actual release assets, registry digests, pullability and source identities. Run network-isolated offline installed-API cases on published images and packaged pair readiness with zero FMP sends.
   - Record CI image vs local browser evidence, cleanup and release receipt. Update final checkboxes and handover with verified outcomes. Deployment to the owner's server is a separate operation.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.
