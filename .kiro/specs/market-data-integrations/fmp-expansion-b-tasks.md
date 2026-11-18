@@ -201,7 +201,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 5.2_
   - _Requirements: 1.2, 6.2, 6.3, 6.4, 7.1, 7.2, 8.3, 8.4_
 
-- [ ] 5.4 Reconcile source verification and sanitized delivery evidence
+- [x] 5.4 Reconcile source verification and sanitized delivery evidence
   - Run affected provider, consumer, Workspace and Linux verification selections at exact source revisions. Audit complexity/inventory across all three trees. Record failures, fixes and unverified scopes. Reconcile breadth, README and docs with accepted checks.
   - Verify sanitized mirror hashes, omission of credentials and licensed content, and immutable commits. Check-only CI must pass at the intended release source before publication.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.
