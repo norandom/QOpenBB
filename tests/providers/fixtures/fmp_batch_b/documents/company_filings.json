@@ -1,0 +1,589 @@
+{
+  "scope": "synthetic offline freeze; runtime corrections remain in tasks 3.6-3.8 and 4.2",
+  "source_sha256": "ab4c77778d5bfabdbbefd2b404b72b1e2e74d86d0b1521a2aaf5f10cf8c8fdf6",
+  "standard_sha256": "550ff801c370063363fe457e4089ec6b199c4106054600c3d4c9fe8e538d15fe",
+  "stable_endpoint": "sec-filings-search/symbol",
+  "maximum_calls": 1,
+  "retained": {
+    "aliases": {
+      "accepted_date": "acceptedDate",
+      "report_type": "formType",
+      "filing_url": "link",
+      "report_url": "finalLink"
+    },
+    "query_validation": {
+      "additionalProperties": true,
+      "description": "FMP Company Filings Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs/sec-filings-api/",
+      "properties": {
+        "symbol": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Symbol to get data for.",
+          "title": "Symbol"
+        },
+        "cik": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "CIK number to look up. Overrides symbol.",
+          "title": "Cik"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Start date for filtering filings. Default is one year ago.",
+          "title": "Start Date"
+        },
+        "end_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "End date for filtering filings.",
+          "title": "End Date"
+        },
+        "limit": {
+          "default": 1000,
+          "description": "Number of results to return. Max results is 1000.",
+          "exclusiveMinimum": 0,
+          "maximum": 1000,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "page": {
+          "default": 0,
+          "description": "Page number for paginated results. Max page is 100.",
+          "exclusiveMinimum": 0,
+          "maximum": 100,
+          "title": "Page",
+          "type": "integer"
+        }
+      },
+      "title": "FMPCompanyFilingsQueryParams",
+      "type": "object"
+    },
+    "row_validation": {
+      "additionalProperties": true,
+      "description": "FMP Company Filings Data.",
+      "properties": {
+        "filingDate": {
+          "description": "The date of the filing.",
+          "format": "date",
+          "title": "Filingdate",
+          "type": "string"
+        },
+        "reportType": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Type of filing.",
+          "title": "Reporttype"
+        },
+        "reportUrl": {
+          "description": "URL to the actual report.",
+          "title": "Reporturl",
+          "type": "string"
+        },
+        "filingUrl": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "URL to the filing page.",
+          "title": "Filingurl"
+        },
+        "symbol": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol"
+        },
+        "cik": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Central Index Key (CIK) for the requested entity.",
+          "title": "Cik"
+        },
+        "acceptedDate": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Accepted date of the filing.",
+          "title": "Accepteddate"
+        }
+      },
+      "required": [
+        "filingDate",
+        "reportUrl"
+      ],
+      "title": "FMPCompanyFilingsData",
+      "type": "object"
+    },
+    "row_serialization": {
+      "additionalProperties": true,
+      "description": "FMP Company Filings Data.",
+      "properties": {
+        "filing_date": {
+          "description": "The date of the filing.",
+          "format": "date",
+          "title": "Filing Date",
+          "type": "string"
+        },
+        "report_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Type of filing.",
+          "title": "Report Type"
+        },
+        "report_url": {
+          "description": "URL to the actual report.",
+          "title": "Report Url",
+          "type": "string"
+        },
+        "filing_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "URL to the filing page.",
+          "title": "Filing Url"
+        },
+        "symbol": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol"
+        },
+        "cik": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Central Index Key (CIK) for the requested entity.",
+          "title": "Cik"
+        },
+        "accepted_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Accepted date of the filing.",
+          "title": "Accepted Date"
+        }
+      },
+      "required": [
+        "filing_date",
+        "report_url"
+      ],
+      "title": "FMPCompanyFilingsData",
+      "type": "object"
+    }
+  },
+  "expected": {
+    "source_aliases": {
+      "symbol": "symbol",
+      "filing_date": "filingDate",
+      "accepted_date": "acceptedDate",
+      "report_type": "formType",
+      "cik": "cik",
+      "filing_url": "link",
+      "report_url": "finalLink"
+    },
+    "query_validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "start_date": {
+          "format": "date",
+          "title": "Start Date",
+          "type": "string"
+        },
+        "end_date": {
+          "format": "date",
+          "title": "End Date",
+          "type": "string"
+        },
+        "page": {
+          "default": 0,
+          "maximum": 99,
+          "minimum": 0,
+          "title": "Page",
+          "type": "integer"
+        },
+        "limit": {
+          "default": 20,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol",
+        "start_date",
+        "end_date"
+      ],
+      "title": "FrozenCompanyFilingsQuery",
+      "type": "object"
+    },
+    "query_serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "start_date": {
+          "format": "date",
+          "title": "Start Date",
+          "type": "string"
+        },
+        "end_date": {
+          "format": "date",
+          "title": "End Date",
+          "type": "string"
+        },
+        "page": {
+          "default": 0,
+          "maximum": 99,
+          "minimum": 0,
+          "title": "Page",
+          "type": "integer"
+        },
+        "limit": {
+          "default": 20,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol",
+        "start_date",
+        "end_date"
+      ],
+      "title": "FrozenCompanyFilingsQuery",
+      "type": "object"
+    },
+    "row_validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "content_status": {
+          "enum": [
+            "partial",
+            "metadata_only",
+            "completeness_unknown",
+            "full"
+          ],
+          "title": "Content Status",
+          "type": "string"
+        },
+        "filing_date": {
+          "format": "date",
+          "title": "Filing Date",
+          "type": "string"
+        },
+        "accepted_date": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accepted Date"
+        },
+        "report_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Report Type"
+        },
+        "cik": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cik"
+        },
+        "filing_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Filing Url"
+        },
+        "report_url": {
+          "title": "Report Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "content_status",
+        "filing_date",
+        "report_url"
+      ],
+      "title": "Filing",
+      "type": "object"
+    },
+    "row_serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "content_status": {
+          "enum": [
+            "partial",
+            "metadata_only",
+            "completeness_unknown",
+            "full"
+          ],
+          "title": "Content Status",
+          "type": "string"
+        },
+        "filing_date": {
+          "format": "date",
+          "title": "Filing Date",
+          "type": "string"
+        },
+        "accepted_date": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accepted Date"
+        },
+        "report_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Report Type"
+        },
+        "cik": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cik"
+        },
+        "filing_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Filing Url"
+        },
+        "report_url": {
+          "title": "Report Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "content_status",
+        "filing_date",
+        "report_url"
+      ],
+      "title": "Filing",
+      "type": "object"
+    }
+  },
+  "wire_parameters": {
+    "symbol": "symbol",
+    "from": "start_date",
+    "to": "end_date",
+    "page": "page",
+    "limit": "limit"
+  },
+  "compatibility_changes": [
+    "accepted_date preserves date/datetime precision instead of inherited date truncation",
+    "add content_status; report_url remains required"
+  ],
+  "source_attribution": {
+    "provider": "fmp",
+    "field_origins": {
+      "symbol": "symbol",
+      "filing_date": "filingDate",
+      "accepted_date": "acceptedDate",
+      "report_type": "formType",
+      "cik": "cik",
+      "filing_url": "link",
+      "report_url": "finalLink"
+    },
+    "publisher_is_author": false,
+    "timezone_when_unsupplied": "unknown"
+  },
+  "content_status_rules": {
+    "partial": "nonblank supplied excerpt; never full article",
+    "metadata_only": "filing metadata or headline without nonblank excerpt",
+    "completeness_unknown": "nonblank transcript without explicit full-content evidence",
+    "full": "requires explicit source evidence; none in these three contracts"
+  },
+  "time_rules": {
+    "filing_date": "civil date",
+    "timestamp": "preserve supplied clock and offset",
+    "naive_timestamp": "retain naive; timezone unknown",
+    "date_only": "retain civil date; do not synthesize midnight"
+  },
+  "procedural": {
+    "validate_all_before_limit": true,
+    "preserve_source_order": true,
+    "completeness": "unknown",
+    "strict_single_symbol": true,
+    "empty_acquisition": "unavailable",
+    "no_images_or_link_fetch": true
+  }
+}

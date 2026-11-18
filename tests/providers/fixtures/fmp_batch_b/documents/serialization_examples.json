@@ -1,0 +1,556 @@
+[
+  {
+    "model": "company_news",
+    "raw": {
+      "symbol": "AAPL",
+      "publishedDate": "2026-01-02T00:00:00-05:00",
+      "title": "Synthetic result",
+      "site": "Example Wire",
+      "publisher": "Example Publisher",
+      "text": "  Literal <b>excerpt</b>\n",
+      "url": "https://example.test/news/1"
+    },
+    "query": {
+      "symbol": "aapl"
+    },
+    "observed_baseline": {
+      "serialized": {
+        "date": "2026-01-02T00:00:00-05:00",
+        "title": "Synthetic result",
+        "author": "Example Publisher",
+        "excerpt": "  Literal <b>excerpt</b>\n",
+        "body": null,
+        "images": null,
+        "url": "https://example.test/news/1",
+        "symbols": "AAPL",
+        "source": "Example Wire"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "partial",
+        "date": "2026-01-02T00:00:00-05:00",
+        "title": "Synthetic result",
+        "source": "Example Wire",
+        "publisher": "Example Publisher",
+        "author": null,
+        "excerpt": "  Literal <b>excerpt</b>\n",
+        "body": null,
+        "url": "https://example.test/news/1",
+        "symbols": "AAPL",
+        "images": null
+      }
+    ]
+  },
+  {
+    "model": "company_news",
+    "raw": {
+      "symbol": "AAPL",
+      "publishedDate": "2026-01-02T16:35:42",
+      "title": "Synthetic result",
+      "site": "Example Wire",
+      "publisher": "Example Publisher",
+      "text": "  Literal <b>excerpt</b>\n",
+      "url": "https://example.test/news/1"
+    },
+    "query": {
+      "symbol": "aapl"
+    },
+    "observed_baseline": {
+      "serialized": {
+        "date": "2026-01-02T16:35:42",
+        "title": "Synthetic result",
+        "author": "Example Publisher",
+        "excerpt": "  Literal <b>excerpt</b>\n",
+        "body": null,
+        "images": null,
+        "url": "https://example.test/news/1",
+        "symbols": "AAPL",
+        "source": "Example Wire"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "partial",
+        "date": "2026-01-02T16:35:42",
+        "title": "Synthetic result",
+        "source": "Example Wire",
+        "publisher": "Example Publisher",
+        "author": null,
+        "excerpt": "  Literal <b>excerpt</b>\n",
+        "body": null,
+        "url": "https://example.test/news/1",
+        "symbols": "AAPL",
+        "images": null
+      }
+    ]
+  },
+  {
+    "model": "company_news",
+    "raw": {
+      "symbol": "AAPL",
+      "publishedDate": "2026-01-02T16:35:42-05:00",
+      "title": "Synthetic result",
+      "site": "Example Wire",
+      "publisher": "Example Publisher",
+      "text": "  Literal <b>excerpt</b>\n",
+      "url": "https://example.test/news/1"
+    },
+    "query": {
+      "symbol": "aapl"
+    },
+    "observed_baseline": {
+      "serialized": {
+        "date": "2026-01-02T16:35:42-05:00",
+        "title": "Synthetic result",
+        "author": "Example Publisher",
+        "excerpt": "  Literal <b>excerpt</b>\n",
+        "body": null,
+        "images": null,
+        "url": "https://example.test/news/1",
+        "symbols": "AAPL",
+        "source": "Example Wire"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "partial",
+        "date": "2026-01-02T16:35:42-05:00",
+        "title": "Synthetic result",
+        "source": "Example Wire",
+        "publisher": "Example Publisher",
+        "author": null,
+        "excerpt": "  Literal <b>excerpt</b>\n",
+        "body": null,
+        "url": "https://example.test/news/1",
+        "symbols": "AAPL",
+        "images": null
+      }
+    ]
+  },
+  {
+    "model": "company_news",
+    "raw": {
+      "symbol": "AAPL",
+      "publishedDate": "2026-01-02T21:35:42Z",
+      "title": "Synthetic result",
+      "site": "Example Wire",
+      "publisher": "Example Publisher",
+      "text": "  Literal <b>excerpt</b>\n",
+      "url": "https://example.test/news/1"
+    },
+    "query": {
+      "symbol": "aapl"
+    },
+    "observed_baseline": {
+      "serialized": {
+        "date": "2026-01-02T21:35:42Z",
+        "title": "Synthetic result",
+        "author": "Example Publisher",
+        "excerpt": "  Literal <b>excerpt</b>\n",
+        "body": null,
+        "images": null,
+        "url": "https://example.test/news/1",
+        "symbols": "AAPL",
+        "source": "Example Wire"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "partial",
+        "date": "2026-01-02T21:35:42Z",
+        "title": "Synthetic result",
+        "source": "Example Wire",
+        "publisher": "Example Publisher",
+        "author": null,
+        "excerpt": "  Literal <b>excerpt</b>\n",
+        "body": null,
+        "url": "https://example.test/news/1",
+        "symbols": "AAPL",
+        "images": null
+      }
+    ]
+  },
+  {
+    "model": "company_filings",
+    "raw": {
+      "symbol": "AAPL",
+      "filingDate": "2026-01-02",
+      "acceptedDate": "2026-01-02",
+      "formType": "10-Q",
+      "cik": "0000320193",
+      "link": "https://example.test/filing-index.html",
+      "finalLink": "https://example.test/report.htm"
+    },
+    "query": {
+      "symbol": "aapl",
+      "start_date": "2026-01-01",
+      "end_date": "2026-01-31"
+    },
+    "observed_baseline": {
+      "serialized": {
+        "filing_date": "2026-01-02",
+        "report_type": "10-Q",
+        "report_url": "https://example.test/report.htm",
+        "filing_url": "https://example.test/filing-index.html",
+        "symbol": "AAPL",
+        "cik": "0000320193",
+        "accepted_date": "2026-01-02"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "metadata_only",
+        "filing_date": "2026-01-02",
+        "accepted_date": "2026-01-02",
+        "report_type": "10-Q",
+        "cik": "0000320193",
+        "filing_url": "https://example.test/filing-index.html",
+        "report_url": "https://example.test/report.htm"
+      }
+    ]
+  },
+  {
+    "model": "company_filings",
+    "raw": {
+      "symbol": "AAPL",
+      "filingDate": "2026-01-02",
+      "acceptedDate": "2026-01-02T00:00:00-05:00",
+      "formType": "10-Q",
+      "cik": "0000320193",
+      "link": "https://example.test/filing-index.html",
+      "finalLink": "https://example.test/report.htm"
+    },
+    "query": {
+      "symbol": "aapl",
+      "start_date": "2026-01-01",
+      "end_date": "2026-01-31"
+    },
+    "observed_baseline": {
+      "serialized": {
+        "filing_date": "2026-01-02",
+        "report_type": "10-Q",
+        "report_url": "https://example.test/report.htm",
+        "filing_url": "https://example.test/filing-index.html",
+        "symbol": "AAPL",
+        "cik": "0000320193",
+        "accepted_date": "2026-01-02"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "metadata_only",
+        "filing_date": "2026-01-02",
+        "accepted_date": "2026-01-02T00:00:00-05:00",
+        "report_type": "10-Q",
+        "cik": "0000320193",
+        "filing_url": "https://example.test/filing-index.html",
+        "report_url": "https://example.test/report.htm"
+      }
+    ]
+  },
+  {
+    "model": "company_filings",
+    "raw": {
+      "symbol": "AAPL",
+      "filingDate": "2026-01-02",
+      "acceptedDate": "2026-01-02T16:35:42",
+      "formType": "10-Q",
+      "cik": "0000320193",
+      "link": "https://example.test/filing-index.html",
+      "finalLink": "https://example.test/report.htm"
+    },
+    "query": {
+      "symbol": "aapl",
+      "start_date": "2026-01-01",
+      "end_date": "2026-01-31"
+    },
+    "observed_baseline": {
+      "serialized": {
+        "filing_date": "2026-01-02",
+        "report_type": "10-Q",
+        "report_url": "https://example.test/report.htm",
+        "filing_url": "https://example.test/filing-index.html",
+        "symbol": "AAPL",
+        "cik": "0000320193",
+        "accepted_date": "2026-01-02"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "metadata_only",
+        "filing_date": "2026-01-02",
+        "accepted_date": "2026-01-02T16:35:42",
+        "report_type": "10-Q",
+        "cik": "0000320193",
+        "filing_url": "https://example.test/filing-index.html",
+        "report_url": "https://example.test/report.htm"
+      }
+    ]
+  },
+  {
+    "model": "company_filings",
+    "raw": {
+      "symbol": "AAPL",
+      "filingDate": "2026-01-02",
+      "acceptedDate": "2026-01-02T16:35:42-05:00",
+      "formType": "10-Q",
+      "cik": "0000320193",
+      "link": "https://example.test/filing-index.html",
+      "finalLink": "https://example.test/report.htm"
+    },
+    "query": {
+      "symbol": "aapl",
+      "start_date": "2026-01-01",
+      "end_date": "2026-01-31"
+    },
+    "observed_baseline": {
+      "serialized": {
+        "filing_date": "2026-01-02",
+        "report_type": "10-Q",
+        "report_url": "https://example.test/report.htm",
+        "filing_url": "https://example.test/filing-index.html",
+        "symbol": "AAPL",
+        "cik": "0000320193",
+        "accepted_date": "2026-01-02"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "metadata_only",
+        "filing_date": "2026-01-02",
+        "accepted_date": "2026-01-02T16:35:42-05:00",
+        "report_type": "10-Q",
+        "cik": "0000320193",
+        "filing_url": "https://example.test/filing-index.html",
+        "report_url": "https://example.test/report.htm"
+      }
+    ]
+  },
+  {
+    "model": "company_filings",
+    "raw": {
+      "symbol": "AAPL",
+      "filingDate": "2026-01-02",
+      "acceptedDate": "2026-01-02T21:35:42Z",
+      "formType": "10-Q",
+      "cik": "0000320193",
+      "link": "https://example.test/filing-index.html",
+      "finalLink": "https://example.test/report.htm"
+    },
+    "query": {
+      "symbol": "aapl",
+      "start_date": "2026-01-01",
+      "end_date": "2026-01-31"
+    },
+    "observed_baseline": {
+      "serialized": {
+        "filing_date": "2026-01-02",
+        "report_type": "10-Q",
+        "report_url": "https://example.test/report.htm",
+        "filing_url": "https://example.test/filing-index.html",
+        "symbol": "AAPL",
+        "cik": "0000320193",
+        "accepted_date": "2026-01-02"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "metadata_only",
+        "filing_date": "2026-01-02",
+        "accepted_date": "2026-01-02T21:35:42Z",
+        "report_type": "10-Q",
+        "cik": "0000320193",
+        "filing_url": "https://example.test/filing-index.html",
+        "report_url": "https://example.test/report.htm"
+      }
+    ]
+  },
+  {
+    "model": "earnings_call_transcript",
+    "raw": {
+      "symbol": "AAPL",
+      "year": 2026,
+      "period": "Q1",
+      "date": "2026-01-02",
+      "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+    },
+    "query": {
+      "symbol": "aapl",
+      "year": 2026,
+      "quarter": 1
+    },
+    "observed_baseline": {
+      "serialized": {
+        "symbol": "AAPL",
+        "year": 2026,
+        "quarter": "Q1",
+        "date": "2026-01-02",
+        "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "completeness_unknown",
+        "year": 2026,
+        "quarter": "Q1",
+        "date": "2026-01-02",
+        "event_datetime": null,
+        "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+      }
+    ]
+  },
+  {
+    "model": "earnings_call_transcript",
+    "raw": {
+      "symbol": "AAPL",
+      "year": 2026,
+      "period": "Q1",
+      "date": "2026-01-02T00:00:00-05:00",
+      "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+    },
+    "query": {
+      "symbol": "aapl",
+      "year": 2026,
+      "quarter": 1
+    },
+    "observed_baseline": {
+      "serialized": {
+        "symbol": "AAPL",
+        "year": 2026,
+        "quarter": "Q1",
+        "date": "2026-01-02",
+        "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+      }
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "completeness_unknown",
+        "year": 2026,
+        "quarter": "Q1",
+        "date": "2026-01-02",
+        "event_datetime": "2026-01-02T00:00:00-05:00",
+        "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+      }
+    ]
+  },
+  {
+    "model": "earnings_call_transcript",
+    "raw": {
+      "symbol": "AAPL",
+      "year": 2026,
+      "period": "Q1",
+      "date": "2026-01-02T16:35:42",
+      "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+    },
+    "query": {
+      "symbol": "aapl",
+      "year": 2026,
+      "quarter": 1
+    },
+    "observed_baseline": {
+      "errors": [
+        {
+          "type": "date_from_datetime_inexact",
+          "loc": [
+            "date"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "completeness_unknown",
+        "year": 2026,
+        "quarter": "Q1",
+        "date": "2026-01-02",
+        "event_datetime": "2026-01-02T16:35:42",
+        "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+      }
+    ]
+  },
+  {
+    "model": "earnings_call_transcript",
+    "raw": {
+      "symbol": "AAPL",
+      "year": 2026,
+      "period": "Q1",
+      "date": "2026-01-02T16:35:42-05:00",
+      "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+    },
+    "query": {
+      "symbol": "aapl",
+      "year": 2026,
+      "quarter": 1
+    },
+    "observed_baseline": {
+      "errors": [
+        {
+          "type": "date_from_datetime_inexact",
+          "loc": [
+            "date"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "completeness_unknown",
+        "year": 2026,
+        "quarter": "Q1",
+        "date": "2026-01-02",
+        "event_datetime": "2026-01-02T16:35:42-05:00",
+        "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+      }
+    ]
+  },
+  {
+    "model": "earnings_call_transcript",
+    "raw": {
+      "symbol": "AAPL",
+      "year": 2026,
+      "period": "Q1",
+      "date": "2026-01-02T21:35:42Z",
+      "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+    },
+    "query": {
+      "symbol": "aapl",
+      "year": 2026,
+      "quarter": 1
+    },
+    "observed_baseline": {
+      "errors": [
+        {
+          "type": "date_from_datetime_inexact",
+          "loc": [
+            "date"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      {
+        "symbol": "AAPL",
+        "content_status": "completeness_unknown",
+        "year": 2026,
+        "quarter": "Q1",
+        "date": "2026-01-02",
+        "event_datetime": "2026-01-02T21:35:42Z",
+        "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n"
+      }
+    ]
+  }
+]

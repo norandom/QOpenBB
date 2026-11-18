@@ -25,7 +25,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 1.1_
   - _Requirements: 2.3, 2.4, 2.5, 4.1, 4.2, 4.4, 4.5, 4.6_
 
-- [ ] 1.3 Freeze three document contracts
+- [x] 1.3 Freeze three document contracts
   - Freeze input and serialized row schemas, aliases, source attribution, safe links, content_status and criteria for partial/full/unknown/metadata-only. Include strict transcript coordinates, blank body, foreign and duplicate rows, CIK and distinct index/document URLs.
   - Characterize and record the current time loss in the inherited filings validator and transcript date-only standard. Freeze expected public serialization fixtures for non-midnight, offset-bearing and timezone-unspecified inputs. Accept this freeze when the observed baseline and expected values are recorded. Tasks 3.7 and 3.8 own the runtime corrections, and 4.2 verifies installed serialization.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.

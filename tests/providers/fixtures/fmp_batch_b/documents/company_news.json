@@ -1,0 +1,716 @@
+{
+  "scope": "synthetic offline freeze; runtime corrections remain in tasks 3.6-3.8 and 4.2",
+  "source_sha256": "9359dd750effb8a2f104922c4c9b592c3c5efaf788616170ea0a93df1bef34e1",
+  "standard_sha256": "f116abaad448003aa695f423225e2f95a9794f2a6c7c1d438b1f92f7e7736dc3",
+  "stable_endpoint": "news/stock",
+  "maximum_calls": 1,
+  "retained": {
+    "aliases": {
+      "symbols": "symbol",
+      "date": "publishedDate",
+      "author": "publisher",
+      "images": "image",
+      "source": "site",
+      "excerpt": "text"
+    },
+    "query_validation": {
+      "additionalProperties": true,
+      "description": "FMP Company News Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs/stock-news-api/",
+      "properties": {
+        "symbol": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Symbol to get data for.",
+          "title": "Symbol"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Start date of the data, in YYYY-MM-DD format.",
+          "title": "Start Date"
+        },
+        "end_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "End date of the data, in YYYY-MM-DD format.",
+          "title": "End Date"
+        },
+        "limit": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The number of data entries to return.",
+          "title": "Limit"
+        },
+        "page": {
+          "default": 0,
+          "description": "Page number of the results. Use in combination with limit.",
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Page",
+          "type": "integer"
+        },
+        "press_release": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "When true, will return only press releases for the given symbol(s).",
+          "title": "Press Release"
+        }
+      },
+      "title": "FMPCompanyNewsQueryParams",
+      "type": "object"
+    },
+    "row_validation": {
+      "additionalProperties": true,
+      "description": "FMP Company News Data.",
+      "properties": {
+        "date": {
+          "description": "The date of the data. The date of publication.",
+          "format": "date-time",
+          "title": "Date",
+          "type": "string"
+        },
+        "title": {
+          "description": "Title of the article.",
+          "title": "Title",
+          "type": "string"
+        },
+        "author": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Author of the article.",
+          "title": "Author"
+        },
+        "excerpt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Excerpt of the article text.",
+          "title": "Excerpt"
+        },
+        "body": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Body of the article text.",
+          "title": "Body"
+        },
+        "images": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Images associated with the article.",
+          "title": "Images"
+        },
+        "url": {
+          "description": "URL to the article.",
+          "title": "Url",
+          "type": "string"
+        },
+        "symbols": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Symbols associated with the article.",
+          "title": "Symbols"
+        },
+        "source": {
+          "description": "Name of the news site.",
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "title",
+        "url",
+        "source"
+      ],
+      "title": "FMPCompanyNewsData",
+      "type": "object"
+    },
+    "row_serialization": {
+      "additionalProperties": true,
+      "description": "FMP Company News Data.",
+      "properties": {
+        "date": {
+          "description": "The date of the data. The date of publication.",
+          "format": "date-time",
+          "title": "Date",
+          "type": "string"
+        },
+        "title": {
+          "description": "Title of the article.",
+          "title": "Title",
+          "type": "string"
+        },
+        "author": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Author of the article.",
+          "title": "Author"
+        },
+        "excerpt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Excerpt of the article text.",
+          "title": "Excerpt"
+        },
+        "body": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Body of the article text.",
+          "title": "Body"
+        },
+        "images": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Images associated with the article.",
+          "title": "Images"
+        },
+        "url": {
+          "description": "URL to the article.",
+          "title": "Url",
+          "type": "string"
+        },
+        "symbols": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Symbols associated with the article.",
+          "title": "Symbols"
+        },
+        "source": {
+          "description": "Name of the news site.",
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "title",
+        "url",
+        "source"
+      ],
+      "title": "FMPCompanyNewsData",
+      "type": "object"
+    }
+  },
+  "expected": {
+    "source_aliases": {
+      "symbol": "symbol",
+      "date": "publishedDate",
+      "title": "title",
+      "source": "site",
+      "publisher": "publisher",
+      "excerpt": "text",
+      "url": "url",
+      "symbols": "symbol",
+      "images": "image"
+    },
+    "query_validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start Date"
+        },
+        "end_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End Date"
+        },
+        "page": {
+          "default": 0,
+          "maximum": 99,
+          "minimum": 0,
+          "title": "Page",
+          "type": "integer"
+        },
+        "limit": {
+          "default": 10,
+          "maximum": 50,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FrozenCompanyNewsQuery",
+      "type": "object"
+    },
+    "query_serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start Date"
+        },
+        "end_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End Date"
+        },
+        "page": {
+          "default": 0,
+          "maximum": 99,
+          "minimum": 0,
+          "title": "Page",
+          "type": "integer"
+        },
+        "limit": {
+          "default": 10,
+          "maximum": 50,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FrozenCompanyNewsQuery",
+      "type": "object"
+    },
+    "row_validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "content_status": {
+          "enum": [
+            "partial",
+            "metadata_only",
+            "completeness_unknown",
+            "full"
+          ],
+          "title": "Content Status",
+          "type": "string"
+        },
+        "date": {
+          "format": "date-time",
+          "title": "Date",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "publisher": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Publisher"
+        },
+        "author": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Author"
+        },
+        "excerpt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt"
+        },
+        "body": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Body"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "symbols": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Symbols"
+        },
+        "images": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Images"
+        }
+      },
+      "required": [
+        "symbol",
+        "content_status",
+        "date",
+        "title",
+        "url"
+      ],
+      "title": "News",
+      "type": "object"
+    },
+    "row_serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "content_status": {
+          "enum": [
+            "partial",
+            "metadata_only",
+            "completeness_unknown",
+            "full"
+          ],
+          "title": "Content Status",
+          "type": "string"
+        },
+        "date": {
+          "format": "date-time",
+          "title": "Date",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "publisher": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Publisher"
+        },
+        "author": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Author"
+        },
+        "excerpt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Excerpt"
+        },
+        "body": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Body"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "symbols": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Symbols"
+        },
+        "images": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Images"
+        }
+      },
+      "required": [
+        "symbol",
+        "content_status",
+        "date",
+        "title",
+        "url"
+      ],
+      "title": "News",
+      "type": "object"
+    }
+  },
+  "wire_parameters": {
+    "symbols": "symbol",
+    "from": "start_date",
+    "to": "end_date",
+    "page": "page",
+    "limit": "limit"
+  },
+  "compatibility_changes": [
+    "preserve all standard fields including symbols and images",
+    "add symbol, publisher, content_status; author is never inferred from publisher",
+    "source nullable for unknown attribution; url remains required"
+  ],
+  "source_attribution": {
+    "provider": "fmp",
+    "field_origins": {
+      "symbol": "symbol",
+      "date": "publishedDate",
+      "title": "title",
+      "source": "site",
+      "publisher": "publisher",
+      "excerpt": "text",
+      "url": "url",
+      "symbols": "symbol",
+      "images": "image"
+    },
+    "publisher_is_author": false,
+    "timezone_when_unsupplied": "unknown"
+  },
+  "content_status_rules": {
+    "partial": "nonblank supplied excerpt; never full article",
+    "metadata_only": "filing metadata or headline without nonblank excerpt",
+    "completeness_unknown": "nonblank transcript without explicit full-content evidence",
+    "full": "requires explicit source evidence; none in these three contracts"
+  },
+  "time_rules": {
+    "filing_date": "civil date",
+    "timestamp": "preserve supplied clock and offset",
+    "naive_timestamp": "retain naive; timezone unknown",
+    "date_only": "retain civil date; do not synthesize midnight"
+  },
+  "procedural": {
+    "validate_all_before_limit": true,
+    "preserve_source_order": true,
+    "completeness": "unknown",
+    "strict_single_symbol": true,
+    "empty_acquisition": "unavailable",
+    "no_images_or_link_fetch": true
+  }
+}

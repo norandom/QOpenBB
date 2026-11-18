@@ -1,0 +1,428 @@
+{
+  "scope": "synthetic offline freeze; runtime corrections remain in tasks 3.6-3.8 and 4.2",
+  "source_sha256": "2595d0fb54ca6134aef8295fde59222681871b4ea871fae63b0def2bcf823131",
+  "standard_sha256": "12655591ab34e76f43d8f8815be3db5983761c3c2ce758d9b6b5b0f143d5c84c",
+  "stable_endpoint": "earning-call-transcript",
+  "maximum_calls": 1,
+  "retained": {
+    "aliases": {
+      "quarter": "period"
+    },
+    "query_validation": {
+      "additionalProperties": true,
+      "description": "FMP Earnings Call Transcript Query.\n\nSource: https://site.financialmodelingprep.com/developer/docs/earning-call-transcript-api/",
+      "properties": {
+        "symbol": {
+          "description": "Symbol to get data for.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "year": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Year of the earnings call transcript.",
+          "title": "Year"
+        },
+        "quarter": {
+          "anyOf": [
+            {
+              "enum": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Quarterly period of the earnings call transcript.",
+          "title": "Quarter"
+        }
+      },
+      "required": [
+        "symbol"
+      ],
+      "title": "FMPEarningsCallTranscriptQueryParams",
+      "type": "object"
+    },
+    "row_validation": {
+      "additionalProperties": true,
+      "description": "FMP Earnings Call Transcript Data.",
+      "properties": {
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "year": {
+          "description": "Year of the earnings call transcript.",
+          "title": "Year",
+          "type": "integer"
+        },
+        "quarter": {
+          "description": "Quarter of the earnings call transcript.",
+          "title": "Quarter",
+          "type": "string"
+        },
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "content": {
+          "description": "Content of the earnings call transcript.",
+          "title": "Content",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "year",
+        "quarter",
+        "date",
+        "content"
+      ],
+      "title": "FMPEarningsCallTranscriptData",
+      "type": "object",
+      "x-widget_config": {
+        "$.data": {
+          "dataKey": "results.content"
+        },
+        "$.description": "Earnings calls by symbol, year, and quarter.",
+        "$.gridData": {
+          "h": 20,
+          "w": 40
+        },
+        "$.name": "Earnings Call Transcript",
+        "$.params": [
+          {
+            "description": "Fiscal year of the earnings call transcript. When not provided, or not available, the most recent will be used.",
+            "label": "Fiscal Year",
+            "paramName": "year",
+            "type": "number"
+          },
+          {
+            "description": "Fiscal quarter of the earnings call transcript. When not provided, the latest quarter available will be used.",
+            "label": "Fiscal Quarter",
+            "paramName": "quarter"
+          }
+        ],
+        "$.refetchInterval": false,
+        "$.type": "markdown"
+      }
+    },
+    "row_serialization": {
+      "additionalProperties": true,
+      "description": "FMP Earnings Call Transcript Data.",
+      "properties": {
+        "symbol": {
+          "description": "Symbol representing the entity requested in the data.",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "year": {
+          "description": "Year of the earnings call transcript.",
+          "title": "Year",
+          "type": "integer"
+        },
+        "quarter": {
+          "description": "Quarter of the earnings call transcript.",
+          "title": "Quarter",
+          "type": "string"
+        },
+        "date": {
+          "description": "The date of the data.",
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "content": {
+          "description": "Content of the earnings call transcript.",
+          "title": "Content",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "year",
+        "quarter",
+        "date",
+        "content"
+      ],
+      "title": "FMPEarningsCallTranscriptData",
+      "type": "object",
+      "x-widget_config": {
+        "$.data": {
+          "dataKey": "results.content"
+        },
+        "$.description": "Earnings calls by symbol, year, and quarter.",
+        "$.gridData": {
+          "h": 20,
+          "w": 40
+        },
+        "$.name": "Earnings Call Transcript",
+        "$.params": [
+          {
+            "description": "Fiscal year of the earnings call transcript. When not provided, or not available, the most recent will be used.",
+            "label": "Fiscal Year",
+            "paramName": "year",
+            "type": "number"
+          },
+          {
+            "description": "Fiscal quarter of the earnings call transcript. When not provided, the latest quarter available will be used.",
+            "label": "Fiscal Quarter",
+            "paramName": "quarter"
+          }
+        ],
+        "$.refetchInterval": false,
+        "$.type": "markdown"
+      }
+    }
+  },
+  "expected": {
+    "source_aliases": {
+      "symbol": "symbol",
+      "year": "year",
+      "quarter": "period",
+      "date": "date",
+      "content": "content"
+    },
+    "query_validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "year": {
+          "maximum": 2100,
+          "minimum": 1900,
+          "title": "Year",
+          "type": "integer"
+        },
+        "quarter": {
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Quarter",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol",
+        "year",
+        "quarter"
+      ],
+      "title": "FrozenEarningsCallTranscriptQuery",
+      "type": "object"
+    },
+    "query_serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Symbol",
+          "type": "string"
+        },
+        "year": {
+          "maximum": 2100,
+          "minimum": 1900,
+          "title": "Year",
+          "type": "integer"
+        },
+        "quarter": {
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Quarter",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "symbol",
+        "year",
+        "quarter"
+      ],
+      "title": "FrozenEarningsCallTranscriptQuery",
+      "type": "object"
+    },
+    "row_validation": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "content_status": {
+          "enum": [
+            "partial",
+            "metadata_only",
+            "completeness_unknown",
+            "full"
+          ],
+          "title": "Content Status",
+          "type": "string"
+        },
+        "year": {
+          "maximum": 2100,
+          "minimum": 1900,
+          "title": "Year",
+          "type": "integer"
+        },
+        "quarter": {
+          "pattern": "^Q[1-4]$",
+          "title": "Quarter",
+          "type": "string"
+        },
+        "date": {
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "event_datetime": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Datetime"
+        },
+        "content": {
+          "title": "Content",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "content_status",
+        "year",
+        "quarter",
+        "date",
+        "content"
+      ],
+      "title": "Transcript",
+      "type": "object"
+    },
+    "row_serialization": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "content_status": {
+          "enum": [
+            "partial",
+            "metadata_only",
+            "completeness_unknown",
+            "full"
+          ],
+          "title": "Content Status",
+          "type": "string"
+        },
+        "year": {
+          "maximum": 2100,
+          "minimum": 1900,
+          "title": "Year",
+          "type": "integer"
+        },
+        "quarter": {
+          "pattern": "^Q[1-4]$",
+          "title": "Quarter",
+          "type": "string"
+        },
+        "date": {
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "event_datetime": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Datetime"
+        },
+        "content": {
+          "title": "Content",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "content_status",
+        "year",
+        "quarter",
+        "date",
+        "content"
+      ],
+      "title": "Transcript",
+      "type": "object"
+    }
+  },
+  "wire_parameters": {
+    "symbol": "symbol",
+    "year": "year",
+    "quarter": "quarter"
+  },
+  "compatibility_changes": [
+    "retain standard quarter string and civil date",
+    "add event_datetime for supplied precise time and content_status"
+  ],
+  "source_attribution": {
+    "provider": "fmp",
+    "field_origins": {
+      "symbol": "symbol",
+      "year": "year",
+      "quarter": "period",
+      "date": "date",
+      "content": "content"
+    },
+    "publisher_is_author": false,
+    "timezone_when_unsupplied": "unknown"
+  },
+  "content_status_rules": {
+    "partial": "nonblank supplied excerpt; never full article",
+    "metadata_only": "filing metadata or headline without nonblank excerpt",
+    "completeness_unknown": "nonblank transcript without explicit full-content evidence",
+    "full": "requires explicit source evidence; none in these three contracts"
+  },
+  "time_rules": {
+    "filing_date": "civil date",
+    "timestamp": "preserve supplied clock and offset",
+    "naive_timestamp": "retain naive; timezone unknown",
+    "date_only": "retain civil date; do not synthesize midnight"
+  },
+  "procedural": {
+    "validate_all_before_limit": true,
+    "preserve_source_order": true,
+    "completeness": "unknown",
+    "strict_single_symbol": true,
+    "empty_acquisition": "unavailable",
+    "no_images_or_link_fetch": true
+  }
+}

@@ -1,0 +1,35 @@
+# Document contract freeze
+
+Review the three contracts and [serialization examples](serialization_examples.json) before implementing the document adapters. They freeze expected public values separately from the retained classes. They do not prove an installed Fetcher, SDK, HTTP endpoint, account entitlement or browser behavior.
+
+From the isolated Batch B root, run:
+
+```powershell
+D:/BuildArtifacts/QOpenBB/statement-period-provenance/provider-venv/Scripts/python.exe -B tests/providers/fixtures/fmp_batch_b/documents/freeze.py
+```
+
+The verifier uses the existing toolchain without installing dependencies. `--write` regenerates the JSON for intentional contract changes. Its loader executes exact retained model declarations and actual local core standards, excluding Fetchers and transport imports. A Python audit hook rejects DNS and socket connection attempts. All text and links here are synthetic. Tests and documentation are outside the production 400/300/50 caps; this task changes no production code.
+
+## Public values and source identity
+
+Each contract contains retained validation/serialization schemas, expected input/output schemas, source aliases, stable wire names, member and standard hashes, and procedural rules. Require one normalized listing identity. Missing and foreign row symbols fail; a known requested company does not justify attributing a foreign document. News and filings preserve source order and duplicate rows. Transcripts require one row at the exact requested year and quarter, rejecting duplicates and period substitution. The stable transcript example uses `period: Q1` through `Q4`; retain that canonical string in public quarter and compare its integer value internally to the requested quarter. A contradictory optional numeric quarter fails. Never infer the financial period from the event date.
+
+For news, `site` maps to source and `publisher` maps to publisher. Keep author null: publisher alone does not identify a journalist. Preserve literal excerpt whitespace and markup as text, with body null. Preserve standard symbols and images fields; symbols receives the normalized listing and an optional raw image remains inert data. The added symbol field provides uniform company linkage. The publisher field corrects the retained publisher-to-author conflation. Source becomes nullable when attribution is unavailable; the adapter must expose that uncertainty. `text` missing, null, empty or whitespace-only means metadata_only; a nonblank excerpt means partial. No image retrieval, article retrieval, sorting or additional acquisition is authorized.
+
+Filings retain civil filing date, acceptance date/time, form type and string CIK, including leading zeros. `link` maps to filing_url (index/navigation); `finalLink` maps to report_url (document). These links are separate even when both are present. Required news url and filing report_url retain standard string requirements: missing, null and empty values fail independently of narrative coverage. The optional filing_url may become null when empty; unsafe links reject the row. Only absolute HTTP(S) links with a hostname and no embedded credentials, control characters (including DEL and C1 controls), whitespace or backslashes are admitted. No link is followed by this freeze. Inline filing coverage is metadata_only.
+
+Transcript text must be present and nonblank, and remains byte-for-byte identical at the string level. Null, empty and whitespace-only content fails. Nonblank content has completeness_unknown. Full status requires explicit source evidence of completeness; none of these endpoint contracts supplies that evidence. An unrecognized raw `isComplete` or `content_status` field cannot establish full coverage. Empty acquisition is unavailable, distinct from a document with blank content.
+
+## Date and timestamp evidence
+
+The examples include civil dates, non-midnight naive timestamps, offset-bearing timestamps, UTC timestamps and offset-bearing midnight. Preserve transcript date as the standard civil date projection and add nullable event_datetime for the supplied precise timestamp. A source civil date yields null event_datetime, avoiding invented midnight. Preserve supplied clocks and offsets without inferring a timezone for naive input. News retains its standard publication datetime; filings overrides accepted_date to retain supplied precision as required by the reviewed design. Accepted date may be null or blank when absent; filing date remains required.
+
+The actual filings inherited validator converts every supplied acceptance timestamp to its civil date, losing clock and offset. The actual transcript date-only field rejects non-midnight timestamps with date_from_datetime_inexact. At midnight it accepts the value but serializes only the date, losing precision and any offset. These are observed baseline incompatibilities. Each example records both the observed serialization/error and expected public serialization. Tasks 3.7 and 3.8 own runtime corrections; task 4.2 verifies installed serialization. This freeze does not repair or accept baseline time loss.
+
+## Admission and acquisition obligations
+
+News allows paired optional dates covering at most 31 days inclusive, page 0-99 and limit 1-50 (defaults 0 and 10). Filings require both dates covering at most 365 days inclusive, page 0-99 and limit 1-100 (defaults 0 and 20). Transcript requires strict integer year 1900-2100 and quarter 1-4. Typed boolean, null and string integers fail; HTTP wire strings and repeated scalars remain task 2.2 obligations. Civil query bounds and filingDate admit only native date objects (excluding datetime) or valid ISO YYYY-MM-DD strings. Numeric epochs, floats, booleans, epoch strings, compact dates, week dates and datetime values fail before coercion. Unknown keys, multi-symbol inputs, inverted windows and invalid dates fail before I/O. No press-release switch or CIK-only search is part of this public query.
+
+One valid invocation permits one bounded upstream call, with no availability probes, pagination loop, alternate period or fallback endpoint. Validate all acquired rows before limiting and preserve order. A full page does not establish completeness. The adapters must emit accepted AnnotatedResult metadata with effective query, actual count, retrieval time, field origins, limits, observed clipping and unknown upstream completeness. Source attribution records identify FMP and source fields; missing publication attribution stays unknown. Runtime interception and installed metadata tests belong to the adapter/join tasks.
+
+The design and independent review own product choices. The official stable transcript example supplied to this task confirms period strings and civil dates; retained archive classes and actual core standards provide the runnable baseline evidence. This task made no live API or documentation requests. A changed endpoint response or standard hash disproves the frozen compatibility claim and requires review before adapter fan-out.
