@@ -91,6 +91,8 @@ def test_examples_and_source_order(transport):
         {"end_date": "2027-01-01"},
         {"end_date": "2025-12-31"},
         {"start_date": "2026-01-01T00:00:00"},
+        {"start_date": "2026-01-01 00:00:00"},
+        {"end_date": "2026-01-31 00:00:00"},
         {"end_date": 123},
     ],
 )
@@ -251,3 +253,42 @@ def test_supported_acceptance_precision_preserved(transport, value):
     result = asyncio.run(Fetcher.fetch_data(PARAMS))
     assert result.result[0].model_dump(mode="json")["accepted_date"] == value
     assert len(calls) == 1
+
+
+def test_source_midnight_padding_preserves_distinct_acceptance(transport):
+    acceptance = "2026-01-03 17:42:09"
+    calls = transport(
+        [{**ROW, "filingDate": "2026-01-02 00:00:00", "acceptedDate": acceptance}]
+    )
+    result = asyncio.run(Fetcher.fetch_data(PARAMS))
+    row = result.result[0]
+    assert row.model_dump(mode="json")["filing_date"] == "2026-01-02"
+    assert row.model_dump(mode="json")["accepted_date"] == acceptance
+    assert row.accepted_date.tzinfo is None
+    assert len(calls) == 1
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "2026-01-02 00:00:01",
+        "2026-01-02 12:00:00",
+        "2026-01-02T00:00:00",
+        "2026-01-02 00:00:00Z",
+        "2026-01-02 00:00:00+01:00",
+        "2026-01-02 00:00:00.000",
+        "2026-02-30 00:00:00",
+    ],
+)
+def test_source_filing_date_rejects_other_clocks(transport, value):
+    calls = transport([{**ROW, "filingDate": value}])
+    with pytest.raises(FinancialError) as error:
+        asyncio.run(Fetcher.fetch_data(PARAMS))
+    assert error.value.code == "invalid_response" and len(calls) == 1
+
+
+def test_public_filing_date_remains_civil(transport):
+    transport([ROW])
+    row = asyncio.run(Fetcher.fetch_data(PARAMS)).result[0].model_dump()
+    with pytest.raises(ValueError):
+        Data.model_validate({**row, "filing_date": "2026-01-02 00:00:00"})
