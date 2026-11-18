@@ -112,7 +112,17 @@ def test_baseline_ids_and_company_research_saved_layout_are_stable(inputs):
     assert research_app(baseline_inventory, old_mapping, before) == research_app(inventory, new_mapping, after)
     assert len(new_mapping) == len(old_mapping) + 8
     saved_widgets = json.loads((ROOT / 'contracts/widgets.json').read_text())
-    assert set(before) == set(saved_widgets)
+    assert set(after) == set(saved_widgets)
+    assert set(saved_widgets) - set(before) == {h["widget_id"] for h in HANDOFFS}
+    for key, value in before.items():
+        saved = deepcopy(saved_widgets[key])
+        current = deepcopy(value)
+        if 'table' in saved.get('data', {}):
+            for descriptor in (saved, current):
+                columns = descriptor['data']['table']['columnsDefs']
+                descriptor['data']['table']['columnsDefs'] = {c['field']: c for c in columns}
+                assert len(columns) == len(descriptor['data']['table']['columnsDefs'])
+        assert saved == current
     saved_apps = json.loads((ROOT / 'contracts/apps.json').read_text())
     saved_research = next(app for app in saved_apps if app['name'] == 'Company Research')
     assert research_app(baseline_inventory, old_mapping, before)[0] == [saved_research]
@@ -139,6 +149,8 @@ def test_widget_query_policy_matches_installed_admission(inputs, handoff):
     module = importlib.import_module('openbb_fmp.models.' + handoff['module'])
     model = next(value for name, value in vars(module).items()
                  if name.startswith('FMP') and name.endswith('QueryParams'))
+    assert model.model_json_schema() == resolve(
+        schema, widget['financialContract']['variants']['fmp']['query_schema'])
     values = {key: value for key, value in handoff['params'].items() if key != 'provider'}
     model.model_validate(values)
     for key, value in ((next(iter(values)), None), ('symbol', 'AAPL,MSFT')):

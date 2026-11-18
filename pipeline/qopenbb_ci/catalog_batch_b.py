@@ -45,13 +45,21 @@ def validate_bindings(inventory: dict) -> None:
 
 
 def controls(widget: dict, query: dict, defaults: dict, policy: dict) -> list:
-    native = {p['paramName']: p for p in widget.get('params', [])}
+    params = widget.get('params', [])
+    native = {p['paramName']: p for p in params}
+    if len(native) != len(params):
+        raise ValueError('Duplicate native Batch B query control')
+    properties = query['properties']
+    if properties.keys() - native.keys():
+        raise ValueError('Missing native Batch B query control')
     result = [{'paramName': 'provider', 'value': 'fmp', 'show': False,
                'options': [{'label': 'FMP', 'value': 'fmp'}]}]
-    for name, schema in query['properties'].items():
-        if name not in native:
-            raise ValueError('Missing native Batch B query control: ' + name)
-        param = deepcopy(native[name])
+    # JSON object key order changes on canonical round trips; UI control order does not.
+    for name, source in native.items():
+        if name not in properties:
+            continue
+        schema = properties[name]
+        param = deepcopy(source)
         label = name.replace('_', ' ').capitalize()
         param.update(label=label, description=control_description(name, schema, policy))
         param.update(optional=name not in query.get('required', []),

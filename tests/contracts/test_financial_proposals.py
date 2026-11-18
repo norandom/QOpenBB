@@ -32,6 +32,8 @@ ACCEPTED = {
     "/api/v1/equity/price/historical": "fmp",
 }
 ACCEPTED.update({"/api/v1/equity/" + value[2]: "fmp" for value in BATCH_A.values()})
+BATCH_B = json.loads((ROOT / "tests/providers/fixtures/fmp_batch_b/handoffs.json").read_text())["widgets"]
+ACCEPTED.update({item["route"]: "fmp" for item in BATCH_B})
 
 
 def read(path):
@@ -46,11 +48,11 @@ def proposal():
         "catalog-report.json", "provenance.json")}
 
 
-def test_root_inventory_selects_all_twenty_two_accepted_models():
+def test_root_inventory_selects_all_thirty_accepted_models():
     datasets = read(ROOT / "contracts/datasets.json")["datasets"]
-    assert len(datasets) == 22
+    assert len(datasets) == 30
     assert {item["path"]: item["provider"] for item in datasets} == ACCEPTED
-    assert len({item["id"] for item in datasets}) == 22
+    assert len({item["id"] for item in datasets}) == 30
     for dataset in datasets:
         assert dataset["parameters"]["provider"] == dataset["provider"]
     by_id = {item["id"]: item for item in datasets}
@@ -67,7 +69,7 @@ def test_proposal_retains_baseline_widget_ids_and_complete_native_mapping(propos
     datasets = proposal["datasets.json"]["datasets"]
     mapping = proposal["catalog-report.json"]["mapping"]
     endpoint_widgets = {key: value for key, value in widgets.items() if "endpoint" in value}
-    assert len(endpoint_widgets) == len(mapping) == len(datasets) == 22
+    assert len(endpoint_widgets) == len(mapping) == len(datasets) == 30
     assert set(widgets) - set(endpoint_widgets) == {"company_research"}
     assert {item["path"]: item["provider"] for item in mapping} == ACCEPTED
     assert {item["dataset"] for item in mapping} == {item["id"] for item in datasets}
@@ -97,7 +99,7 @@ def test_frozen_proposal_retains_native_financial_semantics_and_references(propo
     routes = proposal["routes.json"]
     validate_refs(routes)
     assert routes == freeze_routes(schema, proposal["datasets.json"])
-    assert len(routes["routes"]) == 22
+    assert len(routes["routes"]) == 30
     for route in routes["routes"]:
         operation = schema["paths"][route["path"]]["get"]
         descriptor = route[EXTENSION]
@@ -118,21 +120,25 @@ def test_native_queries_accept_non_example_company_or_series(proposal, path):
     params = dataset["parameters"]
     if path.endswith("/search"):
         params["query"] = "Microsoft"
-    else:
+    elif "symbol" in params:
         params["symbol"] = "UNRATE" if ACCEPTED[path] == "fred" else "MSFT"
     if "period" in params:
         params["period"] = "quarter"
     if "start_date" in params:
-        params.update(start_date="2024-01-02", end_date="2024-01-31")
+        params.update(start_date="2024-01-02", end_date="2024-01-08" if "/calendar/" in path else "2024-01-31")
+    if dataset["id"] in {item["dataset_id"] for item in BATCH_B}:
+        inventory["datasets"].extend(deepcopy(item) for item in proposal["datasets.json"]["datasets"]
+                                     if item["id"] in {entry["dataset_id"] for entry in BATCH_B}
+                                     and item["id"] != dataset["id"])
     frozen = freeze_routes(proposal["openapi.json"], inventory)
-    assert len(frozen["routes"]) == 1
+    assert len(frozen["routes"]) == len(inventory["datasets"])
     regenerated = generate(proposal["openapi.json"], inventory, proposal["widgets.json"], [], "/data")
     mapping = next(item for item in regenerated["catalog-report.json"]["mapping"]
                    if item["dataset"] == dataset["id"])
     widget_params = {item["paramName"]: item
                      for item in regenerated["widgets.json"][mapping["widget"]]["params"]}
     assert params.keys() <= widget_params.keys()
-    identity_parameter = "query" if path.endswith("/search") else "symbol"
+    identity_parameter = "query" if path.endswith("/search") else "symbol" if "symbol" in params else "start_date"
     assert widget_params[identity_parameter].get("show", True) is True
     layout = regenerated["apps.json"][0]["tabs"]["Data"]["layout"]
     state = next(item["state"]["params"] for item in layout if item["i"] == mapping["widget"])

@@ -167,7 +167,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 4.4_
   - _Requirements: 5.1, 6.1, 6.2, 6.3, 6.4, 7.1, 7.4_
 
-- [ ] 4.6 Regenerate contracts and verify cross-repository compatibility
+- [x] 4.6 Regenerate contracts and verify cross-repository compatibility
   - Pin accepted API and Workspace commits. Generate the complete catalog from identified installed sources twice using the existing generator. Review actual before/after schemas, routes, widget IDs, compatibility and hashes.
   - Validate tests/contracts/test_catalog*.py, existing Batch A consumers and new Batch B mappings. Explain every diff, compare required/date bounds across SDK/HTTP/catalog and run whole-file audit on changed generators and integration modules.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.
