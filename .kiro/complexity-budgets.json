@@ -281,7 +281,7 @@
         {
           "spec": "analyst-workspace/company-research",
           "include": ["pipeline/qopenbb_ci/*"],
-          "files": ["pipeline/qopenbb_ci/catalog.py", "pipeline/qopenbb_ci/catalog_cli.py", "pipeline/qopenbb_ci/catalog_research.py"]
+          "files": ["pipeline/qopenbb_ci/catalog.py", "pipeline/qopenbb_ci/catalog_cli.py", "pipeline/qopenbb_ci/catalog_research.py", "pipeline/qopenbb_ci/catalog_batch_b.py"]
         }
       ],
       "exclusions": [

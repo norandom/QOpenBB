@@ -143,7 +143,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 4.1_
   - _Requirements: 1.1, 2.4, 2.5, 3.3, 4.1, 4.3, 4.5, 4.6, 5.1, 5.2, 5.3, 6.2, 7.1, 7.2, 7.3, 7.4, 7.5_
 
-- [ ] 4.3 Bind eight datasets to the consumer catalog
+- [x] 4.3 Bind eight datasets to the consumer catalog
   - Project native routes and FMP selected params, result types, field descriptions, limits and known coverage into five event tables and three endpoint-backed document widget descriptors. Bind an agreed renderer type and stable IDs using 1.4. Keep calendar controls independent of company selection.
   - Test missing/extra mappings, actual controls, no foreign provider, unchanged baseline widget IDs and preservation of existing Company Research layouts. Mark account and browser state unknown until their evidence arrives.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.

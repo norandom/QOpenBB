@@ -3,8 +3,7 @@ import hashlib
 import json
 from copy import deepcopy
 
-from qopenbb_ci.catalog_research import research_app
-
+from qopenbb_ci.catalog_batch_b import project, validate_bindings
 from qopenbb_ci.catalog_financial import (
     EXTENSION,
     frozen_extension,
@@ -13,6 +12,7 @@ from qopenbb_ci.catalog_financial import (
     validate_financial,
     validate_parameters,
 )
+from qopenbb_ci.catalog_research import research_app
 
 
 def canonical(value: object) -> bytes:
@@ -71,6 +71,7 @@ def validate_dataset(dataset: dict, operation: dict, schema: dict, params: list 
 
 
 def freeze_routes(schema: dict, inventory: dict) -> dict:
+    validate_bindings(inventory)
     validate_refs(schema)
     operation_ids = []
     for path in schema["paths"].values():
@@ -99,7 +100,7 @@ def freeze_routes(schema: dict, inventory: dict) -> dict:
             "components": deepcopy(schema.get("components", {}))}
 
 
-def supported_widgets(raw: dict, inventory: dict, prefix: str) -> tuple[dict, list]:
+def supported_widgets(raw: dict, inventory: dict, prefix: str, schema: dict | None = None) -> tuple[dict, list]:
     widgets, mapping = {}, []
     for dataset in inventory["datasets"]:
         matches = [(key, item) for key, item in raw.items()
@@ -117,6 +118,8 @@ def supported_widgets(raw: dict, inventory: dict, prefix: str) -> tuple[dict, li
             if param.get("paramName") == "provider":
                 param["value"] = dataset["provider"]
                 param["options"] = [{"label": dataset["provider"].upper(), "value": dataset["provider"]}]
+        if schema is not None:
+            project(widget, dataset, schema)
         widgets[key] = widget
         mapping.append({"dataset": dataset["id"], "provider": dataset["provider"],
                         "widget": key, "path": dataset["path"]})
@@ -225,7 +228,7 @@ def generate(schema: dict, inventory: dict, raw: dict, bundled: list, prefix: st
         raise ValueError("invalid public prefix")
     routes = freeze_routes(schema, inventory)
     installed = {**deepcopy(inventory), "status": "installed"}
-    widgets, mapping = supported_widgets(raw, inventory, prefix)
+    widgets, mapping = supported_widgets(raw, inventory, prefix, schema)
     apps, omitted = adapt_apps(bundled, widgets)
     curated, research_status = research_app(inventory, mapping, widgets)
     return {"openapi.json": deepcopy(schema), "routes.json": routes, "widgets.json": widgets,
