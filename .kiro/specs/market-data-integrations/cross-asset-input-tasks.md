@@ -14,21 +14,21 @@ Work in `D:/BuildArtifacts/QOpenBB/fmp-expansion-b/root`; private evidence goes 
   - _Boundary: Controller · matrix, schema, tests/contracts_
   - _Requirements: 4.2, 5.1, 5.5_
 
-- [ ] 2. Derive the guarded harness and rehearse it offline
+- [x] 2. Derive the guarded harness and rehearse it offline
   - Derive the send guard from the reviewed Batch B harness. Count FMP and FRED sends separately, one armed slot per send, with no slot for any other host. Run the matrix inside the published data image with no network and synthetic responses: zero sends, zero denials.
   - Add guard unit tests for unarmed sends, reused slots, wrong host and wrong query.
   - _Boundary: Controller · private harness under evidence_
   - _Depends: 1_
   - _Requirements: 5.1, 5.2, 5.3_
 
-- [ ] 3. Write the independent comparison oracle
+- [x] 3. Write the independent comparison oracle
   - Standard library only. For prices: row-by-row equality with the raw capture, date ordering, duplicates, weekday gaps, earliest and latest dates. For FRED: values, missing observations kept missing, metadata fields. For identity: each attribute a value or unknown.
   - Test it on synthetic captures, including a deliberate mismatch, a gap, a duplicate and a missing observation.
   - _Boundary: Controller · private oracle under evidence_
   - _Depends: 1_
   - _Requirements: 1.1–1.4, 2.1–2.4, 3.1–3.3_
 
-- [ ] 4. Review the frozen harness before any live send
+- [x] 4. Review the frozen harness before any live send
   - Independent review of the matrix, guard, rehearsal results and frozen identity. Acceptance binds the image digest, matrix hash and harness hashes. No live request before this approval.
   - _Boundary: Reviewer · read-only_
   - _Depends: 2, 3_
