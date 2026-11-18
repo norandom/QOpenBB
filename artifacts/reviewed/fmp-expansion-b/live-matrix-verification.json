@@ -1,0 +1,73 @@
+{
+  "task": "5.2",
+  "slug": "live-matrix",
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "5583c958d35282cb59037aae8218cec31d540697",
+  "review": "artifacts/reviewed/fmp-expansion-b/5.2-review.md",
+  "review_sha256": "7ccbc0b67b7bf6fe0181962556c5ce753df883cda4282e2855e6be81736d1cbc",
+  "runs": [
+    {
+      "run": "6abce9316fb443af923eb761e38034c7",
+      "fmp_sends": 20,
+      "matrix_sha256": "8b6092efadfd0b0fe77d6086fb7b614c84be61294303a700bf0d0952e85a91db",
+      "note": "18 passing comparisons; two filings failures retained (padded-midnight dates)."
+    },
+    {
+      "run": "4bdc478ed4e9475cb72fae133af2ebf6",
+      "fmp_sends": 2,
+      "matrix_sha256": "e5eff185f8190a3cb8c622f369733d71102fd34c9e5d1ab6867ad882de9e8b0e",
+      "note": "Two repaired filings rechecks."
+    }
+  ],
+  "summary": "All 20 planned cases pass against their own acquired response (18 original, 2 repaired filings); 13,527 independent field comparisons; 22 FMP sends, 0 other providers, 0 guard denials. Raw captures and licensed text stay private.",
+  "spec_updates": {
+    "local_candidate_images": {
+      "data-api": "sha256:254530aa90f7febacecb4badf815554c6029c1003832b6378a380ee6bb68dcb8",
+      "workspace": "sha256:37c0f863d9b9b6283e4996def751a1e23bc6bfbf7d57750c5c0fa707d67d4077"
+    },
+    "live_requests_used": 22
+  },
+  "models": {
+    "HistoricalDividends": {
+      "source_path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/historical_dividends.py",
+      "source_sha256": "14202b3c83accd55081d5936f09357c5087028d08eb55526e679b4f55b81b0e9",
+      "contract_sha256": "c56169ac6e3702b7d60bf4e13a286c7319f37b93f096ca5815bf2402f766a1f1"
+    },
+    "HistoricalSplits": {
+      "source_path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/historical_splits.py",
+      "source_sha256": "ed91a768d254c06510dcc663440442dca06879f5e0cb89672f8c14f369892d49",
+      "contract_sha256": "da7e2571bc484bc290a6377f40f1fbdf8dd2b584c4af70728454619c53e9fa7c"
+    },
+    "CalendarEarnings": {
+      "source_path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/calendar_earnings.py",
+      "source_sha256": "d26a4e821d88097a4d3adfce45defa997aef8412efcccb98a1679afb8f45cc5a",
+      "contract_sha256": "73705461386cf320fd05a850e9bd2d379f1b20f42f6e15d2bc7ad59f604bc913"
+    },
+    "CalendarDividend": {
+      "source_path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/calendar_dividend.py",
+      "source_sha256": "7703ba7f9000f18625acec0535d9b374f632cbaa48c74797e9974c6f7e21ac46",
+      "contract_sha256": "9dc65401e6fb4412c0768803325127ddafe4de0848a2e0347103f9f035f8cbc2"
+    },
+    "CalendarSplits": {
+      "source_path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/calendar_splits.py",
+      "source_sha256": "a58b201624647416c0567a33ef95b1fa1ff15424516b5e99ee7c47b02cd6007b",
+      "contract_sha256": "767f3b3794f02bef15e192a932cb657809fbdb3b058195589374562ac0d7482d"
+    },
+    "CompanyNews": {
+      "source_path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/company_news.py",
+      "source_sha256": "76dfa879df9af4532ac73aa75a7e91ae027a995cc27963c9402d38cd88967727",
+      "contract_sha256": "d53f50e49376edaf517e9add2be6191e79fb2118cae90b812f15b2fd7306bc94"
+    },
+    "EarningsCallTranscript": {
+      "source_path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/earnings_call_transcript.py",
+      "source_sha256": "2f085724e5ad8e06244b7d5da079c9ee296f17b612729a8d2c46a4b7a4eb0445",
+      "contract_sha256": "bab34656e1381830de142a263900c57d90b60bd6847740be9531141db1937147"
+    },
+    "CompanyFilings": {
+      "source_path": "vendor/data-api/openbb_platform/providers/fmp/openbb_fmp/models/company_filings.py",
+      "source_sha256": "1d627495fc1b5b085446f67d880c78e197c9419e58cb8aee25a5119d379d8753",
+      "contract_sha256": "6309b82e425673b34fab8b0eed1028fe7cd7874364868410c4b67709d0538132"
+    }
+  }
+}

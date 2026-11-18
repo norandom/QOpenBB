@@ -1,0 +1,44 @@
+{
+  "task": "5.3",
+  "slug": "native-browser",
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "5583c958d35282cb59037aae8218cec31d540697",
+  "review": "artifacts/reviewed/fmp-expansion-b/5.3-review.md",
+  "review_sha256": "2bbd85d15b3a50ea976afe6d405e5e6664a8fd48bd90a83027969c2742c6e1ba",
+  "runs": [
+    {
+      "run": "4bdc478ed4e9475cb72fae133af2ebf6",
+      "name": "live-05",
+      "fmp_sends": 10,
+      "note": "Pre-remediation pass; review rejected."
+    },
+    {
+      "run": "455fa99cffb44b51997fefe2033f6ce1",
+      "name": "live-06",
+      "fmp_sends": 10,
+      "note": "Final run on repaired candidate-v3."
+    }
+  ],
+  "summary": "Five representative widgets (dividend history, earnings calendar, news, transcript, filings) passed initial load, save, safe export and isolated fresh-context reopen with zero-send typed failure/recovery. 20 browser sends; cumulative 42 FMP, 0 other providers, 0 guard denials. HistoricalSplits, CalendarDividend and CalendarSplits have API acceptance only.",
+  "spec_updates": {
+    "native_browser_accepted": true,
+    "local_candidate_images": {
+      "data-api": "sha256:409e11697cad2378e2bb6c2cdca61d2f8cebd310a70a6a0a2c183820854c74c2",
+      "workspace": "sha256:4aff40414d6186f6bb971c009b7fcc341d01bbfbdb57d868c118a14bc0473792"
+    },
+    "live_requests_used": 42,
+    "browser_models": [
+      "CalendarEarnings",
+      "CompanyFilings",
+      "CompanyNews",
+      "EarningsCallTranscript",
+      "HistoricalDividends"
+    ],
+    "unsampled_models": [
+      "CalendarDividend",
+      "CalendarSplits",
+      "HistoricalSplits"
+    ]
+  }
+}

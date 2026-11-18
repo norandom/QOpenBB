@@ -12,7 +12,7 @@ Update the maintained core and FMP provider together. Older Python `FinancialRes
 
 ## Published coverage versus our implementation
 
-The [2026-11-17 expansion plan](../.kiro/specs/market-data-integrations/fmp-expansion-plan.md) targets 24 additional operations in batches of 11 financial/valuation, eight events/content and five DCF/as-reported operations. The [source inventory](../.kiro/specs/market-data-integrations/fmp-expansion-inventory.md) identifies 19 retained-adapter candidates and five new-contract candidates. Independent planning review passed. Batch A now has eleven registered source adapters with accepted SDK/HTTP/discovery joins and scoped live API comparison evidence; the eight Batch B and five Batch C operations remain candidates. The original ten FMP models retain their earlier acceptance scope.
+The [2026-11-17 expansion plan](../.kiro/specs/market-data-integrations/fmp-expansion-plan.md) targets 24 additional operations in batches of 11 financial/valuation, eight events/content and five DCF/as-reported operations. The [source inventory](../.kiro/specs/market-data-integrations/fmp-expansion-inventory.md) identifies 19 retained-adapter candidates and five new-contract candidates. Independent planning review passed. Batch A has eleven registered source adapters with accepted SDK/HTTP/discovery joins and scoped live API comparison evidence. Batch B adds eight event and document adapters with scoped live API evidence and five representative browser journeys. The five Batch C operations remain candidates. The original ten FMP models retain their earlier acceptance scope.
 
 | Research family | Published FMP coverage to map into widgets |
 | --- | --- |
@@ -45,6 +45,33 @@ The [accepted live matrix](../artifacts/reviewed/fmp-expansion-a/live-matrix-ver
 The [accepted native browser journey](../artifacts/reviewed/fmp-expansion-a/native-browser-verification.json) verifies four representative widgets on the recorded local candidate: analyst estimates, geographic revenue, income statement growth and equity quote. It covers displayed response facts, CSV export, pre-I/O failure/recovery, native save and fresh-context reopening. The other seven widgets and all future AI consumers remain unknown. API acceptance is not widget acceptance, and neither establishes later CI image bytes or publication. Family completion remains open, including broader financial analysis and expectations.
 
 Coverage proofs bind the actual adapter source and current installed financial contract. A later widget proof also binds the tested local API image digest. The coverage JSON is itself a packaged runtime input, so updating this index changes subsequent image bytes. Discovery intentionally marks widget evidence stale on another image digest; retain that signal instead of copying local acceptance onto new CI images.
+
+## Batch B events and documents checkpoint, 2026-11-18
+
+Batch B registers eight FMP operations as bounded source adapters:
+- **Events:** dividend history, split history, and the earnings, dividend and split calendars.
+- **Documents:** company news, earnings-call transcripts and SEC filing metadata.
+
+The [accepted live matrix](../artifacts/reviewed/fmp-expansion-b/live-matrix-verification.json) compares 20 planned calls with each call's own acquired response, using 13,527 independent field checks. The comparisons cover these financial semantics:
+- Cash amounts per share and adjusted amounts stay distinct.
+- Yields are converted from percentage points to ratios.
+- Split ratios keep their orientation.
+- Actuals and estimates stay separate, and a missing value is never turned into zero.
+- Transcript text and fiscal period are preserved exactly.
+- Filing dates become civil dates without inventing a timezone.
+
+The two original filings failures (padded-midnight `filingDate`) remain recorded. The repaired adapter's two rechecks pass. The calendars return the first 250 rows in source order, and that partial result is labelled explicitly. Access applies to the recorded symbols, windows and limits on that account.
+
+The [accepted native browser journey](../artifacts/reviewed/fmp-expansion-b/native-browser-verification.json) covers five representative widgets: dividend history, earnings calendar, news, transcript and filings. The data API image is `sha256:409e11697cad2378e2bb6c2cdca61d2f8cebd310a70a6a0a2c183820854c74c2`. Each widget passes initial load, save, safe app-template export and an isolated fresh-context reopen. The checks cover:
+- displayed values, links and content status (partial excerpt, metadata-only, completeness unknown)
+- keyboard access and saved query controls
+- typed timeout and entitlement failures with recovery
+
+The browser itself fulfils those failure cases, so they make no provider request.
+
+Saved dashboards and exports hold query choices only, never response text. Split history and the dividend and split calendars have API acceptance only, and their widgets remain unknown. Future AI use is unknown for all eight. Live usage is 42 FMP requests with no other-provider requests and no guard denials.
+
+A production repair of the document query controls (Workspace `ba03ec7`) was required and is part of this image. The coverage index binds each live claim to the shipped adapter source and financial contract. Each widget claim also binds to the browser image above, so a CI-built image reports it as stale until that image is verified.
 
 ## Company Research input verification, 2026-11-06
 
