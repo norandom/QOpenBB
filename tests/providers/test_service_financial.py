@@ -160,26 +160,27 @@ def test_served_discovery_matches_openapi_without_provider_access(runtime):
                for path, operation in schema["paths"].items())
     historic = json.loads((Path(__file__).resolve().parents[2] /
                            "docs/reference/provider-coverage.json").read_text())
-    proofs = {(item["model"], item["provider"]): item["states"]["real_data"]
-              for item in historic["datasets"] if "real_data" in item["states"]}
+    proofs = {(item["model"], item["provider"]): item["states"] for item in historic["datasets"]}
     for dataset in catalog["datasets"]:
         descriptor = schema["paths"][dataset["command"]["path"]]["get"]["x-qopenbb-financial"]
         assert descriptor["variants"] == dataset["variants"]
         for provider, states in dataset["coverage"].items():
             assert states["installed"]["status"] == "verified"
-            assert states["account_access"]["status"] == "unknown"
-            assert states["widget"]["status"] == "unknown"
-            historical = proofs.get((dataset["dataset"], provider), {"status": "unknown"})
-            if "proof" not in historical:
-                # Installed capability cannot invent account or live-data evidence.
-                assert states["real_data"] == historical
-                continue
-            proof = historical["proof"]
-            assert states["real_data"]["proof"] == proof
-            current = {"source_sha256": catalog["identity"]["source_hashes"][dataset["dataset"]][provider],
-                       "contract_sha256": dataset["contract_sha256"][provider]}
-            matching = all(current[key] == value for key, value in proof["identity"].items())
-            assert states["real_data"]["status"] == (historical["status"] if matching else "stale")
+            historical = proofs.get((dataset["dataset"], provider), {})
+            current = {
+                "source_sha256": catalog["identity"]["source_hashes"][dataset["dataset"]][provider],
+                "contract_sha256": dataset["contract_sha256"][provider],
+                "image_digest": catalog["identity"]["image_digest"],
+            }
+            for name in ("account_access", "widget", "real_data"):
+                expected = historical.get(name, {"status": "unknown"})
+                proof = expected.get("proof")
+                if proof is None:
+                    assert states[name] == expected
+                    continue
+                assert states[name]["proof"] == proof
+                matching = all(current[key] == value for key, value in proof["identity"].items())
+                assert states[name]["status"] == (expected["status"] if matching else "stale")
     assert len([family for family in catalog["coverage"]["families"] if family["provider"] == "fmp"]) == 13
     assert "fixture-runtime" not in json.dumps([catalog, schema])
     assert asyncio.run(get(runtime, "/datasets.json", method="POST"))[0] in {404, 405}

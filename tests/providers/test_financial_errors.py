@@ -3,15 +3,18 @@
 import json
 
 import pytest
-from pydantic import BaseModel, ValidationError
-
 from openbb_core.app.model.abstract.error import OpenBBError
 from openbb_core.provider.utils.financial_errors import (
-    FinancialError, FinancialErrorCode, normalize_financial_error, parse_retry_after,
+    FinancialError,
+    FinancialErrorCode,
+    normalize_financial_error,
+    parse_retry_after,
 )
 from openbb_core.provider.utils.financial_validation import (
-    validate_financial_query, validate_financial_result,
+    validate_financial_query,
+    validate_financial_result,
 )
+from pydantic import BaseModel, ValidationError
 
 CANARY = "private-key-DO-NOT-EXPOSE https://provider.invalid?apikey=private-key"
 
@@ -121,3 +124,105 @@ def test_openbb_subclasses_are_not_implicitly_trusted():
     safe = FinancialError("authentication", provider="fred")
     assert normalize_financial_error(UnknownOpenBB(safe)).code == "internal_error"
     assert normalize_financial_error(RuntimeError("authentication")).code == "internal_error"
+
+
+@pytest.mark.parametrize("code", ["missing_data", "entitlement", "throttling", "internal_error"])
+@pytest.mark.parametrize("depth", [0, 1, 3, 8])
+def test_generated_sdk_preserves_safe_financial_categories(monkeypatch, code, depth):
+    from openbb_core.app.static.utils import decorators
+    monkeypatch.setattr(decorators, "Env", lambda: type("Env", (), {"DEBUG_MODE": False})())
+    error = FinancialError(code, provider="fmp", retry_after_seconds=60)
+    for _ in range(depth):
+        error = OpenBBError(error)
+    error.__cause__ = RuntimeError(CANARY)
+
+    @decorators.exception_handler
+    def generated_command():
+        raise error
+
+    with pytest.raises(FinancialError) as caught:
+        generated_command()
+    safe = caught.value
+    assert safe.code == code
+    assert safe.provider == "fmp"
+    assert safe.retry_after_seconds == (60 if code == "throttling" else None)
+    assert safe.__cause__ is None
+    assert safe.__context__ is None
+    assert CANARY not in json.dumps(safe.to_dict())
+
+
+def test_generated_sdk_retains_legacy_and_admission_handling(monkeypatch):
+    from openbb_core.app.static.utils import decorators
+    monkeypatch.setattr(decorators, "Env", lambda: type("Env", (), {"DEBUG_MODE": False})())
+
+    @decorators.exception_handler
+    def generated_command(error):
+        raise error
+
+    admission = decorators.InvalidParameters()
+    with pytest.raises(decorators.InvalidParameters) as caught:
+        generated_command(admission)
+    assert caught.value is admission
+    for original in [RuntimeError(CANARY), OpenBBError(CANARY)]:
+        with pytest.raises(OpenBBError) as caught:
+            generated_command(original)
+        assert type(caught.value) is OpenBBError
+        safe = normalize_financial_error(caught.value)
+        assert safe.code == "internal_error"
+        assert CANARY not in json.dumps(safe.to_dict())
+
+
+@pytest.mark.parametrize("credentials", [None, {}, {"fmp_api_key": ""}])
+def test_missing_required_fmp_credentials_are_authentication(credentials):
+    from types import SimpleNamespace
+
+    from openbb_core.provider.query_executor import QueryExecutor
+    from pydantic import SecretStr
+    provider = SimpleNamespace(name="fmp", credentials=["fmp_api_key"], website=CANARY)
+    values = None if credentials is None else {
+        key: SecretStr(value) for key, value in credentials.items()
+    }
+    with pytest.raises(FinancialError) as caught:
+        QueryExecutor.filter_credentials(values, provider, True)
+    assert caught.value.code == "authentication"
+    assert caught.value.provider == "fmp"
+    assert CANARY not in json.dumps(caught.value.to_dict())
+
+
+def test_credential_filter_preserves_optional_other_and_present_credentials():
+    from types import SimpleNamespace
+
+    from openbb_core.provider.query_executor import QueryExecutor
+    from pydantic import SecretStr
+    provider = SimpleNamespace(name="fmp", credentials=["fmp_api_key"], website="")
+    assert QueryExecutor.filter_credentials(None, provider, False) == {}
+    assert QueryExecutor.filter_credentials({"fmp_api_key": SecretStr(CANARY)}, provider, True) == {
+        "fmp_api_key": CANARY,
+    }
+    provider.name = "other"
+    with pytest.raises(OpenBBError) as caught:
+        QueryExecutor.filter_credentials(None, provider, True)
+    assert type(caught.value) is OpenBBError
+    provider.credentials = []
+    assert QueryExecutor.filter_credentials(None, provider, True) == {}
+
+
+def test_generated_sdk_does_not_trust_unknown_or_excessive_wrappers(monkeypatch):
+    from openbb_core.app.static.utils import decorators
+    monkeypatch.setattr(decorators, "Env", lambda: type("Env", (), {"DEBUG_MODE": False})())
+    class Unknown(OpenBBError):
+        pass
+    safe = FinancialError("entitlement", provider="fmp")
+    deep = safe
+    for _ in range(9):
+        deep = OpenBBError(deep)
+    cyclic = OpenBBError(CANARY)
+    cyclic.original = cyclic
+    @decorators.exception_handler
+    def generated_command(error):
+        raise error
+    for error in [Unknown(safe), deep, cyclic]:
+        with pytest.raises(OpenBBError) as caught:
+            generated_command(error)
+        assert type(caught.value) is OpenBBError
+        assert normalize_financial_error(caught.value).code == "internal_error"

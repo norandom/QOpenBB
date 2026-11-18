@@ -135,7 +135,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8_
   - _Requirements: 1.1, 1.3, 5.1, 8.1_
 
-- [ ] 4.2 Verify public execution and financial envelopes on the installed API
+- [x] 4.2 Verify public execution and financial envelopes on the installed API
   - Repeat admission and body/time serialization through actual mounted routes and generated SDK with intercepted acquisitions. Validate selected FMP schemas, OBBject fields, dates, safe errors, empty metadata and baseline identity. Compare against synthetic upstream values for all eight.
   - Run existing transport, financial metadata/policy and SDK/HTTP regression selections. Prove valid and invalid quarter at public entry points, preserve timestamps, block credentials and disallow implicit provider substitution. Record exact commands and counts.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.
