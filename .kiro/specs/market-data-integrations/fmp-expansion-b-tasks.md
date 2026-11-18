@@ -43,7 +43,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
 
 ## 2. Installation and public input admission
 
-- [ ] 2.1 Install the owned company-news extension
+- [x] 2.1 Install the owned company-news extension
   - Compose only the retained company command. Review feedparser/lxml/core extras and lock the owned openbb-news 2.0.0 path with the pinned toolchain. Update installed-origin and image dependency assertions. Retain a deterministic locked install from a clean tree.
   - Verify extension import and entry point, absence of new RSS/world surfaces and unchanged installed routes. Use an isolated fixture registry to characterize company registration if the real provider has not yet joined. Assert real route discovery in 4.2.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.

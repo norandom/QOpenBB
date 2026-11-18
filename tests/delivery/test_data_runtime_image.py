@@ -53,13 +53,14 @@ def test_image_health_routes_credentials_and_dependencies(keys, tmp_path):
         assert schema['status'] == 200
         for path in ['/api/v1/equity/profile', '/api/v1/equity/fundamental/income', '/api/v1/economy/fred_series']:
             assert path in schema['body']['paths']
+        assert not any('/news/world' in p or '/news/rss' in p for p in schema['body']['paths'])
         assert SENTINEL not in json.dumps(schema)
         script = '''import importlib.metadata as m,json
-names=['openbb-core','openbb-equity','openbb-economy','openbb-fred','openbb-fmp']
+names=['openbb-core','openbb-equity','openbb-economy','openbb-fred','openbb-fmp','openbb-news']
 print(json.dumps({'versions':{n:m.version(n) for n in names},'entries':{n:[e.name for e in m.distribution(n).entry_points] for n in names},'origins':{n:json.loads(m.distribution(n).read_text('direct_url.json')) for n in names},'installed':[d.metadata['Name'].lower() for d in m.distributions()]}))'''
         packages = json.loads(docker('exec', cid, 'python', '-c', script).stdout)
-        assert list(packages['versions'].values()) == ['2.0.1', '2.0.0', '2.0.0', '2.0.0', '1.6.1+qopenbb.1']
-        assert all(packages['entries'][name] for name in ['openbb-equity', 'openbb-economy', 'openbb-fred', 'openbb-fmp'])
+        assert list(packages['versions'].values()) == ['2.0.1', '2.0.0', '2.0.0', '2.0.0', '1.6.1+qopenbb.1', '2.0.0']
+        assert all(packages['entries'][name] for name in ['openbb-equity', 'openbb-economy', 'openbb-fred', 'openbb-fmp', 'openbb-news'])
         assert all(value['url'].startswith('file:///build/vendor/data-api/openbb_platform/')
                    and not value.get('dir_info', {}).get('editable') for value in packages['origins'].values())
         assert not {'pytest', 'pytest-xdist', 'pluggy'} & set(packages['installed'])

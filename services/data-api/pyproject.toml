@@ -6,6 +6,7 @@ dependencies = [
   "openbb-core==2.0.1",
   "openbb-equity==2.0.0",
   "openbb-economy==2.0.0",
+  "openbb-news==2.0.0",
   "openbb-fred==2.0.0",
   "openbb-fmp==1.6.1+qopenbb.1",
 ]
@@ -23,6 +24,7 @@ exclude-newer = "2026-10-14T00:00:00Z"
 build-constraint-dependencies = ["hatchling==1.32.4"]
 
 [tool.uv.sources]
+openbb-news = { path = "../../vendor/data-api/openbb_platform/extensions/news" }
 openbb-core = { path = "../../vendor/data-api/openbb_platform/core" }
 openbb-equity = { path = "../../vendor/data-api/openbb_platform/extensions/equity" }
 openbb-economy = { path = "../../vendor/data-api/openbb_platform/extensions/economy" }
