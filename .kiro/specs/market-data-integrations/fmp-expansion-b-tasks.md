@@ -33,7 +33,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 1.2_
   - _Requirements: 2.3, 2.4, 3.1, 3.2, 3.3, 4.1, 4.5, 4.6, 6.4_
 
-- [ ] 1.4 Freeze Workspace integration and lane handoffs
+- [x] 1.4 Freeze Workspace integration and lane handoffs
   - Trace an authenticated endpoint-backed widget through renderer registration, typing, validation, data acquisition, persisted query settings and export/import. Identify exact host paths, endpoints, IDs, inputs, output shape and catalog inclusion for eight widgets. Packaged app defaults must remain usable.
   - Record exclusive paths, checked commands and reviewers per task. Measure whole existing shared files, design cohesive extraction or obtain a narrow reviewed exception before edits. Frozen handoffs must leave no unowned registration, storage or catalog steps.
   - This unit produces tests, contracts, documentation or evidence, excluded from production caps. Any required production repair returns to its owning unit and needs fresh 400/300/50 verification.

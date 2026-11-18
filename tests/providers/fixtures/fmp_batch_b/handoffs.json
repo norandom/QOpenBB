@@ -1,0 +1,660 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_FOR_REVIEW",
+  "scope": "Task 1.4 contract and offline source characterization; no installed Batch B or browser acceptance claimed",
+  "roots": {
+    "root": ".",
+    "workspace": "../workspace",
+    "data_api": "../data-api"
+  },
+  "caps": {
+    "physical": 400,
+    "logical": 300,
+    "function": 50
+  },
+  "widgets": [
+    {
+      "task": "3.1",
+      "model": "HistoricalDividends",
+      "module": "historical_dividends",
+      "dataset_id": "fmp_historical_dividends",
+      "widget_id": "equity_fundamental_dividends_fmp_obb",
+      "route": "/api/v1/equity/fundamental/dividends",
+      "browser_route": "/data/api/v1/equity/fundamental/dividends",
+      "renderer": "table",
+      "params": {
+        "provider": "fmp",
+        "symbol": "AAPL",
+        "limit": 20
+      },
+      "controls": [
+        "symbol",
+        "limit",
+        "start_date",
+        "end_date"
+      ],
+      "company_selection": true,
+      "max_rows": 100,
+      "fixture": "tests/providers/fixtures/fmp_batch_b/events/historical_dividends.json",
+      "output": "OBBject.results typed selected FMP rows; extra.results_metadata selected model financial envelope; freeze owns exact field/alias/null semantics",
+      "lane": {
+        "implementer": "gpt-6.1-sol",
+        "reviewer": "fresh gpt-6-astra financial reviewer",
+        "prerequisites": [
+          "accepted 1.2",
+          "accepted 1.3",
+          "accepted 1.4",
+          "accepted 2.2"
+        ],
+        "write": [
+          {
+            "repository": "data_api",
+            "path": "openbb_platform/providers/fmp/openbb_fmp/models/historical_dividends.py"
+          },
+          {
+            "repository": "root",
+            "path": "tests/providers/test_fmp_historical_dividends.py"
+          }
+        ],
+        "read_only": [
+          "tests/providers/fixtures/fmp_batch_b/"
+        ],
+        "forbidden": [
+          "provider.py",
+          "financial_query_policy.py",
+          "contracts/",
+          "Workspace",
+          "other adapters"
+        ],
+        "verify": "pytest -n0 tests/providers/test_fmp_historical_dividends.py",
+        "joins": [
+          "one intercepted send on valid query",
+          "zero sends on rejection",
+          "empty/malformed distinction",
+          "safe transport and AnnotatedResult",
+          "whole-file complexity scope manifest 400/300/50",
+          "independent financial review before 4.1"
+        ]
+      },
+      "output_schema_reference": "tests/providers/fixtures/fmp_batch_b/events/historical_dividends.json (query and row schemas, serialized examples, aliases and expected public contract)"
+    },
+    {
+      "task": "3.2",
+      "model": "HistoricalSplits",
+      "module": "historical_splits",
+      "dataset_id": "fmp_historical_splits",
+      "widget_id": "equity_fundamental_historical_splits_fmp_obb",
+      "route": "/api/v1/equity/fundamental/historical_splits",
+      "browser_route": "/data/api/v1/equity/fundamental/historical_splits",
+      "renderer": "table",
+      "params": {
+        "provider": "fmp",
+        "symbol": "AAPL"
+      },
+      "controls": [
+        "symbol"
+      ],
+      "company_selection": true,
+      "max_rows": 100,
+      "fixture": "tests/providers/fixtures/fmp_batch_b/events/historical_splits.json",
+      "output": "OBBject.results typed selected FMP rows; extra.results_metadata selected model financial envelope; freeze owns exact field/alias/null semantics",
+      "lane": {
+        "implementer": "gpt-6.1-sol",
+        "reviewer": "fresh gpt-6-astra financial reviewer",
+        "prerequisites": [
+          "accepted 1.2",
+          "accepted 1.3",
+          "accepted 1.4",
+          "accepted 2.2"
+        ],
+        "write": [
+          {
+            "repository": "data_api",
+            "path": "openbb_platform/providers/fmp/openbb_fmp/models/historical_splits.py"
+          },
+          {
+            "repository": "root",
+            "path": "tests/providers/test_fmp_historical_splits.py"
+          }
+        ],
+        "read_only": [
+          "tests/providers/fixtures/fmp_batch_b/"
+        ],
+        "forbidden": [
+          "provider.py",
+          "financial_query_policy.py",
+          "contracts/",
+          "Workspace",
+          "other adapters"
+        ],
+        "verify": "pytest -n0 tests/providers/test_fmp_historical_splits.py",
+        "joins": [
+          "one intercepted send on valid query",
+          "zero sends on rejection",
+          "empty/malformed distinction",
+          "safe transport and AnnotatedResult",
+          "whole-file complexity scope manifest 400/300/50",
+          "independent financial review before 4.1"
+        ]
+      },
+      "output_schema_reference": "tests/providers/fixtures/fmp_batch_b/events/historical_splits.json (query and row schemas, serialized examples, aliases and expected public contract)"
+    },
+    {
+      "task": "3.3",
+      "model": "CalendarEarnings",
+      "module": "calendar_earnings",
+      "dataset_id": "fmp_calendar_earnings",
+      "widget_id": "equity_calendar_earnings_fmp_obb",
+      "route": "/api/v1/equity/calendar/earnings",
+      "browser_route": "/data/api/v1/equity/calendar/earnings",
+      "renderer": "table",
+      "params": {
+        "provider": "fmp",
+        "start_date": "2026-11-16",
+        "end_date": "2026-11-22"
+      },
+      "controls": [
+        "start_date",
+        "end_date"
+      ],
+      "company_selection": false,
+      "max_rows": 250,
+      "fixture": "tests/providers/fixtures/fmp_batch_b/events/calendar_earnings.json",
+      "output": "OBBject.results typed selected FMP rows; extra.results_metadata selected model financial envelope; freeze owns exact field/alias/null semantics",
+      "lane": {
+        "implementer": "gpt-6.1-sol",
+        "reviewer": "fresh gpt-6-astra financial reviewer",
+        "prerequisites": [
+          "accepted 1.2",
+          "accepted 1.3",
+          "accepted 1.4",
+          "accepted 2.2"
+        ],
+        "write": [
+          {
+            "repository": "data_api",
+            "path": "openbb_platform/providers/fmp/openbb_fmp/models/calendar_earnings.py"
+          },
+          {
+            "repository": "root",
+            "path": "tests/providers/test_fmp_calendar_earnings.py"
+          }
+        ],
+        "read_only": [
+          "tests/providers/fixtures/fmp_batch_b/"
+        ],
+        "forbidden": [
+          "provider.py",
+          "financial_query_policy.py",
+          "contracts/",
+          "Workspace",
+          "other adapters"
+        ],
+        "verify": "pytest -n0 tests/providers/test_fmp_calendar_earnings.py",
+        "joins": [
+          "one intercepted send on valid query",
+          "zero sends on rejection",
+          "empty/malformed distinction",
+          "safe transport and AnnotatedResult",
+          "whole-file complexity scope manifest 400/300/50",
+          "independent financial review before 4.1"
+        ]
+      },
+      "output_schema_reference": "tests/providers/fixtures/fmp_batch_b/events/calendar_earnings.json (query and row schemas, serialized examples, aliases and expected public contract)"
+    },
+    {
+      "task": "3.4",
+      "model": "CalendarDividend",
+      "module": "calendar_dividend",
+      "dataset_id": "fmp_calendar_dividend",
+      "widget_id": "equity_calendar_dividend_fmp_obb",
+      "route": "/api/v1/equity/calendar/dividend",
+      "browser_route": "/data/api/v1/equity/calendar/dividend",
+      "renderer": "table",
+      "params": {
+        "provider": "fmp",
+        "start_date": "2026-11-16",
+        "end_date": "2026-11-22"
+      },
+      "controls": [
+        "start_date",
+        "end_date"
+      ],
+      "company_selection": false,
+      "max_rows": 250,
+      "fixture": "tests/providers/fixtures/fmp_batch_b/events/calendar_dividend.json",
+      "output": "OBBject.results typed selected FMP rows; extra.results_metadata selected model financial envelope; freeze owns exact field/alias/null semantics",
+      "lane": {
+        "implementer": "gpt-6.1-sol",
+        "reviewer": "fresh gpt-6-astra financial reviewer",
+        "prerequisites": [
+          "accepted 1.2",
+          "accepted 1.3",
+          "accepted 1.4",
+          "accepted 2.2"
+        ],
+        "write": [
+          {
+            "repository": "data_api",
+            "path": "openbb_platform/providers/fmp/openbb_fmp/models/calendar_dividend.py"
+          },
+          {
+            "repository": "root",
+            "path": "tests/providers/test_fmp_calendar_dividend.py"
+          }
+        ],
+        "read_only": [
+          "tests/providers/fixtures/fmp_batch_b/"
+        ],
+        "forbidden": [
+          "provider.py",
+          "financial_query_policy.py",
+          "contracts/",
+          "Workspace",
+          "other adapters"
+        ],
+        "verify": "pytest -n0 tests/providers/test_fmp_calendar_dividend.py",
+        "joins": [
+          "one intercepted send on valid query",
+          "zero sends on rejection",
+          "empty/malformed distinction",
+          "safe transport and AnnotatedResult",
+          "whole-file complexity scope manifest 400/300/50",
+          "independent financial review before 4.1"
+        ]
+      },
+      "output_schema_reference": "tests/providers/fixtures/fmp_batch_b/events/calendar_dividend.json (query and row schemas, serialized examples, aliases and expected public contract)"
+    },
+    {
+      "task": "3.5",
+      "model": "CalendarSplits",
+      "module": "calendar_splits",
+      "dataset_id": "fmp_calendar_splits",
+      "widget_id": "equity_calendar_splits_fmp_obb",
+      "route": "/api/v1/equity/calendar/splits",
+      "browser_route": "/data/api/v1/equity/calendar/splits",
+      "renderer": "table",
+      "params": {
+        "provider": "fmp",
+        "start_date": "2026-11-16",
+        "end_date": "2026-11-22"
+      },
+      "controls": [
+        "start_date",
+        "end_date"
+      ],
+      "company_selection": false,
+      "max_rows": 250,
+      "fixture": "tests/providers/fixtures/fmp_batch_b/events/calendar_splits.json",
+      "output": "OBBject.results typed selected FMP rows; extra.results_metadata selected model financial envelope; freeze owns exact field/alias/null semantics",
+      "lane": {
+        "implementer": "gpt-6.1-sol",
+        "reviewer": "fresh gpt-6-astra financial reviewer",
+        "prerequisites": [
+          "accepted 1.2",
+          "accepted 1.3",
+          "accepted 1.4",
+          "accepted 2.2"
+        ],
+        "write": [
+          {
+            "repository": "data_api",
+            "path": "openbb_platform/providers/fmp/openbb_fmp/models/calendar_splits.py"
+          },
+          {
+            "repository": "root",
+            "path": "tests/providers/test_fmp_calendar_splits.py"
+          }
+        ],
+        "read_only": [
+          "tests/providers/fixtures/fmp_batch_b/"
+        ],
+        "forbidden": [
+          "provider.py",
+          "financial_query_policy.py",
+          "contracts/",
+          "Workspace",
+          "other adapters"
+        ],
+        "verify": "pytest -n0 tests/providers/test_fmp_calendar_splits.py",
+        "joins": [
+          "one intercepted send on valid query",
+          "zero sends on rejection",
+          "empty/malformed distinction",
+          "safe transport and AnnotatedResult",
+          "whole-file complexity scope manifest 400/300/50",
+          "independent financial review before 4.1"
+        ]
+      },
+      "output_schema_reference": "tests/providers/fixtures/fmp_batch_b/events/calendar_splits.json (query and row schemas, serialized examples, aliases and expected public contract)"
+    },
+    {
+      "task": "3.6",
+      "model": "CompanyNews",
+      "module": "company_news",
+      "dataset_id": "fmp_company_news",
+      "widget_id": "news_company_fmp_obb",
+      "route": "/api/v1/news/company",
+      "browser_route": "/data/api/v1/news/company",
+      "renderer": "company_documents",
+      "params": {
+        "provider": "fmp",
+        "symbol": "AAPL",
+        "page": 0,
+        "limit": 10
+      },
+      "controls": [
+        "symbol",
+        "start_date",
+        "end_date",
+        "page",
+        "limit"
+      ],
+      "company_selection": true,
+      "max_rows": 50,
+      "fixture": "tests/providers/fixtures/fmp_batch_b/documents/company_news.json",
+      "output": "OBBject.results typed selected FMP rows; extra.results_metadata selected model financial envelope; freeze owns exact field/alias/null semantics",
+      "lane": {
+        "implementer": "gpt-6.1-sol",
+        "reviewer": "fresh gpt-6-astra financial reviewer",
+        "prerequisites": [
+          "accepted 1.2",
+          "accepted 1.3",
+          "accepted 1.4",
+          "accepted 2.2"
+        ],
+        "write": [
+          {
+            "repository": "data_api",
+            "path": "openbb_platform/providers/fmp/openbb_fmp/models/company_news.py"
+          },
+          {
+            "repository": "root",
+            "path": "tests/providers/test_fmp_company_news.py"
+          }
+        ],
+        "read_only": [
+          "tests/providers/fixtures/fmp_batch_b/"
+        ],
+        "forbidden": [
+          "provider.py",
+          "financial_query_policy.py",
+          "contracts/",
+          "Workspace",
+          "other adapters"
+        ],
+        "verify": "pytest -n0 tests/providers/test_fmp_company_news.py",
+        "joins": [
+          "one intercepted send on valid query",
+          "zero sends on rejection",
+          "empty/malformed distinction",
+          "safe transport and AnnotatedResult",
+          "whole-file complexity scope manifest 400/300/50",
+          "independent financial review before 4.1"
+        ]
+      },
+      "output_schema_reference": "tests/providers/fixtures/fmp_batch_b/documents/company_news.json (query and row schemas, serialized examples, aliases and expected public contract)"
+    },
+    {
+      "task": "3.7",
+      "model": "EarningsCallTranscript",
+      "module": "earnings_call_transcript",
+      "dataset_id": "fmp_earnings_call_transcript",
+      "widget_id": "equity_fundamental_transcript_fmp_obb",
+      "route": "/api/v1/equity/fundamental/transcript",
+      "browser_route": "/data/api/v1/equity/fundamental/transcript",
+      "renderer": "company_documents",
+      "params": {
+        "provider": "fmp",
+        "symbol": "AAPL",
+        "year": 2025,
+        "quarter": 1
+      },
+      "controls": [
+        "symbol",
+        "year",
+        "quarter"
+      ],
+      "company_selection": true,
+      "max_rows": 1,
+      "fixture": "tests/providers/fixtures/fmp_batch_b/documents/earnings_call_transcript.json",
+      "output": "OBBject.results typed selected FMP rows; extra.results_metadata selected model financial envelope; freeze owns exact field/alias/null semantics",
+      "lane": {
+        "implementer": "gpt-6.1-sol",
+        "reviewer": "fresh gpt-6-astra financial reviewer",
+        "prerequisites": [
+          "accepted 1.2",
+          "accepted 1.3",
+          "accepted 1.4",
+          "accepted 2.2"
+        ],
+        "write": [
+          {
+            "repository": "data_api",
+            "path": "openbb_platform/providers/fmp/openbb_fmp/models/earnings_call_transcript.py"
+          },
+          {
+            "repository": "root",
+            "path": "tests/providers/test_fmp_earnings_call_transcript.py"
+          }
+        ],
+        "read_only": [
+          "tests/providers/fixtures/fmp_batch_b/"
+        ],
+        "forbidden": [
+          "provider.py",
+          "financial_query_policy.py",
+          "contracts/",
+          "Workspace",
+          "other adapters"
+        ],
+        "verify": "pytest -n0 tests/providers/test_fmp_earnings_call_transcript.py",
+        "joins": [
+          "one intercepted send on valid query",
+          "zero sends on rejection",
+          "empty/malformed distinction",
+          "safe transport and AnnotatedResult",
+          "whole-file complexity scope manifest 400/300/50",
+          "independent financial review before 4.1"
+        ]
+      },
+      "output_schema_reference": "tests/providers/fixtures/fmp_batch_b/documents/earnings_call_transcript.json (query and row schemas, serialized examples, aliases and expected public contract)"
+    },
+    {
+      "task": "3.8",
+      "model": "CompanyFilings",
+      "module": "company_filings",
+      "dataset_id": "fmp_company_filings",
+      "widget_id": "equity_fundamental_filings_fmp_obb",
+      "route": "/api/v1/equity/fundamental/filings",
+      "browser_route": "/data/api/v1/equity/fundamental/filings",
+      "renderer": "company_documents",
+      "params": {
+        "provider": "fmp",
+        "symbol": "AAPL",
+        "start_date": "2026-01-01",
+        "end_date": "2026-11-18",
+        "page": 0,
+        "limit": 20
+      },
+      "controls": [
+        "symbol",
+        "start_date",
+        "end_date",
+        "page",
+        "limit"
+      ],
+      "company_selection": true,
+      "max_rows": 100,
+      "fixture": "tests/providers/fixtures/fmp_batch_b/documents/company_filings.json",
+      "output": "OBBject.results typed selected FMP rows; extra.results_metadata selected model financial envelope; freeze owns exact field/alias/null semantics",
+      "lane": {
+        "implementer": "gpt-6.1-sol",
+        "reviewer": "fresh gpt-6-astra financial reviewer",
+        "prerequisites": [
+          "accepted 1.2",
+          "accepted 1.3",
+          "accepted 1.4",
+          "accepted 2.2"
+        ],
+        "write": [
+          {
+            "repository": "data_api",
+            "path": "openbb_platform/providers/fmp/openbb_fmp/models/company_filings.py"
+          },
+          {
+            "repository": "root",
+            "path": "tests/providers/test_fmp_company_filings.py"
+          }
+        ],
+        "read_only": [
+          "tests/providers/fixtures/fmp_batch_b/"
+        ],
+        "forbidden": [
+          "provider.py",
+          "financial_query_policy.py",
+          "contracts/",
+          "Workspace",
+          "other adapters"
+        ],
+        "verify": "pytest -n0 tests/providers/test_fmp_company_filings.py",
+        "joins": [
+          "one intercepted send on valid query",
+          "zero sends on rejection",
+          "empty/malformed distinction",
+          "safe transport and AnnotatedResult",
+          "whole-file complexity scope manifest 400/300/50",
+          "independent financial review before 4.1"
+        ]
+      },
+      "output_schema_reference": "tests/providers/fixtures/fmp_batch_b/documents/company_filings.json (query and row schemas, serialized examples, aliases and expected public contract)"
+    }
+  ],
+  "owners": {
+    "2.1": [
+      "services/data-api/pyproject.toml",
+      "services/data-api/uv.lock",
+      "data_api:openbb_platform/extensions/news/openbb_news/__init__.py"
+    ],
+    "2.2": [
+      "services/data-api/qopenbb_data/financial_query_policy.py"
+    ],
+    "4.1": [
+      "data_api:openbb_platform/providers/fmp/openbb_fmp/provider.py",
+      "data_api:openbb_platform/providers/fmp/provenance.json",
+      "tests/providers/test_fmp_batch_a_registration.py"
+    ],
+    "4.3": [
+      "contracts/datasets.json",
+      "pipeline/qopenbb_ci/catalog.py",
+      "pipeline/qopenbb_ci/catalog_batch_b.py",
+      "tests/contracts/test_fmp_batch_b_consumers.py",
+      "docs/reference/provider-coverage.json"
+    ],
+    "4.4": [
+      "workspace:terminalpro/src/components/Widgets/CompanyDocuments/CompanyDocuments.tsx",
+      "workspace:terminalpro/tests/unit/companyDocuments.test.tsx"
+    ],
+    "4.5": [
+      "workspace:terminalpro/src/components/Widgets/index.ts",
+      "workspace:terminalpro/src/components/Widgets/rendererRegistry.ts",
+      "workspace:terminalpro/src/lib/types/app/widgetTypes.ts",
+      "workspace:terminalpro/src/utils/zodForms.ts",
+      "workspace:terminalpro/src/utils/widgetSchema.ts",
+      "workspace:terminalpro/src/lib/utils/exportTemplate.ts",
+      "workspace:terminalpro/src/lib/utils/documentTemplateState.ts",
+      "workspace:terminalpro/src/components/Widgets/CompanyDocuments/useCompanyDocuments.ts",
+      "workspace:terminalpro/tests/integration/companyDocuments.test.tsx"
+    ],
+    "4.6": [
+      "sources.lock.json",
+      "contracts/",
+      "tests/contracts/"
+    ]
+  },
+  "host": {
+    "registration": "terminalpro/src/components/Widgets/index.ts",
+    "typing": "terminalpro/src/lib/types/app/widgetTypes.ts",
+    "validation": "terminalpro/src/utils/zodForms.ts",
+    "acquisition": "terminalpro/src/lib/api.tsx",
+    "url": "terminalpro/src/lib/utils/widgetParams.ts",
+    "authentication": "terminalpro/src/lib/utils/backendOrigin.ts",
+    "state": "terminalpro/src/lib/state/app.ts",
+    "widget_context": "terminalpro/src/components/Widget.context.tsx",
+    "widget_update": "terminalpro/src/components/Widget.hooks.tsx",
+    "save": "terminalpro/src/api/dashboard.api.ts",
+    "export": "terminalpro/src/lib/utils/exportTemplate.ts",
+    "templates": "terminalpro/src/lib/templates.ts",
+    "import": "terminalpro/src/lib/utils/createTemplates.ts"
+  },
+  "integration": {
+    "catalog_input": "contracts/datasets.json",
+    "catalog_generator": "pipeline/qopenbb_ci/catalog_cli.py",
+    "projection": "pipeline/qopenbb_ci/catalog.py:supported_widgets",
+    "upstream": "openbb_platform/extensions/platform_api/openbb_platform_api/utils/widgets.py:build_json",
+    "catalog_outputs": [
+      "openapi.json",
+      "routes.json",
+      "datasets.json",
+      "widgets.json",
+      "apps.json",
+      "compatibility.json",
+      "provenance.json",
+      "hashes.json"
+    ],
+    "routing": "Source URL PUBLIC_URL/data composed with /api/v1 route by createURLString/createWidgetEndpoint; do not double prefix /data. Keep endpoint-backed documents mandatory; company_research is existing endpoint-optional native branch.",
+    "auth": "useJsonData applies sessionHeaders; bearer restricted to matching configured backend origin/path. FMP credential stays server-side. Preserve configured source headers.",
+    "state": "updateWidget writes storage.params query choices; never write response/text/token/evidence to storage. Export state.params includes only differing values; page=0 is default and must survive import/default merge. Existing serializer truthiness must be characterized for explicit zero.",
+    "import": "terminalpro/src/lib/utils/createTemplates.ts consumes layout.state, restores storage/params and calls saveDashboards. Reuse this route; do not modify oversized importer or app store unless a reviewed cohesive extraction is added. Mounted 4.5 test proves safe reopen.",
+    "defaults": "Keep starter and Company Research layouts and baseline IDs. Calendar params do not join symbol groups. Documents retain endpoint, provider=fmp and disable polling/refetch-on-focus/reconnect.",
+    "lifecycle": "One owner useJsonData acquisition, context-keyed result; late result rejected, new context clears evidence; same-context error labels prior result stale. Component presents literal text, safe http(s) links, keyboard focus return, no remote images/prefetch.",
+    "save_endpoint": "/api/pro/dash/sync browser route; dashboard.api apiClient /pro/dash/sync",
+    "storage": "Existing app store updateWidget and dashboard save own stored widget.storage.params. No new localStorage/IndexedDB owner. Workspace backend persists dashboards; account/browser recovery remains unverified.",
+    "coverage": "docs/reference/provider-coverage.json is copied to qopenbb_data/provider-coverage.json in image. app.py builds installed /datasets.json from actual annotated OpenAPI plus coverage index; static contracts/datasets.json remains separate generation input. Match all eight (model,provider=fmp) records, leave entitlement/browser unknown until accepted evidence.",
+    "catalog_serving": "services/data-api/qopenbb_data/app.py /widgets.json and /apps.json serve load_gallery composition of canonical contracts plus gallery; IDs must not collide with either layer. Root configuration.py DATASETS is legacy minimal readiness contract; preserve its three baseline entries unless a reviewed requirement changes it."
+  },
+  "extractions": [
+    {
+      "task": "4.5",
+      "path": "terminalpro/src/utils/zodForms.ts",
+      "plan": "Extract cohesive widget descriptor shape, preprocess, validation and exported widget schema into utils/widgetSchema.ts; re-export legacy API from zodForms. Leave both whole files <= caps; no exception assumed.",
+      "required": "Only if final whole-file metrics exceed caps; current measured index/zodForms/exportTemplate fit all caps. Preserve public APIs."
+    },
+    {
+      "task": "4.5",
+      "path": "terminalpro/src/components/Widgets/index.ts",
+      "plan": "Separate renderer lazy imports and renderer map into Widgets/rendererRegistry.ts while keeping public exports and widget type lookup stable. Both files and functions <= caps.",
+      "required": "Only if final whole-file metrics exceed caps; current measured index/zodForms/exportTemplate fit all caps. Preserve public APIs."
+    },
+    {
+      "task": "4.5",
+      "path": "terminalpro/src/lib/utils/exportTemplate.ts",
+      "plan": "Keep serializeWidgetState <=50 logical units through cohesive query/storage serialization helpers; documentTemplateState allowlists query choices, never license text. Preserve researchTemplateState merge.",
+      "required": "Only if final whole-file metrics exceed caps; current measured index/zodForms/exportTemplate fit all caps. Preserve public APIs."
+    }
+  ],
+  "completion": "All new/modified production files whole-file 400/300/50. Measure actual scope and extract additional cohesive responsibilities if any resulting file exceeds caps. No baseline is an exception. Tests/contracts/docs excluded, generator logic remains measured.",
+  "commands": {
+    "offline": "node ../evidence/1.4/verify.cjs (executed from root; Node 24.22.1 / TypeScript 6.0.3)",
+    "catalog": "pipeline/.venv/bin/python -m qopenbb_ci.catalog_cli --image <exact-sha256> --source ../data-api --source-lock sources.lock.json --inventory contracts/datasets.json --previous-routes contracts/routes.json --output ../evidence/4.6/catalog --work ../evidence/4.6/work",
+    "workspace": "bun run test:integration -- --maxWorkers=1; bun run typecheck (from workspace/terminalpro; no install during lane overlap)",
+    "complexity": "Run python -m tools.quality.complexity --check --repository-root workspace=../workspace --repository-root data_api=../data-api --changes workspace=<actual-manifest> --changes data_api=<actual-manifest> --output ../evidence/<task>/complexity.json; manifest exact base/head and changed files; missing input fails.",
+    "production_checks_status": "Future task commands are required acceptance recipes, not completed tests. Only offline verifier was executed in 1.4."
+  },
+  "unchanged_oversized": [
+    {
+      "path": "terminalpro/src/lib/state/app.ts",
+      "physical": 2146,
+      "logical": 1090,
+      "max_function": 88,
+      "policy": "Read-only host; updateWidget API reused. If edits become necessary, stop 4.5 and freeze cohesive state/action ownership extraction across entire file before proceeding."
+    },
+    {
+      "path": "terminalpro/src/lib/utils/createTemplates.ts",
+      "physical": 919,
+      "logical": 346,
+      "max_function": 108,
+      "policy": "Read-only importer; reuse existing state restoration. If edits become necessary, stop 4.5 and freeze template assembly/state restoration extraction across entire file before proceeding."
+    }
+  ]
+}
