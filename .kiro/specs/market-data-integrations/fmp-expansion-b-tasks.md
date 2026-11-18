@@ -61,7 +61,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
 
 ## 3. Eight disjoint FMP adapters
 
-- [ ] 3.1 (P) Historical dividends
+- [x] 3.1 (P) Historical dividends
   - Preserve ex-, record, declaration and payment dates, adjusted/unadjusted amount and zero yield. Test optional local filters after the upstream limit, empty acquisition vs empty filter and currency uncertainty.
   - Exercise the frozen schema via the production Fetcher, intercepted safe transport and typed metadata. Assert zero sends for invalid input, exactly one for success, and distinguish safe errors, empty/malformed responses and absence of results. Verify source order, applicable clipping and effective query.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.
