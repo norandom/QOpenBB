@@ -7,6 +7,7 @@ it is verified and its display status permits showing it.
 import hashlib
 import json
 from copy import deepcopy
+from datetime import date
 from pathlib import Path
 
 import jsonschema
@@ -29,6 +30,18 @@ def canonical_sha256(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
+def valid_date(text):
+    try:
+        return bool(date.fromisoformat(text))
+    except (TypeError, ValueError):
+        return False
+
+
+def named(value, *others):
+    """A stated name: present, not the unknown sentinel and not a repeat of another field."""
+    return value not in (None, "", "unknown", *others)
+
+
 def record():
     return json.loads((ROOT / "docs/reference/cross-asset-inputs.json").read_text(encoding="utf-8"))
 
@@ -45,10 +58,41 @@ def check(value):
         assert ("price_basis" in item) == fund
         status, verified = item["display_status"]["status"], item["verification"]["status"] == "verified"
         if item["usable_in_stories"]:
-            assert verified and status in {"government-source", "provider-licensed"}
+            assert verified and status in {"government-source", "public-source", "provider-licensed"}
+        if status in {"government-source", "public-source"}:
+            # A source claim needs the named institution and where it was read.
+            assert named(item["display_status"].get("source_institution")) and item["display_status"].get("reference")
+            assert valid_date(item["display_status"].get("checked_on"))
         if verified:
-            assert status != "unknown" and "provenance" in item
-            assert "earliest" in item["history"] and "latest" in item["history"]
+            # Values and history can be verified while the display status is still unknown;
+            # such an input is simply not usable in stories.
+            assert "provenance" in item and item["provenance"]["effective_query"]
+            history = item["history"]
+            assert valid_date(history.get("earliest")) and valid_date(history.get("latest"))
+            assert history["earliest"] <= history["latest"]
+            assert valid_date(item["verification"]["checked_on"])
+            for prefix in ("", "early_window_"):
+                # A reported gap count must come with the date ranges it counts.
+                if history.get(prefix + "weekday_gaps"):
+                    ranges = history.get(prefix + "gap_ranges") or []
+                    assert sum(entry["weekdays"] for entry in ranges) == history[prefix + "weekday_gaps"]
+            assert "rows" in history
+            if fund:
+                # Split-adjusted prices leave dividends out; claiming otherwise would turn them into total returns.
+                assert item["price_basis"]["adjustment"] == "splits_only"
+                assert item["price_basis"]["excludes_dividends"] is True and item["price_basis"].get("basis")
+                # The provider code alone misleads (AMEX for NYSE Arca funds); the venue name must be stated.
+                code = item["identity"].get("exchange_code")
+                assert named(code) and named(item["identity"].get("exchange"), code)
+                assert "provider plan" in item["limits"]
+            else:
+                assert "missing_observations" in history
+                assert all(item["identity"][key] != "unknown" for key in ("title", "units", "frequency"))
+        if not fund:
+            # A series is a spot benchmark only where the provider's own title says so.
+            spot = "spot" in item["identity"].get("title", "").lower()
+            assert item["identity"].get("instrument_type") in ({"spot", "unknown"} if spot else {"unknown"})
+            assert item["identity"].get("source") == "unknown"
         if fund:
             assert status in {"provider-licensed", "unknown"}
             assert item["identity"].get("instrument_type") in FUND_TYPES
@@ -102,7 +146,7 @@ def test_record_lists_all_inputs_and_binds_the_frozen_matrix():
 
 PROOF = {"status": "verified", "checked_on": "2026-11-18", "image_digest": "sha256:" + "0" * 64,
          "evidence_sha256": {"capture": "0" * 64}}
-HISTORY = {"earliest": "2007-01-03", "latest": "2026-11-13"}
+HISTORY = {"earliest": "2007-01-03", "latest": "2026-11-13", "rows": 74}
 PROVENANCE = {"retrieved_at": "2026-11-18T12:00:00+00:00", "effective_query": {"symbol": "GLD"}}
 LICENSED = {"status": "provider-licensed", "basis": "provider price history"}
 
@@ -111,7 +155,8 @@ def verified_gld(value):
     item = next(entry for entry in value["inputs"] if entry["id"] == "GLD")
     item.update(verification=deepcopy(PROOF), history=deepcopy(HISTORY), provenance=deepcopy(PROVENANCE),
                 display_status=deepcopy(LICENSED), usable_in_stories=True)
-    item["identity"]["instrument_type"] = "etf"
+    item["identity"].update(instrument_type="etf", exchange="Example Exchange", exchange_code="EXM")
+    item["price_basis"].update(excludes_dividends=True, basis="split-adjusted only")
     return item
 
 
@@ -125,7 +170,22 @@ MUTATIONS = {
     "copyrighted-usable": lambda item, value: item.update(display_status={"status": "third-party-copyrighted", "basis": "copyright marker"}),
     "government-source-etf": lambda item, value: item.update(display_status={"status": "government-source", "basis": "claimed"}),
     "unverified-usable": lambda item, value: item.update(verification={"status": "unverified"}),
-    "unknown-status-verified": lambda item, value: item.update(display_status={"status": "unknown", "basis": "none"}, usable_in_stories=False),
+    "unknown-status-usable": lambda item, value: item.update(display_status={"status": "unknown", "basis": "none"}),
+    "calendar-invalid-date": lambda item, value: item["verification"].update(checked_on="2026-13-45"),
+    "earliest-after-latest": lambda item, value: item["history"].update(earliest="2026-12-01"),
+    "null-dividend-basis": lambda item, value: item["price_basis"].update(excludes_dividends=None),
+    "gap-count-without-ranges": lambda item, value: item["history"].update(weekday_gaps=2),
+    "gap-count-differs-from-ranges": lambda item, value: item["history"].update(early_window_weekday_gaps=3,
+        early_window_gap_ranges=[{"start": "2007-01-15", "end": "2007-01-15", "weekdays": 1}]),
+    "empty-effective-query": lambda item, value: item["provenance"].update(effective_query={}),
+    "loose-retrieved-at": lambda item, value: item["provenance"].update(retrieved_at="sometime on Wednesday afternoon"),
+    "dividend-over-claim": lambda item, value: item["price_basis"].update(excludes_dividends=False),
+    "verified-without-rows": lambda item, value: item["history"].pop("rows"),
+    "exchange-name-repeats-provider-code": lambda item, value: item["identity"].update(exchange="EXM"),
+    "exchange-name-unknown": lambda item, value: item["identity"].update(exchange="unknown"),
+    "verified-without-exchange-name": lambda item, value: item["identity"].pop("exchange"),
+    "verified-without-price-basis-text": lambda item, value: item["price_basis"].pop("basis"),
+    "limits-without-plan-statement": lambda item, value: item.update(limits="One symbol per request."),
     "verified-without-evidence": lambda item, value: item["verification"].pop("evidence_sha256"),
     "verified-empty-evidence": lambda item, value: item["verification"].update(evidence_sha256={}),
     "verified-without-digest": lambda item, value: item["verification"].pop("image_digest"),
@@ -152,3 +212,54 @@ def test_record_rejects_over_claims(mutation):
     MUTATIONS[mutation](item, value)
     with pytest.raises((AssertionError, jsonschema.ValidationError)):
         check(value)
+
+
+def verified_series(value):
+    item = next(entry for entry in value["inputs"] if entry["id"] == "DFII10")
+    item.update(verification=deepcopy(PROOF), history={"earliest": "2003-01-02", "latest": "2026-11-16", "rows": 10,
+                                                        "missing_observations": 1},
+                provenance={"retrieved_at": "2026-11-18T12:00:00Z", "effective_query": {"symbol": "DFII10"}},
+                display_status={"status": "government-source", "basis": "public series page names the source",
+                                "source_institution": "Example Board", "reference": "https://fred.stlouisfed.org/series/DFII10",
+                                "checked_on": "2026-11-18"}, usable_in_stories=True)
+    item["identity"].update(title="Example yield", units="Percent", frequency="Daily", seasonal_adjustment="Not Seasonally Adjusted")
+    return item
+
+
+SERIES_MUTATIONS = {
+    "source-claim-without-institution": lambda item: item["display_status"].pop("source_institution"),
+    "source-claim-without-reference": lambda item: item["display_status"].pop("reference"),
+    "source-claim-without-date": lambda item: item["display_status"].pop("checked_on"),
+    "verified-with-unknown-units": lambda item: item["identity"].update(units="unknown"),
+    "series-as-spot-without-provider-title": lambda item: item["identity"].update(instrument_type="spot"),
+    "series-source-claim-in-identity": lambda item: item["identity"].update(source="Example Board"),
+    "series-without-missing-count": lambda item: item["history"].pop("missing_observations"),
+    "source-institution-unknown": lambda item: item["display_status"].update(source_institution="unknown"),
+    "public-source-without-institution": lambda item: item.update(display_status={"status": "public-source", "basis": "public"}),
+    "copyrighted-series-usable": lambda item: item.update(display_status={"status": "third-party-copyrighted", "basis": "copyright marker"}),
+}
+
+
+def test_a_verified_series_with_a_documented_source_is_accepted():
+    value = record()
+    verified_series(value)
+    check(value)
+    # Verified values with an unknown display status are allowed, but not in stories.
+    item = verified_series(value)
+    item.update(display_status={"status": "unknown", "basis": "source not established"}, usable_in_stories=False)
+    check(value)
+
+
+@pytest.mark.parametrize("mutation", sorted(SERIES_MUTATIONS))
+def test_series_record_rejects_over_claims(mutation):
+    value = record()
+    SERIES_MUTATIONS[mutation](verified_series(value))
+    with pytest.raises((AssertionError, jsonschema.ValidationError)):
+        check(value)
+
+
+def test_a_public_source_series_with_a_named_source_is_usable():
+    value = record()
+    item = verified_series(value)
+    item["display_status"].update(status="public-source", rights_label="Copyrighted: Citation Required")
+    check(value)

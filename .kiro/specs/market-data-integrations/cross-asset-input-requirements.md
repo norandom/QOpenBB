@@ -69,8 +69,8 @@ The ICE BofA and Moody's credit-spread series on FRED are excluded: they are cop
 **Objective:** As an operator, I want each input's licence status beside its provenance, so that a story never shows a series it should not.
 
 4.1 The coverage record shall carry, for each verified input, its provider, route, retrieval time, effective query and the source institution named by the provider.
-4.2 The coverage record shall carry a display status for each input: public-domain or government source, provider-licensed, third-party copyrighted, or unknown.
-4.3 If a FRED series carries a third-party copyright notice, the coverage record shall mark it as restricted and the delivery shall exclude it from shipped stories.
+4.2 The coverage record shall carry a display status for each input: government source, public source, provider-licensed, third-party copyrighted, or unknown. For each FRED series it shall record the source institution and rights label shown on the public FRED series page.
+4.3 FRED series shall be usable in shipped stories, and each story shall name the source in the chart or widget headline. Owner decision of 2026-11-18: FRED data are public, QOpenBB is an academic MIT-licensed project that ships no provider data, and source attribution in the headline is the attribution rule. This replaces the earlier exclusion of series labelled copyrighted.
 4.4 The documentation shall state the notice that views using FRED data must display.
 
 ### Requirement 5: Keep verification bounded and honest

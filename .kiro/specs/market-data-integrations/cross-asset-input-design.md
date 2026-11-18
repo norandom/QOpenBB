@@ -34,7 +34,7 @@ The matrix identity is the SHA-256 of its canonical JSON form, so it does not de
 - **Identity (1.1–1.4).** The profile response supplies instrument type, exchange and currency where FMP provides them. A missing attribute is recorded as unknown. If the profile route rejects an ETF, that outcome is recorded and the attribute stays unknown. FRED metadata (title, units, frequency, seasonal adjustment) comes from the series response; it does not include the source institution.
 - **Price meaning (2.1–2.4).** Each public row is compared with its raw row: date, open, high, low, close, volume. The record states the served adjustment basis (`splits_only`) and that dividends are excluded. The oracle counts gaps against the exchange's weekday calendar, duplicate dates and ordering faults. A weekday gap is reported, not judged: holidays are not modelled. Missing FRED observations must stay missing.
 - **History depth (3.1–3.4).** Earliest and latest returned dates per input. An empty or truncated early window is recorded as observed, with the response's own truncation metadata.
-- **Provenance and display status (4.1–4.4).** Provider, route, effective query and retrieval time come from the response metadata. Display status is assigned from the series notes returned by FRED: a "Copyright" marker means third-party copyrighted and restricted. ETF prices are provider-licensed. A status that cannot be established from the response is unknown.
+- **Provenance and display status (4.1–4.4).** Provider, route, effective query and retrieval time come from the response metadata. The FRED route does not return a series' source institution, so display status is assigned from a reviewed lookup of each public FRED series page (owner decision of 2026-11-18): the named source and the rights label are recorded as observed. A series labelled public domain is a government source; a series published by a Federal Reserve Bank and labelled citation required is a public source. Both are usable in stories, which name the source in the headline. ETF prices are provider-licensed. A status that cannot be established is unknown; such an input may be verified for values and history but is not usable in stories.
 - **Bounded verification (5.1–5.5).** The guard ledger lists every send with its case and purpose. An entitlement denial marks the input blocked and stops its dependent calls. Raw captures stay under the private evidence directory.
 
 ## Result record
@@ -45,7 +45,7 @@ The matrix identity is the SHA-256 of its canonical JSON form, so it does not de
 - `identity`: instrument or series attributes, each a value or `unknown`
 - `price_basis` (ETFs): adjustment basis, `excludes_dividends`
 - `history`: earliest and latest returned dates, row counts, truncation, gap counts
-- `display_status`: `government-source`, `provider-licensed`, `third-party-copyrighted` or `unknown`, with the evidence phrase category, not the text
+- `display_status`: `government-source`, `public-source`, `provider-licensed`, `third-party-copyrighted` or `unknown`, with the source institution, rights label, page reference and date checked
 - `verification`: `verified`, `blocked-entitlement`, `failed` or `unverified`; checked date; image digest; evidence hashes
 - `limits`: the route limits and the statement that history depends on the installation's provider plan
 
@@ -64,7 +64,7 @@ A contract test validates the schema, requires all 14 inputs, and fails if a `th
 | The price route rejects ETF symbols, or FMP's plan excludes ETFs | Recorded as failed or blocked; the story's proxy choice returns to the owner. |
 | The profile route is company-shaped and returns little for a fund | Attributes recorded as unknown; a recorded manual source is a follow-up decision. |
 | An early window returns nothing because of the plan tier | Recorded as observed (3.3); `factor-signals` then designs for the available depth. |
-| A FRED series turns out to be copyrighted | Marked restricted and excluded from stories (4.3). |
+| A FRED series page carries a "Copyrighted: Citation Required" label | Recorded as observed; the series stays usable and stories name its source (4.3). |
 | Large FRED responses | The route's 100,000-row limit applies; the longest candidate is about 10,000 rows. |
 
 ## Evidence and acceptance

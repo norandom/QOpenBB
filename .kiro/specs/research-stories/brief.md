@@ -70,6 +70,10 @@ Add a story builder to the catalog pipeline that composes existing widgets, char
 
 - Preserve the OpenBB experience: no redesign, no hidden or disabled features (`steering/workspace-experience.md`).
 - Every chart step is accepted with real provider data through the application; entitlement failures stay visible.
-- FRED-based steps carry the FRED notice and per-series copyright text.
+- FRED-based steps carry the FRED notice and name the series source in the headline.
 - Saved stories and exports hold choices and configuration only, never response text.
 - 400/300/50 complexity caps for any production code.
+
+## Source attribution
+
+Every chart and widget names its data source in the headline or subtitle, for example "Source: FRED, Federal Reserve Bank of St. Louis". The source institution for each verified input is in `docs/reference/cross-asset-inputs.json`. Owner decision of 2026-11-18: this label is the whole attribution rule; FRED series are not excluded over rights labels.

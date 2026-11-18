@@ -34,13 +34,13 @@ Work in `D:/BuildArtifacts/QOpenBB/fmp-expansion-b/root`; private evidence goes 
   - _Depends: 2, 3_
   - _Requirements: 5.1–5.4_
 
-- [ ] 5. Run the live matrix once
+- [x] 5. Run the live matrix once
   - Start the published data image alone with the installation's FMP and FRED keys, server-side only. Execute the 26 calls. Stop an input's remaining calls on an entitlement denial. Record every send, capture and outcome; a rerun needs a recorded reason and a new slot.
   - _Boundary: Controller · live runtime and private evidence_
   - _Depends: 4_
   - _Requirements: 2.3, 3.1–3.4, 4.1, 5.1–5.4_
 
-- [ ] 6. Compare results and review the financial meaning
+- [x] 6. Compare results and review the financial meaning
   - Run the oracle on the captures. Fill the result record from its output: identity, price basis, history, display status and verification state per input. Independent financial review checks every statement against the evidence, including that an ETF is not described as a spot price or index.
   - _Boundary: Controller and reviewer · result record_
   - _Depends: 5_
