@@ -151,7 +151,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 4.2_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 2.3, 6.1, 6.3, 6.5_
 
-- [ ] 4.4 Implement keyboard-accessible inline documents
+- [x] 4.4 Implement keyboard-accessible inline documents
   - Build row selection, readable text with wrapping and focus return, company/source/date/period and availability status. Expose filing/index links as optional navigation. Reject unsafe URL schemes. Treat provider markup as text; no image loads or prefetch.
   - Exercise keyboard-only selection and close, missing attribution, excerpts, metadata-only filings and literal transcript whitespace. Component fixtures prove readable inline behavior for each narrative type.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.

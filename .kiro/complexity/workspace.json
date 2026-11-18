@@ -6,7 +6,7 @@
   "root": "vendor/workspace",
   "mode": "changed",
   "owners": [
-    {"spec": "market-data-integrations", "include": ["terminalpro/src/components/Widgets/CompanyDocuments/**"], "patterns": ["terminalpro/src/components/Widgets/CompanyDocuments/**"], "files": []},
+    {"spec": "market-data-integrations", "include": ["terminalpro/src/components/Widgets/CompanyDocuments/**"], "patterns": ["terminalpro/src/components/Widgets/CompanyDocuments/**"], "files": ["terminalpro/src/components/Widgets/CompanyDocuments/CompanyDocuments.tsx"]},
     {
       "spec": "openbb-self-service",
       "include": ["**/*"],
