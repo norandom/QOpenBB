@@ -51,7 +51,7 @@ Use product limits and the eight endpoint-specific public contracts in the desig
   - _Depends: 1.4_
   - _Requirements: 1.1, 1.3, 6.5, 7.2, 8.1_
 
-- [ ] 2.2 Prove strict public admission before provider dispatch
+- [x] 2.2 Prove strict public admission before provider dispatch
   - Use selected FMP fixture variants to exercise generated SDK, mounted HTTP and raw Fetcher admission. Cover valid HTTP quarters 1–4, strings on the wire, explicit bool/null in typed callers, out-of-range quarter, repeated scalars, unknown keys, date bounds, default precedence and unsupported multi-symbols.
   - Freeze a bounded int query type or narrowly repair financial_query_policy.py for the actual quarter annotation. Assert one mocked send on valid calls, zero on rejection, existing 21-provider-model behavior and SDK/REST provider selection. Repeat with real registered classes at the join.
   - Run the scoped whole-file complexity check on all maintained production edits. Record compliance with 400 physical lines/file, 300 logical units/file and 50/function.

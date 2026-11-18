@@ -71,4 +71,10 @@ class FinancialProviderPolicy:
                         await response(scope, receive, send)
                         return
                     scope = dict(scope, query_string=encoded)
+                    from qopenbb_data.financial_http_quarter import (
+                        admitted_http_quarter,
+                    )
+                    with admitted_http_quarter(admission[0]):
+                        await self.app(scope, receive, send)
+                    return
         await self.app(scope, receive, send)

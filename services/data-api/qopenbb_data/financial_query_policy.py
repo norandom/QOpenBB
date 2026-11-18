@@ -35,6 +35,8 @@ def compile_queries(document, registry, routes):
         query = variants.get('fmp', {}).get('query')
         if query is None or not opted_in(query, 'fmp'):
             continue
+        from qopenbb_data.financial_http_quarter import prepare_http_quarter
+        prepare_http_quarter(route, query)
         for method in route.methods or ():
             operation = document.get('paths', {}).get(route.path, {}).get(method.lower(), {})
             descriptor = operation.get('x-qopenbb-financial', {})
