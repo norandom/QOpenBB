@@ -67,7 +67,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 3_
   - _Requirements: 3.1, 3.4, 3.5, 3.6_
 
-- [ ] 7. Integrate evaluation orchestration and input mapping
+- [x] 7. Integrate evaluation orchestration and input mapping
   - Join registry, rule execution, independent references and store under the approved request/run contract. Add configured data API acquisition through an allowlisted mapping, separating supplied assertions from actual acquisition provenance.
   - Preserve economic-series meaning in mapping fixtures; no live EconDB adapter or silent interpolation. This task handles contract normalization, not provider fetching implementations or new house formulas.
   - Done: an offline evaluation and a mocked data-API evaluation both persist traced runs, explicit refresh yields new evidence and missing/invalid inputs produce the designed states. Verify the shared-module caps after join.

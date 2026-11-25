@@ -43,10 +43,11 @@ def main() -> int:
     if pl.thread_pool_size() != int(os.environ["POLARS_MAX_THREADS"]):
         return 1
 
-    # Only pre-serialized installed configuration uses pickle. Supplied
-    # contracts arrive as two JSON documents in the private request stream.
+    # Only pre-serialized installed configuration uses pickle. Caller
+    # contracts and per-run metadata arrive as JSON documents.
     stream = sys.stdin.buffer
     model, limits = pickle.load(stream)
+    job = pickle.load(stream)
     try:
         inputs, assumptions = _validate_inputs(
             model, json.loads(stream.readline()), json.loads(stream.readline())
@@ -56,7 +57,12 @@ def main() -> int:
         return _EXIT_CODES.get(error.code, 1)
 
     try:
-        result = CandidateResult.model_validate(model.calculate(inputs, assumptions))
+        if job is None:
+            result = CandidateResult.model_validate(
+                model.calculate(inputs, assumptions)
+            )
+        else:
+            result = job(model, inputs, assumptions, json.loads(stream.readline()))
     except UnsupportedNumericConversion:
         return _EXIT_CODES["unsupported_numeric_conversion"]
     payload = result.model_dump_json().encode("utf-8")

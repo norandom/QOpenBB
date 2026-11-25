@@ -1774,3 +1774,11 @@ planned_checks = ["authenticated evaluation service integration"]
 test_paths = ["tests/factors/test_execution.py", "tests/factors/test_model_registry.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/bounded-model-execution.md."]
+
+[[capabilities]]
+id = "evaluation-orchestration"
+requirements = ["financial-modeling/requirements.md:1.1", "financial-modeling/requirements.md:2.5", "financial-modeling/requirements.md:3.1", "financial-modeling/requirements.md:3.2", "financial-modeling/requirements.md:3.3", "financial-modeling/requirements.md:3.4", "financial-modeling/requirements.md:3.5", "financial-modeling/requirements.md:3.6", "financial-modeling/requirements.md:6.3", "financial-modeling/requirements.md:6.4"]
+planned_checks = ["authenticated HTTP evaluation and saved-run routes"]
+test_paths = ["tests/factors/test_acquisition.py", "tests/factors/test_orchestration.py", "tests/factors/test_acquired_evaluation.py"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/evaluation-orchestration.md."]

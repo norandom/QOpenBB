@@ -12,10 +12,11 @@ from math import isfinite
 from tempfile import TemporaryFile
 from threading import BoundedSemaphore, Event
 from time import monotonic, sleep
-from typing import BinaryIO
+from typing import BinaryIO, TypeVar
 
 from pydantic import ValidationError
 
+from ..contracts.common import Contract
 from ..contracts.inputs import AssumptionSet, InputSnapshot
 from ..models.protocol import CandidateResult
 from ..models.registry import ModelRegistry
@@ -26,6 +27,9 @@ from .execution_transport import (
     InvalidWireValue,
     RequestTooLarge,
 )
+
+_Result = TypeVar("_Result", bound=Contract)
+_NO_JOB = pickle.dumps(None)
 
 _WORKER_FAILURES = {
     2: "unsupported_numeric_conversion",
@@ -135,7 +139,29 @@ class ModelExecutor:
         *,
         cancel: Event | None = None,
     ) -> CandidateResult:
-        started = monotonic()
+        return self._evaluate(
+            model_id,
+            method_version,
+            assumptions,
+            started=monotonic(),
+            cancel=cancel,
+            prepare_inputs=lambda deadline: inputs,
+            result_type=CandidateResult,
+        )
+
+    def _evaluate(
+        self,
+        model_id: str,
+        method_version: str,
+        assumptions: AssumptionSet,
+        *,
+        started: float,
+        cancel: Event | None,
+        prepare_inputs: Callable[[float], InputSnapshot],
+        result_type: type[_Result],
+        job_payload: bytes = _NO_JOB,
+        context: dict | None = None,
+    ) -> _Result:
         if not self._slots.acquire(blocking=False):
             raise ExecutionError("capacity")
         try:
@@ -148,8 +174,18 @@ class ModelExecutor:
             timeout = min(
                 self._timeout_seconds, method_timeout or self._timeout_seconds
             )
+            deadline = started + timeout
+            _remaining(deadline, cancel)
+            inputs = prepare_inputs(deadline)
             return self._execute(
-                method_payload, inputs, assumptions, started + timeout, cancel
+                method_payload,
+                inputs,
+                assumptions,
+                deadline,
+                cancel,
+                result_type=result_type,
+                job_payload=job_payload,
+                context=context,
             )
         finally:
             self._slots.release()
@@ -161,24 +197,31 @@ class ModelExecutor:
         assumptions: AssumptionSet,
         deadline: float,
         cancel: Event | None,
-    ) -> CandidateResult:
+        *,
+        result_type: type[_Result],
+        job_payload: bytes,
+        context: dict | None,
+    ) -> _Result:
         try:
             checkpoint = partial(_remaining, deadline, cancel)
             checkpoint()
             # File-backed IPC lets the parent enforce the deadline independently
             # of how much input the child has read or output it has written.
             with TemporaryFile() as request, TemporaryFile() as response:
-                for offset in range(0, len(method_payload), CHUNK_BYTES):
-                    checkpoint()
-                    request.write(method_payload[offset : offset + CHUNK_BYTES])
+                for payload in (method_payload, job_payload):
+                    for offset in range(0, len(payload), CHUNK_BYTES):
+                        checkpoint()
+                        request.write(payload[offset : offset + CHUNK_BYTES])
                 writer = InputWriter(request, checkpoint)
                 _write_contract(writer, inputs, "invalid_input_snapshot")
                 _write_contract(writer, assumptions, "invalid_assumptions")
+                if context is not None:
+                    _write_contract(writer, context, "invalid_run_context")
                 checkpoint()
                 request.seek(0)
                 self._run_child(request, response, deadline, cancel)
                 response.seek(0)
-                result = CandidateResult.model_validate_json(
+                result = result_type.model_validate_json(
                     _read_result(response, checkpoint)
                 )
                 checkpoint()
