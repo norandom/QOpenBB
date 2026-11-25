@@ -101,7 +101,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Boundary: Modeling export tooling and QOpenBB consumer manifests; explicit controller-owned integration._
   - _Depends: 8.2_
   - _Requirements: 4.1, 5.4_
-- [ ] 9.2 Check structural and financial-semantic compatibility
+- [x] 9.2 Check structural and financial-semantic compatibility
   - Compare candidate contracts and exercised responses against pinned consumer expectations, including nullability, units-only changes, error/partial states and supported versions.
   - Done: compatible examples pass; incompatible or unknown changes block promotion pending migration or explicit acceptance. No general schema-subsumption claim.
   - Completion gate: maintained production files pass 400 physical / 300 logical / 50 per function and owning checks.

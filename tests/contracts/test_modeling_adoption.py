@@ -6,11 +6,11 @@ import os
 import re
 import subprocess
 import sys
-import tarfile
 from pathlib import Path
 
 import pytest
 from fastapi.openapi.models import OpenAPI
+from qopenbb_ci.financial_compat_replay import verify_source_export
 
 ROOT = Path(__file__).resolve().parents[2]
 CONSUMERS = ROOT / "contracts/consumers/financial-modeling"
@@ -40,7 +40,7 @@ def _check_payload(revision, bundle, consumer, cwd, env):
     )
 
 
-def _verify_adoption(pin, bundle, replay):
+def _verify_adoption(pin, bundle):
     """Regenerate from both the adopted commit and the current implementation."""
     assert pin["repository"] == "norandom/QOpenBB"
     assert pin["bundle"] == BUNDLE.relative_to(ROOT).as_posix()
@@ -49,49 +49,14 @@ def _verify_adoption(pin, bundle, replay):
     assert pin["manifest_sha256"] == hashlib.sha256(manifest).hexdigest()
     assert pin["contract_version"] == 1
     revision = pin["source_revision"]
-    source = replay / "source"
-    consumer_path = CONSUMER.relative_to(ROOT)
     env = os.environ | {"GIT_NO_LAZY_FETCH": "1", "GIT_NO_REPLACE_OBJECTS": "1"}
-    resolved = subprocess.check_output(
-        ["git", "rev-parse", "--verify", f"{revision}^{{commit}}"],
-        cwd=ROOT,
-        env=env,
-        text=True,
-    ).strip()
-    assert resolved == revision
-    # Replay the pinned code without changing the operator's checkout or requiring its HEAD.
-    with (replay / "source.tar").open("w+b") as archive:
-        subprocess.run(
-            [
-                "git",
-                "archive",
-                revision,
-                "pipeline/qopenbb_ci",
-                "services/data-api/qopenbb_data",
-                str(consumer_path),
-            ],
-            cwd=ROOT,
-            env=env,
-            stdout=archive,
-            check=True,
-        )
-        archive.seek(0)
-        with tarfile.open(fileobj=archive) as files:
-            files.extractall(source, filter="data")
-    paths = (source / "pipeline", source / "services/data-api")
-    _check_payload(
-        revision,
-        bundle,
-        source / consumer_path,
-        source,
-        env | {"PYTHONPATH": os.pathsep.join(map(str, paths))},
-    )
+    verify_source_export(revision, bundle, CONSUMER)
     _check_payload(revision, bundle, CONSUMER, ROOT, env)
 
 
-def test_pinned_bundle_reproduces_from_pinned_and_current_sources(tmp_path):
+def test_pinned_bundle_reproduces_from_pinned_and_current_sources():
     pin = json.loads((CONSUMERS / "provider.lock.json").read_bytes())
-    _verify_adoption(pin, BUNDLE, tmp_path)
+    _verify_adoption(pin, BUNDLE)
 
 
 def test_recomputed_digest_cannot_attest_a_missing_revision(tmp_path):
@@ -107,7 +72,7 @@ def test_recomputed_digest_cannot_attest_a_missing_revision(tmp_path):
         source_revision=revision, manifest_sha256=hashlib.sha256(body).hexdigest()
     )
     with pytest.raises(subprocess.CalledProcessError) as failure:
-        _verify_adoption(pin, fake, tmp_path)
+        _verify_adoption(pin, fake)
     assert failure.value.cmd[1] == "rev-parse"
 
 

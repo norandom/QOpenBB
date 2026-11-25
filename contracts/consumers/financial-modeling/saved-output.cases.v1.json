@@ -1,0 +1,372 @@
+{
+  "version": 1,
+  "observation_context": {
+    "unit": "amount",
+    "scale": 3,
+    "currency": "USD",
+    "basis": "nominal",
+    "quantity": "flow",
+    "period_start": "2024-01-01",
+    "period_end": "2024-01-02",
+    "frequency": "daily"
+  },
+  "cases": {
+    "negative": {
+      "run": {
+        "schema_version": "1",
+        "owner_id": "case-owner",
+        "descriptor": {
+          "model_id": "test-only-supplied-value",
+          "method_version": "1",
+          "rule_set_version": "1",
+          "reference_version": "1",
+          "period_types": ["date"],
+          "outputs": [
+            {
+              "output_id": "value",
+              "unit": "amount",
+              "value_type": "decimal",
+              "semantic_definition": "Supplied test observation"
+            }
+          ]
+        },
+        "inputs": {
+          "tables": [
+            {
+              "table_id": "observations",
+              "rows": [
+                {"record_id": "present", "observation_date": "2024-01-02", "value": "-10.125"},
+                {"record_id": "missing", "value": null}
+              ]
+            }
+          ]
+        },
+        "outputs": [
+          {
+            "output_id": "value",
+            "unit": "amount",
+            "value_type": "decimal",
+            "value": "-10.125",
+            "status": "verified"
+          }
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "match"}
+        ],
+        "checks": []
+      },
+      "widget": {
+        "results": [
+          {
+            "output_id": "value",
+            "unit": "amount",
+            "value_type": "decimal",
+            "value": "-10.125",
+            "status": "verified",
+            "display_text": "-10.125",
+            "display_value": -10.125,
+            "freshness": "saved"
+          }
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "match"}
+        ],
+        "checks": []
+      }
+    },
+    "zero": {
+      "run": {
+        "schema_version": "1",
+        "owner_id": "case-owner",
+        "descriptor": {
+          "model_id": "test-only-supplied-value",
+          "method_version": "1",
+          "rule_set_version": "1",
+          "reference_version": "1",
+          "period_types": ["date"],
+          "outputs": [
+            {
+              "output_id": "value",
+              "unit": "amount",
+              "value_type": "decimal",
+              "semantic_definition": "Supplied test observation"
+            }
+          ]
+        },
+        "inputs": {
+          "tables": [
+            {
+              "table_id": "observations",
+              "rows": [
+                {"record_id": "present", "observation_date": "2024-01-02", "value": "0"},
+                {"record_id": "missing", "value": null}
+              ]
+            }
+          ]
+        },
+        "outputs": [
+          {"output_id": "value", "unit": "amount", "value_type": "decimal", "value": "0", "status": "verified"}
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "match"}
+        ],
+        "checks": []
+      },
+      "widget": {
+        "results": [
+          {
+            "output_id": "value",
+            "unit": "amount",
+            "value_type": "decimal",
+            "value": "0",
+            "status": "verified",
+            "display_text": "0",
+            "display_value": 0,
+            "freshness": "saved"
+          }
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "match"}
+        ],
+        "checks": []
+      }
+    },
+    "missing": {
+      "run": {
+        "schema_version": "1",
+        "owner_id": "case-owner",
+        "descriptor": {
+          "model_id": "test-only-supplied-value",
+          "method_version": "1",
+          "rule_set_version": "1",
+          "reference_version": "1",
+          "period_types": ["date"],
+          "outputs": [
+            {
+              "output_id": "value",
+              "unit": "amount",
+              "value_type": "decimal",
+              "semantic_definition": "Supplied test observation"
+            }
+          ]
+        },
+        "inputs": {
+          "tables": [
+            {
+              "table_id": "observations",
+              "rows": [
+                {"record_id": "present", "observation_date": "2024-01-02", "value": null},
+                {"record_id": "missing", "value": null}
+              ]
+            }
+          ]
+        },
+        "outputs": [
+          {"output_id": "value", "unit": "amount", "value_type": "decimal", "value": null, "status": "withheld"}
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "unavailable"}
+        ],
+        "checks": []
+      },
+      "widget": {
+        "results": [
+          {
+            "output_id": "value",
+            "unit": "amount",
+            "value_type": "decimal",
+            "value": null,
+            "status": "withheld",
+            "display_text": null,
+            "display_value": null,
+            "freshness": "saved"
+          }
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "unavailable"}
+        ],
+        "checks": []
+      }
+    },
+    "partial": {
+      "run": {
+        "schema_version": "1",
+        "owner_id": "case-owner",
+        "descriptor": {
+          "model_id": "test-only-supplied-value",
+          "method_version": "1",
+          "rule_set_version": "1",
+          "reference_version": "1",
+          "period_types": ["date"],
+          "outputs": [
+            {
+              "output_id": "value",
+              "unit": "amount",
+              "value_type": "decimal",
+              "semantic_definition": "Supplied test observation"
+            },
+            {
+              "output_id": "blocked",
+              "unit": "amount",
+              "value_type": "decimal",
+              "semantic_definition": "Blocked synthetic output"
+            }
+          ]
+        },
+        "inputs": {
+          "tables": [
+            {
+              "table_id": "observations",
+              "rows": [
+                {"record_id": "present", "observation_date": "2024-01-02", "value": "2.5"},
+                {"record_id": "missing", "value": null}
+              ]
+            }
+          ]
+        },
+        "outputs": [
+          {"output_id": "value", "unit": "amount", "value_type": "decimal", "value": "2.5", "status": "verified"},
+          {"output_id": "blocked", "unit": "amount", "value_type": "decimal", "value": null, "status": "withheld"}
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "match"},
+          {"output_id": "blocked", "reference_version": "1", "status": "unavailable"}
+        ],
+        "checks": [
+          {
+            "rule_id": "quality",
+            "rule_version": "1",
+            "status": "fail",
+            "severity": "blocking",
+            "output_ids": ["blocked"],
+            "explanation": "The financial precondition failed"
+          }
+        ]
+      },
+      "widget": {
+        "results": [
+          {
+            "output_id": "value",
+            "unit": "amount",
+            "value_type": "decimal",
+            "value": "2.5",
+            "status": "verified",
+            "display_text": "2.5",
+            "display_value": 2.5,
+            "freshness": "saved"
+          }
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "match"}
+        ],
+        "checks": []
+      },
+      "blocked_widget": {
+        "results": [
+          {
+            "output_id": "blocked",
+            "unit": "amount",
+            "value_type": "decimal",
+            "value": null,
+            "status": "withheld",
+            "display_text": null,
+            "display_value": null,
+            "freshness": "saved",
+            "check_explanations": "quality: The financial precondition failed"
+          }
+        ],
+        "checks": [
+          {
+            "rule_id": "quality",
+            "rule_version": "1",
+            "status": "fail",
+            "severity": "blocking",
+            "output_ids": ["blocked"],
+            "explanation": "The financial precondition failed"
+          }
+        ],
+        "verification": [
+          {"output_id": "blocked", "reference_version": "1", "status": "unavailable"}
+        ]
+      }
+    },
+    "stale_unverified": {
+      "run": {
+        "schema_version": "1",
+        "owner_id": "case-owner",
+        "descriptor": {
+          "model_id": "test-only-supplied-value",
+          "method_version": "1",
+          "rule_set_version": "1",
+          "reference_version": "1",
+          "period_types": ["date"],
+          "outputs": [
+            {
+              "output_id": "value",
+              "unit": "amount",
+              "value_type": "decimal",
+              "semantic_definition": "Supplied test observation"
+            }
+          ]
+        },
+        "inputs": {
+          "tables": [
+            {
+              "table_id": "observations",
+              "rows": [
+                {"record_id": "present", "observation_date": "2024-01-02", "value": "0.1"},
+                {"record_id": "missing", "value": null}
+              ]
+            }
+          ]
+        },
+        "outputs": [
+          {"output_id": "value", "unit": "amount", "value_type": "decimal", "value": "0.1", "status": "unverified"}
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "unavailable"}
+        ],
+        "checks": []
+      },
+      "widget": {
+        "results": [
+          {
+            "output_id": "value",
+            "unit": "amount",
+            "value_type": "decimal",
+            "value": "0.1",
+            "status": "unverified",
+            "display_text": "0.1",
+            "display_value": null,
+            "freshness": "stale"
+          }
+        ],
+        "verification": [
+          {"output_id": "value", "reference_version": "1", "status": "unavailable"}
+        ],
+        "checks": []
+      }
+    },
+    "invalid_request": {
+      "evaluation": {
+        "code": "invalid_request",
+        "retryable": false,
+        "fields": [
+          {"path": ["model_id"], "code": "missing"},
+          {"path": ["method_version"], "code": "missing"},
+          {"path": ["assumptions"], "code": "missing"}
+        ]
+      }
+    },
+    "wrong_owner": {
+      "run": {
+        "code": "not_found",
+        "retryable": false
+      },
+      "widget": {
+        "code": "not_found",
+        "retryable": false
+      }
+    }
+  }
+}

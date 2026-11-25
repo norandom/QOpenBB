@@ -25,4 +25,23 @@ PYTHONPATH=services/data-api pipeline/.venv/bin/python -m qopenbb_ci.modeling_bu
   --consumer contracts/consumers/financial-modeling/saved-output.v1.json
 ```
 
-The saved-output consumer reads exact display text, the declared unit, verification state, selection freshness and output-specific checks. A withheld result has a null display value. A stale selection retains the original run's verification status. The compatibility policy for changing these meanings belongs to foundation task 9.2.
+The saved-output consumer reads exact display text, the declared unit, verification state, selection freshness and output-specific checks. A withheld result has a null display value. A stale selection retains the original run's verification status.
+
+## Check a candidate against the saved-output dashboard
+
+From the checkout containing the candidate provider, run the seven authenticated HTTP cases and save their responses. The gate needs local Git history for both the adopted contract and the selected provider revision.
+
+```bash
+export PYTHONPATH=services/data-api
+consumer=contracts/consumers/financial-modeling/saved-output.v1.json
+QOPENBB_MODEL_COMPAT_BUNDLE="$candidate/v1" \
+QOPENBB_MODEL_COMPAT_CONSUMER="$consumer" \
+QOPENBB_MODEL_COMPAT_EVIDENCE="$candidate/evidence.json" \
+  pipeline/.venv/bin/python -m pytest -q \
+  tests/factors/test_financial_compat_cases.py::test_financial_compat_cli_writes_exercised_evidence
+pipeline/.venv/bin/python -m qopenbb_ci.financial_compat \
+  --candidate-bundle "$candidate/v1" --candidate-consumer "$consumer" \
+  --evidence "$candidate/evidence.json"
+```
+
+A compatible result requires both structural compatibility and agreement with the financial expectations pinned for the saved-output dashboard. The synthetic cases exercise the difference between a negative amount, zero and a withheld value. They also cover partial results, stale verification, invalid input and an inaccessible saved run. A blocked result identifies the affected consumer and findings. Retain the adopted interface or review and adopt a versioned migration before promoting the change.

@@ -1806,3 +1806,11 @@ planned_checks = ["structural and financial-semantic compatibility against adopt
 test_paths = ["tests/factors/test_modeling_bundle.py", "tests/factors/test_modeling_contract_listener.py", "tests/factors/test_modeling_documents.py", "tests/factors/test_modeling_documents_registration.py", "tests/contracts/test_modeling_adoption.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/modeling-contract-bundle.md."]
+
+[[capabilities]]
+id = "modeling-compatibility"
+requirements = ["financial-modeling/requirements.md:1.4", "financial-modeling/requirements.md:4.2", "financial-modeling/requirements.md:4.3", "financial-modeling/requirements.md:4.4"]
+planned_checks = ["changed-ID selection and uncovered impact reporting"]
+test_paths = ["tests/contracts/test_financial_compat_gate.py", "tests/contracts/test_financial_compat_structure.py", "tests/factors/test_financial_compat_cases.py", "tests/factors/test_financial_compat_cases_identity.py"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/modeling-compatibility.md."]
