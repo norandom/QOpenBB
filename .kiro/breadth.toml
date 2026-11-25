@@ -1662,3 +1662,11 @@ planned_checks = []
 test_paths = ["tests/factors/test_modeling_contracts.py", "tests/factors/test_model_run_evidence.py", "tests/factors/test_import_boundaries.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Synthetic contract round trips, cutoff and verification-evidence checks only. See artifacts/reviewed/factor-signals/contract-foundation.md. Actual method recalculation belongs to later tasks."]
+
+[[capabilities]]
+id = "supplied-input-model-registry"
+requirements = ["financial-modeling/requirements.md:1.1", "financial-modeling/requirements.md:2.1"]
+planned_checks = []
+test_paths = ["tests/factors/test_model_registry.py", "tests/delivery/test_data_image.py"]
+status = "passed"
+evidence = ["Exact lookup, dependency validation and bounded decimal/null materialization. See artifacts/reviewed/factor-signals/model-registry.md."]

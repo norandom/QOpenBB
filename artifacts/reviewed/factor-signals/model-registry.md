@@ -1,0 +1,3 @@
+# Supplied-input registry acceptance
+
+Foundation task 4.1 passed on Ubuntu on 2026-11-25. The service environment passed all 11 registry tests, including the test-only registered Polars method. It preserved the exact decimal 12345678901234.0025 and a missing observation through bounded materialization. Lookup requires matching method ID and version. Descriptor tests cover missing and cyclic dependencies. Independent Astra review accepted the registered execution path after the first review requested a stronger test. The portable environment skips the Polars case. Production financial methods are scheduled in the factor plan.

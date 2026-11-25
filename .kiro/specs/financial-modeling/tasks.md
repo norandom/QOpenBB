@@ -33,7 +33,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Requirements: 1.2, 1.3, 2.3, 2.7, 3.1, 3.6, 6.3, 6.4_
 
 - [ ] 4. Register and execute supplied-input methods
-- [ ] 4.1 (P) Register supplied-input model methods
+- [x] 4.1 (P) Register supplied-input model methods
   - Implement protocol/registry, exact version lookup and descriptor validation, including output/check dependencies and cycles; no network or storage imports in model modules.
   - Use a clearly labeled test-only method to exercise execution; do not advertise it as a financial product. Verify table schemas, null handling, decimal conversions and lazy materialization at the declared boundary.
   - Done: supported method lookup works offline; unknown versions and invalid or cyclic dependencies fail explicitly.
