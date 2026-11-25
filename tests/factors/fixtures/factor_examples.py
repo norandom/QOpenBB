@@ -206,6 +206,9 @@ def example_assumptions(example):
     if example.model_id == "timing_study":
         assumptions.extend((
             text_assumption("schedule_revision", "fixture_us_listing.2024r1", "Synthetic NY sessions"),
+            text_assumption("study_schedule", ";".join(
+                f"{day}T14:00:00+00:00/{day}T22:00:00+00:00" for day in STUDY_DATES
+            ), "Supplied session opens and decision cutoffs for the study"),
             text_assumption("position_rule", "long_when_momentum_positive.v1", "Use prior-session signal"),
             text_assumption("horizon", "one_session_open_to_open", "Outcome intervals do not overlap"),
             text_assumption("benchmark", "fixture_benchmark", "Use matched benchmark return"),

@@ -32,3 +32,7 @@ These mappings were checked against the data API revision above. Eligibility is 
 ## Ordered comparison inputs
 
 The `left_proxy` and `right_proxy` assumptions identify the minuend and subtrahend. Each close table belongs to its named proxy. For a shared calendar, both legs use the single eligible calendar in `sessions`. A snapshot containing multiple calendars can identify the listing calendar for each leg with the text assumptions `left_calendar` and `right_calendar`, whose values are calendar entity IDs. Each leg can still report its own metrics when the calendars differ. A spread requires a shared calendar, the same revision and a complete window for that metric on both sides.
+
+## Timing-study timestamps
+
+A versioned schedule supplies both the decision cutoff and the following return start. The study uses the text assumption `study_schedule`, with one offset-qualified `open/decision` timestamp pair per session, separated by semicolons. Longer schedules can continue in consecutively numbered text assumptions beginning with `study_schedule.2`. Include the session preceding the study’s first open. A single evaluation identifies one ETF, benchmark, partition and inclusive pair of outcome dates. The schedule can include holidays or shortened sessions by specifying the actual trading instants. A date-only return interval cannot establish the time at which a signal was actionable. The example schedule is synthetic.

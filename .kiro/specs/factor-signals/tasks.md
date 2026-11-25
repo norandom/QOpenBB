@@ -57,9 +57,9 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 4, 5_
   - _Requirements: 4.1_
 
-- [ ] 10. Build decision-time study groups
+- [x] 10. Build decision-time study groups
   - Use explicit benchmark, position rule, horizon, dates and partition. Verify that a signal published at or after the start of its outcome cannot enter the group. Report universe, coverage and exclusions separately by regime and partition.
-  - _Boundary: models/factors/diagnostics.py and group-selection tests; apply the complexity gate._
+  - _Boundary: models/factors/study_schedule.py and study_groups.py, consumed by diagnostics.py, and group-selection tests; apply the complexity gate._
   - _Depends: 2, 6_
   - _Requirements: 4.2, 4.3_
 
