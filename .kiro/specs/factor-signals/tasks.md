@@ -21,19 +21,19 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 2_
   - _Requirements: 1.3, 1.4, 2.2_
 
-- [ ] 4. (P) Calculate ETF momentum
+- [x] 4. (P) Calculate ETF momentum
   - Report percentage price return and dated trace from the first and last eligible closes. Verify a flat and a varying series, dividends-excluded labeling and the missing-session outcome.
   - _Boundary: models/factors/momentum.py and momentum tests; apply the complexity gate._
   - _Depends: 3_
   - _Requirements: 1.1, 1.3, 1.4_
 
-- [ ] 5. (P) Calculate ETF realized volatility
+- [x] 5. (P) Calculate ETF realized volatility
   - Verify that the trace contains 63 simple returns, divisor 62 and annualization by the square root of 252. A constant price yields zero and a missing required close withholds the output.
   - _Boundary: models/factors/volatility.py and volatility tests; apply the complexity gate._
   - _Depends: 3_
   - _Requirements: 1.2, 1.3, 1.4_
 
-- [ ] 6. (P) Classify the real-yield regime
+- [x] 6. (P) Classify the real-yield regime
   - Verify all three signs using exact DFII10 endpoint levels and report percentage-point change. A missing interior date preserves classification; a missing endpoint or unknown vintage availability withholds it. A later revision cannot change the historical signal.
   - _Boundary: models/factors/real_yield.py and regime tests; apply the complexity gate._
   - _Depends: 3_

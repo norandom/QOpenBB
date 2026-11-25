@@ -6,6 +6,7 @@ from pydantic import Field, model_validator
 
 from ..contracts.common import (
     Contract,
+    Description,
     Identifier,
     Scalar,
     ScalarKind,
@@ -21,6 +22,13 @@ class CandidateOutput(Contract):
     output_id: Identifier
     value_type: ScalarKind = "decimal"
     value: Scalar | None
+    reason: Description | None = None
+
+    @model_validator(mode="after")
+    def validate_reason(self) -> Self:
+        if self.reason is not None and self.value is not None:
+            raise ValueError("a withheld reason requires a missing candidate value")
+        return self
 
     @model_validator(mode="before")
     @classmethod

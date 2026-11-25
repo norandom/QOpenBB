@@ -17,6 +17,7 @@ class SessionWindow:
     schedule_revision: str
     cutoff: EvaluationCutoff
     session_dates: tuple[date, ...]
+    source_record_ids: tuple[str, ...]
 
     @property
     def endpoints(self) -> tuple[date, date]:
@@ -44,7 +45,8 @@ class WindowUnavailable(ValueError):
     def __init__(self, subject: str, issues: Iterable[WindowIssue]) -> None:
         self.issues = tuple(issues)
         details = ", ".join(f"{issue.session_date} {issue.reason}" for issue in self.issues)
-        super().__init__(f"{subject} has insufficient history ({details})")
+        message = f"{subject} has insufficient history ({details})"
+        super().__init__(message if len(message) <= 4096 else message[:4093] + "...")
 
 
 def _revision_at(row: Observation) -> datetime:
@@ -53,7 +55,7 @@ def _revision_at(row: Observation) -> datetime:
     return row.vintage_at or row.published_at
 
 
-def _latest_observed_rows(
+def latest_observed_rows(
     rows: Sequence[Observation], cutoff: EvaluationCutoff, subject: str
 ) -> list[Observation] | str:
     if not rows:
@@ -77,15 +79,15 @@ def _availability_reason(rows: Sequence[Observation], subject: str) -> str:
     return f"{subject} available after cutoff"
 
 
-def _schedule_issue(rows: Sequence[Observation], cutoff: EvaluationCutoff) -> str | None:
-    latest = _latest_observed_rows(rows, cutoff, "schedule session")
+def _schedule_marker(rows: Sequence[Observation], cutoff: EvaluationCutoff) -> Observation | str:
+    latest = latest_observed_rows(rows, cutoff, "schedule session")
     if isinstance(latest, str):
         return latest
     for row in latest:
         marker = row.value
         if row.context.unit != "session" or marker is None or not marker.is_finite() or marker != 1:
             return "invalid schedule marker (expected value 1 with session unit)"
-    return None
+    return min(latest, key=lambda row: row.record_id)
 
 
 def resolve_session_window(
@@ -115,12 +117,16 @@ def resolve_session_window(
         reason = f"requires {WINDOW_SIZE} scheduled sessions, found {len(dates)}"
         raise WindowUnavailable(subject, [WindowIssue(ending, reason)])
     issues = []
+    record_ids = []
     for day in dates:
-        if reason := _schedule_issue(by_date[day], cutoff):
-            issues.append(WindowIssue(day, reason))
+        marker = _schedule_marker(by_date[day], cutoff)
+        if isinstance(marker, str):
+            issues.append(WindowIssue(day, marker))
+        else:
+            record_ids.append(marker.record_id)
     if issues:
         raise WindowUnavailable(subject, issues)
-    return SessionWindow(calendar_id, schedule_revision, cutoff, dates)
+    return SessionWindow(calendar_id, schedule_revision, cutoff, dates, tuple(record_ids))
 
 
 def _price_basis(row: Observation) -> tuple[str, str | None, str | None, int]:
@@ -129,7 +135,7 @@ def _price_basis(row: Observation) -> tuple[str, str | None, str | None, int]:
 
 
 def _select_close(rows: Sequence[Observation], cutoff: EvaluationCutoff) -> Observation | str:
-    latest = _latest_observed_rows(rows, cutoff, "close")
+    latest = latest_observed_rows(rows, cutoff, "close")
     if isinstance(latest, str):
         return latest
     for row in latest:
