@@ -1,0 +1,30 @@
+{
+  "contract_version": 1,
+  "consumer_id": "workspace.saved-model-output",
+  "widget_id": "qopenbb_saved_model_output",
+  "provider_api_version": "v1",
+  "operation": {
+    "id": "readSavedWidgetOutput",
+    "method": "GET",
+    "base_path": "/modeling/v1",
+    "path": "/widget-results",
+    "identity": "qfm-identity",
+    "query": [
+      {"parameter": "run_id", "type": "string", "required": true, "semantic_id": "saved-run-id"},
+      {"parameter": "output_id", "type": "string", "required": true, "semantic_id": "model-output-id"},
+      {"parameter": "expected_run_id", "type": "string", "required": false, "semantic_id": "expected-selection-id"}
+    ]
+  },
+  "response": {
+    "data_key": "results",
+    "row_fields": [
+      {"name": "display_text", "type": "string", "nullable": true, "semantic_id": "exact-saved-value-text"},
+      {"name": "status", "type": "string", "nullable": false, "semantic_id": "saved-verification-state", "values": ["verified", "unverified", "withheld"]},
+      {"name": "freshness", "type": "string", "nullable": false, "semantic_id": "selection-freshness", "values": ["saved", "matched", "stale"]},
+      {"name": "reason", "type": "string", "nullable": true, "semantic_id": "output-status-reason"},
+      {"name": "unit", "type": "string", "nullable": false, "semantic_id": "declared-model-unit"},
+      {"name": "check_explanations", "type": "string", "nullable": true, "semantic_id": "output-scoped-check-explanations"},
+      {"name": "run_detail_href", "type": "string", "nullable": false, "semantic_id": "owner-scoped-run-detail"}
+    ]
+  }
+}
