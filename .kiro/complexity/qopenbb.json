@@ -21,6 +21,10 @@
       "files": [
         "services/data-api/qopenbb_data/modeling/service/ports.py",
         "services/data-api/qopenbb_data/modeling/service/run_store.py",
+        "services/data-api/qopenbb_data/modeling/service/execution.py",
+        "services/data-api/qopenbb_data/modeling/service/execution_decimal.py",
+        "services/data-api/qopenbb_data/modeling/service/execution_worker.py",
+        "services/data-api/qopenbb_data/modeling/service/execution_transport.py",
         "services/data-api/qopenbb_data/modeling/service/__init__.py"
       ]
     },

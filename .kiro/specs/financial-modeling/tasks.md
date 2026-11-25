@@ -32,7 +32,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 2_
   - _Requirements: 1.2, 1.3, 2.3, 2.7, 3.1, 3.6, 6.3, 6.4_
 
-- [ ] 4. Register and execute supplied-input methods
+- [x] 4. Register and execute supplied-input methods
 - [x] 4.1 (P) Register supplied-input model methods
   - Implement protocol/registry, exact version lookup and descriptor validation, including output/check dependencies and cycles; no network or storage imports in model modules.
   - Use a clearly labeled test-only method to exercise execution; do not advertise it as a financial product. Verify table schemas, null handling, decimal conversions and lazy materialization at the declared boundary.
@@ -42,7 +42,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 3_
   - _Requirements: 1.1, 1.2, 1.3, 2.1_
 
-- [ ] 4.2 Bound Polars execution and cancellation
+- [x] 4.2 Bound Polars execution and cancellation
   - Implement spawn-based execution, native thread budget, explicit materialization and declared input limits using the frozen registry. Use a test-only method, not a published financial model.
   - Done: offline execution succeeds; unsupported numeric conversion, oversized input and timeout fail explicitly, with no detached computation left running.
   - Completion gate: maintained production files pass 400 physical / 300 logical / 50 per function and owning checks.

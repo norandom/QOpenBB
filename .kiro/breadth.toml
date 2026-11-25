@@ -1766,3 +1766,11 @@ planned_checks = ["authenticated evaluation service integration"]
 test_paths = ["tests/factors/test_run_store.py", "tests/factors/test_model_run_evidence.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/private-model-runs.md."]
+
+[[capabilities]]
+id = "bounded-model-execution"
+requirements = ["financial-modeling/requirements.md:1.1", "financial-modeling/requirements.md:2.1"]
+planned_checks = ["authenticated evaluation service integration"]
+test_paths = ["tests/factors/test_execution.py", "tests/factors/test_model_registry.py", "tests/delivery/test_data_image.py"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/bounded-model-execution.md."]
