@@ -1718,3 +1718,11 @@ planned_checks = ["independent reference verifier and saved-run endpoint accepta
 test_paths = ["tests/factors/test_comparison.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Supplied-input ETF comparison, retained leg values and dated withheld spreads. See artifacts/reviewed/factor-signals/proxy-comparison.md."]
+
+[[capabilities]]
+id = "decision-time-regime-diagnostics"
+requirements = ["factor-signals/requirements.md:4.2", "factor-signals/requirements.md:4.3"]
+planned_checks = ["independent reference verifier and authenticated saved-run acceptance"]
+test_paths = ["tests/factors/test_study_schedule.py", "tests/factors/test_study_groups.py", "tests/factors/test_diagnostics.py", "tests/delivery/test_data_image.py"]
+status = "passed"
+evidence = ["Synthetic point-in-time study, regime-conditioned hit rate and slugging, and chronological drawdown. See artifacts/reviewed/factor-signals/timing-study.md."]

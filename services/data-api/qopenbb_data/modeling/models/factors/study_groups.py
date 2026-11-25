@@ -117,7 +117,8 @@ def _select(
     subject = scope.replace("_", " ")
     latest = latest_observed_rows(rows, cutoff, subject)
     if isinstance(latest, str):
-        return StudyExclusion(scope, "unavailable" if rows else "missing", latest)
+        timely_ids = tuple(sorted(row.record_id for row in rows if cutoff.is_eligible(row)))
+        return StudyExclusion(scope, "unavailable" if rows else "missing", latest, timely_ids)
     return _validate_latest(latest, scope)
 
 

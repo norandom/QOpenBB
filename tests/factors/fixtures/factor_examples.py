@@ -322,8 +322,8 @@ def intermediates(output_id, missing):
         return (
             TraceValue(name="eligible_count", value="3" if rising and not missing else "2", unit="count"),
             TraceValue(name="excluded_count", value="1" if rising and missing else "0", unit="count"),
-            TraceValue(name="mean_winner", value="10" if rising else "12", unit="percent"),
+            TraceValue(name="mean_winner", value="10" if rising else "12", unit="percentage_points"),
         ) + (() if rising and missing else (
-            TraceValue(name="absolute_mean_loser", value="5" if rising else "4", unit="percent"),
+            TraceValue(name="absolute_mean_loser", value="5" if rising else "4", unit="percentage_points"),
         ))
     return ()

@@ -63,7 +63,7 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 2, 6_
   - _Requirements: 4.2, 4.3_
 
-- [ ] 11. Compute timing diagnostics
+- [x] 11. Compute timing diagnostics
   - Verify that a tie stays in the hit-rate denominator, opposite regimes remain distinct, absent winners or losers give an undefined slugging ratio, and drawdown uses the disclosed chronological exposure path. Reject overlapping returns for compounding. Missing study assumptions leave base factors available.
   - _Boundary: models/factors/diagnostics.py and study-result tests; apply the complexity gate._
   - _Depends: 10_
