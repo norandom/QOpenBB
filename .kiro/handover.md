@@ -1,6 +1,18 @@
 # QOpenBB session handover
 
-Updated 2026-11-18. FMP Batch B (eight event and document operations) is complete and published in alpha-44340458084-1, after Batch A in alpha-44132016951-1. The bounded Company Research milestone remains complete.
+Updated 2026-11-18, end of day. FMP Batch B (eight event and document operations) is complete and published in alpha-44340458084-1, after Batch A in alpha-44132016951-1. The bounded Company Research milestone remains complete. Input verification for the first research story is complete and on `main`; no modeling work has started.
+
+## Where to resume
+
+- **Next step, awaiting the owner's go-ahead:** one thin modeling slice for "Commodities vs tech: which regime are we in?", starting with the `factor-signals` requirements. Nothing is in progress.
+- **State of `main`:** `e4905a8`; check-only [CI run 44369922236](https://github.com/norandom/QOpenBB/actions/runs/44369922236) passed. The latest release is still alpha-44340458084-1.
+- **Working checkout:** `D:/BuildArtifacts/QOpenBB/fmp-expansion-b/root`, branch `work/fmp-expansion-b`, pushed as `HEAD:main`. The checkout at `D:/Source/QOpenBB` is behind `main` and holds unrelated uncommitted work; do not overwrite it.
+- **Product direction from discovery (owner, 2026-11-18):**
+  - regime-based macro and cross-asset stories, shipped as dashboards with changeable inputs
+  - finance shown step by step, so it makes sense to quants and portfolio managers
+  - simple, transparent factors only: FCF yield, momentum, volatility, sector rotation, FRED macro factors, carry and credit stress
+  - the proprietary factor-timing work in `../facdrone` stays out of this repository: do not read, copy or summarise it
+- **Live provider usage to date:** 60 FMP and 16 FRED requests, with no guard denial.
 
 ## Latest accepted work: cross-asset and macro input verification
 
@@ -9,6 +21,13 @@ Updated 2026-11-18. FMP Batch B (eight event and document operations) is complet
 - Owner decisions: FRED data are public; every story chart names its source in the headline; QOpenBB is an academic MIT-licensed project that ships no provider data.
 - Private harness and raw evidence: `D:/BuildArtifacts/QOpenBB/cross-asset-inputs`. A rerun needs a new reviewed acceptance.
 - Next: the `factor-signals` and `research-stories` specs in the [roadmap](steering/roadmap.md), starting with one thin slice for the commodities-versus-technology story.
+- Limits the modeling slice must handle:
+  - **Fund prices exclude dividends.** Returns built on them are price returns, so a comparison with SPY understates the dividend payers.
+  - **Fund history was requested for two windows only:** 2007 to 2011 and August to November 2026. The start of each fund's history and the years between are not probed.
+  - **Energy series have missing days:** Henry Hub about 1,400 across the 2000s, WTI 122 in 2003.
+  - **STLFSI4 and NFCI are weekly;** the other six series are daily.
+  - **Credit stress rests on those two indexes.** The requirements still exclude the ICE BofA and Moody's spread series, and FRED serves only three years of the ICE series.
+- Open contract gaps: the test does not require a rights label or tie the display status to it; WTI has role `oil-spot` but type `unknown`; the mirrored summary shows 74 rows per fund beside a 2007 earliest date, because it counts the recent window only.
 
 ## Latest publication: FMP Batch B
 
@@ -24,7 +43,7 @@ Updated 2026-11-18. FMP Batch B (eight event and document operations) is complet
 - Local acceptance: eight API operations and five representative widgets, at cumulative 42 FMP requests, zero other providers and zero denials. Split history and the dividend and split calendars have API acceptance only.
 - A production repair of the document query controls (Workspace `ba03ec7`) shipped with this release.
 - [Publication review](../artifacts/reviewed/fmp-expansion-b/5.5-review.md), [release checks](../artifacts/reviewed/fmp-expansion-b/5.4-review.md) and [provider coverage](../docs/provider-coverage.md#batch-b-events-and-documents-checkpoint-2026-11-18).
-- Owner direction for what follows (not yet specified or approved):
+- Owner direction recorded at publication, since refined by discovery (see "Where to resume"); still not specified or approved:
   - ship curated dashboards as product Apps, starting with an Events & Documents App
   - then Batch C (provider DCF, custom DCF, as-reported statements) with a DCF drill-down App that uses a gated, step-by-step validation flow, aligned with the financial-modeling spec
   - bring the analyst Apps to a professional-terminal standard, reusing the existing widgets and chart library to support hypotheses beyond tables
