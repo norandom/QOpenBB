@@ -1702,3 +1702,11 @@ planned_checks = ["independent reference verification and authenticated saved-ru
 test_paths = ["tests/factors/test_real_yield.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Synthetic point-in-time classification and percentage-point change across the exact endpoints. See artifacts/reviewed/factor-signals/price-and-real-yield-methods.md."]
+
+[[capabilities]]
+id = "issuer-free-cash-flow-yield"
+requirements = ["factor-signals/requirements.md:3.1", "factor-signals/requirements.md:3.2", "factor-signals/requirements.md:3.3", "factor-signals/requirements.md:3.4", "factor-signals/requirements.md:3.5"]
+planned_checks = ["independent reference recalculation and authenticated saved evaluation", "live point-in-time eligibility of issuer filings and equity market value"]
+test_paths = ["tests/factors/test_filing_selection.py", "tests/factors/test_fcf_yield.py", "tests/delivery/test_data_image.py"]
+status = "passed"
+evidence = ["Supplied-input filing selection, annual reconciliation, dated market value and yield trace. See artifacts/reviewed/factor-signals/issuer-fcf-yield.md."]

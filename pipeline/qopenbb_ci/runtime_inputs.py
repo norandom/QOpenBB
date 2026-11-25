@@ -28,6 +28,7 @@ RUNTIME_FILES = frozenset('services/data-api/' + name for name in (
     'qopenbb_data/modeling/models/factors/volatility.py',
     'qopenbb_data/modeling/models/factors/real_yield.py',
     'qopenbb_data/modeling/models/factors/filings.py',
+    'qopenbb_data/modeling/models/factors/fcf_yield.py',
     'qopenbb_data/modeling/verification/__init__.py',
     'qopenbb_data/modeling/verification/factors/__init__.py')) | frozenset({
         'contracts/widgets.json', 'contracts/apps.json',

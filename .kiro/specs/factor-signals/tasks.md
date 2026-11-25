@@ -45,7 +45,7 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 2_
   - _Requirements: 3.2, 3.4, 3.5_
 
-- [ ] 8. Calculate dated company FCF yield
+- [x] 8. Calculate dated company FCF yield
   - Verify issuer-level market value on the same observation date, compatible scope, units and currency. Show positive, zero and negative yields, and withheld outputs for a missing or nonpositive denominator or unknown availability. Preserve numerator components and filing references.
   - _Boundary: models/factors/fcf_yield.py and yield tests; apply the complexity gate._
   - _Depends: 7_
