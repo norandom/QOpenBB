@@ -17,6 +17,7 @@ dev = [
     "polars==1.44.2",
     "fastapi==0.143.0",
     "uvicorn==0.54.0",
+    "rfc3339-validator==0.1.4",
     "pyjwt==2.15.1",
     "pytest==9.1.1",
     "pytest-xdist==3.8.0",

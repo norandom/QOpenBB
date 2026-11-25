@@ -91,16 +91,10 @@ def _paths() -> dict:
     return {
         "/models": {"get": _operation("listModels", _ref("ModelListing"), 503)},
         "/widgets.json": {
-            "get": _operation(
-                "discoverWidgets",
-                {"type": "object", "additionalProperties": {"type": "object"}},
-                503,
-            ),
+            "get": _operation("discoverWidgets", _ref("WidgetDiscovery"), 503),
         },
         "/apps.json": {
-            "get": _operation(
-                "discoverApps", {"type": "array", "items": {"type": "object"}}, 503
-            ),
+            "get": _operation("discoverApps", _ref("AppDiscovery"), 503),
         },
         "/evaluations": {
             "post": _operation(

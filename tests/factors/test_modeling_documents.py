@@ -199,3 +199,66 @@ def test_output_nullability_matches_saved_status(bundle, run_fields):
     assert validator.is_valid(payload)
     row["value"] = "1"
     assert not validator.is_valid(payload)
+
+
+@pytest.mark.parametrize(
+    "name,missing",
+    [
+        ("widgets", path)
+        for path in (
+            ("widgetId",),
+            ("endpoint",),
+            ("data",),
+            ("data", "dataKey"),
+            ("data", "table", "columnsDefs"),
+            ("params", 0, "paramName"),
+        )
+    ]
+    + [
+        ("apps", path)
+        for path in (
+            ("name",),
+            ("description",),
+            ("allowCustomization",),
+            ("tabs",),
+            ("tabs", "Saved output", "layout"),
+            ("tabs", "Saved output", "layout", 0, "i"),
+        )
+    ],
+)
+def test_discovery_schemas_require_workspace_fields(bundle, name, missing):
+    api = bundle["openapi.json"]
+    response = api["paths"][f"/{name}.json"]["get"]["responses"]["200"]
+    embedded = api | response["content"]["application/json"]["schema"]
+    standalone = bundle[f"{name}.schema.json"]
+    payload = json.loads(json.dumps(bundle[f"{name}.json"]))
+    validate(embedded, payload)
+    validate(standalone, payload)
+    entry = next(iter(payload.values())) if name == "widgets" else payload[0]
+    for token in missing[:-1]:
+        entry = entry[token]
+    del entry[missing[-1]]
+    assert not Draft202012Validator(embedded).is_valid(payload)
+    assert not Draft202012Validator(standalone).is_valid(payload)
+
+
+@pytest.mark.parametrize(
+    "created_at",
+    [
+        "2024-01-02",
+        "2024-01-02T20:00:00",
+        "2024-02-30T20:00:00Z",
+        "2024-01-02T25:00:00Z",
+        "2024-01-02T20:00:00+25:00",
+        "",
+    ],
+)
+def test_saved_run_schema_rejects_malformed_created_at(bundle, run_fields, created_at):
+    payload = ModelRun.model_validate(run_fields).model_dump(mode="json")
+    schema = bundle["model-run.schema.json"]
+    validate(schema, payload)
+    payload["created_at"] = created_at
+    validator = Draft202012Validator(
+        schema, format_checker=Draft202012Validator.FORMAT_CHECKER
+    )
+    assert not validator.is_valid(payload)

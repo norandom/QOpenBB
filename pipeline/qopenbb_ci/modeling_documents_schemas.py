@@ -2,7 +2,7 @@
 
 from typing import Annotated, Literal
 
-from pydantic import Field, TypeAdapter
+from pydantic import BaseModel, Field, TypeAdapter
 from pydantic.json_schema import GenerateJsonSchema, JsonSchemaMode
 from pydantic_core import CoreSchema
 from qopenbb_data.modeling.contracts.checks import (
@@ -27,6 +27,8 @@ from qopenbb_data.modeling.contracts.results import (
 )
 from qopenbb_data.modeling.contracts.trace import TraceEntry
 from qopenbb_data.modeling.service.evaluation import EvaluationRequest
+
+from .modeling_documents_discovery import AppDiscovery, WidgetDiscovery
 
 DIALECT = "https://json-schema.org/draft/2020-12/schema"
 _DECIMAL_PATTERN = TypeAdapter(FinancialDecimal).json_schema()["pattern"]
@@ -73,7 +75,7 @@ class ModelListing(Contract):
     models: tuple[ModelDescriptor, ...]
 
 
-SCHEMAS: dict[str, tuple[type[Contract], JsonSchemaMode]] = {
+SCHEMAS: dict[str, tuple[type[BaseModel], JsonSchemaMode]] = {
     "evaluation-request": (EvaluationRequest, "validation"),
     "model-run": (ModelRun, "serialization"),
     "model-descriptor": (ModelDescriptor, "serialization"),
@@ -82,6 +84,8 @@ SCHEMAS: dict[str, tuple[type[Contract], JsonSchemaMode]] = {
     "input-snapshot": (InputSnapshot, "validation"),
     "widget-projection": (WidgetProjection, "serialization"),
     "safe-error": (SafeError, "serialization"),
+    "widgets": (WidgetDiscovery, "serialization"),
+    "apps": (AppDiscovery, "serialization"),
 }
 
 
@@ -89,7 +93,11 @@ class WireSchema(GenerateJsonSchema):
     def model_schema(self, schema: CoreSchema) -> dict:
         result = super().model_schema(schema)
         name = schema["cls"].__name__
-        if self.mode == "serialization" and name != "SafeError":
+        if (
+            self.mode == "serialization"
+            and "properties" in result
+            and name != "SafeError"
+        ):
             # The saved-run and projection paths dump defaults and explicit nulls.
             result["required"] = list(result["properties"])
         if name in {"Assumption", "OutputResult", "ProjectedOutput"}:
