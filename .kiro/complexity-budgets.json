@@ -291,8 +291,7 @@
           "spec": "factor-signals",
           "include": ["services/data-api/qopenbb_data/modeling/**"],
           "files": [
-            "services/data-api/qopenbb_data/modeling/__init__.py",
-            "services/data-api/qopenbb_data/modeling/contracts/__init__.py",
+            "services/data-api/qopenbb_data/modeling/__init__.py", "services/data-api/qopenbb_data/modeling/contracts/__init__.py",
             "services/data-api/qopenbb_data/modeling/contracts/common.py", "services/data-api/qopenbb_data/modeling/contracts/inputs.py",
             "services/data-api/qopenbb_data/modeling/contracts/descriptors.py", "services/data-api/qopenbb_data/modeling/contracts/checks.py",
             "services/data-api/qopenbb_data/modeling/contracts/trace.py", "services/data-api/qopenbb_data/modeling/contracts/results.py",
@@ -301,6 +300,7 @@
             "services/data-api/qopenbb_data/modeling/models/factors/__init__.py", "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
             "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py", "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
             "services/data-api/qopenbb_data/modeling/models/factors/volatility.py", "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+            "services/data-api/qopenbb_data/modeling/models/factors/filings.py",
             "services/data-api/qopenbb_data/modeling/verification/__init__.py",
             "services/data-api/qopenbb_data/modeling/verification/factors/__init__.py"
           ]

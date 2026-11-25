@@ -39,9 +39,9 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 3_
   - _Requirements: 2.1, 2.2, 2.3_
 
-- [ ] 7. Resolve the issuer's trailing cash-flow period
+- [x] 7. Resolve the issuer's trailing cash-flow period
   - Select four consecutive standalone quarters or an annual total for the same trailing period. Prove that overlapping flows, incomplete coverage and a filing published after the historical decision time cannot enter the numerator. Normalize capex spending only with an evidenced sign convention.
-  - _Boundary: models/factors/fcf_yield.py and filing-selection tests; apply the complexity gate._
+  - _Boundary: models/factors/filings.py, consumed by fcf_yield.py, and filing-selection tests; apply the complexity gate._
   - _Depends: 2_
   - _Requirements: 3.2, 3.4, 3.5_
 
