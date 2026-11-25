@@ -1,7 +1,44 @@
 {
   "feature_name": "market-data-integrations",
   "created_at": "2026-10-19T09:18:43.9949215Z",
-  "updated_at": "2026-11-10",
+  "updated_at": "2026-11-17",
+  "fmp_expansion": {
+    "plan": "fmp-expansion-plan.md",
+    "inventory": "fmp-expansion-inventory.md",
+    "plan_review": "fmp-expansion-review.md",
+    "candidate_operations": 24,
+    "batches": {"A": 11, "B": 8, "C": 5},
+    "current_batch": "A",
+    "design": "fmp-expansion-a-design.md",
+    "design_review": "fmp-expansion-a-review.md",
+    "review_status": "passed",
+    "reviewer_model": "gpt-6-astra",
+    "repair_passes": 1,
+    "design_generated": true,
+    "design_approved": true,
+    "design_approval": "Owner approved the first eleven-endpoint design in conversation on 2026-11-17; reviewed SHA-256 59ca002fc71585e20edfb9dc431b35605e8f2bff2d78b8d04543f7f552cb3a7a.",
+    "tasks_generated": true,
+    "tasks_document": "fmp-expansion-a-tasks.md",
+    "tasks_review": {
+      "status": "passed",
+      "mode": "independent",
+      "model": "gpt-6-astra",
+      "record": "fmp-expansion-a-task-review.md",
+      "repair_passes": 1,
+      "executable_tasks": 26,
+      "parallel_adapter_tasks": 11,
+      "task_sha256": "dad09e093184ef53a53ceecc569ed4b4e8119358f20e82d51c47087957fcadea"
+    },
+    "tasks_approved": true,
+    "tasks_approval": "Owner approved execution of the 26-task Batch A plan and its 48-request FMP ceiling in conversation on 2026-11-17. Approved task artifact SHA-256 dad09e093184ef53a53ceecc569ed4b4e8119358f20e82d51c47087957fcadea.",
+    "ready_for_implementation": true,
+    "phase": "implementation-in-progress",
+    "approved_live_request_ceiling": 48,
+    "proposed_live_request_ceiling": 48,
+    "implemented_operations": 0,
+    "new_live_requests": 0,
+    "note": "Historical umbrella approvals below retain their original initial-batch scope. New adapter tasks depend on reviewed characterization and public HTTP/SDK/Fetcher admission prerequisites. No new entitlement or consumer acceptance."
+  },
   "language": "en",
   "phase": "tasks-generated",
   "approvals": {
@@ -89,7 +126,7 @@
       "evidence": "../../../artifacts/reviewed/financial-input-milestone/accepted.md"
     },
     "broader_scope": "open",
-    "follow_on_plan": "tasks.md#follow-on-scope-not-executable-in-this-batch"
+    "follow_on_plan": "fmp-expansion-plan.md"
   },
   "next_amendment": {
     "name": "periodic-query-provenance",

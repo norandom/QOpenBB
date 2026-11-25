@@ -12,6 +12,8 @@ Update the maintained core and FMP provider together. Older Python `FinancialRes
 
 ## Published coverage versus our implementation
 
+The [2026-11-17 expansion plan](../.kiro/specs/market-data-integrations/fmp-expansion-plan.md) targets 24 additional operations in batches of 11 financial/valuation, eight events/content and five DCF/as-reported operations. The [source inventory](../.kiro/specs/market-data-integrations/fmp-expansion-inventory.md) identifies 19 retained-adapter candidates and five new-contract candidates. Independent planning review passed; these are planned additions, not new installed, entitled or accepted endpoints. The ten-model baseline below is unchanged.
+
 | Research family | Published FMP coverage to map into widgets |
 | --- | --- |
 | Discovery/reference | Name, symbol, CIK, ISIN and CUSIP search; screeners; directories and listing variants |

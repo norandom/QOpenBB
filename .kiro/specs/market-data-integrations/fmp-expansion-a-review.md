@@ -1,0 +1,60 @@
+# Batch A final repair-pass decision
+
+PASS for owner design review and, after design approval, bounded task generation. This does not approve implementation, establish runtime readiness or certify provider entitlement. This second bounded review supersedes the initial NO-GO below; its findings remain preserved as review history.
+
+Reviewed 2026-11-17: repaired draft, 118 lines, SHA-256 `59ca002fc71585e20edfb9dc431b35605e8f2bff2d78b8d04543f7f552cb3a7a`. Read-only review against previously inspected accepted API/core and root service contracts; no implementation, builds, tests or live requests.
+
+The repaired input-admission design now names exact ownership and enforcement points: the small native Container receives two validation calls around configured defaults, the HTTP policy checks raw keys/multiplicity before FastAPI filtering, and direct Fetcher calls use strict selected query models. Generated SDK, HTTP and Fetcher acceptance surfaces are explicit; internal CommandRunner/Query calls are not independently certified. Existing SDK provider resolution is accurately distinguished from REST explicit-provider policy. The two-pass checks preserve explicit unsupported default-valued extras and explicit invalid null/bool inputs without a broad CommandRunner refactor. These are implementable contract decisions, with real entry-point regressions required before adapter fan-out.
+
+The repair also fixes singleton duplicate handling, deterministic segment clipping/order, parsed-label preservation limits, free-float ratio/zero semantics, ISO effective dates, metadata URL restrictions and the expected eleven-model discovery assertion. Boundary sections and exact file responsibilities are populated. Umbrella traceability and explicitly excluded families retain remaining requirements; this amendment does not claim broad family completion.
+
+The remaining schema/alias/annotation manifests, official parameter characterization and focused commands are legitimate outputs of a concrete controller prerequisite with named artifact paths and stop conditions. They are not hidden implementation discretion or prerequisites to writing the task graph. A contradiction reopens only the affected endpoint. Adapter execution remains blocked until characterization and admission prerequisites have independent acceptance; all whole-file 400/300/50 limits remain applicable. No critical design defects remain in this bounded repair pass.
+
+## Preserved initial review
+# Batch A independent design review
+
+NO-GO for an executable eleven-adapter task plan in the current draft. One integration contract needs a concrete owner and enforcement design; the remaining schema and source characterization can be a bounded prerequisite task. The eleven-operation scope, retained-model reuse and financial limitations are otherwise suitable for this delivery slice. This is design review, not owner approval, implementation verification or entitlement acceptance.
+
+Reviewed 2026-11-17 against `batch-a-design-draft.md` (96 lines), accepted API/core sources under `D:/BuildArtifacts/QOpenBB/company-research/data-api`, root service sources in sibling `root`, market-data requirements/design and tasks line 249, design-review-gate, delegation, complexity, documentation, testing and CI steering. Requested core product/tech/structure files are absent in the canonical checkout; the draft records their absence in the accepted worktrees. No API requests, builds, tests, dependency changes or credential access were performed.
+
+## Required repair: reject inputs before native filtering
+
+Draft lines 33 and 47 promise rejection of repeated/malformed inputs and unsupported parameters before I/O. Lines 76-78 assign adapters to workers while treating shared service policy as an inspection target only. The existing policy does not provide this behavior:
+
+- `root/services/data-api/qopenbb_data/financial_policy.py:15-62` compiles only provider choices and checks only provider multiplicity/value.
+- `data-api/openbb_platform/core/openbb_core/app/query.py:36-64` filters provider extras and warns instead of rejecting unsupported values. Values equal to defaults are omitted entirely.
+- `data-api/openbb_platform/core/openbb_core/provider/abstract/query_params.py:61` defaults to allowing extras. More fundamentally, strict adapter validation cannot recover query keys or repeated HTTP values already discarded upstream.
+
+Minimal repair: explicitly assign the controller a bounded extension of the existing outer service policy, driven by the selected installed variant query schema, to reject unknown keys, unsupported selected-provider parameters and repeated scalar parameters before native dispatch. Specify the allowed native control parameters separately, preserve existing baseline behavior outside these eleven FMP variants, and return the existing safe 422/invalid_parameters envelope. Adapter query models still enforce their concrete field bounds and explicit null/bool rejection. Add mounted-native tests proving zero Fetcher/network calls for rejected inputs, including an unsupported parameter with its default value and repeated symbol/page.
+
+Preserve requirement 2.4 on native Python as well as HTTP. The concrete native seam is `Query.filter_extra_params`, before its loop drops unsupported fields, using the selected registered query subclass and an opt-in strict `extra=forbid` policy for these new FMP variants. Direct Fetcher dict validation also uses that strict subclass. Query is only 85 physical lines at this baseline; a bounded helper and explicit controller ownership can preserve 400/300/50 caps without changing other providers.
+
+This hook alone is insufficient for caller-presence semantics: its input is already `asdict(extra_params)`, and native defaults are injected. Explicit unsupported values equal to defaults cannot be distinguished from omitted defaults there. `command_runner.py:183-207` is an earlier concrete seam: `ParametersBuilder.validate_kwargs` still has the raw extra-parameter dict, but currently warns only after creating the validation model. The prerequisite must characterize and freeze admission at that raw-input boundary, or preserve caller-key provenance to the Query guard, using the selected registered provider model and an explicit allowlist of native controls. Never reject automatically populated other-provider defaults as user input. This is a controller-owned shared prerequisite before adapter fan-out, with native Python regressions covering unknown keys, another provider's nondefault extra, and explicit unsupported default values.
+
+`command_runner.py` is 709 physical lines: any required modification needs a cohesive ParametersBuilder extraction (new helper/module ownership and import updates) or a narrowly reviewed measured exception, not an implicit exemption. Freeze the exact hook after bounded characterization; a generic promise that adapter `extra=forbid` will solve dropped inputs is not an implementable design. This is a local design gap, not a reason to reopen umbrella requirements or invent a query framework.
+
+## Freeze tasks versus design decisions
+
+The final section currently calls all remaining items prerequisites to executable task generation. Most are suitable outputs of a single controller-owned characterization task, with dependent adapter tasks blocked until its reviewed output exists:
+
+- Exact retained schema/alias manifests, field descriptions and annotation maps; nullable dates and source units; portable commands and existing coverage paths; current official parameter spellings. Source/fixture characterization is real work, not assumed verification. A schema incompatibility or endpoint-contract contradiction must stop only the affected lane for design revision.
+- The singleton duplicate rule is already decided in lines 41 and 44: fail validation. Remove the contradictory unresolved choice in line 94.
+- Fix the segment clipping policy now: preserve provider outer-row order and inner segment iteration order; flatten first and keep the first 1000 rows; disclose possible fiscal-period splitting and unknown completeness. Preserve duplicate labels across source rows. Duplicate JSON object keys cannot be recovered by an ordinary parser, so do not promise preservation beyond the received parsed representation. This is a design choice, not a fact waiting for live discovery.
+- Freeze free-float as a ratio with scale 1, transforming provider percentage by division by 100 and preserving zero/null separately. The standard schema has frontend multiplication by 100; the retained adapter divides by 100 but incorrectly turns zero into null. The proposed null-versus-zero tests already require repairing that retained defect. Fixtures verify the source convention rather than letting a worker select the public unit.
+
+Once these edits and the input-admission seam are concrete, task generation can proceed with a blocked-by-characterization dependency. There is no need to complete live entitlement checks, freeze every fixture byte or run builds merely to approve that bounded task sequence. The 48-request ledger remains a proposal subject to its stated review before execution.
+
+## Contract checks and strengths
+
+- Route/model identities checked against existing equity routers are consistent, including `ShareStatistics`, `CashFlowStatementGrowth` and the existing segment routes. Restoring only selected provider modules avoids an unnecessary router rewrite.
+- Metadata v1 already permits `page` in `effective_query` (`financial_metadata.py:15-21`), `value_origin=estimate`, arbitrary unit strings and field-level date references. Resolved query dates must be ISO strings, not date objects (`195-207`). No new metadata fields are needed for the proposed semantics. The FAQ URL with a query string is acceptable as a document citation but cannot be copied into `FinancialSource.documentation`, whose validator forbids query/fragment URLs (`52-63`).
+- Static flattened segment fields fit `RevenueBusinessLineData`; dynamic result columns are unnecessary. `FinancialDataAnnotation` requires templates to match every canonical field exactly and date/currency references to point to real fields (`financial_annotations.py:133-145`). Annotate forecast period end as forecast period end in definitions/basis; do not label it publication or acquisition time. Existing limited observation_provenance is for FRED realtime intervals, not an arbitrary per-row provenance dictionary.
+- The proposed clip/provider response policies fit existing annotation validation. Singleton cardinality remains an adapter check because provider mode cannot declare max_rows. The exact 366-day market-cap condition can be described in date-field schema descriptions and enforced in validation; the existing procedural annotation supports calendar years, not a new max_days field.
+- Fail-closed discovery needs an explicit join assertion that all eleven expected model keys are projected. Current `app.py:31-34` discovers models with at least one annotation; a model missing both is otherwise silently absent from the financial projection. Test the expected batch set against actual installed output; do not claim the current runtime automatically rejects every wholly unannotated registration.
+- Independent acceptance states, one-request bounds, safe failures, unknown vintage/currency/basis, disjoint worker ownership and whole-file 400/300/50 caps are well specified. Existing coverage paths named in the draft exist. The umbrella design retains full requirement traceability; this amendment intentionally covers a bounded subset and does not close other families.
+
+## Next decision
+
+Repair the input-admission seam and freeze the small policy choices above, then re-review those changes. Record the remaining schema/documentation work as a concrete first task with an exact output and stop condition. Do not mark adapter tasks implementation-ready until that task passes independent review. No broad architectural redesign is indicated.
+
+
