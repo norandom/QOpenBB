@@ -1734,3 +1734,11 @@ planned_checks = ["factor-specific references and saved-run integration"]
 test_paths = ["tests/factors/test_validation_lifecycle.py", "tests/factors/test_validation_run_lifecycle.py", "tests/factors/test_reference_verification.py", "tests/factors/test_import_boundaries.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Supplied-input rule execution and independent verification on test-only arithmetic. See artifacts/reviewed/factor-signals/financial-rule-lifecycle.md."]
+
+[[capabilities]]
+id = "etf-references"
+requirements = ["factor-signals/requirements.md:1.1", "factor-signals/requirements.md:1.2", "factor-signals/requirements.md:1.3", "factor-signals/requirements.md:1.4", "factor-signals/requirements.md:4.1", "factor-signals/requirements.md:4.4"]
+planned_checks = ["authenticated saved-run integration"]
+test_paths = ["tests/factors/test_etf_reference.py"]
+status = "passed"
+evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/factor-signals/etf-references.md."]

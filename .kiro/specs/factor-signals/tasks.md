@@ -69,7 +69,7 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 10_
   - _Requirements: 4.2, 4.3_
 
-- [ ] 12. Independently verify the ETF factors and comparison
+- [x] 12. Independently verify the ETF factors and comparison
   - From dated input fixtures independently reconstruct the session window, both price metrics and ordered spread. Feed candidate outputs to the foundation verifier; perturb a divisor, observation date and spread direction and show each discrepancy fails.
   - _Boundary: verification/factors/ ETF and comparison references and reference tests; apply the complexity gate._
   - _Depends: 9 and foundation rule runner (task 5)_
