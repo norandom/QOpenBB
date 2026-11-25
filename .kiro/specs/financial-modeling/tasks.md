@@ -50,7 +50,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 4.1_
   - _Requirements: 1.1, 2.1_
 
-- [ ] 5. (P) Execute financial rules and independent verification
+- [x] 5. (P) Execute financial rules and independent verification
   - Implement precondition/invariant/postcondition lifecycle and dependent-output statuses. Preserve unknown/error/not-applicable distinctions, non-overridable mathematical failures, unit-aware tolerances and separately recorded permitted policy exceptions.
   - Add independently expressed Python reference verification on actual supplied inputs, separate from production expressions. Use test-only arithmetic to prove the lifecycle; future formulas retain their own approvals.
   - Done: failed postconditions withhold affected outputs; unavailable checks cannot pass; independent mismatches and changed inputs cannot retain verified status. Meaningful mutation of the test-only calculation is detected by the reference.

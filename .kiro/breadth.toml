@@ -1726,3 +1726,11 @@ planned_checks = ["independent reference verifier and authenticated saved-run ac
 test_paths = ["tests/factors/test_study_schedule.py", "tests/factors/test_study_groups.py", "tests/factors/test_diagnostics.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Synthetic point-in-time study, regime-conditioned hit rate and slugging, and chronological drawdown. See artifacts/reviewed/factor-signals/timing-study.md."]
+
+[[capabilities]]
+id = "financial-rule-lifecycle"
+requirements = ["financial-modeling/requirements.md:2.1", "financial-modeling/requirements.md:2.2", "financial-modeling/requirements.md:2.3", "financial-modeling/requirements.md:2.4", "financial-modeling/requirements.md:2.5", "financial-modeling/requirements.md:2.6", "financial-modeling/requirements.md:2.7", "financial-modeling/requirements.md:3.2", "financial-modeling/requirements.md:3.3", "financial-modeling/requirements.md:3.5"]
+planned_checks = ["factor-specific references and saved-run integration"]
+test_paths = ["tests/factors/test_validation_lifecycle.py", "tests/factors/test_validation_run_lifecycle.py", "tests/factors/test_reference_verification.py", "tests/factors/test_import_boundaries.py", "tests/delivery/test_data_image.py"]
+status = "passed"
+evidence = ["Supplied-input rule execution and independent verification on test-only arithmetic. See artifacts/reviewed/factor-signals/financial-rule-lifecycle.md."]

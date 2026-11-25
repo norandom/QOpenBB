@@ -33,6 +33,12 @@ RUNTIME_FILES = frozenset('services/data-api/' + name for name in (
     'qopenbb_data/modeling/models/factors/study_schedule.py',
     'qopenbb_data/modeling/models/factors/study_groups.py',
     'qopenbb_data/modeling/models/factors/diagnostics.py',
+    'qopenbb_data/modeling/validation/__init__.py',
+    'qopenbb_data/modeling/validation/outputs.py',
+    'qopenbb_data/modeling/validation/rules.py',
+    'qopenbb_data/modeling/validation/tolerance.py',
+    'qopenbb_data/modeling/verification/reference.py',
+    'qopenbb_data/modeling/validation/lifecycle.py',
     'qopenbb_data/modeling/verification/__init__.py',
     'qopenbb_data/modeling/verification/factors/__init__.py')) | frozenset({
         'contracts/widgets.json', 'contracts/apps.json',

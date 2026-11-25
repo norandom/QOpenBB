@@ -6,7 +6,7 @@ import pytest
 
 DOMAIN = Path(__file__).resolve().parents[2] / "services/data-api/qopenbb_data/modeling"
 PACKAGE = "qopenbb_data.modeling"
-LAYERS = ("contracts", "models", "verification")
+LAYERS = ("contracts", "models", "validation", "verification")
 DOMAIN_DEPENDENCIES = {
     "__future__", "abc", "bisect", "calendar", "collections", "copy", "dataclasses",
     "datetime", "decimal", "enum", "fractions", "functools", "graphlib", "hashlib", "itertools",
@@ -43,6 +43,15 @@ def boundary_violations(root):
         # Contracts and the package initializer cannot re-export production formulas.
         allowed_layers = {"contracts", relative.parts[0]} & set(LAYERS)
         allowed_prefixes = {f"{PACKAGE}.{layer}" for layer in allowed_layers}
+        if relative.parts[0] == "validation":
+            allowed_prefixes.add(f"{PACKAGE}.models.protocol")
+        if relative.as_posix() == "validation/lifecycle.py":
+            allowed_prefixes.add(f"{PACKAGE}.verification.reference")
+        if relative.as_posix() == "verification/reference.py":
+            allowed_prefixes.update({
+                f"{PACKAGE}.validation.outputs.ordered_outputs",
+                f"{PACKAGE}.validation.tolerance.within_tolerance",
+            })
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for line, name in imported_names(tree, package):
             if name.partition(".")[0] in DOMAIN_DEPENDENCIES:

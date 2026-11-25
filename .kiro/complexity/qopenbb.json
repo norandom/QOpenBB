@@ -1,0 +1,126 @@
+{
+  "id": "qopenbb",
+  "repository": "local:QOpenBB",
+  "revision": "maintained-working-tree",
+  "root": ".",
+  "mode": "all",
+  "owners": [
+    {
+      "spec": "native-development-workflow",
+      "include": ["**/*"],
+      "files": ["pipeline/qopenbb_ci/windows_private_files.py", "pipeline/qopenbb_ci/windows_security.py", "pipeline/qopenbb_ci/session_files.py", "pipeline/qopenbb_ci/posix_private_files.py", "pipeline/qopenbb_ci/runtime_descriptor.py", "pipeline/qopenbb_ci/compose_runtime.py", "pipeline/qopenbb_ci/compose_checks.py", "pipeline/qopenbb_ci/compose_readiness.py", "pipeline/compose.runtime.yaml", "verification/runtime-descriptor.ts", "pipeline/dev.ps1", "pipeline/qopenbb_ci/native_environment.py", "pipeline/qopenbb_ci/native_actions.py", "pipeline/qopenbb_ci/portable_runtime.py", "pipeline/qopenbb_ci/checkpoint_cli.py", "pipeline/qopenbb_ci/state_files.py", "pipeline/qopenbb_ci/windows_state_files.py", "pipeline/qopenbb_ci/container_command.py", ".kiro/complexity/workspace.json", "pipeline/qopenbb_ci/compose_lifecycle.py", "pipeline/qopenbb_ci/compose_intent.py", "pipeline/qopenbb_ci/workspace_runtime.py", "pipeline/qopenbb_ci/workspace_smoke.py"]
+    },
+    {
+      "spec": "openbb-self-service",
+      "include": ["**/*"],
+      "files": [".kiro/spec-ownership.toml", "compose.yaml", ".github/workflows/prototype.yml", ".github/workflows/codeql.yml", ".github/codeql/codeql-config.yml", "pipeline/ci.sh", "pipeline/qopenbb_ci/build_cli.py", "pipeline/qopenbb_ci/alpha_cli.py", "pipeline/qopenbb_ci/publication.py", "pipeline/qopenbb_ci/publish_cli.py", "pipeline/qopenbb_ci/quality_cli.py", ".dockerignore", ".gitattributes", ".gitignore", ".node-version", ".python-version", ".dagger/pyproject.toml", ".dagger/src/qopenbb/__init__.py", ".dagger/src/qopenbb/images.py", ".dagger/src/qopenbb/export.py", ".dagger/src/qopenbb/workspace.py", ".dagger/src/qopenbb/dockerfile.py", ".dagger/src/qopenbb/data_api.py", "pipeline/qopenbb_ci/runtime_inputs.py", "pipeline/qopenbb_ci/sources.py", "pipeline/qopenbb_ci/staging.py", "pipeline/qopenbb_ci/images.py", "pipeline/qopenbb_ci/image_cli.py", "pipeline/qopenbb_ci/provenance.py", "pipeline/qopenbb_ci/catalog_runtime.py", "pipeline/qopenbb_ci/catalog_upstream.py", "pipeline/pyproject.toml", "pipeline/qopenbb_ci/__init__.py", "pipeline/qopenbb_ci/cli.py", "pipeline/qopenbb_ci/contracts.py", "pipeline/qopenbb_ci/source_contract.py", "pipeline/qopenbb_ci/checks.py", "pipeline/qopenbb_ci/schemas.py", "pipeline/qopenbb_ci/configuration.py", "pipeline/qopenbb_ci/source_filter.py", "contracts/runtime.json", "contracts/sources.json", "contracts/datasets.json", "verification/.npmrc", "verification/package.json", "verification/provider/pyproject.toml", "services/data-api/pyproject.toml", "services/data-api/qopenbb_data/__init__.py", "services/data-api/qopenbb_data/config.py", "services/data-api/qopenbb_data/app.py", "verification/playwright.config.ts", "verification/financial-workspace.config.ts", "verification/fixture_server.ts", "verification/diagnostics.ts", "verification/capture.ts", "verification/evidence.ts", "verification/runner.ts", "verification/runner.py", ".kiro/complexity-budgets.json", ".kiro/complexity/qopenbb.json", ".kiro/complexity/data-api.json", "tools/quality/__init__.py", "tools/quality/complexity.py", "tools/quality/python_units.py", "tools/quality/scope.py", "tools/quality/changes.py", "tools/quality/syntax_units.ts", "tools/quality/ts_adapter.py", "tools/quality/exceptions.py", "tools/quality/tsconfig.json"]
+    },
+    {
+      "spec": "factor-signals",
+      "include": ["services/data-api/qopenbb_data/modeling/**"],
+      "files": [
+        "services/data-api/qopenbb_data/modeling/__init__.py", "services/data-api/qopenbb_data/modeling/contracts/__init__.py",
+        "services/data-api/qopenbb_data/modeling/contracts/common.py", "services/data-api/qopenbb_data/modeling/contracts/inputs.py",
+        "services/data-api/qopenbb_data/modeling/contracts/descriptors.py", "services/data-api/qopenbb_data/modeling/contracts/checks.py",
+        "services/data-api/qopenbb_data/modeling/contracts/trace.py", "services/data-api/qopenbb_data/modeling/contracts/results.py",
+        "services/data-api/qopenbb_data/modeling/models/__init__.py", "services/data-api/qopenbb_data/modeling/models/protocol.py", "services/data-api/qopenbb_data/modeling/models/registry.py",
+        "services/data-api/qopenbb_data/modeling/models/factors/__init__.py", "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+        "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py", "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+        "services/data-api/qopenbb_data/modeling/models/factors/volatility.py", "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+        "services/data-api/qopenbb_data/modeling/models/factors/filings.py", "services/data-api/qopenbb_data/modeling/models/factors/fcf_yield.py",
+        "services/data-api/qopenbb_data/modeling/models/factors/study_schedule.py", "services/data-api/qopenbb_data/modeling/models/factors/study_groups.py", "services/data-api/qopenbb_data/modeling/models/factors/diagnostics.py",
+        "services/data-api/qopenbb_data/modeling/models/factors/comparison.py", "services/data-api/qopenbb_data/modeling/verification/__init__.py",
+        "services/data-api/qopenbb_data/modeling/validation/__init__.py",
+        "services/data-api/qopenbb_data/modeling/validation/outputs.py",
+        "services/data-api/qopenbb_data/modeling/validation/rules.py",
+        "services/data-api/qopenbb_data/modeling/validation/tolerance.py",
+        "services/data-api/qopenbb_data/modeling/verification/reference.py",
+        "services/data-api/qopenbb_data/modeling/validation/lifecycle.py",
+        "services/data-api/qopenbb_data/modeling/verification/factors/__init__.py"
+      ]
+    },
+    {
+      "spec": "market-data-integrations",
+      "include": ["services/data-api/qopenbb_data/*", "pipeline/qopenbb_ci/catalog_financial.py"],
+      "patterns": ["services/data-api/qopenbb_data/financial_query_policy.py", "services/data-api/qopenbb_data/financial_http_quarter.py"],
+      "files": ["pipeline/qopenbb_ci/catalog_financial.py", "services/data-api/qopenbb_data/financial_openapi.py", "services/data-api/qopenbb_data/financial_errors.py", "services/data-api/qopenbb_data/financial_policy.py", "services/data-api/qopenbb_data/financial_catalog.py"]
+    },
+    {
+      "spec": "analyst-workspace",
+      "include": ["**/*"],
+      "files": ["services/data-api/qopenbb_data/gallery.py", "pipeline/qopenbb_ci/gallery_projection.py", "pipeline/qopenbb_ci/gallery_templates.py", "pipeline/qopenbb_ci/gallery_cli.py"]
+    },
+    {
+      "spec": "analyst-workspace/company-research",
+      "include": ["pipeline/qopenbb_ci/*"],
+      "files": ["pipeline/qopenbb_ci/catalog.py", "pipeline/qopenbb_ci/catalog_cli.py", "pipeline/qopenbb_ci/catalog_research.py", "pipeline/qopenbb_ci/catalog_batch_b.py"]
+    }
+  ],
+  "exclusions": [
+    {
+      "patterns": ["contracts/gallery/data.json", "contracts/gallery/catalog.json"],
+      "reason": "Deterministic historical gallery outputs; generator logic remains capped",
+      "source": "pipeline/qopenbb_ci/gallery_cli.py with retained FMP captures and chart-state.json"
+    },
+    {
+      "patterns": ["contracts/gallery/chart-state.json"],
+      "reason": "Native saved-state and dataset schema fixture exercised by the QOpenBB integration gate",
+      "source": "vendor/workspace/terminalpro/tests/unit/chart-compatibility/galleryTemplate.test.ts"
+    },
+    {
+      "patterns": ["contracts/routes.json", "contracts/openapi.json", "contracts/widgets.json", "contracts/apps.json", "contracts/catalog-report.json", "contracts/compatibility.json", "contracts/provenance.json", "contracts/hashes.json"],
+      "reason": "Canonical installed API and supported catalog snapshots; generator code remains capped",
+      "source": "pipeline/qopenbb_ci/catalog_cli.py using the identified data image and verified owned upstream utilities"
+    },
+    {
+      "patterns": ["schemas/*.schema.json"],
+      "reason": "Deterministic public schemas generated from capped maintained Python boundary models",
+      "source": "pipeline/qopenbb_ci/schemas.py; python -m qopenbb_ci.schemas --output schemas"
+    },
+    {
+      "patterns": [".git/**", "**/__pycache__/**", "**/.pytest_cache/**", "**/.ruff_cache/**", "**/.venv/**", "**/node_modules/**"],
+      "reason": "Repository metadata and installed or cached dependencies",
+      "source": "Git, CPython, pytest, Ruff, uv and pnpm"
+    },
+    {
+      "patterns": ["vendor/**", ".upstream/**"],
+      "reason": "Acquisition roots are inventoried separately as owned forks; this exclusion does not apply inside fork scope",
+      "source": "sources.lock.json"
+    },
+    {
+      "patterns": ["run_this.sh", "artifacts/**", "data/**", "backups/**", "test-results/**", "playwright-report/**", "dist/**", "htmlcov/**", ".coverage*", "coverage.xml"],
+      "reason": "Disposable evidence, private runtime state, build output and temporary owner command handoff",
+      "source": "Verification/build tools, operator runtime and .kiro/steering/testing.md"
+    },
+    {
+      "patterns": [".env", ".env.*", "secrets/**", "*.pem", "*.key"],
+      "reason": "Private operator configuration and empty public configuration samples",
+      "source": "Operator configuration; never read for size inventory"
+    },
+    {
+      "patterns": ["docs/**", "*.md", ".agents/**", ".codex/**", ".kiro/settings/**", ".kiro/specs/**", ".kiro/steering/**", ".kiro/breadth.toml"],
+      "reason": "Documentation, agent instructions and acceptance metadata",
+      "source": "Project memory and specification workflow"
+    },
+    {
+      "patterns": ["sources/**", "sources.lock.json", "pipeline/tools.lock.json"],
+      "reason": "Acquisition provenance, copied notices and pinned tool input data",
+      "source": "Source/tool acquisition inventory"
+    },
+    {
+      "patterns": ["tests/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*", "**/test_*.py", "**/*_test.py"],
+      "reason": "Test sources and fixtures are outside production size caps",
+      "source": "pytest and Playwright suites"
+    },
+    {
+      "patterns": ["**/uv.lock", "**/pnpm-lock.yaml", "**/package-lock.json", "**/bun.lock", "**/bun.lockb"],
+      "reason": "Deterministic dependency lockfiles",
+      "source": "uv, pnpm, npm and Bun lock resolution"
+    },
+    {
+      "patterns": [".git"],
+      "reason": "Git worktree metadata pointer; not maintained production code",
+      "source": "git worktree add --detach"
+    }
+  ]
+}
