@@ -12,6 +12,11 @@ Updated 2026-11-18, end of day. FMP Batch B (eight event and document operations
   - finance shown step by step, so it makes sense to quants and portfolio managers
   - simple, transparent factors only: FCF yield, momentum, volatility, sector rotation, FRED macro factors, carry and credit stress
   - the proprietary factor-timing work in `../facdrone` stays out of this repository: do not read, copy or summarise it
+- **Parked work, saved before the system switch of 2026-11-25 (not merged, not reviewed):**
+  - `backup/source-checkout-2026-11-25` holds the uncommitted state of the old `D:/Source/QOpenBB` checkout, on base `d8a2d28`. Its only work missing from `main` is the unfinished renderer binding of October: `pipeline/qopenbb_ci/catalog_renderers.py`, `tests/contracts/test_renderers.py` and the `--bind-renderers` option in `catalog_cli.py`. It binds three widgets only and predates Company Research and FMP Batches A and B. Owner decision: leave it parked. Reviving it belongs to the `openbb-self-service` spec.
+  - `backup/company-research-worktree-2026-11-25` holds older document and spec versions from the Company Research worktree, on base `3b47ead`. `main` supersedes them.
+  - Do not merge either branch as is: most files are older copies of files that `main` has since advanced.
+- **Not in Git:** the private harness and raw provider evidence under `D:/BuildArtifacts/QOpenBB/cross-asset-inputs`, and the provider keys in `.env`. Copy them by hand to keep them.
 - **Live provider usage to date:** 60 FMP and 16 FRED requests, with no guard denial.
 
 ## Latest accepted work: cross-asset and macro input verification
