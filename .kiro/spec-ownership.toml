@@ -1,7 +1,7 @@
 # Scope handover, not test acceptance; historical criteria/evidence stay intact.
 schema_version = 1
 roadmap = "docs/roadmap.md"
-active_delivery = "analyst-workspace: IA-A Company Research input-readiness gap assessment complete; IA-B prerequisite contract next; market-data-integrations retains provider ownership; financial-modeling runtime remains queued"
+active_delivery = "factor-signals: build the model contracts in the existing data API; market-data-integrations owns the provider inputs and research-stories owns the dashboard"
 
 [[ownership]]
 spec = "openbb-self-service"
@@ -55,8 +55,8 @@ release_gate = false
 
 [[ownership]]
 spec = "financial-modeling"
-scope = "Separate-repository house methods, scenario execution, executable financial validation, reproducibility and model service contracts; QOpenBB owns widget consumer integration"
+scope = "House methods, executable financial validation and reproducible model contracts in the existing QOpenBB data API; Workspace owns widget consumer integration"
 legacy_tasks = []
-state = "specification-stub; runtime implementation deferred"
+state = "contract foundation in progress"
 depends_on = ["market-data-integrations: verified inputs for each model slice"]
 release_gate = false

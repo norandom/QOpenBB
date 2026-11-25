@@ -19,13 +19,9 @@ FINANCIAL_FILES = tuple('services/data-api/qopenbb_data/' + name for name in (
     'financial_errors.py', 'financial_query_policy.py', 'financial_http_quarter.py')) + ('docs/reference/provider-coverage.json',)
 
 ROOT = Path(__file__).resolve().parents[2]
-MODELING_PACKAGES = (
-    'modeling', 'modeling/contracts', 'modeling/models', 'modeling/models/factors',
-    'modeling/verification', 'modeling/verification/factors',
-)
-MODELING_FILES = tuple(
-    f'services/data-api/qopenbb_data/{package}/__init__.py' for package in MODELING_PACKAGES
-)
+MODELING_ROOT = ROOT / 'services/data-api/qopenbb_data/modeling'
+# Discover expectations from source so a new module missing from the allowlist fails staging.
+MODELING_FILES = tuple(path.relative_to(ROOT).as_posix() for path in sorted(MODELING_ROOT.rglob('*.py')))
 
 FILES = tuple('services/data-api/' + name for name in (
     'pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
@@ -48,8 +44,8 @@ def test_runtime_python_dependencies_are_packaged():
         for node in ast.walk(tree):
             if (isinstance(node, ast.ImportFrom) and node.module
                     and node.module.startswith("qopenbb_data.")):
-                dependency = prefix + node.module.replace(".", "/") + ".py"
-                assert dependency in RUNTIME_FILES, (name, dependency)
+                dependency = prefix + node.module.replace(".", "/")
+                assert {dependency + ".py", dependency + "/__init__.py"} & RUNTIME_FILES, (name, dependency)
 
 
 def runtime(tmp_path):
@@ -62,13 +58,17 @@ def runtime(tmp_path):
     return root
 
 
-def test_staged_modeling_packages_are_importable(tmp_path):
+def test_staged_modeling_modules_are_importable(tmp_path):
     roots, policy, lock = inputs(tmp_path)
     destination = tmp_path / 'stage'
     result = stage(destination, roots, policy, lock, 'data-api', runtime_root=ROOT)
     assert verify_stage(destination, policy, lock) == result
     staged_service = destination / 'runtime/services/data-api'
-    modules = tuple('qopenbb_data.' + package.replace('/', '.') for package in MODELING_PACKAGES)
+    modules = []
+    for name in MODELING_FILES:
+        path = Path(name).relative_to('services/data-api').with_suffix('')
+        parts = path.parent.parts if path.name == '__init__' else path.parts
+        modules.append('.'.join(parts))
     subprocess.run(
         [sys.executable, '-I', '-B', '-c',
          'import importlib, sys; sys.path.insert(0, sys.argv[1]); '

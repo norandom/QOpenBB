@@ -1,6 +1,6 @@
 # Financial modeling foundation tasks
 
-Design and Polars conventions owner-approved, 2026-10-28. Task plan owner-approved; execution remains queued behind provider work. This session delivers the plan only. Future implementation follows verified FMP inputs for the selected slice; the broad provider workstream remains first. Repository name/remote and image coordinates are explicit bootstrap inputs, not assumed existing resources.
+The owner approved the foundation plan on 2026-10-28 and selected QOpenBB's existing data API as its runtime on 2026-11-25. For the factor slice, paths refer to the modeling package in that runtime. Provider evidence gates apply to the methods that consume those inputs. [Factor plan](../factor-signals/tasks.md)
 
 ## Completion rules and execution lanes
 
@@ -10,16 +10,12 @@ Each task requires fresh verification and independent review before its checkbox
 
 ## Tasks
 
-- [ ] 1. Bootstrap the separate repository and agent extension workflow
-  - Establish owner-selected repository coordinates, independent Python/uv project and locked dependencies including Polars, schema/HTTP and JWT libraries. Verify protected installs, supported wheels and Decimal operation compatibility. Transfer canonical modeling specs with revision references; QOpenBB retains integration pointers.
-  - Install AGENTS.md and steering for Kiro approvals, house-method corrections, typed financial Python/Polars, COBESY comments, role-based review, bounded verification and portable delivery. No formula engine or placeholder image.
-  - Done: fresh checkout can run a minimal import/contract check under the pinned environment; agent instructions identify the next approved spec rather than infer methods from templates.
-  - Completion gate: measure this task's maintained production files against 400 physical / 300 logical / 50 per function and record fresh checks; docs/generated artifacts remain scoped exclusions.
-  - _Boundary: New modeling repository scaffolding, dependency files, AGENTS/steering/docs only; QOpenBB transfer pointers controller-owned._
-  - _Depends: Owner task approval and repository coordinates; implementation sequencing gate above._
+- [x] 1. Bootstrap the modeling package in the existing data API
+  - The source tree uses the root agent instructions, finance conventions, Python 3.13.15 service lock, and the existing Dagger data-image pipeline. Polars 1.44.2 is a direct locked dependency. Staged package imports and bounded decimal arithmetic passed at bootstrap.
+  - _Boundary: Data API package, lock, runtime inputs and root ownership inventory._
   - _Requirements: 6.1, 6.2_
 
-- [ ] 2. Establish executable code-quality and boundary enforcement
+- [x] 2. Establish executable code-quality and boundary enforcement
   - Add maintained scope inventory and the existing physical/logical checker convention, owning lint/type checks and a portable verification command. Enforce domain isolation from HTTP, storage, provider credentials and Workspace imports.
   - Done: a deliberate oversized function/import violation fails the gate; clean foundation passes. Keep test fixtures outside production inventory without hiding production helpers there.
   - Completion gate: measure this task's maintained production files against 400 physical / 300 logical / 50 per function and record fresh checks; docs/generated artifacts remain scoped exclusions.
@@ -27,7 +23,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 1_
   - _Requirements: 1.1, 6.1, 6.2_
 
-- [ ] 3. Freeze financial table, check, trace and run contracts
+- [x] 3. Freeze financial table, check, trace and run contracts
   - Implement typed snapshot, assumption, descriptor, outcome, tolerance, exception, TraceEntry and result/run contracts. Include table grain/keys/types, nulls, units/currency, periods, observation category, available accounting/vintage metadata and asserted-versus-acquired provenance.
   - Define explicit Decimal encoding and value bounds, financial completeness and duplicate/join rules at the boundary. Keep exported contracts independent of Polars runtime objects.
   - Done: round-trip examples and malformed/missing/unsupported cases demonstrate the contracts; financial origin and unrounded trace survive serialization. Freeze interface versions before tasks 4.2/5/6 fan out.

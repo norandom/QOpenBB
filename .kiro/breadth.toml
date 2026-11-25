@@ -1654,3 +1654,11 @@ planned_checks = ["independent financial recalculation against dated inputs"]
 test_paths = ["tests/delivery/test_data_image.py", "tests/quality/test_python_units.py"]
 status = "passed"
 evidence = ["Package bootstrap only, 2026-11-25. Six modeling packages imported from the staged tree and passed integrity checks. Polars 1.44.2 installed from the frozen service lock and passed a bounded two-thread decimal sum. The combined complexity gate measured 113 files with zero violations. No factor calculation or rebuilt image is claimed."]
+
+[[capabilities]]
+id = "factor-model-wire-contracts"
+requirements = ["financial-modeling/requirements.md:2.3", "financial-modeling/requirements.md:2.7", "financial-modeling/requirements.md:3.1", "factor-signals/requirements.md:4.2", "factor-signals/requirements.md:4.4"]
+planned_checks = []
+test_paths = ["tests/factors/test_modeling_contracts.py", "tests/factors/test_model_run_evidence.py", "tests/factors/test_import_boundaries.py", "tests/delivery/test_data_image.py"]
+status = "passed"
+evidence = ["Synthetic contract round trips, cutoff and verification-evidence checks only. See artifacts/reviewed/factor-signals/contract-foundation.md. Actual method recalculation belongs to later tasks."]

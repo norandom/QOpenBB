@@ -4,7 +4,7 @@ The target runtime is the existing `qopenbb-data-api` container. Paths under `mo
 
 The controller freezes shared interfaces, integrates registry changes and updates the breadth map with actual evidence. Assign at most two implementers with disjoint writable files. Give each parallel worker a dedicated test module named for the method. An independent author writes references against the frozen inputs and definitions without importing production helpers. Every task requires independent review and fresh verification. The complexity gate means 400 physical lines/file, 300 logical units/file and 50 units/function across each entire changed production file; run one heavy suite at a time.
 
-- [ ] 1. Establish the factor package and executable inventory gate
+- [x] 1. Establish the factor package and executable inventory gate
   - Use the existing data runtime manifest and frozen lock. Verify the required Polars version is installed before using it, updating the runtime lock if needed. Apply foundation tasks 1–3 in this package, extend the root complexity inventory and add production modules to the explicit runtime input allowlist. Exercise `tests/delivery/test_data_image.py` against the staged files. Show that an oversized synthetic function fails and a clean package passes the installed checker.
   - _Boundary: Controller owns package setup and shared inventory. Apply the complexity gate to setup and checker changes._
   - _Requirements: 4.4_
