@@ -4,9 +4,11 @@ Updated 2026-11-18, end of day. FMP Batch B (eight event and document operations
 
 ## Where to resume
 
-- **Next step, awaiting the owner's go-ahead:** one thin modeling slice for "Commodities vs tech: which regime are we in?", starting with the `factor-signals` requirements. Nothing is in progress.
+- **Ubuntu Company Research live acceptance, 2026-11-25.** The canonical Playwright journey passed both phases on the digest-pinned Batch B release at root `91a2ee5`. All required captures matched (45 initial, 9 after container recreation). Coverage includes displayed financial observations, selection changes, peer failure and recovery, export/import and retained state. The owner waived the FMP ceiling; upstream send totals were not measured. The disposable Compose resources were stopped. [Roadmap](steering/roadmap.md)
+- **Requirements resumed 2026-11-25.** The owner confirmed the 63-session DFII10 rule and included FCF yield in the first slice. The owner selected the company-level, point-in-time definition. The owner confirmed the 63-session price factors and missing-session rules. Requirements are approved. The [factor design](specs/factor-signals/design.md) is owner-approved. The [15-task plan](specs/factor-signals/tasks.md) is owner-approved. The owner identified the existing `qopenbb-data-api` container as the analytics backend. The factor design and tasks now target the packaged data API. See the [source inventory](specs/factor-signals/research.md) for the source boundary. Package staging and Polars bootstrap passed. Next, implement the typed foundation contracts and model boundary checks inside the data API. Factor task 1 remains open.
 - **State of `main`:** `e4905a8`; check-only [CI run 44369922236](https://github.com/norandom/QOpenBB/actions/runs/44369922236) passed. The latest release is still alpha-44340458084-1.
-- **Working checkout:** `D:/BuildArtifacts/QOpenBB/fmp-expansion-b/root`, branch `work/fmp-expansion-b`, pushed as `HEAD:main`. The checkout at `D:/Source/QOpenBB` is behind `main` and holds unrelated uncommitted work; do not overwrite it.
+- **Current checkout:** `~/Source/QOpenBB` on Ubuntu. Use the [maintainer Git workflow](steering/delivery-workflow.md#maintainer-git-workflow).
+- **Historical Windows checkout:** `D:/BuildArtifacts/QOpenBB/fmp-expansion-b/root`, branch `work/fmp-expansion-b`, pushed as `HEAD:main`. The checkout at `D:/Source/QOpenBB` is behind `main` and holds unrelated uncommitted work; do not overwrite it.
 - **Product direction from discovery (owner, 2026-11-18):**
   - regime-based macro and cross-asset stories, shipped as dashboards with changeable inputs
   - finance shown step by step, so it makes sense to quants and portfolio managers

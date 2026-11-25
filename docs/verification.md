@@ -25,6 +25,19 @@ That interpreter path identifies the exercised WSL environment. The maintained l
 
 The historical fixture checks display a synthetic observation of `123.45 USD`, verify fresh cookie/local-storage state, and deliberately produce console/network failures through the owned browser's CDP session. A green result establishes verification infrastructure only. That fixture run did not establish Workspace, live-provider, Anthropic, Excel, Compose or deployment acceptance.
 
+## Run the browser infrastructure checks on Ubuntu
+
+From the repository root, use Node 24.22.1 and pnpm 10.32.1. The frozen lockfile selects Playwright and its matching Chromium build. Each invocation below gets its own evidence directory.
+
+```bash
+(cd verification && pnpm install --frozen-lockfile)
+node verification/node_modules/@playwright/test/cli.js install chromium
+QOPENBB_VERIFICATION_ROOT="$(mktemp -d /tmp/qopenbb-playwright-XXXXXX)" \
+  node verification/node_modules/@playwright/test/cli.js test --config verification/playwright.config.ts
+```
+
+The infrastructure suite uses a synthetic HTTP fixture. To exercise the packaged application, use native Docker Compose with the release image digests, a disposable account and state directory, and a loopback port. The financial browser suite imports helpers from the locked Workspace checkout at `vendor/workspace` and requires an owned runtime descriptor. Live financial assertions also require the matching provider evidence and request allowance.
+
 ## Reproduce the historical Linux fixture
 
 Restore the pinned [development tools](development.md). From the repository root:

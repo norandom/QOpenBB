@@ -6,14 +6,14 @@ A macro investor wants to see whether simple factors behave differently across r
 
 ## Current State
 
-- 29 FMP models and a generic FRED series route are registered. Only single-company equity inputs and one FRED series have live evidence.
+- 29 FMP models and a generic FRED series route are registered. The accepted cross-asset checkpoint covers six ETFs and eight FRED series in addition to the single-company evidence.
 - Daily prices are split-adjusted only, one symbol per request, in five-year windows.
 - The financial-modeling spec is approved (requirements, design, 18 tasks) but its repository does not exist and nothing is implemented.
 - Project rules forbid financial formulas in widgets.
 
 ## Desired Outcome
 
-A small set of factors that a quant can audit: each states its rule, universe, window, inputs and limits, and each result carries check states. The first delivery supports one story with momentum, realized volatility and one FRED-based regime rule. Later deliveries add FCF yield, sector rotation, carry and credit stress, and an expected-returns decomposition in the style of Ilmanen's *Expected Returns*.
+A small set of factors that a quant can audit: each states its rule, universe, window, inputs and limits, and each result carries check states. The first delivery supports one story with momentum, realized volatility, FCF yield and one FRED-based regime rule. Use a 63-session price-return window for momentum and 63 daily simple returns for realized volatility. Annualize sample standard deviation by multiplying by the square root of 252. Both factors require 64 consecutive session closes. Compare DFII10 with its value 63 trading sessions earlier; a missing endpoint gives insufficient data. A positive change means rising, a negative change means falling and zero means flat. FCF yield applies to a selected company. Subtract capital expenditure measured as a cash outflow from trailing twelve-month operating cash flow, then divide by equity market value on the observation date. Use only filings available by that date. A negative numerator gives a negative yield. Fund-level aggregation is outside the first slice. Later deliveries add sector rotation, carry and credit stress, and an expected-returns decomposition in the style of Ilmanen's *Expected Returns*.
 
 Every signal reports hit rate, slugging ratio (average winner over average loser across the universe), drawdown, and its validation limits.
 
@@ -25,8 +25,8 @@ Implement factors as models in the financial-modeling service, using its validat
 
 - **In**:
   - return construction from accepted price inputs, with the not-total-return caveat stated
-  - momentum, realized volatility and a regime rule (first delivery)
-  - FCF yield, sector rotation, carry, credit stress and an expected-returns decomposition (later deliveries)
+  - momentum, realized volatility, FCF yield and the real-yield regime rule (first delivery)
+  - sector rotation, carry, credit stress and an expected-returns decomposition (later deliveries)
   - regime-conditioned factor results and simple timing rules
   - diagnostics: hit rate, slugging ratio, drawdown
   - validation: look-ahead safety, explicit date ordering, coverage and survivorship limits, in-sample versus out-of-sample separation

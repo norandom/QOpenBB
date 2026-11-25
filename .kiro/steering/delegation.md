@@ -9,9 +9,9 @@ User-requested policy, 2026-10-16, adapted from ../because-security-quant-termin
 | Role | Model | Responsibility |
 | --- | --- | --- |
 | Controller | Current parent model | Contracts, dependency queue, joins, status, heavy-check queue, selective commits |
-| Bounded implementer / routine reviewer | gpt-6.1-sol | One well-defined task per worker; focused evidence |
-| Architecture / difficult integration / financial review | gpt-6-astra | Independent review of hard contracts and failure modes |
-| Mechanical auditor | gpt-6-luna | Inventories, mapping and documentation checks; no sole acceptance of complex behavior |
+| Bounded implementer / routine reviewer | gpt-6.2-sol | One well-defined task per worker; focused evidence |
+| Architecture / difficult integration / financial review | gpt-6.2-astra | Independent review of hard contracts and failure modes |
+| Mechanical auditor | gpt-6.2-sol (low reasoning effort) | Reconcile claims with evidence in a fresh context when needed. Use scripts for hashes, links and counts. |
 
 Use at most four active slots: controller + up to two independent implementers + one reviewer/auditor. Free a slot when a task needs a fresh independent reviewer. Model overrides require fresh-context dispatch (fork_turns=none); pass exact task/spec references, boundaries, commands, and acceptance criteria. If a requested model is unavailable, report the fallback rather than claiming it was used.
 
@@ -27,7 +27,7 @@ Use at most four active slots: controller + up to two independent implementers +
 
 ## Intentional local workflow override
 
-For QOpenBB, this explicit user-requested policy supersedes kiro-impl's sequential-only iteration and informational-only (P) defaults when the reviewed task plan defines independent lanes. It does not waive per-task review, dependency checks, evidence, or parent-owned commits. Without a lane plan, run sequentially. Cross-spec review uses gpt-6-astra rather than the older model named in the generic kiro-spec-batch text; this project policy is the override.
+For QOpenBB, this explicit user-requested policy supersedes kiro-impl's sequential-only iteration and informational-only (P) defaults when the reviewed task plan defines independent lanes. It does not waive per-task review, dependency checks, evidence, or parent-owned commits. Without a lane plan, run sequentially. Cross-spec review uses gpt-6.2-astra rather than the older model named in the generic kiro-spec-batch text; this project policy is the override.
 
 ## Proposed lanes and joins (not implementation approval)
 

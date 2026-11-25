@@ -1,5 +1,7 @@
 # Build and delivery policy
 
+2026-11-25 owner update: this development host runs Ubuntu with native Docker Engine and the Compose plugin. Use Bash for local verification. The Windows instructions below apply to Windows checkouts.
+
 2026-11-10 owner amendment: local development runs native Windows commands from the repository, using Podman Desktop's Docker-compatible interface and Docker Compose. Prefer Compose for runtime orchestration; no WSL shell is required. Native Dagger remains image-build-only. Keep portable Linux CI and pull-only server deployment unchanged. Put Windows disposable build outputs and caches under D:/BuildArtifacts/QOpenBB; keep Linux dependencies within the Linux VM filesystem. The installed native Dagger 0.21.11 was connectivity-checked; the repository's pinned 0.21.8 build toolchain is unchanged until separately verified. Historical WSL evidence below remains historical.
 
 

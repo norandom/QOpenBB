@@ -14,6 +14,12 @@ Keep one delivery slice active; fan out only disjoint bounded work. Retain per-t
 
 The roadmap owns sequencing; the spec ownership map owns handover; the breadth map retains actual criterion/test/evidence links. Transferred work stays open. The original full scope must not be called complete merely because the prototype ships.
 
+## Maintainer Git workflow
+
+Use ordinary clones under `~/Source` for development on the owner's `norandom/*` repositories. Work in the existing checkout, stage the intended changes, run the affected checks and push accepted commits directly to `main`. Skip linked Git worktrees and pull requests. Tag the accepted release commit at a release milestone. Routine pushes run checks only.
+
+When a change spans repositories, push the producing repository first. Update QOpenBB's source pin to that published commit and verify the integrated revision before tagging the release.
+
 ## Development alpha publication amendment
 
 Owner direction on 2026-10-19: ship the current development alpha as prebuilt `latest` images and create a tagged GitHub prerelease. Stable releases later use pinned versions. For this alpha, successful source checks, identified builds and verified registry identities permit publication; remaining browser, financial, renderer and persistence acceptance stays open rather than being relabeled complete. The release manifest retains exact image digests even though development Compose defaults to `latest`. PRs never publish. This amendment supersedes the earlier immutable-only development-install and whole-prototype publication sequencing above.
