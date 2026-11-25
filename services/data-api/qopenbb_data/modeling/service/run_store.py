@@ -5,9 +5,10 @@ import json
 import os
 import re
 import stat
-from collections.abc import Iterator
+from collections.abc import Callable, Iterable, Iterator
 from contextlib import contextmanager
 from pathlib import Path
+from threading import Event
 from uuid import uuid4
 
 from pydantic import ValidationError
@@ -31,7 +32,7 @@ class RunStoreError(RuntimeError):
 
 
 class RunPublishedError(RunStoreError):
-    """The run became visible before cleanup or durability could be confirmed."""
+    """Publication may have succeeded and retrying could duplicate the run."""
 
     def __init__(self, run_id: str) -> None:
         super().__init__("model run published with incomplete storage confirmation")
@@ -60,7 +61,14 @@ def _subject(principal: Principal) -> str:
     raise RunNotFound()
 
 
-def _publish(directory: int, run_id: str, payload: bytes) -> bool:
+def _publish(
+    directory: int,
+    run_id: str,
+    payload: bytes,
+    *,
+    before_link: Callable[[], None] | None = None,
+    on_collision: Callable[[], None] | None = None,
+) -> bool:
     staging = f".pending-{uuid4().hex}"
     fd = os.open(staging, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600, dir_fd=directory)
     published = False
@@ -70,9 +78,13 @@ def _publish(directory: int, run_id: str, payload: bytes) -> bool:
             handle.flush()
             os.fsync(handle.fileno())
         # A same-directory hard link publishes atomically and refuses to replace an audit run.
+        if before_link is not None:
+            before_link()
         try:
             os.link(staging, f"{run_id}.json", src_dir_fd=directory, dst_dir_fd=directory)
         except FileExistsError:
+            if on_collision is not None:
+                on_collision()
             return False
         published = True
     finally:
@@ -137,13 +149,29 @@ class FileRunStore:
             os.close(fd)
 
     def save(self, run: ModelRun, principal: Principal) -> str:
+        return self._save(run, principal, (_new_run_id() for _ in range(_ID_ATTEMPTS)), _publish)
+
+    def _publish_evaluated(
+        self, wire: bytearray, principal: Principal, *, deadline: float, cancel: Event | None
+    ) -> str:
+        """Save and read back the run within the remaining evaluation budget."""
+        from .run_store_transport import publish
+
+        return publish(self._root, wire, principal, deadline, cancel)
+
+    def _save(
+        self,
+        run: ModelRun,
+        principal: Principal,
+        run_ids: Iterable[str],
+        publish: Callable[[int, str, bytes], bool],
+    ) -> str:
         subject = _subject(principal)
         if not isinstance(run, ModelRun):
             raise RunStoreError("invalid model run")
         published = False
         try:
-            for _ in range(_ID_ATTEMPTS):
-                run_id = _new_run_id()
+            for run_id in run_ids:
                 owned_run = ModelRun.model_validate(run.model_copy(update={"run_id": run_id}))
                 if owned_run.owner_id != subject:
                     raise RunNotFound()
@@ -154,7 +182,7 @@ class FileRunStore:
                 ).encode("utf-8")
                 self._root.mkdir(mode=0o700, parents=True, exist_ok=True)
                 with self._directory() as directory:
-                    published = _publish(directory, run_id, payload)
+                    published = publish(directory, run_id, payload)
                 if published:
                     return run_id
         except ValueError:

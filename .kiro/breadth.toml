@@ -1782,3 +1782,11 @@ planned_checks = ["authenticated HTTP evaluation and saved-run routes"]
 test_paths = ["tests/factors/test_acquisition.py", "tests/factors/test_orchestration.py", "tests/factors/test_acquired_evaluation.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/evaluation-orchestration.md."]
+
+[[capabilities]]
+id = "model-http-routes"
+requirements = ["financial-modeling/requirements.md:1.2", "financial-modeling/requirements.md:1.3", "financial-modeling/requirements.md:3.6", "financial-modeling/requirements.md:4.1", "financial-modeling/requirements.md:4.5"]
+planned_checks = ["Workspace bridge and signed browser session integration"]
+test_paths = ["tests/factors/test_model_http.py", "tests/factors/test_model_identity.py", "tests/factors/test_model_listener.py", "tests/factors/test_model_publication.py", "tests/factors/test_model_registry.py"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/model-http-routes.md."]

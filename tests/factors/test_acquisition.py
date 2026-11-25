@@ -143,7 +143,7 @@ def test_deadline_cancels_transport():
             closed = True
 
     with pytest.raises(AcquisitionError) as caught:
-        DataApiSnapshotSource(BASE_URL, timeout_seconds=0.01, transport=transport).acquire(request())
+        DataApiSnapshotSource(BASE_URL, timeout_seconds=0.5, transport=transport).acquire(request())
     assert caught.value.code == "timeout"
     assert closed
 

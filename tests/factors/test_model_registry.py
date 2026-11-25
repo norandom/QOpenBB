@@ -193,3 +193,9 @@ def test_polars_materializes_bounded_nullable_decimal_input(inputs: InputSnapsho
     assert present.value == Decimal("12345678901234.0025")
     assert missing.output_id == "missing"
     assert missing.value is None
+
+
+def test_discovery_lists_all_exact_versions_in_stable_order():
+    registry = ModelRegistry((SuppliedValueFixture("2"), SuppliedValueFixture("1")))
+    assert [method.method_version for method in registry.descriptors()] == ["1", "2"]
+    assert ModelRegistry().descriptors() == ()

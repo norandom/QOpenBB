@@ -25,3 +25,7 @@ class ModelRegistry:
             return self._models[model_id, method_version]
         except KeyError:
             raise LookupError(f"model {model_id!r} version {method_version!r} is not installed") from None
+
+    def descriptors(self) -> tuple[ModelDescriptor, ...]:
+        """List the installed method versions in stable discovery order."""
+        return tuple(self._models[key].describe() for key in sorted(self._models))

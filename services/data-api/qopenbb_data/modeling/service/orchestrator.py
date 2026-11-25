@@ -19,8 +19,9 @@ from ..validation.rules import Rule
 from ..verification.reference import Reference
 from .acquisition import AcquisitionError
 from .evaluation import EvaluationRequest, _evaluate_in_child, _RunContext
-from .execution import ExecutionError, ExecutionLimits, ModelExecutor
+from .execution import ExecutionError, ExecutionLimits, ModelExecutor, _remaining
 from .ports import Principal, RunStore, SnapshotSource
+from .run_store import FileRunStore, RunPublishedError
 
 
 @dataclass(frozen=True)
@@ -83,6 +84,14 @@ class Orchestrator:
             created_at=datetime.now(UTC),
             exceptions=request.exceptions,
         )
+        wire = bytearray()
+        deadline = started
+
+        def capture_result(payload: bytearray, execution_deadline: float) -> None:
+            nonlocal wire, deadline
+            wire = payload
+            deadline = execution_deadline
+
         run = self._executor._evaluate(
             *key,
             request.assumptions,
@@ -92,9 +101,22 @@ class Orchestrator:
             result_type=ModelRun,
             job_payload=job,
             context=context.model_dump(mode="json"),
+            capture_result=capture_result,
         )
+        return self._publish(run, principal, wire, deadline, cancel)
+
+    def _publish(
+        self, run: ModelRun, principal: Principal, wire: bytearray, deadline: float, cancel: Event | None
+    ) -> ModelRun:
+        _remaining(deadline, cancel)
+        if type(self._store) is FileRunStore:
+            run_id = self._store._publish_evaluated(wire, principal, deadline=deadline, cancel=cancel)
+            return run.model_copy(update={"run_id": run_id})
         run_id = self._store.save(run, principal)
-        return self._store.get(run_id, principal)
+        try:
+            return self._store.get(run_id, principal)
+        except Exception:  # noqa: BLE001 - Saving succeeded, so every readback failure needs the ID.
+            raise RunPublishedError(run_id) from None
 
     def get(self, run_id: str, principal: Principal) -> ModelRun:
         """Return the persisted original under its authenticated owner."""

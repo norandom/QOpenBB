@@ -777,6 +777,7 @@ dependencies = [
     { name = "openbb-fred" },
     { name = "openbb-news" },
     { name = "polars" },
+    { name = "pyjwt" },
 ]
 
 [package.dev-dependencies]
@@ -795,6 +796,7 @@ requires-dist = [
     { name = "openbb-fred", directory = "../../vendor/data-api/openbb_platform/providers/fred" },
     { name = "openbb-news", directory = "../../vendor/data-api/openbb_platform/extensions/news" },
     { name = "polars", specifier = "==1.44.2" },
+    { name = "pyjwt", specifier = "==2.15.1" },
 ]
 
 [package.metadata.requires-dev]

@@ -161,6 +161,7 @@ class ModelExecutor:
         result_type: type[_Result],
         job_payload: bytes = _NO_JOB,
         context: dict | None = None,
+        capture_result: Callable[[bytearray, float], None] | None = None,
     ) -> _Result:
         if not self._slots.acquire(blocking=False):
             raise ExecutionError("capacity")
@@ -186,6 +187,7 @@ class ModelExecutor:
                 result_type=result_type,
                 job_payload=job_payload,
                 context=context,
+                capture_result=capture_result,
             )
         finally:
             self._slots.release()
@@ -201,6 +203,7 @@ class ModelExecutor:
         result_type: type[_Result],
         job_payload: bytes,
         context: dict | None,
+        capture_result: Callable[[bytearray, float], None] | None,
     ) -> _Result:
         try:
             checkpoint = partial(_remaining, deadline, cancel)
@@ -221,10 +224,11 @@ class ModelExecutor:
                 request.seek(0)
                 self._run_child(request, response, deadline, cancel)
                 response.seek(0)
-                result = result_type.model_validate_json(
-                    _read_result(response, checkpoint)
-                )
+                payload = _read_result(response, checkpoint)
+                result = result_type.model_validate_json(payload)
                 checkpoint()
+                if capture_result is not None:
+                    capture_result(payload, deadline)
                 return result
         except (
             OSError,
