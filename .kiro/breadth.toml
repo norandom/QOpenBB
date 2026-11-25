@@ -1798,3 +1798,11 @@ planned_checks = ["Workspace session bridge and saved model dashboard journey"]
 test_paths = ["tests/factors/test_widget_discovery.py", "tests/factors/test_widget_listener.py", "tests/factors/test_widget_projection.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/saved-output-widgets.md."]
+
+[[capabilities]]
+id = "modeling-contract-bundle"
+requirements = ["financial-modeling/requirements.md:4.1", "financial-modeling/requirements.md:5.4"]
+planned_checks = ["structural and financial-semantic compatibility against adopted consumers"]
+test_paths = ["tests/factors/test_modeling_bundle.py", "tests/factors/test_modeling_contract_listener.py", "tests/factors/test_modeling_documents.py", "tests/factors/test_modeling_documents_registration.py", "tests/contracts/test_modeling_adoption.py"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/modeling-contract-bundle.md."]

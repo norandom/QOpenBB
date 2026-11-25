@@ -94,7 +94,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Requirements: 1.2, 4.1, 4.5_
 
 - [ ] 9. Cross-repository contract delivery
-- [ ] 9.1 Export reproducible versioned contract bundles
+- [x] 9.1 Export reproducible versioned contract bundles
   - Export OpenAPI/JSON Schemas and descriptors with source revision and hashes. Establish initial QOpenBB consumer artifacts without requiring an existing model release.
   - Done: exports reproduce, validate the supported dialect and fail on generated drift; initial counterpart contracts are explicitly pinned.
   - Completion gate: maintained production files pass 400 physical / 300 logical / 50 per function and owning checks.

@@ -28,6 +28,8 @@ jobs:
         with:
           persist-credentials: false
           ref: ${{ github.sha }}
+          # The modeling adoption gate replays the pinned source commit offline.
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9
         with:
           version: '0.12.5'

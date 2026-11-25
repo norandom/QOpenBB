@@ -19,7 +19,7 @@ case "${1:-}" in
       tests/delivery/test_compose_lifecycle.py tests/delivery/test_workspace_runtime.py \
       tests/delivery/test_workspace_smoke.py tests/delivery/test_verification.py \
       tests/delivery/test_portable_runtime.py tests/delivery/test_financial_budget.py \
-      tests/factors -n0 -m 'not live'
+      tests/contracts/test_modeling_adoption.py tests/factors -n0 -m 'not live'
     ;;
   build)
     shift
