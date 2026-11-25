@@ -219,7 +219,6 @@ def test_missing_midpath_return_leaves_a_dated_gap(run):
     (JUN_3, JUN_5, JUN_5, (0,)),
     (JUN_4, JUN_6, JUN_6, (0, 1)),
     (JUN_7, date(2024, 6, 9), date(2024, 6, 9), (3,)),
-    (JUN_10, date(2024, 6, 12), JUN_11, (4,)),
     (None, JUN_5, JUN_5, (0,)),
     (JUN_5, JUN_5, JUN_5, (0,)),
     (JUN_4, JUN_5, JUN_6, (0, 1)),
@@ -236,6 +235,15 @@ def test_available_malformed_returns_invalidate_affected_path_intervals(
                  if item.strategy_return is None) == affected
     assert all(_exclusions(study.intervals[index])["asset_return"].code == "invalid_interval"
                for index in affected)
+
+
+@pytest.mark.parametrize("day_index", [0, -2])
+def test_future_ending_revision_preserves_realized_returns(run, day_index):
+    returns = run.inputs.tables[2].rows
+    original = returns[day_index]
+    future = _row(original, ".future", context={"period_end": JUN_11 + timedelta(days=1)},
+                  published_at=utc(original.observation_date, 21), vintage_at=utc(JUN_11, 21))
+    assert _build(run, forward_returns=(*returns, future)) == _build(run)
 
 
 def test_bad_benchmark_interval_does_not_poison_asset_path(run):

@@ -1750,3 +1750,11 @@ planned_checks = ["authenticated saved-run integration"]
 test_paths = ["tests/factors/test_issuer_reference.py", "tests/factors/test_regime_reference.py"]
 status = "passed"
 evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/factor-signals/issuer-regime-references.md."]
+
+[[capabilities]]
+id = "timing-references"
+requirements = ["factor-signals/requirements.md:4.2", "factor-signals/requirements.md:4.3", "factor-signals/requirements.md:4.4"]
+planned_checks = ["authenticated saved-run integration"]
+test_paths = ["tests/factors/test_timing_reference.py", "tests/factors/test_timing_reference_limits.py", "tests/factors/test_study_groups.py"]
+status = "passed"
+evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/factor-signals/timing-references.md."]

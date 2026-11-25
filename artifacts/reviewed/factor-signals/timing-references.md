@@ -1,0 +1,9 @@
+# Independent timing-study verification
+
+Factor task 14 independently rebuilds decision-time exposures, regimes, eligible intervals and the chronological wealth path from the input snapshot and versioned assumptions. On the synthetic five-interval path, the rising group hit rate was 1/3 and slugging was 2. The falling group hit rate was 1/2 and slugging was 3. Full-path maximum drawdown was 8.8%.
+
+The foundation verifier rejected pooled regimes, a denominator that dropped ties, and a late signal used to form a position. Unknown checks for missing required tables and failed checks for insufficient rows in a supplied table remained distinguishable. Drawdown verified when only benchmark evidence was missing. Forty reference values from eight additional exposure and benchmark paths matched a separate rational calculation. A 10,000-observation test exercised long schedules and extreme returns.
+
+Review uncovered an unrealized correction published June 5 claiming a return ending June 12. Both production and reference now exclude impossible revisions before selecting the latest realized return. Inside or outside the selected window, a known session open supplies the timestamp boundary. For a date outside the supplied calendar, a publication before the claimed local ending date cannot establish a realized return. A genuinely realized overlapping revision still invalidates the affected intervals.
+
+Independent financial review approved the corrected production and reference modules and reran 115 related tests. Its additional exchange-local-date probe checked the midnight boundary in New York. The final portable check on Node 24.22.1 passed 1,179 tests with 13 skipped and one deselected, including staged imports. The complexity gate measured 819 files with zero violations. Scoped Ruff passed. Base revision 637d1a2. These checks use supplied data in the existing data API.

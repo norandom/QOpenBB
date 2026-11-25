@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from decimal import Context, Decimal, localcontext
 from typing import Literal
+from zoneinfo import ZoneInfo
 
 from ...contracts import AssumptionSet, EvaluationCutoff, InputSnapshot, Observation
 from .sessions import PRICE_BASIS, latest_observed_rows
@@ -154,14 +155,19 @@ def _affected_ends(
     return affected
 
 
-def _can_be_realized(row: Observation, opens: dict[date, datetime]) -> bool:
+def _can_be_realized(row: Observation, opens: dict[date, datetime], zone: ZoneInfo) -> bool:
     publication = row.published_at
     if publication is None:
         # The observed-vintage selector supplies the missing availability reason.
         return True
     claimed_days = (row.observation_date, row.context.period_end)
-    return all(publication >= opens[day]
-               for day in claimed_days if day is not None and day in opens)
+    # A revision can name an end beyond the supplied calendar. Even there,
+    # its return cannot have been realized on an earlier local publication date.
+    local_day = publication.astimezone(zone).date()
+    return all(
+        publication >= opens[day] if day in opens else local_day >= day
+        for day in claimed_days if day is not None
+    )
 
 
 def _matches_interval(row: Observation, start: date | None) -> bool:
@@ -179,14 +185,14 @@ def _return_index(
     starts = tuple(session.day for session in plan.sessions[1:-1])
     ends = tuple(session.day for session in plan.sessions[2:])
     start_by_end = dict(zip(ends, starts, strict=True))
-    opens = {session.day: session.opens_at for session in plan.sessions}
+    zone = ZoneInfo(plan.cutoff.session_timezone)
     selected: dict[date, Observation | StudyExclusion] = {
         day: StudyExclusion(scope, "missing", f"missing {subject}") for day in ends
     }
     malformed: dict[date, set[str]] = defaultdict(set)
     for day, revisions in _rows_by_date(rows, entity, "forward_return").items():
         expected_start = start_by_end.get(day)
-        timely = [row for row in revisions if _can_be_realized(row, opens)]
+        timely = [row for row in revisions if _can_be_realized(row, plan.calendar_opens, zone)]
         # Period boundaries can change in a correction. Resolve the revision by
         # observation identity before inspecting its interval.
         latest = latest_observed_rows(timely, plan.cutoff, subject)

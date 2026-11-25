@@ -18,6 +18,7 @@ class StudySession:
 @dataclass(frozen=True)
 class StudyPlan:
     sessions: tuple[StudySession, ...]
+    calendar_opens: dict[date, datetime]
     universe: str
     benchmark: str
     partition: str
@@ -51,7 +52,9 @@ def _schedule_entries(assumptions: AssumptionSet) -> list[str]:
             for entry in text_assumption(assumptions, key).split(";")]
 
 
-def _study_window(assumptions: AssumptionSet, cutoff: EvaluationCutoff) -> tuple[StudySession, ...]:
+def _study_window(
+    assumptions: AssumptionSet, cutoff: EvaluationCutoff,
+) -> tuple[tuple[StudySession, ...], dict[date, datetime]]:
     try:
         start, end = (date.fromisoformat(part) for part in text_assumption(assumptions, "study_dates").split("/"))
     except ValueError as exc:
@@ -71,7 +74,7 @@ def _study_window(assumptions: AssumptionSet, cutoff: EvaluationCutoff) -> tuple
         raise ValueError(f"Study assumptions were not effective on first decision date {window[0].day}")
     if window[-1].opens_at > cutoff.cutoff_at:
         raise ValueError(f"Study ends after the historical evaluation cutoff on {end}")
-    return window
+    return window, {session.day: session.opens_at for session in sessions}
 
 
 def study_plan(inputs: InputSnapshot, assumptions: AssumptionSet) -> StudyPlan:
@@ -88,6 +91,6 @@ def study_plan(inputs: InputSnapshot, assumptions: AssumptionSet) -> StudyPlan:
     partition = text_assumption(assumptions, "partition")
     if partition not in ("in_sample", "out_of_sample"):
         raise ValueError("Study partition must be in_sample or out_of_sample")
-    sessions = _study_window(assumptions, cutoff)
-    return StudyPlan(sessions, universe, benchmark, partition, cutoff, assumptions,
+    sessions, calendar_opens = _study_window(assumptions, cutoff)
+    return StudyPlan(sessions, calendar_opens, universe, benchmark, partition, cutoff, assumptions,
                      sessions[1].day, sessions[-1].day)

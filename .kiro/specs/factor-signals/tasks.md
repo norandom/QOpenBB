@@ -81,7 +81,7 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 6, 8 and foundation task 5_
   - _Requirements: 2.1, 2.2, 2.3, 3.1, 3.2, 3.3, 3.4, 3.5, 4.4_
 
-- [ ] 14. Independently verify regime-conditioned diagnostics
+- [x] 14. Independently verify regime-conditioned diagnostics
   - Rebuild groups and wealth paths from dated observations and assumptions. Prove the verifier rejects pooling regimes, dropping ties and including a late signal; verify check states for undefined statistics.
   - _Boundary: verification/factors/ timing reference and reference tests; apply the complexity gate._
   - _Depends: 11 and foundation task 5_
