@@ -75,7 +75,7 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 9 and foundation rule runner (task 5)_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 4.1, 4.4_
 
-- [ ] 13. Independently verify DFII10 and issuer FCF yield
+- [x] 13. Independently verify DFII10 and issuer FCF yield
   - Reconstruct endpoint eligibility, filing periods, capex and market value from original dated inputs. Detect a late revision, wrong capex sign and incorrect zero/negative handling against frozen tolerances and exact check states.
   - _Boundary: verification/factors/ regime and company references and reference tests; apply the complexity gate._
   - _Depends: 6, 8 and foundation task 5_

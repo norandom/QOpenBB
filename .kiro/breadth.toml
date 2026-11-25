@@ -1742,3 +1742,11 @@ planned_checks = ["authenticated saved-run integration"]
 test_paths = ["tests/factors/test_etf_reference.py"]
 status = "passed"
 evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/factor-signals/etf-references.md."]
+
+[[capabilities]]
+id = "issuer-regime-references"
+requirements = ["factor-signals/requirements.md:2.1", "factor-signals/requirements.md:2.2", "factor-signals/requirements.md:2.3", "factor-signals/requirements.md:3.1", "factor-signals/requirements.md:3.2", "factor-signals/requirements.md:3.3", "factor-signals/requirements.md:3.4", "factor-signals/requirements.md:3.5", "factor-signals/requirements.md:4.4"]
+planned_checks = ["authenticated saved-run integration"]
+test_paths = ["tests/factors/test_issuer_reference.py", "tests/factors/test_regime_reference.py"]
+status = "passed"
+evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/factor-signals/issuer-regime-references.md."]
