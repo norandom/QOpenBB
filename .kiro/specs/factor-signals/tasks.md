@@ -51,7 +51,7 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 7_
   - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
-- [ ] 9. Compare two proxies on matched windows
+- [x] 9. Compare two proxies on matched windows
   - For each like metric verify left minus right in percentage points. Reverse the pair, change its calendar, and invalidate one leg; preserve the independently valid leg and identify the reason a spread is withheld.
   - _Boundary: models/factors/comparison.py and comparison tests; apply the complexity gate._
   - _Depends: 4, 5_

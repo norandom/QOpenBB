@@ -1710,3 +1710,11 @@ planned_checks = ["independent reference recalculation and authenticated saved e
 test_paths = ["tests/factors/test_filing_selection.py", "tests/factors/test_fcf_yield.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Supplied-input filing selection, annual reconciliation, dated market value and yield trace. See artifacts/reviewed/factor-signals/issuer-fcf-yield.md."]
+
+[[capabilities]]
+id = "ordered-etf-factor-comparison"
+requirements = ["factor-signals/requirements.md:4.1"]
+planned_checks = ["independent reference verifier and saved-run endpoint acceptance"]
+test_paths = ["tests/factors/test_comparison.py", "tests/delivery/test_data_image.py"]
+status = "passed"
+evidence = ["Supplied-input ETF comparison, retained leg values and dated withheld spreads. See artifacts/reviewed/factor-signals/proxy-comparison.md."]

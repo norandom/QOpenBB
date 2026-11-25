@@ -28,3 +28,7 @@ These mappings were checked against the data API revision above. Eligibility is 
 | Issuer market-value denominator | FMP `historical_market_cap.py` maps `marketCap` to `market_cap` and preserves its observation date. The adapter explicitly flags currency, share count, price basis and vintage availability as unknown. | Withhold the live yield until the dated issuer scope, comparable currency and availability are evidenced. |
 | Ordered ETF comparison | Derived from the two identified ETF legs and versioned methods. | Require matching metric, schedule, window and basis. Preserve the valid leg when the spread is withheld. |
 | Timing study | Derived from historical decision-time regimes and signals, subsequent returns and an explicitly named benchmark. | Require the declared position rule, exposure and horizon, evaluation partition and non-overlapping return path for compounding. |
+
+## Ordered comparison inputs
+
+The `left_proxy` and `right_proxy` assumptions identify the minuend and subtrahend. Each close table belongs to its named proxy. For a shared calendar, both legs use the single eligible calendar in `sessions`. A snapshot containing multiple calendars can identify the listing calendar for each leg with the text assumptions `left_calendar` and `right_calendar`, whose values are calendar entity IDs. Each leg can still report its own metrics when the calendars differ. A spread requires a shared calendar, the same revision and a complete window for that metric on both sides.
