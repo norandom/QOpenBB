@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "date": "2026-11-14",
+  "date": "2026-11-17",
   "scope": [
     "task-4.6",
     "task-4.7",
@@ -195,13 +195,49 @@
     "financial-input-milestone",
     "company-selector",
     "research-input-readiness",
-    "periodic-query-provenance"
+    "periodic-query-provenance",
+    "company-research",
+    "fmp-expansion-a/foundation",
+    "fmp-expansion-a/a1-contracts",
+    "fmp-expansion-a/a2-contracts",
+    "fmp-expansion-a/contract-freeze",
+    "fmp-expansion-a/sdk-admission",
+    "fmp-expansion-a/sdk-period-followup",
+    "fmp-expansion-a/sdk-alias-correction",
+    "fmp-expansion-a/http-admission",
+    "fmp-expansion-a/admission-join",
+    "fmp-expansion-a/empty-acquisition",
+    "fmp-expansion-a/historical_market_cap",
+    "fmp-expansion-a/analyst_estimates",
+    "fmp-expansion-a/share_statistics",
+    "fmp-expansion-a/price_target",
+    "fmp-expansion-a/equity_quote",
+    "fmp-expansion-a/price_target_consensus",
+    "fmp-expansion-a/income_statement_growth",
+    "fmp-expansion-a/revenue_business_line",
+    "fmp-expansion-a/balance_sheet_growth",
+    "fmp-expansion-a/revenue_geographic",
+    "fmp-expansion-a/cash_flow_growth",
+    "fmp-expansion-a/registration",
+    "fmp-expansion-a/actual-join",
+    "fmp-expansion-a/consumer-catalog",
+    "fmp-expansion-a/candidate",
+    "fmp-expansion-a/cash-flow-growth-route-followup",
+    "fmp-expansion-a/live-matrix",
+    "fmp-expansion-a/native-browser",
+    "fmp-expansion-a/release-checks",
+    "fmp-expansion-a/publication"
   ],
   "sourcepins": {
     "root_at_sync": "0680e078091d92f048e03699123c3969e8055c2e",
     "workspace_at_sync": "027d7703bb1c5447c0d058256598fa7b52049d2e",
     "original_chart_source": "38dffc33389aca0e4a87e0e88d42f7067aa220df",
-    "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f"
+    "original_chart_image": "sha256:f48eb1c9b32e1f84d5199dafc943bc1fc10f3b1745ab29860975d002dc5c8a3f",
+    "company_research_runtime_root": "4736c310320b16aa7f3b6c9de5c68a0643c4c664",
+    "company_research_workspace": "bf180ef506286886da224df9ff184cd1ace2397e",
+    "company_research_data_api": "a965f70c164fe477ce9c99654b9be48e2f1bc9fd",
+    "company_research_release_root": "fbd81eaf11d82b47043592f60736009304f198c8",
+    "company_research_release_tag": "alpha-43604526965-1"
   },
   "entries": [
     {
@@ -35667,6 +35703,502 @@
       "publishedSHA256": "dd918b849b62cd029f48d6fb36a6a9c90e37f39f50f4a847345e6b995e00a7a0",
       "bytes": 800,
       "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/publication-prep/source-acceptance.md",
+      "sourceSHA256": "d3b1bdbfc814536d0cec14f1def3322392290ec9cca0ef9b7c6ca45c20a69658",
+      "publishedpath": "artifacts/reviewed/company-research/source-acceptance.md",
+      "publishedSHA256": "d3b1bdbfc814536d0cec14f1def3322392290ec9cca0ef9b7c6ca45c20a69658",
+      "bytes": 9988,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/completed-runtime-review.md",
+      "sourceSHA256": "f8cb0e741f13fa260d92e05d551e4677c88ee203ef30a6e728b66c38400fb789",
+      "publishedpath": "artifacts/reviewed/company-research/completed-runtime-review.md",
+      "publishedSHA256": "f8cb0e741f13fa260d92e05d551e4677c88ee203ef30a6e728b66c38400fb789",
+      "bytes": 7570,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/retention-acl-correction-review.md",
+      "sourceSHA256": "a724862baa7717e34c3d2fcdc305efed918cc4dd8eb85a2abb7da9f666137bc7",
+      "publishedpath": "artifacts/reviewed/company-research/retention-acl-correction-review.md",
+      "publishedSHA256": "a724862baa7717e34c3d2fcdc305efed918cc4dd8eb85a2abb7da9f666137bc7",
+      "bytes": 4877,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/publication-prep/runtime-acceptance-publication-ready.md",
+      "sourceSHA256": "30c1171179c183711c43d7806caf19baa932dc2bd631c3fd44826749e9e1d786",
+      "publishedpath": "artifacts/reviewed/company-research/runtime-acceptance.md",
+      "publishedSHA256": "30c1171179c183711c43d7806caf19baa932dc2bd631c3fd44826749e9e1d786",
+      "bytes": 7972,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/private-checkpoint-writer-review.md",
+      "sourceSHA256": "40df845ac2a5bcf7088a0e2162d3a017176549d80c43c324184995758698753d",
+      "publishedpath": "artifacts/reviewed/company-research/private-checkpoint-writer-review.md",
+      "publishedSHA256": "40df845ac2a5bcf7088a0e2162d3a017176549d80c43c324184995758698753d",
+      "bytes": 4189,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/publication/publication-review.md",
+      "sourceSHA256": "0d6e2258ac66cb03bae66c5190bd31d55103f1b0479136e29ccc36b57782ccd4",
+      "publishedpath": "artifacts/reviewed/company-research/publication-review.md",
+      "publishedSHA256": "0d6e2258ac66cb03bae66c5190bd31d55103f1b0479136e29ccc36b57782ccd4",
+      "bytes": 5178,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/company-research/final-integration-review.md",
+      "sourceSHA256": "4c9c9316f79847481f1f6b4ac51d107bd2a073d32ec0eaa7798a6dbc9fc295b1",
+      "publishedpath": "artifacts/reviewed/company-research/final-integration-review.md",
+      "publishedSHA256": "4c9c9316f79847481f1f6b4ac51d107bd2a073d32ec0eaa7798a6dbc9fc295b1",
+      "bytes": 16997,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/1.1/review.md",
+      "sourceSHA256": "6bb0d658958f5cf5244180d2df42f186f8d5603d42a70239761b6230594dbe05",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/foundation-review.md",
+      "publishedSHA256": "6bb0d658958f5cf5244180d2df42f186f8d5603d42a70239761b6230594dbe05",
+      "bytes": 4035,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/1.2/review-r2.md",
+      "sourceSHA256": "908a90582e00154257ff4d33828b066b5672dd3b12af6b4d3a9a5c89c048bf68",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/a1-contract-review.md",
+      "publishedSHA256": "908a90582e00154257ff4d33828b066b5672dd3b12af6b4d3a9a5c89c048bf68",
+      "bytes": 6117,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/1.3/review-r2.md",
+      "sourceSHA256": "8ad2026ce554bce32494a096716d1eff821066d16d8ca3376972bb2c0a5377e0",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/a2-contract-review.md",
+      "publishedSHA256": "8ad2026ce554bce32494a096716d1eff821066d16d8ca3376972bb2c0a5377e0",
+      "bytes": 6637,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/1.4/review-r2.md",
+      "sourceSHA256": "ad8a19d388e85dacd817aba52136823d1d8b35a0659558d25cb442dd3a80e2ba",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/contract-freeze-review.md",
+      "publishedSHA256": "ad8a19d388e85dacd817aba52136823d1d8b35a0659558d25cb442dd3a80e2ba",
+      "bytes": 4873,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.1/review-r2.md",
+      "sourceSHA256": "2e677f95a87609e5954d51a6088f8a47e365a8029b005321b5c2f1cbf2150b60",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-admission-review.md",
+      "publishedSHA256": "2e677f95a87609e5954d51a6088f8a47e365a8029b005321b5c2f1cbf2150b60",
+      "bytes": 9617,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.1/accepted-verification.json",
+      "sourceSHA256": "9403cd490b4a53d7f9af0cef2f4f0d3866539196e755c5513656788715d5ecd5",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-admission-verification.json",
+      "publishedSHA256": "9403cd490b4a53d7f9af0cef2f4f0d3866539196e755c5513656788715d5ecd5",
+      "bytes": 2055,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.1/review-period-followup.md",
+      "sourceSHA256": "593b4e605b2746a7d6e871bc796e56375dec7b2903c9098f3c6120b8a9f6b3a4",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-period-followup.md",
+      "publishedSHA256": "593b4e605b2746a7d6e871bc796e56375dec7b2903c9098f3c6120b8a9f6b3a4",
+      "bytes": 2737,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/sdk-alias-repair/review.md",
+      "sourceSHA256": "e1a146425da62ff2b7838288c5f0b3094a9b5dab94e9cf29e714bbee3c2e96e8",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-alias-review.md",
+      "publishedSHA256": "e1a146425da62ff2b7838288c5f0b3094a9b5dab94e9cf29e714bbee3c2e96e8",
+      "bytes": 8807,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/sdk-alias-repair/accepted-verification.json",
+      "sourceSHA256": "231a88cf566c1ffa6fa7141d378c304c8bebcc067b3579f94984d08f7c56c82e",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/sdk-alias-verification.json",
+      "publishedSHA256": "231a88cf566c1ffa6fa7141d378c304c8bebcc067b3579f94984d08f7c56c82e",
+      "bytes": 852,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.2-review/review.md",
+      "sourceSHA256": "d4f2e3af5e14a91180b9636d15595b84c81e071a7cc83bb4200d590efedc00ac",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/http-admission-review.md",
+      "publishedSHA256": "d4f2e3af5e14a91180b9636d15595b84c81e071a7cc83bb4200d590efedc00ac",
+      "bytes": 4328,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.2-review/accepted-verification.json",
+      "sourceSHA256": "ffa4bb04ca0b0259b4433c1f111bc919230d839dc6986cbffec029094f83a52f",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/http-admission-verification.json",
+      "publishedSHA256": "ffa4bb04ca0b0259b4433c1f111bc919230d839dc6986cbffec029094f83a52f",
+      "bytes": 2768,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.3-review/review.md",
+      "sourceSHA256": "b0d052823e7c6f5a6397fbade8b63f30e0aa719d5ab8908a459762a9c010fd73",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/admission-join-review.md",
+      "publishedSHA256": "b0d052823e7c6f5a6397fbade8b63f30e0aa719d5ab8908a459762a9c010fd73",
+      "bytes": 4826,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/2.3-review/accepted-verification.json",
+      "sourceSHA256": "6e9fc70dd67d76e5b8ad961b11c23d3c92c5cc5ef2aa7eee1f513052184adc70",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/admission-join-verification.json",
+      "publishedSHA256": "6e9fc70dd67d76e5b8ad961b11c23d3c92c5cc5ef2aa7eee1f513052184adc70",
+      "bytes": 833,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/empty-array-review/review.md",
+      "sourceSHA256": "42eff9361b691b414a91b7eaca35b7d20ac5721794daac581436e710f053606f",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/empty-acquisition-review.md",
+      "publishedSHA256": "42eff9361b691b414a91b7eaca35b7d20ac5721794daac581436e710f053606f",
+      "bytes": 4331,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/empty-array-review/accepted-verification.json",
+      "sourceSHA256": "2b9d3c172b6c84ecf26dc63a6a17d727152c949c165f75c9c153a5517e920da5",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/empty-acquisition-verification.json",
+      "publishedSHA256": "2b9d3c172b6c84ecf26dc63a6a17d727152c949c165f75c9c153a5517e920da5",
+      "bytes": 995,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.6-review/review.md",
+      "sourceSHA256": "5f9da4936686279413f338c8e477e63c40d3254ffb0079c55fa0842cbb67781c",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/historical-market-cap-review.md",
+      "publishedSHA256": "5f9da4936686279413f338c8e477e63c40d3254ffb0079c55fa0842cbb67781c",
+      "bytes": 3579,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.6-review/accepted-verification.json",
+      "sourceSHA256": "1076633ecbfb8616000e4e629fc0089ff09e54ccd5e44cfca5a83b1763493d33",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/historical-market-cap-verification.json",
+      "publishedSHA256": "1076633ecbfb8616000e4e629fc0089ff09e54ccd5e44cfca5a83b1763493d33",
+      "bytes": 1029,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.1-review/review.md",
+      "sourceSHA256": "111ed4004427e0bb3d173cbc58051effb191fc11a4bb3336417cd5e95570a828",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/analyst-estimates-review.md",
+      "publishedSHA256": "111ed4004427e0bb3d173cbc58051effb191fc11a4bb3336417cd5e95570a828",
+      "bytes": 3103,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.1-review/accepted-verification.json",
+      "sourceSHA256": "021bff171de83709f52289babe60a5985ee5a01269d3bb5017420844bbfcc146",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/analyst-estimates-verification.json",
+      "publishedSHA256": "021bff171de83709f52289babe60a5985ee5a01269d3bb5017420844bbfcc146",
+      "bytes": 1014,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.7-review/review.md",
+      "sourceSHA256": "e76d2a2a69dadfae2b2c66ed8deaaf051b1defd86076b78300226d65a85b0883",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/share-statistics-review.md",
+      "publishedSHA256": "e76d2a2a69dadfae2b2c66ed8deaaf051b1defd86076b78300226d65a85b0883",
+      "bytes": 4358,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.7-review/accepted-verification.json",
+      "sourceSHA256": "d034d2da296d706c85d309c861d7cdbc5f714b1bbbdaf574ae1fe30dd89544b9",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/share-statistics-verification.json",
+      "publishedSHA256": "d034d2da296d706c85d309c861d7cdbc5f714b1bbbdaf574ae1fe30dd89544b9",
+      "bytes": 990,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.2-review/review.md",
+      "sourceSHA256": "cc349800022747387473f1fdc975df34dbbfab774c51fd545ba2798ce517d049",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/price-target-review.md",
+      "publishedSHA256": "cc349800022747387473f1fdc975df34dbbfab774c51fd545ba2798ce517d049",
+      "bytes": 4441,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.2-review/accepted-verification.json",
+      "sourceSHA256": "b6087ec2c3e9055d8c11276dfa5f046a25862a0745da6c9555588e59b21e2938",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/price-target-verification.json",
+      "publishedSHA256": "b6087ec2c3e9055d8c11276dfa5f046a25862a0745da6c9555588e59b21e2938",
+      "bytes": 1006,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.8-review/review.md",
+      "sourceSHA256": "de7de189d96587b1fb902f0fdb3fdb4e986862845d4c15c8e5103315eb4de798",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/equity-quote-review.md",
+      "publishedSHA256": "de7de189d96587b1fb902f0fdb3fdb4e986862845d4c15c8e5103315eb4de798",
+      "bytes": 4921,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.8-review/accepted-verification.json",
+      "sourceSHA256": "995bbf57030cede271171a595942ec4833515936a8ff3eb30048d6f78cbf43f4",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/equity-quote-verification.json",
+      "publishedSHA256": "995bbf57030cede271171a595942ec4833515936a8ff3eb30048d6f78cbf43f4",
+      "bytes": 1034,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.3-review/review.md",
+      "sourceSHA256": "280b77cbc13c689080243ba194700cef8c98acb0c581f9188a46f02eb8d3c884",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/price-target-consensus-review.md",
+      "publishedSHA256": "280b77cbc13c689080243ba194700cef8c98acb0c581f9188a46f02eb8d3c884",
+      "bytes": 5978,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.3-review/accepted-verification.json",
+      "sourceSHA256": "2895ac526a444372d58acf0013fca744a93010b842f78fa81f9edd74a1c37cac",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/price-target-consensus-verification.json",
+      "publishedSHA256": "2895ac526a444372d58acf0013fca744a93010b842f78fa81f9edd74a1c37cac",
+      "bytes": 1065,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.9-review/review.md",
+      "sourceSHA256": "65593d47721ef291d63806c993d95256e0e263953cf4133115d49d6abb158d77",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/income-statement-growth-review.md",
+      "publishedSHA256": "65593d47721ef291d63806c993d95256e0e263953cf4133115d49d6abb158d77",
+      "bytes": 4354,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.9-review/accepted-verification.json",
+      "sourceSHA256": "bcf73193bbb76696501769079c30b9d32ee6229104e7f91cee58541cb28cedcd",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/income-statement-growth-verification.json",
+      "publishedSHA256": "bcf73193bbb76696501769079c30b9d32ee6229104e7f91cee58541cb28cedcd",
+      "bytes": 1227,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.4-review/review.md",
+      "sourceSHA256": "49621d30cf50d26a40a1dabb4c6c2f9ac73417aafd341419354b3a24a13b233b",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/revenue-business-line-review.md",
+      "publishedSHA256": "49621d30cf50d26a40a1dabb4c6c2f9ac73417aafd341419354b3a24a13b233b",
+      "bytes": 3944,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.4-review/accepted-verification.json",
+      "sourceSHA256": "edfe9b0be198bdee554b93db71a5c83da2e2bb624e836258792bcd13c91c7050",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/revenue-business-line-verification.json",
+      "publishedSHA256": "edfe9b0be198bdee554b93db71a5c83da2e2bb624e836258792bcd13c91c7050",
+      "bytes": 1027,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.10-review/review.md",
+      "sourceSHA256": "5ec700b758ae71edd37fac45faa98972c9c78f3d0563f5d163d37f935c8fefff",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/balance-sheet-growth-review.md",
+      "publishedSHA256": "5ec700b758ae71edd37fac45faa98972c9c78f3d0563f5d163d37f935c8fefff",
+      "bytes": 4631,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.10-review/accepted-verification.json",
+      "sourceSHA256": "79b5de3c931901461061d06214d1de4335d75fdc0467faccb351ac4ed97d3d1d",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/balance-sheet-growth-verification.json",
+      "publishedSHA256": "79b5de3c931901461061d06214d1de4335d75fdc0467faccb351ac4ed97d3d1d",
+      "bytes": 1220,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.5-review/review.md",
+      "sourceSHA256": "b9f744578f6577a1f80cd3d008c85515178656278c5a0511cea97f6326b47f0e",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/revenue-geographic-review.md",
+      "publishedSHA256": "b9f744578f6577a1f80cd3d008c85515178656278c5a0511cea97f6326b47f0e",
+      "bytes": 5045,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.5-review/accepted-verification.json",
+      "sourceSHA256": "544cc7ccb4864d378675e48a5d95dd51f793bb3f797f04dba4cff3248dc0c018",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/revenue-geographic-verification.json",
+      "publishedSHA256": "544cc7ccb4864d378675e48a5d95dd51f793bb3f797f04dba4cff3248dc0c018",
+      "bytes": 1028,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.11-review/review.md",
+      "sourceSHA256": "1249eefa0cecad62eb1abbe0f8b486079298c649207972ce1060d7bcbd9f5c78",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/cash-flow-growth-review.md",
+      "publishedSHA256": "1249eefa0cecad62eb1abbe0f8b486079298c649207972ce1060d7bcbd9f5c78",
+      "bytes": 4935,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/3.11-review/accepted-verification.json",
+      "sourceSHA256": "0b3abbc0b62c46a78898e116db1139d9814136cd3cb7f7acb5fce8f445b44d28",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/cash-flow-growth-verification.json",
+      "publishedSHA256": "0b3abbc0b62c46a78898e116db1139d9814136cd3cb7f7acb5fce8f445b44d28",
+      "bytes": 1273,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.1-review/review.md",
+      "sourceSHA256": "e53edd7fdc95b116c5db501b495b01d717b0adb4243671ccdc966fc35c151405",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/registration-review.md",
+      "publishedSHA256": "e53edd7fdc95b116c5db501b495b01d717b0adb4243671ccdc966fc35c151405",
+      "bytes": 7266,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.1/accepted-verification.json",
+      "sourceSHA256": "9f7d8a399b8ba66e19dc2d794cd215b77aec77908517d2b165955a6bcc46d27a",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/registration-verification.json",
+      "publishedSHA256": "9f7d8a399b8ba66e19dc2d794cd215b77aec77908517d2b165955a6bcc46d27a",
+      "bytes": 5828,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.2-review/review.md",
+      "sourceSHA256": "cac2e2c6327556890bd1fbcca9b6bbf10293d16b973b4a026b1089a22dd1ea0b",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/actual-join-review.md",
+      "publishedSHA256": "cac2e2c6327556890bd1fbcca9b6bbf10293d16b973b4a026b1089a22dd1ea0b",
+      "bytes": 8694,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.2/accepted-verification.json",
+      "sourceSHA256": "dcef93be431919fb8e1a9e648e1b322570c9c486e22191a5db8ccb85a1b5661c",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/actual-join-verification.json",
+      "publishedSHA256": "dcef93be431919fb8e1a9e648e1b322570c9c486e22191a5db8ccb85a1b5661c",
+      "bytes": 5791,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.3-review/review.md",
+      "sourceSHA256": "cfe916521a51eefcd361d1b7c9942e4d037a3502869f6c24a03abcbad3a2284d",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/consumer-catalog-review.md",
+      "publishedSHA256": "cfe916521a51eefcd361d1b7c9942e4d037a3502869f6c24a03abcbad3a2284d",
+      "bytes": 6099,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.3/accepted-verification.json",
+      "sourceSHA256": "59f27cc452ef39c00b594d3736868979e4ce782712b3e6f0730d1b4f90a4fbbb",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/consumer-catalog-verification.json",
+      "publishedSHA256": "59f27cc452ef39c00b594d3736868979e4ce782712b3e6f0730d1b4f90a4fbbb",
+      "bytes": 6026,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.1-review/candidate-review.md",
+      "sourceSHA256": "274d8a6a111ece915ba9a324cc7e5603b6d426f1d6c4f4735e9cc48958a3d8be",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/candidate-review.md",
+      "publishedSHA256": "274d8a6a111ece915ba9a324cc7e5603b6d426f1d6c4f4735e9cc48958a3d8be",
+      "bytes": 6010,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.1/accepted-verification.json",
+      "sourceSHA256": "465fd954e92a6c5fc17e7bdb0322505ee5b48fb04173a3074fb16637a2878ae6",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/candidate-verification.json",
+      "publishedSHA256": "465fd954e92a6c5fc17e7bdb0322505ee5b48fb04173a3074fb16637a2878ae6",
+      "bytes": 5957,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/cashflow-route-review/review.md",
+      "sourceSHA256": "3cfbd2b6c8f594de5a34b4ab95537fb26cdbfd87bd5772bb4d53e2290d17ad45",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/cash-flow-growth-route-review.md",
+      "publishedSHA256": "3cfbd2b6c8f594de5a34b4ab95537fb26cdbfd87bd5772bb4d53e2290d17ad45",
+      "bytes": 2809,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/cashflow-promotion/route-verification.json",
+      "sourceSHA256": "5412b08fa3f47873155b403402705b67f72671e21de7275215c0ed006cbac767",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/cash-flow-growth-route-verification.json",
+      "publishedSHA256": "5412b08fa3f47873155b403402705b67f72671e21de7275215c0ed006cbac767",
+      "bytes": 1409,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.2-repair-review/review.md",
+      "sourceSHA256": "08a61b672da1708364ef0a46415b26e1c2499477a0a4fc1684d1a7bec6c6c664",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/live-matrix-review.md",
+      "publishedSHA256": "08a61b672da1708364ef0a46415b26e1c2499477a0a4fc1684d1a7bec6c6c664",
+      "bytes": 5257,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.2-repair-review/accepted-verification.json",
+      "sourceSHA256": "4f47f31363be249b7d11bc535d24d2a6e2aab3e211f452e92c0f7052531b1e6a",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/live-matrix-verification.json",
+      "publishedSHA256": "4f47f31363be249b7d11bc535d24d2a6e2aab3e211f452e92c0f7052531b1e6a",
+      "bytes": 4026,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.3-review/review.md",
+      "sourceSHA256": "504801cb225137c942f8905f6b75014228c9b3126ca848c59c335908a4c3cf80",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/native-browser-review.md",
+      "publishedSHA256": "504801cb225137c942f8905f6b75014228c9b3126ca848c59c335908a4c3cf80",
+      "bytes": 4116,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.3-review/accepted-verification.json",
+      "sourceSHA256": "d4e9cd1bbbb939c522958cf329746bafa5372272af30cef8a9199bf7e3c5672d",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/native-browser-verification.json",
+      "publishedSHA256": "d4e9cd1bbbb939c522958cf329746bafa5372272af30cef8a9199bf7e3c5672d",
+      "bytes": 5320,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.4-review/review.md",
+      "sourceSHA256": "2cad0baf80ed2faa3d80308df17ed07c8a95457576b5008e5de2a21c22c14d85",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/release-checks-review.md",
+      "publishedSHA256": "2cad0baf80ed2faa3d80308df17ed07c8a95457576b5008e5de2a21c22c14d85",
+      "bytes": 3040,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.4-review/accepted-verification.json",
+      "sourceSHA256": "ce6998ec055d18a8170983628ea5d9e53915c7a02a31ff3a23599c39319cf6dd",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/release-checks-verification.json",
+      "publishedSHA256": "ce6998ec055d18a8170983628ea5d9e53915c7a02a31ff3a23599c39319cf6dd",
+      "bytes": 6723,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.5-review/review.md",
+      "sourceSHA256": "157d27540a37ceab28e4f8e6620212ad8e38020655a848610297dd5b67733142",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/publication-review.md",
+      "publishedSHA256": "157d27540a37ceab28e4f8e6620212ad8e38020655a848610297dd5b67733142",
+      "bytes": 4882,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.5-review/accepted-verification.json",
+      "sourceSHA256": "d15873c99ad7e793c32c2a53f1fc2cf7e03b3ccc8ac3d80b349ec15de8236fda",
+      "publishedpath": "artifacts/reviewed/fmp-expansion-a/publication-verification.json",
+      "publishedSHA256": "d15873c99ad7e793c32c2a53f1fc2cf7e03b3ccc8ac3d80b349ec15de8236fda",
+      "bytes": 5985,
+      "transform": "exact-byte-copy"
     }
   ],
   "generated_metadata": [
@@ -36391,8 +36923,8 @@
       "reason": "Only the independently reviewed allowlist is published; raw runtime, private state, and redundant scratch copies remain excluded."
     }
   ],
-  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference.",
-  "total_payload_bytes": 171248837,
+  "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A tasks 1.1 source/complexity and 1.2 A1 offline contracts are independently accepted; no endpoint/live acceptance. Task 1.3 A2 offline contracts are accepted; task 1.4 admission freeze remains pending. Task 1.4 architecture/contract freeze accepted; SDK runtime repair and final emitter exception remain pending. Task 2.1 SDK admission accepted with exact emitter exceptions and committed-source combined gate; HTTP and endpoint joins remain pending. SDK task 2.1 reopened for the independently observed quarterly-alias defect; HTTP acceptance paused. The supplied-value correction is now independently approved and task 2.1 re-accepted: 186 tests and committed-source 111-file gate passed at API403323aee033dfcd30b7b24dda5f0f5efc35a339. HTTP resumed; its acceptance remains pending. Task 2.2 HTTP admission independently accepted: 399 joined checks,12 reviewer probes and clean combined gate; production registration remains pending. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts. Latest FMP task acceptance is recorded in the synchronized owning spec and selected review receipts.",
+  "total_payload_bytes": 171525859,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

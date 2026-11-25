@@ -1,0 +1,21 @@
+{
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "task": "2.1 SDK supplied-value correction",
+  "api_commit": "403323aee033dfcd30b7b24dda5f0f5efc35a339",
+  "tests": {
+    "passed": 186,
+    "exit_code": 0,
+    "log_sha256": "d631b0192808d536618865ee7086c360ee05bddd5839397af2974ff7d5842ded"
+  },
+  "review_sha256": "e1a146425da62ff2b7838288c5f0b3094a9b5dab94e9cf29e714bbee3c2e96e8",
+  "complexity": {
+    "exit_code": 0,
+    "files": 111,
+    "errors": 0,
+    "violations": 0,
+    "report_sha256": "84132c26abb903ddc570aff46c64572acfcd1055e16490faa9f4b4b93952601e",
+    "emitter_exceptions": 5
+  },
+  "limits": "Offline SDK prerequisite only. Frozen HTTP draft measured for size only. No production endpoint, live or browser acceptance. Historical generic 2.1/audit.json was refreshed accidentally; independent historical audits remain separate."
+}

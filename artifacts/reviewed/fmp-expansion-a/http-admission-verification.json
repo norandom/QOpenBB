@@ -1,0 +1,67 @@
+{
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "task": "2.2 HTTP admission",
+  "source": {
+    "origins": {
+      "qopenbb_data": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\root\\services\\data-api\\qopenbb_data\\__init__.py",
+      "openbb_core": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\data-api\\openbb_platform\\core\\openbb_core\\__init__.py",
+      "openbb_fmp": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\data-api\\openbb_platform\\providers\\fmp\\openbb_fmp\\__init__.py",
+      "openbb_fred": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\data-api\\openbb_platform\\providers\\fred\\openbb_fred\\__init__.py",
+      "openbb_equity": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\data-api\\openbb_platform\\extensions\\equity\\openbb_equity\\__init__.py",
+      "openbb_economy": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\data-api\\openbb_platform\\extensions\\economy\\openbb_economy\\__init__.py"
+    },
+    "revisions": {
+      "root": "b5d78990bd2030bf88baa2ecc0754d4bf109d118",
+      "data_api": "403323aee033dfcd30b7b24dda5f0f5efc35a339"
+    },
+    "files": {
+      "services/data-api/qopenbb_data/financial_query_policy.py": {
+        "sha256": "41fdb9470baa08fc9b2d4253b3a5aca7996d66a8bd8c61c636d750376face2d1",
+        "physical": 81,
+        "logical": 60,
+        "largest_function": 18
+      },
+      "services/data-api/qopenbb_data/financial_policy.py": {
+        "sha256": "497493166a7d7443fb7ecb5a0382259a7508ee26dfec40d7bd3511a03410ded6",
+        "physical": 74,
+        "logical": 50,
+        "largest_function": 19
+      },
+      "services/data-api/qopenbb_data/app.py": {
+        "sha256": "017390fb9b6deb0fbb933a86efc477e60e451015ee4672a89185052d42265999",
+        "physical": 135,
+        "logical": 75,
+        "largest_function": 24
+      },
+      "tests/providers/test_financial_query_policy.py": {
+        "sha256": "f4ff08c7306e04c3e56598fda843b398bed2d175393a6dfa975ab8921c7467c9",
+        "physical": 214,
+        "logical": 158,
+        "largest_function": 30
+      },
+      "tests/contracts/test_gallery_runtime.py": {
+        "sha256": "554c2130640798f03cf3a764b70c4a1671bdc3be4a9f494ef6f9b20c6157c95d",
+        "physical": 222,
+        "logical": 165,
+        "largest_function": 60
+      }
+    }
+  },
+  "tests": {
+    "joined": 399,
+    "independent_probes": 12,
+    "exit_codes": [
+      0,
+      0
+    ]
+  },
+  "complexity": {
+    "files": 111,
+    "errors": 0,
+    "violations": 0,
+    "report_sha256": "13218e2d892e5f9382390a7689b9bd72a264f7bbcacbd6cab4b79a7d5315726c"
+  },
+  "review_sha256": "d4f2e3af5e14a91180b9636d15595b84c81e071a7cc83bb4200d590efedc00ac",
+  "limits": "Dedicated offline variants only; production registration, live provider, browser and release acceptance remain pending."
+}

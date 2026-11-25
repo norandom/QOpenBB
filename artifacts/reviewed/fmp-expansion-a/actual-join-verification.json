@@ -1,0 +1,58 @@
+{
+  "task": "4.2",
+  "slug": "actual-join",
+  "sources": {
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/providers/test_fmp_actual_join.py": "14be098cda847ac30f6108479beeb1e9ed98c430996e783127bbb8f011e39ab3",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/providers/fmp_actual_join_support.py": "1f1d88c863daea820c39d2111e2c8e1d428f04a95854bc5ed5ac0afdb804142e",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/providers/test_service_financial.py": "3f77b05fd449ac803fc46b0d12a4138dc818d806fb56b03602766d3300e16060",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/pipeline/qopenbb_ci/runtime_inputs.py": "c357d56305fc76ca6b1b72dbd7384784619e1b7d8eaab2d618a9fe75e5411222",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/delivery/test_data_image.py": "ff0de1ea8aaf02ca0b88951a217b21e7b515be75920037addc84dd44169b8714"
+  },
+  "review": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.2-review/review.md",
+  "receipt": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.2/accepted-verification.json",
+  "complexity_reports": [
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.2/full-maintained-snapshot.json"
+  ],
+  "previous_accepted_tasks": 19,
+  "summary": "Actual production SDK/HTTP/OBBject and financial discovery join accepted: 97 worker checks, 45 independent actual-join checks, 71 pipeline checks and seven Linux symlink probes passed. Shared regression initially passed 296 with one outdated historical-proof assertion; the narrow correction passed the original case and three independent false-evidence attacks. Full maintained snapshot passed 763 files. Windows symlink privilege failures remain recorded; no live or candidate-image acceptance is claimed.",
+  "spec_updates": {
+    "native_join_accepted": true,
+    "admission_amendment": {
+      "document": "fmp-expansion-a-admission-amendment.md",
+      "sha256": "47d4939e6ee381b7cb8863b5e93f31780f8bf763e763078d09e69676bc8b14b0",
+      "review": "../../../artifacts/reviewed/fmp-expansion-a/contract-freeze-review.md",
+      "review_status": "approved",
+      "reviewer_model": "gpt-6-astra",
+      "scope": "Bounded mechanism correction within existing owner-approved strict admission outcomes; task count and budget unchanged.",
+      "artifact_status_note": "Reviewed authored proposal statuses are retained to preserve exact reviewed bytes; acceptance is recorded here and in task 1.4 review.",
+      "runtime_implemented": true,
+      "emitter_exception_approved": true,
+      "sdk_task_accepted": true,
+      "runtime_scope": "Actual eleven registered FMP variants now pass generated public SDK, mounted HTTP, Fetcher/OBBject JSON and installed financial discovery checks. Runtime packaging includes the strict HTTP query policy module. Generated consumer snapshots, packaged runtime and live/browser acceptance remain subsequent tasks.",
+      "api_commit": "403323aee033dfcd30b7b24dda5f0f5efc35a339",
+      "http_task_accepted": true,
+      "join_task_accepted": true,
+      "interfaces_frozen": true
+    },
+    "note": "Batch A eleven adapters, production registration and actual SDK/HTTP/OBBject/discovery joins accepted offline. Generated consumer contracts, packaged runtime, live/browser verification and publication remain pending; B8/C5 remain candidates."
+  },
+  "handover": "All eleven Batch A adapters, production registration and actual SDK/HTTP/OBBject/discovery joins are accepted offline (20 of 26 tasks). API source pins remain 04acdb09ed76f432f4091a61630213e19f2d655c. The finite image allowlist now includes the strict HTTP query-policy module; historical live-data proof remains separate from installed capability. Continue task 4.3: add eleven explicit consumer inventory entries, update truthful coverage records and generate/review snapshots using the authorized generation-only Dagger image. Then build the final candidate, freeze the shared 48-request ledger and complete live/browser/publication gates. No live Batch A requests have been used. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).",
+  "test_paths": [
+    "tests/providers/test_fmp_actual_join.py",
+    "tests/providers/fmp_actual_join_support.py",
+    "tests/providers/test_service_financial.py",
+    "tests/delivery/test_data_image.py"
+  ],
+  "breadth_evidence": [
+    "2026-11-17: Owner-approved 24-operation candidate plan; Batch A11 has 20/26 tasks accepted, including all eleven offline adapters, production registration and actual SDK/HTTP/OBBject/discovery joins alongside the ten-model baseline. B8/C5 remain candidates. No new live requests or account/widget acceptance.",
+    "Per-task exact-source reviews and verification receipts: .kiro/specs/market-data-integrations/fmp-expansion-a-tasks.md and artifacts/reviewed/fmp-expansion-a/. Foundation, contracts, SDK/HTTP admission, explicit empty-array acquisition and runtime packaging closure are independently accepted.",
+    "Task 4.1 registration/pins and task 4.2 actual-join reviews are under artifacts/reviewed/fmp-expansion-a/. The 763-file maintained snapshot passed; 97 worker actual-join checks and independent financial/shared/pipeline checks passed with the documented historical-proof assertion correction and Linux counterparts for Windows symlink privilege failures. Generated consumer contracts, packaged runtime, bounded live/browser checks and publication remain pending."
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "04acdb09ed76f432f4091a61630213e19f2d655c",
+  "review_sha256": "cac2e2c6327556890bd1fbcca9b6bbf10293d16b973b4a026b1089a22dd1ea0b",
+  "report_hashes": {
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.2/full-maintained-snapshot.json": "96f806aa49eebaa36b11639fe57d7e20c2e96c8f668bc6037c0db9b64209430e"
+  }
+}

@@ -1,0 +1,26 @@
+# Task 5.2 combined financial acceptance
+
+- VERDICT: APPROVED
+- Task: FMP Batch A 5.2, bounded real-provider direct/native financial comparison.
+- Accepted evidence: 29 prior valid cases on unchanged adapter source plus three successful corrected-image cash-flow cases. All eleven endpoints now have nonempty financial comparison evidence. Original three wrong-route failures remain recorded and consumed.
+- Accounting: cumulative 35 FMP requests, zero FRED, zero guard denials. Eight browser calls remain scheduled to reach 43; five diagnosed reserves remain locked. No browser acceptance or deployment is claimed.
+
+## Financial findings
+
+The corrected cash-flow endpoint returns upstream HTTP 200 and nonempty data for annual direct Fetcher, annual native HTTP and quarterly native HTTP. The native responses are HTTP 200. Annual calls each return three rows; the quarterly contrast returns two, for eight new rows. Each result is bound to its own callback ordinal 32, 33 or 34 and the sole API PID 1.
+
+The independent offline audit imports no production financial transformation. It directly compares operating cash-flow growth, net-income growth, free-cash-flow growth and capital-expenditure growth against each acquisition's raw source. It also checks symbol, reporting date, actual fiscalYear, fiscal period and reported currency for every row: 72 source-fact comparisons, all passing. The four financial fields remain provider growth ratios with scale 1. Effective query, returned/effective bounds, corrected source endpoint, dataset/provider identity, retrieval-to-callback timing, limitations and point-in-time-unsafe status pass separately. Growth comparison duration and cumulative-versus-discrete uncertainty remain disclosed; the audit does not derive new financial growth measures.
+
+The original independently audited 29 valid cases cover the other ten endpoints and their frozen contrasts: estimates, target events and consensus, product/geographic segments, historical market cap, share statistics, quotes, income growth and balance growth. Their 1,011 rows and 4,980 source-fact checks remain valid. Hash verification confirms every original private matrix/raw/ledger/proof input is unchanged. Independent Git comparisons establish that the corrected API commit changes only two endpoint literals in the cash-flow adapter; the other ten adapters and shared API code are unchanged. Their evidence retains its original image identity and is not represented as a rerun on the successor image.
+
+Combined accepted evidence comprises 32 successful cases, 1,019 normalized rows and 5,052 independently checked source facts, plus separate unit/provenance checks. Quotes were compared to their own acquisitions, not across moving market snapshots. Missing currency or vintage facts remain unknown under the reviewed retained-schema policy. The original three cash-flow 404/empty responses were caused by the wrong API path; they are neither successful empty data nor entitlement denials. No endpoint uses an entitlement-blocked exception for this acceptance.
+
+## Exact binding and verification
+
+The successor uses API image sha256:c0f6a96a6f069170ab455b821cb0b7fc7a0b766a86b90a2323bf47605f155e67 and Workspace image sha256:82541bb91a2ccb8f02f19e3d89d7d942599f2a289eec8118332fa5f30aaeb666, built from root b01613dccfd613fc7ac8c210bd93b0d5a57a87ca, API a7c6ae2139b4dcc16571d0c23ade483a114a0068 and Workspace bf180ef506286886da224df9ff184cd1ace2397e. Current root ecdb4bf11fe6b54c47ae93462988527fcfe7a7fe adds only reviewed generated metadata; packaged runtime inputs are unchanged. Actual successor startup/readiness exited 0, with exact canonical/gallery contract contents, installed package origins and cumulative process proof captured privately.
+
+Successor matrix SHA-256: 2ad019f932d233b5d33f44109c800e20f8ffb5669c6d4267cbd538b247115c55. Parent canonical bundle SHA-256: 8061656b7a3f45ad643d9222d87021a18ebdcb6d2b761a4060b373902cdb9203. Successor session: 96f09beb69af40f99f8171a63811084a. API container: db7951277d21aaff25256e57de291446ddcd4449e1aa9299a96aeb9bd1ba4a9a. The audit verifies the distinct successor session, original cumulative run identity, exact startup/proof binding, frozen module hashes, image pair, parent bundle and 35/0 ledger with zero denials. The predecessor is stopped and removed; its retained state and original 32-request ledger are not reset.
+
+Fresh command: `D:/BuildArtifacts/QOpenBB/statement-period-provenance/provider-venv/Scripts/python.exe -B ../evidence/5.2-repair-review/audit.py`, from the candidate root; exit 0. audit.json records sanitized case counts and exact private input hashes. Raw provider responses remain private. The prior route correction, same-budget successor workflow, image probe and orchestration reviews remain separate prerequisite evidence. This reviewer made no provider, browser or runtime lifecycle call during financial acceptance. Test/evidence code is excluded from maintained production complexity caps.
+
+Task 5.3 may now use its separately approved one-run browser helper and cumulative 35/39/43 gates. Displayed facts, persistence, export and browser diagnostics still require their own observed acceptance. Local candidate acceptance does not certify later CI image bytes.

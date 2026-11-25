@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from qopenbb_ci.catalog import canonical, compatibility, digest, freeze_routes, generate
+from qopenbb_ci.catalog_renderers import bind_renderers, frontend_bindings
 from qopenbb_ci.catalog_runtime import (
     ASSET,
     capture_schema,
@@ -25,6 +26,9 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--public-prefix", default="/data")
     result.add_argument("--output", required=True, type=Path)
     result.add_argument("--work", required=True, type=Path)
+    result.add_argument("--bind-renderers", action="store_true")
+    result.add_argument("--workspace-bindings", type=Path,
+                        help="Write the validated renderer contract into the owned frontend")
     return result
 
 
@@ -33,6 +37,8 @@ def read(path: Path):
 
 
 def run(args: argparse.Namespace) -> dict:
+    if args.workspace_bindings and not args.bind_renderers:
+        raise ValueError("frontend mirror requires --bind-renderers")
     revision = read(args.source_lock)["data_api"]["revision"]
     provenance = verified_sources(args.source, revision)
     schema, identity = capture_schema(args.image)
@@ -46,6 +52,8 @@ def run(args: argparse.Namespace) -> dict:
     second = upstream_widgets(args.image, args.source, schema, inventory, args.work)
     if canonical(outputs) != canonical(generate(schema, inventory, second, read(args.source / ASSET), args.public_prefix)):
         raise ValueError("upstream generation is not deterministic")
+    if args.bind_renderers:
+        outputs = bind_renderers(outputs)
     prior = read(args.previous_routes) if args.previous_routes else None
     outputs["compatibility.json"] = compatibility(prior, outputs["routes.json"])
     outputs["provenance.json"] = {**provenance, "image": args.image, "image_labels": identity["Config"]["Labels"],
@@ -55,13 +63,17 @@ def run(args: argparse.Namespace) -> dict:
     args.output.mkdir(parents=True, exist_ok=True)
     for name, value in {**outputs, "hashes.json": hashes}.items():
         (args.output / name).write_bytes(canonical(value))
+    if args.workspace_bindings:
+        args.workspace_bindings.parent.mkdir(parents=True, exist_ok=True)
+        args.workspace_bindings.write_bytes(canonical(frontend_bindings(outputs)))
     return {"output": str(args.output), "hashes": hashes,
             "requires_revalidation": outputs["compatibility.json"]["requires_revalidation"]}
 
 
 def generator_hashes() -> dict:
     return {name: hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()
-            for name in ("catalog.py", "catalog_financial.py", "catalog_runtime.py", "catalog_upstream.py", "catalog_cli.py")}
+            for name in ("catalog.py", "catalog_financial.py", "catalog_runtime.py", "catalog_upstream.py", "catalog_cli.py",
+                         "catalog_renderers.py")}
 
 
 def main() -> int:

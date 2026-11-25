@@ -1,0 +1,52 @@
+{
+  "task": "5.1",
+  "slug": "candidate",
+  "sources": {
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/assembly.py": "9ca532fffb0e56e0b8734879f5e5a13f50dfb9abb5450dce82eceafad06f5bbe",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/browser_proof.py": "b07fc039f62faea768069a53f3ace7573c5dce91b00274e82f50cf9ce58e5357",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/budget_base.py": "910b23185c233bd6d7c277bf9669c5f9f35c8fb066e4295126308c011f05fb2f",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/guard.py": "b5fa9c28229a88508354d9a6f7419a90377187c1c975aa6dda3e42b114469636",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/lifecycle.py": "aac6de603e166c0c9a49bbbfb164f3a8ed63adc9fc20177c30be22f270419a35",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/matrix.py": "8bee27261a3243f42964a2e1ad51ed85fe3131bbd3143d4c4c18f54b8d758595",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/reference.py": "6ecd58faba699f7f424cded98accd4b89bcdf32058ffdbae817e71925b780bb9",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/runner.py": "ffa366da921dd96cea320c73ad0f0beda768e61620df58b6631f802d826203fb",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/test_harness.py": "279b41c5e3a3a301bb807fcd964e8bec92ded1aba1ef9085f86356fcbb94b61d",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/test_reference.py": "c14506d94383509f2fb3ee36ce6e14b2d9a1d0f2917072b5fd72d6efcfcd0409",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/test_runner.py": "8fa8da1c97feb4264d1d3890d6fd16ea9194053ebdc4bf31b2373339b22763d2",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/harness/frozen-matrix.json": "b192ca2d353bc9834eeb1770ca05dfd609b046a5714bb3f8b317cae457753da8",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/readiness.py": "bf8a0ae3b44220faac08fce839cf923348e6db4ab0f6d09015ab8e2f7acc5445",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/build/build_candidate.py": "d569a9011de72e6b10f9417575efc8333763fc7dbc7e760766696927d73ca71d",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/build/candidate-identity.json": "6229f3a1b2471bdda3fe3683de6564533b780df92b1104680642ffd3d078fcde",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/run_matrix.py": "63fa594f58a33225731e401b369a89ef4df36fc375d458d70376807ad41a02eb"
+  },
+  "review": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.1-review\\candidate-review.md",
+  "receipt": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.1\\accepted-verification.json",
+  "complexity_reports": [
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\4.3\\full-maintained-snapshot.json"
+  ],
+  "previous_accepted_tasks": 21,
+  "summary": "Final local API and Workspace candidate images built through Dagger from committed source and loaded through portable commands. Independent exact-image harness probes passed 32 simulated nonempty acquisitions, 21 native HTTP checks, 12 mutation probes and 16 unit checks. Actual isolated Compose readiness verified served UTF-8 schema, canonical plus gallery catalogs, installed package origins and one guarded API process with zero provider requests and zero denials. Initial harness SDK/dependency/null-shape and readiness expectation failures remain recorded; application images were unchanged. Live, browser and CI publication acceptance remain pending.",
+  "spec_updates": {
+    "candidate_runtime_accepted": true,
+    "local_candidate_images": {
+      "workspace": "sha256:4039c2938757d43fb9969fa94973e11ad3504db743c2c23fa6e751c37e4c914e",
+      "data-api": "sha256:f42d79476c8a9a7b68b70019b2921d09552dfab23a86e6868d1bafe2fbe999e3"
+    },
+    "live_requests_used": 0,
+    "note": "Batch A final local candidate and zero-call readiness accepted. Bounded real-provider matrix, representative browser lifecycle, scoped release review and actual CI publication remain pending."
+  },
+  "handover": "Batch A task 5.1 is accepted (22 of 26 tasks). Final local candidate API sha256:f42d79476c8a9a7b68b70019b2921d09552dfab23a86e6868d1bafe2fbe999e3 and Workspace sha256:4039c2938757d43fb9969fa94973e11ad3504db743c2c23fa6e751c37e4c914e passed actual isolated zero-call readiness after independent harness review. Source pins remain API 04acdb09ed76f432f4091a61630213e19f2d655c and Workspace bf180ef506286886da224df9ff184cd1ace2397e. The owned runtime is retained under D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/runtime/session; do not restart initial readiness. Continue the checked zero-ledger handoff into task 5.2 frozen 32-request matrix, then eight browser requests, scoped release review and actual CI publication. Shared maximum is 48 FMP requests; zero used at this gate. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).",
+  "test_paths": [],
+  "breadth_evidence": [
+    "2026-11-17: Batch A eleven-adapter source and generated consumer integration plus final candidate packaging/zero-call readiness accepted, 22/26 tasks. B8/C5 remain candidates.",
+    "Task 5.1 actual isolated Compose runtime matches exact committed source/image identities, schema and canonical plus gallery catalogs. Independent external harness probes passed 32 simulated acquisitions, 21 native HTTP cases, 12 counter-mutations and 16 unit checks.",
+    "Zero live provider calls at candidate acceptance. Real-provider, browser and publication gates remain pending. Local candidate images do not certify later CI rebuild bytes."
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "04acdb09ed76f432f4091a61630213e19f2d655c",
+  "review_sha256": "274d8a6a111ece915ba9a324cc7e5603b6d426f1d6c4f4735e9cc48958a3d8be",
+  "report_hashes": {
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\4.3\\full-maintained-snapshot.json": "96f806aa49eebaa36b11639fe57d7e20c2e96c8f668bc6037c0db9b64209430e"
+  }
+}

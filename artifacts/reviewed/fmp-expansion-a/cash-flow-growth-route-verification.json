@@ -1,0 +1,24 @@
+{
+  "task": "3.11-route-followup",
+  "module": "cash_flow_growth",
+  "model_sha256": "46f9ab24fdb5956f3a4fe77e925fb1f0ba8169928d1be5997fce33c6f426cca7",
+  "test_sha256": "836b4e32531bb05bb95a7f191c32643a46092a18ad23430e2fba57235c01531f",
+  "additional_sources": {
+    "openbb_platform/providers/fmp/openbb_fmp/models/cash_flow_growth_data.py": "99d1bdbecd81783dd5ae7e3e2043d5e6b6d29b85910b2af9d054c8ab3f214209"
+  },
+  "checks_summary": "Corrected the request and metadata API endpoint to the retained-source cash-flow spelling. RED three route assertions failed; GREEN 477 passed with one existing skip and one warning. Five independent final-source probes passed. Original archive/member/notices hashes and documentation URL retained.",
+  "test_exit_codes": [
+    0,
+    0
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "a7c6ae2139b4dcc16571d0c23ade483a114a0068",
+  "review_sha256": "3cfbd2b6c8f594de5a34b4ab95537fb26cdbfd87bd5772bb4d53e2290d17ad45",
+  "complexity": {
+    "errors": 0,
+    "violations": 0,
+    "report_sha256": "3225f889f876c16e218c05b8ad724c220d7333546bda32110408e6c766d8e79a"
+  },
+  "limits": "Source correction accepted after three recorded upstream404 responses. Historical 32 attempts remain consumed. Corrected-image live diagnostic reruns and browser acceptance remain pending; this receipt does not claim live or entitlement success."
+}

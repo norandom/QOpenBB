@@ -1,0 +1,15 @@
+# Scoped release checks and sanitized mirror
+
+- VERDICT: APPROVED
+- Task: 5.4
+- Tested release source: 32d1140590eac95cd3f4af890249b7ab6d19f832
+
+The actual push/main Linux run 44131419572, attempt 1, completed successfully for this exact source. Candidate job 134209212358 used Ubuntu 24.04 and passed its Focused portable checks step. Independent retained-evidence checks verified discovery, workflow/job identity, captured hashes, the released pipeline command and complete aggregate pytest outcomes: 478 collected, one deselected, 477 selected, 465 passed and 12 skipped. The command selects the reviewed 21 delivery files. The log reports aggregate outcomes; it does not provide individual file outcomes. Build and publication steps were skipped in this source-check run.
+
+The final consumer evidence consists of the preserved eight-file result (207 passed, three failures and one skip) plus all three failed nodes passing after bounded repairs. The gallery test now supplies and checks the real route-iterator seam; strict generator and fixture-byte assertions remain intact. Gallery JSON was restored to exact existing Git blob bytes and given an explicit nested LF rule. The earlier native delivery failures remain recorded: Windows symlink permissions and missing Docker executable, plus the native CLI selection case that passed with explicit installed Podman selection. The new Linux run supplies the required portable verification, including changed image-input checks.
+
+Fresh maintained complexity measurements cover 763 files with zero errors and zero violations; native Node and TypeScript checks passed. Coverage preserves actual API evidence for all eleven endpoints, browser acceptance for four representatives, seven unknown widgets and unknown future AI use. The completed browser evidence remains split initial four plus fresh-context reopen four, retaining seven failed attempts. Cumulative usage remains 43/48 FMP, zero FRED and zero guard denials. This review made no additional provider or runtime calls.
+
+The complete sanitized mirror passed with 51 additive files and 199621 additive bytes; all 4440 historical entries and 118 archives remain verified. The only declared historical metadata transition is the exact date change from 2026-11-14 to 2026-11-17. Manifest SHA256: fc2c9ae0280c251b1e81d9776026d0fe69243eb1ba7b6c7f33f310d38d41e849. Task acceptance will add its own reviewed evidence records, which must be verified before their later publication.
+
+Task 5.4 is accepted as a source/check/mirror gate. Intended image publication remains bound to remote main at the tested source above; a later local acceptance-metadata commit is not the built source. Actual publication workflow head, downloaded assets, public image pulls, source/image identity and offline packaged checks remain task 5.5 work. Packaged coverage metadata and canonical gallery bytes differ from the historical local candidate, so local browser success does not establish CI-image browser acceptance. No deployment is approved or claimed.

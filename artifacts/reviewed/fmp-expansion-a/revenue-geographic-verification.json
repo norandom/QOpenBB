@@ -1,0 +1,22 @@
+{
+  "task": "3.5",
+  "module": "revenue_geographic",
+  "model_sha256": "894167fe1938b1a4916c66ff992adc669ecb836f2e43c1828054e4c738d614dd",
+  "test_sha256": "2f26874ce7d5fe947afad5989a3efe4a6bf5c12d9c9333fa7f24ebe0bf7acb45",
+  "checks_summary": "214 endpoint/shared tests and 24 independent adversarial checks passed; Ruff, six source origins and exact frozen contracts verified",
+  "test_exit_codes": [
+    0,
+    0
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "23a24f9e65a34c1b2b5f9e95f0f8d4cbd3892d56",
+  "review_sha256": "b9f744578f6577a1f80cd3d008c85515178656278c5a0511cea97f6326b47f0e",
+  "complexity": {
+    "files": 126,
+    "errors": 0,
+    "violations": 0,
+    "report_sha256": "565203433f6e11e0197ffc2c0412876e25fa671b8347eab5ef2ecb77f642cce7"
+  },
+  "limits": "Offline adapter only. Registration, native SDK/HTTP result join, live entitlement, financial comparison and browser acceptance remain pending. Other in-progress modules measured by combined gate are not accepted by this receipt."
+}

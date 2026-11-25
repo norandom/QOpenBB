@@ -1,0 +1,61 @@
+{
+  "task": "4.1",
+  "slug": "registration",
+  "sources": {
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/sources.lock.json": "6777d5f4780ec38609a37f2e9b4681f526eb156c3fffc2f37756752dc736fe7b",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/contracts/sources.json": "72033bd5287eae9afdb9da5cef1155af3ca828f0709d03dd28ef89f23e5dd1b7",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/.kiro/complexity/data-api.json": "7352304e767dd53e08c30c3f3177e56a1bcab9d0020e7e0282b790386efa01aa",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/.kiro/complexity-budgets.json": "03b51cb189e03bd3abca5805598b161f6ebb899d4006c6f4413caa6ce75f221f",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/providers/test_discovery.py": "b69e5b6400a9ab6176aac50d15c475aa076e0eb7befdd64ae4824dd0872be10a",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/providers/test_fmp_batch_a_registration.py": "2d3c59b766a933796f80ef485b184ef603ef5bed135973db1171262a58e6dbf8",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/data-api/openbb_platform/providers/fmp/openbb_fmp/provider.py": "34ce8b6449d5e5678a52a3e6caff118791c53ce87e64496d60910584b2bb7897",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/data-api/openbb_platform/providers/fmp/provenance.json": "066da35c8b8d6de4adde87787bc03e3a658538bc66508f0de40504d473b4953a"
+  },
+  "review": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.1-review/review.md",
+  "receipt": "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.1/accepted-verification.json",
+  "complexity_reports": [
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.1/pre-promotion-complexity.json",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.1/full-maintained-snapshot.json"
+  ],
+  "previous_accepted_tasks": 18,
+  "summary": "All eleven additions and ten baseline FMP models are registered offline; five focused checks and independent source-pin probes passed. Exact API source pins agree; the 127-file historical batch audit and 763-file full maintained snapshot passed without violations. Packaged, live and consumer acceptance remain pending.",
+  "spec_updates": {
+    "implemented_operations": 11,
+    "note": "Batch A eleven adapters and production registration accepted offline. Actual registered SDK/HTTP/discovery joins, generated consumer contracts, live/browser verification and publication remain pending; B8/C5 remain candidates.",
+    "admission_amendment": {
+      "document": "fmp-expansion-a-admission-amendment.md",
+      "sha256": "47d4939e6ee381b7cb8863b5e93f31780f8bf763e763078d09e69676bc8b14b0",
+      "review": "../../../artifacts/reviewed/fmp-expansion-a/contract-freeze-review.md",
+      "review_status": "approved",
+      "reviewer_model": "gpt-6-astra",
+      "scope": "Bounded mechanism correction within existing owner-approved strict admission outcomes; task count and budget unchanged.",
+      "artifact_status_note": "Reviewed authored proposal statuses are retained to preserve exact reviewed bytes; acceptance is recorded here and in task 1.4 review.",
+      "runtime_implemented": true,
+      "emitter_exception_approved": true,
+      "sdk_task_accepted": true,
+      "runtime_scope": "SDK/HTTP dedicated prerequisites and all eleven production FMP registrations accepted offline; actual registered SDK/HTTP/result/discovery join remains task 4.2.",
+      "api_commit": "403323aee033dfcd30b7b24dda5f0f5efc35a339",
+      "http_task_accepted": true,
+      "join_task_accepted": true,
+      "interfaces_frozen": true
+    }
+  },
+  "handover": "All eleven Batch A adapters and production registration are accepted offline (19 of 26 tasks). The FMP registry contains 21 models including the unchanged ten-model baseline. API source pins agree at 04acdb09ed76f432f4091a61630213e19f2d655c; independent registration/pin review and both historical-change and full maintained-snapshot gates passed. Continue task 4.2 actual registered SDK/HTTP/OBBject and discovery checks, then task 4.3 explicit consumer inventory expansion and generated contracts. Live/browser verification and publication remain pending. No live Batch A requests have been used. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).",
+  "test_paths": [
+    "tests/providers/test_fmp_batch_a_registration.py",
+    "tests/providers/test_discovery.py"
+  ],
+  "breadth_evidence": [
+    "2026-11-17: Owner-approved 24-operation candidate plan; Batch A11 has 19/26 tasks accepted, including all eleven offline adapters and production registration alongside the ten-model baseline. B8/C5 remain candidates. No new live requests or account/widget acceptance.",
+    "Per-task exact-source reviews and verification receipts: .kiro/specs/market-data-integrations/fmp-expansion-a-tasks.md and artifacts/reviewed/fmp-expansion-a/. Foundation, frozen contracts, SDK/HTTP admission and explicit empty-array acquisition are independently accepted.",
+    "Task 4.1: artifacts/reviewed/fmp-expansion-a/registration-review.md; five focused registration checks and independent source-pin probes passed; 127-file historical batch audit and 763-file full maintained snapshot passed. Actual registered result/discovery joins, generated consumer contracts, packaged runtime, bounded live/browser checks and publication remain pending."
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "04acdb09ed76f432f4091a61630213e19f2d655c",
+  "review_sha256": "e53edd7fdc95b116c5db501b495b01d717b0adb4243671ccdc966fc35c151405",
+  "report_hashes": {
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.1/pre-promotion-complexity.json": "ceaab4a666f451605c85b4bc0367d9b056eaf31b1aabf5eb3fc3f6f3837fa706",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/4.1/full-maintained-snapshot.json": "e4c522cea4822cda42dee31761abc31c866934d84ed1be16ba277b6bd45460b9"
+  }
+}

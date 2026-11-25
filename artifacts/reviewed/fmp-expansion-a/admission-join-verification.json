@@ -1,0 +1,25 @@
+{
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "task": "2.3 joined prerequisites",
+  "root_base": "8bdec2f7cc0b60af776da0ea9f0e54ef2e223226",
+  "api_commit": "403323aee033dfcd30b7b24dda5f0f5efc35a339",
+  "tests": {
+    "shared": 255,
+    "independent_probes": 22,
+    "exit_codes": [
+      0,
+      0
+    ]
+  },
+  "complexity": {
+    "files": 111,
+    "errors": 0,
+    "violations": 0,
+    "report_sha256": "13218e2d892e5f9382390a7689b9bd72a264f7bbcacbd6cab4b79a7d5315726c"
+  },
+  "review_sha256": "b0d052823e7c6f5a6397fbade8b63f30e0aa719d5ab8908a459762a9c010fd73",
+  "test_sha256": "144d338280d601e1a3f829eec7c4fb225c723d9b4a96a91e4726cb1d73013e1c",
+  "interfaces_frozen": true,
+  "limits": "Dedicated offline composition; actual production registration/annotations/result join, live/browser and publication remain pending."
+}

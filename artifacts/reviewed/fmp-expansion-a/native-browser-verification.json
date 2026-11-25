@@ -1,0 +1,46 @@
+{
+  "task": "5.3",
+  "slug": "native-browser",
+  "sources": {
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.3-review/audit_initial.py": "d688b90996d5cb3146eea878f75ddf3a9f654a550b881dd775761b36222a5cd2",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.3-review/initial-audit.json": "4f6a9717eb863892db19a65c8d9f8e67249b1d8fc3710419b03ec24d8855af93",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.3-review/audit_final.py": "1fcbfd584cde3c6dd64f23530ef052ac50b76d87e0dd6c31e841c98fda500c8f",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.3-review/final-audit.json": "6c0dba7ea3aa9a4c893185ea700d8fb4b26b1d8861a6735c7e7f18f7711c702a",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/evidence/5.3-review/reopen-execution-reviewed-binding.json": "e4e50159649f0fdaefd3d80109eee045e27ba42eb8d0b0bd82f9852e9f1c812e",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/candidate/repair-build/candidate-identity.json": "cf59618552812f860b239952327bb1ab9a9bf0fb0e4ba0ef7bf2049ae3507f1f",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/tests/e2e/fmp-expansion-workspace.spec.mts": "231a2fcd2378cf0e0847c519d6be5237a50022de6980f13d4d997590b17d36f0",
+    "D:/BuildArtifacts/QOpenBB/fmp-expansion-a/root/verification/financial-workspace.config.ts": "c4dacd125c638f0d4b29fc529f380a11979b5f2d9f8f4119bc225f1281fb1717"
+  },
+  "review": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.3-review\\review.md",
+  "receipt": "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\5.3-review\\accepted-verification.json",
+  "complexity_reports": [
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\final-quality\\measurements.json"
+  ],
+  "previous_accepted_tasks": 23,
+  "summary": "Four representative local widgets passed eight actual acquisitions: retained initial four display/CSV/native-save cases plus fresh-context reopen four; 70 rows and 372 independently checked financial/identity facts, four CSV exports. Seven failed browser attempts remain retained; the accepted initial journey includes two genuine pre-I/O 422 responses. Same guarded process ends at 43/48 FMP, FRED 0 and zero denials. No eleven-widget, App-template, later CI-image or deployment claim.",
+  "spec_updates": {
+    "native_browser_accepted": true,
+    "local_candidate_images": {
+      "data-api": "sha256:c0f6a96a6f069170ab455b821cb0b7fc7a0b766a86b90a2323bf47605f155e67",
+      "workspace": "sha256:82541bb91a2ccb8f02f19e3d89d7d942599f2a289eec8118332fa5f30aaeb666"
+    },
+    "live_requests_used": 43,
+    "note": "Four representative local widgets passed eight actual acquisitions: retained initial four display/CSV/native-save cases plus fresh-context reopen four; 70 rows and 372 independently checked financial/identity facts, four CSV exports. Seven failed browser attempts remain retained; the accepted initial journey includes two genuine pre-I/O 422 responses. Same guarded process ends at 43/48 FMP, FRED 0 and zero denials. No eleven-widget, App-template, later CI-image or deployment claim. Final release checks and CI publication remain pending."
+  },
+  "handover": "Batch A task 5.3 accepted (24 of 26 tasks). Four representative local widgets passed eight actual acquisitions: retained initial four display/CSV/native-save cases plus fresh-context reopen four; 70 rows and 372 independently checked financial/identity facts, four CSV exports. Seven failed browser attempts remain retained; the accepted initial journey includes two genuine pre-I/O 422 responses. Same guarded process ends at 43/48 FMP, FRED 0 and zero denials. No eleven-widget, App-template, later CI-image or deployment claim. Preserve the active successor runtime/session and cumulative ledger; no further provider calls are needed. Continue task 5.4 final consumer/coverage/mirror checks and actual Linux source checks, then task 5.5 reviewed CI publication without deployment. API a7c6ae2139b4dcc16571d0c23ade483a114a0068. See [task evidence](specs/market-data-integrations/fmp-expansion-a-tasks.md).",
+  "test_paths": [
+    "tests/e2e/fmp-expansion-workspace.spec.mts"
+  ],
+  "breadth_evidence": [
+    "2026-11-17: Batch A task 5.3 accepted, 24/26 tasks; B8/C5 remain candidates.",
+    "Four representative local widgets passed eight actual acquisitions: retained initial four display/CSV/native-save cases plus fresh-context reopen four; 70 rows and 372 independently checked financial/identity facts, four CSV exports. Seven failed browser attempts remain retained; the accepted initial journey includes two genuine pre-I/O 422 responses. Same guarded process ends at 43/48 FMP, FRED 0 and zero denials. No eleven-widget, App-template, later CI-image or deployment claim.",
+    "Task 5.2 retains financial evidence for all 11 endpoints; actual native widget lifecycle acceptance covers only four representatives. Final CI images require separate verification."
+  ],
+  "status": "VERIFIED",
+  "claim_type": "TASK",
+  "api_commit": "a7c6ae2139b4dcc16571d0c23ade483a114a0068",
+  "review_sha256": "504801cb225137c942f8905f6b75014228c9b3126ca848c59c335908a4c3cf80",
+  "report_hashes": {
+    "D:\\BuildArtifacts\\QOpenBB\\fmp-expansion-a\\evidence\\release-gate-preparation\\final-quality\\measurements.json": "9cbd9d0260893397c788518dc97c81dba202c54bdb8c9f41c34ba62c7dbdca64"
+  }
+}
