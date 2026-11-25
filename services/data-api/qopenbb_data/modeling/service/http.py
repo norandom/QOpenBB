@@ -1,5 +1,6 @@
 """Serve /modeling/v1 on the internal ASGI listener, separate from wildcard /data."""
 
+from collections.abc import Callable
 from math import isfinite
 from threading import BoundedSemaphore, Event
 from typing import Protocol
@@ -22,6 +23,8 @@ from .identity import IdentityError
 from .orchestrator import Orchestrator
 from .ports import Principal
 from .run_store import RunNotFound, RunPublishedError, RunStoreError
+from .widget_discovery import apps, widgets
+from .widget_projection import project_output
 
 _MAX_BODY_BYTES = 2 * 1024 * 1024
 
@@ -55,16 +58,35 @@ def create_model_app(
 
     @app.get("/models")
     def models(request: Request) -> Response:
-        try:
-            _authenticate(request, verifier)
-            descriptors = registry.descriptors()
-            return JSONResponse(
-                {"models": [item.model_dump(mode="json") for item in descriptors]}
-            )
-        except IdentityError:
-            return failure(401, "unauthorized")
-        except Exception:  # noqa: BLE001
-            return failure(503, "discovery_unavailable")
+        return _discovery(
+            request,
+            verifier,
+            lambda: {
+                "models": [
+                    item.model_dump(mode="json") for item in registry.descriptors()
+                ]
+            },
+        )
+
+    @app.get("/widgets.json")
+    def discover_widgets(request: Request) -> Response:
+        return _discovery(request, verifier, widgets)
+
+    @app.get("/apps.json")
+    def discover_apps(request: Request) -> Response:
+        return _discovery(request, verifier, apps)
+
+    @app.get("/widget-results")
+    def widget_results(request: Request) -> Response:
+        params = request.query_params
+        return _read_saved(
+            request,
+            orchestrator,
+            verifier,
+            params.get("run_id", ""),
+            params.get("output_id", ""),
+            widget=True,
+        )
 
     @app.post("/evaluations")
     async def evaluate(request: Request) -> Response:
@@ -103,6 +125,18 @@ def create_model_app(
         return _read_saved(request, orchestrator, verifier, run_id, output_id)
 
     return app
+
+
+def _discovery(
+    request: Request, verifier: IdentityVerifier, load: Callable[[], dict | list]
+) -> Response:
+    try:
+        _authenticate(request, verifier)
+        return JSONResponse(load())
+    except IdentityError:
+        return failure(401, "unauthorized")
+    except Exception:  # noqa: BLE001 - Keep internal configuration errors private.
+        return failure(503, "discovery_unavailable")
 
 
 def _authenticate(request: Request, verifier: IdentityVerifier) -> Principal:
@@ -271,43 +305,29 @@ def _read_saved(
     verifier: IdentityVerifier,
     run_id: str,
     output_id: str | None = None,
+    *,
+    widget: bool = False,
 ) -> Response:
     try:
         principal = _authenticate(request, verifier)
+        if widget and (not run_id or not output_id):
+            return failure(
+                422,
+                "invalid_request",
+                [
+                    {"path": [name], "code": "missing"}
+                    for name, value in (("run_id", run_id), ("output_id", output_id))
+                    if not value
+                ],
+            )
         run = orchestrator.get(run_id, principal)
         if output_id is None:
             return _run_response(run)
-        return _project(run, output_id)
+        expected = request.query_params.get("expected_run_id") or None
+        return JSONResponse(project_output(run, output_id, expected_run_id=expected))
     except IdentityError:
         return failure(401, "unauthorized")
     except RunNotFound:
         return failure(404, "not_found")
     except Exception:  # noqa: BLE001
         return failure(503, "storage_unavailable")
-
-
-def _project(run: ModelRun, output_id: str) -> JSONResponse:
-    output = next((item for item in run.outputs if item.output_id == output_id), None)
-    if output is None:
-        return failure(404, "not_found")
-    return JSONResponse(
-        {
-            "run_id": run.run_id,
-            "results": [output.model_dump(mode="json")],
-            "checks": [
-                check.model_dump(mode="json")
-                for check in run.checks
-                if check.rule_id in output.check_ids
-            ],
-            "trace": [
-                entry.model_dump(mode="json")
-                for entry in run.trace
-                if entry.trace_id in output.trace_ids
-            ],
-            "verification": [
-                entry.model_dump(mode="json")
-                for entry in run.verification
-                if entry.output_id == output_id
-            ],
-        }
-    )

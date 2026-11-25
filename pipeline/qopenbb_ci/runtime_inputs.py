@@ -27,6 +27,8 @@ RUNTIME_FILES = frozenset('services/data-api/' + name for name in (
     'qopenbb_data/modeling/service/http_errors.py',
     'qopenbb_data/modeling/service/run_store_transport.py',
     'qopenbb_data/modeling/service/run_store_worker.py',
+    'qopenbb_data/modeling/service/widget_projection.py',
+    'qopenbb_data/modeling/service/widget_discovery.py',
     'qopenbb_data/modeling/service/__init__.py',
     'qopenbb_data/modeling/contracts/__init__.py',
     'qopenbb_data/modeling/contracts/common.py',

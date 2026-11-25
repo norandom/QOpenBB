@@ -76,7 +76,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 4.2, 5, 6_
   - _Requirements: 1.1, 2.5, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 6.3, 6.4_
 
-- [ ] 8. Expose the model HTTP API and widget contracts
+- [x] 8. Expose the model HTTP API and widget contracts
 - [x] 8.1 Expose authenticated evaluation and saved-run HTTP routes
   - Implement discovery, evaluation, saved-run and output routes, safe errors, identity assertion validation and private run access. Enforce body/timeout/admission limits; GET operations never calculate.
   - Done: HTTP contract tests cover valid/withheld/unverified results, expired/wrong-audience/spoofed identity, wrong-owner access and bounded requests.
@@ -85,7 +85,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 7_
   - _Requirements: 1.2, 1.3, 3.6, 4.1, 4.5_
 
-- [ ] 8.2 Project saved outputs for widget discovery
+- [x] 8.2 Project saved outputs for widget discovery
   - Add generated widget/app discovery and read-only result projections without financial formulas.
   - Done: projection tests preserve null/check/stale states, trace links and declared numeric display bounds; GET requests never recalculate.
   - Completion gate: maintained production files pass 400 physical / 300 logical / 50 per function and owning checks.
