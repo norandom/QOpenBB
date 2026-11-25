@@ -15,7 +15,7 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 1 and accepted foundation model protocol (task 4.1)_
   - _Requirements: 1.4, 2.3, 3.5, 4.1, 4.4_
 
-- [ ] 3. Resolve trading windows and eligible price versions
+- [x] 3. Resolve trading windows and eligible price versions
   - Join expected sessions to prices by date. Show that a shuffled 64-close window resolves in order, holidays preserve adjacency, and gaps, conflicting duplicates, nonpositive closes and unavailable versions fail with dated reasons. Separate calendar endpoint resolution from complete-price validation so DFII10 can use endpoints independently.
   - _Boundary: models/factors/sessions.py and session tests; apply the complexity gate._
   - _Depends: 2_
