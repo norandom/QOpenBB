@@ -1758,3 +1758,11 @@ planned_checks = ["authenticated saved-run integration"]
 test_paths = ["tests/factors/test_timing_reference.py", "tests/factors/test_timing_reference_limits.py", "tests/factors/test_study_groups.py"]
 status = "passed"
 evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/factor-signals/timing-references.md."]
+
+[[capabilities]]
+id = "private-model-runs"
+requirements = ["financial-modeling/requirements.md:3.1", "financial-modeling/requirements.md:3.4", "financial-modeling/requirements.md:3.5", "financial-modeling/requirements.md:3.6"]
+planned_checks = ["authenticated evaluation service integration"]
+test_paths = ["tests/factors/test_run_store.py", "tests/factors/test_model_run_evidence.py"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/private-model-runs.md."]

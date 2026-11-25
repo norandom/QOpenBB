@@ -59,7 +59,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 3_
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 3.2, 3.3, 3.5_
 
-- [ ] 6. (P) Persist immutable owner-scoped model runs
+- [x] 6. (P) Persist immutable owner-scoped model runs
   - Implement run-store port and atomic relative-bind file persistence with opaque run IDs. Retain snapshots, assumptions, methods/rules/reference versions, trace entries and safe fingerprints; prevent path traversal and wrong-owner retrieval.
   - Done: complete saved run round-trips, interrupted writes remain undiscoverable, old runs remain immutable and owner authorization fails closed. Tests do not use owner data.
   - Completion gate: measure this task's maintained production files against 400 physical / 300 logical / 50 per function and record fresh checks; docs/generated artifacts remain scoped exclusions.
