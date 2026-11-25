@@ -9,7 +9,13 @@ RUNTIME_FILES = frozenset('services/data-api/' + name for name in (
     'qopenbb_data/config.py', 'qopenbb_data/app.py', 'qopenbb_data/gallery.py',
     'qopenbb_data/financial_openapi.py', 'qopenbb_data/financial_catalog.py',
     'qopenbb_data/financial_policy.py', 'qopenbb_data/financial_errors.py',
-    'qopenbb_data/financial_query_policy.py', 'qopenbb_data/financial_http_quarter.py')) | frozenset({
+    'qopenbb_data/financial_query_policy.py', 'qopenbb_data/financial_http_quarter.py',
+    'qopenbb_data/modeling/__init__.py',
+    'qopenbb_data/modeling/contracts/__init__.py',
+    'qopenbb_data/modeling/models/__init__.py',
+    'qopenbb_data/modeling/models/factors/__init__.py',
+    'qopenbb_data/modeling/verification/__init__.py',
+    'qopenbb_data/modeling/verification/factors/__init__.py')) | frozenset({
         'contracts/widgets.json', 'contracts/apps.json',
         'contracts/gallery/data.json', 'contracts/gallery/catalog.json',
         'docs/reference/provider-coverage.json'})

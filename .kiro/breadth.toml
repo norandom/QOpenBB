@@ -1646,3 +1646,11 @@ planned_checks = ["frozen 26-call request matrix and result-record contract", "g
 test_paths = ["tests/contracts/test_cross_asset_inputs.py"]
 status = "passed"
 evidence = ["2026-11-18: all seven tasks accepted. One guarded live run against data image sha256:3db18506631972b3a3a176f45069cdac6574af7c35543e261ce7153b58ed25e4 sent 34 provider requests (18 FMP, 16 FRED) with zero denials; 26 of 26 calls acquired; 40,020 price fields and 54,146 series rows matched the provider responses. Six ETFs (XLK, DBC, GLD, XLE, XLB, SPY) and eight FRED series are recorded in docs/reference/cross-asset-inputs.json; the contract test passes 50 checks. Independent reviews: artifacts/reviewed/cross-asset-inputs/1-review.md, 4-review.md and 5-6-review.md. ETF history was probed for two windows only (2007-2011 and August to November 2026); ETF prices exclude dividends. FRED page sources were read through a summarising fetch. API results only: no widget, factor, story, image build or publication is claimed."]
+
+[[capabilities]]
+id = "factor-package-staging"
+requirements = ["factor-signals/requirements.md:4.4"]
+planned_checks = ["independent financial recalculation against dated inputs"]
+test_paths = ["tests/delivery/test_data_image.py", "tests/quality/test_python_units.py"]
+status = "passed"
+evidence = ["Package bootstrap only, 2026-11-25. Six modeling packages imported from the staged tree and passed integrity checks. Polars 1.44.2 installed from the frozen service lock and passed a bounded two-thread decimal sum. The combined complexity gate measured 113 files with zero violations. No factor calculation or rebuilt image is claimed."]

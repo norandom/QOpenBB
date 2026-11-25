@@ -4,6 +4,8 @@ import asyncio
 import hashlib
 import importlib.util
 import json
+import shutil
+import subprocess
 import sys
 import types
 from pathlib import Path
@@ -16,11 +18,20 @@ FINANCIAL_FILES = tuple('services/data-api/qopenbb_data/' + name for name in (
     'financial_openapi.py', 'financial_catalog.py', 'financial_policy.py',
     'financial_errors.py', 'financial_query_policy.py', 'financial_http_quarter.py')) + ('docs/reference/provider-coverage.json',)
 
+ROOT = Path(__file__).resolve().parents[2]
+MODELING_PACKAGES = (
+    'modeling', 'modeling/contracts', 'modeling/models', 'modeling/models/factors',
+    'modeling/verification', 'modeling/verification/factors',
+)
+MODELING_FILES = tuple(
+    f'services/data-api/qopenbb_data/{package}/__init__.py' for package in MODELING_PACKAGES
+)
+
 FILES = tuple('services/data-api/' + name for name in (
     'pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
     'qopenbb_data/config.py', 'qopenbb_data/app.py', 'qopenbb_data/gallery.py')) + (
         'contracts/widgets.json', 'contracts/apps.json',
-        'contracts/gallery/data.json', 'contracts/gallery/catalog.json') + FINANCIAL_FILES
+        'contracts/gallery/data.json', 'contracts/gallery/catalog.json') + FINANCIAL_FILES + MODELING_FILES
 
 
 
@@ -46,16 +57,34 @@ def runtime(tmp_path):
     for name in FILES:
         target = root / name
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text('public fixture')
+        shutil.copyfile(ROOT / name, target)
     (root / '.env').write_text('DISPOSABLE_PRIVATE_SENTINEL')
     return root
+
+
+def test_staged_modeling_packages_are_importable(tmp_path):
+    roots, policy, lock = inputs(tmp_path)
+    destination = tmp_path / 'stage'
+    result = stage(destination, roots, policy, lock, 'data-api', runtime_root=ROOT)
+    assert verify_stage(destination, policy, lock) == result
+    staged_service = destination / 'runtime/services/data-api'
+    modules = tuple('qopenbb_data.' + package.replace('/', '.') for package in MODELING_PACKAGES)
+    subprocess.run(
+        [sys.executable, '-I', '-B', '-c',
+         'import importlib, sys; sys.path.insert(0, sys.argv[1]); '
+         'list(map(importlib.import_module, sys.argv[2:]))',
+         str(staged_service), *modules],
+        check=True, timeout=10,
+    )
+    for name in MODELING_FILES:
+        assert result['runtime_inputs'][name] == hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
 
 
 @pytest.mark.parametrize('changed', ['services/data-api/qopenbb_data/app.py',
                                     'services/data-api/qopenbb_data/gallery.py',
                                     'contracts/widgets.json', 'contracts/apps.json',
                                     'contracts/gallery/data.json', 'contracts/gallery/catalog.json',
-                                    *FINANCIAL_FILES])
+                                    *FINANCIAL_FILES, *MODELING_FILES])
 def test_data_stage_has_exact_runtime_hashes(tmp_path, changed):
     roots, policy, lock = inputs(tmp_path)
     root = runtime(tmp_path)
@@ -107,9 +136,9 @@ def test_missing_gallery_asset_cannot_be_staged(tmp_path, name):
         stage(tmp_path / 'stage', roots, policy, lock, 'data-api', runtime_root=root)
 
 
-@pytest.mark.parametrize('name', FINANCIAL_FILES)
+@pytest.mark.parametrize('name', FINANCIAL_FILES + MODELING_FILES)
 @pytest.mark.parametrize('mutation', ['missing', 'symlink'])
-def test_financial_runtime_inputs_are_required_regular_files(tmp_path, name, mutation):
+def test_financial_and_modeling_runtime_inputs_are_required_regular_files(tmp_path, name, mutation):
     roots, policy, lock = inputs(tmp_path)
     root = runtime(tmp_path)
     target = root / name
