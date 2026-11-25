@@ -1,6 +1,6 @@
 """Explicit registry of installed supplied-input model methods."""
 
-from typing import Iterable
+from collections.abc import Iterable
 
 from ..contracts.descriptors import ModelDescriptor
 from .protocol import Model

@@ -15,3 +15,16 @@ The data API fork at `5583c958d35282cb59037aae8218cec31d540697` contains OpenBB 
 The data image installs the extensions listed in [the runtime manifest](../../../services/data-api/pyproject.toml); technical and quantitative are absent. The [app factory](../../../services/data-api/qopenbb_data/app.py) mounts the OpenBB application at the root and exposes its OpenAPI document. Register house routes before the catch-all mount and explicitly include their contracts in the exposed schema. The gallery serves packaged widgets and apps; defer story catalog changes to story integration.
 
 The [runtime input allowlist](../../../pipeline/qopenbb_ci/runtime_inputs.py) stages individual source files into the existing Dagger data image. Include each new production module and verify its hash through [the staging tests](../../../tests/delivery/test_data_image.py). Start from the approved 64-close momentum fixture, verify unavailable inputs and compare with an independent reference before enabling a live story.
+
+## Source fields for the first six descriptor examples
+
+These mappings were checked against the data API revision above. Eligibility is evaluated per observation at its decision timestamp. The public checkpoint establishes which routes returned data; its summary cannot supply a missing filing version, trading schedule or availability timestamp.
+
+| Model input | Provider field and financial meaning | Condition for a historical result |
+| --- | --- | --- |
+| ETF momentum and volatility | FMP `equity_historical.py` exposes `date` and nullable `close`, a split-adjusted price per share. The requested symbol identifies the proxy. | Require a dated exchange calendar, the eligible version of each of 64 closes and their availability times. Check actual calendar gaps. |
+| DFII10 endpoint levels | FRED `series.py` returns dated series values and preserves real-time intervals when supplied. Its metadata identifies vintage-query capability and publication dates as unknown. | Require independently evidenced availability for the two level observations. A retrieval timestamp or real-time interval alone cannot establish the historical signal. |
+| Issuer cash-flow numerator | FMP `cash_flow_data.py` maps `operatingCashFlow`, `capitalExpenditure`, `acceptedDate`, `fillingDate` and `reportedCurrency`. | Identify each standalone fiscal interval, the available filing version, time zone and capex sign convention. Reject overlapping year-to-date flows. |
+| Issuer market-value denominator | FMP `historical_market_cap.py` maps `marketCap` to `market_cap` and preserves its observation date. The adapter explicitly flags currency, share count, price basis and vintage availability as unknown. | Withhold the live yield until the dated issuer scope, comparable currency and availability are evidenced. |
+| Ordered ETF comparison | Derived from the two identified ETF legs and versioned methods. | Require matching metric, schedule, window and basis. Preserve the valid leg when the spread is withheld. |
+| Timing study | Derived from historical decision-time regimes and signals, subsequent returns and an explicitly named benchmark. | Require the declared position rule, exposure and horizon, evaluation partition and non-overlapping return path for compounding. |

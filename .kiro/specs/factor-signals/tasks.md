@@ -9,7 +9,7 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Boundary: Controller owns package setup and shared inventory. Apply the complexity gate to setup and checker changes._
   - _Requirements: 4.4_
 
-- [ ] 2. Freeze dated input and output examples
+- [x] 2. Freeze dated input and output examples
   - Freeze the six descriptors' input keys, units, rule and reference versions, numeric tolerances and trace fields. Include schedule revision, decision and evaluation timestamps, session zone, availability times, entity scope and partial-result states. Agree on fixture ownership and show valid and missing-input examples round-trip through foundation contracts. Review actual provider mappings separately for live eligibility; unknown provenance yields a withheld reason.
   - _Boundary: Controller owns contract fixtures and shared schemas. Apply the complexity gate to maintained schema code._
   - _Depends: 1 and accepted foundation model protocol (task 4.1)_

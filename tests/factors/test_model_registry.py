@@ -3,10 +3,16 @@ from decimal import Decimal
 
 import pytest
 from pydantic import ValidationError
-
-from qopenbb_data.modeling.contracts.descriptors import ModelDescriptor, OutputDescriptor
+from qopenbb_data.modeling.contracts.descriptors import (
+    ModelDescriptor,
+    OutputDescriptor,
+)
 from qopenbb_data.modeling.contracts.inputs import AssumptionSet, InputSnapshot
-from qopenbb_data.modeling.models.protocol import CandidateOutput, CandidateResult, Model
+from qopenbb_data.modeling.models.protocol import (
+    CandidateOutput,
+    CandidateResult,
+    Model,
+)
 from qopenbb_data.modeling.models.registry import ModelRegistry
 
 

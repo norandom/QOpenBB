@@ -1670,3 +1670,11 @@ planned_checks = []
 test_paths = ["tests/factors/test_model_registry.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Exact lookup, dependency validation and bounded decimal/null materialization. See artifacts/reviewed/factor-signals/model-registry.md."]
+
+[[capabilities]]
+id = "dated-factor-examples"
+requirements = ["factor-signals/requirements.md:1.4", "factor-signals/requirements.md:2.3", "factor-signals/requirements.md:3.5", "factor-signals/requirements.md:4.1", "factor-signals/requirements.md:4.4"]
+planned_checks = ["independent recalculation of production methods"]
+test_paths = ["tests/factors/test_factor_examples.py"]
+status = "passed"
+evidence = ["Synthetic wire examples and partial results across six descriptors. See artifacts/reviewed/factor-signals/dated-examples.md."]
