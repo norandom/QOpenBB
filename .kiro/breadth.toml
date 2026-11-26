@@ -1880,9 +1880,10 @@ planned_checks = [
   "Inline provider and modeling failures, same-selection retry, fresh reopen and safe export",
   "Pinned story images, isolated one-worker browser journey and release evidence",
 ]
-test_paths = ["tests/contracts/test_research_story.py", "tests/contracts/test_research_story.mts", "tests/factors/test_retrospective.py", "tests/factors/test_story_acquisition.py", "tests/factors/test_story_fred_acquisition.py", "tests/factors/test_story_schedule.py"]
+test_paths = ["tests/contracts/test_research_story.py", "tests/contracts/test_research_story.mts", "tests/factors/test_retrospective.py", "tests/factors/test_story_acquisition.py", "tests/factors/test_story_fred_acquisition.py", "tests/factors/test_story_binding.py", "tests/factors/test_story_schedule.py"]
 status = "partial"
 evidence = [
+  "Signed story evaluations reject incompatible model, dataset, typed assumptions, schedule and decision cutoff before acquisition. Tests verify separate saved runs, owner-scoped reads, withholding for missing receipts or an incompatible adjustment basis, and bounded data acquisition.",
   "2026-11-26: the installed-image catalog generator added one commodities-versus-technology App and one native widget. The gallery loader and Workspace template schema accepted the defaults, ordered views and chart presets. The three earlier Apps were preserved.",
   "2026-11-26: 128 acquisition and model regressions passed, including loopback FRED empty, denied, timeout and throttled responses. Current DFII10 levels retain receipt evidence and withhold the historical regime when cutoff availability is unknown.",
   "Three authenticated proxy_comparison@2 evaluations and saved reads used the published Data API and real FMP closes. See .kiro/specs/research-stories/source-qualification.md. Packaged preflight and Workspace acceptance remain pending.",

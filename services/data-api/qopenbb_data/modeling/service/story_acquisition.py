@@ -1,21 +1,27 @@
 """Acquire retrieved price histories and DFII10 context for the story schedule."""
 
+from collections.abc import Callable
 from datetime import UTC, datetime, time, timedelta
 from decimal import Decimal, InvalidOperation
 from uuid import uuid4
 from zoneinfo import ZoneInfo
 
-from ..contracts import InputSnapshot, Observation, ObservationTable
+from ..contracts import AssumptionSet, EvaluationCutoff, InputSnapshot, Observation, ObservationTable
 from ..contracts.common import parse_financial_date
 from ..contracts.inputs import FinancialContext, SourceProvenance
 from ..models.factors.sessions import PRICE_BASIS
 from .acquisition import AcquisitionError, _fred_row, _object
 from .acquisition_http import FredHistoryEmpty
-from .story_schedule import CALENDAR_ID, REVISION, story_sessions
+from .ports import AcquisitionRequest
+from .story_schedule import CALENDAR_ID, story_sessions
 
-_DATASET = "story.etf_pair"
+_PAIR = "story.etf_pair"
+_YIELD = "story.dfii10"
+_STORY_METHODS = {("proxy_comparison", "2"): _PAIR, ("real_yield_regime", "1"): _YIELD}
 _ROUTE = "/api/v1/equity/price/historical"
-_KEYS = {"left_proxy", "right_proxy", "calendar_id", "schedule_revision"}
+_CALENDAR_KEYS = {"calendar_id", "schedule_revision"}
+_PAIR_KEYS = _CALENDAR_KEYS | {"left_proxy", "right_proxy"}
+_ZONE = "America/New_York"
 _FRED_ROUTE = "/api/v1/economy/fred_series"
 _YIELD_CONTEXT = FinancialContext(
     unit="percent", quantity="rate", basis="treasury_constant_maturity", frequency="Daily",
@@ -26,28 +32,52 @@ _YIELD_CONTEXT = FinancialContext(
 _PRICE = FinancialContext(unit="price", basis=PRICE_BASIS, currency="USD", vintage_coverage="unknown")
 
 
-def _parameters(request, *, installed=True):
+def _parameters(request: AcquisitionRequest) -> dict[str, str]:
+    pair = request.dataset_id == _PAIR
+    keys = _PAIR_KEYS if pair else _CALENDAR_KEYS
     params = dict(request.parameters)
-    if (len(request.parameters) != len(_KEYS) or params.keys() != _KEYS
-            or params["left_proxy"] not in {"DBC", "GLD"} or params["right_proxy"] not in {"XLK", "VGT"}
-            or params["calendar_id"] != CALENDAR_ID or (installed and params["schedule_revision"] != REVISION)
-            or request.cutoff.session_timezone != "America/New_York"):
+    if len(request.parameters) != len(keys) or params.keys() != keys:
+        raise AcquisitionError("invalid_request")
+    if pair and (params["left_proxy"] not in {"DBC", "GLD"} or params["right_proxy"] not in {"XLK", "VGT"}):
+        raise AcquisitionError("invalid_request")
+    cutoff = request.cutoff
+    local_decision = cutoff.decision_at.astimezone(ZoneInfo(_ZONE))
+    # The wire accepts the final local second at client timestamp precision.
+    if (params["calendar_id"] != CALENDAR_ID or cutoff.session_timezone != _ZONE
+            or local_decision.time().replace(microsecond=0) != time(23, 59, 59)
+            or cutoff.evaluated_at < cutoff.decision_at):
         raise AcquisitionError("invalid_request")
     return params
 
 
-def validate_story_binding(key, request, assumptions):
-    comparison = key == ("proxy_comparison", "2")
-    if comparison != (request.dataset_id == _DATASET):
+def validate_story_binding(
+    key: tuple[str, str], request: AcquisitionRequest, assumptions: AssumptionSet, *,
+    story_calendar: Callable[[EvaluationCutoff, str, str], None] | None = None,
+) -> None:
+    """Bind the two story datasets to their exact installed method and selection."""
+    expected_dataset = _STORY_METHODS.get(key)
+    if expected_dataset is None and request.dataset_id not in (_PAIR, _YIELD):
+        return
+    if request.dataset_id != expected_dataset:
         raise AcquisitionError("invalid_request")
-    if comparison:
-        expected = _parameters(request, installed=False) | {
+    params = _parameters(request)
+    expected = params
+    if expected_dataset == _PAIR:
+        expected = params | {
             "price_basis": PRICE_BASIS, "leg_methods": "etf_momentum@1, etf_realized_volatility@1",
             "left_calendar": CALENDAR_ID, "right_calendar": CALENDAR_ID,
         }
-        actual = {item.assumption_id: item.value for item in assumptions.assumptions if item.value_type == "text"}
-        if any(actual.get(k) != v for k, v in expected.items()):
-            raise AcquisitionError("invalid_request")
+    actual = {item.assumption_id: item.value for item in assumptions.assumptions if item.value_type == "text"}
+    if (actual != expected or len(assumptions.assumptions) != len(expected)
+            or assumptions.version != "1" or assumptions.effective_date > request.cutoff.observation_date):
+        raise AcquisitionError("invalid_request")
+    if story_calendar is None:
+        _schedule(request.cutoff, params)
+    else:
+        try:
+            story_calendar(request.cutoff, params["calendar_id"], params["schedule_revision"])
+        except ValueError:
+            raise AcquisitionError("invalid_request") from None
 
 
 def _receipt_time(meta, earliest):
@@ -141,7 +171,7 @@ async def acquire_story(request, read, decode, checkpoint):
     # retain real receipts while leaving the empty schedule for the model to diagnose.
     start = min((row.observation_date for row in sessions.rows),
                 default=cutoff.observation_date - timedelta(days=7))
-    query = {"dataset_id": _DATASET, **params}
+    query = {"dataset_id": _PAIR, **params}
     earliest = _earliest_receipt(cutoff, sessions)
     tables, times, failures = [sessions], [], []
     for side in ("left", "right"):
@@ -176,13 +206,6 @@ def _schedule(cutoff, params):
         return story_sessions(cutoff, params["calendar_id"], params["schedule_revision"])
     except ValueError:
         raise AcquisitionError("invalid_request") from None
-
-
-def _yield_parameters(request):
-    params = dict(request.parameters)
-    if len(request.parameters) != 2 or params.keys() != {"calendar_id", "schedule_revision"}:
-        raise AcquisitionError("invalid_request")
-    return params
 
 
 def _yield_receipt(payload, query, count, earliest):
@@ -250,7 +273,7 @@ def _yield_evidence(request, sessions, query, when, acquisition_id, rows):
 
 async def acquire_real_yield(request, read, decode, checkpoint):
     cutoff = request.cutoff
-    sessions = _schedule(cutoff, _yield_parameters(request))
+    sessions = _schedule(cutoff, _parameters(request))
     end = cutoff.observation_date
     start = sessions.rows[0].observation_date if sessions.rows else end - timedelta(days=7)
     query = {"provider": "fred", "symbol": "DFII10", "start_date": start.isoformat(),

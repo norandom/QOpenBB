@@ -1,7 +1,7 @@
 """Authenticate, evaluate and persist an exact installed financial method."""
 
 import pickle
-from collections.abc import Mapping
+from collections.abc import Callable, Mapping
 from dataclasses import KW_ONLY, dataclass
 from datetime import UTC, datetime
 from functools import partial
@@ -10,7 +10,7 @@ from time import monotonic
 
 from ..contracts.common import require_subset, require_unique
 from ..contracts.descriptors import ModelDescriptor
-from ..contracts.inputs import InputSnapshot
+from ..contracts.inputs import EvaluationCutoff, InputSnapshot
 from ..contracts.results import ModelRun
 from ..models.protocol import Model
 from ..models.registry import ModelRegistry
@@ -43,12 +43,14 @@ class Orchestrator:
         run_store: RunStore,
         *,
         snapshot_source: SnapshotSource | None = None,
+        story_calendar: Callable[[EvaluationCutoff, str, str], None] | None = None,
         polars_threads: int = 1,
         timeout_seconds: float = 60,
         capacity: int = 1,
     ) -> None:
         self._store = run_store
         self._source = snapshot_source
+        self._story_calendar = story_calendar
         bindings = dict(bindings)
         self._methods = {
             key: _bind(registry.resolve(*key), key, binding)
@@ -81,7 +83,9 @@ class Orchestrator:
         if request.acquisition is not None:
             from .story_acquisition import validate_story_binding
 
-            validate_story_binding(key, request.acquisition, request.assumptions)
+            validate_story_binding(
+                key, request.acquisition, request.assumptions, story_calendar=self._story_calendar
+            )
         _validate_exceptions(request, principal, descriptor)
         context = _RunContext(
             owner_id=principal.subject,

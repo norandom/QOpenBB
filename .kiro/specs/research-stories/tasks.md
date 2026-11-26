@@ -45,7 +45,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 2.1_
   - _Requirements: 2.2, 2.3, 2.4, 2.5, 3.3, 4.1_
 
-- [ ] 2.4 Validate requests at the model boundary
+- [x] 2.4 Validate requests at the model boundary
   - Bind dataset, model/version, assumptions, symbols, schedule revision and cutoff before source dispatch. Prove authenticated valid requests produce separate saved runs, wrong-model and reversed-binding requests fail, and existing issuer evaluations remain compatible. Withhold the affected spread for missing retrieval provenance or an incompatible adjustment basis. Assert acquisition deadline, cancellation and size bounds.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Controller integration, orchestrator and model request contracts_

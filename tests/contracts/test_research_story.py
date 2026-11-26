@@ -204,7 +204,16 @@ def installed_story(monkeypatch, tmp_path):
     registry, bindings = installed_methods()
     source = SyntheticSource()
     store = ReadbackFailureStore(tmp_path / "runs")
-    service = Orchestrator(registry, bindings, store, snapshot_source=source)
+
+    def validate_synthetic_calendar(cutoff, calendar_id, revision):
+        if (cutoff.observation_date.isoformat(), calendar_id, revision) != (
+            "2024-04-03", "NYSE_ARCA", "synthetic-nyse-arca.2024r1",
+        ):
+            raise ValueError("Unknown synthetic story schedule")
+
+    service = Orchestrator(
+        registry, bindings, store, snapshot_source=source, story_calendar=validate_synthetic_calendar
+    )
     app = create_model_app(service, registry, IdentityVerifier.from_env())
 
     def exchange(path, body=None, *, owner="fixture_analyst"):

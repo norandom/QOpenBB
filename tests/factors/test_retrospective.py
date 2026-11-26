@@ -1,7 +1,8 @@
 """Verify the acquired ETF price history separately from historical trading eligibility."""
 
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, datetime, time, timedelta
 from decimal import Decimal
+from zoneinfo import ZoneInfo
 
 import pytest
 from fixtures.factor_examples import EXAMPLES, build_run, text_assumption
@@ -206,6 +207,7 @@ def test_failed_transport_preserves_opposite_receipt_and_values(history, reason)
 
 
 def test_saved_run_replays_exact_original_prices_after_provider_revision(history, tmp_path):
+    from qopenbb_data.modeling.contracts import EvaluationCutoff
     from qopenbb_data.modeling.service.bootstrap import installed_methods
     from qopenbb_data.modeling.service.evaluation import EvaluationRequest
     from qopenbb_data.modeling.service.orchestrator import Orchestrator
@@ -213,6 +215,10 @@ def test_saved_run_replays_exact_original_prices_after_provider_revision(history
     from qopenbb_data.modeling.service.run_store import FileRunStore
 
     inputs, assumptions = history
+    cutoff = inputs.cutoff
+    decision_at = datetime.combine(cutoff.observation_date, time.max, ZoneInfo(cutoff.session_timezone))
+    story_cutoff = EvaluationCutoff.model_validate(cutoff.model_dump() | {"decision_at": decision_at})
+    inputs = inputs.model_copy(update={"cutoff": story_cutoff})
 
     class AcquiredHistory:
         snapshot = inputs
@@ -223,7 +229,13 @@ def test_saved_run_replays_exact_original_prices_after_provider_revision(history
     registry, bindings = installed_methods()
     provider = AcquiredHistory()
     store = FileRunStore(tmp_path)
-    service = Orchestrator(registry, bindings, store, snapshot_source=provider)
+    def validate_fixture_calendar(cutoff, calendar_id, revision):
+        if (cutoff, calendar_id, revision) != (story_cutoff, "NYSE_ARCA", "fixture_us_listing.2024r1"):
+            raise ValueError("Unknown fixture story schedule")
+
+    service = Orchestrator(
+        registry, bindings, store, snapshot_source=provider, story_calendar=validate_fixture_calendar
+    )
     owner = Principal(subject="story_analyst")
     acquisition = AcquisitionRequest(
         dataset_id="story.etf_pair",
