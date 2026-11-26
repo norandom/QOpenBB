@@ -18,7 +18,6 @@ from zipfile import ZIP_STORED, ZipFile, ZipInfo
 
 import tomllib
 
-from .build_model_image import MODELING_FILES
 from .financial_compat_inputs import (
     BUNDLE,
     CONSUMER,
@@ -150,7 +149,11 @@ def source_pins(root: Path, revision: str) -> dict:
 
 
 def modeling_fingerprints(root: Path, revision: str) -> dict:
-    hashes = {name: digest(blob(root, revision, Path(name))) for name in sorted(MODELING_FILES)}
+    # Rollback verification reads the model package as it existed in the release tree.
+    package = "services/data-api/qopenbb_data/modeling"
+    files = git(root, "ls-tree", "-rz", "--name-only", revision, "--", package).decode().split("\0")[:-1]
+    files.extend(("services/data-api/qopenbb_data/__init__.py", "services/modeling/pyproject.toml", "services/modeling/uv.lock"))
+    hashes = {name: digest(blob(root, revision, Path(name))) for name in files}
     return {
         "runtime-inputs": digest((json.dumps(hashes, sort_keys=True) + "\n").encode()),
         "runtime-lock": hashes["services/modeling/uv.lock"],
