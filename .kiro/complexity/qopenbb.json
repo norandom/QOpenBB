@@ -17,11 +17,12 @@
     },
     {
       "spec": "financial-modeling",
-      "include": ["pipeline/qopenbb_ci/build_model_image.py", "deploy/**", ".env.sample", ".dagger/src/qopenbb/modeling*.py", "services/modeling/**", "verification/modeling-journey/**", "verification/financial-real-inputs/**", "services/data-api/qopenbb_data/modeling/service/**", "pipeline/qopenbb_ci/modeling_*.py", "pipeline/qopenbb_ci/financial_compat*.py", "pipeline/qopenbb_ci/financial_impact*.py", ".kiro/modeling-impact.toml", "contracts/consumers/financial-modeling/**"],
+      "include": ["pipeline/qopenbb_ci/release_assets.py", "pipeline/qopenbb_ci/publish_model_images.py", ".github/workflows/finalize-modeling.yml", ".github/workflows/promote-modeling.yml", "pipeline/qopenbb_ci/build_model_image.py", "deploy/**", ".env.sample", ".dagger/src/qopenbb/modeling*.py", "services/modeling/**", "verification/modeling-journey/**", "verification/financial-real-inputs/**", "services/data-api/qopenbb_data/modeling/service/**", "pipeline/qopenbb_ci/modeling_*.py", "pipeline/qopenbb_ci/financial_compat*.py", "pipeline/qopenbb_ci/financial_impact*.py", ".kiro/modeling-impact.toml", "contracts/consumers/financial-modeling/**"],
       "files": [
         "contracts/consumers/financial-modeling/issuer-fcf-yield.v1.json",
         ".dagger/src/qopenbb/modeling.py", ".dagger/src/qopenbb/modeling_export.py",
         "services/modeling/pyproject.toml", "pipeline/qopenbb_ci/build_model_image.py",
+        ".github/workflows/finalize-modeling.yml", ".github/workflows/promote-modeling.yml", "pipeline/qopenbb_ci/publish_model_images.py", "pipeline/qopenbb_ci/release_assets.py",
         "verification/modeling-journey/packaged.py",
         "deploy/compose.modeling.yaml", "deploy/pull-modeling-candidate.sh", ".env.sample",
         "verification/modeling-journey/compose.yaml", "verification/modeling-journey/run.py",

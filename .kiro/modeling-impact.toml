@@ -384,3 +384,12 @@ selectors = [
   "tests/delivery/test_modeling_candidate.py::test_local_registry_digests_pull_before_start_and_never_build",
   "tests/contracts/test_configuration.py::test_modeling_inventory_targets_workspace_and_keeps_listener_private",
 ]
+
+[[mapping]]
+ids = ["capability:modeling-release-publication"]
+criteria = ["1.4", "4.4", "5.1", "5.2", "5.3", "5.4", "6.1", "6.2"]
+paths = [".github/workflows/promote-modeling.yml", ".github/workflows/finalize-modeling.yml", "pipeline/qopenbb_ci/publication.py", "pipeline/qopenbb_ci/publish_model_images.py", "pipeline/qopenbb_ci/release_assets.py"]
+selectors = [
+  "tests/delivery/test_modeling_publish.py::test_promotion_reuses_shared_publisher_and_retains_data_pin",
+  "tests/delivery/test_release_assets.py::test_cli_reproducible_archive_and_manifest",
+]
