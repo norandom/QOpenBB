@@ -74,7 +74,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 1.3, 2.5_
   - _Requirements: 4.2, 4.3_
 
-- [ ] 3.3 Coordinate selection changes and retries
+- [x] 3.3 Coordinate selection changes and retries
   - Submit the two models serially. In a delayed A → B → A test, show pending steps and prove obsolete data, errors and run references cannot win. Recover a supplied run ID by an authorized read. Drop a write response with no recovery ID and assert that the controller makes no automatic second submission. Retry an affected partial comparison at its frozen cutoff while preserving the valid leg and unrelated macro reference. On reopen read references without evaluating anew.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Workspace storyController and evaluation client_
