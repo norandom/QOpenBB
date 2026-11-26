@@ -142,7 +142,10 @@ def test_modeling_overlay_is_private_and_keeps_workspace_independent(parse):
     mount, = model["volumes"]
     assert mount["type"] == "bind" and mount["target"] == "/data/modeling"
     assert Path(mount["source"]).parts[-2:] == ("data", "modeling")
-    assert mount["bind"]["create_host_path"] is False
+    # Compose v2 omits a false bind option in normalized JSON.
+    overlay = (ROOT / "deploy/compose.modeling.yaml").read_text()
+    assert "          create_host_path: false" in overlay.splitlines()
+    assert mount.get("bind", {}).get("create_host_path", False) is False
     assert {key: value for key, value in model["environment"].items() if value is not None} == {
         **{key: value for key, value in MODELING_INPUTS.items() if key.startswith("QFM_")},
         "QOPENBB_MODEL_DATA_ORIGIN": "http://data-api:6900",
