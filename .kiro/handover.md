@@ -1,12 +1,20 @@
 # QOpenBB session handover
 
-Updated 2026-11-26. **Resume with the commodities-versus-technology research story.** Financial-modeling task group 12 is complete. Requirements, design and tasks are approved. The source candidate verified the retrieval-dated FMP spread for three pairs and reopened the original runs. [Story brief](specs/research-stories/brief.md) · [Roadmap](steering/roadmap.md)
+Updated 2026-11-26. **Resume at Research Stories task 4.1.** Groups 1 through 3 of the Commodities versus Technology story are complete (13 of 17 tasks). The four remaining tasks cover packaged acceptance. [Approved tasks](specs/research-stories/tasks.md)
 
 ## Next session
 
-1. Continue the [approved story tasks](specs/research-stories/tasks.md). The foundation and NYSE Arca schedule are accepted. FMP comparisons use the saved retrieval timestamps. Historical DFII10 eligibility is independent.
-2. Join the native catalog, macro acquisition, Workspace controls and packaged browser journey. The [source qualification record](specs/research-stories/source-qualification.md) distinguishes verified live ETF results from pending App acceptance.
-3. Keep the later DCF drill-down on the roadmap. It depends on Batch C design, task approval, and verified provider DCF, custom DCF and as-reported statement inputs. [FMP expansion plan](specs/market-data-integrations/fmp-expansion-plan.md)
+1. **4.1. Build the candidate.** Group 3 closed at controller commit `91b71ff` on `main`. Verify Workspace commit `3c08c76b2980ec47dd3cc1dcdd50de15e4590aa4` on `qopenbb/research-stories`, promote that source pin and stage the maintained inputs. Build the candidate images through Dagger. Extend the packaged runner for story selection and same-session modeling-service restart. Confirm Playwright discovers both the issuer and story journeys.
+2. **4.2 and 4.3. Exercise the packaged App on Ubuntu.** Verify keyboard selection, dated financial evidence and recovery from insufficient history. Then test a modeling outage, retry, save, fresh-login reopen and export against the original run.
+3. **4.4. Close acceptance.** Record image digests, the rollback image set and results for all 16 criteria in the breadth map. Run the final complexity check and obtain independent review. [Group 4 tasks](specs/research-stories/tasks.md)
+
+## Evidence carried forward
+
+At the accepted Workspace revision, 95 Workspace tests and both controller contract tests passed. The complexity check covered 240 files with zero violations. Headless Chromium exercised both themes, keyboard selection and saved chart settings in a component harness with supplied authentication and modeling responses. The Workspace-wide typecheck still reports baseline diagnostics. [Reviewed evidence and screenshots](../artifacts/reviewed/research-stories/native-workspace.md)
+
+The November 13 captured run showed DBC ahead of XLK by **11.28 percentage points** on price return. The available DFII10 observations could not establish a real-yield change by the cutoff. Task 4.2 should verify that the packaged App explains the missing macro context and retains the ETF verdict. [Source qualification](specs/research-stories/source-qualification.md)
+
+The later DCF drill-down depends on Batch C design, task approval and verified provider DCF, custom DCF and as-reported statement inputs. [FMP expansion plan](specs/market-data-integrations/fmp-expansion-plan.md)
 
 Work in `~/Source/QOpenBB` on Ubuntu with Bash and native Docker. Pull and push directly on `main` and tag releases. [Maintainer workflow](steering/delivery-workflow.md#maintainer-git-workflow)
 
@@ -38,7 +46,6 @@ On the published images, SAP.DE displayed **3.78554%** for the verified observat
 - Result: [record](../docs/reference/cross-asset-inputs.json) for six ETFs and eight FRED series; [checkpoint](../docs/provider-coverage.md#cross-asset-and-macro-inputs-checkpoint-2026-11-18).
 - Owner decisions: FRED data are public; every story chart names its source in the headline; QOpenBB is an academic MIT-licensed project that ships no provider data.
 - Private harness and raw evidence: `D:/BuildArtifacts/QOpenBB/cross-asset-inputs`. A rerun needs a new reviewed acceptance.
-- Next: the `factor-signals` and `research-stories` specs in the [roadmap](steering/roadmap.md), starting with one thin slice for the commodities-versus-technology story.
 - Limits the modeling slice must handle:
   - **Fund prices exclude dividends.** Returns built on them are price returns, so a comparison with SPY understates the dividend payers.
   - **Fund history was requested for two windows only:** 2007 to 2011 and August to November 2026. The start of each fund's history and the years between are not probed.
