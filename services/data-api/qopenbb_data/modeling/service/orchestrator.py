@@ -78,6 +78,10 @@ class Orchestrator:
             self._registry.resolve(*key)
             raise ExecutionError("missing_method_binding")
         descriptor, job = self._methods[key]
+        if request.acquisition is not None:
+            from .story_acquisition import validate_story_binding
+
+            validate_story_binding(key, request.acquisition, request.assumptions)
         _validate_exceptions(request, principal, descriptor)
         context = _RunContext(
             owner_id=principal.subject,

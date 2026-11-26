@@ -200,12 +200,21 @@ def _spread(
     output: OutputDescriptor, legs: tuple[_Leg, _Leg], ending: date,
     left_metric: _TracedOutput, right_metric: _TracedOutput,
 ) -> _TracedOutput:
-    left, left_trace = left_metric
-    right, right_trace = right_metric
+    left, _ = left_metric
+    right, _ = right_metric
     issue = _spread_issue(legs, ending, left.reason, right.reason)
     if issue is not None:
         return _withheld(output.output_id, issue), None
 
+    return spread_values(output, ending, left_metric, right_metric)
+
+
+def spread_values(
+    output: OutputDescriptor, ending: date, left_metric: _TracedOutput, right_metric: _TracedOutput,
+) -> _TracedOutput:
+    """Calculate the spread once both leg values share the same validated schedule."""
+    left, left_trace = left_metric
+    right, right_trace = right_metric
     assert isinstance(left.value, Decimal) and isinstance(right.value, Decimal)
     # The same calendar ID selects the same schedule rows, revision, and exact ending session.
     try:

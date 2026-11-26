@@ -270,12 +270,13 @@ def _evaluate_body(
     except AcquisitionError as error:
         if error.code in ("timeout", "cancelled"):
             return execution_failure(error.code)
-        if error.code == "invalid_request":
+        if error.code in {"invalid_request", "entitlement"}:
+            field_code = "entitlement" if error.code == "entitlement" else "unsupported_acquisition"
             return failure(
                 422,
                 "unsupported_acquisition",
                 [
-                    {"path": ["acquisition"], "code": "unsupported_acquisition"},
+                    {"path": ["acquisition"], "code": field_code},
                 ],
             )
         return failure(503, "acquisition_unavailable")

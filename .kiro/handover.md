@@ -1,11 +1,11 @@
 # QOpenBB session handover
 
-Updated 2026-11-26. **Resume with the commodities-versus-technology research story.** Financial-modeling task group 12 is complete. The story has a discovery brief. Its next deliverable is an owner-reviewed requirements document. [Story brief](specs/research-stories/brief.md) · [Roadmap](steering/roadmap.md)
+Updated 2026-11-26. **Resume with the commodities-versus-technology research story.** Financial-modeling task group 12 is complete. Requirements, design and tasks are approved. The source candidate verified the retrieval-dated FMP spread for three pairs and reopened the original runs. [Story brief](specs/research-stories/brief.md) · [Roadmap](steering/roadmap.md)
 
 ## Next session
 
-1. Draft `.kiro/specs/research-stories/requirements.md` from the brief. Define the analyst’s question, selectable proxy pair and observation date, the source rows supporting each comparison, and how the App reports insufficient history or counter-evidence.
-2. Review the requirements with the owner before design and task planning. Carry the published factors into the story’s acceptance criteria. On Ubuntu, Playwright should verify that changing a proxy or date updates the evidence and conclusion, and that a saved dashboard reopens correctly.
+1. Continue the [approved story tasks](specs/research-stories/tasks.md). The foundation and NYSE Arca schedule are accepted. FMP comparisons use the saved retrieval timestamps. Historical DFII10 eligibility is independent.
+2. Join the native catalog, macro acquisition, Workspace controls and packaged browser journey. The [source qualification record](specs/research-stories/source-qualification.md) distinguishes verified live ETF results from pending App acceptance.
 3. Keep the later DCF drill-down on the roadmap. It depends on Batch C design, task approval, and verified provider DCF, custom DCF and as-reported statement inputs. [FMP expansion plan](specs/market-data-integrations/fmp-expansion-plan.md)
 
 Work in `~/Source/QOpenBB` on Ubuntu with Bash and native Docker. Pull and push directly on `main` and tag releases. [Maintainer workflow](steering/delivery-workflow.md#maintainer-git-workflow)

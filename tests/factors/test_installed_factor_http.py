@@ -98,7 +98,7 @@ def test_signed_catalog_installs_six_exact_versions(modeling_url, owner):
             item["reference_version"],
         )
         for item in catalog["models"]
-    ) == [(model_id, "1", "1", "1") for model_id in sorted(EXAMPLES)]
+    ) == sorted([(model_id, "1", "1", "1") for model_id in EXAMPLES] + [("proxy_comparison", "2", "2", "2")])
     sample = build_run(EXAMPLES["etf_momentum"], missing=False)
     payload = dumps(
         {

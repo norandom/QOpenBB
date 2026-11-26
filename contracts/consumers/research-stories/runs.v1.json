@@ -1,0 +1,259 @@
+{
+  "requests": {
+    "comparison": {
+      "model_id": "proxy_comparison",
+      "method_version": "2",
+      "assumptions": {
+        "version": "1",
+        "effective_date": "2024-01-02",
+        "assumptions": [
+          {
+            "assumption_id": "left_proxy",
+            "value_type": "text",
+            "value": "DBC",
+            "origin": "method_default",
+            "rationale": "Commodity proxy and minuend in the spread."
+          },
+          {
+            "assumption_id": "right_proxy",
+            "value_type": "text",
+            "value": "XLK",
+            "origin": "method_default",
+            "rationale": "Technology proxy and subtrahend in the spread."
+          },
+          {
+            "assumption_id": "calendar_id",
+            "value_type": "text",
+            "value": "NYSE_ARCA",
+            "origin": "method_default",
+            "rationale": "Use the shared listing schedule."
+          },
+          {
+            "assumption_id": "schedule_revision",
+            "value_type": "text",
+            "value": "synthetic-nyse-arca.2024r1",
+            "origin": "method_default",
+            "rationale": "Freeze one schedule revision for both models."
+          },
+          {
+            "assumption_id": "left_calendar",
+            "value_type": "text",
+            "value": "NYSE_ARCA",
+            "origin": "method_default",
+            "rationale": "Bind the commodity leg to the shared listing schedule."
+          },
+          {
+            "assumption_id": "right_calendar",
+            "value_type": "text",
+            "value": "NYSE_ARCA",
+            "origin": "method_default",
+            "rationale": "Bind the technology leg to the shared listing schedule."
+          },
+          {
+            "assumption_id": "price_basis",
+            "value_type": "text",
+            "value": "split_adjusted_dividends_excluded",
+            "origin": "method_default",
+            "rationale": "Measure price return with dividends excluded."
+          },
+          {
+            "assumption_id": "leg_methods",
+            "value_type": "text",
+            "value": "etf_momentum@1, etf_realized_volatility@1",
+            "origin": "method_default",
+            "rationale": "Apply the same installed methods to both legs."
+          }
+        ]
+      },
+      "acquisition": {
+        "dataset_id": "story.etf_pair",
+        "parameters": [
+          [
+            "left_proxy",
+            "DBC"
+          ],
+          [
+            "right_proxy",
+            "XLK"
+          ],
+          [
+            "calendar_id",
+            "NYSE_ARCA"
+          ],
+          [
+            "schedule_revision",
+            "synthetic-nyse-arca.2024r1"
+          ]
+        ],
+        "cutoff": {
+          "observation_date": "2024-04-03",
+          "decision_at": "2024-04-04T03:59:59.999999Z",
+          "evaluated_at": "2024-05-03T16:00:00Z",
+          "session_timezone": "America/New_York"
+        }
+      }
+    },
+    "regime": {
+      "model_id": "real_yield_regime",
+      "method_version": "1",
+      "assumptions": {
+        "version": "1",
+        "effective_date": "2024-01-02",
+        "assumptions": [
+          {
+            "assumption_id": "calendar_id",
+            "value_type": "text",
+            "value": "NYSE_ARCA",
+            "origin": "method_default",
+            "rationale": "Use the shared listing schedule."
+          },
+          {
+            "assumption_id": "schedule_revision",
+            "value_type": "text",
+            "value": "synthetic-nyse-arca.2024r1",
+            "origin": "method_default",
+            "rationale": "Freeze one schedule revision for both models."
+          }
+        ]
+      },
+      "acquisition": {
+        "dataset_id": "story.dfii10",
+        "parameters": [
+          [
+            "calendar_id",
+            "NYSE_ARCA"
+          ],
+          [
+            "schedule_revision",
+            "synthetic-nyse-arca.2024r1"
+          ]
+        ],
+        "cutoff": {
+          "observation_date": "2024-04-03",
+          "decision_at": "2024-04-04T03:59:59.999999Z",
+          "evaluated_at": "2024-05-03T16:00:00Z",
+          "session_timezone": "America/New_York"
+        }
+      }
+    }
+  },
+  "price_evidence": {
+    "source": "fmp",
+    "dataset_id": "story.etf_pair",
+    "retrieval": {
+      "retrieved_at": "2024-05-05T00:00:01Z",
+      "left_retrieved_at": "2024-05-04T23:59:59Z",
+      "right_retrieved_at": "2024-05-05T00:00:01Z"
+    },
+    "display": {
+      "basis": "FMP history retrieved 2024-05-05",
+      "left": "DBC history retrieved 2024-05-04",
+      "right": "XLK history retrieved 2024-05-05"
+    }
+  },
+  "cases": {
+    "comparison": {
+      "request": "comparison",
+      "verdict": "supported",
+      "outputs": {
+        "left_momentum": "20",
+        "right_momentum": "10",
+        "momentum_spread": "10",
+        "left_volatility": "40",
+        "right_volatility": "20",
+        "volatility_spread": "20"
+      }
+    },
+    "regime": {
+      "request": "regime",
+      "outputs": {
+        "regime": "rising",
+        "change": "0.25"
+      }
+    },
+    "partial_leg": {
+      "request": "comparison",
+      "verdict": "insufficient_data",
+      "withheld": [
+        "right_momentum",
+        "right_volatility",
+        "momentum_spread",
+        "volatility_spread"
+      ],
+      "outputs": {
+        "left_momentum": "20",
+        "left_volatility": "40"
+      }
+    },
+    "failed_leg": {
+      "request": "comparison",
+      "verdict": "insufficient_data",
+      "retrieval": {
+        "retrieved_at": "2024-05-04T23:59:59Z",
+        "left_retrieved_at": "2024-05-04T23:59:59Z"
+      },
+      "leg_errors": {
+        "right_error": "entitlement"
+      },
+      "withheld": [
+        "right_momentum",
+        "right_volatility",
+        "momentum_spread",
+        "volatility_spread"
+      ],
+      "outputs": {
+        "left_momentum": "20",
+        "left_volatility": "40"
+      }
+    },
+    "tiny_negative": {
+      "request": "comparison",
+      "verdict": "technology_outperformance",
+      "spread": "-0.00000000000000000001"
+    },
+    "tie": {
+      "request": "comparison",
+      "verdict": "tie",
+      "spread": "0"
+    },
+    "mismatched_pair": {
+      "request": "comparison",
+      "override_pair": {
+        "left_proxy": "GLD"
+      }
+    },
+    "mismatched_cutoff": {
+      "request": "regime",
+      "override_cutoff": {
+        "evaluated_at": "2024-05-03T17:00:00Z"
+      }
+    },
+    "unavailable_macro": {
+      "request": "regime",
+      "withheld": [
+        "regime",
+        "change"
+      ]
+    },
+    "macro_service_unavailable": {
+      "request": "regime",
+      "error": {
+        "code": "acquisition_unavailable",
+        "retryable": true
+      }
+    },
+    "recovery": {
+      "request": "comparison",
+      "verdict": "supported",
+      "retrieval": {
+        "retrieved_at": "2024-05-08T15:30:05Z",
+        "left_retrieved_at": "2024-05-08T15:30:04Z",
+        "right_retrieved_at": "2024-05-08T15:30:05Z"
+      },
+      "error": {
+        "code": "publication_unconfirmed",
+        "retryable": false
+      }
+    }
+  }
+}

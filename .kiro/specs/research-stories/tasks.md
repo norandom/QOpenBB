@@ -2,7 +2,7 @@
 
 Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give its owner the relevant paths from the [design](design.md), fixtures, dependencies, and the [combined checker command](../../../docs/complexity.md) with current fork scopes. Every production change must pass the whole-file limits of 400 physical lines, 300 logical units and 50 units per function. Each subtask requires independent review and fresh verification. The controller owns shared fixtures, source pins and joins. Schedule at most two disjoint implementers and one heavy build or suite at a time. Only sibling tasks marked (P) share an execution wave. Browser acceptance uses disposable Ubuntu state and one worker. [Delegation](../../steering/delegation.md) · [Verification](../../steering/testing.md)
 
-- [ ] 1. Establish the runtime and evidence baseline
+- [x] 1. Establish the runtime and evidence baseline
 - [x] 1.1 Prepare the pinned runtime and enforce whole-file budgets
   - Identify the published baseline, owned fork checkout and explicit base/head or changed-file manifests. Exercise the existing combined checker on clean and oversized cases. Verify the isolated build, browser and provider configuration can distinguish a missing prerequisite from a pass. Register planned coverage as pending.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
@@ -10,22 +10,22 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Requirements: 1.1, 4.1_
 
 - [x] 1.2 Qualify the source evidence for both proxy roles
-  - Inspect DBC, XLK, GLD and a genuine alternate technology ETF through existing admitted sources. Record exposure, listing calendar, entitled windows and timestamped publication/vintage evidence for closes and DFII10 endpoints. Identify a dated official schedule covering the window and any closures. Reject backdated retrieval times. If a required source is missing, identify the blocked live case before integration.
+  - Inspect DBC, XLK, GLD and a genuine alternate technology ETF through existing admitted sources. Record exposure, listing calendar, entitled windows and FMP retrieval times. Inspect historical availability for the exact DFII10 endpoints and record any evidence gap. Identify a dated official schedule covering the window and any closures. [Source qualification](source-qualification.md)
   - Evidence, fixtures or test cases only. Production size caps do not apply to these artifacts.
   - _Boundary: Controller, sanitized input qualification record_
   - _Depends: 1.1_
   - _Requirements: 1.2, 2.2, 2.4, 2.5, 3.3_
 
-- [ ] 1.3 Freeze requests, run examples and saved configuration
-  - Round-trip comparison and regime requests, owner-scoped run detail, and the allowlisted dashboard and export shape against typed examples. Include a partial leg, a tiny negative spread, mismatched pair/cutoff, an unavailable macro run and a recovery run ID. Freeze schema version, catalog widget declaration and chart settings for both lanes.
+- [x] 1.3 Freeze requests, run examples and saved configuration
+  - Round-trip `proxy_comparison@2` and `real_yield_regime@1` requests, owner-scoped run detail, and the allowlisted dashboard and export shape against typed examples. Bind the retrieved-history basis and receipt provenance to the exact saved price rows, and carry the macro cutoff and dated withheld reason. Include a partial leg, a tiny negative spread, mismatched pair/cutoff, an unavailable macro run and a recovery run ID. Freeze schema version, catalog widget declaration and chart settings for both lanes.
   - Evidence, fixtures or test cases only. Production size caps do not apply to these artifacts.
   - _Boundary: Controller, shared fixtures and contracts_
   - _Depends: 1.1, 1.2_
   - _Requirements: 1.1, 1.2, 2.1, 3.2, 4.1, 4.2, 4.3_
 
 - [ ] 2. Supply dated inputs and declare the catalog App
-- [ ] 2.1 (P) Resolve expected trading sessions
-  - Package the qualified official schedule with source identity, digest, revision, coverage and publication evidence. Prove the resolver returns 64 scheduled sessions and handles holidays, early closes, non-sessions, uncovered dates and an ineligible revision. Bind decision time in the listing zone and evaluation time to the same cutoff for both models.
+- [x] 2.1 (P) Resolve expected trading sessions
+  - Package the qualified official schedule with source identity, digest, revision, coverage and publication evidence. Prove the resolver returns 64 scheduled sessions and handles holidays, early closes, non-sessions, uncovered dates and an ineligible revision. Bind the same selected session and schedule to both models. Apply the historical cutoff to DFII10. Record the actual FMP retrieval times for the retrospective price window.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: services/data-api/qopenbb_data/modeling/service/story_schedule.py, its calendars/nyse_arca.json data, and tests/factors/test_story_schedule.py_
   - _Depends: 1.3_
@@ -39,21 +39,21 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Requirements: 1.1, 2.1, 4.2_
 
 - [ ] 2.3 Acquire eligible prices and macro observations
-  - Normalize the allowlisted FMP and FRED responses into the model input tables. Preserve exact units, dated versions, safe leg-specific failure codes, schedule markers and retrieval provenance. Demonstrate a withheld leg alongside a usable leg, missing endpoint versus interior macro gap, and disjoint windows. Keep the original generic FRED dataset working.
+  - Normalize the allowlisted FMP and FRED responses into the model input tables. Implement `proxy_comparison@2` with independently verified price-return and risk calculations on retrieved history. Preserve version 1 point-in-time behavior and saved-run compatibility. Preserve exact units, received price rows, safe leg-specific failure codes, schedule markers and retrieval provenance. Keep DFII10 endpoint eligibility tied to the selected observation day's cutoff. Demonstrate a withheld leg alongside a usable leg, missing endpoint versus interior macro gap, and disjoint windows. Keep the original generic FRED dataset working.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
-  - _Boundary: Modeling acquisition and bounded HTTP transport_
+  - _Boundary: Versioned comparison method and reference check, modeling acquisition and bounded HTTP transport_
   - _Depends: 2.1_
   - _Requirements: 2.2, 2.3, 2.4, 2.5, 3.3, 4.1_
 
 - [ ] 2.4 Validate requests at the model boundary
-  - Bind dataset, model/version, assumptions, symbols, schedule revision and cutoff before source dispatch. Prove authenticated valid requests produce separate saved runs, wrong-model and reversed-binding requests fail, and existing issuer evaluations remain compatible. Assert acquisition deadline, cancellation and size bounds.
+  - Bind dataset, model/version, assumptions, symbols, schedule revision and cutoff before source dispatch. Prove authenticated valid requests produce separate saved runs, wrong-model and reversed-binding requests fail, and existing issuer evaluations remain compatible. Withhold the affected spread for missing retrieval provenance or an incompatible adjustment basis. Assert acquisition deadline, cancellation and size bounds.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Controller integration, orchestrator and model request contracts_
   - _Depends: 2.3_
   - _Requirements: 1.2, 2.1, 3.3, 4.1_
 
 - [ ] 2.5 Run the real-input preflight
-  - Stage the actual acquisition and schedule files in the modeling image inputs, build affected images with Dagger and start an isolated candidate with the authenticated bridge. Implement and execute the design's story_preflight.py for the default DBC/XLK pair and both role changes, verifying dated source rows, 64 closes, 63 returns, two macro endpoints and verified spread. Record digests and any blocked input. Require a passing preflight before UI integration.
+  - Stage the actual acquisition and schedule files in the modeling image inputs, build affected images with Dagger and start an isolated candidate with the authenticated bridge. Implement and execute the design's story_preflight.py for the default DBC/XLK pair and both role changes, verifying exact saved source rows with receipt provenance, 64 closes per leg, 63 dated returns and verified spread. Check the two macro endpoints when eligible. For November 13, verify the dated withheld DFII10 outcome and a retained spread-based verdict. Record digests, coverage and any blocked price input. Require a passing preflight before UI integration.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Controller, candidate packaging and live preflight_
   - _Depends: 2.4_
@@ -104,7 +104,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Requirements: 1.1, 4.1, 4.2_
 
 - [ ] 4.2 Verify selections, evidence and keyboard access on Ubuntu
-  - In one isolated headless browser worker, open the catalog App, change each role and the date, compare displayed spread and dated rows to the same saved run, and exercise insufficient history followed by recovery. Inspect real provider inputs for every chart, both themes, text units, focus and console/network errors.
+  - In one isolated headless browser worker, open the catalog App, change each role and the date, compare displayed spread and dated rows to the same saved run, and exercise insufficient history followed by recovery. Inspect real FMP inputs for the price and risk charts. Verify the DFII10 endpoint chart when eligible and the dated withheld context with the retained verdict for November 13. Inspect both themes, text units, focus and console/network errors.
   - Evidence, fixtures or test cases only. Production size caps do not apply to these artifacts.
   - _Boundary: Packaged story browser journey, selection and financial evidence cases_
   - _Depends: 4.1_

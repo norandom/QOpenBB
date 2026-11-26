@@ -5,6 +5,7 @@ from decimal import Context, Decimal, localcontext
 from ...contracts import AssumptionSet, InputSnapshot, ModelDescriptor, TraceValue
 from ..protocol import CandidateOutput, CandidateResult, Model
 from .method_inputs import factor_descriptor, price_trace, price_window, result_decimal
+from .sessions import PriceWindow
 
 _MODEL_ID = "etf_momentum"
 _OUTPUT_ID = "momentum"
@@ -37,6 +38,9 @@ class MomentumModel(Model):
         except ValueError as exc:
             return _withheld(str(exc))
 
+        return self.calculate_window(window)
+
+    def calculate_window(self, window: PriceWindow) -> CandidateResult:
         first, last = window.closes[0].value, window.closes[-1].value
         assert isinstance(first, Decimal) and isinstance(last, Decimal)
         start, end = window.window.endpoints

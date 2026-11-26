@@ -6,6 +6,14 @@
   "mode": "all",
   "owners": [
     {
+      "spec": "research-stories",
+      "include": ["contracts/consumers/research-stories/*.json"],
+      "files": [
+        "contracts/consumers/research-stories/story.v1.json",
+        "contracts/consumers/research-stories/runs.v1.json"
+      ]
+    },
+    {
       "spec": "native-development-workflow",
       "include": ["**/*"],
       "files": ["pipeline/qopenbb_ci/windows_private_files.py", "pipeline/qopenbb_ci/windows_security.py", "pipeline/qopenbb_ci/session_files.py", "pipeline/qopenbb_ci/posix_private_files.py", "pipeline/qopenbb_ci/runtime_descriptor.py", "pipeline/qopenbb_ci/compose_runtime.py", "pipeline/qopenbb_ci/compose_checks.py", "pipeline/qopenbb_ci/compose_readiness.py", "pipeline/compose.runtime.yaml", "verification/runtime-descriptor.ts", "pipeline/dev.ps1", "pipeline/qopenbb_ci/native_environment.py", "pipeline/qopenbb_ci/native_actions.py", "pipeline/qopenbb_ci/portable_runtime.py", "pipeline/qopenbb_ci/checkpoint_cli.py", "pipeline/qopenbb_ci/state_files.py", "pipeline/qopenbb_ci/windows_state_files.py", "pipeline/qopenbb_ci/container_command.py", ".kiro/complexity/workspace.json", "pipeline/qopenbb_ci/compose_lifecycle.py", "pipeline/qopenbb_ci/compose_intent.py", "pipeline/qopenbb_ci/workspace_runtime.py", "pipeline/qopenbb_ci/workspace_smoke.py"]
@@ -59,6 +67,8 @@
         "services/data-api/qopenbb_data/modeling/service/execution_worker.py",
         "services/data-api/qopenbb_data/modeling/service/execution_transport.py",
         "services/data-api/qopenbb_data/modeling/service/acquisition.py",
+        "services/data-api/qopenbb_data/modeling/service/story_acquisition.py", "services/data-api/qopenbb_data/modeling/service/story_schedule.py",
+        "services/data-api/qopenbb_data/modeling/service/calendars/nyse_arca.json",
         "services/data-api/qopenbb_data/modeling/service/acquisition_http.py",
         "services/data-api/qopenbb_data/modeling/service/evaluation.py",
         "services/data-api/qopenbb_data/modeling/service/orchestrator.py",
@@ -87,6 +97,8 @@
         "services/data-api/qopenbb_data/modeling/models/factors/volatility.py", "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
         "services/data-api/qopenbb_data/modeling/models/factors/filings.py", "services/data-api/qopenbb_data/modeling/models/factors/fcf_yield.py",
         "services/data-api/qopenbb_data/modeling/models/factors/study_schedule.py", "services/data-api/qopenbb_data/modeling/models/factors/study_groups.py", "services/data-api/qopenbb_data/modeling/models/factors/diagnostics.py",
+        "services/data-api/qopenbb_data/modeling/models/factors/retrieved_history.py", "services/data-api/qopenbb_data/modeling/models/factors/retrospective.py",
+        "services/data-api/qopenbb_data/modeling/verification/factors/retrospective_reference.py",
         "services/data-api/qopenbb_data/modeling/models/factors/comparison.py", "services/data-api/qopenbb_data/modeling/verification/__init__.py",
         "services/data-api/qopenbb_data/modeling/validation/__init__.py",
         "services/data-api/qopenbb_data/modeling/validation/outputs.py",

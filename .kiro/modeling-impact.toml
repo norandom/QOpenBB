@@ -108,7 +108,7 @@ selectors = [
 ]
 
 [[mapping]]
-ids = ["model:proxy_comparison@1", "rule:eligible_inputs.left_momentum@1", "rule:eligible_inputs.right_momentum@1", "rule:eligible_inputs.momentum_spread@1", "rule:eligible_inputs.left_volatility@1", "rule:eligible_inputs.right_volatility@1", "rule:eligible_inputs.volatility_spread@1"]
+ids = ["model:proxy_comparison@1", "rule:eligible_inputs.left_momentum@1", "rule:eligible_inputs.right_momentum@1", "rule:eligible_inputs.momentum_spread@1", "rule:eligible_inputs.left_volatility@1", "rule:eligible_inputs.right_volatility@1", "rule:eligible_inputs.volatility_spread@1", "model:proxy_comparison@2", "rule:eligible_inputs.left_momentum@2", "rule:eligible_inputs.right_momentum@2", "rule:eligible_inputs.momentum_spread@2", "rule:eligible_inputs.left_volatility@2", "rule:eligible_inputs.right_volatility@2", "rule:eligible_inputs.volatility_spread@2"]
 criteria = ["1.1", "1.2", "2.1", "2.3", "2.5", "5.1", "5.2", "6.2"]
 paths = [
   "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
@@ -119,6 +119,9 @@ paths = [
   "services/data-api/qopenbb_data/modeling/verification/reference.py",
   "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
   "tests/factors/fixtures/**",
+  "services/data-api/qopenbb_data/modeling/models/factors/retrieved_history.py",
+  "services/data-api/qopenbb_data/modeling/models/factors/retrospective.py",
+  "services/data-api/qopenbb_data/modeling/verification/factors/retrospective_reference.py",
   "services/data-api/qopenbb_data/modeling/models/factors/comparison.py",
   "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
   "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
@@ -126,6 +129,7 @@ paths = [
   "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
 ]
 selectors = [
+  "tests/contracts/test_research_story.py::test_synthetic_research_story_round_trip",
   "tests/factors/test_installed_factor_http.py::test_save_installed_factor_and_project_evidence",
   "tests/factors/test_installed_factors.py::test_production_registry_binds_all_six_exact_versions",
   "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",

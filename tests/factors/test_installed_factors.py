@@ -18,7 +18,7 @@ from qopenbb_data.modeling.service.run_store import FileRunStore
 
 def test_production_registry_binds_all_six_exact_versions():
     registry, bindings = installed_methods()
-    keys = {(name, "1") for name in EXAMPLES}
+    keys = {(name, "1") for name in EXAMPLES} | {("proxy_comparison", "2")}
     assert {
         (item.model_id, item.method_version) for item in registry.descriptors()
     } == keys
@@ -26,16 +26,16 @@ def test_production_registry_binds_all_six_exact_versions():
 
     for key, binding in bindings.items():
         descriptor = registry.resolve(*key).describe()
-        assert descriptor.rule_set_version == "1"
-        assert binding.reference.version == descriptor.reference_version == "1"
+        assert descriptor.rule_set_version == key[1]
+        assert binding.reference.version == descriptor.reference_version == key[1]
         assert binding.reference.calculations.keys() == {
             item.output_id for item in descriptor.outputs
         }
         assert {
             item.rule_id: item.version for item in descriptor.rules
-        } == dict.fromkeys((item.rule_id for item in binding.rules), "1")
+        } == dict.fromkeys((item.rule_id for item in binding.rules), key[1])
         with pytest.raises(LookupError):
-            registry.resolve(key[0], "2")
+            registry.resolve(key[0], "unknown")
 
 
 @pytest.mark.parametrize("model_id", EXAMPLES)

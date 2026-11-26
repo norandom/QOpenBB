@@ -21,6 +21,7 @@ def test_modeling_stage_copies_exact_source_and_lock(tmp_path):
     inputs = stage_modeling(ROOT, tmp_path)
     sources = (ROOT / PACKAGE / 'modeling').rglob('*.py')
     expected = {path.relative_to(ROOT).as_posix() for path in sources}
+    expected.add(str(PACKAGE / 'modeling/service/calendars/nyse_arca.json'))
     expected.update((str(PACKAGE / '__init__.py'), str(PACKAGING / 'pyproject.toml'),
                      str(PACKAGING / 'uv.lock')))
     assert set(inputs) == expected

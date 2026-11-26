@@ -65,6 +65,14 @@ class VolatilityModel(Model):
     def calculate(self, inputs: InputSnapshot, assumptions: AssumptionSet) -> CandidateResult:
         try:
             window = price_window(inputs, assumptions, MODEL_ID)
+            return self.calculate_window(window)
+        except ValueError as exc:
+            return CandidateResult(outputs=(
+                CandidateOutput(output_id=OUTPUT_ID, value=None, reason=str(exc)[:4096]),
+            ))
+
+    def calculate_window(self, window: PriceWindow) -> CandidateResult:
+        try:
             value, intermediates = _calculate_volatility(window)
         except ValueError as exc:
             return CandidateResult(outputs=(

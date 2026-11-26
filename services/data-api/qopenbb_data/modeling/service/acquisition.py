@@ -21,7 +21,7 @@ from .acquisition_http import MAX_RESPONSE_BYTES, fetch
 from .ports import AcquisitionRequest
 
 Transport = Callable[[str, tuple[tuple[str, str], ...]], Awaitable[bytes]]
-ErrorCode = Literal["invalid_request", "invalid_response", "missing_data", "timeout", "cancelled", "upstream"]
+ErrorCode = Literal["invalid_request", "invalid_response", "missing_data", "timeout", "cancelled", "upstream", "entitlement"]
 
 _DATASET = "economy.fred_series"
 _ROUTE = "/api/v1/economy/fred_series"
@@ -48,6 +48,7 @@ class AcquisitionError(RuntimeError):
             "invalid_request": "Unsupported data acquisition request.",
             "invalid_response": "Data API returned an invalid response.",
             "missing_data": "Data API returned no observations.",
+            "entitlement": "Data API denied access to the dataset.",
             "timeout": "Data acquisition deadline exceeded.",
             "cancelled": "Data acquisition cancelled.",
             "upstream": "Data API request failed.",
@@ -64,7 +65,7 @@ class DataApiSnapshotSource:
             raise ValueError("Configure an HTTP or HTTPS data API origin.")
         if not math.isfinite(timeout_seconds) or not 0 < timeout_seconds <= 30:
             raise ValueError("Set the acquisition timeout above zero and at most 30 seconds.")
-        self._url = base_url.rstrip("/") + _ROUTE
+        self._origin = base_url.rstrip("/")
         self._timeout_seconds = timeout_seconds
         self._transport = transport if transport is not None else fetch
 
@@ -78,16 +79,22 @@ class DataApiSnapshotSource:
                 raise AcquisitionError("invalid_request")
             local_deadline = min(deadline, local_deadline)
         _remaining(local_deadline, cancel)
-        params = _fred_query(request)
-        return asyncio.run(self._acquire(request, params, local_deadline, cancel))
+        return asyncio.run(self._acquire(request, local_deadline, cancel))
 
     async def _acquire(
-        self, request: AcquisitionRequest, params: tuple[tuple[str, str], ...],
-        deadline: float, cancel: Event | None,
+        self, request: AcquisitionRequest, deadline: float, cancel: Event | None,
     ) -> InputSnapshot:
         try:
             async with asyncio.timeout(_remaining(deadline, cancel)):
-                body = await self._read_response(params, cancel)
+                if request.dataset_id == "story.etf_pair":
+                    from .story_acquisition import acquire_story
+
+                    return await acquire_story(
+                        request, partial(self._read_response, cancel), _decode_response,
+                        partial(_remaining, deadline, cancel),
+                    )
+                params = _fred_query(request)
+                body = await self._read_response(cancel, _ROUTE, params)
                 _remaining(deadline, cancel)
                 retrieved_at = datetime.now(UTC)
                 snapshot = _fred_snapshot(
@@ -106,13 +113,13 @@ class DataApiSnapshotSource:
         raise AcquisitionError(failure)
 
     async def _read_response(
-        self, params: tuple[tuple[str, str], ...], cancel: Event | None,
+        self, cancel: Event | None, route: str, params: tuple[tuple[str, str], ...],
     ) -> bytes:
         if cancel is None:
-            return await self._transport(self._url, params)
+            return await self._transport(self._origin + route, params)
 
         # Poll the thread event without leaving a blocked executor thread on timeout.
-        task = asyncio.ensure_future(self._transport(self._url, params))
+        task = asyncio.ensure_future(self._transport(self._origin + route, params))
         try:
             while not cancel.is_set():
                 done, _ = await asyncio.wait((task,), timeout=0.05)

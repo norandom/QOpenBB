@@ -16,6 +16,7 @@ from ..models.factors.fcf_yield import FcfYieldModel, resolve_fcf_inputs
 from ..models.factors.method_inputs import price_window
 from ..models.factors.momentum import MomentumModel
 from ..models.factors.real_yield import RealYieldModel, resolve_yield_inputs
+from ..models.factors.retrospective import RetrospectiveComparisonModel
 from ..models.factors.sessions import WINDOW_SIZE
 from ..models.factors.volatility import VolatilityModel
 from ..models.protocol import Model
@@ -29,6 +30,7 @@ from ..verification.factors.etf import (
 )
 from ..verification.factors.issuer_reference import issuer_reference
 from ..verification.factors.regime_reference import regime_reference
+from ..verification.factors.retrospective_reference import retrospective_reference
 from ..verification.factors.timing_reference import timing_reference
 from ..verification.reference import Reference
 from .acquisition import DataApiSnapshotSource
@@ -171,6 +173,7 @@ def _factor(
 
 
 _COMPARISON = ProxyComparisonModel()
+_RETROSPECTIVE = RetrospectiveComparisonModel()
 _TIMING = TimingStudyModel()
 _INSTALLED_METHODS = (
     _factor(
@@ -196,6 +199,10 @@ _INSTALLED_METHODS = (
         scenarios=2,
         input_issues=_COMPARISON.input_issues,
         calculate=_COMPARISON.calculate_subset,
+    ),
+    _factor(
+        _RETROSPECTIVE, retrospective_reference, WINDOW_SIZE - 1, scenarios=2,
+        input_issues=_RETROSPECTIVE.input_issues, calculate=_RETROSPECTIVE.calculate_subset,
     ),
     # Each outcome spans one open-to-open session. The supplied calendar sets the study span.
     _factor(

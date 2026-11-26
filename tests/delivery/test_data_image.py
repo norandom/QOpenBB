@@ -21,7 +21,9 @@ FINANCIAL_FILES = tuple('services/data-api/qopenbb_data/' + name for name in (
 ROOT = Path(__file__).resolve().parents[2]
 MODELING_ROOT = ROOT / 'services/data-api/qopenbb_data/modeling'
 # Discover expectations from source so a new module missing from the allowlist fails staging.
-MODELING_FILES = tuple(path.relative_to(ROOT).as_posix() for path in sorted(MODELING_ROOT.rglob('*.py')))
+MODELING_FILES = tuple(path.relative_to(ROOT).as_posix() for path in sorted(MODELING_ROOT.rglob('*.py'))) + (
+    'services/data-api/qopenbb_data/modeling/service/calendars/nyse_arca.json',
+)
 
 FILES = tuple('services/data-api/' + name for name in (
     'pyproject.toml', 'uv.lock', 'qopenbb_data/__init__.py',
@@ -66,6 +68,8 @@ def test_staged_modeling_modules_are_importable(tmp_path):
     staged_service = destination / 'runtime/services/data-api'
     modules = []
     for name in MODELING_FILES:
+        if not name.endswith('.py'):
+            continue
         path = Path(name).relative_to('services/data-api').with_suffix('')
         parts = path.parent.parts if path.name == '__init__' else path.parts
         modules.append('.'.join(parts))

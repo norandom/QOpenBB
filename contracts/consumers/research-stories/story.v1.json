@@ -1,0 +1,270 @@
+{
+  "evidence": "Synthetic wire and saved-state examples. The FMP and macro inputs are modeled using synthetic factor fixtures. The catalog selection date comes from source qualification.",
+  "catalog": {
+    "widget": {
+      "widgetId": "research_story",
+      "type": "research_story",
+      "name": "Commodities versus Technology",
+      "description": "Compare proxy price returns, realized volatility and the change in real yields.",
+      "category": "Research",
+      "gridData": {
+        "w": 40,
+        "h": 24
+      },
+      "params": []
+    },
+    "view_order": [
+      "question",
+      "returns",
+      "risk",
+      "real_yields",
+      "conclusion"
+    ],
+    "default_state": {
+      "version": 1,
+      "selection": {
+        "commodity_symbol": "DBC",
+        "technology_symbol": "XLK",
+        "observation_date": "2026-11-13"
+      },
+      "schedule": null,
+      "cutoff": null,
+      "run_refs": {
+        "comparison": null,
+        "regime": null
+      },
+      "charts": {
+        "returns": {
+          "input": {
+            "chart_type": "line",
+            "series": [
+              "left_close",
+              "right_close"
+            ],
+            "x_axis": "date",
+            "y_axis": "price_usd"
+          },
+          "result": {
+            "chart_type": "bar",
+            "series": [
+              "left_momentum",
+              "right_momentum"
+            ],
+            "x_axis": "proxy",
+            "y_axis": "percent"
+          }
+        },
+        "risk": {
+          "input": {
+            "chart_type": "line",
+            "series": [
+              "left_daily_return",
+              "right_daily_return"
+            ],
+            "x_axis": "date",
+            "y_axis": "percent"
+          },
+          "result": {
+            "chart_type": "bar",
+            "series": [
+              "left_volatility",
+              "right_volatility"
+            ],
+            "x_axis": "proxy",
+            "y_axis": "percent"
+          }
+        },
+        "real_yields": {
+          "input": {
+            "chart_type": "line",
+            "series": [
+              "dfii10"
+            ],
+            "x_axis": "date",
+            "y_axis": "percent"
+          },
+          "result": {
+            "chart_type": "bar",
+            "series": [
+              "change"
+            ],
+            "x_axis": "window",
+            "y_axis": "percentage_points"
+          }
+        }
+      }
+    }
+  },
+  "saved_dashboard": {
+    "storage": {
+      "researchStory": {
+        "version": 1,
+        "selection": {
+          "commodity_symbol": "DBC",
+          "technology_symbol": "XLK",
+          "observation_date": "2024-04-03"
+        },
+        "schedule": {
+          "calendar_id": "NYSE_ARCA",
+          "schedule_revision": "synthetic-nyse-arca.2024r1"
+        },
+        "cutoff": {
+          "observation_date": "2024-04-03",
+          "decision_at": "2024-04-04T03:59:59.999999Z",
+          "evaluated_at": "2024-05-03T16:00:00Z",
+          "session_timezone": "America/New_York"
+        },
+        "run_refs": {
+          "comparison": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "regime": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "charts": {
+          "returns": {
+            "input": {
+              "chart_type": "line",
+              "series": [
+                "left_close",
+                "right_close"
+              ],
+              "x_axis": "date",
+              "y_axis": "price_usd"
+            },
+            "result": {
+              "chart_type": "bar",
+              "series": [
+                "left_momentum",
+                "right_momentum"
+              ],
+              "x_axis": "proxy",
+              "y_axis": "percent"
+            }
+          },
+          "risk": {
+            "input": {
+              "chart_type": "line",
+              "series": [
+                "left_daily_return",
+                "right_daily_return"
+              ],
+              "x_axis": "date",
+              "y_axis": "percent"
+            },
+            "result": {
+              "chart_type": "bar",
+              "series": [
+                "left_volatility",
+                "right_volatility"
+              ],
+              "x_axis": "proxy",
+              "y_axis": "percent"
+            }
+          },
+          "real_yields": {
+            "input": {
+              "chart_type": "line",
+              "series": [
+                "dfii10"
+              ],
+              "x_axis": "date",
+              "y_axis": "percent"
+            },
+            "result": {
+              "chart_type": "bar",
+              "series": [
+                "change"
+              ],
+              "x_axis": "window",
+              "y_axis": "percentage_points"
+            }
+          }
+        }
+      }
+    }
+  },
+  "template_export": {
+    "storage": {
+      "researchStory": {
+        "version": 1,
+        "selection": {
+          "commodity_symbol": "DBC",
+          "technology_symbol": "XLK",
+          "observation_date": "2024-04-03"
+        },
+        "schedule": {
+          "calendar_id": "NYSE_ARCA",
+          "schedule_revision": "synthetic-nyse-arca.2024r1"
+        },
+        "cutoff": {
+          "observation_date": "2024-04-03",
+          "decision_at": "2024-04-04T03:59:59.999999Z",
+          "evaluated_at": "2024-05-03T16:00:00Z",
+          "session_timezone": "America/New_York"
+        },
+        "run_refs": {
+          "comparison": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "regime": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "charts": {
+          "returns": {
+            "input": {
+              "chart_type": "line",
+              "series": [
+                "left_close",
+                "right_close"
+              ],
+              "x_axis": "date",
+              "y_axis": "price_usd"
+            },
+            "result": {
+              "chart_type": "bar",
+              "series": [
+                "left_momentum",
+                "right_momentum"
+              ],
+              "x_axis": "proxy",
+              "y_axis": "percent"
+            }
+          },
+          "risk": {
+            "input": {
+              "chart_type": "line",
+              "series": [
+                "left_daily_return",
+                "right_daily_return"
+              ],
+              "x_axis": "date",
+              "y_axis": "percent"
+            },
+            "result": {
+              "chart_type": "bar",
+              "series": [
+                "left_volatility",
+                "right_volatility"
+              ],
+              "x_axis": "proxy",
+              "y_axis": "percent"
+            }
+          },
+          "real_yields": {
+            "input": {
+              "chart_type": "line",
+              "series": [
+                "dfii10"
+              ],
+              "x_axis": "date",
+              "y_axis": "percent"
+            },
+            "result": {
+              "chart_type": "bar",
+              "series": [
+                "change"
+              ],
+              "x_axis": "window",
+              "y_axis": "percentage_points"
+            }
+          }
+        }
+      }
+    }
+  }
+}
