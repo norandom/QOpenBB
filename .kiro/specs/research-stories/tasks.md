@@ -59,7 +59,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 2.4_
   - _Requirements: 1.2, 2.2, 2.3, 2.4, 3.1_
 
-- [ ] 3. Bind the native Workspace views to verified runs
+- [x] 3. Bind the native Workspace views to verified runs
 - [x] 3.1 (P) Decode saved evidence and decide the verdict
   - Join output-specific reference matches, checks, trace IDs and the saved snapshot rows. Test exact signed decimals, ties, sub-display-precision spreads, mismatched run identity and blocked outputs. Return the independently valid leg and preserve the verdict when only volatility or macro context fails.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
@@ -88,7 +88,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 2.2, 2.5, 3.3_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 4.2_
 
-- [ ] 3.5 Render ordered findings and dated drill-downs
+- [x] 3.5 Render ordered findings and dated drill-downs
   - Show price returns, risk, real yields and verdict with the selected window and check states. Open both legs' closes, the 63 dated returns and the endpoint rows from their original runs. Verify percent versus percentage points, dividend exclusion, higher-risk winner, missing context, source headlines, FRED notice and keyboard navigation. Restore the analyst's chart settings for source and result views.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Workspace story chart and evidence views_
