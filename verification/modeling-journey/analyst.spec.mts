@@ -4,7 +4,7 @@ import type { Page } from "../node_modules/@playwright/test/index.js";
 import { expect, test } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/toolchain";
 import { observeApplication } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/diagnostics";
 import { saveDashboard } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/editor";
-import { addWidget, newDashboard, signIn } from "./workspace.mts";
+import { addWidget, connectDataSource, newDashboard, signIn } from "./workspace.mts";
 
 const phase = process.env.JOURNEY_PHASE;
 const checkpoint = process.env.JOURNEY_CHECKPOINT!;
@@ -51,22 +51,7 @@ async function confirmYield(page: Page, id: string) {
 }
 
 async function verifyProviderView(page: Page) {
-  await page.goto("/app/connections");
-  await page.getByRole("button", {name: "Connect Backend", exact: true}).first().click();
-  const dialog = page.getByRole("dialog").filter({has: page.getByPlaceholder("OpenBB App")});
-  await dialog.getByPlaceholder("OpenBB App").fill("Journey provider data");
-  await dialog.getByPlaceholder("http://127.0.0.1:5056").fill(process.env.WORKSPACE_FRONTEND_ORIGIN + "/data");
-  const testBackend = dialog.getByRole("button", {name: "Test", exact: true});
-  const duplicate = dialog.getByText('"Journey provider data" is already using this URL', {exact: true});
-  await expect.poll(async () => await testBackend.isEnabled() || await duplicate.isVisible()).toBe(true);
-  if (await duplicate.isVisible()) {
-    await dialog.getByRole("button", {name: "Close", exact: true}).click();
-  } else {
-    await testBackend.click();
-    await expect(dialog.getByText("Test successful", {exact: true})).toBeVisible();
-    await dialog.getByRole("button", {name: /^add$/i}).click();
-  }
-  await expect(dialog).not.toBeVisible();
+  await connectDataSource(page, "Journey provider data");
   const providerDashboard = await newDashboard(page);
   await addWidget(page, "Profile");
   await saveDashboard(page);

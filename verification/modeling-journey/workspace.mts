@@ -48,3 +48,22 @@ export async function addWidget(page: Page, name: string) {
   await dialog.getByText(name, { exact: true }).click();
   await dialog.getByRole("button", { name: "Add widgets", exact: true }).click();
 }
+
+export async function connectDataSource(page: Page, name: string) {
+  await page.goto("/app/connections");
+  await page.getByRole("button", { name: "Connect Backend", exact: true }).first().click();
+  const dialog = page.getByRole("dialog").filter({ has: page.getByPlaceholder("OpenBB App") });
+  await dialog.getByPlaceholder("OpenBB App").fill(name);
+  await dialog.getByPlaceholder("http://127.0.0.1:5056").fill(process.env.WORKSPACE_FRONTEND_ORIGIN + "/data");
+  const testBackend = dialog.getByRole("button", { name: "Test", exact: true });
+  const duplicate = dialog.getByText(`"${name}" is already using this URL`, { exact: true });
+  await expect.poll(async () => await testBackend.isEnabled() || await duplicate.isVisible()).toBe(true);
+  if (await duplicate.isVisible()) {
+    await dialog.getByRole("button", { name: "Close", exact: true }).click();
+  } else {
+    await testBackend.click();
+    await expect(dialog.getByText("Test successful", { exact: true })).toBeVisible();
+    await dialog.getByRole("button", { name: /^add$/i }).click();
+  }
+  await expect(dialog).not.toBeVisible();
+}

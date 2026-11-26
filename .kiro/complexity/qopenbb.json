@@ -34,7 +34,7 @@
         ".dagger/src/qopenbb/modeling.py", ".dagger/src/qopenbb/modeling_export.py",
         "services/modeling/pyproject.toml", "pipeline/qopenbb_ci/build_model_image.py",
         ".github/workflows/finalize-modeling.yml", ".github/workflows/promote-modeling.yml", "pipeline/qopenbb_ci/publish_model_images.py", "pipeline/qopenbb_ci/release_assets.py",
-        "verification/modeling-journey/packaged.py",
+        "verification/modeling-journey/packaged.py", "verification/modeling-journey/modeling_lifecycle.py",
         "deploy/compose.modeling.yaml", "deploy/pull-modeling-candidate.sh", ".env.sample",
         "verification/modeling-journey/compose.yaml", "verification/modeling-journey/run.py",
         "verification/modeling-journey/playwright.config.mts", "verification/modeling-journey/workspace.mts",

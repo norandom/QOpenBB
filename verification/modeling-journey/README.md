@@ -33,6 +33,19 @@ The generated evidence directory holds the three Playwright reports, dashboard/r
 
 ## Verify the commodities versus technology story
 
+Select the story suite after Dagger builds and loads the three local candidate images. Set the image variables to the full local content IDs and use the private environment file for FMP and FRED.
+
+```bash
+export PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright"
+mkdir -p artifacts/modeling-journey
+pipeline/.venv/bin/python verification/modeling-journey/packaged.py \
+  --suite story --local-images --workspace-image "$WORKSPACE_IMAGE" \
+  --data-image "$DATA_IMAGE" --modeling-image "$MODELING_IMAGE" \
+  --evidence artifacts/modeling-journey
+```
+
+The story smoke checks the packaged app catalog and opens its default DBC/XLK selection while modeling is stopped. It starts the same modeling container, retries the comparison on the open dashboard and checks that the verified spread reaches the verdict. The runner records container identities and Playwright evidence under the run directory. Omit `--local-images` to use immutable registry references. The issuer suite remains the default.
+
 Run the preflight against a disposable Compose candidate built with Dagger and published only on a loopback port. The candidate needs the research story catalog, the authenticated modeling bridge and configured FMP and FRED entitlements. Set `STORY_ORIGIN` to the candidate's loopback HTTP origin with its explicit port. Pass the disposable login through `OPENBB_ADMIN_EMAIL` and `OPENBB_ADMIN_PASSWORD`.
 
 ```bash

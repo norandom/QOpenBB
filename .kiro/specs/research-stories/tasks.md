@@ -96,7 +96,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Requirements: 1.4, 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4, 4.2_
 
 - [ ] 4. Accept the packaged analyst journey
-- [ ] 4.1 Integrate the accepted fork and discover the story tests
+- [x] 4.1 Integrate the accepted fork and discover the story tests
   - Verify the actual owned fork revision, promote its source pin and stage all maintained inputs. Build candidate images through Dagger. Extend Playwright discovery and the packaged runner for story selection and same-session modeling-service restart. Confirm both issuer and story journeys remain discoverable.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Controller, source pins, image inputs and journey harness_

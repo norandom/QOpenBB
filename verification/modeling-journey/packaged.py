@@ -1,4 +1,4 @@
-"""Exercise the pull-only candidate on a disposable loopback deployment."""
+"""Exercise immutable candidate images on a disposable loopback deployment."""
 
 import argparse
 import json
@@ -58,16 +58,38 @@ def state_command(root, image, code):
                     "--entrypoint", "python", image, "-c", code], check=True)
 
 
-def exercise(root, compose, env, references):
+def exercise(root, compose, env, references, suite):
     origin, password = env["PUBLIC_URL"], env["OPENBB_ADMIN_PASSWORD"]
+
     def command(*args):
         subprocess.run([*compose, *args], env=env, check=True, timeout=240)
+
+    def snapshot():
+        return inventory(compose, references, env)
+
     wait_ready(origin)
-    before = inventory(compose, references, env)
+    before = snapshot()
+    if suite == "story":
+        def change_service(action):
+            if action == "stop":
+                command("stop", "modeling")
+            else:
+                command("start", "--wait", "--wait-timeout", "60", "modeling")
+
+        browser(root, "story", origin, password, suite=suite, change_service=change_service)
+        after = snapshot()
+        if before != after:
+            raise ValueError("Story outage must preserve the running container identities")
+    else:
+        after = exercise_issuer(root, command, origin, password, before, snapshot)
+    (root / "images.json").write_text(json.dumps({"before": before, "after": after}, indent=2))
+
+
+def exercise_issuer(root, command, origin, password, before, snapshot):
     browser(root, "evaluate", origin, password)
     command("up", "-d", "--no-build", "--pull", "never", "--force-recreate",
             "--no-deps", "--wait", "workspace", "modeling")
-    after = inventory(compose, references, env)
+    after = snapshot()
     for service in SERVICES:
         replaced = before[service]["container"] != after[service]["container"]
         if replaced != (service != "data-api"):
@@ -75,13 +97,18 @@ def exercise(root, compose, env, references):
     browser(root, "reopen", origin, password)
     command("stop", "modeling")
     browser(root, "unavailable", origin, password)
-    (root / "images.json").write_text(json.dumps({"before": before, "after": after}, indent=2))
+    return after
+
+
+def image_references(images, local):
+    pattern = r"sha256:[0-9a-f]{64}" if local else r"[^\s@]+@sha256:[0-9a-f]{64}"
+    if not all(re.fullmatch(pattern, image) for image in images):
+        raise ValueError("Use full local content IDs with --local-images, or immutable registry references")
+    return dict(zip(SERVICES, images, strict=True))
 
 
 def run(args):
-    refs = dict(zip(SERVICES, (args.workspace_image, args.data_image, args.modeling_image), strict=True))
-    if not all(re.fullmatch(r"[^\s@]+@sha256:[0-9a-f]{64}", ref) for ref in refs.values()):
-        raise ValueError("Use immutable registry image references")
+    refs = image_references((args.workspace_image, args.data_image, args.modeling_image), args.local_images)
     root = Path(tempfile.mkdtemp(prefix="packaged-", dir=args.evidence)).resolve()
     (root / "data").mkdir()
     shutil.copy(ROOT / "compose.yaml", root)
@@ -97,13 +124,20 @@ def run(args):
                "--env-file", private, "-f", str(root / "compose.yaml"),
                "-f", str(root / "deploy/compose.modeling.yaml")]
     # A disposable copy of the real bind must have the image user's numeric owner.
-    subprocess.run(["docker", "pull", refs["data-api"]], check=True)
+    if args.local_images:
+        subprocess.run(["docker", "image", "inspect", "--format", "{{.Id}}", *refs.values()], check=True)
+    else:
+        subprocess.run(["docker", "pull", refs["data-api"]], check=True)
     state_command(root / "data", refs["data-api"],
                   f"import os; os.mkdir('/owned/modeling',0o700); os.chown('/owned/modeling',{STATE_UID},{STATE_UID})")
     try:
-        subprocess.run(["bash", root / "deploy/pull-modeling-candidate.sh", project, private],
-                       env=env, timeout=600, check=True)
-        exercise(root, compose, env, refs)
+        if args.local_images:
+            subprocess.run([*compose, "up", "-d", "--no-build", "--pull", "never", "--wait",
+                            "--wait-timeout", "180"], env=env, timeout=240, check=True)
+        else:
+            subprocess.run(["bash", root / "deploy/pull-modeling-candidate.sh", project, private],
+                           env=env, timeout=600, check=True)
+        exercise(root, compose, env, refs, args.suite)
         print(f"Image-only evidence at {root}")
     finally:
         subprocess.run([*compose, "down", "--volumes"], env=env, check=True, timeout=180)
@@ -117,4 +151,6 @@ if __name__ == "__main__":
         parser.add_argument(f"--{name}-image", required=True)
     parser.add_argument("--evidence", type=Path, required=True)
     parser.add_argument("--env-file", type=Path, default=ROOT / ".env")
+    parser.add_argument("--suite", choices=("issuer", "story"), default="issuer")
+    parser.add_argument("--local-images", action="store_true", help="Use already-built full local image content IDs")
     run(parser.parse_args())

@@ -1,0 +1,22 @@
+{
+  "workspace_revision": "3c08c76b2980ec47dd3cc1dcdd50de15e4590aa4",
+  "baseline_controller_revision": "07682dbbab32b9d65fe7c32ab67da72bf82f0204",
+  "candidate_local_image_ids": {
+    "workspace": "sha256:31d1c41b6b6631e16ca390d65e9bd8769f8c93a4cfa03db2da9adc3ac1a5fcb6",
+    "data-api": "sha256:1cbb333c1ff5befbafc207786adf04da5adeac13c2f519b3e484d450424cfad6",
+    "modeling": "sha256:090e6646cb2d3d37ac86f2ef10aa61762daa7e78baae2c0b024f1a8db35a7323"
+  },
+  "workspace_archive_sha256": "5fc17cf3cf0420885b674e857a973e07e0db80b8da4bb6ea11d314107277bb4b",
+  "verification": {
+    "matching_changed_production_inputs": 26,
+    "canonical_complexity_files": 922,
+    "fork_delta_complexity_files": 241,
+    "playwright_discovered": [
+      "analyst.spec.mts",
+      "story.spec.mts"
+    ],
+    "packaged_smoke": "Authenticated catalog opened on DBC/XLK, 2026-11-13. With modeling stopped the evaluation returned 503. On the same dashboard, retry returned a verified price spread after service startup.",
+    "containers_preserved_after_restart": true,
+    "source_file": "verification/modeling-journey/story.spec.mts"
+  }
+}

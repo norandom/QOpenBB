@@ -13,6 +13,8 @@ import time
 from pathlib import Path
 from urllib.request import urlopen
 
+from modeling_lifecycle import run_browser
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 
@@ -65,16 +67,20 @@ def wait_ready(origin):
     raise RuntimeError("Workspace did not become ready")
 
 
-def browser(root, phase, origin, password):
+def browser(root, phase, origin, password, *, suite="issuer", change_service=None):
     evidence = root / phase
     evidence.mkdir()
     env = {key: os.environ[key] for key in ("HOME", "PATH", "PLAYWRIGHT_BROWSERS_PATH")}
     env.update(WORKSPACE_FRONTEND_ORIGIN=origin, JOURNEY_PHASE=phase, JOURNEY_PASSWORD=password,
                JOURNEY_CHECKPOINT=str(root / "checkpoint.json"), WORKSPACE_EVIDENCE_ROOT=str(evidence),
                QOPENBB_PLAYWRIGHT_PACKAGE=str(HERE.parent / "node_modules/@playwright/test"))
-    subprocess.run(["node", HERE.parent / "node_modules/@playwright/test/cli.js",
-                    "test", "-c", HERE / "playwright.config.mts"], cwd=ROOT, env=env,
-                   timeout=240, check=True)
+    spec = {"issuer": "analyst.spec.mts", "story": "story.spec.mts"}[suite]
+    command = ["node", HERE.parent / "node_modules/@playwright/test/cli.js",
+               "test", "-c", HERE / "playwright.config.mts", spec]
+    if change_service is None:
+        subprocess.run(command, cwd=ROOT, env=env, timeout=240, check=True)
+    else:
+        run_browser(command, env, change_service, evidence, cwd=ROOT, timeout=240)
 
 
 def run(args):
