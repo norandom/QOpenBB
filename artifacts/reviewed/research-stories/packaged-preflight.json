@@ -1,0 +1,416 @@
+{
+  "runtime_source_revision": "464d39adfab8f03efe4bc5a4aae9c9a57b10fa8b",
+  "images": {
+    "workspace": "sha256:49748d9f90d064073187feb8bc1208e1a84d5b08c4b89ad80cea80d24e9f4b01",
+    "data-api": "sha256:1cbb333c1ff5befbafc207786adf04da5adeac13c2f519b3e484d450424cfad6",
+    "modeling": "sha256:090e6646cb2d3d37ac86f2ef10aa61762daa7e78baae2c0b024f1a8db35a7323"
+  },
+  "scope": "Local packaged candidate through the authenticated Workspace bridge",
+  "result": {
+    "schema_version": 1,
+    "status": "passed",
+    "calendar_id": "NYSE_ARCA",
+    "schedule_revision": "nyse-arca.2026r1",
+    "start_date": "2026-08-17",
+    "end_date": "2026-11-13",
+    "comparisons": [
+      {
+        "run_id": "8b59a5bcf90f4bf9ad15fb407c780768",
+        "source": "fmp",
+        "availability_basis": "retrieved_history",
+        "price_basis": "split_adjusted_dividends_excluded",
+        "retrieved_at": "2026-11-26T14:48:35.944257+00:00",
+        "legs": [
+          {
+            "symbol": "DBC",
+            "row_count": 64,
+            "return_count": 63,
+            "retrieved_at": "2026-11-26T14:48:32.132363+00:00",
+            "row_sha256": "9b8c26ab2169a758cecc066751704937130f2e7e4b23658b3e3cc4ac65268033",
+            "return_trace_sha256": "a27436b9d702aba211eaaf5031c4a0c5976b86bbacbce717bee52e098708d60e"
+          },
+          {
+            "symbol": "XLK",
+            "row_count": 64,
+            "return_count": 63,
+            "retrieved_at": "2026-11-26T14:48:35.944257+00:00",
+            "row_sha256": "5fef70e02a72925c3057da4333bcc992181aa7126e7031f5889c5cad22b97e94",
+            "return_trace_sha256": "eb8d8cded38f92486788f191f5ebae02b3600356d2d3326809cc7fc01da98ec0"
+          }
+        ],
+        "outputs": {
+          "left_momentum": {
+            "value": "0.75261780104712041884816753926701570681",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "81bb474153817c2ece9d5c3cc859aaadd3c3f53ce000d15c3b27462a909eb1e8",
+            "checks": [
+              {
+                "id": "eligible_inputs.left_momentum",
+                "status": "pass"
+              }
+            ]
+          },
+          "right_momentum": {
+            "value": "-10.52963430012610340479192938209331652",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "707657077d90905590fd9b1965a3e1b5f43056292e18b1db3b51361248e4bddd",
+            "checks": [
+              {
+                "id": "eligible_inputs.right_momentum",
+                "status": "pass"
+              }
+            ]
+          },
+          "momentum_spread": {
+            "value": "11.282252101173223823640096921360332227",
+            "unit": "percentage_points",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "6054d7e41ed5352613381ed9325e2d8c7dbe0894dd1b3a7549a5cfdda1fb04c7",
+            "checks": [
+              {
+                "id": "eligible_inputs.momentum_spread",
+                "status": "pass"
+              }
+            ]
+          },
+          "left_volatility": {
+            "value": "18.391392913216955568854158732094480577",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "4b08abb56302ed7166de63f304cea522dbc300fcd064af462404726dfb3773c4",
+            "checks": [
+              {
+                "id": "eligible_inputs.left_volatility",
+                "status": "pass"
+              }
+            ]
+          },
+          "right_volatility": {
+            "value": "30.607975194430802682782961750819379433",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "ac3811941ad34cacbfa55c1af6fc738628de2f2830e1ddf49ed8b6b283d1ebc7",
+            "checks": [
+              {
+                "id": "eligible_inputs.right_volatility",
+                "status": "pass"
+              }
+            ]
+          },
+          "volatility_spread": {
+            "value": "-12.216582281213847113928803018724898856",
+            "unit": "percentage_points",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "2a54e5b1de0d30cfb57d5173ef1d2f1bf08a5db52acfc2a01118f33a6a2d9f58",
+            "checks": [
+              {
+                "id": "eligible_inputs.volatility_spread",
+                "status": "pass"
+              }
+            ]
+          }
+        },
+        "verdict": "supported",
+        "spread_outcome": "commodity_outperformance",
+        "session_sha256": "e3615595b5162e37a4f0dcd8e082ec5b026d5f4e151e4b852bf937a748bc62c5"
+      },
+      {
+        "run_id": "eac0fb97a1434712b37aae97ac704b4e",
+        "source": "fmp",
+        "availability_basis": "retrieved_history",
+        "price_basis": "split_adjusted_dividends_excluded",
+        "retrieved_at": "2026-11-26T14:48:43.323193+00:00",
+        "legs": [
+          {
+            "symbol": "GLD",
+            "row_count": 64,
+            "return_count": 63,
+            "retrieved_at": "2026-11-26T14:48:41.853494+00:00",
+            "row_sha256": "8fd277d6d43ed3ace6ac2e8f376b1d943c4c89b35e8a6ef0f9953e51910feb6f",
+            "return_trace_sha256": "f3c1859550203b9db2d08756648c36f9178311d156d5907629aab8a74178ed3c"
+          },
+          {
+            "symbol": "XLK",
+            "row_count": 64,
+            "return_count": 63,
+            "retrieved_at": "2026-11-26T14:48:43.323193+00:00",
+            "row_sha256": "5fef70e02a72925c3057da4333bcc992181aa7126e7031f5889c5cad22b97e94",
+            "return_trace_sha256": "eb8d8cded38f92486788f191f5ebae02b3600356d2d3326809cc7fc01da98ec0"
+          }
+        ],
+        "outputs": {
+          "left_momentum": {
+            "value": "-12.34062492293274803324372980837998471",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "b5ce2af5f34afe6f66821e662061ebdee3669777ea8f2b4bbe74df16d96f0d9b",
+            "checks": [
+              {
+                "id": "eligible_inputs.left_momentum",
+                "status": "pass"
+              }
+            ]
+          },
+          "right_momentum": {
+            "value": "-10.52963430012610340479192938209331652",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "1bf2318d3443c29561188798c2171d582ebecd677e7b94aeb7d8178e74b38b15",
+            "checks": [
+              {
+                "id": "eligible_inputs.right_momentum",
+                "status": "pass"
+              }
+            ]
+          },
+          "momentum_spread": {
+            "value": "-1.81099062280664462845180042628666819",
+            "unit": "percentage_points",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "20fd36e10cf3c1ecc890e8b743cad71f6be71c67b15d4131d32f6191758d9374",
+            "checks": [
+              {
+                "id": "eligible_inputs.momentum_spread",
+                "status": "pass"
+              }
+            ]
+          },
+          "left_volatility": {
+            "value": "25.260706424842334574258032264087518971",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "81eb947bfce35214550635e4a7bca838f3ec85dbaf3c546778091b6133f9aec9",
+            "checks": [
+              {
+                "id": "eligible_inputs.left_volatility",
+                "status": "pass"
+              }
+            ]
+          },
+          "right_volatility": {
+            "value": "30.607975194430802682782961750819379433",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "7f4e87a11d701109ff2a81ca7f9f70cbb4d86b8f29009547afe89ef56ef5c29f",
+            "checks": [
+              {
+                "id": "eligible_inputs.right_volatility",
+                "status": "pass"
+              }
+            ]
+          },
+          "volatility_spread": {
+            "value": "-5.347268769588468108524929486731860462",
+            "unit": "percentage_points",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "96a82a71cb1a1f4e109a3761489dbb133b91a8990f7b9da0b3bcb9f199ee8a1b",
+            "checks": [
+              {
+                "id": "eligible_inputs.volatility_spread",
+                "status": "pass"
+              }
+            ]
+          }
+        },
+        "verdict": "not supported",
+        "spread_outcome": "technology_outperformance",
+        "session_sha256": "e3615595b5162e37a4f0dcd8e082ec5b026d5f4e151e4b852bf937a748bc62c5"
+      },
+      {
+        "run_id": "1356f30b56b048d994df57ccae1ddd0c",
+        "source": "fmp",
+        "availability_basis": "retrieved_history",
+        "price_basis": "split_adjusted_dividends_excluded",
+        "retrieved_at": "2026-11-26T14:48:50.289556+00:00",
+        "legs": [
+          {
+            "symbol": "DBC",
+            "row_count": 64,
+            "return_count": 63,
+            "retrieved_at": "2026-11-26T14:48:48.896888+00:00",
+            "row_sha256": "9b8c26ab2169a758cecc066751704937130f2e7e4b23658b3e3cc4ac65268033",
+            "return_trace_sha256": "a27436b9d702aba211eaaf5031c4a0c5976b86bbacbce717bee52e098708d60e"
+          },
+          {
+            "symbol": "VGT",
+            "row_count": 64,
+            "return_count": 63,
+            "retrieved_at": "2026-11-26T14:48:50.289556+00:00",
+            "row_sha256": "dbddd5665dcf006f5f5667ede54082b9c473502fef6c6c16e6a198d9eb80762d",
+            "return_trace_sha256": "503b7bd136fdc46b36d7ff5ac0538ce2d737eaf01994ffe2a3589259c92fc9c9"
+          }
+        ],
+        "outputs": {
+          "left_momentum": {
+            "value": "0.75261780104712041884816753926701570681",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "1eee5144ab7df56e80c51f788109bd5a475e7ea7075aa1cb4f948641815691bd",
+            "checks": [
+              {
+                "id": "eligible_inputs.left_momentum",
+                "status": "pass"
+              }
+            ]
+          },
+          "right_momentum": {
+            "value": "-9.2704423045536151460747511016810837278",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "9791648d6a14bd1c29a1848819c4d47139628ea1cbd644f5cba0e32d1112e5a2",
+            "checks": [
+              {
+                "id": "eligible_inputs.right_momentum",
+                "status": "pass"
+              }
+            ]
+          },
+          "momentum_spread": {
+            "value": "10.023060105600735564922918640948099435",
+            "unit": "percentage_points",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "51aa70793a6820dd98bdec113a1387a383f3cd28e38c6f271a60000bb900357d",
+            "checks": [
+              {
+                "id": "eligible_inputs.momentum_spread",
+                "status": "pass"
+              }
+            ]
+          },
+          "left_volatility": {
+            "value": "18.391392913216955568854158732094480577",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "061029790126a21548369705296da0be76b264e0f98efc0d4ab3f607ced1c99c",
+            "checks": [
+              {
+                "id": "eligible_inputs.left_volatility",
+                "status": "pass"
+              }
+            ]
+          },
+          "right_volatility": {
+            "value": "28.280252093604320121671887935236316705",
+            "unit": "percent",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "622b18b871e7deeaf19de49dbdc7d896dd1ac1d0007adc3cdffb3d261e9fb0ee",
+            "checks": [
+              {
+                "id": "eligible_inputs.right_volatility",
+                "status": "pass"
+              }
+            ]
+          },
+          "volatility_spread": {
+            "value": "-9.888859180387364552817729203141836128",
+            "unit": "percentage_points",
+            "status": "verified",
+            "reference": "match",
+            "reference_version": "2",
+            "output_sha256": "5b05e9a0e00bcd5d59e5d778ce52ac585f269be838d2c84d4b26eb01a709ab62",
+            "checks": [
+              {
+                "id": "eligible_inputs.volatility_spread",
+                "status": "pass"
+              }
+            ]
+          }
+        },
+        "verdict": "supported",
+        "spread_outcome": "commodity_outperformance",
+        "session_sha256": "e3615595b5162e37a4f0dcd8e082ec5b026d5f4e151e4b852bf937a748bc62c5"
+      }
+    ],
+    "catalog_selection": {
+      "commodity_symbol": "DBC",
+      "observation_date": "2026-11-13",
+      "technology_symbol": "XLK"
+    },
+    "cutoff": {
+      "observation_date": "2026-11-13",
+      "decision_at": "2026-11-14T04:59:59Z",
+      "evaluated_at": "2026-11-26T14:48:29.711315Z",
+      "session_timezone": "America/New_York"
+    },
+    "rejected_acquisitions": [
+      "reversed_assumptions",
+      "wrong_dataset"
+    ],
+    "dfii10": {
+      "run_id": "49534d1279ab448687af42cc93769340",
+      "source": "fred",
+      "retrieved_at": "2026-11-26T14:48:55.784547+00:00",
+      "session_sha256": "e3615595b5162e37a4f0dcd8e082ec5b026d5f4e151e4b852bf937a748bc62c5",
+      "rows_sha256": "c581ca0c628d41b612b4186be2e7bb74bde6adf96462ea3f77ea039b7c5dc192",
+      "row_count": 65,
+      "outputs": {
+        "regime": {
+          "value": null,
+          "unit": "classification",
+          "status": "withheld",
+          "reference": "unavailable",
+          "reference_version": "1",
+          "output_sha256": "d9518892abc0e7a00acadc66e083bcb6612bca582ead75dffdba013ad13e7b37",
+          "checks": [
+            {
+              "id": "eligible_inputs.regime",
+              "status": "fail"
+            }
+          ]
+        },
+        "change": {
+          "value": null,
+          "unit": "percentage_points",
+          "status": "withheld",
+          "reference": "unavailable",
+          "reference_version": "1",
+          "output_sha256": "8784d38e4a29a84789db717e3da91bd31f451c686dcd21dd6d12a59a1e693844",
+          "checks": [
+            {
+              "id": "eligible_inputs.change",
+              "status": "fail"
+            }
+          ]
+        }
+      },
+      "context_status": "withheld",
+      "unavailable_endpoint": "2026-11-13"
+    }
+  }
+}

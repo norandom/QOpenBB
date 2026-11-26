@@ -7,11 +7,13 @@
   "owners": [
     {
       "spec": "research-stories",
-      "include": ["contracts/consumers/research-stories/*.json", "pipeline/qopenbb_ci/catalog_story.py"],
+      "include": ["contracts/consumers/research-stories/*.json", "pipeline/qopenbb_ci/catalog_story.py", "verification/modeling-journey/story*.py"],
       "files": [
         "contracts/consumers/research-stories/story.v1.json",
         "contracts/consumers/research-stories/runs.v1.json",
-        "pipeline/qopenbb_ci/catalog_story.py"
+        "pipeline/qopenbb_ci/catalog_story.py",
+        "verification/modeling-journey/story_preflight.py",
+        "verification/modeling-journey/story_preflight_evidence.py"
       ]
     },
     {

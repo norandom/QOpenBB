@@ -23,7 +23,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 1.1, 1.2_
   - _Requirements: 1.1, 1.2, 2.1, 3.2, 4.1, 4.2, 4.3_
 
-- [ ] 2. Supply dated inputs and declare the catalog App
+- [x] 2. Supply dated inputs and declare the catalog App
 - [x] 2.1 (P) Resolve expected trading sessions
   - Package the qualified official schedule with source identity, digest, revision, coverage and publication evidence. Prove the resolver returns 64 scheduled sessions and handles holidays, early closes, non-sessions, uncovered dates and an ineligible revision. Bind the same selected session and schedule to both models. Apply the historical cutoff to DFII10. Record the actual FMP retrieval times for the retrospective price window.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
@@ -52,7 +52,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 2.3_
   - _Requirements: 1.2, 2.1, 3.3, 4.1_
 
-- [ ] 2.5 Run the real-input preflight
+- [x] 2.5 Run the real-input preflight
   - Stage the actual acquisition and schedule files in the modeling image inputs, build affected images with Dagger and start an isolated candidate with the authenticated bridge. Implement and execute the design's story_preflight.py for the default DBC/XLK pair and both role changes, verifying exact saved source rows with receipt provenance, 64 closes per leg, 63 dated returns and verified spread. Check the two macro endpoints when eligible. For November 13, verify the dated withheld DFII10 outcome and a retained spread-based verdict. Record digests, coverage and any blocked price input. Require a passing preflight before UI integration.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Controller, candidate packaging and live preflight_

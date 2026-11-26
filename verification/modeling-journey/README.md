@@ -30,3 +30,17 @@ pipeline/.venv/bin/python verification/modeling-journey/run.py \
 ```
 
 The generated evidence directory holds the three Playwright reports, dashboard/run checkpoint and before/after container IDs. The checked-in numerical fixtures and the saved-run widget work offline. The outage proof requires access to the FMP profile endpoint.
+
+## Verify the commodities versus technology story
+
+Run the preflight against a disposable Compose candidate built with Dagger and published only on a loopback port. The candidate needs the research story catalog, the authenticated modeling bridge and configured FMP and FRED entitlements. Set `STORY_ORIGIN` to the candidate's loopback HTTP origin with its explicit port. Pass the disposable login through `OPENBB_ADMIN_EMAIL` and `OPENBB_ADMIN_PASSWORD`.
+
+```bash
+STORY_ORIGIN=http://127.0.0.1:8601 \
+STORY_EVIDENCE=artifacts/research-stories/story-preflight.json \
+  python3 verification/modeling-journey/story_preflight.py
+```
+
+The preflight reopens each run through the bridge. It checks DBC/XLK, GLD/XLK and DBC/VGT over the 64 NYSE Arca sessions from August 17 to November 13, 2026. It recalculates percent price changes, sample annualized volatility from 63 adjacent returns and left-minus-right spreads in percentage points. The FMP rows represent split-adjusted USD closes with dividends excluded on a retrieved-history basis. The November 13 DFII10 context must carry a dated blocking check for the unavailable endpoint. The verified price spread still determines the verdict. [Source qualification](../../.kiro/specs/research-stories/source-qualification.md)
+
+The JSON report links run IDs to calendar and source-row digests, receipts, output values, check results and reference fingerprints. A blocked input or verification mismatch exits nonzero and records the failure and prior completed checks. The report omits raw provider rows and login credentials. [Preflight acceptance criteria](../../.kiro/specs/research-stories/design.md#requirements-traceability-and-verification)
