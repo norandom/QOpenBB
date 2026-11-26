@@ -353,3 +353,13 @@ selectors = [
   "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget",
   "tests/factors/test_acquired_evaluation.py::test_revised_gdp_is_saved_as_a_separate_verified_observation",
 ]
+
+[[mapping]]
+ids = ["capability:workspace-modeling-bridge"]
+criteria = ["3.4", "4.5", "5.1", "5.2", "6.5"]
+paths = ["sources.lock.json", "contracts/sources.json", "compose.yaml", "tests/contracts/test_workspace_modeling_bridge.py", "tests/delivery/test_origin_routing.py"]
+selectors = [
+  "tests/contracts/test_workspace_modeling_bridge.py::test_workspace_modeling_saved_run_ownership",
+  "tests/delivery/test_origin_routing.py::test_modeling_location_uses_session_bridge",
+  "tests/delivery/test_prototype_compose.py::test_credentials_stay_with_service_and_bootstrap_remains_optional",
+]

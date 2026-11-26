@@ -19,7 +19,7 @@ case "${1:-}" in
       tests/delivery/test_compose_lifecycle.py tests/delivery/test_workspace_runtime.py \
       tests/delivery/test_workspace_smoke.py tests/delivery/test_verification.py \
       tests/delivery/test_portable_runtime.py tests/delivery/test_financial_budget.py \
-      tests/contracts/test_modeling_adoption.py tests/contracts/test_financial_compat*.py tests/contracts/test_modeling_impact*.py tests/factors -n0 -m 'not live'
+      tests/delivery/test_origin_routing.py::test_modeling_location_uses_session_bridge tests/contracts/test_workspace_modeling_bridge.py tests/contracts/test_modeling_adoption.py tests/contracts/test_financial_compat*.py tests/contracts/test_modeling_impact*.py tests/factors -n0 -m 'not live'
     ;;
   modeling-impact)
     PYTHONPATH="$PWD/services/data-api${PYTHONPATH:+:$PYTHONPATH}" \

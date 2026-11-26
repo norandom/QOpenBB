@@ -65,3 +65,11 @@ bash pipeline/ci.sh modeling-impact "$base" artifacts/modeling-impact/report.jso
 The report identifies changed financial contracts, owning requirements, pytest selectors and the outcome of each selected check. An unresolved change triggers broader checks and keeps the decision blocked until its mapping is repaired. Missing and skipped tests keep the affected capability unverified. An unaffected range is reported separately.
 
 For an affected range, the gate exports the candidate from its checked-out source and exercises the saved-output endpoint. The report retains the candidate and adopted contract identities, the response evidence digest, the source lock digest and the Workspace and data API fork revisions. The adjacent evidence file contains synthetic financial responses. These checks run against source packages. Image and browser acceptance have their own verification steps.
+
+## Connect a Workspace session
+
+Send the Workspace bearer session to the same-origin `/modeling/v1` routes. Workspace validates the session for every request using its normal expiry and renewal policy. It signs the validated user UUID into a short-lived assertion and sends that assertion to the private modeling listener. The listener enforces ownership when it saves or reopens a run. The provider-data proxy continues to serve provider requests independently.
+
+When provisioning the private listener, configure the same dedicated `QFM_IDENTITY_CURRENT_KID` and `QFM_IDENTITY_CURRENT_SECRET` in Workspace and the listener. Generate at least 32 random bytes for the secret and supply their encoded text to both processes. Only the listener needs the optional `QFM_IDENTITY_PREVIOUS_KID` and `QFM_IDENTITY_PREVIOUS_SECRET`. To rotate, first configure the listener to accept the new current and outgoing previous key, then switch the Workspace signer. Retire the previous key after all signers have switched and their outstanding 60-second assertions have expired.
+
+The bridge forwards to `http://modeling:6901/modeling/v1` on the private network. The current two-service Compose file supplies the Workspace signing configuration. The modeling listener's image and Compose service are scheduled for foundation task 12.2.

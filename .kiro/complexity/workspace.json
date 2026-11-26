@@ -1,11 +1,12 @@
 {
   "id": "workspace",
   "repository": "https://github.com/norandom/openbb-workspace.git",
-  "revision": "ba03ec72299e1f75d9365bcb8e17925ca1149d58",
+  "revision": "cf344880760633fec13ce83d49ecad1a3ab17a86",
   "source_lock_key": "workspace",
   "root": "vendor/workspace",
   "mode": "changed",
   "owners": [
+    {"spec": "financial-modeling", "include": ["backend-api/backend/**"], "files": ["backend-api/backend/api/modeling_identity.py", "backend-api/backend/api/request_logging.py", "backend-api/backend/main.py", "backend-api/backend/routers/modeling.py"]},
     {"spec": "market-data-integrations", "include": ["terminalpro/src/components/Widgets/CompanyDocuments/**", "terminalpro/src/lib/utils/documentDashboardState.ts", "terminalpro/src/lib/utils/documentTemplateState.ts", "terminalpro/src/lib/utils/financialQuery.ts"], "patterns": ["terminalpro/src/components/Widgets/CompanyDocuments/**", "terminalpro/src/lib/utils/documentDashboardState.ts", "terminalpro/src/lib/utils/documentTemplateState.ts", "terminalpro/src/lib/utils/financialQuery.ts"], "files": ["terminalpro/src/components/Widgets/CompanyDocuments/CompanyDocuments.tsx", "terminalpro/src/components/Widgets/CompanyDocuments/CompanyDocumentsWidget.tsx", "terminalpro/src/components/Widgets/CompanyDocuments/documentQuery.ts", "terminalpro/src/components/Widgets/CompanyDocuments/useCompanyDocuments.ts", "terminalpro/src/lib/utils/documentDashboardState.ts", "terminalpro/src/lib/utils/documentTemplateState.ts", "terminalpro/src/lib/utils/financialQuery.ts"]},
     {
       "spec": "openbb-self-service",

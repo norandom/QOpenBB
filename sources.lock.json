@@ -4,11 +4,11 @@
   "workspace": {
     "repository": "https://github.com/norandom/openbb-workspace.git",
     "upstream": "https://github.com/OpenBB-finance/workspace.git",
-    "revision": "ba03ec72299e1f75d9365bcb8e17925ca1149d58",
+    "revision": "cf344880760633fec13ce83d49ecad1a3ab17a86",
     "branch_at_acquisition": "main",
     "build_variant": "full",
     "local_checkout": "vendor/workspace",
-    "adaptations": "Tasks 2.1-2.8 and 2.13-2.18: historical Full packaging, Community/Perspective checkpoints and isolated ECharts state/lifecycle foundation accepted; original renderer parity, financial widget integration and renderer-complete image pending"
+    "adaptations": "Tasks 2.1-2.8 and 2.13-2.18: historical Full packaging, Community/Perspective checkpoints and isolated ECharts state/lifecycle foundation accepted; original renderer parity, financial widget integration and renderer-complete image pending. Financial modeling task 10 adds the authenticated Workspace bridge"
   },
   "data_api": {
     "repository": "https://github.com/norandom/openbb-data-api.git",

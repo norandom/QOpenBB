@@ -25,7 +25,8 @@ def parse(tmp_path):
     def config(overrides=None):
         env = {key: value for key, value in os.environ.items()
                if key not in {*INPUTS, "PUBLIC_URL", "OPENBB_ADMIN_EMAIL",
-                              "OPENBB_ADMIN_PASSWORD", "COMPOSE_FILE",
+                              "OPENBB_ADMIN_PASSWORD", "QFM_IDENTITY_CURRENT_KID",
+                              "QFM_IDENTITY_CURRENT_SECRET", "COMPOSE_FILE",
                               "COMPOSE_PROFILES", "COMPOSE_ENV_FILES"}}
         env.update(INPUTS)
         for key, value in (overrides or {}).items():
@@ -72,12 +73,18 @@ def test_credentials_stay_with_service_and_bootstrap_remains_optional(parse):
     selected = services(parse)
     assert selected["workspace"]["environment"] == {
         "PUBLIC_URL": "http://127.0.0.1:23003", "EXCEL_ENABLED": "false",
-        "OPENBB_ADMIN_EMAIL": "", "OPENBB_ADMIN_PASSWORD": ""}
+        "OPENBB_ADMIN_EMAIL": "", "OPENBB_ADMIN_PASSWORD": "",
+        "QFM_IDENTITY_CURRENT_KID": "", "QFM_IDENTITY_CURRENT_SECRET": ""}
     assert selected["data-api"]["environment"] == {
         "FMP_API_KEY": "synthetic-fmp", "FRED_API_KEY": "synthetic-fred",
         "OPENBB_API_AUTH": "false"}
     changed = services(parse, {"PUBLIC_URL": "https://qopenbb.example.com",
-                              "OPENBB_ADMIN_PASSWORD": "synthetic-bootstrap"})
+                              "OPENBB_ADMIN_PASSWORD": "synthetic-bootstrap",
+                              "QFM_IDENTITY_CURRENT_KID": "fixture",
+                              "QFM_IDENTITY_CURRENT_SECRET": "synthetic-modeling-signing-key"})
+    assert changed["workspace"]["environment"]["QFM_IDENTITY_CURRENT_KID"] == "fixture"
+    assert changed["workspace"]["environment"]["QFM_IDENTITY_CURRENT_SECRET"] == "synthetic-modeling-signing-key"
+    assert changed["data-api"]["environment"] == selected["data-api"]["environment"]
     assert changed["workspace"]["environment"]["PUBLIC_URL"] == "https://qopenbb.example.com"
     assert changed["workspace"]["environment"]["OPENBB_ADMIN_PASSWORD"] == "synthetic-bootstrap"
     probe = selected["data-api"]["healthcheck"]["test"]

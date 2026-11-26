@@ -1,5 +1,6 @@
 """Origin runtime contract; all inputs are public, disposable fixture values."""
 import json
+import os
 import sys
 from pathlib import Path
 import subprocess
@@ -39,6 +40,14 @@ def test_nginx_real_routes(tmp_path, agent_available):
 
     class Upstream(http.server.BaseHTTPRequestHandler):
         def do_GET(self):
+            if self.path == '/modeling/v1/models':
+                headers = {key: self.headers.get(key) for key in (
+                    'Authorization', 'X-User-Id', 'Cookie', 'X-Forwarded-Proto'
+                )}
+                self.send_response(200)
+                self.end_headers()
+                self.wfile.write(json.dumps(headers).encode())
+                return
             if self.path == '/stream':
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/event-stream')
@@ -79,7 +88,9 @@ def test_nginx_real_routes(tmp_path, agent_available):
     for path in tmp_path.iterdir():
         path.chmod(0o755 if path.is_dir() else 0o644)
     name = 'qopenbb-origin-' + uuid.uuid4().hex
-    command = ['docker', 'run', '--name', name, '--rm', '--network', 'host', '-v', f'{tmp_path}:/fixture:ro', 'sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2', 'nginx', '-c', '/fixture/nginx.conf', '-g', 'daemon off;']
+    image = os.environ.get('QOPENBB_ORIGIN_TEST_IMAGE',
+                           'sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2')
+    command = ['docker', 'run', '--name', name, '--rm', '--network', 'host', '-v', f'{tmp_path}:/fixture:ro', '--entrypoint', 'nginx', image, '-c', '/fixture/nginx.conf', '-g', 'daemon off;']
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     def request(path):
         try:
@@ -107,6 +118,15 @@ def test_nginx_real_routes(tmp_path, agent_available):
         assert redirect.status == 308 and redirect.getheader('Location') == '/data/'
         connection.close()
         assert json.loads(request('/data/widgets.json?x=1')[1]) == {'path': '/widgets.json?x=1', 'scheme': 'https'}
+        headers = {'Authorization': 'Bearer synthetic-workspace-session',
+                   'X-User-Id': 'ignored', 'Cookie': 'ignored=fixture'}
+        model_request = urllib.request.Request(f'http://127.0.0.1:{port}/modeling/v1/models', headers=headers)
+        with urllib.request.urlopen(model_request, timeout=3) as response:
+            assert json.load(response) == {
+                'Authorization': headers['Authorization'], 'X-User-Id': None,
+                'Cookie': None, 'X-Forwarded-Proto': 'https',
+            }
+        assert request('/data/modeling/v1/models')[0] == 404
         assert json.loads(request('/api/pro/user')[1])['path'] == '/pro/user'
         status, body = request('/data/missing')
         assert status == 404 and 'fixture SPA' not in body
@@ -145,12 +165,23 @@ def test_origin_boot_configuration(tmp_path, excel_enabled):
     binary.mkdir()
     (binary / 'python').symlink_to(sys.executable)
     subst = binary / 'envsubst'
-    subst.write_text('#!/bin/bash\nexec docker run --rm -i --entrypoint envsubst -e NGINX_RESOLVER -e PUBLIC_HOST -e PUBLIC_SCHEME sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2 "$@"\n')
+    subst.write_text('#!/bin/bash\nexec docker run --rm -i --entrypoint envsubst -e NGINX_RESOLVER -e PUBLIC_HOST -e PUBLIC_SCHEME "$QOPENBB_ORIGIN_TEST_IMAGE" "$@"\n')
     subst.chmod(0o755)
     env = dict(os.environ, PATH=str(binary) + ':' + os.environ['PATH'], PUBLIC_URL='https://qbb.hanse-hedge.fund', ORIGIN_HELPERS=str(LITE), ROUTES_OUT=str(tmp_path / 'routes.conf'), EXCEL_ENABLED=excel_enabled)
+    env.setdefault('QOPENBB_ORIGIN_TEST_IMAGE', 'sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2')
     command = ['bash', '-c', 'source "$1"; printf "%s\\n" "$FRONTENDURL" "$PROURL" "$SELFURL" "$DATA_API_URL" "$AGENT_API_URL" "$AI_API_URL"', 'fixture', str(LITE / 'configure-origin.sh')]
     result = subprocess.run(command, env=env, capture_output=True, text=True, check=True)
     assert result.stdout.splitlines() == ['https://qbb.hanse-hedge.fund', 'https://qbb.hanse-hedge.fund', 'https://qbb.hanse-hedge.fund/api', 'https://qbb.hanse-hedge.fund/data', 'https://qbb.hanse-hedge.fund/agent', '']
     routes = (tmp_path / 'routes.conf').read_text()
     assert 'proxy_set_header X-Forwarded-Proto https;' in routes
     assert ('http://excel:80' in routes) == (excel_enabled == 'true')
+
+
+def test_modeling_location_uses_session_bridge():
+    routes = (LITE / 'qopenbb-routes.conf.template').read_text()
+    bridge = routes.split('location ^~ /modeling/v1/ {')[1].split('\n}')[0]
+    assert 'proxy_pass http://openbb_backend;' in bridge
+    assert 'proxy_pass_request_headers off;' in bridge
+    assert 'proxy_set_header Authorization $http_authorization;' in bridge
+    assert 'location ^~ /data/modeling/ { return 404; }' in routes
+    assert 'set $data_origin http://data-api:6900;' in routes

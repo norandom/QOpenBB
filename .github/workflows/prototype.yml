@@ -60,6 +60,10 @@ jobs:
           pipeline/.venv/bin/python -m qopenbb_ci.image_cli acquire --lock sources.lock.json --destination vendor
           test ! -e vendor/data-api
           mv vendor/data_api vendor/data-api
+      - name: Restore the Workspace bridge test environment
+        run: |
+          "$RUNNER_TEMP/qopenbb-tools/safe-chain" uv sync --project vendor/workspace/backend-api/backend --locked --python 3.13.15
+          vendor/workspace/backend-api/backend/.venv/bin/python vendor/workspace/backend-api/backend/tests_sqlite/run.py -k modeling_bridge
       - name: Verify affected modeling contracts
         env:
           IMPACT_BASE: ${{ github.event.pull_request.base.sha || github.event.before || 'e0ed60b95740c950e93080d113dde8693fd15c8d' }}

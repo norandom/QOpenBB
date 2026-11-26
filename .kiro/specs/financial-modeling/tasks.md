@@ -116,7 +116,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 9.2_
   - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-- [ ] 10. Integrate the authenticated Workspace modeling bridge
+- [x] 10. Integrate the authenticated Workspace modeling bridge
   - Add the designed GetCurrentUser bridge, dedicated signed service assertions and allowlisted forwarding. Register routes, strip public identity headers, test session expiry and rotation, and keep the internal service unreachable through unauthenticated direct proxy routes.
   - Measure the upstream router registration file before edits; use an existing applicable reviewed exception or approve a narrowly scoped exception/cohesive extraction before acceptance. Do not silently waive whole-file caps.
   - Done: real session identity reaches the service; missing/expired sessions and spoofed subjects cannot retrieve or create another user's runs. Existing provider-data routes retain their behavior.
