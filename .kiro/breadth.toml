@@ -1862,3 +1862,11 @@ planned_checks = []
 test_paths = ["tests/delivery/test_modeling_candidate.py", "tests/delivery/test_modeling_image.py", "tests/delivery/test_prototype_compose.py", "tests/contracts/test_configuration.py", "verification/modeling-journey/packaged.py", "verification/modeling-journey/analyst.spec.mts"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/workspace-modeling-image.md for the digest-pinned Docker and Playwright results."]
+
+[[capabilities]]
+id = "modeling-release-publication"
+requirements = ["financial-modeling/requirements.md:1.4", "financial-modeling/requirements.md:4.4", "financial-modeling/requirements.md:5.1", "financial-modeling/requirements.md:5.2", "financial-modeling/requirements.md:5.3", "financial-modeling/requirements.md:5.4", "financial-modeling/requirements.md:6.1", "financial-modeling/requirements.md:6.2"]
+planned_checks = []
+test_paths = ["tests/delivery/test_modeling_publish.py", "tests/delivery/test_release_assets.py", "verification/modeling-journey/packaged.py", "verification/modeling-journey/analyst.spec.mts"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/workspace-modeling-release.md for the public release assets, published-image journey and source identities."]

@@ -133,7 +133,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 10, 8.2_
   - _Requirements: 4.1, 4.2, 4.4, 4.5, 6.5_
 
-- [ ] 12. First real-model integration milestone
+- [x] 12. First real-model integration milestone
 - [x] 12.1 Verify the real-model analyst journey
   - Prerequisite: a separately approved and implemented real method, independent reference and verified FMP inputs. Test fixtures alone cannot close this task.
   - Done: bounded real-data numerical and isolated Playwright/CDP checks demonstrate assumptions, traced results, failure states, fresh saved reopen and retained-state recreation. Record actual image/source identities; resolve failures before acceptance.
@@ -148,7 +148,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Boundary: QOpenBB packages the existing analytics implementation as a separate image and owns the Compose integration and runtime inventory._
   - _Depends: 12.1_
   - _Requirements: 5.4, 6.5_
-- [ ] 12.3 Publish the accepted feature milestone
+- [x] 12.3 Publish the accepted feature milestone
   - Extend portable publication commands and thin CI wrappers to publish the independently versioned image and hash-verified contracts. Pin counterpart revisions and run the integrated checks against the actual final image set; record any candidate-versus-published verification distinction.
   - Done: tagged release assets and pulls match the manifest, numerical/consumer evidence is linked and checkboxes/docs/breadth are updated. Breaking contracts retain supported versions or an accepted migration; absent/skipped checks stay open. Owner-server acceptance requires its own evidence.
   - Completion gate: any changed publication code passes 400 physical / 300 logical / 50 per function; evidence/docs remain excluded.
@@ -156,4 +156,4 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 12.2_
   - _Requirements: 1.4, 4.4, 5.1, 5.2, 5.3, 5.4, 6.1, 6.2_
 
-Parallel wave: after task 3 freezes the shared contracts, tasks 4.1/5/6 have disjoint writable scopes. At most two implementers run concurrently, keeping a slot for independent review. Task 7 joins them; later integration remains sequential. Task 12 remains open until publication and acceptance of the released image set.
+Parallel wave: after task 3 freezes the shared contracts, tasks 4.1/5/6 have disjoint writable scopes. At most two implementers run concurrently, keeping a slot for independent review. Task 7 joins them; later integration remains sequential. Task 12 closed with the [published modeling milestone](https://github.com/norandom/QOpenBB/releases/tag/modeling-v0.1.0). Owner-server deployment and acceptance are separate.
