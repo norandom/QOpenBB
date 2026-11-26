@@ -73,12 +73,18 @@ async function verifyProviderView(page: Page) {
   await page.goto(providerDashboard);
   const profile = page.locator("#workarea .widget-equity_profile_fmp_obb");
   const field = profile.getByPlaceholder("Symbol", {exact: true});
+  const company = profile.getByRole("combobox", {name: "Company name", exact: true});
+  const apple = page.getByRole("listbox").getByRole("option").filter({hasText: "Apple Inc. (AAPL)"});
+  // Workspace may remount the filter while restoring the saved dashboard.
+  await expect(async () => {
+    if (await company.inputValue() !== "Apple") await company.fill("Apple");
+    await expect(apple).toBeVisible({timeout: 3000});
+  }).toPass({timeout: 45_000});
   const read = page.waitForResponse(r => {
     const url = new URL(r.url());
     return url.pathname === "/data/api/v1/equity/profile" && url.searchParams.get("symbol") === "AAPL";
   });
-  await profile.getByRole("combobox", {name: "Company name", exact: true}).fill("Apple");
-  await page.getByRole("listbox").getByRole("option").filter({hasText: "Apple Inc. (AAPL)"}).click();
+  await apple.click();
   await expect(field).toHaveValue("AAPL");
   const response = await read;
   expect(response.status()).toBe(200);
