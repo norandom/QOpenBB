@@ -81,7 +81,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 3.1, 3.2_
   - _Requirements: 1.2, 1.3, 3.3, 3.4, 4.1, 4.2_
 
-- [ ] 3.4 Register the native widget and selection controls
+- [x] 3.4 Register the native widget and selection controls
   - Admit only the validated story declaration. Mount the controller through the normal widget dispatcher, persist allowlisted state and restore controls on hydration. Demonstrate each role and date can be changed by keyboard in both themes and focus survives pending results.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Workspace widget admission, dispatch and ResearchStory shell_
