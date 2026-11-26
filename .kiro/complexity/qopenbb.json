@@ -21,7 +21,7 @@
       "files": [
         "contracts/consumers/financial-modeling/issuer-fcf-yield.v1.json",
         ".dagger/src/qopenbb/modeling.py", ".dagger/src/qopenbb/modeling_export.py",
-        "services/modeling/pyproject.toml", "pipeline/qopenbb_ci/modeling_image.py",
+        "services/modeling/pyproject.toml", "pipeline/qopenbb_ci/build_model_image.py",
         "verification/modeling-journey/packaged.py",
         "deploy/compose.modeling.yaml", "deploy/pull-modeling-candidate.sh", ".env.sample",
         "verification/modeling-journey/compose.yaml", "verification/modeling-journey/run.py",

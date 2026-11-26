@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pytest
 from qopenbb_ci.container_command import container_command
-from qopenbb_ci.modeling_image import MODELING_FILES, stage_modeling
+from qopenbb_ci.build_model_image import MODELING_FILES, stage_modeling
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKAGE = Path('services/data-api/qopenbb_data')

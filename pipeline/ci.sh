@@ -29,7 +29,7 @@ case "${1:-}" in
     ;;
   build-modeling)
     shift
-    pipeline/.venv/bin/python -m qopenbb_ci.modeling_image "$@"
+    pipeline/.venv/bin/python -m qopenbb_ci.build_model_image "$@"
     ;;
   build)
     shift
