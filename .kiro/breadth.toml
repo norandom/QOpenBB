@@ -1810,7 +1810,15 @@ evidence = ["See artifacts/reviewed/factor-signals/modeling-contract-bundle.md."
 [[capabilities]]
 id = "modeling-compatibility"
 requirements = ["financial-modeling/requirements.md:1.4", "financial-modeling/requirements.md:4.2", "financial-modeling/requirements.md:4.3", "financial-modeling/requirements.md:4.4"]
-planned_checks = ["changed-ID selection and uncovered impact reporting"]
+planned_checks = []
 test_paths = ["tests/contracts/test_financial_compat_gate.py", "tests/contracts/test_financial_compat_structure.py", "tests/factors/test_financial_compat_cases.py", "tests/factors/test_financial_compat_cases_identity.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/modeling-compatibility.md."]
+
+[[capabilities]]
+id = "modeling-change-impact"
+requirements = ["financial-modeling/requirements.md:5.1", "financial-modeling/requirements.md:5.2", "financial-modeling/requirements.md:5.3", "financial-modeling/requirements.md:5.4"]
+planned_checks = []
+test_paths = ["tests/contracts/test_modeling_impact_gate.py", "tests/contracts/test_modeling_impact_map.py", "tests/contracts/test_modeling_impact_run.py"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/modeling-impact.md."]

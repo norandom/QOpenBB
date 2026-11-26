@@ -1,0 +1,3088 @@
+{
+  "base": "3f5cd2d2b96eb4e459a5da2de69ea9890fd749d8",
+  "checks": {
+    "passed": true,
+    "results": [
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_financial_compat_gate.py::test_candidate_evidence_must_belong_to_exact_bytes": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_financial_compat_gate.py::test_candidate_evidence_must_belong_to_exact_bytes"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_financial_compat_structure.py::test_method_and_rule_versions_are_immutable[addition]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_financial_compat_structure.py::test_method_and_rule_versions_are_immutable[period]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_financial_compat_structure.py::test_method_and_rule_versions_are_immutable[replaced]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_financial_compat_structure.py::test_method_and_rule_versions_are_immutable[rules]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_financial_compat_structure.py::test_method_and_rule_versions_are_immutable[units]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_financial_compat_structure.py::test_method_and_rule_versions_are_immutable"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_adoption.py::test_pinned_bundle_reproduces_from_pinned_and_current_sources": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_adoption.py::test_pinned_bundle_reproduces_from_pinned_and_current_sources"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_gate.py::test_failed_export_still_exercises_broader_selection": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_gate.py::test_failed_export_still_exercises_broader_selection"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_gate.py::test_integration_preserves_selection_and_evidence[gaps0-True-compatible-passed]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_gate.py::test_integration_preserves_selection_and_evidence[gaps1-True-compatible-blocked]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_gate.py::test_integration_preserves_selection_and_evidence[gaps2-False-compatible-blocked]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_gate.py::test_integration_preserves_selection_and_evidence[gaps3-True-blocked-blocked]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_gate.py::test_integration_preserves_selection_and_evidence"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_gate.py::test_wrong_checkout_blocks_without_running_checks": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_gate.py::test_wrong_checkout_blocks_without_running_checks"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_map.py::test_candidate_cannot_remove_base_obligations[<lambda>0]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_map.py::test_candidate_cannot_remove_base_obligations[<lambda>1]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_map.py::test_candidate_cannot_remove_base_obligations[<lambda>2]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_map.py::test_candidate_cannot_remove_base_obligations[<lambda>3]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_map.py::test_candidate_cannot_remove_base_obligations"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_map.py::test_selects_only_affected_nodes_and_reads_pinned_map": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_map.py::test_selects_only_affected_nodes_and_reads_pinned_map"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_map.py::test_shared_changes_select_numeric_checks_for_dependent_methods[services/data-api/qopenbb_data/modeling/contracts/common.py]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_map.py::test_shared_changes_select_numeric_checks_for_dependent_methods[services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_map.py::test_shared_changes_select_numeric_checks_for_dependent_methods[services/data-api/qopenbb_data/modeling/models/factors/sessions.py]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_map.py::test_shared_changes_select_numeric_checks_for_dependent_methods[services/data-api/qopenbb_data/modeling/verification/reference.py]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_map.py::test_shared_changes_select_numeric_checks_for_dependent_methods[tests/factors/fixtures/factor_inputs.py]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_map.py::test_shared_changes_select_numeric_checks_for_dependent_methods"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_run.py::test_deselected_node_fails_even_when_pytest_exits_zero": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_run.py::test_deselected_node_fails_even_when_pytest_exits_zero"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_run.py::test_one_nonpassing_node_fails_a_partly_passing_file[assert False-failed]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_run.py::test_one_nonpassing_node_fails_a_partly_passing_file[pytest.skip('unavailable')-skipped]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/contracts/test_modeling_impact_run.py::test_one_nonpassing_node_fails_a_partly_passing_file[pytest.xfail('expected failure')-xfailed]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_run.py::test_one_nonpassing_node_fails_a_partly_passing_file"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_run.py::test_pipeline_fallback_never_runs_live_checks": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_run.py::test_pipeline_fallback_never_runs_live_checks"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_run.py::test_setup_only_produces_partial_evidence": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_run.py::test_setup_only_produces_partial_evidence"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/contracts/test_modeling_impact_run.py::test_unevaluated_node_fails_even_when_pytest_exits_zero": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/contracts/test_modeling_impact_run.py::test_unevaluated_node_fails_even_when_pytest_exits_zero"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/delivery/test_data_image.py::test_runtime_python_dependencies_are_packaged": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/delivery/test_data_image.py::test_runtime_python_dependencies_are_packaged"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/delivery/test_data_image.py::test_staged_modeling_modules_are_importable": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/delivery/test_data_image.py::test_staged_modeling_modules_are_importable"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/delivery/test_prototype_compose.py::test_only_reviewed_image_services_and_private_state": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/delivery/test_prototype_compose.py::test_only_reviewed_image_services_and_private_state"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/delivery/test_prototype_workflow.py::test_release_trigger_checkout_and_unique_build_identity": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/delivery/test_prototype_workflow.py::test_release_trigger_checkout_and_unique_build_identity"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_acquired_evaluation.py::test_revised_gdp_is_saved_as_a_separate_verified_observation": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_acquired_evaluation.py::test_revised_gdp_is_saved_as_a_separate_verified_observation"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_acquisition.py::test_full_mapping_preserves_snapshot_contract": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_acquisition.py::test_full_mapping_preserves_snapshot_contract"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_diagnostics.py::test_frozen_results_and_trace[False]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_diagnostics.py::test_frozen_results_and_trace[True]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_diagnostics.py::test_frozen_results_and_trace"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_etf_reference.py::test_foundation_rejects_mutated_candidate[0-observation_date-momentum]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_etf_reference.py::test_foundation_rejects_mutated_candidate[1-divisor-realized_volatility]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_etf_reference.py::test_foundation_rejects_mutated_candidate[2-spread_direction-momentum_spread]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_etf_reference.py::test_foundation_rejects_mutated_candidate"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar[calendar]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar[leg_version]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_execution.py::test_timeout_reaps_child_and_releases_capacity": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_execution.py::test_timeout_reaps_child_and_releases_capacity"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[missing-or-partial-etf_momentum]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[missing-or-partial-etf_realized_volatility]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[missing-or-partial-issuer_fcf_yield]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[missing-or-partial-proxy_comparison]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[missing-or-partial-real_yield_regime]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[missing-or-partial-timing_study]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[valid-etf_momentum]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[valid-etf_realized_volatility]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[valid-issuer_fcf_yield]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[valid-proxy_comparison]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[valid-real_yield_regime]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip[valid-timing_study]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_factor_examples.py::test_factor_example_round_trip"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_factor_sessions.py::test_reports_both_missing_dates_and_keeps_calendar_endpoints": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_factor_sessions.py::test_reports_both_missing_dates_and_keeps_calendar_endpoints"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_fcf_yield.py::test_frozen_issuer_yield_descriptor_and_trace": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_fcf_yield.py::test_frozen_issuer_yield_descriptor_and_trace"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_filing_selection.py::test_partial_amendment_cannot_mix_with_prior_vintage": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_filing_selection.py::test_partial_amendment_cannot_mix_with_prior_vintage"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_financial_compat_cases.py::test_financial_compat_cli_writes_exercised_evidence": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_financial_compat_cases.py::test_financial_compat_cli_writes_exercised_evidence"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_financial_compat_cases.py::test_real_signed_responses_match_expectations": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_financial_compat_cases.py::test_real_signed_responses_match_expectations"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_financial_compat_cases.py::test_real_unit_change_blocks_with_unchanged_schemas": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_financial_compat_cases.py::test_real_unit_change_blocks_with_unchanged_schemas"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_financial_compat_cases_identity.py::test_unchanged_export_cannot_bind_drifted_runtime": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_financial_compat_cases_identity.py::test_unchanged_export_cannot_bind_drifted_runtime"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_import_boundaries.py::test_production_modeling_import_boundaries": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_import_boundaries.py::test_production_modeling_import_boundaries"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_issuer_reference.py::test_rolling_fiscal_year_and_late_amendment[False]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_issuer_reference.py::test_rolling_fiscal_year_and_late_amendment[True]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_issuer_reference.py::test_rolling_fiscal_year_and_late_amendment"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_method_inputs.py::test_invalid_calculation_context_fails_explicitly[ambiguous_proxy]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_method_inputs.py::test_invalid_calculation_context_fails_explicitly[basis]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_method_inputs.py::test_invalid_calculation_context_fails_explicitly[cutoff]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_method_inputs.py::test_invalid_calculation_context_fails_explicitly[effective_date]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_method_inputs.py::test_invalid_calculation_context_fails_explicitly[schema]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_method_inputs.py::test_invalid_calculation_context_fails_explicitly"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_model_http.py::test_auth_before_receiving_body_and_safe_validation": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_model_http.py::test_auth_before_receiving_body_and_safe_validation"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_model_http.py::test_save_reopen_project_and_owner[None-unverified-12345678901234.0025]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_model_http.py::test_save_reopen_project_and_owner[expected-verified-12345678901234.0025]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_model_http.py::test_save_reopen_project_and_owner[mismatch-withheld-None]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_model_http.py::test_save_reopen_project_and_owner"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_model_identity.py::test_authenticates_pinned_key[active-0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_model_identity.py::test_authenticates_pinned_key[retiring-fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_model_identity.py::test_authenticates_pinned_key"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_model_listener.py::test_internal_listener_authenticates_and_reopens_saved_run": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_model_listener.py::test_internal_listener_authenticates_and_reopens_saved_run"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_model_publication.py::test_deadline_covers_calculation_and_publication": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_model_publication.py::test_deadline_covers_calculation_and_publication"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_model_registry.py::test_discovery_lists_all_exact_versions_in_stable_order": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_model_registry.py::test_discovery_lists_all_exact_versions_in_stable_order"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_model_registry.py::test_registry_resolves_exact_installed_versions": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_model_registry.py::test_registry_resolves_exact_installed_versions"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_model_run_evidence.py::test_matching_evidence_verifies_and_round_trips": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_model_run_evidence.py::test_matching_evidence_verifies_and_round_trips"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_modeling_bundle.py::test_bundle_reproduces_canonical_bytes_and_hashes": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_modeling_bundle.py::test_bundle_reproduces_canonical_bytes_and_hashes"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_modeling_contract_listener.py::test_adopted_documents_accept_saved_output_evidence": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_modeling_contract_listener.py::test_adopted_documents_accept_saved_output_evidence"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_modeling_contracts.py::test_snapshot_round_trip_and_deep_immutability": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_modeling_contracts.py::test_snapshot_round_trip_and_deep_immutability"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_modeling_documents.py::test_openapi_covers_internal_routes_and_safe_errors": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_modeling_documents.py::test_openapi_covers_internal_routes_and_safe_errors"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_modeling_documents_registration.py::test_export_and_listener_share_installed_methods_and_rule_descriptors": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_modeling_documents_registration.py::test_export_and_listener_share_installed_methods_and_rule_descriptors"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_momentum.py::test_descriptor_matches_frozen_example": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_momentum.py::test_descriptor_matches_frozen_example"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_momentum.py::test_varying_prices_match_frozen_result_and_trace": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_momentum.py::test_varying_prices_match_frozen_result_and_trace"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_orchestration.py::test_missing_invalid_and_reference_mismatch_have_distinct_evidence": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_orchestration.py::test_missing_invalid_and_reference_mismatch_have_distinct_evidence"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_real_yield.py::test_frozen_withholding_reasons[missing]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_real_yield.py::test_frozen_withholding_reasons[unknown]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_real_yield.py::test_frozen_withholding_reasons"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_real_yield.py::test_only_exact_endpoints_are_needed_and_match_frozen_trace": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_real_yield.py::test_only_exact_endpoints_are_needed_and_match_frozen_trace"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_reference_verification.py::test_reference_uses_supplied_input_and_detects_mutation[False-10.25]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_reference_verification.py::test_reference_uses_supplied_input_and_detects_mutation[False-107.125]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_reference_verification.py::test_reference_uses_supplied_input_and_detects_mutation[True-10.25]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_reference_verification.py::test_reference_uses_supplied_input_and_detects_mutation[True-107.125]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_reference_verification.py::test_reference_uses_supplied_input_and_detects_mutation"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_regime_reference.py::test_point_in_time_regime_and_late_revision_mutant[1.25-falling--0.25]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_regime_reference.py::test_point_in_time_regime_and_late_revision_mutant[1.50-flat-0]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_regime_reference.py::test_point_in_time_regime_and_late_revision_mutant[1.75-rising-0.25]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_regime_reference.py::test_point_in_time_regime_and_late_revision_mutant"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_run_store.py::test_wrong_owner_missing_invalid_and_symlink_lookups_are_indistinguishable": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_run_store.py::test_wrong_owner_missing_invalid_and_symlink_lookups_are_indistinguishable"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime[published_at-when0]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime[published_at-when1]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime[published_at-when2]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime[vintage_at-when0]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime[vintage_at-when1]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime[vintage_at-when2]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_study_schedule.py::test_plan_keeps_decision_before_first_return_and_accepts_session_gaps": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_study_schedule.py::test_plan_keeps_decision_before_first_return_and_accepts_session_gaps"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations[falling_slugging-2.444444444444444444444444444]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations[rising_hit_rate-0.4]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations[rising_hit_rate-0.5]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_timing_reference_limits.py::test_full_snapshot_with_chunked_calendar_and_extreme_returns": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_timing_reference_limits.py::test_full_snapshot_with_chunked_calendar_and_extreme_returns"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_validation_lifecycle.py::test_rule_outcomes[bad_scope-error]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_lifecycle.py::test_rule_outcomes[excluded-not_applicable]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_lifecycle.py::test_rule_outcomes[missing-unknown]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_lifecycle.py::test_rule_outcomes[raises-error]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_lifecycle.py::test_rule_outcomes[ready-pass]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_validation_lifecycle.py::test_rule_outcomes"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[all-expected_calls0-expected0]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[bare_pass-expected_calls3-expected3]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[false_numeric_pass-expected_calls2-expected2]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[invariant_failure-expected_calls6-expected6]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[mutated-expected_calls9-expected9]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[numeric_boundary-expected_calls4-expected4]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[partial-expected_calls1-expected1]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[pass-expected_calls8-expected8]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[postcondition_failure-expected_calls7-expected7]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling[unknown-expected_calls5-expected5]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_volatility.py::test_descriptor_matches_frozen_contract": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_volatility.py::test_descriptor_matches_frozen_contract"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_volatility.py::test_missing_close_preserves_dated_precondition_failure": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_volatility.py::test_missing_close_preserves_dated_precondition_failure"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_volatility.py::test_varying_prices_match_frozen_trace_and_sample_volatility": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_volatility.py::test_varying_prices_match_frozen_trace_and_sample_volatility"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_widget_discovery.py::test_discovery_export_matches_vendored_workspace_schema[apps]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          },
+          "tests/factors/test_widget_discovery.py::test_discovery_export_matches_vendored_workspace_schema[widgets]": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_widget_discovery.py::test_discovery_export_matches_vendored_workspace_schema"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_widget_listener.py::test_widget_discovery_reopens_the_same_private_result": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_widget_listener.py::test_widget_discovery_reopens_the_same_private_result"
+      },
+      {
+        "collection": {},
+        "exit_code": 0,
+        "nodes": {
+          "tests/factors/test_widget_projection.py::test_withheld_output_preserves_explanation_and_nulls": {
+            "outcome": "passed",
+            "phases": {
+              "call": "passed",
+              "setup": "passed",
+              "teardown": "passed"
+            }
+          }
+        },
+        "passed": true,
+        "selector": "tests/factors/test_widget_projection.py::test_withheld_output_preserves_explanation_and_nulls"
+      }
+    ]
+  },
+  "compatibility": {
+    "accepted_manifest_sha256": "986a2f33b282b9bdf791f562f376491102dedb3200d4dd4c7ab82e346ddf01aa",
+    "adoption_revision": "e0ed60b95740c950e93080d113dde8693fd15c8d",
+    "candidate_manifest_sha256": "91aa1f645c86aab39bccca430ff09945367d7344942a1ee49be63eb884cfc196",
+    "candidate_revision": "2c7bdf9e5953b6db45b73c71d0195464b3752f0b",
+    "consumer_id": "workspace.saved-model-output",
+    "consumer_sha256": "84ead649b9bd99ed8a8f16eee4d2c7f7c8455f118a094018450bcdd21aab526f",
+    "decision": "compatible",
+    "evidence_sha256": "55b0447ee2c5f7797a261b601c1866f4089a199fff068724d20b9c0138db3fd3",
+    "expectations_sha256": "51726944f2ea4b5c90b9d81c32f899868bfea8db47e6b44615933b0e6d20634f",
+    "findings": [],
+    "next_action": null,
+    "operation_id": "readSavedWidgetOutput",
+    "provider_revision": "31c618559f347f973d07f2dd7b496629fe92e9d5",
+    "widget_id": "qopenbb_saved_model_output"
+  },
+  "decision": "passed",
+  "exercised_images": [],
+  "format_version": 1,
+  "head": "2c7bdf9e5953b6db45b73c71d0195464b3752f0b",
+  "locked_sources": {
+    "data_api": {
+      "repository": "https://github.com/norandom/openbb-data-api.git",
+      "revision": "5583c958d35282cb59037aae8218cec31d540697"
+    },
+    "workspace": {
+      "repository": "https://github.com/norandom/openbb-workspace.git",
+      "revision": "ba03ec72299e1f75d9365bcb8e17925ca1149d58"
+    }
+  },
+  "saved_output_evidence": "saved-output-55b0447ee2c5f7797a261b601c1866f4089a199fff068724d20b9c0138db3fd3.json",
+  "selection": {
+    "affected_mappings": {
+      "capability:financial-modeling-core": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.2",
+          "2.4",
+          "2.5",
+          "2.6",
+          "2.7",
+          "3.2",
+          "3.3",
+          "5.1",
+          "5.2",
+          "6.2",
+          "6.3"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/__init__.py",
+          "services/data-api/qopenbb_data/modeling/models/__init__.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/__init__.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/__init__.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/__init__.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/factors/test_factor_examples.py::test_factor_example_round_trip",
+          "tests/factors/test_import_boundaries.py::test_production_modeling_import_boundaries",
+          "tests/factors/test_method_inputs.py::test_invalid_calculation_context_fails_explicitly",
+          "tests/factors/test_model_registry.py::test_registry_resolves_exact_installed_versions",
+          "tests/factors/test_reference_verification.py::test_reference_uses_supplied_input_and_detects_mutation",
+          "tests/factors/test_validation_lifecycle.py::test_rule_outcomes",
+          "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling"
+        ]
+      },
+      "capability:model-evaluation-runtime": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "3.1",
+          "3.2",
+          "3.6",
+          "5.1",
+          "5.2",
+          "6.3",
+          "6.4"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/service/__init__.py",
+          "services/data-api/qopenbb_data/modeling/service/acquisition*.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/service/evaluation.py",
+          "services/data-api/qopenbb_data/modeling/service/execution*.py",
+          "services/data-api/qopenbb_data/modeling/service/orchestrator.py",
+          "services/data-api/qopenbb_data/modeling/service/ports.py"
+        ],
+        "selectors": [
+          "tests/factors/test_acquired_evaluation.py::test_revised_gdp_is_saved_as_a_separate_verified_observation",
+          "tests/factors/test_acquisition.py::test_full_mapping_preserves_snapshot_contract",
+          "tests/factors/test_execution.py::test_timeout_reaps_child_and_releases_capacity",
+          "tests/factors/test_model_registry.py::test_discovery_lists_all_exact_versions_in_stable_order",
+          "tests/factors/test_modeling_documents_registration.py::test_export_and_listener_share_installed_methods_and_rule_descriptors",
+          "tests/factors/test_orchestration.py::test_missing_invalid_and_reference_mismatch_have_distinct_evidence"
+        ]
+      },
+      "capability:model-run-api": {
+        "criteria": [
+          "1.2",
+          "1.3",
+          "3.1",
+          "3.4",
+          "3.5",
+          "3.6",
+          "4.1",
+          "5.1",
+          "5.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/service/http*.py",
+          "services/data-api/qopenbb_data/modeling/service/identity.py",
+          "services/data-api/qopenbb_data/modeling/service/run_store*.py"
+        ],
+        "selectors": [
+          "tests/factors/test_model_http.py::test_auth_before_receiving_body_and_safe_validation",
+          "tests/factors/test_model_http.py::test_save_reopen_project_and_owner",
+          "tests/factors/test_model_identity.py::test_authenticates_pinned_key",
+          "tests/factors/test_model_listener.py::test_internal_listener_authenticates_and_reopens_saved_run",
+          "tests/factors/test_model_publication.py::test_deadline_covers_calculation_and_publication",
+          "tests/factors/test_model_run_evidence.py::test_matching_evidence_verifies_and_round_trips",
+          "tests/factors/test_modeling_contracts.py::test_snapshot_round_trip_and_deep_immutability",
+          "tests/factors/test_run_store.py::test_wrong_owner_missing_invalid_and_symlink_lookups_are_indistinguishable"
+        ]
+      },
+      "capability:modeling-contract-bundle": {
+        "criteria": [
+          "4.1",
+          "4.2",
+          "5.1",
+          "5.2",
+          "5.4"
+        ],
+        "paths": [
+          "contracts/consumers/financial-modeling/provider.lock.json",
+          "contracts/modeling/v1/*.schema.json",
+          "contracts/modeling/v1/descriptors.json",
+          "contracts/modeling/v1/manifest.json",
+          "contracts/modeling/v1/openapi.json",
+          "pipeline/qopenbb_ci/modeling_*.py"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_adoption.py::test_pinned_bundle_reproduces_from_pinned_and_current_sources",
+          "tests/factors/test_modeling_bundle.py::test_bundle_reproduces_canonical_bytes_and_hashes",
+          "tests/factors/test_modeling_contract_listener.py::test_adopted_documents_accept_saved_output_evidence",
+          "tests/factors/test_modeling_documents.py::test_openapi_covers_internal_routes_and_safe_errors"
+        ]
+      },
+      "capability:modeling-source-runtime": {
+        "criteria": [
+          "3.4",
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4",
+          "6.5"
+        ],
+        "paths": [
+          ".dagger/src/qopenbb/*.py",
+          ".dagger/uv.lock",
+          "compose.yaml",
+          "contracts/apps.json",
+          "contracts/gallery/catalog.json",
+          "contracts/gallery/data.json",
+          "contracts/widgets.json",
+          "docs/reference/provider-coverage.json",
+          "pipeline/compose.runtime.yaml",
+          "pipeline/qopenbb_ci/runtime_inputs.py",
+          "pipeline/qopenbb_ci/source_contract.py",
+          "pipeline/qopenbb_ci/source_filter.py",
+          "pipeline/qopenbb_ci/sources.py",
+          "pipeline/qopenbb_ci/staging.py",
+          "services/data-api/pyproject.toml",
+          "services/data-api/qopenbb_data/*.py",
+          "services/data-api/uv.lock",
+          "sources.lock.json",
+          "sources/api-release.json",
+          "sources/constraints.json",
+          "sources/packages.json"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget",
+          "tests/delivery/test_data_image.py::test_runtime_python_dependencies_are_packaged",
+          "tests/delivery/test_data_image.py::test_staged_modeling_modules_are_importable",
+          "tests/delivery/test_prototype_compose.py::test_only_reviewed_image_services_and_private_state",
+          "tests/factors/test_acquired_evaluation.py::test_revised_gdp_is_saved_as_a_separate_verified_observation"
+        ]
+      },
+      "capability:saved-output-compatibility": {
+        "criteria": [
+          "1.4",
+          "4.2",
+          "4.3",
+          "4.4",
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4"
+        ],
+        "paths": [
+          "contracts/consumers/financial-modeling/compatibility.v1.lock.json",
+          "contracts/consumers/financial-modeling/saved-output.cases.v1.json",
+          "pipeline/qopenbb_ci/financial_compat*.py"
+        ],
+        "selectors": [
+          "tests/contracts/test_financial_compat_gate.py::test_candidate_evidence_must_belong_to_exact_bytes",
+          "tests/contracts/test_financial_compat_structure.py::test_method_and_rule_versions_are_immutable",
+          "tests/factors/test_financial_compat_cases.py::test_financial_compat_cli_writes_exercised_evidence",
+          "tests/factors/test_financial_compat_cases.py::test_real_unit_change_blocks_with_unchanged_schemas",
+          "tests/factors/test_financial_compat_cases_identity.py::test_unchanged_export_cannot_bind_drifted_runtime"
+        ]
+      },
+      "capability:source-impact-gate": {
+        "criteria": [
+          "5.1",
+          "5.2",
+          "5.3",
+          "5.4"
+        ],
+        "paths": [
+          ".github/workflows/prototype.yml",
+          ".kiro/breadth.toml",
+          ".kiro/modeling-impact.toml",
+          "pipeline/ci.sh",
+          "pipeline/pyproject.toml",
+          "pipeline/qopenbb_ci/financial_impact*.py",
+          "pipeline/uv.lock",
+          "tests/contracts/test_modeling_impact*.py"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_gate.py::test_failed_export_still_exercises_broader_selection",
+          "tests/contracts/test_modeling_impact_gate.py::test_integration_preserves_selection_and_evidence",
+          "tests/contracts/test_modeling_impact_gate.py::test_wrong_checkout_blocks_without_running_checks",
+          "tests/contracts/test_modeling_impact_map.py::test_candidate_cannot_remove_base_obligations",
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/contracts/test_modeling_impact_map.py::test_selects_only_affected_nodes_and_reads_pinned_map",
+          "tests/contracts/test_modeling_impact_map.py::test_shared_changes_select_numeric_checks_for_dependent_methods",
+          "tests/contracts/test_modeling_impact_run.py::test_deselected_node_fails_even_when_pytest_exits_zero",
+          "tests/contracts/test_modeling_impact_run.py::test_one_nonpassing_node_fails_a_partly_passing_file",
+          "tests/contracts/test_modeling_impact_run.py::test_pipeline_fallback_never_runs_live_checks",
+          "tests/contracts/test_modeling_impact_run.py::test_setup_only_produces_partial_evidence",
+          "tests/contracts/test_modeling_impact_run.py::test_unevaluated_node_fails_even_when_pytest_exits_zero",
+          "tests/delivery/test_prototype_workflow.py::test_release_trigger_checkout_and_unique_build_identity"
+        ]
+      },
+      "consumer:workspace.saved-model-output": {
+        "criteria": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "5.1",
+          "5.2",
+          "5.3"
+        ],
+        "paths": [
+          "contracts/consumers/financial-modeling/saved-output.v1.json",
+          "contracts/modeling/v1/apps.json",
+          "contracts/modeling/v1/widgets.json",
+          "services/data-api/qopenbb_data/modeling/service/widget_*.py"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget",
+          "tests/factors/test_financial_compat_cases.py::test_real_signed_responses_match_expectations",
+          "tests/factors/test_widget_discovery.py::test_discovery_export_matches_vendored_workspace_schema",
+          "tests/factors/test_widget_listener.py::test_widget_discovery_reopens_the_same_private_result",
+          "tests/factors/test_widget_projection.py::test_withheld_output_preserves_explanation_and_nulls"
+        ]
+      },
+      "model:etf_momentum@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_etf_reference.py::test_foundation_rejects_mutated_candidate",
+          "tests/factors/test_factor_sessions.py::test_reports_both_missing_dates_and_keeps_calendar_endpoints",
+          "tests/factors/test_momentum.py::test_descriptor_matches_frozen_example",
+          "tests/factors/test_momentum.py::test_varying_prices_match_frozen_result_and_trace"
+        ]
+      },
+      "model:etf_realized_volatility@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_etf_reference.py::test_foundation_rejects_mutated_candidate",
+          "tests/factors/test_volatility.py::test_descriptor_matches_frozen_contract",
+          "tests/factors/test_volatility.py::test_missing_close_preserves_dated_precondition_failure",
+          "tests/factors/test_volatility.py::test_varying_prices_match_frozen_trace_and_sample_volatility"
+        ]
+      },
+      "model:issuer_fcf_yield@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/fcf_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/filings.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/issuer_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_fcf_yield.py::test_frozen_issuer_yield_descriptor_and_trace",
+          "tests/factors/test_filing_selection.py::test_partial_amendment_cannot_mix_with_prior_vintage",
+          "tests/factors/test_issuer_reference.py::test_rolling_fiscal_year_and_late_amendment"
+        ]
+      },
+      "model:proxy_comparison@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/comparison.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair",
+          "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
+          "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar"
+        ]
+      },
+      "model:real_yield_regime@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/regime_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_real_yield.py::test_frozen_withholding_reasons",
+          "tests/factors/test_real_yield.py::test_only_exact_endpoints_are_needed_and_match_frozen_trace",
+          "tests/factors/test_regime_reference.py::test_point_in_time_regime_and_late_revision_mutant"
+        ]
+      },
+      "model:timing_study@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/diagnostics.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_groups.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_schedule.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_inputs.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_diagnostics.py::test_frozen_results_and_trace",
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime",
+          "tests/factors/test_study_schedule.py::test_plan_keeps_decision_before_first_return_and_accepts_session_gaps",
+          "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations",
+          "tests/factors/test_timing_reference_limits.py::test_full_snapshot_with_chunked_calendar_and_extreme_returns"
+        ]
+      },
+      "operation:discoverApps": {
+        "criteria": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "5.1",
+          "5.2",
+          "5.3"
+        ],
+        "paths": [
+          "contracts/consumers/financial-modeling/saved-output.v1.json",
+          "contracts/modeling/v1/apps.json",
+          "contracts/modeling/v1/widgets.json",
+          "services/data-api/qopenbb_data/modeling/service/widget_*.py"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget",
+          "tests/factors/test_financial_compat_cases.py::test_real_signed_responses_match_expectations",
+          "tests/factors/test_widget_discovery.py::test_discovery_export_matches_vendored_workspace_schema",
+          "tests/factors/test_widget_listener.py::test_widget_discovery_reopens_the_same_private_result",
+          "tests/factors/test_widget_projection.py::test_withheld_output_preserves_explanation_and_nulls"
+        ]
+      },
+      "operation:discoverWidgets": {
+        "criteria": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "5.1",
+          "5.2",
+          "5.3"
+        ],
+        "paths": [
+          "contracts/consumers/financial-modeling/saved-output.v1.json",
+          "contracts/modeling/v1/apps.json",
+          "contracts/modeling/v1/widgets.json",
+          "services/data-api/qopenbb_data/modeling/service/widget_*.py"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget",
+          "tests/factors/test_financial_compat_cases.py::test_real_signed_responses_match_expectations",
+          "tests/factors/test_widget_discovery.py::test_discovery_export_matches_vendored_workspace_schema",
+          "tests/factors/test_widget_listener.py::test_widget_discovery_reopens_the_same_private_result",
+          "tests/factors/test_widget_projection.py::test_withheld_output_preserves_explanation_and_nulls"
+        ]
+      },
+      "operation:evaluateModel": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "3.1",
+          "3.2",
+          "3.4",
+          "3.5",
+          "3.6",
+          "4.1",
+          "5.1",
+          "5.2",
+          "6.3",
+          "6.4"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/service/__init__.py",
+          "services/data-api/qopenbb_data/modeling/service/acquisition*.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/service/evaluation.py",
+          "services/data-api/qopenbb_data/modeling/service/execution*.py",
+          "services/data-api/qopenbb_data/modeling/service/http*.py",
+          "services/data-api/qopenbb_data/modeling/service/identity.py",
+          "services/data-api/qopenbb_data/modeling/service/orchestrator.py",
+          "services/data-api/qopenbb_data/modeling/service/ports.py",
+          "services/data-api/qopenbb_data/modeling/service/run_store*.py"
+        ],
+        "selectors": [
+          "tests/factors/test_acquired_evaluation.py::test_revised_gdp_is_saved_as_a_separate_verified_observation",
+          "tests/factors/test_acquisition.py::test_full_mapping_preserves_snapshot_contract",
+          "tests/factors/test_execution.py::test_timeout_reaps_child_and_releases_capacity",
+          "tests/factors/test_model_http.py::test_auth_before_receiving_body_and_safe_validation",
+          "tests/factors/test_model_http.py::test_save_reopen_project_and_owner",
+          "tests/factors/test_model_identity.py::test_authenticates_pinned_key",
+          "tests/factors/test_model_listener.py::test_internal_listener_authenticates_and_reopens_saved_run",
+          "tests/factors/test_model_publication.py::test_deadline_covers_calculation_and_publication",
+          "tests/factors/test_model_registry.py::test_discovery_lists_all_exact_versions_in_stable_order",
+          "tests/factors/test_model_run_evidence.py::test_matching_evidence_verifies_and_round_trips",
+          "tests/factors/test_modeling_contracts.py::test_snapshot_round_trip_and_deep_immutability",
+          "tests/factors/test_modeling_documents_registration.py::test_export_and_listener_share_installed_methods_and_rule_descriptors",
+          "tests/factors/test_orchestration.py::test_missing_invalid_and_reference_mismatch_have_distinct_evidence",
+          "tests/factors/test_run_store.py::test_wrong_owner_missing_invalid_and_symlink_lookups_are_indistinguishable"
+        ]
+      },
+      "operation:listModels": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "3.1",
+          "3.2",
+          "3.4",
+          "3.5",
+          "3.6",
+          "4.1",
+          "5.1",
+          "5.2",
+          "6.3",
+          "6.4"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/service/__init__.py",
+          "services/data-api/qopenbb_data/modeling/service/acquisition*.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/service/evaluation.py",
+          "services/data-api/qopenbb_data/modeling/service/execution*.py",
+          "services/data-api/qopenbb_data/modeling/service/http*.py",
+          "services/data-api/qopenbb_data/modeling/service/identity.py",
+          "services/data-api/qopenbb_data/modeling/service/orchestrator.py",
+          "services/data-api/qopenbb_data/modeling/service/ports.py",
+          "services/data-api/qopenbb_data/modeling/service/run_store*.py"
+        ],
+        "selectors": [
+          "tests/factors/test_acquired_evaluation.py::test_revised_gdp_is_saved_as_a_separate_verified_observation",
+          "tests/factors/test_acquisition.py::test_full_mapping_preserves_snapshot_contract",
+          "tests/factors/test_execution.py::test_timeout_reaps_child_and_releases_capacity",
+          "tests/factors/test_model_http.py::test_auth_before_receiving_body_and_safe_validation",
+          "tests/factors/test_model_http.py::test_save_reopen_project_and_owner",
+          "tests/factors/test_model_identity.py::test_authenticates_pinned_key",
+          "tests/factors/test_model_listener.py::test_internal_listener_authenticates_and_reopens_saved_run",
+          "tests/factors/test_model_publication.py::test_deadline_covers_calculation_and_publication",
+          "tests/factors/test_model_registry.py::test_discovery_lists_all_exact_versions_in_stable_order",
+          "tests/factors/test_model_run_evidence.py::test_matching_evidence_verifies_and_round_trips",
+          "tests/factors/test_modeling_contracts.py::test_snapshot_round_trip_and_deep_immutability",
+          "tests/factors/test_modeling_documents_registration.py::test_export_and_listener_share_installed_methods_and_rule_descriptors",
+          "tests/factors/test_orchestration.py::test_missing_invalid_and_reference_mismatch_have_distinct_evidence",
+          "tests/factors/test_run_store.py::test_wrong_owner_missing_invalid_and_symlink_lookups_are_indistinguishable"
+        ]
+      },
+      "operation:readSavedOutput": {
+        "criteria": [
+          "1.2",
+          "1.3",
+          "3.1",
+          "3.4",
+          "3.5",
+          "3.6",
+          "4.1",
+          "5.1",
+          "5.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/service/http*.py",
+          "services/data-api/qopenbb_data/modeling/service/identity.py",
+          "services/data-api/qopenbb_data/modeling/service/run_store*.py"
+        ],
+        "selectors": [
+          "tests/factors/test_model_http.py::test_auth_before_receiving_body_and_safe_validation",
+          "tests/factors/test_model_http.py::test_save_reopen_project_and_owner",
+          "tests/factors/test_model_identity.py::test_authenticates_pinned_key",
+          "tests/factors/test_model_listener.py::test_internal_listener_authenticates_and_reopens_saved_run",
+          "tests/factors/test_model_publication.py::test_deadline_covers_calculation_and_publication",
+          "tests/factors/test_model_run_evidence.py::test_matching_evidence_verifies_and_round_trips",
+          "tests/factors/test_modeling_contracts.py::test_snapshot_round_trip_and_deep_immutability",
+          "tests/factors/test_run_store.py::test_wrong_owner_missing_invalid_and_symlink_lookups_are_indistinguishable"
+        ]
+      },
+      "operation:readSavedRun": {
+        "criteria": [
+          "1.2",
+          "1.3",
+          "3.1",
+          "3.4",
+          "3.5",
+          "3.6",
+          "4.1",
+          "5.1",
+          "5.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/service/http*.py",
+          "services/data-api/qopenbb_data/modeling/service/identity.py",
+          "services/data-api/qopenbb_data/modeling/service/run_store*.py"
+        ],
+        "selectors": [
+          "tests/factors/test_model_http.py::test_auth_before_receiving_body_and_safe_validation",
+          "tests/factors/test_model_http.py::test_save_reopen_project_and_owner",
+          "tests/factors/test_model_identity.py::test_authenticates_pinned_key",
+          "tests/factors/test_model_listener.py::test_internal_listener_authenticates_and_reopens_saved_run",
+          "tests/factors/test_model_publication.py::test_deadline_covers_calculation_and_publication",
+          "tests/factors/test_model_run_evidence.py::test_matching_evidence_verifies_and_round_trips",
+          "tests/factors/test_modeling_contracts.py::test_snapshot_round_trip_and_deep_immutability",
+          "tests/factors/test_run_store.py::test_wrong_owner_missing_invalid_and_symlink_lookups_are_indistinguishable"
+        ]
+      },
+      "operation:readSavedWidgetOutput": {
+        "criteria": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "5.1",
+          "5.2",
+          "5.3"
+        ],
+        "paths": [
+          "contracts/consumers/financial-modeling/saved-output.v1.json",
+          "contracts/modeling/v1/apps.json",
+          "contracts/modeling/v1/widgets.json",
+          "services/data-api/qopenbb_data/modeling/service/widget_*.py"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget",
+          "tests/factors/test_financial_compat_cases.py::test_real_signed_responses_match_expectations",
+          "tests/factors/test_widget_discovery.py::test_discovery_export_matches_vendored_workspace_schema",
+          "tests/factors/test_widget_listener.py::test_widget_discovery_reopens_the_same_private_result",
+          "tests/factors/test_widget_projection.py::test_withheld_output_preserves_explanation_and_nulls"
+        ]
+      },
+      "rule:eligible_inputs.change@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/regime_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_real_yield.py::test_frozen_withholding_reasons",
+          "tests/factors/test_real_yield.py::test_only_exact_endpoints_are_needed_and_match_frozen_trace",
+          "tests/factors/test_regime_reference.py::test_point_in_time_regime_and_late_revision_mutant"
+        ]
+      },
+      "rule:eligible_inputs.falling_hit_rate@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/diagnostics.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_groups.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_schedule.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_inputs.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_diagnostics.py::test_frozen_results_and_trace",
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime",
+          "tests/factors/test_study_schedule.py::test_plan_keeps_decision_before_first_return_and_accepts_session_gaps",
+          "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations",
+          "tests/factors/test_timing_reference_limits.py::test_full_snapshot_with_chunked_calendar_and_extreme_returns"
+        ]
+      },
+      "rule:eligible_inputs.falling_slugging@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/diagnostics.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_groups.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_schedule.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_inputs.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_diagnostics.py::test_frozen_results_and_trace",
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime",
+          "tests/factors/test_study_schedule.py::test_plan_keeps_decision_before_first_return_and_accepts_session_gaps",
+          "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations",
+          "tests/factors/test_timing_reference_limits.py::test_full_snapshot_with_chunked_calendar_and_extreme_returns"
+        ]
+      },
+      "rule:eligible_inputs.fcf_yield@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/fcf_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/filings.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/issuer_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_fcf_yield.py::test_frozen_issuer_yield_descriptor_and_trace",
+          "tests/factors/test_filing_selection.py::test_partial_amendment_cannot_mix_with_prior_vintage",
+          "tests/factors/test_issuer_reference.py::test_rolling_fiscal_year_and_late_amendment"
+        ]
+      },
+      "rule:eligible_inputs.left_momentum@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/comparison.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair",
+          "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
+          "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar"
+        ]
+      },
+      "rule:eligible_inputs.left_volatility@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/comparison.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair",
+          "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
+          "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar"
+        ]
+      },
+      "rule:eligible_inputs.momentum@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_etf_reference.py::test_foundation_rejects_mutated_candidate",
+          "tests/factors/test_factor_sessions.py::test_reports_both_missing_dates_and_keeps_calendar_endpoints",
+          "tests/factors/test_momentum.py::test_descriptor_matches_frozen_example",
+          "tests/factors/test_momentum.py::test_varying_prices_match_frozen_result_and_trace"
+        ]
+      },
+      "rule:eligible_inputs.momentum_spread@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/comparison.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair",
+          "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
+          "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar"
+        ]
+      },
+      "rule:eligible_inputs.realized_volatility@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_etf_reference.py::test_foundation_rejects_mutated_candidate",
+          "tests/factors/test_volatility.py::test_descriptor_matches_frozen_contract",
+          "tests/factors/test_volatility.py::test_missing_close_preserves_dated_precondition_failure",
+          "tests/factors/test_volatility.py::test_varying_prices_match_frozen_trace_and_sample_volatility"
+        ]
+      },
+      "rule:eligible_inputs.regime@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/regime_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_real_yield.py::test_frozen_withholding_reasons",
+          "tests/factors/test_real_yield.py::test_only_exact_endpoints_are_needed_and_match_frozen_trace",
+          "tests/factors/test_regime_reference.py::test_point_in_time_regime_and_late_revision_mutant"
+        ]
+      },
+      "rule:eligible_inputs.right_momentum@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/comparison.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair",
+          "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
+          "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar"
+        ]
+      },
+      "rule:eligible_inputs.right_volatility@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/comparison.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair",
+          "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
+          "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar"
+        ]
+      },
+      "rule:eligible_inputs.rising_hit_rate@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/diagnostics.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_groups.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_schedule.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_inputs.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_diagnostics.py::test_frozen_results_and_trace",
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime",
+          "tests/factors/test_study_schedule.py::test_plan_keeps_decision_before_first_return_and_accepts_session_gaps",
+          "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations",
+          "tests/factors/test_timing_reference_limits.py::test_full_snapshot_with_chunked_calendar_and_extreme_returns"
+        ]
+      },
+      "rule:eligible_inputs.rising_slugging@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/diagnostics.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_groups.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_schedule.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_inputs.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_diagnostics.py::test_frozen_results_and_trace",
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime",
+          "tests/factors/test_study_schedule.py::test_plan_keeps_decision_before_first_return_and_accepts_session_gaps",
+          "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations",
+          "tests/factors/test_timing_reference_limits.py::test_full_snapshot_with_chunked_calendar_and_extreme_returns"
+        ]
+      },
+      "rule:eligible_inputs.study_drawdown@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/diagnostics.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_groups.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/study_schedule.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_inputs.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/timing_reference.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_diagnostics.py::test_frozen_results_and_trace",
+          "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime",
+          "tests/factors/test_study_schedule.py::test_plan_keeps_decision_before_first_return_and_accepts_session_gaps",
+          "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations",
+          "tests/factors/test_timing_reference_limits.py::test_full_snapshot_with_chunked_calendar_and_extreme_returns"
+        ]
+      },
+      "rule:eligible_inputs.volatility_spread@1": {
+        "criteria": [
+          "1.1",
+          "1.2",
+          "2.1",
+          "2.3",
+          "2.5",
+          "5.1",
+          "5.2",
+          "6.2"
+        ],
+        "paths": [
+          "services/data-api/qopenbb_data/modeling/contracts/*.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/comparison.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/momentum.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
+          "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
+          "services/data-api/qopenbb_data/modeling/models/protocol.py",
+          "services/data-api/qopenbb_data/modeling/models/registry.py",
+          "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+          "services/data-api/qopenbb_data/modeling/validation/*.py",
+          "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
+          "services/data-api/qopenbb_data/modeling/verification/reference.py",
+          "tests/factors/fixtures/**"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+          "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair",
+          "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
+          "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar"
+        ]
+      },
+      "widget:qopenbb_saved_model_output": {
+        "criteria": [
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "5.1",
+          "5.2",
+          "5.3"
+        ],
+        "paths": [
+          "contracts/consumers/financial-modeling/saved-output.v1.json",
+          "contracts/modeling/v1/apps.json",
+          "contracts/modeling/v1/widgets.json",
+          "services/data-api/qopenbb_data/modeling/service/widget_*.py"
+        ],
+        "selectors": [
+          "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget",
+          "tests/factors/test_financial_compat_cases.py::test_real_signed_responses_match_expectations",
+          "tests/factors/test_widget_discovery.py::test_discovery_export_matches_vendored_workspace_schema",
+          "tests/factors/test_widget_listener.py::test_widget_discovery_reopens_the_same_private_result",
+          "tests/factors/test_widget_projection.py::test_withheld_output_preserves_explanation_and_nulls"
+        ]
+      }
+    },
+    "changed_ids": [
+      "capability:source-impact-gate",
+      "model:etf_momentum@1",
+      "model:etf_realized_volatility@1",
+      "model:issuer_fcf_yield@1",
+      "model:proxy_comparison@1",
+      "model:real_yield_regime@1",
+      "model:timing_study@1",
+      "rule:eligible_inputs.change@1",
+      "rule:eligible_inputs.falling_hit_rate@1",
+      "rule:eligible_inputs.falling_slugging@1",
+      "rule:eligible_inputs.fcf_yield@1",
+      "rule:eligible_inputs.left_momentum@1",
+      "rule:eligible_inputs.left_volatility@1",
+      "rule:eligible_inputs.momentum@1",
+      "rule:eligible_inputs.momentum_spread@1",
+      "rule:eligible_inputs.realized_volatility@1",
+      "rule:eligible_inputs.regime@1",
+      "rule:eligible_inputs.right_momentum@1",
+      "rule:eligible_inputs.right_volatility@1",
+      "rule:eligible_inputs.rising_hit_rate@1",
+      "rule:eligible_inputs.rising_slugging@1",
+      "rule:eligible_inputs.study_drawdown@1",
+      "rule:eligible_inputs.volatility_spread@1"
+    ],
+    "criteria": [
+      "1.1",
+      "1.2",
+      "1.3",
+      "1.4",
+      "2.1",
+      "2.2",
+      "2.3",
+      "2.4",
+      "2.5",
+      "2.6",
+      "2.7",
+      "3.1",
+      "3.2",
+      "3.3",
+      "3.4",
+      "3.5",
+      "3.6",
+      "4.1",
+      "4.2",
+      "4.3",
+      "4.4",
+      "4.5",
+      "5.1",
+      "5.2",
+      "5.3",
+      "5.4",
+      "6.2",
+      "6.3",
+      "6.4",
+      "6.5"
+    ],
+    "gaps": [],
+    "selectors": [
+      "tests/contracts/test_financial_compat_gate.py::test_candidate_evidence_must_belong_to_exact_bytes",
+      "tests/contracts/test_financial_compat_structure.py::test_method_and_rule_versions_are_immutable",
+      "tests/contracts/test_modeling_adoption.py::test_consumer_binds_exported_operation_and_widget",
+      "tests/contracts/test_modeling_adoption.py::test_pinned_bundle_reproduces_from_pinned_and_current_sources",
+      "tests/contracts/test_modeling_impact_gate.py::test_failed_export_still_exercises_broader_selection",
+      "tests/contracts/test_modeling_impact_gate.py::test_integration_preserves_selection_and_evidence",
+      "tests/contracts/test_modeling_impact_gate.py::test_wrong_checkout_blocks_without_running_checks",
+      "tests/contracts/test_modeling_impact_map.py::test_candidate_cannot_remove_base_obligations",
+      "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
+      "tests/contracts/test_modeling_impact_map.py::test_selects_only_affected_nodes_and_reads_pinned_map",
+      "tests/contracts/test_modeling_impact_map.py::test_shared_changes_select_numeric_checks_for_dependent_methods",
+      "tests/contracts/test_modeling_impact_run.py::test_deselected_node_fails_even_when_pytest_exits_zero",
+      "tests/contracts/test_modeling_impact_run.py::test_one_nonpassing_node_fails_a_partly_passing_file",
+      "tests/contracts/test_modeling_impact_run.py::test_pipeline_fallback_never_runs_live_checks",
+      "tests/contracts/test_modeling_impact_run.py::test_setup_only_produces_partial_evidence",
+      "tests/contracts/test_modeling_impact_run.py::test_unevaluated_node_fails_even_when_pytest_exits_zero",
+      "tests/delivery/test_data_image.py::test_runtime_python_dependencies_are_packaged",
+      "tests/delivery/test_data_image.py::test_staged_modeling_modules_are_importable",
+      "tests/delivery/test_prototype_compose.py::test_only_reviewed_image_services_and_private_state",
+      "tests/delivery/test_prototype_workflow.py::test_release_trigger_checkout_and_unique_build_identity",
+      "tests/factors/test_acquired_evaluation.py::test_revised_gdp_is_saved_as_a_separate_verified_observation",
+      "tests/factors/test_acquisition.py::test_full_mapping_preserves_snapshot_contract",
+      "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair",
+      "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
+      "tests/factors/test_diagnostics.py::test_frozen_results_and_trace",
+      "tests/factors/test_etf_reference.py::test_foundation_rejects_mutated_candidate",
+      "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar",
+      "tests/factors/test_execution.py::test_timeout_reaps_child_and_releases_capacity",
+      "tests/factors/test_factor_examples.py::test_factor_example_round_trip",
+      "tests/factors/test_factor_sessions.py::test_reports_both_missing_dates_and_keeps_calendar_endpoints",
+      "tests/factors/test_fcf_yield.py::test_frozen_issuer_yield_descriptor_and_trace",
+      "tests/factors/test_filing_selection.py::test_partial_amendment_cannot_mix_with_prior_vintage",
+      "tests/factors/test_financial_compat_cases.py::test_financial_compat_cli_writes_exercised_evidence",
+      "tests/factors/test_financial_compat_cases.py::test_real_signed_responses_match_expectations",
+      "tests/factors/test_financial_compat_cases.py::test_real_unit_change_blocks_with_unchanged_schemas",
+      "tests/factors/test_financial_compat_cases_identity.py::test_unchanged_export_cannot_bind_drifted_runtime",
+      "tests/factors/test_import_boundaries.py::test_production_modeling_import_boundaries",
+      "tests/factors/test_issuer_reference.py::test_rolling_fiscal_year_and_late_amendment",
+      "tests/factors/test_method_inputs.py::test_invalid_calculation_context_fails_explicitly",
+      "tests/factors/test_model_http.py::test_auth_before_receiving_body_and_safe_validation",
+      "tests/factors/test_model_http.py::test_save_reopen_project_and_owner",
+      "tests/factors/test_model_identity.py::test_authenticates_pinned_key",
+      "tests/factors/test_model_listener.py::test_internal_listener_authenticates_and_reopens_saved_run",
+      "tests/factors/test_model_publication.py::test_deadline_covers_calculation_and_publication",
+      "tests/factors/test_model_registry.py::test_discovery_lists_all_exact_versions_in_stable_order",
+      "tests/factors/test_model_registry.py::test_registry_resolves_exact_installed_versions",
+      "tests/factors/test_model_run_evidence.py::test_matching_evidence_verifies_and_round_trips",
+      "tests/factors/test_modeling_bundle.py::test_bundle_reproduces_canonical_bytes_and_hashes",
+      "tests/factors/test_modeling_contract_listener.py::test_adopted_documents_accept_saved_output_evidence",
+      "tests/factors/test_modeling_contracts.py::test_snapshot_round_trip_and_deep_immutability",
+      "tests/factors/test_modeling_documents.py::test_openapi_covers_internal_routes_and_safe_errors",
+      "tests/factors/test_modeling_documents_registration.py::test_export_and_listener_share_installed_methods_and_rule_descriptors",
+      "tests/factors/test_momentum.py::test_descriptor_matches_frozen_example",
+      "tests/factors/test_momentum.py::test_varying_prices_match_frozen_result_and_trace",
+      "tests/factors/test_orchestration.py::test_missing_invalid_and_reference_mismatch_have_distinct_evidence",
+      "tests/factors/test_real_yield.py::test_frozen_withholding_reasons",
+      "tests/factors/test_real_yield.py::test_only_exact_endpoints_are_needed_and_match_frozen_trace",
+      "tests/factors/test_reference_verification.py::test_reference_uses_supplied_input_and_detects_mutation",
+      "tests/factors/test_regime_reference.py::test_point_in_time_regime_and_late_revision_mutant",
+      "tests/factors/test_run_store.py::test_wrong_owner_missing_invalid_and_symlink_lookups_are_indistinguishable",
+      "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime",
+      "tests/factors/test_study_schedule.py::test_plan_keeps_decision_before_first_return_and_accepts_session_gaps",
+      "tests/factors/test_timing_reference.py::test_foundation_rejects_score_mutations",
+      "tests/factors/test_timing_reference_limits.py::test_full_snapshot_with_chunked_calendar_and_extreme_returns",
+      "tests/factors/test_validation_lifecycle.py::test_rule_outcomes",
+      "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling",
+      "tests/factors/test_volatility.py::test_descriptor_matches_frozen_contract",
+      "tests/factors/test_volatility.py::test_missing_close_preserves_dated_precondition_failure",
+      "tests/factors/test_volatility.py::test_varying_prices_match_frozen_trace_and_sample_volatility",
+      "tests/factors/test_widget_discovery.py::test_discovery_export_matches_vendored_workspace_schema",
+      "tests/factors/test_widget_listener.py::test_widget_discovery_reopens_the_same_private_result",
+      "tests/factors/test_widget_projection.py::test_withheld_output_preserves_explanation_and_nulls"
+    ]
+  },
+  "source_lock_sha256": "a1d1b318c0490b062fdb673e34cefbbee201f91a89f3390337d5e570cb082942"
+}

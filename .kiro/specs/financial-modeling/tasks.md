@@ -108,7 +108,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Boundary: Modeling compatibility tooling and QOpenBB tests/contracts consumer checks; no formula or UI changes._
   - _Depends: 9.1_
   - _Requirements: 1.4, 4.2, 4.3, 4.4_
-- [ ] 9.3 Select affected checks through cross-repository breadth
+- [x] 9.3 Select affected checks through cross-repository breadth
   - Link criteria to model/rule/operation/widget IDs and actual test selectors. Select affected checks on changes; unresolved impact invokes broader relevant verification and exposes mapping gaps.
   - Done: absent/skipped checks cannot pass; unmapped changes fail closed and exact counterpart revision/evidence identities survive the integration report.
   - Completion gate: maintained production files pass 400 physical / 300 logical / 50 per function and owning checks.
