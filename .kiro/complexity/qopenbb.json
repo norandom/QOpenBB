@@ -17,9 +17,13 @@
     },
     {
       "spec": "financial-modeling",
-      "include": ["verification/modeling-journey/**", "verification/financial-real-inputs/**", "services/data-api/qopenbb_data/modeling/service/**", "pipeline/qopenbb_ci/modeling_*.py", "pipeline/qopenbb_ci/financial_compat*.py", "pipeline/qopenbb_ci/financial_impact*.py", ".kiro/modeling-impact.toml", "contracts/consumers/financial-modeling/**"],
+      "include": ["deploy/**", ".env.sample", ".dagger/src/qopenbb/modeling*.py", "services/modeling/**", "verification/modeling-journey/**", "verification/financial-real-inputs/**", "services/data-api/qopenbb_data/modeling/service/**", "pipeline/qopenbb_ci/modeling_*.py", "pipeline/qopenbb_ci/financial_compat*.py", "pipeline/qopenbb_ci/financial_impact*.py", ".kiro/modeling-impact.toml", "contracts/consumers/financial-modeling/**"],
       "files": [
         "contracts/consumers/financial-modeling/issuer-fcf-yield.v1.json",
+        ".dagger/src/qopenbb/modeling.py", ".dagger/src/qopenbb/modeling_export.py",
+        "services/modeling/pyproject.toml", "pipeline/qopenbb_ci/modeling_image.py",
+        "verification/modeling-journey/packaged.py",
+        "deploy/compose.modeling.yaml", "deploy/pull-modeling-candidate.sh", ".env.sample",
         "verification/modeling-journey/compose.yaml", "verification/modeling-journey/run.py",
         "verification/modeling-journey/playwright.config.mts", "verification/modeling-journey/workspace.mts",
         "verification/financial-real-inputs/check_live_fmp.py",
@@ -115,6 +119,11 @@
     }
   ],
   "exclusions": [
+    {
+      "patterns": ["services/modeling/uv.lock"],
+      "reason": "Resolved Modeling dependencies with artifact hashes",
+      "source": "uv lock from services/modeling/pyproject.toml"
+    },
     {
       "patterns": ["verification/financial-real-inputs/*.json"],
       "reason": "Frozen provider excerpts, request and reference fixtures exercised by signed listener and browser checks",

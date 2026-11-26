@@ -13,6 +13,7 @@ Native Windows development is accepted using Podman Compose, with Dagger buildin
 | Your task | Start here |
 | --- | --- |
 | Install prebuilt alpha images for development | [Installation guide](install.md) |
+| Run a digest-pinned Modeling candidate | [Modeling deployment](modeling-deployment.md) |
 | Connect the bundled backend and open starter dashboards | [First login and onboarding](install.md#first-login-and-onboarding) |
 | Find companies by name and link research widgets | [Company selection](company-selection.md) |
 | Open the curated Company Research App and inspect original observations | [Company Research guide](company-research.md) |

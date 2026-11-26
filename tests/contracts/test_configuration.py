@@ -4,7 +4,8 @@ import os
 from pathlib import Path
 
 import pytest
-from qopenbb_ci.configuration import validate_configuration, validate_contracts
+from qopenbb_ci.catalog import freeze_routes
+from qopenbb_ci.configuration import DATASETS, runtime_contract, validate_configuration, validate_contracts
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -94,7 +95,9 @@ def test_production_digest_and_fixed_auth():
 def test_contracts_unique_and_fixed_topology():
     data = contracts()
     validate_contracts(**data)
-    assert len({r['path'] for r in data['routes']['routes']}) == 3
+    paths = [r['path'] for r in data['routes']['routes']]
+    assert len(set(paths)) == len(paths)
+    assert set(paths) == {d['path'] for d in data['datasets']['datasets']}
     assert all('operation_id' not in r for r in data['routes']['routes'])
 
 
@@ -103,6 +106,21 @@ def test_installed_contracts_match_explicit_served_schema():
     validate_contracts(**data)
     assert data['routes']['status'] == data['datasets']['status'] == 'installed'
     assert all(route['operationId'] for route in data['routes']['routes'])
+
+
+def test_legacy_provisional_inventory_cannot_be_promoted_to_installed():
+    data = installed_contracts()
+    data['datasets']['datasets'] = DATASETS
+    data['routes'] = freeze_routes(data['openapi'], data['datasets'])
+
+    with pytest.raises(ValueError, match='dataset contract differs from approved inventory'):
+        validate_contracts(**data)
+
+    data.pop('openapi')
+    data['datasets']['status'] = 'provisional'
+    data['routes'] = {'schema_version': 1, 'status': 'provisional', 'routes': [
+        {'dataset': item['id'], 'method': 'GET', 'path': item['path']} for item in DATASETS]}
+    validate_contracts(**data)
 
 
 @pytest.mark.parametrize('mutation', ['missing-schema', 'operation', 'response', 'parameter', 'component',
@@ -178,3 +196,28 @@ def test_contract_numeric_types_are_strict():
     data = contracts()
     data['runtime']['services']['workspace']['port'] = 3000.0
     with pytest.raises(ValueError): validate_contracts(**data)
+
+
+def test_modeling_inventory_targets_workspace_and_keeps_listener_private():
+    assert json.loads((ROOT / 'contracts/runtime.json').read_text()) == runtime_contract()
+    selected = {'workspace', 'data-api', 'modeling'}
+    values = env() | {'MODELING_IMAGE': 'localhost:5000/qopenbb/modeling:dev',
+                      'QFM_IDENTITY_CURRENT_KID': 'current',
+                      'QFM_IDENTITY_CURRENT_SECRET': 'synthetic-signing-key' * 2}
+    result = validate_configuration(values, selected=selected)
+    model = result['services']['modeling']
+    assert model['port'] == 6901 and model['publish'] == []
+    assert model['binds'] == ['./data/modeling:/data/modeling']
+    assert model['user'] == '10001:10001' and model['state_mode'] == '0700'
+    assert model['environment']['QOPENBB_MODEL_DATA_ORIGIN'] == 'http://data-api:6900'
+    assert model['environment']['QOPENBB_MODEL_RUN_DIR'] == '/data/modeling'
+    assert result['services']['workspace']['depends_on'] == ['data-api']
+    current = {key: value for key, value in values.items() if key.startswith('QFM_')}
+    for key, value in current.items():
+        assert result['services']['workspace']['environment'][key] == value
+        assert result['services']['modeling']['environment'][key] == value
+        assert key not in result['services']['data-api']['environment']
+    assert {'prefix': '/modeling/v1', 'target': 'workspace', 'strip_prefix': False,
+            'stream': False} in result['routes']
+    with pytest.raises(ValueError, match='QFM_IDENTITY_PREVIOUS_SECRET'):
+        validate_configuration(values | {'QFM_IDENTITY_PREVIOUS_KID': 'old'}, selected=selected)

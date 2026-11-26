@@ -1,10 +1,10 @@
-# Development follows latest alpha images; stable versions will use pinned references.
+# Pair deployment. Apply deploy/compose.modeling.yaml to enable the private listener.
 services:
   workspace:
     image: ${WORKSPACE_IMAGE:-ghcr.io/norandom/qopenbb-workspace:latest}
     restart: unless-stopped
     ports:
-      - "0.0.0.0:23003:3000"
+      - "${WORKSPACE_BIND_IP:-0.0.0.0}:${WORKSPACE_HOST_PORT:-23003}:3000"
     environment:
       PUBLIC_URL: ${PUBLIC_URL:-http://127.0.0.1:23003}
       # Empty values preserve the image's persisted/generated bootstrap settings.

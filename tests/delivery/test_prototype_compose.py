@@ -19,14 +19,19 @@ INPUTS = {
 @pytest.fixture
 def parse(tmp_path):
     shutil.copyfile(ROOT / "compose.yaml", tmp_path / "compose.yaml")
+    (tmp_path / "deploy").mkdir()
+    shutil.copyfile(ROOT / "deploy/compose.modeling.yaml",
+                    tmp_path / "deploy/compose.modeling.yaml")
     empty = tmp_path / "empty.env"
     empty.touch()
 
-    def config(overrides=None):
+    def config(overrides=None, *, modeling=False):
         env = {key: value for key, value in os.environ.items()
                if key not in {*INPUTS, "PUBLIC_URL", "OPENBB_ADMIN_EMAIL",
                               "OPENBB_ADMIN_PASSWORD", "QFM_IDENTITY_CURRENT_KID",
-                              "QFM_IDENTITY_CURRENT_SECRET", "COMPOSE_FILE",
+                              "QFM_IDENTITY_CURRENT_SECRET", "QFM_IDENTITY_PREVIOUS_KID",
+                              "QFM_IDENTITY_PREVIOUS_SECRET", "MODELING_IMAGE",
+                              "WORKSPACE_BIND_IP", "WORKSPACE_HOST_PORT", "COMPOSE_FILE",
                               "COMPOSE_PROFILES", "COMPOSE_ENV_FILES"}}
         env.update(INPUTS)
         for key, value in (overrides or {}).items():
@@ -34,9 +39,12 @@ def parse(tmp_path):
                 env.pop(key, None)
             else:
                 env[key] = value
+        files = ["-f", str(tmp_path / "compose.yaml")]
+        if modeling:
+            files += ["-f", str(tmp_path / "deploy/compose.modeling.yaml")]
         return subprocess.run(
-            ["docker", "compose", "--env-file", str(empty), "-f",
-             str(tmp_path / "compose.yaml"), "config", "--format", "json"],
+            ["docker", "compose", "--env-file", str(empty), *files,
+             "config", "--format", "json"],
             env=env, capture_output=True, text=True, check=False)
 
     return config
@@ -105,3 +113,58 @@ def test_development_images_default_to_latest(parse):
     selected = services(parse, {"WORKSPACE_IMAGE": None, "DATA_API_IMAGE": None})
     for service in ("workspace", "data-api"):
         assert selected[service]["image"] == "ghcr.io/norandom/qopenbb-" + service + ":latest"
+
+
+MODELING_INPUTS = {
+    "MODELING_IMAGE": "localhost:5000/modeling@sha256:" + "f" * 64,
+    "QFM_IDENTITY_CURRENT_KID": "current-key",
+    "QFM_IDENTITY_CURRENT_SECRET": "synthetic-modeling-key" * 2,
+}
+
+
+def test_modeling_overlay_is_private_and_keeps_workspace_independent(parse):
+    overrides = MODELING_INPUTS | {"WORKSPACE_BIND_IP": "127.0.0.1",
+                                   "WORKSPACE_HOST_PORT": "24231"}
+    result = parse(overrides, modeling=True)
+    assert result.returncode == 0, result.stderr
+    config = json.loads(result.stdout)["services"]
+    assert set(config) == {"workspace", "data-api", "modeling"}
+    workspace = config["workspace"]
+    model = config["modeling"]
+    assert workspace["ports"][0]["host_ip"] == "127.0.0.1"
+    assert workspace["ports"][0]["published"] == "24231"
+    assert set(workspace["depends_on"]) == {"data-api"}
+    assert model["image"] == MODELING_INPUTS["MODELING_IMAGE"]
+    assert model["expose"] == ["6901"]
+    assert model["user"] == "10001:10001"
+    assert all(not model.get(key) for key in
+               ("build", "ports", "depends_on", "env_file", "command", "entrypoint"))
+    mount, = model["volumes"]
+    assert mount["type"] == "bind" and mount["target"] == "/data/modeling"
+    assert Path(mount["source"]).parts[-2:] == ("data", "modeling")
+    assert mount["bind"]["create_host_path"] is False
+    assert {key: value for key, value in model["environment"].items() if value is not None} == {
+        **{key: value for key, value in MODELING_INPUTS.items() if key.startswith("QFM_")},
+        "QOPENBB_MODEL_DATA_ORIGIN": "http://data-api:6900",
+        "QOPENBB_MODEL_RUN_DIR": "/data/modeling",
+    }
+    assert all(not key.startswith("QFM_") for key in config["data-api"]["environment"])
+
+
+def test_modeling_previous_keys_stay_in_listener(parse):
+    previous = {"QFM_IDENTITY_PREVIOUS_KID": "old-key",
+                "QFM_IDENTITY_PREVIOUS_SECRET": "synthetic-previous-key" * 2}
+    result = parse(MODELING_INPUTS | previous, modeling=True)
+    assert result.returncode == 0, result.stderr
+    config = json.loads(result.stdout)["services"]
+    for key, value in previous.items():
+        assert config["modeling"]["environment"][key] == value
+        assert key not in config["workspace"]["environment"]
+        assert key not in config["data-api"]["environment"]
+
+
+@pytest.mark.parametrize("missing", MODELING_INPUTS)
+def test_opt_in_requires_modeling_image_and_current_key_pair(parse, missing):
+    result = parse(MODELING_INPUTS | {missing: None}, modeling=True)
+    assert result.returncode != 0
+    assert missing in result.stderr

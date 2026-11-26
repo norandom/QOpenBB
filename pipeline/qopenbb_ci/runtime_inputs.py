@@ -71,8 +71,12 @@ RUNTIME_FILES = frozenset('services/data-api/' + name for name in (
 
 
 def copy_runtime(root: Path, destination: Path) -> dict[str, str]:
+    return copy_inputs(root, destination, RUNTIME_FILES)
+
+
+def copy_inputs(root: Path, destination: Path, names: frozenset[str]) -> dict[str, str]:
     files = {}
-    for name in sorted(RUNTIME_FILES):
+    for name in sorted(names):
         source = root / name
         if any(path.is_symlink() for path in [source, *source.parents]):
             raise ValueError('runtime input symlink rejected')

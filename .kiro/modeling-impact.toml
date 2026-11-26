@@ -373,3 +373,14 @@ selectors = [
   "tests/factors/test_real_fmp_fcf_acceptance.py::test_sap_receipt_bounds_and_decimal_oracle",
   "tests/factors/test_real_fmp_fcf_acceptance.py::test_installed_fcf_signed_evaluation_and_reopen",
 ]
+
+[[mapping]]
+ids = ["capability:modeling-image-candidate"]
+criteria = ["5.4", "6.5"]
+paths = [".dagger/src/qopenbb/modeling*.py", "services/modeling/**", "pipeline/qopenbb_ci/modeling_image.py", "pipeline/qopenbb_ci/runtime_inputs.py", "pipeline/qopenbb_ci/configuration.py", "compose.yaml", ".env.sample", "tests/contracts/test_configuration.py", "tests/delivery/test_modeling_image.py", "tests/delivery/test_modeling_candidate.py", "deploy/compose.modeling.yaml", "deploy/pull-modeling-candidate.sh", "contracts/runtime.json", "verification/modeling-journey/packaged.py"]
+selectors = [
+  "tests/delivery/test_modeling_image.py::test_modeling_stage_copies_exact_source_and_lock",
+  "tests/delivery/test_modeling_image.py::test_modeling_lock_uses_only_published_hashed_artifacts",
+  "tests/delivery/test_modeling_candidate.py::test_local_registry_digests_pull_before_start_and_never_build",
+  "tests/contracts/test_configuration.py::test_modeling_inventory_targets_workspace_and_keeps_listener_private",
+]

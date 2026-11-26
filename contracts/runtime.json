@@ -29,6 +29,28 @@
       ],
       "depends_on": []
     },
+    "modeling": {
+      "image": "MODELING_IMAGE",
+      "port": 6901,
+      "publish": [],
+      "binds": [
+        "./data/modeling:/data/modeling"
+      ],
+      "environment": [
+        "QFM_IDENTITY_CURRENT_KID",
+        "QFM_IDENTITY_CURRENT_SECRET",
+        "QOPENBB_MODEL_RUN_DIR",
+        "QOPENBB_MODEL_DATA_ORIGIN"
+      ],
+      "depends_on": [],
+      "user": "10001:10001",
+      "state_mode": "0700",
+      "compose_override": "deploy/compose.modeling.yaml",
+      "optional_environment": [
+        "QFM_IDENTITY_PREVIOUS_KID",
+        "QFM_IDENTITY_PREVIOUS_SECRET"
+      ]
+    },
     "agent": {
       "image": "AGENT_IMAGE",
       "port": 7777,
@@ -61,6 +83,12 @@
       "prefix": "/data",
       "target": "data-api",
       "strip_prefix": true,
+      "stream": false
+    },
+    {
+      "prefix": "/modeling/v1",
+      "target": "workspace",
+      "strip_prefix": false,
       "stream": false
     },
     {

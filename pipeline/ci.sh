@@ -10,6 +10,8 @@ case "${1:-}" in
     PYTHONPATH="$PWD/services/data-api${PYTHONPATH:+:$PYTHONPATH}" \
     pipeline/.venv/bin/python -m pytest -c pipeline/pyproject.toml \
       tests/delivery/test_image_builds.py tests/delivery/test_workspace_image.py \
+      tests/contracts/test_configuration.py::test_modeling_inventory_targets_workspace_and_keeps_listener_private \
+      tests/delivery/test_modeling_image.py tests/delivery/test_modeling_candidate.py \
       tests/delivery/test_data_image.py tests/delivery/test_prototype_compose.py \
       tests/delivery/test_publication.py tests/delivery/test_build_cli.py \
       tests/delivery/test_quality_cli.py tests/delivery/test_alpha_cli.py tests/delivery/test_prototype_workflow.py \
@@ -25,9 +27,13 @@ case "${1:-}" in
     PYTHONPATH="$PWD/services/data-api${PYTHONPATH:+:$PYTHONPATH}" \
       pipeline/.venv/bin/python -m qopenbb_ci.financial_impact --base "$2" --output "$3"
     ;;
+  build-modeling)
+    shift
+    pipeline/.venv/bin/python -m qopenbb_ci.modeling_image "$@"
+    ;;
   build)
     shift
     pipeline/.venv/bin/python -m qopenbb_ci.build_cli "$@"
     ;;
-  *) echo 'usage: pipeline/ci.sh check | modeling-impact BASE OUTPUT | build [build_cli arguments]' >&2; exit 2 ;;
+  *) echo 'usage: pipeline/ci.sh check | modeling-impact BASE OUTPUT | build-modeling --output DIRECTORY | build [build_cli arguments]' >&2; exit 2 ;;
 esac

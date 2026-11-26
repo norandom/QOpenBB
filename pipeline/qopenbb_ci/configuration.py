@@ -3,15 +3,23 @@
 from ipaddress import ip_address
 import json
 import re
+from pathlib import Path
 from urllib.parse import urlsplit
 
 from .contracts import Image
-from .catalog import freeze_routes
+from .catalog import digest, freeze_routes
 
 
+MODELING_CURRENT_KEYS = ('QFM_IDENTITY_CURRENT_KID', 'QFM_IDENTITY_CURRENT_SECRET')
+MODELING_PREVIOUS_KEYS = ('QFM_IDENTITY_PREVIOUS_KID', 'QFM_IDENTITY_PREVIOUS_SECRET')
+MODELING_DEFAULTS = {
+    'QOPENBB_MODEL_RUN_DIR': '/data/modeling',
+    'QOPENBB_MODEL_DATA_ORIGIN': 'http://data-api:6900',
+}
 SERVICE_INPUTS = {
     'workspace': ('WORKSPACE_IMAGE', 3000, ['PUBLIC_URL']),
     'data-api': ('DATA_API_IMAGE', 6900, ['FMP_API_KEY', 'FRED_API_KEY', 'OPENBB_API_AUTH']),
+    'modeling': ('MODELING_IMAGE', 6901, [*MODELING_CURRENT_KEYS, *MODELING_DEFAULTS]),
     'agent': ('AGENT_IMAGE', 7777, ['ANTHROPIC_API_KEY', 'ANTHROPIC_MODEL']),
     'excel': ('EXCEL_IMAGE', 80, []),
 }
@@ -32,6 +40,10 @@ def service_contract(name: str) -> dict:
     if name == 'workspace':
         result.update(publish=['0.0.0.0:23003:3000'], binds=['./data/workspace:/data'],
                       depends_on=['data-api'])
+    if name == 'modeling':
+        result.update(binds=['./data/modeling:/data/modeling'], user='10001:10001',
+                      state_mode='0700', compose_override='deploy/compose.modeling.yaml',
+                      optional_environment=list(MODELING_PREVIOUS_KEYS))
     if name == 'excel':
         result['profile'] = 'excel'
     return result
@@ -41,6 +53,7 @@ def runtime_contract() -> dict:
     routes = [{'prefix': prefix, 'target': target, 'strip_prefix': strip, 'stream': stream}
               for prefix, target, strip, stream in (
                   ('/api', 'workspace', False, False), ('/data', 'data-api', True, False),
+                  ('/modeling/v1', 'workspace', False, False),
                   ('/agent', 'agent', True, True), ('/excel', 'excel', True, False))]
     return {'schema_version': 1, 'services': {name: service_contract(name) for name in SERVICE_INPUTS},
             'routes': routes}
@@ -54,8 +67,13 @@ def validate_contracts(*, runtime: dict, datasets: dict, routes: dict,
     status = datasets.get('status')
     if status not in {'provisional', 'installed'} or routes.get('status') != status:
         raise ValueError('dataset and route contract status mismatch')
-    if not exact_contract(datasets, {'schema_version': 1, 'status': status, 'datasets': DATASETS}):
-        raise ValueError('dataset contract differs from approved inventory')
+    legacy_provisional = status == 'provisional' and exact_contract(
+        datasets, {'schema_version': 1, 'status': 'provisional', 'datasets': DATASETS})
+    if not legacy_provisional:
+        hashes = Path(__file__).resolve().parents[2] / 'contracts/hashes.json'
+        approved = json.loads(hashes.read_bytes())['datasets.json']
+        if digest({**datasets, 'status': 'installed'}) != approved:
+            raise ValueError('dataset contract differs from approved inventory')
     if status == 'installed':
         if openapi is None:
             raise ValueError('installed routes require an explicit served OpenAPI schema')
@@ -65,7 +83,7 @@ def validate_contracts(*, runtime: dict, datasets: dict, routes: dict,
             raise ValueError('invalid installed route schema') from exc
     else:
         expected = {'schema_version': 1, 'status': 'provisional', 'routes': [
-            {'dataset': d['id'], 'method': 'GET', 'path': d['path']} for d in DATASETS]}
+            {'dataset': d['id'], 'method': 'GET', 'path': d['path']} for d in datasets['datasets']]}
     if not exact_contract(routes, expected):
         raise ValueError('route contract differs from explicit schema or provisional inventory')
 
@@ -133,6 +151,9 @@ def validate_configuration(values: dict[str, str], *, selected: set[str],
         raise ValueError('OPENBB_API_AUTH must be false')
     services = {name: configured_service(name, values, origin, production)
                 for name in SERVICE_INPUTS if name in selected}
+    if 'modeling' in selected:
+        services['workspace']['environment'].update(
+            {key: services['modeling']['environment'][key] for key in MODELING_CURRENT_KEYS})
     urls = {'FRONTENDURL': origin, 'PROURL': origin, 'SELFURL': origin + '/api',
             'DATA_URL': origin + '/data'}
     for name in ('agent', 'excel'):
@@ -153,8 +174,12 @@ def configured_service(name: str, values: dict[str, str], origin: str, productio
             environment[key] = origin
         elif key == 'OPENBB_API_AUTH':
             environment[key] = 'false'
+        elif key in MODELING_DEFAULTS:
+            environment[key] = MODELING_DEFAULTS[key]
         else:
             environment[key] = required(values, key)
+    if name == 'modeling' and any(key in values for key in MODELING_PREVIOUS_KEYS):
+        environment.update({key: required(values, key) for key in MODELING_PREVIOUS_KEYS})
     spec['environment'] = environment
     return spec
 

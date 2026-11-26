@@ -141,19 +141,19 @@ Each task requires fresh verification and independent review before its checkbox
   - _Boundary: Cross-repository acceptance integration using existing browser fixtures and real-model evidence; controller-owned joins._
   - _Depends: 11; separate real-model spec completion and verified provider inputs_
   - _Requirements: 4.2, 4.5, 5.1, 5.3, 6.2, 6.3, 6.5_
-- [ ] 12.2 Build the independent model image and Compose integration
+- [x] 12.2 Build the independent model image and Compose integration
   - Add Dagger-only model image build and independent lock, plus Compose service, relative bind and runtime inventory. Keep unchanged OpenBB images pinned.
   - Done: assembled image/contract set passes startup, authenticated model access and unavailable-model/direct-data behavior; pull-only candidate procedure works. No placeholder model image.
   - Completion gate: changed build/runtime production files pass 400 physical / 300 logical / 50 per function, with explicit generated exclusions.
-  - _Boundary: Explicit cross-repository integration: model image belongs to modeling repo; Compose/gateway/runtime inventory belongs to controller in QOpenBB._
+  - _Boundary: QOpenBB packages the existing analytics implementation as a separate image and owns the Compose integration and runtime inventory._
   - _Depends: 12.1_
   - _Requirements: 5.4, 6.5_
 - [ ] 12.3 Publish the accepted feature milestone
   - Extend portable publication commands and thin CI wrappers to publish the independently versioned image and hash-verified contracts. Pin counterpart revisions and run the integrated checks against the actual final image set; record any candidate-versus-published verification distinction.
   - Done: tagged release assets and pulls match the manifest, numerical/consumer evidence is linked and checkboxes/docs/breadth are updated. Breaking contracts retain supported versions or an accepted migration; absent/skipped checks stay open. Owner-server acceptance requires its own evidence.
   - Completion gate: any changed publication code passes 400 physical / 300 logical / 50 per function; evidence/docs remain excluded.
-  - _Boundary: Controller publication and integration identities; model repo owns its release artifacts. No provider or financial formula changes._
+  - _Boundary: Controller publication and integration identities; QOpenBB owns the independently versioned modeling image. No provider or financial formula changes._
   - _Depends: 12.2_
   - _Requirements: 1.4, 4.4, 5.1, 5.2, 5.3, 5.4, 6.1, 6.2_
 
-Parallel wave: after task 3 freezes the shared contracts, tasks 4.1/5/6 have disjoint writable scopes. At most two implementers run concurrently, keeping a slot for independent review. Task 7 joins them; later integration remains sequential. Task 12 remains blocked on a real model; it cannot be marked complete through the foundation plan alone.
+Parallel wave: after task 3 freezes the shared contracts, tasks 4.1/5/6 have disjoint writable scopes. At most two implementers run concurrently, keeping a slot for independent review. Task 7 joins them; later integration remains sequential. Task 12 remains open until publication and acceptance of the released image set.

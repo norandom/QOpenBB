@@ -72,7 +72,7 @@ Send the Workspace bearer session to the same-origin `/modeling/v1` routes. Work
 
 When provisioning the private listener, configure the same dedicated `QFM_IDENTITY_CURRENT_KID` and `QFM_IDENTITY_CURRENT_SECRET` in Workspace and the listener. Generate at least 32 random bytes for the secret and supply their encoded text to both processes. Only the listener needs the optional `QFM_IDENTITY_PREVIOUS_KID` and `QFM_IDENTITY_PREVIOUS_SECRET`. To rotate, first configure the listener to accept the new current and outgoing previous key, then switch the Workspace signer. Retire the previous key after all signers have switched and their outstanding 60-second assertions have expired.
 
-The bridge forwards to `http://modeling:6901/modeling/v1` on the private network. The current two-service Compose file supplies the Workspace signing configuration. The modeling listener's image and Compose service are scheduled for foundation task 12.2.
+The bridge forwards to `http://modeling:6901/modeling/v1` on the private network. The current two-service Compose file supplies the Workspace signing configuration. Enable the independent listener with the [pull-only Modeling candidate procedure](modeling-deployment.md).
 
 ## Evaluate and reopen an issuer FCF yield
 

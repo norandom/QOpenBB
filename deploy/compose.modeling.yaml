@@ -1,0 +1,38 @@
+# Layer onto compose.yaml from the deployment root.
+services:
+  modeling:
+    image: ${MODELING_IMAGE:?Set MODELING_IMAGE to the approved modeling image}
+    restart: unless-stopped
+    user: "10001:10001"
+    expose:
+      - "6901"
+    environment:
+      QFM_IDENTITY_CURRENT_KID: ${QFM_IDENTITY_CURRENT_KID:?Set the shared modeling key ID}
+      QFM_IDENTITY_CURRENT_SECRET: ${QFM_IDENTITY_CURRENT_SECRET:?Set the shared modeling signing secret}
+      QFM_IDENTITY_PREVIOUS_KID:
+      QFM_IDENTITY_PREVIOUS_SECRET:
+      QOPENBB_MODEL_RUN_DIR: /data/modeling
+      QOPENBB_MODEL_DATA_ORIGIN: http://data-api:6900
+    volumes:
+      - type: bind
+        source: ./data/modeling
+        target: /data/modeling
+        bind:
+          create_host_path: false
+    healthcheck:
+      # A mounted route must answer with the private listener's authentication challenge.
+      test:
+        - CMD
+        - python
+        - -c
+        - |
+          import http.client
+          import os
+          connection = http.client.HTTPConnection("127.0.0.1", 6901, timeout=3)
+          connection.request("GET", "/modeling/v1/models")
+          assert connection.getresponse().status == 401
+          assert os.access(os.environ["QOPENBB_MODEL_RUN_DIR"], os.W_OK | os.X_OK)
+      interval: 5s
+      timeout: 4s
+      start_period: 15s
+      retries: 6
