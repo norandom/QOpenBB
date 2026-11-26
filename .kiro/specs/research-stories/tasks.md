@@ -95,7 +95,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 3.4_
   - _Requirements: 1.4, 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4, 4.2_
 
-- [ ] 4. Accept the packaged analyst journey
+- [x] 4. Accept the packaged analyst journey
 - [x] 4.1 Integrate the accepted fork and discover the story tests
   - Verify the actual owned fork revision, promote its source pin and stage all maintained inputs. Build candidate images through Dagger. Extend Playwright discovery and the packaged runner for story selection and same-session modeling-service restart. Confirm both issuer and story journeys remain discoverable.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
@@ -117,7 +117,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 4.2_
   - _Requirements: 3.3, 3.4, 4.1, 4.2, 4.3_
 
-- [ ] 4.4 Reconcile acceptance evidence and rollback
+- [x] 4.4 Reconcile acceptance evidence and rollback
   - Run the combined complexity gate over final joined revisions. Record actual test paths and outcomes for all 16 criteria in the breadth map, with image digests, sanitized evidence, source limitations and the previous working image set. Leave skipped live cases open. Obtain independent acceptance of the joined evidence.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Controller, breadth map, evidence and final shared-module audit_

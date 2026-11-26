@@ -36716,15 +36716,23 @@
       "transform": "exact-byte-copy"
     },
     {
-      "sourcepath": "artifacts/research-stories/group4/packaged-lmq5wk3m/story-selection/browser-output/story-selection-packaged-r-897dc-dence-and-keyboard-recovery/story-selection.json",
-      "sourceSHA256": "857cada0515c07ad1a6c73993786d9e2399f252192b784003e667755199f4994",
+      "sourcepath": "artifacts/research-stories/group4/final/story-persistence.json",
+      "sourceSHA256": "087f4e0accbb0baaf0458301ac084bc83cb01cd4f43a9cfd68f608dfb7d56db5",
+      "publishedpath": "artifacts/reviewed/research-stories/story-persistence.json",
+      "publishedSHA256": "087f4e0accbb0baaf0458301ac084bc83cb01cd4f43a9cfd68f608dfb7d56db5",
+      "bytes": 3212,
+      "transform": "exact-byte-copy"
+    },
+    {
+      "sourcepath": "artifacts/research-stories/group4/final/packaged-o2376s17/story-selection/browser-output/story-selection-packaged-r-897dc-dence-and-keyboard-recovery/story-selection.json",
+      "sourceSHA256": "14490d88dd5fee1101a8b6efba8d95f41f062ce3b5f7ffd84e9f90116eccbe09",
       "publishedpath": "artifacts/reviewed/research-stories/story-selection.json",
-      "publishedSHA256": "857cada0515c07ad1a6c73993786d9e2399f252192b784003e667755199f4994",
+      "publishedSHA256": "14490d88dd5fee1101a8b6efba8d95f41f062ce3b5f7ffd84e9f90116eccbe09",
       "bytes": 4807,
       "transform": "exact-byte-copy"
     },
     {
-      "sourcepath": "artifacts/research-stories/group4/packaged-lmq5wk3m/story-selection/browser-output/story-selection-packaged-r-897dc-dence-and-keyboard-recovery/story-fmp-price-light.png",
+      "sourcepath": "artifacts/research-stories/group4/final/packaged-o2376s17/story-selection/browser-output/story-selection-packaged-r-897dc-dence-and-keyboard-recovery/story-fmp-price-light.png",
       "sourceSHA256": "ca557b67f041f6be062e78d6c38475b62b79a2328178bba120a5c3863bcd6691",
       "publishedpath": "artifacts/reviewed/research-stories/story-fmp-price-light.png",
       "publishedSHA256": "ca557b67f041f6be062e78d6c38475b62b79a2328178bba120a5c3863bcd6691",
@@ -36732,7 +36740,7 @@
       "transform": "exact-byte-copy"
     },
     {
-      "sourcepath": "artifacts/research-stories/group4/packaged-lmq5wk3m/story-selection/browser-output/story-selection-packaged-r-897dc-dence-and-keyboard-recovery/story-fmp-risk-dark.png",
+      "sourcepath": "artifacts/research-stories/group4/final/packaged-o2376s17/story-selection/browser-output/story-selection-packaged-r-897dc-dence-and-keyboard-recovery/story-fmp-risk-dark.png",
       "sourceSHA256": "72d4caaf3d497032446f993883350fd4b1afd1cf6a876ccba4503a0a56afb0d5",
       "publishedpath": "artifacts/reviewed/research-stories/story-fmp-risk-dark.png",
       "publishedSHA256": "72d4caaf3d497032446f993883350fd4b1afd1cf6a876ccba4503a0a56afb0d5",
@@ -36740,11 +36748,11 @@
       "transform": "exact-byte-copy"
     },
     {
-      "sourcepath": "artifacts/research-stories/group4/final/story-persistence.json",
-      "sourceSHA256": "087f4e0accbb0baaf0458301ac084bc83cb01cd4f43a9cfd68f608dfb7d56db5",
-      "publishedpath": "artifacts/reviewed/research-stories/story-persistence.json",
-      "publishedSHA256": "087f4e0accbb0baaf0458301ac084bc83cb01cd4f43a9cfd68f608dfb7d56db5",
-      "bytes": 3212,
+      "sourcepath": "artifacts/research-stories/group4/final/packaged-acceptance.md",
+      "sourceSHA256": "5a3dcf54d2563f33dac2a95493c4b457358cdf106838499bdf0f1c835297404a",
+      "publishedpath": "artifacts/reviewed/research-stories/packaged-acceptance.md",
+      "publishedSHA256": "5a3dcf54d2563f33dac2a95493c4b457358cdf106838499bdf0f1c835297404a",
+      "bytes": 5417,
       "transform": "exact-byte-copy"
     }
   ],
@@ -37471,7 +37479,7 @@
     }
   ],
   "completeness": "Selected SQLite 4.6-4.9 and chart design/editor/theme evidence only; earlier task backlog and raw private dependencies excluded. Manifest excludes its own hash to avoid self-reference. Company Research source, local runtime and alpha publication acceptance are included with their recorded scope limitations. FMP Batch A task 1.1 foundation review is included; no endpoint/live acceptance. Task 1.2 A1 offline contracts are independently accepted; live and consumer acceptance remain pending. Task 1.3 A2 offline contracts are independently accepted; production and live acceptance remain pending. Task 1.4 contract/admission architecture freeze is independently accepted; runtime admission and final emitter exception remain pending. Task 2.1 SDK admission is independently reviewed and passes the committed-source combined gate with five exact no-growth emitter exceptions; HTTP and production endpoint joins remain pending. A later public-entry probe reopened task 2.1: quarterly value aliases fail before Container for six periodic variants; repair is pending and HTTP acceptance is paused. The supplied-value correction is now independently approved and task 2.1 re-accepted: 186 tests and committed-source 111-file gate passed at API403323aee033dfcd30b7b24dda5f0f5efc35a339. HTTP resumed; its acceptance remains pending. Task 2.2 HTTP admission independently accepted with 399 joined checks, 12 reviewer probes and a clean combined gate; dedicated variants only. Task 2.3 independently accepted with 255 shared checks,22 independent probes and clean111-file gate; dedicated interfaces frozen for adapter fan-out. Shared empty-array opt-in correction accepted with494 compatibility checks,44 independent probes and final112-file gate; baseline defaults and frozen admission preserved. Task 3.6 historical_market_cap is independently accepted offline; production and live joins remain pending. Task 3.1 analyst_estimates is independently accepted offline; production and live joins remain pending. Task 3.7 share_statistics is independently accepted offline; production and live joins remain pending. Task 3.2 price_target is independently accepted offline; production and live joins remain pending. Task 3.8 equity_quote is independently accepted offline; production and live joins remain pending. Task 3.3 price_target_consensus is independently accepted offline; production and live joins remain pending. Task 3.9 income_statement_growth is independently accepted offline; production and live joins remain pending. Task 3.4 revenue_business_line is independently accepted offline; production and live joins remain pending. Task 3.10 balance_sheet_growth is independently accepted offline; production and live joins remain pending. Task 3.5 revenue_geographic is independently accepted offline; production and live joins remain pending. Task 3.11 cash_flow_growth is independently accepted offline; production and live joins remain pending. Task 4.1 All eleven additions and ten baseline FMP models are registered offline; five focused checks and independent source-pin probes passed. Exact API source pins agree; the 127-file historical batch audit and 763-file full maintained snapshot passed without violations. Packaged, live and consumer acceptance remain pending. Task 4.2 Actual production SDK/HTTP/OBBject and financial discovery join accepted: 97 worker checks, 45 independent actual-join checks, 71 pipeline checks and seven Linux symlink probes passed. Shared regression initially passed 296 with one outdated historical-proof assertion; the narrow correction passed the original case and three independent false-evidence attacks. Full maintained snapshot passed 763 files. Windows symlink privilege failures remain recorded; no live or candidate-image acceptance is claimed. Task 4.3 Generated and independently reviewed 22 native dataset/widget definitions plus the retained Company Research renderer from exact generation image 58686a7e8be19990181ad534b411f95f970d013d6d01811e46da0c06cf5e7769. Baseline widgets, routes, datasets and nonstarter apps are unchanged. The initial 151-pass scope had three test assumptions repaired and rechecked; follow-up suites passed 37, 34 and 17 checks, and the independent opt-in image test plus 22 invalid-query mutations passed. Six generated catalogs matched. Final candidate/live/browser/publication gates remain pending. Task 5.1 Final local API and Workspace candidate images built through Dagger from committed source and loaded through portable commands. Independent exact-image harness probes passed 32 simulated nonempty acquisitions, 21 native HTTP checks, 12 mutation probes and 16 unit checks. Actual isolated Compose readiness verified served UTF-8 schema, canonical plus gallery catalogs, installed package origins and one guarded API process with zero provider requests and zero denials. Initial harness SDK/dependency/null-shape and readiness expectation failures remain recorded; application images were unchanged. Live, browser and CI publication acceptance remain pending. Cash-flow growth source route correction independently reviewed; original failed live attempts retained and corrected candidate live checks pending. Task 5.2 All eleven endpoints have nonempty financial comparison evidence: 29 source-identical prior cases plus three corrected cash-flow cases, 1019 rows and 5052 independent source-fact checks. Original three wrong-route failures remain consumed. Cumulative 35/48 FMP requests, zero FRED and zero guard denials. Browser and publication remain pending. Task 5.3 Four representative local widgets passed eight actual acquisitions: retained initial four display/CSV/native-save cases plus fresh-context reopen four; 70 rows and 372 independently checked financial/identity facts, four CSV exports. Seven failed browser attempts remain retained; the accepted initial journey includes two genuine pre-I/O 422 responses. Same guarded process ends at 43/48 FMP, FRED 0 and zero denials. No eleven-widget, App-template, later CI-image or deployment claim. Task 5.4 Exact-source Linux push check 44131419572 passed for root 32d1140590eac95cd3f4af890249b7ab6d19f832: 465 passed, 12 skipped and one deselected across the configured 21-file delivery selection (aggregate outcomes). Final consumer evidence retains 207 passed/three failed/one skipped plus all three repaired nodes passing. Fresh complexity covers 763 files with zero errors/violations; native Node/TypeScript passed. Sanitized mirror verifies 51 additions and all 4440 historical entries/118 archives. Eleven API models and four representative widgets retain actual evidence; seven widgets remain unknown. No extra financial requests: 43/48 remains consumed. CI image publication and verification remain pending. Task 5.5 Published alpha-44132016951-1 from exact root 32d1140590eac95cd3f4af890249b7ab6d19f832: three anonymous assets, six anonymous pulls and exact CI provenance verified. Network-none API passed three synthetic cases with zero real sends. Sixth isolated pair attempt passed packaged health/config/login/wrong-password/private-state/log checks through owned container-local nginx; five failures preserved and cleanup verified. Windows host-loopback remains unverified; no CI financial browser or deployment claim. Live usage remains 43/48, eleven API models/four local widgets accepted; seven widgets unknown.",
-  "total_payload_bytes": 171935546,
+  "total_payload_bytes": 171940963,
   "archived_entries": [
     {
       "sourcepath": "artifacts/task-2.47/implementer/capture.mjs",

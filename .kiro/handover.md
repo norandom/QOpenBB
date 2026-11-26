@@ -1,18 +1,8 @@
 # QOpenBB session handover
 
-Updated 2026-11-26. **Resume at Research Stories task 4.1.** Groups 1 through 3 of the Commodities versus Technology story are complete (13 of 17 tasks). The four remaining tasks cover packaged acceptance. [Approved tasks](specs/research-stories/tasks.md)
+Updated 2026-11-26. Research Stories completed all 17 tasks. The local Ubuntu candidate at Workspace revision `eeb11a2` passed the catalog, dated financial evidence, outage recovery, fresh login and export journeys. The previous public modeling release remains the rollback image set. [Candidate and rollback identities](../artifacts/reviewed/research-stories/packaged-acceptance.md) · [Accepted tasks](specs/research-stories/tasks.md)
 
-## Next session
-
-1. **4.1. Build the candidate.** Group 3 closed at controller commit `91b71ff` on `main`. Verify Workspace commit `3c08c76b2980ec47dd3cc1dcdd50de15e4590aa4` on `qopenbb/research-stories`, promote that source pin and stage the maintained inputs. Build the candidate images through Dagger. Extend the packaged runner for story selection and same-session modeling-service restart. Confirm Playwright discovers both the issuer and story journeys.
-2. **4.2 and 4.3. Exercise the packaged App on Ubuntu.** Verify keyboard selection, dated financial evidence and recovery from insufficient history. Then test a modeling outage, retry, save, fresh-login reopen and export against the original run.
-3. **4.4. Close acceptance.** Record image digests, the rollback image set and results for all 16 criteria in the breadth map. Run the final complexity check and obtain independent review. [Group 4 tasks](specs/research-stories/tasks.md)
-
-## Evidence carried forward
-
-At the accepted Workspace revision, 95 Workspace tests and both controller contract tests passed. The complexity check covered 240 files with zero violations. Headless Chromium exercised both themes, keyboard selection and saved chart settings in a component harness with supplied authentication and modeling responses. The Workspace-wide typecheck still reports baseline diagnostics. [Reviewed evidence and screenshots](../artifacts/reviewed/research-stories/native-workspace.md)
-
-The November 13 captured run showed DBC ahead of XLK by **11.28 percentage points** on price return. The available DFII10 observations could not establish a real-yield change by the cutoff. Task 4.2 should verify that the packaged App explains the missing macro context and retains the ETF verdict. [Source qualification](specs/research-stories/source-qualification.md)
+The November 13 DBC/XLK price-return spread was +11.28225 percentage points. Both DFII10 endpoints were withheld at the historical cutoff. The original runs and chart settings survived a controlled source revision. [Selection evidence](../artifacts/reviewed/research-stories/story-selection.json) · [Reopen and export evidence](../artifacts/reviewed/research-stories/story-persistence.json)
 
 The later DCF drill-down depends on Batch C design, task approval and verified provider DCF, custom DCF and as-reported statement inputs. [FMP expansion plan](specs/market-data-integrations/fmp-expansion-plan.md)
 
