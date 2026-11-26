@@ -45,3 +45,15 @@ pipeline/.venv/bin/python -m qopenbb_ci.financial_compat \
 ```
 
 A compatible result requires both structural compatibility and agreement with the financial expectations pinned for the saved-output dashboard. The synthetic cases exercise the difference between a negative amount, zero and a withheld value. They also cover partial results, stale verification, invalid input and an inaccessible saved run. A blocked result identifies the affected consumer and findings. Retain the adopted interface or review and adopt a versioned migration before promoting the change.
+
+## Verify the impact of a committed change
+
+Run the source-level integration check from a clean candidate checkout. Supply the revision immediately before the change range. The prototype workflow uses the push's previous tip or the pull request's base revision. A manual or release run without either uses the adopted contract revision.
+
+```bash
+bash pipeline/ci.sh modeling-impact "$base" artifacts/modeling-impact/report.json
+```
+
+The report identifies changed financial contracts, owning requirements, pytest selectors and the outcome of each selected check. An unresolved change triggers broader checks and keeps the decision blocked until its mapping is repaired. Missing and skipped tests keep the affected capability unverified. An unaffected range is reported separately.
+
+For an affected range, the gate exports the candidate from its checked-out source and exercises the saved-output endpoint. The report retains the candidate and adopted contract identities, the response evidence digest, the source lock digest and the Workspace and data API fork revisions. The adjacent evidence file contains synthetic financial responses. These checks run against source packages. Image and browser acceptance have their own verification steps.

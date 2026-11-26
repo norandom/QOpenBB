@@ -2,10 +2,10 @@
 # Portable entry point: dependencies are provisioned outside image builds.
 set -eu
 cd "$(dirname "$0")/.."
+export QOPENBB_RUNTIME_READER="$PWD/verification/runtime-descriptor.ts"
+export QOPENBB_RUNTIME_PYTHON="$PWD/pipeline/.venv/bin/python"
 case "${1:-}" in
   check)
-    export QOPENBB_RUNTIME_READER="$PWD/verification/runtime-descriptor.ts"
-    export QOPENBB_RUNTIME_PYTHON="$PWD/pipeline/.venv/bin/python"
     pipeline/.venv/bin/python -m qopenbb_ci.quality_cli --output artifacts/ci-quality.json
     PYTHONPATH="$PWD/services/data-api${PYTHONPATH:+:$PYTHONPATH}" \
     pipeline/.venv/bin/python -m pytest -c pipeline/pyproject.toml \
@@ -19,11 +19,15 @@ case "${1:-}" in
       tests/delivery/test_compose_lifecycle.py tests/delivery/test_workspace_runtime.py \
       tests/delivery/test_workspace_smoke.py tests/delivery/test_verification.py \
       tests/delivery/test_portable_runtime.py tests/delivery/test_financial_budget.py \
-      tests/contracts/test_modeling_adoption.py tests/contracts/test_financial_compat*.py tests/factors -n0 -m 'not live'
+      tests/contracts/test_modeling_adoption.py tests/contracts/test_financial_compat*.py tests/contracts/test_modeling_impact*.py tests/factors -n0 -m 'not live'
+    ;;
+  modeling-impact)
+    PYTHONPATH="$PWD/services/data-api${PYTHONPATH:+:$PYTHONPATH}" \
+      pipeline/.venv/bin/python -m qopenbb_ci.financial_impact --base "$2" --output "$3"
     ;;
   build)
     shift
     pipeline/.venv/bin/python -m qopenbb_ci.build_cli "$@"
     ;;
-  *) echo 'usage: pipeline/ci.sh check | build [build_cli arguments]' >&2; exit 2 ;;
+  *) echo 'usage: pipeline/ci.sh check | modeling-impact BASE OUTPUT | build [build_cli arguments]' >&2; exit 2 ;;
 esac

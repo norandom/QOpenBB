@@ -17,8 +17,15 @@
     },
     {
       "spec": "financial-modeling",
-      "include": ["services/data-api/qopenbb_data/modeling/service/**", "pipeline/qopenbb_ci/modeling_*.py", "pipeline/qopenbb_ci/financial_compat*.py", "contracts/consumers/financial-modeling/**"],
+      "include": ["services/data-api/qopenbb_data/modeling/service/**", "pipeline/qopenbb_ci/modeling_*.py", "pipeline/qopenbb_ci/financial_compat*.py", "pipeline/qopenbb_ci/financial_impact*.py", ".kiro/modeling-impact.toml", "contracts/consumers/financial-modeling/**"],
       "files": [
+        ".kiro/modeling-impact.toml",
+        "pipeline/qopenbb_ci/financial_impact.py",
+        "pipeline/qopenbb_ci/financial_impact_documents.py",
+        "pipeline/qopenbb_ci/financial_impact_manifest.py",
+        "pipeline/qopenbb_ci/financial_impact_map.py",
+        "pipeline/qopenbb_ci/financial_impact_run.py",
+        "pipeline/qopenbb_ci/financial_impact_run_worker.py",
         "pipeline/qopenbb_ci/financial_compat.py",
         "pipeline/qopenbb_ci/financial_compat_cases.py",
         "pipeline/qopenbb_ci/financial_compat_inputs.py",

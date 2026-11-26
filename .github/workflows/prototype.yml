@@ -60,6 +60,16 @@ jobs:
           pipeline/.venv/bin/python -m qopenbb_ci.image_cli acquire --lock sources.lock.json --destination vendor
           test ! -e vendor/data-api
           mv vendor/data_api vendor/data-api
+      - name: Verify affected modeling contracts
+        env:
+          IMPACT_BASE: ${{ github.event.pull_request.base.sha || github.event.before || 'e0ed60b95740c950e93080d113dde8693fd15c8d' }}
+        run: bash pipeline/ci.sh modeling-impact "$IMPACT_BASE" artifacts/modeling-impact/report.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: modeling-impact
+          path: artifacts/modeling-impact/*.json
+          if-no-files-found: warn
       - name: Focused portable checks
         run: bash pipeline/ci.sh check
       - name: Install pinned Dagger CLI
