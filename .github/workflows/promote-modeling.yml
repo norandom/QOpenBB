@@ -1,0 +1,87 @@
+name: Promote accepted modeling images
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Tag of the transfer draft release and the promoted images
+        required: true
+        type: string
+      accepted_revision:
+        description: Full accepted Git commit SHA targeted by the draft
+        required: true
+        type: string
+      accepted_inputs_sha256:
+        description: SHA-256 of the accepted transfer-SHA256SUMS asset
+        required: true
+        type: string
+      data_api_image:
+        description: Accepted data API repository@sha256 reference
+        required: true
+        type: string
+permissions: {}
+jobs:
+  promote:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    concurrency:
+      group: modeling-publication
+      cancel-in-progress: false
+    permissions:
+      # GitHub exposes draft release listings only to identities with push access.
+      contents: write
+      packages: write
+    env:
+      RELEASE_TAG: ${{ inputs.release_tag }}
+      PYTHONPATH: pipeline
+      ACCEPTED_INPUTS_SHA256: ${{ inputs.accepted_inputs_sha256 }}
+      ACCEPTED_REVISION: ${{ inputs.accepted_revision }}
+      DATA_API_IMAGE: ${{ inputs.data_api_image }}
+      PRIOR_DATA_API_IMAGE: ghcr.io/norandom/qopenbb-data-api@sha256:79d46d09a913a1b6583ae823961ca87b9e4a6bb112739ca738567b131ca79a73
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Download accepted draft assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$DATA_API_IMAGE" = "$PRIOR_DATA_API_IMAGE"
+          [[ "$RELEASE_TAG" =~ ^modeling-[A-Za-z0-9_.-]+$ ]]
+          [[ "$ACCEPTED_REVISION" =~ ^[0-9a-f]{40}$ ]]
+          draft="$(gh release view --json isDraft,targetCommitish -- "$RELEASE_TAG")"
+          jq -e --arg revision "$ACCEPTED_REVISION" '.isDraft and .targetCommitish == $revision' <<< "$draft"
+          tag_ref="refs/tags/$RELEASE_TAG"
+          tags="$(git ls-remote origin "$tag_ref" "$tag_ref^{}")"
+          if [[ -n "$tags" ]]; then
+            commit="$(awk -v ref="$tag_ref" '$2 == ref {tag = $1} $2 == ref "^{}" {peeled = $1} END {print peeled ? peeled : tag}' <<< "$tags")"
+            test "$commit" = "$ACCEPTED_REVISION"
+          fi
+          gh release download --dir "$RUNNER_TEMP/modeling-transfer" \
+            --pattern transfer-SHA256SUMS --pattern workspace.tar --pattern workspace-load.json \
+            --pattern modeling.tar --pattern modeling-load.json -- "$RELEASE_TAG"
+      - name: Verify accepted transfer
+        run: |
+          python3 -c 'import sys; from pathlib import Path; from qopenbb_ci.publish_model_images import verify_transfer; verify_transfer(Path(sys.argv[1]), sys.argv[2])' \
+            "$RUNNER_TEMP/modeling-transfer" "$ACCEPTED_INPUTS_SHA256"
+      - name: Promote accepted images
+        env:
+          GHCR_TOKEN: ${{ github.token }}
+          REGISTRY_USER: ${{ github.actor }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$GHCR_TOKEN" | docker login ghcr.io -u "$REGISTRY_USER" --password-stdin
+          unset GHCR_TOKEN
+          python3 -m qopenbb_ci.publish_model_images --input "$RUNNER_TEMP/modeling-transfer" --output "$RUNNER_TEMP/modeling-publication" \
+            --registry-namespace ghcr.io/norandom --tag "$RELEASE_TAG" \
+            --data-api-image "$DATA_API_IMAGE" --accepted-inputs-sha256 "$ACCEPTED_INPUTS_SHA256"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: modeling-publication
+          path: ${{ runner.temp }}/modeling-publication/*.json
+          if-no-files-found: ignore
+      - name: Log out of registry
+        if: always()
+        run: docker logout ghcr.io

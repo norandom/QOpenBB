@@ -25,8 +25,8 @@ def step(name):
 
 def expression(line, context):
     source = line.strip().removeprefix("${{").removesuffix("}}").strip()
-    return eval(source.replace("&&", " and ").replace("||", " or "),
-                {"__builtins__": {}}, context)
+    return eval(source.replace("&&", " and ").replace("||", " or ").replace("!startsWith", "not startsWith"),
+                {"__builtins__": {}, "startsWith": lambda value, prefix: value.lower().startswith(prefix)}, context)
 
 
 @pytest.mark.parametrize("event,ref,build,prerelease,checks,publishes", [
@@ -40,7 +40,7 @@ def expression(line, context):
 ])
 def test_event_policy(event, ref, build, prerelease, checks, publishes):
     context = {"github": SimpleNamespace(event_name=event, ref=ref,
-               event=SimpleNamespace(release=SimpleNamespace(prerelease=prerelease))),
+               event=SimpleNamespace(release=SimpleNamespace(prerelease=prerelease, tag_name=ref.removeprefix("refs/tags/")))),
                "inputs": SimpleNamespace(build_images=build)}
     candidate = job_text("candidate")
     check_condition = re.search(r"^    if: (.+)$", candidate, re.M)[1]

@@ -10,7 +10,11 @@ import tempfile
 import re
 
 from qopenbb_ci.container_command import container_command
-from qopenbb_ci.staging import sha256
+
+
+def sha256(path: Path) -> str:
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
 def manifest_digest(bundle: tarfile.TarFile, config_bytes: bytes) -> str | None:

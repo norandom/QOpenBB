@@ -1,0 +1,49 @@
+name: Finalize verified modeling prerelease
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Modeling tag whose published images passed acceptance
+        required: true
+        type: string
+      accepted_revision:
+        description: Full source revision of the accepted image set
+        required: true
+        type: string
+      inventory_sha256:
+        description: SHA-256 of sorted asset names and digests verified by the controller
+        required: true
+        type: string
+
+permissions: {}
+jobs:
+  finalize:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    concurrency:
+      group: modeling-publication
+      cancel-in-progress: false
+    steps:
+      - name: Publish the verified draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ inputs.release_tag }}
+          REV: ${{ inputs.accepted_revision }}
+          INVENTORY: ${{ inputs.inventory_sha256 }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$TAG" =~ ^modeling-v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          [[ "$REV" =~ ^[a-f0-9]{40}$ && "$INVENTORY" =~ ^[a-f0-9]{64}$ ]]
+          test "$(gh api "repos/$GH_REPO/git/ref/tags/$TAG" --jq '.object.type + " " + .object.sha')" = "commit $REV"
+          gh release view "$TAG" --json isDraft,isPrerelease,targetCommitish,assets > draft.json
+          jq -e --arg rev "$REV" '.isDraft and .isPrerelease and .targetCommitish == $rev and
+            (.assets | length > 0 and all(.[]; .state == "uploaded" and
+            (.digest | test("^sha256:[a-f0-9]{64}$"))))' draft.json >/dev/null
+          jq -r '.assets | sort_by(.name)[] | [.name,.digest] | @tsv' draft.json > inventory.tsv
+          echo "$INVENTORY  inventory.tsv" | sha256sum -c -
+          gh release edit "$TAG" --draft=false --prerelease --latest=false

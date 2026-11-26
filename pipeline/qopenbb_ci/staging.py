@@ -8,16 +8,12 @@ import re
 
 from qopenbb_ci.source_filter import excluded, select_source, source_scope, walk_owned
 from pathlib import PurePosixPath
+from qopenbb_ci.images import sha256
 from qopenbb_ci.sources import git, identity
 from qopenbb_ci.provenance import parse_provenance
 from qopenbb_ci.runtime_inputs import copy_runtime, verify_runtime
 
 SMOKE = 'print("QOpenBB foundation smoke; no application services")\n'
-
-
-def sha256(path: Path) -> str:
-    with path.open('rb') as stream:
-        return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
 def stage_source(root: Path, destination: Path, source: str, policy: dict, lock: dict) -> dict:

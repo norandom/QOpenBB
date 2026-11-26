@@ -18,11 +18,11 @@ concurrency:
   cancel-in-progress: false
 jobs:
   candidate:
-    if: github.event_name != 'release' || github.event.release.prerelease
+    if: github.event_name != 'release' || (github.event.release.prerelease && !startsWith(github.event.release.tag_name, 'modeling-'))
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     env:
-      BUILD_IMAGES: ${{ (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.build_images) || (github.event_name == 'release' && github.event.release.prerelease) }}
+      BUILD_IMAGES: ${{ (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.build_images) || (github.event_name == 'release' && (github.event.release.prerelease && !startsWith(github.event.release.tag_name, 'modeling-'))) }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -118,7 +118,7 @@ jobs:
           if-no-files-found: error
   publish-alpha:
     needs: candidate
-    if: (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.build_images) || (github.event_name == 'release' && github.event.release.prerelease)
+    if: (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.build_images) || (github.event_name == 'release' && (github.event.release.prerelease && !startsWith(github.event.release.tag_name, 'modeling-')))
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     concurrency:

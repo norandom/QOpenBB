@@ -63,18 +63,46 @@ def remote_identity(reference: str) -> dict:
     return {'manifest_digest': digest, 'config_digest': config, 'os': 'linux', 'architecture': 'amd64'}
 
 
-def publish(archive: Path, verified_load: dict, repository: str, tag: str) -> dict:
-    reference = target_reference(repository, tag)
+def publication_inputs(archive: Path, verified_load: dict,
+                       *, expected_service: str | None = None) -> tuple[dict, dict]:
     identity = inspect_archive(archive)
     if any(verified_load.get(key) != value for key, value in identity.items()):
         raise ValueError('supplied load report differs from archive')
     if (identity['architecture'], identity['os']) != ('amd64', 'linux'):
         raise ValueError('linux/amd64 required')
-    sources = verify_sources(identity)
-    if not re.fullmatch(DIGEST, verified_load.get('loaded_image_id', '')):
+    labels = identity['labels']
+    if expected_service is not None and labels.get('org.qopenbb.service') != expected_service:
+        raise ValueError('archive service differs from publication target')
+    if expected_service == 'modeling':
+        if labels.get('org.qopenbb.scope') != 'modeling-runtime' or any(
+            not re.fullmatch(r'[0-9a-f]{64}', labels.get('org.qopenbb.' + suffix, ''))
+            for suffix in ('runtime-inputs.sha256', 'runtime-lock.sha256')
+        ):
+            raise ValueError('modeling runtime provenance labels required')
+        sources = {}
+    else:
+        sources = verify_sources(identity)
+    accepted_id = verified_load.get('loaded_image_id', '')
+    if not re.fullmatch(DIGEST, accepted_id):
         raise ValueError('verified load identity required')
+    # Docker stores can report either the OCI manifest or image config as the local ID.
+    if expected_service is not None and accepted_id not in {
+        identity['image_config_digest'], identity['image_manifest_digest']
+    }:
+        raise ValueError('verified load identity required')
+    return identity, sources
+
+
+def publish(archive: Path, verified_load: dict, repository: str, tag: str,
+            *, expected_service: str | None = None) -> dict:
+    reference = target_reference(repository, tag)
+    identity, sources = publication_inputs(archive, verified_load, expected_service=expected_service)
     reloaded = load(archive, identity)
-    if reloaded['loaded_image_id'] != verified_load['loaded_image_id']:
+    allowed_ids = {verified_load['loaded_image_id']}
+    if expected_service is not None:
+        allowed_ids.update(digest for digest in (identity['image_config_digest'], identity['image_manifest_digest'])
+                           if digest is not None)
+    if reloaded['loaded_image_id'] not in allowed_ids:
         raise ValueError('reloaded image differs from supplied load report')
     docker('image', 'tag', reloaded['loaded_image_id'], reference)
     output = docker('image', 'push', reference)
@@ -89,6 +117,8 @@ def publish(archive: Path, verified_load: dict, repository: str, tag: str) -> di
         raise ValueError('immutable remote identity differs from pushed tag')
     return {'schema_version': 1, 'valid': True, 'reference': immutable,
             'tag_reference': reference, 'archive_sha256': identity['archive_sha256'],
+            'archive_manifest_digest': identity['image_manifest_digest'],
+            'accepted_load_image_id': verified_load['loaded_image_id'],
             'loaded_image_id': reloaded['loaded_image_id'], 'remote': remote,
             'service': identity['labels']['org.qopenbb.service'], 'sources': sources,
             'labels': identity['labels']}
