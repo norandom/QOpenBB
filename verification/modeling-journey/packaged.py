@@ -80,6 +80,11 @@ def exercise(root, compose, env, references, suite):
         after = snapshot()
         if before != after:
             raise ValueError("Story outage must preserve the running container identities")
+    elif suite == "story-selection":
+        browser(root, suite, origin, password, suite=suite)
+        after = snapshot()
+        if before != after:
+            raise ValueError("Story selection must preserve the running container identities")
     else:
         after = exercise_issuer(root, command, origin, password, before, snapshot)
     (root / "images.json").write_text(json.dumps({"before": before, "after": after}, indent=2))
@@ -151,6 +156,6 @@ if __name__ == "__main__":
         parser.add_argument(f"--{name}-image", required=True)
     parser.add_argument("--evidence", type=Path, required=True)
     parser.add_argument("--env-file", type=Path, default=ROOT / ".env")
-    parser.add_argument("--suite", choices=("issuer", "story"), default="issuer")
+    parser.add_argument("--suite", choices=("issuer", "story", "story-selection"), default="issuer")
     parser.add_argument("--local-images", action="store_true", help="Use already-built full local image content IDs")
     run(parser.parse_args())

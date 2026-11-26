@@ -46,6 +46,10 @@ pipeline/.venv/bin/python verification/modeling-journey/packaged.py \
 
 The story smoke checks the packaged app catalog and opens its default DBC/XLK selection while modeling is stopped. It starts the same modeling container, retries the comparison on the open dashboard and checks that the verified spread reaches the verdict. The runner records container identities and Playwright evidence under the run directory. Omit `--local-images` to use immutable registry references. The issuer suite remains the default.
 
+Use `--suite story-selection` with the same images and an ignored evidence directory for the financial evidence journey. On Ubuntu, one headless Chromium worker changes the proxy roles and date by keyboard. The journey compares the charts and dated drill-downs with the immutable runs read back through the authenticated bridge. It checks the January 13 short window and recovery, both Workspace themes, the spread verdict, and the November 13 DFII10 withholding. If the saved FRED run has eligible endpoint observations, it checks the endpoint chart and its dated rows.
+
+The browser writes a credential-free `story-selection.json` summary and representative FMP price and risk chart PNGs inside its run directory. The summary contains run IDs, counts, dates, value spreads and hashes. Screenshots contain only chart figures. The verdict and source checks use real provider acquisitions from the candidate.
+
 Run the preflight against a disposable Compose candidate built with Dagger and published only on a loopback port. The candidate needs the research story catalog, the authenticated modeling bridge and configured FMP and FRED entitlements. Set `STORY_ORIGIN` to the candidate's loopback HTTP origin with its explicit port. Pass the disposable login through `OPENBB_ADMIN_EMAIL` and `OPENBB_ADMIN_PASSWORD`.
 
 ```bash

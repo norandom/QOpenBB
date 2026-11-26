@@ -74,7 +74,10 @@ def browser(root, phase, origin, password, *, suite="issuer", change_service=Non
     env.update(WORKSPACE_FRONTEND_ORIGIN=origin, JOURNEY_PHASE=phase, JOURNEY_PASSWORD=password,
                JOURNEY_CHECKPOINT=str(root / "checkpoint.json"), WORKSPACE_EVIDENCE_ROOT=str(evidence),
                QOPENBB_PLAYWRIGHT_PACKAGE=str(HERE.parent / "node_modules/@playwright/test"))
-    spec = {"issuer": "analyst.spec.mts", "story": "story.spec.mts"}[suite]
+    spec = {
+        "issuer": "analyst.spec.mts", "story": "story.spec.mts",
+        "story-selection": "story-selection.spec.mts",
+    }[suite]
     command = ["node", HERE.parent / "node_modules/@playwright/test/cli.js",
                "test", "-c", HERE / "playwright.config.mts", spec]
     if change_service is None:

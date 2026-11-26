@@ -103,7 +103,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 3.5_
   - _Requirements: 1.1, 4.1, 4.2_
 
-- [ ] 4.2 Verify selections, evidence and keyboard access on Ubuntu
+- [x] 4.2 Verify selections, evidence and keyboard access on Ubuntu
   - In one isolated headless browser worker, open the catalog App, change each role and the date, compare displayed spread and dated rows to the same saved run, and exercise insufficient history followed by recovery. Inspect real FMP inputs for the price and risk charts. Verify the DFII10 endpoint chart when eligible and the dated withheld context with the retained verdict for November 13. Inspect both themes, text units, focus and console/network errors.
   - Evidence, fixtures or test cases only. Production size caps do not apply to these artifacts.
   - _Boundary: Packaged story browser journey, selection and financial evidence cases_

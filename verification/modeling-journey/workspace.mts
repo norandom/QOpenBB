@@ -1,4 +1,4 @@
-import type { Page } from "../node_modules/@playwright/test/index.js";
+import type { Page } from "../../vendor/workspace/terminalpro/node_modules/@playwright/test/index";
 import { expect } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/toolchain";
 
 export async function signIn(page: Page) {
