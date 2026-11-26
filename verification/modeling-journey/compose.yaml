@@ -1,0 +1,42 @@
+# Disposable Linux source acceptance. Release image assembly belongs to task 12.2.
+services:
+  workspace:
+    image: ${WORKSPACE_IMAGE:?}
+    ports:
+      - "127.0.0.1:${JOURNEY_PORT:?}:3000"
+    environment:
+      PUBLIC_URL: http://127.0.0.1:${JOURNEY_PORT}
+      OPENBB_ADMIN_EMAIL: analyst@example.com
+      OPENBB_ADMIN_PASSWORD: ${JOURNEY_PASSWORD:?}
+      QFM_IDENTITY_CURRENT_KID: journey
+      QFM_IDENTITY_CURRENT_SECRET: ${JOURNEY_SIGNER:?}
+    volumes:
+      - workspace-state:/data
+      - ${JOURNEY_FRONTEND:?}:/usr/share/nginx/html
+      - ../../vendor/workspace/backend-api/backend/main.py:/opt/code/main.py:ro
+      - ../../vendor/workspace/backend-api/backend/routers/modeling.py:/opt/code/routers/modeling.py:ro
+      - ../../vendor/workspace/backend-api/backend/api/modeling_identity.py:/opt/code/api/modeling_identity.py:ro
+      - ../../vendor/workspace/backend-api/backend/api/request_logging.py:/opt/code/api/request_logging.py:ro
+      - ../../vendor/workspace/lite/qopenbb-routes.conf.template:/usr/local/share/openbb/qopenbb-routes.conf.template:ro
+  modeling:
+    image: ${DATA_API_IMAGE:?}
+    user: "${JOURNEY_UID:?}:${JOURNEY_GID:?}"
+    working_dir: /source
+    entrypoint: [uvicorn, qopenbb_data.modeling.service.bootstrap:create_app, --factory, --host, 0.0.0.0, --port, "6901", --no-access-log]
+    environment:
+      QFM_IDENTITY_CURRENT_KID: journey
+      QFM_IDENTITY_CURRENT_SECRET: ${JOURNEY_SIGNER:?}
+      QOPENBB_MODEL_RUN_DIR: /model-state
+      POLARS_MAX_THREADS: "2"
+      PYTHONPATH: /source:/locked
+    volumes:
+      - ${JOURNEY_MODEL_STATE:?}:/model-state
+      - ../../services/data-api:/source:ro
+      - ${JOURNEY_DEPENDENCIES:?}:/locked:ro
+  data-api:
+    image: ${DATA_API_IMAGE:?}
+    environment:
+      FMP_API_KEY: ${FMP_API_KEY:?}
+      FRED_API_KEY: ${FRED_API_KEY:-}
+volumes:
+  workspace-state:

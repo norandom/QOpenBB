@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "default_case": "sap-de-live",
+  "cases": {
+    "sap-de-live": {
+      "request": "sap-de-live-request.json",
+      "expected": "sap-de-expected.json",
+      "expected_key": "live"
+    },
+    "aapl-historical-strict": {
+      "request": "aapl-strict-request.json",
+      "expected": "aapl-expected.json",
+      "expected_key": "strict"
+    }
+  }
+}

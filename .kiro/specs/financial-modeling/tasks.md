@@ -134,7 +134,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Requirements: 4.1, 4.2, 4.4, 4.5, 6.5_
 
 - [ ] 12. First real-model integration milestone
-- [ ] 12.1 Verify the real-model analyst journey
+- [x] 12.1 Verify the real-model analyst journey
   - Prerequisite: a separately approved and implemented real method, independent reference and verified FMP inputs. Test fixtures alone cannot close this task.
   - Done: bounded real-data numerical and isolated Playwright/CDP checks demonstrate assumptions, traced results, failure states, fresh saved reopen and retained-state recreation. Record actual image/source identities; resolve failures before acceptance.
   - Completion gate: affected production files pass 400 physical / 300 logical / 50 per function; tests/docs are scoped exclusions.

@@ -1,0 +1,81 @@
+{
+  "live": {
+    "value": "3.7855431005897290522658664811512252004",
+    "unit": "percent",
+    "status": "verified",
+    "reference_status": "match",
+    "check_status": "pass",
+    "trace": {
+      "trace_id": "fcf_yield",
+      "transformations": [],
+      "formula_id": "fcf_yield",
+      "formula_version": "1",
+      "output_id": "fcf_yield",
+      "expression": "100 × (operating cash flow − capex spending) / equity market value",
+      "input_ids": [
+        "cash_flows",
+        "market_value"
+      ],
+      "check_ids": [
+        "eligible_inputs.fcf_yield"
+      ],
+      "assumption_ids": [
+        "capex_sign"
+      ],
+      "source_record_ids": [
+        "SAP.DE.operating_cash_flow.2025-12-31",
+        "SAP.DE.capital_expenditures.2025-12-31",
+        "SAP.DE.equity_market_value.2026-11-26"
+      ],
+      "substitutions": [
+        {
+          "name": "SAP.DE.operating_cash_flow.2025-12-31",
+          "value": "9156000000",
+          "unit": "currency",
+          "currency": "EUR",
+          "scale": 0,
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31"
+        },
+        {
+          "name": "SAP.DE.capital_expenditures.2025-12-31",
+          "value": "-739000000",
+          "unit": "currency",
+          "currency": "EUR",
+          "scale": 0,
+          "period_start": "2025-01-01",
+          "period_end": "2025-12-31"
+        },
+        {
+          "name": "SAP.DE.equity_market_value.2026-11-26",
+          "value": "222345903252",
+          "unit": "currency",
+          "currency": "EUR",
+          "scale": 0,
+          "period_start": null,
+          "period_end": "2026-11-26"
+        }
+      ],
+      "intermediate_values": [
+        {
+          "name": "capex_spending",
+          "value": "739000000",
+          "unit": "currency",
+          "currency": "EUR",
+          "scale": 0,
+          "period_start": null,
+          "period_end": null
+        },
+        {
+          "name": "free_cash_flow",
+          "value": "8417000000",
+          "unit": "currency",
+          "currency": "EUR",
+          "scale": 0,
+          "period_start": null,
+          "period_end": null
+        }
+      ]
+    }
+  }
+}

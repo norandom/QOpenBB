@@ -1826,7 +1826,7 @@ evidence = ["See artifacts/reviewed/factor-signals/modeling-impact.md."]
 [[capabilities]]
 id = "installed-factor-evaluations"
 requirements = ["factor-signals/requirements.md:1.4", "factor-signals/requirements.md:2.3", "factor-signals/requirements.md:3.5", "factor-signals/requirements.md:4.1", "factor-signals/requirements.md:4.4"]
-planned_checks = ["widget binding and browser journey in financial-modeling tasks 11–12.1"]
+planned_checks = []
 test_paths = ["tests/factors/test_installed_factor_http.py", "tests/factors/test_installed_factor_http_withholding.py", "tests/factors/test_installed_factors.py", "tests/contracts/test_modeling_adoption.py", "tests/factors/test_modeling_contract_listener.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/installed-factors.md."]
@@ -1834,7 +1834,7 @@ evidence = ["See artifacts/reviewed/factor-signals/installed-factors.md."]
 [[capabilities]]
 id = "workspace-modeling-bridge"
 requirements = ["financial-modeling/requirements.md:3.4", "financial-modeling/requirements.md:4.5", "financial-modeling/requirements.md:6.5"]
-planned_checks = ["bound Workspace widgets and isolated browser journey"]
+planned_checks = []
 test_paths = ["vendor/workspace/backend-api/backend/tests_sqlite/test_modeling_bridge.py", "tests/contracts/test_workspace_modeling_bridge.py", "tests/delivery/test_origin_routing.py", "tests/delivery/test_prototype_compose.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/workspace-modeling-bridge.md."]
@@ -1846,3 +1846,11 @@ planned_checks = []
 test_paths = ["tests/contracts/test_modeling_adoption.py", "vendor/workspace/terminalpro/tests/integration/modelingWidget.test.tsx", "vendor/workspace/terminalpro/tests/unit/modeling/runBindings.test.ts"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/workspace-modeling-widgets.md."]
+
+[[capabilities]]
+id = "workspace-fcf-analyst-journey"
+requirements = ["financial-modeling/requirements.md:4.2", "financial-modeling/requirements.md:4.5", "financial-modeling/requirements.md:5.1", "financial-modeling/requirements.md:5.3", "financial-modeling/requirements.md:6.2", "financial-modeling/requirements.md:6.3", "financial-modeling/requirements.md:6.5"]
+planned_checks = []
+test_paths = ["verification/modeling-journey/analyst.spec.mts", "tests/factors/test_real_fmp_fcf_acceptance.py"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/workspace-modeling-journey.md."]

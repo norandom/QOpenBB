@@ -1,0 +1,149 @@
+{
+  "model_id": "issuer_fcf_yield",
+  "method_version": "1",
+  "inputs": {
+    "schema_id": "issuer_fcf_yield.inputs",
+    "schema_version": "1",
+    "cutoff": {
+      "observation_date": "2026-11-25",
+      "decision_at": "2026-11-25T21:00:02+00:00",
+      "evaluated_at": "2026-11-26T09:25:26.643202+00:00",
+      "session_timezone": "America/New_York"
+    },
+    "provenance": {
+      "origin": "user_supplied",
+      "source": "FMP",
+      "retrieved_at": "2026-11-26T09:25:26.643202+00:00",
+      "query": [
+        [
+          "symbol",
+          "AAPL"
+        ],
+        [
+          "annual_limit",
+          "2"
+        ],
+        [
+          "market_endpoint",
+          "quote"
+        ],
+        [
+          "currency_endpoint",
+          "profile"
+        ]
+      ]
+    },
+    "tables": [
+      {
+        "table_id": "cash_flows",
+        "grain": "Annual filing amount per issuer and metric",
+        "nullable": false,
+        "rows": [
+          {
+            "record_id": "AAPL.operating_cash_flow.2026-09-26",
+            "entity_id": "AAPL",
+            "metric_id": "operating_cash_flow",
+            "observation_date": "2026-09-26",
+            "value": "145097000000",
+            "context": {
+              "unit": "currency",
+              "currency": "USD",
+              "scale": 0,
+              "consolidation_scope": "issuer_consolidated",
+              "frequency": "annual",
+              "quantity": "flow",
+              "fiscal_period": "FY",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "vintage_coverage": "known"
+            },
+            "source_record_id": "sec.0000320193-26-000026",
+            "published_at": "2026-11-03T08:05:15-05:00",
+            "category": "provider"
+          },
+          {
+            "record_id": "AAPL.capital_expenditures.2026-09-26",
+            "entity_id": "AAPL",
+            "metric_id": "capital_expenditures",
+            "observation_date": "2026-09-26",
+            "value": "-9041000000",
+            "context": {
+              "unit": "currency",
+              "currency": "USD",
+              "scale": 0,
+              "consolidation_scope": "issuer_consolidated",
+              "frequency": "annual",
+              "quantity": "flow",
+              "fiscal_period": "FY",
+              "period_start": "2025-09-28",
+              "period_end": "2026-09-26",
+              "vintage_coverage": "known",
+              "basis": "cash_outflow_negative"
+            },
+            "source_record_id": "sec.0000320193-26-000026",
+            "published_at": "2026-11-03T08:05:15-05:00",
+            "category": "provider"
+          }
+        ],
+        "keys": [
+          "entity_id",
+          "metric_id",
+          "observation_date"
+        ]
+      },
+      {
+        "table_id": "market_value",
+        "grain": "Dated provider equity capitalization per issuer",
+        "nullable": false,
+        "rows": [
+          {
+            "record_id": "AAPL.equity_market_value.2026-11-25",
+            "entity_id": "AAPL",
+            "metric_id": "equity_market_value",
+            "observation_date": "2026-11-25",
+            "value": "5167359676000",
+            "context": {
+              "unit": "currency",
+              "currency": "USD",
+              "scale": 0,
+              "consolidation_scope": "issuer_consolidated",
+              "quantity": "stock",
+              "period_end": "2026-11-25",
+              "vintage_coverage": null,
+              "vintage_limitation": "Availability field uses the FMP quote event timestamp. The response was retrieved the next New York day. Initial feed delivery and vintage coverage were not measured.",
+              "basis": "timestamped_provider_quote"
+            },
+            "source_record_id": "fmp.AAPL.quote.1795640402",
+            "published_at": "2026-11-25T21:00:02+00:00",
+            "category": "provider",
+            "transformations": [
+              {
+                "transformation_id": "fmp.quote_event_context",
+                "version": "1",
+                "description": "Map the FMP quote event timestamp to the observation timing field and join FMP profile currency by symbol and exchange."
+              }
+            ]
+          }
+        ],
+        "keys": [
+          "entity_id",
+          "metric_id",
+          "observation_date"
+        ]
+      }
+    ]
+  },
+  "assumptions": {
+    "version": "1",
+    "effective_date": "2026-11-25",
+    "assumptions": [
+      {
+        "assumption_id": "capex_sign",
+        "value_type": "text",
+        "value": "cash_outflow_negative",
+        "origin": "method_default",
+        "rationale": "Convert reported PP&E cash outflow to positive spending."
+      }
+    ]
+  }
+}

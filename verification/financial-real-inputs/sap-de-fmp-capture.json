@@ -1,0 +1,63 @@
+{
+  "quote": {
+    "endpoint": "quote",
+    "query": {
+      "symbol": "SAP.DE"
+    },
+    "http_status": 200,
+    "response_sha256": "5557d22a1f050bd45bb260608715111e6760abd16b3def4b87a495eb279d70ab",
+    "retrieved_at": "2026-11-26T09:28:47.186599+00:00",
+    "selected": {
+      "symbol": "SAP.DE",
+      "name": "SAP SE",
+      "price": 192.64,
+      "marketCap": 222345903252,
+      "timestamp": 1795684423,
+      "exchange": "XETRA"
+    }
+  },
+  "profile": {
+    "endpoint": "profile",
+    "query": {
+      "symbol": "SAP.DE"
+    },
+    "http_status": 200,
+    "response_sha256": "6ce83f0f6b1fd66fad82868fad8897309c9413cd3a5a990b6ad35cab25cbc1ab",
+    "retrieved_at": "2026-11-26T09:28:47.193076+00:00",
+    "selected": {
+      "symbol": "SAP.DE",
+      "companyName": "SAP SE",
+      "currency": "EUR",
+      "exchange": "XETRA",
+      "exchangeFullName": "Deutsche Börse",
+      "cik": null,
+      "isAdr": false,
+      "isEtf": false,
+      "marketCap": 222345903252
+    }
+  },
+  "cash-flow-statement": {
+    "endpoint": "cash-flow-statement",
+    "query": {
+      "symbol": "SAP.DE",
+      "period": "annual",
+      "limit": 2
+    },
+    "http_status": 200,
+    "response_sha256": "c800e9ee971b1c22628e77096e60c5005f6843bfa1745b98bc30c46fc5650400",
+    "retrieved_at": "2026-11-26T09:28:49.223710+00:00",
+    "selected": {
+      "symbol": "SAP.DE",
+      "date": "2025-12-31",
+      "fiscalYear": "2025",
+      "period": "FY",
+      "cik": "0001000184",
+      "reportedCurrency": "EUR",
+      "filingDate": "2025-12-31",
+      "acceptedDate": "2025-12-31 00:00:00",
+      "operatingCashFlow": 9156000000,
+      "capitalExpenditure": -739000000,
+      "freeCashFlow": 8417000000
+    }
+  }
+}

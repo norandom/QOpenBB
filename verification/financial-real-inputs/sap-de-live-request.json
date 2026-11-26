@@ -1,0 +1,153 @@
+{
+  "model_id": "issuer_fcf_yield",
+  "method_version": "1",
+  "inputs": {
+    "schema_id": "issuer_fcf_yield.inputs",
+    "schema_version": "1",
+    "cutoff": {
+      "observation_date": "2026-11-26",
+      "decision_at": "2026-11-26T09:28:49.223710+00:00",
+      "evaluated_at": "2026-11-26T09:28:49.223710+00:00",
+      "session_timezone": "Europe/Berlin"
+    },
+    "provenance": {
+      "origin": "user_supplied",
+      "source": "FMP",
+      "retrieved_at": "2026-11-26T09:28:49.223710+00:00",
+      "query": [
+        [
+          "symbol",
+          "SAP.DE"
+        ],
+        [
+          "annual_limit",
+          "2"
+        ],
+        [
+          "market_endpoint",
+          "quote"
+        ],
+        [
+          "currency_endpoint",
+          "profile"
+        ]
+      ]
+    },
+    "tables": [
+      {
+        "table_id": "cash_flows",
+        "grain": "Annual filing amount per issuer and metric",
+        "nullable": false,
+        "rows": [
+          {
+            "record_id": "SAP.DE.operating_cash_flow.2025-12-31",
+            "entity_id": "SAP.DE",
+            "metric_id": "operating_cash_flow",
+            "observation_date": "2025-12-31",
+            "value": "9156000000",
+            "context": {
+              "unit": "currency",
+              "currency": "EUR",
+              "scale": 0,
+              "consolidation_scope": "issuer_consolidated",
+              "frequency": "annual",
+              "quantity": "flow",
+              "fiscal_period": "FY",
+              "period_start": "2025-01-01",
+              "period_end": "2025-12-31",
+              "vintage_coverage": "known",
+              "accounting_standard": "IFRS"
+            },
+            "source_record_id": "sec.0001104659-26-020058",
+            "published_at": "2026-02-26T07:01:22-05:00",
+            "category": "provider",
+            "vintage_at": "2026-11-26T09:28:49.223710+00:00"
+          },
+          {
+            "record_id": "SAP.DE.capital_expenditures.2025-12-31",
+            "entity_id": "SAP.DE",
+            "metric_id": "capital_expenditures",
+            "observation_date": "2025-12-31",
+            "value": "-739000000",
+            "context": {
+              "unit": "currency",
+              "currency": "EUR",
+              "scale": 0,
+              "consolidation_scope": "issuer_consolidated",
+              "frequency": "annual",
+              "quantity": "flow",
+              "fiscal_period": "FY",
+              "period_start": "2025-01-01",
+              "period_end": "2025-12-31",
+              "vintage_coverage": "known",
+              "basis": "cash_outflow_negative",
+              "accounting_standard": "IFRS"
+            },
+            "source_record_id": "sec.0001104659-26-020058",
+            "published_at": "2026-02-26T07:01:22-05:00",
+            "category": "provider",
+            "vintage_at": "2026-11-26T09:28:49.223710+00:00"
+          }
+        ],
+        "keys": [
+          "entity_id",
+          "metric_id",
+          "observation_date"
+        ]
+      },
+      {
+        "table_id": "market_value",
+        "grain": "Dated provider equity capitalization per issuer",
+        "nullable": false,
+        "rows": [
+          {
+            "record_id": "SAP.DE.equity_market_value.2026-11-26",
+            "entity_id": "SAP.DE",
+            "metric_id": "equity_market_value",
+            "observation_date": "2026-11-26",
+            "value": "222345903252",
+            "context": {
+              "unit": "currency",
+              "currency": "EUR",
+              "scale": 0,
+              "consolidation_scope": "issuer_consolidated",
+              "quantity": "stock",
+              "period_end": "2026-11-26",
+              "vintage_coverage": null,
+              "vintage_limitation": "Observed at FMP quote receipt during the Xetra session. Quote event time is retained in the receipt.",
+              "basis": "receipt_bound_provider_quote"
+            },
+            "source_record_id": "fmp.SAP.DE.quote.1795684423",
+            "published_at": "2026-11-26T09:28:47.186599+00:00",
+            "category": "provider",
+            "transformations": [
+              {
+                "transformation_id": "fmp.quote_receipt_context",
+                "version": "1",
+                "description": "Apply the quote receipt time as the availability bound and join FMP profile currency by symbol and exchange."
+              }
+            ]
+          }
+        ],
+        "keys": [
+          "entity_id",
+          "metric_id",
+          "observation_date"
+        ]
+      }
+    ]
+  },
+  "assumptions": {
+    "version": "1",
+    "effective_date": "2026-11-26",
+    "assumptions": [
+      {
+        "assumption_id": "capex_sign",
+        "value_type": "text",
+        "value": "cash_outflow_negative",
+        "origin": "method_default",
+        "rationale": "Convert reported purchases of intangible assets and PP&E from negative cash outflow to positive spending."
+      }
+    ]
+  }
+}

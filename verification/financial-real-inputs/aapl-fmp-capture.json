@@ -1,0 +1,79 @@
+{
+  "cash_flow": {
+    "endpoint": "cash-flow-statement",
+    "query": {
+      "symbol": "AAPL",
+      "period": "annual",
+      "limit": 2
+    },
+    "retrieved_at": "2026-11-26T09:22:55.413650+00:00",
+    "http_status": 200,
+    "response_sha256": "25fd08b61a02f29cfedb1f84d812cd49c31b7dffbb431d2f1bedf4a08e51c1b4",
+    "selected": {
+      "symbol": "AAPL",
+      "date": "2026-09-26",
+      "fiscalYear": "2026",
+      "period": "FY",
+      "cik": "0000320193",
+      "reportedCurrency": "USD",
+      "filingDate": "2026-11-03",
+      "acceptedDate": "2026-11-03 08:05:15",
+      "operatingCashFlow": 145097000000,
+      "capitalExpenditure": -9041000000,
+      "freeCashFlow": 136056000000
+    }
+  },
+  "market_value": {
+    "endpoint": "historical-market-capitalization",
+    "query": {
+      "symbol": "AAPL",
+      "from": "2026-11-25",
+      "to": "2026-11-25"
+    },
+    "retrieved_at": "2026-11-26T09:22:55.901332+00:00",
+    "http_status": 200,
+    "response_sha256": "b5d1734e8b775ffdc0f33333ddf5a0fcb66d74886307c7b03c1b16e1d82b3a50",
+    "selected": {
+      "symbol": "AAPL",
+      "date": "2026-11-25",
+      "marketCap": 5180869938100
+    }
+  },
+  "quote": {
+    "endpoint": "quote",
+    "query": {
+      "symbol": "AAPL"
+    },
+    "http_status": 200,
+    "response_sha256": "f0f9a7ef7574b39f2acf7223817320d6ed7389ed3c4276c58af7ba5ec51a8f30",
+    "retrieved_at": "2026-11-26T09:25:26.137401+00:00",
+    "selected": {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "price": 355.58,
+      "marketCap": 5167359676000,
+      "timestamp": 1795640402,
+      "exchange": "NASDAQ"
+    }
+  },
+  "profile": {
+    "endpoint": "profile",
+    "query": {
+      "symbol": "AAPL"
+    },
+    "http_status": 200,
+    "response_sha256": "eb3bfacffa2de09d1dd4d80d23321434f5253e40e641ad04bf40ce0a2c72f052",
+    "retrieved_at": "2026-11-26T09:25:26.643202+00:00",
+    "selected": {
+      "symbol": "AAPL",
+      "companyName": "Apple Inc.",
+      "currency": "USD",
+      "exchange": "NASDAQ",
+      "exchangeFullName": "NASDAQ Global Select",
+      "cik": "0000320193",
+      "isAdr": false,
+      "isEtf": false,
+      "marketCap": 5167359676000
+    }
+  }
+}
