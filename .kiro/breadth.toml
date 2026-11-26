@@ -1880,10 +1880,11 @@ planned_checks = [
   "Inline provider and modeling failures, same-selection retry, fresh reopen and safe export",
   "Pinned story images, isolated one-worker browser journey and release evidence",
 ]
-test_paths = ["tests/contracts/test_research_story.py", "tests/contracts/test_research_story.mts", "tests/factors/test_retrospective.py", "tests/factors/test_story_acquisition.py", "tests/factors/test_story_schedule.py"]
+test_paths = ["tests/contracts/test_research_story.py", "tests/contracts/test_research_story.mts", "tests/factors/test_retrospective.py", "tests/factors/test_story_acquisition.py", "tests/factors/test_story_fred_acquisition.py", "tests/factors/test_story_schedule.py"]
 status = "partial"
 evidence = [
-  "Three authenticated proxy_comparison@2 evaluations and saved reads used the published Data API and real FMP closes. See .kiro/specs/research-stories/source-qualification.md. Packaged Workspace and DFII10 story acquisition remain pending.",
+  "2026-11-26: 128 acquisition and model regressions passed, including loopback FRED empty, denied, timeout and throttled responses. Current DFII10 levels retain receipt evidence and withhold the historical regime when cutoff availability is unknown.",
+  "Three authenticated proxy_comparison@2 evaluations and saved reads used the published Data API and real FMP closes. See .kiro/specs/research-stories/source-qualification.md. Packaged preflight and Workspace acceptance remain pending.",
   "2026-11-26 baseline uses modeling-v0.1.0 and the owned Workspace and data API pins in sources.lock.json. Published image identities are in artifacts/reviewed/factor-signals/workspace-modeling-release.md.",
   "The combined gate passed 204 maintained files on the Git-verified clean scope. An isolated Workspace overlay exceeded all three size caps and exited 1. Reports are under local artifacts/research-stories-baseline/.",
   "Pinned Dagger 0.21.8 built the Modeling baseline. Ten isolated Chromium infrastructure checks passed. The published data API without provider credentials returned readiness HTTP 503 and liveness HTTP 200 in a disposable container with networking disabled. The later source-candidate live ETF check is recorded separately.",

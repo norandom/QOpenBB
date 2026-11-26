@@ -38,7 +38,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 1.3_
   - _Requirements: 1.1, 2.1, 4.2_
 
-- [ ] 2.3 Acquire eligible prices and macro observations
+- [x] 2.3 Acquire eligible prices and macro observations
   - Normalize the allowlisted FMP and FRED responses into the model input tables. Implement `proxy_comparison@2` with independently verified price-return and risk calculations on retrieved history. Preserve version 1 point-in-time behavior and saved-run compatibility. Preserve exact units, received price rows, safe leg-specific failure codes, schedule markers and retrieval provenance. Keep DFII10 endpoint eligibility tied to the selected observation day's cutoff. Demonstrate a withheld leg alongside a usable leg, missing endpoint versus interior macro gap, and disjoint windows. Keep the original generic FRED dataset working.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: Versioned comparison method and reference check, modeling acquisition and bounded HTTP transport_

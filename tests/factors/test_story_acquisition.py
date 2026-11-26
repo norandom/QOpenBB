@@ -135,6 +135,59 @@ def test_window_boundary_keeps_selected_cutoff(date, decision, sessions):
     assert len(snap.tables[0].rows) == sessions
 
 
+def test_disjoint_price_coverage_evaluates_each_window_without_bridging():
+    from datetime import date
+    from pathlib import Path
+
+    from qopenbb_data.modeling.models.factors.retrospective import RetrospectiveComparisonModel
+    from qopenbb_data.modeling.service.story_schedule import story_sessions
+    from qopenbb_data.modeling.verification.factors.retrospective_reference import retrospective_reference
+
+    example = Path(__file__).resolve().parents[2] / "contracts/consumers/research-stories/runs.v1.json"
+    raw_assumptions = json.loads(example.read_bytes())["requests"]["comparison"]["assumptions"]
+    params = dict(request().parameters)
+    for item in raw_assumptions["assumptions"]:
+        item["value"] = params.get(item["assumption_id"], item["value"])
+    assumptions = AssumptionSet.model_validate(raw_assumptions)
+
+    def selected(day, decision):
+        raw = request().model_dump(mode="json")
+        raw["cutoff"].update(observation_date=day, decision_at=decision)
+        return AcquisitionRequest.model_validate(raw)
+
+    first = selected("2026-07-31", "2026-08-01T03:59:59Z")
+    gap = selected("2026-08-07", "2026-08-08T03:59:59Z")
+    last = request()
+    available = []
+    for selection in (first, last):
+        table = story_sessions(selection.cutoff, "NYSE_ARCA", REVISION)
+        available.extend(row.observation_date for row in table.rows)
+    assert len(available) == len(set(available)) == 128
+
+    def return_window(body, symbol):
+        meta = body["extra"]["results_metadata"]["__qopenbb_financial__"]
+        query = meta["effective_query"]
+        start, end = (date.fromisoformat(query[key]) for key in ("start_date", "end_date"))
+        denominator = 100 if symbol == "GLD" else 200
+        body["results"] = [
+            {"date": day.isoformat(), "close": denominator + index}
+            for index, day in enumerate(available) if start <= day <= end
+        ]
+        meta["bounds"]["returned_count"] = len(body["results"])
+
+    for selection in (first, gap, last):
+        snapshot = acquire(return_window, selection)
+        outcomes = RetrospectiveComparisonModel().calculate(snapshot, assumptions).outputs
+        spread = next(item for item in outcomes if item.output_id == "momentum_spread")
+        assert retrospective_reference().calculations["momentum_spread"](snapshot, assumptions) == spread.value
+        if selection == gap:
+            assert spread.value is None
+            assert "2026-08-" in spread.reason
+        else:
+            assert spread.value > 0
+            assert all(len(table.rows) == 64 for table in snapshot.tables)
+
+
 def test_both_denied_http_response_and_pre_io_validation(tmp_path):
     import asyncio
     from pathlib import Path

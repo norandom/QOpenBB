@@ -1,4 +1,4 @@
-"""Acquire independently dated price histories for the qualified NYSE Arca ETF roles."""
+"""Acquire retrieved price histories and DFII10 context for the story schedule."""
 
 from datetime import UTC, datetime, time, timedelta
 from decimal import Decimal, InvalidOperation
@@ -9,12 +9,19 @@ from ..contracts import InputSnapshot, Observation, ObservationTable
 from ..contracts.common import parse_financial_date
 from ..contracts.inputs import FinancialContext, SourceProvenance
 from ..models.factors.sessions import PRICE_BASIS
-from .acquisition import AcquisitionError
+from .acquisition import AcquisitionError, _fred_row, _object
+from .acquisition_http import FredHistoryEmpty
 from .story_schedule import CALENDAR_ID, REVISION, story_sessions
 
 _DATASET = "story.etf_pair"
 _ROUTE = "/api/v1/equity/price/historical"
 _KEYS = {"left_proxy", "right_proxy", "calendar_id", "schedule_revision"}
+_FRED_ROUTE = "/api/v1/economy/fred_series"
+_YIELD_CONTEXT = FinancialContext(
+    unit="percent", quantity="rate", basis="treasury_constant_maturity", frequency="Daily",
+    vintage_coverage="unavailable",
+    vintage_limitation="The current FRED response does not establish cutoff-eligible historical availability.",
+)
 # Listing qualification establishes USD for each admitted ETF. The route reports currency/share.
 _PRICE = FinancialContext(unit="price", basis=PRICE_BASIS, currency="USD", vintage_coverage="unknown")
 
@@ -43,6 +50,15 @@ def validate_story_binding(key, request, assumptions):
             raise AcquisitionError("invalid_request")
 
 
+def _receipt_time(meta, earliest):
+    stamp = meta["retrieved_at"]
+    when = datetime.fromisoformat(stamp)
+    if ("T" not in stamp or when.utcoffset() != timedelta(0) or when > datetime.now(UTC)
+            or when < earliest):
+        raise ValueError("Invalid provider receipt timestamp.")
+    return when
+
+
 def _receipt(payload, query, count, earliest):
     meta = payload["extra"]["results_metadata"]["__qopenbb_financial__"]
     field = meta["fields"]["close"]
@@ -57,12 +73,7 @@ def _receipt(payload, query, count, earliest):
             or field.get("currency") not in (None, "USD")
             or field["value_origin"] != "provider_observation"):
         raise ValueError("Unexpected FMP history metadata.")
-    stamp = meta["retrieved_at"]
-    when = datetime.fromisoformat(stamp)
-    if ("T" not in stamp or when.utcoffset() != timedelta(0) or when > datetime.now(UTC)
-            or when < earliest):
-        raise ValueError("Invalid FMP receipt timestamp.")
-    return when
+    return _receipt_time(meta, earliest)
 
 
 def _rows(results, symbol, start, end, checkpoint):
@@ -125,10 +136,7 @@ def _earliest_receipt(cutoff, sessions):
 async def acquire_story(request, read, decode, checkpoint):
     params = _parameters(request)
     cutoff = request.cutoff
-    try:
-        sessions = story_sessions(cutoff, params["calendar_id"], params["schedule_revision"])
-    except ValueError:
-        raise AcquisitionError("invalid_request") from None
+    sessions = _schedule(cutoff, params)
     # A closed day has no scheduled ending session. Request a bounded history to
     # retain real receipts while leaving the empty schedule for the model to diagnose.
     start = min((row.observation_date for row in sessions.rows),
@@ -161,3 +169,98 @@ async def acquire_story(request, read, decode, checkpoint):
                          provenance=SourceProvenance(origin="service_acquired", source="fmp",
                                                      acquisition_id=uuid4().hex, query=tuple(query.items()),
                                                      retrieved_at=max(times)))
+
+
+def _schedule(cutoff, params):
+    try:
+        return story_sessions(cutoff, params["calendar_id"], params["schedule_revision"])
+    except ValueError:
+        raise AcquisitionError("invalid_request") from None
+
+
+def _yield_parameters(request):
+    params = dict(request.parameters)
+    if len(request.parameters) != 2 or params.keys() != {"calendar_id", "schedule_revision"}:
+        raise AcquisitionError("invalid_request")
+    return params
+
+
+def _yield_receipt(payload, query, count, earliest):
+    meta = payload["extra"]["results_metadata"]["__qopenbb_financial__"]
+    field = meta["fields"]["DFII10"]
+    bounds = meta["bounds"]
+    expected = {**query, "use_cache": False}
+    del expected["provider"]
+    used = _object(meta["effective_query"])
+    if (payload.get("provider") != "fred" or meta["provider"] != "fred"
+            or meta["dataset"] != "economy.fred_series"
+            or meta["source"]["endpoint"] != "series/observations"
+            or meta["point_in_time_safe"] is not False or meta.get("vintage_query_supported") is not None
+            or any(used.get(key) != value for key, value in expected.items())
+            or used["use_cache"] is not False or used.get("transform") is not None
+            or used.get("frequency") is not None
+            or not isinstance(bounds["returned_count"], Decimal) or bounds["returned_count"] != count
+            or (bounds.get("truncated") is not None and bounds["truncated"] is not False)
+            or field["unit"] != "Percent" or field["source_unit"] != "Percent"
+            or field["source_frequency"] != "Daily" or field["effective_frequency"] != "Daily"
+            or field["value_origin"] != "provider_observation"):
+        raise ValueError("Unexpected FRED series metadata.")
+    return _receipt_time(meta, earliest), _object(meta.get("observation_provenance", {}))
+
+
+def _yield_snapshot(payload, request, sessions, query, start, checkpoint):
+    results = payload["results"]
+    end = request.cutoff.observation_date
+    if not isinstance(results, list) or len(results) > (end - start).days + 1:
+        raise ValueError("Invalid DFII10 rows.")
+    earliest = datetime.combine(end, time.min, ZoneInfo(request.cutoff.session_timezone))
+    when, realtime = _yield_receipt(payload, query, len(results), earliest)
+    realtime = _object(realtime.get("DFII10", {}))
+    acquisition_id = uuid4().hex
+    rows = []
+    for raw in results:
+        checkpoint()
+        row = _fred_row(raw, "DFII10", request, _YIELD_CONTEXT, realtime, acquisition_id, metric_id="real_yield")
+        if row.observation_date < start:
+            raise ValueError("Unexpected DFII10 observation date.")
+        rows.append(row)
+    checkpoint()
+    return _yield_evidence(request, sessions, query, when, acquisition_id, tuple(rows))
+
+
+def _yield_evidence(request, sessions, query, when, acquisition_id, rows):
+    table = ObservationTable(
+        table_id="dfii10", keys=("entity_id", "observation_date"),
+        grain="One current DFII10 observation per FRED observation date.", nullable=True, rows=rows,
+    )
+    provenance = SourceProvenance(
+        origin="service_acquired", source="fred", acquisition_id=acquisition_id, retrieved_at=when,
+        query=tuple(({"dataset_id": request.dataset_id, **dict(request.parameters), **query}).items()),
+    )
+    return InputSnapshot(schema_id="real_yield_regime.inputs", cutoff=request.cutoff,
+                         tables=(sessions, table), provenance=provenance)
+
+
+async def acquire_real_yield(request, read, decode, checkpoint):
+    cutoff = request.cutoff
+    sessions = _schedule(cutoff, _yield_parameters(request))
+    end = cutoff.observation_date
+    start = sessions.rows[0].observation_date if sessions.rows else end - timedelta(days=7)
+    query = {"provider": "fred", "symbol": "DFII10", "start_date": start.isoformat(),
+             "end_date": end.isoformat(), "use_cache": "false"}
+    try:
+        body = await read(_FRED_ROUTE, tuple(query.items()))
+    except FredHistoryEmpty:
+        checkpoint()
+        # The empty HTTP response carries no timestamp from the provider.
+        query |= {"receipt_basis": "service_received_at", "source_outcome": "missing_data"}
+        return _yield_evidence(request, sessions, query, datetime.now(UTC), uuid4().hex, ())
+    except OSError as error:
+        code = getattr(error, "code", None)
+        failure = code if code in {"entitlement", "timeout", "throttling"} else "upstream"
+    else:
+        try:
+            return _yield_snapshot(decode(body, checkpoint), request, sessions, query, start, checkpoint)
+        except (KeyError, AttributeError, TypeError, ValueError, InvalidOperation, RecursionError):
+            failure = "invalid_response"
+    raise AcquisitionError(failure)

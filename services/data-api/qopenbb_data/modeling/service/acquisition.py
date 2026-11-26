@@ -21,7 +21,10 @@ from .acquisition_http import MAX_RESPONSE_BYTES, fetch
 from .ports import AcquisitionRequest
 
 Transport = Callable[[str, tuple[tuple[str, str], ...]], Awaitable[bytes]]
-ErrorCode = Literal["invalid_request", "invalid_response", "missing_data", "timeout", "cancelled", "upstream", "entitlement"]
+ErrorCode = Literal[
+    "invalid_request", "invalid_response", "missing_data", "timeout", "cancelled",
+    "upstream", "entitlement", "throttling",
+]
 
 _DATASET = "economy.fred_series"
 _ROUTE = "/api/v1/economy/fred_series"
@@ -49,6 +52,7 @@ class AcquisitionError(RuntimeError):
             "invalid_response": "Data API returned an invalid response.",
             "missing_data": "Data API returned no observations.",
             "entitlement": "Data API denied access to the dataset.",
+            "throttling": "Data API rate limit reached.",
             "timeout": "Data acquisition deadline exceeded.",
             "cancelled": "Data acquisition cancelled.",
             "upstream": "Data API request failed.",
@@ -86,10 +90,11 @@ class DataApiSnapshotSource:
     ) -> InputSnapshot:
         try:
             async with asyncio.timeout(_remaining(deadline, cancel)):
-                if request.dataset_id == "story.etf_pair":
-                    from .story_acquisition import acquire_story
+                if request.dataset_id in {"story.etf_pair", "story.dfii10"}:
+                    from .story_acquisition import acquire_real_yield, acquire_story
 
-                    return await acquire_story(
+                    acquire = acquire_real_yield if request.dataset_id == "story.dfii10" else acquire_story
+                    return await acquire(
                         request, partial(self._read_response, cancel), _decode_response,
                         partial(_remaining, deadline, cancel),
                     )
@@ -284,6 +289,8 @@ def _fred_row(
     context: FinancialContext,
     realtime_by_date: dict,
     acquisition_id: str,
+    *,
+    metric_id: str | None = None,
 ) -> Observation:
     fields = _object(row)
     if "date" not in fields or symbol not in fields:
@@ -296,20 +303,23 @@ def _fred_row(
         raise ValueError("Invalid FRED observation.")
     realtime = _object(realtime_by_date.get(observation_date.isoformat(), {}))
     if realtime:
-        context = context.model_copy(update={"vintage_limitation": _vintage_limitation(realtime)})
+        context = context.model_copy(update={
+            "vintage_limitation": _vintage_limitation(realtime, context.vintage_limitation),
+        })
     return Observation(
         record_id=f"fred:{acquisition_id}:{observation_date}",
         entity_id=symbol,
-        metric_id=symbol,
+        metric_id=metric_id or symbol,
         observation_date=observation_date,
         context=context,
         value=value,
         category="provider",
+        source_record_id=f"fred:{symbol}:{observation_date}" if metric_id is not None else None,
         transformations=_TRANSFORMATIONS,
     )
 
 
-def _vintage_limitation(realtime: dict) -> str:
+def _vintage_limitation(realtime: dict, limitation: str | None) -> str | None:
     # FRED reports date-only real-time bounds. Assigning a time zone would fabricate availability.
     bounds = [
         f"{label} {parse_financial_date(realtime[key])}"
@@ -317,5 +327,5 @@ def _vintage_limitation(realtime: dict) -> str:
         if realtime.get(key) is not None
     ]
     if not bounds:
-        return _VINTAGE_LIMITATION
-    return f"{_VINTAGE_LIMITATION} FRED real-time bounds report {', '.join(bounds)}."
+        return limitation
+    return f"{limitation} FRED real-time bounds report {', '.join(bounds)}."
