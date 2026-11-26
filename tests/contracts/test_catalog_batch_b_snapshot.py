@@ -57,8 +57,11 @@ def test_complete_snapshot_hashes_and_installed_identity():
         assert hashlib.sha256((ROOT / 'contracts' / name).read_bytes()).hexdigest() == expected
     provenance = read('provenance.json')
     lock = json.loads((ROOT / 'sources.lock.json').read_text())
+    publication = json.loads((ROOT / 'artifacts/reviewed/fmp-expansion-b/publication-verification.json').read_text())
+    assert provenance['image'] == publication['images']['data-api']['manifest_digest']
     assert provenance['revision'] == lock['data_api']['revision']
-    assert provenance['image_labels']['org.qopenbb.source.workspace'] == lock['workspace']['revision']
+    for source, revision in publication['sources'].items():
+        assert provenance['image_labels'][f'org.qopenbb.source.{source}'] == revision
     assert provenance['repeat_identical'] is True
 
 

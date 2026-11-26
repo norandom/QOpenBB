@@ -13,6 +13,7 @@ from qopenbb_ci.catalog_financial import (
     validate_parameters,
 )
 from qopenbb_ci.catalog_research import research_app
+from qopenbb_ci.catalog_story import story_app
 
 
 def canonical(value: object) -> bytes:
@@ -231,6 +232,8 @@ def generate(schema: dict, inventory: dict, raw: dict, bundled: list, prefix: st
     widgets, mapping = supported_widgets(raw, inventory, prefix, schema)
     apps, omitted = adapt_apps(bundled, widgets)
     curated, research_status = research_app(inventory, mapping, widgets)
+    if {"daily-prices", "gdp"} <= {item["dataset"] for item in mapping}:
+        curated.append(story_app(widgets))
     return {"openapi.json": deepcopy(schema), "routes.json": routes, "widgets.json": widgets,
             "datasets.json": installed,
             "apps.json": [starter(inventory, mapping), *apps, *curated],

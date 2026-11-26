@@ -1883,6 +1883,7 @@ planned_checks = [
 test_paths = ["tests/contracts/test_research_story.py", "tests/contracts/test_research_story.mts", "tests/factors/test_retrospective.py", "tests/factors/test_story_acquisition.py", "tests/factors/test_story_fred_acquisition.py", "tests/factors/test_story_schedule.py"]
 status = "partial"
 evidence = [
+  "2026-11-26: the installed-image catalog generator added one commodities-versus-technology App and one native widget. The gallery loader and Workspace template schema accepted the defaults, ordered views and chart presets. The three earlier Apps were preserved.",
   "2026-11-26: 128 acquisition and model regressions passed, including loopback FRED empty, denied, timeout and throttled responses. Current DFII10 levels retain receipt evidence and withhold the historical regime when cutoff availability is unknown.",
   "Three authenticated proxy_comparison@2 evaluations and saved reads used the published Data API and real FMP closes. See .kiro/specs/research-stories/source-qualification.md. Packaged preflight and Workspace acceptance remain pending.",
   "2026-11-26 baseline uses modeling-v0.1.0 and the owned Workspace and data API pins in sources.lock.json. Published image identities are in artifacts/reviewed/factor-signals/workspace-modeling-release.md.",

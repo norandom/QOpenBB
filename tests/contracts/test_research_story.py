@@ -2,12 +2,17 @@
 
 import asyncio
 import json
+import os
+import shutil
 import subprocess
 from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
 
 import pytest
+from qopenbb_ci.catalog import canonical, generate
+from qopenbb_ci.catalog_runtime import ASSET
+from qopenbb_data.gallery import load_gallery
 from qopenbb_data.modeling.contracts import ModelRun
 from qopenbb_data.modeling.service.acquisition import AcquisitionError
 from qopenbb_data.modeling.service.bootstrap import installed_methods
@@ -21,6 +26,46 @@ ROOT = Path(__file__).resolve().parents[2]
 FIXTURES = ROOT / "contracts/consumers/research-stories"
 STORY = FIXTURES / "story.v1.json"
 RUN_CASES = FIXTURES / "runs.v1.json"
+
+
+def test_generated_research_story_catalog(tmp_path):
+    def read_contract(name):
+        return json.loads((ROOT / "contracts" / name).read_text(encoding="utf-8"))
+
+    published_apps = read_contract("apps.json")
+    lock = json.loads((ROOT / "sources.lock.json").read_text(encoding="utf-8"))
+    source = Path(os.environ.get("QOPENBB_DATA_SOURCE", str(ROOT / lock["data_api"]["local_checkout"])))
+    output = generate(
+        read_contract("openapi.json"),
+        read_contract("datasets.json"),
+        read_contract("widgets.json"),
+        json.loads((source / ASSET).read_text(encoding="utf-8")),
+        "/data",
+    )
+    apps_path = tmp_path / "apps.json"
+    apps_path.write_bytes(canonical(output["apps.json"]))
+    apps = json.loads(apps_path.read_text(encoding="utf-8"))
+    frozen = json.loads(STORY.read_text(encoding="utf-8"))["catalog"]
+    widget_id = frozen["widget"]["widgetId"]
+    app_name = frozen["widget"]["name"]
+    existing = [app for app in apps if app["name"] != app_name]
+    assert existing == [app for app in published_apps if app["name"] != app_name]
+    story, = [app for app in apps if app["name"] == app_name]
+    assert story["description"] == (
+        "Did the selected commodity proxy outperform the selected technology proxy "
+        "over the 63 trading sessions ending at the observation date?"
+    )
+    tab, = story["tabs"].values()
+    layout, = tab["layout"]
+    assert layout["i"] == widget_id
+    assert layout["view_order"] == frozen["view_order"]
+    assert layout["state"] == {"storage": {"researchStory": frozen["default_state"]}}
+    assert output["widgets.json"][widget_id] == frozen["widget"]
+    (tmp_path / "widgets.json").write_bytes(canonical(output["widgets.json"]))
+    shutil.copytree(ROOT / "contracts/gallery", tmp_path / "gallery")
+    gallery = load_gallery(tmp_path)
+    assert gallery.apps() == apps + read_contract("gallery/catalog.json")["apps"]
+    assert gallery.widgets()[widget_id] == frozen["widget"]
 
 
 @pytest.fixture

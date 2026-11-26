@@ -112,8 +112,8 @@ def test_baseline_ids_and_company_research_saved_layout_are_stable(inputs):
     assert research_app(baseline_inventory, old_mapping, before) == research_app(inventory, new_mapping, after)
     assert len(new_mapping) == len(old_mapping) + 8
     saved_widgets = json.loads((ROOT / 'contracts/widgets.json').read_text())
-    assert set(after) == set(saved_widgets)
-    assert set(saved_widgets) - set(before) == {h["widget_id"] for h in HANDOFFS}
+    assert set(saved_widgets) == set(after) | {"research_story"}
+    assert set(after) - set(before) == {h["widget_id"] for h in HANDOFFS}
     for key, value in before.items():
         saved = deepcopy(saved_widgets[key])
         current = deepcopy(value)

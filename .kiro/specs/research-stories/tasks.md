@@ -31,7 +31,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 1.3_
   - _Requirements: 1.2, 2.2, 2.4, 3.3_
 
-- [ ] 2.2 (P) Generate the story in the catalog
+- [x] 2.2 (P) Generate the story in the catalog
   - Produce one curated declaration with DBC and XLK defaults, the question, ordered views and approved chart presets. Inspect generated apps.json and verify existing curated Apps still load. Use a dedicated catalog test file.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
   - _Boundary: pipeline/qopenbb_ci/catalog_story.py, pipeline/qopenbb_ci/catalog.py and tests/contracts/test_research_story.py_

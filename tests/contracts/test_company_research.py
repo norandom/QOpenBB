@@ -89,7 +89,7 @@ def test_peer_storage_survives_direct_append_and_inputs_remain_unchanged(inputs)
     assert inputs == before
     assert not any(item.get("widget") == "company_research"
                    for item in first["catalog-report.json"]["omitted"])
-    assert len(first["apps.json"]) == len(inputs[3]) + 2
+    assert len(first["apps.json"]) == len(inputs[3]) + 3
     assert set(inputs[2]) <= first["widgets.json"].keys()
 
 

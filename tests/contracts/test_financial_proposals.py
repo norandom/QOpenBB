@@ -70,7 +70,7 @@ def test_proposal_retains_baseline_widget_ids_and_complete_native_mapping(propos
     mapping = proposal["catalog-report.json"]["mapping"]
     endpoint_widgets = {key: value for key, value in widgets.items() if "endpoint" in value}
     assert len(endpoint_widgets) == len(mapping) == len(datasets) == 30
-    assert set(widgets) - set(endpoint_widgets) == {"company_research"}
+    assert set(widgets) - set(endpoint_widgets) == {"company_research", "research_story"}
     assert {item["path"]: item["provider"] for item in mapping} == ACCEPTED
     assert {item["dataset"] for item in mapping} == {item["id"] for item in datasets}
     for path, provider, widget_id in BASELINE.values():
@@ -178,7 +178,8 @@ def test_proposal_reproduction_preserves_values_metadata_and_source_identity(pro
     assert provenance["generator"].endswith("widgets.py:build_json")
     assert provenance["files_sha256"]
     assert provenance["maintained_generator_sha256"]
-    assert {"catalog.py", "catalog_financial.py", "catalog_upstream.py", "catalog_cli.py"} <= set(
+    assert {"catalog.py", "catalog_financial.py", "catalog_upstream.py",
+            "catalog_cli.py", "catalog_story.py"} <= set(
         provenance["maintained_generator_sha256"])
     for checksum in [*provenance["files_sha256"].values(), *provenance["maintained_generator_sha256"].values()]:
         assert re.fullmatch(r"[0-9a-f]{64}", checksum)
