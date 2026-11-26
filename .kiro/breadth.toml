@@ -1690,7 +1690,7 @@ evidence = ["Synthetic dated calendar and price selection, including independent
 [[capabilities]]
 id = "etf-price-factor-methods"
 requirements = ["factor-signals/requirements.md:1.1", "factor-signals/requirements.md:1.2", "factor-signals/requirements.md:1.3", "factor-signals/requirements.md:1.4"]
-planned_checks = ["independent reference verification and authenticated saved-run projection"]
+planned_checks = []
 test_paths = ["tests/factors/test_momentum.py", "tests/factors/test_volatility.py", "tests/factors/test_method_inputs.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Supplied-input calculation, withheld results and dated traces. See artifacts/reviewed/factor-signals/price-and-real-yield-methods.md."]
@@ -1698,7 +1698,7 @@ evidence = ["Supplied-input calculation, withheld results and dated traces. See 
 [[capabilities]]
 id = "dfii10-regime-method"
 requirements = ["factor-signals/requirements.md:2.1", "factor-signals/requirements.md:2.2", "factor-signals/requirements.md:2.3"]
-planned_checks = ["independent reference verification and authenticated saved-run projection"]
+planned_checks = []
 test_paths = ["tests/factors/test_real_yield.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Synthetic point-in-time classification and percentage-point change across the exact endpoints. See artifacts/reviewed/factor-signals/price-and-real-yield-methods.md."]
@@ -1706,7 +1706,7 @@ evidence = ["Synthetic point-in-time classification and percentage-point change 
 [[capabilities]]
 id = "issuer-free-cash-flow-yield"
 requirements = ["factor-signals/requirements.md:3.1", "factor-signals/requirements.md:3.2", "factor-signals/requirements.md:3.3", "factor-signals/requirements.md:3.4", "factor-signals/requirements.md:3.5"]
-planned_checks = ["independent reference recalculation and authenticated saved evaluation", "live point-in-time eligibility of issuer filings and equity market value"]
+planned_checks = ["live point-in-time eligibility of issuer filings and equity market value"]
 test_paths = ["tests/factors/test_filing_selection.py", "tests/factors/test_fcf_yield.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Supplied-input filing selection, annual reconciliation, dated market value and yield trace. See artifacts/reviewed/factor-signals/issuer-fcf-yield.md."]
@@ -1714,7 +1714,7 @@ evidence = ["Supplied-input filing selection, annual reconciliation, dated marke
 [[capabilities]]
 id = "ordered-etf-factor-comparison"
 requirements = ["factor-signals/requirements.md:4.1"]
-planned_checks = ["independent reference verifier and saved-run endpoint acceptance"]
+planned_checks = []
 test_paths = ["tests/factors/test_comparison.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Supplied-input ETF comparison, retained leg values and dated withheld spreads. See artifacts/reviewed/factor-signals/proxy-comparison.md."]
@@ -1722,7 +1722,7 @@ evidence = ["Supplied-input ETF comparison, retained leg values and dated withhe
 [[capabilities]]
 id = "decision-time-regime-diagnostics"
 requirements = ["factor-signals/requirements.md:4.2", "factor-signals/requirements.md:4.3"]
-planned_checks = ["independent reference verifier and authenticated saved-run acceptance"]
+planned_checks = []
 test_paths = ["tests/factors/test_study_schedule.py", "tests/factors/test_study_groups.py", "tests/factors/test_diagnostics.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Synthetic point-in-time study, regime-conditioned hit rate and slugging, and chronological drawdown. See artifacts/reviewed/factor-signals/timing-study.md."]
@@ -1730,7 +1730,7 @@ evidence = ["Synthetic point-in-time study, regime-conditioned hit rate and slug
 [[capabilities]]
 id = "financial-rule-lifecycle"
 requirements = ["financial-modeling/requirements.md:2.1", "financial-modeling/requirements.md:2.2", "financial-modeling/requirements.md:2.3", "financial-modeling/requirements.md:2.4", "financial-modeling/requirements.md:2.5", "financial-modeling/requirements.md:2.6", "financial-modeling/requirements.md:2.7", "financial-modeling/requirements.md:3.2", "financial-modeling/requirements.md:3.3", "financial-modeling/requirements.md:3.5"]
-planned_checks = ["factor-specific references and saved-run integration"]
+planned_checks = []
 test_paths = ["tests/factors/test_validation_lifecycle.py", "tests/factors/test_validation_run_lifecycle.py", "tests/factors/test_reference_verification.py", "tests/factors/test_import_boundaries.py", "tests/delivery/test_data_image.py"]
 status = "passed"
 evidence = ["Supplied-input rule execution and independent verification on test-only arithmetic. See artifacts/reviewed/factor-signals/financial-rule-lifecycle.md."]
@@ -1738,7 +1738,7 @@ evidence = ["Supplied-input rule execution and independent verification on test-
 [[capabilities]]
 id = "etf-references"
 requirements = ["factor-signals/requirements.md:1.1", "factor-signals/requirements.md:1.2", "factor-signals/requirements.md:1.3", "factor-signals/requirements.md:1.4", "factor-signals/requirements.md:4.1", "factor-signals/requirements.md:4.4"]
-planned_checks = ["authenticated saved-run integration"]
+planned_checks = []
 test_paths = ["tests/factors/test_etf_reference.py"]
 status = "passed"
 evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/factor-signals/etf-references.md."]
@@ -1746,7 +1746,7 @@ evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/fa
 [[capabilities]]
 id = "issuer-regime-references"
 requirements = ["factor-signals/requirements.md:2.1", "factor-signals/requirements.md:2.2", "factor-signals/requirements.md:2.3", "factor-signals/requirements.md:3.1", "factor-signals/requirements.md:3.2", "factor-signals/requirements.md:3.3", "factor-signals/requirements.md:3.4", "factor-signals/requirements.md:3.5", "factor-signals/requirements.md:4.4"]
-planned_checks = ["authenticated saved-run integration"]
+planned_checks = []
 test_paths = ["tests/factors/test_issuer_reference.py", "tests/factors/test_regime_reference.py"]
 status = "passed"
 evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/factor-signals/issuer-regime-references.md."]
@@ -1754,7 +1754,7 @@ evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/fa
 [[capabilities]]
 id = "timing-references"
 requirements = ["factor-signals/requirements.md:4.2", "factor-signals/requirements.md:4.3", "factor-signals/requirements.md:4.4"]
-planned_checks = ["authenticated saved-run integration"]
+planned_checks = []
 test_paths = ["tests/factors/test_timing_reference.py", "tests/factors/test_timing_reference_limits.py", "tests/factors/test_study_groups.py"]
 status = "passed"
 evidence = ["Independent supplied-input recalculation. See artifacts/reviewed/factor-signals/timing-references.md."]
@@ -1822,3 +1822,11 @@ planned_checks = []
 test_paths = ["tests/contracts/test_modeling_impact_gate.py", "tests/contracts/test_modeling_impact_map.py", "tests/contracts/test_modeling_impact_run.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/modeling-impact.md."]
+
+[[capabilities]]
+id = "installed-factor-evaluations"
+requirements = ["factor-signals/requirements.md:1.4", "factor-signals/requirements.md:2.3", "factor-signals/requirements.md:3.5", "factor-signals/requirements.md:4.1", "factor-signals/requirements.md:4.4"]
+planned_checks = ["Workspace bridge, widget binding and browser journey in financial-modeling tasks 10–12.1"]
+test_paths = ["tests/factors/test_installed_factor_http.py", "tests/factors/test_installed_factor_http_withholding.py", "tests/factors/test_installed_factors.py", "tests/contracts/test_modeling_adoption.py", "tests/factors/test_modeling_contract_listener.py"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/installed-factors.md."]

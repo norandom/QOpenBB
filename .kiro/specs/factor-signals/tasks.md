@@ -87,7 +87,7 @@ The controller freezes shared interfaces, integrates registry changes and update
   - _Depends: 11 and foundation task 5_
   - _Requirements: 4.2, 4.3, 4.4_
 
-- [ ] 15. Register the six descriptors and verify saved evaluations
+- [x] 15. Register the six descriptors and verify saved evaluations
   - Bind exact model, rule and reference versions. Through the authenticated evaluation and read endpoints, exercise verified, partial and withheld results, inspect traces, and show that a saved run retains its original snapshot after a source revision. Export the compatible projection and identify actual contract tests in the breadth map.
   - _Boundary: Controller integration across registry, foundation contract tests and breadth mapping; apply the complexity gate to changed production files._
   - _Depends: 12, 13, 14 and foundation registry, orchestration, persistence, API and contract delivery (tasks 4–9)_

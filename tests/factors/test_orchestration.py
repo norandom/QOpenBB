@@ -368,10 +368,13 @@ def calculated_with_exception(inputs, assumptions, eligible):
 def test_missing_invalid_and_reference_mismatch_have_distinct_evidence(service, inputs):
     table = inputs.tables[0].model_copy(update={"rows": inputs.tables[0].rows[1:]})
     missing = inputs.model_copy(update={"tables": (table,)})
-    orchestrator = service(reference=mismatch)
-    withheld = orchestrator.evaluate(request(inputs=missing), OWNER)
+    withheld = service(reference=expected).evaluate(request(inputs=missing), OWNER)
     assert withheld.outputs[0].reason == "Observation value is missing"
     assert withheld.verification[0].status == "unavailable"
+    orchestrator = service(reference=mismatch)
+    disputed = orchestrator.evaluate(request(inputs=missing), OWNER)
+    assert disputed.outputs[0].value is None
+    assert disputed.verification[0].status == "mismatch"
     compared = orchestrator.evaluate(request(inputs=inputs), OWNER)
     assert compared.outputs[0].status == "withheld"
     assert compared.verification[0].status == "mismatch"

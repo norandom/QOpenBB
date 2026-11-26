@@ -56,7 +56,7 @@ A compatible result requires both structural compatibility and agreement with th
 
 ## Verify the impact of a committed change
 
-Run the source-level integration check from a clean candidate checkout. Supply the revision immediately before the change range. The prototype workflow uses the push's previous tip or the pull request's base revision. A manual or release run without either uses the adopted contract revision.
+Run the source-level integration check from a clean candidate checkout. Supply the revision immediately before the change range. The prototype workflow uses the push's previous tip or the pull request's base revision. A manual or release run without either uses the initial adoption revision.
 
 ```bash
 bash pipeline/ci.sh modeling-impact "$base" artifacts/modeling-impact/report.json
