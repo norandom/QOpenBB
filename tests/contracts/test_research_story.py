@@ -148,10 +148,9 @@ def installed_story(monkeypatch, tmp_path):
                     )
                 )
             tables.append(table.model_copy(update={"rows": tuple(rows)}))
-        query = request.parameters
+        query = (("dataset_id", request.dataset_id), *request.parameters)
         if pair:
             query = (
-                ("dataset_id", request.dataset_id),
                 *query,
                 *(
                     (key, value)
@@ -160,9 +159,11 @@ def installed_story(monkeypatch, tmp_path):
                 ),
                 *leg_errors.items(),
             )
+        else:
+            query += (("provider", "fred"), ("symbol", "DFII10"))
         provenance = base.provenance.model_copy(
             update={
-                "source": "fmp" if pair else "synthetic_research_story",
+                "source": "fmp" if pair else "fred",
                 "origin": "service_acquired",
                 "query": query,
                 "acquisition_id": variant,

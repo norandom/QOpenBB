@@ -60,17 +60,17 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Requirements: 1.2, 2.2, 2.3, 2.4, 3.1_
 
 - [ ] 3. Bind the native Workspace views to verified runs
-- [ ] 3.1 (P) Decode saved evidence and decide the verdict
+- [x] 3.1 (P) Decode saved evidence and decide the verdict
   - Join output-specific reference matches, checks, trace IDs and the saved snapshot rows. Test exact signed decimals, ties, sub-display-precision spreads, mismatched run identity and blocked outputs. Return the independently valid leg and preserve the verdict when only volatility or macro context fails.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
-  - _Boundary: Workspace terminalpro/src/lib/modeling/storyContract.ts, storyEvidence.ts and their sibling storyContract.test.ts and storyEvidence.test.ts_
+  - _Boundary: Workspace terminalpro/src/lib/modeling/storyContract.ts, storyEvidence.ts, the saved-row projection in storyEvidenceRows.ts and their sibling storyContract.test.ts and storyEvidence.test.ts_
   - _Depends: 1.3, 2.5_
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4_
 
-- [ ] 3.2 (P) Encode dashboard and template state
+- [x] 3.2 (P) Encode dashboard and template state
   - Allowlist choices, references, cutoff, schedule binding and per-view chart settings for both save and export. Exercise normal hydration, rejected extra fields and legacy dashboards. Inspect serialized writes and exported bytes for provider rows, response text and credentials.
   - Run the combined complexity gate for this task’s maintained files and record whole-file compliance.
-  - _Boundary: Workspace terminalpro/src/lib/modeling/storyState.ts and storyState.test.ts, and terminalpro/src/lib/utils/exportTemplate.ts_
+  - _Boundary: Workspace terminalpro/src/lib/modeling/storyState.ts and storyState.test.ts, the native save and export adapters in terminalpro/src/lib/utils/{documentDashboardState,exportTemplate}.ts the template import schema in terminalpro/src/lib/types/app/templates.ts and the serialized widget ID type in terminalpro/src/components/Widgets/index.ts_
   - _Depends: 1.3, 2.5_
   - _Requirements: 4.2, 4.3_
 
