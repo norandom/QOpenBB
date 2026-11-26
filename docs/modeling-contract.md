@@ -1,6 +1,6 @@
 # Versioned modeling contract
 
-The internal analytics listener serves the v1 modeling API under `/modeling/v1`. QOpenBB records the provider and Workspace consumer contracts in this repository. The provider bundle describes the saved-output widget and the six installed factor methods at its pinned source revision. [Provider bundle](../contracts/modeling/v1/manifest.json) · [Consumer mapping](../contracts/consumers/financial-modeling/saved-output.v1.json) · [Adopted provider](../contracts/consumers/financial-modeling/provider.lock.json)
+The internal analytics listener serves the v1 modeling API under `/modeling/v1`. QOpenBB records the provider and Workspace consumer contracts in this repository. The provider bundle describes the saved-output widget and the installed factor method versions at its pinned source revision. [Provider bundle](../contracts/modeling/v1/manifest.json) · [Consumer mapping](../contracts/consumers/financial-modeling/saved-output.v1.json) · [Adopted provider](../contracts/consumers/financial-modeling/provider.lock.json)
 
 ## Evaluate a registered factor
 
