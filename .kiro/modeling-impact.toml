@@ -363,3 +363,9 @@ selectors = [
   "tests/delivery/test_origin_routing.py::test_modeling_location_uses_session_bridge",
   "tests/delivery/test_prototype_compose.py::test_credentials_stay_with_service_and_bootstrap_remains_optional",
 ]
+
+[[mapping]]
+ids = ["consumer:workspace.issuer-fcf-yield", "widget:qopenbb_issuer_fcf_yield", "operation:evaluateModel", "operation:readSavedRun", "operation:readSavedWidgetOutput", "model:issuer_fcf_yield@1"]
+criteria = ["4.1", "4.2", "4.4", "4.5", "6.5"]
+paths = ["sources.lock.json", "contracts/consumers/financial-modeling/issuer-fcf-yield.v1.json", "tests/contracts/test_modeling_adoption.py"]
+selectors = ["tests/contracts/test_modeling_adoption.py::test_workspace_evaluator_and_saved_reader_match_pinned_operations"]

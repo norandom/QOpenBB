@@ -125,7 +125,7 @@ Each task requires fresh verification and independent review before its checkbox
   - _Depends: 8.1, 9.3_
   - _Requirements: 3.4, 4.5, 6.5_
 
-- [ ] 11. Bind model evaluations to existing Workspace widgets
+- [x] 11. Bind model evaluations to existing Workspace widgets
   - Implement evaluationClient/runBindings and freeze the exact existing widget control call site before edits. Use a POST-capable parameter adapter and read-only run-result widgets with readable assumptions, trace/check details and saved run IDs.
   - Done: test-only integration fixture demonstrates explicit evaluation, refresh, failure/stale states and saved parameter restoration. Verify consumers against the pinned API bundle and retain direct provider views when modeling is unavailable.
   - Completion gate: measure this task's maintained production files against 400 physical / 300 logical / 50 per function and record fresh checks; docs/generated artifacts remain scoped exclusions.

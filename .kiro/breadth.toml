@@ -1838,3 +1838,11 @@ planned_checks = ["bound Workspace widgets and isolated browser journey"]
 test_paths = ["vendor/workspace/backend-api/backend/tests_sqlite/test_modeling_bridge.py", "tests/contracts/test_workspace_modeling_bridge.py", "tests/delivery/test_origin_routing.py", "tests/delivery/test_prototype_compose.py"]
 status = "passed"
 evidence = ["See artifacts/reviewed/factor-signals/workspace-modeling-bridge.md."]
+
+[[capabilities]]
+id = "workspace-modeling-widgets"
+requirements = ["financial-modeling/requirements.md:4.1", "financial-modeling/requirements.md:4.2", "financial-modeling/requirements.md:4.4", "financial-modeling/requirements.md:4.5", "financial-modeling/requirements.md:6.5"]
+planned_checks = []
+test_paths = ["tests/contracts/test_modeling_adoption.py", "vendor/workspace/terminalpro/tests/integration/modelingWidget.test.tsx", "vendor/workspace/terminalpro/tests/unit/modeling/runBindings.test.ts"]
+status = "passed"
+evidence = ["See artifacts/reviewed/factor-signals/workspace-modeling-widgets.md."]

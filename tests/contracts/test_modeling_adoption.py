@@ -101,3 +101,30 @@ def test_consumer_binds_exported_operation_and_widget():
         for p in api_operation["parameters"]
         if p["in"] == "query"
     ]
+
+
+def test_workspace_evaluator_and_saved_reader_match_pinned_operations():
+    manifest = json.loads((CONSUMERS / "issuer-fcf-yield.v1.json").read_bytes())
+    native = ROOT / "vendor/workspace/terminalpro/src/lib/modeling/widgets.json"
+    widgets = json.loads(native.read_bytes())
+    api = json.loads((BUNDLE / "openapi.json").read_bytes())["paths"]
+    reader = json.loads(CONSUMER.read_bytes())
+    for binding in (manifest, reader):
+        operation = binding["operation"]
+        definition = widgets[binding["widget_id"]]
+        assert definition["endpoint"] == operation["base_path"] + operation["path"]
+        assert definition["endpointMethod"] == operation["method"]
+        assert api[operation["path"]][operation["method"].lower()]["operationId"] == operation["id"]
+
+    evaluator = widgets[manifest["widget_id"]]
+    assert set(manifest["parameters"]) == {p["paramName"] for p in evaluator["params"]}
+    models = json.loads((BUNDLE / "descriptors.json").read_bytes())["models"]
+    descriptor, = [model for model in models if model["model_id"] == manifest["model_id"]]
+    assert descriptor["method_version"] == manifest["method_version"]
+    output, = [item for item in descriptor["outputs"] if item["output_id"] == manifest["output_id"]]
+    assert output["unit"] == manifest["response"]["unit"]
+    assert reader["consumer_id"] == manifest["response"]["projection_consumer"]
+    assert api["/runs/{run_id}"]["get"]["operationId"] == manifest["response"]["read_operation"]
+    exported = json.loads((BUNDLE / "widgets.json").read_bytes())[reader["widget_id"]]
+    for field in ("data", "params", "type"):
+        assert widgets[reader["widget_id"]][field] == exported[field]

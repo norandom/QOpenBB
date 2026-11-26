@@ -1,0 +1,29 @@
+{
+  "contract_version": 1,
+  "consumer_id": "workspace.issuer-fcf-yield",
+  "widget_id": "qopenbb_issuer_fcf_yield",
+  "provider_api_version": "v1",
+  "model_id": "issuer_fcf_yield",
+  "method_version": "1",
+  "output_id": "fcf_yield",
+  "operation": {
+    "id": "evaluateModel",
+    "method": "POST",
+    "base_path": "/modeling/v1",
+    "path": "/evaluations"
+  },
+  "parameters": {
+    "snapshot": "inputs",
+    "assumption_version": "assumptions.version",
+    "effective_date": "assumptions.effective_date",
+    "capex_sign": "assumptions.assumptions[capex_sign].value"
+  },
+  "response": {
+    "saved_id": "run_id",
+    "saved_id_type": "string",
+    "saved_id_nullable": false,
+    "read_operation": "readSavedRun",
+    "projection_consumer": "workspace.saved-model-output",
+    "unit": "percent"
+  }
+}

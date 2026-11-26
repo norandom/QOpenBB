@@ -73,3 +73,9 @@ Send the Workspace bearer session to the same-origin `/modeling/v1` routes. Work
 When provisioning the private listener, configure the same dedicated `QFM_IDENTITY_CURRENT_KID` and `QFM_IDENTITY_CURRENT_SECRET` in Workspace and the listener. Generate at least 32 random bytes for the secret and supply their encoded text to both processes. Only the listener needs the optional `QFM_IDENTITY_PREVIOUS_KID` and `QFM_IDENTITY_PREVIOUS_SECRET`. To rotate, first configure the listener to accept the new current and outgoing previous key, then switch the Workspace signer. Retire the previous key after all signers have switched and their outstanding 60-second assertions have expired.
 
 The bridge forwards to `http://modeling:6901/modeling/v1` on the private network. The current two-service Compose file supplies the Workspace signing configuration. The modeling listener's image and Compose service are scheduled for foundation task 12.2.
+
+## Evaluate and reopen an issuer FCF yield
+
+In a Workspace dashboard, open **Add widgets** and select **Issuer FCF yield**. Paste the input snapshot object into **Input snapshot JSON**, enter the assumption version and effective date, and select the CapEx sign convention used by the filing. **Evaluate FCF yield** creates an owner-scoped run. The result shows the exact percentage, saved run ID, assumptions, checks, independent verification and calculation trace. Editing an input marks the previous result stale. An ineligible observation produces a withheld result with an explanation.
+
+Add **Saved model output** to the dashboard for a read-only view. Enter the saved run ID and the output ID `fcf_yield`, then save the dashboard. Refreshing or reopening reads that run.

@@ -19,6 +19,7 @@
       "spec": "financial-modeling",
       "include": ["services/data-api/qopenbb_data/modeling/service/**", "pipeline/qopenbb_ci/modeling_*.py", "pipeline/qopenbb_ci/financial_compat*.py", "pipeline/qopenbb_ci/financial_impact*.py", ".kiro/modeling-impact.toml", "contracts/consumers/financial-modeling/**"],
       "files": [
+        "contracts/consumers/financial-modeling/issuer-fcf-yield.v1.json",
         ".kiro/modeling-impact.toml",
         "pipeline/qopenbb_ci/financial_impact.py",
         "pipeline/qopenbb_ci/financial_impact_documents.py",

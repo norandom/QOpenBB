@@ -1,13 +1,16 @@
 """Index versioned contract objects whose changes can cross repository boundaries."""
 
 _BUNDLE = "contracts/modeling/v1/"
-_CONSUMER = "contracts/consumers/financial-modeling/saved-output.v1.json"
+_CONSUMERS = frozenset({
+    "contracts/consumers/financial-modeling/saved-output.v1.json",
+    "contracts/consumers/financial-modeling/issuer-fcf-yield.v1.json",
+})
 CONTRACT_DOCUMENTS = frozenset(
     {
         _BUNDLE + name
         for name in ("openapi.json", "widgets.json", "apps.json", "descriptors.json")
     }
-    | {_CONSUMER}
+    | _CONSUMERS
 )
 _HTTP_METHODS = frozenset(
     {"get", "put", "post", "delete", "options", "head", "patch", "trace"}
@@ -82,7 +85,7 @@ def identities(path: str, document: dict | list) -> dict:
         return _operations(document)
     if path == _BUNDLE + "descriptors.json":
         return _describe(document)
-    if path == _CONSUMER:
+    if path in _CONSUMERS:
         return {
             _identity("consumer", document["consumer_id"]): document,
             _identity("widget", document["widget_id"]): document,
