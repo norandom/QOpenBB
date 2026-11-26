@@ -9,7 +9,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Boundary: Controller, inventory, runtime manifests and portable verification_
   - _Requirements: 1.1, 4.1_
 
-- [ ] 1.2 Qualify the source evidence for both proxy roles
+- [x] 1.2 Qualify the source evidence for both proxy roles
   - Inspect DBC, XLK, GLD and a genuine alternate technology ETF through existing admitted sources. Record exposure, listing calendar, entitled windows and timestamped publication/vintage evidence for closes and DFII10 endpoints. Identify a dated official schedule covering the window and any closures. Reject backdated retrieval times. If a required source is missing, identify the blocked live case before integration.
   - Evidence, fixtures or test cases only. Production size caps do not apply to these artifacts.
   - _Boundary: Controller, sanitized input qualification record_
