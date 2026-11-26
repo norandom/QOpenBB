@@ -1,7 +1,7 @@
 {
   "id": "workspace",
   "repository": "https://github.com/norandom/openbb-workspace.git",
-  "revision": "cce2504fe2adf7a385a4fb3612e858181c908d57",
+  "revision": "eeb11a299978d2de74ade8734fbd18fcb52e469b",
   "source_lock_key": "workspace",
   "root": "vendor/workspace",
   "mode": "changed",
@@ -12,15 +12,21 @@
         "terminalpro/src/lib/modeling/story*.ts",
         "terminalpro/src/components/Widgets/ResearchStory*",
         "terminalpro/src/hooks/useAllTemplates.ts",
+        "terminalpro/src/lib/state/exportTemplate.ts",
+        "terminalpro/src/components/LayoutAuth/DropdownSubs/DashboardPopup.tsx",
         "terminalpro/src/components/AI/appArtifactUtils.ts"
       ],
       "patterns": [
         "terminalpro/src/lib/modeling/story*.ts",
         "terminalpro/src/components/Widgets/ResearchStory*",
         "terminalpro/src/hooks/useAllTemplates.ts",
+        "terminalpro/src/lib/state/exportTemplate.ts",
+        "terminalpro/src/components/LayoutAuth/DropdownSubs/DashboardPopup.tsx",
         "terminalpro/src/components/AI/appArtifactUtils.ts"
       ],
       "files": [
+        "terminalpro/src/lib/state/exportTemplate.ts",
+        "terminalpro/src/components/LayoutAuth/DropdownSubs/DashboardPopup.tsx",
         "terminalpro/src/components/AI/appArtifactUtils.ts",
         "terminalpro/src/components/Widgets/ResearchStory.tsx",
         "terminalpro/src/components/Widgets/ResearchStoryChart.tsx",
