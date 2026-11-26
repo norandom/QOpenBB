@@ -30,7 +30,7 @@ interface Run {
     intermediate_values: { name: string; period_start: string; period_end: string; value: string; unit: string }[];
   }[];
   inputs: {
-    cutoff: { observation_date: string; decision_at: string; session_timezone: string };
+    cutoff: { observation_date: string; decision_at: string; evaluated_at: string; session_timezone: string };
     provenance: { source: string; retrieved_at: string; query: [string, string][] };
     tables: { table_id: string; rows: Row[] }[];
   };
@@ -187,7 +187,10 @@ async function checkLeg(run: Run, region: Locator, side: string, symbol: string,
   };
 }
 
-async function priceView(story: Locator, run: Run, pair: readonly [string, string], days: string[], risk: boolean) {
+type VisibleSeries = { input: readonly string[]; result: readonly string[] };
+
+async function priceView(story: Locator, run: Run, pair: readonly [string, string], days: string[], risk: boolean,
+  visible: VisibleSeries = { input: pair, result: pair }) {
   const view = risk ? "Realized volatility" : "Price returns";
   const region = story.getByRole("region", { name: view + " from FMP", exact: true });
   await expect(region).toContainText("Observation date " + days.at(-1));
@@ -200,17 +203,19 @@ async function priceView(story: Locator, run: Run, pair: readonly [string, strin
     .toHaveCount(risk ? 2 : 3);
   const left = await checkLeg(run, region, "left", pair[0], days, risk);
   const right = await checkLeg(run, region, "right", pair[1], days, risk);
-  await chart(region, view + " input chart", pair.join(" and ") + " · FMP", risk ? "%" : "USD", [left.input, right.input]);
-  await chart(region, view + " result chart", pair.join(" and ") + " · FMP", "%", [left.result, right.result]);
+  const inputs = [left.input, right.input].filter(series => visible.input.includes(series.label));
+  const results = [left.result, right.result].filter(series => visible.result.includes(series.label));
+  await chart(region, view + " input chart", pair.join(" and ") + " · FMP", risk ? "%" : "USD", inputs);
+  await chart(region, view + " result chart", pair.join(" and ") + " · FMP", "%", results);
   return [left.digest, right.digest];
 }
 
-export async function inspectPrices(story: Locator, run: Run, pair: readonly [string, string]) {
+export async function inspectPrices(story: Locator, run: Run, pair: readonly [string, string], returnsSeries?: VisibleSeries) {
   expect(run.inputs.provenance.source).toBe("fmp");
   const days = rows(run, "sessions").map(row => row.observation_date);
   expect(days).toHaveLength(64);
   expect(days.at(-1)).toBe(run.inputs.cutoff.observation_date);
-  const sessionRows = await priceView(story, run, pair, days, false);
+  const sessionRows = await priceView(story, run, pair, days, false, returnsSeries);
   const dailyReturns = await priceView(story, run, pair, days, true);
   const spread = verified(run, "momentum_spread", "percentage_points");
   const verdict = story.getByRole("region", { name: "Verdict", exact: true }).getByRole("status");

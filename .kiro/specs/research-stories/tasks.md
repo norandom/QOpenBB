@@ -110,7 +110,7 @@ Run each numbered subtask as a bounded 1–3 hour unit. Before dispatch, give it
   - _Depends: 4.1_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.3_
 
-- [ ] 4.3 Verify outage recovery, save, fresh reopen and export
+- [x] 4.3 Verify outage recovery, save, fresh reopen and export
   - Interrupt modeling, restore it and retry on the same dashboard. Save chart choices and references, introduce a controlled subsequent source revision, then reopen with fresh login and compare original values, dates, checks and chart settings. Exercise foreign/deleted references and inspect export contents. Retain real versus controlled case labels.
   - Evidence, fixtures or test cases only. Production size caps do not apply to these artifacts.
   - _Boundary: Packaged story browser journey, recovery and persistence cases_

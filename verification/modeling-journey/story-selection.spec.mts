@@ -3,23 +3,12 @@ import type { Locator, Page } from "../../vendor/workspace/terminalpro/node_modu
 import { expect, test } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/toolchain";
 import { expectApplicationDiagnostics, observeApplication } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/diagnostics";
 import { inspectMacro, inspectPrices, runsFor } from "./story-selection-evidence.mts";
-import { connectDataSource, signIn } from "./workspace.mts";
+import { connectDataSource, openStory, signIn } from "./workspace.mts";
 
 test.use({ locale: "en-US" });
 
-const title = "Commodities versus Technology";
 const eligible = "2026-11-13";
 const shortHistory = "2026-01-13";
-
-async function openStory(page: Page) {
-  await page.getByRole("link", { name: "Apps", exact: true }).click();
-  const app = page.getByRole("button").filter({ has: page.getByText(title, { exact: true }) });
-  await expect(app).toHaveCount(1);
-  await app.click();
-  const story = page.locator("#workarea .widget-research_story");
-  await expect(story.getByRole("heading", { name: /Did the selected commodity proxy outperform/ })).toBeVisible();
-  return story;
-}
 
 async function selectProxy(control: Locator, symbol: string) {
   const page = control.page();

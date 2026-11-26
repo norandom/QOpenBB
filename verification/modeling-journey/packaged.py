@@ -12,6 +12,7 @@ import tempfile
 from pathlib import Path
 
 from run import ROOT, browser, wait_ready
+from story_revision import controlled_revision
 
 STATE_UID = 10001
 SERVICES = ("workspace", "data-api", "modeling")
@@ -80,6 +81,11 @@ def exercise(root, compose, env, references, suite):
         after = snapshot()
         if before != after:
             raise ValueError("Story outage must preserve the running container identities")
+    elif suite == "story-persistence":
+        exercise_persistence(root, compose, env, origin)
+        after = snapshot()
+        if before != after:
+            raise ValueError("Story persistence must preserve container identities")
     elif suite == "story-selection":
         browser(root, suite, origin, password, suite=suite)
         after = snapshot()
@@ -88,6 +94,26 @@ def exercise(root, compose, env, references, suite):
     else:
         after = exercise_issuer(root, command, origin, password, before, snapshot)
     (root / "images.json").write_text(json.dumps({"before": before, "after": after}, indent=2))
+
+
+def exercise_persistence(root, compose, env, origin):
+    # Ordinary user roles exercise ownership through the packaged session bridge.
+    owner_password, peer_password = secrets.token_urlsafe(32), secrets.token_urlsafe(32)
+    seed_env = {**env, "STORY_OWNER_PASSWORD": owner_password, "STORY_PEER_PASSWORD": peer_password}
+    script = (Path(__file__).with_name("story_users.py")).read_text()
+    subprocess.run([*compose, "exec", "-T", "-u", "appuser", "-e", "STORY_OWNER_PASSWORD", "-e",
+                    "STORY_PEER_PASSWORD", "workspace", "python", "-"],
+                   input=script, env=seed_env, text=True, check=True, timeout=30)
+    browser(root, "save", origin, owner_password, suite="story-persistence")
+    controlled_revision(root, compose, env, origin, peer_password)
+    browser(root, "reopen", origin, owner_password, suite="story-persistence")
+    macro = json.loads((root / "checkpoint.json").read_text())["state"]["run_refs"]["regime"]
+    if not re.fullmatch(r"[0-9a-f]{32}", macro):
+        raise ValueError("Invalid disposable macro run reference")
+    subprocess.run([*compose, "exec", "-T", "modeling", "python", "-c",
+                    "import pathlib,sys; pathlib.Path(sys.argv[1]).unlink()",
+                    f"/data/modeling/{macro}.json"], env=env, check=True, timeout=30)
+    browser(root, "unavailable", origin, owner_password, suite="story-persistence")
 
 
 def exercise_issuer(root, command, origin, password, before, snapshot):
@@ -156,6 +182,6 @@ if __name__ == "__main__":
         parser.add_argument(f"--{name}-image", required=True)
     parser.add_argument("--evidence", type=Path, required=True)
     parser.add_argument("--env-file", type=Path, default=ROOT / ".env")
-    parser.add_argument("--suite", choices=("issuer", "story", "story-selection"), default="issuer")
+    parser.add_argument("--suite", choices=("issuer", "story", "story-selection", "story-persistence"), default="issuer")
     parser.add_argument("--local-images", action="store_true", help="Use already-built full local image content IDs")
     run(parser.parse_args())

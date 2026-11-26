@@ -77,6 +77,7 @@ def browser(root, phase, origin, password, *, suite="issuer", change_service=Non
     spec = {
         "issuer": "analyst.spec.mts", "story": "story.spec.mts",
         "story-selection": "story-selection.spec.mts",
+        "story-persistence": "story-persistence.spec.mts",
     }[suite]
     command = ["node", HERE.parent / "node_modules/@playwright/test/cli.js",
                "test", "-c", HERE / "playwright.config.mts", spec]

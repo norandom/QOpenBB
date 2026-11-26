@@ -1,7 +1,7 @@
 import type { Page } from "../../vendor/workspace/terminalpro/node_modules/@playwright/test/index";
 import { expect } from "../../vendor/workspace/terminalpro/tests/e2e/live-chart/toolchain";
 
-export async function signIn(page: Page) {
+export async function signIn(page: Page, email = "analyst@example.com") {
   const origin = process.env.WORKSPACE_FRONTEND_ORIGIN!;
   const password = process.env.JOURNEY_PASSWORD;
   if (!/^http:\/\/127\.0\.0\.1:\d+$/.test(origin) || !password)
@@ -15,7 +15,7 @@ export async function signIn(page: Page) {
     if (new URL(response.url()).pathname === "/api/pro/user-has-entity") entity = response.finished();
   });
   await page.goto("/login");
-  await page.getByLabel("Email", { exact: true }).fill("analyst@example.com");
+  await page.getByLabel("Email", { exact: true }).fill(email);
   await page.getByLabel("Password", { exact: true }).fill(password);
   await page.getByRole("button", { name: "Login", exact: true }).click();
   await page.waitForURL(url => /^\/(app|onboarding)(?:\/|$)/.test(url.pathname));
@@ -66,4 +66,14 @@ export async function connectDataSource(page: Page, name: string) {
     await dialog.getByRole("button", { name: /^add$/i }).click();
   }
   await expect(dialog).not.toBeVisible();
+}
+
+export async function openStory(page: Page) {
+  await page.getByRole("link", { name: "Apps", exact: true }).click();
+  const app = page.getByRole("button").filter({ has: page.getByText("Commodities versus Technology", { exact: true }) });
+  await expect(app).toHaveCount(1);
+  await app.click();
+  const story = page.locator("#workarea .widget-research_story");
+  await expect(story.getByRole("heading", { name: /Did the selected commodity proxy outperform/ })).toBeVisible();
+  return story;
 }

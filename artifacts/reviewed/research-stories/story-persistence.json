@@ -1,0 +1,120 @@
+{
+  "workspace_revision": "eeb11a299978d2de74ade8734fbd18fcb52e469b",
+  "local_images": {
+    "workspace": "sha256:26e224b495b533fa3b8a3404e31b9676a20281ea8ff4ebbde5a4ea9a3e625ea4",
+    "data-api": "sha256:1cbb333c1ff5befbafc207786adf04da5adeac13c2f519b3e484d450424cfad6",
+    "modeling": "sha256:090e6646cb2d3d37ac86f2ef10aa61762daa7e78baae2c0b024f1a8db35a7323"
+  },
+  "phases": [
+    {
+      "phase": "save",
+      "diagnostics": "clean",
+      "browserEvaluations": 2,
+      "directHistoryRequests": 0,
+      "savedReadStatus": {
+        "comparison": 200,
+        "regime": 200
+      }
+    },
+    {
+      "phase": "reopen",
+      "diagnostics": "clean",
+      "browserEvaluations": 0,
+      "directHistoryRequests": 0,
+      "savedReadStatus": {
+        "comparison": 200,
+        "regime": 200
+      }
+    },
+    {
+      "phase": "unavailable",
+      "diagnostics": "only expected unavailable-reference 404 responses",
+      "browserEvaluations": 0,
+      "directHistoryRequests": 0,
+      "savedReadStatus": {
+        "foreignComparison": 404,
+        "deletedRegime": 404
+      }
+    }
+  ],
+  "original_run_refs": {
+    "comparison": "c7c6c3d5298648759c961b5425d80d8f",
+    "regime": "d1b6f57cff4e4f958bf996c59b171eef"
+  },
+  "original_price_run_digest": "6f441b4d7dde83bb957bca2b293d5225b8c8d44588a7653ee12aba4f0de709e3",
+  "original_macro_run_digest": "f176eeb22c43ee01a973d4a7de04b1123d0b54e886e7ab6cc06db513d53110be",
+  "allowlisted_export_digest": "e3f5e20e8c725ce158c0c3d5276648ff823102c403aaad175aee564495ea25d9",
+  "original_spread_pp": "11.282252101173223823640096921360332227",
+  "controlled_revision": {
+    "source": "controlled data API history fixture",
+    "observationDate": "2026-11-13",
+    "table": "left_closes",
+    "revisedClose": "31.79",
+    "spread": "14.554503410073747383849521005129965735",
+    "retrievedAt": {
+      "left": "2026-11-26T18:07:15.506887+00:00",
+      "right": "2026-11-26T18:07:16.287495+00:00"
+    },
+    "originalClose": "30.79"
+  },
+  "peer_read_own": 200,
+  "peer_read_original_owner": 404,
+  "saved_charts": {
+    "returns": {
+      "input": {
+        "chart_type": "bar",
+        "series": [
+          "left_close"
+        ],
+        "x_axis": "date",
+        "y_axis": "price_usd"
+      },
+      "result": {
+        "chart_type": "line",
+        "series": [
+          "right_momentum"
+        ],
+        "x_axis": "proxy",
+        "y_axis": "percent"
+      }
+    },
+    "risk": {
+      "input": {
+        "chart_type": "line",
+        "series": [
+          "left_daily_return",
+          "right_daily_return"
+        ],
+        "x_axis": "date",
+        "y_axis": "percent"
+      },
+      "result": {
+        "chart_type": "bar",
+        "series": [
+          "left_volatility",
+          "right_volatility"
+        ],
+        "x_axis": "proxy",
+        "y_axis": "percent"
+      }
+    },
+    "real_yields": {
+      "input": {
+        "chart_type": "line",
+        "series": [
+          "dfii10"
+        ],
+        "x_axis": "date",
+        "y_axis": "percent"
+      },
+      "result": {
+        "chart_type": "bar",
+        "series": [
+          "change"
+        ],
+        "x_axis": "window",
+        "y_axis": "percentage_points"
+      }
+    }
+  }
+}
