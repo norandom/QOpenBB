@@ -347,3 +347,16 @@ def _long_study_assumptions(run, days):
         "assumptions": (*items, *schedule, text_assumption("unused", "ignored", "Unrelated scenario")),
     })
     return assumptions, {item.assumption_id for item in schedule}
+
+
+def test_preflight_and_selected_hit_rate_skip_drawdown(run, monkeypatch):
+    from qopenbb_data.modeling.models.factors import diagnostics
+
+    def unexpected(*_):
+        pytest.fail("drawdown calculation ran outside the selected outputs")
+
+    monkeypatch.setattr(diagnostics, "_max_drawdown", unexpected)
+    assert MODEL.input_issues(run.inputs, run.assumptions) == {}
+    result = MODEL.calculate_subset(run.inputs, run.assumptions, ("rising_hit_rate",))
+    assert [output.output_id for output in result.outputs] == ["rising_hit_rate"]
+    assert {entry.output_id for entry in result.trace} == {"rising_hit_rate"}

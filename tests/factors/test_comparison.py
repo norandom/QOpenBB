@@ -9,6 +9,7 @@ from fixtures.factor_inputs import END, SESSIONS, START, utc
 from qopenbb_data.modeling.contracts import Assumption, InputSnapshot
 from qopenbb_data.modeling.models.factors.comparison import ProxyComparisonModel
 from qopenbb_data.modeling.models.factors.momentum import MomentumModel
+from qopenbb_data.modeling.models.factors.volatility import VolatilityModel
 
 EXAMPLE = EXAMPLES["proxy_comparison"]
 OUTPUT_IDS = tuple(item.output_id for item in EXAMPLE.outputs)
@@ -232,6 +233,7 @@ def test_mixed_calendars_preserve_complete_legs_and_withhold_spreads(model, run,
     result = model.calculate(inputs, assumptions)
 
     assert _values(result) == (Decimal(20), Decimal(10), None, Decimal(40), Decimal(20), None)
+    assert set(model.input_issues(inputs, assumptions)) == set(SPREADS)
     for spread in SPREADS:
         reason = _outputs(result)[spread].reason
         assert "calendar" in reason and "fixture_us_listing" in reason and "fixture_other_listing" in reason
@@ -328,6 +330,7 @@ def test_volatility_failure_preserves_same_leg_momentum_and_its_spread(model, ru
     inputs = _inputs(run, sessions, left, _rows(right, (*right.rows[:30], small_close, *right.rows[31:])))
     result = model.calculate(inputs, run.assumptions)
     assert _values(result) == (Decimal(20), Decimal(10), Decimal(10), Decimal(40), None, None)
+    assert model.input_issues(inputs, run.assumptions) == {}
     assert tuple(_traces(result)) == OUTPUT_IDS[:4]
     for output_id in ("right_volatility", "volatility_spread"):
         reason = _outputs(result)[output_id].reason
@@ -347,3 +350,34 @@ def test_fractional_spreads_are_independent_of_caller_precision(model, run):
         "12.34567890123456789012345678901234567", "10", "2.34567890123456789012345678901234567",
         "24.69135780246913578024691357802469134", "20", "4.69135780246913578024691357802469134",
     )))
+
+
+def test_input_issues_report_only_unavailable_outputs_without_calculation(model, run, monkeypatch):
+    def unexpected(*args):
+        pytest.fail("Input eligibility must not calculate a metric")
+
+    monkeypatch.setattr(MomentumModel, "calculate", unexpected)
+    monkeypatch.setattr(VolatilityModel, "calculate", unexpected)
+    assert model.input_issues(run.inputs, run.assumptions) == {}
+    missing = build_run(EXAMPLE, missing=True)
+    issues = model.input_issues(missing.inputs, missing.assumptions)
+    assert set(issues) == {"right_momentum", "right_volatility", *SPREADS}
+    assert all("missing close" in reason for reason in issues.values())
+
+
+def test_subset_calculates_only_requested_leg_and_metric(model, run, monkeypatch):
+    full = model.calculate(run.inputs, run.assumptions)
+    original = MomentumModel.calculate
+
+    def left_only(self, inputs, assumptions):
+        assert {row.entity_id for row in inputs.tables[1].rows} == {"fixture_left"}
+        return original(self, inputs, assumptions)
+
+    def unexpected(*args):
+        pytest.fail("The ineligible metric must not run")
+
+    monkeypatch.setattr(MomentumModel, "calculate", left_only)
+    monkeypatch.setattr(VolatilityModel, "calculate", unexpected)
+    result = model.calculate_subset(run.inputs, run.assumptions, ("left_momentum",))
+    assert result.outputs == full.outputs[:1]
+    assert result.trace == full.trace[:1]

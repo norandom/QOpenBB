@@ -184,22 +184,30 @@ class _Score:
                    sum(losses, Fraction(0)) / len(losses) if losses else None)
 
 
-def _score_candidate(output: OutputDescriptor, group: StudyGroup, score: _Score) -> CandidateOutput:
-    eligible = group.eligible_count
-    context = f"({eligible} eligible, {group.excluded_count} excluded)"
-    if not eligible:
-        return _candidate(output, None, f"No eligible {group.regime}-group outcomes {context}")
-    if output.output_id.endswith("_hit_rate"):
-        return _candidate(output, Fraction(score.winners, eligible), None)
-    if score.mean_winner is not None and score.absolute_mean_loser is not None:
-        result = _candidate(output, score.mean_winner / score.absolute_mean_loser, None)
-        if result.reason is None:
-            return result
-        return _candidate(output, None, f"Slugging {context}: {result.reason}")
-    missing = "winner" if score.losers else "loser"
-    if not (score.winners or score.losers):
+def _score_issue(group: StudyGroup, output_id: str, winners: int, losers: int) -> str | None:
+    context = f"({group.eligible_count} eligible, {group.excluded_count} excluded)"
+    if not group.eligible_count:
+        return f"No eligible {group.regime}-group outcomes {context}"
+    if output_id.endswith("_slugging") and not (winners and losers):
         missing = "winner or loser"
-    return _candidate(output, None, f"No eligible {group.regime}-group {missing} {context}")
+        if winners or losers:
+            missing = "winner" if losers else "loser"
+        return f"No eligible {group.regime}-group {missing} {context}"
+    return None
+
+
+def _score_candidate(output: OutputDescriptor, group: StudyGroup, score: _Score) -> CandidateOutput:
+    issue = _score_issue(group, output.output_id, score.winners, score.losers)
+    if issue:
+        return _candidate(output, None, issue)
+    if output.output_id.endswith("_hit_rate"):
+        return _candidate(output, Fraction(score.winners, group.eligible_count), None)
+    if score.mean_winner is None or score.absolute_mean_loser is None:
+        raise ValueError("Eligible slugging score requires both conditional means")
+    result = _candidate(output, score.mean_winner / score.absolute_mean_loser, None)
+    if result.reason is None:
+        return result
+    return _candidate(output, None, f"Slugging ({group.eligible_count} eligible, {group.excluded_count} excluded): {result.reason}")
 
 
 def _mean_evidence(score: _Score, prefix: str) -> tuple[str, tuple[TraceValue, ...]]:
@@ -322,19 +330,51 @@ class TimingStudyModel(Model):
     def describe(self) -> ModelDescriptor:
         return _DESCRIPTOR
 
+    def input_issues(self, inputs: InputSnapshot, assumptions: AssumptionSet) -> dict[str, str]:
+        try:
+            study = build_study_groups(inputs, assumptions)
+        except ValueError as exc:
+            return dict.fromkeys((item.output_id for item in _DESCRIPTOR.outputs), str(exc))
+        issues = {}
+        for group in study.groups:
+            if group.regime not in {"rising", "falling"}:
+                continue
+            returns = [
+                item.benchmark_relative_return for item in group.intervals
+                if item.benchmark_relative_return is not None
+            ]
+            winners = sum(value > 0 for value in returns)
+            losers = sum(value < 0 for value in returns)
+            for metric in ("hit_rate", "slugging"):
+                key = f"{group.regime}_{metric}"
+                if issue := _score_issue(group, key, winners, losers):
+                    issues[key] = issue
+        if issue := _path_issue(study, tuple(sorted(study.intervals, key=attrgetter("start", "end")))):
+            issues["study_drawdown"] = f"Drawdown path incomplete: {issue}"
+        return issues
+
     def calculate(self, inputs: InputSnapshot, assumptions: AssumptionSet) -> CandidateResult:
+        return self.calculate_subset(inputs, assumptions, tuple(item.output_id for item in _DESCRIPTOR.outputs))
+
+    def calculate_subset(
+        self, inputs: InputSnapshot, assumptions: AssumptionSet, eligible: tuple[str, ...]
+    ) -> CandidateResult:
+        selected = tuple(item for item in _DESCRIPTOR.outputs if item.output_id in eligible)
         try:
             study = build_study_groups(inputs, assumptions)
         except ValueError as exc:
             return CandidateResult(outputs=tuple(
-                _candidate(output, None, str(exc)[:4096]) for output in _DESCRIPTOR.outputs
+                _candidate(output, None, str(exc)[:4096]) for output in selected
             ))
 
         groups = {group.regime: group for group in study.groups}
-        scores = {regime: _Score.from_group(group) for regime, group in groups.items() if regime is not None}
+        regimes = {item.output_id.split("_", 1)[0] for item in selected if item.output_id != "study_drawdown"}
+        if regimes:
+            regimes.add("flat")  # Flat-group coverage accompanies each regime score.
+        scores = {regime: _Score.from_group(groups[regime]) for regime in regimes}
         originals = {row.record_id: row for table in inputs.tables if table.table_id in _INPUTS for row in table.rows}
         outputs, entries = [], []
-        for output in _DESCRIPTOR.outputs:
+        for output in selected:
             trace = _trace_context(output, inputs, assumptions)
             if output.output_id == "study_drawdown":
                 candidate, evidence = _drawdown_output(trace, study, originals)

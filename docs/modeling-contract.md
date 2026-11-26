@@ -1,6 +1,14 @@
 # Versioned modeling contract
 
-The internal analytics listener serves the v1 modeling API under `/modeling/v1`. QOpenBB records the provider and Workspace consumer contracts in this repository. The initial bundle describes the saved-output widget and the installed registry at its source revision. Factor registration is a later task. [Provider bundle](../contracts/modeling/v1/manifest.json) · [Consumer mapping](../contracts/consumers/financial-modeling/saved-output.v1.json) · [Adopted provider](../contracts/consumers/financial-modeling/provider.lock.json)
+The internal analytics listener serves the v1 modeling API under `/modeling/v1`. QOpenBB records the provider and Workspace consumer contracts in this repository. The provider bundle describes the saved-output widget and the six installed factor methods at its pinned source revision. [Provider bundle](../contracts/modeling/v1/manifest.json) · [Consumer mapping](../contracts/consumers/financial-modeling/saved-output.v1.json) · [Adopted provider](../contracts/consumers/financial-modeling/provider.lock.json)
+
+## Evaluate a registered factor
+
+Use signed discovery at `GET /modeling/v1/models` to obtain each method's model ID, versions, inputs, assumptions and output definitions. Submit a dated snapshot and its assumptions to `POST /modeling/v1/evaluations`. The owner can reopen the immutable response at `GET /modeling/v1/runs/{run_id}` and select a saved output through `GET /modeling/v1/widget-results` using its run and output IDs.
+
+The six methods cover ETF momentum, annualized realized volatility, the DFII10 real-yield regime, company FCF yield, ordered proxy comparison and regime-conditioned timing diagnostics. For company FCF yield the numerator is trailing operating cash flow less capital expenditure. A negative numerator and positive market value produce a negative percentage. Missing eligible inputs withhold the result. An amended filing supplies a new input snapshot and evaluation, while the original run keeps the figures and filing evidence available at its cutoff.
+
+The timing study evaluates one-session open-to-open returns across the supplied study calendar. The execution worker caps the whole snapshot at 10,000 observation rows across all tables. Each saved output retains its applicable checks and independent verification status. A mismatch keeps the displayed value withheld.
 
 ## Verify the adopted contract
 

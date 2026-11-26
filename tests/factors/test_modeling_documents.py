@@ -31,7 +31,10 @@ def test_payloads_are_reproducible_and_schema_documents_use_draft_2020_12(bundle
     )
     assert bundle["widgets.json"] == widgets()
     assert bundle["apps.json"] == apps()
-    assert bundle["descriptors.json"] == {"models": []}
+    assert {model["model_id"] for model in bundle["descriptors.json"]["models"]} == {
+        "etf_momentum", "etf_realized_volatility", "real_yield_regime",
+        "issuer_fcf_yield", "proxy_comparison", "timing_study",
+    }
     for name, schema in bundle.items():
         if name.endswith(".schema.json"):
             assert schema["$schema"] == Draft202012Validator.META_SCHEMA["$id"]

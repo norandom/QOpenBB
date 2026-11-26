@@ -2,13 +2,14 @@
 
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
+from datetime import date
 from decimal import Decimal
 from typing import Literal
 
 from pydantic import TypeAdapter
 
 from ..contracts.checks import CheckOutcome, Tolerance
-from ..contracts.common import Scalar, require_subset, require_unique
+from ..contracts.common import Scalar, require_subset, require_unique, serialize_scalar
 from ..contracts.descriptors import ModelDescriptor, OutputDescriptor
 from ..contracts.inputs import AssumptionSet, InputSnapshot, Transformation
 from ..contracts.results import OutputResult, VerificationEvidence
@@ -19,13 +20,17 @@ from ..validation.tolerance import within_tolerance
 ReferenceCalculation = Callable[[InputSnapshot, AssumptionSet], Scalar | None]
 ComparisonStatus = Literal["match", "mismatch", "unavailable"]
 _REFERENCE_SCALAR: TypeAdapter[Scalar] = TypeAdapter(Scalar)
+_SCALAR_TYPES = {"decimal": Decimal, "integer": int, "boolean": bool, "text": str, "date": date}
 
 
 @dataclass(frozen=True)
 class Reference:
+    """Independent calculators and the financial availability checks they can adjudicate."""
+
     version: str
     calculations: Mapping[str, ReferenceCalculation]
     tolerances: Mapping[str, Tolerance]
+    availability_check_ids: frozenset[str] = frozenset()
 
 
 def verify_outputs(
@@ -48,14 +53,23 @@ def verify_outputs(
     }
     final: dict[str, OutputResult] = {}
     evidence: dict[str, VerificationEvidence] = {}
+    availability_checks = reference.availability_check_ids if reference is not None else frozenset()
     for definition in ordered_outputs(descriptor):
         output = source.get(definition.output_id)
         if output is None:
             continue
         dependency_status = {final[key].status for key in definition.required_output_ids if key in final}
-        if "withheld" in dependency_status:
+        unavailable_dependency = any(
+            final[key].status == "withheld" and evidence[key].status == "unavailable"
+            for key in definition.required_output_ids if key in final
+        )
+        if unavailable_dependency or (output.value is not None and "withheld" in dependency_status):
             status: ComparisonStatus = "unavailable"
             explanation = "A required output was withheld"
+            expected_text = None
+        elif output.status == "withheld" and _has_policy_denial(output, outcomes, availability_checks):
+            status = "unavailable"
+            explanation = "Calculated value is unavailable"
             expected_text = None
         else:
             status, explanation, expected_text = _compare(output, inputs, assumptions, reference)
@@ -81,22 +95,42 @@ def verify_outputs(
     )
 
 
+def _has_policy_denial(
+    output: OutputResult, checks: dict[str, CheckOutcome], availability_checks: frozenset[str],
+) -> bool:
+    # A reference may adjudicate availability checks. Other blocking checks enforce policy.
+    return any(
+        check.severity == "blocking"
+        and check.status in ("fail", "unknown", "error")
+        and check.rule_id not in availability_checks
+        for rule_id in output.check_ids
+        if (check := checks.get(rule_id)) is not None and output.output_id in check.output_ids
+    )
+
+
 def _compare(
     output: OutputResult, inputs: InputSnapshot, assumptions: AssumptionSet, reference: Reference | None,
 ) -> tuple[ComparisonStatus, str, str | None]:
-    if output.value is None:
-        return "unavailable", "Calculated value is unavailable", None
     calculate = reference.calculations.get(output.output_id) if reference is not None else None
     if calculate is None or reference is None:
+        if output.value is None:
+            return "unavailable", "Calculated value is unavailable", None
         return "unavailable", "Compatible independent calculation is unavailable", None
     tolerance = reference.tolerances.get(output.output_id)
     try:
         expected = calculate(inputs, assumptions)
         if expected is None:
             return "unavailable", "Independent calculation has insufficient evidence", None
-        if type(expected) is not type(output.value):
+        if type(expected) is not _SCALAR_TYPES[output.value_type]:
             return "unavailable", "Independent value has an incompatible type", None
         expected = _REFERENCE_SCALAR.validate_python(expected)
+        if output.value is None:
+            explanation = (
+                "Calculated text was withheld although the independent value is available"
+                if isinstance(expected, str)
+                else f"Calculated value was withheld, expected {serialize_scalar(expected)} in {output.unit}"
+            )
+            return "mismatch", explanation, None
         matches = _matches(output, expected, tolerance)
     except Exception:  # noqa: BLE001 - expose callback failures as typed evidence.
         return "unavailable", "Independent comparison failed", None

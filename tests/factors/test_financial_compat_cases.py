@@ -133,8 +133,7 @@ def make_app(patch, *, partial=False, verified=True, unit=None):
         calculate=calculated,
         reference=Reference("1", {"value": expected}, {}) if verified else None,
     )
-    # The adopted registry has no production methods. Register a fixture through
-    # the same entry point the installed methods use.
+    # A private fixture exercises the original consumer cases through the installed-method entry point.
     with patch.context() as registration:
         registration.setattr(bootstrap, "_INSTALLED_METHODS", ((method, binding),))
         return bootstrap.create_app()

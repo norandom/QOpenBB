@@ -63,6 +63,50 @@ def test_missing_reference_is_unavailable(run_fields):
     assert evidence[0].status == "unavailable"
 
 
+@pytest.mark.parametrize("eligible", [True, False], ids=["eligible-dependency", "missing-dependency"])
+def test_withheld_dependency_does_not_hide_independent_eligibility(run_fields, eligible):
+    for item in run_fields["outputs"][:3]:
+        item.update(status="withheld", value=None, reason="Production value unavailable")
+    run = ModelRun.model_validate(run_fields)
+    reference = Reference("1", {
+        "price": lambda *_: Decimal(0) if eligible else None,
+        "spread": lambda *_: Decimal(-2),
+        "adjusted": lambda *_: None,
+        "independent": lambda *_: Decimal(10),
+    }, {})
+    outputs, evidence, trace = verify_outputs(
+        run.descriptor, run.inputs, run.assumptions, run.outputs, run.trace, run.checks, reference,
+    )
+    assert outputs[:3] == run.outputs[:3]
+    if eligible:
+        assert [item.status for item in evidence] == ["mismatch", "mismatch", "unavailable", "match"]
+        assert "expected 0" in evidence[0].explanation
+        assert "expected -2" in evidence[1].explanation
+    else:
+        assert [item.status for item in evidence] == ["unavailable"] * 3 + ["match"]
+        assert evidence[1].explanation == "A required output was withheld"
+    saved = ModelRun.model_validate(run_fields | {"outputs": outputs, "verification": evidence, "trace": trace})
+    assert ModelRun.model_validate_json(saved.model_dump_json()) == saved
+
+
+def test_policy_denial_preserves_withholding_and_dependency_evidence(run_fields):
+    run_fields["checks"][0].update(status="fail", explanation="House policy denies this result")
+    for item in run_fields["outputs"][:3]:
+        item.update(status="withheld", value=None, reason="A blocking financial rule failed")
+    run = ModelRun.model_validate(run_fields)
+    reference = Reference("1", {
+        "price": lambda *_: Decimal(10),
+        "spread": lambda *_: Decimal(0),
+        "adjusted": lambda *_: Decimal(-2),
+        "independent": lambda *_: Decimal(10),
+    }, {})
+    outputs, evidence, _ = verify_outputs(
+        run.descriptor, run.inputs, run.assumptions, run.outputs, run.trace, run.checks, reference,
+    )
+    assert outputs[:3] == run.outputs[:3]
+    assert [item.status for item in evidence] == ["unavailable"] * 3 + ["match"]
+
+
 @pytest.mark.parametrize("status", ["unknown", "error", "not_applicable"])
 def test_reference_match_cannot_promote_unavailable_check(run_fields, status):
     run_fields["checks"][0].update(status=status, explanation="Coverage evidence unavailable")

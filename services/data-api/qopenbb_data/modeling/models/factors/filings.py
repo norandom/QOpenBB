@@ -26,9 +26,15 @@ class CashFlows:
     issuer_id: str
     currency: str
     scale: int
-    operating_cash_flow: Decimal
-    capex_spending: Decimal
     rows: tuple[Observation, ...]
+
+    @property
+    def operating_cash_flow(self) -> Decimal:
+        return _component_total(self.rows[::2])
+
+    @property
+    def capex_spending(self) -> Decimal:
+        return _component_total(self.rows[1::2])
 
     @property
     def period_start(self) -> date:
@@ -318,6 +324,5 @@ def resolve_cash_flows(rows: tuple[Observation, ...], cutoff: EvaluationCutoff,
         else:
             currency = selected[0].context.currency
             assert currency is not None
-            return CashFlows(selected[0].entity_id, currency, selected[0].context.scale,
-                             _component_total(selected[::2]), _component_total(selected[1::2]), selected)
+            return CashFlows(selected[0].entity_id, currency, selected[0].context.scale, selected)
     raise ValueError(f"Cash flows for trailing fiscal end {end}: {latest_gap}") from latest_gap

@@ -15,7 +15,12 @@ from ...contracts import (
     TraceEntry,
 )
 from ..protocol import CandidateOutput, CandidateResult, Model
-from .method_inputs import evaluation_cutoff, result_decimal, text_assumption
+from .method_inputs import (
+    evaluation_cutoff,
+    price_window,
+    result_decimal,
+    text_assumption,
+)
 from .momentum import MomentumModel
 from .sessions import PRICE_BASIS
 from .volatility import VolatilityModel
@@ -135,22 +140,31 @@ def _withheld(output_id: str, reason: str) -> CandidateOutput:
     return CandidateOutput(output_id=output_id, value=None, reason=reason[:4096])
 
 
-def _leg_metric(
-    inputs: InputSnapshot, assumptions: AssumptionSet, method: Model, pin: tuple[str, str], leg: _Leg,
-    output: OutputDescriptor, ending: date,
-) -> _TracedOutput:
+def _leg_snapshot(
+    inputs: InputSnapshot, method: Model, pin: tuple[str, str], leg: _Leg, ending: date,
+) -> InputSnapshot:
     if leg.reason is not None:
-        return _withheld(output.output_id, leg.reason), None
+        raise ValueError(leg.reason)
     descriptor = method.describe()
     if (descriptor.model_id, descriptor.method_version) != pin:
         reason = (
             f"{leg.side.title()} leg on {ending}: expected {pin[0]}@{pin[1]}, "
             f"found {descriptor.model_id}@{descriptor.method_version}"
         )
-        return _withheld(output.output_id, reason), None
-    leg_inputs = inputs.model_copy(update={
+        raise ValueError(reason)
+    return inputs.model_copy(update={
         "schema_id": descriptor.input_schema_id, "tables": leg.tables,
     })
+
+
+def _leg_metric(
+    inputs: InputSnapshot, assumptions: AssumptionSet, method: Model, pin: tuple[str, str], leg: _Leg,
+    output: OutputDescriptor, ending: date,
+) -> _TracedOutput:
+    try:
+        leg_inputs = _leg_snapshot(inputs, method, pin, leg, ending)
+    except ValueError as exc:
+        return _withheld(output.output_id, str(exc)), None
     result = method.calculate(leg_inputs, assumptions)
     candidate, = result.outputs
     if candidate.value is None:
@@ -171,20 +185,26 @@ def _leg_metric(
     })
 
 
+def _spread_issue(legs: tuple[_Leg, _Leg], ending: date, *leg_issues: str | None) -> str | None:
+    reasons = ". ".join(reason[:1950] for reason in leg_issues if reason)
+    if reasons:
+        return f"Spread withheld on {ending}: {reasons}"
+    left, right = legs
+    if left.calendar_id != right.calendar_id:
+        return (f"Cross-calendar spread withheld on {ending}: left calendar {left.calendar_id} "
+                f"differs from right calendar {right.calendar_id}")
+    return None
+
+
 def _spread(
     output: OutputDescriptor, legs: tuple[_Leg, _Leg], ending: date,
     left_metric: _TracedOutput, right_metric: _TracedOutput,
 ) -> _TracedOutput:
     left, left_trace = left_metric
     right, right_trace = right_metric
-    if left.value is None or right.value is None:
-        reasons = ". ".join(reason[:1950] for reason in (left.reason, right.reason) if reason)
-        return _withheld(output.output_id, f"Spread withheld on {ending}: {reasons}"), None
-    left_leg, right_leg = legs
-    if left_leg.calendar_id != right_leg.calendar_id:
-        reason = (f"Cross-calendar spread withheld on {ending}: left calendar {left_leg.calendar_id} "
-                  f"differs from right calendar {right_leg.calendar_id}")
-        return _withheld(output.output_id, reason), None
+    issue = _spread_issue(legs, ending, left.reason, right.reason)
+    if issue is not None:
+        return _withheld(output.output_id, issue), None
 
     assert isinstance(left.value, Decimal) and isinstance(right.value, Decimal)
     # The same calendar ID selects the same schedule rows, revision, and exact ending session.
@@ -206,38 +226,101 @@ def _spread(
     return CandidateOutput(output_id=output.output_id, value=value), trace
 
 
+def _comparison_legs(
+    inputs: InputSnapshot, assumptions: AssumptionSet,
+) -> tuple[date, tuple[_Leg, _Leg]]:
+    try:
+        cutoff = evaluation_cutoff(inputs, assumptions, _MODEL_ID)
+        if text_assumption(assumptions, "leg_methods") != _LEG_METHODS:
+            raise ValueError(f"leg_methods must be {_LEG_METHODS}")
+        text_assumption(assumptions, "schedule_revision")
+        if text_assumption(assumptions, "price_basis") != PRICE_BASIS:
+            raise ValueError(f"price_basis must be {PRICE_BASIS}")
+        tables = {table.table_id: table for table in inputs.tables}
+        if "sessions" not in tables:
+            raise ValueError("Missing required input table sessions")
+    except ValueError as exc:
+        day = f" on {inputs.cutoff.observation_date}" if inputs.cutoff is not None else ""
+        raise ValueError(f"Comparison{day}: {exc}") from exc
+
+    return cutoff.observation_date, (
+        _bind_leg("left", assumptions, tables, cutoff),
+        _bind_leg("right", assumptions, tables, cutoff),
+    )
+
+
+def _leg_input_issue(
+    inputs: InputSnapshot, assumptions: AssumptionSet, method: Model, pin: tuple[str, str],
+    leg: _Leg, ending: date,
+) -> str | None:
+    try:
+        snapshot = _leg_snapshot(inputs, method, pin, leg, ending)
+    except ValueError as exc:
+        return str(exc)
+    try:
+        price_window(snapshot, assumptions, pin[0])
+    except ValueError as exc:
+        return f"{leg.side.title()} leg on {ending}: {exc}"
+    return None
+
+
 class ProxyComparisonModel(Model):
     def describe(self) -> ModelDescriptor:
         return _DESCRIPTOR
 
-    def calculate(self, inputs: InputSnapshot, assumptions: AssumptionSet) -> CandidateResult:
+    def input_issues(self, inputs: InputSnapshot, assumptions: AssumptionSet) -> dict[str, str]:
         try:
-            cutoff = evaluation_cutoff(inputs, assumptions, _MODEL_ID)
-            if text_assumption(assumptions, "leg_methods") != _LEG_METHODS:
-                raise ValueError(f"leg_methods must be {_LEG_METHODS}")
-            text_assumption(assumptions, "schedule_revision")
-            if text_assumption(assumptions, "price_basis") != PRICE_BASIS:
-                raise ValueError(f"price_basis must be {PRICE_BASIS}")
-            tables = {table.table_id: table for table in inputs.tables}
-            if "sessions" not in tables:
-                raise ValueError("Missing required input table sessions")
+            ending, legs = _comparison_legs(inputs, assumptions)
         except ValueError as exc:
-            day = f" on {inputs.cutoff.observation_date}" if inputs.cutoff is not None else ""
+            return dict.fromkeys((output.output_id for output in _DESCRIPTOR.outputs), str(exc))
+
+        issues = {}
+        for pin, method, (left_spec, right_spec, spread_spec) in _METHOD_OUTPUTS:
+            left_issue = _leg_input_issue(inputs, assumptions, method, pin, legs[0], ending)
+            right_issue = _leg_input_issue(inputs, assumptions, method, pin, legs[1], ending)
+            spread_issue = _spread_issue(legs, ending, left_issue, right_issue)
+            for spec, issue in zip((left_spec, right_spec, spread_spec),
+                                   (left_issue, right_issue, spread_issue), strict=True):
+                if issue is not None:
+                    issues[spec.output_id] = issue
+        return issues
+
+    def calculate(self, inputs: InputSnapshot, assumptions: AssumptionSet) -> CandidateResult:
+        return self.calculate_subset(inputs, assumptions, tuple(
+            output.output_id for output in _DESCRIPTOR.outputs
+        ))
+
+    def calculate_subset(
+        self, inputs: InputSnapshot, assumptions: AssumptionSet, eligible: tuple[str, ...],
+    ) -> CandidateResult:
+        """Calculate selected outputs in descriptor order with eligible legs for each spread."""
+        if not eligible:
+            return CandidateResult(outputs=())
+        try:
+            ending, legs = _comparison_legs(inputs, assumptions)
+        except ValueError as exc:
             return CandidateResult(outputs=tuple(
-                _withheld(output.output_id, f"Comparison{day}: {exc}") for output in _DESCRIPTOR.outputs
+                _withheld(output.output_id, str(exc))
+                for output in _DESCRIPTOR.outputs if output.output_id in eligible
             ))
 
-        ending = cutoff.observation_date
-        legs = (_bind_leg("left", assumptions, tables, cutoff),
-                _bind_leg("right", assumptions, tables, cutoff))
-        outputs: list[CandidateOutput] = []
-        trace: list[TraceEntry] = []
+        results: dict[str, _TracedOutput] = {}
         for pin, method, (left_spec, right_spec, spread_spec) in _METHOD_OUTPUTS:
-            left = _leg_metric(inputs, assumptions, method, pin, legs[0], left_spec, ending)
-            right = _leg_metric(inputs, assumptions, method, pin, legs[1], right_spec, ending)
-            spread = _spread(spread_spec, legs, ending, left, right)
-            for output, entry in (left, right, spread):
-                outputs.append(output)
-                if entry is not None:
-                    trace.append(entry)
-        return CandidateResult(outputs=tuple(outputs), trace=tuple(trace))
+            for leg, spec in zip(legs, (left_spec, right_spec), strict=True):
+                if spec.output_id in eligible:
+                    results[spec.output_id] = _leg_metric(
+                        inputs, assumptions, method, pin, leg, spec, ending,
+                    )
+            if spread_spec.output_id in eligible:
+                left = results.get(left_spec.output_id)
+                right = results.get(right_spec.output_id)
+                if left is None or right is None:
+                    reason = f"Spread withheld on {ending}: both leg outputs must be eligible"
+                    results[spread_spec.output_id] = _withheld(spread_spec.output_id, reason), None
+                else:
+                    results[spread_spec.output_id] = _spread(spread_spec, legs, ending, left, right)
+
+        return CandidateResult(
+            outputs=tuple(output for output, _ in results.values()),
+            trace=tuple(entry for _, entry in results.values() if entry is not None),
+        )

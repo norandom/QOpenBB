@@ -90,6 +90,15 @@ def _endpoints(inputs: InputSnapshot, window: SessionWindow) -> tuple[Observatio
     return first, last
 
 
+def resolve_yield_inputs(
+    inputs: InputSnapshot, assumptions: AssumptionSet,
+) -> tuple[SessionWindow, Observation, Observation]:
+    """Select available DFII10 evidence at the two exact session endpoints."""
+    window = session_window(inputs, assumptions, _MODEL_ID)
+    first, last = _endpoints(inputs, window)
+    return window, first, last
+
+
 def _trace(output_id: str, expression: str, window: SessionWindow,
            first: Observation, last: Observation) -> TraceEntry:
     return TraceEntry(
@@ -122,8 +131,7 @@ class RealYieldModel(Model):
 
     def calculate(self, inputs: InputSnapshot, assumptions: AssumptionSet) -> CandidateResult:
         try:
-            window = session_window(inputs, assumptions, _MODEL_ID)
-            first, last = _endpoints(inputs, window)
+            window, first, last = resolve_yield_inputs(inputs, assumptions)
             change = _change(first, last)
         except ValueError as exc:
             reason = str(exc)[:4096]

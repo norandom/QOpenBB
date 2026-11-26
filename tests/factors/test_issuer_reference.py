@@ -1,6 +1,7 @@
 """Independent issuer FCF yield comparison against dated filings."""
 
 import itertools
+from dataclasses import replace
 from datetime import date, timedelta
 from decimal import Decimal
 
@@ -38,9 +39,10 @@ def verify(run, value, *, trace=None, check_status="pass", reason=None):
             "status": check_status, "explanation": reason,
             "observed_value": None, "expected_value": None, "tolerance": None,
         })
+    reference = replace(issuer_reference(), availability_check_ids=frozenset(output.check_ids))
     outputs, evidence, _ = verify_outputs(run.descriptor, run.inputs, run.assumptions,
                                          (output,), run.trace if trace is None else trace,
-                                         (check,), issuer_reference())
+                                         (check,), reference)
     return outputs[0].status, evidence[0].status
 
 
@@ -68,7 +70,7 @@ def test_filing_sign_and_zero_negative_numerators(ocf, expected, mutant, positiv
     assert verify(run, value, check_status="unknown", reason="Check unavailable") == ("unverified", "match")
     if value <= 0:
         assert verify(run, None, check_status="fail", reason="Nonpositive numerator incorrectly withheld") == (
-            "withheld", "unavailable")
+            "withheld", "mismatch")
         assert issuer_reference().calculations["fcf_yield"](run.inputs, run.assumptions) == value
 
 
@@ -109,6 +111,8 @@ def test_rolling_fiscal_year_and_late_amendment(overlap):
         (row.context.period_start, row.context.period_end) for row in quarters
     ]
     assert verify(run, candidate.outputs[0].value, trace=candidate.trace) == ("verified", "match")
+    assert verify(run, None, check_status="fail", reason="Eligible filing was ignored") == (
+        "withheld", "mismatch")
     assert verify(run, Decimal(10)) == ("withheld", "mismatch")
 
 

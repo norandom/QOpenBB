@@ -18,6 +18,8 @@ paths = [
   "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
 ]
 selectors = [
+  "tests/factors/test_installed_factor_http.py::test_save_installed_factor_and_project_evidence",
+  "tests/factors/test_installed_factors.py::test_production_registry_binds_all_six_exact_versions",
   "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
   "tests/factors/test_momentum.py::test_descriptor_matches_frozen_example",
   "tests/factors/test_momentum.py::test_varying_prices_match_frozen_result_and_trace",
@@ -42,6 +44,8 @@ paths = [
   "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
 ]
 selectors = [
+  "tests/factors/test_installed_factor_http.py::test_save_installed_factor_and_project_evidence",
+  "tests/factors/test_installed_factors.py::test_production_registry_binds_all_six_exact_versions",
   "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
   "tests/factors/test_volatility.py::test_descriptor_matches_frozen_contract",
   "tests/factors/test_volatility.py::test_varying_prices_match_frozen_trace_and_sample_volatility",
@@ -66,6 +70,8 @@ paths = [
   "services/data-api/qopenbb_data/modeling/verification/factors/regime_reference.py",
 ]
 selectors = [
+  "tests/factors/test_installed_factor_http.py::test_save_installed_factor_and_project_evidence",
+  "tests/factors/test_installed_factors.py::test_production_registry_binds_all_six_exact_versions",
   "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
   "tests/factors/test_real_yield.py::test_only_exact_endpoints_are_needed_and_match_frozen_trace",
   "tests/factors/test_real_yield.py::test_frozen_withholding_reasons",
@@ -90,6 +96,11 @@ paths = [
   "services/data-api/qopenbb_data/modeling/verification/factors/issuer_reference.py",
 ]
 selectors = [
+  "tests/factors/test_installed_factor_http.py::test_saved_fcf_snapshot_survives_filing_revision",
+  "tests/factors/test_installed_factor_http_withholding.py::test_installed_worker_detects_false_fcf_withholding",
+  "tests/factors/test_installed_factors.py::test_failed_fcf_precondition_never_calls_calculate",
+  "tests/factors/test_installed_factor_http.py::test_save_installed_factor_and_project_evidence",
+  "tests/factors/test_installed_factors.py::test_production_registry_binds_all_six_exact_versions",
   "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
   "tests/factors/test_fcf_yield.py::test_frozen_issuer_yield_descriptor_and_trace",
   "tests/factors/test_filing_selection.py::test_partial_amendment_cannot_mix_with_prior_vintage",
@@ -115,8 +126,11 @@ paths = [
   "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
 ]
 selectors = [
+  "tests/factors/test_installed_factor_http.py::test_save_installed_factor_and_project_evidence",
+  "tests/factors/test_installed_factors.py::test_production_registry_binds_all_six_exact_versions",
   "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
   "tests/factors/test_comparison.py::test_ordered_comparison_and_reversed_pair",
+  "tests/factors/test_installed_factors.py::test_partial_pair_executes_only_the_eligible_left_leg",
   "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
   "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar",
 ]
@@ -142,6 +156,11 @@ paths = [
   "services/data-api/qopenbb_data/modeling/verification/factors/timing_inputs.py",
 ]
 selectors = [
+  "tests/factors/test_installed_factor_http.py::test_timing_study_withholds_unsupported_return_tenor",
+  "tests/factors/test_diagnostics.py::test_preflight_and_selected_hit_rate_skip_drawdown",
+  "tests/factors/test_installed_factors.py::test_timing_bounds_outcome_horizon_and_combined_observation_rows",
+  "tests/factors/test_installed_factor_http.py::test_save_installed_factor_and_project_evidence",
+  "tests/factors/test_installed_factors.py::test_production_registry_binds_all_six_exact_versions",
   "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
   "tests/factors/test_diagnostics.py::test_frozen_results_and_trace",
   "tests/factors/test_study_groups.py::test_prior_decision_cutoff_excludes_late_signal_and_regime",
@@ -171,6 +190,8 @@ selectors = [
   "tests/factors/test_method_inputs.py::test_invalid_calculation_context_fails_explicitly",
   "tests/factors/test_factor_examples.py::test_factor_example_round_trip",
   "tests/factors/test_reference_verification.py::test_reference_uses_supplied_input_and_detects_mutation",
+  "tests/factors/test_reference_verification.py::test_withheld_dependency_does_not_hide_independent_eligibility",
+  "tests/factors/test_reference_verification.py::test_policy_denial_preserves_withholding_and_dependency_evidence",
   "tests/factors/test_validation_lifecycle.py::test_rule_outcomes",
   "tests/factors/test_validation_run_lifecycle.py::test_evaluate_run_gates_calculation_and_verifies_independent_sibling",
   "tests/factors/test_import_boundaries.py::test_production_modeling_import_boundaries",
@@ -189,6 +210,7 @@ paths = [
   "services/data-api/qopenbb_data/modeling/service/acquisition*.py",
 ]
 selectors = [
+  "tests/factors/test_installed_factors.py::test_installed_worker_applies_real_rules_and_references",
   "tests/factors/test_execution.py::test_timeout_reaps_child_and_releases_capacity",
   "tests/factors/test_orchestration.py::test_missing_invalid_and_reference_mismatch_have_distinct_evidence",
   "tests/factors/test_acquisition.py::test_full_mapping_preserves_snapshot_contract",
@@ -207,6 +229,7 @@ paths = [
   "services/data-api/qopenbb_data/modeling/service/run_store*.py",
 ]
 selectors = [
+  "tests/factors/test_installed_factor_http.py::test_signed_catalog_installs_six_exact_versions",
   "tests/factors/test_model_http.py::test_save_reopen_project_and_owner",
   "tests/factors/test_model_http.py::test_auth_before_receiving_body_and_safe_validation",
   "tests/factors/test_model_identity.py::test_authenticates_pinned_key",

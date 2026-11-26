@@ -72,7 +72,10 @@ def test_internal_listener_authenticates_and_reopens_saved_run(evaluations, snap
         signed = assertion(claims={"sub": OWNER.subject})
         assert exchange(prefix + "/models", headers={"X-User-Id": OWNER.subject})[0] == 401
         status, catalog = exchange(prefix + "/models", signed)
-        assert status == 200 and catalog["models"] == []
+        assert status == 200
+        assert ("issuer_fcf_yield", "1") in {
+            (model["model_id"], model["method_version"]) for model in catalog["models"]
+        }
         payload = request(inputs=snapshot).model_dump_json().encode()
         assert exchange(prefix + "/evaluations", payload=payload)[0] == 401
         status, failure = exchange(prefix + "/evaluations", signed, payload=payload)

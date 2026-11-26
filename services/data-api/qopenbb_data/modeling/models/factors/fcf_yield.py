@@ -60,21 +60,30 @@ def _market_value(rows: tuple[Observation, ...], flows: CashFlows,
     return min(latest, key=lambda row: row.record_id)
 
 
-def _calculate(inputs: InputSnapshot, assumptions: AssumptionSet) -> CandidateResult:
+def resolve_fcf_inputs(
+    inputs: InputSnapshot, assumptions: AssumptionSet,
+) -> tuple[EvaluationCutoff, CashFlows, Observation]:
+    """Select compatible trailing filings and observation-date equity evidence."""
     cutoff = evaluation_cutoff(inputs, assumptions, _MODEL)
     flows = resolve_cash_flows(input_rows(inputs, "cash_flows"), cutoff,
                                text_assumption(assumptions, "capex_sign"))
     market = _market_value(input_rows(inputs, "market_value"), flows, cutoff)
+    return cutoff, flows, market
+
+
+def _calculate(inputs: InputSnapshot, assumptions: AssumptionSet) -> CandidateResult:
+    cutoff, flows, market = resolve_fcf_inputs(inputs, assumptions)
     assert market.value is not None
     # Preserve cancellation between separately aggregated flows before division.
     with localcontext(Context(prec=160)):
-        free_cash_flow = flows.operating_cash_flow - flows.capex_spending
+        capex_spending = flows.capex_spending
+        free_cash_flow = flows.operating_cash_flow - capex_spending
         try:
             value = result_decimal(100 * free_cash_flow / market.value)
             intermediates = tuple(
                 TraceValue(name=name, value=amount, unit="currency", currency=flows.currency,
                            scale=flows.scale)
-                for name, amount in (("capex_spending", flows.capex_spending), ("free_cash_flow", free_cash_flow))
+                for name, amount in (("capex_spending", capex_spending), ("free_cash_flow", free_cash_flow))
             )
         except ValueError as exc:
             raise ValueError(f"{cutoff.observation_date} FCF yield or its monetary components exceed financial decimal range") from exc
