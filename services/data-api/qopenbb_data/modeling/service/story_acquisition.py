@@ -189,20 +189,27 @@ def _yield_receipt(payload, query, count, earliest):
     meta = payload["extra"]["results_metadata"]["__qopenbb_financial__"]
     field = meta["fields"]["DFII10"]
     bounds = meta["bounds"]
-    expected = {**query, "use_cache": False}
-    del expected["provider"]
+    # The producer emits FRED-native aliases alongside the requested symbol.
+    expected = {
+        "symbol": query["symbol"], "series_id": query["symbol"],
+        "observation_start": query["start_date"], "observation_end": query["end_date"],
+    }
     used = _object(meta["effective_query"])
     if (payload.get("provider") != "fred" or meta["provider"] != "fred"
             or meta["dataset"] != "economy.fred_series"
             or meta["source"]["endpoint"] != "series/observations"
             or meta["point_in_time_safe"] is not False or meta.get("vintage_query_supported") is not None
             or any(used.get(key) != value for key, value in expected.items())
-            or used["use_cache"] is not False or used.get("transform") is not None
-            or used.get("frequency") is not None
+            or any(key in used and used[key] != query[key] for key in ("start_date", "end_date"))
+            or used["use_cache"] is not False
+            or any(used.get(key) is not None for key in ("units", "transform", "frequency"))
+            or meta["transformations"] != []
             or not isinstance(bounds["returned_count"], Decimal) or bounds["returned_count"] != count
             or (bounds.get("truncated") is not None and bounds["truncated"] is not False)
             or field["unit"] != "Percent" or field["source_unit"] != "Percent"
             or field["source_frequency"] != "Daily" or field["effective_frequency"] != "Daily"
+            or field["source"] != "fred" or field["observation_date_field"] != "date"
+            or any(field.get(key) is not None for key in ("scale", "currency", "requested_transform", "aggregation"))
             or field["value_origin"] != "provider_observation"):
         raise ValueError("Unexpected FRED series metadata.")
     return _receipt_time(meta, earliest), _object(meta.get("observation_provenance", {}))

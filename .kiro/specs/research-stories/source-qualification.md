@@ -25,6 +25,8 @@ FMP `GET /api/v1/equity/profile?symbol=VGT&provider=fmp` confirmed VGT is a USD 
 
 With the same date bounds, `GET /api/v1/economy/fred_series?symbol=DFII10&provider=fred&use_cache=false` returned 65 dated rows including the September 7 exchange holiday and numeric observations at both exact endpoints. Receipt was 12:32:27.514430, digest `8143ac6ba8115927a8ac8d6b451d4920cef557d7e3b847ae12944938216dce0d`. DFII10 is the Board of Governors' 10-year constant-maturity inflation-indexed Treasury yield, in percent, via FRED. The endpoint difference uses percentage points. [DFII10 series](https://fred.stlouisfed.org/series/DFII10)
 
+A signed source-candidate evaluation through the published data API saved 64 session markers and 65 DFII10 observations. The regime and change were withheld. Their blocking checks name August 17 and November 13 because the returned observations lack verified historical availability at those endpoints.
+
 > This product uses the FRED® API but is not endorsed or certified by the Federal Reserve Bank of St. Louis.
 
 ## Retrospective price comparison

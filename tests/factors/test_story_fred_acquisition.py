@@ -39,12 +39,18 @@ def response(query, rows):
             "dataset": "economy.fred_series", "provider": "fred", "retrieved_at": STAMP.isoformat(),
             "source": {"endpoint": "series/observations"},
             "bounds": {"returned_count": len(rows), "truncated": None},
-            "effective_query": {key: value for key, value in query.items() if key != "provider"}
-            | {"use_cache": False, "limit": 100000, "aggregation_method": "eop"},
+            "effective_query": {
+                "symbol": query["symbol"], "series_id": query["symbol"],
+                "observation_start": query["start_date"], "observation_end": query["end_date"],
+                "use_cache": False, "limit": 100000, "aggregation_method": "eop",
+            },
+            "transformations": [],
             "point_in_time_safe": False, "vintage_query_supported": None,
             "fields": {"DFII10": {
                 "unit": "Percent", "source_unit": "Percent", "source_frequency": "Daily",
                 "effective_frequency": "Daily", "value_origin": "provider_observation",
+                "observation_date_field": "date", "source": "fred",
+                "scale": None, "currency": None, "requested_transform": None, "aggregation": None,
             }},
             "observation_provenance": {"DFII10": {
                 "2026-08-17": {"realtime_start": "2026-08-18", "realtime_end": "9999-12-31"},
@@ -98,8 +104,18 @@ def test_missing_endpoint_returns_dated_outcome(rows):
 @pytest.mark.parametrize("mutate", [
     lambda meta: meta["fields"]["DFII10"].update(unit="Percent Change"),
     lambda meta: meta["effective_query"].update(symbol="DGS10"),
+    lambda meta: meta["effective_query"].update(series_id="DGS10"),
+    lambda meta: meta["effective_query"].update(observation_start="2026-08-18"),
+    lambda meta: meta["effective_query"].update(observation_end="2026-11-12"),
     lambda meta: meta["effective_query"].update(start_date="2026-08-18"),
+    lambda meta: meta["effective_query"].update(end_date="2026-11-12"),
+    lambda meta: meta["effective_query"].update(units="pch"),
     lambda meta: meta["effective_query"].update(frequency="w"),
+    lambda meta: meta.update(transformations=[{"name": "fred_units_transform"}]),
+    lambda meta: meta["fields"]["DFII10"].update(requested_transform="pch"),
+    lambda meta: meta["fields"]["DFII10"].update(aggregation="avg"),
+    lambda meta: meta["fields"]["DFII10"].update(source_unit="Percent Change"),
+    lambda meta: meta["fields"]["DFII10"].update(scale=100),
     lambda meta: meta.update(point_in_time_safe=True),
     lambda meta: meta["bounds"].update(returned_count=0),
 ])
