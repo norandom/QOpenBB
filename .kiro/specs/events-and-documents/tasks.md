@@ -27,7 +27,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 1.2_
   - _Requirements: 1.1, 1.2_
 
-- [ ] 2.2 (P) Validate the listing and independent query choices
+- [x] 2.2 (P) Validate the listing and independent query choices
   - Use the fixed calendar, filings, transcript and news policies. Validate inclusive date pairs, genuine dates, scalar types, pages, limits and year/quarter. Preserve exact listing suffixes. Omit absent optional news dates.
   - Exercise each boundary and its first invalid neighbor. Return a field-specific issue with the actual limit and keep all other effective selections. Pass the combined caps for the selection module and any financial query validator changes.
   - _Boundary: Workspace selection.ts, financialQuery.ts and tests/unit/events-documents-selection.test.ts_
@@ -133,3 +133,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Boundary: Controller and independent financial reviewer, live journey and acceptance evidence_
   - _Depends: 5.3_
   - _Requirements: 1.1, 1.2, 2.1, 2.3, 2.6, 3.1, 3.2, 3.3, 3.4, 4.1, 4.4, 5.2, 5.3_
+
+## Implementation notes
+
+Workspace commit `2ac14a0` verifies task 2.2 with 49 focused passing cases. Unchanged app-shape assertions and a chart mock also fail on the preceding Workspace revision. The candidate pin and integrated browser checks belong to group 5.
