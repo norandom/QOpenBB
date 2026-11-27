@@ -1,11 +1,11 @@
 # Events and Documents implementation plan
 
-Deliver one catalog App that answers the approved earnings question using the four installed FMP inputs. Each numbered subtask is a 1–3 hour work unit. The [design](design.md) identifies the exact source files and the [requirements](requirements.md) define acceptance. All work below is pending.
+Deliver one catalog App that answers the approved earnings question using the four installed FMP inputs. Each numbered subtask is a 1–3 hour work unit. The [design](design.md) identifies the exact source files and the [requirements](requirements.md) define acceptance. Checked tasks have passed independent review.
 
 The controller freezes shared interfaces, fixtures and ownership before fan-out, stages reviewed changes selectively, and serializes commits, source pins and joins. Use fresh Sol implementers and independent reviewers; use Astra for financial semantics and difficult integration. Dispatch only the marked pairs together, with at most two implementers. Give each worker its named files, frozen inputs, focused checks and the [combined complexity command](../../../docs/complexity.md) with actual base/head revisions or explicit change manifests for both forks. Measure whole maintained files against 400 physical lines, 300 logical units per file and 50 per function. One heavy suite or build runs at a time. Require fresh verification after independent review. Workspace test paths below are relative to `vendor/workspace/terminalpro/`. Reserve the shared Events and Documents unit and integration suites named in the design for sequential joins. [Delegation](../../steering/delegation.md) · [Testing](../../steering/testing.md)
 
 - [ ] 1. Establish the candidate baseline and shared contracts
-- [ ] 1.1 Prepare the pinned runtime and complexity inventory
+- [x] 1.1 Prepare the pinned runtime and complexity inventory
   - Verify the owned Workspace checkout, installed Batch B route and catalog baselines, pinned toolchains, disposable login, one-worker headless browser, guarded provider capture and candidate build entry point. Use offline smoke checks. A missing live entitlement remains a recorded prerequisite for the live journey.
   - Register planned maintained paths and test/generated exclusions before feature edits. Run the existing combined checker and its oversized-file regression. Record the two fork scopes and confirm the inventory changes pass applicable caps.
   - _Boundary: Controller, runtime preflight, root and fork scope inventories_

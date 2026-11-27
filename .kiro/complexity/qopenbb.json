@@ -6,6 +6,12 @@
   "mode": "all",
   "owners": [
     {
+      "spec": "events-and-documents",
+      "include": ["pipeline/qopenbb_ci/*"],
+      "patterns": ["pipeline/qopenbb_ci/catalog_events_documents.py"],
+      "files": []
+    },
+    {
       "spec": "research-stories",
       "include": ["contracts/consumers/research-stories/*.json", "pipeline/qopenbb_ci/catalog_story.py", "verification/modeling-journey/story*.py", "verification/modeling-journey/story-selection-evidence.mts"],
       "files": [
