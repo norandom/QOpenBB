@@ -19,7 +19,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 1.1_
   - _Requirements: 1.1, 1.2, 1.4, 2.2, 2.3, 3.2, 4.5, 5.2_
 
-- [ ] 2. Establish catalog and acquisition boundaries
+- [x] 2. Establish catalog and acquisition boundaries
 - [x] 2.1 (P) Generate the curated catalog entry
   - Use all four validated FMP declarations and existing defaults. Emit the ordered App once. Missing or foreign inputs must prevent its admission. Regenerate affected catalog artifacts and hashes and compare unchanged Apps and individual widgets.
   - Pass the combined caps for the maintained generator and registration modules. Document generator provenance for excluded outputs.
@@ -34,14 +34,14 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 1.2_
   - _Requirements: 1.2, 1.3, 2.1, 3.1, 3.2, 3.3_
 
-- [ ] 2.3 (P) Read authorized responses without losing HTTP status or numeric tokens
+- [x] 2.3 (P) Read authorized responses without losing HTTP status or numeric tokens
   - Check dashboard, source and underlying widget permission before dispatch on the installed connection. Preserve normal session-header scope. Handle cancellation and safe failure codes. Read the body once, bind a bodyless 204 to the request and retain exact calendar tokens by original ordinal and field.
   - Verify denied reads send nothing, 204 supplies no provider timestamp, and typed failures, malformed JSON and missing token support cannot yield usable evidence. Check existing transport callers and pass the combined caps for reader and transport files.
   - _Boundary: Workspace reader.ts, status-aware transport in lib/api.tsx and tests/unit/events-documents-reader.test.ts_
   - _Depends: 2.1, 2.2_
   - _Requirements: 1.3, 1.4, 2.3, 2.6, 4.4, 4.5_
 
-- [ ] 2.4 (P) Admit the native story identity through Workspace discovery
+- [x] 2.4 (P) Admit the native story identity through Workspace discovery
   - Extract the schema responsibility from the near-cap shared form module. Admit the exact type and catalog identity only when the declaration and its four source bindings agree. Check fresh and cached launch validation, aliases, overridden endpoints and existing research story admission.
   - Deliver validated discovery data for later widget dispatch. Run the combined caps on the schema, type and admission modules.
   - _Boundary: Workspace nativeStorySchema.ts, zodForms.ts, widgetTypes.ts, backendValidation/catalog.ts and nativeWidget.ts and tests/unit/events-documents-admission.test.ts_
@@ -137,3 +137,5 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
 ## Implementation notes
 
 Workspace commit `2ac14a0` verifies task 2.2 with 49 focused passing cases. Unchanged app-shape assertions and a chart mock also fail on the preceding Workspace revision. The candidate pin and integrated browser checks belong to group 5.
+
+Workspace commits `357f24e` and `1250ed4` validate native catalog bindings and implement the authorized reader. The composition root must call `canUseEventsDocumentsStorySource` before mount and recheck current source and session identity before reusing any cached market receipt.
