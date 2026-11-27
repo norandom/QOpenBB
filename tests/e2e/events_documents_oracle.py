@@ -211,7 +211,10 @@ CONTROLLED_SCENARIOS = {
 
 
 def report(directory):
-    plan = decode(Path(__file__).with_name("events-documents-plan.json").read_bytes())
+    plan_path = directory / "plan.json"
+    if not plan_path.exists():
+        plan_path = Path(__file__).with_name("events-documents-plan.json")
+    plan = decode(plan_path.read_bytes())
     run = decode((directory / "observations.json").read_bytes())
     ledger = decode((directory / "provider" / "ledger.json").read_bytes())
     requests = run["requests"]
@@ -234,7 +237,7 @@ def report(directory):
     check(not run["issues"] and run["browserRequests"] == len(requests), "browser diagnostic counts")
     check(Counter((entry["stage"], entry["slot"]) for entry in requests) == expected, "browser request schedule")
     check(ledger["denials"] == 0, "guard denial")
-    check(ledger["count"] == (15 if live else 0), "guard send count")
+    check(ledger["count"] == (sum(map(len, plan["groups"].values())) if live else 0), "guard send count")
     sends = {entry["number"]: entry for entry in ledger["entries"]}
     check(len(sends) == ledger["count"], "guard send identity")
     check(not live or {entry["receipt"] for entry in requests} == sends.keys(), "same-send coverage")
@@ -296,9 +299,11 @@ def report(directory):
             documents[slot] += compare_documents(slot, raw, rows, entry["query"]) if live else len(rows)
     coverage = Counter()
     final_coverage = {}
+    calendar_views = []
     chart_marks = Counter()
+    final_stage = "reopen" if "reopen" in plan["groups"] else "launch"
     final_inputs = {entry["slot"]: entry["status"] == 200 and (entry.get("documentCount") or 0) > 0
-                    for entry in requests if entry["stage"] == "reopen" and entry["slot"] != "calendar"}
+                    for entry in requests if entry["stage"] == final_stage and entry["slot"] != "calendar"}
     for display in run["calendar"]:
         receipt = display["index"]
         if receipt not in installed:
@@ -316,15 +321,38 @@ def report(directory):
         chart_marks.update(mark["identity"].rsplit(" · ", 1)[-1]
                            for row in display["rows"] for chart in row["charts"] for mark in chart["marks"])
         coverage.update(counts)
-        if next(entry["stage"] for entry in requests if entry["index"] == receipt) == "reopen":
+        stage = next(entry["stage"] for entry in requests if entry["index"] == receipt)
+        calendar_views.append({"stage": stage, "symbol": display["symbol"], "rows": len(display["rows"]),
+                               "numeric_fields": counts, "missing_labels": {
+                                   field: sum(row["fields"][field] == "Missing" for row in display["rows"])
+                                   for field in FIELDS}})
+        if stage == final_stage:
             final_coverage = counts
     final_inputs["calendar"] = any(final_coverage.values())
+    supplemental = {}
+    if live and final_stage == "launch":
+        check(run["seedAborts"] > 0 and run["scenarios"] == ["native-catalog-seeded-through-workspace-controls"],
+              "four-input proof seed")
+        check(set(final_coverage) == FIELDS.keys() and all(final_coverage.values()), "four-input chart coverage")
+        supplemental = {"calendar_views": calendar_views, "seed_aborts": run["seedAborts"],
+                        "conclusions": run["conclusions"]}
+    if live and "symbols" in plan and final_stage == "reopen":
+        check(run["seedAborts"] > 0 and set(run["scenarios"]) == {
+            "native-catalog-seeded-through-workspace-controls", "save-and-export-choices",
+            "fresh-authenticated-reopen-choices"}, "supplemental preparation and persistence")
+        check(any(view["symbol"] == plan["symbols"]["launch"] and all(
+            view["missing_labels"][field] for field in ("eps_consensus", "revenue_consensus"))
+            for view in calendar_views), "supplemental live missing estimates")
+        check(set(final_coverage) == FIELDS.keys() and all(final_coverage.values()),
+              "supplemental reopened live chart fields")
+        supplemental = {"calendar_views": calendar_views, "seed_aborts": run["seedAborts"],
+                        "conclusions": run["conclusions"]}
     controlled = {}
     if not live:
         check(blocked == {"invalid_evidence": 1, "permission_denied": 1, "timeout": 1}, "controlled failure counts")
         check(empty == {"calendar": 1, "filings": 1, "transcript": 2, "news": 1}, "controlled empty counts")
         controlled = {"controlled_scenarios": run["scenarios"], "controlled_network": run["network"]}
-    return {**controlled, "mode": run["mode"], "browser": run["browser"], "browser_requests": len(requests),
+    return {**controlled, **supplemental, "mode": run["mode"], "browser": run["browser"], "browser_requests": len(requests),
             "provider_sends": ledger["count"], "provider_statuses": dict(Counter(
                 str(entry["status"] or "transport_unobserved") for entry in sends.values())),
             "provider_schedule": [{"stage": entry["stage"], "slot": entry["slot"]} for entry in sends.values()],

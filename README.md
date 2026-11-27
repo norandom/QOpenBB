@@ -3,6 +3,7 @@
 A self-hosted research workspace for financial engineers. Build on OpenBB, use FMP as the primary research source, and bring FRED, Yahoo Finance and later custom data into consistent analytical views.
 
 **Available: [development alpha](https://github.com/norandom/QOpenBB/releases/tag/alpha-44340458084-1) with public prebuilt `latest` images.** It adds the 25-task FMP Batch B increment: eight event and document inputs (dividend and split history, earnings, dividend and split calendars, company news, earnings-call transcripts and SEC filing metadata).
+- The local Events and Documents candidate lets an analyst inspect actual and estimated EPS and revenue alongside filings, transcripts and news. [Live chart and verification](artifacts/reviewed/events-and-documents/supplemental.md)
 - [Provider coverage](docs/provider-coverage.md#batch-b-events-and-documents-checkpoint-2026-11-18) separates the scoped live API checks for all eight from the five locally verified widget journeys.
 - [Publication verification](artifacts/reviewed/fmp-expansion-b/5.5-review.md) covers public assets and images, a network-isolated API check, and isolated internal-network readiness and login.
 - Windows host-loopback transport remains unverified. No CI-image financial browser run or new owner-server deployment is claimed.

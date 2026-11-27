@@ -1,0 +1,929 @@
+{
+  "browser": "156.0.8078.4",
+  "browser_requests": 15,
+  "provider_sends": 15,
+  "guard_denials": 0,
+  "network": {
+    "fixtureExternal": 0,
+    "abortedData": 0,
+    "errors": {},
+    "httpErrors": {},
+    "consoleErrors": {},
+    "externalBlocks": 0,
+    "abortedSlots": {}
+  },
+  "browser_issues": [],
+  "browser_verification": {
+    "passed": [
+      "launch/filings",
+      "launch/transcript",
+      "launch/news",
+      "launch/calendar",
+      "launch/conclusion",
+      "listing/filings",
+      "listing/transcript",
+      "listing/news",
+      "listing/calendar",
+      "listing/conclusion",
+      "calendar/calendar",
+      "calendar/conclusion",
+      "filings/filings",
+      "filings/conclusion",
+      "transcript/transcript",
+      "transcript/conclusion",
+      "news/news",
+      "news/conclusion",
+      "reopen/filings",
+      "reopen/transcript",
+      "reopen/news",
+      "reopen/calendar",
+      "reopen/conclusion"
+    ],
+    "failed": []
+  },
+  "persistence": [
+    "native-catalog-seeded-through-workspace-controls",
+    "save-and-export-choices",
+    "fresh-authenticated-reopen-choices"
+  ],
+  "receipts": [
+    {
+      "stage": "launch",
+      "slot": "calendar",
+      "installed_status": 200,
+      "request_query": {
+        "start_date": "2025-07-29",
+        "end_date": "2025-07-30"
+      },
+      "normalized_errors": [],
+      "receipt": 2,
+      "provider_status": 200,
+      "provider_endpoint": "earnings-calendar",
+      "provider_query": {
+        "from": "2025-07-29",
+        "to": "2025-07-30"
+      },
+      "provider_count": 2607,
+      "normalized_count": 250,
+      "retrieved_at": "2026-11-27T12:47:02.606921Z",
+      "clipped": true,
+      "calendar_display": [
+        {
+          "symbol": "DRQ",
+          "market_rows": 250,
+          "displayed_rows": 1,
+          "numeric_fields": {
+            "eps_actual": 1,
+            "eps_consensus": 0,
+            "revenue_actual": 1,
+            "revenue_consensus": 0
+          },
+          "errors": [
+            "row 233 marks: unusable evidence"
+          ],
+          "verified_marks": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "verified_missing_labels": {}
+        },
+        {
+          "symbol": "MORN",
+          "market_rows": 250,
+          "displayed_rows": 1,
+          "numeric_fields": {
+            "eps_actual": 1,
+            "eps_consensus": 1,
+            "revenue_actual": 1,
+            "revenue_consensus": 1
+          },
+          "errors": [
+            "row 192 marks: unusable evidence"
+          ],
+          "verified_marks": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "verified_missing_labels": {}
+        }
+      ],
+      "provider_body_sha256": "b799c02e99812e026ffe66bcaa1a259ed12f932f8c5386f1cec75bb0a0774919",
+      "compared_numeric_fields": {
+        "eps_actual": 242,
+        "eps_consensus": 162,
+        "revenue_actual": 226,
+        "revenue_consensus": 180
+      },
+      "compared_missing_fields": {
+        "eps_actual": 8,
+        "eps_consensus": 88,
+        "revenue_actual": 24,
+        "revenue_consensus": 70
+      }
+    },
+    {
+      "stage": "launch",
+      "slot": "filings",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "DRQ",
+        "start_date": "2025-07-01",
+        "end_date": "2025-08-31",
+        "page": 0,
+        "limit": 20
+      },
+      "normalized_errors": [],
+      "receipt": 3,
+      "provider_status": 200,
+      "provider_endpoint": "sec-filings-search/symbol",
+      "provider_query": {
+        "symbol": "DRQ",
+        "page": "0",
+        "limit": "20",
+        "from": "2025-07-01",
+        "to": "2025-08-31"
+      },
+      "provider_count": 3,
+      "normalized_count": 3,
+      "retrieved_at": "2026-11-27T12:47:00.175931Z",
+      "clipped": false,
+      "browser_document_count": 3,
+      "provider_body_sha256": "9c60888104addd345fed08bd600619ca995f3721460941c9eaed72409301388d"
+    },
+    {
+      "stage": "launch",
+      "slot": "transcript",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "DRQ",
+        "year": 2025,
+        "quarter": 1
+      },
+      "normalized_errors": [],
+      "receipt": 4,
+      "provider_status": 200,
+      "provider_endpoint": "earning-call-transcript",
+      "provider_query": {
+        "symbol": "DRQ",
+        "year": "2025",
+        "quarter": "1"
+      },
+      "provider_count": 1,
+      "normalized_count": 1,
+      "retrieved_at": "2026-11-27T12:47:02.645120Z",
+      "clipped": false,
+      "browser_document_count": 1,
+      "provider_body_sha256": "07a89bcac4bbbc6ff88293341565a0a1b3d8eec96242840299202019af1def40"
+    },
+    {
+      "stage": "launch",
+      "slot": "news",
+      "installed_status": 204,
+      "request_query": {
+        "symbol": "DRQ",
+        "start_date": "2025-07-23",
+        "end_date": "2025-08-20",
+        "page": 0,
+        "limit": 10
+      },
+      "normalized_errors": [],
+      "receipt": 1,
+      "provider_status": 200,
+      "provider_endpoint": "news/stock",
+      "provider_query": {
+        "symbols": "DRQ",
+        "page": "0",
+        "limit": "10",
+        "from": "2025-07-23",
+        "to": "2025-08-20"
+      },
+      "provider_count": 0,
+      "provider_body_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "stage": "listing",
+      "slot": "filings",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MORN",
+        "start_date": "2025-07-01",
+        "end_date": "2025-08-31",
+        "page": 0,
+        "limit": 20
+      },
+      "normalized_errors": [],
+      "receipt": 7,
+      "provider_status": 200,
+      "provider_endpoint": "sec-filings-search/symbol",
+      "provider_query": {
+        "symbol": "MORN",
+        "page": "0",
+        "limit": "20",
+        "from": "2025-07-01",
+        "to": "2025-08-31"
+      },
+      "provider_count": 10,
+      "normalized_count": 10,
+      "retrieved_at": "2026-11-27T12:47:06.811001Z",
+      "clipped": false,
+      "browser_document_count": 10,
+      "provider_body_sha256": "40b0d4ec5b5a2330c72293f6856b0bb648dd2ad0ea0ecc7e9af2d4e7fda215c0"
+    },
+    {
+      "stage": "listing",
+      "slot": "transcript",
+      "installed_status": 204,
+      "request_query": {
+        "symbol": "MORN",
+        "year": 2025,
+        "quarter": 1
+      },
+      "normalized_errors": [],
+      "receipt": 5,
+      "provider_status": 200,
+      "provider_endpoint": "earning-call-transcript",
+      "provider_query": {
+        "symbol": "MORN",
+        "year": "2025",
+        "quarter": "1"
+      },
+      "provider_count": 0,
+      "provider_body_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "stage": "listing",
+      "slot": "news",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MORN",
+        "start_date": "2025-07-23",
+        "end_date": "2025-08-20",
+        "page": 0,
+        "limit": 10
+      },
+      "normalized_errors": [],
+      "receipt": 6,
+      "provider_status": 200,
+      "provider_endpoint": "news/stock",
+      "provider_query": {
+        "symbols": "MORN",
+        "page": "0",
+        "limit": "10",
+        "from": "2025-07-23",
+        "to": "2025-08-20"
+      },
+      "provider_count": 6,
+      "normalized_count": 6,
+      "retrieved_at": "2026-11-27T12:47:06.531351Z",
+      "clipped": false,
+      "browser_document_count": 6,
+      "provider_body_sha256": "8bbe1cde5cbfee0b6c227fce6b728fd616b1cd0c07f271ebb2e240e56aa49408"
+    },
+    {
+      "stage": "calendar",
+      "slot": "calendar",
+      "installed_status": 200,
+      "request_query": {
+        "start_date": "2025-07-30",
+        "end_date": "2025-07-30"
+      },
+      "normalized_errors": [],
+      "receipt": 8,
+      "provider_status": 200,
+      "provider_endpoint": "earnings-calendar",
+      "provider_query": {
+        "from": "2025-07-30",
+        "to": "2025-07-30"
+      },
+      "provider_count": 1440,
+      "normalized_count": 250,
+      "retrieved_at": "2026-11-27T12:47:12.924509Z",
+      "clipped": true,
+      "calendar_display": [
+        {
+          "symbol": "MORN",
+          "market_rows": 250,
+          "displayed_rows": 1,
+          "numeric_fields": {
+            "eps_actual": 1,
+            "eps_consensus": 1,
+            "revenue_actual": 1,
+            "revenue_consensus": 1
+          },
+          "errors": [
+            "row 192 marks: unusable evidence"
+          ],
+          "verified_marks": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "verified_missing_labels": {}
+        }
+      ],
+      "provider_body_sha256": "d20a5d37d6ab1d9d45e3046944322428e99c6291f26facbe1303824a90968a14",
+      "compared_numeric_fields": {
+        "eps_actual": 242,
+        "eps_consensus": 162,
+        "revenue_actual": 226,
+        "revenue_consensus": 180
+      },
+      "compared_missing_fields": {
+        "eps_actual": 8,
+        "eps_consensus": 88,
+        "revenue_actual": 24,
+        "revenue_consensus": 70
+      }
+    },
+    {
+      "stage": "filings",
+      "slot": "filings",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MORN",
+        "start_date": "2025-07-30",
+        "end_date": "2025-08-15",
+        "page": 0,
+        "limit": 20
+      },
+      "normalized_errors": [],
+      "receipt": 9,
+      "provider_status": 200,
+      "provider_endpoint": "sec-filings-search/symbol",
+      "provider_query": {
+        "symbol": "MORN",
+        "page": "0",
+        "limit": "20",
+        "from": "2025-07-30",
+        "to": "2025-08-15"
+      },
+      "provider_count": 6,
+      "normalized_count": 6,
+      "retrieved_at": "2026-11-27T12:47:15.448757Z",
+      "clipped": false,
+      "browser_document_count": 6,
+      "provider_body_sha256": "170b7e863a77b3b488235c2b9d279e67fcca87aa694a475d9e9945b36ddd211a"
+    },
+    {
+      "stage": "transcript",
+      "slot": "transcript",
+      "installed_status": 204,
+      "request_query": {
+        "symbol": "MORN",
+        "year": 2025,
+        "quarter": 2
+      },
+      "normalized_errors": [],
+      "receipt": 10,
+      "provider_status": 200,
+      "provider_endpoint": "earning-call-transcript",
+      "provider_query": {
+        "symbol": "MORN",
+        "year": "2025",
+        "quarter": "2"
+      },
+      "provider_count": 0,
+      "provider_body_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "stage": "news",
+      "slot": "news",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MORN",
+        "start_date": "2025-07-30",
+        "end_date": "2025-08-15",
+        "page": 0,
+        "limit": 10
+      },
+      "normalized_errors": [],
+      "receipt": 11,
+      "provider_status": 200,
+      "provider_endpoint": "news/stock",
+      "provider_query": {
+        "symbols": "MORN",
+        "page": "0",
+        "limit": "10",
+        "from": "2025-07-30",
+        "to": "2025-08-15"
+      },
+      "provider_count": 5,
+      "normalized_count": 5,
+      "retrieved_at": "2026-11-27T12:47:21.108789Z",
+      "clipped": false,
+      "browser_document_count": 5,
+      "provider_body_sha256": "96597e5b1ce567441b258be6634fc722f9027002c04423ebc16560761333549c"
+    },
+    {
+      "stage": "reopen",
+      "slot": "calendar",
+      "installed_status": 200,
+      "request_query": {
+        "start_date": "2025-07-30",
+        "end_date": "2025-07-30"
+      },
+      "normalized_errors": [],
+      "receipt": 12,
+      "provider_status": 200,
+      "provider_endpoint": "earnings-calendar",
+      "provider_query": {
+        "from": "2025-07-30",
+        "to": "2025-07-30"
+      },
+      "provider_count": 1440,
+      "normalized_count": 250,
+      "retrieved_at": "2026-11-27T12:47:32.646054Z",
+      "clipped": true,
+      "calendar_display": [
+        {
+          "symbol": "MORN",
+          "market_rows": 250,
+          "displayed_rows": 1,
+          "numeric_fields": {
+            "eps_actual": 1,
+            "eps_consensus": 1,
+            "revenue_actual": 1,
+            "revenue_consensus": 1
+          },
+          "errors": [
+            "row 192 marks: unusable evidence"
+          ],
+          "verified_marks": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "verified_missing_labels": {}
+        }
+      ],
+      "provider_body_sha256": "d20a5d37d6ab1d9d45e3046944322428e99c6291f26facbe1303824a90968a14",
+      "compared_numeric_fields": {
+        "eps_actual": 242,
+        "eps_consensus": 162,
+        "revenue_actual": 226,
+        "revenue_consensus": 180
+      },
+      "compared_missing_fields": {
+        "eps_actual": 8,
+        "eps_consensus": 88,
+        "revenue_actual": 24,
+        "revenue_consensus": 70
+      }
+    },
+    {
+      "stage": "reopen",
+      "slot": "filings",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MORN",
+        "start_date": "2025-07-30",
+        "end_date": "2025-08-15",
+        "page": 0,
+        "limit": 20
+      },
+      "normalized_errors": [],
+      "receipt": 14,
+      "provider_status": 200,
+      "provider_endpoint": "sec-filings-search/symbol",
+      "provider_query": {
+        "symbol": "MORN",
+        "page": "0",
+        "limit": "20",
+        "from": "2025-07-30",
+        "to": "2025-08-15"
+      },
+      "provider_count": 6,
+      "normalized_count": 6,
+      "retrieved_at": "2026-11-27T12:47:32.643923Z",
+      "clipped": false,
+      "browser_document_count": 6,
+      "provider_body_sha256": "170b7e863a77b3b488235c2b9d279e67fcca87aa694a475d9e9945b36ddd211a"
+    },
+    {
+      "stage": "reopen",
+      "slot": "transcript",
+      "installed_status": 204,
+      "request_query": {
+        "symbol": "MORN",
+        "year": 2025,
+        "quarter": 2
+      },
+      "normalized_errors": [],
+      "receipt": 15,
+      "provider_status": 200,
+      "provider_endpoint": "earning-call-transcript",
+      "provider_query": {
+        "symbol": "MORN",
+        "year": "2025",
+        "quarter": "2"
+      },
+      "provider_count": 0,
+      "provider_body_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "stage": "reopen",
+      "slot": "news",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MORN",
+        "start_date": "2025-07-30",
+        "end_date": "2025-08-15",
+        "page": 0,
+        "limit": 10
+      },
+      "normalized_errors": [],
+      "receipt": 13,
+      "provider_status": 200,
+      "provider_endpoint": "news/stock",
+      "provider_query": {
+        "symbols": "MORN",
+        "page": "0",
+        "limit": "10",
+        "from": "2025-07-30",
+        "to": "2025-08-15"
+      },
+      "provider_count": 5,
+      "normalized_count": 5,
+      "retrieved_at": "2026-11-27T12:47:32.641136Z",
+      "clipped": false,
+      "browser_document_count": 5,
+      "provider_body_sha256": "96597e5b1ce567441b258be6634fc722f9027002c04423ebc16560761333549c"
+    }
+  ],
+  "uncorrelated_sends": [],
+  "candidate": {
+    "sources": {
+      "workspace": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9",
+      "data_api": "5583c958d35282cb59037aae8218cec31d540697"
+    },
+    "images": {
+      "workspace": "sha256:25fcec114dcd25a6cbb0edacadbfd3b29ff625557efd159ed5aeb73c763099f4",
+      "data-api": "sha256:c5cbb466ec28790c38cfac02dab3c9bc7b8f51740f27874b91bcf73eb5ceb524"
+    }
+  },
+  "runtime_cleanup": "stopped",
+  "browser_exit": 0,
+  "plan_sha256": "3909e84682f88ae7d5779fc47d93891490163fad6a08c7b0d403fc2671bccd33",
+  "budget": {
+    "prior_live_sends": 15,
+    "supplemental_schedule": 15,
+    "supplemental_sends": 15,
+    "cumulative_sends": 30,
+    "guard_denials": 0
+  },
+  "offline_seed": {
+    "initial_failed_browser_cancellations": 9,
+    "passed_browser_cancellations": 14,
+    "provider_sends": 0,
+    "guard_denials": 0,
+    "scenarios": [
+      "native-catalog-seeded-through-workspace-controls",
+      "seed-restored-planned-native-queries-without-sends"
+    ]
+  },
+  "live_setup": {
+    "browser_cancellations": 10,
+    "provider_sends": 0
+  },
+  "conclusions": {
+    "launch": 3,
+    "listing": 3,
+    "calendar": 3,
+    "filings": 3,
+    "transcript": 3,
+    "news": 3,
+    "reopen": 3
+  },
+  "harness_sha256": {
+    "events-documents-browser.mts": "d1cef050350c12e1885e163fe888d02dbd37ff0170628f6f2fb691fdc8403841",
+    "events-documents-controlled.mts": "77000d8bea24a7d249d7df7598f458c890f11f08c38d54ee6837b712534945fb",
+    "events-documents-diagnostics.mts": "cc888fa9448ea6853dfa14d3ad47cfaea8c6d02b233813b5d2e42f50fd7a7a6b",
+    "events-documents-marks.mts": "531150fa11f8dcc3e3232ad8e988c97d3cfae4ac17387b81e13a4b7f70cdf5e9",
+    "events-documents-plan.json": "4fb70d9c2a5b4c55da2d4e85066de8313c3ea82166786119b46c9dee440e5a00",
+    "events-documents-supplemental-plan.json": "3909e84682f88ae7d5779fc47d93891490163fad6a08c7b0d403fc2671bccd33",
+    "events-documents-workspace.spec.mts": "38e278a5896eda453a19c47f884007a10ab410d8026b7ea5858130b3143175c3",
+    "events_documents_guard.py": "5fdd4df8d447a427bc26ffa4e3c3049b31932fbbc64fd75b52b38feb122692d2",
+    "events_documents_oracle.py": "ba5b13bd4147765b420a775301efdd15ff7961b39297b958ad26c7966fa2230e",
+    "run_events_documents.py": "e444a9765e1182bb99ccc881199220e8d238d8996e3b7e94ea4b8eb0cce8c48d",
+    "test_events_documents_verification.py": "ccbe76dfc7fb62aeb69478e920a6ba7ab91cc66c34d76b2953a738abdfaf5c37"
+  },
+  "selected_rows": [
+    {
+      "symbol": "DRQ",
+      "calendar_stage": "launch",
+      "provider_receipt": 2,
+      "ordinal": 232,
+      "report_date": "2025-07-30",
+      "last_updated": "2025-09-30",
+      "fields": {
+        "eps_actual": "0.2219",
+        "eps_consensus": "Missing",
+        "revenue_actual": "224234000.0",
+        "revenue_consensus": "Missing"
+      },
+      "units": {
+        "eps_actual": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "eps_consensus": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "revenue_actual": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "revenue_consensus": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown"
+      },
+      "charts": {
+        "eps": "bar",
+        "revenue": "point"
+      },
+      "marks": {
+        "eps_actual": 1,
+        "revenue_actual": 1
+      }
+    },
+    {
+      "symbol": "MORN",
+      "calendar_stage": "launch",
+      "provider_receipt": 2,
+      "ordinal": 191,
+      "report_date": "2025-07-30",
+      "last_updated": "2025-10-30",
+      "fields": {
+        "eps_actual": "2.4",
+        "eps_consensus": "2.21",
+        "revenue_actual": "605100000.0",
+        "revenue_consensus": "605840100.0"
+      },
+      "units": {
+        "eps_actual": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "eps_consensus": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "revenue_actual": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "revenue_consensus": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown"
+      },
+      "charts": {
+        "eps": "bar",
+        "revenue": "point"
+      },
+      "marks": {
+        "eps_actual": 1,
+        "eps_consensus": 1,
+        "revenue_actual": 1,
+        "revenue_consensus": 1
+      }
+    },
+    {
+      "symbol": "MORN",
+      "calendar_stage": "calendar",
+      "provider_receipt": 8,
+      "ordinal": 191,
+      "report_date": "2025-07-30",
+      "last_updated": "2025-10-30",
+      "fields": {
+        "eps_actual": "2.4",
+        "eps_consensus": "2.21",
+        "revenue_actual": "605100000.0",
+        "revenue_consensus": "605840100.0"
+      },
+      "units": {
+        "eps_actual": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "eps_consensus": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "revenue_actual": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "revenue_consensus": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown"
+      },
+      "charts": {
+        "eps": "bar",
+        "revenue": "point"
+      },
+      "marks": {
+        "eps_actual": 1,
+        "eps_consensus": 1,
+        "revenue_actual": 1,
+        "revenue_consensus": 1
+      }
+    },
+    {
+      "symbol": "MORN",
+      "calendar_stage": "reopen",
+      "provider_receipt": 12,
+      "ordinal": 191,
+      "report_date": "2025-07-30",
+      "last_updated": "2025-10-30",
+      "fields": {
+        "eps_actual": "2.4",
+        "eps_consensus": "2.21",
+        "revenue_actual": "605100000.0",
+        "revenue_consensus": "605840100.0"
+      },
+      "units": {
+        "eps_actual": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "eps_consensus": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "revenue_actual": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+        "revenue_consensus": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown"
+      },
+      "charts": {
+        "eps": "point",
+        "revenue": "bar"
+      },
+      "marks": {
+        "eps_actual": 1,
+        "eps_consensus": 1,
+        "revenue_actual": 1,
+        "revenue_consensus": 1
+      }
+    }
+  ],
+  "offline_oracle": {
+    "calendar_views": [
+      {
+        "stage": "launch",
+        "symbol": "DRQ",
+        "rows": 1,
+        "numeric_fields": {
+          "eps_actual": 1,
+          "eps_consensus": 0,
+          "revenue_actual": 1,
+          "revenue_consensus": 0
+        },
+        "missing_labels": {
+          "eps_actual": 0,
+          "eps_consensus": 1,
+          "revenue_actual": 0,
+          "revenue_consensus": 1
+        }
+      },
+      {
+        "stage": "launch",
+        "symbol": "MORN",
+        "rows": 1,
+        "numeric_fields": {
+          "eps_actual": 1,
+          "eps_consensus": 1,
+          "revenue_actual": 1,
+          "revenue_consensus": 1
+        },
+        "missing_labels": {
+          "eps_actual": 0,
+          "eps_consensus": 0,
+          "revenue_actual": 0,
+          "revenue_consensus": 0
+        }
+      },
+      {
+        "stage": "calendar",
+        "symbol": "MORN",
+        "rows": 1,
+        "numeric_fields": {
+          "eps_actual": 1,
+          "eps_consensus": 1,
+          "revenue_actual": 1,
+          "revenue_consensus": 1
+        },
+        "missing_labels": {
+          "eps_actual": 0,
+          "eps_consensus": 0,
+          "revenue_actual": 0,
+          "revenue_consensus": 0
+        }
+      },
+      {
+        "stage": "reopen",
+        "symbol": "MORN",
+        "rows": 1,
+        "numeric_fields": {
+          "eps_actual": 1,
+          "eps_consensus": 1,
+          "revenue_actual": 1,
+          "revenue_consensus": 1
+        },
+        "missing_labels": {
+          "eps_actual": 0,
+          "eps_consensus": 0,
+          "revenue_actual": 0,
+          "revenue_consensus": 0
+        }
+      }
+    ],
+    "seed_aborts": 10,
+    "conclusions": {
+      "launch": 3,
+      "listing": 3,
+      "calendar": 3,
+      "filings": 3,
+      "transcript": 3,
+      "news": 3,
+      "reopen": 3
+    },
+    "mode": "live",
+    "browser": "156.0.8078.4",
+    "browser_requests": 15,
+    "provider_sends": 15,
+    "provider_statuses": {
+      "200": 15
+    },
+    "provider_schedule": [
+      {
+        "stage": "launch",
+        "slot": "news"
+      },
+      {
+        "stage": "launch",
+        "slot": "calendar"
+      },
+      {
+        "stage": "launch",
+        "slot": "filings"
+      },
+      {
+        "stage": "launch",
+        "slot": "transcript"
+      },
+      {
+        "stage": "listing",
+        "slot": "transcript"
+      },
+      {
+        "stage": "listing",
+        "slot": "news"
+      },
+      {
+        "stage": "listing",
+        "slot": "filings"
+      },
+      {
+        "stage": "calendar",
+        "slot": "calendar"
+      },
+      {
+        "stage": "filings",
+        "slot": "filings"
+      },
+      {
+        "stage": "transcript",
+        "slot": "transcript"
+      },
+      {
+        "stage": "news",
+        "slot": "news"
+      },
+      {
+        "stage": "reopen",
+        "slot": "calendar"
+      },
+      {
+        "stage": "reopen",
+        "slot": "news"
+      },
+      {
+        "stage": "reopen",
+        "slot": "filings"
+      },
+      {
+        "stage": "reopen",
+        "slot": "transcript"
+      }
+    ],
+    "coverage": {
+      "eps_actual": 4,
+      "eps_consensus": 3,
+      "revenue_actual": 4,
+      "revenue_consensus": 3
+    },
+    "chart_marks": {
+      "eps_actual": 4,
+      "revenue_actual": 4,
+      "eps_consensus": 3,
+      "revenue_consensus": 3
+    },
+    "final_calendar_coverage": {
+      "eps_actual": 1,
+      "eps_consensus": 1,
+      "revenue_actual": 1,
+      "revenue_consensus": 1
+    },
+    "final_inputs": {
+      "filings": true,
+      "transcript": false,
+      "news": true,
+      "calendar": true
+    },
+    "document_rows": {
+      "filings": 25,
+      "transcript": 1,
+      "news": 16
+    },
+    "empty": {
+      "news": 1,
+      "transcript": 3
+    },
+    "blocked": {}
+  },
+  "chart_sample": {
+    "artifact": "fmp-earnings-live-sample.png",
+    "sha256": "4750bc9bb89f622ff6c25bfbb9e1950177a219a11ee8bf8211e45265e92aa0fa",
+    "width_height": [
+      1245,
+      782
+    ]
+  }
+}

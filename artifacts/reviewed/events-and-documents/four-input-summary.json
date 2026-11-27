@@ -1,0 +1,308 @@
+{
+  "browser": "156.0.8078.4",
+  "browser_requests": 4,
+  "provider_sends": 4,
+  "guard_denials": 0,
+  "network": {
+    "fixtureExternal": 0,
+    "abortedData": 0,
+    "errors": {},
+    "httpErrors": {},
+    "consoleErrors": {},
+    "externalBlocks": 0,
+    "abortedSlots": {}
+  },
+  "browser_issues": [],
+  "browser_verification": {
+    "passed": [
+      "launch/filings",
+      "launch/transcript",
+      "launch/news",
+      "launch/calendar",
+      "launch/conclusion"
+    ],
+    "failed": []
+  },
+  "persistence": [
+    "native-catalog-seeded-through-workspace-controls"
+  ],
+  "receipts": [
+    {
+      "stage": "launch",
+      "slot": "calendar",
+      "installed_status": 200,
+      "request_query": {
+        "start_date": "2025-07-30",
+        "end_date": "2025-07-30"
+      },
+      "normalized_errors": [],
+      "receipt": 2,
+      "provider_status": 200,
+      "provider_endpoint": "earnings-calendar",
+      "provider_query": {
+        "from": "2025-07-30",
+        "to": "2025-07-30"
+      },
+      "provider_count": 1440,
+      "normalized_count": 250,
+      "retrieved_at": "2026-11-27T12:50:37.564468Z",
+      "clipped": true,
+      "calendar_display": [
+        {
+          "symbol": "CVNA",
+          "market_rows": 250,
+          "displayed_rows": 1,
+          "numeric_fields": {
+            "eps_actual": 1,
+            "eps_consensus": 1,
+            "revenue_actual": 1,
+            "revenue_consensus": 1
+          },
+          "errors": [
+            "row 228 marks: unusable evidence"
+          ],
+          "verified_marks": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "verified_missing_labels": {}
+        }
+      ],
+      "provider_body_sha256": "d20a5d37d6ab1d9d45e3046944322428e99c6291f26facbe1303824a90968a14"
+    },
+    {
+      "stage": "launch",
+      "slot": "filings",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "CVNA",
+        "start_date": "2025-07-29",
+        "end_date": "2025-08-10",
+        "page": 0,
+        "limit": 20
+      },
+      "normalized_errors": [],
+      "receipt": 1,
+      "provider_status": 200,
+      "provider_endpoint": "sec-filings-search/symbol",
+      "provider_query": {
+        "symbol": "CVNA",
+        "page": "0",
+        "limit": "20",
+        "from": "2025-07-29",
+        "to": "2025-08-10"
+      },
+      "provider_count": 20,
+      "normalized_count": 20,
+      "retrieved_at": "2026-11-27T12:50:35.597876Z",
+      "clipped": false,
+      "browser_document_count": 20,
+      "provider_body_sha256": "4779430209de40bb512d8b7db27a1805804db4fc120567254d46d72e9e4aaabc"
+    },
+    {
+      "stage": "launch",
+      "slot": "transcript",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "CVNA",
+        "year": 2025,
+        "quarter": 2
+      },
+      "normalized_errors": [],
+      "receipt": 3,
+      "provider_status": 200,
+      "provider_endpoint": "earning-call-transcript",
+      "provider_query": {
+        "symbol": "CVNA",
+        "year": "2025",
+        "quarter": "2"
+      },
+      "provider_count": 1,
+      "normalized_count": 1,
+      "retrieved_at": "2026-11-27T12:50:37.585403Z",
+      "clipped": false,
+      "browser_document_count": 1,
+      "provider_body_sha256": "5b55222df7062aeeeb8480897b49fe42a82ca249c8a418e87c70dbf98710ba7d"
+    },
+    {
+      "stage": "launch",
+      "slot": "news",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "CVNA",
+        "start_date": "2025-07-29",
+        "end_date": "2025-08-10",
+        "page": 0,
+        "limit": 10
+      },
+      "normalized_errors": [],
+      "receipt": 4,
+      "provider_status": 200,
+      "provider_endpoint": "news/stock",
+      "provider_query": {
+        "symbols": "CVNA",
+        "page": "0",
+        "limit": "10",
+        "from": "2025-07-29",
+        "to": "2025-08-10"
+      },
+      "provider_count": 10,
+      "normalized_count": 10,
+      "retrieved_at": "2026-11-27T12:50:37.560498Z",
+      "clipped": false,
+      "browser_document_count": 10,
+      "provider_body_sha256": "d2d28f4e6f9e1be3773f231b63d6a1a3a2761f87832db003cc158b4fb8ecb968"
+    }
+  ],
+  "uncorrelated_sends": [],
+  "candidate": {
+    "sources": {
+      "workspace": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9",
+      "data_api": "5583c958d35282cb59037aae8218cec31d540697"
+    },
+    "images": {
+      "workspace": "sha256:25fcec114dcd25a6cbb0edacadbfd3b29ff625557efd159ed5aeb73c763099f4",
+      "data-api": "sha256:c5cbb466ec28790c38cfac02dab3c9bc7b8f51740f27874b91bcf73eb5ceb524"
+    }
+  },
+  "runtime_cleanup": "stopped",
+  "launcher_exit": 0,
+  "browser_exit": 0,
+  "plan_sha256": "083a8ac31f59019897f7d8815349b367f78272a8db904829e064afc043115557",
+  "budget": {
+    "original_live_sends": 15,
+    "integrated_live_sends": 15,
+    "targeted_cap": 4,
+    "targeted_live_sends": 4,
+    "actual_live_sends_total": 34,
+    "targeted_guard_denials": 0
+  },
+  "live_setup": {
+    "browser_cancellations": 11,
+    "provider_sends": 0
+  },
+  "conclusions": {
+    "launch": 4
+  },
+  "chart": {
+    "ordinal": 227,
+    "date": "2025-07-30",
+    "updated": "2026-08-17",
+    "fields": {
+      "eps_actual": "0.26",
+      "eps_consensus": "0.2334",
+      "revenue_actual": "4840000000.0",
+      "revenue_consensus": "4577023000.0"
+    },
+    "fieldUnits": {
+      "eps_actual": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+      "eps_consensus": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+      "revenue_actual": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+      "revenue_consensus": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown"
+    },
+    "symbol": "CVNA",
+    "retrieved_at": "2026-11-27T12:50:37.564468Z",
+    "displays": {
+      "eps": "bar",
+      "revenue": "point"
+    }
+  },
+  "offline_oracle": {
+    "calendar_views": [
+      {
+        "stage": "launch",
+        "symbol": "CVNA",
+        "rows": 1,
+        "numeric_fields": {
+          "eps_actual": 1,
+          "eps_consensus": 1,
+          "revenue_actual": 1,
+          "revenue_consensus": 1
+        },
+        "missing_labels": {
+          "eps_actual": 0,
+          "eps_consensus": 0,
+          "revenue_actual": 0,
+          "revenue_consensus": 0
+        }
+      }
+    ],
+    "seed_aborts": 11,
+    "conclusions": {
+      "launch": 4
+    },
+    "mode": "live",
+    "browser": "156.0.8078.4",
+    "browser_requests": 4,
+    "provider_sends": 4,
+    "provider_statuses": {
+      "200": 4
+    },
+    "provider_schedule": [
+      {
+        "stage": "launch",
+        "slot": "filings"
+      },
+      {
+        "stage": "launch",
+        "slot": "calendar"
+      },
+      {
+        "stage": "launch",
+        "slot": "transcript"
+      },
+      {
+        "stage": "launch",
+        "slot": "news"
+      }
+    ],
+    "coverage": {
+      "eps_actual": 1,
+      "eps_consensus": 1,
+      "revenue_actual": 1,
+      "revenue_consensus": 1
+    },
+    "chart_marks": {
+      "eps_actual": 1,
+      "eps_consensus": 1,
+      "revenue_actual": 1,
+      "revenue_consensus": 1
+    },
+    "final_calendar_coverage": {
+      "eps_actual": 1,
+      "eps_consensus": 1,
+      "revenue_actual": 1,
+      "revenue_consensus": 1
+    },
+    "final_inputs": {
+      "filings": true,
+      "transcript": true,
+      "news": true,
+      "calendar": true
+    },
+    "document_rows": {
+      "filings": 20,
+      "transcript": 1,
+      "news": 10
+    },
+    "empty": {},
+    "blocked": {}
+  },
+  "focused_tests_passed": 13,
+  "harness_sha256": {
+    "events-documents-browser.mts": "e7f54b2979fe6aa216a9d026d2e7d4f181565d621657b10caf22bc9e0c054ec9",
+    "events-documents-controlled.mts": "77000d8bea24a7d249d7df7598f458c890f11f08c38d54ee6837b712534945fb",
+    "events-documents-diagnostics.mts": "cc888fa9448ea6853dfa14d3ad47cfaea8c6d02b233813b5d2e42f50fd7a7a6b",
+    "events-documents-four-input-plan.json": "083a8ac31f59019897f7d8815349b367f78272a8db904829e064afc043115557",
+    "events-documents-marks.mts": "531150fa11f8dcc3e3232ad8e988c97d3cfae4ac17387b81e13a4b7f70cdf5e9",
+    "events-documents-plan.json": "4fb70d9c2a5b4c55da2d4e85066de8313c3ea82166786119b46c9dee440e5a00",
+    "events-documents-supplemental-plan.json": "3909e84682f88ae7d5779fc47d93891490163fad6a08c7b0d403fc2671bccd33",
+    "events-documents-workspace.spec.mts": "aa7edc32f480d858852a603db8ef7c6a7fdb135435dd20a57ed446267b60f138",
+    "events_documents_guard.py": "087f2267f97607944e2abc0c8feb27c8e4918148ecc2fda6d5f30ea6ecbb1d12",
+    "events_documents_oracle.py": "a49d929e6bbc1d8eb06f0b4469a53fb1f39002011b47bfcd3b030c234976d80b",
+    "run_events_documents.py": "dfaba1aff07cc222e208e44fae3c21e5c86878fd176ccdb9e0c8d24821341359",
+    "test_events_documents_verification.py": "7685095d20d8d404a76033c650ef3a22822a9cc9b41861d2cb616813709a59e3"
+  }
+}

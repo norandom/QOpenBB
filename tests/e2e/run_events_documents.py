@@ -37,7 +37,7 @@ def configure(runtime, root, mode, key, candidate):
     inspection_workspace = json.loads(runtime.command(["image", "inspect", workspace]))[0]
     if inspection_workspace["Config"]["Labels"].get("org.qopenbb.source.workspace") != candidate["sources"]["workspace"]:
         raise ValueError("Candidate Workspace source mismatch")
-    plan = json.loads((HERE / "events-documents-plan.json").read_text())
+    plan = json.loads((root / "plan.json").read_text())
     code = bootstrap(plan, mode == "live", inspection["Config"]["Entrypoint"])
     stage = root / "stage"
     stage.mkdir()
@@ -64,6 +64,12 @@ def browser(runtime, root, mode, discover, cache):
                WORKSPACE_RUNTIME_PRIVATE=str(runtime.path), QOPENBB_FINANCIAL_SUITE="events-documents",
                QOPENBB_PLAYWRIGHT_PACKAGE=str(PACKAGE), EVENTS_VERIFICATION_MODE=mode,
                EVENTS_STAGE_DIR=str(root / "stage"))
+    if (root / "four-inputs").exists():
+        env["EVENTS_FOUR_INPUTS"] = "1"
+    if (root / "supplemental").exists():
+        env["EVENTS_SUPPLEMENTAL"] = "1"
+    if (root / "seed-preflight").exists():
+        env["EVENTS_SEED_PREFLIGHT"] = "1"
     if (root / "replay-calendar.installed").exists():
         env["EVENTS_REPLAY_CALENDAR"] = "1"
     argv = ["node", str(PACKAGE / "cli.js"), "test", "--config", "verification/financial-workspace.config.ts"]
@@ -85,7 +91,7 @@ def browser(runtime, root, mode, discover, cache):
 
 
 def apply_stages(runtime, directory, stopped, failed):
-    valid = set(json.loads((HERE / "events-documents-plan.json").read_text())["groups"]) | {"disarmed"}
+    valid = set(json.loads((directory.parent / "plan.json").read_text())["groups"]) | {"disarmed"}
     active = "disarmed"
     container = runtime.descriptor.resources.containers["data-api"].id
     stage_writer = ("from pathlib import Path; import sys; p=Path('/tmp/events-stage-next'); "
@@ -117,9 +123,15 @@ def extract(runtime, root):
         capture.chmod(0o600)
 
 
-def publish_summary(summary, root, guard_smoke, replay):
+def publish_summary(summary, root, guard_smoke, replay, seed_preflight):
     ledger = json.loads((root / "provider/ledger.json").read_text())
     summary.update(provider_sends=ledger["count"], denials=ledger["denials"], provider_ledger=ledger["entries"])
+    if seed_preflight:
+        observation = json.loads((root / "observations.json").read_text())
+        summary["seed_preflight"] = observation["scenarios"]
+        summary["seed_aborts"] = observation["seedAborts"]
+        print(json.dumps(summary), flush=True)
+        return int(bool(summary["browser_exit"] or ledger["count"] or ledger["denials"] or observation["browserRequests"]))
     if guard_smoke:
         print(json.dumps(summary), flush=True)
         return int(bool(ledger["count"] or ledger["denials"]))
@@ -144,7 +156,17 @@ def main():
     verification.add_argument("--list", action="store_true", help="Discover tests without booting or accessing the provider")
     verification.add_argument("--replay-launch-calendar", type=Path, help="Inspect real captured earnings rows without provider sends")
     verification.add_argument("--guard-smoke", action="store_true", help="Boot and inspect the controlled guard without browser or provider traffic")
+    profile = parser.add_mutually_exclusive_group()
+    profile.add_argument("--supplemental", action="store_true", help="Use the frozen DRQ-to-MORN supplemental plan")
+    profile.add_argument("--four-inputs", action="store_true", help="Use the frozen four-input CVNA proof plan")
+    verification.add_argument("--seed-preflight", action="store_true", help="Exercise supplemental Workspace setup with provider requests disarmed")
     args = parser.parse_args()
+    if args.four_inputs and (args.mode != "live" or args.replay_launch_calendar):
+        parser.error("Four-input proof runs in live mode")
+    if args.seed_preflight and (args.mode != "controlled" or not args.supplemental):
+        parser.error("Seed preflight requires controlled supplemental mode")
+    if args.supplemental and args.mode == "controlled" and not args.seed_preflight:
+        parser.error("Controlled supplemental mode requires seed preflight")
     if (args.guard_smoke or args.replay_launch_calendar) and args.mode != "controlled":
         parser.error("Guard smoke and replay run in controlled mode")
     os.umask(0o077)
@@ -160,6 +182,15 @@ def main():
     if args.mode == "live" and not args.list and not re.fullmatch(r"[A-Za-z0-9_-]+", key):
         raise ValueError("An explicit live FMP credential is required")
     root = Path(tempfile.mkdtemp(prefix="events-documents-run-", dir=artifacts))
+    plan_name = ("events-documents-four-input-plan.json" if args.four_inputs else
+                 "events-documents-supplemental-plan.json" if args.supplemental else "events-documents-plan.json")
+    private_write(root / "plan.json", (HERE / plan_name).read_bytes())
+    if args.four_inputs:
+        private_write(root / "four-inputs", b"")
+    if args.supplemental:
+        private_write(root / "supplemental", b"")
+    if args.seed_preflight:
+        private_write(root / "seed-preflight", b"")
     if args.replay_launch_calendar:
         replay = args.replay_launch_calendar.resolve()
         if replay.parent != artifacts or not re.fullmatch(r"events-documents-run-[a-z0-9_]+", replay.name):
@@ -189,7 +220,7 @@ def main():
             extract(runtime, root)
         finally:
             summary["cleanup"] = stop(config, runtime.path)
-    return publish_summary(summary, root, args.guard_smoke, args.replay_launch_calendar)
+    return publish_summary(summary, root, args.guard_smoke, args.replay_launch_calendar, args.seed_preflight)
 
 
 if __name__ == "__main__":

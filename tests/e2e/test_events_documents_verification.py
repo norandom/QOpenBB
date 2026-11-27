@@ -178,3 +178,16 @@ def test_provider_decoder_preserves_tokens_under_gzip():
     payload = b'[{"epsActual":0.123456789012345678901,"revenueActual":9007199254740993}]'
     expected = [{"epsActual": Decimal("0.123456789012345678901"), "revenueActual": 9007199254740993}]
     assert decode_provider(payload) == decode_provider(gzip.compress(payload)) == expected
+
+
+def test_targeted_live_schedule_keeps_its_four_send_ceiling(tmp_path):
+    plan = decode(Path(__file__).with_name("events-documents-four-input-plan.json").read_bytes())
+    stages = schedule(plan)
+    phase = tmp_path / "phase"
+    phase.write_text("launch")
+    guard = Guard(tmp_path / "captures", phase, stages, live=True)
+    for number, query in enumerate(stages["launch"].values(), 1):
+        assert guard.reserve(request(query)) == number
+    with pytest.raises(Rejected):
+        guard.reserve(request(stages["launch"]["calendar"]))
+    assert guard.count == 4

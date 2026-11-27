@@ -4,20 +4,26 @@ import { expect } from '../../verification/node_modules/@playwright/test/index.m
 import type { Locator, Page } from '../../verification/node_modules/@playwright/test/index.mjs';
 
 export type Slot = 'calendar' | 'filings' | 'transcript' | 'news';
-export const plan = JSON.parse(readFileSync(new URL('./events-documents-plan.json', import.meta.url), 'utf8')) as {
+export const fourInputs = process.env.EVENTS_FOUR_INPUTS === '1';
+export const supplemental = process.env.EVENTS_SUPPLEMENTAL === '1' || fourInputs;
+const planFile = fourInputs ? './events-documents-four-input-plan.json'
+  : supplemental ? './events-documents-supplemental-plan.json' : './events-documents-plan.json';
+export const plan = JSON.parse(readFileSync(new URL(planFile, import.meta.url), 'utf8')) as {
   slots: Record<Slot, [string, string]>;
   initial: Record<Slot, Record<string, string | number>>;
   edits: Record<Slot, Record<string, string | number>>;
   groups: Record<string, Slot[]>;
+  symbols?: { launch: string; later: string };
 };
 
+export const symbols = plan.symbols ?? { launch: 'AAPL', later: 'MSFT' };
 export const titles = { calendar: 'Calendar window', filings: 'Filing bounds', transcript: 'Transcript period', news: 'News bounds' };
 export const fields = { eps_actual: 'Actual EPS', eps_consensus: 'Estimated EPS',
   revenue_actual: 'Actual revenue', revenue_consensus: 'Estimated revenue' };
 
 export function query(stage: string, slot: Slot) {
   const choices = stage === slot || stage === 'reopen' ? plan.edits : plan.initial;
-  return slot === 'calendar' ? choices.calendar : { symbol: stage === 'launch' ? 'AAPL' : 'MSFT', ...choices[slot] };
+  return slot === 'calendar' ? choices.calendar : { symbol: stage === 'launch' ? symbols.launch : symbols.later, ...choices[slot] };
 }
 
 export async function arm(stage: string) {
@@ -66,24 +72,25 @@ export async function connect(page: Page, origin: string) {
 
 const fieldLabels = { start_date: 'Start date', end_date: 'End date', page: 'Page', limit: 'Limit', year: 'Year', quarter: 'Quarter' };
 
-export async function edit(story: Locator, slot: Slot) {
+export async function edit(story: Locator, slot: Slot, bounds = plan.edits) {
   const group = story.getByRole('group', { name: titles[slot], exact: true });
-  for (const [field, value] of Object.entries(plan.edits[slot])) {
+  for (const [field, value] of Object.entries(bounds[slot])) {
     await group.getByLabel(fieldLabels[field as keyof typeof fieldLabels], { exact: true }).fill(String(value));
   }
   await group.getByRole('button', { name: 'Apply ' + titles[slot].toLowerCase(), exact: true }).click();
 }
 
-export async function restoredChoices(story: Locator) {
-  await expect(story.getByRole('button', { name: 'Microsoft (MSFT)', exact: true })).toHaveAttribute('aria-pressed', 'true');
+export async function restoredChoices(story: Locator, choices = finalChoices) {
+  if (supplemental) await expect(story.getByText(`Company ${choices.symbol} · Query symbol ${choices.symbol}`, { exact: true })).toBeVisible();
+  else await expect(story.getByRole('button', { name: 'Microsoft (MSFT)', exact: true })).toHaveAttribute('aria-pressed', 'true');
   for (const slot of Object.keys(plan.edits) as Slot[]) {
     const group = story.getByRole('group', { name: titles[slot], exact: true });
-    for (const [field, value] of Object.entries(plan.edits[slot])) {
+    for (const [field, value] of Object.entries(choices[slot])) {
       await expect(group.getByLabel(fieldLabels[field as keyof typeof fieldLabels], { exact: true })).toHaveValue(String(value));
     }
   }
-  await expect(story.getByLabel('EPS chart display')).toHaveValue('point');
-  await expect(story.getByLabel('Revenue chart display')).toHaveValue('bar');
+  await expect(story.getByLabel('EPS chart display')).toHaveValue(choices.charts.eps);
+  await expect(story.getByLabel('Revenue chart display')).toHaveValue(choices.charts.revenue);
 }
 
 export async function downloadTemplate(page: Page, id: string) {
@@ -99,4 +106,4 @@ export async function downloadTemplate(page: Page, id: string) {
   return JSON.parse(readFileSync(path, 'utf8'));
 }
 
-export const finalChoices = { version: 1, symbol: 'MSFT', ...plan.edits, charts: { eps: 'point', revenue: 'bar' } };
+export const finalChoices = { version: 1, symbol: symbols.later, ...plan.edits, charts: { eps: 'point', revenue: 'bar' } };

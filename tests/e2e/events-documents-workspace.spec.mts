@@ -3,7 +3,7 @@ import { join, relative, resolve } from 'node:path';
 import { test, expect } from '../../verification/node_modules/@playwright/test/index.mjs';
 import type { BrowserContext, Locator, Page } from '../../verification/node_modules/@playwright/test/index.mjs';
 import { leakedPaths, licensedStrings, renameAndSave } from './fmp-batch-b-helpers.mts';
-import { arm, connect, downloadTemplate, edit, fields, finalChoices, login, plan, query, restoredChoices } from './events-documents-browser.mts';
+import { arm, connect, downloadTemplate, edit, fields, finalChoices, fourInputs, login, plan, query, restoredChoices, supplemental, symbols } from './events-documents-browser.mts';
 import type { Slot } from './events-documents-browser.mts';
 import { controlledDiagnostics } from './events-documents-diagnostics.mts';
 import { observeChartCanvas, readCalendarChart } from './events-documents-marks.mts';
@@ -185,14 +185,18 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
   const { origin, credentials, phase } = JSON.parse(readFileSync(process.env.WORKSPACE_RUNTIME_PRIVATE!, 'utf8'));
   if (phase !== 'ready' || origin !== process.env.WORKSPACE_FRONTEND_ORIGIN) throw new Error('Expected owned ready session');
   const replay = process.env.EVENTS_REPLAY_CALENDAR === '1';
+  const seedPreflight = process.env.EVENTS_SEED_PREFLIGHT === '1';
   if (replay && mode !== 'controlled') throw new Error('Replay requires the offline provider guard');
   const requests: Acquisition[] = [], calendar: object[] = [], issues: string[] = [];
   const contexts: BrowserContext[] = [];
   let browserRequests = 0;
+  let seedAborts = 0;
   let stage = 'disarmed';
+  const seedLaunchSlots = new Set<Slot>();
   const groups = mode === 'controlled' ? { ...plan.groups, ...controlledGroups } : plan.groups;
   if (replay) for (const symbol of replayListings) groups['replay-' + symbol] = plan.groups.listing;
   const scenarios: string[] = [];
+  const conclusions: Record<string, number> = {};
   const release = new Map<string, () => void>();
   const held = new Map<string, Promise<void>>();
   const diagnostics = controlledDiagnostics(origin, fixtureHost, mode === 'live');
@@ -214,21 +218,21 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     stage = next;
   }
 
-  async function contextPage() {
+  async function contextPage(seeding = false, verifySeedLaunch = false) {
     const context = await browser.newContext({ serviceWorkers: 'block', viewport: { width: 1600, height: 1000 } });
     contexts.push(context);
     await observeChartCanvas(context);
     const page = await context.newPage();
     const cdp = await context.newCDPSession(page);
     await cdp.send('Runtime.enable');
-    if (mode === 'live') {
+    if (mode === 'live' && !seeding) {
       await cdp.send('Network.enable');
       cdp.on('Network.loadingFailed', event => {
         if (!event.canceled && !event.blockedReason) diagnostics.recordTransportFailure();
       });
     }
     cdp.on('Runtime.exceptionThrown', () => issues.push('uncaught-browser-exception'));
-    diagnostics?.observe(page);
+    if (!seeding) diagnostics.observe(page);
     await context.route('**/*', async route => {
       const target = new URL(route.request().url());
       if (target.origin !== origin) {
@@ -236,6 +240,19 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
         return route.abort();
       }
       if (!target.pathname.startsWith('/data/api/v1/')) return route.continue();
+      if (seeding) {
+        seedAborts++;
+        if (verifySeedLaunch) {
+          const slot = (Object.keys(plan.slots) as Slot[]).find(key => target.pathname === '/data/api/v1/' + plan.slots[key][0]);
+          const actual = [...target.searchParams].sort();
+          const expected = slot && Object.entries({ provider: 'fmp', ...query('launch', slot) })
+            .map(([key, value]) => [key, String(value)]).sort();
+          if (!slot || seedLaunchSlots.has(slot) || route.request().method() !== 'GET'
+            || JSON.stringify(actual) !== JSON.stringify(expected)) issues.push('invalid-saved-seed-launch');
+          else seedLaunchSlots.add(slot);
+        }
+        return route.abort();
+      }
       browserRequests++;
       const slot = (Object.keys(plan.slots) as Slot[]).find(key => target.pathname === '/data/api/v1/' + plan.slots[key][0]);
       let expected = slot && groups[stage]?.includes(slot) &&
@@ -311,6 +328,7 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       await expect(status).toContainText(`${usable} of 4 FMP inputs have usable evidence.`);
       const title = usable === 4 ? 'Evidence available' : usable === 0 ? 'Insufficient evidence' : 'Partial evidence';
       await expect(status).toContainText(title);
+      conclusions[current] = usable;
     });
   }
 
@@ -412,17 +430,63 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     await outcome(story, 'Evidence available', 4);
   }
 
-  try {
-    const page = await contextPage();
-    await login(page, origin, credentials);
-    await connect(page, origin);
-    const app = page.getByRole('button').filter({ has: page.getByText('Events and Documents', { exact: true }) });
+  const storyWidget = (page: Page) => page.locator('#workarea .widget-events_documents_story');
+  const appButton = (page: Page) => page.getByRole('button').filter({
+    has: page.getByText('Events and Documents', { exact: true }),
+  });
+  async function applySymbol(story: Locator, symbol: string) {
+    await story.getByLabel('Custom listing symbol').fill(symbol);
+    await story.getByRole('button', { name: 'Apply symbol', exact: true }).press('Enter');
+  }
+  async function prepareSupplement() {
+    const seed = await contextPage(true);
+    await login(seed, origin, credentials);
+    await connect(seed, origin);
+    const app = appButton(seed);
     await expect(app).toHaveCount(1);
-    await advance('launch');
     await app.click();
-    const story = page.locator('#workarea .widget-events_documents_story');
+    const story = storyWidget(seed);
+    await applySymbol(story, symbols.launch);
+    for (const slot of Object.keys(plan.initial) as Slot[]) await edit(story, slot, plan.initial);
+    const choices = { ...finalChoices, ...plan.initial, symbol: symbols.launch, charts: { eps: 'bar', revenue: 'point' } };
+    await restoredChoices(story, choices);
+    const id = new URL(seed.url()).pathname.split('/').at(-1)!;
+    const saved = await renameAndSave(seed, id, 'Events verification seed');
+    expect(saved.data.widgets.find((widget: any) => widget.widgetId === 'events_documents_story').storage)
+      .toEqual({ eventsDocuments: choices });
+    await seed.context().close();
+    scenarios.push('native-catalog-seeded-through-workspace-controls');
+    return { id, choices };
+  }
+
+  try {
+    const start = supplemental ? await prepareSupplement() : undefined;
+    if (seedPreflight && start) {
+      const checked = await contextPage(true, true);
+      await login(checked, origin, credentials);
+      if (new URL(checked.url()).pathname !== '/app/' + start.id) await checked.goto(origin + '/app/' + start.id);
+      await restoredChoices(storyWidget(checked), start.choices);
+      await expect.poll(() => seedLaunchSlots.size).toBe(4);
+      expect(issues).toEqual([]);
+      scenarios.push('seed-restored-planned-native-queries-without-sends');
+      return;
+    }
+    const page = await contextPage();
+    if (start) await advance('launch');
+    await login(page, origin, credentials);
+    if (start) {
+      if (new URL(page.url()).pathname !== '/app/' + start.id) await page.goto(origin + '/app/' + start.id);
+      await restoredChoices(storyWidget(page), start.choices);
+    } else {
+      await connect(page, origin);
+      const app = appButton(page);
+      await expect(app).toHaveCount(1);
+      await advance('launch');
+      await app.click();
+      await expect(storyWidget(page).getByRole('button', { name: 'Apple (AAPL)', exact: true })).toHaveAttribute('aria-pressed', 'true');
+    }
+    const story = storyWidget(page);
     await expect(story.getByRole('heading', { name: /What earnings figures does FMP report/ })).toBeVisible();
-    await expect(story.getByRole('button', { name: 'Apple (AAPL)', exact: true })).toHaveAttribute('aria-pressed', 'true');
     if (replay) {
       const connectionToast = page.locator('[data-sonner-toast]').filter({ hasText: 'Backend added successfully' });
       if (await connectionToast.isVisible()) await connectionToast.getByRole('button', { name: 'Close toast' }).click();
@@ -456,7 +520,16 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       expect(liveChecks.failed).toEqual([]);
       return;
     }
-    await settled(story, 'AAPL');
+    await settled(story, symbols.launch);
+    if (fourInputs) {
+      const chartRow = earnings(story).getByRole('article').filter({ has: page.locator('canvas') }).first();
+      if (await chartRow.count()) await chartRow.screenshot({ path: join(destination, 'private-earnings-sample.png') });
+      await outcome(story, 'Evidence available', 4);
+      expect(issues).toEqual([]);
+      expect(network.errors).toEqual({});
+      expect(liveChecks.failed).toEqual([]);
+      return;
+    }
     if (mode === 'controlled') {
       await expect(story.getByText('Transcript for Q1 2025 is unavailable.', { exact: true })).toBeVisible();
       await outcome(story, 'Partial evidence', 3);
@@ -464,8 +537,9 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     }
 
     await advance('listing');
-    await story.getByRole('button', { name: 'Microsoft (MSFT)', exact: true }).press('Enter');
-    await settled(story, 'MSFT');
+    if (supplemental) await applySymbol(story, symbols.later);
+    else await story.getByRole('button', { name: 'Microsoft (MSFT)', exact: true }).press('Enter');
+    await settled(story, symbols.later);
     if (mode === 'controlled') {
       await expect(story.getByText('FMP evidence failed validation for this query. HTTP 200.', { exact: true })).toBeVisible();
       await expect(news(story).getByRole('alert')).toHaveText('Workspace access to this source or session is unavailable. HTTP 403.');
@@ -476,7 +550,7 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     for (const slot of Object.keys(plan.edits) as Slot[]) {
       await advance(slot);
       await edit(story, slot);
-      await settled(story, 'MSFT');
+      await settled(story, symbols.later);
     }
     if (mode === 'controlled') {
       await expect(earnings(story).getByText('Clipping observed', { exact: true })).toBeVisible();
@@ -510,7 +584,7 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     const fresh = reopened.locator('#workarea .widget-events_documents_story');
     await restoredChoices(fresh);
     if (mode === 'live') scenarios.push('fresh-authenticated-reopen-choices');
-    await settled(fresh, 'MSFT');
+    await settled(fresh, symbols.later);
     if (mode === 'live') {
       const chartRow = fresh.getByRole('region', { name: 'FMP earnings calendar' }).getByRole('article').filter({ has: reopened.locator('canvas') }).first();
       if (await chartRow.count()) await chartRow.screenshot({ path: join(destination, 'private-earnings-sample.png') });
@@ -539,7 +613,7 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     await advance('disarmed').catch(() => issues.push('guard-disarm-failed'));
     await Promise.allSettled(contexts.map(context => context.close()));
     writeFileSync(join(destination, 'observations.json'), JSON.stringify({
-      mode, replay, browser: browser.version(), browserRequests, calendar, issues, scenarios, network, liveChecks,
+      mode, replay, browser: browser.version(), browserRequests, seedAborts, calendar, issues, scenarios, network, liveChecks, conclusions,
       requests: requests.map(({ rows: _rows, ...request }) => request),
     }), { mode: 0o600, flag: 'wx' });
   }

@@ -103,7 +103,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 4.3_
   - _Requirements: 1.1, 1.2, 5.1, 5.2_
 
-- [ ] 5. Verify the installed candidate
+- [x] 5. Verify the installed candidate
 - [x] 5.1 Integrate the reviewed fork and build the candidate
   - Push accepted Workspace changes before updating the root source lock. Validate catalog provenance against the integrated revision, freeze both service image identities and use Dagger for any needed image build. Use portable verification to launch the disposable authenticated pair.
   - Run affected type, catalog and persisted-story regressions; confirm all four mounted routes and native App discovery offline. Audit the combined whole-file caps across the final change set including shared modules.
@@ -126,7 +126,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 5.2_
   - _Requirements: 1.4, 2.5, 2.6, 3.2, 3.5, 4.3, 4.5, 5.1, 5.2, 5.4_
 
-- [ ] 5.4 Verify the earnings answer against real FMP responses
+- [x] 5.4 Verify the earnings answer against real FMP responses
   - Freeze witnessed listing/window, document tuples and send allowance before launch. The minimal journey plans 15 sends across launch (4), listing change (3), one bound edit per input (4) and fresh reopen (4). Save, export and invalid edits add zero. Stop on a budget breach and report the actual ledger.
   - On the identified candidate, compare all four inputs, row/field chart marks, missing labels, provenance, conclusion and persisted choices against that journey's own acquired responses. Record per-field coverage, entitlement failures, candidate revisions/digests, browser and safe discrepancies. Leave unobserved live cases open, including missing-value display when every live field was populated.
   - Include a representative real-FMP earnings chart sample in the milestone record after independent review for credentials and private information. Caption the measure, unit, report date and tested revision; link the reviewed artifact and record its exact source hash in the sync manifest. If live verification is unavailable, mark the sample pending. Reconcile breadth and completion checkboxes with observed outcomes. Test and evidence artifacts are outside production caps; any corrective production change returns to its owning task for fresh review and cap checks.
@@ -139,3 +139,5 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
 Workspace commit `2ac14a0` verifies task 2.2 with 49 focused passing cases. Unchanged app-shape assertions and a chart mock also fail on the preceding Workspace revision. The candidate pin and integrated browser checks belong to group 5.
 
 Workspace commits `357f24e` and `1250ed4` validate native catalog bindings and implement the authorized reader. The composition root must call `canUseEventsDocumentsStorySource` before mount and recheck current source and session identity before reusing any cached market receipt.
+
+The original 15-send journey showed MSFT outside the 250 returned calendar rows. The owner authorized supplemental sends. A second 15-send journey checked live earnings marks, missing estimates, bounded edits, save and reopen. Four final CVNA sends verified the all-four-input conclusion. [Controlled evidence](../../../artifacts/reviewed/events-and-documents/controlled.md) · [Live chart and coverage](../../../artifacts/reviewed/events-and-documents/supplemental.md)

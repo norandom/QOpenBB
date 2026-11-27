@@ -21,15 +21,17 @@ class Rejected(RuntimeError):
 def schedule(plan):
     translation = {"start_date": "from", "end_date": "to"}
     stages = {}
+    symbols = plan.get("symbols", {"launch": "AAPL", "later": "MSFT"})
     for stage, slots in plan["groups"].items():
         stage_wire = stages[stage] = {}
         for slot in slots:
             choice = plan["edits" if stage in (slot, "reopen") else "initial"][slot]
             query = {translation.get(k, k): str(v) for k, v in choice.items()}
             if slot != "calendar":
-                query["symbols" if slot == "news" else "symbol"] = "AAPL" if stage == "launch" else "MSFT"
+                query["symbols" if slot == "news" else "symbol"] = symbols["launch" if stage == "launch" else "later"]
             stage_wire[slot] = (plan["slots"][slot][1], query)
-    if sum(map(len, stages.values())) != LIMIT:
+    limit = plan.get("send_limit", LIMIT)
+    if not 1 <= limit <= LIMIT or sum(map(len, stages.values())) != limit:
         raise Rejected("invalid frozen schedule")
     return stages
 
@@ -52,6 +54,7 @@ class Guard:
         self.directory, self.phase = Path(directory), Path(phase)
         self.directory.mkdir(mode=0o700)
         self.stages, self.live, self.require_context = stages, live, require_context
+        self.limit = sum(map(len, stages.values()))
         self.pid, self.lock = os.getpid(), Lock()
         self.entries, self.denials = [], 0
         self.spent, self.poisoned = set(), False
@@ -89,7 +92,7 @@ class Guard:
                 stage = self.phase.read_text().strip()
                 outgoing = wire(request)
                 slot = next(key for key, value in self.stages[stage].items() if value == outgoing)
-                if (not self.live or self.count >= LIMIT or (stage, slot) in self.spent
+                if (not self.live or self.count >= self.limit or (stage, slot) in self.spent
                         or (self.require_context and (extension is None or extension["slot"] != slot))):
                     raise ValueError
             except (OSError, AttributeError, KeyError, StopIteration, ValueError):

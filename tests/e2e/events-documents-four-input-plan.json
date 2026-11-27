@@ -1,0 +1,77 @@
+{
+  "slots": {
+    "calendar": [
+      "equity/calendar/earnings",
+      "earnings-calendar"
+    ],
+    "filings": [
+      "equity/fundamental/filings",
+      "sec-filings-search/symbol"
+    ],
+    "transcript": [
+      "equity/fundamental/transcript",
+      "earning-call-transcript"
+    ],
+    "news": [
+      "news/company",
+      "news/stock"
+    ]
+  },
+  "initial": {
+    "calendar": {
+      "start_date": "2025-07-30",
+      "end_date": "2025-07-30"
+    },
+    "filings": {
+      "start_date": "2025-07-29",
+      "end_date": "2025-08-10",
+      "page": 0,
+      "limit": 20
+    },
+    "transcript": {
+      "year": 2025,
+      "quarter": 2
+    },
+    "news": {
+      "start_date": "2025-07-29",
+      "end_date": "2025-08-10",
+      "page": 0,
+      "limit": 10
+    }
+  },
+  "edits": {
+    "calendar": {
+      "start_date": "2025-07-30",
+      "end_date": "2025-07-30"
+    },
+    "filings": {
+      "start_date": "2025-07-29",
+      "end_date": "2025-08-10",
+      "page": 0,
+      "limit": 20
+    },
+    "transcript": {
+      "year": 2025,
+      "quarter": 2
+    },
+    "news": {
+      "start_date": "2025-07-29",
+      "end_date": "2025-08-10",
+      "page": 0,
+      "limit": 10
+    }
+  },
+  "groups": {
+    "launch": [
+      "calendar",
+      "filings",
+      "transcript",
+      "news"
+    ]
+  },
+  "symbols": {
+    "launch": "CVNA",
+    "later": "CVNA"
+  },
+  "send_limit": 4
+}
