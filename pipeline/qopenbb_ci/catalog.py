@@ -4,6 +4,7 @@ import json
 from copy import deepcopy
 
 from qopenbb_ci.catalog_batch_b import project, validate_bindings
+from qopenbb_ci.catalog_events_documents import events_documents_app
 from qopenbb_ci.catalog_financial import (
     EXTENSION,
     frozen_extension,
@@ -234,6 +235,7 @@ def generate(schema: dict, inventory: dict, raw: dict, bundled: list, prefix: st
     curated, research_status = research_app(inventory, mapping, widgets)
     if {"daily-prices", "gdp"} <= {item["dataset"] for item in mapping}:
         curated.append(story_app(widgets))
+    curated.extend(events_documents_app(inventory, mapping, widgets))
     return {"openapi.json": deepcopy(schema), "routes.json": routes, "widgets.json": widgets,
             "datasets.json": installed,
             "apps.json": [starter(inventory, mapping), *apps, *curated],

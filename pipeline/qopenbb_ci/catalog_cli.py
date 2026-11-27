@@ -62,7 +62,7 @@ def run(args: argparse.Namespace) -> dict:
 def generator_hashes() -> dict:
     return {name: hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()
             for name in ("catalog.py", "catalog_research.py", "catalog_story.py",
-                         "catalog_batch_b.py", "catalog_financial.py", "catalog_runtime.py",
+                         "catalog_batch_b.py", "catalog_events_documents.py", "catalog_financial.py", "catalog_runtime.py",
                          "catalog_upstream.py", "catalog_cli.py")}
 
 

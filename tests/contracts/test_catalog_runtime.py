@@ -99,7 +99,7 @@ def test_served_schema_and_upstream_generator_repeat(tmp_path):
         dataset["path"] for dataset in inventory["datasets"]}
     native_widgets = {key: widget for key, widget in first["widgets.json"].items()
                       if key not in endpoint_widgets}
-    assert set(native_widgets) == {"company_research", "research_story"}
+    assert set(native_widgets) == {"company_research", "research_story", "events_documents_story"}
     assert native_widgets["company_research"] == {
         "widgetId": "company_research", "type": "company_research", "name": "Peer Research",
         "description": "Add candidate peers and inspect provider observations. Saved choices are not frozen data.",
@@ -109,6 +109,7 @@ def test_served_schema_and_upstream_generator_repeat(tmp_path):
             "economy_fred_series_fred_obb"} <= set(first["widgets.json"])
     assert [app["name"] for app in first["apps.json"]] == [
         "QOpenBB starter", "FRED", "Company Research", "Commodities versus Technology",
+        "Events and Documents",
     ]
     research = first["apps.json"][2]
     assert list(research["tabs"]) == ["Research"]

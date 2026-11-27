@@ -70,7 +70,7 @@ def test_proposal_retains_baseline_widget_ids_and_complete_native_mapping(propos
     mapping = proposal["catalog-report.json"]["mapping"]
     endpoint_widgets = {key: value for key, value in widgets.items() if "endpoint" in value}
     assert len(endpoint_widgets) == len(mapping) == len(datasets) == 30
-    assert set(widgets) - set(endpoint_widgets) == {"company_research", "research_story"}
+    assert set(widgets) - set(endpoint_widgets) == {"company_research", "research_story", "events_documents_story"}
     assert {item["path"]: item["provider"] for item in mapping} == ACCEPTED
     assert {item["dataset"] for item in mapping} == {item["id"] for item in datasets}
     for path, provider, widget_id in BASELINE.values():

@@ -20,7 +20,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Requirements: 1.1, 1.2, 1.4, 2.2, 2.3, 3.2, 4.5, 5.2_
 
 - [ ] 2. Establish catalog and acquisition boundaries
-- [ ] 2.1 (P) Generate the curated catalog entry
+- [x] 2.1 (P) Generate the curated catalog entry
   - Use all four validated FMP declarations and existing defaults. Emit the ordered App once. Missing or foreign inputs must prevent its admission. Regenerate affected catalog artifacts and hashes and compare unchanged Apps and individual widgets.
   - Pass the combined caps for the maintained generator and registration modules. Document generator provenance for excluded outputs.
   - _Boundary: Root catalog_events_documents.py, catalog.py, catalog_cli.py, generated contracts and test_events_documents_catalog.py_
