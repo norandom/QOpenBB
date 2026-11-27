@@ -1,0 +1,686 @@
+{
+  "calendar-duplicate": {
+    "status": 200,
+    "body": {
+      "results": [
+        {
+          "symbol": "MSFT",
+          "name": null,
+          "report_date": "2026-11-19",
+          "last_updated": null,
+          "eps_previous": null,
+          "eps_actual": null,
+          "eps_consensus": null,
+          "revenue_actual": null,
+          "revenue_consensus": null
+        },
+        {
+          "symbol": "AAPL",
+          "name": null,
+          "report_date": "2026-11-19",
+          "last_updated": null,
+          "eps_previous": null,
+          "eps_actual": 0,
+          "eps_consensus": 1.25,
+          "revenue_actual": 9007199254740993,
+          "revenue_consensus": 42
+        },
+        {
+          "symbol": "SPY",
+          "name": null,
+          "report_date": "2026-11-19",
+          "last_updated": null,
+          "eps_previous": null,
+          "eps_actual": null,
+          "eps_consensus": null,
+          "revenue_actual": null,
+          "revenue_consensus": null
+        },
+        {
+          "symbol": "AAPL",
+          "name": null,
+          "report_date": "2026-11-19",
+          "last_updated": null,
+          "eps_previous": null,
+          "eps_actual": 1.5,
+          "eps_consensus": null,
+          "revenue_actual": null,
+          "revenue_consensus": null
+        }
+      ],
+      "extra": {
+        "results_metadata": {
+          "__qopenbb_financial__": {
+            "schema_version": 1,
+            "dataset": "equity/calendar/earnings",
+            "provider": "fmp",
+            "source": {
+              "endpoint": "earnings-calendar"
+            },
+            "retrieved_at": "2026-11-27T09:00:00Z",
+            "effective_query": {
+              "start_date": "2026-11-16",
+              "end_date": "2026-11-22"
+            },
+            "fields": {
+              "eps_actual": {
+                "definition": "The actual earnings per share announced.",
+                "unit": "currency_per_share",
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "eps_consensus": {
+                "definition": "The analyst conesus earnings-per-share estimate.",
+                "unit": "currency_per_share",
+                "value_origin": "estimate",
+                "availability": "available"
+              },
+              "eps_previous": {
+                "definition": "The earnings-per-share from the same previously reported period.",
+                "unit": "currency_per_share",
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "last_updated": {
+                "definition": "The date the data was updated last.",
+                "unit": "civil_date",
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "name": {
+                "definition": "Name of the entity.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "report_date": {
+                "definition": "The date of the earnings report.",
+                "unit": "civil_date",
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "revenue_actual": {
+                "definition": "The actual reported revenue.",
+                "unit": "currency",
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "revenue_consensus": {
+                "definition": "The revenue forecast consensus.",
+                "unit": "currency",
+                "value_origin": "estimate",
+                "availability": "available"
+              },
+              "symbol": {
+                "definition": "Symbol representing the entity requested in the data.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              }
+            },
+            "bounds": {
+              "requested_limit": 250,
+              "effective_limit": 250,
+              "returned_count": 4,
+              "truncated": null,
+              "completeness": "unknown"
+            }
+          }
+        }
+      }
+    },
+    "receipt": {
+      "status": "success",
+      "httpStatus": 200,
+      "scope": {
+        "query": {
+          "slot": "calendar",
+          "parameters": {
+            "provider": "fmp",
+            "start_date": "2026-11-16",
+            "end_date": "2026-11-22"
+          }
+        },
+        "generation": 1,
+        "provider": "fmp",
+        "dataset": "fmp_calendar_earnings",
+        "route": "/data/api/v1/equity/calendar/earnings"
+      },
+      "providerRetrievedAt": "2026-11-27T09:00:00Z",
+      "tokens": {
+        "1": {
+          "eps_actual": "0",
+          "eps_consensus": "1.25",
+          "revenue_actual": "9007199254740993",
+          "revenue_consensus": "42"
+        },
+        "3": {
+          "eps_actual": "1.5"
+        }
+      }
+    }
+  },
+  "filings-empty": {
+    "status": 200,
+    "body": {
+      "results": [],
+      "extra": {
+        "results_metadata": {
+          "__qopenbb_financial__": {
+            "schema_version": 1,
+            "dataset": "equity/fundamental/filings",
+            "provider": "fmp",
+            "source": {
+              "endpoint": "sec-filings-search/symbol"
+            },
+            "retrieved_at": "2026-11-27T09:00:00Z",
+            "effective_query": {
+              "symbol": "AAPL",
+              "start_date": "2026-01-01",
+              "end_date": "2026-11-18",
+              "page": 0,
+              "limit": 20
+            },
+            "fields": {
+              "accepted_date": {
+                "definition": "Source acceptance date or timestamp, preserving supplied precision and offset.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "cik": {
+                "definition": "Source Central Index Key as a string preserving leading zeros.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "content_status": {
+                "definition": "Inline content coverage; filings supply metadata only.",
+                "unit": null,
+                "value_origin": "locally_derived",
+                "availability": "missing"
+              },
+              "filing_date": {
+                "definition": "Civil date on which the filing was made.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "filing_url": {
+                "definition": "Source filing index URL; the index is not retrieved.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "report_type": {
+                "definition": "Source filing form type, including amendments when supplied.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "report_url": {
+                "definition": "Source report document URL; the document is not retrieved.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "symbol": {
+                "definition": "Listing symbol identifying the requested company.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              }
+            },
+            "bounds": {
+              "requested_limit": 20,
+              "effective_limit": 20,
+              "returned_count": 0,
+              "truncated": null,
+              "completeness": "unknown"
+            }
+          }
+        }
+      }
+    },
+    "receipt": {
+      "status": "empty",
+      "httpStatus": 200,
+      "scope": {
+        "query": {
+          "slot": "filings",
+          "parameters": {
+            "provider": "fmp",
+            "symbol": "AAPL",
+            "start_date": "2026-01-01",
+            "end_date": "2026-11-18",
+            "page": 0,
+            "limit": 20
+          }
+        },
+        "generation": 1,
+        "provider": "fmp",
+        "dataset": "fmp_company_filings",
+        "route": "/data/api/v1/equity/fundamental/filings"
+      },
+      "providerRetrievedAt": "2026-11-27T09:00:00Z"
+    }
+  },
+  "transcript-exact": {
+    "status": 200,
+    "body": {
+      "results": [
+        {
+          "symbol": "AAPL",
+          "year": 2025,
+          "quarter": "Q1",
+          "date": "2025-01-30",
+          "event_datetime": "2025-01-30T16:35:42-05:00",
+          "content": "  Operator: Hello\n\nCEO: <b>Literal</b>\t\n",
+          "content_status": "completeness_unknown"
+        }
+      ],
+      "extra": {
+        "results_metadata": {
+          "__qopenbb_financial__": {
+            "schema_version": 1,
+            "dataset": "equity/fundamental/transcript",
+            "provider": "fmp",
+            "source": {
+              "endpoint": "earning-call-transcript"
+            },
+            "retrieved_at": "2026-11-27T09:00:00Z",
+            "effective_query": {
+              "symbol": "AAPL",
+              "year": 2025,
+              "quarter": 1
+            },
+            "fields": {
+              "content": {
+                "definition": "Literal supplied transcript.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "content_status": {
+                "definition": "Completeness of supplied text.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "date": {
+                "definition": "Civil date of the call.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "event_datetime": {
+                "definition": "Supplied event timestamp, preserving offset.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "quarter": {
+                "definition": "Fiscal quarter.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "symbol": {
+                "definition": "Company listing identity.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "year": {
+                "definition": "Fiscal year.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              }
+            },
+            "bounds": {
+              "requested_limit": null,
+              "effective_limit": null,
+              "returned_count": 1,
+              "truncated": null,
+              "completeness": "unknown"
+            }
+          }
+        }
+      }
+    },
+    "receipt": {
+      "status": "success",
+      "httpStatus": 200,
+      "scope": {
+        "query": {
+          "slot": "transcript",
+          "parameters": {
+            "provider": "fmp",
+            "symbol": "AAPL",
+            "year": 2025,
+            "quarter": 1
+          }
+        },
+        "generation": 1,
+        "provider": "fmp",
+        "dataset": "fmp_earnings_call_transcript",
+        "route": "/data/api/v1/equity/fundamental/transcript"
+      },
+      "providerRetrievedAt": "2026-11-27T09:00:00Z"
+    }
+  },
+  "news-204": {
+    "status": 204,
+    "body": null,
+    "receipt": {
+      "status": "empty",
+      "httpStatus": 204,
+      "scope": {
+        "query": {
+          "slot": "news",
+          "parameters": {
+            "provider": "fmp",
+            "symbol": "AAPL",
+            "page": 0,
+            "limit": 10
+          }
+        },
+        "generation": 1,
+        "provider": "fmp",
+        "dataset": "fmp_company_news",
+        "route": "/data/api/v1/news/company"
+      },
+      "providerRetrievedAt": null,
+      "respondedAt": "2026-11-27T09:00:02Z"
+    }
+  },
+  "news-failure": {
+    "status": 502,
+    "body": {
+      "code": "entitlement",
+      "provider": "fmp",
+      "retryable": false,
+      "detail": "Provider subscription access is required."
+    },
+    "receipt": {
+      "status": "failure",
+      "httpStatus": 502,
+      "scope": {
+        "query": {
+          "slot": "news",
+          "parameters": {
+            "provider": "fmp",
+            "symbol": "AAPL",
+            "page": 0,
+            "limit": 10
+          }
+        },
+        "generation": 2,
+        "provider": "fmp",
+        "dataset": "fmp_company_news",
+        "route": "/data/api/v1/news/company"
+      },
+      "code": "entitlement",
+      "retryable": false
+    }
+  },
+  "filings-success": {
+    "status": 200,
+    "body": {
+      "results": [
+        {
+          "symbol": "AAPL",
+          "content_status": "metadata_only",
+          "filing_date": "2026-01-02",
+          "accepted_date": "2026-01-02T16:35:42-05:00",
+          "report_type": "10-Q",
+          "cik": "0000320193",
+          "filing_url": "https://example.test/filing-index.html",
+          "report_url": "https://example.test/report.htm"
+        }
+      ],
+      "extra": {
+        "results_metadata": {
+          "__qopenbb_financial__": {
+            "schema_version": 1,
+            "dataset": "equity/fundamental/filings",
+            "provider": "fmp",
+            "source": {
+              "endpoint": "sec-filings-search/symbol"
+            },
+            "retrieved_at": "2026-11-27T09:00:00Z",
+            "effective_query": {
+              "symbol": "AAPL",
+              "start_date": "2026-01-01",
+              "end_date": "2026-11-18",
+              "page": 0,
+              "limit": 20
+            },
+            "fields": {
+              "accepted_date": {
+                "definition": "Source acceptance date or timestamp, preserving supplied precision and offset.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "cik": {
+                "definition": "Source Central Index Key as a string preserving leading zeros.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "content_status": {
+                "definition": "Inline content coverage; filings supply metadata only.",
+                "unit": null,
+                "value_origin": "locally_derived",
+                "availability": "available"
+              },
+              "filing_date": {
+                "definition": "Civil date on which the filing was made.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "filing_url": {
+                "definition": "Source filing index URL; the index is not retrieved.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "report_type": {
+                "definition": "Source filing form type, including amendments when supplied.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "report_url": {
+                "definition": "Source report document URL; the document is not retrieved.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "symbol": {
+                "definition": "Listing symbol identifying the requested company.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              }
+            },
+            "bounds": {
+              "requested_limit": 20,
+              "effective_limit": 20,
+              "returned_count": 1,
+              "truncated": null,
+              "completeness": "unknown"
+            }
+          }
+        }
+      }
+    },
+    "receipt": {
+      "status": "success",
+      "httpStatus": 200,
+      "scope": {
+        "query": {
+          "slot": "filings",
+          "parameters": {
+            "provider": "fmp",
+            "symbol": "AAPL",
+            "start_date": "2026-01-01",
+            "end_date": "2026-11-18",
+            "page": 0,
+            "limit": 20
+          }
+        },
+        "generation": 1,
+        "provider": "fmp",
+        "dataset": "fmp_company_filings",
+        "route": "/data/api/v1/equity/fundamental/filings"
+      },
+      "providerRetrievedAt": "2026-11-27T09:00:00Z"
+    }
+  },
+  "news-success": {
+    "status": 200,
+    "body": {
+      "results": [
+        {
+          "symbol": "AAPL",
+          "content_status": "partial",
+          "date": "2026-01-02T16:35:42-05:00",
+          "title": "Synthetic result",
+          "source": "Example Wire",
+          "publisher": "Example Publisher",
+          "author": null,
+          "excerpt": "  Literal <b>excerpt</b>\n",
+          "body": null,
+          "url": "https://example.test/news/1",
+          "symbols": "AAPL",
+          "images": null
+        }
+      ],
+      "extra": {
+        "results_metadata": {
+          "__qopenbb_financial__": {
+            "schema_version": 1,
+            "dataset": "news/company",
+            "provider": "fmp",
+            "source": {
+              "endpoint": "news/stock"
+            },
+            "retrieved_at": "2026-11-27T09:00:00Z",
+            "effective_query": {
+              "symbol": "AAPL",
+              "page": 0,
+              "limit": 10,
+              "start_date": null,
+              "end_date": null
+            },
+            "fields": {
+              "author": {
+                "definition": "Journalist identity, unavailable from this endpoint and never inferred from publisher attribution.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "body": {
+                "definition": "Full article body, unavailable because this adapter does not retrieve article content.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "content_status": {
+                "definition": "Locally derived coverage status; supplied excerpts are partial and headlines alone are metadata-only.",
+                "unit": null,
+                "value_origin": "locally_derived",
+                "availability": "available"
+              },
+              "date": {
+                "definition": "Source publication timestamp preserving supplied precision and offset; an unsupplied timezone remains unknown.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "excerpt": {
+                "definition": "Literal provider excerpt, preserving whitespace and markup without claiming full article coverage.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "images": {
+                "definition": "Provider image metadata retained without retrieving or rendering remote image resources.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "missing"
+              },
+              "publisher": {
+                "definition": "Publisher attribution supplied by the provider, distinct from an identified journalist.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "source": {
+                "definition": "News site attribution supplied by the provider; missing attribution remains unknown.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "symbol": {
+                "definition": "Normalized listing symbol linking the article to the requested company.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "symbols": {
+                "definition": "Standard news company linkage preserving the normalized requested listing symbol.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "title": {
+                "definition": "Nonblank article headline preserved as literal provider text.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              },
+              "url": {
+                "definition": "Original public HTTP or HTTPS article link, retained without fetching the article.",
+                "unit": null,
+                "value_origin": "provider_observation",
+                "availability": "available"
+              }
+            },
+            "bounds": {
+              "requested_limit": 10,
+              "effective_limit": 10,
+              "returned_count": 1,
+              "truncated": null,
+              "completeness": "unknown"
+            }
+          }
+        }
+      }
+    },
+    "receipt": {
+      "status": "success",
+      "httpStatus": 200,
+      "scope": {
+        "query": {
+          "slot": "news",
+          "parameters": {
+            "provider": "fmp",
+            "symbol": "AAPL",
+            "page": 0,
+            "limit": 10
+          }
+        },
+        "generation": 1,
+        "provider": "fmp",
+        "dataset": "fmp_company_news",
+        "route": "/data/api/v1/news/company"
+      },
+      "providerRetrievedAt": "2026-11-27T09:00:00Z"
+    }
+  }
+}

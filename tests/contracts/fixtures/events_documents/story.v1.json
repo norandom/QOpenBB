@@ -1,0 +1,331 @@
+{
+  "catalog": {
+    "widget": {
+      "widgetId": "events_documents_story",
+      "type": "events_documents_story",
+      "name": "Events and Documents",
+      "description": "What earnings figures does FMP report for this company, and which filings, transcript or news items can I inspect?",
+      "category": "Research",
+      "gridData": {
+        "w": 40,
+        "h": 24
+      },
+      "params": []
+    },
+    "bindings": {
+      "calendar": {
+        "widgetId": "equity_calendar_earnings_fmp_obb",
+        "dataset": "fmp_calendar_earnings",
+        "route": "/data/api/v1/equity/calendar/earnings",
+        "type": "table",
+        "metadataDataset": "equity/calendar/earnings",
+        "sourceEndpoint": "earnings-calendar",
+        "queryPolicy": {
+          "completeness": "unknown",
+          "dateWindow": {
+            "application": "upstream_window",
+            "endParameter": "end_date",
+            "inclusive": true,
+            "maxInclusiveDays": 7,
+            "mode": "required_pair",
+            "ordered": true,
+            "startParameter": "start_date"
+          },
+          "maxRequests": 1,
+          "maxReturnedRows": 250,
+          "maxSymbols": 0,
+          "parameters": {
+            "end_date": {
+              "format": "date",
+              "title": "End Date",
+              "type": "string"
+            },
+            "start_date": {
+              "format": "date",
+              "title": "Start Date",
+              "type": "string"
+            }
+          },
+          "preserveSourceOrder": true,
+          "rejectExplicitNull": true,
+          "required": [
+            "start_date",
+            "end_date"
+          ],
+          "returnedRowsLimitParameter": null,
+          "schemaVersion": 1
+        }
+      },
+      "filings": {
+        "widgetId": "equity_fundamental_filings_fmp_obb",
+        "dataset": "fmp_company_filings",
+        "route": "/data/api/v1/equity/fundamental/filings",
+        "type": "company_documents",
+        "metadataDataset": "equity/fundamental/filings",
+        "sourceEndpoint": "sec-filings-search/symbol",
+        "queryPolicy": {
+          "completeness": "unknown",
+          "dateWindow": {
+            "application": "upstream_window",
+            "endParameter": "end_date",
+            "inclusive": true,
+            "maxInclusiveDays": 365,
+            "mode": "required_pair",
+            "ordered": true,
+            "startParameter": "start_date"
+          },
+          "maxRequests": 1,
+          "maxReturnedRows": 100,
+          "maxSymbols": 1,
+          "parameters": {
+            "end_date": {
+              "format": "date",
+              "title": "End Date",
+              "type": "string"
+            },
+            "limit": {
+              "default": 20,
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "page": {
+              "default": 0,
+              "maximum": 99,
+              "minimum": 0,
+              "title": "Page",
+              "type": "integer"
+            },
+            "start_date": {
+              "format": "date",
+              "title": "Start Date",
+              "type": "string"
+            },
+            "symbol": {
+              "maxLength": 50,
+              "minLength": 1,
+              "title": "Symbol",
+              "type": "string"
+            }
+          },
+          "preserveSourceOrder": true,
+          "rejectExplicitNull": true,
+          "required": [
+            "symbol",
+            "start_date",
+            "end_date"
+          ],
+          "returnedRowsLimitParameter": "limit",
+          "schemaVersion": 1
+        }
+      },
+      "transcript": {
+        "widgetId": "equity_fundamental_transcript_fmp_obb",
+        "dataset": "fmp_earnings_call_transcript",
+        "route": "/data/api/v1/equity/fundamental/transcript",
+        "type": "company_documents",
+        "metadataDataset": "equity/fundamental/transcript",
+        "sourceEndpoint": "earning-call-transcript",
+        "queryPolicy": {
+          "completeness": "unknown",
+          "dateWindow": null,
+          "maxRequests": 1,
+          "maxReturnedRows": 1,
+          "maxSymbols": 1,
+          "parameters": {
+            "quarter": {
+              "maximum": 4,
+              "minimum": 1,
+              "title": "Quarter",
+              "type": "integer"
+            },
+            "symbol": {
+              "maxLength": 50,
+              "minLength": 1,
+              "title": "Symbol",
+              "type": "string"
+            },
+            "year": {
+              "maximum": 2100,
+              "minimum": 1900,
+              "title": "Year",
+              "type": "integer"
+            }
+          },
+          "preserveSourceOrder": true,
+          "rejectExplicitNull": true,
+          "required": [
+            "symbol",
+            "year",
+            "quarter"
+          ],
+          "returnedRowsLimitParameter": null,
+          "schemaVersion": 1
+        }
+      },
+      "news": {
+        "widgetId": "news_company_fmp_obb",
+        "dataset": "fmp_company_news",
+        "route": "/data/api/v1/news/company",
+        "type": "company_documents",
+        "metadataDataset": "news/company",
+        "sourceEndpoint": "news/stock",
+        "queryPolicy": {
+          "completeness": "unknown",
+          "dateWindow": {
+            "application": "upstream_window",
+            "endParameter": "end_date",
+            "inclusive": true,
+            "maxInclusiveDays": 31,
+            "mode": "optional_pair",
+            "ordered": true,
+            "startParameter": "start_date"
+          },
+          "maxRequests": 1,
+          "maxReturnedRows": 50,
+          "maxSymbols": 1,
+          "parameters": {
+            "end_date": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "End Date"
+            },
+            "limit": {
+              "default": 10,
+              "maximum": 50,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "page": {
+              "default": 0,
+              "maximum": 99,
+              "minimum": 0,
+              "title": "Page",
+              "type": "integer"
+            },
+            "start_date": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Start Date"
+            },
+            "symbol": {
+              "maxLength": 50,
+              "minLength": 1,
+              "title": "Symbol",
+              "type": "string"
+            }
+          },
+          "preserveSourceOrder": true,
+          "rejectExplicitNull": true,
+          "required": [
+            "symbol"
+          ],
+          "returnedRowsLimitParameter": "limit",
+          "schemaVersion": 1
+        }
+      }
+    }
+  },
+  "queries": {
+    "calendar": {
+      "slot": "calendar",
+      "parameters": {
+        "provider": "fmp",
+        "start_date": "2026-11-16",
+        "end_date": "2026-11-22"
+      }
+    },
+    "filings": {
+      "slot": "filings",
+      "parameters": {
+        "provider": "fmp",
+        "symbol": "AAPL",
+        "start_date": "2026-01-01",
+        "end_date": "2026-11-18",
+        "page": 0,
+        "limit": 20
+      }
+    },
+    "transcript": {
+      "slot": "transcript",
+      "parameters": {
+        "provider": "fmp",
+        "symbol": "AAPL",
+        "year": 2025,
+        "quarter": 1
+      }
+    },
+    "news": {
+      "slot": "news",
+      "parameters": {
+        "provider": "fmp",
+        "symbol": "AAPL",
+        "page": 0,
+        "limit": 10
+      }
+    }
+  },
+  "layout": {
+    "i": "events_documents_story",
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 24,
+    "view_order": [
+      "question",
+      "calendar",
+      "filings",
+      "transcript",
+      "news",
+      "conclusion"
+    ],
+    "state": {
+      "storage": {
+        "eventsDocuments": {
+          "version": 1,
+          "symbol": "AAPL",
+          "calendar": {
+            "start_date": "2026-11-16",
+            "end_date": "2026-11-22"
+          },
+          "filings": {
+            "start_date": "2026-01-01",
+            "end_date": "2026-11-18",
+            "page": 0,
+            "limit": 20
+          },
+          "transcript": {
+            "year": 2025,
+            "quarter": 1
+          },
+          "news": {
+            "page": 0,
+            "limit": 10
+          },
+          "charts": {
+            "eps": "bar",
+            "revenue": "point"
+          }
+        }
+      }
+    }
+  }
+}

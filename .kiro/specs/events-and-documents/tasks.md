@@ -4,14 +4,14 @@ Deliver one catalog App that answers the approved earnings question using the fo
 
 The controller freezes shared interfaces, fixtures and ownership before fan-out, stages reviewed changes selectively, and serializes commits, source pins and joins. Use fresh Sol implementers and independent reviewers; use Astra for financial semantics and difficult integration. Dispatch only the marked pairs together, with at most two implementers. Give each worker its named files, frozen inputs, focused checks and the [combined complexity command](../../../docs/complexity.md) with actual base/head revisions or explicit change manifests for both forks. Measure whole maintained files against 400 physical lines, 300 logical units per file and 50 per function. One heavy suite or build runs at a time. Require fresh verification after independent review. Workspace test paths below are relative to `vendor/workspace/terminalpro/`. Reserve the shared Events and Documents unit and integration suites named in the design for sequential joins. [Delegation](../../steering/delegation.md) · [Testing](../../steering/testing.md)
 
-- [ ] 1. Establish the candidate baseline and shared contracts
+- [x] 1. Establish the candidate baseline and shared contracts
 - [x] 1.1 Prepare the pinned runtime and complexity inventory
   - Verify the owned Workspace checkout, installed Batch B route and catalog baselines, pinned toolchains, disposable login, one-worker headless browser, guarded provider capture and candidate build entry point. Use offline smoke checks. A missing live entitlement remains a recorded prerequisite for the live journey.
   - Register planned maintained paths and test/generated exclusions before feature edits. Run the existing combined checker and its oversized-file regression. Record the two fork scopes and confirm the inventory changes pass applicable caps.
   - _Boundary: Controller, runtime preflight, root and fork scope inventories_
   - _Requirements: 1.1, 5.3, 5.4_
 
-- [ ] 1.2 Freeze the declaration, request, receipt and saved-state examples
+- [x] 1.2 Freeze the declaration, request, receipt and saved-state examples
   - Bind the exact endpointless type, four dataset IDs and installed policies to versioned choices, transient slot outcomes and layout. Freeze callback and prop contracts for selection, reader, controller, charts and documents so either UI lane can run from fixtures.
   - Round-trip shared examples for a 204, a bounded empty envelope, duplicate issuer dates, a typed failure, an exact transcript, and a config-only saved story. Verify the candidate browser exposes raw JSON numeric tokens using 9007199254740993. Preserve this number as literal bytes in fixtures.
   - Fixtures and contract tests only. Production code caps do not apply.

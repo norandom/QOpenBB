@@ -1907,6 +1907,6 @@ evidence = [
 id = "events-and-documents-earnings-evidence"
 requirements = ["events-and-documents/requirements.md:1.1-1.4", "events-and-documents/requirements.md:2.1-2.6", "events-and-documents/requirements.md:3.1-3.5", "events-and-documents/requirements.md:4.1-4.5", "events-and-documents/requirements.md:5.1-5.4"]
 planned_checks = ["catalog admission and independent query validation", "exact earnings fields, bounded source rows and document provenance", "permission changes, superseded results and safe recovery", "keyboard use, dashboard reopen and choices-only export", "controlled packaged browser checks and separately guarded live FMP comparisons"]
-test_paths = []
+test_paths = ["tests/contracts/test_events_documents_examples.py"]
 status = "planned"
 evidence = ["Offline runtime and ownership baseline accepted. Four installed routes and widget IDs, disposable Batch B browser login and current fork staging verified. Composed App and real provider checks remain pending. See artifacts/reviewed/events-and-documents/baseline.md."]
