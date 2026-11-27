@@ -7,6 +7,7 @@ from pydantic import ValidationError
 from openbb_core.provider.standard_models.financial_annotations import bind_data_annotation, bind_query_annotation, render_field_templates
 from fmp_a2_contracts import CONTRACTS, RETAINED_ALIASES, resolve_cap_dates
 
+ROOT = Path(__file__).resolve().parents[2]
 FIXTURES = Path(__file__).parent / 'fixtures/fmp_batch_a/contracts'
 GROWTH = ['income_statement_growth','balance_sheet_growth','cash_flow_growth']
 
@@ -131,7 +132,7 @@ def test_source_hash_union_notices_and_requiredness(name):
     import tarfile
     from importlib import import_module
     manifest=json.loads((FIXTURES.parent/'source_manifest.json').read_text())
-    archive_path=Path(manifest['archive']['path'])
+    archive_path=ROOT / manifest['archive']['path']
     assert hashlib.sha256(archive_path.read_bytes()).hexdigest()==manifest['archive']['sha256']
     source_info=next(item for item in manifest['members'] if item['member'].endswith(f'/{name}.py'))
     with tarfile.open(archive_path) as archive:
@@ -146,7 +147,7 @@ def test_source_hash_union_notices_and_requiredness(name):
     assert RETAINED_ALIASES[name]==aliases
     frozen=json.loads((FIXTURES/f'{name}.json').read_text())
     assert frozen['source']['member_sha256']==source_info['sha256']
-    api=Path.cwd().parent/'data-api'
+    api=ROOT/'vendor/data-api'
     assert hashlib.sha256((api/manifest['notices']['retained_path']).read_bytes()).hexdigest()==manifest['notices']['sha256']
     for field,info in row.model_fields.items():
         assert frozen['field_presence'][field]['required']==info.is_required()

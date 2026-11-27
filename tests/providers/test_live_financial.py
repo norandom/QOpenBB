@@ -255,10 +255,13 @@ def research_findings(case, rows, common):
 def research_financial_meaning(case, rows, common):
     dataset, parameters = case["dataset"], case["parameters"]
     if dataset == "cash":
-        basis = "annual" if parameters["period"] == "annual" else "discrete_quarter"
-        unit(common, "net_cash_from_operating_activities", "currency", "provider_observation", basis)
         unit(common, "cash_at_end_of_period", "currency", basis="instant")
-        unit(common, "free_cash_flow", "currency", "provider_calculation", basis)
+        for field, origin in (
+            ("net_cash_from_operating_activities", "provider_observation"),
+            ("free_cash_flow", "provider_calculation"),
+        ):
+            unit(common, field, "currency", origin)
+            equal(common["fields"][field]["period_basis"], None, "cash flow duration remains unknown")
     else:
         financial_meaning(dataset, rows, common, parameters)
     if dataset in {"metrics", "ratios"}:

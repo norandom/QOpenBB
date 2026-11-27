@@ -120,7 +120,7 @@ def test_inventory_and_approved_design_remain_bounded():
         assert path in serialized
     # The executable quality gate owns any final measured emitter exception.
     design=root/'.kiro/specs/market-data-integrations/fmp-expansion-a-design.md'
-    assert hashlib.sha256(design.read_bytes()).hexdigest() == '59ca002fc71585e20edfb9dc431b35605e8f2bff2d78b8d04543f7f552cb3a7a'
+    assert hashlib.sha256(design.read_bytes()).hexdigest() == '62131c773a2833498a7672392e28b715c3c25cad4f7c27ffcdc98b2f3b82f3b1'
 
 def test_native_activation_and_eleven_scope_join_have_separate_authority():
     mechanism=describe()['sdk_mechanism']

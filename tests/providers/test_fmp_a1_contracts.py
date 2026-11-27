@@ -9,6 +9,7 @@ from openbb_core.provider.standard_models.financial_annotations import (
 )
 from fmp_a1_contracts import CONTRACTS, RETAINED_ESTIMATE_ALIASES
 
+ROOT = Path(__file__).resolve().parents[2]
 FIXTURES = Path(__file__).parent / 'fixtures/fmp_batch_a/contracts'
 
 @pytest.mark.parametrize('name', CONTRACTS)
@@ -87,7 +88,7 @@ def test_retained_source_union_aliases_and_source_hash(name):
     from importlib import import_module
     manifest = json.loads((FIXTURES.parent / 'source_manifest.json').read_text())
     member = next(item for item in manifest['members'] if item['member'].endswith(f'/{name}.py'))
-    with tarfile.open(manifest['archive']['path']) as archive:
+    with tarfile.open(ROOT / manifest['archive']['path']) as archive:
         source = archive.extractfile(member['member']).read()
     assert hashlib.sha256(source).hexdigest() == member['sha256']
     declaration = next(node for node in ast.parse(source).body if isinstance(node, ast.ClassDef) and node.name.endswith('Data'))

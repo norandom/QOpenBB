@@ -21,7 +21,7 @@ from fmp_a2_contracts import CONTRACTS as A2
 
 CONTRACTS = A1 | A2
 ROOT = Path(__file__).resolve().parents[2]
-API = ROOT.parent / 'data-api'
+API = ROOT / 'vendor/data-api'
 PLATFORM = API / 'openbb_platform'
 FIXTURES = Path(__file__).parent / 'fixtures/fmp_batch_a'
 P = 'openbb_platform/providers/fmp/openbb_fmp/models/'
@@ -121,7 +121,7 @@ def describe():
 def source_inventory(name):
     manifest = json.loads((FIXTURES/'source_manifest.json').read_text())
     member = next(m for m in manifest['members'] if m['member'].endswith('/'+name+'.py'))
-    with tarfile.open(manifest['archive']['path']) as archive:
+    with tarfile.open(ROOT / manifest['archive']['path']) as archive:
         raw = archive.extractfile(member['member']).read()
     source = raw.decode()
     tree = ast.parse(source)

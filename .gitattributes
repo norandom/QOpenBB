@@ -8,3 +8,6 @@ contracts/gallery/*.json text eol=lf
 pipeline/*.sh text eol=lf
 .github/workflows/*.yml text eol=lf
 pipeline/qopenbb_ci/catalog*.py text eol=lf
+# Preserve the bytes hashed by the frozen Batch A admission descriptor.
+tests/providers/fixtures/fmp_batch_a/contracts/*.json text eol=lf
+.kiro/specs/market-data-integrations/fmp-expansion-a-design.md text eol=lf

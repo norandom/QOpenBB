@@ -78,7 +78,7 @@ def test_actual_native_batch_a_route_associations():
 def test_original_archive_hashes_notices_and_extracted_growth_lineage():
     manifest = json.loads((ROOT / "tests/providers/fixtures/fmp_batch_a/source_manifest.json").read_text())
     provenance = json.loads((PACKAGE / "provenance.json").read_text())
-    archive = Path(manifest["archive"]["path"])
+    archive = ROOT / manifest["archive"]["path"]
     assert sha256(archive.read_bytes()).hexdigest() == manifest["archive"]["sha256"] == provenance["artifact"]["sha256"]
     assert provenance["license"]["sha256"] == manifest["notices"]["sha256"]
     assert sha256((PACKAGE / "LICENSE").read_bytes()).hexdigest() == manifest["notices"]["sha256"]
