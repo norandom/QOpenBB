@@ -1,0 +1,806 @@
+{
+  "browser": "156.0.8078.4",
+  "browser_requests": 15,
+  "provider_sends": 15,
+  "guard_denials": 0,
+  "network": {
+    "fixtureExternal": 0,
+    "abortedData": 0,
+    "errors": {},
+    "httpErrors": {},
+    "consoleErrors": {},
+    "externalBlocks": 0,
+    "abortedSlots": {}
+  },
+  "browser_issues": [],
+  "browser_verification": {
+    "passed": [
+      "launch/filings",
+      "launch/transcript",
+      "launch/news",
+      "launch/calendar",
+      "launch/conclusion",
+      "listing/filings",
+      "listing/transcript",
+      "listing/news",
+      "listing/calendar",
+      "listing/conclusion",
+      "calendar/calendar",
+      "calendar/conclusion",
+      "filings/filings",
+      "filings/conclusion",
+      "transcript/transcript",
+      "transcript/conclusion",
+      "news/news",
+      "news/conclusion",
+      "reopen/filings",
+      "reopen/transcript",
+      "reopen/news",
+      "reopen/calendar",
+      "reopen/conclusion"
+    ],
+    "failed": []
+  },
+  "persistence": [
+    "save-and-export-choices",
+    "fresh-authenticated-reopen-choices"
+  ],
+  "receipts": [
+    {
+      "stage": "launch",
+      "slot": "calendar",
+      "installed_status": 200,
+      "request_query": {
+        "start_date": "2026-11-16",
+        "end_date": "2026-11-22"
+      },
+      "normalized_errors": [],
+      "receipt": 2,
+      "provider_status": 200,
+      "provider_endpoint": "earnings-calendar",
+      "provider_query": {
+        "from": "2026-11-16",
+        "to": "2026-11-22"
+      },
+      "provider_count": 2028,
+      "normalized_count": 250,
+      "retrieved_at": "2026-11-27T12:27:17.938855Z",
+      "clipped": true,
+      "calendar_display": [
+        {
+          "symbol": "AAPL",
+          "market_rows": 250,
+          "displayed_rows": 0,
+          "numeric_fields": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "errors": [],
+          "verified_marks": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "verified_missing_labels": {}
+        },
+        {
+          "symbol": "MSFT",
+          "market_rows": 250,
+          "displayed_rows": 0,
+          "numeric_fields": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "errors": [],
+          "verified_marks": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "verified_missing_labels": {}
+        }
+      ],
+      "provider_body_sha256": "6ce305b472090ae47dffabb3c731b8e26d7fbeef2b59d87ad50ada6416266524",
+      "compared_numeric_fields": {
+        "eps_actual": 206,
+        "eps_consensus": 115,
+        "revenue_actual": 174,
+        "revenue_consensus": 142
+      },
+      "compared_missing_fields": {
+        "eps_actual": 44,
+        "eps_consensus": 135,
+        "revenue_actual": 76,
+        "revenue_consensus": 108
+      }
+    },
+    {
+      "stage": "launch",
+      "slot": "filings",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "AAPL",
+        "start_date": "2026-01-01",
+        "end_date": "2026-11-18",
+        "page": 0,
+        "limit": 20
+      },
+      "normalized_errors": [],
+      "receipt": 3,
+      "provider_status": 200,
+      "provider_endpoint": "sec-filings-search/symbol",
+      "provider_query": {
+        "symbol": "AAPL",
+        "page": "0",
+        "limit": "20",
+        "from": "2026-01-01",
+        "to": "2026-11-18"
+      },
+      "provider_count": 20,
+      "normalized_count": 20,
+      "retrieved_at": "2026-11-27T12:27:17.982958Z",
+      "clipped": false,
+      "browser_document_count": 20,
+      "provider_body_sha256": "a3fe6de87875cde28d6af4352dad012829da59fc296575077685244f6be990e4"
+    },
+    {
+      "stage": "launch",
+      "slot": "transcript",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "AAPL",
+        "year": 2025,
+        "quarter": 1
+      },
+      "normalized_errors": [],
+      "receipt": 1,
+      "provider_status": 200,
+      "provider_endpoint": "earning-call-transcript",
+      "provider_query": {
+        "symbol": "AAPL",
+        "year": "2025",
+        "quarter": "1"
+      },
+      "provider_count": 1,
+      "normalized_count": 1,
+      "retrieved_at": "2026-11-27T12:27:15.737971Z",
+      "clipped": false,
+      "browser_document_count": 1,
+      "provider_body_sha256": "d12e588a3fb5b7edd229e25eb4874adbe27f52c58abc5c74891d744991a9ffda"
+    },
+    {
+      "stage": "launch",
+      "slot": "news",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "AAPL",
+        "page": 0,
+        "limit": 10
+      },
+      "normalized_errors": [],
+      "receipt": 4,
+      "provider_status": 200,
+      "provider_endpoint": "news/stock",
+      "provider_query": {
+        "symbols": "AAPL",
+        "page": "0",
+        "limit": "10"
+      },
+      "provider_count": 10,
+      "normalized_count": 10,
+      "retrieved_at": "2026-11-27T12:27:17.986818Z",
+      "clipped": false,
+      "browser_document_count": 10,
+      "provider_body_sha256": "46bb3bc4847fbf9d65a40562bd64e4e4109ef2bfdc68b65293f2db8abb4668e9"
+    },
+    {
+      "stage": "listing",
+      "slot": "filings",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MSFT",
+        "start_date": "2026-01-01",
+        "end_date": "2026-11-18",
+        "page": 0,
+        "limit": 20
+      },
+      "normalized_errors": [],
+      "receipt": 6,
+      "provider_status": 200,
+      "provider_endpoint": "sec-filings-search/symbol",
+      "provider_query": {
+        "symbol": "MSFT",
+        "page": "0",
+        "limit": "20",
+        "from": "2026-01-01",
+        "to": "2026-11-18"
+      },
+      "provider_count": 20,
+      "normalized_count": 20,
+      "retrieved_at": "2026-11-27T12:27:25.703348Z",
+      "clipped": false,
+      "browser_document_count": 20,
+      "provider_body_sha256": "84aa608bf2a92738b325a40e7b69d0bdb3c6ebbedf97ebaf8f72af40c951bd04"
+    },
+    {
+      "stage": "listing",
+      "slot": "transcript",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MSFT",
+        "year": 2025,
+        "quarter": 1
+      },
+      "normalized_errors": [],
+      "receipt": 7,
+      "provider_status": 200,
+      "provider_endpoint": "earning-call-transcript",
+      "provider_query": {
+        "symbol": "MSFT",
+        "year": "2025",
+        "quarter": "1"
+      },
+      "provider_count": 1,
+      "normalized_count": 1,
+      "retrieved_at": "2026-11-27T12:27:26.272826Z",
+      "clipped": false,
+      "browser_document_count": 1,
+      "provider_body_sha256": "fe05b540becfebe1153132088ef51d9e5fa80262aff7b6de83f00242515c633c"
+    },
+    {
+      "stage": "listing",
+      "slot": "news",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MSFT",
+        "page": 0,
+        "limit": 10
+      },
+      "normalized_errors": [],
+      "receipt": 5,
+      "provider_status": 200,
+      "provider_endpoint": "news/stock",
+      "provider_query": {
+        "symbols": "MSFT",
+        "page": "0",
+        "limit": "10"
+      },
+      "provider_count": 10,
+      "normalized_count": 10,
+      "retrieved_at": "2026-11-27T12:27:25.440186Z",
+      "clipped": false,
+      "browser_document_count": 10,
+      "provider_body_sha256": "28dc3ee0f2705e9aff08558bd5f7a0f4b1a660660a08503a4ce44ad2621ccd69"
+    },
+    {
+      "stage": "calendar",
+      "slot": "calendar",
+      "installed_status": 200,
+      "request_query": {
+        "start_date": "2025-07-30",
+        "end_date": "2025-07-30"
+      },
+      "normalized_errors": [],
+      "receipt": 8,
+      "provider_status": 200,
+      "provider_endpoint": "earnings-calendar",
+      "provider_query": {
+        "from": "2025-07-30",
+        "to": "2025-07-30"
+      },
+      "provider_count": 1440,
+      "normalized_count": 250,
+      "retrieved_at": "2026-11-27T12:27:35.491563Z",
+      "clipped": true,
+      "calendar_display": [
+        {
+          "symbol": "MSFT",
+          "market_rows": 250,
+          "displayed_rows": 0,
+          "numeric_fields": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "errors": [],
+          "verified_marks": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "verified_missing_labels": {}
+        }
+      ],
+      "provider_body_sha256": "d20a5d37d6ab1d9d45e3046944322428e99c6291f26facbe1303824a90968a14",
+      "compared_numeric_fields": {
+        "eps_actual": 242,
+        "eps_consensus": 162,
+        "revenue_actual": 226,
+        "revenue_consensus": 180
+      },
+      "compared_missing_fields": {
+        "eps_actual": 8,
+        "eps_consensus": 88,
+        "revenue_actual": 24,
+        "revenue_consensus": 70
+      }
+    },
+    {
+      "stage": "filings",
+      "slot": "filings",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MSFT",
+        "start_date": "2025-07-28",
+        "end_date": "2025-08-04",
+        "page": 0,
+        "limit": 20
+      },
+      "normalized_errors": [],
+      "receipt": 9,
+      "provider_status": 200,
+      "provider_endpoint": "sec-filings-search/symbol",
+      "provider_query": {
+        "symbol": "MSFT",
+        "page": "0",
+        "limit": "20",
+        "from": "2025-07-28",
+        "to": "2025-08-04"
+      },
+      "provider_count": 2,
+      "normalized_count": 2,
+      "retrieved_at": "2026-11-27T12:27:38.277122Z",
+      "clipped": false,
+      "browser_document_count": 2,
+      "provider_body_sha256": "c74a82e888e7b1751880e24387de92c46d35d3aaafc7c93cef4efd317c3fa74c"
+    },
+    {
+      "stage": "transcript",
+      "slot": "transcript",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MSFT",
+        "year": 2025,
+        "quarter": 4
+      },
+      "normalized_errors": [],
+      "receipt": 10,
+      "provider_status": 200,
+      "provider_endpoint": "earning-call-transcript",
+      "provider_query": {
+        "symbol": "MSFT",
+        "year": "2025",
+        "quarter": "4"
+      },
+      "provider_count": 1,
+      "normalized_count": 1,
+      "retrieved_at": "2026-11-27T12:27:42.245055Z",
+      "clipped": false,
+      "browser_document_count": 1,
+      "provider_body_sha256": "04a44631a3bf889d05592ce39c24a305a2bea62bdf6461698cf6170a77700409"
+    },
+    {
+      "stage": "news",
+      "slot": "news",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MSFT",
+        "start_date": "2025-07-28",
+        "end_date": "2025-08-04",
+        "page": 0,
+        "limit": 10
+      },
+      "normalized_errors": [],
+      "receipt": 11,
+      "provider_status": 200,
+      "provider_endpoint": "news/stock",
+      "provider_query": {
+        "symbols": "MSFT",
+        "page": "0",
+        "limit": "10",
+        "from": "2025-07-28",
+        "to": "2025-08-04"
+      },
+      "provider_count": 10,
+      "normalized_count": 10,
+      "retrieved_at": "2026-11-27T12:27:44.627191Z",
+      "clipped": false,
+      "browser_document_count": 10,
+      "provider_body_sha256": "a0b18d2768902f5b5642ec03eb374a0e6a88e29ae2e6dc85ede446304581d653"
+    },
+    {
+      "stage": "reopen",
+      "slot": "calendar",
+      "installed_status": 200,
+      "request_query": {
+        "start_date": "2025-07-30",
+        "end_date": "2025-07-30"
+      },
+      "normalized_errors": [],
+      "receipt": 14,
+      "provider_status": 200,
+      "provider_endpoint": "earnings-calendar",
+      "provider_query": {
+        "from": "2025-07-30",
+        "to": "2025-07-30"
+      },
+      "provider_count": 1440,
+      "normalized_count": 250,
+      "retrieved_at": "2026-11-27T12:27:55.181219Z",
+      "clipped": true,
+      "calendar_display": [
+        {
+          "symbol": "MSFT",
+          "market_rows": 250,
+          "displayed_rows": 0,
+          "numeric_fields": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "errors": [],
+          "verified_marks": {
+            "eps_actual": 0,
+            "eps_consensus": 0,
+            "revenue_actual": 0,
+            "revenue_consensus": 0
+          },
+          "verified_missing_labels": {}
+        }
+      ],
+      "provider_body_sha256": "d20a5d37d6ab1d9d45e3046944322428e99c6291f26facbe1303824a90968a14",
+      "compared_numeric_fields": {
+        "eps_actual": 242,
+        "eps_consensus": 162,
+        "revenue_actual": 226,
+        "revenue_consensus": 180
+      },
+      "compared_missing_fields": {
+        "eps_actual": 8,
+        "eps_consensus": 88,
+        "revenue_actual": 24,
+        "revenue_consensus": 70
+      }
+    },
+    {
+      "stage": "reopen",
+      "slot": "filings",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MSFT",
+        "start_date": "2025-07-28",
+        "end_date": "2025-08-04",
+        "page": 0,
+        "limit": 20
+      },
+      "normalized_errors": [],
+      "receipt": 12,
+      "provider_status": 200,
+      "provider_endpoint": "sec-filings-search/symbol",
+      "provider_query": {
+        "symbol": "MSFT",
+        "page": "0",
+        "limit": "20",
+        "from": "2025-07-28",
+        "to": "2025-08-04"
+      },
+      "provider_count": 2,
+      "normalized_count": 2,
+      "retrieved_at": "2026-11-27T12:27:55.166260Z",
+      "clipped": false,
+      "browser_document_count": 2,
+      "provider_body_sha256": "c74a82e888e7b1751880e24387de92c46d35d3aaafc7c93cef4efd317c3fa74c"
+    },
+    {
+      "stage": "reopen",
+      "slot": "transcript",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MSFT",
+        "year": 2025,
+        "quarter": 4
+      },
+      "normalized_errors": [],
+      "receipt": 15,
+      "provider_status": 200,
+      "provider_endpoint": "earning-call-transcript",
+      "provider_query": {
+        "symbol": "MSFT",
+        "year": "2025",
+        "quarter": "4"
+      },
+      "provider_count": 1,
+      "normalized_count": 1,
+      "retrieved_at": "2026-11-27T12:27:55.177768Z",
+      "clipped": false,
+      "browser_document_count": 1,
+      "provider_body_sha256": "04a44631a3bf889d05592ce39c24a305a2bea62bdf6461698cf6170a77700409"
+    },
+    {
+      "stage": "reopen",
+      "slot": "news",
+      "installed_status": 200,
+      "request_query": {
+        "symbol": "MSFT",
+        "start_date": "2025-07-28",
+        "end_date": "2025-08-04",
+        "page": 0,
+        "limit": 10
+      },
+      "normalized_errors": [],
+      "receipt": 13,
+      "provider_status": 200,
+      "provider_endpoint": "news/stock",
+      "provider_query": {
+        "symbols": "MSFT",
+        "page": "0",
+        "limit": "10",
+        "from": "2025-07-28",
+        "to": "2025-08-04"
+      },
+      "provider_count": 10,
+      "normalized_count": 10,
+      "retrieved_at": "2026-11-27T12:27:55.171270Z",
+      "clipped": false,
+      "browser_document_count": 10,
+      "provider_body_sha256": "a0b18d2768902f5b5642ec03eb374a0e6a88e29ae2e6dc85ede446304581d653"
+    }
+  ],
+  "uncorrelated_sends": [],
+  "outcome": "partial_live_coverage",
+  "run_date": "2026-11-27",
+  "candidate": {
+    "sources": {
+      "workspace": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9",
+      "data_api": "5583c958d35282cb59037aae8218cec31d540697"
+    },
+    "images": {
+      "workspace": "sha256:25fcec114dcd25a6cbb0edacadbfd3b29ff625557efd159ed5aeb73c763099f4",
+      "data-api": "sha256:c5cbb466ec28790c38cfac02dab3c9bc7b8f51740f27874b91bcf73eb5ceb524"
+    }
+  },
+  "budget": {
+    "approved": 15,
+    "reserved_and_sent": 15,
+    "remaining": 0,
+    "guard_denials": 0
+  },
+  "launcher_exit": 1,
+  "launcher_diagnosis": "Initial oracle could not decode gzip. Offline oracle compared all same-send captures after hash validation. Final selected calendar has no in-cap issuer row.",
+  "offline_oracle_exit": 0,
+  "browser_exit": 0,
+  "runtime_cleanup": "stopped",
+  "live_conclusion": {
+    "all_7_stages": "Partial evidence",
+    "usable_inputs": 3,
+    "expected_inputs": 4
+  },
+  "live_coverage": {
+    "document_rows": {
+      "filings": 44,
+      "transcript": 4,
+      "news": 40
+    },
+    "numeric_display_fields": {
+      "eps_actual": 0,
+      "eps_consensus": 0,
+      "revenue_actual": 0,
+      "revenue_consensus": 0
+    },
+    "display_chart_marks": {
+      "eps_actual": 0,
+      "eps_consensus": 0,
+      "revenue_actual": 0,
+      "revenue_consensus": 0
+    },
+    "display_missing_labels": {
+      "eps_actual": 0,
+      "eps_consensus": 0,
+      "revenue_actual": 0,
+      "revenue_consensus": 0
+    },
+    "entitlement_errors": 0,
+    "empty_responses": 0
+  },
+  "raw_msft_calendar": {
+    "provider_receipts": [
+      8,
+      14
+    ],
+    "report_date": "2025-07-30",
+    "last_updated": "2025-10-29",
+    "source_ordinal": 1333,
+    "provider_count": 1440,
+    "normalized_count": 250,
+    "fields": {
+      "eps_actual": "3.65",
+      "eps_consensus": "3.37",
+      "revenue_actual": "76441000000",
+      "revenue_consensus": "73926767276"
+    }
+  },
+  "live_harness_SHA256": {
+    "events-documents-plan.json": "4fb70d9c2a5b4c55da2d4e85066de8313c3ea82166786119b46c9dee440e5a00",
+    "events-documents-browser.mts": "cdb571e824d7106f9a6b0d97814b7588d0451464d1dd4df73e4c7631f6cb0342",
+    "events-documents-diagnostics.mts": "cc888fa9448ea6853dfa14d3ad47cfaea8c6d02b233813b5d2e42f50fd7a7a6b",
+    "events-documents-marks.mts": "2286bd651c203c9a90a90a5278afd1311de8f7685150794d437208ef1cb2dcf1",
+    "events-documents-workspace.spec.mts": "bb995116a44326c9253fd945503a0fdf937c74418517677f35c34f14aca00803",
+    "events_documents_guard.py": "796bb4e6f1bf05f47031b4e7a91f74d28ea45da55fa73fd6b3b5ca84e7d2ffad",
+    "events_documents_oracle.py": "3be16eca14cb5bf79cef2541678d35de58b16f3a511347392c2dcf3d1b8f012b",
+    "run_events_documents.py": "1e7e62a680956a66acf0d8d6886fb13727b3dcab60a8ab06402200ee6393310c"
+  },
+  "offline_replay": {
+    "replay_receipt": 2,
+    "replay_browser": "156.0.8078.4",
+    "replay_rows": [
+      {
+        "symbol": "0151.HK",
+        "ordinal": 0,
+        "report_date": "2026-11-22",
+        "updated": "2026-11-26",
+        "charts": {
+          "eps": "bar",
+          "revenue": "bar"
+        },
+        "fields": {
+          "eps_actual": 1,
+          "eps_consensus": 1,
+          "revenue_actual": 1,
+          "revenue_consensus": 1
+        },
+        "exact_values": {
+          "eps_actual": "0.1024",
+          "eps_consensus": "0.1424",
+          "revenue_actual": "11710610000.0",
+          "revenue_consensus": "13324330000.0"
+        },
+        "units": {
+          "eps_actual": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "eps_consensus": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "revenue_actual": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "revenue_consensus": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown"
+        },
+        "missing": []
+      },
+      {
+        "symbol": "0151.HK",
+        "ordinal": 0,
+        "report_date": "2026-11-22",
+        "updated": "2026-11-26",
+        "charts": {
+          "eps": "point",
+          "revenue": "point"
+        },
+        "fields": {
+          "eps_actual": 1,
+          "eps_consensus": 1,
+          "revenue_actual": 1,
+          "revenue_consensus": 1
+        },
+        "exact_values": {
+          "eps_actual": "0.1024",
+          "eps_consensus": "0.1424",
+          "revenue_actual": "11710610000.0",
+          "revenue_consensus": "13324330000.0"
+        },
+        "units": {
+          "eps_actual": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "eps_consensus": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "revenue_actual": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "revenue_consensus": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown"
+        },
+        "missing": []
+      },
+      {
+        "symbol": "GMGMF",
+        "ordinal": 3,
+        "report_date": "2026-11-22",
+        "updated": "2026-11-24",
+        "charts": {
+          "eps": "bar",
+          "revenue": "bar"
+        },
+        "fields": {
+          "eps_actual": 1,
+          "eps_consensus": 0,
+          "revenue_actual": 1,
+          "revenue_consensus": 0
+        },
+        "exact_values": {
+          "eps_actual": "-0.04375",
+          "eps_consensus": "Missing",
+          "revenue_actual": "209235.0",
+          "revenue_consensus": "Missing"
+        },
+        "units": {
+          "eps_actual": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "eps_consensus": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "revenue_actual": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "revenue_consensus": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown"
+        },
+        "missing": [
+          "eps_consensus",
+          "revenue_consensus"
+        ]
+      },
+      {
+        "symbol": "GMGMF",
+        "ordinal": 3,
+        "report_date": "2026-11-22",
+        "updated": "2026-11-24",
+        "charts": {
+          "eps": "point",
+          "revenue": "point"
+        },
+        "fields": {
+          "eps_actual": 1,
+          "eps_consensus": 0,
+          "revenue_actual": 1,
+          "revenue_consensus": 0
+        },
+        "exact_values": {
+          "eps_actual": "-0.04375",
+          "eps_consensus": "Missing",
+          "revenue_actual": "209235.0",
+          "revenue_consensus": "Missing"
+        },
+        "units": {
+          "eps_actual": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "eps_consensus": "Currency per share \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "revenue_actual": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown",
+          "revenue_consensus": "Monetary amount \u00b7 Currency Unknown \u00b7 Source scale Unknown"
+        },
+        "missing": [
+          "eps_consensus",
+          "revenue_consensus"
+        ]
+      }
+    ],
+    "replay_retrieved_at": "2026-11-27T12:27:17.938855Z",
+    "replay_provider_count": 2028,
+    "replay_normalized_count": 250,
+    "capture_sha256": "6ce305b472090ae47dffabb3c731b8e26d7fbeef2b59d87ad50ada6416266524",
+    "browser_requests": 10,
+    "network": {
+      "fixtureExternal": 0,
+      "abortedData": 0,
+      "errors": {},
+      "httpErrors": {},
+      "consoleErrors": {},
+      "externalBlocks": 0,
+      "abortedSlots": {}
+    },
+    "provider_sends": 0,
+    "guard_denials": 0,
+    "harness_sha256": {
+      "events-documents-diagnostics.mts": "cc888fa9448ea6853dfa14d3ad47cfaea8c6d02b233813b5d2e42f50fd7a7a6b",
+      "events-documents-marks.mts": "531150fa11f8dcc3e3232ad8e988c97d3cfae4ac17387b81e13a4b7f70cdf5e9",
+      "events-documents-workspace.spec.mts": "bd95fed47fa10e4f1a1d3d6cc784c9b6f1a544f50ed523ce50bc80995eda0701",
+      "events_documents_oracle.py": "01ba6b435f26ea11f19338e87e9b572e8e752b2f313b53669599c29fefc1bda8",
+      "run_events_documents.py": "3a1996504b74068cc75ec947c646457b5f170fdb8d3a9d7a00bb59aab0d543ad"
+    },
+    "chart_sample": {
+      "artifact": "fmp-earnings-sample.png",
+      "sha256": "52dff80d505e1bf6c40651cc1775f0d2655ab3d053fef1c61f8c6ea0f07d2c15",
+      "width_height": [
+        1245,
+        782
+      ],
+      "listing": "0151.HK",
+      "report_date": "2026-11-22",
+      "source_row_ordinal": 0
+    }
+  },
+  "focused_verification_tests": {
+    "passed": 12
+  }
+}

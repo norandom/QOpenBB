@@ -1,5 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor
 from decimal import Decimal
+import gzip
 import json
 from pathlib import Path
 from types import SimpleNamespace
@@ -7,7 +8,7 @@ from types import SimpleNamespace
 import pytest
 
 from events_documents_guard import Guard, Rejected, schedule
-from events_documents_oracle import Discrepancy, compare_calendar, decode
+from events_documents_oracle import Discrepancy, compare_calendar, decode, decode_provider
 
 SOURCE = b'[{"symbol":"MSFT","date":"2025-07-30","revenueActual":9007199254740993,"epsActual":0},{"symbol":"MSFT","date":"2025-07-30","revenueActual":22}]'
 NORMALIZED = b'[{"symbol":"MSFT","report_date":"2025-07-30","revenue_actual":9007199254740993,"eps_actual":0},{"symbol":"MSFT","report_date":"2025-07-30","revenue_actual":22}]'
@@ -171,3 +172,9 @@ def test_chart_oracle_detects_mutations(mutation, reason):
         second[0]["detail"] = "Actual EPS: 2.750"
     with pytest.raises(Discrepancy, match=reason):
         compare_marks(packed, tokens, rows, {})
+
+
+def test_provider_decoder_preserves_tokens_under_gzip():
+    payload = b'[{"epsActual":0.123456789012345678901,"revenueActual":9007199254740993}]'
+    expected = [{"epsActual": Decimal("0.123456789012345678901"), "revenueActual": 9007199254740993}]
+    assert decode_provider(payload) == decode_provider(gzip.compress(payload)) == expected

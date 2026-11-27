@@ -89,17 +89,24 @@ async function renderedGeometry(canvas: Locator) {
 async function tooltip(canvas: Locator, x: number, y: number) {
   const box = await canvas.boundingBox();
   if (!box) throw new Error('Calendar mark is outside the displayed canvas');
+  await canvas.page().mouse.move(0, 0);
   await canvas.evaluate(element => (window as unknown as { __eventsChartDrawLog: DrawLog }).__eventsChartDrawLog
     .set(element as HTMLCanvasElement, []));
   await canvas.page().mouse.move(box.x + box.width * x, box.y + box.height * y);
   let text: string[] = [];
-  await expect.poll(async () => {
-    text = await canvas.evaluate(element => {
-      const log = (window as unknown as { __eventsChartDrawLog: DrawLog }).__eventsChartDrawLog;
-      return (log.get(element as HTMLCanvasElement) ?? []).map(draw => draw.text);
-    });
-    return text.some(line => /^Receipt \d+ · ordinal \d+ · \w+$/.test(line));
-  }, { message: 'Canvas mark must show its own source identity' }).toBe(true);
+  try {
+    await expect.poll(async () => {
+      text = await canvas.evaluate(element => {
+        const log = (window as unknown as { __eventsChartDrawLog: DrawLog }).__eventsChartDrawLog;
+        return (log.get(element as HTMLCanvasElement) ?? []).map(draw => draw.text);
+      });
+      return text.some(line => /^Receipt \d+ · ordinal \d+ · \w+$/.test(line));
+    }, { message: 'Canvas mark must show its own source identity', timeout: 3000 }).toBe(true);
+  } catch {
+    const hit = await canvas.evaluate((element, point) => document.elementFromPoint(point.x, point.y) === element,
+      { x: box.x + box.width * x, y: box.y + box.height * y });
+    throw new Error('Canvas mark identity unavailable ' + JSON.stringify({ x, y, box, hit, text }));
+  }
   const identity = text.find(line => /^Receipt \d+ · ordinal \d+ · \w+$/.test(line))!;
   const detail = text.find(line => /^(Actual|Estimated) (EPS|revenue):/.test(line));
   const title = text.find(line => /^Report date \d{4}-\d{2}-\d{2} · market row \d+$/.test(line));

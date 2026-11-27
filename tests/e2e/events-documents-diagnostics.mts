@@ -9,7 +9,7 @@ function add(counts: Counts, label: string) {
   counts[label] = (counts[label] ?? 0) + 1;
 }
 
-export function controlledDiagnostics(origin: string, fixtureHost: string) {
+export function controlledDiagnostics(origin: string, fixtureHost: string, live = false) {
   const scopes = new WeakMap<Request, Scope>();
   const external = new Set<string>();
   const expectedConsole = new Map<string, Set<number>>();
@@ -29,7 +29,7 @@ export function controlledDiagnostics(origin: string, fixtureHost: string) {
       const status = response.status();
       if (status < 400 || new URL(response.url()).origin !== origin) return;
       const label = scopeLabel(response.request());
-      if (label && expectedFailures[label] === status) add(result.httpErrors, label + '/' + status);
+      if (label && (live || expectedFailures[label] === status)) add(result.httpErrors, label + '/' + status);
       else add(result.errors, 'unexpected-same-origin-http-' + Math.trunc(status / 100) + 'xx');
     });
     page.on('requestfailed', request => {
@@ -62,7 +62,7 @@ export function controlledDiagnostics(origin: string, fixtureHost: string) {
 
   function register(request: Request, scope: Scope, status: number) {
     scopes.set(request, scope);
-    if (expectedFailures[scope.stage + '/' + scope.slot] !== status) return;
+    if (live ? status < 400 : expectedFailures[scope.stage + '/' + scope.slot] !== status) return;
     const statuses = expectedConsole.get(request.url()) ?? new Set<number>();
     statuses.add(status);
     expectedConsole.set(request.url(), statuses);
@@ -74,5 +74,9 @@ export function controlledDiagnostics(origin: string, fixtureHost: string) {
     if (target.hostname === fixtureHost) result.fixtureExternal++;
   }
 
-  return { result, observe, register, blockExternal };
+  function recordTransportFailure() {
+    add(result.errors, 'devtools-transport-failure');
+  }
+
+  return { result, observe, register, blockExternal, recordTransportFailure };
 }

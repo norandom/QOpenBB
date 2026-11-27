@@ -11,7 +11,7 @@ import tempfile
 from threading import Event, Thread
 
 from events_documents_guard import bootstrap
-from events_documents_oracle import report, Discrepancy
+from events_documents_oracle import report, Discrepancy, replay_source, report_replay
 from qopenbb_ci.compose_runtime import hashed, prepare, StartRequest
 from qopenbb_ci.compose_lifecycle import stop
 from qopenbb_ci.portable_runtime import resolve_environment
@@ -64,6 +64,8 @@ def browser(runtime, root, mode, discover, cache):
                WORKSPACE_RUNTIME_PRIVATE=str(runtime.path), QOPENBB_FINANCIAL_SUITE="events-documents",
                QOPENBB_PLAYWRIGHT_PACKAGE=str(PACKAGE), EVENTS_VERIFICATION_MODE=mode,
                EVENTS_STAGE_DIR=str(root / "stage"))
+    if (root / "replay-calendar.installed").exists():
+        env["EVENTS_REPLAY_CALENDAR"] = "1"
     argv = ["node", str(PACKAGE / "cli.js"), "test", "--config", "verification/financial-workspace.config.ts"]
     if discover:
         argv.append("--list")
@@ -115,7 +117,7 @@ def extract(runtime, root):
         capture.chmod(0o600)
 
 
-def publish_summary(summary, root, guard_smoke):
+def publish_summary(summary, root, guard_smoke, replay):
     ledger = json.loads((root / "provider/ledger.json").read_text())
     summary.update(provider_sends=ledger["count"], denials=ledger["denials"], provider_ledger=ledger["entries"])
     if guard_smoke:
@@ -124,7 +126,7 @@ def publish_summary(summary, root, guard_smoke):
     try:
         browser_observations = json.loads((root / "observations.json").read_text())
         summary["browser_requests"] = browser_observations["browserRequests"]
-        summary.update(report(root))
+        summary.update(report_replay(root, replay) if replay else report(root))
     except Discrepancy as error:
         summary["check"] = str(error)
     except (OSError, ValueError, KeyError, TypeError):
@@ -140,10 +142,11 @@ def main():
     parser.add_argument("mode", choices=("controlled", "live"))
     verification = parser.add_mutually_exclusive_group()
     verification.add_argument("--list", action="store_true", help="Discover tests without booting or accessing the provider")
+    verification.add_argument("--replay-launch-calendar", type=Path, help="Inspect real captured earnings rows without provider sends")
     verification.add_argument("--guard-smoke", action="store_true", help="Boot and inspect the controlled guard without browser or provider traffic")
     args = parser.parse_args()
-    if args.guard_smoke and args.mode != "controlled":
-        parser.error("Guard smoke runs in controlled mode")
+    if (args.guard_smoke or args.replay_launch_calendar) and args.mode != "controlled":
+        parser.error("Guard smoke and replay run in controlled mode")
     os.umask(0o077)
     artifacts = ROOT / "artifacts"
     if artifacts.resolve() != artifacts or not artifacts.is_dir():
@@ -157,6 +160,12 @@ def main():
     if args.mode == "live" and not args.list and not re.fullmatch(r"[A-Za-z0-9_-]+", key):
         raise ValueError("An explicit live FMP credential is required")
     root = Path(tempfile.mkdtemp(prefix="events-documents-run-", dir=artifacts))
+    if args.replay_launch_calendar:
+        replay = args.replay_launch_calendar.resolve()
+        if replay.parent != artifacts or not re.fullmatch(r"events-documents-run-[a-z0-9_]+", replay.name):
+            raise ValueError("Expected owned private capture directory")
+        path, _, _ = replay_source(replay)
+        private_write(root / "replay-calendar.installed", path.read_bytes())
     os.environ["QOPENBB_ARTIFACTS"] = str(root)
     summary = {"mode": args.mode, "private_directory": str(root)}
     print(json.dumps(summary), flush=True)
@@ -180,12 +189,12 @@ def main():
             extract(runtime, root)
         finally:
             summary["cleanup"] = stop(config, runtime.path)
-    return publish_summary(summary, root, args.guard_smoke)
+    return publish_summary(summary, root, args.guard_smoke, args.replay_launch_calendar)
 
 
 if __name__ == "__main__":
     try:
         raise SystemExit(main())
-    except (ValueError, OSError, subprocess.SubprocessError):
+    except (ValueError, OSError, Discrepancy, subprocess.SubprocessError):
         print('Events runner failed; inspect the owned private runtime or browser diagnostics.', file=sys.stderr)
         raise SystemExit(1) from None

@@ -4,6 +4,7 @@ import argparse
 from collections import Counter
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
+import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -38,6 +39,11 @@ def decode(body):
         raise Discrepancy("invalid JSON number")
 
     return json.loads(body, parse_float=Decimal, parse_constant=reject_constant)
+
+
+def decode_provider(body):
+    # The transport exposes compressed bytes when the installed client disables decompression.
+    return decode(gzip.decompress(body) if body.startswith(b"\x1f\x8b") else body)
 
 
 def numeric(value):
@@ -253,7 +259,7 @@ def report(directory):
                 contents = (directory / "provider" / f"{send['number']}.provider").read_bytes()
                 check(hashlib.sha256(contents).hexdigest() == send["sha256"], "provider capture hash")
                 if send["status"] == 200:
-                    raw = decode(contents)
+                    raw = decode_provider(contents)
         if not live and stage.endswith("-away"):
             check(entry["done"] and entry.get("documentCount") is None, "superseded display exclusion")
             if stage == "dark-away" and slot == "news":
@@ -325,6 +331,61 @@ def report(directory):
             "coverage": dict(coverage), "chart_marks": dict(chart_marks),
             "final_calendar_coverage": final_coverage, "final_inputs": final_inputs,
             "document_rows": dict(documents), "empty": dict(empty), "blocked": dict(blocked)}
+
+
+
+def replay_source(directory):
+    plan = decode(Path(__file__).with_name("events-documents-plan.json").read_bytes())
+    run = decode((directory / "observations.json").read_bytes())
+    ledger = decode((directory / "provider" / "ledger.json").read_bytes())
+    check(run["mode"] == "live" and ledger["count"] == 15 and not ledger["denials"], "replay source verification")
+    request, = [entry for entry in run["requests"] if (entry["stage"], entry["slot"]) == ("launch", "calendar")]
+    send, = [entry for entry in ledger["entries"] if entry["number"] == request["receipt"]]
+    check((send["stage"], send["slot"]) == ("launch", "calendar"), "replay source identity")
+    check((send["endpoint"], send["effective_query"]) == schedule(plan)["launch"]["calendar"], "replay source tuple")
+    check(send["status"] == request["status"] == 200, "replay source HTTP status")
+    provider = (directory / "provider" / f"{send['number']}.provider").read_bytes()
+    check(hashlib.sha256(provider).hexdigest() == send["sha256"], "replay source hash")
+    return directory / f"{request['index']}.installed", provider, send["number"]
+
+
+def report_replay(root, source):
+    path, provider, receipt = replay_source(source)
+    captured = path.read_bytes()
+    check((root / "replay-calendar.installed").read_bytes() == captured, "replay staged capture")
+    run = decode((root / "observations.json").read_bytes())
+    ledger = decode((root / "provider" / "ledger.json").read_bytes())
+    check(run["mode"] == "controlled" and run["replay"] and not run["issues"] and not run["network"]["errors"],
+          "replay browser diagnostics")
+    check(not ledger["count"] and not ledger["denials"], "replay provider ledger")
+    replay_calendar, = [entry for entry in run["requests"] if entry["slot"] == "calendar"]
+    check((root / f"{replay_calendar['index']}.installed").read_bytes() == captured, "replay mounted capture")
+    body = decode(captured)
+    rows, meta = envelope(body, "calendar", "equity/calendar/earnings", "earnings-calendar", replay_calendar["query"])
+    raw = decode_provider(provider)
+    tokens = json.loads(captured, parse_int=str, parse_float=str)["results"]
+    observed = []
+    for display in run["calendar"]:
+        check(display["marketCount"] == len(rows) and display["clipped"] == bool(meta["bounds"]["truncated"]),
+              "replay market scope")
+        check(display["retrievedAt"] == meta["retrieved_at"], "replay retrieval time")
+        counts = compare_calendar(raw, rows, display["rows"], display["symbol"])
+        compare_marks(rows, tokens, display["rows"], meta["fields"])
+        observed.extend(replay_row(display["symbol"], row, counts) for row in display["rows"])
+    expected = Counter((symbol, mode) for symbol in ("0151.HK", "GMGMF") for mode in ("bar", "point"))
+    check(Counter((row["symbol"], row["charts"].get("eps")) for row in observed) == expected
+          and all(row["charts"].get("revenue") == row["charts"].get("eps") for row in observed),
+          "replay listings and chart displays")
+    return {"replay_receipt": receipt, "replay_browser": run["browser"], "replay_rows": observed,
+            "replay_retrieved_at": meta["retrieved_at"], "replay_provider_count": len(raw),
+            "replay_normalized_count": len(rows), "capture_sha256": hashlib.sha256(provider).hexdigest()}
+
+
+def replay_row(symbol, row, counts):
+    return {"symbol": symbol, "ordinal": row["ordinal"], "report_date": row["date"], "updated": row["updated"],
+            "charts": {chart["measure"]: chart["display"] for chart in row["charts"]}, "fields": counts,
+            "exact_values": row["fields"], "units": row["fieldUnits"],
+            "missing": [field for field, value in row["fields"].items() if value == "Missing"]}
 
 
 def main():

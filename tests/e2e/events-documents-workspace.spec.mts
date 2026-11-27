@@ -11,11 +11,12 @@ import { observeChartCanvas, readCalendarChart } from './events-documents-marks.
 import { apply, conclusion, controlledGroups, controlledQuery, earnings, fixtureHost,
   keyboardConclusion, news, outcome, retrievalTime, setTheme, synthetic } from './events-documents-controlled.mts';
 
+const replayListings = ['0151.HK', 'GMGMF'];
 const documentTitles = { filings: 'SEC filings', transcript: 'Earnings-call transcript', news: 'Company news' };
 
 type Acquisition = {
   index: number; stage: string; slot: Slot; query: Record<string, string | number>;
-  status?: number; receipt?: number; documentCount?: number; rows?: any[]; done?: boolean; cancelled?: boolean;
+  status?: number; receipt?: number; retrievedAt?: string; documentCount?: number; rows?: any[]; done?: boolean; cancelled?: boolean;
 };
 
 async function calendarProof(story: Locator, acquisition: Acquisition, symbol: string) {
@@ -24,6 +25,18 @@ async function calendarProof(story: Locator, acquisition: Acquisition, symbol: s
   const expected = acquisition.rows?.filter(row => row.symbol === symbol).length ?? 0;
   await expect(articles).toHaveCount(expected);
   const observed = { index: acquisition.index, symbol, marketCount: 0, clipped: false, retrievedAt: '', rows: [] as object[] };
+  if (process.env.EVENTS_VERIFICATION_MODE === 'live') {
+    const value = (label: string) =>
+      region.getByText(label, { exact: true }).locator('xpath=following-sibling::dd[1]');
+    await expect(value('Listing filter')).toHaveText(symbol);
+    await expect(value('Effective market window')).toHaveText(`${acquisition.query.start_date} to ${acquisition.query.end_date} inclusive`);
+    const condition = acquisition.status === 204 || (acquisition.status === 200 && !acquisition.rows?.length)
+      ? 'Empty market calendar for this window.' : acquisition.status !== 200 ? null
+      : expected === 0 ? `No returned market rows match ${symbol}.`
+      : acquisition.rows?.some(row => row.symbol === symbol && row.hasFigure)
+        ? 'Current FMP earnings calendar.' : 'Matching rows have no reported figures.';
+    if (condition) await expect(region.getByRole('status')).toHaveText(condition);
+  }
   if (acquisition.status === 200) {
     observed.marketCount = Number(await region.getByText('Market rows returned', { exact: true }).locator('xpath=following-sibling::dd[1]').textContent());
     observed.clipped = await region.getByText('Clipping observed', { exact: true }).count() === 1;
@@ -86,9 +99,18 @@ async function availableDocument(story: Locator, acquisition: Acquisition) {
   const rows = invalid ? [] : acquisition.rows ?? [];
   await expect(buttons).toHaveCount(rows.length);
   acquisition.documentCount = await buttons.count();
-  if (!rows.length) return;
   const value = async (locator: Locator, label: string) =>
     locator.getByText(label, { exact: true }).locator('xpath=following-sibling::dd[1]').textContent();
+  if (!controlled && acquisition.status === 204) {
+    const label = slot === 'transcript' ? `Transcript for Q${acquisition.query.quarter} ${acquisition.query.year} is unavailable.`
+      : 'FMP returned no items for this query.';
+    await expect(section.getByRole('status')).toHaveText(label);
+  }
+  if (!controlled && acquisition.status !== undefined && acquisition.status >= 400) {
+    await expect(section.getByRole('alert')).toContainText(`HTTP ${acquisition.status}.`);
+    await expect(section.getByText('Provider retrieval time unavailable.', { exact: true })).toBeVisible();
+  }
+  if (!rows.length) return;
   for (const [index, row] of rows.entries()) {
     const invoker = buttons.nth(index);
     await invoker.press('Enter');
@@ -113,9 +135,9 @@ async function availableDocument(story: Locator, acquisition: Acquisition) {
     const body = slot === 'news' ? row.excerpt : slot === 'transcript' ? row.content : null;
     if (body?.trim() && await detail.getByTestId('document-text').textContent() !== body)
       throw new Error('Document text mismatch: ' + slot);
-    if (controlled) {
+    {
       const { year, quarter, page, limit, start_date, end_date } = acquisition.query;
-      const scope = { Freshness: 'Current result', 'Retrieval time': retrievalTime,
+      const scope = { Freshness: 'Current result', 'Retrieval time': controlled ? retrievalTime : acquisition.retrievedAt,
         'Source query': '/data/api/v1/' + plan.slots[slot][0] };
       Object.assign(scope, slot === 'transcript' ? { 'Selected period': `Q${quarter} ${year}` } : {
         Pagination: `Page ${page}, limit ${limit}`,
@@ -162,18 +184,33 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       !/^events-documents-run-[a-z0-9_]+$/.test(child)) throw new Error('Expected private owned run directory');
   const { origin, credentials, phase } = JSON.parse(readFileSync(process.env.WORKSPACE_RUNTIME_PRIVATE!, 'utf8'));
   if (phase !== 'ready' || origin !== process.env.WORKSPACE_FRONTEND_ORIGIN) throw new Error('Expected owned ready session');
+  const replay = process.env.EVENTS_REPLAY_CALENDAR === '1';
+  if (replay && mode !== 'controlled') throw new Error('Replay requires the offline provider guard');
   const requests: Acquisition[] = [], calendar: object[] = [], issues: string[] = [];
   const contexts: BrowserContext[] = [];
   let browserRequests = 0;
   let stage = 'disarmed';
   const groups = mode === 'controlled' ? { ...plan.groups, ...controlledGroups } : plan.groups;
+  if (replay) for (const symbol of replayListings) groups['replay-' + symbol] = plan.groups.listing;
   const scenarios: string[] = [];
   const release = new Map<string, () => void>();
   const held = new Map<string, Promise<void>>();
-  const diagnostics = mode === 'controlled' ? controlledDiagnostics(origin, fixtureHost) : null;
-  const network = diagnostics?.result;
+  const diagnostics = controlledDiagnostics(origin, fixtureHost, mode === 'live');
+  const network = diagnostics.result;
+  const liveChecks: { passed: string[]; failed: string[] } = { passed: [], failed: [] };
+  async function verify(label: string, assertion: () => Promise<void>) {
+    if (mode === 'controlled' && !replay) return assertion();
+    try {
+      await assertion();
+      liveChecks.passed.push(label);
+    } catch (error) {
+      liveChecks.failed.push(label);
+      writeFileSync(join(destination, 'failure-' + label.replaceAll('/', '-') + '.txt'),
+        String(error), { mode: 0o600, flag: 'wx' });
+    }
+  }
   async function advance(next: string) {
-    if (!Object.hasOwn(controlledGroups, next)) await arm(next);
+    if (!Object.hasOwn(controlledGroups, next) && !next.startsWith('replay-')) await arm(next);
     stage = next;
   }
 
@@ -184,6 +221,12 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     const page = await context.newPage();
     const cdp = await context.newCDPSession(page);
     await cdp.send('Runtime.enable');
+    if (mode === 'live') {
+      await cdp.send('Network.enable');
+      cdp.on('Network.loadingFailed', event => {
+        if (!event.canceled && !event.blockedReason) diagnostics.recordTransportFailure();
+      });
+    }
     cdp.on('Runtime.exceptionThrown', () => issues.push('uncaught-browser-exception'));
     diagnostics?.observe(page);
     await context.route('**/*', async route => {
@@ -195,8 +238,9 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       if (!target.pathname.startsWith('/data/api/v1/')) return route.continue();
       browserRequests++;
       const slot = (Object.keys(plan.slots) as Slot[]).find(key => target.pathname === '/data/api/v1/' + plan.slots[key][0]);
-      const expected = slot && groups[stage]?.includes(slot) &&
+      let expected = slot && groups[stage]?.includes(slot) &&
         (Object.hasOwn(controlledGroups, stage) ? controlledQuery(stage, slot) : query(stage, slot));
+      if (expected && replay && stage.startsWith('replay-')) expected = { ...expected, symbol: stage.slice(7) };
       const entries = [...target.searchParams].sort();
       const planned = expected && Object.entries({ provider: 'fmp', ...expected }).map(([key, value]) => [key, String(value)]).sort();
       if (!slot || !expected || route.request().method() !== 'GET' || JSON.stringify(entries) !== JSON.stringify(planned)
@@ -209,15 +253,22 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       try {
         const controlled = mode === 'controlled' ? synthetic(slot, expected, entry.stage) : null;
         const response = controlled === null ? await route.fetch({ maxRedirects: 0, maxRetries: 0, timeout: 45000 }) : null;
-        const body = response ? await response.body() : Buffer.from(controlled!.body);
-        entry.status = response?.status() ?? controlled!.status;
+        const replayLaunch = replay && entry.stage === 'launch' && entry.slot === 'calendar';
+        const replayDocument = replay && entry.slot !== 'calendar';
+        const body = replayLaunch ? readFileSync(join(destination, 'replay-calendar.installed'))
+          : replayDocument ? Buffer.alloc(0) : response ? await response.body() : Buffer.from(controlled!.body);
+        entry.status = replayLaunch ? 200 : replayDocument ? 204 : response?.status() ?? controlled!.status;
         const receipt = response?.headers()['x-qopenbb-events-receipt'];
         if (mode === 'live' && !/^\d+$/.test(receipt ?? '')) issues.push('missing-provider-correlation');
         if (receipt) entry.receipt = Number(receipt);
         writeFileSync(join(destination, entry.index + '.installed'), body, { mode: 0o600, flag: 'wx' });
         // Decode structure and document text only. The oracle owns all financial numeric comparisons.
-        if (entry.status === 200) entry.rows = JSON.parse(body.toString('utf8')).results.map((row: any) => slot === 'calendar' ?
-          { symbol: row.symbol, hasFigure: Object.keys(fields).some(field => row[field] != null) } : row);
+        if (entry.status === 200) {
+          const decoded = JSON.parse(body.toString('utf8'));
+          entry.retrievedAt = decoded.extra?.results_metadata?.__qopenbb_financial__?.retrieved_at;
+          entry.rows = decoded.results.map((row: any) => slot === 'calendar' ?
+            { symbol: row.symbol, hasFigure: Object.keys(fields).some(field => row[field] != null) } : row);
+        }
         const headers = response?.headers() ?? { 'content-type': 'application/json' };
         for (const header of ['content-encoding', 'content-length', 'transfer-encoding']) delete headers[header];
         diagnostics?.register(route.request(), entry, entry.status);
@@ -239,22 +290,28 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     await expect.poll(() => requests.filter(item => item.stage === current && item.done).length).toBe(groups[current].length);
     await expect(story.getByText('Loading FMP earnings calendar.', { exact: true })).toHaveCount(0);
     await expect(story.getByText('Retrieving FMP evidence.', { exact: true })).toHaveCount(0);
+    await advance('disarmed');
     for (const entry of requests.filter(item => item.stage === current)) {
       active.set(entry.slot, entry);
       if (entry.slot === 'calendar') activeCalendar = entry;
-      else await availableDocument(story, entry);
+      else await verify(current + '/' + entry.slot, () => availableDocument(story, entry));
     }
     if (['launch', 'listing', 'calendar', 'reopen', 'restore-calendar'].includes(current)) {
-      const displayed = await calendarProof(story, activeCalendar!, symbol);
-      calendar.push(displayed);
-      if (mode === 'controlled' && symbol === 'MSFT' &&
-          !displayed.rows.some(row => JSON.stringify(row).includes('9007199254740993'))) throw new Error('Exact integer proof missing');
+      await verify(current + '/calendar', async () => {
+        const displayed = await calendarProof(story, activeCalendar!, symbol);
+        calendar.push(displayed);
+        if (mode === 'controlled' && symbol === 'MSFT' &&
+            !displayed.rows.some(row => JSON.stringify(row).includes('9007199254740993'))) throw new Error('Exact integer proof missing');
+      });
     }
     const usable = [...active.values()].filter(entry => entry.slot === 'calendar'
       ? entry.rows?.some(row => row.symbol === symbol && row.hasFigure) : entry.documentCount).length;
-    await expect(story.getByRole('region', { name: 'Conclusion', exact: true }).getByRole('status'))
-      .toContainText(`${usable} of 4 FMP inputs have usable evidence.`);
-    await advance('disarmed');
+    await verify(current + '/conclusion', async () => {
+      const status = story.getByRole('region', { name: 'Conclusion', exact: true }).getByRole('status');
+      await expect(status).toContainText(`${usable} of 4 FMP inputs have usable evidence.`);
+      const title = usable === 4 ? 'Evidence available' : usable === 0 ? 'Insufficient evidence' : 'Partial evidence';
+      await expect(status).toContainText(title);
+    });
   }
 
   async function controlledRecovery(page: Page, story: Locator) {
@@ -366,6 +423,39 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     const story = page.locator('#workarea .widget-events_documents_story');
     await expect(story.getByRole('heading', { name: /What earnings figures does FMP report/ })).toBeVisible();
     await expect(story.getByRole('button', { name: 'Apple (AAPL)', exact: true })).toHaveAttribute('aria-pressed', 'true');
+    if (replay) {
+      const connectionToast = page.locator('[data-sonner-toast]').filter({ hasText: 'Backend added successfully' });
+      if (await connectionToast.isVisible()) await connectionToast.getByRole('button', { name: 'Close toast' }).click();
+      await expect(connectionToast).toBeHidden();
+      await settled(story, 'AAPL');
+      for (const symbol of replayListings) {
+        await advance('replay-' + symbol);
+        await story.getByLabel('Custom listing symbol').fill(symbol);
+        await story.getByRole('button', { name: 'Apply symbol', exact: true }).press('Enter');
+        await settled(story, symbol);
+        await story.getByLabel('EPS chart display').selectOption('bar');
+        await story.getByLabel('Revenue chart display').selectOption('bar');
+        await verify(symbol + '/bar', async () => {
+          const bars = await calendarProof(story, activeCalendar!, symbol);
+          expect(bars.rows.length).toBeGreaterThan(0);
+          calendar.push(bars);
+        });
+        await story.getByLabel('EPS chart display').selectOption('point');
+        await story.getByLabel('Revenue chart display').selectOption('point');
+        if (symbol === replayListings[0]) {
+          const chartRow = earnings(story).getByRole('article').first();
+          await expect(chartRow.locator('canvas')).toHaveCount(2);
+          await chartRow.screenshot({ path: join(destination, 'private-replayed-earnings-sample.png') });
+        }
+        await verify(symbol + '/point', async () => {
+          calendar.push(await calendarProof(story, activeCalendar!, symbol));
+        });
+      }
+      expect(issues).toEqual([]);
+      expect(network.errors).toEqual({});
+      expect(liveChecks.failed).toEqual([]);
+      return;
+    }
     await settled(story, 'AAPL');
     if (mode === 'controlled') {
       await expect(story.getByText('Transcript for Q1 2025 is unavailable.', { exact: true })).toBeVisible();
@@ -411,14 +501,15 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     expect(widget.state).toEqual({ storage: { eventsDocuments: finalChoices } });
     const licensed = licensedStrings(requests.flatMap(entry => entry.slot === 'calendar' ? [] : entry.rows ?? []));
     if (leakedPaths(saved, licensed).length || leakedPaths(exported, licensed).length) throw new Error('Licensed document text persisted');
+    if (mode === 'live') scenarios.push('save-and-export-choices');
     await page.context().close();
-
     await advance('reopen');
     const reopened = await contextPage();
     await login(reopened, origin, credentials);
     if (new URL(reopened.url()).pathname !== '/app/' + id) await reopened.goto(origin + '/app/' + id);
     const fresh = reopened.locator('#workarea .widget-events_documents_story');
     await restoredChoices(fresh);
+    if (mode === 'live') scenarios.push('fresh-authenticated-reopen-choices');
     await settled(fresh, 'MSFT');
     if (mode === 'live') {
       const chartRow = fresh.getByRole('region', { name: 'FMP earnings calendar' }).getByRole('article').filter({ has: reopened.locator('canvas') }).first();
@@ -437,6 +528,8 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       await expect(fresh.getByText('private_fixture_error', { exact: false })).toHaveCount(0);
     }
     expect(issues).toEqual([]);
+    expect(liveChecks.failed).toEqual([]);
+    if (mode === 'live') expect(network.errors).toEqual({});
   } catch (error) {
     // Browser reports stay private. Publish only the fixed task outcome through the launcher.
     writeFileSync(join(destination, 'browser-failure.txt'), String(error), { mode: 0o600 });
@@ -446,7 +539,7 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     await advance('disarmed').catch(() => issues.push('guard-disarm-failed'));
     await Promise.allSettled(contexts.map(context => context.close()));
     writeFileSync(join(destination, 'observations.json'), JSON.stringify({
-      mode, browser: browser.version(), browserRequests, calendar, issues, scenarios, network,
+      mode, replay, browser: browser.version(), browserRequests, calendar, issues, scenarios, network, liveChecks,
       requests: requests.map(({ rows: _rows, ...request }) => request),
     }), { mode: 0o600, flag: 'wx' });
   }
