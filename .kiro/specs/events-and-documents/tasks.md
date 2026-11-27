@@ -73,7 +73,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5_
 
 - [ ] 4. Present and persist the native App
-- [ ] 4.1 (P) Render the earnings rows and paired charts
+- [x] 4.1 (P) Render the earnings rows and paired charts
   - Present every matching row separately with FMP attribution, bounds, market count, clipping, dates and unknowns. Use separate EPS and revenue scales and selectable bar/point views. Keep actual and estimated values distinct.
   - Resolve each mark and keyboard-accessible value to its own exact source token. Show no mark for missing data. Check duplicate dates, missing versus zero, and focus return in both themes. Pass the combined caps for the earnings view.
   - _Boundary: Workspace Earnings.tsx and tests/integration/eventsDocumentsEarnings.test.tsx_
