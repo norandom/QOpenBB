@@ -1,6 +1,5 @@
 # Financial-modeling source verification for criteria 5.1 through 5.4.
 version = 1
-
 [[mapping]]
 ids = ["model:etf_momentum@1", "rule:eligible_inputs.momentum@1"]
 criteria = ["1.1", "1.2", "2.1", "2.3", "2.5", "5.1", "5.2", "6.2"]
@@ -56,7 +55,7 @@ selectors = [
 [[mapping]]
 ids = ["model:real_yield_regime@1", "rule:eligible_inputs.regime@1", "rule:eligible_inputs.change@1"]
 criteria = ["1.1", "1.2", "2.1", "2.3", "2.5", "5.1", "5.2", "6.2"]
-paths = [
+paths = ["services/data-api/qopenbb_data/modeling/service/story_acquisition.py",
   "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
   "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
   "services/data-api/qopenbb_data/modeling/models/protocol.py",
@@ -68,15 +67,16 @@ paths = [
   "tests/factors/fixtures/**",
   "services/data-api/qopenbb_data/modeling/models/factors/real_yield.py",
   "services/data-api/qopenbb_data/modeling/verification/factors/regime_reference.py",
-]
-selectors = [
+  "services/data-api/qopenbb_data/modeling/service/story_schedule.py",
+  "services/data-api/qopenbb_data/modeling/service/calendars/nyse_arca.json"]
+selectors = ["tests/factors/test_story_fred_acquisition.py::test_current_fred_values_preserved_but_not_backdated",
   "tests/factors/test_installed_factor_http.py::test_save_installed_factor_and_project_evidence",
   "tests/factors/test_installed_factors.py::test_production_registry_binds_all_six_exact_versions",
   "tests/contracts/test_modeling_impact_map.py::test_maintained_map_covers_source_descriptors",
   "tests/factors/test_real_yield.py::test_only_exact_endpoints_are_needed_and_match_frozen_trace",
   "tests/factors/test_real_yield.py::test_frozen_withholding_reasons",
   "tests/factors/test_regime_reference.py::test_point_in_time_regime_and_late_revision_mutant",
-]
+  "tests/factors/test_story_preflight.py::test_preflight_verifies_dated_macro_context"]
 
 [[mapping]]
 ids = ["model:issuer_fcf_yield@1", "rule:eligible_inputs.fcf_yield@1"]
@@ -110,7 +110,7 @@ selectors = [
 [[mapping]]
 ids = ["model:proxy_comparison@1", "rule:eligible_inputs.left_momentum@1", "rule:eligible_inputs.right_momentum@1", "rule:eligible_inputs.momentum_spread@1", "rule:eligible_inputs.left_volatility@1", "rule:eligible_inputs.right_volatility@1", "rule:eligible_inputs.volatility_spread@1", "model:proxy_comparison@2", "rule:eligible_inputs.left_momentum@2", "rule:eligible_inputs.right_momentum@2", "rule:eligible_inputs.momentum_spread@2", "rule:eligible_inputs.left_volatility@2", "rule:eligible_inputs.right_volatility@2", "rule:eligible_inputs.volatility_spread@2"]
 criteria = ["1.1", "1.2", "2.1", "2.3", "2.5", "5.1", "5.2", "6.2"]
-paths = [
+paths = ["services/data-api/qopenbb_data/modeling/service/story_acquisition.py",
   "services/data-api/qopenbb_data/modeling/models/factors/method_inputs.py",
   "services/data-api/qopenbb_data/modeling/models/protocol.py",
   "services/data-api/qopenbb_data/modeling/models/registry.py",
@@ -127,8 +127,9 @@ paths = [
   "services/data-api/qopenbb_data/modeling/models/factors/volatility.py",
   "services/data-api/qopenbb_data/modeling/models/factors/sessions.py",
   "services/data-api/qopenbb_data/modeling/verification/factors/etf.py",
-]
-selectors = [
+  "services/data-api/qopenbb_data/modeling/service/story_schedule.py",
+  "services/data-api/qopenbb_data/modeling/service/calendars/nyse_arca.json"]
+selectors = ["tests/factors/test_retrospective.py::test_saved_run_replays_exact_original_prices_after_provider_revision",
   "tests/contracts/test_research_story.py::test_synthetic_research_story_round_trip",
   "tests/factors/test_installed_factor_http.py::test_save_installed_factor_and_project_evidence",
   "tests/factors/test_installed_factors.py::test_production_registry_binds_all_six_exact_versions",
@@ -137,7 +138,9 @@ selectors = [
   "tests/factors/test_installed_factors.py::test_partial_pair_executes_only_the_eligible_left_leg",
   "tests/factors/test_comparison.py::test_volatility_failure_preserves_same_leg_momentum_and_its_spread",
   "tests/factors/test_etf_reference.py::test_pair_requires_both_legs_at_the_pinned_method_and_calendar",
-]
+  "tests/factors/test_story_acquisition.py::test_source_preserves_other_leg_on_failed_history",
+  "tests/factors/test_story_binding.py::test_signed_runs_preserve_evidence_and_withhold_affected_spread",
+  "tests/factors/test_story_preflight.py::test_preflight_verifies_live_wire_shape"]
 
 [[mapping]]
 ids = ["model:timing_study@1", "rule:eligible_inputs.rising_hit_rate@1", "rule:eligible_inputs.rising_slugging@1", "rule:eligible_inputs.falling_hit_rate@1", "rule:eligible_inputs.falling_slugging@1", "rule:eligible_inputs.study_drawdown@1"]
@@ -204,24 +207,22 @@ selectors = [
 [[mapping]]
 ids = ["capability:model-evaluation-runtime", "operation:evaluateModel", "operation:listModels"]
 criteria = ["1.1", "1.2", "1.3", "3.1", "3.2", "3.6", "5.1", "5.2", "6.3", "6.4"]
-paths = [
-  "services/data-api/qopenbb_data/modeling/service/__init__.py",
-  "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
+paths = ["services/data-api/qopenbb_data/modeling/service/story_schedule.py",
+  "services/data-api/qopenbb_data/modeling/service/calendars/nyse_arca.json",
+  "services/data-api/qopenbb_data/modeling/service/__init__.py", "services/data-api/qopenbb_data/modeling/service/bootstrap.py",
   "services/data-api/qopenbb_data/modeling/service/ports.py",
   "services/data-api/qopenbb_data/modeling/service/execution*.py",
   "services/data-api/qopenbb_data/modeling/service/evaluation.py",
   "services/data-api/qopenbb_data/modeling/service/orchestrator.py",
-  "services/data-api/qopenbb_data/modeling/service/acquisition*.py",
-]
-selectors = [
+  "services/data-api/qopenbb_data/modeling/service/acquisition*.py"]
+selectors = ["tests/factors/test_story_schedule.py::test_verified_window_comes_from_exchange_revision",
   "tests/factors/test_installed_factors.py::test_installed_worker_applies_real_rules_and_references",
   "tests/factors/test_execution.py::test_timeout_reaps_child_and_releases_capacity",
   "tests/factors/test_orchestration.py::test_missing_invalid_and_reference_mismatch_have_distinct_evidence",
   "tests/factors/test_acquisition.py::test_full_mapping_preserves_snapshot_contract",
   "tests/factors/test_acquired_evaluation.py::test_revised_gdp_is_saved_as_a_separate_verified_observation",
   "tests/factors/test_model_registry.py::test_discovery_lists_all_exact_versions_in_stable_order",
-  "tests/factors/test_modeling_documents_registration.py::test_export_and_listener_share_installed_methods_and_rule_descriptors",
-]
+  "tests/factors/test_modeling_documents_registration.py::test_export_and_listener_share_installed_methods_and_rule_descriptors"]
 
 [[mapping]]
 ids = ["capability:model-run-api", "operation:evaluateModel", "operation:listModels", "operation:readSavedRun", "operation:readSavedOutput"]
