@@ -87,7 +87,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 3.3_
   - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 4.4, 5.1_
 
-- [ ] 4.3 Integrate controls, views and conclusion in the catalog-launched widget
+- [x] 4.3 Integrate controls, views and conclusion in the catalog-launched widget
   - Register the native dispatcher and compose the ordered views in the existing frame. Provide keyboard-operable local company choices, explicit custom symbol Apply and four independent groups of query controls. Show the effective symbol and the actual invalid field and bound.
   - Open the generated App in a component integration test. Verify draft keystrokes, selecting an earnings row and chart-only changes issue zero reads. Verify independent updates, conclusion announcements, retry, focus return or section fallback, and both themes.
   - Pass the combined caps for the controls, composition root and dispatcher.
