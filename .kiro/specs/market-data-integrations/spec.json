@@ -3,7 +3,7 @@
   "created_at": "2026-10-19T09:18:43.9949215Z",
   "updated_at": "2026-11-27",
   "fmp_expansion_c": {
-    "phase": "tasks-generated",
+    "phase": "implementation-in-progress",
     "operations": 5,
     "design": "fmp-expansion-c-design.md",
     "design_review": "fmp-expansion-c-review.md",
@@ -12,9 +12,9 @@
     "design_sha256": "f0be6e26662862849ac3f88d0c8334fe44b2c579a172753989f4b028e2509088",
     "design_approved": true,
     "tasks_generated": true,
-    "tasks_approved": false,
+    "tasks_approved": true,
     "live_budget_proposed": 30,
-    "live_budget_approved": false,
+    "live_budget_approved": true,
     "design_approval": "Owner approved the independently reviewed Batch C design for task generation in conversation on 2026-11-27.",
     "tasks_document": "fmp-expansion-c-tasks.md",
     "tasks_review": "fmp-expansion-c-task-review.md",
@@ -23,7 +23,15 @@
     "tasks_review_model": "gpt-6.2-astra",
     "tasks_review_repair_passes": 1,
     "tasks_sha256": "3ebfb4c2301deb006bccf7a1134d975e83de05d5a6abb808365898d0a773005c",
-    "executable_tasks": 23
+    "executable_tasks": 23,
+    "tasks_approval": "Owner approved execution of the independently reviewed 23-task plan and a maximum of 30 actual FMP sends on November 27, 2026.",
+    "live_budget_ceiling": 30,
+    "live_budget_allocations": {
+      "direct": 9,
+      "installed": 9,
+      "workspace": 6,
+      "diagnosed": 6
+    }
   },
   "fmp_expansion_b": {
     "phase": "implementation-in-progress",
