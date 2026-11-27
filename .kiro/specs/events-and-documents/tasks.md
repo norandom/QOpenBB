@@ -57,7 +57,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 2.3, 2.4_
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 3.4, 4.4_
 
-- [ ] 3.2 Implement per-input acquisition and recovery
+- [x] 3.2 Implement per-input acquisition and recovery
   - Keep only current authorized receipts. Cancel superseded work where possible and guard completions by tuple and generation. On issuer change reproject the unchanged market receipt or filter its pending response for the new company. Clear superseded details and contributions immediately.
   - Simulate A/B/A with late successes and failures, permission revocation during a request, simultaneous independent edits and successful explicit retry. Count dispatches and verify coalescing, no auto retries or background refresh and no invalid reads.
   - Pass the combined caps for the controller.
