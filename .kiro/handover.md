@@ -70,7 +70,7 @@ Batches A and B are complete and published; no FMP expansion batch is in executi
 
 - **Batch A.** 26/26 tasks accepted. Published in alpha-44132016951-1 from root `32d1140590eac95cd3f4af890249b7ab6d19f832` (see the previous publication below).
 - **Batch B.** 25/25 tasks accepted. Published in alpha-44340458084-1 from root `9dfd5853f42c3b63c2da561cf3ac737c7f26b9ea` (see the Batch B publication above).
-- **Batch C.** The [Batch C design](specs/market-data-integrations/fmp-expansion-c-design.md) covers two provider valuation inputs and three as-reported statements. The owner approved the reviewed design on November 27, 2026. Task planning is underway.
+- **Batch C.** The [Batch C design](specs/market-data-integrations/fmp-expansion-c-design.md) covers two provider valuation inputs and three as-reported statements. The owner approved the design. The [23-task plan](specs/market-data-integrations/fmp-expansion-c-tasks.md) passed independent review and awaits owner execution and live-budget approval.
 
 The [reviewed plan](specs/market-data-integrations/fmp-expansion-plan.md) names the 24 candidate operations: A11 financial/valuation, B8 events/content, C5 DCF/as-reported. The [inventory](specs/market-data-integrations/fmp-expansion-inventory.md) separates retained-adapter candidates, new-contract candidates and the unchanged ten-model baseline.
 
