@@ -1,9 +1,9 @@
 {
   "feature_name": "events-and-documents",
   "created_at": "2026-11-27T08:04:52+00:00",
-  "updated_at": "2026-11-27T08:16:30+00:00",
+  "updated_at": "2026-11-27T09:23:36+00:00",
   "language": "en",
-  "phase": "design-generated",
+  "phase": "tasks-generated",
   "approvals": {
     "requirements": {
       "generated": true,
@@ -11,10 +11,10 @@
     },
     "design": {
       "generated": true,
-      "approved": false
+      "approved": true
     },
     "tasks": {
-      "generated": false,
+      "generated": true,
       "approved": false
     }
   },
@@ -30,5 +30,11 @@
     "model": "gpt-6.2-astra",
     "verdict": "PASS",
     "repair_passes": 2
+  },
+  "tasks_review": {
+    "mode": "independent",
+    "model": "gpt-6.2-astra",
+    "verdict": "PASS",
+    "repair_passes": 1
   }
 }

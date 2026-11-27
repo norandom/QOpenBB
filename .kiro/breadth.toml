@@ -1902,3 +1902,11 @@ evidence = [
   "4.2 | verification/modeling-journey/story-persistence.spec.mts | After a separately acquired controlled revision, a new login reopened the original price and macro runs with zero evaluations, identical payload hashes and restored input/result chart preferences. Foreign and deleted references returned 404.",
   "4.3 | verification/modeling-journey/story-persistence.spec.mts and vendor/workspace/terminalpro/tests/unit/dashboard-story-export-menu.test.tsx | Downloaded app configuration matched the complete allowlist before and after reopening. Native export followed the selected dashboard, including when a different dashboard was active.",
 ]
+
+[[capabilities]]
+id = "events-and-documents-earnings-evidence"
+requirements = ["events-and-documents/requirements.md:1.1-1.4", "events-and-documents/requirements.md:2.1-2.6", "events-and-documents/requirements.md:3.1-3.5", "events-and-documents/requirements.md:4.1-4.5", "events-and-documents/requirements.md:5.1-5.4"]
+planned_checks = ["catalog admission and independent query validation", "exact earnings fields, bounded source rows and document provenance", "permission changes, superseded results and safe recovery", "keyboard use, dashboard reopen and choices-only export", "controlled packaged browser checks and separately guarded live FMP comparisons"]
+test_paths = []
+status = "planned"
+evidence = []
