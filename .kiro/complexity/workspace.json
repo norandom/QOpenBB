@@ -1,7 +1,7 @@
 {
   "id": "workspace",
   "repository": "https://github.com/norandom/openbb-workspace.git",
-  "revision": "eeb11a299978d2de74ade8734fbd18fcb52e469b",
+  "revision": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9",
   "source_lock_key": "workspace",
   "root": "vendor/workspace",
   "mode": "changed",
@@ -14,7 +14,22 @@
         "terminalpro/src/lib/eventsDocuments/*.ts",
         "terminalpro/src/components/Widgets/EventsDocuments/*.tsx"
       ],
-      "files": []
+      "files": [
+        "terminalpro/src/components/Widgets/EventsDocuments/Conclusion.tsx",
+        "terminalpro/src/components/Widgets/EventsDocuments/Controls.tsx",
+        "terminalpro/src/components/Widgets/EventsDocuments/Documents.tsx",
+        "terminalpro/src/components/Widgets/EventsDocuments/Earnings.tsx",
+        "terminalpro/src/components/Widgets/EventsDocuments/Story.tsx",
+        "terminalpro/src/lib/eventsDocuments/access.ts",
+        "terminalpro/src/lib/eventsDocuments/calendar.ts",
+        "terminalpro/src/lib/eventsDocuments/conclusion.ts",
+        "terminalpro/src/lib/eventsDocuments/controller.ts",
+        "terminalpro/src/lib/eventsDocuments/evidence.ts",
+        "terminalpro/src/lib/eventsDocuments/reader.ts",
+        "terminalpro/src/lib/eventsDocuments/selection.ts",
+        "terminalpro/src/lib/eventsDocuments/state.ts",
+        "terminalpro/src/utils/nativeStorySchema.ts"
+      ]
     },
     {
       "spec": "research-stories",

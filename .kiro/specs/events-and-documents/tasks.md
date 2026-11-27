@@ -104,7 +104,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Requirements: 1.1, 1.2, 5.1, 5.2_
 
 - [ ] 5. Verify the installed candidate
-- [ ] 5.1 Integrate the reviewed fork and build the candidate
+- [x] 5.1 Integrate the reviewed fork and build the candidate
   - Push accepted Workspace changes before updating the root source lock. Validate catalog provenance against the integrated revision, freeze both service image identities and use Dagger for any needed image build. Use portable verification to launch the disposable authenticated pair.
   - Run affected type, catalog and persisted-story regressions; confirm all four mounted routes and native App discovery offline. Audit the combined whole-file caps across the final change set including shared modules.
   - _Boundary: Controller, source lock, build and verification integration_

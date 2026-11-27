@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "candidate_status": "ready_for_review",
+  "workspace_remote_ref": "refs/heads/qopenbb/research-stories",
+  "previous_failed_candidate": "artifacts/events-documents-candidate/failed-summary.json",
+  "release_version": "events-documents-candidate",
+  "root_base_revision": "eae0dcadac67c3bc1474b4bdd1463207cd734318",
+  "sources": {
+    "workspace": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9",
+    "data_api": "5583c958d35282cb59037aae8218cec31d540697"
+  },
+  "images": {
+    "workspace": {
+      "image": "sha256:25fcec114dcd25a6cbb0edacadbfd3b29ff625557efd159ed5aeb73c763099f4",
+      "manifest": "sha256:25fcec114dcd25a6cbb0edacadbfd3b29ff625557efd159ed5aeb73c763099f4",
+      "archive_sha256": "647d26791dfb1a34cc47241f42b148dac3bc2b875485a7841827c340239e9450",
+      "archive": "artifacts/events-documents-candidate-final/workspace/image.tar"
+    },
+    "data-api": {
+      "image": "sha256:c5cbb466ec28790c38cfac02dab3c9bc7b8f51740f27874b91bcf73eb5ceb524",
+      "manifest": "sha256:c5cbb466ec28790c38cfac02dab3c9bc7b8f51740f27874b91bcf73eb5ceb524",
+      "archive_sha256": "cb5d42d7c121cb3950a073ed52a4b817bf057648cde6cddf2904806ca97059e5",
+      "archive": "artifacts/events-documents-candidate-final/data-api/image.tar"
+    }
+  },
+  "build": {
+    "dagger_cli": "0.21.8",
+    "dagger_sdk": "0.21.8",
+    "engine": "registry.dagger.io/engine:v0.21.8@sha256:c9c1a0a6546380983d42e8d75adde070a2a0935c54b498d8bc9045d9cb2ee336",
+    "staged_bytes": {
+      "workspace": {
+        "sources": {
+          "data_api": {
+            "revision": "5583c958d35282cb59037aae8218cec31d540697",
+            "verified_git_blobs": 3664
+          },
+          "workspace": {
+            "revision": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9",
+            "verified_git_blobs": 3148
+          }
+        },
+        "runtime_inputs": 0
+      },
+      "data-api": {
+        "sources": {
+          "data_api": {
+            "revision": "5583c958d35282cb59037aae8218cec31d540697",
+            "verified_git_blobs": 3664
+          },
+          "workspace": {
+            "revision": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9",
+            "verified_git_blobs": 3148
+          }
+        },
+        "runtime_inputs": 78
+      }
+    }
+  },
+  "complexity": {
+    "workspace_delta_base": "eeb11a299978d2de74ade8734fbd18fcb52e469b",
+    "workspace_staged_source_paths": 27,
+    "canonical_files": 221,
+    "delta_files": 247,
+    "workspace_production_files": 26,
+    "workspace_max_physical": 387,
+    "workspace_max_logical": 233,
+    "workspace_max_function": 42,
+    "byte_identical_exception_files": 8,
+    "validated_existing_metrics": 18
+  },
+  "offline_smoke": {
+    "browser": {
+      "browser": "156.0.8078.4",
+      "workers": 1,
+      "headless": true,
+      "app": "Events and Documents",
+      "syntheticResponses": 4,
+      "mountedQueriesIntercepted": [
+        {
+          "route": "/data/api/v1/equity/calendar/earnings",
+          "query": {
+            "provider": "fmp",
+            "start_date": "2026-11-16",
+            "end_date": "2026-11-22"
+          }
+        },
+        {
+          "route": "/data/api/v1/equity/fundamental/filings",
+          "query": {
+            "provider": "fmp",
+            "start_date": "2026-01-01",
+            "end_date": "2026-11-18",
+            "page": "0",
+            "limit": "20",
+            "symbol": "AAPL"
+          }
+        },
+        {
+          "route": "/data/api/v1/equity/fundamental/transcript",
+          "query": {
+            "provider": "fmp",
+            "year": "2025",
+            "quarter": "1",
+            "symbol": "AAPL"
+          }
+        },
+        {
+          "route": "/data/api/v1/news/company",
+          "query": {
+            "provider": "fmp",
+            "page": "0",
+            "limit": "10",
+            "symbol": "AAPL"
+          }
+        }
+      ],
+      "uncaughtBrowserExceptions": 0,
+      "rawNumberReviver": "9007199254740993",
+      "providerSends": 0
+    },
+    "mounted": {
+      "catalogGeneratorSource": "5583c958d35282cb59037aae8218cec31d540697",
+      "workspaceRendererRevision": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9",
+      "app": "Events and Documents",
+      "nativeStory": "events_documents_story",
+      "bindings": {
+        "calendar": {
+          "path": "/api/v1/equity/calendar/earnings",
+          "widget": "equity_calendar_earnings_fmp_obb",
+          "negativeHTTPStatus": 422
+        },
+        "filings": {
+          "path": "/api/v1/equity/fundamental/filings",
+          "widget": "equity_fundamental_filings_fmp_obb",
+          "negativeHTTPStatus": 422
+        },
+        "transcript": {
+          "path": "/api/v1/equity/fundamental/transcript",
+          "widget": "equity_fundamental_transcript_fmp_obb",
+          "negativeHTTPStatus": 422
+        },
+        "news": {
+          "path": "/api/v1/news/company",
+          "widget": "news_company_fmp_obb",
+          "negativeHTTPStatus": 422
+        }
+      },
+      "health": "ok",
+      "readiness": "ready",
+      "providerSends": 0
+    },
+    "runtime_stopped": true
+  },
+  "catalog": {
+    "regenerated_from": "sha256:c5cbb466ec28790c38cfac02dab3c9bc7b8f51740f27874b91bcf73eb5ceb524",
+    "byte_identical": [
+      "apps.json",
+      "widgets.json",
+      "routes.json"
+    ],
+    "matching_source_labels": true
+  },
+  "regressions": {
+    "workspace": "14 passed (14)\n      Tests  193 passed (193)",
+    "workspace_source_correction": "1 passed (1)\n      Tests  13 passed (13)",
+    "type_delta": "Strict TypeScript 6.0.3. Files 26. Baseline diagnostics 71; current diagnostics 38; new diagnostics 0.",
+    "root_before_workspace_correction": "413 passed in 104.99s (0:01:44)",
+    "root_final_pin": "28 passed in 69.84s (0:01:09)"
+  }
+}
