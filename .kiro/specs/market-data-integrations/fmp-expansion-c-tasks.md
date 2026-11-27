@@ -14,7 +14,7 @@ The controller owns shared edits, the live ledger, installs, joins, heavy checks
   - _Boundary: Controller · checkout and toolchain staging, complexity inventory and baseline evidence_
   - _Requirements: 1.1, 5.5, 6.5, 8.1, 8.5_
 
-- [ ] 1.2 Rehearse the request ledger and stop conditions
+- [x] 1.2 Rehearse the request ledger and stop conditions
   - Pin exact symbols, periods, per-statement limits, default and override beta queries and planned browser cases in the ledger before the first send. Use MSFT for the matched custom pair with beta `1.0`. Choose source-suitable statement listings and a quarterly cash-flow case that can characterize cumulative basis. Pin private credential readiness and allow a focused non-USD contrast from the diagnosed reserve.
   - Rehearse metering at the single outbound send boundary without network or real keys, including errors, startup and browser traffic. Prove isolated profile, disposable state, disabled polling, fail-closed ceiling and zero real sends before credential injection. Record skipped case prerequisites and redacted readiness.
   - Scope consists of temporary setup and verification evidence, which are excluded from production caps.
