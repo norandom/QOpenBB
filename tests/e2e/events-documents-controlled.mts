@@ -6,7 +6,7 @@ import type { Slot } from './events-documents-browser.mts';
 export const fixtureHost = 'events-fixture.invalid';
 export const retrievalTime = '2026-11-27T10:00:00Z';
 
-const companySlots: Slot[] = ['filings', 'transcript', 'news'];
+const companySlots: Slot[] = ['calendar', 'filings', 'transcript', 'news'];
 export const controlledGroups: Record<string, Slot[]> = {
   'empty-calendar': ['calendar'],
   'restore-calendar': ['calendar'],
@@ -20,7 +20,7 @@ export const controlledGroups: Record<string, Slot[]> = {
 };
 
 export function controlledQuery(stage: string, slot: Slot) {
-  if (stage === 'empty-calendar') return { ...plan.edits.calendar, start_date: '2025-07-29' };
+  if (stage === 'empty-calendar') return { ...query('reopen', slot), start_date: '2025-07-29' };
   if (stage === 'restore-calendar') return query('reopen', slot);
   return { ...query('reopen', slot), symbol: stage === 'no-issuer' ? 'NONE' : stage.endsWith('-away') ? 'AAPL' : 'MSFT',
     ...(slot === 'news' ? { page: 1 } : {}) };
@@ -55,18 +55,18 @@ function documentFixtures(slot: Slot, parameters: Record<string, string | number
 }
 
 export function synthetic(slot: Slot, parameters: Record<string, string | number>, stage: string) {
-  if ((slot === 'transcript' && stage === 'launch') || stage === 'empty-calendar' || stage === 'no-issuer') return { status: 204, body: '' };
+  if ((slot === 'transcript' && stage === 'launch') || stage === 'empty-calendar' || (stage === 'no-issuer' && slot !== 'calendar')) return { status: 204, body: '' };
   if (slot === 'news' && stage === 'listing') return { status: 403, body: JSON.stringify({ detail: 'private_fixture_error' }) };
   if (stage === 'timeout-news' || stage === 'dark-away' && slot === 'news') return { status: 400, body: JSON.stringify({ code: 'timeout', provider: 'fmp', detail: 'private_fixture_error' }) };
   const report_date = String(parameters.end_date);
   const clipped = stage === 'calendar';
-  const others = Array.from({ length: clipped ? 247 : 0 }, () => ({ symbol: 'OTHER', report_date }));
+  const others = Array.from({ length: clipped ? 248 : 0 }, () => ({ symbol: 'MSFT', report_date }));
   const results = slot === 'calendar' ? [
     { symbol: 'AAPL', report_date, eps_actual: 8 },
     { symbol: 'MSFT', report_date, last_updated: report_date, eps_actual: 0, eps_consensus: null, revenue_actual: '__EXACT_INTEGER__' },
     { symbol: 'MSFT', report_date, eps_actual: 2.75, eps_consensus: 2.125, revenue_actual: 59, revenue_consensus: 55 },
     ...others,
-  ] : documentFixtures(slot, parameters, stage);
+  ].filter(row => row.symbol === parameters.symbol) : documentFixtures(slot, parameters, stage);
   const [dataset, endpoint] = plan.slots[slot];
   const limit = slot === 'calendar' ? 250 : parameters.limit ?? null;
   const body = JSON.stringify({ results, extra: { results_metadata: { __qopenbb_financial__: {
@@ -79,6 +79,21 @@ export function synthetic(slot: Slot, parameters: Record<string, string | number
     } : {},
   } } } }).replace('"__EXACT_INTEGER__"', '9007199254740993');
   return { status: 200, body };
+}
+
+// Preserve provider number tokens from the historical unfiltered receipt during offline replay.
+export function replayCalendar(captured: string, symbol: string) {
+  const data = JSON.parse(captured, (_key, value, context) =>
+    typeof value === 'number' ? JSON.rawJSON(context.source) : value);
+  data.results = data.results.filter((row: { symbol: string }) => row.symbol.toUpperCase() === symbol);
+  const metadata = data.extra.results_metadata.__qopenbb_financial__;
+  metadata.effective_query.symbol = symbol;
+  Object.assign(metadata.bounds, { returned_count: data.results.length, truncated: null, completeness: 'unknown' });
+  for (const [field, description] of Object.entries(metadata.fields)) {
+    (description as { availability: string }).availability = data.results.some((row: Record<string, unknown>) =>
+      row[field] != null) ? 'available' : 'missing';
+  }
+  return Buffer.from(JSON.stringify(data));
 }
 
 export const conclusion = (story: Locator) => story.getByRole('region', { name: 'Conclusion', exact: true });

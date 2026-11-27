@@ -125,7 +125,10 @@ def test_installed_raw_rows_and_financial_envelope(joined, handoff, sample, entr
         .original_models[handoff["model"]]["fmp"]["query"]
         .model_validate({k: v for k, v in params.items() if k != "provider"})
     )
-    assert metadata["effective_query"] == query.model_dump(mode="json")
+    expected_query = query.model_dump(mode="json")
+    if handoff["module"] == "calendar_earnings" and "symbol" not in params:
+        expected_query.pop("symbol")
+    assert metadata["effective_query"] == expected_query
     assert metadata["provider"] == "fmp"
     assert metadata["dataset"] == handoff["route"].removeprefix("/api/v1/")
     assert metadata["bounds"]["returned_count"] == len(expected)
@@ -307,3 +310,35 @@ def test_installed_locally_empty_history_retains_bounds(joined, entry):
     assert metadata["effective_query"]["start_date"] == "2026-02-01"
     assert metadata["effective_query"]["end_date"] == "2026-02-02"
     assert len(joined[2]["calls"]) == 1
+
+
+@pytest.mark.parametrize("entry", ["http", "sdk"])
+def test_listing_calendar_selects_before_market_clip(joined, entry):
+    handoff = next(h for h in HANDOFFS if h["module"] == "calendar_earnings")
+    row = {"date": "2025-07-30", "symbol": "AAPL"}
+    state = joined[2]
+    state["payload"] = [row] * 1333 + [{**row, "symbol": "MSFT", "epsActual": 0}]
+    params = dict(handoff["params"], start_date=row["date"], end_date=row["date"], symbol="msft")
+    status, body = invoke(joined, handoff, entry, params)
+    assert status == 200, body
+    selected, = body["results"]
+    assert selected["symbol"] == "MSFT" and selected["eps_actual"] == 0
+    metadata = body["extra"]["results_metadata"]["__qopenbb_financial__"]
+    assert metadata["effective_query"]["symbol"] == "MSFT"
+    assert metadata["bounds"]["returned_count"] == 1
+    wire, = state["calls"]
+    assert set(parse_qs(urlsplit(wire).query)) == {"from", "to", "apikey"}
+
+
+def test_calendar_distinguishes_empty_market_from_no_matching_listing(joined):
+    handoff = next(h for h in HANDOFFS if h["module"] == "calendar_earnings")
+    params = dict(handoff["params"], symbol="MSFT")
+    state = joined[2]
+    status, body = invoke(joined, handoff, "http", params)
+    assert status == 204 and body is None
+    state["payload"] = [{"date": params["start_date"], "symbol": "AAPL"}]
+    status, body = invoke(joined, handoff, "http", params)
+    assert status == 200 and body["results"] == []
+    metadata = body["extra"]["results_metadata"]["__qopenbb_financial__"]
+    assert metadata["retrieved_at"] and metadata["effective_query"]["symbol"] == "MSFT"
+    assert metadata["bounds"]["returned_count"] == 0

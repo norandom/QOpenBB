@@ -109,7 +109,7 @@ async function tooltip(canvas: Locator, x: number, y: number) {
   }
   const identity = text.find(line => /^Receipt \d+ · ordinal \d+ · \w+$/.test(line))!;
   const detail = text.find(line => /^(Actual|Estimated) (EPS|revenue):/.test(line));
-  const title = text.find(line => /^Report date \d{4}-\d{2}-\d{2} · market row \d+$/.test(line));
+  const title = text.find(line => /^Report date \d{4}-\d{2}-\d{2} · listing row \d+$/.test(line));
   const units = text.find(line => /^(Currency per share|Monetary amount|Unknown) · Currency/.test(line));
   if (!detail || !title || !units) throw new Error('Calendar canvas tooltip is missing source values');
   return { identity, detail, title, units };

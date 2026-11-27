@@ -30,7 +30,7 @@ def observations():
 
 
 def test_exact_values_and_duplicate_date_ordinals():
-    assert compare_calendar(decode(SOURCE), decode(NORMALIZED), observations(), "MSFT") == {
+    assert compare_calendar([{"symbol": "OTHER"}] * 251 + decode(SOURCE), decode(NORMALIZED), observations(), "MSFT") == {
         "eps_actual": 1, "eps_consensus": 0, "revenue_actual": 2, "revenue_consensus": 0}
     with pytest.raises(Discrepancy, match="provider installed value"):
         compare_calendar(decode(SOURCE), decode(NORMALIZED.replace(b"993", b"992")), observations(), "MSFT")
@@ -51,6 +51,9 @@ def test_guard_rejects_early_duplicate_background_and_offline(tmp_path):
     guard = Guard(tmp_path / "live", phase, stages, live=True)
     with pytest.raises(Rejected):
         guard.reserve(request(stages["reopen"]["news"]))
+    # Both issuer changes reach the same market endpoint with only the bounded dates.
+    assert stages["launch"]["calendar"] == stages["listing"]["calendar"]
+    assert set(stages["launch"]["calendar"][1]) == {"from", "to"}
     first = request(stages["launch"]["calendar"])
     with ThreadPoolExecutor(max_workers=4) as pool:
         futures = [pool.submit(guard.reserve, first) for _ in range(4)]
@@ -63,7 +66,7 @@ def test_guard_rejects_early_duplicate_background_and_offline(tmp_path):
     assert offline.count == 0
 
 
-def test_failed_send_spends_reservation_before_socket_and_15_is_hard_ceiling(tmp_path):
+def test_failed_send_spends_reservation_before_socket_and_full_schedule_is_enforced(tmp_path):
     import asyncio
 
     phase = tmp_path / "phase"
@@ -81,11 +84,11 @@ def test_failed_send_spends_reservation_before_socket_and_15_is_hard_ceiling(tmp
         for outgoing in slots.values():
             with pytest.raises(ConnectionError):
                 asyncio.run(guard.send(fail_after_reservation, request(outgoing), None))
-    assert attempted == list(range(1, 16))
+    assert attempted == list(range(1, 17))
     with pytest.raises(Rejected):
         asyncio.run(guard.send(fail_after_reservation, request(stages["reopen"]["transcript"]), None))
     ledger = decode((tmp_path / "provider" / "ledger.json").read_bytes())
-    assert ledger["count"] == 15
+    assert ledger["count"] == 16
     assert ledger["denials"] == 1
     assert all(entry["status"] is None for entry in ledger["entries"])
 
@@ -123,7 +126,7 @@ def chart_observations():
     tokens = json.loads(wire, parse_float=str, parse_int=str)
     rows = []
     for ordinal, record in enumerate(tokens):
-        title = f"Report date 2025-07-30 · market row {ordinal + 1}"
+        title = f"Report date 2025-07-30 · listing row {ordinal + 1}"
         unit_map = {"eps_actual": units, "eps_consensus": units, "revenue_actual": revenue_units,
                     "revenue_consensus": revenue_units}
         fields = {field: record.get(field) or "Missing" for field in unit_map}

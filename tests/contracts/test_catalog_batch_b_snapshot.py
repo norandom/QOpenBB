@@ -27,7 +27,11 @@ def test_complete_snapshot_matches_frozen_query_rows_and_mapping(handoff):
     assert set(descriptor['variants']) == {'fmp'}
     query = resolve(schema, variant['query_schema'])
     row = resolve(schema, variant['row_schema'])
-    assert set(query['properties']) == set(handoff['controls'])
+    expected_controls = set(handoff['controls'])
+    if handoff['module'] == 'calendar_earnings':
+        expected_controls.add('symbol')
+        assert 'symbol' not in query['required']
+    assert set(query['properties']) == expected_controls
     assert set(row['properties']) == set(variant['fields'])
     if 'expected' in contract:
         assert query == contract['expected']['query_validation']
@@ -57,10 +61,10 @@ def test_complete_snapshot_hashes_and_installed_identity():
         assert hashlib.sha256((ROOT / 'contracts' / name).read_bytes()).hexdigest() == expected
     provenance = read('provenance.json')
     lock = json.loads((ROOT / 'sources.lock.json').read_text())
-    publication = json.loads((ROOT / 'artifacts/reviewed/fmp-expansion-b/publication-verification.json').read_text())
-    assert provenance['image'] == publication['images']['data-api']['manifest_digest']
+    candidate = json.loads((ROOT / 'verification/earnings-calendar/candidate.json').read_text())
+    assert provenance['image'] == candidate['images']['data-api']['image']
     assert provenance['revision'] == lock['data_api']['revision']
-    for source, revision in publication['sources'].items():
+    for source, revision in candidate['sources'].items():
         assert provenance['image_labels'][f'org.qopenbb.source.{source}'] == revision
     assert provenance['repeat_identical'] is True
 

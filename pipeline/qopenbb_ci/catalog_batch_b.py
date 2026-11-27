@@ -18,7 +18,7 @@ BINDINGS = {
     'fmp_historical_splits': binding('equity/fundamental/historical_splits', 'table', True, 100,
         None, None, 'Historical splits for one listing; at most 100 rows in source order. History completeness is unknown.'),
     'fmp_calendar_earnings': binding('equity/calendar/earnings', 'table', False, 250,
-        'required_pair', 7, 'Market-wide earnings calendar; both dates required, at most 7 days inclusive and 250 rows.'),
+        'required_pair', 7, 'Earnings within seven inclusive calendar days. An optional listing filters the market response before the first 250 matching rows are returned.'),
     'fmp_calendar_dividend': binding('equity/calendar/dividend', 'table', False, 250,
         'required_pair', 7, 'Market-wide dividend calendar; both dates required, at most 7 days inclusive and 250 rows.'),
     'fmp_calendar_splits': binding('equity/calendar/splits', 'table', False, 250,
@@ -110,7 +110,7 @@ def query_policy(selected: dict, query: dict) -> dict:
     return {'schemaVersion': 1, 'maxRequests': 1,
             'maxReturnedRows': selected['maxReturnedRows'],
             'returnedRowsLimitParameter': 'limit' if 'limit' in query['properties'] else None,
-            'maxSymbols': 1 if selected['company'] else 0,
+            'maxSymbols': 1 if 'symbol' in query['properties'] else 0,
             'rejectExplicitNull': True, 'dateWindow': dates,
             'parameters': deepcopy(query['properties']),
             'required': list(query.get('required', [])),
@@ -119,6 +119,8 @@ def query_policy(selected: dict, query: dict) -> dict:
 
 def control_description(name: str, schema: dict, policy: dict) -> str:
     if name == 'symbol':
+        if name not in policy['required']:
+            return 'Optional listing symbol. Omit for the market calendar.'
         return 'Exactly one listing symbol; comma-separated lists and whitespace are rejected.'
     if name in ('start_date', 'end_date'):
         window = policy['dateWindow']

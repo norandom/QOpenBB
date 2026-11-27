@@ -23,7 +23,7 @@ export const fields = { eps_actual: 'Actual EPS', eps_consensus: 'Estimated EPS'
 
 export function query(stage: string, slot: Slot) {
   const choices = stage === slot || stage === 'reopen' ? plan.edits : plan.initial;
-  return slot === 'calendar' ? choices.calendar : { symbol: stage === 'launch' ? symbols.launch : symbols.later, ...choices[slot] };
+  return { symbol: stage === 'launch' ? symbols.launch : symbols.later, ...choices[slot] };
 }
 
 export async function arm(stage: string) {

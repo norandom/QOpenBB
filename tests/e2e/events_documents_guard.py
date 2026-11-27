@@ -8,7 +8,6 @@ from pathlib import Path
 from threading import Lock
 from urllib.parse import parse_qsl, urlsplit
 
-LIMIT = 15
 EXPECTED_ENTRYPOINT = ["uvicorn", "qopenbb_data.app:create_app", "--factory", "--host",
                        "0.0.0.0", "--port", "6900", "--no-access-log"]
 CURRENT = contextvars.ContextVar("events_receipt", default=None)
@@ -30,8 +29,8 @@ def schedule(plan):
             if slot != "calendar":
                 query["symbols" if slot == "news" else "symbol"] = symbols["launch" if stage == "launch" else "later"]
             stage_wire[slot] = (plan["slots"][slot][1], query)
-    limit = plan.get("send_limit", LIMIT)
-    if not 1 <= limit <= LIMIT or sum(map(len, stages.values())) != limit:
+    limit = plan["send_limit"]
+    if limit < 1 or sum(map(len, stages.values())) != limit:
         raise Rejected("invalid frozen schedule")
     return stages
 

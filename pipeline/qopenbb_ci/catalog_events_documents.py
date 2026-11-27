@@ -26,8 +26,12 @@ def integer(name: str, minimum: int, maximum: int, **extra: int) -> dict:
 
 
 def accepted_query(slot: str) -> dict:
-    properties = {} if slot == "calendar" else {"symbol": SYMBOL}
-    required = list(properties)
+    properties = {"symbol": SYMBOL}
+    required = ["symbol"]
+    if slot == "calendar":
+        symbol = {key: value for key, value in SYMBOL.items() if key != "title"}
+        properties["symbol"] = {"title": "Symbol", "anyOf": [symbol, {"type": "null"}], "default": None}
+        required = []
     if slot == "transcript":
         properties.update(year=integer("Year", 1900, 2100), quarter=integer("Quarter", 1, 4))
         required.extend(("year", "quarter"))
@@ -102,7 +106,7 @@ def selections(inventory: dict, mapping: list, widgets: dict) -> dict:
     for slot, (dataset_id, model) in SOURCES.items():
         policy = validated_policy(slot, dataset_id, model, sources[dataset_id], widgets)
         values = defaults(datasets[dataset_id], policy)
-        if policy["maxSymbols"]:
+        if "symbol" in values:
             symbol = values.pop("symbol")
             if not isinstance(symbol, str) or LISTING.fullmatch(symbol) is None:
                 raise ValueError("Invalid Events and Documents default listing: " + slot)

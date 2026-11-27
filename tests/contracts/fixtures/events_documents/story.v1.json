@@ -33,7 +33,7 @@
           },
           "maxRequests": 1,
           "maxReturnedRows": 250,
-          "maxSymbols": 0,
+          "maxSymbols": 1,
           "parameters": {
             "end_date": {
               "format": "date",
@@ -44,6 +44,20 @@
               "format": "date",
               "title": "Start Date",
               "type": "string"
+            },
+            "symbol": {
+              "title": "Symbol",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 50,
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
             }
           },
           "preserveSourceOrder": true,
@@ -250,7 +264,8 @@
       "parameters": {
         "provider": "fmp",
         "start_date": "2026-11-16",
-        "end_date": "2026-11-22"
+        "end_date": "2026-11-22",
+        "symbol": "AAPL"
       }
     },
     "filings": {

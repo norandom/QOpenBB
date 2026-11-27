@@ -4,17 +4,6 @@
     "body": {
       "results": [
         {
-          "symbol": "MSFT",
-          "name": null,
-          "report_date": "2026-11-19",
-          "last_updated": null,
-          "eps_previous": null,
-          "eps_actual": null,
-          "eps_consensus": null,
-          "revenue_actual": null,
-          "revenue_consensus": null
-        },
-        {
           "symbol": "AAPL",
           "name": null,
           "report_date": "2026-11-19",
@@ -24,17 +13,6 @@
           "eps_consensus": 1.25,
           "revenue_actual": 9007199254740993,
           "revenue_consensus": 42
-        },
-        {
-          "symbol": "SPY",
-          "name": null,
-          "report_date": "2026-11-19",
-          "last_updated": null,
-          "eps_previous": null,
-          "eps_actual": null,
-          "eps_consensus": null,
-          "revenue_actual": null,
-          "revenue_consensus": null
         },
         {
           "symbol": "AAPL",
@@ -60,7 +38,8 @@
             "retrieved_at": "2026-11-27T09:00:00Z",
             "effective_query": {
               "start_date": "2026-11-16",
-              "end_date": "2026-11-22"
+              "end_date": "2026-11-22",
+              "symbol": "AAPL"
             },
             "fields": {
               "eps_actual": {
@@ -121,7 +100,7 @@
             "bounds": {
               "requested_limit": 250,
               "effective_limit": 250,
-              "returned_count": 4,
+              "returned_count": 2,
               "truncated": null,
               "completeness": "unknown"
             }
@@ -138,7 +117,8 @@
           "parameters": {
             "provider": "fmp",
             "start_date": "2026-11-16",
-            "end_date": "2026-11-22"
+            "end_date": "2026-11-22",
+            "symbol": "AAPL"
           }
         },
         "generation": 1,
@@ -148,13 +128,13 @@
       },
       "providerRetrievedAt": "2026-11-27T09:00:00Z",
       "tokens": {
-        "1": {
+        "0": {
           "eps_actual": "0",
           "eps_consensus": "1.25",
           "revenue_actual": "9007199254740993",
           "revenue_consensus": "42"
         },
-        "3": {
+        "1": {
           "eps_actual": "1.5"
         }
       }

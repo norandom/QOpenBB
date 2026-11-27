@@ -4,7 +4,7 @@
   "workspace": {
     "repository": "https://github.com/norandom/openbb-workspace.git",
     "upstream": "https://github.com/OpenBB-finance/workspace.git",
-    "revision": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9",
+    "revision": "1ecdb88c35b4f63e1a1462cc14d724e7f5c4622b",
     "branch_at_acquisition": "main",
     "build_variant": "full",
     "local_checkout": "vendor/workspace",
@@ -13,7 +13,7 @@
   "data_api": {
     "repository": "https://github.com/norandom/openbb-data-api.git",
     "upstream": "https://github.com/openbq-org/OpenBB.git",
-    "revision": "5583c958d35282cb59037aae8218cec31d540697",
+    "revision": "5efa7b6d24aae219a9dd80d4f61e0c6290f3368d",
     "branch_at_acquisition": "develop",
     "note": "Adaptation checkout now uses the selected OpenBB 5 release candidate. Original develop acquisition was 7c9d4221bdf66965e3f6c7f4dc6ee848073e5ae2; its notices and acquisition history remain retained. Locked runtime and initial image checks are accepted; integrated live-provider release validation remains pending.",
     "local_checkout": "vendor/data-api",

@@ -17,9 +17,10 @@
     "transcript": {"year": 2025, "quarter": 4},
     "news": {"start_date": "2025-07-28", "end_date": "2025-08-04", "page": 0, "limit": 10}
   },
+  "send_limit": 16,
   "groups": {
     "launch": ["calendar", "filings", "transcript", "news"],
-    "listing": ["filings", "transcript", "news"],
+    "listing": ["calendar", "filings", "transcript", "news"],
     "calendar": ["calendar"],
     "filings": ["filings"],
     "transcript": ["transcript"],

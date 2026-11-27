@@ -9,7 +9,7 @@ import { controlledDiagnostics } from './events-documents-diagnostics.mts';
 import { observeChartCanvas, readCalendarChart } from './events-documents-marks.mts';
 
 import { apply, conclusion, controlledGroups, controlledQuery, earnings, fixtureHost,
-  keyboardConclusion, news, outcome, retrievalTime, setTheme, synthetic } from './events-documents-controlled.mts';
+  keyboardConclusion, news, outcome, replayCalendar, retrievalTime, setTheme, synthetic } from './events-documents-controlled.mts';
 
 const replayListings = ['0151.HK', 'GMGMF'];
 const documentTitles = { filings: 'SEC filings', transcript: 'Earnings-call transcript', news: 'Company news' };
@@ -24,28 +24,31 @@ async function calendarProof(story: Locator, acquisition: Acquisition, symbol: s
   const articles = region.getByRole('article');
   const expected = acquisition.rows?.filter(row => row.symbol === symbol).length ?? 0;
   await expect(articles).toHaveCount(expected);
-  const observed = { index: acquisition.index, symbol, marketCount: 0, clipped: false, retrievedAt: '', rows: [] as object[] };
+  const observed = { index: acquisition.index, symbol, listingCount: 0, clipped: false, retrievedAt: '', rows: [] as object[] };
   if (process.env.EVENTS_VERIFICATION_MODE === 'live') {
     const value = (label: string) =>
       region.getByText(label, { exact: true }).locator('xpath=following-sibling::dd[1]');
-    await expect(value('Listing filter')).toHaveText(symbol);
-    await expect(value('Effective market window')).toHaveText(`${acquisition.query.start_date} to ${acquisition.query.end_date} inclusive`);
-    const condition = acquisition.status === 204 || (acquisition.status === 200 && !acquisition.rows?.length)
+    await expect(value('Selected listing')).toHaveText(symbol);
+    await expect(value('Effective calendar window')).toHaveText(`${acquisition.query.start_date} to ${acquisition.query.end_date} inclusive`);
+    const condition = acquisition.status === 204
       ? 'Empty market calendar for this window.' : acquisition.status !== 200 ? null
-      : expected === 0 ? `No returned market rows match ${symbol}.`
+      : expected === 0 ? `FMP returned no calendar rows for ${symbol} in this window.`
       : acquisition.rows?.some(row => row.symbol === symbol && row.hasFigure)
         ? 'Current FMP earnings calendar.' : 'Matching rows have no reported figures.';
     if (condition) await expect(region.getByRole('status')).toHaveText(condition);
   }
   if (acquisition.status === 200) {
-    observed.marketCount = Number(await region.getByText('Market rows returned', { exact: true }).locator('xpath=following-sibling::dd[1]').textContent());
+    observed.listingCount = Number(await region.getByText('Listing rows returned', { exact: true }).locator('xpath=following-sibling::dd[1]').textContent());
     observed.clipped = await region.getByText('Clipping observed', { exact: true }).count() === 1;
     observed.retrievedAt = (await region.getByText('Provider retrieval time', { exact: true }).locator('xpath=following-sibling::dd[1]').textContent()) ?? '';
   }
-  for (const article of await articles.all()) {
+  // Inspect the priced rows interactively. Read repeated all-missing fixture rows in one DOM pass.
+  const paddingRows = acquisition.stage === 'calendar' && process.env.EVENTS_VERIFICATION_MODE === 'controlled';
+  const inspect = paddingRows ? (await articles.all()).slice(0, 2) : await articles.all();
+  for (const article of inspect) {
     const title = (await article.getByRole('heading', { level: 3 }).textContent()) ?? '';
-    const identity = /^Report date (\d{4}-\d{2}-\d{2}) · market row (\d+)$/.exec(title);
-    if (!identity) throw new Error('Invalid market row label');
+    const identity = /^Report date (\d{4}-\d{2}-\d{2}) · listing row (\d+)$/.exec(title);
+    if (!identity) throw new Error('Invalid listing row label');
     const values: Record<string, string> = {};
     const updated = await article.getByText('Last updated', { exact: true }).locator('xpath=following-sibling::dd[1]').textContent();
     const fieldUnits: Record<string, string | null> = {};
@@ -58,9 +61,9 @@ async function calendarProof(story: Locator, acquisition: Acquisition, symbol: s
       await expect(detail).toBeFocused();
       for (const [term, value] of Object.entries({
         'Source': 'FMP · earnings-calendar', 'Listing': symbol, 'Report date': identity[1],
-        'Source row ordinal': String(Number(identity[2]) - 1), 'Source field': field, 'Exact source value': text,
+        'Listing result ordinal': String(Number(identity[2]) - 1), 'Source field': field, 'Exact source value': text,
         'Provider retrieval time': observed.retrievedAt,
-        'Effective market window': `${acquisition.query.start_date} to ${acquisition.query.end_date} inclusive`,
+        'Effective calendar window': `${acquisition.query.start_date} to ${acquisition.query.end_date} inclusive`,
       })) {
         if (await detail.getByText(term, { exact: true }).locator('xpath=following-sibling::dd[1]').textContent() !== value)
           throw new Error('Calendar source detail mismatch: ' + term);
@@ -86,6 +89,26 @@ async function calendarProof(story: Locator, acquisition: Acquisition, symbol: s
       }
     }
     observed.rows.push({ ordinal: Number(identity[2]) - 1, date: identity[1], fields: values, updated, fieldUnits, generation, charts });
+  }
+  if (paddingRows) {
+    const missing = await articles.evaluateAll((nodes, fields) => nodes.slice(2).map(node => {
+      const title = node.querySelector('h3')?.textContent ?? '';
+      const identity = /^Report date (\d{4}-\d{2}-\d{2}) · listing row (\d+)$/.exec(title);
+      if (!identity || node.querySelector('canvas, figure')) throw new Error('Invalid missing calendar row');
+      const terms = [...node.querySelectorAll('dt')];
+      const read = (term: string) => terms.find(element => element.textContent === term)?.nextElementSibling;
+      const values: Record<string, string | null | undefined> = {};
+      const fieldUnits: Record<string, string | null | undefined> = {};
+      for (const [field, label] of Object.entries(fields)) {
+        const dd = read(label);
+        values[field] = dd?.querySelector('button')?.textContent;
+        fieldUnits[field] = dd?.querySelector('p')?.textContent;
+        if (values[field] !== 'Missing') throw new Error('Unexpected priced calendar row');
+      }
+      return { ordinal: Number(identity[2]) - 1, date: identity[1], updated: read('Last updated')?.textContent,
+        fields: values, fieldUnits, charts: [] };
+    }), fields);
+    observed.rows.push(...missing);
   }
   return observed;
 }
@@ -270,11 +293,11 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       try {
         const controlled = mode === 'controlled' ? synthetic(slot, expected, entry.stage) : null;
         const response = controlled === null ? await route.fetch({ maxRedirects: 0, maxRetries: 0, timeout: 45000 }) : null;
-        const replayLaunch = replay && entry.stage === 'launch' && entry.slot === 'calendar';
+        const replayListing = replay && entry.slot === 'calendar';
         const replayDocument = replay && entry.slot !== 'calendar';
-        const body = replayLaunch ? readFileSync(join(destination, 'replay-calendar.installed'))
+        const body = replayListing ? replayCalendar(readFileSync(join(destination, 'replay-calendar.installed'), 'utf8'), String(expected.symbol))
           : replayDocument ? Buffer.alloc(0) : response ? await response.body() : Buffer.from(controlled!.body);
-        entry.status = replayLaunch ? 200 : replayDocument ? 204 : response?.status() ?? controlled!.status;
+        entry.status = replayListing ? 200 : replayDocument ? 204 : response?.status() ?? controlled!.status;
         const receipt = response?.headers()['x-qopenbb-events-receipt'];
         if (mode === 'live' && !/^\d+$/.test(receipt ?? '')) issues.push('missing-provider-correlation');
         if (receipt) entry.receipt = Number(receipt);
@@ -386,12 +409,13 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     await advance('no-issuer');
     await story.getByLabel('Custom listing symbol').fill('NONE');
     await story.getByRole('button', { name: 'Apply symbol', exact: true }).press('Enter');
-    await expect.poll(() => requests.filter(item => item.stage === 'no-issuer').length).toBe(3);
-    await expect(section.getByText('No returned market rows match NONE.', { exact: true })).toBeVisible();
-    await expect(section.getByText('Wider market coverage unknown', { exact: true })).toBeVisible();
+    await expect.poll(() => requests.filter(item => item.stage === 'no-issuer').length).toBe(4);
+    await expect(section.getByRole('status')).toHaveText('Loading FMP earnings calendar.');
     await outcome(story, 'Pending', 0);
     release.get('no-issuer')!();
     await settled(story, 'NONE');
+    await expect(section.getByRole('status')).toHaveText('FMP returned no calendar rows for NONE in this window.');
+    await expect(section.getByText('Provider coverage unknown', { exact: true })).toBeVisible();
     await outcome(story, 'Insufficient evidence', 0);
     scenarios.push('empty-issuer-filter', 'pending-and-insufficient-conclusions');
 
@@ -412,18 +436,18 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     held.set(away, new Promise<void>(resolve => release.set(away, resolve)));
     await advance(away);
     await story.getByRole('button', { name: 'Apple (AAPL)', exact: true }).dispatchEvent('click');
-    await expect.poll(() => requests.filter(item => item.stage === away).length).toBe(3);
+    await expect.poll(() => requests.filter(item => item.stage === away).length).toBe(4);
     await expect(subsection.getByRole('heading', { name: 'Company news · FMP' })).toBeFocused();
     await expect(detail).toHaveCount(0);
     await expect(subsection.getByRole('list', { name: 'Company documents' })).toHaveCount(0);
     await expect(subsection.getByText('Retrieving FMP evidence.', { exact: true })).toBeVisible();
-    await outcome(story, 'Partial evidence', 1);
+    await outcome(story, 'Pending', 0);
     await advance(theme + '-back');
     await story.getByRole('button', { name: 'Microsoft (MSFT)', exact: true }).press('Enter');
     await settled(story, 'MSFT');
     await outcome(story, 'Evidence available', 4);
     release.get(away)!();
-    await expect.poll(() => requests.filter(item => item.stage === away && item.done).length).toBe(3);
+    await expect.poll(() => requests.filter(item => item.stage === away && item.done).length).toBe(4);
     await expect(subsection.getByText(new RegExp('Synthetic article ' + theme + '-back'))).toBeVisible();
     await expect(subsection.getByText(new RegExp('Synthetic article ' + away))).toHaveCount(0);
     await expect(subsection.getByRole('alert')).toHaveCount(0);
@@ -554,8 +578,8 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     }
     if (mode === 'controlled') {
       await expect(earnings(story).getByText('Clipping observed', { exact: true })).toBeVisible();
-      await expect(earnings(story).getByText('250 rows', { exact: true })).toBeVisible();
-      await expect(earnings(story).getByRole('article')).toHaveCount(2);
+      await expect(earnings(story).getByText('250 matching rows', { exact: true })).toBeVisible();
+      await expect(earnings(story).getByRole('article')).toHaveCount(250);
       await outcome(story, 'Evidence available', 4);
       scenarios.push('clipped-calendar', 'duplicate-report-dates', 'zero-and-missing-marks', 'literal-and-safe-document-details');
     }
@@ -595,7 +619,7 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       await reopened.keyboard.press('Escape');
       scenarios.push('save-fresh-authenticated-reopen-safe-export');
       await controlledRecovery(reopened, fresh);
-      await expect.poll(() => network!.abortedData).toBe(6);
+      await expect.poll(() => network!.abortedData).toBe(8);
       expect(network!.fixtureExternal).toBe(0);
       expect(network!.httpErrors).toEqual({ 'listing/news/403': 1, 'timeout-news/news/400': 1 });
       expect(network!.errors).toEqual({});

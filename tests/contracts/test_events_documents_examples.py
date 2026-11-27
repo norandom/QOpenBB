@@ -33,9 +33,10 @@ def test_declaration_and_queries_match_installed_batch_b():
         assert binding["queryPolicy"] == widget["queryPolicy"]
         assert set(widget["financialContract"]["variants"]) == {"fmp"}
         params = {p["paramName"]: p["value"] for p in widget["params"] if p["value"] is not None}
-        assert story["queries"][slot] == {"slot": slot, "parameters": params}
-        assert ("symbol" in params) == (widget["data"]["scope"] == "listing")
         choices = story["layout"]["state"]["storage"]["eventsDocuments"]
+        selected = {**params, "symbol": choices["symbol"]}
+        assert story["queries"][slot] == {"slot": slot, "parameters": selected}
+        assert ("symbol" in params) == (widget["data"]["scope"] == "listing")
         assert params == {
             "provider": "fmp", **({"symbol": choices["symbol"]} if slot != "calendar" else {}),
             **choices[slot],
@@ -117,12 +118,12 @@ def test_wire_examples_round_trip_and_match_the_dispatched_binding(name):
     if name == "calendar-duplicate":
         rows = body["results"]
         assert b'"revenue_actual": 9007199254740993' in (FIXTURES / "receipts.v1.json").read_bytes()
-        assert rows[1]["report_date"] == rows[3]["report_date"]
+        assert rows[0]["report_date"] == rows[1]["report_date"]
         matches = [i for i, row in enumerate(rows) if row["symbol"] == "AAPL"]
-        assert matches == [1, 3]
-        assert rows[1]["eps_actual"] == 0 and rows[3]["eps_consensus"] is None
-        assert rows[1]["revenue_actual"] == 9007199254740993
-        assert receipt["tokens"]["1"]["revenue_actual"] == str(rows[1]["revenue_actual"])
+        assert matches == [0, 1]
+        assert rows[0]["eps_actual"] == 0 and rows[1]["eps_consensus"] is None
+        assert rows[0]["revenue_actual"] == 9007199254740993
+        assert receipt["tokens"]["0"]["revenue_actual"] == str(rows[0]["revenue_actual"])
     if name == "filings-success":
         row, = body["results"]
         assert row["content_status"] == "metadata_only"

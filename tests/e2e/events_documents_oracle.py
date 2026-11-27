@@ -51,13 +51,19 @@ def numeric(value):
     return Decimal(value)
 
 
+def matching_calendar(source, symbol):
+    check(isinstance(source, list), "provider calendar shape")
+    return [row for row in source if row["symbol"].upper() == symbol]
+
+
 def compare_calendar(source, installed, visible, symbol):
-    check(isinstance(source, list) and len(installed) == min(250, len(source)), "market count")
+    matches = matching_calendar(source, symbol)
+    check(len(installed) == min(250, len(matches)), "listing count")
     coverage = dict.fromkeys(FIELDS, 0)
     expected = []
-    for ordinal, (raw, normal) in enumerate(zip(source, installed)):
+    for ordinal, (raw, normal) in enumerate(zip(matches, installed)):
         day = raw["date"]
-        check(normal["report_date"] == day and normal["symbol"] == raw["symbol"], "provider installed row")
+        check(normal["report_date"] == day and normal["symbol"] == symbol, "provider installed row")
         check(normal.get("last_updated") == raw.get("lastUpdated"), "provider installed update date")
         for field, origin in FIELDS.items():
             before, after = raw.get(origin), normal.get(field)
@@ -65,8 +71,7 @@ def compare_calendar(source, installed, visible, symbol):
                 check(before is after, "provider installed missing value")
             else:
                 check(numeric(before) == numeric(after), "provider installed value")
-        if raw["symbol"] == symbol:
-            expected.append((ordinal, day, normal))
+        expected.append((ordinal, day, normal))
     check(len(expected) == len(visible), "issuer row count")
     for (ordinal, day, normal), shown in zip(expected, visible):
         check((ordinal, day) == (shown["ordinal"], shown["date"]), "display row identity")
@@ -134,7 +139,7 @@ def compare_marks(installed, token_rows, visible, metadata):
             for mark in marks:
                 field = fields[mark["category"]]
                 check(mark["identity"] == f"Receipt {row['generation']} · ordinal {ordinal} · {field}", "calendar chart mark identity")
-                check(mark["title"] == f"Report date {row['date']} · market row {ordinal + 1}", "calendar chart mark row")
+                check(mark["title"] == f"Report date {row['date']} · listing row {ordinal + 1}", "calendar chart mark row")
                 check(mark["detail"] == f"{LABELS[field]}: {tokens[field]}", "calendar chart mark exact value")
                 check(mark["units"] == row["fieldUnits"][field], "calendar chart mark units")
                 x = Decimal(mark["left"] + mark["right"] + 1) / 2
@@ -195,8 +200,8 @@ def envelope(body, slot, dataset, upstream, query):
 
 CONTROLLED_GROUPS = {
     "empty-calendar": ["calendar"], "restore-calendar": ["calendar"],
-    "timeout-news": ["news"], "retry-news": ["news"], "no-issuer": ["filings", "transcript", "news"],
-    **{f"{theme}-{stage}": ["filings", "transcript", "news"]
+    "timeout-news": ["news"], "retry-news": ["news"], "no-issuer": ["calendar", "filings", "transcript", "news"],
+    **{f"{theme}-{stage}": ["calendar", "filings", "transcript", "news"]
        for theme in ("light", "dark") for stage in ("away", "back")},
 }
 CONTROLLED_SCENARIOS = {
@@ -227,7 +232,7 @@ def report(directory):
         check(not run["network"]["fixtureExternal"] and not run["network"]["errors"], "controlled browser network")
         cancelled = {f"{stage}/{slot}": 1 for stage, slots in CONTROLLED_GROUPS.items()
                      if stage.endswith("-away") for slot in slots}
-        check(run["network"]["abortedData"] == 6 and run["network"]["abortedSlots"] == cancelled,
+        check(run["network"]["abortedData"] == sum(cancelled.values()) and run["network"]["abortedSlots"] == cancelled,
               "controlled supersession cancellations")
         check(run["network"]["httpErrors"] == {"listing/news/403": 1, "timeout-news/news/400": 1},
               "controlled HTTP failures")
@@ -283,7 +288,8 @@ def report(directory):
         if raw is None:
             check(not live, "successful request missing raw provider response")
         if raw is not None:
-            clipped = len(raw) > (250 if slot == "calendar" else entry["query"].get("limit", 1))
+            source_rows = matching_calendar(raw, entry["query"]["symbol"]) if slot == "calendar" else raw
+            clipped = len(source_rows) > (250 if slot == "calendar" else entry["query"].get("limit", 1))
             check(bool(meta["bounds"].get("truncated")) == clipped, "source clipping")
         token_rows = json.loads(wire_bytes, parse_int=str, parse_float=str)["results"] if slot == "calendar" else []
         installed[number] = (rows, raw, meta, token_rows)
@@ -293,7 +299,7 @@ def report(directory):
             blocked["invalid_evidence"] += 1
             continue
         if not live and slot == "calendar" and stage == "calendar":
-            check(meta["bounds"]["truncated"] is True and len(rows) == 250, "controlled clipped market")
+            check(meta["bounds"]["truncated"] is True and len(rows) == 250, "controlled clipped listing")
         if slot != "calendar":
             check(entry["documentCount"] == len(rows), "display document count")
             documents[slot] += compare_documents(slot, raw, rows, entry["query"]) if live else len(rows)
@@ -301,6 +307,7 @@ def report(directory):
     final_coverage = {}
     calendar_views = []
     chart_marks = Counter()
+    microsoft_views = []
     final_stage = "reopen" if "reopen" in plan["groups"] else "launch"
     final_inputs = {entry["slot"]: entry["status"] == 200 and (entry.get("documentCount") or 0) > 0
                     for entry in requests if entry["stage"] == final_stage and entry["slot"] != "calendar"}
@@ -310,8 +317,8 @@ def report(directory):
             check(display["rows"] == [], "calendar rows after error")
             continue
         rows, raw, meta, token_rows = installed[receipt]
-        check(display["marketCount"] == len(rows) and display["clipped"] == bool(meta["bounds"].get("truncated")),
-              "display market scope")
+        check(display["listingCount"] == len(rows) and display["clipped"] == bool(meta["bounds"].get("truncated")),
+              "display listing scope")
         check(display["retrievedAt"] == meta["retrieved_at"], "display retrieval time")
         if raw is None:
             raw = [{"symbol": row["symbol"], "date": row["report_date"], "lastUpdated": row.get("last_updated"),
@@ -326,10 +333,17 @@ def report(directory):
                                "numeric_fields": counts, "missing_labels": {
                                    field: sum(row["fields"][field] == "Missing" for row in display["rows"])
                                    for field in FIELDS}})
+        if live and "symbols" not in plan and stage in ("calendar", "reopen"):
+            check(display["symbol"] == "MSFT" and all(counts.values()), "Microsoft calendar figure coverage")
+            microsoft_views.append({"stage": stage, "source_rows": len(raw), "listing_rows": len(rows),
+                                    "source_ordinals": [i for i, row in enumerate(raw) if row["symbol"].upper() == "MSFT"]})
         if stage == final_stage:
             final_coverage = counts
     final_inputs["calendar"] = any(final_coverage.values())
     supplemental = {}
+    if live and "symbols" not in plan:
+        check({view["stage"] for view in microsoft_views} == {"calendar", "reopen"}, "Microsoft edit and reopen proof")
+        supplemental["microsoft_calendar"] = microsoft_views
     if live and final_stage == "launch":
         check(run["seedAborts"] > 0 and run["scenarios"] == ["native-catalog-seeded-through-workspace-controls"],
               "four-input proof seed")
@@ -386,27 +400,32 @@ def report_replay(root, source):
     check(run["mode"] == "controlled" and run["replay"] and not run["issues"] and not run["network"]["errors"],
           "replay browser diagnostics")
     check(not ledger["count"] and not ledger["denials"], "replay provider ledger")
-    replay_calendar, = [entry for entry in run["requests"] if entry["slot"] == "calendar"]
-    check((root / f"{replay_calendar['index']}.installed").read_bytes() == captured, "replay mounted capture")
-    body = decode(captured)
-    rows, meta = envelope(body, "calendar", "equity/calendar/earnings", "earnings-calendar", replay_calendar["query"])
+    calendars = {entry["index"]: entry for entry in run["requests"] if entry["slot"] == "calendar"}
+    check([entry["query"]["symbol"] for entry in calendars.values()] == ["AAPL", "0151.HK", "GMGMF"],
+          "replay listing acquisitions")
+    source_rows = decode(captured)["results"]
     raw = decode_provider(provider)
-    tokens = json.loads(captured, parse_int=str, parse_float=str)["results"]
     observed = []
     for display in run["calendar"]:
-        check(display["marketCount"] == len(rows) and display["clipped"] == bool(meta["bounds"]["truncated"]),
-              "replay market scope")
+        entry = calendars[display["index"]]
+        symbol = entry["query"]["symbol"]
+        mounted = (root / f"{entry['index']}.installed").read_bytes()
+        rows, meta = envelope(decode(mounted), "calendar", "equity/calendar/earnings", "earnings-calendar", entry["query"])
+        check(rows == matching_calendar(source_rows, symbol), "scoped replay captured values")
+        check(symbol == display["symbol"] and display["listingCount"] == len(rows) and not display["clipped"],
+              "replay listing scope")
         check(display["retrievedAt"] == meta["retrieved_at"], "replay retrieval time")
-        counts = compare_calendar(raw, rows, display["rows"], display["symbol"])
+        tokens = json.loads(mounted, parse_int=str, parse_float=str)["results"]
+        counts = compare_calendar(raw, rows, display["rows"], symbol)
         compare_marks(rows, tokens, display["rows"], meta["fields"])
-        observed.extend(replay_row(display["symbol"], row, counts) for row in display["rows"])
+        observed.extend(replay_row(symbol, row, counts) for row in display["rows"])
     expected = Counter((symbol, mode) for symbol in ("0151.HK", "GMGMF") for mode in ("bar", "point"))
     check(Counter((row["symbol"], row["charts"].get("eps")) for row in observed) == expected
           and all(row["charts"].get("revenue") == row["charts"].get("eps") for row in observed),
           "replay listings and chart displays")
     return {"replay_receipt": receipt, "replay_browser": run["browser"], "replay_rows": observed,
-            "replay_retrieved_at": meta["retrieved_at"], "replay_provider_count": len(raw),
-            "replay_normalized_count": len(rows), "capture_sha256": hashlib.sha256(provider).hexdigest()}
+            "replay_retrieved_at": decode(captured)["extra"]["results_metadata"]["__qopenbb_financial__"]["retrieved_at"], "replay_provider_count": len(raw),
+            "replay_normalized_count": len(source_rows), "capture_sha256": hashlib.sha256(provider).hexdigest()}
 
 
 def replay_row(symbol, row, counts):

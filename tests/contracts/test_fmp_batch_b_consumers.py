@@ -58,9 +58,13 @@ def test_exact_eight_native_bindings_and_preserved_financial_contracts(inputs):
         assert widget['endpoint'] == handoff['route']
         assert widget['data']['dataKey'] == 'results'
         controls = {p['paramName']: p for p in widget['params']}
-        assert set(controls) == {'provider', *handoff['controls']}
+        expected_controls = {'provider', *handoff['controls']}
+        if handoff['module'] == 'calendar_earnings':
+            expected_controls.add('symbol')
+            assert controls['symbol']['optional'] and controls['symbol']['value'] is None
+        assert set(controls) == expected_controls
         assert controls['provider']['options'] == [{'label': 'FMP', 'value': 'fmp'}]
-        assert ('symbol' in controls) == handoff['company_selection']
+        assert ('symbol' in controls) == (handoff['company_selection'] or handoff['module'] == 'calendar_earnings')
         descriptor = schema['paths'][dataset['path']]['get']['x-qopenbb-financial']
         policy = descriptor['variants']['fmp']['response_policy']
         if policy['max_rows'] is not None:
@@ -140,7 +144,7 @@ def test_widget_query_policy_matches_installed_admission(inputs, handoff):
     policy = widget['queryPolicy']
     assert policy['maxReturnedRows'] == handoff['max_rows']
     assert policy['maxRequests'] == 1
-    assert policy['maxSymbols'] == (1 if handoff['company_selection'] else 0)
+    assert policy['maxSymbols'] == int(handoff['company_selection'] or handoff['module'] == 'calendar_earnings')
     assert policy['rejectExplicitNull'] is True
     assert widget['description'] and widget['description'] != 'None'
     for param in widget['params']:
@@ -154,7 +158,7 @@ def test_widget_query_policy_matches_installed_admission(inputs, handoff):
     values = {key: value for key, value in handoff['params'].items() if key != 'provider'}
     model.model_validate(values)
     for key, value in ((next(iter(values)), None), ('symbol', 'AAPL,MSFT')):
-        if key == 'symbol' and not handoff['company_selection']:
+        if key == 'symbol' and not policy['maxSymbols']:
             continue
         with pytest.raises(ValidationError):
             model.model_validate({**values, key: value})

@@ -152,6 +152,8 @@ def publish_summary(summary, root, guard_smoke, replay, seed_preflight):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=("controlled", "live"))
+    parser.add_argument("--candidate", type=Path, default=ROOT / "verification/earnings-calendar/candidate.json",
+                        help="Candidate JSON identifying the installed Workspace and data API images and source revisions")
     verification = parser.add_mutually_exclusive_group()
     verification.add_argument("--list", action="store_true", help="Discover tests without booting or accessing the provider")
     verification.add_argument("--replay-launch-calendar", type=Path, help="Inspect real captured earnings rows without provider sends")
@@ -200,7 +202,7 @@ def main():
     os.environ["QOPENBB_ARTIFACTS"] = str(root)
     summary = {"mode": args.mode, "private_directory": str(root)}
     print(json.dumps(summary), flush=True)
-    candidate = json.loads((artifacts / "reviewed/events-and-documents/candidate.json").read_text())
+    candidate = json.loads(args.candidate.read_text())
     config = resolve_environment(ROOT)
     images = candidate["images"]
     runtime = prepare(StartRequest(config, root / "runtime/session.json", images["workspace"]["image"], images["data-api"]["image"]))

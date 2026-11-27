@@ -61,6 +61,7 @@
       "limit": 10
     }
   },
+  "send_limit": 16,
   "groups": {
     "launch": [
       "calendar",
@@ -69,6 +70,7 @@
       "news"
     ],
     "listing": [
+      "calendar",
       "filings",
       "transcript",
       "news"

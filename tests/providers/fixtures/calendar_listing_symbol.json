@@ -1,0 +1,14 @@
+{
+  "anyOf": [
+    {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    {
+      "type": "null"
+    }
+  ],
+  "default": null,
+  "title": "Symbol"
+}

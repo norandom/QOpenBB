@@ -1,6 +1,6 @@
 # Roadmap
 
-The local Events and Documents candidate passed 18 controlled scenarios and three live FMP journeys. Analysts can inspect actual and estimated earnings alongside SEC filings, transcripts and news. The Carvana check returned all four inputs. For Microsoft, the source row fell beyond the 250-row calendar slice. [Live earnings evidence](../artifacts/reviewed/events-and-documents/supplemental.md)
+The local Events and Documents candidate passed 18 controlled scenarios and three live FMP journeys. Analysts can inspect actual and estimated earnings alongside SEC filings, transcripts and news. The Carvana check returned all four inputs. The Microsoft check found its July 30, 2025 report at row 1,334 of 1,440 after filtering by listing before applying the 250-row cap. The live App displayed all four earnings figures on edit and authenticated reopen. [Microsoft verification](../verification/earnings-calendar/README.md) · [Earlier live journeys](../artifacts/reviewed/events-and-documents/supplemental.md)
 
 The Commodities versus Technology App passed local packaged acceptance with dated ETF evidence, outage recovery and saved-run export. The rollback target remains the published modeling-v0.1.0 image set. [Research Stories acceptance](../artifacts/reviewed/research-stories/packaged-acceptance.md)
 

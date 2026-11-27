@@ -32,6 +32,9 @@ class Response:
 
 def test_frozen_schemas_and_example():
     contract = json.loads((FIXTURES / "calendar_earnings.json").read_text())
+    symbol_schema = json.loads((FIXTURES.parent.parent / "calendar_listing_symbol.json").read_text())
+    for schema in contract["query"].values():
+        schema["properties"]["symbol"] = symbol_schema
     for model, key in [(Query, "query"), (Data, "data")]:
         for mode in ["validation", "serialization"]:
             assert model.model_json_schema(mode=mode) == contract[key][mode]
@@ -58,7 +61,13 @@ def test_frozen_schemas_and_example():
         {},
         {"start_date": PARAMS["start_date"]},
         {"end_date": PARAMS["end_date"]},
-        {**PARAMS, "symbol": "AAPL"},
+        {**PARAMS, "symbol": "AAPL,MSFT"},
+        {**PARAMS, "symbol": ["AAPL", "MSFT"]},
+        {**PARAMS, "symbol": " "},
+        {**PARAMS, "symbol": ""},
+        {**PARAMS, "symbol": None},
+        {**PARAMS, "symbol": "A" * 51},
+        {**PARAMS, "symbol": "AAPL&limit=5"},
         {**PARAMS, "limit": 1},
         {**PARAMS, "from": PARAMS["start_date"]},
         {**PARAMS, "end_date": "2026-01-08"},
@@ -135,6 +144,64 @@ def test_wire_order_and_bounds(transport, count, end_date):
         "completeness": "partial" if count > 250 else "unknown",
     }
     assert "secret" not in str(result.metadata)
+
+
+@pytest.mark.parametrize("matches", [1, 250, 251])
+def test_symbol_filters_before_clip(transport, matches):
+    payload = [ROW] * 1332 + [
+        {**ROW, "symbol": "MsFt", "epsActual": index} for index in range(matches)
+    ]
+    calls = transport(payload)
+    result = asyncio.run(
+        Fetcher.fetch_data({**PARAMS, "symbol": "msft"}, {"fmp_api_key": "secret"})
+    )
+    assert len(calls) == 1
+    assert parse_qs(urlsplit(calls[0]).query) == {
+        "from": [PARAMS["start_date"]],
+        "to": [PARAMS["end_date"]],
+        "apikey": ["secret"],
+    }
+    assert [(row.symbol, row.eps_actual) for row in result.result] == [
+        ("MsFt", index) for index in range(min(matches, 250))
+    ]
+    meta = result.metadata[FINANCIAL_METADATA_KEY]
+    assert meta["effective_query"] == {**PARAMS, "symbol": "MSFT"}
+    assert meta["bounds"]["returned_count"] == min(matches, 250)
+    assert meta["bounds"]["truncated"] is (True if matches > 250 else None)
+    assert meta["bounds"]["completeness"] == ("partial" if matches > 250 else "unknown")
+
+
+def test_no_matching_listing_retains_acquisition_metadata(transport):
+    calls = transport([ROW] * 251)
+    params = {**PARAMS, "symbol": "MSFT"}
+    result = asyncio.run(Fetcher.fetch_data(params))
+    assert len(calls) == 1
+    assert result.result == []
+    meta = result.metadata[FINANCIAL_METADATA_KEY]
+    assert meta["effective_query"] == params
+    assert datetime.fromisoformat(meta["retrieved_at"]).utcoffset().total_seconds() == 0
+    assert meta["bounds"]["returned_count"] == 0
+    assert meta["bounds"]["truncated"] is None
+    assert meta["bounds"]["completeness"] == "unknown"
+    assert all(field["availability"] == "missing" for field in meta["fields"].values())
+
+
+@pytest.mark.parametrize(
+    "payload,code",
+    [
+        ([], "missing_data"),
+        (
+            [{**ROW, "symbol": "MSFT"}] * 251 + [{**ROW, "epsActual": "bad"}],
+            "invalid_response",
+        ),
+    ],
+)
+def test_symbol_selection_validates_full_payload(transport, payload, code):
+    calls = transport(payload)
+    with pytest.raises(FinancialError) as error:
+        asyncio.run(Fetcher.fetch_data({**PARAMS, "symbol": "MSFT"}))
+    assert error.value.code == code
+    assert len(calls) == 1
 
 
 @pytest.mark.parametrize(

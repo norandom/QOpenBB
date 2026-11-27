@@ -60,7 +60,7 @@ The [accepted live matrix](../artifacts/reviewed/fmp-expansion-b/live-matrix-ver
 - Transcript text and fiscal period are preserved exactly.
 - Filing dates become civil dates without inventing a timezone.
 
-The two original filings failures (padded-midnight `filingDate`) remain recorded. The repaired adapter's two rechecks pass. The calendars return the first 250 rows in source order, and that partial result is labelled explicitly. Access applies to the recorded symbols, windows and limits on that account.
+The two original filings failures (padded-midnight `filingDate`) remain recorded. The repaired adapter's two rechecks pass. Market-wide calendar queries return the first 250 rows in source order. On the earnings calendar, supplying a listing selects matching rows before applying the cap. The Events and Documents App supplies its selected listing. Access applies to the recorded symbols, windows and limits on that account.
 
 The [accepted native browser journey](../artifacts/reviewed/fmp-expansion-b/native-browser-verification.json) covers five representative widgets: dividend history, earnings calendar, news, transcript and filings. The data API image is `sha256:409e11697cad2378e2bb6c2cdca61d2f8cebd310a70a6a0a2c183820854c74c2`. Each widget passes initial load, save, safe app-template export and an isolated fresh-context reopen. The checks cover:
 - displayed values, links and content status (partial excerpt, metadata-only, completeness unknown)
