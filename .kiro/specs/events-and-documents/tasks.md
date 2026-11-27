@@ -111,7 +111,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 4.4_
   - _Requirements: 1.1, 5.2, 5.3_
 
-- [ ] 5.2 Establish the independent financial comparison and guarded browser runner
+- [x] 5.2 Establish the independent financial comparison and guarded browser runner
   - Extend the financial Workspace Playwright target with the story journey and a raw-response Python verifier using Decimal and arbitrary-precision integers. Compare provider fields, installed normalization and UI values from the same send. Demonstrate detection of a one-unit error in 9007199254740993 and a wrong row with the same report date.
   - Exercise the guarded ledger offline. Count every outbound send including failures separately from browser requests; reject unexpected tuples before dispatch, suppress raw licensed content and credentials in reviewed output. Verify one-worker test discovery on the intended candidate.
   - Tests and verifier fixtures are excluded from production caps. Check the maintained runner configuration against the applicable caps.
