@@ -7,9 +7,9 @@
   "owners": [
     {
       "spec": "events-and-documents",
-      "include": ["pipeline/qopenbb_ci/*"],
+      "include": ["pipeline/qopenbb_ci/*", "verification/earnings-calendar/candidate.json"],
       "patterns": ["pipeline/qopenbb_ci/catalog_events_documents.py"],
-      "files": []
+      "files": ["verification/earnings-calendar/candidate.json"]
     },
     {
       "spec": "research-stories",
