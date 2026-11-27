@@ -49,7 +49,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Requirements: 1.1, 5.2_
 
 - [ ] 3. Bind the evidence to the active selection
-- [ ] 3.1 Validate financial receipts and project issuer earnings
+- [x] 3.1 Validate financial receipts and project issuer earnings
   - Verify dataset, provider, endpoint, normalized tuple, timestamp, count and bounds before promoting a success. Keep 200 empty metadata. Project each exact-symbol match after the source-order cap with its original ordinal, report date, update, units and four source fields.
   - Assert distinct states for empty market, no issuer match and rows without figures. Test clipping with a match, a full slice with unknown coverage, duplicate dates, zero, null and exact numeric tokens. Verify all three document response kinds against issuer, content and applicable period, including duplicate or blank transcripts.
   - Pass the combined caps on evidence, calendar and affected financial-envelope modules.
