@@ -1,0 +1,29 @@
+{
+  "slots": {
+    "calendar": ["equity/calendar/earnings", "earnings-calendar"],
+    "filings": ["equity/fundamental/filings", "sec-filings-search/symbol"],
+    "transcript": ["equity/fundamental/transcript", "earning-call-transcript"],
+    "news": ["news/company", "news/stock"]
+  },
+  "initial": {
+    "calendar": {"start_date": "2026-11-16", "end_date": "2026-11-22"},
+    "filings": {"start_date": "2026-01-01", "end_date": "2026-11-18", "page": 0, "limit": 20},
+    "transcript": {"year": 2025, "quarter": 1},
+    "news": {"page": 0, "limit": 10}
+  },
+  "edits": {
+    "calendar": {"start_date": "2025-07-30", "end_date": "2025-07-30"},
+    "filings": {"start_date": "2025-07-28", "end_date": "2025-08-04", "page": 0, "limit": 20},
+    "transcript": {"year": 2025, "quarter": 4},
+    "news": {"start_date": "2025-07-28", "end_date": "2025-08-04", "page": 0, "limit": 10}
+  },
+  "groups": {
+    "launch": ["calendar", "filings", "transcript", "news"],
+    "listing": ["filings", "transcript", "news"],
+    "calendar": ["calendar"],
+    "filings": ["filings"],
+    "transcript": ["transcript"],
+    "news": ["news"],
+    "reopen": ["calendar", "filings", "transcript", "news"]
+  }
+}
