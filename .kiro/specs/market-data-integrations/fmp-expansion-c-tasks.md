@@ -22,7 +22,7 @@ The controller owns shared edits, the live ledger, installs, joins, heavy checks
   - _Depends: 1.1_
   - _Requirements: 2.4, 2.6, 7.1, 7.2, 7.3, 8.4_
 
-- [ ] 1.3 Characterize and freeze both valuation operations
+- [x] 1.3 Characterize and freeze both valuation operations
   - Use up to three of the nine direct sends for one standard DCF and two MSFT custom calls. Skip the override if its baseline is unusable. Freeze dated documentation, exact parameters, key/type/scale/mapped and unmapped field observations, required identity, output basis, source uncertainty and maximum rows in sanitized fixtures. Preserve valuation date, reference price date, provider year and observed retrieval time independently.
   - Verify exact beta echo on matched unique issuer/year sets, distinguish mismatch and unavailable confirmation, and require documented binding before accepting the override. An echo only acknowledges the input. Freeze default behavior, exact tokens, unknown currency/bases, duplicate year and over-bound cases. Record sanitized receipts and hashes with per-operation status.
   - Scope consists of fixture and evidence files excluded from production caps.

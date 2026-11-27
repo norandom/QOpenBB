@@ -1,0 +1,176 @@
+{
+  "purpose": "Invented raw-body test vectors. Decode body_utf8 as a second JSON document with the exact-number transport.",
+  "cases": [
+    {
+      "case": "standard_exact",
+      "operation": "standard",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"date\":\"2030-01-02\",\"dcf\":123.456789012345678901,\"Stock Price\":0}]",
+      "expected": "accepted",
+      "exact_tokens": {
+        "dcf": [
+          "123.456789012345678901",
+          "decimal"
+        ],
+        "Stock Price": [
+          "0",
+          "integer"
+        ]
+      }
+    },
+    {
+      "case": "standard_over_bound",
+      "operation": "standard",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"date\":\"2030-01-02\",\"dcf\":123.456789012345678901,\"Stock Price\":0},{\"symbol\":\"MSFT\",\"date\":\"2030-01-01\",\"dcf\":123.456789012345678901,\"Stock Price\":0}]",
+      "expected": "invalid_response"
+    },
+    {
+      "case": "standard_bad_date",
+      "operation": "standard",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"date\":\"2030-02-30\",\"dcf\":123.456789012345678901,\"Stock Price\":0}]",
+      "expected": "invalid_response"
+    },
+    {
+      "case": "standard_wrong_symbol",
+      "operation": "standard",
+      "body_utf8": "[{\"symbol\":\"AAPL\",\"date\":\"2030-01-02\",\"dcf\":123.456789012345678901,\"Stock Price\":0}]",
+      "expected": "invalid_response"
+    },
+    {
+      "case": "standard_wrong_alias",
+      "operation": "standard",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"date\":\"2030-01-02\",\"DCF\":123.456789012345678901,\"Stock Price\":0}]",
+      "expected": "invalid_response"
+    },
+    {
+      "case": "genuine_empty",
+      "operation": "both",
+      "http": 200,
+      "body_utf8": "[]",
+      "expected": "empty_json_with_acquisition_metadata"
+    },
+    {
+      "case": "typed_absence",
+      "operation": "both",
+      "transport_outcome": "typed_missing_data",
+      "expected": "http_204_empty_body_no_metadata"
+    },
+    {
+      "case": "invalid_envelope",
+      "operation": "both",
+      "body_utf8": "{\"rows\":[]}",
+      "expected": "invalid_response"
+    },
+    {
+      "case": "custom_default",
+      "operation": "custom",
+      "query": {
+        "symbol": "MSFT"
+      },
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":\"2031\",\"equityValuePerShare\":109.012345678901234567,\"price\":0.00,\"beta\":1.2500,\"dilutedSharesOutstanding\":9007199254740993,\"wacc\":0,\"costofDebt\":2.50,\"revenuePercentage\":0,\"depreciation\":-200,\"depreciationPercentage\":0.25},{\"symbol\":\"MSFT\",\"year\":2030,\"equityValuePerShare\":109,\"price\":1e2,\"beta\":1.25,\"netDebt\":null}]",
+      "expected": "accepted",
+      "beta_confirmation": "not_requested",
+      "exact_tokens": {
+        "equityValuePerShare": [
+          "109.012345678901234567",
+          "decimal"
+        ],
+        "price": [
+          "0.00",
+          "decimal"
+        ],
+        "dilutedSharesOutstanding": [
+          "9007199254740993",
+          "integer"
+        ],
+        "beta": [
+          "1.2500",
+          "decimal"
+        ]
+      },
+      "reference_price_basis": {
+        "unit": null,
+        "currency": null,
+        "adjustment_basis": null,
+        "observation_date": null
+      }
+    },
+    {
+      "case": "custom_exact_echo",
+      "operation": "custom",
+      "query": {
+        "symbol": "MSFT",
+        "beta": "1.0"
+      },
+      "paired_baseline": "custom_default",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":2030,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2031,\"equityValuePerShare\":1,\"beta\":1.00}]",
+      "expected": "accepted",
+      "beta_confirmation": "exact_observed_echo"
+    },
+    {
+      "case": "custom_near_unequal_echo",
+      "operation": "custom",
+      "query": {
+        "symbol": "MSFT",
+        "beta": "1.00000000000000001"
+      },
+      "paired_baseline": "custom_default",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":2030,\"equityValuePerShare\":1,\"beta\":1.00000000000000001},{\"symbol\":\"MSFT\",\"year\":2031,\"equityValuePerShare\":1,\"beta\":1.00000000000000002}]",
+      "expected": "beta_mismatch"
+    },
+    {
+      "case": "custom_missing_echo",
+      "operation": "custom",
+      "query": {
+        "symbol": "MSFT",
+        "beta": "1.0"
+      },
+      "paired_baseline": "custom_default",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":2030,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2031,\"equityValuePerShare\":1}]",
+      "expected": "beta_confirmation_unavailable"
+    },
+    {
+      "case": "custom_unmatched_year_echo",
+      "operation": "custom",
+      "query": {
+        "symbol": "MSFT",
+        "beta": "1.0"
+      },
+      "paired_baseline": "custom_default",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":2030,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2032,\"equityValuePerShare\":1,\"beta\":1}]",
+      "expected": "beta_confirmation_unavailable_at_freeze"
+    },
+    {
+      "case": "custom_duplicate_year",
+      "operation": "custom",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":2031,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":\"2031\",\"equityValuePerShare\":1,\"beta\":1}]",
+      "expected": "invalid_response"
+    },
+    {
+      "case": "custom_noncanonical_year",
+      "operation": "custom",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":\"02031\",\"equityValuePerShare\":1,\"beta\":1}]",
+      "expected": "invalid_response"
+    },
+    {
+      "case": "custom_null_required",
+      "operation": "custom",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":2031,\"equityValuePerShare\":null,\"beta\":1}]",
+      "expected": "invalid_response"
+    },
+    {
+      "case": "custom_valid_over_bound",
+      "operation": "custom",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":2001,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2002,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2003,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2004,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2005,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2006,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2007,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2008,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2009,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2010,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2011,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2012,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2013,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2014,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2015,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2016,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2017,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2018,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2019,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2020,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2021,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2022,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2023,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2024,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2025,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2026,\"equityValuePerShare\":1,\"beta\":1}]",
+      "expected": "accepted_clipped",
+      "observed_rows": 26,
+      "returned_rows": 25,
+      "source_completeness": "unknown"
+    },
+    {
+      "case": "custom_invalid_beyond_bound",
+      "operation": "custom",
+      "body_utf8": "[{\"symbol\":\"MSFT\",\"year\":2001,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2002,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2003,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2004,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2005,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2006,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2007,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2008,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2009,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2010,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2011,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2012,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2013,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2014,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2015,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2016,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2017,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2018,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2019,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2020,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2021,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2022,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2023,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2024,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"MSFT\",\"year\":2025,\"equityValuePerShare\":1,\"beta\":1},{\"symbol\":\"AAPL\",\"year\":2026,\"equityValuePerShare\":1,\"beta\":1}]",
+      "expected": "invalid_response"
+    }
+  ]
+}

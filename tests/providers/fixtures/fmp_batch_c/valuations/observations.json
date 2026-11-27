@@ -1,0 +1,546 @@
+{
+  "recorded_date_utc": "2026-11-27",
+  "matrix_sha256": "ec74f479360a303693a6443efda65b2953c09b61e6ac286e2e13d6fe9547bb11",
+  "cases": {
+    "direct-dcf": {
+      "receipt": {
+        "id": 1,
+        "name": "direct-dcf",
+        "lane": "direct",
+        "endpoint": "discounted-cash-flow",
+        "started": "2026-11-27T14:33:52.285690+00:00",
+        "received": "2026-11-27T14:33:52.856497+00:00",
+        "http": 200,
+        "outcome": "response",
+        "sha256": "ae2452784a3339b27af9870aeb3752ada446794789d05ca286ba60bcd629c947",
+        "retry_after": null,
+        "query": [
+          [
+            "symbol",
+            "MSFT"
+          ]
+        ]
+      },
+      "source_body_bytes": 116,
+      "source_row_count": 1,
+      "result_envelope": "array",
+      "source_completeness": "unknown",
+      "rows_in_source_order": [
+        {
+          "symbol": "MSFT",
+          "ordinal": 0,
+          "source_row_sha256": "7412c1fcc54d72e779f50433633aa7cde4a0bb05452d808868acbab865be39b2",
+          "valuation_date": "2026-11-27"
+        }
+      ],
+      "source_key_type_counts": {
+        "Stock Price": {
+          "decimal": 1
+        },
+        "date": {
+          "text": 1
+        },
+        "dcf": {
+          "decimal": 1
+        },
+        "symbol": {
+          "text": 1
+        }
+      }
+    },
+    "direct-custom-default": {
+      "receipt": {
+        "id": 2,
+        "name": "direct-custom-default",
+        "lane": "direct",
+        "endpoint": "custom-discounted-cash-flow",
+        "started": "2026-11-27T14:33:55.331210+00:00",
+        "received": "2026-11-27T14:33:56.016594+00:00",
+        "http": 200,
+        "outcome": "response",
+        "sha256": "dfb60e2f7cf40ebf85490fee95d046d93fc6666cc863c723e0b7ca512257be68",
+        "retry_after": null,
+        "query": [
+          [
+            "symbol",
+            "MSFT"
+          ]
+        ]
+      },
+      "source_body_bytes": 14394,
+      "source_row_count": 10,
+      "result_envelope": "array",
+      "source_completeness": "unknown",
+      "rows_in_source_order": [
+        {
+          "symbol": "MSFT",
+          "ordinal": 0,
+          "source_row_sha256": "8c581cfaa7a34bf0de49c7b79f502e39d8366316c4ae3a51bd111f96640987ea",
+          "provider_year": "2031",
+          "beta_token": "1.045"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 1,
+          "source_row_sha256": "e52cbd8aab9eb28ff921099ab5baa0ccac5667d0a5d5a821914ec38338d3ad26",
+          "provider_year": "2030",
+          "beta_token": "1.045"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 2,
+          "source_row_sha256": "dcfa746a107e9478e604cfea7331b6610ff076423451ea69f8c56a3c01d3a96b",
+          "provider_year": "2029",
+          "beta_token": "1.045"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 3,
+          "source_row_sha256": "2df7e00557d32bc7c374a2af10b53e331074a4bc8a64a5c86a76115b7f797b10",
+          "provider_year": "2028",
+          "beta_token": "1.045"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 4,
+          "source_row_sha256": "42ae5228e2b173b0fba0a53009c73da5f4f5caf2aa952ede9904498208797646",
+          "provider_year": "2027",
+          "beta_token": "1.045"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 5,
+          "source_row_sha256": "85ca6defb226df72995a276c6b97e5cadc4d8f6d458888bc0ac05048d3c1e62c",
+          "provider_year": "2026",
+          "beta_token": "1.045"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 6,
+          "source_row_sha256": "d9186855682f9d8c26d8d848c56d3dafca2a89fcefd92a3fa4375552e06875f5",
+          "provider_year": "2025",
+          "beta_token": "1.045"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 7,
+          "source_row_sha256": "9c7aa299c0583572e03803057500e3fb0cfb2b7d6d554db1276cce70ad31ff4d",
+          "provider_year": "2024",
+          "beta_token": "1.045"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 8,
+          "source_row_sha256": "16bb3a8c321d1d49549611c6351731d8e1ef4dee9e662027c290cb200ff5e361",
+          "provider_year": "2023",
+          "beta_token": "1.045"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 9,
+          "source_row_sha256": "0957ffaefbac1f0ddf9e1d2f209438c7cfbaafc65d763e1f809feee1338c034a",
+          "provider_year": "2022",
+          "beta_token": "1.045"
+        }
+      ],
+      "source_key_type_counts": {
+        "afterTaxCostOfDebt": {
+          "decimal": 10
+        },
+        "beta": {
+          "decimal": 10
+        },
+        "capitalExpenditure": {
+          "integer": 10
+        },
+        "capitalExpenditurePercentage": {
+          "decimal": 10
+        },
+        "costOfEquity": {
+          "decimal": 10
+        },
+        "costofDebt": {
+          "decimal": 10
+        },
+        "debtWeighting": {
+          "decimal": 10
+        },
+        "depreciation": {
+          "integer": 10
+        },
+        "depreciationPercentage": {
+          "decimal": 10
+        },
+        "dilutedSharesOutstanding": {
+          "integer": 10
+        },
+        "ebiat": {
+          "integer": 10
+        },
+        "ebit": {
+          "integer": 10
+        },
+        "ebitPercentage": {
+          "decimal": 10
+        },
+        "ebitda": {
+          "integer": 10
+        },
+        "ebitdaPercentage": {
+          "decimal": 10
+        },
+        "enterpriseValue": {
+          "integer": 10
+        },
+        "equityValue": {
+          "integer": 10
+        },
+        "equityValuePerShare": {
+          "decimal": 10
+        },
+        "equityWeighting": {
+          "decimal": 10
+        },
+        "freeCashFlowT1": {
+          "integer": 10
+        },
+        "inventories": {
+          "integer": 10
+        },
+        "inventoriesPercentage": {
+          "decimal": 10
+        },
+        "longTermGrowthRate": {
+          "integer": 10
+        },
+        "marketRiskPremium": {
+          "decimal": 10
+        },
+        "netDebt": {
+          "integer": 10
+        },
+        "payable": {
+          "integer": 10
+        },
+        "payablePercentage": {
+          "decimal": 10
+        },
+        "presentTerminalValue": {
+          "integer": 10
+        },
+        "price": {
+          "decimal": 10
+        },
+        "receivables": {
+          "integer": 10
+        },
+        "receivablesPercentage": {
+          "decimal": 10
+        },
+        "revenue": {
+          "integer": 10
+        },
+        "revenuePercentage": {
+          "decimal": 9,
+          "integer": 1
+        },
+        "riskFreeRate": {
+          "decimal": 10
+        },
+        "sumPvUfcf": {
+          "integer": 10
+        },
+        "symbol": {
+          "text": 10
+        },
+        "taxRate": {
+          "decimal": 10
+        },
+        "taxRateCash": {
+          "integer": 10
+        },
+        "terminalValue": {
+          "integer": 10
+        },
+        "totalCapital": {
+          "integer": 10
+        },
+        "totalCash": {
+          "integer": 10
+        },
+        "totalCashPercentage": {
+          "decimal": 10
+        },
+        "totalDebt": {
+          "integer": 10
+        },
+        "totalEquity": {
+          "integer": 10
+        },
+        "ufcf": {
+          "integer": 10
+        },
+        "wacc": {
+          "decimal": 10
+        },
+        "year": {
+          "text": 10
+        }
+      }
+    },
+    "direct-custom-beta": {
+      "receipt": {
+        "id": 3,
+        "name": "direct-custom-beta",
+        "lane": "direct",
+        "endpoint": "custom-discounted-cash-flow",
+        "started": "2026-11-27T14:34:06.483527+00:00",
+        "received": "2026-11-27T14:34:07.162702+00:00",
+        "http": 200,
+        "outcome": "response",
+        "sha256": "86bcb85e5dcf7625fa723806e46cf539664a8298e2d0ffab6ab110bc2fd79482",
+        "retry_after": null,
+        "query": [
+          [
+            "symbol",
+            "MSFT"
+          ],
+          [
+            "beta",
+            "1.0"
+          ]
+        ]
+      },
+      "source_body_bytes": 14353,
+      "source_row_count": 10,
+      "result_envelope": "array",
+      "source_completeness": "unknown",
+      "rows_in_source_order": [
+        {
+          "symbol": "MSFT",
+          "ordinal": 0,
+          "source_row_sha256": "0c170173113b49c906d768d3de0b13b4e0fd6f3d69d2743abeca8f52304b8da4",
+          "provider_year": "2031",
+          "beta_token": "1"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 1,
+          "source_row_sha256": "0474394d4daa31bcd97934906cf25d9259f9cadcb6b9b5765fd932c1ac42c3f3",
+          "provider_year": "2030",
+          "beta_token": "1"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 2,
+          "source_row_sha256": "8108968738e43b9e439e90611e081de6bb1029a22e336dc7ac22fd8b20b5f908",
+          "provider_year": "2029",
+          "beta_token": "1"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 3,
+          "source_row_sha256": "c699d9e54987d1ac823f8a2dd0c50e5c72aecb96e498281a2b7ffe87dc4ae6e0",
+          "provider_year": "2028",
+          "beta_token": "1"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 4,
+          "source_row_sha256": "c9b5cc9cbd278ad3da37f705e685629af89b4b91884e3f21ec1b505c61aa7451",
+          "provider_year": "2027",
+          "beta_token": "1"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 5,
+          "source_row_sha256": "9030e1d2b7eea059f7e06dde4055fd24e34e7858f5d89bff854f3670ff4b3a7d",
+          "provider_year": "2026",
+          "beta_token": "1"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 6,
+          "source_row_sha256": "65e41e514fc2fc95e2414e858295c8affec7e199f2e5895adf2aab02b3e38557",
+          "provider_year": "2025",
+          "beta_token": "1"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 7,
+          "source_row_sha256": "be59931c1678cd7f13d9808cd0f834ab8f4d4f55da27b2d996e729511f03f106",
+          "provider_year": "2024",
+          "beta_token": "1"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 8,
+          "source_row_sha256": "507ff505e4243a180fe932385c32a547619fc6cc37fbe46b9b803a731fe2775d",
+          "provider_year": "2023",
+          "beta_token": "1"
+        },
+        {
+          "symbol": "MSFT",
+          "ordinal": 9,
+          "source_row_sha256": "71412c263cdd7354f432a94ede8fe0f85b902470d689d56b2a11eaf2b911c657",
+          "provider_year": "2022",
+          "beta_token": "1"
+        }
+      ],
+      "source_key_type_counts": {
+        "afterTaxCostOfDebt": {
+          "decimal": 10
+        },
+        "beta": {
+          "integer": 10
+        },
+        "capitalExpenditure": {
+          "integer": 10
+        },
+        "capitalExpenditurePercentage": {
+          "decimal": 10
+        },
+        "costOfEquity": {
+          "decimal": 10
+        },
+        "costofDebt": {
+          "decimal": 10
+        },
+        "debtWeighting": {
+          "decimal": 10
+        },
+        "depreciation": {
+          "integer": 10
+        },
+        "depreciationPercentage": {
+          "decimal": 10
+        },
+        "dilutedSharesOutstanding": {
+          "integer": 10
+        },
+        "ebiat": {
+          "integer": 10
+        },
+        "ebit": {
+          "integer": 10
+        },
+        "ebitPercentage": {
+          "decimal": 10
+        },
+        "ebitda": {
+          "integer": 10
+        },
+        "ebitdaPercentage": {
+          "decimal": 10
+        },
+        "enterpriseValue": {
+          "integer": 10
+        },
+        "equityValue": {
+          "integer": 10
+        },
+        "equityValuePerShare": {
+          "decimal": 9,
+          "integer": 1
+        },
+        "equityWeighting": {
+          "decimal": 10
+        },
+        "freeCashFlowT1": {
+          "integer": 10
+        },
+        "inventories": {
+          "integer": 10
+        },
+        "inventoriesPercentage": {
+          "decimal": 10
+        },
+        "longTermGrowthRate": {
+          "integer": 10
+        },
+        "marketRiskPremium": {
+          "decimal": 10
+        },
+        "netDebt": {
+          "integer": 10
+        },
+        "payable": {
+          "integer": 10
+        },
+        "payablePercentage": {
+          "decimal": 10
+        },
+        "presentTerminalValue": {
+          "integer": 10
+        },
+        "price": {
+          "decimal": 10
+        },
+        "receivables": {
+          "integer": 10
+        },
+        "receivablesPercentage": {
+          "decimal": 10
+        },
+        "revenue": {
+          "integer": 10
+        },
+        "revenuePercentage": {
+          "decimal": 9,
+          "integer": 1
+        },
+        "riskFreeRate": {
+          "decimal": 10
+        },
+        "sumPvUfcf": {
+          "integer": 10
+        },
+        "symbol": {
+          "text": 10
+        },
+        "taxRate": {
+          "decimal": 10
+        },
+        "taxRateCash": {
+          "integer": 10
+        },
+        "terminalValue": {
+          "integer": 10
+        },
+        "totalCapital": {
+          "integer": 10
+        },
+        "totalCash": {
+          "integer": 10
+        },
+        "totalCashPercentage": {
+          "decimal": 10
+        },
+        "totalDebt": {
+          "integer": 10
+        },
+        "totalEquity": {
+          "integer": 10
+        },
+        "ufcf": {
+          "integer": 10
+        },
+        "wacc": {
+          "decimal": 10
+        },
+        "year": {
+          "text": 10
+        }
+      }
+    }
+  },
+  "beta_review": {
+    "baseline_receipt_id": 2,
+    "override_receipt_id": 3,
+    "requested_token": "1.0",
+    "matched_unique_year_count": 10,
+    "numerically_equal_rows": 10,
+    "status": "exact_observed_echo",
+    "model_effect": "unverified"
+  }
+}
