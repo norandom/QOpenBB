@@ -3,18 +3,19 @@
   "created_at": "2026-10-19T09:18:43.9949215Z",
   "updated_at": "2026-11-27",
   "fmp_expansion_c": {
-    "phase": "design-reviewed",
+    "phase": "design-approved",
     "operations": 5,
     "design": "fmp-expansion-c-design.md",
     "design_review": "fmp-expansion-c-review.md",
     "independent_review": "passed",
     "reviewer_model": "gpt-6.2-astra",
     "design_sha256": "f0be6e26662862849ac3f88d0c8334fe44b2c579a172753989f4b028e2509088",
-    "design_approved": false,
+    "design_approved": true,
     "tasks_generated": false,
     "tasks_approved": false,
     "live_budget_proposed": 30,
-    "live_budget_approved": false
+    "live_budget_approved": false,
+    "design_approval": "Owner approved the independently reviewed Batch C design for task generation in conversation on 2026-11-27."
   },
   "fmp_expansion_b": {
     "phase": "implementation-in-progress",
