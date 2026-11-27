@@ -72,7 +72,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 3.2_
   - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5_
 
-- [ ] 4. Present and persist the native App
+- [x] 4. Present and persist the native App
 - [x] 4.1 (P) Render the earnings rows and paired charts
   - Present every matching row separately with FMP attribution, bounds, market count, clipping, dates and unknowns. Use separate EPS and revenue scales and selectable bar/point views. Keep actual and estimated values distinct.
   - Resolve each mark and keyboard-accessible value to its own exact source token. Show no mark for missing data. Check duplicate dates, missing versus zero, and focus return in both themes. Pass the combined caps for the earnings view.
@@ -95,7 +95,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 2.4, 3.3, 4.1, 4.2_
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 3.4, 4.1, 4.2, 4.3, 4.4, 4.5, 5.1_
 
-- [ ] 4.4 Integrate choices-only storage, template exchange and fresh reopen
+- [x] 4.4 Integrate choices-only storage, template exchange and fresh reopen
   - Use one versioned positive encoder on widget writes, ordinary dashboard save, export, import and hydration. Validate geometry, order, all query choices and both chart enums. Present a reset action for malformed or incompatible choices before any request.
   - Inspect both serialized forms with nested injected values and verify evidence, credentials, links and computed results cannot survive. Reopen in a fresh authorized context, verify restored choices, four new reads and the reopened export menu. Regression-check other widget types.
   - Pass the combined caps across all modified storage, layout, schema, menu and story modules.
