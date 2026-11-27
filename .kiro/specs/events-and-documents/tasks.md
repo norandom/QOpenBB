@@ -80,7 +80,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 3.3_
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 4.4, 5.1_
 
-- [ ] 4.2 (P) Present the independently queried documents
+- [x] 4.2 (P) Present the independently queried documents
   - Preserve filing form, timestamps, string CIK and document/index links; exact transcript timestamp, whitespace and completeness; and news headline, time, site, publisher and excerpt status. Show issuer, effective bounds, freshness and FMP attribution at inspection.
   - Exercise keyboard detail/return, full-page uncertainty, literal markup, absent and unsafe links and typed upstream rejection. Verify that only explicit activation opens validated HTTP(S) and that no embedded or prefetched request occurs. Pass the combined caps for both document view modules.
   - _Boundary: Workspace Documents.tsx, CompanyDocuments.tsx and tests/integration/eventsDocumentsDetails.test.tsx_
