@@ -48,7 +48,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 2.1, 2.2_
   - _Requirements: 1.1, 5.2_
 
-- [ ] 3. Bind the evidence to the active selection
+- [x] 3. Bind the evidence to the active selection
 - [x] 3.1 Validate financial receipts and project issuer earnings
   - Verify dataset, provider, endpoint, normalized tuple, timestamp, count and bounds before promoting a success. Keep 200 empty metadata. Project each exact-symbol match after the source-order cap with its original ordinal, report date, update, units and four source fields.
   - Assert distinct states for empty market, no issuer match and rows without figures. Test clipping with a match, a full slice with unknown coverage, duplicate dates, zero, null and exact numeric tokens. Verify all three document response kinds against issuer, content and applicable period, including duplicate or blank transcripts.
@@ -65,7 +65,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 3.1_
   - _Requirements: 1.2, 1.3, 1.4, 4.1, 4.4, 4.5_
 
-- [ ] 3.3 Derive the conclusion and cite its evidence
+- [x] 3.3 Derive the conclusion and cite its evidence
   - Calculate usable inputs from the four current slots. Cover every count, including zero with pending versus zero fully resolved. A metadata item can support filing/news availability while a transcript needs valid exact-period text. A matching calendar row needs a supplied figure.
   - Trace each amount and availability claim to a current field or result. Retain clipping, missing fields, content qualifications, empty conditions and safe failure reasons. Pass the combined caps for the conclusion module.
   - _Boundary: Workspace conclusion.ts and conclusion tests_
