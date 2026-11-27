@@ -131,7 +131,8 @@ def publish_summary(summary, root, guard_smoke):
         summary["check"] = "invalid private evidence"
     print(json.dumps(summary), flush=True)
     incomplete_live = summary["mode"] == "live" and not all(summary.get("final_inputs", {}).get(slot) for slot in ("calendar", "filings", "transcript", "news"))
-    return int(bool(summary.get("browser_exit") or summary.get("check") or summary.get("blocked") or incomplete_live))
+    blocked_live = summary["mode"] == "live" and bool(summary.get("blocked"))
+    return int(bool(summary.get("browser_exit") or summary.get("check") or blocked_live or incomplete_live))
 
 
 def main():

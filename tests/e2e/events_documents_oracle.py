@@ -187,6 +187,23 @@ def envelope(body, slot, dataset, upstream, query):
     return rows, meta
 
 
+CONTROLLED_GROUPS = {
+    "empty-calendar": ["calendar"], "restore-calendar": ["calendar"],
+    "timeout-news": ["news"], "retry-news": ["news"], "no-issuer": ["filings", "transcript", "news"],
+    **{f"{theme}-{stage}": ["filings", "transcript", "news"]
+       for theme in ("light", "dark") for stage in ("away", "back")},
+}
+CONTROLLED_SCENARIOS = {
+    "empty-transcript", "partial-conclusion", "denied-input", "mismatched-transcript",
+    "clipped-calendar", "duplicate-report-dates", "zero-and-missing-marks",
+    "literal-and-safe-document-details", "save-fresh-authenticated-reopen-safe-export",
+    "empty-market-calendar", "disappearing-calendar-invoker", "invalid-bounds-no-request",
+    "typed-timeout-same-query-retry", "stable-neighbors",
+    "light-keyboard-focus-and-supersession", "dark-keyboard-focus-and-supersession",
+    "empty-issuer-filter", "pending-and-insufficient-conclusions",
+}
+
+
 def report(directory):
     plan = decode(Path(__file__).with_name("events-documents-plan.json").read_bytes())
     run = decode((directory / "observations.json").read_bytes())
@@ -195,6 +212,19 @@ def report(directory):
     live = run["mode"] == "live"
     upstream_schedule = schedule(plan)
     expected = Counter((stage, slot) for stage, slots in plan["groups"].items() for slot in slots)
+    if not live:
+        expected.update((stage, slot) for stage, slots in CONTROLLED_GROUPS.items() for slot in slots)
+        check(set(run["scenarios"]) == CONTROLLED_SCENARIOS, "controlled scenario coverage")
+        check(not run["network"]["fixtureExternal"] and not run["network"]["errors"], "controlled browser network")
+        cancelled = {f"{stage}/{slot}": 1 for stage, slots in CONTROLLED_GROUPS.items()
+                     if stage.endswith("-away") for slot in slots}
+        check(run["network"]["abortedData"] == 6 and run["network"]["abortedSlots"] == cancelled,
+              "controlled supersession cancellations")
+        check(run["network"]["httpErrors"] == {"listing/news/403": 1, "timeout-news/news/400": 1},
+              "controlled HTTP failures")
+        console = run["network"]["consoleErrors"]
+        check(set(console) <= {"expected-fixture-http-403", "expected-fixture-http-400", "blocked-cross-origin-resource"},
+              "controlled browser console")
     check(not run["issues"] and run["browserRequests"] == len(requests), "browser diagnostic counts")
     check(Counter((entry["stage"], entry["slot"]) for entry in requests) == expected, "browser request schedule")
     check(ledger["denials"] == 0, "guard denial")
@@ -206,6 +236,9 @@ def report(directory):
     blocked = Counter()
     empty = Counter()
     documents = Counter()
+    if not live:
+        retry = [entry["query"] for entry in requests if entry["stage"] in ("timeout-news", "retry-news")]
+        check(len(retry) == 2 and retry[0] == retry[1], "controlled same-query retry")
     for entry in requests:
         number = entry["index"]
         slot, stage, status = (entry[k] for k in ("slot", "stage", "status"))
@@ -221,13 +254,21 @@ def report(directory):
                 check(hashlib.sha256(contents).hexdigest() == send["sha256"], "provider capture hash")
                 if send["status"] == 200:
                     raw = decode(contents)
+        if not live and stage.endswith("-away"):
+            check(entry["done"] and entry.get("documentCount") is None, "superseded display exclusion")
+            if stage == "dark-away" and slot == "news":
+                check(status == 400 and body.get("code") == "timeout", "superseded failure fixture")
+            else:
+                check(status == 200, "superseded success fixture")
+                envelope(body, slot, *plan["slots"][slot], entry["query"])
+            continue
         if status != 200:
             code = body.get("code")
             if status == 204:
                 check(not live or raw == [], "upstream empty response")
                 empty[slot] += 1
             else:
-                blocked[code if code in SAFE_CODES else "unavailable"] += 1
+                blocked[code if code in SAFE_CODES else "permission_denied" if not live and status == 403 else "unavailable"] += 1
             continue
         rows, meta = envelope(body, slot, *plan["slots"][slot], entry["query"])
         if raw is None:
@@ -237,6 +278,13 @@ def report(directory):
             check(bool(meta["bounds"].get("truncated")) == clipped, "source clipping")
         token_rows = json.loads(wire_bytes, parse_int=str, parse_float=str)["results"] if slot == "calendar" else []
         installed[number] = (rows, raw, meta, token_rows)
+        if not live and stage == "listing" and slot == "transcript":
+            check(entry["documentCount"] == 0 and rows[0]["quarter"] != f"Q{entry['query']['quarter']}",
+                  "mismatched transcript exclusion")
+            blocked["invalid_evidence"] += 1
+            continue
+        if not live and slot == "calendar" and stage == "calendar":
+            check(meta["bounds"]["truncated"] is True and len(rows) == 250, "controlled clipped market")
         if slot != "calendar":
             check(entry["documentCount"] == len(rows), "display document count")
             documents[slot] += compare_documents(slot, raw, rows, entry["query"]) if live else len(rows)
@@ -265,7 +313,12 @@ def report(directory):
         if next(entry["stage"] for entry in requests if entry["index"] == receipt) == "reopen":
             final_coverage = counts
     final_inputs["calendar"] = any(final_coverage.values())
-    return {"mode": run["mode"], "browser": run["browser"], "browser_requests": len(requests),
+    controlled = {}
+    if not live:
+        check(blocked == {"invalid_evidence": 1, "permission_denied": 1, "timeout": 1}, "controlled failure counts")
+        check(empty == {"calendar": 1, "filings": 1, "transcript": 2, "news": 1}, "controlled empty counts")
+        controlled = {"controlled_scenarios": run["scenarios"], "controlled_network": run["network"]}
+    return {**controlled, "mode": run["mode"], "browser": run["browser"], "browser_requests": len(requests),
             "provider_sends": ledger["count"], "provider_statuses": dict(Counter(
                 str(entry["status"] or "transport_unobserved") for entry in sends.values())),
             "provider_schedule": [{"stage": entry["stage"], "slot": entry["slot"]} for entry in sends.values()],

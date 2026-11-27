@@ -1,0 +1,124 @@
+{
+  "blocked": {
+    "invalid_evidence": 1,
+    "permission_denied": 1,
+    "timeout": 1
+  },
+  "browser": "156.0.8078.4",
+  "browser_exit": 0,
+  "browser_requests": 34,
+  "candidate": {
+    "images": {
+      "data-api": "sha256:c5cbb466ec28790c38cfac02dab3c9bc7b8f51740f27874b91bcf73eb5ceb524",
+      "workspace": "sha256:25fcec114dcd25a6cbb0edacadbfd3b29ff625557efd159ed5aeb73c763099f4"
+    },
+    "sources": {
+      "data_api": "5583c958d35282cb59037aae8218cec31d540697",
+      "workspace": "4a079a0384df7151fde8ce3b90d2af6e1f50a1b9"
+    }
+  },
+  "chart_marks": {
+    "eps_actual": 13,
+    "eps_consensus": 6,
+    "revenue_actual": 12,
+    "revenue_consensus": 6
+  },
+  "cleanup": {
+    "phase": "stopped",
+    "state_removed": false
+  },
+  "controlled_network": {
+    "abortedData": 6,
+    "abortedSlots": {
+      "dark-away/filings": 1,
+      "dark-away/news": 1,
+      "dark-away/transcript": 1,
+      "light-away/filings": 1,
+      "light-away/news": 1,
+      "light-away/transcript": 1
+    },
+    "consoleErrors": {
+      "expected-fixture-http-400": 1,
+      "expected-fixture-http-403": 1
+    },
+    "errors": {},
+    "externalBlocks": 0,
+    "fixtureExternal": 0,
+    "httpErrors": {
+      "listing/news/403": 1,
+      "timeout-news/news/400": 1
+    }
+  },
+  "controlled_scenarios": [
+    "empty-transcript",
+    "partial-conclusion",
+    "denied-input",
+    "mismatched-transcript",
+    "clipped-calendar",
+    "duplicate-report-dates",
+    "zero-and-missing-marks",
+    "literal-and-safe-document-details",
+    "save-fresh-authenticated-reopen-safe-export",
+    "empty-market-calendar",
+    "disappearing-calendar-invoker",
+    "invalid-bounds-no-request",
+    "typed-timeout-same-query-retry",
+    "stable-neighbors",
+    "light-keyboard-focus-and-supersession",
+    "dark-keyboard-focus-and-supersession",
+    "empty-issuer-filter",
+    "pending-and-insufficient-conclusions"
+  ],
+  "coverage": {
+    "eps_actual": 13,
+    "eps_consensus": 6,
+    "revenue_actual": 12,
+    "revenue_consensus": 6
+  },
+  "denials": 0,
+  "document_rows": {
+    "filings": 12,
+    "news": 12,
+    "transcript": 4
+  },
+  "empty": {
+    "calendar": 1,
+    "filings": 1,
+    "news": 1,
+    "transcript": 2
+  },
+  "final_calendar_coverage": {
+    "eps_actual": 2,
+    "eps_consensus": 1,
+    "revenue_actual": 2,
+    "revenue_consensus": 1
+  },
+  "final_inputs": {
+    "calendar": true,
+    "filings": true,
+    "news": true,
+    "transcript": true
+  },
+  "focused_pytest": {
+    "exit": 0,
+    "passed": 11
+  },
+  "harness_sha256": {
+    "events-documents-controlled.mts": "77000d8bea24a7d249d7df7598f458c890f11f08c38d54ee6837b712534945fb",
+    "events-documents-diagnostics.mts": "7eed4734b56696830f9cfc5d595cbe87504a45e7ee85affff1fe6cc4fd683c4a",
+    "events-documents-plan.json": "4fb70d9c2a5b4c55da2d4e85066de8313c3ea82166786119b46c9dee440e5a00",
+    "events-documents-workspace.spec.mts": "49f648d49cc381244a48acfdc2f38a9c0ed9669041447c35792d007d3dba049d",
+    "events_documents_oracle.py": "3be16eca14cb5bf79cef2541678d35de58b16f3a511347392c2dcf3d1b8f012b",
+    "run_events_documents.py": "1e7e62a680956a66acf0d8d6886fb13727b3dcab60a8ab06402200ee6393310c"
+  },
+  "launcher_exit": 0,
+  "mode": "controlled",
+  "playwright": {
+    "headless": true,
+    "passed": 1,
+    "workers": 1
+  },
+  "provider_schedule": [],
+  "provider_sends": 0,
+  "provider_statuses": {}
+}

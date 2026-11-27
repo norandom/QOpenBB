@@ -119,7 +119,7 @@ The controller freezes shared interfaces, fixtures and ownership before fan-out,
   - _Depends: 5.1_
   - _Requirements: 2.2, 2.3, 2.6, 5.3, 5.4_
 
-- [ ] 5.3 Run the controlled packaged journey
+- [x] 5.3 Run the controlled packaged journey
   - Drive the candidate from catalog through per-input changes, recovery, save, fresh authenticated reopen and safe export. Exercise empty, partial, denied, invalid, superseded and clipped evidence, duplicate dates, zero/null, same-query retry and focus navigation in both themes. Include disappearing invoking rows.
   - Require zero live provider sends. Inspect displayed facts, network effects, saved content and isolated browser diagnostics; record controlled results independently of the live ledger. Tests and sanitized evidence only, excluded from production caps.
   - _Boundary: Controlled story browser scenarios and isolated candidate evidence_

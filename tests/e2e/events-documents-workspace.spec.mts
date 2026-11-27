@@ -5,33 +5,17 @@ import type { BrowserContext, Locator, Page } from '../../verification/node_modu
 import { leakedPaths, licensedStrings, renameAndSave } from './fmp-batch-b-helpers.mts';
 import { arm, connect, downloadTemplate, edit, fields, finalChoices, login, plan, query, restoredChoices } from './events-documents-browser.mts';
 import type { Slot } from './events-documents-browser.mts';
+import { controlledDiagnostics } from './events-documents-diagnostics.mts';
 import { observeChartCanvas, readCalendarChart } from './events-documents-marks.mts';
+
+import { apply, conclusion, controlledGroups, controlledQuery, earnings, fixtureHost,
+  keyboardConclusion, news, outcome, retrievalTime, setTheme, synthetic } from './events-documents-controlled.mts';
 
 const documentTitles = { filings: 'SEC filings', transcript: 'Earnings-call transcript', news: 'Company news' };
 
-function synthetic(slot: Slot, parameters: Record<string, string | number>) {
-  const report_date = String(parameters.end_date);
-  const results = slot === 'calendar' ? [
-    { symbol: 'AAPL', report_date, eps_actual: 8 },
-    { symbol: 'MSFT', report_date, eps_actual: 0, eps_consensus: null, revenue_actual: '__EXACT_INTEGER__' },
-    { symbol: 'MSFT', report_date, eps_actual: 2.75, eps_consensus: 2.125, revenue_actual: 59, revenue_consensus: 55 },
-  ] : [];
-  const [dataset, endpoint] = plan.slots[slot];
-  const limit = slot === 'calendar' ? 250 : parameters.limit ?? 1;
-  return JSON.stringify({ results, extra: { results_metadata: { __qopenbb_financial__: {
-    schema_version: 1, provider: 'fmp', dataset, source: { endpoint }, effective_query: parameters,
-    retrieved_at: '2026-11-27T10:00:00Z', bounds: { requested_limit: limit, effective_limit: limit,
-      returned_count: results.length, truncated: null, completeness: 'unknown' },
-    fields: slot === 'calendar' ? {
-      eps_actual: { definition: 'Actual EPS', unit: 'currency_per_share' },
-      revenue_actual: { definition: 'Actual revenue', unit: 'currency', currency: 'JPY', scale: 1000 },
-    } : {},
-  } } } }).replace('"__EXACT_INTEGER__"', '9007199254740993');
-}
-
 type Acquisition = {
   index: number; stage: string; slot: Slot; query: Record<string, string | number>;
-  status?: number; receipt?: number; documentCount?: number; rows?: any[]; done?: boolean;
+  status?: number; receipt?: number; documentCount?: number; rows?: any[]; done?: boolean; cancelled?: boolean;
 };
 
 async function calendarProof(story: Locator, acquisition: Acquisition, symbol: string) {
@@ -97,7 +81,9 @@ async function availableDocument(story: Locator, acquisition: Acquisition) {
   const slot = acquisition.slot as keyof typeof documentTitles;
   const section = story.getByRole('region', { name: documentTitles[slot] + ' · FMP', exact: true });
   const buttons = section.getByRole('list', { name: 'Company documents' }).getByRole('button');
-  const rows = acquisition.rows ?? [];
+  const controlled = process.env.EVENTS_VERIFICATION_MODE === 'controlled';
+  const invalid = controlled && acquisition.stage === 'listing' && slot === 'transcript';
+  const rows = invalid ? [] : acquisition.rows ?? [];
   await expect(buttons).toHaveCount(rows.length);
   acquisition.documentCount = await buttons.count();
   if (!rows.length) return;
@@ -127,12 +113,34 @@ async function availableDocument(story: Locator, acquisition: Acquisition) {
     const body = slot === 'news' ? row.excerpt : slot === 'transcript' ? row.content : null;
     if (body?.trim() && await detail.getByTestId('document-text').textContent() !== body)
       throw new Error('Document text mismatch: ' + slot);
+    if (controlled) {
+      const { year, quarter, page, limit, start_date, end_date } = acquisition.query;
+      const scope = { Freshness: 'Current result', 'Retrieval time': retrievalTime,
+        'Source query': '/data/api/v1/' + plan.slots[slot][0] };
+      Object.assign(scope, slot === 'transcript' ? { 'Selected period': `Q${quarter} ${year}` } : {
+        Pagination: `Page ${page}, limit ${limit}`,
+        'Date bounds': start_date ? `${start_date} through ${end_date} (inclusive)` : 'No date filter',
+      });
+      for (const [label, expectedValue] of Object.entries(scope))
+        await expect.poll(() => value(detail, label)).toBe(expectedValue);
+      const content = slot === 'transcript' ? 'Completeness unknown' : body ?
+        'Partial excerpt; full article is not supplied inline.' : 'Metadata only; document text is not supplied inline.';
+      await expect(detail.getByText(content, { exact: true })).toBeVisible();
+      if (body) await expect(detail.getByTestId('document-text')).toHaveCSS('white-space', 'pre-wrap');
+      else await expect(detail.getByTestId('document-text')).toHaveCount(0);
+    }
     const links = slot === 'filings' ? { 'Report document': row.report_url, 'Filing index': row.filing_url }
       : slot === 'news' ? { Article: row.url } : {};
     for (const [title, href] of Object.entries(links)) {
       const link = detail.getByRole('link', { name: title, exact: true });
-      if (!href) await expect(link).toHaveCount(0);
-      else if (await link.getAttribute('href') !== href) throw new Error('Document link mismatch: ' + slot);
+      if (!href || controlled && index === 1) await expect(link).toHaveCount(0);
+      else {
+        await expect(link).toHaveAttribute('href', href);
+        if (controlled) {
+          await expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+          await expect(link).toHaveAttribute('target', '_blank');
+        }
+      }
     }
     const headline = slot === 'news' ? `${row.symbol} · ${row.title} · ${row.date}` : null;
     if (headline && await detail.getByRole('heading', { level: 3 }).textContent() !== headline)
@@ -144,7 +152,7 @@ async function availableDocument(story: Locator, acquisition: Acquisition) {
   }
 }
 
-test('Events and Documents acquires the frozen listing, edits and fresh reopen', async ({ browser }, info) => {
+test('Events and Documents acquires the frozen listing, edits and fresh reopen', async ({ browser }) => {
   const mode = process.env.EVENTS_VERIFICATION_MODE;
   if (mode !== 'controlled' && mode !== 'live') throw new Error('Explicit controlled or live mode required');
   const destination = process.env.WORKSPACE_EVIDENCE_ROOT!;
@@ -158,7 +166,16 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
   const contexts: BrowserContext[] = [];
   let browserRequests = 0;
   let stage = 'disarmed';
-  async function advance(next: string) { await arm(next); stage = next; }
+  const groups = mode === 'controlled' ? { ...plan.groups, ...controlledGroups } : plan.groups;
+  const scenarios: string[] = [];
+  const release = new Map<string, () => void>();
+  const held = new Map<string, Promise<void>>();
+  const diagnostics = mode === 'controlled' ? controlledDiagnostics(origin, fixtureHost) : null;
+  const network = diagnostics?.result;
+  async function advance(next: string) {
+    if (!Object.hasOwn(controlledGroups, next)) await arm(next);
+    stage = next;
+  }
 
   async function contextPage() {
     const context = await browser.newContext({ serviceWorkers: 'block', viewport: { width: 1600, height: 1000 } });
@@ -168,13 +185,18 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     const cdp = await context.newCDPSession(page);
     await cdp.send('Runtime.enable');
     cdp.on('Runtime.exceptionThrown', () => issues.push('uncaught-browser-exception'));
+    diagnostics?.observe(page);
     await context.route('**/*', async route => {
       const target = new URL(route.request().url());
-      if (target.origin !== origin) return route.abort();
+      if (target.origin !== origin) {
+        diagnostics?.blockExternal(target);
+        return route.abort();
+      }
       if (!target.pathname.startsWith('/data/api/v1/')) return route.continue();
       browserRequests++;
       const slot = (Object.keys(plan.slots) as Slot[]).find(key => target.pathname === '/data/api/v1/' + plan.slots[key][0]);
-      const expected = slot && plan.groups[stage]?.includes(slot) && query(stage, slot);
+      const expected = slot && groups[stage]?.includes(slot) &&
+        (Object.hasOwn(controlledGroups, stage) ? controlledQuery(stage, slot) : query(stage, slot));
       const entries = [...target.searchParams].sort();
       const planned = expected && Object.entries({ provider: 'fmp', ...expected }).map(([key, value]) => [key, String(value)]).sort();
       if (!slot || !expected || route.request().method() !== 'GET' || JSON.stringify(entries) !== JSON.stringify(planned)
@@ -185,10 +207,10 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       const entry: Acquisition = { index: requests.length + 1, stage, slot, query: expected };
       requests.push(entry);
       try {
-        const controlled = mode === 'controlled' ? synthetic(slot, expected) : null;
+        const controlled = mode === 'controlled' ? synthetic(slot, expected, entry.stage) : null;
         const response = controlled === null ? await route.fetch({ maxRedirects: 0, maxRetries: 0, timeout: 45000 }) : null;
-        const body = response ? await response.body() : Buffer.from(controlled!);
-        entry.status = response?.status() ?? 200;
+        const body = response ? await response.body() : Buffer.from(controlled!.body);
+        entry.status = response?.status() ?? controlled!.status;
         const receipt = response?.headers()['x-qopenbb-events-receipt'];
         if (mode === 'live' && !/^\d+$/.test(receipt ?? '')) issues.push('missing-provider-correlation');
         if (receipt) entry.receipt = Number(receipt);
@@ -198,9 +220,12 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
           { symbol: row.symbol, hasFigure: Object.keys(fields).some(field => row[field] != null) } : row);
         const headers = response?.headers() ?? { 'content-type': 'application/json' };
         for (const header of ['content-encoding', 'content-length', 'transfer-encoding']) delete headers[header];
+        diagnostics?.register(route.request(), entry, entry.status);
+        await held.get(entry.stage);
         await route.fulfill({ status: entry.status, headers, body });
       } catch {
-        issues.push('browser-acquisition-failed');
+        if (mode === 'controlled' && entry.stage.endsWith('-away')) entry.cancelled = true;
+        else issues.push('browser-acquisition-failed');
         await route.abort().catch(() => undefined);
       } finally { entry.done = true; }
     });
@@ -211,7 +236,7 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
   const active = new Map<Slot, Acquisition>();
   async function settled(story: Locator, symbol: string) {
     const current = stage;
-    await expect.poll(() => requests.filter(item => item.stage === current && item.done).length).toBe(plan.groups[current].length);
+    await expect.poll(() => requests.filter(item => item.stage === current && item.done).length).toBe(groups[current].length);
     await expect(story.getByText('Loading FMP earnings calendar.', { exact: true })).toHaveCount(0);
     await expect(story.getByText('Retrieving FMP evidence.', { exact: true })).toHaveCount(0);
     for (const entry of requests.filter(item => item.stage === current)) {
@@ -219,17 +244,115 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
       if (entry.slot === 'calendar') activeCalendar = entry;
       else await availableDocument(story, entry);
     }
-    if (current === 'launch' || current === 'listing' || current === 'calendar' || current === 'reopen') {
+    if (['launch', 'listing', 'calendar', 'reopen', 'restore-calendar'].includes(current)) {
       const displayed = await calendarProof(story, activeCalendar!, symbol);
       calendar.push(displayed);
       if (mode === 'controlled' && symbol === 'MSFT' &&
           !displayed.rows.some(row => JSON.stringify(row).includes('9007199254740993'))) throw new Error('Exact integer proof missing');
     }
     const usable = [...active.values()].filter(entry => entry.slot === 'calendar'
-      ? entry.rows?.some(row => row.symbol === symbol && row.hasFigure) : entry.rows?.length).length;
+      ? entry.rows?.some(row => row.symbol === symbol && row.hasFigure) : entry.documentCount).length;
     await expect(story.getByRole('region', { name: 'Conclusion', exact: true }).getByRole('status'))
       .toContainText(`${usable} of 4 FMP inputs have usable evidence.`);
     await advance('disarmed');
+  }
+
+  async function controlledRecovery(page: Page, story: Locator) {
+    const section = earnings(story);
+    const invoker = section.getByRole('button', { name: /^Actual EPS 0 .*inspect source$/ });
+    await invoker.press('Enter');
+    const detail = section.getByRole('region', { name: /^Actual EPS source/ });
+    await expect(detail).toBeFocused();
+    await advance('empty-calendar');
+    await apply(story, 'calendar', 'Start date', '2025-07-29', true);
+    await settled(story, 'MSFT');
+    await expect(detail).toHaveCount(0);
+    await expect(section.getByRole('heading', { name: 'FMP earnings calendar' })).toBeFocused();
+    await expect(section.getByText('Empty market calendar for this window.', { exact: true })).toBeVisible();
+    await expect(section.getByRole('article')).toHaveCount(0);
+    await outcome(story, 'Partial evidence', 3);
+    scenarios.push('empty-market-calendar', 'disappearing-calendar-invoker');
+
+    await advance('restore-calendar');
+    await apply(story, 'calendar', 'Start date', '2025-07-30');
+    await settled(story, 'MSFT');
+    const stable = conclusion(story).getByRole('heading', { name: /^(Earnings calendar|SEC filings|Earnings-call transcript) · FMP$/ })
+      .locator('xpath=..');
+    const untouched = await stable.allTextContents();
+    const invalid = await apply(story, 'news', 'Limit', '51');
+    await expect(invalid).toHaveAttribute('aria-invalid', 'true');
+    expect(await stable.allTextContents()).toEqual(untouched);
+    await invalid.fill('10');
+    scenarios.push('invalid-bounds-no-request');
+
+    await advance('timeout-news');
+    await apply(story, 'news', 'Page', '1');
+    await settled(story, 'MSFT');
+    await expect(news(story).getByRole('alert')).toHaveText('FMP request timeout. HTTP 400.');
+    await outcome(story, 'Partial evidence', 3);
+    expect(await stable.allTextContents()).toEqual(untouched);
+    await advance('retry-news');
+    await news(story).getByRole('button', { name: 'Retry Company news' }).press('Enter');
+    await settled(story, 'MSFT');
+    await expect(news(story).getByText(/Synthetic article retry-news/)).toBeVisible();
+    await outcome(story, 'Evidence available', 4);
+    expect(await stable.allTextContents()).toEqual(untouched);
+    scenarios.push('typed-timeout-same-query-retry', 'stable-neighbors');
+
+    for (const theme of ['light', 'dark'] as const) {
+      await setTheme(page, theme);
+      await supersede(story, theme);
+      calendar.push(await calendarProof(story, activeCalendar, 'MSFT'));
+      await keyboardConclusion(story);
+      scenarios.push(theme + '-keyboard-focus-and-supersession');
+    }
+
+    held.set('no-issuer', new Promise<void>(resolve => release.set('no-issuer', resolve)));
+    await advance('no-issuer');
+    await story.getByLabel('Custom listing symbol').fill('NONE');
+    await story.getByRole('button', { name: 'Apply symbol', exact: true }).press('Enter');
+    await expect.poll(() => requests.filter(item => item.stage === 'no-issuer').length).toBe(3);
+    await expect(section.getByText('No returned market rows match NONE.', { exact: true })).toBeVisible();
+    await expect(section.getByText('Wider market coverage unknown', { exact: true })).toBeVisible();
+    await outcome(story, 'Pending', 0);
+    release.get('no-issuer')!();
+    await settled(story, 'NONE');
+    await outcome(story, 'Insufficient evidence', 0);
+    scenarios.push('empty-issuer-filter', 'pending-and-insufficient-conclusions');
+
+  }
+
+  async function supersede(story: Locator, theme: 'light' | 'dark') {
+    const subsection = news(story);
+    const invoker = subsection.getByRole('list', { name: 'Company documents' }).getByRole('button').first();
+    const detail = subsection.getByRole('region', { name: 'Document detail' });
+    await invoker.press('Enter');
+    await expect(detail).toBeFocused();
+    await detail.press('Escape');
+    await expect(invoker).toBeFocused();
+    await invoker.press('Enter');
+    await expect(detail).toBeFocused();
+
+    const away = theme + '-away';
+    held.set(away, new Promise<void>(resolve => release.set(away, resolve)));
+    await advance(away);
+    await story.getByRole('button', { name: 'Apple (AAPL)', exact: true }).dispatchEvent('click');
+    await expect.poll(() => requests.filter(item => item.stage === away).length).toBe(3);
+    await expect(subsection.getByRole('heading', { name: 'Company news · FMP' })).toBeFocused();
+    await expect(detail).toHaveCount(0);
+    await expect(subsection.getByRole('list', { name: 'Company documents' })).toHaveCount(0);
+    await expect(subsection.getByText('Retrieving FMP evidence.', { exact: true })).toBeVisible();
+    await outcome(story, 'Partial evidence', 1);
+    await advance(theme + '-back');
+    await story.getByRole('button', { name: 'Microsoft (MSFT)', exact: true }).press('Enter');
+    await settled(story, 'MSFT');
+    await outcome(story, 'Evidence available', 4);
+    release.get(away)!();
+    await expect.poll(() => requests.filter(item => item.stage === away && item.done).length).toBe(3);
+    await expect(subsection.getByText(new RegExp('Synthetic article ' + theme + '-back'))).toBeVisible();
+    await expect(subsection.getByText(new RegExp('Synthetic article ' + away))).toHaveCount(0);
+    await expect(subsection.getByRole('alert')).toHaveCount(0);
+    await outcome(story, 'Evidence available', 4);
   }
 
   try {
@@ -244,14 +367,33 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     await expect(story.getByRole('heading', { name: /What earnings figures does FMP report/ })).toBeVisible();
     await expect(story.getByRole('button', { name: 'Apple (AAPL)', exact: true })).toHaveAttribute('aria-pressed', 'true');
     await settled(story, 'AAPL');
+    if (mode === 'controlled') {
+      await expect(story.getByText('Transcript for Q1 2025 is unavailable.', { exact: true })).toBeVisible();
+      await outcome(story, 'Partial evidence', 3);
+      scenarios.push('empty-transcript', 'partial-conclusion');
+    }
 
     await advance('listing');
     await story.getByRole('button', { name: 'Microsoft (MSFT)', exact: true }).press('Enter');
     await settled(story, 'MSFT');
+    if (mode === 'controlled') {
+      await expect(story.getByText('FMP evidence failed validation for this query. HTTP 200.', { exact: true })).toBeVisible();
+      await expect(news(story).getByRole('alert')).toHaveText('Workspace access to this source or session is unavailable. HTTP 403.');
+      await expect(news(story).getByRole('button', { name: 'Retry Company news' })).toHaveCount(0);
+      await outcome(story, 'Partial evidence', 2);
+      scenarios.push('denied-input', 'mismatched-transcript');
+    }
     for (const slot of Object.keys(plan.edits) as Slot[]) {
       await advance(slot);
       await edit(story, slot);
       await settled(story, 'MSFT');
+    }
+    if (mode === 'controlled') {
+      await expect(earnings(story).getByText('Clipping observed', { exact: true })).toBeVisible();
+      await expect(earnings(story).getByText('250 rows', { exact: true })).toBeVisible();
+      await expect(earnings(story).getByRole('article')).toHaveCount(2);
+      await outcome(story, 'Evidence available', 4);
+      scenarios.push('clipped-calendar', 'duplicate-report-dates', 'zero-and-missing-marks', 'literal-and-safe-document-details');
     }
     await story.getByLabel('Custom listing symbol').fill('!!');
     await story.getByRole('button', { name: 'Apply symbol', exact: true }).click();
@@ -284,16 +426,27 @@ test('Events and Documents acquires the frozen listing, edits and fresh reopen',
     }
     await reopened.locator(`#tab-${id}`).click({ button: 'right' });
     await expect(reopened.getByRole('menuitem', { name: 'Export apps.json', exact: true })).toBeVisible();
+    if (mode === 'controlled') {
+      await reopened.keyboard.press('Escape');
+      scenarios.push('save-fresh-authenticated-reopen-safe-export');
+      await controlledRecovery(reopened, fresh);
+      await expect.poll(() => network!.abortedData).toBe(6);
+      expect(network!.fixtureExternal).toBe(0);
+      expect(network!.httpErrors).toEqual({ 'listing/news/403': 1, 'timeout-news/news/400': 1 });
+      expect(network!.errors).toEqual({});
+      await expect(fresh.getByText('private_fixture_error', { exact: false })).toHaveCount(0);
+    }
     expect(issues).toEqual([]);
   } catch (error) {
     // Browser reports stay private. Publish only the fixed task outcome through the launcher.
     writeFileSync(join(destination, 'browser-failure.txt'), String(error), { mode: 0o600 });
     throw new Error('Events browser journey failed; inspect the private diagnostics');
   } finally {
+    for (const unblock of release.values()) unblock();
     await advance('disarmed').catch(() => issues.push('guard-disarm-failed'));
     await Promise.allSettled(contexts.map(context => context.close()));
     writeFileSync(join(destination, 'observations.json'), JSON.stringify({
-      mode, browser: browser.version(), browserRequests, calendar, issues,
+      mode, browser: browser.version(), browserRequests, calendar, issues, scenarios, network,
       requests: requests.map(({ rows: _rows, ...request }) => request),
     }), { mode: 0o600, flag: 'wx' });
   }
