@@ -98,7 +98,7 @@ def defaults(dataset: dict, policy: dict) -> dict:
 def selections(inventory: dict, mapping: list, widgets: dict) -> dict:
     datasets = {item["id"]: item for item in inventory["datasets"]}
     sources = {item["dataset"]: item for item in mapping}
-    choices, symbols = {}, set()
+    choices, symbols = {}, {}
     for slot, (dataset_id, model) in SOURCES.items():
         policy = validated_policy(slot, dataset_id, model, sources[dataset_id], widgets)
         values = defaults(datasets[dataset_id], policy)
@@ -106,11 +106,10 @@ def selections(inventory: dict, mapping: list, widgets: dict) -> dict:
             symbol = values.pop("symbol")
             if not isinstance(symbol, str) or LISTING.fullmatch(symbol) is None:
                 raise ValueError("Invalid Events and Documents default listing: " + slot)
-            symbols.add(symbol.upper())
+            symbols[slot] = symbol.upper()
         choices[slot] = values
-    if len(symbols) != 1:
-        raise ValueError("Events and Documents requires one shared default listing")
-    symbol, = symbols
+    # The story starts with the issuer of the default transcript period.
+    symbol = symbols["transcript"]
     return {"version": 1, "symbol": symbol, **choices, "charts": {"eps": "bar", "revenue": "point"}}
 
 

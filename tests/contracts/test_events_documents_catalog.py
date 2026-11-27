@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 from qopenbb_ci.catalog import generate
+from qopenbb_ci.catalog_batch_b import BINDINGS
 from qopenbb_ci.catalog_events_documents import events_documents_app
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -86,11 +87,16 @@ def test_existing_declaration_defaults_seed_independent_choices():
 
 
 @pytest.mark.parametrize(("symbols", "expected"), [
-    (("A/B", "A/B", "A/B"), None),
+    (("A/B", "BRK.B", "MSFT"), None),
+    (("MSFT", "A/B", "BRK.B"), None),
+    (("BRK.B", "MSFT", "A/B"), None),
     (("brk.b", "BRK.B", "Brk.b"), "BRK.B"),
+    (("MSFT", "brk.b", "AAPL"), "BRK.B"),
 ])
-def test_public_generation_requires_one_canonical_listing(symbols, expected):
+def test_public_generation_validates_native_listings_and_seeds_from_transcript(symbols, expected):
     schema, inventory, raw = inputs()
+    if expected is None:
+        inventory["datasets"] = [dataset for dataset in inventory["datasets"] if dataset["id"] in BINDINGS]
     listings = {
         EXAMPLE["catalog"]["bindings"][slot]["dataset"]: symbol
         for slot, symbol in zip(("filings", "transcript", "news"), symbols, strict=True)
@@ -108,3 +114,7 @@ def test_public_generation_requires_one_canonical_listing(symbols, expected):
     app, = [app for app in outputs["apps.json"] if app["name"] == EXAMPLE["catalog"]["widget"]["name"]]
     layout, = app["tabs"]["Research"]["layout"]
     assert layout["state"]["storage"]["eventsDocuments"]["symbol"] == expected
+    native = {item["i"]: item["state"]["params"] for item in outputs["apps.json"][0]["tabs"]["Data"]["layout"]}
+    for slot in ("filings", "transcript", "news"):
+        binding = EXAMPLE["catalog"]["bindings"][slot]
+        assert native[binding["widgetId"]]["symbol"] == listings[binding["dataset"]]
