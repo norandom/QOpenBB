@@ -129,8 +129,8 @@
     },
     {
       "spec": "market-data-integrations",
-      "include": ["services/data-api/qopenbb_data/*", "pipeline/qopenbb_ci/catalog_financial.py"],
-      "patterns": ["services/data-api/qopenbb_data/financial_query_policy.py", "services/data-api/qopenbb_data/financial_http_quarter.py"],
+      "include": ["services/data-api/qopenbb_data/*", "pipeline/qopenbb_ci/catalog_financial.py", "pipeline/qopenbb_ci/catalog_batch_c.py"],
+      "patterns": ["services/data-api/qopenbb_data/financial_query_policy.py", "services/data-api/qopenbb_data/financial_http_quarter.py", "pipeline/qopenbb_ci/catalog_batch_c.py"],
       "files": ["pipeline/qopenbb_ci/catalog_financial.py", "services/data-api/qopenbb_data/financial_openapi.py", "services/data-api/qopenbb_data/financial_errors.py", "services/data-api/qopenbb_data/financial_policy.py", "services/data-api/qopenbb_data/financial_catalog.py"]
     },
     {

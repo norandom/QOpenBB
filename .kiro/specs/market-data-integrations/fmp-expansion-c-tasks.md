@@ -8,7 +8,7 @@ The controller owns shared edits, the live ledger, installs, joins, heavy checks
 
 ## 1. Isolate the sources and freeze the contracts
 
-- [ ] 1.1 Verify source and complexity foundations
+- [x] 1.1 Verify source and complexity foundations
   - Resolve the design’s pinned root, data API and Workspace baselines in owned checkouts or disposable staging. Record local baselines, lock/source, recorded archive provenance, notices and installed provenance. Use the reviewed expansion inventory and its member evidence to confirm the five operations need new contracts. Access to the historical Batch A tarball is needed only if its members must be re-examined. Reconcile the actual installed FMP set against the original 21 and Batch B’s eight.
   - Prove the locked Python and patched Node toolchain, disposable verification install and executable scoped complexity checker before production changes. Add applicable maintained ownership to `.kiro/complexity/{qopenbb,data-api,workspace}.json` and update `.kiro/complexity-budgets.json` if needed. Record whole-file scoped acceptance at 400/300/50 and any reviewed inventory exclusions. Use the established `python -m tools.quality.complexity --check` invocation and manifest options in [complexity checks](../../../docs/complexity.md).
   - _Boundary: Controller · checkout and toolchain staging, complexity inventory and baseline evidence_
