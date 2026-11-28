@@ -1,0 +1,44 @@
+name: Keep the three newest published releases
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  # Releases published with GITHUB_TOKEN do not trigger another release event.
+  workflow_run:
+    workflows: [Prototype candidate, Finalize verified modeling prerelease]
+    types: [completed]
+
+permissions: {}
+concurrency:
+  group: release-retention
+  cancel-in-progress: false
+
+jobs:
+  prune:
+    if: >-
+      (github.event_name == 'release') ||
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'workflow_dispatch' &&
+       github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Remove older published release records and their assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          releases="repos/$GH_REPO/releases"
+          inventory=$(gh api --paginate --slurp "$releases?per_page=100")
+          older=$(jq -r 'add | unique_by(.id) | map(select(.draft == false and .published_at != null))
+            | sort_by(.published_at, .id) | reverse | .[3:][] | [.id, .tag_name] | @tsv' <<< "$inventory")
+          while IFS=$'\t' read -r id tag; do
+            [[ -n "$id" ]] || continue
+            echo "Removing release $tag ($id)"
+            gh api --method DELETE "$releases/$id"
+          done <<< "$older"
