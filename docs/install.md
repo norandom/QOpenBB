@@ -1,6 +1,36 @@
-# Development install with prebuilt alpha images
+# Install QOpenBB with Docker Compose
 
-Run QOpenBB on Linux or in WSL with Docker Compose. Use the prebuilt Workspace and data API alpha images; no application build tools are needed on the installation host.
+## Automated full installation
+
+Use the [platform commands in the README](../README.md#start-with-docker-compose) from a repository checkout or an extracted ZIP. The full installer starts Workspace, the data API and the modeling service. Windows uses Docker Desktop in Linux-container mode. PowerShell accepts the `.ps1` launcher as a script file. Run it from the full checkout or extracted repository. If Windows marks the downloaded ZIP as coming from the Internet, review the download and use **Properties → Unblock** on the ZIP before extracting, or use a Git checkout.
+
+The scripts create a private `.env` when needed. You can set `FMP_API_KEY` and `FRED_API_KEY` there before setup, supply them through the process environment, or enter them at the prompts. Setup provisions the initial account with the available data apps, the historical chart gallery and a saved model output dashboard. Each account owns its dashboards and saved model runs. The modeling dashboard requires a run and output you own.
+
+| Setting | Full installer behavior |
+| --- | --- |
+| `WORKSPACE_IMAGE`, `DATA_API_IMAGE` | Pull the Compose defaults tagged `latest`, or use your configured references. |
+| `MODELING_IMAGE` | Use your selected image. Setup derives the default from the checkout's modeling package version each time it runs. An explicit reference takes precedence. |
+| `WORKSPACE_HOST_PORT`, `PUBLIC_URL`, `WORKSPACE_BIND_IP` | A new installation uses loopback and port 23003. For remote access set the browser origin and binding before setup. [Remote access](tips-and-tricks.md) |
+| `OPENBB_ADMIN_EMAIL`, `OPENBB_ADMIN_PASSWORD` | Set these before setup to choose the bootstrap login. Leaving them blank uses the generated or persisted credentials. |
+
+Use the URL printed by setup. Initial login details are shown on a private interactive terminal. For unattended installations, retrieve them locally with `docker compose exec workspace credentials`. Use your configured browser URL if the credentials command also lists a container address.
+
+### Update or stop a full installation
+
+Rerun the installer in the same checkout and Compose project. Ask users to save their work and close Workspace during setup. Provisioning a new catalog signs in as the bootstrap administrator and can expire that account’s earlier browser session. Existing dashboards keep their edits. Keep `.env`, `data/workspace/` and the modeling storage. Linux stores model runs in `data/modeling/` with owner 10001 and mode 0700. On Windows, a fresh installation uses the Compose project's `model-runs` Docker volume so saved runs have Linux ownership and permissions. Preserve that volume when updating Docker Desktop. An existing model bind directory must retain its Linux ownership and permissions. Workspace stores its data in `data/workspace/` on both platforms.
+
+To inspect all three services or stop them while retaining data, run these commands in the installation directory:
+
+```sh
+docker compose -f compose.yaml -f deploy/setup/compose.full.yaml ps
+docker compose -f compose.yaml -f deploy/setup/compose.full.yaml down
+```
+
+A successful install verifies service readiness and provisions dashboards. Provider credentials and entitlements determine which observations load. If a chart stays empty, check its symbol, date window and provider access. [Provider coverage](provider-coverage.md)
+
+## Manual two-service installation
+
+Use this alternative to run only Workspace and the data API. Accounts using this route require the manual connection and dashboard steps below.
 
 Development uses the moving `latest` tags below. Each published alpha also has a [tagged GitHub prerelease](https://github.com/norandom/QOpenBB/releases) with installation files and a manifest of exact image digests. Build and publication status are tracked in [GitHub Actions](https://github.com/norandom/QOpenBB/actions/workflows/prototype.yml).
 
@@ -19,11 +49,11 @@ Development uses the moving `latest` tags below. Each published alpha also has a
 
 Pull both images together when updating development. Stable versions will use pinned references. For an exact alpha snapshot, use the digest pair in its release manifest.
 
-For the earnings and Range chart build, both images carry the tag `alpha-46047645104-1`. For reproducible deployment, copy the two `images.*.reference` values from its manifest into `WORKSPACE_IMAGE` and `DATA_API_IMAGE` in your private `.env`. [Published manifest](https://github.com/norandom/QOpenBB/releases/download/alpha-46047645104-1/manifest.json) · [Browser verification](../verification/earnings-calendar/README.md#published-alpha)
+To reproduce a particular alpha, open the release's `manifest.json` and copy the two `images.*.reference` values into `WORKSPACE_IMAGE` and `DATA_API_IMAGE` in your private `.env`. [Published releases and manifests](https://github.com/norandom/QOpenBB/releases)
 
 ## Configure
 
-Download [compose.yaml](https://github.com/norandom/QOpenBB/releases/download/alpha-46047645104-1/compose.yaml) and the [environment template](https://github.com/norandom/QOpenBB/releases/download/alpha-46047645104-1/default.env.sample) from the [alpha release](https://github.com/norandom/QOpenBB/releases/tag/alpha-46047645104-1). Save the template as `.env.sample` in the same directory as Compose. Run these commands there in Linux or WSL:
+Use the repository's [compose.yaml](../compose.yaml) and [.env.sample](../.env.sample), or download both files from the same alpha release and save its `default.env.sample` as `.env.sample`. Run these commands there in Linux or WSL:
 
 ```bash
 mkdir -p data/workspace
@@ -72,7 +102,7 @@ Do not share that output. Blank administrator settings reuse persisted bootstrap
 
 ## First login and onboarding
 
-A fresh account starts without a connected data backend or populated dashboard. The images include the components, but this alpha does not automatically register the bundled backend or instantiate its app templates. Complete this setup once for each Workspace account. The connection and saved dashboards belong to that account and are stored in the bind-mounted Workspace data described under [persistence and updates](#persistence-and-updates).
+On a manual two-service install, a fresh account starts without a connected data backend or populated dashboard. The images include the components, but this alpha does not automatically register the bundled backend or instantiate its app templates. Complete this setup once for each Workspace account. The connection and saved dashboards belong to that account and are stored in the bind-mounted Workspace data described under [persistence and updates](#persistence-and-updates).
 
 ### Connect the bundled data backend
 

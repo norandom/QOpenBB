@@ -1,0 +1,197 @@
+param([Parameter(Mandatory = $true)][string]$RepositoryRoot)
+
+$ErrorActionPreference = 'Stop'
+
+function Invoke-Docker([string[]]$Arguments) {
+    & docker @Arguments
+    if ($LASTEXITCODE -ne 0) {
+        throw "Docker exited with code $LASTEXITCODE."
+    }
+}
+
+function Protect-Dotenv([string]$Path) {
+    $file = Get-Item -LiteralPath $Path -Force -ErrorAction SilentlyContinue
+    if ($file -and ($file.PSIsContainer -or ($file.Attributes -band [IO.FileAttributes]::ReparsePoint))) {
+        throw '.env must be a regular file.'
+    }
+    if (!$file) {
+        [IO.File]::Open($Path, [IO.FileMode]::CreateNew).Dispose()
+    }
+
+    $acl = Get-Acl -LiteralPath $Path
+    $acl.SetAccessRuleProtection($true, $false)
+    foreach ($rule in @($acl.Access)) {
+        $acl.RemoveAccessRuleSpecific($rule)
+    }
+    $user = [Security.Principal.WindowsIdentity]::GetCurrent().User
+    $system = [Security.Principal.SecurityIdentifier]::new('S-1-5-18')
+    foreach ($identity in @($user, $system)) {
+        $rule = [Security.AccessControl.FileSystemAccessRule]::new($identity, 'FullControl', 'Allow')
+        $acl.AddAccessRule($rule)
+    }
+    Set-Acl -LiteralPath $Path -AclObject $acl
+}
+
+function Get-DotenvFlags([string[]]$Keys) {
+    # Compose evaluates dotenv quoting and interpolation without emitting values.
+    $probe = @'
+services:
+  fmp:
+    image: fmp-${FMP_API_KEY:+set}
+  fred:
+    image: fred-${FRED_API_KEY:+set}
+  binding:
+    image: binding-${WORKSPACE_BIND_IP:+set}
+'@
+    $processValues = @{}
+    foreach ($key in $Keys) {
+        $processValues[$key] = [Environment]::GetEnvironmentVariable($key)
+        Remove-Item -LiteralPath "Env:$key" -ErrorAction SilentlyContinue
+    }
+    try {
+        $flags = $probe | & docker compose --env-file .env -f - config --images 2>$null
+        if ($LASTEXITCODE -ne 0) {
+            throw 'Compose could not parse dotenv.'
+        }
+        $flags
+    } catch {
+        throw 'Could not read .env with Docker Compose. Check its syntax privately.'
+    } finally {
+        foreach ($key in $Keys) {
+            if ($null -ne $processValues[$key]) {
+                [Environment]::SetEnvironmentVariable($key, $processValues[$key])
+            }
+        }
+    }
+}
+
+function Read-ProviderKey([string]$Key) {
+    try {
+        $secret = Read-Host -Prompt $Key -AsSecureString
+    } catch {
+        throw "Supply $Key in .env or the environment when there is no interactive terminal."
+    }
+    $pointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret)
+    try {
+        [Runtime.InteropServices.Marshal]::PtrToStringBSTR($pointer)
+    } finally {
+        [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($pointer)
+        $secret.Dispose()
+    }
+}
+
+function Initialize-Dotenv([string]$Path) {
+    Protect-Dotenv $Path
+    $keys = @('FMP_API_KEY', 'FRED_API_KEY')
+    $flags = Get-DotenvFlags $keys
+    $lines = @()
+    if ($flags -notcontains 'binding-set') {
+        $lines += 'WORKSPACE_BIND_IP=127.0.0.1'
+    }
+    foreach ($key in $keys) {
+        $marker = ($key.Split('_')[0]).ToLowerInvariant() + '-set'
+        $value = [Environment]::GetEnvironmentVariable($key)
+        if ([string]::IsNullOrEmpty($value)) {
+            Remove-Item -LiteralPath "Env:$key" -ErrorAction SilentlyContinue
+        }
+        if ($flags -contains $marker) {
+            continue
+        }
+        if ([string]::IsNullOrEmpty($value)) {
+            $value = Read-ProviderKey $key
+        }
+        if ([string]::IsNullOrEmpty($value) -or $value -match '[\x00-\x1f\x7f\\]') {
+            throw "$key must be a nonempty single-line key without backslashes."
+        }
+        $value = $value.Replace("'", "\'")
+        $lines += "$key='$value'"
+    }
+    if ($lines.Count -gt 0) {
+        [IO.File]::AppendAllText($Path, "`n" + ($lines -join "`n") + "`n")
+    }
+}
+
+function Get-ModelBindPath([string]$Root) {
+    foreach ($relative in @('data', 'data/modeling')) {
+        $path = Join-Path $Root $relative
+        $item = Get-Item -LiteralPath $path -Force -ErrorAction SilentlyContinue
+        if (!$item) {
+            return
+        }
+        if (!$item.PSIsContainer -or ($item.Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+            throw "$relative must be a real directory."
+        }
+    }
+    $path
+}
+
+function Show-Login([string[]]$Compose) {
+    $origin = Invoke-Docker ($Compose + @('exec', '-T', 'workspace', 'printenv', 'PUBLIC_URL'))
+    Write-Host "Open QOpenBB at $origin"
+    if ($Host.Name -eq 'ConsoleHost' -and ![Console]::IsOutputRedirected -and ![Console]::IsInputRedirected) {
+        [Console]::WriteLine('Initial administrator login (private)')
+        $credentials = Invoke-Docker ($Compose + @('exec', '-T', 'workspace', 'credentials'))
+        foreach ($line in $credentials) {
+            if ($line -notmatch '^\s*URL:') {
+                [Console]::WriteLine([string]$line)
+            }
+        }
+    } else {
+        Write-Host 'To display the initial administrator login in a private terminal, run:'
+        Write-Host '  docker compose -f compose.yaml -f deploy/setup/compose.full.yaml exec -T workspace credentials | Where-Object { $_ -notmatch ''^\s*URL:'' }'
+    }
+}
+
+Push-Location -LiteralPath $RepositoryRoot
+try {
+    $base = @('compose', '--env-file', '.env', '-f', 'compose.yaml')
+    $full = $base + @('-f', 'deploy/setup/compose.full.yaml')
+    $envPath = Join-Path $RepositoryRoot '.env'
+    $modelPath = Join-Path $RepositoryRoot 'services/modeling/pyproject.toml'
+    $setupPath = Join-Path $RepositoryRoot 'deploy/setup'
+
+    try {
+        Invoke-Docker @('info', '--format', '{{.ServerVersion}}') | Out-Null
+        Invoke-Docker @('compose', 'version') | Out-Null
+    } catch {
+        throw 'Start Docker Desktop with Linux containers and ensure Docker Compose is available.'
+    }
+
+    if ([string]::IsNullOrEmpty($env:WORKSPACE_BIND_IP)) {
+        Remove-Item -LiteralPath 'Env:WORKSPACE_BIND_IP' -ErrorAction SilentlyContinue
+    }
+    Initialize-Dotenv $envPath
+    $modelBind = Get-ModelBindPath $RepositoryRoot
+    New-Item -Path 'data/workspace' -ItemType Directory -Force | Out-Null
+    Invoke-Docker ($base + @('config', '--quiet'))
+    Invoke-Docker ($base + @('pull'))
+    $modelArgs = @('run', '--rm', '--no-deps', '-T', '--entrypoint', 'python',
+        '--volume', "${envPath}:/run/setup.env", '--volume', "${modelPath}:/run/model.toml:ro",
+        '--volume', "${setupPath}:/opt/qopenbb-setup:ro")
+    if ($modelBind) {
+        $modelArgs += @('--volume', "${modelBind}:/run/setup-model-state")
+    }
+    $modelArgs += @('workspace', '/opt/qopenbb-setup/modeling_env.py')
+    if ($modelBind) {
+        $modelArgs += '--existing-model-bind'
+    }
+    Invoke-Docker ($base + $modelArgs)
+    Invoke-Docker ($full + @('config', '--quiet'))
+    Invoke-Docker ($full + @('pull', 'modeling'))
+    Invoke-Docker ($full + @('up', '-d', '--no-build', '--wait', '--wait-timeout', '240'))
+    $modelImage = Invoke-Docker ($full + @('images', '-q', 'modeling'))
+    $dataImage = Invoke-Docker ($full + @('images', '-q', 'data-api'))
+    $workspaceContainer = Invoke-Docker ($full + @('ps', '-q', 'workspace'))
+    $modelContainer = Invoke-Docker ($full + @('ps', '-q', 'modeling'))
+    if (!$modelImage -or !$dataImage -or !$workspaceContainer -or !$modelContainer) {
+        throw 'Could not identify the running services for provisioning.'
+    }
+    $seedArgs = @('exec', '-T', '-e', "QOPENBB_SETUP_MODEL_IMAGE=$modelImage",
+        '-e', "QOPENBB_SETUP_DATA_IMAGE=$dataImage",
+        '-e', "QOPENBB_SETUP_WORKSPACE_CONTAINER=$workspaceContainer",
+        '-e', "QOPENBB_SETUP_MODEL_CONTAINER=$modelContainer", 'workspace', 'python', '/opt/qopenbb-setup/provision.py')
+    Invoke-Docker ($full + $seedArgs)
+    Show-Login $full
+} finally {
+    Pop-Location
+}

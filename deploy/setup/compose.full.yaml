@@ -1,0 +1,14 @@
+# Windows Docker Desktop uses a Linux volume for the private model store on NTFS.
+services:
+  workspace:
+    volumes:
+      - ./deploy/setup:/opt/qopenbb-setup:ro
+  modeling:
+    extends:
+      file: deploy/compose.modeling.yaml
+      service: modeling
+    volumes:
+      - ${QOPENBB_MODELING_STORAGE:-model-runs}:/data/modeling
+
+volumes:
+  model-runs: {}

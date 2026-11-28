@@ -4,11 +4,11 @@
 
 | What you need to do | Where to start |
 | --- | --- |
-| Start Workspace and the data API with Docker Compose | [Quick start](../README.md#start-with-docker-compose) · [Installation settings](install.md#configure) |
+| Install Workspace, the data API and modeling with Docker Compose | [Quick start](../README.md#start-with-docker-compose) · [Installation settings](install.md#configure) |
 | Sign in, connect a backend or diagnose an empty dashboard | [First login](install.md#first-login-and-onboarding) · [Startup checks](install.md#check-startup-problems) |
 | Update the images and keep account connections and saved dashboards | [Persistence and updates](install.md#persistence-and-updates) |
 | Set up remote access or change administrator credentials | [Remote access](tips-and-tricks.md) · [Password update](install.md#update-the-bootstrap-administrator-password) |
-| Add the optional modeling service | [Modeling deployment](modeling-deployment.md) |
+| Operate the modeling service independently | [Modeling deployment](modeling-deployment.md) |
 
 ## Research companies and markets
 

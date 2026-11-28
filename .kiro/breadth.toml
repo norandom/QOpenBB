@@ -1,4 +1,12 @@
 [[capabilities]]
+id = "compose-admin-dashboard-provisioning"
+requirements = ["openbb-self-service/requirements.md:2.1-2.3", "openbb-self-service/requirements.md:4.1-4.5", "openbb-self-service/prototype-closure.md:P4"]
+planned_checks = ["native Windows Docker Desktop installation"]
+test_paths = ["tests/delivery/test_setup_dashboards.py", "tests/delivery/test_prototype_compose.py"]
+status = "partial"
+evidence = ["2026-11-28: Isolated Linux Compose setup pulled the configured images, started all three healthy services and provisioned seven administrator dashboards. Chromium opened all seven and matched their widget inventories to the released app catalogs; the starter retrieved live AAPL income and FRED GDP. The saved output dashboard reopened a signed FCF yield calculation from the Linux modeling bind. An unchanged install rerun retained the private environment and previously provisioned dashboards. Windows PowerShell parsing and orchestration checked with simulated runtime calls on Linux; native Windows Docker Desktop and filesystem ACL behavior remain unverified."]
+
+[[capabilities]]
 id = "fmp-expansion-24-operation-tranche"
 requirements = ["market-data-integrations/requirements.md:1.1-1.4", "market-data-integrations/requirements.md:2.2-2.6", "market-data-integrations/requirements.md:4.1-4.7", "market-data-integrations/requirements.md:6.1-6.5", "market-data-integrations/requirements.md:7.1-7.5", "market-data-integrations/requirements.md:8.1-8.5"]
 planned_checks = ["per-endpoint bounded query and financial result contracts", "explicit provider and safe pre-I/O rejection", "real native response comparison and entitlement classification", "generated discovery and representative Workspace journeys", "source identity, complexity and independent review"]

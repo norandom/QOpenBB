@@ -11,7 +11,7 @@ case "${1:-}" in
     pipeline/.venv/bin/python -m pytest -c pipeline/pyproject.toml \
       tests/delivery/test_image_builds.py tests/delivery/test_workspace_image.py \
       tests/contracts/test_configuration.py::test_modeling_inventory_targets_workspace_and_keeps_listener_private \
-      tests/delivery/test_modeling_publish.py tests/delivery/test_release_assets.py tests/delivery/test_modeling_image.py tests/delivery/test_modeling_candidate.py \
+      tests/delivery/test_modeling_publish.py tests/delivery/test_release_assets.py tests/delivery/test_modeling_image.py tests/delivery/test_modeling_candidate.py tests/delivery/test_setup_dashboards.py \
       tests/delivery/test_data_image.py tests/delivery/test_prototype_compose.py \
       tests/delivery/test_publication.py tests/delivery/test_build_cli.py \
       tests/delivery/test_quality_cli.py tests/delivery/test_alpha_cli.py tests/delivery/test_prototype_workflow.py \
