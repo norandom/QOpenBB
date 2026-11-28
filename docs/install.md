@@ -4,7 +4,7 @@
 
 Use the [platform commands in the README](../README.md#start-with-docker-compose) from a repository checkout or an extracted ZIP. The full installer starts Workspace, the data API and the modeling service. Windows uses Docker Desktop in Linux-container mode. PowerShell accepts the `.ps1` launcher as a script file. Run it from the full checkout or extracted repository. If Windows marks the downloaded ZIP as coming from the Internet, review the download and use **Properties → Unblock** on the ZIP before extracting, or use a Git checkout.
 
-The scripts create a private `.env` when needed. You can set `FMP_API_KEY` and `FRED_API_KEY` there before setup, supply them through the process environment, or enter them at the prompts. Setup provisions the initial account with the available data apps, the historical chart gallery and a saved model output dashboard. Each account owns its dashboards and saved model runs. The modeling dashboard requires a run and output you own.
+Setup reads your existing `.env` without changing its contents or permissions. It creates the file if absent and stores generated settings and prompted keys in a separate private `.env.setup`. You can set `FMP_API_KEY` and `FRED_API_KEY` there before setup, supply them through the process environment, or enter them at the prompts. Setup provisions the initial account with the available data apps, the historical chart gallery and a saved model output dashboard. Each account owns its dashboards and saved model runs. The modeling dashboard requires a run and output you own.
 
 | Setting | Full installer behavior |
 | --- | --- |
@@ -13,17 +13,17 @@ The scripts create a private `.env` when needed. You can set `FMP_API_KEY` and `
 | `WORKSPACE_HOST_PORT`, `PUBLIC_URL`, `WORKSPACE_BIND_IP` | A new installation uses loopback and port 23003. For remote access set the browser origin and binding before setup. [Remote access](tips-and-tricks.md) |
 | `OPENBB_ADMIN_EMAIL`, `OPENBB_ADMIN_PASSWORD` | Set these before setup to choose the bootstrap login. Leaving them blank uses the generated or persisted credentials. |
 
-Use the URL printed by setup. Initial login details are shown on a private interactive terminal. For unattended installations, retrieve them locally with `docker compose exec workspace credentials`. Use your configured browser URL if the credentials command also lists a container address.
+Use the URL printed by setup. Initial login details are shown on a private interactive terminal. For unattended installations, retrieve them locally with `docker compose --env-file .env.setup --env-file .env --env-file deploy/setup/defaults.env exec workspace credentials`. Use your configured browser URL if the credentials command also lists a container address.
 
 ### Update or stop a full installation
 
-Rerun the installer in the same checkout and Compose project. Ask users to save their work and close Workspace during setup. Provisioning a new catalog signs in as the bootstrap administrator and can expire that account’s earlier browser session. Existing dashboards keep their edits. Keep `.env`, `data/workspace/` and the modeling storage. Linux stores model runs in `data/modeling/` with owner 10001 and mode 0700. On Windows, a fresh installation uses the Compose project's `model-runs` Docker volume so saved runs have Linux ownership and permissions. Preserve that volume when updating Docker Desktop. An existing model bind directory must retain its Linux ownership and permissions. Workspace stores its data in `data/workspace/` on both platforms.
+Rerun the installer in the same checkout and Compose project. Ask users to save their work and close Workspace during setup. Provisioning a new catalog signs in as the bootstrap administrator and can expire that account’s earlier browser session. Existing dashboards keep their edits. Keep `.env`, `.env.setup`, `data/workspace/` and the modeling storage. Linux stores model runs in `data/modeling/` with owner 10001 and mode 0700. On Windows, a fresh installation uses the Compose project's `model-runs` Docker volume so saved runs have Linux ownership and permissions. Preserve that volume when updating Docker Desktop. An existing model bind directory must retain its Linux ownership and permissions. Workspace stores its data in `data/workspace/` on both platforms.
 
 To inspect all three services or stop them while retaining data, run these commands in the installation directory:
 
 ```sh
-docker compose -f compose.yaml -f deploy/setup/compose.full.yaml ps
-docker compose -f compose.yaml -f deploy/setup/compose.full.yaml down
+docker compose --env-file .env.setup --env-file .env --env-file deploy/setup/defaults.env -f compose.yaml -f deploy/setup/compose.full.yaml ps
+docker compose --env-file .env.setup --env-file .env --env-file deploy/setup/defaults.env -f compose.yaml -f deploy/setup/compose.full.yaml down
 ```
 
 A successful install verifies service readiness and provisions dashboards. Provider credentials and entitlements determine which observations load. If a chart stays empty, check its symbol, date window and provider access. [Provider coverage](provider-coverage.md)

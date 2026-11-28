@@ -4,7 +4,7 @@ set -euo pipefail
 umask 077
 
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
-base=(docker compose --env-file .env -f compose.yaml)
+base=(docker compose --env-file .env.setup --env-file .env --env-file deploy/setup/defaults.env -f compose.yaml)
 full=("${base[@]}" -f deploy/setup/compose.full.yaml)
 
 fail() {
@@ -17,7 +17,11 @@ prepare_env() {
     if [[ ! -e .env ]]; then
         (set -o noclobber; : > .env) || fail 'Could not create .env.'
     fi
-    chmod 600 .env
+    [[ ! -L .env.setup && ( ! -e .env.setup || -f .env.setup ) ]] || fail '.env.setup must be a regular file.'
+    if [[ ! -e .env.setup ]]; then
+        (set -o noclobber; : > .env.setup) || fail 'Could not create .env.setup.'
+    fi
+    chmod 600 .env.setup
 
     # Let Compose evaluate dotenv quoting and interpolation without emitting values.
     local flags key marker value additions=''
@@ -25,20 +29,15 @@ prepare_env() {
     [[ -n ${WORKSPACE_BIND_IP:-} ]] || unset WORKSPACE_BIND_IP
     flags=$(
         unset FMP_API_KEY FRED_API_KEY
-        docker compose --env-file .env -f - config --images 2>/dev/null <<'YAML'
+        docker compose --env-file .env.setup --env-file .env --env-file deploy/setup/defaults.env -f - config --images 2>/dev/null <<'YAML'
 services:
   fmp:
     image: fmp-${FMP_API_KEY:+set}
   fred:
     image: fred-${FRED_API_KEY:+set}
-  binding:
-    image: binding-${WORKSPACE_BIND_IP:+set}
 YAML
     ) || fail 'Could not read .env with Docker Compose. Check its syntax privately.'
 
-    if ! grep -qx 'binding-set' <<< "$flags"; then
-        additions+=$'\nWORKSPACE_BIND_IP=127.0.0.1'
-    fi
     for key in "${keys[@]}"; do
         marker=${key%%_*}
         # An empty exported variable would mask the persisted Compose setting.
@@ -56,10 +55,10 @@ YAML
         [[ -n $value && $value != *[[:cntrl:]]* && $value != *\\* ]] ||
             fail "$key must be a nonempty single-line key without backslashes."
         value=${value//\'/\\\'}
-        additions+=$'\n'"$key='$value'"
+        additions+=$'\n'"QOPENBB_SETUP_$key='$value'"
     done
     if [[ -n $additions ]]; then
-        printf '%s\n' "$additions" >> .env
+        printf '%s\n' "$additions" >> .env.setup
     fi
 }
 
@@ -72,24 +71,22 @@ show_login() {
         "${full[@]}" exec -T workspace credentials | sed '/^[[:space:]]*URL:/d' >/dev/tty
     else
         printf 'To display the initial administrator login in a private terminal, run:\n'
-        printf '%s\n' "  docker compose -f compose.yaml -f deploy/setup/compose.full.yaml exec -T workspace credentials | sed '/^[[:space:]]*URL:/d'"
+        printf '%s\n' "  docker compose --env-file .env.setup --env-file .env --env-file deploy/setup/defaults.env -f compose.yaml exec -T workspace credentials | sed '/^[[:space:]]*URL:/d'"
     fi
 }
 
 docker info --format '{{.ServerVersion}}' >/dev/null 2>&1 || fail 'Start Docker before running setup.'
 docker compose version >/dev/null 2>&1 || fail 'Install the Docker Compose plugin before running setup.'
 prepare_env
-for directory in data data/modeling; do
+for directory in data data/workspace data/modeling; do
     [[ ! -L $directory && ( ! -e $directory || -d $directory ) ]] ||
         fail "$directory must be a real directory."
 done
-# The modeling initializer applies the container's POSIX ownership requirements.
-(umask 022; mkdir -p data/workspace)
-mkdir -p data/modeling
+# Docker creates missing bind directories, including under an existing root-owned data/.
 "${base[@]}" config --quiet
 "${base[@]}" pull
 "${base[@]}" run --rm --no-deps -T --entrypoint python \
-    --volume "$PWD/.env:/run/setup.env" \
+    --volume "$PWD/.env.setup:/run/setup.env" \
     --volume "$PWD/services/modeling/pyproject.toml:/run/model.toml:ro" \
     --volume "$PWD/deploy/setup:/opt/qopenbb-setup:ro" \
     --volume "$PWD/data/modeling:/run/setup-model-state" \

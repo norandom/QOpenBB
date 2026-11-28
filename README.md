@@ -18,7 +18,7 @@ bash setup.sh
 powershell -NoProfile -ExecutionPolicy RemoteSigned -File .\setup.ps1
 ```
 
-The Windows launcher runs `setup.psh`. Both installers prompt privately for missing provider keys, pull the images, connect the data backend, and save the bundled dashboards for the initial administrator. At the end, your terminal shows the Workspace URL and initial login. A fresh local installation listens at <http://127.0.0.1:23003>.
+The Windows launcher runs `setup.psh`. Setup preserves an existing `.env` and stores generated settings in `.env.setup`. Both installers prompt privately for missing provider keys, pull the images, connect the data backend, and save the bundled dashboards for the initial administrator. At the end, your terminal shows the Workspace URL and initial login. A fresh local installation listens at <http://127.0.0.1:23003>.
 
 ## Open your first dashboard
 

@@ -39,7 +39,7 @@ def configure(env_path: Path, project_path: Path, existing_bind: bool) -> None:
             "QFM_IDENTITY_CURRENT_KID": "setup-" + secrets.token_hex(8),
             "QFM_IDENTITY_CURRENT_SECRET": secrets.token_urlsafe(48),
         }
-        missing = {k: v for k, v in defaults.items() if not os.getenv(k)}
+        missing = {"QOPENBB_SETUP_" + k: v for k, v in defaults.items() if not os.getenv(k)}
         storage = values.get("QOPENBB_MODELING_STORAGE")
         if existing_bind and storage in (None, "", "./data/modeling"):
             prepare_model_directory(Path("/run/setup-model-state"))
@@ -48,8 +48,8 @@ def configure(env_path: Path, project_path: Path, existing_bind: bool) -> None:
         elif not existing_bind and not storage:
             missing["QOPENBB_MODELING_STORAGE"] = "model-runs"
         model_image = f"ghcr.io/norandom/qopenbb-modeling:modeling-v{version}"
-        if values.get("QOPENBB_SETUP_MODELING_IMAGE") != model_image:
-            missing["QOPENBB_SETUP_MODELING_IMAGE"] = model_image
+        if values.get("QOPENBB_CHECKOUT_MODELING_IMAGE") != model_image:
+            missing["QOPENBB_CHECKOUT_MODELING_IMAGE"] = model_image
         if missing:
             lines = "".join(f"{key}={value}\n" for key, value in missing.items())
             env_file.write(("\n" + lines).encode())

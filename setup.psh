@@ -40,8 +40,6 @@ services:
     image: fmp-${FMP_API_KEY:+set}
   fred:
     image: fred-${FRED_API_KEY:+set}
-  binding:
-    image: binding-${WORKSPACE_BIND_IP:+set}
 '@
     $processValues = @{}
     foreach ($key in $Keys) {
@@ -49,7 +47,7 @@ services:
         Remove-Item -LiteralPath "Env:$key" -ErrorAction SilentlyContinue
     }
     try {
-        $flags = $probe | & docker compose --env-file .env -f - config --images 2>$null
+        $flags = $probe | & docker compose @envArgs -f - config --images 2>$null
         if ($LASTEXITCODE -ne 0) {
             throw 'Compose could not parse dotenv.'
         }
@@ -85,9 +83,6 @@ function Initialize-Dotenv([string]$Path) {
     $keys = @('FMP_API_KEY', 'FRED_API_KEY')
     $flags = Get-DotenvFlags $keys
     $lines = @()
-    if ($flags -notcontains 'binding-set') {
-        $lines += 'WORKSPACE_BIND_IP=127.0.0.1'
-    }
     foreach ($key in $keys) {
         $marker = ($key.Split('_')[0]).ToLowerInvariant() + '-set'
         $value = [Environment]::GetEnvironmentVariable($key)
@@ -104,7 +99,7 @@ function Initialize-Dotenv([string]$Path) {
             throw "$key must be a nonempty single-line key without backslashes."
         }
         $value = $value.Replace("'", "\'")
-        $lines += "$key='$value'"
+        $lines += "QOPENBB_SETUP_$key='$value'"
     }
     if ($lines.Count -gt 0) {
         [IO.File]::AppendAllText($Path, "`n" + ($lines -join "`n") + "`n")
@@ -138,13 +133,14 @@ function Show-Login([string[]]$Compose) {
         }
     } else {
         Write-Host 'To display the initial administrator login in a private terminal, run:'
-        Write-Host '  docker compose -f compose.yaml -f deploy/setup/compose.full.yaml exec -T workspace credentials | Where-Object { $_ -notmatch ''^\s*URL:'' }'
+        Write-Host '  docker compose --env-file .env.setup --env-file .env --env-file deploy/setup/defaults.env -f compose.yaml exec -T workspace credentials | Where-Object { $_ -notmatch ''^\s*URL:'' }'
     }
 }
 
 Push-Location -LiteralPath $RepositoryRoot
 try {
-    $base = @('compose', '--env-file', '.env', '-f', 'compose.yaml')
+    $envArgs = @('--env-file', '.env.setup', '--env-file', '.env', '--env-file', 'deploy/setup/defaults.env')
+    $base = @('compose') + $envArgs + @('-f', 'compose.yaml')
     $full = $base + @('-f', 'deploy/setup/compose.full.yaml')
     $envPath = Join-Path $RepositoryRoot '.env'
     $modelPath = Join-Path $RepositoryRoot 'services/modeling/pyproject.toml'
@@ -160,6 +156,13 @@ try {
     if ([string]::IsNullOrEmpty($env:WORKSPACE_BIND_IP)) {
         Remove-Item -LiteralPath 'Env:WORKSPACE_BIND_IP' -ErrorAction SilentlyContinue
     }
+    $inputEnv = Get-Item -LiteralPath $envPath -Force -ErrorAction SilentlyContinue
+    if (!$inputEnv) {
+        Protect-Dotenv $envPath
+    } elseif ($inputEnv.PSIsContainer -or ($inputEnv.Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+        throw '.env must be a regular file.'
+    }
+    $envPath = Join-Path $RepositoryRoot '.env.setup'
     Initialize-Dotenv $envPath
     $modelBind = Get-ModelBindPath $RepositoryRoot
     New-Item -Path 'data/workspace' -ItemType Directory -Force | Out-Null
